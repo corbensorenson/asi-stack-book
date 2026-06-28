@@ -4,6 +4,8 @@ Last updated: 2026-06-28
 
 This roadmap is the execution surface for moving **The ASI Stack** from the current v1.0 candidate state toward a reviewed v1.0 evidence release and human-reader release path.
 
+The live AI/research book remains the canonical architecture, evidence, source, proof, schema, and release-control source. The normal reader manuscript can eventually become a curated parallel derivative source for prose, pacing, chapter flow, and human-consumption packaging. It is parallel but not equal: it may diverge from the live/research text for readability, but it must inherit claim text, support states, source boundaries, proof/test status, implementation horizons, and release records from the live book unless a deliberate reconciliation step updates both surfaces.
+
 Use this file as the goal target for long-running improvement work. Use `book_structure.json` for ordering, `docs/book_outline.md` for drafting/proof/source scope, and `docs/v1_0_focus_audit.md` for the current-state audit.
 
 ## Inputs Reconciled
@@ -24,7 +26,7 @@ Claude's review is useful as an editorial and hygiene review, not as source evid
 | Mechanical `Operating mechanism:` recap lists in `Beyond the State of the Art` sections | 26 chapter files | Phase 1. Rewrite into mature-product prose, then add a guard so the pattern cannot return. |
 | Repeated `remains a target architecture, not a current-result claim` disclaimer | 42 chapter files | Phase 1. Preserve the non-claim boundary, but vary the wording by chapter. |
 | Repeated `keeps ... honest` construction | 7 chapter files | Phase 1. Minor voice pass after the larger Beyond-SOTA/disclaimer work. |
-| Reader/ebook should not inherit all live-book uniformity | Structurally true by design | Phase 2. Review generated reader edition and use overlays or canonical prose edits where human flow needs less rigid sectioning. |
+| Reader/ebook should not inherit all live-book uniformity | Structurally true by design | Phase 2. Review generated reader edition, then graduate toward a curated parallel reader manuscript when prose divergence becomes too large for overlays. |
 | Local repo cleanup via `git gc` | Local hygiene only | Optional local maintenance; do not treat as book quality work. |
 
 ## What Is Already Resolved Or Not Actionable
@@ -105,11 +107,21 @@ Tasks:
 6. Render reader HTML, EPUB, and DOCX when ready; attempt PDF only when local dependencies support it.
 7. Record actual render outcomes without claiming publication until review and release records exist.
 
+Reader-source divergence rule:
+
+- Start with generated reader source plus overlays because that keeps the reader path cheap to regenerate.
+- When chapter-by-chapter prose editing becomes too substantial for overlays, graduate to a tracked curated reader manuscript for the normal human book.
+- Treat that curated reader manuscript as a parallel derivative source for narrative only, not as an independent evidence source.
+- Keep the live AI/research book canonical for chapter IDs, source assignments, support states, proof/test status, implementation horizons, diagrams that carry evidence meaning, and release records.
+- Add a reconciliation check before any major reader release: every curated reader chapter must map back to a manifest chapter, preserve support boundaries, preserve meaning-changing caveats, and record any prose divergence that affects claims, examples, diagrams, or source interpretation.
+- If reader editing reveals that the live/research source is wrong, thin, or misleading, fix the canonical chapter too rather than hiding the correction only in the reader manuscript.
+
 Acceptance criteria:
 
 - Reader manuscript residuals are recorded.
 - Active overlay operations, if any, validate and apply cleanly to both generated reader source and live Human view.
 - Generated reader source keeps support boundaries visible in plain language.
+- Any curated reader source has a reconciliation report tying it back to live-book claims, support states, source boundaries, and implementation horizons.
 - Any produced reader artifacts are named only after successful render and review.
 
 ## Phase 3 - Evidence Transition Pilot
@@ -255,7 +267,7 @@ Run an extended roadmap-driven v1.0 completion pass on The ASI Stack using docs/
 
 Start with Phase 1: remove the remaining reader-visible generator bleed-through by rewriting the 26 Beyond the State of the Art sections that contain Operating mechanism recaps, varying the repeated target-architecture non-claim boundary across the 42 affected chapters, smoothing remaining repeated honesty cadence, and then adding a guard so those patterns cannot return. Preserve every evidence boundary and do not promote support states.
 
-After Phase 1 passes validation, proceed through the roadmap in order as far as the run can honestly get: reviewed reader manuscript path, evidence-transition pilot, proof adequacy review, first executable test harnesses, external literature backfill, visual/site review, and major-version release preparation. Do not fabricate sources, tests, proof results, benchmark results, reader artifacts, ebook artifacts, or audio artifacts. Record all completed work, skipped work, blockers, validations run, and residuals in the roadmap, changelog, and relevant appendices before reporting completion.
+After Phase 1 passes validation, proceed through the roadmap in order as far as the run can honestly get: reviewed reader manuscript path, reader-source divergence planning, evidence-transition pilot, proof adequacy review, first executable test harnesses, external literature backfill, visual/site review, and major-version release preparation. The normal reader version may eventually graduate from generated output plus overlays into a curated parallel derivative manuscript for human prose, but it must remain subordinate to the live AI/research book for claims, source boundaries, support states, proof/test status, implementation horizons, and release records. Do not fabricate sources, tests, proof results, benchmark results, reader artifacts, ebook artifacts, or audio artifacts. Record all completed work, skipped work, blockers, validations run, and residuals in the roadmap, changelog, and relevant appendices before reporting completion.
 ```
 
 This goal is better than "write the whole book" now because the book is already structurally complete and long. The next leverage point is to make the existing book read less generated, then move from validated mechanics toward reviewed reader quality and accepted evidence.

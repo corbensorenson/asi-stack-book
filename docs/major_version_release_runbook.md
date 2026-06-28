@@ -2,9 +2,9 @@
 
 Last updated: 2026-06-27
 
-This runbook is for turning a tagged live-book state into human-consumable major-version artifacts without forking the manuscript.
+This runbook is for turning a tagged live-book state into human-consumable major-version artifacts without losing the live book's evidence authority.
 
-The live book remains canonical for AIs and human researchers. Reader and audio editions are derived products for interested humans, and each artifact exists only after the relevant generation, render, review, and release-record step succeeds.
+The live book remains canonical for AIs and human researchers. Reader and audio editions are derived products for interested humans, and each artifact exists only after the relevant generation, render, review, and release-record step succeeds. A normal reader manuscript may eventually become a curated parallel derivative source for human prose, but it is not an equal source for claims, support states, source boundaries, proof/test status, implementation horizons, or release records.
 
 ## Audience Contract
 
@@ -16,6 +16,8 @@ The live book remains canonical for AIs and human researchers. Reader and audio 
 
 Meaning-changing caveats must appear in the reader-facing spine. Do not put the only statement that a claim is speculative, untested, or source-limited inside a section that `reader_release.strip_headings` removes.
 
+If a curated reader manuscript exists for the release, review it as a parallel derivative source: it may differ in prose order, section flow, examples, and pacing, but every chapter must reconcile to a live manifest chapter and preserve the live book's claim/evidence boundaries.
+
 ## Release Ladder
 
 1. Tag the live book state.
@@ -23,13 +25,14 @@ Meaning-changing caveats must appear in the reader-facing spine. Do not put the 
 3. Optionally produce a research release that preserves the full live evidence machinery.
 4. Generate a reader source tree from the tag.
 5. Review the generated reader manuscript for continuity and e-reader quality.
-6. Review generated reader companion notes for dense material that should be retained, summarized, or moved out of the relaxed manuscript.
-7. Render EPUB, DOCX, HTML, and PDF only as local dependencies allow.
-8. Record only formats that actually rendered.
-9. Generate an audio-script workspace only after the reader manuscript is reviewed.
-10. Replace generated narration notes with reviewed spoken prose or companion-note references.
-11. Review audio companion notes before packaging MP3, M4B, or audio-embedded EPUB artifacts.
-12. Produce MP3, M4B, or audio-embedded EPUB only after the reviewed script is recorded, packaged, spot-checked, and recorded.
+6. If a curated reader manuscript exists, reconcile it against the generated reader source, manifest chapter IDs, support states, implementation horizons, diagrams, and evidence boundaries.
+7. Review generated reader companion notes for dense material that should be retained, summarized, or moved out of the relaxed manuscript.
+8. Render EPUB, DOCX, HTML, and PDF only as local dependencies allow.
+9. Record only formats that actually rendered.
+10. Generate an audio-script workspace only after the reader manuscript is reviewed.
+11. Replace generated narration notes with reviewed spoken prose or companion-note references.
+12. Review audio companion notes before packaging MP3, M4B, or audio-embedded EPUB artifacts.
+13. Produce MP3, M4B, or audio-embedded EPUB only after the reviewed script is recorded, packaged, spot-checked, and recorded.
 
 ## Human Consumption Bundle
 
@@ -42,7 +45,7 @@ The human-consumption bundle for a major version is assembled from checked layer
 | Audio artifacts | MP3, M4B | `audiobook_gate` records reviewed script, spoken treatment, chapter markers, and spot checks. |
 | Audio embedded in EPUB | audio-embedded EPUB | Record only after the EPUB package is opened and verified to contain playable reviewed audio. |
 
-The reader manuscript is the human source. The audio script is downstream of the reviewed reader manuscript. The live book remains canonical after the bundle is produced.
+The reader manuscript is the human-prose source. The audio script is downstream of the reviewed reader manuscript. The live book remains canonical after the bundle is produced for evidence, sources, claims, proof/test status, and architecture control.
 
 ## Live Gate
 
@@ -87,6 +90,8 @@ python3 scripts/build_reader_edition.py
 ```
 
 Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, the live `assets/reader-overlays.html` payload and runtime-count validation when active overlays exist, and the generated manuscript before rendering release artifacts. The delta report carries a zero-active-operation note or operation digests and before/after excerpts for review, not editable patch instructions. If review finds a reader-only prose change, edit the tracked overlay operation under `editions/reader_overlays/` and regenerate; do not edit generated reader source or hand-patch the generated delta report.
+
+If the reader release has graduated to a curated reader manuscript, do not treat generated source as the only review target. Use it as the reconciliation baseline, then review the curated manuscript chapter by chapter against the manifest and evidence boundaries before rendering.
 
 Attempt specific formats and record actual local outcomes:
 

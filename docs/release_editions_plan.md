@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-27
 
-The living book is the canonical source. Major-version editions are derived artifacts for different audiences, not parallel manuscripts.
+The living book is the canonical architecture, evidence, source, proof, schema, and release-control source. Major-version editions begin as derived artifacts for different audiences. Once the normal reader manuscript needs sustained prose editing, it may become a curated parallel derivative source for human reading, but it is not an equal authority: claims, support states, source boundaries, proof/test status, implementation horizons, and release records remain governed by the live book.
 
 ## Audience Model
 
@@ -24,11 +24,14 @@ The live book serves all three audiences by separating content layers instead of
 | Live research scaffold | Chapter status, guardrails, source crosswalks, claim-source mappings, Codex tests, formalization hooks, and source-loading notes. | Kept in live/research releases; stripped or summarized for reader/audio releases. |
 | Evidence and source matrices | Appendices, source notes, schemas, release records, test specs, proof manifest, Corben's sources/local projects, external literature by other authors, and changelog. | Kept for live/research; reader releases keep selected human-useful appendices such as glossary, Corben's sources/local projects, and the separate external-literature appendix. |
 | Machine-readable contracts | `book_structure.json`, `docs/book_outline.md`, inventories, schemas, scripts, Lean modules, and validation commands. | Canonical for AI/writing agents; excluded from reader/audio manuscripts except where explained in prose. |
+| Curated reader manuscript | A reviewed human-prose source that may eventually diverge from the live AI/research text for pacing, section flow, examples, and relaxed reading. | Parallel derivative source for narrative only; must reconcile back to live-book claims, support states, source boundaries, proof/test status, implementation horizons, and release records. |
 | Release derivatives | Generated reader source, EPUB/PDF/DOCX/HTML builds, audio scripts, MP3/M4B packages, and audio-embedded EPUBs. | Non-canonical outputs that exist only after generation, review or render, and release-record entry. |
 | Audio adaptation | Narration script, pronunciation guidance, chapter markers, and spoken-treatment notes. | Derived from the reviewed reader release, not directly from the live book. |
 | Companion material | Reader/audio companion notes for diagrams, images, tables, code, schemas, omitted dense matrices, and audio-embedded EPUB packaging checks. | Generated as release-workspace review aids; not a substitute for reader prose, evidence ledgers, or actual artifact checks. |
 
 Every chapter should keep meaning-critical caveats in the reader-facing spine. Live-only sections can expand the evidence trail, but they should not be the only place where a reader learns that a claim is speculative, blocked, or untested.
+
+Reader-source divergence is allowed only after review shows that generated reader source plus overlays are too limited for a high-quality human book. At that point, the curated reader manuscript becomes a tracked human-prose source, while `book_structure.json`, `docs/book_outline.md`, Appendix C, source appendices, proof artifacts, and release records remain authoritative for evidence and structure. Each major reader release should include a reconciliation report that confirms the curated reader manuscript still maps to manifest chapters and preserves support boundaries.
 
 ## Major-Version Artifact Ladder
 
@@ -36,9 +39,10 @@ Use this ladder for every major release:
 
 1. The tagged live book remains canonical for AI agents and researchers.
 2. A reader source tree is generated from that tag after stripping live-only scaffolding.
-3. EPUB, PDF, DOCX, and reader HTML are rendered from the reviewed reader source, and each successful render is recorded separately.
-4. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB, not new sources.
-5. Audio starts only after the reader manuscript is reviewed. MP3, M4B, and audio-embedded EPUB artifacts are separate products that require a reviewed script, generated audio, spot checks, metadata, and a release record.
+3. If the major version uses a curated reader manuscript, reconcile it against the generated source and live-book manifest before rendering.
+4. EPUB, PDF, DOCX, and reader HTML are rendered from the reviewed reader source, and each successful render is recorded separately.
+5. Optional AZW3, MOBI, Markdown, or plain-text files are downstream conversions from the reviewed reader source or reviewed EPUB, not new sources.
+6. Audio starts only after the reader manuscript is reviewed. MP3, M4B, and audio-embedded EPUB artifacts are separate products that require a reviewed script, generated audio, spot checks, metadata, and a release record.
 
 The practical rule is simple: the live book is for AI agents and researchers, the reader release is for humans who want the book without workflow scaffolding, and the audio release is for listening. Each one is derived from the previous public-safe state and must say exactly which artifacts exist.
 
@@ -53,7 +57,7 @@ A major version can have a human-consumption bundle, but the bundle is assembled
 | Audio artifacts | MP3, M4B | Generate only from a reviewed narration script and spot-check against that script. |
 | Audio embedded in EPUB | audio-embedded EPUB | Verify that the packaged EPUB actually contains playable reviewed audio before listing it as produced. |
 
-The reader manuscript is the human source for the bundle. The audio script is downstream of that reader manuscript. The live book remains the canonical source for AI agents and researchers after the human bundle is produced.
+The reader manuscript is the human-prose source for the bundle. The audio script is downstream of that reader manuscript. The live book remains the canonical source for AI agents, researchers, claim/evidence state, proof/test status, and future source ingestion after the human bundle is produced.
 
 ## Tracked Source Files
 
