@@ -239,7 +239,7 @@ A runtime-adapter contract with permissions, approval requirements, and result e
 
 The adapter boundary begins with a `runtime_adapter_invocation` schema and fixture. It validates adapter ID, invocation state, target, capability, permission, sandbox, impact class, risk tier, approval scope/expiry, authority handle, effect lease, effect receipt, pre/post state refs, external side effects, verification refs, rollback handle, irreversible residuals, incident/audit refs, support-state effect, residuals, and non-claims. It does not execute a tool.
 
-The fixture validates the invocation envelope. `AsiStackProofs.RuntimeAdapters` adds a bounded permission predicate showing that a valid invocation requires the parent job permission list to include the adapter capability, plus a bounded approval predicate requiring a high-impact unapproved invocation to be rejected. This does not demonstrate tool execution, sandbox isolation, human approval workflow, secret-handle safety, effect receipt validity, or rollback.
+The runtime-adapter fixture checks the invocation envelope. `AsiStackProofs.RuntimeAdapters` adds a bounded permission predicate showing that a valid invocation requires the parent job permission list to include the adapter capability, plus a bounded approval predicate requiring a high-impact unapproved invocation to be rejected. This does not demonstrate tool execution, sandbox isolation, human approval workflow, secret-handle safety, effect receipt validity, or rollback.
 
 ## Beyond the State of the Art
 

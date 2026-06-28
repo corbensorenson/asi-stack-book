@@ -195,7 +195,7 @@ A loop closure pipeline from trace detection to verified tool record.
 
 Procedural memory begins with a `procedural_tool_record` schema and fixture. It should validate source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
-The fixture validates only a candidate tool-card shape. Repeated trace existence, invariant abstraction correctness, tool behavior, and regression success remain open until a harness records them.
+The candidate tool-card fixture checks only record shape. Repeated trace existence, invariant abstraction correctness, tool behavior, and regression success remain open until a harness records them.
 
 A miniature trace set is the right first loop-closure harness: three successes, one near miss, one failure, and one extracted tool candidate. The harness should verify that the candidate cites all source traces, narrows its scope around the failure, and remains unroutable until regression checks pass.
 
