@@ -118,20 +118,37 @@ flowchart LR
   D --> E["Boundary-delta review"]
   E --> F["Protected invariant check"]
   F --> G["Evaluator independence check"]
-  G --> H["Replacement transaction"]
-  H --> I{"Gates pass?"}
-  I -- "no" --> J["Reject / quarantine / residual"]
-  I -- "yes" --> K["Governance approval"]
-  K --> L["Canary / monitor"]
-  L --> M{"Regression or invariant breach?"}
-  M -- "yes" --> N["Rollback / retire"]
-  M -- "no" --> O["Promote within field scope"]
+  G --> H["Replacement transaction request"]
+  E -- "boundary widens unsafely" --> J["Boundary blocked"]
+  F -- "invariant breach" --> K["Invariant blocked"]
+  G -- "self-judging" --> L["Evaluator blocked"]
+  H --> M["Gate packet ready"]
   J --> P["Outcome ledger"]
-  N --> P
-  O --> P
+  K --> P
+  L --> P
 ```
 
-**How to read the self improvement gate:** The self-improvement path starts from a wall or residual and moves through cheaper interventions before any stronger change is considered. Boundary-delta review, protected invariants, evaluator independence, replacement, governance approval, monitoring, and rollback all stand between a proposal and promotion.
+The second half of the transition controls what happens after a replacement
+request is ready for review.
+
+```{mermaid}
+flowchart LR
+  A2["Gate packet ready"] --> B2{"Gates pass?"}
+  B2 -- "no" --> C2["Reject / quarantine / residual"]
+  B2 -- "yes" --> D2["Governance approval"]
+  D2 --> E2["Approval receipt"]
+  D2 --> F2["Canary / monitor"]
+  F2 --> G2{"Regression or invariant breach?"}
+  G2 -- "yes" --> H2["Rollback / retire"]
+  G2 -- "no" --> I2["Promote within field scope"]
+  C2 --> J2["Outcome ledger"]
+  H2 --> J2
+  I2 --> J2
+  E2 --> J2
+  J2 --> K2["Next review trigger"]
+```
+
+**How to read the self improvement gate:** The first diagram starts from a wall or residual and moves through cheaper interventions before any stronger change is considered. Boundary-delta review, protected invariants, and evaluator independence can each block a proposal before replacement. The second diagram shows that even a ready replacement packet still needs gate review, governance approval, canary monitoring, rollback, and an outcome ledger before promotion.
 
 The transition record separates proposing, evaluating, approving, committing, monitoring, rolling back, and retiring. It names the improvement proposal, protected invariants, and evidence gates before a candidate can become the new default. More autonomous replacement is deliberately delayed until evaluators, readiness gates, governance logs, and rollback paths are credible enough to make the transition inspectable.
 

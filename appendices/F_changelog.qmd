@@ -1,8 +1,8 @@
 # Changelog
 
-## 2026-06-28 - v1.0 Fast Generation diagram split
+## 2026-06-28 - v1.0 Dense mechanism diagram splits
 
-- Split the dense Fast Generation mechanism Mermaid diagram into two smaller diagrams: a generation-mode selector and an acceptance/accounting path. Updated the walkthrough prose, Phase 7 site/visual review, v1.0 roadmap, and focus audit; `python3 scripts/validate_visual_coverage.py` now validates 59 chapter diagrams across the 54 manifest chapters. This is a readability and reader-release preparation improvement only; it does not change support states, prove speed-quality performance, produce a model benchmark, create a reader artifact, or approve any release format.
+- Split the dense Fast Generation mechanism Mermaid diagram into a generation-mode selector and an acceptance/accounting path, and split the Recursive Self-Improvement mechanism diagram into boundary-review and canary/promotion paths. Updated the walkthrough prose, Phase 7 site/visual review, v1.0 roadmap, and focus audit; `python3 scripts/validate_visual_coverage.py` now validates 60 chapter diagrams across the 54 manifest chapters. This is a readability and reader-release preparation improvement only; it does not change support states, prove speed-quality performance, prove safe autonomous self-improvement, produce a model benchmark, create a reader artifact, or approve any release format.
 
 ## 2026-06-28 - v1.0 Fast Generation proof-adequacy boundary alignment
 
