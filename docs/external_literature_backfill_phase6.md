@@ -21,6 +21,9 @@ literature coverage.
 | `ext_nist_ai_rmf_1_0_2023` | governance/evals | Official AI risk-management framework structure and lifecycle vocabulary. |
 | `ext_react_2022` | planning/agent control | Interleaved reasoning, acting, observation, and environment interaction. |
 | `ext_tree_of_thoughts_2023` | planning/search | Deliberative search over intermediate reasoning paths with evaluation and backtracking. |
+| `ext_pddl_1998` | planning/modeling | Domain/problem separation, action schemas, comparable planning notation, and planner-interface discipline. |
+| `ext_shop2_2003` | planning/HTN | Hierarchical task-network planning, ordered task decomposition, method selection, and competition-result boundaries. |
+| `ext_integrated_tamp_2020` | planning/TAMP | Discrete task planning, continuous feasibility subproblems, motion-planning interfaces, and integration-strategy vocabulary. |
 | `ext_rag_2020` | retrieval/context | Retrieval-augmented generation and the boundary between model memory and retrieved evidence. |
 | `ext_lost_in_middle_2023` | retrieval/context | Long-context position sensitivity and the gap between available context and used evidence. |
 | `ext_proof_carrying_code_1997` | formal methods | Proof-carrying artifacts and consumer-side proof checking against a policy. |
@@ -39,7 +42,8 @@ literature coverage.
 - Added public-safe source inventory records.
 - Added matching source notes.
 - Generated Appendix H can now list initial source-noted records for all Phase 6 priority queues.
-- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, or test results changed.
+- The planning queue now has initial source-noted coverage for interleaved reasoning/acting, tree search, planning-language interfaces, HTN decomposition, and task-and-motion planning.
+- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, or test results changed.
 
 ## Non-Claims
 
@@ -52,7 +56,7 @@ literature coverage.
 
 ## Next Queues
 
-1. Deepen planning coverage with HTN, behavior trees, GOAP, TAMP, and agent-orchestration sources.
+1. Deepen planning coverage with behavior trees, GOAP, broader agent-orchestration sources, and any PlanForge-specific planning-language translation references that become necessary.
 2. Deepen retrieval/context coverage with context-engineering and long-context benchmark sources.
 3. Deepen formal-methods coverage with runtime assurance, proof-assistant, and contract-verification sources.
 4. Deepen routing coverage with modern LLM MoE surveys, router evaluation, and modular-agent orchestration sources.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Phase 6 planning literature deepening
+
+- Added three primary external planning source records and public-safe source notes for PDDL, SHOP2, and Integrated Task and Motion Planning. Regenerated Appendix A and Appendix H so the external planning queue now has initial source-noted comparison vocabulary for reasoning/acting, deliberative search, planning-language interfaces, hierarchical task decomposition, and task/motion feasibility boundaries. Updated the Phase 6 backfill report, external-literature queue, v1.0 roadmap, focus audit, and status snapshot to record 125 public-safe source records with 66 external records. This is external-literature normalization only; it does not add chapter source assignments, promote Appendix C support states, reproduce any planner, run any benchmark or motion-planning system, create proof/test evidence, claim runtime behavior, or create reader/ebook/document/PDF/audio artifacts.
+
 ## 2026-06-28 - v1.0 reader-spine capitalization guard
 
 - Tightened `scripts/validate_reader_spine.py` so generated reader prose now rejects lower-case scaffold-term sentence starts such as `source review`, `source map`, `automation workflow`, and connector-review phrases after live/research terminology is humanized. The stricter guard passes on the current generated reader manuscript and prevents the reader-generator capitalization issue fixed during the Part IV review pass from returning. This is a reader-projection validation improvement only; it does not create a reviewed reader release, curated reader manuscript, ebook/document/PDF artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, runtime result, implementation result, or release record.

@@ -840,6 +840,48 @@
     "doi": "10.48550/arXiv.2305.10601"
   },
   {
+    "id": "ext_pddl_1998",
+    "title": "PDDL: The Planning Domain Definition Language",
+    "priority": "external_literature",
+    "layer": "planning_modeling",
+    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "cognitive-compilation-and-semantic-ir", "executable-specifications-and-lean-proof-envelope"],
+    "url": "https://www.cs.cmu.edu/~mmv/planning/readings/98aips-PDDL.pdf",
+    "notes": "External planning-modeling source for domain/problem separation, action syntax, comparable benchmark notations, and planner-interface discipline.",
+    "source_type": "technical_report",
+    "published": "1998",
+    "updated": "",
+    "citation_label": "McDermott et al. (1998), PDDL"
+  },
+  {
+    "id": "ext_shop2_2003",
+    "title": "SHOP2: An HTN Planning System",
+    "priority": "external_literature",
+    "layer": "planning_htn",
+    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "cognitive-compilation-and-semantic-ir", "prototype-roadmap"],
+    "url": "https://www.jair.org/index.php/jair/article/view/10362",
+    "notes": "External HTN planning source for ordered task decomposition, method selection, temporal/metric planning, and competition-result boundaries.",
+    "source_type": "journal_article",
+    "published": "2003-12-01",
+    "updated": "",
+    "citation_label": "Nau et al. (2003), SHOP2",
+    "doi": "10.1613/jair.1141"
+  },
+  {
+    "id": "ext_integrated_tamp_2020",
+    "title": "Integrated Task and Motion Planning",
+    "priority": "external_literature",
+    "layer": "planning_task_motion",
+    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "runtime-adapters-tool-permissions-and-human-approval", "integrated-reference-architecture"],
+    "url": "https://arxiv.org/abs/2010.01083",
+    "notes": "External task-and-motion-planning survey source for discrete task planning, continuous motion planning, black-box subproblem interfaces, and integration-strategy vocabulary.",
+    "source_type": "arxiv",
+    "arxiv_id": "2010.01083",
+    "published": "2020-10-02",
+    "updated": "2020-10-02",
+    "citation_label": "Garrett et al. (2020), Integrated Task and Motion Planning",
+    "doi": "10.48550/arXiv.2010.01083"
+  },
+  {
     "id": "ext_rag_2020",
     "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "priority": "external_literature",

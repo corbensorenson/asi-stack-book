@@ -15,7 +15,7 @@ This book currently treats Corben Sorenson's AI papers, local projects, and conv
 |---|---|---|
 | AI alignment and corrigibility | Ground constitutional alignment, corrigibility, agency, and power-seeking claims. | Add canonical survey/key-paper candidates before drafting Part I claims as literature-backed. |
 | AI governance and evaluations | Ground readiness gates, audits, deployment policy, evals, and incident response. | Create citation-normalized source records for governance/evals references. |
-| Agent planning and task decomposition | Compare PlanForge to HTN, behavior trees, GOAP, TAMP, and modern agent orchestration. | Use `planforge` references as candidates, then record final bibliography entries. |
+| Agent planning and task decomposition | Compare PlanForge to planning-language interfaces, HTN, behavior trees, GOAP, TAMP, and modern agent orchestration. | Initial records and source notes exist for ReAct, Tree of Thoughts, PDDL, SHOP2, and Integrated TAMP; behavior-tree, GOAP, broader orchestration, and PlanForge-translation comparison sources remain queued. |
 | Memory, RAG, and context engineering | Compare VCM to long-context, RAG, MemGPT-style memory, ClawVM/RAMPART-like context compilation, and benchmark literature. | Mine `vcm_editable` references into a public-safe queue. |
 | Formal methods and proof assistants | Ground Lean, proof-carrying claims, runtime assurance, and contract verification. | Add sources for Lean/proof assistant methods and runtime assurance. |
 | Modular systems and routing | Compare MoECOT, Octopus, RMI, and specialist routing to MoE/routing/modular-agent literature. | Add external records before claiming novelty beyond this research program. |
