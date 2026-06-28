@@ -167,6 +167,7 @@ def main() -> None:
         "`The ASI Stack needs`",
         "`The stack should`",
         "`The record should`",
+        "`The response is`",
         "`Failure closure:`",
         "`detect and route failure modes such as`",
         "`This is a target architecture, not a current-result claim`",

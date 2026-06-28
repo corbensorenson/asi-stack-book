@@ -244,13 +244,13 @@ The obvious failure is a botnet: a hive control layer starts executing arbitrary
 
 The social failure is surveillance. A system designed to help family members can become a memory and telemetry dragnet. The governance response is data minimization, topic-specific approvals, guardian checks for sensitive transitions, visibility into what is being recorded, and deletion or export paths.
 
-The privacy failure is data leakage to rented or public project nodes. A scheduler under cost pressure may send private context to cheap compute. The response is policy-first scheduling, data-class rejection before bids, secret handles, scrubbed/synthetic job variants, and audit replay.
+The privacy failure is data leakage to rented or public project nodes. A scheduler under cost pressure may send private context to cheap compute. Privacy control starts with policy-first scheduling, data-class rejection before bids, secret handles, scrubbed/synthetic job variants, and audit replay.
 
-The operational failure is wrong-device scheduling. A job may drain batteries, overheat machines, stall the network, interrupt work, or run a high-risk action on a device without the right human present. The response is operator-presence modes, energy budgets, thermal and battery constraints, quiet hours, and approval receipts.
+The operational failure is wrong-device scheduling. A job may drain batteries, overheat machines, stall the network, interrupt work, or run a high-risk action on a device without the right human present. The scheduling contract uses operator-presence modes, energy budgets, thermal and battery constraints, quiet hours, and approval receipts.
 
-The identity failure is authority confusion. A child, guest, agent, project, or borrowed node can be mistaken for the owner or guardian. The response is principal-specific identity, role-specific leases, and denial by default when identity or guardianship is ambiguous.
+The identity failure is authority confusion. A child, guest, agent, project, or borrowed node can be mistaken for the owner or guardian. The identity boundary uses principal-specific identity, role-specific leases, and denial by default when identity or guardianship is ambiguous.
 
-The memory failure is a swamp. Logs, embeddings, screenshots, transcripts, models, tool outputs, and personal data accumulate without ownership or deletion. The response is VCM-style source binding, taint, retention classes, revocation, and evidence/reference separation.
+The memory failure is a swamp. Logs, embeddings, screenshots, transcripts, models, tool outputs, and personal data accumulate without ownership or deletion. The hive memory contract uses VCM-style source binding, taint, retention classes, revocation, and evidence/reference separation.
 
 ## Minimum Viable Implementation
 
