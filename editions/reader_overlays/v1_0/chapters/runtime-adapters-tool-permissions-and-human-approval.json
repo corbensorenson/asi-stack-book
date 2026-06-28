@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+  "operations": [
+    {
+      "id": "v1_0.runtime_adapters.effect_receipt_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Effect receipt fields"
+      },
+      "rationale": "Replace the effect-receipt field table with reader prose while preserving the canonical AI/research receipt-field matrix.",
+      "content_lines": [
+        "An effect receipt exists to keep a successful tool response from turning into a broad success claim. It names the state before the effect when that state is available, then names the state after the effect so review can see what changed. External side effects are recorded separately because messages, deployments, payments, API calls, hardware actions, and institutional changes may need different rollback and incident paths.",
+        "",
+        "Rollback handles name the actual mechanism for undoing or repairing an effect when such a mechanism exists. Irreversible residuals name what cannot be undone. Verification references point to checks that the effect matched the contract, while incident references point to denials, exceptions, partial failures, or later reviews.",
+        "",
+        "The receipt therefore separates evidence of invocation from evidence of correctness. A tool may respond successfully while verification, rollback, approval scope, or residual accounting remains incomplete."
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 19,
+  "operation_count": 20,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -211,6 +211,18 @@
       },
       "content": "These external records are method-family context, not reproduced ASI Stack results. TRPO and PPO supply the trust-region and proximal-update background for bounded online policy movement. ReMax and REINFORCE-style RLHF show why simpler or critic-light baselines still matter when a system is tempted to treat a PPO-heavy pipeline as the only serious reinforcement-learning route.\n\nDPO, IPO, ORPO, KTO, and SimPO supply the offline preference-optimization family: useful when static preference, binary feedback, reference-model, or sequence-reward assumptions match the available data. DeepSeek-R1, DAPO, GSPO, and S-GRPO provide reasoning-RL and sequence-level context, including reproducibility pressure and overthinking control. LongRLVR connects verifier rewards to long-context grounding, which is why it belongs next to VCM and context adequacy rather than only next to model training.\n\nThe RLHF-limitations source is the warning layer. It feeds reward-hacking probes, evaluator-limit cautions, disclosure needs, and audit requirements. None of these source-reviewed records means that this repository has trained a policy, validated a reward model, reproduced a reasoning-RL result, solved reward hacking, or moved the governing claim above `argument` support.",
       "rationale": "Replace the external-literature table with prose while preserving the source-note/source-review boundary and local non-reproduction caveat."
+    },
+    {
+      "id": "v1_0.runtime_adapters.effect_receipt_reader_replace",
+      "target_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Effect receipt fields",
+        "aliases": []
+      },
+      "content": "An effect receipt exists to keep a successful tool response from turning into a broad success claim. It names the state before the effect when that state is available, then names the state after the effect so review can see what changed. External side effects are recorded separately because messages, deployments, payments, API calls, hardware actions, and institutional changes may need different rollback and incident paths.\n\nRollback handles name the actual mechanism for undoing or repairing an effect when such a mechanism exists. Irreversible residuals name what cannot be undone. Verification references point to checks that the effect matched the contract, while incident references point to denials, exceptions, partial failures, or later reviews.\n\nThe receipt therefore separates evidence of invocation from evidence of correctness. A tool may respond successfully while verification, rollback, approval scope, or residual accounting remains incomplete.",
+      "rationale": "Replace the effect-receipt field table with reader prose while preserving the canonical AI/research receipt-field matrix."
     },
     {
       "id": "v1_0.semantic_representation.mechanism_lifecycle_reader_replace",

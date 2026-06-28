@@ -23,7 +23,7 @@ Generated workspace:
 - 54 raw core-claim markers removed
 - 50 repeated support-boilerplate passages humanized
 - 60 reader scaffold terms humanized
-- 19 active reader-overlay operations applied
+- 20 active reader-overlay operations applied
 
 Generated review files inspected:
 
@@ -39,6 +39,7 @@ Representative generated chapters spot-read:
 - `build/reader_edition/chapters/command-contracts-and-semantic-interfaces.qmd`
 - `build/reader_edition/chapters/planning-as-a-control-layer.qmd`
 - `build/reader_edition/chapters/labor-os-and-typed-jobs.qmd`
+- `build/reader_edition/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd`
 - `build/reader_edition/chapters/policy-optimization-and-learning-from-feedback.qmd`
 - `build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd`
 - `build/reader_edition/chapters/semantic-representation-and-tree-structured-models.qmd`
@@ -56,6 +57,7 @@ Representative generated chapters spot-read:
 - The Semantic Representation reader overlay converts lifecycle and consumer-policy tables into narrative prose while keeping the canonical AI/research mechanism and record vocabulary in the live source.
 - The Command Contracts reader overlay converts validation-state and field-status tables into narrative prose while keeping the canonical AI/research state matrix and command-record vocabulary in the live source.
 - The Planning reader overlay converts the plan-node lifecycle-state table into narrative prose while keeping the canonical AI/research state matrix and planning-control boundary in the live source.
+- The Runtime Adapters reader overlay converts the effect-receipt field table into narrative prose while keeping the canonical AI/research receipt-field matrix and effect-boundary vocabulary in the live source.
 - The Fast Generation reader overlay converts metric-code and taxonomy-table material into narrative prose while keeping the canonical AI/research formulas and generation-mode matrix in the live source.
 - The Labor OS reader overlay converts the typed-job lifecycle-state table into narrative prose while keeping the canonical AI/research lifecycle matrix in the live source.
 - The Circle Contracts reader overlay converts the proof-receipt lifecycle table into narrative prose while keeping the canonical AI/research receipt-state matrix in the live source.
@@ -72,7 +74,7 @@ The current generated reader source now has a deterministic heuristic audit at `
 python3 scripts/audit_reader_continuity.py --write
 ```
 
-The audit currently measures 54 reader chapters, 59 generated files, 120,605 reader words, 19 active and applied reader-overlay operations, 74 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 9 high-priority heuristic review chapters, mostly where generated reader chapters still carry table-heavy or dense technical material.
+The audit currently measures 54 reader chapters, 59 generated files, 120,712 reader words, 20 active and applied reader-overlay operations, 65 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 8 high-priority heuristic review chapters, mostly where generated reader chapters still carry table-heavy or dense technical material.
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 
@@ -81,7 +83,7 @@ This is review triage, not manual review. It creates a queue for the chapter-by-
 - The generated manuscript has not received a full 54-chapter human continuity review. It is mechanically valid, not release-reviewed.
 - The prose is still derived from the live AI/research book. It reads better than the live scaffold, but many chapters still carry technical interfaces, minimum-field lists, Mermaid diagrams, and implementation language that may need compression, rephrasing, or companion-note treatment for relaxed reading.
 - Some reader chapters still contain useful but dense schema-like material. A final human edition should decide chapter by chapter whether to retain it, summarize it, move it to companion material, or leave it only in the live/research book.
-- The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Personal Compute Hives, Command Contracts, Planning, Labor OS, Circle Contracts, Fast Generation, Policy Optimization, Artifact Steward Agents, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
+- The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Personal Compute Hives, Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Fast Generation, Policy Optimization, Artifact Steward Agents, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
 - No EPUB, PDF, DOCX, AZW3, MOBI, Markdown, plain-text, audio, or audio-embedded EPUB artifact has been rendered, reviewed, or released in this pass.
 - No curated parallel reader manuscript exists yet. Graduation from generated source plus overlays remains a future decision once reader-only edits become too substantial for overlays.
 - The automated continuity audit is current, but it does not replace the full 54-chapter human read.

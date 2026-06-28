@@ -4,7 +4,7 @@ chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "talos"
   - "viea"
@@ -194,6 +194,8 @@ Minimum fields:
 Execution owns adapters. Security mediates secrets and authority handles. Evidence records effect receipts, rollback handles, residuals, and deployment outcomes.
 
 The adapter interface is also the point where human control stays attached to automation. A planner may request a high-impact action, but the adapter must know whether approval is missing, stale, insufficiently scoped, or contradicted by a newer policy. A security kernel may provide an opaque handle, but the adapter must not expose the secret bytes back into model context. The artifact graph may store the result, but it should store the permission and approval boundary with it.
+
+### Effect receipt fields
 
 The effect receipt should distinguish:
 
