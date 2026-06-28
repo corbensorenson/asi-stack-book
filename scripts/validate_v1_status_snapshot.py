@@ -205,6 +205,7 @@ def main() -> None:
         "`A second invariant is`",
         "`The strongest invariant is`",
         "`The key invariant is`",
+        "`The invariant is`",
         f"All {book_page_count} rendered book pages carry the persistent and shareable `AI view` / `Human view` switch",
         "generated reader chapters strip raw live core-claim markers and repeated support boilerplate while preserving claim text and compact inline plain-language support-state boundaries",
         "all rendered pages embed the current reader-overlay payload before the reading-mode toggle",

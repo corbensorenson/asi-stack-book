@@ -178,7 +178,7 @@ Residual-cost ownership belongs on the same record. A compact system may shift e
 - Verification cost is counted as part of the representation.
 - Compactness does not promote support state without evidence.
 
-The invariant is not "small is good." It is "small is accountable." A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
+Compactness is not the invariant; accountability is. A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
 
 Verifier separation keeps compactness from becoming self-certification. The compact system can propose, regenerate, compress, or repair, but it cannot be the sole authority for promoting its own adequacy when the result affects evidence state, runtime authority, or replacement.
 

@@ -178,7 +178,7 @@ Rights outcomes need separate states: access failure, justified denial, redacted
 - Exit paths remain materially usable.
 - Fork rights do not bypass safety constraints.
 
-The invariant is practical availability. A right that cannot be exercised under realistic conditions is not preserved. A right that bypasses safety constraints is not a right; it is an authority leak.
+Practical availability carries the rights invariant. A right that cannot be exercised under realistic conditions is not preserved. A right that bypasses safety constraints is not a right; it is an authority leak.
 
 Challenged-party independence protects review. The challenged authority may be part of the review path, but it cannot be the only place where the record, denial reason, or appeal path exists.
 

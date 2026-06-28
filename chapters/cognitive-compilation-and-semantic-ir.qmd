@@ -174,7 +174,7 @@ The public semantic-atom schema now records atom state, source-plan refs, obliga
 - Repair changes are localized and auditable.
 - Target compilation records assumptions.
 
-The invariant is not that the compiler always succeeds. The invariant is that failure has an address. If a validator fails, the failed atom, dependency edge, target artifact, and repair scope should be visible. If a repair changes a prior obligation, the claim ledger must record that the build graph changed rather than pretending the final artifact still satisfies the original plan.
+Compiler success is not the preserved boundary; addressable failure is. If a validator fails, the failed atom, dependency edge, target artifact, and repair scope should be visible. If a repair changes a prior obligation, the claim ledger must record that the build graph changed rather than pretending the final artifact still satisfies the original plan.
 
 Obligation non-erasure keeps compilation honest. A compilation pass may refine, split, defer, or reject an obligation, but it cannot silently drop it. If an obligation is no longer applicable, the ledger needs a revision reason rather than an absent edge.
 

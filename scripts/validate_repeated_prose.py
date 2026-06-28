@@ -87,6 +87,7 @@ FORMULAIC_GENERAL_PHRASES = (
     "A second invariant is",
     "The strongest invariant is",
     "The key invariant is",
+    "The invariant is",
     "**Diagram reading note:**",
 )
 
