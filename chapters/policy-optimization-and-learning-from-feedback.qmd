@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -39,7 +39,7 @@ open_evidence_gaps:
   - "The 2026-06-24 browser-GPT note is author-intent and literature-queue context only; it is not treated as source-derived evidence."
   - "Appendix C now records passage-reviewed mappings for all twenty-seven assigned sources, including source-note-only review for MoECOT and external arXiv method-family records; support remains argument until accepted evidence transitions, local experiments, or stronger literature review justify promotion."
   - "No PPO, DPO, GRPO, RLVR, router-policy, context-policy, execution-policy, verifier-policy, or reasoning-budget training run has been implemented or reproduced in this repository."
-  - "The policy_optimization_record fixture validates schema/example consistency for update state, policy delta summary, feedback admissibility, reward boundary, reward-hacking probes, holdouts, regressions, authority effect, monitor window, evidence packet refs, deployment scope, support-state effect, and non-claims; AsiStackProofs.PolicyOptimization implements finite record predicates only. Neither artifact proves reward quality, optimizer convergence, benchmark improvement, policy safety, or reward-hacking resistance."
+  - "The policy_optimization_record fixture validates schema/example consistency; AsiStackProofs.PolicyOptimization implements finite record predicates; and the benchmark anti-Goodhart harness validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior. None of these artifacts proves reward quality, optimizer convergence, benchmark improvement, policy safety, or reward-hacking resistance."
 ---
 
 ## Chapter status
@@ -50,13 +50,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-28 |
 | Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, plus 15 external method-family records listed below. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; external variants: TRPO, PPO, ReMax, DPO, IPO/preference theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, RLHF limitations; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
 | Source loading state | source notes: all assigned ASI Stack sources plus 15 external policy/RL records; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot`; external literature: primary arXiv metadata and source notes recorded, no local reproduction |
-| Test state | `policy_optimization_record.valid.json` passes repository-level protocol fixture validation for update state, policy delta summary, feedback admissibility, reward boundary, reward-hacking probes, holdouts, regressions, authority effect, monitor window, evidence packet refs, deployment scope, support-state effect, and non-claims; `AsiStackProofs.PolicyOptimization` implements finite policy-update record and reward/governance promotion gates; no policy optimization experiment has been run. |
+| Test state | `policy_optimization_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PolicyOptimization` implements finite policy-update record and reward/governance promotion gates; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior. No policy optimization experiment has been run. |
 
 ## Drafting guardrail
 
@@ -282,12 +282,12 @@ At the governed learning endpoint, learning would be continuous but never sovere
 | GRPO/RLOO toy math reward test | Check whether group-relative or leave-one-out sampling improves a toy verifiable task without unstated reward assumptions. | planned; not run |
 | Verifier reward loop test | Use exact or tool verifiers to record reward quality, false positives, false negatives, and residuals. | planned; not run |
 | Length and latency penalty study | Test shorter reasoning or faster routing only when correctness, grounding, and verification adequacy are preserved. | planned; not run |
-| Reward-source admissibility test | Check that unverified reward sources cannot promote a policy update without evaluation and governance refs. | planned; not run |
-| Reward hacking probe test | Check whether a candidate reward can be exploited without real task success. | planned; not run |
+| Reward-source admissibility test | Check that unverified reward sources cannot promote a policy update without evaluation and governance refs. | implemented by benchmark anti-Goodhart harness for synthetic admissibility/evidence/gate checks; no policy optimization run |
+| Reward hacking probe test | Check whether a candidate reward can be exploited without real task success. | implemented by benchmark anti-Goodhart harness for synthetic reward-probe and reward-as-truth rejection; no reward-hacking experiment run |
 | Router policy toy RL test | Train or simulate a small router-policy update with holdouts, baseline, latency, and authority constraints. | planned; not run |
 | Context-policy grounding reward test | Check whether reward design improves source-grounded context selection without context bloat. | planned; not run |
 | Reasoning-budget penalty test | Check whether shorter reasoning preserves correctness and verification adequacy. | planned; not run |
-| Rollback and promotion gate test | Check that failed evaluation or governance gates produce rollback/quarantine rather than promotion. | planned; not run |
+| Rollback and promotion gate test | Check that failed evaluation or governance gates produce rollback/quarantine rather than promotion. | implemented by benchmark anti-Goodhart harness for synthetic blocked-ratchet promotion rejection; no live rollback or policy canary run |
 
 Only fixture-shape validation and finite record predicates are implemented. The remaining tests require executable training or simulation harnesses.
 

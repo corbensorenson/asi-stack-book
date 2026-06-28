@@ -9376,9 +9376,27 @@
           "minimal_implementation": "A benchmark ratchet record with frontier, mastery, residuals, regressions, and anti-Goodhart checks.",
           "beyond_state_of_art": "The benchmark endpoint is an operating system for evaluation, not a leaderboard appendix. Every evaluation would become a governed evidence packet with enough history to tell whether the system learned a capability, learned a test, leaked a public calibration surface, or merely improved a proxy. A mature benchmark OS manages benchmarks as instruments with lifecycle state. A task can begin as a candidate metric, become a frontier probe, graduate into a regression floor, enter contamination review, be retired, or remain blocked. Success would never move a claim by itself; it would open a promotion review that compares baselines, residuals, negative results, holdouts, transfer checks, mutation checks, public-calibration limits, and the exact claim being considered.",
           "codex_tests": [
-            "Saturation detection test",
-            "Hidden benchmark transfer test",
-            "Regression preservation test"
+            {
+              "name": "Saturation detection test",
+              "purpose": "Check that saturated benchmark records become regression floors rather than promotion evidence.",
+              "status": "implemented by benchmark anti-Goodhart harness; validated locally",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures"
+            },
+            {
+              "name": "Hidden benchmark transfer test",
+              "purpose": "Check that benchmark promotion requires holdout, contamination, and mutation or transfer checks before claim movement.",
+              "status": "implemented by benchmark anti-Goodhart harness; validated locally; no hidden benchmark was run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; no hidden benchmark run"
+            },
+            {
+              "name": "Regression preservation test",
+              "purpose": "Check that benchmark promotion and regression-only decisions preserve regression refs and negative-result visibility.",
+              "status": "implemented by benchmark anti-Goodhart harness; validated locally; no empirical regression suite was run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; no empirical regression suite run"
+            }
           ],
           "lean_module": "AsiStackProofs.BenchmarkRatchets",
           "proof_targets": [
@@ -9825,12 +9843,30 @@
             "GRPO/RLOO toy math reward test",
             "Verifier reward loop test",
             "Length and latency penalty study",
-            "Reward-source admissibility test",
-            "Reward hacking probe test",
+            {
+              "name": "Reward-source admissibility test",
+              "purpose": "Check that policy promotion requires admissible feedback, run measurement status, governance gates, evidence packet refs, and a promotion-ready ratchet.",
+              "status": "implemented by benchmark anti-Goodhart harness; validated locally; no policy optimization run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; no policy optimization run"
+            },
+            {
+              "name": "Reward hacking probe test",
+              "purpose": "Check that policy promotion requires reward-hacking probes and cannot treat reward or score as truth, sole evidence, or authority.",
+              "status": "implemented by benchmark anti-Goodhart harness; validated locally; no reward-hacking experiment run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; no reward-hacking experiment run"
+            },
             "Router policy toy RL test",
             "Context-policy grounding reward test",
             "Reasoning-budget penalty test",
-            "Rollback and promotion gate test"
+            {
+              "name": "Rollback and promotion gate test",
+              "purpose": "Check that policy promotion is blocked when benchmark ratchet evidence is blocked, quarantined, rerun, or regression-only.",
+              "status": "implemented by benchmark anti-Goodhart harness; validated locally; no live rollback or policy canary run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; no live rollback or policy canary run"
+            }
           ],
           "source_queue": {
             "primary": [
@@ -10327,7 +10363,13 @@
             "Untrusted event taint test",
             "Contribution ledger separation test",
             "Sunset criteria test",
-            "Release evidence handoff test",
+          {
+            "name": "Release evidence handoff test",
+            "purpose": "Check that steward release actions reference benchmark ratchet and policy update evidence and carry approval refs when approvals are required.",
+            "implementation_status": "implemented",
+            "result_status": "validated locally by synthetic fixtures; no steward release run",
+            "status": "implemented by benchmark anti-Goodhart harness; no steward agent executed"
+          },
             "Project federation contract test",
             "Autonomy-mode transition test",
             {

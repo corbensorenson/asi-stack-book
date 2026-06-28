@@ -3116,12 +3116,12 @@ Draft deliverables:
 
 - A benchmark ratchet record schema with frontier, mastery, residuals, regressions, promotion decisions, and anti-Goodhart checks.
 - Implemented repository-level fixture: `benchmark_ratchet_record.valid.json` validates benchmark-ratchet record shape only; no benchmark run, contamination audit, hidden-transfer test, or regression-preservation test exists yet.
-- Planned Codex test: Saturation detection test.
-- Planned Codex test: Hidden benchmark transfer test.
+- Implemented Codex test: Saturation detection test, via `python3 scripts/validate_benchmark_antigoodhart.py` over saturated-benchmark regression-floor and invalid saturated-promotion scenarios; no empirical benchmark run exists.
+- Implemented Codex test: Hidden benchmark transfer test, via `python3 scripts/validate_benchmark_antigoodhart.py` over holdout, contamination, and mutation/transfer gates; no hidden benchmark or transfer run exists.
 - Planned Codex test: Contamination audit test.
 - Planned Codex test: Floor/frontier split test.
 - Planned Codex test: Source-reported boundary test.
-- Planned Codex test: Regression preservation test.
+- Implemented Codex test: Regression preservation test, via `python3 scripts/validate_benchmark_antigoodhart.py` over regression refs and negative-result retention; no empirical regression suite exists.
 
 Lean proof targets:
 
@@ -3194,12 +3194,12 @@ Draft deliverables:
 - Planned Codex test: GRPO/RLOO toy math reward test.
 - Planned Codex test: Verifier reward loop test.
 - Planned Codex test: Length and latency penalty study.
-- Planned Codex test: Reward-source admissibility test.
-- Planned Codex test: Reward hacking probe test.
+- Implemented Codex test: Reward-source admissibility test, via `python3 scripts/validate_benchmark_antigoodhart.py` over admissible feedback, run measurement status, governance gates, evidence packet refs, and promotion-ready ratchets; no policy optimization run exists.
+- Implemented Codex test: Reward hacking probe test, via `python3 scripts/validate_benchmark_antigoodhart.py` over required reward-hacking probes and reward-as-truth rejection; no reward-hacking experiment exists.
 - Planned Codex test: Router policy toy RL test.
 - Planned Codex test: Context-policy grounding reward test.
 - Planned Codex test: Reasoning-budget penalty test.
-- Planned Codex test: Rollback and promotion gate test.
+- Implemented Codex test: Rollback and promotion gate test, via `python3 scripts/validate_benchmark_antigoodhart.py` over blocked, quarantined, rerun, and regression-only ratchet evidence blocking policy promotion; no live rollback or policy canary exists.
 
 Lean proof targets:
 
@@ -3283,7 +3283,7 @@ Draft deliverables:
 - Planned Codex test: Untrusted event taint test.
 - Planned Codex test: Contribution ledger separation test.
 - Planned Codex test: Sunset criteria test.
-- Planned Codex test: Release evidence handoff test.
+- Implemented Codex test: Release evidence handoff test, via `python3 scripts/validate_benchmark_antigoodhart.py` over steward release actions requiring ratchet refs, policy refs, and approval refs; no steward agent or release runner exists.
 - Planned Codex test: Project federation contract test.
 - Planned Codex test: Autonomy-mode transition test.
 

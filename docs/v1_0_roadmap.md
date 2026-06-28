@@ -178,7 +178,7 @@ Acceptance criteria:
 
 ## Phase 5 - First Real Test Harnesses
 
-Status: started. Five synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; and the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`. All five are backed by valid plus expected-invalid fixtures under `experiments/` and wired into `scripts/validate_book.py`; no live support state changed.
+Status: started. Six synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`; and the benchmark anti-Goodhart harness in `scripts/validate_benchmark_antigoodhart.py`, documented in `docs/benchmark_antigoodhart_harness.md`. All six are backed by valid plus expected-invalid fixtures under `experiments/` and wired into `scripts/validate_book.py`; no live support state changed.
 
 Purpose: move beyond schema shape validation into executable behavior checks.
 
@@ -216,6 +216,9 @@ Initial completion:
 - `python3 scripts/validate_readiness_residual_gates.py` passed locally on 2026-06-28 with 4 valid fixtures and 5 expected-invalid fixtures.
 - The result record is `experiments/readiness_residual_gates/results/2026-06-28-local.md`.
 - The readiness/residual gate harness checks synthetic costed-route, readiness-gate, and replacement-transaction consistency only. It does not prove routing accuracy, readiness-engine behavior, residual-ledger storage, deployed quarantine, rollback execution, runtime monitoring, MoECOT replay, benchmark performance, or support-state promotion.
+- `python3 scripts/validate_benchmark_antigoodhart.py` passed locally on 2026-06-28 with 2 valid fixtures and 5 expected-invalid fixtures.
+- The result record is `experiments/benchmark_antigoodhart/results/2026-06-28-local.md`.
+- The benchmark anti-Goodhart harness checks synthetic benchmark-ratchet, policy-optimization, and steward-action consistency only. It does not prove benchmark quality, hidden-holdout integrity, contamination detection, transfer performance, policy-training quality, reward-hacking resistance, steward-agent behavior, release safety, or support-state promotion.
 
 ## Phase 6 - External Literature Backfill
 

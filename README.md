@@ -28,7 +28,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/render_reader_formats.py` can attempt reader-edition HTML/EPUB/DOCX/PDF renders and write a local `reader_render_report.json` with actual outcomes.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`; its check also verifies that chapter scripts preserve both implementation-horizon sections.
-- `scripts/validate_support_state_transitions.py`, `scripts/validate_authority_transitions.py`, `scripts/validate_plan_execution_contracts.py`, `scripts/validate_context_admission_adequacy.py`, and `scripts/validate_readiness_residual_gates.py` run synthetic gate harnesses for support-state conservatism, authority non-escalation, plan/contract/job consistency, context admission/adequacy consistency, and readiness/residual custody; they are executable behavior checks over fixtures, not claim promotions or deployed-runtime evidence.
+- `scripts/validate_support_state_transitions.py`, `scripts/validate_authority_transitions.py`, `scripts/validate_plan_execution_contracts.py`, `scripts/validate_context_admission_adequacy.py`, `scripts/validate_readiness_residual_gates.py`, and `scripts/validate_benchmark_antigoodhart.py` run synthetic gate harnesses for support-state conservatism, authority non-escalation, plan/contract/job consistency, context admission/adequacy consistency, readiness/residual custody, and benchmark anti-Goodhart discipline; they are executable behavior checks over fixtures, not claim promotions or deployed-runtime evidence.
 - The live GitHub Pages site includes a persistent top-of-page reading-mode switch: `AI view` keeps the full live/research scaffold, including raw core-claim markers and repeated support-state boilerplate, while `Human view` hides the same repeated chapter sections, TOC entries, section-numbering artifacts, raw bracketed core-claim markers, and repeated support boilerplate used by the reader-release strip policy. Human view keeps the compact evidence boundary inline with the core claim rather than opening repeated support paragraphs. Readers can open a chapter directly in either mode with `?view=human` or `?view=ai`. All 54 chapters now carry a `.asi-human-only` Human Reading Path bridge for interested readers, and `.asi-ai-only` blocks remain available for mode-specific research notes without forking the manuscript. The rendered-site validator checks the static HTML hooks, and `scripts/validate_live_human_view_browser.js` exercises representative rendered pages by default or every manifest chapter across desktop and mobile viewports with `--all-chapters --all-viewports` in a real browser when Playwright/Chrome is available, including reading-mode control visibility, rendered Mermaid visibility, raw-marker and support-boilerplate hiding/restoration, and page-overflow checks.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
@@ -58,6 +58,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/plan_execution_contract_harness.md](docs/plan_execution_contract_harness.md) | Phase 5 synthetic plan graph and execution-contract harness. |
 | [docs/context_admission_adequacy_harness.md](docs/context_admission_adequacy_harness.md) | Phase 5 synthetic context admission and adequacy harness. |
 | [docs/readiness_residual_harness.md](docs/readiness_residual_harness.md) | Phase 5 synthetic readiness gate and residual escrow harness. |
+| [docs/benchmark_antigoodhart_harness.md](docs/benchmark_antigoodhart_harness.md) | Phase 5 synthetic benchmark anti-Goodhart harness. |
 | [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Historical v0.2 manuscript completion, gaps, and validation status. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/release_editions_plan.md](docs/release_editions_plan.md) | Major-version EPUB/PDF/DOCX/audio edition plan and gates. |
@@ -100,6 +101,7 @@ python3 scripts/validate_authority_transitions.py
 python3 scripts/validate_plan_execution_contracts.py
 python3 scripts/validate_context_admission_adequacy.py
 python3 scripts/validate_readiness_residual_gates.py
+python3 scripts/validate_benchmark_antigoodhart.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_reading_mode_toggle.py

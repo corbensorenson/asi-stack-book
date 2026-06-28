@@ -40,6 +40,7 @@ REQUIRED = [
     "scripts/validate_plan_execution_contracts.py",
     "scripts/validate_context_admission_adequacy.py",
     "scripts/validate_readiness_residual_gates.py",
+    "scripts/validate_benchmark_antigoodhart.py",
     "scripts/build_reader_edition.py",
     "scripts/build_source_matrix.py",
     "docs/book_outline.md",
@@ -50,6 +51,7 @@ REQUIRED = [
     "docs/plan_execution_contract_harness.md",
     "docs/context_admission_adequacy_harness.md",
     "docs/readiness_residual_harness.md",
+    "docs/benchmark_antigoodhart_harness.md",
     "evidence_transitions/README.md",
     "editions/release_profiles.json",
     "editions/reader_overlays/README.md",
@@ -402,6 +404,7 @@ def main() -> None:
     run_validator("validate_plan_execution_contracts.py")
     run_validator("validate_context_admission_adequacy.py")
     run_validator("validate_readiness_residual_gates.py")
+    run_validator("validate_benchmark_antigoodhart.py")
     print("Book validation passed.")
 
 
