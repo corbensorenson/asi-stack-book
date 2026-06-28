@@ -4,7 +4,7 @@ chapter_id: "claim-ledgers-and-belief-revision"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "spinoza"
   - "viea"
@@ -16,7 +16,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact source-note mappings for the core claim, and four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector/source-note mapped."
   - "Only protocol schema/fixture validation is implemented; no claim-extraction or contradiction-detection tests have been run for this chapter."
-  - "Lean coverage is limited to finite claim-update and promotion-review records; claim extraction, contradiction detection, and substantive belief revision remain unimplemented."
+  - "Lean coverage now includes finite claim-update, promotion-review, and belief-revision-record envelopes; claim extraction, contradiction detection, and substantive belief revision remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,11 +34,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat` |
 | Source loading state | passage-reviewed local raw cache: `spinoza`, `viea`, `aletheia`, `uat`; connector/source-note mapped: `coherence_exchange` |
-| Test state | Claim/belief-revision fixture validation and `AsiStackProofs.ClaimLedger` finite-record proofs are implemented; extraction and contradiction tests remain planned. |
+| Test state | Claim/belief-revision fixture validation and `AsiStackProofs.ClaimLedger` finite-record proofs are implemented, including a belief-revision record envelope; extraction and contradiction tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats claims as ledger records, not as truth because they appear in prose. The repo validates claim and belief-revision fixtures and implements narrow finite-record Lean predicates for prior-evidence/history preservation and open-contradiction promotion blocking. It does not yet run a claim extractor, contradiction detector, or automated belief-revision engine.
+This chapter treats claims as ledger records, not as truth because they appear in prose. The repo validates claim and belief-revision fixtures and implements narrow finite-record Lean predicates for prior-evidence/history preservation, promotion review, and a belief-revision record envelope. It does not yet run a claim extractor, contradiction detector, or automated belief-revision engine.
 
 Placed after Verification Bandwidth, this chapter is where adequacy records become belief-management inputs. The stack does not ask prose to remember what it implied. It writes each material claim into a record that can be supported, challenged, downgraded, split, merged, or handed to Spinoza and UAT.
 
@@ -193,7 +193,7 @@ Stale contradiction handling creates a second path to overconfidence. The ledger
 
 A claim-record schema and belief-revision transition example.
 
-Belief revision starts with the existing `claim_record` schema plus a `belief_revision_record` fixture. That record demonstrates conservative support-state handling, claim scope, surface identity, lifecycle state, contradiction state, residual refs, non-overwrite attestation, ledger effect, promotion blockers, and non-claims while leaving actual contested-claim resolution unasserted. The current Lean target is deliberately ledger-scoped: finite claim-update records, promotion reviews, preservation of prior evidence and revision-history references, and a rule that an open contradiction blocks promotion until it is resolved, bounded, or recorded as residual.
+Belief revision starts with the existing `claim_record` schema plus a `belief_revision_record` fixture. That record demonstrates conservative support-state handling, claim scope, surface identity, lifecycle state, contradiction state, residual refs, non-overwrite attestation, ledger effect, promotion blockers, and non-claims while leaving actual contested-claim resolution unasserted. The current Lean target is deliberately ledger-scoped: finite claim-update records, promotion reviews, a belief-revision record envelope, preservation of prior evidence and revision-history references, and a rule that an open contradiction blocks promotion until it is resolved, bounded, or recorded as residual.
 
 Those fixtures demonstrate record shape and conservative support-state handling. They leave three substantive questions for later machinery: whether prose extraction found the right claims, whether contradiction detection found the right conflict, and whether a substantive belief should actually change.
 
@@ -222,8 +222,8 @@ This belief-revision ledger is still proposed architecture. Do not move beyond `
 | Claim and belief-revision fixture validation | Check that claim and belief-revision fixtures match their public schemas and preserve support state, evidence refs, defeaters, uncertainty, review status, and history refs. | implemented by protocol validation; validated locally |
 | Claim extraction test | Check that prose claims can be represented separately from prose with labels, support states, and provenance. | planned; not run |
 | Contradiction detection test | Check that contradiction refs remain linked instead of being overwritten. | planned; not run |
-| Claim update preservation predicate | Check that finite claim updates preserve prior evidence and revision-history references when those references exist. | implemented in `AsiStackProofs.ClaimLedger`; builds locally |
-| Open-contradiction promotion block predicate | Check that an open contradiction blocks claim promotion until handled. | implemented in `AsiStackProofs.ClaimLedger`; builds locally |
+| Claim update and belief-revision record predicates | Check that finite claim updates preserve prior evidence and revision-history references, and that modeled belief-revision records preserve claim identity, support-state fields, revision reasons, history, and non-claim boundaries. | implemented in `AsiStackProofs.ClaimLedger`; builds locally |
+| Open-contradiction promotion block predicate | Check that an open contradiction blocks claim promotion until handled, including modeled belief-revision records that must record a blocked ledger effect. | implemented in `AsiStackProofs.ClaimLedger`; builds locally |
 | Belief revision engine test | Check that support-state updates over extracted claims preserve prior evidence and revision history. | planned; not run |
 
 Fixture-shape validation and finite-record proof predicates are implemented. The planned tests require a claim extractor, contradiction fixtures, and a transition checker that can reject unsupported promotion over real claim records.
@@ -235,7 +235,7 @@ Fixture-shape validation and finite-record proof predicates are implemented. The
 | `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | implemented |
 | `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | implemented |
 
-These proof hooks are implemented only over finite Lean claim-update and promotion-review records. `AsiStackProofs.ClaimLedger` checks that valid updates carry prior evidence and history references forward, and that an open contradiction blocks promotion. The proof does not implement claim extraction, contradiction detection, or a substantive belief-revision engine.
+These proof hooks are implemented only over finite Lean claim-update, promotion-review, and belief-revision records. `AsiStackProofs.ClaimLedger` checks that valid updates carry prior evidence and history references forward, that valid modeled revision records preserve claim identity, support-state fields, revision reasons, history, and non-claim boundaries, that accepted modeled promotions require evidence, handled contradiction state, and support-state increase, and that an open contradiction blocks promotion with a blocked ledger effect. The proof does not implement claim extraction, contradiction detection, or a substantive belief-revision engine.
 
 ## Source crosswalk
 

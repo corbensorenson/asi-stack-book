@@ -91,7 +91,7 @@ The current generated reader source now has a deterministic heuristic audit at `
 python3 scripts/audit_reader_continuity.py --write
 ```
 
-The audit currently measures 54 reader chapters, 59 generated files, 121,685 reader words, 33 active and applied reader-overlay operations, 0 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority and 3 medium-priority heuristic review chapters; the remaining queue is continuity review, not release approval.
+The audit currently measures 54 reader chapters, 59 generated files, 121,727 reader words, 33 active and applied reader-overlay operations, 0 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority and 3 medium-priority heuristic review chapters; the remaining queue is continuity review, not release approval.
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Claim Ledger and Spinoza proof follow-through
+
+- Strengthened `AsiStackProofs.ClaimLedger` with a finite `BeliefRevisionRecord` envelope and `AsiStackProofs.ProofCarryingClaims` with a finite proof-carrying-claim record envelope. The new Lean predicates check modeled claim identity, support-state fields, revision reasons, history refs, non-claim boundaries, accepted-promotion evidence requirements, open-contradiction blocking, requested proof tier, interpretation mapping, verifier artifact refs, formal scope, limitations, support-state effects, and non-promotional handling of failed/timed-out/mismatched verifier results. Updated the two affected chapters, proof artifact audit, proof adequacy review, roadmap, focus audit, and status snapshot. Both claims remain at `argument`; this does not implement claim extraction, contradiction detection, substantive belief revision, verifier integration, semantic-equivalence checking, theorem validation, citation verification, source-derived promotion, benchmark evidence, runtime behavior, reader artifacts, or release readiness.
+
 ## 2026-06-28 - v1.0 live Human view preflight hardening
 
 - Strengthened `scripts/validate_live_human_view.py` with a rendered-site preflight that fails early when `_site` is missing, incomplete, or older than the relevant source/asset inputs, and gives a direct `quarto render --to html` instruction before page-level Human-view checks run. Updated the v1.0 roadmap and Phase 7 visual review residuals accordingly. This is local validation hygiene only; it does not change chapter prose, reader overlays, evidence states, proof adequacy, benchmark results, runtime behavior, reader artifacts, or release status.

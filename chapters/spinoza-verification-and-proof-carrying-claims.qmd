@@ -4,7 +4,7 @@ chapter_id: "spinoza-verification-and-proof-carrying-claims"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-28"
 primary_sources:
   - "spinoza"
   - "genesiscode"
@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact source-note mappings for the core claim, and four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector/source-note mapped."
-  - "Only protocol schema/fixture validation is implemented; the fixture now records claim scope, justification type, interpretation confidence, verifier artifact refs, failed-attempt refs, formal scope, source refs, support-state effect, and non-claims. No proof verifier or formalization-mismatch tests have been run for this chapter."
+  - "Only protocol schema/fixture validation and finite proof-carrying-claim record predicates are implemented; the fixture now records claim scope, justification type, interpretation confidence, verifier artifact refs, failed-attempt refs, formal scope, source refs, support-state effect, and non-claims. No proof verifier or formalization-mismatch tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -33,11 +33,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm` |
 | Source loading state | passage-reviewed local raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`; connector/source-note mapped: `coherence_exchange` |
-| Test state | Proof-carrying claim fixture validation now includes claim scope, justification type, interpretation confidence, verifier artifact refs, failed-attempt refs, formal scope, source refs, support-state effect, and non-claims; `AsiStackProofs.ProofCarryingClaims` implements finite artifact-reference and failed-verifier promotion gates; verifier and formalization behavior tests remain planned. |
+| Test state | Proof-carrying claim fixture validation now includes claim scope, justification type, interpretation confidence, verifier artifact refs, failed-attempt refs, formal scope, source refs, support-state effect, and non-claims; `AsiStackProofs.ProofCarryingClaims` implements finite artifact-reference, verifier-result, scoped-effect, and failed-verifier promotion gates; verifier and formalization behavior tests remain planned. |
 
 ## Drafting guardrail
 
-Proof-carrying claims are a verification envelope, not proof that open-domain autoformalization works. The repo validates a proof-carrying claim fixture, but the fixture's verifier result is not a passed theorem or empirical validation.
+Proof-carrying claims are a verification envelope, not proof that open-domain autoformalization works. The repo validates a proof-carrying claim fixture and finite proof-carrying-claim record predicates, but the fixture's verifier result is not a passed theorem or empirical validation.
 
 After claim ledgers, the bar rises for the subset of claims that matter enough to justify proof, citation, or procedure artifacts. The bridge runs from recorded support state to the question of what must be checked before that state can improve.
 
@@ -192,7 +192,7 @@ Stale proof reuse appears after the natural-language claim has broadened beyond 
 
 A tiered proof-carrying claim schema with one non-philosophical invariant example.
 
-Spinoza-style verification begins with a `proof_carrying_claim` schema and fixture that references an existing claim, a required tier, a justification artifact, a verifier result, limitations, and a ledger update. The fixture can show a planned proof target or local validation reference without pretending a theorem exists.
+Spinoza-style verification begins with a `proof_carrying_claim` schema and fixture that references an existing claim, a required tier, a justification artifact, a verifier result, limitations, and a ledger update. The fixture can show a planned proof target or local validation reference without pretending a theorem exists. The strengthened finite Lean record adds the same boundary at proof level: requested tier, interpretation mapping, artifact refs, formal scope, limitations, support-state effect, claim-validity effect, and non-claims must be explicit before the record can be treated as valid.
 
 The proof-carrying-claim fixture checks the envelope: claim scope, tier, justification type, mapping, interpretation confidence, artifact ref, artifact validity state, semantic adequacy, verifier name, verifier result field, verifier artifact refs, failed-attempt refs, formal scope, limitations, consumer requirements, downgrade rule, claim-validity effect, residual route, tribunal ref, ledger update, source refs, support-state effect, and non-claims. It does not validate the referenced procedure, discharge a proof, or prove semantic equivalence between prose and formal target.
 
@@ -219,11 +219,11 @@ This proof-carrying-claim discipline is still a proposed support layer. Spinoza 
 | Test | Purpose | Status |
 |---|---|---|
 | Proof-carrying claim fixture validation | Check that the proof-carrying claim fixture matches the public schema and records claim scope, tier, justification type, interpretation mapping/confidence, artifact ref, verifier, result field, verifier artifacts, failed attempts, formal scope, limitations, downgrade rule, tribunal ref, ledger update, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
-| Proof artifact presence test | Check that promoted formal or verified claims carry an appropriate artifact reference. | planned; not run |
-| Tier assignment test | Check that support tiers match verifier result and limitations. | planned; not run |
+| Proof artifact presence predicate | Check that modeled formal or verified claims carry an appropriate artifact reference, and that passed verifier records carry verifier artifact refs. | implemented in `AsiStackProofs.ProofCarryingClaims`; builds locally |
+| Tier assignment test | Check that support tiers match verifier result and limitations over actual verifier outputs and interpretation examples. | planned; not run |
 | Formalization mismatch review | Check that claims with uncertain interpretation mapping route to residual or tribunal review. | planned; not run |
 
-Only fixture-shape validation is implemented. The remaining tests need actual verifier outputs, interpretation-mapping examples, and failed or mismatched cases.
+Fixture-shape validation and finite proof-carrying-claim record predicates are implemented. The remaining tests need actual verifier outputs, interpretation-mapping examples, and failed or mismatched cases.
 
 ### Formalization hooks
 
@@ -232,7 +232,7 @@ Only fixture-shape validation is implemented. The remaining tests need actual ve
 | `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaims` | A claim at a formal support tier carries a valid proof or justification artifact reference. | implemented |
 | `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over formal-tier claim reviews and failed-verifier promotion reviews. They prove only the record-level gates: a formal support tier requires a valid justification artifact reference, and a failed verifier result requires downgrade/block status while preventing promotion. They do not prove open-domain autoformalization, semantic equivalence between prose and formal target, theorem validity, citation accuracy, or verifier quality.
+These Lean hooks are implemented as finite-record predicates over formal-tier claim reviews, failed-verifier promotion reviews, and proof-carrying-claim records. They prove only the record-level gates: a formal support tier requires a valid justification artifact reference, a valid proof-carrying record preserves interpretation mapping, confidence, artifact references, formal scope, limitations, support-state effect, and non-claims, a passed verifier result requires verifier artifact references, and a failed, timed-out, or mismatched verifier result requires a non-promotional claim-validity effect. They do not prove open-domain autoformalization, semantic equivalence between prose and formal target, theorem validity, citation accuracy, or verifier quality.
 
 ## Source crosswalk
 

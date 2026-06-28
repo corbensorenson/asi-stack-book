@@ -39,4 +39,99 @@ theorem failed_verifier_result_downgrades_or_blocks_claim_promotion
   intro valid failed
   exact valid failed
 
+inductive VerifierResult where
+  | passed
+  | failed
+  | timeout
+  | mismatch
+  | notRun
+deriving DecidableEq, Repr
+
+inductive ClaimValidityEffect where
+  | scopedUpdate
+  | noUpdate
+  | downgrade
+  | block
+  | tribunal
+deriving DecidableEq, Repr
+
+def NegativeVerifierResult : VerifierResult -> Prop
+  | .failed => True
+  | .timeout => True
+  | .mismatch => True
+  | .passed => False
+  | .notRun => False
+
+def NonPromotionalEffect : ClaimValidityEffect -> Prop
+  | .scopedUpdate => False
+  | .noUpdate => True
+  | .downgrade => True
+  | .block => True
+  | .tribunal => True
+
+structure ProofCarryingClaimRecord where
+  requestedTierPresent : Bool
+  interpretationMappingPresent : Bool
+  interpretationConfidenceRecorded : Bool
+  justificationArtifactRefPresent : Bool
+  verifierArtifactRefsPresent : Bool
+  formalScopeRecorded : Bool
+  limitationsRecorded : Bool
+  supportStateEffectRecorded : Bool
+  verifierResult : VerifierResult
+  claimValidityEffect : ClaimValidityEffect
+  nonClaimsPresent : Bool
+deriving DecidableEq, Repr
+
+def ProofCarryingClaimRecordValid
+    (record : ProofCarryingClaimRecord) : Prop :=
+  record.requestedTierPresent = true ∧
+    record.interpretationMappingPresent = true ∧
+      record.interpretationConfidenceRecorded = true ∧
+        record.justificationArtifactRefPresent = true ∧
+          record.formalScopeRecorded = true ∧
+            record.limitationsRecorded = true ∧
+              record.supportStateEffectRecorded = true ∧
+                record.nonClaimsPresent = true ∧
+                  (record.verifierResult = VerifierResult.passed ->
+                    record.verifierArtifactRefsPresent = true) ∧
+                    (NegativeVerifierResult record.verifierResult ->
+                      NonPromotionalEffect record.claimValidityEffect)
+
+theorem valid_proof_carrying_claim_record_preserves_mapping_scope_limits_and_boundary
+    {record : ProofCarryingClaimRecord} :
+    ProofCarryingClaimRecordValid record ->
+    record.requestedTierPresent = true ∧
+      record.interpretationMappingPresent = true ∧
+        record.interpretationConfidenceRecorded = true ∧
+          record.justificationArtifactRefPresent = true ∧
+            record.formalScopeRecorded = true ∧
+              record.limitationsRecorded = true ∧
+                record.supportStateEffectRecorded = true ∧
+                  record.nonClaimsPresent = true := by
+  intro valid
+  exact And.intro valid.1
+    (And.intro valid.2.1
+      (And.intro valid.2.2.1
+        (And.intro valid.2.2.2.1
+          (And.intro valid.2.2.2.2.1
+            (And.intro valid.2.2.2.2.2.1
+              (And.intro valid.2.2.2.2.2.2.1 valid.2.2.2.2.2.2.2.1))))))
+
+theorem passed_verifier_result_requires_verifier_artifact_reference
+    {record : ProofCarryingClaimRecord} :
+    ProofCarryingClaimRecordValid record ->
+    record.verifierResult = VerifierResult.passed ->
+    record.verifierArtifactRefsPresent = true := by
+  intro valid passed
+  exact valid.2.2.2.2.2.2.2.2.1 passed
+
+theorem negative_verifier_result_requires_non_promotional_effect
+    {record : ProofCarryingClaimRecord} :
+    ProofCarryingClaimRecordValid record ->
+    NegativeVerifierResult record.verifierResult ->
+    NonPromotionalEffect record.claimValidityEffect := by
+  intro valid negative
+  exact valid.2.2.2.2.2.2.2.2.2 negative
+
 end AsiStackProofs.ProofCarryingClaims

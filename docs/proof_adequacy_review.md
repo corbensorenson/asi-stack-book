@@ -52,8 +52,8 @@ All 112 targets still build as narrow finite-record predicates. The review chang
 | `semantic-pages-context-cells-and-certificates` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `verification-bandwidth-and-context-adequacy` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `claim-ledgers-and-belief-revision` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
-| `spinoza-verification-and-proof-carrying-claims` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
+| `claim-ledgers-and-belief-revision` | 2 | useful but too narrow | Belief-revision record envelope added; still add extraction, contradiction, surface-sync, and substantive revision tests. |
+| `spinoza-verification-and-proof-carrying-claims` | 2 | useful but too narrow | Proof-carrying claim record envelope added; still add verifier-output, interpretation-mapping, citation/procedure, mismatch, and failed-attempt tests. |
 | `unified-adaptive-tribunal-and-adversarial-review` | 2 | needs richer state-machine or review semantics | Model lifecycle, review, timing, and adversarial states before adequacy. |
 | `labor-os-and-typed-jobs` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `artifact-graphs-audit-logs-and-replay` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
@@ -104,8 +104,16 @@ The third follow-through increment did not add Lean code. It added `python3 scri
 
 This moves `runtime-adapters-tool-permissions-and-human-approval` from `needs executable tests first` to `useful but too narrow`. The proof target remains finite-record Lean, and the harness remains synthetic fixture behavior. It still does not establish deployed adapter behavior, sandbox isolation, approval-service quality, secret-handle safety, rollback execution, real effect receipt validity, or runtime safety.
 
+### Claim Ledger And Proof-Carrying Claim Record Envelopes
+
+The fourth follow-through increment strengthened `AsiStackProofs.ClaimLedger` and `AsiStackProofs.ProofCarryingClaims` without changing proof targets or support states. `AsiStackProofs.ClaimLedger` now includes a finite `BeliefRevisionRecord`, `LedgerEffect`, and `BeliefRevisionRecordValid` envelope. The new theorems check that valid modeled revision records preserve claim identity, prior and new support-state fields, revision reasons, history references, and non-claim boundaries; that accepted modeled promotions require evidence refs, handled contradiction state, and a recorded support-state increase; and that open contradictions block promotion with a blocked ledger effect.
+
+`AsiStackProofs.ProofCarryingClaims` now includes finite verifier-result and claim-validity-effect records. The new theorems check that valid modeled proof-carrying claim records preserve requested tier, interpretation mapping, interpretation confidence, justification artifact, formal scope, limitations, support-state effect, and non-claims; that a passed modeled verifier result carries verifier artifact refs; and that failed, timed-out, or mismatched modeled verifier results require a non-promotional claim-validity effect.
+
+This keeps both `claim-ledgers-and-belief-revision` and `spinoza-verification-and-proof-carrying-claims` in the `useful but too narrow` class. The predicates are closer to the intended ledger and proof-envelope records, but they still do not implement claim extraction, contradiction detection, surface synchronization, substantive belief revision, verifier integrations, semantic-equivalence checking, citation accuracy, theorem validity, or verifier quality.
+
 ## Result
 
-The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority and Planning now have stronger finite-record envelopes, and Runtime Adapters now has a synthetic permission harness, but no increment moves a chapter support state.
+The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Authority, Planning, Claim Ledger, and Proof-Carrying Claims now have stronger finite-record envelopes, and Runtime Adapters now has a synthetic permission harness, but no increment moves a chapter support state.
 
 No Appendix C support state changes were made.

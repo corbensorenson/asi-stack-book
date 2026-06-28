@@ -176,7 +176,7 @@ Active overlay set:
 Automated continuity audit:
 
 - `python3 scripts/audit_reader_continuity.py --write` generated `docs/reader_continuity_audit.md` from a temporary reader-edition workspace.
-- The audit measures 54 reader chapters, 121,685 reader words, 33 active/applied reader-overlay operations, 0 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
+- The audit measures 54 reader chapters, 121,727 reader words, 33 active/applied reader-overlay operations, 0 table rows, 58 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
 - It identifies 0 high-priority and 3 medium-priority heuristic review chapters. The remaining rows are a triage queue for manual reader review, not defects and not evidence of release readiness.
 - The audit is not a reviewed reader release, ebook artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, runtime result, or substitute for reading the manuscript.
 - `docs/reader_continuity_review.md` records the first manual decisions for the three medium-priority rows. The two proof-heavy chapters are no-action for now with companion-note/glossary candidates, and the long Artifact Steward chapter is retained with future curated-reader compression as a possible release-editing task.
@@ -243,7 +243,7 @@ Acceptance criteria:
 
 ## Phase 4 - Proof Adequacy Review
 
-Status: initial review complete, with three follow-through increments recorded. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope, `AsiStackProofs.Planning` now includes a plan-control record envelope for modeled dispatchable, blocked, and replanned records, and Runtime Adapters now has a synthetic permission/approval/receipt harness. System Boundaries, Planning, and Runtime Adapters remain `useful but too narrow` because deployed enforcement, runtime traces, planner quality, sandbox behavior, approval-service behavior, and richer integration behavior remain unproven.
+Status: initial review complete, with four follow-through increments recorded. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope, `AsiStackProofs.Planning` now includes a plan-control record envelope for modeled dispatchable, blocked, and replanned records, `AsiStackProofs.ClaimLedger` and `AsiStackProofs.ProofCarryingClaims` now include finite ledger/proof-carrying record envelopes, and Runtime Adapters now has a synthetic permission/approval/receipt harness. System Boundaries, Planning, Claim Ledgers, Spinoza, and Runtime Adapters remain `useful but too narrow` because deployed enforcement, runtime traces, planner quality, claim extraction, contradiction detection, verifier quality, sandbox behavior, approval-service behavior, and richer integration behavior remain unproven.
 
 Purpose: distinguish "Lean build passes" from "this is the right formalization."
 

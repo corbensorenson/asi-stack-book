@@ -58,4 +58,79 @@ theorem open_contradiction_blocks_claim_promotion
   rw [openContradiction] at promoted
   exact promoted.2
 
+inductive LedgerEffect where
+  | noChange
+  | promoted
+  | downgraded
+  | split
+  | merged
+  | deprecated
+  | retired
+  | blocked
+deriving DecidableEq, Repr
+
+structure BeliefRevisionRecord where
+  claimIdentityPresent : Bool
+  priorSupportStateRecorded : Bool
+  newSupportStateRecorded : Bool
+  evidenceRefsPresent : Bool
+  revisionReasonPresent : Bool
+  historyRefsPresent : Bool
+  contradictionState : ContradictionState
+  promotionAccepted : Bool
+  supportStateIncreased : Bool
+  ledgerEffect : LedgerEffect
+  nonClaimBoundaryPresent : Bool
+deriving DecidableEq, Repr
+
+def BeliefRevisionRecordValid (record : BeliefRevisionRecord) : Prop :=
+  record.claimIdentityPresent = true ∧
+    record.priorSupportStateRecorded = true ∧
+      record.newSupportStateRecorded = true ∧
+        record.revisionReasonPresent = true ∧
+          record.historyRefsPresent = true ∧
+            record.nonClaimBoundaryPresent = true ∧
+              (record.promotionAccepted = true ->
+                record.evidenceRefsPresent = true ∧
+                  ContradictionHandled record.contradictionState ∧
+                    record.supportStateIncreased = true) ∧
+                (record.contradictionState = ContradictionState.open ->
+                  record.promotionAccepted = false ∧
+                    record.ledgerEffect = LedgerEffect.blocked)
+
+theorem valid_belief_revision_record_preserves_identity_history_and_boundary
+    {record : BeliefRevisionRecord} :
+    BeliefRevisionRecordValid record ->
+    record.claimIdentityPresent = true ∧
+      record.priorSupportStateRecorded = true ∧
+        record.newSupportStateRecorded = true ∧
+          record.revisionReasonPresent = true ∧
+            record.historyRefsPresent = true ∧
+              record.nonClaimBoundaryPresent = true := by
+  intro valid
+  exact And.intro valid.1
+    (And.intro valid.2.1
+      (And.intro valid.2.2.1
+        (And.intro valid.2.2.2.1
+          (And.intro valid.2.2.2.2.1 valid.2.2.2.2.2.1))))
+
+theorem accepted_belief_revision_promotion_requires_evidence_handled_contradiction_and_increase
+    {record : BeliefRevisionRecord} :
+    BeliefRevisionRecordValid record ->
+    record.promotionAccepted = true ->
+    record.evidenceRefsPresent = true ∧
+      ContradictionHandled record.contradictionState ∧
+        record.supportStateIncreased = true := by
+  intro valid promoted
+  exact valid.2.2.2.2.2.2.1 promoted
+
+theorem open_contradiction_blocks_belief_revision_promotion
+    {record : BeliefRevisionRecord} :
+    BeliefRevisionRecordValid record ->
+    record.contradictionState = ContradictionState.open ->
+    record.promotionAccepted = false ∧
+      record.ledgerEffect = LedgerEffect.blocked := by
+  intro valid openContradiction
+  exact valid.2.2.2.2.2.2.2 openContradiction
+
 end AsiStackProofs.ClaimLedger
