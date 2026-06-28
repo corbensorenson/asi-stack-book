@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Phase 4 proof adequacy review
+
+- Added `docs/proof_adequacy_review.md`, classifying all 112 implemented Lean targets by adequacy rather than mere build success: 8 adequate only as narrow finite-record invariants, 26 useful-but-too-narrow, 20 needing richer state-machine or review semantics, 42 needing executable tests first, 10 needing empirical or baseline tests first, and 6 remaining research-agenda until artifact import. Updated the roadmap, repo map, and v1.0 status snapshot while leaving `proofs/proof_triage.json`, Lean code, Appendix E, and Appendix C unchanged because no stronger operational predicate or support-state movement was justified. No broad proof, safety guarantee, runtime result, benchmark result, proof adequacy promotion, reader artifact, ebook, document, PDF, or audio artifact is claimed.
+
 ## 2026-06-28 - v1.0 Phase 3 evidence-transition pilot
 
 - Added the first v1.0 evidence-transition pilot with four machine-readable no-change records under `evidence_transitions/v1_0_pilot/`, a public summary in `docs/evidence_transition_pilot.md`, and `scripts/validate_evidence_transitions.py` wired into `scripts/validate_book.py`. The pilot reviewed narrow book-method claims for evidence-state discipline, living-book methodology, Lean proof-envelope wiring, and bibliography/research-agenda mechanics, then kept all four at `argument` because semantic source adequacy, proof adequacy, behavior tests, external literature normalization, independent review, and release records remain insufficient for upward support-state movement. No Appendix C support state changed; no AI capability, safety property, benchmark result, runtime result, proof adequacy result, reader artifact, ebook, document, PDF, or audio artifact is claimed.

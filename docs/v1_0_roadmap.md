@@ -153,16 +153,16 @@ Acceptance criteria:
 
 ## Phase 4 - Proof Adequacy Review
 
-Status: planned.
+Status: initial review complete. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving the existing Lean code and support-state boundaries.
 
 Purpose: distinguish "Lean build passes" from "this is the right formalization."
 
 Tasks:
 
-1. Review all 112 Lean proof targets.
-2. Classify each target as adequate finite-record invariant, useful-but-too-narrow, needs richer state-machine semantics, needs executable tests first, or should remain research agenda.
-3. Update `proofs/proof_triage.json`, `docs/proof_artifact_audit.md`, chapters, and Appendix E only where the review justifies it.
-4. Add or revise Lean code only where a stronger operational predicate is clear.
+1. Review all 112 Lean proof targets. Initial review completed in `docs/proof_adequacy_review.md`.
+2. Classify each target as adequate finite-record invariant, useful-but-too-narrow, needs richer state-machine semantics, needs executable tests first, or should remain research agenda. Initial target counts: 8 adequate finite-record, 26 useful-but-too-narrow, 20 richer-semantics-needed, 42 executable-tests-needed, 10 empirical/baseline-tests-needed, and 6 research-agenda-until-artifact-import.
+3. Update `proofs/proof_triage.json`, `docs/proof_artifact_audit.md`, chapters, and Appendix E only where the review justifies it. No proof triage, Lean, chapter, or Appendix E change was made because the review did not identify a stronger predicate that should replace the current finite-record layer yet.
+4. Add or revise Lean code only where a stronger operational predicate is clear. No new Lean code was added in this pass.
 
 Acceptance criteria:
 
