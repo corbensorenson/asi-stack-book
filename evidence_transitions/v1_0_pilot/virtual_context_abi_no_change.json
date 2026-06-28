@@ -1,0 +1,113 @@
+{
+  "transition_id": "v1_0_pilot.virtual_context_abi.no_change",
+  "claim_id": "virtual-context-abi.core",
+  "claim_surface_refs": [
+    "chapters/virtual-context-abi.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/context_admission_adequacy_harness.md",
+    "docs/external_literature_backfill_phase6.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/context_abi_record.schema.json",
+    "schemas/context_packet.schema.json",
+    "experiments/context_admission_adequacy/results/2026-06-28-local.md"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic context-record gate behavior and external context-management vocabulary only; no VCM resolver, context compiler, memory-store behavior, model-facing context run, summary-fidelity result, or context-adequacy benchmark is promoted",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "source_inventory",
+    "source_notes",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has exact source mappings for the Virtual Context ABI claim, public schemas for context ABI and context packet records, a synthetic context admission/adequacy harness with valid and expected-invalid fixtures, and external source notes for RAG, Lost in the Middle, MemGPT, LongBench, and RULER. Those artifacts support the design discipline around admission/adequacy separation, stale certificate rejection, conflict blocking, deletion closure, escalation, and mode-confusion prevention, but they do not establish VCM resolver behavior, context compiler behavior, memory-store correctness, summary fidelity, contradiction-rate performance, distractor resistance, model verification bandwidth, or runtime context adequacy.",
+  "required_artifacts": [
+    "VCM resolver trace with admitted, rejected, stale, and conflict-bearing context requests",
+    "context compiler or memory-store behavior test with source provenance and taint propagation",
+    "summary-fidelity and omission-accounting tests for lossy context packets",
+    "long-context adequacy benchmark run with distractor and position-sensitivity controls",
+    "runtime context transaction replay with deletion closure and snapshot invariants",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/context_admission_adequacy_harness.md",
+    "scripts/validate_context_admission_adequacy.py",
+    "experiments/context_admission_adequacy/results/2026-06-28-local.md",
+    "schemas/context_abi_record.schema.json",
+    "schemas/context_packet.schema.json",
+    "sources/source_notes/ext_rag_2020.md",
+    "sources/source_notes/ext_lost_in_middle_2023.md",
+    "sources/source_notes/ext_memgpt_2023.md",
+    "sources/source_notes/ext_longbench_2023.md",
+    "sources/source_notes/ext_ruler_2024.md"
+  ],
+  "evidence_packet_refs": [
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/external_literature_backfill_phase6.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#virtual-context-abi.core",
+    "docs/source_evidence_audit.md#virtual-context-abi.core"
+  ],
+  "verification_command": "python3 scripts/validate_context_admission_adequacy.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_source_notes.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Virtual Context ABI remains at argument",
+    "context admission/adequacy fixtures are synthetic",
+    "external context sources are comparison vocabulary only",
+    "VCM resolver, context compiler, memory-store behavior, summary fidelity, and long-context adequacy benchmarks are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/virtual-context-abi.qmd",
+    "docs/context_admission_adequacy_harness.md",
+    "docs/v1_0_candidate_status.md",
+    "sources/source_notes/ext_memgpt_2023.md",
+    "sources/source_notes/ext_longbench_2023.md",
+    "sources/source_notes/ext_ruler_2024.md"
+  ],
+  "downgrade_triggers": [
+    "context admission/adequacy harness failure",
+    "context schema drift",
+    "source-note/source-inventory mismatch",
+    "claim text interpreted as resolver or model-facing context evidence",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the specific synthetic record-gate behavior that passed, or after resolver traces, context compiler behavior, memory-store correctness, summary-fidelity tests, long-context adequacy benchmarks, and source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove deployed VCM behavior",
+    "schemas validate record shape rather than resolver semantics",
+    "external context literature is not a local reproduction or context adequacy result",
+    "no independent context-system or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent context-system, benchmark, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no VCM resolver trace",
+    "no context compiler behavior test",
+    "no summary-fidelity benchmark",
+    "no long-context adequacy benchmark run",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-virtual-context-abi-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Virtual Context ABI above argument",
+    "does not prove VCM resolver behavior",
+    "does not prove context compiler correctness",
+    "does not prove memory-store correctness",
+    "does not prove summary fidelity",
+    "does not prove long-context adequacy or model verification bandwidth"
+  ]
+}
