@@ -984,6 +984,47 @@
     "citation_label": "Lamport, My TLA+ Home Page"
   },
   {
+    "id": "ext_lean4_theorem_proving",
+    "title": "Theorem Proving in Lean 4",
+    "priority": "external_literature",
+    "layer": "formal_methods_proof_assistant",
+    "chapter_targets": ["executable-specifications-and-lean-proof-envelope", "circle-calculus-and-proof-carrying-ai-contracts", "spinoza-verification-and-proof-carrying-claims", "open-research-agenda-and-bibliography-plan"],
+    "url": "https://lean-lang.org/theorem_proving_in_lean4/",
+    "notes": "Official Lean theorem-proving text for dependent type theory, propositions, proofs, tactics, inductive types, structures, records, and axioms/computation boundaries.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "Lean 4.26.0 version noted",
+    "citation_label": "Avigad et al., Theorem Proving in Lean 4"
+  },
+  {
+    "id": "ext_dafny_2010",
+    "title": "Dafny: An Automatic Program Verifier For Functional Correctness",
+    "priority": "external_literature",
+    "layer": "formal_methods_program_verification",
+    "chapter_targets": ["executable-specifications-and-lean-proof-envelope", "command-contracts-and-semantic-interfaces", "runtime-adapters-tool-permissions-and-human-approval", "prototype-roadmap"],
+    "url": "https://www.microsoft.com/en-us/research/publication/dafny-automatic-program-verifier-functional-correctness/",
+    "notes": "External program-verification source for specification-oriented programming, functional-correctness verification, SMT-backed automation, and contract/verifier boundaries.",
+    "source_type": "conference_paper",
+    "published": "2010-04",
+    "updated": "",
+    "citation_label": "Leino (2010), Dafny"
+  },
+  {
+    "id": "ext_reluplex_2017",
+    "title": "Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks",
+    "priority": "external_literature",
+    "layer": "ai_formal_verification",
+    "chapter_targets": ["verification-bandwidth-and-context-adequacy", "executable-specifications-and-lean-proof-envelope", "benchmark-ratchets-and-anti-goodhart-evidence", "simulation-fidelity-and-physical-constraints"],
+    "url": "https://arxiv.org/abs/1702.01135",
+    "notes": "External AI formal-verification source for SMT-style verification of ReLU neural networks, counterexamples, safety-critical properties, and ACAS Xu evaluation boundaries.",
+    "source_type": "arxiv",
+    "arxiv_id": "1702.01135",
+    "published": "2017-02-03",
+    "updated": "2017-05-19",
+    "citation_label": "Katz et al. (2017), Reluplex",
+    "doi": "10.48550/arXiv.1702.01135"
+  },
+  {
     "id": "ext_sparse_moe_2017",
     "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
     "priority": "external_literature",

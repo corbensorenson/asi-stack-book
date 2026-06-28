@@ -31,6 +31,9 @@ literature coverage.
 | `ext_ruler_2024` | long-context evaluation | Synthetic long-context stress testing beyond simple needle retrieval, including multi-needle, tracing, and aggregation tasks. |
 | `ext_proof_carrying_code_1997` | formal methods | Proof-carrying artifacts and consumer-side proof checking against a policy. |
 | `ext_tla_plus_home_docs` | formal methods | System specification and model-checking vocabulary for concurrent and distributed systems. |
+| `ext_lean4_theorem_proving` | proof assistants | Lean theorem-proving vocabulary, dependent type theory, tactics, records, inductive types, and proof-term boundaries. |
+| `ext_dafny_2010` | program verification | Specification-oriented programming, functional-correctness verification, SMT-backed automation, and contract/verifier boundaries. |
+| `ext_reluplex_2017` | AI formal verification | Property-specific verification for ReLU neural networks, counterexamples, safety-critical property scope, and ACAS Xu evaluation boundaries. |
 | `ext_sparse_moe_2017` | routing/MoE | Sparsely gated expert layers, conditional computation, and load-balancing limits. |
 | `ext_gshard_2020` | routing/MoE | Conditional computation with automatic sharding and distributed sparse-model constraints. |
 | `ext_switch_transformer_2021` | routing/MoE | Simplified sparse expert routing, stability, communication, and speed/scale boundaries. |
@@ -47,7 +50,8 @@ literature coverage.
 - Generated Appendix H can now list initial source-noted records for all Phase 6 priority queues.
 - The planning queue now has initial source-noted coverage for interleaved reasoning/acting, tree search, planning-language interfaces, HTN decomposition, and task-and-motion planning.
 - The retrieval/context queue now has initial source-noted coverage for RAG, long-context position sensitivity, virtual context management, multitask long-context evaluation, and synthetic context-size stress tests.
-- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, or test results changed.
+- The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, and Reluplex-style neural-network property checking.
+- No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, proof-assistant imports, verifier runs, or test results changed.
 
 ## Non-Claims
 
@@ -62,7 +66,7 @@ literature coverage.
 
 1. Deepen planning coverage with behavior trees, GOAP, broader agent-orchestration sources, and any PlanForge-specific planning-language translation references that become necessary.
 2. Deepen retrieval/context coverage with MemGPT-adjacent memory-system follow-ups, context-engineering surveys, provenance-aware RAG, context compression/evaluation, and VCM-specific adapter references.
-3. Deepen formal-methods coverage with runtime assurance, proof-assistant, and contract-verification sources.
+3. Deepen formal-methods coverage with runtime assurance, proof-assistant adequacy literature, model checking in deployment workflows, and contract-verification sources tied to ASI Stack protocol artifacts.
 4. Deepen routing coverage with modern LLM MoE surveys, router evaluation, and modular-agent orchestration sources.
 5. Deepen compression coverage with program synthesis, quantization, distillation, residual coding, and artifact-utility sources.
 6. Deepen benchmark-science coverage with contamination, hidden-test, saturation, and evaluation-gaming sources.
