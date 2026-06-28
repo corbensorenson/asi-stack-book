@@ -49,6 +49,9 @@ literature coverage.
 | `ext_expert_choice_routing_2022` | routing/MoE | Expert-choice routing, token/expert assignment direction, load-balancing pressure, expert capacity, and convergence/performance boundaries. |
 | `ext_mixtral_2024` | routing/MoE | Sparse LLM token-level expert routing, active-parameter accounting, open model release boundaries, and benchmark-claim limits. |
 | `ext_moe_llm_survey_2024` | routing/MoE survey | LLM MoE taxonomy, algorithmic/systemic design issues, implementation patterns, evaluation practice, and open directions. |
+| `ext_frugalgpt_2023` | routing/task cascades | Prompt adaptation, model approximation, LLM cascades, cost/performance tradeoffs, and query-specific model selection. |
+| `ext_hybrid_llm_2024` | routing/cost-quality | Predicted query difficulty, small/large model routing, dynamic quality-cost tradeoffs, and large-model-call reduction. |
+| `ext_routellm_2024` | routing/learned routers | Preference-data routers, stronger/weaker LLM selection, cost-quality tradeoffs, and model-pair transfer boundaries. |
 | `ext_deep_compression_2015` | compression/representation | Pruning, trained quantization, coding, and utility-preservation boundaries. |
 | `ext_lora_2021` | compression/representation | Low-rank adaptation, parameter-efficient updates, and adaptation-boundary vocabulary. |
 | `ext_knowledge_distillation_2015` | compression/distillation | Teacher/student distillation, soft-target transfer, ensemble compression, and behavior-transfer limits. |
@@ -69,7 +72,7 @@ literature coverage.
 - The planning queue now has initial source-noted coverage for interleaved reasoning/acting, tree search, planning-language interfaces, HTN decomposition, task-and-motion planning, behavior trees, GOAP/F.E.A.R.-style game planning, and AutoGen-style multi-agent orchestration.
 - The retrieval/context queue now has initial source-noted coverage for RAG, long-context position sensitivity, virtual context management, multitask long-context evaluation, synthetic context-size stress tests, citation-quality evaluation, adaptive retrieval/reflection, and long-context prompt compression.
 - The formal-methods queue now has initial source-noted coverage for proof-carrying artifacts, TLA+ system modeling, Lean proof-assistant practice, Dafny-style program verification, Reluplex-style neural-network property checking, runtime assurance, generated runtime monitors, and probabilistic model checking.
-- The routing/MoE queue now has initial source-noted coverage for sparsely gated MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, and MoE-in-LLMs survey taxonomy.
+- The routing/MoE queue now has initial source-noted coverage for sparsely gated MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, MoE-in-LLMs survey taxonomy, LLM cascades, quality-aware query routing, and learned route policies.
 - The compression/representation queue now has initial source-noted coverage for pruning/quantization/coding, low-rank adaptation, knowledge distillation, GPTQ-style post-training quantization, and QLoRA-style quantized finetuning.
 - The benchmark-science queue now has initial source-noted coverage for broad multitask benchmarks, community benchmark collections, holistic evaluation, expert hard-question oversight, real-world software issue resolution, and contamination-limited living benchmarks.
 - No chapter source assignments, Appendix C support states, evidence transitions, proof targets, planner runs, motion-planning runs, context-management runs, long-context benchmark runs, proof-assistant imports, verifier runs, MoE training runs, model inference runs, compression experiments, finetuning runs, benchmark runs, or test results changed.
@@ -88,6 +91,6 @@ literature coverage.
 1. Deepen planning coverage with PlanForge-specific planning-language translation references, planner/runtime-adapter comparison records, and any additional orchestration sources needed after chapter-level review.
 2. Deepen retrieval/context coverage with MemGPT-adjacent memory-system follow-ups, context-engineering surveys, VCM-specific adapter references, and any additional provenance/compression sources needed after chapter-level review.
 3. Deepen formal-methods coverage with proof-assistant adequacy literature, ASI Stack protocol-verification sources, and any additional deployment model-checking references needed after chapter-level review.
-4. Deepen routing coverage with router evaluation, modular-agent orchestration, task-level routing, and governance-aware route-selection sources.
+4. Deepen routing coverage with governance-aware route-selection sources, routing-specific modular-agent orchestration, and any additional model/system routing comparisons needed after chapter-level review.
 5. Deepen compression coverage with program synthesis, residual coding, artifact-utility metrics, compression-regression testing, and representation-learning sources.
 6. Deepen benchmark-science coverage with hidden-test operations, saturation analysis, contamination audits, benchmark-gaming/evaluator-gaming sources, and release-grade benchmark governance.

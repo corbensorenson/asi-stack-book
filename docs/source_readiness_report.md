@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 87
+- `source_note_available_uncached`: 90
 
 ## Records
 
@@ -111,6 +111,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_expert_choice_routing_2022` | Mixture-of-Experts with Expert Choice Routing | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_mixtral_2024` | Mixtral of Experts | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_moe_llm_survey_2024` | A Survey on Mixture of Experts in Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_frugalgpt_2023` | FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_hybrid_llm_2024` | Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_routellm_2024` | RouteLLM: Learning to Route LLMs with Preference Data | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_deep_compression_2015` | Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_lora_2021` | LoRA: Low-Rank Adaptation of Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_knowledge_distillation_2015` | Distilling the Knowledge in a Neural Network | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
