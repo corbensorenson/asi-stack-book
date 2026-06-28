@@ -106,23 +106,41 @@ This follow-up hardens rendered-site readability for long inline paths and
 commands. It is not an accessibility certification, reader-release review,
 ebook layout review, or claim-evidence promotion.
 
+## Fast Generation Diagram Split Follow-up
+
+The fast-generation mechanism diagram was split into two smaller Mermaid
+diagrams so the chapter no longer asks one graph to carry mode selection,
+verification, fallback, accounting, and promotion at once.
+
+- The selector diagram now covers task risk, context, budget, mode family, and
+  proposed-span handoff.
+- The acceptance/accounting diagram now covers verifier outcome, fallback,
+  rejected-work accounting, Talos artifactization, Benchmaxxing records, and SCF
+  promotion review.
+- `python3 scripts/validate_visual_coverage.py` passed after the split.
+- The chapter corpus now has 59 Mermaid diagrams across 54 manifest chapters.
+
+This is a readability improvement only. It does not change Fast Generation's
+support state, prove speed-quality performance, approve a reader artifact, or
+claim model/runtime behavior.
+
 ## Diagram Audit
 
-The chapter corpus currently has 58 Mermaid diagrams across 54 manifest
+The chapter corpus currently has 59 Mermaid diagrams across 54 manifest
 chapters. The largest chapter diagrams by non-comment Mermaid line count were:
 
 | Diagram | Lines | Edges | Initial assessment |
 |---|---:|---:|---|
 | `chapters/asi-is-a-stack-not-a-model.qmd` diagram 1 | 27 | 12 | Dense but still within readable range for an overview architecture diagram. |
-| `chapters/fast-generation-architectures.qmd` diagram 1 | 23 | 22 | Edge-dense; desktop readable; mobile readability improved by contained Mermaid scrolling. Keep on the watch list for future split if reader release review still finds it overloaded. |
 | `chapters/integrated-reference-architecture.qmd` diagram 1 | 20 | 10 | Appropriate for integrated stack closure. |
 | `chapters/recursive-self-improvement-boundaries.qmd` diagram 1 | 18 | 17 | Edge-dense but aligned with boundary/gate semantics; mobile readability improved by contained Mermaid scrolling. |
 | `chapters/moral-uncertainty-and-value-conflict.qmd` diagram 1 | 18 | 17 | Edge-dense but still readable as a conflict lifecycle; acceptable after mobile scroll-container review. |
+| `chapters/fast-generation-architectures.qmd` diagrams 1 and 2 | 16 and 9 | 15 and 8 | Split into selector and acceptance/accounting diagrams; no longer a single edge-dense mechanism graph. |
 
 No diagram failed the automated visual-coverage gate. The next visual pass
-should revisit the fast-generation and recursive-improvement diagrams during
-reader-release review and split either diagram only if the scrollable mobile
-presentation still feels too dense.
+should revisit the recursive-improvement diagram during reader-release review
+and revisit Fast Generation only if the split presentation still feels too
+dense in e-reader or reader-release review.
 
 ## Mobile Diagram Screenshot Review
 
@@ -182,9 +200,10 @@ garbage and the Phase 7 goal is site readiness, not repository compaction.
 
 ## Remaining Phase 7 Work
 
-- Optional visual refinement or splitting of the fast-generation and
-  recursive-improvement diagrams if reader-release review still finds them too
-  crowded despite contained mobile scrolling.
+- Optional visual refinement or splitting of the recursive-improvement diagram
+  if reader-release review still finds it too crowded despite contained mobile
+  scrolling; the fast-generation mechanism has already been split into selector
+  and acceptance/accounting diagrams.
 - Optional appendix table style review if future source growth introduces
   horizontal overflow; the current source-growth and inline-code probes found
   zero page-level overflow on Appendices A, C, F, H, and K at desktop/mobile

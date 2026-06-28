@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Fast Generation diagram split
+
+- Split the dense Fast Generation mechanism Mermaid diagram into two smaller diagrams: a generation-mode selector and an acceptance/accounting path. Updated the walkthrough prose, Phase 7 site/visual review, v1.0 roadmap, and focus audit; `python3 scripts/validate_visual_coverage.py` now validates 59 chapter diagrams across the 54 manifest chapters. This is a readability and reader-release preparation improvement only; it does not change support states, prove speed-quality performance, produce a model benchmark, create a reader artifact, or approve any release format.
+
 ## 2026-06-28 - v1.0 Fast Generation proof-adequacy boundary alignment
 
 - Updated `docs/proof_adequacy_review.md`, `docs/v1_0_focus_audit.md`, and `docs/v1_0_roadmap.md` to record the generation-mode baseline harness as a proof-adequacy follow-through that does not change Fast Generation's adequacy class. The chapter remains in `needs empirical or baseline tests first`: the deterministic fixtures define the record shape future model runs must satisfy, but do not run an autoregressive baseline, speculative decoder, diffusion generator, early-exit model, state-space model, KV-cache serving path, or router-selected generation mode. This is boundary documentation only; it creates no support-state promotion, proof result, model-quality result, speed result, useful-solution-per-second result, benchmark result, runtime result, reader artifact, or release artifact.

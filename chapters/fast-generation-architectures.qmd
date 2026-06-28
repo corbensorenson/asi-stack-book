@@ -136,7 +136,7 @@ Fast generation is the time-domain version of compact generation. The system is 
 
 The generation-mode record is therefore a compression receipt for time. It records what the fast path proposed, what the verifier accepted, what work was rejected or repaired, what fallback ran, and whether the useful solution per second improved after the whole route was counted.
 
-The operational boundary is mode selection around a draft-verify-accept loop.
+The operational boundary starts with mode selection around a draft-verify-accept loop.
 
 ```{mermaid}
 flowchart LR
@@ -154,7 +154,15 @@ flowchart LR
   H -- "proposes span" --> K
   I -- "proposes span" --> K
   J -- "proposes span" --> K
-  K -- "must satisfy" --> L["Verifier and acceptance predicate"]
+  K -- "handoff" --> L["Verifier and acceptance predicate"]
+```
+
+The second boundary decides whether the proposed span becomes useful work,
+fallback work, or evidence against the route.
+
+```{mermaid}
+flowchart LR
+  K["Draft tokens or artifact span"] --> L["Verifier and acceptance predicate"]
   L -- "passes predicate" --> M["Accepted verified output"]
   L -- "fails or partial" --> N["Fallback, repair, or slower mode"]
   M -- "accepted artifact" --> O["Talos artifact"]
@@ -164,7 +172,7 @@ flowchart LR
   R -- "promotion review" --> Q["SCF promotion gate"]
 ```
 
-**What the generation mode selector shows:** The selector compares generation modes by accepted, verified work rather than proposed tokens alone. Rejected spans, verifier cost, fallback, repair, memory pressure, and promotion review stay in the accounting so speed cannot bypass the quality and evidence gates.
+**What the generation mode split shows:** The selector compares generation modes by task, risk, context, latency, compute, and memory. The acceptance diagram then compares modes by accepted, verified work rather than proposed tokens alone. Rejected spans, verifier cost, fallback, repair, memory pressure, and promotion review stay in the accounting so speed cannot bypass the quality and evidence gates.
 
 The mode selector chooses among autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, and hybrid routes by task requirements, risk tier, latency budget, context shape, memory pressure, and verifier availability. The route records proposed output separately from accepted output, sends the VCM packet into the selected generator, routes accepted spans through Spinoza, Talos, Benchmaxxing, and SCF gates, and keeps multi-seed diffusion or hybrid AR/MTP/diffusion ideas as research hypotheses until source-specific experiments or stronger evidence transitions exist.
 
