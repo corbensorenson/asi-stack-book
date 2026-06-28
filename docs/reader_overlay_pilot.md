@@ -1,23 +1,32 @@
-# Reader Overlay Pilot
+# Reader Overlay Log
 
 Last updated: 2026-06-28
 
-This note records the first active v1.0 semantic reader-overlay pilot. It is a reader-prose control record, not a reader release record.
+This note records the active v1.0 semantic reader-overlay work. It is a reader-prose control record, not a reader release record.
 
 ## Scope
 
-The pilot adds two active operations under `editions/reader_overlays/v1_0/chapters/asi-is-a-stack-not-a-model.json`:
+The initial pilot added two active operations under `editions/reader_overlays/v1_0/chapters/asi-is-a-stack-not-a-model.json`:
 
 - `v1_0.asi_stack_not_model.problem_reader_replace` replaces the generated-reader and live Human-view `Problem` section for `chapters/asi-is-a-stack-not-a-model.qmd`.
 - `v1_0.asi_stack_not_model.summary_reader_replace` replaces the generated-reader and live Human-view `Summary` section for the same chapter.
 
+The next reader-continuity pass added four active operations under `editions/reader_overlays/v1_0/chapters/personal-compute-hives-and-federated-edge-intelligence.json`:
+
+- `v1_0.personal_compute_hives.owned_substrate_reader_replace` replaces the generated-reader and live Human-view `Owned substrate and device roles` section.
+- `v1_0.personal_compute_hives.hive_objects_reader_replace` replaces the generated-reader and live Human-view `Hive objects` section.
+- `v1_0.personal_compute_hives.job_classes_reader_replace` replaces the generated-reader and live Human-view `Job classes and federation modes` section.
+- `v1_0.personal_compute_hives.hive_memory_reader_replace` replaces the generated-reader and live Human-view `Hive memory` section.
+
 The canonical chapter source remains unchanged. AI view keeps the original live/research prose, source mappings, claim labels, support state, proof hooks, test-plan surface, and source crosswalk. Human view and generated reader editions receive the reader-only section prose through the same tracked overlay payload.
 
-## Why This Pilot Exists
+## Why These Overlays Exist
 
-The v1.0 roadmap allows the normal reader edition to diverge from the AI/research source for pacing, prose flow, and relaxed reading, while keeping the live book canonical for claims, support states, source boundaries, proof/test status, implementation horizons, and release records. This pilot exercises that path on the opening chapter before scaling chapter-by-chapter reader editing.
+The v1.0 roadmap allows the normal reader edition to diverge from the AI/research source for pacing, prose flow, and relaxed reading, while keeping the live book canonical for claims, support states, source boundaries, proof/test status, implementation horizons, and release records. These overlays exercise that path on the opening chapter and on the first table-heavy reader-continuity target before scaling chapter-by-chapter reader editing.
 
 The opening chapter is a good pilot because it has high reader-framing value and low claim risk. The overlay does not change the core claim. It rewrites the first problem statement and closing summary into calmer book prose so the Human view can begin as a readable book while the AI/research view remains a full architecture workbench.
+
+The Personal Compute Hives overlays convert four dense generated-reader tables into narrative prose while preserving the canonical AI/research tables in the live source. They reduce the generated reader manuscript's table load without claiming that the hive scheduler, federation protocol, approval path, or memory topology has been implemented.
 
 ## Review Contract
 
@@ -27,13 +36,13 @@ For live-site review, `assets/reader-overlays.html` should be regenerated from t
 
 ## Local Validation
 
-Current local results for this pilot:
+Current local results for this overlay set:
 
-- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 2 active operations.
-- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 2 active and 2 applied operations.
-- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 2 active operations.
-- `python3 scripts/validate_reader_overlays.py --check` passed with 2 active operations and 2 applied operations.
-- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 2 reader overlay operations applied.
+- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 6 active operations.
+- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 6 active and 6 applied operations.
+- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 6 active operations.
+- `python3 scripts/validate_reader_overlays.py --check` passed with 6 active operations and 6 applied operations.
+- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 6 reader overlay operations applied.
 - `python3 scripts/validate_reader_spine.py --check` passed for 54 chapters, with minimum reader-spine length 1,957 words.
 - `python3 scripts/validate_reader_evidence_boundaries.py --check` passed for 54 chapters.
 - `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html` completed and wrote `_site/index.html`.

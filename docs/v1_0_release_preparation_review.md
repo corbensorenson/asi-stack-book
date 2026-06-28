@@ -5,8 +5,8 @@ Last updated: 2026-06-28
 This review records a Phase 8 preparation pass for major-version reader, ebook,
 document, PDF, and audio packaging. It does not create a release and does not
 claim that any human-edition artifact is ready for publication. It was updated
-after the first reader-overlay pilot so the current overlay state is not
-mistaken for a released reader manuscript.
+after the opening-chapter and Personal Compute Hives reader overlays so the
+current overlay state is not mistaken for a released reader manuscript.
 
 ## Commands Run
 
@@ -26,11 +26,11 @@ Results:
 - Reader spine validation passed for 54 chapters, with minimum reader-spine
   chapter length 1,957 words.
 - Reader evidence-boundary validation passed for 54 chapters.
-- Reader overlay validation now passes with 2 active operations and 2 applied
-  operations. The opening-chapter reader overlay pilot is recorded separately in
+- Reader overlay validation now passes with 6 active operations and 6 applied
+  operations. The reader overlay log is recorded separately in
   `docs/reader_overlay_pilot.md`.
 - Reader edition check passed for 54 chapters and 59 files; 275 live-only
-  sections would be removed, 60 reader scaffold terms would be humanized, and 2
+  sections would be removed, 60 reader scaffold terms would be humanized, and 6
   reader overlay operations would apply.
 - Reader format render check passed for target formats `html`, `epub`, and
   `docx` as a readiness check.
@@ -43,8 +43,8 @@ Results:
   release, ebook release, document release, PDF release, or audiobook release.
 - Generated reader and audio workspaces under `build/` are ignored review
   workspaces, not durable release artifacts.
-- The v1.0 reader overlay manifest now has the opening-chapter pilot
-  operations. They are reader-only semantic deltas, not a reviewed reader
+- The v1.0 reader overlay set now has opening-chapter and Personal Compute
+  Hives operations. They are reader-only semantic deltas, not a reviewed reader
   release.
 
 ## Blockers Before Major-Version Packaging
