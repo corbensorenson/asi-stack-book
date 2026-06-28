@@ -116,7 +116,7 @@ python3 scripts/sync_reader_chapter_review_matrix.py --write
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
 
-The current matrix records 54 manifest-aligned chapter rows: 50 `reviewed`
+The current matrix records 54 manifest-aligned chapter rows: 54 `reviewed`
 rows from `docs/reader_opening_full_review_pass.md`,
 `docs/reader_boundary_full_review_pass.md`, and
 `docs/reader_normative_full_review_pass.md`, and
@@ -129,31 +129,30 @@ rows from `docs/reader_opening_full_review_pass.md`,
 `docs/reader_part_iii_compression_full_review_pass.md`,
 `docs/reader_part_iii_representation_full_review_pass.md`,
 `docs/reader_part_iii_iv_proof_bridge_full_review_pass.md`, and
-`docs/reader_part_iv_evidence_governance_full_review_pass.md`, with 4 `spot_checked`
-rows from this baseline, the medium-priority review, and the first Part II,
-Part III, and Part IV review passes. It has 0 `not_started` rows, 20 chapters
-with active reader overlays, 53 no-immediate-action decisions, 3 companion-note
+`docs/reader_part_iv_evidence_governance_full_review_pass.md`, and
+`docs/reader_part_iv_completion_full_review_pass.md`. It has 0 `spot_checked`
+rows, 0 `not_started` rows, 20 chapters with active reader overlays, 54 no-immediate-action decisions, 3 companion-note
 candidates, and 1 curated-manuscript candidate. The reviewed rows have cleared
 the `full_chapter_review_not_recorded` blocker, but all rows still retain
 release blockers until reader release records and format artifact review exist.
-The matrix is a review queue and release-control surface, not a reviewed reader
-manuscript.
+The matrix is a chapter-text review queue and release-control surface, not a
+reader release or format-artifact approval.
 
 ## Residuals
 
-- The generated manuscript has not received a full 54-chapter human continuity review. All 14 Part I chapters, all 16 Part II chapters, and all 15 Part III chapters and the first five Part IV chapters now have full chapter-text review records, while the remaining 4 chapters remain spot-checked. The manuscript is mechanically valid, not release-reviewed.
+- The generated manuscript now has full chapter-text review records for all 54 chapters. That completes the generated-reader chapter-text queue, but it does not create a tagged reader release, a curated parallel reader manuscript, or reviewed format artifacts.
 - The prose is still derived from the live AI/research book. It reads better than the live scaffold, but many chapters still carry technical interfaces, minimum-field lists, Mermaid diagrams, and implementation language that may need compression, rephrasing, or companion-note treatment for relaxed reading.
 - Some reader chapters still contain useful but dense schema-like material. A final human edition should decide chapter by chapter whether to retain it, summarize it, move it to companion material, or leave it only in the live/research book.
 - The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.
 - No EPUB, PDF, DOCX, AZW3, MOBI, Markdown, plain-text, audio, or audio-embedded EPUB artifact has been rendered, reviewed, or released in this pass.
 - No curated parallel reader manuscript exists yet. Graduation from generated source plus overlays remains a future decision once reader-only edits become too substantial for overlays.
-- The automated continuity audit and reader chapter review matrix are current, but neither replaces the full 54-chapter human read.
+- The automated continuity audit and reader chapter review matrix are current, but neither replaces reader-release records, broader layout/navigation review, curated-manuscript reconciliation, or format artifact approval.
 
 ## Next Review Pass
 
 The next Phase 2 pass should:
 
-1. Read the generated reader manuscript chapter by chapter for continuity, pacing, duplicated explanations, missing transitions, and e-reader readability.
+1. Move from generated-reader chapter-text review into release-focused human-edition work: curated prose decisions, layout/navigation inspection, companion-note routing, and e-reader readability.
 2. Classify each finding as a canonical live-book edit, a reader-only overlay, companion-note treatment, or no action.
 3. Add reader-only semantic deltas under `editions/reader_overlays/v1_0/` only when the live AI/research source should not change.
 4. Keep evidence boundaries, support states, implementation horizons, and non-claims inherited from the live book.

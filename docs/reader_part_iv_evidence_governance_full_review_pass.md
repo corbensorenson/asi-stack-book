@@ -62,7 +62,8 @@ does not approve the HTML, EPUB, DOCX, PDF, or audio outputs.
 
 ## Residuals
 
-- The remaining 4 chapters still need full chapter-text review.
+- The remaining four chapters from this pass were later reviewed in
+  `docs/reader_part_iv_completion_full_review_pass.md`.
 - The reviewed chapters still need artifact layout/navigation review in the
   intended release formats before they can be listed in a release record.
 - Artifact Steward Agents remains a curated-manuscript candidate because its

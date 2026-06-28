@@ -117,19 +117,21 @@ are recorded in `docs/reader_opening_full_review_pass.md`,
 `docs/reader_part_iii_compression_full_review_pass.md`,
 `docs/reader_part_iii_representation_full_review_pass.md`, and
 `docs/reader_part_iii_iv_proof_bridge_full_review_pass.md`, and
-`docs/reader_part_iv_evidence_governance_full_review_pass.md`. The synced chapter review
+`docs/reader_part_iv_evidence_governance_full_review_pass.md`, and
+`docs/reader_part_iv_completion_full_review_pass.md`. The synced chapter review
 matrix is recorded in
 `editions/reader_manuscript/v1_0/chapter_review_matrix.json` and summarized in
-`docs/reader_chapter_review_matrix.md` with 50 `reviewed` chapters, 4
+`docs/reader_chapter_review_matrix.md` with 54 `reviewed` chapters, 0
 `spot_checked` chapters, 0 `not_started` chapters, 20 chapters carrying active
-reader overlays, 53 no-immediate-action decisions, 3 companion-note candidates,
+reader overlays, 54 no-immediate-action decisions, 3 companion-note candidates,
 and 1 curated-manuscript candidate. `docs/reader_format_dry_run.md` records a
 local HTML/EPUB/DOCX render dry run, basic structural artifact inspection, and
 UTF-8 PDF probe with ignored snapshots; and
 `docs/reader_artifact_layout_review.md` records the first representative
-PDF/HTML layout spot check. Release-grade full chapter review for the remaining
-4 chapters, broader reader overlays, broader artifact layout/navigation
-inspection, audio, and release records remain open.
+PDF/HTML layout spot check. The full generated-reader chapter-text review queue
+is complete for the current 54 chapters; broader reader overlays, broader
+artifact layout/navigation inspection, curated reader-manuscript graduation,
+audio, and release records remain open.
 
 Purpose: turn the mechanically valid Human view and generated reader source into a reviewed human-reader manuscript path.
 
@@ -179,8 +181,8 @@ Automated continuity audit:
 Chapter review matrix:
 
 - `python3 scripts/sync_reader_chapter_review_matrix.py --write` generated `editions/reader_manuscript/v1_0/chapter_review_matrix.json` and `docs/reader_chapter_review_matrix.md` from the manifest order plus current reader-overlay counts.
-- The matrix currently records 54 chapter rows: 50 `reviewed` rows from the first thirteen full generated-reader chapter-text review passes, 4 `spot_checked` rows from existing representative reader-review notes plus the first Part II, Part III, and Part IV review passes, 0 `not_started` rows, 20 chapters with active reader overlays, 53 no-immediate-action decisions, 3 companion-note candidates, and 1 curated-manuscript candidate.
-- The reviewed rows retain reader-release and format-artifact blockers. The remaining 4 rows still carry release blockers for missing full chapter review, missing reader release record, and missing artifact review. The matrix is a review queue, not a reviewed reader release.
+- The matrix currently records 54 chapter rows: 54 `reviewed` rows from the full generated-reader chapter-text review passes, 0 `spot_checked` rows, 0 `not_started` rows, 20 chapters with active reader overlays, 54 no-immediate-action decisions, 3 companion-note candidates, and 1 curated-manuscript candidate.
+- All rows retain reader-release and format-artifact blockers. The full chapter-text review blocker is cleared for every current chapter, but the matrix is still a review queue, not a reviewed reader release.
 - The matrix keeps the future curated reader manuscript path dynamic: chapter IDs, part order, live files, generated-reader file paths, and overlay counts sync from `book_structure.json` and overlay files, while review status and disposition remain explicit reader-review decisions.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` now provides the dormant reconciliation template for future curated reader chapters, including generated-reader baselines, live-source refs, divergence summaries, blocked evidence divergence, and release blockers.
 

@@ -10,14 +10,12 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "reviewed": 50,
-    "spot_checked": 4
+    "reviewed": 54
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 53,
-    "none": 1,
+    "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
@@ -1154,17 +1152,16 @@
       "live_file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
       "generated_reader_file": "build/reader_edition/chapters/project-theseus-as-report-first-implementation-reference.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iv_review_pass.md#decisions"
+        "docs/reader_part_iv_completion_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter keeps Theseus as report-first implementation-reference context rather than public empirical proof. It was spot-checked after the reader generator learned to preserve capitalization in scaffold-term rewrites.",
+      "review_notes": "Full generated-reader chapter review recorded. The chapter keeps Theseus as report-first implementation-reference context, preserves source-note, imported-report, replay-readiness, missing-artifact, public/non-public, and currentness boundaries, and does not claim reproduced benchmark or runtime evidence.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -1177,17 +1174,16 @@
       "live_file": "chapters/prototype-roadmap.qmd",
       "generated_reader_file": "build/reader_edition/chapters/prototype-roadmap.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iv_review_pass.md#decisions"
+        "docs/reader_part_iv_completion_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter reads as a dependency graph for trust, keeps roadmap phases distinct from evidence, and preserves phase acceptance, debt, and self-improvement gating boundaries.",
+      "review_notes": "Full generated-reader chapter review recorded. The chapter reads as a dependency graph for trust, keeps phases distinct from evidence, and preserves entry/exit criteria, phase debt, acceptance gates, self-improvement gating, and roadmap-as-non-evidence boundaries.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -1200,17 +1196,16 @@
       "live_file": "chapters/living-book-methodology.qmd",
       "generated_reader_file": "build/reader_edition/chapters/living-book-methodology.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iv_review_pass.md#decisions"
+        "docs/reader_part_iv_completion_full_review_pass.md#decisions"
       ],
-      "review_notes": "The generated reader chapter explains the living-book process as governed publication machinery while keeping live AI/research scaffolding, Human view, reader editions, audio derivatives, release records, and support states distinct.",
+      "review_notes": "Full generated-reader chapter review recorded. The chapter explains the book as governed publication machinery while keeping the live AI/research source, Human view, generated reader editions, future curated reader manuscript, audio scripts, release records, and support states distinct.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
@@ -1223,17 +1218,16 @@
       "live_file": "chapters/open-research-agenda-and-bibliography-plan.qmd",
       "generated_reader_file": "build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd",
       "overlay_operation_count": 0,
-      "review_status": "spot_checked",
-      "review_depth": "representative_spot_check",
+      "review_status": "reviewed",
+      "review_depth": "full_chapter_review",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_manuscript_review.md#generated-baseline"
+        "docs/reader_part_iv_completion_full_review_pass.md#decisions"
       ],
-      "review_notes": "Representative generated-reader spot check recorded; still needs full chapter review.",
+      "review_notes": "Full generated-reader chapter review recorded. The final chapter closes the book as a governed research program and preserves source-intake, bibliography, backlog, citation-normalization, chapter-insertion, external-literature, and evidence-transition boundaries.",
       "release_blockers": [
-        "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
       ]
