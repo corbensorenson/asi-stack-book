@@ -116,10 +116,11 @@ python3 scripts/sync_reader_chapter_review_matrix.py --write
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
 
-The current matrix records 54 manifest-aligned chapter rows, 22
-`spot_checked` rows from this baseline and the medium-priority review, 32
-`not_started` rows, 20 chapters with active reader overlays, 3 companion-note
-candidates, and 1 curated-manuscript candidate. Every row still has release
+The current matrix records 54 manifest-aligned chapter rows, 26
+`spot_checked` rows from this baseline, the medium-priority review, and the
+first Part I review pass, 28 `not_started` rows, 20 chapters with active
+reader overlays, 7 no-immediate-action decisions, 3 companion-note candidates,
+and 1 curated-manuscript candidate. Every row still has release
 blockers for missing full chapter review, missing reader release record, and
 missing artifact review. The matrix is a review queue and release-control
 surface, not a reviewed reader manuscript.

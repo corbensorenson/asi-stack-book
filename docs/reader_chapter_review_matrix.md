@@ -10,12 +10,12 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 
 | Kind | Count |
 |---|---:|
-| review_status:not_started | 32 |
-| review_status:spot_checked | 22 |
+| review_status:not_started | 28 |
+| review_status:spot_checked | 26 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 1 |
-| disposition:no_immediate_action | 3 |
-| disposition:none | 34 |
+| disposition:no_immediate_action | 7 |
+| disposition:none | 30 |
 | disposition:reader_overlay_active | 20 |
 
 ## Chapter Queue
@@ -25,13 +25,13 @@ It is a Phase 2 review-control surface for the normal human-reader manuscript. I
 | Part I - Foundations, Alignment, and Governance | `asi-is-a-stack-not-a-model` | spot_checked | representative_spot_check | 2 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `the-efficient-asi-hypothesis` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `system-boundaries-and-authority` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `failure-modes-of-ungoverned-intelligence` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `failure-modes-of-ungoverned-intelligence` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `evidence-states-and-claim-discipline` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `human-intent-as-a-formal-input` | spot_checked | representative_spot_check | 1 | reader_overlay_active | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `constitutional-alignment-substrate` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `constitutional-alignment-substrate` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `agency-dignity-and-corrigibility` | spot_checked | representative_spot_check | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `moral-uncertainty-and-value-conflict` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `governance-rights-fork-exit-and-audit` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `moral-uncertainty-and-value-conflict` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `governance-rights-fork-exit-and-audit` | spot_checked | representative_spot_check | 0 | no_immediate_action | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `stable-capability-fields` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `capability-replacement-and-rollback` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `security-kernel-and-digital-scifs` | not_started | none | 0 | none | full_chapter_review_not_recorded, reader_release_record_not_created, format_artifact_not_reviewed |

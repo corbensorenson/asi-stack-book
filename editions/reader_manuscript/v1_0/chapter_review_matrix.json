@@ -10,14 +10,14 @@
     "policy": "Review generated reader source and overlays before graduating any curated reader manuscript chapter."
   },
   "review_status_counts": {
-    "not_started": 32,
-    "spot_checked": 22
+    "not_started": 28,
+    "spot_checked": 26
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 1,
-    "no_immediate_action": 3,
-    "none": 34,
+    "no_immediate_action": 7,
+    "none": 30,
     "reader_overlay_active": 20
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
@@ -99,13 +99,15 @@
       "live_file": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
       "generated_reader_file": "build/reader_edition/chapters/failure-modes-of-ungoverned-intelligence.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_i_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter reads as a clear failure-boundary obligation map. The support boundary remains visible, the interface list remains useful, and no reader-only overlay is needed in this first pass.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -166,13 +168,15 @@
       "live_file": "chapters/constitutional-alignment-substrate.qmd",
       "generated_reader_file": "build/reader_edition/chapters/constitutional-alignment-substrate.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_i_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter preserves the distinction between philosophical lineage, operational predicates, and non-claim boundaries. The prose is dense but appropriate for the constitutional substrate chapter, with no immediate overlay needed.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -210,13 +214,15 @@
       "live_file": "chapters/moral-uncertainty-and-value-conflict.qmd",
       "generated_reader_file": "build/reader_edition/chapters/moral-uncertainty-and-value-conflict.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_i_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter keeps value conflict visible as residual obligation rather than reward scalar, preserves stakeholder/reversibility/review caveats, and needs no immediate reader-only overlay.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
@@ -231,13 +237,15 @@
       "live_file": "chapters/governance-rights-fork-exit-and-audit.qmd",
       "generated_reader_file": "build/reader_edition/chapters/governance-rights-fork-exit-and-audit.qmd",
       "overlay_operation_count": 0,
-      "review_status": "not_started",
-      "review_depth": "none",
+      "review_status": "spot_checked",
+      "review_depth": "representative_spot_check",
       "dispositions": [
-        "none"
+        "no_immediate_action"
       ],
-      "review_refs": [],
-      "review_notes": "Awaiting full human-reader continuity review.",
+      "review_refs": [
+        "docs/reader_part_i_review_pass.md#decisions"
+      ],
+      "review_notes": "The generated reader chapter reads as contestability infrastructure with audit, exit, fork, redaction, appeal, and rights-preservation receipts. It remains technical but does not need an overlay in this first pass.",
       "release_blockers": [
         "full_chapter_review_not_recorded",
         "reader_release_record_not_created",
