@@ -125,7 +125,7 @@ quarto render --to html
 PDF should be attempted only when local Quarto PDF dependencies are available:
 
 ```bash
-quarto render --to pdf
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to pdf
 ```
 
 Do not report EPUB, PDF, DOCX, or HTML reader artifacts unless the corresponding render actually succeeds and the result is recorded.
@@ -136,7 +136,7 @@ For a recorded local render attempt, use:
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
-python3 scripts/render_reader_formats.py --formats html epub docx pdf
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
 This writes `build/reader_edition/reader_render_report.json`, snapshots successful formats under `build/reader_edition/format_artifacts/` for local review, and can write `build/reader_edition/reader_artifact_inspection_report.json` after structural inspection. A successful report is still not a major-version publication until the manuscript is reviewed and an edition release record names the produced artifacts.

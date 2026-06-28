@@ -172,7 +172,7 @@ Render selected reader-edition formats and record actual local outcomes:
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
-python3 scripts/render_reader_formats.py --formats html epub docx pdf
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
 Generate or check a narration-script candidate after the reader manuscript is ready for review:

@@ -22,6 +22,8 @@ python3 scripts/build_reader_edition.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
+python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe --formats pdf
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe_utf8 --formats pdf
 python3 scripts/build_audio_script.py --check
 ```
 
@@ -52,6 +54,13 @@ Results:
   XHTML entries, 60 EPUB image entries, and 59 DOCX media entries. The ignored
   local report is
   `build/reader_edition/reader_artifact_inspection_report.json`.
+- The isolated PDF probe without explicit locale settings failed inside the
+  LuaLaTeX path with a locale-data error and automatic package-install failure.
+  The UTF-8 locale retry rendered one ignored local PDF snapshot at
+  `build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf`.
+  Local `pdfinfo` reported 574 letter-size pages, 8.0 MB, unencrypted, produced
+  by LuaTeX-1.24.0; local text extraction found the title and compact
+  evidence-boundary text.
 - Audio script check passed for 59 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
@@ -66,8 +75,10 @@ Results:
   workspaces, not durable release artifacts.
 - The local reader-format dry run demonstrates that HTML, EPUB, and DOCX can
   render from the current generated reader source on this machine and pass basic
-  structural inspection. It does not approve those artifacts for publication,
-  and no PDF or audio artifact was attempted in that dry run.
+  structural inspection. The isolated PDF probe demonstrates that PDF can render
+  locally when `LANG` and `LC_ALL` are set to `en_US.UTF-8`. None of those
+  artifacts is approved for publication, and no audio artifact was attempted in
+  that dry run.
 - The v1.0 reader overlay set now has opening-chapter, Personal Compute Hives,
   Human Intent, System Boundaries, Evidence States, Verification Bandwidth, Command Contracts, Planning, Runtime Adapters, Labor OS, Circle Contracts, Efficient ASI, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Executable Specifications, Policy
   Optimization, Artifact Steward Agents, and Semantic Representation operations.
@@ -79,11 +90,10 @@ Results:
 2. The generated reader manuscript needs full human continuity review.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.
-4. The local HTML, EPUB, and DOCX snapshots still need manual representative
-   layout/navigation inspection and full reader-manuscript review before any
-   release record can name them as reviewed artifacts; PDF still depends on
-   local PDF output configuration and dependencies and was not attempted in the
-   dry run.
+4. The local HTML, EPUB, DOCX, and PDF snapshots still need manual
+   representative layout/navigation inspection and full reader-manuscript review
+   before any release record can name them as reviewed artifacts; PDF also needs
+   the explicit UTF-8 locale environment in this local setup.
 5. An edition release record must list exact produced artifacts, commands,
    review state, failures, and residuals.
 6. Audio scripts need human review of diagrams, tables, code, schemas, source
@@ -93,9 +103,9 @@ Results:
 ## Non-Claims
 
 - No v1.0 tag was created in this pass.
-- The dry run produced ignored local HTML, EPUB, and DOCX snapshots for review,
-  but no EPUB, DOCX, PDF, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB artifact
-  is claimed as published or release-ready.
+- The dry run produced ignored local HTML, EPUB, DOCX, and PDF snapshots for
+  review, but no EPUB, DOCX, PDF, AZW3, MOBI, MP3, M4B, or audio-embedded EPUB
+  artifact is claimed as published or release-ready.
 - No reader release, audiobook release, or edition release record is complete.
 - Passing readiness and structural artifact checks does not prove human
   editorial quality, layout quality, source interpretation, proof adequacy,

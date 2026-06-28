@@ -106,6 +106,7 @@ Reader format renders can be attempted and recorded with:
 python3 scripts/render_reader_formats.py --check
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
 Those helpers write `reader_render_report.json` in the generated reader workspace, snapshot successful formats under `build/reader_edition/format_artifacts/` for local review, and can write `reader_artifact_inspection_report.json` after structural inspection. These reports record local render and inspection outcomes only; they are not major-version release records.

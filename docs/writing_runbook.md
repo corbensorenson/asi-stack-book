@@ -171,6 +171,7 @@ python3 scripts/validate_reader_spine.py --check
 python3 scripts/build_reader_edition.py
 python3 scripts/render_reader_formats.py --formats html epub docx
 python3 scripts/inspect_reader_format_artifacts.py
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```
 
 For an audio-script candidate after the reader manuscript is reviewed:
