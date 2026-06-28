@@ -127,6 +127,7 @@ python3 scripts/validate_runtime_adapter_permissions.py
 python3 scripts/validate_context_admission_adequacy.py
 python3 scripts/validate_readiness_residual_gates.py
 python3 scripts/validate_benchmark_antigoodhart.py
+python3 scripts/validate_generation_mode_baselines.py
 python3 scripts/validate_phase5_harness_registry.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py

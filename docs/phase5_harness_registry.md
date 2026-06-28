@@ -17,6 +17,7 @@ The registry exists to keep the public evidence surface aligned. A Phase 5 harne
 | Context admission/adequacy harness | `python3 scripts/validate_context_admission_adequacy.py` | 3 valid, 5 expected-invalid | `experiments/context_admission_adequacy/results/2026-06-28-local.md` |
 | Readiness/residual gate harness | `python3 scripts/validate_readiness_residual_gates.py` | 4 valid, 5 expected-invalid | `experiments/readiness_residual_gates/results/2026-06-28-local.md` |
 | Benchmark anti-Goodhart harness | `python3 scripts/validate_benchmark_antigoodhart.py` | 2 valid, 5 expected-invalid | `experiments/benchmark_antigoodhart/results/2026-06-28-local.md` |
+| Generation mode baseline harness | `python3 scripts/validate_generation_mode_baselines.py` | 2 valid, 4 expected-invalid | `experiments/generation_mode_baselines/results/2026-06-28-local.md` |
 
 ## Validation Contract
 
@@ -32,4 +33,4 @@ The registry exists to keep the public evidence surface aligned. A Phase 5 harne
 
 ## Boundary
 
-This registry is evidence plumbing. It preserves traceability for the synthetic harness set, but it is not a behavior result by itself. It does not prove runtime behavior, benchmark quality, proof adequacy, source interpretation, deployed enforcement, or ASI safety, and it does not move any Appendix C support state.
+This registry is evidence plumbing. It preserves traceability for the synthetic and deterministic harness set, but it is not a behavior result by itself. It does not prove runtime behavior, benchmark quality, generation speed, model quality, proof adequacy, source interpretation, deployed enforcement, or ASI safety, and it does not move any Appendix C support state.

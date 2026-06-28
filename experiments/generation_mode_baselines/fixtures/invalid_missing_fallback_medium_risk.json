@@ -1,0 +1,57 @@
+{
+  "scenario_id": "invalid_missing_fallback_medium_risk",
+  "generation_mode_record": {
+    "task_id": "fgb-task-006",
+    "risk_tier": "medium",
+    "latency_budget": "1500 ms",
+    "compute_budget": "single-process Python validation budget",
+    "memory_budget": "in-memory JSON fixture only",
+    "context_packet_id": "ctx-fast-generation-baseline-006",
+    "generation_mode": "speculative",
+    "draft_source": "invalid fixture",
+    "verifier": "scripts/validate_generation_mode_baselines.py",
+    "acceptance_predicate": "invalidly omits fallback for medium-risk candidate",
+    "proposed_output_accounting": "candidate proposed",
+    "accepted_output_accounting": "candidate accepted",
+    "wall_clock_time": "measured in local validation command",
+    "quality_or_pass_result": "pass: fixture quality predicate present",
+    "repair_or_fallback": "none",
+    "promotion_decision": "keep_experimental",
+    "measurement_status": "run",
+    "metric_definitions": [
+      "useful_solution_per_second: accepted deterministic fixture per local command duration",
+      "quality: schema and semantic acceptance predicates pass",
+      "residual: non-model benchmark boundary recorded"
+    ],
+    "evidence_refs": [
+      "run:experiments/generation_mode_baselines/results/2026-06-28-local.md",
+      "baseline:autoregressive_reference_fixture",
+      "negative_control:invalid_missing_fallback_medium_risk"
+    ],
+    "non_claims": [
+      "Does not promote any Appendix C support state.",
+      "Does not prove model behavior."
+    ]
+  },
+  "resource_budget_record": {
+    "budget_id": "fgb-budget-006",
+    "task_id": "fgb-task-006",
+    "value_hypothesis": "Invalid missing-fallback fixture.",
+    "risk_class": "medium",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "protected_overhead_required",
+    "cost_estimate": ["fixture only"],
+    "verification_tax": ["schema validation"],
+    "protected_overhead": ["fallback path should have been required"],
+    "displaced_costs": ["no model call"],
+    "quality_predicate": "medium-risk non-autoregressive fixtures must name fallback behavior",
+    "safety_gates": ["no support-state promotion"],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate missing fallback.",
+    "residuals": ["missing fallback should not pass"],
+    "evidence_refs": ["experiments/generation_mode_baselines/results/2026-06-28-local.md"]
+  },
+  "non_claims": [
+    "Does not promote any support state."
+  ]
+}

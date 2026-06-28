@@ -160,5 +160,27 @@
       "Does not prove benchmark quality, hidden-holdout integrity, contamination detection, transfer performance, policy-training quality, reward-hacking resistance, steward-agent behavior, release safety, or runtime behavior.",
       "Does not promote Appendix C support states."
     ]
+  },
+  {
+    "id": "generation_mode_baselines",
+    "name": "Generation mode baseline harness",
+    "command": "python3 scripts/validate_generation_mode_baselines.py",
+    "script": "scripts/validate_generation_mode_baselines.py",
+    "doc": "docs/generation_mode_baseline_harness.md",
+    "experiment_dir": "experiments/generation_mode_baselines",
+    "fixture_dir": "experiments/generation_mode_baselines/fixtures",
+    "result_record": "experiments/generation_mode_baselines/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 2,
+    "expected_invalid_fixtures": 4,
+    "result_summary": "Generation mode baseline harness passed: 2 valid fixture(s), 4 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "fast-generation-architectures",
+      "the-efficient-asi-hypothesis",
+      "resource-economics-and-token-budgets"
+    ],
+    "non_claims": [
+      "Does not prove generation speed, speculative decoding quality, diffusion generation quality, KV-cache throughput, routing quality, or runtime behavior.",
+      "Does not promote Appendix C support states."
+    ]
   }
 ]

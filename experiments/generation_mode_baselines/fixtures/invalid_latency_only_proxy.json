@@ -1,0 +1,55 @@
+{
+  "scenario_id": "invalid_latency_only_proxy",
+  "generation_mode_record": {
+    "task_id": "fgb-task-004",
+    "risk_tier": "low",
+    "latency_budget": "100 ms",
+    "compute_budget": "single-process Python validation budget",
+    "memory_budget": "in-memory JSON fixture only",
+    "context_packet_id": "ctx-fast-generation-baseline-004",
+    "generation_mode": "early_exit",
+    "draft_source": "invalid fixture",
+    "verifier": "scripts/validate_generation_mode_baselines.py",
+    "acceptance_predicate": "invalidly treats latency as enough",
+    "proposed_output_accounting": "candidate proposed",
+    "accepted_output_accounting": "candidate accepted",
+    "wall_clock_time": "fastest observed local run",
+    "quality_or_pass_result": "not measured; latency only",
+    "repair_or_fallback": "fallback available",
+    "promotion_decision": "keep_experimental",
+    "measurement_status": "run",
+    "metric_definitions": [
+      "useful_solution_per_second: latency only"
+    ],
+    "evidence_refs": [
+      "run:experiments/generation_mode_baselines/results/2026-06-28-local.md",
+      "baseline:autoregressive_reference_fixture",
+      "negative_control:invalid_latency_only_proxy"
+    ],
+    "non_claims": [
+      "Does not promote any Appendix C support state.",
+      "Does not prove model behavior."
+    ]
+  },
+  "resource_budget_record": {
+    "budget_id": "fgb-budget-004",
+    "task_id": "fgb-task-004",
+    "value_hypothesis": "Invalid latency-only proxy fixture.",
+    "risk_class": "low",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "priced",
+    "cost_estimate": ["fixture only"],
+    "verification_tax": ["schema validation"],
+    "protected_overhead": ["non-claim boundary"],
+    "displaced_costs": ["quality and residual accounting were omitted"],
+    "quality_predicate": "quality and residual metrics must accompany latency",
+    "safety_gates": ["no support-state promotion"],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate latency-only evidence.",
+    "residuals": ["latency-only evidence should not pass"],
+    "evidence_refs": ["experiments/generation_mode_baselines/results/2026-06-28-local.md"]
+  },
+  "non_claims": [
+    "Does not promote any support state."
+  ]
+}

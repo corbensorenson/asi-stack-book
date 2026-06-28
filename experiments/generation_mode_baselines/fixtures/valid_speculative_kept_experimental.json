@@ -1,0 +1,75 @@
+{
+  "scenario_id": "valid_speculative_kept_experimental",
+  "generation_mode_record": {
+    "task_id": "fgb-task-002",
+    "risk_tier": "medium",
+    "latency_budget": "1500 ms local deterministic fixture budget",
+    "compute_budget": "single-process Python validation budget",
+    "memory_budget": "in-memory JSON fixture only",
+    "context_packet_id": "ctx-fast-generation-baseline-002",
+    "generation_mode": "speculative",
+    "draft_source": "deterministic speculative-mode fixture, not a speculative decoder run",
+    "verifier": "scripts/validate_generation_mode_baselines.py",
+    "acceptance_predicate": "candidate remains experimental unless baseline, quality, residual, fallback, and negative-control refs exist",
+    "proposed_output_accounting": "two draft branches proposed in fixture accounting",
+    "accepted_output_accounting": "one branch accepted after deterministic semantic checks",
+    "wall_clock_time": "measured in local validation command; no fixed timing claim",
+    "quality_or_pass_result": "pass: acceptance rate is recorded for fixture accounting and residual boundary is present",
+    "repair_or_fallback": "fallback to autoregressive reference if verifier rejects speculative candidate",
+    "promotion_decision": "keep_experimental",
+    "measurement_status": "run",
+    "metric_definitions": [
+      "useful_solution_per_second: accepted deterministic fixture per local command duration",
+      "quality: verifier accepts only if semantic accounting and fallback refs pass",
+      "residual: speculative acceptance is not model-quality evidence"
+    ],
+    "evidence_refs": [
+      "run:experiments/generation_mode_baselines/results/2026-06-28-local.md",
+      "baseline:autoregressive_reference_fixture",
+      "negative_control:invalid_promote_without_baseline"
+    ],
+    "non_claims": [
+      "Does not promote any Appendix C support state.",
+      "Does not prove speculative decoding speed, acceptance quality, or runtime behavior."
+    ]
+  },
+  "resource_budget_record": {
+    "budget_id": "fgb-budget-002",
+    "task_id": "fgb-task-002",
+    "value_hypothesis": "A speculative generation mode can be retained as experimental only when quality, residuals, fallback, and baseline references are explicit.",
+    "risk_class": "medium",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "protected_overhead_required",
+    "cost_estimate": [
+      "fixture command duration only"
+    ],
+    "verification_tax": [
+      "schema validation",
+      "fallback and negative-control validation"
+    ],
+    "protected_overhead": [
+      "baseline comparison reference",
+      "quality and residual metrics"
+    ],
+    "displaced_costs": [
+      "no real speculative decoder, no model call, no deployment path"
+    ],
+    "quality_predicate": "experimental retention requires baseline and negative-control evidence refs plus fallback behavior",
+    "safety_gates": [
+      "no support-state promotion",
+      "fallback must be named for medium-risk fixture"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate any speculative record that promotes, omits fallback, or treats latency as the sole metric.",
+    "residuals": [
+      "Synthetic accounting only; no empirical model speedup."
+    ],
+    "evidence_refs": [
+      "experiments/generation_mode_baselines/results/2026-06-28-local.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove speculative decoding performance."
+  ]
+}

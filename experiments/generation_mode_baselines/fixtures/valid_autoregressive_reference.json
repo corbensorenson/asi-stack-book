@@ -1,0 +1,74 @@
+{
+  "scenario_id": "valid_autoregressive_reference",
+  "generation_mode_record": {
+    "task_id": "fgb-task-001",
+    "risk_tier": "low",
+    "latency_budget": "2000 ms local deterministic fixture budget",
+    "compute_budget": "single-process Python validation budget",
+    "memory_budget": "in-memory JSON fixture only",
+    "context_packet_id": "ctx-fast-generation-baseline-001",
+    "generation_mode": "autoregressive",
+    "draft_source": "deterministic fixture record, not a model run",
+    "verifier": "scripts/validate_generation_mode_baselines.py",
+    "acceptance_predicate": "quality gate passes, baseline refs exist, residuals are recorded, and promotion remains experimental",
+    "proposed_output_accounting": "one proposed deterministic record",
+    "accepted_output_accounting": "one accepted deterministic record",
+    "wall_clock_time": "measured in local validation command; no fixed timing claim",
+    "quality_or_pass_result": "pass: quality metric present and residual boundary recorded",
+    "repair_or_fallback": "fallback path available through baseline autoregressive mode if candidate mode fails",
+    "promotion_decision": "keep_experimental",
+    "measurement_status": "run",
+    "metric_definitions": [
+      "useful_solution_per_second: accepted deterministic fixture per local command duration",
+      "quality: schema and semantic acceptance predicates pass",
+      "residual: non-model benchmark boundary recorded"
+    ],
+    "evidence_refs": [
+      "run:experiments/generation_mode_baselines/results/2026-06-28-local.md",
+      "baseline:autoregressive_reference_fixture",
+      "negative_control:invalid_latency_only_proxy"
+    ],
+    "non_claims": [
+      "Does not promote any Appendix C support state.",
+      "Does not prove model quality, deployed generation speed, or runtime behavior."
+    ]
+  },
+  "resource_budget_record": {
+    "budget_id": "fgb-budget-001",
+    "task_id": "fgb-task-001",
+    "value_hypothesis": "A generation-mode record is useful only if quality, residuals, and baseline refs travel with latency accounting.",
+    "risk_class": "low",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "priced",
+    "cost_estimate": [
+      "wall-clock command duration is recorded in the result file, not in a support-state claim"
+    ],
+    "verification_tax": [
+      "schema validation",
+      "semantic baseline/ref/fallback validation"
+    ],
+    "protected_overhead": [
+      "non-claim boundary must remain present"
+    ],
+    "displaced_costs": [
+      "no model inference, no user-facing deployment, no benchmark suite"
+    ],
+    "quality_predicate": "quality metric and residual metric are both present before any experimental acceptance",
+    "safety_gates": [
+      "no support-state promotion",
+      "no model benchmark claim"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate if a record tries to promote from latency alone or omits baseline refs.",
+    "residuals": [
+      "Local deterministic fixture only; no model-quality evidence."
+    ],
+    "evidence_refs": [
+      "experiments/generation_mode_baselines/results/2026-06-28-local.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove fast generation model behavior."
+  ]
+}
