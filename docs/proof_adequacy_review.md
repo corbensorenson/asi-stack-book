@@ -31,7 +31,7 @@ All 112 targets still build as narrow finite-record predicates. The review chang
 |---|---:|---|---|
 | `asi-is-a-stack-not-a-model` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `the-efficient-asi-hypothesis` | 2 | needs empirical or baseline tests first | Build workload, baseline, and result record before stronger proof. |
-| `system-boundaries-and-authority` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
+| `system-boundaries-and-authority` | 2 | useful but too narrow | Record-aware authority decision envelope added; still add runtime, revocation, confused-deputy, and deployment trace tests. |
 | `failure-modes-of-ungoverned-intelligence` | 2 | needs richer state-machine or review semantics | Model lifecycle, review, timing, and adversarial states before adequacy. |
 | `evidence-states-and-claim-discipline` | 2 | adequate finite-record invariant | Keep narrow; do not broaden beyond checked records. |
 | `human-intent-as-a-formal-input` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
@@ -84,9 +84,16 @@ All 112 targets still build as narrow finite-record predicates. The review chang
 | `living-book-methodology` | 2 | adequate finite-record invariant | Keep narrow; do not broaden beyond checked records. |
 | `open-research-agenda-and-bibliography-plan` | 2 | adequate finite-record invariant | Keep narrow; do not broaden beyond checked records. |
 
+## Follow-Through Increments
+
+### Authority Decision Envelope
+
+The first follow-through increment strengthened `AsiStackProofs.Authority` beyond the initial ceiling and missing-grant predicates. The module now includes a finite `AuthorityDecisionRecord` and `AuthorityDecisionValid` predicate for modeled allow, deny, and escalate records. The new theorems check that valid modeled decisions retain audit and non-claim fields; allowed decisions carry effect receipts and do not exceed caller or active ceilings; denied decisions carry no effect receipt; and escalation routes to review. The predicate also requires allowed decisions to reject expired or revoked grants.
+
+This keeps the `system-boundaries-and-authority` proof cluster in the `useful but too narrow` class. The predicate is closer to the synthetic authority harness, but it still does not prove runtime adapter enforcement, deployed permission checks, revocation propagation, confused-deputy resistance in a live tool wrapper, or source interpretation adequacy.
+
 ## Result
 
 The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters.
 
 No Appendix C support state changes were made.
-

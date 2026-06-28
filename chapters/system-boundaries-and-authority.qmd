@@ -17,7 +17,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and five of six mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
   - "The authority transition harness validates synthetic authority-transition gate semantics for scoped allow, over-ceiling denial, approval escalation, missing receipts, permission-class collapse, and confused-deputy shortcuts; deployed authorization enforcement, runtime adapter behavior, revocation propagation, and tool-wrapper security remain unimplemented."
-  - "The implemented Authority Lean predicates cover finite-record ceiling preservation and missing-grant denial only; they do not prove deployed authorization enforcement."
+  - "The implemented Authority Lean predicates cover finite-record ceiling preservation, missing-grant denial, and record-aware allow/deny/escalate decision envelope constraints; they do not prove deployed authorization enforcement."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -239,7 +239,7 @@ This authority type system is still an architectural target. The synthetic harne
 | Test | Purpose | Status |
 |---|---|---|
 | Authority transition record validation | Check that the authority fixture matches the public schema. | implemented by protocol validation; validated locally |
-| Authority ceiling finite-record proof | Check that a valid modeled transition cannot raise active authority unless a governance grant is present. | implemented in `AsiStackProofs.Authority`; runtime denial test not run |
+| Authority ceiling finite-record proof | Check that valid modeled authority records preserve ceilings, receipts, denial state, review routes, and non-claim/audit requirements. | implemented in `AsiStackProofs.Authority`; runtime denial test not run |
 | Authority transition harness | Check synthetic allow, denial, escalation, missing receipt, permission-collapse, and confused-deputy records against authority-gate semantics. | implemented by `python3 scripts/validate_authority_transitions.py`; 3 valid and 3 expected-invalid fixtures passed locally |
 | Permission separation test | Check that read, transform, disclose, write, execute, and approve permissions stay distinct. | implemented for synthetic transition fixtures; deployed enforcement not run |
 | Confused-deputy scenario | Check that a low-authority requester cannot borrow a tool's broader raw capability. | implemented for expected-invalid synthetic fixture; runtime adapter probe not run |
@@ -252,7 +252,7 @@ This authority type system is still an architectural target. The synthetic harne
 | `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.Authority` | Every transition preserves or lowers the active authority ceiling unless a governance grant is present. | implemented |
 | `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.Authority` | A missing grant blocks execution rather than becoming default authorization. | implemented |
 
-These proof targets are implemented only over finite Lean records in `AsiStackProofs.Authority`. They prove that a valid transition with no grant cannot raise the active ceiling, and that an over-ceiling execution request with no grant is not authorized by the model. The synthetic authority harness exercises related fixture behavior outside Lean. These surfaces do not prove tool-wrapper enforcement, runtime confused-deputy resistance, revocation propagation, or deployed policy behavior; those remain planned tests and implementation obligations.
+These proof targets are implemented only over finite Lean records in `AsiStackProofs.Authority`. They prove that a valid transition with no grant cannot raise the active ceiling, that an over-ceiling execution request with no grant is not authorized by the model, and that a modeled authority decision envelope preserves the narrow allow/deny/escalate requirements for effect receipts, denial reasons, review routes, audit references, non-claims, caller ceilings, and active ceilings. The synthetic authority harness exercises related fixture behavior outside Lean. These surfaces do not prove tool-wrapper enforcement, runtime confused-deputy resistance, revocation propagation, or deployed policy behavior; those remain planned tests and implementation obligations.
 
 ## Source crosswalk
 

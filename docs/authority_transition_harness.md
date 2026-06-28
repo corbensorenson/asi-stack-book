@@ -34,6 +34,15 @@ Authority transition harness passed: 3 valid fixture(s), 3 expected-invalid fixt
 The result record is
 `experiments/authority_transitions/results/2026-06-28-local.md`.
 
+## Adjacent Lean Envelope
+
+`AsiStackProofs.Authority` now includes a finite authority-decision envelope for
+modeled allow, deny, and escalate records. It checks audit and non-claim fields,
+effect-receipt requirements for allowed effects, no-receipt requirements for
+denials and escalations, review routing for escalations, and caller/active
+ceiling preservation for allowed effects. This is a proof-side mirror of part
+of the synthetic harness contract, not a deployed authorization system.
+
 ## Boundary
 
 This is fixture-level gate validation for synthetic records. It improves the

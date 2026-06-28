@@ -186,7 +186,7 @@ Acceptance criteria:
 
 ## Phase 4 - Proof Adequacy Review
 
-Status: initial review complete. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving the existing Lean code and support-state boundaries.
+Status: initial review complete, with first follow-through increment started. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope. System Boundaries remains `useful but too narrow` because deployed enforcement, revocation propagation, runtime confused-deputy probes, and policy traces remain unproven.
 
 Purpose: distinguish "Lean build passes" from "this is the right formalization."
 

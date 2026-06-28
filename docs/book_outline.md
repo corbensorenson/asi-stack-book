@@ -278,7 +278,7 @@ Draft deliverables:
 
 - A small authority schema and transition table used by chapter examples and future Lean proofs, including permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry/review condition, audit refs, and non-claims.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, and `moecot`; support remains `argument` pending denial fixtures, permission-separation tests, confused-deputy probes, or deployed enforcement artifacts.
-- Implemented synthetic Codex test: Authority ceiling preservation test via `python3 scripts/validate_authority_transitions.py`; deployed enforcement remains open.
+- Implemented synthetic Codex test and proof follow-through: Authority ceiling preservation test via `python3 scripts/validate_authority_transitions.py`, plus the finite `AsiStackProofs.Authority` decision envelope for modeled allow/deny/escalate records; deployed enforcement remains open.
 - Implemented synthetic Codex test: Permission separation test via `python3 scripts/validate_authority_transitions.py`; deployed enforcement remains open.
 - Implemented synthetic Codex test: Confused-deputy scenario via expected-invalid authority-transition fixture; runtime adapter probe remains open.
 - Planned Codex test: Revocation propagation test.

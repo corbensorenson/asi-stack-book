@@ -168,7 +168,7 @@ def main() -> None:
         "`experiments/phase5_harness_registry.json`",
         "`docs/phase5_harness_registry.md`",
         "`python3 scripts/validate_phase5_harness_registry.py`",
-        f"| Proof envelope | {proof_targets} proof targets, all implemented as narrow finite-record Lean predicates; initial proof adequacy review classifies 8 targets as adequate only for narrow finite-record claims, 26 useful-but-too-narrow, 20 needing richer state or review semantics, 42 needing executable tests first, 10 needing empirical or baseline tests first, and 6 remaining research-agenda until artifact import |",
+        f"| Proof envelope | {proof_targets} proof targets, all implemented as narrow finite-record Lean predicates; initial proof adequacy review classifies 8 targets as adequate only for narrow finite-record claims, 26 useful-but-too-narrow, 20 needing richer state or review semantics, 42 needing executable tests first, 10 needing empirical or baseline tests first, and 6 remaining research-agenda until artifact import; first follow-through increment adds a record-aware allow/deny/escalate authority decision envelope without promoting System Boundaries above `argument` |",
         "`docs/proof_adequacy_review.md`",
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release record |",
         f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
