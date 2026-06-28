@@ -1,0 +1,34 @@
+# Phase 5 Harness Registry
+
+Last updated: 2026-06-28
+
+This registry records the initial Phase 5 executable harness set for the v1.0 candidate pass. The machine-readable source is `experiments/phase5_harness_registry.json`; the guard is `scripts/validate_phase5_harness_registry.py`.
+
+The registry exists to keep the public evidence surface aligned. A Phase 5 harness is not considered fully wired unless it has a command, script, fixture directory, expected valid and expected-invalid fixtures, result record, public summary document, Appendix E row, roadmap/status references, and inclusion in `scripts/validate_book.py`.
+
+## Registered Harnesses
+
+| Harness | Command | Fixture expectation | Result record |
+|---|---|---:|---|
+| Support-state transition harness | `python3 scripts/validate_support_state_transitions.py` | 2 valid, 2 expected-invalid | `experiments/support_state_transitions/results/2026-06-28-local.md` |
+| Authority transition harness | `python3 scripts/validate_authority_transitions.py` | 3 valid, 3 expected-invalid | `experiments/authority_transitions/results/2026-06-28-local.md` |
+| Plan-execution contract harness | `python3 scripts/validate_plan_execution_contracts.py` | 2 valid, 5 expected-invalid | `experiments/plan_execution_contracts/results/2026-06-28-local.md` |
+| Context admission/adequacy harness | `python3 scripts/validate_context_admission_adequacy.py` | 3 valid, 5 expected-invalid | `experiments/context_admission_adequacy/results/2026-06-28-local.md` |
+| Readiness/residual gate harness | `python3 scripts/validate_readiness_residual_gates.py` | 4 valid, 5 expected-invalid | `experiments/readiness_residual_gates/results/2026-06-28-local.md` |
+| Benchmark anti-Goodhart harness | `python3 scripts/validate_benchmark_antigoodhart.py` | 2 valid, 5 expected-invalid | `experiments/benchmark_antigoodhart/results/2026-06-28-local.md` |
+
+## Validation Contract
+
+`python3 scripts/validate_phase5_harness_registry.py` checks:
+
+- every registry entry has a stable ID, command, script, documentation page, experiment workspace, fixture directory, result record, primary chapter list, and non-claim list;
+- valid and expected-invalid fixture counts match the registry;
+- each result record and public harness document contains the recorded command and result summary;
+- each harness command is included in `scripts/validate_book.py`;
+- each harness command appears in generated Appendix E and in the public v1.0 status/roadmap surfaces;
+- registered primary chapters exist in `book_structure.json`;
+- the registry itself does not promote support states or claim deployed runtime behavior.
+
+## Boundary
+
+This registry is evidence plumbing. It preserves traceability for the first synthetic harness set, but it is not a behavior result by itself. It does not prove runtime behavior, benchmark quality, proof adequacy, source interpretation, deployed enforcement, or ASI safety, and it does not move any Appendix C support state.

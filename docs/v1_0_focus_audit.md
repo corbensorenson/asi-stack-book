@@ -34,6 +34,9 @@ python3 scripts/validate_support_state_transitions.py
 python3 scripts/validate_authority_transitions.py
 python3 scripts/validate_plan_execution_contracts.py
 python3 scripts/validate_context_admission_adequacy.py
+python3 scripts/validate_readiness_residual_gates.py
+python3 scripts/validate_benchmark_antigoodhart.py
+python3 scripts/validate_phase5_harness_registry.py
 python3 scripts/render_reader_formats.py --check
 python3 scripts/build_audio_script.py --check
 python3 scripts/validate_book.py
@@ -190,9 +193,9 @@ Most claims may still remain at `argument`. A recorded non-promotion decision is
 
 ### 3. First Executable Test Harnesses
 
-The current test backlog is much larger than the implemented test surface. The first test work should prioritize small, deterministic, high-signal harnesses that strengthen multiple chapters.
+The current test backlog is much larger than the implemented test surface. The first synthetic harness set is now implemented and registry-validated; the next test work should prioritize replayable empirical slices, imported prototype traces, or richer deterministic harnesses that strengthen multiple chapters without overstating evidence.
 
-Recommended first harnesses:
+Initial harness set:
 
 | Harness | Chapters helped | Why first |
 |---|---|---|
@@ -200,11 +203,12 @@ Recommended first harnesses:
 | Authority non-escalation / permission receipt tests | System boundaries, security kernel, runtime adapters, labor OS | Turns authority vocabulary into reject/accept behavior. |
 | Plan graph and execution-contract tests | Intent contracts, command contracts, planning, PlanForge, cognitive compilation | Makes the planning/execution boundary executable. |
 | Context admission vs adequacy tests | Virtual Context ABI, semantic pages, context transactions, verification bandwidth | Tests a core memory/reasoning interface. |
-The readiness gate and residual escrow harness is now implemented in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`, and backed by `experiments/readiness_residual_gates/`. It converts promotion-blocking language into synthetic cross-record gate behavior only; it does not prove routing accuracy, readiness-engine behavior, residual-ledger storage, rollback execution, runtime monitoring, MoECOT replay, benchmark performance, or support-state promotion.
+| Readiness gate and residual escrow tests | Routing, readiness gates, MoECOT, prototype roadmap, recursive self-improvement | Converts promotion-blocking language into synthetic cross-record gate behavior. |
+| Benchmark ratchet anti-Goodhart tests | Benchmark ratchets, policy optimization, artifact steward agents | Keeps benchmark, policy-update, and steward-release handoffs from treating proxy scores as authority. |
 
-The benchmark anti-Goodhart harness is now implemented in `scripts/validate_benchmark_antigoodhart.py`, documented in `docs/benchmark_antigoodhart_harness.md`, and backed by `experiments/benchmark_antigoodhart/`. It checks synthetic benchmark-ratchet, policy-update, and steward-release handoffs only; it does not prove benchmark quality, hidden-holdout integrity, contamination detection, transfer performance, policy-training quality, reward-hacking resistance, steward-agent behavior, release safety, or support-state promotion.
+The set is registered in `experiments/phase5_harness_registry.json`, documented in `docs/phase5_harness_registry.md`, and checked by `python3 scripts/validate_phase5_harness_registry.py`. The registry guard verifies command scripts, docs, fixture counts, result records, Appendix E rows, public status references, primary chapter mappings, non-claim boundaries, and `scripts/validate_book.py` wiring.
 
-Each remaining harness should write public-safe results under a tracked result or report location only after it actually runs. If a test is negative, failed, or inconclusive, keep that result visible.
+Each future harness should write public-safe results under a tracked result or report location only after it actually runs. If a test is negative, failed, or inconclusive, keep that result visible. The current harnesses remain synthetic record and cross-record gates only; they do not prove routing accuracy, deployed authorization, planner quality, memory correctness, benchmark quality, policy-training quality, steward-agent behavior, runtime safety, or support-state promotion.
 
 ### 4. Proof Adequacy Review
 

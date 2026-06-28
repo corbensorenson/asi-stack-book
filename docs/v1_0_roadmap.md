@@ -178,7 +178,7 @@ Acceptance criteria:
 
 ## Phase 5 - First Real Test Harnesses
 
-Status: started. Six synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`; and the benchmark anti-Goodhart harness in `scripts/validate_benchmark_antigoodhart.py`, documented in `docs/benchmark_antigoodhart_harness.md`. All six are backed by valid plus expected-invalid fixtures under `experiments/` and wired into `scripts/validate_book.py`; no live support state changed.
+Status: initial harness set complete and registry-validated. Six synthetic harnesses are implemented: the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`; and the benchmark anti-Goodhart harness in `scripts/validate_benchmark_antigoodhart.py`, documented in `docs/benchmark_antigoodhart_harness.md`. All six are backed by valid plus expected-invalid fixtures under `experiments/`, wired into `scripts/validate_book.py`, and registered in `experiments/phase5_harness_registry.json`; `python3 scripts/validate_phase5_harness_registry.py` checks their docs, commands, fixture counts, result records, Appendix E rows, public status references, primary chapter mappings, and non-claim boundaries. No live support state changed.
 
 Purpose: move beyond schema shape validation into executable behavior checks.
 
@@ -198,6 +198,7 @@ Acceptance criteria:
 - Tests have commands, fixtures, environment notes, result records, and non-claims.
 - Failed or inconclusive tests remain visible.
 - Appendix E and relevant chapters distinguish fixture validation from behavior validation.
+- The Phase 5 harness registry validates that the initial harness set stays wired across scripts, docs, fixtures, result records, Appendix E, and public status pages.
 
 Initial completion:
 
@@ -219,6 +220,10 @@ Initial completion:
 - `python3 scripts/validate_benchmark_antigoodhart.py` passed locally on 2026-06-28 with 2 valid fixtures and 5 expected-invalid fixtures.
 - The result record is `experiments/benchmark_antigoodhart/results/2026-06-28-local.md`.
 - The benchmark anti-Goodhart harness checks synthetic benchmark-ratchet, policy-optimization, and steward-action consistency only. It does not prove benchmark quality, hidden-holdout integrity, contamination detection, transfer performance, policy-training quality, reward-hacking resistance, steward-agent behavior, release safety, or support-state promotion.
+- `python3 scripts/validate_phase5_harness_registry.py` records the six-harness set in `experiments/phase5_harness_registry.json` and validates traceability across command scripts, fixture counts, public harness docs, result records, Appendix E, the v1.0 status/roadmap surfaces, primary chapter IDs, and `scripts/validate_book.py`.
+- The registry is evidence plumbing only. It does not rerun the harnesses, prove runtime behavior, validate benchmark quality, or promote any support state.
+
+Next Phase 5 evidence work should move from synthetic record gates toward replayable empirical slices or imported prototype traces where the source artifacts are available and public-safe.
 
 ## Phase 6 - External Literature Backfill
 

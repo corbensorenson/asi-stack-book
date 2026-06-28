@@ -1,0 +1,141 @@
+[
+  {
+    "id": "support_state_transitions",
+    "name": "Support-state transition harness",
+    "command": "python3 scripts/validate_support_state_transitions.py",
+    "script": "scripts/validate_support_state_transitions.py",
+    "doc": "docs/support_state_transition_harness.md",
+    "experiment_dir": "experiments/support_state_transitions",
+    "fixture_dir": "experiments/support_state_transitions/fixtures",
+    "result_record": "experiments/support_state_transitions/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 2,
+    "expected_invalid_fixtures": 2,
+    "result_summary": "Support-state transition harness passed: 2 valid fixture(s), 2 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "evidence-states-and-claim-discipline",
+      "claim-ledgers-and-belief-revision",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "living-book-methodology"
+    ],
+    "non_claims": [
+      "Does not promote Appendix C support states.",
+      "Does not prove source interpretation, proof adequacy, benchmark performance, runtime behavior, or an AI safety property."
+    ]
+  },
+  {
+    "id": "authority_transitions",
+    "name": "Authority transition harness",
+    "command": "python3 scripts/validate_authority_transitions.py",
+    "script": "scripts/validate_authority_transitions.py",
+    "doc": "docs/authority_transition_harness.md",
+    "experiment_dir": "experiments/authority_transitions",
+    "fixture_dir": "experiments/authority_transitions/fixtures",
+    "result_record": "experiments/authority_transitions/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 3,
+    "result_summary": "Authority transition harness passed: 3 valid fixture(s), 3 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "system-boundaries-and-authority",
+      "security-kernel-and-digital-scifs",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "labor-os-and-typed-jobs"
+    ],
+    "non_claims": [
+      "Does not prove deployed permission enforcement, runtime adapter safety, secret handling, or revocation propagation.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
+    "id": "plan_execution_contracts",
+    "name": "Plan-execution contract harness",
+    "command": "python3 scripts/validate_plan_execution_contracts.py",
+    "script": "scripts/validate_plan_execution_contracts.py",
+    "doc": "docs/plan_execution_contract_harness.md",
+    "experiment_dir": "experiments/plan_execution_contracts",
+    "fixture_dir": "experiments/plan_execution_contracts/fixtures",
+    "result_record": "experiments/plan_execution_contracts/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 2,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Plan-execution contract harness passed: 2 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "intent-to-execution-contracts",
+      "command-contracts-and-semantic-interfaces",
+      "planning-as-a-control-layer",
+      "planforge-dags-and-intelligence-arbitrage",
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "non_claims": [
+      "Does not prove planner quality, scheduler behavior, deployed execution, runtime adapter safety, parser quality, or benchmark performance.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
+    "id": "context_admission_adequacy",
+    "name": "Context admission/adequacy harness",
+    "command": "python3 scripts/validate_context_admission_adequacy.py",
+    "script": "scripts/validate_context_admission_adequacy.py",
+    "doc": "docs/context_admission_adequacy_harness.md",
+    "experiment_dir": "experiments/context_admission_adequacy",
+    "fixture_dir": "experiments/context_admission_adequacy/fixtures",
+    "result_record": "experiments/context_admission_adequacy/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Context admission/adequacy harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "virtual-context-abi",
+      "semantic-pages-context-cells-and-certificates",
+      "context-transactions-snapshots-mounts-and-taint",
+      "verification-bandwidth-and-context-adequacy"
+    ],
+    "non_claims": [
+      "Does not prove VCM resolver behavior, context compiler behavior, memory-store correctness, summary fidelity, distractor resistance, or model verification bandwidth.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
+    "id": "readiness_residual_gates",
+    "name": "Readiness/residual gate harness",
+    "command": "python3 scripts/validate_readiness_residual_gates.py",
+    "script": "scripts/validate_readiness_residual_gates.py",
+    "doc": "docs/readiness_residual_harness.md",
+    "experiment_dir": "experiments/readiness_residual_gates",
+    "fixture_dir": "experiments/readiness_residual_gates/fixtures",
+    "result_record": "experiments/readiness_residual_gates/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 4,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Readiness/residual gate harness passed: 4 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "routing-heads-and-specialist-cores",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "moecot-runtime-and-multi-core-orchestration",
+      "prototype-roadmap",
+      "recursive-self-improvement-boundaries"
+    ],
+    "non_claims": [
+      "Does not prove routing accuracy, readiness-engine behavior, residual-ledger storage, rollback execution, runtime monitoring, MoECOT replay, or benchmark performance.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
+    "id": "benchmark_antigoodhart",
+    "name": "Benchmark anti-Goodhart harness",
+    "command": "python3 scripts/validate_benchmark_antigoodhart.py",
+    "script": "scripts/validate_benchmark_antigoodhart.py",
+    "doc": "docs/benchmark_antigoodhart_harness.md",
+    "experiment_dir": "experiments/benchmark_antigoodhart",
+    "fixture_dir": "experiments/benchmark_antigoodhart/fixtures",
+    "result_record": "experiments/benchmark_antigoodhart/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 2,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Benchmark anti-Goodhart harness passed: 2 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "policy-optimization-and-learning-from-feedback",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
+    "non_claims": [
+      "Does not prove benchmark quality, hidden-holdout integrity, contamination detection, transfer performance, policy-training quality, reward-hacking resistance, steward-agent behavior, release safety, or runtime behavior.",
+      "Does not promote Appendix C support states."
+    ]
+  }
+]
