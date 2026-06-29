@@ -4,7 +4,7 @@ chapter_id: "human-intent-as-a-formal-input"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-28"
+last_updated: "2026-06-29"
 primary_sources:
   - "viea"
   - "software_magic_grimoire"
@@ -14,6 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
+  - "External positioning now source-notes goal-oriented requirements engineering, cooperative inverse reinforcement learning, and deep reinforcement learning from human preferences as requirements, objective-uncertainty, and preference-feedback comparators; support remains at argument because no requirements-engineering method, CIRL algorithm, preference-learning experiment, natural-language parser, authority extractor, or end-to-end lowering trace has been reproduced in this repository."
   - "The core claim now has exact source-note mappings for all assigned sources in Appendix C, and all five mappings carry reviewed local raw-cache passage references; natural-language parsing and end-to-end lowering evidence remain incomplete."
   - "The intent_contract fixture validates schema/example consistency only; record-level Lean predicates exist, but ambiguity parsing, authority extraction, and end-to-end stop-condition preservation tests remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -27,11 +28,11 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-29 |
 | Primary source records | `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `viea`; supporting: `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
+| Source queue | primary: `viea`; supporting: `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos`; external variants: `ext_goal_oriented_requirements_engineering_2001`, `ext_cooperative_inverse_rl_2016`, `ext_deep_rl_human_preferences_2017` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
 | Test state | `intent_contract.valid.json` passes protocol fixture validation; `AsiStackProofs.IntentContracts` implements finite preservation and missing-authority predicates; ambiguity parsing, authority extraction, and end-to-end stop-condition preservation tests remain planned. |
 
@@ -83,7 +84,7 @@ The key insufficiency is assumption laundering. An assumption starts as a helpfu
 
 Intent must therefore become a formal input rather than a conversational preface. Later layers should not have to infer whether a goal was real, whether a method was allowed, or whether a missing constraint was intentionally omitted. They should receive a record that can be challenged, narrowed, cited, and revised before work becomes difficult to unwind.
 
-External baseline exception: the current source queue for human intent is Corben/local architecture material about turning request, authority, and acceptance conditions into formal inputs. No source-noted external requirements-engineering, preference-learning, or human-computer-interaction baseline has been assigned here yet, so the v1.0 candidate records the gap instead of citing from memory.
+External positioning: Human Intent as a Formal Input now has source-noted comparators through `ext_goal_oriented_requirements_engineering_2001`, `ext_cooperative_inverse_rl_2016`, and `ext_deep_rl_human_preferences_2017`. Goal-oriented requirements engineering grounds the broader practice of refining stakeholder goals and constraints into explicit requirements. CIRL grounds uncertainty about the human objective in a cooperative formal setting. Deep RL from human preferences grounds preference-feedback communication for complex goals. These sources make the outside baseline visible, but they do not reproduce a requirements-engineering tool, CIRL policy, preference-learning run, natural-language parser, authority extractor, stop-condition checker, or execution handoff here.
 
 ## Core Claim
 
@@ -262,8 +263,11 @@ These Lean hooks are implemented as finite-record predicates over intent-compila
 | `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw-cache passages reviewed for this chapter |
 | `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw-cache passages reviewed for this chapter |
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw-cache passages reviewed for this chapter |
+| `ext_goal_oriented_requirements_engineering_2001` | Goal-Oriented Requirements Engineering: A Guided Tour | requirements_engineering | External comparator for refining stakeholder goals, constraints, responsibilities, obstacles, and conflicts into explicit requirements. | source note available; method not reproduced |
+| `ext_cooperative_inverse_rl_2016` | Cooperative Inverse Reinforcement Learning | human_intent_alignment | External comparator for objective uncertainty, cooperative value learning, active teaching, and communicative action. | source note available; algorithm not reproduced |
+| `ext_deep_rl_human_preferences_2017` | Deep Reinforcement Learning from Human Preferences | human_feedback_learning | External comparator for communicating complex goals through preference comparisons over behavior segments. | source note available; experiment not reproduced |
 
-The crosswalk names the source family for intent contracts. The passage-reviewed mappings support stronger drafting traceability, but they do not promote any claim until parser tests, authority-extraction tests, stop-condition tests, accepted evidence transitions, or stronger proof artifacts justify that movement.
+The crosswalk names the source family for intent contracts. The passage-reviewed mappings support stronger drafting traceability, and the external comparators position the chapter against requirements engineering, cooperative objective inference, and preference-feedback learning. None of these records promotes any claim until parser tests, authority-extraction tests, stop-condition tests, accepted evidence transitions, or stronger proof artifacts justify that movement.
 
 ## Summary
 

@@ -426,6 +426,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External literature variants | `ext_goal_oriented_requirements_engineering_2001`, `ext_cooperative_inverse_rl_2016`, `ext_deep_rl_human_preferences_2017` | Use as requirements-engineering, cooperative objective-uncertainty, and preference-feedback comparators; do not treat them as parser, authority-extraction, or execution evidence. |
 
 Draft arc:
 
@@ -462,6 +463,7 @@ Draft deliverables:
 
 - An intent-contract schema and example transformations from request to governed task.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, and `talos`; all five local mappings now have reviewed raw-cache passage references. Support remains `argument` pending parser, authority-extraction, stop-condition, or lowering tests.
+- Source-noted external positioning through goal-oriented requirements engineering, cooperative inverse reinforcement learning, and deep reinforcement learning from human preferences; no requirements-engineering tool, CIRL algorithm, preference-learning run, parser, authority extractor, stop-condition checker, or execution handoff is reproduced or promoted.
 - Planned Codex test: Intent parsing ambiguity test.
 - Planned Codex test: Authority extraction test.
 - Planned Codex test: Stop-condition preservation test.

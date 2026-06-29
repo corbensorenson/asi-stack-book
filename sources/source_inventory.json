@@ -1962,6 +1962,57 @@
     "doi": "10.48550/arXiv.2310.10505"
   },
   {
+    "id": "ext_goal_oriented_requirements_engineering_2001",
+    "title": "Goal-Oriented Requirements Engineering: A Guided Tour",
+    "priority": "external_literature",
+    "layer": "requirements_engineering",
+    "chapter_targets": [
+      "human-intent-as-a-formal-input"
+    ],
+    "url": "https://doi.org/10.1109/ISRE.2001.948567",
+    "notes": "External requirements-engineering comparator for turning stakeholder goals, constraints, refinements, and responsibilities into explicit requirements before system design or execution.",
+    "source_type": "conference_paper",
+    "published": "2001",
+    "updated": "2001",
+    "citation_label": "van Lamsweerde (2001), Goal-Oriented Requirements Engineering",
+    "doi": "10.1109/ISRE.2001.948567"
+  },
+  {
+    "id": "ext_cooperative_inverse_rl_2016",
+    "title": "Cooperative Inverse Reinforcement Learning",
+    "priority": "external_literature",
+    "layer": "human_intent_alignment",
+    "chapter_targets": [
+      "human-intent-as-a-formal-input"
+    ],
+    "url": "https://arxiv.org/abs/1606.03137",
+    "notes": "External cooperative AI comparator for formalizing value alignment as uncertainty about the human reward function in a cooperative partial-information setting.",
+    "source_type": "arxiv",
+    "arxiv_id": "1606.03137",
+    "published": "2016-06-09",
+    "updated": "2024-02-17",
+    "citation_label": "Hadfield-Menell et al. (2016), Cooperative Inverse Reinforcement Learning",
+    "doi": "10.48550/arXiv.1606.03137"
+  },
+  {
+    "id": "ext_deep_rl_human_preferences_2017",
+    "title": "Deep Reinforcement Learning from Human Preferences",
+    "priority": "external_literature",
+    "layer": "human_feedback_learning",
+    "chapter_targets": [
+      "human-intent-as-a-formal-input",
+      "policy-optimization-and-learning-from-feedback"
+    ],
+    "url": "https://arxiv.org/abs/1706.03741",
+    "notes": "External human-feedback comparator for communicating complex goals through preference comparisons over behavior segments; useful for separating preference signals from explicit intent contracts.",
+    "source_type": "arxiv",
+    "arxiv_id": "1706.03741",
+    "published": "2017-06-12",
+    "updated": "2023-02-17",
+    "citation_label": "Christiano et al. (2017), Deep RL from Human Preferences",
+    "doi": "10.48550/arXiv.1706.03741"
+  },
+  {
     "id": "ext_dpo_2023",
     "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
     "priority": "external_literature",
