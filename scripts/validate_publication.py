@@ -22,6 +22,8 @@ REQUIRED_FILES = [
     "docs/v1_0_release_gate_audit.md",
     "docs/circle_external_receipt_slice.md",
     "docs/non_core_evidence_ledger.md",
+    "docs/external_review_packet.md",
+    "docs/external_review_status.md",
     "docs/external_sota_positioning_audit.md",
     "docs/book_outline.md",
     "editions/release_profiles.json",
@@ -51,6 +53,8 @@ REQUIRED_FILES = [
     "docs/reader_part_ii_review_pass.md",
     "docs/reader_part_iii_review_pass.md",
     "docs/reader_part_iv_review_pass.md",
+    "docs/external_review_packet.md",
+    "docs/external_review_status.md",
     "scripts/validate_live_human_view.py",
     "scripts/validate_live_human_view_browser.js",
     "scripts/validate_source_appendices.py",
@@ -63,10 +67,12 @@ REQUIRED_FILES = [
     "scripts/validate_v1_release_gate_audit.py",
     "scripts/validate_circle_external_receipt_slice.py",
     "scripts/validate_non_core_evidence_ledger.py",
+    "scripts/validate_external_review_status.py",
     "scripts/validate_external_sota_positioning.py",
     "assets/reading-mode.html",
     ".github/pull_request_template.md",
     ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/external-review.yml",
     ".github/workflows/publish.yml",
 ]
 
@@ -109,6 +115,7 @@ REQUIRED_README_STRINGS = [
     "scripts/validate_v1_release_gate_audit.py",
     "scripts/validate_circle_external_receipt_slice.py",
     "scripts/validate_non_core_evidence_ledger.py",
+    "scripts/validate_external_review_status.py",
     "scripts/validate_external_sota_positioning.py",
     "Do not report a theorem as proven unless",
 ]

@@ -38,7 +38,7 @@ REQUIRED_LEDGER_STRINGS = [
     "All 54 remain at `argument`.",
     "Accepted non-core upward transitions | 3 narrow transitions.",
     "Chapter-core promotion effect | None.",
-    "No independent external human review record yet.",
+    "no independent external human review record yet.",
     "does not promote any chapter core claim above `argument`",
 ]
 

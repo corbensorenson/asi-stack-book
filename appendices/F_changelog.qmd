@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-29 - External review request packet and status ledger
+
+- Opened public GitHub issue #1 as the v1.x external-review request for safety,
+  formal-methods, governance/evals, agent-systems, ML-systems, and
+  technical-publishing reviewers.
+- Added `docs/external_review_packet.md` and `docs/external_review_status.md`
+  so the review scope, requested questions, response template, current
+  no-accepted-review state, routing rules, and non-claims are tracked in the
+  repository.
+- Added `.github/ISSUE_TEMPLATE/external-review.yml` for future structured
+  external review findings and `scripts/validate_external_review_status.py` to
+  check that public surfaces distinguish review input from evidence,
+  support-state promotion, or artifact approval.
+- Updated README, the landing page, the non-core evidence ledger, repository
+  map, publication readiness, and validation surfaces to point at the public
+  review request while preserving that no independent external review has been
+  accepted yet.
+- This does not create an external review result, source evidence, proof result,
+  test result, support-state transition, reader artifact, or chapter-core claim
+  promotion.
+
 ## 2026-06-29 - Sixty-second trust surface and non-core evidence ledger
 
 - Added `docs/non_core_evidence_ledger.md` to make the three accepted non-core

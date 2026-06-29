@@ -13,7 +13,7 @@ readers, reviewers, and future writing agents.
 | Chapter core claims | All 54 remain at `argument`. |
 | Accepted non-core upward transitions | 3 narrow transitions. |
 | Chapter-core promotion effect | None. |
-| External review status | No independent external human review record yet. |
+| External review status | Public review request opened in GitHub issue #1; no independent external human review record yet. |
 | Project Theseus/Circle status | Related project lanes; only the bounded Circle receipt slice below has an accepted prototype-backed transition, and it remains a local public-safe summary rather than a vendored public replay pack. |
 
 ## Accepted Non-Core Transitions

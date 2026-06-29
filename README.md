@@ -14,7 +14,7 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 
 **What this is not:** a validated ASI implementation, deployed safety system, benchmark-proven architecture, or claim that all chapter theses are externally proven.
 
-**What is currently evidenced:** all 54 chapter core claims remain at `argument`; three narrow non-core transitions are accepted and listed in [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md); Lean coverage is broad but still shallow in the safety-critical modules named by the v1.x roadmap; Project Theseus and Circle are related project lanes, not independent third-party evidence unless imported through a public-safe replay gate; independent external human review is still pending or must be recorded as a blocker.
+**What is currently evidenced:** all 54 chapter core claims remain at `argument`; three narrow non-core transitions are accepted and listed in [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md); Lean coverage is broad but still shallow in the safety-critical modules named by the v1.x roadmap; Project Theseus and Circle are related project lanes, not independent third-party evidence unless imported through a public-safe replay gate; independent external human review is requested in [GitHub issue #1](https://github.com/corbensorenson/asi-stack-book/issues/1), tracked in [docs/external_review_status.md](docs/external_review_status.md), and not yet accepted as review evidence.
 
 ## Current Status
 
@@ -85,6 +85,8 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/v1_x_beyond_sota_roadmap.md](docs/v1_x_beyond_sota_roadmap.md) | Post-v1.0.0 roadmap for deeper Lean proofs, Project Theseus/Circle replay evidence, per-chapter evidence lanes, curated reader prose, and human artifact release quality. |
 | [docs/a_plus_quality_scorecard.md](docs/a_plus_quality_scorecard.md) | Planning scorecard for moving every project dimension toward A+ quality, including cold-read legibility and defended contribution tracks. |
 | [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md) | Public ledger for the three accepted non-core evidence transitions and their no-chapter-core-promotion boundary. |
+| [docs/external_review_packet.md](docs/external_review_packet.md) | Public packet for independent v1.x safety, evidence, roadmap, grounding, and reader-quality review. |
+| [docs/external_review_status.md](docs/external_review_status.md) | Ledger for the external-review request and the boundary that review input is not evidence by itself. |
 | [docs/per_chapter_evidence_plan.md](docs/per_chapter_evidence_plan.md) | 54-chapter evidence-lane backlog used as a menu for selecting 5-8 high-payoff v1.x lanes, not as a breadth-sweep checklist. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |
@@ -177,6 +179,7 @@ python3 scripts/validate_release_reproducibility.py
 python3 scripts/validate_public_site_accessibility.py
 python3 scripts/validate_v1_release_gate_audit.py
 python3 scripts/validate_non_core_evidence_ledger.py
+python3 scripts/validate_external_review_status.py
 python3 scripts/validate_external_sota_positioning.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
