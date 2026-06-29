@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-29 - Core-claim promotion paths in Appendix C
+
+- Updated `scripts/sync_scaffold.py` so generated Appendix C includes a
+  reviewer-facing "What would promote this" column for all 54 chapter core
+  claims, derived from the acceptance-bar column in
+  `docs/per_chapter_evidence_plan.md`.
+- Added `scripts/validate_core_claim_promotion_paths.py` and wired it into book
+  and publication validation so the per-chapter promotion criteria must remain
+  complete and synced with the generated claim/evidence matrix.
+- Updated README and publication-readiness notes so reviewers can find the
+  promotion-path check alongside the non-core evidence ledger, core-claim
+  no-promotion coverage, and external-grounding status.
+- This does not promote any chapter core claim, add evidence, add tests,
+  reproduce results, or mark any chapter as source-derived,
+  prototype-backed, synthetic-test-backed, empirical-test-backed, or
+  external-literature-backed.
+
 ## 2026-06-29 - Chapter external grounding status ledger
 
 - Added `docs/chapter_external_grounding_status.md` as a generated 54-chapter

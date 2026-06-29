@@ -50,6 +50,7 @@ REQUIRED = [
     "scripts/validate_non_core_evidence_ledger.py",
     "scripts/validate_external_review_status.py",
     "scripts/validate_core_claim_decisions.py",
+    "scripts/validate_core_claim_promotion_paths.py",
     "scripts/build_chapter_external_grounding_status.py",
     "scripts/validate_chapter_external_grounding_status.py",
     "scripts/validate_external_sota_positioning.py",
@@ -620,6 +621,7 @@ def main() -> None:
     run_validator("validate_source_evidence_audit.py")
     run_validator("validate_evidence_transitions.py")
     run_validator("validate_core_claim_decisions.py")
+    run_validator("validate_core_claim_promotion_paths.py")
     run_validator("validate_chapter_external_grounding_status.py")
     run_validator("validate_external_sota_positioning.py")
     run_validator("validate_claim_ledger_revision.py")

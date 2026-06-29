@@ -22,6 +22,7 @@ SOURCE_NOTES = ROOT / "sources" / "source_notes"
 CONNECTOR_READINESS = ROOT / "sources" / "connector_readiness.json"
 CACHE_MANIFEST = ROOT / "sources" / "cache" / "cache_manifest.json"
 PROOF_TRIAGE = ROOT / "proofs" / "proof_triage.json"
+PER_CHAPTER_EVIDENCE_PLAN = ROOT / "docs" / "per_chapter_evidence_plan.md"
 
 
 GLOSSARY = [
@@ -134,6 +135,28 @@ def flatten_chapters(structure: dict) -> list[dict]:
 def qmd_escape(value: object) -> str:
     text = "" if value is None else str(value)
     return text.replace("|", "\\|").replace("\n", " ")
+
+
+def read_core_claim_promotion_paths() -> dict[str, str]:
+    """Read Appendix C promotion criteria from the per-chapter evidence plan."""
+    paths: dict[str, str] = {}
+    if not PER_CHAPTER_EVIDENCE_PLAN.exists():
+        return paths
+    for line in PER_CHAPTER_EVIDENCE_PLAN.read_text(encoding="utf-8", errors="ignore").splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in stripped.strip("|").split("|")]
+        if len(cells) != 6:
+            continue
+        chapter_cell = cells[1]
+        if not (chapter_cell.startswith("`") and chapter_cell.endswith("`")):
+            continue
+        chapter_id = chapter_cell.strip("`")
+        acceptance_bar = cells[5]
+        if chapter_id and acceptance_bar and chapter_id not in {"Chapter"}:
+            paths[chapter_id] = acceptance_bar
+    return paths
 
 
 def test_name(test: object) -> str:
@@ -663,6 +686,7 @@ Third-party references should be added only when bibliographic metadata is recor
 
 
 def write_claim_matrix(structure: dict) -> None:
+    promotion_paths = read_core_claim_promotion_paths()
     source_note_texts = {
         path.stem: path.read_text(encoding="utf-8")
         for path in SOURCE_NOTES.glob("*.md")
@@ -737,8 +761,12 @@ def write_claim_matrix(structure: dict) -> None:
         claim_id = f"{chapter['id']}.core"
         claim_label = chapter.get("claim_label", "Design rationale")
         claim_mapping = claim_source_mapping_text(chapter)
+        promotion_path = promotion_paths.get(
+            chapter["id"],
+            "No reviewer-facing promotion path is recorded yet; update docs/per_chapter_evidence_plan.md before any support-state movement.",
+        )
         rows.append(
-            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(source_mapping)} | {qmd_escape(claim_mapping)} | {qmd_escape(open_gap)} |"
+            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(source_mapping)} | {qmd_escape(claim_mapping)} | {qmd_escape(open_gap)} | {qmd_escape(promotion_path)} |"
         )
     label_rows = "\n".join(f"| {qmd_escape(label)} | {qmd_escape(meaning)} |" for label, meaning in CLAIM_LABELS)
     support_rows = "\n".join(f"| {qmd_escape(state)} | {qmd_escape(meaning)} |" for state, meaning in SUPPORT_STATES)
@@ -750,12 +778,12 @@ Each claim has two separate classifications: a claim label that describes what k
 
 No chapter core claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. A source note means the source has been mined for drafting context; it does not by itself promote the claim.
 
-Current generated coverage: {len(chapters)} chapter core claims, {total_claim_mappings} exact claim-source mappings, and {total_passage_reviewed} passage-reviewed mappings. Unreviewed mappings remain source-note mappings until passage review, accepted evidence transitions, or validated artifacts justify narrower support-state movement.
+Current generated coverage: {len(chapters)} chapter core claims, {total_claim_mappings} exact claim-source mappings, {total_passage_reviewed} passage-reviewed mappings, and {len(promotion_paths)} reviewer-facing promotion-path rows from `docs/per_chapter_evidence_plan.md`. Unreviewed mappings remain source-note mappings until passage review, accepted evidence transitions, or validated artifacts justify narrower support-state movement.
 
 The current accepted non-core upward transitions are summarized in `docs/non_core_evidence_ledger.md`. They do not promote any chapter core claim above `argument`.
 
-| Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap |
-|---|---|---|---|---|---|---|---|---|---|
+| Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap | What would promote this |
+|---|---|---|---|---|---|---|---|---|---|---|
 {chr(10).join(rows)}
 
 ## Claim Labels

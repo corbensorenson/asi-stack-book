@@ -25,6 +25,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 - `docs/book_outline.md` is the source of truth for the full-book drafting plan, per-part/per-chapter source queues, and Lean proof scope.
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, source assignments, implementation horizons, proof hooks, and appendix order, and `schemas/book_structure.schema.json` plus `scripts/validate_book.py` guard its shape.
 - `_quarto.yml`, Appendix A, Appendix C, Appendix G, Appendix H, and Appendix K are generated.
+- Appendix C now carries a generated "What would promote this" field for all 54 chapter core claims, derived from `docs/per_chapter_evidence_plan.md` and validated by `scripts/validate_core_claim_promotion_paths.py`, without changing any support state.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `reader_delta_report.md` under ignored `build/`.
 - `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book. The current v1.0 overlay set carries 33 active operations across opening-chapter prose, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation for Human view and generated reader editions only.
@@ -182,6 +183,7 @@ python3 scripts/validate_public_site_accessibility.py
 python3 scripts/validate_v1_release_gate_audit.py
 python3 scripts/validate_non_core_evidence_ledger.py
 python3 scripts/validate_external_review_status.py
+python3 scripts/validate_core_claim_promotion_paths.py
 python3 scripts/validate_chapter_external_grounding_status.py
 python3 scripts/validate_external_sota_positioning.py
 python3 scripts/validate_publication.py

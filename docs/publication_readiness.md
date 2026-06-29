@@ -43,6 +43,7 @@ in `docs/v1_0_candidate_status.md`.
 - Source notes exist for all currently assigned source records, and connector-readiness metadata remains tracked for authenticated source routes.
 - Every assigned source/chapter pair is explicitly listed in the corresponding source note, and every core claim now has an exact source-note mapping in Appendix C.
 - Appendix C now records exact source-note mappings for all 54 core claims without promoting support states.
+- Appendix C now includes a generated "What would promote this" field for all 54 chapter core claims, derived from `docs/per_chapter_evidence_plan.md` and checked by `scripts/validate_core_claim_promotion_paths.py`; this is a reviewer-facing burden-of-proof field, not a support-state change.
 - All 54 chapters have manuscript drafts from the source-of-truth manifest and hand drafting passes, kept at conservative support states.
 - All 54 chapters have `.asi-human-only` Human Reading Path bridges that are hidden from default AI view, visible as unheaded lead-in prose in live Human view, omitted from the page TOC, and unwrapped without the source-only heading into generated reader editions. Generated reader chapters now retain manifest titles as their opening heading.
 - `scripts/draft_v02_from_manifest.py` records the repeatable v0.2 baseline drafting pass.
@@ -84,6 +85,7 @@ Before claiming the public book is current:
 - Run `python3 scripts/validate_circle_external_receipt_slice.py`.
 - Run `python3 scripts/validate_non_core_evidence_ledger.py`.
 - Run `python3 scripts/validate_external_review_status.py`.
+- Run `python3 scripts/validate_core_claim_promotion_paths.py`.
 - Run `python3 scripts/validate_chapter_external_grounding_status.py`.
 - Run `python3 scripts/validate_external_sota_positioning.py`.
 - Run `python3 scripts/validate_publication.py`.
