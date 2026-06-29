@@ -121,6 +121,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `viea`, `beastbrain`, `aletheia` | Read first for chapter claims and mechanisms. |
 | Supporting | `talos`, `moecot`, `scf` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986` | Load after internal stack sources to position the opener against modular neuro-symbolic systems, LLM-agent architectures, cognitive-architecture lineage, and layered robot-control architecture. Treat them as comparators, not proof that the ASI Stack works. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -132,6 +133,7 @@ Draft arc:
 - Mechanism: Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Mechanism: Use source queues and evidence states to keep future writing runs context-loaded and honest.
 - Mechanism: Treat layer contracts as the stable object when adding, moving, merging, or revising chapters.
+- Mechanism: Position the stack claim against external architecture traditions without treating those sources as evidence that this ASI stack has been implemented or validated.
 - Interface: Alignment and governance constrain every downstream layer.
 - Interface: Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts.
 - Interface: Recursive improvement is a governed transition, not an ambient property of intelligence.
@@ -153,6 +155,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A stack map, layer boundary record schema and fixture, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
+- Source-noted external comparator rows for `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, and `ext_subsumption_architecture_1986`, without treating those records as reproduced systems, benchmark results, or support-state promotion.
 - Implemented repository-level fixture: `layer_boundary_record.valid.json` validates lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims only; source-to-layer traceability and claim-support audits remain planned.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, and `scf`; support remains `argument` pending implementation or test evidence.
 - Planned Codex test: Layer-boundary audit.

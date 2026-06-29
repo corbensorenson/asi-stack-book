@@ -9,8 +9,8 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 | Metric | Count |
 |---|---:|
 | Manifest chapters | 54 |
-| Chapters with `ext_*` positioning before Source crosswalk | 53 |
-| Chapters with explicit external-baseline exceptions | 1 |
+| Chapters with `ext_*` positioning before Source crosswalk | 54 |
+| Chapters with explicit external-baseline exceptions | 0 |
 | Chapters with source-noted external targets but no in-prose positioning yet | 0 |
 | Chapters needing an exception or additional external source assignment | 0 |
 | Targeted external source notes missing | 0 |
@@ -19,7 +19,7 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 
 | Chapter | Status | External IDs already in prose | Source-inventory targets | Next action |
 |---|---|---|---|---|
-| `asi-is-a-stack-not-a-model` | `exception_recorded` | none | none | Keep exception rationale current until a source-noted external baseline is assigned. |
+| `asi-is-a-stack-not-a-model` | `positioned` | `ext_llm_agents_survey_2023`, `ext_mrkl_systems_2022`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986` | `ext_llm_agents_survey_2023`, `ext_mrkl_systems_2022`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986` | Keep source-note boundary and support-state language honest. |
 | `the-efficient-asi-hypothesis` | `positioned` | `ext_bigbench_2022`, `ext_frugalgpt_2023`, `ext_sparse_moe_2017` | `ext_bigbench_2022`, `ext_frugalgpt_2023`, `ext_sparse_moe_2017` | Keep source-note boundary and support-state language honest. |
 | `system-boundaries-and-authority` | `positioned` | `ext_frontier_ai_regulation_2023`, `ext_nist_ai_rmf_1_0_2023`, `ext_optimal_policies_power_2019` | `ext_frontier_ai_regulation_2023`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_zero_trust_architecture_2020`, `ext_optimal_policies_power_2019`, `ext_saltzer_schroeder_protection_1975` | Keep source-note boundary and support-state language honest. |
 | `failure-modes-of-ungoverned-intelligence` | `positioned` | `ext_concrete_ai_safety_2016`, `ext_optimal_policies_power_2019` | `ext_concrete_ai_safety_2016`, `ext_optimal_policies_power_2019` | Keep source-note boundary and support-state language honest. |

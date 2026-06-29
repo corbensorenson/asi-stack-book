@@ -161,7 +161,7 @@ def main() -> None:
         "`python3 scripts/validate_core_claim_decisions.py`",
         "`python3 scripts/validate_costed_route_resource_slice.py`",
         "`python3 scripts/validate_circle_external_receipt_slice.py`",
-        "| External SOTA positioning | Phase 6 placement is machine-tracked and closed for the v1.0 placement gate: 53 of 54 chapters have `ext_*` positioning before the Source crosswalk, 1 chapter has an explicit external-baseline exception, 0 chapters need source-target placement, and 0 chapters need an exception or added source-noted baseline |",
+        "| External SOTA positioning | Phase 6 placement is machine-tracked and closed for the v1.0 placement gate: 54 of 54 chapters have `ext_*` positioning before the Source crosswalk, 0 chapters have explicit external-baseline exceptions, 0 chapters need source-target placement, and 0 chapters need an exception or added source-noted baseline |",
         "`docs/external_sota_positioning_audit.md`",
         "`python3 scripts/validate_external_sota_positioning.py`",
         "| Test harnesses | Twenty-one synthetic or deterministic harnesses are wired into book validation and the Phase 5 registry:",

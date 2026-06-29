@@ -2520,5 +2520,63 @@
     "published": "2021",
     "updated": "2021",
     "citation_label": "Pineau et al. (2021), Improving Reproducibility in Machine Learning Research"
+  },
+  {
+    "id": "ext_mrkl_systems_2022",
+    "title": "MRKL Systems: A Modular, Neuro-Symbolic Architecture That Combines Large Language Models, External Knowledge Sources and Discrete Reasoning",
+    "priority": "external_literature",
+    "layer": "neuro_symbolic_modular_architecture",
+    "chapter_targets": ["asi-is-a-stack-not-a-model"],
+    "url": "https://arxiv.org/abs/2205.00445",
+    "notes": "External modular-neuro-symbolic architecture comparator for combining language models with expert modules, external knowledge sources, and routing rather than treating the model as the whole system.",
+    "source_type": "arxiv",
+    "arxiv_id": "2205.00445",
+    "published": "2022-05-01",
+    "updated": "2022-05-01",
+    "citation_label": "Karpas et al. (2022), MRKL Systems",
+    "doi": "10.48550/arXiv.2205.00445"
+  },
+  {
+    "id": "ext_llm_agents_survey_2023",
+    "title": "A Survey on Large Language Model based Autonomous Agents",
+    "priority": "external_literature",
+    "layer": "llm_agent_architecture",
+    "chapter_targets": ["asi-is-a-stack-not-a-model"],
+    "url": "https://arxiv.org/abs/2308.11432",
+    "notes": "External LLM-agent architecture comparator for agent profiles, memory, planning, and action modules around a language model, useful for positioning the stack frame against agent-system decompositions.",
+    "source_type": "arxiv",
+    "arxiv_id": "2308.11432",
+    "published": "2023-08-22",
+    "updated": "2024-09-22",
+    "citation_label": "Wang et al. (2023), Survey on LLM-based Autonomous Agents",
+    "doi": "10.48550/arXiv.2308.11432"
+  },
+  {
+    "id": "ext_standard_model_mind_2017",
+    "title": "A Standard Model of the Mind: Toward a Common Computational Framework Across Artificial Intelligence, Cognitive Science, Neuroscience, and Robotics",
+    "priority": "external_literature",
+    "layer": "cognitive_architecture",
+    "chapter_targets": ["asi-is-a-stack-not-a-model"],
+    "url": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2744",
+    "notes": "External cognitive-architecture comparator for treating intelligent behavior as an integrated architecture spanning memory, learning, perception/action, procedural control, and deliberation.",
+    "source_type": "journal_article",
+    "published": "2017",
+    "updated": "2017",
+    "citation_label": "Laird, Lebiere, and Rosenbloom (2017), Standard Model of the Mind",
+    "doi": "10.1609/aimag.v38i4.2744"
+  },
+  {
+    "id": "ext_subsumption_architecture_1986",
+    "title": "A Robust Layered Control System for a Mobile Robot",
+    "priority": "external_literature",
+    "layer": "layered_robot_control_architecture",
+    "chapter_targets": ["asi-is-a-stack-not-a-model"],
+    "url": "https://people.csail.mit.edu/brooks/papers/AIM-864.pdf",
+    "notes": "External layered-control architecture comparator for decomposing robot behavior into interacting layers rather than centralizing behavior in one monolithic controller.",
+    "source_type": "technical_report",
+    "published": "1986",
+    "updated": "1986",
+    "citation_label": "Brooks (1986), Robust Layered Control System",
+    "doi": "10.1109/JRA.1986.1087032"
   }
 ]

@@ -82,7 +82,7 @@ not be quoted in the book as an external authority.
 | P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, but several clusters now repeat the same chapter skeleton around overlapping claims. | Add a governed consolidation milestone: pilot one merge cluster first, preserve ideas as sections/subclaims, and require claim/source/proof/reader reconciliation before changing the manifest broadly. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
-| P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 53 positioned chapters, 1 explicit exception, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Replace weak exceptions where external baselines exist. Keep true author-system exceptions, but state why they are exceptions and what would count as a comparable external reference. |
+| P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 54 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
 | P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; curated manuscript status remains `not_graduated`. | Start curated chapter graduation when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
@@ -612,6 +612,10 @@ Tasks:
   source-noted and positioned; remaining exceptions should be treated as
   author-system framing gaps until a fair baseline is found.
 - Replaced exception status in this cycle:
+  - `asi-is-a-stack-not-a-model` now has source-noted comparators
+    `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`,
+    `ext_standard_model_mind_2017`, and
+    `ext_subsumption_architecture_1986`.
   - `constitutional-alignment-substrate` now has source-noted comparators
     `ext_constitutional_ai_2022` and
     `ext_collective_constitutional_ai_2024`;
@@ -645,8 +649,9 @@ Tasks:
 - Continue mining for stronger social-choice, value-pluralism, legal-process,
   governance-rule, and stack-architecture baselines before any future claim
   split or merge.
-- Preserve true author-system exceptions only when no fair external baseline is
-  currently sourced.
+- The current audit has no explicit external-baseline exceptions. Future
+  author-system exceptions remain allowed only when no fair external baseline is
+  currently sourced and the chapter records why.
 
 Acceptance bar:
 

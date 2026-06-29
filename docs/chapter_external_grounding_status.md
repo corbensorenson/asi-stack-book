@@ -11,8 +11,8 @@ This ledger turns the external-positioning audit into a chapter-by-chapter work 
 | Metric | Count |
 |---|---:|
 | Manifest chapters | 54 |
-| Chapters with source-noted external grounding records | 53 |
-| Chapters with explicit external-baseline exceptions | 1 |
+| Chapters with source-noted external grounding records | 54 |
+| Chapters with explicit external-baseline exceptions | 0 |
 | Chapters still in candidate-backlog state | 0 |
 | Chapters missing from the external-positioning audit | 0 |
 
@@ -27,7 +27,7 @@ This ledger turns the external-positioning audit into a chapter-by-chapter work 
 
 | Part | Chapter ID | Chapter | Grounding status | External grounding records | Corben/local sources to mine first | External-positioning audit state | Next action |
 |---|---|---|---|---|---|---|---|
-| Part I - Foundations, Alignment, and Governance | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | `explicit_exception` | none | `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf` | `exception_recorded` | Keep the exception rationale current, then mine the linked Corben/local sources for fair baselines before adding any new external source records. |
+| Part I - Foundations, Alignment, and Governance | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | `source-noted` | `ext_llm_agents_survey_2023`, `ext_mrkl_systems_2022`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986` | `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf` | `positioned` | Mine the linked Corben/local source notes for bibliographies, footnotes, and adjacent terms before broad search; keep these external records as comparators, not claim promotions. |
 | Part I - Foundations, Alignment, and Governance | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | `source-noted` | `ext_bigbench_2022`, `ext_frugalgpt_2023`, `ext_sparse_moe_2017` | `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot` | `positioned` | Mine the linked Corben/local source notes for bibliographies, footnotes, and adjacent terms before broad search; keep these external records as comparators, not claim promotions. |
 | Part I - Foundations, Alignment, and Governance | `system-boundaries-and-authority` | System Boundaries and Authority | `source-noted` | `ext_frontier_ai_regulation_2023`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_zero_trust_architecture_2020`, `ext_optimal_policies_power_2019`, `ext_saltzer_schroeder_protection_1975` | `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot` | `positioned` | Mine the linked Corben/local source notes for bibliographies, footnotes, and adjacent terms before broad search; keep these external records as comparators, not claim promotions. |
 | Part I - Foundations, Alignment, and Governance | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | `source-noted` | `ext_concrete_ai_safety_2016`, `ext_optimal_policies_power_2019` | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot` | `positioned` | Mine the linked Corben/local source notes for bibliographies, footnotes, and adjacent terms before broad search; keep these external records as comparators, not claim promotions. |
