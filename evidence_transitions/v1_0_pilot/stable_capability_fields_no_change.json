@@ -1,0 +1,117 @@
+{
+  "transition_id": "v1_0_pilot.stable_capability_fields.no_change",
+  "claim_id": "stable-capability-fields.core",
+  "claim_surface_refs": [
+    "chapters/stable-capability-fields.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/stable_capability_field_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/stable_capability_field.schema.json",
+    "tests/fixtures/protocol_records/stable_capability_field.valid.json",
+    "experiments/stable_capability_fields/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/StableCapabilityFields.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic stable-capability-field record discipline and finite Lean predicates only; no runtime route validity, deployed capability identity, evaluator integrity, authority enforcement, replacement safety, rollback execution, source interpretation, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has a stable-capability-field schema, a protocol fixture, finite StableCapabilityFields Lean predicates, proof adequacy review text that keeps the target narrow, exact source mappings for the Stable Capability Fields chapter, and a synthetic stable-capability-field harness with valid and expected-invalid fixtures. Those artifacts make qualification predicates, evidence refs, readiness refs, authority ceilings, route scopes, route permission effects, evaluator independence, review triggers, rollback obligations, default-route blockers, and non-claim boundaries executable at the record level. They still do not establish runtime route validity, deployed capability identity, evaluator integrity, authority enforcement, replacement safety, rollback execution, source interpretation adequacy, or deployed behavior.",
+  "required_artifacts": [
+    "deployed stable-capability-field implementation with real route decisions",
+    "runtime trace showing route validity under accepted and rejected field candidates",
+    "independent evaluator-integrity or evaluator-separation review",
+    "authority-enforcement trace showing candidates cannot widen authority without governance grant",
+    "replacement transaction with real rollback dry run or rollback execution",
+    "regression suite over real candidate implementations and prior implementations",
+    "source interpretation review for the SCF source mappings",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/stable_capability_field_harness.md",
+    "scripts/validate_stable_capability_fields.py",
+    "experiments/stable_capability_fields/results/2026-06-28-local.md",
+    "schemas/stable_capability_field.schema.json",
+    "tests/fixtures/protocol_records/stable_capability_field.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/StableCapabilityFields.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#stable-capability-fields.core",
+    "docs/source_evidence_audit.md#stable-capability-fields.core"
+  ],
+  "verification_command": "python3 scripts/validate_stable_capability_fields.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Stable Capability Fields remains at argument",
+    "stable-capability-field fixtures are synthetic",
+    "schema validation checks record shape rather than runtime route validity",
+    "finite Lean predicates remain useful but too narrow for deployed capability identity, evaluator-integrity, or authority-enforcement claims",
+    "replacement safety, rollback execution, source interpretation review, and deployed behavior are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/stable-capability-fields.qmd",
+    "docs/stable_capability_field_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "stable capability fields harness failure",
+    "stable_capability_field schema drift",
+    "chapter text interpreted as runtime route-validity evidence",
+    "synthetic fixture interpreted as deployed capability-identity evidence",
+    "finite Lean stable-capability predicates treated as deployed replacement behavior",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after a deployed stable-capability-field implementation, real route-validity traces, independent evaluator-integrity review, authority-enforcement traces, replacement transactions with real rollback dry runs or rollback execution, regression suites over real implementations, and source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove runtime route validity",
+    "schema validation does not prove deployed capability identity",
+    "finite Lean predicates do not implement stable capability fields",
+    "evaluator-independence strings do not prove evaluator integrity",
+    "rollback-obligation strings do not prove rollback execution",
+    "no independent runtime, formal-methods, evaluator-integrity, replacement-safety, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent runtime-systems, evaluator-integrity, replacement-safety, formal-methods, reviewer-quality, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed stable-capability-field implementation",
+    "no runtime route-validity trace",
+    "no independent evaluator-integrity review",
+    "no authority-enforcement trace over real candidates",
+    "no real rollback dry run or rollback execution",
+    "no regression suite over real candidate and prior implementations",
+    "no independent source-interpretation review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-stable-capability-fields-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Stable Capability Fields above argument",
+    "does not prove runtime route validity",
+    "does not prove deployed capability identity",
+    "does not prove evaluator integrity or authority enforcement",
+    "does not prove replacement safety or rollback execution",
+    "does not prove source interpretation"
+  ]
+}

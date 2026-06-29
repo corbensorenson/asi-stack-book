@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Stable capability fields evidence transition no-change
+
+- Added
+  `evidence_transitions/v1_0_pilot/stable_capability_fields_no_change.json`
+  and updated the evidence-transition pilot to twenty-two accepted no-change
+  decisions. The new record routes the stable capability fields harness,
+  stable-capability-field schema and fixture, finite StableCapabilityFields
+  Lean predicates, proof adequacy review, and exact source mappings into one
+  conservative decision: `stable-capability-fields` remains at `argument`.
+- The record preserves the promotion burden for deployed stable capability
+  field implementation, real route-validity traces, independent
+  evaluator-integrity review, authority-enforcement traces, replacement
+  transactions with real rollback dry runs or rollback execution, regression
+  suites over real implementations, and source-interpretation review. It does
+  not promote support state, prove runtime route validity, prove deployed
+  capability identity, prove evaluator integrity, prove authority
+  enforcement, prove replacement safety, prove rollback execution, prove
+  source interpretation, or approve reader artifacts.
+
 ## 2026-06-28 - v1.0 Stable capability fields harness
 
 - Added `scripts/validate_stable_capability_fields.py`, synthetic
