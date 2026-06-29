@@ -8,7 +8,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "docs" / "chapter_consolidation_pilot_plan.md"
-DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_constitutional_alignment.md"
+DRY_RUN_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_dry_run_constitutional_alignment.md"
+DRY_RUN_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_dry_run_contestable_governance.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 STRUCTURE = ROOT / "book_structure.json"
 
@@ -43,7 +44,7 @@ REQUIRED_LEAN_TAGS = {
     "lean:governance.rights.operational_invariant",
     "lean:governance.rights.failure_blocks_promotion",
 }
-DRY_RUN_REQUIRED_SOURCE_IDS = {
+ALIGNMENT_DRY_RUN_REQUIRED_SOURCE_IDS = {
     "alignment_field",
     "field_of_god",
     "ethica_mechanica",
@@ -56,7 +57,7 @@ DRY_RUN_REQUIRED_SOURCE_IDS = {
     "ext_corrigibility_2015",
     "ext_off_switch_game_2016",
 }
-DRY_RUN_REQUIRED_LEAN_TAGS = {
+ALIGNMENT_DRY_RUN_REQUIRED_LEAN_TAGS = {
     "lean:alignment.constitution.operational_invariant",
     "lean:alignment.constitution.failure_blocks_promotion",
     "lean:corrigibility.agency.operational_invariant",
@@ -81,7 +82,7 @@ REQUIRED_FRAGMENTS = (
     "This plan does not change `book_structure.json`.",
     "This plan does not change any support state.",
 )
-DRY_RUN_REQUIRED_FRAGMENTS = (
+ALIGNMENT_DRY_RUN_REQUIRED_FRAGMENTS = (
     "This is the first dry-run merge package",
     "does not edit `book_structure.json`",
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
@@ -104,6 +105,49 @@ DRY_RUN_REQUIRED_FRAGMENTS = (
     "Validation Commands Before Any Real Merge Commit",
     "No new result is created by this dry run.",
 )
+CONTESTABLE_DRY_RUN_REQUIRED_FRAGMENTS = (
+    "This is the second dry-run merge package",
+    "does not edit `book_structure.json`",
+    "Moral Uncertainty, Value Conflict, and Contestable Governance",
+    "governance-rights-fork-exit-and-audit",
+    "Proposed `book_structure.json` Diff",
+    "This proposed `book_structure.json` diff is illustrative and unapplied.",
+    "Destination Section Outline",
+    "one chapter skeleton, not two pasted skeletons",
+    "Appendix C Row Plan",
+    "No-support-state-change language",
+    "Source Union",
+    "External-source union",
+    "Lean Module And Proof-Manifest Treatment",
+    "Keep both Lean modules",
+    "Test, Schema, And Harness Rows To Move",
+    "Reader Path, Handoff, And Review Repairs",
+    "MVI And Beyond-SOTA Merge",
+    "URL, Redirect, And Retired-File Policy",
+    "Expected Generated-File Updates If Applied",
+    "Validation Commands Before Any Real Merge Commit",
+    "No new result is created by this dry run.",
+)
+CONTESTABLE_DRY_RUN_REQUIRED_SOURCE_IDS = {
+    "ethica_mechanica",
+    "alignment_field",
+    "coherence_exchange",
+    "uat",
+    "spinoza",
+    "field_of_god_ai_constitution",
+    "ladon_manhattan",
+    "ext_reinforcement_learning_moral_uncertainty_2020",
+    "ext_contestable_ai_design_2022",
+    "ext_collective_constitutional_ai_2024",
+    "ext_corrigibility_2015",
+    "ext_off_switch_game_2016",
+}
+CONTESTABLE_DRY_RUN_REQUIRED_LEAN_TAGS = {
+    "lean:values.conflict.operational_invariant",
+    "lean:values.conflict.failure_blocks_promotion",
+    "lean:governance.rights.operational_invariant",
+    "lean:governance.rights.failure_blocks_promotion",
+}
 ROADMAP_REQUIRED_FRAGMENTS = (
     "Decision from the 2026-06-29 consolidation review",
     "The right response is re-consolidation into chapter-owning artifacts",
@@ -117,6 +161,25 @@ ROADMAP_REQUIRED_FRAGMENTS = (
     "Governed consolidation review",
     "review the governed consolidation pilot before broad human-reader curation",
 )
+
+
+def read_required_file(path: Path, errors: list[str]) -> str:
+    if not path.exists():
+        errors.append(f"Missing dry-run merge package: {path.relative_to(ROOT)}")
+        return ""
+    return path.read_text(encoding="utf-8")
+
+
+def require_fragments(label: str, text: str, fragments: tuple[str, ...], errors: list[str]) -> None:
+    for fragment in fragments:
+        if fragment not in text:
+            errors.append(f"{label} missing required fragment: {fragment}")
+
+
+def require_backticked_ids(label: str, text: str, ids: set[str], errors: list[str]) -> None:
+    for item_id in sorted(ids):
+        if f"`{item_id}`" not in text:
+            errors.append(f"{label} does not preserve `{item_id}`.")
 
 
 def fail(errors: list[str]) -> None:
@@ -137,11 +200,8 @@ def main() -> None:
     errors: list[str] = []
     text = PLAN.read_text(encoding="utf-8")
     roadmap_text = ROADMAP.read_text(encoding="utf-8")
-    if not DRY_RUN.exists():
-        errors.append(f"Missing dry-run merge package: {DRY_RUN.relative_to(ROOT)}")
-        dry_run_text = ""
-    else:
-        dry_run_text = DRY_RUN.read_text(encoding="utf-8")
+    alignment_dry_run_text = read_required_file(DRY_RUN_ALIGNMENT, errors)
+    contestable_dry_run_text = read_required_file(DRY_RUN_CONTESTABLE, errors)
     structure = load_structure()
     manifest_ids = {
         str(chapter.get("id"))
@@ -161,28 +221,51 @@ def main() -> None:
     for tag in sorted(REQUIRED_LEAN_TAGS):
         if f"`{tag}`" not in text:
             errors.append(f"Plan does not preserve Lean tag `{tag}`.")
-    for fragment in REQUIRED_FRAGMENTS:
-        if fragment not in text:
-            errors.append(f"Missing required fragment: {fragment}")
-    for fragment in ROADMAP_REQUIRED_FRAGMENTS:
-        if fragment not in roadmap_text:
-            errors.append(f"Roadmap missing required consolidation fragment: {fragment}")
-    for fragment in DRY_RUN_REQUIRED_FRAGMENTS:
-        if fragment not in dry_run_text:
-            errors.append(f"Dry-run package missing required fragment: {fragment}")
-    for source_id in sorted(DRY_RUN_REQUIRED_SOURCE_IDS):
-        if f"`{source_id}`" not in dry_run_text:
-            errors.append(f"Dry-run package does not preserve source ID `{source_id}`.")
-    for tag in sorted(DRY_RUN_REQUIRED_LEAN_TAGS):
-        if f"`{tag}`" not in dry_run_text:
-            errors.append(f"Dry-run package does not preserve Lean tag `{tag}`.")
+    require_fragments("Plan", text, REQUIRED_FRAGMENTS, errors)
+    require_fragments("Roadmap", roadmap_text, ROADMAP_REQUIRED_FRAGMENTS, errors)
+    require_fragments(
+        "Constitutional-alignment dry-run package",
+        alignment_dry_run_text,
+        ALIGNMENT_DRY_RUN_REQUIRED_FRAGMENTS,
+        errors,
+    )
+    require_backticked_ids(
+        "Constitutional-alignment dry-run package",
+        alignment_dry_run_text,
+        ALIGNMENT_DRY_RUN_REQUIRED_SOURCE_IDS,
+        errors,
+    )
+    require_backticked_ids(
+        "Constitutional-alignment dry-run package",
+        alignment_dry_run_text,
+        ALIGNMENT_DRY_RUN_REQUIRED_LEAN_TAGS,
+        errors,
+    )
+    require_fragments(
+        "Contestable-governance dry-run package",
+        contestable_dry_run_text,
+        CONTESTABLE_DRY_RUN_REQUIRED_FRAGMENTS,
+        errors,
+    )
+    require_backticked_ids(
+        "Contestable-governance dry-run package",
+        contestable_dry_run_text,
+        CONTESTABLE_DRY_RUN_REQUIRED_SOURCE_IDS,
+        errors,
+    )
+    require_backticked_ids(
+        "Contestable-governance dry-run package",
+        contestable_dry_run_text,
+        CONTESTABLE_DRY_RUN_REQUIRED_LEAN_TAGS,
+        errors,
+    )
     if "support-state promotion" in text.lower() and "Do not promote any chapter core claim." not in text:
         errors.append("Plan mentions support-state promotion without the no-promotion boundary.")
 
     if errors:
         fail(errors)
 
-    print("Chapter consolidation pilot-plan validation passed: four source chapters, two proposed merges.")
+    print("Chapter consolidation pilot-plan validation passed: four source chapters, two proposed merges, two dry-run packages.")
 
 
 if __name__ == "__main__":

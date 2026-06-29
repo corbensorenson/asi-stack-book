@@ -897,16 +897,23 @@ Current status:
 - `scripts/validate_chapter_consolidation_pilot_plan.py` verifies that the plan
   preserves all four source chapter IDs, required source IDs, required Lean
   proof tags, no-manifest-edit language, and no-support-state-change language.
-- `docs/chapter_consolidation_dry_run_constitutional_alignment.md` now records
-  the first dry-run merge package for the `constitutional-alignment-substrate`
-  plus `agency-dignity-and-corrigibility` pilot destination, including the
+- `docs/chapter_consolidation_dry_run_constitutional_alignment.md` records the
+  dry-run merge package for the `constitutional-alignment-substrate` plus
+  `agency-dignity-and-corrigibility` pilot destination, including the
   illustrative manifest diff, one-skeleton outline, Appendix C row plan,
   source/proof/test/reader/handoff reconciliation, implementation-horizon
   merge, URL policy, validation commands, and no-support-state-change boundary.
-- The dry-run package is now covered by
+- `docs/chapter_consolidation_dry_run_contestable_governance.md` records the
+  dry-run merge package for the `moral-uncertainty-and-value-conflict` plus
+  `governance-rights-fork-exit-and-audit` pilot destination, including the
+  illustrative manifest diff, one-skeleton outline, Appendix C row plan,
+  source/proof/test/reader/handoff reconciliation, implementation-horizon
+  merge, URL policy, validation commands, and no-support-state-change boundary.
+- Both dry-run packages are now covered by
   `scripts/validate_chapter_consolidation_pilot_plan.py`.
 - No manifest merge has been performed yet; the next consolidation decision is
-  review of that dry-run package, not an immediate 54-to-44 manifest rewrite.
+  review or explicit deferral of the dry-run packages, not an immediate
+  54-to-44 manifest rewrite.
 
 ### Milestone 7 - Curated Human-Reader Manuscript
 

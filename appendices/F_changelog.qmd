@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-29 - Contestable-governance consolidation dry run
+
+- Added `docs/chapter_consolidation_dry_run_contestable_governance.md`, the
+  second governed consolidation dry-run package for the Part I
+  alignment/governance pilot. The package proposes, without applying, a future
+  fold of `governance-rights-fork-exit-and-audit` into
+  `moral-uncertainty-and-value-conflict` under the title **Moral Uncertainty,
+  Value Conflict, and Contestable Governance**.
+- The dry-run records the illustrative manifest diff, one-skeleton destination
+  outline, Appendix C row plan, Corben/local source union, external-source
+  union, Lean module/proof-tag treatment, value-conflict and governance-rights
+  harness rows, reader and Handoff repairs, MVI and Beyond-SOTA merge, URL
+  policy, generated-file expectations, validation commands, and open review
+  questions.
+- Extended `scripts/validate_chapter_consolidation_pilot_plan.py` so both
+  pilot dry-run packages are required and checked for preserved source IDs,
+  Lean tags, non-action boundaries, and validation coverage.
+- Updated `docs/chapter_consolidation_pilot_plan.md` and the v1.x roadmap so
+  the consolidation pilot status reflects two reviewable dry-run packages
+  before any manifest edit.
+- This does not edit `book_structure.json`, merge chapters, delete source
+  files, change proof targets, promote support states, create new evidence,
+  approve a reader artifact, or claim that reduced repetition is itself
+  evidence.
+
 ## 2026-06-29 - Value-conflict review proof depth
 
 - Strengthened `lean/AsiStackProofs/ValueConflict.lean` with

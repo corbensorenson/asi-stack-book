@@ -208,9 +208,10 @@ manifest edit. It should include:
 
 ## Validation
 
-This plan and the first dry-run package,
-`docs/chapter_consolidation_dry_run_constitutional_alignment.md`, are checked
-by `python3 scripts/validate_chapter_consolidation_pilot_plan.py`.
+This plan and both dry-run packages,
+`docs/chapter_consolidation_dry_run_constitutional_alignment.md` and
+`docs/chapter_consolidation_dry_run_contestable_governance.md`, are checked by
+`python3 scripts/validate_chapter_consolidation_pilot_plan.py`.
 
 Current dry-run package status:
 
@@ -222,7 +223,15 @@ Current dry-run package status:
   and proof-manifest treatment; test/harness rows; reader and handoff repairs;
   MVI and Beyond-SOTA merge; URL/retired-file policy; generated-file updates;
   validation commands; and open review questions.
-- It does not edit the manifest or authorize a merge.
+- `docs/chapter_consolidation_dry_run_contestable_governance.md` records the
+  proposed merge package for `moral-uncertainty-and-value-conflict` plus
+  `governance-rights-fork-exit-and-audit`.
+- It records an illustrative, unapplied manifest diff; one-skeleton destination
+  outline; Appendix C row plan; source and external-source unions; Lean module
+  and proof-manifest treatment; test/harness rows; reader and handoff repairs;
+  MVI and Beyond-SOTA merge; URL/retired-file policy; generated-file updates;
+  validation commands; and open review questions.
+- Neither package edits the manifest or authorizes a merge.
 
 ## Non-Claims
 
