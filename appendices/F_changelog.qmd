@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-29 - Value Conflict Lean depth follow-through
+
+- Strengthened `lean/AsiStackProofs/ValueConflict.lean` with a finite
+  `ValueConflictDecision` envelope and the derived/decomposed theorem
+  `unresolved_high_stakes_conflict_without_revisit_path_is_blocked`.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 144
+  theorem declarations, 32 derived/decomposed theorem declarations, and one
+  derived/decomposed theorem inside the safety-critical Value Conflict module.
+- Updated the Moral Uncertainty and Value Conflict chapter and
+  `docs/proof_adequacy_review.md` so the new theorem is described as a narrow
+  finite-record unresolved-conflict/revisit-path gate, not a solution to moral
+  uncertainty or proof of deployed dissent preservation.
+- This completes the first safety-critical Lean-depth sweep in which
+  Alignment, Corrigibility, Governance Rights, Self-Improvement, and Value
+  Conflict each have at least one derived/decomposed finite-record theorem
+  while all chapter core claims remain at `argument`.
+- This does not promote any chapter core claim, settle moral uncertainty,
+  validate reviewer quality, prove deployed policy behavior, reproduce results,
+  or change any support state.
+
 ## 2026-06-29 - Self-Improvement Lean depth follow-through
 
 - Strengthened `lean/AsiStackProofs/SelfImprovement.lean` with a finite

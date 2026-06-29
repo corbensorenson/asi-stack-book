@@ -73,7 +73,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 54-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Move the 54-row plan to `docs/per_chapter_evidence_plan.md`, cap each v1.x cycle at 5-8 executed lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Safety-critical Lean depth is still shallow. | `docs/proof_depth_classification.md` records 139 theorem declarations, 112 direct/projection-style, 27 derived/decomposed, and all 10 theorem declarations in `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` as direct/projection-style. | Make those five modules the first formal-depth workstream. The goal is not more theorem count; it is richer state, transitions, negative cases, and derived invariants. |
+| P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 144 theorem declarations, 112 direct/projection-style, 32 derived/decomposed, and 15 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` now has one derived/decomposed finite-record theorem plus explicit projection-only limitation prose, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 54 chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
@@ -355,6 +355,20 @@ Acceptance bar:
 - proof-depth classification shows improvement for the targeted theorem set;
 - chapter limitation sections state exactly what the new proofs do and do not
   justify.
+
+Current status after the first v1.x safety-critical proof-depth sweep:
+
+- `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and
+  `ValueConflict` each have one derived/decomposed finite-record theorem with a
+  rejected or blocked negative case.
+- The generated proof-depth report records 144 theorem declarations, 32
+  derived/decomposed declarations, 15 safety-critical declarations, and 10
+  remaining safety-critical direct/projection declarations.
+- The relevant chapter limitation sections now state what these finite-record
+  proofs do and do not justify.
+- No chapter core claim support state moved above `argument`; the next formal
+  step is richer lifecycle/review semantics and tighter links to replayed
+  harnesses, not broad safety language.
 
 ### Milestone 3 - Project Theseus Evidence Import
 

@@ -41,4 +41,37 @@ theorem high_stakes_conflict_cannot_bypass_required_review
   intro valid highStakes missingReview
   exact valid highStakes missingReview
 
+inductive ValueConflictDecisionRoute where
+  | accepted
+  | blockedForReview
+deriving DecidableEq, Repr
+
+structure ValueConflictDecision where
+  highStakesConflict : Bool
+  unresolvedConflict : Bool
+  revisitPathRecorded : Bool
+  route : ValueConflictDecisionRoute
+deriving DecidableEq, Repr
+
+def ValueConflictDecisionSafe (decision : ValueConflictDecision) : Prop :=
+  if decision.highStakesConflict &&
+      decision.unresolvedConflict &&
+      !decision.revisitPathRecorded then
+    decision.route = ValueConflictDecisionRoute.blockedForReview
+  else
+    True
+
+theorem unresolved_high_stakes_conflict_without_revisit_path_is_blocked
+    {decision : ValueConflictDecision} :
+    ValueConflictDecisionSafe decision ->
+    decision.highStakesConflict = true ->
+    decision.unresolvedConflict = true ->
+    decision.revisitPathRecorded = false ->
+    decision.route = ValueConflictDecisionRoute.blockedForReview := by
+  intro safe highStakes unresolved missingRevisit
+  unfold ValueConflictDecisionSafe at safe
+  rw [highStakes, unresolved, missingRevisit] at safe
+  simp at safe
+  exact safe
+
 end AsiStackProofs.ValueConflict

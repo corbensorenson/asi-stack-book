@@ -82,7 +82,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/TheseusReference.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/TypedJobs.lean` | 2 | 2 | 3 | 3 |
-| `lean/AsiStackProofs/ValueConflict.lean` | 2 | 2 | 2 | 2 |
+| `lean/AsiStackProofs/ValueConflict.lean` | 2 | 3 | 3 | 3 |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | 2 | 2 | 1 | 2 |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | 2 | 2 | 4 | 4 |
 
