@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-29 - Companion notes for proof and governance chapters
+
+- Added drafting companion notes for
+  `executable-specifications-and-lean-proof-envelope` and
+  `artifact-steward-agents-and-living-project-governance`, plus
+  `editions/reader_manuscript/v1_0/companion_notes/README.md` to state the
+  companion-note directory policy.
+- Updated `editions/reader_manuscript/v1_0/companion_note_routing.json` so all
+  three dense proof/governance companion-note candidates now point at tracked
+  drafting notes: Circle proof receipts, executable-specification proof lanes,
+  and artifact-steward project objects.
+- Updated the companion routing review, reader manuscript review, release
+  editions plan, Appendix J, README, publication-readiness docs, v1.0 status,
+  and v1.x roadmap so the notes are discoverable without treating them as
+  release-reviewed artifacts.
+- Extended `scripts/validate_publication.py` so the companion-note directory
+  README is required on the public surface.
+- This does not approve a reader release, e-reader artifact, EPUB, DOCX, PDF,
+  HTML, audio artifact, audio script, support-state promotion, proof adequacy
+  claim, steward workflow execution claim, governance-correctness claim, model
+  quality claim, or release readiness.
+
 ## 2026-06-29 - Circle companion note drafting path
 
 - Added the first tracked drafting companion note at

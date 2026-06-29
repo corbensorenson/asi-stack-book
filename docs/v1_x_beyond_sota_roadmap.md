@@ -1005,13 +1005,12 @@ Current status:
 - `docs/curated_reader_artifact_steward_prose_pass.md` records the curation
   scope, meaning-preservation checks, non-claims, and remaining blockers for
   that pass.
-- `circle-calculus-and-proof-carrying-ai-contracts` remains on the companion
-  path rather than the curated-prose path for now. Its first drafting companion
-  note now lives at
-  `editions/reader_manuscript/v1_0/companion_notes/circle-calculus-and-proof-carrying-ai-contracts.md`
-  and covers receipt-state vocabulary, theorem laundering, consumer gates,
-  workload-blocked promotion, the public Circle fixture boundary, and audio
-  treatment without moving meaning-critical limits out of the reader spine.
+- The three dense proof/governance companion-note candidates now have drafting
+  companion notes under `editions/reader_manuscript/v1_0/companion_notes/`:
+  Circle proof receipts, executable-specification proof lanes, and
+  artifact-steward project objects. These notes support e-reader and audio
+  treatment without moving meaning-critical proof, governance, release, or
+  non-claim limits out of the reader spine.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` records the
   drafting row and keeps `reader_release_record_not_created`,
   `format_artifact_not_reviewed`, and
