@@ -10,6 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SEQUENCE = ROOT / "docs" / "chapter_consolidation_sequence.md"
 COMPRESSION_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_compression.md"
 COMPRESSION_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_compression.md"
+INTENT_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_intent_contracts.md"
+INTENT_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_intent_contracts.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -83,6 +85,7 @@ REQUIRED_FRAGMENTS = (
     "A merge is rejected or deferred when the proposed destination loses a useful",
     "Current Cluster Register",
     "Compression and residual honesty | `review_ready`",
+    "Intent and executable contracts | `review_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -177,6 +180,94 @@ COMPRESSION_REQUIRED_LEAN_TAGS = {
     "lean:compression.artifacts.failure_blocks_promotion",
 }
 
+INTENT_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Dry Run: Intent And Executable Contracts",
+    "does not edit `book_structure.json`",
+    "Command Contracts: From Intent to Executable Work",
+    "human-intent-as-a-formal-input",
+    "Proposed `book_structure.json` Diff",
+    "Destination Section Outline",
+    "Appendix C Row Plan",
+    "Source Union",
+    "External-source union",
+    "Lean Module And Proof-Manifest Treatment",
+    "Tests, Schemas, And Fixtures",
+    "Reader Path, Handoff, And Review Repairs",
+    "No support state changes",
+    "No new result is created by this dry run",
+)
+
+INTENT_DRAFT_REQUIRED_FRAGMENTS = (
+    "Consolidation Destination Draft: Command Contracts From Intent To Executable Work",
+    "Status: review-ready draft; human/external review not completed.",
+    "does not edit `book_structure.json`",
+    "Destination continuity ID: `intent-to-execution-contracts`",
+    "Proposed displayed title: **Command Contracts: From Intent to Executable Work**",
+    "Preservation Ledger",
+    "Destination Chapter Draft",
+    "Chapter status",
+    "Drafting guardrail",
+    "Human Reading Path",
+    "Problem",
+    "Why existing approaches are insufficient",
+    "Core Claim",
+    "Mechanism",
+    "Minimum Viable Implementation",
+    "Beyond the State of the Art",
+    "Codex test plan",
+    "Formalization hooks",
+    "Source crosswalk",
+    "Review Decision Surface",
+    "No chapter core claim is promoted above `argument`",
+    "This draft does not merge chapters.",
+    "This draft does not change Appendix C support states.",
+)
+
+INTENT_REQUIRED_IDS = {
+    "intent-to-execution-contracts",
+    "command-contracts-and-semantic-interfaces",
+    "human-intent-as-a-formal-input",
+    "planning-as-a-control-layer",
+}
+
+INTENT_REQUIRED_SOURCE_IDS = {
+    "viea",
+    "talos",
+    "software_magic_grimoire",
+    "genesiscode",
+    "moecot",
+    "cognitive_compilation",
+}
+
+INTENT_REQUIRED_EXTERNAL_IDS = {
+    "ext_react_2022",
+    "ext_dafny_2010",
+    "ext_goal_oriented_requirements_engineering_2001",
+    "ext_cooperative_inverse_rl_2016",
+    "ext_deep_rl_human_preferences_2017",
+}
+
+INTENT_REQUIRED_LEAN_TAGS = {
+    "lean:intent_execution.contracts.operational_invariant",
+    "lean:intent_execution.contracts.failure_blocks_promotion",
+    "lean:command.semantic_interface.operational_invariant",
+    "lean:command.semantic_interface.failure_blocks_promotion",
+}
+
+INTENT_REQUIRED_FIXTURE_FRAGMENTS = {
+    "schemas/intent_contract.schema.json",
+    "schemas/command_contract.schema.json",
+    "schemas/intent_execution_trace.schema.json",
+    "experiments/plan_execution_contracts/fixtures/valid_dispatchable_linear_plan.json",
+    "experiments/plan_execution_contracts/fixtures/valid_blocked_authority_plan.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_dispatch_without_receipt.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_approval_bypass.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_requirement_lost.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_contract_mismatch.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_cycle_in_dag.json",
+    "python3 scripts/validate_plan_execution_contracts.py",
+}
+
 REQUIRED_DESTINATIONS = (
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
@@ -191,6 +282,8 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_sequence.md",
     "docs/chapter_consolidation_dry_run_compression.md",
     "docs/chapter_consolidation_destination_draft_compression.md",
+    "docs/chapter_consolidation_dry_run_intent_contracts.md",
+    "docs/chapter_consolidation_destination_draft_intent_contracts.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -296,6 +389,66 @@ def main() -> None:
     for tag in sorted(COMPRESSION_REQUIRED_LEAN_TAGS):
         if f"`{tag}`" not in compression_draft:
             errors.append(f"Compression destination draft missing Lean tag `{tag}`.")
+
+    try:
+        intent = read_text(INTENT_DRY_RUN)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_dry_run_intent_contracts.md")
+        intent = ""
+
+    for fragment in INTENT_REQUIRED_FRAGMENTS:
+        if fragment not in intent:
+            errors.append(f"Intent/contracts dry run missing required boundary: {fragment}")
+
+    for chapter_id in sorted(INTENT_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Intent/contracts chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in intent:
+            errors.append(f"Intent/contracts dry run does not mention `{chapter_id}`.")
+
+    for source_id in sorted(INTENT_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in intent:
+            errors.append(f"Intent/contracts dry run missing source ID `{source_id}`.")
+
+    for source_id in sorted(INTENT_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in intent:
+            errors.append(f"Intent/contracts dry run missing external source ID `{source_id}`.")
+
+    for tag in sorted(INTENT_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in intent:
+            errors.append(f"Intent/contracts dry run missing Lean tag `{tag}`.")
+
+    for fragment in sorted(INTENT_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in intent:
+            errors.append(f"Intent/contracts dry run missing fixture or validator `{fragment}`.")
+
+    try:
+        intent_draft = read_text(INTENT_DESTINATION_DRAFT)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_destination_draft_intent_contracts.md")
+        intent_draft = ""
+
+    for fragment in INTENT_DRAFT_REQUIRED_FRAGMENTS:
+        if fragment not in intent_draft:
+            errors.append(f"Intent/contracts destination draft missing required boundary: {fragment}")
+
+    for chapter_id in sorted(INTENT_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Intent/contracts destination chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in intent_draft:
+            errors.append(f"Intent/contracts destination draft does not mention `{chapter_id}`.")
+
+    for source_id in sorted(INTENT_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in intent_draft:
+            errors.append(f"Intent/contracts destination draft missing source ID `{source_id}`.")
+
+    for source_id in sorted(INTENT_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in intent_draft:
+            errors.append(f"Intent/contracts destination draft missing external source ID `{source_id}`.")
+
+    for tag in sorted(INTENT_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in intent_draft:
+            errors.append(f"Intent/contracts destination draft missing Lean tag `{tag}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - Intent/contracts consolidation review package
+
+- Added `docs/chapter_consolidation_dry_run_intent_contracts.md` and
+  `docs/chapter_consolidation_destination_draft_intent_contracts.md` to make
+  the intent/contracts Tier 1C consolidation candidate review-ready.
+- The package proposes keeping `intent-to-execution-contracts` as the
+  continuity ID, folding `command-contracts-and-semantic-interfaces` as
+  preserved semantic-interface subclaims and proof/test hooks, and keeping
+  `human-intent-as-a-formal-input` standalone as the raw-intent intake,
+  ambiguity, authority-extraction, bounded-default, re-contract, and
+  stop-condition chapter.
+- Updated the v1.x roadmap, consolidation sequence, README, publication
+  readiness, repository map, and consolidation validator so the intent/contracts
+  cluster is `review_ready`, while still requiring review and an execute,
+  revise, defer, or reject decision before any manifest edit.
+- This does not edit `book_structure.json`, merge chapters, change Appendix C,
+  create source/proof/test evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Compression destination draft
 
 - Added `docs/chapter_consolidation_destination_draft_compression.md` as the
