@@ -1,0 +1,116 @@
+{
+  "transition_id": "v1_0_pilot.governance_rights.no_change",
+  "claim_id": "governance-rights-fork-exit-and-audit.core",
+  "claim_surface_refs": [
+    "chapters/governance-rights-fork-exit-and-audit.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/governance_rights_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/governance_right_record.schema.json",
+    "tests/fixtures/protocol_records/governance_right_record.valid.json",
+    "experiments/governance_rights/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/GovernanceRights.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic governance-right record discipline and finite Lean governance-right predicates only; no institutional governance right, legal right, deployed runtime enforcement, fork/exit usability, reviewer independence, source interpretation, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has a governance-right schema, a protocol fixture, finite GovernanceRights Lean predicates, proof adequacy review text that keeps the target narrow, exact source mappings for the Governance Rights chapter, and a synthetic governance-right harness with valid and expected-invalid fixtures. Those artifacts make audit material and receipts, redaction appeal paths, materially usable exit and fork access paths, fork safety constraints, preservation obligations, durable record paths, and explicit non-claim boundaries executable at the record level. They still do not establish institutional governance rights, legal rights, deployed runtime right enforcement, real fork or exit usability, reviewer independence, source interpretation adequacy, or whole-system contestability.",
+  "required_artifacts": [
+    "deployed governance-right request flow with audit, exit, fork, redaction, appeal, and dissent records",
+    "material-usability review over actual exported or forkable artifacts",
+    "runtime enforcement trace showing rights preservation across replacement or policy update",
+    "reviewer-independence audit for challenged-party governance decisions",
+    "safety-bound fork scenario with actual source, privacy, and capability constraints preserved",
+    "independent legal, governance, or source-interpretation review where legal or institutional language is used",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/governance_rights_harness.md",
+    "scripts/validate_governance_rights.py",
+    "experiments/governance_rights/results/2026-06-28-local.md",
+    "schemas/governance_right_record.schema.json",
+    "tests/fixtures/protocol_records/governance_right_record.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/GovernanceRights.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#governance-rights-fork-exit-and-audit.core",
+    "docs/source_evidence_audit.md#governance-rights-fork-exit-and-audit.core"
+  ],
+  "verification_command": "python3 scripts/validate_governance_rights.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Governance Rights remains at argument",
+    "governance-right fixtures are synthetic",
+    "schema validation checks record shape rather than institutional governance",
+    "finite Lean predicates remain useful but too narrow for legal, institutional, or deployed-right enforcement claims",
+    "material usability, reviewer independence, runtime enforcement, fork safety in real systems, legal adequacy, and source interpretation review are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/governance-rights-fork-exit-and-audit.qmd",
+    "docs/governance_rights_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "governance rights harness failure",
+    "governance-right schema drift",
+    "chapter text interpreted as legal-rights evidence",
+    "synthetic access-path fixture interpreted as deployed fork or exit usability",
+    "synthetic appeal fixture interpreted as reviewer independence or institutional appeal quality",
+    "finite Lean audit/exit predicates treated as deployed runtime enforcement",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after deployed governance-right flows, material-usability review, runtime preservation traces, reviewer-independence audit, safety-bound fork scenarios, and independent legal, governance, or source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove that real users can audit, exit, fork, appeal, or preserve dissent",
+    "schema validation does not prove legal, institutional, or governance adequacy",
+    "finite Lean predicates do not implement a governance-right service",
+    "access-path strings do not prove that exported or forkable artifacts are materially usable",
+    "appeal-path strings do not prove reviewer independence or appeal quality",
+    "no independent legal, governance, runtime, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent governance, legal, runtime-systems, reviewer-quality, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed governance-right request flow",
+    "no material-usability review over actual exports or forks",
+    "no runtime rights-preservation trace",
+    "no reviewer-independence audit",
+    "no safety-bound fork scenario over real artifacts",
+    "no independent legal, governance, runtime, or source-interpretation review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-governance-rights-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Governance Rights above argument",
+    "does not prove institutional governance rights",
+    "does not prove legal rights",
+    "does not prove deployed runtime right enforcement",
+    "does not prove fork or exit usability in a real system",
+    "does not prove reviewer independence or source interpretation"
+  ]
+}
