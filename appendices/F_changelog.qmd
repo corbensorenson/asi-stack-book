@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-06-29 - Corrigibility control proof depth
+
+- Strengthened `lean/AsiStackProofs/Corrigibility.lean` with
+  `AgencyControlDecision`, a finite agency-control envelope that records phase,
+  high-impact action state, affected-party notice, bounded delegation,
+  pre-effect review, appeal availability, interrupt availability, rollback
+  availability, denied-action state, accountable-principal recording, and
+  routed outcome.
+- Added three derived/decomposed control theorems:
+  `high_impact_action_without_pre_effect_review_blocks`,
+  `low_risk_unbounded_delegation_routes_to_narrowing`, and
+  `denied_action_without_accountable_principal_preserves_audit`, plus explicit
+  negative-case records for missing pre-effect review, unbounded delegation,
+  and denied action without an accountable principal.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 152
+  theorem declarations, 40 derived/decomposed declarations, 23
+  safety-critical declarations, and four derived/decomposed theorems inside
+  the safety-critical Corrigibility module while 10 safety-critical
+  direct/projection declarations remain.
+- Updated the Agency, Dignity, and Corrigibility chapter,
+  `docs/proof_adequacy_review.md`, the v1.x roadmap, and the v1.0 status
+  snapshot so the new control proof work is presented as a narrow finite-record
+  envelope, not human dignity proof, manipulation-resistance proof,
+  deployed corrigibility, real interface-usability evidence, approval-service
+  quality, rollback/shutdown execution, or support-state promotion.
+- This does not promote any chapter core claim, prove deployed agency
+  preservation, validate consent quality, reproduce external corrigibility
+  results, or approve any reader/release artifact.
+
 ## 2026-06-29 - Alignment transition proof depth
 
 - Strengthened `lean/AsiStackProofs/Alignment.lean` with

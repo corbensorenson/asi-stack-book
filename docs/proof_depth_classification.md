@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 149 |
+| Theorem declarations classified | 152 |
 | Direct/projection-style theorem declarations | 112 |
-| Derived/decomposed theorem declarations | 37 |
+| Derived/decomposed theorem declarations | 40 |
 | Unknown or mixed theorem declarations | 0 |
-| Safety-critical theorem declarations | 20 |
+| Safety-critical theorem declarations | 23 |
 | Safety-critical direct/projection declarations | 10 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -31,7 +31,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/Corrigibility.lean` | agency-dignity-and-corrigibility | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Corrigibility.lean` | agency-dignity-and-corrigibility | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/GovernanceRights.lean` | governance-rights-fork-exit-and-audit | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 2 | 5 | 2 | 3 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -66,7 +66,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/ContextCertificates.lean` | semantic-pages-context-cells-and-certificates | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Corrigibility.lean` | agency-dignity-and-corrigibility | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Corrigibility.lean` | agency-dignity-and-corrigibility | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 2 | 4 | 3 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -156,7 +156,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | `snapshot_read_sees_committed_event_in_declared_view` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `tainted_source_taints_derivative_without_declassification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `untainted_derivative_from_tainted_source_requires_declassification` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/Corrigibility.lean` | `denied_action_without_accountable_principal_preserves_audit` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_action_without_pre_effect_review_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_action_without_usable_review_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Corrigibility.lean` | `low_risk_unbounded_delegation_routes_to_narrowing` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Corrigibility.lean` | `protected_agency_rights_remain_available_after_accepted_transition` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Corrigibility.lean` | `transition_that_removes_required_correction_pathway_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
