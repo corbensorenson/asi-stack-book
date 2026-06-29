@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Claim-level source mappings now exist for all assigned sources, and six of seven mappings carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped, and support remains at argument until tests or runtime artifacts justify promotion."
-  - "The constitutional_predicate_record fixture validates schema/example consistency only, including conflict_behavior and migration_policy fields; constitutional consistency, predicate-conflict routing, constitutional migration, and ethical self-modification scenarios remain unimplemented."
+  - "The constitutional_predicate_record fixture validates schema/example consistency, and the synthetic constitutional alignment harness now checks protected scope, operational tests, conflict routing, review routes, migration policy, self-modification weakening rules, least-sufficient-power behavior, uncertainty preservation, and non-claim boundaries; deployed runtime policy behavior, predicate-translation adequacy, review quality, self-modification safety, and red-team evidence remain open."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`; supporting: `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`; passage-reviewed tracked local project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
-| Test state | `constitutional_predicate_record.valid.json` passes protocol fixture validation; `AsiStackProofs.Alignment` implements finite active-predicate and protected-predicate weakening gates; constitutional consistency, predicate-conflict routing, constitutional migration, self-modification ethics, and power-without-care scenarios remain planned. |
+| Test state | `constitutional_predicate_record.valid.json` passes protocol fixture validation; `AsiStackProofs.Alignment` implements finite active-predicate and protected-predicate weakening gates; `python3 scripts/validate_constitutional_alignment.py` passes synthetic constitutional-predicate fixtures for consistency, conflict routing, migration, self-modification weakening, and power-without-care boundaries without proving deployed constitutional alignment. |
 
 ## Drafting guardrail
 

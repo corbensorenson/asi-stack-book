@@ -1,0 +1,116 @@
+{
+  "transition_id": "v1_0_pilot.constitutional_alignment.no_change",
+  "claim_id": "constitutional-alignment-substrate.core",
+  "claim_surface_refs": [
+    "chapters/constitutional-alignment-substrate.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/constitutional_alignment_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/constitutional_predicate_record.schema.json",
+    "tests/fixtures/protocol_records/constitutional_predicate_record.valid.json",
+    "experiments/constitutional_alignment/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/Alignment.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic constitutional-predicate record discipline and finite Lean alignment predicates only; no deployed constitutional alignment, moral correctness, runtime policy behavior, source interpretation, self-modification safety, predicate-translation adequacy, review quality, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has a constitutional-predicate schema, a protocol fixture, finite Alignment Lean predicates, proof adequacy review text that keeps the target narrow, exact source mappings for the Constitutional Alignment chapter, and a synthetic constitutional-alignment harness with valid and expected-invalid fixtures. Those artifacts make protected scope, operational tests, conflict routing, review routes, self-modification weakening rules, migration policies, least-sufficient-power behavior, uncertainty preservation, and non-claim boundaries executable at the record level. They still do not establish deployed constitutional alignment, moral correctness, runtime policy behavior, source interpretation adequacy, self-modification safety, predicate-translation adequacy, review quality, or whole-system alignment.",
+  "required_artifacts": [
+    "deployed constitutional policy engine or constraint compiler over real plans",
+    "reviewed predicate-translation corpus with positive and negative controls",
+    "runtime trace showing protected predicates narrow, defer, block, or route actual work",
+    "self-modification safety test over actual predicate migration and rollback behavior",
+    "least-sufficient-power evaluation over real tool, memory, planning, or self-improvement choices",
+    "independent moral, governance, runtime, formal-methods, or source-interpretation review",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/constitutional_alignment_harness.md",
+    "scripts/validate_constitutional_alignment.py",
+    "experiments/constitutional_alignment/results/2026-06-28-local.md",
+    "schemas/constitutional_predicate_record.schema.json",
+    "tests/fixtures/protocol_records/constitutional_predicate_record.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/Alignment.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#constitutional-alignment-substrate.core",
+    "docs/source_evidence_audit.md#constitutional-alignment-substrate.core"
+  ],
+  "verification_command": "python3 scripts/validate_constitutional_alignment.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Constitutional Alignment remains at argument",
+    "constitutional-predicate fixtures are synthetic",
+    "schema validation checks record shape rather than constitutional adequacy",
+    "finite Lean predicates remain useful but too narrow for deployed constitutional alignment, self-modification safety, or moral-correctness claims",
+    "predicate-translation adequacy, review quality, runtime policy behavior, source interpretation review, and deployed least-sufficient-power enforcement are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/constitutional-alignment-substrate.qmd",
+    "docs/constitutional_alignment_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "constitutional alignment harness failure",
+    "constitutional-predicate schema drift",
+    "chapter text interpreted as deployed constitutional-alignment evidence",
+    "synthetic predicate fixtures interpreted as predicate-translation adequacy or review-quality evidence",
+    "finite Lean alignment predicates treated as deployed runtime policy behavior",
+    "least-sufficient-power fixture interpreted as actual tool, memory, planning, or self-improvement enforcement",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic predicate discipline that passed, or after deployed constitutional constraint compilation, predicate-translation review, runtime protected-predicate traces, self-modification migration and rollback tests, least-sufficient-power evaluations, and independent moral, governance, runtime, formal-methods, or source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove that real plans are constitutionally constrained",
+    "schema validation does not prove moral correctness or predicate adequacy",
+    "finite Lean predicates do not implement a constitutional policy engine",
+    "review-route strings do not prove reviewer independence or review quality",
+    "least-sufficient-power strings do not prove runtime route selection or power minimization",
+    "no independent moral, governance, runtime, formal-methods, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent moral-philosophy, governance, runtime-systems, reviewer-quality, formal-methods, self-modification, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed constitutional policy engine or constraint compiler",
+    "no reviewed predicate-translation corpus",
+    "no runtime protected-predicate trace over real work",
+    "no self-modification migration or rollback test",
+    "no least-sufficient-power evaluation over real choices",
+    "no independent moral, governance, runtime, formal-methods, or source-interpretation review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-constitutional-alignment-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Constitutional Alignment Substrate above argument",
+    "does not prove deployed constitutional alignment",
+    "does not prove moral correctness",
+    "does not prove runtime policy behavior or self-modification safety",
+    "does not prove predicate-translation adequacy or review quality",
+    "does not prove source interpretation"
+  ]
+}
