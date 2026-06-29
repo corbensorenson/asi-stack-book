@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-06-29 - Alignment transition proof depth
+
+- Strengthened `lean/AsiStackProofs/Alignment.lean` with
+  `ConstitutionalTransitionDecision`, a finite constitutional-transition
+  envelope that records phase, source and target versions,
+  protected-predicate change and preservation, independent review, rollback
+  availability, conflict detection and routing, self-modification weakening,
+  and routed outcome.
+- Added three derived/decomposed transition theorems:
+  `protected_migration_without_rollback_routes_to_review`,
+  `accepted_transition_cannot_drop_protected_predicate`, and
+  `detected_conflict_without_route_preserves_residual`, plus explicit
+  negative-case records for rollback-missing protected migration and unrouted
+  predicate conflict.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 149
+  theorem declarations, 37 derived/decomposed declarations, 20 safety-critical
+  declarations, and four derived/decomposed theorems inside the
+  safety-critical Alignment module while 10 safety-critical direct/projection
+  declarations remain.
+- Updated the Constitutional Alignment chapter, `docs/proof_adequacy_review.md`,
+  and the v1.x roadmap so the new transition proof work is presented as a
+  narrow finite-record envelope, not moral correctness, deployed constitutional
+  alignment, reviewer-quality proof, rollback execution, conflict-resolution
+  quality, or support-state promotion.
+- This does not promote any chapter core claim, prove deployed alignment
+  behavior, validate predicate translation, reproduce external Constitutional
+  AI results, or approve any reader/release artifact.
+
 ## 2026-06-29 - Self-improvement lifecycle proof depth
 
 - Strengthened `lean/AsiStackProofs/SelfImprovement.lean` with
