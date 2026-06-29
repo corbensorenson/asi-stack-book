@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-06-29 - Public trust-surface count refresh
+
+- Refreshed README, landing-page, and publication-readiness status text to
+  match the current generated ledgers: 185 public-safe source records, 54/54
+  chapters externally positioned, 54 source-noted chapter grounding rows, and
+  0 explicit external-baseline exceptions.
+- Added publication-surface validation checks that derive the current source
+  and chapter counts from `sources/source_inventory.json` and
+  `book_structure.json`, require the current trust-surface language, and reject
+  stale 160-source, 44/54-positioned, or 10-exception wording in public entry
+  surfaces.
+- Added the first constitutional-alignment consolidation dry-run package to
+  README and the repository map for easier public navigation.
+- This does not change any source record, source note, chapter claim,
+  support state, proof result, test result, or external-review status.
+
 ## 2026-06-29 - Constitutional alignment consolidation dry run
 
 - Added `docs/chapter_consolidation_dry_run_constitutional_alignment.md`, the

@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 import subprocess
 import sys
@@ -139,6 +140,21 @@ FORBIDDEN_TRACKED_EXACT = {
     "index.html",
 }
 
+PUBLIC_SURFACE_FILES = [
+    "README.md",
+    "index.qmd",
+    "docs/publication_readiness.md",
+]
+
+FORBIDDEN_PUBLIC_STALE_STRINGS = [
+    "160 inventoried records",
+    "44 of 54 chapters currently have",
+    "44 chapters have source-noted external comparators",
+    "10 have explicit external-baseline exceptions",
+    "10 carry explicit exceptions",
+    "Most chapter-core claims, external-grounding upgrades",
+]
+
 
 def fail(errors: list[str]) -> None:
     for error in errors:
@@ -157,6 +173,25 @@ def git_ls_files() -> list[str]:
     return result.stdout.splitlines()
 
 
+def read_json(path: str) -> object:
+    with (ROOT / path).open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+def manifest_chapter_count() -> int:
+    structure = read_json("book_structure.json")
+    if not isinstance(structure, dict):
+        raise SystemExit("book_structure.json must contain an object.")
+    return sum(len(part.get("chapters", [])) for part in structure.get("parts", []))
+
+
+def source_record_count() -> int:
+    inventory = read_json("sources/source_inventory.json")
+    if not isinstance(inventory, list):
+        raise SystemExit("sources/source_inventory.json must contain a list.")
+    return len(inventory)
+
+
 def main() -> None:
     errors: list[str] = []
 
@@ -165,9 +200,51 @@ def main() -> None:
             errors.append(f"Missing public-readiness file: {path}")
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8", errors="ignore")
+    index = (ROOT / "index.qmd").read_text(encoding="utf-8", errors="ignore")
+    publication = (ROOT / "docs/publication_readiness.md").read_text(
+        encoding="utf-8", errors="ignore"
+    )
+    chapter_count = manifest_chapter_count()
+    source_count = source_record_count()
     for needle in REQUIRED_README_STRINGS:
         if needle not in readme:
             errors.append(f"README.md is missing required public-readiness text: {needle}")
+
+    public_texts = {
+        "README.md": readme,
+        "index.qmd": index,
+        "docs/publication_readiness.md": publication,
+    }
+    for path, text in public_texts.items():
+        for stale in FORBIDDEN_PUBLIC_STALE_STRINGS:
+            if stale in text:
+                errors.append(f"{path} contains stale public trust-surface text: {stale}")
+
+    public_requirements = {
+        "index.qmd": [
+            f"{source_count} public-safe records",
+            f"{chapter_count}/{chapter_count} chapters externally positioned",
+            "0 explicit external-baseline exceptions",
+        ],
+        "README.md": [
+            f"all {chapter_count} chapters have source-noted external positioning records",
+            "0 explicit external-baseline exceptions",
+            f"{chapter_count} of {chapter_count} chapters currently have in-prose `ext_*` positioning",
+            f"{chapter_count} chapters have source-noted external comparators",
+            "0 carry explicit exceptions",
+        ],
+        "docs/publication_readiness.md": [
+            f"{chapter_count} of {chapter_count} chapters currently have in-prose `ext_*` positioning",
+            "0 have explicit external-baseline exceptions",
+            f"{chapter_count} source-noted chapters",
+            "0 explicit exceptions",
+        ],
+    }
+    for path, needles in public_requirements.items():
+        text = public_texts[path]
+        for needle in needles:
+            if needle not in text:
+                errors.append(f"{path} is missing current public trust-surface text: {needle}")
 
     for path in git_ls_files():
         if path in FORBIDDEN_TRACKED_EXACT or path.endswith("/.DS_Store"):
