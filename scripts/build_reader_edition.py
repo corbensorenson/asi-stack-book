@@ -1439,8 +1439,17 @@ def copy_assets(output_dir: Path) -> None:
     src = ROOT / "assets"
     dst = output_dir / "assets"
     if dst.exists():
-        shutil.rmtree(dst)
+        remove_tree(dst)
     shutil.copytree(src, dst, ignore=shutil.ignore_patterns(".DS_Store"))
+
+
+def remove_tree(path: Path) -> None:
+    try:
+        shutil.rmtree(path)
+    except OSError:
+        for residue in path.rglob(".DS_Store"):
+            residue.unlink(missing_ok=True)
+        shutil.rmtree(path)
 
 
 def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
@@ -1465,7 +1474,7 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     overlay_context = load_reader_overlay_context(profile)
 
     if output_dir.exists():
-        shutil.rmtree(output_dir)
+        remove_tree(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     copy_assets(output_dir)
