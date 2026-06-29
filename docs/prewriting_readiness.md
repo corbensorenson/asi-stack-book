@@ -2,7 +2,9 @@
 
 Last updated: 2026-06-27
 
-This file records the repo changes that made the full-book v0.2 drafting goal safe to start. The launch phase is complete; current v1.0 candidate status is tracked in `docs/v1_0_candidate_status.md`.
+This file records the repo changes that made the full-book v0.2 drafting goal
+safe to start. The launch phase is complete; current v1.0.0 release status is
+tracked in `docs/v1_0_candidate_status.md`.
 
 The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 

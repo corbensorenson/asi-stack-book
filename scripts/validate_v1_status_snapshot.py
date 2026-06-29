@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Validate headline counts in docs/v1_0_candidate_status.md.
 
-The v1.0 status page is a public-safe readiness surface. This script checks
+The v1.0 status page is a public-safe release surface. This script checks
 that its snapshot counts still match the current repository artifacts; it does
-not assert that the book is a v1.0 evidence release.
+not strengthen any chapter core claim.
 """
 
 from __future__ import annotations
@@ -256,13 +256,16 @@ def main() -> None:
         "`docs/public_site_accessibility_review.md`",
         "`docs/v1_progress_ledger.md`",
         "`python3 scripts/validate_public_site_accessibility.py`",
-        "| v1.0 release gate audit | The release-gate audit records all eleven Definition-of-Done gates, their current evidence, residuals, and candidate-versus-final-release boundary without creating a final tag, DOI, archive, or chapter support-state promotion.",
+        "| v1.0 release gate audit | The release-gate audit records all eleven Definition-of-Done gates, the v1.0.0 source tag, source commit, GitHub Release, living-book release record, current evidence, residuals, and non-claims without creating a DOI, archive, or chapter support-state promotion.",
         "`docs/v1_0_release_gate_audit.md`",
+        "`release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`",
         "`python3 scripts/validate_v1_release_gate_audit.py`",
         "| Architecture red-team | Phase 7A desk review covers six composed-system attacks: authority ladder, SCIF/context leakage, evaluator capture, support-state inflation, benchmark gaming, and reader-release laundering.",
         "`docs/architecture_red_team_review.md`",
         "`python3 scripts/validate_architecture_red_team.py`",
-        "| Release reproducibility | Candidate toolchain and citation metadata are now explicit: CI pins Quarto `1.9.38`, Python `3.11`, Node `22`, and Lean through `lean/lean-toolchain`; `CITATION.cff` records version `1.0.0-candidate` and DOI-pending status;",
+        "| Release reproducibility | v1.0.0 toolchain and citation metadata are now explicit: CI pins Quarto `1.9.38`, Python `3.11`, Node `22`, and Lean through `lean/lean-toolchain`; `CITATION.cff` records version `1.0.0` and DOI-pending status;",
+        "source commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`",
+        "how to cite v1.0.0 without implying DOI, Zenodo archive, or additional approved reader artifacts",
         "`docs/release_reproducibility.md`",
         "`python3 scripts/validate_release_reproducibility.py`",
         "| Chapter handoffs | All 54 manifest chapters now end with reader-facing `Handoff` sections: non-final chapters name the next manifest chapter title and avoid numbered chapter references, while the final chapter closes the book-level arc; generated reader chapters must preserve the same single Handoff continuity after live-only stripping |",

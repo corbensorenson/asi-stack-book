@@ -2,7 +2,10 @@
 
 Last updated: 2026-06-29
 
-This roadmap is the execution surface for moving **The ASI Stack** from the current v1.0 candidate state toward a reviewed v1.0 evidence release and human-reader release path.
+This roadmap records the v1.0 release path for **The ASI Stack**. The current
+v1.0.0 release state is tagged at source commit
+`96d0ca3c6b62f3530202535573941b1f6e50a83d`, with a tracked living-book release
+record at `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`.
 
 The live AI/research book remains the canonical architecture, evidence, source, proof, schema, and release-control source. The normal reader manuscript can eventually become a curated parallel derivative source for prose, pacing, chapter flow, and human-consumption packaging. It is parallel but not equal: it may diverge from the live/research text for readability, but it must inherit claim text, support states, source boundaries, proof/test status, implementation horizons, and release records from the live book unless a deliberate reconciliation step updates both surfaces.
 
@@ -37,7 +40,7 @@ Claude's review is useful as an editorial and hygiene review, not as source evid
 | The first measured support transition was missing | Resolved for three narrow claims. `docs/first_measured_replayed_slice.md` and `evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json` record `living-book-methodology.phase5_harness_registry_runner` moving from `argument` to `synthetic-test-backed`; `docs/costed_route_resource_slice.md` and `evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json` record `resource-economics.costed_route_budget_slice` moving from `argument` to `synthetic-test-backed`; `docs/circle_external_receipt_slice.md` and `evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json` record `circle-calculus.external_rope_receipt_replay` moving from `argument` to `prototype-backed`; all 54 chapter core claims remain at `argument`, 26 chapter core claims have accepted no-change records, and 28 chapter core claims have accepted explicit no-promotion decisions in `claim_decisions/v1_0_core_claim_no_promotion.json` | Phase 3B now has bounded infrastructure and non-infrastructure synthetic transitions plus one imported external prototype receipt transition. The next evidence work should move toward deeper public-safe prototype integration, empirical measurement, imported trace, or replay lanes before any chapter core claim can move. |
 | Reader release still needs a real artifact approval path | Partly resolved. Reader HTML now has full local browser artifact review, source tag `v1.0.0-reader-html-source`, and an edition release record for the exact local HTML snapshot; EPUB, DOCX, and PDF remain rendered/probed but unapproved | Phase 2 and Phase 8. Treat HTML as the minimum reviewed human artifact for v1.0, then finish application-level EPUB/DOCX/PDF review only if those artifacts are promoted into the current release scope. |
 | Public site and process-record quality now need accessibility and ledger discipline | Actionable as Phase 7 work. The site validates mechanically, but diagram text alternatives, contrast, e-reader legibility, and process-record sprawl need human review before a polished v1 public release | Phase 7. Add accessibility checks and consolidate long process records into structured ledgers plus short summaries where it reduces roadmap noise. |
-| Render-toolchain and citation metadata were too implicit for a public major-version candidate | Resolved for the current candidate. CI now pins Quarto `1.9.38`, Python `3.11`, and Node `22`, Lean remains pinned through `lean/lean-toolchain`, `CITATION.cff` records version `1.0.0-candidate`, and `docs/release_reproducibility.md` records locale, tool-path, reader-format, DOI-pending, and non-release boundaries checked by `scripts/validate_release_reproducibility.py` | Phase 7 reproducibility/citability slice implemented for the candidate. A final v1.0 tag and any DOI/Zenodo metadata still require actual release records. |
+| Render-toolchain and citation metadata were too implicit for a public major-version candidate | Resolved for v1.0.0. CI now pins Quarto `1.9.38`, Python `3.11`, and Node `22`, Lean remains pinned through `lean/lean-toolchain`, `CITATION.cff` records version `1.0.0`, and `docs/release_reproducibility.md` records locale, tool-path, reader-format, tag, source-commit, DOI-pending, and non-release boundaries checked by `scripts/validate_release_reproducibility.py` | Phase 7 reproducibility/citability slice implemented for v1.0.0. DOI/Zenodo metadata remains pending until an archive exists. |
 | Local repo cleanup via `git gc` | Local hygiene only | Optional local maintenance; do not treat as book quality work. |
 
 ## What Is Already Resolved Or Not Actionable
@@ -104,18 +107,18 @@ to strengthen the claim.
 
 ## Phase Blocking Map
 
-| Phase | v1.0 status | What blocks the tag |
+| Phase | v1.0 status | Remaining residual |
 |---|---|---|
-| Phase 0 | v1.0-blocking | Validator coverage meta-check and clean release process; candidate toolchain/citation discipline is now guarded by the Phase 7 reproducibility validator. |
+| Phase 0 | v1.0-complete | Validator coverage meta-check, clean release process, and v1.0.0 toolchain/citation discipline are guarded by validators. |
 | Phase 1 | v1.0-complete | Keep the repeated-prose guards passing; no remaining Phase 1 task blocks v1.0. |
 | Phase 2 | v1.0-complete for minimum reader HTML artifact; v1.x for curated reader source | The reviewed local reader HTML snapshot has an edition release record. Curated reader source, EPUB e-reader approval, full DOCX/PDF review, and audio remain outside the minimum v1.0 reader gate unless explicitly promoted. |
 | Phase 3 | v1.0-complete for claim-state coverage | `docs/core_claim_transition_coverage.md` records 54 of 54 chapter core claims covered: 26 accepted no-change transition records plus 28 accepted explicit no-promotion decisions; all remain at `argument`. |
 | Phase 3B | v1.0-complete for bounded infrastructure, non-infrastructure, and imported receipt slices | Accepted transitions now cover the narrow Phase 5 registry-runner claim, the bounded costed-route/resource-budget selector claim, and the imported Circle rope receipt replay claim; stronger prototype or empirical lanes remain needed before chapter core claims can move. |
 | Phase 4 | v1.0-complete for proof-depth honesty | Proof-depth classifier and safety-critical projection-only chapter classifications are implemented; stronger Lean upgrades remain future quality work unless claims widen. |
 | Phase 5 | v1.0-complete for first non-infrastructure synthetic slice and first imported receipt slice; deeper prototype/empirical evidence remains v1.x unless promoted | Harness runner, coverage drift guard, costed-route/resource-budget measured-slice validation, and Circle external receipt validation are implemented. Next Phase 5 work should move toward public-safe prototype traces, empirical measurements, or consumer-gated imported receipts. |
-| Phase 5A | v1.0-blocking | Initial v1-critical protocol crosswalk is implemented; keep it current and use it to resolve/document schema/Lean/fixture drift during evidence-transition work. |
+| Phase 5A | v1.0-complete | Initial v1-critical protocol crosswalk is implemented; keep it current and use it to resolve/document schema/Lean/fixture drift during evidence-transition work. |
 | Phase 6 | v1.0-complete for the placement gate | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 10 explicit exceptions, 0 source-target placement rows, and 0 exception/source rows; the stricter `--release` validator passes. |
-| Phase 7 | v1.0-blocking for final tag metadata; candidate accessibility/progress/gate-audit ledgers complete | Public-site accessibility readiness, compact progress ledger, and v1.0 release-gate audit are recorded; final release-record metadata still waits for the actual tag/archive facts. |
+| Phase 7 | v1.0-complete for final tag metadata; v1.x for DOI/archive and manual accessibility review | Public-site accessibility readiness, compact progress ledger, v1.0 release-gate audit, tag `v1.0.0`, GitHub Release, and living-book release record are recorded. DOI/Zenodo and manual keyboard/screen-reader review remain future quality work. |
 | Phase 7A | v1.0-complete for desk red-team review | `docs/architecture_red_team_review.md` records all six required architecture-level attack scenarios with residuals and routed follow-ups; runtime/security validation remains future evidence work. |
 | Phase 8 | v1.0-complete for reader HTML; v1.x for EPUB/DOCX/PDF/audio unless promoted | `release_records/2026-06-29-v1-reader-html-855dc277.json` names the exact reviewed local HTML artifact; EPUB, DOCX, PDF, e-reader, and audio artifacts remain unapproved. |
 | Phase 9 | post-v1.0 | External preprints and contribution extraction should not block v1.0. |
@@ -600,7 +603,36 @@ Acceptance criteria:
 
 ## Phase 7 - Visual, Site, Toolchain, And Archival Review [v1.0-blocking]
 
-Status: started; reproducibility/citability, accessibility-readiness, compact progress-ledger, and release-gate audit slices are complete for the current candidate. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, all-chapter/all-viewport browser validation, and a mobile screenshot review of the densest diagrams passed after Mermaid diagrams gained contained mobile scrolling. A second local browser probe after the Phase 6 source expansion checked the landing page, fast-generation and recursive-improvement chapters, and Appendices A/C/H at desktop and mobile sizes with zero page-level horizontal overflow and visible reading-mode toggles. A follow-up probe after the source inventory reached 160 records found Appendix F overflow from long inline `code` spans, added scoped inline-code wrapping in `assets/styles.scss`, and rechecked the landing page, dense chapters, and Appendices A/C/F/H/K with zero page-level horizontal overflow at desktop and mobile sizes. The fast-generation mechanism is now split into selector and acceptance/accounting diagrams, and the recursive self-improvement mechanism is now split into boundary-review and canary/promotion diagrams. `docs/release_reproducibility.md` now records the candidate toolchain and citation boundary, `CITATION.cff` records version `1.0.0-candidate`, `.github/workflows/publish.yml` pins Quarto/Python/Node while using `lean/lean-toolchain`, and `scripts/validate_release_reproducibility.py` checks those facts. `docs/public_site_accessibility_review.md` now records the live-site accessibility readiness boundary, residuals, and non-claims; `docs/v1_progress_ledger.md` records the compact phase status and release classification; `docs/v1_0_release_gate_audit.md` records all eleven Definition-of-Done gates with evidence, residuals, and the candidate-versus-final boundary; and `scripts/validate_public_site_accessibility.py` plus `scripts/validate_v1_release_gate_audit.py` check those ledgers. Future visual work should review e-reader legibility rather than keeping those splits open as unresolved.
+Status: complete for v1.0.0 release metadata and still open for v1.x quality
+work. The first rendered-site and visual audit is recorded in
+`docs/site_visual_phase7_review.md`; automated visual coverage, rendered
+Human-view validation, all-chapter/all-viewport browser validation, and a mobile
+screenshot review of the densest diagrams passed after Mermaid diagrams gained
+contained mobile scrolling. A second local browser probe after the Phase 6
+source expansion checked the landing page, fast-generation and
+recursive-improvement chapters, and Appendices A/C/H at desktop and mobile sizes
+with zero page-level horizontal overflow and visible reading-mode toggles. A
+follow-up probe after the source inventory reached 160 records found Appendix F
+overflow from long inline `code` spans, added scoped inline-code wrapping in
+`assets/styles.scss`, and rechecked the landing page, dense chapters, and
+Appendices A/C/F/H/K with zero page-level horizontal overflow at desktop and
+mobile sizes. The fast-generation mechanism is now split into selector and
+acceptance/accounting diagrams, and the recursive self-improvement mechanism is
+now split into boundary-review and canary/promotion diagrams.
+`docs/release_reproducibility.md` now records the v1.0.0 toolchain and citation
+boundary, `CITATION.cff` records version `1.0.0`, `.github/workflows/publish.yml`
+pins Quarto/Python/Node while using `lean/lean-toolchain`, and
+`scripts/validate_release_reproducibility.py` checks those facts.
+`docs/public_site_accessibility_review.md` now records the live-site
+accessibility readiness boundary, residuals, and non-claims; `docs/v1_progress_ledger.md`
+records the compact phase status and release classification;
+`docs/v1_0_release_gate_audit.md` records all eleven Definition-of-Done gates
+with evidence, residuals, tag `v1.0.0`, source commit
+`96d0ca3c6b62f3530202535573941b1f6e50a83d`, and GitHub Release facts; and
+`scripts/validate_public_site_accessibility.py` plus
+`scripts/validate_v1_release_gate_audit.py` check those ledgers. Future visual
+work should review e-reader legibility rather than keeping those splits open as
+unresolved.
 
 Purpose: improve trust and usability after the manuscript voice and evidence path are stronger.
 
@@ -614,7 +646,7 @@ Tasks:
 - Consolidate process-record sprawl where it interferes with roadmap readability: keep detailed records in structured ledgers, then render short public summaries for roadmap/status pages.
 - Maintain `docs/v1_progress_ledger.md` and `docs/v1_0_release_gate_audit.md` so completed Phase 2, Phase 5, and Phase 6 history can move out of the execution roadmap over time; the roadmap should foreground remaining blockers, acceptance criteria, and release gates.
 - Keep `docs/release_reproducibility.md`, `CITATION.cff`, `.github/workflows/publish.yml`, and `scripts/validate_release_reproducibility.py` current when Quarto, Python, Node, Lean, reader-format dependencies, local tool paths, locale requirements, fonts, DOI/Zenodo state, or release citation status changes.
-- Before a final v1 tag, replace candidate metadata only with facts that exist: final version/tag, release-record date, commit, DOI/Zenodo identifier if issued, or explicit DOI-pending language if not issued.
+- After v1.0.0, change release metadata only with facts that exist: a new version/tag, release-record date, commit, DOI/Zenodo identifier if issued, or explicit DOI-pending language if not issued.
 - Maintain `schemas/book_structure.schema.json` alongside future manifest fields; the schema now validates the top-level book contract before the semantic validators check source IDs, proof targets, reader surfaces, and evidence boundaries.
 - Keep the `validate_live_human_view.py` preflight current so missing, incomplete, or stale `_site` output fails with render-first guidance before page-level checks run.
 - Optional local `git gc` if loose-object warnings recur.
@@ -623,10 +655,10 @@ Acceptance criteria:
 
 - Visual changes do not imply unrecorded proof, benchmark, or runtime behavior.
 - Browser validation passes after render.
-- Public-site status remains honest about candidate versus evidence release.
-- Accessibility review records residuals instead of treating mechanical browser success as polished public-site quality. Current candidate status: satisfied by `docs/public_site_accessibility_review.md` and `python3 scripts/validate_public_site_accessibility.py`, while keyboard-only, screen-reader, measured contrast, and e-reader artifact reviews remain explicit residuals.
-- Release-gate audit records all eleven Definition-of-Done gates, their evidence, residuals, and candidate-versus-final-release boundary. Current candidate status: satisfied by `docs/v1_0_release_gate_audit.md` and `python3 scripts/validate_v1_release_gate_audit.py`; final release record/tag facts still must exist before final metadata changes.
-- Toolchain and citation records are good enough for another reader or future agent to reproduce the candidate site and identify the exact cited version. Current status: satisfied for candidate metadata; final v1.0 still needs the release record or tag facts that actually exist at tagging time.
+- Public-site status remains honest about the tagged v1.0.0 release scope and residuals.
+- Accessibility review records residuals instead of treating mechanical browser success as polished public-site quality. Current v1.0.0 status: satisfied by `docs/public_site_accessibility_review.md` and `python3 scripts/validate_public_site_accessibility.py`, while keyboard-only, screen-reader, measured contrast, and e-reader artifact reviews remain explicit residuals.
+- Release-gate audit records all eleven Definition-of-Done gates, their evidence, residuals, tag, source commit, GitHub Release, and living-book release record. Current v1.0.0 status: satisfied by `docs/v1_0_release_gate_audit.md`, `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`, and `python3 scripts/validate_v1_release_gate_audit.py`.
+- Toolchain and citation records are good enough for another reader or future agent to reproduce the v1.0.0 site and identify the exact cited version. Current status: satisfied for tag `v1.0.0` with DOI pending.
 
 ## Phase 7A - Architecture-Level Red-Team [v1.0-blocking]
 
@@ -667,7 +699,7 @@ Purpose: produce human-consumption artifacts only after the live and reader surf
 
 Tasks:
 
-1. Tag a validated live-book candidate.
+1. Maintain the tagged validated live-book source; for future major versions, tag only after the live/research gate passes.
 2. Generate and review reader source.
 3. Render HTML, EPUB, DOCX, and PDF only where dependencies and review allow; HTML has the first full local browser artifact review, while EPUB remains the preferred e-reader target for a later application-level review.
 4. Record exact produced artifacts in an edition release record.
@@ -706,23 +738,22 @@ Acceptance criteria:
 
 ## Best Goal To Set Next
 
-Status after the extended v1.0 run and the 2026-06-29 Claude/Codex
-reconciliation: the book is no longer blocked on scaffold, chapter count,
-generated prose cleanup, basic reader derivation, or initial synthetic
-record-gate coverage. Phase 1 is complete. The next goal should execute the
-v1.0 Definition of Done above, using the phase tags to avoid post-v1 scope
-creep.
+Status after the extended v1.0 run, the 2026-06-29 Claude/Codex reconciliation,
+and the v1.0.0 tag: the book is no longer blocked on scaffold, chapter count,
+generated prose cleanup, basic reader derivation, initial synthetic record-gate
+coverage, or final v1.0 release metadata. The next goal should move into v1.x
+quality and evidence depth without weakening the v1.0.0 release boundaries.
 
-Recommended goal text:
+Recommended next goal text:
 
 ```text
-Complete the v1.0 release gates for The ASI Stack using docs/v1_0_roadmap.md as the primary execution plan, docs/v1_0_focus_audit.md as the current-state audit, docs/book_outline.md as the drafting/proof/source source of truth, and book_structure.json as the manifest source of truth.
+Advance The ASI Stack from tagged v1.0.0 into a v1.x quality-and-evidence pass using docs/v1_0_roadmap.md, docs/v1_progress_ledger.md, docs/v1_0_release_gate_audit.md, docs/book_outline.md, and book_structure.json as the source-of-truth surfaces.
 
-Treat the v1.0 Definition of Done and Phase Blocking Map as the stop condition. Work only on v1.0-blocking items unless a post-v1 item becomes necessary to satisfy a blocking gate. Do not expand chapter count, create new major concepts, or start audiobook/preprint work unless the roadmap explicitly routes it into v1.0.
+Preserve the v1.0.0 release record exactly: do not promote chapter core claims, approve new artifacts, cite a DOI, or claim new runtime/proof/benchmark results without a new evidence transition or release record. Work on v1.x residuals only: deeper prototype or empirical measured/replayed slices, richer safety-critical proofs where semantics are clear, manual accessibility review, EPUB/DOCX/PDF application review, and curated reader-manuscript graduation if overlays become too small for human-quality prose.
 
 Prioritize in this order: (1) keep the implemented validator-coverage, proof-depth, protocol-crosswalk, Phase 5 harness-runner, bounded measured/replayed slices, core-claim transition/no-promotion coverage, architecture desk red-team, reader HTML edition record, release-reproducibility/citation gate, public-site accessibility readiness ledger, v1 progress ledger, and release-gate audit passing; (2) pursue the next prototype or empirical measured/replayed slice, with Theseus/Circle transfer, real route-quality/resource-budget traces, context-admission, compression, or planner/runtime traces as candidate lanes; (3) keep in-prose external-SOTA positioning or recorded exceptions current for every chapter; (4) pursue manual keyboard-only, screen-reader, contrast, and e-reader-specific site/readability review only when the resulting record is added to the ledger; (5) continue EPUB/DOCX/PDF inspection only as v1.x or promoted-scope work, creating edition release records only for exact reviewed artifacts.
 
-Keep every broad ASI, capability, deployment, benchmark, safety, and performance claim at argument unless a specific accepted transition justifies a narrower state. Treat the accepted Phase 5 registry-runner transition as repository-infrastructure evidence only, the costed-route/resource-budget transition as bounded synthetic selector evidence only, and the Circle external receipt transition as bounded imported prototype receipt evidence only, not as support for chapter core claims. If no deeper prototype or empirical measured/replayed slice clears the promotion bar before tagging, record the limitation and label the release accordingly. Do not fabricate sources, tests, proof results, benchmark results, prototype traces, reader artifacts, ebook artifacts, audio artifacts, DOI records, or release approvals. Record completed work, skipped work, blockers, validations run, residuals, and release classification in the roadmap, changelog, release ledgers, and relevant appendices before reporting completion.
+Keep every broad ASI, capability, deployment, benchmark, safety, and performance claim at argument unless a specific accepted transition justifies a narrower state. Treat the accepted Phase 5 registry-runner transition as repository-infrastructure evidence only, the costed-route/resource-budget transition as bounded synthetic selector evidence only, and the Circle external receipt transition as bounded imported prototype receipt evidence only, not as support for chapter core claims. Do not fabricate sources, tests, proof results, benchmark results, prototype traces, reader artifacts, ebook artifacts, audio artifacts, DOI records, or release approvals. Record completed work, skipped work, blockers, validations run, residuals, and release classification in the roadmap, changelog, release ledgers, and relevant appendices before reporting completion.
 ```
 
 This goal is better than another general "write the book" run because the book
@@ -731,5 +762,6 @@ work is now to keep the explicit release gates green while moving evidence
 depth from bounded synthetic slices and the first imported prototype receipt
 toward deeper prototype or empirical receipts,
 keeping public-site accessibility/progress ledgers current, preserving
-proof-depth honesty and protocol source-of-truth checks, and recording final
-release metadata only when the tag or archive facts actually exist.
+proof-depth honesty and protocol source-of-truth checks, and recording DOI,
+archive, artifact, or support-state changes only when those facts actually
+exist.

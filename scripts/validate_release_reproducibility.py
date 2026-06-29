@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate release reproducibility and candidate citation metadata."""
+"""Validate release reproducibility and v1.0.0 citation metadata."""
 
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ REQUIRED_WORKFLOW_FRAGMENTS = [
 
 REQUIRED_CITATION_FRAGMENTS = [
     "cff-version: 1.2.0",
-    'version: "1.0.0-candidate"',
+    'version: "1.0.0"',
     'date-released: "2026-06-29"',
     "No DOI has been issued yet",
     'url: "https://corbensorenson.github.io/asi-stack-book/"',
@@ -46,10 +46,12 @@ REQUIRED_DOC_FRAGMENTS = [
     "| `libreoffice` | not found on `PATH` in the current shell during this audit |",
     "The current shell reports `LANG=C.UTF-8` and `LC_ALL=C`.",
     "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8",
-    "version `1.0.0-candidate`",
+    "version `1.0.0`",
+    "tag `v1.0.0` at commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`",
+    "release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json",
     "no DOI or Zenodo archive has been issued",
-    "Include the git commit or tag used by the reader.",
-    "This file does not claim that the current candidate is a v1.0 evidence release",
+    "Include tag `v1.0.0` and source commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`.",
+    "This file does not claim that a DOI exists",
 ]
 
 

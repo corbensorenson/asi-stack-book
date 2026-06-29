@@ -1,10 +1,12 @@
 # Full Book Writing Goal Template
 
-Use this when starting or resuming a long-running goal to improve the whole book toward a reviewed v1.0 candidate or evidence-release path. For the current next run, prefer the roadmap-driven goal in `docs/v1_0_roadmap.md`.
+Use this when starting or resuming a long-running goal to improve the whole book
+after the tagged v1.0.0 release. For the current next run, prefer the
+roadmap-driven v1.x goal in `docs/v1_0_roadmap.md`.
 
 ## Recommended Goal
 
-Run an extended end-to-end improvement pass on **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI** to turn the current v1.0 candidate into a reviewed, final-draft-quality living book candidate.
+Run an extended end-to-end improvement pass on **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI** to advance the tagged v1.0.0 living book into a stronger v1.x release candidate while preserving the v1.0.0 release record, source tag, claim boundaries, artifact boundaries, and DOI-pending state.
 
 Treat `docs/v1_0_roadmap.md` as the current execution roadmap, `docs/v1_0_focus_audit.md` as the current-state audit, `docs/book_outline.md` as the source of truth for parts, chapters, source queues, proof targets, and drafting jobs, and `book_structure.json` as the source of truth for part/chapter order, stable chapter IDs, and the first-build/mature-endpoint fields published into Appendix K, `Implementation Horizons`. Use the `asi-stack-book` skill and follow the living-book workflow.
 
@@ -50,4 +52,4 @@ python3 scripts/validate_live_human_view.py
 node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports
 ```
 
-Final deliverable: a rendered, public-safe v1.0-candidate living-book manuscript with an honest report of completed chapter improvements, added visuals, support-state promotions, implemented proofs/tests, reader-edition readiness, audio-script readiness, missing evidence, unresolved source gaps, and remaining release risks.
+Final deliverable: a rendered, public-safe v1.x candidate update with an honest report of completed chapter improvements, added visuals, support-state promotions, implemented proofs/tests, reader-edition readiness, audio-script readiness, missing evidence, unresolved source gaps, and remaining release risks.

@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-06-29 - v1.0.0 tagged release record
+
+- Tagged source commit `96d0ca3c6b62f3530202535573941b1f6e50a83d` as
+  `v1.0.0` after the full local release gate passed and the GitHub Pages run
+  for that exact commit (`28360079172`) succeeded, then created the GitHub
+  Release at `https://github.com/corbensorenson/asi-stack-book/releases/tag/v1.0.0`.
+- Added
+  `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json` as the
+  post-tag living-book release-control record, preserving the exact source
+  commit, validation commands, Pages run, DOI-pending state, reader HTML
+  artifact boundary, residuals, and non-claims.
+- Updated `CITATION.cff`, `docs/release_reproducibility.md`,
+  `docs/v1_0_release_gate_audit.md`, `docs/v1_progress_ledger.md`,
+  `docs/v1_0_candidate_status.md`, `docs/v1_0_roadmap.md`,
+  publication/readiness notes, release-record documentation, and validators so
+  the public repo now treats v1.0.0 as tagged while keeping DOI/Zenodo,
+  EPUB/DOCX/PDF/e-reader/audio, accessibility-manual-review, and chapter-core
+  promotion boundaries explicit.
+- This does not create a DOI or Zenodo archive, does not approve additional
+  reader/audio artifacts, does not promote any chapter core claim above
+  `argument`, and does not prove ASI capability, model quality, deployment
+  readiness, runtime safety, benchmark performance, source interpretation,
+  transfer, or economic outcomes.
+
 ## 2026-06-29 - Circle external receipt slice
 
 - Added `docs/circle_external_receipt_slice.md`,

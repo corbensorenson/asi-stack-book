@@ -3,7 +3,7 @@
 Last updated: 2026-06-29
 
 This note records a full local browser review of the generated reader HTML
-snapshot for the current v1.0 candidate. It is not an edition release record
+snapshot for the v1.0 reader HTML artifact gate. It is not an edition release record
 and does not publish or approve any artifact.
 
 ## Inputs

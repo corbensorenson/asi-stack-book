@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-29
 
-This note records the toolchain and citation boundary for the current v1.0 candidate. It is a reproducibility and citability record, not a v1.0 evidence-release record and not an approval of EPUB, DOCX, PDF, e-reader, or audio artifacts.
+This note records the toolchain and citation boundary for the tagged v1.0.0 living-book release. It is a reproducibility and citability record, not an approval of EPUB, DOCX, PDF, e-reader, or audio artifacts.
 
 ## CI Toolchain
 
@@ -43,15 +43,15 @@ The HTML book currently relies on Quarto's generated site assets, the repository
 
 ## Citation Boundary
 
-`CITATION.cff` now identifies the public book as version `1.0.0-candidate` with date `2026-06-29`. A final v1.0 tag or release record must replace candidate status only after the release gates pass.
+`CITATION.cff` now identifies the public book as version `1.0.0` with date `2026-06-29`. The exact source state is tag `v1.0.0` at commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`. The tracked living-book release record is `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`, and the GitHub Release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v1.0.0>.
 
-How to cite the current candidate:
+How to cite v1.0.0:
 
 - Cite the public site: `https://corbensorenson.github.io/asi-stack-book/`.
 - Cite the repository: `https://github.com/corbensorenson/asi-stack-book`.
-- Include the version string `1.0.0-candidate`.
-- Include the git commit or tag used by the reader.
-- Do not cite a DOI for this candidate; no DOI or Zenodo archive has been issued.
+- Include the version string `1.0.0`.
+- Include tag `v1.0.0` and source commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`.
+- Do not cite a DOI for v1.0.0; no DOI or Zenodo archive has been issued.
 
 ORCID metadata is not recorded because no ORCID was provided during this audit. DOI/Zenodo metadata is explicitly pending until a real archive exists.
 
@@ -82,4 +82,4 @@ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --o
 
 ## Non-Claims
 
-This file does not claim that the current candidate is a v1.0 evidence release, that a DOI exists, that EPUB/DOCX/PDF/audio artifacts are approved, that local reader-format probes are release artifacts, that Lean proves broad system safety, or that any chapter core support state moved above `argument`.
+This file does not claim that a DOI exists, that EPUB/DOCX/PDF/audio artifacts are approved, that local reader-format probes are release artifacts, that Lean proves broad system safety, or that any chapter core support state moved above `argument`.

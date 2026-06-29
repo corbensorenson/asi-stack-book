@@ -78,7 +78,7 @@ PROGRESS_SECTIONS = (
 )
 
 PROGRESS_FRAGMENTS = (
-    "not a final v1.0 evidence release",
+    "tagged v1.0.0 living-book evidence-and-reader release boundary",
     "| Phase 0 |",
     "| Phase 1 |",
     "| Phase 2 |",
@@ -93,7 +93,7 @@ PROGRESS_FRAGMENTS = (
     "| Phase 8 |",
     "| Phase 9 |",
     "all chapter core claims remain at `argument`",
-    "final v1.0 tag, DOI/Zenodo archive, and final release citation metadata are still pending",
+    "DOI/Zenodo archive metadata remains pending",
     "does not promote any chapter core claim above `argument`",
 )
 
