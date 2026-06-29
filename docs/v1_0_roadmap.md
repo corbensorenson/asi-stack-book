@@ -7,9 +7,13 @@ v1.0.0 release state is tagged at source commit
 `96d0ca3c6b62f3530202535573941b1f6e50a83d`, with a tracked living-book release
 record at `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`.
 
+For post-`v1.0.0` work, use `docs/v1_x_beyond_sota_roadmap.md` as the active
+execution target. This file remains the v1.0 release-path and gate-history
+record.
+
 The live AI/research book remains the canonical architecture, evidence, source, proof, schema, and release-control source. The normal reader manuscript can eventually become a curated parallel derivative source for prose, pacing, chapter flow, and human-consumption packaging. It is parallel but not equal: it may diverge from the live/research text for readability, but it must inherit claim text, support states, source boundaries, proof/test status, implementation horizons, and release records from the live book unless a deliberate reconciliation step updates both surfaces.
 
-Use this file as the goal target for long-running improvement work. Use `book_structure.json` for ordering, `docs/book_outline.md` for drafting/proof/source scope, and `docs/v1_0_focus_audit.md` for the current-state audit.
+Use this file as the v1.0 release-path record. Use `docs/v1_x_beyond_sota_roadmap.md` as the goal target for new long-running v1.x improvement work, `book_structure.json` for ordering, `docs/book_outline.md` for drafting/proof/source scope, and `docs/v1_0_focus_audit.md` for the historical current-state audit that led into v1.0.0.
 
 ## Inputs Reconciled
 

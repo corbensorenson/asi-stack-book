@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - v1.x beyond-SOTA roadmap
+
+- Added `docs/v1_x_beyond_sota_roadmap.md` as the active post-`v1.0.0`
+  roadmap for moving the book toward a stronger v1.x evidence-and-reader
+  release.
+- The roadmap reconciles the latest Claude planning review with local
+  verification of the current release state, including safety-critical Lean
+  proof depth, non-core evidence discoverability, external-SOTA exceptions,
+  Circle replay reproducibility, Project Theseus import lanes, per-chapter
+  evidence targets, curated reader-manuscript graduation, and EPUB/DOCX/PDF/audio
+  artifact gates.
+- Updated the README, repository map, publication-readiness note, and v1.0
+  roadmap so future long-running work targets the v1.x roadmap while preserving
+  the existing v1.0.0 release-gate history.
+- This does not promote any chapter core claim above `argument`, does not create
+  new Lean proof results, Project Theseus imports, Circle replay fixtures,
+  external reviews, DOI/Zenodo archives, or EPUB/DOCX/PDF/audio approvals, and
+  does not make curated reader prose equal authority beside the live
+  AI/research book.
+
 ## 2026-06-29 - v1.0.0 tagged release record
 
 - Tagged source commit `96d0ca3c6b62f3530202535573941b1f6e50a83d` as

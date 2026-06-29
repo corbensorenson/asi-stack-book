@@ -10,7 +10,7 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 
 ## Current Status
 
-The project has moved beyond the initial v0.2 manuscript baseline into an extended v1.0 candidate hardening pass, but it is not yet a final v1.0 evidence release.
+The project has moved beyond the initial v0.2 manuscript baseline into a tagged `v1.0.0` living-book release, but it is not yet a stronger v1.x evidence release with broad chapter-core support-state promotions or reviewed EPUB/DOCX/PDF/audio artifacts.
 
 - Quarto book structure is initialized and renders to HTML.
 - All 54 outline chapters exist as manuscript drafts across four manifest-driven parts.
@@ -74,6 +74,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/v1_0_candidate_status.md](docs/v1_0_candidate_status.md) | Current v1.0 candidate snapshot, remaining evidence gaps, and release gate. |
 | [docs/v1_0_focus_audit.md](docs/v1_0_focus_audit.md) | Detailed current-state audit and prioritized work plan for moving from v1.0 candidate toward evidence-release and reader-release quality. |
 | [docs/v1_0_roadmap.md](docs/v1_0_roadmap.md) | Execution roadmap and recommended next long-running goal for v1.0 voice, reader, evidence, proof, test, source, site, and release work. |
+| [docs/v1_x_beyond_sota_roadmap.md](docs/v1_x_beyond_sota_roadmap.md) | Post-v1.0.0 roadmap for deeper Lean proofs, Project Theseus/Circle replay evidence, per-chapter evidence lanes, curated reader prose, and human artifact release quality. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |
 | [docs/reader_chapter_review_matrix.md](docs/reader_chapter_review_matrix.md) | Manifest-synced 54-chapter human-reader review queue and release blockers. |
