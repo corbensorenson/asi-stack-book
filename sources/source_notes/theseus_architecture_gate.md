@@ -24,7 +24,10 @@ The Theseus architecture gate is a pre-training promotion check. It prevents hea
 
 - The source is a short gate-definition and usage note.
 - It reports a current gate snapshot with ready-for-heavy-training true, 14/14 checks passed, and zero external inference calls.
-- That snapshot was not independently verified by rerunning Theseus commands or inspecting current report JSON from this repo.
+- A later ASI Stack import, recorded in `docs/theseus_report_import_slice.md`,
+  verifies one public-safe static architecture-gate report fixture by digest and
+  expected-invalid controls. That import is not a clean live Theseus rerun and
+  does not promote chapter core claims.
 
 ## Failure Modes
 
@@ -46,11 +49,11 @@ The Theseus architecture gate is a pre-training promotion check. It prevents hea
 ## Claims To Add Or Update
 
 - The source can support source-derived discussion of readiness gates as pre-training controls and residual-producing promotion checks.
-- It should not be used to claim current readiness unless the latest report artifacts are inspected or regenerated.
+- It should not be used to claim current readiness unless the latest report artifacts are inspected or regenerated; the static ASI-side import supports only bounded implementation-reference discussion.
 
 ## Open Questions
 
 - Should the book define a minimal gate schema for architecture promotion?
 - Which gate predicates are candidates for Lean invariants, and which are operational report checks?
 - How should stale gate state be represented in the claim/evidence matrix?
-
+- What clean Project Theseus release or archive should replace the current static digest import for stronger replay evidence?

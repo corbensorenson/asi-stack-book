@@ -36,7 +36,7 @@ A future A+ version should be:
 | Core thesis | Sound but not obviously novel relative to compound/agentic systems. | The thesis is positioned as a synthesis architecture; novelty is claimed only for the specific mechanisms that survive prior-art review. | Milestone 6 and Milestone 9 |
 | Distinctive ideas | Many promising ideas compete for attention. | Three to five contribution tracks are selected and defended to real depth. | Contribution Track Selection |
 | Rigor and soundness | Internally coherent, but much is still argument-level. | Load-bearing claims have explicit formal, source, prototype, or review evidence; failed claims are demoted; each selected lane names a proof/evidence path or no-promotion blocker. | Milestones 2, 3, 4, 5, 5.5 and Negative Outcomes |
-| Evidence | Three narrow non-core transitions exist, but evidence remains thin. | At least one public-safe Theseus or Circle lane is CI-replayed or CI-verifiable, and selected chapter-adjacent claims have accepted transitions. | Milestones 3, 4, and v1.x release gate |
+| Evidence | Three narrow non-core transitions exist, and one Project Theseus static architecture-gate import is now CI-verifiable by digest, but evidence remains thin. | At least one public-safe Theseus or Circle lane is CI-replayed or CI-verifiable, and selected chapter-adjacent claims have accepted transitions. | Milestones 3, 4, and v1.x release gate |
 | Formal rigor | Most Lean theorems are projection-style. | Safety-critical modules include derived/decomposed theorems, anti-projection conclusions, and negative cases. | Milestone 2 |
 | Human readability | Human view exists, but many chapters remain dense and spec-like. | A curated reader pilot reads like a book and preserves evidence boundaries. | Milestone 7 |
 | External grounding | External positioning exists, but literature was added late and unevenly. | Every chapter has a source-noted external comparator, adjacent literature family, candidate backlog, or explicit exception; likely sources are mined first from the chapter's linked Corben-paper bibliographies. | Milestone 5.5, Milestone 6, and Milestone 9 |
@@ -67,6 +67,9 @@ Candidate tracks:
      residual custody.
    - A+ bar: safety-critical Lean depth, negative case, external safety review,
      and a public-safe Theseus architecture-gate trace or explicit blocker.
+     The current static import clears the digest-verifiable trace boundary but
+     still needs a clean live replay or archived public release before it can
+     carry more than implementation-reference weight.
 4. **Proof-carrying claims and proof-carrying AI contracts**
    - Claim: AI claims and cyclic/contract artifacts can carry checkable proof
      receipts without implying model quality.
@@ -94,8 +97,9 @@ these facts visible quickly:
 - Lean coverage is broad but still shallow in safety-critical areas;
 - external literature is an active grounding workstream, not a completed claim
   that every chapter is already well-cited;
-- Project Theseus and Circle are related local/public projects, not independent
-  third-party evidence unless imported through a public-safe replay lane;
+- Project Theseus and Circle are related local/public projects; the current
+  Theseus static import and Circle local receipt slice are narrow evidence
+  lanes, not chapter-core promotions or independent third-party audits;
 - external review is requested or pending;
 - the book is a research program, not a validated ASI implementation.
 
@@ -105,5 +109,7 @@ these facts visible quickly:
 - This scorecard does not create external review, source-derived support,
   evidence transitions, proof results, reader artifacts, or release approval.
 - This scorecard does not add new external sources, source notes, proof results,
-  Theseus imports, or Circle replay artifacts.
+  support-state transitions, or Circle replay artifacts beyond the separate
+  tracked Project Theseus static import recorded in
+  `docs/theseus_report_import_slice.md`.
 - This scorecard does not promote any chapter core claim above `argument`.

@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/theseus_report.schema.json",
+  "title": "Project Theseus Public-Safe Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "report_id",
+    "trace_class",
+    "source_project",
+    "tool",
+    "input_class",
+    "source_artifact",
+    "public_safety",
+    "generated_artifact_refs",
+    "gate_decisions",
+    "decision_summary",
+    "failed_attempts",
+    "residuals",
+    "replay",
+    "connected_chapter_ids",
+    "evidence_lane_refs",
+    "support_state_effect",
+    "claim_boundaries",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "report_id": { "type": "string", "minLength": 1 },
+    "trace_class": {
+      "type": "string",
+      "enum": [
+        "architecture_gate",
+        "plan_compiler",
+        "operator_os",
+        "self_evolution_gate",
+        "circle_transfer"
+      ]
+    },
+    "source_project": {
+      "type": "object",
+      "required": [
+        "name",
+        "repository_url",
+        "local_checkout_ref",
+        "git_commit",
+        "worktree_state"
+      ],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "repository_url": { "type": "string", "minLength": 1 },
+        "local_checkout_ref": { "type": "string", "minLength": 1 },
+        "git_commit": { "type": "string", "minLength": 1 },
+        "worktree_state": {
+          "type": "string",
+          "enum": [
+            "clean_at_replay",
+            "dirty_at_import_review",
+            "unknown_archived_fixture"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "tool": {
+      "type": "object",
+      "required": ["name", "version_ref", "replay_command_if_clean"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version_ref": { "type": "string", "minLength": 1 },
+        "replay_command_if_clean": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "input_class": { "type": "string", "minLength": 1 },
+    "source_artifact": {
+      "type": "object",
+      "required": [
+        "source_path",
+        "source_artifact_sha256",
+        "source_artifact_status",
+        "sanitization_summary"
+      ],
+      "properties": {
+        "source_path": { "type": "string", "minLength": 1 },
+        "source_artifact_sha256": { "type": "string", "minLength": 1 },
+        "source_artifact_status": {
+          "type": "string",
+          "enum": [
+            "sanitized_static_import",
+            "live_replay",
+            "blocked_source_note_only"
+          ]
+        },
+        "sanitization_summary": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "public_safety": {
+      "type": "object",
+      "required": [
+        "redaction_state",
+        "private_payload_copied",
+        "redactions",
+        "public_safety_reviewer"
+      ],
+      "properties": {
+        "redaction_state": {
+          "type": "string",
+          "enum": [
+            "public_safe_static_summary",
+            "redacted_summary",
+            "blocked_private_payload"
+          ]
+        },
+        "private_payload_copied": { "type": "boolean" },
+        "redactions": { "type": "array", "items": { "type": "string" } },
+        "public_safety_reviewer": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "generated_artifact_refs": { "type": "array", "items": { "type": "string" } },
+    "gate_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate", "passed", "evidence_summary"],
+        "properties": {
+          "gate": { "type": "string", "minLength": 1 },
+          "passed": { "type": "boolean" },
+          "evidence_summary": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "decision_summary": {
+      "type": "object",
+      "required": [
+        "status",
+        "ready_for_heavy_training",
+        "gate_count",
+        "passed_count",
+        "external_inference_calls"
+      ],
+      "properties": {
+        "status": { "type": "string", "minLength": 1 },
+        "ready_for_heavy_training": { "type": "boolean" },
+        "gate_count": { "type": "number" },
+        "passed_count": { "type": "number" },
+        "external_inference_calls": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "failed_attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["attempt_id", "outcome", "reason"],
+        "properties": {
+          "attempt_id": { "type": "string", "minLength": 1 },
+          "outcome": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "replay": {
+      "type": "object",
+      "required": [
+        "mode",
+        "command",
+        "ci_verifiable",
+        "verifier",
+        "expected_source_artifact_sha256"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["digest_verification", "local_command_replay", "blocked"]
+        },
+        "command": { "type": "string", "minLength": 1 },
+        "ci_verifiable": { "type": "boolean" },
+        "verifier": { "type": "string", "minLength": 1 },
+        "expected_source_artifact_sha256": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "connected_chapter_ids": { "type": "array", "items": { "type": "string" } },
+    "evidence_lane_refs": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": [
+        "no_chapter_core_claim_promotion",
+        "eligible_for_bounded_evidence_review",
+        "blocked"
+      ]
+    },
+    "claim_boundaries": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+{
+  "case_id": "private_payload_copied",
+  "base_report": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
+  "mutation": {
+    "path": "public_safety.private_payload_copied",
+    "value": true
+  },
+  "expected_error_fragment": "private payload copied"
+}

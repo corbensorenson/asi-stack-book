@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-29 - Project Theseus static report import lane
+
+- Added `schemas/theseus_report.schema.json` for public-safe Project Theseus
+  report imports.
+- Added the first Project Theseus static architecture-gate import fixture under
+  `experiments/theseus_import/`, with a pinned source-artifact SHA-256 and
+  public ASI fixture SHA-256.
+- Added `scripts/validate_theseus_report.py`, which validates the imported
+  report, verifies the digest boundary, checks the 14 imported architecture
+  gates, and rejects expected-invalid mutations for digest mismatch,
+  private-payload copying, and support-promotion overclaim.
+- Added `docs/theseus_report_import_slice.md` and wired the validator into
+  `scripts/validate_book.py`.
+- Updated public status surfaces to present the Project Theseus lane as
+  implementation-reference evidence only, not a clean live Theseus rerun, not
+  an accepted support-state transition, and not a chapter-core promotion.
+
 ## 2026-06-29 - Value Conflict Lean depth follow-through
 
 - Strengthened `lean/AsiStackProofs/ValueConflict.lean` with a finite

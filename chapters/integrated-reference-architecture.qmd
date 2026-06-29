@@ -31,7 +31,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all twenty assigned sources, including source-note-only review for MoECOT and VCM Editable plus pinned local Theseus project-file references; support remains argument until integrated trace artifacts, tests, reproduced reports, or accepted evidence transitions justify promotion."
   - "The reference_trace_record fixture validates schema/example consistency, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; AsiStackProofs.ReferenceArchitecture implements finite record predicates only; no end-to-end runtime trace harness, authority stop-condition checker, artifact continuity audit, deployed runtime, or report replay has been run."
-  - "Local Theseus project references are report-first implementation context only; no current Theseus reports, dashboards, commands, board steps, compiler proof, or benchmark ledgers were rerun or independently inspected from this repository."
+  - "Local Theseus project references are report-first implementation context only; one static architecture-gate report fixture is now digest-verified as implementation-reference evidence, but no current Theseus dashboards, commands, board steps, compiler proof, end-to-end trace, or benchmark ledgers were rerun from this repository."
   - "No support-state promotion, integrated runtime claim, benchmark success, model-quality result, deployment readiness, or raw source publication is implied."
 ---
 
@@ -53,7 +53,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter synthesizes the stack as an end-to-end design target. It does not claim that an integrated runtime exists, that every handoff has been exercised, or that Project Theseus/MoECOT/VCM reports have been reproduced in this repository.
+This chapter synthesizes the stack as an end-to-end design target. It does not claim that an integrated runtime exists, that every handoff has been exercised, or that Project Theseus/MoECOT/VCM reports have been reproduced in this repository. The Project Theseus static architecture-gate import is a bounded implementation-reference fixture, not an end-to-end trace.
 
 Artifact stewardship gives projects bounded continuity. Integration zooms back out and asks what a steward, planner, memory system, router, verifier, executor, benchmark ratchet, and SCF gate are all supposed to preserve together: an inspectable trace from authorized intent to artifact and evidence-backed change. Integration is useful only if it makes the handoffs more visible, not if it hides them behind a single system label.
 
@@ -264,8 +264,8 @@ The architecture is coherent only if a reader can follow a request from human in
 
 Future implementation work also gets a falsification target. If a demo cannot produce parent artifacts, authority deltas, evidence deltas, residual deltas, and blocked-path records, then it may still be interesting, but it has not yet instantiated this reference architecture.
 
-The integration claim then narrows into an implementation reference. Project Theseus becomes useful precisely because it is report-first: it shows how pieces of this trace could become inspectable machinery without letting local reports stand in for public empirical proof.
+The integration claim then narrows into an implementation reference. Project Theseus becomes useful precisely because it is report-first: it shows how pieces of this trace could become inspectable machinery without letting local reports stand in for public empirical proof. The current static architecture-gate import demonstrates the report-import boundary while leaving the end-to-end runtime trace unclaimed.
 
 ## Handoff
 
-The integrated trace defines what a complete stack must preserve; an implementation reference shows where that trace can become concrete without pretending the proof is already public. Project Theseus as Report-First Implementation Reference provides that bounded example. It maps pressure loops, residuals, plan contracts, gates, ledgers, operator work boards, checkpoints, and self-evolution governance to public-safe report surfaces and explicit non-claims.
+The integrated trace defines what a complete stack must preserve; an implementation reference shows where that trace can become concrete without pretending the proof is already public. Project Theseus as Report-First Implementation Reference provides that bounded example. It maps pressure loops, residuals, plan contracts, gates, ledgers, operator work boards, checkpoints, and self-evolution governance to public-safe report surfaces and explicit non-claims, now including a static architecture-gate import that is useful evidence of report shape rather than proof of integrated runtime behavior.

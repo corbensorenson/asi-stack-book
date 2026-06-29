@@ -80,7 +80,7 @@ not be quoted in the book as an external authority.
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 10 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes. | Replace weak exceptions where external baselines exist. Keep true author-system exceptions, but state why they are exceptions and what would count as a comparable external reference. |
 | P1 | Circle evidence is real but not public-replayable enough. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, but the ASI repo does not rerun the external checkout in CI and does not vendor a public replay pack. | Create a public-safe Circle replay fixture, receipt contract pack, or archived evidence bundle that CI can verify by replay or digest. |
-| P1 | Project Theseus is the right implementation reference but not yet evidence-imported. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, but the local checkout had private/dirty surfaces and no first replayed Theseus report was imported. | Define a Theseus report schema, select public-safe trace classes, import the first trace only after sanitization, and connect it to specific chapter evidence lanes. |
+| P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
 | P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; curated manuscript status remains `not_graduated`. | Start curated chapter graduation when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest: 54 core claims remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
@@ -402,6 +402,28 @@ Acceptance bar:
 - at least one chapter source crosswalk can point to the report as implementation
   evidence without overclaiming;
 - any support-state transition remains narrow and recorded.
+
+Current status after the first ASI-side Project Theseus import:
+
+- `schemas/theseus_report.schema.json` defines the public-safe Project Theseus
+  report contract.
+- `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json`
+  imports a sanitized static architecture-gate report summary from the local
+  Project Theseus checkpoint at commit `1ad88a22`.
+- The imported source artifact is pinned by SHA-256
+  `7994e2909029644d6073289d8c9c59f774473f366a1c8cbda5943326f28518b2`, and
+  the public ASI fixture is pinned by SHA-256
+  `c33ea5d8d466e394ac556eebd623fb0eb43f601d79ea5f66021ec57762751923`.
+- `scripts/validate_theseus_report.py` validates the report, verifies the
+  digest boundary, requires `14/14` architecture gates, and rejects expected
+  invalid mutations for digest mismatch, private-payload copying, and support
+  promotion overclaim.
+- `docs/theseus_report_import_slice.md` records the exact import boundary:
+  useful as implementation-reference evidence, not a clean live Theseus rerun,
+  not a support-state transition, and not a chapter-core promotion.
+- The remaining stronger milestone work is a clean Project Theseus replay or
+  archived public release fixture plus any separate accepted evidence-transition
+  record if a bounded non-core claim is later promoted.
 
 ### Milestone 4 - Circle Public Replay And Consumer Gate
 
@@ -726,8 +748,9 @@ Use this wording when it is time to start the next large autonomous work run:
 - This roadmap does not add new external sources, prove every argument, or
   promote citation candidates into evidence before source notes and transition
   records exist.
-- This roadmap does not create a public-safe Project Theseus import, public
-  Circle replay pack, EPUB, PDF, DOCX, audio artifact, DOI, Zenodo archive, or
-  external review record.
+- This roadmap now records the first public-safe Project Theseus static import,
+  but it does not create a clean live Theseus replay, public Circle replay pack,
+  EPUB, PDF, DOCX, audio artifact, DOI, Zenodo archive, external review record,
+  or support-state promotion.
 - This roadmap does not make curated reader prose equal authority beside the
   live AI/research book.

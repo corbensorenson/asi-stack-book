@@ -14,7 +14,7 @@ readers, reviewers, and future writing agents.
 | Accepted non-core upward transitions | 3 narrow transitions. |
 | Chapter-core promotion effect | None. |
 | External review status | Public review request opened in GitHub issue #1; no independent external human review record yet. |
-| Project Theseus/Circle status | Related project lanes; only the bounded Circle receipt slice below has an accepted prototype-backed transition, and it remains a local public-safe summary rather than a vendored public replay pack. |
+| Project Theseus/Circle status | Circle has the bounded prototype-backed receipt transition below; Project Theseus has a separate public-safe static architecture-gate report import at `docs/theseus_report_import_slice.md` that CI verifies by digest and negative controls, with no chapter-core promotion and no accepted support-state transition. |
 
 ## Accepted Non-Core Transitions
 
@@ -44,6 +44,7 @@ checks that the public entry surfaces link to this ledger.
 
 - This ledger does not create new evidence.
 - This ledger does not create an independent external review record.
-- This ledger does not vendor or replay Project Theseus or Circle from this
-  repository.
+- This ledger does not vendor Project Theseus or Circle, live-replay Project
+  Theseus, or promote the Project Theseus static import into chapter-core
+  evidence.
 - This ledger does not promote any chapter core claim above `argument`.

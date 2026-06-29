@@ -1,0 +1,9 @@
+{
+  "case_id": "support_promotion_overclaim",
+  "base_report": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
+  "mutation": {
+    "path": "support_state_effect",
+    "value": "eligible_for_bounded_evidence_review"
+  },
+  "expected_error_fragment": "support state effect must remain no_chapter_core_claim_promotion"
+}

@@ -726,14 +726,15 @@
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has local-project source mappings and finite report-contract hooks, but no accepted Theseus report bundle, gate replay, benchmark receipt, or public-safe implementation trace has been imported.",
+      "decision_reason": "The chapter has local-project source mappings, finite report-contract hooks, and one public-safe static architecture-gate report import checked by digest, but no clean live Theseus report bundle, accepted gate replay, benchmark receipt, or public-safe end-to-end implementation trace has been imported.",
       "required_evidence": [
-        "public-safe Theseus report bundle",
+        "clean public-safe Theseus report bundle or archived release fixture",
         "gate and residual replay",
         "artifact checksum and environment boundary"
       ],
       "blockers": [
-        "no imported report bundle",
+        "static architecture-gate import exists only as implementation-reference evidence",
+        "no clean live report bundle",
         "no accepted Theseus gate replay",
         "no general capability evidence"
       ],

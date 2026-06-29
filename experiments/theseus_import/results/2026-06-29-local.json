@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-06-29-theseus-architecture-gate-public-import",
+  "slice_id": "theseus_report_import",
+  "validation_result": "pass",
+  "accepted_report_id": "theseus.architecture_gate.20260618T192303Z.public_static_import",
+  "accepted_public_report_sha256": "c33ea5d8d466e394ac556eebd623fb0eb43f601d79ea5f66021ec57762751923",
+  "source_artifact_sha256": "7994e2909029644d6073289d8c9c59f774473f366a1c8cbda5943326f28518b2",
+  "valid_report_count": 1,
+  "expected_invalid_count": 3,
+  "accepted_gate_count": 14,
+  "accepted_passed_count": 14,
+  "support_state_effect": "no_chapter_core_claim_promotion",
+  "ci_verification_command": "python3 scripts/validate_theseus_report.py",
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove deployed Theseus runtime behavior, model quality, routing quality, benchmark quality, safety, alignment, transfer, or ASI",
+    "does not authorize heavy training inside The ASI Stack book or reproduce the Project Theseus training pipeline",
+    "does not copy private training rows, checkpoints, dogfood traces, candidate payloads, prompts, or benchmark data into this public repository"
+  ]
+}

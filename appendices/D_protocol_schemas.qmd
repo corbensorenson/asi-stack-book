@@ -69,6 +69,7 @@ Executable schema drafts are tracked in `schemas/`:
 - `schemas/typed_job.schema.json`
 - `schemas/moecot_orchestration_record.schema.json`
 - `schemas/theseus_report_crosswalk_record.schema.json`
+- `schemas/theseus_report.schema.json`
 - `schemas/value_conflict_record.schema.json`
 
 Example fixtures for implemented schema checks are tracked in `tests/fixtures/protocol_records/` and validated by `python3 scripts/validate_protocol_examples.py`.
@@ -1900,6 +1901,64 @@ theseus_report_crosswalk_record:
 ```
 
 This record keeps Project Theseus references public-safe by separating source notes, reports, configs, gates, residuals, public claim boundaries, verification status, missing artifacts, non-claims, and evidence refs.
+
+## Theseus Report
+
+```yaml
+theseus_report:
+  schema_version: string
+  report_id: string
+  trace_class: architecture_gate
+  source_project:
+    name: string
+    repository_url: string
+    local_checkout_ref: string
+    git_commit: string
+    worktree_state: dirty_at_import_review
+  tool:
+    name: string
+    version_ref: string
+    replay_command_if_clean: string
+  input_class: string
+  source_artifact:
+    source_path: string
+    source_artifact_sha256: string
+    source_artifact_status: sanitized_static_import
+    sanitization_summary: string
+  public_safety:
+    redaction_state: public_safe_static_summary
+    private_payload_copied: false
+    redactions: []
+    public_safety_reviewer: string
+  generated_artifact_refs: []
+  gate_decisions: []
+  decision_summary:
+    status: string
+    ready_for_heavy_training: true
+    gate_count: 14
+    passed_count: 14
+    external_inference_calls: 0
+  failed_attempts: []
+  residuals: []
+  replay:
+    mode: digest_verification
+    command: python3 scripts/validate_theseus_report.py
+    ci_verifiable: true
+    verifier: string
+    expected_source_artifact_sha256: string
+  connected_chapter_ids: []
+  evidence_lane_refs: []
+  support_state_effect: no_chapter_core_claim_promotion
+  claim_boundaries: []
+  non_claims: []
+```
+
+This record imports a public-safe Project Theseus report summary only when it
+names provenance, digest, redaction boundaries, gate decisions, failed attempts,
+residuals, replay or digest verification, connected chapters, support-state
+effect, claim boundaries, and non-claims. The current fixture validates one
+static architecture-gate import; it does not live-replay Theseus or promote a
+chapter core claim.
 
 ## Research Backlog Record
 

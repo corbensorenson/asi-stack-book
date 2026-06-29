@@ -1,0 +1,174 @@
+{
+  "schema_version": "0.1",
+  "report_id": "theseus.architecture_gate.20260618T192303Z.public_static_import",
+  "trace_class": "architecture_gate",
+  "source_project": {
+    "name": "Project Theseus / SymLiquid RMI",
+    "repository_url": "https://github.com/corbensorenson/symliquid-rmi",
+    "local_checkout_ref": "/Users/corbensorenson/Documents/Theseus-Hive",
+    "git_commit": "1ad88a22",
+    "worktree_state": "dirty_at_import_review"
+  },
+  "tool": {
+    "name": "scripts/architecture_gate.py",
+    "version_ref": "Project Theseus source snapshot 1ad88a22",
+    "replay_command_if_clean": "py -3.13 scripts\\architecture_gate.py --out reports\\architecture_gate_report.json"
+  },
+  "input_class": "Checkpointed architecture-gate report over report-first RMI architecture artifacts; imported as a static public-safe summary, not rerun from this repository.",
+  "source_artifact": {
+    "source_path": "checkpoints/20260618T192303Z_sparkstream_smoke/artifacts/reports/architecture_gate_report.json",
+    "source_artifact_sha256": "7994e2909029644d6073289d8c9c59f774473f366a1c8cbda5943326f28518b2",
+    "source_artifact_status": "sanitized_static_import",
+    "sanitization_summary": "The imported ASI-side fixture records gate names, pass bits, short evidence summaries, referenced report names, digest, residuals, and non-claims. It does not copy training rows, checkpoints, private traces, prompts, candidate payloads, or benchmark data."
+  },
+  "public_safety": {
+    "redaction_state": "public_safe_static_summary",
+    "private_payload_copied": false,
+    "redactions": [
+      "No raw training examples copied.",
+      "No model checkpoints copied.",
+      "No private dogfood traces copied.",
+      "No candidate payloads copied.",
+      "No local report bodies beyond the architecture gate summary copied."
+    ],
+    "public_safety_reviewer": "Codex local public-safety pass on 2026-06-29"
+  },
+  "generated_artifact_refs": [
+    "reports/capability_ratchet_report.json",
+    "reports/ratcheting_generative_system_report.json",
+    "reports/ratcheting_modular_intelligence_report.json",
+    "reports/octopus_router_report.json",
+    "reports/octopus_router_eval.json",
+    "reports/octopus_router_head_report.json",
+    "reports/octopus_router_head_eval.json",
+    "reports/safety_benchmark_ledger.json",
+    "reports/bridge_benchmark_ledger.json",
+    "reports/tool_registry.json",
+    "reports/routing_memory.json",
+    "reports/arm_lifecycle_ledger.json"
+  ],
+  "gate_decisions": [
+    {
+      "gate": "rgs_complete",
+      "passed": true,
+      "evidence_summary": "RGS implementation score=1.000"
+    },
+    {
+      "gate": "rmi_complete",
+      "passed": true,
+      "evidence_summary": "RMI implementation score=1.000"
+    },
+    {
+      "gate": "ora_complete",
+      "passed": true,
+      "evidence_summary": "ORA implementation score=1.000"
+    },
+    {
+      "gate": "rule_router_eval_passed",
+      "passed": true,
+      "evidence_summary": "selection=1.0 risk=1.0"
+    },
+    {
+      "gate": "learned_router_head_promoted",
+      "passed": true,
+      "evidence_summary": "exact=1.0 risk=1.0"
+    },
+    {
+      "gate": "safety_ledger_passed",
+      "passed": true,
+      "evidence_summary": "passed=True tests=6/6"
+    },
+    {
+      "gate": "regression_suite_present",
+      "passed": true,
+      "evidence_summary": "regression_count=3"
+    },
+    {
+      "gate": "public_calibration_present",
+      "passed": true,
+      "evidence_summary": "public_comparators=1"
+    },
+    {
+      "gate": "residual_escrow_present",
+      "passed": true,
+      "evidence_summary": "clusters=11 cases=51"
+    },
+    {
+      "gate": "bridge_benchmark_present",
+      "passed": true,
+      "evidence_summary": "bridge_cases=12 paths=['benchmarks/bridges/babylm_wh_gap_bridge.jsonl']"
+    },
+    {
+      "gate": "procedural_tools_registered",
+      "passed": true,
+      "evidence_summary": "tool_count=24 active=22"
+    },
+    {
+      "gate": "routing_memory_present",
+      "passed": true,
+      "evidence_summary": "entries=14 arm_memories=16"
+    },
+    {
+      "gate": "arm_lifecycle_governed",
+      "passed": true,
+      "evidence_summary": "arms=16 split_candidates=1"
+    },
+    {
+      "gate": "external_inference_zero",
+      "passed": true,
+      "evidence_summary": "all architecture artifacts report zero external inference calls/violations"
+    }
+  ],
+  "decision_summary": {
+    "status": "ready_for_heavy_training",
+    "ready_for_heavy_training": true,
+    "gate_count": 14,
+    "passed_count": 14,
+    "external_inference_calls": 0
+  },
+  "failed_attempts": [
+    {
+      "attempt_id": "live_theseus_rerun_blocked_dirty_checkout",
+      "outcome": "blocked",
+      "reason": "The local Project Theseus checkout contained modified and untracked files, including private-data surfaces, so this ASI Stack increment imports only a static sanitized report digest and does not claim a fresh live rerun."
+    }
+  ],
+  "residuals": [
+    "The ASI Stack repository verifies the public-safe fixture and source-artifact digest; it does not run Project Theseus commands in CI.",
+    "The source checkout was dirty at import review, so the static report digest is evidence of a checkpointed report, not a current Theseus replay.",
+    "The architecture gate says heavy training is allowed inside Theseus under its own policy, but this book does not authorize, reproduce, or validate heavy training.",
+    "Chapter-core claims remain at argument until a separate evidence-transition record is accepted."
+  ],
+  "replay": {
+    "mode": "digest_verification",
+    "command": "python3 scripts/validate_theseus_report.py",
+    "ci_verifiable": true,
+    "verifier": "ASI Stack validator checks schema, source digest, gate count, negative controls, redaction boundary, result digest, and non-claims.",
+    "expected_source_artifact_sha256": "7994e2909029644d6073289d8c9c59f774473f366a1c8cbda5943326f28518b2"
+  },
+  "connected_chapter_ids": [
+    "recursive-self-improvement-boundaries",
+    "readiness-gates-residual-escrow-and-quarantine",
+    "project-theseus-as-report-first-implementation-reference",
+    "integrated-reference-architecture"
+  ],
+  "evidence_lane_refs": [
+    "docs/v1_x_beyond_sota_roadmap.md#milestone-3---project-theseus-evidence-import",
+    "docs/per_chapter_evidence_plan.md",
+    "sources/source_notes/theseus_architecture_gate.md",
+    "docs/local_project_mining_theseus_circle.md"
+  ],
+  "support_state_effect": "no_chapter_core_claim_promotion",
+  "claim_boundaries": [
+    "This report can be cited as public-safe implementation-reference evidence that a Project Theseus checkpoint recorded a 14/14 architecture-gate pass with zero external inference calls.",
+    "This report cannot by itself promote governed self-improvement, readiness-gate, routing, benchmark, model-quality, safety, or ASI claims.",
+    "A future promotion would need a clean replay, vendored or archived public fixture, negative controls, and an accepted evidence-transition record."
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove deployed Theseus runtime behavior, model quality, routing quality, benchmark quality, safety, alignment, transfer, or ASI",
+    "does not authorize heavy training inside The ASI Stack book or reproduce the Project Theseus training pipeline",
+    "does not copy private training rows, checkpoints, dogfood traces, candidate payloads, prompts, or benchmark data into this public repository",
+    "does not replace future clean Project Theseus replay, external review, or chapter-core evidence-transition review"
+  ]
+}

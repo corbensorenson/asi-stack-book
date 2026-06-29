@@ -1,0 +1,9 @@
+{
+  "case_id": "digest_mismatch",
+  "base_report": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
+  "mutation": {
+    "path": "replay.expected_source_artifact_sha256",
+    "value": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "expected_error_fragment": "source artifact digest mismatch"
+}

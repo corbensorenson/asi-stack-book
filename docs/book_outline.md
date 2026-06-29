@@ -3413,7 +3413,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
-- Implemented repository-level fixture: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only; no live Theseus report bundle, replay command, benchmark environment, or current gate output has been imported or rerun.
+- Implemented repository-level fixtures: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, and `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest. No live Theseus report bundle, replay command, benchmark environment, current dashboard, work-board step, or model artifact has been rerun.
 - Planned Codex test: Report-bundle completeness test
 - Planned Codex test: Replay-readiness test
 - Planned Codex test: Theseus report crosswalk completeness test
