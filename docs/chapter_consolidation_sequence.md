@@ -52,6 +52,12 @@ ideas become named mechanisms, sections, subclaims, source mappings, proof
 hooks, examples, or implementation-horizon facets. They do not survive by
 copying multiple full source-chapter skeletons into the destination draft.
 
+The 2026-06-29 attachment re-review does not add a new consolidation cluster.
+It confirms that the current decision queue is aimed correctly: the next useful
+work is to judge the already packaged merge and fold candidates, starting with
+the Part I alignment/governance pilot, rather than drafting another abstract
+consolidation plan or editing the manifest broadly from the critique alone.
+
 ## Consolidation State Model
 
 | State | Meaning | Required next move |

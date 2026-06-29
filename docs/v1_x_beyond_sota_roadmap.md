@@ -1039,6 +1039,11 @@ Current status:
   decision queue. Its useful force is to keep the project walking execute,
   revise, defer, or reject decisions for the already packaged clusters instead
   of continuing to create more abstract consolidation plans.
+- The 2026-06-29 attachment re-review reinforces that the 54-to-44/47 target is
+  diagnostic, not a mandate. The roadmap should now spend consolidation effort
+  on reviewed decisions for the existing packages, beginning with the Part I
+  alignment/governance pilot, and should only edit `book_structure.json` after
+  a package clears the claim/source/proof/reader reconciliation gate.
 - The initial external-grounding precondition for the two destination chapters
   is improved by source notes for Constitutional AI, Collective Constitutional
   AI, reinforcement learning under moral uncertainty, and contestable AI, but
