@@ -1,0 +1,124 @@
+{
+  "transition_id": "v1_0_pilot.recursive_self_improvement.no_change",
+  "claim_id": "recursive-self-improvement-boundaries.core",
+  "claim_surface_refs": [
+    "chapters/recursive-self-improvement-boundaries.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/self_improvement_boundary_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/self_improvement_transition.schema.json",
+    "tests/fixtures/protocol_records/self_improvement_transition.valid.json",
+    "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/SelfImprovement.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic self-improvement transition-record discipline and finite Lean predicates only; no deployed self-improvement behavior, runtime optimization, evaluator integrity, authority enforcement, rollback execution, regression quality, recursive self-improvement safety, source interpretation, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has a self-improvement-transition schema, a protocol fixture, finite SelfImprovement Lean predicates, proof adequacy review text that keeps the target narrow, exact source mappings for the Recursive Self-Improvement Boundaries chapter, and a synthetic self-improvement boundary harness with valid and expected-invalid fixtures. Those artifacts make protected invariants, evaluator separation, cheaper-intervention ordering, authority non-widening, governance review, monitor windows, rollback paths, and no-promotion language executable at the record level. They still do not establish deployed self-improvement behavior, runtime optimization quality, evaluator integrity, authority enforcement, rollback execution, regression quality, source interpretation adequacy, recursive self-improvement safety, or model behavior.",
+  "required_artifacts": [
+    "deployed self-improvement implementation or replayable prototype trace",
+    "runtime self-improvement trace showing proposed, rejected, quarantined, canaried, promoted, and rolled-back transitions",
+    "independent evaluator-integrity or evaluator-separation review",
+    "authority-enforcement trace showing candidates cannot widen authority without governance grant",
+    "security and resource boundary-delta tests over actual transition records",
+    "stale-gate replay showing review triggers after frontier, architecture, source, lifecycle, or threat-model changes",
+    "rollback dry run or rollback execution over actual implementation state",
+    "regression suite over real candidate and prior implementations",
+    "monitor-window result over real workload or replay traces",
+    "source interpretation review for self-improvement source mappings",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/self_improvement_boundary_harness.md",
+    "scripts/validate_self_improvement_boundaries.py",
+    "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
+    "schemas/self_improvement_transition.schema.json",
+    "tests/fixtures/protocol_records/self_improvement_transition.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/SelfImprovement.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#recursive-self-improvement-boundaries.core",
+    "docs/source_evidence_audit.md#recursive-self-improvement-boundaries.core"
+  ],
+  "verification_command": "python3 scripts/validate_self_improvement_boundaries.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Recursive Self-Improvement Boundaries remains at argument",
+    "self-improvement boundary fixtures are synthetic",
+    "schema validation checks transition shape rather than deployed self-improvement behavior",
+    "finite Lean predicates remain useful but too narrow for lifecycle, review, timing, adversarial, authority-enforcement, rollback-execution, or regression-quality claims",
+    "source interpretation review and model behavior are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/recursive-self-improvement-boundaries.qmd",
+    "docs/self_improvement_boundary_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "self-improvement boundary harness failure",
+    "self_improvement_transition schema drift",
+    "chapter text interpreted as deployed self-improvement evidence",
+    "synthetic transition record interpreted as real recursive self-improvement behavior",
+    "finite Lean self-improvement predicates treated as deployed safety evidence",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after deployed self-improvement implementation traces, proposed/rejected/quarantined/canaried/promoted/rolled-back transition replays, independent evaluator-integrity review, authority-enforcement traces, security and resource boundary-delta tests, stale-gate replays, rollback dry runs or rollback execution over actual state, regression suites over real implementations, monitor-window results, and source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove deployed self-improvement behavior",
+    "schema validation does not prove runtime optimization quality",
+    "finite Lean predicates do not implement self-improvement transitions",
+    "evaluator-independence strings do not prove evaluator integrity",
+    "rollback path strings do not prove rollback execution",
+    "monitor-window strings do not prove regression quality or live monitoring",
+    "no independent runtime, formal-methods, evaluator-integrity, self-improvement-safety, rollback, regression, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent runtime-systems, evaluator-integrity, self-improvement-safety, rollback, regression-quality, formal-methods, reviewer-quality, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed self-improvement implementation",
+    "no runtime self-improvement trace",
+    "no independent evaluator-integrity review",
+    "no authority-enforcement trace over real candidates",
+    "no security or resource boundary-delta test over actual transitions",
+    "no stale-gate replay over changing frontier, architecture, source, lifecycle, or threat model",
+    "no rollback dry run or rollback execution over actual implementation state",
+    "no regression suite over real candidate and prior implementations",
+    "no monitor-window result over real workload",
+    "no independent source-interpretation review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-recursive-self-improvement-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Recursive Self-Improvement Boundaries above argument",
+    "does not prove deployed self-improvement behavior",
+    "does not prove runtime optimization quality",
+    "does not prove evaluator integrity or authority enforcement",
+    "does not prove rollback execution, regression quality, or recursive self-improvement safety",
+    "does not prove source interpretation"
+  ]
+}

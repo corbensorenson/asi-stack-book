@@ -20,7 +20,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Six local raw-cache claim-source mappings now carry reviewed passage references, but moecot remains connector-only/source-note mapped and the Field of God AI Constitution plus Theseus mappings remain public-project/source-note mapped until raw source is vendored or made durable in this project."
-  - "The self_improvement_transition fixture validates schema/example consistency only; the readiness/residual gate harness now validates synthetic evaluator-independence and rollback-readiness slices through replacement/gate scenarios, while protected-invariant, security/resource boundary-delta, stale-gate replay, verification-budget, and live rollback scenarios remain unimplemented."
+  - "The self_improvement_transition fixture validates schema/example consistency, the self-improvement boundary harness validates synthetic protected-invariant transition-record discipline, and the readiness/residual gate harness validates synthetic evaluator-independence and rollback-readiness slices through replacement/gate scenarios; deployed protected-invariant behavior, security/resource boundary-delta tests, stale-gate replay, verification-budget preservation, and live rollback scenarios remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Source queue | primary: `scf`, `benchmaxxing`, `rmi`; supporting: `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; raw cache: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`; connector/recovery: `moecot` |
 | Source mapping review | Six local raw-cache mappings are passage-reviewed; `moecot` remains connector-only/source-note mapped; `field_of_god_ai_constitution`, `theseus_self_evolution_system`, and `theseus_architecture_gate` remain public-project/source-note mapped. |
-| Test state | `self_improvement_transition.valid.json` passes protocol fixture validation; `AsiStackProofs.SelfImprovement` implements finite protected-invariant and sole-self-evaluation gates; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic evaluator-independence and rollback-readiness slices through replacement/gate scenarios. Protected-invariant behavior tests, security/resource boundary-delta tests, stale-gate replay, verification-budget preservation, and live rollback remain planned. |
+| Test state | `self_improvement_transition.valid.json` passes protocol fixture validation; `AsiStackProofs.SelfImprovement` implements finite protected-invariant and sole-self-evaluation gates; `python3 scripts/validate_self_improvement_boundaries.py` validates synthetic protected-invariant, evaluator-separation, cheaper-intervention, approval, monitor-window, rollback, and no-promotion transition records; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic evaluator-independence and rollback-readiness slices through replacement/gate scenarios. Deployed protected-invariant behavior tests, security/resource boundary-delta tests, stale-gate replay, verification-budget preservation, and live rollback remain planned. |
 
 ## Drafting guardrail
 
