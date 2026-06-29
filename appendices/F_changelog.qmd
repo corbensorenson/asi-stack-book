@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - MoECOT runtime fold disposition package
+
+- Added `docs/chapter_consolidation_fold_moecot_runtime.md` as the first
+  fold-disposition package for the remaining fold candidates in the governed
+  consolidation sequence.
+- The package proposes folding `moecot-runtime-and-multi-core-orchestration`
+  into a named MoECOT Runtime Crosswalk section inside
+  `routing-heads-and-specialist-cores` if review accepts the fold, while
+  preserving source unions, external comparators, `AsiStackProofs.Routing`,
+  `AsiStackProofs.MoECOTRuntime`, routing/MoECOT schemas, reader repair
+  requirements, URL/history policy, restoration conditions, and
+  no-support-state-change boundaries.
+- Updated the v1.x roadmap, consolidation sequence, README, publication
+  readiness, repository map, and consolidation validator so MoECOT runtime is
+  `fold_disposition_ready`, while simulation fidelity and semantic
+  representation remain `fold_review_candidate`.
+- This does not edit `book_structure.json`, merge or fold chapters, change
+  Appendix C, create source/proof/test evidence, approve reader artifacts, or
+  promote any support state.
+
 ## 2026-06-29 - Consolidation decision queue roadmap update
 
 - Reviewed the latest 54-to-44/47 consolidation idea and kept the core

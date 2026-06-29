@@ -18,6 +18,7 @@ VERIFICATION_REVIEW_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_ver
 VERIFICATION_REVIEW_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_verification_review.md"
 PLANNING_DAG_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_planning_dag.md"
 PLANNING_DAG_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_planning_dag.md"
+MOECOT_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_moecot_runtime.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -79,6 +80,7 @@ REQUIRED_FRAGMENTS = (
     "`fold_review_candidate`",
     "`dry_run_packaged`",
     "`review_ready`",
+    "`fold_disposition_ready`",
     "`executed`",
     "`deferred_for_release`",
     "`rejected_or_retained`",
@@ -103,6 +105,7 @@ REQUIRED_FRAGMENTS = (
     "Static context ABI | `review_ready`",
     "Verification and adversarial review | `review_ready`",
     "Planning and DAG control | `review_ready`",
+    "Source-blocked MoECOT runtime | `fold_disposition_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -110,6 +113,8 @@ REQUIRED_FRAGMENTS = (
     "Repetition-removal ledger",
     "Reader-work disposition",
     "Reader Work Sequencing",
+    "Remaining Fold-Disposition Packages",
+    "docs/chapter_consolidation_fold_moecot_runtime.md",
     "This sequence does not merge chapters.",
     "This sequence does not change `book_structure.json`.",
     "This sequence does not change Appendix C support states.",
@@ -581,6 +586,83 @@ PLANNING_DAG_REQUIRED_FIXTURE_FRAGMENTS = {
     "python3 scripts/validate_plan_execution_contracts.py",
 }
 
+MOECOT_FOLD_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Fold Disposition: MoECOT Runtime",
+    "Status: fold-disposition ready; human/external review not completed.",
+    "does not edit `book_structure.json`",
+    "Current state | `fold_disposition_ready`",
+    "MoECOT Runtime Crosswalk",
+    "Preservation Ledger",
+    "Proposed Destination Outline",
+    "Source Union",
+    "External-Source Union",
+    "Appendix C Row Plan",
+    "Lean Module And Proof-Manifest Treatment",
+    "Schemas, Fixtures, And Harnesses",
+    "Reader Path And Handoff Repairs",
+    "URL, Redirect, And History Policy",
+    "Restoration Conditions",
+    "Review Decision Surface",
+    "Execute fold",
+    "Reject and retain standalone",
+    "No support-state movement",
+    "This disposition does not merge or fold chapters.",
+    "This disposition does not change `book_structure.json`.",
+    "This disposition does not change Appendix C support states.",
+)
+
+MOECOT_FOLD_REQUIRED_IDS = {
+    "moecot-runtime-and-multi-core-orchestration",
+    "routing-heads-and-specialist-cores",
+}
+
+MOECOT_FOLD_REQUIRED_SOURCE_IDS = {
+    "octopus_router",
+    "rmi",
+    "beastbrain",
+    "cognitive_loop_closure",
+    "rgs",
+    "moecot",
+    "project_theseus_whitepaper",
+    "theseus_operator_os",
+    "benchmaxxing",
+    "viea",
+    "scf",
+    "talos",
+    "moecot_md",
+    "theseus_architecture_gate",
+}
+
+MOECOT_FOLD_REQUIRED_EXTERNAL_IDS = {
+    "ext_sparse_moe_2017",
+    "ext_gshard_2020",
+    "ext_switch_transformer_2021",
+    "ext_expert_choice_routing_2022",
+    "ext_mixtral_2024",
+    "ext_moe_llm_survey_2024",
+    "ext_frugalgpt_2023",
+    "ext_hybrid_llm_2024",
+    "ext_routellm_2024",
+    "ext_three_states_plan_fear_2006",
+}
+
+MOECOT_FOLD_REQUIRED_LEAN_TAGS = {
+    "lean:routing.specialists.operational_invariant",
+    "lean:routing.specialists.failure_blocks_promotion",
+    "lean:moecot.runtime.operational_invariant",
+    "lean:moecot.runtime.failure_blocks_promotion",
+}
+
+MOECOT_FOLD_REQUIRED_FIXTURE_FRAGMENTS = {
+    "schemas/specialist_registry_record.schema.json",
+    "schemas/routing_decision_record.schema.json",
+    "schemas/moecot_orchestration_record.schema.json",
+    "experiments/moecot/README.md",
+    "python3 scripts/validate_schemas.py",
+    "python3 scripts/validate_protocol_examples.py",
+    "python3 scripts/validate_readiness_residual_gates.py",
+}
+
 REQUIRED_DESTINATIONS = (
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
@@ -603,6 +685,7 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_destination_draft_verification_review.md",
     "docs/chapter_consolidation_dry_run_planning_dag.md",
     "docs/chapter_consolidation_destination_draft_planning_dag.md",
+    "docs/chapter_consolidation_fold_moecot_runtime.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -960,6 +1043,38 @@ def main() -> None:
     for fragment in sorted(PLANNING_DAG_REQUIRED_FIXTURE_FRAGMENTS):
         if f"`{fragment}`" not in planning_dag_draft:
             errors.append(f"Planning/DAG destination draft missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        moecot_fold = read_text(MOECOT_FOLD_DISPOSITION)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_fold_moecot_runtime.md")
+        moecot_fold = ""
+
+    for fragment in MOECOT_FOLD_REQUIRED_FRAGMENTS:
+        if fragment not in moecot_fold:
+            errors.append(f"MoECOT fold disposition missing required boundary: {fragment}")
+
+    for chapter_id in sorted(MOECOT_FOLD_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"MoECOT fold chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in moecot_fold:
+            errors.append(f"MoECOT fold disposition does not mention `{chapter_id}`.")
+
+    for source_id in sorted(MOECOT_FOLD_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in moecot_fold:
+            errors.append(f"MoECOT fold disposition missing source ID `{source_id}`.")
+
+    for source_id in sorted(MOECOT_FOLD_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in moecot_fold:
+            errors.append(f"MoECOT fold disposition missing external source ID `{source_id}`.")
+
+    for tag in sorted(MOECOT_FOLD_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in moecot_fold:
+            errors.append(f"MoECOT fold disposition missing Lean tag `{tag}`.")
+
+    for fragment in sorted(MOECOT_FOLD_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in moecot_fold:
+            errors.append(f"MoECOT fold disposition missing fixture, schema, or validator `{fragment}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)

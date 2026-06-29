@@ -60,6 +60,7 @@ copying multiple full source-chapter skeletons into the destination draft.
 | `fold_review_candidate` | The source chapter may be a section rather than a chapter-owning artifact. | Produce a fold disposition that names preserved sections, subclaims, source IDs, proof hooks, reader paths, and restoration conditions. |
 | `dry_run_packaged` | A package proposes the manifest diff, claim/source/proof/reader reconciliation, and validation path, but no destination prose is accepted. | Write a one-skeleton destination draft or reject the merge as not improving chapter ownership. |
 | `review_ready` | The dry-run package and one-skeleton destination draft exist and can be judged by Corben, an editor, or an external reviewer. | Record an execute, revise, defer, or reject decision before touching `book_structure.json`. |
+| `fold_disposition_ready` | A fold disposition exists and can be judged without a full destination chapter draft. | Record an execute fold, revise, defer, or reject/retain decision before touching `book_structure.json`. |
 | `executed` | The manifest, outline, chapter prose, appendices, proof manifest, reader records, handoffs, and redirects were updated and validated. | Keep the no-support-state-change boundary unless a separate evidence transition exists. |
 | `deferred_for_release` | The merge remains plausible, but the current release proceeds without it for a recorded reason. | Reader curation may continue with an explicit note that duplicate structure is accepted for that release only. |
 | `rejected_or_retained` | Review finds the separate chapter boundary stronger. | Preserve both chapters and record the artifact, evidence, proof, or reader reason. |
@@ -121,7 +122,7 @@ Use this rubric before any non-pilot consolidation package:
 | Static context ABI | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the static ABI pair unless explicitly deferred or retained; reader curation may continue on protected adjacent chapters. |
 | Verification and adversarial review | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the verification/review pair unless explicitly deferred or retained; reader curation may continue on claim ledgers. |
 | Planning and DAG control | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the planning/DAG pair unless explicitly deferred or retained; reader curation may continue on semantic IR. |
-| Source-blocked MoECOT runtime | `fold_review_candidate` | Decide whether to fold as a named routing-runtime section until source mining catches up. | Do not promote MoECOT runtime as standalone reader material while source-blocked. |
+| Source-blocked MoECOT runtime | `fold_disposition_ready` | Review the fold disposition and decide execute fold, revise, defer, or reject/retain. | Do not promote MoECOT runtime as standalone reader material while source-blocked. |
 | Simulation fidelity | `fold_review_candidate` | Decide whether the feasibility-bound argument belongs in resource economics or the efficient-ASI frame. | Preserve physical-constraint caveats if folded. |
 | Semantic representation | `fold_review_candidate` | Decide whether representation is a substrate section in the compression cluster or a standalone artifact. | Preserve proof/test hooks if folded. |
 | Runtime adapters and Labor OS | `rejected_or_retained` unless later evidence changes artifact ownership | Revisit only if tool-permission adapters stop owning a distinct artifact. | Reader curation may proceed because the current split has artifact ownership. |
@@ -301,6 +302,24 @@ path. The current allowed pilot-reader set remains:
   Intelligence Arbitrage**. It is review-ready but not reviewed, not canonical,
   and not a manifest edit. The next decision is execute, revise, defer, or
   reject.
+
+## Remaining Fold-Disposition Packages
+
+- `docs/chapter_consolidation_fold_moecot_runtime.md` records the first fold
+  disposition package, for `moecot-runtime-and-multi-core-orchestration` into a
+  named MoECOT Runtime Crosswalk section inside
+  `routing-heads-and-specialist-cores`. It is fold-disposition ready but not
+  reviewed, not executed, not canonical, and not a manifest edit. The next
+  decision is execute fold, revise, defer, or reject/retain. It preserves
+  `AsiStackProofs.Routing`, `AsiStackProofs.MoECOTRuntime`,
+  `schemas/specialist_registry_record.schema.json`,
+  `schemas/routing_decision_record.schema.json`,
+  `schemas/moecot_orchestration_record.schema.json`, source unions, external
+  comparator unions, reader repair requirements, URL/history policy, restoration
+  conditions, and the no-support-state-change boundary.
+- `simulation-fidelity-and-physical-constraints` and
+  `semantic-representation-and-tree-structured-models` still need their own
+  fold dispositions before any manifest or reader-work dependency.
 
 ## Non-Claims
 

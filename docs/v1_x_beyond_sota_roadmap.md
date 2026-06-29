@@ -752,8 +752,8 @@ Follow-up review outcome:
 - The roadmap response is stateful consolidation, not an immediate manifest
   edit: every cluster must move through a recorded state such as
   `planned_candidate`, `fold_review_candidate`, `dry_run_packaged`,
-  `review_ready`, `executed`, `deferred_for_release`, or
-  `rejected_or_retained`.
+  `review_ready`, `fold_disposition_ready`, `executed`,
+  `deferred_for_release`, or `rejected_or_retained`.
 - Appendix C reconciliation, source-ID union, Lean/proof-tag union, fixture
   treatment, reader-overlay treatment, and URL/redirect policy are not cleanup
   chores after a merge. They are merge preconditions.
@@ -762,9 +762,9 @@ Follow-up review outcome:
   before any canonical chapter identity changes.
 - Compression, intent/contracts, static context ABI, verification/adversarial
   review, and planning/DAG control now have dry-run packages and one-skeleton
-  destination drafts but remain unmerged. MoECOT, simulation-fidelity, and
-  semantic representation should each receive a dry-run package and destination
-  or fold disposition before reader curation or manifest edits depend on them.
+  destination drafts but remain unmerged. MoECOT now has a fold disposition;
+  simulation-fidelity and semantic representation still need fold dispositions
+  before reader curation or manifest edits depend on them.
 - Broad human-reader curation should not harden duplicate chapter skeletons in
   a pending consolidation cluster. Local prose cleanup is still allowed, but
   curated-reader graduation for those source chapters should wait until the
@@ -999,15 +999,15 @@ Current status:
   for the latest 54-to-44/47 critique: the Part I pilot stays first, while the
   compression, intent/contract, context, verification, planning, MoECOT,
   simulation-fidelity, semantic-representation, and low-priority runtime-adapter
-  candidates each require their own dry-run package and review before any
-  future manifest edit.
+  candidates each require their own package or explicit review decision before
+  any future manifest edit.
 - The sequence now records consolidation states so candidates cannot jump from
   "interesting idea" to manifest change: the Part I pilot is `review_ready`,
   compression, intent/contracts, static context ABI, verification/adversarial
   review, and planning/DAG control are `review_ready`, the remaining
-  non-packaged merge clusters are `planned_candidate`, the MoECOT,
-  simulation-fidelity, and
-  semantic-representation candidates are `fold_review_candidate`, and
+  non-packaged merge clusters are `planned_candidate`, MoECOT runtime is
+  `fold_disposition_ready`, simulation-fidelity and semantic representation
+  remain `fold_review_candidate`, and
   runtime-adapters/Labor OS is retained unless a later evidence review finds
   duplicate artifact ownership.
 - The pilot proposes two future merges:
@@ -1158,10 +1158,13 @@ Current status:
   needs review and an execute, revise, defer, or reject decision. The
   planning/DAG-control candidate should not be merged from the roadmap table,
   dry-run package, or destination draft alone. It still needs review and an
-  execute, revise, defer, or reject decision. The MoECOT, simulation-fidelity,
-  and semantic-representation candidates still need their own dry-run package,
-  claim/source/proof/reader reconciliation, and reviewed destination-chapter
-  draft or fold disposition before any `book_structure.json` change.
+  execute, revise, defer, or reject decision. The MoECOT runtime candidate now
+  has `docs/chapter_consolidation_fold_moecot_runtime.md`, but it still needs
+  review and an execute fold, revise, defer, or reject/retain decision before
+  any `book_structure.json` change. The simulation-fidelity and
+  semantic-representation candidates still need their own fold dispositions,
+  claim/source/proof/reader reconciliation, and reviewed decision surface before
+  any `book_structure.json` change.
 - No manifest merge has been performed yet, and no chapter count reduction is
   claimed.
 
