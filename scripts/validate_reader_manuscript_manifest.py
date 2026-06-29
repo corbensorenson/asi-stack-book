@@ -504,6 +504,41 @@ def validate_companion_note_routing(
             if not isinstance(value, str) or len(value.split()) < 8:
                 errors.append(f"{owner}: {key} must be a substantive sentence.")
 
+        companion_note_file = record.get("companion_note_file")
+        companion_note_status = record.get("companion_note_status")
+        if companion_note_file is not None or companion_note_status is not None:
+            if companion_note_status != "drafting_not_release_reviewed":
+                errors.append(
+                    f"{owner}: companion_note_status must be drafting_not_release_reviewed."
+                )
+            if (
+                not isinstance(companion_note_file, str)
+                or not companion_note_file.startswith("editions/reader_manuscript/v1_0/companion_notes/")
+            ):
+                errors.append(
+                    f"{owner}: companion_note_file must be under "
+                    "editions/reader_manuscript/v1_0/companion_notes/."
+                )
+            else:
+                companion_note_path = ROOT / companion_note_file
+                if not companion_note_path.exists():
+                    errors.append(f"{owner}: companion_note_file does not exist: {companion_note_file}")
+                else:
+                    note_text = companion_note_path.read_text(encoding="utf-8", errors="ignore").lower()
+                    for phrase in (
+                        chapter_id.lower(),
+                        "not a reader release",
+                        "does not promote",
+                        "does not prove model quality",
+                        "reader spine",
+                        "audio",
+                    ):
+                        if phrase not in note_text:
+                            errors.append(
+                                f"{owner}: companion note {companion_note_file} "
+                                f"must include boundary phrase: {phrase}"
+                            )
+
         for key in ("dense_material", "must_remain_in_reader", "companion_note_material", "release_blockers", "non_claims"):
             require_string_list(owner, key, record.get(key), errors)
 

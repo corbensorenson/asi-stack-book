@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-06-29 - Circle companion note drafting path
+
+- Added the first tracked drafting companion note at
+  `editions/reader_manuscript/v1_0/companion_notes/circle-calculus-and-proof-carrying-ai-contracts.md`
+  so e-reader and audio review have a plain-language glossary and treatment
+  note for proof receipts, theorem-linked receipts, consumer gates,
+  workload-blocked promotion, theorem laundering, and the public Circle
+  consumer-gate fixture boundary.
+- Updated the companion-note routing manifest, companion routing review,
+  release-editions plan, v1.x roadmap, and public README so the Circle chapter
+  stays on the companion-note path rather than a premature curated-prose path.
+- Strengthened `scripts/validate_reader_manuscript_manifest.py` so any routing
+  record with a companion-note file must point to an existing note under
+  `editions/reader_manuscript/v1_0/companion_notes/` and preserve reader,
+  audio, non-release, non-promotion, and model-quality non-claim boundaries.
+- Refreshed `editions/reader_manuscript/README.md` to reflect the current
+  `drafting` curated reader-manuscript status instead of the old dormant
+  `not_graduated` wording.
+- This does not create a reader release, curated Circle chapter, EPUB, DOCX,
+  PDF, HTML, audio artifact, artifact review, support-state promotion, local
+  Circle replay claim, theorem-validity claim, model-quality claim, or release
+  approval.
+
 ## 2026-06-29 - Human Intent curated reader prose pass
 
 - Initialized and rewrote the drafting-only curated reader chapter

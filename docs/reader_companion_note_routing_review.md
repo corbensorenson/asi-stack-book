@@ -33,7 +33,7 @@ reader prose.
 
 | Chapter | Reader treatment | Companion route | Release decision |
 |---|---|---|---|
-| `circle-calculus-and-proof-carrying-ai-contracts` | Retain proof receipt states, theorem references, resolver/replay boundaries, consumer gates, workload blockers, and non-claims in the reader chapter. | Future glossary and audio note for receipt states, theorem laundering, fingerprints, replay, and workload-blocked promotion. | No curated source. No release blocker cleared. |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Retain proof receipt states, theorem references, resolver/replay boundaries, consumer gates, workload blockers, and non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/circle-calculus-and-proof-carrying-ai-contracts.md` for receipt-state glossary, theorem laundering, fingerprints, replay, workload-blocked promotion, and audio treatment. | No curated source. No release blocker cleared. |
 | `executable-specifications-and-lean-proof-envelope` | Retain the distinction between Lean predicates, schemas, validators, behavior tests, benchmarks, external theorem references, and semantic adequacy review. | Future proof-lane glossary and audio note explaining why each lane carries different authority. | No curated source. No release blocker cleared. |
 | `artifact-steward-agents-and-living-project-governance` | Retain charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, federation, and non-ownership boundaries. | Future project-object quick reference and implementation-ladder companion note; the first curated prose pass compresses implementation-ladder pacing while preserving meaning-critical boundaries. | Drafting-only curated reader prose pass recorded; no release blocker cleared. |
 
@@ -57,6 +57,8 @@ must preserve the claim boundary.
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
 - This review records that five drafting-only curated reader chapters now
   exist; it does not approve any chapter for release.
+- This review records one drafting companion note for Circle Calculus; it does
+  not approve it as an e-reader, audio, or release artifact.
 - This review does not promote any claim support state.
 - This review does not claim proof adequacy, Circle theorem replay, steward
   workflow execution, treasury execution, governance correctness, audiobook

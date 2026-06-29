@@ -1,10 +1,19 @@
 # Curated Reader Manuscript
 
-This directory is the future home for a manually edited human-reader manuscript when generated reader source plus semantic overlays are no longer enough.
+This directory is the tracked home for manually edited human-reader manuscript
+work when generated reader source plus semantic overlays are no longer enough.
 
-The current v1.0 state is intentionally dormant. `v1_0/manifest.json` records that the curated reader manuscript has **not** graduated yet. Until it graduates, the live Quarto book, generated reader edition, and reader overlays remain the active reader path.
+The current v1.0 state is `drafting`. `v1_0/manifest.json` records five
+drafting-only curated chapter records, but none are release-approved and none
+are equal authority beside the live book. The live Quarto book, generated reader
+edition, and reader overlays remain the active release path until reconciliation,
+format artifact review, and an edition release record actually exist.
 
-The v1.0 companion-note routing manifest at `v1_0/companion_note_routing.json` records chapter-level reader, e-reader, and audio companion decisions for dense proof/governance chapters. It is review routing only, not a reader release record or artifact approval.
+The v1.0 companion-note routing manifest at
+`v1_0/companion_note_routing.json` records chapter-level reader, e-reader, and
+audio companion decisions for dense proof/governance chapters. Draft companion
+notes may live under `v1_0/companion_notes/`. They are review support only, not
+reader release records or artifact approvals.
 
 When the curated manuscript does graduate, it remains a parallel derivative source for narrative prose only. It may improve pacing, chapter flow, examples, transitions, and relaxed reading, but it is not an equal source for claims, support states, source boundaries, proof/test status, implementation horizons, or release records.
 
