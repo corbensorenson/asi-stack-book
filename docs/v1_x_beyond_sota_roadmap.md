@@ -905,7 +905,8 @@ Current status:
   reconciliation passes.
 - `scripts/validate_chapter_consolidation_pilot_plan.py` verifies that the plan
   preserves all four source chapter IDs, required source IDs, required Lean
-  proof tags, no-manifest-edit language, and no-support-state-change language.
+  proof tags, no-manifest-edit language, no-support-state-change language, both
+  dry-run packages, and both destination drafts.
 - `docs/chapter_consolidation_dry_run_constitutional_alignment.md` records the
   dry-run merge package for the `constitutional-alignment-substrate` plus
   `agency-dignity-and-corrigibility` pilot destination, including the
@@ -927,15 +928,21 @@ Current status:
   either merge.
 - The latest re-consolidation proposal is accepted as directionally correct,
   but the roadmap response is not another abstract plan and not an immediate
-  54-to-44 manifest edit. The next useful artifact is a reviewed destination
-  chapter draft for one pilot merge, written as one chapter with one skeleton,
-  followed by a decision to execute, defer, or reject that merge.
+  54-to-44 manifest edit. The two useful pilot artifacts are review-ready
+  destination chapter drafts written as one chapter with one skeleton, followed
+  by a decision to execute, defer, or reject each merge.
 - `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
   now records the first review-ready destination draft for
   **Constitutional Alignment: Agency, Dignity, and Corrigibility**. It is
   intentionally not marked reviewed: manifest consolidation remains blocked
   until human or external review accepts the destination shape, or the project
   records a decision to defer or reject the merge.
+- `docs/chapter_consolidation_destination_draft_contestable_governance.md`
+  now records the second review-ready destination draft for **Moral
+  Uncertainty, Value Conflict, and Contestable Governance**. It is intentionally
+  not marked reviewed: manifest consolidation remains blocked until human or
+  external review accepts the destination shape, or the project records a
+  decision to defer or reject the merge.
 - Broad reader polish should avoid the four pending Part I consolidation source
   chapters until the pilot is executed or rejected. Reader curation may continue
   on chapters outside the pending cluster, and local prose fixes may continue

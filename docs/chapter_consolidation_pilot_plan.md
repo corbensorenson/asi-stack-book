@@ -208,12 +208,13 @@ manifest edit. It should include:
 
 ## Validation
 
-This plan, both dry-run packages, the first destination draft, and the decision
+This plan, both dry-run packages, both destination drafts, and the decision
 review are checked by
 `python3 scripts/validate_chapter_consolidation_pilot_plan.py`:
 `docs/chapter_consolidation_dry_run_constitutional_alignment.md`,
 `docs/chapter_consolidation_dry_run_contestable_governance.md`,
-`docs/chapter_consolidation_destination_draft_constitutional_alignment.md`, and
+`docs/chapter_consolidation_destination_draft_constitutional_alignment.md`,
+`docs/chapter_consolidation_destination_draft_contestable_governance.md`, and
 `docs/chapter_consolidation_decision_review.md`.
 
 Current dry-run package status:
@@ -238,6 +239,10 @@ Current dry-run package status:
   records the first review-ready destination chapter draft for
   **Constitutional Alignment: Agency, Dignity, and Corrigibility**. It is not
   yet human- or external-reviewed, and it does not authorize a manifest merge.
+- `docs/chapter_consolidation_destination_draft_contestable_governance.md`
+  records the second review-ready destination chapter draft for **Moral
+  Uncertainty, Value Conflict, and Contestable Governance**. It is not yet
+  human- or external-reviewed, and it does not authorize a manifest merge.
 - Neither package edits the manifest or authorizes a merge.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
   defer manifest consolidation for this v1.x cycle, proceed with reader

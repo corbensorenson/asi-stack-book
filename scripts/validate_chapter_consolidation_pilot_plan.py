@@ -11,6 +11,7 @@ PLAN = ROOT / "docs" / "chapter_consolidation_pilot_plan.md"
 DRY_RUN_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_dry_run_constitutional_alignment.md"
 DRY_RUN_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_dry_run_contestable_governance.md"
 DESTINATION_DRAFT_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_destination_draft_constitutional_alignment.md"
+DESTINATION_DRAFT_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_destination_draft_contestable_governance.md"
 DECISION_REVIEW = ROOT / "docs" / "chapter_consolidation_decision_review.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 STRUCTURE = ROOT / "book_structure.json"
@@ -116,6 +117,19 @@ ALIGNMENT_DESTINATION_DRAFT_REQUIRED_FRAGMENTS = (
     "No chapter core claim is promoted above `argument`.",
     "Constitutional Predicate Record",
     "Agency Rights Checklist",
+    "Review Checklist Before Any Manifest Merge",
+    "This draft is ready for human or external review. It is not yet reviewed.",
+    "Manifest consolidation remains blocked",
+)
+CONTESTABLE_DESTINATION_DRAFT_REQUIRED_FRAGMENTS = (
+    "Status: review-ready draft; human/external review not completed.",
+    "does not edit `book_structure.json`",
+    "Moral Uncertainty, Value Conflict, and Contestable Governance",
+    "one chapter skeleton",
+    "No manifest edit has been made.",
+    "No chapter core claim is promoted above `argument`.",
+    "Value Conflict Record",
+    "Governance Right Record",
     "Review Checklist Before Any Manifest Merge",
     "This draft is ready for human or external review. It is not yet reviewed.",
     "Manifest consolidation remains blocked",
@@ -232,6 +246,7 @@ def main() -> None:
     alignment_dry_run_text = read_required_file(DRY_RUN_ALIGNMENT, errors)
     contestable_dry_run_text = read_required_file(DRY_RUN_CONTESTABLE, errors)
     alignment_destination_draft_text = read_required_file(DESTINATION_DRAFT_ALIGNMENT, errors)
+    contestable_destination_draft_text = read_required_file(DESTINATION_DRAFT_CONTESTABLE, errors)
     decision_review_text = read_required_file(DECISION_REVIEW, errors)
     structure = load_structure()
     manifest_ids = {
@@ -309,6 +324,24 @@ def main() -> None:
         errors,
     )
     require_fragments(
+        "Contestable-governance destination draft",
+        contestable_destination_draft_text,
+        CONTESTABLE_DESTINATION_DRAFT_REQUIRED_FRAGMENTS,
+        errors,
+    )
+    require_backticked_ids(
+        "Contestable-governance destination draft",
+        contestable_destination_draft_text,
+        CONTESTABLE_DRY_RUN_REQUIRED_SOURCE_IDS,
+        errors,
+    )
+    require_backticked_ids(
+        "Contestable-governance destination draft",
+        contestable_destination_draft_text,
+        CONTESTABLE_DRY_RUN_REQUIRED_LEAN_TAGS,
+        errors,
+    )
+    require_fragments(
         "Consolidation decision review",
         decision_review_text,
         DECISION_REVIEW_REQUIRED_FRAGMENTS,
@@ -322,7 +355,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation pilot-plan validation passed: four source chapters, "
-        "two proposed merges, two dry-run packages, and one destination draft."
+        "two proposed merges, two dry-run packages, and two destination drafts."
     )
 
 
