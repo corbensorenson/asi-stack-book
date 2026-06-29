@@ -1,0 +1,16 @@
+{
+  "plan_id": "agency-valid-high-impact-approval",
+  "affected_parties": ["book maintainer", "public readers"],
+  "delegation_scope": "high-impact public release preparation with no autonomous publication authority",
+  "manipulation_risk": "medium; release copy could shape public interpretation",
+  "reversibility": "public release is treated as irreversible until explicit maintainer approval and rollback plan exist",
+  "material_usability": "approval checklist, reader artifact, and release diff are directly available for review before publication",
+  "timing_requirement": "human approval must occur before the public release effect",
+  "review_channel": "human maintainer approval review",
+  "appeal_channel": "maintainer appeal or governance review blocks release until resolved",
+  "shutdown_or_rollback_path": "pause release, cancel publication, or rollback the release tag",
+  "accountable_principal": "human release maintainer",
+  "residual_dependency_risk": ["Residual release-risk remains recorded until artifact review and approval complete."],
+  "denial_or_degradation_reason": "publication is denied until human approval and artifact review complete",
+  "approval_required": true
+}

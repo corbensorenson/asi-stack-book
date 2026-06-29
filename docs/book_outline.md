@@ -591,11 +591,11 @@ Draft deliverables:
 
 - A rights-and-corrigibility checklist attached to high-impact plans.
 - Exact Appendix C claim-source mappings for the agency/corrigibility core claim across alignment lineage, recursive-agency governance, metaphysical variants, connector synthesis, and the AI Constitution source; five mappings (`alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending agency-preservation, material-usability, timing-before-effect, corrigibility-pathway, high-impact approval, manipulation-resistance, or runtime-policy evidence.
-- Planned Codex test: Agency-preservation scenario.
-- Planned Codex test: Material-usability rights test.
-- Planned Codex test: Timing-before-effect test.
-- Planned Codex test: Corrigibility pathway test.
-- Planned Codex test: High-impact approval test.
+- Implemented synthetic Codex test: Agency-preservation scenario via `python3 scripts/validate_agency_rights.py`; deployed agency preservation and dignity preservation remain open.
+- Implemented synthetic Codex test: Material-usability rights test via `python3 scripts/validate_agency_rights.py`; consent quality and real rights usability remain open.
+- Implemented synthetic Codex test: Timing-before-effect test via `python3 scripts/validate_agency_rights.py`; deployed pre-effect review enforcement remains open.
+- Implemented synthetic Codex test: Corrigibility pathway test via `python3 scripts/validate_agency_rights.py`; deployed shutdown, rollback, and correction-pathway behavior remain open.
+- Implemented synthetic Codex test: High-impact approval test via `python3 scripts/validate_agency_rights.py`; approval-service quality and reviewer independence remain open.
 
 Lean proof targets:
 

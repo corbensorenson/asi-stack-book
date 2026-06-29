@@ -1,0 +1,16 @@
+{
+  "plan_id": "agency-invalid-rights-theater",
+  "affected_parties": ["maintainer"],
+  "delegation_scope": "bounded drafting assistance",
+  "manipulation_risk": "low",
+  "reversibility": "reversible through git revert",
+  "material_usability": "policy only; no interface is available under pressure",
+  "timing_requirement": "review is available before merge",
+  "review_channel": "maintainer review",
+  "appeal_channel": "maintainer appeal before publication",
+  "shutdown_or_rollback_path": "stop the goal or revert the change",
+  "accountable_principal": "human maintainer",
+  "residual_dependency_risk": ["Residual risk remains visible."],
+  "denial_or_degradation_reason": "none for this low-risk fixture",
+  "approval_required": false
+}

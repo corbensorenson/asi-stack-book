@@ -1398,9 +1398,31 @@
           "minimal_implementation": "A rights-and-corrigibility checklist attached to high-impact plans.",
           "beyond_state_of_art": "The control surface for a powerful stack has to make dignity operational. It makes correction, refusal, appeal, explanation, consent, delegation, reversal, and repair materially available instead of treating human dignity as a value statement with no operating surface. A mature human-control interface makes agency, dignity, corrigibility, and contestability usable through correction, refusal, appeal, rollback, explanation, and accountable delegation.",
           "codex_tests": [
-            "Agency-preservation scenario",
-            "Corrigibility pathway test",
-            "High-impact approval test"
+            {
+              "name": "Agency-preservation scenario",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic agency rights harness; no deployed agency-preservation or dignity-preservation claim"
+            },
+            {
+              "name": "Material-usability rights test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic agency rights harness; no real consent-quality or rights-usability claim"
+            },
+            {
+              "name": "Timing-before-effect test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic agency rights harness; no deployed pre-effect review enforcement claim"
+            },
+            {
+              "name": "Corrigibility pathway test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic agency rights harness; no deployed shutdown, rollback, or correction-pathway claim"
+            },
+            {
+              "name": "High-impact approval test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic agency rights harness; no approval-service quality or reviewer-independence claim"
+            }
           ],
           "lean_module": "AsiStackProofs.Corrigibility",
           "proof_targets": [

@@ -1,0 +1,16 @@
+{
+  "plan_id": "agency-valid-reversible-review",
+  "affected_parties": ["book maintainer"],
+  "delegation_scope": "bounded drafting and validation assistance only",
+  "manipulation_risk": "low; no persuasion or dependency-shaping authority",
+  "reversibility": "reversible through git revert before publication",
+  "material_usability": "direct review interface is available in the shared repository before merge",
+  "timing_requirement": "maintainer review is available before merge and before any reader-release effect",
+  "review_channel": "maintainer review in repository diff",
+  "appeal_channel": "maintainer override or issue review can change the plan before publication",
+  "shutdown_or_rollback_path": "stop the goal or revert the committed change",
+  "accountable_principal": "human book maintainer",
+  "residual_dependency_risk": ["Residual risk is limited to local drafting dependence and remains visible in review."],
+  "denial_or_degradation_reason": "none for this low-risk fixture",
+  "approval_required": false
+}

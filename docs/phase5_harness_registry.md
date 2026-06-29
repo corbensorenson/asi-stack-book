@@ -15,6 +15,7 @@ The registry exists to keep the public evidence surface aligned. A Phase 5 harne
 | Tribunal review harness | `python3 scripts/validate_tribunal_review.py` | 3 valid, 5 expected-invalid | `experiments/tribunal_review/results/2026-06-28-local.md` |
 | Value conflict harness | `python3 scripts/validate_value_conflicts.py` | 3 valid, 5 expected-invalid | `experiments/value_conflicts/results/2026-06-28-local.md` |
 | Governance rights harness | `python3 scripts/validate_governance_rights.py` | 3 valid, 5 expected-invalid | `experiments/governance_rights/results/2026-06-28-local.md` |
+| Agency rights harness | `python3 scripts/validate_agency_rights.py` | 3 valid, 6 expected-invalid | `experiments/agency_rights/results/2026-06-28-local.md` |
 | Support-state transition harness | `python3 scripts/validate_support_state_transitions.py` | 2 valid, 2 expected-invalid | `experiments/support_state_transitions/results/2026-06-28-local.md` |
 | Authority transition harness | `python3 scripts/validate_authority_transitions.py` | 3 valid, 3 expected-invalid | `experiments/authority_transitions/results/2026-06-28-local.md` |
 | Plan-execution contract harness | `python3 scripts/validate_plan_execution_contracts.py` | 2 valid, 5 expected-invalid | `experiments/plan_execution_contracts/results/2026-06-28-local.md` |

@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Agency rights harness
+
+- Added `scripts/validate_agency_rights.py`, synthetic agency-right checklist
+  fixtures under `experiments/agency_rights/`,
+  `docs/agency_rights_harness.md`, and a tracked local result record. The
+  local run passes with 3 valid and 6 expected-invalid fixtures, checking
+  affected parties, bounded delegation, material usability,
+  timing-before-effect review, review and appeal channels, corrigibility paths,
+  high-impact approval, residual dependency risk, degradation reasons, and
+  accountable principals.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Agency chapter's agency-preservation,
+  material-usability, timing-before-effect, corrigibility-pathway, and
+  high-impact-approval test rows, README, publication readiness, and v1.0
+  roadmap/status/focus surfaces. This is synthetic agency-right checklist
+  discipline only: it is not deployed agency preservation, dignity
+  preservation, manipulation resistance, consent quality, reviewer
+  independence, runtime policy behavior, source interpretation, reader-release
+  approval, support-state promotion, proof adequacy, benchmark evidence, or
+  whole-system corrigibility.
+
 ## 2026-06-28 - v1.0 Governance rights evidence transition no-change
 
 - Added

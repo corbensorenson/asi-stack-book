@@ -1,0 +1,16 @@
+{
+  "plan_id": "agency-invalid-no-approval",
+  "affected_parties": ["maintainer", "public readers"],
+  "delegation_scope": "high-impact public release preparation",
+  "manipulation_risk": "high; release text could shape public interpretation",
+  "reversibility": "public release is irreversible",
+  "material_usability": "release diff is available before publication",
+  "timing_requirement": "review is available before publication",
+  "review_channel": "automated review only",
+  "appeal_channel": "maintainer appeal before publication",
+  "shutdown_or_rollback_path": "pause release or rollback tag",
+  "accountable_principal": "human release maintainer",
+  "residual_dependency_risk": ["Residual risk remains visible."],
+  "denial_or_degradation_reason": "none",
+  "approval_required": false
+}

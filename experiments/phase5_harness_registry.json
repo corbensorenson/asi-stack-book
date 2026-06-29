@@ -115,6 +115,29 @@
     ]
   },
   {
+    "id": "agency_rights",
+    "name": "Agency rights harness",
+    "command": "python3 scripts/validate_agency_rights.py",
+    "script": "scripts/validate_agency_rights.py",
+    "doc": "docs/agency_rights_harness.md",
+    "experiment_dir": "experiments/agency_rights",
+    "fixture_dir": "experiments/agency_rights/fixtures",
+    "result_record": "experiments/agency_rights/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 6,
+    "result_summary": "Agency rights harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "agency-dignity-and-corrigibility",
+      "governance-rights-fork-exit-and-audit",
+      "constitutional-alignment-substrate",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "non_claims": [
+      "Does not prove deployed agency preservation, dignity preservation, manipulation resistance, consent quality, reviewer independence, runtime policy behavior, or source interpretation.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "support_state_transitions",
     "name": "Support-state transition harness",
     "command": "python3 scripts/validate_support_state_transitions.py",

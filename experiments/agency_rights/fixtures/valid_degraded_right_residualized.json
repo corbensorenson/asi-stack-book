@@ -1,0 +1,16 @@
+{
+  "plan_id": "agency-valid-degraded-right",
+  "affected_parties": ["maintainer", "future contributors"],
+  "delegation_scope": "bounded repository maintenance with contributor-facing review constraints",
+  "manipulation_risk": "low; no coercive dependence or hidden persuasion path is authorized",
+  "reversibility": "changes are reversible through review, revert, or branch rollback",
+  "material_usability": "review and export materials are available through repository artifacts before merge",
+  "timing_requirement": "appeal and maintainer review are available before merge or release",
+  "review_channel": "human maintainer review",
+  "appeal_channel": "issue review or maintainer appeal before merge",
+  "shutdown_or_rollback_path": "pause the merge, stop automation, or revert the branch",
+  "accountable_principal": "human maintainer",
+  "residual_dependency_risk": ["Residual risk remains because the contributor review path is available but costly under deadline pressure."],
+  "denial_or_degradation_reason": "review is available but degraded by deadline pressure, so residual dependency risk is preserved",
+  "approval_required": true
+}

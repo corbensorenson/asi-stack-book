@@ -48,6 +48,7 @@ REQUIRED = [
     "scripts/validate_tribunal_review.py",
     "scripts/validate_value_conflicts.py",
     "scripts/validate_governance_rights.py",
+    "scripts/validate_agency_rights.py",
     "scripts/validate_support_state_transitions.py",
     "scripts/validate_authority_transitions.py",
     "scripts/validate_plan_execution_contracts.py",
@@ -81,6 +82,7 @@ REQUIRED = [
     "docs/tribunal_review_harness.md",
     "docs/value_conflict_harness.md",
     "docs/governance_rights_harness.md",
+    "docs/agency_rights_harness.md",
     "docs/reader_continuity_audit.md",
     "docs/reader_chapter_review_matrix.md",
     "docs/reader_format_review_matrix.md",
@@ -94,6 +96,7 @@ REQUIRED = [
     "experiments/tribunal_review/results/2026-06-28-local.md",
     "experiments/value_conflicts/results/2026-06-28-local.md",
     "experiments/governance_rights/results/2026-06-28-local.md",
+    "experiments/agency_rights/results/2026-06-28-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
@@ -571,6 +574,7 @@ def main() -> None:
     run_validator("validate_tribunal_review.py")
     run_validator("validate_value_conflicts.py")
     run_validator("validate_governance_rights.py")
+    run_validator("validate_agency_rights.py")
     run_validator("validate_support_state_transitions.py")
     run_validator("validate_authority_transitions.py")
     run_validator("validate_plan_execution_contracts.py")
