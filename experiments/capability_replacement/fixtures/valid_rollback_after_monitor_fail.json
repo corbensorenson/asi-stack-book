@@ -1,0 +1,37 @@
+{
+  "transaction_id": "replacement://router-policy-rollback",
+  "transaction_state": "rolled_back",
+  "field_id": "field://route-selection",
+  "prior_implementation": "impl://route-selector-v0",
+  "candidate_implementation": "impl://route-selector-v1",
+  "identity_preservation": "Candidate attempted the same route-selection field identity and did not redefine the field.",
+  "precheck_results": ["field identity unchanged", "authority ceiling unchanged"],
+  "qualification_evidence": ["canary evidence mapped before rollback"],
+  "regression_results": ["failed latency residual floor during monitor"],
+  "authority_check": "candidate stayed within same authority and did not expand route execution rights",
+  "evaluator_independence": "External review marked monitor failure and owns the rollback decision.",
+  "residual_escrow": ["residual: failed latency floor preserved for later review"],
+  "rollback_plan": "Restore impl://route-selector-v0 and keep failed candidate quarantined.",
+  "rollback_receipt": {
+    "prior_artifact": "impl://route-selector-v0",
+    "state_migration_status": "rolled_back_to_prior_route_state",
+    "reversible_fields": ["route selection", "candidate activation"],
+    "irreversible_effects": [],
+    "dry_run_status": "pass",
+    "trigger_conditions": ["monitor failure", "regression floor failure"],
+    "owner": "routing governance reviewer"
+  },
+  "approval_record": "approval://rollback-001",
+  "canary_scope": "canary route was stopped after monitor failure",
+  "monitor_window": "fixture monitor failed",
+  "monitor_status": "fail",
+  "decision": "rollback",
+  "promotion_blockers": ["monitor failed", "residual preserved"],
+  "source_refs": ["sources/source_notes/rmi.md", "sources/source_notes/benchmaxxing.md"],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove runtime rollback behavior",
+    "does not promote support state",
+    "does not prove route quality"
+  ]
+}

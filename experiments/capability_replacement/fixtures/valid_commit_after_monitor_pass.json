@@ -1,0 +1,37 @@
+{
+  "transaction_id": "replacement://proof-envelope-check-commit",
+  "transaction_state": "committed",
+  "field_id": "field://proof-envelope-check",
+  "prior_implementation": "impl://proof-envelope-check-v0",
+  "candidate_implementation": "impl://proof-envelope-check-v1",
+  "identity_preservation": "Candidate preserves the same proof-envelope-check field identity and interface.",
+  "precheck_results": ["field identity unchanged", "interface unchanged", "authority ceiling unchanged"],
+  "qualification_evidence": ["proof-record limitation check passed", "readiness review accepted for fixture"],
+  "regression_results": ["finite-record limitation remains visible", "support-state promotion remains blocked without review"],
+  "authority_check": "candidate stays within the same authority ceiling and does not expand write or approval rights",
+  "evaluator_independence": "Independent review and proof-readiness validation are separate from the candidate implementation.",
+  "residual_escrow": ["residual: fixture commit is not a deployed replacement"],
+  "rollback_plan": "Rollback by restoring impl://proof-envelope-check-v0 and replaying proof-record review manually.",
+  "rollback_receipt": {
+    "prior_artifact": "impl://proof-envelope-check-v0",
+    "state_migration_status": "no_state_migration_required_for_fixture",
+    "reversible_fields": ["route selection", "validator invocation"],
+    "irreversible_effects": [],
+    "dry_run_status": "pass",
+    "trigger_conditions": ["limitation text missing", "support-state boundary regresses"],
+    "owner": "proof governance reviewer"
+  },
+  "approval_record": "approval://proof-envelope-commit-001",
+  "canary_scope": "canary completed for local proof-record checks before fixture commit",
+  "monitor_window": "fixture monitor passed",
+  "monitor_status": "pass",
+  "decision": "commit",
+  "promotion_blockers": [],
+  "source_refs": ["sources/source_notes/scf.md", "sources/source_notes/lean_theorem_proving.md"],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove runtime replacement behavior",
+    "does not promote support state",
+    "does not prove theorem validity"
+  ]
+}

@@ -2158,7 +2158,13 @@
           "minimal_implementation": "A replacement transaction schema with precheck, gate, commit, monitor, and rollback phases.",
           "beyond_state_of_art": "Capability replacement only works as a transaction control plane for the whole stack. Every candidate implementation enters as a transaction, not a hope: prior artifact, candidate artifact, field identity, authority ceiling, regression floor, evaluator boundary, canary scope, monitor window, rollback receipt, and residual inheritance are all first-class objects. In that end state, a capability can improve continuously without making the system forget what it used to know. Regressions follow the field forward, not the old implementation backward. Failed canaries become residuals. Rollbacks are rehearsed and owned. State migration is classified as reversible, compensatable, forked, or residual rather than treated as an implementation detail. A default route is therefore never just the latest winner; it is the candidate that survived the transaction while preserving the floor.",
           "codex_tests": [
-            "Replacement transaction test",
+    {
+      "name": "Replacement transaction test",
+      "purpose": "Check that replacement transaction records preserve field identity, qualification evidence, regression results, non-widening authority checks, evaluator separation, residual escrow, rollback receipts, approvals, monitor state, promotion blockers, and non-claim boundaries.",
+      "status": "implemented by capability replacement harness; validated locally; no deployed replacement-behavior claim",
+      "implementation_status": "implemented",
+      "result_status": "validated locally by synthetic fixtures; deployed replacement behavior not run"
+    },
             {
               "name": "Regression preservation test",
               "purpose": "Check that failed regression or missing floor evidence blocks canary/default replacement decisions in a cross-record readiness scenario.",

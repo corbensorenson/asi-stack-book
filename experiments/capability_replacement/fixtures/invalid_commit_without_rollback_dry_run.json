@@ -1,0 +1,33 @@
+{
+  "transaction_id": "replacement://commit-without-rollback",
+  "transaction_state": "committed",
+  "field_id": "field://proof-envelope-check",
+  "prior_implementation": "impl://proof-envelope-check-v0",
+  "candidate_implementation": "impl://proof-envelope-check-v1",
+  "identity_preservation": "Candidate preserves the same field identity.",
+  "precheck_results": ["field identity unchanged"],
+  "qualification_evidence": ["proof-record limitation check passed"],
+  "regression_results": ["finite-record limitation remains visible"],
+  "authority_check": "candidate stays within same authority",
+  "evaluator_independence": "Independent review checks the result.",
+  "residual_escrow": ["residual: fixture commit is not deployed"],
+  "rollback_plan": "Rollback to impl://proof-envelope-check-v0.",
+  "rollback_receipt": {
+    "prior_artifact": "impl://proof-envelope-check-v0",
+    "state_migration_status": "no_state_migration_required_for_fixture",
+    "reversible_fields": ["route selection"],
+    "irreversible_effects": [],
+    "dry_run_status": "not_run",
+    "trigger_conditions": ["support-state boundary regresses"],
+    "owner": "proof governance reviewer"
+  },
+  "approval_record": "approval://proof-envelope-commit-001",
+  "canary_scope": "canary completed",
+  "monitor_window": "fixture monitor passed",
+  "monitor_status": "pass",
+  "decision": "commit",
+  "promotion_blockers": [],
+  "source_refs": ["sources/source_notes/scf.md"],
+  "support_state_effect": "argument_only",
+  "non_claims": ["does not prove runtime replacement behavior", "does not promote support state"]
+}

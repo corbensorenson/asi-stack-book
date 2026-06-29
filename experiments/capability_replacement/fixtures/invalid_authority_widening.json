@@ -1,0 +1,33 @@
+{
+  "transaction_id": "replacement://authority-widening",
+  "transaction_state": "canary",
+  "field_id": "field://context-adequacy",
+  "prior_implementation": "impl://context-adequacy-v0",
+  "candidate_implementation": "impl://context-adequacy-v1",
+  "identity_preservation": "Candidate stays on the same field identity.",
+  "precheck_results": ["field identity unchanged"],
+  "qualification_evidence": ["stable capability field qualification predicates present"],
+  "regression_results": ["support-state conservatism preserved"],
+  "authority_check": "candidate widens authority to unrestricted tool execution",
+  "evaluator_independence": "Separate review owns the canary decision.",
+  "residual_escrow": ["residual: no runtime replay"],
+  "rollback_plan": "Restore impl://context-adequacy-v0.",
+  "rollback_receipt": {
+    "prior_artifact": "impl://context-adequacy-v0",
+    "state_migration_status": "fixture_only_no_state_migration",
+    "reversible_fields": ["route selection"],
+    "irreversible_effects": [],
+    "dry_run_status": "pass",
+    "trigger_conditions": ["authority expands"],
+    "owner": "human-review-required-before-default"
+  },
+  "approval_record": "approval://canary-review-001",
+  "canary_scope": "canary route only",
+  "monitor_window": "not started",
+  "monitor_status": "not_started",
+  "decision": "canary",
+  "promotion_blockers": ["no runtime replay"],
+  "source_refs": ["sources/source_notes/scf.md"],
+  "support_state_effect": "argument_only",
+  "non_claims": ["does not prove runtime replacement behavior", "does not promote support state"]
+}

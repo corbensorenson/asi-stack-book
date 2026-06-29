@@ -21,6 +21,7 @@ The registry exists to keep the public evidence surface aligned. A Phase 5 harne
 | Authority transition harness | `python3 scripts/validate_authority_transitions.py` | 3 valid, 3 expected-invalid | `experiments/authority_transitions/results/2026-06-28-local.md` |
 | Security kernel harness | `python3 scripts/validate_security_kernel.py` | 3 valid, 6 expected-invalid | `experiments/security_kernel/results/2026-06-28-local.md` |
 | Stable capability fields harness | `python3 scripts/validate_stable_capability_fields.py` | 3 valid, 6 expected-invalid | `experiments/stable_capability_fields/results/2026-06-28-local.md` |
+| Capability replacement harness | `python3 scripts/validate_capability_replacement.py` | 3 valid, 6 expected-invalid | `experiments/capability_replacement/results/2026-06-28-local.md` |
 | Plan-execution contract harness | `python3 scripts/validate_plan_execution_contracts.py` | 2 valid, 5 expected-invalid | `experiments/plan_execution_contracts/results/2026-06-28-local.md` |
 | Runtime adapter permission harness | `python3 scripts/validate_runtime_adapter_permissions.py` | 2 valid, 5 expected-invalid | `experiments/runtime_adapter_permissions/results/2026-06-28-local.md` |
 | Context admission/adequacy harness | `python3 scripts/validate_context_admission_adequacy.py` | 3 valid, 5 expected-invalid | `experiments/context_admission_adequacy/results/2026-06-28-local.md` |
