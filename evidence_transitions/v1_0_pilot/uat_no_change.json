@@ -1,0 +1,118 @@
+{
+  "transition_id": "v1_0_pilot.uat.no_change",
+  "claim_id": "unified-adaptive-tribunal-and-adversarial-review.core",
+  "claim_surface_refs": [
+    "chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/tribunal_review_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/tribunal_review_record.schema.json",
+    "tests/fixtures/protocol_records/tribunal_review_record.valid.json",
+    "experiments/tribunal_review/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/Tribunal.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic tribunal-review record discipline and finite Lean tribunal predicates only; no reviewer independence, adversarial-review quality, consensus quality, verdict correctness, source interpretation, runtime behavior, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has a tribunal-review schema, a protocol fixture, finite Tribunal Lean predicates, proof adequacy review text that keeps tribunal formalization narrow, exact source mappings for the UAT chapter, and a synthetic tribunal review harness with valid and expected-invalid fixtures. Those artifacts make dossier refs, reviewer roles, adversarial probes, evidence-backed accept verdicts, dissent preservation, prior-review guards, required actions, constraint effects, and non-claim boundaries executable at the record level. They still do not establish reviewer independence, adversarial-review quality, consensus quality, verdict correctness, source interpretation adequacy, or a deployed tribunal pipeline.",
+  "required_artifacts": [
+    "multi-reviewer tribunal run over real claims or artifacts with preserved dossiers and reviewer outputs",
+    "reviewer-independence audit or role-separation enforcement trace",
+    "adversarial-probe quality review with positive and negative controls",
+    "verdict correctness or adjudication-quality review against known outcomes",
+    "dissent preservation test across actual accepted and rejected reviews",
+    "prior-review replay showing unchanged-evidence laundering is blocked on real review records",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/tribunal_review_harness.md",
+    "scripts/validate_tribunal_review.py",
+    "experiments/tribunal_review/results/2026-06-28-local.md",
+    "schemas/tribunal_review_record.schema.json",
+    "tests/fixtures/protocol_records/tribunal_review_record.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/Tribunal.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#unified-adaptive-tribunal-and-adversarial-review.core",
+    "docs/source_evidence_audit.md#unified-adaptive-tribunal-and-adversarial-review.core"
+  ],
+  "verification_command": "python3 scripts/validate_tribunal_review.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Unified Adaptive Tribunal remains at argument",
+    "tribunal-review fixtures are synthetic",
+    "schema validation checks record shape rather than tribunal behavior",
+    "finite Lean predicates remain useful but too narrow for tribunal-quality claims",
+    "reviewer independence, adversarial-probe quality, consensus quality, verdict correctness, source interpretation review, and deployed tribunal traces are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
+    "docs/tribunal_review_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "tribunal review harness failure",
+    "tribunal-review schema drift",
+    "chapter text interpreted as reviewer-independence evidence",
+    "synthetic adversarial-probe fixture interpreted as adversarial-review quality evidence",
+    "accept verdict fixture interpreted as verdict correctness evidence",
+    "prior-review guard fixture treated as deployed anti-laundering behavior",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after real tribunal runs, reviewer-independence review, adversarial-probe quality review, verdict-correctness review, dissent-preservation tests, prior-review replay, and independent source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not run multiple independent reviewers",
+    "schema validation does not prove adversarial review quality or consensus quality",
+    "finite Lean predicates do not implement a tribunal pipeline",
+    "accept-with-scope fixtures do not prove verdict correctness",
+    "prior-review refs in fixtures do not prove a deployed anti-laundering replay guard",
+    "no independent reviewer-quality or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent tribunal-design, reviewer-quality, adjudication-quality, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no real multi-reviewer tribunal run",
+    "no reviewer-independence audit",
+    "no adversarial-probe quality review",
+    "no verdict-correctness review",
+    "no dissent-preservation test over real reviews",
+    "no prior-review replay over real records",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-uat-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Unified Adaptive Tribunal above argument",
+    "does not prove reviewer independence",
+    "does not prove adversarial-review quality",
+    "does not prove consensus quality or verdict correctness",
+    "does not prove source interpretation",
+    "does not prove runtime behavior or deployed tribunal operation"
+  ]
+}

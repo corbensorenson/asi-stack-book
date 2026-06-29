@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-06-28 - v1.0 UAT evidence transition no-change
+
+- Added `evidence_transitions/v1_0_pilot/uat_no_change.json` and updated the
+  evidence-transition pilot to sixteen accepted no-change decisions. The new
+  record routes the tribunal review harness, tribunal-review schema and
+  fixture, finite Tribunal Lean predicates, proof adequacy review, and exact
+  source mappings into one conservative decision:
+  `unified-adaptive-tribunal-and-adversarial-review` remains at `argument`.
+- The record preserves the promotion burden for real multi-reviewer tribunal
+  runs, reviewer-independence review, adversarial-probe quality review,
+  verdict-correctness review, dissent-preservation tests, prior-review replay,
+  and independent source-interpretation review. It does not promote support
+  state, prove reviewer independence, prove adversarial-review quality, prove
+  consensus quality, prove verdict correctness, prove source interpretation,
+  prove runtime behavior, or approve reader artifacts.
+
 ## 2026-06-28 - v1.0 Tribunal review harness
 
 - Added `scripts/validate_tribunal_review.py`, synthetic tribunal-review
