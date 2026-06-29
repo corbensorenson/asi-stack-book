@@ -124,7 +124,7 @@ Use this rubric before any non-pilot consolidation package:
 | Planning and DAG control | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the planning/DAG pair unless explicitly deferred or retained; reader curation may continue on semantic IR. |
 | Source-blocked MoECOT runtime | `fold_disposition_ready` | Review the fold disposition and decide execute fold, revise, defer, or reject/retain. | Do not promote MoECOT runtime as standalone reader material while source-blocked. |
 | Simulation fidelity | `fold_disposition_ready` | Review the fold disposition and decide execute fold, revise, defer, or reject/retain. | Preserve physical-constraint caveats, simulation contract fields, proof hooks, and reader repairs if folded. |
-| Semantic representation | `fold_review_candidate` | Decide whether representation is a substrate section in the compression cluster or a standalone artifact. | Preserve proof/test hooks if folded. |
+| Semantic representation | `fold_disposition_ready` | Review the fold disposition and decide execute fold after destination-package review, revise, defer, or reject/retain. | Preserve proof/test hooks, semantic-node records, dependency on compression-package review, and reader repairs if folded. |
 | Runtime adapters and Labor OS | `rejected_or_retained` unless later evidence changes artifact ownership | Revisit only if tool-permission adapters stop owning a distinct artifact. | Reader curation may proceed because the current split has artifact ownership. |
 
 ## Consolidation Decision Queue
@@ -145,7 +145,7 @@ blocked until the revision is reviewed.
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep transaction/snapshot/taint and verification-bandwidth chapters standalone unless later review changes artifact ownership. |
 | 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep `claim-ledgers-and-belief-revision` as the durable belief-revision substrate. |
 | 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep `cognitive-compilation-and-semantic-ir` as the semantic-IR and lowering-receipt layer. |
-| 8 | Remaining fold candidates | Produce fold dispositions before any manifest or reader-work dependency. | MoECOT runtime and simulation fidelity now have fold dispositions; semantic representation still needs a preserved-section, source, proof, reader, and restoration-condition record. |
+| 8 | Remaining fold candidates | Produce fold dispositions before any manifest or reader-work dependency. | MoECOT runtime, simulation fidelity, and semantic representation now have fold dispositions; each still needs a reviewed execute, revise, defer, or reject/retain decision before any manifest edit. |
 
 Every decision record should name the reviewed package, reviewer or review
 source, one-skeleton destination judgment, claim/source/proof/reader impact,
@@ -168,7 +168,7 @@ paused, or allowed only as local cleanup.
 | 2B | Planning and DAG control | `planning-as-a-control-layer`; `planforge-dags-and-intelligence-arbitrage` | **Planning as a Control Layer: DAGs and Intelligence Arbitrage** | Preserve control-layer semantics, PlanForge DAGs, intelligence arbitrage, negative cases, proof hooks, and source unions. Keep `cognitive-compilation-and-semantic-ir` separate unless later review shows the IR has no independent chapter ownership. |
 | 2C | Source-blocked MoECOT runtime | `moecot-runtime-and-multi-core-orchestration`; `routing-heads-and-specialist-cores` | Fold MoECOT runtime into routing heads until the MoECOT source is fully mined enough for standalone evidence. | Preserve the multi-core orchestration runtime as a named section, blocker, source queue, and future chapter-restoration condition. |
 | Fold review | Simulation fidelity | `simulation-fidelity-and-physical-constraints`; `resource-economics-and-token-budgets`; efficient-ASI frame as secondary context only | Fold if the standalone claim remains only a feasibility-bound note. | Preserve physical/resource bounds, fidelity limitations, simulation contract fields, claim-transport boundaries, proof hooks, and no-overclaim language as a named section. |
-| Fold review | Semantic representation | `semantic-representation-and-tree-structured-models`; compression/representation cluster | Fold only if representation remains a substrate facet rather than a chapter-owning artifact. | Preserve tree-structured representation, source mappings, and proof/test hooks as a named section or companion note. |
+| Fold review | Semantic representation | `semantic-representation-and-tree-structured-models`; compression/representation cluster | Fold only if representation remains a substrate facet rather than a chapter-owning artifact, and only after the compression/representation destination package has a reviewed decision. | Preserve tree-structured representation, semantic-node records, source mappings, proof/test hooks, and restoration conditions as a named section or companion note. |
 | Low priority | Runtime adapters and Labor OS | `runtime-adapters-tool-permissions-and-human-approval`; `labor-os-and-typed-jobs` | No current merge; only revisit if tool-permission adapters stop owning a distinct artifact. | Preserve permissioning, human approval, runtime receipts, Labor OS typed jobs, and execution-harness separation. |
 
 ## Protected Standalone Chapters
@@ -254,8 +254,8 @@ path. The current allowed pilot-reader set remains:
   dry-run package for the compression and residual-honesty cluster. It does not
   edit `book_structure.json`, authorize a manifest merge, or move support
   states. It keeps the RankFold/NeuralFold Conservative option open and leaves
-  `semantic-representation-and-tree-structured-models` as a separate
-  fold-review candidate.
+  `semantic-representation-and-tree-structured-models` dependency-bound until a
+  separate fold disposition is reviewed.
 - `docs/chapter_consolidation_destination_draft_compression.md` records the
   one-skeleton destination draft for **Compact Generative Systems: Generate,
   Verify, Repair, and Residual Honesty**. It is review-ready but not reviewed,
@@ -328,8 +328,21 @@ path. The current allowed pilot-reader set remains:
   `schemas/simulation_contract_record.schema.json`, source unions, external
   comparator unions, reader repair requirements, URL/history policy,
   restoration conditions, and the no-support-state-change boundary.
-- `semantic-representation-and-tree-structured-models` still needs its own fold
-  disposition before any manifest or reader-work dependency.
+- `docs/chapter_consolidation_fold_semantic_representation.md` records the
+  third fold disposition package, for
+  `semantic-representation-and-tree-structured-models` into a named Semantic
+  Representation Leasing section inside the compression/representation
+  destination package if review accepts that dependency. It is
+  fold-disposition ready but not reviewed, not executed, not canonical, and not
+  a manifest edit. The next decision is execute fold after destination-package
+  review, revise, defer, or reject/retain. It preserves
+  `AsiStackProofs.SemanticRepresentation`,
+  `schemas/semantic_node_record.schema.json`,
+  `schemas/semantic_atom.schema.json`,
+  `schemas/semantic_page_certificate.schema.json`, source unions, external
+  comparator unions, reader repair requirements, URL/history policy,
+  restoration conditions, the compression-package dependency, and the
+  no-support-state-change boundary.
 
 ## Non-Claims
 

@@ -20,6 +20,7 @@ PLANNING_DAG_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_planning_d
 PLANNING_DAG_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_planning_dag.md"
 MOECOT_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_moecot_runtime.md"
 SIMULATION_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_simulation_fidelity.md"
+SEMANTIC_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_semantic_representation.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -108,6 +109,7 @@ REQUIRED_FRAGMENTS = (
     "Planning and DAG control | `review_ready`",
     "Source-blocked MoECOT runtime | `fold_disposition_ready`",
     "Simulation fidelity | `fold_disposition_ready`",
+    "Semantic representation | `fold_disposition_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -118,6 +120,7 @@ REQUIRED_FRAGMENTS = (
     "Remaining Fold-Disposition Packages",
     "docs/chapter_consolidation_fold_moecot_runtime.md",
     "docs/chapter_consolidation_fold_simulation_fidelity.md",
+    "docs/chapter_consolidation_fold_semantic_representation.md",
     "This sequence does not merge chapters.",
     "This sequence does not change `book_structure.json`.",
     "This sequence does not change Appendix C support states.",
@@ -734,6 +737,88 @@ SIMULATION_FOLD_REQUIRED_FIXTURE_FRAGMENTS = {
     "python3 scripts/validate_capacity_smoothing.py",
 }
 
+SEMANTIC_FOLD_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Fold Disposition: Semantic Representation",
+    "Status: fold-disposition ready; human/external review not completed.",
+    "does not edit `book_structure.json`",
+    "Current state | `fold_disposition_ready`",
+    "Semantic Representation Leasing",
+    "Do not execute this fold before the compression/representation package",
+    "Preservation Ledger",
+    "Proposed Destination Outline",
+    "Source Union",
+    "External-Source Union",
+    "Appendix C Row Plan",
+    "Lean Module And Proof-Manifest Treatment",
+    "Schemas, Fixtures, And Harnesses",
+    "Reader Path And Handoff Repairs",
+    "URL, Redirect, And History Policy",
+    "Restoration Conditions",
+    "Review Decision Surface",
+    "Execute fold after destination review",
+    "Reject and retain standalone",
+    "No support-state movement",
+    "This disposition does not merge or fold chapters.",
+    "This disposition does not change `book_structure.json`.",
+    "This disposition does not change Appendix C support states.",
+)
+
+SEMANTIC_FOLD_REQUIRED_IDS = {
+    "semantic-representation-and-tree-structured-models",
+    "compact-generative-systems-and-residual-honesty",
+    "generate-verify-repair-compression",
+    "rankfold-neuralfold-and-artifact-compression",
+    "virtual-context-abi",
+    "semantic-pages-context-cells-and-certificates",
+}
+
+SEMANTIC_FOLD_REQUIRED_SOURCE_IDS = {
+    "cgs",
+    "rgs",
+    "bugbrain",
+    "simulation_scaling",
+    "rmi",
+    "project_theseus_whitepaper",
+    "bbvca_v9",
+    "bbvca_main",
+    "rankfold_neuralfold",
+    "rankfold_compressor",
+    "treellm",
+    "spinoza",
+    "verification_bandwidth",
+    "cognitive_compilation",
+    "circle_ai_architectures",
+    "coilra_multicoil_rope",
+}
+
+SEMANTIC_FOLD_REQUIRED_EXTERNAL_IDS = {
+    "ext_deep_compression_2015",
+    "ext_dreamcoder_2020",
+    "ext_information_bottleneck_2000",
+    "ext_knowledge_distillation_2015",
+    "ext_mdl_tutorial_2004",
+    "ext_codebleu_2020",
+    "ext_gptq_2022",
+    "ext_lora_2021",
+    "ext_qlora_2023",
+}
+
+SEMANTIC_FOLD_REQUIRED_LEAN_TAGS = {
+    "lean:representation.semantic_tree.operational_invariant",
+    "lean:representation.semantic_tree.failure_blocks_promotion",
+}
+
+SEMANTIC_FOLD_REQUIRED_FIXTURE_FRAGMENTS = {
+    "schemas/semantic_node_record.schema.json",
+    "schemas/semantic_atom.schema.json",
+    "schemas/semantic_page_certificate.schema.json",
+    "tests/fixtures/protocol_records/semantic_node_record.valid.json",
+    "tests/fixtures/protocol_records/semantic_atom.valid.json",
+    "tests/fixtures/protocol_records/semantic_page_certificate.valid.json",
+    "python3 scripts/validate_schemas.py",
+    "python3 scripts/validate_protocol_examples.py",
+}
+
 REQUIRED_DESTINATIONS = (
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
@@ -758,6 +843,7 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_destination_draft_planning_dag.md",
     "docs/chapter_consolidation_fold_moecot_runtime.md",
     "docs/chapter_consolidation_fold_simulation_fidelity.md",
+    "docs/chapter_consolidation_fold_semantic_representation.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -1179,6 +1265,38 @@ def main() -> None:
     for fragment in sorted(SIMULATION_FOLD_REQUIRED_FIXTURE_FRAGMENTS):
         if f"`{fragment}`" not in simulation_fold:
             errors.append(f"Simulation fold disposition missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        semantic_fold = read_text(SEMANTIC_FOLD_DISPOSITION)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_fold_semantic_representation.md")
+        semantic_fold = ""
+
+    for fragment in SEMANTIC_FOLD_REQUIRED_FRAGMENTS:
+        if fragment not in semantic_fold:
+            errors.append(f"Semantic fold disposition missing required boundary: {fragment}")
+
+    for chapter_id in sorted(SEMANTIC_FOLD_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Semantic fold chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in semantic_fold:
+            errors.append(f"Semantic fold disposition does not mention `{chapter_id}`.")
+
+    for source_id in sorted(SEMANTIC_FOLD_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in semantic_fold:
+            errors.append(f"Semantic fold disposition missing source ID `{source_id}`.")
+
+    for source_id in sorted(SEMANTIC_FOLD_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in semantic_fold:
+            errors.append(f"Semantic fold disposition missing external source ID `{source_id}`.")
+
+    for tag in sorted(SEMANTIC_FOLD_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in semantic_fold:
+            errors.append(f"Semantic fold disposition missing Lean tag `{tag}`.")
+
+    for fragment in sorted(SEMANTIC_FOLD_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in semantic_fold:
+            errors.append(f"Semantic fold disposition missing fixture, schema, or validator `{fragment}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)
