@@ -52,7 +52,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/FailureModes.lean` | 2 | 2 | 2 | 1 |
 | `lean/AsiStackProofs/FastGeneration.lean` | 2 | 2 | 4 | 2 |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 2 | 3 | 2 |
-| `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 2 | 2 | 2 |
+| `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 3 | 3 | 3 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/LivingBook.lean` | 2 | 2 | 2 | 2 |

@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Governance Rights Lean depth follow-through
+
+- Strengthened `lean/AsiStackProofs/GovernanceRights.lean` with a finite
+  `ForkGovernanceDecision` envelope and the derived/decomposed theorem
+  `constrained_fork_without_audit_path_routes_to_review`.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 142
+  theorem declarations, 30 derived/decomposed theorem declarations, and one
+  derived/decomposed theorem inside the safety-critical Governance Rights
+  module.
+- Updated the Governance Rights chapter and `docs/proof_adequacy_review.md` so
+  the new theorem is described as a narrow finite-record constrained-fork
+  audit-path gate, not a legal-rights, fork-safety, or institutional-governance
+  result.
+- This does not promote any chapter core claim, prove legal rights, validate
+  access-path availability, prove fork safety, reproduce results, or change any
+  support state.
+
 ## 2026-06-29 - Corrigibility Lean depth follow-through
 
 - Strengthened `lean/AsiStackProofs/Corrigibility.lean` with a finite

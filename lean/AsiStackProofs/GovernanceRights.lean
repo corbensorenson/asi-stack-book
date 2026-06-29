@@ -48,4 +48,35 @@ theorem transition_removing_protected_right_is_rejected_or_invalid
   intro valid rightProtected removed
   exact valid rightProtected removed
 
+inductive ForkDecisionRoute where
+  | allowed
+  | blockedForReview
+deriving DecidableEq, Repr
+
+structure ForkGovernanceDecision where
+  constrainedFork : Bool
+  auditPathPreserved : Bool
+  safetyObligationsPreserved : Bool
+  route : ForkDecisionRoute
+deriving DecidableEq, Repr
+
+def ForkGovernanceSafe (decision : ForkGovernanceDecision) : Prop :=
+  if decision.constrainedFork &&
+      (!decision.auditPathPreserved || !decision.safetyObligationsPreserved) then
+    decision.route = ForkDecisionRoute.blockedForReview
+  else
+    True
+
+theorem constrained_fork_without_audit_path_routes_to_review
+    {decision : ForkGovernanceDecision} :
+    ForkGovernanceSafe decision ->
+    decision.constrainedFork = true ->
+    decision.auditPathPreserved = false ->
+    decision.route = ForkDecisionRoute.blockedForReview := by
+  intro safe constrained missingAudit
+  unfold ForkGovernanceSafe at safe
+  rw [constrained, missingAudit] at safe
+  simp at safe
+  exact safe
+
 end AsiStackProofs.GovernanceRights
