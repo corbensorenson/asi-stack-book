@@ -2462,5 +2462,63 @@
     "updated": "2026-05-07",
     "citation_label": "Messias and Ide (2025), Fairness in Token Delegation",
     "doi": "10.48550/arXiv.2510.05830"
+  },
+  {
+    "id": "ext_model_cards_2019",
+    "title": "Model Cards for Model Reporting",
+    "priority": "external_literature",
+    "layer": "model_reporting",
+    "chapter_targets": ["project-theseus-as-report-first-implementation-reference"],
+    "url": "https://arxiv.org/abs/1810.03993",
+    "notes": "External reporting comparator for structured model documentation, intended-use boundaries, evaluation disclosures, ethical considerations, and model-report artifacts.",
+    "source_type": "arxiv",
+    "arxiv_id": "1810.03993",
+    "published": "2019-01-14",
+    "updated": "2019-01-14",
+    "citation_label": "Mitchell et al. (2019), Model Cards",
+    "doi": "10.48550/arXiv.1810.03993"
+  },
+  {
+    "id": "ext_datasheets_datasets_2021",
+    "title": "Datasheets for Datasets",
+    "priority": "external_literature",
+    "layer": "dataset_documentation",
+    "chapter_targets": ["project-theseus-as-report-first-implementation-reference"],
+    "url": "https://arxiv.org/abs/1803.09010",
+    "notes": "External documentation comparator for dataset motivation, composition, collection, preprocessing, uses, distribution, maintenance, and accountability questions.",
+    "source_type": "arxiv",
+    "arxiv_id": "1803.09010",
+    "published": "2021-12-01",
+    "updated": "2021-12-01",
+    "citation_label": "Gebru et al. (2021), Datasheets for Datasets",
+    "doi": "10.48550/arXiv.1803.09010"
+  },
+  {
+    "id": "ext_factsheets_ai_services_2019",
+    "title": "FactSheets: Increasing Trust in AI Services through Supplier's Declarations of Conformity",
+    "priority": "external_literature",
+    "layer": "ai_service_fact_sheets",
+    "chapter_targets": ["project-theseus-as-report-first-implementation-reference"],
+    "url": "https://arxiv.org/abs/1808.07261",
+    "notes": "External AI-service documentation comparator for supplier declarations, service properties, trust-relevant facts, and standardized reporting boundaries.",
+    "source_type": "arxiv",
+    "arxiv_id": "1808.07261",
+    "published": "2019-02-07",
+    "updated": "2019-02-07",
+    "citation_label": "Arnold et al. (2019), FactSheets for AI Services",
+    "doi": "10.48550/arXiv.1808.07261"
+  },
+  {
+    "id": "ext_ml_reproducibility_program_2021",
+    "title": "Improving Reproducibility in Machine Learning Research",
+    "priority": "external_literature",
+    "layer": "ml_reproducibility_reporting",
+    "chapter_targets": ["project-theseus-as-report-first-implementation-reference"],
+    "url": "https://jmlr.org/papers/v22/20-303.html",
+    "notes": "External reproducibility-program comparator for checklists, code submission, reproducibility reports, and community review mechanisms in machine-learning research.",
+    "source_type": "journal_article",
+    "published": "2021",
+    "updated": "2021",
+    "citation_label": "Pineau et al. (2021), Improving Reproducibility in Machine Learning Research"
   }
 ]

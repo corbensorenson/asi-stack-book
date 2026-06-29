@@ -4,7 +4,7 @@ chapter_id: "project-theseus-as-report-first-implementation-reference"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-29"
 primary_sources:
   - "project_theseus_whitepaper"
   - "theseus_plan_compiler"
@@ -17,6 +17,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all six assigned Theseus sources using pinned local project-file references; support remains argument until current reports, replay commands, benchmark environments, public-safe artifacts, or accepted evidence transitions justify promotion."
   - "The theseus_report_crosswalk_record fixture validates schema/example consistency and AsiStackProofs.TheseusReference implements finite record predicates only; the separate Project Theseus static architecture-gate import validates a public-safe digest-verified report fixture, but no live Theseus report bundle, replay command, benchmark environment, work-board step, artifact-gap audit, or transfer-lane consumer has been rerun."
+  - "Source-noted external reporting and reproducibility comparators now position the report-first boundary against model cards, dataset datasheets, AI service FactSheets, and ML reproducibility programs; none of those external sources has been implemented or reproduced for Theseus in this repository."
   - "Theseus implementation references are report-first context only; source-reported snapshots, dashboards, compiler status, gate state, self-evolution machinery, board state, and transfer-lane reports are not promoted without current artifacts."
   - "No support-state promotion, benchmark result, model-quality result, deployment readiness, public-compute readiness, autonomous-improvement success, or raw source publication is implied."
 ---
@@ -29,12 +30,12 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-29 |
 | Primary source records | `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`; supporting: `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf` |
-| Source loading state | source notes: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
+| Source queue | primary: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`; supporting: `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf`; external comparators: `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, `ext_ml_reproducibility_program_2021` |
+| Source loading state | source notes: `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, `ext_ml_reproducibility_program_2021` |
 | Test state | `theseus_report_crosswalk_record.valid.json` passes repository-level protocol fixture validation; `scripts/validate_theseus_report.py` validates one public-safe static architecture-gate import with a pinned source digest, 14/14 imported gate summary, and expected-invalid controls for digest mismatch, private-payload copying, and support-promotion overclaim; `AsiStackProofs.TheseusReference` implements finite implementation-reference artifact-surface and gate-before-promotion predicates; live report-bundle completeness, replay-readiness, work-board, artifact-gap, and self-evolution ladder audits remain planned. |
 
 ## Drafting guardrail
@@ -73,7 +74,7 @@ Report-first implementation therefore treats reports, ledgers, configs, and work
 
 A report-first implementation is especially important for self-improving systems because the tempting story is always "the loop improved itself." The governed story has to be more specific: which pressure was admitted, which authority lease allowed the attempt, which artifact changed, which gate passed or failed, which residual remained, and which human review path stayed available.
 
-External baseline exception: Project Theseus is a local implementation-reference case. Its v1.0 purpose is to map local reports, ledgers, configs, and gates into the ASI Stack evidence discipline, not to compare against an external implementation framework. External software-process, agent-workflow, or self-improvement baselines should be added only after source-note assignment and artifact-boundary review.
+External positioning: Project Theseus remains a local implementation-reference case, but its report-first boundary now has source-noted reporting and reproducibility comparators. Model cards (`ext_model_cards_2019`), dataset datasheets (`ext_datasheets_datasets_2021`), AI service FactSheets (`ext_factsheets_ai_services_2019`), and the NeurIPS/JMLR reproducibility-program account (`ext_ml_reproducibility_program_2021`) show adjacent disciplines for structured disclosure, provenance, intended use, artifact review, and reproducibility checklists. Theseus report packets are broader than any one of those formats because they also need gates, residuals, work-board items, replay state, publication boundaries, and non-claims. The comparison does not assert that Theseus has produced model cards, datasheets, FactSheets, checklist-reviewed artifacts, or reproduced external results.
 
 ## Core Claim
 
@@ -236,8 +237,12 @@ These Lean hooks are implemented as finite-record predicates over implementation
 | `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, external-inference zero, and the static architecture-gate import fixture. | source note available; static digest-verified report import validated by `scripts/validate_theseus_report.py` |
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
+| `ext_model_cards_2019` | Model Cards for Model Reporting | model_reporting | External comparator for structured model reports, intended-use boundaries, evaluation disclosures, and limitation reporting. | source note available; comparator only |
+| `ext_datasheets_datasets_2021` | Datasheets for Datasets | dataset_documentation | External comparator for artifact provenance, input boundaries, dataset motivation, composition, collection, maintenance, and allowed-use documentation. | source note available; comparator only |
+| `ext_factsheets_ai_services_2019` | FactSheets for AI Services | ai_service_fact_sheets | External comparator for supplier-style AI service declarations, trust-relevant service facts, and conformity-style documentation boundaries. | source note available; comparator only |
+| `ext_ml_reproducibility_program_2021` | Improving Reproducibility in Machine Learning Research | ml_reproducibility_reporting | External comparator for checklists, code submission, reproducibility reports, artifact review, and reviewer-readable replay expectations. | source note available; comparator only |
 
-The crosswalk keeps the reference public-safe. The whitepaper supplies the RMI/report-first frame, the plan compiler supplies goal-to-contract machinery, the self-evolution source supplies intervention-gate discipline, the architecture gate supplies readiness boundaries plus one static digest-verified report import, the operator OS supplies work-board and node-control surfaces, and the Circle transfer source supplies structural fixture non-claims. None of those source notes or the static import is a reproduced public benchmark run.
+The crosswalk keeps the reference public-safe. The whitepaper supplies the RMI/report-first frame, the plan compiler supplies goal-to-contract machinery, the self-evolution source supplies intervention-gate discipline, the architecture gate supplies readiness boundaries plus one static digest-verified report import, the operator OS supplies work-board and node-control surfaces, and the Circle transfer source supplies structural fixture non-claims. The external comparators supply reporting and reproducibility vocabulary only. None of those source notes, external comparators, or the static import is a reproduced public benchmark run.
 
 ## Summary
 

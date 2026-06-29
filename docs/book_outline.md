@@ -3384,6 +3384,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system` | Read first for chapter claims and mechanisms. |
 | Supporting | `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `rmi`, `cgs`, `benchmaxxing`, `cognitive_loop_closure`, `viea`, `vcm_public`, `scf` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, `ext_ml_reproducibility_program_2021` | Load after Theseus sources to position report-first packets against structured model reporting, dataset documentation, AI-service declarations, and ML reproducibility programs. Treat them as comparator vocabulary, not evidence that Theseus has been reproduced. |
 
 Draft arc:
 
@@ -3395,6 +3396,7 @@ Draft arc:
 - Mechanism: Route operator work through a durable work board, command vocabulary, node registry, hooks, and feedback reports.
 - Mechanism: Keep sparse teacher use proposal-first and guarded by branches, checks, benchmark regressions, and review.
 - Mechanism: Treat source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims as separate evidence categories so Theseus remains an implementation reference rather than laundered capability evidence.
+- Mechanism: Position Theseus report packets against external reporting and reproducibility practices: model cards, datasheets, AI service FactSheets, and ML reproducibility checklists/reports.
 - Mechanism: Extend the report crosswalk to human-control artifacts: originating intent contract, approval receipt, agency checklist, rollback/shutdown path, operator work-board item, and review residual.
 - Mechanism: Track Theseus report evidence states such as source-note-only, report-imported, artifact-missing, replay-ready, replay-failed, locally-reproduced, runtime-blocked, and archived-lineage.
 - Mechanism: Emit a Theseus Report Packet with intent or benchmark pressure, plan/compiler contract hash, work-board item, node or arm route, report bundle path, gate report, residual ledger entry, replay command, environment notes, artifact checksum, reviewer decision, publication permission, missing artifacts, and non-claims.
@@ -3428,6 +3430,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
+- Source-noted external comparator rows for `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, and `ext_ml_reproducibility_program_2021`, without treating those records as Theseus reproduction, compliance, or support-state promotion.
 - Implemented repository-level fixtures: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, and `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest. No live Theseus report bundle, replay command, benchmark environment, current dashboard, work-board step, or model artifact has been rerun.
 - Planned Codex test: Report-bundle completeness test
 - Planned Codex test: Replay-readiness test
