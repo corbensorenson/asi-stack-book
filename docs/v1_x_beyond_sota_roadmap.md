@@ -749,7 +749,7 @@ Follow-up review outcome:
 - The Part I pilot is now `review_ready`, meaning destination drafts exist but
   require an execute, revise, defer, or reject decision plus URL/redirect policy
   before any canonical chapter identity changes.
-- Non-pilot clusters remain candidate-only. Compression, intent/contracts,
+- Compression now has a dry-run package but remains unmerged. Intent/contracts,
   context, verification, planning, MoECOT, simulation-fidelity, and semantic
   representation should each receive a dry-run package and destination or fold
   disposition before reader curation or manifest edits depend on them.
@@ -954,10 +954,11 @@ Current status:
   future manifest edit.
 - The sequence now records consolidation states so candidates cannot jump from
   "interesting idea" to manifest change: the Part I pilot is `review_ready`,
-  the other merge clusters are `planned_candidate`, the MoECOT,
-  simulation-fidelity, and semantic-representation candidates are
-  `fold_review_candidate`, and runtime-adapters/Labor OS is retained unless a
-  later evidence review finds duplicate artifact ownership.
+  compression is `dry_run_packaged`, the remaining non-packaged merge clusters
+  are `planned_candidate`, the MoECOT, simulation-fidelity, and
+  semantic-representation candidates are `fold_review_candidate`, and
+  runtime-adapters/Labor OS is retained unless a later evidence review finds
+  duplicate artifact ownership.
 - The pilot proposes two future merges:
   `constitutional-alignment-substrate` with
   `agency-dignity-and-corrigibility`, and
@@ -999,6 +1000,15 @@ Current status:
   merge, URL policy, validation commands, and no-support-state-change boundary.
 - Both dry-run packages are now covered by
   `scripts/validate_chapter_consolidation_pilot_plan.py`.
+- `docs/chapter_consolidation_dry_run_compression.md` records the first
+  non-pilot dry-run package, for **Compact Generative Systems: Generate,
+  Verify, Repair, and Residual Honesty**. It proposes keeping
+  `compact-generative-systems-and-residual-honesty` as the continuity ID,
+  folding `generate-verify-repair-compression`, and either folding or retaining
+  `rankfold-neuralfold-and-artifact-compression` depending on whether review
+  finds distinct technique ownership. It leaves
+  `semantic-representation-and-tree-structured-models` outside the merge until
+  a separate fold disposition exists.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
   defer manifest consolidation until human or external review and a public
   URL/redirect policy unblock it, proceed with human-reader curation outside
@@ -1029,11 +1039,13 @@ Current status:
   chapters until the pilot is executed or rejected. Reader curation may continue
   on chapters outside the pending cluster, and local prose fixes may continue
   anywhere when they do not entrench duplicate chapter structure.
-- The compression, intent/contract, context, verification, planning, MoECOT,
-  simulation-fidelity, and semantic-representation candidates should not be
-  merged from the roadmap table alone. Each needs its own dry-run package,
+- The compression candidate should not be merged from the roadmap table or
+  dry-run package alone. It still needs a one-skeleton destination draft,
+  review, and execute/revise/defer/reject decision. The intent/contract,
+  context, verification, planning, MoECOT, simulation-fidelity, and
+  semantic-representation candidates still need their own dry-run package,
   claim/source/proof/reader reconciliation, and reviewed destination-chapter
-  draft before any `book_structure.json` change.
+  draft or fold disposition before any `book_structure.json` change.
 - No manifest merge has been performed yet, and no chapter count reduction is
   claimed.
 

@@ -8,6 +8,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SEQUENCE = ROOT / "docs" / "chapter_consolidation_sequence.md"
+COMPRESSION_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_compression.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -80,6 +81,7 @@ REQUIRED_FRAGMENTS = (
     "A merge is justified only if the destination draft reduces repeated skeleton",
     "A merge is rejected or deferred when the proposed destination loses a useful",
     "Current Cluster Register",
+    "Compression and residual honesty | `dry_run_packaged`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -89,6 +91,63 @@ REQUIRED_FRAGMENTS = (
     "This sequence does not change `book_structure.json`.",
     "This sequence does not change Appendix C support states.",
 )
+
+COMPRESSION_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Dry Run: Compact Generative Systems",
+    "does not edit `book_structure.json`",
+    "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
+    "Conservative option",
+    "Proposed `book_structure.json` Diff",
+    "Destination Section Outline",
+    "Appendix C Row Plan",
+    "Source Union",
+    "External-source union",
+    "Lean Module And Proof-Manifest Treatment",
+    "Reader Path, Handoff, And Review Repairs",
+    "No support state changes",
+    "No new result is created by this dry run",
+)
+
+COMPRESSION_REQUIRED_IDS = {
+    "compact-generative-systems-and-residual-honesty",
+    "generate-verify-repair-compression",
+    "rankfold-neuralfold-and-artifact-compression",
+    "semantic-representation-and-tree-structured-models",
+}
+
+COMPRESSION_REQUIRED_SOURCE_IDS = {
+    "cgs",
+    "rgs",
+    "bugbrain",
+    "simulation_scaling",
+    "rmi",
+    "project_theseus_whitepaper",
+    "bbvca_v9",
+    "bbvca_main",
+    "rankfold_neuralfold",
+    "rankfold_compressor",
+}
+
+COMPRESSION_REQUIRED_EXTERNAL_IDS = {
+    "ext_deep_compression_2015",
+    "ext_dreamcoder_2020",
+    "ext_information_bottleneck_2000",
+    "ext_knowledge_distillation_2015",
+    "ext_mdl_tutorial_2004",
+    "ext_codebleu_2020",
+    "ext_gptq_2022",
+    "ext_lora_2021",
+    "ext_qlora_2023",
+}
+
+COMPRESSION_REQUIRED_LEAN_TAGS = {
+    "lean:compression.cgs.operational_invariant",
+    "lean:compression.cgs.failure_blocks_promotion",
+    "lean:compression.gvr.operational_invariant",
+    "lean:compression.gvr.failure_blocks_promotion",
+    "lean:compression.artifacts.operational_invariant",
+    "lean:compression.artifacts.failure_blocks_promotion",
+}
 
 REQUIRED_DESTINATIONS = (
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
@@ -102,6 +161,7 @@ REQUIRED_DESTINATIONS = (
 
 PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_sequence.md",
+    "docs/chapter_consolidation_dry_run_compression.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -151,6 +211,34 @@ def main() -> None:
     for destination in REQUIRED_DESTINATIONS:
         if destination not in sequence:
             errors.append(f"Consolidation sequence missing destination title: {destination}")
+
+    try:
+        compression = read_text(COMPRESSION_DRY_RUN)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_dry_run_compression.md")
+        compression = ""
+
+    for fragment in COMPRESSION_REQUIRED_FRAGMENTS:
+        if fragment not in compression:
+            errors.append(f"Compression dry run missing required boundary: {fragment}")
+
+    for chapter_id in sorted(COMPRESSION_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Compression dry-run chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in compression:
+            errors.append(f"Compression dry run does not mention `{chapter_id}`.")
+
+    for source_id in sorted(COMPRESSION_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in compression:
+            errors.append(f"Compression dry run missing source ID `{source_id}`.")
+
+    for source_id in sorted(COMPRESSION_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in compression:
+            errors.append(f"Compression dry run missing external source ID `{source_id}`.")
+
+    for tag in sorted(COMPRESSION_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in compression:
+            errors.append(f"Compression dry run missing Lean tag `{tag}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)

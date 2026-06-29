@@ -109,7 +109,7 @@ Use this rubric before any non-pilot consolidation package:
 |---|---|---|---|
 | Part I alignment and agency/corrigibility | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
 | Part I value conflict and contestable governance | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
-| Compression and residual honesty | `planned_candidate` | Build a dry-run package before any manifest or reader-manuscript change. | Avoid curated graduation of the source cluster unless explicitly deferred. |
+| Compression and residual honesty | `dry_run_packaged` | Write a one-skeleton destination draft or reject the merge as not improving chapter ownership. | Avoid curated graduation of the source cluster unless explicitly deferred. |
 | Intent and executable contracts | `planned_candidate` | Build a dry-run package and slim the intent-intake handoff only if the package passes. | Keep `human-intent-as-a-formal-input` reader work local until the contract boundary is clear. |
 | Static context ABI | `planned_candidate` | Build a dry-run package that protects dynamic transaction and verification-bandwidth chapters. | Reader curation may continue outside the static ABI pair. |
 | Verification and adversarial review | `planned_candidate` | Build a dry-run package that keeps claim ledgers separate. | Avoid merging review vocabulary into claim-ledger prose prematurely. |
@@ -206,6 +206,15 @@ path. The current allowed pilot-reader set remains:
 - `recursive-self-improvement-boundaries`
 - `circle-calculus-and-proof-carrying-ai-contracts`
 - `artifact-steward-agents-and-living-project-governance`
+
+## Non-Pilot Dry-Run Packages
+
+- `docs/chapter_consolidation_dry_run_compression.md` records the Tier 1B
+  dry-run package for the compression and residual-honesty cluster. It does not
+  edit `book_structure.json`, authorize a manifest merge, or move support
+  states. It keeps the RankFold/NeuralFold Conservative option open and leaves
+  `semantic-representation-and-tree-structured-models` as a separate
+  fold-review candidate.
 
 ## Non-Claims
 

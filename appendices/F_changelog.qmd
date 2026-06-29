@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-29 - Compression consolidation dry-run package
+
+- Reviewed the latest consolidation proposal and accepted its core roadmap
+  value: reduce repeated chapter skeletons by governed re-consolidation while
+  preserving every useful idea as a section, subclaim, source mapping, proof
+  hook, reader path, implementation horizon, or explicit retention decision.
+- Added `docs/chapter_consolidation_dry_run_compression.md` as the first
+  non-pilot dry-run package, covering compact generative systems,
+  generate/verify/repair compression, and conditional RankFold/NeuralFold
+  folding.
+- Updated the v1.x roadmap, consolidation sequence, README, publication
+  readiness, repository map, and consolidation validator so compression is
+  `dry_run_packaged` rather than only a planned candidate.
+- This does not edit `book_structure.json`, merge chapters, change Appendix C,
+  create source/proof/test evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Evidence States curated reader prose pass
 
 - Initialized and rewrote the drafting-only curated reader chapter
