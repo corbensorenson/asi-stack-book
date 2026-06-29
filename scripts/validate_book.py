@@ -108,6 +108,8 @@ REQUIRED = [
     "docs/external_review_packet.md",
     "docs/external_review_status.md",
     "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
+    "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json",
+    "docs/chapter_consolidation_full_review_packet.md",
     "docs/defended_contribution_tracks.md",
     "docs/defended_contribution_prior_art_positioning.md",
     "docs/evidence_laundering_prevention_case_studies.md",

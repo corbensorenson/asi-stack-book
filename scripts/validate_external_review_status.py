@@ -18,7 +18,9 @@ REQUIRED_FILES = [
     "docs/external_review_packet.md",
     "docs/external_review_status.md",
     "docs/chapter_consolidation_external_review_packet.md",
+    "docs/chapter_consolidation_full_review_packet.md",
     "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
+    "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json",
     "scripts/validate_external_review_intake.py",
     ".github/ISSUE_TEMPLATE/external-review.yml",
 ]
@@ -27,11 +29,17 @@ ISSUE_URL = "https://github.com/corbensorenson/asi-stack-book/issues/1"
 CONSOLIDATION_COMMENT_URL = (
     "https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101"
 )
+FULL_CONSOLIDATION_COMMENT_URL = (
+    "https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4837313658"
+)
 
 REQUIRED_STATUS_STRINGS = [
     ISSUE_URL,
     CONSOLIDATION_COMMENT_URL,
+    FULL_CONSOLIDATION_COMMENT_URL,
     "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
+    "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json",
+    "docs/chapter_consolidation_full_review_packet.md",
     "scripts/validate_external_review_intake.py",
     "Requested publicly; no independent external review has been accepted yet.",
     "Support-state effect | None.",
@@ -50,6 +58,17 @@ REQUIRED_PACKET_STRINGS = [
     "v1.x roadmap",
 ]
 
+REQUIRED_FULL_PACKET_STRINGS = [
+    ISSUE_URL,
+    "request surface",
+    "Decision Queue Under Review",
+    "Execute, revise, defer, reject, or no opinion",
+    "Reviewer comments are review input, not source evidence",
+    "Accepted Review Record Requirements",
+    "This packet does not authorize any merge or fold.",
+    "This packet does not change `book_structure.json`.",
+]
+
 REQUIRED_TEMPLATE_STRINGS = [
     "name: External review",
     "Reviewer background",
@@ -61,9 +80,13 @@ REQUIRED_TEMPLATE_STRINGS = [
 
 PUBLIC_SURFACE_REFS = [
     ("README.md", "docs/external_review_status.md"),
+    ("README.md", "docs/chapter_consolidation_full_review_packet.md"),
+    ("README.md", "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json"),
     ("index.qmd", ISSUE_URL),
     ("docs/publication_readiness.md", "docs/external_review_status.md"),
+    ("docs/publication_readiness.md", "docs/chapter_consolidation_full_review_packet.md"),
     ("docs/repository_map.md", "docs/external_review_packet.md"),
+    ("docs/repository_map.md", "docs/chapter_consolidation_full_review_packet.md"),
 ]
 
 FORBIDDEN_STRINGS = [
@@ -98,6 +121,7 @@ def main() -> None:
 
     status = read("docs/external_review_status.md")
     packet = read("docs/external_review_packet.md")
+    full_packet = read("docs/chapter_consolidation_full_review_packet.md")
     template = read(".github/ISSUE_TEMPLATE/external-review.yml")
 
     for needle in REQUIRED_STATUS_STRINGS:
@@ -106,11 +130,14 @@ def main() -> None:
     for needle in REQUIRED_PACKET_STRINGS:
         if needle not in packet:
             errors.append(f"external review packet missing: {needle}")
+    for needle in REQUIRED_FULL_PACKET_STRINGS:
+        if needle not in full_packet:
+            errors.append(f"full consolidation review packet missing: {needle}")
     for needle in REQUIRED_TEMPLATE_STRINGS:
         if needle not in template:
             errors.append(f"external review issue template missing: {needle}")
 
-    combined = "\n".join([status, packet, template])
+    combined = "\n".join([status, packet, full_packet, template])
     for forbidden in FORBIDDEN_STRINGS:
         if forbidden in combined:
             errors.append(f"external-review surfaces contain overclaim: {forbidden}")

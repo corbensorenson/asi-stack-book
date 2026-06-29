@@ -86,6 +86,11 @@ The pilot already has:
 - `docs/chapter_consolidation_decision_review.md`;
 - `docs/chapter_consolidation_external_review_packet.md`.
 
+The full consolidation decision queue now also has
+`docs/chapter_consolidation_full_review_packet.md`, a request surface for all
+review-ready merge packages and fold dispositions. It records no accepted
+review, no manifest authorization, and no support-state effect.
+
 The current decision is still deferral, and the current pilot state is
 `review_ready`: both destination drafts are review-ready, but no manifest merge
 is authorized until human or external review accepts, revises, or rejects the

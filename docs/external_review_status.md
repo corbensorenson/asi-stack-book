@@ -11,12 +11,14 @@ a review-control surface, not evidence and not a support-state transition.
 |---|---|
 | Public review request | Opened: <https://github.com/corbensorenson/asi-stack-book/issues/1> |
 | Supplemental consolidation request | Posted: <https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101> |
+| Full consolidation queue request | Posted: <https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4837313658> |
 | Review packet | `docs/external_review_packet.md` |
 | Supplemental consolidation packet | `docs/chapter_consolidation_external_review_packet.md` |
-| Structured request-update record | `external_reviews/request_updates/consolidation_review_request_2026-06-29.json` |
+| Full consolidation packet | `docs/chapter_consolidation_full_review_packet.md` |
+| Structured request-update records | `external_reviews/request_updates/consolidation_review_request_2026-06-29.json`; `external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json` |
 | Intake validation | `python3 scripts/validate_external_review_intake.py` |
 | Review state | Requested publicly; no independent external review has been accepted yet. |
-| Review scope requested | Safety-critical Lean limitations, Appendix C support states, non-core evidence ledger, v1.x Beyond-SOTA roadmap, one representative Human view chapter, and the two Part I consolidation destination drafts. |
+| Review scope requested | Safety-critical Lean limitations, Appendix C support states, non-core evidence ledger, v1.x Beyond-SOTA roadmap, one representative Human view chapter, the two Part I consolidation destination drafts, the five non-pilot review-ready consolidation packages, and the three fold-disposition packages. |
 | Support-state effect | None. |
 | Artifact-release effect | None. |
 
@@ -42,8 +44,8 @@ a review-control surface, not evidence and not a support-state transition.
 No independent external human review response has been accepted into the
 repository yet.
 
-The current structured intake record preserves the public supplemental
-consolidation-review solicitation only. It records no reviewer finding and no
+The current structured intake records preserve the public supplemental
+consolidation-review solicitations only. They record no reviewer finding and no
 reviewer decision.
 
 ## Acceptance Criteria For A Future Review Record

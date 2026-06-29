@@ -844,6 +844,7 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_fold_moecot_runtime.md",
     "docs/chapter_consolidation_fold_simulation_fidelity.md",
     "docs/chapter_consolidation_fold_semantic_representation.md",
+    "docs/chapter_consolidation_full_review_packet.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 

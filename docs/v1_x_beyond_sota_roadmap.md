@@ -1148,6 +1148,12 @@ Current status:
   focused decision surface for the pilot: execute, revise, defer, or reject
   each proposed merge, while preserving the boundary that review input is not
   evidence, proof, artifact approval, or support-state movement.
+- `docs/chapter_consolidation_full_review_packet.md` now gives reviewers a
+  full decision-queue surface for all review-ready merge packages and fold
+  dispositions, including the five non-pilot destination drafts and the three
+  fold-disposition packages. It is a request surface only: no external review
+  has been accepted, no package is authorized, no manifest edit is made, and no
+  support state moves.
 - Broad reader polish should avoid the four pending Part I consolidation source
   chapters until the pilot is executed or rejected. Reader curation may continue
   on chapters outside the pending cluster, and local prose fixes may continue

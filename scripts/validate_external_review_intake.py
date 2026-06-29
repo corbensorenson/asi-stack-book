@@ -22,6 +22,9 @@ ISSUE_URL = "https://github.com/corbensorenson/asi-stack-book/issues/1"
 CONSOLIDATION_COMMENT_URL = (
     "https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101"
 )
+FULL_CONSOLIDATION_COMMENT_URL = (
+    "https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4837313658"
+)
 
 
 def load_json(path: Path) -> Any:
@@ -135,6 +138,7 @@ def main() -> None:
     accepted_records: list[Path] = []
     request_update_records: list[Path] = []
     saw_consolidation_request = False
+    saw_full_consolidation_request = False
 
     for record_path in records:
         value = load_json(record_path)
@@ -149,6 +153,8 @@ def main() -> None:
             refs = value.get("public_request_refs", [])
             if ISSUE_URL in refs and CONSOLIDATION_COMMENT_URL in refs:
                 saw_consolidation_request = True
+            if ISSUE_URL in refs and FULL_CONSOLIDATION_COMMENT_URL in refs:
+                saw_full_consolidation_request = True
 
     status_text = STATUS.read_text(encoding="utf-8")
     if accepted_records and "no independent external review has been accepted yet" in status_text:
@@ -157,8 +163,12 @@ def main() -> None:
         errors.append("external_review_status.md must preserve no-accepted-review status.")
     if CONSOLIDATION_COMMENT_URL not in status_text:
         errors.append("external_review_status.md does not record the consolidation issue comment URL.")
+    if FULL_CONSOLIDATION_COMMENT_URL not in status_text:
+        errors.append("external_review_status.md does not record the full consolidation issue comment URL.")
     if not saw_consolidation_request:
         errors.append("No intake record preserves the consolidation issue comment URL.")
+    if not saw_full_consolidation_request:
+        errors.append("No intake record preserves the full consolidation issue comment URL.")
 
     if errors:
         fail(errors)
