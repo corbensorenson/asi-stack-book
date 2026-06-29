@@ -280,7 +280,7 @@ def main() -> None:
         "`docs/reader_format_review_matrix.md` records the HTML row as release-approved against `release_records/2026-06-29-v1-reader-html-855dc277.json` while EPUB, DOCX, and PDF retain format-specific review blockers.",
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`",
         "The current v1.0 reader-overlay set carries 33 active operations across 20 chapters for Human view and generated reader editions only.",
-        "The curated reader-manuscript manifest exists with `drafting` status and four drafting-only curated chapter records for `asi-is-a-stack-not-a-model`, `the-efficient-asi-hypothesis`, `recursive-self-improvement-boundaries`, and `artifact-steward-agents-and-living-project-governance`; it remains a subordinate narrative derivative, and its reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
+        "The curated reader-manuscript manifest exists with `drafting` status and five drafting-only curated chapter records for `asi-is-a-stack-not-a-model`, `the-efficient-asi-hypothesis`, `human-intent-as-a-formal-input`, `recursive-self-improvement-boundaries`, and `artifact-steward-agents-and-living-project-governance`; it remains a subordinate narrative derivative, and its reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
         "`editions/reader_overlays/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`",
