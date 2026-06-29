@@ -88,6 +88,11 @@ Selection rule: a future v1.x run should choose at most three tracks for deep
 work before it widens to more. Track selection should prefer external review,
 public replay, and source-noted novelty over internal fixture count.
 
+Current selection: `docs/defended_contribution_tracks.md` selects all five
+candidate tracks for v1.x focus and marks three as current deep-work tracks.
+The selection record is a release-control surface only; it does not claim A+
+completion or support-state movement.
+
 ## Cold-Read Risk Controls
 
 A skeptical visitor should not have to inspect the repository to discover that

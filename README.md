@@ -88,6 +88,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/v1_0_roadmap.md](docs/v1_0_roadmap.md) | Execution roadmap and recommended next long-running goal for v1.0 voice, reader, evidence, proof, test, source, site, and release work. |
 | [docs/v1_x_beyond_sota_roadmap.md](docs/v1_x_beyond_sota_roadmap.md) | Post-v1.0.0 roadmap for deeper Lean proofs, Project Theseus/Circle replay evidence, per-chapter evidence lanes, curated reader prose, and human artifact release quality. |
 | [docs/a_plus_quality_scorecard.md](docs/a_plus_quality_scorecard.md) | Planning scorecard for moving every project dimension toward A+ quality, including cold-read legibility and defended contribution tracks. |
+| [docs/defended_contribution_tracks.md](docs/defended_contribution_tracks.md) | v1.x contribution-track selection: five selected tracks, three deep-work tracks, and no chapter-core promotion. |
 | [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md) | Public ledger for the three accepted non-core evidence transitions and their no-chapter-core-promotion boundary. |
 | [docs/external_review_packet.md](docs/external_review_packet.md) | Public packet for independent v1.x safety, evidence, roadmap, grounding, and reader-quality review. |
 | [docs/external_review_status.md](docs/external_review_status.md) | Ledger for the external-review request and the boundary that review input is not evidence by itself. |
@@ -196,6 +197,7 @@ python3 scripts/validate_v1_release_gate_audit.py
 python3 scripts/validate_non_core_evidence_ledger.py
 python3 scripts/validate_external_review_status.py
 python3 scripts/validate_external_review_intake.py
+python3 scripts/validate_defended_contribution_tracks.py
 python3 scripts/validate_core_claim_promotion_paths.py
 python3 scripts/validate_chapter_external_grounding_status.py
 python3 scripts/validate_external_sota_positioning.py

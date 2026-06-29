@@ -12,6 +12,9 @@ The selected lanes map to defended contribution tracks where the repository
 already has public-safe evidence paths: living evidence methodology, evidence
 laundering prevention, governed self-improvement, proof-carrying claims,
 resource discipline, and report-first implementation evidence.
+`docs/defended_contribution_tracks.md` records the contribution-track selection
+boundary for this cycle: five selected tracks, three deep-work tracks, and no
+chapter-core promotion.
 
 ## Cycle Boundary
 

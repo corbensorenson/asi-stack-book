@@ -51,6 +51,7 @@ REQUIRED = [
     "scripts/validate_non_core_evidence_ledger.py",
     "scripts/validate_external_review_status.py",
     "scripts/validate_external_review_intake.py",
+    "scripts/validate_defended_contribution_tracks.py",
     "scripts/validate_core_claim_decisions.py",
     "scripts/validate_core_claim_promotion_paths.py",
     "scripts/validate_v1_x_active_evidence_cycle.py",
@@ -103,6 +104,7 @@ REQUIRED = [
     "docs/external_review_packet.md",
     "docs/external_review_status.md",
     "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
+    "docs/defended_contribution_tracks.md",
     "docs/chapter_external_grounding_status.md",
     "docs/external_sota_positioning_audit.md",
     "docs/support_state_transition_harness.md",
@@ -639,6 +641,7 @@ def main() -> None:
     run_validator("validate_evidence_transitions.py")
     run_validator("validate_core_claim_decisions.py")
     run_validator("validate_external_review_intake.py")
+    run_validator("validate_defended_contribution_tracks.py")
     run_validator("validate_core_claim_promotion_paths.py")
     run_validator("validate_v1_x_active_evidence_cycle.py")
     run_validator("validate_chapter_consolidation_pilot_plan.py")

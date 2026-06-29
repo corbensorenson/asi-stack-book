@@ -227,6 +227,19 @@ Do not pick a track because it sounds most ambitious. Pick it because the next
 evidence artifact is public-safe, externally positionable, and capable of
 failing.
 
+Current status for defended contribution focus:
+
+- `docs/defended_contribution_tracks.md` selects five v1.x contribution tracks
+  and marks three as deep-work tracks for the current cycle: living evidence
+  book methodology, governed self-improvement boundary, and proof-carrying
+  claims/contracts.
+- The remaining two selected tracks, claim-support/evidence-laundering
+  prevention and costed routing/resource discipline, remain selected-supporting
+  tracks rather than simultaneous deep campaigns.
+- `scripts/validate_defended_contribution_tracks.py` enforces the three-to-five
+  selected-track gate, the at-most-three deep-work-track cap, the active-cycle
+  lane anchors, and the no-chapter-core-promotion boundary.
+
 ## Milestone Plan
 
 ### Milestone 0 - Release-Preserving Discipline

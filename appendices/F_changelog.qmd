@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-29 - Defended contribution track selection
+
+- Added `docs/defended_contribution_tracks.md` to name the v1.x defended
+  contribution focus: five selected tracks and three deep-work tracks for the
+  current cycle.
+- Added `scripts/validate_defended_contribution_tracks.py` to enforce the
+  three-to-five selected-track gate, the at-most-three deep-work-track cap, the
+  active evidence-cycle lane anchors, and the no-chapter-core-promotion
+  boundary.
+- Updated the v1.x roadmap, A+ scorecard, active evidence-cycle ledger, README,
+  publication readiness, repository map, `scripts/validate_publication.py`, and
+  `scripts/validate_book.py` so defended contribution focus is discoverable and
+  validated.
+- This does not create evidence, complete any track at A+ depth, approve an
+  artifact, change `book_structure.json`, change Appendix C support states,
+  merge chapters, or promote any chapter core claim above `argument`.
+
 ## 2026-06-29 - External-review intake records
 
 - Added `schemas/external_review_intake_record.schema.json`,
