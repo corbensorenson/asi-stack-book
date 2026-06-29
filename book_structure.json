@@ -1985,7 +1985,13 @@
           "minimal_implementation": "An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata.",
           "beyond_state_of_art": "Stable capability fields give the stack a capability-identity and replacement market. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals. A mature capability field preserves identity, interface, authority ceiling, qualification evidence, regression memory, and rollback policy while implementations change.",
           "codex_tests": [
-            "Qualification predicate test",
+    {
+      "name": "Qualification predicate test",
+      "purpose": "Check that evidence-mapped and qualified stable capability fields preserve qualification predicates, evidence refs, regression suites, lease scope, and review triggers before routed use.",
+      "status": "implemented by stable capability fields harness; validated locally; no runtime route-quality claim",
+      "implementation_status": "implemented",
+      "result_status": "validated locally by synthetic fixtures; runtime route quality not run"
+    },
             {
               "name": "Route validity test",
               "purpose": "Check that a routed candidate stays inside gate authority, allowed routes, blocked routes, fallback route, and residual-obligation boundaries before canary or default use.",
@@ -1993,7 +1999,13 @@
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures"
             },
-            "Authority non-escalation test",
+    {
+      "name": "Authority non-escalation test",
+      "purpose": "Check that stable capability field records keep authority ceilings scoped, route permission effects bounded, default-route blockers visible, and evaluator review separated from candidate self-attestation.",
+      "status": "implemented by stable capability fields harness; validated locally; no deployed authority enforcement claim",
+      "implementation_status": "implemented",
+      "result_status": "validated locally by synthetic fixtures; deployed authority enforcement not run"
+    },
             {
               "name": "Rollback readiness test",
               "purpose": "Check that canary/default replacement decisions require rollback receipt readiness, monitor state, and inherited residual escrow before stronger use.",

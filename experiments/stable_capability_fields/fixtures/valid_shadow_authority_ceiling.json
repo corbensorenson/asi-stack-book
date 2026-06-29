@@ -1,0 +1,50 @@
+{
+  "field_id": "field://tool-permission-review",
+  "field_version": "field-v0",
+  "owner": "runtime governance layer",
+  "semantic_boundary": "Classify whether a proposed tool route remains inside the declared authority ceiling.",
+  "interface_contract": "Read an authority transition record and return allow, deny, or review-required without executing the tool.",
+  "authority_ceiling": "read_authority_records_and_request_review_only",
+  "implementations": ["impl://tool-permission-review-v0"],
+  "lifecycle_state": "shadow",
+  "qualification_context": "synthetic authority-boundary fixture",
+  "qualification_status": "evidence_mapped",
+  "qualification_lease": {
+    "epoch": "fixture-epoch-002",
+    "expires_on": "before canary routing",
+    "review_triggers": ["authority schema changes", "new tool class appears", "approval policy changes"]
+  },
+  "qualification_lease_status": "fixture_only",
+  "qualification_predicates": [
+    "authority ceiling is explicit",
+    "review route is separate from candidate output",
+    "default route blockers are preserved"
+  ],
+  "evaluator_policy": "Separate governance review checks the fixture before any route permission changes.",
+  "evaluator_independence": "Separate review owns the route decision and the candidate cannot approve itself.",
+  "route_validity": "valid",
+  "route_scope": "shadow field only until authority review accepts the route",
+  "route_permission_effect": "shadow_only",
+  "consumer_policy": "Consumers may compare shadow decisions but must not execute the candidate as the default route.",
+  "evidence_refs": ["tests/fixtures/protocol_records/authority_transition_record.valid.json"],
+  "readiness_gate_refs": ["tests/fixtures/protocol_records/readiness_gate_record.valid.json"],
+  "field_history_refs": [],
+  "incident_refs": [],
+  "review_triggers": ["authority ceiling changes", "candidate requests execution", "review route changes"],
+  "state_migration": "Shadow decisions create no production state.",
+  "regression_suite": ["non-escalation decisions remain deny or review-required"],
+  "rollback_plan": "Rollback is a no-op for production state; retain the existing approval path as fallback.",
+  "rollback_obligations": ["preserve existing approval route", "fallback to human review"],
+  "default_route_blockers": [
+    "shadow route only",
+    "approval-service behavior not exercised",
+    "no deployed adapter trace"
+  ],
+  "source_refs": ["sources/source_notes/scf.md", "sources/source_notes/ladon_manhattan.md"],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove runtime permission enforcement",
+    "does not promote support state",
+    "does not prove approval-service quality"
+  ]
+}

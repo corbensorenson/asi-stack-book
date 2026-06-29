@@ -1,0 +1,50 @@
+{
+  "field_id": "field://proof-envelope-check",
+  "field_version": "field-v0",
+  "owner": "proof governance layer",
+  "semantic_boundary": "Check that proof-envelope records preserve finite-record limitation language.",
+  "interface_contract": "Inspect proof target records and return whether limitation and non-claim text are present.",
+  "authority_ceiling": "read_tracked_proof_records_only",
+  "implementations": ["impl://proof-envelope-check-v0"],
+  "lifecycle_state": "qualified",
+  "qualification_context": "local proof traceability fixture",
+  "qualification_status": "qualified_for_scope",
+  "qualification_lease": {
+    "epoch": "fixture-epoch-003",
+    "expires_on": "next proof adequacy review",
+    "review_triggers": ["new Lean module", "proof triage class changes", "support-state transition request"]
+  },
+  "qualification_lease_status": "active",
+  "qualification_predicates": [
+    "proof target has a traceable Lean module",
+    "limitation text is present",
+    "support-state boundary is preserved"
+  ],
+  "evaluator_policy": "Independent proof-readiness validation and human review must agree before default use.",
+  "evaluator_independence": "Review is separate from the candidate implementation and from the proof authoring step.",
+  "route_validity": "valid",
+  "route_scope": "qualified field use for local proof-record checks",
+  "route_permission_effect": "qualified_for_scope",
+  "consumer_policy": "May support proof-record checks inside the qualified field scope but cannot become the default route.",
+  "evidence_refs": ["docs/proof_adequacy_review.md", "proofs/proof_manifest.json"],
+  "readiness_gate_refs": ["docs/proof_artifact_audit.md"],
+  "field_history_refs": [],
+  "incident_refs": [],
+  "review_triggers": ["proof target changes", "proof adequacy classification changes"],
+  "state_migration": "No application state migration is performed by this field.",
+  "regression_suite": ["finite-record limitation remains visible", "support-state promotion remains blocked without review"],
+  "rollback_plan": "Rollback to manual proof-record review and preserve the prior proof-readiness validator output.",
+  "rollback_obligations": ["retain manual review path", "restore prior proof-record check"],
+  "default_route_blockers": [
+    "qualified for local proof-record checks only",
+    "semantic proof adequacy remains human-reviewed",
+    "no theorem-validity review"
+  ],
+  "source_refs": ["sources/source_notes/scf.md", "sources/source_notes/lean_theorem_proving.md"],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove runtime proof checking",
+    "does not promote support state",
+    "does not prove theorem validity"
+  ]
+}

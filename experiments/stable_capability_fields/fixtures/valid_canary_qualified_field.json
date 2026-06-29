@@ -1,0 +1,50 @@
+{
+  "field_id": "field://context-adequacy",
+  "field_version": "field-v1",
+  "owner": "book governance layer",
+  "semantic_boundary": "Assess whether a public-safe context packet is adequate for local manuscript consistency checks.",
+  "interface_contract": "Accept a context packet handle and emit an adequacy state with residual risks and source-boundary notes.",
+  "authority_ceiling": "read_public_book_context_only",
+  "implementations": ["impl://context-adequacy-v0", "impl://context-adequacy-v1-canary"],
+  "lifecycle_state": "canary",
+  "qualification_context": "public-safe manuscript drafting fixture",
+  "qualification_status": "qualified_for_scope",
+  "qualification_lease": {
+    "epoch": "fixture-epoch-001",
+    "expires_on": "before default promotion",
+    "review_triggers": ["source inventory changes", "support-state policy changes", "validator behavior changes"]
+  },
+  "qualification_lease_status": "fixture_only",
+  "qualification_predicates": [
+    "assigned sources are visible",
+    "support-state conservatism is preserved",
+    "residual risks are not erased"
+  ],
+  "evaluator_policy": "A separate validator checks record shape, support-state language, and route blockers before default promotion.",
+  "evaluator_independence": "Independent review is required before this candidate can become a default route.",
+  "route_validity": "residual",
+  "route_scope": "canary field use for public manuscript context checks only",
+  "route_permission_effect": "canary_only",
+  "consumer_policy": "Use as a canary route for drafting support only; do not make it the default route.",
+  "evidence_refs": ["tests/fixtures/protocol_records/context_adequacy_record.valid.json"],
+  "readiness_gate_refs": ["tests/fixtures/protocol_records/readiness_gate_record.valid.json"],
+  "field_history_refs": ["tests/fixtures/protocol_records/replacement_transaction.valid.json"],
+  "incident_refs": [],
+  "review_triggers": ["qualification lease expires", "regression suite changes", "authority ceiling changes"],
+  "state_migration": "No production state migration is authorized by this fixture.",
+  "regression_suite": ["support states remain conservative", "missing evidence remains visible"],
+  "rollback_plan": "Retain impl://context-adequacy-v0 as fallback and rollback the canary route if predicates fail.",
+  "rollback_obligations": ["preserve previous implementation ref", "restore prior routing on failed predicates"],
+  "default_route_blockers": [
+    "route validity remains residual",
+    "lease is fixture-only",
+    "runtime workload replay has not been run"
+  ],
+  "source_refs": ["sources/source_notes/scf.md", "sources/source_notes/viea.md"],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove runtime route validity",
+    "does not promote support state",
+    "does not prove evaluator integrity"
+  ]
+}

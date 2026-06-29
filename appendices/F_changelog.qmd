@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Stable capability fields harness
+
+- Added `scripts/validate_stable_capability_fields.py`, synthetic
+  stable-capability-field fixtures under
+  `experiments/stable_capability_fields/`,
+  `docs/stable_capability_field_harness.md`, and a tracked local result
+  record. The local run passes with 3 valid and 6 expected-invalid fixtures,
+  checking qualification predicates, evidence refs, readiness refs, authority
+  ceilings, route scopes, route permission effects, evaluator independence,
+  review triggers, rollback obligations, default-route blockers, and
+  non-claim boundaries.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Stable Capability Fields chapter's
+  qualification predicate and authority non-escalation test rows, README,
+  publication readiness, and v1.0 roadmap/status/focus surfaces. This is
+  synthetic stable-capability-field record discipline only: it is not runtime
+  route validity, capability identity, evaluator integrity, authority
+  enforcement, replacement safety, rollback execution, source interpretation,
+  reader-release approval, support-state promotion, proof adequacy, benchmark
+  evidence, or deployed behavior.
+
 ## 2026-06-28 - v1.0 Security kernel evidence transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/security_kernel_no_change.json`

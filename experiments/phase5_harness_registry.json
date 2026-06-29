@@ -230,6 +230,29 @@
     ]
   },
   {
+    "id": "stable_capability_fields",
+    "name": "Stable capability fields harness",
+    "command": "python3 scripts/validate_stable_capability_fields.py",
+    "script": "scripts/validate_stable_capability_fields.py",
+    "doc": "docs/stable_capability_field_harness.md",
+    "experiment_dir": "experiments/stable_capability_fields",
+    "fixture_dir": "experiments/stable_capability_fields/fixtures",
+    "result_record": "experiments/stable_capability_fields/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 6,
+    "result_summary": "Stable capability fields harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "stable-capability-fields",
+      "capability-replacement-and-rollback",
+      "recursive-self-improvement-boundaries",
+      "governance-rights-fork-exit-and-audit"
+    ],
+    "non_claims": [
+      "Does not prove runtime route validity, capability identity, evaluator integrity, authority enforcement, replacement safety, rollback execution, or source interpretation.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "plan_execution_contracts",
     "name": "Plan-execution contract harness",
     "command": "python3 scripts/validate_plan_execution_contracts.py",

@@ -41,6 +41,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/support_state_transition_harness.md` | Phase 5 support-state transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/authority_transition_harness.md` | Phase 5 authority transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/security_kernel_harness.md` | Phase 5 security kernel harness summary, command, local result, and non-claim boundary. | tracked |
+| `docs/stable_capability_field_harness.md` | Phase 5 stable capability fields harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/plan_execution_contract_harness.md` | Phase 5 plan-execution contract harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/runtime_adapter_permission_harness.md` | Phase 5 runtime adapter permission harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/context_admission_adequacy_harness.md` | Phase 5 context admission/adequacy harness summary, command, local result, and non-claim boundary. | tracked |
