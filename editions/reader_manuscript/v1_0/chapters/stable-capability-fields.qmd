@@ -1,0 +1,308 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: stable-capability-fields
+generated_baseline_ref: build/reader_edition/chapters/stable-capability-fields.qmd
+live_source_ref: chapters/stable-capability-fields.qmd@c798c5da7
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Stable Capability Fields
+
+An intelligent system can improve only if it knows what must not change. A new
+planner may be faster. A new verifier may be sharper. A new tool-using worker
+may solve cases the old one missed. None of that is automatically progress if
+the replacement also changes the meaning of the capability, widens the
+authority behind it, forgets the evidence that qualified it, or loses the path
+back to a known-good state.
+
+Stable Capability Fields are the stack's answer to that problem. They separate
+the durable identity of a capability from the replaceable machinery currently
+serving it. The field says what capability is being requested, what authority
+ceiling it carries, what interface it exposes, what evidence qualifies an
+implementation, and what rollback obligations survive replacement. The
+implementation may change. The trust contract does not move quietly with it.
+
+This is the bridge from governance into self-improvement. Governance rights ask
+what survives institutional change. Stable Capability Fields ask what survives
+technical change. In both cases, the point is continuity under pressure:
+progress should improve the machinery without moving the terms of trust.
+
+## Problem
+
+A capability name is not a stable boundary by itself. A system can say "planner,"
+"retriever," "verifier," "runtime adapter," or "policy updater" while changing
+what that component is allowed to see, decide, call, remember, or overwrite. If
+every implementation change also changes the capability's meaning, then the
+larger system cannot tell whether it has improved or merely redefined success.
+
+The ASI Stack needs a way to let implementations compete and evolve without
+letting the capability boundary drift. A field provides that way. It is the
+durable semantic boundary that consumers route to and governance reviews.
+Implementations are candidates that may satisfy the field under scoped evidence.
+
+The distinction matters because recursive improvement creates constant
+replacement pressure. Better models, narrower tools, cheaper routes, stronger
+verifiers, and learned policies will all ask to become default. A stable field
+turns that pressure into a qualification question: does this candidate satisfy
+the same capability, under the same or explicitly changed authority, with
+evidence and rollback still attached?
+
+## Why Ordinary Replacement Is Not Enough
+
+Ordinary software and AI practice offers partial answers. A plugin can be
+swapped. A model can be upgraded. A service can change versions. A build can
+carry provenance. Those disciplines are useful, but none of them alone says
+what a capability means inside a governed AI stack.
+
+Semantic Versioning is a useful comparator because it treats a declared public
+API as a compatibility boundary and gives breaking changes a visible signal.
+But a compatible-looking API does not prove that the new implementation has the
+same authority ceiling, evaluator independence, regression memory, route scope,
+or rollback readiness.
+
+Capability-based computer systems are a useful comparator because they treat
+authority-bearing references as protection-relevant objects. But an
+object-capability discipline does not by itself define semantic capability
+identity, qualification evidence, lifecycle state, or field-level regression
+history for AI components.
+
+SLSA is a useful comparator because artifact identity and provenance matter
+before promotion. But supply-chain provenance is not the same as capability
+adequacy. A well-attested artifact can still change the field's behavior, widen
+authority, satisfy the wrong evaluator, or leave no usable rollback path.
+
+SCF borrows the seriousness of these outside disciplines without claiming to
+have implemented them here. In this repository, those sources are comparators:
+they help position authority, versioning, and provenance. They do not prove
+capability enforcement, API compatibility checking, SLSA conformance, route
+validation, evaluator integrity, or rollback execution.
+
+## Core Claim
+
+A stable capability field is a governed boundary with identity, interface,
+authority ceiling, qualification evidence, and rollback policy. In the live
+book, this claim is a design rationale supported at `argument`, not a deployed
+system result.
+
+The source support is architectural. The SCF source supplies the field identity,
+versioned contract, content-bound artifact, qualification, route-validation,
+lifecycle, authority-ceiling, evaluator-policy, state-migration, and recovery
+vocabulary. VIEA supplies the surrounding artifact, support-state, residual,
+regression, routing, and permission-envelope context. Talos supplies typed job,
+evidence, proof-bundle, replay, and residual-uncertainty context. Ladon and the
+Manhattan Protocol supply the authority-handle pressure: sensitive capabilities
+need constrained handles, permission checks, compartments, and controlled
+injection points. MoECOT remains implementation-reference context only.
+
+That support does not establish production safety, deployed route validation,
+deployed authority enforcement, evaluator-integrity enforcement, replacement
+safety, rollback execution, benchmark performance, or source-reported runtime
+behavior.
+
+## Mechanism
+
+The field record separates three questions that are too often collapsed:
+
+- What capability is being requested?
+- Which implementation artifact is being proposed?
+- Under what evidence, lifecycle state, and authority may it be routed to?
+
+That separation keeps discovery from becoming self-authorization. A broad
+route proposer may nominate a better candidate. A narrow validator decides
+whether the candidate still belongs to the field.
+
+```{mermaid}
+flowchart LR
+  Field["Field contract: identity, interface, authority ceiling"] --> Candidate["Candidate implementation artifact"]
+  Field --> Policy["Evaluator policy and route rules"]
+  Candidate --> Evidence["Scoped qualification evidence"]
+  Evidence --> Lease["Qualification lease"]
+  Policy --> Validator["Narrow route validator"]
+  Lease --> Validator
+  Proposer["Route proposer"] --> Validator
+  Validator --> Decision{"Same field and valid route?"}
+  Decision -- "yes" --> Lifecycle["Lifecycle: shadow, canary, qualified, default"]
+  Decision -- "no" --> Residual["Reject, quarantine, or residual"]
+  Lifecycle --> Ledger["Evidence, incidents, regressions"]
+  Residual --> Ledger
+  Ledger --> Rollback["Rollback and recovery obligations"]
+```
+
+The field is the memory of the capability. It carries the semantic boundary,
+interface contract, authority ceiling, evaluator policy, evidence references,
+regression floors, lifecycle history, incidents, and rollback obligations.
+Candidate implementations are replaceable only because the field is not.
+
+Qualification is scoped. A candidate may be qualified for one domain, risk
+tier, hardware profile, benchmark epoch, source corpus, authority tier, or user
+population without being qualified everywhere. The field should say where that
+qualification applies and where it does not.
+
+Qualification also ages. A candidate that passed under one benchmark epoch or
+threat model should not stay default forever by inertia. The qualification
+lease records whether the claim is active, stale, revoked, or fixture-only; what
+review triggers can expire it; which incidents force requalification; and what
+rollback obligations remain if the candidate fails.
+
+The route validator is intentionally narrower than the proposer. It checks
+field identity, leases, profiles, grants, state paths, composition certificates,
+route scope, permission effects, evaluator independence, and authority ceilings
+before a candidate becomes default. That is the control point that prevents a
+more capable implementation from quietly inheriting trust earned by a weaker
+one.
+
+## Interfaces
+
+Different layers see the same field through different faces.
+
+Planning sees a semantic capability boundary. It asks for a field, not for a
+random tool or model name.
+
+Execution sees authorized routes. It may invoke only the candidate and route
+that are valid for the field's current lifecycle state and authority envelope.
+
+Evidence sees qualification claims, regressions, incidents, readiness gates,
+and residuals. It records what was known when a candidate was promoted or
+rejected.
+
+Governance sees authority ceilings, evaluator policy, lifecycle transitions,
+appeals, incidents, review triggers, and recovery paths. It decides whether a
+field can broaden authority, change evaluator policy, or create a new version.
+
+A minimum field record needs stable identity and version fields, an owner,
+semantic boundary, interface contract, authority ceiling, implementation
+records, lifecycle state, qualification context and status, qualification lease
+and lease status, evaluator policy, evaluator independence, route validity,
+route scope, route permission effect, consumer policy, evidence references,
+readiness gate references, field-history references, incident references,
+review triggers, state-migration obligations, regression suite, rollback plan,
+rollback obligations, default-route blockers, source references, support-state
+effect, and non-claims.
+
+Those fields are not paperwork. They are the handles other stack layers need.
+Procedural memory can generate a new tool against a stable target. Benchmark
+ratchets can attach evidence to a named capability rather than to a vague sense
+of progress. Readiness gates can ask whether the qualification lease is fresh.
+Replacement transactions can compare authority deltas instead of assuming a
+new implementation inherits the old one's permission.
+
+## Invariants
+
+The first invariant is identity binding: replacing an implementation must not
+change the field's semantic boundary unless governance explicitly creates a new
+field or version.
+
+The second invariant is authority non-expansion: a replacement cannot gain
+broader authority merely because it is more capable. Authority belongs to the
+field and its governance record, not to the raw power of the candidate.
+
+The third invariant is evidence locality: qualification evidence belongs to a
+field, an implementation artifact, and a context together. Moving any one of
+those pieces should downgrade the route until requalification happens.
+
+The fourth invariant is rollback preservation: failed mutation should leave a
+known recovery path, residual record, and owner for cleanup.
+
+The fifth invariant is lease aging: qualification should expire, downgrade, or
+force review when its recorded triggers fire.
+
+The current Lean hooks model finite record-level versions of two of these
+ideas: an implementation may replace another only if it satisfies the field
+qualification predicate, and a replacement that expands authority without a
+governance grant is rejected. These are useful proof hooks, but they remain
+small formal envelopes over declared records. They are not deployed safety
+proofs.
+
+## Failure Modes
+
+Field identity drift is the central failure. The name stays stable while the
+behavior changes. A consuming layer still calls the same capability, but the
+capability now means something else.
+
+Evaluator capture is the qualification failure. A candidate influences the
+policy, test, metric, or review process that decides whether it is qualified.
+The system then appears to improve because the judge moved.
+
+Authority expansion is the governance failure. A stronger implementation
+inherits a route that was safe only for a narrower one.
+
+Orphaned regression memory is the quieter failure. The field accumulated
+incidents, tests, edge cases, and recovery knowledge over time, but the suite
+was stored with the old implementation. The new candidate passes a fresh demo
+while forgetting the history that made the old route trustworthy.
+
+Stale qualification is the time failure. Evidence that was honest in one epoch
+continues to authorize default use after the source corpus, threat model,
+hardware profile, benchmark regime, user population, or authority tier has
+changed.
+
+Provenance laundering is the artifact failure. A candidate carries a clean
+build or source trail and is therefore treated as qualified, even though
+provenance does not prove semantic identity, evaluator independence, route
+safety, or rollback readiness.
+
+## Minimum Viable Implementation
+
+The minimum viable SCF is not an autonomous replacement market. It is a public
+record schema plus fixtures that make field identity and qualification visible:
+one field, two candidate implementations, a preserved regression floor, a
+failed canary, an expired qualification lease, an incident-triggered review,
+and a rollback path.
+
+The existing `stable_capability_field` schema and synthetic harnesses point in
+that direction. They validate record discipline around qualification
+predicates, evidence references, readiness references, authority ceilings,
+route permission effects, evaluator independence, rollback obligations,
+default-route blockers, and non-claim boundaries. The readiness/residual gate
+harness also checks synthetic route-validity and rollback-readiness records.
+
+That is useful, but narrow. Schema validation proves record shape. Synthetic
+fixtures prove that local validators reject or accept the declared toy records.
+They do not prove that a deployed route validator works, that evaluator
+integrity is enforced in a live system, that authority is actually contained,
+that rollback would execute under pressure, or that source-reported MoECOT
+runtime behavior has been reproduced.
+
+## Beyond the State of the Art
+
+The mature version is a capability-identity and replacement market. In that
+system, implementations can improve, split, merge, retire, migrate, or roll
+back while the consuming stack keeps knowing which capability is qualified,
+under what authority, with which evidence, residuals, and recovery obligations.
+
+In the mature endpoint, a replacement candidate would not become default
+because it looks better in a demo. It would carry artifact identity, provenance,
+field-version compatibility, scoped qualification evidence, evaluator
+independence, authority-delta analysis, regression history, lifecycle state,
+incident response, readiness gates, and rollback ownership. The field would
+preserve the trust contract while the implementation changes.
+
+That endpoint is still an architecture target. The current book records the
+shape of the target and a small set of schemas, fixtures, and Lean hooks. It
+does not claim a deployed replacement market, object-capability security
+implementation, SemVer checker, SLSA workflow, route validator, evaluator
+integrity system, rollback runtime, or MoECOT benchmark reproduction.
+
+## Summary
+
+Stable Capability Fields are upgrade sockets for governed intelligence. They
+let a system improve the machinery behind a capability without losing the
+capability's identity, authority ceiling, evidence history, evaluator policy,
+regression memory, lifecycle state, or rollback obligations.
+
+The chapter's practical lesson is simple: do not let replacement travel by name
+alone. A capability should be replaced only when the field can still say what
+remained true, what changed, who authorized the change, what evidence qualified
+the candidate, what authority it received, what regressions it inherited, and
+how to recover if it fails.
+
+## Handoff
+
+Stable fields define what must remain true across implementation changes.
+Capability Replacement and Rollback defines how a candidate earns the right to
+replace the current implementation. Durable identity becomes a transaction:
+qualification evidence, regression floors, residual escrow, monitor windows,
+rollback ownership, and authority deltas decide whether improvement can become
+a governed state change.
