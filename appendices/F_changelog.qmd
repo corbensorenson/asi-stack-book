@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - Verification review consolidation package
+
+- Added `docs/chapter_consolidation_dry_run_verification_review.md` and
+  `docs/chapter_consolidation_destination_draft_verification_review.md` to make
+  the verification/adversarial-review Tier 2A consolidation candidate
+  review-ready.
+- The package proposes keeping `spinoza-verification-and-proof-carrying-claims`
+  as the continuity ID, folding
+  `unified-adaptive-tribunal-and-adversarial-review` as preserved tribunal and
+  adversarial-review subclaims, and keeping
+  `claim-ledgers-and-belief-revision` standalone as the durable claim substrate.
+- Updated the v1.x roadmap, consolidation sequence, README, publication
+  readiness, repository map, and consolidation validator so the
+  verification/adversarial-review cluster is `review_ready`, while still
+  requiring review and an execute, revise, defer, or reject decision before any
+  manifest edit.
+- This does not edit `book_structure.json`, merge chapters, change Appendix C,
+  create source/proof/test evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Static context ABI consolidation review package
 
 - Added `docs/chapter_consolidation_dry_run_context_abi.md` and

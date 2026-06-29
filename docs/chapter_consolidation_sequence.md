@@ -119,7 +119,7 @@ Use this rubric before any non-pilot consolidation package:
 | Compression and residual honesty | `review_ready` | Review the destination draft and decide execute full merge, execute conservative merge, revise, defer, or reject. | Avoid curated graduation of the source cluster unless explicitly deferred or retained. |
 | Intent and executable contracts | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` reader work local until the contract boundary is clear. |
 | Static context ABI | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the static ABI pair unless explicitly deferred or retained; reader curation may continue on protected adjacent chapters. |
-| Verification and adversarial review | `planned_candidate` | Build a dry-run package that keeps claim ledgers separate. | Avoid merging review vocabulary into claim-ledger prose prematurely. |
+| Verification and adversarial review | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the verification/review pair unless explicitly deferred or retained; reader curation may continue on claim ledgers. |
 | Planning and DAG control | `planned_candidate` | Build a dry-run package that keeps semantic IR separate unless evidence says otherwise. | Reader curation may continue on non-overlapping planning chapters. |
 | Source-blocked MoECOT runtime | `fold_review_candidate` | Decide whether to fold as a named routing-runtime section until source mining catches up. | Do not promote MoECOT runtime as standalone reader material while source-blocked. |
 | Simulation fidelity | `fold_review_candidate` | Decide whether the feasibility-bound argument belongs in resource economics or the efficient-ASI frame. | Preserve physical-constraint caveats if folded. |
@@ -252,6 +252,16 @@ path. The current allowed pilot-reader set remains:
   Cells, and Certificates**. It is review-ready but not reviewed, not
   canonical, and not a manifest edit. The next decision is execute, revise,
   defer, or reject.
+- `docs/chapter_consolidation_dry_run_verification_review.md` records the Tier
+  2A dry-run package for the verification and adversarial-review cluster. It
+  does not edit `book_structure.json`, authorize a manifest merge, or move
+  support states. It keeps `claim-ledgers-and-belief-revision` standalone as
+  the durable claim identity, support-state, contradiction, uncertainty, and
+  revision-history substrate.
+- `docs/chapter_consolidation_destination_draft_verification_review.md` records
+  the one-skeleton destination draft for **Proof-Carrying Claims and
+  Adversarial Review**. It is review-ready but not reviewed, not canonical, and
+  not a manifest edit. The next decision is execute, revise, defer, or reject.
 
 ## Non-Claims
 

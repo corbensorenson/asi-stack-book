@@ -14,6 +14,8 @@ INTENT_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_intent_contracts
 INTENT_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_intent_contracts.md"
 CONTEXT_ABI_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_context_abi.md"
 CONTEXT_ABI_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_context_abi.md"
+VERIFICATION_REVIEW_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_verification_review.md"
+VERIFICATION_REVIEW_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_verification_review.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -89,6 +91,7 @@ REQUIRED_FRAGMENTS = (
     "Compression and residual honesty | `review_ready`",
     "Intent and executable contracts | `review_ready`",
     "Static context ABI | `review_ready`",
+    "Verification and adversarial review | `review_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -371,6 +374,105 @@ CONTEXT_ABI_REQUIRED_FIXTURE_FRAGMENTS = {
     "python3 scripts/validate_context_admission_adequacy.py",
 }
 
+VERIFICATION_REVIEW_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Dry Run: Verification And Adversarial Review",
+    "does not edit `book_structure.json`",
+    "Proof-Carrying Claims and Adversarial Review",
+    "claim-ledgers-and-belief-revision",
+    "Proposed `book_structure.json` Diff",
+    "Destination Section Outline",
+    "Appendix C Row Plan",
+    "Source Union",
+    "External-source union",
+    "Lean Module And Proof-Manifest Treatment",
+    "Tests, Schemas, And Fixtures",
+    "Reader Path, Handoff, And Review Repairs",
+    "Repetition-Removal Ledger",
+    "No support state changes",
+    "No new result is created by this dry run",
+)
+
+VERIFICATION_REVIEW_DRAFT_REQUIRED_FRAGMENTS = (
+    "Consolidation Destination Draft: Proof-Carrying Claims and Adversarial Review",
+    "Status: review-ready draft; human/external review not completed.",
+    "does not edit `book_structure.json`",
+    "Destination continuity ID: `spinoza-verification-and-proof-carrying-claims`",
+    "Proposed displayed title: **Proof-Carrying Claims and Adversarial Review**",
+    "Preservation Ledger",
+    "Destination Chapter Draft",
+    "Chapter status",
+    "Drafting guardrail",
+    "Human Reading Path",
+    "Problem",
+    "Why existing approaches are insufficient",
+    "Core Claim",
+    "Mechanism",
+    "Minimum Viable Implementation",
+    "Beyond the State of the Art",
+    "Codex test plan",
+    "Formalization hooks",
+    "Source crosswalk",
+    "Repetition-removal ledger",
+    "Review Decision Surface",
+    "No chapter core claim is promoted above `argument`",
+    "This draft does not merge chapters.",
+    "This draft does not change Appendix C support states.",
+)
+
+VERIFICATION_REVIEW_REQUIRED_IDS = {
+    "spinoza-verification-and-proof-carrying-claims",
+    "unified-adaptive-tribunal-and-adversarial-review",
+    "claim-ledgers-and-belief-revision",
+}
+
+VERIFICATION_REVIEW_REQUIRED_SOURCE_IDS = {
+    "spinoza",
+    "genesiscode",
+    "coherence_exchange",
+    "verification_bandwidth",
+    "treellm",
+    "uat",
+    "talos",
+}
+
+VERIFICATION_REVIEW_REQUIRED_EXTERNAL_IDS = {
+    "ext_lean4_theorem_proving",
+    "ext_proof_carrying_code_1997",
+    "ext_contestable_ai_design_2022",
+}
+
+VERIFICATION_REVIEW_REQUIRED_LEAN_TAGS = {
+    "lean:spinoza.proof_carrying.operational_invariant",
+    "lean:spinoza.proof_carrying.failure_blocks_promotion",
+    "lean:tribunal.review.operational_invariant",
+    "lean:tribunal.review.failure_blocks_promotion",
+}
+
+VERIFICATION_REVIEW_REQUIRED_FIXTURE_FRAGMENTS = {
+    "schemas/proof_carrying_claim.schema.json",
+    "schemas/tribunal_review_record.schema.json",
+    "schemas/claim_record.schema.json",
+    "schemas/belief_revision_record.schema.json",
+    "experiments/proof_carrying_claims/fixtures/valid_formal_narrow_pass.json",
+    "experiments/proof_carrying_claims/fixtures/valid_citation_dossier_no_change.json",
+    "experiments/proof_carrying_claims/fixtures/valid_mismatch_escalates.json",
+    "experiments/proof_carrying_claims/fixtures/invalid_pass_missing_artifact_refs.json",
+    "experiments/proof_carrying_claims/fixtures/invalid_mismatch_promotes.json",
+    "experiments/proof_carrying_claims/fixtures/invalid_formal_tier_wrong_justification.json",
+    "experiments/proof_carrying_claims/fixtures/invalid_timeout_overpromotes_support.json",
+    "experiments/proof_carrying_claims/fixtures/invalid_negative_missing_failed_attempt.json",
+    "experiments/tribunal_review/fixtures/valid_accept_with_scope_constraints.json",
+    "experiments/tribunal_review/fixtures/valid_block_unchanged_evidence.json",
+    "experiments/tribunal_review/fixtures/valid_high_risk_revise_with_dissent.json",
+    "experiments/tribunal_review/fixtures/invalid_accept_missing_evidence.json",
+    "experiments/tribunal_review/fixtures/invalid_high_risk_no_probes.json",
+    "experiments/tribunal_review/fixtures/invalid_prior_review_laundering.json",
+    "experiments/tribunal_review/fixtures/invalid_dissent_without_unresolved_issue.json",
+    "experiments/tribunal_review/fixtures/invalid_weak_non_claims.json",
+    "python3 scripts/validate_proof_carrying_claims.py",
+    "python3 scripts/validate_tribunal_review.py",
+}
+
 REQUIRED_DESTINATIONS = (
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
@@ -389,6 +491,8 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_destination_draft_intent_contracts.md",
     "docs/chapter_consolidation_dry_run_context_abi.md",
     "docs/chapter_consolidation_destination_draft_context_abi.md",
+    "docs/chapter_consolidation_dry_run_verification_review.md",
+    "docs/chapter_consolidation_destination_draft_verification_review.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -618,6 +722,70 @@ def main() -> None:
     for fragment in sorted(CONTEXT_ABI_REQUIRED_FIXTURE_FRAGMENTS):
         if f"`{fragment}`" not in context_abi_draft:
             errors.append(f"Static context ABI destination draft missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        verification_review = read_text(VERIFICATION_REVIEW_DRY_RUN)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_dry_run_verification_review.md")
+        verification_review = ""
+
+    for fragment in VERIFICATION_REVIEW_REQUIRED_FRAGMENTS:
+        if fragment not in verification_review:
+            errors.append(f"Verification/review dry run missing required boundary: {fragment}")
+
+    for chapter_id in sorted(VERIFICATION_REVIEW_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Verification/review chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in verification_review:
+            errors.append(f"Verification/review dry run does not mention `{chapter_id}`.")
+
+    for source_id in sorted(VERIFICATION_REVIEW_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in verification_review:
+            errors.append(f"Verification/review dry run missing source ID `{source_id}`.")
+
+    for source_id in sorted(VERIFICATION_REVIEW_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in verification_review:
+            errors.append(f"Verification/review dry run missing external source ID `{source_id}`.")
+
+    for tag in sorted(VERIFICATION_REVIEW_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in verification_review:
+            errors.append(f"Verification/review dry run missing Lean tag `{tag}`.")
+
+    for fragment in sorted(VERIFICATION_REVIEW_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in verification_review:
+            errors.append(f"Verification/review dry run missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        verification_review_draft = read_text(VERIFICATION_REVIEW_DESTINATION_DRAFT)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_destination_draft_verification_review.md")
+        verification_review_draft = ""
+
+    for fragment in VERIFICATION_REVIEW_DRAFT_REQUIRED_FRAGMENTS:
+        if fragment not in verification_review_draft:
+            errors.append(f"Verification/review destination draft missing required boundary: {fragment}")
+
+    for chapter_id in sorted(VERIFICATION_REVIEW_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Verification/review destination chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in verification_review_draft:
+            errors.append(f"Verification/review destination draft does not mention `{chapter_id}`.")
+
+    for source_id in sorted(VERIFICATION_REVIEW_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in verification_review_draft:
+            errors.append(f"Verification/review destination draft missing source ID `{source_id}`.")
+
+    for source_id in sorted(VERIFICATION_REVIEW_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in verification_review_draft:
+            errors.append(f"Verification/review destination draft missing external source ID `{source_id}`.")
+
+    for tag in sorted(VERIFICATION_REVIEW_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in verification_review_draft:
+            errors.append(f"Verification/review destination draft missing Lean tag `{tag}`.")
+
+    for fragment in sorted(VERIFICATION_REVIEW_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in verification_review_draft:
+            errors.append(f"Verification/review destination draft missing fixture, schema, or validator `{fragment}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)

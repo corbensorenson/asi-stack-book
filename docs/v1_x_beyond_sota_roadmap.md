@@ -757,9 +757,9 @@ Follow-up review outcome:
 - The Part I pilot is now `review_ready`, meaning destination drafts exist but
   require an execute, revise, defer, or reject decision plus URL/redirect policy
   before any canonical chapter identity changes.
-- Compression, intent/contracts, and static context ABI now have dry-run
-  packages and one-skeleton destination drafts but remain unmerged.
-  Verification, planning,
+- Compression, intent/contracts, static context ABI, and
+  verification/adversarial review now have dry-run packages and one-skeleton
+  destination drafts but remain unmerged. Planning,
   MoECOT, simulation-fidelity, and semantic representation should each receive
   a dry-run package and destination or fold disposition before reader curation
   or manifest edits depend on them.
@@ -974,8 +974,9 @@ Current status:
   future manifest edit.
 - The sequence now records consolidation states so candidates cannot jump from
   "interesting idea" to manifest change: the Part I pilot is `review_ready`,
-  compression, intent/contracts, and static context ABI are `review_ready`, the
-  remaining non-packaged merge clusters are `planned_candidate`, the MoECOT,
+  compression, intent/contracts, static context ABI, and
+  verification/adversarial review are `review_ready`, the remaining
+  non-packaged merge clusters are `planned_candidate`, the MoECOT,
   simulation-fidelity, and
   semantic-representation candidates are `fold_review_candidate`, and
   runtime-adapters/Labor OS is retained unless a later evidence review finds
@@ -1061,6 +1062,18 @@ Current status:
   Pages, Cells, and Certificates**. It is intentionally not marked reviewed:
   manifest consolidation remains blocked until review accepts, revises, defers,
   or rejects the merge.
+- `docs/chapter_consolidation_dry_run_verification_review.md` records the Tier
+  2A dry-run package for **Proof-Carrying Claims and Adversarial Review**. It
+  proposes keeping `spinoza-verification-and-proof-carrying-claims` as the
+  continuity ID, folding
+  `unified-adaptive-tribunal-and-adversarial-review` as preserved tribunal and
+  adversarial-review subclaims, and keeping
+  `claim-ledgers-and-belief-revision` standalone as the durable claim substrate.
+- `docs/chapter_consolidation_destination_draft_verification_review.md` now
+  records the review-ready destination draft for **Proof-Carrying Claims and
+  Adversarial Review**. It is intentionally not marked reviewed: manifest
+  consolidation remains blocked until review accepts, revises, defers, or
+  rejects the merge.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
   defer manifest consolidation until human or external review and a public
   URL/redirect policy unblock it, proceed with human-reader curation outside
@@ -1099,10 +1112,13 @@ Current status:
   execute, revise, defer, or reject decision. The static context ABI candidate
   should not be merged from the roadmap table, dry-run package, or destination
   draft alone. It still needs review and an execute, revise, defer, or reject
-  decision. The verification, planning, MoECOT, simulation-fidelity, and
-  semantic-representation candidates still need their own dry-run package,
-  claim/source/proof/reader reconciliation, and reviewed destination-chapter
-  draft or fold disposition before any `book_structure.json` change.
+  decision. The verification/adversarial-review candidate should not be merged
+  from the roadmap table, dry-run package, or destination draft alone. It still
+  needs review and an execute, revise, defer, or reject decision. The planning,
+  MoECOT, simulation-fidelity, and semantic-representation candidates still
+  need their own dry-run package, claim/source/proof/reader reconciliation, and
+  reviewed destination-chapter draft or fold disposition before any
+  `book_structure.json` change.
 - No manifest merge has been performed yet, and no chapter count reduction is
   claimed.
 
