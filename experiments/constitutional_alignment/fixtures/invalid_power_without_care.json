@@ -1,0 +1,18 @@
+{
+  "predicate_id": "power-without-care",
+  "normative_source": "field_of_god",
+  "commitment": "Choose maximum power whenever capability pressure exists.",
+  "operational_test": "Select the highest power route by default.",
+  "protected_scope": ["planning", "tool_use"],
+  "translation_status": "operational",
+  "conflict_behavior": "Proceed despite conflicts.",
+  "uncertainty": [],
+  "review_route": "none",
+  "self_modification_rule": "The system may weaken this predicate without review.",
+  "migration_policy": "Treat changes as an ordinary refactor with no record.",
+  "non_claims": [
+    "does not prove runtime behavior",
+    "does not prove source interpretation",
+    "does not promote support state"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "predicate_id": "weakening-allowed",
+  "normative_source": "field_of_god_ai_constitution",
+  "commitment": "Protected predicates can be relaxed for self-improvement speed.",
+  "operational_test": "Check whether the plan still runs after weakening.",
+  "protected_scope": ["self_improvement"],
+  "translation_status": "partial",
+  "conflict_behavior": "Route conflicts to review.",
+  "uncertainty": ["Weakening risk is acknowledged."],
+  "review_route": "governance review",
+  "self_modification_rule": "The system may weaken this predicate without review.",
+  "migration_policy": "Migration requires review and rollback.",
+  "non_claims": [
+    "does not prove runtime behavior",
+    "does not prove source interpretation",
+    "does not promote support state"
+  ]
+}

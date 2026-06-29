@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Constitutional alignment harness
+
+- Added `scripts/validate_constitutional_alignment.py`, synthetic
+  constitutional-predicate fixtures under
+  `experiments/constitutional_alignment/`,
+  `docs/constitutional_alignment_harness.md`, and a tracked local result
+  record. The local run passes with 3 valid and 5 expected-invalid fixtures,
+  checking protected scope, operational tests, conflict routing, review routes,
+  self-modification weakening rules, migration policies,
+  least-sufficient-power behavior, uncertainty preservation, and non-claim
+  boundaries.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Constitutional Alignment chapter's
+  consistency, conflict-routing, migration, self-modification, and
+  power-without-care test rows, README, publication readiness, and v1.0
+  roadmap/status/focus surfaces. This is synthetic constitutional-predicate
+  record discipline only: it is not deployed constitutional alignment, moral
+  correctness, runtime policy behavior, source interpretation,
+  self-modification safety, predicate-translation adequacy, review quality,
+  reader-release approval, support-state promotion, proof adequacy, benchmark
+  evidence, or whole-system governance.
+
 ## 2026-06-28 - v1.0 Agency evidence transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/agency_corrigibility_no_change.json`

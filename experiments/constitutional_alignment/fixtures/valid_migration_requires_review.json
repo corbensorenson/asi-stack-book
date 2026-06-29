@@ -1,0 +1,18 @@
+{
+  "predicate_id": "protected-predicate-migration",
+  "normative_source": "ethica_mechanica",
+  "commitment": "Protected constitutional predicates cannot be changed as ordinary implementation refactors.",
+  "operational_test": "Require a migration diff, governance review, rollback path, and residual record before a protected predicate can change.",
+  "protected_scope": ["governance", "self_improvement", "release"],
+  "translation_status": "operational",
+  "conflict_behavior": "Deny the change or defer to review when the migration record is incomplete.",
+  "uncertainty": ["Migration review quality is not established by this fixture."],
+  "review_route": "governance review before protected predicate migration",
+  "self_modification_rule": "A self-modification must reject predicate weakening unless a governance review accepts the migration record.",
+  "migration_policy": "Every protected predicate migration requires a diff record, review route, rollback path, and residual note.",
+  "non_claims": [
+    "does not prove runtime self-modification safety",
+    "does not prove source interpretation adequacy",
+    "does not promote support state"
+  ]
+}

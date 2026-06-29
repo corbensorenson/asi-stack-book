@@ -1,0 +1,14 @@
+{
+  "predicate_id": "missing-nonclaims",
+  "normative_source": "spinoza",
+  "commitment": "Predicate records need explicit non-claim boundaries.",
+  "operational_test": "Check admitted plans against active predicates.",
+  "protected_scope": ["verification"],
+  "translation_status": "partial",
+  "conflict_behavior": "Route conflicts to review.",
+  "uncertainty": ["Semantic adequacy is unresolved."],
+  "review_route": "human review",
+  "self_modification_rule": "Cannot weaken without governance review.",
+  "migration_policy": "Migration requires review and rollback.",
+  "non_claims": ["fixture only"]
+}

@@ -1,0 +1,18 @@
+{
+  "predicate_id": "agency-conflict-review-route",
+  "normative_source": "alignment_field",
+  "commitment": "Agency and dignity constraints remain visible when they conflict with efficiency or capability pressure.",
+  "operational_test": "Check admitted plans for protected agency-scope conflicts and route unresolved conflicts to tribunal review before execution.",
+  "protected_scope": ["planning", "runtime_policy", "governance"],
+  "translation_status": "partial",
+  "conflict_behavior": "Block execution, preserve residual uncertainty, and route unresolved conflicts to review.",
+  "uncertainty": ["The record does not settle the underlying moral conflict."],
+  "review_route": "human or tribunal review for unresolved protected conflicts",
+  "self_modification_rule": "Self-modification cannot remove the review route or weaken agency conflict handling without governance review.",
+  "migration_policy": "Conflict-behavior changes require a migration diff, review record, and rollback path.",
+  "non_claims": [
+    "does not prove runtime policy behavior",
+    "does not prove source interpretation adequacy",
+    "does not promote support state"
+  ]
+}

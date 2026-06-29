@@ -527,11 +527,11 @@ Draft deliverables:
 
 - A compact constitution with operational predicates, open moral uncertainties, and scenario tests.
 - Exact Appendix C claim-source mappings for the core claim across alignment lineage, metaphysical variants, reasoning governance, connector synthesis, and the AI Constitution source; six mappings (`alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending constitutional consistency, predicate-conflict routing, constitutional migration, self-modification ethics, power-without-care, runtime policy, or red-team evidence.
-- Planned Codex test: Constitutional consistency test.
-- Planned Codex test: Predicate-conflict routing test.
-- Planned Codex test: Constitutional migration test.
-- Planned Codex test: Self-modification ethics scenario.
-- Planned Codex test: Power-without-care scenario.
+- Implemented synthetic Codex test: Constitutional consistency test via `python3 scripts/validate_constitutional_alignment.py`; deployed constitutional alignment and moral correctness remain open.
+- Implemented synthetic Codex test: Predicate-conflict routing test via `python3 scripts/validate_constitutional_alignment.py`; runtime conflict resolution and review quality remain open.
+- Implemented synthetic Codex test: Constitutional migration test via `python3 scripts/validate_constitutional_alignment.py`; deployed migration and rollback behavior remain open.
+- Implemented synthetic Codex test: Self-modification ethics scenario via `python3 scripts/validate_constitutional_alignment.py`; self-modification safety and predicate-translation adequacy remain open.
+- Implemented synthetic Codex test: Power-without-care scenario via `python3 scripts/validate_constitutional_alignment.py`; runtime least-sufficient-power enforcement remains open.
 
 Lean proof targets:
 

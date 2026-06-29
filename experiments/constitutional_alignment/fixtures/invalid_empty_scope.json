@@ -1,0 +1,18 @@
+{
+  "predicate_id": "scope-missing",
+  "normative_source": "alignment_field",
+  "commitment": "A predicate has no explicit protected scope.",
+  "operational_test": "Check plan text before execution.",
+  "protected_scope": [],
+  "translation_status": "partial",
+  "conflict_behavior": "Route conflicts to review.",
+  "uncertainty": ["Scope is missing."],
+  "review_route": "human review",
+  "self_modification_rule": "Cannot weaken without governance review.",
+  "migration_policy": "Migration requires review and rollback.",
+  "non_claims": [
+    "does not prove runtime behavior",
+    "does not prove source interpretation",
+    "does not promote support state"
+  ]
+}

@@ -1212,9 +1212,31 @@
           "minimal_implementation": "A compact constitution with operational predicates, open moral uncertainties, and scenario tests.",
           "beyond_state_of_art": "A real constitutional layer acts as a constraint compiler for plans, tools, memory, routing, and self-improvement. It turns high-level commitments into inspectable predicates, review hooks, exception records, and downgrade paths without pretending that the constitution itself settles the alignment problem. In the mature substrate, constitutional commitments become constraints on plans, tools, routes, memory exposure, replacement, and self-improvement while their interpretation limits remain visible.",
           "codex_tests": [
-            "Constitutional consistency test",
-            "Self-modification ethics scenario",
-            "Power-without-care scenario"
+            {
+              "name": "Constitutional consistency test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic constitutional alignment harness; no deployed constitutional-alignment or moral-correctness claim"
+            },
+            {
+              "name": "Predicate-conflict routing test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic constitutional alignment harness; no runtime conflict-resolution or review-quality claim"
+            },
+            {
+              "name": "Constitutional migration test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic constitutional alignment harness; no deployed migration or rollback behavior claim"
+            },
+            {
+              "name": "Self-modification ethics scenario",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic constitutional alignment harness; no self-modification safety or predicate-translation adequacy claim"
+            },
+            {
+              "name": "Power-without-care scenario",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic constitutional alignment harness; no runtime least-sufficient-power enforcement claim"
+            }
           ],
           "lean_module": "AsiStackProofs.Alignment",
           "proof_targets": [

@@ -92,6 +92,29 @@
     ]
   },
   {
+    "id": "constitutional_alignment",
+    "name": "Constitutional alignment harness",
+    "command": "python3 scripts/validate_constitutional_alignment.py",
+    "script": "scripts/validate_constitutional_alignment.py",
+    "doc": "docs/constitutional_alignment_harness.md",
+    "experiment_dir": "experiments/constitutional_alignment",
+    "fixture_dir": "experiments/constitutional_alignment/fixtures",
+    "result_record": "experiments/constitutional_alignment/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Constitutional alignment harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "constitutional-alignment-substrate",
+      "moral-uncertainty-and-value-conflict",
+      "agency-dignity-and-corrigibility",
+      "recursive-self-improvement-boundaries"
+    ],
+    "non_claims": [
+      "Does not prove deployed constitutional alignment, moral correctness, runtime policy behavior, source interpretation, self-modification safety, predicate-translation adequacy, or review quality.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "governance_rights",
     "name": "Governance rights harness",
     "command": "python3 scripts/validate_governance_rights.py",
