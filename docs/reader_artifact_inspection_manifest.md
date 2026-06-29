@@ -33,11 +33,12 @@ python3 scripts/inspect_reader_format_artifacts.py
 
 ## Release Blockers Preserved
 
-- `reader_release_record_not_created`
 - `full_format_artifact_review_not_completed`
 - `app_or_ereader_review_not_completed` for EPUB; EPUB has a separate
   metadata/source-spine probe and DOCX has a separate representative
   LibreOffice conversion probe
+- `release_records/2026-06-29-v1-reader-html-855dc277.json` approves only the
+  separately reviewed local HTML snapshot, not EPUB or DOCX
 
 ## Non-Claims
 

@@ -1,0 +1,115 @@
+{
+  "record_type": "edition_release",
+  "release_id": "2026-06-29-v1-reader-html-855dc277",
+  "major_version": "v1.0",
+  "source_commit": "855dc277a6990bd3e98ab1eb5d363986a563f5dd",
+  "source_tag": "v1.0.0-reader-html-source",
+  "edition_profile": "reader_release",
+  "primary_audiences": [
+    "interested_humans"
+  ],
+  "derivation_source": "Generated from the canonical live-book source using `python3 scripts/render_reader_formats.py --formats html epub docx` after source commit 855dc277a6990bd3e98ab1eb5d363986a563f5dd. The approved artifact is the local generated reader HTML snapshot only.",
+  "artifact_formats": [
+    {
+      "format": "html",
+      "status": "reviewed",
+      "command_or_tool": "python3 scripts/render_reader_formats.py --formats html epub docx; python3 scripts/inspect_reader_format_artifacts.py; node scripts/validate_reader_html_artifact_browser.js --strict",
+      "path_or_uri": "build/reader_edition/format_artifacts/html/_reader_site",
+      "notes": "Reviewed local ignored reader HTML snapshot with deterministic directory digest f2b98bdb82c1c42cfe7d8bc85e63ce5ed06b45d29c8023d4948cd039599a4dfa over 81 files. Browser review opened 59 generated pages at desktop and mobile widths for 118 page-view pairs with 0 failures."
+    },
+    {
+      "format": "epub",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_reader_formats.py --formats html epub docx; python3 scripts/inspect_reader_format_artifacts.py",
+      "path_or_uri": "build/reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+      "notes": "Rendered and structurally inspected only. EPUB is not release-approved because e-reader application review remains open."
+    },
+    {
+      "format": "docx",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_reader_formats.py --formats html epub docx; python3 scripts/inspect_reader_format_artifacts.py",
+      "path_or_uri": "build/reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+      "notes": "Rendered and structurally inspected only. DOCX is not release-approved because full Word, LibreOffice GUI, or Google Docs application review remains open."
+    },
+    {
+      "format": "pdf",
+      "status": "pending",
+      "command_or_tool": "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --output build/reader_edition_pdf_probe_utf8 --formats pdf",
+      "path_or_uri": "build/reader_edition_pdf_probe_utf8/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
+      "notes": "PDF has a prior UTF-8 probe and representative spot checks, but full page-by-page layout review remains open and PDF is not release-approved."
+    },
+    {
+      "format": "audio",
+      "status": "not_attempted",
+      "command_or_tool": "not run",
+      "path_or_uri": "",
+      "notes": "Audio is deferred to v1.x and is not part of this reader HTML release record."
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/render_reader_formats.py --formats html epub docx",
+    "python3 scripts/inspect_reader_format_artifacts.py",
+    "node scripts/validate_reader_html_artifact_browser.js --strict",
+    "python3 scripts/sync_reader_format_review_matrix.py --check",
+    "python3 scripts/validate_reader_artifact_inspection_manifest.py",
+    "python3 scripts/validate_reader_spine.py --check",
+    "python3 scripts/validate_reader_evidence_boundaries.py --check",
+    "python3 scripts/validate_live_human_view.py",
+    "node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports"
+  ],
+  "validation_status": "pass",
+  "review_status": {
+    "reader_continuity_review": "pass",
+    "source_scaffold_removed": "pass",
+    "audio_script_review": "not_required",
+    "notes": "Generated reader chapter-text review is complete for all 54 chapters, the reader continuity audit has 0 high-priority rows, the reader spine validator passes, and the HTML browser artifact review passed all pages and viewports. Audio was not reviewed or released."
+  },
+  "reader_manuscript": {
+    "source_dir": "build/reader_edition",
+    "status": "reviewed",
+    "review_notes": "Generated reader source has 54 chapter files plus front matter and selected appendices. The HTML artifact derived from it passed structural and browser artifact review; curated reader manuscript graduation remains deferred."
+  },
+  "audio_package": {
+    "script_dir": "not_applicable_for_reader_html_release",
+    "status": "not_required",
+    "review_notes": "No audio package is produced or approved by this reader HTML release record."
+  },
+  "companion_material": {
+    "path_or_uri": "build/reader_edition/companion_notes.md",
+    "status": "reviewed",
+    "review_notes": "Companion-note routing is tracked for dense proof/governance chapters, but companion notes are not released as a separate artifact here and do not replace meaning-critical prose in the reader spine."
+  },
+  "human_consumption_gate": {
+    "reader_spine_review": "pass",
+    "ebook_layout_review": "pass",
+    "diagram_image_review": "pass",
+    "bedtime_readability_review": "pass",
+    "companion_notes_status": "pass",
+    "notes": "The approved human-consumption artifact for this record is generated reader HTML only. HTML received full local browser review across all generated pages and viewports. EPUB remains preferred for future e-reader use but is not approved here."
+  },
+  "audiobook_gate": {
+    "script_review": "not_required",
+    "spoken_treatment_review": "not_required",
+    "chapter_marker_review": "not_required",
+    "audio_spot_check": "not_required",
+    "embedded_epub_check": "not_required",
+    "status": "not_required",
+    "notes": "Audiobook, MP3, M4B, and audio-embedded EPUB work is deferred and not released by this record."
+  },
+  "release_notes": "This record closes the v1.0 human-reader artifact gate for one reviewed local reader HTML artifact. It does not publish EPUB, DOCX, PDF, audio, or e-reader artifacts and does not change the live AI/research book's claim, source, proof, or evidence authority.",
+  "residuals": [
+    "The reviewed HTML artifact is a local ignored build snapshot, not a GitHub Pages deployment artifact.",
+    "EPUB remains rendered and structurally inspected only; e-reader application review remains open.",
+    "DOCX remains rendered and structurally inspected only; full Word, LibreOffice GUI, or Google Docs review remains open.",
+    "PDF remains a probe with representative spot checks; full page-by-page layout review remains open.",
+    "No audio artifact, audio script review, MP3, M4B, or audio-embedded EPUB is approved.",
+    "Curated parallel reader-manuscript graduation remains deferred to v1.x unless later promoted."
+  ],
+  "non_claims": [
+    "does not approve EPUB, DOCX, PDF, e-reader, audio, or audio-embedded EPUB artifacts",
+    "does not publish a reader artifact to GitHub Pages or an external archive",
+    "does not promote any chapter core claim above argument",
+    "does not prove ASI capability, model quality, deployment readiness, runtime safety, benchmark performance, or source interpretation",
+    "does not create a DOI, Zenodo archive, audiobook, or final print artifact"
+  ]
+}

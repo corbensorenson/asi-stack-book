@@ -87,12 +87,13 @@ Results:
   complete `_reader_site` tree, the broader HTML probe exercised 28 page-view
   pairs across 14 reader surfaces at desktop and mobile widths, with styles
   loaded and no page-level horizontal overflow at the inspected viewports.
-- `docs/reader_format_review_matrix.md` records the synced pre-release
-  format-review ledger: 4 format rows, 4 full-format-review blockers, 4
-  release-record blockers, 1 application/e-reader blocker, and 1 full-PDF-layout
-  blocker. HTML, DOCX, and PDF have representative spot checks only; EPUB has
-  a metadata/source-spine probe but remains blocked until application/e-reader
-  review happens.
+- `docs/reader_format_review_matrix.md` records the synced format-review
+  ledger: 4 format rows, the HTML row release-approved against
+  `release_records/2026-06-29-v1-reader-html-855dc277.json`, 3 remaining
+  full-format-review blockers, 1 application/e-reader blocker, and 1
+  full-PDF-layout blocker. EPUB has a metadata/source-spine probe but remains
+  blocked until application/e-reader review happens; DOCX and PDF remain
+  probe/spot-check artifacts only.
 - Audio script check passed for 59 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,

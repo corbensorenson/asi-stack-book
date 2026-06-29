@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Reader HTML edition release record
+
+- Added `release_records/2026-06-29-v1-reader-html-855dc277.json` for the
+  reviewed local generated reader HTML snapshot from source tag
+  `v1.0.0-reader-html-source`.
+- Updated `editions/reader_manuscript/v1_0/format_review_matrix.json` and
+  regenerated `docs/reader_format_review_matrix.md` so the HTML format row is
+  release-approved for that exact local artifact while EPUB, DOCX, PDF,
+  e-reader, audio, and audio-embedded EPUB artifacts remain unapproved.
+- Updated the README, publication-readiness note, repository map, HTML
+  browser-review note, release-preparation review, v1.0 focus audit, roadmap,
+  candidate status snapshot, and status validator to reflect the narrower
+  reader-release state.
+- This does not publish the HTML artifact to GitHub Pages or an external
+  archive, does not create a final v1.0 evidence-release tag or DOI, does not
+  approve EPUB/DOCX/PDF/e-reader/audio artifacts, and does not promote any
+  chapter core claim above `argument`.
+
 ## 2026-06-29 - Reader HTML artifact browser review
 
 - Added `scripts/validate_reader_html_artifact_browser.js` to exercise the

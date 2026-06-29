@@ -20,7 +20,7 @@ ALLOWED_RELEASE_RECORD_STATUS = {"not_created", "drafting", "created"}
 ALLOWED_RENDER_STATUS = {"not_attempted", "rendered_local", "probe_rendered_local", "failed"}
 ALLOWED_STRUCTURAL_STATUS = {"not_checked", "partial", "passed", "failed"}
 ALLOWED_MANUAL_STATUS = {"not_started", "in_progress", "representative_spot_check", "pass", "fail"}
-REQUIRED_BLOCKER_WHEN_NOT_APPROVED = "reader_release_record_not_created"
+RELEASE_RECORD_BLOCKER = "reader_release_record_not_created"
 FULL_REVIEW_BLOCKER = "full_format_artifact_review_not_completed"
 
 
@@ -133,11 +133,30 @@ def validate_matrix(matrix: dict[str, Any]) -> list[str]:
         for ref in require_string_list(owner, "evidence_refs", record.get("evidence_refs"), errors):
             validate_ref(f"{owner}.evidence_refs", ref, errors)
 
-        blockers = require_string_list(owner, "release_blockers", record.get("release_blockers"), errors)
+        raw_blockers = record.get("release_blockers")
+        if not isinstance(raw_blockers, list):
+            errors.append(f"{owner}: release_blockers must be a list.")
+            blockers = []
+        elif record.get("release_approved") is False and not raw_blockers:
+            errors.append(f"{owner}: unapproved format must have at least one release_blocker.")
+            blockers = []
+        else:
+            blockers = []
+            for blocker in raw_blockers:
+                if not isinstance(blocker, str) or not blocker.strip():
+                    errors.append(f"{owner}: release_blockers entries must be non-empty strings.")
+                else:
+                    blockers.append(blocker)
         for blocker in blockers:
             blocker_counts[blocker] += 1
-        if record.get("release_approved") is False and REQUIRED_BLOCKER_WHEN_NOT_APPROVED not in blockers:
-            errors.append(f"{owner}: unapproved format missing blocker {REQUIRED_BLOCKER_WHEN_NOT_APPROVED!r}.")
+        if (
+            matrix.get("release_record_status") != "created"
+            and record.get("release_approved") is False
+            and RELEASE_RECORD_BLOCKER not in blockers
+        ):
+            errors.append(f"{owner}: unapproved format missing blocker {RELEASE_RECORD_BLOCKER!r}.")
+        if matrix.get("release_record_status") == "created" and RELEASE_RECORD_BLOCKER in blockers:
+            errors.append(f"{owner}: release record exists, so blocker {RELEASE_RECORD_BLOCKER!r} should be removed.")
         full_review_passed = (
             record.get("render_status") in {"rendered_local", "probe_rendered_local"}
             and record.get("structural_inspection_status") == "passed"
@@ -178,7 +197,7 @@ def markdown_table(matrix: dict[str, Any]) -> str:
         "",
         f"Last updated: {matrix.get('last_updated', '')}",
         "",
-        "This generated summary is synced from `editions/reader_manuscript/v1_0/format_review_matrix.json`. It records local reader-format review evidence and blockers. It is not an edition release record, not artifact approval, and not a support-state promotion.",
+        "This generated summary is synced from `editions/reader_manuscript/v1_0/format_review_matrix.json`. It records local reader-format review evidence and blockers. It is not itself an edition release record, artifact approval, or support-state promotion.",
         "",
         "## Counts",
         "",

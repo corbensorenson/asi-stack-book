@@ -76,16 +76,19 @@ for this snapshot. The HTML format row may therefore move from
 `representative_spot_check` to `pass` and may drop the
 `full_format_artifact_review_not_completed` blocker.
 
-The HTML artifact is still not release-approved because no tagged edition
-release record names this exact artifact. The remaining HTML blocker is
-`reader_release_record_not_created`.
+The exact local HTML artifact is now named in
+`release_records/2026-06-29-v1-reader-html-855dc277.json` from source tag
+`v1.0.0-reader-html-source`. That separate edition release record, not this
+review note by itself, clears the HTML release-record blocker for the local
+ignored HTML snapshot only.
 
 ## Residuals
 
-- The reviewed artifact is a local ignored build snapshot, not a published
-  release asset.
-- No `source_tag` or final v1.0 edition release record exists for this
-  artifact.
+- The reviewed artifact is a local ignored build snapshot, not a GitHub Pages
+  deployment artifact or external archive asset.
+- The source tag and edition release record approve only the generated reader
+  HTML snapshot; they do not approve EPUB, DOCX, PDF, e-reader, audio, or
+  audio-embedded EPUB artifacts.
 - This review does not approve EPUB, DOCX, PDF, e-reader conversion, audio, or
   audio-embedded EPUB artifacts.
 - This review does not replace human editorial judgment about prose quality.

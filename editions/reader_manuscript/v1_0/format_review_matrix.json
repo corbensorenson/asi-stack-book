@@ -12,15 +12,15 @@
     "docs/reader_pdf_probe_manifest.md",
     "docs/reader_artifact_layout_review.md",
     "docs/reader_html_artifact_browser_review.md",
-    "docs/reader_chapter_review_matrix.md"
+    "docs/reader_chapter_review_matrix.md",
+    "release_records/2026-06-29-v1-reader-html-855dc277.json"
   ],
-  "release_record_status": "not_created",
-  "release_record_path": "",
+  "release_record_status": "created",
+  "release_record_path": "release_records/2026-06-29-v1-reader-html-855dc277.json",
   "release_blocker_counts": {
     "app_or_ereader_review_not_completed": 1,
     "full_format_artifact_review_not_completed": 3,
-    "full_pdf_layout_review_not_completed": 1,
-    "reader_release_record_not_created": 4
+    "full_pdf_layout_review_not_completed": 1
   },
   "records": [
     {
@@ -29,20 +29,19 @@
       "render_status": "rendered_local",
       "structural_inspection_status": "passed",
       "manual_layout_review_status": "pass",
-      "release_approved": false,
+      "release_approved": true,
       "evidence_refs": [
         "docs/reader_format_dry_run.md#structural-inspection",
         "docs/reader_artifact_inspection_manifest.md#inspection-summary",
         "docs/reader_artifact_layout_review.md#broader-html-navigation-and-layout-probe",
-        "docs/reader_html_artifact_browser_review.md#browser-sweep"
+        "docs/reader_html_artifact_browser_review.md#browser-sweep",
+        "release_records/2026-06-29-v1-reader-html-855dc277.json"
       ],
-      "release_blockers": [
-        "reader_release_record_not_created"
-      ],
-      "notes": "The fresh local HTML snapshot rendered, passed structural inspection, and passed full local browser artifact review across 118 page-view pairs covering all 59 generated reader HTML pages at desktop and mobile widths. It is still not release-approved because no tagged edition release record names this exact ignored artifact snapshot.",
+      "release_blockers": [],
+      "notes": "The fresh local HTML snapshot rendered, passed structural inspection, passed full local browser artifact review across 118 page-view pairs covering all 59 generated reader HTML pages at desktop and mobile widths, and is named in `release_records/2026-06-29-v1-reader-html-855dc277.json` with digest f2b98bdb82c1c42cfe7d8bc85e63ce5ed06b45d29c8023d4948cd039599a4dfa.",
       "non_claims": [
-        "This row is not a release record.",
-        "This row does not approve a published reader HTML artifact.",
+        "This row is not a release record; it points to the exact reader HTML release record.",
+        "This row does not approve EPUB, DOCX, PDF, e-reader, or audio artifacts.",
         "This row does not promote any claim support state."
       ]
     },
@@ -61,7 +60,6 @@
         "docs/reader_artifact_layout_review.md#residuals"
       ],
       "release_blockers": [
-        "reader_release_record_not_created",
         "full_format_artifact_review_not_completed",
         "app_or_ereader_review_not_completed"
       ],
@@ -86,7 +84,6 @@
         "docs/reader_artifact_layout_review.md#residuals"
       ],
       "release_blockers": [
-        "reader_release_record_not_created",
         "full_format_artifact_review_not_completed"
       ],
       "notes": "The DOCX snapshot rendered, passed container, document XML, media, title, and compact evidence-boundary structural checks, then converted through the documents skill render_docx.py path via headless LibreOffice into a 514-page, 8,190,162-byte probe PDF. Representative pages 1, 25, 447, 472, 474, and 514 were visually sampled, including source-card appendix pages. This is not a full DOCX application review in Word, LibreOffice GUI, or Google Docs and does not approve the DOCX for publication.",
@@ -109,7 +106,6 @@
         "docs/reader_artifact_layout_review.md#pdf-spot-check"
       ],
       "release_blockers": [
-        "reader_release_record_not_created",
         "full_format_artifact_review_not_completed",
         "full_pdf_layout_review_not_completed"
       ],
@@ -124,7 +120,7 @@
   "release_rule": "No reader HTML, EPUB, DOCX, PDF, e-reader conversion, audio, or audio-embedded EPUB artifact is release-approved until the relevant format row has no release blockers and an edition release record names the exact reviewed artifact.",
   "non_claims": [
     "This matrix is a pre-release format-review ledger, not an edition release record.",
-    "This matrix does not publish or approve reader artifacts.",
+    "This matrix does not publish reader artifacts and does not independently approve artifacts outside referenced edition release records.",
     "This matrix does not promote any claim support state.",
     "This matrix does not supersede the live AI/research book for claims, source boundaries, proof/test status, implementation horizons, or release records."
   ]

@@ -18,7 +18,6 @@ REQUIRED_COMMANDS = {
     "python3 scripts/inspect_reader_format_artifacts.py",
 }
 REQUIRED_BLOCKERS = {
-    "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
 }
 
@@ -194,7 +193,7 @@ def validate_summary(manifest: dict[str, Any], errors: list[str]) -> None:
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
         "language `en-US`",
-        "reader_release_record_not_created",
+        "release_records/2026-06-29-v1-reader-html-855dc277.json",
         "full_format_artifact_review_not_completed",
         "This manifest is not a reader release",
         "does not promote any claim support state",

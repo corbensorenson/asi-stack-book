@@ -19,7 +19,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_chapter_review_matrix.md` | Generated public summary of the manifest-synced 54-chapter human-reader review queue, overlay dispositions, and release blockers. | tracked |
 | `docs/reader_format_review_matrix.md` | Generated public summary of the v1.0 reader-format review ledger, local render/inspection evidence, and artifact-release blockers. | tracked |
 | `docs/reader_artifact_inspection_manifest.md` | Tracked local HTML/EPUB/DOCX structural-inspection summary for ignored reader-format snapshots, preserving release blockers and non-claims. | tracked |
-| `docs/reader_html_artifact_browser_review.md` | Full local browser review record for the generated reader HTML snapshot, including exact ignored-artifact digest and residual release blocker. | tracked |
+| `docs/reader_html_artifact_browser_review.md` | Full local browser review record for the generated reader HTML snapshot, including exact ignored-artifact digest and the boundary between review evidence and the separate edition release record. | tracked |
 | `docs/reader_epub_probe_manifest.md` | Tracked local EPUB metadata/source-spine probe summary for the ignored reader snapshot, including exact EPUB metrics, sampled source-card entries, and e-reader-specific release blockers. | tracked |
 | `docs/reader_docx_probe_manifest.md` | Tracked local DOCX LibreOffice conversion probe summary for the ignored reader snapshot, including exact conversion metrics, sampled source-card pages, and DOCX-specific release blockers. | tracked |
 | `docs/reader_pdf_probe_manifest.md` | Tracked local UTF-8 PDF probe summary for the ignored reader snapshot, including exact PDF metrics, sampled source-card pages, and PDF-specific release blockers. | tracked |
@@ -74,6 +74,7 @@ This repository is organized around the living book and its validation loop.
 | `editions/release_profiles.json` | Machine-readable audience, content-layer, and release-profile definitions for live, research, reader, and audio editions. | tracked |
 | `editions/reader_overlays/` | Versioned semantic reader-edition overlays and examples; editable source for major human-reader deltas. | tracked |
 | `editions/reader_manuscript/` | Dormant curated reader-manuscript manifest, curation contract, synced chapter review matrix, artifact-inspection manifest, PDF probe manifest, companion-note routing manifest, reconciliation-report template, and future source area for a human-prose derivative that remains subordinate to the live book. | tracked |
+| `release_records/2026-06-29-v1-reader-html-855dc277.json` | Edition release record for the reviewed local generated reader HTML artifact from source tag `v1.0.0-reader-html-source`; EPUB, DOCX, PDF, e-reader, and audio artifacts remain unapproved. | tracked |
 | `scripts/init_curated_reader_chapter.py` | Dry-run-first helper for initializing future curated reader chapter records and starter files from the generated reader baseline when overlays become too small. | tracked |
 | `assets/reader-overlays.html` | Generated embedded reader-overlay payload for live Human view. | tracked; regenerate from overlays |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
