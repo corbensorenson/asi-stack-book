@@ -94,7 +94,11 @@ public replay, and source-noted novelty over internal fixture count.
 Current selection: `docs/defended_contribution_tracks.md` selects all five
 candidate tracks for v1.x focus and marks three as current deep-work tracks.
 The selection record is a release-control surface only; it does not claim A+
-completion or support-state movement.
+completion or support-state movement. `docs/defended_contribution_prior_art_positioning.md`
+now records a source-noted prior-art positioning pass for those five tracks,
+including the remaining novelty, review, replay, proof, and routing
+residual-governance gaps; it is not an external review, novelty proof, or
+support-state transition.
 
 ## Cold-Read Risk Controls
 

@@ -233,6 +233,13 @@ Current status for defended contribution focus:
   and marks three as deep-work tracks for the current cycle: living evidence
   book methodology, governed self-improvement boundary, and proof-carrying
   claims/contracts.
+- `docs/defended_contribution_prior_art_positioning.md` now positions those
+  five selected tracks against source-noted external comparators, including
+  documentation/reproducibility, proof-carrying-code, Lean, corrigibility,
+  shutdown, power-seeking, extreme-risk evaluation, risk-management,
+  governance, sparse-routing, learned-routing, and cost/quality routing
+  literature. It does not prove novelty, create external review, or move
+  support states.
 - The remaining two selected tracks, claim-support/evidence-laundering
   prevention and costed routing/resource discipline, remain selected-supporting
   tracks rather than simultaneous deep campaigns.

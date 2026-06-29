@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Defended contribution prior-art positioning
+
+- Added `docs/defended_contribution_prior_art_positioning.md` to position the
+  five selected defended contribution tracks against source-noted external
+  comparators, including documentation/reproducibility, proof-carrying-code,
+  Lean, corrigibility, shutdown, power-seeking, extreme-risk evaluation,
+  risk-management, governance, sparse-routing, learned-routing, and
+  cost/quality routing literature.
+- Added `scripts/validate_defended_contribution_prior_art.py` to require all
+  five track IDs, twenty source-noted external comparators, public-surface
+  links, and explicit no-novelty/no-promotion/no-external-review boundaries.
+- Updated the track selection record, active evidence cycle, v1.x roadmap, A+
+  scorecard, README, publication readiness, repository map,
+  `scripts/validate_publication.py`, and `scripts/validate_book.py`.
+- This does not create new source records, source notes, proof results, test
+  results, replay results, external review, artifact approval, novelty proof,
+  or support-state movement; all chapter core claims remain at `argument`.
+
 ## 2026-06-29 - Governed consolidation sequence
 
 - Added `docs/chapter_consolidation_sequence.md` to preserve the full
