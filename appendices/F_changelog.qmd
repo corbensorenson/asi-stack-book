@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-29 - Consolidation roadmap hardening
+
+- Reviewed the new chapter-consolidation proposal as planning input and
+  accepted its core direction: reduce repeated rendered chapter skeletons by
+  governed re-consolidation while preserving ideas as sections, subclaims,
+  source mappings, proof hooks, implementation horizons, and reader paths.
+- Hardened Milestone 6.5 in the v1.x roadmap with an explicit review decision,
+  stronger protected/deferred treatment for Project Theseus, Circle/coil, the
+  mathematical/search umbrella, semantic representation, simulation fidelity,
+  MoECOT runtime, and any low-priority runtime-adapter fold.
+- Added a governed-consolidation release-gate row and updated the suggested
+  long-running goal so broad human-reader curation waits for the consolidation
+  pilot to be reviewed, executed, or explicitly deferred.
+- This does not merge chapters, edit `book_structure.json`, delete source
+  material, change support states, create proof/test results, or approve any
+  reader artifact.
+
 ## 2026-06-29 - Public trust-surface count refresh
 
 - Refreshed README, landing-page, and publication-readiness status text to

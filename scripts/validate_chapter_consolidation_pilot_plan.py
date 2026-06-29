@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "docs" / "chapter_consolidation_pilot_plan.md"
 DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_constitutional_alignment.md"
+ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 STRUCTURE = ROOT / "book_structure.json"
 
 PILOT_IDS = {
@@ -103,6 +104,19 @@ DRY_RUN_REQUIRED_FRAGMENTS = (
     "Validation Commands Before Any Real Merge Commit",
     "No new result is created by this dry run.",
 )
+ROADMAP_REQUIRED_FRAGMENTS = (
+    "Decision from the 2026-06-29 consolidation review",
+    "The right response is re-consolidation into chapter-owning artifacts",
+    "roughly 44 deeper chapters",
+    "closer to 47 chapters",
+    "`mathematical-and-search-substrates`",
+    "`project-theseus-as-report-first-implementation-reference`",
+    "`semantic-representation-and-tree-structured-models`",
+    "`runtime-adapters-tool-permissions-and-human-approval`",
+    "The merged chapter should be deeper than either input chapter",
+    "Governed consolidation review",
+    "review the governed consolidation pilot before broad human-reader curation",
+)
 
 
 def fail(errors: list[str]) -> None:
@@ -122,6 +136,7 @@ def load_structure() -> dict:
 def main() -> None:
     errors: list[str] = []
     text = PLAN.read_text(encoding="utf-8")
+    roadmap_text = ROADMAP.read_text(encoding="utf-8")
     if not DRY_RUN.exists():
         errors.append(f"Missing dry-run merge package: {DRY_RUN.relative_to(ROOT)}")
         dry_run_text = ""
@@ -149,6 +164,9 @@ def main() -> None:
     for fragment in REQUIRED_FRAGMENTS:
         if fragment not in text:
             errors.append(f"Missing required fragment: {fragment}")
+    for fragment in ROADMAP_REQUIRED_FRAGMENTS:
+        if fragment not in roadmap_text:
+            errors.append(f"Roadmap missing required consolidation fragment: {fragment}")
     for fragment in DRY_RUN_REQUIRED_FRAGMENTS:
         if fragment not in dry_run_text:
             errors.append(f"Dry-run package missing required fragment: {fragment}")

@@ -670,6 +670,13 @@ The attached consolidation critique is useful planning input, but it is not
 source evidence and should not override the manifest until a merge pilot passes
 the reconciliation checks below.
 
+Decision from the 2026-06-29 consolidation review: the critique is right about
+the main failure mode. Several chapters are not wrong as ideas; they are weak
+as separate rendered skeletons because they repeat the same Problem,
+Insufficiency, Mechanism, Interface, Evidence, and Handoff moves around adjacent
+claims. The right response is re-consolidation into chapter-owning artifacts,
+not deletion, prose-only tightening, or a blind chapter-count target.
+
 Diagnostic target shape:
 
 - Aggressive consolidation could move the current 54-chapter shape toward
@@ -687,7 +694,7 @@ Execution tiers:
 | Tier 1 | Alignment/governance philosophy; compression/representation; intent/contracts; context/memory static ABI. | These clusters repeat the most source families, chapter skeletons, and handoff language. They should become fewer deeper chapters first if reconciliation passes. | About 14 source chapters become about 8-10 destination chapters, depending on whether RankFold/NeuralFold remains standalone. |
 | Tier 2 | Verification/review; planning/control; MoECOT placeholder fold. | These merges reduce thin or source-blocked chapters while preserving distinct substrates such as claim ledgers and cognitive IR. | About 7 source chapters become about 4-5 destination chapters. |
 | Fold-only review | Simulation fidelity and physical constraints; semantic representation and tree-structured models. | These look more like bounded feasibility or representation-substrate sections than standalone chapter-owning artifacts unless evidence review says otherwise. | Remove standalone skeletons only if their claims survive as named sections and subclaims. |
-| Protected set | Theseus, Circle/coil, recursive self-improvement, execution artifacts, evidence discipline, security kernel, benchmark ratchets, living-book methodology, and other high-ownership chapters listed below. | These chapters own distinct artifacts, proof paths, evidence lanes, or release machinery. | No merge unless later source/evidence review shows duplicate artifact ownership. |
+| Protected set | Theseus, Circle/coil, the mathematical/search umbrella for now, recursive self-improvement, execution artifacts, evidence discipline, security kernel, benchmark ratchets, living-book methodology, and other high-ownership chapters listed below. | These chapters own distinct artifacts, proof paths, evidence lanes, or release machinery. | No merge unless later source/evidence review shows duplicate artifact ownership. |
 
 Candidate clusters to review:
 
@@ -748,7 +755,13 @@ Candidate clusters to review:
     mined for standalone chapter evidence;
   - fold `simulation-fidelity-and-physical-constraints` into
     `resource-economics-and-token-budgets` or the efficient-ASI frame if its
-    standalone claim remains only a feasibility-bound note.
+    standalone claim remains only a feasibility-bound note;
+  - fold `semantic-representation-and-tree-structured-models` into the
+    compression/representation cluster only if its representation-substrate
+    claim remains a supporting facet rather than a chapter-owning artifact;
+  - treat any possible `runtime-adapters-tool-permissions-and-human-approval`
+    fold into `labor-os-and-typed-jobs` as low priority and permissible only if
+    the permission/tool-interface surface stops owning a distinct artifact.
 
 Protected standalone chapters unless a later evidence review contradicts them:
 
@@ -772,7 +785,11 @@ Protected standalone chapters unless a later evidence review contradicts them:
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `coil-attention-cyclic-memory-and-recurrence-contracts`, and
   `coilra-multicoil-rope-and-cyclic-mixers`;
+- `mathematical-and-search-substrates`, because it is the umbrella touching the
+  Circle/coil/search substrate family and should not be deduplicated until the
+  Circle/coil evidence lane is reviewed explicitly;
 - `benchmark-ratchets-and-anti-goodhart-evidence`;
+- `project-theseus-as-report-first-implementation-reference`;
 - `artifact-steward-agents-and-living-project-governance`;
 - `executable-specifications-and-lean-proof-envelope`;
 - `integrated-reference-architecture`;
@@ -813,6 +830,9 @@ Merge checklist:
 - Collapse the chapter skeleton once. Do not paste two full Problem,
   Insufficiency, Mechanism, Interfaces, Invariants, Failure Modes, MVI, Mature
   Endpoint, Test Plan, Source Crosswalk, and Summary sections back to back.
+- The merged chapter should be deeper than either input chapter: use the saved
+  space for sharper mechanisms, concrete fixtures, negative cases, external
+  positioning, proof limitations, and a clearer reader-facing throughline.
 - Keep stable slug IDs only when continuity is stronger than renaming; otherwise
   record redirects and handoff repair needs before changing file paths.
 - If a chapter is folded rather than merged, record the surviving section,
@@ -1014,6 +1034,7 @@ explicitly passed or explicitly scoped out in a release record.
 | Per-chapter external grounding | Every chapter has source-noted external comparators, candidate backlog, or an explicit exception; accepted third-party records appear in generated Appendix H. | The book still reads as self-sourced nomenclature. |
 | Proof/evidence coverage | Each executed lane names whether its strongest evidence path is Lean, Theseus, Circle, external literature, external review, or an explicit no-promotion blocker. | Arguments remain prose-only without a testable support route. |
 | External-SOTA distance | The release updates distance from SOTA, not only internal activity. | "Beyond-SOTA" remains unaudited. |
+| Governed consolidation review | The release either executes or explicitly defers the reviewed consolidation pilot, with preserved source/proof/claim/reader mappings and no hidden idea deletion. | Human-reader curation may polish avoidable duplicate chapter skeletons. |
 | Negative-outcome handling | Failed, demoted, refuted, merged, or retired lanes are recorded instead of hidden. | Evidence process is monotonic and biased. |
 | Human-reader quality | Curated reader pilot or explicit deferral exists; any released artifact has an exact release record. | Human edition remains a generated projection only. |
 | Artifact honesty | EPUB/DOCX/PDF/audio/DOI are claimed only if exact artifacts or archive identifiers exist. | Artifact or archive claim would be fabricated. |
@@ -1024,7 +1045,7 @@ explicitly passed or explicitly scoped out in a release record.
 |---|---|---|
 | `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Sixty-second trust surface exists; non-core evidence ledger visible; early external review requested or recorded; defended contribution tracks selected; per-chapter evidence plan split out with 5-8 lane cap; chapter-level external-grounding workflow defined; safety-critical proof specs include anti-projection and negative-case criteria. |
 | `v1.2` | Moves formal layer from projection-heavy traceability toward lightweight state-specification practice for safety-critical modules. | Five safety-critical modules gain `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases; first public-safe Theseus or Circle lane is CI-replayed or CI-verifiable by digest. |
-| `v1.3` | Moves reader surface from generated projection toward a curated human manuscript while preserving live-book evidence authority. | Curated reader manuscript covers a coherent pilot arc or explicitly defers with blockers; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
+| `v1.3` | Moves reader surface from generated projection toward a curated human manuscript while preserving live-book evidence authority. | Governed consolidation has either executed its reviewed pilot or recorded an explicit deferral; curated reader manuscript covers a coherent pilot arc or explicitly defers with blockers; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
 | `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; 5-8 selected chapter lanes have executed evidence or explicit no-promotion decisions; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
 | `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger Lean envelopes, prior-art-reviewed preprints, and DOI/archive metadata exist. |
 
@@ -1032,7 +1053,7 @@ explicitly passed or explicitly scoped out in a release record.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, mine every chapter's linked Corben papers for external citations and adjacent literature, add accepted third-party sources through `sources/source_inventory.json`, source notes, and generated Appendix H, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, ensure every selected lane names its strongest proof/evidence path or no-promotion blocker, keep external-SOTA placement current and replace any future or regressed weak exception where source-noted literature exists, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
+> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, mine every chapter's linked Corben papers for external citations and adjacent literature, add accepted third-party sources through `sources/source_inventory.json`, source notes, and generated Appendix H, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, ensure every selected lane names its strongest proof/evidence path or no-promotion blocker, keep external-SOTA placement current and replace any future or regressed weak exception where source-noted literature exists, review the governed consolidation pilot before broad human-reader curation and execute or explicitly defer any merge only after source/proof/claim/reader reconciliation, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
 
 ## Non-Claims
 
