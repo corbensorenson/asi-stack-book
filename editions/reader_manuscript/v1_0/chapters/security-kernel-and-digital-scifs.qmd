@@ -1,0 +1,315 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: security-kernel-and-digital-scifs
+generated_baseline_ref: build/reader_edition/chapters/security-kernel-and-digital-scifs.qmd
+live_source_ref: chapters/security-kernel-and-digital-scifs.qmd@b585d5429
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Security Kernel and Digital SCIFs
+
+Capability replacement changes what a system can do. Security asks what the
+new capability can touch.
+
+That distinction matters because a useful AI system does not only manipulate
+words. It may request credentials, retrieve private records, call tools, write
+files, reach networks, spend money, operate infrastructure, or summarize
+sensitive material. Those powers cannot be treated as ordinary context just
+because the model can reason about them. A system that can see a secret can be
+asked to reveal it. A system that can reuse a permission without a receipt can
+turn a scoped approval into ambient authority.
+
+The security kernel is the stack's least-exposure rule. The model may reason
+about the task and request an authority, but secrets and privileged actions
+should live behind handles, leases, compartments, clearance checks, audit
+receipts, and revocation paths. A Digital SCIF is the temporary room where
+sensitive work happens under tighter admission, substitution, sanitization,
+and commit rules.
+
+The reader promise is practical: security in the ASI Stack is not a demand
+that the model become morally careful with secrets. It is a design that keeps
+privileged material narrower than the model's curiosity, usefulness, and
+ability to paraphrase.
+
+## Problem
+
+High-agency systems need boundaries for secrets, context, permissions, and
+tool calls.
+
+The hard part is that the same features that make an AI system useful make it
+dangerous to treat it as a trusted room. It can read, transform, summarize,
+route, and act. Those abilities are helpful for ordinary work and risky around
+credentials, private data, protected memory, personal records, deployment
+tokens, financial authority, and human approval.
+
+Prompting the model to be careful is not a security architecture. A model
+context is a work surface, not a vault. Once sensitive material enters that
+surface, it can leak through answers, summaries, tool traces, logs, cached
+context, memory writes, screenshots, or later reuse by a different route.
+
+The kernel boundary separates reasoning from possession. The planner can ask
+to use a payment handle, deployment token, private source, or protected record.
+The kernel decides whether the request is in scope, whether approval exists,
+where substitution may occur, how long the lease lasts, and what evidence must
+be written afterward. The model should know the permitted action and the
+sanitized result, not automatically receive the secret bytes that made the
+action possible.
+
+## Why existing approaches are insufficient
+
+The usual shortcut is to put sensitive material in a prompt and rely on
+instructions, redaction, or trust. That shortcut breaks the stack's authority
+model. It makes disclosure a matter of model behavior rather than boundary
+design.
+
+The Ladon and Manhattan source gives the credential pattern: keep secrets in a
+manager or vault, expose opaque handles, inject sensitive material only at an
+authorized boundary, run high-risk work inside ephemeral compartments, zeroize
+after use, and return only permitted outputs. The Context Engineer source
+gives the context pattern: treat context as a supply chain with mission briefs,
+clearance levels, memory masks, context shards, Digital SCIFs, sanitized
+commits, and information-flow controls. Talos connects those ideas to typed
+jobs, audit logs, replay, runtime adapters, and approval gates.
+
+Those sources are not security proof. They provide vocabulary and design
+pressure. Software compartments can still leak through logs, traces, browser
+state, screenshots, copied summaries, side channels, overly broad handles, or
+bad commit rules. Alignment Field contributes normative pressure around power,
+consent, agency, and confinement, but it is not technical security evidence.
+Coherence Exchange contributes audit and contestability framing, not an
+implemented security mechanism.
+
+The external comparators sharpen the same boundary. OWASP's GenAI security
+work frames prompt injection, sensitive-information disclosure, and excessive
+agency as public application risks. NIST Zero Trust frames access as something
+mediated at resources rather than assumed after initial trust. Saltzer and
+Schroeder give classic protection principles such as least privilege, complete
+mediation, and fail-safe defaults. The ASI Stack uses those sources for
+positioning only. It does not claim OWASP conformance, NIST zero-trust
+implementation, complete mediation, kernel security, sandbox isolation,
+side-channel safety, or tested prompt-injection containment.
+
+## Core Claim
+
+Sensitive context and privileged actions should be mediated by kernel-like
+security mechanisms and compartmentalized Digital SCIFs. The live book keeps
+this claim at `argument` support.
+
+The claim is a design rationale. It says that secrets and privileged actions
+should be governed by handles, leases, clearance, compartment lifecycle, and
+receipts instead of being placed into ordinary model-visible context. It does
+not say that the repository already contains a deployed security kernel or
+that Digital SCIFs prevent all leakage.
+
+The current evidence surface is narrow. Appendix C maps the core claim to
+Ladon/Manhattan, Context Engineer, Talos, Alignment Field, and Coherence
+Exchange. Appendix E records a synthetic security-kernel harness for
+authority-use receipts. The Lean module models finite authorization,
+clearance, handle substitution, and protected-SCIF admission predicates. Those
+artifacts help keep the boundary explicit. They do not prove runtime policy
+behavior, sandbox isolation, side-channel resistance, least-privilege context
+behavior, prompt-injection containment, or source interpretation.
+
+## Mechanism
+
+The mechanism is a separation between request, authorization, substitution,
+execution, sanitization, commit, audit, and revocation.
+
+The model asks to use an authority. The kernel checks whether the request is
+allowed for the principal, purpose, destination, action, time window, and
+clearance. If the request is allowed, the secret or protected context is
+substituted only inside the approved execution boundary. If sensitive context
+must be assembled, it enters an ephemeral Digital SCIF rather than ordinary
+memory. The raw result goes through sanitization before anything is returned
+to the model or committed back to the wider memory system.
+
+```{mermaid}
+sequenceDiagram
+participant U as User / governance
+participant P as Planner
+participant K as Security kernel
+participant S as Secret vault
+participant C as Digital SCIF
+participant R as Redaction filter
+participant L as Audit ledger
+U->>K: authorize policy and scope
+P->>K: request handle use, destination, purpose
+K->>K: check clearance, destination, purpose
+K-->>P: decision and handle status, not secret bytes
+K->>C: spawn isolated context
+S->>C: inject secret only inside boundary
+C->>R: send raw result for sanitization
+R->>K: return sanitized result and residual leak risk
+K->>L: record handle use, policy, result, residuals
+```
+
+Read the sequence as a map of absence. The model does not receive the secret
+bytes. The planner sees that a handle exists and asks to use it. The kernel
+mediates the lease. The vault substitutes only inside the protected boundary.
+The redaction path returns sanitized evidence and residual risk. The ledger
+records the decision, not the raw secret.
+
+The important object is a lease. A handle without scope is just a hidden
+credential with a nicer name. A useful handle records principal, purpose,
+destination, allowed action, time window, approval state, logging rule,
+clearance, rate or spending limit, revocation path, and residual leak-risk
+policy. A useful SCIF records lifecycle: requested, denied or scoped,
+admitted, substituted, executed, sanitized, zeroized, committed, expired,
+revoked, or residualized.
+
+The distinction between request visibility and substitution visibility is
+central. The model may know that a payment handle, private document, protected
+memory shard, or deployment token can be requested under policy. It should not
+automatically see the underlying material. If a task truly requires
+model-visible reasoning over sensitive context, that admission should be a
+separate event with a narrower scope, a stronger receipt, and a sanitized
+commit.
+
+## Interfaces
+
+The public interface is an Authority Use Receipt.
+
+That receipt is the alternative to prompt convention. It records what authority
+was requested, who requested it, why it was allowed or denied, where
+substitution happened, what result was returned, what was withheld, what was
+sanitized, which residual leak risks remain, and how the lease can expire or
+revoke.
+
+At minimum, the receipt should carry:
+
+- `handle_id`
+- `principal`
+- `purpose`
+- `destination`
+- `allowed_action`
+- `clearance`
+- `approval_record`
+- `scif_lifecycle`
+- `sanitized_output`
+- `residual_leak_risk`
+- `revocation_path`
+
+For sensitive context work, the receipt should connect to a SCIF Commit
+Record. That record names admitted context shards, memory masks, denied
+material, allowed tools, substitution events, sanitization decisions,
+zeroization status, material committed back to ordinary memory, retained
+derivatives, residual leak-risk class, and expiry or revocation events.
+
+The interface ties security to the rest of the stack. VCM supplies
+least-privilege context and taint. Execution checks tool permissions and
+approval. Evidence ledgers keep denials and residuals visible. Resource
+economics must count security overhead instead of rewarding routes that drop
+isolation, logging, review, or sanitization. Recursive self-improvement must
+not widen handle scope, weaken SCIF admission, or change audit policy without
+governance review.
+
+## Invariants and Failure Modes
+
+The first invariant is non-disclosure by default: ordinary model context should
+carry handles and receipts, not secret bytes. The second is purpose binding: a
+handle authorized for one destination, action, time window, or job cannot
+quietly become ambient authority. The third is auditable substitution: when
+privileged material is used, the system records where and why the substitution
+happened without publishing the protected material itself.
+
+Those invariants narrow risk; they do not eliminate it. A handle can be too
+broad. A SCIF can be bypassed. A summary can leak enough derived information
+to reconstruct sensitive context. Logs, traces, screenshots, browser state,
+clipboard state, caches, timing channels, and downstream tools can carry
+material that the main prompt never showed.
+
+The most common failure is prompt injection extracting model-visible secrets.
+The deeper failure is privilege laundering: a scoped handle survives into a
+later plan, route, summary, or self-improvement proposal as if it were ordinary
+capability. Another failure is security-cost laundering, where a cheaper route
+looks efficient only because it removed isolation, approval, logging,
+sanitization, or review. A fourth is sanitized-output laundering: the raw
+secret stays hidden, but the committed summary reveals enough of it to matter.
+
+The kernel should treat denials, expirations, and residual leak-risk records as
+normal outputs. If the only visible success path is approval, the security
+layer will be optimized away.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a fake-secret fixture and receipt
+validator.
+
+The fixture gives an agent `handle://demo-secret`, asks it to perform one
+authorized action, substitutes the fake secret outside model-visible logs, and
+checks that the transcript contains the handle and sanitized result but not the
+secret value. The same fixture set should include denied destination,
+overbroad SCIF admission, expired handle reuse, missing approval, unsafe
+sanitized summary, and prompt-injection non-disclosure cases.
+
+The repository already has a bounded start: a synthetic security-kernel
+harness checks authority-use receipt discipline for handle mediation, approval
+artifacts, bounded action scope, SCIF lifecycle completeness, sanitization,
+residual leak-risk notes, revocation paths, and prompt-injection
+non-disclosure boundaries. The Lean module adds finite-record predicates for
+authorization, clearance, handle substitution, and protected-SCIF admission.
+
+That is still receipt discipline, not deployed containment. The next useful
+step is a public-safe toy runtime trace where a model-facing transcript, a
+substitution boundary, a denied handle reuse, and a sanitized commit can be
+inspected together. After that, the chapter needs a threat-model record for
+logs, browser state, screenshots, side channels, memory writes, and downstream
+tool traces.
+
+## Beyond the State of the Art
+
+The mature security kernel is a least-exposure operating layer for high-agency
+AI.
+
+In that end state, the product surface does not ask users to trust that a
+model was careful. It shows which authority was requested, which material was
+withheld, which lease was granted, which compartment admitted the work, which
+output was sanitized, which residual risks remain, which logs are available,
+and which revocation path exists.
+
+Sensitive work has a visible lifecycle: request, denial or scoped approval,
+context admission, substitution, execution, sanitization, zeroization, commit,
+residual leak-risk classification, expiry, and revocation. A route that drops
+any of those steps does not count as a cheaper improvement. It creates a
+boundary delta requiring governance review.
+
+The mature version would also make security compositional. VCM would know what
+context can enter a SCIF. Runtime adapters would know which tools require
+approval. Evidence ledgers would know which denials and residuals block
+promotion. Capability replacement would know that a faster implementation
+cannot widen handle scope. Self-improvement would know that changing the
+kernel, redaction policy, or audit path is a protected transition.
+
+This remains a target architecture, not a validation claim. The present support
+state stays at `argument` until receipt validation is joined by stronger
+runtime traces, negative controls, threat models, security review, and
+evidence-transition records.
+
+## Summary
+
+Security in the ASI Stack is the discipline of keeping protected power absent
+from ordinary model context unless a specific lease permits a specific
+exposure. The model can reason, request, justify, and receive sanitized
+results. The kernel owns substitution, compartment lifecycle, audit,
+sanitization, residuals, expiry, and revocation.
+
+Handles are useful because they reveal less than the model might want.
+Digital SCIFs are useful because they give sensitive work a lifecycle instead
+of letting it blur into memory. Receipts are useful because they make power
+inspectable without publishing the secret itself.
+
+The boundary carries forward into the next chapter. Recursive
+self-improvement is acceptable only if improvement cannot make protected
+authority cheaper to move, easier to summarize, harder to audit, or less
+revocable.
+
+## Handoff
+
+Security makes privileged action inspectable. Recursive Self-Improvement
+Boundaries asks what happens when the system proposes to change itself, its
+tools, its routes, or its evaluators. The handoff is direct: improvement is
+allowed only when protected invariants, authority leases, evaluator
+independence, rollback, residuals, and human review remain stronger than the
+pressure to move faster.

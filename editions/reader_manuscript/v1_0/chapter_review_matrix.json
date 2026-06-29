@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 3,
+    "curated_manuscript_candidate": 4,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -312,12 +312,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_full_review_completion.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions",
+        "docs/curated_reader_security_kernel_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the security-kernel chapter. Handles, SCIF lifecycle, sanitized commits, residual leak risk, audit receipts, and non-claim boundaries remain intact without claiming production isolation.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the security-kernel chapter. Handles, SCIF lifecycle, sanitized commits, residual leak risk, audit receipts, and non-claim boundaries remain intact, and a first drafting-only curated prose pass now sharpens the least-exposure, handle-lease, Digital SCIF, and receipt-boundary throughline without approving reader release or deployed security claims.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
