@@ -21,6 +21,7 @@ REQUIRED_FILES = [
     "docs/v1_progress_ledger.md",
     "docs/v1_0_release_gate_audit.md",
     "docs/circle_external_receipt_slice.md",
+    "docs/non_core_evidence_ledger.md",
     "docs/external_sota_positioning_audit.md",
     "docs/book_outline.md",
     "editions/release_profiles.json",
@@ -61,6 +62,7 @@ REQUIRED_FILES = [
     "scripts/validate_public_site_accessibility.py",
     "scripts/validate_v1_release_gate_audit.py",
     "scripts/validate_circle_external_receipt_slice.py",
+    "scripts/validate_non_core_evidence_ledger.py",
     "scripts/validate_external_sota_positioning.py",
     "assets/reading-mode.html",
     ".github/pull_request_template.md",
@@ -106,6 +108,7 @@ REQUIRED_README_STRINGS = [
     "scripts/validate_public_site_accessibility.py",
     "scripts/validate_v1_release_gate_audit.py",
     "scripts/validate_circle_external_receipt_slice.py",
+    "scripts/validate_non_core_evidence_ledger.py",
     "scripts/validate_external_sota_positioning.py",
     "Do not report a theorem as proven unless",
 ]

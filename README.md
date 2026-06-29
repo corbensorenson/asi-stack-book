@@ -8,6 +8,14 @@ Public repository: <https://github.com/corbensorenson/asi-stack-book>
 
 This repository is the canonical Quarto source for the book, its scaffolding, validation scripts, schemas, Lean proof workspace, and public-safe source/evidence metadata. The book treats the source papers as fragments of one architecture: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive self-improvement.
 
+## 60-Second Trust Surface
+
+**What this is:** a public living-book research program and evidence system for an ASI systems architecture. The strongest current contribution is the manifest-driven, CI-validated method for keeping claims, sources, proofs, tests, reader editions, and non-claims explicit.
+
+**What this is not:** a validated ASI implementation, deployed safety system, benchmark-proven architecture, or claim that all chapter theses are externally proven.
+
+**What is currently evidenced:** all 54 chapter core claims remain at `argument`; three narrow non-core transitions are accepted and listed in [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md); Lean coverage is broad but still shallow in the safety-critical modules named by the v1.x roadmap; Project Theseus and Circle are related project lanes, not independent third-party evidence unless imported through a public-safe replay gate; independent external human review is still pending or must be recorded as a blocker.
+
 ## Current Status
 
 The project has moved beyond the initial v0.2 manuscript baseline into a tagged `v1.0.0` living-book release, but it is not yet a stronger v1.x evidence release with broad chapter-core support-state promotions or reviewed EPUB/DOCX/PDF/audio artifacts.
@@ -76,6 +84,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/v1_0_roadmap.md](docs/v1_0_roadmap.md) | Execution roadmap and recommended next long-running goal for v1.0 voice, reader, evidence, proof, test, source, site, and release work. |
 | [docs/v1_x_beyond_sota_roadmap.md](docs/v1_x_beyond_sota_roadmap.md) | Post-v1.0.0 roadmap for deeper Lean proofs, Project Theseus/Circle replay evidence, per-chapter evidence lanes, curated reader prose, and human artifact release quality. |
 | [docs/a_plus_quality_scorecard.md](docs/a_plus_quality_scorecard.md) | Planning scorecard for moving every project dimension toward A+ quality, including cold-read legibility and defended contribution tracks. |
+| [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md) | Public ledger for the three accepted non-core evidence transitions and their no-chapter-core-promotion boundary. |
 | [docs/per_chapter_evidence_plan.md](docs/per_chapter_evidence_plan.md) | 54-chapter evidence-lane backlog used as a menu for selecting 5-8 high-payoff v1.x lanes, not as a breadth-sweep checklist. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |
@@ -167,6 +176,7 @@ python3 scripts/validate_architecture_red_team.py
 python3 scripts/validate_release_reproducibility.py
 python3 scripts/validate_public_site_accessibility.py
 python3 scripts/validate_v1_release_gate_audit.py
+python3 scripts/validate_non_core_evidence_ledger.py
 python3 scripts/validate_external_sota_positioning.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py

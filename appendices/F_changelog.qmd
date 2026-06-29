@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - Sixty-second trust surface and non-core evidence ledger
+
+- Added `docs/non_core_evidence_ledger.md` to make the three accepted non-core
+  upward transitions visible without promoting any chapter core claim above
+  `argument`.
+- Added `scripts/validate_non_core_evidence_ledger.py` and wired it into public
+  and book validation so the ledger must match the accepted transition records
+  and remain linked from README, the landing page, and Appendix C.
+- Updated README and `index.qmd` with a 60-second trust surface that states
+  what the project is, what it is not, what is currently evidenced, what remains
+  pending, and why Project Theseus/Circle evidence still needs public-safe replay
+  gates before broader use.
+- Updated `scripts/sync_scaffold.py`, regenerated Appendix C, and updated
+  repository/publication readiness surfaces so the non-core ledger is visible
+  from the claim/evidence matrix and maintenance docs.
+- This does not create new source records, external review, Lean proof results,
+  Project Theseus imports, Circle replay packs, reader artifacts, support-state
+  promotions, or chapter-core claim promotions.
+
 ## 2026-06-29 - Per-chapter external grounding roadmap
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` with a dedicated chapter-level

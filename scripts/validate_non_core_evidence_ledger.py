@@ -1,0 +1,129 @@
+#!/usr/bin/env python3
+"""Validate the public non-core evidence ledger.
+
+The ledger is intentionally narrow: it makes accepted non-core transitions
+visible without letting them read as chapter-core support-state promotions.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
+TRANSITION_DIR = ROOT / "evidence_transitions" / "v1_0_measured"
+APPENDIX_C = ROOT / "appendices" / "C_claim_evidence_matrix.qmd"
+README = ROOT / "README.md"
+INDEX = ROOT / "index.qmd"
+
+EXPECTED = {
+    "living-book-methodology.phase5_harness_registry_runner": {
+        "state": "synthetic-test-backed",
+        "transition": "phase5_harness_runner_synthetic_test_backed.json",
+    },
+    "resource-economics.costed_route_budget_slice": {
+        "state": "synthetic-test-backed",
+        "transition": "costed_route_resource_slice_synthetic_test_backed.json",
+    },
+    "circle-calculus.external_rope_receipt_replay": {
+        "state": "prototype-backed",
+        "transition": "circle_external_rope_receipt_prototype_backed.json",
+    },
+}
+
+REQUIRED_LEDGER_STRINGS = [
+    "All 54 remain at `argument`.",
+    "Accepted non-core upward transitions | 3 narrow transitions.",
+    "Chapter-core promotion effect | None.",
+    "No independent external human review record yet.",
+    "does not promote any chapter core claim above `argument`",
+]
+
+FORBIDDEN_LEDGER_STRINGS = [
+    "chapter core claims are synthetic-test-backed",
+    "chapter core claims are prototype-backed",
+    "chapter core claims are external-literature-backed",
+    "proves ASI",
+    "guarantees safety",
+    "proves alignment",
+]
+
+
+def fail(errors: list[str]) -> None:
+    print("Non-core evidence ledger validation failed:")
+    for error in errors:
+        print(f" - {error}")
+    sys.exit(1)
+
+
+def load_transition(path: Path) -> dict:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        fail([f"missing transition record: {path.relative_to(ROOT)}"])
+    if not isinstance(data, dict):
+        fail([f"transition record must be an object: {path.relative_to(ROOT)}"])
+    return data
+
+
+def main() -> None:
+    errors: list[str] = []
+    ledger = LEDGER.read_text(encoding="utf-8", errors="ignore")
+    appendix_c = APPENDIX_C.read_text(encoding="utf-8", errors="ignore")
+    readme = README.read_text(encoding="utf-8", errors="ignore")
+    index = INDEX.read_text(encoding="utf-8", errors="ignore")
+
+    for required in REQUIRED_LEDGER_STRINGS:
+        if required not in ledger:
+            errors.append(f"ledger missing required boundary text: {required}")
+    for forbidden in FORBIDDEN_LEDGER_STRINGS:
+        if forbidden in ledger:
+            errors.append(f"ledger contains forbidden overclaim: {forbidden}")
+
+    for claim_id, expected in EXPECTED.items():
+        record_path = TRANSITION_DIR / expected["transition"]
+        record = load_transition(record_path)
+        if record.get("claim_id") != claim_id:
+            errors.append(
+                f"{record_path.relative_to(ROOT)} claim_id {record.get('claim_id')!r} "
+                f"does not match {claim_id!r}"
+            )
+        if record.get("new_support_state") != expected["state"]:
+            errors.append(
+                f"{record_path.relative_to(ROOT)} support state "
+                f"{record.get('new_support_state')!r} does not match {expected['state']!r}"
+            )
+        if record.get("transition_validity_state") != "review_accepted":
+            errors.append(f"{record_path.relative_to(ROOT)} is not review_accepted")
+        non_claims = " ".join(str(item) for item in record.get("non_claims", []))
+        limitations = " ".join(str(item) for item in record.get("limitations", []))
+        if "does not promote any chapter core claim" not in f"{non_claims} {limitations}":
+            errors.append(f"{record_path.relative_to(ROOT)} lacks chapter-core non-claim text")
+
+        if claim_id not in ledger:
+            errors.append(f"ledger does not list claim id {claim_id}")
+        if expected["state"] not in ledger:
+            errors.append(f"ledger does not list support state {expected['state']}")
+        if expected["transition"] not in ledger:
+            errors.append(f"ledger does not link transition record {expected['transition']}")
+
+    ledger_refs = [
+        ("README.md", readme, "docs/non_core_evidence_ledger.md"),
+        ("index.qmd", index, "docs/non_core_evidence_ledger.md"),
+        ("appendices/C_claim_evidence_matrix.qmd", appendix_c, "docs/non_core_evidence_ledger.md"),
+    ]
+    for name, text, ref in ledger_refs:
+        if ref not in text:
+            errors.append(f"{name} does not reference {ref}")
+
+    if errors:
+        fail(errors)
+
+    print("Non-core evidence ledger validation passed: 3 accepted non-core transitions, 0 chapter-core promotions.")
+
+
+if __name__ == "__main__":
+    main()

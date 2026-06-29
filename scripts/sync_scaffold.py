@@ -752,6 +752,8 @@ No chapter core claim is marked `source-derived`, `prototype-backed`, `synthetic
 
 Current generated coverage: {len(chapters)} chapter core claims, {total_claim_mappings} exact claim-source mappings, and {total_passage_reviewed} passage-reviewed mappings. Unreviewed mappings remain source-note mappings until passage review, accepted evidence transitions, or validated artifacts justify narrower support-state movement.
 
+The current accepted non-core upward transitions are summarized in `docs/non_core_evidence_ledger.md`. They do not promote any chapter core claim above `argument`.
+
 | Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap |
 |---|---|---|---|---|---|---|---|---|---|
 {chr(10).join(rows)}

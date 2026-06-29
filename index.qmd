@@ -9,21 +9,29 @@
 ::: {.living-dashboard}
 <div>
 <strong>Book state</strong>
-<span>v0.2 manuscript draft across 54 chapters; v1.0 improvement pass active</span>
+<span>v1.0.0 living-book release; v1.x evidence and reader-quality work active</span>
 </div>
 <div>
 <strong>Sources</strong>
-<span>Inventoried; notes/cache status tracked</span>
+<span>160 inventoried records; Appendix G/H split by ownership</span>
 </div>
 <div>
 <strong>Claims</strong>
-<span>Argument-level until evidence moves</span>
+<span>54 chapter core claims remain argument-level</span>
 </div>
 <div>
 <strong>Tests</strong>
-<span>Schema fixtures and finite-record Lean predicates validated; behavioral tests mostly planned</span>
+<span>Three narrow non-core evidence transitions accepted; no chapter-core promotion</span>
 </div>
 :::
+
+## 60-second trust surface
+
+**What this is.** This is a public living-book research program for an ASI systems architecture. Its strongest current contribution is the evidence discipline: manifest-driven chapters, source queues, claim/support-state separation, Lean hooks, schemas, harnesses, release records, and reader-edition gates.
+
+**What this is not.** This is not a validated ASI implementation, deployed safety system, benchmark-proven architecture, or claim that the chapter theses are already externally proven.
+
+**What is currently evidenced.** All 54 chapter core claims remain at `argument`. Three narrow non-core transitions are accepted in [`docs/non_core_evidence_ledger.md`](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/non_core_evidence_ledger.md): the Phase 5 harness registry runner and the costed-route/resource-budget slice are `synthetic-test-backed`, and one bounded Circle rope receipt replay is `prototype-backed`. Lean coverage is broad but still shallow in safety-critical modules, Project Theseus and Circle require public-safe replay gates before broader evidence use, and independent external human review is still pending or must be recorded as a blocker.
 
 ## Core thesis
 
@@ -99,8 +107,8 @@ The appendices are part of the architecture:
 
 ## Evidence discipline
 
-Every major claim should carry a support state. The default state is `argument`. Claims move only when sources are actually read, prototypes are inspected, or tests are actually run. This book should never pretend that source ingestion or test evidence exists before it does.
+Every major claim should carry a support state. The default state is `argument`. Claims move only when sources are actually read, prototypes are inspected, proofs are checked, or tests are actually run. This book should never pretend that source ingestion or test evidence exists before it does.
 
 ## Living status
 
-This release is a complete v0.2 manuscript draft, not a final v1.0 evidence release. The chapters are written end to end, and the repo validates scaffold, source-note, proof-readiness, schema, fixture, Lean, and render health locally. Most claim-level source mappings, external literature citations, chapter-level tests, and Lean/protocol proof implementations remain planned until their artifacts are added and recorded.
+This release is a tagged v1.0.0 living-book baseline, not a finished v1.x evidence-and-reader release. The chapters are written end to end, and the repo validates scaffold, source-note, proof-readiness, schema, fixture, Lean, reading-mode, and render health locally. Most chapter-core claims, external-grounding upgrades, chapter-level tests, safety-critical proof depth, Project Theseus/Circle public replay lanes, and human-reader curation work remain active roadmap items until their artifacts are added and recorded.
