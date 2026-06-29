@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 139 |
+| Theorem declarations classified | 140 |
 | Direct/projection-style theorem declarations | 112 |
-| Derived/decomposed theorem declarations | 27 |
+| Derived/decomposed theorem declarations | 28 |
 | Unknown or mixed theorem declarations | 0 |
-| Safety-critical theorem declarations | 10 |
+| Safety-critical theorem declarations | 11 |
 | Safety-critical direct/projection declarations | 10 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -30,7 +30,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
-| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 2 | 2 | 0 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/Corrigibility.lean` | agency-dignity-and-corrigibility | 2 | 2 | 2 | 0 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/GovernanceRights.lean` | governance-rights-fork-exit-and-audit | 2 | 2 | 2 | 0 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 2 | 2 | 2 | 0 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -52,7 +52,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
-| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 2 | 2 | 0 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 4 | 4 | 4 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -112,6 +112,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | Lean module | Theorem | Depth class | Safety-critical | Evidence |
 |---|---|---|---|---|
 | `lean/AsiStackProofs/Alignment.lean` | `admitted_plan_satisfies_every_active_constitutional_predicate` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Alignment.lean` | `protected_predicate_weakening_without_reviewer_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `self_modification_that_weakens_protected_predicate_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `compressed_artifact_use_requires_probe_or_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promoted_compression_record_cannot_omit_residual_or_fallback_metadata` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

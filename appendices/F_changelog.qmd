@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-29 - Alignment Lean depth follow-through
+
+- Strengthened `lean/AsiStackProofs/Alignment.lean` with a finite
+  `ConstitutionalChangeDecision` envelope and the derived/decomposed theorem
+  `protected_predicate_weakening_without_reviewer_routes_to_review`.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 140
+  theorem declarations, 28 derived/decomposed theorem declarations, and one
+  derived/decomposed theorem inside the safety-critical Alignment module.
+- Updated the Constitutional Alignment chapter and
+  `docs/proof_adequacy_review.md` so the new theorem is described as a narrow
+  finite-record reviewer-missing blocking gate, not a deployed-alignment or
+  moral-correctness result.
+- This does not promote any chapter core claim, prove alignment behavior,
+  validate reviewer quality, solve predicate translation, reproduce external
+  results, or change any support state.
+
 ## 2026-06-29 - Core-claim promotion paths in Appendix C
 
 - Updated `scripts/sync_scaffold.py` so generated Appendix C includes a
