@@ -1,0 +1,99 @@
+{
+  "transition_id": "v1_0_measured.costed_route_resource_slice.synthetic_test_backed",
+  "claim_id": "resource-economics.costed_route_budget_slice",
+  "claim_surface_refs": [
+    "docs/costed_route_resource_slice.md",
+    "docs/first_measured_replayed_slice.md",
+    "docs/evidence_transition_pilot.md",
+    "docs/v1_0_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/costed_route_resource_slice/input/v1_0_costed_routes.json",
+    "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
+    "scripts/validate_costed_route_resource_slice.py",
+    "schemas/costed_route_record.schema.json",
+    "schemas/resource_budget_record.schema.json",
+    "schemas/evidence_transition_record.schema.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "synthetic-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded synthetic costed-route/resource-budget selection claim moves to synthetic-test-backed: the validator recomputes one public-safe three-route slice, rejects the cheap failed negative control, compares against an adequate overkill baseline, and selects the lowest-cost eligible route while preserving fallback, residual, and non-claim boundaries.",
+  "evidence_roles": [
+    "costed_route_replay",
+    "resource_budget_record",
+    "adequate_overkill_baseline",
+    "cheap_negative_control",
+    "validation_command",
+    "public_safe_result_record"
+  ],
+  "transition_reason": "The local validation command checked three Costed Route Record instances and three Resource Budget Record instances against their schemas, recomputed the deterministic cost formula, rejected route://cheap-unverified-transform because verification failed, outcome_state was cheap_brittle, promotion_candidate was false, and the budget was residualized, then selected route://bounded-transform-plus-verifier over the eligible route://frontier-manual-review baseline with a 66.98 percent synthetic cost reduction. This supports only the narrow recorded selector discipline claim, not deployed routing, scheduler behavior, model quality, benchmark quality, or chapter core claims.",
+  "required_artifacts": [
+    "public-safe three-route input record",
+    "tracked deterministic result record",
+    "costed-route schema validation",
+    "resource-budget schema validation",
+    "negative-control rejection",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "experiments/costed_route_resource_slice/input/v1_0_costed_routes.json",
+    "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
+    "scripts/validate_costed_route_resource_slice.py",
+    "docs/costed_route_resource_slice.md",
+    "scripts/validate_evidence_transitions.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/costed_route_resource_slice.md",
+    "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
+    "docs/first_measured_replayed_slice.md",
+    "docs/evidence_transition_pilot.md"
+  ],
+  "source_mapping_refs": [
+    "docs/costed_route_resource_slice.md#accepted-narrow-claim"
+  ],
+  "verification_command": "python3 scripts/validate_costed_route_resource_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "route://cheap-unverified-transform is cheaper at 2.3 synthetic cost units but rejected because verification_result is fail, outcome_state is cheap_brittle, promotion_candidate is false, budget_state is residualized, and budget_decision is residual",
+    "route://frontier-manual-review remains eligible as an adequate overkill baseline at 43.0 synthetic cost units but is not selected because route://bounded-transform-plus-verifier is eligible at 14.2 synthetic cost units",
+    "no chapter core claim is promoted above argument",
+    "no deployed routing, scheduler, runtime, benchmark, model-quality, source-interpretation, safety, or economic outcome is claimed"
+  ],
+  "negative_evidence_refs": [
+    "experiments/costed_route_resource_slice/input/v1_0_costed_routes.json",
+    "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
+    "docs/costed_route_resource_slice.md"
+  ],
+  "downgrade_triggers": [
+    "validator fails to reject the cheaper failed negative control",
+    "selected route is not the lowest-cost eligible route",
+    "baseline route is no longer eligible",
+    "result record drifts from recomputed cost units",
+    "chapter prose interprets this slice as deployed runtime, model, benchmark, scheduler, safety, or economic evidence"
+  ],
+  "promotion_burden": "Broader routing or resource-economics claims require a separate accepted transition with real route-quality measurements, deployed scheduler traces, load or serving-system measurements, TokenMana or PlanForge prototype runs, hidden-cost audits over real tasks, independent review where relevant, and explicit non-claims.",
+  "limitations": [
+    "synthetic public-safe route and budget records only",
+    "local deterministic validation rather than a deployed router or scheduler",
+    "cost formula is a toy accounting rule for this slice, not an economic model",
+    "does not measure model quality, benchmark quality, useful-solution performance, load stability, KV-cache behavior, or safety outcomes",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent external audit",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-29---costed-route-resource-slice-transition",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not prove deployed routing, scheduler, runtime, load, KV-cache, or economic behavior",
+    "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes",
+    "does not prove source interpretation, ASI capability, governance effectiveness, or benchmark performance",
+    "does not replace future prototype traces, real route-quality measurements, load tests, benchmark runs, Theseus or Circle imported receipts, or independent review"
+  ]
+}

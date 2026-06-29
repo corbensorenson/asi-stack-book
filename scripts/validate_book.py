@@ -68,6 +68,7 @@ REQUIRED = [
     "scripts/validate_generation_mode_baselines.py",
     "scripts/validate_resource_budget_ledgers.py",
     "scripts/validate_capacity_smoothing.py",
+    "scripts/validate_costed_route_resource_slice.py",
     "scripts/validate_phase5_harness_registry.py",
     "scripts/build_reader_edition.py",
     "scripts/build_source_matrix.py",
@@ -89,6 +90,7 @@ REQUIRED = [
     "docs/generation_mode_baseline_harness.md",
     "docs/resource_budget_ledger_harness.md",
     "docs/capacity_smoothing_harness.md",
+    "docs/costed_route_resource_slice.md",
     "docs/phase5_harness_registry.md",
     "docs/claim_ledger_revision_harness.md",
     "docs/proof_carrying_claim_harness.md",
@@ -123,6 +125,7 @@ REQUIRED = [
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
+    "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "evidence_transitions/README.md",
     "claim_decisions/v1_0_core_claim_no_promotion.json",
     "editions/release_profiles.json",
@@ -621,6 +624,7 @@ def main() -> None:
     run_validator("validate_generation_mode_baselines.py")
     run_validator("validate_resource_budget_ledgers.py")
     run_validator("validate_capacity_smoothing.py")
+    run_validator("validate_costed_route_resource_slice.py")
     run_validator("validate_phase5_harness_registry.py")
     run_validator("run_phase5_harnesses.py")
     print("Book validation passed.")

@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-06-29 - Costed route resource slice transition
+
+- Added `experiments/costed_route_resource_slice/` with a public-safe
+  three-route costed-route/resource-budget input, tracked local result, and
+  `scripts/validate_costed_route_resource_slice.py`.
+- Added `docs/costed_route_resource_slice.md` and
+  `evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json`
+  for the bounded `resource-economics.costed_route_budget_slice` transition
+  from `argument` to `synthetic-test-backed`.
+- The validator recomputes the synthetic cost formula, rejects the cheaper
+  failed negative control `route://cheap-unverified-transform`, keeps
+  `route://frontier-manual-review` as an eligible adequate overkill baseline,
+  and selects `route://bounded-transform-plus-verifier` with a 66.98 percent
+  synthetic cost reduction.
+- Wired the slice into `scripts/validate_book.py`, the measured-slice ledger,
+  evidence-transition summary, roadmap, focus audit, candidate status snapshot,
+  publication-readiness note, repository map, README, and status validator.
+- This does not promote any chapter core claim above `argument`, does not prove
+  deployed routing, scheduler behavior, load stability, KV-cache behavior,
+  economic outcomes, model quality, benchmark performance, source
+  interpretation, or safety, and does not replace future prototype traces,
+  empirical measurements, imported Theseus/Circle receipts, or independent
+  review.
+
 ## 2026-06-29 - Reader HTML edition release record
 
 - Added `release_records/2026-06-29-v1-reader-html-855dc277.json` for the

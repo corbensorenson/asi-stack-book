@@ -71,11 +71,11 @@ The review outcome is deliberately conservative: the current book has strong rec
 
 **Expected failure:** The system appears more efficient or more capable on a benchmark while actually increasing unpriced risk or downstream cost.
 
-**Observed current defense:** Benchmark ratchet fixtures, generation-mode baseline fixtures, resource-budget ledger fixtures, capacity-smoothing toy traces, and no-promotion decisions require baselines, negative controls, residual accounting, and non-claim boundaries. The measured registry-runner transition is scoped to infrastructure replay only.
+**Observed current defense:** Benchmark ratchet fixtures, generation-mode baseline fixtures, resource-budget ledger fixtures, capacity-smoothing toy traces, and no-promotion decisions require baselines, negative controls, residual accounting, and non-claim boundaries. The measured registry-runner transition is scoped to infrastructure replay only, and the bounded costed-route/resource-budget transition now rejects a cheaper failed negative control while preserving baseline, fallback, residual, and non-claim boundaries.
 
 **Residual risk:** No real benchmark, route-quality measurement, model run, hidden-holdout integrity check, contamination audit, useful-solution-per-second result, or cost-quality economic review has been accepted.
 
-**Routed follow-up:** Route to the next non-infrastructure measured slice: a small costed-route/resource-budget trace with baseline, fallback, quality predicate, residuals, and negative control. Keep routing, resource economics, fast generation, benchmark ratchets, and policy optimization at `argument`.
+**Routed follow-up:** The small synthetic costed-route/resource-budget slice is now recorded; route the next follow-up to real route-quality/resource-budget traces, benchmark contamination checks, hidden-cost audits, load/serving-system measurements, or imported prototype receipts. Keep routing, resource economics, fast generation, benchmark ratchets, and policy optimization core claims at `argument`.
 
 ## Reader-Release Laundering Attack
 
@@ -95,4 +95,3 @@ The review outcome is deliberately conservative: the current book has strong rec
 - It does not prove the ASI Stack is safe, aligned, secure, efficient, or implemented.
 - It does not promote any chapter core claim above `argument`.
 - It does not approve any reader, ebook, document, PDF, audio, DOI, release, or benchmark artifact.
-

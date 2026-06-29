@@ -1,12 +1,19 @@
-# First Measured Or Replayed Slice
+# Measured Or Replayed Slice Ledger
 
 Date: 2026-06-29
 
-This record documents the first v1.0 measured/replayed slice that clears a bounded support transition. It is intentionally narrow: it supports only the repository-infrastructure claim that the Phase 5 harness registry can be replayed by a single runner command against the current public-safe synthetic fixture set.
+This record documents v1.0 measured/replayed slices that clear bounded support
+transitions. They are intentionally narrow: the first supports only the
+repository-infrastructure claim that the Phase 5 harness registry can be
+replayed by a single runner command against the current public-safe synthetic
+fixture set, and the second supports only a synthetic
+costed-route/resource-budget selector discipline claim.
 
-It does not support ASI capability, deployed safety, model quality, benchmark performance, runtime enforcement, source interpretation, or any chapter core claim.
+They do not support ASI capability, deployed safety, model quality, benchmark
+performance, runtime enforcement, source interpretation, or any chapter core
+claim.
 
-## Accepted Narrow Claim
+## Accepted Narrow Claim 1
 
 Claim ID: `living-book-methodology.phase5_harness_registry_runner`
 
@@ -61,4 +68,72 @@ The replay included expected-invalid fixture sets for every registered harness l
 
 ## Residuals
 
-The next evidence slice should leave repository-infrastructure behavior and move toward a public-safe prototype or measurement lane: costed-route/resource-budget trace, context-admission replay, compression/RankFold measurement, planner/runtime adapter trace, Theseus transfer, or Circle receipt replay.
+This slice proves only repository-infrastructure replay. It does not satisfy
+the stronger desire for non-infrastructure evidence.
+
+## Accepted Narrow Claim 2
+
+Claim ID: `resource-economics.costed_route_budget_slice`
+
+Claim: A bounded costed-route/resource-budget selector can reject a cheaper
+route that fails verification and residual handling, compare against an
+adequate overkill baseline, and select the lowest-cost adequate route when the
+route record and budget record preserve verification, fallback, residual, and
+non-claim boundaries.
+
+Support transition: `argument` to `synthetic-test-backed`
+
+Transition record:
+`evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json`
+
+Result record: `docs/costed_route_resource_slice.md`
+
+## Command
+
+```bash
+python3 scripts/validate_costed_route_resource_slice.py
+```
+
+The command recomputes the tracked result from
+`experiments/costed_route_resource_slice/input/v1_0_costed_routes.json`, checks
+the tracked JSON result, checks the public summary, and checks the accepted
+transition record.
+
+## Inputs
+
+- Three costed route records validating against
+  `schemas/costed_route_record.schema.json`
+- Three resource budget records validating against
+  `schemas/resource_budget_record.schema.json`
+- One adequate overkill baseline route:
+  `route://frontier-manual-review`
+- One selected adequate lower-cost route:
+  `route://bounded-transform-plus-verifier`
+- One cheaper negative control:
+  `route://cheap-unverified-transform`
+
+## Output
+
+Observed result:
+
+- Selected route: `route://bounded-transform-plus-verifier`
+- Baseline route: `route://frontier-manual-review`
+- Negative control: `route://cheap-unverified-transform`
+- Selected synthetic cost units: 14.2
+- Baseline synthetic cost units: 43.0
+- Cost reduction versus baseline: 66.98 percent
+
+## Negative Controls
+
+The cheaper negative-control route has 2.3 synthetic cost units but is rejected
+because verification failed, the outcome is `cheap_brittle`, the route is not a
+promotion candidate, and the budget is residualized. This establishes only the
+bounded selector discipline encoded in the tracked records and validator.
+
+## Residuals
+
+The next evidence slice should move from synthetic selector discipline toward a
+public-safe prototype or measurement lane: context-admission replay,
+compression/RankFold measurement, planner/runtime adapter trace, Theseus
+transfer, Circle receipt replay, real route-quality measurement, or load and
+serving-system traces.

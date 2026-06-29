@@ -1,0 +1,290 @@
+{
+  "schema_version": "0.1",
+  "slice_id": "v1_0_costed_route_resource_slice",
+  "claim_id": "resource-economics.costed_route_budget_slice",
+  "purpose": "Replay a bounded public-safe costed-route/resource-budget selection with an adequate overkill baseline, one adequate lower-cost route, and one cheap negative control.",
+  "route_task_id": "task://reader-source-card-refresh",
+  "selection_policy": {
+    "quality_predicate": "Route must preserve source-card text, compact evidence-boundary text, fallback, residual obligations, and no support-state promotion.",
+    "total_cost_formula": "estimated_tokens / 1000 + estimated_time_seconds / 60 + tool_cost_units * 5",
+    "eligible_route_rule": "A route is eligible only when route_state is evaluated, verification_result is pass, outcome_state is adequate_minimum or adequate_overkill, promotion_candidate is true, budget_decision is dispatch, budget_state is dispatchable, and residual/non-claim boundaries are present.",
+    "selection_rule": "Select the eligible route with the lowest total_cost_units, preserving a fallback route and rejected-route explanation."
+  },
+  "baseline_route_id": "route://frontier-manual-review",
+  "expected_selected_route": "route://bounded-transform-plus-verifier",
+  "negative_control_route_id": "route://cheap-unverified-transform",
+  "routes": [
+    {
+      "route_id": "route://frontier-manual-review",
+      "role": "adequate_overkill_baseline",
+      "costed_route_record": {
+        "task_id": "task://reader-source-card-refresh",
+        "route_state": "evaluated",
+        "task_contract_ref": "intent://reader-source-card-refresh",
+        "quality_predicate": "Preserve source-card text, compact evidence-boundary text, fallback route, and support-state boundary.",
+        "authority_ceiling": "tracked_file_write",
+        "candidate_routes": [
+          "route://frontier-manual-review",
+          "route://bounded-transform-plus-verifier",
+          "route://cheap-unverified-transform"
+        ],
+        "selected_route": "route://frontier-manual-review",
+        "rejected_lower_cost_routes": [
+          "route://cheap-unverified-transform"
+        ],
+        "verification_result": "pass",
+        "outcome_state": "adequate_overkill",
+        "cost_accounting": {
+          "estimated_tokens": 24000,
+          "estimated_time_seconds": 240,
+          "tool_cost_units": 3
+        },
+        "cost_classes": [
+          "manual review",
+          "verification",
+          "fallback",
+          "residual"
+        ],
+        "hidden_cost_checks": [
+          "source-card text preserved",
+          "evidence-boundary text preserved",
+          "fallback retained",
+          "residual obligation recorded"
+        ],
+        "residual_obligations": [
+          "residual://manual-review-time-cost"
+        ],
+        "fallback_route": "route://frontier-manual-review",
+        "promotion_candidate": true,
+        "support_state_effect": "eligible_for_bounded_evidence_review",
+        "non_claims": [
+          "synthetic route record only",
+          "does not promote any chapter core claim",
+          "does not prove deployed routing, scheduler, runtime, load, KV-cache, or economic behavior",
+          "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes"
+        ]
+      },
+      "resource_budget_record": {
+        "budget_id": "budget://frontier-manual-review",
+        "task_id": "route://frontier-manual-review",
+        "value_hypothesis": "The overkill baseline should pass quality but spend more local review and tool capacity than necessary.",
+        "risk_class": "medium",
+        "capacity_pool": "local deterministic validation process",
+        "budget_state": "dispatchable",
+        "cost_estimate": [
+          "24000 estimated tokens",
+          "240 estimated seconds",
+          "3 tool cost units"
+        ],
+        "verification_tax": [
+          "verifier checklist covered",
+          "source-card preservation checked"
+        ],
+        "protected_overhead": [
+          "support-state boundary retained",
+          "fallback and residual record retained"
+        ],
+        "displaced_costs": [
+          "manual review time cost remains high but bounded"
+        ],
+        "quality_predicate": "The baseline preserves source cards and compact evidence boundaries.",
+        "safety_gates": [
+          "no support-state promotion",
+          "verification must pass",
+          "residual must remain visible"
+        ],
+        "budget_decision": "dispatch",
+        "escalation_rule": "Escalate if verification fails or residuals disappear.",
+        "residuals": [
+          "Manual review time cost is measured and bounded in the synthetic cost formula.",
+          "No scheduler, runtime, load, or economic result is claimed."
+        ],
+        "evidence_refs": [
+          "docs/costed_route_resource_slice.md"
+        ]
+      }
+    },
+    {
+      "route_id": "route://bounded-transform-plus-verifier",
+      "role": "selected_candidate",
+      "costed_route_record": {
+        "task_id": "task://reader-source-card-refresh",
+        "route_state": "evaluated",
+        "task_contract_ref": "intent://reader-source-card-refresh",
+        "quality_predicate": "Preserve source-card text, compact evidence-boundary text, fallback route, and support-state boundary.",
+        "authority_ceiling": "tracked_file_write",
+        "candidate_routes": [
+          "route://frontier-manual-review",
+          "route://bounded-transform-plus-verifier",
+          "route://cheap-unverified-transform"
+        ],
+        "selected_route": "route://bounded-transform-plus-verifier",
+        "rejected_lower_cost_routes": [
+          "route://cheap-unverified-transform"
+        ],
+        "verification_result": "pass",
+        "outcome_state": "adequate_minimum",
+        "cost_accounting": {
+          "estimated_tokens": 7200,
+          "estimated_time_seconds": 120,
+          "tool_cost_units": 1
+        },
+        "cost_classes": [
+          "bounded transform",
+          "verification",
+          "fallback",
+          "residual"
+        ],
+        "hidden_cost_checks": [
+          "source-card text preserved",
+          "evidence-boundary text preserved",
+          "fallback retained",
+          "residual obligation recorded"
+        ],
+        "residual_obligations": [
+          "residual://sampled-review-not-full-editorial-review"
+        ],
+        "fallback_route": "route://frontier-manual-review",
+        "promotion_candidate": true,
+        "support_state_effect": "eligible_for_bounded_evidence_review",
+        "non_claims": [
+          "synthetic route record only",
+          "does not promote any chapter core claim",
+          "does not prove deployed routing, scheduler, runtime, load, KV-cache, or economic behavior",
+          "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes"
+        ]
+      },
+      "resource_budget_record": {
+        "budget_id": "budget://bounded-transform-plus-verifier",
+        "task_id": "route://bounded-transform-plus-verifier",
+        "value_hypothesis": "A bounded transform plus verifier can satisfy the recorded predicate at lower synthetic cost than the overkill baseline.",
+        "risk_class": "medium",
+        "capacity_pool": "local deterministic validation process",
+        "budget_state": "dispatchable",
+        "cost_estimate": [
+          "7200 estimated tokens",
+          "120 estimated seconds",
+          "1 tool cost unit"
+        ],
+        "verification_tax": [
+          "verifier checklist covered",
+          "source-card preservation checked"
+        ],
+        "protected_overhead": [
+          "support-state boundary retained",
+          "fallback and residual record retained"
+        ],
+        "displaced_costs": [
+          "sampled-review residual remains bounded and visible"
+        ],
+        "quality_predicate": "The selected route preserves source cards and compact evidence boundaries.",
+        "safety_gates": [
+          "no support-state promotion",
+          "verification must pass",
+          "residual must remain visible"
+        ],
+        "budget_decision": "dispatch",
+        "escalation_rule": "Escalate to the frontier-manual-review fallback if verification fails or residuals disappear.",
+        "residuals": [
+          "Sampled review is not full editorial review.",
+          "No scheduler, runtime, load, or economic result is claimed."
+        ],
+        "evidence_refs": [
+          "docs/costed_route_resource_slice.md"
+        ]
+      }
+    },
+    {
+      "route_id": "route://cheap-unverified-transform",
+      "role": "negative_control",
+      "costed_route_record": {
+        "task_id": "task://reader-source-card-refresh",
+        "route_state": "fallback_required",
+        "task_contract_ref": "intent://reader-source-card-refresh",
+        "quality_predicate": "Preserve source-card text, compact evidence-boundary text, fallback route, and support-state boundary.",
+        "authority_ceiling": "tracked_file_write",
+        "candidate_routes": [
+          "route://frontier-manual-review",
+          "route://bounded-transform-plus-verifier",
+          "route://cheap-unverified-transform"
+        ],
+        "selected_route": "route://cheap-unverified-transform",
+        "rejected_lower_cost_routes": [],
+        "verification_result": "fail",
+        "outcome_state": "cheap_brittle",
+        "cost_accounting": {
+          "estimated_tokens": 1800,
+          "estimated_time_seconds": 30,
+          "tool_cost_units": 0
+        },
+        "cost_classes": [
+          "cheap transform",
+          "missing verification",
+          "fallback",
+          "residual"
+        ],
+        "hidden_cost_checks": [
+          "failed source-card preservation",
+          "missing evidence-boundary check",
+          "fallback required",
+          "residual obligation recorded"
+        ],
+        "residual_obligations": [
+          "residual://unverified-source-card-loss"
+        ],
+        "fallback_route": "route://frontier-manual-review",
+        "promotion_candidate": false,
+        "support_state_effect": "blocks_promotion",
+        "non_claims": [
+          "synthetic negative control only",
+          "does not promote any chapter core claim",
+          "does not prove deployed routing, scheduler, runtime, load, KV-cache, or economic behavior",
+          "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes"
+        ]
+      },
+      "resource_budget_record": {
+        "budget_id": "budget://cheap-unverified-transform",
+        "task_id": "route://cheap-unverified-transform",
+        "value_hypothesis": "A cheaper route that loses evidence boundaries should be rejected rather than selected.",
+        "risk_class": "medium",
+        "capacity_pool": "local deterministic validation process",
+        "budget_state": "residualized",
+        "cost_estimate": [
+          "1800 estimated tokens",
+          "30 estimated seconds",
+          "0 tool cost units"
+        ],
+        "verification_tax": [
+          "verification missing"
+        ],
+        "protected_overhead": [
+          "fallback required",
+          "residual record required"
+        ],
+        "displaced_costs": [
+          "future debugging and human repair burden would be unbounded if dispatched"
+        ],
+        "quality_predicate": "The cheap route fails the source-card and evidence-boundary predicate.",
+        "safety_gates": [
+          "no support-state promotion",
+          "failed verification blocks dispatch",
+          "residual must remain visible"
+        ],
+        "budget_decision": "residual",
+        "escalation_rule": "Fallback to frontier-manual-review or bounded-transform-plus-verifier when verification fails.",
+        "residuals": [
+          "Unverified source-card loss is residualized and blocks dispatch.",
+          "No scheduler, runtime, load, or economic result is claimed."
+        ],
+        "evidence_refs": [
+          "docs/costed_route_resource_slice.md"
+        ]
+      }
+    }
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove deployed routing, scheduler, runtime, load, KV-cache, or economic behavior",
+    "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes"
+  ]
+}
