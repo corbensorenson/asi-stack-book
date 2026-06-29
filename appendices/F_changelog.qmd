@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Evidence-laundering prevention case studies
+
+- Added `docs/evidence_laundering_prevention_case_studies.md` to record three
+  live no-promotion examples: the Project Theseus static import did not become
+  self-improvement evidence, the Circle consumer gate did not become deployed
+  proof-contract evidence, and the reader HTML artifact review did not approve
+  EPUB/DOCX/PDF/audio artifacts or technical claims.
+- Added `scripts/validate_evidence_laundering_case_studies.py` to require the
+  three examples, referenced evidence-boundary files, public-surface links, and
+  explicit boundaries that no evidence transition, demotion/refutation event,
+  external review, or support-state movement is claimed.
+- Updated the defended contribution track record, prior-art positioning record,
+  v1.x roadmap, A+ scorecard, README, publication readiness, repository map,
+  `scripts/validate_publication.py`, and `scripts/validate_book.py`.
+- This does not promote, demote, or refute any chapter core claim; it records
+  current no-promotion behavior and keeps the true demotion/refutation blocker
+  visible.
+
 ## 2026-06-29 - Defended contribution prior-art positioning
 
 - Added `docs/defended_contribution_prior_art_positioning.md` to position the

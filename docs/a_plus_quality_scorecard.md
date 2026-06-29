@@ -99,6 +99,9 @@ now records a source-noted prior-art positioning pass for those five tracks,
 including the remaining novelty, review, replay, proof, and routing
 residual-governance gaps; it is not an external review, novelty proof, or
 support-state transition.
+`docs/evidence_laundering_prevention_case_studies.md` now records three live
+no-promotion examples for the claim-support/evidence-laundering track while
+preserving that a true demotion/refutation example remains missing.
 
 ## Cold-Read Risk Controls
 

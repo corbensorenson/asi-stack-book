@@ -240,6 +240,11 @@ Current status for defended contribution focus:
   governance, sparse-routing, learned-routing, and cost/quality routing
   literature. It does not prove novelty, create external review, or move
   support states.
+- `docs/evidence_laundering_prevention_case_studies.md` records three live
+  no-promotion examples for the claim-support/evidence-laundering track:
+  Theseus static import, Circle public consumer gate, and reader HTML artifact
+  review. It preserves the harder gap that no chapter core claim has yet been
+  truly demoted or refuted.
 - The remaining two selected tracks, claim-support/evidence-laundering
   prevention and costed routing/resource discipline, remain selected-supporting
   tracks rather than simultaneous deep campaigns.
@@ -1164,6 +1169,12 @@ Acceptance bar:
 
 The roadmap must improve correctness, not only add material. Treat these as
 valid successful outcomes:
+
+Current status: `docs/evidence_laundering_prevention_case_studies.md` records
+three no-promotion examples that resisted evidence or artifact laundering. This
+is useful progress, but it is not a true demotion/refutation record. The first
+real demotion, refutation, retirement, or claim-narrowing event still needs to
+be recorded when evidence justifies it.
 
 - A chapter core claim can stay at `argument`, move downward to `unsupported`,
   become `refuted`, or split into narrower claims if evidence fails.

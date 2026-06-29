@@ -17,6 +17,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/a_plus_quality_scorecard.md` | Planning scorecard translating current project grade gaps into A+ conditions for cold-read legibility, evidence depth, proof rigor, external grounding, reader quality, and defended contribution tracks. | tracked |
 | `docs/defended_contribution_tracks.md` | v1.x defended-contribution selection record: five selected tracks, three deep-work tracks, active evidence-cycle anchors, and no-promotion boundaries. | tracked |
 | `docs/defended_contribution_prior_art_positioning.md` | Source-noted prior-art positioning record for the five defended contribution tracks, with comparator IDs, remaining gaps, and no-support-state-movement boundaries. | tracked |
+| `docs/evidence_laundering_prevention_case_studies.md` | No-promotion case-study record for evidence-laundering prevention, covering Theseus static import, Circle consumer gate, reader HTML artifact review, and the remaining demotion/refutation gap. | tracked |
 | `docs/per_chapter_evidence_plan.md` | 54-chapter evidence-lane backlog for selecting a small high-payoff v1.x execution set without triggering another shallow breadth sweep. | tracked |
 | `docs/v1_x_active_evidence_cycle.md` | Active v1.x evidence-cycle ledger naming the seven selected high-payoff lanes, the forty-seven planned-only lanes, and the no-chapter-core-promotion boundary. | tracked |
 | `docs/chapter_consolidation_sequence.md` | Governed full consolidation sequence for the 54-to-44/47 chapter-shape critique, preserving cluster order, protected chapters, no-manifest-edit boundaries, and review prerequisites. | tracked |
@@ -104,6 +105,7 @@ This repository is organized around the living book and its validation loop.
 | `release_records/2026-06-29-v1-reader-html-855dc277.json` | Edition release record for the reviewed local generated reader HTML artifact from source tag `v1.0.0-reader-html-source`; EPUB, DOCX, PDF, e-reader, and audio artifacts remain unapproved. | tracked |
 | `scripts/init_curated_reader_chapter.py` | Dry-run-first helper for initializing future curated reader chapter records and starter files from the generated reader baseline when overlays become too small. | tracked |
 | `scripts/validate_defended_contribution_prior_art.py` | Validator for defended-contribution prior-art positioning, source-note coverage, public references, and no-novelty/no-promotion boundaries. | tracked |
+| `scripts/validate_evidence_laundering_case_studies.py` | Validator for evidence-laundering no-promotion case studies, referenced evidence boundary files, public references, and the remaining demotion/refutation gap. | tracked |
 | `scripts/validate_chapter_consolidation_sequence.py` | Validator for the full governed consolidation sequence, public-surface references, no-manifest-edit boundary, and current 54-chapter manifest preservation. | tracked |
 | `assets/reader-overlays.html` | Generated embedded reader-overlay payload for live Human view. | tracked; regenerate from overlays |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
