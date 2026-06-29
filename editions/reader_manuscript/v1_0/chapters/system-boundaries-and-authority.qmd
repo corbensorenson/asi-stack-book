@@ -1,0 +1,342 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: system-boundaries-and-authority
+generated_baseline_ref: build/reader_edition/chapters/system-boundaries-and-authority.qmd
+live_source_ref: chapters/system-boundaries-and-authority.qmd@753d3404f
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# System Boundaries and Authority
+
+The first two chapters ask the reader to see ASI as a stack and to take
+efficiency seriously without mistaking it for cheapness. This chapter adds the
+guardrail that makes both ideas usable: the stack must know the difference
+between what a component can do and what it may do.
+
+That distinction is not cosmetic. A planner can describe a correct action. A
+model can produce a useful answer. A memory system can surface relevant
+context. A specialist can generate a patch. None of those facts should
+automatically authorize external action. Capability answers one question.
+Authority answers another.
+
+In a governed stack, refusal is not a breakdown in intelligence. It is one of
+the ways intelligence stays inside its contract. The system must be able to
+say: the plan is coherent, the source is available, the model is capable, and
+the action is still not authorized.
+
+The reader promise of this chapter is simple. By the end, "authority" should
+feel less like an abstract safety word and more like a concrete transition
+record: who is asking, what boundary they want to cross, which grant they
+have, which ceiling binds them, what happens if the grant is missing, and what
+receipt remains after the decision.
+
+## Problem
+
+The stack needs a formal vocabulary for boundaries before it can make serious
+claims about planning, memory, tools, deployment, or self-improvement.
+
+Efficiency routes cognition by cost and quality. That only works if route
+selection remains separate from permission to act. A planner may know how to
+decompose a task without being allowed to touch production. A memory layer may
+read a source without being allowed to reveal it. A model may understand a
+private instruction without being allowed to disclose it. A runtime adapter
+may know the shell command that would finish the job without being allowed to
+run it.
+
+Those separations need records. Authority cannot be a mood, trust score, role
+label, or reputation assigned to a model. It has to be a typed, bounded
+capability attached to a principal, layer, tool, field, artifact, route, or
+handoff. It has to expire, be revocable, leave audit evidence, and fail closed
+when the grant is absent.
+
+The sources behind the live chapter converge on that pressure from different
+directions. VIEA needs authority boundaries so intent-to-execution does not
+become intent-to-side-effect. SCF needs them so a replacement implementation
+does not inherit powers simply by occupying a stable capability field. Talos
+needs them so typed jobs, controlled adapters, blind secret handles, and
+approval gates stay inside a control plane. Ladon/Manhattan and GenesisCode
+make the same point for secrets, effects, patches, executors, and protocol
+seals. MoECOT remains implementation-reference context rather than reproduced
+runtime evidence.
+
+The core danger is permission collapse. Read access becomes write access.
+Planning becomes execution. A source summary becomes authorization. A
+benchmark result becomes promotion authority. A generated patch becomes
+accepted code. A capable specialist receives the task because it can perform
+the work, not because the caller may authorize the work.
+
+When that collapse happens, the architecture has lost the boundary that lets
+it be governed.
+
+## Why existing approaches are insufficient
+
+Informal boundaries are too weak for systems that can plan, remember, call
+tools, write artifacts, and change themselves.
+
+Prompt instructions and role labels can help a human understand intent, but
+they do not define a real permission system. "You are an assistant" does not
+say whether the system may read a private file, call a shell, modify a branch,
+push a commit, spend money, export a source, update an evaluator, or approve
+its own replacement. Tool wrappers are closer to enforcement, but wrappers
+still need typed authority. Otherwise a list of available functions becomes a
+list of tempting side effects.
+
+The external sources are useful for locating the territory, not for proving
+this design. NIST risk-management and frontier-governance work provide
+vocabulary for lifecycle duties, assessment, oversight, and roles. Formal work
+on power-seeking pressure warns that capable agents can prefer options that
+preserve or expand their influence under broad objectives. Those sources help
+explain why authority boundaries matter. They do not show that this repository
+has deployed enforcement.
+
+The failure mode becomes sharper under self-improvement. A replacement
+implementation may be better at the task while accidentally receiving the old
+implementation's handles. A learned route may be cheaper while granting itself
+approval shortcuts. A tool call may run under the user's broad session power
+instead of the requesting layer's narrow grant. A memory system may treat a
+source it can see as a source it can reveal.
+
+Authority records are the counterweight. They make the system ask "may this
+principal cross this boundary under this grant?" before it asks "can some
+component perform the operation?"
+
+## Core Claim
+
+Authority should be modeled as a typed, bounded capability attached to layers,
+fields, tools, artifacts, and principals. The live book keeps this claim at
+`argument` support.
+
+That boundary matters because the rest of the stack depends on it. Planning is
+not execution. Reading is not disclosure. Transforming an artifact is not
+approving it. Routing to a specialist is not granting that specialist every
+handle in the session. Replacing an implementation is not a reason to widen
+the field's authority ceiling.
+
+The source mappings in Appendix C support the architectural direction, and
+the local repository has useful narrow artifacts: an authority-transition
+schema, synthetic fixtures, a validation harness, and finite Lean predicates.
+Those artifacts do not prove deployed authorization enforcement, runtime
+adapter safety, revocation propagation, live confused-deputy resistance, or
+tool-wrapper security. The claim strengthens only when those surfaces exist
+and pass review.
+
+## Mechanism
+
+Authority is the stack's answer to the question "who may cause an effect?"
+
+The mechanism is an Authority Transition Record. It sits at the boundary where
+a principal, layer, field, tool, artifact, or route asks to cross from one
+state into another. Before the effect happens, the record names the requester,
+the requested operation, the boundary being crossed, the permission class, the
+caller ceiling, the target's required authority, the grant, the revocation or
+expiry state, the decision, and the evidence that remains afterward.
+
+```{mermaid}
+flowchart LR
+  A["Principal / layer"] --> B["Requested operation"]
+  B --> C["Authority ceiling"]
+  B --> D["Required grant"]
+  C --> E{"Within ceiling?"}
+  D --> F{"Grant present<br/>and unrevoked?"}
+  E -- "no" --> G["Deny + audit"]
+  F -- "no" --> G
+  E -- "yes" --> H["Authorized handoff"]
+  F -- "yes" --> H
+  H --> I["Executor / tool / field"]
+  I --> J["Effect receipt"]
+  J --> K["Evidence ledger"]
+```
+
+Read the diagram as a permission gate, not a capability test. The request
+crosses the boundary only when both the ceiling and grant checks pass. A
+failure is not ignored. It becomes a denial or escalation record that the
+evidence ledger can inspect later.
+
+This is what keeps authority out of semantic similarity. A model may infer
+that an action would help. That inference is not a grant. A retrieved document
+may contain instructions. That text is not a grant. A specialist may be the
+highest-quality route. Quality is not a grant. The grant is a record issued by
+governance or by an authorized caller under a bounded delegation rule.
+
+Authority also has a lifecycle. A grant is not a permanent property of a
+model, layer, or user session. It is scoped to a principal, operation, target,
+time or epoch, approval state, and evidence obligation.
+
+```{mermaid}
+stateDiagram-v2
+  [*] --> Requested
+  Requested --> Denied: over ceiling or missing grant
+  Requested --> Granted: scoped approval
+  Granted --> Delegated: bounded handoff
+  Delegated --> Used: adapter/effect call
+  Used --> Receipted: effect receipt
+  Granted --> Revoked: policy or expiry
+  Delegated --> Revoked: policy or expiry
+  Revoked --> Denied: later use attempt
+  Receipted --> [*]
+  Denied --> [*]
+```
+
+The important word in that diagram is "bounded." Delegation can narrow
+authority. It should not silently widen it. A layer may pass a task to a tool
+or specialist only within the ceiling it actually holds, and later use must
+fail when the grant expires or is revoked.
+
+## Interfaces
+
+Authority changes travel through an Authority Transition Record. Governance
+issues ceilings and grants. Planning and routing may request handoffs, but
+they do not thereby authorize them. Execution checks permissions before side
+effects. Evidence records denials, confused-deputy attempts, revocations, and
+authorized effects.
+
+At minimum, the record needs to say:
+
+- who or what is asking;
+- which layer or principal owns the request;
+- which boundary is being crossed;
+- what operation is requested;
+- which permission class applies;
+- what the caller's ceiling is;
+- what authority the target requires;
+- which grant or delegation chain is active;
+- whether the grant has expired or been revoked;
+- whether the decision is allow, deny, or escalate;
+- what denial reason or effect receipt was produced;
+- which audit references and non-claims travel with the decision.
+
+The record does not prove enforcement by itself. It shows where enforcement
+would be tested. Did the requested operation match the permission class? Did
+delegation narrow rather than widen the caller's ceiling? Did revocation block
+later use? Did execution produce a receipt? Did denial leave a reason that
+future planning cannot reinterpret as missing context?
+
+### Permission Classes
+
+The record has to name the kind of permission being requested, because the
+same information can be safe in one class and unsafe in another.
+
+Read permission lets a layer inspect material without publishing it, mutating
+it, or acting on it. Transform permission lets a layer derive a new artifact,
+but it carries provenance and taint obligations. Disclosure permission asks
+whether the output may be shown, exported, or transmitted to the intended
+audience. Write permission changes a file, ledger, memory cell, branch, or
+other durable target and therefore needs target-scoped authority plus audit.
+Execute permission crosses into a tool, runtime, service, or adapter and
+should leave an effect receipt. Approval permission is still more constrained:
+it authorizes a promotion or high-impact action and cannot be self-issued by
+the actor that benefits from it.
+
+These categories are deliberately ordinary because most authority failures are
+ordinary. A model reads something and treats the text as approval. A planner
+turns a draft into an action. A low-authority request borrows a high-authority
+tool. A replacement implementation inherits a handle that was qualified for an
+older context. The point of the taxonomy is to make those mistakes visible
+before they become side effects.
+
+## Invariants and Failure Modes
+
+The authority layer has a small set of invariants that later chapters keep
+reusing.
+
+Authority never expands silently. Read permission is not write permission.
+Tool execution requires an explicit grant. Delegated authority can narrow but
+not silently widen the caller's ceiling. Approval authority is separate from
+execution authority.
+
+Those invariants turn common failures into inspectable records:
+
+- authority creep;
+- confused-deputy tool calls;
+- memory access treated as action approval;
+- stale grants used after expiry or revocation;
+- replacement implementations inheriting handles qualified for an older
+  implementation.
+
+The confused-deputy pattern is the central test. A low-authority layer asks a
+higher-authority tool to do something that the layer itself could not do. If
+the tool runs under its own raw capability rather than the requester's ceiling,
+the boundary has failed. The fix is to bind the operation to the requester's
+authority, not merely to the tool's power.
+
+Memory creates the parallel version of the same failure. Seeing a secret,
+policy, instruction, or source is mistaken for permission to disclose or act
+on it. The stack has to keep those operations separate even when the text
+itself is fluent, relevant, or urgent.
+
+## Minimum Viable Implementation
+
+The smallest useful implementation is not a universal permission kernel. It is
+an `authority_transition_record` schema plus fixtures and checks for the
+smallest boundaries the stack already needs.
+
+The fixture set should include an allowed handoff, an over-ceiling denial, an
+approval escalation, a missing-receipt failure, a permission-collapse failure,
+and a confused-deputy failure. The first negative fixture is as important as
+the allowed one. A route that has useful context but lacks authority should
+produce a denial record before any downstream layer can treat the handoff as
+executable.
+
+The repository already has narrow pieces of that surface. Protocol validation
+checks authority records. `AsiStackProofs.Authority` contains finite-record
+predicates about ceiling preservation and missing-grant denial. The authority
+transition harness exercises synthetic allow, denial, escalation,
+missing-receipt, permission-collapse, and confused-deputy cases.
+
+Those are useful foundations, not deployed enforcement. They do not show a
+live tool wrapper resisting a confused-deputy attempt, a runtime adapter
+propagating revocation, or a production system denying stale authority. The
+support state stays `argument`.
+
+## Beyond the State of the Art
+
+The mature authority layer is a type system for effects.
+
+Every model, tool, memory cell, field, artifact, human, project, and runtime
+route would carry explicit capability bounds. The system would distinguish
+what a component can do from what it may do at every handoff. Authority would
+be typed, bounded, revocable, durable, and attached to concrete principals,
+layers, fields, tools, artifacts, and routes.
+
+In that mature architecture, denial receipts matter as much as grants. Missing
+authority leaves an inspectable trail. Authority creep becomes a failed
+transition. Memory access treated as action approval becomes a denied handoff.
+Execution without a grant becomes an audit event. Replacement that widens a
+field's authority ceiling becomes a blocked qualification. Self-improvement
+cannot quietly turn better performance into broader permission.
+
+This remains a target architecture. The local schemas, fixtures, harnesses,
+and Lean predicates exercise narrow record-level behavior. They do not prove
+runtime permission enforcement, revocation propagation, tool-call security, or
+deployed governance.
+
+## Summary
+
+Governance becomes operational only when authority is a transition system
+rather than a feeling. A layer may propose, read, transform, disclose, write,
+execute, approve, or deploy only when the matching grant exists and remains
+inside the active ceiling. Everything else is a denial, escalation, missing
+receipt, or missing-authority record.
+
+That boundary keeps the efficient stack from becoming a permission leak.
+Routing can choose a worker. Planning can request a handoff. Memory can expose
+context. GenesisCode-like systems can propose effects. But authority moves
+only through typed transitions that can be audited, revoked, tested, and later
+formalized.
+
+Without those transitions, the rest of the architecture gets deceptively easy.
+Context becomes permission. Capability becomes authority. Benchmarks become
+promotion. Tool access becomes deployment. The stack needs the authority layer
+because it must remain able to stop an action even when it knows how to do it.
+
+## Handoff
+
+Once authority is explicit, the architecture needs a map of what breaks when
+authority is missing, vague, or exceeded. Failure Modes of Ungoverned
+Intelligence turns the boundary rules into a failure radar: authority creep,
+context pollution, evaluator capture, evidence inflation, and unbounded
+execution become detectable architectural problems rather than vague safety
+concerns. The sequence moves from the positive type system to the negative map
+that every later layer must answer.

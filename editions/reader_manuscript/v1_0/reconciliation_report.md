@@ -1,6 +1,6 @@
 # v1.0 Curated Reader Reconciliation Report
 
-Status: drafting; eight curated reader chapters have first prose curation passes,
+Status: drafting; nine curated reader chapters have first prose curation passes,
 with release blockers still active.
 
 This report is the required reconciliation surface for any future curated v1.0 reader manuscript. It is not a reader release record, not an ebook/document/PDF/audio artifact record, not a support-state promotion, and not an equal source of truth beside the live AI/research book.
@@ -9,12 +9,12 @@ This report is the required reconciliation surface for any future curated v1.0 r
 
 - Curated manuscript status: `drafting`
 - Current graduation decision: keep drafting-only curated reader chapters for
-  the opener, Efficient ASI, Evidence States, Human Intent, Recursive
-  Self-Improvement, Circle proof-carrying contracts, Executable
+  the opener, Efficient ASI, System Boundaries, Evidence States, Human Intent,
+  Recursive Self-Improvement, Circle proof-carrying contracts, Executable
   Specifications, and Artifact Steward Agents while keeping generated reader
   source plus semantic overlays as the release baseline; see
   `docs/curated_reader_graduation_review.md`
-- Chapter records: 8 drafting records
+- Chapter records: 9 drafting records
 - Active reader baseline: generated reader source plus semantic reader overlays
 - Manifest source of truth: `book_structure.json`
 - Review queue: `editions/reader_manuscript/v1_0/chapter_review_matrix.json`
@@ -33,6 +33,7 @@ If a reader edit discovers that the live AI/research source is wrong, thin, misl
 |---|---|---|---|---|---|---|
 | `asi-is-a-stack-not-a-model` | `editions/reader_manuscript/v1_0/chapters/asi-is-a-stack-not-a-model.qmd` | `build/reader_edition/chapters/asi-is-a-stack-not-a-model.qmd` | `chapters/asi-is-a-stack-not-a-model.qmd@d16c2720` | `drafting` | First curated prose pass completed for opening, pacing, paragraph order, section flow, transitions, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_asi_stack_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 | `the-efficient-asi-hypothesis` | `editions/reader_manuscript/v1_0/chapters/the-efficient-asi-hypothesis.qmd` | `build/reader_edition/chapters/the-efficient-asi-hypothesis.qmd` | `chapters/the-efficient-asi-hypothesis.qmd@a5583f1e` | `drafting` | First curated prose pass completed for opening, pacing, paragraph order, section flow, transitions, route-outcome explanation, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_efficient_asi_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
+| `system-boundaries-and-authority` | `editions/reader_manuscript/v1_0/chapters/system-boundaries-and-authority.qmd` | `build/reader_edition/chapters/system-boundaries-and-authority.qmd` | `chapters/system-boundaries-and-authority.qmd@753d3404f` | `drafting` | First curated prose pass completed for opening, pacing, paragraph order, section flow, transitions, can/may distinction, denial-as-control explanation, permission-class taxonomy, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_system_boundaries_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 | `evidence-states-and-claim-discipline` | `editions/reader_manuscript/v1_0/chapters/evidence-states-and-claim-discipline.qmd` | `build/reader_edition/chapters/evidence-states-and-claim-discipline.qmd` | `chapters/evidence-states-and-claim-discipline.qmd@28fcd839c` | `drafting` | First curated prose pass completed for opening, evidence-state traffic-control throughline, source-boundary explanation, support-label/support-state distinction, demotion path, implementation boundary, and summary; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_evidence_states_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 | `human-intent-as-a-formal-input` | `editions/reader_manuscript/v1_0/chapters/human-intent-as-a-formal-input.qmd` | `build/reader_edition/chapters/human-intent-as-a-formal-input.qmd` | `chapters/human-intent-as-a-formal-input.qmd@72f4c7365` | `drafting` | First curated prose pass completed for opening, pacing, paragraph order, section flow, transitions, intent-state explanation, external-comparator boundary repair, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_human_intent_prose_pass.md`. Handoff remains pending reconciliation if the Part I consolidation later changes the Constitutional Alignment destination. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd` | `build/reader_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd` | `chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd@b51f5dca1` | `drafting` | First curated prose pass completed for opening, proof-versus-performance throughline, receipt lifecycle explanation, Circle consumer-gate boundary repair, minimum viable implementation alignment, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_circle_contracts_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |

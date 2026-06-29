@@ -24,10 +24,11 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 1
-- Curated chapter records: 8 drafting records for
+- Curated-manuscript candidates: 2
+- Curated chapter records: 9 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
+  `system-boundaries-and-authority`,
   `evidence-states-and-claim-discipline`,
   `human-intent-as-a-formal-input`,
   `recursive-self-improvement-boundaries`,
@@ -44,7 +45,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 ## Decision
 
 Graduate drafting-only curated reader sources for the opener, Efficient ASI,
-Evidence States, Human Intent, Recursive Self-Improvement,
+System Boundaries, Evidence States, Human Intent, Recursive Self-Improvement,
 `circle-calculus-and-proof-carrying-ai-contracts`,
 `executable-specifications-and-lean-proof-envelope`, and
 `artifact-steward-agents-and-living-project-governance`; do not treat any file
@@ -77,6 +78,7 @@ duplicate skeletons the consolidation pilot is trying to remove.
 |---|---|---|
 | `asi-is-a-stack-not-a-model` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_asi_stack_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `the-efficient-asi-hypothesis` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_efficient_asi_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
+| `system-boundaries-and-authority` | foundational protected standalone chapter outside the pending consolidation cluster; active overlay already existed for permission-class prose | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_system_boundaries_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and deployed authorization enforcement is not claimed. |
 | `evidence-states-and-claim-discipline` | protected standalone evidence-discipline chapter and active evidence-cycle lane outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_evidence_states_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no claim-support movement is implied. |
 | `human-intent-as-a-formal-input` | local prose improvement allowed by the consolidation decision review; outside the pending four-chapter merge cluster but adjacent to a possible future Constitutional Alignment destination | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_human_intent_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and the handoff must be revisited if the Part I consolidation changes the Constitutional Alignment destination. |
 | `recursive-self-improvement-boundaries` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_recursive_self_improvement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
@@ -116,7 +118,7 @@ true:
 
 ## Non-Claims
 
-- This review creates eight drafting-only curated reader chapter files for
+- This review creates nine drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.
