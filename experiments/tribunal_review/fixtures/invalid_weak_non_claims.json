@@ -1,0 +1,44 @@
+{
+  "review_id": "tribunal-invalid-weak-non-claims-001",
+  "target_ref": "claim://weak-non-claims",
+  "review_state": "actions_recorded",
+  "risk_class": "medium",
+  "dossier_boundary": "bounded dossier",
+  "dossier_refs": [
+    "docs/evidence_transition_pilot.md"
+  ],
+  "reviewer_independence": "not externally established",
+  "reviewer_roles": [
+    "process reviewer",
+    "evidence reviewer",
+    "residual reviewer"
+  ],
+  "adversarial_probes": [
+    "check non-claims"
+  ],
+  "cycle_cap": "one cycle",
+  "prior_review_refs": [],
+  "unchanged_evidence_guard": "cannot promote on unchanged evidence without new evidence",
+  "retrieval_expansion_policy": "none",
+  "findings": [
+    "record shape exists"
+  ],
+  "evidence_refs": [
+    "scripts/validate_tribunal_review.py"
+  ],
+  "dissent": [
+    "No dissent recorded in this fixture."
+  ],
+  "unresolved_issues": [],
+  "verdict": "revise",
+  "required_actions": [
+    "fix non-claims"
+  ],
+  "constraint_effects": [
+    "block promotion"
+  ],
+  "human_adjudication": "not required",
+  "non_claims": [
+    "fixture is narrow"
+  ]
+}

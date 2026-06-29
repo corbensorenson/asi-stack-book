@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Tribunal review harness
+
+- Added `scripts/validate_tribunal_review.py`, synthetic tribunal-review
+  fixtures under `experiments/tribunal_review/`,
+  `docs/tribunal_review_harness.md`, and a tracked local result record. The
+  local run passes with 3 valid and 5 expected-invalid fixtures, checking
+  dossier refs, reviewer roles, adversarial probes, evidence-backed accept
+  verdicts, dissent preservation, prior-review guards, required actions,
+  constraint effects, and explicit non-claim boundaries.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Unified Adaptive Tribunal chapter's
+  adversarial-review, dissent-preservation, and consensus-evidence test rows,
+  README, publication readiness, and v1.0 roadmap/status/focus surfaces. This
+  is synthetic tribunal-review record discipline only: it is not reviewer
+  independence, adversarial-review quality, consensus quality, verdict
+  correctness, source interpretation, runtime behavior, reader-release
+  approval, support-state promotion, proof adequacy, benchmark evidence, or
+  whole-system epistemic correctness.
+
 ## 2026-06-28 - v1.0 Spinoza evidence transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/spinoza_no_change.json` and updated

@@ -1,0 +1,53 @@
+{
+  "review_id": "tribunal-valid-block-unchanged-evidence-001",
+  "target_ref": "claim://repeated-promotion-request",
+  "review_state": "blocked",
+  "risk_class": "critical",
+  "dossier_boundary": "prior review and unchanged evidence packet only",
+  "dossier_refs": [
+    "docs/evidence_transition_pilot.md"
+  ],
+  "reviewer_independence": "role separation declared for fixture; independence not externally established",
+  "reviewer_roles": [
+    "logic critic",
+    "evidence critic",
+    "governance critic"
+  ],
+  "adversarial_probes": [
+    "check whether repeated review is laundering a rejected claim"
+  ],
+  "cycle_cap": "one guard cycle",
+  "prior_review_refs": [
+    "tribunal://prior-rejection-001"
+  ],
+  "unchanged_evidence_guard": "block repeated promotion unless new evidence or corrected mapping is supplied",
+  "retrieval_expansion_policy": "require named missing evidence before expansion",
+  "findings": [
+    "no new evidence supplied",
+    "prior rejection remains controlling"
+  ],
+  "evidence_refs": [
+    "tribunal://prior-rejection-001"
+  ],
+  "dissent": [
+    "No dissent recorded in this fixture."
+  ],
+  "unresolved_issues": [
+    "promotion request lacks new evidence"
+  ],
+  "verdict": "blocked",
+  "required_actions": [
+    "supply new evidence or corrected mapping before review can reopen"
+  ],
+  "constraint_effects": [
+    "block support-state promotion",
+    "block repeated-review laundering"
+  ],
+  "human_adjudication": "required only if new evidence changes the dossier",
+  "non_claims": [
+    "does not prove reviewer independence",
+    "does not prove verdict correctness",
+    "does not prove runtime behavior",
+    "does not promote support state"
+  ]
+}

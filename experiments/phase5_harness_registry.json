@@ -46,6 +46,29 @@
     ]
   },
   {
+    "id": "tribunal_review",
+    "name": "Tribunal review harness",
+    "command": "python3 scripts/validate_tribunal_review.py",
+    "script": "scripts/validate_tribunal_review.py",
+    "doc": "docs/tribunal_review_harness.md",
+    "experiment_dir": "experiments/tribunal_review",
+    "fixture_dir": "experiments/tribunal_review/fixtures",
+    "result_record": "experiments/tribunal_review/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Tribunal review harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "unified-adaptive-tribunal-and-adversarial-review",
+      "spinoza-verification-and-proof-carrying-claims",
+      "moral-uncertainty-and-value-conflict",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "non_claims": [
+      "Does not prove reviewer independence, adversarial-review quality, consensus quality, verdict correctness, runtime behavior, or source interpretation.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "support_state_transitions",
     "name": "Support-state transition harness",
     "command": "python3 scripts/validate_support_state_transitions.py",

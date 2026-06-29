@@ -1,0 +1,47 @@
+{
+  "review_id": "tribunal-invalid-dissent-lost-001",
+  "target_ref": "claim://dissent-lost",
+  "review_state": "actions_recorded",
+  "risk_class": "high",
+  "dossier_boundary": "bounded dossier",
+  "dossier_refs": [
+    "docs/source_evidence_audit.md"
+  ],
+  "reviewer_independence": "not externally established",
+  "reviewer_roles": [
+    "logic critic",
+    "citation critic",
+    "omission critic"
+  ],
+  "adversarial_probes": [
+    "probe dissent handling"
+  ],
+  "cycle_cap": "three cycles",
+  "prior_review_refs": [],
+  "unchanged_evidence_guard": "cannot promote on unchanged evidence without new evidence",
+  "retrieval_expansion_policy": "expand for named gaps",
+  "findings": [
+    "dissent exists"
+  ],
+  "evidence_refs": [
+    "docs/source_evidence_audit.md"
+  ],
+  "dissent": [
+    "Evidence critic dissents from the verdict."
+  ],
+  "unresolved_issues": [],
+  "verdict": "revise",
+  "required_actions": [
+    "revise"
+  ],
+  "constraint_effects": [
+    "block promotion"
+  ],
+  "human_adjudication": "required",
+  "non_claims": [
+    "does not prove reviewer independence",
+    "does not prove verdict correctness",
+    "does not prove runtime behavior",
+    "does not promote support state"
+  ]
+}

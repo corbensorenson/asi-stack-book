@@ -1,0 +1,52 @@
+{
+  "review_id": "tribunal-valid-scoped-accept-001",
+  "target_ref": "claim://book-method-process-record",
+  "review_state": "verdict_issued",
+  "risk_class": "medium",
+  "dossier_boundary": "repository process artifacts only",
+  "dossier_refs": [
+    "book_structure.json",
+    "docs/evidence_transition_pilot.md"
+  ],
+  "reviewer_independence": "role separation declared for fixture; independence not externally established",
+  "reviewer_roles": [
+    "process reviewer",
+    "evidence reviewer",
+    "residual reviewer"
+  ],
+  "adversarial_probes": [
+    "check whether process evidence is being overstated"
+  ],
+  "cycle_cap": "two bounded review cycles",
+  "prior_review_refs": [
+    "tribunal://prior-book-method-check"
+  ],
+  "unchanged_evidence_guard": "prior review cannot promote without new evidence or corrected mapping",
+  "retrieval_expansion_policy": "no retrieval expansion beyond repository artifacts",
+  "findings": [
+    "repository process record exists",
+    "scope is limited to book mechanics"
+  ],
+  "evidence_refs": [
+    "docs/evidence_transition_pilot.md",
+    "scripts/validate_evidence_transitions.py"
+  ],
+  "dissent": [
+    "No dissent recorded in this fixture."
+  ],
+  "unresolved_issues": [],
+  "verdict": "accept",
+  "required_actions": [
+    "cite only within the scoped book-method boundary"
+  ],
+  "constraint_effects": [
+    "scope limited to repository process mechanics"
+  ],
+  "human_adjudication": "not required for this scoped fixture",
+  "non_claims": [
+    "does not prove reviewer independence",
+    "does not prove verdict correctness",
+    "does not prove runtime behavior",
+    "does not promote support state"
+  ]
+}

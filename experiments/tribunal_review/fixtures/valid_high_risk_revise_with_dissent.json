@@ -1,0 +1,56 @@
+{
+  "review_id": "tribunal-valid-high-risk-revise-001",
+  "target_ref": "artifact://high-risk-claim-update",
+  "review_state": "actions_recorded",
+  "risk_class": "high",
+  "dossier_boundary": "bounded source dossier plus claim/evidence records only",
+  "dossier_refs": [
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/source_evidence_audit.md"
+  ],
+  "reviewer_independence": "role separation declared for fixture; independence not externally established",
+  "reviewer_roles": [
+    "logic critic",
+    "citation critic",
+    "omission critic"
+  ],
+  "adversarial_probes": [
+    "search for unsupported promotion",
+    "check citation-to-claim mismatch",
+    "check omitted counterevidence"
+  ],
+  "cycle_cap": "three bounded review cycles",
+  "prior_review_refs": [],
+  "unchanged_evidence_guard": "cannot promote on unchanged evidence without new evidence or corrected mapping",
+  "retrieval_expansion_policy": "expand retrieval only for named missing evidence",
+  "findings": [
+    "claim support is narrower than prose",
+    "citation evidence is incomplete"
+  ],
+  "evidence_refs": [
+    "docs/source_evidence_audit.md"
+  ],
+  "dissent": [
+    "Citation critic dissents from accepting the current claim wording."
+  ],
+  "unresolved_issues": [
+    "claim wording remains broader than reviewed evidence"
+  ],
+  "verdict": "revise",
+  "required_actions": [
+    "narrow claim wording",
+    "preserve dissent in the claim ledger",
+    "rerun evidence transition after revision"
+  ],
+  "constraint_effects": [
+    "block support-state promotion",
+    "preserve dissent as a residual"
+  ],
+  "human_adjudication": "required before any public release claim uses the revised wording",
+  "non_claims": [
+    "does not prove reviewer independence",
+    "does not prove verdict correctness",
+    "does not prove runtime behavior",
+    "does not promote support state"
+  ]
+}

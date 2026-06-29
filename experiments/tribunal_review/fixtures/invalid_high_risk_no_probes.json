@@ -1,0 +1,45 @@
+{
+  "review_id": "tribunal-invalid-high-risk-no-probes-001",
+  "target_ref": "artifact://high-risk-claim-update",
+  "review_state": "actions_recorded",
+  "risk_class": "high",
+  "dossier_boundary": "bounded dossier",
+  "dossier_refs": [
+    "appendices/C_claim_evidence_matrix.qmd"
+  ],
+  "reviewer_independence": "not externally established",
+  "reviewer_roles": [
+    "logic critic",
+    "citation critic",
+    "omission critic"
+  ],
+  "adversarial_probes": [],
+  "cycle_cap": "three bounded review cycles",
+  "prior_review_refs": [],
+  "unchanged_evidence_guard": "cannot promote on unchanged evidence without new evidence",
+  "retrieval_expansion_policy": "expand only for named gaps",
+  "findings": [
+    "finding exists"
+  ],
+  "evidence_refs": [
+    "docs/source_evidence_audit.md"
+  ],
+  "dissent": [
+    "No dissent recorded in this fixture."
+  ],
+  "unresolved_issues": [],
+  "verdict": "revise",
+  "required_actions": [
+    "add adversarial probes"
+  ],
+  "constraint_effects": [
+    "block promotion"
+  ],
+  "human_adjudication": "not required for invalid fixture",
+  "non_claims": [
+    "does not prove reviewer independence",
+    "does not prove verdict correctness",
+    "does not prove runtime behavior",
+    "does not promote support state"
+  ]
+}

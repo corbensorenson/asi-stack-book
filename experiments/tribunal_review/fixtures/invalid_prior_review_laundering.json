@@ -1,0 +1,49 @@
+{
+  "review_id": "tribunal-invalid-prior-laundering-001",
+  "target_ref": "claim://prior-review-laundering",
+  "review_state": "verdict_issued",
+  "risk_class": "medium",
+  "dossier_boundary": "prior review only",
+  "dossier_refs": [
+    "docs/evidence_transition_pilot.md"
+  ],
+  "reviewer_independence": "not externally established",
+  "reviewer_roles": [
+    "process reviewer",
+    "evidence reviewer",
+    "residual reviewer"
+  ],
+  "adversarial_probes": [
+    "check laundering"
+  ],
+  "cycle_cap": "one cycle",
+  "prior_review_refs": [
+    "tribunal://prior-rejection-001"
+  ],
+  "unchanged_evidence_guard": "review may proceed normally",
+  "retrieval_expansion_policy": "none",
+  "findings": [
+    "same evidence as prior review"
+  ],
+  "evidence_refs": [
+    "tribunal://prior-rejection-001"
+  ],
+  "dissent": [
+    "No dissent recorded in this fixture."
+  ],
+  "unresolved_issues": [],
+  "verdict": "accept",
+  "required_actions": [
+    "none"
+  ],
+  "constraint_effects": [
+    "scope limited"
+  ],
+  "human_adjudication": "not required",
+  "non_claims": [
+    "does not prove reviewer independence",
+    "does not prove verdict correctness",
+    "does not prove runtime behavior",
+    "does not promote support state"
+  ]
+}
