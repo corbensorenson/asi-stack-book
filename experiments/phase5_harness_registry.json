@@ -92,6 +92,29 @@
     ]
   },
   {
+    "id": "governance_rights",
+    "name": "Governance rights harness",
+    "command": "python3 scripts/validate_governance_rights.py",
+    "script": "scripts/validate_governance_rights.py",
+    "doc": "docs/governance_rights_harness.md",
+    "experiment_dir": "experiments/governance_rights",
+    "fixture_dir": "experiments/governance_rights/fixtures",
+    "result_record": "experiments/governance_rights/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Governance rights harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "governance-rights-fork-exit-and-audit",
+      "agency-dignity-and-corrigibility",
+      "stable-capability-fields",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
+    "non_claims": [
+      "Does not prove institutional governance rights, legal rights, runtime right enforcement, fork/exit usability in a deployed system, reviewer independence, or source interpretation.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "support_state_transitions",
     "name": "Support-state transition harness",
     "command": "python3 scripts/validate_support_state_transitions.py",

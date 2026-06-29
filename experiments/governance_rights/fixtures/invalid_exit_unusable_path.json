@@ -1,0 +1,26 @@
+{
+  "right_id": "exit-unusable-path-demo",
+  "right_type": "exit",
+  "request_state": "preserved",
+  "holder": "reader edition maintainer",
+  "scope": "reader source",
+  "required_artifacts": ["reader manifest"],
+  "material_available": ["manifest summary"],
+  "material_withheld": ["source bundle"],
+  "safety_constraints": ["preserve evidence boundaries"],
+  "access_path": "ask the same service later",
+  "denial_or_redaction_reason": "",
+  "appeal_path": "request review",
+  "expiry_or_revisit": "never",
+  "challenged_party_independence": "repository record",
+  "preservation_rule": "preserve exit metadata",
+  "preservation_obligation": "retain manifest",
+  "receipt_refs": ["receipt://exit-unusable-path-demo"],
+  "test_hook": "exit-path preservation test",
+  "non_claims": [
+    "fixture does not prove institutional exit rights",
+    "fixture does not prove runtime portability",
+    "fixture does not prove legal rights",
+    "fixture does not promote support states"
+  ]
+}

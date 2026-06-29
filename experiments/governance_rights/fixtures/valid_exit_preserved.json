@@ -1,0 +1,26 @@
+{
+  "right_id": "exit-preserved-demo",
+  "right_type": "exit",
+  "request_state": "preserved",
+  "holder": "reader edition maintainer",
+  "scope": "major-version reader artifact source",
+  "required_artifacts": ["reader manifest", "release profile", "format review matrix"],
+  "material_available": ["portable reader source", "manifest snapshot"],
+  "material_withheld": ["private source cache"],
+  "safety_constraints": ["exclude ignored raw source exports", "preserve evidence boundaries"],
+  "access_path": "portable repository snapshot and release-profile bundle",
+  "denial_or_redaction_reason": "",
+  "appeal_path": "request human maintainer review through a repository issue",
+  "expiry_or_revisit": "revisit at each major-version release",
+  "challenged_party_independence": "portable export metadata is retained in the repository and release logs",
+  "preservation_rule": "preserve exit artifacts even when reader prose is curated",
+  "preservation_obligation": "retain reader manifest and release blockers with the release bundle",
+  "receipt_refs": ["receipt://exit-preserved-demo"],
+  "test_hook": "exit-path preservation test",
+  "non_claims": [
+    "fixture does not prove institutional exit rights",
+    "fixture does not prove runtime portability",
+    "fixture does not prove legal rights",
+    "fixture does not promote support states"
+  ]
+}

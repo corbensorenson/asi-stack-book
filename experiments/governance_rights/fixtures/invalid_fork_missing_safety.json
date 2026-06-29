@@ -1,0 +1,26 @@
+{
+  "right_id": "fork-missing-safety-demo",
+  "right_type": "fork",
+  "request_state": "granted",
+  "holder": "public reviewer",
+  "scope": "book source",
+  "required_artifacts": ["repository"],
+  "material_available": ["source tree"],
+  "material_withheld": [],
+  "safety_constraints": [],
+  "access_path": "repository fork",
+  "denial_or_redaction_reason": "",
+  "appeal_path": "request review",
+  "expiry_or_revisit": "revisit on license change",
+  "challenged_party_independence": "repository history",
+  "preservation_rule": "preserve fork material",
+  "preservation_obligation": "retain source tree",
+  "receipt_refs": ["receipt://fork-missing-safety-demo"],
+  "test_hook": "fork-right safety test",
+  "non_claims": [
+    "fixture does not prove institutional fork rights",
+    "fixture does not prove runtime fork enforcement",
+    "fixture does not prove legal rights",
+    "fixture does not promote support states"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "right_id": "fork-safety-bounded-demo",
+  "right_type": "fork",
+  "request_state": "partially_granted",
+  "holder": "public reviewer",
+  "scope": "public-safe book source without private raw caches",
+  "required_artifacts": ["public repository", "license notice", "source boundary notes"],
+  "material_available": ["public-safe source tree", "validation scripts", "generated appendices"],
+  "material_withheld": ["private raw source exports", "credentials"],
+  "safety_constraints": ["respect no-reuse license boundary", "do not publish private raw sources"],
+  "access_path": "repository fork or portable source snapshot",
+  "denial_or_redaction_reason": "private raw sources and credentials are withheld",
+  "appeal_path": "request human maintainer review for additional public-safe materials",
+  "expiry_or_revisit": "revisit if licensing or source-publication policy changes",
+  "challenged_party_independence": "fork state is inspectable through repository history and public review logs",
+  "preservation_rule": "preserve public-safe fork material while retaining safety constraints",
+  "preservation_obligation": "retain withheld-material reasons and receipt refs with the fork decision",
+  "receipt_refs": ["receipt://fork-safety-bounded-demo"],
+  "test_hook": "fork-right safety test",
+  "non_claims": [
+    "fixture does not prove institutional fork rights",
+    "fixture does not prove runtime fork enforcement",
+    "fixture does not prove legal rights",
+    "fixture does not promote support states"
+  ]
+}

@@ -1758,9 +1758,21 @@
           "minimal_implementation": "A governance-rights table with required artifacts, authorities, and failure tests.",
           "beyond_state_of_art": "Governance rights have to become contestability infrastructure for the stack. It makes disagreement operational through portable artifacts, inspectable records, exit paths, audit rights, forkable state, appeal surfaces, and review receipts rather than treating governance as an external social layer. In the mature contestability layer, fork, exit, audit, dissent, appeal, and contestability become technical interfaces with artifacts, receipts, portability guarantees, and safety limits.",
           "codex_tests": [
-            "Audit-record availability test",
-            "Exit-path preservation test",
-            "Fork-right safety test"
+            {
+              "name": "Audit-record availability test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic governance rights harness; no institutional auditability or legal-rights claim"
+            },
+            {
+              "name": "Exit-path preservation test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic governance rights harness; no runtime portability or deployed exit-right claim"
+            },
+            {
+              "name": "Fork-right safety test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic governance rights harness; no deployed fork enforcement or legal-rights claim"
+            }
           ],
           "lean_module": "AsiStackProofs.GovernanceRights",
           "proof_targets": [

@@ -1,0 +1,26 @@
+{
+  "right_id": "redaction-no-appeal-demo",
+  "right_type": "audit",
+  "request_state": "redacted",
+  "holder": "public reviewer",
+  "scope": "source appendix review",
+  "required_artifacts": ["source boundary note"],
+  "material_available": ["public source note"],
+  "material_withheld": ["private raw source export"],
+  "safety_constraints": ["do not publish private raw source exports"],
+  "access_path": "public repository",
+  "denial_or_redaction_reason": "",
+  "appeal_path": "none",
+  "expiry_or_revisit": "revisit if source-publication policy changes",
+  "challenged_party_independence": "repository history",
+  "preservation_rule": "preserve redaction note",
+  "preservation_obligation": "retain source boundary record",
+  "receipt_refs": ["receipt://redaction-no-appeal-demo"],
+  "test_hook": "audit-record availability test",
+  "non_claims": [
+    "fixture does not prove institutional auditability",
+    "fixture does not prove runtime audit enforcement",
+    "fixture does not prove legal rights",
+    "fixture does not promote support states"
+  ]
+}

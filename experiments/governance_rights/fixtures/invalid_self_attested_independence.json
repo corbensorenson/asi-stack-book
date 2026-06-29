@@ -1,0 +1,26 @@
+{
+  "right_id": "self-attested-independence-demo",
+  "right_type": "audit",
+  "request_state": "granted",
+  "holder": "book maintainer",
+  "scope": "publication workflow",
+  "required_artifacts": ["validation output"],
+  "material_available": ["validator summary"],
+  "material_withheld": [],
+  "safety_constraints": [],
+  "access_path": "GitHub repository",
+  "denial_or_redaction_reason": "",
+  "appeal_path": "request review",
+  "expiry_or_revisit": "revisit on next release",
+  "challenged_party_independence": "same party self-attests inside the challenged runtime only",
+  "preservation_rule": "preserve audit records",
+  "preservation_obligation": "retain validation artifacts",
+  "receipt_refs": ["receipt://self-attested-independence-demo"],
+  "test_hook": "audit-record availability test",
+  "non_claims": [
+    "fixture does not prove institutional auditability",
+    "fixture does not prove runtime audit enforcement",
+    "fixture does not prove legal rights",
+    "fixture does not promote support states"
+  ]
+}

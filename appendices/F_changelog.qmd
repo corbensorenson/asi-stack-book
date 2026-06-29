@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Governance rights harness
+
+- Added `scripts/validate_governance_rights.py`, synthetic governance-right
+  fixtures under `experiments/governance_rights/`,
+  `docs/governance_rights_harness.md`, and a tracked local result record. The
+  local run passes with 3 valid and 5 expected-invalid fixtures, checking audit
+  material and receipts, redaction appeal paths, usable exit/fork access paths,
+  fork safety constraints, preservation obligations, durable record paths, and
+  explicit institutional/runtime/legal/support-state non-claim boundaries.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Governance Rights chapter's audit,
+  exit-path, and fork-safety test rows, README, publication readiness, and v1.0
+  roadmap/status/focus surfaces. This is synthetic governance-right record
+  discipline only: it is not institutional governance, legal rights, runtime
+  right enforcement, deployed fork/exit usability, reviewer independence,
+  source interpretation, reader-release approval, support-state promotion,
+  proof adequacy, benchmark evidence, or whole-system contestability.
+
 ## 2026-06-28 - v1.0 Moral uncertainty evidence transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/moral_uncertainty_no_change.json`
