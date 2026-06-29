@@ -120,7 +120,7 @@ Use this rubric before any non-pilot consolidation package:
 | Intent and executable contracts | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` reader work local until the contract boundary is clear. |
 | Static context ABI | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the static ABI pair unless explicitly deferred or retained; reader curation may continue on protected adjacent chapters. |
 | Verification and adversarial review | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the verification/review pair unless explicitly deferred or retained; reader curation may continue on claim ledgers. |
-| Planning and DAG control | `planned_candidate` | Build a dry-run package that keeps semantic IR separate unless evidence says otherwise. | Reader curation may continue on non-overlapping planning chapters. |
+| Planning and DAG control | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the planning/DAG pair unless explicitly deferred or retained; reader curation may continue on semantic IR. |
 | Source-blocked MoECOT runtime | `fold_review_candidate` | Decide whether to fold as a named routing-runtime section until source mining catches up. | Do not promote MoECOT runtime as standalone reader material while source-blocked. |
 | Simulation fidelity | `fold_review_candidate` | Decide whether the feasibility-bound argument belongs in resource economics or the efficient-ASI frame. | Preserve physical-constraint caveats if folded. |
 | Semantic representation | `fold_review_candidate` | Decide whether representation is a substrate section in the compression cluster or a standalone artifact. | Preserve proof/test hooks if folded. |
@@ -262,6 +262,17 @@ path. The current allowed pilot-reader set remains:
   the one-skeleton destination draft for **Proof-Carrying Claims and
   Adversarial Review**. It is review-ready but not reviewed, not canonical, and
   not a manifest edit. The next decision is execute, revise, defer, or reject.
+- `docs/chapter_consolidation_dry_run_planning_dag.md` records the Tier 2B
+  dry-run package for the planning and DAG-control cluster. It does not edit
+  `book_structure.json`, authorize a manifest merge, or move support states.
+  It keeps `cognitive-compilation-and-semantic-ir` standalone as the semantic
+  atom, IR validity, lowering receipt, repair-ledger, and target-artifact
+  compilation layer.
+- `docs/chapter_consolidation_destination_draft_planning_dag.md` records the
+  one-skeleton destination draft for **Planning as a Control Layer: DAGs and
+  Intelligence Arbitrage**. It is review-ready but not reviewed, not canonical,
+  and not a manifest edit. The next decision is execute, revise, defer, or
+  reject.
 
 ## Non-Claims
 

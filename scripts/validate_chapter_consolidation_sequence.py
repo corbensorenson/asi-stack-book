@@ -16,6 +16,8 @@ CONTEXT_ABI_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_context_abi
 CONTEXT_ABI_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_context_abi.md"
 VERIFICATION_REVIEW_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_verification_review.md"
 VERIFICATION_REVIEW_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_verification_review.md"
+PLANNING_DAG_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_planning_dag.md"
+PLANNING_DAG_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_planning_dag.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -92,6 +94,7 @@ REQUIRED_FRAGMENTS = (
     "Intent and executable contracts | `review_ready`",
     "Static context ABI | `review_ready`",
     "Verification and adversarial review | `review_ready`",
+    "Planning and DAG control | `review_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -473,6 +476,103 @@ VERIFICATION_REVIEW_REQUIRED_FIXTURE_FRAGMENTS = {
     "python3 scripts/validate_tribunal_review.py",
 }
 
+PLANNING_DAG_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Dry Run: Planning And DAG Control",
+    "does not edit `book_structure.json`",
+    "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
+    "cognitive-compilation-and-semantic-ir",
+    "Proposed `book_structure.json` Diff",
+    "Destination Section Outline",
+    "Appendix C Row Plan",
+    "Source Union",
+    "External-source union",
+    "Lean Module And Proof-Manifest Treatment",
+    "Tests, Schemas, And Fixtures",
+    "Reader Path, Handoff, And Review Repairs",
+    "Repetition-Removal Ledger",
+    "No support state changes",
+    "No new result is created by this dry run",
+)
+
+PLANNING_DAG_DRAFT_REQUIRED_FRAGMENTS = (
+    "Consolidation Destination Draft: Planning as a Control Layer, DAGs and Intelligence Arbitrage",
+    "Status: review-ready draft; human/external review not completed.",
+    "does not edit",
+    "Destination continuity ID: `planning-as-a-control-layer`",
+    "Proposed displayed title: **Planning as a Control Layer: DAGs and Intelligence",
+    "Preservation Ledger",
+    "Destination Chapter Draft",
+    "Chapter status",
+    "Drafting guardrail",
+    "Human Reading Path",
+    "Problem",
+    "Why existing approaches are insufficient",
+    "Core Claim",
+    "Mechanism",
+    "Minimum Viable Implementation",
+    "Beyond the State of the Art",
+    "Codex test plan",
+    "Formalization hooks",
+    "Source crosswalk",
+    "Repetition-removal ledger",
+    "Review Decision Surface",
+    "No chapter core claim is promoted above `argument`",
+    "This draft does not merge chapters.",
+    "This draft does not change Appendix C support states.",
+)
+
+PLANNING_DAG_REQUIRED_IDS = {
+    "planning-as-a-control-layer",
+    "planforge-dags-and-intelligence-arbitrage",
+    "cognitive-compilation-and-semantic-ir",
+}
+
+PLANNING_DAG_REQUIRED_SOURCE_IDS = {
+    "planforge",
+    "viea",
+    "cognitive_compilation",
+    "software_magic_grimoire",
+    "moecot",
+    "planforge_compiler_arch",
+    "coherence_exchange",
+    "tokenmana",
+}
+
+PLANNING_DAG_REQUIRED_EXTERNAL_IDS = {
+    "ext_autogen_2023",
+    "ext_behavior_trees_robotics_ai_2017",
+    "ext_integrated_tamp_2020",
+    "ext_pddl_1998",
+    "ext_react_2022",
+    "ext_shop2_2003",
+    "ext_three_states_plan_fear_2006",
+    "ext_tla_plus_home_docs",
+    "ext_tree_of_thoughts_2023",
+}
+
+PLANNING_DAG_REQUIRED_LEAN_TAGS = {
+    "lean:planning.control_layer.operational_invariant",
+    "lean:planning.control_layer.failure_blocks_promotion",
+    "lean:planforge.dag.operational_invariant",
+    "lean:planforge.dag.failure_blocks_promotion",
+}
+
+PLANNING_DAG_REQUIRED_FIXTURE_FRAGMENTS = {
+    "schemas/plan_graph.schema.json",
+    "schemas/planforge_dag.schema.json",
+    "schemas/command_contract.schema.json",
+    "schemas/hive_job_contract.schema.json",
+    "schemas/semantic_atom.schema.json",
+    "experiments/plan_execution_contracts/fixtures/valid_dispatchable_linear_plan.json",
+    "experiments/plan_execution_contracts/fixtures/valid_blocked_authority_plan.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_cycle_in_dag.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_contract_mismatch.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_requirement_lost.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_dispatch_without_receipt.json",
+    "experiments/plan_execution_contracts/fixtures/invalid_approval_bypass.json",
+    "python3 scripts/validate_plan_execution_contracts.py",
+}
+
 REQUIRED_DESTINATIONS = (
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
@@ -493,6 +593,8 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_destination_draft_context_abi.md",
     "docs/chapter_consolidation_dry_run_verification_review.md",
     "docs/chapter_consolidation_destination_draft_verification_review.md",
+    "docs/chapter_consolidation_dry_run_planning_dag.md",
+    "docs/chapter_consolidation_destination_draft_planning_dag.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -786,6 +888,70 @@ def main() -> None:
     for fragment in sorted(VERIFICATION_REVIEW_REQUIRED_FIXTURE_FRAGMENTS):
         if f"`{fragment}`" not in verification_review_draft:
             errors.append(f"Verification/review destination draft missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        planning_dag = read_text(PLANNING_DAG_DRY_RUN)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_dry_run_planning_dag.md")
+        planning_dag = ""
+
+    for fragment in PLANNING_DAG_REQUIRED_FRAGMENTS:
+        if fragment not in planning_dag:
+            errors.append(f"Planning/DAG dry run missing required boundary: {fragment}")
+
+    for chapter_id in sorted(PLANNING_DAG_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Planning/DAG chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in planning_dag:
+            errors.append(f"Planning/DAG dry run does not mention `{chapter_id}`.")
+
+    for source_id in sorted(PLANNING_DAG_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in planning_dag:
+            errors.append(f"Planning/DAG dry run missing source ID `{source_id}`.")
+
+    for source_id in sorted(PLANNING_DAG_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in planning_dag:
+            errors.append(f"Planning/DAG dry run missing external source ID `{source_id}`.")
+
+    for tag in sorted(PLANNING_DAG_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in planning_dag:
+            errors.append(f"Planning/DAG dry run missing Lean tag `{tag}`.")
+
+    for fragment in sorted(PLANNING_DAG_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in planning_dag:
+            errors.append(f"Planning/DAG dry run missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        planning_dag_draft = read_text(PLANNING_DAG_DESTINATION_DRAFT)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_destination_draft_planning_dag.md")
+        planning_dag_draft = ""
+
+    for fragment in PLANNING_DAG_DRAFT_REQUIRED_FRAGMENTS:
+        if fragment not in planning_dag_draft:
+            errors.append(f"Planning/DAG destination draft missing required boundary: {fragment}")
+
+    for chapter_id in sorted(PLANNING_DAG_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Planning/DAG destination chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in planning_dag_draft:
+            errors.append(f"Planning/DAG destination draft does not mention `{chapter_id}`.")
+
+    for source_id in sorted(PLANNING_DAG_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in planning_dag_draft:
+            errors.append(f"Planning/DAG destination draft missing source ID `{source_id}`.")
+
+    for source_id in sorted(PLANNING_DAG_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in planning_dag_draft:
+            errors.append(f"Planning/DAG destination draft missing external source ID `{source_id}`.")
+
+    for tag in sorted(PLANNING_DAG_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in planning_dag_draft:
+            errors.append(f"Planning/DAG destination draft missing Lean tag `{tag}`.")
+
+    for fragment in sorted(PLANNING_DAG_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in planning_dag_draft:
+            errors.append(f"Planning/DAG destination draft missing fixture, schema, or validator `{fragment}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)

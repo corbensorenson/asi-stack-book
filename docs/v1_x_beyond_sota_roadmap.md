@@ -757,12 +757,11 @@ Follow-up review outcome:
 - The Part I pilot is now `review_ready`, meaning destination drafts exist but
   require an execute, revise, defer, or reject decision plus URL/redirect policy
   before any canonical chapter identity changes.
-- Compression, intent/contracts, static context ABI, and
-  verification/adversarial review now have dry-run packages and one-skeleton
-  destination drafts but remain unmerged. Planning,
-  MoECOT, simulation-fidelity, and semantic representation should each receive
-  a dry-run package and destination or fold disposition before reader curation
-  or manifest edits depend on them.
+- Compression, intent/contracts, static context ABI, verification/adversarial
+  review, and planning/DAG control now have dry-run packages and one-skeleton
+  destination drafts but remain unmerged. MoECOT, simulation-fidelity, and
+  semantic representation should each receive a dry-run package and destination
+  or fold disposition before reader curation or manifest edits depend on them.
 - Broad human-reader curation should not harden duplicate chapter skeletons in
   a pending consolidation cluster. Local prose cleanup is still allowed, but
   curated-reader graduation for those source chapters should wait until the
@@ -974,8 +973,8 @@ Current status:
   future manifest edit.
 - The sequence now records consolidation states so candidates cannot jump from
   "interesting idea" to manifest change: the Part I pilot is `review_ready`,
-  compression, intent/contracts, static context ABI, and
-  verification/adversarial review are `review_ready`, the remaining
+  compression, intent/contracts, static context ABI, verification/adversarial
+  review, and planning/DAG control are `review_ready`, the remaining
   non-packaged merge clusters are `planned_candidate`, the MoECOT,
   simulation-fidelity, and
   semantic-representation candidates are `fold_review_candidate`, and
@@ -1074,6 +1073,18 @@ Current status:
   Adversarial Review**. It is intentionally not marked reviewed: manifest
   consolidation remains blocked until review accepts, revises, defers, or
   rejects the merge.
+- `docs/chapter_consolidation_dry_run_planning_dag.md` records the Tier 2B
+  dry-run package for **Planning as a Control Layer: DAGs and Intelligence
+  Arbitrage**. It proposes keeping `planning-as-a-control-layer` as the
+  continuity ID, folding `planforge-dags-and-intelligence-arbitrage` as
+  preserved DAG scheduling and intelligence-arbitrage subclaims, and keeping
+  `cognitive-compilation-and-semantic-ir` standalone as the semantic IR and
+  lowering-receipt chapter.
+- `docs/chapter_consolidation_destination_draft_planning_dag.md` now records
+  the review-ready destination draft for **Planning as a Control Layer: DAGs
+  and Intelligence Arbitrage**. It is intentionally not marked reviewed:
+  manifest consolidation remains blocked until review accepts, revises, defers,
+  or rejects the merge.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
   defer manifest consolidation until human or external review and a public
   URL/redirect policy unblock it, proceed with human-reader curation outside
@@ -1114,11 +1125,13 @@ Current status:
   draft alone. It still needs review and an execute, revise, defer, or reject
   decision. The verification/adversarial-review candidate should not be merged
   from the roadmap table, dry-run package, or destination draft alone. It still
-  needs review and an execute, revise, defer, or reject decision. The planning,
-  MoECOT, simulation-fidelity, and semantic-representation candidates still
-  need their own dry-run package, claim/source/proof/reader reconciliation, and
-  reviewed destination-chapter draft or fold disposition before any
-  `book_structure.json` change.
+  needs review and an execute, revise, defer, or reject decision. The
+  planning/DAG-control candidate should not be merged from the roadmap table,
+  dry-run package, or destination draft alone. It still needs review and an
+  execute, revise, defer, or reject decision. The MoECOT, simulation-fidelity,
+  and semantic-representation candidates still need their own dry-run package,
+  claim/source/proof/reader reconciliation, and reviewed destination-chapter
+  draft or fold disposition before any `book_structure.json` change.
 - No manifest merge has been performed yet, and no chapter count reduction is
   claimed.
 

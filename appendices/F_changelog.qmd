@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Planning DAG consolidation package
+
+- Added `docs/chapter_consolidation_dry_run_planning_dag.md` and
+  `docs/chapter_consolidation_destination_draft_planning_dag.md` to make the
+  planning/DAG-control Tier 2B consolidation candidate review-ready.
+- The package proposes keeping `planning-as-a-control-layer` as the continuity
+  ID, folding `planforge-dags-and-intelligence-arbitrage` as preserved DAG
+  scheduling and intelligence-arbitrage subclaims, and keeping
+  `cognitive-compilation-and-semantic-ir` standalone as the semantic IR and
+  lowering-receipt chapter.
+- Updated the v1.x roadmap, consolidation sequence, README, publication
+  readiness, repository map, and consolidation validator so the
+  planning/DAG-control cluster is `review_ready`, while still requiring review
+  and an execute, revise, defer, or reject decision before any manifest edit.
+- This does not edit `book_structure.json`, merge chapters, change Appendix C,
+  create source/proof/test evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Verification review consolidation package
 
 - Added `docs/chapter_consolidation_dry_run_verification_review.md` and
