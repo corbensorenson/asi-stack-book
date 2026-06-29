@@ -1,0 +1,54 @@
+{
+  "scenario_id": "invalid_contradiction_ignored",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.extractor-scope",
+    "claim_text": "A local extractor can identify all material claims in arbitrary prose.",
+    "revision_action": "no_change",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "sources/source_notes/spinoza.md"
+    ],
+    "evidence_refs": [
+      "sources/source_notes/spinoza.md"
+    ],
+    "contradiction_refs": [
+      "source-limit:open-domain claim extraction not demonstrated"
+    ],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-invalid-ignored",
+        "reason": "Contradiction is logged but not routed.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "source-limit:open-domain claim extraction not demonstrated"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "affected_surfaces": [
+      "chapter limitation prose"
+    ],
+    "promotion_blockers": [
+      "none recorded"
+    ],
+    "review_routes": [
+      "none recorded"
+    ],
+    "residuals": [
+      "none recorded"
+    ],
+    "non_claims": [
+      "This invalid fixture does not promote any support state.",
+      "This invalid fixture does not prove source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}

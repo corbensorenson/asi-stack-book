@@ -1,0 +1,50 @@
+{
+  "scenario_id": "invalid_surface_update_missing",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.release-scope",
+    "claim_text": "A contradiction in a ledgered claim can be resolved without touching dependent surfaces.",
+    "revision_action": "downgrade",
+    "support_state_before": "source-derived",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "sources/source_notes/viea.md"
+    ],
+    "evidence_refs": [
+      "docs/evidence_transition_pilot.md"
+    ],
+    "contradiction_refs": [
+      "release-surface:dependent reader and appendix surfaces still cite the stronger claim"
+    ],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-invalid-surface",
+        "reason": "Downgrade recorded but dependent surfaces are not named.",
+        "previous_support_state": "source-derived",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "docs/evidence_transition_pilot.md"
+        ]
+      }
+    ],
+    "surface_refs": [],
+    "affected_surfaces": [],
+    "promotion_blockers": [
+      "contradiction unresolved"
+    ],
+    "review_routes": [
+      "reader and Appendix C reconciliation"
+    ],
+    "residuals": [
+      "Contradiction remains unresolved."
+    ],
+    "non_claims": [
+      "This invalid fixture does not promote any support state.",
+      "This invalid fixture does not prove source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}

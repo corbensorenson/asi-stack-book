@@ -1,0 +1,42 @@
+{
+  "scenario_id": "invalid_history_overwritten",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.support-scope",
+    "claim_text": "A claim ledger can separate record discipline from verifier adequacy.",
+    "revision_action": "split",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [],
+    "evidence_refs": [
+      "docs/proof_adequacy_review.md"
+    ],
+    "contradiction_refs": [
+      "scope-conflict:record-shape coverage does not prove verifier adequacy"
+    ],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "affected_surfaces": [
+      "claim ledger chapter"
+    ],
+    "promotion_blockers": [
+      "broader verifier-quality claim split away"
+    ],
+    "review_routes": [
+      "proof adequacy review"
+    ],
+    "residuals": [
+      "The residual remains visible."
+    ],
+    "non_claims": [
+      "This invalid fixture does not promote any support state.",
+      "This invalid fixture does not prove source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}

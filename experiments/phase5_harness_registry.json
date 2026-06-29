@@ -1,5 +1,28 @@
 [
   {
+    "id": "claim_ledger_revision",
+    "name": "Claim ledger revision harness",
+    "command": "python3 scripts/validate_claim_ledger_revision.py",
+    "script": "scripts/validate_claim_ledger_revision.py",
+    "doc": "docs/claim_ledger_revision_harness.md",
+    "experiment_dir": "experiments/claim_ledger_revision",
+    "fixture_dir": "experiments/claim_ledger_revision/fixtures",
+    "result_record": "experiments/claim_ledger_revision/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 4,
+    "result_summary": "Claim ledger revision harness passed: 3 valid fixture(s), 4 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "claim-ledgers-and-belief-revision",
+      "evidence-states-and-claim-discipline",
+      "spinoza-verification-and-proof-carrying-claims",
+      "living-book-methodology"
+    ],
+    "non_claims": [
+      "Does not prove source interpretation, runtime behavior, verifier quality, open-domain claim extraction, or belief-engine correctness.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "support_state_transitions",
     "name": "Support-state transition harness",
     "command": "python3 scripts/validate_support_state_transitions.py",

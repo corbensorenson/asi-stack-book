@@ -1,0 +1,52 @@
+{
+  "scenario_id": "invalid_promotion_without_transition",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.core",
+    "claim_text": "Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history.",
+    "revision_action": "promote",
+    "support_state_before": "argument",
+    "support_state_after": "source-derived",
+    "prior_evidence_refs": [
+      "sources/source_notes/spinoza.md"
+    ],
+    "evidence_refs": [
+      "sources/source_notes/spinoza.md"
+    ],
+    "contradiction_refs": [],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-invalid-promotion",
+        "reason": "Mistakenly treats source notes as an accepted support-state transition.",
+        "previous_support_state": "argument",
+        "new_support_state": "source-derived",
+        "evidence_refs": [
+          "sources/source_notes/spinoza.md"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "appendices/C_claim_evidence_matrix.qmd"
+    ],
+    "affected_surfaces": [
+      "Appendix C support row"
+    ],
+    "promotion_blockers": [
+      "none recorded"
+    ],
+    "review_routes": [
+      "none recorded"
+    ],
+    "residuals": [
+      "none recorded"
+    ],
+    "non_claims": [
+      "This invalid fixture does not promote any support state.",
+      "This invalid fixture does not prove source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}

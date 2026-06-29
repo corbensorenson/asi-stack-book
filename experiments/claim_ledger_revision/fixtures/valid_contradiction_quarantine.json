@@ -1,0 +1,60 @@
+{
+  "scenario_id": "valid_contradiction_quarantine",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.extractor-scope",
+    "claim_text": "A local extractor can identify all material claims in arbitrary prose.",
+    "revision_action": "quarantine",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "sources/source_notes/spinoza.md",
+      "docs/evidence_transition_pilot.md"
+    ],
+    "evidence_refs": [
+      "experiments/claim_ledger_revision/fixtures/valid_contradiction_quarantine.json"
+    ],
+    "contradiction_refs": [
+      "source-limit:open-domain claim extraction not demonstrated"
+    ],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-2026-06-28-quarantine",
+        "reason": "The claim exceeds available source notes and repository artifacts; contradiction is retained as a blocker.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "source-limit:open-domain claim extraction not demonstrated"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd",
+      "docs/evidence_transition_pilot.md"
+    ],
+    "affected_surfaces": [
+      "chapter limitation prose",
+      "future evidence-transition queue"
+    ],
+    "promotion_blockers": [
+      "contradiction unresolved",
+      "no extractor benchmark",
+      "no accepted support-state transition"
+    ],
+    "review_routes": [
+      "Spinoza verifier-quality review",
+      "human source interpretation review"
+    ],
+    "residuals": [
+      "Contradiction remains visible until a bounded extractor test or source review narrows the claim."
+    ],
+    "non_claims": [
+      "This quarantine fixture does not promote any support state.",
+      "This quarantine fixture does not prove source interpretation, runtime behavior, verifier quality, or open-domain extraction."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}

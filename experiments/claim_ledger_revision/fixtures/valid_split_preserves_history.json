@@ -1,0 +1,63 @@
+{
+  "scenario_id": "valid_split_preserves_history",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.support-scope",
+    "claim_text": "A claim ledger can separate record discipline from verifier adequacy.",
+    "revision_action": "split",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "sources/source_notes/spinoza.md",
+      "sources/source_notes/viea.md"
+    ],
+    "evidence_refs": [
+      "docs/proof_adequacy_review.md",
+      "docs/evidence_transition_pilot.md"
+    ],
+    "contradiction_refs": [
+      "scope-conflict:record-shape coverage does not prove verifier adequacy"
+    ],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-2026-06-28-split",
+        "reason": "Separate narrow record-discipline claim from broader verifier-quality claim.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "docs/proof_adequacy_review.md",
+          "docs/evidence_transition_pilot.md"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd",
+      "chapters/spinoza-verification-and-proof-carrying-claims.qmd"
+    ],
+    "affected_surfaces": [
+      "claim ledger chapter",
+      "Spinoza proof-carrying claims chapter",
+      "Appendix E harness row"
+    ],
+    "promotion_blockers": [
+      "broader verifier-quality claim split away",
+      "no verifier benchmark",
+      "no accepted evidence transition"
+    ],
+    "review_routes": [
+      "proof adequacy review",
+      "future verifier-quality behavior harness"
+    ],
+    "residuals": [
+      "The split retains the residual that record discipline and verifier adequacy are different claims."
+    ],
+    "non_claims": [
+      "This split fixture does not promote any support state.",
+      "This split fixture does not prove source interpretation, runtime behavior, verifier quality, or whole-system epistemic correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}
