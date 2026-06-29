@@ -925,6 +925,20 @@ Current status:
   curation outside the pending Part I merge cluster, and require human or
   external review plus a reviewed destination chapter draft before executing
   either merge.
+- The latest re-consolidation proposal is accepted as directionally correct,
+  but the roadmap response is not another abstract plan and not an immediate
+  54-to-44 manifest edit. The next useful artifact is a reviewed destination
+  chapter draft for one pilot merge, written as one chapter with one skeleton,
+  followed by a decision to execute, defer, or reject that merge.
+- Broad reader polish should avoid the four pending Part I consolidation source
+  chapters until the pilot is executed or rejected. Reader curation may continue
+  on chapters outside the pending cluster, and local prose fixes may continue
+  anywhere when they do not entrench duplicate chapter structure.
+- The compression, intent/contract, context, verification, planning, MoECOT,
+  simulation-fidelity, and semantic-representation candidates should not be
+  merged from the roadmap table alone. Each needs its own dry-run package,
+  claim/source/proof/reader reconciliation, and reviewed destination-chapter
+  draft before any `book_structure.json` change.
 - No manifest merge has been performed yet, and no chapter count reduction is
   claimed.
 

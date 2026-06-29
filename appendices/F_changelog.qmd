@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - Consolidation roadmap next-action clarification
+
+- Reviewed the latest 54-to-44 re-consolidation proposal against the current
+  v1.x roadmap, pilot plan, dry-run merge packages, and consolidation decision
+  review.
+- Updated `docs/v1_x_beyond_sota_roadmap.md` to make the practical next action
+  explicit: do not perform an immediate broad manifest merge from the critique
+  alone; instead write and review one destination chapter draft for the pilot
+  merge, then decide whether to execute, defer, or reject that merge.
+- Clarified that broad reader polish should avoid the four pending Part I
+  consolidation source chapters until their merge is executed or rejected, and
+  that later compression, intent/contract, context, verification, planning,
+  MoECOT, simulation-fidelity, and semantic-representation candidates each need
+  their own dry-run package and reviewed destination draft before any
+  `book_structure.json` edit.
+- This does not merge chapters, change `book_structure.json`, remove rendered
+  pages, change source mappings, change proof targets, approve a reader
+  artifact, create an evidence transition, or promote any support state.
+
 ## 2026-06-29 - Audio proof and equation reading rules
 
 - Extended `scripts/build_audio_script.py` so generated audio-script review
