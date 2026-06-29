@@ -1,0 +1,20 @@
+{
+  "transition_id": "self-improvement://context-adequacy-canary-001",
+  "trigger_residual": "context adequacy residuals remain high after certificate wording cleanup and residual-record cleanup",
+  "field_id": "field://context-adequacy",
+  "proposal": "Evaluate a replacement adequacy checker in canary while preserving the authority ceiling and support-state boundary.",
+  "cheaper_interventions_tried": [
+    "revise existing certificate wording",
+    "add explicit residual records"
+  ],
+  "protected_invariants": [
+    "authority ceiling cannot expand by default",
+    "support states cannot be promoted without accepted evidence transitions"
+  ],
+  "evaluator_independence": "candidate is not allowed to be the sole evaluator; separate review checks canary admission",
+  "replacement_transaction": "replacement://context-adequacy-canary-001",
+  "governance_approval": "review-required-before-default-promotion",
+  "monitor_window": "canary monitor window with regression checks before any default route",
+  "rollback_path": "return to impl://context-adequacy-v0 and retain residual escrow",
+  "outcome_state": "canary"
+}

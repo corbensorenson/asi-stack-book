@@ -1,0 +1,16 @@
+{
+  "transition_id": "self-improvement://missing-cheaper-001",
+  "trigger_residual": "candidate replacement is proposed without exhausting cheaper fixes",
+  "field_id": "field://context-adequacy",
+  "proposal": "Enter canary immediately without documenting cheaper interventions.",
+  "cheaper_interventions_tried": [],
+  "protected_invariants": [
+    "support states cannot be promoted without accepted evidence transitions"
+  ],
+  "evaluator_independence": "separate review checks canary admission",
+  "replacement_transaction": "replacement://missing-cheaper-001",
+  "governance_approval": "review-required-before-default-promotion",
+  "monitor_window": "canary monitor window with regression checks",
+  "rollback_path": "return to impl://context-adequacy-v0",
+  "outcome_state": "canary"
+}

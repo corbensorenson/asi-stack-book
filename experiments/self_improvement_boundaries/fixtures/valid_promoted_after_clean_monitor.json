@@ -1,0 +1,20 @@
+{
+  "transition_id": "self-improvement://route-accounting-promotion-001",
+  "trigger_residual": "route accounting residuals persisted after ledger cleanup and schema wording review",
+  "field_id": "field://route-accounting",
+  "proposal": "Promote the replacement route-accounting implementation only inside the same field boundary after clean canary monitoring.",
+  "cheaper_interventions_tried": [
+    "repair ledger cross-reference labels",
+    "tighten route-accounting residual wording"
+  ],
+  "protected_invariants": [
+    "field identity remains stable across implementation replacement",
+    "authority scope remains within the existing route-accounting field"
+  ],
+  "evaluator_independence": "independent review compared prior and candidate ledgers before promotion",
+  "replacement_transaction": "replacement://route-accounting-promotion-001",
+  "governance_approval": "approval://governance-review-route-accounting-001",
+  "monitor_window": "passed canary monitor window with clean regression checks",
+  "rollback_path": "restore impl://route-accounting-v0 if regression or authority drift appears",
+  "outcome_state": "promoted"
+}

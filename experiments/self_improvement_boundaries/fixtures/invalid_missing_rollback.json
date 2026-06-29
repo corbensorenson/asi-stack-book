@@ -1,0 +1,18 @@
+{
+  "transition_id": "self-improvement://missing-rollback-001",
+  "trigger_residual": "candidate replacement enters canary without a return path",
+  "field_id": "field://context-adequacy",
+  "proposal": "Evaluate the candidate in canary.",
+  "cheaper_interventions_tried": [
+    "revise existing certificate wording"
+  ],
+  "protected_invariants": [
+    "authority ceiling cannot expand by default"
+  ],
+  "evaluator_independence": "separate review checks canary admission",
+  "replacement_transaction": "replacement://missing-rollback-001",
+  "governance_approval": "review-required-before-default-promotion",
+  "monitor_window": "canary monitor window with regression checks",
+  "rollback_path": "none",
+  "outcome_state": "canary"
+}

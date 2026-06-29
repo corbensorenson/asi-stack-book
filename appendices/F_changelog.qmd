@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Self-improvement boundary harness
+
+- Added `scripts/validate_self_improvement_boundaries.py`, synthetic
+  self-improvement transition fixtures under
+  `experiments/self_improvement_boundaries/`,
+  `docs/self_improvement_boundary_harness.md`, and a tracked local result
+  record. The local run passes with 3 valid and 7 expected-invalid fixtures,
+  checking protected invariants, evaluator separation, cheaper-intervention
+  ordering, authority non-widening, governance review, monitor windows,
+  rollback paths, and no-promotion language.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Recursive Self-Improvement Boundaries
+  chapter's protected-invariant preservation test row, README, publication
+  readiness, and v1.0 roadmap/status/focus surfaces. This is synthetic
+  self-improvement transition-record discipline only: it is not deployed
+  self-improvement behavior, runtime optimization, evaluator integrity,
+  authority enforcement, rollback execution, regression quality, recursive
+  self-improvement safety, source interpretation, reader-release approval,
+  support-state promotion, proof adequacy, benchmark evidence, or deployed
+  behavior.
+
 ## 2026-06-28 - v1.0 Capability replacement evidence transition no-change
 
 - Added

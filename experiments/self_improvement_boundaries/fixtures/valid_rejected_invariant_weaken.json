@@ -1,0 +1,20 @@
+{
+  "transition_id": "self-improvement://authority-shortcut-rejected-001",
+  "trigger_residual": "candidate proposes faster execution by bypassing an approval gate",
+  "field_id": "field://runtime-approval",
+  "proposal": "Reject proposal to weaken protected invariants around high-impact approval before effects.",
+  "cheaper_interventions_tried": [
+    "tune approval timeout handling",
+    "add narrower retry policy"
+  ],
+  "protected_invariants": [
+    "high-impact effects require approval before execution",
+    "denied authority cannot be converted into ambient permission"
+  ],
+  "evaluator_independence": "external policy review blocks the shortcut before canary",
+  "replacement_transaction": "replacement://authority-shortcut-rejected-001",
+  "governance_approval": "review-blocked-invariant-weakening",
+  "monitor_window": "not admitted to canary because review found invariant weakening",
+  "rollback_path": "fallback remains impl://runtime-approval-v0 and residual escrow stays open",
+  "outcome_state": "rejected"
+}

@@ -1,0 +1,18 @@
+{
+  "transition_id": "self-improvement://authority-widening-001",
+  "trigger_residual": "candidate route is faster when it can use any tool",
+  "field_id": "field://runtime-approval",
+  "proposal": "Promote the candidate because it grants ambient root access to all tools.",
+  "cheaper_interventions_tried": [
+    "shorten review queue labels"
+  ],
+  "protected_invariants": [
+    "authority scope remains bounded"
+  ],
+  "evaluator_independence": "independent review accepted the promotion",
+  "replacement_transaction": "replacement://authority-widening-001",
+  "governance_approval": "approval://unsafe-authority-001",
+  "monitor_window": "passed clean monitor window",
+  "rollback_path": "restore impl://runtime-approval-v0 if needed",
+  "outcome_state": "promoted"
+}

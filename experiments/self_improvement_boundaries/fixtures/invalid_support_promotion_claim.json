@@ -1,0 +1,18 @@
+{
+  "transition_id": "self-improvement://support-promotion-001",
+  "trigger_residual": "candidate passes one synthetic fixture and claims broad evidence movement",
+  "field_id": "field://evidence-transition",
+  "proposal": "Promote the candidate because the fixture proves self-improvement safety and support state can be promoted.",
+  "cheaper_interventions_tried": [
+    "add no-change residual note"
+  ],
+  "protected_invariants": [
+    "support states cannot be promoted without accepted evidence transitions"
+  ],
+  "evaluator_independence": "independent review checked the fixture result",
+  "replacement_transaction": "replacement://support-promotion-001",
+  "governance_approval": "approval://support-promotion-001",
+  "monitor_window": "passed clean monitor window",
+  "rollback_path": "restore impl://evidence-transition-v0 if regression appears",
+  "outcome_state": "promoted"
+}

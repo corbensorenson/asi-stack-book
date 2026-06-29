@@ -2518,7 +2518,13 @@
           "minimal_implementation": "A self-improvement protocol that can reject, quarantine, roll back, or retire a proposed change.",
           "beyond_state_of_art": "Recursive improvement belongs inside a governed improvement market, not a runaway loop. Components may propose patches, tools, routes, policy updates, benchmarks, teacher edits, and architecture changes, but promotion flows through stable fields, replacement transactions, independent evaluators, protected-invariant checks, boundary-delta review, monitor windows, and rollback ownership. In that end state, the system can improve faster because the rules are sharper. Cheap interventions are tried before expensive or irreversible ones. Verification, security, human review, and rollback budgets are protected from being \"optimized away.\" Readiness gates expire when the frontier, architecture, source corpus, lifecycle state, or threat model changes. A candidate may generate evidence, but it cannot be the only judge of whether the evidence is enough.",
           "codex_tests": [
-            "Protected-invariant preservation test",
+            {
+              "name": "Protected-invariant preservation test",
+              "purpose": "Check that self-improvement transition records preserve protected invariants, evaluator separation, cheaper-intervention ordering, approval, monitor windows, rollback paths, and no-promotion boundaries before canary or promotion.",
+              "status": "implemented by self-improvement boundary harness; validated locally by synthetic fixtures; deployed recursive self-improvement behavior not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; deployed recursive self-improvement behavior not run"
+            },
             {
               "name": "Evaluator independence test",
               "purpose": "Check that a candidate replacement cannot enter canary or commit state when the replacement record indicates weak or self-referential evaluation.",

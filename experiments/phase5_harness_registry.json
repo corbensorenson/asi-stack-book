@@ -276,6 +276,30 @@
     ]
   },
   {
+    "id": "self_improvement_boundaries",
+    "name": "Self-improvement boundary harness",
+    "command": "python3 scripts/validate_self_improvement_boundaries.py",
+    "script": "scripts/validate_self_improvement_boundaries.py",
+    "doc": "docs/self_improvement_boundary_harness.md",
+    "experiment_dir": "experiments/self_improvement_boundaries",
+    "fixture_dir": "experiments/self_improvement_boundaries/fixtures",
+    "result_record": "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 7,
+    "result_summary": "Self-improvement boundary harness passed: 3 valid fixture(s), 7 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "recursive-self-improvement-boundaries",
+      "constitutional-alignment-substrate",
+      "capability-replacement-and-rollback",
+      "stable-capability-fields",
+      "readiness-gates-residual-escrow-and-quarantine"
+    ],
+    "non_claims": [
+      "Does not prove deployed self-improvement behavior, runtime optimization, evaluator integrity, authority enforcement, rollback execution, regression quality, recursive self-improvement safety, or source interpretation.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "plan_execution_contracts",
     "name": "Plan-execution contract harness",
     "command": "python3 scripts/validate_plan_execution_contracts.py",

@@ -55,6 +55,7 @@ REQUIRED = [
     "scripts/validate_security_kernel.py",
     "scripts/validate_stable_capability_fields.py",
     "scripts/validate_capability_replacement.py",
+    "scripts/validate_self_improvement_boundaries.py",
     "scripts/validate_plan_execution_contracts.py",
     "scripts/validate_runtime_adapter_permissions.py",
     "scripts/validate_context_admission_adequacy.py",
@@ -91,6 +92,7 @@ REQUIRED = [
     "docs/security_kernel_harness.md",
     "docs/stable_capability_field_harness.md",
     "docs/capability_replacement_harness.md",
+    "docs/self_improvement_boundary_harness.md",
     "docs/reader_continuity_audit.md",
     "docs/reader_chapter_review_matrix.md",
     "docs/reader_format_review_matrix.md",
@@ -109,6 +111,7 @@ REQUIRED = [
     "experiments/security_kernel/results/2026-06-28-local.md",
     "experiments/stable_capability_fields/results/2026-06-28-local.md",
     "experiments/capability_replacement/results/2026-06-28-local.md",
+    "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
@@ -593,6 +596,7 @@ def main() -> None:
     run_validator("validate_security_kernel.py")
     run_validator("validate_stable_capability_fields.py")
     run_validator("validate_capability_replacement.py")
+    run_validator("validate_self_improvement_boundaries.py")
     run_validator("validate_plan_execution_contracts.py")
     run_validator("validate_runtime_adapter_permissions.py")
     run_validator("validate_context_admission_adequacy.py")

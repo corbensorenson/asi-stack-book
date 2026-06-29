@@ -1,0 +1,18 @@
+{
+  "transition_id": "self-improvement://self-evaluator-001",
+  "trigger_residual": "candidate reports that it is better than the prior implementation",
+  "field_id": "field://route-accounting",
+  "proposal": "Admit the candidate to canary based on its own score report.",
+  "cheaper_interventions_tried": [
+    "tighten route-accounting residual wording"
+  ],
+  "protected_invariants": [
+    "field identity remains stable across implementation replacement"
+  ],
+  "evaluator_independence": "candidate validates itself as the sole evaluator",
+  "replacement_transaction": "replacement://self-evaluator-001",
+  "governance_approval": "review-required-before-default-promotion",
+  "monitor_window": "canary monitor window with regression checks",
+  "rollback_path": "restore impl://route-accounting-v0 if regression appears",
+  "outcome_state": "canary"
+}

@@ -1,0 +1,16 @@
+{
+  "transition_id": "self-improvement://missing-invariants-001",
+  "trigger_residual": "candidate replacement lacks declared invariants",
+  "field_id": "field://route-accounting",
+  "proposal": "Promote a replacement without naming protected invariants.",
+  "cheaper_interventions_tried": [
+    "repair ledger wording"
+  ],
+  "protected_invariants": [],
+  "evaluator_independence": "independent review checked the record",
+  "replacement_transaction": "replacement://missing-invariants-001",
+  "governance_approval": "approval://missing-invariants-001",
+  "monitor_window": "passed clean monitor window",
+  "rollback_path": "restore impl://route-accounting-v0",
+  "outcome_state": "promoted"
+}

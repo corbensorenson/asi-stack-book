@@ -1,0 +1,18 @@
+{
+  "transition_id": "self-improvement://unreviewed-canary-001",
+  "trigger_residual": "candidate should enter canary without review",
+  "field_id": "field://context-adequacy",
+  "proposal": "Admit the replacement to canary automatically.",
+  "cheaper_interventions_tried": [
+    "revise existing certificate wording"
+  ],
+  "protected_invariants": [
+    "authority ceiling cannot expand by default"
+  ],
+  "evaluator_independence": "independent review can happen later",
+  "replacement_transaction": "replacement://unreviewed-canary-001",
+  "governance_approval": "auto",
+  "monitor_window": "canary monitor window with regression checks",
+  "rollback_path": "return to impl://context-adequacy-v0 if regression appears",
+  "outcome_state": "canary"
+}
