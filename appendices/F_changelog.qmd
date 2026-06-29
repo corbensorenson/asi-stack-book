@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-29 - Corrigibility Lean depth follow-through
+
+- Strengthened `lean/AsiStackProofs/Corrigibility.lean` with a finite
+  `AgencyActionDecision` envelope and the derived/decomposed theorem
+  `high_impact_action_without_usable_review_routes_to_review`.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 141
+  theorem declarations, 29 derived/decomposed theorem declarations, and one
+  derived/decomposed theorem inside the safety-critical Corrigibility module.
+- Updated the Agency, Dignity, and Corrigibility chapter and
+  `docs/proof_adequacy_review.md` so the new theorem is described as a narrow
+  finite-record review-path blocking gate, not a deployed-corrigibility or
+  dignity-preservation result.
+- This does not promote any chapter core claim, prove human dignity, validate
+  institutional review quality, prove material usability of real interfaces,
+  reproduce results, or change any support state.
+
 ## 2026-06-29 - Alignment Lean depth follow-through
 
 - Strengthened `lean/AsiStackProofs/Alignment.lean` with a finite

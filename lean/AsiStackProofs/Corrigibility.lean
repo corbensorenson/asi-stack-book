@@ -41,4 +41,35 @@ theorem transition_that_removes_required_correction_pathway_is_rejected
   intro valid required removed
   exact valid required removed
 
+inductive AgencyActionRoute where
+  | allowed
+  | blockedForReview
+deriving DecidableEq, Repr
+
+structure AgencyActionDecision where
+  highImpactAction : Bool
+  usableReviewPath : Bool
+  currentApproval : Bool
+  route : AgencyActionRoute
+deriving DecidableEq, Repr
+
+def AgencyActionCorrigible (decision : AgencyActionDecision) : Prop :=
+  if decision.highImpactAction &&
+      (!decision.usableReviewPath || !decision.currentApproval) then
+    decision.route = AgencyActionRoute.blockedForReview
+  else
+    True
+
+theorem high_impact_action_without_usable_review_routes_to_review
+    {decision : AgencyActionDecision} :
+    AgencyActionCorrigible decision ->
+    decision.highImpactAction = true ->
+    decision.usableReviewPath = false ->
+    decision.route = AgencyActionRoute.blockedForReview := by
+  intro safe highImpact missingReview
+  unfold AgencyActionCorrigible at safe
+  rw [highImpact, missingReview] at safe
+  simp at safe
+  exact safe
+
 end AsiStackProofs.Corrigibility
