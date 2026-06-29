@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Reader EPUB metadata and source-spine probe
+
+- Added explicit `lang: en-US` metadata to the generated live Quarto scaffold
+  and generated reader-edition Quarto scaffold so EPUB metadata no longer
+  inherits the shell locale. Strengthened
+  `scripts/inspect_reader_format_artifacts.py` and `scripts/validate_book.py`
+  so missing EPUB language metadata and missing live scaffold language metadata
+  fail validation.
+- Refreshed the generated reader HTML, EPUB, and DOCX snapshots, reran the
+  structural artifact inspector, and added
+  `editions/reader_manuscript/v1_0/epub_probe_manifest.json`,
+  `docs/reader_epub_probe_manifest.md`, and
+  `scripts/validate_reader_epub_probe_manifest.py`. The tracked EPUB probe
+  records a 9,078,787-byte EPUB with 130 zip entries, 62 XHTML entries, 62
+  image entries, `en-US` OPF language metadata, 866 navigation hrefs, and
+  sampled reader-note, evidence-boundary, and source-card XHTML entries.
+- Updated the reader format matrix, release runbook, README, repository map,
+  publication readiness, v1.0 status, roadmap, focus audit, and release
+  preparation review to record the EPUB probe while preserving
+  `app_or_ereader_review_not_completed`, full-format-review, and release-record
+  blockers. This is not an EPUB approval, e-reader review, reader release,
+  edition release record, support-state promotion, source-derived evidence
+  promotion, proof result, benchmark result, runtime result, or audio artifact.
+
 ## 2026-06-28 - v1.0 Reader DOCX conversion probe manifest
 
 - Refreshed the generated reader HTML, EPUB, and DOCX snapshots with
@@ -11,7 +35,7 @@
   `scripts/validate_reader_docx_probe_manifest.py` to preserve the local DOCX
   LibreOffice conversion probe without committing ignored artifacts.
 - Rendered the generated DOCX through the documents-skill `render_docx.py`
-  path backed by headless LibreOffice, producing a 514-page, 8,190,127-byte
+  path backed by headless LibreOffice, producing a 514-page, 8,190,162-byte
   converted PDF and 514 page images under ignored `build/reader_docx_probe/`.
   Representative pages 1, 25, 447, 472, 474, and 514 were visually sampled,
   including front matter, body prose/list layout, Corben/local source cards,

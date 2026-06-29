@@ -141,6 +141,15 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         require_int("inspection_summary.epub", "bytes", epub.get("bytes"), errors, minimum=1_000_000)
         require_int("inspection_summary.epub", "xhtml_entries", epub.get("xhtml_entries"), errors, minimum=58)
         require_int("inspection_summary.epub", "image_entries", epub.get("image_entries"), errors, minimum=54)
+        if epub.get("opf_title") != "The ASI Stack":
+            errors.append("inspection_summary.epub.opf_title must be The ASI Stack.")
+        if epub.get("opf_creator") != "Corben Sorenson":
+            errors.append("inspection_summary.epub.opf_creator must be Corben Sorenson.")
+        if epub.get("opf_language") != "en-US":
+            errors.append("inspection_summary.epub.opf_language must be en-US.")
+        require_int("inspection_summary.epub", "opf_item_count", epub.get("opf_item_count"), errors, minimum=1)
+        require_int("inspection_summary.epub", "opf_itemref_count", epub.get("opf_itemref_count"), errors, minimum=1)
+        require_int("inspection_summary.epub", "nav_href_count", epub.get("nav_href_count"), errors, minimum=1)
         required = set(require_string_list("inspection_summary.epub", "required_entries_present", epub.get("required_entries_present"), errors))
         for entry in {"mimetype", "META-INF/container.xml", "EPUB/content.opf", "EPUB/nav.xhtml", "EPUB/toc.ncx"}:
             if entry not in required:
@@ -184,6 +193,7 @@ def validate_summary(manifest: dict[str, Any], errors: list[str]) -> None:
         "| docx | rendered | 1 | 1 |",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
+        "language `en-US`",
         "reader_release_record_not_created",
         "full_format_artifact_review_not_completed",
         "This manifest is not a reader release",

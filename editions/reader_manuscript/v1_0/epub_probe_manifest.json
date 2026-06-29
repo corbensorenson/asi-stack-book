@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "local_epub_probe_record",
+  "last_updated": "2026-06-28",
+  "purpose": "Record the latest tracked local EPUB metadata, navigation, spine, and source-card sampling evidence without treating the ignored EPUB snapshot as an e-reader-approved release artifact.",
+  "source_commands": [
+    "python3 scripts/render_reader_formats.py --formats html epub docx",
+    "python3 scripts/inspect_reader_format_artifacts.py",
+    "python3 - <<'PY' ... inspect EPUB/content.opf, EPUB/nav.xhtml, text XHTML entries, evidence-boundary text, and reader source-card appendix entries ..."
+  ],
+  "local_artifact_refs": [
+    "build/reader_edition/reader_render_report.json",
+    "build/reader_edition/reader_artifact_inspection_report.json",
+    "build/reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub"
+  ],
+  "tracked_evidence_refs": [
+    "docs/reader_format_dry_run.md#epub-probe",
+    "docs/reader_artifact_inspection_manifest.md#inspection-summary",
+    "docs/reader_artifact_layout_review.md#residuals",
+    "docs/reader_format_review_matrix.md"
+  ],
+  "epub_container_summary": {
+    "format": "epub",
+    "status": "rendered_and_structurally_inspected",
+    "local_artifact_path": "build/reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+    "file_size_bytes": 9078787,
+    "zip_entries": 130,
+    "xhtml_entries": 62,
+    "text_xhtml_entries": 61,
+    "image_entries": 62,
+    "opf_item_count": 126,
+    "opf_itemref_count": 62,
+    "nav_href_count": 866,
+    "nav_li_count": 866,
+    "mimetype_first": true,
+    "mimetype_content": "application/epub+zip",
+    "required_entries_present": [
+      "mimetype",
+      "META-INF/container.xml",
+      "EPUB/content.opf",
+      "EPUB/nav.xhtml",
+      "EPUB/toc.ncx",
+      "EPUB/text/title_page.xhtml"
+    ]
+  },
+  "metadata_summary": {
+    "title": "The ASI Stack",
+    "creator": "Corben Sorenson",
+    "language": "en-US",
+    "language_source": "generated Quarto config declares lang: en-US",
+    "cover_image_present": true
+  },
+  "spine_sampling_summary": {
+    "status": "metadata_navigation_and_source_spine_sampled",
+    "sampled_entries": [
+      {
+        "entry": "EPUB/text/ch001.xhtml",
+        "surface": "reader opening note",
+        "observation": "Reader Edition Note text is present in the first body XHTML entry."
+      },
+      {
+        "entry": "EPUB/text/ch003.xhtml",
+        "surface": "opening chapter support boundary",
+        "observation": "Compact evidence-boundary text is present in the opening chapter XHTML entry."
+      },
+      {
+        "entry": "EPUB/text/ch058.xhtml",
+        "surface": "Corben/local source appendix cards",
+        "observation": "Reader Source List text and proof_carrying_circular_computation source-card text are present in the Corben/local source appendix XHTML entry."
+      },
+      {
+        "entry": "EPUB/text/ch059.xhtml",
+        "surface": "external source appendix cards",
+        "observation": "Reader Source List, External Citation Policy, and concrete_ai_safety text are present in the external-source appendix XHTML entry."
+      }
+    ],
+    "residuals": [
+      "This probe checks EPUB container, metadata, navigation counts, sampled text entries, and source-card text only.",
+      "The EPUB has not been opened and reviewed in Apple Books, Kindle Previewer, Calibre, or a physical e-reader.",
+      "Full format-artifact review and release-record approval have not been completed."
+    ]
+  },
+  "release_blockers_preserved": [
+    "reader_release_record_not_created",
+    "full_format_artifact_review_not_completed",
+    "app_or_ereader_review_not_completed"
+  ],
+  "non_claims": [
+    "This manifest records a local EPUB structural and metadata probe in ignored build space only.",
+    "This manifest is not a reader release, EPUB release, ebook release, edition release record, e-reader application review, or artifact approval.",
+    "This manifest does not approve EPUB, DOCX, PDF, HTML, e-reader, document, audio, or audio-embedded EPUB artifacts for publication.",
+    "This manifest does not check full editorial quality, full layout quality, application behavior, e-reader pagination, source interpretation, proof adequacy, benchmark behavior, runtime behavior, PDF output approval, DOCX output approval, or audio output.",
+    "This manifest does not promote any claim support state."
+  ]
+}

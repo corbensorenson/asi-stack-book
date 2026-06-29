@@ -202,6 +202,8 @@ def write_quarto(structure: dict) -> None:
         "  type: book",
         "  output-dir: _site",
         "",
+        "lang: en-US",
+        "",
         "book:",
         f"  title: {yaml_string(structure.get('title', 'Untitled'))}",
         f"  subtitle: {yaml_string(structure.get('subtitle', ''))}",

@@ -46,10 +46,16 @@
     },
     "epub": {
       "status": "passed",
-      "bytes": 9078592,
+      "bytes": 9078787,
       "entries": 130,
       "xhtml_entries": 62,
       "image_entries": 62,
+      "opf_title": "The ASI Stack",
+      "opf_creator": "Corben Sorenson",
+      "opf_language": "en-US",
+      "opf_item_count": 126,
+      "opf_itemref_count": 62,
+      "nav_href_count": 866,
       "required_entries_present": [
         "EPUB/content.opf",
         "EPUB/nav.xhtml",
@@ -60,7 +66,7 @@
     },
     "docx": {
       "status": "passed",
-      "bytes": 7059440,
+      "bytes": 7059486,
       "entries": 77,
       "media_entries": 61,
       "paragraph_markers": 19229,
@@ -76,7 +82,7 @@
   "release_blockers_preserved": [
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
-    "app_or_ereader_review_not_completed for EPUB; DOCX has a separate representative LibreOffice conversion probe"
+    "app_or_ereader_review_not_completed for EPUB; EPUB has a separate metadata/source-spine probe and DOCX has a separate representative LibreOffice conversion probe"
   ],
   "non_claims": [
     "This manifest records a local structural inspection of ignored reader-format snapshots only.",

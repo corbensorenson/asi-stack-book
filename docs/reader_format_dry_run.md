@@ -71,6 +71,32 @@ The ignored local inspection report at
 | EPUB | Readable EPUB zip container, required `mimetype`, container, OPF, nav, and NCX entries present, `mimetype` first with `application/epub+zip`, 130 entries, 62 XHTML entries, and 62 image entries. |
 | DOCX | Readable DOCX zip container, required content types, relationships, document, styles, and document relationship entries present, 77 entries, 61 embedded media entries, 19,229 paragraph markers, book title present, and compact evidence-boundary text present. |
 
+## EPUB Probe
+
+After adding explicit `lang: en-US` metadata to the live and reader Quarto
+scaffold generators, the EPUB snapshot was re-rendered and inspected:
+
+| Field | Value |
+|---|---:|
+| File size | 9,078,787 bytes |
+| Zip entries | 130 |
+| XHTML entries | 62 |
+| Text XHTML entries | 61 |
+| Image entries | 62 |
+| OPF item count | 126 |
+| OPF itemref count | 62 |
+| Navigation href count | 866 |
+| Language metadata | en-US |
+
+Local ZIP inspection found `The ASI Stack`, `Corben Sorenson`, and `en-US` in
+`EPUB/content.opf`; `Reader Edition Note` in `EPUB/text/ch001.xhtml`; compact
+`evidence boundary: architectural argument` text in the opening chapter XHTML;
+and reader source-card text in the Appendix G and Appendix H XHTML entries,
+including `proof_carrying_circular_computation`, `External Citation Policy`,
+and `concrete_ai_safety`. This confirms only EPUB container, metadata,
+navigation, and sampled spine text behavior. The EPUB still has not been
+opened in Apple Books, Kindle Previewer, Calibre, or a physical e-reader.
+
 ## PDF Probe
 
 The first isolated PDF probe without explicit locale settings failed:
@@ -146,7 +172,7 @@ The probe produced 514 page images and
 
 | Field | Value |
 |---|---:|
-| Converted PDF file size | 8,190,127 bytes |
+| Converted PDF file size | 8,190,162 bytes |
 | Converted PDF pages | 514 |
 | Page size | letter |
 | Encrypted | no |

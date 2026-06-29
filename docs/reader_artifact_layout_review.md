@@ -77,7 +77,7 @@ complete `_reader_site` preservation fix:
 After the reader source-card transform, the local HTML, EPUB, and DOCX
 snapshots were refreshed. The DOCX snapshot then rendered through the
 documents-skill `render_docx.py` path backed by headless LibreOffice, producing
-a 514-page, 8,190,127-byte, letter-size converted PDF and 514 page PNGs under
+a 514-page, 8,190,162-byte, letter-size converted PDF and 514 page PNGs under
 `build/reader_docx_probe/`.
 
 Representative pages were visually inspected:
@@ -93,6 +93,20 @@ Representative pages were visually inspected:
 
 This is a representative LibreOffice conversion spot check. It is not a full
 DOCX application review in Word, LibreOffice GUI, or Google Docs.
+
+## EPUB Metadata And Spine Probe
+
+The refreshed EPUB snapshot contains 130 zip entries, 62 XHTML entries, 62
+image entries, 126 OPF items, 62 OPF spine itemrefs, and 866 navigation hrefs.
+`EPUB/content.opf` records title `The ASI Stack`, creator `Corben Sorenson`,
+and language `en-US`; the language value is now generated from explicit Quarto
+`lang: en-US` metadata rather than process-locale fallback.
+
+Sampled XHTML entries contain the reader opening note, compact
+evidence-boundary text, and the generated reader source-card appendices for
+both Corben/local and external sources. The sample confirms source-card text is
+inside the EPUB spine; it does not prove pagination, font behavior, table
+behavior, cross-reference behavior, or application-specific e-reader layout.
 
 ## Broader HTML Navigation And Layout Probe
 
@@ -134,7 +148,8 @@ equal to the viewport width in the sampled mobile pages.
 - The current PDF probe samples the generated reader source-card replacement
   for Appendix G and Appendix H, but it is not a full source-appendix layout
   review.
-- EPUB was structurally inspected but not opened in an e-reader application.
+- EPUB has container, metadata, navigation, and sampled source-spine evidence,
+  but it has not been opened in an e-reader application.
 - DOCX has a representative headless LibreOffice conversion and page-image spot
   check, but it has not received full application review in Word, LibreOffice
   GUI, or Google Docs.

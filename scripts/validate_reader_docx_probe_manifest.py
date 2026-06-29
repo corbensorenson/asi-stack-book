@@ -109,8 +109,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         errors.append("docx_source_summary.format must be docx.")
     if source.get("status") != "rendered_and_structurally_inspected":
         errors.append("docx_source_summary.status must be rendered_and_structurally_inspected.")
-    if require_int("docx_source_summary", "file_size_bytes", source.get("file_size_bytes"), errors, minimum=1_000_000) != 7059440:
-        errors.append("docx_source_summary.file_size_bytes must be 7059440.")
+    if require_int("docx_source_summary", "file_size_bytes", source.get("file_size_bytes"), errors, minimum=1_000_000) != 7059486:
+        errors.append("docx_source_summary.file_size_bytes must be 7059486.")
     if require_int("docx_source_summary", "zip_entries", source.get("zip_entries"), errors, minimum=1) != 77:
         errors.append("docx_source_summary.zip_entries must be 77.")
     if require_int("docx_source_summary", "media_entries", source.get("media_entries"), errors, minimum=1) != 61:
@@ -134,8 +134,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         errors.append("conversion_summary.author must be Corben Sorenson.")
     if require_int("conversion_summary", "pages", conversion.get("pages"), errors, minimum=500) != 514:
         errors.append("conversion_summary.pages must be 514.")
-    if require_int("conversion_summary", "file_size_bytes", conversion.get("file_size_bytes"), errors, minimum=1_000_000) != 8190127:
-        errors.append("conversion_summary.file_size_bytes must be 8190127.")
+    if require_int("conversion_summary", "file_size_bytes", conversion.get("file_size_bytes"), errors, minimum=1_000_000) != 8190162:
+        errors.append("conversion_summary.file_size_bytes must be 8190162.")
     if conversion.get("encrypted") is not False:
         errors.append("conversion_summary.encrypted must be false.")
     if conversion.get("tagged") is not True:
@@ -203,9 +203,9 @@ def validate_summary(errors: list[str]) -> None:
     required_fragments = [
         "Reader DOCX Probe Manifest",
         "render_docx.py",
-        "| File size | 7,059,440 bytes |",
+        "| File size | 7,059,486 bytes |",
         "| Pages | 514 |",
-        "| File size | 8,190,127 bytes |",
+        "| File size | 8,190,162 bytes |",
         "LibreOfficeDev 26.8.0.0.alpha0 (AARCH64)",
         "Reader Source List",
         "proof_carrying_circular_computation",

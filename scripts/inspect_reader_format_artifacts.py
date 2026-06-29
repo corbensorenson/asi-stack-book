@@ -15,6 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_ARTIFACT_ROOT = ROOT / "build" / "reader_edition" / "format_artifacts"
 DEFAULT_REPORT = ROOT / "build" / "reader_edition" / "reader_artifact_inspection_report.json"
 RAW_CORE_CLAIM_RE = re.compile(r"\[[A-Za-z0-9_-]+\.core,\s*label:\s*[^,\]]+,\s*support:\s*[^\]]+\]")
+DC_TITLE_RE = re.compile(r"<dc:title[^>]*>(.*?)</dc:title>", re.DOTALL)
+DC_CREATOR_RE = re.compile(r"<dc:creator[^>]*>(.*?)</dc:creator>", re.DOTALL)
+DC_LANGUAGE_RE = re.compile(r"<dc:language[^>]*>(.*?)</dc:language>", re.DOTALL)
 LIVE_ONLY_MARKERS = [
     "Chapter status",
     "Drafting guardrail",
@@ -129,8 +132,21 @@ def inspect_epub(root: Path) -> dict[str, object]:
                 fail(f"EPUB has too few image entries: {image_count}")
             title_page = archive.read("EPUB/text/title_page.xhtml").decode("utf-8", errors="ignore")
             nav = archive.read("EPUB/nav.xhtml").decode("utf-8", errors="ignore")
+            opf = archive.read("EPUB/content.opf").decode("utf-8", errors="ignore")
             if "The ASI Stack" not in title_page or "The ASI Stack" not in nav:
                 fail("EPUB title page or navigation lacks the book title")
+            title_matches = DC_TITLE_RE.findall(opf)
+            creator_matches = DC_CREATOR_RE.findall(opf)
+            language_matches = DC_LANGUAGE_RE.findall(opf)
+            if title_matches != ["The ASI Stack"]:
+                fail(f"EPUB OPF title metadata is unexpected: {title_matches}")
+            if creator_matches != ["Corben Sorenson"]:
+                fail(f"EPUB OPF creator metadata is unexpected: {creator_matches}")
+            if language_matches != ["en-US"]:
+                fail(f"EPUB OPF language metadata is unexpected: {language_matches}")
+            opf_item_count = len(re.findall(r"<item\b", opf))
+            opf_itemref_count = len(re.findall(r"<itemref\b", opf))
+            nav_href_count = nav.count("href=")
     except BadZipFile as exc:
         fail(f"EPUB is not a readable zip container: {exc}")
 
@@ -141,6 +157,12 @@ def inspect_epub(root: Path) -> dict[str, object]:
         "entries": len(names),
         "xhtml_entries": xhtml_count,
         "image_entries": image_count,
+        "opf_title": title_matches[0],
+        "opf_creator": creator_matches[0],
+        "opf_language": language_matches[0],
+        "opf_item_count": opf_item_count,
+        "opf_itemref_count": opf_itemref_count,
+        "nav_href_count": nav_href_count,
         "required_entries": sorted(required_entries),
     }
 

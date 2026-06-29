@@ -22,7 +22,7 @@ pdfinfo build/reader_docx_probe/The-ASI-Stack.pdf
 | Field | Value |
 |---|---:|
 | Local artifact | `build/reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx` |
-| File size | 7,059,440 bytes |
+| File size | 7,059,486 bytes |
 | Zip entries | 77 |
 | Media entries | 61 |
 | Paragraph markers | 19,229 |
@@ -35,7 +35,7 @@ pdfinfo build/reader_docx_probe/The-ASI-Stack.pdf
 | Renderer | documents skill `render_docx.py` via headless LibreOffice |
 | Local converted PDF | `build/reader_docx_probe/The-ASI-Stack.pdf` |
 | Pages | 514 |
-| File size | 8,190,127 bytes |
+| File size | 8,190,162 bytes |
 | Page size | 612 x 792 pts (letter) |
 | Encrypted | no |
 | Tagged | yes |

@@ -28,15 +28,16 @@ python3 scripts/inspect_reader_format_artifacts.py
 | Format | Status | Key metrics |
 |---|---|---|
 | html | passed | 59 HTML files; 54 chapter files; 0 live-marker leaks; 0 raw core-claim marker leaks |
-| epub | passed | 9,078,592 bytes; 130 entries; 62 XHTML entries; 62 image entries |
-| docx | passed | 7,059,440 bytes; 77 entries; 61 media entries; 19,229 paragraph markers |
+| epub | passed | 9,078,787 bytes; 130 entries; 62 XHTML entries; 62 image entries; OPF metadata title `The ASI Stack`, creator `Corben Sorenson`, language `en-US` |
+| docx | passed | 7,059,486 bytes; 77 entries; 61 media entries; 19,229 paragraph markers |
 
 ## Release Blockers Preserved
 
 - `reader_release_record_not_created`
 - `full_format_artifact_review_not_completed`
-- `app_or_ereader_review_not_completed` for EPUB; DOCX has a separate
-  representative LibreOffice conversion probe
+- `app_or_ereader_review_not_completed` for EPUB; EPUB has a separate
+  metadata/source-spine probe and DOCX has a separate representative
+  LibreOffice conversion probe
 
 ## Non-Claims
 

@@ -1049,6 +1049,8 @@ def write_quarto(output_dir: Path, structure: dict, profile: dict) -> None:
         "  type: book",
         "  output-dir: _reader_site",
         "",
+        "lang: en-US",
+        "",
         "book:",
         f"  title: {yaml_string(structure.get('title', 'The ASI Stack'))}",
         '  subtitle: "Reader Edition Draft"',
