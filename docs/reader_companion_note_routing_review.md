@@ -35,7 +35,7 @@ reader prose.
 |---|---|---|---|
 | `circle-calculus-and-proof-carrying-ai-contracts` | Retain proof receipt states, theorem references, resolver/replay boundaries, consumer gates, workload blockers, and non-claims in the reader chapter. | Future glossary and audio note for receipt states, theorem laundering, fingerprints, replay, and workload-blocked promotion. | No curated source. No release blocker cleared. |
 | `executable-specifications-and-lean-proof-envelope` | Retain the distinction between Lean predicates, schemas, validators, behavior tests, benchmarks, external theorem references, and semantic adequacy review. | Future proof-lane glossary and audio note explaining why each lane carries different authority. | No curated source. No release blocker cleared. |
-| `artifact-steward-agents-and-living-project-governance` | Retain charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, federation, and non-ownership boundaries. | Future project-object quick reference and implementation-ladder companion note; the initialized curated chapter may compress implementation-ladder pacing while preserving meaning-critical boundaries. | Drafting-only curated reader source initialized; no release blocker cleared. |
+| `artifact-steward-agents-and-living-project-governance` | Retain charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, federation, and non-ownership boundaries. | Future project-object quick reference and implementation-ladder companion note; the first curated prose pass compresses implementation-ladder pacing while preserving meaning-critical boundaries. | Drafting-only curated reader prose pass recorded; no release blocker cleared. |
 
 ## Routing Rule
 

@@ -966,7 +966,11 @@ Current status:
   with one curated chapter record for
   `artifact-steward-agents-and-living-project-governance`.
 - `editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd`
-  is initialized from the generated reader baseline as a drafting source only.
+  now has a first curated prose pass from the generated reader baseline as a
+  drafting source only.
+- `docs/curated_reader_artifact_steward_prose_pass.md` records the curation
+  scope, meaning-preservation checks, non-claims, and remaining blockers for
+  that pass.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` records the
   drafting row and keeps `reader_release_record_not_created`,
   `format_artifact_not_reviewed`, and

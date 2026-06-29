@@ -65,7 +65,7 @@ duplicate skeletons the consolidation pilot is trying to remove.
 
 | Chapter | Current disposition | Graduation decision |
 |---|---|---|
-| `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | Initialized as the first drafting-only curated reader chapter from the generated baseline. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
+| `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `companion_note_candidate`, active overlays | Prefer companion/glossary treatment before curated prose graduation. |
 | `executable-specifications-and-lean-proof-envelope` | `companion_note_candidate`, active overlay | Prefer companion/glossary treatment before curated prose graduation. |
 

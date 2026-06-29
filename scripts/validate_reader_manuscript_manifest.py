@@ -3,8 +3,9 @@
 
 The curated reader manuscript is allowed to become a parallel derivative source
 for human prose, but it is not allowed to become an independent evidence source.
-This validator keeps that future path explicit while the current status remains
-not_graduated.
+This validator keeps that path explicit as chapters move from dormant
+not-graduated state into drafting, reconciliation, candidate, or released
+states.
 """
 
 from __future__ import annotations

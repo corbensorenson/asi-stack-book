@@ -1,16 +1,16 @@
 # v1.0 Curated Reader Reconciliation Report
 
-Status: drafting; one curated reader chapter initialized from generated reader
-baseline, with release blockers still active.
+Status: drafting; one curated reader chapter has a first prose curation pass,
+with release blockers still active.
 
 This report is the required reconciliation surface for any future curated v1.0 reader manuscript. It is not a reader release record, not an ebook/document/PDF/audio artifact record, not a support-state promotion, and not an equal source of truth beside the live AI/research book.
 
 ## Current State
 
 - Curated manuscript status: `drafting`
-- Current graduation decision: initialize one drafting-only curated reader
-  chapter for Artifact Steward Agents while keeping generated reader source
-  plus semantic overlays as the release baseline; see
+- Current graduation decision: keep one drafting-only curated reader chapter
+  for Artifact Steward Agents while keeping generated reader source plus
+  semantic overlays as the release baseline; see
   `docs/curated_reader_graduation_review.md`
 - Chapter records: 1 drafting record
 - Active reader baseline: generated reader source plus semantic reader overlays
@@ -29,7 +29,7 @@ If a reader edit discovers that the live AI/research source is wrong, thin, misl
 
 | Chapter ID | Curated file | Generated baseline ref | Live source ref | Reconciliation status | Divergence summary | Blockers |
 |---|---|---|---|---|---|---|
-| `artifact-steward-agents-and-living-project-governance` | `editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd` | `build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd` | `chapters/artifact-steward-agents-and-living-project-governance.qmd@0f6382f1` | `drafting` | Initialized from the generated reader baseline for future prose editing; no meaning divergence has been approved yet. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
+| `artifact-steward-agents-and-living-project-governance` | `editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd` | `build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd` | `chapters/artifact-steward-agents-and-living-project-governance.qmd@0f6382f1` | `drafting` | First curated prose pass completed for opening, pacing, paragraph order, section flow, transitions, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_artifact_steward_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 
 ## Required Checks Before Reader Release
 

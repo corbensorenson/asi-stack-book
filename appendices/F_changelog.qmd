@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - First curated reader prose pass
+
+- Rewrote the drafting-only curated reader chapter
+  `editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd`
+  from generated-reader baseline prose into a more continuous human-reader
+  draft with a stronger opening, smoother transitions, compressed repeated
+  governance machinery, and preserved handoff.
+- Added `docs/curated_reader_artifact_steward_prose_pass.md` to record the
+  allowed curation scope, meaning-preservation checks, release blockers, and
+  non-claims for the prose pass.
+- Updated the curated reader manuscript manifest, reconciliation report,
+  curated-reader graduation review, companion-note routing review,
+  release-editions plan, and v1.x roadmap so the prose pass is visible without
+  approving it for release.
+- This does not change the live AI/research chapter, `book_structure.json`,
+  Appendix C, source assignments, proof targets, test status, implementation
+  horizons, release records, support states, or any EPUB, DOCX, PDF, HTML, or
+  audio artifact approval.
+
 ## 2026-06-29 - Curated reader drafting path starts
 
 - Initialized the first drafting-only curated reader chapter at
