@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - ASI opener curated reader prose pass
+
+- Initialized and rewrote the drafting-only curated reader chapter
+  `editions/reader_manuscript/v1_0/chapters/asi-is-a-stack-not-a-model.qmd`
+  from the generated reader baseline into a more booklike human-reader opener.
+- Added `docs/curated_reader_asi_stack_prose_pass.md` to record the allowed
+  curation scope, meaning-preservation checks, release blockers, and non-claims
+  for the opener pass.
+- Updated the curated reader manuscript manifest, reconciliation report,
+  curated-reader graduation review, companion-note routing review,
+  release-editions plan, v1.0 status snapshot, v1.x roadmap, and status
+  validator so the reader manuscript now records two drafting-only curated
+  chapters.
+- Recorded the latest 54-to-44 consolidation critique as roadmap guidance for
+  governed merge sequencing, not as a direct manifest-edit instruction.
+- This does not change the live AI/research chapter, `book_structure.json`,
+  Appendix C, source assignments, proof targets, test status, implementation
+  horizons, release records, support states, or any EPUB, DOCX, PDF, HTML, or
+  audio artifact approval.
+
 ## 2026-06-29 - First curated reader prose pass
 
 - Rewrote the drafting-only curated reader chapter

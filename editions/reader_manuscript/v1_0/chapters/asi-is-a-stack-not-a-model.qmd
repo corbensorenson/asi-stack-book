@@ -1,0 +1,347 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: asi-is-a-stack-not-a-model
+generated_baseline_ref: build/reader_edition/chapters/asi-is-a-stack-not-a-model.qmd
+live_source_ref: chapters/asi-is-a-stack-not-a-model.qmd@d16c2720
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# ASI Is a Stack, Not a Model
+
+The book begins by changing the object in view. The subject is not a magic
+model, a prompt wrapper, or an agent loop with a grand name. It is a governed
+system whose parts must say what they own, what they may do, what evidence
+they create, and how they can be stopped, repaired, or replaced.
+
+That opening move matters because the rest of the architecture adds machinery
+quickly. Planning, memory, routing, proof, execution, compression, governance,
+and recursive improvement can sound like one impressive cloud of capability if
+their boundaries are not visible. The stack frame prevents that blur. It asks
+every mechanism the same questions: what responsibility do you own, what
+artifact do you pass, what authority ceiling binds you, what evidence state
+can you honestly create, and what failure mode should stop you?
+
+A model can generate, compress, criticize, route, and propose. Those abilities
+are powerful, but they are not the whole institution. A governed stack decides
+when a model output becomes a plan, when a plan becomes a job, when a job may
+touch a tool, when a tool result becomes evidence, and when evidence can
+justify replacement. Without that separation, intelligence becomes hard to
+audit at exactly the moment it becomes important.
+
+The first claim of the book is therefore modest but load-bearing: efficient
+ASI should be modeled as a governed stack of cooperating layers rather than as
+one undifferentiated model. The claim is architectural. It remains at
+`argument` support. The point is not that this repository already contains a
+working ASI stack; the point is that every later chapter needs this unit of
+analysis before it can make a disciplined claim.
+
+## Problem
+
+Advanced AI systems that plan, remember, verify, act, route work, compress
+representations, and improve under governance need a single architecture
+frame. Otherwise each paper, component, and prototype can sound like it is
+competing for the center of the system. One source emphasizes intent to
+execution. Another emphasizes stateful cognition. Another emphasizes
+verification, labor, orchestration, or stable capability replacement. Read
+without an architecture, those ideas become an anthology. Read through a stack
+contract, they become fragments of one machine.
+
+The first boundary is conceptual. An ASI system should not be described only
+by the model that generates tokens, the agent loop that calls tools, or the
+benchmark score that reports progress. Those are components and measurements.
+The architecture is the set of contracts that decides how intent becomes work,
+how memory becomes context, how reasoning becomes claims, how claims become
+authority, how authority becomes execution, and how execution becomes evidence
+for future change.
+
+This is why the unit of analysis has to be fixed before the book starts adding
+layers. The unit is not "the model." The unit is a governed stack of
+cooperating layers. Each layer has a responsibility, an interface, a durable
+artifact, an invariant, a failure mode, and a promotion rule. Later layers can
+add detail only because the stack frame says what it means for those details
+to compose.
+
+The frame also gives the reader a practical test. A new mechanism belongs in
+the stack only when it lowers confusion at a boundary: who owns the decision,
+what artifact crosses the interface, which authority is available, which
+evidence state is possible, and what rollback path exists if the mechanism
+fails. If it cannot answer those questions, it may still be an idea, but it is
+not yet an architectural layer.
+
+## Why existing approaches are insufficient
+
+A larger model does not by itself define authority. A prompt wrapper does not
+define evidence. An agent loop does not define memory discipline, tool
+permissions, source sufficiency, rollback, or replacement safety.
+
+The missing piece is system accountability. A fluent model can propose a plan
+without owning the authority to execute it. A retrieval system can surface a
+source without proving that the source is current, permitted, or sufficient
+for the task. A router can choose a specialist without preserving the residual
+burden created by that choice. A benchmark can improve while hiding new
+failure cases. These failures appear at interfaces, so they need interface
+records.
+
+The ASI Stack does not reject powerful models. It places them. A model may be
+a generator, compressor, critic, planner, router, simulator, or verifier. It
+should not silently become the constitution, the memory authority, the
+deployment authority, the approval body, and the evidence registry at the same
+time.
+
+The stack frame also sits near established architecture traditions rather than
+outside them. MRKL-style systems decompose language models with expert modules.
+LLM-agent surveys organize agents around memory, planning, and action. The
+Standard Model of the Mind supplies cognitive-architecture lineage. Layered
+robot-control work shows the older idea that intelligent behavior can be
+organized as interacting layers rather than one monolithic controller. These
+sources are comparators. They do not validate the ASI Stack, but they help
+name the adjacent territory.
+
+The ASI Stack adds a particular emphasis: governance, authority ceilings,
+claim states, proof hooks, rollback paths, and recursive-improvement
+boundaries are not decorations around intelligence. They are part of the
+architecture.
+
+## Core Claim
+
+Efficient ASI should be modeled as a governed stack of cooperating layers
+rather than as one undifferentiated model (evidence boundary: architectural
+argument).
+
+The live book keeps this claim at `argument` support. VIEA supports the
+intent-to-execution spine, BeastBrain supports the local stateful stack
+vocabulary, Aletheia supports the trusted-output and verification boundary,
+Talos supports the labor and execution layer, SCF supports governed
+replacement, and MoECOT remains implementation-reference context rather than
+reproduced evidence. External architecture sources ground the surrounding
+vocabulary for modular systems, LLM agents, cognitive architectures, and
+layered control, but they do not reproduce or validate the ASI Stack.
+
+The argument is that decomposition is both a governance device and an
+efficiency device. A stack can route the smallest adequate capability to a
+subtask, preserve context only where it is useful, compile repeated work into
+tools, and test the exact boundary that changed. A monolith can still be
+powerful, but it has fewer places to attach evidence, rollback, permissions,
+and replacement rules.
+
+## Stack Map
+
+```{mermaid}
+flowchart TB
+  Constitution["Alignment and constitution"]
+  Governance["Governance and authority"]
+  Intent["Intent and command contracts"]
+  Planning["Planning and semantic IR"]
+  Memory["Virtual context memory"]
+  Reasoning["Claims, belief revision, and verification"]
+  Execution["Labor OS, tools, and runtime adapters"]
+  Routing["Routing and specialist capability fields"]
+  Compression["Compression, representation, and residuals"]
+  Evidence["Evidence, tests, proofs, and benchmarks"]
+  Improvement["Governed self-improvement"]
+
+  Constitution --> Governance
+  Governance --> Intent
+  Intent --> Planning
+  Planning --> Memory
+  Memory --> Reasoning
+  Reasoning --> Execution
+  Planning --> Routing
+  Routing --> Compression
+  Execution --> Evidence
+  Compression --> Evidence
+  Evidence --> Improvement
+  Improvement --> Governance
+
+  Governance -. "authority ceilings" .-> Execution
+  Evidence -. "qualification and rollback" .-> Routing
+  Memory -. "source-bound context" .-> Reasoning
+```
+
+Read the map as a responsibility loop, not a capability ladder.
+Self-improvement is not outside the stack. It returns to governance, where new
+capabilities must be qualified, bounded, and made reversible before they
+become defaults.
+
+## Mechanism
+
+The stack frame refuses to let any one component inherit every role. A layer
+contract is the mechanism that makes that refusal concrete. The artifact is a
+Layer Boundary Record, and a layer is mature only when it can answer a stable
+set of questions.
+
+What lifecycle state is the layer in? Who owns the boundary? Which chapters
+currently carry it? What responsibility does it own? What artifact does it
+emit? How does handoff work? What authority does it have, and what authority
+does it lack? What invariant must survive implementation changes? What
+evidence would justify promotion, replacement, or rollback?
+
+Those questions are the book's defense against anthology drift. Each source
+can introduce a mechanism, but the mechanism enters the stack only by naming
+its responsibility, interface, artifact, invariant, failure mode, evidence
+gate, and non-claim. Source queues keep future writing runs context-loaded.
+Evidence states keep clearer prose from becoming stronger support without the
+corresponding artifact.
+
+The raw LLM sits inside that contract as a powerful semantic machine. It can
+compress, expand, draft, classify, translate, route, critique, and propose
+repairs. The stack around it decides when those operations count as evidence,
+when they require verification, when they are only suggestions, and when they
+may trigger external action. The model can move meaning; the stack decides
+when that movement becomes a claim, job, permission, artifact, or release.
+
+The living-book workflow mirrors the architecture. Source queues prevent
+context drift. Claim states prevent evidence inflation. Proof targets prevent
+vague formalism. Render and validation gates prevent the public book from
+drifting away from the repository that defines it.
+
+```{mermaid}
+flowchart LR
+  A["Source idea or implementation pressure"] --> B["Assign owner layer"]
+  B --> C["Define interface artifact"]
+  C --> D["Declare authority ceiling"]
+  D --> E["Name invariant and failure mode"]
+  E --> F["Attach evidence gate"]
+  F --> G{"Validated surface exists?"}
+  G -- "yes" --> H["Candidate for promotion"]
+  G -- "no" --> I["Design rationale or residual"]
+  H --> J["Regression, proof, schema, or runtime trace"]
+  I --> F
+```
+
+This lifecycle is intentionally conservative. It lets the book absorb new
+papers, code, diagrams, proofs, and source notes without renumbering the
+architecture around every artifact. The stable object is the contract. Prose
+can improve, chapters can move, and implementations can be replaced, but the
+contract must continue to say what the layer owns and what it is not allowed
+to claim.
+
+## Interfaces
+
+Layer boundaries become usable through the Layer Boundary Record. At minimum,
+that record names the layer id, lifecycle state, owner, responsibility,
+chapter references, traceability state, input artifacts, output artifacts,
+authority ceiling, handoff protocol, contract references, change policy,
+integration decision, owned invariants, failure modes, evidence gates,
+downstream interfaces, promotion blockers, source references, support-state
+effect, and non-claims.
+
+The upstream interface accepts human purposes, institutional constraints,
+safety requirements, and explicit authority grants. The downstream interface
+emits stable obligations, boundaries, evidence labels, and governance
+constraints. If an adjacent layer cannot identify its input artifact or
+authority ceiling, the right behavior is not improvisation. It is a
+missing-contract record.
+
+This interface is also what makes a living book structurally dynamic. A new
+chapter can be added when it introduces a genuinely new contract, invariant,
+artifact type, or failure mode. Otherwise, the material should merge into the
+layer that already owns the boundary. The book should be edited like a stack,
+not like a table of contents.
+
+When a future paper arrives, the first question is not "does this deserve a
+chapter?" The first question is "which contract does this change?" If it
+changes no contract, it may become a source note, example, caveat, or appendix
+entry. If it changes a contract, the outline, chapter, schema, proof target,
+and crosswalk should move together.
+
+## Invariants
+
+- Layer boundaries remain explicit.
+- Claims carry support states.
+- Reasoning ability never implies execution authority.
+- Improvement routes back through governance instead of bypassing it.
+- New capability evidence enters through layer contracts rather than narrative
+  enthusiasm.
+
+The central invariant is separability. Planning, memory, reasoning, execution,
+routing, compression, evidence, and governance may cooperate, but none of them
+may silently absorb the authority or evidence duties of another layer. A model
+output can propose; it does not execute by being confident. A benchmark can
+inform; it does not authorize deployment by being high. A proof can certify a
+finite predicate; it does not imply broad safety. This separation lets the
+architecture inspect a failure without rewriting the whole system.
+
+## Failure modes
+
+The first failure is anthology drift: the book becomes a catalog of
+interesting ideas instead of one architecture. The second is monolith drift:
+the architecture starts attributing planning, memory, proof, execution, and
+governance to one opaque model again.
+
+Evidence inflation is the third failure. A design rationale, source note,
+local proof, or benchmark-shaped intention starts sounding like an implemented
+result. Authority inflation is its partner: execution authority, deployment
+authority, and evidence authority become ambient properties of "the model."
+
+The practical result is loss of addressability. No one can say which layer
+owns the claim, which artifact would test it, which boundary would stop it, or
+which residual remains. The stack frame exists to make that loss visible early
+enough to repair.
+
+## Minimum Viable Implementation
+
+A useful first build is a stack map, a layer boundary schema, one valid
+fixture, a generated source map, and Appendix C. That bundle is not evidence
+that the architecture runs. It gives the rest of the book a typed surface for
+saying which layer owns which lifecycle state, owner, chapter references,
+traceability state, responsibility, artifact, handoff protocol, contract
+references, authority ceiling, invariant, integration decision, promotion
+blockers, source references, support-state effect, and non-claim.
+
+A passing boundary record should include at least one blocked integration
+path: a reasoning layer trying to execute, an evidence layer trying to promote
+without artifacts, or a routing layer trying to widen authority. That makes
+the stack boundary test visible from the beginning.
+
+The minimum is complete only when a future editor can add a layer without
+renumbering chapters, hiding ownership, or silently changing support state.
+
+## Beyond the State of the Art
+
+A finished ASI stack treats model weights as one replaceable component inside
+a governed machine. The endpoint is not a larger agent. It is an architecture
+where alignment, memory, planning, execution, routing, evidence, compression,
+and self-improvement remain separate enough to inspect and compose.
+
+In the mature reference architecture, alignment and governance constrain every
+downstream layer. Planning, memory, reasoning, execution, routing,
+compression, and evidence exchange typed artifacts rather than hidden state.
+Recursive improvement becomes a governed transition with records, gates, and
+rollback paths rather than an ambient property of intelligence. Source queues
+and evidence states keep future writing runs from turning the book back into
+an anthology or allowing polished synthesis to outpace support.
+
+This stack doctrine is still an architectural claim. It stays at `argument`
+support until layer-boundary records, source-to-layer reviews,
+handoff-denial fixtures, traceability audits, and governed replacement
+examples show that stack separation survives real integration pressure.
+
+## Summary
+
+The book starts with a boundary, not a prediction. A model can be powerful
+without being the architecture. A governed stack is the architecture: the
+contracts that decide when meaning becomes a plan, when a plan becomes work,
+when work becomes evidence, and when evidence can justify change.
+
+That stance changes how capability should be measured. A planning trace needs
+an authority boundary. A context packet needs an adequacy test. A routing
+decision needs residual accounting. A replacement needs rollback. A proof
+needs a precise scope. A release needs a record. Those questions are
+unavailable when intelligence is treated as one opaque model behavior.
+
+This does not prove that the architecture is implemented or safe. It gives the
+rest of the book a stable question to ask of every powerful mechanism: what
+does this part own, what evidence does it create, what can stop it, and how
+would the system know if it failed?
+
+## Handoff
+
+With the stack boundary established, The Efficient ASI Hypothesis asks how
+capability should grow without turning scale into the only design variable.
+Architecture identity now has to become architecture economics: if
+intelligence is a stack of governed layers, then efficiency means routing,
+reuse, compression, verification, and residual accounting at the correct layer
+rather than spending maximum cognition everywhere.
