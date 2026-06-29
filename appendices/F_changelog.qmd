@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Self-Improvement Lean depth follow-through
+
+- Strengthened `lean/AsiStackProofs/SelfImprovement.lean` with a finite
+  `ImprovementBoundaryDecision` envelope and the derived/decomposed theorem
+  `authority_widening_without_review_route_is_blocked`.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 143
+  theorem declarations, 31 derived/decomposed theorem declarations, and one
+  derived/decomposed theorem inside the safety-critical Self-Improvement
+  module.
+- Updated the Recursive Self-Improvement Boundaries chapter and
+  `docs/proof_adequacy_review.md` so the new theorem is described as a narrow
+  finite-record authority-widening review gate, not runtime self-improvement
+  safety or phase-gate completion.
+- This does not promote any chapter core claim, prove evaluator independence
+  in practice, validate rollback effectiveness, prove boundary-delta adequacy,
+  reproduce results, or change any support state.
+
 ## 2026-06-29 - Governance Rights Lean depth follow-through
 
 - Strengthened `lean/AsiStackProofs/GovernanceRights.lean` with a finite
