@@ -31,6 +31,32 @@ still has 54 manifest chapters.
 - Do not promote any chapter core claim above `argument` through
   consolidation.
 
+## Follow-Up Review Outcome
+
+A follow-up review of the latest re-consolidation idea accepts the core
+recommendation: the book should reduce repeated chapter skeletons where adjacent
+chapters are trying to express one architectural artifact. This is a good
+roadmap direction because it preserves ideas while improving depth, reader
+flow, and claim ownership. It is not a reason to make an immediate
+`book_structure.json` edit.
+
+The actionable update is state discipline. Each cluster should move through a
+named consolidation state before any manifest change, and broad human-reader
+curation should not polish a pending duplicate skeleton unless the project has
+explicitly deferred or rejected that merge for the release.
+
+## Consolidation State Model
+
+| State | Meaning | Required next move |
+|---|---|---|
+| `planned_candidate` | The cluster is directionally plausible but has no dry-run package or destination draft. | Create a cluster-specific reconciliation plan before any manifest or reader-manuscript change depends on it. |
+| `fold_review_candidate` | The source chapter may be a section rather than a chapter-owning artifact. | Produce a fold disposition that names preserved sections, subclaims, source IDs, proof hooks, reader paths, and restoration conditions. |
+| `dry_run_packaged` | A package proposes the manifest diff, claim/source/proof/reader reconciliation, and validation path, but no destination prose is accepted. | Write a one-skeleton destination draft or reject the merge as not improving chapter ownership. |
+| `review_ready` | The dry-run package and one-skeleton destination draft exist and can be judged by Corben, an editor, or an external reviewer. | Record an execute, revise, defer, or reject decision before touching `book_structure.json`. |
+| `executed` | The manifest, outline, chapter prose, appendices, proof manifest, reader records, handoffs, and redirects were updated and validated. | Keep the no-support-state-change boundary unless a separate evidence transition exists. |
+| `deferred_for_release` | The merge remains plausible, but the current release proceeds without it for a recorded reason. | Reader curation may continue with an explicit note that duplicate structure is accepted for that release only. |
+| `rejected_or_retained` | Review finds the separate chapter boundary stronger. | Preserve both chapters and record the artifact, evidence, proof, or reader reason. |
+
 ## Current Pilot Status
 
 The active pilot remains the Part I alignment/governance philosophy cluster:
@@ -52,10 +78,11 @@ The pilot already has:
 - `docs/chapter_consolidation_decision_review.md`;
 - `docs/chapter_consolidation_external_review_packet.md`.
 
-The current decision is still deferral: both destination drafts are
-review-ready, but no manifest merge is authorized until human or external
-review accepts, revises, or rejects the destination shapes and the project has
-a public URL or redirect policy for folded chapters.
+The current decision is still deferral, and the current pilot state is
+`review_ready`: both destination drafts are review-ready, but no manifest merge
+is authorized until human or external review accepts, revises, or rejects the
+destination shapes and the project has a public URL or redirect policy for
+folded chapters.
 
 ## Chapter-Ownership Rubric
 
@@ -75,6 +102,22 @@ Use this rubric before any non-pilot consolidation package:
   artifact boundary, makes claim ownership less legible, weakens proof/evidence
   routing, or merely compresses the table of contents without improving the
   argument.
+
+## Current Cluster Register
+
+| Cluster | Current state | Next allowed action | Reader-work consequence |
+|---|---|---|---|
+| Part I alignment and agency/corrigibility | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
+| Part I value conflict and contestable governance | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
+| Compression and residual honesty | `planned_candidate` | Build a dry-run package before any manifest or reader-manuscript change. | Avoid curated graduation of the source cluster unless explicitly deferred. |
+| Intent and executable contracts | `planned_candidate` | Build a dry-run package and slim the intent-intake handoff only if the package passes. | Keep `human-intent-as-a-formal-input` reader work local until the contract boundary is clear. |
+| Static context ABI | `planned_candidate` | Build a dry-run package that protects dynamic transaction and verification-bandwidth chapters. | Reader curation may continue outside the static ABI pair. |
+| Verification and adversarial review | `planned_candidate` | Build a dry-run package that keeps claim ledgers separate. | Avoid merging review vocabulary into claim-ledger prose prematurely. |
+| Planning and DAG control | `planned_candidate` | Build a dry-run package that keeps semantic IR separate unless evidence says otherwise. | Reader curation may continue on non-overlapping planning chapters. |
+| Source-blocked MoECOT runtime | `fold_review_candidate` | Decide whether to fold as a named routing-runtime section until source mining catches up. | Do not promote MoECOT runtime as standalone reader material while source-blocked. |
+| Simulation fidelity | `fold_review_candidate` | Decide whether the feasibility-bound argument belongs in resource economics or the efficient-ASI frame. | Preserve physical-constraint caveats if folded. |
+| Semantic representation | `fold_review_candidate` | Decide whether representation is a substrate section in the compression cluster or a standalone artifact. | Preserve proof/test hooks if folded. |
+| Runtime adapters and Labor OS | `rejected_or_retained` unless later evidence changes artifact ownership | Revisit only if tool-permission adapters stop owning a distinct artifact. | Reader curation may proceed because the current split has artifact ownership. |
 
 ## Candidate Sequence
 

@@ -736,6 +736,24 @@ Diagnostic target shape:
   skeleton, stronger chapter ownership, preserved source/proof/claim coverage,
   and better reader flow.
 
+Follow-up review outcome:
+
+- The re-consolidation idea is accepted as a real roadmap improvement. It
+  targets structural repetition created by over-splitting, not book length for
+  its own sake.
+- The roadmap response is stateful consolidation, not an immediate manifest
+  edit: every cluster must move through a recorded state such as
+  `planned_candidate`, `fold_review_candidate`, `dry_run_packaged`,
+  `review_ready`, `executed`, `deferred_for_release`, or
+  `rejected_or_retained`.
+- The Part I pilot is now `review_ready`, meaning destination drafts exist but
+  require an execute, revise, defer, or reject decision plus URL/redirect policy
+  before any canonical chapter identity changes.
+- Non-pilot clusters remain candidate-only. Compression, intent/contracts,
+  context, verification, planning, MoECOT, simulation-fidelity, and semantic
+  representation should each receive a dry-run package and destination or fold
+  disposition before reader curation or manifest edits depend on them.
+
 Decision rubric:
 
 - A chapter is chapter-owning when it owns a distinct artifact, interface,
@@ -934,6 +952,12 @@ Current status:
   simulation-fidelity, semantic-representation, and low-priority runtime-adapter
   candidates each require their own dry-run package and review before any
   future manifest edit.
+- The sequence now records consolidation states so candidates cannot jump from
+  "interesting idea" to manifest change: the Part I pilot is `review_ready`,
+  the other merge clusters are `planned_candidate`, the MoECOT,
+  simulation-fidelity, and semantic-representation candidates are
+  `fold_review_candidate`, and runtime-adapters/Labor OS is retained unless a
+  later evidence review finds duplicate artifact ownership.
 - The pilot proposes two future merges:
   `constitutional-alignment-substrate` with
   `agency-dignity-and-corrigibility`, and
@@ -976,10 +1000,10 @@ Current status:
 - Both dry-run packages are now covered by
   `scripts/validate_chapter_consolidation_pilot_plan.py`.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
-  defer manifest consolidation for this v1.x cycle, proceed with human-reader
-  curation outside the pending Part I merge cluster, and require human or
-  external review plus a reviewed destination chapter draft before executing
-  either merge.
+  defer manifest consolidation until human or external review and a public
+  URL/redirect policy unblock it, proceed with human-reader curation outside
+  the pending Part I merge cluster, and require a recorded execute, revise,
+  defer, or reject decision before executing either merge.
 - The latest re-consolidation proposal is accepted as directionally correct,
   but the roadmap response is not another abstract plan and not an immediate
   54-to-44 manifest edit. The two useful pilot artifacts are review-ready

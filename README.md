@@ -103,6 +103,8 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/v1_x_active_evidence_cycle.md](docs/v1_x_active_evidence_cycle.md) | Active v1.x evidence-cycle ledger: seven selected lanes, forty-seven planned-only lanes, and no chapter-core promotion. |
 | [docs/chapter_consolidation_sequence.md](docs/chapter_consolidation_sequence.md) | Full governed consolidation sequence for the 54-to-44/47 critique; no manifest merge has happened yet. |
 | [docs/chapter_consolidation_pilot_plan.md](docs/chapter_consolidation_pilot_plan.md) | Governed consolidation pilot plan for the Part I alignment/governance cluster; no manifest merge has happened yet. |
+| [docs/chapter_consolidation_decision_review.md](docs/chapter_consolidation_decision_review.md) | Current consolidation decision: Part I destination drafts are review-ready, but manifest merge waits on review and URL/history policy. |
+| [docs/chapter_consolidation_external_review_packet.md](docs/chapter_consolidation_external_review_packet.md) | Review packet for deciding whether to execute, revise, defer, or reject the Part I consolidation pilot. |
 | [docs/chapter_consolidation_dry_run_constitutional_alignment.md](docs/chapter_consolidation_dry_run_constitutional_alignment.md) | First dry-run merge package for constitutional alignment plus agency/corrigibility; review artifact only, not a manifest edit. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |

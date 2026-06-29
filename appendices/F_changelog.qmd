@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-29 - Consolidation state model roadmap update
+
+- Reviewed the latest re-consolidation idea and accepted its core direction:
+  reduce repeated chapter skeletons through governed consolidation while
+  preserving every useful idea as a section, subclaim, source mapping, proof
+  hook, reader path, implementation horizon, or explicit retention decision.
+- Updated `docs/v1_x_beyond_sota_roadmap.md` and
+  `docs/chapter_consolidation_sequence.md` with a consolidation state model:
+  `planned_candidate`, `fold_review_candidate`, `dry_run_packaged`,
+  `review_ready`, `executed`, `deferred_for_release`, and
+  `rejected_or_retained`.
+- Updated `docs/chapter_consolidation_decision_review.md` so the Part I pilot
+  is deferred until review and URL/history policy unblock it, rather than
+  treated as off-limits for an entire v1.x cycle.
+- Updated README, publication readiness, repository map,
+  `scripts/validate_chapter_consolidation_sequence.py`, and
+  `scripts/validate_chapter_consolidation_pilot_plan.py` so the review-ready
+  pilot and candidate-only non-pilot clusters remain visible.
+- This does not edit `book_structure.json`, merge chapters, retire URLs,
+  change Appendix C, create evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Executable Specifications curated reader prose pass
 
 - Initialized and rewrote the drafting-only curated reader chapter

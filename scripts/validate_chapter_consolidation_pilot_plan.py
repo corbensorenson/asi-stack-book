@@ -179,16 +179,18 @@ CONTESTABLE_DRY_RUN_REQUIRED_LEAN_TAGS = {
     "lean:governance.rights.failure_blocks_promotion",
 }
 DECISION_REVIEW_REQUIRED_FRAGMENTS = (
-    "Decision: defer manifest consolidation for the current v1.x cycle.",
+    "Decision: defer manifest consolidation until review and public URL/history",
+    "policy unblock it.",
     "does not edit `book_structure.json`",
-    "does not authorize a merge",
+    "does not authorize a",
+    "merge, and does not approve a reader artifact.",
     "docs/chapter_consolidation_external_review_packet.md",
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
     "docs/chapter_consolidation_dry_run_constitutional_alignment.md",
     "docs/chapter_consolidation_dry_run_contestable_governance.md",
     "external review",
-    "human-reader curation may proceed",
+    "Human-reader curation may proceed",
     "No support state changes.",
     "No chapter core claim is promoted.",
 )

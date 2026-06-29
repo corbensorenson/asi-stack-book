@@ -2,12 +2,14 @@
 
 Last updated: 2026-06-29
 
-Decision: defer manifest consolidation for the current v1.x cycle.
+Decision: defer manifest consolidation until review and public URL/history
+policy unblock it.
 
 This review covers the governed Part I alignment/governance consolidation
 pilot. It does not edit `book_structure.json`, does not remove rendered
 chapters, does not rewrite chapter files, does not change source mappings, does
-not change proof targets, does not change support states, does not authorize a merge, and does not approve a reader artifact.
+not change proof targets, does not change support states, does not authorize a
+merge, and does not approve a reader artifact.
 
 ## Reviewed Inputs
 
@@ -55,11 +57,12 @@ approval.
 
 The manifest merge is deferred because the next honest decision needs human or
 external review of the actual chapter-shape tradeoff before canonical chapter
-identity changes. The dry-runs show that a merge is technically possible, but
-they do not yet prove that the resulting reader flow is better, that the public
-URL policy is acceptable, that the folded chapter history should disappear
-from rendered navigation, or that the merged prose has been written and
-reviewed as one chapter rather than only planned.
+identity changes. This is a review gate, not a rejection and not a requirement
+to wait for a later major cycle. The dry-runs show that a merge is technically
+possible, but they do not yet prove that the resulting reader flow is better,
+that the public URL policy is acceptable, that the folded chapter history
+should disappear from rendered navigation, or that the merged prose has been
+written and reviewed as one chapter rather than only planned.
 
 ## Why Deferral Is The Right Current Action
 
@@ -74,13 +77,14 @@ reviewed as one chapter rather than only planned.
   reviewer and neither is a canonical chapter.
 - The external review request is still open and no independent external review
   has been accepted into the repo.
-- The project has no redirect policy yet for retired chapter URLs.
+- The project has no redirect or historical-note policy yet for retired chapter
+  URLs.
 - Human-reader curation may proceed on chapters outside the pending
   consolidation cluster without locking in the duplicate Part I skeletons.
 
 ## Allowed Next Work
 
-human-reader curation may proceed for the roadmap's pilot chapters that are not
+Human-reader curation may proceed for the roadmap's pilot chapters that are not
 inside the pending Part I consolidation cluster:
 
 - `asi-is-a-stack-not-a-model`
@@ -95,6 +99,13 @@ Constitutional Alignment destination chapter. The four pending consolidation
 source chapters should avoid broad reader-only polish until their merge is
 executed or permanently rejected, because polishing duplicate skeletons would
 preserve the repetition the pilot is meant to remove.
+
+If human or external review accepts a destination draft and the project records
+a public URL, redirect, or historical-note policy for the folded chapter, a
+future consolidation commit can become in scope without waiting for a new major
+roadmap. That commit must still update the manifest, outline, Appendix C,
+proof-manifest routing, handoffs, reader records, generated scaffold, and
+validation outputs together.
 
 ## Conditions To Execute A Future Merge
 
