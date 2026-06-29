@@ -35,6 +35,7 @@ REQUIRED = [
     "scripts/validate_reader_epub_probe_manifest.py",
     "scripts/validate_reader_docx_probe_manifest.py",
     "scripts/validate_reader_pdf_probe_manifest.py",
+    "scripts/validate_reader_audio_script_probe_manifest.py",
     "scripts/sync_reader_chapter_review_matrix.py",
     "scripts/sync_reader_format_review_matrix.py",
     "scripts/validate_live_human_view.py",
@@ -166,6 +167,7 @@ REQUIRED = [
     "editions/reader_manuscript/v1_0/epub_probe_manifest.json",
     "editions/reader_manuscript/v1_0/docx_probe_manifest.json",
     "editions/reader_manuscript/v1_0/pdf_probe_manifest.json",
+    "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
     "editions/reader_manuscript/v1_0/chapter_review_matrix.json",
     "editions/reader_manuscript/v1_0/format_review_matrix.json",
     "editions/reader_manuscript/v1_0/companion_note_routing.json",
@@ -175,6 +177,7 @@ REQUIRED = [
     "docs/reader_epub_probe_manifest.md",
     "docs/reader_docx_probe_manifest.md",
     "docs/reader_pdf_probe_manifest.md",
+    "docs/reader_audio_script_probe_manifest.md",
     "docs/reader_companion_note_routing_review.md",
     "assets/reader-overlays.html",
     "proofs/proof_manifest.json",
@@ -615,6 +618,7 @@ def main() -> None:
     run_validator("validate_reader_epub_probe_manifest.py")
     run_validator("validate_reader_docx_probe_manifest.py")
     run_validator("validate_reader_pdf_probe_manifest.py")
+    run_validator("validate_reader_audio_script_probe_manifest.py")
     run_validator("sync_reader_format_review_matrix.py", "--check")
     run_validator("validate_source_appendices.py")
     run_validator("validate_v1_status_snapshot.py")

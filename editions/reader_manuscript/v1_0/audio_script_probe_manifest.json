@@ -1,0 +1,70 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "local_audio_script_probe_record",
+  "last_updated": "2026-06-29",
+  "purpose": "Record the latest tracked local audio-script review-workspace facts for the generated reader edition without treating the ignored narration scripts as an audiobook, narration approval, or audio release artifact.",
+  "source_commands": [
+    "python3 scripts/build_audio_script.py --check",
+    "python3 scripts/build_audio_script.py",
+    "python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_manifest.json in a temporary workspace ..."
+  ],
+  "local_artifact_refs": [
+    "build/audio_script/audio_manifest.json",
+    "build/audio_script/AUDIO_RELEASE_CHECKLIST.md",
+    "build/audio_script/companion_notes.md",
+    "build/audio_script/chapter_markers.md",
+    "build/audio_script/pronunciation_glossary.md",
+    "build/audio_script/proof_equation_reading_rules.md"
+  ],
+  "tracked_evidence_refs": [
+    "docs/release_editions_plan.md#audio-release-path",
+    "docs/publication_readiness.md#release-artifacts-and-distribution",
+    "docs/v1_x_beyond_sota_roadmap.md#milestone-8---visual-ebook-pdf-docx-and-audio-quality",
+    "appendices/J_release_editions.qmd#audio-release-path"
+  ],
+  "script_workspace_summary": {
+    "status": "generated_in_temp_and_checked",
+    "source_profile": "reader_release",
+    "audio_profile": "audio_release",
+    "script_files": 59,
+    "implementation_horizon_script_status": "pass",
+    "review_status": "review_required",
+    "required_review_files": [
+      "audio_manifest.json",
+      "AUDIO_RELEASE_CHECKLIST.md",
+      "companion_notes.md",
+      "chapter_markers.md",
+      "pronunciation_glossary.md",
+      "proof_equation_reading_rules.md"
+    ]
+  },
+  "companion_treatment_totals": {
+    "tables": 5,
+    "mermaid_diagrams": 60,
+    "code_or_schema_blocks": 0,
+    "images": 1
+  },
+  "target_artifact_status": {
+    "mp3": "target_not_generated",
+    "m4b": "target_not_generated",
+    "audio-embedded-epub": "target_not_generated"
+  },
+  "release_blockers_preserved": [
+    "reviewed_reader_release_record_not_created_for_audio",
+    "narration_script_not_reviewed",
+    "audio_files_not_generated",
+    "audio_spot_check_not_performed",
+    "chapter_markers_not_timecoded",
+    "audio_metadata_not_reviewed",
+    "audio_embedded_epub_not_packaged_or_checked",
+    "audio_edition_release_record_not_created"
+  ],
+  "non_claims": [
+    "This manifest records a local audio-script review-workspace probe in ignored build space only.",
+    "This manifest is not an audiobook, audio release, narration approval, edition release record, MP3 approval, M4B approval, or audio-embedded EPUB approval.",
+    "This manifest does not approve EPUB, DOCX, PDF, HTML, e-reader, document, audio, MP3, M4B, or audio-embedded EPUB artifacts for publication.",
+    "This manifest does not check narration quality, pronunciation quality, accessibility quality, full editorial quality, source interpretation, proof adequacy, theorem validity, benchmark behavior, runtime behavior, model quality, deployment safety, or release readiness.",
+    "This manifest does not promote any chapter core claim and does not promote any claim support state."
+  ]
+}

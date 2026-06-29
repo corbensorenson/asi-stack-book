@@ -32,6 +32,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_epub_probe_manifest.md` | Tracked local EPUB metadata/source-spine probe summary for the ignored reader snapshot, including exact EPUB metrics, sampled source-card entries, and e-reader-specific release blockers. | tracked |
 | `docs/reader_docx_probe_manifest.md` | Tracked local DOCX LibreOffice conversion probe summary for the ignored reader snapshot, including exact conversion metrics, sampled source-card pages, and DOCX-specific release blockers. | tracked |
 | `docs/reader_pdf_probe_manifest.md` | Tracked local UTF-8 PDF probe summary for the ignored reader snapshot, including exact PDF metrics, sampled source-card pages, and PDF-specific release blockers. | tracked |
+| `docs/reader_audio_script_probe_manifest.md` | Tracked local audio-script review-workspace probe summary for the ignored audio script, including script-file count, spoken-treatment counts, and audio-specific release blockers. | tracked |
 | `docs/reader_companion_note_routing_review.md` | Human-readable companion-note routing decision for the dense proof/governance chapters flagged by the reader matrix. | tracked |
 | `docs/reader_part_i_review_pass.md` | First Part I generated-reader review pass over matrix rows, recording no-action decisions without release approval. | tracked |
 | `docs/reader_part_ii_review_pass.md` | First Part II generated-reader review pass over matrix rows, recording canonical prose cleanups and no-action decisions without release approval. | tracked |

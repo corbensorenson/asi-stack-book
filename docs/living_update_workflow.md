@@ -182,6 +182,7 @@ Audio is downstream of the reader edition, not the live book directly.
 ```bash
 python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
+python3 scripts/validate_reader_audio_script_probe_manifest.py
 ```
 
 3. Confirm the generated `audio_manifest.json` reports a passing implementation-horizon script status, meaning every manifest chapter script keeps both `Minimum Viable Implementation` and `Beyond the State of the Art`.
@@ -190,4 +191,5 @@ python3 scripts/build_audio_script.py
 6. Produce MP3, M4B, or audio-embedded EPUB only after the exact script is reviewed.
 7. Add an `edition_release` record under `release_records/` that lists exactly which audio artifacts were produced and checked.
 
-The generated audio script is not an audiobook and does not imply that any audio artifact exists.
+The generated audio script and the tracked audio-script probe are not
+audiobooks and do not imply that any audio artifact exists.

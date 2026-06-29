@@ -25,6 +25,7 @@ The project serves all three audiences by separating layers inside one canonical
 | `reader_epub_probe_manifest` | `editions/reader_manuscript/v1_0/epub_probe_manifest.json` and `docs/reader_epub_probe_manifest.md`. | Records exact local EPUB metadata, navigation, spine, and source-card sampling evidence, including e-reader-specific blockers, without approving an EPUB artifact. |
 | `reader_docx_probe_manifest` | `editions/reader_manuscript/v1_0/docx_probe_manifest.json` and `docs/reader_docx_probe_manifest.md`. | Records exact local DOCX LibreOffice conversion metrics and sampled-page residuals, including DOCX-specific blockers, without approving a DOCX artifact. |
 | `reader_pdf_probe_manifest` | `editions/reader_manuscript/v1_0/pdf_probe_manifest.json` and `docs/reader_pdf_probe_manifest.md`. | Records exact local UTF-8 PDF probe metrics and sampled-page residuals, including PDF-specific blockers, without approving a PDF artifact. |
+| `reader_audio_script_probe_manifest` | `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json` and `docs/reader_audio_script_probe_manifest.md`. | Records exact local audio-script review-workspace facts, spoken-treatment counts, and audio-specific blockers without approving narration, MP3, M4B, or audio-embedded EPUB artifacts. |
 | `release_derivatives` | Ignored build workspaces and explicitly recorded release artifacts. | Non-canonical outputs; record only artifacts that were actually generated or rendered. |
 | `audio_adaptation` | Audio-script and future audio release workspaces. | Derive from a reviewed reader release, not directly from the live book. |
 | `companion_material` | Generated reader/audio companion notes for diagrams, images, tables, code, schemas, omitted dense matrices, and audio-embedded EPUB packaging checks. | Use as human-consumption review aids; do not treat them as evidence ledgers or proof that release artifacts exist. |
@@ -143,6 +144,12 @@ python3 scripts/build_audio_script.py
 It creates `build/audio_script/` and a pronunciation glossary for review. It does not synthesize audio and does not produce MP3, M4B, or audio-embedded EPUB artifacts.
 
 The generated audio workspace includes `audio_manifest.json` with the source reader generation summary, audio profile, content-layer policy, implementation-horizon script status, script files, companion-treatment counts, pronunciation glossary, proof/equation reading rules, chapter markers, audio review checklist, review status, and non-claims. `companion_notes.md` counts tables, diagrams, code/schema blocks, and images by script file. `proof_equation_reading_rules.md` tells a future narrator how to speak theorem IDs, support states, equations, schemas, hashes, and negative controls without turning them into broader proof than the book records. `AUDIO_RELEASE_CHECKLIST.md` keeps the narration-review and packaging gate explicit so dense tables, diagrams, source IDs, schemas, and proof hooks are either spoken clearly or moved to companion notes rather than silently omitted.
+
+`docs/reader_audio_script_probe_manifest.md` records the current tracked
+audio-script probe: 59 generated script files, preserved implementation
+horizons, 5 table treatment notes, 60 Mermaid diagram notes, 1 image note, and
+all MP3/M4B/audio-embedded EPUB targets still marked `target_not_generated`.
+It is a review-workspace probe, not an audiobook or audio release record.
 
 ## Major Version Gate
 

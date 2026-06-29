@@ -1077,6 +1077,14 @@ Current status:
   for theorem IDs, equations, support states, proof statuses, schema fields,
   hashes, and negative controls; it does not approve narration or any audio
   artifact.
+- `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`,
+  `docs/reader_audio_script_probe_manifest.md`, and
+  `scripts/validate_reader_audio_script_probe_manifest.py` now record and
+  validate the tracked local audio-script probe: 59 script files, preserved
+  implementation horizons, 5 table treatment notes, 60 Mermaid diagram notes,
+  1 image note, and MP3/M4B/audio-embedded EPUB targets still marked
+  `target_not_generated`. This is not narration approval, an audiobook, or an
+  audio release record.
 
 ### Milestone 9 - Prior Art, Preprints, And Archiving
 

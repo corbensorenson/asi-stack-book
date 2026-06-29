@@ -46,6 +46,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 - `editions/reader_manuscript/v1_0/epub_probe_manifest.json`, `docs/reader_epub_probe_manifest.md`, and `scripts/validate_reader_epub_probe_manifest.py` preserve the latest local EPUB probe facts: 9,078,787 bytes, 62 XHTML entries, 62 image entries, `en-US` language metadata, sampled evidence-boundary/source-card text, and the remaining e-reader application blocker. This is a probe record, not EPUB approval.
 - `editions/reader_manuscript/v1_0/docx_probe_manifest.json`, `docs/reader_docx_probe_manifest.md`, and `scripts/validate_reader_docx_probe_manifest.py` preserve the latest local DOCX LibreOffice conversion probe facts: 514 converted pages, 8,190,162 bytes, expected title/evidence-boundary/source-card text, and a representative six-page visual sample. This is a probe record, not DOCX approval.
 - `editions/reader_manuscript/v1_0/pdf_probe_manifest.json`, `docs/reader_pdf_probe_manifest.md`, and `scripts/validate_reader_pdf_probe_manifest.py` preserve the latest local UTF-8 PDF probe facts: 535 pages, 8,613,924 bytes, expected title/evidence-boundary text, refreshed sampled source-card pages, and the remaining full-PDF-layout blocker. This is a probe record, not PDF approval.
+- `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`, `docs/reader_audio_script_probe_manifest.md`, and `scripts/validate_reader_audio_script_probe_manifest.py` preserve the latest local audio-script review-workspace facts: 59 script files, implementation horizons preserved, 5 table notes, 60 Mermaid diagram notes, 1 image note, pronunciation/proof reading files present, and MP3/M4B/audio-embedded EPUB targets still not generated. This is a probe record, not audiobook approval.
 - `docs/reader_html_artifact_browser_review.md` and `scripts/validate_reader_html_artifact_browser.js` record the first full local browser artifact review for generated reader HTML: 59 pages opened at desktop and mobile widths, 118 page-view pairs passed, 0 failures, and an exact ignored-snapshot directory digest. `release_records/2026-06-29-v1-reader-html-855dc277.json` now names that exact local HTML snapshot from source tag `v1.0.0-reader-html-source`, so the HTML format row is release-approved for that local artifact only. EPUB, DOCX, PDF, e-reader, audio, and audio-embedded EPUB artifacts remain unapproved.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, pronunciation glossary, and proof/equation reading rules under ignored `build/`; its check also verifies that chapter scripts preserve both implementation-horizon sections and that proof/equation narration rules exist.
@@ -117,6 +118,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/reader_epub_probe_manifest.md](docs/reader_epub_probe_manifest.md) | Tracked local EPUB metadata/source-spine probe summary and e-reader-specific release blockers. |
 | [docs/reader_docx_probe_manifest.md](docs/reader_docx_probe_manifest.md) | Tracked local DOCX LibreOffice conversion probe summary, spot-check residuals, and DOCX-specific release blockers. |
 | [docs/reader_pdf_probe_manifest.md](docs/reader_pdf_probe_manifest.md) | Tracked local UTF-8 PDF probe summary, spot-check residuals, and PDF-specific release blockers. |
+| [docs/reader_audio_script_probe_manifest.md](docs/reader_audio_script_probe_manifest.md) | Tracked local audio-script review-workspace probe summary, spoken-treatment counts, and audio-specific release blockers. |
 | [docs/reader_artifact_layout_review.md](docs/reader_artifact_layout_review.md) | Representative local PDF/HTML layout spot check and remaining artifact-review residuals. |
 | [docs/reader_html_artifact_browser_review.md](docs/reader_html_artifact_browser_review.md) | Full local browser review record for the generated reader HTML artifact. |
 | [docs/claim_ledger_revision_harness.md](docs/claim_ledger_revision_harness.md) | Phase 5 synthetic claim-ledger and belief-revision record-discipline harness. |
@@ -211,6 +213,7 @@ python3 scripts/validate_reader_artifact_inspection_manifest.py
 python3 scripts/validate_reader_epub_probe_manifest.py
 python3 scripts/validate_reader_docx_probe_manifest.py
 python3 scripts/validate_reader_pdf_probe_manifest.py
+python3 scripts/validate_reader_audio_script_probe_manifest.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/sync_reader_format_review_matrix.py --check
 python3 scripts/validate_reader_spine.py --check
@@ -300,6 +303,7 @@ python3 scripts/inspect_reader_format_artifacts.py
 python3 scripts/validate_reader_epub_probe_manifest.py
 python3 scripts/validate_reader_docx_probe_manifest.py
 python3 scripts/validate_reader_pdf_probe_manifest.py
+python3 scripts/validate_reader_audio_script_probe_manifest.py
 python3 scripts/sync_reader_format_review_matrix.py --check
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf
 ```

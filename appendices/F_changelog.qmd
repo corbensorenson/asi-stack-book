@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-06-29 - Audio-script probe manifest
+
+- Added `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`,
+  `docs/reader_audio_script_probe_manifest.md`, and
+  `scripts/validate_reader_audio_script_probe_manifest.py` to preserve the
+  current local audio-script review-workspace facts while keeping generated
+  `build/audio_script/` outputs ignored.
+- The validator runs `python3 scripts/build_audio_script.py --check`,
+  regenerates the audio workspace in a temporary directory, and verifies 59
+  script files, preserved implementation horizons, 5 table treatment notes, 60
+  Mermaid diagram notes, 1 image note, required checklist/companion/glossary/
+  proof-rule files, and MP3/M4B/audio-embedded EPUB targets still marked
+  `target_not_generated`.
+- Wired the audio probe into `scripts/validate_book.py`,
+  `scripts/validate_publication.py`, README, the repository map, publication
+  readiness, release editions planning, the major-version release runbook,
+  Appendix J, the v1.x roadmap, the v1.0 candidate status, and the living
+  update workflow.
+- This does not create an audiobook, narration review, MP3, M4B,
+  audio-embedded EPUB, audio release record, proof adequacy claim,
+  theorem-validity claim, support-state promotion, model-quality claim, or
+  release approval.
+
 ## 2026-06-29 - Consolidation roadmap next-action clarification
 
 - Reviewed the latest 54-to-44 re-consolidation proposal against the current
