@@ -1,0 +1,118 @@
+{
+  "transition_id": "v1_0_pilot.security_kernel.no_change",
+  "claim_id": "security-kernel-and-digital-scifs.core",
+  "claim_surface_refs": [
+    "chapters/security-kernel-and-digital-scifs.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/security_kernel_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/authority_use_receipt.schema.json",
+    "tests/fixtures/protocol_records/authority_use_receipt.valid.json",
+    "experiments/security_kernel/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/SecurityKernel.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic security-kernel authority-use receipt discipline and finite Lean security predicates only; no kernel security, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, least-privilege context behavior, runtime policy behavior, source interpretation, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has an authority-use receipt schema, a protocol fixture, finite SecurityKernel Lean predicates, proof adequacy review text that keeps the target narrow, exact source mappings for the Security Kernel chapter, and a synthetic security-kernel harness with valid and expected-invalid fixtures. Those artifacts make handle mediation, approval artifacts, bounded action scope, SCIF lifecycle completeness, sanitization, residual leak-risk notes, revocation paths, and prompt-injection non-disclosure boundaries executable at the record level. They still do not establish kernel security, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, least-privilege context behavior, runtime policy behavior, source interpretation adequacy, or deployed security.",
+  "required_artifacts": [
+    "deployed security-kernel implementation with handle mediation over real privileged actions",
+    "sandbox or compartment isolation review with positive and negative controls",
+    "side-channel and logging threat-model review",
+    "prompt-injection containment test over real adversarial prompts and secret handles",
+    "least-privilege context admission trace over real sensitive context",
+    "runtime revocation and lease-expiry test over actual authority handles",
+    "independent security, runtime, formal-methods, or source-interpretation review",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/security_kernel_harness.md",
+    "scripts/validate_security_kernel.py",
+    "experiments/security_kernel/results/2026-06-28-local.md",
+    "schemas/authority_use_receipt.schema.json",
+    "tests/fixtures/protocol_records/authority_use_receipt.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/SecurityKernel.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#security-kernel-and-digital-scifs.core",
+    "docs/source_evidence_audit.md#security-kernel-and-digital-scifs.core"
+  ],
+  "verification_command": "python3 scripts/validate_security_kernel.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Security Kernel and Digital SCIFs remains at argument",
+    "security-kernel fixtures are synthetic",
+    "schema validation checks authority-use receipt shape rather than security enforcement",
+    "finite Lean predicates remain useful but too narrow for kernel-security, sandbox-isolation, side-channel, or prompt-injection containment claims",
+    "secret-handle safety, least-privilege context behavior, runtime revocation, source interpretation review, and deployed security are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/security-kernel-and-digital-scifs.qmd",
+    "docs/security_kernel_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "security kernel harness failure",
+    "authority-use receipt schema drift",
+    "chapter text interpreted as kernel-security or sandbox-isolation evidence",
+    "synthetic sanitized-output fixture interpreted as leak-prevention or side-channel safety evidence",
+    "prompt-injection fixture interpreted as runtime prompt-injection containment",
+    "finite Lean security predicates treated as deployed security-kernel behavior",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic receipt discipline that passed, or after deployed handle mediation, sandbox or compartment isolation review, side-channel and logging threat-model review, prompt-injection containment tests over real adversarial prompts, least-privilege context traces, runtime revocation tests, and independent security, runtime, formal-methods, or source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove that real secrets stay outside model context",
+    "schema validation does not prove sandbox isolation, SCIF isolation, or side-channel safety",
+    "finite Lean predicates do not implement a security kernel",
+    "sanitized-output strings do not prove leak prevention",
+    "prompt-injection fixture strings do not prove runtime prompt-injection containment",
+    "no independent security, runtime, formal-methods, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent security, runtime-systems, adversarial-prompting, formal-methods, side-channel, reviewer-quality, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed security-kernel implementation",
+    "no sandbox or compartment isolation review",
+    "no side-channel or logging threat-model review",
+    "no prompt-injection containment test over real adversarial prompts",
+    "no least-privilege context trace over real sensitive context",
+    "no runtime revocation or lease-expiry test over actual authority handles",
+    "no independent security, runtime, formal-methods, or source-interpretation review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-security-kernel-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Security Kernel and Digital SCIFs above argument",
+    "does not prove kernel security",
+    "does not prove sandbox isolation or side-channel safety",
+    "does not prove prompt-injection containment or secret-handle safety",
+    "does not prove least-privilege context behavior or runtime policy behavior",
+    "does not prove source interpretation"
+  ]
+}

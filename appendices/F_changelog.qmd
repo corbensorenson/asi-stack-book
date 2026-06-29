@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Security kernel evidence transition no-change
+
+- Added `evidence_transitions/v1_0_pilot/security_kernel_no_change.json`
+  and updated the evidence-transition pilot to twenty-one accepted no-change
+  decisions. The new record routes the security kernel harness,
+  authority-use receipt schema and fixture, finite SecurityKernel Lean
+  predicates, proof adequacy review, and exact source mappings into one
+  conservative decision: `security-kernel-and-digital-scifs` remains at
+  `argument`.
+- The record preserves the promotion burden for deployed handle mediation,
+  sandbox or compartment isolation review, side-channel and logging
+  threat-model review, prompt-injection containment tests over real
+  adversarial prompts, least-privilege context traces, runtime revocation
+  tests, and independent security, runtime, formal-methods, or
+  source-interpretation review. It does not promote support state, prove
+  kernel security, prove sandbox isolation, prove side-channel safety, prove
+  prompt-injection containment, prove secret-handle safety, prove
+  least-privilege context behavior, prove runtime policy behavior, prove
+  source interpretation, or approve reader artifacts.
+
 ## 2026-06-28 - v1.0 Security kernel harness
 
 - Added `scripts/validate_security_kernel.py`, synthetic authority-use receipt
