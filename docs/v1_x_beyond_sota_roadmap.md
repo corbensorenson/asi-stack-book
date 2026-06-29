@@ -61,7 +61,9 @@ This roadmap reconciles:
 - the current Claude review supplied by Corben as planning input;
 - the 2026-06-29 consolidation critique supplied by Corben, which argues for
   re-consolidating over-split chapter clusters while preserving every useful
-  idea as a section, subclaim, proof hook, or source mapping;
+  idea as a section, subclaim, proof hook, or source mapping, and the follow-up
+  note that the repeated 13-section chapter skeleton is now the main reader
+  burden in several clusters;
 - Codex verification of Claude's claims against the local tree;
 - `book_structure.json`, which currently defines four parts, 54 chapters, and
   11 appendices;
@@ -82,7 +84,7 @@ not be quoted in the book as an external authority.
 | P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 158 theorem declarations, 112 direct/projection-style, 46 derived/decomposed, and 29 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` has at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose; `Alignment`, `Corrigibility`, `GovernanceRights`, and `ValueConflict` now each have four derived/decomposed transition/control/preservation/review theorems, and `SelfImprovement` now has three derived/decomposed lifecycle/review theorems, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 54 chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
-| P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, but several clusters now repeat the same chapter skeleton around overlapping claims. Several consolidation packages are now review-ready, but no manifest merge has been authorized. | Add a governed consolidation milestone with a decision queue: review the existing destination drafts, execute/revise/defer/reject one cluster at a time, package the remaining fold candidates, preserve ideas as sections/subclaims, and require claim/source/proof/reader reconciliation before changing the manifest. |
+| P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, but several clusters now repeat the same chapter skeleton around overlapping claims. Several consolidation packages are now review-ready, but no manifest merge has been authorized. The useful target is not "shorter book"; it is one skeleton per real chapter-owning artifact. | Add a governed consolidation milestone with a decision queue: review the existing destination drafts, execute/revise/defer/reject one cluster at a time, preserve ideas as sections/subclaims/proof hooks/source mappings, and require claim/source/proof/reader/URL reconciliation before changing the manifest. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 54 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
@@ -176,7 +178,8 @@ is:
 9. run the governed consolidation decision queue before broad human-reader
    curation, so review-ready packages either execute, revise, defer, or reject
    and genuinely overlapping chapters become deeper chapters rather than
-   repeated skeletons.
+   repeated skeletons. Treat the 54-to-44/47 count as a diagnostic estimate,
+   not an objective; the objective is clearer chapter ownership.
 
 Dependency order:
 
@@ -210,7 +213,7 @@ internal activity alone.
 | Compression/representation | Mostly architecture and source synthesis; Circle receipt is structural, not model-quality evidence. | Add one narrow artifact-compression, representation-preservation, or proof-contract lane with negative controls before stronger claims. |
 | Human/AI dual-edition publishing | Unusual and promising scaffold with reviewed reader HTML; not yet a polished human book or audio edition. | Graduate selected reader chapters into curated prose and approve artifacts only through exact release records. |
 | External literature/novelty | Placement gate now records 54/54 positioned chapters and 0 explicit external-baseline exceptions, but novelty questions and the depth of external engagement still remain. Some chapters can still read as Corben-originated nomenclature before readers see enough related outside literature. | Maintain the per-chapter external-grounding pack, keep mining citations inside each chapter's linked Corben papers, replace any future or regressed weak exception with source-noted literature where possible, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
-| Structural cohesion | The manifest is dynamic and complete, but the 54-chapter shape may preserve too much skeleton-level repetition in overlapping clusters. | Pilot governed consolidation on the highest-overlap cluster, then continue only when claim identity, source mappings, proof hooks, reader overlays, and handoffs stay intact. |
+| Structural cohesion | The manifest is dynamic and complete, but the 54-chapter shape may preserve too much skeleton-level repetition in overlapping clusters. | Decide the review-ready consolidation packages in priority order, starting with the alignment/governance pilot, then continue only when claim identity, source mappings, proof hooks, reader overlays, URL/history treatment, and handoffs stay intact. |
 
 ## Defended Contribution Tracks
 

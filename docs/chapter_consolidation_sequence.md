@@ -58,6 +58,39 @@ work is to judge the already packaged merge and fold candidates, starting with
 the Part I alignment/governance pilot, rather than drafting another abstract
 consolidation plan or editing the manifest broadly from the critique alone.
 
+## Attachment Disposition Summary
+
+Accepted into the roadmap:
+
+- Alignment philosophy is the highest-payoff pilot: consolidate
+  constitutional-alignment plus agency/corrigibility, and consolidate moral
+  uncertainty plus fork/exit/audit governance, if review accepts the destination
+  drafts.
+- Compression, intent/contracts, static context ABI, verification/adversarial
+  review, and planning/DAG control are real merge candidates because they
+  currently carry overlapping source families, claim motions, and chapter
+  skeletons.
+- MoECOT runtime, simulation fidelity, and semantic representation are fold
+  candidates, not deletion targets. Each idea must survive as a named section,
+  source mapping, proof hook, implementation-horizon facet, restoration
+  condition, or explicit retained-chapter decision.
+- The 44-chapter aggressive shape and roughly 47-chapter conservative shape
+  are useful pressure tests only. They are not release goals.
+- The implementation rule is one skeleton per destination chapter. A successful
+  merge collapses repeated Problem, Insufficiency, Mechanism, Interface,
+  Evidence, Implementation, and Handoff scaffolding, then spends the recovered
+  space on mechanisms, examples, failure modes, proof specificity, external
+  positioning, and reader flow.
+
+Not accepted without later evidence or review:
+
+- A broad 54-to-44 `book_structure.json` edit.
+- Deleting ideas simply because they are currently in thin chapters.
+- Folding Project Theseus, Circle/coil chapters, or other protected standalone
+  artifacts merely to reduce the table of contents.
+- Treating consolidation as source evidence, support-state promotion, external
+  review, reader-release approval, or proof/test improvement.
+
 ## Consolidation State Model
 
 | State | Meaning | Required next move |

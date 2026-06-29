@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-29 - Consolidation roadmap disposition tightening
+
+- Reviewed the latest consolidation proposal as planning input and accepted its
+  central point: the repeated chapter skeleton is the main reader burden in
+  several over-split clusters, and the right fix is governed consolidation into
+  deeper chapter-owning artifacts rather than deletion or a blind target count.
+- Updated `docs/v1_x_beyond_sota_roadmap.md` and
+  `docs/chapter_consolidation_sequence.md` to make the accepted, rejected, and
+  diagnostic parts of the proposal explicit, including the one-skeleton
+  destination rule and the no-broad-54-to-44-edit boundary.
+- This does not edit `book_structure.json`, execute a merge or fold, change
+  chapter count, approve a destination draft, promote support states, create
+  source evidence, approve reader artifacts, or claim proof/test improvement.
+
 ## 2026-06-29 - Consolidation URL history policy
 
 - Added `docs/chapter_consolidation_url_history_policy.md` to define how future
