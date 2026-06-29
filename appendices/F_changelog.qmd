@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-06-29 - Security-kernel external-grounding backfill
+
+- Added three source-noted external security comparators: OWASP Top 10 for
+  LLMs and Gen AI Apps, NIST Zero Trust Architecture, and Saltzer-Schroeder's
+  protection-principles paper.
+- Replaced the external-baseline exception prose for
+  `security-kernel-and-digital-scifs` with a source-noted positioning
+  paragraph.
+- Updated the outline, v1.x roadmap, generated source appendices, and
+  external-grounding ledgers so the security-kernel chapter now has public
+  LLM-security, zero-trust, least-privilege, and complete-mediation baselines.
+- Kept the chapter core claim at `argument`; no OWASP conformance, NIST
+  zero-trust implementation, kernel security, sandbox isolation, side-channel
+  safety, or prompt-injection containment result was claimed.
+
 ## 2026-06-29 - Alignment governance external-grounding backfill
 
 - Added four source-noted external comparators: Constitutional AI, Collective

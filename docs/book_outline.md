@@ -877,6 +877,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `ladon_manhattan`, `context_engineer` | Read first for chapter claims and mechanisms. |
 | Supporting | `talos`, `alignment_field`, `coherence_exchange` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_owasp_llm_top_10_2025`, `ext_nist_zero_trust_architecture_2020`, `ext_saltzer_schroeder_protection_1975` | Use after source notes for prompt-injection, excessive-agency, zero-trust, least-privilege, and complete-mediation positioning; do not treat these sources as evidence of ASI Stack security, compliance, or runtime containment. |
 
 Draft arc:
 
@@ -914,6 +915,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A secure-handle workflow and SCIF lifecycle diagram.
+- Source-noted external positioning now uses `ext_owasp_llm_top_10_2025`, `ext_nist_zero_trust_architecture_2020`, and `ext_saltzer_schroeder_protection_1975` as comparators for LLM security risks, zero-trust access mediation, and classic protection principles. This replaces the former external-baseline exception only for positioning and does not promote support state.
 - Implemented synthetic Codex test: Secret-handle substitution test via `python3 scripts/validate_security_kernel.py`; secret-handle safety, sandbox isolation, and deployed substitution behavior remain open.
 - Implemented synthetic Codex test: Handle lease expiry/reuse test via `python3 scripts/validate_security_kernel.py`; deployed lease expiry, revocation propagation, and reuse prevention remain open.
 - Implemented synthetic Codex test: SCIF least-privilege test via `python3 scripts/validate_security_kernel.py`; least-privilege context behavior and side-channel safety remain open.

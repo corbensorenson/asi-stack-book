@@ -4,7 +4,7 @@ chapter_id: "security-kernel-and-digital-scifs"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-29"
 primary_sources:
   - "ladon_manhattan"
   - "context_engineer"
@@ -16,7 +16,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache claim-source mappings now carry reviewed passage references, but coherence_exchange remains connector-only/source-note mapped and support remains at argument until tests, threat-model artifacts, runtime evidence, or accepted evidence transitions justify promotion."
   - "The authority_use_receipt fixture validates schema/example consistency, the SecurityKernel Lean module mechanizes narrow authorization/clearance predicates, and the synthetic security kernel harness now checks handle mediation, approval artifacts, bounded action scope, SCIF lifecycle completeness, sanitization, residual leak-risk notes, revocation paths, and prompt-injection non-disclosure boundaries; kernel security, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, least-privilege context behavior, runtime policy behavior, and source interpretation remain open."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Source-noted external comparators now exist for OWASP LLM/GenAI risks, NIST Zero Trust Architecture, and Saltzer-Schroeder protection principles; they replace the prior external-baseline exception for positioning only and do not imply support-state promotion."
 ---
 
 ## Chapter status
@@ -27,11 +27,11 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-29 |
 | Primary source records | `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `ladon_manhattan`, `context_engineer`; supporting: `talos`, `alignment_field`, `coherence_exchange` |
+| Source queue | primary: `ladon_manhattan`, `context_engineer`; supporting: `talos`, `alignment_field`, `coherence_exchange`; external comparators: `ext_owasp_llm_top_10_2025`, `ext_nist_zero_trust_architecture_2020`, `ext_saltzer_schroeder_protection_1975` |
 | Source loading state | source notes: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange`; raw cache: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`; connector/recovery: `coherence_exchange` |
 | Source mapping review | Four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector-only/source-note mapped. |
 | Test state | `authority_use_receipt.valid.json` passes protocol fixture validation and `AsiStackProofs.SecurityKernel` builds locally; `python3 scripts/validate_security_kernel.py` passes synthetic authority-use receipt fixtures for handle substitution, lease/revocation, SCIF lifecycle, least-privilege scoping, sanitized residuals, security-overhead preservation, and prompt-injection non-disclosure boundaries without proving deployed kernel security or runtime containment. |
@@ -76,7 +76,7 @@ The same caution applies to context. A mission brief should be enough for the ta
 
 Security therefore belongs before the self-improvement boundary. A system that can modify itself must not be allowed to improve by making privileged context cheaper to move, easier to summarize, or less visible in logs. Reduced friction is not automatically reduced risk.
 
-External baseline exception: the current security-kernel treatment relies on Corben/local credential-handle and context-supply-chain sources. Zero-trust, secrets-management, sandboxing, enclave, prompt-injection, or information-flow literature may become important external baselines, but none has been assigned with source notes for this layer in the current v1.0 source queue.
+External positioning: `ext_owasp_llm_top_10_2025`, `ext_nist_zero_trust_architecture_2020`, and `ext_saltzer_schroeder_protection_1975` are now the source-noted security comparators. OWASP grounds prompt injection, sensitive-information disclosure, and excessive agency as recognized GenAI application risks. NIST Zero Trust grounds resource-centric access mediation rather than ambient trust. Saltzer and Schroeder ground least privilege, complete mediation, and fail-safe defaults as classic protection principles. The ASI Stack security kernel uses those baselines to sharpen its handle, SCIF, and receipt vocabulary; it still does not claim OWASP conformance, NIST zero-trust implementation, kernel security, sandbox isolation, side-channel safety, or tested prompt-injection containment.
 
 ## Core Claim
 

@@ -608,7 +608,6 @@ Tasks:
   - split the chapter's claim if part of it has external comparators and part
     of it is author-originated architecture.
 - Prioritize likely replaceable exceptions:
-  - `security-kernel-and-digital-scifs`;
   - `coil-attention-cyclic-memory-and-recurrence-contracts`;
   - `coilra-multicoil-rope-and-cyclic-mixers`.
 - Replaced exception status in this cycle:
@@ -620,6 +619,10 @@ Tasks:
     `ext_contestable_ai_design_2022`;
   - `unified-adaptive-tribunal-and-adversarial-review` now has source-noted
     positioning through `ext_contestable_ai_design_2022`.
+  - `security-kernel-and-digital-scifs` now has source-noted comparators
+    `ext_owasp_llm_top_10_2025`,
+    `ext_nist_zero_trust_architecture_2020`, and
+    `ext_saltzer_schroeder_protection_1975`.
 - Continue mining for stronger social-choice, value-pluralism, legal-process,
   and governance-rule baselines before any future claim split or merge.
 - Preserve true author-system exceptions only when no fair external baseline is

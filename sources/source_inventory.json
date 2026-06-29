@@ -869,6 +869,47 @@
     "doi": "10.6028/NIST.AI.100-1"
   },
   {
+    "id": "ext_owasp_llm_top_10_2025",
+    "title": "OWASP Top 10 for LLMs and Gen AI Apps",
+    "priority": "external_literature",
+    "layer": "ai_security",
+    "chapter_targets": ["security-kernel-and-digital-scifs", "runtime-adapters-tool-permissions-and-human-approval", "artifact-steward-agents-and-living-project-governance"],
+    "url": "https://genai.owasp.org/llm-top-10/",
+    "notes": "Official OWASP GenAI security reference for LLM prompt injection, sensitive information disclosure, excessive agency, and related application-security risks.",
+    "source_type": "official_docs",
+    "published": "2025",
+    "updated": "2025",
+    "citation_label": "OWASP GenAI Security Project (2025), OWASP Top 10 for LLMs and Gen AI Apps"
+  },
+  {
+    "id": "ext_nist_zero_trust_architecture_2020",
+    "title": "Zero Trust Architecture",
+    "priority": "external_literature",
+    "layer": "security_governance",
+    "chapter_targets": ["security-kernel-and-digital-scifs", "system-boundaries-and-authority", "runtime-adapters-tool-permissions-and-human-approval"],
+    "url": "https://doi.org/10.6028/NIST.SP.800-207",
+    "notes": "Official NIST zero-trust architecture source for resource-centric access mediation, least-privilege access, policy enforcement points, and continuous authorization framing.",
+    "source_type": "official_docs",
+    "published": "2020-08-11",
+    "updated": "2020-08-11",
+    "citation_label": "Rose et al. (2020), Zero Trust Architecture",
+    "doi": "10.6028/NIST.SP.800-207"
+  },
+  {
+    "id": "ext_saltzer_schroeder_protection_1975",
+    "title": "The Protection of Information in Computer Systems",
+    "priority": "external_literature",
+    "layer": "security_principles",
+    "chapter_targets": ["security-kernel-and-digital-scifs", "system-boundaries-and-authority"],
+    "url": "https://web.mit.edu/Saltzer/www/publications/protection/",
+    "notes": "Classic security-principles source for least privilege, complete mediation, economy of mechanism, fail-safe defaults, separation of privilege, and open design as comparators for kernel-like AI security boundaries.",
+    "source_type": "journal_article",
+    "published": "1975",
+    "updated": "1975",
+    "citation_label": "Saltzer and Schroeder (1975), The Protection of Information in Computer Systems",
+    "doi": "10.1109/PROC.1975.9939"
+  },
+  {
     "id": "ext_react_2022",
     "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
     "priority": "external_literature",
