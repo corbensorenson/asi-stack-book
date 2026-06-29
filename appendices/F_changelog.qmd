@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - v1.x roadmap hardening pass
+
+- Split the 54-chapter evidence-lane table out of
+  `docs/v1_x_beyond_sota_roadmap.md` into
+  `docs/per_chapter_evidence_plan.md` so it functions as a backlog/menu rather
+  than a checklist for another shallow full-book fixture sweep.
+- Updated the v1.x roadmap with priority-ranked findings, a keystone execution
+  set, dependency ordering, a Beyond-SOTA distance map, an early external-review
+  milestone, anti-projection Lean acceptance criteria, CI replay/digest
+  requirements for Project Theseus and Circle evidence lanes, negative-outcome
+  and demotion rules, prior-art/novelty checks before preprints, and a v1.x
+  evidence-release gate matrix.
+- Updated the suggested long-running goal so future work selects only 5-8
+  high-payoff chapter evidence lanes per v1.x cycle while leaving the remaining
+  lanes planned, not executed.
+- This does not promote any chapter core claim above `argument`, does not create
+  new proof results, replay fixtures, external review records, prior-art
+  assessments, support-state transitions, or reader/audio artifacts, and does
+  not approve a v1.x evidence release.
+
 ## 2026-06-29 - v1.x beyond-SOTA roadmap
 
 - Added `docs/v1_x_beyond_sota_roadmap.md` as the active post-`v1.0.0`
