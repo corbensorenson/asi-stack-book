@@ -25,7 +25,7 @@ Proof-Carrying Circular Computation starts a compute track for certified cyclic,
 - The source is a polished draft with a proved cyclic-address seed.
 - It identifies Lean theorem ids, Python examples, theorem/dictionary manifest links, and future backend program requirements.
 - The source explicitly says the current address theorems are elementary bookkeeping and that performance is an empirical benchmark question.
-- No Circle sidecar examples, Lean builds, or backend benchmarks were run from this repo as part of this note.
+- This source note itself did not run Circle sidecar examples, Lean builds, or backend benchmarks from the ASI Stack repo. A later bounded external receipt slice is recorded separately in `docs/circle_external_receipt_slice.md` for one local rope-position contract replay; backend and performance claims remain untested.
 
 ## Failure Modes
 
@@ -50,4 +50,3 @@ Proof-Carrying Circular Computation starts a compute track for certified cyclic,
 - Which cyclic address facts should be mirrored in ASI Stack Lean proofs?
 - Should CoilIR remain an external Circle roadmap item or become an ASI Stack substrate appendix?
 - What minimal benchmark would be adequate before any circular-compute performance claim is promoted?
-

@@ -25,7 +25,7 @@ The RoPE position-distinguishability paper ships an externally usable proof-carr
 - The source is a proof-linked AI application paper with theorem spine, certifier interface, preset-result sidecars, exact discrete model, real-phase diagnostic discussion, proved core, and guardrail.
 - It states that exact discrete preset rows are reproducible configuration certificates rather than evidence of better perplexity, reasoning, context length, runtime, memory, training stability, or deployment readiness.
 - The source includes theorem-linked positive and negative boundaries for the exact/discretized contract layer.
-- No RoPE certifier command, sidecar regeneration, or Circle Lean build was run from this repo as part of this note.
+- This source note itself did not run a RoPE certifier command, sidecar regeneration, or Circle Lean build from the ASI Stack repo. A later bounded external receipt slice is recorded separately in `docs/circle_external_receipt_slice.md` for one local rope-position contract replay; that slice keeps model-quality, context-length, speed, memory, training-stability, and deployment claims out of scope.
 
 ## Failure Modes
 
@@ -50,4 +50,3 @@ The RoPE position-distinguishability paper ships an externally usable proof-carr
 - Should the ASI Stack proof envelope include a small independent RoPE-style finite-period theorem?
 - Which receipt fields are essential for downstream architecture chapters?
 - How should exact/discretized proof be presented without confusing it with full real-RoPE guarantees?
-

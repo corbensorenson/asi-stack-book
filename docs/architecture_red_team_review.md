@@ -71,11 +71,11 @@ The review outcome is deliberately conservative: the current book has strong rec
 
 **Expected failure:** The system appears more efficient or more capable on a benchmark while actually increasing unpriced risk or downstream cost.
 
-**Observed current defense:** Benchmark ratchet fixtures, generation-mode baseline fixtures, resource-budget ledger fixtures, capacity-smoothing toy traces, and no-promotion decisions require baselines, negative controls, residual accounting, and non-claim boundaries. The measured registry-runner transition is scoped to infrastructure replay only, and the bounded costed-route/resource-budget transition now rejects a cheaper failed negative control while preserving baseline, fallback, residual, and non-claim boundaries.
+**Observed current defense:** Benchmark ratchet fixtures, generation-mode baseline fixtures, resource-budget ledger fixtures, capacity-smoothing toy traces, and no-promotion decisions require baselines, negative controls, residual accounting, and non-claim boundaries. The measured registry-runner transition is scoped to infrastructure replay only, the bounded costed-route/resource-budget transition rejects a cheaper failed negative control while preserving baseline, fallback, residual, and non-claim boundaries, and the Circle external receipt transition records discarded procedural attempts without treating the narrow receipt replay as chapter-core or deployed proof-transport evidence.
 
 **Residual risk:** No real benchmark, route-quality measurement, model run, hidden-holdout integrity check, contamination audit, useful-solution-per-second result, or cost-quality economic review has been accepted.
 
-**Routed follow-up:** The small synthetic costed-route/resource-budget slice is now recorded; route the next follow-up to real route-quality/resource-budget traces, benchmark contamination checks, hidden-cost audits, load/serving-system measurements, or imported prototype receipts. Keep routing, resource economics, fast generation, benchmark ratchets, and policy optimization core claims at `argument`.
+**Routed follow-up:** The small synthetic costed-route/resource-budget slice and first Circle external receipt slice are now recorded; route the next follow-up to real route-quality/resource-budget traces, benchmark contamination checks, hidden-cost audits, load/serving-system measurements, public proof-contract consumer gates, or additional imported prototype receipts. Keep routing, resource economics, fast generation, benchmark ratchets, proof-contract, and policy optimization core claims at `argument`.
 
 ## Reader-Release Laundering Attack
 

@@ -734,7 +734,7 @@ This matrix contains one core claim per dynamic chapter and records the conserva
 
 Each claim has two separate classifications: a claim label that describes what kind of statement it is, and a support state that describes what currently supports it.
 
-No claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. A source note means the source has been mined for drafting context; it does not by itself promote the claim.
+No chapter core claim is marked `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, or `external-literature-backed` yet. A source note means the source has been mined for drafting context; it does not by itself promote the claim.
 
 Current generated coverage: {len(chapters)} chapter core claims, {total_claim_mappings} exact claim-source mappings, and {total_passage_reviewed} passage-reviewed mappings. Unreviewed mappings remain source-note mappings until passage review, accepted evidence transitions, or validated artifacts justify narrower support-state movement.
 

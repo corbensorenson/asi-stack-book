@@ -2784,7 +2784,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A technical-substrate appendix plan with experiment matrix and adoption gates.
-- Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates substrate-adoption record shape, baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or local Circle build exists yet.
+- Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates substrate-adoption record shape, baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or Circle substrate-adoption build exists yet. The separate external rope receipt slice does not validate substrate adoption.
 - Planned Codex test: Baseline comparison test.
 - Planned Codex test: Representation efficiency test.
 - Planned Codex test: Falsification review.
@@ -2845,9 +2845,10 @@ Failure modes to cover:
 Draft deliverables:
 
 - A contract record with theorem IDs, receipt state, proof boundary, proof status, content fingerprint, fingerprint status, deterministic fields, validation commands, consumer check/state, ordinary baselines, resolver/replay states, staleness policy, support-state effect, and non-claims.
-- Implemented repository-level fixture: `proof_contract_receipt_record.valid.json` validates proof-contract receipt record shape, receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims only; no Circle theorem-id resolver, receipt replay, fingerprint check, external Lean build, or generated contract pack exists yet.
-- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, receipt replay, fingerprint check, or vendored contract pack exists yet.
-- Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary and consumer-gate promotion requirements without claiming external Circle theorem replay.
+- Implemented repository-level fixture: `proof_contract_receipt_record.valid.json` validates proof-contract receipt record shape, receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims only; it does not validate a vendored Circle contract pack, ASI Stack consumer gate, or chapter-core proof-contract transport claim.
+- Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, fingerprint check, or vendored contract pack exists yet.
+- Implemented external receipt slice: `docs/circle_external_receipt_slice.md`, `experiments/circle_external_receipt_slice/results/2026-06-29-local.json`, and `evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json` record one bounded local Circle rope-position receipt replay for `circle-calculus.external_rope_receipt_replay` only; it does not promote `circle-calculus-and-proof-carrying-ai-contracts.core`.
+- Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary and consumer-gate promotion requirements without claiming deployed Circle theorem transport.
 - Implemented Codex test: Proof contract receipt schema validation test.
 - Planned Codex test: Circle contract pack validation test
 - Planned Codex test: Theorem-id resolution test

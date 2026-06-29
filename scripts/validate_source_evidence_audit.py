@@ -66,7 +66,7 @@ def appendix_c_has_current_counts(chapter_count: int, mapping_count: int) -> boo
         return False
     text = APPENDIX_C.read_text(encoding="utf-8", errors="ignore")
     return (
-        "No claim is marked `source-derived`" in text
+        "No chapter core claim is marked `source-derived`" in text
         and str(chapter_count) in text
         and str(mapping_count) in text
     )

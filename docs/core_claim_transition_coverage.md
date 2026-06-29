@@ -14,7 +14,7 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 | Accepted explicit no-promotion decisions | 28 |
 | Missing core-claim coverage | 0 |
 
-All chapter core support states remain `argument`. The separate measured transition for `living-book-methodology.phase5_harness_registry_runner` is not a chapter core claim and is not counted in this coverage table.
+All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
 
 ## Accepted Core Evidence-Transition Records
 
@@ -54,7 +54,7 @@ All chapter core support states remain `argument`. The separate measured transit
 | `artifact-graphs-audit-logs-and-replay.core` | Artifact Graphs, Audit Logs, and Replay | `argument_only` | no artifact graph implementation; no replay metadata validation over real outputs; no audit reconstruction benchmark |
 | `artifact-steward-agents-and-living-project-governance.core` | Artifact Steward Agents and Living Project Governance | `argument_only` | no steward-agent runtime; no governed treasury action; no release-gate execution over a real artifact |
 | `asi-is-a-stack-not-a-model.core` | ASI Is a Stack, Not a Model | `argument_only` | no deployed or replayed stack run; finite proofs do not establish whole-stack behavior; no independent architecture review |
-| `circle-calculus-and-proof-carrying-ai-contracts.core` | Circle Calculus and Proof-Carrying AI Contracts | `argument_only` | no accepted Circle replay bundle; no consumer-gate trace; no workload metric tied to contract use |
+| `circle-calculus-and-proof-carrying-ai-contracts.core` | Circle Calculus and Proof-Carrying AI Contracts | `argument_only` | narrow external rope receipt replay is not a chapter-core replay bundle; no consumer-gate trace; no workload metric tied to contract use |
 | `cognitive-compilation-and-semantic-ir.core` | Cognitive Compilation and Semantic IR | `argument_only` | no compiler run; no artifact-generation benchmark; no accepted semantic repair evidence |
 | `coil-attention-cyclic-memory-and-recurrence-contracts.core` | Coil Attention, Cyclic Memory, and Recurrence Contracts | `argument_only` | no cyclic memory runtime; no retrieval-quality result; no alias-risk measurement |
 | `coilra-multicoil-rope-and-cyclic-mixers.core` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | `argument_only` | no baseline comparison; no quality or runtime measurement; no adoption canary route |

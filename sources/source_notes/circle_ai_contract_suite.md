@@ -25,7 +25,7 @@ The Circle Calculus AI Contract Suite is a proof-carrying contract layer for fin
 - The source is a compact usage entry point for Circle's proof-carrying AI contracts.
 - It lists schemas, minimum consumer fields, representative report shapes, theorem clusters, CLI commands, generated packs, and reading order.
 - It describes structural facts and fixture-level contract checks; it explicitly denies model-quality proof.
-- No Circle contract commands, generated packs, Lean builds, or receipt checks were run from this repo as part of this note.
+- This source note itself did not run Circle contract commands, generated packs, Lean builds, or receipt checks from the ASI Stack repo. A later bounded external receipt slice is recorded separately in `docs/circle_external_receipt_slice.md` for one local rope-position contract replay; that slice does not promote any chapter core claim, downstream consumer claim, or model-quality claim.
 
 ## Failure Modes
 
@@ -52,6 +52,5 @@ The Circle Calculus AI Contract Suite is a proof-carrying contract layer for fin
 ## Open Questions
 
 - Which AI contract fields should be mirrored in the ASI Stack protocol schemas?
-- Should Appendix E include a small receipt-validation fixture once Circle artifacts are vendored or generated locally?
+- Should Appendix E include a small receipt-validation fixture once Circle artifacts are vendored, archived, or generated locally inside this repository?
 - How should ASI Stack chapters cite external theorem ids without implying local proof ownership?
-

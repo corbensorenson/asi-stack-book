@@ -564,14 +564,14 @@
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has local-project source mappings and finite proof-contract hooks, but no imported Circle receipt replay, consumer-gate run, workload baseline, or independent theorem-package review has been accepted.",
+      "decision_reason": "The chapter has local-project source mappings, finite proof-contract hooks, and one accepted narrow external Circle rope receipt replay, but no chapter-core Circle receipt bundle, ASI Stack consumer-gate run, workload baseline, or independent theorem-package review has been accepted.",
       "required_evidence": [
-        "public-safe Circle receipt replay",
+        "public-safe Circle receipt bundle tied to the chapter core claim",
         "consumer gate validation",
         "workload and baseline packet"
       ],
       "blockers": [
-        "no accepted Circle replay bundle",
+        "narrow external rope receipt replay is not a chapter-core replay bundle",
         "no consumer-gate trace",
         "no workload metric tied to contract use"
       ],

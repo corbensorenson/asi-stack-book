@@ -1,0 +1,98 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-06-29-local-circle-external-rope-receipt-slice",
+  "slice_id": "circle_external_rope_receipt_slice",
+  "claim_id": "circle-calculus.external_rope_receipt_replay",
+  "external_project": {
+    "name": "circle math",
+    "local_checkout_ref": "/Users/corbensorenson/Documents/circle math",
+    "git_commit": "63b0f511",
+    "worktree_state": "clean_after_commands"
+  },
+  "environment": "local external Circle Calculus checkout; results recorded here as a public-safe summary without vendoring the external project",
+  "commands": [
+    {
+      "command": "lake build Circle",
+      "verification_result": "pass",
+      "observed_summary": "Build completed successfully (2624 jobs)."
+    },
+    {
+      "command": "python3 scripts/circle_ai_certify.py rope --model-config examples/circle_ai_model_configs/standard_rope_config.json --requested-margin 1/328459 --format json --require-status proved --require-decision passed --require-assurance mixed_theorem_and_computation --require-passed",
+      "verification_result": "pass",
+      "observed_summary": "status proved; request_passed true; decision verdict passed; assurance mixed_theorem_and_computation; theorem_count 55; all_theorem_ids_proved true",
+      "receipt_content_fingerprint": "91b72a6dcf821a9733f21800cd1093a3d0665588022031ba72c94893800330c3",
+      "normalized_request_fingerprint": "20e68c5f787e267c6611bc57b8d8e98e1cb0f5a74f272379716a5d83e761407d",
+      "contract_pack_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind rope_position_distinguishability --digest --include-recommendations",
+      "verification_result": "pass",
+      "observed_summary": "circle AI contract digest ok: rope_position_distinguishability; id=CC-AI-CONTRACT-ROPE-001 ready=True fields=31 missing=0 theorems=75"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind rope_position_distinguishability --receipt --format json --field d19_proved_request_status --field d19_proved_first_channel_bank_transfer --field real_phase_dirichlet_witness_guardrail --require-theorem AIRA-T0058 --require-theorem AIRA-T0059 --require-theorem AIRA-T0171 --require-theorem AIRA-T0172 --require-theorem AIRA-T0239 --require-theorem AIRA-T0240 --require-theorem AIRA-T0241 --require-recommendation ROPE-USE-D19-MARGIN-FRONTIER",
+      "verification_result": "pass",
+      "observed_summary": "accepted true; receipt_schema circle_calculus.ai_contract_acceptance_receipt.v0; contract_id CC-AI-CONTRACT-ROPE-001; kind rope_position_distinguishability",
+      "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+      "contract_content_fingerprint": "a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468"
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m pytest tests/test_check_circle_ai_receipt.py tests/test_check_circle_ai_certification_bundle.py tests/test_check_circle_ai_receipt_replay.py tests/test_check_circle_ai_contract_runner.py tests/test_downstream_ci_accept_circle_ai_contracts.py tests/test_theseus_hive_ai_contracts.py tests/test_circle_ai_contract_ready_cli.py tests/test_circle_ai_contract_pack.py -q",
+      "verification_result": "pass",
+      "observed_summary": "145 passed in 718.24s (0:11:58)"
+    }
+  ],
+  "accepted_receipt": {
+    "accepted": true,
+    "contract_id": "CC-AI-CONTRACT-ROPE-001",
+    "kind": "rope_position_distinguishability",
+    "schema_id": "circle_calculus.ai_contract_pack.v0",
+    "required_theorem_ids": [
+      "AIRA-T0058",
+      "AIRA-T0059",
+      "AIRA-T0171",
+      "AIRA-T0172",
+      "AIRA-T0239",
+      "AIRA-T0240",
+      "AIRA-T0241"
+    ],
+    "required_recommendation_ids": [
+      "ROPE-USE-D19-MARGIN-FRONTIER"
+    ],
+    "evidence_fields": {
+      "d19_proved_request_status": "proved",
+      "d19_proved_first_channel_bank_transfer": true,
+      "real_phase_dirichlet_witness_guardrail": true
+    }
+  },
+  "discarded_attempts": [
+    {
+      "command": "PYTHONPATH=. python3 -m pytest tests/test_check_circle_ai_receipt.py tests/test_check_circle_ai_contract_pack.py -q",
+      "outcome": "discarded_procedural_error",
+      "reason": "tests/test_check_circle_ai_contract_pack.py was not present in the external checkout; no tests ran"
+    },
+    {
+      "command": "python3 scripts/circle_ai_contract_ready.py --kind rope_position_distinguishability --digest --include-recommendations",
+      "outcome": "discarded_environment_error",
+      "reason": "ModuleNotFoundError: No module named 'circle_math'; rerun succeeded with PYTHONPATH=."
+    }
+  ],
+  "support_transition": {
+    "old_support_state": "argument",
+    "new_support_state": "prototype-backed",
+    "support_state_effect": "eligible_for_bounded_evidence_review"
+  },
+  "verification_result": "pass",
+  "residuals": [
+    "The external Circle checkout is not vendored into this public repository.",
+    "The result records a local external-project replay and acceptance receipt, not an ASI Stack runtime integration.",
+    "The receipt concerns one rope position distinguishability contract and does not generalize to all Circle claims."
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, or ASI",
+    "does not prove deployed proof-contract transport inside The ASI Stack",
+    "does not reproduce Theseus, MoECOT, Talos, VCM, PlanForge, compression, routing, benchmark, policy-training, or simulation results",
+    "does not make the external Circle checkout a vendored public dependency"
+  ]
+}

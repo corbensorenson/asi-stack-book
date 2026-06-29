@@ -26,7 +26,7 @@ Circle Calculus is a proof-carrying finite cyclic mathematics project that ties 
 - The repository README describes proof policy, stable APIs, verification commands, and repository layout.
 - It names Lean, Python, Rust, manifests, papers, sidecars, tests, and Quarto site surfaces.
 - The source states that AI/system contracts prove finite structural facts such as cyclic indexing, RoPE phase-bank conditions, sparse-attention coverage, ring-buffer freshness, recurrence schedules, and circulant/block-cyclic mixer laws.
-- The Circle repository was not built or tested from this ASI Stack repo as part of this note.
+- This source note itself did not build or test Circle from the ASI Stack repo. A later bounded external receipt slice is recorded separately in `docs/circle_external_receipt_slice.md` for one local rope-position contract replay; that slice does not promote any chapter core claim or model-quality claim.
 
 ## Failure Modes
 
@@ -45,11 +45,10 @@ Circle Calculus is a proof-carrying finite cyclic mathematics project that ties 
 ## Claims To Add Or Update
 
 - The source can support source-derived discussion of proof-carrying cyclic contracts and proof-status discipline.
-- It should not be used as evidence that any ASI Stack chapter theorem has been implemented unless the theorem exists in this repo or the external Circle build is explicitly validated.
+- It should not be used as evidence that any ASI Stack chapter theorem has been implemented unless the theorem exists in this repo or a separate external Circle build/receipt record explicitly validates the narrower claim.
 
 ## Open Questions
 
 - Which Circle theorem ids should be cited directly in ASI Stack chapters versus summarized as external proof-carrying substrate context?
 - Should the ASI Stack import a minimal subset of Circle-style contract schemas?
 - Which Circle concepts are strong enough to become formal proof targets inside this repo?
-

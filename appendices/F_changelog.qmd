@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-29 - Circle external receipt slice
+
+- Added `docs/circle_external_receipt_slice.md`,
+  `experiments/circle_external_receipt_slice/results/2026-06-29-local.json`,
+  and
+  `evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json`
+  for the bounded `circle-calculus.external_rope_receipt_replay` transition
+  from `argument` to `prototype-backed`.
+- Added `scripts/validate_circle_external_receipt_slice.py` to check the
+  public-safe summary of the external Circle checkout at commit `63b0f511`,
+  successful `lake build Circle`, proved/passed rope certification for
+  `CC-AI-CONTRACT-ROPE-001`, ready digest fields, accepted receipt theorem and
+  recommendation requirements, selected receipt/contract pytest batch, discarded
+  procedural attempts, evidence-transition record, and non-claim boundaries.
+- Updated the measured-slice ledger, evidence-transition summary, v1.0
+  candidate status, progress ledger, release-gate audit, roadmap, publication
+  readiness, repository map, README, red-team note, generated core-claim
+  no-promotion report source, and validators so the repository now distinguishes
+  two bounded `synthetic-test-backed` transitions from one bounded
+  `prototype-backed` imported external receipt transition.
+- This does not promote any chapter core claim above `argument`, does not prove
+  deployed proof-contract transport, model quality, reasoning ability, context
+  length, speed, memory scaling, deployment safety, transfer, ASI, benchmark
+  performance, source interpretation, or economic outcomes, and does not make
+  the external Circle checkout a vendored public dependency.
+
 ## 2026-06-29 - v1.0 release gate audit
 
 - Added `docs/v1_0_release_gate_audit.md` to record all eleven v1.0

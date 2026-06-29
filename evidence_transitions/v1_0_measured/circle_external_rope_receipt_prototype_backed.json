@@ -1,0 +1,101 @@
+{
+  "transition_id": "v1_0_measured.circle_external_rope_receipt.prototype_backed",
+  "claim_id": "circle-calculus.external_rope_receipt_replay",
+  "claim_surface_refs": [
+    "docs/circle_external_receipt_slice.md",
+    "docs/first_measured_replayed_slice.md",
+    "docs/evidence_transition_pilot.md",
+    "docs/v1_0_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
+    "scripts/validate_circle_external_receipt_slice.py",
+    "schemas/evidence_transition_record.schema.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "prototype-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded imported external-prototype receipt claim moves to prototype-backed: a clean local Circle checkout at commit 63b0f511 built its Circle Lean target, certified one rope position distinguishability contract, emitted a ready digest and accepted receipt for CC-AI-CONTRACT-ROPE-001, and passed the selected receipt/contract test batch recorded in the tracked public-safe result summary.",
+  "evidence_roles": [
+    "external_project_replay",
+    "lean_build",
+    "proof_contract_receipt",
+    "acceptance_receipt",
+    "pytest_receipt_batch",
+    "public_safe_result_record"
+  ],
+  "transition_reason": "The local external Circle checkout at commit 63b0f511 reported a successful lake build of the Circle target, a proved and passed rope certification with mixed_theorem_and_computation assurance and 55 proved theorem IDs, a ready digest for CC-AI-CONTRACT-ROPE-001 with 31 fields, 0 missing fields, and 75 theorems, an accepted receipt requiring theorem IDs AIRA-T0058, AIRA-T0059, AIRA-T0171, AIRA-T0172, AIRA-T0239, AIRA-T0240, and AIRA-T0241 plus recommendation ROPE-USE-D19-MARGIN-FRONTIER, and a selected pytest receipt/contract batch with 145 passing tests. This supports only the narrow public-safe fact that the recorded external prototype receipt slice replayed locally; it does not promote chapter core claims or prove deployed ASI Stack proof-contract transport.",
+  "required_artifacts": [
+    "clean external Circle checkout at recorded commit",
+    "local Circle Lean build",
+    "rope certification command with required proved/passed status",
+    "ready digest command with required recommendation",
+    "accepted receipt command with required theorem IDs",
+    "selected receipt/contract pytest batch",
+    "tracked public-safe result summary",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/circle_external_receipt_slice.md",
+    "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
+    "scripts/validate_circle_external_receipt_slice.py",
+    "scripts/validate_evidence_transitions.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_external_receipt_slice.md",
+    "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
+    "docs/first_measured_replayed_slice.md",
+    "docs/evidence_transition_pilot.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/G_corben_source_corpus.qmd#circle_calculus_core",
+    "appendices/G_corben_source_corpus.qmd#circle_ai_contract_suite",
+    "appendices/G_corben_source_corpus.qmd#proof_carrying_circular_computation"
+  ],
+  "verification_command": "python3 scripts/validate_circle_external_receipt_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "a first pytest attempt named a missing test path and ran no tests, so it was discarded as procedural non-evidence",
+    "a first ready-digest attempt omitted PYTHONPATH=. and failed with ModuleNotFoundError, so only the corrected PYTHONPATH=. run is accepted",
+    "the external Circle project is not vendored into this public repository",
+    "no chapter core claim is promoted above argument",
+    "no model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, ASI, or deployed proof-contract transport claim is made"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_external_receipt_slice.md",
+    "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
+    "docs/v1_0_roadmap.md"
+  ],
+  "downgrade_triggers": [
+    "tracked result no longer records the exact external commit and clean-worktree boundary",
+    "tracked result drops the successful Circle build, certification, ready digest, accepted receipt, or pytest receipt batch",
+    "receipt fingerprints, theorem requirements, recommendation requirements, or evidence fields drift without a new replay record",
+    "the slice is interpreted as model quality, runtime, benchmark, deployment-safety, transfer, ASI, or chapter-core evidence",
+    "future public dependency policy requires vendored or externally archived artifacts and this record remains local-summary only"
+  ],
+  "promotion_burden": "Broader Circle, proof-carrying-computation, cyclic-memory, RoPE, ASI Stack consumer-gate, or chapter-core claims require separate accepted transitions with public replay artifacts or archived contract packs, exact commands, consumer-gate traces, negative controls where applicable, independent review where relevant, and explicit non-claims.",
+  "limitations": [
+    "local external-project replay summarized in this repository rather than vendored source",
+    "one rope position distinguishability contract receipt only",
+    "maintainer-agent review only; not an independent external audit",
+    "does not prove deployed ASI Stack proof-contract transport",
+    "does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, ASI, benchmark performance, or source interpretation",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent external audit",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-29---circle-external-receipt-slice",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, or ASI",
+    "does not prove deployed proof-contract transport inside The ASI Stack",
+    "does not reproduce Theseus, MoECOT, Talos, VCM, PlanForge, compression, routing, benchmark, policy-training, or simulation results",
+    "does not make the external Circle checkout a vendored public dependency"
+  ]
+}

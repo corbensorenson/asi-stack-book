@@ -25,7 +25,7 @@ Circle AI Architectures states a disciplined Circle AI thesis: cyclic or coil st
 - The source is a polished paper draft for Circle's AI architecture program.
 - It provides theorem/benchmark scaffolding and explicit guardrails.
 - It describes exploratory benchmark fixtures but does not treat them as model-quality evidence.
-- No sidecar tests, Lean builds, MLX experiments, or benchmark fixtures were run from this repo as part of this note.
+- This source note itself did not run sidecar tests, Lean builds, MLX experiments, or benchmark fixtures from the ASI Stack repo. A later bounded external receipt slice is recorded separately in `docs/circle_external_receipt_slice.md` for one local rope-position contract replay; it does not support broad cyclic-architecture or model-quality claims.
 
 ## Failure Modes
 
@@ -51,4 +51,3 @@ Circle AI Architectures states a disciplined Circle AI thesis: cyclic or coil st
 - Which ASI Stack chapters should mention Circle only as optional substrate rather than core architecture?
 - Which negative controls should become required for cyclic-substrate experiments?
 - Which structural guarantees are worth restating as ASI Stack proof targets?
-

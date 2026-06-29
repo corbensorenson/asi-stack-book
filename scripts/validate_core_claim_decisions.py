@@ -200,7 +200,7 @@ def build_report(
         f"| Accepted explicit no-promotion decisions | {len(decisions)} |",
         f"| Missing core-claim coverage | {len(missing)} |",
         "",
-        "All chapter core support states remain `argument`. The separate measured transition for `living-book-methodology.phase5_harness_registry_runner` is not a chapter core claim and is not counted in this coverage table.",
+        "All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.",
         "",
         "## Accepted Core Evidence-Transition Records",
         "",

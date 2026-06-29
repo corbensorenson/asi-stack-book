@@ -6,12 +6,13 @@ This record documents v1.0 measured/replayed slices that clear bounded support
 transitions. They are intentionally narrow: the first supports only the
 repository-infrastructure claim that the Phase 5 harness registry can be
 replayed by a single runner command against the current public-safe synthetic
-fixture set, and the second supports only a synthetic
-costed-route/resource-budget selector discipline claim.
+fixture set, the second supports only a synthetic costed-route/resource-budget
+selector discipline claim, and the third supports only a local external Circle
+receipt replay for one rope-position contract.
 
 They do not support ASI capability, deployed safety, model quality, benchmark
-performance, runtime enforcement, source interpretation, or any chapter core
-claim.
+performance, runtime enforcement, source interpretation, transfer, or any
+chapter core claim.
 
 ## Accepted Narrow Claim 1
 
@@ -137,3 +138,81 @@ public-safe prototype or measurement lane: context-admission replay,
 compression/RankFold measurement, planner/runtime adapter trace, Theseus
 transfer, Circle receipt replay, real route-quality measurement, or load and
 serving-system traces.
+
+## Accepted Narrow Claim 3
+
+Claim ID: `circle-calculus.external_rope_receipt_replay`
+
+Claim: A local external Circle Calculus checkout at commit `63b0f511` can build
+its `Circle` Lean target, certify the rope position distinguishability contract,
+emit a ready digest and accepted receipt for `CC-AI-CONTRACT-ROPE-001`, and pass
+the selected public-safe receipt/contract test batch recorded in the result
+file.
+
+Support transition: `argument` to `prototype-backed`
+
+Transition record:
+`evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json`
+
+Result record: `docs/circle_external_receipt_slice.md`
+
+## Command
+
+The accepted command set is recorded in
+`experiments/circle_external_receipt_slice/results/2026-06-29-local.json` and
+summarized in `docs/circle_external_receipt_slice.md`. The tracked validator is:
+
+```bash
+python3 scripts/validate_circle_external_receipt_slice.py
+```
+
+That validator checks the public-safe result summary, evidence-transition
+record, required theorem IDs, fingerprints, receipt fields, discarded attempts,
+and non-claim boundaries. It does not rerun the external local checkout in CI.
+
+## Inputs
+
+- External checkout: `/Users/corbensorenson/Documents/circle math`
+- External checkout commit: `63b0f511`
+- One Circle rope-position contract: `CC-AI-CONTRACT-ROPE-001`
+- Required theorem IDs: `AIRA-T0058`, `AIRA-T0059`, `AIRA-T0171`,
+  `AIRA-T0172`, `AIRA-T0239`, `AIRA-T0240`, and `AIRA-T0241`
+- Required recommendation ID: `ROPE-USE-D19-MARGIN-FRONTIER`
+
+## Output
+
+Observed result:
+
+- `lake build Circle` completed successfully with 2624 jobs.
+- The rope certification returned `status` `proved`, `request_passed` `true`,
+  decision verdict `passed`, assurance `mixed_theorem_and_computation`, and 55
+  theorem IDs proved.
+- The ready digest returned `ready=True`, `fields=31`, `missing=0`, and
+  `theorems=75`.
+- The accepted receipt required the seven theorem IDs and the D19 margin
+  frontier recommendation.
+- The selected receipt/contract pytest batch returned `145 passed in 718.24s
+  (0:11:58)`.
+
+## Negative Controls
+
+This slice preserves two discarded procedural attempts: a pytest command that
+named a missing test file and ran no tests, and a ready-digest command that
+omitted `PYTHONPATH=.` and failed with `ModuleNotFoundError`. These discarded
+attempts are kept as non-evidence so the accepted result cannot hide the command
+repair path.
+
+## Non-Claims
+
+- Does not promote any chapter core claim above `argument`.
+- Does not prove model quality, reasoning ability, context length, speed,
+  memory scaling, deployment safety, transfer, or ASI.
+- Does not prove deployed proof-contract transport inside The ASI Stack.
+- Does not make the external Circle checkout a vendored public dependency.
+
+## Residuals
+
+The next imported-prototype slice should either vendor a public contract pack,
+add an explicit public replay fixture, or route a proof-contract receipt through
+an ASI Stack consumer gate. Broader Circle and proof-carrying-computation claims
+still need separate accepted transitions.
