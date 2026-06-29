@@ -18,6 +18,23 @@
   states, change source mappings, create proof/test results, or approve reader
   artifacts.
 
+## 2026-06-29 - Alignment/governance consolidation pilot plan
+
+- Added `docs/chapter_consolidation_pilot_plan.md`, the first governed merge
+  pilot for the Part I alignment/governance philosophy cluster.
+- The plan proposes two future reconciliations without changing the manifest:
+  `constitutional-alignment-substrate` plus
+  `agency-dignity-and-corrigibility`, and
+  `moral-uncertainty-and-value-conflict` plus
+  `governance-rights-fork-exit-and-audit`.
+- Added `scripts/validate_chapter_consolidation_pilot_plan.py` and wired it
+  into `scripts/validate_book.py`; the validator checks that the four source
+  chapters still exist, required source IDs and Lean tags are preserved, and
+  no-manifest-edit/no-support-state-change boundaries remain explicit.
+- This does not merge chapters, delete ideas, change `book_structure.json`,
+  change support states, fabricate source/proof/test evidence, or approve
+  reader artifacts.
+
 ## 2026-06-29 - v1.x active evidence-cycle lane cap
 
 - Added `docs/v1_x_active_evidence_cycle.md` to name the seven selected

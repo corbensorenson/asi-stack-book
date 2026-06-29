@@ -52,6 +52,7 @@ REQUIRED = [
     "scripts/validate_core_claim_decisions.py",
     "scripts/validate_core_claim_promotion_paths.py",
     "scripts/validate_v1_x_active_evidence_cycle.py",
+    "scripts/validate_chapter_consolidation_pilot_plan.py",
     "scripts/build_chapter_external_grounding_status.py",
     "scripts/validate_chapter_external_grounding_status.py",
     "scripts/validate_external_sota_positioning.py",
@@ -94,6 +95,7 @@ REQUIRED = [
     "docs/source_evidence_audit.md",
     "docs/core_claim_transition_coverage.md",
     "docs/v1_x_active_evidence_cycle.md",
+    "docs/chapter_consolidation_pilot_plan.md",
     "docs/non_core_evidence_ledger.md",
     "docs/external_review_packet.md",
     "docs/external_review_status.md",
@@ -631,6 +633,7 @@ def main() -> None:
     run_validator("validate_core_claim_decisions.py")
     run_validator("validate_core_claim_promotion_paths.py")
     run_validator("validate_v1_x_active_evidence_cycle.py")
+    run_validator("validate_chapter_consolidation_pilot_plan.py")
     run_validator("validate_chapter_external_grounding_status.py")
     run_validator("validate_external_sota_positioning.py")
     run_validator("validate_claim_ledger_revision.py")

@@ -17,6 +17,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/a_plus_quality_scorecard.md` | Planning scorecard translating current project grade gaps into A+ conditions for cold-read legibility, evidence depth, proof rigor, external grounding, reader quality, and defended contribution tracks. | tracked |
 | `docs/per_chapter_evidence_plan.md` | 54-chapter evidence-lane backlog for selecting a small high-payoff v1.x execution set without triggering another shallow breadth sweep. | tracked |
 | `docs/v1_x_active_evidence_cycle.md` | Active v1.x evidence-cycle ledger naming the seven selected high-payoff lanes, the forty-seven planned-only lanes, and the no-chapter-core-promotion boundary. | tracked |
+| `docs/chapter_consolidation_pilot_plan.md` | Governed chapter-consolidation pilot plan for the Part I alignment/governance cluster, preserving claim/source/proof/reader boundaries before any manifest merge. | tracked |
 | `docs/external_review_packet.md` | Public packet for v1.x external review, including scope, questions, response template, and review-is-not-evidence boundary. | tracked |
 | `docs/external_review_status.md` | Ledger for the public external-review request, current no-accepted-review state, routing rules, and non-claims. | tracked |
 | `docs/chapter_external_grounding_status.md` | Generated 54-chapter status ledger tying each chapter to source-noted external comparators, explicit exceptions, and Corben/local sources to mine before broad literature search. | tracked |

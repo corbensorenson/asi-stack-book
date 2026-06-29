@@ -752,6 +752,20 @@ Acceptance bar:
 - no support state, source-derived claim, proof result, or test result is
   fabricated by the consolidation.
 
+Current status:
+
+- `docs/chapter_consolidation_pilot_plan.md` records the first pilot plan for
+  the Part I alignment/governance philosophy cluster.
+- The pilot proposes two future merges:
+  `constitutional-alignment-substrate` with
+  `agency-dignity-and-corrigibility`, and
+  `moral-uncertainty-and-value-conflict` with
+  `governance-rights-fork-exit-and-audit`.
+- `scripts/validate_chapter_consolidation_pilot_plan.py` verifies that the plan
+  preserves all four source chapter IDs, required source IDs, required Lean
+  proof tags, no-manifest-edit language, and no-support-state-change language.
+- No manifest merge has been performed yet.
+
 ### Milestone 7 - Curated Human-Reader Manuscript
 
 Goal: make the normal reader version a book someone would enjoy reading or
