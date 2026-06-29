@@ -7,7 +7,8 @@ Stack** from a tagged living-book release into a stronger evidence-and-reader
 program. It should be read with `docs/v1_0_candidate_status.md`,
 `docs/v1_progress_ledger.md`, `docs/v1_0_release_gate_audit.md`,
 `docs/proof_depth_classification.md`, `docs/proof_adequacy_review.md`,
-`docs/external_sota_positioning_audit.md`, and
+`docs/external_sota_positioning_audit.md`,
+`docs/a_plus_quality_scorecard.md`, and
 `docs/local_project_mining_theseus_circle.md`. The full per-chapter evidence
 backlog lives in `docs/per_chapter_evidence_plan.md`, and the v1.0
 Beyond-SOTA reference map in `docs/v1_0_roadmap.md` remains the baseline for
@@ -42,6 +43,9 @@ It should retire the important IOUs:
   of the AI/research source;
 - EPUB, DOCX, PDF, and audio should be treated as reviewed edition artifacts
   only after exact artifact records exist.
+- the project's discipline must become legible in the first minute of a cold
+  read, because hidden rigor does not protect the work from a theory-of-everything
+  silhouette.
 
 ## Inputs Reconciled
 
@@ -65,8 +69,10 @@ not be quoted in the book as an external authority.
 | Priority | Finding | Verified state | Roadmap consequence |
 |---|---|---|---|
 | P0 | The 54-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Move the 54-row plan to `docs/per_chapter_evidence_plan.md`, cap each v1.x cycle at 5-8 executed lanes, and leave the rest explicitly planned. |
+| P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
 | P0 | Safety-critical Lean depth is still shallow. | `docs/proof_depth_classification.md` records 139 theorem declarations, 112 direct/projection-style, 27 derived/decomposed, and all 10 theorem declarations in `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` as direct/projection-style. | Make those five modules the first formal-depth workstream. The goal is not more theorem count; it is richer state, transitions, negative cases, and derived invariants. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
+| P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 54 chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 10 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes. | Replace weak exceptions where external baselines exist. Keep true author-system exceptions, but state why they are exceptions and what would count as a comparable external reference. |
 | P1 | Circle evidence is real but not public-replayable enough. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, but the ASI repo does not rerun the external checkout in CI and does not vendor a public replay pack. | Create a public-safe Circle replay fixture, receipt contract pack, or archived evidence bundle that CI can verify by replay or digest. |
@@ -96,6 +102,9 @@ not be quoted in the book as an external authority.
   before it.
 - The roadmap must be able to lose: claims can be demoted or refuted, chapters
   can be merged or cut, and reviewer/prior-art findings can redirect work.
+- The cold-read surface matters: readers should see what is validated, what is
+  only argued, and what is explicitly unproven before they meet the broadest
+  speculative architecture.
 
 ## What Is Settled From v1.0.0
 
@@ -123,19 +132,23 @@ Do not reopen these unless a validator fails or a new change touches them:
 The next serious run should not treat all milestones as equal. The keystone set
 is:
 
-1. surface the three bounded non-core evidence transitions without chapter-core
+1. make the honesty system legible in 60 seconds from README, landing page, and
+   Human view;
+2. surface the three bounded non-core evidence transitions without chapter-core
    promotion;
-2. solicit at least one external human review of the safety-critical and
+3. solicit at least one external human review of the safety-critical and
    support-state surfaces;
-3. deepen the five safety-critical Lean modules using anti-projection criteria;
-4. make one Project Theseus or Circle evidence lane public-safe and
+4. select three to five defended contribution tracks and push at most three in
+   the next cycle;
+5. deepen the five safety-critical Lean modules using anti-projection criteria;
+6. make one Project Theseus or Circle evidence lane public-safe and
    CI-reproducible or CI-verifiable by archived digest;
-5. execute only 5-8 per-chapter evidence lanes from
+7. execute only 5-8 per-chapter evidence lanes from
    `docs/per_chapter_evidence_plan.md`, selected for evidential payoff.
 
 Dependency order:
 
-- Milestone 1 and Milestone 1.5 can start immediately.
+- Milestone 0.5, Milestone 1, and Milestone 1.5 can start immediately.
 - Milestones 2, 3, and 4 should use the external-review result if it arrives
   before implementation begins.
 - Milestone 5 depends on the selection rules and should not start as a
@@ -160,6 +173,24 @@ internal activity alone.
 | Compression/representation | Mostly architecture and source synthesis; Circle receipt is structural, not model-quality evidence. | Add one narrow artifact-compression, representation-preservation, or proof-contract lane with negative controls before stronger claims. |
 | Human/AI dual-edition publishing | Unusual and promising scaffold with reviewed reader HTML; not yet a polished human book or audio edition. | Graduate selected reader chapters into curated prose and approve artifacts only through exact release records. |
 | External literature/novelty | Placement gate passes, but some exceptions and novelty questions remain. | Replace weak exceptions, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
+
+## Defended Contribution Tracks
+
+The book remains broad, but v1.x should be deep. Use
+`docs/a_plus_quality_scorecard.md` as the scorecard for selecting contribution
+tracks. The next cycle should choose at most three of these for deep work:
+
+| Track | Why it matters | A+ evidence bar |
+|---|---|---|
+| Living evidence book methodology | This is currently the strongest and most distinctive contribution. | External review, visible non-core evidence, release-gate record, validation instructions, and no-claim enforcement. |
+| Claim support states and evidence laundering prevention | This turns epistemic honesty into an engineering surface. | Appendix C linkage, non-core evidence ledger, demotion/refutation path, and prior-art comparison to model cards, datasheets, reproducibility checklists, and proof-carrying code where relevant. |
+| Governed self-improvement boundary | This is the most safety-critical architecture claim. | Safety-critical Lean depth, negative case, external safety review, and a public-safe Theseus architecture-gate trace or explicit blocker. |
+| Proof-carrying claims and proof-carrying AI contracts | This connects the book's evidence discipline to Circle and proof-carrying computation. | Public Circle replay or CI-verifiable receipt digest, malformed receipt negative controls, and clear separation between proof legality and model quality. |
+| Costed routing, residual accounting, and resource discipline | This is one of the few areas with an existing measured slice. | Extend the synthetic slice or record a public-safe trace with baseline, negative control, adequacy, cost, residuals, and no economic overclaim. |
+
+Do not pick a track because it sounds most ambitious. Pick it because the next
+evidence artifact is public-safe, externally positionable, and capable of
+failing.
 
 ## Milestone Plan
 
@@ -186,6 +217,38 @@ Acceptance bar:
 - working tree clean before starting a large pass;
 - no stale generated scaffold after `python3 scripts/sync_scaffold.py`;
 - no validator is silently bypassed or newly orphaned.
+
+### Milestone 0.5 - Sixty-Second Trust Surface
+
+Goal: make the project's strongest quality visible before a cold reader rounds
+the work down to overbroad self-sourced theory.
+
+Tasks:
+
+- Update the README, landing page, and live Human view entry path so a first-time
+  visitor can quickly see:
+  - all 54 chapter core claims remain `argument`;
+  - three bounded non-core evidence transitions exist and are narrow;
+  - Lean coverage is broad but still shallow in safety-critical areas;
+  - Project Theseus and Circle are related project lanes, not independent
+    third-party evidence unless imported through a public-safe replay gate;
+  - external review is requested, pending, or recorded;
+  - the project is a research program and living evidence system, not a
+    validated ASI implementation.
+- Add a short "What this is / what this is not / what is currently evidenced"
+  block to the public entry surfaces.
+- Link directly to Appendix C, the non-core evidence ledger once created,
+  proof-depth classification, release-gate audit, and v1.x roadmap.
+- Keep the tone sober: no hype, no grandiosity, no implication that the stack
+  already works as a deployed system.
+
+Acceptance bar:
+
+- a skeptical reader can identify the project status and non-claims from the
+  README or landing page without opening internal docs;
+- the entry surface names the strongest contribution as the living evidence
+  methodology, not generic ASI capability;
+- validation still passes and no support-state or artifact claim changes.
 
 ### Milestone 1 - Evidence Discoverability And Claim-State Clarity
 
@@ -533,8 +596,10 @@ explicitly passed or explicitly scoped out in a release record.
 | Gate | Required evidence | Release blocker if missing |
 |---|---|---|
 | Prior CI gate | Previous GitHub Pages run checked, local validation run, and no known failed prior run ignored. | Do not commit or tag until the prior failure is fixed or scoped. |
+| Sixty-second trust surface | README, landing page, or Human view entry path makes current evidence, non-claims, proof limits, self-sourcing boundaries, and external-review status legible quickly. | Cold readers cannot distinguish disciplined research program from overbroad theory. |
 | Non-core evidence visibility | Appendix C or sibling surface names the three current non-core transitions and keeps all 54 core claims at `argument` unless separately promoted. | Readers cannot tell what evidence exists. |
 | Early external review | At least one external review record exists, or a dated blocker records outreach and scope. | The release remains self-reviewed. |
+| Defended contribution focus | The release names three to five contribution tracks and at most three deep-work tracks for the cycle. | The project remains broad without defended results. |
 | Safety-critical Lean depth | Five targeted modules include `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases, or a release record explicitly keeps them projection-only. | Formal layer remains v1.0-depth. |
 | Public replay/import | At least one Theseus or Circle lane is CI-replayed or CI-verifiable by pinned digest with negative controls. | Imported evidence remains local-summary only. |
 | Chapter-lane cap | The release names 5-8 executed chapter lanes and leaves the rest planned; no 54-lane synthetic sweep is claimed. | Breadth trap not controlled. |
@@ -547,7 +612,7 @@ explicitly passed or explicitly scoped out in a release record.
 
 | Target | Position vs SOTA | Minimum bar |
 |---|---|---|
-| `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Non-core evidence ledger visible; early external review requested or recorded; per-chapter evidence plan split out with 5-8 lane cap; safety-critical proof specs include anti-projection and negative-case criteria. |
+| `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Sixty-second trust surface exists; non-core evidence ledger visible; early external review requested or recorded; defended contribution tracks selected; per-chapter evidence plan split out with 5-8 lane cap; safety-critical proof specs include anti-projection and negative-case criteria. |
 | `v1.2` | Moves formal layer from projection-heavy traceability toward lightweight state-specification practice for safety-critical modules. | Five safety-critical modules gain `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases; first public-safe Theseus or Circle lane is CI-replayed or CI-verifiable by digest. |
 | `v1.3` | Moves reader surface from generated projection toward a curated human manuscript while preserving live-book evidence authority. | Curated reader manuscript covers a coherent pilot arc or explicitly defers with blockers; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
 | `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; 5-8 selected chapter lanes have executed evidence or explicit no-promotion decisions; core claims promote only where evidence-transition records justify it. |
@@ -557,7 +622,7 @@ explicitly passed or explicitly scoped out in a release record.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, replace weak external-SOTA exceptions where source-noted literature exists, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
+> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, replace weak external-SOTA exceptions where source-noted literature exists, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
 
 ## Non-Claims
 

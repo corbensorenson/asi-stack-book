@@ -75,6 +75,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/v1_0_focus_audit.md](docs/v1_0_focus_audit.md) | Detailed current-state audit and prioritized work plan for moving from v1.0 candidate toward evidence-release and reader-release quality. |
 | [docs/v1_0_roadmap.md](docs/v1_0_roadmap.md) | Execution roadmap and recommended next long-running goal for v1.0 voice, reader, evidence, proof, test, source, site, and release work. |
 | [docs/v1_x_beyond_sota_roadmap.md](docs/v1_x_beyond_sota_roadmap.md) | Post-v1.0.0 roadmap for deeper Lean proofs, Project Theseus/Circle replay evidence, per-chapter evidence lanes, curated reader prose, and human artifact release quality. |
+| [docs/a_plus_quality_scorecard.md](docs/a_plus_quality_scorecard.md) | Planning scorecard for moving every project dimension toward A+ quality, including cold-read legibility and defended contribution tracks. |
 | [docs/per_chapter_evidence_plan.md](docs/per_chapter_evidence_plan.md) | 54-chapter evidence-lane backlog used as a menu for selecting 5-8 high-payoff v1.x lanes, not as a breadth-sweep checklist. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |

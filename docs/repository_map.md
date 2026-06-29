@@ -14,6 +14,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/v1_0_focus_audit.md` | Detailed current-state audit and prioritized focus plan for evidence-release, reader-release, proof adequacy, testing, source, and site work. | tracked |
 | `docs/v1_0_roadmap.md` | Roadmap and recommended next long-running goal for v1.0 completion work, reconciling current audit findings with external review input. | tracked |
 | `docs/v1_x_beyond_sota_roadmap.md` | Post-v1.0.0 roadmap for v1.x evidence depth, safety-critical Lean upgrades, public-safe Project Theseus/Circle replay lanes, per-chapter evidence targets, curated reader prose, and human artifact quality. | tracked |
+| `docs/a_plus_quality_scorecard.md` | Planning scorecard translating current project grade gaps into A+ conditions for cold-read legibility, evidence depth, proof rigor, external grounding, reader quality, and defended contribution tracks. | tracked |
 | `docs/per_chapter_evidence_plan.md` | 54-chapter evidence-lane backlog for selecting a small high-payoff v1.x execution set without triggering another shallow breadth sweep. | tracked |
 | `docs/reader_manuscript_review.md` | Phase 2 baseline for the generated reader manuscript, including generated-reader metrics, spot-review notes, residuals, and non-claims. | tracked |
 | `docs/reader_overlay_pilot.md` | First active Phase 2 semantic reader-overlay pilot for opening-chapter Human-view and generated-reader prose. | tracked |
