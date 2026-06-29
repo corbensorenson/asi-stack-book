@@ -7,7 +7,7 @@ the detailed roadmap from becoming the only place where completed work,
 remaining blockers, and release-classification boundaries are visible.
 
 The current state is not a final v1.0 evidence release. The current state is a
-strong v1.0 candidate with a reviewed local reader HTML artifact, complete
+strong v1.0 candidate with a release-gate audit, reviewed local reader HTML artifact, complete
 chapter-core no-promotion coverage, two bounded synthetic-test-backed
 measured/replayed transitions outside chapter core claims, proof-depth honesty,
 protocol crosswalks, external-SOTA placement, architecture desk red-team
@@ -40,9 +40,9 @@ coverage, and candidate reproducibility metadata.
 - Accepted upward transitions: `living-book-methodology.phase5_harness_registry_runner`
   and `resource-economics.costed_route_budget_slice`, both bounded and outside
   chapter core claims.
-- Final metadata state: final v1.0 tag, DOI/Zenodo archive, and final release
-  citation metadata are still pending until they exist.
-- The final v1.0 tag, DOI/Zenodo archive, and final release citation metadata are still pending.
+- Final metadata state: final v1.0 tag, DOI/Zenodo archive, and final release citation metadata are still pending until they exist.
+- Release-gate audit: `docs/v1_0_release_gate_audit.md` records all eleven
+  Definition-of-Done gates and preserves the candidate-versus-final boundary.
 
 ## Next Work Queue
 

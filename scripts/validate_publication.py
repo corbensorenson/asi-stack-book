@@ -19,6 +19,7 @@ REQUIRED_FILES = [
     "docs/release_reproducibility.md",
     "docs/public_site_accessibility_review.md",
     "docs/v1_progress_ledger.md",
+    "docs/v1_0_release_gate_audit.md",
     "docs/external_sota_positioning_audit.md",
     "docs/book_outline.md",
     "editions/release_profiles.json",
@@ -57,6 +58,7 @@ REQUIRED_FILES = [
     "scripts/validate_release_profiles.py",
     "scripts/validate_release_reproducibility.py",
     "scripts/validate_public_site_accessibility.py",
+    "scripts/validate_v1_release_gate_audit.py",
     "scripts/validate_external_sota_positioning.py",
     "assets/reading-mode.html",
     ".github/pull_request_template.md",
@@ -100,6 +102,7 @@ REQUIRED_README_STRINGS = [
     "scripts/validate_publication.py",
     "scripts/validate_release_reproducibility.py",
     "scripts/validate_public_site_accessibility.py",
+    "scripts/validate_v1_release_gate_audit.py",
     "scripts/validate_external_sota_positioning.py",
     "Do not report a theorem as proven unless",
 ]

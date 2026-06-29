@@ -22,6 +22,7 @@ python3 scripts/validate_publication.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_release_profiles.py
 python3 scripts/validate_public_site_accessibility.py
+python3 scripts/validate_v1_release_gate_audit.py
 python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
 python3 scripts/sync_reader_overlay_asset.py --check
@@ -190,16 +191,29 @@ Output should be either canonical prose edits or tracked reader overlay operatio
 
 The current automated audit identifies 0 high-priority and 3 medium-priority heuristic rows after the table-to-prose and medium-density overlay pass. `docs/reader_continuity_review.md` records a first manual review of those rows: the two proof-heavy chapters are no-action for now with companion-note/glossary candidates, and the long Artifact Steward chapter is retained with future curated-reader compression as a possible release-editing task. The full-review passes through `docs/reader_part_iv_completion_full_review_pass.md` move all 54 chapters to reviewed generated-reader chapter-text status. `docs/reader_companion_note_routing_review.md` and `editions/reader_manuscript/v1_0/companion_note_routing.json` now route the three companion-note candidates for reader, e-reader, and audio treatment while preserving meaning-critical boundaries in the reader spine. The matrix itself is not a release review and should not be treated as release approval.
 
-### 2. Evidence Transition Pilot
+### 2. Next Evidence Transition
 
-Do not attempt to promote all 54 core claims at once. Pick a small pilot set where the support boundary is narrow and the source basis is strongest.
+Do not attempt to promote all 54 core claims at once. The initial v1.0
+claim-state pass is complete: every chapter core claim now has either an
+accepted no-change transition or an explicit no-promotion decision, and the
+first two upward transitions are bounded to repository infrastructure and a
+synthetic costed-route/resource-budget selector slice. The next evidence move
+should be a prototype, empirical, replayed, or imported-trace slice with a
+public-safe command, input, output, baseline or negative control, residuals,
+and non-claims.
 
-Good first candidates:
+Good next candidates:
 
-- `evidence-states-and-claim-discipline`: the claim discipline is about the repository's own method and has strong internal artifacts.
-- `living-book-methodology`: the repository itself demonstrates manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases, but the claim must stay scoped to this project.
-- `executable-specifications-and-lean-proof-envelope`: proof traceability is strong, while semantic proof adequacy still blocks broad promotion.
-- `source appendices and implementation horizons`: these are generated public surfaces and can support narrow claims about book mechanics, not AI behavior.
+- Theseus/Circle transfer receipts where the source artifact can be inspected,
+  built, replayed, or linked without smuggling private artifacts into the
+  public repo.
+- A real route-quality/resource-budget trace that compares at least one
+  adequate route, one negative control, and one overkill baseline while keeping
+  economic and model-quality non-claims explicit.
+- Context-admission, compression, planner/runtime, or benchmark-governance
+  traces that can run from tracked fixtures or public-safe inputs.
+- Narrow repository-method claims only when the claim text is explicitly about
+  this book's own validation, release, source, proof, or evidence machinery.
 
 For each pilot claim, record:
 
@@ -247,11 +261,15 @@ The set is registered in `experiments/phase5_harness_registry.json`, documented 
 
 Each future harness should write public-safe results under a tracked result or report location only after it actually runs. If a test is negative, failed, or inconclusive, keep that result visible. The current harnesses remain synthetic record gates, synthetic cross-record gates, deterministic accounting gates, claim-ledger revision fixtures, proof-carrying claim fixtures, tribunal-review fixtures, value-conflict fixtures, constitutional-predicate fixtures, governance-right fixtures, agency-right fixtures, stable-capability-field fixtures, replacement-transaction fixtures, self-improvement transition fixtures, and toy capacity traces only; they do not prove source interpretation, open-domain claim extraction, theorem validity, semantic equivalence, citation accuracy, verifier quality, belief-engine correctness, reviewer independence, adversarial-review quality, verdict correctness, moral correctness, value-conflict classification quality, human-review quality, institutional governance, legal rights, runtime right enforcement, routing accuracy, deployed authorization, planner quality, adapter runtime safety, memory correctness, benchmark quality, generation speed, model quality, budget scheduling, real load stability, economic outcomes, policy-training quality, steward-agent behavior, runtime safety, route validity, capability identity, evaluator integrity, authority enforcement, replacement safety, deployed self-improvement behavior, recursive self-improvement safety, rollback execution, regression quality, or support-state promotion.
 
-### 4. Proof Adequacy Review
+### 4. Proof Adequacy Follow-Through
 
 The Lean workspace is valuable because it makes local invariants executable and checkable. The risk is that a finite-record predicate can look stronger than it is.
 
-The next proof work should classify each proof target:
+The first semantic proof adequacy review is now recorded in
+`docs/proof_adequacy_review.md`, and the proof-depth classifier records the
+projection-vs-derived split in `docs/proof_depth_classification.md`. The next
+proof work should follow those classifications rather than reclassify from
+scratch:
 
 - Adequate finite-record invariant for the chapter's current claim boundary.
 - Useful but too narrow to affect support state.
@@ -259,11 +277,18 @@ The next proof work should classify each proof target:
 - Needs executable test or schema before Lean is meaningful.
 - Should stay as research agenda rather than Lean.
 
-The current `proofs/proof_triage.json` routes all 112 targets as `formal-invariant` and `lean-candidate`. That is coherent for the current proof envelope, but a mature v1.0 evidence release should be more discriminating. The first follow-through increments show the intended pattern: strengthen one finite-record cluster, update the public adequacy boundary, then record a no-promotion decision unless the stronger predicate actually supports a narrowed claim.
+`proofs/proof_triage.json` still records routing into Lean, not semantic
+adequacy of the resulting formalization. Future proof work should strengthen
+one finite-record cluster at a time, update the public adequacy boundary, and
+record a no-promotion decision unless the stronger predicate actually supports
+a narrowed claim.
 
-### 5. External Literature Backfill
+### 5. External Literature Deepening
 
-The external-source appendix already covers important fast-generation, policy-optimization, personal-compute-hive, and artifact-steward context. It does not yet cover all areas where a serious public technical book will be judged against outside literature.
+The v1.0 external-SOTA placement gate is closed for the current chapter set:
+44 chapters have in-prose external positioning and 10 have explicit exceptions.
+The next work is deeper synthesis and exception replacement where the book
+relies on outside comparison, not another broad scaffold pass.
 
 Prioritize these queues:
 
@@ -343,29 +368,52 @@ The browser validator is necessary but not sufficient. It catches broken mechani
 
 The best next sequence is:
 
-1. Reader manuscript review and overlay/canonical prose corrections.
-2. Evidence transition pilot on a small set of narrow repository-method claims.
-3. First executable test harnesses for claim-ledger revision, proof-carrying claims, tribunal review, value conflicts, governance rights, support transitions, authority, planning, runtime adapters, context adequacy, readiness gates, and benchmark ratchets.
-4. Proof adequacy review across all 112 Lean targets.
-5. External literature backfill for alignment/governance/planning/memory/formal-methods/routing/compression/benchmark areas.
-6. Manual reader release dry-run inspection of the actual local HTML/EPUB/DOCX/PDF snapshots, including EPUB e-reader behavior and source-appendix card behavior in EPUB, DOCX, and PDF.
-7. Visual and public-site quality review.
-8. Audio script review and eventual audio artifact generation only after the reviewed reader release exists.
+1. Keep the v1.0 release-gate audit, progress ledger, validators, render, Lean
+   build, and browser checks green while the final tag/release facts remain
+   pending.
+2. Pursue one prototype, empirical, replayed, or imported-trace evidence slice
+   that can strengthen a narrow claim without touching chapter core claims by
+   implication.
+3. Continue reader artifact review only where the artifact will receive an
+   exact release record: EPUB e-reader inspection, DOCX application review, PDF
+   page-by-page layout review, and audio script review remain separate lanes.
+4. Use the proof adequacy and proof-depth reports to pick targeted Lean
+   upgrades, especially where richer state-machine or review semantics would
+   reduce residual risk.
+5. Deepen external literature synthesis or replace recorded exceptions only
+   when a chapter claim, external baseline, or release classification depends
+   on it.
+6. Continue manual public-site quality work through ledgered keyboard,
+   screen-reader, contrast, and e-reader/readability passes.
+7. Defer audiobook production and standalone preprints until the reviewed reader
+   release and final v1.0 release record exist.
 
 ## Current Blocking Conditions
 
-The project is not blocked from further writing or improvement. It is blocked from calling itself a v1.0 evidence release until these conditions are handled:
+The project is not blocked from further writing or improvement. It is blocked from calling itself a final v1.0 evidence release until these conditions are handled:
 
-- Accepted evidence transitions exist for any claim moved above `argument`.
-- Semantic proof adequacy review is recorded.
-- At least the intended first wave of chapter-level tests is implemented, run, and recorded, or explicitly deferred.
-- External literature queues are normalized where the book relies on outside comparison.
-- Reader manuscript review is recorded before reader artifacts are called published.
-- Actual format renders, artifact review, and release records exist before EPUB, PDF, DOCX, or other artifacts are claimed as release artifacts.
-- Audio script review, generated audio, spot checks, and release records exist before any audiobook or audio-embedded EPUB is claimed.
+- The exact final v1.0 source commit is known, the full local gate passes on
+  that commit, and the GitHub Pages run for that commit succeeds.
+- A final release record names the commit, release classification, local
+  validation commands, Pages run, DOI/Zenodo state, reader artifact state,
+  residuals, and non-claims.
+- `CITATION.cff` and `docs/release_reproducibility.md` move from candidate
+  metadata to final metadata only after the tag, release record, and archive
+  facts actually exist.
+- Any claim moved above `argument` has an accepted evidence-transition record.
+  All chapter core claims currently remain at `argument`.
+- EPUB, DOCX, PDF, e-reader, audio, and audio-embedded EPUB remain unapproved
+  unless their own exact artifact review and release records exist.
+- Manual keyboard-only review, screen-reader review, measured contrast audit,
+  and e-reader/readability review remain quality residuals unless recorded in
+  the relevant public ledger.
 
 ## Bottom Line
 
-The repo is no longer in scaffold-building mode. It is in evidence-release and reader-quality mode.
+The repo is no longer in scaffold-building mode. It is in release-gate,
+evidence-depth, and reader-quality mode.
 
-The highest-value work is to review the generated human manuscript, run a narrow evidence-transition pilot, implement the first real tests, review the semantic adequacy of the Lean proofs, and backfill third-party literature where outside grounding matters. That work will improve the book more than adding raw volume.
+The highest-value work is to keep the explicit v1.0 gates green, pursue one
+stronger prototype or empirical evidence slice, preserve final-release metadata
+until facts exist, and review only the reader/site artifacts that will be
+recorded exactly. That work will improve the book more than adding raw volume.

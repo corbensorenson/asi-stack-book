@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - v1.0 release gate audit
+
+- Added `docs/v1_0_release_gate_audit.md` to record all eleven v1.0
+  Definition-of-Done gates, current evidence refs, residuals, final-release
+  blockers, and candidate-versus-final-release boundaries.
+- Added `scripts/validate_v1_release_gate_audit.py` to check the audit's gate
+  coverage, evidence refs, validator refs, reader HTML release-record boundary,
+  support-state non-promotion boundary, and unsupported-finality claims.
+- Wired the release-gate audit into `scripts/validate_book.py`,
+  `scripts/validate_publication.py`, `scripts/validate_v1_status_snapshot.py`,
+  `docs/v1_0_candidate_status.md`, `docs/publication_readiness.md`,
+  `docs/v1_0_roadmap.md`, `docs/v1_0_focus_audit.md`,
+  `docs/v1_progress_ledger.md`, `docs/repository_map.md`,
+  `docs/site_quality_standard.md`, and the README.
+- This records a candidate release-control audit only. It does not create a
+  final v1.0 tag, final release record, DOI, Zenodo archive, GitHub release,
+  EPUB/DOCX/PDF/e-reader/audio approval, or chapter-core support-state
+  promotion.
+
 ## 2026-06-29 - Public site accessibility readiness ledger
 
 - Added `docs/public_site_accessibility_review.md` to record the live site's
