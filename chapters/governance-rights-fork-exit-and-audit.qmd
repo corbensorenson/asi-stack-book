@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Six of seven claim-source mappings now have reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped until a durable local export or line-addressable connector capture is available."
-  - "The governance_right_record fixture validates schema/example consistency only; audit availability, exit-path preservation, and fork-right safety tests remain unimplemented."
+  - "The governance_right_record fixture validates schema/example consistency, and the synthetic governance rights harness now checks audit material and receipts, redaction appeal paths, usable exit/fork access paths, fork safety constraints, preservation obligations, durable record paths, and non-claim boundaries; institutional governance rights, legal rights, runtime enforcement, real fork/exit usability, reviewer independence, and source interpretation remain open."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `coherence_exchange`; supporting: `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: `ethica_mechanica`, `coherence_exchange`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution`; passage-reviewed local raw cache: `ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`; passage-reviewed tracked local-project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
-| Test state | `governance_right_record.valid.json` passes protocol fixture validation; `AsiStackProofs.GovernanceRights` implements finite audit/exit preservation and protected-right removal gates; audit-record availability, exit-path preservation, and fork-right safety tests remain planned. |
+| Test state | `governance_right_record.valid.json` passes protocol fixture validation; `AsiStackProofs.GovernanceRights` implements finite audit/exit preservation and protected-right removal gates; `python3 scripts/validate_governance_rights.py` passes synthetic governance-right fixtures for audit availability, appeal paths, exit/fork access, fork-safety, preservation, and durable-record boundaries without proving legal rights or deployed governance enforcement. |
 
 ## Drafting guardrail
 

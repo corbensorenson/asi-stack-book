@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Claim-level source mappings now exist for all assigned sources, and five of six mappings carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped, and support remains at argument until tests or runtime artifacts justify promotion."
-  - "The value_conflict_record fixture validates schema/example consistency only, including decision_state, authority_effect, and dissent_payload fields; value-conflict classification, decision-state routing, review escalation, dissent preservation, and residual-uncertainty tests remain unimplemented."
+  - "The value_conflict_record fixture validates schema/example consistency, and the synthetic value conflict harness now checks multi-axis classification, stakeholder and evidence requirements, high-stakes review routing, residual uncertainty preservation, authority narrowing, dissent payloads, bounded-decision revisit conditions, and non-claim boundaries; moral correctness, classification quality, human-review quality, tribunal quality, source interpretation, and runtime policy behavior remain open."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `alignment_field`; supporting: `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `ethica_mechanica`, `alignment_field`, `uat`, `spinoza`; passage-reviewed tracked local project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
-| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates; value-conflict classification, decision-state routing, review escalation, dissent preservation, and residual-uncertainty preservation tests remain planned. |
+| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates; `python3 scripts/validate_value_conflicts.py` passes synthetic value-conflict fixtures for classification, review escalation, residual uncertainty, authority narrowing, dissent, and bounded-decision boundaries without proving moral correctness or deployed runtime policy behavior. |
 
 ## Drafting guardrail
 

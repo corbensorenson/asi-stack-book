@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Claim-level source mappings now exist for all assigned sources, and five of six mappings carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped, and support remains at argument until tests or runtime artifacts justify promotion."
-  - "The agency_rights_checklist fixture validates schema/example consistency only, including material_usability, timing_requirement, and denial_or_degradation_reason fields; agency-preservation, materially usable rights, timing-before-effect, corrigibility-pathway, and high-impact approval scenarios remain unimplemented."
+  - "The agency_rights_checklist fixture validates schema/example consistency, and the synthetic agency rights harness now checks affected parties, bounded delegation, material usability, timing-before-effect review, review and appeal channels, corrigibility paths, high-impact approval, residual dependency risk, degradation reasons, accountable principals, and non-claim boundaries; deployed agency preservation, dignity preservation, consent quality, manipulation resistance, approval-service quality, reviewer independence, source interpretation, and runtime policy behavior remain open."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `alignment_field`, `ethica_mechanica`; supporting: `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`; passage-reviewed tracked local project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
-| Test state | `agency_rights_checklist.valid.json` passes protocol fixture validation; `AsiStackProofs.Corrigibility` implements finite agency-right preservation and correction-pathway rejection gates; agency-preservation, materially usable rights, timing-before-effect, corrigibility-pathway, and high-impact approval tests remain planned. |
+| Test state | `agency_rights_checklist.valid.json` passes protocol fixture validation; `AsiStackProofs.Corrigibility` implements finite agency-right preservation and correction-pathway rejection gates; `python3 scripts/validate_agency_rights.py` passes synthetic agency-right fixtures for affected-party, delegation, material-usability, timing, review/appeal, corrigibility, high-impact approval, residual-risk, degradation-reason, and accountability boundaries without proving deployed agency preservation, dignity preservation, consent quality, or runtime policy behavior. |
 
 ## Drafting guardrail
 

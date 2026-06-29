@@ -66,8 +66,8 @@ The checks passed in the audit run. The source-readiness command rewrote no trac
 | Manifest chapters | 54 | Coverage is broad enough that new chapters should be added only when a source or idea owns a genuinely new boundary. |
 | Manifest claim contract | 54 explicit `claim_label` fields and 54 explicit `evidence_level` fields | Chapter records no longer rely on scaffold defaults for claim classification or support state; `validate_book.py` rejects missing or invalid values. |
 | Appendices | 11 | Source, claim, schema, test, proof, release, lineage, and implementation-horizon surfaces exist. |
-| Chapter body words | 185,327 | The book is already full-length; the main risk is not shortness. |
-| Raw chapter-file words | 192,979 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
+| Chapter body words | 185,385 | The book is already full-length; the main risk is not shortness. |
+| Raw chapter-file words | 193,137 | Live scaffolding adds useful AI/research overhead beyond the reader spine. |
 | Source records | 160 | The corpus is substantial, with 59 Corben/local records and 101 external records by current appendices. |
 | Assigned source/chapter pairs | 461 | Chapter-source coverage is dense and traceable. |
 | Exact claim-source mappings | 461 | Every assigned pair is mapped at the claim-source layer. |
