@@ -72,6 +72,8 @@ Summaries can look authoritative while dropping source bindings, omissions, auth
 
 Summarization is not neutral. It can compress away dissent, uncertainty, chronology, exact wording, revocation state, or the fact that a source was only usable under a narrow authority label. Verification Bandwidth adds the reason this matters: a compact summary can make generation easier while making joint verification harder because the lost constraints are no longer available.
 
+External retrieval and memory baselines show why a certificate layer is needed. RAG (`ext_rag_2020`) makes retrieval explicit, MemGPT (`ext_memgpt_2023`) treats memory as a managed tiered resource, Self-RAG (`ext_self_rag_2023`) records retrieval/reflection decisions, LongBench (`ext_longbench_2023`) tests long-context tasks, and Lost in the Middle (`ext_lost_in_middle_2023`) warns that placement affects use. Semantic pages and certificates add source binding, loss accounting, authority labels, and allowed-use states around those functions without claiming that the certificate scheme has been benchmarked.
+
 The fix is not to ban summaries. It is to make representation loss visible. A summary can be useful for planning, unsafe for citation, inadequate for proof, and forbidden for execution all at the same time.
 
 A second insufficiency is role drift. A cell created as a planning summary can later be treated as evidence because it sounds precise. A cell created for evidence can later be sent to a worker who lacks clearance. Certificates should keep allowed use attached to the representation, not to the surrounding prose.

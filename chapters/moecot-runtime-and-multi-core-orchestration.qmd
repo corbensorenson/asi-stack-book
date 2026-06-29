@@ -72,6 +72,8 @@ Public evidence is the runtime boundary for MoECOT. MoECOT can help the book rea
 
 A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts. A named implementation can fail in the opposite direction: branding can stand in for evidence, source-reported benchmarks can be mistaken for reproduced tests, and runtime mechanisms can drift away from the architectural invariants they were meant to instantiate.
 
+The external runtime comparison is routing and orchestration, not a reproduced MoECOT benchmark. GOAP/F.E.A.R. (`ext_three_states_plan_fear_2006`) shows practical autonomous action planning, while sparse MoE and routing sources such as `ext_sparse_moe_2017`, `ext_gshard_2020`, `ext_switch_transformer_2021`, `ext_expert_choice_routing_2022`, `ext_mixtral_2024`, `ext_moe_llm_survey_2024`, `ext_frugalgpt_2023`, and `ext_routellm_2024` show conditional computation and cost-quality routing baselines. MoECOT is treated as a record crosswalk over those ideas, not as evidence that a local runtime has matched them.
+
 The MoECOT lane holds the middle position. MoECOT should be mapped to the stack as a crosswalk of runtime records and open evidence gaps. It should not be used as a shortcut around claim discipline.
 
 The missing abstraction is a cold-start-to-handoff trace. A runtime claim should be able to show how a command entered, how the orchestrator decomposed it, how routes were selected, which specialists ran, which gates fired, which ledgers changed, which replay handles exist, and where control passed next.

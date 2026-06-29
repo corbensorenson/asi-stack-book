@@ -83,6 +83,8 @@ The key insufficiency is assumption laundering. An assumption starts as a helpfu
 
 Intent must therefore become a formal input rather than a conversational preface. Later layers should not have to infer whether a goal was real, whether a method was allowed, or whether a missing constraint was intentionally omitted. They should receive a record that can be challenged, narrowed, cited, and revised before work becomes difficult to unwind.
 
+External baseline exception: the current source queue for human intent is Corben/local architecture material about turning request, authority, and acceptance conditions into formal inputs. No source-noted external requirements-engineering, preference-learning, or human-computer-interaction baseline has been assigned here yet, so the v1.0 candidate records the gap instead of citing from memory.
+
 ## Core Claim
 
 [human-intent-as-a-formal-input.core, label: Design rationale, support: argument] Human intent should enter the stack as a structured contract with goals, constraints, authority, artifacts, evidence requirements, and stop conditions.

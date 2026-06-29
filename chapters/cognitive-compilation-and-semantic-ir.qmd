@@ -71,6 +71,8 @@ Generate-from-prompt workflows entangle requirements and implementation, drift o
 
 The `cognitive_compilation` source identifies the recurring failure pattern: requirement and implementation entangle, independent work is serialized, expensive models are overused, and repairs become global regeneration. PlanForge contributes the scheduling side of the answer; GenesisCode contributes the evidence/provenance side; TreeLLM contributes the representation-side intuition that the model should navigate explicit structure rather than memorize everything internally.
 
+External baselines sharpen the compiler analogy. PDDL (`ext_pddl_1998`) and SHOP2 (`ext_shop2_2003`) show why action models and decomposition methods deserve explicit intermediate forms, Tree of Thoughts (`ext_tree_of_thoughts_2023`) treats reasoning paths as inspectable candidates, and DreamCoder (`ext_dreamcoder_2020`) shows library learning as compression through reusable abstractions. Semantic IR borrows the pressure toward explicit intermediate artifacts, not any reproduced program-synthesis or planner result.
+
 A prompt can still be the input surface. It should not be the internal build artifact.
 
 The recurring insufficiency is not that prompting is weak; it is that prompting lacks stable intermediate obligations. Once the conversation moves on, the system can no longer tell whether a later artifact preserved a requirement, intentionally revised it, or simply forgot it.

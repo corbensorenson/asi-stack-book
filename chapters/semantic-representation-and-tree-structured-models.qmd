@@ -77,6 +77,8 @@ Semantic representation therefore functions as a governed cache of meaning, not 
 
 Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths. Yet hand-built ontologies and semantic graphs do not automatically solve grounding either. They can make a system look explainable while encoding the same uncertainties in a different form.
 
+Representation-compression baselines clarify the burden. Information Bottleneck (`ext_information_bottleneck_2000`) frames relevance-preserving compression, and LoRA (`ext_lora_2021`) shows how low-rank structure can adapt large models without exposing the full reasoning object. Semantic trees and typed atoms aim at a different interface: make representation useful for routing, verification, repair, and claim support while preserving loss boundaries. Those external sources do not validate the local semantic representation scheme.
+
 Verification Bandwidth adds a second pressure: a representation must be adequate for the checks it is asked to support. A short semantic token may help routing or retrieval, but it can also lose the constraints needed for verification. Cognitive Compilation adds the operational view: semantic atoms and IR are useful only when typed, validated, and repairable.
 
 Hierarchy alone cannot carry that burden. A parent-child relation can support navigation while still failing grounding. A graph traversal can explain a route while still omitting a decisive source constraint. A semantic token can be compact while still too lossy for adjudication. The architecture must test the represented use, not admire the representation.

@@ -73,6 +73,8 @@ Uniformly applying the strongest model to every task wastes compute and can obsc
 
 Uniform routing hides structure. Some nodes are clerical, some require domain expertise, some require external tools, some require human approval, and some require adversarial review. Sending everything to the largest model wastes resources and can make the system less inspectable because no one knows which step was actually hard.
 
+Classical and agentic planning baselines make the missing structure visible. PDDL (`ext_pddl_1998`) and SHOP2 (`ext_shop2_2003`) distinguish domain models, tasks, and decomposition methods; TAMP (`ext_integrated_tamp_2020`) names the handoff between symbolic planning and continuous feasibility; behavior trees (`ext_behavior_trees_robotics_ai_2017`) and GOAP/F.E.A.R. (`ext_three_states_plan_fear_2006`) show modular/reactive task control; Tree of Thoughts (`ext_tree_of_thoughts_2023`) exposes search over intermediate reasoning paths. PlanForge DAGs add costed route selection, authority, and verification edges around those ideas without claiming a planner benchmark.
+
 The opposite failure is under-routing: a weak worker handles a node whose quality predicate demands stronger reasoning, broader context, or independent verification. TokenMana adds the resource-governance frame: budgets are not just token counts; they include latency, review capacity, burst limits, and human cognitive cost.
 
 Serial chat orchestration also hides merge risk. Independent branches can produce artifacts that appear compatible but disagree on assumptions, source versions, authority ceilings, or acceptance criteria. A DAG should make merge predicates explicit before parallelism becomes a source of incoherence.

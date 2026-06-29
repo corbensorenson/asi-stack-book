@@ -73,6 +73,8 @@ Prompt prose often hides objectives, constraints, output contracts, and failure 
 
 Free-form prompts are useful for exploration, but they are weak as operational boundaries. They mix discovery, design, implementation, verification, and recovery into one text blob. They also invite hidden instruction conflicts: a context fragment can smuggle a command that overrides the actual contract unless explicit fields dominate implicit prose.
 
+Specification-oriented systems such as Dafny, represented here by `ext_dafny_2010`, show a mature external baseline for making preconditions, postconditions, invariants, and verifier obligations explicit. Command contracts borrow that discipline at the human/AI interface: the command should expose goals, constraints, evidence requirements, failure behavior, and authority limits before lowering into planning. That comparison does not claim functional correctness or SMT-backed verification for ordinary natural-language commands.
+
 GenesisCode adds a useful analogy from software: privileged effects and control responses need recognizable protocol shapes. In the ASI Stack, a command must expose output and verification requirements before it can be lowered into planning or execution.
 
 Unstructured prompts also make error recovery harder. If a result fails, the system cannot tell whether the failure came from a bad objective, missing context, invalid procedure, unsupported tool, weak verification, or ambiguous output contract. A semantic interface makes failures addressable instead of merely disappointing.

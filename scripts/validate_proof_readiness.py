@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "proofs" / "proof_manifest.json"
 TRIAGE = ROOT / "proofs" / "proof_triage.json"
 ROOT_LEAN_MODULE = ROOT / "lean" / "AsiStackProofs.lean"
+PROOF_DEPTH_REPORT = ROOT / "docs" / "proof_depth_classification.md"
 
 ALLOWED_TRIAGE = {
     "formal-invariant",
@@ -142,13 +143,23 @@ def main() -> None:
         if module not in referenced_modules:
             errors.append(f"Lean module {module} is not referenced by any proof target")
 
+    if not PROOF_DEPTH_REPORT.exists():
+        errors.append("Proof-depth classification report is missing; run scripts/validate_proof_depth.py --write")
+    else:
+        depth_text = PROOF_DEPTH_REPORT.read_text(encoding="utf-8", errors="ignore")
+        if "projection-only traceability" not in depth_text:
+            errors.append("Proof-depth classification report does not expose projection-only traceability classification.")
+
     if errors:
         print("Proof-readiness validation failed:")
         for error in errors:
             print(f" - {error}")
         sys.exit(1)
 
-    print(f"Proof-readiness validation passed: {len(records)} targets triaged.")
+    print(
+        f"Proof-readiness validation passed: {len(records)} targets triaged; "
+        "proof-depth classification report present."
+    )
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # v1.0 Roadmap
 
-Last updated: 2026-06-28
+Last updated: 2026-06-29
 
 This roadmap is the execution surface for moving **The ASI Stack** from the current v1.0 candidate state toward a reviewed v1.0 evidence release and human-reader release path.
 
@@ -15,7 +15,9 @@ This roadmap reconciles:
 - the current repository state during the 2026-06-28 extended v1.0 improvement run;
 - `docs/v1_0_focus_audit.md`;
 - the external Claude review supplied by Corben as planning input;
-- local verification of Claude's concrete claims against the current tree.
+- the 2026-06-29 Claude depth review supplied by Corben as planning input;
+- the 2026-06-29 Claude roadmap review supplied by Corben as planning input;
+- local verification of Claude's concrete claims against the current tree, including validator coverage, proof-depth classifier output, external-SOTA citation placement, reader artifact blockers, schema/Lean field-shape drift, release-gate gaps, citation metadata, render-toolchain pinning, and Theseus/Circle evidence-import lanes.
 
 Claude's review is useful as an editorial and hygiene review, not as source evidence. It should not be quoted as an external authority in the book.
 
@@ -28,6 +30,14 @@ Claude's review is useful as an editorial and hygiene review, not as source evid
 | Repeated `keeps ... honest` construction | 0 after Phase 1 pass; 9 before pass by regex | Phase 1 replaced the reusable cadence with mechanism-specific prose and added a guard. |
 | Reader/ebook should not inherit all live-book uniformity | Structurally true by design | Phase 2. Review generated reader edition, then graduate toward a curated parallel reader manuscript when prose divergence becomes too large for overlays. |
 | Manifest claim/support defaults should not hide source-of-truth state | Resolved for the current chapter set: all 54 chapter records now declare explicit `claim_label` and `evidence_level` fields, and `schemas/book_structure.schema.json` records the whole-file manifest shape | Phase 0 guardrail. `scripts/add_chapter.py` creates explicit fields for new chapters, and `scripts/validate_book.py` validates `book_structure.json` against the schema before semantic source/proof checks. |
+| Projection-style Lean proofs can look stronger than they are | Substantiated and now measured by `docs/proof_depth_classification.md`: 139 theorem declarations classified, 112 direct/projection-style, 27 derived/decomposed, 0 unknown or mixed, all 10 theorem declarations in `SelfImprovement`, `Alignment`, `Corrigibility`, `GovernanceRights`, and `ValueConflict` are direct/projection-style, and 5 of 5 safety-critical chapter limitation sections now explicitly classify those hooks as projection-only traceability | Phase 4 formal-depth hardening implemented for v1 honesty. Stronger safety-critical Lean models remain desirable, but the current v1 route is explicit projection-only traceability with no broad safety-proof claim. |
+| CI validator coverage can drift because coverage is transitive and hand-maintained | Initially substantiated. The workflow directly names part of the `scripts/validate_*.py` set, and `scripts/validate_book.py` names the rest, so the harnesses were CI-covered transitively but without a drift guard. `scripts/validate_validator_coverage.py` now checks direct workflow coverage, `validate_book.py` transitive coverage, required validators, and all registered Phase 5 harness scripts against a tracked allow-list; `scripts/run_phase5_harnesses.py` now executes the registered harness suite from the registry | Phase 0 hardening implemented for validator coverage, and Phase 5 registry execution implemented for the synthetic harness set. The first bounded registry-runner transition is now recorded; the remaining evidence blocker is non-infrastructure measured or replayed evidence, not harness wiring. |
+| External SOTA engagement is uneven in chapter prose | Resolved for the v1.0 placement gate and machine-tracked by `docs/external_sota_positioning_audit.md`: 44 of 54 chapters have `ext_*` positioning before the Source crosswalk, 10 have explicit external-baseline exceptions, 0 need source-target placement, and 0 need an exception or added source-noted baseline | Phase 6 now passes the strict placement release check. Exhaustive external-literature synthesis and future exception replacement remain v1.x quality work unless a new claim widens. |
+| Schema, Lean records, and fixtures can drift as three encodings of one protocol | Substantiated by comparing richer JSON schema records, such as `authority_transition_record.schema.json`, against narrower Lean abstractions such as `AuthorityDecisionRecord`; initial v1-critical reconciliation now exists in `protocols/v1_critical_protocol_crosswalk.json` and `docs/protocol_record_crosswalk.md` | Phase 5A. Maintain the crosswalk validator, resolve or document mismatches as intentional abstractions, then decide whether a single record-spec generator or shared executable fixture path is worth building after v1-critical records are stable. |
+| The first measured support transition was missing | Resolved for a narrow repository-infrastructure claim only. `docs/first_measured_replayed_slice.md` and `evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json` record `living-book-methodology.phase5_harness_registry_runner` moving from `argument` to `synthetic-test-backed`; all 54 chapter core claims remain at `argument`, 26 chapter core claims have accepted no-change records, and 28 chapter core claims have accepted explicit no-promotion decisions in `claim_decisions/v1_0_core_claim_no_promotion.json` | Phase 3B now has a bounded replayed-slice transition. The next evidence work should move beyond repository plumbing toward a public-safe prototype, measurement, imported trace, or replay lane before any chapter core claim can move. |
+| Reader release still needs a real artifact approval path | Substantiated. Reader HTML, EPUB, DOCX, and PDF rows are rendered or probed locally but remain blocked by full-format review and release-record requirements | Phase 2 and Phase 8. Finish application-level EPUB/DOCX/PDF review and create a release record only for exact artifacts that pass. |
+| Public site and process-record quality now need accessibility and ledger discipline | Actionable as Phase 7 work. The site validates mechanically, but diagram text alternatives, contrast, e-reader legibility, and process-record sprawl need human review before a polished v1 public release | Phase 7. Add accessibility checks and consolidate long process records into structured ledgers plus short summaries where it reduces roadmap noise. |
+| Render-toolchain and citation metadata were too implicit for a public major-version candidate | Resolved for the current candidate. CI now pins Quarto `1.9.38`, Python `3.11`, and Node `22`, Lean remains pinned through `lean/lean-toolchain`, `CITATION.cff` records version `1.0.0-candidate`, and `docs/release_reproducibility.md` records locale, tool-path, reader-format, DOI-pending, and non-release boundaries checked by `scripts/validate_release_reproducibility.py` | Phase 7 reproducibility/citability slice implemented for the candidate. A final v1.0 tag and any DOI/Zenodo metadata still require actual release records. |
 | Local repo cleanup via `git gc` | Local hygiene only | Optional local maintenance; do not treat as book quality work. |
 
 ## What Is Already Resolved Or Not Actionable
@@ -36,13 +46,83 @@ Claude's review is useful as an editorial and hygiene review, not as source evid
 |---|---|
 | Unfinished `"The result is"` pass | Resolved in current `main`; `validate_repeated_prose.py` now rejects the phrase and current chapters have 0 hits. |
 | Source notes, external appendix split, Lean toolchain, CI gates, proof imports, generated appendices | Resolved before this roadmap; do not re-spend effort unless a validator fails or new source/proof work changes the surface. |
+| New harnesses are entirely absent from CI | Not actionable as stated. `publish.yml` calls `scripts/validate_book.py`, and `validate_book.py` currently calls every `scripts/validate_*.py` file either directly or through the rendered Human-view/browser steps. The remaining issue is future drift prevention, not current total absence. |
 | `validate_proof_artifact_audit.py` and `validate_source_evidence_audit.py` silently writing files | Not reproduced. Both default to check mode and write only with `--write`; CI runs them in check mode. |
 | Stale deployed appendix set | Not a current blocker. Current Pages runs are checked before commits, and local render validates the A-K appendix surface. |
 | `validate_live_human_view.py` needing a fresh `_site` | Resolved as local hygiene. CI orders render before this check, and the validator now preflights missing, incomplete, or stale `_site` output with a render-first diagnostic. |
 
-## Phase 0 - Operating Discipline
+## v1.0 Definition Of Done [Release Gate]
 
-Status: active and ongoing.
+The roadmap is complete for a **true v1.0 evidence-and-reader release** only
+when all v1.0-blocking gates below are satisfied and recorded. If a gate is not
+satisfied, the project may still tag a narrower candidate or architecture
+release, but it must not call that tag a v1.0 evidence release.
+
+v1.0 ships when all of these hold:
+
+1. **Reader artifact gate:** at least one human-consumption artifact, preferably EPUB, has an application-level review record, the exact artifact is named in an edition release record, and its format row has no release blockers. DOCX, PDF, audio, or additional e-reader formats are claimed only if their own rows meet the same standard.
+2. **Claim-state gate:** every core chapter claim has either an accepted evidence-transition record or an explicit v1.0 no-promotion decision. No support state moves above `argument` without a transition record naming evidence, commands where relevant, limitations, counterevidence, and non-claims.
+3. **First measured/replayed result gate:** at least one narrow claim receives a support transition from a public-safe measured or replayed result, or the release records a named blocker explaining why no available measured slice cleared the promotion bar and the tag remains an architecture release rather than an evidence release.
+4. **Proof-depth gate:** `SelfImprovement`, `Alignment`, `Corrigibility`, `GovernanceRights`, and `ValueConflict` are either upgraded beyond projection-only Lean hooks or explicitly classified as projection-only traceability in `docs/proof_depth_classification.md`, `docs/proof_adequacy_review.md`, the relevant chapters, and the proof-readiness output.
+5. **Validator coverage gate:** CI includes a meta-check that every `scripts/validate_*.py` file is covered by `publish.yml`, by `scripts/validate_book.py`, or by a tracked allow-list. The gate must explicitly keep `validate_source_notes.py`, `validate_proof_readiness.py`, `validate_evidence_transitions.py`, and the Phase 5 harness set covered.
+6. **Protocol record gate:** v1-critical protocol records have a schema/fixture/harness/Lean crosswalk, or an explicit no-Lean/no-schema reason. Intentional abstraction between schema fields and Lean structures is documented instead of left implicit.
+7. **External-SOTA prose gate:** every chapter's Problem, insufficiency, or Beyond-SOTA section names the relevant external baseline it is positioning against, or records a deliberate exception. These references must have source records and source notes before being used as source support.
+8. **Beyond-SOTA map gate:** the Beyond-SOTA Reference Map below is current and honest about where the book is leading, where it is only competitive, and where it is below established SOTA.
+9. **Architecture red-team gate:** at least one system-level adversarial review exists for cross-layer authority escalation, context/SCIF leakage, evaluator capture, support-state inflation, and benchmark gaming, with residuals routed into claims, proof targets, tests, or explicit v1.x deferrals.
+10. **Reproducibility and citability gate:** the render/reader toolchain is pinned or documented; the Python and Lean prerequisites are explicit; `CITATION.cff` has major-version metadata; and the release has a "how to cite this version" note. A Zenodo DOI is preferred for v1.0, but if it cannot be issued before tagging, the release record must say DOI pending.
+11. **Green release gate:** local validation, `lake build`, Quarto HTML render, rendered Human-view validation, browser validation where available, changelog, release record, and prior GitHub Pages run are all current.
+
+Explicitly deferred to v1.x unless a later decision promotes them into v1.0:
+
+- Curated parallel reader-manuscript graduation beyond generated reader source plus overlays.
+- Audiobook, M4B, MP3, audio-embedded EPUB, AZW3, MOBI, and all non-approved document/e-reader formats.
+- Exhaustive external-literature synthesis beyond the in-prose v1.0 positioning gate.
+- Full single-source protocol generator for every schema, Lean structure, harness, and fixture.
+- Executable Lean/Python fixture equivalence for every protocol record.
+- Standalone academic preprints, external peer review, and field-recognition work.
+- Any claim of ASI capability, deployed safety, model-quality improvement, production governance, or runtime performance beyond recorded evidence.
+
+## Beyond-SOTA Reference Map [v1.0-blocking]
+
+This table makes "beyond SOTA" auditable. Reference points are planning labels
+until source records and source notes exist; do not cite a named external system
+or paper in prose from memory. The v1.0 target is not to be better than every
+external system at every task. The target is to say exactly which dimension the
+ASI Stack advances, what remains below SOTA, and what evidence would be needed
+to strengthen the claim.
+
+| Dimension | External reference point to normalize | Current ASI Stack position | v1.0 target |
+|---|---|---|---|
+| Formal verification | Full functional-correctness projects such as seL4 and CompCert; proof-carrying-code literature | Lean coverage is broad but mostly finite-record; `docs/proof_depth_classification.md` currently reports 112 direct/projection-style theorem declarations, 27 derived/decomposed declarations, and projection-style hooks across all five safety-critical modules | State honestly that the book is below full functional correctness; upgrade or classify the five safety-critical modules and keep claims scoped to derived invariants actually proved. |
+| Living technical evidence system | Executable papers, Distill-style explainers, Papers with Code, model cards, datasheets, reproducibility checklists | Claim ledger, source mappings, proof manifest, harness registry, release profiles, no-change transitions, and the first bounded registry-runner transition are unusually disciplined | Defend this as a leading contribution only after the release gate records exact validation, reader-review, and evidence-transition boundaries. |
+| Governance/safety architecture | NIST AI RMF, frontier-model evaluation and deployment-policy frameworks, incident-response and audit practices | Typed authority, stable capability fields, readiness gates, residual escrow, fork/exit/audit rights, and self-improvement gates are coherent but argument-level | Add in-prose external positioning and a cross-layer red-team review; keep deployment/safety claims at `argument` unless evidence transitions justify more. |
+| Human/AI dual-edition publishing | Standard technical-book and documentation pipelines, reader editions, release notes, artifact bundles | Live AI/research view, Human view, reader derivation, overlays, format ledgers, and audio script path are structurally beyond ordinary static-book practice | Ship at least one reviewed human artifact, preferably EPUB, with exact release record and citability metadata. |
+| Routing and cost-quality efficiency | MoE routing, FrugalGPT/Hybrid LLM/RouteLLM-style routing, systems scheduling, benchmark governance | Costed route ledgers, readiness gates, residual accounting, and resource-budget fixtures exist but no real route-quality measurement has promoted a claim | Produce a measured or replayed costed-route/resource-budget slice with baseline, negative control, residuals, and non-claims. |
+| Compression and representation | Deep Compression, LoRA/QLoRA/GPTQ, MDL, program synthesis, artifact metrics | The book has architecture and source notes, but no local compression ratio, quality result, or backend benchmark | Candidate first measured slice: RankFold/artifact compression or Circle/cyclic-compute receipt with performance explicitly separated from proof legality. |
+| Benchmark and anti-Goodhart governance | HELM, BIG-bench, SWE-bench, LiveBench, Dynabench, GPQA, contamination and Goodhart literature | Benchmark-ratchet and anti-Goodhart schemas/harnesses exist as synthetic discipline | Add external positioning in prose and keep any benchmark advancement scoped to recorded fixtures until real benchmark traces exist. |
+| Protocol-spec consistency | Schema-first APIs, typed contracts, formal specs, runtime monitors | Schemas, fixtures, Lean records, and Python harnesses are present but hand-maintained and can drift | Ship a v1-critical protocol crosswalk plus validator before claiming spec discipline beyond traceability. |
+
+## Phase Blocking Map
+
+| Phase | v1.0 status | What blocks the tag |
+|---|---|---|
+| Phase 0 | v1.0-blocking | Validator coverage meta-check and clean release process; candidate toolchain/citation discipline is now guarded by the Phase 7 reproducibility validator. |
+| Phase 1 | v1.0-complete | Keep the repeated-prose guards passing; no remaining Phase 1 task blocks v1.0. |
+| Phase 2 | v1.0-blocking | Reader artifact review and release record; curated reader source is v1.x unless needed. |
+| Phase 3 | v1.0-complete for claim-state coverage | `docs/core_claim_transition_coverage.md` records 54 of 54 chapter core claims covered: 26 accepted no-change transition records plus 28 accepted explicit no-promotion decisions; all remain at `argument`. |
+| Phase 3B | v1.0-complete for first bounded slice | The first replayed-slice transition is accepted for the narrow Phase 5 registry-runner claim; stronger evidence lanes remain needed before chapter core claims can move. |
+| Phase 4 | v1.0-complete for proof-depth honesty | Proof-depth classifier and safety-critical projection-only chapter classifications are implemented; stronger Lean upgrades remain future quality work unless claims widen. |
+| Phase 5 | v1.0-blocking for deeper evidence use | Harness runner and coverage drift guard are implemented; next Phase 5 work should use the harness system to support non-infrastructure measured or replayed slices. |
+| Phase 5A | v1.0-blocking | Initial v1-critical protocol crosswalk is implemented; keep it current and use it to resolve/document schema/Lean/fixture drift during evidence-transition work. |
+| Phase 6 | v1.0-complete for the placement gate | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 10 explicit exceptions, 0 source-target placement rows, and 0 exception/source rows; the stricter `--release` validator passes. |
+| Phase 7 | v1.0-blocking, with reproducibility/citability complete for the current candidate | Public-site accessibility, progress-ledger cleanup, and final release-record metadata sufficient for the tag. |
+| Phase 7A | v1.0-complete for desk red-team review | `docs/architecture_red_team_review.md` records all six required architecture-level attack scenarios with residuals and routed follow-ups; runtime/security validation remains future evidence work. |
+| Phase 8 | v1.0-blocking for EPUB/release records; v1.x for audio and extra formats | Exact reviewed artifact records. |
+| Phase 9 | post-v1.0 | External preprints and contribution extraction should not block v1.0. |
+
+## Phase 0 - Operating Discipline [v1.0-blocking]
+
+Status: active and ongoing. The initial validator-coverage meta-check is implemented in `scripts/validate_validator_coverage.py`, wired into `.github/workflows/publish.yml`, and called by `scripts/validate_book.py`.
 
 Purpose: keep the repo honest while work continues.
 
@@ -53,6 +133,7 @@ Tasks:
 - Keep all 54 core claims at `argument` unless an accepted evidence transition justifies a narrower promotion.
 - Keep every manifest chapter record explicit about `claim_label` and `evidence_level`; missing or invalid values fail the book validator.
 - Do not report reader, ebook, document, PDF, or audio artifacts unless that exact artifact was generated, reviewed where required, and recorded.
+- Keep CI validator coverage explicit with `python3 scripts/validate_validator_coverage.py`: every `scripts/validate_*.py` file must be covered by the workflow, by `scripts/validate_book.py`, or by `scripts/validator_coverage_allowlist.json` with a reason.
 - Keep `book_structure.json` and `docs/book_outline.md` as source-of-truth surfaces.
 - Update `appendices/F_changelog.qmd` for meaningful roadmap, source, claim, proof, reader, release, or validation changes.
 
@@ -61,8 +142,9 @@ Exit criteria:
 - Working tree clean before starting a major pass.
 - Prior Pages run checked.
 - No generated scaffold drift after `python3 scripts/sync_scaffold.py`.
+- `python3 scripts/validate_validator_coverage.py` fails if a new validator is not covered or explicitly allow-listed, and it keeps `validate_source_notes.py`, `validate_proof_readiness.py`, `validate_evidence_transitions.py`, and all registered Phase 5 harness scripts covered.
 
-## Phase 1 - Reader-Visible Voice And De-Templating
+## Phase 1 - Reader-Visible Voice And De-Templating [v1.0-complete]
 
 Status: complete for the current tree after the 2026-06-28 prose-and-guard pass.
 
@@ -93,7 +175,7 @@ Acceptance criteria:
 - `python3 scripts/validate_reader_spine.py --check` passes.
 - `quarto render --to html`, `python3 scripts/validate_live_human_view.py`, and the browser Human-view validation pass before reporting completion.
 
-## Phase 2 - Reviewed Reader Manuscript Path
+## Phase 2 - Reviewed Reader Manuscript Path [v1.0-blocking]
 
 Status: started. The generated reader baseline was produced and recorded in
 `docs/reader_manuscript_review.md`; the active semantic reader-overlay log is
@@ -134,14 +216,18 @@ source-card entries; `docs/reader_docx_probe_manifest.md` records the current
 514-page LibreOffice conversion probe for the generated DOCX;
 `docs/reader_pdf_probe_manifest.md` records the current 535-page,
 8,613,924-byte PDF probe, sampled source-card pages, and remaining full-PDF
-layout-review blocker; and `docs/reader_artifact_layout_review.md` records refreshed
-EPUB/PDF/DOCX sampling plus a broader 28 page-view HTML layout/navigation probe. The tracked format-review
+layout-review blocker; `docs/reader_artifact_layout_review.md` records refreshed
+EPUB/PDF/DOCX sampling plus a broader 28 page-view HTML layout/navigation probe;
+and `docs/reader_html_artifact_browser_review.md` records a full local browser
+artifact review of the generated reader HTML snapshot with 118 of 118 page-view
+pairs passing across all 59 pages at desktop and mobile widths. The tracked format-review
 ledger is recorded in
 `editions/reader_manuscript/v1_0/format_review_matrix.json` and summarized in
 `docs/reader_format_review_matrix.md`; it keeps HTML, EPUB, DOCX, and PDF
-unapproved until full format review and an edition release record exist, with
-EPUB still blocked on application/e-reader inspection and PDF blocked
-on full layout review. The full generated-reader chapter-text review queue
+unapproved until an edition release record exists, with HTML now blocked only on
+that release record, EPUB still blocked on application/e-reader inspection, DOCX
+still blocked on full application review, and PDF blocked on full layout review.
+The full generated-reader chapter-text review queue
 is complete for the current 54 chapters. `docs/reader_companion_note_routing_review.md`
 and `editions/reader_manuscript/v1_0/companion_note_routing.json` now record
 chapter-level companion-note routing for the three proof/governance chapters
@@ -235,9 +321,9 @@ Acceptance criteria:
 - Any curated reader source has a reconciliation report tying it back to live-book claims, support states, source boundaries, and implementation horizons.
 - Any produced reader artifacts are named only after successful render and review.
 
-## Phase 3 - Evidence Transition Pilot
+## Phase 3 - Evidence Transition Pilot [v1.0-blocking]
 
-Status: initial pilot complete and extended. Twenty-six no-change evidence-transition records are recorded under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. All twenty-six reviewed claims remain at `argument`.
+Status: complete for v1.0 claim-state coverage. Twenty-six no-change evidence-transition records are recorded under `evidence_transitions/v1_0_pilot/`, summarized in `docs/evidence_transition_pilot.md`, and validated by `scripts/validate_evidence_transitions.py`. The remaining twenty-eight chapter core claims have accepted explicit no-promotion decisions in `claim_decisions/v1_0_core_claim_no_promotion.json`, summarized in `docs/core_claim_transition_coverage.md`, and validated by `scripts/validate_core_claim_decisions.py`. A separate measured/replayed record under `evidence_transitions/v1_0_measured/` accepts the narrow repository-infrastructure transition `living-book-methodology.phase5_harness_registry_runner` from `argument` to `synthetic-test-backed`. All 54 chapter core claims remain at `argument`.
 
 Purpose: prove that the claim/evidence system can move claims conservatively, or explicitly decide not to move them.
 
@@ -252,21 +338,66 @@ Tasks:
 
 1. Pick narrow claims. Initial pilot selected `evidence-states-and-claim-discipline.core`, `living-book-methodology.core`, `executable-specifications-and-lean-proof-envelope.core`, and `open-research-agenda-and-bibliography-plan.core`; later extensions added `system-boundaries-and-authority.core` after the Authority proof follow-through, `planning-as-a-control-layer.core` after the Planning proof follow-through, `virtual-context-abi.core` after the context admission/adequacy harness, `claim-ledgers-and-belief-revision.core` after the claim-ledger revision harness, `spinoza-verification-and-proof-carrying-claims.core` after the proof-carrying claim harness, `unified-adaptive-tribunal-and-adversarial-review.core` after the tribunal review harness, `moral-uncertainty-and-value-conflict.core` after the value conflict harness, `constitutional-alignment-substrate.core` after the constitutional alignment harness, `agency-dignity-and-corrigibility.core` after the agency rights harness, `governance-rights-fork-exit-and-audit.core` after the governance rights harness, `security-kernel-and-digital-scifs.core` after the security kernel harness, `stable-capability-fields.core` after the stable capability fields harness, `capability-replacement-and-rollback.core` after the capability replacement harness, `recursive-self-improvement-boundaries.core` after the self-improvement boundary harness, `intent-to-execution-contracts.core` and `command-contracts-and-semantic-interfaces.core` after the plan-execution contract harness, `benchmark-ratchets-and-anti-goodhart-evidence.core` after the benchmark anti-Goodhart harness, `runtime-adapters-tool-permissions-and-human-approval.core` after the runtime-adapter permission harness, `readiness-gates-residual-escrow-and-quarantine.core` after the readiness/residual gate harness, `fast-generation-architectures.core` after the generation-mode baseline harness, and `the-efficient-asi-hypothesis.core` plus `resource-economics-and-token-budgets.core` after the efficiency/resource-accounting follow-through.
 2. Review exact source passages, repository artifacts, commands, and limitations. Initial pilot reviewed repository artifacts, validators, proof audit, source appendix mechanics, and known limitations; it did not claim independent source-interpretation review.
-3. Create or update evidence transition records. The pilot now has twenty-six JSON records under `evidence_transitions/v1_0_pilot/`.
-4. Record non-promotion decisions where evidence remains insufficient. The pilot records all twenty-six as no-change decisions that remain at `argument`.
-5. Update Appendix C only after a transition is accepted. No Appendix C support-state update was made because no upward transition was accepted.
+3. Create or update evidence transition records. The no-change pilot now has twenty-six JSON records under `evidence_transitions/v1_0_pilot/`; the first measured/replayed slice has one accepted bounded record under `evidence_transitions/v1_0_measured/`.
+4. Record non-promotion decisions where evidence remains insufficient. The pilot records twenty-six reviewed chapter/book claims as no-change decisions that remain at `argument`; `claim_decisions/v1_0_core_claim_no_promotion.json` records the other twenty-eight chapter core claims as explicit v1.0 no-promotion decisions.
+5. Update Appendix C only after a chapter-core transition is accepted. No Appendix C chapter support-state update was made because the accepted upward transition is scoped to the repository-infrastructure runner claim, not a chapter core claim.
 
 Acceptance criteria:
 
 - No broad AI, safety, capability, or deployment claim is promoted.
 - Every proposed movement has a recorded basis and limitation.
 - Negative or insufficient findings are preserved.
+- Every core chapter claim has either an accepted evidence-transition record or a v1.0 no-promotion decision before an evidence-release tag. Current v1.0 status: satisfied and guarded by `python3 scripts/validate_core_claim_decisions.py`.
 
-## Phase 4 - Proof Adequacy Review
+## Phase 3B - First Measured Or Replayed Slice [v1.0-blocking]
 
-Status: initial review complete, with six follow-through increments recorded. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope, `AsiStackProofs.Planning` now includes a plan-control record envelope for modeled dispatchable, blocked, and replanned records, `AsiStackProofs.ClaimLedger` and `AsiStackProofs.ProofCarryingClaims` now include finite ledger/proof-carrying record envelopes, Runtime Adapters now has a synthetic permission/approval/receipt harness, Fast Generation now has deterministic baseline-accounting fixtures plus a no-change evidence decision, and Resource Economics now has paired resource-budget accounting coverage, a deterministic resource-budget ledger harness, and a no-change evidence decision. System Boundaries, Planning, Claim Ledgers, Spinoza, Runtime Adapters, and Resource Economics remain `useful but too narrow`; Fast Generation remains `needs empirical or baseline tests first` because deployed enforcement, runtime traces, planner quality, claim extraction, contradiction detection, verifier quality, sandbox behavior, approval-service behavior, model runs, matched baselines, speed-quality measurements, budget-scheduler behavior, load-stability behavior, serving/KV measurements, and richer integration behavior remain unproven.
+Status: first bounded slice accepted. `docs/first_measured_replayed_slice.md`
+records the Phase 5 harness-registry replay as the first measured/replayed
+slice, and
+`evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json`
+accepts `living-book-methodology.phase5_harness_registry_runner` as
+`synthetic-test-backed`. This is repository-infrastructure evidence only. No
+chapter core claim has moved above `argument`, and no runtime, model-quality,
+safety, benchmark, or source-interpretation claim is promoted.
+
+Purpose: create the first non-paperwork evidence milestone. The book should
+show at least one narrow claim moving because a real artifact, trace, benchmark,
+or replay was inspected under a recorded command and limitation boundary.
+
+Candidate slices for the next, stronger evidence increment:
+
+1. **Theseus/Circle transfer lane:** use `theseus_circle_transfer`, `circle_calculus_core`, `circle_ai_contract_suite`, `proof_carrying_circular_computation`, and related local/public-safe reports to import theorem receipts, consumer-gate traces, or benchmark receipts only after the exact artifact, command, source path, permission boundary, and non-claims are recorded.
+2. **Costed route/resource-budget slice:** run a small three-route comparison with baseline, fallback, quality predicate, resource budget, hidden-cost check, residual accounting, and negative control.
+3. **Context admission replay:** replay a public-safe context packet through admission and adequacy checks with stale/tainted/conflicting packet negatives.
+4. **Compression or RankFold artifact slice:** measure a real compression ratio, reconstruction/utility predicate, residual burden, and baseline on a small permitted artifact.
+5. **Planner/runtime adapter trace:** replay a small intent-to-contract-to-typed-job-to-receipt path with an explicit blocked negative case.
+
+Promotion bar:
+
+- The result must name command, environment, input artifact, output artifact, baseline or negative control, acceptance predicate, residuals, failure cases, and exact non-claims.
+- The result must distinguish source-reported results from locally reproduced results.
+- The result must have an evidence-transition record before Appendix C changes.
+- A failed or inconclusive result remains useful and should be recorded, but it does not promote support state.
+- If no candidate clears the bar, the release record must say so and the tag must remain an architecture/candidate release rather than a v1.0 evidence release.
+
+Acceptance criteria:
+
+- At least one measured or replayed slice exists with a public-safe result record and an accepted transition, or the v1.0 release explicitly downgrades itself from evidence release. Current v1.0 status satisfies this only for the bounded registry-runner infrastructure claim.
+- Theseus/Circle imported evidence preserves transfer-boundary non-claims and does not treat local project existence as reproduced ASI Stack evidence.
+- Appendix C, the roadmap, and the release record agree on any support-state effect.
+
+## Phase 4 - Proof Adequacy Review [v1.0-blocking]
+
+Status: initial review complete, with six follow-through increments, a proof-depth classifier, and safety-critical projection classifications recorded. `docs/proof_adequacy_review.md` classifies all 112 Lean targets while preserving support-state boundaries; `docs/proof_depth_classification.md` now classifies 139 Lean theorem declarations as 112 direct/projection-style, 27 derived/decomposed, and 0 unknown/mixed, with all 10 theorem declarations in the five safety-critical modules still direct/projection-style and 5 of 5 safety-critical chapter limitation sections explicitly classified as projection-only traceability. `AsiStackProofs.Authority` now includes a record-aware allow/deny/escalate authority decision envelope, `AsiStackProofs.Planning` now includes a plan-control record envelope for modeled dispatchable, blocked, and replanned records, `AsiStackProofs.ClaimLedger` and `AsiStackProofs.ProofCarryingClaims` now include finite ledger/proof-carrying record envelopes, Runtime Adapters now has a synthetic permission/approval/receipt harness, Fast Generation now has deterministic baseline-accounting fixtures plus a no-change evidence decision, and Resource Economics now has paired resource-budget accounting coverage, a deterministic resource-budget ledger harness, and a no-change evidence decision. System Boundaries, Planning, Claim Ledgers, Spinoza, Runtime Adapters, and Resource Economics remain `useful but too narrow`; Fast Generation remains `needs empirical or baseline tests first` because deployed enforcement, runtime traces, planner quality, claim extraction, contradiction detection, verifier quality, sandbox behavior, approval-service behavior, model runs, matched baselines, speed-quality measurements, budget-scheduler behavior, load-stability behavior, serving/KV measurements, and richer integration behavior remain unproven.
 
 Purpose: distinguish "Lean build passes" from "this is the right formalization."
+
+The 2026-06-29 depth review adds one sharper requirement: separate derived
+invariants from projection theorems. A theorem that concludes a Boolean field
+already supplied by the record may still be useful as traceability, but it must
+not be presented as a substantive safety proof. Safety-critical chapters should
+move toward domain models where the protected property is derived from state,
+order, lifecycle, before/after valuations, or review structure.
 
 Tasks:
 
@@ -274,16 +405,23 @@ Tasks:
 2. Classify each target as adequate finite-record invariant, useful-but-too-narrow, needs richer state-machine semantics, needs executable tests first, or should remain research agenda. Current target counts after the Resource Economics accounting follow-through are 8 adequate finite-record, 29 useful-but-too-narrow, 20 richer-semantics-needed, 39 executable-tests-needed, 10 empirical/baseline-tests-needed, and 6 research-agenda-until-artifact-import.
 3. Update `proofs/proof_triage.json`, `docs/proof_artifact_audit.md`, chapters, and Appendix E only where the review justifies it. The follow-through increments updated Lean code, the proof audit, chapter limitation prose, roadmap/status surfaces, and no-change evidence records without changing proof tags or support states.
 4. Add or revise Lean code only where a stronger operational predicate is clear. The current Lean follow-through increments are `AsiStackProofs.Authority` and `AsiStackProofs.Planning`; both remain finite-record envelopes. Runtime Adapters changed through a synthetic harness, not a new Lean predicate.
+5. Maintain the proof-depth classifier in `scripts/validate_proof_depth.py` and the generated report in `docs/proof_depth_classification.md`. The validator is CI-wired and should keep flagging theorem bodies that are pure projection patterns, such as `intro ...; exact valid ...`, when those targets are described as implemented formal invariants rather than traceability hooks.
+6. Treat the current v1.0 safety-critical route as explicit projection-only traceability in the relevant chapter limitation prose. Future deeper replacements for `SelfImprovement`, `Alignment`, `Corrigibility`, `GovernanceRights`, and `ValueConflict` should move toward the `Authority` and `Planning` pattern: explicit state, transitions, ordering or lifecycle rules, and derived conclusions.
+7. Where a projection theorem remains intentionally narrow, record that classification in the proof adequacy review and chapter limitation prose instead of letting it sound like a broad formal result.
 
 Acceptance criteria:
 
 - A public-safe proof adequacy review exists.
 - `cd lean && lake build` passes.
 - Proof text and chapter limitation prose still do not overclaim.
+- Safety-critical formal hooks are either upgraded beyond record-projection proofs or explicitly classified as projection-only traceability.
+- The proof-readiness validator fails or warns when a new theorem is represented as a substantive invariant but is only a projection from an assumed predicate.
+- The proof-depth classifier records a tracked derived-vs-projection split over time, so de-vacuifying progress is measurable rather than impressionistic.
+- Current v1.0 status: satisfied by explicit projection-only traceability classifications in all five safety-critical chapter Formalization hooks sections. This does not strengthen the Lean proofs or promote support states.
 
-## Phase 5 - First Real Test Harnesses
+## Phase 5 - First Real Test Harnesses [v1.0-blocking]
 
-Status: initial harness set complete and extended. Twenty-one synthetic or deterministic harnesses are implemented: the claim ledger revision harness in `scripts/validate_claim_ledger_revision.py`, documented in `docs/claim_ledger_revision_harness.md`; the proof-carrying claim harness in `scripts/validate_proof_carrying_claims.py`, documented in `docs/proof_carrying_claim_harness.md`; the tribunal review harness in `scripts/validate_tribunal_review.py`, documented in `docs/tribunal_review_harness.md`; the value conflict harness in `scripts/validate_value_conflicts.py`, documented in `docs/value_conflict_harness.md`; the constitutional alignment harness in `scripts/validate_constitutional_alignment.py`, documented in `docs/constitutional_alignment_harness.md`; the governance rights harness in `scripts/validate_governance_rights.py`, documented in `docs/governance_rights_harness.md`; the agency rights harness in `scripts/validate_agency_rights.py`, documented in `docs/agency_rights_harness.md`; the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the security kernel harness in `scripts/validate_security_kernel.py`, documented in `docs/security_kernel_harness.md`; the stable capability fields harness in `scripts/validate_stable_capability_fields.py`, documented in `docs/stable_capability_field_harness.md`; the capability replacement harness in `scripts/validate_capability_replacement.py`, documented in `docs/capability_replacement_harness.md`; the self-improvement boundary harness in `scripts/validate_self_improvement_boundaries.py`, documented in `docs/self_improvement_boundary_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the runtime adapter permission harness in `scripts/validate_runtime_adapter_permissions.py`, documented in `docs/runtime_adapter_permission_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`; the benchmark anti-Goodhart harness in `scripts/validate_benchmark_antigoodhart.py`, documented in `docs/benchmark_antigoodhart_harness.md`; the generation mode baseline harness in `scripts/validate_generation_mode_baselines.py`, documented in `docs/generation_mode_baseline_harness.md`; the resource budget ledger harness in `scripts/validate_resource_budget_ledgers.py`, documented in `docs/resource_budget_ledger_harness.md`; and the capacity smoothing toy harness in `scripts/validate_capacity_smoothing.py`, documented in `docs/capacity_smoothing_harness.md`. All twenty-one are backed by valid plus expected-invalid fixtures under `experiments/`, wired into `scripts/validate_book.py`, and registered in `experiments/phase5_harness_registry.json`; `python3 scripts/validate_phase5_harness_registry.py` checks their docs, commands, fixture counts, result records, Appendix E rows, public status references, primary chapter mappings, and non-claim boundaries. No live support state changed.
+Status: initial harness set complete, extended, registry-runnable, and used for the first bounded replayed-slice transition. Twenty-one synthetic or deterministic harnesses are implemented: the claim ledger revision harness in `scripts/validate_claim_ledger_revision.py`, documented in `docs/claim_ledger_revision_harness.md`; the proof-carrying claim harness in `scripts/validate_proof_carrying_claims.py`, documented in `docs/proof_carrying_claim_harness.md`; the tribunal review harness in `scripts/validate_tribunal_review.py`, documented in `docs/tribunal_review_harness.md`; the value conflict harness in `scripts/validate_value_conflicts.py`, documented in `docs/value_conflict_harness.md`; the constitutional alignment harness in `scripts/validate_constitutional_alignment.py`, documented in `docs/constitutional_alignment_harness.md`; the governance rights harness in `scripts/validate_governance_rights.py`, documented in `docs/governance_rights_harness.md`; the agency rights harness in `scripts/validate_agency_rights.py`, documented in `docs/agency_rights_harness.md`; the support-state transition harness in `scripts/validate_support_state_transitions.py`, documented in `docs/support_state_transition_harness.md`; the authority transition harness in `scripts/validate_authority_transitions.py`, documented in `docs/authority_transition_harness.md`; the security kernel harness in `scripts/validate_security_kernel.py`, documented in `docs/security_kernel_harness.md`; the stable capability fields harness in `scripts/validate_stable_capability_fields.py`, documented in `docs/stable_capability_field_harness.md`; the capability replacement harness in `scripts/validate_capability_replacement.py`, documented in `docs/capability_replacement_harness.md`; the self-improvement boundary harness in `scripts/validate_self_improvement_boundaries.py`, documented in `docs/self_improvement_boundary_harness.md`; the plan-execution contract harness in `scripts/validate_plan_execution_contracts.py`, documented in `docs/plan_execution_contract_harness.md`; the runtime adapter permission harness in `scripts/validate_runtime_adapter_permissions.py`, documented in `docs/runtime_adapter_permission_harness.md`; the context admission/adequacy harness in `scripts/validate_context_admission_adequacy.py`, documented in `docs/context_admission_adequacy_harness.md`; the readiness/residual gate harness in `scripts/validate_readiness_residual_gates.py`, documented in `docs/readiness_residual_harness.md`; the benchmark anti-Goodhart harness in `scripts/validate_benchmark_antigoodhart.py`, documented in `docs/benchmark_antigoodhart_harness.md`; the generation mode baseline harness in `scripts/validate_generation_mode_baselines.py`, documented in `docs/generation_mode_baseline_harness.md`; the resource budget ledger harness in `scripts/validate_resource_budget_ledgers.py`, documented in `docs/resource_budget_ledger_harness.md`; and the capacity smoothing toy harness in `scripts/validate_capacity_smoothing.py`, documented in `docs/capacity_smoothing_harness.md`. All twenty-one are backed by valid plus expected-invalid fixtures under `experiments/`, wired into `scripts/validate_book.py`, registered in `experiments/phase5_harness_registry.json`, and executable as a registry-controlled suite through `python3 scripts/run_phase5_harnesses.py`; the latest runner report in `docs/phase5_harness_runner.md` records 21 of 21 registered harnesses passing return-code and expected-summary checks. `python3 scripts/validate_phase5_harness_registry.py` checks their docs, commands, fixture counts, result records, Appendix E rows, public status references, primary chapter mappings, and non-claim boundaries. No chapter core support state changed.
 
 Purpose: move beyond schema shape validation into executable behavior checks.
 
@@ -386,13 +524,47 @@ Initial completion:
 - The result record is `experiments/capacity_smoothing/results/2026-06-28-local.md`.
 - The capacity smoothing toy harness checks deterministic bounded-capacity trace arithmetic, priority deferral under blocked high-risk work, scope reduction, overload rejection, and no-promotion boundaries only. It does not prove TokenMana behavior, budget scheduling, review-queue optimization, real load stability, runtime behavior, human outcomes, economic outcomes, or support-state promotion.
 - `python3 scripts/validate_phase5_harness_registry.py` records the twenty-one-harness set in `experiments/phase5_harness_registry.json` and validates traceability across command scripts, fixture counts, public harness docs, result records, Appendix E, the v1.0 status/roadmap surfaces, primary chapter IDs, and `scripts/validate_book.py`.
-- The registry is evidence plumbing only. It does not rerun the harnesses, prove runtime behavior, validate benchmark quality, or promote any support state.
+- `python3 scripts/run_phase5_harnesses.py --write-report` reran the twenty-one registered harnesses locally and wrote `docs/phase5_harness_runner.md`; all twenty-one returned success and matched their registry summaries.
+- The registry and runner now support the bounded repository-infrastructure transition recorded in `docs/first_measured_replayed_slice.md`. They prove neither runtime behavior nor benchmark quality, and they do not promote any chapter core support state.
 
 Next Phase 5 evidence work should move from synthetic record gates toward replayable empirical slices or imported prototype traces where the source artifacts are available and public-safe.
 
-## Phase 6 - External Literature Backfill
+CI and evidence-depth hardening additions:
 
-Status: started across all priority queues. Initial backfill passes added fifty-nine primary external source records and source notes across alignment/control, AI governance/evaluation, planning/agent control, retrieval/context, formal methods, routing/MoE, compression/representation, and benchmark science, summarized in `docs/external_literature_backfill_phase6.md`. The planning slice now includes ReAct, Tree of Thoughts, PDDL, SHOP2, Integrated TAMP, behavior trees, GOAP/F.E.A.R., and AutoGen as comparison vocabulary only. The retrieval/context slice now includes RAG, Lost in the Middle, MemGPT, LongBench, RULER, ALCE, Self-RAG, and LongLLMLingua as context-interface, citation-support, adaptive-retrieval, long-context-evaluation, and prompt-compression vocabulary only. The formal-methods slice now includes proof-carrying code, TLA+, Lean theorem proving, Dafny, Reluplex, Black-Box Simplex, Copilot, and PRISM as proof, specification, property-verification, runtime-assurance, monitor-generation, and probabilistic-model-checking vocabulary only. The routing/MoE slice now includes sparse MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, an MoE-in-LLMs survey, FrugalGPT, Hybrid LLM, and RouteLLM as model-routing, task-routing, cost-quality routing, and learned-router vocabulary only. The compression slice now includes Deep Compression, LoRA, knowledge distillation, GPTQ, QLoRA, DreamCoder, Information Bottleneck, MDL, and CodeBLEU as compression, adaptation, program-synthesis, residual-accounting, and artifact-metric vocabulary only. The benchmark-science slice now includes MMLU, BIG-bench, HELM, GPQA, SWE-bench, LiveBench, Dynabench, CheckList, benchmark-contamination work, and Goodhart variants as benchmark-design, dynamic-evaluation, contamination, behavioral-testing, and anti-Goodhart vocabulary only. No claim support state, reproduction result, compliance claim, imported formal artifact, proof-assistant import, verifier run, planner run, motion-planning run, context benchmark run, citation-evaluation run, context-compression run, runtime-assurance case study, generated monitor, probabilistic model-checking run, route benchmark, router training, MoE training or inference run, compression experiment, program-synthesis run, information-bottleneck or MDL scorer implementation, CodeBLEU run, dynamic benchmark run, behavioral-test run, contamination audit, Goodhart taxonomy over local tests, finetuning run, benchmark run, or evidence transition changed.
+- Maintain the validator-coverage check that enumerates `scripts/validate_*.py` and fails unless each validator is covered by `publish.yml`, covered by `scripts/validate_book.py`, or listed in `scripts/validator_coverage_allowlist.json` with a reason. The current check explicitly asserts coverage for `validate_source_notes.py`, `validate_proof_readiness.py`, `validate_evidence_transitions.py`, and every registered Phase 5 harness.
+- Maintain the registry-driven harness runner so `experiments/phase5_harness_registry.json` can execute the current harness set rather than only checking registry traceability. Current command: `python3 scripts/run_phase5_harnesses.py`; latest recorded run: `docs/phase5_harness_runner.md`.
+- Preserve the current explicit harness result records and the first registry-runner transition, but prioritize the next increment toward non-infrastructure measured or replayed evidence: a real costed-route/resource-budget trace, a compression/RankFold measurement, a context-admission replay, a planner/runtime adapter trace, or another public-safe prototype slice with command, environment, input, output, negative control, and non-claim boundaries.
+- Do not add more synthetic harnesses just because the pattern is easy. Add them only when they unlock a named evidence transition, proof adequacy upgrade, protocol-spec reconciliation, or reader-release blocker.
+
+## Phase 5A - Protocol Record Source-Of-Truth Hardening [v1.0-blocking]
+
+Status: initial v1-critical crosswalk implemented. `protocols/v1_critical_protocol_crosswalk.json` and `docs/protocol_record_crosswalk.md` now reconcile 10 v1-critical protocol records across JSON Schemas, synthetic fixture directories, harness validators, result records, Appendix E markers, primary chapters, and Lean structures where a Lean abstraction exists. The generated report currently covers 204 schema fields with 0 validation errors. This is a drift and traceability gate only; it does not make schema, harness, fixture, or Lean lanes semantically equivalent.
+
+Purpose: reduce drift between JSON Schemas, Lean record abstractions, Python harness logic, and fixtures.
+
+Current risk: many protocol concepts exist in three or four hand-maintained
+forms. The JSON schema may carry rich fields, the Lean record may carry a
+smaller abstraction, the fixtures may instantiate a third shape, and the Python
+harness may encode additional semantics. This is acceptable while the book is
+exploring, but v1 should at least make intentional abstractions explicit.
+
+Tasks:
+
+1. Maintain the v1-critical protocol-record crosswalk for authority transitions, runtime adapter invocations, self-improvement transitions, capability replacement, readiness gates, claim-ledger revision, proof-carrying claims, tribunal review, value conflicts, and resource-budget records.
+2. Maintain the field-reconciliation validator in `scripts/validate_protocol_crosswalk.py`. It compares schema fields with Lean structure fields where a Lean structure claims to formalize the same record and requires explicit harness-only or intentional-abstraction routes for every remaining schema field.
+3. Expand the same crosswalk pattern to additional schema-backed records only when they become v1-blocking or when an evidence transition depends on them.
+4. Decide whether a single record spec should generate schema, fixture skeletons, and Lean structure stubs for future records; do not build that generator until the v1-critical crosswalk has stabilized.
+5. Stretch only after the crosswalk is stable: make selected Lean validity predicates executable and run the same public-safe fixtures through Python and Lean so spec and implementation can be compared.
+
+Acceptance criteria:
+
+- Every v1-critical protocol record has an explicit schema/fixture/harness/Lean crosswalk or an explicit reason why one lane does not apply.
+- Schema-to-Lean mismatches are either resolved or recorded as intentional abstractions with a chapter-facing limitation.
+- No protocol record is treated as verified merely because one lane passes.
+
+## Phase 6 - External Literature Backfill [v1.0-complete for placement gate]
+
+Status: complete for the v1.0 placement gate and still open as a v1.x literature-deepening lane. Initial backfill passes added fifty-nine primary external source records and source notes across alignment/control, AI governance/evaluation, planning/agent control, retrieval/context, formal methods, routing/MoE, compression/representation, and benchmark science, summarized in `docs/external_literature_backfill_phase6.md`. The planning slice now includes ReAct, Tree of Thoughts, PDDL, SHOP2, Integrated TAMP, behavior trees, GOAP/F.E.A.R., and AutoGen as comparison vocabulary only. The retrieval/context slice now includes RAG, Lost in the Middle, MemGPT, LongBench, RULER, ALCE, Self-RAG, and LongLLMLingua as context-interface, citation-support, adaptive-retrieval, long-context-evaluation, and prompt-compression vocabulary only. The formal-methods slice now includes proof-carrying code, TLA+, Lean theorem proving, Dafny, Reluplex, Black-Box Simplex, Copilot, and PRISM as proof, specification, property-verification, runtime-assurance, monitor-generation, and probabilistic-model-checking vocabulary only. The routing/MoE slice now includes sparse MoE, GShard, Switch Transformers, Expert Choice Routing, Mixtral, an MoE-in-LLMs survey, FrugalGPT, Hybrid LLM, and RouteLLM as model-routing, task-routing, cost-quality routing, and learned-router vocabulary only. The compression slice now includes Deep Compression, LoRA, knowledge distillation, GPTQ, QLoRA, DreamCoder, Information Bottleneck, MDL, and CodeBLEU as compression, adaptation, program-synthesis, residual-accounting, and artifact-metric vocabulary only. The benchmark-science slice now includes MMLU, BIG-bench, HELM, GPQA, SWE-bench, LiveBench, Dynabench, CheckList, benchmark-contamination work, and Goodhart variants as benchmark-design, dynamic-evaluation, contamination, behavioral-testing, and anti-Goodhart vocabulary only. `docs/external_sota_positioning_audit.md` and `python3 scripts/validate_external_sota_positioning.py --release` now close the prose-placement gate: 44 of 54 chapters have `ext_*` positioning before the Source crosswalk, 10 have explicit external-baseline exceptions, 0 have source-noted external targets still waiting for placement, and 0 need an exception or added source-noted external baseline. No claim support state, reproduction result, compliance claim, imported formal artifact, proof-assistant import, verifier run, planner run, motion-planning run, context benchmark run, citation-evaluation run, context-compression run, runtime-assurance case study, generated monitor, probabilistic model-checking run, route benchmark, router training, MoE training or inference run, compression experiment, program-synthesis run, information-bottleneck or MDL scorer implementation, CodeBLEU run, dynamic benchmark run, behavioral-test run, contamination audit, Goodhart taxonomy over local tests, finetuning run, benchmark run, or evidence transition changed.
 
 Purpose: ground the architecture against third-party literature where outside readers will expect comparison.
 
@@ -412,10 +584,13 @@ Acceptance criteria:
 - No source is cited from memory.
 - Each used source has a source record, source note, chapter assignment, and support boundary.
 - External literature remains separate from Corben/local sources in Appendix H.
+- Every chapter's Problem, insufficiency, or Beyond-SOTA section either names the relevant external baseline it is positioning against or explicitly records why no external baseline is being used there.
+- Adding in-prose external positioning does not by itself promote support states.
+- `docs/external_sota_positioning_audit.md` is current, the default validator passes, and the stricter release gate passes with `python3 scripts/validate_external_sota_positioning.py --release`.
 
-## Phase 7 - Visual, Site, And Local-Hygiene Review
+## Phase 7 - Visual, Site, Toolchain, And Archival Review [v1.0-blocking]
 
-Status: started. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, all-chapter/all-viewport browser validation, and a mobile screenshot review of the densest diagrams passed after Mermaid diagrams gained contained mobile scrolling. A second local browser probe after the Phase 6 source expansion checked the landing page, fast-generation and recursive-improvement chapters, and Appendices A/C/H at desktop and mobile sizes with zero page-level horizontal overflow and visible reading-mode toggles. A follow-up probe after the source inventory reached 160 records found Appendix F overflow from long inline `code` spans, added scoped inline-code wrapping in `assets/styles.scss`, and rechecked the landing page, dense chapters, and Appendices A/C/F/H/K with zero page-level horizontal overflow at desktop and mobile sizes. The fast-generation mechanism is now split into selector and acceptance/accounting diagrams, and the recursive self-improvement mechanism is now split into boundary-review and canary/promotion diagrams. Future visual work should review e-reader legibility rather than keeping those splits open as unresolved.
+Status: started; reproducibility/citability slice complete for the current candidate. The first rendered-site and visual audit is recorded in `docs/site_visual_phase7_review.md`; automated visual coverage, rendered Human-view validation, all-chapter/all-viewport browser validation, and a mobile screenshot review of the densest diagrams passed after Mermaid diagrams gained contained mobile scrolling. A second local browser probe after the Phase 6 source expansion checked the landing page, fast-generation and recursive-improvement chapters, and Appendices A/C/H at desktop and mobile sizes with zero page-level horizontal overflow and visible reading-mode toggles. A follow-up probe after the source inventory reached 160 records found Appendix F overflow from long inline `code` spans, added scoped inline-code wrapping in `assets/styles.scss`, and rechecked the landing page, dense chapters, and Appendices A/C/F/H/K with zero page-level horizontal overflow at desktop and mobile sizes. The fast-generation mechanism is now split into selector and acceptance/accounting diagrams, and the recursive self-improvement mechanism is now split into boundary-review and canary/promotion diagrams. `docs/release_reproducibility.md` now records the candidate toolchain and citation boundary, `CITATION.cff` records version `1.0.0-candidate`, `.github/workflows/publish.yml` pins Quarto/Python/Node while using `lean/lean-toolchain`, and `scripts/validate_release_reproducibility.py` checks those facts. Future visual work should review e-reader legibility rather than keeping those splits open as unresolved.
 
 Purpose: improve trust and usability after the manuscript voice and evidence path are stronger.
 
@@ -425,6 +600,11 @@ Tasks:
 - Mobile and desktop Human-view inspection.
 - Landing page status and trust review.
 - Continue table and inline-code overflow checks after large source, claim-matrix, or changelog growth; the current source-growth and inline-code probes found no page-level overflow on Appendices A/C/F/H/K.
+- Add accessibility review for Mermaid diagrams and dense technical figures: text equivalents, color contrast, mobile legibility, e-reader legibility, and status-banner clarity.
+- Consolidate process-record sprawl where it interferes with roadmap readability: keep detailed records in structured ledgers, then render short public summaries for roadmap/status pages.
+- Create or update a v1 progress ledger so completed Phase 2, Phase 5, and Phase 6 history moves out of the execution roadmap over time; the roadmap should foreground remaining blockers, acceptance criteria, and release gates.
+- Keep `docs/release_reproducibility.md`, `CITATION.cff`, `.github/workflows/publish.yml`, and `scripts/validate_release_reproducibility.py` current when Quarto, Python, Node, Lean, reader-format dependencies, local tool paths, locale requirements, fonts, DOI/Zenodo state, or release citation status changes.
+- Before a final v1 tag, replace candidate metadata only with facts that exist: final version/tag, release-record date, commit, DOI/Zenodo identifier if issued, or explicit DOI-pending language if not issued.
 - Maintain `schemas/book_structure.schema.json` alongside future manifest fields; the schema now validates the top-level book contract before the semantic validators check source IDs, proof targets, reader surfaces, and evidence boundaries.
 - Keep the `validate_live_human_view.py` preflight current so missing, incomplete, or stale `_site` output fails with render-first guidance before page-level checks run.
 - Optional local `git gc` if loose-object warnings recur.
@@ -434,10 +614,43 @@ Acceptance criteria:
 - Visual changes do not imply unrecorded proof, benchmark, or runtime behavior.
 - Browser validation passes after render.
 - Public-site status remains honest about candidate versus evidence release.
+- Accessibility review records residuals instead of treating mechanical browser success as polished public-site quality.
+- Toolchain and citation records are good enough for another reader or future agent to reproduce the candidate site and identify the exact cited version. Current status: satisfied for candidate metadata; final v1.0 still needs the release record or tag facts that actually exist at tagging time.
 
-## Phase 8 - Major Version Reader And Audio Packaging
+## Phase 7A - Architecture-Level Red-Team [v1.0-blocking]
 
-Status: preparation reviewed; still future and blocked on reader release records and artifact review. `docs/v1_0_release_preparation_review.md` records passing release-profile, reader-spine, reader-boundary, reader-overlay, reader-edition-check, reader-format-check, reader-format dry-run, reader-artifact structural-inspection, EPUB metadata/source-spine probe, DOCX LibreOffice conversion probe, UTF-8 PDF-probe, representative EPUB/PDF/DOCX sampling, broader HTML layout/navigation probing, and audio-script-check commands. `docs/reader_format_dry_run.md` records local HTML/EPUB/DOCX/PDF snapshots in ignored `build/` space, `docs/reader_artifact_inspection_manifest.md` preserves the latest tracked HTML/EPUB/DOCX structural-inspection summary, `docs/reader_epub_probe_manifest.md` records the current EPUB metadata/source-spine metrics and sampled source-card appendix entries, `docs/reader_docx_probe_manifest.md` records the current DOCX conversion metrics and sampled source-card appendix pages, `docs/reader_pdf_probe_manifest.md` records the current PDF probe metrics and sampled source-card appendix pages, and `docs/reader_format_review_matrix.md` records the format-level review blockers in a synced ledger, but no tag, reviewed reader release, full manual layout approval, audiobook, or edition release record was produced.
+Status: v1.0 desk review complete. `docs/architecture_red_team_review.md`
+records all six required scenarios with attack setup, expected failure,
+observed current defense, residual risk, and routed follow-up. The report is
+validated by `python3 scripts/validate_architecture_red_team.py`. This is a
+public-safe desk review only; it is not an exploit run, deployed safety result,
+runtime security test, benchmark, source-interpretation audit, or external peer
+review.
+
+Purpose: attack the ASI Stack as a composed system, not only as isolated
+chapters. Per-chapter failure modes are necessary but insufficient for a
+governance/safety architecture.
+
+Required adversarial scenarios:
+
+1. **Authority ladder attack:** a chain of locally valid transitions produces an end-to-end authority escalation that no single layer notices.
+2. **SCIF/context leakage attack:** protected information leaks through summaries, residuals, embeddings, tool receipts, generated diagrams, or reader-facing transformations.
+3. **Evaluator capture attack:** self-improvement, capability replacement, benchmark promotion, or policy update passes because the evaluator, reviewer, or benchmark became coupled to the candidate.
+4. **Support-state inflation attack:** prose polish, source-note existence, or passing fixtures cause a claim to move without the correct evidence lane.
+5. **Benchmark gaming attack:** a route, policy, or steward action optimizes a proxy while increasing residual burden, hidden cost, contamination, or regression risk.
+6. **Reader-release laundering attack:** the human edition strips or softens a caveat that was meaning-critical in the AI/research edition.
+
+Acceptance criteria:
+
+- A public-safe red-team report records attack setup, expected failure, observed current defense, residual risk, and routed follow-up.
+- Findings are routed to proof targets, schemas, tests, source/prose fixes, release blockers, or explicit v1.x deferrals.
+- A passing red-team report does not claim safety; it only records that named attacks were attempted and residuals were preserved.
+Current v1.0 status: satisfied for desk-review coverage and residual routing,
+not for deployed runtime security or safety validation.
+
+## Phase 8 - Major Version Reader And Audio Packaging [v1.0-blocking for EPUB; v1.x for audio and extra formats]
+
+Status: preparation reviewed; still blocked on reader release records, with HTML now past full local browser artifact review and EPUB/DOCX/PDF still requiring their own full application/layout reviews. `docs/v1_0_release_preparation_review.md` records passing release-profile, reader-spine, reader-boundary, reader-overlay, reader-edition-check, reader-format-check, reader-format dry-run, reader-artifact structural-inspection, EPUB metadata/source-spine probe, DOCX LibreOffice conversion probe, UTF-8 PDF-probe, representative EPUB/PDF/DOCX sampling, broader HTML layout/navigation probing, and audio-script-check commands. `docs/reader_format_dry_run.md` records local HTML/EPUB/DOCX/PDF snapshots in ignored `build/` space, `docs/reader_artifact_inspection_manifest.md` preserves the latest tracked HTML/EPUB/DOCX structural-inspection summary, `docs/reader_html_artifact_browser_review.md` records 118 of 118 generated reader HTML page-view pairs passing in a browser, `docs/reader_epub_probe_manifest.md` records the current EPUB metadata/source-spine metrics and sampled source-card appendix entries, `docs/reader_docx_probe_manifest.md` records the current DOCX conversion metrics and sampled source-card appendix pages, `docs/reader_pdf_probe_manifest.md` records the current PDF probe metrics and sampled source-card appendix pages, and `docs/reader_format_review_matrix.md` records the format-level review blockers in a synced ledger, but no tag, reviewed reader release, audiobook, or edition release record was produced.
 
 Purpose: produce human-consumption artifacts only after the live and reader surfaces are reviewed.
 
@@ -445,7 +658,7 @@ Tasks:
 
 1. Tag a validated live-book candidate.
 2. Generate and review reader source.
-3. Render HTML, EPUB, DOCX, and PDF only where dependencies and review allow.
+3. Render HTML, EPUB, DOCX, and PDF only where dependencies and review allow; HTML has the first full local browser artifact review, while EPUB remains the preferred e-reader target for a later application-level review.
 4. Record exact produced artifacts in an edition release record.
 5. Generate audio script only after reader review.
 6. Review spoken treatment for diagrams, tables, code, schemas, and proof-adjacent material.
@@ -455,17 +668,55 @@ Acceptance criteria:
 
 - No artifact is claimed from a target profile alone.
 - Release records name what exists, what was reviewed, what failed, and what remains unattempted.
+- At least one human-consumption artifact, preferably EPUB, has an application-level review record before the project calls v1 reader packaging complete.
+
+## Phase 9 - Externalization And Contribution Extraction [post-v1.0]
+
+Status: deferred.
+
+Purpose: keep the field-recognition path visible without letting it block the
+first release. Several project contributions may deserve standalone treatment
+after the book has a reviewed v1 release.
+
+Candidate extractions:
+
+- Support-state and claim-ledger discipline for living technical books.
+- Costed-route/resource-budget ledgers and residual escrow.
+- Stable capability fields, readiness gates, and replacement/rollback records.
+- Proof-carrying AI contracts and Circle/Theseus transfer boundaries.
+- Human/AI dual-edition publishing with reader overlays and release ledgers.
+- Architecture-level red-team methodology for governed AI stacks.
+
+Acceptance criteria:
+
+- No Phase 9 work blocks v1.0.
+- Each extracted preprint or artifact has its own source/evidence boundary and does not backfill claims into the book without a normal evidence transition.
+- External feedback can create v1.x roadmap items, support-state transitions, or errata only after it is recorded and reviewed.
 
 ## Best Goal To Set Next
+
+Status after the extended v1.0 run and the 2026-06-29 Claude/Codex
+reconciliation: the book is no longer blocked on scaffold, chapter count,
+generated prose cleanup, basic reader derivation, or initial synthetic
+record-gate coverage. Phase 1 is complete. The next goal should execute the
+v1.0 Definition of Done above, using the phase tags to avoid post-v1 scope
+creep.
 
 Recommended goal text:
 
 ```text
-Run an extended roadmap-driven v1.0 completion pass on The ASI Stack using docs/v1_0_roadmap.md as the primary execution plan, docs/v1_0_focus_audit.md as the current-state audit, docs/book_outline.md as the drafting/proof/source source of truth, and book_structure.json as the manifest source of truth.
+Complete the v1.0 release gates for The ASI Stack using docs/v1_0_roadmap.md as the primary execution plan, docs/v1_0_focus_audit.md as the current-state audit, docs/book_outline.md as the drafting/proof/source source of truth, and book_structure.json as the manifest source of truth.
 
-Start with Phase 1: remove the remaining reader-visible generator bleed-through by rewriting the 26 Beyond the State of the Art sections that contain Operating mechanism recaps, varying the repeated target-architecture non-claim boundary across the 42 affected chapters, smoothing remaining repeated honesty cadence, and then adding a guard so those patterns cannot return. Preserve every evidence boundary and do not promote support states.
+Treat the v1.0 Definition of Done and Phase Blocking Map as the stop condition. Work only on v1.0-blocking items unless a post-v1 item becomes necessary to satisfy a blocking gate. Do not expand chapter count, create new major concepts, or start audiobook/preprint work unless the roadmap explicitly routes it into v1.0.
 
-After Phase 1 passes validation, proceed through the roadmap in order as far as the run can honestly get: reviewed reader manuscript path, reader-source divergence planning, evidence-transition pilot, proof adequacy review, first executable test harnesses, external literature backfill, visual/site review, and major-version release preparation. The normal reader version may eventually graduate from generated output plus overlays into a curated parallel derivative manuscript for human prose, but it must remain subordinate to the live AI/research book for claims, source boundaries, support states, proof/test status, implementation horizons, and release records. Do not fabricate sources, tests, proof results, benchmark results, reader artifacts, ebook artifacts, or audio artifacts. Record all completed work, skipped work, blockers, validations run, and residuals in the roadmap, changelog, and relevant appendices before reporting completion.
+Prioritize in this order: (1) keep the implemented validator-coverage, proof-depth, protocol-crosswalk, Phase 5 harness-runner, first bounded replayed-slice, core-claim transition/no-promotion coverage, architecture desk red-team, and release-reproducibility/citation gates passing; (2) pursue the next non-infrastructure measured or replayed slice, with Theseus/Circle transfer, costed-route/resource-budget, context-admission, compression, or planner/runtime traces as candidate lanes; (3) add in-prose external-SOTA positioning or recorded exceptions for every chapter; (4) continue public-site accessibility and process-ledger cleanup; (5) regenerate and inspect the reader edition, approve at least one human artifact only after real application review, preferably EPUB, and create an edition release record only for exact reviewed artifacts.
+
+Keep every broad ASI, capability, deployment, benchmark, safety, and performance claim at argument unless a specific accepted transition justifies a narrower state. Treat the accepted Phase 5 registry-runner transition as repository-infrastructure evidence only, not as support for chapter core claims. If no non-infrastructure measured or replayed slice clears the promotion bar before tagging, record the limitation and label the release accordingly. Do not fabricate sources, tests, proof results, benchmark results, prototype traces, reader artifacts, ebook artifacts, audio artifacts, DOI records, or release approvals. Record completed work, skipped work, blockers, validations run, residuals, and release classification in the roadmap, changelog, release ledgers, and relevant appendices before reporting completion.
 ```
 
-This goal is better than "write the whole book" now because the book is already structurally complete and long. The next leverage point is to make the existing book read less generated, then move from validated mechanics toward reviewed reader quality and accepted evidence.
+This goal is better than another general "write the book" run because the book
+is already structurally complete and mechanically guarded. The highest-value
+work is now to close the explicit release gates: reviewed human artifact,
+non-infrastructure measured or replayed evidence, proof-depth honesty, protocol
+source-of-truth hardening, external-SOTA positioning, architecture red-team,
+final release-record metadata, and green release validation.

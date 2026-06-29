@@ -1,6 +1,6 @@
 # Reader Artifact Inspection Manifest
 
-Last updated: 2026-06-28
+Last updated: 2026-06-29
 
 This summary is synced from
 `editions/reader_manuscript/v1_0/artifact_inspection_manifest.json`. It records
@@ -28,8 +28,8 @@ python3 scripts/inspect_reader_format_artifacts.py
 | Format | Status | Key metrics |
 |---|---|---|
 | html | passed | 59 HTML files; 54 chapter files; 0 live-marker leaks; 0 raw core-claim marker leaks |
-| epub | passed | 9,078,787 bytes; 130 entries; 62 XHTML entries; 62 image entries; OPF metadata title `The ASI Stack`, creator `Corben Sorenson`, language `en-US` |
-| docx | passed | 7,059,486 bytes; 77 entries; 61 media entries; 19,229 paragraph markers |
+| epub | passed | 9,090,771 bytes; 130 entries; 62 XHTML entries; 62 image entries; OPF metadata title `The ASI Stack`, creator `Corben Sorenson`, language `en-US` |
+| docx | passed | 7,077,680 bytes; 77 entries; 61 media entries; 19,376 paragraph markers |
 
 ## Release Blockers Preserved
 

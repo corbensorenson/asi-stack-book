@@ -75,6 +75,8 @@ Agents waste cognition and introduce inconsistency when recurring workflows are 
 
 Repeated improvisation wastes tokens, time, and reviewer attention. It also creates drift: the same task is solved differently each time, with different hidden assumptions and different failure modes. But the opposite failure is premature toolification: turning one lucky trace into a routable tool before preconditions, parameters, risks, and regressions are known.
 
+MemGPT (`ext_memgpt_2023`) supplies the closest external memory-management baseline: long-running agents need explicit memory tiers and control flow rather than unbounded context. Procedural memory applies that pressure to workflows instead of only facts. A recurring procedure should move from trace to tool card only after preconditions, authority, regression checks, and residual risks are recorded; the MemGPT reference is context for memory architecture, not proof that this loop-closure mechanism works.
+
 The efficient stack needs three modes: interpretation for novel work, compiled-tool mode for verified recurring procedures, and failsafe/reflex mode for safety-critical responses. Moving between modes requires evidence.
 
 Current agent systems often blur those modes. A workflow gets repeated because it is convenient, copied into a prompt because it seems useful, and later invoked as if it were validated procedure. The ASI Stack should make that transition explicit: comparable traces first, abstraction second, verification third, routable memory last.

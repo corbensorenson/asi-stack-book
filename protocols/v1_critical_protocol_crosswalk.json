@@ -1,0 +1,530 @@
+{
+  "records": [
+    {
+      "id": "authority_transition_record",
+      "schema": "schemas/authority_transition_record.schema.json",
+      "fixture_dir": "experiments/authority_transitions/fixtures",
+      "harness_script": "scripts/validate_authority_transitions.py",
+      "harness_doc": "docs/authority_transition_harness.md",
+      "result_record": "experiments/authority_transitions/results/2026-06-28-local.md",
+      "phase5_registry_id": "authority_transitions",
+      "appendix_e_markers": [
+        "Authority ceiling preservation test",
+        "Permission separation test"
+      ],
+      "primary_chapters": [
+        "system-boundaries-and-authority",
+        "security-kernel-and-digital-scifs",
+        "runtime-adapters-tool-permissions-and-human-approval",
+        "labor-os-and-typed-jobs"
+      ],
+      "lean_module": "lean/AsiStackProofs/Authority.lean",
+      "lean_structures": [
+        "AuthorityTransition",
+        "AuthorityDecisionRecord",
+        "ExecutionRequest",
+        "GovernanceGrant"
+      ],
+      "lean_mapped_fields": {
+        "caller_ceiling": "AuthorityDecisionRecord.callerCeiling",
+        "authority_ceiling": "AuthorityDecisionRecord.activeCeiling",
+        "target_required_authority": "AuthorityDecisionRecord.targetRequired",
+        "decision": "AuthorityDecisionRecord.decision",
+        "denial_reason": "AuthorityDecisionRecord.denialReasonPresent",
+        "effect_receipt": "AuthorityDecisionRecord.effectReceiptPresent",
+        "audit_refs": "AuthorityDecisionRecord.auditRefsPresent",
+        "non_claims": "AuthorityDecisionRecord.nonClaimsPresent",
+        "expiry_or_review": "AuthorityDecisionRecord.grantExpired",
+        "revocation_epoch": "AuthorityDecisionRecord.grantRevoked"
+      },
+      "harness_only_fields": {
+        "transition_id": "Trace identity for fixtures and result records.",
+        "principal": "Actor identity checked by the synthetic harness, not modeled in Lean.",
+        "source_layer": "Layer label used for fixture traceability.",
+        "target_boundary": "Boundary label used for fixture traceability.",
+        "requested_operation": "Operation string checked by the harness."
+      },
+      "abstracted_fields": {
+        "permission_class": "Collapsed into AuthorityLevel-valued Lean ceilings and required levels.",
+        "grant_lifecycle_state": "Collapsed into grantExpired, grantRevoked, and decision-specific fixture cases.",
+        "grant_id": "Trace reference only; Lean models the presence and validity effect, not grant identity.",
+        "delegation_chain": "Harness checks delegation shape; Lean abstracts to grant presence and ceiling relation."
+      },
+      "abstraction_note": "Lean proves finite ceiling and decision-record predicates only. It does not prove deployed permission enforcement, revocation propagation, grant identity, or runtime adapter safety."
+    },
+    {
+      "id": "runtime_adapter_invocation",
+      "schema": "schemas/runtime_adapter_invocation.schema.json",
+      "fixture_dir": "experiments/runtime_adapter_permissions/fixtures",
+      "harness_script": "scripts/validate_runtime_adapter_permissions.py",
+      "harness_doc": "docs/runtime_adapter_permission_harness.md",
+      "result_record": "experiments/runtime_adapter_permissions/results/2026-06-28-local.md",
+      "phase5_registry_id": "runtime_adapter_permissions",
+      "appendix_e_markers": [
+        "Adapter permission test",
+        "Approval gate enforcement test",
+        "Rollback handle capture test"
+      ],
+      "primary_chapters": [
+        "runtime-adapters-tool-permissions-and-human-approval",
+        "labor-os-and-typed-jobs",
+        "security-kernel-and-digital-scifs",
+        "artifact-graphs-audit-logs-and-replay"
+      ],
+      "lean_module": "lean/AsiStackProofs/RuntimeAdapters.lean",
+      "lean_structures": [
+        "ParentJob",
+        "AdapterInvocation"
+      ],
+      "lean_mapped_fields": {
+        "capability": "AdapterInvocation.capability",
+        "permission_required": "ParentJob.permissions",
+        "impact_class": "AdapterInvocation.highImpact",
+        "approval_required": "AdapterInvocation.approvalRecorded",
+        "approval_record": "AdapterInvocation.approvalRecorded",
+        "support_state_effect": "AdapterInvocation.rejected"
+      },
+      "harness_only_fields": {
+        "invocation_id": "Trace identity for fixtures and audit records.",
+        "job_id": "Typed-job reference checked by the harness.",
+        "adapter_id": "Adapter identifier checked by fixture logic.",
+        "target_type": "Harness-level target category.",
+        "approval_scope": "Approval details checked by Python fixtures.",
+        "approval_expiry": "Approval lifecycle detail checked by Python fixtures.",
+        "authority_handle": "Authority-use receipt alignment checked by Python fixtures.",
+        "inputs": "Fixture payload, not modeled in Lean.",
+        "effect_lease": "Harness-level effect lease detail.",
+        "effect_receipt": "Harness checks receipt presence and alignment.",
+        "pre_state_ref": "Trace reference.",
+        "post_state_ref": "Trace reference.",
+        "external_side_effects": "Fixture-level side-effect declaration.",
+        "verification_refs": "Trace references for fixture review.",
+        "rollback_handle": "Rollback capture checked by Python fixtures.",
+        "irreversible_residuals": "Residual capture checked by Python fixtures.",
+        "incident_refs": "Trace references.",
+        "audit_refs": "Trace references.",
+        "residuals": "Fixture residual list.",
+        "non_claims": "Non-claim boundary checked by Python fixtures."
+      },
+      "abstracted_fields": {
+        "invocation_state": "Lean only models rejected versus not rejected in the narrow adapter predicate.",
+        "sandbox_mode": "Sandbox mode is a runtime/harness concern outside the current Lean abstraction.",
+        "risk_tier": "Risk is represented by the highImpact Boolean in the current Lean hook."
+      },
+      "abstraction_note": "Lean covers a narrow parent-permission and high-impact approval hook only. It does not prove sandbox isolation, effect execution, rollback execution, approval-service quality, or deployed tool safety."
+    },
+    {
+      "id": "self_improvement_transition",
+      "schema": "schemas/self_improvement_transition.schema.json",
+      "fixture_dir": "experiments/self_improvement_boundaries/fixtures",
+      "harness_script": "scripts/validate_self_improvement_boundaries.py",
+      "harness_doc": "docs/self_improvement_boundary_harness.md",
+      "result_record": "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
+      "phase5_registry_id": "self_improvement_boundaries",
+      "appendix_e_markers": [
+        "Protected-invariant preservation test",
+        "Evaluator independence test",
+        "Self-improvement rollback scenario"
+      ],
+      "primary_chapters": [
+        "recursive-self-improvement-boundaries",
+        "capability-replacement-and-rollback",
+        "constitutional-alignment-substrate",
+        "stable-capability-fields",
+        "readiness-gates-residual-escrow-and-quarantine"
+      ],
+      "lean_module": "lean/AsiStackProofs/SelfImprovement.lean",
+      "lean_structures": [
+        "ImprovementTransitionReview",
+        "SelfEvaluationReview"
+      ],
+      "lean_mapped_fields": {
+        "protected_invariants": "ImprovementTransitionReview.protectedInvariantsDeclared",
+        "evaluator_independence": "SelfEvaluationReview.evaluatedOnlyByReplacedComponent",
+        "outcome_state": [
+          "ImprovementTransitionReview.transitionAccepted",
+          "ImprovementTransitionReview.protectedInvariantsPreserved",
+          "SelfEvaluationReview.proposalPromoted"
+        ]
+      },
+      "harness_only_fields": {
+        "transition_id": "Trace identity.",
+        "trigger_residual": "Harness-level trigger record.",
+        "field_id": "Stable-capability-field reference.",
+        "proposal": "Fixture payload.",
+        "cheaper_interventions_tried": "Harness checks cheaper intervention discipline.",
+        "replacement_transaction": "Cross-protocol reference checked by Python fixtures.",
+        "governance_approval": "Approval record checked by Python fixtures.",
+        "monitor_window": "Fixture lifecycle window.",
+        "rollback_path": "Rollback path checked by Python fixtures."
+      },
+      "abstracted_fields": {},
+      "abstraction_note": "Lean currently projects narrow invariant and sole-self-evaluator predicates. It does not prove recursive self-improvement safety, canary quality, monitor quality, rollback execution, or evaluator independence in a deployed system."
+    },
+    {
+      "id": "replacement_transaction",
+      "schema": "schemas/replacement_transaction.schema.json",
+      "fixture_dir": "experiments/capability_replacement/fixtures",
+      "harness_script": "scripts/validate_capability_replacement.py",
+      "harness_doc": "docs/capability_replacement_harness.md",
+      "result_record": "experiments/capability_replacement/results/2026-06-28-local.md",
+      "phase5_registry_id": "capability_replacement",
+      "appendix_e_markers": [
+        "Replacement transaction test",
+        "Regression preservation test",
+        "Rollback execution dry run"
+      ],
+      "primary_chapters": [
+        "capability-replacement-and-rollback",
+        "stable-capability-fields",
+        "recursive-self-improvement-boundaries",
+        "readiness-gates-residual-escrow-and-quarantine"
+      ],
+      "lean_module": "lean/AsiStackProofs/Replacement.lean",
+      "lean_structures": [
+        "ReplacementCommit"
+      ],
+      "lean_mapped_fields": {
+        "qualification_evidence": "ReplacementCommit.qualificationEvidence",
+        "regression_results": "ReplacementCommit.regressionPassed",
+        "rollback_plan": "ReplacementCommit.rollbackMetadata",
+        "rollback_receipt": "ReplacementCommit.rollbackMetadata"
+      },
+      "harness_only_fields": {
+        "transaction_id": "Trace identity.",
+        "transaction_state": "Lifecycle state checked by Python fixtures.",
+        "field_id": "Capability-field reference.",
+        "prior_implementation": "Fixture payload.",
+        "candidate_implementation": "Fixture payload.",
+        "identity_preservation": "Harness-level identity check.",
+        "precheck_results": "Fixture evidence.",
+        "authority_check": "Harness-level authority check.",
+        "evaluator_independence": "Harness-level evaluator independence check.",
+        "residual_escrow": "Harness-level residual record.",
+        "approval_record": "Harness-level approval record.",
+        "canary_scope": "Canary boundary checked by fixtures.",
+        "monitor_window": "Fixture lifecycle window.",
+        "monitor_status": "Fixture lifecycle status.",
+        "decision": "Harness-level decision.",
+        "promotion_blockers": "Harness-level blocker list.",
+        "source_refs": "Trace references.",
+        "support_state_effect": "Support-state non-promotion checked by harness.",
+        "non_claims": "Non-claim boundary checked by harness."
+      },
+      "abstracted_fields": {},
+      "abstraction_note": "Lean only checks a finite replacement commit predicate. It does not prove deployed replacement behavior, regression-suite adequacy, rollback execution, monitor quality, or authority enforcement."
+    },
+    {
+      "id": "readiness_gate_record",
+      "schema": "schemas/readiness_gate_record.schema.json",
+      "fixture_dir": "experiments/readiness_residual_gates/fixtures",
+      "harness_script": "scripts/validate_readiness_residual_gates.py",
+      "harness_doc": "docs/readiness_residual_harness.md",
+      "result_record": "experiments/readiness_residual_gates/results/2026-06-28-local.md",
+      "phase5_registry_id": "readiness_residual_gates",
+      "appendix_e_markers": [
+        "Readiness gate enforcement test",
+        "Residual escrow integrity test",
+        "Quarantine behavior test"
+      ],
+      "primary_chapters": [
+        "routing-heads-and-specialist-cores",
+        "readiness-gates-residual-escrow-and-quarantine",
+        "moecot-runtime-and-multi-core-orchestration",
+        "prototype-roadmap",
+        "recursive-self-improvement-boundaries"
+      ],
+      "lean_module": "lean/AsiStackProofs/ReadinessGates.lean",
+      "lean_structures": [
+        "GateReview",
+        "RouteSelection"
+      ],
+      "lean_mapped_fields": {
+        "decision": "GateReview.decision",
+        "gate_evidence": "GateReview.allRequiredGatesPass",
+        "current_state": "RouteSelection.state",
+        "allowed_routes": "RouteSelection.ordinaryRouteSelected",
+        "blocked_routes": "RouteSelection.ordinaryRouteSelected"
+      },
+      "harness_only_fields": {
+        "gate_id": "Trace identity.",
+        "target_id": "Target reference.",
+        "target_kind": "Target type label.",
+        "field_id": "Capability-field reference.",
+        "candidate_state": "Fixture state.",
+        "workload_family": "Fixture workload label.",
+        "freshness_window": "Fixture freshness rule.",
+        "evidence_state": "Fixture evidence state.",
+        "floor_evidence": "Harness-level floor evidence.",
+        "frontier_evidence": "Harness-level frontier evidence.",
+        "regression_results": "Harness-level regression record.",
+        "residual_escrow": "Harness-level residual record.",
+        "inherited_residuals": "Harness-level inherited residuals.",
+        "authority_scope": "Harness-level authority scope.",
+        "promotion_blockers": "Harness-level blocker list.",
+        "quarantine_conditions": "Harness-level quarantine rule.",
+        "diagnostic_permissions": "Harness-level diagnostic permission rule.",
+        "fallback_path": "Harness-level fallback path.",
+        "expiry": "Harness-level expiry.",
+        "closure_conditions": "Harness-level closure rule.",
+        "review_refs": "Trace references.",
+        "next_review_trigger": "Trace/lifecycle reference.",
+        "non_claims": "Non-claim boundary checked by harness."
+      },
+      "abstracted_fields": {},
+      "abstraction_note": "Lean covers a narrow gate-pass and route-selection predicate. It does not prove route quality, evidence freshness, quarantine enforcement, fallback behavior, or deployed readiness governance."
+    },
+    {
+      "id": "belief_revision_record",
+      "schema": "schemas/belief_revision_record.schema.json",
+      "fixture_dir": "experiments/claim_ledger_revision/fixtures",
+      "harness_script": "scripts/validate_claim_ledger_revision.py",
+      "harness_doc": "docs/claim_ledger_revision_harness.md",
+      "result_record": "experiments/claim_ledger_revision/results/2026-06-28-local.md",
+      "phase5_registry_id": "claim_ledger_revision",
+      "appendix_e_markers": [
+        "Contradiction detection test",
+        "Belief revision test"
+      ],
+      "primary_chapters": [
+        "claim-ledgers-and-belief-revision",
+        "evidence-states-and-claim-discipline",
+        "spinoza-verification-and-proof-carrying-claims",
+        "living-book-methodology"
+      ],
+      "lean_module": "lean/AsiStackProofs/ClaimLedger.lean",
+      "lean_structures": [
+        "BeliefRevisionRecord",
+        "ClaimUpdate",
+        "PromotionReview"
+      ],
+      "lean_mapped_fields": {
+        "claim_id": "BeliefRevisionRecord.claimIdentityPresent",
+        "prior_support_state": "BeliefRevisionRecord.priorSupportStateRecorded",
+        "new_support_state": "BeliefRevisionRecord.newSupportStateRecorded",
+        "evidence_refs": "BeliefRevisionRecord.evidenceRefsPresent",
+        "contradiction_refs": "BeliefRevisionRecord.contradictionState",
+        "revision_reason": "BeliefRevisionRecord.revisionReasonPresent",
+        "history_refs": "BeliefRevisionRecord.historyRefsPresent",
+        "ledger_effect": "BeliefRevisionRecord.ledgerEffect",
+        "non_claims": "BeliefRevisionRecord.nonClaimBoundaryPresent"
+      },
+      "harness_only_fields": {
+        "revision_id": "Trace identity.",
+        "revision_action": "Harness-level revision action.",
+        "defeaters": "Harness-level defeater list.",
+        "residual_refs": "Trace references.",
+        "uncertainty": "Harness-level uncertainty payload.",
+        "review_status": "Harness-level review state.",
+        "changed_surface_refs": "Surface-sync trace references.",
+        "non_overwrite_attestation": "Harness-level non-overwrite check."
+      },
+      "abstracted_fields": {},
+      "abstraction_note": "Lean checks finite ledger bookkeeping predicates. It does not prove open-domain claim extraction, contradiction detection quality, source interpretation, or belief-engine correctness."
+    },
+    {
+      "id": "proof_carrying_claim",
+      "schema": "schemas/proof_carrying_claim.schema.json",
+      "fixture_dir": "experiments/proof_carrying_claims/fixtures",
+      "harness_script": "scripts/validate_proof_carrying_claims.py",
+      "harness_doc": "docs/proof_carrying_claim_harness.md",
+      "result_record": "experiments/proof_carrying_claims/results/2026-06-28-local.md",
+      "phase5_registry_id": "proof_carrying_claims",
+      "appendix_e_markers": [
+        "Proof artifact presence test",
+        "Tier assignment test",
+        "Formalization mismatch review"
+      ],
+      "primary_chapters": [
+        "spinoza-verification-and-proof-carrying-claims",
+        "claim-ledgers-and-belief-revision",
+        "executable-specifications-and-lean-proof-envelope",
+        "unified-adaptive-tribunal-and-adversarial-review"
+      ],
+      "lean_module": "lean/AsiStackProofs/ProofCarryingClaims.lean",
+      "lean_structures": [
+        "ProofCarryingClaimRecord",
+        "FormalTierClaimReview",
+        "FailedVerifierPromotionReview"
+      ],
+      "lean_mapped_fields": {
+        "required_tier": "ProofCarryingClaimRecord.requestedTierPresent",
+        "interpretation_mapping": "ProofCarryingClaimRecord.interpretationMappingPresent",
+        "interpretation_confidence": "ProofCarryingClaimRecord.interpretationConfidenceRecorded",
+        "justification_artifact": "ProofCarryingClaimRecord.justificationArtifactRefPresent",
+        "verifier_result": "ProofCarryingClaimRecord.verifierResult",
+        "verifier_artifact_refs": "ProofCarryingClaimRecord.verifierArtifactRefsPresent",
+        "formal_scope": "ProofCarryingClaimRecord.formalScopeRecorded",
+        "limitations": "ProofCarryingClaimRecord.limitationsRecorded",
+        "claim_validity_effect": "ProofCarryingClaimRecord.claimValidityEffect",
+        "support_state_effect": "ProofCarryingClaimRecord.supportStateEffectRecorded",
+        "non_claims": "ProofCarryingClaimRecord.nonClaimsPresent"
+      },
+      "harness_only_fields": {
+        "proof_claim_id": "Trace identity.",
+        "claim_id": "Claim reference.",
+        "claim_scope": "Harness-level scope text.",
+        "justification_type": "Harness-level justification route.",
+        "artifact_validity_state": "Harness-level artifact state.",
+        "semantic_adequacy": "Harness-level semantic adequacy label.",
+        "verifier": "Verifier identity.",
+        "failed_attempt_refs": "Trace references.",
+        "consumer_requirements": "Harness-level consumer contract.",
+        "downgrade_rule": "Harness-level downgrade rule.",
+        "residual_route": "Harness-level residual routing.",
+        "tribunal_ref": "Cross-protocol reference.",
+        "ledger_update": "Cross-protocol reference.",
+        "source_refs": "Trace references."
+      },
+      "abstracted_fields": {},
+      "abstraction_note": "Lean checks finite proof-envelope bookkeeping. It does not prove theorem validity, semantic equivalence, citation accuracy, verifier quality, or open-domain formalization adequacy."
+    },
+    {
+      "id": "tribunal_review_record",
+      "schema": "schemas/tribunal_review_record.schema.json",
+      "fixture_dir": "experiments/tribunal_review/fixtures",
+      "harness_script": "scripts/validate_tribunal_review.py",
+      "harness_doc": "docs/tribunal_review_harness.md",
+      "result_record": "experiments/tribunal_review/results/2026-06-28-local.md",
+      "phase5_registry_id": "tribunal_review",
+      "appendix_e_markers": [
+        "Adversarial review coverage test",
+        "Dissent preservation test",
+        "Consensus evidence test"
+      ],
+      "primary_chapters": [
+        "unified-adaptive-tribunal-and-adversarial-review",
+        "spinoza-verification-and-proof-carrying-claims",
+        "moral-uncertainty-and-value-conflict",
+        "benchmark-ratchets-and-anti-goodhart-evidence"
+      ],
+      "lean_module": "lean/AsiStackProofs/Tribunal.lean",
+      "lean_structures": [
+        "TribunalVerdictReview",
+        "HighRiskArtifactAcceptanceReview"
+      ],
+      "lean_mapped_fields": {
+        "verdict": "TribunalVerdictReview.verdictIssued",
+        "reviewer_roles": "TribunalVerdictReview.reviewerRolesPresent",
+        "evidence_refs": "TribunalVerdictReview.evidenceRefsPresent",
+        "dissent": "TribunalVerdictReview.unresolvedDissentRecorded",
+        "risk_class": "HighRiskArtifactAcceptanceReview.highRiskArtifact",
+        "required_actions": "HighRiskArtifactAcceptanceReview.tribunalReviewRequired",
+        "review_state": "HighRiskArtifactAcceptanceReview.tribunalReviewPresent"
+      },
+      "harness_only_fields": {
+        "review_id": "Trace identity.",
+        "target_ref": "Target reference.",
+        "dossier_boundary": "Harness-level dossier boundary.",
+        "dossier_refs": "Trace references.",
+        "reviewer_independence": "Harness-level independence marker.",
+        "adversarial_probes": "Harness-level probe list.",
+        "cycle_cap": "Harness-level review cap.",
+        "prior_review_refs": "Trace references.",
+        "unchanged_evidence_guard": "Harness-level laundering guard.",
+        "retrieval_expansion_policy": "Harness-level retrieval policy.",
+        "findings": "Harness-level finding list.",
+        "unresolved_issues": "Harness-level issue list.",
+        "constraint_effects": "Harness-level constraint effect.",
+        "human_adjudication": "Harness-level human route.",
+        "non_claims": "Non-claim boundary checked by harness."
+      },
+      "abstracted_fields": {},
+      "abstraction_note": "Lean checks finite review-record predicates. It does not prove reviewer independence, adversarial-review quality, consensus quality, verdict correctness, or deployed tribunal behavior."
+    },
+    {
+      "id": "value_conflict_record",
+      "schema": "schemas/value_conflict_record.schema.json",
+      "fixture_dir": "experiments/value_conflicts/fixtures",
+      "harness_script": "scripts/validate_value_conflicts.py",
+      "harness_doc": "docs/value_conflict_harness.md",
+      "result_record": "experiments/value_conflicts/results/2026-06-28-local.md",
+      "phase5_registry_id": "value_conflicts",
+      "appendix_e_markers": [
+        "Value conflict classification test",
+        "Review escalation test",
+        "Residual uncertainty preservation test"
+      ],
+      "primary_chapters": [
+        "moral-uncertainty-and-value-conflict",
+        "unified-adaptive-tribunal-and-adversarial-review",
+        "governance-rights-fork-exit-and-audit",
+        "constitutional-alignment-substrate"
+      ],
+      "lean_module": "lean/AsiStackProofs/ValueConflict.lean",
+      "lean_structures": [
+        "ConflictDecisionReview",
+        "HighStakesConflictReview"
+      ],
+      "lean_mapped_fields": {
+        "stakes": "HighStakesConflictReview.highStakesConflict",
+        "review_route": "HighStakesConflictReview.requiredReviewPresent",
+        "decision_state": "ConflictDecisionReview.decisionMade",
+        "decision": "HighStakesConflictReview.decisionAccepted",
+        "residual_uncertainty": "ConflictDecisionReview.residualConflictRecordPresent"
+      },
+      "harness_only_fields": {
+        "conflict_id": "Trace identity.",
+        "value_axes": "Harness-level value axes.",
+        "stakeholders": "Harness-level affected parties.",
+        "reversibility": "Harness-level reversibility label.",
+        "evidence_required": "Harness-level evidence requirement.",
+        "authority_effect": "Harness-level authority effect.",
+        "dissent_payload": "Harness-level dissent payload.",
+        "expiry_or_revisit_condition": "Harness-level revisit rule."
+      },
+      "abstracted_fields": {},
+      "abstraction_note": "Lean checks finite conflict-routing predicates. It does not prove moral correctness, value classification quality, human-review quality, runtime policy behavior, or source interpretation."
+    },
+    {
+      "id": "resource_budget_record",
+      "schema": "schemas/resource_budget_record.schema.json",
+      "fixture_dir": "experiments/resource_budget_ledgers/fixtures",
+      "harness_script": "scripts/validate_resource_budget_ledgers.py",
+      "harness_doc": "docs/resource_budget_ledger_harness.md",
+      "result_record": "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
+      "phase5_registry_id": "resource_budget_ledgers",
+      "appendix_e_markers": [
+        "Resource budget ledger harness",
+        "Risk-adjusted verification test"
+      ],
+      "primary_chapters": [
+        "resource-economics-and-token-budgets",
+        "the-efficient-asi-hypothesis",
+        "planning-as-a-control-layer",
+        "runtime-adapters-tool-permissions-and-human-approval",
+        "benchmark-ratchets-and-anti-goodhart-evidence"
+      ],
+      "lean_module": "lean/AsiStackProofs/ResourceEconomics.lean",
+      "lean_structures": [
+        "BudgetGateReview",
+        "VerificationBudgetReview"
+      ],
+      "lean_mapped_fields": {
+        "risk_class": "VerificationBudgetReview.riskClass",
+        "verification_tax": "VerificationBudgetReview.verificationBudgetSufficient",
+        "safety_gates": [
+          "BudgetGateReview.requiredSafetyGate",
+          "BudgetGateReview.requiredVerificationGate"
+        ],
+        "budget_decision": "VerificationBudgetReview.decision",
+        "quality_predicate": "BudgetGateReview.safetyGateDisabled"
+      },
+      "harness_only_fields": {
+        "budget_id": "Trace identity.",
+        "task_id": "Task reference.",
+        "value_hypothesis": "Harness-level value statement.",
+        "capacity_pool": "Harness-level capacity pool.",
+        "budget_state": "Harness-level lifecycle state.",
+        "cost_estimate": "Harness-level estimate.",
+        "protected_overhead": "Harness-level protected overhead.",
+        "displaced_costs": "Harness-level displaced-cost record.",
+        "escalation_rule": "Harness-level escalation rule.",
+        "residuals": "Harness-level residual list.",
+        "evidence_refs": "Trace references."
+      },
+      "abstracted_fields": {},
+      "abstraction_note": "Lean checks narrow budget-gate and verification-budget predicates. It does not prove scheduler quality, real load stability, KV-cache economics, cost-quality optimality, or runtime budget enforcement."
+    }
+  ]
+}

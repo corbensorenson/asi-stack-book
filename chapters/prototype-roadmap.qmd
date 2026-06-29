@@ -89,6 +89,9 @@ A roadmap that jumps to autonomous improvement skips source matrices, artifact g
 VIEA says durable artifacts first. SCF says replacement and improvement need stable fields. VCM says context admission and adequacy must be visible. PlanForge says plans need typed contracts. Project Theseus says report-first local machinery should gate training and self-evolution.
 
 Prototype roadmaps often hide dependency direction. They list features in an attractive order, but do not say which earlier gates make later agency legitimate. This architecture needs the opposite: every attractive capability should point backward to the evidence, authority, replay, and rollback infrastructure it depends on.
+
+External baselines help order the prototype ladder. NIST AI RMF (`ext_nist_ai_rmf_1_0_2023`) and extreme-risk evaluation work (`ext_model_evaluation_extreme_risks_2023`) set risk/evaluation gates, Dafny (`ext_dafny_2010`) and Copilot (`ext_copilot_runtime_monitor_2010`) point toward specification and monitor artifacts, SHOP2 (`ext_shop2_2003`) and SWE-bench (`ext_swe_bench_2023`) pressure planning and software-task evaluation, MMLU (`ext_mmlu_2020`) and CheckList (`ext_checklist_2020`) pressure benchmark and behavioral coverage, CodeBLEU (`ext_codebleu_2020`) pressures artifact-quality metrics, and QLoRA (`ext_qlora_2023`) names efficient adaptation as a later evidence lane. The roadmap uses them to sequence prototypes, not to claim those systems have been reproduced.
+
 Without that dependency discipline, a roadmap becomes a story about ambition rather than an engineering sequence that can stop, downgrade, or refuse work when its prerequisites are missing.
 
 ## Core Claim

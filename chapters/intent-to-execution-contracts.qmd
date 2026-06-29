@@ -67,6 +67,8 @@ A model response is not an execution contract; it lacks lifecycle, acceptance, a
 
 The common failure is to treat fluent text as completed work. A response can sound responsive while hiding missing approvals, untracked source boundaries, unverifiable artifacts, unexecuted tests, or side effects that were never authorized. Talos sharpens the point: work should enter a job lifecycle, not a loose conversational state. GenesisCode adds the software version of the same boundary: proposals, effects, replay logs, and obligations must be separated.
 
+ReAct-style agent loops in `ext_react_2022` give the nearest external comparison: reasoning, acting, and observation can be interleaved without collapsing all work into one final answer. Intent-to-execution contracts add a stricter acceptance surface around that loop: lifecycle state, artifact identity, authority, evidence, and refusal conditions must be present before a response is treated as executable work. The comparison does not reproduce ReAct behavior or prove this contract layer is sufficient.
+
 The contract boundary exists because later layers should not infer authority from prose. A planner can decompose a contract. A runtime can enforce a contract. A verifier can check a contract. A bare response cannot reliably do any of those things.
 
 The missing-field case is just as important as the filled-field case. If the contract does not specify authority, acceptance, allowed tools, failure behavior, or approval path, downstream layers should not silently infer permissive defaults. They should emit clarification requests, draft-only routes, residuals, or blocked states.

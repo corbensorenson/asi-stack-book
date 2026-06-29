@@ -76,6 +76,8 @@ Chat outputs do not provide deterministic job lifecycle, tool isolation, auditab
 
 Chat is not a factory. It does not lock a contract, isolate tools, enforce permission boundaries, require approvals, preserve logs, or tell a later verifier how to replay what happened. Without jobs, the system has vibes and side effects instead of controlled work.
 
+AutoGen (`ext_autogen_2023`) gives an external multi-agent workflow baseline, and SWE-bench (`ext_swe_bench_2023`) gives an external software-task benchmark baseline with repository-scale context and patch evaluation. Labor OS uses those comparison points to ask for typed job lifecycles, artifact receipts, replay, and approval boundaries around agentic work. The baseline references do not claim that Talos jobs reproduce AutoGen workflows or solve SWE-bench tasks.
+
 GenesisCode reinforces the distinction: proposals and effects are different things. Effects require capability boundaries and replay logs. Software Magic adds that workflows need entry rules, exit rules, guards, loops, and recovery paths.
 
 Agent swarms often fail at this boundary. They start many plausible subtasks but lose the lifecycle state, permission scope, parent contract, or artifact trail that would let a reviewer know which work was authorized and which work merely happened. A Labor OS should make unauthorized work hard to start and unlogged work hard to hide.

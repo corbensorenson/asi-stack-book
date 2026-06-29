@@ -77,6 +77,8 @@ A constitution that cannot be diffed also cannot govern self-improvement. If a l
 
 The substrate earns its name when the constitution can say no at the point where power is requested. If its commitments only appear in prose, dashboards, or after-the-fact review, the optimizer still chooses the live path. The substrate has to be close enough to planning, memory, execution, and self-improvement that a protected predicate can narrow, delay, escalate, or block work.
 
+External baseline exception: the current constitutional substrate uses Corben/local constitutional and alignment sources as architecture lineage, not an external constitutional-AI or legal-governance comparison. A future pass should triage source-noted external baselines for constitutional AI, model constitutions, or governance rule systems before strengthening this comparison.
+
 ## Core Claim
 
 [constitutional-alignment-substrate.core, label: Design rationale, support: argument] Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes.
@@ -220,7 +222,7 @@ This constraint compiler is still proposed architecture. Hold support at `argume
 | `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | implemented |
 | `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over constitutional predicate reviews and self-modification reviews. They prove only the record-level gates: an admitted plan marked against an active predicate must record predicate satisfaction, and a self-modification that weakens a protected predicate must be rejected. They do not prove moral correctness, complete constitutional consistency, self-modification ethics, or alignment behavior in a running system.
+These Lean hooks are explicitly classified as projection-only traceability for v1.0. They are implemented as finite-record predicates over constitutional predicate reviews and self-modification reviews, and the current theorem bodies project conclusions from assumed review predicates rather than deriving alignment from a richer transition model. They prove only the record-level gates: an admitted plan marked against an active predicate must record predicate satisfaction, and a self-modification that weakens a protected predicate must be rejected. They do not prove moral correctness, complete constitutional consistency, self-modification ethics, or alignment behavior in a running system.
 
 ## Source crosswalk
 

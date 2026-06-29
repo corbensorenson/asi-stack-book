@@ -1,12 +1,16 @@
-# v1.0 Evidence Transition Pilot
+# v1.0 Evidence Transition Records
 
-Last updated: 2026-06-28
+Last updated: 2026-06-29
 
-This pilot tests the evidence-transition process on a small set of narrow book-method and architecture-control claims. It does not promote any claim above `argument`.
+The no-change pilot tests the evidence-transition process on a small set of narrow book-method and architecture-control claims. The pilot itself does not promote any reviewed chapter or book-method claim above `argument`.
+
+A separate measured/replayed record now accepts one bounded repository-infrastructure transition: `living-book-methodology.phase5_harness_registry_runner` moves from `argument` to `synthetic-test-backed` because the Phase 5 harness registry was replayed by `python3 scripts/run_phase5_harnesses.py --write-report` and all registered harness summaries matched. That transition does not promote any chapter core claim, ASI capability claim, safety claim, benchmark claim, runtime claim, or source-interpretation claim.
+
+The full v1.0 core-claim coverage gate is recorded separately in `docs/core_claim_transition_coverage.md`: 26 chapter core claims have accepted no-change transition records and the remaining 28 chapter core claims have accepted explicit no-promotion decisions in `claim_decisions/v1_0_core_claim_no_promotion.json`.
 
 ## Records
 
-The machine-readable records live under `evidence_transitions/v1_0_pilot/` and validate against `schemas/evidence_transition_record.schema.json`.
+The no-change machine-readable records live under `evidence_transitions/v1_0_pilot/` and validate against `schemas/evidence_transition_record.schema.json`.
 
 | Claim ID | Decision | Reason |
 |---|---|---|
@@ -37,24 +41,34 @@ The machine-readable records live under `evidence_transitions/v1_0_pilot/` and v
 | `executable-specifications-and-lean-proof-envelope.core` | no change; remains `argument` | The Lean build and proof audit pass for finite-record predicates, but proof adequacy has not been reviewed and the predicates do not imply broad runtime guarantees. |
 | `open-research-agenda-and-bibliography-plan.core` | no change; remains `argument` | Source inventory, source appendices, and backlog schema mechanics exist, but external literature normalization, citation verification, and backlog closure remain incomplete. |
 
+## Measured/Replayed Slice
+
+The first accepted measured/replayed transition is intentionally narrower than a chapter core claim.
+
+| Claim ID | Decision | Reason |
+|---|---|---|
+| `living-book-methodology.phase5_harness_registry_runner` | upward transition; `argument` to `synthetic-test-backed` | `docs/first_measured_replayed_slice.md` records the local registry replay: 21 registered harnesses ran through `scripts/run_phase5_harnesses.py`, each returned success, each output matched its registry `result_summary`, and the registry covers 60 valid synthetic fixtures plus 102 expected-invalid fixtures. The transition proves registry-driven replay and synthetic fixture discipline only. |
+
 ## Validation
 
 Run:
 
 ```bash
 python3 scripts/validate_evidence_transitions.py
+python3 scripts/validate_core_claim_decisions.py
 ```
 
-The validator checks every JSON record in `evidence_transitions/` against the evidence-transition schema, rejects duplicate transition IDs, and keeps no-change pilot records at `argument`.
+The evidence-transition validator checks every JSON record in `evidence_transitions/` against the evidence-transition schema, rejects duplicate transition IDs, keeps no-change pilot records at `argument`, and requires upward transitions to name passing verification, artifacts, negative results, empty acceptance blockers, and bounded review eligibility. The core-claim decision validator checks that every manifest chapter core claim has either an accepted transition record or an accepted explicit no-promotion decision.
 
 ## Interpretation
 
-The useful outcome is conservative. The pilot proves that the book can record an evidence review without pretending the review strengthens a claim. That matters because v1.0 should not promote claims merely because the repository is more organized, the prose is clearer, a local validator passed, a synthetic harness passed, or a finite-record proof was strengthened.
+The useful outcome is conservative. The pilot proves that the book can record an evidence review without pretending the review strengthens a claim. The measured/replayed record proves that the evidence system can also accept a deliberately bounded upward transition when a local command, artifact set, negative-control boundary, and non-claim record are all present. That matters because v1.0 should not promote chapter claims merely because the repository is more organized, the prose is clearer, a local validator passed, a synthetic harness passed, or a finite-record proof was strengthened.
 
-The next evidence pass should either narrow a claim enough that repository artifacts can support a bounded transition, or keep recording no-change decisions until an external review, stronger proof adequacy review, source interpretation review, or behavior test justifies movement. The claim-ledger, proof-carrying, tribunal-review, value-conflict, constitutional-predicate, agency-rights, governance-rights, security-kernel, stable-capability-field, capability-replacement, self-improvement-boundary, contract-layer, runtime-adapter, readiness/residual, fast-generation, Efficient ASI, and resource-economics extensions are still no-change decisions: they record useful synthetic or deterministic fixture coverage while preserving the requirement for claim extraction, contradiction detection, surface synchronization, verifier integration, theorem-validity review, semantic-equivalence review, citation accuracy review, reviewer-independence review, adversarial-probe quality review, verdict-correctness review, classification-quality review, human-review quality review, predicate-translation adequacy review, self-modification safety tests, least-sufficient-power runtime traces, material-usability review, consent-quality review, manipulation-resistance review, deployed security-kernel review, sandbox or compartment isolation review, side-channel and logging threat-model review, prompt-injection containment tests, least-privilege context traces, runtime revocation tests, stable-capability-field route-validity traces, evaluator-integrity review, authority-enforcement traces, real rollback dry runs, replacement monitor-window traces, regression-suite evidence over real implementations, deployed self-improvement traces, security and resource boundary-delta tests, stale-gate replay, semantic-parser evaluations, real command-to-effect traces, artifact acceptance review, runtime-policy traces, deployed governance-right traces, deployed agency-right traces, deployed adapter traces, route-selection traces, readiness-engine behavior, residual-ledger replay, model benchmark runs, matched generation baselines, budget-scheduler traces, review-capacity queue traces, real load-stability runs, hidden-cost audits, and runtime-security, governance, economic, serving-system, or model-evaluation review before stronger language is allowed.
+The next evidence pass should move beyond repository-infrastructure behavior toward a public-safe prototype, trace, measurement, imported receipt, or replay. The claim-ledger, proof-carrying, tribunal-review, value-conflict, constitutional-predicate, agency-rights, governance-rights, security-kernel, stable-capability-field, capability-replacement, self-improvement-boundary, contract-layer, runtime-adapter, readiness/residual, fast-generation, Efficient ASI, and resource-economics extensions are still no-change decisions: they record useful synthetic or deterministic fixture coverage while preserving the requirement for claim extraction, contradiction detection, surface synchronization, verifier integration, theorem-validity review, semantic-equivalence review, citation accuracy review, reviewer-independence review, adversarial-probe quality review, verdict-correctness review, classification-quality review, human-review quality review, predicate-translation adequacy review, self-modification safety tests, least-sufficient-power runtime traces, material-usability review, consent-quality review, manipulation-resistance review, deployed security-kernel review, sandbox or compartment isolation review, side-channel and logging threat-model review, prompt-injection containment tests, least-privilege context traces, runtime revocation tests, stable-capability-field route-validity traces, evaluator-integrity review, authority-enforcement traces, real rollback dry runs, replacement monitor-window traces, regression-suite evidence over real implementations, deployed self-improvement traces, security and resource boundary-delta tests, stale-gate replay, semantic-parser evaluations, real command-to-effect traces, artifact acceptance review, runtime-policy traces, deployed governance-right traces, deployed agency-right traces, deployed adapter traces, route-selection traces, readiness-engine behavior, residual-ledger replay, model benchmark runs, matched generation baselines, budget-scheduler traces, review-capacity queue traces, real load-stability runs, hidden-cost audits, and runtime-security, governance, economic, serving-system, or model-evaluation review before stronger language is allowed.
 
 ## Non-Claims
 
 - No chapter support state moved above `argument`.
+- The only accepted upward transition is the bounded repository-infrastructure claim `living-book-methodology.phase5_harness_registry_runner`.
 - No AI capability, safety property, benchmark result, runtime behavior, source interpretation, or proof adequacy claim is promoted.
 - Local validation remains process evidence unless a separate accepted transition says otherwise.

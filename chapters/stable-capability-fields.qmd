@@ -80,6 +80,8 @@ Without that test, a system can suffer capability amnesia. It remembers that a c
 
 The most dangerous upgrade failures can look successful locally. The new implementation may pass its own demo while forgetting the field's historical incidents, weakening an audit hook, changing the meaning of a route, or treating an expired qualification as fresh. A stable field makes those losses visible as boundary violations instead of hidden costs of progress.
 
+External baseline exception: stable capability fields are a local ASI Stack record abstraction, and no source-noted external module-interface, capability-system, or component-lifecycle baseline has been assigned here yet. The release gate therefore keeps the comparison as an explicit future source-assignment task rather than inventing an outside lineage.
+
 ## Core Claim
 
 [stable-capability-fields.core, label: Design rationale, support: argument] A stable capability field is a governed boundary with identity, interface, authority ceiling, qualification evidence, and rollback policy.

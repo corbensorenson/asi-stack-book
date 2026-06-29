@@ -52,8 +52,26 @@ def main() -> None:
                 errors.append(f"{relative}: upward transition must have accepted review_status.")
             if value.get("new_support_state") != "argument" and value.get("transition_effect") == "no_change":
                 errors.append(f"{relative}: no_change transition must keep new_support_state at argument.")
-            if value.get("support_state_effect") not in {"argument_only", "blocks_promotion"}:
-                errors.append(f"{relative}: pilot records must be argument_only or blocks_promotion.")
+            if value.get("transition_effect") == "no_change":
+                if value.get("support_state_effect") not in {"argument_only", "blocks_promotion"}:
+                    errors.append(f"{relative}: no_change records must be argument_only or blocks_promotion.")
+            elif value.get("transition_effect") == "upward":
+                if value.get("old_support_state") == value.get("new_support_state"):
+                    errors.append(f"{relative}: upward transition must change support state.")
+                if value.get("verification_result") != "pass":
+                    errors.append(f"{relative}: upward transition must have passing verification_result.")
+                if value.get("support_state_effect") != "eligible_for_bounded_evidence_review":
+                    errors.append(
+                        f"{relative}: upward transition must use support_state_effect eligible_for_bounded_evidence_review."
+                    )
+                if value.get("acceptance_blockers"):
+                    errors.append(f"{relative}: accepted upward transition must not list acceptance_blockers.")
+                if not value.get("artifact_refs"):
+                    errors.append(f"{relative}: upward transition must name artifact_refs.")
+                if not value.get("negative_results"):
+                    errors.append(f"{relative}: upward transition must record negative_results.")
+            elif value.get("support_state_effect") not in {"blocks_promotion", "record_shape_only"}:
+                errors.append(f"{relative}: unsupported transition/support_state_effect combination.")
 
     if errors:
         print("Evidence transition validation failed:")

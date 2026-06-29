@@ -76,6 +76,8 @@ The same caution applies to context. A mission brief should be enough for the ta
 
 Security therefore belongs before the self-improvement boundary. A system that can modify itself must not be allowed to improve by making privileged context cheaper to move, easier to summarize, or less visible in logs. Reduced friction is not automatically reduced risk.
 
+External baseline exception: the current security-kernel treatment relies on Corben/local credential-handle and context-supply-chain sources. Zero-trust, secrets-management, sandboxing, enclave, prompt-injection, or information-flow literature may become important external baselines, but none has been assigned with source notes for this layer in the current v1.0 source queue.
+
 ## Core Claim
 
 [security-kernel-and-digital-scifs.core, label: Design rationale, support: argument] Sensitive context and privileged actions should be mediated by kernel-like security mechanisms and compartmentalized Digital SCIFs.

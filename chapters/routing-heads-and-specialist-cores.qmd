@@ -72,6 +72,8 @@ Monolithic scaling hides the route. Static tool lists hide the capability bounda
 
 Routing is not just a performance problem; it is a governance problem. A specialist that can read a private memory, call a tool, mutate an artifact, or advise a high-impact decision is exercising authority. The router therefore needs a registry and a decision record, not just a confidence score.
 
+External routing and MoE work supplies the performance baseline that governance-aware routing has to exceed in discipline, not in claimed benchmark score. Sparse MoE (`ext_sparse_moe_2017`), GShard (`ext_gshard_2020`), Switch Transformer (`ext_switch_transformer_2021`), Expert Choice (`ext_expert_choice_routing_2022`), Mixtral (`ext_mixtral_2024`), the MoE survey (`ext_moe_llm_survey_2024`), FrugalGPT (`ext_frugalgpt_2023`), Hybrid LLM (`ext_hybrid_llm_2024`), and RouteLLM (`ext_routellm_2024`) all make conditional computation, learned routing, capacity, and cost-quality tradeoffs explicit. Specialist cores add authority ceilings, readiness, residuals, and fallback records around that baseline; no route-quality measurement is claimed here.
+
 Route opacity is the immediate routing failure. A system may choose a good specialist and still leave no explanation of rejected candidates, denied authority, missing readiness, fallback options, or residual work. That makes later audit and learning impossible.
 
 ## Core Claim

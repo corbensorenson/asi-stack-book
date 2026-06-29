@@ -16,6 +16,8 @@ REQUIRED_FILES = [
     "CITATION.cff",
     "docs/repository_map.md",
     "docs/publication_readiness.md",
+    "docs/release_reproducibility.md",
+    "docs/external_sota_positioning_audit.md",
     "docs/book_outline.md",
     "editions/release_profiles.json",
     "editions/reader_overlays/README.md",
@@ -51,6 +53,8 @@ REQUIRED_FILES = [
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
     "scripts/validate_release_profiles.py",
+    "scripts/validate_release_reproducibility.py",
+    "scripts/validate_external_sota_positioning.py",
     "assets/reading-mode.html",
     ".github/pull_request_template.md",
     ".github/ISSUE_TEMPLATE/config.yml",
@@ -91,6 +95,8 @@ REQUIRED_README_STRINGS = [
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
     "scripts/validate_publication.py",
+    "scripts/validate_release_reproducibility.py",
+    "scripts/validate_external_sota_positioning.py",
     "Do not report a theorem as proven unless",
 ]
 

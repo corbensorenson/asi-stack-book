@@ -76,6 +76,8 @@ Long-context systems often fail by sounding continuous while their memory contra
 
 Finite proofs and learned behavior meet at the sharpest gap. A finite proof can certify a slot property, coverage property, or loop-exit property. It cannot certify that a learned model used the right information in the right way unless a workload-specific evaluation supplies that evidence.
 
+External baseline exception: Coil Attention is currently grounded in local Circle/Coil and VCM/Verification Bandwidth lineage. External sequence-model, recurrence, state-space, retrieval-memory, or long-context baselines have not been assigned with source notes for this layer, so v1.0 records a source gap rather than making an unreviewed literature comparison.
+
 ## Core Claim
 
 [coil-attention-cyclic-memory-and-recurrence-contracts.core, label: Design rationale, support: argument] Coil attention and memory contracts should be used as structural guardrails for cyclic memory, sparse coverage, recurrence schedules, and work-budget admission, not as claims of retrieval or reasoning quality.

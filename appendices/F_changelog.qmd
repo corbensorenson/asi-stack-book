@@ -1,5 +1,305 @@
 # Changelog
 
+## 2026-06-29 - Reader HTML artifact browser review
+
+- Added `scripts/validate_reader_html_artifact_browser.js` to exercise the
+  generated reader HTML snapshot in a real browser across all generated pages
+  and desktop/mobile viewports.
+- Regenerated local ignored reader HTML, EPUB, and DOCX artifacts with
+  `python3 scripts/render_reader_formats.py --formats html epub docx`, reran
+  `python3 scripts/inspect_reader_format_artifacts.py`, and recorded
+  `docs/reader_html_artifact_browser_review.md`.
+- The reader HTML browser review passed 118 of 118 page-view pairs across 59
+  generated reader pages. It checked stylesheet loading, visible main content,
+  H1 presence, body-text floor, page-level horizontal overflow, raw core-claim
+  marker leaks, live-only scaffold leaks, and rendered SVG diagrams on chapter
+  pages.
+- Updated `editions/reader_manuscript/v1_0/format_review_matrix.json` and
+  regenerated `docs/reader_format_review_matrix.md` so HTML now has
+  `manual_layout_review_status: pass` and only the
+  `reader_release_record_not_created` blocker. EPUB, DOCX, and PDF still keep
+  their format-specific blockers.
+- Updated the README, publication readiness note, v1.0 focus audit, v1.0
+  roadmap, v1.0 candidate status, and the status snapshot validator to record
+  the narrower HTML state.
+- This does not create a tagged edition release record, does not publish or
+  approve a reader artifact, does not approve EPUB/DOCX/PDF/e-reader/audio
+  artifacts, and does not promote any claim support state.
+
+## 2026-06-29 - External-SOTA positioning audit gate
+
+- Added `scripts/validate_external_sota_positioning.py` and generated
+  `docs/external_sota_positioning_audit.md` for the Phase 6 prose-placement
+  gate.
+- The audit records that 44 of 54 chapters currently have `ext_*` positioning
+  before the Source crosswalk, 10 have explicit external-baseline exceptions, 0
+  have source-noted external targets still awaiting placement, and 0 need an
+  exception or added source-noted external baseline.
+- Added the first focused prose-positioning slice across eight foundational
+  and governance chapters: Efficient ASI, System Boundaries, Failure Modes,
+  Evidence States, Agency/Corrigibility, Governance Rights, Capability
+  Replacement, and Recursive Self-Improvement Boundaries.
+- Added a second focused prose-positioning slice across fifteen Part II
+  planning, context, verification, job, artifact, runtime-adapter, and
+  procedural-memory chapters using existing source-noted external baselines.
+- Added a third focused prose-positioning slice across fifteen remaining
+  routing, readiness, MoECOT, compression, representation, simulation, proof,
+  benchmark, architecture, prototype, methodology, and research-agenda chapters
+  using existing source-noted external baselines.
+- Added explicit external-baseline exception paragraphs for ten chapters whose
+  current v1.0 source queues do not yet assign a source-noted external
+  comparison baseline: the opening stack frame, Human Intent, Constitutional
+  Alignment, Moral Uncertainty, Stable Capability Fields, Security Kernel,
+  UAT, Coil Attention, CoilRA/MultiCoil, and Project Theseus.
+- Wired the default freshness validator into CI, `scripts/validate_book.py`,
+  `scripts/validate_validator_coverage.py`, `scripts/validate_publication.py`,
+  the README, `docs/v1_0_candidate_status.md`, `docs/v1_0_roadmap.md`,
+  `docs/publication_readiness.md`, and `docs/repository_map.md`.
+- This closes the v1.0 external-positioning placement gate, not the broader
+  literature-synthesis horizon. It does not claim complete external literature
+  coverage, reproduced external results, source-derived support, support-state
+  promotion, or v1.0 evidence-release approval. The stricter release check is
+  `python3 scripts/validate_external_sota_positioning.py --release`.
+
+## 2026-06-29 - Candidate release reproducibility gate
+
+- Added `docs/release_reproducibility.md` to record the current v1.0
+  candidate's Quarto, Python, Node, Lean, Lake, elan, locale, reader-format,
+  font, citation, DOI-pending, and non-release artifact boundaries.
+- Updated `.github/workflows/publish.yml` to pin Quarto `1.9.38`, Python
+  `3.11`, Node `22`, and the HTML render locale while continuing to install
+  Lean from `lean/lean-toolchain`.
+- Updated `CITATION.cff` to identify the public book as
+  `1.0.0-candidate` dated 2026-06-29, with explicit no-DOI language.
+- Added `scripts/validate_release_reproducibility.py` and wired it into CI,
+  `scripts/validate_book.py`, `scripts/validate_validator_coverage.py`,
+  `scripts/validate_publication.py`, the README,
+  `docs/v1_0_candidate_status.md`, `docs/v1_0_roadmap.md`,
+  `docs/publication_readiness.md`, and `docs/repository_map.md`.
+- This closes the current candidate reproducibility/citability gate without
+  claiming a final v1.0 tag, DOI, reader artifact approval, ebook artifact,
+  audio artifact, proof-strength upgrade, evidence release, or chapter support
+  state promotion.
+
+## 2026-06-29 - Architecture-level red-team desk review
+
+- Added `docs/architecture_red_team_review.md` for the Phase 7A v1.0 gate.
+  The review covers six composed-system attacks: authority ladder escalation,
+  SCIF/context leakage, evaluator capture, support-state inflation, benchmark
+  gaming, and reader-release laundering.
+- Added `scripts/validate_architecture_red_team.py` to require each scenario
+  to record attack setup, expected failure, observed current defense, residual
+  risk, routed follow-up, and non-claims.
+- Wired the validator into `.github/workflows/publish.yml`,
+  `scripts/validate_book.py`, `scripts/validate_validator_coverage.py`, the
+  README, `docs/v1_0_candidate_status.md`, `docs/v1_0_roadmap.md`, and
+  `docs/repository_map.md`.
+- This is a public-safe desk review and residual-routing artifact only. It
+  does not run an exploit, model evaluation, sandbox test, benchmark,
+  source-interpretation audit, external peer review, deployed safety review,
+  runtime security test, reader artifact review, ebook review, audio review,
+  DOI process, or release approval, and it does not promote any chapter core
+  claim above `argument`.
+
+## 2026-06-29 - Core-claim no-promotion coverage gate
+
+- Added `claim_decisions/v1_0_core_claim_no_promotion.json` with accepted
+  explicit no-promotion decisions for the 28 chapter core claims that did not
+  yet have accepted evidence-transition records.
+- Added `scripts/validate_core_claim_decisions.py` and generated
+  `docs/core_claim_transition_coverage.md`. The validator checks all 54
+  manifest chapter core claims against `book_structure.json`, accepted
+  evidence-transition records, and the no-promotion ledger: 26 core claims have
+  accepted no-change transition records, 28 have accepted explicit
+  no-promotion decisions, and 0 are missing coverage.
+- Wired the validator into `.github/workflows/publish.yml`,
+  `scripts/validate_book.py`, `scripts/validate_validator_coverage.py`, the
+  README, `docs/v1_0_candidate_status.md`, `docs/v1_0_roadmap.md`, and
+  `docs/repository_map.md`.
+- This closes the v1.0 claim-state coverage gate without promoting any chapter
+  core claim. All 54 chapter core support states remain `argument`, and no ASI
+  capability, deployed safety, runtime behavior, benchmark result,
+  source-interpretation result, model-quality result, reader artifact, ebook
+  artifact, audio artifact, DOI, or release approval is claimed.
+
+## 2026-06-29 - First replayed-slice transition
+
+- Added `docs/first_measured_replayed_slice.md` and
+  `evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json`
+  to record the first accepted bounded measured/replayed transition:
+  `living-book-methodology.phase5_harness_registry_runner` moves from
+  `argument` to `synthetic-test-backed`.
+- The accepted slice is intentionally narrow. It covers the registry-driven
+  replay of the Phase 5 synthetic harness suite only: 21 registered harnesses,
+  60 valid fixtures, 102 expected-invalid fixtures, and 21 of 21 harnesses
+  passing return-code plus expected-summary checks through
+  `python3 scripts/run_phase5_harnesses.py --write-report`.
+- Updated `scripts/validate_evidence_transitions.py` so upward transitions
+  require passing verification, changed support states, bounded review
+  eligibility, artifact references, negative results, and no acceptance
+  blockers, while no-change decisions still remain conservative.
+- Updated `docs/v1_0_roadmap.md`, `docs/v1_0_candidate_status.md`,
+  `docs/evidence_transition_pilot.md`, `docs/repository_map.md`, and the
+  README so the first replayed-slice gate is recorded without promoting any
+  chapter core claim.
+- No runtime behavior, model-quality result, benchmark result,
+  source-interpretation result, deployed safety claim, ASI capability claim,
+  reader artifact, ebook artifact, audio artifact, DOI, or chapter support
+  state changed.
+
+## 2026-06-29 - Safety-critical projection classification
+
+- Updated the five v1.0 safety-critical chapter Formalization hooks sections
+  to explicitly classify their current Lean hooks as `projection-only
+  traceability`: Constitutional Alignment, Agency/Corrigibility, Moral
+  Uncertainty and Value Conflict, Governance Rights, and Recursive
+  Self-Improvement Boundaries.
+- Extended `scripts/validate_proof_depth.py` so direct/projection-style
+  safety-critical modules require matching chapter limitation prose using the
+  phrase `projection-only traceability`; regenerated
+  `docs/proof_depth_classification.md`, which now records 5 of 5 required
+  safety-critical chapter classifications present.
+- Updated `scripts/validate_proof_readiness.py`,
+  `docs/proof_adequacy_review.md`, and `docs/v1_0_roadmap.md` so the v1.0
+  proof-depth gate is satisfied by explicit classification rather than by
+  pretending the Lean hooks prove stronger safety properties.
+- No Lean theorem was strengthened in this pass, and no Appendix C support
+  state, proof status, benchmark result, runtime-safety claim, or deployed
+  alignment claim changed.
+
+## 2026-06-29 - Registry-driven Phase 5 harness runner
+
+- Added `scripts/run_phase5_harnesses.py` to load
+  `experiments/phase5_harness_registry.json`, execute registered harness
+  commands, and verify that each output contains its registry
+  `result_summary`.
+- Ran `python3 scripts/run_phase5_harnesses.py --write-report` locally and
+  recorded `docs/phase5_harness_runner.md`: 21 of 21 registered synthetic
+  harnesses passed return-code and expected-summary checks.
+- Wired the runner into `scripts/validate_book.py` and the README local
+  validation command list, and updated `docs/v1_0_roadmap.md` and
+  `docs/repository_map.md`.
+- This is a registry execution gate for synthetic fixtures only. It does not
+  create measured or replayed prototype evidence, promote Appendix C support
+  states, prove runtime behavior, validate benchmark quality, or establish
+  model-performance claims.
+
+## 2026-06-29 - V1-critical protocol crosswalk
+
+- Added `protocols/v1_critical_protocol_crosswalk.json` as the structured
+  source for the first v1-critical schema/fixture/harness/Lean crosswalk.
+- Added `scripts/validate_protocol_crosswalk.py` and generated
+  `docs/protocol_record_crosswalk.md`. The report reconciles 10 v1-critical
+  records, 10 Phase 5 registry entries, and 204 schema fields across schema
+  files, fixture directories, harness validators, result records, Appendix E
+  markers, primary chapters, and Lean structure fields or explicit abstraction
+  routes.
+- Wired the crosswalk validator into `.github/workflows/publish.yml`,
+  `scripts/validate_book.py`, and the README validation list.
+- Updated `docs/v1_0_roadmap.md` so Phase 5A now treats the crosswalk as an
+  implemented traceability gate that must stay current during evidence work,
+  not as proof of schema/fixture/harness/Lean semantic equivalence.
+- No support states, proof statuses, benchmark results, runtime claims,
+  deployed-safety claims, or protocol-verification claims changed.
+
+## 2026-06-29 - Proof-depth classifier and safety-critical baseline
+
+- Added `scripts/validate_proof_depth.py` and generated
+  `docs/proof_depth_classification.md` to classify Lean theorem bodies as
+  direct/projection-style, derived/decomposed, or unknown/mixed.
+- Wired the proof-depth validator into `.github/workflows/publish.yml`,
+  `scripts/validate_book.py`, and the README validation command list.
+- Recorded the current baseline: 139 theorem declarations classified, 112
+  direct/projection-style, 27 derived/decomposed, 0 unknown/mixed, and all 10
+  theorem declarations in the five v1.0 safety-critical modules classified as
+  direct/projection-style.
+- Updated `docs/v1_0_roadmap.md` and `docs/proof_adequacy_review.md` so the
+  v1.0 proof-depth gate now has a tracked report. This does not change proof
+  target status, Appendix C support states, source support, benchmark results,
+  deployed-safety claims, or runtime-performance claims.
+
+## 2026-06-29 - Validator coverage meta-check
+
+- Added `scripts/validate_validator_coverage.py` and
+  `scripts/validator_coverage_allowlist.json` to make CI validator coverage an
+  explicit v1.0 gate. The validator enumerates every `scripts/validate_*.py`
+  file, checks direct `publish.yml` coverage, checks transitive coverage through
+  `scripts/validate_book.py`, requires reasons for any allow-listed exception,
+  and asserts coverage for `validate_source_notes.py`,
+  `validate_proof_readiness.py`, `validate_evidence_transitions.py`, and all
+  registered Phase 5 harness scripts.
+- Wired the meta-check into `.github/workflows/publish.yml` and
+  `scripts/validate_book.py`, and added it to the README validation command
+  list.
+- Updated `docs/v1_0_roadmap.md` to mark the validator-coverage portion of the
+  Phase 0 gate as implemented while preserving the separate Phase 5 need for a
+  registry-driven harness runner and measured/replayed evidence.
+- Local run passed with 52 `validate_*.py` scripts, 21 registered Phase 5
+  harnesses, and 0 allow-listed validators. This is a coverage gate only; it
+  does not promote support states, rerun external CI, approve artifacts, or
+  claim proof, benchmark, prototype, or source-interpretation results.
+
+## 2026-06-29 - v1.0 release-gate roadmap hardening
+
+- Reconciled Claude's roadmap review and updated `docs/v1_0_roadmap.md` with
+  a top-level v1.0 Definition of Done, a Beyond-SOTA Reference Map, and a Phase
+  Blocking Map so future work has a real stop condition instead of open-ended
+  improvement.
+- Added a new Phase 3B first measured/replayed slice milestone with candidate
+  lanes for Theseus/Circle transfer evidence, costed-route/resource-budget
+  traces, context admission replay, compression/RankFold measurement, and
+  planner/runtime adapter traces.
+- Added v1-blocking requirements for proof-depth tracking, validator-coverage
+  meta-checking, v1-critical protocol crosswalks, in-prose external-SOTA
+  positioning, architecture-level red-team review, render/reader toolchain
+  reproducibility, citability metadata, EPUB-focused reader artifact review,
+  and progress-ledger cleanup.
+- Marked curated reader graduation, audiobook/audio-embedded formats, exhaustive
+  literature expansion, full protocol-code generation, executable fixture
+  equivalence across every record, and standalone preprints as v1.x/post-v1
+  work unless a later roadmap decision promotes them into v1.0.
+- No claim support states changed, no source/replay/benchmark/proof result was
+  newly claimed, and no reader, ebook, document, audio, DOI, or release artifact
+  was approved in this planning pass.
+
+## 2026-06-29 - Claude depth review roadmap reconciliation
+
+- Reconciled Claude's fresh depth review with local verification and updated
+  `docs/v1_0_roadmap.md` to reflect the findings that have teeth: projection-
+  style Lean proof risk, CI validator-coverage drift prevention, uneven
+  external-SOTA prose engagement, schema/Lean/fixture drift risk, missing first
+  measured support transition, reader artifact release blockers, and public-site
+  accessibility/process-record polish.
+- Corrected the CI interpretation before adding it to the roadmap: the Pages
+  workflow directly names only part of the validator set, but `scripts/validate_book.py`
+  currently calls the remaining `scripts/validate_*.py` validators. The roadmap
+  now treats this as a future drift-prevention/meta-check problem rather than a
+  current absence of harness CI coverage.
+- Added a planned protocol-record source-of-truth hardening phase for schema,
+  fixture, harness, and Lean crosswalks, plus a v1 goal update that prioritizes
+  proof-depth classification, a validator-coverage check, in-prose external
+  positioning, first measured or replayed evidence, and EPUB-focused reader
+  artifact review.
+- No claim support states changed, no reader artifacts were approved, and no
+  proof result, benchmark result, prototype trace, source interpretation result,
+  or release record was newly claimed in this roadmap pass.
+
+## 2026-06-29 - v1.0 roadmap priority refresh
+
+- Reviewed the post-extended-run v1.0 roadmap, focus audit, reader release
+  matrices, proof adequacy review, evidence-transition pilot, Phase 5 harness
+  registry, publication validator, and recent GitHub Pages status.
+- Updated the roadmap's recommended next goal so future long-running work no
+  longer starts at completed Phase 1 prose cleanup. The new goal starts at the
+  remaining v1 blockers: reader artifact review and release records, narrow
+  claim-support decisions, public-safe prototype or benchmark traces, targeted
+  proof/test follow-through, external-literature normalization, and public-site
+  inspection.
+- Preserved the existing support-state boundary: all core chapter claims remain
+  at `argument`, and no reader artifact, ebook, document, PDF, audio artifact,
+  benchmark result, proof result, prototype trace, or release approval was
+  fabricated or newly claimed in this review pass.
+
 ## 2026-06-28 - v1.0 Contract-layer evidence transitions no-change
 
 - Added

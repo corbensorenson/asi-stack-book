@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "pre_release_review_matrix",
-  "last_updated": "2026-06-28",
+  "last_updated": "2026-06-29",
   "purpose": "Track human-reader format artifact review separately from generated-reader chapter-text review and separately from edition release records.",
   "source_docs": [
     "docs/reader_format_dry_run.md",
@@ -11,13 +11,14 @@
     "docs/reader_docx_probe_manifest.md",
     "docs/reader_pdf_probe_manifest.md",
     "docs/reader_artifact_layout_review.md",
+    "docs/reader_html_artifact_browser_review.md",
     "docs/reader_chapter_review_matrix.md"
   ],
   "release_record_status": "not_created",
   "release_record_path": "",
   "release_blocker_counts": {
     "app_or_ereader_review_not_completed": 1,
-    "full_format_artifact_review_not_completed": 4,
+    "full_format_artifact_review_not_completed": 3,
     "full_pdf_layout_review_not_completed": 1,
     "reader_release_record_not_created": 4
   },
@@ -27,18 +28,18 @@
       "artifact_scope": "Local ignored generated reader-site snapshot under build/reader_edition/format_artifacts/html/.",
       "render_status": "rendered_local",
       "structural_inspection_status": "passed",
-      "manual_layout_review_status": "representative_spot_check",
+      "manual_layout_review_status": "pass",
       "release_approved": false,
       "evidence_refs": [
         "docs/reader_format_dry_run.md#structural-inspection",
         "docs/reader_artifact_inspection_manifest.md#inspection-summary",
-        "docs/reader_artifact_layout_review.md#broader-html-navigation-and-layout-probe"
+        "docs/reader_artifact_layout_review.md#broader-html-navigation-and-layout-probe",
+        "docs/reader_html_artifact_browser_review.md#browser-sweep"
       ],
       "release_blockers": [
-        "reader_release_record_not_created",
-        "full_format_artifact_review_not_completed"
+        "reader_release_record_not_created"
       ],
-      "notes": "Local HTML snapshots rendered, passed structural inspection, and received representative desktop/mobile browser checks across 28 page-view pairs. This is useful layout evidence but not a full release approval.",
+      "notes": "The fresh local HTML snapshot rendered, passed structural inspection, and passed full local browser artifact review across 118 page-view pairs covering all 59 generated reader HTML pages at desktop and mobile widths. It is still not release-approved because no tagged edition release record names this exact ignored artifact snapshot.",
       "non_claims": [
         "This row is not a release record.",
         "This row does not approve a published reader HTML artifact.",

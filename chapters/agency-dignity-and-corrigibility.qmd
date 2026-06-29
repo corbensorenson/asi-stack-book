@@ -74,6 +74,8 @@ Safety framed only as harm avoidance can miss domination, lock-in, coercive depe
 
 Harm avoidance can be too narrow. A system may avoid obvious harm while shaping choices, increasing dependency, making alternatives impractical, or creating governance surfaces that ordinary users cannot inspect. A helpful system can also become manipulative if it optimizes compliance, convenience, or engagement without preserving refusal and review.
 
+Corrigibility work gives this rights language a sharper technical comparator. `ext_corrigibility_2015` frames operator correction and intervention tolerance as design properties, and `ext_off_switch_game_2016` shows why shutdown incentives and uncertainty about human objectives matter for preserving human correction. The agency checklist extends that comparison toward material usability, appeal, exit, and audit; it does not claim a runtime system already preserves those channels under pressure.
+
 The missing object is an agency-rights check attached to high-impact plans. It asks whether the user can refuse, understand, appeal, exit, reverse, audit, and hold a responsible party accountable.
 
 That check has to be concrete enough to fail. If the user technically has an appeal path but cannot find it, cannot use it before the effect occurs, or cannot obtain a meaningful remedy, the path should be recorded as missing or degraded. The agency-rights checklist produces a residual instead of pretending the right exists because it appears in a policy.
@@ -230,7 +232,7 @@ The agency-rights surface is still an architectural endpoint, not a demonstrated
 | `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | implemented |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over agency transition and correction-pathway reviews. They prove only the record-level gates: a protected agency right remains available after a valid accepted transition, and a transition that removes a required correction pathway is rejected. They do not prove human dignity, manipulation resistance, runtime corrigibility, institutional review quality, or high-impact approval behavior.
+These Lean hooks are explicitly classified as projection-only traceability for v1.0. They are implemented as finite-record predicates over agency transition and correction-pathway reviews, and the current theorem bodies project conclusions from assumed review predicates rather than deriving corrigibility from a richer lifecycle, rights-usability, or correction-pathway model. They prove only the record-level gates: a protected agency right remains available after a valid accepted transition, and a transition that removes a required correction pathway is rejected. They do not prove human dignity, manipulation resistance, runtime corrigibility, institutional review quality, or high-impact approval behavior.
 
 ## Source crosswalk
 

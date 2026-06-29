@@ -75,6 +75,8 @@ Long context windows and ordinary retrieval do not define addressability, eviden
 
 Long context is capacity, not governance. A retrieved passage may be stale, revoked, unauthenticated, infeasible to use, unsafe for the current worker, or inadequate for the claim being checked. A bigger window can also hide conflicts by making the model generate across text it cannot jointly verify.
 
+The external context literature makes that boundary concrete. RAG (`ext_rag_2020`) separates parametric memory from retrieved evidence, Lost in the Middle (`ext_lost_in_middle_2023`) shows position sensitivity inside long contexts, MemGPT (`ext_memgpt_2023`) frames virtual context management and memory tiers, LongBench (`ext_longbench_2023`) and RULER (`ext_ruler_2024`) stress long-context evaluation, ALCE (`ext_alce_2023`) evaluates citation support, Self-RAG (`ext_self_rag_2023`) adds adaptive retrieval/reflection, and LongLLMLingua (`ext_longllmlingua_2023`) foregrounds prompt-compression tradeoffs. VCM turns those pressures into an ABI for admission, adequacy, authority, and fault states; it does not claim superior context performance here.
+
 Ordinary retrieval usually answers "what looks relevant?" VCM must also answer "which version, under which mount, for which task, under which authority, with which representation losses, and what happens if the context is missing, conflicting, unsafe, unknown, or unsatisfiable?"
 
 Best-effort retrieval can be actively harmful when the task requires mandatory context. If the required context is missing, stale, unsafe, or unresolved, the correct output is a typed miss or escalation, not a plausible substitute.

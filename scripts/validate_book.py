@@ -20,6 +20,8 @@ REQUIRED = [
     "scripts/sync_reader_overlay_asset.py",
     "scripts/audit_reader_continuity.py",
     "scripts/validate_publication.py",
+    "scripts/validate_architecture_red_team.py",
+    "scripts/validate_release_reproducibility.py",
     "scripts/validate_release_profiles.py",
     "scripts/validate_reader_spine.py",
     "scripts/validate_reading_mode_toggle.py",
@@ -43,6 +45,8 @@ REQUIRED = [
     "scripts/validate_proof_artifact_audit.py",
     "scripts/validate_source_evidence_audit.py",
     "scripts/validate_evidence_transitions.py",
+    "scripts/validate_core_claim_decisions.py",
+    "scripts/validate_external_sota_positioning.py",
     "scripts/validate_claim_ledger_revision.py",
     "scripts/validate_proof_carrying_claims.py",
     "scripts/validate_tribunal_review.py",
@@ -69,8 +73,12 @@ REQUIRED = [
     "scripts/build_source_matrix.py",
     "schemas/book_structure.schema.json",
     "docs/book_outline.md",
+    "docs/architecture_red_team_review.md",
+    "docs/release_reproducibility.md",
     "docs/proof_artifact_audit.md",
     "docs/source_evidence_audit.md",
+    "docs/core_claim_transition_coverage.md",
+    "docs/external_sota_positioning_audit.md",
     "docs/support_state_transition_harness.md",
     "docs/authority_transition_harness.md",
     "docs/plan_execution_contract_harness.md",
@@ -116,6 +124,7 @@ REQUIRED = [
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
     "evidence_transitions/README.md",
+    "claim_decisions/v1_0_core_claim_no_promotion.json",
     "editions/release_profiles.json",
     "editions/reader_overlays/README.md",
     "editions/reader_overlays/v1_0/manifest.json",
@@ -558,6 +567,10 @@ def main() -> None:
     validate_claim_states()
     validate_proof_manifest()
     validate_structure_proof_statuses(chapters)
+    run_validator("validate_validator_coverage.py")
+    run_validator("validate_proof_depth.py")
+    run_validator("validate_architecture_red_team.py")
+    run_validator("validate_release_reproducibility.py")
     run_validator("validate_release_profiles.py")
     validate_publication_surface()
     run_validator("validate_reading_mode_toggle.py")
@@ -582,8 +595,11 @@ def main() -> None:
     run_validator("validate_source_notes.py")
     run_validator("validate_proof_readiness.py")
     run_validator("validate_proof_artifact_audit.py")
+    run_validator("validate_protocol_crosswalk.py")
     run_validator("validate_source_evidence_audit.py")
     run_validator("validate_evidence_transitions.py")
+    run_validator("validate_core_claim_decisions.py")
+    run_validator("validate_external_sota_positioning.py")
     run_validator("validate_claim_ledger_revision.py")
     run_validator("validate_proof_carrying_claims.py")
     run_validator("validate_tribunal_review.py")
@@ -606,6 +622,7 @@ def main() -> None:
     run_validator("validate_resource_budget_ledgers.py")
     run_validator("validate_capacity_smoothing.py")
     run_validator("validate_phase5_harness_registry.py")
+    run_validator("run_phase5_harnesses.py")
     print("Book validation passed.")
 
 

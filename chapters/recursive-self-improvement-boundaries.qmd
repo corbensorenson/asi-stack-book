@@ -75,6 +75,8 @@ Treating self-improvement as automatic capability growth ignores evaluator integ
 
 Unbounded self-improvement makes the evaluator part of the optimization target. A system that can change its own gates, benchmarks, memory, authority ceilings, or constitutional predicates can make itself look better without becoming safer or more capable. Theseus adds a practical engineering pattern: use an intervention ladder and allow teacher or architecture changes only after cheaper interventions and evidence walls are exhausted. Benchmaxxing and RMI add the ratchet: protect regressions, residuals, and lifecycle discipline while moving the frontier.
 
+External control work gives the self-improvement boundary its warning labels. `ext_corrigibility_2015` and `ext_off_switch_game_2016` foreground preserved correction and shutdown incentives, `ext_optimal_policies_power_2019` warns that option-preservation pressure can grow with capability, and `ext_model_evaluation_extreme_risks_2023` treats dangerous-capability and alignment evaluations as deployment-relevant gates. The ASI Stack binds those pressures into reversible transition records; the cited sources do not certify autonomous improvement, evaluator independence, or rollback reliability here.
+
 The boundary is therefore not "never self-improve." It is "self-improve only through governed, reversible, evidence-gated transitions whose evaluators and protected invariants are not controlled by the candidate."
 
 The important distinction is proposal versus promotion. A system can propose its own patch, benchmark, route, or architecture change. Promotion requires a different authority path: independent evaluation, preserved regression floors, protected-invariant review, approval, monitor window, and rollback.
@@ -263,7 +265,7 @@ That endpoint is still a design destination, not evidence that self-improvement 
 | `lean:self_improvement.boundary.operational_invariant` | `AsiStackProofs.SelfImprovement` | An improvement transition preserves all protected invariants. | implemented |
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SelfImprovement` | A proposal evaluated only by the component being replaced cannot be promoted. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over improvement transition and self-evaluation reviews. They prove only the record-level gates: an accepted improvement transition preserves declared protected invariants, and a proposal evaluated only by the replaced component cannot be promoted. They do not prove evaluator independence in practice, runtime self-improvement safety, rollback effectiveness, or phase-gate completion.
+These Lean hooks are explicitly classified as projection-only traceability for v1.0. They are implemented as finite-record predicates over improvement transition and self-evaluation reviews, and the current theorem bodies project conclusions from assumed review predicates rather than deriving recursive self-improvement safety from a richer canary, monitor, rollback, evaluator, or boundary-delta model. They prove only the record-level gates: an accepted improvement transition preserves declared protected invariants, and a proposal evaluated only by the replaced component cannot be promoted. They do not prove evaluator independence in practice, runtime self-improvement safety, rollback effectiveness, or phase-gate completion.
 
 ## Source crosswalk
 

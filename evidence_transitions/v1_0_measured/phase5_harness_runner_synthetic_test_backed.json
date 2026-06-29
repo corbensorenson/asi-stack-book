@@ -1,0 +1,95 @@
+{
+  "transition_id": "v1_0_measured.phase5_harness_runner.synthetic_test_backed",
+  "claim_id": "living-book-methodology.phase5_harness_registry_runner",
+  "claim_surface_refs": [
+    "docs/first_measured_replayed_slice.md",
+    "docs/phase5_harness_runner.md",
+    "docs/phase5_harness_registry.md",
+    "docs/v1_0_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/phase5_harness_registry.json",
+    "scripts/run_phase5_harnesses.py",
+    "scripts/validate_phase5_harness_registry.py",
+    "schemas/evidence_transition_record.schema.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "synthetic-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded repository-infrastructure claim that the Phase 5 harness registry can be replayed by one local runner command, executing all registered synthetic harnesses and matching each registry result summary, moves to synthetic-test-backed.",
+  "evidence_roles": [
+    "registry_driven_replay",
+    "synthetic_fixture_suite",
+    "expected_invalid_negative_controls",
+    "validation_command",
+    "public_safe_result_record"
+  ],
+  "transition_reason": "The local replay command loaded experiments/phase5_harness_registry.json, executed all 21 registered harness commands, and verified that every output contained its registry result_summary. The registry covers 60 valid synthetic fixtures and 102 expected-invalid synthetic fixtures across the registered harness directories. This is enough to support the narrow repository-infrastructure claim that the harness registry is replayable and summary-checked; it is not evidence for any broader ASI Stack runtime, model, safety, benchmark, or chapter-core claim.",
+  "required_artifacts": [
+    "registry-driven runner script",
+    "Phase 5 harness registry",
+    "local replay command output",
+    "public-safe replay report",
+    "accepted bounded evidence-transition record",
+    "aggregate validation after replay"
+  ],
+  "artifact_refs": [
+    "scripts/run_phase5_harnesses.py",
+    "experiments/phase5_harness_registry.json",
+    "docs/phase5_harness_runner.md",
+    "scripts/validate_book.py",
+    "scripts/validate_evidence_transitions.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/first_measured_replayed_slice.md",
+    "docs/phase5_harness_runner.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#living-book-methodology.core"
+  ],
+  "verification_command": "python3 scripts/run_phase5_harnesses.py --write-report && python3 scripts/validate_book.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "expected-invalid fixture sets are present across all 21 registered harness lanes",
+    "the replay validates registry-driven synthetic harness execution only",
+    "no chapter core claim is promoted above argument",
+    "no model, runtime, benchmark, source-interpretation, or deployed-safety result is claimed"
+  ],
+  "negative_evidence_refs": [
+    "docs/phase5_harness_runner.md",
+    "experiments/phase5_harness_registry.json",
+    "docs/v1_0_roadmap.md"
+  ],
+  "downgrade_triggers": [
+    "runner command failure",
+    "registered harness output missing its expected result_summary",
+    "phase5 harness registry drift",
+    "missing valid or expected-invalid fixtures for a registered harness",
+    "chapter prose interpreting this transition as AI runtime or safety evidence"
+  ],
+  "promotion_burden": "Broader claims require a separate accepted transition with public-safe prototype traces, measured cost-quality/resource-budget records, context-admission replay outputs, compression measurements, planner/runtime adapter traces, Theseus transfer evidence, Circle receipt replay, independent review where relevant, and explicit non-claims.",
+  "limitations": [
+    "local maintainer-agent run only",
+    "synthetic fixtures rather than deployed runtime behavior",
+    "summary matching verifies expected output text, not semantic completeness of every harness",
+    "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent external audit",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-29---first-replayed-slice-transition",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not prove deployed runtime behavior",
+    "does not prove model quality, benchmark quality, or useful-solution performance",
+    "does not prove AI safety, alignment, governance effectiveness, or source interpretation",
+    "does not replace future costed-route, context-admission, compression, planner/runtime, Theseus, or Circle evidence slices"
+  ]
+}

@@ -1,6 +1,6 @@
 # Reader Format Review Matrix
 
-Last updated: 2026-06-28
+Last updated: 2026-06-29
 
 This generated summary is synced from `editions/reader_manuscript/v1_0/format_review_matrix.json`. It records local reader-format review evidence and blockers. It is not an edition release record, not artifact approval, and not a support-state promotion.
 
@@ -10,7 +10,7 @@ This generated summary is synced from `editions/reader_manuscript/v1_0/format_re
 |---|---:|
 | format rows | 4 |
 | release_blocker:app_or_ereader_review_not_completed | 1 |
-| release_blocker:full_format_artifact_review_not_completed | 4 |
+| release_blocker:full_format_artifact_review_not_completed | 3 |
 | release_blocker:full_pdf_layout_review_not_completed | 1 |
 | release_blocker:reader_release_record_not_created | 4 |
 
@@ -18,7 +18,7 @@ This generated summary is synced from `editions/reader_manuscript/v1_0/format_re
 
 | Format | Render status | Structural status | Manual review | Release approved | Blockers | Evidence refs |
 |---|---|---|---|---:|---|---|
-| html | rendered_local | passed | representative_spot_check | no | reader_release_record_not_created, full_format_artifact_review_not_completed | docs/reader_format_dry_run.md#structural-inspection, docs/reader_artifact_inspection_manifest.md#inspection-summary, docs/reader_artifact_layout_review.md#broader-html-navigation-and-layout-probe |
+| html | rendered_local | passed | pass | no | reader_release_record_not_created | docs/reader_format_dry_run.md#structural-inspection, docs/reader_artifact_inspection_manifest.md#inspection-summary, docs/reader_artifact_layout_review.md#broader-html-navigation-and-layout-probe, docs/reader_html_artifact_browser_review.md#browser-sweep |
 | epub | rendered_local | passed | in_progress | no | reader_release_record_not_created, full_format_artifact_review_not_completed, app_or_ereader_review_not_completed | docs/reader_format_dry_run.md#structural-inspection, docs/reader_format_dry_run.md#epub-probe, docs/reader_artifact_inspection_manifest.md#inspection-summary, docs/reader_epub_probe_manifest.md#epub-container-summary, docs/reader_artifact_layout_review.md#residuals |
 | docx | rendered_local | passed | representative_spot_check | no | reader_release_record_not_created, full_format_artifact_review_not_completed | docs/reader_format_dry_run.md#structural-inspection, docs/reader_artifact_inspection_manifest.md#inspection-summary, docs/reader_docx_probe_manifest.md#docx-conversion-probe-summary, docs/reader_artifact_layout_review.md#residuals |
 | pdf | probe_rendered_local | partial | representative_spot_check | no | reader_release_record_not_created, full_format_artifact_review_not_completed, full_pdf_layout_review_not_completed | docs/reader_format_dry_run.md#pdf-probe, docs/reader_pdf_probe_manifest.md#pdf-probe-summary, docs/reader_artifact_layout_review.md#pdf-spot-check |

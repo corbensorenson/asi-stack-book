@@ -76,6 +76,8 @@ High-level safety language misses earlier engineering failures such as goal misb
 
 Broad terms such as "alignment failure" and "unsafe autonomy" are too large to test directly. They can hide the smaller event that actually broke the system: a stale context packet was admitted, a route bypassed its authority ceiling, a verifier was trained on the same signal it was meant to judge, a residual was deleted, or a benchmark became the target rather than the pressure surface.
 
+The external safety literature gives the taxonomy an outside pressure point. `ext_concrete_ai_safety_2016` names accident-risk families such as side effects, reward hacking, scalable oversight, safe exploration, and distributional shift, while `ext_optimal_policies_power_2019` formalizes why broad objectives can create option-preservation and power-seeking pressure. The ASI Stack does not claim those sources validate its failure map; it uses them to keep the map from becoming only an internal vocabulary.
+
 The ASI Stack therefore treats failure modes as first-class architectural objects. A failure should map to an invariant, a detector, an evidence record, and a containment path. If it cannot be mapped, the right conclusion is not that the failure is impossible; it is that the stack is missing a boundary.
 
 This makes near misses valuable. A denied authority escalation, rejected context packet, failed verifier, quarantined route, or preserved residual is evidence that a boundary fired. Those events should be recorded before success stories dominate the ledger.

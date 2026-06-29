@@ -21,8 +21,20 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.9.38"
 
       - name: Install Lean
         run: |
@@ -37,6 +49,10 @@ jobs:
       - name: Validate book source
         run: |
           python3 scripts/sync_proof_manifest.py --check
+          python3 scripts/validate_validator_coverage.py
+          python3 scripts/validate_proof_depth.py
+          python3 scripts/validate_architecture_red_team.py
+          python3 scripts/validate_release_reproducibility.py
           python3 scripts/validate_chapter_dod.py
           python3 scripts/validate_publication.py
           python3 scripts/validate_release_profiles.py
@@ -56,15 +72,21 @@ jobs:
           python3 scripts/validate_book.py
           python3 scripts/validate_visual_coverage.py
           python3 scripts/validate_proof_artifact_audit.py
+          python3 scripts/validate_protocol_crosswalk.py
           python3 scripts/validate_source_evidence_audit.py
           python3 scripts/validate_schemas.py
           python3 scripts/validate_protocol_examples.py
+          python3 scripts/validate_core_claim_decisions.py
+          python3 scripts/validate_external_sota_positioning.py
           python3 scripts/validate_repeated_prose.py
 
       - name: Build Lean proofs
         run: cd lean && lake build
 
       - name: Render HTML
+        env:
+          LANG: C.UTF-8
+          LC_ALL: C.UTF-8
         run: quarto render --to html
 
       - name: Validate live Human view

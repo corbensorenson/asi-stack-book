@@ -72,6 +72,8 @@ A model can generate plausible prose without maintaining why it believes a claim
 
 A fluent answer can contain assumptions that were never extracted, contradictions that were never linked, and claims that keep their confident tone after evidence weakens. Belief inertia is the epistemic version of technical debt: a claim remains in circulation because no artifact forces it to be revised.
 
+External evidence-generation baselines underline the same problem. ALCE (`ext_alce_2023`) evaluates whether generated answers are actually supported by citations, Self-RAG (`ext_self_rag_2023`) attaches retrieval and critique signals to generation, and CheckList (`ext_checklist_2020`) turns behavioral expectations into testable matrices. Claim ledgers generalize that pressure into belief-revision records: claims need source roles, contradiction handling, downgrade paths, and negative evidence, not just fluent citation-adjacent prose.
+
 Aletheia and UAT both push against this failure by decomposing outputs into propositions, preserving unsupported or inferred states, and routing uncertainty to review. The claim ledger gives those states a durable home.
 
 Another insufficiency is cross-output drift. The same claim can appear in a chapter, diagram, appendix, release note, and future reader edition with slightly different wording. Without a ledger identity, the system cannot tell whether those are restatements of one claim, narrower variants, or accidental contradictions.

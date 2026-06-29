@@ -70,6 +70,8 @@ Ad hoc upgrades make it hard to know whether a system improved, drifted, lost a 
 
 An ad hoc upgrade can pass a visible benchmark and still delete a regression, change a field's semantics, invalidate a state migration, or make rollback impossible. It can also be self-judged: the component being replaced proposes, evaluates, and approves its own successor. That is not recursive improvement; it is evaluator capture with a success story.
 
+Corrigibility provides the external baseline for why replacement needs a preserved correction path. `ext_corrigibility_2015` treats intervention tolerance and operator correction as properties that can be lost by design; a replacement transaction is the systems version of the same concern. A rollback record asks whether correction, regression floors, evaluator separation, and recovery handles survive the upgrade, without claiming that any real replacement has passed that bar.
+
 Replacement needs transaction semantics because partial success can be worse than failure. The system should know whether it is in precheck, gate, canary, commit, monitor, rollback, quarantine, or retirement.
 
 The key reader-facing distinction is candidate improvement versus accepted replacement. A candidate can be promising, cheaper, faster, or cleaner without becoming the default. Accepted replacement means the stack has preserved field identity, checked authority boundaries, retained regression floors, recorded residuals, and kept a recovery path. Until that happens, the candidate belongs in shadow, canary, or quarantine state, not in the ordinary route.

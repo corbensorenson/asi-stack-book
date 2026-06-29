@@ -70,6 +70,8 @@ A retrieval store cannot guarantee read-your-writes behavior, copy-on-write expe
 
 Retrieval can return plausible neighbors, but it does not by itself define consistency. A worker may read a mixture of old and new facts, see a source after revocation, miss a contradiction, or consume a summary derived from deleted data. Security labels can also evaporate when context is copied, summarized, embedded, logged, or sent to a tool.
 
+The external baselines make the consistency problem visible from several angles. RAG (`ext_rag_2020`) supplies explicit retrieval, MemGPT (`ext_memgpt_2023`) supplies virtual memory control, Lost in the Middle (`ext_lost_in_middle_2023`) and LongBench (`ext_longbench_2023`) show long-context usage and evaluation limits, RULER (`ext_ruler_2024`) adds synthetic stress tests, and LongLLMLingua (`ext_longllmlingua_2023`) adds compression-induced loss pressure. Context transactions add snapshot, mount, taint, and deletion-closure semantics around those mechanisms; no long-context benchmark or compression result is claimed.
+
 Context memory needs database-like discipline without pretending memory is a database table. Context objects are semantic, versioned, compressed, mounted, and task-relative. That makes transaction semantics more important, not less.
 
 Long-context windows can hide this problem by making more material visible at once. More visibility is not the same as a coherent view. A transcript that mixes old summaries, fresh evidence, private notes, and revoked derivatives can be larger while becoming less governable.

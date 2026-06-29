@@ -69,6 +69,8 @@ Neural generation alone cannot guarantee semantic consistency, source grounding,
 
 A model can propose a formal-looking argument that does not mean what the original claim meant. It can cite sources that do not support the claim. It can produce a proof sketch with a hidden gap. It can time out and still sound confident. These are not rare edge cases; they are the normal boundary between generation and verification.
 
+Proof-carrying-code and proof-assistant baselines define the external bar. `ext_proof_carrying_code_1997` pairs executable artifacts with machine-checkable evidence that a host can verify against a policy, while `ext_lean4_theorem_proving` supplies the dependent-type and proof-term vocabulary used by the repository's Lean envelope. Spinoza uses that comparison to separate generated claims, proof obligations, failed attempts, and accepted verifier artifacts; it does not claim arbitrary natural-language claims have been formalized or proved.
+
 GenesisCode contributes the obligation-envelope view: accepted artifacts should carry tests, proofs, provenance, or capability policies. Verification Bandwidth adds that high-risk claims may need stronger verification rather than more context.
 
 The formalization channel is itself a risk surface. A theorem can be valid while the interpretation mapping is wrong, too narrow, or missing the claim's most important natural-language condition. That is why the mapping belongs in the record, not in the verifier's hidden assumptions.

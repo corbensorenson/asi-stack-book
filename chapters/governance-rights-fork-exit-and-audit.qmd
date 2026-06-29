@@ -71,6 +71,8 @@ Policy statements about transparency are weak if users cannot audit, contest, ex
 
 Transparency is not the same as auditability. A user can be shown an explanation while still lacking logs, source records, appeal routes, export paths, or meaningful alternatives. Exit is not real if data, tools, identity, or institutional dependency are held hostage. Fork is not safe if it bypasses source obligations, privacy constraints, or safety gates.
 
+The same corrigibility baseline applies at governance scale. `ext_corrigibility_2015` and `ext_off_switch_game_2016` are not governance-rights papers, but they name a core failure the rights layer generalizes: a system can appear helpful while structurally narrowing human correction, shutdown, or intervention. Fork, exit, audit, and dissent are the institutional versions of that correction channel, and the claim stays at design-rationale support until an implementation or review record exists.
+
 The rights have to be technical. They need artifacts, permissions, retention rules, redaction rules, and failure tests.
 
 A right earns engineering status when it still works while inconvenient for the system. Audit matters most when the decision is contested. Exit matters most when the platform would prefer retention. Fork matters most when maintainers disagree. Dissent matters most when the governing process wants closure. If those rights depend on voluntary cooperation from the authority being challenged, they are not robust interfaces; they are policy aspirations.
@@ -234,7 +236,7 @@ This contestability infrastructure is still an architectural target. The rights 
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over governance transition and protected-right removal reviews. They prove only the record-level gates: required audit and exit capabilities are preserved by a valid accepted transition, and removal of a protected right is rejected or marked invalid. They do not prove real access-path availability, fork safety, institutional contestability, or SCF replacement behavior.
+These Lean hooks are explicitly classified as projection-only traceability for v1.0. They are implemented as finite-record predicates over governance transition and protected-right removal reviews, and the current theorem bodies project conclusions from assumed review predicates rather than deriving rights preservation from a richer access-path, fork-safety, redaction, appeal, or institution model. They prove only the record-level gates: required audit and exit capabilities are preserved by a valid accepted transition, and removal of a protected right is rejected or marked invalid. They do not prove real access-path availability, fork safety, institutional contestability, or SCF replacement behavior.
 
 ## Source crosswalk
 

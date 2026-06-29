@@ -71,6 +71,8 @@ If outputs are not tied to inputs, tools, context, claims, and logs, later verif
 
 Untraceable output cannot support promoted claims. Non-replayable workflows cannot be debugged or improved. Provenance gaps make it impossible to tell whether an artifact came from a source, a tool, a model guess, a human edit, or a stale context packet.
 
+External agent and software-evaluation baselines show what provenance must survive. ReAct (`ext_react_2022`) interleaves reasoning, action, and observation; AutoGen (`ext_autogen_2023`) composes conversational agents, tools, humans, and LLMs; SWE-bench (`ext_swe_bench_2023`) evaluates repository-scale issue resolution; proof-carrying code (`ext_proof_carrying_code_1997`) binds executable artifacts to checkable evidence. Artifact graphs route those pressures into traceable inputs, tools, logs, claims, and replay handles without claiming any benchmark or proof-carrying artifact has been reproduced.
+
 The artifact graph is the system's memory of work. It does not guarantee truth, but it makes verification possible by preserving what happened.
 
 Ordinary repositories, chat transcripts, and build directories only partially solve this. They preserve fragments, but they usually do not encode claim relevance, source scope, replay limits, or promotion blockers as first-class fields. The artifact graph is the layer that makes those fragments usable by evidence ledgers, regression suites, and future agents without requiring every reader to infer the workflow from prose.

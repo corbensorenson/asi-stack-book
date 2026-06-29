@@ -37,9 +37,15 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `editions/reader_manuscript/v1_0/epub_probe_manifest.json`, `docs/reader_epub_probe_manifest.md`, and `scripts/validate_reader_epub_probe_manifest.py` preserve the latest local EPUB probe facts: 9,078,787 bytes, 62 XHTML entries, 62 image entries, `en-US` language metadata, sampled evidence-boundary/source-card text, and the remaining e-reader application blocker. This is a probe record, not EPUB approval.
 - `editions/reader_manuscript/v1_0/docx_probe_manifest.json`, `docs/reader_docx_probe_manifest.md`, and `scripts/validate_reader_docx_probe_manifest.py` preserve the latest local DOCX LibreOffice conversion probe facts: 514 converted pages, 8,190,162 bytes, expected title/evidence-boundary/source-card text, and a representative six-page visual sample. This is a probe record, not DOCX approval.
 - `editions/reader_manuscript/v1_0/pdf_probe_manifest.json`, `docs/reader_pdf_probe_manifest.md`, and `scripts/validate_reader_pdf_probe_manifest.py` preserve the latest local UTF-8 PDF probe facts: 535 pages, 8,613,924 bytes, expected title/evidence-boundary text, refreshed sampled source-card pages, and the remaining full-PDF-layout blocker. This is a probe record, not PDF approval.
+- `docs/reader_html_artifact_browser_review.md` and `scripts/validate_reader_html_artifact_browser.js` record the first full local browser artifact review for generated reader HTML: 59 pages opened at desktop and mobile widths, 118 page-view pairs passed, 0 failures, and an exact ignored-snapshot directory digest. This clears the HTML full-format review blocker but does not approve a reader release because no edition release record names the artifact.
 - `scripts/build_reader_edition.py` and `scripts/build_audio_script.py` now emit generated review checklists and companion notes so major-version reader, e-reader, and audio work stay downstream of the living book instead of becoming parallel manuscripts.
 - `scripts/build_audio_script.py` can derive an audio-script review workspace, `audio_manifest.json`, chapter markers, an audio checklist, and pronunciation glossary under ignored `build/`; its check also verifies that chapter scripts preserve both implementation-horizon sections.
-- `scripts/validate_claim_ledger_revision.py`, `scripts/validate_proof_carrying_claims.py`, `scripts/validate_tribunal_review.py`, `scripts/validate_value_conflicts.py`, `scripts/validate_constitutional_alignment.py`, `scripts/validate_governance_rights.py`, `scripts/validate_agency_rights.py`, `scripts/validate_support_state_transitions.py`, `scripts/validate_authority_transitions.py`, `scripts/validate_security_kernel.py`, `scripts/validate_stable_capability_fields.py`, `scripts/validate_capability_replacement.py`, `scripts/validate_self_improvement_boundaries.py`, `scripts/validate_plan_execution_contracts.py`, `scripts/validate_runtime_adapter_permissions.py`, `scripts/validate_context_admission_adequacy.py`, `scripts/validate_readiness_residual_gates.py`, `scripts/validate_benchmark_antigoodhart.py`, `scripts/validate_generation_mode_baselines.py`, `scripts/validate_resource_budget_ledgers.py`, and `scripts/validate_capacity_smoothing.py` run synthetic or deterministic harnesses for claim-ledger revision discipline, proof-carrying claim discipline, tribunal-review record discipline, value-conflict record discipline, constitutional-predicate record discipline, governance-right record discipline, agency-right checklist discipline, support-state conservatism, authority non-escalation, security-kernel receipt discipline, stable-capability-field qualification/routing discipline, replacement-transaction discipline, self-improvement transition discipline, plan/contract/job consistency, runtime-adapter permission/approval/receipt discipline, context admission/adequacy consistency, readiness/residual custody, benchmark anti-Goodhart discipline, generation-mode baseline accounting, resource-budget ledger discipline, and capacity-smoothing toy traces; `experiments/phase5_harness_registry.json` plus `scripts/validate_phase5_harness_registry.py` keep the harness set wired to docs, fixtures, result records, Appendix E, and book validation. These are executable or traceability checks over fixtures and records, not claim promotions or deployed-runtime evidence.
+- `scripts/validate_claim_ledger_revision.py`, `scripts/validate_proof_carrying_claims.py`, `scripts/validate_tribunal_review.py`, `scripts/validate_value_conflicts.py`, `scripts/validate_constitutional_alignment.py`, `scripts/validate_governance_rights.py`, `scripts/validate_agency_rights.py`, `scripts/validate_support_state_transitions.py`, `scripts/validate_authority_transitions.py`, `scripts/validate_security_kernel.py`, `scripts/validate_stable_capability_fields.py`, `scripts/validate_capability_replacement.py`, `scripts/validate_self_improvement_boundaries.py`, `scripts/validate_plan_execution_contracts.py`, `scripts/validate_runtime_adapter_permissions.py`, `scripts/validate_context_admission_adequacy.py`, `scripts/validate_readiness_residual_gates.py`, `scripts/validate_benchmark_antigoodhart.py`, `scripts/validate_generation_mode_baselines.py`, `scripts/validate_resource_budget_ledgers.py`, and `scripts/validate_capacity_smoothing.py` run synthetic or deterministic harnesses for claim-ledger revision discipline, proof-carrying claim discipline, tribunal-review record discipline, value-conflict record discipline, constitutional-predicate record discipline, governance-right record discipline, agency-right checklist discipline, support-state conservatism, authority non-escalation, security-kernel receipt discipline, stable-capability-field qualification/routing discipline, replacement-transaction discipline, self-improvement transition discipline, plan/contract/job consistency, runtime-adapter permission/approval/receipt discipline, context admission/adequacy consistency, readiness/residual custody, benchmark anti-Goodhart discipline, generation-mode baseline accounting, resource-budget ledger discipline, and capacity-smoothing toy traces; `experiments/phase5_harness_registry.json` plus `scripts/validate_phase5_harness_registry.py` keep the harness set wired to docs, fixtures, result records, Appendix E, and book validation. These are executable or traceability checks over fixtures and records, not chapter-claim promotions or deployed-runtime evidence.
+- `scripts/run_phase5_harnesses.py --write-report` is the first accepted measured/replayed slice for v1.0: it replays the registered Phase 5 harness suite and records 21 of 21 summary-checked harnesses passing in `docs/phase5_harness_runner.md`. `docs/first_measured_replayed_slice.md` and `evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json` scope the resulting `synthetic-test-backed` transition to the repository-infrastructure claim `living-book-methodology.phase5_harness_registry_runner`; no chapter core claim, runtime claim, model-quality claim, safety claim, benchmark claim, or source-interpretation claim is promoted.
+- `claim_decisions/v1_0_core_claim_no_promotion.json`, `docs/core_claim_transition_coverage.md`, and `scripts/validate_core_claim_decisions.py` close the v1.0 chapter-core claim-state coverage gate: 26 chapter core claims have accepted no-change transition records, 28 have accepted explicit no-promotion decisions, and all 54 remain at `argument`.
+- `docs/architecture_red_team_review.md` and `scripts/validate_architecture_red_team.py` close the Phase 7A desk-review gate for six composed-system attacks: authority escalation, context leakage, evaluator capture, support-state inflation, benchmark gaming, and reader-release laundering. This is residual routing, not runtime safety validation.
+- `docs/release_reproducibility.md`, `CITATION.cff`, and `scripts/validate_release_reproducibility.py` close the current candidate reproducibility/citability gate: CI pins Quarto `1.9.38`, Python `3.11`, Node `22`, and Lean through `lean/lean-toolchain`; the citation file records version `1.0.0-candidate`; no DOI, final v1.0 tag, or reader-format artifact approval is claimed.
+- `docs/external_sota_positioning_audit.md` and `scripts/validate_external_sota_positioning.py` keep the Phase 6 external-positioning gate honest: 44 of 54 chapters currently have in-prose `ext_*` positioning before the Source crosswalk, 10 have explicit external-baseline exceptions, and the stricter placement release check has 0 open positioning rows.
 - The live GitHub Pages site includes a persistent top-of-page reading-mode switch: `AI view` keeps the full live/research scaffold, including raw core-claim markers and repeated support-state boilerplate, while `Human view` hides the same repeated chapter sections, TOC entries, section-numbering artifacts, raw bracketed core-claim markers, and repeated support boilerplate used by the reader-release strip policy. Human view keeps the compact evidence boundary inline with the core claim rather than opening repeated support paragraphs. Readers can open a chapter directly in either mode with `?view=human` or `?view=ai`. All 54 chapters now carry a `.asi-human-only` Human Reading Path bridge for interested readers, and `.asi-ai-only` blocks remain available for mode-specific research notes without forking the manuscript. The rendered-site validator checks the static HTML hooks, and `scripts/validate_live_human_view_browser.js` exercises representative rendered pages by default or every manifest chapter across desktop and mobile viewports with `--all-chapters --all-viewports` in a real browser when Playwright/Chrome is available, including reading-mode control visibility, rendered Mermaid visibility, raw-marker and support-boilerplate hiding/restoration, and page-overflow checks.
 - `proofs/proof_manifest.json` is generated from `lean:*` proof tags in the outline.
 - `proofs/proof_triage.json` classifies proof targets as Lean, schema, process, or research-agenda work.
@@ -49,7 +55,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 - `scripts/validate_v1_status_snapshot.py` checks that `docs/v1_0_candidate_status.md` headline counts match current repository artifacts.
 - `scripts/validate_outline_consistency.py` checks that `docs/book_outline.md` still matches the manifest chapter order, titles, core claims, assigned source IDs, and Lean proof targets.
 - `scripts/validate_implementation_horizons.py` checks that every manifest chapter has a concrete minimum viable implementation and mature endpoint, and that generated Appendix K matches the manifest in order.
-- Current source-note coverage, exact claim-source mappings, and passage-reviewed mappings are complete for assigned source/chapter pairs, but all chapter core claims remain at `argument` support until accepted evidence transitions justify promotion.
+- Current source-note coverage, exact claim-source mappings, passage-reviewed mappings, and v1.0 core-claim transition/no-promotion coverage are complete for assigned source/chapter pairs, but all chapter core claims remain at `argument` support until accepted upward evidence transitions justify promotion.
 - Protocol schema fixture checks and manifest schema validation are implemented; broader chapter-level Codex tests remain planned unless a specific test result is recorded.
 - `scripts/draft_v02_from_manifest.py` records the repeatable baseline drafting pass; use it intentionally because it rewrites chapter files from the manifest.
 
@@ -83,6 +89,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/reader_docx_probe_manifest.md](docs/reader_docx_probe_manifest.md) | Tracked local DOCX LibreOffice conversion probe summary, spot-check residuals, and DOCX-specific release blockers. |
 | [docs/reader_pdf_probe_manifest.md](docs/reader_pdf_probe_manifest.md) | Tracked local UTF-8 PDF probe summary, spot-check residuals, and PDF-specific release blockers. |
 | [docs/reader_artifact_layout_review.md](docs/reader_artifact_layout_review.md) | Representative local PDF/HTML layout spot check and remaining artifact-review residuals. |
+| [docs/reader_html_artifact_browser_review.md](docs/reader_html_artifact_browser_review.md) | Full local browser review record for the generated reader HTML artifact. |
 | [docs/claim_ledger_revision_harness.md](docs/claim_ledger_revision_harness.md) | Phase 5 synthetic claim-ledger and belief-revision record-discipline harness. |
 | [docs/proof_carrying_claim_harness.md](docs/proof_carrying_claim_harness.md) | Phase 5 synthetic proof-carrying claim tier, verifier, and mismatch harness. |
 | [docs/tribunal_review_harness.md](docs/tribunal_review_harness.md) | Phase 5 synthetic tribunal-review dossier, dissent, and verdict-boundary harness. |
@@ -105,6 +112,12 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [docs/resource_budget_ledger_harness.md](docs/resource_budget_ledger_harness.md) | Phase 5 deterministic resource-budget ledger harness. |
 | [docs/capacity_smoothing_harness.md](docs/capacity_smoothing_harness.md) | Phase 5 deterministic capacity-smoothing toy harness. |
 | [docs/phase5_harness_registry.md](docs/phase5_harness_registry.md) | Registry and traceability contract for the initial Phase 5 harness set. |
+| [docs/phase5_harness_runner.md](docs/phase5_harness_runner.md) | Registry-driven local execution record for the Phase 5 harness suite. |
+| [docs/first_measured_replayed_slice.md](docs/first_measured_replayed_slice.md) | First accepted bounded measured/replayed slice and its non-claim boundary. |
+| [docs/core_claim_transition_coverage.md](docs/core_claim_transition_coverage.md) | Generated v1.0 coverage report proving every chapter core claim has an accepted transition record or explicit no-promotion decision. |
+| [docs/architecture_red_team_review.md](docs/architecture_red_team_review.md) | Phase 7A architecture-level desk red-team report and residual routing. |
+| [docs/release_reproducibility.md](docs/release_reproducibility.md) | Candidate toolchain, citation, locale, and non-release artifact boundary. |
+| [docs/external_sota_positioning_audit.md](docs/external_sota_positioning_audit.md) | Generated Phase 6 queue for in-prose external baseline positioning and exceptions. |
 | [docs/v02_manuscript_status.md](docs/v02_manuscript_status.md) | Historical v0.2 manuscript completion, gaps, and validation status. |
 | [docs/external_literature_queue.md](docs/external_literature_queue.md) | Explicit stance and queue for third-party literature. |
 | [docs/release_editions_plan.md](docs/release_editions_plan.md) | Major-version EPUB/PDF/DOCX/audio edition plan and gates. |
@@ -121,6 +134,9 @@ The project has moved beyond the initial v0.2 manuscript baseline into an extend
 | [appendices/J_release_editions.qmd](appendices/J_release_editions.qmd) | Live-book explanation of reader, research, and audio edition paths. |
 | [appendices/K_implementation_horizons.qmd](appendices/K_implementation_horizons.qmd) | Generated implementation-horizon matrix. |
 | [proofs/proof_manifest.json](proofs/proof_manifest.json) | Generated Lean proof target manifest. |
+| [docs/proof_depth_classification.md](docs/proof_depth_classification.md) | Generated proof-shape depth report separating projection-style Lean hooks from derived/decomposed theorem bodies. |
+| [protocols/v1_critical_protocol_crosswalk.json](protocols/v1_critical_protocol_crosswalk.json) | Structured v1-critical schema/fixture/harness/Lean protocol crosswalk. |
+| [docs/protocol_record_crosswalk.md](docs/protocol_record_crosswalk.md) | Generated protocol-record reconciliation report for v1-critical records. |
 | [docs/repository_map.md](docs/repository_map.md) | Repository layout and ownership map. |
 | [docs/publication_readiness.md](docs/publication_readiness.md) | Public-readiness checklist and known blockers. |
 
@@ -133,11 +149,17 @@ python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
 python3 scripts/sync_reader_overlay_asset.py --check
 python3 scripts/source_readiness_report.py
+python3 scripts/validate_validator_coverage.py
+python3 scripts/validate_proof_depth.py
+python3 scripts/validate_architecture_red_team.py
+python3 scripts/validate_release_reproducibility.py
+python3 scripts/validate_external_sota_positioning.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
 python3 scripts/validate_human_reading_paths.py
 python3 scripts/validate_source_appendices.py
 python3 scripts/validate_v1_status_snapshot.py
+python3 scripts/validate_core_claim_decisions.py
 python3 scripts/validate_outline_consistency.py
 python3 scripts/validate_implementation_horizons.py
 python3 scripts/validate_reader_evidence_boundaries.py --check
@@ -151,7 +173,9 @@ python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/sync_reader_format_review_matrix.py --check
 python3 scripts/validate_reader_spine.py --check
+node scripts/validate_reader_html_artifact_browser.js --strict
 python3 scripts/validate_claim_ledger_revision.py
+python3 scripts/validate_protocol_crosswalk.py
 python3 scripts/validate_proof_carrying_claims.py
 python3 scripts/validate_tribunal_review.py
 python3 scripts/validate_value_conflicts.py
@@ -173,6 +197,7 @@ python3 scripts/validate_generation_mode_baselines.py
 python3 scripts/validate_resource_budget_ledgers.py
 python3 scripts/validate_capacity_smoothing.py
 python3 scripts/validate_phase5_harness_registry.py
+python3 scripts/run_phase5_harnesses.py
 python3 scripts/validate_book.py
 python3 scripts/validate_visual_coverage.py
 python3 scripts/validate_reading_mode_toggle.py
