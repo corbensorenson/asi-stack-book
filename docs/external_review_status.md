@@ -10,6 +10,7 @@ a review-control surface, not evidence and not a support-state transition.
 | Field | Status |
 |---|---|
 | Public review request | Opened: <https://github.com/corbensorenson/asi-stack-book/issues/1> |
+| Supplemental consolidation request | Posted: <https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101> |
 | Review packet | `docs/external_review_packet.md` |
 | Supplemental consolidation packet | `docs/chapter_consolidation_external_review_packet.md` |
 | Review state | Requested publicly; no independent external review has been accepted yet. |
