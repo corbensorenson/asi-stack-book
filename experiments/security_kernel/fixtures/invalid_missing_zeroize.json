@@ -1,0 +1,15 @@
+{
+  "handle_id": "handle://demo-secret/no-zeroize",
+  "principal": "security-kernel-demo",
+  "purpose": "Use a scoped fake credential for an approved local signing action.",
+  "destination": "local-simulated-signer",
+  "allowed_action": "substitute_fake_secret_and_sign_inside_authorized_boundary",
+  "clearance": "scif-demo-sensitive",
+  "approval_record": "approval://security-demo-102",
+  "scif_lifecycle": ["spawn", "inject", "execute", "sanitize", "commit", "audit"],
+  "sanitized_output": "sanitized status only with credential material redacted and no secret bytes included.",
+  "residual_leak_risk": [
+    "does not prove runtime containment or support-state promotion"
+  ],
+  "revocation_path": "expire lease and revoke handle mapping"
+}

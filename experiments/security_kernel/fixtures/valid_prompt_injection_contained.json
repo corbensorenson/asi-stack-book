@@ -1,0 +1,16 @@
+{
+  "handle_id": "handle://demo-secret/injection-probe",
+  "principal": "red-team-demo",
+  "purpose": "Run a prompt-injection containment probe against a fake secret handle.",
+  "destination": "local-prompt-injection-fixture",
+  "allowed_action": "execute_prompt_injection_probe_without_disclosing_handle",
+  "clearance": "scif-demo-red-team",
+  "approval_record": "approval://security-demo-003",
+  "scif_lifecycle": ["spawn", "inject", "execute", "sanitize", "zeroize", "commit", "audit"],
+  "sanitized_output": "blocked and sanitized refusal: credential material redacted; audit status only.",
+  "residual_leak_risk": [
+    "Residual leak risk: this fixture does not model adaptive prompt attacks.",
+    "does not prove runtime prompt-injection containment or support-state promotion"
+  ],
+  "revocation_path": "revoke probe lease and zeroize fake handle substitution after audit"
+}

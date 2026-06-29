@@ -890,7 +890,7 @@ Draft arc:
 - Interface: VCM supplies least-privilege context and clearance-scoped mission briefs.
 - Interface: Execution checks tool permissions and performs substitution only at authorized runtime boundaries.
 - Interface: Governance audits sensitive transitions through Authority Use Receipts.
-- Exact Appendix C claim-source mappings for the core security-kernel claim across Ladon/Manhattan blind handles, Context Engineer SCIF/context-supply-chain lifecycle, Talos execution/audit context, Alignment Field normative boundary pressure, and Coherence Exchange governance framing; four local mappings (`ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` pending secret-handle substitution tests, SCIF least-privilege tests, prompt-injection containment scenarios, threat-model artifacts, side-channel analysis, or deployed runtime evidence.
+- Exact Appendix C claim-source mappings for the core security-kernel claim across Ladon/Manhattan blind handles, Context Engineer SCIF/context-supply-chain lifecycle, Talos execution/audit context, Alignment Field normative boundary pressure, and Coherence Exchange governance framing; four local mappings (`ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` even after the synthetic security-kernel harness; kernel security, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, least-privilege context behavior, threat-model artifacts, source interpretation, and deployed runtime evidence remain pending.
 
 Primary invariants:
 
@@ -911,12 +911,12 @@ Failure modes to cover:
 Draft deliverables:
 
 - A secure-handle workflow and SCIF lifecycle diagram.
-- Planned Codex test: Secret-handle substitution test.
-- Planned Codex test: Handle lease expiry/reuse test.
-- Planned Codex test: SCIF least-privilege test.
-- Planned Codex test: Sanitized-output residual test.
-- Planned Codex test: Security-overhead budget preservation test.
-- Planned Codex test: Prompt-injection containment scenario.
+- Implemented synthetic Codex test: Secret-handle substitution test via `python3 scripts/validate_security_kernel.py`; secret-handle safety, sandbox isolation, and deployed substitution behavior remain open.
+- Implemented synthetic Codex test: Handle lease expiry/reuse test via `python3 scripts/validate_security_kernel.py`; deployed lease expiry, revocation propagation, and reuse prevention remain open.
+- Implemented synthetic Codex test: SCIF least-privilege test via `python3 scripts/validate_security_kernel.py`; least-privilege context behavior and side-channel safety remain open.
+- Implemented synthetic Codex test: Sanitized-output residual test via `python3 scripts/validate_security_kernel.py`; leak prevention and summary-safety claims remain open.
+- Implemented synthetic Codex test: Security-overhead budget preservation test via `python3 scripts/validate_security_kernel.py`; runtime budget enforcement and security-economics claims remain open.
+- Implemented synthetic Codex test: Prompt-injection containment scenario via `python3 scripts/validate_security_kernel.py`; runtime prompt-injection containment remains open.
 
 Lean proof targets:
 

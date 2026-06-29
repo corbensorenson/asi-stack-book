@@ -1,0 +1,15 @@
+{
+  "handle_id": "handle://demo-secret/ambient",
+  "principal": "security-kernel-demo",
+  "purpose": "Provide ambient authority for all destinations.",
+  "destination": "any destination",
+  "allowed_action": "do anything with all tools",
+  "clearance": "scif-demo-sensitive",
+  "approval_record": "approval://security-demo-103",
+  "scif_lifecycle": ["spawn", "inject", "execute", "sanitize", "zeroize", "commit", "audit"],
+  "sanitized_output": "sanitized status only with credential material redacted and no secret bytes included.",
+  "residual_leak_risk": [
+    "does not prove runtime containment or support-state promotion"
+  ],
+  "revocation_path": "expire lease and revoke handle mapping"
+}

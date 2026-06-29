@@ -207,6 +207,29 @@
     ]
   },
   {
+    "id": "security_kernel",
+    "name": "Security kernel harness",
+    "command": "python3 scripts/validate_security_kernel.py",
+    "script": "scripts/validate_security_kernel.py",
+    "doc": "docs/security_kernel_harness.md",
+    "experiment_dir": "experiments/security_kernel",
+    "fixture_dir": "experiments/security_kernel/fixtures",
+    "result_record": "experiments/security_kernel/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 6,
+    "result_summary": "Security kernel harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "security-kernel-and-digital-scifs",
+      "system-boundaries-and-authority",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "context-transactions-snapshots-mounts-and-taint"
+    ],
+    "non_claims": [
+      "Does not prove kernel security, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, least-privilege context behavior, runtime policy behavior, or source interpretation.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "plan_execution_contracts",
     "name": "Plan-execution contract harness",
     "command": "python3 scripts/validate_plan_execution_contracts.py",

@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache claim-source mappings now carry reviewed passage references, but coherence_exchange remains connector-only/source-note mapped and support remains at argument until tests, threat-model artifacts, runtime evidence, or accepted evidence transitions justify promotion."
-  - "The authority_use_receipt fixture validates schema/example consistency and the SecurityKernel Lean module mechanizes narrow authorization/clearance predicates only; secret-handle substitution, handle-lease expiry/reuse, SCIF least-privilege, sanitized-output residual, and prompt-injection containment scenarios remain unimplemented."
+  - "The authority_use_receipt fixture validates schema/example consistency, the SecurityKernel Lean module mechanizes narrow authorization/clearance predicates, and the synthetic security kernel harness now checks handle mediation, approval artifacts, bounded action scope, SCIF lifecycle completeness, sanitization, residual leak-risk notes, revocation paths, and prompt-injection non-disclosure boundaries; kernel security, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, least-privilege context behavior, runtime policy behavior, and source interpretation remain open."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Source queue | primary: `ladon_manhattan`, `context_engineer`; supporting: `talos`, `alignment_field`, `coherence_exchange` |
 | Source loading state | source notes: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`, `coherence_exchange`; raw cache: `ladon_manhattan`, `context_engineer`, `talos`, `alignment_field`; connector/recovery: `coherence_exchange` |
 | Source mapping review | Four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector-only/source-note mapped. |
-| Test state | `authority_use_receipt.valid.json` passes protocol fixture validation and `AsiStackProofs.SecurityKernel` builds locally; secret-handle substitution, handle-lease expiry/reuse, SCIF least-privilege, sanitized-output residual, security-overhead budget preservation, and prompt-injection containment tests remain planned. |
+| Test state | `authority_use_receipt.valid.json` passes protocol fixture validation and `AsiStackProofs.SecurityKernel` builds locally; `python3 scripts/validate_security_kernel.py` passes synthetic authority-use receipt fixtures for handle substitution, lease/revocation, SCIF lifecycle, least-privilege scoping, sanitized residuals, security-overhead preservation, and prompt-injection non-disclosure boundaries without proving deployed kernel security or runtime containment. |
 
 ## Drafting guardrail
 

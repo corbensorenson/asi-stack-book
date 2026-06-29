@@ -1,0 +1,16 @@
+{
+  "handle_id": "handle://scif/least-privilege-context",
+  "principal": "context-compiler-demo",
+  "purpose": "Query only the scoped mission brief needed for a sensitive local analysis.",
+  "destination": "digital-scif-demo-container",
+  "allowed_action": "query_scoped_context_shard",
+  "clearance": "scif-demo-compartment",
+  "approval_record": "approval://security-demo-002",
+  "scif_lifecycle": ["spawn", "inject", "execute", "sanitize", "zeroize", "commit", "audit"],
+  "sanitized_output": "sanitized summary only: denied material omitted, redacted boundary retained, and no secret context copied.",
+  "residual_leak_risk": [
+    "Residual leak risk: semantic inference from the summary is not eliminated.",
+    "does not prove runtime least-privilege enforcement or support-state promotion"
+  ],
+  "revocation_path": "revoke context lease after commit and delete temporary SCIF mapping"
+}

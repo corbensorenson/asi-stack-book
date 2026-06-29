@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Security kernel harness
+
+- Added `scripts/validate_security_kernel.py`, synthetic authority-use receipt
+  fixtures under `experiments/security_kernel/`,
+  `docs/security_kernel_harness.md`, and a tracked local result record. The
+  local run passes with 3 valid and 6 expected-invalid fixtures, checking
+  handle mediation, approval artifacts, bounded action scope, SCIF lifecycle
+  completeness, sanitization, residual leak-risk notes, revocation paths, and
+  prompt-injection non-disclosure boundaries.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Security Kernel chapter's
+  secret-handle, handle-lease, SCIF least-privilege, sanitized-output,
+  security-overhead, and prompt-injection test rows, README, publication
+  readiness, and v1.0 roadmap/status/focus surfaces. This is synthetic
+  security-kernel receipt discipline only: it is not kernel security, sandbox
+  isolation, side-channel safety, prompt-injection containment,
+  secret-handle safety, least-privilege context behavior, runtime policy
+  behavior, source interpretation, reader-release approval, support-state
+  promotion, proof adequacy, benchmark evidence, or deployed security.
+
 ## 2026-06-28 - v1.0 Normative harness status cleanup
 
 - Updated the Moral Uncertainty, Agency, and Governance Rights chapter status
