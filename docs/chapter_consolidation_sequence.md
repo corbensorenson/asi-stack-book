@@ -57,6 +57,25 @@ review-ready, but no manifest merge is authorized until human or external
 review accepts, revises, or rejects the destination shapes and the project has
 a public URL or redirect policy for folded chapters.
 
+## Chapter-Ownership Rubric
+
+Use this rubric before any non-pilot consolidation package:
+
+- A chapter is chapter-owning when it owns a distinct artifact, interface,
+  evidence lane, proof family, implementation horizon, or reader throughline
+  that would become weaker if buried.
+- A chapter is a consolidation candidate when most of its reader-visible load
+  repeats another chapter's source family, claim motion, mechanism, interface,
+  failure modes, implementation horizon, and handoff while adding only a
+  supporting facet.
+- A merge is justified only if the destination draft reduces repeated skeleton
+  load and increases mechanism depth, external positioning, proof specificity,
+  negative-case treatment, or reader clarity.
+- A merge is rejected or deferred when the proposed destination loses a useful
+  artifact boundary, makes claim ownership less legible, weakens proof/evidence
+  routing, or merely compresses the table of contents without improving the
+  argument.
+
 ## Candidate Sequence
 
 | Tier | Candidate cluster | Source chapters | Default destination or action | Preservation requirement |
@@ -124,6 +143,9 @@ Part I pilot before any manifest edit:
 9. Public URL, redirect, or retired-file policy.
 10. Validation command list and expected generated-file updates.
 11. No-support-state-change and no-evidence-creation boundary.
+12. Chapter-ownership rubric result: preserved artifact boundary, repeated
+    skeleton load removed, proof/evidence path clarified, reader confusion
+    reduced, and reason to execute, revise, defer, or reject.
 
 ## Reader Work Sequencing
 

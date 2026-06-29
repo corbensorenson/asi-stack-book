@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-29 - Circle curated reader prose pass and consolidation rubric
+
+- Accepted the latest consolidation critique as directionally correct roadmap
+  guidance and sharpened the governed consolidation milestone with a
+  chapter-ownership rubric: future merges must reduce repeated skeleton load,
+  preserve artifact boundaries, clarify proof/evidence paths, and improve
+  reader flow rather than chase a chapter-count target.
+- Added `docs/curated_reader_circle_contracts_prose_pass.md` and updated the
+  drafting-only curated Circle reader chapter so proof-carrying contracts read
+  more clearly for humans while preserving the live chapter's Circle
+  consumer-gate boundary, support state, proof/test status, implementation
+  horizon, companion-note routing, and release blockers.
+- Updated the curated reader manifest, reconciliation report, companion-note
+  routing review, graduation review, v1.x roadmap, release-editions plan,
+  v1.0 status snapshot, README, edition docs, repository map, and status
+  validator so current public surfaces consistently record six drafting-only
+  curated reader chapters.
+- This does not edit `book_structure.json`, merge chapters, approve a reader
+  release, create EPUB/DOCX/PDF/HTML/audio artifacts, replay Circle locally,
+  vendor a Circle contract pack, promote any chapter core claim, or create any
+  new proof/test result.
+
 ## 2026-06-29 - Evidence-laundering prevention case studies
 
 - Added `docs/evidence_laundering_prevention_case_studies.md` to record three

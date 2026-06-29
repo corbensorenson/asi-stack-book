@@ -253,6 +253,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First prose curation pass recorded in docs/curated_reader_human_intent_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "title": "Circle Calculus and Proof-Carrying AI Contracts",
+      "file": "editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "live_source_ref": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd@b51f5dca1",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#circle-calculus-and-proof-carrying-ai-contracts.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#circle-calculus-and-proof-carrying-ai-contracts",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "paragraph ordering",
+        "chapter compression",
+        "companion-note integration"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-versus-performance throughline, receipt lifecycle explanation, Circle consumer-gate boundary repair, and minimum viable implementation alignment were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_circle_contracts_prose_pass.md; not release-reviewed."
     }
   ],
   "reconciliation_report": {

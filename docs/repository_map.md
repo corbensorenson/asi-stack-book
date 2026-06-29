@@ -44,6 +44,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_pdf_probe_manifest.md` | Tracked local UTF-8 PDF probe summary for the ignored reader snapshot, including exact PDF metrics, sampled source-card pages, and PDF-specific release blockers. | tracked |
 | `docs/reader_audio_script_probe_manifest.md` | Tracked local audio-script review-workspace probe summary for the ignored audio script, including script-file count, spoken-treatment counts, and audio-specific release blockers. | tracked |
 | `docs/reader_companion_note_routing_review.md` | Human-readable companion-note routing decision for the dense proof/governance chapters flagged by the reader matrix. | tracked |
+| `docs/curated_reader_circle_contracts_prose_pass.md` | Drafting-only curated reader prose-pass record for the Circle proof-carrying contracts chapter; preserves proof/test, support-state, release, and Circle replay boundaries. | tracked |
 | `docs/reader_part_i_review_pass.md` | First Part I generated-reader review pass over matrix rows, recording no-action decisions without release approval. | tracked |
 | `docs/reader_part_ii_review_pass.md` | First Part II generated-reader review pass over matrix rows, recording canonical prose cleanups and no-action decisions without release approval. | tracked |
 | `docs/reader_part_iii_review_pass.md` | First Part III generated-reader review pass over matrix rows, recording canonical prose cleanups and no-action decisions without release approval. | tracked |

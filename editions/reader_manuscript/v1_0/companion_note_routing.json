@@ -15,7 +15,7 @@
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "title": "Circle Calculus and Proof-Carrying AI Contracts",
       "routing_decision": "retain_in_reader_spine_with_companion_note",
-      "reader_treatment": "Keep proof receipt states, theorem references, resolver and replay boundaries, consumer gates, workload blockers, and explicit non-claims in the reader chapter.",
+      "reader_treatment": "Keep proof receipt states, theorem references, resolver and replay boundaries, consumer gates, workload blockers, and explicit non-claims in the reader chapter; the drafting curated reader source must preserve those boundaries.",
       "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short glossary for proof receipt, theorem-linked receipt, resolver-checked, consumer-gated, workload-blocked, fingerprint, replay, and theorem laundering.",
       "audio_treatment": "Summarize the receipt lifecycle in narration and route the state vocabulary to companion notes rather than reading field lists verbatim.",
       "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/circle-calculus-and-proof-carrying-ai-contracts.md",
@@ -43,6 +43,7 @@
       ],
       "non_claims": [
         "This route does not claim local replay of external Circle proofs.",
+        "This route does not approve the drafting curated reader chapter.",
         "This route does not promote any model-quality, runtime, memory, context, safety, or ASI capability claim."
       ]
     },
