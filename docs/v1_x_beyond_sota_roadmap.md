@@ -757,8 +757,9 @@ Follow-up review outcome:
 - The Part I pilot is now `review_ready`, meaning destination drafts exist but
   require an execute, revise, defer, or reject decision plus URL/redirect policy
   before any canonical chapter identity changes.
-- Compression and intent/contracts now have dry-run packages and one-skeleton
-  destination drafts but remain unmerged. Context, verification, planning,
+- Compression, intent/contracts, and static context ABI now have dry-run
+  packages and one-skeleton destination drafts but remain unmerged.
+  Verification, planning,
   MoECOT, simulation-fidelity, and semantic representation should each receive
   a dry-run package and destination or fold disposition before reader curation
   or manifest edits depend on them.
@@ -973,8 +974,9 @@ Current status:
   future manifest edit.
 - The sequence now records consolidation states so candidates cannot jump from
   "interesting idea" to manifest change: the Part I pilot is `review_ready`,
-  compression is `review_ready`, the remaining non-packaged merge clusters are
-  `planned_candidate`, the MoECOT, simulation-fidelity, and
+  compression, intent/contracts, and static context ABI are `review_ready`, the
+  remaining non-packaged merge clusters are `planned_candidate`, the MoECOT,
+  simulation-fidelity, and
   semantic-representation candidates are `fold_review_candidate`, and
   runtime-adapters/Labor OS is retained unless a later evidence review finds
   duplicate artifact ownership.
@@ -1046,6 +1048,19 @@ Current status:
   Intent to Executable Work**. It is intentionally not marked reviewed:
   manifest consolidation remains blocked until review accepts, revises, defers,
   or rejects the merge.
+- `docs/chapter_consolidation_dry_run_context_abi.md` records the Tier 1D
+  dry-run package for **The Virtual Context ABI: Typed Pages, Cells, and
+  Certificates**. It proposes keeping `virtual-context-abi` as the continuity
+  ID, folding `semantic-pages-context-cells-and-certificates` as preserved
+  typed-page and certificate subclaims, and keeping
+  `context-transactions-snapshots-mounts-and-taint`,
+  `verification-bandwidth-and-context-adequacy`, and
+  `claim-ledgers-and-belief-revision` standalone.
+- `docs/chapter_consolidation_destination_draft_context_abi.md` now records
+  the review-ready destination draft for **The Virtual Context ABI: Typed
+  Pages, Cells, and Certificates**. It is intentionally not marked reviewed:
+  manifest consolidation remains blocked until review accepts, revises, defers,
+  or rejects the merge.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
   defer manifest consolidation until human or external review and a public
   URL/redirect policy unblock it, proceed with human-reader curation outside
@@ -1081,11 +1096,13 @@ Current status:
   execute-full, execute-conservative, revise, defer, or reject decision. The
   intent/contracts candidate should not be merged from the roadmap table,
   dry-run package, or destination draft alone. It still needs review and an
-  execute, revise, defer, or reject decision. The context, verification,
-  planning, MoECOT, simulation-fidelity, and semantic-representation candidates
-  still need their own dry-run package, claim/source/proof/reader
-  reconciliation, and reviewed destination-chapter draft or fold disposition
-  before any `book_structure.json` change.
+  execute, revise, defer, or reject decision. The static context ABI candidate
+  should not be merged from the roadmap table, dry-run package, or destination
+  draft alone. It still needs review and an execute, revise, defer, or reject
+  decision. The verification, planning, MoECOT, simulation-fidelity, and
+  semantic-representation candidates still need their own dry-run package,
+  claim/source/proof/reader reconciliation, and reviewed destination-chapter
+  draft or fold disposition before any `book_structure.json` change.
 - No manifest merge has been performed yet, and no chapter count reduction is
   claimed.
 

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - Static context ABI consolidation review package
+
+- Added `docs/chapter_consolidation_dry_run_context_abi.md` and
+  `docs/chapter_consolidation_destination_draft_context_abi.md` to make the
+  static context ABI Tier 1D consolidation candidate review-ready.
+- The package proposes keeping `virtual-context-abi` as the continuity ID,
+  folding `semantic-pages-context-cells-and-certificates` as preserved typed
+  page, context cell, and certificate subclaims, and keeping
+  `context-transactions-snapshots-mounts-and-taint`,
+  `verification-bandwidth-and-context-adequacy`, and
+  `claim-ledgers-and-belief-revision` standalone.
+- Updated the v1.x roadmap, consolidation sequence, README, publication
+  readiness, repository map, and consolidation validator so the static context
+  ABI cluster is `review_ready`, while still requiring review and an execute,
+  revise, defer, or reject decision before any manifest edit.
+- This does not edit `book_structure.json`, merge chapters, change Appendix C,
+  create source/proof/test evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Consolidation roadmap hardening
 
 - Reviewed the latest 54-to-44/47 re-consolidation proposal and kept the core

@@ -118,7 +118,7 @@ Use this rubric before any non-pilot consolidation package:
 | Part I value conflict and contestable governance | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
 | Compression and residual honesty | `review_ready` | Review the destination draft and decide execute full merge, execute conservative merge, revise, defer, or reject. | Avoid curated graduation of the source cluster unless explicitly deferred or retained. |
 | Intent and executable contracts | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` reader work local until the contract boundary is clear. |
-| Static context ABI | `planned_candidate` | Build a dry-run package that protects dynamic transaction and verification-bandwidth chapters. | Reader curation may continue outside the static ABI pair. |
+| Static context ABI | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the static ABI pair unless explicitly deferred or retained; reader curation may continue on protected adjacent chapters. |
 | Verification and adversarial review | `planned_candidate` | Build a dry-run package that keeps claim ledgers separate. | Avoid merging review vocabulary into claim-ledger prose prematurely. |
 | Planning and DAG control | `planned_candidate` | Build a dry-run package that keeps semantic IR separate unless evidence says otherwise. | Reader curation may continue on non-overlapping planning chapters. |
 | Source-blocked MoECOT runtime | `fold_review_candidate` | Decide whether to fold as a named routing-runtime section until source mining catches up. | Do not promote MoECOT runtime as standalone reader material while source-blocked. |
@@ -241,6 +241,17 @@ path. The current allowed pilot-reader set remains:
   the one-skeleton destination draft for **Command Contracts: From Intent to
   Executable Work**. It is review-ready but not reviewed, not canonical, and
   not a manifest edit. The next decision is execute, revise, defer, or reject.
+- `docs/chapter_consolidation_dry_run_context_abi.md` records the Tier 1D
+  dry-run package for the static context ABI cluster. It does not edit
+  `book_structure.json`, authorize a manifest merge, or move support states.
+  It keeps `context-transactions-snapshots-mounts-and-taint`,
+  `verification-bandwidth-and-context-adequacy`, and
+  `claim-ledgers-and-belief-revision` standalone.
+- `docs/chapter_consolidation_destination_draft_context_abi.md` records the
+  one-skeleton destination draft for **The Virtual Context ABI: Typed Pages,
+  Cells, and Certificates**. It is review-ready but not reviewed, not
+  canonical, and not a manifest edit. The next decision is execute, revise,
+  defer, or reject.
 
 ## Non-Claims
 

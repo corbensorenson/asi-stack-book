@@ -12,6 +12,8 @@ COMPRESSION_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_compression
 COMPRESSION_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_compression.md"
 INTENT_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_intent_contracts.md"
 INTENT_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_intent_contracts.md"
+CONTEXT_ABI_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_context_abi.md"
+CONTEXT_ABI_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_context_abi.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -86,6 +88,7 @@ REQUIRED_FRAGMENTS = (
     "Current Cluster Register",
     "Compression and residual honesty | `review_ready`",
     "Intent and executable contracts | `review_ready`",
+    "Static context ABI | `review_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -270,6 +273,104 @@ INTENT_REQUIRED_FIXTURE_FRAGMENTS = {
     "python3 scripts/validate_plan_execution_contracts.py",
 }
 
+CONTEXT_ABI_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Dry Run: Static Context ABI",
+    "does not edit `book_structure.json`",
+    "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
+    "context-transactions-snapshots-mounts-and-taint",
+    "verification-bandwidth-and-context-adequacy",
+    "claim-ledgers-and-belief-revision",
+    "Proposed `book_structure.json` Diff",
+    "Destination Section Outline",
+    "Appendix C Row Plan",
+    "Source Union",
+    "External-source union",
+    "Lean Module And Proof-Manifest Treatment",
+    "Tests, Schemas, And Fixtures",
+    "Reader Path, Handoff, And Review Repairs",
+    "Repetition-Removal Ledger",
+    "No support state changes",
+    "No new result is created by this dry run",
+)
+
+CONTEXT_ABI_DRAFT_REQUIRED_FRAGMENTS = (
+    "Consolidation Destination Draft: The Virtual Context ABI, Typed Pages, Cells, and Certificates",
+    "Status: review-ready draft; human/external review not completed.",
+    "does not edit",
+    "Destination continuity ID: `virtual-context-abi`",
+    "Proposed displayed title: **The Virtual Context ABI: Typed Pages, Cells, and",
+    "Preservation Ledger",
+    "Destination Chapter Draft",
+    "Chapter status",
+    "Drafting guardrail",
+    "Human Reading Path",
+    "Problem",
+    "Why existing approaches are insufficient",
+    "Core Claim",
+    "Mechanism",
+    "Minimum Viable Implementation",
+    "Beyond the State of the Art",
+    "Codex test plan",
+    "Formalization hooks",
+    "Source crosswalk",
+    "Repetition-removal ledger",
+    "Review Decision Surface",
+    "No chapter core claim is promoted above `argument`",
+    "This draft does not merge chapters.",
+    "This draft does not change Appendix C support states.",
+)
+
+CONTEXT_ABI_REQUIRED_IDS = {
+    "virtual-context-abi",
+    "semantic-pages-context-cells-and-certificates",
+    "context-transactions-snapshots-mounts-and-taint",
+    "verification-bandwidth-and-context-adequacy",
+    "claim-ledgers-and-belief-revision",
+}
+
+CONTEXT_ABI_REQUIRED_SOURCE_IDS = {
+    "vcm_public",
+    "context_engineer",
+    "verification_bandwidth",
+    "viea",
+    "vcm_editable",
+    "moecot",
+    "spinoza",
+}
+
+CONTEXT_ABI_REQUIRED_EXTERNAL_IDS = {
+    "ext_alce_2023",
+    "ext_longbench_2023",
+    "ext_longllmlingua_2023",
+    "ext_lost_in_middle_2023",
+    "ext_memgpt_2023",
+    "ext_rag_2020",
+    "ext_ruler_2024",
+    "ext_self_rag_2023",
+}
+
+CONTEXT_ABI_REQUIRED_LEAN_TAGS = {
+    "lean:vcm.abi.operational_invariant",
+    "lean:vcm.abi.failure_blocks_promotion",
+    "lean:vcm.certificates.operational_invariant",
+    "lean:vcm.certificates.failure_blocks_promotion",
+}
+
+CONTEXT_ABI_REQUIRED_FIXTURE_FRAGMENTS = {
+    "schemas/context_abi_record.schema.json",
+    "schemas/semantic_page_certificate.schema.json",
+    "schemas/context_packet.schema.json",
+    "schemas/context_adequacy_record.schema.json",
+    "schemas/context_transaction_record.schema.json",
+    "experiments/context_admission_adequacy/fixtures/valid_local_check_public_context.json",
+    "experiments/context_admission_adequacy/fixtures/valid_admitted_but_inadequate.json",
+    "experiments/context_admission_adequacy/fixtures/valid_conflict_escalation.json",
+    "experiments/context_admission_adequacy/fixtures/invalid_admission_as_verification.json",
+    "experiments/context_admission_adequacy/fixtures/invalid_conflict_promoted.json",
+    "experiments/context_admission_adequacy/fixtures/invalid_stale_certificate_use.json",
+    "python3 scripts/validate_context_admission_adequacy.py",
+}
+
 REQUIRED_DESTINATIONS = (
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
@@ -286,6 +387,8 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_destination_draft_compression.md",
     "docs/chapter_consolidation_dry_run_intent_contracts.md",
     "docs/chapter_consolidation_destination_draft_intent_contracts.md",
+    "docs/chapter_consolidation_dry_run_context_abi.md",
+    "docs/chapter_consolidation_destination_draft_context_abi.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -451,6 +554,70 @@ def main() -> None:
     for tag in sorted(INTENT_REQUIRED_LEAN_TAGS):
         if f"`{tag}`" not in intent_draft:
             errors.append(f"Intent/contracts destination draft missing Lean tag `{tag}`.")
+
+    try:
+        context_abi = read_text(CONTEXT_ABI_DRY_RUN)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_dry_run_context_abi.md")
+        context_abi = ""
+
+    for fragment in CONTEXT_ABI_REQUIRED_FRAGMENTS:
+        if fragment not in context_abi:
+            errors.append(f"Static context ABI dry run missing required boundary: {fragment}")
+
+    for chapter_id in sorted(CONTEXT_ABI_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Static context ABI chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in context_abi:
+            errors.append(f"Static context ABI dry run does not mention `{chapter_id}`.")
+
+    for source_id in sorted(CONTEXT_ABI_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in context_abi:
+            errors.append(f"Static context ABI dry run missing source ID `{source_id}`.")
+
+    for source_id in sorted(CONTEXT_ABI_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in context_abi:
+            errors.append(f"Static context ABI dry run missing external source ID `{source_id}`.")
+
+    for tag in sorted(CONTEXT_ABI_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in context_abi:
+            errors.append(f"Static context ABI dry run missing Lean tag `{tag}`.")
+
+    for fragment in sorted(CONTEXT_ABI_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in context_abi:
+            errors.append(f"Static context ABI dry run missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        context_abi_draft = read_text(CONTEXT_ABI_DESTINATION_DRAFT)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_destination_draft_context_abi.md")
+        context_abi_draft = ""
+
+    for fragment in CONTEXT_ABI_DRAFT_REQUIRED_FRAGMENTS:
+        if fragment not in context_abi_draft:
+            errors.append(f"Static context ABI destination draft missing required boundary: {fragment}")
+
+    for chapter_id in sorted(CONTEXT_ABI_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Static context ABI destination chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in context_abi_draft:
+            errors.append(f"Static context ABI destination draft does not mention `{chapter_id}`.")
+
+    for source_id in sorted(CONTEXT_ABI_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in context_abi_draft:
+            errors.append(f"Static context ABI destination draft missing source ID `{source_id}`.")
+
+    for source_id in sorted(CONTEXT_ABI_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in context_abi_draft:
+            errors.append(f"Static context ABI destination draft missing external source ID `{source_id}`.")
+
+    for tag in sorted(CONTEXT_ABI_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in context_abi_draft:
+            errors.append(f"Static context ABI destination draft missing Lean tag `{tag}`.")
+
+    for fragment in sorted(CONTEXT_ABI_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in context_abi_draft:
+            errors.append(f"Static context ABI destination draft missing fixture, schema, or validator `{fragment}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)
