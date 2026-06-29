@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 6
-- Curated chapter records: 13 drafting records for
+- Curated-manuscript candidates: 7
+- Curated chapter records: 14 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -35,6 +35,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `security-kernel-and-digital-scifs`,
   `stable-capability-fields`,
   `capability-replacement-and-rollback`,
+  `readiness-gates-residual-escrow-and-quarantine`,
   `recursive-self-improvement-boundaries`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
@@ -50,7 +51,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 
 Graduate drafting-only curated reader sources for the opener, Efficient ASI,
 System Boundaries, Failure Modes, Evidence States, Human Intent, Security
-Kernel, Stable Capability Fields, Capability Replacement and Rollback, Recursive Self-Improvement,
+Kernel, Stable Capability Fields, Capability Replacement and Rollback,
+Readiness Gates, Recursive Self-Improvement,
 `circle-calculus-and-proof-carrying-ai-contracts`,
 `executable-specifications-and-lean-proof-envelope`, and
 `artifact-steward-agents-and-living-project-governance`; do not treat any file
@@ -90,6 +92,7 @@ duplicate skeletons the consolidation pilot is trying to remove.
 | `security-kernel-and-digital-scifs` | protected standalone security-boundary chapter outside the pending consolidation cluster; owns least-exposure, handle-lease, Digital SCIF, and authority-receipt reader vocabulary | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_security_kernel_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed security, sandbox-isolation, side-channel-resistance, prompt-injection-containment, OWASP-conformance, or NIST-zero-trust-implementation claim is implied. |
 | `stable-capability-fields` | protected standalone capability-identity chapter outside the pending consolidation cluster; owns field/implementation separation, qualification leases, route-validation boundaries, authority ceilings, and rollback obligations | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_stable_capability_fields_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed route validation, authority enforcement, replacement safety, rollback execution, SLSA workflow, SemVer checker, object-capability implementation, or MoECOT runtime reproduction claim is implied. |
 | `capability-replacement-and-rollback` | protected standalone replacement-control chapter outside the pending consolidation cluster; owns candidate/accepted replacement separation, regression floors, residual escrow, monitor windows, rollback receipts, and evaluator independence | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_capability_replacement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed replacement behavior, real regression-suite quality, monitor-window success, rollback execution, evaluator-integrity enforcement, authority enforcement, MoECOT runtime reproduction, or implemented-corrigibility claim is implied. |
+| `readiness-gates-residual-escrow-and-quarantine` | protected standalone readiness-control chapter outside the pending consolidation cluster; owns scoped permission, residual escrow, productive quarantine, stale-gate prevention, inherited residuals, and lifecycle control | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_readiness_gates_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed readiness engine, residual-ledger storage, benchmark quality, live quarantine routing, gate-expiry enforcement, live rerouting, current Theseus runtime behavior, or MoECOT replay claim is implied. |
 | `recursive-self-improvement-boundaries` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_recursive_self_improvement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
@@ -127,7 +130,7 @@ true:
 
 ## Non-Claims
 
-- This review creates thirteen drafting-only curated reader chapter files for
+- This review creates fourteen drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.
