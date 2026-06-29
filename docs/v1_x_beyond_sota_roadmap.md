@@ -749,10 +749,11 @@ Follow-up review outcome:
 - The Part I pilot is now `review_ready`, meaning destination drafts exist but
   require an execute, revise, defer, or reject decision plus URL/redirect policy
   before any canonical chapter identity changes.
-- Compression now has a dry-run package but remains unmerged. Intent/contracts,
-  context, verification, planning, MoECOT, simulation-fidelity, and semantic
-  representation should each receive a dry-run package and destination or fold
-  disposition before reader curation or manifest edits depend on them.
+- Compression now has a dry-run package and one-skeleton destination draft but
+  remains unmerged. Intent/contracts, context, verification, planning, MoECOT,
+  simulation-fidelity, and semantic representation should each receive a
+  dry-run package and destination or fold disposition before reader curation or
+  manifest edits depend on them.
 
 Decision rubric:
 
@@ -954,8 +955,8 @@ Current status:
   future manifest edit.
 - The sequence now records consolidation states so candidates cannot jump from
   "interesting idea" to manifest change: the Part I pilot is `review_ready`,
-  compression is `dry_run_packaged`, the remaining non-packaged merge clusters
-  are `planned_candidate`, the MoECOT, simulation-fidelity, and
+  compression is `review_ready`, the remaining non-packaged merge clusters are
+  `planned_candidate`, the MoECOT, simulation-fidelity, and
   semantic-representation candidates are `fold_review_candidate`, and
   runtime-adapters/Labor OS is retained unless a later evidence review finds
   duplicate artifact ownership.
@@ -1009,6 +1010,12 @@ Current status:
   finds distinct technique ownership. It leaves
   `semantic-representation-and-tree-structured-models` outside the merge until
   a separate fold disposition exists.
+- `docs/chapter_consolidation_destination_draft_compression.md` now records the
+  first non-pilot review-ready destination draft for **Compact Generative
+  Systems: Generate, Verify, Repair, and Residual Honesty**. It is intentionally
+  not marked reviewed: manifest consolidation remains blocked until review
+  accepts a full merge, accepts the conservative GVR-only merge, asks for
+  revision, defers, or rejects the merge.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
   defer manifest consolidation until human or external review and a public
   URL/redirect policy unblock it, proceed with human-reader curation outside
@@ -1039,10 +1046,10 @@ Current status:
   chapters until the pilot is executed or rejected. Reader curation may continue
   on chapters outside the pending cluster, and local prose fixes may continue
   anywhere when they do not entrench duplicate chapter structure.
-- The compression candidate should not be merged from the roadmap table or
-  dry-run package alone. It still needs a one-skeleton destination draft,
-  review, and execute/revise/defer/reject decision. The intent/contract,
-  context, verification, planning, MoECOT, simulation-fidelity, and
+- The compression candidate should not be merged from the roadmap table,
+  dry-run package, or destination draft alone. It still needs review and an
+  execute-full, execute-conservative, revise, defer, or reject decision. The
+  intent/contract, context, verification, planning, MoECOT, simulation-fidelity, and
   semantic-representation candidates still need their own dry-run package,
   claim/source/proof/reader reconciliation, and reviewed destination-chapter
   draft or fold disposition before any `book_structure.json` change.

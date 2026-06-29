@@ -107,6 +107,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/chapter_consolidation_external_review_packet.md](docs/chapter_consolidation_external_review_packet.md) | Review packet for deciding whether to execute, revise, defer, or reject the Part I consolidation pilot. |
 | [docs/chapter_consolidation_dry_run_constitutional_alignment.md](docs/chapter_consolidation_dry_run_constitutional_alignment.md) | First dry-run merge package for constitutional alignment plus agency/corrigibility; review artifact only, not a manifest edit. |
 | [docs/chapter_consolidation_dry_run_compression.md](docs/chapter_consolidation_dry_run_compression.md) | First non-pilot dry-run package for compact generative systems, GVR compression, and RankFold/NeuralFold; review artifact only, not a manifest edit. |
+| [docs/chapter_consolidation_destination_draft_compression.md](docs/chapter_consolidation_destination_draft_compression.md) | Review-ready one-skeleton destination draft for the compression consolidation package; not reviewed, not canonical, and not a manifest edit. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |
 | [docs/reader_chapter_review_matrix.md](docs/reader_chapter_review_matrix.md) | Manifest-synced 54-chapter human-reader review queue and release blockers. |

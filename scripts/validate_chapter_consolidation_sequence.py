@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SEQUENCE = ROOT / "docs" / "chapter_consolidation_sequence.md"
 COMPRESSION_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_compression.md"
+COMPRESSION_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_compression.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -81,7 +82,7 @@ REQUIRED_FRAGMENTS = (
     "A merge is justified only if the destination draft reduces repeated skeleton",
     "A merge is rejected or deferred when the proposed destination loses a useful",
     "Current Cluster Register",
-    "Compression and residual honesty | `dry_run_packaged`",
+    "Compression and residual honesty | `review_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -90,6 +91,33 @@ REQUIRED_FRAGMENTS = (
     "This sequence does not merge chapters.",
     "This sequence does not change `book_structure.json`.",
     "This sequence does not change Appendix C support states.",
+)
+
+COMPRESSION_DRAFT_REQUIRED_FRAGMENTS = (
+    "Consolidation Destination Draft: Compact Generative Systems, Generate, Verify, Repair, and Residual Honesty",
+    "Status: review-ready draft; human/external review not completed.",
+    "does not edit `book_structure.json`",
+    "Destination continuity ID: `compact-generative-systems-and-residual-honesty`",
+    "Proposed displayed title: **Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty**",
+    "Preservation Ledger",
+    "Destination Chapter Draft",
+    "Chapter status",
+    "Drafting guardrail",
+    "Human Reading Path",
+    "Problem",
+    "Why existing approaches are insufficient",
+    "Core Claim",
+    "Mechanism",
+    "Minimum Viable Implementation",
+    "Beyond the State of the Art",
+    "Codex test plan",
+    "Formalization hooks",
+    "Source crosswalk",
+    "Review Decision Surface",
+    "Execute conservative merge",
+    "No chapter core claim is promoted above `argument`",
+    "This draft does not merge chapters.",
+    "This draft does not change Appendix C support states.",
 )
 
 COMPRESSION_REQUIRED_FRAGMENTS = (
@@ -162,6 +190,7 @@ REQUIRED_DESTINATIONS = (
 PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_sequence.md",
     "docs/chapter_consolidation_dry_run_compression.md",
+    "docs/chapter_consolidation_destination_draft_compression.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -239,6 +268,34 @@ def main() -> None:
     for tag in sorted(COMPRESSION_REQUIRED_LEAN_TAGS):
         if f"`{tag}`" not in compression:
             errors.append(f"Compression dry run missing Lean tag `{tag}`.")
+
+    try:
+        compression_draft = read_text(COMPRESSION_DESTINATION_DRAFT)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_destination_draft_compression.md")
+        compression_draft = ""
+
+    for fragment in COMPRESSION_DRAFT_REQUIRED_FRAGMENTS:
+        if fragment not in compression_draft:
+            errors.append(f"Compression destination draft missing required boundary: {fragment}")
+
+    for chapter_id in sorted(COMPRESSION_REQUIRED_IDS | {"fast-generation-architectures"}):
+        if chapter_id not in ids:
+            errors.append(f"Compression destination chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in compression_draft:
+            errors.append(f"Compression destination draft does not mention `{chapter_id}`.")
+
+    for source_id in sorted(COMPRESSION_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in compression_draft:
+            errors.append(f"Compression destination draft missing source ID `{source_id}`.")
+
+    for source_id in sorted(COMPRESSION_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in compression_draft:
+            errors.append(f"Compression destination draft missing external source ID `{source_id}`.")
+
+    for tag in sorted(COMPRESSION_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in compression_draft:
+            errors.append(f"Compression destination draft missing Lean tag `{tag}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)

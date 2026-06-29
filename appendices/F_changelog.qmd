@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - Compression destination draft
+
+- Added `docs/chapter_consolidation_destination_draft_compression.md` as the
+  first non-pilot one-skeleton destination draft, testing whether compact
+  generative systems, generate/verify/repair compression, and
+  RankFold/NeuralFold artifact compression can become one deeper chapter
+  without losing claim, source, proof, fixture, or reader boundaries.
+- Updated `docs/chapter_consolidation_sequence.md` and
+  `docs/v1_x_beyond_sota_roadmap.md` so the compression consolidation package
+  is `review_ready`, while still requiring review and an execute-full,
+  execute-conservative, revise, defer, or reject decision before any manifest
+  edit.
+- Updated README, publication readiness, repository map, and
+  `scripts/validate_chapter_consolidation_sequence.py` so the destination
+  draft stays visible and validated.
+- This does not edit `book_structure.json`, merge chapters, change Appendix C,
+  create source/proof/test evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Compression consolidation dry-run package
 
 - Reviewed the latest consolidation proposal and accepted its core roadmap

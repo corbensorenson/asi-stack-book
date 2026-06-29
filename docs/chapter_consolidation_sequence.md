@@ -109,7 +109,7 @@ Use this rubric before any non-pilot consolidation package:
 |---|---|---|---|
 | Part I alignment and agency/corrigibility | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
 | Part I value conflict and contestable governance | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
-| Compression and residual honesty | `dry_run_packaged` | Write a one-skeleton destination draft or reject the merge as not improving chapter ownership. | Avoid curated graduation of the source cluster unless explicitly deferred. |
+| Compression and residual honesty | `review_ready` | Review the destination draft and decide execute full merge, execute conservative merge, revise, defer, or reject. | Avoid curated graduation of the source cluster unless explicitly deferred or retained. |
 | Intent and executable contracts | `planned_candidate` | Build a dry-run package and slim the intent-intake handoff only if the package passes. | Keep `human-intent-as-a-formal-input` reader work local until the contract boundary is clear. |
 | Static context ABI | `planned_candidate` | Build a dry-run package that protects dynamic transaction and verification-bandwidth chapters. | Reader curation may continue outside the static ABI pair. |
 | Verification and adversarial review | `planned_candidate` | Build a dry-run package that keeps claim ledgers separate. | Avoid merging review vocabulary into claim-ledger prose prematurely. |
@@ -207,7 +207,7 @@ path. The current allowed pilot-reader set remains:
 - `circle-calculus-and-proof-carrying-ai-contracts`
 - `artifact-steward-agents-and-living-project-governance`
 
-## Non-Pilot Dry-Run Packages
+## Non-Pilot Review-Ready Packages
 
 - `docs/chapter_consolidation_dry_run_compression.md` records the Tier 1B
   dry-run package for the compression and residual-honesty cluster. It does not
@@ -215,6 +215,11 @@ path. The current allowed pilot-reader set remains:
   states. It keeps the RankFold/NeuralFold Conservative option open and leaves
   `semantic-representation-and-tree-structured-models` as a separate
   fold-review candidate.
+- `docs/chapter_consolidation_destination_draft_compression.md` records the
+  one-skeleton destination draft for **Compact Generative Systems: Generate,
+  Verify, Repair, and Residual Honesty**. It is review-ready but not reviewed,
+  not canonical, and not a manifest edit. The next decision is execute full
+  merge, execute conservative merge, revise, defer, or reject.
 
 ## Non-Claims
 
