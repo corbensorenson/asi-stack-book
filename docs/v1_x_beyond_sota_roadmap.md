@@ -660,6 +660,25 @@ The attached consolidation critique is useful planning input, but it is not
 source evidence and should not override the manifest until a merge pilot passes
 the reconciliation checks below.
 
+Diagnostic target shape:
+
+- Aggressive consolidation could move the current 54-chapter shape toward
+  roughly 44 deeper chapters.
+- Conservative consolidation could leave the book closer to 47 chapters by
+  keeping technique-owning chapters such as RankFold/NeuralFold separate.
+- Neither count is a success metric. The success metric is less repeated
+  skeleton, stronger chapter ownership, preserved source/proof/claim coverage,
+  and better reader flow.
+
+Execution tiers:
+
+| Tier | Candidate work | Why it matters | Expected shape effect |
+|---|---|---|---|
+| Tier 1 | Alignment/governance philosophy; compression/representation; intent/contracts; context/memory static ABI. | These clusters repeat the most source families, chapter skeletons, and handoff language. They should become fewer deeper chapters first if reconciliation passes. | About 14 source chapters become about 8-10 destination chapters, depending on whether RankFold/NeuralFold remains standalone. |
+| Tier 2 | Verification/review; planning/control; MoECOT placeholder fold. | These merges reduce thin or source-blocked chapters while preserving distinct substrates such as claim ledgers and cognitive IR. | About 7 source chapters become about 4-5 destination chapters. |
+| Fold-only review | Simulation fidelity and physical constraints; semantic representation and tree-structured models. | These look more like bounded feasibility or representation-substrate sections than standalone chapter-owning artifacts unless evidence review says otherwise. | Remove standalone skeletons only if their claims survive as named sections and subclaims. |
+| Protected set | Theseus, Circle/coil, recursive self-improvement, execution artifacts, evidence discipline, security kernel, benchmark ratchets, living-book methodology, and other high-ownership chapters listed below. | These chapters own distinct artifacts, proof paths, evidence lanes, or release machinery. | No merge unless later source/evidence review shows duplicate artifact ownership. |
+
 Candidate clusters to review:
 
 - Alignment/governance philosophy:
@@ -676,29 +695,40 @@ Candidate clusters to review:
     `rankfold-neuralfold-and-artifact-compression`, with a conservative option
     that keeps RankFold/NeuralFold separate if it still owns enough concrete
     technique;
+  - default destination title if the full merge passes:
+    **Compact Generative Systems: Generate, Verify, Repair, and Residual
+    Honesty**;
   - review whether `semantic-representation-and-tree-structured-models` should
     remain standalone or become the representation-substrate section of the
     compression/representation cluster.
 - Intent and contracts:
   - consider merging `intent-to-execution-contracts` with
     `command-contracts-and-semantic-interfaces`;
+  - default destination title if the merge passes: **Command Contracts: From
+    Intent to Executable Work**;
   - keep `human-intent-as-a-formal-input` as the Part I intent-intake chapter,
     but slim it so it hands off instead of restating the Part II contract
     chapter.
 - Context/memory:
   - consider merging `virtual-context-abi` with
     `semantic-pages-context-cells-and-certificates`;
+  - default destination title if the merge passes: **The Virtual Context ABI:
+    Typed Pages, Cells, and Certificates**;
   - keep `context-transactions-snapshots-mounts-and-taint` and
     `verification-bandwidth-and-context-adequacy` separate unless a later review
     finds real overlap in artifact ownership.
 - Verification/review:
   - consider merging `spinoza-verification-and-proof-carrying-claims` with
     `unified-adaptive-tribunal-and-adversarial-review`;
+  - default destination title if the merge passes: **Proof-Carrying Claims and
+    Adversarial Review**;
   - keep `claim-ledgers-and-belief-revision` separate as the substrate they
     update.
 - Planning:
   - consider merging `planning-as-a-control-layer` with
     `planforge-dags-and-intelligence-arbitrage`;
+  - default destination title if the merge passes: **Planning as a Control
+    Layer: DAGs and Intelligence Arbitrage**;
   - keep `cognitive-compilation-and-semantic-ir` separate as the lowering/IR
     artifact unless a pilot shows the IR claim has no independent chapter
     ownership.
@@ -744,6 +774,11 @@ Merge checklist:
 
 - Start with one pilot cluster, preferably the alignment/governance philosophy
   cluster, before applying a broad 54-to-44 reshaping.
+- Create a cluster-specific reconciliation plan before every non-pilot merge.
+  The plan should name the destination title, source chapters, stable-ID
+  policy, claim dispositions, source-ID union, external-source union, proof-tag
+  union, test/harness rows, reader-overlay changes, handoff repairs,
+  implementation-horizon merge, and expected chapter-count effect.
 - For every proposed merge, write a claim-reconciliation plan before editing
   `book_structure.json`: the merged chapter gets one core claim; retained
   chapter claims become subclaims, sections, source-crosswalk rows, proof hooks,
@@ -763,6 +798,9 @@ Merge checklist:
   Endpoint, Test Plan, Source Crosswalk, and Summary sections back to back.
 - Keep stable slug IDs only when continuity is stronger than renaming; otherwise
   record redirects and handoff repair needs before changing file paths.
+- If a chapter is folded rather than merged, record the surviving section,
+  preserved subclaims, preserved source/proof hooks, and no-promotion boundary
+  explicitly. A fold must not become silent deletion.
 
 Acceptance bar:
 
@@ -787,6 +825,10 @@ Current status:
   `agency-dignity-and-corrigibility`, and
   `moral-uncertainty-and-value-conflict` with
   `governance-rights-fork-exit-and-audit`.
+- The roadmap now records a tiered consolidation sequence and diagnostic target
+  shape: an aggressive pass may land near 44 chapters, while a conservative
+  pass may land near 47, but the count is only a diagnostic for repetition
+  reduction and never a reason to drop an idea.
 - The initial external-grounding precondition for the two destination chapters
   is improved by source notes for Constitutional AI, Collective Constitutional
   AI, reinforcement learning under moral uncertainty, and contestable AI, but

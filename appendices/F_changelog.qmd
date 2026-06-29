@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Consolidation roadmap refinement
+
+- Reviewed the new consolidation critique and accepted its core direction:
+  reduce repetition by reconsolidating overlapping chapters into deeper
+  chapters, not by deleting ideas.
+- Updated the v1.x roadmap with a tiered consolidation sequence, diagnostic
+  target shapes of roughly 44 chapters for an aggressive pass or roughly 47
+  for a conservative pass, and explicit destination-title guidance for the
+  compression, intent/contract, context ABI, verification/review, and planning
+  clusters.
+- Strengthened the merge checklist so every future consolidation requires a
+  cluster-specific reconciliation plan covering claims, source IDs, external
+  sources, proof tags, tests, reader overlays, handoffs, implementation
+  horizons, and any folded sections before `book_structure.json` changes.
+- Updated the alignment/governance pilot title to preserve agency, dignity, and
+  corrigibility explicitly. No chapter merge, source mapping change, support
+  promotion, proof/test result, or reader artifact approval was made.
+
 ## 2026-06-29 - Stable-capability-field external-grounding backfill
 
 - Added three source-noted external comparators: Capability-Based Computer

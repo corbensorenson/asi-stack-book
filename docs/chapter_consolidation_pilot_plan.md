@@ -20,12 +20,12 @@ are preserved.
 
 | Proposed chapter | Source chapters | Proposed stable-ID policy | Purpose |
 |---|---|---|---|
-| `constitutional-alignment-substrate` retitled **Constitutional Alignment, Agency, and Corrigibility** | `constitutional-alignment-substrate`; `agency-dignity-and-corrigibility` | Prefer keeping `constitutional-alignment-substrate` as the public continuity ID; retire or redirect the agency chapter only after handoffs and reader overlays are reconciled. | One chapter explains how constitutional predicates encode agency, dignity, corrigibility, appeal, and correction paths as operational constraints. |
+| `constitutional-alignment-substrate` retitled **Constitutional Alignment: Agency, Dignity, and Corrigibility** | `constitutional-alignment-substrate`; `agency-dignity-and-corrigibility` | Prefer keeping `constitutional-alignment-substrate` as the public continuity ID; retire or redirect the agency chapter only after handoffs and reader overlays are reconciled. | One chapter explains how constitutional predicates encode agency, dignity, corrigibility, appeal, and correction paths as operational constraints. |
 | `moral-uncertainty-and-value-conflict` retitled **Moral Uncertainty, Value Conflict, and Contestable Governance** | `moral-uncertainty-and-value-conflict`; `governance-rights-fork-exit-and-audit` | Prefer keeping `moral-uncertainty-and-value-conflict` as the public continuity ID; retire or redirect the governance-rights chapter only after handoffs and reader overlays are reconciled. | One chapter explains unresolved value conflict and the fork, exit, audit, dissent, appeal, and contestability interfaces that keep conflict governable. |
 
 ## Claim Reconciliation
 
-### Constitutional Alignment, Agency, and Corrigibility
+### Constitutional Alignment: Agency, Dignity, and Corrigibility
 
 Proposed merged core claim:
 

@@ -43,7 +43,7 @@ REQUIRED_LEAN_TAGS = {
 }
 REQUIRED_FRAGMENTS = (
     "does not edit `book_structure.json`",
-    "Constitutional Alignment, Agency, and Corrigibility",
+    "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
     "one chapter skeleton",
     "not two pasted skeletons",
