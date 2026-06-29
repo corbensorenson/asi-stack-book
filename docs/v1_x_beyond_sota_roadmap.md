@@ -762,9 +762,9 @@ Follow-up review outcome:
   before any canonical chapter identity changes.
 - Compression, intent/contracts, static context ABI, verification/adversarial
   review, and planning/DAG control now have dry-run packages and one-skeleton
-  destination drafts but remain unmerged. MoECOT now has a fold disposition;
-  simulation-fidelity and semantic representation still need fold dispositions
-  before reader curation or manifest edits depend on them.
+  destination drafts but remain unmerged. MoECOT and simulation fidelity now
+  have fold dispositions; semantic representation still needs a fold
+  disposition before reader curation or manifest edits depend on it.
 - Broad human-reader curation should not harden duplicate chapter skeletons in
   a pending consolidation cluster. Local prose cleanup is still allowed, but
   curated-reader graduation for those source chapters should wait until the
@@ -787,7 +787,7 @@ before broad reader curation treats the source chapters as stable.
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep context transactions and verification bandwidth standalone unless a later review changes their artifact ownership. |
 | 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep claim ledgers standalone as the belief-revision substrate. |
 | 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep cognitive compilation standalone as the semantic-IR and lowering-receipt layer. |
-| 8 | Remaining fold candidates | Produce fold dispositions before any manifest or reader-work dependency. | MoECOT runtime, simulation fidelity, and semantic representation need preserved-section, source, proof, reader, and restoration-condition records. |
+| 8 | Remaining fold candidates | Produce fold dispositions before any manifest or reader-work dependency. | MoECOT runtime and simulation fidelity now have fold dispositions; semantic representation still needs a preserved-section, source, proof, reader, and restoration-condition record. |
 
 Each decision record should name the reviewed package, reviewer or review
 source, destination-skeleton judgment, claim/source/proof/reader impact,
@@ -881,9 +881,12 @@ Candidate clusters to review:
   - fold `moecot-runtime-and-multi-core-orchestration` into
     `routing-heads-and-specialist-cores` if its source remains insufficiently
     mined for standalone chapter evidence;
-  - fold `simulation-fidelity-and-physical-constraints` into
-    `resource-economics-and-token-budgets` or the efficient-ASI frame if its
-    standalone claim remains only a feasibility-bound note;
+  - review `docs/chapter_consolidation_fold_simulation_fidelity.md` and fold
+    `simulation-fidelity-and-physical-constraints` into
+    `resource-economics-and-token-budgets` as a Simulation Fidelity and Claim
+    Transport section if its standalone claim remains only a feasibility-bound
+    note; keep the efficient-ASI frame as secondary context rather than the
+    owning destination;
   - fold `semantic-representation-and-tree-structured-models` into the
     compression/representation cluster only if its representation-substrate
     claim remains a supporting facet rather than a chapter-owning artifact;
@@ -1005,11 +1008,10 @@ Current status:
   "interesting idea" to manifest change: the Part I pilot is `review_ready`,
   compression, intent/contracts, static context ABI, verification/adversarial
   review, and planning/DAG control are `review_ready`, the remaining
-  non-packaged merge clusters are `planned_candidate`, MoECOT runtime is
-  `fold_disposition_ready`, simulation-fidelity and semantic representation
-  remain `fold_review_candidate`, and
-  runtime-adapters/Labor OS is retained unless a later evidence review finds
-  duplicate artifact ownership.
+  non-packaged merge clusters are `planned_candidate`, MoECOT runtime and
+  simulation fidelity are `fold_disposition_ready`, semantic representation
+  remains `fold_review_candidate`, and runtime-adapters/Labor OS is retained
+  unless a later evidence review finds duplicate artifact ownership.
 - The pilot proposes two future merges:
   `constitutional-alignment-substrate` with
   `agency-dignity-and-corrigibility`, and
@@ -1161,10 +1163,12 @@ Current status:
   execute, revise, defer, or reject decision. The MoECOT runtime candidate now
   has `docs/chapter_consolidation_fold_moecot_runtime.md`, but it still needs
   review and an execute fold, revise, defer, or reject/retain decision before
-  any `book_structure.json` change. The simulation-fidelity and
-  semantic-representation candidates still need their own fold dispositions,
-  claim/source/proof/reader reconciliation, and reviewed decision surface before
-  any `book_structure.json` change.
+  any `book_structure.json` change. The simulation-fidelity candidate now has
+  `docs/chapter_consolidation_fold_simulation_fidelity.md`, but it still needs
+  review and an execute fold, revise, defer, or reject/retain decision before
+  any `book_structure.json` change. The semantic-representation candidate still
+  needs its own fold disposition, claim/source/proof/reader reconciliation, and
+  reviewed decision surface before any `book_structure.json` change.
 - No manifest merge has been performed yet, and no chapter count reduction is
   claimed.
 

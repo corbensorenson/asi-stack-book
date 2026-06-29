@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-29 - Simulation fidelity fold disposition package
+
+- Added `docs/chapter_consolidation_fold_simulation_fidelity.md` as the second
+  fold-disposition package for the remaining fold candidates in the governed
+  consolidation sequence.
+- The package proposes folding `simulation-fidelity-and-physical-constraints`
+  into a named Simulation Fidelity and Claim Transport section inside
+  `resource-economics-and-token-budgets` if review accepts the fold, while
+  preserving contract-relative feasibility, simulation contract records,
+  resource bills, fidelity/transfer boundaries, source unions, external
+  comparators, `AsiStackProofs.ResourceEconomics`,
+  `AsiStackProofs.SimulationFidelity`, resource/simulation schemas, reader
+  repair requirements, URL/history policy, restoration conditions, and
+  no-support-state-change boundaries.
+- Updated the v1.x roadmap, consolidation sequence, README, publication
+  readiness, repository map, and consolidation validator so simulation fidelity
+  is `fold_disposition_ready`, while semantic representation remains
+  `fold_review_candidate`.
+- This does not edit `book_structure.json`, merge or fold chapters, change
+  Appendix C, create source/proof/test evidence, approve reader artifacts, or
+  promote any support state.
+
 ## 2026-06-29 - MoECOT runtime fold disposition package
 
 - Added `docs/chapter_consolidation_fold_moecot_runtime.md` as the first

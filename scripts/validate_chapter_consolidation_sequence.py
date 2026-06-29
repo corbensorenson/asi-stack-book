@@ -19,6 +19,7 @@ VERIFICATION_REVIEW_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_d
 PLANNING_DAG_DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_planning_dag.md"
 PLANNING_DAG_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destination_draft_planning_dag.md"
 MOECOT_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_moecot_runtime.md"
+SIMULATION_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_simulation_fidelity.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -106,6 +107,7 @@ REQUIRED_FRAGMENTS = (
     "Verification and adversarial review | `review_ready`",
     "Planning and DAG control | `review_ready`",
     "Source-blocked MoECOT runtime | `fold_disposition_ready`",
+    "Simulation fidelity | `fold_disposition_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -115,6 +117,7 @@ REQUIRED_FRAGMENTS = (
     "Reader Work Sequencing",
     "Remaining Fold-Disposition Packages",
     "docs/chapter_consolidation_fold_moecot_runtime.md",
+    "docs/chapter_consolidation_fold_simulation_fidelity.md",
     "This sequence does not merge chapters.",
     "This sequence does not change `book_structure.json`.",
     "This sequence does not change Appendix C support states.",
@@ -663,6 +666,74 @@ MOECOT_FOLD_REQUIRED_FIXTURE_FRAGMENTS = {
     "python3 scripts/validate_readiness_residual_gates.py",
 }
 
+SIMULATION_FOLD_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Fold Disposition: Simulation Fidelity",
+    "Status: fold-disposition ready; human/external review not completed.",
+    "does not edit `book_structure.json`",
+    "Current state | `fold_disposition_ready`",
+    "Simulation Fidelity and Claim Transport",
+    "Preservation Ledger",
+    "Proposed Destination Outline",
+    "Source Union",
+    "External-Source Union",
+    "Appendix C Row Plan",
+    "Lean Module And Proof-Manifest Treatment",
+    "Schemas, Fixtures, And Harnesses",
+    "Reader Path And Handoff Repairs",
+    "URL, Redirect, And History Policy",
+    "Restoration Conditions",
+    "Review Decision Surface",
+    "Execute fold",
+    "Reject and retain standalone",
+    "No support-state movement",
+    "This disposition does not merge or fold chapters.",
+    "This disposition does not change `book_structure.json`.",
+    "This disposition does not change Appendix C support states.",
+)
+
+SIMULATION_FOLD_REQUIRED_IDS = {
+    "simulation-fidelity-and-physical-constraints",
+    "resource-economics-and-token-budgets",
+    "the-efficient-asi-hypothesis",
+}
+
+SIMULATION_FOLD_REQUIRED_SOURCE_IDS = {
+    "tokenmana",
+    "planforge",
+    "coherence_exchange",
+    "simulation_scaling",
+    "viea",
+    "project_theseus_whitepaper",
+    "coilra_multicoil_rope",
+    "cgs",
+    "rankfold_neuralfold",
+    "alignment_field",
+}
+
+SIMULATION_FOLD_REQUIRED_EXTERNAL_IDS = {
+    "ext_pagedattention_vllm_2023",
+    "ext_reluplex_2017",
+}
+
+SIMULATION_FOLD_REQUIRED_LEAN_TAGS = {
+    "lean:resources.budgets.operational_invariant",
+    "lean:resources.budgets.failure_blocks_promotion",
+    "lean:simulation.fidelity.operational_invariant",
+    "lean:simulation.fidelity.failure_blocks_promotion",
+}
+
+SIMULATION_FOLD_REQUIRED_FIXTURE_FRAGMENTS = {
+    "schemas/resource_budget_record.schema.json",
+    "schemas/simulation_contract_record.schema.json",
+    "tests/fixtures/protocol_records/resource_budget_record.valid.json",
+    "tests/fixtures/protocol_records/simulation_contract_record.valid.json",
+    "python3 scripts/validate_schemas.py",
+    "python3 scripts/validate_protocol_examples.py",
+    "python3 scripts/validate_generation_mode_baselines.py",
+    "python3 scripts/validate_resource_budget_ledgers.py",
+    "python3 scripts/validate_capacity_smoothing.py",
+}
+
 REQUIRED_DESTINATIONS = (
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
@@ -686,6 +757,7 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_dry_run_planning_dag.md",
     "docs/chapter_consolidation_destination_draft_planning_dag.md",
     "docs/chapter_consolidation_fold_moecot_runtime.md",
+    "docs/chapter_consolidation_fold_simulation_fidelity.md",
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
@@ -1075,6 +1147,38 @@ def main() -> None:
     for fragment in sorted(MOECOT_FOLD_REQUIRED_FIXTURE_FRAGMENTS):
         if f"`{fragment}`" not in moecot_fold:
             errors.append(f"MoECOT fold disposition missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        simulation_fold = read_text(SIMULATION_FOLD_DISPOSITION)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_fold_simulation_fidelity.md")
+        simulation_fold = ""
+
+    for fragment in SIMULATION_FOLD_REQUIRED_FRAGMENTS:
+        if fragment not in simulation_fold:
+            errors.append(f"Simulation fold disposition missing required boundary: {fragment}")
+
+    for chapter_id in sorted(SIMULATION_FOLD_REQUIRED_IDS):
+        if chapter_id not in ids:
+            errors.append(f"Simulation fold chapter ID is missing from manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in simulation_fold:
+            errors.append(f"Simulation fold disposition does not mention `{chapter_id}`.")
+
+    for source_id in sorted(SIMULATION_FOLD_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in simulation_fold:
+            errors.append(f"Simulation fold disposition missing source ID `{source_id}`.")
+
+    for source_id in sorted(SIMULATION_FOLD_REQUIRED_EXTERNAL_IDS):
+        if f"`{source_id}`" not in simulation_fold:
+            errors.append(f"Simulation fold disposition missing external source ID `{source_id}`.")
+
+    for tag in sorted(SIMULATION_FOLD_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in simulation_fold:
+            errors.append(f"Simulation fold disposition missing Lean tag `{tag}`.")
+
+    for fragment in sorted(SIMULATION_FOLD_REQUIRED_FIXTURE_FRAGMENTS):
+        if f"`{fragment}`" not in simulation_fold:
+            errors.append(f"Simulation fold disposition missing fixture, schema, or validator `{fragment}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)
