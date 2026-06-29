@@ -1,6 +1,6 @@
 # Reader Companion-Note Routing Review
 
-Last updated: 2026-06-28
+Last updated: 2026-06-29
 
 This review records the v1.0 routing decision for the three chapters flagged as
 companion-note candidates in the reader chapter review matrix. It is not a
@@ -35,7 +35,7 @@ reader prose.
 |---|---|---|---|
 | `circle-calculus-and-proof-carrying-ai-contracts` | Retain proof receipt states, theorem references, resolver/replay boundaries, consumer gates, workload blockers, and non-claims in the reader chapter. | Future glossary and audio note for receipt states, theorem laundering, fingerprints, replay, and workload-blocked promotion. | No curated source. No release blocker cleared. |
 | `executable-specifications-and-lean-proof-envelope` | Retain the distinction between Lean predicates, schemas, validators, behavior tests, benchmarks, external theorem references, and semantic adequacy review. | Future proof-lane glossary and audio note explaining why each lane carries different authority. | No curated source. No release blocker cleared. |
-| `artifact-steward-agents-and-living-project-governance` | Retain charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, federation, and non-ownership boundaries. | Future project-object quick reference and implementation-ladder companion note; revisit curated compression during release editing if the chapter still reads too long. | Keep as first curated-manuscript candidate, but do not graduate yet. |
+| `artifact-steward-agents-and-living-project-governance` | Retain charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, federation, and non-ownership boundaries. | Future project-object quick reference and implementation-ladder companion note; the initialized curated chapter may compress implementation-ladder pacing while preserving meaning-critical boundaries. | Drafting-only curated reader source initialized; no release blocker cleared. |
 
 ## Routing Rule
 
@@ -55,7 +55,8 @@ must preserve the claim boundary.
 - This review does not approve a reader release.
 - This review does not approve EPUB, PDF, DOCX, HTML, AZW3, MOBI, Markdown,
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
-- This review does not create a curated reader chapter.
+- This review records that one drafting-only curated reader chapter now exists;
+  it does not approve that chapter for release.
 - This review does not promote any claim support state.
 - This review does not claim proof adequacy, Circle theorem replay, steward
   workflow execution, treasury execution, governance correctness, audiobook

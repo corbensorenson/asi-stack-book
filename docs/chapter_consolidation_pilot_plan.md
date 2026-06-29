@@ -208,9 +208,10 @@ manifest edit. It should include:
 
 ## Validation
 
-This plan and both dry-run packages,
+This plan, both dry-run packages, and the decision review,
 `docs/chapter_consolidation_dry_run_constitutional_alignment.md` and
-`docs/chapter_consolidation_dry_run_contestable_governance.md`, are checked by
+`docs/chapter_consolidation_dry_run_contestable_governance.md`, and
+`docs/chapter_consolidation_decision_review.md`, are checked by
 `python3 scripts/validate_chapter_consolidation_pilot_plan.py`.
 
 Current dry-run package status:
@@ -232,6 +233,11 @@ Current dry-run package status:
   MVI and Beyond-SOTA merge; URL/retired-file policy; generated-file updates;
   validation commands; and open review questions.
 - Neither package edits the manifest or authorizes a merge.
+- `docs/chapter_consolidation_decision_review.md` records the current decision:
+  defer manifest consolidation for this v1.x cycle, proceed with reader
+  curation outside the pending Part I merge cluster, and require human or
+  external review plus a reviewed destination chapter draft before executing
+  either merge.
 
 ## Non-Claims
 

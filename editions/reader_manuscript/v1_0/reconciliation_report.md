@@ -1,15 +1,18 @@
 # v1.0 Curated Reader Reconciliation Report
 
-Status: template only; curated reader manuscript not graduated.
+Status: drafting; one curated reader chapter initialized from generated reader
+baseline, with release blockers still active.
 
 This report is the required reconciliation surface for any future curated v1.0 reader manuscript. It is not a reader release record, not an ebook/document/PDF/audio artifact record, not a support-state promotion, and not an equal source of truth beside the live AI/research book.
 
 ## Current State
 
-- Curated manuscript status: `not_graduated`
-- Current graduation decision: keep generated reader source plus semantic
-  overlays for v1.0; see `docs/curated_reader_graduation_review.md`
-- Chapter records: none
+- Curated manuscript status: `drafting`
+- Current graduation decision: initialize one drafting-only curated reader
+  chapter for Artifact Steward Agents while keeping generated reader source
+  plus semantic overlays as the release baseline; see
+  `docs/curated_reader_graduation_review.md`
+- Chapter records: 1 drafting record
 - Active reader baseline: generated reader source plus semantic reader overlays
 - Manifest source of truth: `book_structure.json`
 - Review queue: `editions/reader_manuscript/v1_0/chapter_review_matrix.json`
@@ -24,11 +27,9 @@ If a reader edit discovers that the live AI/research source is wrong, thin, misl
 
 ## Per-Chapter Reconciliation Table
 
-No curated reader chapters exist yet.
-
 | Chapter ID | Curated file | Generated baseline ref | Live source ref | Reconciliation status | Divergence summary | Blockers |
 |---|---|---|---|---|---|---|
-| _none_ | _none_ | _none_ | _none_ | `not_started` | No curated derivative exists. | Release record and format artifact review are still blocked; no curated chapter file has been approved. |
+| `artifact-steward-agents-and-living-project-governance` | `editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd` | `build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd` | `chapters/artifact-steward-agents-and-living-project-governance.qmd@0f6382f1` | `drafting` | Initialized from the generated reader baseline for future prose editing; no meaning divergence has been approved yet. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 
 ## Required Checks Before Reader Release
 
@@ -42,7 +43,7 @@ No curated reader chapters exist yet.
 
 ## Non-Claims
 
-- This template does not create a curated reader manuscript.
+- This report does not approve the drafting curated reader chapter.
 - This template does not create or approve EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts.
 - This template does not promote any claim support state.
 - This template does not supersede the live Quarto book for claims, source boundaries, proof/test status, implementation horizons, or release records.

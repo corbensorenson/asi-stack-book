@@ -1,5 +1,46 @@
 # Changelog
 
+## 2026-06-29 - Curated reader drafting path starts
+
+- Initialized the first drafting-only curated reader chapter at
+  `editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd`
+  from the generated reader baseline.
+- Updated the curated reader manuscript manifest to `drafting` with one
+  chapter record for
+  `artifact-steward-agents-and-living-project-governance`.
+- Updated the reconciliation report, curated-reader graduation review,
+  companion-note routing review, release-editions plan, v1.0 status snapshot,
+  and v1.x roadmap so the new curated path is visible while its release
+  blockers remain active.
+- Updated `scripts/validate_v1_status_snapshot.py` so the status snapshot
+  expects the drafting-only curated chapter record rather than a dormant
+  `not_graduated` manifest.
+- This does not approve a reader release artifact, clear reconciliation
+  blockers, promote any support state, change claim meaning, or make curated
+  prose equal authority beside the live AI/research source.
+
+## 2026-06-29 - Consolidation decision review
+
+- Added `docs/chapter_consolidation_decision_review.md` as the governed
+  decision record for the Part I alignment/governance consolidation pilot.
+  The review explicitly defers manifest consolidation for the current v1.x
+  cycle while preserving both proposed destination chapters as viable future
+  merge candidates.
+- Updated `docs/chapter_consolidation_pilot_plan.md` and the v1.x roadmap so
+  the decision is visible from the planning surfaces: no manifest merge has
+  been performed, no chapter count reduction is claimed, and human-reader
+  curation may proceed only outside the pending Part I merge cluster unless a
+  later review executes or permanently rejects the merge.
+- Updated `docs/curated_reader_graduation_review.md` so the curated-reader
+  path does not spend broad editing effort on duplicate Part I skeletons while
+  the consolidation pilot remains deferred.
+- Extended `scripts/validate_chapter_consolidation_pilot_plan.py` so the
+  consolidation decision review is required alongside both dry-run packages.
+- This does not edit `book_structure.json`, merge chapters, delete chapter
+  files, approve redirects, create source/proof/test/external-review evidence,
+  promote support states, approve reader artifacts, or claim that
+  consolidation is complete.
+
 ## 2026-06-29 - Contestable-governance consolidation dry run
 
 - Added `docs/chapter_consolidation_dry_run_contestable_governance.md`, the

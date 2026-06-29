@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "docs" / "chapter_consolidation_pilot_plan.md"
 DRY_RUN_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_dry_run_constitutional_alignment.md"
 DRY_RUN_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_dry_run_contestable_governance.md"
+DECISION_REVIEW = ROOT / "docs" / "chapter_consolidation_decision_review.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 STRUCTURE = ROOT / "book_structure.json"
 
@@ -148,6 +149,19 @@ CONTESTABLE_DRY_RUN_REQUIRED_LEAN_TAGS = {
     "lean:governance.rights.operational_invariant",
     "lean:governance.rights.failure_blocks_promotion",
 }
+DECISION_REVIEW_REQUIRED_FRAGMENTS = (
+    "Decision: defer manifest consolidation for the current v1.x cycle.",
+    "does not edit `book_structure.json`",
+    "does not authorize a merge",
+    "Constitutional Alignment: Agency, Dignity, and Corrigibility",
+    "Moral Uncertainty, Value Conflict, and Contestable Governance",
+    "docs/chapter_consolidation_dry_run_constitutional_alignment.md",
+    "docs/chapter_consolidation_dry_run_contestable_governance.md",
+    "external review",
+    "human-reader curation may proceed",
+    "No support state changes.",
+    "No chapter core claim is promoted.",
+)
 ROADMAP_REQUIRED_FRAGMENTS = (
     "Decision from the 2026-06-29 consolidation review",
     "The right response is re-consolidation into chapter-owning artifacts",
@@ -160,6 +174,7 @@ ROADMAP_REQUIRED_FRAGMENTS = (
     "The merged chapter should be deeper than either input chapter",
     "Governed consolidation review",
     "review the governed consolidation pilot before broad human-reader curation",
+    "chapter_consolidation_decision_review.md",
 )
 
 
@@ -202,6 +217,7 @@ def main() -> None:
     roadmap_text = ROADMAP.read_text(encoding="utf-8")
     alignment_dry_run_text = read_required_file(DRY_RUN_ALIGNMENT, errors)
     contestable_dry_run_text = read_required_file(DRY_RUN_CONTESTABLE, errors)
+    decision_review_text = read_required_file(DECISION_REVIEW, errors)
     structure = load_structure()
     manifest_ids = {
         str(chapter.get("id"))
@@ -257,6 +273,12 @@ def main() -> None:
         "Contestable-governance dry-run package",
         contestable_dry_run_text,
         CONTESTABLE_DRY_RUN_REQUIRED_LEAN_TAGS,
+        errors,
+    )
+    require_fragments(
+        "Consolidation decision review",
+        decision_review_text,
+        DECISION_REVIEW_REQUIRED_FRAGMENTS,
         errors,
     )
     if "support-state promotion" in text.lower() and "Do not promote any chapter core claim." not in text:

@@ -59,6 +59,9 @@ This roadmap reconciles:
 
 - the current repository state after the tagged `v1.0.0` living-book release;
 - the current Claude review supplied by Corben as planning input;
+- the 2026-06-29 consolidation critique supplied by Corben, which argues for
+  re-consolidating over-split chapter clusters while preserving every useful
+  idea as a section, subclaim, proof hook, or source mapping;
 - Codex verification of Claude's claims against the local tree;
 - `book_structure.json`, which currently defines four parts, 54 chapters, and
   11 appendices;
@@ -85,7 +88,7 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 54 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; curated manuscript status remains `not_graduated`. | Start curated chapter graduation when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with one drafting-only Artifact Steward chapter record and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest: 54 core claims remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
 ## Operating Principles
@@ -911,9 +914,13 @@ Current status:
   merge, URL policy, validation commands, and no-support-state-change boundary.
 - Both dry-run packages are now covered by
   `scripts/validate_chapter_consolidation_pilot_plan.py`.
-- No manifest merge has been performed yet; the next consolidation decision is
-  review or explicit deferral of the dry-run packages, not an immediate
-  54-to-44 manifest rewrite.
+- `docs/chapter_consolidation_decision_review.md` records the current decision:
+  defer manifest consolidation for this v1.x cycle, proceed with human-reader
+  curation outside the pending Part I merge cluster, and require human or
+  external review plus a reviewed destination chapter draft before executing
+  either merge.
+- No manifest merge has been performed yet, and no chapter count reduction is
+  claimed.
 
 ### Milestone 7 - Curated Human-Reader Manuscript
 
@@ -952,6 +959,20 @@ Acceptance bar:
 - reconciliation report records no hidden claim changes;
 - Human view and generated reader edition still preserve support-state
   boundaries.
+
+Current status:
+
+- `editions/reader_manuscript/v1_0/manifest.json` is now in `drafting` status
+  with one curated chapter record for
+  `artifact-steward-agents-and-living-project-governance`.
+- `editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd`
+  is initialized from the generated reader baseline as a drafting source only.
+- `editions/reader_manuscript/v1_0/reconciliation_report.md` records the
+  drafting row and keeps `reader_release_record_not_created`,
+  `format_artifact_not_reviewed`, and
+  `curated_reconciliation_not_approved` blockers active.
+- No curated reader chapter is release-approved, and generated reader HTML
+  remains the only reviewed reader artifact.
 
 ### Milestone 8 - Visual, Ebook, PDF, DOCX, And Audio Quality
 

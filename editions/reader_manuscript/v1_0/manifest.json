@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "major_version": "v1.0",
-  "status": "not_graduated",
+  "status": "drafting",
   "canonical_relationship": "parallel_derivative_not_equal_authority",
   "live_sources_of_truth": [
     "book_structure.json",
@@ -78,7 +78,39 @@
     "check_command": "python3 scripts/validate_reader_manuscript_manifest.py",
     "policy": "If generated reader source plus overlays stop being enough, curated chapter files may become a parallel derivative prose source only under this contract; they remain subordinate to live-book claims, support states, source boundaries, proof/test status, implementation horizons, and release records."
   },
-  "chapter_records": [],
+  "chapter_records": [
+    {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "title": "Artifact Steward Agents and Living Project Governance",
+      "file": "editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "live_source_ref": "chapters/artifact-steward-agents-and-living-project-governance.qmd@0f6382f1",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#artifact-steward-agents-and-living-project-governance.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#artifact-steward-agents-and-living-project-governance",
+      "curation_scope": [
+        "pacing",
+        "section flow",
+        "sentence-level voice"
+      ],
+      "divergence_summary": "Curated reader source initialized from the generated reader baseline for future prose editing; no meaning divergence has been approved yet.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "Initialized for future curated-reader drafting; not release-reviewed."
+    }
+  ],
   "reconciliation_report": {
     "required_before_release": true,
     "path": "editions/reader_manuscript/v1_0/reconciliation_report.md",

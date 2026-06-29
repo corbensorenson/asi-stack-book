@@ -1,6 +1,6 @@
 # Curated Reader Graduation Review
 
-Last updated: 2026-06-28
+Last updated: 2026-06-29
 
 This note records the v1.0 decision about whether the normal human-reader book
 should graduate from generated reader source plus semantic overlays into a
@@ -20,24 +20,32 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 
 ## Current State
 
-- Curated reader manuscript status: `not_graduated`
+- Curated reader manuscript status: `drafting`
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
 - Curated-manuscript candidates: 1
+- Curated chapter records: 1 drafting record for
+  `artifact-steward-agents-and-living-project-governance`
 - Release blockers: reader release records and format artifact review remain
   open for every chapter
+- Consolidation gate: `docs/chapter_consolidation_decision_review.md` defers
+  the Part I alignment/governance manifest merge for this v1.x cycle, so
+  reader curation may proceed outside the pending merge cluster without
+  locking in avoidable duplicate skeletons.
 
 ## Decision
 
-Do not graduate the v1.0 reader manuscript into curated chapter source yet.
+Graduate only the first drafting-only curated reader source for
+`artifact-steward-agents-and-living-project-governance`; do not treat it as a
+reader release artifact.
 
 Generated reader source plus tracked semantic overlays is still the right
-working model for v1.0 because the current reader problems are localized:
+release baseline for v1.0 because most current reader problems are localized:
 table-to-prose transformations, proof-vocabulary density, companion-note
 routing, and artifact-layout review. Those are better handled by overlays,
-companion notes, and release-review records than by creating a second full
-manuscript source before the human edition has release artifacts.
+companion notes, and release-review records than by creating a full parallel
+manuscript before the human edition has release artifacts.
 
 The curated manuscript path remains necessary for the future. It should be used
 when reader editing becomes paragraph- and chapter-structural rather than
@@ -46,11 +54,18 @@ multiple sections, compressing long implementation ladders, adding sustained
 reader examples, or producing a final bedtime-readable major-version prose
 source.
 
+After the consolidation decision review, curated-reader work should start with
+pilot chapters outside the pending Part I merge cluster. The four source
+chapters named in the alignment/governance consolidation pilot should not
+receive broad reader-only graduation until their merge is executed or
+permanently rejected; otherwise the human manuscript would preserve the same
+duplicate skeletons the consolidation pilot is trying to remove.
+
 ## Candidate Chapters
 
 | Chapter | Current disposition | Graduation decision |
 |---|---|---|
-| `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | Keep as the first curated-manuscript candidate, but do not graduate yet. Review companion-note routing and long-chapter compression during reader-release editing. |
+| `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | Initialized as the first drafting-only curated reader chapter from the generated baseline. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `companion_note_candidate`, active overlays | Prefer companion/glossary treatment before curated prose graduation. |
 | `executable-specifications-and-lean-proof-envelope` | `companion_note_candidate`, active overlay | Prefer companion/glossary treatment before curated prose graduation. |
 
@@ -86,7 +101,8 @@ true:
 
 ## Non-Claims
 
-- This review does not create curated reader chapter files.
+- This review creates one drafting-only curated reader chapter file for
+  future prose editing; it does not approve that file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.
 - This review does not remove release blockers from any chapter.
