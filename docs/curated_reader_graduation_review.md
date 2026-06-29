@@ -25,9 +25,10 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
 - Curated-manuscript candidates: 1
-- Curated chapter records: 3 drafting records for
+- Curated chapter records: 4 drafting records for
   `asi-is-a-stack-not-a-model`,
-  `the-efficient-asi-hypothesis`, and
+  `the-efficient-asi-hypothesis`,
+  `recursive-self-improvement-boundaries`, and
   `artifact-steward-agents-and-living-project-governance`
 - Release blockers: reader release records and format artifact review remain
   open for every chapter
@@ -39,8 +40,9 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 ## Decision
 
 Graduate drafting-only curated reader sources for the opener, Efficient ASI,
-and `artifact-steward-agents-and-living-project-governance`; do not treat any
-file as a reader release artifact.
+Recursive Self-Improvement, and
+`artifact-steward-agents-and-living-project-governance`; do not treat any file
+as a reader release artifact.
 
 Generated reader source plus tracked semantic overlays is still the right
 release baseline for v1.0 because most current reader problems are localized:
@@ -69,6 +71,7 @@ duplicate skeletons the consolidation pilot is trying to remove.
 |---|---|---|
 | `asi-is-a-stack-not-a-model` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_asi_stack_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `the-efficient-asi-hypothesis` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_efficient_asi_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
+| `recursive-self-improvement-boundaries` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_recursive_self_improvement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `companion_note_candidate`, active overlays | Prefer companion/glossary treatment before curated prose graduation. |
 | `executable-specifications-and-lean-proof-envelope` | `companion_note_candidate`, active overlay | Prefer companion/glossary treatment before curated prose graduation. |
@@ -105,7 +108,7 @@ true:
 
 ## Non-Claims
 
-- This review creates three drafting-only curated reader chapter files for
+- This review creates four drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.
