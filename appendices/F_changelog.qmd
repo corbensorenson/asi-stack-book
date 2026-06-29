@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Contract-layer evidence transitions no-change
+
+- Added
+  `evidence_transitions/v1_0_pilot/intent_to_execution_contracts_no_change.json`
+  and
+  `evidence_transitions/v1_0_pilot/command_contracts_no_change.json`,
+  updating the evidence-transition pilot to twenty-six accepted no-change
+  decisions. The new records route the plan-execution contract harness,
+  command-contract, plan-graph, typed-job, and semantic-atom schemas and
+  fixtures, finite IntentToExecution and CommandContracts Lean predicates,
+  proof adequacy review, and exact source mappings into conservative
+  decisions: `intent-to-execution-contracts` and
+  `command-contracts-and-semantic-interfaces` remain at `argument`.
+- The records preserve the promotion burden for replayed intent-to-execution
+  vertical slices, semantic-command parser evaluations, prompt-injection and
+  hidden-instruction override suites, deployed command-dispatch traces,
+  runtime adapter traces, tool-effect receipts, artifact verification and
+  acceptance traces, runtime failure-behavior replays, independent
+  command/contract review, and source-interpretation review. They do not
+  promote support state, prove deployed execution, prove planner quality,
+  prove semantic-parser quality, prove prompt-injection resistance, prove
+  tool-effect correctness, prove artifact acceptance, prove source
+  interpretation, or approve reader artifacts.
+
 ## 2026-06-28 - v1.0 Recursive self-improvement evidence transition no-change
 
 - Added

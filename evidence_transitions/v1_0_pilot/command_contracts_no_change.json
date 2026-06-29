@@ -1,0 +1,119 @@
+{
+  "transition_id": "v1_0_pilot.command_contracts.no_change",
+  "claim_id": "command-contracts-and-semantic-interfaces.core",
+  "claim_surface_refs": [
+    "chapters/command-contracts-and-semantic-interfaces.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/plan_execution_contract_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/command_contract.schema.json",
+    "schemas/semantic_atom.schema.json",
+    "tests/fixtures/protocol_records/command_contract.valid.json",
+    "tests/fixtures/protocol_records/semantic_atom.valid.json",
+    "experiments/plan_execution_contracts/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/CommandContracts.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic command-contract and semantic-atom record discipline plus finite Lean predicates only; no prompt-injection resistance result, semantic parser completeness, deployed command dispatcher, runtime execution, source interpretation, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository has command-contract and semantic-atom schemas, protocol fixtures, finite CommandContracts Lean predicates, exact source mappings for the Command Contracts and Semantic Interfaces chapter, and a synthetic plan-execution contract harness. Those artifacts make explicit objective, constraints, output contract, verification, failure behavior, requirement preservation, and approval-bypass rejection executable at the record level. They still do not establish prompt-injection resistance, semantic parser completeness, deployed command dispatch, runtime execution correctness, source interpretation adequacy, or model behavior.",
+  "required_artifacts": [
+    "semantic-command parser evaluation over real tasks",
+    "prompt-injection and hidden-instruction override test suite",
+    "deployed command dispatcher or replayable command-to-effect trace",
+    "runtime failure-behavior trace with recovery and residuals",
+    "artifact verification trace over actual outputs",
+    "independent review of command-schema completeness and override resistance",
+    "source interpretation review for command-contract source mappings",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/plan_execution_contract_harness.md",
+    "scripts/validate_plan_execution_contracts.py",
+    "experiments/plan_execution_contracts/results/2026-06-28-local.md",
+    "schemas/command_contract.schema.json",
+    "schemas/semantic_atom.schema.json",
+    "tests/fixtures/protocol_records/command_contract.valid.json",
+    "tests/fixtures/protocol_records/semantic_atom.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/CommandContracts.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#command-contracts-and-semantic-interfaces.core",
+    "docs/source_evidence_audit.md#command-contracts-and-semantic-interfaces.core"
+  ],
+  "verification_command": "python3 scripts/validate_plan_execution_contracts.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Command Contracts and Semantic Interfaces remains at argument",
+    "plan-execution fixtures are synthetic",
+    "schema validation checks record shape rather than semantic parser completeness",
+    "finite Lean predicates remain useful but too narrow for prompt-injection resistance, deployed dispatch, runtime execution, or artifact-quality claims",
+    "source interpretation review and model behavior are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/command-contracts-and-semantic-interfaces.qmd",
+    "docs/plan_execution_contract_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "plan-execution contract harness failure",
+    "command_contract or semantic_atom schema drift",
+    "chapter text interpreted as deployed command-dispatch evidence",
+    "synthetic approval-bypass rejection interpreted as prompt-injection resistance",
+    "finite Lean predicates treated as deployed runtime behavior",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after semantic-parser evaluations, prompt-injection and hidden-instruction override suites, deployed command-dispatch traces, runtime failure-behavior replays, artifact verification traces, independent command-schema review, and source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove prompt-injection resistance",
+    "schema validation does not prove semantic parser completeness",
+    "finite Lean predicates do not implement command dispatch",
+    "approval-bypass rejection fixtures do not prove runtime policy enforcement",
+    "artifact refs do not prove artifact quality",
+    "no independent parser-quality, prompt-injection, runtime, artifact-review, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent semantic-parser, prompt-injection, runtime-systems, artifact-quality, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no semantic-command parser evaluation",
+    "no prompt-injection or hidden-instruction override test suite",
+    "no deployed command dispatcher or replayable command-to-effect trace",
+    "no runtime failure-behavior trace",
+    "no artifact verification trace over actual outputs",
+    "no independent source-interpretation review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-contract-layer-evidence-transitions-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Command Contracts and Semantic Interfaces above argument",
+    "does not prove prompt-injection resistance",
+    "does not prove semantic parser completeness",
+    "does not prove deployed command dispatch or runtime execution",
+    "does not prove source interpretation"
+  ]
+}

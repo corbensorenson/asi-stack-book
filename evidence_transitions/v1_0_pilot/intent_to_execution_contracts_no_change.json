@@ -1,0 +1,123 @@
+{
+  "transition_id": "v1_0_pilot.intent_to_execution_contracts.no_change",
+  "claim_id": "intent-to-execution-contracts.core",
+  "claim_surface_refs": [
+    "chapters/intent-to-execution-contracts.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/plan_execution_contract_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/command_contract.schema.json",
+    "schemas/plan_graph.schema.json",
+    "schemas/typed_job.schema.json",
+    "tests/fixtures/protocol_records/command_contract.valid.json",
+    "tests/fixtures/protocol_records/plan_graph.valid.json",
+    "tests/fixtures/protocol_records/typed_job.valid.json",
+    "experiments/plan_execution_contracts/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/IntentToExecution.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic command-contract, plan-graph, and typed-job record discipline plus finite Lean predicates only; no deployed execution, planner quality, semantic-parser quality, runtime adapter behavior, artifact acceptance, source interpretation, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository has command-contract, plan-graph, and typed-job schemas, protocol fixtures, finite IntentToExecution Lean predicates, exact source mappings for the Intent-to-Execution Contracts chapter, and a synthetic plan-execution contract harness. Those artifacts make contract completeness, constraint preservation, artifact traceability, dispatch receipts, and approval-gated job state executable at the record level. They still do not establish deployed runtime execution, planner quality, semantic-parser quality, tool-effect correctness, artifact acceptance, source interpretation adequacy, or model behavior.",
+  "required_artifacts": [
+    "replayed intent-to-execution vertical slice with real command contracts, jobs, effects, receipts, and accepted artifacts",
+    "runtime adapter trace showing approved effects and denied effects",
+    "semantic parser or command-extraction evaluation over real tasks",
+    "artifact acceptance or verification trace over actual outputs",
+    "tool-execution replay with failure and recovery paths",
+    "independent review of contract completeness and constraint preservation",
+    "source interpretation review for intent-to-execution source mappings",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/plan_execution_contract_harness.md",
+    "scripts/validate_plan_execution_contracts.py",
+    "experiments/plan_execution_contracts/results/2026-06-28-local.md",
+    "schemas/command_contract.schema.json",
+    "schemas/plan_graph.schema.json",
+    "schemas/typed_job.schema.json",
+    "tests/fixtures/protocol_records/command_contract.valid.json",
+    "tests/fixtures/protocol_records/plan_graph.valid.json",
+    "tests/fixtures/protocol_records/typed_job.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/IntentToExecution.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#intent-to-execution-contracts.core",
+    "docs/source_evidence_audit.md#intent-to-execution-contracts.core"
+  ],
+  "verification_command": "python3 scripts/validate_plan_execution_contracts.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Intent-to-Execution Contracts remains at argument",
+    "plan-execution fixtures are synthetic",
+    "schema validation checks record shape rather than deployed execution",
+    "finite Lean predicates remain useful but too narrow for runtime execution, parser quality, tool-effect correctness, artifact acceptance, or scheduler-quality claims",
+    "source interpretation review and model behavior are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/intent-to-execution-contracts.qmd",
+    "docs/plan_execution_contract_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "plan-execution contract harness failure",
+    "command_contract, plan_graph, or typed_job schema drift",
+    "chapter text interpreted as deployed execution evidence",
+    "synthetic dispatch receipt interpreted as a real tool-effect receipt",
+    "finite Lean predicates treated as deployed runtime behavior",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after replayed intent-to-execution vertical slices, real command contracts and typed jobs, runtime adapter traces, artifact verification traces, tool-effect receipts, recovery-path replays, semantic-parser evaluation, independent contract review, and source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove deployed execution",
+    "schema validation does not prove semantic-parser quality",
+    "finite Lean predicates do not implement a runtime dispatcher",
+    "dispatch receipt strings do not prove tool-effect correctness",
+    "artifact refs do not prove artifact acceptance",
+    "no independent runtime, parser-quality, tool-effect, artifact-review, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent runtime-systems, planner-quality, semantic-parser, tool-effect, artifact-acceptance, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed intent-to-execution implementation",
+    "no replayed vertical slice with real effects",
+    "no semantic-parser evaluation",
+    "no artifact acceptance trace",
+    "no runtime adapter trace over real jobs",
+    "no independent source-interpretation review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-contract-layer-evidence-transitions-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Intent-to-Execution Contracts above argument",
+    "does not prove deployed execution",
+    "does not prove planner quality or semantic-parser quality",
+    "does not prove tool-effect correctness or artifact acceptance",
+    "does not prove source interpretation"
+  ]
+}
