@@ -1,0 +1,9 @@
+{
+  "case_id": "stale_contract",
+  "base_receipt": "experiments/circle_public_replay/fixtures/valid/circle_rope_receipt.consumer.valid.json",
+  "mutation": {
+    "path": "fingerprint_status",
+    "value": "stale"
+  },
+  "expected_error_fragment": "fingerprint_status must be"
+}

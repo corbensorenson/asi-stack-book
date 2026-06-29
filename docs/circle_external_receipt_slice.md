@@ -137,11 +137,12 @@ Observed result: `145 passed in 718.24s (0:11:58)`.
 
 ## Residuals
 
-The next Circle-related evidence increment should either vendor a public
-contract pack, add an explicit public replay fixture, or route a proof-contract
-receipt through an ASI Stack consumer gate. Broader proof-carrying-computation,
-cyclic-memory, RoPE, or model-quality claims still require separate evidence
-records, exact commands, source boundaries, negative controls where applicable,
-and accepted transitions before any chapter core claim can move above
-`argument`.
-
+The follow-on ASI Stack consumer gate is now recorded in
+`docs/circle_public_replay_consumer_gate.md`; it validates the pinned receipt
+boundary and rejects malformed or overclaimed downstream use. The stronger
+Circle increment still requires a vendored public contract pack, clean Circle
+replay from this repository, or archived public Circle artifact. Broader
+proof-carrying-computation, cyclic-memory, RoPE, transport, transfer, or
+model-quality claims still require separate evidence records, exact commands,
+source boundaries, negative controls where applicable, and accepted transitions
+before any chapter core claim can move above `argument`.

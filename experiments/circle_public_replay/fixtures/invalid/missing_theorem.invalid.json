@@ -1,0 +1,16 @@
+{
+  "case_id": "missing_theorem",
+  "base_receipt": "experiments/circle_public_replay/fixtures/valid/circle_rope_receipt.consumer.valid.json",
+  "mutation": {
+    "path": "theorem_refs",
+    "value": [
+      "AIRA-T0058",
+      "AIRA-T0059",
+      "AIRA-T0171",
+      "AIRA-T0172",
+      "AIRA-T0239",
+      "AIRA-T0240"
+    ]
+  },
+  "expected_error_fragment": "theorem set does not match"
+}

@@ -79,7 +79,7 @@ not be quoted in the book as an external authority.
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 10 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes. | Replace weak exceptions where external baselines exist. Keep true author-system exceptions, but state why they are exceptions and what would count as a comparable external reference. |
-| P1 | Circle evidence is real but not public-replayable enough. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, but the ASI repo does not rerun the external checkout in CI and does not vendor a public replay pack. | Create a public-safe Circle replay fixture, receipt contract pack, or archived evidence bundle that CI can verify by replay or digest. |
+| P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
 | P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; curated manuscript status remains `not_graduated`. | Start curated chapter graduation when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest: 54 core claims remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
@@ -451,6 +451,26 @@ Acceptance bar:
 - ASI validation can reject malformed or overclaimed Circle receipts;
 - chapter prose distinguishes proof-contract legality from model quality,
   context length, speed, memory scaling, or ASI capability.
+
+Current status after the first ASI-side Circle consumer gate:
+
+- `experiments/circle_public_replay/fixtures/valid/circle_rope_receipt.consumer.valid.json`
+  records a public consumer-gate receipt fixture for
+  `CC-AI-CONTRACT-ROPE-001`.
+- The fixture is pinned by SHA-256
+  `7b33bc7059fa8f6b2ed1282ca5b0c4ab7f6f5044c2f834d487bdefbce44969c6`.
+- `scripts/validate_circle_public_replay.py` validates the receipt against
+  `schemas/proof_contract_receipt_record.schema.json`, requires the seven
+  recorded Circle theorem IDs, checks the pinned contract and receipt
+  fingerprints, and rejects expected invalid mutations for digest mismatch,
+  missing theorem ID, stale contract status, and unsupported transfer claim.
+- `docs/circle_public_replay_consumer_gate.md` records the boundary: useful as
+  an ASI-side proof-contract consumer gate, not a new support-state transition,
+  not a local Circle Lean rerun, not a vendored contract pack, and not a
+  chapter-core promotion.
+- The remaining stronger milestone work is a clean Circle replay, public
+  contract pack, or archived public Circle artifact before model-quality,
+  runtime, context-length, transfer, or deployment claims can be entertained.
 
 ### Milestone 5 - Per-Chapter Evidence Plan
 

@@ -36,7 +36,7 @@ A future A+ version should be:
 | Core thesis | Sound but not obviously novel relative to compound/agentic systems. | The thesis is positioned as a synthesis architecture; novelty is claimed only for the specific mechanisms that survive prior-art review. | Milestone 6 and Milestone 9 |
 | Distinctive ideas | Many promising ideas compete for attention. | Three to five contribution tracks are selected and defended to real depth. | Contribution Track Selection |
 | Rigor and soundness | Internally coherent, but much is still argument-level. | Load-bearing claims have explicit formal, source, prototype, or review evidence; failed claims are demoted; each selected lane names a proof/evidence path or no-promotion blocker. | Milestones 2, 3, 4, 5, 5.5 and Negative Outcomes |
-| Evidence | Three narrow non-core transitions exist, and one Project Theseus static architecture-gate import is now CI-verifiable by digest, but evidence remains thin. | At least one public-safe Theseus or Circle lane is CI-replayed or CI-verifiable, and selected chapter-adjacent claims have accepted transitions. | Milestones 3, 4, and v1.x release gate |
+| Evidence | Three narrow non-core transitions exist, one Project Theseus static architecture-gate import is CI-verifiable by digest, and one Circle consumer gate is CI-verifiable by digest plus negative controls, but evidence remains thin. | At least one selected Theseus or Circle lane moves beyond guarded public fixtures into clean replay, archived public packs, or accepted bounded transitions where the evidence justifies it, and selected chapter-adjacent claims have accepted transitions. | Milestones 3, 4, and v1.x release gate |
 | Formal rigor | Most Lean theorems are projection-style. | Safety-critical modules include derived/decomposed theorems, anti-projection conclusions, and negative cases. | Milestone 2 |
 | Human readability | Human view exists, but many chapters remain dense and spec-like. | A curated reader pilot reads like a book and preserves evidence boundaries. | Milestone 7 |
 | External grounding | External positioning exists, but literature was added late and unevenly. | Every chapter has a source-noted external comparator, adjacent literature family, candidate backlog, or explicit exception; likely sources are mined first from the chapter's linked Corben-paper bibliographies. | Milestone 5.5, Milestone 6, and Milestone 9 |
@@ -73,8 +73,10 @@ Candidate tracks:
 4. **Proof-carrying claims and proof-carrying AI contracts**
    - Claim: AI claims and cyclic/contract artifacts can carry checkable proof
      receipts without implying model quality.
-   - A+ bar: Circle public replay or CI-verifiable receipt digest, malformed
-     receipt negative controls, and source-noted proof-carrying-code baseline.
+   - A+ bar: the current Circle consumer gate is strengthened with clean replay
+     or a vendored/archived public contract pack, malformed receipt negative
+     controls stay enforced, and a source-noted proof-carrying-code baseline is
+     added.
 5. **Costed routing, residual accounting, and resource discipline**
    - Claim: routing decisions should be judged by adequacy, cost, residuals,
      fallback, and hidden/displaced cost, not cheapness alone.
@@ -98,8 +100,9 @@ these facts visible quickly:
 - external literature is an active grounding workstream, not a completed claim
   that every chapter is already well-cited;
 - Project Theseus and Circle are related local/public projects; the current
-  Theseus static import and Circle local receipt slice are narrow evidence
-  lanes, not chapter-core promotions or independent third-party audits;
+  Theseus static import, Circle local receipt slice, and Circle consumer-gate
+  fixture are narrow evidence lanes, not chapter-core promotions or independent
+  third-party audits;
 - external review is requested or pending;
 - the book is a research program, not a validated ASI implementation.
 
@@ -111,5 +114,6 @@ these facts visible quickly:
 - This scorecard does not add new external sources, source notes, proof results,
   support-state transitions, or Circle replay artifacts beyond the separate
   tracked Project Theseus static import recorded in
-  `docs/theseus_report_import_slice.md`.
+  `docs/theseus_report_import_slice.md` and the separate Circle public consumer
+  gate recorded in `docs/circle_public_replay_consumer_gate.md`.
 - This scorecard does not promote any chapter core claim above `argument`.

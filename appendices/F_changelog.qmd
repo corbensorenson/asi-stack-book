@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - Circle public consumer-gate fixture
+
+- Added `experiments/circle_public_replay/` with one valid public
+  `CC-AI-CONTRACT-ROPE-001` consumer-gate receipt fixture, four expected-invalid
+  mutation controls, and a result record pinned by fixture SHA-256
+  `7b33bc7059fa8f6b2ed1282ca5b0c4ab7f6f5044c2f834d487bdefbce44969c6`.
+- Added `scripts/validate_circle_public_replay.py`, which validates the
+  proof-contract receipt record, checks the recorded Circle theorem IDs and
+  fingerprints, and rejects digest-mismatch, missing-theorem, stale-contract,
+  and unsupported-transfer mutations.
+- Added `docs/circle_public_replay_consumer_gate.md`, wired the validator into
+  `scripts/validate_book.py`, and updated the README, landing page, roadmap,
+  repository map, non-core evidence ledger, v1.0 status surface, and Circle
+  proof-contract chapter.
+- This makes the Circle lane CI-verifiable through an ASI-side consumer gate,
+  but it does not create a new support-state transition, rerun Circle Lean from
+  this repository, vendor a Circle contract pack, prove deployed proof-contract
+  transport, prove model quality, or promote any chapter core claim.
+
 ## 2026-06-29 - Project Theseus static report import lane
 
 - Added `schemas/theseus_report.schema.json` for public-safe Project Theseus

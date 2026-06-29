@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-06-29-circle-public-consumer-gate",
+  "slice_id": "circle_public_replay_consumer_gate",
+  "validation_result": "pass",
+  "accepted_receipt_id": "circle.rope.CC-AI-CONTRACT-ROPE-001.public_consumer_gate",
+  "accepted_public_receipt_sha256": "7b33bc7059fa8f6b2ed1282ca5b0c4ab7f6f5044c2f834d487bdefbce44969c6",
+  "contract_content_fingerprint": "a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468",
+  "valid_receipt_count": 1,
+  "expected_invalid_count": 4,
+  "required_theorem_count": 7,
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "ci_verification_command": "python3 scripts/validate_circle_public_replay.py",
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, or ASI",
+    "does not prove deployed proof-contract transport inside The ASI Stack",
+    "does not reproduce Circle Calculus from this repository or vendor the external contract pack",
+    "does not create a new accepted support-state transition"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "case_id": "unsupported_transfer_claim",
+  "base_receipt": "experiments/circle_public_replay/fixtures/valid/circle_rope_receipt.consumer.valid.json",
+  "mutation": {
+    "path": "consumer_gate.allowed_uses",
+    "value": [
+      "structural proof-contract receipt discussion",
+      "transfer claim"
+    ]
+  },
+  "expected_error_fragment": "allowed_uses must not contain blocked promotion language"
+}

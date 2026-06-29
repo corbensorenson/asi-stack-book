@@ -14,7 +14,7 @@ readers, reviewers, and future writing agents.
 | Accepted non-core upward transitions | 3 narrow transitions. |
 | Chapter-core promotion effect | None. |
 | External review status | Public review request opened in GitHub issue #1; no independent external human review record yet. |
-| Project Theseus/Circle status | Circle has the bounded prototype-backed receipt transition below; Project Theseus has a separate public-safe static architecture-gate report import at `docs/theseus_report_import_slice.md` that CI verifies by digest and negative controls, with no chapter-core promotion and no accepted support-state transition. |
+| Project Theseus/Circle status | Circle has the bounded prototype-backed receipt transition below plus a separate ASI-side public consumer gate at `docs/circle_public_replay_consumer_gate.md` that CI verifies by digest and negative controls; Project Theseus has a separate public-safe static architecture-gate report import at `docs/theseus_report_import_slice.md` that CI verifies by digest and negative controls. Neither side lane promotes a chapter core claim, and the Project Theseus import plus Circle consumer gate do not create accepted support-state transitions. |
 
 ## Accepted Non-Core Transitions
 

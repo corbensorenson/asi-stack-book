@@ -1,0 +1,83 @@
+{
+  "receipt_id": "circle.rope.CC-AI-CONTRACT-ROPE-001.public_consumer_gate",
+  "receipt_state": "consumer_gated",
+  "source_project": "Circle Calculus",
+  "contract_family": "rope_position_distinguishability",
+  "engineering_object": "CC-AI-CONTRACT-ROPE-001",
+  "finite_model": "The imported receipt concerns a finite rope-position distinguishability contract with declared theorem IDs, deterministic evidence fields, and pinned request, pack, receipt, and contract fingerprints.",
+  "proof_boundary": "The ASI Stack consumer gate accepts only the structural proof-contract receipt boundary already recorded for the external Circle checkout. It does not rerun Circle Lean from this repository and does not convert proof-contract legality into model-quality, runtime, context-length, safety, transfer, or ASI evidence.",
+  "theorem_refs": [
+    "AIRA-T0058",
+    "AIRA-T0059",
+    "AIRA-T0171",
+    "AIRA-T0172",
+    "AIRA-T0239",
+    "AIRA-T0240",
+    "AIRA-T0241"
+  ],
+  "proof_status": "external_resolved",
+  "source_version": "Circle Calculus external checkout commit 63b0f511; ASI Stack public summary docs/circle_external_receipt_slice.md",
+  "content_fingerprint": "a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468",
+  "fingerprint_status": "computed",
+  "deterministic_fields": [
+    "d19_proved_request_status=proved",
+    "d19_proved_first_channel_bank_transfer=true",
+    "real_phase_dirichlet_witness_guardrail=true",
+    "receipt_content_fingerprint=91b72a6dcf821a9733f21800cd1093a3d0665588022031ba72c94893800330c3",
+    "normalized_request_fingerprint=20e68c5f787e267c6611bc57b8d8e98e1cb0f5a74f272379716a5d83e761407d",
+    "contract_pack_fingerprint=df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+    "contract_content_fingerprint=a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468",
+    "required_recommendation=ROPE-USE-D19-MARGIN-FRONTIER"
+  ],
+  "verifier_command": "python3 scripts/validate_circle_public_replay.py",
+  "verifier_result": "pass",
+  "resolver_status": "resolved_external",
+  "replay_status": "replayed",
+  "consumer_gate": {
+    "consumer_id": "asi-stack-proof-contract-consumer-gate",
+    "allowed_uses": [
+      "structural proof-contract receipt discussion",
+      "bounded Circle external receipt transition discovery",
+      "future ASI proof-contract consumer fixture design"
+    ],
+    "blocked_uses": [
+      "chapter-core claim promotion",
+      "model-quality promotion",
+      "runtime promotion",
+      "context-length promotion",
+      "deployment-readiness claim",
+      "transfer claim",
+      "ASI claim"
+    ],
+    "required_downstream_evidence": [
+      "workload, baseline, metric, and report before model-quality, runtime, context-length, transfer, or safety claims",
+      "fresh Circle replay, vendored public contract pack, or archived public pack before stale reuse",
+      "accepted evidence-transition record before any support-state change",
+      "deployed ASI proof-contract transport before transport claims"
+    ]
+  },
+  "consumer_state": "eligible_for_downstream_review",
+  "staleness_policy": "Treat the receipt as stale for downstream promotion if the Circle source commit, contract content fingerprint, request fingerprint, receipt fingerprint, or required theorem set changes without a refreshed public fixture and validator result.",
+  "failure_behavior": "If any theorem ID, fingerprint, required field, resolver status, replay status, or blocked-use boundary fails validation, keep downstream use structural-only and block promotion.",
+  "source_refs": [
+    "docs/circle_external_receipt_slice.md",
+    "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
+    "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
+    "sources/source_notes/circle_ai_contract_suite.md",
+    "sources/source_notes/rope_position_certifier.md"
+  ],
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, or ASI",
+    "does not prove deployed proof-contract transport inside The ASI Stack",
+    "does not reproduce Circle Calculus from this repository or vendor the external contract pack",
+    "does not create a new accepted support-state transition"
+  ],
+  "evidence_refs": [
+    "docs/circle_external_receipt_slice.md",
+    "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
+    "experiments/circle_public_replay/results/2026-06-29-local.json",
+    "scripts/validate_circle_public_replay.py"
+  ]
+}

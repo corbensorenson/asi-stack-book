@@ -1,0 +1,9 @@
+{
+  "case_id": "digest_mismatch",
+  "base_receipt": "experiments/circle_public_replay/fixtures/valid/circle_rope_receipt.consumer.valid.json",
+  "mutation": {
+    "path": "content_fingerprint",
+    "value": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "expected_error_fragment": "content_fingerprint must be"
+}
