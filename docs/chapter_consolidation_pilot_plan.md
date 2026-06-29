@@ -245,10 +245,10 @@ Current dry-run package status:
   human- or external-reviewed, and it does not authorize a manifest merge.
 - Neither package edits the manifest or authorizes a merge.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
-  defer manifest consolidation for this v1.x cycle, proceed with reader
-  curation outside the pending Part I merge cluster, and require human or
-  external review plus a reviewed destination chapter draft before executing
-  either merge.
+  defer manifest consolidation until human or external review and a public
+  URL/redirect policy unblock it, proceed with reader curation outside the
+  pending Part I merge cluster, and require a recorded execute, revise, defer,
+  or reject decision before executing either merge.
 
 ## Non-Claims
 
