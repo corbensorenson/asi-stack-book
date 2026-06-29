@@ -22,6 +22,7 @@ REQUIRED = [
     "scripts/validate_publication.py",
     "scripts/validate_architecture_red_team.py",
     "scripts/validate_release_reproducibility.py",
+    "scripts/validate_public_site_accessibility.py",
     "scripts/validate_release_profiles.py",
     "scripts/validate_reader_spine.py",
     "scripts/validate_reading_mode_toggle.py",
@@ -76,6 +77,8 @@ REQUIRED = [
     "docs/book_outline.md",
     "docs/architecture_red_team_review.md",
     "docs/release_reproducibility.md",
+    "docs/public_site_accessibility_review.md",
+    "docs/v1_progress_ledger.md",
     "docs/proof_artifact_audit.md",
     "docs/source_evidence_audit.md",
     "docs/core_claim_transition_coverage.md",
@@ -574,6 +577,7 @@ def main() -> None:
     run_validator("validate_proof_depth.py")
     run_validator("validate_architecture_red_team.py")
     run_validator("validate_release_reproducibility.py")
+    run_validator("validate_public_site_accessibility.py")
     run_validator("validate_release_profiles.py")
     validate_publication_surface()
     run_validator("validate_reading_mode_toggle.py")

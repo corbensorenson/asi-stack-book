@@ -36,6 +36,8 @@ This repository is organized around the living book and its validation loop.
 | `docs/core_claim_transition_coverage.md` | Generated Phase 3 coverage report proving all 54 chapter core claims have either an accepted transition record or an accepted no-promotion decision. | tracked |
 | `docs/architecture_red_team_review.md` | Phase 7A architecture-level desk red-team covering authority escalation, context leakage, evaluator capture, support-state inflation, benchmark gaming, and reader-release laundering. | tracked |
 | `docs/release_reproducibility.md` | Phase 7 candidate toolchain, citation, locale, font, and release-artifact boundary, including pinned CI versions and DOI-pending status. | tracked |
+| `docs/public_site_accessibility_review.md` | Phase 7 accessibility-readiness ledger for the live site, including assistive hooks, diagram text equivalents, residuals, and non-claims. | tracked |
+| `docs/v1_progress_ledger.md` | Compact v1.0 progress ledger for phase status, release classification, and remaining blockers. | tracked |
 | `docs/proof_adequacy_review.md` | Phase 4 proof adequacy review classifying all 112 Lean targets by what they do and do not justify. | tracked |
 | `docs/proof_depth_classification.md` | Generated Phase 4 proof-shape report classifying Lean theorem declarations as direct/projection-style, derived/decomposed, or unknown/mixed. | tracked |
 | `docs/protocol_record_crosswalk.md` | Generated Phase 5A report reconciling v1-critical schemas, fixtures, harnesses, Appendix E markers, chapters, and Lean abstractions. | tracked |

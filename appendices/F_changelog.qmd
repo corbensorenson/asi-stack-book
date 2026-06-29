@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - Public site accessibility readiness ledger
+
+- Added `docs/public_site_accessibility_review.md` to record the live site's
+  accessibility-readiness state for the reading-mode switch, AI/Human view
+  projection, Mermaid diagrams, diagram walkthrough notes, landing-image alt
+  text, appendix tables, color/contrast hooks, keyboard/focus hooks,
+  screen-reader hooks, e-reader boundaries, and status language.
+- Added `docs/v1_progress_ledger.md` as a compact phase-control ledger for the
+  v1.0 goal, preserving candidate/evidence-release classification, accepted
+  bounded transitions, reader-artifact status, final metadata blockers, and
+  next work.
+- Added `scripts/validate_public_site_accessibility.py` and wired it into
+  `scripts/validate_book.py`, `scripts/validate_publication.py`, the README,
+  repository map, site quality standard, publication readiness, v1.0 roadmap,
+  focus audit, candidate status snapshot, and status snapshot validator.
+- This records candidate accessibility readiness only. It does not claim WCAG
+  conformance, full keyboard accessibility, screen-reader approval, measured
+  contrast compliance, EPUB/DOCX/PDF/e-reader/audio artifact approval, final
+  v1.0 release status, or any chapter-core support-state promotion.
+
 ## 2026-06-29 - Costed route resource slice transition
 
 - Added `experiments/costed_route_resource_slice/` with a public-safe

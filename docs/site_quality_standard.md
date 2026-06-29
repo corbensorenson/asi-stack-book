@@ -70,6 +70,7 @@ python3 scripts/build_reader_edition.py --check
 python3 scripts/render_reader_formats.py --check
 python3 scripts/build_audio_script.py --check
 python3 scripts/validate_visual_coverage.py
+python3 scripts/validate_public_site_accessibility.py
 python3 scripts/validate_proof_artifact_audit.py
 python3 scripts/validate_source_evidence_audit.py
 python3 scripts/validate_schemas.py
