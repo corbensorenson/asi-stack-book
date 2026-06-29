@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-29 - Self-improvement lifecycle proof depth
+
+- Strengthened `lean/AsiStackProofs/SelfImprovement.lean` with
+  `SelfImprovementLifecycleDecision`, a finite lifecycle/review envelope that
+  records phase, protected-invariant touch and preservation,
+  evaluator-independence state, rollback availability, monitor-window state,
+  authority widening, and routed outcome.
+- Added two derived/decomposed lifecycle theorems:
+  `protected_lifecycle_change_without_independent_evaluator_blocks_review` and
+  `canary_without_open_monitor_window_rolls_back`, plus explicit negative-case
+  records for missing independent evaluation and closed canary monitoring.
+- Regenerated `docs/proof_depth_classification.md`; the proof-depth classifier
+  now records 146 theorem declarations, 34 derived/decomposed declarations, 17
+  safety-critical declarations, and three derived/decomposed theorems inside
+  the safety-critical Self-Improvement module while 10 safety-critical
+  direct/projection declarations remain.
+- Updated the Recursive Self-Improvement Boundaries chapter,
+  `docs/proof_adequacy_review.md`, and the v1.x roadmap so the new lifecycle
+  proof work is presented as a narrow finite-record envelope, not runtime
+  self-improvement safety, evaluator-quality proof, rollback execution, monitor
+  quality, or support-state promotion.
+- This does not promote any chapter core claim, prove deployed recursive
+  self-improvement safety, validate evaluator independence in practice,
+  reproduce Theseus behavior, or approve any reader/release artifact.
+
 ## 2026-06-29 - Consolidation roadmap hardening
 
 - Reviewed the new chapter-consolidation proposal as planning input and

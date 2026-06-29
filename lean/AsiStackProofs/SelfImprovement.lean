@@ -70,4 +70,92 @@ theorem authority_widening_without_review_route_is_blocked
   simp at safe
   exact safe
 
+inductive SelfImprovementPhase where
+  | proposed
+  | evidenceReady
+  | canary
+  | promoted
+  | rolledBack
+  | blockedForReview
+deriving DecidableEq, Repr
+
+inductive SelfImprovementLifecycleRoute where
+  | allowResearch
+  | allowCanary
+  | promote
+  | blockForReview
+  | rollback
+deriving DecidableEq, Repr
+
+structure SelfImprovementLifecycleDecision where
+  phase : SelfImprovementPhase
+  protectedInvariantTouched : Bool
+  protectedInvariantPreserved : Bool
+  evaluatorIndependent : Bool
+  rollbackAvailable : Bool
+  monitorWindowOpen : Bool
+  authorityWidened : Bool
+  route : SelfImprovementLifecycleRoute
+deriving DecidableEq, Repr
+
+def SelfImprovementLifecycleSafe
+    (decision : SelfImprovementLifecycleDecision) : Prop :=
+  if decision.protectedInvariantTouched &&
+      (!decision.protectedInvariantPreserved ||
+        !decision.evaluatorIndependent ||
+        !decision.rollbackAvailable ||
+        decision.authorityWidened) then
+    decision.route = SelfImprovementLifecycleRoute.blockForReview
+  else if decision.phase = SelfImprovementPhase.canary &&
+      !decision.monitorWindowOpen then
+    decision.route = SelfImprovementLifecycleRoute.rollback
+  else
+    True
+
+def unsafeSelfImprovementWithoutIndependentEvaluator :
+    SelfImprovementLifecycleDecision :=
+  { phase := SelfImprovementPhase.evidenceReady,
+    protectedInvariantTouched := true,
+    protectedInvariantPreserved := true,
+    evaluatorIndependent := false,
+    rollbackAvailable := true,
+    monitorWindowOpen := true,
+    authorityWidened := false,
+    route := SelfImprovementLifecycleRoute.blockForReview }
+
+def canaryWithoutOpenMonitorWindow : SelfImprovementLifecycleDecision :=
+  { phase := SelfImprovementPhase.canary,
+    protectedInvariantTouched := false,
+    protectedInvariantPreserved := true,
+    evaluatorIndependent := true,
+    rollbackAvailable := true,
+    monitorWindowOpen := false,
+    authorityWidened := false,
+    route := SelfImprovementLifecycleRoute.rollback }
+
+theorem protected_lifecycle_change_without_independent_evaluator_blocks_review
+    {decision : SelfImprovementLifecycleDecision} :
+    SelfImprovementLifecycleSafe decision ->
+    decision.protectedInvariantTouched = true ->
+    decision.evaluatorIndependent = false ->
+    decision.route = SelfImprovementLifecycleRoute.blockForReview := by
+  intro safe touched missingEvaluator
+  unfold SelfImprovementLifecycleSafe at safe
+  rw [touched, missingEvaluator] at safe
+  simp at safe
+  exact safe
+
+theorem canary_without_open_monitor_window_rolls_back
+    {decision : SelfImprovementLifecycleDecision} :
+    SelfImprovementLifecycleSafe decision ->
+    decision.protectedInvariantTouched = false ->
+    decision.phase = SelfImprovementPhase.canary ->
+    decision.monitorWindowOpen = false ->
+    decision.route = SelfImprovementLifecycleRoute.rollback := by
+  intro safe untouched canaryPhase closedMonitor
+  unfold SelfImprovementLifecycleSafe at safe
+  rw [untouched, canaryPhase, closedMonitor] at safe
+  simp at safe
+  exact safe
+
 end AsiStackProofs.SelfImprovement

@@ -74,7 +74,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 2 | 3 | 4 | 2 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 2 | 2 | 3 | 4 |
-| `lean/AsiStackProofs/SelfImprovement.lean` | 2 | 3 | 3 | 3 |
+| `lean/AsiStackProofs/SelfImprovement.lean` | 2 | 5 | 6 | 4 |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 2 | 4 | 2 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 2 | 2 | 2 | 2 |

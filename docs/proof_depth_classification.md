@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 144 |
+| Theorem declarations classified | 146 |
 | Direct/projection-style theorem declarations | 112 |
-| Derived/decomposed theorem declarations | 32 |
+| Derived/decomposed theorem declarations | 34 |
 | Unknown or mixed theorem declarations | 0 |
-| Safety-critical theorem declarations | 15 |
+| Safety-critical theorem declarations | 17 |
 | Safety-critical direct/projection declarations | 10 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -33,7 +33,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/Corrigibility.lean` | agency-dignity-and-corrigibility | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/GovernanceRights.lean` | governance-rights-fork-exit-and-audit | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 2 | 5 | 2 | 3 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
@@ -95,7 +95,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 2 | 3 | 3 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 2 | 5 | 2 | 3 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | semantic-representation-and-tree-structured-models | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | simulation-fidelity-and-physical-constraints | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -232,8 +232,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SecurityKernel.lean` | `insufficient_clearance_blocks_protected_scif_entry` | derived_or_decomposed | no | uses cases, contradiction, rw |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `secret_substitution_requires_authorized_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `authority_widening_without_review_route_is_blocked` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/SelfImprovement.lean` | `canary_without_open_monitor_window_rolls_back` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `improvement_transition_preserves_all_protected_invariants` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `proposal_evaluated_only_by_replaced_component_cannot_be_promoted` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SelfImprovement.lean` | `protected_lifecycle_change_without_independent_evaluator_blocks_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | `grounded_semantic_node_has_provenance_link` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | `hierarchy_update_preserves_references_or_records_supersession` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `promoted_experiment_result_cannot_exceed_declared_fidelity_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
