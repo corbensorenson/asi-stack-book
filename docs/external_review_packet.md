@@ -29,6 +29,7 @@ accepted evidence.
 | v1.x roadmap aim | The roadmap should focus on defended contribution tracks rather than broad self-sourced coverage. | `docs/v1_x_beyond_sota_roadmap.md`; `docs/a_plus_quality_scorecard.md` |
 | External grounding | Corben-originated terminology should be related to known literature and systems without overclaiming novelty. | `docs/external_sota_positioning_audit.md`; `appendices/H_external_sources.qmd` |
 | Human readability | Human view and future reader editions should read as a book while preserving evidence boundaries. | Live site Human view; `docs/reader_chapter_review_matrix.md` |
+| Governed consolidation | The 54-chapter shape may be over-split in places, but merges must preserve claims, sources, proofs, harnesses, handoffs, and reader paths. | `docs/chapter_consolidation_external_review_packet.md`; `docs/chapter_consolidation_decision_review.md` |
 
 ## Requested Questions
 
@@ -42,6 +43,9 @@ accepted evidence.
    added before the book asks readers to accept its terminology?
 5. Which chapter should be used as the first human-reader curation pilot, and
    what would make it feel like a high-quality book chapter?
+6. Do the two Part I consolidation destination drafts improve chapter depth and
+   reader flow without losing source, proof, claim, harness, or handoff
+   coverage?
 
 ## Response Template
 
@@ -54,6 +58,7 @@ shape:
 | Review scope | Files, chapters, appendices, rendered pages, or artifacts reviewed. |
 | Strongest issue | The highest-severity correctness, evidence, novelty, proof, or readability finding. |
 | Specific recommended action | Source to add, theorem to deepen, test to run, chapter to rewrite, claim to demote, or blocker to record. |
+| Consolidation decision if reviewed | Execute, revise, defer, reject, or no opinion for each proposed Part I merge. |
 | Attributability | Public attributable, public anonymous, private/non-attributable, or other. |
 
 ## Non-Claims

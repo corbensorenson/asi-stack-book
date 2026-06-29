@@ -943,6 +943,10 @@ Current status:
   not marked reviewed: manifest consolidation remains blocked until human or
   external review accepts the destination shape, or the project records a
   decision to defer or reject the merge.
+- `docs/chapter_consolidation_external_review_packet.md` now gives reviewers a
+  focused decision surface for the pilot: execute, revise, defer, or reject
+  each proposed merge, while preserving the boundary that review input is not
+  evidence, proof, artifact approval, or support-state movement.
 - Broad reader polish should avoid the four pending Part I consolidation source
   chapters until the pilot is executed or rejected. Reader curation may continue
   on chapters outside the pending cluster, and local prose fixes may continue

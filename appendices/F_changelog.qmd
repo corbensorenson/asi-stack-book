@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Consolidation external-review packet
+
+- Added `docs/chapter_consolidation_external_review_packet.md` as the
+  supplemental review request surface for the Part I alignment/governance
+  consolidation pilot.
+- The packet asks reviewers to execute, revise, defer, or reject each proposed
+  merge after reading the pilot plan, both dry-run packages, both destination
+  drafts, and the consolidation decision review.
+- Updated `docs/external_review_packet.md`, `docs/external_review_status.md`,
+  `docs/chapter_consolidation_decision_review.md`, `docs/repository_map.md`,
+  `docs/v1_x_beyond_sota_roadmap.md`, and
+  `scripts/validate_chapter_consolidation_pilot_plan.py` so the consolidation
+  review packet is visible and validation-required.
+- This does not create an accepted external-review result, edit
+  `book_structure.json`, merge chapters, delete rendered pages, change source
+  mappings, change proof targets, approve reader or release artifacts, or
+  promote any support state.
+
 ## 2026-06-29 - Contestable governance consolidation destination draft
 
 - Added

@@ -11,8 +11,9 @@ a review-control surface, not evidence and not a support-state transition.
 |---|---|
 | Public review request | Opened: <https://github.com/corbensorenson/asi-stack-book/issues/1> |
 | Review packet | `docs/external_review_packet.md` |
+| Supplemental consolidation packet | `docs/chapter_consolidation_external_review_packet.md` |
 | Review state | Requested publicly; no independent external review has been accepted yet. |
-| Review scope requested | Safety-critical Lean limitations, Appendix C support states, non-core evidence ledger, v1.x Beyond-SOTA roadmap, and one representative Human view chapter. |
+| Review scope requested | Safety-critical Lean limitations, Appendix C support states, non-core evidence ledger, v1.x Beyond-SOTA roadmap, one representative Human view chapter, and the two Part I consolidation destination drafts. |
 | Support-state effect | None. |
 | Artifact-release effect | None. |
 

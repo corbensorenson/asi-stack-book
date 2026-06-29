@@ -12,6 +12,7 @@ DRY_RUN_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_dry_run_constitutiona
 DRY_RUN_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_dry_run_contestable_governance.md"
 DESTINATION_DRAFT_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_destination_draft_constitutional_alignment.md"
 DESTINATION_DRAFT_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_destination_draft_contestable_governance.md"
+EXTERNAL_REVIEW_PACKET = ROOT / "docs" / "chapter_consolidation_external_review_packet.md"
 DECISION_REVIEW = ROOT / "docs" / "chapter_consolidation_decision_review.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 STRUCTURE = ROOT / "book_structure.json"
@@ -181,6 +182,7 @@ DECISION_REVIEW_REQUIRED_FRAGMENTS = (
     "Decision: defer manifest consolidation for the current v1.x cycle.",
     "does not edit `book_structure.json`",
     "does not authorize a merge",
+    "docs/chapter_consolidation_external_review_packet.md",
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
     "Moral Uncertainty, Value Conflict, and Contestable Governance",
     "docs/chapter_consolidation_dry_run_constitutional_alignment.md",
@@ -189,6 +191,22 @@ DECISION_REVIEW_REQUIRED_FRAGMENTS = (
     "human-reader curation may proceed",
     "No support state changes.",
     "No chapter core claim is promoted.",
+)
+EXTERNAL_REVIEW_PACKET_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation External Review Packet",
+    "https://github.com/corbensorenson/asi-stack-book/issues/1",
+    "Review Boundary",
+    "This packet does not edit `book_structure.json`",
+    "Reviewer comments are review input, not source evidence",
+    "docs/chapter_consolidation_pilot_plan.md",
+    "docs/chapter_consolidation_destination_draft_constitutional_alignment.md",
+    "docs/chapter_consolidation_destination_draft_contestable_governance.md",
+    "Constitutional Alignment decision",
+    "Contestable Governance decision",
+    "execute, revise, defer, or reject each proposed merge",
+    "This packet does not mean an external review has happened.",
+    "This packet does not authorize either merge.",
+    "This packet does not change `book_structure.json`.",
 )
 ROADMAP_REQUIRED_FRAGMENTS = (
     "Decision from the 2026-06-29 consolidation review",
@@ -203,6 +221,7 @@ ROADMAP_REQUIRED_FRAGMENTS = (
     "Governed consolidation review",
     "review the governed consolidation pilot before broad human-reader curation",
     "chapter_consolidation_decision_review.md",
+    "chapter_consolidation_external_review_packet.md",
 )
 
 
@@ -247,6 +266,7 @@ def main() -> None:
     contestable_dry_run_text = read_required_file(DRY_RUN_CONTESTABLE, errors)
     alignment_destination_draft_text = read_required_file(DESTINATION_DRAFT_ALIGNMENT, errors)
     contestable_destination_draft_text = read_required_file(DESTINATION_DRAFT_CONTESTABLE, errors)
+    external_review_packet_text = read_required_file(EXTERNAL_REVIEW_PACKET, errors)
     decision_review_text = read_required_file(DECISION_REVIEW, errors)
     structure = load_structure()
     manifest_ids = {
@@ -342,6 +362,18 @@ def main() -> None:
         errors,
     )
     require_fragments(
+        "Consolidation external-review packet",
+        external_review_packet_text,
+        EXTERNAL_REVIEW_PACKET_REQUIRED_FRAGMENTS,
+        errors,
+    )
+    require_backticked_ids(
+        "Consolidation external-review packet",
+        external_review_packet_text,
+        PILOT_IDS,
+        errors,
+    )
+    require_fragments(
         "Consolidation decision review",
         decision_review_text,
         DECISION_REVIEW_REQUIRED_FRAGMENTS,
@@ -355,7 +387,8 @@ def main() -> None:
 
     print(
         "Chapter consolidation pilot-plan validation passed: four source chapters, "
-        "two proposed merges, two dry-run packages, and two destination drafts."
+        "two proposed merges, two dry-run packages, two destination drafts, "
+        "and one external-review packet."
     )
 
 

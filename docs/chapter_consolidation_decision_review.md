@@ -16,6 +16,7 @@ not change proof targets, does not change support states, does not authorize a m
 - `docs/chapter_consolidation_dry_run_contestable_governance.md`
 - `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
 - `docs/chapter_consolidation_destination_draft_contestable_governance.md`
+- `docs/chapter_consolidation_external_review_packet.md`
 - `docs/v1_x_beyond_sota_roadmap.md`
 - `docs/chapter_external_grounding_status.md`
 - `docs/external_sota_positioning_audit.md`
@@ -45,6 +46,12 @@ Destination drafts now exist for both proposed pilot chapters:
 They are review-ready objects, not accepted review results. They give human or
 external reviewers two merged chapter skeletons to judge before any canonical
 chapter identity changes.
+
+`docs/chapter_consolidation_external_review_packet.md` is now the supplemental
+request surface for that judgment. It asks reviewers to execute, revise, defer,
+or reject each proposed merge and preserves the boundary that review input is
+not source evidence, proof evidence, support-state movement, or artifact
+approval.
 
 The manifest merge is deferred because the next honest decision needs human or
 external review of the actual chapter-shape tradeoff before canonical chapter
