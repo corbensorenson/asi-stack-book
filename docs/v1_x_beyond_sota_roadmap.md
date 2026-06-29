@@ -90,7 +90,7 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 54 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with twelve drafting-only curated chapter records and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with thirteen drafting-only curated chapter records and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest: 54 core claims remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
 ## Operating Principles
@@ -1208,7 +1208,11 @@ listening to, while preserving the live book as the research/evidence source.
 
 Tasks:
 
-- Select a pilot set for curated graduation:
+- Select a consolidation-aware pilot set for curated graduation. Protected
+  standalone chapters may graduate when overlays are too small; source chapters
+  inside pending merge or fold packages should wait for an execute, revise,
+  defer, or reject decision unless the edit is explicitly scoped as local
+  cleanup:
   - `asi-is-a-stack-not-a-model`;
   - `the-efficient-asi-hypothesis`;
   - `system-boundaries-and-authority`;
@@ -1216,6 +1220,8 @@ Tasks:
   - `evidence-states-and-claim-discipline`;
   - `human-intent-as-a-formal-input`;
   - `security-kernel-and-digital-scifs`;
+  - `stable-capability-fields`;
+  - `capability-replacement-and-rollback`;
   - `recursive-self-improvement-boundaries`;
   - `circle-calculus-and-proof-carrying-ai-contracts`;
   - `executable-specifications-and-lean-proof-envelope`;
@@ -1241,13 +1247,15 @@ Acceptance bar:
 - curated chapters validate against
   `scripts/validate_reader_manuscript_manifest.py`;
 - reconciliation report records no hidden claim changes;
+- each curated chapter is either outside pending consolidation clusters or
+  records a scoped/deferred handoff caveat;
 - Human view and generated reader edition still preserve support-state
   boundaries.
 
 Current status:
 
 - `editions/reader_manuscript/v1_0/manifest.json` is now in `drafting` status
-  with twelve curated chapter records:
+  with thirteen curated chapter records:
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -1256,10 +1264,16 @@ Current status:
   `human-intent-as-a-formal-input`,
   `security-kernel-and-digital-scifs`,
   `stable-capability-fields`,
+  `capability-replacement-and-rollback`,
   `recursive-self-improvement-boundaries`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
   `artifact-steward-agents-and-living-project-governance`.
+- The current curated set follows the consolidation-aware curation gate: it
+  favors protected standalone chapters outside pending merge packages, with
+  `human-intent-as-a-formal-input` recorded as local prose work whose handoff
+  must be revisited if later consolidation decisions change the downstream
+  contract or alignment chapter shape.
 - `editions/reader_manuscript/v1_0/chapters/asi-is-a-stack-not-a-model.qmd`
   now has a first curated prose pass from the generated reader baseline as a
   drafting source only.
@@ -1314,6 +1328,15 @@ Current status:
   replacement-safety, rollback-execution, SLSA-workflow, SemVer-checker,
   object-capability-implementation, or MoECOT-runtime-reproduction boundary
   for that pass.
+- `editions/reader_manuscript/v1_0/chapters/capability-replacement-and-rollback.qmd`
+  now has a first curated prose pass from the generated reader baseline as a
+  drafting source only.
+- `docs/curated_reader_capability_replacement_prose_pass.md` records the
+  curation scope, reader promise, meaning-preservation checks, non-claims,
+  remaining blockers, and no deployed replacement-behavior, real-regression-
+  suite-quality, monitor-window-success, evaluator-integrity-enforcement,
+  authority-enforcement, rollback-execution, MoECOT-runtime-reproduction, or
+  implemented-corrigibility boundary for that pass.
 - `editions/reader_manuscript/v1_0/chapters/recursive-self-improvement-boundaries.qmd`
   now has a first curated prose pass from the generated reader baseline as a
   drafting source only.

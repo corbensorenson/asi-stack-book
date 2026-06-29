@@ -1,0 +1,305 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: capability-replacement-and-rollback
+generated_baseline_ref: build/reader_edition/chapters/capability-replacement-and-rollback.qmd
+live_source_ref: chapters/capability-replacement-and-rollback.qmd@26297f08a
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Capability Replacement and Rollback
+
+Stable Capability Fields define what must remain true when a capability
+changes. Capability Replacement and Rollback defines how the change is allowed
+to happen.
+
+An upgrade is not a moral event, and it is not a magic word. A new component
+may be faster, cleaner, cheaper, or more capable while still weakening the
+system. It may erase an old regression, widen a route's authority, change the
+meaning of a field, make state migration insolvent, or approve itself through
+an evaluator it helped shape. If that happens, the system has not improved. It
+has traded visible progress for hidden drift.
+
+Replacement is the stack's way of refusing that trade. A candidate
+implementation enters as a transaction, not as a hope. The transaction records
+the prior artifact, the candidate artifact, the field identity, the evidence
+packet, the regression floor, the authority check, the evaluator boundary, the
+canary scope, the monitor window, the residuals, and the rollback receipt. Only
+then can improvement become ordinary infrastructure.
+
+The core discipline is reversible progress. A self-improving system should be
+trusted only to the degree that failure can be detected, contained, explained,
+and undone.
+
+## Problem
+
+Recursive improvement creates a steady stream of proposed replacements. A tool
+becomes a compiled procedure. A specialist route becomes cheaper. A verifier
+gets stricter. A benchmark strategy changes. A policy update improves the
+frontier. Each proposal may be useful, but each proposal also creates a risk:
+the system may forget the floor while chasing the frontier.
+
+The floor includes more than accuracy. It includes field identity, regression
+history, permission scope, auditability, context restrictions, human review,
+residual ownership, and recovery paths. A candidate that wins a new comparison
+while losing those older obligations should not become default.
+
+Capability replacement therefore needs a procedure. Stable Capability Fields
+provide the target identity. The replacement transaction decides whether a
+candidate has earned promotion without moving that identity, losing old
+evidence, or spending more authority than it was granted.
+
+## Why Ordinary Upgrades Are Not Enough
+
+Ordinary upgrades are often one-way stories. The new version wins a test, ships
+to production, and the organization learns about the missing regression only
+after dependent work has already moved forward. That pattern is risky in
+ordinary software. It is worse in a self-improving AI stack, where the candidate
+may also affect the evidence, evaluator, route, or authority surface that
+judges it.
+
+Ad hoc replacement cannot answer the questions that matter:
+
+- What exact field is being preserved?
+- Which prior artifact and state are recoverable?
+- Which regressions moved forward?
+- Which authority changed?
+- Who or what evaluated the candidate?
+- What failed in canary?
+- What residuals remain?
+- What triggers rollback, and who owns it?
+
+Corrigibility is the external baseline for why this matters. Soares et al.
+(2015) frame correction and intervention as properties that can be lost by
+design. A replacement transaction is the systems-engineering version of that
+concern: it asks whether correction channels, regression floors, evaluator
+separation, and recovery handles survived the upgrade. This repository uses
+that paper as comparator and vocabulary, not as proof that the ASI Stack
+implements corrigibility.
+
+The essential distinction is candidate improvement versus accepted
+replacement. A candidate can be promising in shadow mode. It can win a canary.
+It can lower cost or improve a benchmark slice. Accepted replacement means
+something stronger: the stack has preserved field identity, checked authority
+boundaries, retained regression floors, recorded residuals, kept a monitor
+window, and maintained a recovery path.
+
+## Core Claim
+
+Capability replacement should be an evidence-gated transaction with
+preconditions, regression checks, residual records, and rollback. In the live
+book, this claim remains a design rationale supported at `argument`.
+
+The source support is architectural. SCF supplies field identity,
+implementation-artifact, qualification, state-migration, lifecycle,
+evaluator-integrity, and rollback vocabulary. RMI supplies the ratchet idea:
+move the frontier while preserving the floor through residual escrow,
+critical-failure vetoes, and specialist lifecycle discipline. Benchmaxxing
+supplies benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards,
+regression promotion, and residual-ledger discipline. Cognitive Loop Closure
+supplies verified tool/procedure lifecycle, monitoring, revision, and
+retirement pressure. Talos supplies audit, replay, job, proof-bundle, and human
+adjudication context. MoECOT remains runtime-reference context only.
+
+None of those sources is treated here as a reproduced replacement run. The
+current evidence does not prove deployed replacement behavior, real regression
+suite coverage, monitor-window success, evaluator-integrity enforcement,
+authority enforcement, rollback execution, benchmark improvement, or MoECOT
+runtime behavior.
+
+## Mechanism
+
+A replacement transaction turns a proposed improvement into a controlled state
+change. It is allowed to fail. It is not allowed to fail invisibly.
+
+```{mermaid}
+flowchart LR
+  Prior["Prior implementation"] --> Proposal["Replacement proposal"]
+  Proposal --> Evidence["Wall diagnosis + evidence packet"]
+  Evidence --> Precheck["Precheck: field identity + authority"]
+  Precheck --> Gates["Qualification gates"]
+  Gates --> Floor["Regression floor + holdouts"]
+  Floor --> Residual["Residual escrow"]
+  Residual --> Ready{"Rollback ready?"}
+  Ready -- "yes" --> Canary["Canary / commit candidate"]
+  Ready -- "no" --> Reject["Reject / quarantine / residual"]
+  Canary --> Monitor["Monitor window"]
+  Monitor --> Incident{"Incident or regression?"}
+  Incident -- "yes" --> Rollback["Rollback / compensate / fork"]
+  Incident -- "no" --> Promote["Promote or retain as default"]
+  Reject --> Ledger["Evidence + changelog"]
+  Rollback --> Ledger
+  Promote --> Ledger
+```
+
+The first object is the proposal. It names the prior implementation, candidate
+implementation, field, motivation, evidence packet, authority delta, and
+claimed identity preservation.
+
+The second object is the gate set. The transaction checks qualification
+evidence, regression floors, authority boundaries, evaluator independence,
+state migration, canary scope, and readiness. A candidate may supply evidence,
+but it cannot be the sole evaluator, gatekeeper, or rollback authority for its
+own promotion.
+
+The third object is the residual record. Failed gates, missing regressions,
+state-migration uncertainty, weak transfer, benchmark saturation, and
+unresolved side effects must become residuals. They should not disappear behind
+a successful upgrade story.
+
+The fourth object is the rollback receipt. Rollback is not nostalgia for the
+old version. It needs the prior artifact, state migration status, reversible
+fields, irreversible effects, dry-run status, trigger conditions, and owner. If
+the old state cannot be interpreted, or if external effects remain unresolved,
+the record should say compensation, fork, quarantine, or residual rather than
+pretending full recovery.
+
+Benchmarks enter as evidence surfaces, not permission slips. A benchmark result
+can help explain why a candidate exists. It cannot by itself prove that the
+candidate preserved identity, evaluator independence, authority boundaries, or
+rollback readiness.
+
+## Interfaces
+
+Replacement connects the stack's ledgers.
+
+The SCF ledger says which capability identity must survive. The benchmark
+ledger says which frontier and regression evidence was used. The artifact graph
+says which prior, candidate, state-migration, and rollback artifacts exist. The
+changelog says what became default, what stayed canary, what was rejected, and
+which residuals remain.
+
+A minimum replacement record needs a transaction ID, transaction state, field
+ID, prior implementation, candidate implementation, identity-preservation
+statement, precheck results, qualification evidence, regression results,
+authority check, evaluator-independence statement, residual escrow, rollback
+plan, rollback receipt, approval record, canary scope, monitor window, monitor
+status, decision, promotion blockers, source references, support-state effect,
+and non-claims.
+
+Those fields let other layers inspect the same event. The security layer can
+ask whether the candidate crosses a secret or permission boundary. Runtime
+adapters can ask whether effect authority changed. Governance can ask whether
+human review, appeal, exit, or audit paths were weakened. Policy optimization
+can ask whether learning pressure is trying to ratify its own evaluator. The
+transaction gives every layer a concrete artifact instead of asking them to
+trust the word "upgrade."
+
+Transaction states should be explicit: proposed, precheck, shadow, canary,
+default-candidate, committed, rolled-back, quarantined, superseded, retired,
+and blocked. A candidate that survived one test should not become default
+everywhere by inertia.
+
+## Invariants
+
+No replacement should happen without prior and posterior artifacts. A later
+reviewer must be able to see what changed, why it was allowed, what got worse,
+and how recovery was supposed to work.
+
+Regressions stay attached. The new candidate inherits the field's old
+obligations, including boring ones: cost ceilings, permission limits, logging,
+context restrictions, audit retention, human review behavior, and export or
+fork rights.
+
+Rollback metadata is required before default promotion. The receipt must name
+reversible fields, irreversible effects, trigger conditions, and owner.
+
+Evaluator independence protects the gate. A candidate may generate evidence,
+but it cannot be the only judge of whether that evidence is enough.
+
+Scope stability protects against quiet authority expansion. A candidate can be
+accepted for one field, workload, permission tier, or context boundary without
+becoming default everywhere.
+
+The current Lean hooks cover small finite-record versions of two boundaries:
+a modeled replacement commit requires qualification evidence and rollback
+metadata, and a failed regression blocks promotion in the model. Those hooks are
+useful, but they do not prove deployed replacement execution, real regression
+suite coverage, monitor-window behavior, or rollback execution.
+
+## Failure Modes
+
+Regression deletion is the classic false improvement. The candidate moves the
+frontier while forgetting what the system already knew.
+
+Rollback impossibility turns a bad canary into permanent damage. The old
+artifact is gone, the state migration cannot be reversed, or no one owns the
+recovery path.
+
+Self-judged replacement lets the component being replaced propose, evaluate,
+and approve its own successor.
+
+Rollback theater is the paperwork version of safety. The record contains a
+rollback field, but no executable path, state-compatibility check, trigger
+condition, dry-run status, or owner exists when the monitor window fails.
+
+Frontier bias makes the impressive gains visible and the quiet losses
+invisible. The replacement looks better on new tasks while weakening rights
+preservation, cost discipline, context boundaries, reproducibility, audit
+retention, or human approval behavior.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a `replacement_transaction` schema and a
+public-safe fixture suite. The fixture should show a proposal, shadow run,
+canary with regression floor, failed rollback dry run that blocks default
+promotion, and a separate reversible candidate with a valid rollback receipt.
+
+The existing local harnesses are useful but narrow. Protocol validation checks
+record shape. The capability replacement harness validates synthetic
+replacement-transaction fixtures for field identity, qualification evidence,
+regression results, non-widening authority checks, evaluator separation,
+residual escrow, rollback receipts, approvals, monitor state, promotion
+blockers, and non-claim boundaries. The readiness/residual gate harness checks
+synthetic failed-regression and rollback-dry-run blockers.
+
+Those checks do not prove deployed replacement behavior, runtime route quality,
+real regression-suite quality, evaluator integrity, authority enforcement,
+monitor-window success, rollback execution, or source interpretation.
+
+## Beyond the State of the Art
+
+The mature endpoint is a transaction control plane for improvement. Every
+candidate implementation enters as a governed transaction with prior artifact,
+candidate artifact, field identity, authority ceiling, regression floor,
+evaluator boundary, canary scope, monitor window, rollback receipt, and
+residual inheritance.
+
+In that end state, capabilities can improve continuously without making the
+system forget what it used to know. Regressions follow the field forward.
+Failed canaries become residuals. Rollbacks are rehearsed and owned. State
+migration is classified as reversible, compensatable, forked, or residual. A
+default route is never just the latest winner; it is the candidate that
+survived the transaction while preserving the floor.
+
+Beyond current practice, replacement becomes compositional. Security,
+governance rights, runtime adapters, benchmark ratchets, and self-improvement
+gates all read the same transaction record. If a candidate changes audit
+retention, handle scope, appeal paths, verification budget, or rollback
+ownership, the transaction surfaces that as a boundary delta before promotion.
+
+This remains a design destination. The book does not claim a deployed
+replacement pipeline until replayable replacement traces, regression-
+preservation tests, rollback dry runs, monitor-window records, governance
+receipts, and failed-candidate examples exercise the transaction under
+ordinary success and failure pressure.
+
+## Summary
+
+Capability Replacement and Rollback turns improvement into an accountable
+state change. It keeps the prior artifact, candidate evidence, regression
+floor, authority boundary, residuals, approvals, monitor window, and rollback
+path visible while a candidate earns promotion.
+
+The governing discipline is floor preservation. The frontier may move only
+when the floor remains visible and recoverable.
+
+## Handoff
+
+Replacement becomes dangerous when it moves secrets, permissions, or privileged
+context across a boundary the old capability was never allowed to cross.
+Security Kernel and Digital SCIFs follows because rollback and qualification
+are not enough if authority-bearing material can leak through logs, prompts,
+summaries, memory, or tool adapters. Protected power must become handle-bound,
+auditable, and absent by default.

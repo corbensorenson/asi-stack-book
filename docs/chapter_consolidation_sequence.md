@@ -294,13 +294,31 @@ do not entrench duplicate structure.
 
 Reader curation may continue outside pending clusters, especially where the
 chapter owns a distinct artifact, proof lane, evidence lane, or implementation
-path. The current allowed pilot-reader set remains:
+path. The current rule is consolidation-aware, not chapter-count driven:
+protected standalone chapters may graduate into drafting-only curated prose,
+while source chapters inside pending merge or fold packages should wait for an
+execute, revise, defer, or reject decision unless the edit is explicitly scoped
+as local cleanup.
+
+The current allowed protected-reader set is:
 
 - `asi-is-a-stack-not-a-model`
 - `the-efficient-asi-hypothesis`
+- `system-boundaries-and-authority`
+- `failure-modes-of-ungoverned-intelligence`
+- `evidence-states-and-claim-discipline`
+- `security-kernel-and-digital-scifs`
+- `stable-capability-fields`
+- `capability-replacement-and-rollback`
 - `recursive-self-improvement-boundaries`
 - `circle-calculus-and-proof-carrying-ai-contracts`
+- `executable-specifications-and-lean-proof-envelope`
 - `artifact-steward-agents-and-living-project-governance`
+
+`human-intent-as-a-formal-input` remains allowed for local reader prose only
+because the current consolidation queue keeps it as the intent-intake chapter;
+its handoff must be revisited if the intent/contracts or Part I alignment
+decisions change the downstream destination shape.
 
 ## Non-Pilot Review-Ready Packages
 

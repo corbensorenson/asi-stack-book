@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 5,
+    "curated_manuscript_candidate": 6,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -292,12 +292,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
-        "no_immediate_action"
+        "no_immediate_action",
+        "curated_manuscript_candidate"
       ],
       "review_refs": [
-        "docs/reader_part_i_full_review_completion.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions",
+        "docs/curated_reader_capability_replacement_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the replacement and rollback chapter. Candidate/accepted replacement separation, regression floors, residual escrow, monitor windows, rollback receipts, evaluator independence, and non-promotion boundaries remain intact.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the replacement and rollback chapter. First drafting-only curated reader prose pass recorded in docs/curated_reader_capability_replacement_prose_pass.md; candidate/accepted replacement separation, regression floors, residual escrow, monitor windows, rollback receipts, evaluator independence, proof/test limits, and non-promotion boundaries remain intact. Not release-approved.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
