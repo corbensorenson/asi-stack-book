@@ -1,0 +1,116 @@
+{
+  "transition_id": "v1_0_pilot.agency_corrigibility.no_change",
+  "claim_id": "agency-dignity-and-corrigibility.core",
+  "claim_surface_refs": [
+    "chapters/agency-dignity-and-corrigibility.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/agency_rights_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/agency_rights_checklist.schema.json",
+    "tests/fixtures/protocol_records/agency_rights_checklist.valid.json",
+    "experiments/agency_rights/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/Corrigibility.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic agency-right checklist discipline and finite Lean corrigibility predicates only; no deployed agency preservation, dignity preservation, manipulation resistance, consent quality, approval-service quality, reviewer independence, runtime policy behavior, source interpretation, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has an agency-rights checklist schema, a protocol fixture, finite Corrigibility Lean predicates, proof adequacy review text that keeps the target narrow, exact source mappings for the Agency chapter, and a synthetic agency-rights harness with valid and expected-invalid fixtures. Those artifacts make affected parties, bounded delegation, material usability, timing-before-effect review, review and appeal channels, corrigibility paths, high-impact approval, residual dependency risk, degradation reasons, and accountable principals executable at the record level. They still do not establish deployed agency preservation, dignity preservation, manipulation resistance, consent quality, approval-service quality, reviewer independence, runtime policy behavior, source interpretation adequacy, or whole-system corrigibility.",
+  "required_artifacts": [
+    "deployed agency-right request and review flow over real high-impact plans",
+    "material-usability review showing refusal, review, appeal, rollback, and correction paths work under pressure",
+    "manipulation-resistance or consent-quality review with positive and negative controls",
+    "runtime policy trace showing high-impact approval before irreversible effects",
+    "corrigibility pathway test over actual shutdown, pause, rollback, or correction behavior",
+    "independent reviewer-quality, governance, ethics, runtime, or source-interpretation review",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/agency_rights_harness.md",
+    "scripts/validate_agency_rights.py",
+    "experiments/agency_rights/results/2026-06-28-local.md",
+    "schemas/agency_rights_checklist.schema.json",
+    "tests/fixtures/protocol_records/agency_rights_checklist.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/Corrigibility.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#agency-dignity-and-corrigibility.core",
+    "docs/source_evidence_audit.md#agency-dignity-and-corrigibility.core"
+  ],
+  "verification_command": "python3 scripts/validate_agency_rights.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Agency, Dignity, and Corrigibility remains at argument",
+    "agency-right fixtures are synthetic",
+    "schema validation checks checklist shape rather than agency or dignity preservation",
+    "finite Lean predicates remain useful but too narrow for deployed corrigibility, consent quality, or approval-service claims",
+    "material usability, manipulation resistance, consent quality, reviewer independence, runtime policy behavior, and source interpretation review are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/agency-dignity-and-corrigibility.qmd",
+    "docs/agency_rights_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "agency rights harness failure",
+    "agency-right checklist schema drift",
+    "chapter text interpreted as deployed dignity-preservation evidence",
+    "synthetic material-usability fixture interpreted as consent quality or real rights usability",
+    "synthetic high-impact approval fixture interpreted as approval-service quality or reviewer independence",
+    "finite Lean corrigibility predicates treated as deployed shutdown, rollback, or correction-pathway behavior",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic checklist discipline that passed, or after deployed agency-right flows, material-usability review under pressure, manipulation-resistance or consent-quality review, runtime approval traces, actual corrigibility-pathway tests, and independent reviewer-quality, governance, ethics, runtime, or source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not prove that real users can refuse, review, appeal, correct, pause, rollback, or shut down a system",
+    "schema validation does not prove dignity preservation or consent quality",
+    "finite Lean predicates do not implement a corrigible runtime",
+    "material-usability strings do not prove that rights remain usable under pressure",
+    "approval-channel strings do not prove approval-service quality or reviewer independence",
+    "no independent governance, ethics, runtime, reviewer-quality, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent governance, ethics, consent-quality, runtime-systems, reviewer-quality, formal-methods, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no deployed agency-right request flow",
+    "no material-usability review under pressure",
+    "no manipulation-resistance or consent-quality review",
+    "no runtime high-impact approval trace",
+    "no actual shutdown, pause, rollback, or correction-pathway test",
+    "no independent governance, ethics, runtime, reviewer-quality, or source-interpretation review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-agency-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Agency, Dignity, and Corrigibility above argument",
+    "does not prove deployed agency preservation",
+    "does not prove dignity preservation",
+    "does not prove manipulation resistance or consent quality",
+    "does not prove approval-service quality or reviewer independence",
+    "does not prove runtime policy behavior or source interpretation"
+  ]
+}
