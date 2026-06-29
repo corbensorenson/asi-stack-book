@@ -10,6 +10,9 @@ fresh plan from scratch.
 Execution rule: a v1.x cycle should execute at most 5-8 chapter lanes. The
 remaining lanes stay `planned, not executed`; they must not receive synthetic
 fixtures, pass/fail status, or support-state pressure merely for coverage.
+The active cycle selection is recorded in
+`docs/v1_x_active_evidence_cycle.md`: seven lanes are selected and the other
+forty-seven remain planned-only.
 
 Selection criteria:
 

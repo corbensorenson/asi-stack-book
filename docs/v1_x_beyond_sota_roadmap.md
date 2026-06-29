@@ -40,6 +40,9 @@ It should retire the important IOUs:
 - every chapter needs a real external-grounding pass so Corben-originated
   nomenclature is related to known papers, standards, benchmarks, and adjacent
   systems before readers are asked to accept the stack vocabulary;
+- the 54-chapter expansion may now be over-split in several thematic clusters,
+  so repetition should be reduced through governed consolidation rather than
+  prose polishing alone;
 - Project Theseus and Circle evidence need public-safe replay paths rather than
   local-only summaries;
 - the human-reader edition needs to become a true edited book, not only a strip
@@ -76,6 +79,7 @@ not be quoted in the book as an external authority.
 | P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 144 theorem declarations, 112 direct/projection-style, 32 derived/decomposed, and 15 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` now has one derived/decomposed finite-record theorem plus explicit projection-only limitation prose, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 54 chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
+| P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, but several clusters now repeat the same chapter skeleton around overlapping claims. | Add a governed consolidation milestone: pilot one merge cluster first, preserve ideas as sections/subclaims, and require claim/source/proof/reader reconciliation before changing the manifest broadly. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 10 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes. | Replace weak exceptions where external baselines exist. Keep true author-system exceptions, but state why they are exceptions and what would count as a comparable external reference. |
@@ -99,6 +103,10 @@ not be quoted in the book as an external authority.
   evidence.
 - External literature should be source-noted before it is used in chapter prose
   or claim support.
+- Consolidation should remove repeated skeletons, not ideas. A merged chapter
+  preserves distinct mechanisms as sections, subclaims, source mappings, proof
+  hooks, and implementation horizons unless a separate claim decision retires
+  them.
 - External-source backfill starts from the sources already attached to each
   chapter: mine the bibliographies, footnotes, citations, and adjacent terms in
   the linked Corben papers before broad web searching.
@@ -162,6 +170,9 @@ is:
    CI-reproducible or CI-verifiable by archived digest;
 8. execute only 5-8 per-chapter evidence lanes from
    `docs/per_chapter_evidence_plan.md`, selected for evidential payoff.
+9. run a governed consolidation review before broad human-reader curation, so
+   genuinely overlapping chapters become deeper chapters rather than repeated
+   skeletons.
 
 Dependency order:
 
@@ -171,6 +182,8 @@ Dependency order:
 - Milestone 5 depends on the selection rules and should not start as a
   top-to-bottom sweep; Milestone 5.5 can start as a source-discovery pass, but
   citations still require source notes before prose use.
+- Milestone 6.5 should happen before broad Milestone 7 curation because the
+  human-reader manuscript should not polish avoidable structural repetition.
 - Milestones 7 and 8 are downstream of reader-prose review and should not
   produce final artifacts before curated prose or release records exist.
 - Milestone 9 preprints should wait for prior-art/novelty checks and at least
@@ -191,6 +204,7 @@ internal activity alone.
 | Compression/representation | Mostly architecture and source synthesis; Circle receipt is structural, not model-quality evidence. | Add one narrow artifact-compression, representation-preservation, or proof-contract lane with negative controls before stronger claims. |
 | Human/AI dual-edition publishing | Unusual and promising scaffold with reviewed reader HTML; not yet a polished human book or audio edition. | Graduate selected reader chapters into curated prose and approve artifacts only through exact release records. |
 | External literature/novelty | Placement gate passes, but some exceptions and novelty questions remain; some chapters still read as Corben-originated nomenclature before readers see the related outside literature. | Build a per-chapter external-grounding pack, starting from citations inside the chapter's linked Corben papers, then replace weak exceptions, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
+| Structural cohesion | The manifest is dynamic and complete, but the 54-chapter shape may preserve too much skeleton-level repetition in overlapping clusters. | Pilot governed consolidation on the highest-overlap cluster, then continue only when claim identity, source mappings, proof hooks, reader overlays, and handoffs stay intact. |
 
 ## Defended Contribution Tracks
 
@@ -507,6 +521,23 @@ Acceptance bar:
 - unexecuted lanes do not create fixtures, pass/fail claims, or support-state
   pressure.
 
+Current status for the initial v1.x active evidence cycle:
+
+- `docs/v1_x_active_evidence_cycle.md` selects seven chapter lanes:
+  `evidence-states-and-claim-discipline`,
+  `recursive-self-improvement-boundaries`,
+  `resource-economics-and-token-budgets`,
+  `circle-calculus-and-proof-carrying-ai-contracts`,
+  `executable-specifications-and-lean-proof-envelope`,
+  `project-theseus-as-report-first-implementation-reference`, and
+  `living-book-methodology`.
+- The remaining forty-seven manifest chapter lanes are explicitly planned-only
+  for this cycle.
+- `scripts/validate_v1_x_active_evidence_cycle.py` enforces the selected-lane
+  count, checks that selected plus planned-only lanes cover all 54 manifest
+  chapters exactly once, and requires the current no-chapter-core-promotion
+  boundary.
+
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 
 Goal: make every chapter credible to readers who already know the surrounding
@@ -591,6 +622,135 @@ Acceptance bar:
 - every exception has an explicit rationale and next source target;
 - chapters with available literature stop relying on exception status;
 - source notes exist before prose uses new external baselines.
+
+### Milestone 6.5 - Governed Chapter Consolidation
+
+Goal: reduce structural repetition by merging genuinely overlapping chapters
+into fewer deeper chapters while preserving every useful idea, source boundary,
+claim boundary, proof hook, and reader path.
+
+This is not a deletion pass and not a mandate to hit a target chapter count.
+The attached consolidation critique is useful planning input, but it is not
+source evidence and should not override the manifest until a merge pilot passes
+the reconciliation checks below.
+
+Candidate clusters to review:
+
+- Alignment/governance philosophy:
+  - consider merging `constitutional-alignment-substrate` with
+    `agency-dignity-and-corrigibility`;
+  - consider merging `moral-uncertainty-and-value-conflict` with
+    `governance-rights-fork-exit-and-audit`;
+  - preserve protected predicates, agency/corrigibility interfaces,
+    value-conflict records, fork/exit/audit rights, and dissent/revisit paths as
+    sections or subclaims.
+- Compression/representation:
+  - consider merging `compact-generative-systems-and-residual-honesty`,
+    `generate-verify-repair-compression`, and
+    `rankfold-neuralfold-and-artifact-compression`, with a conservative option
+    that keeps RankFold/NeuralFold separate if it still owns enough concrete
+    technique;
+  - review whether `semantic-representation-and-tree-structured-models` should
+    remain standalone or become the representation-substrate section of the
+    compression/representation cluster.
+- Intent and contracts:
+  - consider merging `intent-to-execution-contracts` with
+    `command-contracts-and-semantic-interfaces`;
+  - keep `human-intent-as-a-formal-input` as the Part I intent-intake chapter,
+    but slim it so it hands off instead of restating the Part II contract
+    chapter.
+- Context/memory:
+  - consider merging `virtual-context-abi` with
+    `semantic-pages-context-cells-and-certificates`;
+  - keep `context-transactions-snapshots-mounts-and-taint` and
+    `verification-bandwidth-and-context-adequacy` separate unless a later review
+    finds real overlap in artifact ownership.
+- Verification/review:
+  - consider merging `spinoza-verification-and-proof-carrying-claims` with
+    `unified-adaptive-tribunal-and-adversarial-review`;
+  - keep `claim-ledgers-and-belief-revision` separate as the substrate they
+    update.
+- Planning:
+  - consider merging `planning-as-a-control-layer` with
+    `planforge-dags-and-intelligence-arbitrage`;
+  - keep `cognitive-compilation-and-semantic-ir` separate as the lowering/IR
+    artifact unless a pilot shows the IR claim has no independent chapter
+    ownership.
+- Possible folds:
+  - fold `moecot-runtime-and-multi-core-orchestration` into
+    `routing-heads-and-specialist-cores` if its source remains insufficiently
+    mined for standalone chapter evidence;
+  - fold `simulation-fidelity-and-physical-constraints` into
+    `resource-economics-and-token-budgets` or the efficient-ASI frame if its
+    standalone claim remains only a feasibility-bound note.
+
+Protected standalone chapters unless a later evidence review contradicts them:
+
+- `asi-is-a-stack-not-a-model`;
+- `the-efficient-asi-hypothesis`;
+- `system-boundaries-and-authority`;
+- `failure-modes-of-ungoverned-intelligence`;
+- `evidence-states-and-claim-discipline`;
+- `stable-capability-fields`;
+- `capability-replacement-and-rollback`;
+- `security-kernel-and-digital-scifs`;
+- `recursive-self-improvement-boundaries`;
+- `verification-bandwidth-and-context-adequacy`;
+- `claim-ledgers-and-belief-revision`;
+- `readiness-gates-residual-escrow-and-quarantine`;
+- the execution cluster unless a specific duplicate artifact is identified:
+  `labor-os-and-typed-jobs`, `artifact-graphs-audit-logs-and-replay`,
+  `runtime-adapters-tool-permissions-and-human-approval`, and
+  `procedural-memory-and-cognitive-loop-closure`;
+- Circle/coil chapters for now:
+  `circle-calculus-and-proof-carrying-ai-contracts`,
+  `coil-attention-cyclic-memory-and-recurrence-contracts`, and
+  `coilra-multicoil-rope-and-cyclic-mixers`;
+- `benchmark-ratchets-and-anti-goodhart-evidence`;
+- `artifact-steward-agents-and-living-project-governance`;
+- `executable-specifications-and-lean-proof-envelope`;
+- `integrated-reference-architecture`;
+- `prototype-roadmap`;
+- `living-book-methodology`;
+- `open-research-agenda-and-bibliography-plan`.
+
+Merge checklist:
+
+- Start with one pilot cluster, preferably the alignment/governance philosophy
+  cluster, before applying a broad 54-to-44 reshaping.
+- For every proposed merge, write a claim-reconciliation plan before editing
+  `book_structure.json`: the merged chapter gets one core claim; retained
+  chapter claims become subclaims, sections, source-crosswalk rows, proof hooks,
+  or explicit no-promotion/retirement decisions.
+- Preserve source IDs by unioning `source_ids` and updating source loading
+  queues in `docs/book_outline.md`.
+- Preserve Lean proof modules and proof tags unless a proof target is explicitly
+  retired with a reason.
+- Preserve implementation horizons by combining the smallest honest MVI and the
+  mature endpoint into one coherent chapter horizon.
+- Update Human Reading Path prose, Handoff sections, reader overlays, reader
+  review matrices, chapter external-grounding status, external-SOTA positioning,
+  Appendix C, Appendix K, proof manifests, and changelog after any manifest
+  merge.
+- Collapse the chapter skeleton once. Do not paste two full Problem,
+  Insufficiency, Mechanism, Interfaces, Invariants, Failure Modes, MVI, Mature
+  Endpoint, Test Plan, Source Crosswalk, and Summary sections back to back.
+- Keep stable slug IDs only when continuity is stronger than renaming; otherwise
+  record redirects and handoff repair needs before changing file paths.
+
+Acceptance bar:
+
+- at least one pilot merge plan exists before any manifest merge;
+- the pilot names every preserved source, subclaim, proof hook, test row,
+  implementation horizon, reader overlay, and handoff change;
+- `python3 scripts/chapter_adjacency_report.py` is used before and after a
+  manifest merge;
+- `python3 scripts/sync_scaffold.py`,
+  `python3 scripts/sync_proof_manifest.py`, Appendix C generation, reader
+  checks, and Quarto render pass after the merge;
+- no idea is removed merely to reduce chapter count;
+- no support state, source-derived claim, proof result, or test result is
+  fabricated by the consolidation.
 
 ### Milestone 7 - Curated Human-Reader Manuscript
 

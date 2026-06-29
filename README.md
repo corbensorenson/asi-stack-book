@@ -92,6 +92,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/external_review_status.md](docs/external_review_status.md) | Ledger for the external-review request and the boundary that review input is not evidence by itself. |
 | [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) | Generated 54-chapter grounding ledger tying each chapter to source-noted external comparators, explicit exceptions, and Corben/local sources to mine first. |
 | [docs/per_chapter_evidence_plan.md](docs/per_chapter_evidence_plan.md) | 54-chapter evidence-lane backlog used as a menu for selecting 5-8 high-payoff v1.x lanes, not as a breadth-sweep checklist. |
+| [docs/v1_x_active_evidence_cycle.md](docs/v1_x_active_evidence_cycle.md) | Active v1.x evidence-cycle ledger: seven selected lanes, forty-seven planned-only lanes, and no chapter-core promotion. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
 | [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md) | Generated Phase 2 heuristic queue for reader-manuscript continuity review. |
 | [docs/reader_chapter_review_matrix.md](docs/reader_chapter_review_matrix.md) | Manifest-synced 54-chapter human-reader review queue and release blockers. |

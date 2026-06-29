@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-06-29 - Governed consolidation roadmap milestone
+
+- Updated `docs/v1_x_beyond_sota_roadmap.md` to treat structural repetition as
+  a first-class roadmap risk after reviewing the consolidation critique.
+- Added Milestone 6.5 for governed chapter consolidation: pilot one merge
+  cluster first, preserve ideas as sections/subclaims, reconcile claim identity,
+  source IDs, proof hooks, implementation horizons, reader overlays, handoffs,
+  Appendix C, Appendix K, and proof manifests before any broad manifest reshape.
+- Recorded candidate consolidation clusters for alignment/governance,
+  compression/representation, intent/contracts, context/memory,
+  verification/review, planning, and possible placeholder folds, while keeping
+  Theseus, Circle/coil, recursive self-improvement, execution artifacts, and
+  other strong standalone chapters protected unless later evidence review says
+  otherwise.
+- This does not merge chapters yet, delete any idea, change chapter support
+  states, change source mappings, create proof/test results, or approve reader
+  artifacts.
+
+## 2026-06-29 - v1.x active evidence-cycle lane cap
+
+- Added `docs/v1_x_active_evidence_cycle.md` to name the seven selected
+  high-payoff v1.x chapter evidence lanes and explicitly leave the other
+  forty-seven chapter lanes planned-only.
+- Added `scripts/validate_v1_x_active_evidence_cycle.py` and wired it into
+  `scripts/validate_book.py`; the validator checks the 5-8 lane cap, exact
+  manifest coverage across selected and planned-only lanes, required evidence
+  artifact references, and the no-chapter-core-promotion boundary.
+- Updated the README, repository map, per-chapter evidence plan, and v1.x
+  roadmap to point to the active-cycle ledger.
+- This does not create new evidence, run new prototypes, promote any chapter
+  core claim, retire any planned-only lane, or approve reader/release artifacts.
+
 ## 2026-06-29 - Circle public consumer-gate fixture
 
 - Added `experiments/circle_public_replay/` with one valid public
