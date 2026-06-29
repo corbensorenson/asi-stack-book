@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - Consolidation decision queue roadmap update
+
+- Reviewed the latest 54-to-44/47 consolidation idea and kept the core
+  conclusion: it is useful and directionally correct, but it should drive
+  governed re-consolidation rather than an immediate manifest edit or fixed
+  chapter-count target.
+- Updated `docs/v1_x_beyond_sota_roadmap.md` and
+  `docs/chapter_consolidation_sequence.md` so the next consolidation work walks
+  a decision queue for the already review-ready packages, records execute,
+  revise, defer, or reject decisions, and packages the remaining MoECOT,
+  simulation-fidelity, and semantic-representation fold candidates before any
+  reader or manifest work depends on them.
+- Updated `scripts/validate_chapter_consolidation_sequence.py` and
+  `scripts/validate_chapter_consolidation_pilot_plan.py` so the decision
+  queue, one-skeleton judgment, one-package-per-commit rule, and remaining
+  fold-candidate requirement remain part of the governed consolidation record.
+- This does not edit `book_structure.json`, merge chapters, change Appendix C,
+  create source/proof/test evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Planning DAG consolidation package
 
 - Added `docs/chapter_consolidation_dry_run_planning_dag.md` and

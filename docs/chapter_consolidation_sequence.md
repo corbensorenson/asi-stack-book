@@ -126,6 +126,34 @@ Use this rubric before any non-pilot consolidation package:
 | Semantic representation | `fold_review_candidate` | Decide whether representation is a substrate section in the compression cluster or a standalone artifact. | Preserve proof/test hooks if folded. |
 | Runtime adapters and Labor OS | `rejected_or_retained` unless later evidence changes artifact ownership | Revisit only if tool-permission adapters stop owning a distinct artifact. | Reader curation may proceed because the current split has artifact ownership. |
 
+## Consolidation Decision Queue
+
+Do not create more destination drafts for packages that are already
+`review_ready`. The next consolidation work should record decisions against
+the existing packages, then package the remaining fold candidates. A
+review-ready package moves to `executed`, `deferred_for_release`, or
+`rejected_or_retained` only through a recorded decision; a revised package stays
+blocked until the revision is reviewed.
+
+| Order | Package | Required decision | Execution note |
+|---|---|---|---|
+| 1 | Part I constitutional alignment and agency/corrigibility | Execute, revise, defer, or reject. | Resolve folded-chapter URL/history policy before any manifest edit. |
+| 2 | Part I value conflict and contestable governance | Execute, revise, defer, or reject. | Preserve fork, exit, audit, redaction, appeal, dissent, and revisit interfaces. |
+| 3 | Compression and residual honesty | Execute full merge, execute conservative merge, revise, defer, or reject. | Keep RankFold/NeuralFold standalone if review finds concrete technique ownership. |
+| 4 | Intent and executable contracts | Execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` as intent intake and remove only duplicated contract skeleton. |
+| 5 | Static context ABI | Execute, revise, defer, or reject. | Keep transaction/snapshot/taint and verification-bandwidth chapters standalone unless later review changes artifact ownership. |
+| 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep `claim-ledgers-and-belief-revision` as the durable belief-revision substrate. |
+| 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep `cognitive-compilation-and-semantic-ir` as the semantic-IR and lowering-receipt layer. |
+| 8 | Remaining fold candidates | Produce fold dispositions before any manifest or reader-work dependency. | MoECOT runtime, simulation fidelity, and semantic representation need preserved-section, source, proof, reader, and restoration-condition records. |
+
+Every decision record should name the reviewed package, reviewer or review
+source, one-skeleton destination judgment, claim/source/proof/reader impact,
+external-grounding adequacy, URL or redirect policy, validation scope,
+support-state effect, non-claims, and the exact decision. If a package is
+executed, apply only one merge or fold package per commit. If a package is
+deferred or rejected, record whether curated-reader work is unblocked, still
+paused, or allowed only as local cleanup.
+
 ## Candidate Sequence
 
 | Tier | Candidate cluster | Source chapters | Default destination or action | Preservation requirement |

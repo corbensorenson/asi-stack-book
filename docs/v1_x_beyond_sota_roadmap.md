@@ -82,7 +82,7 @@ not be quoted in the book as an external authority.
 | P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 158 theorem declarations, 112 direct/projection-style, 46 derived/decomposed, and 29 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` has at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose; `Alignment`, `Corrigibility`, `GovernanceRights`, and `ValueConflict` now each have four derived/decomposed transition/control/preservation/review theorems, and `SelfImprovement` now has three derived/decomposed lifecycle/review theorems, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 54 chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
-| P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, but several clusters now repeat the same chapter skeleton around overlapping claims. | Add a governed consolidation milestone: pilot one merge cluster first, preserve ideas as sections/subclaims, and require claim/source/proof/reader reconciliation before changing the manifest broadly. |
+| P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, but several clusters now repeat the same chapter skeleton around overlapping claims. Several consolidation packages are now review-ready, but no manifest merge has been authorized. | Add a governed consolidation milestone with a decision queue: review the existing destination drafts, execute/revise/defer/reject one cluster at a time, package the remaining fold candidates, preserve ideas as sections/subclaims, and require claim/source/proof/reader reconciliation before changing the manifest. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 54 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
@@ -173,9 +173,10 @@ is:
    CI-reproducible or CI-verifiable by archived digest;
 8. execute only 5-8 per-chapter evidence lanes from
    `docs/per_chapter_evidence_plan.md`, selected for evidential payoff.
-9. run a governed consolidation review before broad human-reader curation, so
-   genuinely overlapping chapters become deeper chapters rather than repeated
-   skeletons.
+9. run the governed consolidation decision queue before broad human-reader
+   curation, so review-ready packages either execute, revise, defer, or reject
+   and genuinely overlapping chapters become deeper chapters rather than
+   repeated skeletons.
 
 Dependency order:
 
@@ -187,6 +188,8 @@ Dependency order:
   citations still require source notes before prose use.
 - Milestone 6.5 should happen before broad Milestone 7 curation because the
   human-reader manuscript should not polish avoidable structural repetition.
+  It should now prioritize decisions on review-ready packages over producing
+  more consolidation prose for already packaged clusters.
 - Milestones 7 and 8 are downstream of reader-prose review and should not
   produce final artifacts before curated prose or release records exist.
 - Milestone 9 preprints should wait for prior-art/novelty checks and at least
@@ -767,6 +770,33 @@ Follow-up review outcome:
   curated-reader graduation for those source chapters should wait until the
   cluster is executed, explicitly deferred for the release, or rejected/retained
   with a reason.
+
+Consolidation decision queue:
+
+The next consolidation work should not create more destination drafts for
+packages that are already `review_ready`. It should walk a decision queue and
+produce an explicit execute, revise, defer, or reject result for each package
+before broad reader curation treats the source chapters as stable.
+
+| Order | Package | Required decision | Execution note |
+|---|---|---|---|
+| 1 | Part I constitutional alignment and agency/corrigibility | Execute, revise, defer, or reject. | Resolve URL/history policy for the folded source chapter before any manifest edit. |
+| 2 | Part I value conflict and contestable governance | Execute, revise, defer, or reject. | Preserve fork, exit, audit, redaction, appeal, dissent, and revisit interfaces as sections or subclaims. |
+| 3 | Compression and residual honesty | Execute full merge, execute conservative merge, revise, defer, or reject. | The conservative branch keeps RankFold/NeuralFold standalone if review finds technique ownership. |
+| 4 | Intent and executable contracts | Execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` as the intent-intake chapter and remove only duplicated contract skeleton. |
+| 5 | Static context ABI | Execute, revise, defer, or reject. | Keep context transactions and verification bandwidth standalone unless a later review changes their artifact ownership. |
+| 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep claim ledgers standalone as the belief-revision substrate. |
+| 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep cognitive compilation standalone as the semantic-IR and lowering-receipt layer. |
+| 8 | Remaining fold candidates | Produce fold dispositions before any manifest or reader-work dependency. | MoECOT runtime, simulation fidelity, and semantic representation need preserved-section, source, proof, reader, and restoration-condition records. |
+
+Each decision record should name the reviewed package, reviewer or review
+source, destination-skeleton judgment, claim/source/proof/reader impact,
+external-grounding adequacy, URL or redirect policy, validation scope,
+support-state effect, non-claims, and the exact decision. If execution is
+accepted, implement one cluster per commit so rollback and review remain
+legible. If a package is deferred or rejected, record the reader-work
+disposition so curated prose may continue without pretending the repetition
+question disappeared.
 
 Decision rubric:
 
@@ -1393,7 +1423,7 @@ explicitly passed or explicitly scoped out in a release record.
 |---|---|---|
 | `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Sixty-second trust surface exists; non-core evidence ledger visible; early external review requested or recorded; defended contribution tracks selected; per-chapter evidence plan split out with 5-8 lane cap; chapter-level external-grounding workflow defined; safety-critical proof specs include anti-projection and negative-case criteria. |
 | `v1.2` | Moves formal layer from projection-heavy traceability toward lightweight state-specification practice for safety-critical modules. | Five safety-critical modules gain `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases; first public-safe Theseus or Circle lane is CI-replayed or CI-verifiable by digest. |
-| `v1.3` | Moves reader surface from generated projection toward a curated human manuscript while preserving live-book evidence authority. | Governed consolidation has either executed its reviewed pilot or recorded an explicit deferral; curated reader manuscript covers a coherent pilot arc or explicitly defers with blockers; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
+| `v1.3` | Moves reader surface from generated projection toward a curated human manuscript while preserving live-book evidence authority. | Governed consolidation has walked the review-ready decision queue far enough to execute, revise, defer, or reject the pilot packages and to package the remaining fold candidates; curated reader manuscript covers a coherent pilot arc or explicitly defers with blockers; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
 | `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; 5-8 selected chapter lanes have executed evidence or explicit no-promotion decisions; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
 | `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger Lean envelopes, prior-art-reviewed preprints, and DOI/archive metadata exist. |
 
@@ -1401,7 +1431,7 @@ explicitly passed or explicitly scoped out in a release record.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, mine every chapter's linked Corben papers for external citations and adjacent literature, add accepted third-party sources through `sources/source_inventory.json`, source notes, and generated Appendix H, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, ensure every selected lane names its strongest proof/evidence path or no-promotion blocker, keep external-SOTA placement current and replace any future or regressed weak exception where source-noted literature exists, review the governed consolidation pilot before broad human-reader curation and execute or explicitly defer any merge only after source/proof/claim/reader reconciliation, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
+> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, mine every chapter's linked Corben papers for external citations and adjacent literature, add accepted third-party sources through `sources/source_inventory.json`, source notes, and generated Appendix H, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, ensure every selected lane names its strongest proof/evidence path or no-promotion blocker, keep external-SOTA placement current and replace any future or regressed weak exception where source-noted literature exists, walk the governed consolidation decision queue before broad human-reader curation, execute only one accepted merge or fold package at a time after source/proof/claim/reader reconciliation, and record explicit revise, defer, or reject decisions for packages that should not merge in the current release, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
 
 ## Non-Claims
 

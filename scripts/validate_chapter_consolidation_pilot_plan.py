@@ -221,7 +221,7 @@ ROADMAP_REQUIRED_FRAGMENTS = (
     "`runtime-adapters-tool-permissions-and-human-approval`",
     "The merged chapter should be deeper than either input chapter",
     "Governed consolidation review",
-    "review the governed consolidation pilot before broad human-reader curation",
+    "walk the governed consolidation decision queue before broad human-reader curation",
     "chapter_consolidation_decision_review.md",
     "chapter_consolidation_external_review_packet.md",
 )
