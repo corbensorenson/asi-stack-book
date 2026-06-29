@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-29 - Audio proof and equation reading rules
+
+- Extended `scripts/build_audio_script.py` so generated audio-script review
+  workspaces include `proof_equation_reading_rules.md` alongside
+  `pronunciation_glossary.md`, `companion_notes.md`, `chapter_markers.md`, and
+  `AUDIO_RELEASE_CHECKLIST.md`.
+- Expanded the generated pronunciation glossary and added explicit spoken rules
+  for theorem IDs, Lean predicates, support states, equations, schemas,
+  fingerprints, source IDs, and negative controls so future narration review
+  preserves scoped evidence boundaries.
+- Updated `editions/release_profiles.json` and
+  `scripts/validate_release_profiles.py` so audio policy requires the
+  pronunciation glossary path, proof/equation reading-rules path, and
+  proof/equation/support-state spoken-treatment language.
+- Updated README, publication readiness, release plans, Appendix J, the major
+  version release runbook, the writing runbook, and the v1.x roadmap so future
+  audio-review work knows to inspect the proof/equation rules before recording.
+- This does not create an audiobook, narration review, MP3, M4B,
+  audio-embedded EPUB, audio release record, proof adequacy claim,
+  theorem-validity claim, support-state promotion, model-quality claim, or
+  release approval.
+
 ## 2026-06-29 - Companion notes for proof and governance chapters
 
 - Added drafting companion notes for

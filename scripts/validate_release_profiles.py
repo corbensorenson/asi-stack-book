@@ -764,6 +764,14 @@ def main() -> None:
         checklist = audio_policy.get("generated_checklist_path")
         if not isinstance(checklist, str) or checklist != "AUDIO_RELEASE_CHECKLIST.md":
             errors.append("audio_manuscript_policy.generated_checklist_path must be AUDIO_RELEASE_CHECKLIST.md.")
+        if audio_policy.get("pronunciation_glossary_path") != "pronunciation_glossary.md":
+            errors.append(
+                "audio_manuscript_policy.pronunciation_glossary_path must be pronunciation_glossary.md."
+            )
+        if audio_policy.get("proof_equation_reading_rules_path") != "proof_equation_reading_rules.md":
+            errors.append(
+                "audio_manuscript_policy.proof_equation_reading_rules_path must be proof_equation_reading_rules.md."
+            )
         audio_formats = audio_policy.get("audio_artifact_formats")
         if not isinstance(audio_formats, list):
             errors.append("audio_manuscript_policy.audio_artifact_formats must be a list.")
@@ -780,6 +788,11 @@ def main() -> None:
             audio_policy.get("review_requirements"),
             errors,
         )
+        review_text = " ".join(str(item) for item in audio_policy.get("review_requirements", [])).lower()
+        if "pronunciation" not in review_text or "proof" not in review_text or "equation" not in review_text:
+            errors.append(
+                "audio_manuscript_policy.review_requirements must mention pronunciation, proof, and equation review."
+            )
         validate_string_list(
             "audio_manuscript_policy",
             "audio_packaging_checks",
@@ -792,6 +805,11 @@ def main() -> None:
             audio_policy.get("spoken_treatment_rules"),
             errors,
         )
+        spoken_text = " ".join(str(item) for item in audio_policy.get("spoken_treatment_rules", [])).lower()
+        if "proof" not in spoken_text or "equation" not in spoken_text or "support state" not in spoken_text:
+            errors.append(
+                "audio_manuscript_policy.spoken_treatment_rules must mention proof, equation, and support-state treatment."
+            )
 
     audiences = data.get("audiences")
     if not isinstance(audiences, list):

@@ -383,12 +383,15 @@
     "derived_from_profile": "reader_release",
     "generated_script_directory": "build/audio_script",
     "generated_checklist_path": "AUDIO_RELEASE_CHECKLIST.md",
+    "pronunciation_glossary_path": "pronunciation_glossary.md",
+    "proof_equation_reading_rules_path": "proof_equation_reading_rules.md",
     "audio_in_epub_rule": "An audio-embedded EPUB is a produced artifact only after the EPUB actually contains the reviewed audio files and the release record says so.",
     "audio_artifact_formats": ["mp3", "m4b", "audio-embedded-epub"],
     "review_requirements": [
       "Generate or write a narration script from the reviewed reader edition.",
       "Convert tables, schemas, code, and diagrams into spoken summaries or companion-note references.",
       "Maintain a pronunciation glossary for ASI Stack terms, source IDs, and invented architecture labels.",
+      "Review proof and equation reading rules before narrating theorem IDs, proof states, equations, support states, or schema fields.",
       "Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced.",
       "Confirm an audio-embedded EPUB actually contains the reviewed audio files before listing it as produced."
     ],
@@ -402,6 +405,7 @@
     "spoken_treatment_rules": [
       "Do not read dense source matrices, schemas, or proof tables verbatim unless the reader edition intentionally keeps them.",
       "Turn diagrams into short verbal walkthroughs only when the diagram carries meaning not already explained in prose.",
+      "Read equations, theorem IDs, support states, and proof statuses as scoped evidence boundaries rather than ornamental rigor.",
       "Move low-level citations, source IDs, and release metadata to chapter-end notes or companion material unless they change the claim boundary.",
       "Preserve uncertainty and evidence limits in spoken prose whenever omission would overstate a claim."
     ]

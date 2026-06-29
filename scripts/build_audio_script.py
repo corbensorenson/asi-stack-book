@@ -122,7 +122,10 @@ def qmd_to_audio_markdown(text: str) -> str:
     return "\n".join(header + output).strip() + "\n"
 
 
-def write_pronunciation_glossary(output_dir: Path) -> None:
+def write_pronunciation_glossary(
+    output_dir: Path,
+    glossary_path: str = "pronunciation_glossary.md",
+) -> str:
     text = """# Pronunciation Glossary
 
 Status: starter glossary for future audio review.
@@ -137,8 +140,63 @@ Status: starter glossary for future audio review.
 | Quarto | quar-to | Confirm with narrator if needed. |
 | SCF | S-C-F | Spell the letters. |
 | RSI | R-S-I | Spell the letters. |
+| VIEA | V-I-E-A | Spell the letters unless the final manuscript defines a spoken name. |
+| RMI | R-M-I | Spell the letters. |
+| RoPE | rope | Say like the ordinary word; spell only when discussing the acronym itself. |
+| LoRA | low-ruh | Confirm preferred pronunciation before recording. |
+| Mamba | mam-buh | Use the model-family name as ordinary speech. |
+| Lean | lean | Say as the ordinary word. |
+| JSON | jay-son | Use the common technical pronunciation. |
+| EPUB | E-pub | Use the common e-reader pronunciation. |
+| DOCX | dock-ex | Use the common document-format pronunciation. |
+| MP3 | M-P-three | Spell the letters and number. |
+| M4B | M-four-B | Spell the letters and number. |
 """
-    (output_dir / "pronunciation_glossary.md").write_text(text, encoding="utf-8")
+    (output_dir / glossary_path).write_text(text, encoding="utf-8")
+    return glossary_path
+
+
+def write_proof_equation_reading_rules(
+    output_dir: Path,
+    rules_path: str = "proof_equation_reading_rules.md",
+) -> str:
+    text = """# Proof And Equation Reading Rules
+
+Status: starter rules for future audio review.
+
+These rules guide narration-script review. They are not an audio artifact, not a
+proof review, and not a release approval.
+
+## Core Rule
+
+Read proof and equation material as scoped evidence boundaries. Do not let a
+theorem ID, support state, equation, schema field, or validation command sound
+like broader proof than the book records.
+
+## Spoken Rules
+
+| Material | Spoken treatment | Boundary |
+|---|---|---|
+| Theorem IDs | Name the role, then spell or group IDs only when needed for traceability. | The ID is not itself model-quality evidence. |
+| Lean predicates | Say what finite predicate was checked and what remains outside it. | A passed build is not deployed enforcement. |
+| Support states | Read the state with its boundary, for example `argument support` or `prototype-backed non-core slice`. | Do not imply chapter-core promotion unless the release record says so. |
+| Equations | Summarize the relationship in words before reading symbols. | Do not read equations as stronger evidence than the recorded test or proof. |
+| JSON/schema fields | Summarize the record purpose and name only fields that change authority or evidence meaning. | Schema validity is record shape, not event truth. |
+| Fingerprints and hashes | Say that a fingerprint makes drift detectable; read the full hash only in companion notes or appendix-style narration. | A hash does not prove usefulness or correctness by itself. |
+| Source IDs | Use source names in main narration and route low-level IDs to companion notes unless the ID is meaning-critical. | Citation routing is not support-state promotion. |
+| Negative controls | State what failure was expected to block. | A negative control is scoped to the fixture or lane that ran. |
+
+## Non-Claims
+
+- These rules do not claim any narration has been reviewed.
+- These rules do not claim MP3, M4B, or audio-embedded EPUB artifacts exist.
+- These rules do not promote any chapter core claim.
+- This rules file does not promote any support state.
+- These rules do not prove theorem validity, semantic adequacy, model quality,
+  deployment safety, or release readiness.
+"""
+    (output_dir / rules_path).write_text(text, encoding="utf-8")
+    return rules_path
 
 
 def write_chapter_markers(output_dir: Path, script_files: list[str]) -> str:
@@ -209,6 +267,8 @@ def write_audio_checklist(
 ) -> str:
     checklist_path = str(audio_policy.get("generated_checklist_path", "AUDIO_RELEASE_CHECKLIST.md"))
     companion_path = str(companion_policy.get("audio_companion_path", "companion_notes.md"))
+    pronunciation_path = str(audio_policy.get("pronunciation_glossary_path", "pronunciation_glossary.md"))
+    proof_rules_path = str(audio_policy.get("proof_equation_reading_rules_path", "proof_equation_reading_rules.md"))
     review_requirements = audio_policy.get("review_requirements", [])
     packaging_checks = audio_policy.get("audio_packaging_checks", [])
     spoken_rules = audio_policy.get("spoken_treatment_rules", [])
@@ -228,6 +288,8 @@ def write_audio_checklist(
         f"- Script files: {len(script_files)}",
         f"- Target audio artifacts: {', '.join(artifact_formats)}",
         f"- Companion notes: `{companion_path}`",
+        f"- Pronunciation glossary: `{pronunciation_path}`",
+        f"- Proof/equation reading rules: `{proof_rules_path}`",
         "",
         "## Required Gate",
         "",
@@ -269,6 +331,7 @@ def write_audio_checklist(
         "",
         "- [ ] Replace generated narration notes for tables, diagrams, images, code, and schemas with reviewed spoken text or companion-note references.",
         f"- [ ] Review `{companion_path}` before claiming MP3, M4B, or audio-embedded EPUB artifacts.",
+        f"- [ ] Review `{pronunciation_path}` and `{proof_rules_path}` before recording theorem IDs, equations, proof states, support states, or schema fields.",
         "- [ ] Treat each audio format as `target_not_generated` until the exact audio artifact is produced and checked.",
         "- [ ] Fill chapter markers with final timecodes after audio generation.",
         "- [ ] Spot-check audio against the reviewed script before listing MP3, M4B, or audio-embedded EPUB as produced.",
@@ -436,7 +499,14 @@ def generate(output_dir: Path) -> dict[str, object]:
             script_files.append(str(target.relative_to(output_dir)))
             treatment_summary[str(target.relative_to(output_dir))] = scan_audio_treatments(source_text)
 
-        write_pronunciation_glossary(output_dir)
+        pronunciation_glossary = write_pronunciation_glossary(
+            output_dir,
+            str(audio_policy.get("pronunciation_glossary_path", "pronunciation_glossary.md")),
+        )
+        proof_equation_rules = write_proof_equation_reading_rules(
+            output_dir,
+            str(audio_policy.get("proof_equation_reading_rules_path", "proof_equation_reading_rules.md")),
+        )
         chapter_markers = write_chapter_markers(output_dir, script_files)
         companion_notes = write_audio_companion_notes(output_dir, companion_policy, treatment_summary)
         review_checklist = write_audio_checklist(
@@ -468,7 +538,8 @@ def generate(output_dir: Path) -> dict[str, object]:
             "companion_treatment_summary": treatment_summary,
             "implementation_horizon_script_status": implementation_horizon_status,
             "implementation_horizon_script_records": implementation_horizon_records,
-            "pronunciation_glossary": "pronunciation_glossary.md",
+            "pronunciation_glossary": pronunciation_glossary,
+            "proof_equation_reading_rules": proof_equation_rules,
             "chapter_markers": chapter_markers,
             "audio_review_checklist": review_checklist,
             "audio_artifact_formats": audio_policy.get("audio_artifact_formats", []),
@@ -510,6 +581,22 @@ def main() -> None:
                 raise SystemExit("Audio script check failed: missing AUDIO_RELEASE_CHECKLIST.md.")
             if not (Path(temp_dir) / "chapter_markers.md").exists():
                 raise SystemExit("Audio script check failed: missing chapter_markers.md.")
+            pronunciation_glossary = str(manifest.get("pronunciation_glossary", "pronunciation_glossary.md"))
+            proof_equation_rules = str(
+                manifest.get("proof_equation_reading_rules", "proof_equation_reading_rules.md")
+            )
+            if not (Path(temp_dir) / pronunciation_glossary).exists():
+                raise SystemExit(f"Audio script check failed: missing {pronunciation_glossary}.")
+            proof_rules_path = Path(temp_dir) / proof_equation_rules
+            if not proof_rules_path.exists():
+                raise SystemExit(f"Audio script check failed: missing {proof_equation_rules}.")
+            proof_rules_text = proof_rules_path.read_text(encoding="utf-8", errors="ignore").lower()
+            for required_phrase in ("theorem id", "equation", "support state", "does not promote"):
+                if required_phrase not in proof_rules_text:
+                    raise SystemExit(
+                        "Audio script check failed: proof/equation reading rules "
+                        f"must mention {required_phrase!r}."
+                    )
             profile_data = build_reader_edition.load_release_profiles()
             companion_policy = profile_data.get("companion_material_policy", {})
             companion_path = str(

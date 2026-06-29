@@ -143,12 +143,12 @@ python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py
 ```
 
-Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md`, `build/audio_script/companion_notes.md`, `build/audio_script/chapter_markers.md`, and `build/audio_script/pronunciation_glossary.md`.
+Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md`, `build/audio_script/companion_notes.md`, `build/audio_script/chapter_markers.md`, `build/audio_script/pronunciation_glossary.md`, and `build/audio_script/proof_equation_reading_rules.md`.
 
 Before claiming any audio artifact:
 
 - Verify that `audio_manifest.json` reports a passing implementation-horizon script status for `Minimum Viable Implementation` and `Beyond the State of the Art`.
-- Replace generated table, diagram, image, schema, and code narration notes with reviewed spoken summaries or companion-note references.
+- Replace generated table, diagram, image, schema, proof, equation, and code narration notes with reviewed spoken summaries or companion-note references.
 - Spot-check audio against the reviewed script.
 - Verify chapter markers and metadata.
 - Verify that an audio-embedded EPUB actually contains the reviewed audio files.

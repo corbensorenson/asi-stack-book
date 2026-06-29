@@ -1053,6 +1053,17 @@ Acceptance bar:
 - audio scripts preserve implementation horizons and evidence boundaries;
 - visual assets have text equivalents or walkthrough notes.
 
+Current status:
+
+- `scripts/build_audio_script.py --check` generates 59 review-script files and
+  verifies that every chapter script preserves both implementation-horizon
+  sections.
+- The generated audio workspace now includes `pronunciation_glossary.md` and
+  `proof_equation_reading_rules.md`. The latter is a required review artifact
+  for theorem IDs, equations, support states, proof statuses, schema fields,
+  hashes, and negative controls; it does not approve narration or any audio
+  artifact.
+
 ### Milestone 9 - Prior Art, Preprints, And Archiving
 
 Goal: turn the book from a strong public project into a credible research
