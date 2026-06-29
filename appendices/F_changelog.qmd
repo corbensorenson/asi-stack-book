@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - Per-chapter external grounding roadmap
+
+- Updated `docs/v1_x_beyond_sota_roadmap.md` with a dedicated chapter-level
+  external-grounding and citation-backfill milestone. The new workstream starts
+  from the Corben papers already linked to each chapter, mines their
+  bibliographies and adjacent concepts first, then routes accepted third-party
+  records through `sources/source_inventory.json`, source notes, and generated
+  Appendix H.
+- Updated `docs/per_chapter_evidence_plan.md` and
+  `docs/a_plus_quality_scorecard.md` so every selected evidence lane must name
+  both its external-grounding status and its strongest proof/evidence path:
+  Lean, Project Theseus, Circle, source-noted literature, external review, or an
+  explicit no-promotion blocker.
+- Updated `scripts/sync_scaffold.py` and regenerated
+  `appendices/H_external_sources.qmd` so Appendix H carries the chapter-level
+  external-grounding policy without hand-editing the generated appendix.
+- This does not add new external source records, source notes, Lean proof
+  results, Project Theseus imports, Circle replay artifacts, support-state
+  transitions, reproduced external results, or chapter-core claim promotions.
+
 ## 2026-06-29 - A+ quality scorecard and trust-surface roadmap
 
 - Added `docs/a_plus_quality_scorecard.md` to translate current project grade

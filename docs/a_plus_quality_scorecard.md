@@ -18,6 +18,9 @@ A future A+ version should be:
 - legible in 60 seconds to a skeptical reader;
 - externally reviewed before it asks readers for belief;
 - deep on a few defended contributions, not shallow across 54 topics;
+- externally grounded chapter by chapter, so Corben-originated terms are
+  related to known literature, systems, standards, and benchmarks before they
+  are presented as architecture vocabulary;
 - evidence-backed through public-safe replay, CI-verifiable artifacts,
   source-noted literature, Lean invariants, or explicit no-promotion records;
 - readable as a human book while preserving the live AI/research book as the
@@ -32,11 +35,11 @@ A future A+ version should be:
 | Engineering system | Strong, but can feel like process for process's sake. | The validation system is framed as the main methodological contribution and is checked by external review. | Milestone 1.5 and Contribution Track 1 |
 | Core thesis | Sound but not obviously novel relative to compound/agentic systems. | The thesis is positioned as a synthesis architecture; novelty is claimed only for the specific mechanisms that survive prior-art review. | Milestone 6 and Milestone 9 |
 | Distinctive ideas | Many promising ideas compete for attention. | Three to five contribution tracks are selected and defended to real depth. | Contribution Track Selection |
-| Rigor and soundness | Internally coherent, but much is still argument-level. | Load-bearing claims have explicit formal, source, prototype, or review evidence; failed claims are demoted. | Milestones 2, 3, 4, 5 and Negative Outcomes |
+| Rigor and soundness | Internally coherent, but much is still argument-level. | Load-bearing claims have explicit formal, source, prototype, or review evidence; failed claims are demoted; each selected lane names a proof/evidence path or no-promotion blocker. | Milestones 2, 3, 4, 5, 5.5 and Negative Outcomes |
 | Evidence | Three narrow non-core transitions exist, but evidence remains thin. | At least one public-safe Theseus or Circle lane is CI-replayed or CI-verifiable, and selected chapter-adjacent claims have accepted transitions. | Milestones 3, 4, and v1.x release gate |
 | Formal rigor | Most Lean theorems are projection-style. | Safety-critical modules include derived/decomposed theorems, anti-projection conclusions, and negative cases. | Milestone 2 |
 | Human readability | Human view exists, but many chapters remain dense and spec-like. | A curated reader pilot reads like a book and preserves evidence boundaries. | Milestone 7 |
-| External grounding | External positioning exists, but literature was added late and unevenly. | Weak exceptions are replaced or justified; prior-art/novelty notes exist before preprints. | Milestone 6 and Milestone 9 |
+| External grounding | External positioning exists, but literature was added late and unevenly. | Every chapter has a source-noted external comparator, adjacent literature family, candidate backlog, or explicit exception; likely sources are mined first from the chapter's linked Corben-paper bibliographies. | Milestone 5.5, Milestone 6, and Milestone 9 |
 | Researcher/AI usefulness | Useful as a structured reference today. | Useful as a reproducible research program with selected defended contributions and clear open problems. | v1.x evidence release gate |
 | Field impact odds | Low until external review and defended results exist. | At least one external reviewer, one reproducible evidence lane, and one prior-art-reviewed contribution extraction exist. | Keystone set |
 
@@ -89,6 +92,8 @@ these facts visible quickly:
 - all 54 chapter core claims remain `argument`;
 - three bounded non-core transitions exist and are narrow;
 - Lean coverage is broad but still shallow in safety-critical areas;
+- external literature is an active grounding workstream, not a completed claim
+  that every chapter is already well-cited;
 - Project Theseus and Circle are related local/public projects, not independent
   third-party evidence unless imported through a public-safe replay lane;
 - external review is requested or pending;
@@ -99,4 +104,6 @@ these facts visible quickly:
 - This scorecard does not grade the project as an external authority.
 - This scorecard does not create external review, source-derived support,
   evidence transitions, proof results, reader artifacts, or release approval.
+- This scorecard does not add new external sources, source notes, proof results,
+  Theseus imports, or Circle replay artifacts.
 - This scorecard does not promote any chapter core claim above `argument`.

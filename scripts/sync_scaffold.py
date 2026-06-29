@@ -615,6 +615,20 @@ This page is the external-source appendix. It should be read as Appendix H only;
 | Excludes | Corben's own papers, Corben-supplied materials, recovered project records, and local project records; those belong in Appendix G. |
 | Evidence effect | Organizes outside context; it does not claim reproduced results or support-state promotion without a reproduction or accepted evidence transition. |
 
+## Chapter-Level External Grounding Policy
+
+Future citation backfill should start from the sources already attached to each
+chapter. Mine the linked Corben papers for bibliographies, footnotes, named
+algorithms, standards, benchmarks, outside systems, and adjacent research terms
+before broad search. Accepted third-party sources must be recorded in
+`sources/source_inventory.json` with `priority: external_literature`, receive a
+source note before prose use, and then appear here through scaffold generation.
+
+External citation can establish relation, prior art, vocabulary, and comparison.
+It does not by itself claim reproduced experiments, local verification, Lean
+proof, Project Theseus replay, Circle receipt, support-state promotion, or
+complete literature coverage.
+
 ## Source-Noted External Literature Records
 
 | Source ID | Title | Citation or primary record | Layer | Current use | Source-note state | Notes |

@@ -37,6 +37,9 @@ It should retire the important IOUs:
   projection-only traceability;
 - the bounded non-core evidence transitions need to be easy to discover without
   implying chapter-core promotion;
+- every chapter needs a real external-grounding pass so Corben-originated
+  nomenclature is related to known papers, standards, benchmarks, and adjacent
+  systems before readers are asked to accept the stack vocabulary;
 - Project Theseus and Circle evidence need public-safe replay paths rather than
   local-only summaries;
 - the human-reader edition needs to become a true edited book, not only a strip
@@ -73,6 +76,7 @@ not be quoted in the book as an external authority.
 | P0 | Safety-critical Lean depth is still shallow. | `docs/proof_depth_classification.md` records 139 theorem declarations, 112 direct/projection-style, 27 derived/decomposed, and all 10 theorem declarations in `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` as direct/projection-style. | Make those five modules the first formal-depth workstream. The goal is not more theorem count; it is richer state, transitions, negative cases, and derived invariants. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 54 chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
+| P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 10 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes. | Replace weak exceptions where external baselines exist. Keep true author-system exceptions, but state why they are exceptions and what would count as a comparable external reference. |
 | P1 | Circle evidence is real but not public-replayable enough. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, but the ASI repo does not rerun the external checkout in CI and does not vendor a public replay pack. | Create a public-safe Circle replay fixture, receipt contract pack, or archived evidence bundle that CI can verify by replay or digest. |
@@ -95,6 +99,16 @@ not be quoted in the book as an external authority.
   evidence.
 - External literature should be source-noted before it is used in chapter prose
   or claim support.
+- External-source backfill starts from the sources already attached to each
+  chapter: mine the bibliographies, footnotes, citations, and adjacent terms in
+  the linked Corben papers before broad web searching.
+- Appendix H is generated from `sources/source_inventory.json`; do not hand-add
+  citations directly to the generated appendix. Add external records, source
+  notes, and chapter targets first, then regenerate the scaffold.
+- Every load-bearing argument needs a visible evidence path: Lean, Project
+  Theseus, Circle, source-noted external literature, external review, or an
+  explicit no-promotion blocker. A path is not a proof until the artifact exists
+  and the relevant validator or review record passes.
 - The human-reader manuscript may change pacing, examples, openings, closings,
   and chapter flow, but it must not change claim meaning, support state, source
   boundary, proof/test status, or implementation horizon.
@@ -138,12 +152,15 @@ is:
    promotion;
 3. solicit at least one external human review of the safety-critical and
    support-state surfaces;
-4. select three to five defended contribution tracks and push at most three in
+4. add a chapter-level external-grounding lane that mines each chapter's linked
+   Corben papers for outside citations, records vetted third-party sources in
+   Appendix H, and marks any genuine comparator gaps;
+5. select three to five defended contribution tracks and push at most three in
    the next cycle;
-5. deepen the five safety-critical Lean modules using anti-projection criteria;
-6. make one Project Theseus or Circle evidence lane public-safe and
+6. deepen the five safety-critical Lean modules using anti-projection criteria;
+7. make one Project Theseus or Circle evidence lane public-safe and
    CI-reproducible or CI-verifiable by archived digest;
-7. execute only 5-8 per-chapter evidence lanes from
+8. execute only 5-8 per-chapter evidence lanes from
    `docs/per_chapter_evidence_plan.md`, selected for evidential payoff.
 
 Dependency order:
@@ -152,7 +169,8 @@ Dependency order:
 - Milestones 2, 3, and 4 should use the external-review result if it arrives
   before implementation begins.
 - Milestone 5 depends on the selection rules and should not start as a
-  top-to-bottom sweep.
+  top-to-bottom sweep; Milestone 5.5 can start as a source-discovery pass, but
+  citations still require source notes before prose use.
 - Milestones 7 and 8 are downstream of reader-prose review and should not
   produce final artifacts before curated prose or release records exist.
 - Milestone 9 preprints should wait for prior-art/novelty checks and at least
@@ -172,7 +190,7 @@ internal activity alone.
 | Routing/resource efficiency | One bounded synthetic selector slice; below real routing SOTA and no deployed scheduler evidence. | Extend only if a public fixture or trace includes baseline, negative control, quality/adequacy, cost, residuals, and replay. |
 | Compression/representation | Mostly architecture and source synthesis; Circle receipt is structural, not model-quality evidence. | Add one narrow artifact-compression, representation-preservation, or proof-contract lane with negative controls before stronger claims. |
 | Human/AI dual-edition publishing | Unusual and promising scaffold with reviewed reader HTML; not yet a polished human book or audio edition. | Graduate selected reader chapters into curated prose and approve artifacts only through exact release records. |
-| External literature/novelty | Placement gate passes, but some exceptions and novelty questions remain. | Replace weak exceptions, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
+| External literature/novelty | Placement gate passes, but some exceptions and novelty questions remain; some chapters still read as Corben-originated nomenclature before readers see the related outside literature. | Build a per-chapter external-grounding pack, starting from citations inside the chapter's linked Corben papers, then replace weak exceptions, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
 
 ## Defended Contribution Tracks
 
@@ -417,6 +435,10 @@ Selection rule:
 - prefer lanes that can reject negative controls, not merely accept happy paths;
 - prefer lanes that reduce self-sourcing by importing public Theseus/Circle
   artifacts, external review, or source-noted prior art;
+- require every selected lane to name the strongest current proof/evidence path
+  for its load-bearing claim: Lean theorem, Theseus replay/report, Circle
+  receipt, external literature, external review, or explicit no-promotion
+  blocker;
 - do not execute a lane only because it appears early in manifest order.
 
 Acceptance bar:
@@ -429,6 +451,60 @@ Acceptance bar:
 - unexecuted lanes do not create fixtures, pass/fail claims, or support-state
   pressure.
 
+### Milestone 5.5 - Chapter External Grounding And Citation Backfill
+
+Goal: make every chapter credible to readers who already know the surrounding
+AI, formal-methods, governance, distributed-systems, or machine-learning
+literature.
+
+This milestone is about relation and citation first, not support-state
+promotion. It should make clear which ASI Stack terms are Corben's synthesis
+vocabulary and which outside ideas, papers, standards, or systems they connect
+to.
+
+Tasks:
+
+- For each chapter, load the chapter's `source_ids` from `book_structure.json`
+  and its source queue from `docs/book_outline.md`.
+- Mine the linked Corben papers first for bibliographies, footnotes, citation
+  lists, named algorithms, standards, benchmarks, systems, and neighboring
+  research terms.
+- For every candidate external source, decide whether it is:
+  - a direct comparator or baseline;
+  - a prior-art source for an old idea used by the chapter;
+  - a neighboring concept that helps readers orient;
+  - a future-review lead that should stay in backlog;
+  - out of scope or too weak to cite.
+- Add accepted third-party sources through `sources/source_inventory.json` with
+  `priority: external_literature`, stable IDs, bibliographic metadata where
+  known, chapter targets, and public-safe URLs.
+- Create or update `sources/source_notes/<source-id>.md` before using the source
+  in prose or claim-support language.
+- Regenerate Appendix H with `python3 scripts/sync_scaffold.py`; do not edit the
+  generated appendix by hand.
+- Update chapter source crosswalks and external-SOTA positioning only after the
+  source note exists.
+- For each chapter, record at least one source-noted external comparator,
+  baseline, adjacent literature family, or explicit no-fair-comparator
+  exception.
+- Connect each load-bearing argument to at least one intended evidence path:
+  Lean proof, Project Theseus report/replay, Circle receipt, source-noted
+  literature, external review, or no-promotion blocker.
+
+Acceptance bar:
+
+- every chapter has a chapter-level external-grounding status: `source-noted`,
+  `candidate backlog`, or `explicit exception`;
+- Appendix H contains every accepted third-party source through generated
+  inventory rows, and Appendix G remains Corben/local only;
+- no new citation appears in chapter prose without a source note or recorded
+  blocker;
+- no external source is treated as reproduced, locally verified, or
+  support-state-promoting unless a separate evidence-transition record justifies
+  that move;
+- the per-chapter evidence plan names proof/evidence routes rather than leaving
+  claims as pure prose.
+
 ### Milestone 6 - External-SOTA Exception Replacement
 
 Goal: move from "placement gate passes" to "external engagement is strong
@@ -436,6 +512,7 @@ enough for serious readers."
 
 Tasks:
 
+- Use the chapter external-grounding pass as the candidate source pool.
 - Review the 10 exception chapters from
   `docs/external_sota_positioning_audit.md`.
 - For each exception, choose one:
@@ -603,6 +680,8 @@ explicitly passed or explicitly scoped out in a release record.
 | Safety-critical Lean depth | Five targeted modules include `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases, or a release record explicitly keeps them projection-only. | Formal layer remains v1.0-depth. |
 | Public replay/import | At least one Theseus or Circle lane is CI-replayed or CI-verifiable by pinned digest with negative controls. | Imported evidence remains local-summary only. |
 | Chapter-lane cap | The release names 5-8 executed chapter lanes and leaves the rest planned; no 54-lane synthetic sweep is claimed. | Breadth trap not controlled. |
+| Per-chapter external grounding | Every chapter has source-noted external comparators, candidate backlog, or an explicit exception; accepted third-party records appear in generated Appendix H. | The book still reads as self-sourced nomenclature. |
+| Proof/evidence coverage | Each executed lane names whether its strongest evidence path is Lean, Theseus, Circle, external literature, external review, or an explicit no-promotion blocker. | Arguments remain prose-only without a testable support route. |
 | External-SOTA distance | The release updates distance from SOTA, not only internal activity. | "Beyond-SOTA" remains unaudited. |
 | Negative-outcome handling | Failed, demoted, refuted, merged, or retired lanes are recorded instead of hidden. | Evidence process is monotonic and biased. |
 | Human-reader quality | Curated reader pilot or explicit deferral exists; any released artifact has an exact release record. | Human edition remains a generated projection only. |
@@ -612,17 +691,17 @@ explicitly passed or explicitly scoped out in a release record.
 
 | Target | Position vs SOTA | Minimum bar |
 |---|---|---|
-| `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Sixty-second trust surface exists; non-core evidence ledger visible; early external review requested or recorded; defended contribution tracks selected; per-chapter evidence plan split out with 5-8 lane cap; safety-critical proof specs include anti-projection and negative-case criteria. |
+| `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Sixty-second trust surface exists; non-core evidence ledger visible; early external review requested or recorded; defended contribution tracks selected; per-chapter evidence plan split out with 5-8 lane cap; chapter-level external-grounding workflow defined; safety-critical proof specs include anti-projection and negative-case criteria. |
 | `v1.2` | Moves formal layer from projection-heavy traceability toward lightweight state-specification practice for safety-critical modules. | Five safety-critical modules gain `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases; first public-safe Theseus or Circle lane is CI-replayed or CI-verifiable by digest. |
 | `v1.3` | Moves reader surface from generated projection toward a curated human manuscript while preserving live-book evidence authority. | Curated reader manuscript covers a coherent pilot arc or explicitly defers with blockers; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
-| `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; 5-8 selected chapter lanes have executed evidence or explicit no-promotion decisions; core claims promote only where evidence-transition records justify it. |
+| `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; 5-8 selected chapter lanes have executed evidence or explicit no-promotion decisions; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
 | `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger Lean envelopes, prior-art-reviewed preprints, and DOI/archive metadata exist. |
 
 ## Suggested Long-Running Goal
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, replace weak external-SOTA exceptions where source-noted literature exists, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
+> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, mine every chapter's linked Corben papers for external citations and adjacent literature, add accepted third-party sources through `sources/source_inventory.json`, source notes, and generated Appendix H, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, ensure every selected lane names its strongest proof/evidence path or no-promotion blocker, replace weak external-SOTA exceptions where source-noted literature exists, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
 
 ## Non-Claims
 
@@ -630,6 +709,9 @@ Use this wording when it is time to start the next large autonomous work run:
 - This roadmap does not prove ASI capability, model quality, runtime safety,
   deployment readiness, benchmark performance, economic outcome, source
   interpretation, or transfer.
+- This roadmap does not add new external sources, prove every argument, or
+  promote citation candidates into evidence before source notes and transition
+  records exist.
 - This roadmap does not create a public-safe Project Theseus import, public
   Circle replay pack, EPUB, PDF, DOCX, audio artifact, DOI, Zenodo archive, or
   external review record.

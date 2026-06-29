@@ -19,12 +19,25 @@ Selection criteria:
 - the evidence reduces self-sourcing through external review, external
   literature, public Theseus/Circle artifacts, or CI-verifiable archived
   fixtures;
+- the lane names the chapter's current or needed external-grounding status:
+  source-noted comparator, candidate backlog, or explicit exception;
+- the lane names the strongest intended proof/evidence path for its
+  load-bearing argument: Lean, Project Theseus, Circle, source-noted literature,
+  external review, or explicit no-promotion blocker;
 - the work can produce a narrow evidence transition without implying broad ASI,
   model-quality, safety, benchmark, transfer, or deployment claims.
 
 Support-state rule: this plan does not promote any chapter core claim above
 `argument`. A support-state change requires an accepted evidence-transition
 record.
+
+External-grounding rule: before adding new outside citations to chapter prose,
+mine the chapter's linked Corben papers for bibliographies, footnotes, named
+systems, algorithms, standards, and adjacent terms. Accepted third-party sources
+must enter through `sources/source_inventory.json`, receive a source note, and
+then appear in generated Appendix H. External citation can contextualize an
+argument, but it is not a Lean proof, Project Theseus replay, Circle receipt, or
+support-state transition by itself.
 
 | Part | Chapter | Primary evidence lane | Formal/prototype work | Human-reader focus | Acceptance bar before support-state change |
 |---|---|---|---|---|---|
