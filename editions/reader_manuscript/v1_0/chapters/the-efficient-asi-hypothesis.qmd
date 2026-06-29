@@ -1,0 +1,155 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: the-efficient-asi-hypothesis
+generated_baseline_ref: build/reader_edition/chapters/the-efficient-asi-hypothesis.qmd
+live_source_ref: chapters/the-efficient-asi-hypothesis.qmd@a5583f1e
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# The Efficient ASI Hypothesis
+
+Once ASI is described as a stack instead of a single model, the next question is economic. Not economic in the narrow sense of dollars, but in the broader engineering sense: where should scarce cognition be spent, where should previous work be reused, and where should unfinished work remain visible instead of being hidden inside a fluent answer?
+
+The efficient ASI hypothesis is easy to misunderstand. It is not the claim that small models are enough, that scale is wasteful, or that advanced intelligence can be obtained by being cheap. A cheap system can be brittle. A powerful system can be wasteful. A benchmark win can be real capability, or it can be a bill that moved from inference into context construction, human repair, verification, or hidden retries.
+
+The hypothesis is about allocation. A governed stack should spend the smallest adequate cognition for the current contract, but only when adequacy is recorded, residual obligations remain visible, and stronger fallback routes stay available. Efficiency is not thrift by itself. Efficiency is disciplined accounting over quality, cost, authority, verification, and residual burden.
+
+## Problem
+
+The stack needs a theory of capability growth that does not reduce every design decision to "use a bigger model" or "use a cheaper model." Both instincts fail when they become automatic.
+
+If every task is sent to the largest available model with the widest possible context, the system may look competent while consuming verification budget, repeating work that should have become durable, and making every future decision depend on an expensive route. The output might be good, but the system has not learned how to preserve the work. It has spent cognition without turning the expenditure into an artifact, a regression, a tool, a memory, or a proof obligation.
+
+If every task is sent to the cheapest available route, the system may look efficient while silently dropping constraints that only a stronger verifier, richer context packet, specialist route, or human review could preserve. Low cost can be a virtue only after the system proves that the cheaper route satisfied the task's quality predicate under the relevant authority ceiling. Without that record, cheapness is just a measurement of what was visible.
+
+So the problem is not scale versus smallness. The problem is the absence of a route record that explains why a given amount of cognition was enough. The route has to say what contract it served, what quality predicate it preserved, what authority ceiling constrained it, which cheaper routes were rejected or unavailable, what verification was performed, what residual burden remains, and what fallback exists if the result later fails.
+
+## Why Scale Alone Is Not Enough
+
+Parameter count does not explain routing, context selectivity, procedural memory, compression, runtime targeting, or verification effort. It tells us something important about a model's capacity, but it does not tell us whether a task needed that capacity, whether a lower-cost route would have met the same predicate, or whether the apparent gain survived the cost of verification and repair.
+
+The live chapter uses external work as positioning, not as proof that this stack is implemented. Sparse mixture-of-experts work such as `ext_sparse_moe_2017` gives useful vocabulary for conditional computation. FrugalGPT-style routing in `ext_frugalgpt_2023` frames query-dependent cost-quality tradeoffs. BIG-bench in `ext_bigbench_2022` shows why broad task suites create pressure around capability claims. Those records help locate the problem. They do not reproduce an ASI Stack efficiency result inside this repository.
+
+The route ledger plays the same role for efficiency that the claim ledger plays for belief. Without a record, success is ambiguous. A useful answer might have come from a wise route, an overpowered route, a brittle shortcut, an uncounted human correction, an uncounted context-construction step, or a repair stream that costs more than the route saved. The ledger is the receipt that distinguishes a genuine saving from a displaced cost.
+
+Self-improving systems make this discipline more important. If a system can rewrite prompts, compile tools, cache procedures, add specialists, tune routing policy, or compress artifacts, it can also make its own efficiency look better by moving costs out of view. A governed stack has to block that move. Verification, fallback, repair, human review, regression maintenance, and residual obligations stay attached to the route that made them necessary.
+
+## Core Claim
+
+Capability improves when cognition is routed, compressed, reused, governed, and tested with visible residuals (evidence boundary: architectural argument).
+
+The live book keeps this claim at `argument` support. RMI supplies the ratchet vocabulary: solved work should become durable, and unsolved work should become residual pressure rather than narrative success. CGS supplies the smallest-adequate-structure vocabulary. BBVCA and RankFold/NeuralFold supply compression and repair vocabulary. Simulation Scaling keeps feasibility tied to scope and fidelity. Aletheia, BeastBrain, and MoECOT supply risk-weighted verification, local memory, specialist-lane, readiness-gate, and route-ledger language. None of those source notes is a reproduced efficiency benchmark here.
+
+The reader should leave this chapter with one promise: efficiency is not being treated as an impression. It is being turned into a record that can be challenged.
+
+## Mechanism
+
+The mechanism is a costed route ledger around a minimum-viable-intelligence decision.
+
+```{mermaid}
+flowchart LR
+  A["Task contract"] --> B["Quality predicate"]
+  A --> C["Authority ceiling"]
+  B --> D["Capability profile"]
+  C --> D
+  D --> E{"Lowest authorized route<br/>that can satisfy predicate?"}
+  E -- "yes" --> F["Small route"]
+  E -- "no" --> G["Escalated specialist / human route"]
+  F --> H["Artifact"]
+  G --> H
+  H --> I["Verification"]
+  I -- "pass" --> J["Regression / tool / memory candidate"]
+  I -- "partial or fail" --> K["Residual + fallback route"]
+  K --> D
+```
+
+The ledger starts before any model is chosen. It begins with the task contract, the quality predicate, and the authority ceiling. Only then can the system ask which route is the lowest authorized route that can satisfy the predicate.
+
+That ordering matters. A cheap route is valid only after the contract tells us what "good enough" means. A powerful route is justified only when cheaper authorized routes are absent, fail the predicate, or would create too much residual burden. A compressed route counts only after verification and repair expose what the compact representation did not carry.
+
+The output is not a vague instruction to use the cheapest model. It is a reviewable decision. The record says which route was selected, which lower-cost routes were rejected, what verification found, what residual obligations remain, and whether the result can become a candidate for a tool, memory, regression, specialist arm, or capability field.
+
+This is how the stack turns repeated cognition into durable progress. Solved work should not be paid for forever. It should harden into artifacts, tests, procedural memory, schemas, route policies, or proofs. Unsolved work should not disappear behind a confident answer. It should become residual escrow: a visible obligation that future planning, verification, or human review can pick up.
+
+## Route Outcomes
+
+The route ledger needs more than pass and fail. It needs states that keep useful work, efficient work, brittle work, hidden-cost work, and unsafe work from collapsing into the same success label.
+
+An `adequate_minimum` route is the strong case. The selected route satisfied the predicate, lower-cost authorized candidates were absent or failed, and residuals were recorded. That result can become a candidate for reuse, but even then it remains a candidate until the relevant review accepts it.
+
+An `adequate_overkill` route is useful but not an efficiency result. The answer may pass, but the system did not examine or record a lower-cost route. It can use the output while refusing to claim that the route was efficient.
+
+A `cheap_brittle` route is the opposite failure. It saves visible cost while failing quality, verification, or residual checks. The correct response is residual escrow and fallback work, not a congratulatory cost report.
+
+A `hidden_cost` route passes only because repair, verification, context construction, retry, or human review was left outside the bill. This is efficiency laundering: the system moves the expensive part out of the accounting surface and then reports the visible route as cheap.
+
+An `unsafe_saving` route is blocked outright. Saving cost by bypassing authority, approval, verification, rollback, or review is not efficiency. It is a permission leak wearing an economic label.
+
+These states are not benchmark results. They are accounting categories. They let a future implementation report value without overstating efficiency, and report efficiency only after the work that made the route acceptable is visible in the same record.
+
+## Interfaces
+
+Efficiency decisions travel through the Costed Route Record.
+
+Planning supplies the task contract and quality predicate. Routing proposes candidate routes. Governance checks authority ceilings. Execution produces the artifact. Evidence decides whether the cost-quality result survived review. Any open obligation remains attached to the route record instead of being hidden in the next layer.
+
+At minimum, the record needs:
+
+- `task_id`
+- `route_state`
+- `task_contract_ref`
+- `quality_predicate`
+- `authority_ceiling`
+- `candidate_routes`
+- `selected_route`
+- `rejected_lower_cost_routes`
+- `verification_result`
+- `outcome_state`
+- `cost_accounting`
+- `cost_classes`
+- `hidden_cost_checks`
+- `residual_obligations`
+- `fallback_route`
+- `promotion_candidate`
+- `support_state_effect`
+- `non_claims`
+
+The cost classes matter because different layers can optimize different meters while making the whole system worse. A router can reduce model tokens by increasing context-packaging burden. A compressor can reduce storage while increasing repair. A policy update can reduce latency while increasing human review. A benchmark harness can reward a faster path while residual obligations grow. Total-contract accounting counts the whole route, not only the cheapest visible meter.
+
+## Invariants And Failure Modes
+
+The central invariant is comparison. A route is minimum viable only relative to a declared quality predicate, authority ceiling, and candidate set. If a lower-cost route was not tried, was unauthorized, failed the predicate, or was omitted from the record, the system should say so. If it cannot reconstruct the comparison, the efficiency claim stays at design rationale rather than measurement.
+
+Efficiency claims include quality and cost. Compression exposes residuals. Fallback routes remain available. Verification and repair costs stay attached to the route that made them necessary. No route may be called efficient by bypassing authority or approval gates.
+
+The main failure modes follow from broken accounting. Cheap inference can be mistaken for intelligence. Critical context can be compressed away. A benchmark gain can increase hidden residual burden. Frontier-model overuse can hide the fact that no reusable capability was built. A shortcut can look efficient because the expensive human correction happens later, elsewhere, and under another name.
+
+The remedy is not a slogan about scale. It is a record that keeps quality, cost, residual, fallback, and authority coupled.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a `costed_route_record` schema plus valid fixtures. That does not prove empirical efficiency. It proves only that the project can represent the decision boundary it wants future systems to test.
+
+The first serious fixture should compare three routes: a cheap route rejected because verification fails, an expensive route accepted because it satisfies the predicate, and a compressed route blocked because repair burden exceeds savings. Passing that fixture would still show accounting discipline only. It would not show that cheaper cognition preserves downstream utility in the world.
+
+The live repository already has a protocol fixture and Lean predicates that cover narrow record-level gates. Those surfaces do not prove route-search completeness, cost-estimate accuracy, quality evaluation, measured efficiency, or compression utility. They show that the book has a place to put honest evidence when stronger evidence exists.
+
+## Beyond The State Of The Art
+
+The mature endpoint is an operating system for cognition. It routes, compresses, reuses, verifies, and accounts for work so capability grows by removing waste and preserving residuals, not by assuming that more parameters or more tokens are the only path forward.
+
+In that end state, a task does not merely ask for an answer. It asks for the smallest authorized route that can satisfy the predicate under the current risk, authority, and verification constraints. Repeated work turns into durable artifacts. Compression carries repair contracts. Specialist lanes compete under readiness gates. Benchmarks measure not only visible score but residual burden, hidden cost, fallback cost, and regression survival.
+
+That endpoint has not been implemented or validated by this book. The efficient-ASI claim remains architectural until route ledgers, lower-cost comparison traces, residual-accounting tests, hidden-cost audits, and quality-cost benchmarks show that cheaper cognition actually preserves the predicates it claims to preserve.
+
+## Summary
+
+The efficient path to advanced capability is an economy of cognition. Capability grows when work can move to the smallest adequate route, solved work can be reused, lawful structure can be compressed without hiding repair cost, and fallback routes remain available when the cheap path is not enough.
+
+The discipline is accounting. A route is not efficient because it is small, fast, or elegant. It is efficient when the record shows what quality predicate it satisfied, what it cost, which alternatives were rejected, what residual remains, and what fallback is available. That requirement keeps efficiency tied to evidence instead of aesthetic compression. It also keeps cheap cognition from becoming an authority leak.
+
+## Handoff
+
+Efficiency only helps if the system knows where permission stops. System Boundaries and Authority takes the route ledger's quality and cost discipline and adds the control question this chapter has mostly held constant: which principal, layer, grant, lease, or ceiling authorizes the action? The book has now separated the stack from the model and efficient cognition from brute force. Authority accounting prevents efficient routes from becoming permission leaks.
