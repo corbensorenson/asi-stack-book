@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 155 |
+| Theorem declarations classified | 158 |
 | Direct/projection-style theorem declarations | 112 |
-| Derived/decomposed theorem declarations | 43 |
+| Derived/decomposed theorem declarations | 46 |
 | Unknown or mixed theorem declarations | 0 |
-| Safety-critical theorem declarations | 26 |
+| Safety-critical theorem declarations | 29 |
 | Safety-critical direct/projection declarations | 10 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -34,7 +34,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | `lean/AsiStackProofs/Corrigibility.lean` | agency-dignity-and-corrigibility | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/GovernanceRights.lean` | governance-rights-fork-exit-and-audit | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 2 | 5 | 2 | 3 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
 
@@ -103,7 +103,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/Tribunal.lean` | unified-adaptive-tribunal-and-adversarial-review | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 3 | 2 | 1 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | virtual-context-abi | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 
@@ -259,8 +259,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Tribunal.lean` | `tribunal_verdict_includes_roles_evidence_and_unresolved_dissent` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobs.lean` | `job_requiring_approval_cannot_run_without_approval` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `recorded_valid_job_transition_uses_declared_lifecycle_relation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `decision_with_unresolved_protected_conflict_carries_residual_record` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_conflict_cannot_bypass_required_review` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_unresolved_conflict_without_residual_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_conflict_without_authority_narrowing_routes_to_narrowing` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_high_stakes_conflict_without_revisit_path_is_blocked` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `admitted_context_packet_may_still_be_marked_inadequate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `high_risk_claim_with_inadequate_context_cannot_receive_verified_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

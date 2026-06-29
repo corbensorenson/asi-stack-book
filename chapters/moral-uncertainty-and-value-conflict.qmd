@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `ethica_mechanica`, `alignment_field`; supporting: `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `ethica_mechanica`, `alignment_field`, `uat`, `spinoza`; passage-reviewed tracked local project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
-| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates plus a derived revisit-path theorem for unresolved high-stakes conflict; `python3 scripts/validate_value_conflicts.py` passes synthetic value-conflict fixtures for classification, review escalation, residual uncertainty, authority narrowing, dissent, and bounded-decision boundaries without proving moral correctness or deployed runtime policy behavior. |
+| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates plus derived finite-record review gates for missing revisit paths, missing residual uncertainty, bounded decisions that drop dissent, and unresolved conflicts without authority narrowing; `python3 scripts/validate_value_conflicts.py` passes synthetic value-conflict fixtures for classification, review escalation, residual uncertainty, authority narrowing, dissent, and bounded-decision boundaries without proving moral correctness, reviewer quality, or deployed runtime policy behavior. |
 
 ## Drafting guardrail
 
@@ -228,11 +228,11 @@ This value-conflict ledger is still a design target. The moral-conflict layer st
 | Test | Purpose | Status |
 |---|---|---|
 | Value conflict record validation | Check that the conflict fixture matches the public schema. | implemented by protocol validation; validated locally |
-| Value conflict classification test | Check that stakeholders, value axes, stakes, and reversibility are recorded. | planned; not run |
-| Decision-state routing test | Check that unresolved, bounded, escalated, deferred, denied, and deprecated-premise states produce distinct authority effects. | planned; not run |
-| Review escalation test | Check that high-stakes unresolved conflicts route to tribunal or human review. | planned; not run |
-| Dissent preservation test | Check that bounded decisions retain dissent payloads and unsupported premises rather than laundering them away. | planned; not run |
-| Residual uncertainty preservation test | Check that unresolved moral uncertainty survives the decision record. | planned; not run |
+| Value conflict classification test | Check that stakeholders, value axes, stakes, and reversibility are recorded. | modeled by synthetic fixtures; classification quality not run |
+| Decision-state routing test | Check that unresolved, bounded, escalated, deferred, denied, and deprecated-premise states produce distinct authority effects. | partially modeled by finite Lean authority-narrowing theorem and synthetic fixtures; deployed policy routing not run |
+| Review escalation test | Check that high-stakes unresolved conflicts route to tribunal or human review. | modeled by finite Lean high-stakes review/residual gates and synthetic fixtures; real review quality not run |
+| Dissent preservation test | Check that bounded decisions retain dissent payloads and unsupported premises rather than laundering them away. | modeled by finite Lean dissent-residual theorem and synthetic fixtures; deployed dissent preservation not run |
+| Residual uncertainty preservation test | Check that unresolved moral uncertainty survives the decision record. | modeled by finite Lean residual/revisit-path theorems and synthetic fixtures; moral correctness not run |
 
 ### Formalization hooks
 
@@ -241,7 +241,7 @@ This value-conflict ledger is still a design target. The moral-conflict layer st
 | `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
 | `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
 
-These Lean hooks still include projection-only traceability for v1.0 and must remain explicitly scoped. The v1.x Value Conflict follow-through adds one derived finite-record theorem, `unresolved_high_stakes_conflict_without_revisit_path_is_blocked`, over a value-conflict decision envelope: if a conflict is high stakes, unresolved, and has no recorded revisit path, the safe route must be `blockedForReview`. The older theorem bodies still project conclusions from assumed review predicates, and the new theorem is still a small record-level gate. Together they prove only that the modeled record shape can express unresolved-conflict residuals, high-stakes review blocking, and revisit-missing blocking for a declared value-conflict decision. They do not settle moral uncertainty, classify values automatically, prove reviewer quality, validate a real escalation process, or show that any deployed policy preserves dissent.
+These Lean hooks still include projection-only traceability for v1.0 and must remain explicitly scoped. The v1.x Value Conflict follow-through adds two finite envelopes. `ValueConflictDecision` supports `unresolved_high_stakes_conflict_without_revisit_path_is_blocked`: if a conflict is high stakes, unresolved, and has no recorded revisit path, the safe route must be `blockedForReview`. `ValueConflictReviewDecision` records phase, high-stakes status, unresolved conflict, stakeholder disagreement, review presence, residual uncertainty, dissent preservation, bounded decision state, authority narrowing, reversibility, revisit path, deprecated-premise state, and review route. Its derived review theorems are `high_stakes_unresolved_conflict_without_residual_blocks`, `bounded_decision_without_dissent_preserves_residual`, and `unresolved_conflict_without_authority_narrowing_routes_to_narrowing`. Together they prove only that the modeled record shapes can express unresolved-conflict residuals, high-stakes review blocking, revisit-missing blocking, bounded-decision dissent residualization, and authority narrowing for declared value-conflict decisions. They do not prove moral uncertainty is settled, values are classified correctly, reviewer quality exists, a real escalation process works, dissent is preserved in a deployed policy, stakeholders are represented, authority narrowing executes in runtime, or any tribunal process is substantively fair.
 
 ## Source crosswalk
 

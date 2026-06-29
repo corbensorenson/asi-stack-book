@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-06-29 - Value-conflict review proof depth
+
+- Strengthened `lean/AsiStackProofs/ValueConflict.lean` with
+  `ValueConflictReviewDecision`, a finite value-conflict review envelope that
+  records phase, high-stakes conflict, unresolved conflict, stakeholder
+  disagreement, review presence, residual uncertainty, dissent preservation,
+  bounded decision state, authority narrowing, reversibility, revisit path,
+  deprecated-premise state, and routed outcome.
+- Added three derived/decomposed review theorems:
+  `high_stakes_unresolved_conflict_without_residual_blocks`,
+  `bounded_decision_without_dissent_preserves_residual`, and
+  `unresolved_conflict_without_authority_narrowing_routes_to_narrowing`, plus
+  explicit negative-case records for missing residual uncertainty, bounded
+  decisions that drop dissent, and unresolved conflicts without authority
+  narrowing.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 158
+  theorem declarations, 46 derived/decomposed declarations, 29
+  safety-critical declarations, and four derived/decomposed theorems inside
+  the safety-critical Value Conflict module while 10 safety-critical
+  direct/projection declarations remain.
+- Updated the Moral Uncertainty and Value Conflict chapter,
+  `docs/proof_adequacy_review.md`, the v1.x roadmap, and the v1.0 status
+  snapshot so the new review proof work is presented as a narrow finite-record
+  envelope, not moral-correctness proof, automatic value classification,
+  reviewer-quality proof, stakeholder-representation proof, runtime authority
+  narrowing, deployed dissent preservation, or support-state promotion.
+- This does not promote any chapter core claim, prove deployed value-conflict
+  handling, validate a real tribunal or escalation process, reproduce external
+  moral-uncertainty results, or approve any reader/release artifact.
+
 ## 2026-06-29 - Governance-rights preservation proof depth
 
 - Strengthened `lean/AsiStackProofs/GovernanceRights.lean` with
