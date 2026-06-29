@@ -12,6 +12,7 @@ DRY_RUN_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_dry_run_constitutiona
 DRY_RUN_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_dry_run_contestable_governance.md"
 DESTINATION_DRAFT_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_destination_draft_constitutional_alignment.md"
 DESTINATION_DRAFT_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_destination_draft_contestable_governance.md"
+URL_HISTORY_POLICY = ROOT / "docs" / "chapter_consolidation_url_history_policy.md"
 EXTERNAL_REVIEW_PACKET = ROOT / "docs" / "chapter_consolidation_external_review_packet.md"
 DECISION_REVIEW = ROOT / "docs" / "chapter_consolidation_decision_review.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
@@ -77,7 +78,7 @@ REQUIRED_FRAGMENTS = (
     "Dry-Run Merge Package",
     "proposed `book_structure.json` diff for only one destination chapter",
     "Appendix C row plan",
-    "URL, redirect, and retired-file policy",
+    "URL, redirect, retired-file, and chapter-history treatment",
     "validation commands and expected generated-file updates",
     "Run `python3 scripts/chapter_adjacency_report.py",
     "Do not merge any Circle, coil, Theseus, execution-artifact, or recursive",
@@ -180,7 +181,8 @@ CONTESTABLE_DRY_RUN_REQUIRED_LEAN_TAGS = {
 }
 DECISION_REVIEW_REQUIRED_FRAGMENTS = (
     "Decision: defer manifest consolidation until review and public URL/history",
-    "policy unblock it.",
+    "docs/chapter_consolidation_url_history_policy.md",
+    "no retired URL redirect or historical stub has been implemented",
     "does not edit `book_structure.json`",
     "does not authorize a",
     "merge, and does not approve a reader artifact.",
@@ -194,6 +196,17 @@ DECISION_REVIEW_REQUIRED_FRAGMENTS = (
     "No support state changes.",
     "No chapter core claim is promoted.",
 )
+URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation URL and History Policy",
+    "active policy for future consolidation execution",
+    "Default URL Policy",
+    "Preserve every retired source chapter's public URL",
+    "Pilot Defaults",
+    "/chapters/agency-dignity-and-corrigibility.html",
+    "/chapters/governance-rights-fork-exit-and-audit.html",
+    "This policy does not implement redirects or historical stubs.",
+    "This policy does not change `book_structure.json`.",
+)
 EXTERNAL_REVIEW_PACKET_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation External Review Packet",
     "https://github.com/corbensorenson/asi-stack-book/issues/1",
@@ -201,6 +214,7 @@ EXTERNAL_REVIEW_PACKET_REQUIRED_FRAGMENTS = (
     "This packet does not edit `book_structure.json`",
     "Reviewer comments are review input, not source evidence",
     "docs/chapter_consolidation_pilot_plan.md",
+    "docs/chapter_consolidation_url_history_policy.md",
     "docs/chapter_consolidation_destination_draft_constitutional_alignment.md",
     "docs/chapter_consolidation_destination_draft_contestable_governance.md",
     "Constitutional Alignment decision",
@@ -223,6 +237,7 @@ ROADMAP_REQUIRED_FRAGMENTS = (
     "Governed consolidation review",
     "walk the governed consolidation decision queue before broad human-reader curation",
     "chapter_consolidation_decision_review.md",
+    "chapter_consolidation_url_history_policy.md",
     "chapter_consolidation_external_review_packet.md",
 )
 
@@ -268,6 +283,7 @@ def main() -> None:
     contestable_dry_run_text = read_required_file(DRY_RUN_CONTESTABLE, errors)
     alignment_destination_draft_text = read_required_file(DESTINATION_DRAFT_ALIGNMENT, errors)
     contestable_destination_draft_text = read_required_file(DESTINATION_DRAFT_CONTESTABLE, errors)
+    url_history_policy_text = read_required_file(URL_HISTORY_POLICY, errors)
     external_review_packet_text = read_required_file(EXTERNAL_REVIEW_PACKET, errors)
     decision_review_text = read_required_file(DECISION_REVIEW, errors)
     structure = load_structure()
@@ -291,6 +307,7 @@ def main() -> None:
             errors.append(f"Plan does not preserve Lean tag `{tag}`.")
     require_fragments("Plan", text, REQUIRED_FRAGMENTS, errors)
     require_fragments("Roadmap", roadmap_text, ROADMAP_REQUIRED_FRAGMENTS, errors)
+    require_fragments("URL/history policy", url_history_policy_text, URL_HISTORY_POLICY_REQUIRED_FRAGMENTS, errors)
     require_fragments(
         "Constitutional-alignment dry-run package",
         alignment_dry_run_text,

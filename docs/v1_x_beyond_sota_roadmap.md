@@ -758,8 +758,10 @@ Follow-up review outcome:
   treatment, reader-overlay treatment, and URL/redirect policy are not cleanup
   chores after a merge. They are merge preconditions.
 - The Part I pilot is now `review_ready`, meaning destination drafts exist but
-  require an execute, revise, defer, or reject decision plus URL/redirect policy
-  before any canonical chapter identity changes.
+  require an execute, revise, defer, or reject decision plus execution of the
+  retired-URL treatment required by
+  `docs/chapter_consolidation_url_history_policy.md` before any canonical
+  chapter identity changes.
 - Compression, intent/contracts, static context ABI, verification/adversarial
   review, and planning/DAG control now have dry-run packages and one-skeleton
   destination drafts but remain unmerged. MoECOT, simulation fidelity, and
@@ -781,8 +783,8 @@ before broad reader curation treats the source chapters as stable.
 
 | Order | Package | Required decision | Execution note |
 |---|---|---|---|
-| 1 | Part I constitutional alignment and agency/corrigibility | Execute, revise, defer, or reject. | Resolve URL/history policy for the folded source chapter before any manifest edit. |
-| 2 | Part I value conflict and contestable governance | Execute, revise, defer, or reject. | Preserve fork, exit, audit, redaction, appeal, dissent, and revisit interfaces as sections or subclaims. |
+| 1 | Part I constitutional alignment and agency/corrigibility | Execute, revise, defer, or reject. | Follow `docs/chapter_consolidation_url_history_policy.md` for the retired agency/corrigibility URL before any manifest edit. |
+| 2 | Part I value conflict and contestable governance | Execute, revise, defer, or reject. | Follow `docs/chapter_consolidation_url_history_policy.md` for the retired governance-rights URL and preserve fork, exit, audit, redaction, appeal, dissent, and revisit interfaces as sections or subclaims. |
 | 3 | Compression and residual honesty | Execute full merge, execute conservative merge, revise, defer, or reject. | The conservative branch keeps RankFold/NeuralFold standalone if review finds technique ownership. |
 | 4 | Intent and executable contracts | Execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` as the intent-intake chapter and remove only duplicated contract skeleton. |
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep context transactions and verification bandwidth standalone unless a later review changes their artifact ownership. |
@@ -1133,10 +1135,11 @@ Current status:
   manifest consolidation remains blocked until review accepts, revises, defers,
   or rejects the merge.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
-  defer manifest consolidation until human or external review and a public
-  URL/redirect policy unblock it, proceed with human-reader curation outside
-  the pending Part I merge cluster, and require a recorded execute, revise,
-  defer, or reject decision before executing either merge.
+  defer manifest consolidation until human or external review accepts, revises,
+  defers, or rejects the destination drafts, while
+  `docs/chapter_consolidation_url_history_policy.md` now records the public URL
+  and history treatment required in any future execution commit. Human-reader
+  curation may proceed outside the pending Part I merge cluster.
 - The latest re-consolidation proposal is accepted as directionally correct,
   but the roadmap response is not another abstract plan and not an immediate
   54-to-44 manifest edit. The two useful pilot artifacts are review-ready

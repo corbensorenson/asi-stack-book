@@ -89,6 +89,7 @@ The pilot already has:
 - `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`;
 - `docs/chapter_consolidation_dry_run_contestable_governance.md`;
 - `docs/chapter_consolidation_destination_draft_contestable_governance.md`;
+- `docs/chapter_consolidation_url_history_policy.md`;
 - `docs/chapter_consolidation_decision_review.md`;
 - `docs/chapter_consolidation_external_review_packet.md`.
 
@@ -97,11 +98,17 @@ The full consolidation decision queue now also has
 review-ready merge packages and fold dispositions. It records no accepted
 review, no manifest authorization, and no support-state effect.
 
+The public URL/history precondition now has a policy surface:
+`docs/chapter_consolidation_url_history_policy.md`. It sets the default
+continuity URL, retired URL, redirect or historical-stub, and chapter-history
+ledger requirements for future execution commits. It does not implement a
+redirect or authorize a merge.
+
 The current decision is still deferral, and the current pilot state is
 `review_ready`: both destination drafts are review-ready, but no manifest merge
 is authorized until human or external review accepts, revises, or rejects the
-destination shapes and the project has a public URL or redirect policy for
-folded chapters.
+destination shapes and an execution package implements the retired URL
+treatment required by the URL/history policy.
 
 ## Chapter-Ownership Rubric
 
@@ -149,8 +156,8 @@ blocked until the revision is reviewed.
 
 | Order | Package | Required decision | Execution note |
 |---|---|---|---|
-| 1 | Part I constitutional alignment and agency/corrigibility | Execute, revise, defer, or reject. | Resolve folded-chapter URL/history policy before any manifest edit. |
-| 2 | Part I value conflict and contestable governance | Execute, revise, defer, or reject. | Preserve fork, exit, audit, redaction, appeal, dissent, and revisit interfaces. |
+| 1 | Part I constitutional alignment and agency/corrigibility | Execute, revise, defer, or reject. | Apply the URL/history policy for the retired agency/corrigibility slug before any manifest edit. |
+| 2 | Part I value conflict and contestable governance | Execute, revise, defer, or reject. | Apply the URL/history policy for the retired governance-rights slug and preserve fork, exit, audit, redaction, appeal, dissent, and revisit interfaces. |
 | 3 | Compression and residual honesty | Execute full merge, execute conservative merge, revise, defer, or reject. | Keep RankFold/NeuralFold standalone if review finds concrete technique ownership. |
 | 4 | Intent and executable contracts | Execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` as intent intake and remove only duplicated contract skeleton. |
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep transaction/snapshot/taint and verification-bandwidth chapters standalone unless later review changes artifact ownership. |
@@ -241,6 +248,9 @@ Part I pilot before any manifest edit:
 14. Reader-work disposition: whether curated-reader work for source chapters is
     paused, allowed as local cleanup, explicitly deferred, or allowed because
     the merge has been rejected/retained.
+15. URL/history treatment: destination continuity URL, retired source URL,
+    redirect or historical-stub implementation, and chapter-history ledger row
+    required by `docs/chapter_consolidation_url_history_policy.md`.
 
 ## Reader Work Sequencing
 

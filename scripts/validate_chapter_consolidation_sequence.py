@@ -21,6 +21,7 @@ PLANNING_DAG_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destinat
 MOECOT_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_moecot_runtime.md"
 SIMULATION_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_simulation_fidelity.md"
 SEMANTIC_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_semantic_representation.md"
+URL_HISTORY_POLICY = ROOT / "docs" / "chapter_consolidation_url_history_policy.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
@@ -831,6 +832,7 @@ REQUIRED_DESTINATIONS = (
 
 PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_sequence.md",
+    "docs/chapter_consolidation_url_history_policy.md",
     "docs/chapter_consolidation_dry_run_compression.md",
     "docs/chapter_consolidation_destination_draft_compression.md",
     "docs/chapter_consolidation_dry_run_intent_contracts.md",
@@ -846,6 +848,26 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_fold_semantic_representation.md",
     "docs/chapter_consolidation_full_review_packet.md",
     "scripts/validate_chapter_consolidation_sequence.py",
+)
+
+URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation URL and History Policy",
+    "active policy for future consolidation execution",
+    "no merge or redirect has been executed by this document",
+    "The canonical manifest still has 54 chapters.",
+    "If a retired public chapter URL cannot be preserved or deliberately recorded",
+    "Default URL Policy",
+    "Keep the destination chapter's existing stable ID and public URL",
+    "Preserve every retired source chapter's public URL with a static redirect or",
+    "Silent deletion is not allowed.",
+    "Required Merge Record Fields",
+    "Pilot Defaults",
+    "/chapters/agency-dignity-and-corrigibility.html",
+    "/chapters/governance-rights-fork-exit-and-audit.html",
+    "Validation Expectations",
+    "Non-Claims",
+    "This policy does not implement redirects or historical stubs.",
+    "This policy does not change `book_structure.json`.",
 )
 
 
@@ -894,6 +916,16 @@ def main() -> None:
     for destination in REQUIRED_DESTINATIONS:
         if destination not in sequence:
             errors.append(f"Consolidation sequence missing destination title: {destination}")
+
+    try:
+        url_history_policy = read_text(URL_HISTORY_POLICY)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_url_history_policy.md")
+        url_history_policy = ""
+
+    for fragment in URL_HISTORY_POLICY_REQUIRED_FRAGMENTS:
+        if fragment not in url_history_policy:
+            errors.append(f"URL/history policy missing required boundary: {fragment}")
 
     try:
         compression = read_text(COMPRESSION_DRY_RUN)

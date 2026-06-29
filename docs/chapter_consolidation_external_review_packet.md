@@ -35,7 +35,8 @@ Reviewers should read these files in order:
 4. `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
 5. `docs/chapter_consolidation_dry_run_contestable_governance.md`
 6. `docs/chapter_consolidation_destination_draft_contestable_governance.md`
-7. `docs/chapter_consolidation_decision_review.md`
+7. `docs/chapter_consolidation_url_history_policy.md`
+8. `docs/chapter_consolidation_decision_review.md`
 
 Optional context:
 
@@ -66,9 +67,9 @@ Optional context:
    recorded in Appendix C, the proof limitations, or the source crosswalks?
 4. Would the merge make the human-reader book clearer, or would separate
    chapters better preserve safety, governance, citation, or teaching clarity?
-5. Are the proposed stable-ID and retired-file defaults acceptable for a public
-   living book, or should the project add an explicit redirect/historical-note
-   mechanism before any manifest change?
+5. Are the stable-ID, retired-file, redirect, and historical-stub defaults in
+   `docs/chapter_consolidation_url_history_policy.md` acceptable for a public
+   living book before any manifest change?
 6. Which additional external comparator families should be source-noted before
    either destination chapter becomes canonical?
 7. Should the project execute, revise, defer, or reject each proposed merge?
@@ -86,7 +87,7 @@ this shape:
 | Contestable Governance decision | Execute, revise, defer, reject, or no opinion, with reason. |
 | Highest-severity issue | The most serious preservation, evidence, novelty, reader-flow, support-boundary, proof-scope, or public-URL issue. |
 | Missing source or comparator | Any external paper, standard, system, benchmark, or citation family to source-note before merge. |
-| Specific required change | Source to add, proof tag to preserve, section to rewrite, URL policy to add, claim to narrow, or blocker to record. |
+| Specific required change | Source to add, proof tag to preserve, section to rewrite, URL/history treatment to revise, claim to narrow, or blocker to record. |
 | Attributability | Public attributable, public anonymous, private/non-attributable, or other. |
 
 ## Accepted Review Record Requirements

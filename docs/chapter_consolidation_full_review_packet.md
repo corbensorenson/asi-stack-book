@@ -32,7 +32,8 @@ Reviewers should read these files first:
 1. `docs/v1_x_beyond_sota_roadmap.md`
 2. `docs/chapter_consolidation_sequence.md`
 3. `docs/chapter_consolidation_decision_review.md`
-4. `docs/chapter_consolidation_external_review_packet.md`
+4. `docs/chapter_consolidation_url_history_policy.md`
+5. `docs/chapter_consolidation_external_review_packet.md`
 
 Then read the package files relevant to any decision they want to make:
 
@@ -100,8 +101,9 @@ policy, local validation, and Quarto render in that execution commit.
    clarity?
 6. Are the proposed dependency constraints correct, especially the semantic
    representation fold's dependency on the compression/representation package?
-7. Are the proposed stable-ID, URL, redirect, or historical-note defaults
-   acceptable for a public living book?
+7. Are the stable-ID, URL, redirect, historical-stub, and chapter-history
+   defaults in `docs/chapter_consolidation_url_history_policy.md` acceptable
+   for a public living book?
 8. Which external comparator families should be source-noted before any package
    becomes canonical?
 9. Which packages should be executed in v1.x, which should be revised, which
@@ -119,7 +121,7 @@ this shape:
 | Package decisions | Execute, revise, defer, reject, or no opinion for each reviewed package, with reason. |
 | Highest-severity issue | The most serious preservation, evidence, novelty, reader-flow, support-boundary, proof-scope, or public-URL issue. |
 | Missing source or comparator | Any external paper, standard, system, benchmark, or citation family to source-note before merge/fold execution. |
-| Specific required change | Source to add, proof tag to preserve, section to rewrite, URL policy to add, claim to narrow, dependency to revise, or blocker to record. |
+| Specific required change | Source to add, proof tag to preserve, section to rewrite, URL/history treatment to revise, claim to narrow, dependency to revise, or blocker to record. |
 | Attributability | Public attributable, public anonymous, private/non-attributable, or other. |
 
 ## Accepted Review Record Requirements

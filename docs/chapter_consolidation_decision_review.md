@@ -18,6 +18,7 @@ merge, and does not approve a reader artifact.
 - `docs/chapter_consolidation_dry_run_contestable_governance.md`
 - `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
 - `docs/chapter_consolidation_destination_draft_contestable_governance.md`
+- `docs/chapter_consolidation_url_history_policy.md`
 - `docs/chapter_consolidation_external_review_packet.md`
 - `docs/v1_x_beyond_sota_roadmap.md`
 - `docs/chapter_external_grounding_status.md`
@@ -59,10 +60,11 @@ The manifest merge is deferred because the next honest decision needs human or
 external review of the actual chapter-shape tradeoff before canonical chapter
 identity changes. This is a review gate, not a rejection and not a requirement
 to wait for a later major cycle. The dry-runs show that a merge is technically
-possible, but they do not yet prove that the resulting reader flow is better,
-that the public URL policy is acceptable, that the folded chapter history
-should disappear from rendered navigation, or that the merged prose has been
-written and reviewed as one chapter rather than only planned.
+possible, and `docs/chapter_consolidation_url_history_policy.md` now records
+the default public URL/history treatment for retired slugs, but the project
+still has not implemented a redirect/stub in an execution commit, accepted the
+destination reader flow by review, or written the canonical merged prose as one
+reviewed chapter.
 
 ## Why Deferral Is The Right Current Action
 
@@ -77,8 +79,9 @@ written and reviewed as one chapter rather than only planned.
   reviewer and neither is a canonical chapter.
 - The external review request is still open and no independent external review
   has been accepted into the repo.
-- The project has no redirect or historical-note policy yet for retired chapter
-  URLs.
+- The project now has a redirect and historical-note policy for retired chapter
+  URLs, but no retired URL redirect or historical stub has been implemented
+  because no merge has been accepted or executed.
 - Human-reader curation may proceed on chapters outside the pending
   consolidation cluster without locking in the duplicate Part I skeletons.
 
@@ -100,10 +103,10 @@ source chapters should avoid broad reader-only polish until their merge is
 executed or permanently rejected, because polishing duplicate skeletons would
 preserve the repetition the pilot is meant to remove.
 
-If human or external review accepts a destination draft and the project records
-a public URL, redirect, or historical-note policy for the folded chapter, a
-future consolidation commit can become in scope without waiting for a new major
-roadmap. That commit must still update the manifest, outline, Appendix C,
+If human or external review accepts a destination draft, a future consolidation
+commit can become in scope without waiting for a new major roadmap because the
+URL/history policy now exists. That commit must still implement the selected
+retired-URL treatment and update the manifest, outline, Appendix C,
 proof-manifest routing, handoffs, reader records, generated scaffold, and
 validation outputs together.
 
@@ -113,7 +116,8 @@ Before either manifest merge can proceed, require:
 
 - a human- or external-reviewed destination chapter draft with one chapter
   skeleton, not two pasted skeletons;
-- a public URL or redirect policy for the folded chapter;
+- implementation of the public URL, redirect, or historical-stub treatment
+  required by `docs/chapter_consolidation_url_history_policy.md`;
 - updated `book_structure.json` and `docs/book_outline.md` in the same merge
   commit;
 - Appendix C claim-history treatment for the folded core row;

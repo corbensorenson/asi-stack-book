@@ -178,7 +178,8 @@ manifest edit. It should include:
 - test, schema, or harness rows that must move with the chapter;
 - Human Reading Path, Handoff, reader-overlay, and reader-review changes;
 - MVI and Beyond-SOTA implementation-horizon merge;
-- URL, redirect, and retired-file policy;
+- URL, redirect, retired-file, and chapter-history treatment aligned with
+  `docs/chapter_consolidation_url_history_policy.md`;
 - validation commands and expected generated-file updates.
 
 ## No-Action Decisions For This Pilot
@@ -196,9 +197,11 @@ manifest edit. It should include:
 - Should destination slugs stay stable even when the displayed title changes?
   Default answer for the pilot: yes.
 - Should retired chapter files remain as non-rendered historical stubs or be
-  removed after manifest deletion? Default answer for the pilot: keep the public
-  git history, but do not preserve stale rendered pages unless a redirect
-  mechanism is added.
+  removed after manifest deletion? Default answer for the pilot: follow
+  `docs/chapter_consolidation_url_history_policy.md`, preserve the old public
+  URL through a redirect or historical stub in the execution commit, and keep a
+  chapter-history ledger entry with preserved source, proof, claim, and reader
+  mappings.
 - Should the two proposed merges happen in one commit or two? Default answer for
   the pilot: two commits, one merge at a time.
 - Which additional external comparator families are needed before prose merge?
@@ -245,10 +248,11 @@ Current dry-run package status:
   human- or external-reviewed, and it does not authorize a manifest merge.
 - Neither package edits the manifest or authorizes a merge.
 - `docs/chapter_consolidation_decision_review.md` records the current decision:
-  defer manifest consolidation until human or external review and a public
-  URL/redirect policy unblock it, proceed with reader curation outside the
-  pending Part I merge cluster, and require a recorded execute, revise, defer,
-  or reject decision before executing either merge.
+  defer manifest consolidation until human or external review accepts, revises,
+  defers, or rejects the destination drafts. The URL/history policy is now
+  recorded in `docs/chapter_consolidation_url_history_policy.md`, but any
+  future merge still has to implement the selected retired-URL treatment in the
+  execution commit.
 
 ## Non-Claims
 

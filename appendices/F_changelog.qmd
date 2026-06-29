@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-06-29 - Consolidation URL history policy
+
+- Added `docs/chapter_consolidation_url_history_policy.md` to define how future
+  governed chapter merges or folds must preserve public chapter URLs, retired
+  source slugs, redirect or historical-stub treatment, and chapter-history
+  ledger rows.
+- Updated the consolidation pilot plan, decision review, sequence, review
+  packets, v1.x roadmap, README, repository map, publication readiness, and
+  consolidation validators so the policy is discoverable and enforced.
+- This does not execute a merge or fold, edit `book_structure.json`, implement
+  a redirect or historical stub, change chapter count, approve a destination
+  draft, create external review evidence, or promote any support state.
+
 ## 2026-06-29 - Consolidation attachment roadmap re-review
 
 - Reviewed the latest 54-to-44/47 chapter consolidation attachment and recorded
