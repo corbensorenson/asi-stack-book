@@ -723,6 +723,36 @@
     "doi": "10.48550/arXiv.1606.06565"
   },
   {
+    "id": "ext_constitutional_ai_2022",
+    "title": "Constitutional AI: Harmlessness from AI Feedback",
+    "priority": "external_literature",
+    "layer": "alignment_control",
+    "chapter_targets": ["constitutional-alignment-substrate", "policy-optimization-and-learning-from-feedback"],
+    "url": "https://arxiv.org/abs/2212.08073",
+    "notes": "External constitutional-AI source for training harmless assistants from a rule/principle list through supervised revision and AI-feedback reinforcement learning, used as a comparator for operational constitutional predicates.",
+    "source_type": "arxiv",
+    "arxiv_id": "2212.08073",
+    "published": "2022-12-15",
+    "updated": "2022-12-15",
+    "citation_label": "Bai et al. (2022), Constitutional AI",
+    "doi": "10.48550/arXiv.2212.08073"
+  },
+  {
+    "id": "ext_collective_constitutional_ai_2024",
+    "title": "Collective Constitutional AI: Aligning a Language Model with Public Input",
+    "priority": "external_literature",
+    "layer": "alignment_governance",
+    "chapter_targets": ["constitutional-alignment-substrate", "governance-rights-fork-exit-and-audit"],
+    "url": "https://arxiv.org/abs/2406.07814",
+    "notes": "External constitutional-AI governance source for sourcing and integrating public input into language-model principles, used as a comparator for constitution authorship, public input, contestability, and governance boundaries.",
+    "source_type": "arxiv_and_conference",
+    "arxiv_id": "2406.07814",
+    "published": "2024-06-12",
+    "updated": "2024-06-12",
+    "citation_label": "Huang et al. (2024), Collective Constitutional AI",
+    "doi": "10.1145/3630106.3658979"
+  },
+  {
     "id": "ext_corrigibility_2015",
     "title": "Corrigibility",
     "priority": "external_literature",
@@ -749,6 +779,35 @@
     "updated": "2017-06-16",
     "citation_label": "Hadfield-Menell et al. (2016), The Off-Switch Game",
     "doi": "10.48550/arXiv.1611.08219"
+  },
+  {
+    "id": "ext_reinforcement_learning_moral_uncertainty_2020",
+    "title": "Reinforcement Learning Under Moral Uncertainty",
+    "priority": "external_literature",
+    "layer": "alignment_control",
+    "chapter_targets": ["moral-uncertainty-and-value-conflict", "policy-optimization-and-learning-from-feedback"],
+    "url": "https://arxiv.org/abs/2006.04734",
+    "notes": "External AI moral-uncertainty source for agents acting under disagreement across moral theories, used as a comparator for value-conflict records and reward-function caveats.",
+    "source_type": "arxiv",
+    "arxiv_id": "2006.04734",
+    "published": "2020-06-08",
+    "updated": "2021-07-19",
+    "citation_label": "Ecoffet and Lehman (2020), Reinforcement Learning Under Moral Uncertainty",
+    "doi": "10.48550/arXiv.2006.04734"
+  },
+  {
+    "id": "ext_contestable_ai_design_2022",
+    "title": "Contestable AI by Design: Towards a Framework",
+    "priority": "external_literature",
+    "layer": "governance_evals",
+    "chapter_targets": ["moral-uncertainty-and-value-conflict", "governance-rights-fork-exit-and-audit", "unified-adaptive-tribunal-and-adversarial-review"],
+    "url": "https://doi.org/10.1007/s11023-022-09611-z",
+    "notes": "External contestable-AI source for designing systems whose outcomes can be challenged, used as a comparator for dissent, appeal, audit, contestability, and governance-interface design.",
+    "source_type": "journal_article",
+    "published": "2022-08-13",
+    "updated": "2022-08-13",
+    "citation_label": "Alfrink et al. (2022), Contestable AI by Design",
+    "doi": "10.1007/s11023-022-09611-z"
   },
   {
     "id": "ext_optimal_policies_power_2019",

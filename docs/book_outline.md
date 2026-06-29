@@ -489,6 +489,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code` | Read first for chapter claims and mechanisms. |
 | Supporting | `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_constitutional_ai_2022`, `ext_collective_constitutional_ai_2024` | Use after source notes for Constitutional AI and public-input constitutional AI positioning; do not treat either source as evidence of ASI Stack runtime predicate enforcement or support-state promotion. |
 
 Draft arc:
 
@@ -527,6 +528,7 @@ Draft deliverables:
 
 - A compact constitution with operational predicates, open moral uncertainties, and scenario tests.
 - Exact Appendix C claim-source mappings for the core claim across alignment lineage, metaphysical variants, reasoning governance, connector synthesis, and the AI Constitution source; six mappings (`alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` even after the synthetic constitutional-predicate harness; runtime policy behavior, predicate-translation adequacy, review quality, self-modification safety, least-sufficient-power enforcement, red-team evidence, and an accepted upward transition remain pending.
+- Source-noted external positioning now uses `ext_constitutional_ai_2022` and `ext_collective_constitutional_ai_2024` as comparators for constitutional-AI training and public-input constitution design. This replaces the former external-baseline exception only for positioning and does not promote support state.
 - Implemented synthetic Codex test: Constitutional consistency test via `python3 scripts/validate_constitutional_alignment.py`; deployed constitutional alignment and moral correctness remain open.
 - Implemented synthetic Codex test: Predicate-conflict routing test via `python3 scripts/validate_constitutional_alignment.py`; runtime conflict resolution and review quality remain open.
 - Implemented synthetic Codex test: Constitutional migration test via `python3 scripts/validate_constitutional_alignment.py`; deployed migration and rollback behavior remain open.
@@ -618,6 +620,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `ethica_mechanica`, `alignment_field` | Read first for chapter claims and mechanisms. |
 | Supporting | `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_reinforcement_learning_moral_uncertainty_2020`, `ext_contestable_ai_design_2022` | Use after source notes for moral-uncertainty and contestable-governance positioning; do not treat either source as a solved moral theory, institutional legitimacy proof, or support-state promotion. |
 
 Draft arc:
 
@@ -1690,6 +1693,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `uat` | Read first for chapter claims and mechanisms. |
 | Supporting | `spinoza`, `coherence_exchange`, `talos`, `verification_bandwidth` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparator | `ext_contestable_ai_design_2022` | Use after source note for contestable-AI positioning around challenge, appeal, dissent, and review surfaces; do not treat it as evidence of tribunal correctness or institutional adequacy. |
 
 Draft arc:
 
@@ -1721,6 +1725,7 @@ Draft deliverables:
 
 - A tribunal protocol for claim/artifact review with review lifecycle, dossier boundary, independence note, cycle cap, repeated-review guard, retrieval-expansion policy, reviewer roles, constraint effects, and output schema.
 - Exact Appendix C claim-source mappings for `unified-adaptive-tribunal-and-adversarial-review.core` across UAT, Spinoza, Coherence Exchange, Talos, and Verification Bandwidth; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
+- Source-noted external positioning now uses `ext_contestable_ai_design_2022` as a comparator for contestable review and challenge surfaces. This replaces the former external-baseline exception only for positioning and does not promote support state.
 - Implemented protocol validation: `tribunal_review_record` fixture validates public record shape only.
 - Planned Codex test: Adversarial review coverage test.
 - Planned Codex test: Dissent preservation test.

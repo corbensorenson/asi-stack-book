@@ -26,6 +26,10 @@ REQUIRED_SOURCE_IDS = {
     "field_of_god_ai_constitution",
     "uat",
     "ladon_manhattan",
+    "ext_constitutional_ai_2022",
+    "ext_collective_constitutional_ai_2024",
+    "ext_reinforcement_learning_moral_uncertainty_2020",
+    "ext_contestable_ai_design_2022",
 }
 REQUIRED_LEAN_TAGS = {
     "lean:alignment.constitution.operational_invariant",

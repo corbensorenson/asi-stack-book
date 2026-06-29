@@ -608,12 +608,20 @@ Tasks:
   - split the chapter's claim if part of it has external comparators and part
     of it is author-originated architecture.
 - Prioritize likely replaceable exceptions:
-  - `constitutional-alignment-substrate`;
-  - `moral-uncertainty-and-value-conflict`;
   - `security-kernel-and-digital-scifs`;
-  - `unified-adaptive-tribunal-and-adversarial-review`;
   - `coil-attention-cyclic-memory-and-recurrence-contracts`;
   - `coilra-multicoil-rope-and-cyclic-mixers`.
+- Replaced exception status in this cycle:
+  - `constitutional-alignment-substrate` now has source-noted comparators
+    `ext_constitutional_ai_2022` and
+    `ext_collective_constitutional_ai_2024`;
+  - `moral-uncertainty-and-value-conflict` now has source-noted comparators
+    `ext_reinforcement_learning_moral_uncertainty_2020` and
+    `ext_contestable_ai_design_2022`;
+  - `unified-adaptive-tribunal-and-adversarial-review` now has source-noted
+    positioning through `ext_contestable_ai_design_2022`.
+- Continue mining for stronger social-choice, value-pluralism, legal-process,
+  and governance-rule baselines before any future claim split or merge.
 - Preserve true author-system exceptions only when no fair external baseline is
   currently sourced.
 
@@ -761,6 +769,11 @@ Current status:
   `agency-dignity-and-corrigibility`, and
   `moral-uncertainty-and-value-conflict` with
   `governance-rights-fork-exit-and-audit`.
+- The initial external-grounding precondition for the two destination chapters
+  is improved by source notes for Constitutional AI, Collective Constitutional
+  AI, reinforcement learning under moral uncertainty, and contestable AI, but
+  the manifest should not merge chapters until claim/source/proof/reader
+  reconciliation passes.
 - `scripts/validate_chapter_consolidation_pilot_plan.py` verifies that the plan
   preserves all four source chapter IDs, required source IDs, required Lean
   proof tags, no-manifest-edit language, and no-support-state-change language.

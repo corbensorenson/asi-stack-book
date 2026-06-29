@@ -73,10 +73,14 @@ External grounding to preserve or improve:
 
 - `agency-dignity-and-corrigibility` currently carries
   `ext_corrigibility_2015` and `ext_off_switch_game_2016`.
-- `constitutional-alignment-substrate` currently has an explicit exception.
-- The merged chapter should keep the corrigibility/off-switch comparators and
-  mine the constitutional-alignment source queue for fair constitutional AI,
-  AI governance, and normative-control baselines before replacing the exception.
+- `constitutional-alignment-substrate` now carries source-noted constitutional
+  comparators: `ext_constitutional_ai_2022` and
+  `ext_collective_constitutional_ai_2024`.
+- The merged chapter should keep the corrigibility/off-switch comparators, keep
+  the Constitutional AI/public-input comparators, and continue mining the
+  constitutional-alignment source queue for fair AI governance and
+  normative-control baselines without claiming reproduced training or deployed
+  constitutional enforcement.
 
 ### Moral Uncertainty, Value Conflict, and Contestable Governance
 
@@ -126,11 +130,14 @@ External grounding to preserve or improve:
 
 - `governance-rights-fork-exit-and-audit` currently carries
   `ext_corrigibility_2015` and `ext_off_switch_game_2016`.
-- `moral-uncertainty-and-value-conflict` currently has an explicit exception.
-- The merged chapter should keep the corrigibility/off-switch comparators and
-  mine the moral-uncertainty and governance source queues for fair social
-  choice, moral uncertainty, deliberative review, and contestable-governance
-  baselines before replacing the exception.
+- `moral-uncertainty-and-value-conflict` now carries source-noted comparators:
+  `ext_reinforcement_learning_moral_uncertainty_2020` and
+  `ext_contestable_ai_design_2022`.
+- The merged chapter should keep the corrigibility/off-switch comparators, keep
+  the moral-uncertainty and contestable-AI comparators, and continue mining the
+  moral-uncertainty and governance source queues for fair social-choice,
+  deliberative-review, and contestable-governance baselines without claiming a
+  solved moral theory or deployed institutional adequacy.
 
 ## Manifest Merge Steps
 

@@ -4,7 +4,7 @@ chapter_id: "constitutional-alignment-substrate"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-29"
 primary_sources:
   - "alignment_field"
   - "field_of_god"
@@ -18,7 +18,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Claim-level source mappings now exist for all assigned sources, and six of seven mappings carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped, and support remains at argument until tests or runtime artifacts justify promotion."
   - "The constitutional_predicate_record fixture validates schema/example consistency, and the synthetic constitutional alignment harness now checks protected scope, operational tests, conflict routing, review routes, migration policy, self-modification weakening rules, least-sufficient-power behavior, uncertainty preservation, and non-claim boundaries; deployed runtime policy behavior, predicate-translation adequacy, review quality, self-modification safety, and red-team evidence remain open."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Source-noted external comparators now exist for Constitutional AI and Collective Constitutional AI; they replace the prior external-baseline exception for positioning only and do not imply support-state promotion."
 ---
 
 ## Chapter status
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-29 |
 | Primary source records | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -77,7 +77,7 @@ A constitution that cannot be diffed also cannot govern self-improvement. If a l
 
 The substrate earns its name when the constitution can say no at the point where power is requested. If its commitments only appear in prose, dashboards, or after-the-fact review, the optimizer still chooses the live path. The substrate has to be close enough to planning, memory, execution, and self-improvement that a protected predicate can narrow, delay, escalate, or block work.
 
-External baseline exception: the current constitutional substrate uses Corben/local constitutional and alignment sources as architecture lineage, not an external constitutional-AI or legal-governance comparison. A future pass should triage source-noted external baselines for constitutional AI, model constitutions, or governance rule systems before strengthening this comparison.
+External positioning: `ext_constitutional_ai_2022` and `ext_collective_constitutional_ai_2024` are now the source-noted constitutional-AI comparators. They are useful baselines because they treat rules, principles, and public input as ways to shape language-model behavior. The ASI Stack's constitutional substrate is narrower in one respect and broader in another: narrower because it does not claim a reproduced Constitutional AI training result, and broader because it asks whether constitutional commitments can become runtime predicates, migration records, review routes, and self-improvement gates. These external sources replace the prior baseline exception for positioning only; they do not move the constitutional claim above `argument` support.
 
 ## Core Claim
 
