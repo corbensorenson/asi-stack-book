@@ -2883,6 +2883,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `coil_attention_memory`, `circle_ai_contract_suite` | Read first for chapter claims and mechanisms. |
 | Supporting | `theseus_circle_transfer`, `vcm_public`, `verification_bandwidth` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External literature variants | `ext_transformer_xl_2019`, `ext_compressive_transformer_2019`, `ext_retnet_2023` | Use as recurrence, compressed-memory, long-range sequence, and attention/recurrence comparators; treat reported results as source-reported until reproduced. |
 
 Draft arc:
 
@@ -2920,6 +2921,7 @@ Draft deliverables:
 
 - A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.
 - Implemented repository-level fixture: `cyclic_memory_contract.valid.json` validates the cyclic-memory record shape, memory-authority scope, VCM packet refs, state-carry boundary, stale-read policy, admission state, baseline refs, probe requirements, authority non-widening, residuals, and non-claims only; no KV-cache freshness checker, sparse-coverage harness, recurrence benchmark, or learned-memory workload exists yet.
+- Source-noted external positioning through Transformer-XL, Compressive Transformers, and RetNet; no retrieval-quality, reasoning-quality, speed, memory-savings, or long-context result is reproduced or promoted.
 - Planned Codex test: Cyclic alias visibility test
 - Planned Codex test: Sparse coverage gap test
 - Planned Codex test: Recurrence budget and exit test
@@ -2946,6 +2948,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `coilra_multicoil_rope`, `rope_position_certifier` | Read first for chapter claims and mechanisms. |
 | Supporting | `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External literature variants | `ext_roformer_rope_2021`, `ext_lora_2021`, `ext_mamba_2023`, `ext_retnet_2023` | Use as RoPE, low-rank adapter, state-space, and recurrence/attention comparators; treat reported results as source-reported until reproduced. |
 
 Draft arc:
 
@@ -2983,6 +2986,7 @@ Draft deliverables:
 
 - A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
 - Implemented repository-level fixture: `cyclic_mixer_evaluation_record.valid.json` validates the cyclic-mixer evaluation record shape, evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims only; no RoPE certifier run, MLX experiment, hardware-kernel benchmark, or model-quality evaluation exists yet.
+- Source-noted external positioning through RoFormer/RoPE, LoRA, Mamba, and RetNet; no baseline matrix, quality, context-length, runtime, memory, training-stability, hardware-efficiency, or deployment result is reproduced or promoted.
 - Planned Codex test: RoPE receipt boundary test
 - Planned Codex test: Cyclic mixer baseline matrix test
 - Planned Codex test: Residue/winding alias diagnostic

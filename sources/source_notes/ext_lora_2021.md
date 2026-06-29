@@ -40,10 +40,12 @@ LoRA belongs in the representation and resource chapters as an external referenc
 - `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
+- `coilra-multicoil-rope-and-cyclic-mixers` (CoilRA, MultiCoil RoPE, and Cyclic Mixers)
 
 ## Claims To Add Or Update
 
 - Use this note to compare low-rank adaptation with book-specific compression and representation proposals.
+- Use this note as one adapter baseline family for cyclic adapter and CoilRA adoption discussions.
 - Do not claim LoRA reproduction or local adaptation quality.
 - Keep support state at `argument` until local artifacts or accepted transitions exist.
 

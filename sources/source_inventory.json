@@ -1409,7 +1409,7 @@
     "title": "LoRA: Low-Rank Adaptation of Large Language Models",
     "priority": "external_literature",
     "layer": "compression_representation",
-    "chapter_targets": ["rankfold-neuralfold-and-artifact-compression", "semantic-representation-and-tree-structured-models", "resource-economics-and-token-budgets", "policy-optimization-and-learning-from-feedback"],
+    "chapter_targets": ["rankfold-neuralfold-and-artifact-compression", "semantic-representation-and-tree-structured-models", "resource-economics-and-token-budgets", "policy-optimization-and-learning-from-feedback", "coilra-multicoil-rope-and-cyclic-mixers"],
     "url": "https://arxiv.org/abs/2106.09685",
     "notes": "External low-rank adaptation source for parameter-efficient updates, rank-decomposition adapters, memory reduction, and adaptation-boundary vocabulary.",
     "source_type": "arxiv",
@@ -1795,13 +1795,83 @@
     "source_type": "arxiv"
   },
   {
+    "id": "ext_transformer_xl_2019",
+    "title": "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "priority": "external_literature",
+    "layer": "sequence_memory_recurrence",
+    "chapter_targets": [
+      "coil-attention-cyclic-memory-and-recurrence-contracts"
+    ],
+    "url": "https://arxiv.org/abs/1901.02860",
+    "notes": "External recurrent Transformer comparator for segment-level recurrence, relative positional encoding, and long-dependency language modeling; useful as a baseline family for cyclic-memory contracts without implying local reproduction.",
+    "arxiv_id": "1901.02860",
+    "published": "2019-01-09",
+    "updated": "2019-06-02",
+    "citation_label": "Dai et al. (2019), Transformer-XL",
+    "doi": "10.48550/arXiv.1901.02860",
+    "source_type": "arxiv"
+  },
+  {
+    "id": "ext_compressive_transformer_2019",
+    "title": "Compressive Transformers for Long-Range Sequence Modelling",
+    "priority": "external_literature",
+    "layer": "sequence_memory_recurrence",
+    "chapter_targets": [
+      "coil-attention-cyclic-memory-and-recurrence-contracts"
+    ],
+    "url": "https://arxiv.org/abs/1911.05507",
+    "notes": "External long-range memory comparator for compressed past memories, memory mechanisms, and long-range sequence benchmarks; useful for positioning cyclic memory against compression-memory baselines.",
+    "arxiv_id": "1911.05507",
+    "published": "2019-11-13",
+    "updated": "2019-11-13",
+    "citation_label": "Rae et al. (2019), Compressive Transformers",
+    "doi": "10.48550/arXiv.1911.05507",
+    "source_type": "arxiv"
+  },
+  {
+    "id": "ext_roformer_rope_2021",
+    "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+    "priority": "external_literature",
+    "layer": "position_encoding",
+    "chapter_targets": [
+      "coilra-multicoil-rope-and-cyclic-mixers"
+    ],
+    "url": "https://arxiv.org/abs/2104.09864",
+    "notes": "External RoPE comparator for rotary position embedding, relative-position behavior inside self-attention, and position-encoding baselines for cyclic phase or RoPE-style substrates.",
+    "arxiv_id": "2104.09864",
+    "published": "2021-04-20",
+    "updated": "2023-11-08",
+    "citation_label": "Su et al. (2021), RoFormer",
+    "doi": "10.48550/arXiv.2104.09864",
+    "source_type": "arxiv"
+  },
+  {
+    "id": "ext_retnet_2023",
+    "title": "Retentive Network: A Successor to Transformer for Large Language Models",
+    "priority": "external_literature",
+    "layer": "sequence_memory_recurrence",
+    "chapter_targets": [
+      "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "coilra-multicoil-rope-and-cyclic-mixers"
+    ],
+    "url": "https://arxiv.org/abs/2307.08621",
+    "notes": "External retention/recurrent-sequence comparator for the relationship between recurrence and attention, recurrent/chunkwise computation, and inference-efficiency tradeoffs.",
+    "arxiv_id": "2307.08621",
+    "published": "2023-07-17",
+    "updated": "2023-08-09",
+    "citation_label": "Sun et al. (2023), Retentive Network",
+    "doi": "10.48550/arXiv.2307.08621",
+    "source_type": "arxiv"
+  },
+  {
     "id": "ext_mamba_2023",
     "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
     "priority": "external_literature",
     "layer": "sequence_substrates",
     "chapter_targets": [
       "fast-generation",
-      "math-substrates"
+      "math-substrates",
+      "coilra-multicoil-rope-and-cyclic-mixers"
     ],
     "url": "https://arxiv.org/abs/2312.00752",
     "notes": "Primary external paper for selective state-space sequence models as a different long-sequence substrate and inference-efficiency axis from decoding tricks.",

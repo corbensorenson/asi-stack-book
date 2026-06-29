@@ -4,7 +4,7 @@ chapter_id: "coil-attention-cyclic-memory-and-recurrence-contracts"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-29"
 primary_sources:
   - "coil_attention_memory"
   - "circle_ai_contract_suite"
@@ -13,6 +13,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
+  - "External positioning now source-notes Transformer-XL, Compressive Transformers, and RetNet as recurrence, long-range-memory, compressed-memory, and attention/recurrence comparators; support remains at argument because no external model result, retrieval benchmark, long-context benchmark, KV-cache checker, or recurrence workload has been reproduced in this repository."
   - "Appendix C now records exact passage-reviewed mappings for all four assigned coil-attention and cyclic-memory sources; support remains at argument until local KV-cache freshness checkers, sparse-coverage harnesses, recurrence benchmarks, learned-model memory tests, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist."
   - "The cyclic_memory_contract fixture validates schema/example consistency for memory-authority scope, VCM packet refs, state-carry boundary, stale-read policy, admission state, baseline refs, probe requirements, authority non-widening, residuals, and non-claims; `AsiStackProofs.CoilAttentionMemory` implements local finite-record alias and promotion gates only; no Circle sidecar, contract generator, KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, or Theseus transfer command has been run from this repo."
   - "Pinned Circle project references support structural-contract and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, or validate external Circle Lean proofs as local evidence."
@@ -28,11 +29,11 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-29 |
 | Primary source records | `coil_attention_memory`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `vcm_public` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `coil_attention_memory`, `circle_ai_contract_suite`; supporting: `theseus_circle_transfer`, `vcm_public`, `verification_bandwidth` |
+| Source queue | primary: `coil_attention_memory`, `circle_ai_contract_suite`; supporting: `theseus_circle_transfer`, `vcm_public`, `verification_bandwidth`; external variants: `ext_transformer_xl_2019`, `ext_compressive_transformer_2019`, `ext_retnet_2023` |
 | Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; `vcm_public` uses local raw cache, while Circle and Theseus transfer mappings use pinned local Circle project passages; no Circle/Theseus commands or generated contract artifacts were run/imported here |
 | Test state | `cyclic_memory_contract.valid.json` passes repository-level protocol fixture validation for memory authority, VCM packet refs, state-carry boundary, stale-read policy, admission state, baseline refs, probe requirements, authority non-widening, residuals, and non-claims; `AsiStackProofs.CoilAttentionMemory` implements finite alias-boundary and coverage/freshness quality-promotion gates; alias, sparse-coverage, recurrence-exit, and freshness behavior tests remain planned. |
 
@@ -76,7 +77,7 @@ Long-context systems often fail by sounding continuous while their memory contra
 
 Finite proofs and learned behavior meet at the sharpest gap. A finite proof can certify a slot property, coverage property, or loop-exit property. It cannot certify that a learned model used the right information in the right way unless a workload-specific evaluation supplies that evidence.
 
-External baseline exception: Coil Attention is currently grounded in local Circle/Coil and VCM/Verification Bandwidth lineage. External sequence-model, recurrence, state-space, retrieval-memory, or long-context baselines have not been assigned with source notes for this layer, so v1.0 records a source gap rather than making an unreviewed literature comparison.
+External positioning: Coil Attention now has source-noted recurrence and long-context comparators through `ext_transformer_xl_2019`, `ext_compressive_transformer_2019`, and `ext_retnet_2023`. Transformer-XL grounds segment-level recurrence and positional treatment as an ordinary recurrent-Transformer baseline. Compressive Transformers ground compressed past-memory mechanisms and long-range sequence benchmarks. RetNet grounds the attention/recurrence tradeoff and recurrent or chunkwise computation modes. These sources position Coil Attention against known sequence-memory families, but they do not reproduce any external result here and they do not support a Coil retrieval-quality, reasoning-quality, speed, memory-savings, or long-context claim.
 
 ## Core Claim
 
@@ -247,8 +248,11 @@ These Lean hooks are implemented as finite-record predicates over cyclic memory 
 | `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 | `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache available |
+| `ext_transformer_xl_2019` | Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context | sequence_memory_recurrence | External comparator for segment-level recurrence, relative positional treatment, and long-dependency language modeling. | source note available; results not reproduced |
+| `ext_compressive_transformer_2019` | Compressive Transformers for Long-Range Sequence Modelling | sequence_memory_recurrence | External comparator for compressed past memories, long-range sequence modeling, and memory-mechanism baselines. | source note available; results not reproduced |
+| `ext_retnet_2023` | Retentive Network: A Successor to Transformer for Large Language Models | sequence_memory_recurrence | External comparator for the recurrence/attention boundary, recurrent inference, and chunkwise recurrent computation. | source note available; results not reproduced |
 
-The crosswalk keeps memory claims structural. `coil_attention_memory` supplies alias, freshness, sparse-coverage, and recurrence-budget contracts; `circle_ai_contract_suite` supplies theorem-linked contract family context; `theseus_circle_transfer` supplies the report-only transfer boundary; and `vcm_public` ties these records back to governed context adequacy. None of them supports learned retrieval or reasoning quality in this repo.
+The crosswalk keeps memory claims structural. `coil_attention_memory` supplies alias, freshness, sparse-coverage, and recurrence-budget contracts; `circle_ai_contract_suite` supplies theorem-linked contract family context; `theseus_circle_transfer` supplies the report-only transfer boundary; and `vcm_public` ties these records back to governed context adequacy. The external comparators source-note ordinary recurrent, compressed-memory, and retention baselines. None of these records supports learned retrieval or reasoning quality in this repo.
 
 ## Summary
 

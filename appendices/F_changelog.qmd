@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Coil external-grounding backfill
+
+- Added four source-noted external sequence and position-encoding comparators:
+  Transformer-XL, Compressive Transformers, RoFormer/RoPE, and RetNet.
+- Routed existing Mamba and LoRA source notes into the cyclic-mixer chapter as
+  state-space and low-rank-adapter comparator families.
+- Replaced the external-baseline exception prose for
+  `coil-attention-cyclic-memory-and-recurrence-contracts` and
+  `coilra-multicoil-rope-and-cyclic-mixers` with source-noted positioning
+  paragraphs.
+- Updated the outline, v1.x roadmap, generated source appendices, external-SOTA
+  audit, chapter external-grounding ledger, and v1.0 status snapshot so the
+  placement gate now records 50 positioned chapters and 4 explicit exceptions.
+- Kept both chapter core claims at `argument`; no Transformer-XL, Compressive
+  Transformer, RoFormer, RetNet, Mamba, LoRA, Coil, RoPE, long-context,
+  retrieval-quality, runtime, memory, or model-quality result was reproduced or
+  promoted.
+
 ## 2026-06-29 - Security-kernel external-grounding backfill
 
 - Added three source-noted external security comparators: OWASP Top 10 for

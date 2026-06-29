@@ -16,8 +16,8 @@ BUILDER = ROOT / "scripts" / "build_chapter_external_grounding_status.py"
 ROW_RE = re.compile(r"^\|\s*([^|]+)\|\s*`([^`]+)`\s*\|\s*([^|]+)\|\s*`([^`]+)`\s*\|")
 
 EXPECTED_COUNTS = {
-    "source-noted": 48,
-    "explicit_exception": 6,
+    "source-noted": 50,
+    "explicit_exception": 4,
     "candidate_backlog": 0,
     "missing": 0,
 }

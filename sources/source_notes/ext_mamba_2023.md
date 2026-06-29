@@ -37,12 +37,14 @@ Mamba proposes selective state-space sequence modeling as an efficient alternati
 
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
+- `coilra-multicoil-rope-and-cyclic-mixers` (CoilRA, MultiCoil RoPE, and Cyclic Mixers)
 
 ## Claims To Add Or Update
 
 - Use this source to source-note state-space sequence models as a distinct speed/sequence substrate.
 - Keep generation-mode records clear about whether speed comes from backbone choice or decoding acceptance.
 - Use this source in mathematical/search substrates to keep backbone-efficiency claims separate from substrate adoption, verifier adequacy, and downstream quality claims.
+- Use this source in cyclic-mixer positioning as a state-space baseline family that cyclic substrates must compare against before adoption.
 - Do not claim Mamba-like substrates are adopted into the ASI Stack without A/B tests and governance gates.
 
 ## Open Questions

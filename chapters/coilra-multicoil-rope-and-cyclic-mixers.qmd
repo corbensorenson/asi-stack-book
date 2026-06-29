@@ -4,7 +4,7 @@ chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-29"
 primary_sources:
   - "coilra_multicoil_rope"
   - "rope_position_certifier"
@@ -14,6 +14,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
+  - "External positioning now source-notes RoFormer/RoPE, LoRA, Mamba, and RetNet as position-encoding, adapter, state-space, and recurrence/attention comparators; support remains at argument because no RoPE certifier run, cyclic mixer benchmark, MLX experiment, hardware-kernel test, downstream quality evaluation, or baseline matrix has been reproduced in this repository."
   - "Appendix C now records exact passage-reviewed mappings for all five assigned CoilRA/MultiCoil/RoPE/cyclic-mixer sources; support remains argument until local RoPE certifier runs, cyclic mixer benchmarks, MLX experiments, hardware-kernel tests, downstream quality evaluations, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist."
   - "The cyclic_mixer_evaluation_record fixture validates schema/example consistency for evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims; AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates only; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo."
   - "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, replay receipts, check fingerprints, or validate external Circle Lean proofs as local evidence."
@@ -29,11 +30,11 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-29 |
 | Primary source records | `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `coilra_multicoil_rope`, `rope_position_certifier`; supporting: `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
+| Source queue | primary: `coilra_multicoil_rope`, `rope_position_certifier`; supporting: `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures`; external variants: `ext_roformer_rope_2021`, `ext_lora_2021`, `ext_mamba_2023`, `ext_retnet_2023` |
 | Source loading state | source notes: `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Test state | `cyclic_mixer_evaluation_record.valid.json` passes repository-level protocol fixture validation for evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims; `AsiStackProofs.CyclicMixers` implements finite structural-claim separation and baseline/tradeoff promotion gates; RoPE boundary, baseline matrix, alias diagnostic, and parameter/quality/runtime tests remain planned. |
 
@@ -76,7 +77,7 @@ The adoption question is therefore comparative. What does the cyclic candidate d
 
 Cross-ledger spending is the cyclic-substrate adoption failure. A substrate wins a structural ledger entry, then spends that win as if it were a quality result, runtime result, memory result, or hardware result. Each ledger should have to earn its own evidence.
 
-External baseline exception: the text names comparison families such as dense layers, LoRA variants, RoPE, recurrent memory, and state-space models as required future baselines, but the current source queue has not assigned source-noted external records to this layer. The cyclic-mixer claim therefore remains local-design and research-agenda material until those sources are triaged.
+External positioning: CoilRA and cyclic mixers now have source-noted comparator families through `ext_roformer_rope_2021`, `ext_lora_2021`, `ext_mamba_2023`, and `ext_retnet_2023`. RoFormer grounds ordinary RoPE as the position-encoding baseline. LoRA grounds low-rank adapter comparison. Mamba grounds state-space sequence-substrate comparison. RetNet grounds recurrence/attention and recurrent-computation tradeoffs. These records make the required baseline set explicit, but they do not reproduce any baseline matrix here and they do not support a CoilRA model-quality, context-length, runtime, memory, training-stability, hardware-efficiency, or deployment claim.
 
 ## Core Claim
 
@@ -252,8 +253,12 @@ These Lean hooks are implemented as finite-record predicates over cyclic mixer c
 | `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 | `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Disciplined Circle AI thesis: use phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure only where the structure is real and baselines support it. | source note available |
+| `ext_roformer_rope_2021` | RoFormer: Enhanced Transformer with Rotary Position Embedding | position_encoding | External RoPE comparator for rotary position embedding and relative-position behavior in self-attention. | source note available; results not reproduced |
+| `ext_lora_2021` | LoRA: Low-Rank Adaptation of Large Language Models | compression_representation | External low-rank adapter comparator for parameter-efficient adaptation and adapter-baseline vocabulary. | source note available; results not reproduced |
+| `ext_mamba_2023` | Mamba: Linear-Time Sequence Modeling with Selective State Spaces | sequence_substrates | External state-space sequence-substrate comparator for cyclic or recurrent substrate adoption. | source note available; results not reproduced |
+| `ext_retnet_2023` | Retentive Network: A Successor to Transformer for Large Language Models | sequence_memory_recurrence | External comparator for recurrence/attention tradeoffs and recurrent or chunkwise computation modes. | source note available; results not reproduced |
 
-The crosswalk keeps cyclic mixer evidence partitioned. `coilra_multicoil_rope` supplies cyclic adapter/mixer and parameter-accounting language, `rope_position_certifier` supplies exact/discretized RoPE receipt boundaries, `circle_ai_contract_suite` supplies contract-family fields, `theseus_circle_transfer` supplies transfer non-claims, and `circle_ai_architectures` supplies the rule that cyclic structure matters only when the workload actually has it.
+The crosswalk keeps cyclic mixer evidence partitioned. `coilra_multicoil_rope` supplies cyclic adapter/mixer and parameter-accounting language, `rope_position_certifier` supplies exact/discretized RoPE receipt boundaries, `circle_ai_contract_suite` supplies contract-family fields, `theseus_circle_transfer` supplies transfer non-claims, and `circle_ai_architectures` supplies the rule that cyclic structure matters only when the workload actually has it. The external records ground ordinary RoPE, low-rank adapter, state-space, and recurrence/attention baselines; they do not validate CoilRA, MultiCoil RoPE, or cyclic mixer adoption.
 
 ## Summary
 
