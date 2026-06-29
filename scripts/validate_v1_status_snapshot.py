@@ -152,7 +152,7 @@ def main() -> None:
         f"| Source inventory | {len(source_records)} public-safe source records, each with a matching public source note;",
         "| Source appendix ownership | Appendix G (`Corben's Own Sources, Papers, and Local Projects`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices with explicit source-ownership boundary blocks, ownership-rule rows, and appendix-local identity rows: G contains Corben's own papers, Corben-supplied materials, recovered project records, and local project records; H contains external records and third-party literature marked `external_literature`; neither appendix renders the other source class as a second ownership row |",
         f"| Claim/source traceability | {assigned_pairs} assigned source/chapter pairs, {exact_mappings} exact claim-source mappings, {passage_reviewed} passage-reviewed mappings |",
-        f"| Support states | {evidence_counts.get('argument', 0)} chapter core claims at `argument`; the v1.0 evidence-transition pilot records fourteen accepted no-change decisions and no support-state promotion |",
+        f"| Support states | {evidence_counts.get('argument', 0)} chapter core claims at `argument`; the v1.0 evidence-transition pilot records fifteen accepted no-change decisions and no support-state promotion |",
         "`python3 scripts/validate_evidence_transitions.py`",
         "| Test harnesses | Twelve synthetic or deterministic harnesses are wired into book validation and the Phase 5 registry:",
         "the claim ledger revision harness checks 3 valid and 4 expected-invalid claim-ledger/belief-revision fixtures",

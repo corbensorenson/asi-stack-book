@@ -1,0 +1,116 @@
+{
+  "transition_id": "v1_0_pilot.spinoza.no_change",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_surface_refs": [
+    "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/proof_carrying_claim_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/proof_carrying_claim.schema.json",
+    "tests/fixtures/protocol_records/proof_carrying_claim.valid.json",
+    "experiments/proof_carrying_claims/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/ProofCarryingClaims.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic proof-carrying claim record discipline and finite Lean record predicates only; no theorem validity, semantic equivalence, citation accuracy, verifier quality, open-domain formalization, source interpretation, runtime behavior, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has a proof-carrying-claim schema, a protocol fixture, finite ProofCarryingClaims Lean predicates, proof adequacy review text that classifies the target as useful but too narrow, exact source mappings for the Spinoza chapter, and a synthetic proof-carrying claim harness with valid and expected-invalid fixtures. Those artifacts make verifier artifact refs, tier/justification alignment, bounded review eligibility, failed-attempt preservation, formalization mismatch escalation, timeout/failure blocking, and non-claim boundaries executable at the record level. They still do not establish theorem validity, semantic equivalence between prose and formalization, citation accuracy, verifier quality, open-domain formalization, source interpretation adequacy, or a deployed verifier.",
+  "required_artifacts": [
+    "real verifier-output trace with proof, citation, procedure, or tribunal artifacts",
+    "semantic-equivalence review connecting a prose claim to a formal or procedural representation",
+    "citation accuracy review for citation-dossier claims",
+    "formalization mismatch corpus with positive and negative controls",
+    "failed-attempt ledger showing downgrade, block, or tribunal routing across actual claims",
+    "independent review of verifier quality and source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/proof_carrying_claim_harness.md",
+    "scripts/validate_proof_carrying_claims.py",
+    "experiments/proof_carrying_claims/results/2026-06-28-local.md",
+    "schemas/proof_carrying_claim.schema.json",
+    "tests/fixtures/protocol_records/proof_carrying_claim.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/ProofCarryingClaims.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#spinoza-verification-and-proof-carrying-claims.core",
+    "docs/source_evidence_audit.md#spinoza-verification-and-proof-carrying-claims.core"
+  ],
+  "verification_command": "python3 scripts/validate_proof_carrying_claims.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Spinoza remains at argument",
+    "proof-carrying claim fixtures are synthetic",
+    "schema validation checks record shape rather than theorem truth",
+    "finite Lean predicates remain useful but too narrow for semantic proof adequacy",
+    "semantic-equivalence review, citation accuracy review, verifier-quality review, formalization benchmarks, and deployed verifier traces are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+    "docs/proof_carrying_claim_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "proof-carrying claim harness failure",
+    "proof-carrying claim schema drift",
+    "chapter text interpreted as theorem-validity evidence",
+    "narrow proof-carrying fixture interpreted as verifier-quality evidence",
+    "citation dossier fixture interpreted as citation accuracy evidence",
+    "formalization mismatch fixture treated as semantic-equivalence proof",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after verifier-output traces, semantic-equivalence review, citation accuracy review, formalization mismatch tests, failed-attempt ledger behavior, verifier-quality review, and independent source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not run an open-domain verifier",
+    "schema validation does not prove theorem truth or citation accuracy",
+    "finite Lean predicates do not prove semantic adequacy of natural-language claims",
+    "formalization mismatch fixtures do not establish a general mismatch detector",
+    "failed-attempt refs in fixtures do not prove a deployed verifier ledger",
+    "no independent formal-methods, verifier-quality, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent formal-methods, verifier-quality, citation, semantic-equivalence, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no real verifier-output trace",
+    "no semantic-equivalence review",
+    "no citation accuracy review",
+    "no formalization mismatch corpus",
+    "no deployed failed-attempt ledger",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-spinoza-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Spinoza above argument",
+    "does not prove theorem validity",
+    "does not prove semantic equivalence",
+    "does not prove citation accuracy",
+    "does not prove verifier quality",
+    "does not prove runtime behavior or open-domain formalization"
+  ]
+}
