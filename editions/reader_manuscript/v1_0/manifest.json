@@ -571,6 +571,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First prose curation pass recorded in docs/curated_reader_readiness_gates_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "title": "Claim Ledgers and Belief Revision",
+      "file": "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/claim-ledgers-and-belief-revision.qmd",
+      "live_source_ref": "chapters/claim-ledgers-and-belief-revision.qmd@c1024905a",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#claim-ledgers-and-belief-revision.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#claim-ledgers-and-belief-revision",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around truth-claim version control, ledger identity, support states, contradiction links, revision history, publication-boundary discipline, minimum viable record fixtures, and beyond-SOTA epistemic version control; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external records remain comparators rather than claim support",
+        "proof/test status preserved without adding unrun extraction, contradiction, semantic-equivalence, citation, or belief-engine results",
+        "implementation horizon preserved without implying current open-domain claim-ledger deployment",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_claim_ledgers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {
