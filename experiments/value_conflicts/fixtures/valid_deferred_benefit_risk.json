@@ -1,0 +1,15 @@
+{
+  "conflict_id": "benefit-risk-deferred-demo",
+  "value_axes": ["benefit", "safety", "consent"],
+  "stakeholders": ["research participant", "system operator"],
+  "stakes": "safety-relevant deployment choice with incomplete consent evidence",
+  "reversibility": "reversible before deployment; harder to reverse after user exposure",
+  "evidence_required": ["consent route review", "safety residual review"],
+  "review_route": "human appeal route with tribunal review if consent remains disputed",
+  "decision_state": "deferred_action",
+  "decision": "defer deployment until consent and safety residuals are reviewed",
+  "authority_effect": "defers action and limits authority to evidence gathering",
+  "dissent_payload": ["The operator may argue that delay has opportunity costs."],
+  "residual_uncertainty": ["Consent sufficiency and safety residuals remain unresolved."],
+  "expiry_or_revisit_condition": "revisit after consent route and safety residual review"
+}

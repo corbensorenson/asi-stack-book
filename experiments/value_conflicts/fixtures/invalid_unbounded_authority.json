@@ -1,0 +1,15 @@
+{
+  "conflict_id": "unbounded-authority-demo",
+  "value_axes": ["safety", "capability"],
+  "stakeholders": ["operator", "affected user"],
+  "stakes": "high capability release decision",
+  "reversibility": "partly reversible",
+  "evidence_required": ["safety review", "capability review"],
+  "review_route": "human review",
+  "decision_state": "bounded_decision",
+  "decision": "release the capability",
+  "authority_effect": "full authorization for all future use",
+  "dissent_payload": ["Safety reviewer objects to broad release."],
+  "residual_uncertainty": ["The release boundary is not established."],
+  "expiry_or_revisit_condition": "revisit if incidents occur"
+}

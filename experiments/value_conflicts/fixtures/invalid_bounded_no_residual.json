@@ -1,0 +1,15 @@
+{
+  "conflict_id": "bounded-no-residual-demo",
+  "value_axes": ["auditability", "privacy"],
+  "stakeholders": ["user", "maintainer"],
+  "stakes": "high public publication choice",
+  "reversibility": "partly reversible",
+  "evidence_required": ["privacy review", "audit need"],
+  "review_route": "human review",
+  "decision_state": "bounded_decision",
+  "decision": "publish summaries",
+  "authority_effect": "narrows publication authority until review",
+  "dissent_payload": ["A maintainer may object."],
+  "residual_uncertainty": [],
+  "expiry_or_revisit_condition": "revisit before raw publication"
+}

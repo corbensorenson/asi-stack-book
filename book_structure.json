@@ -1569,9 +1569,21 @@
           "minimal_implementation": "A value-conflict record schema and scenario library.",
           "beyond_state_of_art": "Moral uncertainty needs a value-conflict ledger for governed action under disagreement. It preserves unresolved obligations, affected parties, reversible decisions, review routes, dissent, and residual moral risk instead of hiding plural values inside one optimized reward. A mature value-conflict ledger keeps unresolved obligations, affected parties, review paths, dissent, bounded decisions, and residual moral risk visible instead of hidden inside a reward function.",
           "codex_tests": [
-            "Value conflict classification test",
-            "Review escalation test",
-            "Residual uncertainty preservation test"
+            {
+              "name": "Value conflict classification test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic value conflict harness; no moral-correctness or classification-quality claim"
+            },
+            {
+              "name": "Review escalation test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic value conflict harness; no reviewer-independence or review-quality claim"
+            },
+            {
+              "name": "Residual uncertainty preservation test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic value conflict harness; no runtime policy or deployed decision claim"
+            }
           ],
           "lean_module": "AsiStackProofs.ValueConflict",
           "proof_targets": [

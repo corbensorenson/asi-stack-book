@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Value conflict harness
+
+- Added `scripts/validate_value_conflicts.py`, synthetic value-conflict
+  fixtures under `experiments/value_conflicts/`,
+  `docs/value_conflict_harness.md`, and a tracked local result record. The
+  local run passes with 3 valid and 5 expected-invalid fixtures, checking
+  multi-axis classification, stakeholder and evidence requirements,
+  high-stakes review routing, residual uncertainty preservation, authority
+  narrowing, dissent payloads, bounded-decision revisit conditions, and
+  deprecated-premise authority blocking.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Moral Uncertainty chapter's value
+  classification, review-escalation, and residual-preservation test rows,
+  README, publication readiness, and v1.0 roadmap/status/focus surfaces. This
+  is synthetic value-conflict record discipline only: it is not moral
+  correctness, value-conflict classification quality, reviewer independence,
+  human-review quality, tribunal quality, runtime policy behavior, source
+  interpretation, reader-release approval, support-state promotion, proof
+  adequacy, benchmark evidence, or whole-system moral adequacy.
+
 ## 2026-06-28 - v1.0 UAT evidence transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/uat_no_change.json` and updated the

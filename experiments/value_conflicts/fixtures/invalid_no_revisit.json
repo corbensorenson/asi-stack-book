@@ -1,0 +1,15 @@
+{
+  "conflict_id": "no-revisit-demo",
+  "value_axes": ["privacy", "auditability"],
+  "stakeholders": ["user", "maintainer"],
+  "stakes": "high public artifact decision",
+  "reversibility": "partly reversible",
+  "evidence_required": ["privacy review", "audit need"],
+  "review_route": "human review",
+  "decision_state": "bounded_decision",
+  "decision": "publish a summary",
+  "authority_effect": "narrows publication authority until review",
+  "dissent_payload": ["Privacy concern remains."],
+  "residual_uncertainty": ["Redaction sufficiency remains uncertain."],
+  "expiry_or_revisit_condition": "never"
+}

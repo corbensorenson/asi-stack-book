@@ -1,0 +1,15 @@
+{
+  "conflict_id": "self-modification-agency-escalation-demo",
+  "value_axes": ["agency", "capability improvement", "rollback safety"],
+  "stakeholders": ["operator", "affected user", "future maintainer"],
+  "stakes": "high self-modification decision with rights and rollback consequences",
+  "reversibility": "irreversible until canary rollback and state migration are reviewed",
+  "evidence_required": ["agency impact review", "rollback evidence", "protected-invariant check"],
+  "review_route": "tribunal and human review before authority expands",
+  "decision_state": "escalated_review",
+  "decision": "do not accept autonomous modification until review completes",
+  "authority_effect": "blocks high-impact dispatch and escalates authority decision to review",
+  "dissent_payload": ["Capability gains may be valuable, but agency impact is unresolved."],
+  "residual_uncertainty": ["Rollback behavior and affected-party impact are not yet established."],
+  "expiry_or_revisit_condition": "revisit after rollback evidence and protected-invariant review are recorded"
+}

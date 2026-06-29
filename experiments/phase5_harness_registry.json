@@ -69,6 +69,29 @@
     ]
   },
   {
+    "id": "value_conflicts",
+    "name": "Value conflict harness",
+    "command": "python3 scripts/validate_value_conflicts.py",
+    "script": "scripts/validate_value_conflicts.py",
+    "doc": "docs/value_conflict_harness.md",
+    "experiment_dir": "experiments/value_conflicts",
+    "fixture_dir": "experiments/value_conflicts/fixtures",
+    "result_record": "experiments/value_conflicts/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Value conflict harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "moral-uncertainty-and-value-conflict",
+      "unified-adaptive-tribunal-and-adversarial-review",
+      "governance-rights-fork-exit-and-audit",
+      "constitutional-alignment-substrate"
+    ],
+    "non_claims": [
+      "Does not prove moral correctness, value-conflict classification quality, reviewer independence, human-review quality, tribunal quality, runtime policy behavior, or source interpretation.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "support_state_transitions",
     "name": "Support-state transition harness",
     "command": "python3 scripts/validate_support_state_transitions.py",

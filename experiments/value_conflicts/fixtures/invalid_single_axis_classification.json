@@ -1,0 +1,15 @@
+{
+  "conflict_id": "single-axis-demo",
+  "value_axes": ["efficiency"],
+  "stakeholders": ["operator"],
+  "stakes": "routine tradeoff",
+  "reversibility": "reversible",
+  "evidence_required": ["cost estimate"],
+  "review_route": "operator note",
+  "decision_state": "bounded_decision",
+  "decision": "optimize for efficiency",
+  "authority_effect": "narrows action to the cheap route until review",
+  "dissent_payload": ["No dissent recorded."],
+  "residual_uncertainty": ["No second value axis was recorded."],
+  "expiry_or_revisit_condition": "revisit if a stakeholder objects"
+}

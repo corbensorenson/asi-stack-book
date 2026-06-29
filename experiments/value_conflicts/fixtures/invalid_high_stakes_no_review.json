@@ -1,0 +1,15 @@
+{
+  "conflict_id": "high-stakes-no-review-demo",
+  "value_axes": ["agency", "safety"],
+  "stakeholders": ["affected user", "operator"],
+  "stakes": "high safety and rights impact",
+  "reversibility": "irreversible after deployment",
+  "evidence_required": ["safety note", "rights note"],
+  "review_route": "auto approve locally",
+  "decision_state": "bounded_decision",
+  "decision": "allow the action",
+  "authority_effect": "narrows the action to the selected route until review",
+  "dissent_payload": ["A stakeholder may object."],
+  "residual_uncertainty": ["Reviewer independence is not established."],
+  "expiry_or_revisit_condition": "revisit after deployment"
+}
