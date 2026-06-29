@@ -14,6 +14,7 @@ not change proof targets, does not change support states, does not authorize a m
 - `docs/chapter_consolidation_pilot_plan.md`
 - `docs/chapter_consolidation_dry_run_constitutional_alignment.md`
 - `docs/chapter_consolidation_dry_run_contestable_governance.md`
+- `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
 - `docs/v1_x_beyond_sota_roadmap.md`
 - `docs/chapter_external_grounding_status.md`
 - `docs/external_sota_positioning_audit.md`
@@ -35,6 +36,11 @@ claim dispositions, Lean proof tags, harness rows, reader repairs, handoff
 repairs, implementation horizons, generated-file expectations, validation
 commands, and no-support-state-change boundaries.
 
+The first destination draft now exists for **Constitutional Alignment: Agency,
+Dignity, and Corrigibility**. It is a review-ready object, not an accepted
+review result. It gives human or external reviewers one merged chapter skeleton
+to judge before any canonical chapter identity changes.
+
 The manifest merge is deferred because the next honest decision needs human or
 external review of the actual chapter-shape tradeoff before canonical chapter
 identity changes. The dry-runs show that a merge is technically possible, but
@@ -51,8 +57,9 @@ reviewed as one chapter rather than only planned.
   lanes, status snapshots, external-grounding reports, and rendered handoffs
   would all need coordinated updates for a real merge.
 - The two dry-run packages name the required source/proof/claim/reader
-  reconciliation, but they are not merged prose and not reader-reviewed merged
-  chapters.
+  reconciliation. The first destination draft now supplies merged prose for one
+  proposed chapter, but it has not yet been accepted by a human or external
+  reviewer and is not a canonical chapter.
 - The external review request is still open and no independent external review
   has been accepted into the repo.
 - The project has no redirect policy yet for retired chapter URLs.
@@ -81,8 +88,8 @@ preserve the repetition the pilot is meant to remove.
 
 Before either manifest merge can proceed, require:
 
-- a reviewed destination chapter draft with one chapter skeleton, not two
-  pasted skeletons;
+- a human- or external-reviewed destination chapter draft with one chapter
+  skeleton, not two pasted skeletons;
 - a public URL or redirect policy for the folded chapter;
 - updated `book_structure.json` and `docs/book_outline.md` in the same merge
   commit;

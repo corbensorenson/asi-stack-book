@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-29 - Constitutional alignment consolidation destination draft
+
+- Added
+  `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
+  as the first review-ready destination chapter draft for the proposed
+  `constitutional-alignment-substrate` plus
+  `agency-dignity-and-corrigibility` merge.
+- The draft uses one chapter skeleton for **Constitutional Alignment: Agency,
+  Dignity, and Corrigibility**, preserving constitutional predicate records,
+  agency-rights checklists, source unions, external-comparator unions, both
+  Lean modules, all four proof tags, both harness lanes, implementation
+  horizons, and the direct handoff to `moral-uncertainty-and-value-conflict`.
+- Updated the consolidation roadmap, pilot plan, decision review, repository
+  map, and `scripts/validate_chapter_consolidation_pilot_plan.py` so the draft
+  is required by validation while remaining explicitly unreviewed and
+  non-canonical.
+- This does not edit `book_structure.json`, merge chapters, delete rendered
+  pages, change source mappings, change proof targets, create source-derived
+  evidence, create an external-review record, approve a reader artifact,
+  approve a release artifact, or promote any support state.
+
 ## 2026-06-29 - Audio-script probe manifest
 
 - Added `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`,

@@ -930,6 +930,12 @@ Current status:
   54-to-44 manifest edit. The next useful artifact is a reviewed destination
   chapter draft for one pilot merge, written as one chapter with one skeleton,
   followed by a decision to execute, defer, or reject that merge.
+- `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
+  now records the first review-ready destination draft for
+  **Constitutional Alignment: Agency, Dignity, and Corrigibility**. It is
+  intentionally not marked reviewed: manifest consolidation remains blocked
+  until human or external review accepts the destination shape, or the project
+  records a decision to defer or reject the merge.
 - Broad reader polish should avoid the four pending Part I consolidation source
   chapters until the pilot is executed or rejected. Reader curation may continue
   on chapters outside the pending cluster, and local prose fixes may continue

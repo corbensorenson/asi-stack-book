@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "docs" / "chapter_consolidation_pilot_plan.md"
 DRY_RUN_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_dry_run_constitutional_alignment.md"
 DRY_RUN_CONTESTABLE = ROOT / "docs" / "chapter_consolidation_dry_run_contestable_governance.md"
+DESTINATION_DRAFT_ALIGNMENT = ROOT / "docs" / "chapter_consolidation_destination_draft_constitutional_alignment.md"
 DECISION_REVIEW = ROOT / "docs" / "chapter_consolidation_decision_review.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 STRUCTURE = ROOT / "book_structure.json"
@@ -105,6 +106,19 @@ ALIGNMENT_DRY_RUN_REQUIRED_FRAGMENTS = (
     "Expected Generated-File Updates If Applied",
     "Validation Commands Before Any Real Merge Commit",
     "No new result is created by this dry run.",
+)
+ALIGNMENT_DESTINATION_DRAFT_REQUIRED_FRAGMENTS = (
+    "Status: review-ready draft; human/external review not completed.",
+    "does not edit `book_structure.json`",
+    "Constitutional Alignment: Agency, Dignity, and Corrigibility",
+    "one chapter skeleton",
+    "No manifest edit has been made.",
+    "No chapter core claim is promoted above `argument`.",
+    "Constitutional Predicate Record",
+    "Agency Rights Checklist",
+    "Review Checklist Before Any Manifest Merge",
+    "This draft is ready for human or external review. It is not yet reviewed.",
+    "Manifest consolidation remains blocked",
 )
 CONTESTABLE_DRY_RUN_REQUIRED_FRAGMENTS = (
     "This is the second dry-run merge package",
@@ -217,6 +231,7 @@ def main() -> None:
     roadmap_text = ROADMAP.read_text(encoding="utf-8")
     alignment_dry_run_text = read_required_file(DRY_RUN_ALIGNMENT, errors)
     contestable_dry_run_text = read_required_file(DRY_RUN_CONTESTABLE, errors)
+    alignment_destination_draft_text = read_required_file(DESTINATION_DRAFT_ALIGNMENT, errors)
     decision_review_text = read_required_file(DECISION_REVIEW, errors)
     structure = load_structure()
     manifest_ids = {
@@ -258,6 +273,24 @@ def main() -> None:
         errors,
     )
     require_fragments(
+        "Constitutional-alignment destination draft",
+        alignment_destination_draft_text,
+        ALIGNMENT_DESTINATION_DRAFT_REQUIRED_FRAGMENTS,
+        errors,
+    )
+    require_backticked_ids(
+        "Constitutional-alignment destination draft",
+        alignment_destination_draft_text,
+        ALIGNMENT_DRY_RUN_REQUIRED_SOURCE_IDS,
+        errors,
+    )
+    require_backticked_ids(
+        "Constitutional-alignment destination draft",
+        alignment_destination_draft_text,
+        ALIGNMENT_DRY_RUN_REQUIRED_LEAN_TAGS,
+        errors,
+    )
+    require_fragments(
         "Contestable-governance dry-run package",
         contestable_dry_run_text,
         CONTESTABLE_DRY_RUN_REQUIRED_FRAGMENTS,
@@ -287,7 +320,10 @@ def main() -> None:
     if errors:
         fail(errors)
 
-    print("Chapter consolidation pilot-plan validation passed: four source chapters, two proposed merges, two dry-run packages.")
+    print(
+        "Chapter consolidation pilot-plan validation passed: four source chapters, "
+        "two proposed merges, two dry-run packages, and one destination draft."
+    )
 
 
 if __name__ == "__main__":
