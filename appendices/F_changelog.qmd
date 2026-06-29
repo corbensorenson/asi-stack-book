@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-06-29 - Governance-rights preservation proof depth
+
+- Strengthened `lean/AsiStackProofs/GovernanceRights.lean` with
+  `GovernanceRightsDecision`, a finite governance-rights envelope that records
+  phase, constrained-fork state, audit-path preservation, safety-obligation
+  preservation, redaction state, redaction-reason recording, appeal
+  availability, exit requirement, exit-capability preservation,
+  protected-right removal, and routed outcome.
+- Added three derived/decomposed preservation theorems:
+  `constrained_fork_without_safety_obligations_routes_to_review`,
+  `redaction_without_appeal_path_routes_to_review`, and
+  `missing_exit_capability_preserves_exit_residual`, plus explicit
+  negative-case records for missing fork safety obligations, redaction without
+  an appeal path, and missing exit capability.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now records 155
+  theorem declarations, 43 derived/decomposed declarations, 26
+  safety-critical declarations, and four derived/decomposed theorems inside
+  the safety-critical Governance Rights module while 10 safety-critical
+  direct/projection declarations remain.
+- Updated the Governance Rights chapter, `docs/proof_adequacy_review.md`, the
+  v1.x roadmap, and the v1.0 status snapshot so the new preservation proof work
+  is presented as a narrow finite-record envelope, not legal-rights proof,
+  institutional contestability proof, real access-path usability, redaction
+  quality, actual fork safety, SCF replacement behavior, or support-state
+  promotion.
+- This does not promote any chapter core claim, prove deployed governance
+  enforcement, validate real export/fork usability, reproduce external
+  governance results, or approve any reader/release artifact.
+
 ## 2026-06-29 - Corrigibility control proof depth
 
 - Strengthened `lean/AsiStackProofs/Corrigibility.lean` with

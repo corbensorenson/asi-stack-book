@@ -76,7 +76,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 54-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Move the 54-row plan to `docs/per_chapter_evidence_plan.md`, cap each v1.x cycle at 5-8 executed lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 152 theorem declarations, 112 direct/projection-style, 40 derived/decomposed, and 23 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` has at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose; `Alignment` and `Corrigibility` now each have four derived/decomposed transition/control theorems, and `SelfImprovement` now has three derived/decomposed lifecycle/review theorems, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
+| P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 155 theorem declarations, 112 direct/projection-style, 43 derived/decomposed, and 26 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` has at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose; `Alignment`, `Corrigibility`, and `GovernanceRights` now each have four derived/decomposed transition/control/preservation theorems, and `SelfImprovement` now has three derived/decomposed lifecycle/review theorems, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 54 chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, but several clusters now repeat the same chapter skeleton around overlapping claims. | Add a governed consolidation milestone: pilot one merge cluster first, preserve ideas as sections/subclaims, and require claim/source/proof/reader reconciliation before changing the manifest broadly. |
@@ -384,11 +384,15 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   pre-effect review is missing, low-risk unbounded-delegation narrowing, and
   audit-residual preservation when a denied action lacks an accountable
   principal.
+- `GovernanceRights` now has a second v1.x depth increment: three additional
+  derived governance-rights theorems model constrained-fork blocking when
+  safety obligations are missing, redaction blocking when appeal is missing,
+  and exit-residual preservation when exit capability is not preserved.
 - `SelfImprovement` now has a second v1.x depth increment: two additional
   derived lifecycle/review theorems model evaluator-missing protected lifecycle
   blocking and canary-monitor rollback over a richer finite record.
-- The generated proof-depth report records 152 theorem declarations, 40
-  derived/decomposed declarations, 23 safety-critical declarations, and 10
+- The generated proof-depth report records 155 theorem declarations, 43
+  derived/decomposed declarations, 26 safety-critical declarations, and 10
   remaining safety-critical direct/projection declarations.
 - The relevant chapter limitation sections now state what these finite-record
   proofs do and do not justify.
