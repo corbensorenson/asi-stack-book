@@ -1,0 +1,118 @@
+{
+  "transition_id": "v1_0_pilot.claim_ledgers.no_change",
+  "claim_id": "claim-ledgers-and-belief-revision.core",
+  "claim_surface_refs": [
+    "chapters/claim-ledgers-and-belief-revision.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/claim_ledger_revision_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/claim_record.schema.json",
+    "schemas/belief_revision_record.schema.json",
+    "tests/fixtures/protocol_records/claim_record.valid.json",
+    "tests/fixtures/protocol_records/belief_revision_record.valid.json",
+    "experiments/claim_ledger_revision/results/2026-06-28-local.md"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic claim-ledger and belief-revision record discipline only; no source interpretation, open-domain claim extraction, contradiction detection, verifier-quality result, deployed belief engine, semantic-equivalence check, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has claim-record and belief-revision schemas, protocol fixtures, finite Claim Ledger Lean predicates, a proof adequacy review that keeps the target useful but too narrow, exact source mappings for the Claim Ledgers chapter, and a synthetic claim-ledger revision harness with valid and expected-invalid fixtures. Those artifacts make no-change revision records, contradiction quarantine, claim splitting, history preservation, affected-surface propagation, review routing, residuals, and support-state promotion blockers executable at the record level. They still do not establish source interpretation adequacy, open-domain claim extraction, contradiction detection quality, semantic equivalence across rewritten claims, verifier quality, or a deployed belief-revision engine.",
+  "required_artifacts": [
+    "claim extraction run against a known corpus with expected claim identities",
+    "contradiction detection benchmark or reviewed fixture suite with positive and negative controls",
+    "surface-synchronization test showing chapter, appendix, reader, release, and proof surfaces update after a claim revision",
+    "semantic-equivalence review for split, merged, narrowed, or deprecated claims",
+    "verifier integration trace showing proof, citation, procedure, or tribunal results feeding the ledger",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/claim_ledger_revision_harness.md",
+    "scripts/validate_claim_ledger_revision.py",
+    "experiments/claim_ledger_revision/results/2026-06-28-local.md",
+    "schemas/claim_record.schema.json",
+    "schemas/belief_revision_record.schema.json",
+    "tests/fixtures/protocol_records/claim_record.valid.json",
+    "tests/fixtures/protocol_records/belief_revision_record.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/ClaimLedger.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#claim-ledgers-and-belief-revision.core",
+    "docs/source_evidence_audit.md#claim-ledgers-and-belief-revision.core"
+  ],
+  "verification_command": "python3 scripts/validate_claim_ledger_revision.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Claim Ledgers remains at argument",
+    "claim-ledger revision fixtures are synthetic",
+    "schema validation checks record shape rather than belief-engine correctness",
+    "finite Lean predicates remain useful but too narrow for semantic claim-revision adequacy",
+    "claim extraction, contradiction detection, semantic-equivalence review, surface synchronization, and verifier integration are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/claim-ledgers-and-belief-revision.qmd",
+    "docs/claim_ledger_revision_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "claim ledger revision harness failure",
+    "claim-record or belief-revision schema drift",
+    "chapter text interpreted as open-domain claim extraction evidence",
+    "contradiction quarantine fixture interpreted as contradiction-detection quality evidence",
+    "belief-revision record validity interpreted as a deployed belief engine",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after claim extraction, contradiction detection, surface synchronization, semantic-equivalence review, verifier integration, and independent source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not extract claims from source text",
+    "synthetic contradiction quarantine does not measure contradiction-detection quality",
+    "claim splitting fixtures do not prove semantic equivalence or reviewer agreement",
+    "surface refs in fixtures do not prove generated book, reader, release, and proof surfaces synchronize after real revisions",
+    "finite Lean predicates do not implement a belief-revision engine",
+    "no independent epistemic-systems or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent epistemic-systems, formal-methods, verifier-quality, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no claim extraction benchmark",
+    "no contradiction detection benchmark",
+    "no semantic-equivalence review",
+    "no real surface-synchronization run",
+    "no verifier integration trace",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-claim-ledger-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Claim Ledgers above argument",
+    "does not prove source interpretation",
+    "does not prove open-domain claim extraction",
+    "does not prove contradiction detection quality",
+    "does not prove verifier quality",
+    "does not prove deployed belief revision or runtime behavior"
+  ]
+}

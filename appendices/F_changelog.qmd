@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Claim ledger evidence transition no-change
+
+- Added `evidence_transitions/v1_0_pilot/claim_ledgers_no_change.json` and
+  updated the evidence-transition pilot to fourteen accepted no-change
+  decisions. The new record routes the claim-ledger revision harness,
+  claim-record and belief-revision schemas, protocol fixtures, finite
+  Claim Ledger Lean predicates, proof adequacy review, and exact source
+  mappings into one conservative decision: `claim-ledgers-and-belief-revision`
+  remains at `argument`.
+- The record preserves the promotion burden for claim extraction,
+  contradiction detection, semantic-equivalence review, surface
+  synchronization, verifier integration, and independent source-interpretation
+  review. It does not promote support state, prove source interpretation,
+  prove open-domain claim extraction, prove contradiction detection quality,
+  prove verifier quality, establish a deployed belief engine, approve reader
+  artifacts, or claim runtime behavior.
+
 ## 2026-06-28 - v1.0 Claim ledger revision harness
 
 - Added `scripts/validate_claim_ledger_revision.py`, synthetic
