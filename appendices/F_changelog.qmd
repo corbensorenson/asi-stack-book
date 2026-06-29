@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-29 - Constitutional alignment consolidation dry run
+
+- Added `docs/chapter_consolidation_dry_run_constitutional_alignment.md`, the
+  first reviewable dry-run merge package for the proposed
+  `constitutional-alignment-substrate` plus `agency-dignity-and-corrigibility`
+  consolidation.
+- The package records an illustrative, unapplied manifest diff; a one-skeleton
+  destination outline; Appendix C core/subclaim treatment; source and
+  external-source unions; Lean module and proof-manifest treatment; test,
+  schema, and harness rows; Human Reading Path, Handoff, and reader-review
+  repairs; merged MVI and Beyond-SOTA horizons; URL/retired-file policy; and
+  validation commands before any real manifest merge.
+- Extended `scripts/validate_chapter_consolidation_pilot_plan.py` so it checks
+  the dry-run package, and added the package to the `validate_book.py` required
+  file list.
+- Updated the v1.x roadmap and pilot plan status to record that the dry-run
+  package exists but no manifest merge has been performed.
+- This does not merge chapters, delete ideas, change source mappings, promote
+  support states, create proof/test results, or approve reader artifacts.
+
 ## 2026-06-29 - Consolidation dry-run gate refinement
 
 - Reviewed the new consolidation critique as planning input and accepted its

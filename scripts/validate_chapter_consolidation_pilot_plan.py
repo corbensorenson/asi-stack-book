@@ -8,6 +8,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "docs" / "chapter_consolidation_pilot_plan.md"
+DRY_RUN = ROOT / "docs" / "chapter_consolidation_dry_run_constitutional_alignment.md"
 STRUCTURE = ROOT / "book_structure.json"
 
 PILOT_IDS = {
@@ -41,6 +42,25 @@ REQUIRED_LEAN_TAGS = {
     "lean:governance.rights.operational_invariant",
     "lean:governance.rights.failure_blocks_promotion",
 }
+DRY_RUN_REQUIRED_SOURCE_IDS = {
+    "alignment_field",
+    "field_of_god",
+    "ethica_mechanica",
+    "eternal_code",
+    "coherence_exchange",
+    "spinoza",
+    "field_of_god_ai_constitution",
+    "ext_constitutional_ai_2022",
+    "ext_collective_constitutional_ai_2024",
+    "ext_corrigibility_2015",
+    "ext_off_switch_game_2016",
+}
+DRY_RUN_REQUIRED_LEAN_TAGS = {
+    "lean:alignment.constitution.operational_invariant",
+    "lean:alignment.constitution.failure_blocks_promotion",
+    "lean:corrigibility.agency.operational_invariant",
+    "lean:corrigibility.agency.failure_blocks_promotion",
+}
 REQUIRED_FRAGMENTS = (
     "does not edit `book_structure.json`",
     "Constitutional Alignment: Agency, Dignity, and Corrigibility",
@@ -59,6 +79,29 @@ REQUIRED_FRAGMENTS = (
     "This plan does not merge chapters.",
     "This plan does not change `book_structure.json`.",
     "This plan does not change any support state.",
+)
+DRY_RUN_REQUIRED_FRAGMENTS = (
+    "This is the first dry-run merge package",
+    "does not edit `book_structure.json`",
+    "Constitutional Alignment: Agency, Dignity, and Corrigibility",
+    "agency-dignity-and-corrigibility",
+    "Proposed `book_structure.json` Diff",
+    "This proposed `book_structure.json` diff is illustrative and unapplied.",
+    "Destination Section Outline",
+    "one chapter skeleton, not two pasted skeletons",
+    "Appendix C Row Plan",
+    "No-support-state-change language",
+    "Source Union",
+    "External-source union",
+    "Lean Module And Proof-Manifest Treatment",
+    "Keep both Lean modules",
+    "Test, Schema, And Harness Rows To Move",
+    "Reader Path, Handoff, And Review Repairs",
+    "MVI And Beyond-SOTA Merge",
+    "URL, Redirect, And Retired-File Policy",
+    "Expected Generated-File Updates If Applied",
+    "Validation Commands Before Any Real Merge Commit",
+    "No new result is created by this dry run.",
 )
 
 
@@ -79,6 +122,11 @@ def load_structure() -> dict:
 def main() -> None:
     errors: list[str] = []
     text = PLAN.read_text(encoding="utf-8")
+    if not DRY_RUN.exists():
+        errors.append(f"Missing dry-run merge package: {DRY_RUN.relative_to(ROOT)}")
+        dry_run_text = ""
+    else:
+        dry_run_text = DRY_RUN.read_text(encoding="utf-8")
     structure = load_structure()
     manifest_ids = {
         str(chapter.get("id"))
@@ -101,6 +149,15 @@ def main() -> None:
     for fragment in REQUIRED_FRAGMENTS:
         if fragment not in text:
             errors.append(f"Missing required fragment: {fragment}")
+    for fragment in DRY_RUN_REQUIRED_FRAGMENTS:
+        if fragment not in dry_run_text:
+            errors.append(f"Dry-run package missing required fragment: {fragment}")
+    for source_id in sorted(DRY_RUN_REQUIRED_SOURCE_IDS):
+        if f"`{source_id}`" not in dry_run_text:
+            errors.append(f"Dry-run package does not preserve source ID `{source_id}`.")
+    for tag in sorted(DRY_RUN_REQUIRED_LEAN_TAGS):
+        if f"`{tag}`" not in dry_run_text:
+            errors.append(f"Dry-run package does not preserve Lean tag `{tag}`.")
     if "support-state promotion" in text.lower() and "Do not promote any chapter core claim." not in text:
         errors.append("Plan mentions support-state promotion without the no-promotion boundary.")
 

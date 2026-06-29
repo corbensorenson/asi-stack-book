@@ -208,7 +208,21 @@ manifest edit. It should include:
 
 ## Validation
 
-This plan is checked by `python3 scripts/validate_chapter_consolidation_pilot_plan.py`.
+This plan and the first dry-run package,
+`docs/chapter_consolidation_dry_run_constitutional_alignment.md`, are checked
+by `python3 scripts/validate_chapter_consolidation_pilot_plan.py`.
+
+Current dry-run package status:
+
+- `docs/chapter_consolidation_dry_run_constitutional_alignment.md` records the
+  proposed merge package for `constitutional-alignment-substrate` plus
+  `agency-dignity-and-corrigibility`.
+- It records an illustrative, unapplied manifest diff; one-skeleton destination
+  outline; Appendix C row plan; source and external-source unions; Lean module
+  and proof-manifest treatment; test/harness rows; reader and handoff repairs;
+  MVI and Beyond-SOTA merge; URL/retired-file policy; generated-file updates;
+  validation commands; and open review questions.
+- It does not edit the manifest or authorize a merge.
 
 ## Non-Claims
 

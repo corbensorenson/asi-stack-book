@@ -96,6 +96,7 @@ REQUIRED = [
     "docs/core_claim_transition_coverage.md",
     "docs/v1_x_active_evidence_cycle.md",
     "docs/chapter_consolidation_pilot_plan.md",
+    "docs/chapter_consolidation_dry_run_constitutional_alignment.md",
     "docs/non_core_evidence_ledger.md",
     "docs/external_review_packet.md",
     "docs/external_review_status.md",
