@@ -45,6 +45,13 @@ named consolidation state before any manifest change, and broad human-reader
 curation should not polish a pending duplicate skeleton unless the project has
 explicitly deferred or rejected that merge for the release.
 
+The implementation update from the critique is equally important: the output of
+a successful merge is one deeper chapter with one Problem, Insufficiency,
+Mechanism, Interface, Evidence, Implementation, and Handoff skeleton. Preserved
+ideas become named mechanisms, sections, subclaims, source mappings, proof
+hooks, examples, or implementation-horizon facets. They do not survive by
+copying multiple full source-chapter skeletons into the destination draft.
+
 ## Consolidation State Model
 
 | State | Meaning | Required next move |
@@ -189,6 +196,11 @@ Part I pilot before any manifest edit:
 12. Chapter-ownership rubric result: preserved artifact boundary, repeated
     skeleton load removed, proof/evidence path clarified, reader confusion
     reduced, and reason to execute, revise, defer, or reject.
+13. Repetition-removal ledger: what skeleton sections are removed, what ideas
+    are preserved as named substructures, and where the saved space goes.
+14. Reader-work disposition: whether curated-reader work for source chapters is
+    paused, allowed as local cleanup, explicitly deferred, or allowed because
+    the merge has been rejected/retained.
 
 ## Reader Work Sequencing
 

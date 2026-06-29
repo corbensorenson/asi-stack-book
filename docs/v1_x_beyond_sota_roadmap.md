@@ -741,11 +741,19 @@ Follow-up review outcome:
 - The re-consolidation idea is accepted as a real roadmap improvement. It
   targets structural repetition created by over-splitting, not book length for
   its own sake.
+- The implementation discipline from the critique is also accepted: a merged
+  chapter must have one chapter skeleton, not two or three complete source
+  chapter skeletons pasted together. Preserved ideas should become named
+  mechanisms, sections, subclaims, proof hooks, source rows, examples, or
+  implementation-horizon facets inside the destination chapter.
 - The roadmap response is stateful consolidation, not an immediate manifest
   edit: every cluster must move through a recorded state such as
   `planned_candidate`, `fold_review_candidate`, `dry_run_packaged`,
   `review_ready`, `executed`, `deferred_for_release`, or
   `rejected_or_retained`.
+- Appendix C reconciliation, source-ID union, Lean/proof-tag union, fixture
+  treatment, reader-overlay treatment, and URL/redirect policy are not cleanup
+  chores after a merge. They are merge preconditions.
 - The Part I pilot is now `review_ready`, meaning destination drafts exist but
   require an execute, revise, defer, or reject decision plus URL/redirect policy
   before any canonical chapter identity changes.
@@ -754,6 +762,11 @@ Follow-up review outcome:
   MoECOT, simulation-fidelity, and semantic representation should each receive
   a dry-run package and destination or fold disposition before reader curation
   or manifest edits depend on them.
+- Broad human-reader curation should not harden duplicate chapter skeletons in
+  a pending consolidation cluster. Local prose cleanup is still allowed, but
+  curated-reader graduation for those source chapters should wait until the
+  cluster is executed, explicitly deferred for the release, or rejected/retained
+  with a reason.
 
 Decision rubric:
 
@@ -918,6 +931,11 @@ Merge checklist:
 - The merged chapter should be deeper than either input chapter: use the saved
   space for sharper mechanisms, concrete fixtures, negative cases, external
   positioning, proof limitations, and a clearer reader-facing throughline.
+- Each package should name the repeated skeleton load it removes and how the
+  saved space will be reinvested. Acceptable reinvestment includes deeper
+  mechanism exposition, external comparator treatment, negative controls,
+  proof-limit discussion, concrete examples, implementation traces, or better
+  reader continuity.
 - Record why the destination chapter is stronger by the rubric above: what
   artifact boundary is preserved, what repeated skeleton load is removed, what
   proof/evidence path becomes clearer, and what reader confusion is reduced.

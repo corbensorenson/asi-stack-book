@@ -90,6 +90,8 @@ REQUIRED_FRAGMENTS = (
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
     "Chapter-ownership rubric result",
+    "Repetition-removal ledger",
+    "Reader-work disposition",
     "Reader Work Sequencing",
     "This sequence does not merge chapters.",
     "This sequence does not change `book_structure.json`.",

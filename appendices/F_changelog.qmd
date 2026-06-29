@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-29 - Consolidation roadmap hardening
+
+- Reviewed the latest 54-to-44/47 re-consolidation proposal and kept the core
+  direction: reduce repeated chapter skeletons through governed consolidation,
+  not deletion or a blind chapter-count target.
+- Tightened `docs/v1_x_beyond_sota_roadmap.md` and
+  `docs/chapter_consolidation_sequence.md` so successful merges must produce
+  one deeper chapter skeleton, not pasted-together source-chapter skeletons,
+  and must record repeated-skeleton removal, source/claim/proof preservation,
+  reader-work disposition, and reinvestment of saved space.
+- Updated `scripts/validate_chapter_consolidation_sequence.py` so the new
+  repetition-removal and reader-work disposition requirements stay present in
+  the governed consolidation sequence.
+- This does not edit `book_structure.json`, merge chapters, change Appendix C,
+  create source/proof/test evidence, approve reader artifacts, or promote any
+  support state.
+
 ## 2026-06-29 - Intent/contracts consolidation review package
 
 - Added `docs/chapter_consolidation_dry_run_intent_contracts.md` and
