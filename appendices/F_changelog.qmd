@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - Consolidation dry-run gate refinement
+
+- Reviewed the new consolidation critique as planning input and accepted its
+  strongest point: repeated chapter scaffolds should be reduced by governed
+  reconsolidation, not by deleting ideas or chasing a fixed chapter count.
+- Updated the v1.x roadmap so the next consolidation step is a dry-run merge
+  package for one pilot destination chapter before any `book_structure.json`
+  edit, including a proposed manifest diff, one-skeleton chapter outline,
+  Appendix C claim/subclaim plan, source unions, Lean/proof treatment,
+  reader-overlay and Handoff repairs, implementation-horizon merge, URL policy,
+  and no-support-state-change boundary.
+- Updated the consolidation pilot plan to require that dry-run package and
+  refreshed stale external-SOTA language now that the current audit records
+  54/54 positioned chapters and 0 explicit external-baseline exceptions.
+- Expanded the pilot-plan validator so the dry-run merge package requirement is
+  checked automatically before future consolidation work.
+- This does not merge chapters, delete ideas, change source mappings, promote
+  support states, create proof/test results, or approve reader artifacts.
+
 ## 2026-06-29 - Opener external-grounding backfill
 
 - Added four source-noted external architecture comparators for the opener:

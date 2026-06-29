@@ -145,21 +145,41 @@ Do these only after this plan is reviewed:
 
 1. Run `python3 scripts/chapter_adjacency_report.py --chapter <id>` for all
    four source chapters and save the handoff repair queue.
-2. Edit `book_structure.json` to represent one pilot merge at a time, not both
-   at once.
-3. Preserve the destination chapter's stable ID unless a stronger public URL
+2. Produce a dry-run merge package before editing `book_structure.json`.
+3. Edit `book_structure.json` only after the dry-run package is reviewed, and
+   represent one pilot merge at a time, not both at once.
+4. Preserve the destination chapter's stable ID unless a stronger public URL
    reason justifies a new slug.
-4. Union `source_ids`; do not drop any source ID unless a source note or claim
+5. Union `source_ids`; do not drop any source ID unless a source note or claim
    decision records why it no longer belongs.
-5. Union proof targets and keep both Lean modules referenced unless a proof
+6. Union proof targets and keep both Lean modules referenced unless a proof
    target is explicitly retired.
-6. Rewrite the merged chapter with one chapter skeleton and named sub-sections,
+7. Rewrite the merged chapter with one chapter skeleton and named sub-sections,
    not two pasted skeletons.
-7. Update `docs/book_outline.md`, Human Reading Path prose, Handoff sections,
+8. Update `docs/book_outline.md`, Human Reading Path prose, Handoff sections,
    reader overlays, reader review matrices, Appendix C, Appendix K, proof
    manifests, external-grounding status, external-SOTA positioning, and the
    changelog.
-8. Run the full local validation and render gate before committing.
+9. Run the full local validation and render gate before committing.
+
+## Dry-Run Merge Package
+
+The first pilot deliverable should be a reviewable package, not an immediate
+manifest edit. It should include:
+
+- proposed `book_structure.json` diff for only one destination chapter;
+- destination chapter section outline with one Problem/Insufficiency/Mechanism
+  skeleton and named sub-sections for preserved ideas;
+- Appendix C row plan: one merged core claim, preserved subclaims, retired or
+  redirected claim rows, and no-support-state-change language;
+- source union and external-source union;
+- Lean module/proof-manifest treatment, including both existing modules unless
+  a proof target is explicitly retired with a reason;
+- test, schema, or harness rows that must move with the chapter;
+- Human Reading Path, Handoff, reader-overlay, and reader-review changes;
+- MVI and Beyond-SOTA implementation-horizon merge;
+- URL, redirect, and retired-file policy;
+- validation commands and expected generated-file updates.
 
 ## No-Action Decisions For This Pilot
 
@@ -181,9 +201,10 @@ Do these only after this plan is reviewed:
   mechanism is added.
 - Should the two proposed merges happen in one commit or two? Default answer for
   the pilot: two commits, one merge at a time.
-- Which external comparators should replace the two exception statuses before
-  or during the merge? Default answer: source-note them first; do not invent
-  citations in the merged chapter.
+- Which additional external comparator families are needed before prose merge?
+  Default answer: mine and source-note them first; do not invent citations in
+  the merged chapter, and do not treat existing comparators as proof that the
+  merged governance mechanisms work.
 
 ## Validation
 

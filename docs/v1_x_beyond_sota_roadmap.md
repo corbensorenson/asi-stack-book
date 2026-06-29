@@ -203,7 +203,7 @@ internal activity alone.
 | Routing/resource efficiency | One bounded synthetic selector slice; below real routing SOTA and no deployed scheduler evidence. | Extend only if a public fixture or trace includes baseline, negative control, quality/adequacy, cost, residuals, and replay. |
 | Compression/representation | Mostly architecture and source synthesis; Circle receipt is structural, not model-quality evidence. | Add one narrow artifact-compression, representation-preservation, or proof-contract lane with negative controls before stronger claims. |
 | Human/AI dual-edition publishing | Unusual and promising scaffold with reviewed reader HTML; not yet a polished human book or audio edition. | Graduate selected reader chapters into curated prose and approve artifacts only through exact release records. |
-| External literature/novelty | Placement gate passes, but some exceptions and novelty questions remain; some chapters still read as Corben-originated nomenclature before readers see the related outside literature. | Build a per-chapter external-grounding pack, starting from citations inside the chapter's linked Corben papers, then replace weak exceptions, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
+| External literature/novelty | Placement gate now records 54/54 positioned chapters and 0 explicit external-baseline exceptions, but novelty questions and the depth of external engagement still remain. Some chapters can still read as Corben-originated nomenclature before readers see enough related outside literature. | Maintain the per-chapter external-grounding pack, keep mining citations inside each chapter's linked Corben papers, replace any future or regressed weak exception with source-noted literature where possible, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
 | Structural cohesion | The manifest is dynamic and complete, but the 54-chapter shape may preserve too much skeleton-level repetition in overlapping clusters. | Pilot governed consolidation on the highest-overlap cluster, then continue only when claim identity, source mappings, proof hooks, reader overlays, and handoffs stay intact. |
 
 ## Defended Contribution Tracks
@@ -600,17 +600,17 @@ enough for serious readers."
 Tasks:
 
 - Use the chapter external-grounding pass as the candidate source pool.
-- Review the current exception chapters from
-  `docs/external_sota_positioning_audit.md`.
-- For each exception, choose one:
+- Review `docs/external_sota_positioning_audit.md` for any current or future
+  exception rows, regressed positioning rows, or weakly defended comparator
+  placements.
+- For each current or future exception/backlog row, choose one:
   - add source-noted external baselines and in-prose positioning;
   - keep a true exception with a clear reason;
   - split the chapter's claim if part of it has external comparators and part
     of it is author-originated architecture.
-- Prioritize likely replaceable exceptions only after a source-noted external
-  comparator exists. The current likely-replaceable coil exceptions have been
-  source-noted and positioned; remaining exceptions should be treated as
-  author-system framing gaps until a fair baseline is found.
+- Prioritize replacement only after a source-noted external comparator exists.
+  Do not create placeholder citations merely to avoid exception language; a
+  deliberate exception is better than an invented baseline.
 - Replaced exception status in this cycle:
   - `asi-is-a-stack-not-a-model` now has source-noted comparators
     `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`,
@@ -789,6 +789,13 @@ Merge checklist:
   policy, claim dispositions, source-ID union, external-source union, proof-tag
   union, test/harness rows, reader-overlay changes, handoff repairs,
   implementation-horizon merge, and expected chapter-count effect.
+- Before editing `book_structure.json`, produce a dry-run merge package for the
+  selected pilot. The package should include a proposed manifest diff, the
+  destination chapter's one-skeleton section outline, an Appendix C
+  core-claim/subclaim reconciliation table, Lean module and proof-manifest
+  treatment, source and external-source unions, reader-overlay and Handoff
+  repairs, implementation-horizon merge, URL or redirect decision, and a
+  no-support-state-change boundary.
 - For every proposed merge, write a claim-reconciliation plan before editing
   `book_structure.json`: the merged chapter gets one core claim; retained
   chapter claims become subclaims, sections, source-crosswalk rows, proof hooks,
@@ -815,6 +822,8 @@ Merge checklist:
 Acceptance bar:
 
 - at least one pilot merge plan exists before any manifest merge;
+- a dry-run merge package exists and is reviewed before any pilot manifest
+  merge;
 - the pilot names every preserved source, subclaim, proof hook, test row,
   implementation horizon, reader overlay, and handoff change;
 - `python3 scripts/chapter_adjacency_report.py` is used before and after a
@@ -848,6 +857,8 @@ Current status:
   preserves all four source chapter IDs, required source IDs, required Lean
   proof tags, no-manifest-edit language, and no-support-state-change language.
 - No manifest merge has been performed yet.
+- The next consolidation step is a dry-run merge package for the first pilot
+  destination chapter, not an immediate 54-to-44 manifest rewrite.
 
 ### Milestone 7 - Curated Human-Reader Manuscript
 
@@ -1014,7 +1025,7 @@ explicitly passed or explicitly scoped out in a release record.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, mine every chapter's linked Corben papers for external citations and adjacent literature, add accepted third-party sources through `sources/source_inventory.json`, source notes, and generated Appendix H, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, ensure every selected lane names its strongest proof/evidence path or no-promotion blocker, replace weak external-SOTA exceptions where source-noted literature exists, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
+> Advance **The ASI Stack** from the tagged `v1.0.0` living-book release toward a true v1.x evidence-and-reader release by executing `docs/v1_x_beyond_sota_roadmap.md` in dependency order. Preserve release integrity, check prior GitHub Pages failures before each commit, create a 60-second trust surface that makes current evidence and non-claims legible to a cold reader, surface the three bounded non-core evidence transitions without promoting chapter core claims, solicit or record an early external human review, mine every chapter's linked Corben papers for external citations and adjacent literature, add accepted third-party sources through `sources/source_inventory.json`, source notes, and generated Appendix H, select three to five defended contribution tracks and push at most three deeply in this cycle, deepen the five safety-critical Lean modules with anti-projection criteria and negative cases, create at least one public-safe Project Theseus or Circle replay lane that CI can replay or verify by pinned digest, select only 5-8 high-payoff chapter lanes from `docs/per_chapter_evidence_plan.md` for execution while leaving the rest planned, ensure every selected lane names its strongest proof/evidence path or no-promotion blocker, keep external-SOTA placement current and replace any future or regressed weak exception where source-noted literature exists, record negative outcomes and demotions honestly, graduate human-reader chapters into curated prose when overlays are insufficient, prepare EPUB/PDF/DOCX/audio only after reviewed artifacts exist, run the full local validation gate, update changelog and release-control docs, and never fabricate source content, proof/test results, support-state promotions, or artifact approvals.
 
 ## Non-Claims
 
