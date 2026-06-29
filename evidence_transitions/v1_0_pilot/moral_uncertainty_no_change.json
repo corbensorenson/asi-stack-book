@@ -1,0 +1,116 @@
+{
+  "transition_id": "v1_0_pilot.moral_uncertainty.no_change",
+  "claim_id": "moral-uncertainty-and-value-conflict.core",
+  "claim_surface_refs": [
+    "chapters/moral-uncertainty-and-value-conflict.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/value_conflict_harness.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "claim_record_refs": [
+    "book_structure.json",
+    "appendices/E_codex_test_specs.qmd",
+    "schemas/value_conflict_record.schema.json",
+    "tests/fixtures/protocol_records/value_conflict_record.valid.json",
+    "experiments/value_conflicts/results/2026-06-28-local.md",
+    "lean/AsiStackProofs/ValueConflict.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic value-conflict record discipline and finite Lean value-conflict predicates only; no moral correctness, value-conflict classification quality, reviewer independence, human-review quality, tribunal quality, source interpretation, runtime policy behavior, or source-derived support-state promotion",
+  "evidence_roles": [
+    "synthetic_harness",
+    "schema_fixture",
+    "finite_record_lean_predicate",
+    "proof_adequacy_review",
+    "chapter_limitations",
+    "source_evidence_audit"
+  ],
+  "transition_reason": "The repository now has a value-conflict schema, a protocol fixture, finite ValueConflict Lean predicates, proof adequacy review text that keeps the target narrow, exact source mappings for the Moral Uncertainty chapter, and a synthetic value-conflict harness with valid and expected-invalid fixtures. Those artifacts make multi-axis classification, stakeholder and evidence requirements, high-stakes review routing, residual uncertainty preservation, authority narrowing, dissent payloads, bounded-decision revisit conditions, and deprecated-premise blocking executable at the record level. They still do not establish moral correctness, classification quality, reviewer independence, human-review quality, tribunal quality, source interpretation adequacy, or runtime policy behavior.",
+  "required_artifacts": [
+    "reviewed value-conflict scenario library with positive and negative controls",
+    "classification-quality review across contested moral cases",
+    "human-review or tribunal-quality review for high-stakes conflict decisions",
+    "dissent preservation test over actual bounded decisions",
+    "runtime policy trace showing authority narrowing and revisit triggers under conflict",
+    "independent review of source interpretation adequacy",
+    "accepted upward evidence-transition review for any narrowed stronger claim"
+  ],
+  "artifact_refs": [
+    "docs/value_conflict_harness.md",
+    "scripts/validate_value_conflicts.py",
+    "experiments/value_conflicts/results/2026-06-28-local.md",
+    "schemas/value_conflict_record.schema.json",
+    "tests/fixtures/protocol_records/value_conflict_record.valid.json",
+    "docs/proof_adequacy_review.md",
+    "lean/AsiStackProofs/ValueConflict.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md",
+    "docs/source_evidence_audit.md",
+    "docs/phase5_harness_registry.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#moral-uncertainty-and-value-conflict.core",
+    "docs/source_evidence_audit.md#moral-uncertainty-and-value-conflict.core"
+  ],
+  "verification_command": "python3 scripts/validate_value_conflicts.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Moral Uncertainty remains at argument",
+    "value-conflict fixtures are synthetic",
+    "schema validation checks record shape rather than moral adequacy",
+    "finite Lean predicates remain useful but too narrow for moral-correctness or policy-quality claims",
+    "classification quality, human-review quality, tribunal quality, dissent preservation over real decisions, source interpretation review, and deployed runtime policy traces are not implemented"
+  ],
+  "negative_evidence_refs": [
+    "chapters/moral-uncertainty-and-value-conflict.qmd",
+    "docs/value_conflict_harness.md",
+    "docs/proof_adequacy_review.md",
+    "docs/v1_0_candidate_status.md"
+  ],
+  "downgrade_triggers": [
+    "value conflict harness failure",
+    "value-conflict schema drift",
+    "chapter text interpreted as moral-correctness evidence",
+    "synthetic classification fixture interpreted as classification-quality evidence",
+    "review-route fixture interpreted as human-review or tribunal-quality evidence",
+    "bounded decision fixture treated as deployed runtime policy behavior",
+    "support-state promotion without accepted transition"
+  ],
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after reviewed scenario libraries, classification-quality review, human-review or tribunal-quality review, dissent-preservation tests, runtime policy traces, and independent source-interpretation review are recorded with accepted evidence-transition records.",
+  "limitations": [
+    "synthetic fixtures do not classify open-ended moral conflicts",
+    "schema validation does not prove moral correctness or stakeholder adequacy",
+    "finite Lean predicates do not implement a value-conflict policy engine",
+    "review-route text does not prove reviewer independence or review quality",
+    "bounded-decision fixtures do not prove authority narrowing in a deployed system",
+    "no independent moral, governance, or source-interpretation review has been recorded"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.0 roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent moral-philosophy, governance, reviewer-quality, policy-runtime, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no reviewed value-conflict scenario library",
+    "no classification-quality review",
+    "no human-review or tribunal-quality review",
+    "no dissent-preservation test over real decisions",
+    "no runtime policy trace",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-moral-uncertainty-evidence-transition-no-change",
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not promote Moral Uncertainty above argument",
+    "does not prove moral correctness",
+    "does not prove value-conflict classification quality",
+    "does not prove reviewer independence, human-review quality, or tribunal quality",
+    "does not prove source interpretation",
+    "does not prove runtime policy behavior"
+  ]
+}

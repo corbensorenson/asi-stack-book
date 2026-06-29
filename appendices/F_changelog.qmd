@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Moral uncertainty evidence transition no-change
+
+- Added `evidence_transitions/v1_0_pilot/moral_uncertainty_no_change.json`
+  and updated the evidence-transition pilot to seventeen accepted no-change
+  decisions. The new record routes the value conflict harness,
+  value-conflict schema and fixture, finite ValueConflict Lean predicates,
+  proof adequacy review, and exact source mappings into one conservative
+  decision: `moral-uncertainty-and-value-conflict` remains at `argument`.
+- The record preserves the promotion burden for a reviewed value-conflict
+  scenario library, classification-quality review, human-review or
+  tribunal-quality review, dissent-preservation tests, runtime policy traces,
+  and independent source-interpretation review. It does not promote support
+  state, prove moral correctness, prove value-conflict classification quality,
+  prove reviewer independence, prove human-review quality, prove tribunal
+  quality, prove source interpretation, prove runtime policy behavior, or
+  approve reader artifacts.
+
 ## 2026-06-28 - v1.0 Value conflict harness
 
 - Added `scripts/validate_value_conflicts.py`, synthetic value-conflict
