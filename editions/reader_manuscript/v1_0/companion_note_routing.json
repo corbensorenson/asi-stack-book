@@ -51,7 +51,7 @@
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "title": "Executable Specifications and Lean Proof Envelope",
       "routing_decision": "retain_in_reader_spine_with_companion_note",
-      "reader_treatment": "Keep the distinction between Lean predicates, schemas, process validators, behavior tests, benchmarks, external theorem references, semantic adequacy review, and research backlog in the reader chapter.",
+      "reader_treatment": "Keep the distinction between Lean predicates, schemas, process validators, behavior tests, benchmarks, external theorem references, semantic adequacy review, and research backlog in the reader chapter; the drafting curated reader source must preserve those boundaries.",
       "companion_treatment": "Use the drafting companion note to map proof lanes to ordinary reader language and explain why each lane has a different authority boundary.",
       "audio_treatment": "Narrate the proof envelope as a claims-control discipline and route detailed lane vocabulary to companion notes or a glossary entry.",
       "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/executable-specifications-and-lean-proof-envelope.md",
@@ -80,6 +80,7 @@
       ],
       "non_claims": [
         "This route does not claim proof adequacy beyond the recorded finite predicates.",
+        "This route does not approve the drafting curated reader chapter.",
         "This route does not promote any chapter claim above architectural argument."
       ]
     },

@@ -34,7 +34,7 @@ reader prose.
 | Chapter | Reader treatment | Companion route | Release decision |
 |---|---|---|---|
 | `circle-calculus-and-proof-carrying-ai-contracts` | Retain proof receipt states, theorem references, resolver/replay boundaries, consumer gates, workload blockers, and non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/circle-calculus-and-proof-carrying-ai-contracts.md` for receipt-state glossary, theorem laundering, fingerprints, replay, workload-blocked promotion, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; no release blocker cleared. |
-| `executable-specifications-and-lean-proof-envelope` | Retain the distinction between Lean predicates, schemas, validators, behavior tests, benchmarks, external theorem references, and semantic adequacy review. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/executable-specifications-and-lean-proof-envelope.md` for proof-lane glossary, finite-predicate examples, semantic adequacy, and audio treatment. | No curated source. No release blocker cleared. |
+| `executable-specifications-and-lean-proof-envelope` | Retain the distinction between Lean predicates, schemas, validators, behavior tests, benchmarks, external theorem references, and semantic adequacy review. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/executable-specifications-and-lean-proof-envelope.md` for proof-lane glossary, finite-predicate examples, semantic adequacy, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_executable_specs_prose_pass.md`; no release blocker cleared. |
 | `artifact-steward-agents-and-living-project-governance` | Retain charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, federation, and non-ownership boundaries. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/artifact-steward-agents-and-living-project-governance.md` for project-object quick reference, implementation ladder, and audio treatment; the first curated prose pass still remains drafting-only. | Drafting-only curated reader prose pass recorded; no release blocker cleared. |
 
 ## Routing Rule
@@ -55,7 +55,7 @@ must preserve the claim boundary.
 - This review does not approve a reader release.
 - This review does not approve EPUB, PDF, DOCX, HTML, AZW3, MOBI, Markdown,
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
-- This review records that six drafting-only curated reader chapters now
+- This review records that seven drafting-only curated reader chapters now
   exist; it does not approve any chapter for release.
 - This review records three drafting companion notes for dense proof/governance
   chapters; it does not approve them as e-reader, audio, or release artifacts.

@@ -1,0 +1,291 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: executable-specifications-and-lean-proof-envelope
+generated_baseline_ref: build/reader_edition/chapters/executable-specifications-and-lean-proof-envelope.qmd
+live_source_ref: chapters/executable-specifications-and-lean-proof-envelope.qmd@8f1a27c5a
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Executable Specifications and Lean Proof Envelope
+
+Formal language is powerful because it can make a claim smaller. A theorem, a
+schema, a validator, and a benchmark each narrow a different kind of promise.
+The proof envelope exists so those promises do not blur together.
+
+The reader should not have to guess what kind of authority a formal-looking
+sentence carries. If a local Lean predicate builds, that says something precise
+about a finite record. If a JSON Schema accepts a fixture, that says something
+about record shape. If a validator passes, that says something about the exact
+condition the validator checks. None of those facts automatically proves source
+truth, deployed enforcement, benchmark performance, model quality, or safety.
+
+This chapter is about that boundary. It gives the stack a way to say "this was
+checked" without letting checked things become larger than they are. The mature
+version is not a grand proof of the whole ASI Stack. It is a claims-control
+plane that keeps every formal artifact attached to its lane, command, consumer,
+limitation, and non-claim.
+
+## Problem
+
+The book contains many claims that invite formal treatment: authority ceilings,
+support-state transitions, stable capability replacement, job lifecycles,
+context adequacy, proof-carrying claims, and cyclic contracts. Some of those
+claims can become Lean predicates. Some belong in JSON Schemas. Some are better
+handled by process validators, behavior tests, or benchmark records. Some are
+still research questions.
+
+The failure mode is not lack of rigor. The failure mode is misplaced rigor.
+"The architecture is safe" is too broad to prove inside this repository.
+"A support-state transition cannot move above `argument` without the required
+evidence record" is narrow enough to encode. "This schema validates a receipt"
+is useful, but it does not prove the event behind the receipt happened. "This
+theorem reference exists in an external project" may orient the design, but it
+is not local proof ownership.
+
+The proof envelope is the discipline that keeps those differences visible. It
+turns formal ambition into routing: Lean when the predicate is operational,
+schema validation when the record shape matters, process validation when
+cross-file wiring matters, behavior tests when a path must be exercised,
+benchmarks when measured performance is at issue, and backlog when the claim is
+not ready.
+
+## Why Existing Approaches Are Insufficient
+
+Formal methods are often discussed as if the only question is whether a system
+uses them. That is not enough. The harder question is whether the proof matches
+the boundary it is being asked to defend. A correct finite predicate can still
+be the wrong predicate for the prose claim.
+
+External formal-methods families already show why one generic proof bucket is
+too crude. PDDL models planning domains and problems. Proof-carrying code pairs
+executable artifacts with checkable evidence. TLA+ models systems. Lean supplies
+proof-assistant structure. Dafny connects programs and specifications. Reluplex
+verifies neural-network properties. Black-Box Simplex, Copilot, and PRISM sit
+in runtime assurance, monitoring, and model-checking families. The ASI Stack
+uses those as external baselines for lane separation, not as proof that the
+local architecture works.
+
+The same separation matters inside this repository. A Lean module may prove a
+record invariant, while a schema validates fields, while a script checks
+traceability, while a benchmark measures a workload. Those artifacts can support
+one another, but they cannot silently substitute for one another. When they do,
+proof becomes decoration: a rigorous-looking wrapper around a claim whose
+semantics were never formalized.
+
+Semantic proof drift is the central risk. A target can compile cleanly while
+the chapter, source interpretation, or consumer expectation has moved on. The
+answer is not to distrust the proof. The answer is to record semantic adequacy:
+whether the finite predicate is the right predicate for the claim that wants to
+consume it.
+
+## Core Claim
+
+Lean proofs and executable specs should target small invariants: authority,
+support states, SCF replacement, job lifecycle, context adequacy, and residual
+records (evidence boundary: architectural argument).
+
+The claim remains at `argument` support. This repository has a Lean workspace,
+and its current manifest records 112 proof targets implemented as narrow
+finite-record Lean predicates. That coverage does not prove broad chapter
+claims, source interpretation, deployed enforcement, model quality, benchmark
+performance, or ASI safety.
+
+## Mechanism
+
+The proof envelope begins by refusing to formalize the book's broad theses
+directly. A broad claim is first lowered into a Proof Target Record. That record
+names the chapter, tag, target kind, artifact lane, command, verifier result,
+consumer requirements, semantic adequacy state, limitations, and non-claims.
+
+Only after that routing step does implementation matter. If the target is a
+Lean-suitable operational predicate, it belongs in a Lean module and must pass
+the local build. If it is a record-shape claim, it belongs in a schema and
+fixture. If it is a wiring or release-discipline claim, it may belong in a
+process validator. If it is about behavior or measured performance, it needs a
+test or benchmark lane. If it is too broad or underspecified, it stays planned,
+blocked, or residual.
+
+```{mermaid}
+flowchart LR
+A["Chapter claim or invariant"] --> B["Proof Target Record"]
+B --> C["Triage kind and non-claims"]
+C --> D{"Operational predicate?"}
+D -- "Lean-suitable" --> E["Lean module and lake build"]
+D -- "record or process" --> F["Schema, fixture, or validator"]
+D -- "not operational yet" --> G["Research target, blocked target, or residual"]
+E --> H{"Verifier passed?"}
+F --> H
+H -- "yes" --> I["Narrow implemented proof/spec state"]
+H -- "no" --> G
+I --> J["Appendix E and proof manifest"]
+J --> K["Consumer checks adequacy and non-claims"]
+K -- "adequate for use" --> L["Scoped consumption"]
+K -- "not adequate" --> G
+```
+
+**What the proof envelope shows:** a proof or executable spec is not consumed
+directly from prose. It passes through a target record, artifact lane, verifier,
+and semantic-adequacy boundary before any later chapter or release surface can
+borrow its authority.
+
+The current implementation is intentionally narrow. `AsiStackProofs.ProofEnvelope`
+models finite proof-target status discipline: an implemented target must carry
+module-existence and build-passed flags, and a non-operational target is routed
+to planned or blocked rather than implemented. That is useful record logic. It
+is not a filesystem crawler, theorem-discovery tool, external theorem
+validator, deployed enforcement check, or proof that the whole stack behaves
+correctly.
+
+The companion note for this chapter calls the lanes by ordinary names: Lean
+predicate, schema validation, process validator, behavior test, benchmark,
+external theorem reference, semantic adequacy review, and research backlog.
+The curated reader spine keeps the same distinction because it is
+meaning-critical. Moving the vocabulary entirely into a companion note would
+make the chapter easier to read but less honest.
+
+## Interfaces
+
+The Proof Target Record is the interface between prose, outline, Lean, schemas,
+validators, Appendix E, and future release profiles. It lets the book say which
+finite predicate has an artifact behind it while keeping broader system
+behavior outside the proof claim.
+
+Minimum fields:
+
+- `proof_id`
+- `chapter_id`
+- `lean_tag`
+- `target_kind`
+- `artifact_lane`
+- `formal_target`
+- `artifact_refs`
+- `verifier_command`
+- `verifier_result`
+- `support_state_effect`
+- `consumer_requirements`
+- `semantic_adequacy_review`
+- `limitations`
+- `non_claims`
+
+The support-state effect is deliberately narrow. A passed `lake build` can
+justify saying that a local finite-record predicate builds. It cannot justify
+saying that source interpretation is correct, that a real deployment enforces
+the rule, that a model behaves well, or that a benchmark improved. A passed
+schema validator can justify saying that a fixture has the required shape. It
+cannot justify saying the represented event happened.
+
+Consumer requirements belong beside the artifact. A chapter, protocol, runtime
+module, or release profile may consume a proof only if the artifact lane,
+command, version, adequacy state, and non-claims match the consumer's use. A
+proof can be true and still unusable for a particular downstream claim.
+
+## Invariants
+
+The proof envelope keeps formal artifacts in their proper lane:
+
+- no theorem is claimed proven without a passing `lake build`;
+- proof tags remain stable and traceable from the outline;
+- broad claims are decomposed before formalization;
+- schemas, Python fixtures, diagrams, and Quarto renders are not Lean proofs;
+- proof status does not imply model quality or deployment safety;
+- external theorem IDs are not local proof ownership unless imported and
+  validated under the repository's rules;
+- semantic adequacy is required before a finite predicate can strengthen prose
+  beyond its exact boundary.
+
+These invariants make proof useful by making it modest. A proof that cannot
+name its limitation is not ready to carry authority through the stack.
+
+## Failure Modes
+
+The first failure mode is formalization theater: a broad thesis is made to look
+settled because it is near a theorem, schema, diagram, or validator. The second
+is proof laundering: a valid local predicate, external theorem ID, generated
+receipt, or schema pass is used to promote a broader claim whose semantics were
+never formalized.
+
+The third failure is orphaned formality. A proof target may still compile while
+the prose no longer explains it, the outline no longer routes to it, or the
+source claim it was meant to bound has changed. In that case the theorem may be
+valid but no longer govern the manuscript.
+
+The fourth failure is semantic mismatch. The finite predicate is true, but it
+does not match the boundary a later chapter or release artifact wants to rely
+on. That gap should become an adequacy residual, downgrade, quarantine, or
+research target. It should not be hidden behind a green build.
+
+## Minimum Viable Implementation
+
+The minimum viable proof envelope already has several public pieces. The
+generated proof manifest records proof tags from the outline. The
+`proof_target_record` fixture validates chapter ID, Lean tag, target kind,
+artifact lane, formal target, artifact references, verifier command/result,
+support-state effect, consumer requirements, semantic adequacy state,
+limitations, and non-claims. The local verification gate includes
+`cd lean && lake build`. Appendix E publishes the generated coverage summary
+from `proofs/proof_triage.json`. The proof artifact traceability audit checks
+that proof targets are wired through manifest records, triage records, Lean
+modules, root imports, chapter hooks, limitation prose, and Appendix E
+coverage.
+
+That is a useful minimum. It is still not semantic proof adequacy. The live book
+therefore keeps the chapter core claim at `argument` support. The next honest
+slice is a proof/spec receipt suite: one Lean predicate receipt, one
+schema-validation receipt, one process-validator receipt, one behavior-test
+receipt, one benchmark receipt, one external theorem reference rejected as
+local proof, and one semantic adequacy residual that blocks prose promotion.
+
+## Beyond the State of the Art
+
+The mature endpoint is a claims control plane for formal artifacts. Every
+formal-looking promise in the stack would have to travel with the artifact that
+supports it, the command that checked it, the boundary it covers, the consumer
+allowed to use it, and the claims it refuses to support.
+
+In that endpoint, chapters, protocols, releases, and runtime modules would
+consume proof only through typed records. Lean predicates, schemas, process
+checks, behavior tests, benchmarks, external theorem references, and research
+backlog items would remain different objects with different authority. A
+consumer gate would block downstream use when lane, command, version, adequacy
+state, or non-claims do not match the proposed use.
+
+The most important future work is semantic adequacy. A predicate can be valid
+and still be wrong for the prose boundary. A mature proof envelope would catch
+stale theorem names, orphaned targets, borrowed theorem IDs, mismatched
+consumer needs, and claim-from-prose errors as downgrade or residual events
+instead of letting them become confidence theater.
+
+That endpoint remains a target architecture. It has not been demonstrated as a
+deployed proof-control system. The current repository has narrow finite-record
+proofs, schema fixtures, traceability checks, and public non-claims. Stronger
+claims need semantic adequacy reviews, artifact audits, runtime consumers, and
+accepted evidence transitions.
+
+## Summary
+
+The proof envelope makes formality useful by keeping it small, operational, and
+bounded. Lean proves only what Lean checks. Schemas validate shape. Tests
+exercise behavior. Benchmarks measure recorded workloads. External theorem
+references orient the work only when their import and replay status are
+explicit.
+
+The chapter's discipline is simple: no artifact may speak outside its lane
+without a reviewed transition. That keeps formal methods from becoming
+ornamental confidence and gives future agents a precise standard for improving
+the book.
+
+If the proof envelope works, a reader can tell what was proved, what was merely
+validated, what was tested, what was benchmarked, what was borrowed as external
+context, and what remains prose. That separation is what makes formal machinery
+trustworthy enough to sit inside a living book.
+
+## Handoff
+
+Executable specifications and Lean predicates define which narrow claims can be
+checked, but evidence pressure also needs a path for measured capability without
+Goodhart collapse. Benchmark Ratchets and Anti-Goodhart Evidence takes that
+role. It turns benchmark runs into records with baselines, residuals,
+regressions, saturation states, contamination boundaries, and promotion
+decisions so measured pressure cannot outrun preserved failures.
