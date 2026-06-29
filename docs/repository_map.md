@@ -31,6 +31,8 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_artifact_layout_review.md` | Representative local EPUB/DOCX/PDF/HTML spot-check notes for ignored reader-format snapshots, with residuals before any release artifact can be approved. | tracked |
 | `docs/evidence_transition_pilot.md` | Phase 3 evidence-transition pilot summary, recording fourteen no-change support-state decisions and their blockers. | tracked |
 | `docs/proof_adequacy_review.md` | Phase 4 proof adequacy review classifying all 112 Lean targets by what they do and do not justify. | tracked |
+| `docs/claim_ledger_revision_harness.md` | Phase 5 claim-ledger revision harness summary, command, local result, and non-claim boundary. | tracked |
+| `docs/proof_carrying_claim_harness.md` | Phase 5 proof-carrying claim harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/support_state_transition_harness.md` | Phase 5 support-state transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/authority_transition_harness.md` | Phase 5 authority transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/plan_execution_contract_harness.md` | Phase 5 plan-execution contract harness summary, command, local result, and non-claim boundary. | tracked |
@@ -66,7 +68,7 @@ This repository is organized around the living book and its validation loop.
 | `schemas/` | JSON Schemas for protocol records and the book-structure manifest contract. | tracked |
 | `release_records/` | Public-safe live-book and future major-version edition release records checked against release-record schemas. | tracked |
 | `evidence_transitions/` | Evidence-transition review records checked against `schemas/evidence_transition_record.schema.json`. | tracked |
-| `experiments/` | Synthetic experiment and benchmark harness workspace, including support-state, authority, plan-execution, runtime-adapter, context-admission, readiness/residual, benchmark anti-Goodhart, generation-mode baseline, resource-budget ledger, and capacity-smoothing fixtures and result records, and the Phase 5 harness registry. | tracked |
+| `experiments/` | Synthetic experiment and benchmark harness workspace, including claim-ledger revision, proof-carrying claim, support-state, authority, plan-execution, runtime-adapter, context-admission, readiness/residual, benchmark anti-Goodhart, generation-mode baseline, resource-budget ledger, and capacity-smoothing fixtures and result records, and the Phase 5 harness registry. | tracked |
 | `scripts/` | Manifest sync, source cache, proof manifest, and validation tools. | tracked |
 | `build/` | Generated reader/release edition source, reader/audio manifests, and output trees. | ignored |
 | `skills/asi-stack-book/` | Project-specific Codex skill for maintaining and drafting the book. | tracked |

@@ -1,0 +1,38 @@
+{
+  "proof_claim_id": "pcc-invalid-pass-missing-artifacts-001",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_scope": "invalid passed verifier without artifacts",
+  "required_tier": "formal",
+  "justification_type": "formal_proof",
+  "interpretation_mapping": "Claims a passed verifier result without preserving verifier artifacts.",
+  "interpretation_confidence": "medium",
+  "justification_artifact": "lean/AsiStackProofs/ProofCarryingClaims.lean",
+  "artifact_validity_state": "passed",
+  "semantic_adequacy": "narrow",
+  "verifier": "lake build",
+  "verifier_result": "pass",
+  "verifier_artifact_refs": [],
+  "failed_attempt_refs": [],
+  "formal_scope": "Finite record envelope only.",
+  "limitations": [
+    "missing verifier artifacts"
+  ],
+  "consumer_requirements": [
+    "preserve verifier artifacts"
+  ],
+  "downgrade_rule": "Block promotion if verifier artifacts are absent.",
+  "claim_validity_effect": "promote_within_scope",
+  "residual_route": "route missing artifacts to proof review",
+  "tribunal_ref": "",
+  "ledger_update": "Claims bounded promotion while missing verifier artifacts.",
+  "source_refs": [
+    "docs/proof_adequacy_review.md"
+  ],
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not prove semantic equivalence",
+    "does not prove verifier quality",
+    "does not claim runtime behavior",
+    "does not promote support state without accepted evidence transition"
+  ]
+}

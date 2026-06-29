@@ -1,0 +1,38 @@
+{
+  "proof_claim_id": "pcc-invalid-negative-missing-failed-attempt-001",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_scope": "invalid failed verifier without failed-attempt refs",
+  "required_tier": "procedure",
+  "justification_type": "procedure_log",
+  "interpretation_mapping": "Records a verifier failure but drops the failed-attempt evidence.",
+  "interpretation_confidence": "low",
+  "justification_artifact": "logs/procedure-run.invalid",
+  "artifact_validity_state": "failed",
+  "semantic_adequacy": "unknown",
+  "verifier": "procedure replay",
+  "verifier_result": "fail",
+  "verifier_artifact_refs": [],
+  "failed_attempt_refs": [],
+  "formal_scope": "Procedure replay only.",
+  "limitations": [
+    "failed attempt is missing"
+  ],
+  "consumer_requirements": [
+    "preserve failed attempts"
+  ],
+  "downgrade_rule": "Block promotion on verifier failure.",
+  "claim_validity_effect": "block",
+  "residual_route": "route to residual ledger",
+  "tribunal_ref": "",
+  "ledger_update": "Block promotion, but failed attempt was not preserved.",
+  "source_refs": [
+    "docs/proof_adequacy_review.md"
+  ],
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not prove semantic equivalence",
+    "does not prove verifier quality",
+    "does not claim runtime behavior",
+    "does not promote support state"
+  ]
+}

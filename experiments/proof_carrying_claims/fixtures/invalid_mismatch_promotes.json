@@ -1,0 +1,40 @@
+{
+  "proof_claim_id": "pcc-invalid-mismatch-promotes-001",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_scope": "invalid mismatch treated as promotion",
+  "required_tier": "formal",
+  "justification_type": "formal_proof",
+  "interpretation_mapping": "Records a mismatch but still tries to promote within scope.",
+  "interpretation_confidence": "mismatch",
+  "justification_artifact": "lean/AsiStackProofs/ProofCarryingClaims.lean",
+  "artifact_validity_state": "mismatch",
+  "semantic_adequacy": "inadequate",
+  "verifier": "proof adequacy review",
+  "verifier_result": "mismatch",
+  "verifier_artifact_refs": [],
+  "failed_attempt_refs": [
+    "docs/proof_adequacy_review.md"
+  ],
+  "formal_scope": "Mismatch record only.",
+  "limitations": [
+    "semantic mismatch exists"
+  ],
+  "consumer_requirements": [
+    "do not promote mismatched claims"
+  ],
+  "downgrade_rule": "Block promotion on mismatch.",
+  "claim_validity_effect": "promote_within_scope",
+  "residual_route": "route to review",
+  "tribunal_ref": "uat://formalization-mismatch-review",
+  "ledger_update": "Incorrectly promotes despite mismatch.",
+  "source_refs": [
+    "docs/proof_adequacy_review.md"
+  ],
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not prove semantic equivalence",
+    "does not prove verifier quality",
+    "does not claim runtime behavior",
+    "does not promote support state"
+  ]
+}

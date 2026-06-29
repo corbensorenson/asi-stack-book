@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-28 - v1.0 Proof-carrying claim harness
+
+- Added `scripts/validate_proof_carrying_claims.py`, synthetic
+  proof-carrying-claim fixtures under `experiments/proof_carrying_claims/`,
+  `docs/proof_carrying_claim_harness.md`, and a tracked local result record.
+  The local run passes with 3 valid and 5 expected-invalid fixtures, checking
+  verifier artifact refs, tier/justification alignment, bounded review
+  eligibility, failed-attempt preservation, formalization mismatch escalation,
+  timeout/failure blocking, and non-claim boundaries.
+- Wired the harness into `scripts/validate_book.py`, the Phase 5 harness
+  registry, Appendix E generation, the Spinoza chapter's proof artifact, tier,
+  and formalization-mismatch test rows, README, publication readiness, and
+  v1.0 roadmap/status/focus surfaces. This is synthetic proof-carrying record
+  discipline only: it is not theorem validity, semantic equivalence, citation
+  accuracy, verifier quality, open-domain formalization, runtime behavior,
+  support-state promotion, proof adequacy, benchmark evidence, source-derived
+  evidence promotion, or reader-release approval.
+
 ## 2026-06-28 - v1.0 Claim ledger evidence transition no-change
 
 - Added `evidence_transitions/v1_0_pilot/claim_ledgers_no_change.json` and

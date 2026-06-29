@@ -23,6 +23,29 @@
     ]
   },
   {
+    "id": "proof_carrying_claims",
+    "name": "Proof-carrying claim harness",
+    "command": "python3 scripts/validate_proof_carrying_claims.py",
+    "script": "scripts/validate_proof_carrying_claims.py",
+    "doc": "docs/proof_carrying_claim_harness.md",
+    "experiment_dir": "experiments/proof_carrying_claims",
+    "fixture_dir": "experiments/proof_carrying_claims/fixtures",
+    "result_record": "experiments/proof_carrying_claims/results/2026-06-28-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 5,
+    "result_summary": "Proof-carrying claim harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "spinoza-verification-and-proof-carrying-claims",
+      "claim-ledgers-and-belief-revision",
+      "executable-specifications-and-lean-proof-envelope",
+      "unified-adaptive-tribunal-and-adversarial-review"
+    ],
+    "non_claims": [
+      "Does not prove theorem validity, semantic equivalence, citation accuracy, verifier quality, runtime behavior, or open-domain formalization.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "support_state_transitions",
     "name": "Support-state transition harness",
     "command": "python3 scripts/validate_support_state_transitions.py",

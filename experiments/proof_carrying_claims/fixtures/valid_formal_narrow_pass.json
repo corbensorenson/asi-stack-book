@@ -1,0 +1,46 @@
+{
+  "proof_claim_id": "pcc-formal-narrow-pass-001",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_scope": "finite proof-carrying claim record envelope only",
+  "required_tier": "formal",
+  "justification_type": "formal_proof",
+  "interpretation_mapping": "The natural-language claim is narrowed to the finite record predicate checked by the local Lean module.",
+  "interpretation_confidence": "medium",
+  "justification_artifact": "lean/AsiStackProofs/ProofCarryingClaims.lean",
+  "artifact_validity_state": "narrow_pass",
+  "semantic_adequacy": "narrow",
+  "verifier": "lake build",
+  "verifier_result": "pass",
+  "verifier_artifact_refs": [
+    "lean/AsiStackProofs/ProofCarryingClaims.lean",
+    "proofs/proof_manifest.json"
+  ],
+  "failed_attempt_refs": [],
+  "formal_scope": "Finite record fields for tier, interpretation mapping, artifact refs, limitations, support-state effect, and non-claims only; no general theorem validity is claimed.",
+  "limitations": [
+    "does not validate natural-language formalization",
+    "does not validate verifier quality",
+    "does not validate source interpretation"
+  ],
+  "consumer_requirements": [
+    "treat as eligible for bounded evidence review only",
+    "preserve the formal scope when cited",
+    "keep chapter support state unchanged unless an accepted evidence transition exists"
+  ],
+  "downgrade_rule": "If the Lean build fails or the formal scope is broadened, block promotion and route to proof adequacy review.",
+  "claim_validity_effect": "promote_within_scope",
+  "residual_route": "Record any broader semantic, source, or verifier-quality claim as a residual.",
+  "tribunal_ref": "",
+  "ledger_update": "Eligible for bounded evidence review of the finite record envelope only; no support-state promotion is applied.",
+  "source_refs": [
+    "sources/source_notes/spinoza.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not prove semantic equivalence",
+    "does not prove verifier quality",
+    "does not claim runtime behavior",
+    "does not promote support state without accepted evidence transition"
+  ]
+}

@@ -44,6 +44,7 @@ REQUIRED = [
     "scripts/validate_source_evidence_audit.py",
     "scripts/validate_evidence_transitions.py",
     "scripts/validate_claim_ledger_revision.py",
+    "scripts/validate_proof_carrying_claims.py",
     "scripts/validate_support_state_transitions.py",
     "scripts/validate_authority_transitions.py",
     "scripts/validate_plan_execution_contracts.py",
@@ -73,6 +74,7 @@ REQUIRED = [
     "docs/capacity_smoothing_harness.md",
     "docs/phase5_harness_registry.md",
     "docs/claim_ledger_revision_harness.md",
+    "docs/proof_carrying_claim_harness.md",
     "docs/reader_continuity_audit.md",
     "docs/reader_chapter_review_matrix.md",
     "docs/reader_format_review_matrix.md",
@@ -82,6 +84,7 @@ REQUIRED = [
     "docs/reader_part_iv_review_pass.md",
     "experiments/phase5_harness_registry.json",
     "experiments/claim_ledger_revision/results/2026-06-28-local.md",
+    "experiments/proof_carrying_claims/results/2026-06-28-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
@@ -555,6 +558,7 @@ def main() -> None:
     run_validator("validate_source_evidence_audit.py")
     run_validator("validate_evidence_transitions.py")
     run_validator("validate_claim_ledger_revision.py")
+    run_validator("validate_proof_carrying_claims.py")
     run_validator("validate_support_state_transitions.py")
     run_validator("validate_authority_transitions.py")
     run_validator("validate_plan_execution_contracts.py")

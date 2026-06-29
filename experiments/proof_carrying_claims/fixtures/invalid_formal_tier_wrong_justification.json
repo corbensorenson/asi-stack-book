@@ -1,0 +1,38 @@
+{
+  "proof_claim_id": "pcc-invalid-formal-wrong-justification-001",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_scope": "invalid formal tier with citation dossier",
+  "required_tier": "formal",
+  "justification_type": "citation_dossier",
+  "interpretation_mapping": "Requests formal support while providing only citations.",
+  "interpretation_confidence": "medium",
+  "justification_artifact": "appendices/C_claim_evidence_matrix.qmd#spinoza-verification-and-proof-carrying-claims.core",
+  "artifact_validity_state": "not_checked",
+  "semantic_adequacy": "narrow",
+  "verifier": "source evidence audit",
+  "verifier_result": "not_run",
+  "verifier_artifact_refs": [],
+  "failed_attempt_refs": [],
+  "formal_scope": "Citation dossier only.",
+  "limitations": [
+    "citations do not satisfy formal tier"
+  ],
+  "consumer_requirements": [
+    "match tier to justification type"
+  ],
+  "downgrade_rule": "Block formal tier use if no formal proof artifact exists.",
+  "claim_validity_effect": "no_change",
+  "residual_route": "route to proof review",
+  "tribunal_ref": "",
+  "ledger_update": "No support-state promotion is implied by a mismatched tier.",
+  "source_refs": [
+    "sources/source_notes/spinoza.md"
+  ],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove semantic adequacy",
+    "does not prove verifier quality",
+    "does not claim runtime behavior",
+    "does not promote support state"
+  ]
+}

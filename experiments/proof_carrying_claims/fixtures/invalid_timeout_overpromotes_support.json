@@ -1,0 +1,40 @@
+{
+  "proof_claim_id": "pcc-invalid-timeout-overpromotes-support-001",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_scope": "invalid timeout treated as bounded promotion",
+  "required_tier": "procedure",
+  "justification_type": "procedure_log",
+  "interpretation_mapping": "Records a timeout but marks the claim as eligible for bounded evidence review.",
+  "interpretation_confidence": "low",
+  "justification_artifact": "logs/procedure-run.timeout",
+  "artifact_validity_state": "timeout",
+  "semantic_adequacy": "unknown",
+  "verifier": "procedure replay",
+  "verifier_result": "timeout",
+  "verifier_artifact_refs": [],
+  "failed_attempt_refs": [
+    "logs/procedure-run.timeout"
+  ],
+  "formal_scope": "Procedure replay only.",
+  "limitations": [
+    "timeout is not a pass"
+  ],
+  "consumer_requirements": [
+    "rerun before any stronger claim"
+  ],
+  "downgrade_rule": "Block promotion on timeout.",
+  "claim_validity_effect": "block",
+  "residual_route": "route to residual ledger",
+  "tribunal_ref": "",
+  "ledger_update": "Block promotion after timeout.",
+  "source_refs": [
+    "docs/proof_adequacy_review.md"
+  ],
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not prove semantic equivalence",
+    "does not prove verifier quality",
+    "does not claim runtime behavior",
+    "does not promote support state"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "proof_claim_id": "pcc-mismatch-escalates-001",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_scope": "formalization mismatch handling record only",
+  "required_tier": "formal",
+  "justification_type": "formal_proof",
+  "interpretation_mapping": "The proposed formal predicate does not match the broader prose claim and must not be treated as proof of that prose.",
+  "interpretation_confidence": "mismatch",
+  "justification_artifact": "lean/AsiStackProofs/ProofCarryingClaims.lean",
+  "artifact_validity_state": "mismatch",
+  "semantic_adequacy": "inadequate",
+  "verifier": "proof adequacy review",
+  "verifier_result": "mismatch",
+  "verifier_artifact_refs": [],
+  "failed_attempt_refs": [
+    "docs/proof_adequacy_review.md#spinoza-verification-and-proof-carrying-claims"
+  ],
+  "formal_scope": "Mismatch record only; the formal artifact cannot discharge the target prose claim.",
+  "limitations": [
+    "formal predicate is too narrow",
+    "semantic equivalence has not been established"
+  ],
+  "consumer_requirements": [
+    "do not cite as proof of the prose claim",
+    "route to UAT or human proof adequacy review",
+    "preserve failed attempt as evidence against overclaiming"
+  ],
+  "downgrade_rule": "If a mismatch is recorded, block promotion and route the claim to review.",
+  "claim_validity_effect": "escalate",
+  "residual_route": "Route to proof adequacy review and claim-ledger residual tracking.",
+  "tribunal_ref": "uat://formalization-mismatch-review",
+  "ledger_update": "Escalate and block promotion because a semantic mismatch was recorded.",
+  "source_refs": [
+    "docs/proof_adequacy_review.md"
+  ],
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not prove semantic equivalence",
+    "does not prove verifier quality",
+    "does not claim runtime behavior",
+    "does not promote support state"
+  ]
+}

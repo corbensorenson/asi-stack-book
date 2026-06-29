@@ -1,0 +1,42 @@
+{
+  "proof_claim_id": "pcc-citation-no-change-001",
+  "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+  "claim_scope": "citation-backed interpretation mapping record only",
+  "required_tier": "citation",
+  "justification_type": "citation_dossier",
+  "interpretation_mapping": "The source note and passage-reviewed mapping support the vocabulary of tiered proof, citation, and procedure carrying, not verifier correctness.",
+  "interpretation_confidence": "medium",
+  "justification_artifact": "appendices/C_claim_evidence_matrix.qmd#spinoza-verification-and-proof-carrying-claims.core",
+  "artifact_validity_state": "not_checked",
+  "semantic_adequacy": "narrow",
+  "verifier": "source evidence audit",
+  "verifier_result": "not_run",
+  "verifier_artifact_refs": [],
+  "failed_attempt_refs": [],
+  "formal_scope": "Citation dossier boundary only; no theorem, runtime verifier, or proof object is discharged.",
+  "limitations": [
+    "citation mapping is not a verifier result",
+    "source interpretation remains subject to review"
+  ],
+  "consumer_requirements": [
+    "cite only as source-mapping context",
+    "keep support at argument",
+    "route semantic uncertainty to evidence-transition review"
+  ],
+  "downgrade_rule": "If the source mapping is found inadequate, block citation-backed use and record a residual.",
+  "claim_validity_effect": "no_change",
+  "residual_route": "Route semantic uncertainty to claim-ledger review.",
+  "tribunal_ref": "",
+  "ledger_update": "No support-state promotion is implied by a citation dossier.",
+  "source_refs": [
+    "sources/source_notes/spinoza.md",
+    "docs/source_evidence_audit.md"
+  ],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove semantic adequacy",
+    "does not prove verifier quality",
+    "does not claim runtime behavior",
+    "does not promote support state"
+  ]
+}
