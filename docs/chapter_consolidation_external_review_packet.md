@@ -30,11 +30,12 @@ artifacts, test results, or artifact-review evidence.
 Reviewers should read these files in order:
 
 1. `docs/chapter_consolidation_pilot_plan.md`
-2. `docs/chapter_consolidation_dry_run_constitutional_alignment.md`
-3. `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
-4. `docs/chapter_consolidation_dry_run_contestable_governance.md`
-5. `docs/chapter_consolidation_destination_draft_contestable_governance.md`
-6. `docs/chapter_consolidation_decision_review.md`
+2. `docs/chapter_consolidation_sequence.md`
+3. `docs/chapter_consolidation_dry_run_constitutional_alignment.md`
+4. `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
+5. `docs/chapter_consolidation_dry_run_contestable_governance.md`
+6. `docs/chapter_consolidation_destination_draft_contestable_governance.md`
+7. `docs/chapter_consolidation_decision_review.md`
 
 Optional context:
 

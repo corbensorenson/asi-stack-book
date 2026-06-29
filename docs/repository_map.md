@@ -18,6 +18,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/defended_contribution_tracks.md` | v1.x defended-contribution selection record: five selected tracks, three deep-work tracks, active evidence-cycle anchors, and no-promotion boundaries. | tracked |
 | `docs/per_chapter_evidence_plan.md` | 54-chapter evidence-lane backlog for selecting a small high-payoff v1.x execution set without triggering another shallow breadth sweep. | tracked |
 | `docs/v1_x_active_evidence_cycle.md` | Active v1.x evidence-cycle ledger naming the seven selected high-payoff lanes, the forty-seven planned-only lanes, and the no-chapter-core-promotion boundary. | tracked |
+| `docs/chapter_consolidation_sequence.md` | Governed full consolidation sequence for the 54-to-44/47 chapter-shape critique, preserving cluster order, protected chapters, no-manifest-edit boundaries, and review prerequisites. | tracked |
 | `docs/chapter_consolidation_pilot_plan.md` | Governed chapter-consolidation pilot plan for the Part I alignment/governance cluster, preserving claim/source/proof/reader boundaries before any manifest merge. | tracked |
 | `docs/chapter_consolidation_dry_run_constitutional_alignment.md` | First dry-run merge package for `constitutional-alignment-substrate` plus `agency-dignity-and-corrigibility`; review artifact only, not a manifest edit or support-state change. | tracked |
 | `docs/chapter_consolidation_destination_draft_constitutional_alignment.md` | First review-ready destination draft for the proposed Constitutional Alignment plus Agency/Dignity/Corrigibility merge; not reviewed, not canonical, and not a manifest edit. | tracked |
@@ -101,6 +102,7 @@ This repository is organized around the living book and its validation loop.
 | `editions/reader_manuscript/` | Drafting curated reader-manuscript manifest, curation contract, synced chapter review matrix, artifact-inspection manifest, PDF probe manifest, companion-note routing manifest, drafting companion-note directory, reconciliation report, and source area for a human-prose derivative that remains subordinate to the live book. | tracked |
 | `release_records/2026-06-29-v1-reader-html-855dc277.json` | Edition release record for the reviewed local generated reader HTML artifact from source tag `v1.0.0-reader-html-source`; EPUB, DOCX, PDF, e-reader, and audio artifacts remain unapproved. | tracked |
 | `scripts/init_curated_reader_chapter.py` | Dry-run-first helper for initializing future curated reader chapter records and starter files from the generated reader baseline when overlays become too small. | tracked |
+| `scripts/validate_chapter_consolidation_sequence.py` | Validator for the full governed consolidation sequence, public-surface references, no-manifest-edit boundary, and current 54-chapter manifest preservation. | tracked |
 | `assets/reader-overlays.html` | Generated embedded reader-overlay payload for live Human view. | tracked; regenerate from overlays |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
 | `sources/cache/cache_manifest.json` | Public-safe cache metadata and hashes. | tracked |

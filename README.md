@@ -26,6 +26,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 - `book_structure.json` controls parts, chapter order, stable chapter IDs, source assignments, implementation horizons, proof hooks, and appendix order, and `schemas/book_structure.schema.json` plus `scripts/validate_book.py` guard its shape.
 - `_quarto.yml`, Appendix A, Appendix C, Appendix G, Appendix H, and Appendix K are generated.
 - Appendix C now carries a generated "What would promote this" field for all 54 chapter core claims, derived from `docs/per_chapter_evidence_plan.md` and validated by `scripts/validate_core_claim_promotion_paths.py`, without changing any support state.
+- `docs/chapter_consolidation_sequence.md` records the accepted governed consolidation sequence for the 54-to-44/47 chapter-shape critique while preserving the current 54-chapter manifest and no-support-state-change boundary; `scripts/validate_chapter_consolidation_sequence.py` keeps that sequence visible from the roadmap and public surfaces.
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `reader_delta_report.md` under ignored `build/`.
 - `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book. The current v1.0 overlay set carries 33 active operations across opening-chapter prose, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation for Human view and generated reader editions only.
@@ -96,6 +97,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) | Generated 54-chapter grounding ledger tying each chapter to source-noted external comparators, explicit exceptions, and Corben/local sources to mine first. |
 | [docs/per_chapter_evidence_plan.md](docs/per_chapter_evidence_plan.md) | 54-chapter evidence-lane backlog used as a menu for selecting 5-8 high-payoff v1.x lanes, not as a breadth-sweep checklist. |
 | [docs/v1_x_active_evidence_cycle.md](docs/v1_x_active_evidence_cycle.md) | Active v1.x evidence-cycle ledger: seven selected lanes, forty-seven planned-only lanes, and no chapter-core promotion. |
+| [docs/chapter_consolidation_sequence.md](docs/chapter_consolidation_sequence.md) | Full governed consolidation sequence for the 54-to-44/47 critique; no manifest merge has happened yet. |
 | [docs/chapter_consolidation_pilot_plan.md](docs/chapter_consolidation_pilot_plan.md) | Governed consolidation pilot plan for the Part I alignment/governance cluster; no manifest merge has happened yet. |
 | [docs/chapter_consolidation_dry_run_constitutional_alignment.md](docs/chapter_consolidation_dry_run_constitutional_alignment.md) | First dry-run merge package for constitutional alignment plus agency/corrigibility; review artifact only, not a manifest edit. |
 | [docs/reader_overlay_pilot.md](docs/reader_overlay_pilot.md) | First active v1.0 semantic reader-overlay pilot. |
@@ -198,6 +200,7 @@ python3 scripts/validate_non_core_evidence_ledger.py
 python3 scripts/validate_external_review_status.py
 python3 scripts/validate_external_review_intake.py
 python3 scripts/validate_defended_contribution_tracks.py
+python3 scripts/validate_chapter_consolidation_sequence.py
 python3 scripts/validate_core_claim_promotion_paths.py
 python3 scripts/validate_chapter_external_grounding_status.py
 python3 scripts/validate_external_sota_positioning.py

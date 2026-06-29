@@ -896,6 +896,12 @@ Current status:
 
 - `docs/chapter_consolidation_pilot_plan.md` records the first pilot plan for
   the Part I alignment/governance philosophy cluster.
+- `docs/chapter_consolidation_sequence.md` records the full governed sequence
+  for the latest 54-to-44/47 critique: the Part I pilot stays first, while the
+  compression, intent/contract, context, verification, planning, MoECOT,
+  simulation-fidelity, semantic-representation, and low-priority runtime-adapter
+  candidates each require their own dry-run package and review before any
+  future manifest edit.
 - The pilot proposes two future merges:
   `constitutional-alignment-substrate` with
   `agency-dignity-and-corrigibility`, and
@@ -905,6 +911,9 @@ Current status:
   shape: an aggressive pass may land near 44 chapters, while a conservative
   pass may land near 47, but the count is only a diagnostic for repetition
   reduction and never a reason to drop an idea.
+- `scripts/validate_chapter_consolidation_sequence.py` keeps the sequence
+  visible from the roadmap, README, publication readiness, and repository map
+  while confirming the canonical manifest still has 54 chapters.
 - The latest 54-to-44 consolidation critique is accepted as roadmap guidance,
   not as a direct manifest-edit instruction. Its strongest recommendation is
   sequencing: resolve the highest-repetition merge pilot before broad

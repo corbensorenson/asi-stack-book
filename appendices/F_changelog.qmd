@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - Governed consolidation sequence
+
+- Added `docs/chapter_consolidation_sequence.md` to preserve the full
+  consolidation roadmap response to the latest 54-to-44/47 chapter-shape
+  critique: Part I alignment/governance first, then compression,
+  intent/contracts, context, verification, planning, source-blocked MoECOT,
+  fold-only reviews, and protected standalone chapters.
+- Added `scripts/validate_chapter_consolidation_sequence.py` to confirm the
+  current 54-chapter manifest remains canonical, all candidate chapter IDs are
+  named, public surfaces link to the sequence, and no manifest/support-state
+  change is implied.
+- Wired the sequence into the v1.x roadmap, A+ quality scorecard,
+  consolidation review packet, README, publication readiness, repository map,
+  `scripts/validate_publication.py`, and
+  `scripts/validate_book.py`.
+- This does not edit `book_structure.json`, merge chapters, retire pages,
+  create source/proof/test evidence, authorize a reader artifact, or promote
+  any chapter core claim above `argument`.
+
 ## 2026-06-29 - Defended contribution track selection
 
 - Added `docs/defended_contribution_tracks.md` to name the v1.x defended
