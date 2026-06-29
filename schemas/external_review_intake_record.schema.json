@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/external_review_intake_record.schema.json",
+  "title": "External Review Intake Record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "record_type",
+    "review_status",
+    "date",
+    "public_request_refs",
+    "packet_refs",
+    "reviewer_background",
+    "review_scope_refs",
+    "findings_summary",
+    "decisions",
+    "follow_up_refs",
+    "acceptance_blockers",
+    "support_state_effect",
+    "artifact_release_effect",
+    "evidence_effect",
+    "attribution_boundary",
+    "non_claims"
+  ],
+  "properties": {
+    "record_id": { "type": "string", "minLength": 1 },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "public_request",
+        "request_update",
+        "accepted_review",
+        "review_blocker",
+        "rejected_review"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["requested", "accepted", "rejected", "blocked", "superseded"]
+    },
+    "date": { "type": "string", "minLength": 1 },
+    "public_request_refs": { "type": "array", "items": { "type": "string" } },
+    "packet_refs": { "type": "array", "items": { "type": "string" } },
+    "reviewer_background": { "type": "string", "minLength": 1 },
+    "review_scope_refs": { "type": "array", "items": { "type": "string" } },
+    "findings_summary": { "type": "string", "minLength": 1 },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target", "decision", "reason"],
+        "properties": {
+          "target": { "type": "string", "minLength": 1 },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "execute",
+              "revise",
+              "defer",
+              "reject",
+              "no_opinion",
+              "not_applicable"
+            ]
+          },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "follow_up_refs": { "type": "array", "items": { "type": "string" } },
+    "acceptance_blockers": { "type": "array", "items": { "type": "string" } },
+    "support_state_effect": {
+      "type": "string",
+      "enum": ["none", "review_input_only", "eligible_for_task_creation"]
+    },
+    "artifact_release_effect": {
+      "type": "string",
+      "enum": ["none", "review_input_only"]
+    },
+    "evidence_effect": {
+      "type": "string",
+      "enum": ["none", "source_candidate_only", "task_creation_only"]
+    },
+    "attribution_boundary": {
+      "type": "string",
+      "enum": [
+        "public_request",
+        "public_attributable",
+        "public_anonymous",
+        "private_non_attributable",
+        "not_applicable"
+      ]
+    },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

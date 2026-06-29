@@ -13,6 +13,8 @@ a review-control surface, not evidence and not a support-state transition.
 | Supplemental consolidation request | Posted: <https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101> |
 | Review packet | `docs/external_review_packet.md` |
 | Supplemental consolidation packet | `docs/chapter_consolidation_external_review_packet.md` |
+| Structured request-update record | `external_reviews/request_updates/consolidation_review_request_2026-06-29.json` |
+| Intake validation | `python3 scripts/validate_external_review_intake.py` |
 | Review state | Requested publicly; no independent external review has been accepted yet. |
 | Review scope requested | Safety-critical Lean limitations, Appendix C support states, non-core evidence ledger, v1.x Beyond-SOTA roadmap, one representative Human view chapter, and the two Part I consolidation destination drafts. |
 | Support-state effect | None. |
@@ -30,11 +32,19 @@ a review-control surface, not evidence and not a support-state transition.
   artifact approval unless independently backed by source-noted material,
   accepted evidence transitions, replay artifacts, proof results, or validated
   review records.
+- Record public request updates, accepted reviews, blockers, rejected reviews,
+  or superseded review requests as structured intake records under
+  `external_reviews/`; keep request-update records at no support-state,
+  artifact-release, or evidence effect.
 
 ## Pending Review Inputs
 
 No independent external human review response has been accepted into the
 repository yet.
+
+The current structured intake record preserves the public supplemental
+consolidation-review solicitation only. It records no reviewer finding and no
+reviewer decision.
 
 ## Acceptance Criteria For A Future Review Record
 

@@ -17,13 +17,22 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     "docs/external_review_packet.md",
     "docs/external_review_status.md",
+    "docs/chapter_consolidation_external_review_packet.md",
+    "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
+    "scripts/validate_external_review_intake.py",
     ".github/ISSUE_TEMPLATE/external-review.yml",
 ]
 
 ISSUE_URL = "https://github.com/corbensorenson/asi-stack-book/issues/1"
+CONSOLIDATION_COMMENT_URL = (
+    "https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101"
+)
 
 REQUIRED_STATUS_STRINGS = [
     ISSUE_URL,
+    CONSOLIDATION_COMMENT_URL,
+    "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
+    "scripts/validate_external_review_intake.py",
     "Requested publicly; no independent external review has been accepted yet.",
     "Support-state effect | None.",
     "Artifact-release effect | None.",
@@ -33,6 +42,7 @@ REQUIRED_STATUS_STRINGS = [
 
 REQUIRED_PACKET_STRINGS = [
     ISSUE_URL,
+    "docs/chapter_consolidation_external_review_packet.md",
     "External review is review input.",
     "support-state transition",
     "AI safety",

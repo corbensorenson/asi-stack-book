@@ -1,0 +1,38 @@
+{
+  "record_id": "schema-example-external-review-intake",
+  "record_type": "request_update",
+  "review_status": "requested",
+  "date": "2026-06-29",
+  "public_request_refs": [
+    "https://github.com/corbensorenson/asi-stack-book/issues/1"
+  ],
+  "packet_refs": [
+    "docs/external_review_packet.md"
+  ],
+  "reviewer_background": "not_applicable; schema fixture only",
+  "review_scope_refs": [
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "findings_summary": "Schema fixture only; no reviewer finding is represented.",
+  "decisions": [
+    {
+      "target": "schema example",
+      "decision": "not_applicable",
+      "reason": "Fixture validates record shape only."
+    }
+  ],
+  "follow_up_refs": [],
+  "acceptance_blockers": [
+    "independent reviewer response",
+    "accepted review record"
+  ],
+  "support_state_effect": "none",
+  "artifact_release_effect": "none",
+  "evidence_effect": "none",
+  "attribution_boundary": "not_applicable",
+  "non_claims": [
+    "This fixture does not create an external review.",
+    "This fixture does not create source evidence.",
+    "This fixture does not change any support state."
+  ]
+}

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-29 - External-review intake records
+
+- Added `schemas/external_review_intake_record.schema.json`,
+  `tests/fixtures/protocol_records/external_review_intake_record.valid.json`,
+  `external_reviews/request_updates/consolidation_review_request_2026-06-29.json`,
+  and `scripts/validate_external_review_intake.py`.
+- The first intake record preserves the supplemental consolidation-review
+  GitHub issue comment as a public request update only. It records no reviewer
+  finding, no reviewer decision, no accepted review, and no authorization to
+  merge chapters.
+- Wired the intake validator into `scripts/validate_book.py`,
+  `scripts/validate_publication.py`, `scripts/validate_external_review_status.py`,
+  README, publication readiness, the repository map, and the external-review
+  status ledger so future accepted review records must be structured and cannot
+  silently become evidence.
+- This does not create an external-review result, source evidence, proof
+  result, benchmark result, support-state promotion, artifact approval, reader
+  release, or manifest edit.
+
 ## 2026-06-29 - Consolidation external-review packet
 
 - Added `docs/chapter_consolidation_external_review_packet.md` as the

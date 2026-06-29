@@ -91,6 +91,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md) | Public ledger for the three accepted non-core evidence transitions and their no-chapter-core-promotion boundary. |
 | [docs/external_review_packet.md](docs/external_review_packet.md) | Public packet for independent v1.x safety, evidence, roadmap, grounding, and reader-quality review. |
 | [docs/external_review_status.md](docs/external_review_status.md) | Ledger for the external-review request and the boundary that review input is not evidence by itself. |
+| [external_reviews/request_updates/consolidation_review_request_2026-06-29.json](external_reviews/request_updates/consolidation_review_request_2026-06-29.json) | Structured request-update record for the supplemental consolidation review solicitation; no accepted review is claimed. |
 | [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) | Generated 54-chapter grounding ledger tying each chapter to source-noted external comparators, explicit exceptions, and Corben/local sources to mine first. |
 | [docs/per_chapter_evidence_plan.md](docs/per_chapter_evidence_plan.md) | 54-chapter evidence-lane backlog used as a menu for selecting 5-8 high-payoff v1.x lanes, not as a breadth-sweep checklist. |
 | [docs/v1_x_active_evidence_cycle.md](docs/v1_x_active_evidence_cycle.md) | Active v1.x evidence-cycle ledger: seven selected lanes, forty-seven planned-only lanes, and no chapter-core promotion. |
@@ -194,6 +195,7 @@ python3 scripts/validate_public_site_accessibility.py
 python3 scripts/validate_v1_release_gate_audit.py
 python3 scripts/validate_non_core_evidence_ledger.py
 python3 scripts/validate_external_review_status.py
+python3 scripts/validate_external_review_intake.py
 python3 scripts/validate_core_claim_promotion_paths.py
 python3 scripts/validate_chapter_external_grounding_status.py
 python3 scripts/validate_external_sota_positioning.py

@@ -25,6 +25,8 @@ This repository is organized around the living book and its validation loop.
 | `docs/chapter_consolidation_external_review_packet.md` | Supplemental review request packet for deciding whether to execute, revise, defer, or reject the Part I consolidation pilot before any manifest merge. | tracked |
 | `docs/external_review_packet.md` | Public packet for v1.x external review, including scope, questions, response template, and review-is-not-evidence boundary. | tracked |
 | `docs/external_review_status.md` | Ledger for the public external-review request, current no-accepted-review state, routing rules, and non-claims. | tracked |
+| `external_reviews/request_updates/consolidation_review_request_2026-06-29.json` | Structured request-update record for the supplemental consolidation review solicitation; validates as no accepted review and no support-state effect. | tracked |
+| `schemas/external_review_intake_record.schema.json` | Schema for public request updates, accepted review records, blockers, and rejected-review intake records. | tracked |
 | `docs/chapter_external_grounding_status.md` | Generated 54-chapter status ledger tying each chapter to source-noted external comparators, explicit exceptions, and Corben/local sources to mine before broad literature search. | tracked |
 | `docs/reader_manuscript_review.md` | Phase 2 baseline for the generated reader manuscript, including generated-reader metrics, spot-review notes, residuals, and non-claims. | tracked |
 | `docs/reader_overlay_pilot.md` | First active Phase 2 semantic reader-overlay pilot for opening-chapter Human-view and generated-reader prose. | tracked |
