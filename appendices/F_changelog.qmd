@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-06-29 - Stable-capability-field external-grounding backfill
+
+- Added three source-noted external comparators: Capability-Based Computer
+  Systems, Semantic Versioning 2.0.0, and SLSA v1.0.
+- Replaced the external-baseline exception prose for
+  `stable-capability-fields` with a source-noted positioning paragraph that
+  separates authority-bearing capabilities, versioned public interfaces, and
+  artifact provenance from deployed SCF enforcement.
+- Updated the outline, v1.x roadmap, generated source appendices,
+  external-SOTA audit, chapter external-grounding ledger, and v1.0 status
+  snapshot so the placement gate now records 52 positioned chapters and 2
+  explicit exceptions.
+- Kept the chapter core claim at `argument`; no capability-system enforcement,
+  API compatibility checker, SLSA workflow, route validator, evaluator-integrity
+  mechanism, or rollback execution was reproduced or promoted.
+
 ## 2026-06-29 - Human-intent external-grounding backfill
 
 - Added three source-noted external comparators: goal-oriented requirements

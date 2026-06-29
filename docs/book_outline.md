@@ -753,6 +753,7 @@ Source loading queue:
 | Primary | `scf` | Read first for chapter claims and mechanisms. |
 | Supporting | `viea`, `talos`, `ladon_manhattan` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+| External literature variants | `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` | Use as capability-authority, versioned-interface, and artifact-provenance comparators; do not treat them as deployed SCF enforcement or support-state promotion. |
 
 Draft arc:
 
@@ -790,6 +791,7 @@ Draft deliverables:
 
 - An SCF record schema with field identity, field version, owner, implementation versions, lifecycle state, qualification context/status, qualification lease/status, evaluator independence, evidence, route validity/scope, route permission effect, consumer policy, readiness gate refs, field history refs, source refs, support-state effect, incidents, review triggers, migration path, rollback obligations, default-route blockers, and non-claims.
 - Exact Appendix C claim-source mappings for the stable-capability-field core claim across SCF identity/lifecycle semantics, VIEA artifact/evidence discipline, Talos job/proof-bundle discipline, Ladon/Manhattan authority-handle boundaries, and MoECOT implementation-reference context; four mappings (`scf`, `viea`, `talos`, `ladon_manhattan`) now have reviewed passage references, while `moecot` remains connector-only/source-note mapped. Support remains `argument` pending route-validity, evaluator-integrity, authority non-escalation, rollback-readiness, or deployed lifecycle evidence.
+- Source-noted external positioning through capability-based computer systems, Semantic Versioning, and SLSA; no capability enforcement, API compatibility checking, SLSA workflow, route validation, evaluator integrity, or rollback execution is reproduced or promoted.
 - Planned Codex test: Qualification predicate test.
 - Implemented Codex test: Route validity test, via `python3 scripts/validate_readiness_residual_gates.py` over synthetic costed-route/readiness-gate/replacement fixtures; deployed route enforcement remains unrun.
 - Planned Codex test: Authority non-escalation test.

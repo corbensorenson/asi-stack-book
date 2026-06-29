@@ -910,6 +910,51 @@
     "doi": "10.1109/PROC.1975.9939"
   },
   {
+    "id": "ext_capability_based_computer_systems_1984",
+    "title": "Capability-Based Computer Systems",
+    "priority": "external_literature",
+    "layer": "capability_security",
+    "chapter_targets": [
+      "stable-capability-fields"
+    ],
+    "url": "https://homes.cs.washington.edu/~levy/capabook/",
+    "notes": "External capability-system comparator for authority-bearing capabilities, protection domains, and permission boundaries that help position SCF authority ceilings without claiming ASI Stack capability enforcement.",
+    "source_type": "book",
+    "published": "1984",
+    "updated": "1984",
+    "citation_label": "Levy (1984), Capability-Based Computer Systems"
+  },
+  {
+    "id": "ext_semver_2_0_0",
+    "title": "Semantic Versioning 2.0.0",
+    "priority": "external_literature",
+    "layer": "interface_versioning",
+    "chapter_targets": [
+      "stable-capability-fields"
+    ],
+    "url": "https://semver.org/spec/v2.0.0.html",
+    "notes": "External versioned-interface comparator for public API contracts, compatibility, and breaking-change signaling as a narrow baseline for SCF field versions and stable interfaces.",
+    "source_type": "official_docs",
+    "published": "2013",
+    "updated": "2026",
+    "citation_label": "Semantic Versioning (2013), SemVer 2.0.0"
+  },
+  {
+    "id": "ext_slsa_v1_0",
+    "title": "SLSA v1.0",
+    "priority": "external_literature",
+    "layer": "supply_chain_provenance",
+    "chapter_targets": [
+      "stable-capability-fields"
+    ],
+    "url": "https://slsa.dev/spec/v1.0/",
+    "notes": "External supply-chain provenance comparator for artifact integrity, provenance, build levels, and dependency on verifiable artifacts before promotion or default route use.",
+    "source_type": "official_docs",
+    "published": "2023",
+    "updated": "2026",
+    "citation_label": "OpenSSF SLSA (2023), SLSA v1.0"
+  },
+  {
     "id": "ext_react_2022",
     "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
     "priority": "external_literature",
