@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-29 - Chapter external grounding status ledger
+
+- Added `docs/chapter_external_grounding_status.md` as a generated 54-chapter
+  ledger tying each manifest chapter to source-noted external comparators,
+  explicit external-baseline exceptions, and the Corben/local sources that
+  should be mined before broad literature search.
+- Added `scripts/build_chapter_external_grounding_status.py` and
+  `scripts/validate_chapter_external_grounding_status.py`, then wired the
+  validator into book/publication validation so the ledger must stay fresh
+  against `book_structure.json`, `sources/source_inventory.json`, and
+  `docs/external_sota_positioning_audit.md`.
+- Updated README, repository map, and publication-readiness surfaces so the
+  chapter-level external-grounding status is visible from the public trust
+  surface.
+- This does not add new external source records, source notes, citations,
+  reproduced external results, support-state transitions, reader artifacts, or
+  chapter-core claim promotions.
+
 ## 2026-06-29 - External review request packet and status ledger
 
 - Opened public GitHub issue #1 as the v1.x external-review request for safety,

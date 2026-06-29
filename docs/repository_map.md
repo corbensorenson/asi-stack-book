@@ -18,6 +18,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/per_chapter_evidence_plan.md` | 54-chapter evidence-lane backlog for selecting a small high-payoff v1.x execution set without triggering another shallow breadth sweep. | tracked |
 | `docs/external_review_packet.md` | Public packet for v1.x external review, including scope, questions, response template, and review-is-not-evidence boundary. | tracked |
 | `docs/external_review_status.md` | Ledger for the public external-review request, current no-accepted-review state, routing rules, and non-claims. | tracked |
+| `docs/chapter_external_grounding_status.md` | Generated 54-chapter status ledger tying each chapter to source-noted external comparators, explicit exceptions, and Corben/local sources to mine before broad literature search. | tracked |
 | `docs/reader_manuscript_review.md` | Phase 2 baseline for the generated reader manuscript, including generated-reader metrics, spot-review notes, residuals, and non-claims. | tracked |
 | `docs/reader_overlay_pilot.md` | First active Phase 2 semantic reader-overlay pilot for opening-chapter Human-view and generated-reader prose. | tracked |
 | `docs/reader_continuity_audit.md` | Generated Phase 2 heuristic audit and priority queue for reader-manuscript continuity review. | tracked |
