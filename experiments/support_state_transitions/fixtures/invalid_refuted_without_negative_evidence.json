@@ -1,0 +1,58 @@
+{
+  "transition_id": "support-state-harness.invalid.refuted-without-negative-evidence",
+  "claim_id": "claim://synthetic/support-state/refuted-without-negative-evidence",
+  "claim_surface_refs": [
+    "experiments/support_state_transitions/fixtures/invalid_refuted_without_negative_evidence.json"
+  ],
+  "claim_record_refs": [
+    "tests/fixtures/protocol_records/claim_record.valid.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "refuted",
+  "transition_effect": "refuted",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic invalid terminal fixture; it asserts refutation without negative evidence refs",
+  "evidence_roles": [
+    "synthetic_fixture",
+    "negative_control",
+    "terminal_transition"
+  ],
+  "transition_reason": "The fixture intentionally omits negative evidence refs so the harness rejects unsupported terminal refutation.",
+  "required_artifacts": [
+    "accepted review",
+    "negative evidence reference"
+  ],
+  "artifact_refs": [
+    "schemas/evidence_transition_record.schema.json"
+  ],
+  "evidence_packet_refs": [
+    "experiments/support_state_transitions/README.md"
+  ],
+  "source_mapping_refs": [],
+  "verification_command": "python3 scripts/validate_support_state_transitions.py",
+  "verification_result": "fail",
+  "negative_results": [
+    "a refutation is asserted but no negative evidence reference is recorded"
+  ],
+  "negative_evidence_refs": [],
+  "downgrade_triggers": [
+    "missing negative evidence reference"
+  ],
+  "promotion_burden": "Terminal states require accepted review and recorded negative evidence.",
+  "limitations": [
+    "synthetic invalid fixture only"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "synthetic local harness"
+  ],
+  "reviewer_independence": "not independent; repository-local fixture review only",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#synthetic-fixture-only",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not refute any live chapter claim",
+    "does not prove source interpretation",
+    "does not promote any support state"
+  ]
+}

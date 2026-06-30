@@ -1,6 +1,6 @@
 # Phase 5 Harness Registry
 
-Last updated: 2026-06-28
+Last updated: 2026-06-30
 
 This registry records the Phase 5 executable harness set for the v1.0 candidate pass. The machine-readable source is `experiments/phase5_harness_registry.json`; the guard is `scripts/validate_phase5_harness_registry.py`.
 
@@ -17,7 +17,7 @@ The registry exists to keep the public evidence surface aligned. A Phase 5 harne
 | Constitutional alignment harness | `python3 scripts/validate_constitutional_alignment.py` | 3 valid, 5 expected-invalid | `experiments/constitutional_alignment/results/2026-06-28-local.md` |
 | Governance rights harness | `python3 scripts/validate_governance_rights.py` | 3 valid, 5 expected-invalid | `experiments/governance_rights/results/2026-06-28-local.md` |
 | Agency rights harness | `python3 scripts/validate_agency_rights.py` | 3 valid, 6 expected-invalid | `experiments/agency_rights/results/2026-06-28-local.md` |
-| Support-state transition harness | `python3 scripts/validate_support_state_transitions.py` | 2 valid, 2 expected-invalid | `experiments/support_state_transitions/results/2026-06-28-local.md` |
+| Support-state transition harness | `python3 scripts/validate_support_state_transitions.py` | 4 valid, 4 expected-invalid | `experiments/support_state_transitions/results/2026-06-30-local.md` |
 | Authority transition harness | `python3 scripts/validate_authority_transitions.py` | 3 valid, 3 expected-invalid | `experiments/authority_transitions/results/2026-06-28-local.md` |
 | Security kernel harness | `python3 scripts/validate_security_kernel.py` | 3 valid, 6 expected-invalid | `experiments/security_kernel/results/2026-06-28-local.md` |
 | Stable capability fields harness | `python3 scripts/validate_stable_capability_fields.py` | 3 valid, 6 expected-invalid | `experiments/stable_capability_fields/results/2026-06-28-local.md` |

@@ -1,0 +1,67 @@
+{
+  "transition_id": "support-state-harness.valid.downward-scope-mismatch",
+  "claim_id": "claim://synthetic/support-state/downward-scope-mismatch",
+  "claim_surface_refs": [
+    "experiments/support_state_transitions/fixtures/valid_downward_scope_mismatch.json"
+  ],
+  "claim_record_refs": [
+    "tests/fixtures/protocol_records/claim_record.valid.json"
+  ],
+  "old_support_state": "source-derived",
+  "new_support_state": "argument",
+  "transition_effect": "downward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "synthetic downward fixture; source mapping is judged too narrow for the claim wording",
+  "evidence_roles": [
+    "synthetic_fixture",
+    "negative_control",
+    "scope_review"
+  ],
+  "transition_reason": "The fixture models a demotion from source-derived to argument after review finds that the cited mapping supports terminology but not the broader claim wording.",
+  "required_artifacts": [
+    "negative evidence reference",
+    "downgrade trigger",
+    "accepted reviewer decision"
+  ],
+  "artifact_refs": [
+    "schemas/evidence_transition_record.schema.json",
+    "scripts/validate_support_state_transitions.py"
+  ],
+  "evidence_packet_refs": [
+    "experiments/support_state_transitions/README.md",
+    "experiments/support_state_transitions/fixtures/valid_downward_scope_mismatch.json"
+  ],
+  "source_mapping_refs": [
+    "claim://synthetic/source-mapping/scope-mismatch"
+  ],
+  "verification_command": "python3 scripts/validate_support_state_transitions.py",
+  "verification_result": "mismatch",
+  "negative_results": [
+    "source mapping supports terminology only, not the broader mechanism claim"
+  ],
+  "negative_evidence_refs": [
+    "experiments/support_state_transitions/fixtures/valid_downward_scope_mismatch.json#negative_results"
+  ],
+  "downgrade_triggers": [
+    "scope boundary mismatch"
+  ],
+  "promotion_burden": "The claim can return to source-derived only after a claim-specific source mapping supports the exact broader wording and receives accepted review.",
+  "limitations": [
+    "synthetic fixture only",
+    "does not review a live source",
+    "does not demote Appendix C"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "synthetic local harness"
+  ],
+  "reviewer_independence": "not independent; repository-local fixture review only",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#synthetic-fixture-only",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not demote any live chapter claim",
+    "does not prove source interpretation",
+    "does not promote any support state"
+  ]
+}

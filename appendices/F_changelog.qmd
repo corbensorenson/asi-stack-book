@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-30 - Evidence-state terminal and demotion gates
+
+- Extended `AsiStackProofs.EvidenceStates` with terminal `deprecated` and
+  `refuted` support states, finite transition records, downgrade predicates,
+  and terminal-state theorems showing that terminal states are not promotion
+  targets and that modeled terminal/downgrade transitions require negative
+  evidence or downgrade triggers within the finite record.
+- Strengthened `scripts/validate_support_state_transitions.py` with downward
+  and terminal-transition semantics, added synthetic valid/expected-invalid
+  fixtures for downward scope mismatch, reasonless demotion, terminal
+  refutation, and unsupported refutation, and recorded a 2026-06-30 local run
+  passing with 4 valid fixtures and 4 expected-invalid fixtures.
+- Updated the Evidence States chapter, Phase 5 registry and runner records,
+  Appendix E, proof adequacy/depth surfaces, roadmap/status surfaces, active
+  evidence-cycle ledger, and public README so the demotion/refutation exercise
+  is visible without claiming a live claim movement.
+- This does not promote, demote, deprecate, or refute any Appendix C or chapter
+  core claim, prove source interpretation, prove reviewer independence, prove
+  proof adequacy, validate runtime behavior, approve reader artifacts, or create
+  EPUB, DOCX, PDF, audio, DOI, Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Planning/DAG consolidation executed
 
 - Executed the governed planning/DAG merge in `book_structure.json`: folded

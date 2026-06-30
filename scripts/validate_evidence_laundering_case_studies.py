@@ -31,7 +31,7 @@ REQUIRED_REFS = (
 BOUNDARY_FRAGMENTS = (
     "No-promotion / anti-laundering examples",
     "all 44 chapter core claims remain `argument`",
-    "True demotion/refutation example | Still missing",
+    "Live demotion/refutation example | Still missing",
     "not a new evidence-transition record",
     "not a demotion/refutation event",
     "not accepted external review",
@@ -91,7 +91,7 @@ def main() -> None:
 
     print(
         "Evidence-laundering case-study validation passed: "
-        f"{len(REQUIRED_CASES)} no-promotion examples recorded with demotion/refutation gap preserved."
+        f"{len(REQUIRED_CASES)} no-promotion examples recorded with live demotion/refutation gap preserved."
     )
 
 

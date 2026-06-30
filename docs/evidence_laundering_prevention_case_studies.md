@@ -18,7 +18,7 @@ release-control surfaces prevented evidence laundering.
 | Case-study type | No-promotion / anti-laundering examples |
 | Live examples recorded | 3 |
 | Chapter core support effect | None; all 44 chapter core claims remain `argument`. |
-| True demotion/refutation example | Still missing; no chapter core claim is recorded as demoted or refuted by this note. |
+| Live demotion/refutation example | Still missing; the support-state harness now has synthetic demotion/refutation fixtures, but no chapter core claim is recorded as demoted or refuted by this note. |
 | Reviewer effect | None; this is not accepted external review. |
 
 ## Case Study 1 - Project Theseus Static Import Did Not Become Self-Improvement Evidence

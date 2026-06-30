@@ -477,8 +477,8 @@ Acceptance criteria:
 
 Initial completion:
 
-- `python3 scripts/validate_support_state_transitions.py` passed locally on 2026-06-28 with 2 valid fixtures and 2 expected-invalid fixtures.
-- The result record is `experiments/support_state_transitions/results/2026-06-28-local.md`.
+- `python3 scripts/validate_support_state_transitions.py` passed locally on 2026-06-30 with 4 valid fixtures and 4 expected-invalid fixtures.
+- The result record is `experiments/support_state_transitions/results/2026-06-30-local.md`.
 - The harness is a gate-semantics test only. It does not promote Appendix C, validate source interpretation, prove proof adequacy, or exercise AI runtime behavior.
 - `python3 scripts/validate_claim_ledger_revision.py` passed locally on 2026-06-28 with 3 valid fixtures and 4 expected-invalid fixtures.
 - The result record is `experiments/claim_ledger_revision/results/2026-06-28-local.md`.

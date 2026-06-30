@@ -86,10 +86,23 @@ def semantic_errors(record: dict[str, Any], relative: str) -> list[str]:
         for field in ("artifact_refs", "evidence_packet_refs", "source_mapping_refs", "reviewer_refs"):
             require_nonempty(record, field, errors, relative)
 
+    if transition_effect == "downward":
+        if old_state == new_state:
+            errors.append(f"{relative}: downward transition must change the support state.")
+        if record.get("review_status") != "accepted":
+            errors.append(f"{relative}: downward transition requires review_status == accepted.")
+        if record.get("support_state_effect") != "blocks_promotion":
+            errors.append(f"{relative}: downward transition requires support_state_effect == blocks_promotion.")
+        for field in ("negative_evidence_refs", "downgrade_triggers", "reviewer_refs"):
+            require_nonempty(record, field, errors, relative)
+
     if transition_effect in {"deprecated", "refuted"}:
         if record.get("review_status") != "accepted":
             errors.append(f"{relative}: terminal transition requires accepted review.")
-        require_nonempty(record, "negative_evidence_refs", errors, relative)
+        if record.get("support_state_effect") != "blocks_promotion":
+            errors.append(f"{relative}: terminal transition requires support_state_effect == blocks_promotion.")
+        for field in ("negative_evidence_refs", "reviewer_refs"):
+            require_nonempty(record, field, errors, relative)
 
     return errors
 

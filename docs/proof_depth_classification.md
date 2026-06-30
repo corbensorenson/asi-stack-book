@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 158 |
-| Direct/projection-style theorem declarations | 112 |
-| Derived/decomposed theorem declarations | 46 |
+| Theorem declarations classified | 163 |
+| Direct/projection-style theorem declarations | 115 |
+| Derived/decomposed theorem declarations | 48 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 29 |
 | Safety-critical direct/projection declarations | 10 |
@@ -69,7 +69,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 2 | 4 | 3 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 2 | 9 | 6 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -166,9 +166,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Efficiency.lean` | `minimum_viable_route_has_no_lower_cost_authorized_quality_candidate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Efficiency.lean` | `routed_or_compressed_result_with_open_obligations_requires_residual_record` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_downgrade_transition_requires_negative_evidence_and_trigger` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_blocks_promotion_to_new_state` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_requires_negative_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `missing_required_evidence_blocks_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `no_self_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `support_state_transition_requires_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_effect_for_implies_terminal_state` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_state_cannot_be_promotion_target` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `unsupported_can_promote_to_argument` | derived_or_decomposed | no | uses constructor |
 | `lean/AsiStackProofs/FailureModes.lean` | `failed_required_invariant_blocks_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `unbounded_authority_detected_as_governance_failure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
