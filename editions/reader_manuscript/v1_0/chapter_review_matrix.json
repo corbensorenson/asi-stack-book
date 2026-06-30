@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 31,
+    "curated_manuscript_candidate": 32,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -812,12 +812,14 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_opening_full_review_pass.md#decisions"
+        "docs/reader_part_iii_opening_full_review_pass.md#decisions",
+        "docs/curated_reader_personal_compute_hives_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the Personal Compute Hives chapter. Existing overlays are accepted for the reader path; consent, privacy, rented-node, family/project mediation, scheduler, and implementation non-claim boundaries remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the Personal Compute Hives chapter. Existing overlays are accepted for the reader path; consent, privacy, rented-node, family/project mediation, scheduler, and implementation non-claim boundaries remain visible. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and no hive scheduler, federation, rented-node, family-governance, or reader-artifact claim is approved.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
