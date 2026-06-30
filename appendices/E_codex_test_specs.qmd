@@ -64,6 +64,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Protected-invariant preservation test | implemented | validated locally by synthetic fixtures; deployed recursive self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Evaluator independence test | implemented | validated locally by synthetic fixtures; broader self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement rollback scenario | implemented | validated locally by synthetic fixtures; live self-improvement rollback not run |
+| `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement transition route proof | implemented | passes via Lean build; finite transition-route coverage only |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent and trace fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Contract field completeness test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Constraint preservation test | implemented | passes via synthetic plan-execution contract harness |
@@ -287,16 +288,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 116 |
+| Proof targets covered by triage | 117 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 116 |
+| implemented | 117 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 116 |
+| implemented | formal-invariant | lean-candidate | 117 |

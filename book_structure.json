@@ -2408,6 +2408,11 @@
               "status": "implemented by readiness/residual gate harness; validated locally; live self-improvement rollback not run",
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures; live self-improvement rollback not run"
+            },
+            {
+              "name": "Self-improvement transition route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite transition-route coverage only"
             }
           ],
           "lean_module": "AsiStackProofs.SelfImprovement",
@@ -2422,6 +2427,12 @@
               "tag": "lean:self_improvement.boundary.failure_blocks_promotion",
               "module": "AsiStackProofs.SelfImprovement",
               "target": "A proposal evaluated only by the component being replaced cannot be promoted.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:self_improvement.boundary.transition_route_envelope",
+              "module": "AsiStackProofs.SelfImprovement",
+              "target": "A structured self-improvement transition review routes missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews into explicit outcomes.",
               "status": "implemented"
             }
           ],

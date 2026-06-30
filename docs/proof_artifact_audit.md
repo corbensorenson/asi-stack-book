@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 116 |
-| Manifest status counts | {"implemented": 116} |
-| Triage class counts | {"formal-invariant": 116} |
+| Proof targets audited | 117 |
+| Manifest status counts | {"implemented": 117} |
+| Triage class counts | {"formal-invariant": 117} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -74,7 +74,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 2 | 3 | 4 | 2 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 3 | 14 | 4 | 5 |
-| `lean/AsiStackProofs/SelfImprovement.lean` | 2 | 5 | 6 | 4 |
+| `lean/AsiStackProofs/SelfImprovement.lean` | 3 | 21 | 7 | 5 |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 2 | 4 | 2 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 3 | 9 | 3 | 3 |
@@ -123,7 +123,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `prototype-roadmap` | 2 | 2 | 0 | 0 |
 | `rankfold-neuralfold-and-artifact-compression` | 2 | 2 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 2 | 2 | 0 | 0 |
-| `recursive-self-improvement-boundaries` | 2 | 2 | 0 | 0 |
+| `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 4 | 4 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 4 | 4 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
@@ -171,6 +171,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:security.scif.route_envelope` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:self_improvement.boundary.transition_route_envelope` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:command.semantic_interface.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |

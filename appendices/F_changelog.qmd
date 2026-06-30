@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-06-30 - Self-improvement transition route proof envelope
+
+- Extended `AsiStackProofs.SelfImprovement` with a finite
+  self-improvement transition route vocabulary, review record, and route
+  function over proposal presence, protected-invariant declarations, evidence
+  bundles, invariant preservation, self-evaluation, evaluator independence,
+  authority/security/resource boundary deltas, governance approval, rollback,
+  stale gates, residual escrow, canary monitoring, and promotion requests.
+- Added derived/decomposed Lean theorems showing that missing proposals reject
+  the transition; missing invariant declarations and evidence bundles require
+  evidence; invariant breaches, sole self-evaluation, missing independent
+  evaluators, boundary deltas, and missing governance approval route to
+  governance review; missing rollback, stale gates, and missing residual escrow
+  require evidence; canaries without open monitor windows roll back; complete
+  canary reviews allow canary; and complete promotion reviews promote.
+- Added the `lean:self_improvement.boundary.transition_route_envelope` proof
+  target to the outline, manifest, proof triage, Recursive Self-Improvement
+  Boundaries chapter, and Appendix E. The proof manifest now tracks 117
+  implemented finite-record targets, and the proof-depth classifier now records
+  228 theorem declarations: 115 direct/projection-style and 113
+  derived/decomposed.
+- Updated the Recursive Self-Improvement Boundaries chapter, proof-depth and
+  proof-adequacy surfaces, v1.0 roadmap/status surfaces, publication readiness
+  note, repository map, v0.2 manuscript status, and proof/code plan. The proof
+  adequacy review keeps Recursive Self-Improvement in `needs richer
+  state-machine or review semantics`.
+- This does not promote any Appendix C or chapter core claim, demonstrate
+  autonomous self-improvement, prove evaluator independence in practice,
+  execute rollback, validate monitor quality, preserve verification budgets in
+  runtime, approve reader artifacts, or create EPUB, DOCX, PDF, audio, DOI,
+  Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Security kernel authority-use route proof envelope
 
 - Extended `AsiStackProofs.SecurityKernel` with a finite security-kernel route

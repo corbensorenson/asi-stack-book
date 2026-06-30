@@ -331,6 +331,16 @@
       "rationale": "Implemented in AsiStackProofs.SelfImprovement as a finite self-evaluation predicate: proposals evaluated only by the replaced component cannot be promoted."
     },
     {
+      "tag": "lean:self_improvement.boundary.transition_route_envelope",
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "module": "AsiStackProofs.SelfImprovement",
+      "formal_target": "A structured self-improvement transition review routes missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews into explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SelfImprovement as a finite transition-route function and derived route theorems for missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews."
+    },
+    {
       "tag": "lean:intent_execution.contracts.operational_invariant",
       "chapter_id": "intent-to-execution-contracts",
       "module": "AsiStackProofs.IntentToExecution",
