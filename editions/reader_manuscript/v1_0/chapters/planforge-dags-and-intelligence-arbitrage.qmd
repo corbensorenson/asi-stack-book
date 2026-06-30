@@ -1,0 +1,310 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: planforge-dags-and-intelligence-arbitrage
+generated_baseline_ref: build/reader_edition/chapters/planforge-dags-and-intelligence-arbitrage.qmd
+live_source_ref: chapters/planforge-dags-and-intelligence-arbitrage.qmd@062c1f13a
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# PlanForge DAGs and Intelligence Arbitrage
+
+The previous chapter made planning visible before execution. This chapter asks
+what happens next. Once a goal has been accepted and shaped into a plan, the
+system still has to decide who should do each part, what order the work should
+follow, how much context each step deserves, when a cheap route is good enough,
+and when the work has to escalate to something stronger.
+
+PlanForge is the book's name for that scheduling layer. It treats a plan as a
+directed acyclic graph: a set of work nodes whose dependencies are explicit and
+whose routes are accountable. A node is not just a task label. It is a bounded
+piece of cognitive labor with a required input state, an authority boundary, a
+context request, a capability tier, an adequacy test, a verifier, a budget, and
+a failure path.
+
+That makes intelligence arbitrage possible without turning efficiency into a
+race to the bottom. The stack can use a small model, local worker, tool, cached
+artifact, specialist core, or human reviewer when that route is adequate. It
+can also spend more when the graph shows that risk, uncertainty, context demand,
+or downstream cost requires it. The point is not cheap cognition. The point is
+priced, routed, and verified cognition.
+
+In a governed stack, the cheapest acceptable route is allowed only because the
+acceptance predicate remains attached. A cheaper worker that pushes verification
+or cleanup onto somebody else has not saved money. It has moved the bill.
+
+## Problem
+
+Large tasks do not usually fail because they lack a single brilliant answer.
+They fail because the work is not decomposed, sequenced, routed, checked, and
+merged with enough care. A book chapter, software change, safety review, model
+evaluation, or research program contains different kinds of labor. Some parts
+are clerical. Some require search. Some require proof. Some require source
+reading. Some require human judgment. Some should not proceed until authority,
+context, or budget is available.
+
+A flat prompt hides those differences. A chat transcript can say "do the
+project," but it does not show which work can run in parallel, which work is
+blocked, which worker is allowed to act, which output is acceptable, or which
+failed path should leave a residual. A governed AI system needs a scheduling
+surface where those facts are explicit.
+
+PlanForge-style DAG planning supplies that surface. It takes the plan graph and
+turns it into scheduled, typed work. The graph exposes dependencies, critical
+paths, parallel branches, merge points, cached work, route choices, verification
+burdens, and residuals. The result is not yet a deployed scheduler in this
+repository. It is an architectural contract for what a scheduler must record
+before the book can honestly claim cost savings or quality-preserving routing.
+
+## Why Existing Approaches Are Insufficient
+
+The simplest mistake is to send every node to the strongest available model.
+That can work, but it wastes compute and hides structure. If every task receives
+the same expensive treatment, the system never learns which parts were easy,
+which parts needed proof, which parts needed human review, or which cheap route
+would have been adequate with the right verifier.
+
+The opposite mistake is to route too cheaply. A weak worker can produce an
+answer that looks plausible while missing a dependency, source constraint,
+authority ceiling, or quality predicate. The schedule looks efficient until the
+repair, review, and human cleanup costs arrive later. That is not intelligence
+arbitrage; it is accounting failure.
+
+Classical and agentic planning literature already shows why explicit structure
+matters. PDDL and SHOP2 separate planning domains, tasks, actions, and
+decomposition methods. Task and motion planning names the boundary between
+symbolic plans and physical feasibility. Behavior trees and GOAP make modular
+and reactive control visible. Tree of Thoughts exposes the value of searching
+over intermediate reasoning paths. PlanForge sits beside those ideas rather
+than replacing them. Its added emphasis is costed route selection under
+authority, context, adequacy, verification, and residual constraints.
+
+Serial chat orchestration also hides merge risk. Two independent branches can
+produce artifacts that sound compatible while relying on different assumptions,
+source versions, permission scopes, or acceptance criteria. A DAG should force
+the merge condition into the open before parallelism becomes incoherence.
+
+## Core Claim
+
+PlanForge-style DAG planning can support intelligence arbitrage by assigning
+each node the minimum adequate capability and verification burden. This remains
+an architectural argument, not a measured result.
+
+The claim has several parts. PlanForge and the PlanForge compiler-architecture
+note supply the decomposition, primitive typing, dependency-aware scheduling,
+minimum viable intelligence, fallback, and planner-as-compiler frame.
+Cognitive Compilation connects the graph to semantic IR, local repair, and
+validator-backed artifacts. TokenMana keeps the resource surface wider than
+token count by adding load, latency, review capacity, burst limits, and human
+cognitive friction. The Coherence Exchange contributes speculative
+intelligence-arbitrage language and verification-supply-chain context, but it
+does not provide implemented economics. MoECOT remains implementation-reference
+context only until runtime artifacts, logs, or benchmark records are imported
+and checked.
+
+The live book's support state therefore stays at `argument`. The available repo
+evidence supports record shape, finite proof hooks, and synthetic consistency
+checks. It does not prove scheduler behavior, route-selection quality, cost
+savings, or benchmark performance.
+
+## Mechanism
+
+PlanForge begins by decomposing a goal into primitive nodes. Each node receives
+dependencies, inputs, expected outputs, context demand, authority state,
+capability tier, quality predicate, verification requirement, budget limit,
+route assignment, merge condition, escalation path, and residual behavior.
+
+That extra structure is what changes the meaning of "use a smaller model." The
+small model is not trusted because it is small or cheap. It is trusted only
+when its node has a bounded job, an adequacy contract, a verifier, and a
+fallback. The larger model, human reviewer, or specialist route is not used
+because it is prestigious. It is used because the graph shows that the cheaper
+route would not satisfy the node's acceptance conditions.
+
+```{mermaid}
+flowchart LR
+  A["Accepted plan"] --> B["Primitive work nodes"]
+  B --> C["Dependency DAG"]
+  C --> D["Capability and context annotations"]
+  D --> E["Adequacy contract"]
+  E --> F["Route assignment"]
+  F --> G{"Predicate passes?"}
+  G -- "yes" --> H["Merge or cache artifact"]
+  G -- "no" --> I["Escalate or residualize"]
+  H --> J["Cost-quality ledger"]
+  I --> J
+```
+
+The diagram is not a benchmark. It shows the accountability path. A planned
+node becomes schedulable only after its dependencies and annotations are
+visible. A routed node becomes acceptable only after its adequacy predicate is
+checked. A failed node does not disappear; it escalates or leaves a residual.
+The ledger records what was accepted, rejected, merged, retried, or left
+blocked.
+
+Every node should carry two contracts. The work contract says what the node is
+allowed to do. The adequacy contract says what would make the output usable by
+downstream dependents. Without the second contract, scheduling creates text but
+not reliable progress. A worker can complete a task description while still
+failing the actual need of the graph.
+
+The DAG also makes local repair possible. If a downstream artifact fails
+because one source-reading node used stale evidence, the scheduler should not
+regenerate the entire project. It should identify the affected subgraph,
+repair the stale node, rerun dependents whose assumptions changed, and preserve
+unaffected work. That is the compiler intuition behind PlanForge: the graph
+lets the stack rebuild only the parts whose dependencies changed.
+
+## Interfaces
+
+PlanForge exposes a DAG to the rest of the stack.
+
+Routing consumes the capability annotations and route assignments. VCM consumes
+the context requests. Command contracts define authority and acceptance
+boundaries. Cognitive Compilation lowers scheduled work into semantic atoms,
+target constraints, validators, and repair ledgers. Evidence records cost,
+quality, residuals, and verification results.
+
+The minimum record is deliberately concrete. It needs a `dag_id`, a
+`parent_plan`, nodes, edges, scheduling states, capability tiers, context
+requests, adequacy contracts, quality predicates, verification requirements,
+budget limits, route assignments, merge conditions, assumption references,
+escalation policy, residuals, a cost-quality ledger, and non-claims.
+
+Scheduling state matters because "not done" is too vague. A node may be ready,
+blocked by dependency, blocked by authority, blocked by context, blocked by
+budget, blocked by verifier, running, failed, residualized, or merged. Those
+states prevent blocked work from being mistaken for available work and prevent
+failed cheap routes from being hidden behind a final success label.
+
+## Invariants
+
+The graph must respect dependency order. A node cannot be ready just because an
+upstream worker produced text; it becomes ready when the upstream artifact,
+authority state, context state, and quality predicate satisfy the downstream
+need or when an explicit governance waiver exists.
+
+Cost savings must not remove required verification. If the verification burden
+is moved outside the ledger, the route has not become cheaper in a meaningful
+sense. It has only made the accounting worse.
+
+Escalation paths must be explicit. A failed quality predicate should route to a
+stronger worker, human review, repair, quarantine, or residual. Silent success
+after a failed predicate is the failure case the graph is meant to prevent.
+
+The current Lean hooks prove only narrow finite-record statements around these
+ideas: a dispatchable indexed plan graph carries an acyclicity certificate and
+ordered dependency edges, and a failed quality predicate must escalate or emit
+a residual under the valid node-outcome predicate. Those proofs are useful
+guardrails, not a deployed scheduler proof.
+
+## Failure Modes
+
+Wrong tier selection produces cheap wrong work. The route looks efficient until
+the downstream validator fails or a human has to repair the missing reasoning.
+
+Dependency cycles make the graph look planned while it cannot dispatch. A
+cycle is not a clever dependency. It is a stalled schedule that must be
+rejected or repaired before execution.
+
+Economic optimization can override safety if the scheduler is rewarded for
+lower apparent cost while ignoring verification, repair, review, and residual
+burden. This is the planning version of Goodhart pressure: the metric improves
+while the system gets less trustworthy.
+
+Merge laundering is another failure. Parallel branches may each pass locally
+while disagreeing about assumptions. If the merge condition does not compare
+source versions, authority ceilings, quality predicates, and residuals, the DAG
+can turn parallelism into false coherence.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is not a smart planner. It is a public
+PlanForge DAG record, schema validation, negative controls, and a small
+cross-record harness that checks consistency with command contracts, plan
+graphs, semantic atoms, typed jobs, approvals, and dispatch receipts.
+
+The repository already has that kind of narrow surface: `schemas/planforge_dag`
+defines the record fields, and the plan-execution contract harness checks
+synthetic valid and invalid fixtures. The recorded local result passed two
+valid fixtures and rejected five expected-invalid fixtures covering a cyclic
+DAG, contract mismatch, unreceipted dispatch, requirement loss, and approval
+bypass.
+
+That is useful, but the boundary matters. The harness checks record consistency
+in synthetic examples. It is not a route-selection benchmark, deployed
+scheduler, parser-quality result, runtime adapter test, tool-execution trace,
+or proof of AI behavior. The PlanForge experiment directory still records that
+planning and control experiments are planned, not implemented or run.
+
+The next practical slice should be a scheduler-state fixture set: one ready
+node, one node blocked by missing context, one cheap route rejected because the
+adequacy predicate fails, one branch merge blocked by conflicting assumptions,
+and one local repair that touches only the affected subgraph. Passing that
+fixture would still not prove performance, but it would make the scheduling
+semantics sharper.
+
+## Beyond the State of the Art
+
+The mature version is a governed scheduler and capacity allocator for cognitive
+work. It does not merely draw a DAG. It turns plan nodes into schedulable units
+with dependency order, context demand, authority state, capability tier,
+adequacy contract, verifier, cost envelope, route assignment, merge condition,
+escalation path, and residual behavior.
+
+In that mature system, intelligence arbitrage is measured after verification,
+repair, merge, human review, and residual cost are counted. A cheap route only
+counts as adequate when its output satisfies the node's adequacy contract and
+remains useful to downstream dependents. An expensive route is justified when
+the risk, context burden, quality predicate, or failure cost demands it. The
+scheduler is therefore accountable for quality and authority, not just token
+spend.
+
+The beyond-state-of-the-art version would learn from its own ledgers without
+laundering evidence. It would know which node types were safely handled by
+small local routes, which required stronger reasoning, which depended on
+human review, which failed because context was insufficient, and which route
+choices later caused expensive repairs. It would use that memory to improve
+future routing while still preserving approval boundaries, source provenance,
+and residual accounting.
+
+That is the logical endpoint. It is not the current repo state. The book should
+not claim it until there are scheduler implementations, route-selection traces,
+adequacy tests, cost-quality ledgers, fallback records, and reproduced
+comparisons.
+
+## What Is Proven, And What Is Not
+
+The current project proves or checks only narrow things around PlanForge:
+schema shape, synthetic cross-record consistency, and finite Lean predicates
+for dependency ordering and failed-quality fallback. These are the beginning of
+an evidence lane.
+
+They do not prove selected-tier adequacy, cost savings, model-routing quality,
+planner decomposition quality, dependency inference, deployed scheduler cycle
+rejection, runtime replanning, tool execution, MoECOT runtime behavior,
+AutoGen-style agent performance, or external benchmark performance.
+
+This distinction is important because PlanForge is attractive precisely where
+overclaiming is easy. A diagram can make a plan look rigorous. A cost column can
+make a route look efficient. A success state can hide failed branches. The
+evidence discipline of the ASI Stack says those surfaces count only when the
+residuals, failures, verification burden, and non-claims stay attached.
+
+## Summary
+
+PlanForge turns planning into schedulable cognitive labor. It decomposes work,
+orders dependencies, annotates capability and context needs, routes each node,
+checks adequacy, escalates failures, and records cost-quality outcomes.
+
+Its central idea is simple: spend intelligence where the graph says it is
+needed, and save it only where the acceptance predicate proves that a cheaper
+route was enough. A governed DAG is therefore not a shortcut around evidence.
+It is a way of making evidence, cost, and route choice visible in the same
+place.
+
+The next chapter moves from scheduled work to compiled artifacts. Cognitive
+Compilation and Semantic IR explains how plan obligations become semantic
+atoms, validators, target constraints, lowering receipts, and repair ledgers so
+the stack can audit what survived the translation from plan to artifact.

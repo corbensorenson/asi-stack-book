@@ -1585,6 +1585,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_planning_control_prose_pass.md with the release-stability consolidation caveat; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "planforge-dags-and-intelligence-arbitrage",
+      "title": "PlanForge DAGs and Intelligence Arbitrage",
+      "file": "editions/reader_manuscript/v1_0/chapters/planforge-dags-and-intelligence-arbitrage.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/planforge-dags-and-intelligence-arbitrage.qmd",
+      "live_source_ref": "chapters/planforge-dags-and-intelligence-arbitrage.qmd@062c1f13a",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#planforge-dags-and-intelligence-arbitrage.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#planforge-dags-and-intelligence-arbitrage",
+      "curation_scope": [
+        "pacing",
+        "section flow",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes PlanForge DAGs around a human-reader throughline: a DAG is an honesty ledger for cognitive labor. The pass preserves the core claim while smoothing the route from accepted plans to primitive nodes, dependency DAGs, adequacy contracts, route assignment, predicate pass/fail behavior, escalation or residuals, and cost-quality ledgers. It keeps intelligence arbitrage tied to adequacy and verification rather than cheap routing, and it preserves the boundaries around schema shape, synthetic harness checks, finite Lean predicates, source-note limits, and missing scheduler evidence.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved: chapter core claim remains a Design rationale at argument support",
+        "source boundary preserved: PlanForge, PlanForge Compiler Architecture, Cognitive Compilation, TokenMana, Coherence Exchange, and MoECOT remain architectural or implementation-reference context, not scheduler evidence",
+        "proof/test status preserved without adding deployed PlanForge behavior, scheduler correctness, route-selection quality, selected-tier adequacy, cost savings, cost-quality dominance, decomposition accuracy, dependency inference quality, parser behavior, runtime replanning, dispatch safety, tool execution, runtime adapter safety, approval-service behavior, AutoGen reproduction, MoECOT runtime behavior, PDDL/SHOP2/TAMP implementation, behavior-tree implementation, Tree-of-Thoughts reproduction, benchmark performance, source-interpretation adequacy, or support-state movement claims",
+        "implementation horizon preserved: current MVI is a DAG schema, finite proof hooks, and synthetic cross-record checks; mature endpoint remains a governed scheduler and capacity allocator",
+        "release blocker status preserved until an edition release record clears it",
+        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with planning-as-a-control-layer"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_planforge_dag_prose_pass.md. This is a drafting-only reader derivative, not a release-reviewed chapter, not equal authority with the live book, and not a planning/DAG consolidation decision."
     }
   ],
   "reconciliation_report": {

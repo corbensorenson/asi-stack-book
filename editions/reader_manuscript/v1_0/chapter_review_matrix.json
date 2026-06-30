@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 42,
+    "curated_manuscript_candidate": 43,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -461,12 +461,15 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_contracts_full_review_pass.md#decisions"
+        "docs/reader_part_ii_contracts_full_review_pass.md#decisions",
+        "docs/curated_reader_planforge_dag_prose_pass.md",
+        "docs/chapter_consolidation_release_stability_review.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the PlanForge chapter. Adequacy contracts, route rejection, merge risk, cost-quality ledger, residuals, and scheduler non-claim boundaries remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the PlanForge chapter. Adequacy contracts, route rejection, merge risk, cost-quality ledger, residuals, and scheduler non-claim boundaries remain visible. First curated reader prose pass recorded in docs/curated_reader_planforge_dag_prose_pass.md under the planning/DAG deferred-for-release consolidation caveat; this does not execute, reject, or authorize the future merge with planning-as-a-control-layer.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
