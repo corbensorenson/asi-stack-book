@@ -968,6 +968,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_project_theseus_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "prototype-roadmap",
+      "title": "Prototype Roadmap",
+      "file": "editions/reader_manuscript/v1_0/chapters/prototype-roadmap.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/prototype-roadmap.qmd",
+      "live_source_ref": "chapters/prototype-roadmap.qmd@947b3eb7d",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#prototype-roadmap.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#prototype-roadmap",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the roadmap around phase-gated build order: source and claim hygiene before artifact graphs, contracts, execution, routing, benchmarks, replacement, and bounded self-improvement; roadmap phases remain dependency controls, not phase-acceptance evidence or support-state movement.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; BeastBrain, BugBrain, MoECOT, Project Theseus, Circle, and connector/recovery sources remain lineage, implementation-reference, or source-note context inside their stated limits",
+        "proof/test status preserved without adding phase acceptance, dependency-gate audit, phase execution, benchmark, model-quality, deployment-readiness, roadmap-controller, self-improvement-readiness, or support-state results",
+        "implementation horizon preserved without implying a deployed phase-gated build controller",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_prototype_roadmap_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {

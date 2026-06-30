@@ -1,0 +1,305 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: prototype-roadmap
+generated_baseline_ref: build/reader_edition/chapters/prototype-roadmap.qmd
+live_source_ref: chapters/prototype-roadmap.qmd@947b3eb7d
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Prototype Roadmap
+
+A roadmap is dangerous when it sounds like destiny.
+
+The prototype path for the ASI Stack has to do the opposite. It should make
+ambition less slippery. It should say which things must exist before stronger
+agency is allowed, which artifacts would prove a phase has actually moved, and
+which claims remain forbidden even when a demo looks useful.
+
+That makes the roadmap a control surface, not a wish list. It does not say
+that the later stages already work. It says that later stages are not entitled
+to credibility until the earlier evidence machinery is boring, inspectable, and
+able to refuse promotion.
+
+The order matters because prototypes inherit the habits of their first
+working version. If the early version treats missing sources, absent replay,
+thin tests, or vague authority as acceptable, the later version will automate
+that weakness. If the early version records sources, artifacts, gates,
+residuals, rollbacks, and non-claims, later autonomy has to grow through those
+surfaces.
+
+Progress means reducing the number of things the reader has to take on faith.
+
+## Problem
+
+The ASI Stack needs a build order that does not introduce agency before
+auditability.
+
+It is easy to imagine the attractive version first: a planner, memory system,
+router, execution layer, benchmark loop, and self-improvement controller all
+working together. But if those systems arrive before source boundaries,
+artifact continuity, claim ledgers, validation commands, authority stops, and
+rollback records, the prototype has recreated the problem the book is trying
+to avoid.
+
+The roadmap problem is therefore not lack of ambition. The problem is
+sequencing. Every later capability needs to inherit the evidence machinery of
+the earlier ones. A planner that cannot preserve source provenance is not ready
+to dispatch work. A runtime that cannot replay effects is not ready to close
+loops. A replacement system that cannot roll back is not ready to improve
+itself.
+
+A useful local trace, dashboard, agent loop, or benchmark result can guide
+engineering. It cannot become a public capability claim just because it feels
+like progress. A phase has moved only when its acceptance record says what was
+run, what passed, what failed, what remains blocked, and what the milestone
+does not imply.
+
+## Why Roadmaps Usually Overclaim
+
+Most roadmaps hide dependency direction.
+
+They list features in the order people want them, not in the order that makes
+later trust possible. "Autonomous improvement" appears as a destination rather
+than the last thing a system should be allowed to touch. "Agentic runtime"
+appears as one milestone even though it depends on source ingestion, typed
+jobs, permission checks, effect receipts, replay, security boundaries,
+benchmarks, and rollback.
+
+The ASI Stack needs the opposite style. Each appealing capability should point
+backward to the artifacts that make it legitimate.
+
+The source base already points in that direction. VIEA emphasizes durable
+artifacts before execution. Benchmaxxing makes benchmark pressure subordinate
+to regression floors and anti-Goodhart checks. Stable Capability Fields make
+replacement and rollback prerequisites for governed improvement. VCM requires
+source-bound context and adequacy checks before memory-heavy work. PlanForge
+requires typed plans before dispatch. Project Theseus adds report-first
+machinery, architecture gates, work boards, and self-evolution controls.
+
+External comparators also pressure the order without proving the stack. Risk
+management frameworks, extreme-risk evaluation work, formal specification
+tools, runtime monitoring, planning systems, software-task benchmarks,
+behavioral tests, code-quality metrics, and efficient adaptation methods all
+name pieces a serious build path has to respect. They orient the sequence.
+They do not say this repository has reproduced those systems or earned their
+results.
+
+Without dependency discipline, a roadmap becomes a story about future success.
+With dependency discipline, it becomes a way to say no.
+
+## Core Claim
+
+The prototype should grow in staged increments from source matrix and artifact
+graph to governed capability replacement.
+
+In the live book, that remains a design rationale at `argument` support.
+
+The source notes support the sequence. They do not prove that any roadmap phase
+has been completed, accepted, validated, benchmarked, or used to promote a
+capability claim. The existing fixture and Lean hooks validate narrow
+record-shape and gate predicates. They do not turn the roadmap into evidence
+that the prototype is ready.
+
+The claim is therefore deliberately modest. It says that a governed prototype
+should earn stronger agency by first proving that it can preserve sources,
+trace artifacts, record claims, run checks, maintain authority boundaries, keep
+residuals visible, and refuse unsupported promotion.
+
+The roadmap is a dependency graph for trust.
+
+## The Build Order
+
+The roadmap begins where many AI projects end: with bookkeeping.
+
+First, the project needs a source matrix, source notes, claim ledger, public
+source boundaries, and publication validation. This establishes what the system
+is allowed to say and where the reader can inspect the basis for that claim.
+Without this layer, later automation will produce fluent architecture prose
+while silently dropping evidence boundaries.
+
+Second, the project needs artifact graphs, protocol schemas, fixtures, proof
+manifests, release records, and audit logs. This turns memory into objects that
+can be checked. A claim, test, proof, schema, diagram, report, and release
+record should be findable after the run.
+
+Third, intent contracts, planning DAGs, context records, and typed jobs can
+arrive. At this stage the system can begin lowering goals into executable
+structure, but the work is still bounded by source, context, and authority
+records.
+
+Fourth, runtime adapters, permissions, approval surfaces, effect receipts,
+replay, and procedural memory can control actual effects. The question becomes
+not only whether work can be done, but whether the effect is authorized,
+reviewable, reversible, and reusable.
+
+Fifth, routing heads, specialist registries, readiness gates, and benchmark
+ratchets can increase capability pressure. They come after the execution and
+evidence surfaces because specialists and benchmarks are dangerous when they
+are detached from authority, replay, residuals, and rollback.
+
+Only then should the roadmap approach Stable Capability Fields, governed
+replacement, policy updates, and bounded self-improvement. Those phases require
+evaluator integrity, regression floors, rollback windows, protected invariants,
+governance rights, and evidence ledgers.
+
+```{mermaid}
+flowchart LR
+  S["Source matrix and claim ledger"] --> A["Artifact graph, schemas, fixtures, proofs"]
+  A --> P["Intent contracts, plans, context, typed jobs"]
+  P --> E["Runtime adapters, approvals, receipts, replay"]
+  E --> R["Routing, readiness gates, benchmark ratchets"]
+  R --> C["Stable capability fields and replacement"]
+  C --> I["Bounded self-improvement"]
+
+  S -. "blocks unsupported prose" .-> Stop1["No source, no claim movement"]
+  A -. "blocks lost work" .-> Stop2["No artifact, no acceptance"]
+  E -. "blocks unsafe effects" .-> Stop3["No approval or receipt, no default execution"]
+  R -. "blocks benchmark theater" .-> Stop4["No residual and floor, no promotion"]
+  I -. "blocks authority drift" .-> Stop5["No evaluator independence, no self-improvement"]
+```
+
+The diagram is not a completion claim. It is a refusal order. Each later phase
+inherits a reason it can be stopped.
+
+## Phase Records
+
+The unit of roadmap progress is the Prototype Phase Record.
+
+A phase record should name:
+
+- the phase id and phase name;
+- what the phase unlocks;
+- required artifacts;
+- acceptance gates;
+- blockers;
+- validation commands;
+- evidence references;
+- residuals and phase debt;
+- non-claims;
+- current status.
+
+That record serves two readers. The builder needs to know what to make next.
+The reviewer needs to know what the phase is not allowed to imply.
+
+If a phase proceeds with a missing source, manual workaround, private artifact,
+stale validator, incomplete proof, or provisional gate, the phase record should
+not hide the gap. It should name the debt, the owner boundary, and the
+retirement condition. A blocked phase can still be useful when it says exactly
+what would unblock it.
+
+The record also keeps research demos separate from accepted phases. A phase can
+be allowed for exploration without being allowed to integrate, promote, or
+release. Those are different permissions.
+
+## Invariants
+
+The roadmap has a few simple invariants.
+
+Phases need acceptance criteria. Self-improvement is gated. Roadmap milestones
+are not test results. Source-reported readiness is not local reproduction.
+Agency does not precede auditability. Provisional evidence cannot unlock
+irreversible authority.
+
+These invariants are not slogans. They are release-control rules.
+
+A route scheduler can be explored before it is accepted, but it cannot support
+a stronger routing claim without a replayable artifact, baseline, negative
+control, adequacy boundary, residual, and evidence transition. A context system
+can be prototyped before it is trusted, but it cannot support memory-quality
+claims without source-bound packets and adequacy checks. A self-improvement
+proposal can be designed before it is enabled, but it cannot become default
+behavior without independent evaluation, rollback, and protected invariants.
+
+The live Lean hooks capture a narrow version of the same idea. A roadmap phase
+can unlock a dependent phase only when acceptance gates pass, and a phase
+milestone cannot promote a claim without evidence artifacts. Those are finite
+record-level predicates. They do not prove that any phase is complete.
+
+## Failure Modes
+
+The main failure is prototype theater.
+
+Prototype theater happens when a board, demo, dashboard, generated report, or
+agent loop looks like a functioning system while the acceptance gates behind
+it are missing. The project appears to be moving because there is visible
+activity. The evidence state has not moved.
+
+Another failure is milestone compression. Hard gates collapse into one
+impressive label: "agentic runtime," "self-improvement," "memory system," or
+"benchmark engine." The label hides source ingestion, schema validation, proof
+adequacy, security review, replay, residual custody, and rollback duties.
+
+Operator convenience can weaken the same boundary. A useful tool may tempt the
+project to skip approval, receipt, and replay paths. A benchmark may tempt the
+project to keep a flattering result without its contamination and regression
+context. A local implementation reference may tempt the book to tell a
+stronger story than the artifacts justify.
+
+The roadmap should turn those temptations into blocked rows.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a phase table with deliverables, gates,
+blockers, commands, evidence references, residuals, non-claims, and status.
+
+The first executable fixture should not be a triumphant phase. It should test
+refusal:
+
+- one phase blocked by missing source notes;
+- one phase allowed for research but not promotion;
+- one phase carrying phase debt with a retirement condition;
+- one self-improvement phase blocked by absent evaluator independence.
+
+That kind of fixture proves the roadmap is more than a checklist. It proves
+the roadmap can distinguish "interesting," "research-only," "integratable,"
+"promotable," and "blocked."
+
+## Beyond The State Of The Art
+
+The mature endpoint is a phase-gated build controller for the ASI Stack.
+
+At that endpoint, the roadmap would not be a document someone reads once and
+forgets. It would be a dependency graph that helps decide what can be built,
+what must remain research-only, what is blocked, what can be integrated, what
+can affect claim support, and what should be retired.
+
+A mature controller would give every phase explicit prerequisites, acceptance
+gates, commands, required artifacts, evidence references, residuals, unlocks,
+phase debt, retirement criteria, and non-claims. It would keep a later phase
+from borrowing credibility from an earlier milestone unless the acceptance
+record actually exists and the downstream dependency matches the evidence
+boundary.
+
+The useful user experience would be blunt. A builder asks what to implement
+next. The roadmap returns the smallest allowed slice, the missing evidence,
+the commands to run, the artifacts to preserve, the gates that can fail, and
+the claims that must not move.
+
+That endpoint remains a target architecture. The book has fixtures, validators,
+and finite proof hooks that point toward it. It does not yet have accepted
+phase packets proving that the roadmap controller governs a working prototype.
+
+## Summary
+
+The prototype should grow as evidence infrastructure grows: sources, claim
+ledgers, artifact graphs, schemas, plans, context, typed jobs, adapters,
+routing, readiness, benchmarks, Stable Capability Fields, replacement, and only
+then bounded self-improvement.
+
+That order is intentionally conservative. It asks the project to earn agency by
+first proving that it can remember sources, preserve artifacts, admit failures,
+replay checks, and refuse unsupported promotions.
+
+Every later capability should be able to point to the earlier records that made
+it safe to exist. If the pointer is missing, the roadmap should block, narrow,
+or mark the capability as research-only.
+
+## Handoff
+
+The roadmap gives the stack a build order. Living Book Methodology gives the
+book an operating system for changing without losing its own evidence trail:
+manifest order, source queues, claim states, proof targets, validation
+commands, reader projections, audio-script paths, changelog entries, and
+release boundaries all have to move together.
