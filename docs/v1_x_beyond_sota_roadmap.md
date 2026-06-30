@@ -785,6 +785,25 @@ Follow-up review outcome:
   cluster is executed, explicitly deferred for the release, or rejected/retained
   with a reason.
 
+Attachment-specific verdict:
+
+- The latest proposal is right about the highest-leverage edit: collapse
+  duplicated chapter skeletons where adjacent chapters are trying to carry one
+  architectural artifact, then reinvest the saved space in mechanisms, negative
+  cases, external positioning, proof limits, and reader flow.
+- The proposal is not accepted as a chapter-count target or a direct cut list.
+  A 44-ish table of contents is useful as a pressure test; a retained
+  54-chapter manifest is still correct when each chapter owns a distinct
+  artifact, interface, proof family, evidence lane, implementation horizon, or
+  reader throughline.
+- The strongest near-term action is review and decision, not more abstract
+  packaging: the project should now walk the review-ready packages and
+  fold-disposition candidates, starting with the Part I pilot, and record
+  execute, revise, defer, or reject outcomes.
+- A merge that only shortens the book fails. A merge succeeds only when the
+  destination chapter becomes easier to argue, cite, prove around, test, and
+  read than the separate chapters.
+
 Consolidation decision queue:
 
 The next consolidation work should not create more destination drafts for
@@ -811,6 +830,17 @@ accepted, implement one cluster per commit so rollback and review remain
 legible. If a package is deferred or rejected, record the reader-work
 disposition so curated prose may continue without pretending the repetition
 question disappeared.
+
+Cluster decision scorecard:
+
+| Check | Execute signal | Revise, defer, or reject signal |
+|---|---|---|
+| Chapter ownership | The destination owns one artifact, interface, proof family, evidence lane, implementation horizon, or reader throughline more clearly than the source chapters. | The source chapters still own distinct artifacts or the destination becomes a generic umbrella. |
+| Skeleton removal | One Problem, Insufficiency, Mechanism, Interfaces, Invariants, Failure Modes, MVI, Beyond-SOTA, Test Plan, Source Crosswalk, Summary, and Handoff path can carry the whole argument. | The draft reads like two or three full chapters pasted under one heading. |
+| Claim reconciliation | One destination core claim is narrower or clearer, and folded claims survive as subclaims, sections, proof hooks, source rows, or explicit retirements. | Core-claim meaning broadens, subclaims disappear, or support-state pressure appears without new evidence. |
+| Evidence and proof routing | Lean modules, harness rows, source notes, external comparators, negative cases, and no-promotion blockers become easier to see. | Proof tags, harnesses, external baselines, or source queues become harder to locate or weaker to audit. |
+| Reader value | The merge reduces repeated exposition and makes the human-reader path smoother without hiding evidence boundaries. | The merge saves pages but makes the concept harder to understand, cite, or listen to. |
+| Release hygiene | URL/history policy, handoff repairs, reader-overlay or curated-reader repairs, Appendix C, Appendix K, scaffold sync, validation, and changelog can ship in one reviewable commit. | The merge would leave stale URLs, orphaned chapter IDs, broken handoffs, unreviewed reader deltas, or ambiguous generated state. |
 
 Consolidation execution gate:
 

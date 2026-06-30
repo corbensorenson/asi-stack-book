@@ -60,6 +60,17 @@ consolidation plan or editing the manifest broadly from the critique alone. A
 successful consolidation must be one deeper chapter, not multiple source
 chapter skeletons concatenated under a new title.
 
+The specific answer to the proposal is yes, with constraints: it is a good
+roadmap improvement because it attacks structural repetition at the chapter
+boundary, not because fewer chapters are automatically better. The repository
+should therefore treat the proposed 44-ish aggressive shape and 47-ish
+conservative shape as diagnostic pressure tests. It should not treat either
+number as a release target. A retained chapter is correct when it owns a real
+artifact, interface, proof family, evidence lane, implementation horizon, or
+reader throughline; a folded chapter is correct only when its idea survives as
+a named section, subclaim, source mapping, proof hook, reader path, or explicit
+retirement/restoration decision.
+
 ## Attachment Disposition Summary
 
 Accepted into the roadmap:
@@ -170,6 +181,21 @@ Use this rubric before any non-pilot consolidation package:
   artifact boundary, makes claim ownership less legible, weakens proof/evidence
   routing, or merely compresses the table of contents without improving the
   argument.
+
+## Cluster Decision Scorecard
+
+Use this scorecard when reviewing each package. A package should execute only
+when the execute side wins on the whole review, not merely because the proposed
+merge lowers the chapter count.
+
+| Check | Execute signal | Revise, defer, or reject signal |
+|---|---|---|
+| Chapter ownership | The destination owns one artifact, interface, proof family, evidence lane, implementation horizon, or reader throughline more clearly than the source chapters. | The source chapters still own distinct artifacts or the destination becomes a generic umbrella. |
+| Skeleton removal | One Problem, Insufficiency, Mechanism, Interface, Evidence, Implementation, and Handoff skeleton can carry the whole argument. | The draft reads like multiple full source-chapter skeletons pasted together. |
+| Claim reconciliation | One destination core claim is narrower or clearer, and folded claims survive as subclaims, sections, proof hooks, source rows, or explicit retirements. | Core-claim meaning broadens, subclaims disappear, or support-state pressure appears without new evidence. |
+| Evidence and proof routing | Lean modules, harness rows, source notes, external comparators, negative cases, and no-promotion blockers become easier to see. | Proof tags, harnesses, external baselines, or source queues become harder to locate or weaker to audit. |
+| Reader value | The merge reduces repeated exposition and makes the human-reader path smoother without hiding evidence boundaries. | The merge saves pages but makes the concept harder to understand, cite, or listen to. |
+| Release hygiene | URL/history policy, handoff repairs, reader-overlay or curated-reader repairs, Appendix C, Appendix K, scaffold sync, validation, and changelog can ship in one reviewable commit. | The merge would leave stale URLs, orphaned chapter IDs, broken handoffs, unreviewed reader deltas, or ambiguous generated state. |
 
 ## Current Cluster Register
 

@@ -95,6 +95,8 @@ REQUIRED_FRAGMENTS = (
     "A chapter is a consolidation candidate when most of its reader-visible load",
     "A merge is justified only if the destination draft reduces repeated skeleton",
     "A merge is rejected or deferred when the proposed destination loses a useful",
+    "Cluster Decision Scorecard",
+    "The merge saves pages but makes the concept harder to understand, cite, or listen to.",
     "Current Cluster Register",
     "Consolidation Decision Queue",
     "Do not create more destination drafts for packages that are already",

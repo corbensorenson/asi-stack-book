@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-30 - Consolidation roadmap scorecard
+
+- Reviewed the latest chapter re-consolidation proposal and accepted its core
+  point: the main repetition problem is duplicated chapter skeletons around
+  adjacent architectural artifacts, not bad ideas or book length by itself.
+- Updated `docs/v1_x_beyond_sota_roadmap.md` with an attachment-specific
+  verdict and a cluster decision scorecard for execute, revise, defer, or reject
+  outcomes across the review-ready merge and fold packages.
+- Updated `docs/chapter_consolidation_sequence.md` with the same scorecard so
+  future merge/fold decisions preserve chapter ownership, source/proof/claim
+  routing, reader value, URL/history policy, and no-promotion boundaries.
+- Updated `scripts/validate_chapter_consolidation_sequence.py` so the new
+  scorecard remains part of the validated consolidation control surface.
+- This does not edit `book_structure.json`, merge or fold chapters, change the
+  54-chapter manifest, approve any destination draft, change Appendix C support
+  states, create source evidence, create proof/test results, approve reader
+  artifacts, or claim EPUB, DOCX, PDF, audio, DOI, or archive readiness.
+
 ## 2026-06-30 - Command-contract curated reader prose pass
 
 - Added a drafting-only curated reader chapter for
