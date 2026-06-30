@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-30 - Artifact graph provenance negative-case proofs
+
+- Strengthened `AsiStackProofs.ArtifactGraph` with two derived negative-case
+  theorems: one rejects produced artifacts missing parent, source, or context
+  trace references, and one rejects incomplete or blocked provenance attempting
+  promoted claim support.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 298
+  theorem declarations, 115 direct/projection-style declarations, and 183
+  derived/decomposed declarations.
+- Updated the Artifact Graphs chapter, Appendix E, proof adequacy review,
+  candidate status, v1.0/v1.x roadmap surfaces, focus audit, and status
+  snapshot validator to record the new artifact-graph proof increment.
+  Refreshed the v1.0 status manuscript scale to 166,651 chapter words
+  excluding YAML and 173,994 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, run a deployed
+  artifact graph service, build a replay engine, reconstruct audit histories,
+  check real provenance completeness, import produced-artifact traces, prove
+  source interpretation adequacy, or approve any reader, ebook, PDF, DOCX, or
+  audio release artifact.
+
 ## 2026-06-30 - Routing and MoECOT negative-case proofs
 
 - Strengthened `AsiStackProofs.Routing` with a derived negative-case theorem

@@ -33,7 +33,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 |---|---:|---:|---:|---:|
 | `lean/AsiStackProofs/Alignment.lean` | 2 | 6 | 8 | 4 |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | 2 | 4 | 4 | 2 |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | 2 | 2 | 3 | 1 |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | 2 | 4 | 3 | 1 |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 4 | 8 | 5 | 5 |
 | `lean/AsiStackProofs/Authority.lean` | 2 | 8 | 6 | 4 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 2 | 5 | 3 | 3 |

@@ -4624,17 +4624,17 @@
             {
               "name": "Artifact traceability test",
               "implementation_status": "implemented",
-              "result_status": "passing via Lean predicate and synthetic artifact graph replay harness; no deployed artifact-service claim"
+              "result_status": "passing via Lean traceability predicate, missing-ref negative case, and synthetic artifact graph replay harness; no deployed artifact-service claim"
             },
             {
               "name": "Audit reconstruction test",
               "implementation_status": "implemented",
-              "result_status": "passing via synthetic artifact graph replay harness; no deployed audit-reconstruction claim"
+              "result_status": "passing via synthetic artifact graph replay harness and bounded provenance negative cases; no deployed audit-reconstruction claim"
             },
             {
               "name": "Replay metadata completeness test",
               "implementation_status": "implemented",
-              "result_status": "passing via synthetic artifact graph replay harness; no deployed replay-engine claim"
+              "result_status": "passing via synthetic artifact graph replay harness and bounded provenance negative cases; no deployed replay-engine claim"
             }
           ],
           "lean_module": "AsiStackProofs.ArtifactGraph",
