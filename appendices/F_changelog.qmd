@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-30 - Curated reader candidate ledger alignment
+
+- Aligned `editions/reader_manuscript/v1_0/chapter_review_matrix.json` and
+  generated `docs/reader_chapter_review_matrix.md` with the thirty-one curated
+  reader manifest records by marking the seven earlier curated chapters as
+  `curated_manuscript_candidate`.
+- Updated candidate counts in current status, roadmap, and validation surfaces
+  from twenty-four to thirty-one while keeping the curated-manuscript status
+  `drafting` and all release blockers active.
+- This does not create new curated chapters, approve a reader release, clear
+  format blockers, change Appendix C or Appendix K, promote support states,
+  create evidence, approve EPUB/DOCX/PDF/HTML/audio artifacts, execute a merge
+  or fold, or change chapter count.
+
 ## 2026-06-30 - CoilRA cyclic mixers curated reader prose pass
 
 - Added a drafting-only curated reader chapter for

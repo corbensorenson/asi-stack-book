@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 24,
+    "curated_manuscript_candidate": 31,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -42,12 +42,14 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_opening_full_review_pass.md#decisions"
+        "docs/reader_opening_full_review_pass.md#decisions",
+        "docs/curated_reader_asi_stack_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the opening architecture contract. Existing overlays are accepted for the reader path; evidence boundary, stack map walkthrough, layer-boundary vocabulary, and handoff to efficiency remain intact.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the opening architecture contract. Existing overlays are accepted for the reader path; evidence boundary, stack map walkthrough, layer-boundary vocabulary, and handoff to efficiency remain intact. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and no reader artifact is approved.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -65,12 +67,14 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_opening_full_review_pass.md#decisions"
+        "docs/reader_opening_full_review_pass.md#decisions",
+        "docs/curated_reader_efficient_asi_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the efficiency-accounting chapter. Existing overlay is accepted for the reader path; cost/quality/residual boundary, route-ledger vocabulary, and handoff to authority remain intact.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the efficiency-accounting chapter. Existing overlay is accepted for the reader path; cost/quality/residual boundary, route-ledger vocabulary, and handoff to authority remain intact. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and no efficiency, routing, or reader-artifact claim is approved.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -135,12 +139,14 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_boundary_full_review_pass.md#decisions"
+        "docs/reader_boundary_full_review_pass.md#decisions",
+        "docs/curated_reader_evidence_states_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the evidence-discipline chapter. Existing overlay is accepted for the reader path; claim labels, support states, source roles, negative results, and non-promotion boundaries remain intact.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the evidence-discipline chapter. Existing overlay is accepted for the reader path; claim labels, support states, source roles, negative results, and non-promotion boundaries remain intact. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and no support-state movement is implied.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -158,12 +164,14 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_boundary_full_review_pass.md#decisions"
+        "docs/reader_boundary_full_review_pass.md#decisions",
+        "docs/curated_reader_human_intent_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the intent-intake chapter. Existing overlay is accepted for the reader path; desire/means separation, authority ceiling, ambiguity handling, bounded defaults, and re-contracting boundaries remain intact.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the intent-intake chapter. Existing overlay is accepted for the reader path; desire/means separation, authority ceiling, ambiguity handling, bounded defaults, and re-contracting boundaries remain intact. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and the consolidation-handoff caveat remains.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -340,12 +348,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_full_review_completion.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions",
+        "docs/curated_reader_recursive_self_improvement_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the recursive-self-improvement chapter. Protected invariants, evaluator independence, boundary-delta review, monitor windows, rollback, non-self-ratification, and the Part II handoff remain intact.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the recursive-self-improvement chapter. Protected invariants, evaluator independence, boundary-delta review, monitor windows, rollback, non-self-ratification, and the Part II handoff remain intact. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and no self-improvement safety claim is promoted.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -1008,13 +1018,15 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "companion_note_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions"
+        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
+        "docs/curated_reader_circle_contracts_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. Existing overlays keep proof receipt states and mature endpoint prose readable while preserving theorem references, deterministic fields, resolver/replay status, consumer gates, workload blockers, non-claims, and the boundary between structural facts and quality claims.",
+      "review_notes": "Full generated-reader chapter review recorded. Existing overlays keep proof receipt states and mature endpoint prose readable while preserving theorem references, deterministic fields, resolver/replay status, consumer gates, workload blockers, non-claims, and the boundary between structural facts and quality claims. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while companion-note treatment and release blockers remain active.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -1080,13 +1092,15 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "companion_note_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions"
+        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
+        "docs/curated_reader_executable_specs_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. The existing overlay keeps the proof envelope readable while preserving separation between Lean predicates, schemas, process validators, behavior tests, benchmarks, external theorem references, semantic adequacy review, and broad claim non-claims.",
+      "review_notes": "Full generated-reader chapter review recorded. The existing overlay keeps the proof envelope readable while preserving separation between Lean predicates, schemas, process validators, behavior tests, benchmarks, external theorem references, semantic adequacy review, and broad claim non-claims. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while companion-note treatment and release blockers remain active.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
