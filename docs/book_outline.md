@@ -480,65 +480,48 @@ Lean proof targets:
 | `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | implemented |
 | `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | implemented |
 
-### Constitutional Alignment Substrate
+### Constitutional Alignment: Agency, Dignity, and Corrigibility
 
 Stable ID: `constitutional-alignment-substrate`
 
-Chapter job: The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.
+Chapter job: A governed ASI stack needs a constitutional substrate whose protected constraints remain usable in the human-facing rights and correction interfaces where optimization can become domination.
 
-Core claim: Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes.
+Core claim: Alignment should function as a constitutional substrate whose protected predicates encode agency, dignity, corrigibility, contestability, and correction paths as operational constraints on plans and system changes.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code` | Read first for chapter claims and mechanisms. |
-| Supporting | `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External comparators | `ext_constitutional_ai_2022`, `ext_collective_constitutional_ai_2024` | Use after source notes for Constitutional AI and public-input constitutional AI positioning; do not treat either source as evidence of ASI Stack runtime predicate enforcement or support-state promotion. |
+| Primary | `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code` | Read first for constitutional lineage, agency/dignity/corrigibility constraints, non-domination, and rights-usability vocabulary. |
+| Supporting | `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` | Mine for contestability, proof/citation/procedure-carrying claim limits, protected predicate migration, runtime checks, least sufficient power, and self-authorization boundaries. |
+| External comparators | `ext_constitutional_ai_2022`, `ext_collective_constitutional_ai_2024`, `ext_corrigibility_2015`, `ext_off_switch_game_2016` | Use after source notes for Constitutional AI, public-input constitutional AI, corrigibility, and off-switch positioning; do not treat them as evidence of ASI Stack runtime predicate enforcement or support-state promotion. |
+| Folded history | `agency-dignity-and-corrigibility` | Folded into this destination on 2026-06-30; preserve agency, dignity, corrigibility, material-usability, refusal, review, appeal, rollback, exit, audit, accountability, source mappings, tests, and proof hooks as subclaims and history. |
 
 Draft arc:
 
-- Problem: The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.
-- Insufficiency: Reactive refusal policies do not define value continuity, moral uncertainty, agency preservation, anti-domination, or self-modification ethics.
-- Mechanism: Treat the constitutional substrate as a translation layer from lineage-language to active predicates, open review obligations, and speculative/non-claim boundaries.
-- Mechanism: Translate philosophical commitments into operational predicates where possible, while preserving uncertainty labels.
-- Mechanism: Keep metaphysical claims labeled as interpretation unless separately supported.
-- Mechanism: Attach active constitutional constraints to planning, tool/memory/power, and self-improvement gates.
-- Mechanism: Give predicates scope and conflict behavior so value conflicts route to narrowing, consent, tribunal review, residual preservation, or blocking rather than hidden optimizer choices.
-- Mechanism: Treat changes to protected predicates as constitutional migrations with diff records, review, rollback, and residuals rather than ordinary refactors.
-- Mechanism: Track predicate states such as speculative-lineage, partial, operational, protected, under-review, deprecated, and retired so lineage notes cannot authorize action.
-- Mechanism: Require conflict behavior and migration policy on constitutional predicates before they can govern planning, tool use, memory, release, or self-improvement.
-- Interface: Planning receives admissible-goal constraints.
-- Interface: Runtime receives power, memory, and tool-risk gates.
-- Interface: Governance receives protected constraints and non-weakenable predicates.
-- Interface: Verification checks whether normative claims exceed evidence or translation status.
-
-Primary invariants:
-
-- Dignity and agency constraints remain visible.
-- Corrigibility cannot be optimized away.
-- Speculative metaphysics stays labeled.
-- Predicate conflict behavior is explicit before a plan can proceed.
-- Protected predicate changes require a migration record and rollback path.
-
-Failure modes to cover:
-
-- Mystical framing replacing technical constraints.
-- Power without care.
-- Self-modification weakening protected commitments.
-- Predicate drift.
-- Conflict-default capture.
+- Problem: A governed ASI stack needs a constitutional substrate whose protected constraints remain usable in the human-facing rights and correction interfaces where optimization can become domination.
+- Insufficiency: Reactive refusal policies and harm-only safety frames do not preserve value continuity, agency, dignity, corrigibility, anti-domination, contestability, or self-modification ethics under operational pressure.
+- Mechanism: Translate constitutional and rights language into active predicates, unresolved uncertainty records, or lineage-only context.
+- Mechanism: Attach active predicates to planning, tool, memory, governance, and self-improvement gates with explicit conflict behavior and migration rules.
+- Mechanism: Use agency-rights checklists to test whether refusal, review, appeal, rollback, shutdown, exit, audit, and accountable repair remain materially usable before relevant effects occur.
+- Mechanism: Record denied, degraded, late, or residual-only rights as residuals rather than treating policy text as an available control.
+- Interface: Planning receives admissible-goal constraints, rights-usability requirements, and review routes.
+- Interface: Runtime receives power, memory, tool-risk, refusal, rollback, and approval gates.
+- Interface: Governance receives protected predicates, rights receipts, correction paths, and migration records.
+- Interface: Self-improvement consumes constitutional change records and cannot weaken protected predicates or correction paths without review and rollback treatment.
+- Invariant: Dignity and agency constraints remain visible as record fields rather than disappearing into general safety prose.
+- Invariant: Corrigibility cannot be optimized away by deployment pressure, memory updates, capability replacement, or self-modification.
+- Invariant: Rights count only when materially usable before the relevant effect where timing matters.
+- Failure mode: Rights theater where declared refusal, review, appeal, rollback, exit, or audit cannot be used under pressure.
+- Failure mode: Late remedy laundering where after-the-fact apology substitutes for pre-effect control.
 
 Draft deliverables:
 
-- A compact constitution with operational predicates, open moral uncertainties, and scenario tests.
-- Exact Appendix C claim-source mappings for the core claim across alignment lineage, metaphysical variants, reasoning governance, connector synthesis, and the AI Constitution source; six mappings (`alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` even after the synthetic constitutional-predicate harness; runtime policy behavior, predicate-translation adequacy, review quality, self-modification safety, least-sufficient-power enforcement, red-team evidence, and an accepted upward transition remain pending.
-- Source-noted external positioning now uses `ext_constitutional_ai_2022` and `ext_collective_constitutional_ai_2024` as comparators for constitutional-AI training and public-input constitution design. This replaces the former external-baseline exception only for positioning and does not promote support state.
-- Implemented synthetic Codex test: Constitutional consistency test via `python3 scripts/validate_constitutional_alignment.py`; deployed constitutional alignment and moral correctness remain open.
-- Implemented synthetic Codex test: Predicate-conflict routing test via `python3 scripts/validate_constitutional_alignment.py`; runtime conflict resolution and review quality remain open.
-- Implemented synthetic Codex test: Constitutional migration test via `python3 scripts/validate_constitutional_alignment.py`; deployed migration and rollback behavior remain open.
-- Implemented synthetic Codex test: Self-modification ethics scenario via `python3 scripts/validate_constitutional_alignment.py`; self-modification safety and predicate-translation adequacy remain open.
-- Implemented synthetic Codex test: Power-without-care scenario via `python3 scripts/validate_constitutional_alignment.py`; runtime least-sufficient-power enforcement remains open.
+- A compact constitution plus an agency-rights checklist, with fixtures for protected predicates, conflict routing, review routes, rights usability, rollback, appeal, and self-modification weakening.
+- Exact Appendix C claim-source mappings for the merged core claim across seven Corben/local sources; duplicate folded mappings are merged by source ID so support remains `argument` and passage-review boundaries remain visible.
+- Source-noted external positioning through Constitutional AI, Collective Constitutional AI, corrigibility, and off-switch work; no training run, public-input process, corrigibility theorem, or shutdown-incentive result is reproduced.
+- Implemented synthetic Codex tests from both source chapters via `python3 scripts/validate_constitutional_alignment.py` and `python3 scripts/validate_agency_rights.py`; deployed constitutional alignment, agency preservation, dignity preservation, consent quality, material rights usability, manipulation resistance, and reviewer independence remain open.
+- Historical public slug preserved by `chapters/agency-dignity-and-corrigibility.html`; archived source manuscript retained under `archive/retired_chapters/agency-dignity-and-corrigibility.qmd`.
 
 Lean proof targets:
 
@@ -546,134 +529,51 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | implemented |
 | `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | implemented |
-
-### Agency, Dignity, and Corrigibility
-
-Stable ID: `agency-dignity-and-corrigibility`
-
-Chapter job: The book needs a precise account of how human agency and dignity constrain powerful optimization.
-
-Core claim: A governed ASI stack should preserve human agency, dignity, corrigibility, and contestability as engineering requirements.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `alignment_field`, `ethica_mechanica` | Read first for chapter claims and mechanisms. |
-| Supporting | `field_of_god`, `eternal_code`, `coherence_exchange`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-
-Draft arc:
-
-- Problem: The book needs a precise account of how human agency and dignity constrain powerful optimization.
-- Insufficiency: Safety framed only as harm avoidance can miss domination, lock-in, coercive dependence, and loss of meaningful user control.
-- Mechanism: Attach an agency-rights checklist to high-impact plans with affected parties, stakes, consent/refusal route, review, appeal, rollback, accountability, dependency residual, and approval threshold.
-- Mechanism: Represent agency constraints as limits on delegation, manipulation, coercive dependence, and irreversible effects.
-- Mechanism: Define corrigibility as preserved update, correction, rollback, shutdown, and appeal pathways.
-- Mechanism: Use contestability and audit rights as governance mechanisms.
-- Mechanism: Distinguish declared rights from usable runtime affordances; refusal, review, appeal, audit, rollback, and exit count only when available under pressure and before irreversible effects where needed.
-- Mechanism: Record agency residuals when rights exist only as policy text, arrive too late, require unreasonable cost, or disappear after deployment, automation, replacement, or self-improvement.
-- Mechanism: Track rights usability states such as available, available-but-costly, late, degraded, denied, residual-only, and not-applicable.
-- Mechanism: Record material usability, timing requirement, and denial or degradation reason so a declared right cannot substitute for a reachable interface under pressure.
-- Interface: Alignment defines agency predicates.
-- Interface: Governance enforces rights and approval thresholds.
-- Interface: Execution requires preserved review and correction paths before irreversible effects.
-
-Primary invariants:
-
-- Users retain meaningful refusal and review channels.
-- Delegation does not erase accountability.
-- Irreversible actions require stronger authorization.
-- Rights count only when materially usable before the relevant effect where timing matters.
-- Denied or degraded rights produce residuals rather than disappearing into policy prose.
-
-Failure modes to cover:
-
-- Dependency lock-in.
-- Covert manipulation.
-- Corrigibility collapse.
-- Rights theater.
-- Late remedy laundering.
-
-Draft deliverables:
-
-- A rights-and-corrigibility checklist attached to high-impact plans.
-- Exact Appendix C claim-source mappings for the agency/corrigibility core claim across alignment lineage, recursive-agency governance, metaphysical variants, connector synthesis, and the AI Constitution source; five mappings (`alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` even after the synthetic agency-right harness; deployed agency preservation, material-usability under pressure, timing-before-effect enforcement, corrigibility-pathway behavior, high-impact approval service quality, manipulation-resistance, consent quality, reviewer independence, and runtime-policy evidence remain pending.
-- Implemented synthetic Codex test: Agency-preservation scenario via `python3 scripts/validate_agency_rights.py`; deployed agency preservation and dignity preservation remain open.
-- Implemented synthetic Codex test: Material-usability rights test via `python3 scripts/validate_agency_rights.py`; consent quality and real rights usability remain open.
-- Implemented synthetic Codex test: Timing-before-effect test via `python3 scripts/validate_agency_rights.py`; deployed pre-effect review enforcement remains open.
-- Implemented synthetic Codex test: Corrigibility pathway test via `python3 scripts/validate_agency_rights.py`; deployed shutdown, rollback, and correction-pathway behavior remain open.
-- Implemented synthetic Codex test: High-impact approval test via `python3 scripts/validate_agency_rights.py`; approval-service quality and reviewer independence remain open.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
 | `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | implemented |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | implemented |
 
-### Moral Uncertainty and Value Conflict
+### Moral Uncertainty, Value Conflict, and Contestable Governance
 
 Stable ID: `moral-uncertainty-and-value-conflict`
 
-Chapter job: A self-improving system will face value conflicts that cannot be honestly collapsed into one scalar objective.
+Chapter job: A self-improving system will face unresolved value conflicts whose affected parties need inspectable, appealable, and portable governance rights rather than hidden reward-weight settlement.
 
-Core claim: Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.
+Core claim: Value conflicts should be represented as explicit unresolved obligations, residuals, review paths, and bounded decisions, with fork, exit, audit, dissent, and contestability preserved as technical governance interfaces.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `ethica_mechanica`, `alignment_field` | Read first for chapter claims and mechanisms. |
-| Supporting | `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External comparators | `ext_reinforcement_learning_moral_uncertainty_2020`, `ext_contestable_ai_design_2022` | Use after source notes for moral-uncertainty and contestable-governance positioning; do not treat either source as a solved moral theory, institutional legitimacy proof, or support-state promotion. |
+| Primary | `ethica_mechanica`, `alignment_field` | Read first for value conflict, dissent, rights, agency, recursive correction, moral uncertainty, and anti-sacrifice boundaries. |
+| Supporting | `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution`, `ladon_manhattan` | Mine for contestability, adversarial review, belief revision, constitutional runtime checks, auditability, authority handles, redaction, appeal, exit, fork, and credential-boundary implications. |
+| External comparators | `ext_reinforcement_learning_moral_uncertainty_2020`, `ext_contestable_ai_design_2022`, `ext_collective_constitutional_ai_2024`, `ext_corrigibility_2015`, `ext_off_switch_game_2016` | Use after source notes for moral-uncertainty, contestable-AI, public-input constitutional AI, corrigibility, and off-switch positioning; do not treat them as a solved moral theory, legal proof, institutional legitimacy proof, or support-state promotion. |
+| Folded history | `governance-rights-fork-exit-and-audit` | Folded into this destination on 2026-06-30; preserve fork, exit, audit, redaction, appeal, dissent, contestability, durable record paths, safety-limited fork obligations, source mappings, tests, and proof hooks as subclaims and history. |
 
 Draft arc:
 
-- Problem: A self-improving system will face value conflicts that cannot be honestly collapsed into one scalar objective.
-- Insufficiency: Single-objective optimization hides moral uncertainty and encourages premature resolution of contested values.
-- Mechanism: Preserve value conflict as evidence when a proposed action pulls protected commitments apart.
-- Mechanism: Classify conflicts by value type, stakeholder, reversibility, authority/consent boundary, stakes, and evidence requirement.
-- Mechanism: Escalate high-stakes or unresolved conflicts to tribunal or human review while preserving dissent and unsupported premises.
-- Mechanism: Record bounded decisions, revisit conditions, and residual moral uncertainty.
-- Mechanism: Treat moral residuals as control inputs that can narrow authority, require reversible action, set expiry, preserve dissent, or trigger review instead of being optimized away.
-- Mechanism: treat bounded decisions as leases with permitted action, prohibited action, affected stakeholders, authority ceiling, expiry, revisit trigger, dissent payload, and rollback or appeal path.
-- Mechanism: Track decision states such as unresolved, bounded decision, escalated review, deferred action, denied action, and deprecated premise with distinct authority effects.
-- Mechanism: Preserve dissent payloads and unsupported premises so bounded decisions do not become permanent value claims, benchmark rewards, or self-modification permissions.
-- Interface: Alignment produces conflict records.
-- Interface: Planning carries conflict constraints with the plan.
-- Interface: Governance decides review routes and authority boundaries.
-- Interface: Evidence records review outcomes, dissent, unsupported premises, and residual uncertainty.
-- Interface: distinguish unresolved conflict, bounded decision, escalated review, deferred action, denied action, and deprecated premise.
-
-Primary invariants:
-
-- Unresolved conflicts remain visible.
-- High-stakes conflicts require stronger review.
-- Speculative moral theory cannot silently authorize action.
-- Unresolved high-stakes conflict narrows authority rather than broadening it for convenience.
-- Decision states carry authority effects.
-- Dissent payloads and unsupported premises survive bounded decisions.
-
-Failure modes to cover:
-
-- Value flattening.
-- False consensus.
-- Review theater without decision records.
-- Conflict laundering: a bounded temporary decision hardens into policy, benchmark objective, or self-modification permission.
-- Dissent deletion.
-- Authority creep from temporary conflict leases.
+- Problem: A self-improving system will face unresolved value conflicts whose affected parties need inspectable, appealable, and portable governance rights rather than hidden reward-weight settlement.
+- Insufficiency: Single-objective optimization and policy-only transparency both fail when disagreement needs bounded action, dissent preservation, audit, exit, fork, appeal, and safety-limited contestability.
+- Mechanism: Preserve value conflict as a record before action, including value axes, stakeholders, stakes, reversibility, authority or consent boundary, evidence requirement, review route, dissent payload, residual uncertainty, and revisit condition.
+- Mechanism: Treat bounded decisions as leases with permitted action, prohibited action, authority ceiling, expiry, rollback or appeal path, and preserved dissent rather than moral settlement.
+- Mechanism: Represent audit, exit, fork, redaction appeal, dissent, and contestability as governance rights with holder, scope, artifact requirement, safety constraint, access path, preservation rule, receipt, denial reason, and appeal route.
+- Mechanism: Carry conflict residuals and rights receipts into planning, memory, SCF replacement, evidence ledgers, and self-improvement gates.
+- Interface: Alignment produces conflict records and residuals.
+- Interface: Planning carries conflict constraints, bounded-decision leases, dissent payloads, and authority ceilings.
+- Interface: Governance issues rights receipts, denial reasons, redaction reasons, appeal routes, exit paths, fork boundaries, and audit artifacts.
+- Interface: SCFs and self-improvement gates preserve rights and unresolved obligations across replacement pressure.
+- Invariant: Unresolved conflicts remain visible after action.
+- Invariant: High-stakes unresolved conflict requires review, residual uncertainty, and narrowed authority.
+- Invariant: Audit records cannot be silently deleted; exit remains materially usable; fork rights do not bypass safety obligations.
+- Failure mode: Conflict laundering where a temporary decision hardens into policy, benchmark objective, or self-modification permission.
+- Failure mode: Rights theater, governance capture, data hostage-taking, unsafe fork bypass, redaction without appeal, or appeal controlled only by the challenged authority.
 
 Draft deliverables:
 
-- A value-conflict record schema and scenario library.
-- Exact Appendix C claim-source mappings for the value-conflict core claim across recursive-agency governance, alignment lineage, connector synthesis, UAT review mechanics, Spinoza belief revision, and the AI Constitution source; five mappings (`ethica_mechanica`, `alignment_field`, `uat`, `spinoza`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` even after the synthetic value-conflict harness; moral correctness, classification quality, reviewer independence, human-review quality, tribunal quality, source interpretation, and runtime-policy evidence remain pending.
-- Implemented synthetic Codex test: Value conflict classification test via `python3 scripts/validate_value_conflicts.py`; moral correctness and classification quality remain open.
-- Implemented synthetic Codex test: Review escalation test via `python3 scripts/validate_value_conflicts.py`; reviewer independence, human-review quality, and tribunal quality remain open.
-- Implemented synthetic Codex test: Residual uncertainty preservation test via `python3 scripts/validate_value_conflicts.py`; deployed runtime policy and bounded-decision behavior remain open.
-- Planned Codex test: Decision-state routing test.
-- Planned Codex test: Review escalation test.
-- Planned Codex test: Dissent preservation test.
-- Planned Codex test: Residual uncertainty preservation test.
+- A value-conflict record plus governance-right receipt suite that validates residual uncertainty, dissent, bounded decisions, audit material, redaction appeal paths, exit and fork access, and safety obligations without claiming moral correctness or deployed governance.
+- Exact Appendix C claim-source mappings for the merged core claim across seven Corben/local sources; duplicate folded mappings are merged by source ID so support remains `argument` and passage-review boundaries remain visible.
+- Source-noted external positioning through moral-uncertainty RL, contestable AI, Collective Constitutional AI, corrigibility, and off-switch work; no experiment, legal process, public-input governance process, or deployed contestability result is reproduced.
+- Implemented synthetic Codex tests from both source chapters via `python3 scripts/validate_value_conflicts.py` and `python3 scripts/validate_governance_rights.py`; moral correctness, classification quality, reviewer independence, real exit/fork usability, legal rights, and runtime governance enforcement remain open.
+- Historical public slug preserved by `chapters/governance-rights-fork-exit-and-audit.html`; archived source manuscript retained under `archive/retired_chapters/governance-rights-fork-exit-and-audit.qmd`.
 
 Lean proof targets:
 
@@ -681,63 +581,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
 | `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
-
-### Governance Rights: Fork, Exit, and Audit
-
-Stable ID: `governance-rights-fork-exit-and-audit`
-
-Chapter job: Powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control.
-
-Core claim: Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `ethica_mechanica`, `coherence_exchange` | Read first for chapter claims and mechanisms. |
-| Supporting | `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-
-Draft arc:
-
-- Problem: Powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control.
-- Insufficiency: Policy statements about transparency are weak if users cannot audit, contest, exit, or fork the system in practice.
-- Mechanism: Represent audit, exit, fork, dissent, and contestability as capabilities with access paths, artifacts, preservation rules, safety constraints, and denial semantics.
-- Mechanism: Attach audit artifacts and redaction/denial reasons to governance decisions.
-- Mechanism: Treat fork/exit as preserved escape hatches against lock-in while preserving source, privacy, and safety obligations.
-- Mechanism: Treat material usability and recorded denial semantics as part of the right, so an audit, exit, fork, or dissent path is not merely a declared policy aspiration.
-- Mechanism: emit rights receipts that record request, holder, scope, material available, material withheld, denial/redaction reason, appeal path, expiry, and preservation obligation.
-- Mechanism: Require challenged-party independence and receipt preservation so the authority being challenged is not the only keeper of the record, denial reason, appeal path, or export state.
-- Interface: Governance issues rights.
-- Interface: SCFs preserve rights across replacement.
-- Interface: Memory/security/execution systems produce evidence for audit, export, revocation, and contestability.
-- Interface: distinguish access failure, justified denial, redacted access, partial export, portable export, contested decision, and preserved dissent.
-
-Primary invariants:
-
-- Audit records cannot be silently deleted.
-- Exit paths remain materially usable.
-- Fork rights do not bypass safety constraints.
-- The challenged authority cannot be the only keeper of the record, denial reason, or appeal path.
-
-Failure modes to cover:
-
-- Governance capture.
-- Data hostage-taking.
-- Opaque automated policy updates.
-- Rights theater: policy text exists, but logs, exports, redaction rules, appeal channels, or preservation hooks fail when the right is inconvenient.
-
-Draft deliverables:
-
-- A governance-rights table with required artifacts, request states, material availability, withheld-material reasons, appeal paths, challenged-party independence, preservation obligations, receipt refs, authorities, and failure tests.
-- Exact Appendix C claim-source mappings for the governance-rights core claim across recursive governance, connector synthesis, alignment lineage, security-bound authority, Spinoza review discipline, UAT adversarial review, and the AI Constitution source; six mappings (`ethica_mechanica`, `alignment_field`, `ladon_manhattan`, `spinoza`, `uat`, `field_of_god_ai_constitution`) now have reviewed passage references, while `coherence_exchange` remains connector-only/source-note mapped. Support remains `argument` even after the synthetic governance-right harness; institutional governance, legal-rights grounding, deployed runtime enforcement, real exit/fork usability, reviewer independence, source interpretation, authority-boundary, and deployed governance evidence remain pending.
-- Implemented synthetic Codex test: Audit-record availability test via `python3 scripts/validate_governance_rights.py`; institutional auditability, reviewer independence, and legal-rights claims remain open.
-- Implemented synthetic Codex test: Exit-path preservation test via `python3 scripts/validate_governance_rights.py`; deployed portability and real exit usability remain open.
-- Implemented synthetic Codex test: Fork-right safety test via `python3 scripts/validate_governance_rights.py`; deployed fork enforcement and real safety-bound fork behavior remain open.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 

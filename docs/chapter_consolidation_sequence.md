@@ -2,10 +2,11 @@
 
 Last updated: 2026-06-30
 
-This record preserves the full consolidation sequence accepted for roadmap
-planning after review of the latest 54-to-44/47 chapter-shape critique. It is a
-planning and release-control artifact, not source evidence, not an external
-review result, not a manifest edit, and not a support-state transition.
+This record preserves the consolidation sequence accepted for roadmap
+execution after review of the latest 54-to-44/47 chapter-shape critique. It is a
+planning and release-control artifact plus an execution ledger for completed
+packages, not source evidence, not an external review result, and not a
+support-state transition.
 
 The recommendation has teeth: most of the current repetition is not caused by
 bad ideas. It comes from rendering adjacent ideas as separate chapters that
@@ -15,8 +16,10 @@ re-consolidation: fewer deeper chapter-owning artifacts, with every useful idea
 preserved as a section, subclaim, source mapping, proof hook, reader path,
 implementation horizon, or explicit retirement decision.
 
-This record does not change `book_structure.json`. The current canonical book
-still has 54 manifest chapters.
+The Part I pilot has now executed through `book_structure.json`; the current
+canonical book has 52 manifest chapters. The remaining candidate packages still
+require their own package-specific decision and execution commit before any
+further manifest change. This is not a support-state transition. The current canonical count is 52 manifest chapters after the Part I pilot.
 
 ## Decision Boundary
 
@@ -25,9 +28,10 @@ still has 54 manifest chapters.
 - Do not target a fixed chapter count. A 44-chapter aggressive shape and a
   roughly 47-chapter conservative shape are diagnostic estimates only.
 - Do not delete ideas merely to reduce repetition.
-- Do not merge, fold, or retire any chapter without a cluster-specific dry-run
-  package, one-skeleton destination draft where applicable, claim/source/proof
-  and reader reconciliation, and human or external review of the tradeoff.
+- Do not merge, fold, or retire any remaining chapter without a cluster-specific
+  dry-run package, one-skeleton destination draft where applicable,
+  claim/source/proof and reader reconciliation, URL/history treatment, and a
+  recorded execute/revise/defer/reject decision.
 - Do not promote any chapter core claim above `argument` through
   consolidation.
 
@@ -119,7 +123,7 @@ Not accepted without later evidence or review:
 
 ## Current Pilot Status
 
-The active pilot remains the Part I alignment/governance philosophy cluster:
+The Part I alignment/governance philosophy cluster has executed as the pilot:
 
 - `constitutional-alignment-substrate` plus
   `agency-dignity-and-corrigibility` into **Constitutional Alignment: Agency,
@@ -128,7 +132,7 @@ The active pilot remains the Part I alignment/governance philosophy cluster:
   `governance-rights-fork-exit-and-audit` into **Moral Uncertainty, Value
   Conflict, and Contestable Governance**.
 
-The pilot already has:
+The executed pilot used these review inputs and execution surfaces:
 
 - `docs/chapter_consolidation_pilot_plan.md`;
 - `docs/chapter_consolidation_dry_run_constitutional_alignment.md`;
@@ -146,27 +150,26 @@ reviewers to apply the 54-to-44/47 critique as a one-skeleton depth test by
 naming the repeated skeleton load removed and the mechanism-depth,
 negative-control, external-positioning, proof-limit, implementation-trace,
 example, or reader-continuity work where the saved space should be reinvested.
-It records no accepted review, no manifest authorization, and no support-state
-effect.
+It records no accepted external review and no support-state effect.
 
 `docs/chapter_consolidation_release_stability_review.md` now records a
 `deferred_for_release` reader-work outcome for every unexecuted review-ready or
-fold-disposition package in the current queue. It does not execute, reject, or
-authorize any merge or fold. It allows the current reader-curation cycle to
-continue against the 54-chapter manifest with explicit consolidation caveats
-while preserving every package for later human or external review.
+fold-disposition package in the current queue. It now applies to the remaining unexecuted packages only. The reader-curation
+cycle continues against the 52-chapter post-pilot manifest with explicit
+consolidation caveats while preserving every unexecuted package for later
+human or external review.
 
 The public URL/history precondition now has a policy surface:
 `docs/chapter_consolidation_url_history_policy.md`. It sets the default
 continuity URL, retired URL, redirect or historical-stub, and chapter-history
-ledger requirements for future execution commits. It does not implement a
-redirect or authorize a merge.
+ledger requirements for future execution commits. It has now been applied to the Part I pilot through static historical stubs and
+`docs/chapter_history_ledger.md`; it remains the policy for future unexecuted
+packages.
 
-The current decision is still deferral, and the current pilot state is
-`review_ready`: both destination drafts are review-ready, but no manifest merge
-is authorized until human or external review accepts, revises, or rejects the
-destination shapes and an execution package implements the retired URL
-treatment required by the URL/history policy.
+The current pilot state is `executed`: both destination chapters are now
+canonical, the folded source chapters are removed from the book spine, and the
+retired public slugs are preserved through historical stubs. The remaining
+queue stays governed by the same execute, revise, defer, or reject discipline.
 
 ## Chapter-Ownership Rubric
 
@@ -206,8 +209,8 @@ merge lowers the chapter count.
 
 | Cluster | Current state | Next allowed action | Reader-work consequence |
 |---|---|---|---|
-| Part I alignment and agency/corrigibility | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
-| Part I value conflict and contestable governance | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid broad curation of the two source chapters until decision. |
+| Part I alignment and agency/corrigibility | `executed` | Use as the template for future one-package execution commits. | Reader work should target the consolidated destination chapter. |
+| Part I value conflict and contestable governance | `executed` | Use as the template for future one-package execution commits. | Reader work should target the consolidated destination chapter. |
 | Compression and residual honesty | `review_ready` | Review the destination draft and decide execute full merge, execute conservative merge, revise, defer, or reject. | Avoid curated graduation of the source cluster unless explicitly deferred or retained. |
 | Intent and executable contracts | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` reader work local until the contract boundary is clear. |
 | Static context ABI | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the static ABI pair unless explicitly deferred or retained; reader curation may continue on protected adjacent chapters. |
@@ -229,8 +232,8 @@ blocked until the revision is reviewed.
 
 | Order | Package | Required decision | Execution note |
 |---|---|---|---|
-| 1 | Part I constitutional alignment and agency/corrigibility | Execute, revise, defer, or reject. | Apply the URL/history policy for the retired agency/corrigibility slug before any manifest edit. |
-| 2 | Part I value conflict and contestable governance | Execute, revise, defer, or reject. | Apply the URL/history policy for the retired governance-rights slug and preserve fork, exit, audit, redaction, appeal, dissent, and revisit interfaces. |
+| 1 | Part I constitutional alignment and agency/corrigibility | Executed on 2026-06-30. | Retired agency/corrigibility slug preserved through historical stub; source chapter archived; no support-state change. |
+| 2 | Part I value conflict and contestable governance | Executed on 2026-06-30. | Retired governance-rights slug preserved through historical stub; source chapter archived; no support-state change. |
 | 3 | Compression and residual honesty | Execute full merge, execute conservative merge, revise, defer, or reject. | Keep RankFold/NeuralFold standalone if review finds concrete technique ownership. |
 | 4 | Intent and executable contracts | Execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` as intent intake and remove only duplicated contract skeleton. |
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep transaction/snapshot/taint and verification-bandwidth chapters standalone unless later review changes artifact ownership. |
@@ -538,8 +541,8 @@ equivalent consolidation caveat in its prose-pass review note.
 
 ## Non-Claims
 
-- This sequence does not merge chapters.
-- This sequence does not change `book_structure.json`.
+- This sequence records the executed Part I pilot and does not merge any remaining package by itself.
+- This sequence reflects the 2026-06-30 Part I manifest change and does not authorize any further `book_structure.json` change by itself.
 - This sequence does not change Appendix C support states.
 - This sequence does not create source-derived, external-literature-backed,
   proof-derived, prototype-backed, synthetic-test-backed, or empirical support.

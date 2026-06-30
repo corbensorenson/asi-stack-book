@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-30 - Part I consolidation pilot executed
+
+- Executed the governed Part I 4-to-2 consolidation pilot in
+  `book_structure.json`: folded `agency-dignity-and-corrigibility` into
+  **Constitutional Alignment: Agency, Dignity, and Corrigibility** and folded
+  `governance-rights-fork-exit-and-audit` into **Moral Uncertainty, Value
+  Conflict, and Contestable Governance**.
+- Reduced the canonical manifest from 54 chapters to 52 chapters while
+  preserving stable destination IDs, source unions, external comparator
+  placement, folded-history rows, chapter handoffs, implementation horizons,
+  proof tags, proof triage, harness ownership, reader review matrices,
+  promotion-path rows, and no-support-state-change boundaries.
+- Moved retired live manuscripts and retired curated-reader drafts under
+  `archive/`, added static historical stubs for the retired public chapter
+  slugs, added `docs/chapter_history_ledger.md`, and regenerated the affected
+  source, claim/evidence, test, proof, reader, status, grounding, and protocol
+  crosswalk surfaces.
+- This does not promote any chapter core claim above `argument`, create source
+  evidence, create proof results, create test results, accept external review,
+  approve reader artifacts, or create EPUB, DOCX, PDF, HTML, audio, DOI,
+  Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Roadmap execution pivot
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after the latest Claude review

@@ -1,10 +1,10 @@
 ---
-title: "Moral Uncertainty and Value Conflict"
+title: "Moral Uncertainty, Value Conflict, and Contestable Governance"
 chapter_id: "moral-uncertainty-and-value-conflict"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-29"
+draft_maturity: "v1.x consolidated manuscript"
+last_updated: "2026-06-30"
 primary_sources:
   - "ethica_mechanica"
   - "alignment_field"
@@ -12,261 +12,438 @@ primary_sources:
   - "uat"
   - "spinoza"
   - "field_of_god_ai_constitution"
+  - "ladon_manhattan"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Claim-level source mappings now exist for all assigned sources, and five of six mappings carry reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped, and support remains at argument until tests or runtime artifacts justify promotion."
-  - "The value_conflict_record fixture validates schema/example consistency, and the synthetic value conflict harness now checks multi-axis classification, stakeholder and evidence requirements, high-stakes review routing, residual uncertainty preservation, authority narrowing, dissent payloads, bounded-decision revisit conditions, and non-claim boundaries; moral correctness, classification quality, human-review quality, tribunal quality, source interpretation, and runtime policy behavior remain open."
-  - "Source-noted external comparators now exist for reinforcement learning under moral uncertainty and contestable AI; they replace the prior external-baseline exception for positioning only and do not imply support-state promotion."
+  - "The consolidated contestability layer preserves value-conflict and governance-right mappings at argument support only; no moral-correctness, legal-rights, institutional-adequacy, reviewer-independence, export-usability, fork-safety, or deployed-governance claim is promoted."
+  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems remain bounded record checks; real review quality, runtime contestability, actual exit/fork usability, and SCF replacement behavior remain open."
+  - "External comparators for moral-uncertainty RL, contestable AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment, legal process, or deployed governance result is reproduced here."
 ---
 
 ## Chapter status
 
-| Field | Value |
-|---|---|
-| Chapter ID | `moral-uncertainty-and-value-conflict` |
-| Part | Part I - Foundations, Alignment, and Governance |
-| Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-29 |
-| Primary source records | `ethica_mechanica`, `alignment_field`, `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
-| Claim label | Design rationale |
-| Evidence level | argument |
-| Source queue | primary: `ethica_mechanica`, `alignment_field`; supporting: `coherence_exchange`, `uat`, `spinoza`, `field_of_god_ai_constitution` |
-| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `ethica_mechanica`, `alignment_field`, `uat`, `spinoza`; passage-reviewed tracked local project source: `field_of_god_ai_constitution`; connector-only/source-note mapped: `coherence_exchange` |
-| Test state | `value_conflict_record.valid.json` passes protocol fixture validation; `AsiStackProofs.ValueConflict` implements finite unresolved-conflict residual and high-stakes review gates plus derived finite-record review gates for missing revisit paths, missing residual uncertainty, bounded decisions that drop dissent, and unresolved conflicts without authority narrowing; `python3 scripts/validate_value_conflicts.py` passes synthetic value-conflict fixtures for classification, review escalation, residual uncertainty, authority narrowing, dissent, and bounded-decision boundaries without proving moral correctness, reviewer quality, or deployed runtime policy behavior. |
+The consolidated contestability layer remains conceptual. Its core claim
+remains `Design rationale` with `argument` support. Existing source notes,
+synthetic harnesses, and finite-record Lean theorems make the idea more
+inspectable, but they do not prove moral correctness, legal rights,
+institutional adequacy, reviewer independence, real export usability, safe
+fork execution, or deployed governance enforcement.
+
+The consolidated layer combines two record families:
+
+- value conflict records, which preserve unresolved obligations, stakeholder
+  disagreement, residual uncertainty, review routes, bounded decisions, and
+  dissent payloads;
+- governance right records, which preserve audit, exit, fork, redaction,
+  appeal, receipt, and contestability obligations across runtime and
+  replacement pressure.
+
+Both record families remain visible in the test plan and
+formalization hooks.
+
+Source loading state: the assigned moral-uncertainty, contestability, audit, exit, fork, and governance comparator sources have source notes, exact claim-source mappings, passage-review references, folded source-history records, and external-comparator notes. The destination claim still remains at `argument` until a separate accepted evidence transition justifies movement.
 
 ## Drafting guardrail
 
-Value conflict is recorded instead of resolved by prose. No complete moral theory or tested conflict-resolution system is claimed.
+Contestable governance is a record and rights-interface design, not a solved
+moral theory, legal guarantee, or deployed institution. Moral uncertainty is
+not solved by naming conflict. Fork, exit, audit, dissent, appeal, and
+redaction rights are not solved by naming rights. They become engineering
+requirements only when a plan, governance decision, memory action, capability
+replacement, or self-improvement proposal can be narrowed, delayed, escalated,
+blocked, exported, audited, appealed, or recorded as residual because the
+relevant contestability path is missing or degraded.
 
-It follows agency and corrigibility because preserved rights will sometimes point in different directions. A governed stack needs a way to act under unresolved tension without deleting the tension from the record.
-
-The mechanism is not moral omniscience. It is authority control under uncertainty: the system narrows, delays, reviews, or leases action when values remain unresolved.
+Readers do not need to accept a final moral theory before
+accepting the engineering move. The engineering move is narrower: unresolved
+conflict needs durable records, bounded authority, preserved dissent, usable
+challenge paths, rights receipts, and explicit non-claim boundaries.
 
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Agency and corrigibility are clearest when the system knows what ought to happen. The harder case appears when values conflict, affected parties disagree, and no honest scalar objective can erase the tension. This is where the stack admits that some decisions must be bounded before they can be final.
+The hardest governance cases are not the ones where everyone agrees. They are
+the cases where a system must act while values conflict, affected parties
+disagree, and no honest objective can make the disagreement disappear.
 
-The architecture's answer is not to solve moral philosophy by decree. It is to keep conflict visible. A governed stack should record the conflict, limit authority when needed, route review, and prevent a temporary operational choice from pretending to be final moral certainty. Disagreement should leave a handle that can be audited, appealed, revisited, or used to narrow the next action.
+A governed stack should not hide that tension inside a reward weight or a
+policy sentence. It should record the conflict, bound the decision, preserve
+who disagreed and why, and keep open the usable handles people need to
+inspect, challenge, leave, fork, appeal, or revisit what happened.
 
-The architecture stays humane by preserving unresolved value as a first-class residual. That residual tells later layers where speed, certainty, and optimization must slow down.
+Moral uncertainty and governance rights belong together. A value
+conflict record keeps unresolved obligations alive. A governance right record
+keeps people from being trapped inside the authority that made the contested
+decision. Together they make disagreement operational without pretending that
+disagreement has been morally solved.
 
-Some ambiguity is not waste; it is the record of obligations that remain alive, and the stack stays honest by carrying those obligations forward. Unresolved value conflict should remain visible inside the work record as evidence.
+The contestability layer does not require perfect moral agreement before action.
+It requires honest disagreement to leave durable artifacts: what was contested,
+who was affected, which authority was narrowed, what can be audited, what can
+be appealed, and how a person can leave or fork safely when governance itself
+becomes the risk.
 :::
-
 ## Problem
 
-A self-improving system will face value conflicts that cannot be honestly collapsed into one scalar objective.
+A self-improving system will face unresolved value conflicts whose affected
+parties need inspectable, appealable, and portable governance rights rather
+than hidden reward-weight settlement.
 
-Agency and corrigibility do not remove value conflict. Protected values can pull in different directions. A system may face conflicts among autonomy, safety, truthfulness, privacy, usefulness, consent, reversibility, fairness, and institutional obligations. Pretending those conflicts reduce cleanly to one scalar objective is a form of evidence loss.
+Agency and corrigibility do not remove value conflict. Protected values can
+pull in different directions across autonomy, safety, truthfulness, privacy,
+usefulness, consent, reversibility, fairness, and institutional obligation. A
+planner that cannot represent conflict will freeze, optimize through dissent,
+or quietly move a moral burden into an execution layer that lacks authority to
+resolve it.
 
-Ethica Mechanica and Alignment Field supply the vocabulary of agency, contestability, coherence, and value conflict. UAT supplies an adversarial-review pattern for contested propositions. Spinoza supplies downgrade and belief-revision discipline. The engineering move is to record conflict instead of hiding it. That record is the object later governance rights can inspect; without it, audit and appeal have nothing durable to attach to.
-The immediate stakes are practical: a planner that cannot represent conflict will either freeze, optimize through dissent, or quietly move a moral burden into an execution layer that lacks authority to resolve it.
+Governance rights are the downstream handle on that problem. Affected people
+and institutions need audit, exit, fork, dissent, redaction appeal, and
+contestability paths when governance itself becomes the risk. Without those
+paths, a conflict record can become inert documentation. Without the conflict
+record, rights have no durable object to inspect or challenge.
+
+The governing question is: how can the
+stack act under unresolved disagreement while preserving the ability to
+contest, audit, leave, fork where safe, and carry residual obligations into
+future decisions?
 
 ## Why existing approaches are insufficient
 
-Single-objective optimization hides moral uncertainty and encourages premature resolution of contested values.
+Single-objective optimization and policy-only transparency both fail when
+disagreement needs bounded action, dissent preservation, audit, exit, fork,
+appeal, and safety-limited contestability.
 
-Single-objective optimization is attractive because it gives the planner a total order. But value conflicts often do not deserve a total order at the point of action. Some require human review, some require delay, some require a reversible low-power action, and some require recording unresolved uncertainty while still making a bounded decision.
+Single-objective optimization is attractive because it gives the planner a
+total order. But value conflicts often do not deserve a total order at the
+point of action. Some require human review, some require delay, some require a
+reversible low-power action, and some require recording unresolved uncertainty
+while still making a bounded decision. Hiding that uncertainty inside a scalar
+turns unresolved obligation into invisible optimization pressure.
 
-The failure is false consensus: the system acts as if a contested value question has been settled because the plan needs a next step. Value-conflict handling instead produces a conflict record with stakeholders, value axes, reversibility, review requirement, decision, and residual uncertainty.
+Policy-only transparency has the complementary failure. A user can receive an
+explanation while still lacking logs, source records, appeal routes, export
+paths, redaction reasons, fork boundaries, or meaningful alternatives. Exit is
+not real if data, memory, identity, artifacts, or institutional dependency are
+held hostage. Audit is not real if the challenged party is the only keeper of
+the record. Fork is not safe if it discards source, privacy, or safety
+obligations.
 
-Moral residuals are not embarrassing leftovers. They are part of the safety interface. If a plan helps one stakeholder while burdening another, trades truthfulness against privacy, or reduces short-term harm while creating dependency, the unresolved part belongs in the artifact trail. A system that can keep residuals visible can choose smaller actions, preserve appeal paths, or revisit the decision when new evidence arrives. A system that hides them turns uncertainty into invisible optimization pressure.
-
-The governance layer therefore treats moral disagreement as an input to control, not as a rhetorical defect. A conflict record can narrow authority, require a reversible action, set an expiry, request tribunal review, or prevent self-modification from weakening a protected commitment. The point is not to paralyze the stack. It is to let the stack act only at the level of authority the conflict record can justify.
-
-The insufficiency of reward-only treatment is that it converts disagreement into a hidden coefficient. Once hidden, the conflict cannot trigger appeal, expiry, dissent preservation, or narrowed authority.
-
-The dangerous shortcut is not merely making a decision under uncertainty. Real systems must sometimes act before consensus exists. The dangerous shortcut is letting that action erase why it was limited, who disagreed, what evidence was missing, and what would force reconsideration.
-
-External positioning: `ext_reinforcement_learning_moral_uncertainty_2020` and `ext_contestable_ai_design_2022` are now the source-noted external comparators. Reinforcement learning under moral uncertainty grounds the warning that ethical disagreement cannot honestly be collapsed into one moral theory without a record of uncertainty. Contestable AI grounds the downstream governance need for challenge, appeal, and review surfaces when decisions affect people. The ASI Stack still makes its own design move by treating moral uncertainty as an authority-bearing record with residuals, dissent payloads, leases, and revisit conditions. These external sources replace the prior baseline exception for positioning only; they do not prove moral correctness, review quality, or deployed conflict handling.
+External comparators help position the argument but do not prove it.
+`ext_reinforcement_learning_moral_uncertainty_2020` and
+`ext_contestable_ai_design_2022` ground the need to preserve ethical
+disagreement and challenge surfaces. `ext_collective_constitutional_ai_2024`,
+`ext_corrigibility_2015`, and `ext_off_switch_game_2016` sharpen the related
+need for public input, correction, and uncertainty about human objectives. The
+ASI Stack does not claim those systems have been reproduced here. It uses them
+as comparators while asking a systems question: can moral residuals and
+contestability rights survive planning, memory, execution, replacement, and
+self-improvement pressure as explicit records?
 
 ## Core Claim
 
-[moral-uncertainty-and-value-conflict.core, label: Design rationale, support: argument] Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.
+[moral-uncertainty-and-value-conflict.core, label: Design rationale, support: argument] Value conflicts should be represented as explicit unresolved obligations,
+residuals, review paths, and bounded decisions, with fork, exit, audit,
+dissent, and contestability preserved as technical governance interfaces.
 
-The claim remains at `argument` support. Five mappings now carry reviewed passage references: Ethica Mechanica for human-defined values over AI logistics, veil-of-ignorance framing, exit/fork, dissent, contradiction exploration, and hard-coded rights checks; Alignment Field for value conflict as residual uncertainty, structural conflict from competing local attractors, suffering as misalignment information, expanded moral scope, anti-sacrifice constraints, value pluralism, consent, and feedback limits; UAT for retrieval-bounded proposition states, SME review flags, unsupported-claim deletion, adversarial review, and double-lock termination; Spinoza for formal-scope limits, enforced support tiers, unsupported-in-current-scope responses, contradiction-as-revision events, bounded belief revision, and schema/axiom governance; and the Field of God AI Constitution for tensor conflict handling, moral caution under uncertainty, stakeholder/scope/reversibility checks, and default-under-uncertainty behavior. `coherence_exchange` remains connector-only/source-note mapped. No one source becomes a final moral authority.
+Support boundary: this remains an `argument` support claim. The source
+corpus supports the architecture vocabulary and drafting lineage. The current
+fixtures and Lean modules show that the repository can express small record
+invariants and rejection cases. They do not show moral correctness, legal
+rights, reviewer quality, institutional adequacy, runtime contestability, real
+export usability, safe forks, or deployed governance enforcement.
 
-### Claim-source mapping status
-
-Appendix C now maps this core value-conflict claim to every assigned source note. Five mappings include reviewed passage references; `coherence_exchange` remains connector-only/source-note mapped. The mappings support explicit recordkeeping, review, and downgrade discipline for unresolved conflicts, not a solved moral theory or an implemented conflict-resolution system.
-
-| Source | What it supports | Limit |
-|---|---|---|
-| `ethica_mechanica` | Agency, contestability, recursive correction, constitutional failure, and objections as reasons to preserve disputed values rather than freeze one authority layer. | Conceptual governance lineage; not a complete moral theory or empirical conflict-resolution result. |
-| `alignment_field` | Value conflict, suffering, dignity, agency, moral thresholds, coherence, and constraints under uncertainty. | Heuristic and speculative material must remain bounded; not a validated measure of moral status or value correctness. |
-| `coherence_exchange` | Contestable claim/evidence units, verification supply chains, fork/exit/audit concepts, and coherence/liquidity language for reviewable disagreement. | Speculative synthesis; no implemented review market, economic mechanism, or external governance evidence. |
-| `uat` | Adversarial review, retrieval-bounded verification, proposition states, unsupported-claim removal, SME checkpoints, and termination criteria for contested claims. | Protocol design only; no reproduced benchmark, implemented local pipeline, or independent validation of thresholds. |
-| `spinoza` | Support tiers, contradiction detection, belief revision, defeaters, downgrades, and limits on open-domain formalization. | Does not settle moral uncertainty or prove reviewer/verifier correctness. |
-| `field_of_god_ai_constitution` | Stakeholder checks, uncertainty, consent, reversibility, least sufficient power, truth/relation/task tensions, and non-domination. | No policy engine or red-team result is present; constitutional text cannot by itself resolve value conflicts. |
+The folded source claim from `governance-rights-fork-exit-and-audit` becomes a preserved subclaim inside this contestability layer: fork, exit, audit, dissent, and contestability
+should be treated as technical governance interfaces. It does not disappear,
+and it does not remain as a second repeated core claim.
 
 ## Mechanism
 
-The value-conflict layer prevents the constitution from pretending that every protected commitment is already harmonized. When a proposed action pulls values apart, the stack records the conflict before selecting a bounded action. This preserves disagreement as evidence, not as noise to be optimized away.
+The mechanism has two halves.
 
-The conflict record classifies the conflict by value type, stakeholder, reversibility, stakes, authority or consent boundary, evidence requirement, review route, decision, and residual uncertainty. Low-stakes or reversible conflicts may produce bounded decisions. High-stakes or unresolved conflicts route to tribunal or human review. Either way, the residual remains visible to evidence, governance, and future review instead of being flattened into a reward value.
+The first half is unresolved-conflict preservation. When a proposed action
+pulls values apart, the stack records the conflict before selecting a bounded
+action. The record classifies the conflict by value axes, stakeholders, stakes,
+reversibility, authority boundary, evidence requirement, review route, decision
+state, dissent payload, residual uncertainty, and revisit condition. Low-stakes
+or reversible conflicts can produce bounded decisions. High-stakes or
+unresolved conflicts route to human, tribunal, or external review. Either way,
+the residual remains visible.
 
-The tribunal path is not automatic consensus. It is a way to preserve disagreement, expose unsupported premises, and decide whether the system has enough authority to act.
-
-Bounded decisions are the practical middle state. They say: the system may do this much, under these constraints, for this duration, with these parties notified, while preserving these dissenting premises and revisit conditions. That is different from declaring the values reconciled. It is also different from refusing all action. The record lets the system make a limited move while preserving the unresolved obligation that caused the conflict.
-
-A bounded decision should be a lease, not a settlement. The lease records permitted action, prohibited action, affected stakeholders, authority ceiling, expiry, revisit trigger, dissent payload, and rollback or appeal path.
-
-Decision state matters. `unresolved`, `bounded_decision`, `escalated_review`, `deferred_action`, `denied_action`, and `deprecated_premise` are different states with different authority effects. A bounded decision narrows authority for a time; an escalated review suspends or routes authority; a denied action blocks; a deprecated premise removes a failed justification; and unresolved conflict stays visible as residual. The state is what prevents a temporary decision from hardening into policy, benchmark reward, or self-modification permission.
+The second half is contestability preservation. A governance right is
+represented as a capability with a holder, scope, artifact requirement, safety
+constraint, access path, preservation rule, receipt, denial or redaction
+reason, and appeal path. Audit, exit, fork, dissent, and redaction appeal are
+not ornaments. They are interfaces that can be present, degraded, late, denied,
+unsafe, or unavailable. If a right cannot produce a request path, response
+artifact, denial reason, and appeal route, the record should preserve a
+residual instead of pretending the right exists.
 
 ```{mermaid}
 flowchart LR
-  Action["Proposed action"] --> Conflict["Value conflict record"]
-  Conflict --> Axes["Value axes + stakeholders"]
-  Conflict --> Stakes["Stakes and reversibility"]
-  Conflict --> EvidenceNeed["Evidence requirement"]
-  Conflict --> Authority["Authority and consent boundary"]
-  Axes --> Route["Review route"]
-  Stakes --> Route
-  EvidenceNeed --> Route
-  Authority --> Route
-  Route -->|low stakes or reversible| Bounded["Bounded decision"]
-  Route -->|high stakes or unresolved| Review["Tribunal or human review"]
-  Route -->|insufficient authority| Denied["Denied or deferred action"]
-  Review --> Dissent["Dissent + unsupported premises"]
-  Dissent --> Bounded
-  Denied --> Residual
-  Bounded --> Residual["Residual uncertainty retained"]
-  Residual --> Evidence["Evidence ledger"]
+  action["Proposed action or governance transition"] -- "surface conflict" --> conflict["Value conflict record"]
+  conflict -- "classify" --> axes["Value axes, stakeholders, evidence"]
+  conflict -- "lease" --> bounds["Bounded decision lease"]
+  conflict -- "route" --> review["Review, appeal, or denial route"]
+  conflict -- "preserve" --> residual["Residual uncertainty and dissent payload"]
+  bounds -- "bind" --> rights["Governance right record"]
+  review -- "bind" --> rights
+  residual -- "bind" --> rights
+  rights -- "produce" --> audit["Audit artifacts"]
+  rights -- "enable" --> exit_path["Exit/export path"]
+  rights -- "bound" --> fork["Safety-limited fork boundary"]
+  rights -- "record" --> appeal["Redaction and appeal receipt"]
+  audit -- "evidence" --> evidence["Evidence ledger"]
+  exit_path -- "evidence" --> evidence
+  fork -- "evidence" --> evidence
+  appeal -- "evidence" --> evidence
+  evidence -- "gate" --> gates["Planning, SCF, and self-improvement gates"]
 ```
 
-**How to read the value conflict record:** The value-conflict record keeps disagreement attached to authority. Reversible or low-stakes decisions can become bounded leases, but high-stakes or unresolved conflicts route to review, denial, or residual uncertainty instead of being collapsed into a single score.
+**What this contestable governance diagram shows:** The diagram traces the contestability layer mechanism from upstream records into the gates and receipts that constrain action. Read it left to right: source commitments or conflict records become typed obligations, those obligations reach plan/runtime/governance interfaces, and the final evidence record preserves what was allowed, blocked, escalated, or left as residual uncertainty.
+
+The important movement is from disagreement to bounded authority without
+pretending the disagreement is settled. A bounded decision is a lease, not a
+settlement. The lease records permitted action, prohibited action, affected
+stakeholders, authority ceiling, expiry, revisit trigger, dissent payload, and
+rollback or appeal path. A future policy update, benchmark ratchet, or
+self-improvement proposal should not treat that lease as evidence that the
+underlying values were resolved.
+
+The same record discipline applies to governance rights. Audit, exit, fork,
+redaction, and appeal are not just names in a policy list; each right needs a
+request state, artifact path, response boundary, denial or redaction reason,
+appeal route, preservation obligation, and receipt. If the right is late,
+unsafe, degraded, or controlled only by the authority being challenged, the
+system must record a residual instead of pretending contestability survived.
 
 ## Interfaces
 
-Moral uncertainty is carried by a Value Conflict Record that travels with the plan. It tells planning which constraints remain active, tells governance which review route is required, and tells evidence which uncertainty, dissent, unsupported premise, or revisit condition survived the decision.
+The consolidated interface keeps two interface families.
 
-- Alignment produces conflict records.
-- Planning uses conflict constraints.
-- Evidence records review outcomes.
-
-Minimum fields:
+Value Conflict Record:
 
 - `conflict_id`
 - `value_axes`
 - `stakeholders`
 - `stakes`
 - `reversibility`
+- `authority_or_consent_boundary`
 - `evidence_required`
 - `review_route`
 - `decision_state`
-- `decision`
+- `bounded_decision`
 - `authority_effect`
 - `dissent_payload`
 - `residual_uncertainty`
 - `expiry_or_revisit_condition`
+- `non_claims`
 
-Alignment emits conflict records. Planning uses them as constraints. Evidence records review outcomes, unsupported premises, and residual uncertainty.
+Governance Right Record:
 
-Those interfaces matter downstream. Governance rights need the conflict record so affected parties can audit or contest the decision. Replacement and self-improvement need it so a future version cannot quietly delete the unresolved obligation. Benchmark and policy-learning chapters need it so reward pressure does not convert a temporary bounded choice into a permanent value claim.
+- `right_id`
+- `right_type`
+- `request_state`
+- `holder`
+- `scope`
+- `required_artifacts`
+- `material_available`
+- `material_withheld`
+- `safety_constraints`
+- `access_path`
+- `denial_or_redaction_reason`
+- `appeal_path`
+- `expiry_or_revisit`
+- `challenged_party_independence`
+- `preservation_rule`
+- `preservation_obligation`
+- `receipt_refs`
+- `test_hook`
+- `non_claims`
 
-Value-conflict states are not interchangeable: unresolved conflict, bounded decision, escalated review, deferred action, denied action, and deprecated premise each carries a different authority effect.
+Planning consumes value-conflict records as authority constraints. Governance
+consumes both conflict records and rights records as challenge surfaces. Memory
+and execution produce the artifacts needed for audit and export. Stable
+Capability Fields consume rights receipts as replacement constraints. Evidence
+checks whether unresolved obligations, dissent payloads, withheld material,
+redaction reasons, and appeal paths survived the transition. Self-improvement
+consumes both record families as gates: a change that removes residual
+obligations or contestability rights should be narrowed, escalated, or blocked.
 
-The authority effect should be machine-readable enough for planning and self-improvement gates: narrow authority, require review, require reversible action, deny action, defer action, preserve dissent, or deprecate a premise. A future policy update or benchmark ratchet should not be able to treat a dissent-preserving bounded decision as evidence that the underlying values were resolved.
+The interface is deliberately split so conflict and rights can fail separately.
+A value-conflict record can be complete while the exit path is unusable. A right
+receipt can be present while the underlying disagreement has been erased. The
+combined layer therefore forces both questions at once: what unresolved value
+burden remains, and what technical handle lets an affected party challenge,
+leave, audit, fork safely, or revisit the decision?
 
 ## Invariants
 
 - Unresolved conflicts remain visible.
-- High-stakes conflicts require stronger review.
-- Speculative moral theory cannot silently authorize action.
-- Decision states carry authority effects.
-- Dissent payloads and unsupported premises survive bounded decisions.
+- High-stakes unresolved conflicts require review and residual uncertainty.
+- Bounded decisions preserve dissent and revisit conditions.
+- Unresolved conflict narrows authority rather than expanding it.
+- A bounded decision cannot become a permanent policy, reward target, or
+  self-improvement permission without separate review.
+- Audit records cannot be silently deleted.
+- Exit paths remain materially usable.
+- Forks preserve source, privacy, safety, and residual obligations.
+- Redactions require recorded reasons and appeal paths.
+- The challenged authority cannot be the only keeper of the record needed to
+  challenge it.
 
-Visibility is the key invariant. A conflict can be decided, deferred, escalated, or bounded, but it should not be erased by the shape of the reward function or the fluency of the answer.
-
-Authority narrowing should follow unresolved high-stakes conflict. When uncertainty is serious and review is incomplete, the system should not gain broader action rights merely because a decision is operationally convenient.
-
-The record must distinguish moral discomfort, unresolved factual uncertainty, stakeholder disagreement, and missing authority instead of compressing them into one residual.
+Operationally, action under disagreement must leave handles.
+If a plan keeps the action but deletes the residual, the dissent, the audit
+record, the export path, the redaction reason, or the appeal route, it has
+changed the authority boundary, not merely simplified the workflow.
 
 ## Failure modes
 
 - Value flattening.
 - False consensus.
-- Review theater without decision records.
-- Dissent deletion, where a bounded decision keeps the action but drops the objection that made it bounded.
-- Authority creep, where a temporary conflict lease becomes standing policy, reward target, or self-modification permission.
+- Conflict laundering, where a bounded decision is later cited as resolved
+  moral agreement.
+- Dissent deletion.
+- Stakeholder erasure.
+- Review theater without durable decision records.
+- Rights theater, where audit, exit, fork, appeal, or dissent exists in text
+  but not as a usable interface.
+- Governance capture, where the same authority controls policy, logs, appeal,
+  and revision.
+- Data hostage-taking.
+- Unsafe fork bypass.
+- Redaction without appeal.
+- Appeal controlled only by the challenged authority.
+- Portability theater, where exit exports omit the state needed to continue
+  elsewhere.
 
-Review theater is the dangerous version of governance: a tribunal is run, but no decision record, dissent, evidence limit, or revisit condition survives. That produces legitimacy without accountability.
-
-Conflict laundering is the value-layer failure. A bounded decision is later cited as if the underlying values were resolved, allowing the temporary action to harden into policy, benchmark objective, or self-modification permission.
-
-Stakeholder erasure can happen even with a preserved decision record, when the system drops who was burdened by it.
+The consolidated contestability layer should be especially suspicious of legitimacy without
+contestability. A tribunal, policy page, or explanation can create the
+appearance of governance while leaving no durable record, no dissent payload,
+no export path, no independent appeal, and no way for later layers to preserve
+the unresolved obligation.
 
 ## Minimum Viable Implementation
 
-Begin with a `value_conflict_record` schema plus a scenario fixture. It should validate conflict visibility and review escalation; it should not claim to solve moral philosophy.
+The smallest honest implementation is a `value_conflict_record` plus a
+`governance_right_record` receipt suite. It validates fixture shape and
+cross-record obligations while not asserting moral correctness, legal rights,
+institutional adequacy, deployed policy behavior, real export usability, safe
+fork execution, or runtime governance enforcement.
 
-A decision-lease suite should be the first concrete value-conflict artifact: one reversible low-stakes bounded decision, one high-stakes escalation, one denied action, one deferred action with revisit trigger, and one conflict-laundering attempt blocked from policy promotion.
+The MVI should include:
 
-The value-conflict fixture records explicit stakeholder refs, disputed value axes, decision scope, reversibility, review owner, lease expiry, residual obligation, and non-claims. Passing it would establish only that value conflict can be represented and routed without disappearing into a scalar objective.
+- one high-stakes unresolved conflict blocked for missing residual uncertainty;
+- one bounded decision that must preserve dissent, authority limits, expiry,
+  and revisit conditions;
+- one authority-narrowing case where unresolved conflict prevents broader
+  action rights;
+- one complete audit response with required artifacts and a durable receipt;
+- one redaction with a reason, withheld-material boundary, and appeal path;
+- one exit export that records what is portable and what remains constrained;
+- one fork denial or narrowed fork that preserves safety obligations;
+- one attempted capability replacement blocked because it would drop a rights
+  receipt or unresolved conflict residual.
 
-A first conflict fixture includes at least one unresolved conflict that remains unresolved on purpose.
-
-Downstream routes must carry that unresolved status before acting, so the conflict remains part of the work record.
+This starts the idea honestly because it can fail. It does not ask a schema to
+solve moral uncertainty. It asks whether the record makes missing conflict and
+contestability controls visible before the system acts or replaces itself.
 
 ## Beyond the State of the Art
 
-Moral uncertainty needs a value-conflict ledger for governed action under disagreement. It preserves unresolved obligations, affected parties, reversible decisions, review routes, dissent, and residual moral risk instead of hiding plural values inside one optimized reward.
+A mature contestability layer carries unresolved moral residuals into durable
+governance rights. Value-conflict records bind to rights receipts, appeal
+surfaces, audit artifacts, safety-limited fork boundaries, portable exit paths,
+dissent payloads, and replacement-preserved obligations. Downstream planning,
+runtime, memory, SCF, evidence, and self-improvement gates can then see why an
+action was bounded, who could contest it, what was withheld, where appeal
+exists, and which residual obligations survive.
 
-Value conflict remains a first-class record: unresolved obligations, affected parties, review paths, dissent, bounded decisions, and residual moral risk cannot be hidden inside a reward function. Conflicts are classified by value type, stakeholder, reversibility, and evidence requirement; unresolved cases escalate to tribunal or human review; decisions retain the moral uncertainty that survived review.
+The mature endpoint keeps contestability operational when it is inconvenient.
+Audit works during disputes. Exit preserves enough portable state to make
+leaving meaningful without violating safety or privacy constraints. Forks carry
+lineage, source, privacy, and safety obligations rather than becoming authority
+leaks. Redactions become appealable artifacts. Dissent survives capability
+replacement and self-improvement.
 
-Alignment produces conflict records, planning consumes them as constraints, and evidence records the review outcome. Unresolved conflicts remain visible, high-stakes conflicts require stronger review, and speculative moral theory cannot silently authorize action. Value flattening, false consensus, and review theater without decision records should create unresolved-conflict records, tribunal escalation, rollback, or residuals rather than being presented as agreement.
+In product terms, the mature layer would make contestability a live operating
+surface rather than a policy promise. A person or institution affected by a
+decision should be able to see the bounded decision record, what evidence was
+withheld, which appeal path exists, what can be exported, what cannot be
+forked, and which obligations a replacement capability must preserve.
 
-In a mature deployment, recorded dissent is part of the control surface rather than editorial residue.
-
-This value-conflict ledger is still a design target. The moral-conflict layer stays at `argument` until conflict records carry stakeholder, reversibility, dissent, residual-risk, and escalation fields through high-stakes review tests that preserve disagreement rather than compressing it into a false consensus.
+That endpoint remains a target architecture. It would require public-safe
+traces, stronger proofs, external review, rights-interface usability checks,
+runtime artifacts, and negative cases before any narrower support-state
+transition could be justified. Until then, the destination chapter should keep
+the merged core claim at `argument`.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Value conflict record validation | Check that the conflict fixture matches the public schema. | implemented by protocol validation; validated locally |
-| Value conflict classification test | Check that stakeholders, value axes, stakes, and reversibility are recorded. | modeled by synthetic fixtures; classification quality not run |
-| Decision-state routing test | Check that unresolved, bounded, escalated, deferred, denied, and deprecated-premise states produce distinct authority effects. | partially modeled by finite Lean authority-narrowing theorem and synthetic fixtures; deployed policy routing not run |
-| Review escalation test | Check that high-stakes unresolved conflicts route to tribunal or human review. | modeled by finite Lean high-stakes review/residual gates and synthetic fixtures; real review quality not run |
-| Dissent preservation test | Check that bounded decisions retain dissent payloads and unsupported premises rather than laundering them away. | modeled by finite Lean dissent-residual theorem and synthetic fixtures; deployed dissent preservation not run |
-| Residual uncertainty preservation test | Check that unresolved moral uncertainty survives the decision record. | modeled by finite Lean residual/revisit-path theorems and synthetic fixtures; moral correctness not run |
+| Value-conflict fixture validation | Check that conflict records preserve value axes, stakeholders, residual uncertainty, dissent, review routes, and non-claims. | implemented by protocol validation and current harnesses |
+| High-stakes review gate | Check that unresolved high-stakes conflicts require review and residual uncertainty. | modeled by finite Lean and synthetic fixtures; moral correctness and reviewer quality not run |
+| Bounded-decision lease test | Check that bounded decisions preserve authority limits, dissent payloads, expiry, and revisit triggers. | modeled by finite Lean and synthetic fixtures; deployed policy behavior not run |
+| Governance-rights fixture validation | Check that rights records preserve audit material, appeal paths, exit/fork access, fork safety, preservation obligations, durable receipts, and non-claims. | implemented by protocol validation and current harnesses |
+| Rights preservation check | Check that audit, exit, fork, dissent, redaction, and appeal paths survive a governed transition. | modeled by finite Lean and synthetic fixtures; real interface usability not run |
+| Replacement-preservation check | Check that capability replacement does not drop unresolved conflict residuals or rights receipts. | planned integration path; no deployed SCF replacement run is claimed |
 
-### Formalization hooks
+## Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
 | `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
 | `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
+| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
+| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 
-These Lean hooks still include projection-only traceability for v1.0 and must remain explicitly scoped. The v1.x Value Conflict follow-through adds two finite envelopes. `ValueConflictDecision` supports `unresolved_high_stakes_conflict_without_revisit_path_is_blocked`: if a conflict is high stakes, unresolved, and has no recorded revisit path, the safe route must be `blockedForReview`. `ValueConflictReviewDecision` records phase, high-stakes status, unresolved conflict, stakeholder disagreement, review presence, residual uncertainty, dissent preservation, bounded decision state, authority narrowing, reversibility, revisit path, deprecated-premise state, and review route. Its derived review theorems are `high_stakes_unresolved_conflict_without_residual_blocks`, `bounded_decision_without_dissent_preserves_residual`, and `unresolved_conflict_without_authority_narrowing_routes_to_narrowing`. Together they prove only that the modeled record shapes can express unresolved-conflict residuals, high-stakes review blocking, revisit-missing blocking, bounded-decision dissent residualization, and authority narrowing for declared value-conflict decisions. They do not prove moral uncertainty is settled, values are classified correctly, reviewer quality exists, a real escalation process works, dissent is preserved in a deployed policy, stakeholders are represented, authority narrowing executes in runtime, or any tribunal process is substantively fair.
+The consolidated proof boundary preserves the limitation boundary from both source manuscripts. These Lean modules prove small finite-record properties and rejection
+cases for declared records. Direct/projection hooks remain projection-only traceability unless the theorem reasons over an explicit transition, negative case, residual path, authority ceiling, or support-state boundary. They do not prove moral correctness, automatic
+value classification, reviewer quality, legal rights, actual export usability,
+safe forks, institutional contestability, redaction quality, SCF replacement
+behavior, or deployed rights enforcement.
 
 ## Source crosswalk
 
-| Source ID | Title | Layer | Planned use | Readiness |
-|---|---|---|---|---|
-| `ethica_mechanica` | Ethica Mechanica | alignment_constitution | Geometric-order philosophical/constitutional source. | source note available; local raw-cache passages reviewed for this chapter |
-| `alignment_field` | Field of God / Alignment Field family | alignment_constitution | Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | source note available; local raw-cache passages reviewed for this chapter |
-| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
-| `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | source note available; local raw-cache passages reviewed for this chapter |
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw-cache passages reviewed for this chapter |
-| `field_of_god_ai_constitution` | Field of God AI Constitution | constitutional_alignment_runtime_governance | Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | source note available; tracked local-project source passages reviewed for this chapter |
-
-The crosswalk names the sources for conflict vocabulary and review mechanics. Passage-reviewed mappings make the drafting trail tighter, but they do not settle the conflicts under review.
+| Source ID | Destination use | Boundary |
+|---|---|---|
+| `ethica_mechanica` | Agency, contestability, recursive correction, dissent, exit/fork, objections, public revision, and resistance to frozen sovereign authority. | Conceptual governance lineage; not a complete moral theory, tested institution, legal guarantee, or empirical governance result. |
+| `alignment_field` | Value conflict, suffering, dignity, agency, moral thresholds, pluralism, consent, anti-sacrifice constraints, and constraints under uncertainty. | Normative and heuristic lineage; not a validated measure of moral status, value correctness, or preserved rights. |
+| `coherence_exchange` | Fork, exit, audit, contestability, verification supply-chain, review-market, and governance-interface framing. | Connector-only/source-note mapped; no implemented review market, economic mechanism, or governance mechanism is claimed. |
+| `uat` | Adversarial review, retrieval-bounded verification, proposition states, unsupported-claim removal, SME checkpoints, and termination criteria for contested claims. | Protocol design only; no implemented review process or benchmark result is reproduced. |
+| `spinoza` | Support tiers, contradiction detection, belief revision, protected axioms, downgrades, and blocked self-authorizing changes. | Does not settle moral uncertainty or prove whole-system epistemic correctness, autoformalization, or governance legitimacy. |
+| `field_of_god_ai_constitution` | Stakeholder checks, uncertainty, consent, reversibility, least sufficient power, auditability, tool-risk tiers, red-team evaluation, and self-improvement freezes. | Specification source only; no policy engine, red-team result, moral-correctness proof, or governance-rights deployment is claimed. |
+| `ladon_manhattan` | Hidden credential boundaries, handle-based authority, permission lookup, isolated compartments, and credential-injection points around authority use. | Architecture/specification only; no kernel implementation, side-channel validation, audit-log implementation, or security audit is claimed. |
+| `ext_reinforcement_learning_moral_uncertainty_2020` | Comparator for preserving uncertainty across ethical theories in reinforcement-learning settings. | Comparator only; no reproduced experiment or moral-correctness evidence. |
+| `ext_contestable_ai_design_2022` | Comparator for contestability, challenge, and appeal surfaces around AI decisions. | Comparator only; no proof that ASI Stack contestability works in deployment. |
+| `ext_collective_constitutional_ai_2024` | Comparator for public-input constitutional shaping and collective normative input. | Comparator only; no proof of governance adequacy or runtime enforcement. |
+| `ext_corrigibility_2015` | Comparator for correction, operator intervention, and systems that tolerate being corrected. | Comparator only; no deployed corrigibility result. |
+| `ext_off_switch_game_2016` | Comparator for shutdown incentives and uncertainty about human objectives. | Comparator only; no evidence that this stack preserves shutdown incentives or governance exit rights. |
 
 ## Summary
 
-Moral Uncertainty and Value Conflict prevents the stack from turning contested values into invisible optimization residue. It gives planners a way to proceed under bounded uncertainty without pretending the uncertainty vanished.
+Moral uncertainty becomes governable when unresolved obligations stay visible
+after action. Governance rights become meaningful when affected people retain
+usable handles to audit, appeal, leave, fork where safe, and preserve dissent
+while the system is still capable of changing course.
 
-Its discipline is recordkeeping under disagreement: name the conflict, name the stakeholders, choose a review path, bound the action, and preserve the residual.
+The consolidated contestability layer therefore owns one combined boundary:
+disagreement is not deleted, and contestability is not merely declared. A
+governed stack can act only at the level of authority its conflict records,
+rights receipts, safety obligations, and residuals can justify.
 
-That residual becomes a governance problem. When disagreement remains, the system needs durable ways to audit, appeal, exit, fork, or preserve dissent instead of burying conflict inside an optimized action. Value conflict gives governance a specific thing to protect: the unresolved obligation, not just the final decision.
-
-Unresolved value conflict should reduce unwarranted authority. If conflict records become a way to rationalize stronger action without review, the layer has inverted its purpose.
-The healthiest outcome is not universal agreement; it is a governed record that lets the stack act within limits while making the remaining disagreement inspectable, revisable, and costly to erase.
+That boundary matters because later layers will become faster, more capable,
+and more replacement-oriented. Without durable conflict records and usable
+rights receipts, capability improvement can launder an unresolved dispute into
+a permanent default. With them, disagreement remains an engineering constraint
+that planning, memory, execution, routing, evidence, and self-improvement must
+continue to carry.
 
 ## Handoff
 
-When value conflict remains, the system needs durable rights around contestability. Governance Rights: Fork, Exit, and Audit follows because unresolved obligations must be auditable, appealable, exportable, and resistant to quiet deletion during upgrades. Recorded disagreement therefore becomes institutional design: people need technical paths to challenge, leave, fork, or review the system when reconciliation fails.
+The contestability layer hands off directly to **Stable Capability Fields**. Once value conflicts and contestability rights are represented as
+records, the next problem is replacement: how does the stack change
+capabilities, models, tools, policies, or memory systems without losing the
+rights, residual obligations, audit records, and authority limits that earlier
+layers created?

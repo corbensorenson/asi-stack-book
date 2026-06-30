@@ -36,8 +36,7 @@ The Field of God is a metaphysical and alignment-lineage corpus centered on cons
 ## Book Chapters Supported
 
 - `failure-modes-of-ungoverned-intelligence` (Failure Modes of Ungoverned Intelligence)
-- `constitutional-alignment-substrate` (Constitutional Alignment Substrate)
-- `agency-dignity-and-corrigibility` (Agency, Dignity, and Corrigibility)
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
 
 ## Claims To Add Or Update
 

@@ -36,7 +36,7 @@ This source gives the value-conflict chapter an AI-specific moral-uncertainty ba
 
 ## Book Chapters Supported
 
-- `moral-uncertainty-and-value-conflict` (Moral Uncertainty and Value Conflict)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 
 ## Claims To Add Or Update

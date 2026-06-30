@@ -24,6 +24,14 @@ PILOT_IDS = {
     "moral-uncertainty-and-value-conflict",
     "governance-rights-fork-exit-and-audit",
 }
+PILOT_DESTINATION_IDS = {
+    "constitutional-alignment-substrate",
+    "moral-uncertainty-and-value-conflict",
+}
+PILOT_RETIRED_IDS = {
+    "agency-dignity-and-corrigibility",
+    "governance-rights-fork-exit-and-audit",
+}
 REQUIRED_SOURCE_IDS = {
     "alignment_field",
     "field_of_god",
@@ -199,13 +207,13 @@ DECISION_REVIEW_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
+    "applied to the 2026-06-30 Part I pilot through static historical stubs",
     "Default URL Policy",
     "Preserve every retired source chapter's public URL",
     "Pilot Defaults",
     "/chapters/agency-dignity-and-corrigibility.html",
     "/chapters/governance-rights-fork-exit-and-audit.html",
-    "This policy does not implement redirects or historical stubs.",
-    "This policy does not change `book_structure.json`.",
+    "The 2026-06-30 Part I execution package, not this policy text alone, implemented two historical stubs and changed the manifest to 52 chapters.",
 )
 EXTERNAL_REVIEW_PACKET_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation External Review Packet",
@@ -293,9 +301,12 @@ def main() -> None:
         for chapter in part.get("chapters", [])
     }
 
-    missing_manifest = sorted(PILOT_IDS - manifest_ids)
-    if missing_manifest:
-        errors.append(f"Pilot source chapters are already missing from manifest: {missing_manifest}")
+    missing_destinations = sorted(PILOT_DESTINATION_IDS - manifest_ids)
+    if missing_destinations:
+        errors.append(f"Pilot destination chapters are missing from manifest: {missing_destinations}")
+    still_rendered_retired = sorted(PILOT_RETIRED_IDS & manifest_ids)
+    if still_rendered_retired:
+        errors.append(f"Pilot retired source chapters still appear in manifest: {still_rendered_retired}")
     for chapter_id in sorted(PILOT_IDS):
         if f"`{chapter_id}`" not in text:
             errors.append(f"Plan does not reference pilot chapter `{chapter_id}`.")
@@ -405,9 +416,9 @@ def main() -> None:
         fail(errors)
 
     print(
-        "Chapter consolidation pilot-plan validation passed: four source chapters, "
-        "two proposed merges, two dry-run packages, two destination drafts, "
-        "and one external-review packet."
+        "Chapter consolidation pilot-plan validation passed: executed Part I pilot, "
+        "two archived source chapters, two destination chapters, two dry-run packages, "
+        "two destination drafts, and one external-review packet."
     )
 
 

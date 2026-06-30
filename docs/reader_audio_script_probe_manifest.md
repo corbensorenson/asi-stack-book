@@ -1,6 +1,6 @@
 # Reader Audio-Script Probe Manifest
 
-Last updated: 2026-06-29
+Last updated: 2026-06-30
 
 This summary is synced from
 `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`. It records
@@ -22,7 +22,7 @@ python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_mani
 |---|---:|
 | Source profile | `reader_release` |
 | Audio profile | `audio_release` |
-| Script files | 59 |
+| Script files | 57 |
 | Implementation-horizon script status | pass |
 | Review status | review_required |
 
@@ -36,7 +36,7 @@ Required review files are generated in the ignored workspace:
 | Material | Count |
 |---|---:|
 | Tables | 5 |
-| Mermaid diagrams | 60 |
+| Mermaid diagrams | 58 |
 | Code/schema blocks | 0 |
 | Images | 1 |
 

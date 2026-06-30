@@ -35,8 +35,7 @@ The Eternal Code is a computational metaphysics of kernel, reality, consciousnes
 
 ## Book Chapters Supported
 
-- `constitutional-alignment-substrate` (Constitutional Alignment Substrate)
-- `agency-dignity-and-corrigibility` (Agency, Dignity, and Corrigibility)
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
 
 ## Claims To Add Or Update
 

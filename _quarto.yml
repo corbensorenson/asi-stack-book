@@ -4,6 +4,8 @@
 project:
   type: book
   output-dir: _site
+  resources:
+    - chapters/*.html
 
 lang: en-US
 
@@ -26,9 +28,7 @@ book:
         - chapters/evidence-states-and-claim-discipline.qmd
         - chapters/human-intent-as-a-formal-input.qmd
         - chapters/constitutional-alignment-substrate.qmd
-        - chapters/agency-dignity-and-corrigibility.qmd
         - chapters/moral-uncertainty-and-value-conflict.qmd
-        - chapters/governance-rights-fork-exit-and-audit.qmd
         - chapters/stable-capability-fields.qmd
         - chapters/capability-replacement-and-rollback.qmd
         - chapters/security-kernel-and-digital-scifs.qmd

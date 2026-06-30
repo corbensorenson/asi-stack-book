@@ -35,10 +35,8 @@ Ethica Mechanica is a philosophical and socio-technical treatise that frames rea
 
 ## Book Chapters Supported
 
-- `constitutional-alignment-substrate` (Constitutional Alignment Substrate)
-- `agency-dignity-and-corrigibility` (Agency, Dignity, and Corrigibility)
-- `moral-uncertainty-and-value-conflict` (Moral Uncertainty and Value Conflict)
-- `governance-rights-fork-exit-and-audit` (Governance Rights: Fork, Exit, and Audit)
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 
 ## Claims To Add Or Update
 

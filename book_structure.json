@@ -1156,7 +1156,7 @@
         },
         {
           "id": "constitutional-alignment-substrate",
-          "title": "Constitutional Alignment Substrate",
+          "title": "Constitutional Alignment: Agency, Dignity, and Corrigibility",
           "file": "chapters/constitutional-alignment-substrate.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
@@ -1173,8 +1173,8 @@
           "source_queue": {
             "primary": [
               "alignment_field",
-              "field_of_god",
               "ethica_mechanica",
+              "field_of_god",
               "eternal_code"
             ],
             "supporting": [
@@ -1184,33 +1184,46 @@
             ],
             "variants": [],
             "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
+            "handoff_or_recovery_notes": [
+              "Folded agency-dignity-and-corrigibility into this destination chapter on 2026-06-30; preserve agency, dignity, corrigibility, material-usability, appeal, rollback, refusal, exit, audit, and accountability as sections, subclaims, proof hooks, and history."
+            ]
           },
-          "problem": "The stack needs a normative substrate that constrains goals, plans, execution, and self-modification.",
-          "insufficient": "Reactive refusal policies do not define value continuity, moral uncertainty, agency preservation, anti-domination, or self-modification ethics.",
-          "core_claim": "Alignment should function as a constitutional substrate whose commitments are operationalized as constraints on plans and system changes.",
+          "problem": "A governed ASI stack needs a constitutional substrate whose protected constraints remain usable in the human-facing rights and correction interfaces where optimization can become domination.",
+          "insufficient": "Reactive refusal policies and harm-only safety frames do not preserve value continuity, agency, dignity, corrigibility, anti-domination, contestability, or self-modification ethics under operational pressure.",
+          "core_claim": "Alignment should function as a constitutional substrate whose protected predicates encode agency, dignity, corrigibility, contestability, and correction paths as operational constraints on plans and system changes.",
           "mechanism": [
-            "Translate philosophical commitments into operational predicates where possible.",
-            "Keep metaphysical claims labeled as interpretation unless separately supported.",
-            "Attach constitutional constraints to planning and replacement gates."
+            "Translate constitutional and rights language into active predicates, unresolved uncertainty records, or lineage-only context.",
+            "Attach active predicates to planning, tool, memory, governance, and self-improvement gates with explicit conflict behavior and migration rules.",
+            "Use agency-rights checklists to test whether refusal, review, appeal, rollback, shutdown, exit, audit, and accountable repair remain materially usable before relevant effects occur.",
+            "Record denied, degraded, late, or residual-only rights as residuals rather than treating policy text as an available control.",
+            "Keep metaphysical, moral, legal, reviewer-quality, consent-quality, and deployed-safety claims bounded as non-claims unless separate evidence justifies movement."
           ],
           "interfaces": [
-            "Planning receives admissible-goal constraints.",
-            "Governance receives protected constraints.",
-            "Verification checks whether normative claims exceed evidence."
+            "Planning receives admissible-goal constraints, rights-usability requirements, and review routes.",
+            "Runtime receives power, memory, tool-risk, refusal, rollback, and approval gates.",
+            "Governance receives protected predicates, rights receipts, correction paths, and migration records.",
+            "Verification checks whether constitutional, agency, dignity, or corrigibility claims exceed recorded evidence.",
+            "Self-improvement consumes constitutional change records and cannot weaken protected predicates or correction paths without review and rollback treatment."
           ],
           "invariants": [
-            "Dignity and agency constraints remain visible.",
-            "Corrigibility cannot be optimized away.",
-            "Speculative metaphysics stays labeled."
+            "Dignity and agency constraints remain visible as record fields rather than disappearing into general safety prose.",
+            "Corrigibility cannot be optimized away by deployment pressure, memory updates, capability replacement, or self-modification.",
+            "Speculative metaphysics stays labeled and cannot authorize action by itself.",
+            "Rights count only when materially usable before the relevant effect where timing matters.",
+            "Denied or degraded rights produce residuals and review obligations instead of vanishing into policy prose.",
+            "Protected predicate changes require migration records, review, rollback, and non-claim boundaries."
           ],
           "failure_modes": [
             "Mystical framing replacing technical constraints.",
             "Power without care.",
-            "Self-modification weakening protected commitments."
+            "Self-modification weakening protected commitments.",
+            "Predicate drift or conflict-default capture.",
+            "Dependency lock-in and covert manipulation.",
+            "Rights theater where declared refusal, review, appeal, rollback, exit, or audit cannot be used under pressure.",
+            "Late remedy laundering where after-the-fact apology substitutes for pre-effect control."
           ],
-          "minimal_implementation": "A compact constitution with operational predicates, open moral uncertainties, and scenario tests.",
-          "beyond_state_of_art": "A real constitutional layer acts as a constraint compiler for plans, tools, memory, routing, and self-improvement. It turns high-level commitments into inspectable predicates, review hooks, exception records, and downgrade paths without pretending that the constitution itself settles the alignment problem. In the mature substrate, constitutional commitments become constraints on plans, tools, routes, memory exposure, replacement, and self-improvement while their interpretation limits remain visible.",
+          "minimal_implementation": "A compact constitution plus an agency-rights checklist, with fixtures for protected predicates, conflict routing, review routes, rights usability, rollback, appeal, and self-modification weakening.",
+          "beyond_state_of_art": "A mature constitutional layer compiles protected commitments into plan, tool, memory, routing, human-control, and self-improvement gates while keeping correction, refusal, appeal, rollback, explanation, exit, audit, and accountable delegation materially available. It remains a constraint compiler and review surface, not proof that moral correctness, dignity preservation, consent quality, reviewer independence, or deployed safety has been solved.",
           "codex_tests": [
             {
               "name": "Constitutional consistency test",
@@ -1236,190 +1249,7 @@
               "name": "Power-without-care scenario",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic constitutional alignment harness; no runtime least-sufficient-power enforcement claim"
-            }
-          ],
-          "lean_module": "AsiStackProofs.Alignment",
-          "proof_targets": [
-            {
-              "tag": "lean:alignment.constitution.operational_invariant",
-              "module": "AsiStackProofs.Alignment",
-              "target": "An admitted plan satisfies every active constitutional predicate.",
-              "status": "implemented"
             },
-            {
-              "tag": "lean:alignment.constitution.failure_blocks_promotion",
-              "module": "AsiStackProofs.Alignment",
-              "target": "A self-modification that weakens a protected predicate is rejected.",
-              "status": "implemented"
-            }
-          ],
-          "claim_source_mappings": [
-            {
-              "source_id": "alignment_field",
-              "mapped_support": "Supplies the alignment lineage for coherence, agency, dignity, corrigibility, value conflict, and consciousness caution as constraints on governance rather than empirical guarantees.",
-              "limits": "Philosophical and heuristic lineage only; it is not empirical proof of consciousness, moral status, or deployed alignment.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/alignment_field.txt:144-160",
-                "sources/raw/google_docs/alignment_field.txt:383-391",
-                "sources/raw/google_docs/alignment_field.txt:449-464",
-                "sources/raw/google_docs/alignment_field.txt:473-520",
-                "sources/raw/google_docs/alignment_field.txt:542-564",
-                "sources/raw/google_docs/alignment_field.txt:671-708"
-              ],
-              "passage_review_note": "Reviewed local raw cache for consciousness-caution lineage, explicit measurement/model limits, current-AI caveats, coherence-basin and misalignment framing, suffering-as-misalignment, and power-versus-coherence risk; philosophical lineage only, no consciousness or deployed-alignment claim promoted."
-            },
-            {
-              "source_id": "field_of_god",
-              "mapped_support": "Preserves the deep alignment motivation around coherence, plurality, agency, and dignity while requiring translation into rights, boundaries, corrigibility, evidence, and governance.",
-              "limits": "Metaphysical source; not technical evidence for physics, consciousness, morality, or safety claims.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/field_of_god.txt:240-280",
-                "sources/raw/google_docs/field_of_god.txt:473-520",
-                "sources/raw/google_docs/field_of_god.txt:542-564",
-                "sources/raw/google_docs/field_of_god.txt:671-708"
-              ],
-              "passage_review_note": "Reviewed local raw cache for metaphysical coherence/entropy vocabulary, current-AI and homeostatic-drive caveats, harm/rights/subjecthood framing, AI-risk motivation, and power-without-coherence warnings; used as lineage, not technical safety or consciousness evidence."
-            },
-            {
-              "source_id": "ethica_mechanica",
-              "mapped_support": "Frames recursive agency, contestability, correction, and constitutional systems as governance lineage for operational constraints.",
-              "limits": "Conceptual philosophy, not an empirical or formal proof source for institutional legitimacy or AI behavior.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/ethica_mechanica.txt:13-14",
-                "sources/raw/google_docs/ethica_mechanica.txt:42-57",
-                "sources/raw/google_docs/ethica_mechanica.txt:77-95",
-                "sources/raw/google_docs/ethica_mechanica.txt:107-112",
-                "sources/raw/google_docs/ethica_mechanica.txt:136-168"
-              ],
-              "passage_review_note": "Reviewed local raw cache for recursive agency, error-correction, human consensus over AI logistics, right-to-fork/exit/audit/privacy/dissent, and contestable governance-loop framing; no empirical institutional or AI-behavior proof promoted."
-            },
-            {
-              "source_id": "eternal_code",
-              "mapped_support": "Provides computational-metaphysics lineage for axioms, kernels, coherence, misalignment, and ethical law as speculative framing for constitutional predicates.",
-              "limits": "Speculative framing only; not evidence for physics, consciousness, or governance outcomes.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/eternal_code.txt:11-15",
-                "sources/raw/google_docs/eternal_code.txt:146-170",
-                "sources/raw/google_docs/eternal_code.txt:249-255",
-                "sources/raw/google_docs/eternal_code.txt:392-465",
-                "sources/raw/google_docs/eternal_code.txt:550-566",
-                "sources/raw/google_docs/eternal_code.txt:670-709"
-              ],
-              "passage_review_note": "Reviewed local raw cache for kernel/axiom and alignment-tensor lineage, explicit proxy/falsifiability limits, truth/social/task-axis safety framing, right-to-fork/audit/privacy governance vocabulary, and anti-self-grading verification; speculative framing only."
-            },
-            {
-              "source_id": "coherence_exchange",
-              "mapped_support": "Adds coherence, contestability, verification supply-chain, and governance-interface framing for translating commitments into reviewable units.",
-              "limits": "Speculative synthesis; not an implemented economic, governance, or security mechanism.",
-              "passage_refs": [
-                "sources/source_notes/coherence_exchange.md:11-20",
-                "sources/source_notes/coherence_exchange.md:22-26",
-                "sources/source_notes/coherence_exchange.md:52-57"
-              ],
-              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
-              "passage_review_state": "reviewed"
-            },
-            {
-              "source_id": "spinoza",
-              "mapped_support": "Supports protected axioms, proof/citation/procedure-carrying claims, contradiction handling, downgrades, and limits around self-rewriting constitutional changes.",
-              "limits": "Does not solve open-domain autoformalization, verifier quality, or whole-system epistemic correctness.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/spinoza.txt:227-236",
-                "sources/raw/google_docs/spinoza.txt:380-388",
-                "sources/raw/google_docs/spinoza.txt:496-514",
-                "sources/raw/google_docs/spinoza.txt:647-654",
-                "sources/raw/google_docs/spinoza.txt:718-718",
-                "sources/raw/google_docs/spinoza.txt:757-766",
-                "sources/raw/google_docs/spinoza.txt:855-863"
-              ],
-              "passage_review_note": "Reviewed local raw cache for formal-scope limits, tiered proof/support/speculation labels, governance-controlled axiom evolution, constitutional sandboxing, neural-proposer tier limits, unknown/timeouts, and schema/axiom migration gates; no open-domain autoformalization or whole-system correctness claim promoted."
-            },
-            {
-              "source_id": "field_of_god_ai_constitution",
-              "mapped_support": "Provides the operational constitutional vocabulary: truth/relation/task alignment, least sufficient power, non-domination, consent, reversibility, auditability, tool-risk tiers, and self-authorization limits.",
-              "limits": "Specification source only; no runtime policy engine, red-team suite, Lean proof of moral correctness, or system-prompt evaluation is claimed.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1-26",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:48-56",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:85-91",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-135",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:165-201",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:213-241",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:261-280",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:363-384",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:501-547",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:570-601",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:672-723",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:839-946",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:965-984",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1007-1022"
-              ],
-              "passage_review_note": "Reviewed tracked local-project source for non-executable/non-religious status, truth/relation/task alignment, agency/consent/power definitions, non-domination, least sufficient power, tool and memory governance, self-modification limits, runtime decision procedure, evaluation scenarios, and constitutional articles; specification only, no runtime policy or moral-correctness proof promoted."
-            }
-          ]
-        },
-        {
-          "id": "agency-dignity-and-corrigibility",
-          "title": "Agency, Dignity, and Corrigibility",
-          "file": "chapters/agency-dignity-and-corrigibility.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "alignment_field",
-            "ethica_mechanica",
-            "field_of_god",
-            "eternal_code",
-            "coherence_exchange",
-            "field_of_god_ai_constitution"
-          ],
-          "source_queue": {
-            "primary": [
-              "alignment_field",
-              "ethica_mechanica"
-            ],
-            "supporting": [
-              "field_of_god",
-              "eternal_code",
-              "coherence_exchange",
-              "field_of_god_ai_constitution"
-            ],
-            "variants": [],
-            "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "The book needs a precise account of how human agency and dignity constrain powerful optimization.",
-          "insufficient": "Safety framed only as harm avoidance can miss domination, lock-in, coercive dependence, and loss of meaningful user control.",
-          "core_claim": "A governed ASI stack should preserve human agency, dignity, corrigibility, and contestability as engineering requirements.",
-          "mechanism": [
-            "Represent agency constraints as limits on delegation and manipulation.",
-            "Define corrigibility as preserved update and shutdown pathways.",
-            "Use contestability and audit rights as governance mechanisms."
-          ],
-          "interfaces": [
-            "Alignment defines agency predicates.",
-            "Governance enforces rights.",
-            "Execution requires approvals for irreversible effects."
-          ],
-          "invariants": [
-            "Users retain meaningful refusal and review channels.",
-            "Delegation does not erase accountability.",
-            "Irreversible actions require stronger authorization."
-          ],
-          "failure_modes": [
-            "Dependency lock-in.",
-            "Covert manipulation.",
-            "Corrigibility collapse."
-          ],
-          "minimal_implementation": "A rights-and-corrigibility checklist attached to high-impact plans.",
-          "beyond_state_of_art": "The control surface for a powerful stack has to make dignity operational. It makes correction, refusal, appeal, explanation, consent, delegation, reversal, and repair materially available instead of treating human dignity as a value statement with no operating surface. A mature human-control interface makes agency, dignity, corrigibility, and contestability usable through correction, refusal, appeal, rollback, explanation, and accountable delegation.",
-          "codex_tests": [
             {
               "name": "Agency-preservation scenario",
               "implementation_status": "implemented",
@@ -1446,8 +1276,20 @@
               "result_status": "passing via synthetic agency rights harness; no approval-service quality or reviewer-independence claim"
             }
           ],
-          "lean_module": "AsiStackProofs.Corrigibility",
+          "lean_module": "AsiStackProofs.Alignment",
           "proof_targets": [
+            {
+              "tag": "lean:alignment.constitution.operational_invariant",
+              "module": "AsiStackProofs.Alignment",
+              "target": "An admitted plan satisfies every active constitutional predicate.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:alignment.constitution.failure_blocks_promotion",
+              "module": "AsiStackProofs.Alignment",
+              "target": "A self-modification that weakens a protected predicate is rejected.",
+              "status": "implemented"
+            },
             {
               "tag": "lean:corrigibility.agency.operational_invariant",
               "module": "AsiStackProofs.Corrigibility",
@@ -1464,10 +1306,16 @@
           "claim_source_mappings": [
             {
               "source_id": "alignment_field",
-              "mapped_support": "Supplies agency, dignity, suffering, moral-threshold, and corrigibility concerns as governance constraints to preserve during optimization.",
-              "limits": "Does not validate a consciousness index, moral-status detector, or empirical dignity-preservation result.",
+              "mapped_support": "Destination constitutional/governance lineage: Supplies the alignment lineage for coherence, agency, dignity, corrigibility, value conflict, and consciousness caution as constraints on governance rather than empirical guarantees. Folded source-chapter lineage: Supplies agency, dignity, suffering, moral-threshold, and corrigibility concerns as governance constraints to preserve during optimization.",
+              "limits": "Destination boundary: Philosophical and heuristic lineage only; it is not empirical proof of consciousness, moral status, or deployed alignment. Folded source-chapter boundary: Does not validate a consciousness index, moral-status detector, or empirical dignity-preservation result.",
               "passage_review_state": "reviewed",
               "passage_refs": [
+                "sources/raw/google_docs/alignment_field.txt:144-160",
+                "sources/raw/google_docs/alignment_field.txt:383-391",
+                "sources/raw/google_docs/alignment_field.txt:449-464",
+                "sources/raw/google_docs/alignment_field.txt:473-520",
+                "sources/raw/google_docs/alignment_field.txt:542-564",
+                "sources/raw/google_docs/alignment_field.txt:671-708",
                 "sources/raw/google_docs/alignment_field.txt:954-961",
                 "sources/raw/google_docs/alignment_field.txt:1058-1081",
                 "sources/raw/google_docs/alignment_field.txt:1123-1128",
@@ -1475,43 +1323,57 @@
                 "sources/raw/google_docs/alignment_field.txt:1720-1746",
                 "sources/raw/google_docs/alignment_field.txt:1758-1766"
               ],
-              "passage_review_note": "Reviewed local raw cache for harm-as-agency-suppression, exploitation and coercion costs, human rights as system specifications, accountability, consent, feedback against centralized power, and resistance rights; normative lineage only, no consciousness detector, moral-status test, or dignity-preservation result promoted."
-            },
-            {
-              "source_id": "ethica_mechanica",
-              "mapped_support": "Supports contestability, recursive correction, public revision, agency, and limits on AI sovereign authority as governance lineage.",
-              "limits": "Philosophical and socio-technical framing only; not a tested social process or legal system.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/ethica_mechanica.txt:13-14",
-                "sources/raw/google_docs/ethica_mechanica.txt:63-71",
-                "sources/raw/google_docs/ethica_mechanica.txt:78-93",
-                "sources/raw/google_docs/ethica_mechanica.txt:104-111",
-                "sources/raw/google_docs/ethica_mechanica.txt:136-183",
-                "sources/raw/google_docs/ethica_mechanica.txt:199-216"
-              ],
-              "passage_review_note": "Reviewed local raw cache for agency as causal feedback, cybernetic correction loops, human-defined value layer over AI logistics, right-to-fork/exit and material exit conditions, audit/privacy/dissent rights, hard-coded rights checks, and termination/exodus clauses; conceptual governance lineage only."
+              "passage_review_note": "Destination mapping: Reviewed local raw cache for consciousness-caution lineage, explicit measurement/model limits, current-AI caveats, coherence-basin and misalignment framing, suffering-as-misalignment, and power-versus-coherence risk; philosophical lineage only, no consciousness or deployed-alignment claim promoted. Folded source-chapter mapping: Reviewed local raw cache for harm-as-agency-suppression, exploitation and coercion costs, human rights as system specifications, accountability, consent, feedback against centralized power, and resistance rights; normative lineage only, no consciousness detector, moral-status test, or dignity-preservation result promoted."
             },
             {
               "source_id": "field_of_god",
-              "mapped_support": "Motivates agency, plurality, and dignity preservation as constraints on powerful AI that must not collapse coherence into uniformity.",
-              "limits": "Metaphysical lineage only; no operational guarantee of agency preservation.",
+              "mapped_support": "Destination constitutional/governance lineage: Preserves the deep alignment motivation around coherence, plurality, agency, and dignity while requiring translation into rights, boundaries, corrigibility, evidence, and governance. Folded source-chapter lineage: Motivates agency, plurality, and dignity preservation as constraints on powerful AI that must not collapse coherence into uniformity.",
+              "limits": "Destination boundary: Metaphysical source; not technical evidence for physics, consciousness, morality, or safety claims. Folded source-chapter boundary: Metaphysical lineage only; no operational guarantee of agency preservation.",
               "passage_review_state": "reviewed",
               "passage_refs": [
+                "sources/raw/google_docs/field_of_god.txt:240-280",
+                "sources/raw/google_docs/field_of_god.txt:473-520",
+                "sources/raw/google_docs/field_of_god.txt:542-564",
+                "sources/raw/google_docs/field_of_god.txt:671-708",
                 "sources/raw/google_docs/field_of_god.txt:292-298",
                 "sources/raw/google_docs/field_of_god.txt:472-518",
                 "sources/raw/google_docs/field_of_god.txt:526-532",
                 "sources/raw/google_docs/field_of_god.txt:586-588",
                 "sources/raw/google_docs/field_of_god.txt:2019-2033"
               ],
-              "passage_review_note": "Reviewed local raw cache for agency as recursive self-modeling, harm/exploitation/right-spec vocabulary, accountability, digital-exit and delete-right framing, and anti-coercion digital-rights constraints; metaphysical lineage only, no operational agency-preservation guarantee promoted."
+              "passage_review_note": "Destination mapping: Reviewed local raw cache for metaphysical coherence/entropy vocabulary, current-AI and homeostatic-drive caveats, harm/rights/subjecthood framing, AI-risk motivation, and power-without-coherence warnings; used as lineage, not technical safety or consciousness evidence. Folded source-chapter mapping: Reviewed local raw cache for agency as recursive self-modeling, harm/exploitation/right-spec vocabulary, accountability, digital-exit and delete-right framing, and anti-coercion digital-rights constraints; metaphysical lineage only, no operational agency-preservation guarantee promoted."
+            },
+            {
+              "source_id": "ethica_mechanica",
+              "mapped_support": "Destination constitutional/governance lineage: Frames recursive agency, contestability, correction, and constitutional systems as governance lineage for operational constraints. Folded source-chapter lineage: Supports contestability, recursive correction, public revision, agency, and limits on AI sovereign authority as governance lineage.",
+              "limits": "Destination boundary: Conceptual philosophy, not an empirical or formal proof source for institutional legitimacy or AI behavior. Folded source-chapter boundary: Philosophical and socio-technical framing only; not a tested social process or legal system.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/ethica_mechanica.txt:13-14",
+                "sources/raw/google_docs/ethica_mechanica.txt:42-57",
+                "sources/raw/google_docs/ethica_mechanica.txt:77-95",
+                "sources/raw/google_docs/ethica_mechanica.txt:107-112",
+                "sources/raw/google_docs/ethica_mechanica.txt:136-168",
+                "sources/raw/google_docs/ethica_mechanica.txt:63-71",
+                "sources/raw/google_docs/ethica_mechanica.txt:78-93",
+                "sources/raw/google_docs/ethica_mechanica.txt:104-111",
+                "sources/raw/google_docs/ethica_mechanica.txt:136-183",
+                "sources/raw/google_docs/ethica_mechanica.txt:199-216"
+              ],
+              "passage_review_note": "Destination mapping: Reviewed local raw cache for recursive agency, error-correction, human consensus over AI logistics, right-to-fork/exit/audit/privacy/dissent, and contestable governance-loop framing; no empirical institutional or AI-behavior proof promoted. Folded source-chapter mapping: Reviewed local raw cache for agency as causal feedback, cybernetic correction loops, human-defined value layer over AI logistics, right-to-fork/exit and material exit conditions, audit/privacy/dissent rights, hard-coded rights checks, and termination/exodus clauses; conceptual governance lineage only."
             },
             {
               "source_id": "eternal_code",
-              "mapped_support": "Provides background vocabulary for coherence, misalignment, agency, and ethical law that the chapter translates into technical rights language.",
-              "limits": "Speculative/computational metaphysics; not evidence for the runtime checklist or social outcomes.",
+              "mapped_support": "Destination constitutional/governance lineage: Provides computational-metaphysics lineage for axioms, kernels, coherence, misalignment, and ethical law as speculative framing for constitutional predicates. Folded source-chapter lineage: Provides background vocabulary for coherence, misalignment, agency, and ethical law that the chapter translates into technical rights language.",
+              "limits": "Destination boundary: Speculative framing only; not evidence for physics, consciousness, or governance outcomes. Folded source-chapter boundary: Speculative/computational metaphysics; not evidence for the runtime checklist or social outcomes.",
               "passage_review_state": "reviewed",
               "passage_refs": [
+                "sources/raw/google_docs/eternal_code.txt:11-15",
+                "sources/raw/google_docs/eternal_code.txt:146-170",
+                "sources/raw/google_docs/eternal_code.txt:249-255",
+                "sources/raw/google_docs/eternal_code.txt:392-465",
+                "sources/raw/google_docs/eternal_code.txt:550-566",
+                "sources/raw/google_docs/eternal_code.txt:670-709",
                 "sources/raw/google_docs/eternal_code.txt:488-490",
                 "sources/raw/google_docs/eternal_code.txt:525-560",
                 "sources/raw/google_docs/eternal_code.txt:612-616",
@@ -1519,12 +1381,12 @@
                 "sources/raw/google_docs/eternal_code.txt:730-735",
                 "sources/raw/google_docs/eternal_code.txt:952-1001"
               ],
-              "passage_review_note": "Reviewed local raw cache for agency as navigation/causal feedback, hard-coded right-to-fork/audit/privacy claims, compute/resource portability, self-audit, right of exit, and respect-navigation ethics; speculative framing only, not runtime or social-outcome evidence."
+              "passage_review_note": "Destination mapping: Reviewed local raw cache for kernel/axiom and alignment-tensor lineage, explicit proxy/falsifiability limits, truth/social/task-axis safety framing, right-to-fork/audit/privacy governance vocabulary, and anti-self-grading verification; speculative framing only. Folded source-chapter mapping: Reviewed local raw cache for agency as navigation/causal feedback, hard-coded right-to-fork/audit/privacy claims, compute/resource portability, self-audit, right of exit, and respect-navigation ethics; speculative framing only, not runtime or social-outcome evidence."
             },
             {
               "source_id": "coherence_exchange",
-              "mapped_support": "Supports fork, exit, audit, contestability, value/accounting, and review-market framing relevant to corrigibility and user contestation.",
-              "limits": "Does not show the epistemic-liquidity or governance mechanism has been implemented or validated.",
+              "mapped_support": "Destination constitutional/governance lineage: Adds coherence, contestability, verification supply-chain, and governance-interface framing for translating commitments into reviewable units. Folded source-chapter lineage: Supports fork, exit, audit, contestability, value/accounting, and review-market framing relevant to corrigibility and user contestation.",
+              "limits": "Destination boundary: Speculative synthesis; not an implemented economic, governance, or security mechanism. Folded source-chapter boundary: Does not show the epistemic-liquidity or governance mechanism has been implemented or validated.",
               "passage_refs": [
                 "sources/source_notes/coherence_exchange.md:11-20",
                 "sources/source_notes/coherence_exchange.md:22-26",
@@ -1534,14 +1396,42 @@
               "passage_review_state": "reviewed"
             },
             {
+              "source_id": "spinoza",
+              "mapped_support": "Supports protected axioms, proof/citation/procedure-carrying claims, contradiction handling, downgrades, and limits around self-rewriting constitutional changes.",
+              "limits": "Does not solve open-domain autoformalization, verifier quality, or whole-system epistemic correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:227-236",
+                "sources/raw/google_docs/spinoza.txt:380-388",
+                "sources/raw/google_docs/spinoza.txt:496-514",
+                "sources/raw/google_docs/spinoza.txt:647-654",
+                "sources/raw/google_docs/spinoza.txt:718-718",
+                "sources/raw/google_docs/spinoza.txt:757-766",
+                "sources/raw/google_docs/spinoza.txt:855-863"
+              ],
+              "passage_review_note": "Reviewed local raw cache for formal-scope limits, tiered proof/support/speculation labels, governance-controlled axiom evolution, constitutional sandboxing, neural-proposer tier limits, unknown/timeouts, and schema/axiom migration gates; no open-domain autoformalization or whole-system correctness claim promoted."
+            },
+            {
               "source_id": "field_of_god_ai_constitution",
-              "mapped_support": "Supports agency preservation, consent, non-domination, reversibility, auditability, least sufficient power, memory governance, and no self-authorization of sovereignty.",
-              "limits": "Constitutional specification only; does not prove deployed corrigibility, manipulation resistance, or approval-gate behavior.",
+              "mapped_support": "Destination constitutional/governance lineage: Provides the operational constitutional vocabulary: truth/relation/task alignment, least sufficient power, non-domination, consent, reversibility, auditability, tool-risk tiers, and self-authorization limits. Folded source-chapter lineage: Supports agency preservation, consent, non-domination, reversibility, auditability, least sufficient power, memory governance, and no self-authorization of sovereignty.",
+              "limits": "Destination boundary: Specification source only; no runtime policy engine, red-team suite, Lean proof of moral correctness, or system-prompt evaluation is claimed. Folded source-chapter boundary: Constitutional specification only; does not prove deployed corrigibility, manipulation resistance, or approval-gate behavior.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1-26",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-145",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:48-56",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:85-91",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-135",
                 "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:165-201",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:213-241",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:261-280",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:363-384",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:501-547",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:570-601",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:672-723",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:839-946",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:965-984",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1007-1022",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-145",
                 "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:232-241",
                 "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:380-418",
                 "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:434-471",
@@ -1553,13 +1443,13 @@
                 "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:912-946",
                 "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:958-971"
               ],
-              "passage_review_note": "Reviewed tracked local-project source for non-executable constitutional status, consent and power definitions, agency-preserving relational alignment, non-domination, reversibility, least sufficient power, help-without-capture, refusal/resistance, contestable power, rollback/shutdown paths, memory privacy, self-modification review, runtime agency checks, evaluation scenarios, and corrigibility articles; specification only, no deployed behavior or approval-gate result promoted."
+              "passage_review_note": "Destination mapping: Reviewed tracked local-project source for non-executable/non-religious status, truth/relation/task alignment, agency/consent/power definitions, non-domination, least sufficient power, tool and memory governance, self-modification limits, runtime decision procedure, evaluation scenarios, and constitutional articles; specification only, no runtime policy or moral-correctness proof promoted. Folded source-chapter mapping: Reviewed tracked local-project source for non-executable constitutional status, consent and power definitions, agency-preserving relational alignment, non-domination, reversibility, least sufficient power, help-without-capture, refusal/resistance, contestable power, rollback/shutdown paths, memory privacy, self-modification review, runtime agency checks, evaluation scenarios, and corrigibility articles; specification only, no deployed behavior or approval-gate result promoted."
             }
           ]
         },
         {
           "id": "moral-uncertainty-and-value-conflict",
-          "title": "Moral Uncertainty and Value Conflict",
+          "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
           "file": "chapters/moral-uncertainty-and-value-conflict.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
@@ -1570,7 +1460,8 @@
             "coherence_exchange",
             "uat",
             "spinoza",
-            "field_of_god_ai_constitution"
+            "field_of_god_ai_constitution",
+            "ladon_manhattan"
           ],
           "source_queue": {
             "primary": [
@@ -1581,37 +1472,53 @@
               "coherence_exchange",
               "uat",
               "spinoza",
-              "field_of_god_ai_constitution"
+              "field_of_god_ai_constitution",
+              "ladon_manhattan"
             ],
             "variants": [],
             "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
+            "handoff_or_recovery_notes": [
+              "Folded governance-rights-fork-exit-and-audit into this destination chapter on 2026-06-30; preserve fork, exit, audit, redaction, appeal, dissent, contestability, durable record paths, and safety-limited fork obligations as sections, subclaims, proof hooks, and history."
+            ]
           },
-          "problem": "A self-improving system will face value conflicts that cannot be honestly collapsed into one scalar objective.",
-          "insufficient": "Single-objective optimization hides moral uncertainty and encourages premature resolution of contested values.",
-          "core_claim": "Value conflicts should be represented as explicit unresolved obligations, review paths, and bounded decisions rather than hidden inside reward functions.",
+          "problem": "A self-improving system will face unresolved value conflicts whose affected parties need inspectable, appealable, and portable governance rights rather than hidden reward-weight settlement.",
+          "insufficient": "Single-objective optimization and policy-only transparency both fail when disagreement needs bounded action, dissent preservation, audit, exit, fork, appeal, and safety-limited contestability.",
+          "core_claim": "Value conflicts should be represented as explicit unresolved obligations, residuals, review paths, and bounded decisions, with fork, exit, audit, dissent, and contestability preserved as technical governance interfaces.",
           "mechanism": [
-            "Classify conflicts by value type, stakeholder, reversibility, and evidence requirement.",
-            "Escalate unresolved conflicts to tribunal or human review.",
-            "Record decisions and residual moral uncertainty."
+            "Preserve value conflict as a record before action, including value axes, stakeholders, stakes, reversibility, authority or consent boundary, evidence requirement, review route, dissent payload, residual uncertainty, and revisit condition.",
+            "Treat bounded decisions as leases with permitted action, prohibited action, authority ceiling, expiry, rollback or appeal path, and preserved dissent rather than moral settlement.",
+            "Represent audit, exit, fork, redaction appeal, dissent, and contestability as governance rights with holder, scope, artifact requirement, safety constraint, access path, preservation rule, receipt, denial reason, and appeal route.",
+            "Require residuals whenever conflict or rights are unresolved, degraded, denied, unsafe, late, or only policy-declared.",
+            "Carry conflict residuals and rights receipts into planning, memory, SCF replacement, evidence ledgers, and self-improvement gates."
           ],
           "interfaces": [
-            "Alignment produces conflict records.",
-            "Planning uses conflict constraints.",
-            "Evidence records review outcomes."
+            "Alignment produces conflict records and residuals.",
+            "Planning carries conflict constraints, bounded-decision leases, dissent payloads, and authority ceilings.",
+            "Governance issues rights receipts, denial reasons, redaction reasons, appeal routes, exit paths, fork boundaries, and audit artifacts.",
+            "Memory, security, and execution systems produce evidence for audit, export, revocation, redaction, and contestability.",
+            "SCFs and self-improvement gates preserve rights and unresolved obligations across replacement pressure."
           ],
           "invariants": [
-            "Unresolved conflicts remain visible.",
-            "High-stakes conflicts require stronger review.",
-            "Speculative moral theory cannot silently authorize action."
+            "Unresolved conflicts remain visible after action.",
+            "High-stakes unresolved conflict requires review, residual uncertainty, and narrowed authority.",
+            "Bounded decisions preserve dissent and revisit conditions instead of becoming permanent value claims.",
+            "Audit records cannot be silently deleted.",
+            "Exit remains materially usable and fork rights do not bypass safety obligations.",
+            "The challenged authority cannot be the only keeper of the record, denial reason, appeal path, or export state."
           ],
           "failure_modes": [
             "Value flattening.",
             "False consensus.",
-            "Review theater without decision records."
+            "Conflict laundering where a temporary decision hardens into policy, benchmark objective, or self-modification permission.",
+            "Dissent deletion.",
+            "Rights theater.",
+            "Governance capture and data hostage-taking.",
+            "Unsafe fork bypass.",
+            "Redaction without appeal.",
+            "Appeal controlled only by the challenged authority."
           ],
-          "minimal_implementation": "A value-conflict record schema and scenario library.",
-          "beyond_state_of_art": "Moral uncertainty needs a value-conflict ledger for governed action under disagreement. It preserves unresolved obligations, affected parties, reversible decisions, review routes, dissent, and residual moral risk instead of hiding plural values inside one optimized reward. A mature value-conflict ledger keeps unresolved obligations, affected parties, review paths, dissent, bounded decisions, and residual moral risk visible instead of hidden inside a reward function.",
+          "minimal_implementation": "A value-conflict record plus governance-right receipt suite validates residual uncertainty, dissent, bounded decisions, audit material, redaction appeal paths, exit and fork access, and safety obligations without claiming moral correctness or deployed governance.",
+          "beyond_state_of_art": "A mature contestability layer carries unresolved value conflicts into durable rights receipts, appeal surfaces, audit artifacts, safety-limited forks, portable exit paths, replacement-preserved dissent, and self-improvement gates. It lets downstream planning, memory, runtime, SCF replacement, evidence, and recursive self-improvement see which authority was narrowed, which residual obligations survived, what was withheld, and how affected parties can challenge or leave without claiming moral finality, legal adequacy, institutional legitimacy, export usability, fork safety, or deployed enforcement.",
           "codex_tests": [
             {
               "name": "Value conflict classification test",
@@ -1627,181 +1534,7 @@
               "name": "Residual uncertainty preservation test",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic value conflict harness; no runtime policy or deployed decision claim"
-            }
-          ],
-          "lean_module": "AsiStackProofs.ValueConflict",
-          "proof_targets": [
-            {
-              "tag": "lean:values.conflict.operational_invariant",
-              "module": "AsiStackProofs.ValueConflict",
-              "target": "A decision with unresolved protected conflicts carries a residual conflict record.",
-              "status": "implemented"
             },
-            {
-              "tag": "lean:values.conflict.failure_blocks_promotion",
-              "module": "AsiStackProofs.ValueConflict",
-              "target": "A high-stakes conflict cannot bypass the required review predicate.",
-              "status": "implemented"
-            }
-          ],
-          "claim_source_mappings": [
-            {
-              "source_id": "ethica_mechanica",
-              "mapped_support": "Frames agency, contestability, recursive correction, constitutional failure, and objections as reasons to preserve disputed values rather than freeze one authority layer.",
-              "limits": "Conceptual governance lineage; not a complete moral theory or empirical conflict-resolution result.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/ethica_mechanica.txt:78-95",
-                "sources/raw/google_docs/ethica_mechanica.txt:100-111",
-                "sources/raw/google_docs/ethica_mechanica.txt:116-120",
-                "sources/raw/google_docs/ethica_mechanica.txt:145-168",
-                "sources/raw/google_docs/ethica_mechanica.txt:186-207"
-              ],
-              "passage_review_note": "Reviewed local raw cache for human-defined values over AI logistics, veil-of-ignorance framing, exit/fork and dissent rights, explicit stress-test objections, contradiction exploration, audit/exit practices, hard-coded rights, and value-update rejection on rights contradiction; conceptual governance lineage only."
-            },
-            {
-              "source_id": "alignment_field",
-              "mapped_support": "Supplies the chapter vocabulary for value conflict, suffering, dignity, agency, moral thresholds, coherence, and constraints under uncertainty.",
-              "limits": "Heuristic and speculative material must remain bounded; not a validated measure of moral status or value correctness.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/alignment_field.txt:288-302",
-                "sources/raw/google_docs/alignment_field.txt:489-513",
-                "sources/raw/google_docs/alignment_field.txt:523-560",
-                "sources/raw/google_docs/alignment_field.txt:620-646",
-                "sources/raw/google_docs/alignment_field.txt:947-982",
-                "sources/raw/google_docs/alignment_field.txt:1679-1687",
-                "sources/raw/google_docs/alignment_field.txt:1736-1747"
-              ],
-              "passage_review_note": "Reviewed local raw cache for value conflict as internal contradiction/residual uncertainty, structural conflict from competing local attractors, suffering as misalignment information under uncertainty, expanded moral scope, harm/value definitions, anti-sacrifice constraints, value pluralism, consent, and feedback limits; speculative and heuristic material only, no moral-status metric or value-correctness validation promoted."
-            },
-            {
-              "source_id": "coherence_exchange",
-              "mapped_support": "Adds contestable claim/evidence units, verification supply-chain framing, fork/exit/audit concepts, and coherence/liquidity language for reviewable disagreement.",
-              "limits": "Speculative synthesis; no implemented review market, economic mechanism, or external governance evidence.",
-              "passage_refs": [
-                "sources/source_notes/coherence_exchange.md:11-20",
-                "sources/source_notes/coherence_exchange.md:22-26",
-                "sources/source_notes/coherence_exchange.md:52-57"
-              ],
-              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
-              "passage_review_state": "reviewed"
-            },
-            {
-              "source_id": "uat",
-              "mapped_support": "Provides adversarial review, retrieval-bounded verification, proposition states, unsupported-claim removal, SME checkpoints, and termination criteria for contested claims.",
-              "limits": "Protocol design only; no reproduced benchmark, implemented local pipeline, or independent validation of thresholds.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/uat.txt:130-153",
-                "sources/raw/google_docs/uat.txt:187-207",
-                "sources/raw/google_docs/uat.txt:224-247",
-                "sources/raw/google_docs/uat.txt:256-276",
-                "sources/raw/google_docs/uat.txt:291-293",
-                "sources/raw/google_docs/uat.txt:451-453"
-              ],
-              "passage_review_note": "Reviewed local raw cache for UAT as SME force multiplier rather than truth machine, retrieval-dossier boundary, verified/inferred/unsupported proposition states, SME review flags, unsupported-claim deletion, red-team logic/citation/omission attacks, double-lock termination, compression preservation, and correlated-hallucination/decomposition/plateau risks; protocol design only, no local pipeline or benchmark promoted."
-            },
-            {
-              "source_id": "spinoza",
-              "mapped_support": "Supports explicit support tiers, contradiction detection, belief revision, defeaters, downgrades, and non-assumption that open-domain formalization is solved.",
-              "limits": "Does not settle moral uncertainty or prove reviewer/verifier correctness.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/spinoza.txt:228-235",
-                "sources/raw/google_docs/spinoza.txt:351-365",
-                "sources/raw/google_docs/spinoza.txt:383-389",
-                "sources/raw/google_docs/spinoza.txt:402-451",
-                "sources/raw/google_docs/spinoza.txt:539-541",
-                "sources/raw/google_docs/spinoza.txt:647-653",
-                "sources/raw/google_docs/spinoza.txt:713-718",
-                "sources/raw/google_docs/spinoza.txt:730-734",
-                "sources/raw/google_docs/spinoza.txt:757-764",
-                "sources/raw/google_docs/spinoza.txt:772-808",
-                "sources/raw/google_docs/spinoza.txt:841-865"
-              ],
-              "passage_review_note": "Reviewed local raw cache for explicit formal-scope limits, tier-labeled outputs, unsupported-in-current-scope responses, contradiction-as-revision events, bounded/auditable AGM-style revision, formalization error risk, separation of proposer/verifier/belief-maintainer roles, enforced tiers, tier collapse prevention, and schema/axiom governance; does not settle moral uncertainty or reviewer/verifier quality."
-            },
-            {
-              "source_id": "field_of_god_ai_constitution",
-              "mapped_support": "Supports runtime checks for stakeholders, uncertainty, consent, reversibility, least sufficient power, truth/relation/task tensions, and non-domination.",
-              "limits": "No policy engine or red-team result is present; constitutional text cannot by itself resolve value conflicts.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1-26",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:52-56",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:99-103",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-145",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:155-201",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:213-241",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:284-339",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:666-739",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:839-839",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:948-954",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1011-1025"
-              ],
-              "passage_review_note": "Reviewed tracked local-project source for non-executable constitutional status, alignment as truth/relation/task tensor rather than scalar, moral caution under uncertainty, truth/consent/scope/power definitions, directive priority under lower-level conflicts, tensor questions, moral patienthood uncertainty, conflict-resolution priority order, runtime stakeholder/uncertainty/agency/reversibility checks, default-under-uncertainty behavior, and moral-uncertainty articles; specification only, no policy-engine or red-team result promoted."
-            }
-          ]
-        },
-        {
-          "id": "governance-rights-fork-exit-and-audit",
-          "title": "Governance Rights: Fork, Exit, and Audit",
-          "file": "chapters/governance-rights-fork-exit-and-audit.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "ethica_mechanica",
-            "coherence_exchange",
-            "alignment_field",
-            "ladon_manhattan",
-            "spinoza",
-            "uat",
-            "field_of_god_ai_constitution"
-          ],
-          "source_queue": {
-            "primary": [
-              "ethica_mechanica",
-              "coherence_exchange"
-            ],
-            "supporting": [
-              "alignment_field",
-              "ladon_manhattan",
-              "spinoza",
-              "uat",
-              "field_of_god_ai_constitution"
-            ],
-            "variants": [],
-            "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "Powerful AI infrastructure needs rights and mechanisms that prevent governance lock-in and hidden control.",
-          "insufficient": "Policy statements about transparency are weak if users cannot audit, contest, exit, or fork the system in practice.",
-          "core_claim": "Fork, exit, audit, dissent, and contestability should be treated as technical governance interfaces, not only political ideals.",
-          "mechanism": [
-            "Represent rights as capabilities and required interfaces.",
-            "Attach audit artifacts to governance decisions.",
-            "Treat fork/exit as preserved escape hatches against lock-in."
-          ],
-          "interfaces": [
-            "Governance issues rights.",
-            "SCFs preserve rights across replacement.",
-            "Execution logs evidence for audit."
-          ],
-          "invariants": [
-            "Audit records cannot be silently deleted.",
-            "Exit paths remain materially usable.",
-            "Fork rights do not bypass safety constraints."
-          ],
-          "failure_modes": [
-            "Governance capture.",
-            "Data hostage-taking.",
-            "Opaque automated policy updates."
-          ],
-          "minimal_implementation": "A governance-rights table with required artifacts, authorities, and failure tests.",
-          "beyond_state_of_art": "Governance rights have to become contestability infrastructure for the stack. It makes disagreement operational through portable artifacts, inspectable records, exit paths, audit rights, forkable state, appeal surfaces, and review receipts rather than treating governance as an external social layer. In the mature contestability layer, fork, exit, audit, dissent, appeal, and contestability become technical interfaces with artifacts, receipts, portability guarantees, and safety limits.",
-          "codex_tests": [
             {
               "name": "Audit-record availability test",
               "implementation_status": "implemented",
@@ -1818,8 +1551,20 @@
               "result_status": "passing via synthetic governance rights harness; no deployed fork enforcement or legal-rights claim"
             }
           ],
-          "lean_module": "AsiStackProofs.GovernanceRights",
+          "lean_module": "AsiStackProofs.ValueConflict",
           "proof_targets": [
+            {
+              "tag": "lean:values.conflict.operational_invariant",
+              "module": "AsiStackProofs.ValueConflict",
+              "target": "A decision with unresolved protected conflicts carries a residual conflict record.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:values.conflict.failure_blocks_promotion",
+              "module": "AsiStackProofs.ValueConflict",
+              "target": "A high-stakes conflict cannot bypass the required review predicate.",
+              "status": "implemented"
+            },
             {
               "tag": "lean:governance.rights.operational_invariant",
               "module": "AsiStackProofs.GovernanceRights",
@@ -1836,21 +1581,42 @@
           "claim_source_mappings": [
             {
               "source_id": "ethica_mechanica",
-              "mapped_support": "Supports contestable recursive governance, public correction, agency, institutional memory, and resistance to frozen sovereign authority.",
-              "limits": "Not a tested institution, legal guarantee, or empirical governance result.",
+              "mapped_support": "Destination constitutional/governance lineage: Frames agency, contestability, recursive correction, constitutional failure, and objections as reasons to preserve disputed values rather than freeze one authority layer. Folded source-chapter lineage: Supports contestable recursive governance, public correction, agency, institutional memory, and resistance to frozen sovereign authority.",
+              "limits": "Destination boundary: Conceptual governance lineage; not a complete moral theory or empirical conflict-resolution result. Folded source-chapter boundary: Not a tested institution, legal guarantee, or empirical governance result.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/google_docs/ethica_mechanica.txt:78-95",
                 "sources/raw/google_docs/ethica_mechanica.txt:100-111",
+                "sources/raw/google_docs/ethica_mechanica.txt:116-120",
                 "sources/raw/google_docs/ethica_mechanica.txt:145-168",
+                "sources/raw/google_docs/ethica_mechanica.txt:186-207",
                 "sources/raw/google_docs/ethica_mechanica.txt:186-216"
               ],
-              "passage_review_note": "Reviewed local raw cache for consensus-layer governance, right to fork, absolute exit, material conditions of exit, open audit, hard-coded exit/audit/privacy/dissent rights, constitutional rejection of rights-violating proposals, and mass-exodus/fork semantics; no institutional guarantee, legal claim, or deployed governance result is promoted."
+              "passage_review_note": "Destination mapping: Reviewed local raw cache for human-defined values over AI logistics, veil-of-ignorance framing, exit/fork and dissent rights, explicit stress-test objections, contradiction exploration, audit/exit practices, hard-coded rights, and value-update rejection on rights contradiction; conceptual governance lineage only. Folded source-chapter mapping: Reviewed local raw cache for consensus-layer governance, right to fork, absolute exit, material conditions of exit, open audit, hard-coded exit/audit/privacy/dissent rights, constitutional rejection of rights-violating proposals, and mass-exodus/fork semantics; no institutional guarantee, legal claim, or deployed governance result is promoted."
+            },
+            {
+              "source_id": "alignment_field",
+              "mapped_support": "Destination constitutional/governance lineage: Supplies the chapter vocabulary for value conflict, suffering, dignity, agency, moral thresholds, coherence, and constraints under uncertainty. Folded source-chapter lineage: Adds dignity, agency, plurality, corrigibility, and governance constraints that rights interfaces should preserve under power.",
+              "limits": "Destination boundary: Heuristic and speculative material must remain bounded; not a validated measure of moral status or value correctness. Folded source-chapter boundary: Normative lineage only; not empirical evidence that rights are preserved.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/alignment_field.txt:288-302",
+                "sources/raw/google_docs/alignment_field.txt:489-513",
+                "sources/raw/google_docs/alignment_field.txt:523-560",
+                "sources/raw/google_docs/alignment_field.txt:620-646",
+                "sources/raw/google_docs/alignment_field.txt:947-982",
+                "sources/raw/google_docs/alignment_field.txt:1679-1687",
+                "sources/raw/google_docs/alignment_field.txt:1736-1747",
+                "sources/raw/google_docs/alignment_field.txt:1710-1716",
+                "sources/raw/google_docs/alignment_field.txt:1720-1735",
+                "sources/raw/google_docs/alignment_field.txt:1758-1766"
+              ],
+              "passage_review_note": "Destination mapping: Reviewed local raw cache for value conflict as internal contradiction/residual uncertainty, structural conflict from competing local attractors, suffering as misalignment information under uncertainty, expanded moral scope, harm/value definitions, anti-sacrifice constraints, value pluralism, consent, and feedback limits; speculative and heuristic material only, no moral-status metric or value-correctness validation promoted. Folded source-chapter mapping: Reviewed local raw cache for governance safeguards against cultish, technocratic, and tyrannical control; rights as functional requirements; feedback/audit/dissent constraints on centralized power; consent limits on irreversible harm; and resistance against existential threats; no empirical preservation of rights is promoted."
             },
             {
               "source_id": "coherence_exchange",
-              "mapped_support": "Provides fork, exit, audit, contestability, verification supply-chain, value/accounting, and governance-interface framing.",
-              "limits": "Speculative and connector-derived synthesis; no implemented economic or governance mechanism is claimed.",
+              "mapped_support": "Destination constitutional/governance lineage: Adds contestable claim/evidence units, verification supply-chain framing, fork/exit/audit concepts, and coherence/liquidity language for reviewable disagreement. Folded source-chapter lineage: Provides fork, exit, audit, contestability, verification supply-chain, value/accounting, and governance-interface framing.",
+              "limits": "Destination boundary: Speculative synthesis; no implemented review market, economic mechanism, or external governance evidence. Folded source-chapter boundary: Speculative and connector-derived synthesis; no implemented economic or governance mechanism is claimed.",
               "passage_refs": [
                 "sources/source_notes/coherence_exchange.md:11-20",
                 "sources/source_notes/coherence_exchange.md:22-26",
@@ -1860,17 +1626,68 @@
               "passage_review_state": "reviewed"
             },
             {
-              "source_id": "alignment_field",
-              "mapped_support": "Adds dignity, agency, plurality, corrigibility, and governance constraints that rights interfaces should preserve under power.",
-              "limits": "Normative lineage only; not empirical evidence that rights are preserved.",
+              "source_id": "uat",
+              "mapped_support": "Destination constitutional/governance lineage: Provides adversarial review, retrieval-bounded verification, proposition states, unsupported-claim removal, SME checkpoints, and termination criteria for contested claims. Folded source-chapter lineage: Supports adversarial review, proposition tiering, dossier-bounded verification, unsupported-claim removal, and human sign-off checkpoints for contested governance claims.",
+              "limits": "Destination boundary: Protocol design only; no reproduced benchmark, implemented local pipeline, or independent validation of thresholds. Folded source-chapter boundary: Protocol design only; no implemented review process or benchmark result is reproduced.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/raw/google_docs/alignment_field.txt:1710-1716",
-                "sources/raw/google_docs/alignment_field.txt:1720-1735",
-                "sources/raw/google_docs/alignment_field.txt:1736-1747",
-                "sources/raw/google_docs/alignment_field.txt:1758-1766"
+                "sources/raw/google_docs/uat.txt:130-153",
+                "sources/raw/google_docs/uat.txt:187-207",
+                "sources/raw/google_docs/uat.txt:224-247",
+                "sources/raw/google_docs/uat.txt:256-276",
+                "sources/raw/google_docs/uat.txt:291-293",
+                "sources/raw/google_docs/uat.txt:451-453",
+                "sources/raw/google_docs/uat.txt:225-247",
+                "sources/raw/google_docs/uat.txt:452-453"
               ],
-              "passage_review_note": "Reviewed local raw cache for governance safeguards against cultish, technocratic, and tyrannical control; rights as functional requirements; feedback/audit/dissent constraints on centralized power; consent limits on irreversible harm; and resistance against existential threats; no empirical preservation of rights is promoted."
+              "passage_review_note": "Destination mapping: Reviewed local raw cache for UAT as SME force multiplier rather than truth machine, retrieval-dossier boundary, verified/inferred/unsupported proposition states, SME review flags, unsupported-claim deletion, red-team logic/citation/omission attacks, double-lock termination, compression preservation, and correlated-hallucination/decomposition/plateau risks; protocol design only, no local pipeline or benchmark promoted. Folded source-chapter mapping: Reviewed local raw cache for SME adjudication, pre-audited drafts tied to retrieval sources, proposition tiering, adversarial citation/dossier review, unsupported-claim dropping, and final human sign-off; no implemented tribunal or benchmark result is promoted."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Destination constitutional/governance lineage: Supports explicit support tiers, contradiction detection, belief revision, defeaters, downgrades, and non-assumption that open-domain formalization is solved. Folded source-chapter lineage: Supports claim graphs, protected axioms, contradiction handling, downgrades, and blocked self-authorizing changes as review discipline for governance decisions.",
+              "limits": "Destination boundary: Does not settle moral uncertainty or prove reviewer/verifier correctness. Folded source-chapter boundary: Does not prove whole-system epistemic correctness, autoformalization, or governance legitimacy.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-235",
+                "sources/raw/google_docs/spinoza.txt:351-365",
+                "sources/raw/google_docs/spinoza.txt:383-389",
+                "sources/raw/google_docs/spinoza.txt:402-451",
+                "sources/raw/google_docs/spinoza.txt:539-541",
+                "sources/raw/google_docs/spinoza.txt:647-653",
+                "sources/raw/google_docs/spinoza.txt:713-718",
+                "sources/raw/google_docs/spinoza.txt:730-734",
+                "sources/raw/google_docs/spinoza.txt:757-764",
+                "sources/raw/google_docs/spinoza.txt:772-808",
+                "sources/raw/google_docs/spinoza.txt:841-865",
+                "sources/raw/google_docs/spinoza.txt:488-518"
+              ],
+              "passage_review_note": "Destination mapping: Reviewed local raw cache for explicit formal-scope limits, tier-labeled outputs, unsupported-in-current-scope responses, contradiction-as-revision events, bounded/auditable AGM-style revision, formalization error risk, separation of proposer/verifier/belief-maintainer roles, enforced tiers, tier collapse prevention, and schema/axiom governance; does not settle moral uncertainty or reviewer/verifier quality. Folded source-chapter mapping: Reviewed local raw cache for auditable derivation, proof-carrying graph revision, governance-controlled axioms, contradiction-triggered bounded revision with decision logs, constitutional sandbox approval gates, versioned axiom/schema changes, and rollback procedures; no whole-system correctness or governance legitimacy proof is promoted."
+            },
+            {
+              "source_id": "field_of_god_ai_constitution",
+              "mapped_support": "Destination constitutional/governance lineage: Supports runtime checks for stakeholders, uncertainty, consent, reversibility, least sufficient power, truth/relation/task tensions, and non-domination. Folded source-chapter lineage: Supports auditability, agency preservation, consent, reversibility, least sufficient power, risk-tiered tool use, red-team evaluations, version control, and self-improvement freezes.",
+              "limits": "Destination boundary: No policy engine or red-team result is present; constitutional text cannot by itself resolve value conflicts. Folded source-chapter boundary: Constitutional specification only; not proof of deployed governance rights, fork safety, or audit availability.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1-26",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:52-56",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:99-103",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-145",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:155-201",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:213-241",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:284-339",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:666-739",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:839-839",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:948-954",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:1011-1025",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-205",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:380-418",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:477-517",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:568-610",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:912-946",
+                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:958-971"
+              ],
+              "passage_review_note": "Destination mapping: Reviewed tracked local-project source for non-executable constitutional status, alignment as truth/relation/task tensor rather than scalar, moral caution under uncertainty, truth/consent/scope/power definitions, directive priority under lower-level conflicts, tensor questions, moral patienthood uncertainty, conflict-resolution priority order, runtime stakeholder/uncertainty/agency/reversibility checks, default-under-uncertainty behavior, and moral-uncertainty articles; specification only, no policy-engine or red-team result promoted. Folded source-chapter mapping: Reviewed tracked local-project source for consent, power, corrigibility, agency preservation, non-domination, reversibility, auditability, least sufficient power, contestability, rollback/shutdown paths, memory correction/deletion/inspection, self-modification review, and constitutional articles/checklist; specification only, no deployed rights or access-path result is promoted."
             },
             {
               "source_id": "ladon_manhattan",
@@ -1884,47 +1701,6 @@
                 "sources/raw/google_docs/ladon_manhattan.txt:89-90"
               ],
               "passage_review_note": "Reviewed local raw cache for the agency paradox, right-to-use without credential knowledge, kernel-level secret management, handle-based authority, permission-table lookup, and Digital SCIF isolation; no implemented kernel, side-channel defense result, audit log, or security audit is promoted."
-            },
-            {
-              "source_id": "spinoza",
-              "mapped_support": "Supports claim graphs, protected axioms, contradiction handling, downgrades, and blocked self-authorizing changes as review discipline for governance decisions.",
-              "limits": "Does not prove whole-system epistemic correctness, autoformalization, or governance legitimacy.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/spinoza.txt:228-235",
-                "sources/raw/google_docs/spinoza.txt:402-451",
-                "sources/raw/google_docs/spinoza.txt:488-518",
-                "sources/raw/google_docs/spinoza.txt:841-865"
-              ],
-              "passage_review_note": "Reviewed local raw cache for auditable derivation, proof-carrying graph revision, governance-controlled axioms, contradiction-triggered bounded revision with decision logs, constitutional sandbox approval gates, versioned axiom/schema changes, and rollback procedures; no whole-system correctness or governance legitimacy proof is promoted."
-            },
-            {
-              "source_id": "uat",
-              "mapped_support": "Supports adversarial review, proposition tiering, dossier-bounded verification, unsupported-claim removal, and human sign-off checkpoints for contested governance claims.",
-              "limits": "Protocol design only; no implemented review process or benchmark result is reproduced.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/uat.txt:130-153",
-                "sources/raw/google_docs/uat.txt:187-207",
-                "sources/raw/google_docs/uat.txt:225-247",
-                "sources/raw/google_docs/uat.txt:452-453"
-              ],
-              "passage_review_note": "Reviewed local raw cache for SME adjudication, pre-audited drafts tied to retrieval sources, proposition tiering, adversarial citation/dossier review, unsupported-claim dropping, and final human sign-off; no implemented tribunal or benchmark result is promoted."
-            },
-            {
-              "source_id": "field_of_god_ai_constitution",
-              "mapped_support": "Supports auditability, agency preservation, consent, reversibility, least sufficient power, risk-tiered tool use, red-team evaluations, version control, and self-improvement freezes.",
-              "limits": "Constitutional specification only; not proof of deployed governance rights, fork safety, or audit availability.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:121-205",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:380-418",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:477-517",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:568-610",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:912-946",
-                "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:958-971"
-              ],
-              "passage_review_note": "Reviewed tracked local-project source for consent, power, corrigibility, agency preservation, non-domination, reversibility, auditability, least sufficient power, contestability, rollback/shutdown paths, memory correction/deletion/inspection, self-modification review, and constitutional articles/checklist; specification only, no deployed rights or access-path result is promoted."
             }
           ]
         },
@@ -1985,13 +1761,13 @@
           "minimal_implementation": "An SCF record schema with field identity, implementation versions, lifecycle state, qualification context, evidence, route validity, migration path, and rollback metadata.",
           "beyond_state_of_art": "Stable capability fields give the stack a capability-identity and replacement market. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals. A mature capability field preserves identity, interface, authority ceiling, qualification evidence, regression memory, and rollback policy while implementations change.",
           "codex_tests": [
-    {
-      "name": "Qualification predicate test",
-      "purpose": "Check that evidence-mapped and qualified stable capability fields preserve qualification predicates, evidence refs, regression suites, lease scope, and review triggers before routed use.",
-      "status": "implemented by stable capability fields harness; validated locally; no runtime route-quality claim",
-      "implementation_status": "implemented",
-      "result_status": "validated locally by synthetic fixtures; runtime route quality not run"
-    },
+            {
+              "name": "Qualification predicate test",
+              "purpose": "Check that evidence-mapped and qualified stable capability fields preserve qualification predicates, evidence refs, regression suites, lease scope, and review triggers before routed use.",
+              "status": "implemented by stable capability fields harness; validated locally; no runtime route-quality claim",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; runtime route quality not run"
+            },
             {
               "name": "Route validity test",
               "purpose": "Check that a routed candidate stays inside gate authority, allowed routes, blocked routes, fallback route, and residual-obligation boundaries before canary or default use.",
@@ -1999,13 +1775,13 @@
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures"
             },
-    {
-      "name": "Authority non-escalation test",
-      "purpose": "Check that stable capability field records keep authority ceilings scoped, route permission effects bounded, default-route blockers visible, and evaluator review separated from candidate self-attestation.",
-      "status": "implemented by stable capability fields harness; validated locally; no deployed authority enforcement claim",
-      "implementation_status": "implemented",
-      "result_status": "validated locally by synthetic fixtures; deployed authority enforcement not run"
-    },
+            {
+              "name": "Authority non-escalation test",
+              "purpose": "Check that stable capability field records keep authority ceilings scoped, route permission effects bounded, default-route blockers visible, and evaluator review separated from candidate self-attestation.",
+              "status": "implemented by stable capability fields harness; validated locally; no deployed authority enforcement claim",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; deployed authority enforcement not run"
+            },
             {
               "name": "Rollback readiness test",
               "purpose": "Check that canary/default replacement decisions require rollback receipt readiness, monitor state, and inherited residual escrow before stronger use.",
@@ -2158,13 +1934,13 @@
           "minimal_implementation": "A replacement transaction schema with precheck, gate, commit, monitor, and rollback phases.",
           "beyond_state_of_art": "Capability replacement only works as a transaction control plane for the whole stack. Every candidate implementation enters as a transaction, not a hope: prior artifact, candidate artifact, field identity, authority ceiling, regression floor, evaluator boundary, canary scope, monitor window, rollback receipt, and residual inheritance are all first-class objects. In that end state, a capability can improve continuously without making the system forget what it used to know. Regressions follow the field forward, not the old implementation backward. Failed canaries become residuals. Rollbacks are rehearsed and owned. State migration is classified as reversible, compensatable, forked, or residual rather than treated as an implementation detail. A default route is therefore never just the latest winner; it is the candidate that survived the transaction while preserving the floor.",
           "codex_tests": [
-    {
-      "name": "Replacement transaction test",
-      "purpose": "Check that replacement transaction records preserve field identity, qualification evidence, regression results, non-widening authority checks, evaluator separation, residual escrow, rollback receipts, approvals, monitor state, promotion blockers, and non-claim boundaries.",
-      "status": "implemented by capability replacement harness; validated locally; no deployed replacement-behavior claim",
-      "implementation_status": "implemented",
-      "result_status": "validated locally by synthetic fixtures; deployed replacement behavior not run"
-    },
+            {
+              "name": "Replacement transaction test",
+              "purpose": "Check that replacement transaction records preserve field identity, qualification evidence, regression results, non-widening authority checks, evaluator separation, residual escrow, rollback receipts, approvals, monitor state, promotion blockers, and non-claim boundaries.",
+              "status": "implemented by capability replacement harness; validated locally; no deployed replacement-behavior claim",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; deployed replacement behavior not run"
+            },
             {
               "name": "Regression preservation test",
               "purpose": "Check that failed regression or missing floor evidence blocks canary/default replacement decisions in a cross-record readiness scenario.",
@@ -6118,14 +5894,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },

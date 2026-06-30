@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-29
 
-This file is the 54-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the 52-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ remaining lanes stay `planned, not executed`; they must not receive synthetic
 fixtures, pass/fail status, or support-state pressure merely for coverage.
 The active cycle selection is recorded in
 `docs/v1_x_active_evidence_cycle.md`: seven lanes are selected and the other
-forty-seven remain planned-only.
+forty-five remain planned-only.
 
 Selection criteria:
 
@@ -50,10 +50,8 @@ support-state transition by itself.
 | I | `failure-modes-of-ungoverned-intelligence` | Red-team scenarios plus Lean invariant violation | Add composed failure cases spanning authority, context, and evaluator capture. | Use a small number of memorable failure stories. | Replayed red-team fixture routes residuals to claims/tests/proofs. |
 | I | `evidence-states-and-claim-discipline` | Claim ledger harness and evidence-transition ledger | Surface non-core transitions and enforce no-promotion decisions. | Turn support states into plain-language reader promises. | Appendix C/sibling ledger validates transitions without core-claim promotion. |
 | I | `human-intent-as-a-formal-input` | Lean intent contract plus command-contract fixtures | Add intent ambiguity, delegation, and approval cases. | Ground formal intent in everyday instruction failures. | Intent fixture rejects underspecified or authority-widening execution. |
-| I | `constitutional-alignment-substrate` | Safety-critical Lean | Deepen protected predicate, migration, and self-modification rules. | Explain a constitution as a change-control surface, not a slogan. | Nontrivial theorem over protected predicates and transition cases. |
-| I | `agency-dignity-and-corrigibility` | Safety-critical Lean plus agency-right harness | Deepen review, appeal, high-impact approval, and interruption semantics. | Make dignity concrete through usable refusal, audit, and appeal paths. | Derived theorem plus harness case showing high-impact action blocked without usable review. |
-| I | `moral-uncertainty-and-value-conflict` | Safety-critical Lean plus value-conflict harness | Deepen uncertainty residuals, dissent, and revisit conditions. | Show value conflict as engineering for unresolved disagreement. | High-stakes unresolved conflict cannot become unconditional promotion. |
-| I | `governance-rights-fork-exit-and-audit` | Safety-critical Lean plus governance-right harness | Deepen fork/exit/audit preservation obligations. | Make rights readable through concrete project governance scenes. | Proof or fixture shows redaction/fork still preserves audit and safety obligations. |
+| I | `constitutional-alignment-substrate` | Safety-critical Lean plus agency-right harness | Deepen protected predicate, migration, self-modification, review, appeal, high-impact approval, and interruption semantics. | Explain a constitution as a change-control surface that keeps dignity concrete through usable refusal, audit, appeal, rollback, and correction paths. | Nontrivial theorem plus harness case showing protected predicates and high-impact human-control paths survive transition or block action. |
+| I | `moral-uncertainty-and-value-conflict` | Safety-critical Lean plus value-conflict and governance-right harnesses | Deepen uncertainty residuals, dissent, revisit conditions, fork/exit/audit preservation, redaction, and appeal obligations. | Show value conflict as engineering for unresolved disagreement with usable governance handles. | High-stakes unresolved conflict cannot become unconditional promotion, and proof or fixture shows redaction/fork still preserves audit and safety obligations. |
 | I | `stable-capability-fields` | Stable capability field harness plus Theseus gate | Import or synthesize field qualification and route-permission traces. | Explain stable fields as swappable certified capabilities. | Qualification fixture with rollback/residual path and no route widening. |
 | I | `capability-replacement-and-rollback` | Replacement transaction harness | Connect replacement evidence, rollback, monitor state, and residual escrow. | Use product-upgrade analogies without losing safety constraints. | Valid replacement transaction and invalid promotion fixture both replay. |
 | I | `security-kernel-and-digital-scifs` | Security-kernel harness plus external security baselines | Add SCIF lifecycle, revocation, sanitization, and prompt-injection negative controls. | Make SCIFs feel like controlled rooms and handles, not jargon. | Receipt fixture proves handle-mediated use and rejects leak paths. |

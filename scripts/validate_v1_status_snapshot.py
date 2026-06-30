@@ -115,10 +115,13 @@ def main() -> None:
     book_page_count = len(front_matter) + len(chapters) + len(appendices)
     source_records = load_json(ROOT / "sources" / "source_inventory.json")
     proof_manifest = load_json(ROOT / "proofs" / "proof_manifest.json")
+    reader_manifest = load_json(ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json")
     if not isinstance(source_records, list):
         fail(["sources/source_inventory.json must contain a list."])
     if not isinstance(proof_manifest, dict):
         fail(["proofs/proof_manifest.json must contain an object."])
+    if not isinstance(reader_manifest, dict):
+        fail(["editions/reader_manuscript/v1_0/manifest.json must contain an object."])
 
     chapter_file_count, body_words, raw_words = chapter_word_counts()
     source_note_ids = {
@@ -143,7 +146,23 @@ def main() -> None:
     assigned_pairs = summary_metric(ROOT / "docs" / "source_evidence_audit.md", "Assigned source/chapter pairs")
     exact_mappings = summary_metric(ROOT / "docs" / "source_evidence_audit.md", "Exact claim-source mappings")
     passage_reviewed = summary_metric(ROOT / "docs" / "source_evidence_audit.md", "Passage-reviewed mappings recorded")
+    accepted_core_transitions = summary_metric(
+        ROOT / "docs" / "core_claim_transition_coverage.md",
+        "Accepted core evidence-transition records",
+    )
+    accepted_no_promotion = summary_metric(
+        ROOT / "docs" / "core_claim_transition_coverage.md",
+        "Accepted explicit no-promotion decisions",
+    )
     proof_targets = str(proof_manifest.get("proof_target_count", ""))
+    curated_records = reader_manifest.get("chapter_records", [])
+    if not isinstance(curated_records, list):
+        fail(["reader manuscript manifest chapter_records must contain a list."])
+    reader_reviewed = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "review_status:reviewed")
+    reader_overlay_active = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:reader_overlay_active")
+    reader_no_action = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:no_immediate_action")
+    reader_companion = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:companion_note_candidate")
+    reader_curated = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:curated_manuscript_candidate")
 
     expected_fragments = [
         f"| Book structure | {len(structure.get('parts', []))} parts, {len(chapters)} manifest-driven chapters, {len(appendices)} appendices |",
@@ -152,7 +171,7 @@ def main() -> None:
         f"| Source inventory | {len(source_records)} public-safe source records, each with a matching public source note;",
         "| Source appendix ownership | Appendix G (`Corben's Own Sources, Papers, and Local Projects`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices with explicit source-ownership boundary blocks, ownership-rule rows, and appendix-local identity rows: G contains Corben's own papers, Corben-supplied materials, recovered project records, and local project records; H contains external records and third-party literature marked `external_literature`; neither appendix renders the other source class as a second ownership row |",
         f"| Claim/source traceability | {assigned_pairs} assigned source/chapter pairs, {exact_mappings} exact claim-source mappings, {passage_reviewed} passage-reviewed mappings |",
-        f"| Support states | {evidence_counts.get('argument', 0)} chapter core claims at `argument`; the v1.0 claim-state coverage gate records twenty-six accepted no-change transition records plus twenty-eight accepted explicit no-promotion decisions, and the separate measured/replayed set records two bounded `synthetic-test-backed` transitions for `living-book-methodology.phase5_harness_registry_runner` and `resource-economics.costed_route_budget_slice` plus one bounded `prototype-backed` imported Circle receipt transition for `circle-calculus.external_rope_receipt_replay`; no chapter core claim support-state promotion |",
+        f"| Support states | {evidence_counts.get('argument', 0)} chapter core claims at `argument`; the v1.0 claim-state coverage gate records {accepted_core_transitions} accepted no-change transition records plus {accepted_no_promotion} accepted explicit no-promotion decisions, and the separate measured/replayed set records two bounded `synthetic-test-backed` transitions for `living-book-methodology.phase5_harness_registry_runner` and `resource-economics.costed_route_budget_slice` plus one bounded `prototype-backed` imported Circle receipt transition for `circle-calculus.external_rope_receipt_replay`; no chapter core claim support-state promotion |",
         "`docs/core_claim_transition_coverage.md`",
         "`docs/first_measured_replayed_slice.md`",
         "`docs/costed_route_resource_slice.md`",
@@ -161,7 +180,7 @@ def main() -> None:
         "`python3 scripts/validate_core_claim_decisions.py`",
         "`python3 scripts/validate_costed_route_resource_slice.py`",
         "`python3 scripts/validate_circle_external_receipt_slice.py`",
-        "| External SOTA positioning | Phase 6 placement is machine-tracked and closed for the v1.0 placement gate: 54 of 54 chapters have `ext_*` positioning before the Source crosswalk, 0 chapters have explicit external-baseline exceptions, 0 chapters need source-target placement, and 0 chapters need an exception or added source-noted baseline |",
+        f"| External SOTA positioning | Phase 6 placement is machine-tracked and closed for the v1.0 placement gate: {len(chapters)} of {len(chapters)} chapters have `ext_*` positioning before the Source crosswalk, 0 chapters have explicit external-baseline exceptions, 0 chapters need source-target placement, and 0 chapters need an exception or added source-noted baseline |",
         "`docs/external_sota_positioning_audit.md`",
         "`python3 scripts/validate_external_sota_positioning.py`",
         "| Test harnesses | Twenty-one synthetic or deterministic harnesses are wired into book validation and the Phase 5 registry:",
@@ -268,10 +287,10 @@ def main() -> None:
         "how to cite v1.0.0 without implying DOI, Zenodo archive, or additional approved reader artifacts",
         "`docs/release_reproducibility.md`",
         "`python3 scripts/validate_release_reproducibility.py`",
-        "| Chapter handoffs | All 54 manifest chapters now end with reader-facing `Handoff` sections: non-final chapters name the next manifest chapter title and avoid numbered chapter references, while the final chapter closes the book-level arc; generated reader chapters must preserve the same single Handoff continuity after live-only stripping |",
+        f"| Chapter handoffs | All {len(chapters)} manifest chapters now end with reader-facing `Handoff` sections: non-final chapters name the next manifest chapter title and avoid numbered chapter references, while the final chapter closes the book-level arc; generated reader chapters must preserve the same single Handoff continuity after live-only stripping |",
         "the reader release has a tracked semantic overlay manifest as the editable delta source, generated reader delta report path as review output with a zero-active-operation note or operation digests and before/after excerpts, embedded live Human-view overlay payload for major-version human-edition deltas, and a generated reader-continuity audit with 0 high-priority and 3 medium-priority heuristic review rows",
         "The generated-reader chapter-text review queue is complete across all parts, with review records from `docs/reader_opening_full_review_pass.md` through `docs/reader_part_iv_completion_full_review_pass.md` plus first-pass matrix decisions in `docs/reader_part_i_review_pass.md`, `docs/reader_part_ii_review_pass.md`, `docs/reader_part_iii_review_pass.md`, and `docs/reader_part_iv_review_pass.md`, without treating those notes as release approval.",
-        "The synced chapter review matrix records 54 reader-review rows with 54 `reviewed`, 0 `spot_checked`, 0 `not_started`, 20 active-overlay chapters, 54 no-immediate-action decisions, 3 companion-note candidates, 49 curated-manuscript candidates, and release blockers on every row until future final reader-manuscript packaging explicitly clears chapter-level release blockers.",
+        f"The synced chapter review matrix records {len(chapters)} reader-review rows with {reader_reviewed} `reviewed`, 0 `spot_checked`, 0 `not_started`, {reader_overlay_active} active-overlay chapters, {reader_no_action} no-immediate-action decisions, {reader_companion} companion-note candidates, {reader_curated} curated-manuscript candidates, and release blockers on every row until future final reader-manuscript packaging explicitly clears chapter-level release blockers.",
         "`docs/reader_artifact_inspection_manifest.md` records a tracked local HTML/EPUB/DOCX structural-inspection summary for ignored snapshots",
         "`docs/reader_html_artifact_browser_review.md` records a full local browser review of generated reader HTML with 118 of 118 page-view pairs passing and an exact ignored-snapshot directory digest",
         "`docs/reader_epub_probe_manifest.md` records the current 9,078,787-byte EPUB metadata/source-spine probe, `en-US` language metadata, sampled source-card entries, and remaining e-reader application blocker",
@@ -280,7 +299,7 @@ def main() -> None:
         "`docs/reader_format_review_matrix.md` records the HTML row as release-approved against `release_records/2026-06-29-v1-reader-html-855dc277.json` while EPUB, DOCX, and PDF retain format-specific review blockers.",
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`",
         "The current v1.0 reader-overlay set carries 33 active operations across 20 chapters for Human view and generated reader editions only.",
-        "The curated reader-manuscript manifest exists with `drafting` status and forty-nine drafting-only curated chapter records for `asi-is-a-stack-not-a-model`, `the-efficient-asi-hypothesis`, `system-boundaries-and-authority`, `failure-modes-of-ungoverned-intelligence`, `evidence-states-and-claim-discipline`, `human-intent-as-a-formal-input`, `constitutional-alignment-substrate`, `agency-dignity-and-corrigibility`, `moral-uncertainty-and-value-conflict`, `governance-rights-fork-exit-and-audit`, `security-kernel-and-digital-scifs`, `stable-capability-fields`, `capability-replacement-and-rollback`, `routing-heads-and-specialist-cores`, `moecot-runtime-and-multi-core-orchestration`, `readiness-gates-residual-escrow-and-quarantine`, `cognitive-compilation-and-semantic-ir`, `context-transactions-snapshots-mounts-and-taint`, `verification-bandwidth-and-context-adequacy`, `claim-ledgers-and-belief-revision`, `spinoza-verification-and-proof-carrying-claims`, `unified-adaptive-tribunal-and-adversarial-review`, `labor-os-and-typed-jobs`, `artifact-graphs-audit-logs-and-replay`, `runtime-adapters-tool-permissions-and-human-approval`, `procedural-memory-and-cognitive-loop-closure`, `benchmark-ratchets-and-anti-goodhart-evidence`, `policy-optimization-and-learning-from-feedback`, `integrated-reference-architecture`, `project-theseus-as-report-first-implementation-reference`, `prototype-roadmap`, `living-book-methodology`, `open-research-agenda-and-bibliography-plan`, `personal-compute-hives-and-federated-edge-intelligence`, `resource-economics-and-token-budgets`, `fast-generation-architectures`, `mathematical-and-search-substrates`, `coil-attention-cyclic-memory-and-recurrence-contracts`, `coilra-multicoil-rope-and-cyclic-mixers`, `recursive-self-improvement-boundaries`, `intent-to-execution-contracts`, `command-contracts-and-semantic-interfaces`, `planning-as-a-control-layer`, `planforge-dags-and-intelligence-arbitrage`, `virtual-context-abi`, `semantic-pages-context-cells-and-certificates`, `circle-calculus-and-proof-carrying-ai-contracts`, `executable-specifications-and-lean-proof-envelope`, and `artifact-steward-agents-and-living-project-governance`; it remains a subordinate narrative derivative, and its reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
+        f"The curated reader-manuscript manifest exists with `{reader_manifest.get('status')}` status and {len(curated_records)} drafting-only curated chapter records after the Part I consolidation; retired standalone Part I reader drafts are archived as history, and the active manifest remains a subordinate narrative derivative whose reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
         "`editions/reader_overlays/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`",

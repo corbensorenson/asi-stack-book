@@ -224,6 +224,8 @@ def write_quarto(structure: dict) -> None:
         "project:",
         "  type: book",
         "  output-dir: _site",
+        "  resources:",
+        "    - chapters/*.html",
         "",
         "lang: en-US",
         "",

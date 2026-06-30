@@ -16,7 +16,6 @@ BUILDER = ROOT / "scripts" / "build_chapter_external_grounding_status.py"
 ROW_RE = re.compile(r"^\|\s*([^|]+)\|\s*`([^`]+)`\s*\|\s*([^|]+)\|\s*`([^`]+)`\s*\|")
 
 EXPECTED_COUNTS = {
-    "source-noted": 54,
     "explicit_exception": 0,
     "candidate_backlog": 0,
     "missing": 0,
@@ -93,6 +92,11 @@ def main() -> None:
             errors.append(f"{chapter_id}: missing from external-SOTA audit.")
         if not corben_ids:
             errors.append(f"{chapter_id}: no Corben/local source mining queue is recorded.")
+
+    expected_source_noted = len(rows)
+    actual_source_noted = counts.get("source-noted", 0)
+    if actual_source_noted != expected_source_noted:
+        errors.append(f"source-noted: expected {expected_source_noted}, found {actual_source_noted}.")
 
     for status, expected_count in EXPECTED_COUNTS.items():
         actual = counts.get(status, 0)

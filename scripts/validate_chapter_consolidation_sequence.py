@@ -31,9 +31,7 @@ STRUCTURE = ROOT / "book_structure.json"
 
 REQUIRED_IDS = {
     "constitutional-alignment-substrate",
-    "agency-dignity-and-corrigibility",
     "moral-uncertainty-and-value-conflict",
-    "governance-rights-fork-exit-and-audit",
     "compact-generative-systems-and-residual-honesty",
     "generate-verify-repair-compression",
     "rankfold-neuralfold-and-artifact-compression",
@@ -70,10 +68,9 @@ REQUIRED_IDS = {
 }
 
 REQUIRED_FRAGMENTS = (
-    "planning and release-control artifact, not source evidence",
-    "not a manifest edit",
+    "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
-    "54 manifest chapters",
+    "52 manifest chapters after the Part I pilot",
     "Do not run a broad 54-to-44 manifest edit",
     "Do not target a fixed chapter count.",
     "Do not delete ideas merely to reduce repetition.",
@@ -89,7 +86,7 @@ REQUIRED_FRAGMENTS = (
     "`deferred_for_release`",
     "`rejected_or_retained`",
     "Current Pilot Status",
-    "The current decision is still deferral",
+    "The current pilot state is `executed`",
     "Chapter-Ownership Rubric",
     "A chapter is chapter-owning when it owns a distinct artifact",
     "A chapter is a consolidation candidate when most of its reader-visible load",
@@ -125,8 +122,8 @@ REQUIRED_FRAGMENTS = (
     "docs/chapter_consolidation_fold_moecot_runtime.md",
     "docs/chapter_consolidation_fold_simulation_fidelity.md",
     "docs/chapter_consolidation_fold_semantic_representation.md",
-    "This sequence does not merge chapters.",
-    "This sequence does not change `book_structure.json`.",
+    "This sequence records the executed Part I pilot",
+    "does not authorize any further `book_structure.json` change",
     "This sequence does not change Appendix C support states.",
 )
 
@@ -856,14 +853,12 @@ PUBLIC_REFERENCES = (
 
 RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation Release-Stability Review",
-    "Decision: defer all unexecuted consolidation packages for the current",
+    "Decision: defer all remaining unexecuted consolidation packages",
     "`deferred_for_release` reader-work outcome",
-    "does not edit `book_structure.json`",
-    "does not merge chapters",
-    "does not fold chapters",
+    "does not execute any remaining merge or fold",
     "does not create external review",
     "does not change support states",
-    "The current canonical manifest remains 54 chapters.",
+    "The current canonical manifest has 52 chapters after the executed Part I pilot.",
     "Reader Curation Outcome Table",
     "Constitutional alignment and agency/corrigibility",
     "Value conflict and contestable governance",
@@ -877,18 +872,18 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "Semantic representation fold",
     "Accepted Temporary Debt",
     "Requirements For Curated Reader Passes Inside Deferred Packages",
-    "This review does not execute any merge or fold.",
+    "This review does not execute any remaining merge or fold.",
     "This review does not reject any package permanently.",
     "This review does not approve any destination draft.",
-    "This review does not change chapter count.",
+    "This review records that the Part I pilot implemented historical stubs and changed chapter count",
     "This review does not promote, demote, deprecate, or refute any chapter core",
 )
 
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "no merge or redirect has been executed by this document",
-    "The canonical manifest still has 54 chapters.",
+    "applied to the 2026-06-30 Part I pilot",
+    "The canonical manifest now has 52 chapters after the executed Part I pilot.",
     "If a retired public chapter URL cannot be preserved or deliberately recorded",
     "Default URL Policy",
     "Keep the destination chapter's existing stable ID and public URL",
@@ -900,8 +895,7 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/governance-rights-fork-exit-and-audit.html",
     "Validation Expectations",
     "Non-Claims",
-    "This policy does not implement redirects or historical stubs.",
-    "This policy does not change `book_structure.json`.",
+    "The 2026-06-30 Part I execution package, not this policy text alone",
 )
 
 
@@ -934,8 +928,8 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 54:
-        errors.append("Consolidation sequence expects the current manifest to remain at 54 chapters.")
+    if len(ids) != 52:
+        errors.append("Consolidation sequence expects the current manifest to have 52 chapters after the Part I pilot.")
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -1411,7 +1405,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "54-chapter manifest preserved and full candidate sequence recorded."
+        "52-chapter manifest and executed Part I pilot recorded with remaining candidate sequence."
     )
 
 

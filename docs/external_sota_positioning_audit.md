@@ -8,8 +8,8 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 
 | Metric | Count |
 |---|---:|
-| Manifest chapters | 54 |
-| Chapters with `ext_*` positioning before Source crosswalk | 54 |
+| Manifest chapters | 52 |
+| Chapters with `ext_*` positioning before Source crosswalk | 52 |
 | Chapters with explicit external-baseline exceptions | 0 |
 | Chapters with source-noted external targets but no in-prose positioning yet | 0 |
 | Chapters needing an exception or additional external source assignment | 0 |
@@ -25,10 +25,8 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 | `failure-modes-of-ungoverned-intelligence` | `positioned` | `ext_concrete_ai_safety_2016`, `ext_optimal_policies_power_2019` | `ext_concrete_ai_safety_2016`, `ext_optimal_policies_power_2019` | Keep source-note boundary and support-state language honest. |
 | `evidence-states-and-claim-discipline` | `positioned` | `ext_benchmark_contamination_2023`, `ext_goodhart_variants_2018`, `ext_gpqa_2023`, `ext_helm_2022` | `ext_benchmark_contamination_2023`, `ext_concrete_ai_safety_2016`, `ext_goodhart_variants_2018`, `ext_gpqa_2023`, `ext_helm_2022`, `ext_livebench_2024`, `ext_mmlu_2020` | Keep source-note boundary and support-state language honest. |
 | `human-intent-as-a-formal-input` | `positioned` | `ext_cooperative_inverse_rl_2016`, `ext_deep_rl_human_preferences_2017`, `ext_goal_oriented_requirements_engineering_2001` | `ext_cooperative_inverse_rl_2016`, `ext_deep_rl_human_preferences_2017`, `ext_goal_oriented_requirements_engineering_2001` | Keep source-note boundary and support-state language honest. |
-| `constitutional-alignment-substrate` | `positioned` | `ext_collective_constitutional_ai_2024`, `ext_constitutional_ai_2022` | `ext_collective_constitutional_ai_2024`, `ext_constitutional_ai_2022` | Keep source-note boundary and support-state language honest. |
-| `agency-dignity-and-corrigibility` | `positioned` | `ext_corrigibility_2015`, `ext_off_switch_game_2016` | `ext_corrigibility_2015`, `ext_off_switch_game_2016` | Keep source-note boundary and support-state language honest. |
-| `moral-uncertainty-and-value-conflict` | `positioned` | `ext_contestable_ai_design_2022`, `ext_reinforcement_learning_moral_uncertainty_2020` | `ext_contestable_ai_design_2022`, `ext_reinforcement_learning_moral_uncertainty_2020` | Keep source-note boundary and support-state language honest. |
-| `governance-rights-fork-exit-and-audit` | `positioned` | `ext_corrigibility_2015`, `ext_off_switch_game_2016` | `ext_collective_constitutional_ai_2024`, `ext_contestable_ai_design_2022`, `ext_corrigibility_2015`, `ext_off_switch_game_2016` | Keep source-note boundary and support-state language honest. |
+| `constitutional-alignment-substrate` | `positioned` | `ext_collective_constitutional_ai_2024`, `ext_constitutional_ai_2022`, `ext_corrigibility_2015`, `ext_off_switch_game_2016` | `ext_collective_constitutional_ai_2024`, `ext_constitutional_ai_2022`, `ext_corrigibility_2015`, `ext_off_switch_game_2016` | Keep source-note boundary and support-state language honest. |
+| `moral-uncertainty-and-value-conflict` | `positioned` | `ext_collective_constitutional_ai_2024`, `ext_contestable_ai_design_2022`, `ext_corrigibility_2015`, `ext_off_switch_game_2016`, `ext_reinforcement_learning_moral_uncertainty_2020` | `ext_collective_constitutional_ai_2024`, `ext_contestable_ai_design_2022`, `ext_corrigibility_2015`, `ext_off_switch_game_2016`, `ext_reinforcement_learning_moral_uncertainty_2020` | Keep source-note boundary and support-state language honest. |
 | `stable-capability-fields` | `positioned` | `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` | `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` | Keep source-note boundary and support-state language honest. |
 | `capability-replacement-and-rollback` | `positioned` | `ext_corrigibility_2015` | `ext_corrigibility_2015` | Keep source-note boundary and support-state language honest. |
 | `security-kernel-and-digital-scifs` | `positioned` | `ext_nist_zero_trust_architecture_2020`, `ext_owasp_llm_top_10_2025`, `ext_saltzer_schroeder_protection_1975` | `ext_nist_zero_trust_architecture_2020`, `ext_owasp_llm_top_10_2025`, `ext_saltzer_schroeder_protection_1975` | Keep source-note boundary and support-state language honest. |

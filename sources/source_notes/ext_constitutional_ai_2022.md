@@ -36,7 +36,7 @@ This source is the direct external comparator for the book's constitutional-alig
 
 ## Book Chapters Supported
 
-- `constitutional-alignment-substrate` (Constitutional Alignment Substrate)
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 
 ## Claims To Add Or Update

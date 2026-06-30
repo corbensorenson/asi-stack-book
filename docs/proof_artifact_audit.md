@@ -14,7 +14,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Manifest status counts | {"implemented": 112} |
 | Triage class counts | {"formal-invariant": 112} |
 | Lean modules referenced | 54 |
-| Chapters with proof targets | 54 |
+| Chapters with proof targets | 52 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -90,7 +90,6 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Chapter ID | Tags present | Limitation references | Missing tags | Missing limitation references |
 |---|---:|---:|---:|---:|
-| `agency-dignity-and-corrigibility` | 2 | 2 | 0 | 0 |
 | `artifact-graphs-audit-logs-and-replay` | 2 | 2 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 4 | 4 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 2 | 2 | 0 | 0 |
@@ -103,14 +102,13 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `command-contracts-and-semantic-interfaces` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 2 | 2 | 0 | 0 |
-| `constitutional-alignment-substrate` | 2 | 2 | 0 | 0 |
+| `constitutional-alignment-substrate` | 4 | 4 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | 2 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 2 | 2 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 2 | 2 | 0 | 0 |
 | `fast-generation-architectures` | 2 | 2 | 0 | 0 |
 | `generate-verify-repair-compression` | 2 | 2 | 0 | 0 |
-| `governance-rights-fork-exit-and-audit` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 2 | 2 | 0 | 0 |
 | `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
 | `intent-to-execution-contracts` | 2 | 2 | 0 | 0 |
@@ -118,7 +116,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `living-book-methodology` | 2 | 2 | 0 | 0 |
 | `mathematical-and-search-substrates` | 2 | 2 | 0 | 0 |
 | `moecot-runtime-and-multi-core-orchestration` | 2 | 2 | 0 | 0 |
-| `moral-uncertainty-and-value-conflict` | 2 | 2 | 0 | 0 |
+| `moral-uncertainty-and-value-conflict` | 4 | 4 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 4 | 4 | 0 | 0 |
 | `planforge-dags-and-intelligence-arbitrage` | 2 | 2 | 0 | 0 |
@@ -163,12 +161,12 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:corrigibility.agency.operational_invariant` | `agency-dignity-and-corrigibility` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:corrigibility.agency.failure_blocks_promotion` | `agency-dignity-and-corrigibility` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:corrigibility.agency.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:corrigibility.agency.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:governance.rights.operational_invariant` | `governance-rights-fork-exit-and-audit` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:governance.rights.failure_blocks_promotion` | `governance-rights-fork-exit-and-audit` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governance.rights.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.operational_invariant` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.failure_blocks_promotion` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:replacement.transaction.operational_invariant` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |

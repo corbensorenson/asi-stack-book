@@ -22,12 +22,9 @@ EXPECTED_SELECTED = {
     "project-theseus-as-report-first-implementation-reference",
     "living-book-methodology",
 }
-REQUIRED_FRAGMENTS = (
+STATIC_REQUIRED_FRAGMENTS = (
     "Selected chapter lanes | 7",
-    "Planned-only chapter lanes | 47",
     "Lane cap | 5-8 selected lanes per v1.x cycle",
-    "No 54-lane fixture sweep is claimed or implied.",
-    "all 54 chapter core claims remain `argument`",
     "No chapter core promotion",
     "does not promote any chapter core claim above `argument`",
     "docs/non_core_evidence_ledger.md",
@@ -99,9 +96,15 @@ def main() -> None:
             errors.append(f"Missing manifest chapter IDs: {missing}")
         if extra:
             errors.append(f"Unknown chapter IDs: {extra}")
-    if len(planned_ids) != len(all_ids) - len(selected_ids):
+    expected_planned = len(all_ids) - len(selected_ids)
+    if len(planned_ids) != expected_planned:
         errors.append(f"Planned-only lane count {len(planned_ids)} does not match manifest remainder.")
-    for fragment in REQUIRED_FRAGMENTS:
+    dynamic_required_fragments = (
+        f"Planned-only chapter lanes | {expected_planned}",
+        f"No {len(all_ids)}-lane fixture sweep is claimed or implied.",
+        f"all {len(all_ids)} chapter core claims remain `argument`",
+    )
+    for fragment in STATIC_REQUIRED_FRAGMENTS + dynamic_required_fragments:
         if fragment not in text:
             errors.append(f"Missing required fragment: {fragment}")
 

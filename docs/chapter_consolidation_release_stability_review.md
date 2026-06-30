@@ -2,17 +2,16 @@
 
 Last updated: 2026-06-30
 
-Decision: defer all unexecuted consolidation packages for the current
-reader-curation cycle.
+Decision: defer all remaining unexecuted consolidation packages for the
+current reader-curation cycle after the Part I pilot execution.
 
 This record creates a `deferred_for_release` reader-work outcome for the
-pending merge and fold packages. It does not edit `book_structure.json`, does
-not merge chapters, does not fold chapters, does not retire chapter URLs, does
-not change Appendix C, does not change Appendix K, does not change proof
-targets, does not change source records, does not approve any reader artifact,
+remaining pending merge and fold packages. It records that the Part I pilot is
+no longer deferred. This review itself does not edit `book_structure.json`, does
+not execute any remaining merge or fold, does not approve any reader artifact,
 does not create external review, and does not change support states.
 
-The current canonical manifest remains 54 chapters.
+The current canonical manifest has 52 chapters after the executed Part I pilot.
 
 ## Reviewed Inputs
 
@@ -38,27 +37,27 @@ chapter clusters repeat the same rendered skeleton around adjacent ideas. The
 destination drafts and fold dispositions are useful review objects, but they
 are not accepted canonical chapters.
 
-Executing any merge now would require coordinated manifest, outline, Appendix
-C, Appendix K, proof-manifest, source, reader, handoff, URL/history, and
-validation changes. It would also require human or external judgment that the
-destination draft is stronger than the source chapters as one chapter. That
-review has been requested but not accepted into the repository.
+Executing any remaining merge now would require coordinated manifest, outline,
+Appendix C, Appendix K, proof-manifest, source, reader, handoff, URL/history,
+and validation changes. Each remaining package still needs a recorded decision
+that the destination is stronger than the source chapters as one chapter.
 
 At the same time, the human-reader manuscript cannot stay blocked indefinitely
 while every consolidation package waits for outside review. The practical
-current release choice is to preserve the 54-chapter manifest for the current
-reader-curation cycle, record the duplicate skeletons as accepted temporary
-debt, and continue reader prose work with explicit consolidation caveats.
+current release choice is to preserve the 52-chapter post-pilot manifest for
+the current reader-curation cycle, record remaining duplicate skeletons as
+accepted temporary debt, and continue reader prose work with explicit
+consolidation caveats.
 
 This is a deferral, not a rejection. It keeps the merge/fold queue alive for a
-future execution package.
+future execution package for the remaining queue.
 
 ## Reader Curation Outcome Table
 
 | Package | Prior package state | Reader-work outcome | Reason | Reader curation consequence |
 |---|---|---|---|---|
-| Constitutional alignment and agency/corrigibility | `review_ready` | `deferred_for_release` | Destination draft is review-ready, but no human/external review has accepted the merged chapter and no retired URL treatment has been implemented. | Curated prose may proceed for both source chapters only with a caveat that a future Constitutional Alignment merge may supersede the current chapter boundary. |
-| Value conflict and contestable governance | `review_ready` | `deferred_for_release` | Destination draft is review-ready, but fork/exit/audit interfaces and value-conflict records need human judgment before the chapter identity changes. | Curated prose may proceed for both source chapters only with a caveat that a future contestable-governance merge may supersede the current chapter boundary. |
+| Constitutional alignment and agency/corrigibility | `review_ready` | `executed` | The 2026-06-30 pilot accepted the destination chapter, preserved the retired URL through a historical stub, archived the source chapter, and kept support at `argument`. | Curated prose should target `constitutional-alignment-substrate` as the consolidated chapter. |
+| Value conflict and contestable governance | `review_ready` | `executed` | The 2026-06-30 pilot accepted the destination chapter, preserved the retired URL through a historical stub, archived the source chapter, and kept support at `argument`. | Curated prose should target `moral-uncertainty-and-value-conflict` as the consolidated chapter. |
 | Compression and residual honesty | `review_ready` | `deferred_for_release` | The full-versus-conservative merge choice still needs review, especially whether RankFold/NeuralFold owns enough concrete technique to remain standalone. | Curated prose may proceed for Compact Generative Systems, Generate-Verify-Repair, and RankFold/NeuralFold with explicit merge-debt caveats. |
 | Intent and executable contracts | `review_ready` | `deferred_for_release` | The destination draft is plausible, but the current release keeps intent-to-execution and command-interface chapters separate until the contract boundary is reviewed. | Curated prose may proceed for both Part II source chapters; `human-intent-as-a-formal-input` keeps its existing handoff caveat. |
 | Static context ABI | `review_ready` | `deferred_for_release` | The typed-page/certificate fold is plausible, but VCM addressing and semantic-cell certificate ownership need review before canonical identity changes. | Curated prose may proceed for `virtual-context-abi` and `semantic-pages-context-cells-and-certificates` with a static-ABI merge caveat. |
@@ -75,7 +74,7 @@ temporary debt:
 
 - repeated Problem, Insufficiency, Mechanism, Interface, Evidence,
   Implementation, and Handoff skeletons in the pending clusters;
-- stable chapter IDs and URLs for all 54 current chapters;
+- stable chapter IDs and URLs for the 52 current manifest chapters plus historical stubs for the two folded Part I slugs;
 - reader curation against source chapter boundaries that may later be merged or
   folded;
 - reconciliation work if a later consolidation package executes and supersedes
@@ -90,9 +89,7 @@ The deferred-for-release reader-work outcome applies to these current manifest
 chapter IDs:
 
 - `constitutional-alignment-substrate`
-- `agency-dignity-and-corrigibility`
 - `moral-uncertainty-and-value-conflict`
-- `governance-rights-fork-exit-and-audit`
 - `intent-to-execution-contracts`
 - `command-contracts-and-semantic-interfaces`
 - `planning-as-a-control-layer`
@@ -139,14 +136,10 @@ Every curated reader pass inside a deferred package must:
 
 ## Non-Claims
 
-- This review does not execute any merge or fold.
-- This review does not merge chapters.
-- This review does not fold chapters.
+- This review does not execute any remaining merge or fold.
 - This review does not reject any package permanently.
 - This review does not approve any destination draft.
-- This review does not implement redirects or historical stubs.
-- This review does not change `book_structure.json`.
-- This review does not change chapter count.
+- This review records that the Part I pilot implemented historical stubs and changed chapter count in its separate execution package.
 - This review does not create human review, external review, peer review, proof
   evidence, test evidence, benchmark evidence, source-derived evidence, or
   artifact-review evidence.

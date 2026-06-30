@@ -16,17 +16,17 @@
     "policy": "Keep chapter format-artifact blockers until every required reader format row is approved and an edition release record exists."
   },
   "review_status_counts": {
-    "reviewed": 54
+    "reviewed": 52
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 49,
-    "no_immediate_action": 54,
+    "curated_manuscript_candidate": 47,
+    "no_immediate_action": 52,
     "reader_overlay_active": 20
   },
   "release_blocker_counts": {
-    "format_artifact_not_reviewed": 54,
-    "reader_release_record_not_created": 54
+    "format_artifact_not_reviewed": 52,
+    "reader_release_record_not_created": 52
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
   "chapters": [
@@ -181,7 +181,7 @@
       "part_id": "foundations-alignment-governance",
       "part_title": "Part I - Foundations, Alignment, and Governance",
       "chapter_id": "constitutional-alignment-substrate",
-      "title": "Constitutional Alignment Substrate",
+      "title": "Constitutional Alignment: Agency, Dignity, and Corrigibility",
       "live_file": "chapters/constitutional-alignment-substrate.qmd",
       "generated_reader_file": "build/reader_edition/chapters/constitutional-alignment-substrate.qmd",
       "overlay_operation_count": 0,
@@ -196,32 +196,7 @@
         "docs/curated_reader_constitutional_alignment_prose_pass.md",
         "docs/chapter_consolidation_release_stability_review.md"
       ],
-      "review_notes": "First drafting-only curated reader prose pass completed under the release-stability consolidation caveat; reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and the future merge with agency-dignity-and-corrigibility is not executed, rejected, or authorized.",
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed"
-      ]
-    },
-    {
-      "part_id": "foundations-alignment-governance",
-      "part_title": "Part I - Foundations, Alignment, and Governance",
-      "chapter_id": "agency-dignity-and-corrigibility",
-      "title": "Agency, Dignity, and Corrigibility",
-      "live_file": "chapters/agency-dignity-and-corrigibility.qmd",
-      "generated_reader_file": "build/reader_edition/chapters/agency-dignity-and-corrigibility.qmd",
-      "overlay_operation_count": 0,
-      "review_status": "reviewed",
-      "review_depth": "full_chapter_review",
-      "dispositions": [
-        "curated_manuscript_candidate",
-        "no_immediate_action"
-      ],
-      "review_refs": [
-        "docs/reader_normative_full_review_pass.md#decisions",
-        "docs/curated_reader_agency_dignity_prose_pass.md",
-        "docs/chapter_consolidation_release_stability_review.md"
-      ],
-      "review_notes": "First drafting-only curated reader prose pass completed under the release-stability consolidation caveat; reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and the future merge with constitutional-alignment-substrate is not executed, rejected, or authorized.",
+      "review_notes": "First drafting-only curated reader prose pass remains active after the executed Part I consolidation; reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and agency/dignity/corrigibility material is folded into this destination rather than treated as a live standalone chapter.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -231,7 +206,7 @@
       "part_id": "foundations-alignment-governance",
       "part_title": "Part I - Foundations, Alignment, and Governance",
       "chapter_id": "moral-uncertainty-and-value-conflict",
-      "title": "Moral Uncertainty and Value Conflict",
+      "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
       "live_file": "chapters/moral-uncertainty-and-value-conflict.qmd",
       "generated_reader_file": "build/reader_edition/chapters/moral-uncertainty-and-value-conflict.qmd",
       "overlay_operation_count": 0,
@@ -246,32 +221,7 @@
         "docs/curated_reader_moral_uncertainty_prose_pass.md",
         "docs/chapter_consolidation_release_stability_review.md"
       ],
-      "review_notes": "First drafting-only curated reader prose pass completed under the release-stability consolidation caveat; reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and the future merge with governance-rights-fork-exit-and-audit is not executed, rejected, or authorized.",
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed"
-      ]
-    },
-    {
-      "part_id": "foundations-alignment-governance",
-      "part_title": "Part I - Foundations, Alignment, and Governance",
-      "chapter_id": "governance-rights-fork-exit-and-audit",
-      "title": "Governance Rights: Fork, Exit, and Audit",
-      "live_file": "chapters/governance-rights-fork-exit-and-audit.qmd",
-      "generated_reader_file": "build/reader_edition/chapters/governance-rights-fork-exit-and-audit.qmd",
-      "overlay_operation_count": 0,
-      "review_status": "reviewed",
-      "review_depth": "full_chapter_review",
-      "dispositions": [
-        "curated_manuscript_candidate",
-        "no_immediate_action"
-      ],
-      "review_refs": [
-        "docs/reader_part_i_full_review_completion.md#decisions",
-        "docs/curated_reader_governance_rights_prose_pass.md",
-        "docs/chapter_consolidation_release_stability_review.md"
-      ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the governance-rights chapter. Audit, exit, fork, dissent, redaction, appeal, rights-preservation receipts, and safety-limited denial paths remain intact; no additional reader-only overlay is needed.",
+      "review_notes": "First drafting-only curated reader prose pass remains active after the executed Part I consolidation; reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and governance-rights material is folded into this destination rather than treated as a live standalone chapter.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

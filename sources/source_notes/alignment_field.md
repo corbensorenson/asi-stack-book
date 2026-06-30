@@ -34,10 +34,8 @@ The Alignment Field source family supplies the book's philosophical and normativ
 
 ## Book Chapters Supported
 
-- Constitutional Alignment Substrate
-- Agency, Dignity, and Corrigibility
-- Moral Uncertainty and Value Conflict
-- Governance Rights: Fork, Exit, and Audit
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - Security Kernel and Digital SCIFs
 - Recursive Self-Improvement Boundaries
 - Simulation Fidelity and Physical Constraints

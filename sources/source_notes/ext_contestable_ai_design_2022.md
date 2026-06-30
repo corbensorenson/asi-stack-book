@@ -36,7 +36,7 @@ This source is a governance comparator for the book's treatment of contestabilit
 
 ## Book Chapters Supported
 
-- `moral-uncertainty-and-value-conflict` (Moral Uncertainty and Value Conflict)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `governance-rights-fork-exit-and-audit` (Governance Rights, Fork, Exit, and Audit)
 - `unified-adaptive-tribunal-and-adversarial-review` (Unified Adaptive Tribunal and Adversarial Review)
 

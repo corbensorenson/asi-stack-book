@@ -42,7 +42,7 @@ Ladon and the Manhattan Protocol propose a kernel-level security architecture fo
 ## Book Chapters Supported
 
 - `system-boundaries-and-authority` (System Boundaries and Authority)
-- `governance-rights-fork-exit-and-audit` (Governance Rights: Fork, Exit, and Audit)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `stable-capability-fields` (Stable Capability Fields)
 - `security-kernel-and-digital-scifs` (Security Kernel and Digital SCIFs)
 - `context-transactions-snapshots-mounts-and-taint` (Context Transactions, Snapshots, Mounts, and Taint)

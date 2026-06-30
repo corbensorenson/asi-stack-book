@@ -9,8 +9,8 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 54 |
-| Accepted core evidence-transition records | 26 |
+| Manifest chapter core claims | 52 |
+| Accepted core evidence-transition records | 24 |
 | Accepted explicit no-promotion decisions | 28 |
 | Missing core-claim coverage | 0 |
 
@@ -20,7 +20,6 @@ All chapter core support states remain `argument`. The separate measured/replaye
 
 | Claim ID | Effect | New support state | Record |
 |---|---|---|---|
-| `agency-dignity-and-corrigibility.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/agency_corrigibility_no_change.json` |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/benchmark_ratchets_no_change.json` |
 | `capability-replacement-and-rollback.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/capability_replacement_no_change.json` |
 | `claim-ledgers-and-belief-revision.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/claim_ledgers_no_change.json` |
@@ -29,7 +28,6 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `evidence-states-and-claim-discipline.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/evidence_states_no_change.json` |
 | `executable-specifications-and-lean-proof-envelope.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/proof_envelope_no_change.json` |
 | `fast-generation-architectures.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/fast_generation_no_change.json` |
-| `governance-rights-fork-exit-and-audit.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/governance_rights_no_change.json` |
 | `intent-to-execution-contracts.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/intent_to_execution_contracts_no_change.json` |
 | `living-book-methodology.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/living_book_methodology_no_change.json` |
 | `moral-uncertainty-and-value-conflict.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/moral_uncertainty_no_change.json` |

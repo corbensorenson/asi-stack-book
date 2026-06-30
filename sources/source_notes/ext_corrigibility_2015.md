@@ -36,7 +36,7 @@ This source belongs in the corrigibility chapter as the external reference for s
 
 ## Book Chapters Supported
 
-- `agency-dignity-and-corrigibility` (Agency, Dignity, and Corrigibility)
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
 - `governance-rights-fork-exit-and-audit` (Governance Rights, Fork, Exit, and Audit)
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `capability-replacement-and-rollback` (Capability Replacement and Rollback)

@@ -38,10 +38,8 @@ The Field of God AI Constitution turns the broader Field of God alignment frame 
 
 ## Book Chapters Supported
 
-- `constitutional-alignment-substrate` (Constitutional Alignment Substrate)
-- `agency-dignity-and-corrigibility` (Agency, Dignity, and Corrigibility)
-- `moral-uncertainty-and-value-conflict` (Moral Uncertainty and Value Conflict)
-- `governance-rights-fork-exit-and-audit` (Governance Rights: Fork, Exit, and Audit)
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)

@@ -80,43 +80,6 @@
   },
   "chapter_records": [
     {
-      "chapter_id": "agency-dignity-and-corrigibility",
-      "title": "Agency, Dignity, and Corrigibility",
-      "file": "editions/reader_manuscript/v1_0/chapters/agency-dignity-and-corrigibility.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/agency-dignity-and-corrigibility.qmd",
-      "live_source_ref": "chapters/agency-dignity-and-corrigibility.qmd@08a756e54",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#agency-dignity-and-corrigibility.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#agency-dignity-and-corrigibility",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around agency, dignity, and corrigibility as materially usable human-control interfaces: refusal, review, appeal, rollback, shutdown, accountability, exit, usability states, pre-effect timing, and residuals; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
-      "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support",
-        "source boundary preserved; external Corrigibility and Off-Switch Game records remain comparators rather than reproduced local evidence",
-        "proof/test status preserved without adding deployed rights-service, approval-service, rollback-service, shutdown-compliance, Corrigibility proof reproduction, Off-Switch Game implementation, human-control, manipulation-resistance, consent-quality, reviewer-quality, or material-usability results",
-        "implementation horizon preserved without implying current human-control interface deployment",
-        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with constitutional-alignment-substrate",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_agency_dignity_prose_pass.md with the release-stability consolidation caveat; not release-reviewed and not equal authority to the live AI/research chapter."
-    },
-    {
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "title": "Artifact Graphs, Audit Logs, and Replay",
       "file": "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
@@ -474,7 +437,7 @@
     },
     {
       "chapter_id": "constitutional-alignment-substrate",
-      "title": "Constitutional Alignment Substrate",
+      "title": "Constitutional Alignment: Agency, Dignity, and Corrigibility",
       "file": "editions/reader_manuscript/v1_0/chapters/constitutional-alignment-substrate.qmd",
       "reconciliation_status": "drafting",
       "generated_baseline_ref": "build/reader_edition/chapters/constitutional-alignment-substrate.qmd",
@@ -490,14 +453,13 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around constitutional commitments as runtime constraints: translation status, active and protected predicates, uncertainty labels, review routes, migration policy, constitutional diffs, least sufficient power, and non-claim boundaries; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
+      "divergence_summary": "Curated reader record remains active after the Part I consolidation: the human-prose path now treats constitutional predicates, agency, dignity, and corrigibility as one alignment boundary; no claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, or release approval is changed.",
       "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
+        "core claim meaning preserved in reader prose after folding agency, dignity, and corrigibility into the constitutional alignment boundary",
         "support-state boundary preserved at argument support",
-        "source boundary preserved; external Constitutional AI records remain comparators rather than reproduced local evidence",
-        "proof/test status preserved without adding deployed policy-engine, red-team, runtime-gate, Constitutional AI reproduction, public-input, moral-correctness, reviewer-quality, rollback-execution, self-modification-safety, or whole-system alignment results",
-        "implementation horizon preserved without implying current constitutional constraint compiler deployment",
-        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with agency-dignity-and-corrigibility",
+        "source boundary preserved; external Constitutional AI, Collective Constitutional AI, Corrigibility, and Off-Switch Game records remain comparators rather than reproduced local evidence",
+        "proof/test status preserved without adding deployed policy-engine, agency-right service, approval-service, rollback-service, shutdown-compliance, consent-quality, reviewer-quality, manipulation-resistance, moral-correctness, or whole-system alignment results",
+        "implementation horizon preserved without implying current constitutional compiler or human-control interface deployment",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -507,7 +469,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_constitutional_alignment_prose_pass.md with the release-stability consolidation caveat; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Updated after the executed Part I consolidation pilot; previous agency/dignity curated material is archived and treated as folded reader-drafting history, not a live standalone chapter or release approval."
     },
     {
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
@@ -1402,7 +1364,7 @@
     },
     {
       "chapter_id": "moral-uncertainty-and-value-conflict",
-      "title": "Moral Uncertainty and Value Conflict",
+      "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
       "file": "editions/reader_manuscript/v1_0/chapters/moral-uncertainty-and-value-conflict.qmd",
       "reconciliation_status": "drafting",
       "generated_baseline_ref": "build/reader_edition/chapters/moral-uncertainty-and-value-conflict.qmd",
@@ -1418,14 +1380,13 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around moral uncertainty as an authority-bearing record: visible disagreement, bounded decision leases, dissent payloads, residual uncertainty, review routes, and anti-laundering boundaries; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
+      "divergence_summary": "Curated reader record remains active after the Part I consolidation: the human-prose path now treats moral uncertainty, value conflict, fork, exit, audit, redaction, appeal, and contestable governance as one boundary; no claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, or release approval is changed.",
       "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
+        "core claim meaning preserved in reader prose after folding governance rights into the value-conflict and contestable-governance boundary",
         "support-state boundary preserved at argument support",
-        "source boundary preserved; external moral-uncertainty and contestable-AI records remain comparators rather than reproduced local evidence",
-        "proof/test status preserved without adding moral-correctness, classification-quality, reviewer-independence, tribunal-quality, source-interpretation, runtime-policy, deployed-conflict-handling, or institutional-legitimacy results",
-        "implementation horizon preserved without implying current value-conflict ledger deployment",
-        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with governance-rights-fork-exit-and-audit",
+        "source boundary preserved; external moral-uncertainty, contestable-AI, Collective Constitutional AI, Corrigibility, and Off-Switch Game records remain comparators rather than reproduced local evidence",
+        "proof/test status preserved without adding moral-correctness, legal-rights, institutional-legitimacy, reviewer-independence, runtime-policy, real export usability, safe-fork execution, redaction quality, or deployed contestability results",
+        "implementation horizon preserved without implying current value-conflict ledger or governance-rights infrastructure deployment",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -1435,44 +1396,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_moral_uncertainty_prose_pass.md with the release-stability consolidation caveat; not release-reviewed and not equal authority to the live AI/research chapter."
-    },
-    {
-      "chapter_id": "governance-rights-fork-exit-and-audit",
-      "title": "Governance Rights: Fork, Exit, and Audit",
-      "file": "editions/reader_manuscript/v1_0/chapters/governance-rights-fork-exit-and-audit.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/governance-rights-fork-exit-and-audit.qmd",
-      "live_source_ref": "chapters/governance-rights-fork-exit-and-audit.qmd@761aa06dc",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#governance-rights-fork-exit-and-audit.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#governance-rights-fork-exit-and-audit",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "Curated reader source reframes governance rights around material usability, rights receipts, challenged-party independence, redaction with appeal, exit continuity, safety-bounded fork obligations, and preservation across governance transitions; no claim, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release record changes.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose: core claim remains argument",
-        "source boundary preserved: Corben sources remain design lineage and vocabulary, external sources remain comparators",
-        "proof/test status preserved: GovernanceRights Lean hooks and synthetic harness remain finite record checks only",
-        "implementation horizon preserved without implying deployed governance-rights infrastructure",
-        "release blocker status preserved until an edition release record clears it",
-        "no legal-rights, institutional legitimacy, runtime enforcement, real exit/fork usability, redaction quality, reviewer independence, or deployed contestability claim added",
-        "deferred consolidation caveat preserved: no merge with moral-uncertainty-and-value-conflict executed, rejected, or authorized"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass completed; see docs/curated_reader_governance_rights_prose_pass.md. Deferred contestable-governance consolidation caveat remains active; not release-reviewed."
+      "review_notes": "Updated after the executed Part I consolidation pilot; previous governance-rights curated material is archived and treated as folded reader-drafting history, not a live standalone chapter or release approval."
     },
     {
       "chapter_id": "intent-to-execution-contracts",

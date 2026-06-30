@@ -41,9 +41,8 @@ Spinoza proposes a bounded neurosymbolic reasoning architecture: neural systems 
 - Spinoza Verification and Proof-Carrying Claims
 - Unified Adaptive Tribunal and Adversarial Review
 - Failure Modes of Ungoverned Intelligence
-- Constitutional Alignment Substrate
-- Moral Uncertainty and Value Conflict
-- Governance Rights: Fork, Exit, and Audit
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - Fast Generation Architectures
 - Semantic Representation and Tree-Structured Models
 - Policy Optimization and Learning from Feedback

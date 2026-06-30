@@ -305,7 +305,6 @@
     "layer": "constitutional_alignment_runtime_governance",
     "chapter_targets": [
       "constitutional-alignment-substrate",
-      "agency-dignity-and-corrigibility",
       "moral-uncertainty-and-value-conflict",
       "recursive-self-improvement-boundaries",
       "runtime-adapters"
@@ -712,7 +711,12 @@
     "title": "Concrete Problems in AI Safety",
     "priority": "external_literature",
     "layer": "alignment_control",
-    "chapter_targets": ["failure-modes-of-ungoverned-intelligence", "evidence-states-and-claim-discipline", "benchmark-ratchets-and-anti-goodhart-evidence", "policy-optimization-and-learning-from-feedback"],
+    "chapter_targets": [
+      "failure-modes-of-ungoverned-intelligence",
+      "evidence-states-and-claim-discipline",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "policy-optimization-and-learning-from-feedback"
+    ],
     "url": "https://arxiv.org/abs/1606.06565",
     "notes": "External alignment/control source for accident-risk taxonomy: side effects, reward hacking, scalable supervision, safe exploration, and distributional shift.",
     "source_type": "arxiv",
@@ -727,7 +731,10 @@
     "title": "Constitutional AI: Harmlessness from AI Feedback",
     "priority": "external_literature",
     "layer": "alignment_control",
-    "chapter_targets": ["constitutional-alignment-substrate", "policy-optimization-and-learning-from-feedback"],
+    "chapter_targets": [
+      "constitutional-alignment-substrate",
+      "policy-optimization-and-learning-from-feedback"
+    ],
     "url": "https://arxiv.org/abs/2212.08073",
     "notes": "External constitutional-AI source for training harmless assistants from a rule/principle list through supervised revision and AI-feedback reinforcement learning, used as a comparator for operational constitutional predicates.",
     "source_type": "arxiv",
@@ -742,7 +749,10 @@
     "title": "Collective Constitutional AI: Aligning a Language Model with Public Input",
     "priority": "external_literature",
     "layer": "alignment_governance",
-    "chapter_targets": ["constitutional-alignment-substrate", "governance-rights-fork-exit-and-audit"],
+    "chapter_targets": [
+      "constitutional-alignment-substrate",
+      "moral-uncertainty-and-value-conflict"
+    ],
     "url": "https://arxiv.org/abs/2406.07814",
     "notes": "External constitutional-AI governance source for sourcing and integrating public input into language-model principles, used as a comparator for constitution authorship, public input, contestability, and governance boundaries.",
     "source_type": "arxiv_and_conference",
@@ -757,7 +767,12 @@
     "title": "Corrigibility",
     "priority": "external_literature",
     "layer": "alignment_control",
-    "chapter_targets": ["agency-dignity-and-corrigibility", "governance-rights-fork-exit-and-audit", "recursive-self-improvement-boundaries", "capability-replacement-and-rollback"],
+    "chapter_targets": [
+      "constitutional-alignment-substrate",
+      "moral-uncertainty-and-value-conflict",
+      "recursive-self-improvement-boundaries",
+      "capability-replacement-and-rollback"
+    ],
     "url": "https://intelligence.org/files/Corrigibility.pdf",
     "notes": "External corrigibility source for intervention tolerance, shutdown behavior, anti-manipulation incentives, and propagation across subsystems or self-modification.",
     "source_type": "paper_pdf",
@@ -770,7 +785,12 @@
     "title": "The Off-Switch Game",
     "priority": "external_literature",
     "layer": "alignment_control",
-    "chapter_targets": ["agency-dignity-and-corrigibility", "recursive-self-improvement-boundaries", "runtime-adapters-tool-permissions-and-human-approval", "governance-rights-fork-exit-and-audit"],
+    "chapter_targets": [
+      "constitutional-alignment-substrate",
+      "recursive-self-improvement-boundaries",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "moral-uncertainty-and-value-conflict"
+    ],
     "url": "https://arxiv.org/abs/1611.08219",
     "notes": "External alignment source for shutdown incentives, uncertainty about objectives, and preserving human correction authority.",
     "source_type": "arxiv",
@@ -785,7 +805,10 @@
     "title": "Reinforcement Learning Under Moral Uncertainty",
     "priority": "external_literature",
     "layer": "alignment_control",
-    "chapter_targets": ["moral-uncertainty-and-value-conflict", "policy-optimization-and-learning-from-feedback"],
+    "chapter_targets": [
+      "moral-uncertainty-and-value-conflict",
+      "policy-optimization-and-learning-from-feedback"
+    ],
     "url": "https://arxiv.org/abs/2006.04734",
     "notes": "External AI moral-uncertainty source for agents acting under disagreement across moral theories, used as a comparator for value-conflict records and reward-function caveats.",
     "source_type": "arxiv",
@@ -800,7 +823,10 @@
     "title": "Contestable AI by Design: Towards a Framework",
     "priority": "external_literature",
     "layer": "governance_evals",
-    "chapter_targets": ["moral-uncertainty-and-value-conflict", "governance-rights-fork-exit-and-audit", "unified-adaptive-tribunal-and-adversarial-review"],
+    "chapter_targets": [
+      "moral-uncertainty-and-value-conflict",
+      "unified-adaptive-tribunal-and-adversarial-review"
+    ],
     "url": "https://doi.org/10.1007/s11023-022-09611-z",
     "notes": "External contestable-AI source for designing systems whose outcomes can be challenged, used as a comparator for dissent, appeal, audit, contestability, and governance-interface design.",
     "source_type": "journal_article",
@@ -814,7 +840,12 @@
     "title": "Optimal Policies Tend to Seek Power",
     "priority": "external_literature",
     "layer": "alignment_control",
-    "chapter_targets": ["failure-modes-of-ungoverned-intelligence", "system-boundaries-and-authority", "recursive-self-improvement-boundaries", "readiness-gates-residual-escrow-and-quarantine"],
+    "chapter_targets": [
+      "failure-modes-of-ungoverned-intelligence",
+      "system-boundaries-and-authority",
+      "recursive-self-improvement-boundaries",
+      "readiness-gates-residual-escrow-and-quarantine"
+    ],
     "url": "https://arxiv.org/abs/1912.01683",
     "notes": "External power-seeking source for formal analysis of option preservation and power-seeking tendencies under classes of reward functions and environments.",
     "source_type": "arxiv",
@@ -829,7 +860,12 @@
     "title": "Model evaluation for extreme risks",
     "priority": "external_literature",
     "layer": "governance_evals",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "readiness-gates-residual-escrow-and-quarantine", "recursive-self-improvement-boundaries", "prototype-roadmap"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "recursive-self-improvement-boundaries",
+      "prototype-roadmap"
+    ],
     "url": "https://arxiv.org/abs/2305.15324",
     "notes": "External governance/evals source for dangerous capability evaluations, alignment evaluations, and deployment/security decisions under extreme-risk framing.",
     "source_type": "arxiv",
@@ -844,7 +880,12 @@
     "title": "Frontier AI Regulation: Managing Emerging Risks to Public Safety",
     "priority": "external_literature",
     "layer": "governance_evals",
-    "chapter_targets": ["system-boundaries-and-authority", "readiness-gates-residual-escrow-and-quarantine", "benchmark-ratchets-and-anti-goodhart-evidence", "living-book-methodology"],
+    "chapter_targets": [
+      "system-boundaries-and-authority",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "living-book-methodology"
+    ],
     "url": "https://arxiv.org/abs/2307.03718",
     "notes": "External governance source for frontier AI standard setting, registration/reporting, compliance mechanisms, pre-deployment risk assessment, external scrutiny, and post-deployment monitoring.",
     "source_type": "arxiv",
@@ -859,7 +900,12 @@
     "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
     "priority": "external_literature",
     "layer": "governance_evals",
-    "chapter_targets": ["system-boundaries-and-authority", "readiness-gates-residual-escrow-and-quarantine", "living-book-methodology", "prototype-roadmap"],
+    "chapter_targets": [
+      "system-boundaries-and-authority",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "living-book-methodology",
+      "prototype-roadmap"
+    ],
     "url": "https://doi.org/10.6028/NIST.AI.100-1",
     "notes": "Official NIST AI RMF 1.0 source for risk framing, trustworthiness characteristics, lifecycle roles, and Govern/Map/Measure/Manage functions.",
     "source_type": "official_docs",
@@ -873,7 +919,11 @@
     "title": "OWASP Top 10 for LLMs and Gen AI Apps",
     "priority": "external_literature",
     "layer": "ai_security",
-    "chapter_targets": ["security-kernel-and-digital-scifs", "runtime-adapters-tool-permissions-and-human-approval", "artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "security-kernel-and-digital-scifs",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://genai.owasp.org/llm-top-10/",
     "notes": "Official OWASP GenAI security reference for LLM prompt injection, sensitive information disclosure, excessive agency, and related application-security risks.",
     "source_type": "official_docs",
@@ -886,7 +936,11 @@
     "title": "Zero Trust Architecture",
     "priority": "external_literature",
     "layer": "security_governance",
-    "chapter_targets": ["security-kernel-and-digital-scifs", "system-boundaries-and-authority", "runtime-adapters-tool-permissions-and-human-approval"],
+    "chapter_targets": [
+      "security-kernel-and-digital-scifs",
+      "system-boundaries-and-authority",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
     "url": "https://doi.org/10.6028/NIST.SP.800-207",
     "notes": "Official NIST zero-trust architecture source for resource-centric access mediation, least-privilege access, policy enforcement points, and continuous authorization framing.",
     "source_type": "official_docs",
@@ -900,7 +954,10 @@
     "title": "The Protection of Information in Computer Systems",
     "priority": "external_literature",
     "layer": "security_principles",
-    "chapter_targets": ["security-kernel-and-digital-scifs", "system-boundaries-and-authority"],
+    "chapter_targets": [
+      "security-kernel-and-digital-scifs",
+      "system-boundaries-and-authority"
+    ],
     "url": "https://web.mit.edu/Saltzer/www/publications/protection/",
     "notes": "Classic security-principles source for least privilege, complete mediation, economy of mechanism, fail-safe defaults, separation of privilege, and open design as comparators for kernel-like AI security boundaries.",
     "source_type": "journal_article",
@@ -959,7 +1016,12 @@
     "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
     "priority": "external_literature",
     "layer": "planning_agent_control",
-    "chapter_targets": ["planning-as-a-control-layer", "intent-to-execution-contracts", "runtime-adapters-tool-permissions-and-human-approval", "artifact-graphs-audit-logs-and-replay"],
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "intent-to-execution-contracts",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "artifact-graphs-audit-logs-and-replay"
+    ],
     "url": "https://arxiv.org/abs/2210.03629",
     "notes": "External planning/agent-control source for interleaving reasoning traces with task-specific actions and environment or knowledge-base interaction.",
     "source_type": "arxiv",
@@ -974,7 +1036,12 @@
     "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
     "priority": "external_literature",
     "layer": "planning_search",
-    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "cognitive-compilation-and-semantic-ir", "benchmark-ratchets-and-anti-goodhart-evidence"],
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "planforge-dags-and-intelligence-arbitrage",
+      "cognitive-compilation-and-semantic-ir",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
     "url": "https://arxiv.org/abs/2305.10601",
     "notes": "External planning/search source for exploring, evaluating, and backtracking over multiple reasoning paths rather than left-to-right token continuation alone.",
     "source_type": "arxiv",
@@ -989,7 +1056,12 @@
     "title": "PDDL: The Planning Domain Definition Language",
     "priority": "external_literature",
     "layer": "planning_modeling",
-    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "cognitive-compilation-and-semantic-ir", "executable-specifications-and-lean-proof-envelope"],
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "planforge-dags-and-intelligence-arbitrage",
+      "cognitive-compilation-and-semantic-ir",
+      "executable-specifications-and-lean-proof-envelope"
+    ],
     "url": "https://www.cs.cmu.edu/~mmv/planning/readings/98aips-PDDL.pdf",
     "notes": "External planning-modeling source for domain/problem separation, action syntax, comparable benchmark notations, and planner-interface discipline.",
     "source_type": "technical_report",
@@ -1002,7 +1074,12 @@
     "title": "SHOP2: An HTN Planning System",
     "priority": "external_literature",
     "layer": "planning_htn",
-    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "cognitive-compilation-and-semantic-ir", "prototype-roadmap"],
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "planforge-dags-and-intelligence-arbitrage",
+      "cognitive-compilation-and-semantic-ir",
+      "prototype-roadmap"
+    ],
     "url": "https://www.jair.org/index.php/jair/article/view/10362",
     "notes": "External HTN planning source for ordered task decomposition, method selection, temporal/metric planning, and competition-result boundaries.",
     "source_type": "journal_article",
@@ -1016,7 +1093,12 @@
     "title": "Integrated Task and Motion Planning",
     "priority": "external_literature",
     "layer": "planning_task_motion",
-    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "runtime-adapters-tool-permissions-and-human-approval", "integrated-reference-architecture"],
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "planforge-dags-and-intelligence-arbitrage",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "integrated-reference-architecture"
+    ],
     "url": "https://arxiv.org/abs/2010.01083",
     "notes": "External task-and-motion-planning survey source for discrete task planning, continuous motion planning, black-box subproblem interfaces, and integration-strategy vocabulary.",
     "source_type": "arxiv",
@@ -1031,7 +1113,12 @@
     "title": "Behavior Trees in Robotics and AI: An Introduction",
     "priority": "external_literature",
     "layer": "planning_behavior_trees",
-    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "runtime-adapters-tool-permissions-and-human-approval", "integrated-reference-architecture"],
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "planforge-dags-and-intelligence-arbitrage",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "integrated-reference-architecture"
+    ],
     "url": "https://arxiv.org/abs/1709.00084",
     "notes": "External behavior-tree source for modular, reactive task switching, robustness/safety analysis vocabulary, planning integration, and stochastic behavior-tree outcome accounting.",
     "source_type": "arxiv_book",
@@ -1046,7 +1133,12 @@
     "title": "Three States and a Plan: The A.I. of F.E.A.R.",
     "priority": "external_literature",
     "layer": "planning_goap",
-    "chapter_targets": ["planning-as-a-control-layer", "planforge-dags-and-intelligence-arbitrage", "runtime-adapters-tool-permissions-and-human-approval", "moecot-runtime-and-multi-core-orchestration"],
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "planforge-dags-and-intelligence-arbitrage",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "moecot-runtime-and-multi-core-orchestration"
+    ],
     "url": "https://gdcvault.com/play/1013282/Three-States-and-a-Plan",
     "notes": "External game-AI planning source for Goal Oriented Action Planning in real-time action games, practical planner constraints, autonomous planning characters, and squad-behavior composition.",
     "source_type": "conference_talk",
@@ -1059,7 +1151,12 @@
     "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
     "priority": "external_literature",
     "layer": "planning_agent_orchestration",
-    "chapter_targets": ["planning-as-a-control-layer", "labor-os-and-typed-jobs", "runtime-adapters-tool-permissions-and-human-approval", "artifact-graphs-audit-logs-and-replay"],
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "labor-os-and-typed-jobs",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "artifact-graphs-audit-logs-and-replay"
+    ],
     "url": "https://arxiv.org/abs/2308.08155",
     "notes": "External multi-agent orchestration source for conversable agents, tool/human/LLM operating modes, programmable conversation patterns, and application-level multi-agent workflow boundaries.",
     "source_type": "arxiv",
@@ -1074,7 +1171,12 @@
     "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
     "priority": "external_literature",
     "layer": "memory_context",
-    "chapter_targets": ["virtual-context-abi", "semantic-pages-context-cells-and-certificates", "context-transactions-snapshots-mounts-and-taint", "verification-bandwidth-and-context-adequacy"],
+    "chapter_targets": [
+      "virtual-context-abi",
+      "semantic-pages-context-cells-and-certificates",
+      "context-transactions-snapshots-mounts-and-taint",
+      "verification-bandwidth-and-context-adequacy"
+    ],
     "url": "https://arxiv.org/abs/2005.11401",
     "notes": "External retrieval/context source for combining parametric model memory with explicit non-parametric retrieval and provenance-oriented knowledge access.",
     "source_type": "arxiv",
@@ -1089,7 +1191,12 @@
     "title": "Lost in the Middle: How Language Models Use Long Contexts",
     "priority": "external_literature",
     "layer": "memory_context",
-    "chapter_targets": ["virtual-context-abi", "verification-bandwidth-and-context-adequacy", "context-transactions-snapshots-mounts-and-taint", "semantic-pages-context-cells-and-certificates"],
+    "chapter_targets": [
+      "virtual-context-abi",
+      "verification-bandwidth-and-context-adequacy",
+      "context-transactions-snapshots-mounts-and-taint",
+      "semantic-pages-context-cells-and-certificates"
+    ],
     "url": "https://arxiv.org/abs/2307.03172",
     "notes": "External context-evaluation source for position sensitivity and degraded use of relevant information in the middle of long contexts.",
     "source_type": "arxiv",
@@ -1104,7 +1211,13 @@
     "title": "MemGPT: Towards LLMs as Operating Systems",
     "priority": "external_literature",
     "layer": "memory_context_management",
-    "chapter_targets": ["virtual-context-abi", "semantic-pages-context-cells-and-certificates", "context-transactions-snapshots-mounts-and-taint", "verification-bandwidth-and-context-adequacy", "procedural-memory-and-cognitive-loop-closure"],
+    "chapter_targets": [
+      "virtual-context-abi",
+      "semantic-pages-context-cells-and-certificates",
+      "context-transactions-snapshots-mounts-and-taint",
+      "verification-bandwidth-and-context-adequacy",
+      "procedural-memory-and-cognitive-loop-closure"
+    ],
     "url": "https://arxiv.org/abs/2310.08560",
     "notes": "External memory/context-management source for virtual context management, memory tiers, OS-inspired control flow, and long-running conversation or document-analysis limits.",
     "source_type": "arxiv",
@@ -1119,7 +1232,13 @@
     "title": "LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding",
     "priority": "external_literature",
     "layer": "long_context_evaluation",
-    "chapter_targets": ["virtual-context-abi", "verification-bandwidth-and-context-adequacy", "semantic-pages-context-cells-and-certificates", "context-transactions-snapshots-mounts-and-taint", "benchmark-ratchets-and-anti-goodhart-evidence"],
+    "chapter_targets": [
+      "virtual-context-abi",
+      "verification-bandwidth-and-context-adequacy",
+      "semantic-pages-context-cells-and-certificates",
+      "context-transactions-snapshots-mounts-and-taint",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
     "url": "https://arxiv.org/abs/2308.14508",
     "notes": "External long-context benchmark source for multitask long-context understanding, bilingual coverage, retrieval/compression boundaries, and automatic evaluation limits.",
     "source_type": "arxiv",
@@ -1134,7 +1253,12 @@
     "title": "RULER: What's the Real Context Size of Your Long-Context Language Models?",
     "priority": "external_literature",
     "layer": "long_context_evaluation",
-    "chapter_targets": ["verification-bandwidth-and-context-adequacy", "virtual-context-abi", "context-transactions-snapshots-mounts-and-taint", "benchmark-ratchets-and-anti-goodhart-evidence"],
+    "chapter_targets": [
+      "verification-bandwidth-and-context-adequacy",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
     "url": "https://arxiv.org/abs/2404.06654",
     "notes": "External long-context evaluation source for stress-testing context-size claims beyond vanilla needle-in-a-haystack retrieval, including multi-needle, tracing, and aggregation tasks.",
     "source_type": "arxiv",
@@ -1149,7 +1273,12 @@
     "title": "Enabling Large Language Models to Generate Text with Citations",
     "priority": "external_literature",
     "layer": "retrieval_citation_evaluation",
-    "chapter_targets": ["virtual-context-abi", "verification-bandwidth-and-context-adequacy", "claim-ledgers-and-belief-revision", "benchmark-ratchets-and-anti-goodhart-evidence"],
+    "chapter_targets": [
+      "virtual-context-abi",
+      "verification-bandwidth-and-context-adequacy",
+      "claim-ledgers-and-belief-revision",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
     "url": "https://arxiv.org/abs/2305.14627",
     "notes": "External citation-evaluation source for retrieval-backed answer generation, citation quality metrics, factual correctness, and evidence-support gaps in generated text.",
     "source_type": "arxiv",
@@ -1164,7 +1293,12 @@
     "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
     "priority": "external_literature",
     "layer": "retrieval_reflection",
-    "chapter_targets": ["virtual-context-abi", "semantic-pages-context-cells-and-certificates", "verification-bandwidth-and-context-adequacy", "claim-ledgers-and-belief-revision"],
+    "chapter_targets": [
+      "virtual-context-abi",
+      "semantic-pages-context-cells-and-certificates",
+      "verification-bandwidth-and-context-adequacy",
+      "claim-ledgers-and-belief-revision"
+    ],
     "url": "https://arxiv.org/abs/2310.11511",
     "notes": "External retrieval/reflection source for adaptive retrieval, generated critique/reflection tokens, passage relevance, factuality, and citation accuracy boundaries.",
     "source_type": "arxiv",
@@ -1179,7 +1313,12 @@
     "title": "LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression",
     "priority": "external_literature",
     "layer": "context_compression",
-    "chapter_targets": ["virtual-context-abi", "context-transactions-snapshots-mounts-and-taint", "verification-bandwidth-and-context-adequacy", "resource-economics-and-token-budgets"],
+    "chapter_targets": [
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "verification-bandwidth-and-context-adequacy",
+      "resource-economics-and-token-budgets"
+    ],
     "url": "https://arxiv.org/abs/2310.06839",
     "notes": "External prompt-compression source for long-context cost, latency, position bias, key-information density, and compression/evaluation boundaries.",
     "source_type": "arxiv",
@@ -1194,7 +1333,12 @@
     "title": "Proof-Carrying Code",
     "priority": "external_literature",
     "layer": "formal_methods",
-    "chapter_targets": ["executable-specifications-and-lean-proof-envelope", "spinoza-verification-and-proof-carrying-claims", "runtime-adapters-tool-permissions-and-human-approval", "artifact-graphs-audit-logs-and-replay"],
+    "chapter_targets": [
+      "executable-specifications-and-lean-proof-envelope",
+      "spinoza-verification-and-proof-carrying-claims",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "artifact-graphs-audit-logs-and-replay"
+    ],
     "url": "https://dl.acm.org/doi/10.1145/263699.263712",
     "notes": "External formal-methods source for pairing executable code with machine-checkable evidence that a host can verify against a safety policy.",
     "source_type": "acm",
@@ -1208,7 +1352,12 @@
     "title": "My TLA+ Home Page",
     "priority": "external_literature",
     "layer": "formal_methods",
-    "chapter_targets": ["executable-specifications-and-lean-proof-envelope", "planning-as-a-control-layer", "readiness-gates-residual-escrow-and-quarantine", "integrated-reference-architecture"],
+    "chapter_targets": [
+      "executable-specifications-and-lean-proof-envelope",
+      "planning-as-a-control-layer",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "integrated-reference-architecture"
+    ],
     "url": "https://lamport.azurewebsites.net/tla/tla.html",
     "notes": "External formal-methods documentation source for TLA+ as a high-level language for modeling programs and systems, especially concurrent and distributed systems.",
     "source_type": "official_docs",
@@ -1221,7 +1370,12 @@
     "title": "Theorem Proving in Lean 4",
     "priority": "external_literature",
     "layer": "formal_methods_proof_assistant",
-    "chapter_targets": ["executable-specifications-and-lean-proof-envelope", "circle-calculus-and-proof-carrying-ai-contracts", "spinoza-verification-and-proof-carrying-claims", "open-research-agenda-and-bibliography-plan"],
+    "chapter_targets": [
+      "executable-specifications-and-lean-proof-envelope",
+      "circle-calculus-and-proof-carrying-ai-contracts",
+      "spinoza-verification-and-proof-carrying-claims",
+      "open-research-agenda-and-bibliography-plan"
+    ],
     "url": "https://lean-lang.org/theorem_proving_in_lean4/",
     "notes": "Official Lean theorem-proving text for dependent type theory, propositions, proofs, tactics, inductive types, structures, records, and axioms/computation boundaries.",
     "source_type": "official_docs",
@@ -1234,7 +1388,12 @@
     "title": "Dafny: An Automatic Program Verifier For Functional Correctness",
     "priority": "external_literature",
     "layer": "formal_methods_program_verification",
-    "chapter_targets": ["executable-specifications-and-lean-proof-envelope", "command-contracts-and-semantic-interfaces", "runtime-adapters-tool-permissions-and-human-approval", "prototype-roadmap"],
+    "chapter_targets": [
+      "executable-specifications-and-lean-proof-envelope",
+      "command-contracts-and-semantic-interfaces",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "prototype-roadmap"
+    ],
     "url": "https://www.microsoft.com/en-us/research/publication/dafny-automatic-program-verifier-functional-correctness/",
     "notes": "External program-verification source for specification-oriented programming, functional-correctness verification, SMT-backed automation, and contract/verifier boundaries.",
     "source_type": "conference_paper",
@@ -1247,7 +1406,12 @@
     "title": "Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks",
     "priority": "external_literature",
     "layer": "ai_formal_verification",
-    "chapter_targets": ["verification-bandwidth-and-context-adequacy", "executable-specifications-and-lean-proof-envelope", "benchmark-ratchets-and-anti-goodhart-evidence", "simulation-fidelity-and-physical-constraints"],
+    "chapter_targets": [
+      "verification-bandwidth-and-context-adequacy",
+      "executable-specifications-and-lean-proof-envelope",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "simulation-fidelity-and-physical-constraints"
+    ],
     "url": "https://arxiv.org/abs/1702.01135",
     "notes": "External AI formal-verification source for SMT-style verification of ReLU neural networks, counterexamples, safety-critical properties, and ACAS Xu evaluation boundaries.",
     "source_type": "arxiv",
@@ -1262,7 +1426,12 @@
     "title": "The Black-Box Simplex Architecture for Runtime Assurance of Autonomous CPS",
     "priority": "external_literature",
     "layer": "formal_runtime_assurance",
-    "chapter_targets": ["runtime-adapters-tool-permissions-and-human-approval", "readiness-gates-residual-escrow-and-quarantine", "executable-specifications-and-lean-proof-envelope", "integrated-reference-architecture"],
+    "chapter_targets": [
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "executable-specifications-and-lean-proof-envelope",
+      "integrated-reference-architecture"
+    ],
     "url": "https://arxiv.org/abs/2102.12981",
     "notes": "External runtime-assurance source for switching control authority from advanced controllers to backup safety-preserving behavior under runtime checks.",
     "source_type": "arxiv",
@@ -1277,7 +1446,12 @@
     "title": "Copilot: A Hard Real-Time Runtime Monitor",
     "priority": "external_literature",
     "layer": "runtime_monitoring",
-    "chapter_targets": ["runtime-adapters-tool-permissions-and-human-approval", "executable-specifications-and-lean-proof-envelope", "readiness-gates-residual-escrow-and-quarantine", "prototype-roadmap"],
+    "chapter_targets": [
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "executable-specifications-and-lean-proof-envelope",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "prototype-roadmap"
+    ],
     "url": "https://leepike.github.io/pub_pages/rv2010.html",
     "notes": "External runtime-monitoring source for a stream-based dataflow language/compiler generating constant-time, constant-space C monitors for hard real-time programs.",
     "source_type": "conference_paper",
@@ -1290,7 +1464,12 @@
     "title": "PRISM: Probabilistic Symbolic Model Checker",
     "priority": "external_literature",
     "layer": "probabilistic_model_checking",
-    "chapter_targets": ["executable-specifications-and-lean-proof-envelope", "readiness-gates-residual-escrow-and-quarantine", "benchmark-ratchets-and-anti-goodhart-evidence", "integrated-reference-architecture"],
+    "chapter_targets": [
+      "executable-specifications-and-lean-proof-envelope",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "integrated-reference-architecture"
+    ],
     "url": "https://www.prismmodelchecker.org/papers/tools02.pdf",
     "notes": "External probabilistic model-checking source for symbolic model checking of probabilistic systems, model-checker tooling, and deployment-facing property-analysis vocabulary.",
     "source_type": "conference_paper_pdf",
@@ -1304,7 +1483,12 @@
     "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
     "priority": "external_literature",
     "layer": "routing_modular_intelligence",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "moecot-runtime-and-multi-core-orchestration", "resource-economics-and-token-budgets", "the-efficient-asi-hypothesis"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "moecot-runtime-and-multi-core-orchestration",
+      "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis"
+    ],
     "url": "https://arxiv.org/abs/1701.06538",
     "notes": "External MoE/routing source for sparsely-gated expert layers, conditional computation, capacity expansion, load balancing, and routing overhead boundaries.",
     "source_type": "arxiv",
@@ -1319,7 +1503,12 @@
     "title": "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding",
     "priority": "external_literature",
     "layer": "routing_modular_intelligence",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "moecot-runtime-and-multi-core-orchestration", "resource-economics-and-token-budgets", "integrated-reference-architecture"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "moecot-runtime-and-multi-core-orchestration",
+      "resource-economics-and-token-budgets",
+      "integrated-reference-architecture"
+    ],
     "url": "https://arxiv.org/abs/2006.16668",
     "notes": "External MoE/systems source for conditional computation plus automatic sharding, routing, large sparse models, and distributed training constraints.",
     "source_type": "arxiv",
@@ -1334,7 +1523,12 @@
     "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
     "priority": "external_literature",
     "layer": "routing_modular_intelligence",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "moecot-runtime-and-multi-core-orchestration", "resource-economics-and-token-budgets", "benchmark-ratchets-and-anti-goodhart-evidence"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "moecot-runtime-and-multi-core-orchestration",
+      "resource-economics-and-token-budgets",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
     "url": "https://arxiv.org/abs/2101.03961",
     "notes": "External MoE/routing source for simplified expert routing, sparse activation, communication/training-stability constraints, and speed/scale claims that require reproduction before local evidence use.",
     "source_type": "arxiv",
@@ -1349,7 +1543,12 @@
     "title": "Mixture-of-Experts with Expert Choice Routing",
     "priority": "external_literature",
     "layer": "routing_modular_intelligence",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "moecot-runtime-and-multi-core-orchestration", "resource-economics-and-token-budgets", "readiness-gates-residual-escrow-and-quarantine"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "moecot-runtime-and-multi-core-orchestration",
+      "resource-economics-and-token-budgets",
+      "readiness-gates-residual-escrow-and-quarantine"
+    ],
     "url": "https://arxiv.org/abs/2202.09368",
     "notes": "External MoE routing source for expert-choice routing, token/expert assignment direction, load-balancing pressure, expert capacity, and convergence/performance claims requiring reproduction before local evidence use.",
     "source_type": "arxiv",
@@ -1364,7 +1563,12 @@
     "title": "Mixtral of Experts",
     "priority": "external_literature",
     "layer": "routing_modular_intelligence",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "moecot-runtime-and-multi-core-orchestration", "fast-generation-architectures", "resource-economics-and-token-budgets"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "moecot-runtime-and-multi-core-orchestration",
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
     "url": "https://arxiv.org/abs/2401.04088",
     "notes": "External sparse LLM source for token-level expert routing, active-parameter accounting, open MoE model release boundaries, and benchmark claims requiring reproduction before local evidence use.",
     "source_type": "arxiv",
@@ -1379,7 +1583,12 @@
     "title": "A Survey on Mixture of Experts in Large Language Models",
     "priority": "external_literature",
     "layer": "routing_modular_intelligence",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "moecot-runtime-and-multi-core-orchestration", "resource-economics-and-token-budgets", "open-research-agenda-and-bibliography-plan"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "moecot-runtime-and-multi-core-orchestration",
+      "resource-economics-and-token-budgets",
+      "open-research-agenda-and-bibliography-plan"
+    ],
     "url": "https://arxiv.org/abs/2407.06204",
     "notes": "External MoE survey source for LLM MoE taxonomy, algorithmic and systemic design issues, implementations, evaluation patterns, and open research directions.",
     "source_type": "arxiv",
@@ -1394,7 +1603,12 @@
     "title": "FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance",
     "priority": "external_literature",
     "layer": "task_routing",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "moecot-runtime-and-multi-core-orchestration", "resource-economics-and-token-budgets", "the-efficient-asi-hypothesis"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "moecot-runtime-and-multi-core-orchestration",
+      "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis"
+    ],
     "url": "https://arxiv.org/abs/2305.05176",
     "notes": "External task-routing source for prompt adaptation, model approximation, LLM cascades, cost/performance tradeoffs, and query-specific model selection.",
     "source_type": "arxiv",
@@ -1409,7 +1623,12 @@
     "title": "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing",
     "priority": "external_literature",
     "layer": "cost_quality_routing",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "resource-economics-and-token-budgets", "readiness-gates-residual-escrow-and-quarantine", "benchmark-ratchets-and-anti-goodhart-evidence"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "resource-economics-and-token-budgets",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
     "url": "https://arxiv.org/abs/2404.14618",
     "notes": "External query-routing source for predicted query difficulty, small/large model routing, dynamic quality-cost tradeoffs, and quality-preserving large-model-call reduction.",
     "source_type": "arxiv",
@@ -1424,7 +1643,12 @@
     "title": "RouteLLM: Learning to Route LLMs with Preference Data",
     "priority": "external_literature",
     "layer": "router_learning",
-    "chapter_targets": ["routing-heads-and-specialist-cores", "moecot-runtime-and-multi-core-orchestration", "resource-economics-and-token-budgets", "policy-optimization-and-learning-from-feedback"],
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "moecot-runtime-and-multi-core-orchestration",
+      "resource-economics-and-token-budgets",
+      "policy-optimization-and-learning-from-feedback"
+    ],
     "url": "https://arxiv.org/abs/2406.18665",
     "notes": "External learned-router source for routing between stronger and weaker LLMs using preference data, cost-quality tradeoffs, and transfer to changed model pairs.",
     "source_type": "arxiv",
@@ -1439,7 +1663,12 @@
     "title": "Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding",
     "priority": "external_literature",
     "layer": "compression_representation",
-    "chapter_targets": ["compact-generative-systems-and-residual-honesty", "generate-verify-repair-compression", "rankfold-neuralfold-and-artifact-compression", "resource-economics-and-token-budgets"],
+    "chapter_targets": [
+      "compact-generative-systems-and-residual-honesty",
+      "generate-verify-repair-compression",
+      "rankfold-neuralfold-and-artifact-compression",
+      "resource-economics-and-token-budgets"
+    ],
     "url": "https://arxiv.org/abs/1510.00149",
     "notes": "External compression source for pruning, trained quantization, coding, memory-footprint reduction, and speed/energy claims that require reproduction before local evidence use.",
     "source_type": "arxiv",
@@ -1454,7 +1683,13 @@
     "title": "LoRA: Low-Rank Adaptation of Large Language Models",
     "priority": "external_literature",
     "layer": "compression_representation",
-    "chapter_targets": ["rankfold-neuralfold-and-artifact-compression", "semantic-representation-and-tree-structured-models", "resource-economics-and-token-budgets", "policy-optimization-and-learning-from-feedback", "coilra-multicoil-rope-and-cyclic-mixers"],
+    "chapter_targets": [
+      "rankfold-neuralfold-and-artifact-compression",
+      "semantic-representation-and-tree-structured-models",
+      "resource-economics-and-token-budgets",
+      "policy-optimization-and-learning-from-feedback",
+      "coilra-multicoil-rope-and-cyclic-mixers"
+    ],
     "url": "https://arxiv.org/abs/2106.09685",
     "notes": "External low-rank adaptation source for parameter-efficient updates, rank-decomposition adapters, memory reduction, and adaptation-boundary vocabulary.",
     "source_type": "arxiv",
@@ -1469,7 +1704,12 @@
     "title": "Distilling the Knowledge in a Neural Network",
     "priority": "external_literature",
     "layer": "compression_representation",
-    "chapter_targets": ["compact-generative-systems-and-residual-honesty", "generate-verify-repair-compression", "rankfold-neuralfold-and-artifact-compression", "resource-economics-and-token-budgets"],
+    "chapter_targets": [
+      "compact-generative-systems-and-residual-honesty",
+      "generate-verify-repair-compression",
+      "rankfold-neuralfold-and-artifact-compression",
+      "resource-economics-and-token-budgets"
+    ],
     "url": "https://arxiv.org/abs/1503.02531",
     "notes": "External compression source for teacher/student distillation, soft-target transfer, ensemble compression, and knowledge-transfer claims requiring local reproduction before evidence use.",
     "source_type": "arxiv",
@@ -1484,7 +1724,12 @@
     "title": "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
     "priority": "external_literature",
     "layer": "compression_quantization",
-    "chapter_targets": ["rankfold-neuralfold-and-artifact-compression", "generate-verify-repair-compression", "resource-economics-and-token-budgets", "fast-generation-architectures"],
+    "chapter_targets": [
+      "rankfold-neuralfold-and-artifact-compression",
+      "generate-verify-repair-compression",
+      "resource-economics-and-token-budgets",
+      "fast-generation-architectures"
+    ],
     "url": "https://arxiv.org/abs/2210.17323",
     "notes": "External quantization source for post-training compression of large generative transformers, one-shot weight quantization, memory reduction, and accuracy/speed tradeoff boundaries.",
     "source_type": "arxiv",
@@ -1499,7 +1744,12 @@
     "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
     "priority": "external_literature",
     "layer": "compression_quantized_adaptation",
-    "chapter_targets": ["rankfold-neuralfold-and-artifact-compression", "resource-economics-and-token-budgets", "policy-optimization-and-learning-from-feedback", "prototype-roadmap"],
+    "chapter_targets": [
+      "rankfold-neuralfold-and-artifact-compression",
+      "resource-economics-and-token-budgets",
+      "policy-optimization-and-learning-from-feedback",
+      "prototype-roadmap"
+    ],
     "url": "https://arxiv.org/abs/2305.14314",
     "notes": "External quantized-adaptation source for finetuning quantized LLMs with low-rank adapters, memory-efficient training, and benchmark claims requiring reproduction before local evidence use.",
     "source_type": "arxiv",
@@ -1514,7 +1764,12 @@
     "title": "DreamCoder: Growing generalizable, interpretable knowledge with wake-sleep Bayesian program learning",
     "priority": "external_literature",
     "layer": "program_synthesis_representation",
-    "chapter_targets": ["cognitive-compilation-and-semantic-ir", "compact-generative-systems-and-residual-honesty", "rankfold-neuralfold-and-artifact-compression", "mathematical-and-search-substrates"],
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir",
+      "compact-generative-systems-and-residual-honesty",
+      "rankfold-neuralfold-and-artifact-compression",
+      "mathematical-and-search-substrates"
+    ],
     "url": "https://arxiv.org/abs/2006.08381",
     "notes": "External program-synthesis source for wake-sleep library learning, reusable abstractions, interpretable learned programs, and compression-through-abstraction vocabulary.",
     "source_type": "arxiv",
@@ -1529,7 +1784,12 @@
     "title": "The information bottleneck method",
     "priority": "external_literature",
     "layer": "representation_compression",
-    "chapter_targets": ["semantic-representation-and-tree-structured-models", "compact-generative-systems-and-residual-honesty", "generate-verify-repair-compression", "resource-economics-and-token-budgets"],
+    "chapter_targets": [
+      "semantic-representation-and-tree-structured-models",
+      "compact-generative-systems-and-residual-honesty",
+      "generate-verify-repair-compression",
+      "resource-economics-and-token-budgets"
+    ],
     "url": "https://arxiv.org/abs/physics/0004057",
     "notes": "External representation-compression source for relevance-preserving compression, bottleneck variables, mutual-information tradeoffs, and compression/utility separation.",
     "source_type": "arxiv",
@@ -1544,7 +1804,12 @@
     "title": "A tutorial introduction to the minimum description length principle",
     "priority": "external_literature",
     "layer": "description_length_residuals",
-    "chapter_targets": ["compact-generative-systems-and-residual-honesty", "generate-verify-repair-compression", "rankfold-neuralfold-and-artifact-compression", "benchmark-ratchets-and-anti-goodhart-evidence"],
+    "chapter_targets": [
+      "compact-generative-systems-and-residual-honesty",
+      "generate-verify-repair-compression",
+      "rankfold-neuralfold-and-artifact-compression",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
     "url": "https://arxiv.org/abs/math/0406077",
     "notes": "External description-length source for model/data tradeoffs, compression as inductive discipline, and residual/error-accounting vocabulary.",
     "source_type": "arxiv",
@@ -1559,7 +1824,12 @@
     "title": "CodeBLEU: a Method for Automatic Evaluation of Code Synthesis",
     "priority": "external_literature",
     "layer": "artifact_utility_metrics",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "generate-verify-repair-compression", "artifact-steward-agents-and-living-project-governance", "prototype-roadmap"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "generate-verify-repair-compression",
+      "artifact-steward-agents-and-living-project-governance",
+      "prototype-roadmap"
+    ],
     "url": "https://arxiv.org/abs/2009.10297",
     "notes": "External code-synthesis evaluation source for combining lexical, syntax, data-flow, and semantic matching into artifact-quality metrics that still require task-specific validation.",
     "source_type": "arxiv",
@@ -1574,7 +1844,12 @@
     "title": "Measuring Massive Multitask Language Understanding",
     "priority": "external_literature",
     "layer": "benchmark_science",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "evidence-states-and-claim-discipline", "open-research-agenda-and-bibliography-plan", "prototype-roadmap"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "evidence-states-and-claim-discipline",
+      "open-research-agenda-and-bibliography-plan",
+      "prototype-roadmap"
+    ],
     "url": "https://arxiv.org/abs/2009.03300",
     "notes": "External benchmark source for broad multitask evaluation, task-coverage limits, lopsided performance, uncertainty about wrong answers, and benchmark-saturation pressure.",
     "source_type": "arxiv",
@@ -1589,7 +1864,12 @@
     "title": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models",
     "priority": "external_literature",
     "layer": "benchmark_science",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "the-efficient-asi-hypothesis", "readiness-gates-residual-escrow-and-quarantine", "policy-optimization-and-learning-from-feedback"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "the-efficient-asi-hypothesis",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "policy-optimization-and-learning-from-feedback"
+    ],
     "url": "https://arxiv.org/abs/2206.04615",
     "notes": "External benchmark source for BIG-bench, broad task coverage, scale effects, calibration, breakthrough behavior, human-rater baselines, and social-bias tradeoffs.",
     "source_type": "arxiv",
@@ -1604,7 +1884,12 @@
     "title": "Holistic Evaluation of Language Models",
     "priority": "external_literature",
     "layer": "benchmark_science",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "evidence-states-and-claim-discipline", "readiness-gates-residual-escrow-and-quarantine", "living-book-methodology"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "evidence-states-and-claim-discipline",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "living-book-methodology"
+    ],
     "url": "https://arxiv.org/abs/2211.09110",
     "notes": "External benchmark-science source for multi-scenario, multi-metric evaluation, missing-coverage disclosure, raw-prompt transparency, and living benchmark practice.",
     "source_type": "arxiv",
@@ -1619,7 +1904,12 @@
     "title": "GPQA: A Graduate-Level Google-Proof Q&A Benchmark",
     "priority": "external_literature",
     "layer": "benchmark_science",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "verification-bandwidth-and-context-adequacy", "evidence-states-and-claim-discipline", "open-research-agenda-and-bibliography-plan"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "verification-bandwidth-and-context-adequacy",
+      "evidence-states-and-claim-discipline",
+      "open-research-agenda-and-bibliography-plan"
+    ],
     "url": "https://arxiv.org/abs/2311.12022",
     "notes": "External benchmark source for expert-written hard questions, Google-proof validation, scalable oversight pressure, and the gap between skilled non-expert validation and expert competence.",
     "source_type": "arxiv",
@@ -1634,7 +1924,12 @@
     "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
     "priority": "external_literature",
     "layer": "benchmark_science",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "artifact-graphs-audit-logs-and-replay", "labor-os-and-typed-jobs", "prototype-roadmap"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "artifact-graphs-audit-logs-and-replay",
+      "labor-os-and-typed-jobs",
+      "prototype-roadmap"
+    ],
     "url": "https://arxiv.org/abs/2310.06770",
     "notes": "External benchmark source for real-world software-engineering issue resolution, repository-scale context, executable environments, patch evaluation, and capability boundaries.",
     "source_type": "arxiv",
@@ -1649,7 +1944,12 @@
     "title": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
     "priority": "external_literature",
     "layer": "benchmark_science",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "evidence-states-and-claim-discipline", "living-book-methodology", "open-research-agenda-and-bibliography-plan"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "evidence-states-and-claim-discipline",
+      "living-book-methodology",
+      "open-research-agenda-and-bibliography-plan"
+    ],
     "url": "https://arxiv.org/abs/2406.19314",
     "notes": "External benchmark source for contamination-limited evaluation, frequently updated questions, objective ground-truth scoring, and monthly benchmark evolution.",
     "source_type": "arxiv",
@@ -1664,7 +1964,12 @@
     "title": "Dynabench: Rethinking Benchmarking in NLP",
     "priority": "external_literature",
     "layer": "dynamic_benchmarking",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "readiness-gates-residual-escrow-and-quarantine", "policy-optimization-and-learning-from-feedback", "artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "policy-optimization-and-learning-from-feedback",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://arxiv.org/abs/2104.14337",
     "notes": "External dynamic-benchmarking source for human-and-model-in-the-loop data collection, adversarial benchmark evolution, and stale static benchmark pressure.",
     "source_type": "arxiv",
@@ -1679,7 +1984,12 @@
     "title": "Beyond Accuracy: Behavioral Testing of NLP models with CheckList",
     "priority": "external_literature",
     "layer": "behavioral_evaluation",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "verification-bandwidth-and-context-adequacy", "claim-ledgers-and-belief-revision", "prototype-roadmap"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "verification-bandwidth-and-context-adequacy",
+      "claim-ledgers-and-belief-revision",
+      "prototype-roadmap"
+    ],
     "url": "https://arxiv.org/abs/2005.04118",
     "notes": "External behavioral-testing source for capability matrices, minimum functionality tests, invariance tests, directional expectation tests, and failure-discovery beyond aggregate accuracy.",
     "source_type": "arxiv",
@@ -1694,7 +2004,12 @@
     "title": "Investigating Data Contamination in Modern Benchmarks for Large Language Models",
     "priority": "external_literature",
     "layer": "benchmark_contamination",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "evidence-states-and-claim-discipline", "readiness-gates-residual-escrow-and-quarantine", "living-book-methodology"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "evidence-states-and-claim-discipline",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "living-book-methodology"
+    ],
     "url": "https://arxiv.org/abs/2311.09783",
     "notes": "External benchmark-contamination source for detecting training/test overlap pressure, benchmark-leakage risk, and score interpretation limits in modern LLM evaluations.",
     "source_type": "arxiv",
@@ -1709,7 +2024,12 @@
     "title": "Categorizing Variants of Goodhart's Law",
     "priority": "external_literature",
     "layer": "goodhart_failure_taxonomy",
-    "chapter_targets": ["benchmark-ratchets-and-anti-goodhart-evidence", "policy-optimization-and-learning-from-feedback", "artifact-steward-agents-and-living-project-governance", "evidence-states-and-claim-discipline"],
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "policy-optimization-and-learning-from-feedback",
+      "artifact-steward-agents-and-living-project-governance",
+      "evidence-states-and-claim-discipline"
+    ],
     "url": "https://arxiv.org/abs/1803.04585",
     "notes": "External Goodhart-taxonomy source for regressive, extremal, causal, and adversarial metric failures that benchmark ratchets and policy updates must treat as distinct risks.",
     "source_type": "arxiv",
@@ -2243,7 +2563,9 @@
     "title": "What is Tailscale?",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://tailscale.com/docs/concepts/what-is-tailscale",
     "notes": "Official Tailscale documentation for zero-trust identity networking, tailnets, encrypted point-to-point connections, and cross-network device connectivity.",
     "source_type": "official_docs",
@@ -2256,7 +2578,9 @@
     "title": "Kubernetes Documentation: Overview",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://kubernetes.io/docs/concepts/overview/",
     "notes": "Official Kubernetes overview for containerized workload management, declarative configuration, automation, service discovery, storage orchestration, rollouts, bin packing, and self-healing.",
     "source_type": "official_docs",
@@ -2269,7 +2593,9 @@
     "title": "K3s: Lightweight Kubernetes",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://docs.k3s.io/",
     "notes": "Official K3s documentation for lightweight Kubernetes deployment in edge, homelab, IoT, CI, single-board-computer, air-gapped, and embedded settings.",
     "source_type": "official_docs",
@@ -2282,7 +2608,9 @@
     "title": "Nomad Documentation",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://developer.hashicorp.com/nomad",
     "notes": "Official Nomad documentation for scheduling and orchestrating containers, non-containerized applications, and batch jobs across on-prem and cloud environments.",
     "source_type": "official_docs",
@@ -2295,7 +2623,9 @@
     "title": "What's Ray Core?",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://docs.ray.io/en/latest/ray-core/walkthrough.html",
     "notes": "Official Ray Core documentation for distributed task, actor, and object primitives used to build and scale Python applications.",
     "source_type": "official_docs",
@@ -2308,7 +2638,9 @@
     "title": "BOINC",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://boinc.berkeley.edu/",
     "notes": "Official BOINC site for volunteer computing where user computers download scientific computing jobs and run them in the background.",
     "source_type": "official_project_site",
@@ -2321,7 +2653,9 @@
     "title": "Syncthing",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://syncthing.net/",
     "notes": "Official Syncthing site for continuous file synchronization across computers, authenticated devices, encrypted transport, and user-controlled storage location.",
     "source_type": "official_project_site",
@@ -2334,7 +2668,9 @@
     "title": "IPFS Documentation and Project Site",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://ipfs.tech/",
     "notes": "Official IPFS project documentation and site for peer-to-peer content addressing, content identifiers, provider discovery, and decentralized retrieval vocabulary.",
     "source_type": "official_project_site",
@@ -2347,7 +2683,10 @@
     "title": "Akash Network Documentation",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence", "artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://akash.network/docs/",
     "notes": "Official Akash documentation for decentralized cloud deployment, provider resources, leases, GPUs, SDKs, node operations, and provider operations.",
     "source_type": "official_docs",
@@ -2360,7 +2699,10 @@
     "title": "Golem Developer Resources",
     "priority": "external_literature",
     "layer": "personal_compute_hives",
-    "chapter_targets": ["personal-compute-hives-and-federated-edge-intelligence", "artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://docs.golem.network/",
     "notes": "Official Golem developer resources for decentralized computations, task execution, provider selection, result handling, and resource sharing.",
     "source_type": "official_docs",
@@ -2373,7 +2715,9 @@
     "title": "Webhook events and payloads",
     "priority": "external_literature",
     "layer": "artifact_steward_agents",
-    "chapter_targets": ["artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://docs.github.com/en/webhooks/webhook-events-and-payloads",
     "notes": "Official GitHub documentation for repository and organization webhook events, event payloads, delivery headers, event-specific permissions, and payload limits.",
     "source_type": "official_docs",
@@ -2386,7 +2730,10 @@
     "title": "Self-hosted runners",
     "priority": "external_literature",
     "layer": "artifact_steward_agents",
-    "chapter_targets": ["artifact-steward-agents-and-living-project-governance", "personal-compute-hives-and-federated-edge-intelligence"],
+    "chapter_targets": [
+      "artifact-steward-agents-and-living-project-governance",
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
     "url": "https://docs.github.com/en/actions/concepts/runners/self-hosted-runners",
     "notes": "Official GitHub Actions documentation for self-hosted runners as user-managed systems that execute workflow jobs on physical, virtual, containerized, on-prem, or cloud machines.",
     "source_type": "official_docs",
@@ -2399,7 +2746,9 @@
     "title": "OpenZeppelin Contracts: Governance",
     "priority": "external_literature",
     "layer": "artifact_steward_agents",
-    "chapter_targets": ["artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://docs.openzeppelin.com/contracts/5.x/api/governance",
     "notes": "Official OpenZeppelin governance documentation for modular Governor contracts, voting power, quorum, timelocks, proposal settings, and guardian-style extensions.",
     "source_type": "official_docs",
@@ -2412,7 +2761,9 @@
     "title": "Open Collective Documentation",
     "priority": "external_literature",
     "layer": "artifact_steward_agents",
-    "chapter_targets": ["artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://documentation.opencollective.com/",
     "notes": "Official Open Collective documentation for transparent community money management, fiscal hosts, contribution intake, expenses, accounting, and legal-entity delegation through fiscal hosting.",
     "source_type": "official_docs",
@@ -2425,7 +2776,9 @@
     "title": "About GitHub Sponsors for open source contributors",
     "priority": "external_literature",
     "layer": "artifact_steward_agents",
-    "chapter_targets": ["artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/about-github-sponsors-for-open-source-contributors",
     "notes": "Official GitHub Sponsors documentation for contributor and organization sponsorship eligibility, open-source contribution categories, sponsor profiles, and GitHub-native funding surfaces.",
     "source_type": "official_docs",
@@ -2438,7 +2791,9 @@
     "title": "Demystifying and Detecting Agentic Workflow Injection Vulnerabilities in GitHub Actions",
     "priority": "external_literature",
     "layer": "artifact_steward_agents",
-    "chapter_targets": ["artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://arxiv.org/abs/2605.07135",
     "notes": "External security paper for agentic workflow injection in GitHub Actions when untrusted repository event context reaches LLM agents and downstream workflow logic.",
     "source_type": "arxiv",
@@ -2453,7 +2808,9 @@
     "title": "Fairness in Token Delegation: Mitigating Voting Power Concentration in DAOs",
     "priority": "external_literature",
     "layer": "artifact_steward_agents",
-    "chapter_targets": ["artifact-steward-agents-and-living-project-governance"],
+    "chapter_targets": [
+      "artifact-steward-agents-and-living-project-governance"
+    ],
     "url": "https://arxiv.org/abs/2510.05830",
     "notes": "External DAO governance paper for voter apathy, voting-power concentration, delegation misalignment, and delegate-ranking bias.",
     "source_type": "arxiv",
@@ -2468,7 +2825,9 @@
     "title": "Model Cards for Model Reporting",
     "priority": "external_literature",
     "layer": "model_reporting",
-    "chapter_targets": ["project-theseus-as-report-first-implementation-reference"],
+    "chapter_targets": [
+      "project-theseus-as-report-first-implementation-reference"
+    ],
     "url": "https://arxiv.org/abs/1810.03993",
     "notes": "External reporting comparator for structured model documentation, intended-use boundaries, evaluation disclosures, ethical considerations, and model-report artifacts.",
     "source_type": "arxiv",
@@ -2483,7 +2842,9 @@
     "title": "Datasheets for Datasets",
     "priority": "external_literature",
     "layer": "dataset_documentation",
-    "chapter_targets": ["project-theseus-as-report-first-implementation-reference"],
+    "chapter_targets": [
+      "project-theseus-as-report-first-implementation-reference"
+    ],
     "url": "https://arxiv.org/abs/1803.09010",
     "notes": "External documentation comparator for dataset motivation, composition, collection, preprocessing, uses, distribution, maintenance, and accountability questions.",
     "source_type": "arxiv",
@@ -2498,7 +2859,9 @@
     "title": "FactSheets: Increasing Trust in AI Services through Supplier's Declarations of Conformity",
     "priority": "external_literature",
     "layer": "ai_service_fact_sheets",
-    "chapter_targets": ["project-theseus-as-report-first-implementation-reference"],
+    "chapter_targets": [
+      "project-theseus-as-report-first-implementation-reference"
+    ],
     "url": "https://arxiv.org/abs/1808.07261",
     "notes": "External AI-service documentation comparator for supplier declarations, service properties, trust-relevant facts, and standardized reporting boundaries.",
     "source_type": "arxiv",
@@ -2513,7 +2876,9 @@
     "title": "Improving Reproducibility in Machine Learning Research",
     "priority": "external_literature",
     "layer": "ml_reproducibility_reporting",
-    "chapter_targets": ["project-theseus-as-report-first-implementation-reference"],
+    "chapter_targets": [
+      "project-theseus-as-report-first-implementation-reference"
+    ],
     "url": "https://jmlr.org/papers/v22/20-303.html",
     "notes": "External reproducibility-program comparator for checklists, code submission, reproducibility reports, and community review mechanisms in machine-learning research.",
     "source_type": "journal_article",
@@ -2526,7 +2891,9 @@
     "title": "MRKL Systems: A Modular, Neuro-Symbolic Architecture That Combines Large Language Models, External Knowledge Sources and Discrete Reasoning",
     "priority": "external_literature",
     "layer": "neuro_symbolic_modular_architecture",
-    "chapter_targets": ["asi-is-a-stack-not-a-model"],
+    "chapter_targets": [
+      "asi-is-a-stack-not-a-model"
+    ],
     "url": "https://arxiv.org/abs/2205.00445",
     "notes": "External modular-neuro-symbolic architecture comparator for combining language models with expert modules, external knowledge sources, and routing rather than treating the model as the whole system.",
     "source_type": "arxiv",
@@ -2541,7 +2908,9 @@
     "title": "A Survey on Large Language Model based Autonomous Agents",
     "priority": "external_literature",
     "layer": "llm_agent_architecture",
-    "chapter_targets": ["asi-is-a-stack-not-a-model"],
+    "chapter_targets": [
+      "asi-is-a-stack-not-a-model"
+    ],
     "url": "https://arxiv.org/abs/2308.11432",
     "notes": "External LLM-agent architecture comparator for agent profiles, memory, planning, and action modules around a language model, useful for positioning the stack frame against agent-system decompositions.",
     "source_type": "arxiv",
@@ -2556,7 +2925,9 @@
     "title": "A Standard Model of the Mind: Toward a Common Computational Framework Across Artificial Intelligence, Cognitive Science, Neuroscience, and Robotics",
     "priority": "external_literature",
     "layer": "cognitive_architecture",
-    "chapter_targets": ["asi-is-a-stack-not-a-model"],
+    "chapter_targets": [
+      "asi-is-a-stack-not-a-model"
+    ],
     "url": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2744",
     "notes": "External cognitive-architecture comparator for treating intelligent behavior as an integrated architecture spanning memory, learning, perception/action, procedural control, and deliberation.",
     "source_type": "journal_article",
@@ -2570,7 +2941,9 @@
     "title": "A Robust Layered Control System for a Mobile Robot",
     "priority": "external_literature",
     "layer": "layered_robot_control_architecture",
-    "chapter_targets": ["asi-is-a-stack-not-a-model"],
+    "chapter_targets": [
+      "asi-is-a-stack-not-a-model"
+    ],
     "url": "https://people.csail.mit.edu/brooks/papers/AIM-864.pdf",
     "notes": "External layered-control architecture comparator for decomposing robot behavior into interacting layers rather than centralizing behavior in one monolithic controller.",
     "source_type": "technical_report",

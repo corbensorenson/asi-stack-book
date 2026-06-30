@@ -34,12 +34,12 @@ EXPECTED_TARGET_STATUS = {
     "m4b": "target_not_generated",
     "audio-embedded-epub": "target_not_generated",
 }
-EXPECTED_TOTALS = {
-    "tables": 5,
-    "mermaid_diagrams": 60,
-    "code_or_schema_blocks": 0,
-    "images": 1,
-}
+COMPANION_TOTAL_KEYS = (
+    "tables",
+    "mermaid_diagrams",
+    "code_or_schema_blocks",
+    "images",
+)
 REQUIRED_BLOCKERS = {
     "reviewed_reader_release_record_not_created_for_audio",
     "narration_script_not_reviewed",
@@ -177,7 +177,7 @@ def validate_generated_workspace(
         treatment = {}
     totals = {
         key: sum(int(value.get(key, 0)) for value in treatment.values() if isinstance(value, dict))
-        for key in EXPECTED_TOTALS
+        for key in COMPANION_TOTAL_KEYS
     }
     if totals != tracked.get("companion_treatment_totals"):
         errors.append(f"tracked companion treatment totals {tracked.get('companion_treatment_totals')} do not match generated {totals}.")
@@ -242,8 +242,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         errors.append("script_workspace_summary.source_profile must be reader_release.")
     if summary.get("audio_profile") != "audio_release":
         errors.append("script_workspace_summary.audio_profile must be audio_release.")
-    if require_int("script_workspace_summary", "script_files", summary.get("script_files"), errors, minimum=1) != 59:
-        errors.append("script_workspace_summary.script_files must be 59.")
+    require_int("script_workspace_summary", "script_files", summary.get("script_files"), errors, minimum=1)
     if summary.get("implementation_horizon_script_status") != "pass":
         errors.append("script_workspace_summary.implementation_horizon_script_status must be pass.")
     if summary.get("review_status") != "review_required":
@@ -264,9 +263,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(totals, dict):
         errors.append("companion_treatment_totals must be an object.")
         totals = {}
-    for key, expected in EXPECTED_TOTALS.items():
-        if require_int("companion_treatment_totals", key, totals.get(key), errors, minimum=0) != expected:
-            errors.append(f"companion_treatment_totals.{key} must be {expected}.")
+    for key in COMPANION_TOTAL_KEYS:
+        require_int("companion_treatment_totals", key, totals.get(key), errors, minimum=0)
 
     if manifest.get("target_artifact_status") != EXPECTED_TARGET_STATUS:
         errors.append("target_artifact_status must keep MP3, M4B, and audio-embedded EPUB at target_not_generated.")
@@ -297,17 +295,21 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     return errors
 
 
-def validate_summary(errors: list[str]) -> None:
+def validate_summary(manifest: dict[str, Any], errors: list[str]) -> None:
     if not SUMMARY.exists():
         errors.append(f"Missing {rel(SUMMARY)}.")
         return
     text = SUMMARY.read_text(encoding="utf-8")
+    summary = manifest.get("script_workspace_summary", {})
+    totals = manifest.get("companion_treatment_totals", {})
+    script_files = summary.get("script_files") if isinstance(summary, dict) else None
+    mermaid_diagrams = totals.get("mermaid_diagrams") if isinstance(totals, dict) else None
     required_fragments = [
         "Reader Audio-Script Probe Manifest",
         "python3 scripts/build_audio_script.py --check",
-        "| Script files | 59 |",
+        f"| Script files | {script_files} |",
         "| Implementation-horizon script status | pass |",
-        "| Mermaid diagrams | 60 |",
+        f"| Mermaid diagrams | {mermaid_diagrams} |",
         "| MP3 | `target_not_generated` |",
         "audio_edition_release_record_not_created",
         "This manifest is not an audiobook",
@@ -324,10 +326,16 @@ def main() -> None:
     if not isinstance(manifest, dict):
         fail([f"{rel(MANIFEST)} must contain an object."])
     errors = validate_manifest(manifest)
-    validate_summary(errors)
+    validate_summary(manifest, errors)
     if errors:
         fail(errors)
-    print("Reader audio-script probe manifest validation passed: 59 script files, 60 diagram notes, and no audio artifacts generated.")
+    summary = manifest.get("script_workspace_summary", {})
+    totals = manifest.get("companion_treatment_totals", {})
+    print(
+        "Reader audio-script probe manifest validation passed: "
+        f"{summary.get('script_files')} script files, "
+        f"{totals.get('mermaid_diagrams')} diagram notes, and no audio artifacts generated."
+    )
 
 
 if __name__ == "__main__":

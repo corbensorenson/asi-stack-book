@@ -33,11 +33,9 @@ The Coherence Exchange proposes an epistemic-liquidity layer where claims or kno
 
 ## Book Chapters Supported
 
-- Constitutional Alignment Substrate
-- Agency, Dignity, and Corrigibility
-- Moral Uncertainty and Value Conflict
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
+- `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - Evidence States and Claim Discipline
-- Governance Rights: Fork, Exit, and Audit
 - Security Kernel and Digital SCIFs
 - PlanForge DAGs and Intelligence Arbitrage
 - Claim Ledgers and Belief Revision

@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "local_audio_script_probe_record",
-  "last_updated": "2026-06-29",
+  "last_updated": "2026-06-30",
   "purpose": "Record the latest tracked local audio-script review-workspace facts for the generated reader edition without treating the ignored narration scripts as an audiobook, narration approval, or audio release artifact.",
   "source_commands": [
     "python3 scripts/build_audio_script.py --check",
@@ -27,7 +27,7 @@
     "status": "generated_in_temp_and_checked",
     "source_profile": "reader_release",
     "audio_profile": "audio_release",
-    "script_files": 59,
+    "script_files": 57,
     "implementation_horizon_script_status": "pass",
     "review_status": "review_required",
     "required_review_files": [
@@ -41,7 +41,7 @@
   },
   "companion_treatment_totals": {
     "tables": 5,
-    "mermaid_diagrams": 60,
+    "mermaid_diagrams": 58,
     "code_or_schema_blocks": 0,
     "images": 1
   },

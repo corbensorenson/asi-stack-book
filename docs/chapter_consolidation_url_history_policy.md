@@ -1,23 +1,24 @@
 # Chapter Consolidation URL and History Policy
 
-Last updated: 2026-06-29
+Last updated: 2026-06-30
 
-Status: active policy for future consolidation execution; no merge or redirect has been executed by this document.
+Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot through static historical stubs.
 
 This policy defines how public chapter URLs, stable chapter IDs, source history,
-and reader/research traceability must be handled when a future governed
+and reader/research traceability must be handled when a governed
 consolidation package executes. It is a release-control policy, not source
-evidence, not an external review, not a manifest edit, not a redirect
-implementation, and not a support-state transition.
+evidence, not an external review, and not a support-state transition. The
+2026-06-30 Part I pilot applied the policy through static historical stubs and
+`docs/chapter_history_ledger.md`.
 
 ## Decision Boundary
 
-- The canonical manifest still has 54 chapters.
-- No chapter is retired, merged, redirected, or removed by this policy.
-- A future merge or fold remains blocked until a reviewed package explicitly
-  records the URL treatment for every retired source chapter.
+- The canonical manifest now has 52 chapters after the executed Part I pilot.
+- This policy does not by itself retire, merge, redirect, or remove any chapter; execution commits do that work.
+- A future merge or fold remains blocked until its package explicitly records
+  the URL treatment for every retired source chapter.
 - If a retired public chapter URL cannot be preserved or deliberately recorded
-  as a reviewed historical exception, the merge must be deferred.
+  as a reviewed historical exception, that merge must be deferred.
 
 ## Default URL Policy
 
@@ -78,11 +79,11 @@ For the Part I alignment/governance pilot:
 
 | Proposed destination | Continuity URL | Retired source URL treatment |
 |---|---|---|
-| `constitutional-alignment-substrate` as **Constitutional Alignment: Agency, Dignity, and Corrigibility** | Keep `/chapters/constitutional-alignment-substrate.html`. | Preserve `/chapters/agency-dignity-and-corrigibility.html` through redirect or historical stub. |
-| `moral-uncertainty-and-value-conflict` as **Moral Uncertainty, Value Conflict, and Contestable Governance** | Keep `/chapters/moral-uncertainty-and-value-conflict.html`. | Preserve `/chapters/governance-rights-fork-exit-and-audit.html` through redirect or historical stub. |
+| `constitutional-alignment-substrate` as **Constitutional Alignment: Agency, Dignity, and Corrigibility** | Keep `/chapters/constitutional-alignment-substrate.html`. | Preserved `/chapters/agency-dignity-and-corrigibility.html` through a static historical stub in the 2026-06-30 execution package. |
+| `moral-uncertainty-and-value-conflict` as **Moral Uncertainty, Value Conflict, and Contestable Governance** | Keep `/chapters/moral-uncertainty-and-value-conflict.html`. | Preserved `/chapters/governance-rights-fork-exit-and-audit.html` through a static historical stub in the 2026-06-30 execution package. |
 
-These defaults do not authorize the pilot. They only remove ambiguity about the
-URL/history treatment a future accepted execution package must implement.
+These defaults were applied to the Part I pilot and remain defaults for future
+accepted execution packages.
 
 ## Validation Expectations
 
@@ -104,10 +105,8 @@ Before a future merge commit is accepted, validation should prove:
 
 ## Non-Claims
 
-- This policy does not execute a merge or fold.
-- This policy does not implement redirects or historical stubs.
-- This policy does not change `book_structure.json`.
-- This policy does not change chapter count.
+- This policy does not by itself execute a merge or fold.
+- The 2026-06-30 Part I execution package, not this policy text alone, implemented two historical stubs and changed the manifest to 52 chapters.
 - This policy does not approve any destination draft.
 - This policy does not create external review evidence.
 - This policy does not promote any claim support state.

@@ -25,8 +25,8 @@ SAFETY_CRITICAL_MODULES = {
 }
 SAFETY_CRITICAL_CHAPTERS = {
     "lean/AsiStackProofs/Alignment.lean": "chapters/constitutional-alignment-substrate.qmd",
-    "lean/AsiStackProofs/Corrigibility.lean": "chapters/agency-dignity-and-corrigibility.qmd",
-    "lean/AsiStackProofs/GovernanceRights.lean": "chapters/governance-rights-fork-exit-and-audit.qmd",
+    "lean/AsiStackProofs/Corrigibility.lean": "chapters/constitutional-alignment-substrate.qmd",
+    "lean/AsiStackProofs/GovernanceRights.lean": "chapters/moral-uncertainty-and-value-conflict.qmd",
     "lean/AsiStackProofs/SelfImprovement.lean": "chapters/recursive-self-improvement-boundaries.qmd",
     "lean/AsiStackProofs/ValueConflict.lean": "chapters/moral-uncertainty-and-value-conflict.qmd",
 }

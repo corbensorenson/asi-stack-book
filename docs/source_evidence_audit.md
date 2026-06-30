@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 54 |
-| Assigned source/chapter pairs | 461 |
-| Exact claim-source mappings | 461 |
+| Chapters audited | 52 |
+| Assigned source/chapter pairs | 449 |
+| Exact claim-source mappings | 449 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 461 |
-| Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 461 |
-| Support-state counts | {"argument": 54} |
+| Source notes present for assigned pairs | 449 |
+| Source notes listing assigned chapter | 449 |
+| Passage-reviewed mappings recorded | 449 |
+| Support-state counts | {"argument": 52} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -40,9 +40,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `constitutional-alignment-substrate` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
-| `agency-dignity-and-corrigibility` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `moral-uncertainty-and-value-conflict` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `governance-rights-fork-exit-and-audit` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
+| `moral-uncertainty-and-value-conflict` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `stable-capability-fields` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -97,20 +95,18 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `viea` | 24 | yes |
 | `moecot` | 24 | yes |
 | `talos` | 23 | yes |
-| `spinoza` | 17 | yes |
+| `spinoza` | 16 | yes |
 | `scf` | 15 | yes |
 | `rmi` | 15 | yes |
 | `benchmaxxing` | 14 | yes |
-| `coherence_exchange` | 14 | yes |
 | `vcm_public` | 13 | yes |
 | `project_theseus_whitepaper` | 13 | yes |
+| `coherence_exchange` | 12 | yes |
 | `genesiscode` | 11 | yes |
 | `planforge` | 11 | yes |
 | `cognitive_loop_closure` | 11 | yes |
 | `verification_bandwidth` | 10 | yes |
 | `cgs` | 9 | yes |
-| `alignment_field` | 9 | yes |
-| `field_of_god_ai_constitution` | 9 | yes |
 | `theseus_operator_os` | 9 | yes |
 | `cognitive_compilation` | 8 | yes |
 | `tokenmana` | 8 | yes |
@@ -118,16 +114,17 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `simulation_scaling` | 7 | yes |
 | `ladon_manhattan` | 7 | yes |
 | `vcm_editable` | 7 | yes |
+| `alignment_field` | 7 | yes |
+| `field_of_god_ai_constitution` | 7 | yes |
 | `theseus_self_evolution_system` | 7 | yes |
 | `theseus_architecture_gate` | 7 | yes |
-| `uat` | 6 | yes |
 | `software_magic_grimoire` | 6 | yes |
 | `octopus_router` | 6 | yes |
 | `circle_ai_contract_suite` | 6 | yes |
 | `beastbrain` | 5 | yes |
+| `uat` | 5 | yes |
 | `treellm` | 5 | yes |
 | `rankfold_neuralfold` | 4 | yes |
-| `ethica_mechanica` | 4 | yes |
 | `context_engineer` | 4 | yes |
 | `bugbrain` | 4 | yes |
 | `circle_ai_architectures` | 4 | yes |
@@ -135,7 +132,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `road_to_agi` | 4 | yes |
 | `aletheia` | 3 | yes |
 | `bbvca_v9` | 3 | yes |
-| `field_of_god` | 3 | yes |
 | `rgs` | 3 | yes |
 | `moecot_md` | 3 | yes |
 | `coilra_multicoil_rope` | 3 | yes |
@@ -143,7 +139,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rope_position_certifier` | 3 | yes |
 | `theseus_plan_compiler` | 3 | yes |
 | `beastbrain_timeless` | 2 | yes |
-| `eternal_code` | 2 | yes |
+| `field_of_god` | 2 | yes |
+| `ethica_mechanica` | 2 | yes |
 | `planforge_compiler_arch` | 2 | yes |
 | `ext_akash_docs_2026` | 2 | yes |
 | `ext_golem_docs_2025` | 2 | yes |
@@ -151,6 +148,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_pagedattention_vllm_2023` | 2 | yes |
 | `ext_mamba_2023` | 2 | yes |
 | `coilmoecot` | 2 | yes |
+| `eternal_code` | 1 | yes |
 | `black_hole_context_manager` | 1 | yes |
 | `talos_md` | 1 | yes |
 | `spinoza_composer` | 1 | yes |
@@ -249,25 +247,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
-| `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
-| `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
-| `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `field_of_god` | mapped | note present | chapter listed | passage-reviewed |
-| `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `eternal_code` | mapped | note present | chapter listed | passage-reviewed |
-| `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
-| `agency-dignity-and-corrigibility.core` | `agency-dignity-and-corrigibility` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `uat` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
-| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
-| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
-| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
-| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
-| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
-| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `uat` | mapped | note present | chapter listed | passage-reviewed |
-| `governance-rights-fork-exit-and-audit.core` | `governance-rights-fork-exit-and-audit` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
+| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `stable-capability-fields.core` | `stable-capability-fields` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `stable-capability-fields.core` | `stable-capability-fields` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `stable-capability-fields.core` | `stable-capability-fields` | `talos` | mapped | note present | chapter listed | passage-reviewed |

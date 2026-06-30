@@ -36,7 +36,7 @@ This source grounds the book's constitutional and governance chapters against a 
 
 ## Book Chapters Supported
 
-- `constitutional-alignment-substrate` (Constitutional Alignment Substrate)
+- `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
 - `governance-rights-fork-exit-and-audit` (Governance Rights, Fork, Exit, and Audit)
 
 ## Claims To Add Or Update
