@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 118 |
+| Proof targets in manifest | 119 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 237 |
+| Theorem declarations classified | 249 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 122 |
+| Derived/decomposed theorem declarations | 134 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -60,7 +60,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 2 | 5 | 4 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -149,8 +149,20 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_blocks_belief_revision_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_blocks_claim_promotion` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `valid_belief_revision_record_preserves_identity_history_and_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `authority_escape_blocks_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `compiled_artifact_preserves_all_required_ir_obligations` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `complete_lowering_review_accepts` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `cyclic_dependencies_route_to_repair` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `invalidating_repair_without_ledger_requires_update` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `known_residual_records_lowering_residual` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `missing_atoms_request_semantic_ir` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `missing_lowering_receipt_requires_receipt` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `missing_obligation_links_request_semantic_ir` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `missing_source_plan_rejects_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `missing_validators_require_validator` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `obligation_loss_blocks_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `repair_invalidating_existing_obligation_requires_ledger_update` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | `validator_failure_routes_to_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `cyclic_memory_claim_records_residue_and_winding_or_visible_alias_residual` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `sparse_coverage_or_freshness_alone_cannot_promote_retrieval_quality` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CommandContracts.lean` | `hidden_or_conflicting_instruction_cannot_override_explicit_constraint` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

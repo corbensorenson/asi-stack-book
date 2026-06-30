@@ -3189,6 +3189,11 @@
               "implementation_status": "implemented",
               "result_status": "passes via synthetic plan-execution contract harness"
             },
+            {
+              "name": "Semantic lowering route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite semantic-lowering route coverage only"
+            },
             "Incremental repair regression test",
             "Target compilation audit"
           ],
@@ -3204,6 +3209,12 @@
               "tag": "lean:cognitive_compilation.ir.failure_blocks_promotion",
               "module": "AsiStackProofs.CognitiveCompilation",
               "target": "A repair that invalidates an existing obligation cannot be accepted without updating the ledger.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:cognitive_compilation.ir.semantic_lowering_route_envelope",
+              "module": "AsiStackProofs.CognitiveCompilation",
+              "target": "A structured semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews into explicit outcomes.",
               "status": "implemented"
             }
           ],

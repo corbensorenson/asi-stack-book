@@ -451,6 +451,16 @@
       "rationale": "Implemented in AsiStackProofs.CognitiveCompilation as a finite repair-acceptance predicate: accepted repairs that invalidate existing obligations require ledger updates."
     },
     {
+      "tag": "lean:cognitive_compilation.ir.semantic_lowering_route_envelope",
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "module": "AsiStackProofs.CognitiveCompilation",
+      "formal_target": "A structured semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews into explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CognitiveCompilation as a finite semantic-lowering route function and derived route theorems for missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews."
+    },
+    {
       "tag": "lean:vcm.abi.operational_invariant",
       "chapter_id": "virtual-context-abi",
       "module": "AsiStackProofs.VirtualContextABI",

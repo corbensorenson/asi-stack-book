@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All five assigned local raw-cache mappings are passage-reviewed; support remains argument until compiler traces, target lowering, localized repair, or artifact validators exist."
-  - "Only protocol schema/fixture validation is implemented; the semantic_atom fixture now records atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims. No behavioral execution tests have been run for this chapter."
+  - "Only protocol schema/fixture validation, synthetic requirement-preservation fixture checks, and finite Lean route predicates are implemented; the semantic_atom fixture now records atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims. No behavioral execution tests have been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
 | Source loading state | source notes and passage-reviewed local raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` |
-| Test state | `semantic_atom.valid.json` passes protocol fixture validation with atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims; `AsiStackProofs.CognitiveCompilation` implements finite IR-obligation preservation and repair-ledger gates; `python3 scripts/validate_plan_execution_contracts.py` checks synthetic requirement preservation across command constraints, semantic atoms, and artifact refs; source-plan parsing, real target lowering, localized repair, and artifact validators remain planned. |
+| Test state | `semantic_atom.valid.json` passes protocol fixture validation with atom state, obligation status, IR validity state, lowering state, repair-ledger refs, source refs, support-state effect, and non-claims; `AsiStackProofs.CognitiveCompilation` implements finite IR-obligation preservation, repair-ledger, and semantic-lowering route gates; `python3 scripts/validate_plan_execution_contracts.py` checks synthetic requirement preservation across command constraints, semantic atoms, and artifact refs; source-plan parsing, real target lowering, localized repair, and artifact validators remain planned. |
 
 ## Drafting guardrail
 
@@ -220,10 +220,11 @@ This obligation-preserving compiler is still proposed architecture. The evidence
 |---|---|---|
 | Semantic atom fixture validation | Check that the semantic-atom fixture matches the public schema and declares atom state, intent, obligation status, inputs, outputs, constraints, dependencies, authority, IR validity state, validator state, lowering state, target, repair scope, repair-ledger refs, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Requirement preservation test | Check that lowering from source plan to semantic atoms keeps each declared requirement addressable. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic atoms only |
+| Semantic lowering route proof | Check that a finite semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews to explicit outcomes. | implemented by Lean build; finite semantic-lowering route coverage only |
 | Incremental repair regression test | Break one atom-level requirement and check that the repair can stay within the declared repair scope. | planned; not run |
 | Target compilation audit | Check that a target artifact records which atoms, assumptions, validators, and residuals produced it. | planned; not run |
 
-The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow requirement-preservation records. The remaining tests require a source-plan parser or hand-authored trace, a target artifact, and validators that can reject missing requirements.
+The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow requirement-preservation records and semantic-lowering route discipline. The remaining tests require a source-plan parser or hand-authored trace, a target artifact, and validators that can reject missing requirements.
 
 ### Formalization hooks
 
@@ -231,8 +232,9 @@ The fixture-shape check, finite Lean predicates, and synthetic plan-execution ha
 |---|---|---|---|
 | `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | implemented |
 | `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | implemented |
+| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilation` | A structured semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews into explicit outcomes. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over compiled-artifact and repair-acceptance reviews. They prove only the record-level gates: required IR obligations are preserved when a valid compilation review says so, and a repair that invalidates an existing obligation cannot be accepted without a ledger update. They do not prove source-plan parsing, target lowering, localized repair performance, compiler correctness, or artifact-level validator coverage.
+These Lean hooks are implemented as finite-record predicates over compiled-artifact, repair-acceptance, and semantic-lowering reviews. They prove only the record-level gates: required IR obligations are preserved when a valid compilation review says so, a repair that invalidates an existing obligation cannot be accepted without a ledger update, and a structured lowering review routes known invalid or complete states to explicit outcomes. They do not prove source-plan parsing, target lowering, localized repair performance, compiler correctness, or artifact-level validator coverage.
 
 ## Source crosswalk
 

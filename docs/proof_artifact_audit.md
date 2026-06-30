@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 118 |
-| Manifest status counts | {"implemented": 118} |
-| Triage class counts | {"formal-invariant": 118} |
+| Proof targets audited | 119 |
+| Manifest status counts | {"implemented": 119} |
+| Triage class counts | {"formal-invariant": 119} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -39,7 +39,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 2 | 5 | 3 | 3 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/ClaimLedger.lean` | 2 | 5 | 4 | 3 |
-| `lean/AsiStackProofs/CognitiveCompilation.lean` | 2 | 2 | 2 | 2 |
+| `lean/AsiStackProofs/CognitiveCompilation.lean` | 3 | 14 | 3 | 3 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/CommandContracts.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | 2 | 2 | 2 | 1 |
@@ -97,7 +97,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `capability-replacement-and-rollback` | 3 | 3 | 0 | 0 |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2 | 2 | 0 | 0 |
 | `claim-ledgers-and-belief-revision` | 2 | 2 | 0 | 0 |
-| `cognitive-compilation-and-semantic-ir` | 2 | 2 | 0 | 0 |
+| `cognitive-compilation-and-semantic-ir` | 3 | 3 | 0 | 0 |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 0 | 0 |
@@ -183,6 +183,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:planforge.dag.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_compilation.ir.operational_invariant` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_compilation.ir.failure_blocks_promotion` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.abi.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.abi.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.certificates.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |

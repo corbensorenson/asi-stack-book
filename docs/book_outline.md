@@ -1086,6 +1086,7 @@ Draft deliverables:
 - Implemented protocol validation: `semantic_atom` fixture validates public record shape only, including atom state, source-plan refs, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact refs, lowering receipts, repair-ledger refs, source refs, support-state effect, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the Cognitive Compilation claim across Cognitive Compilation S-IR/repair architecture, PlanForge compiler-orchestration framing, GenesisCode evidence-carrying IR/provenance discipline, TreeLLM external semantic-substrate intuition, and VIEA intent-to-artifact ledger context; all five local mappings now have reviewed passage references. Support remains `argument` pending compiler traces, source-plan parsing, target-lowering preservation, validator adequacy, localized-repair results, quality/cost measurements, or accepted evidence transitions.
 - Implemented synthetic Codex test: Requirement preservation test via `python3 scripts/validate_plan_execution_contracts.py`; source-plan parser and real target artifact validation remain open.
+- Implemented proof-backed check: finite semantic-lowering route coverage for missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews.
 - Planned Codex test: Incremental repair regression test.
 - Planned Codex test: Target compilation audit.
 
@@ -1095,6 +1096,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | implemented |
 | `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | implemented |
+| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilation` | A structured semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews into explicit outcomes. | implemented |
 
 ### The Virtual Context ABI: Typed Pages, Cells, and Certificates
 
@@ -2577,8 +2579,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 118 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 118 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 119 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 119 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Proof artifact traceability audit.

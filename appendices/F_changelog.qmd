@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-06-30 - Cognitive compilation semantic lowering route proof envelope
+
+- Extended `AsiStackProofs.CognitiveCompilation` with a finite semantic
+  lowering route vocabulary, review record, and route function over source-plan
+  acceptance, semantic-atom declaration, obligation links, dependency
+  acyclicity, contract-bounded authority, assumption records, targets,
+  validators, validator results, lowering receipts, obligation preservation,
+  repair-ledger updates, residuals, and acceptance requests.
+- Added derived/decomposed Lean theorems showing that missing source plans
+  reject lowering; missing atoms and obligation links request semantic IR;
+  cyclic dependencies and validator failures route to repair; authority escapes
+  and obligation loss block lowering; missing validators and receipts require
+  explicit artifacts; invalidating repairs without ledger updates require
+  ledger updates; known residuals are recorded; and complete lowering reviews
+  can be accepted.
+- Added the `lean:cognitive_compilation.ir.semantic_lowering_route_envelope`
+  proof target to the outline, manifest, proof triage, Cognitive Compilation
+  chapter, and Appendix E. The proof manifest now tracks 119 implemented
+  finite-record targets, and the proof-depth classifier now records 249 theorem
+  declarations: 115 direct/projection-style and 134 derived/decomposed.
+- Updated the Cognitive Compilation chapter, proof-depth and proof-adequacy
+  surfaces, v1.0 roadmap/status surfaces, v0.2 manuscript status, publication
+  readiness note, repository map, and proof/code plan. The proof adequacy review
+  keeps Cognitive Compilation in `needs executable tests first`.
+- This does not promote any Appendix C or chapter core claim, parse source
+  plans, lower real target artifacts, validate localized repair behavior,
+  measure compiler quality, prove compiler correctness, approve reader
+  artifacts, or create EPUB, DOCX, PDF, audio, DOI, Zenodo, or audio-embedded
+  EPUB release artifacts.
+
 ## 2026-06-30 - Execution dispatch route proof envelope
 
 - Extended `AsiStackProofs.IntentToExecution` with a finite execution dispatch
