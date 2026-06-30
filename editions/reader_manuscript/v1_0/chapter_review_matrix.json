@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 9,
+    "curated_manuscript_candidate": 10,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -518,12 +518,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_context_full_review_pass.md#decisions"
+        "docs/reader_part_ii_context_full_review_pass.md#decisions",
+        "docs/curated_reader_context_transactions_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the context transactions chapter. Immutable events, coherent snapshots, mounts, branches, taint, deletion closure, replay boundaries, typed faults, and deployed-memory-store non-claims remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the context transactions chapter. A first drafting-only curated prose pass now foregrounds memory as accountable state, transactional context views, snapshots, mounts, taint/deletion closure, typed faults, artifact inheritance, proof/test limits, and memory-store non-claims without approving release.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

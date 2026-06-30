@@ -643,6 +643,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_verification_bandwidth_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "title": "Context Transactions, Snapshots, Mounts, and Taint",
+      "file": "editions/reader_manuscript/v1_0/chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+      "live_source_ref": "chapters/context-transactions-snapshots-mounts-and-taint.qmd@0840248da",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#context-transactions-snapshots-mounts-and-taint.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#context-transactions-snapshots-mounts-and-taint",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around memory as accountable state, transactional context views, immutable events, versioned pages, mounts, snapshots, branches, taint/deletion closure, typed faults, downstream artifact inheritance, minimum viable transaction fixtures, and beyond-SOTA transactional memory; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external records remain comparators rather than claim support",
+        "proof/test status preserved without adding unrun memory-store, read-your-writes, branch-isolation, mount-visibility, replay, poisoning-resistance, side-channel, or VCM conformance results",
+        "implementation horizon preserved without implying current transactional memory substrate deployment",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_context_transactions_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {
