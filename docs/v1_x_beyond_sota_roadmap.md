@@ -64,6 +64,10 @@ This roadmap reconciles:
   idea as a section, subclaim, proof hook, or source mapping, and the follow-up
   note that the repeated 13-section chapter skeleton is now the main reader
   burden in several clusters;
+- the 2026-06-30 pasted consolidation follow-up, which confirms that the
+  consolidation direction has teeth but should now move through decisions on
+  already packaged merge and fold candidates rather than another broad
+  planning pass or a direct 54-to-44 manifest edit;
 - Codex verification of Claude's claims against the local tree;
 - `book_structure.json`, which currently defines four parts, 54 chapters, and
   11 appendices;
@@ -771,6 +775,10 @@ Follow-up review outcome:
   semantic representation now have fold dispositions; semantic representation
   remains dependency-bound to the compression/representation package decision
   before any reader curation or manifest edit depends on it.
+- The 2026-06-30 follow-up does not add a new cluster. It strengthens the
+  next-work rule: judge the current packages in order, then execute, revise,
+  defer, or reject/retain them with a recorded reason before source chapters in
+  those clusters are treated as stable reader-manuscript targets.
 - Broad human-reader curation should not harden duplicate chapter skeletons in
   a pending consolidation cluster. Local prose cleanup is still allowed, but
   curated-reader graduation for those source chapters should wait until the
