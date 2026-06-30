@@ -36,7 +36,7 @@ Circle AI Architectures states a disciplined Circle AI thesis: cyclic or coil st
 
 ## Book Chapters Supported
 
-- `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
 - `circle-calculus-and-proof-carrying-ai-contracts` (Circle Calculus and Proof-Carrying AI Contracts)
 - `coilra-multicoil-rope-and-cyclic-mixers` (CoilRA, MultiCoil RoPE, and Cyclic Mixers)

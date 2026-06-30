@@ -15,13 +15,20 @@ primary_sources:
   - "bbvca_v9"
   - "bbvca_main"
   - "rankfold_neuralfold"
+  - "treellm"
+  - "spinoza"
+  - "verification_bandwidth"
+  - "cognitive_compilation"
+  - "circle_ai_architectures"
+  - "coilra_multicoil_rope"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C records exact passage-reviewed mappings for all assigned compact-generation and folded generate/verify/repair sources; support remains at argument until CGS utility, residual-burden behavior, fallback behavior, reconstruction equality, repair-cost accounting, downstream utility tests, compact-adequacy proofs, generator behavior, codec evidence, or reproduced implementation evidence exist."
   - "Only the compact_generative_record and compression_receipt fixtures plus narrow finite Lean residual/exactness/reconstruction predicates have been implemented; these validate record shape and bounded predicates only. No CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BBVCA Prototype A implementation, entropy coder, exact reconstruction harness, RankFold/NeuralFold artifact run, rate comparison, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository."
   - "BugBrain, Project Theseus, BBVCA, and RankFold/NeuralFold passages are used as speculative, source-reported, or conceptual architecture lineage only; they do not prove edge AGI, consciousness, compact adequacy, codec correctness, compression efficiency, universality, runtime behavior, or deterministic decode behavior here."
-  - "The former `generate-verify-repair-compression` chapter was folded into this chapter on 2026-06-30 as a preserved subclaim and receipt lane; the merge changes chapter organization, not support state."
+  - "The former `semantic-representation-and-tree-structured-models` chapter was folded into Compact Generative Systems on 2026-06-30 as Semantic Representation Leasing; `semantic_node_record.valid.json` and `AsiStackProofs.SemanticRepresentation` validate record-shape and finite provenance/supersession predicates only, not TreeLLM behavior, semantic graph adequacy, grounding quality, representation utility, cyclic-substrate advantage, or model-quality improvement."
+  - "The former `generate-verify-repair-compression` chapter was folded into Compact Generative Systems on 2026-06-30 as a preserved subclaim and receipt lane; the merge changes chapter organization, not support state."
 ---
 
 ## Chapter status
@@ -33,16 +40,16 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-06-30 |
-| Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `bbvca_v9`, `bbvca_main`, `rankfold_neuralfold` |
+| Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `bbvca_v9`, `bbvca_main`, `rankfold_neuralfold`, `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `cgs`, `rgs`, `bbvca_v9`, `bbvca_main`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold` |
-| Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; no raw source text is published |
-| Test state | `compact_generative_record.valid.json` and `compression_receipt.valid.json` pass repository-level protocol fixture validation; finite residual/exactness predicates are implemented in `AsiStackProofs.CompactGenerativeSystems`; finite reconstruction/verification predicates are implemented in `AsiStackProofs.GenerateVerifyRepair`; behavioral CGS utility, fallback, reconstruction-quality, repair-cost, bounded-search, consumer-policy, and downstream tests remain planned. |
+| Source queue | primary: `cgs`, `rgs`, `bbvca_v9`, `bbvca_main`, `treellm`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` |
+| Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; Circle/Coil material remains source-note/public-note mapped without copying raw local project text into the public repo. |
+| Test state | `compact_generative_record.valid.json`, `compression_receipt.valid.json`, and `semantic_node_record.valid.json` pass repository-level protocol fixture validation; finite residual/exactness predicates are implemented in `AsiStackProofs.CompactGenerativeSystems`; finite reconstruction/verification predicates are implemented in `AsiStackProofs.GenerateVerifyRepair`; finite semantic provenance/supersession predicates are implemented in `AsiStackProofs.SemanticRepresentation`; behavioral CGS utility, fallback, reconstruction-quality, repair-cost, bounded-search, semantic grounding, hierarchy-revision, representation-utility, consumer-policy, and downstream tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter uses Compact Generative Systems, Ratcheting Generative Systems, and the folded Generate-Verify-Repair compression material as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, that BBVCA has been implemented, or that any local compression codec exists in this repository. The repo now proves finite Lean predicates over compact-generative records and compression receipts, but those predicates do not measure compression utility, rate, decode behavior, or downstream artifact quality.
+The compact-generative argument uses Compact Generative Systems, Ratcheting Generative Systems, the folded Generate-Verify-Repair compression material, and the folded Semantic Representation material as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, that BBVCA has been implemented, that TreeLLM has been implemented, or that any local compression codec or semantic graph benchmark exists in this repository. The repo now proves finite Lean predicates over compact-generative records, compression receipts, and semantic-node records, but those predicates do not measure compression utility, rate, decode behavior, downstream artifact quality, semantic grounding, or representation utility.
 
 After the personal-hive substrate, compactness becomes an economic and governance question rather than a style preference. The stack can use smaller seeds, summaries, procedures, generators, or generated reconstructions only when residual burden, verification cost, repair cost, fallback, consumer policy, and authority remain visible.
 
@@ -53,24 +60,28 @@ Compactness is therefore a state claim, not a word-count claim. A representation
 
 Once the stack has routed work onto governed compute, compactness becomes tempting. Smaller seeds, summaries, procedures, generators, and generated reconstructions matter only when the remaining burden is honest.
 
-The test is whether compactness reduces total burden or merely moves it somewhere invisible. A compact representation should say what must be reconstructed, what must be verified, what fallback exists, what authority it has, what costs are counted, and what residual work it leaves.
+The test is whether compactness reduces total burden or merely moves it somewhere invisible. A compact representation should say what must be reconstructed, verified, repaired, expanded, or refused, plus which fallback and authority limits apply.
 
-Honest compactness is therefore a governance problem. The smaller object has to carry enough receipts to show when it is safe to use, when it needs a repair residual, and when the full artifact must return. A summary, seed, generator, or repaired reconstruction should lower cost without hiding its unpaid remainder.
+Semantic representations follow the same rule. A clean tree, graph, or semantic token can carry work only with grounding, permitted use, residual uncertainty, consumer policy, and a clear path back to fuller context.
 
-Compact forms earn trust by preserving the path back to what they compressed. The residual is the price tag that keeps compactness from becoming self-deception: what must be checked, regenerated, repaired, expanded, compared, or refused. A compact object is best when it makes unpaid work visible, not when it makes omission harder.
+Honest compactness is therefore a governance problem. The smaller object has to carry enough receipts to show when it is safe to use, when it needs a repair residual, and when the full artifact must return. A summary, seed, generator, semantic node, or repaired reconstruction should lower cost without hiding its unpaid remainder.
+
+That is the standard the stack applies here: compress only with reconstruction duties, verification duties, and visible residuals still attached for every use.
 :::
 
 ## Problem
 
-The efficient-ASI thesis depends on compact structures, but compactness is dangerous when it hides the cost of generation, verification, correction, repair, fallback, or human review. A small seed that requires unbounded search is not efficient. A generated reconstruction that skips exact repair is not exact. A fluent generator that loses edge cases is not honest. A tiny controller that shifts work into invisible residuals is not governed.
+The efficient-ASI thesis depends on compact structures, but compactness is dangerous when it hides the cost of generation, verification, correction, repair, fallback, semantic grounding, or human review. A small seed that requires unbounded search is not efficient. A generated reconstruction that skips exact repair is not exact. A fluent generator that loses edge cases is not honest. A tidy semantic graph that loses provenance or task limits is not grounded. A tiny controller that shifts work into invisible residuals is not governed.
 
 CGS gives the book a vocabulary for this problem: seed, rule system, memory/state, residual/error, verification, and governance/generation interface. RGS adds the improvement loop: repeated successful behavior can become verified structure, but failures must stay in residual escrow and regressions must remain protected.
 
-The question is not whether a system is small. It is whether the smaller structure preserves enough of the task boundary that the remaining work is bounded, visible, and payable. If verification, repair, fallback, or human interpretation grows faster than the representation shrinks, the compact core may be an accounting error.
+The question is not whether a system is small. It is whether the smaller structure preserves enough of the task boundary that the remaining work is bounded, visible, and payable. If verification, repair, fallback, grounding, hierarchy migration, consumer-policy review, or human interpretation grows faster than the representation shrinks, the compact core may be an accounting error.
 
 ## Why existing approaches are insufficient
 
 Compression narratives often count the visible representation while ignoring the work needed to reconstruct or use it. A model can look compact by storing information in a generator, a prompt, a retrieval system, a human operator, a verifier, a repair stream, or a fallback path. If those burdens are not recorded, the architecture has not saved complexity; it has hidden it.
+
+Semantic representation has the same trap in a more legible costume. Opaque token prediction does not expose concept hierarchy or source grounding, but a hand-built ontology, semantic graph, or tree token can hide uncertainty behind a clean path. Information Bottleneck (`ext_information_bottleneck_2000`) frames relevance-preserving compression, and LoRA (`ext_lora_2021`) shows low-rank adaptation as a structural comparator, but neither validates local TreeLLM behavior, semantic-node adequacy, or graph-grounding quality. A semantic representation is only useful when it preserves the constraints its consumer needs and records when it does not.
 
 Compression and representation baselines make residual accounting non-optional. Deep Compression (`ext_deep_compression_2015`) names pruning, quantization, and coding; knowledge distillation (`ext_knowledge_distillation_2015`) names teacher/student behavior transfer; GPTQ (`ext_gptq_2022`) names post-training quantization; DreamCoder (`ext_dreamcoder_2020`) frames reusable abstraction learning; Information Bottleneck (`ext_information_bottleneck_2000`) separates relevance from compression; MDL (`ext_mdl_tutorial_2004`) makes model/data tradeoffs explicit; and CodeBLEU (`ext_codebleu_2020`) reminds artifact evaluation to include task-specific utility signals. Compact generative systems use those baselines to require residual, verifier, repair, and consumer-policy accounting, not to claim a local compression ratio or utility result.
 
@@ -84,9 +95,11 @@ Another insufficiency is evaluator capture. A compact generator can appear effic
 
 The claim remains at `argument` support. The source notes support discussion of compact seeds, residual burden, verification cost, repair streams, fallback, consumer policy, governance interfaces, hidden complexity debt, and ratcheting, but no CGS benchmark, codec, compression-rate experiment, proof of utility, or implementation has been run here.
 
+Folded semantic-representation subclaim: semantic representations are task-scoped leases. Graph nodes, tree paths, and semantic tokens may carry work only when provenance, grounding, adequacy, interoperability, permitted use, residual uncertainty, supersession, and consumer policy are explicit.
+
 ### Claim-source mapping status
 
-Appendix C now carries passage-reviewed mappings for all nine assigned sources. The mappings support compact seeds, rule systems, residual channels, verification contracts, repair streams, consumer policies, governance interfaces, ratcheting pressure, physical/resource constraints, and report-first implementation discipline, not a demonstrated compact core, generator, codec, fallback harness, downstream utility result, compression ratio, BugBrain build, simulation benchmark, or Theseus rerun.
+Appendix C now carries passage-reviewed mappings for all fifteen assigned sources. The mappings support compact seeds, rule systems, residual channels, verification contracts, repair streams, consumer policies, governance interfaces, ratcheting pressure, physical/resource constraints, semantic-node leasing, provenance and grounding gates, hierarchy supersession, typed semantic IR, optional cyclic-representation guardrails, and report-first implementation discipline. They do not support a demonstrated compact core, generator, codec, fallback harness, downstream utility result, compression ratio, TreeLLM implementation, semantic-token benchmark, graph-grounding evaluation, cyclic-model advantage, BugBrain build, simulation benchmark, or Theseus rerun.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -99,6 +112,12 @@ Appendix C now carries passage-reviewed mappings for all nine assigned sources. 
 | `bbvca_v9` | Reconstruction contracts, shared law families, exact repair streams, bounded local verification, explicit fallback, boundary/interface costs, proxy-rate versus final serialization discipline, and anti-universality constraints. | BBVCA Prototype A, compression ratios, codec correctness, and rate experiments have not been implemented or run here. |
 | `bbvca_main` | Hierarchical causal/volumetric reconstruction, compact generator states, deterministic laws, multiscale verification, side information, and repair risks as lineage for the stricter v9 formulation. | Earlier architecture draft only; use v9 for final bounded rate/exactness claims, and no local codec or benchmark exists. |
 | `rankfold_neuralfold` | Low-rank residual coding, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, deterministic decode, and reconstruction checks as comparison points for artifact compression. | Architecture and implementation-plan source only; no local compression benchmark, implementation artifact, deterministic decoder, or reproduced ratio is present. |
+| `treellm` | Traversable semantic graphs, path-derived fixed-size semantic tokens, residual attributes, graph updates, shared graph usage, analogy/interpolation/counterfactual operations, explanation traces, and editable external knowledge. | Whitepaper/specification only; no TreeLLM implementation, measured compression ratio, verified token format, or benchmarked reasoning gain exists here. |
+| `spinoza` | Proof/citation/procedure-carrying claim graphs, belief revision, contradiction detection, defeaters, downgrade behavior, protected axioms, and verifier-scope limits. | Does not solve open-domain natural-language-to-logic translation or prove semantic graph adequacy here. |
+| `verification_bandwidth` | Semantic units as verification objects, workspace limits, constraint checks, pairwise grinding, summary loss, and contradiction-rate pressure. | No grounding, context-adequacy, or contradiction-reduction benchmark has been run. |
+| `cognitive_compilation` | Typed semantic IR, source plans, semantic atoms, compiler passes, validation requirements, localized repair, and target lowering. | No working cognitive compiler, trace suite, or empirical ablation exists in this repository. |
+| `circle_ai_architectures` | Optional representation-substrate discipline for phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure with baselines and negative controls. | Source-note-only local project context; no cyclic-model advantage, model-quality result, sidecar test, Lean build, MLX experiment, or benchmark fixture is claimed. |
+| `coilra_multicoil_rope` | Adapter-block indices, residues, winding, relative RoPE laws, circulant mixers, parameter accounting, baselines, wrong-period controls, and explicit non-claims. | Source-note-only local project context; no quality, speed, memory, training-stability, or context-length improvement has been shown. |
 
 ## Mechanism
 
@@ -172,6 +191,31 @@ flowchart LR
 
 These are evidence states for a representation, not claims about universal compression. They let the system preserve failed experiments as useful negative evidence without converting them into codec success stories.
 
+### Semantic Representation Leasing
+
+Semantic representation is the same burden-accounting problem at the level of meaning. TreeLLM proposes traversable semantic graphs and path-derived tokens; Spinoza supplies proof, citation, and belief-state pressure; Verification Bandwidth warns that compressed semantic units can drop constraints needed for checking; Cognitive Compilation supplies typed semantic IR; and the Circle/Coil sources remain optional-substrate guardrails. None of those sources makes a local semantic graph adequate by itself.
+
+A Semantic Node Record is a scoped representation lease, not a canonical ontology verdict. It can be used for retrieval, planning, compilation, compression, claim review, or explanation only inside its grounding state, permitted uses, consumer policy, and adequacy limits. If a task needs constraints the node no longer carries, the route should fall back to richer source context, record a context-adequacy residual, or quarantine the node.
+
+```{mermaid}
+flowchart LR
+  A["Source or task evidence"] --> B["Semantic node"]
+  B --> C["Provenance + relation refs"]
+  B --> D["Grounding state + residual uncertainty"]
+  C --> E{"Adequate for consumer?"}
+  D --> E
+  E -- "yes" --> F["VCM page / claim graph / IR atom / explanation"]
+  E -- "no" --> G["Fallback, residual, or quarantine"]
+  F --> H["Version and supersession ledger"]
+  G --> H
+```
+
+**Reading the semantic lease gate:** A semantic node earns task-local use only when provenance, grounding, relation structure, residual uncertainty, and consumer policy are visible. If the node is not adequate for that consumer, the system falls back or records a residual instead of treating the graph as source authority.
+
+Semantic-node lifecycle states should include proposed, grounded, adequate-for-task, interoperable, superseded, stale, and quarantined. Those states let a semantic graph remain editable without becoming forgetful. Updating a hierarchy should preserve old references or record supersession because downstream claims, plans, or explanations may still depend on the earlier meaning.
+
+The three gates are grounding, adequacy, and interoperability. Grounding asks what source or artifact supports the node. Adequacy asks whether the node preserves enough constraints for the current task. Interoperability asks whether the node can be consumed by VCM, Spinoza, planning, cognitive compilation, compression, or human explanation without hidden translation loss. A semantic representation should not be promoted because one gate passed while the others remain untested.
+
 ## Interfaces
 
 Compact generators are exposed through the Compact Generative Record.
@@ -237,6 +281,27 @@ Compression receipts add the stricter reconstruction interface:
 
 The consumer policy is load-bearing. A receipt that is acceptable for routing preview may be forbidden for proof input, audit, citation, exact replay, benchmark construction, or training. The same generated reconstruction can therefore be useful and inadmissible at the same time, depending on the consumer.
 
+Semantic representation adds the Semantic Node Record as a companion interface:
+
+- `node_id`
+- `concept_label`
+- `provenance_refs`
+- `parent_refs`
+- `child_refs`
+- `relation_refs`
+- `tokenization_contract`
+- `grounding_state`
+- `version`
+- `supersedes`
+- `residual_uncertainty`
+- `permitted_uses`
+- `evaluation_refs`
+- `consumer_policy`
+- `support_state_effect`
+- `non_claims`
+
+Consumer policies are explicit. VCM needs adequacy state, source coverage, and loss contracts. Spinoza and claim ledgers need provenance, support tier, defeaters, and downgrade paths. Planning needs permitted uses, residual uncertainty, and authority limits. Cognitive compilation needs typed inputs, outputs, constraints, and repair behavior. Compression needs utility and fallback records. Human explanation needs visible non-claims.
+
 ## Invariants
 
 - Lossy claims are labeled.
@@ -248,6 +313,11 @@ The consumer policy is load-bearing. A receipt that is acceptable for routing pr
 - Consumer use is scoped to the reconstruction contract and declared loss.
 - Negative rate results are preserved instead of rewritten as narrative success.
 - Compactness does not promote support state without evidence.
+- Semantic nodes are grounded or labeled speculative.
+- Hierarchy changes are versioned.
+- Graph updates preserve prior references or record supersession.
+- Shared semantic graphs remain indexes and working representations, not independent source authorities.
+- Consumer use is scoped by grounding, adequacy, interoperability, permitted uses, and residual uncertainty.
 
 Compactness is not the invariant; accountability is. A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
 
@@ -260,6 +330,10 @@ Residual honesty also requires retaining the expensive reference path when the c
 - False lossless claims.
 - Hidden residual complexity.
 - Compactness that damages utility.
+- False explainability.
+- Canonical graph capture, where the semantic graph becomes an unreviewed authority source.
+- Hierarchy drift and stale consumer mappings.
+- Semantic laundering, where a clean path explanation is cited instead of the source, proof, or test it was meant to index.
 - Unbounded search.
 - Verification skipped.
 - Repair larger than original data.
@@ -284,6 +358,8 @@ A compact-core comparison fixture should carry the next slice: one compact seed 
 
 The folded generate/verify/repair slice adds the compression receipt. The smallest honest GVR fixture should include one candidate receipt, one verified-exact or repaired-exact receipt, one failed verification, one literal fallback or negative-rate case, and one consumer-policy rejection. That fixture is still not a codec benchmark; its evidential scope is the public record's distinction among exactness, declared loss, repair, fallback, quarantine, and consumer scope.
 
+The folded semantic-representation slice adds the semantic node record. The repository fixture validates provenance, hierarchy, relation references, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, evaluation references, support-state effect, and non-claims. It does not show that a semantic graph works. The first stronger test should use a small grounded domain with source passages, artifact nodes, semantic nodes, and claim records, then deliberately update the hierarchy, remove or supersede a source, and check whether downstream consumers notice the change.
+
 ## Beyond the State of the Art
 
 Compact generative systems earn their place as a burden-accounting layer for compression and generation. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
@@ -295,6 +371,8 @@ The mature layer would report reconstruction burden, decision burden, governance
 The compact-generation boundary is still a design claim. The compactness claim stays at `argument` until exactness records, verifier outputs, reconstruction tests, residual-burden accounts, lossy-ablation cases, and fallback traces show which information compact generation preserved and which obligations it left behind.
 
 At the mature end state, the compact-generative-systems layer becomes a compression control plane. Each task asks for the cheapest lawful representation: full source, compact seed, generated reconstruction, repaired exact receipt, lossy preview, semantic page, specialist core, or rejection. The answer is based on total burden, verifier quality, residual honesty, consumer policy, replay need, downstream risk, and support-state limits, not on ratio alone. Until public codec, utility, rate, and replay evidence exists, that endpoint remains target architecture.
+
+At the semantic layer, the mature endpoint is representation leasing. Graph nodes, tree paths, and semantic tokens become task-scoped meaning objects whose provenance, grounding, adequacy, interoperability, supersession, permitted use, consumer policy, and residual uncertainty travel with every use. A node can be useful for routing while forbidden for proof, citation, audit, or claim support. Stale nodes become migration debt, not invisible graph drift. Quarantined nodes remain available for debugging but not operational use. Until grounded-node records, hierarchy-update histories, supersession trails, retrieval/grounding benchmarks, and semantic-lease tests exist, the semantic-leasing endpoint remains a design target.
 
 ## Codex test plan
 
@@ -314,6 +392,13 @@ At the mature end state, the compact-generative-systems layer becomes a compress
 | Repair-cost accounting test | Compare seed, law ID, repair residual, and metadata against a literal baseline and record a negative result when the repaired form is larger. | planned; not run |
 | Bounded-search failure test | Force the generator past its declared search budget and check that the result falls back, quarantines, or stays unpromoted. | planned; not run |
 | Consumer-policy enforcement test | Check that lossy, preview, or orientation receipts cannot feed exact replay, proof, audit, citation, benchmark, or training consumers without a stronger receipt. | planned; not run |
+| Semantic node record fixture validation | Validate that a semantic node records provenance, hierarchy, relations, tokenization contract, grounding state, versioning, residual uncertainty, permitted uses, evaluation references, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Semantic grounded-provenance predicate | Check that a semantic node marked grounded has at least one provenance link. | implemented in `AsiStackProofs.SemanticRepresentation`; checked by Lean build |
+| Semantic hierarchy-supersession predicate | Check that hierarchy updates preserve prior references or record supersession. | implemented in `AsiStackProofs.SemanticRepresentation`; checked by Lean build |
+| Grounding fidelity test | Check that grounded nodes have provenance and preserve task-relevant constraints. | planned; not run |
+| Hierarchy revision test | Check that hierarchy updates preserve prior references or record supersession through downstream consumers. | planned; not run |
+| Representation utility benchmark | Compare semantic-node representations against neural-only, retrieval-only, or plain-text baselines on a bounded task. | planned; not run |
+| Semantic consumer-policy test | Check that VCM, claim-ledger, planning, compilation, compression, and human-reader consumers reject nodes that lack the fields each consumer requires. | planned; not run |
 
 The implemented rows validate fixture/schema consistency and finite-record Lean predicates only. The remaining rows are acceptance targets for future CGS and GVR experiments; they are not reported benchmark, codec, rate, or artifact-utility results. When a behavioral test is implemented, future revisions should link to the command, fixture, environment notes, corpus where applicable, and result summary, and Appendix E should be regenerated or updated accordingly.
 
@@ -325,8 +410,10 @@ The implemented rows validate fixture/schema consistency and finite-record Lean 
 | `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
 | `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
 | `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
+| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | implemented |
+| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.SemanticRepresentation` | A hierarchy update preserves prior node references or records supersession. | implemented |
 
-These Lean hooks are implemented as finite-record predicates. The validated JSON fixtures and Lean predicates do not prove that compact representations preserve utility, reduce cost, reconstruct real artifacts, improve compression rate, or block promotion under all executable conditions.
+These Lean hooks are implemented as finite-record predicates. The validated JSON fixtures and Lean predicates do not prove that compact representations preserve utility, reduce cost, reconstruct real artifacts, improve compression rate, ground semantic graphs, preserve semantic utility, improve model quality, or block promotion under all executable conditions.
 
 ## Source crosswalk
 
@@ -341,16 +428,22 @@ These Lean hooks are implemented as finite-record predicates. The validated JSON
 | `bbvca_v9` | BBVCA_v9_final_public_release | compression_representation | Preferred generate/verify/repair source for reconstruction contracts, repair streams, bounded verification, fallback, and rate discipline. | source note available; local raw cache available |
 | `bbvca_main` | Big Bang Volumetric Compression Architecture | compression_representation | Earlier/main BBVCA lineage for volumetric reconstruction, deterministic laws, multiscale verification, side information, and repair risks. | source note available; local raw cache available |
 | `rankfold_neuralfold` | RankFold + NeuralFold | compression_representation | Artifact-compression comparison point for low-rank residual coding, manifests, codec parameters, deterministic decode, and reconstruction checks. | source note available; local raw cache available |
+| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token and graph proposal for grounded, efficient, explainable representation. | source note available; local raw cache available |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Claim graphs, belief revision, proof/citation/procedure discipline, defeaters, and protected axioms. | source note available; local raw cache available |
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation versus verification pressure; semantic units as verification objects with constraint-loss risks. | source note available; local raw cache available |
+| `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Typed semantic IR, semantic atoms, validation, target lowering, and localized repair. | source note available; local raw cache available |
+| `circle_ai_architectures` | Circle AI Architectures | cyclic_ai_architecture | Optional cyclic representation-substrate discipline with baselines and negative controls. | source note available |
+| `coilra_multicoil_rope` | CoilRA and MultiCoil RoPE | cyclic_mixers_position_encoding | Adapter-block, residue/winding, block-cyclic, relative RoPE, circulant mixer, and parameter-accounting substrate with explicit non-claims. | source note available |
 
-The crosswalk gives the compactness program a receipt lineage: `cgs` supplies the seed/rule/memory/residual/governance tuple; `bbvca_v9` supplies the stricter generate/verify/repair receipt discipline; `rgs` supplies promotion pressure through residual escrow and regression gates; and the supporting sources keep edge efficiency, physical feasibility, ratcheting, artifact-compression comparison, and report-first implementation visible. Availability of notes and raw cache lowers the drafting barrier; it does not by itself show that a compact core or compression receipt works.
+The crosswalk gives the compactness program a receipt lineage: `cgs` supplies the seed/rule/memory/residual/governance tuple; `bbvca_v9` supplies the stricter generate/verify/repair receipt discipline; `rgs` supplies promotion pressure through residual escrow and regression gates; `treellm` supplies semantic-graph and path-token lineage; and the supporting sources keep edge efficiency, physical feasibility, ratcheting, artifact-compression comparison, semantic-IR, proof-carrying claim, optional-substrate, and report-first implementation boundaries visible. Availability of notes and raw cache lowers the drafting barrier; it does not by itself show that a compact core, compression receipt, semantic graph, or semantic token works.
 
 ## Summary
 
-Compact systems are useful when they generate or reconstruct more value than their hidden burdens cost. Residual-honest accounting therefore keeps seed, rule system, memory, generation, verification, repair, residuals, governance, fallback, consumer policy, and evidence in the same record.
+Compact systems are useful when they generate, reconstruct, or represent more value than their hidden burdens cost. Residual-honest accounting therefore keeps seed, rule system, memory, generation, verification, repair, semantic grounding, residuals, governance, fallback, consumer policy, and evidence in the same record.
 
 Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task. The same rule applies to compression that claims reconstruction: generation is allowed to be clever only when verification, repair, final-rate accounting, and consumer policy pay the exact or scoped remainder.
 
-The bridge is narrow but useful: compact systems can reduce burden, but exact reconstruction needs a stricter receipt that says precisely what the generator failed to carry, what was repaired, when fallback won, and which consumers may rely on the result.
+The bridge is narrow but useful: compact systems can reduce burden, but exact reconstruction needs a stricter receipt that says precisely what the generator failed to carry, what was repaired, when fallback won, and which consumers may rely on the result. Semantic leasing applies the same rule to meaning: a clean node or path can carry work only when the lost context, grounding limits, permitted uses, and supersession path stay visible.
 
 Compactness has to survive total-cost accounting. If the seed is smaller but the hidden verification, repair, review, or authority cost grows without a record, the stack has not become more efficient.
 
@@ -358,4 +451,6 @@ Compactness has to survive total-cost accounting. If the seed is smaller but the
 
 Compact generation and generate/verify/repair receipts expose the cost of reconstructing stored artifacts; the same accounting applies when the system generates output over time. Fast Generation Architectures moves from compact representation to accelerated inference and drafting. It asks which generation mode is allowed, what verifier accepts, what fallback costs, and whether speed still improves the governed task after rejected output, repair, and accepted-output costs are counted.
 
-RankFold, NeuralFold, and Artifact Compression remains standalone after the conservative merge because it owns the technique-facing artifact and tensor-compression lane. It inherits the compact-system residual-honesty and consumer-policy requirements while asking a different question: when may a compressed artifact stand in for a full artifact for a specific task?
+RankFold, NeuralFold, and Artifact Compression remains standalone after the conservative merge because it owns the technique-facing artifact and tensor-compression lane. It inherits the compact-system residual-honesty, semantic-leasing, and consumer-policy requirements while asking a different question: when may a compressed artifact stand in for a full artifact for a specific task?
+
+The former Semantic Representation and Tree-Structured Models material is now a named representation-leasing section inside Compact Generative Systems rather than a second rendered skeleton. Its restoration condition is unchanged: it should become standalone again only if a public-safe semantic graph, TreeLLM, hierarchy-revision, representation-utility, or external-review evidence lane makes semantic representation chapter-owning again.

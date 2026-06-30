@@ -146,6 +146,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Reconstruction quality test | planned | not run |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Repair-cost accounting test | planned | not run |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Bounded-search failure test | planned | not run |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Grounding fidelity test | planned | not run |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Hierarchy revision test | planned | not run |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Representation utility benchmark | planned | not run |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Consumer-policy test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Autoregressive baseline speed-quality test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Speculative decoding acceptance test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Multi-token draft-head acceptance test | planned | not run |
@@ -159,9 +163,6 @@ No result is recorded here unless a test has actually been implemented and run.
 | `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Compression ratio test | planned | not run |
 | `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Probe-route fallback test | planned | not run |
 | `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Downstream utility preservation test | planned | not run |
-| `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Grounding fidelity test | planned | not run |
-| `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Hierarchy revision test | planned | not run |
-| `semantic-representation-and-tree-structured-models` | Semantic Representation and Tree-Structured Models | Representation utility benchmark | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Generation-mode resource-budget alignment harness | implemented | passing via `python3 scripts/validate_generation_mode_baselines.py` |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource budget ledger harness | implemented | passing via `python3 scripts/validate_resource_budget_ledgers.py` |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Budget allocation test | planned | not run |

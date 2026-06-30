@@ -37,7 +37,7 @@ LoRA belongs in the representation and resource chapters as an external referenc
 ## Book Chapters Supported
 
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
-- `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `coilra-multicoil-rope-and-cyclic-mixers` (CoilRA, MultiCoil RoPE, and Cyclic Mixers)

@@ -46,7 +46,7 @@ Cognitive Compilation reframes complex generative work as a compiler pipeline. I
 - `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
 - `artifact-graphs-audit-logs-and-replay` (Artifact Graphs, Audit Logs, and Replay)
-- `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
 
 ## Claims To Add Or Update

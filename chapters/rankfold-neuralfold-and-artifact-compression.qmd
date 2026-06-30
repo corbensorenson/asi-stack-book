@@ -278,12 +278,12 @@ The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold`
 
 Artifact compression is a routing decision under evidence. A compressed artifact may be cheaper to store, but it becomes usable only when reconstruction, residuals, probes, fallback, utility, and cost accounting are explicit.
 
-RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks. The focus then turns from artifact archives to semantic structure, where the risk shifts from bit-level reconstruction to grounding, hierarchy drift, and false explainability.
+RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis: promising enough to specify, not proven enough to promote without a benchmark harness and deterministic decode checks. The focus then turns from artifact archives to resource accounting, where every shortcut has to pay for verification, fallback, metadata, latency, human review, and downstream repair somewhere in the stack.
 
-The bridge is that semantic representation is also compression. It compresses meaning, paths, and relations rather than bytes, so its probe must ask whether the represented meaning is grounded enough for the task.
+The bridge is that artifact compression is never only a storage question. It changes which resource budget pays for retrieval, reconstruction, verification, proof review, audit, and human interpretation.
 
 The governance stance is the same in both chapters: never let an elegant representation outrun its fallback path. Compression earns authority one task, one probe, and one residual ledger at a time.
 
 ## Handoff
 
-Artifact compression asks whether a cheaper stored form can reconstruct enough structure for use. Semantic Representation and Tree-Structured Models asks a related but harder question: whether meaning, hierarchy, provenance, and uncertainty can be represented without becoming false authority. The stack therefore moves from compressed files to semantic structures whose grounding, interoperability, and utility must be tested before they guide routing or claims.
+Artifact compression asks whether a cheaper stored form can reconstruct enough structure for use. Resource Economics and Token Budgets asks whether that cheaper route is still cheaper after decode cost, verification tax, fallback frequency, metadata, human review, latency, energy, and downstream failures are counted. The stack therefore moves from compressed artifacts to the resource ledger that decides when representation shortcuts are worth using at all.

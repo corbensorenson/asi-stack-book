@@ -171,6 +171,19 @@ def main() -> None:
         ROOT / "docs" / "reader_continuity_audit.md",
         "Medium-priority heuristic review chapters",
     )
+    reader_overlay_operation_count = 0
+    reader_overlay_operation_chapters: set[str] = set()
+    overlay_dir = ROOT / "editions" / "reader_overlays" / "v1_0" / "chapters"
+    for overlay_path in sorted(overlay_dir.glob("*.json")):
+        overlay_record = load_json(overlay_path)
+        target_file = str(overlay_record.get("target_file", ""))
+        operations = overlay_record.get("operations", [])
+        if not isinstance(operations, list):
+            continue
+        active_count = sum(1 for op in operations if isinstance(op, dict) and op.get("status") == "active")
+        if active_count:
+            reader_overlay_operation_count += active_count
+            reader_overlay_operation_chapters.add(target_file)
 
     expected_fragments = [
         f"| Book structure | {len(structure.get('parts', []))} parts, {len(chapters)} manifest-driven chapters, {len(appendices)} appendices |",
@@ -306,7 +319,7 @@ def main() -> None:
         "`docs/reader_pdf_probe_manifest.md` records the current 535-page, 8,613,924-byte PDF probe, expected title/evidence-boundary text, refreshed sampled source-card pages, and the remaining full-PDF-layout blocker",
         "`docs/reader_format_review_matrix.md` records the HTML row as release-approved against `release_records/2026-06-29-v1-reader-html-855dc277.json` while EPUB, DOCX, and PDF retain format-specific review blockers.",
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`",
-        "The current v1.0 reader-overlay set carries 33 active operations across 20 chapters for Human view and generated reader editions only.",
+        f"The current v1.0 reader-overlay set carries {reader_overlay_operation_count} active operations across {len(reader_overlay_operation_chapters)} chapters for Human view and generated reader editions only.",
         f"The curated reader-manuscript manifest exists with `{reader_manifest.get('status')}` status and {len(curated_records)} drafting-only curated chapter records; retired standalone reader drafts are archived as history, and the active manifest remains a subordinate narrative derivative whose reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
         "`editions/reader_overlays/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/manifest.json`",

@@ -14,7 +14,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Manifest status counts | {"implemented": 112} |
 | Triage class counts | {"formal-invariant": 112} |
 | Lean modules referenced | 54 |
-| Chapters with proof targets | 45 |
+| Chapters with proof targets | 44 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -100,7 +100,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `cognitive-compilation-and-semantic-ir` | 2 | 2 | 0 | 0 |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
-| `compact-generative-systems-and-residual-honesty` | 4 | 4 | 0 | 0 |
+| `compact-generative-systems-and-residual-honesty` | 6 | 6 | 0 | 0 |
 | `constitutional-alignment-substrate` | 4 | 4 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | 2 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 2 | 2 | 0 | 0 |
@@ -128,7 +128,6 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `routing-heads-and-specialist-cores` | 4 | 4 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 2 | 2 | 0 | 0 |
-| `semantic-representation-and-tree-structured-models` | 2 | 2 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 4 | 4 | 0 | 0 |
 | `stable-capability-fields` | 2 | 2 | 0 | 0 |
 | `system-boundaries-and-authority` | 2 | 2 | 0 | 0 |
@@ -214,12 +213,12 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:compression.cgs.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.gvr.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.gvr.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:representation.semantic_tree.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.SemanticRepresentation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:representation.semantic_tree.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.SemanticRepresentation` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:fast_generation.mode_selection.operational_invariant` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:fast_generation.verified_speed.failure_blocks_promotion` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.operational_invariant` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.failure_blocks_promotion` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:representation.semantic_tree.operational_invariant` | `semantic-representation-and-tree-structured-models` | `AsiStackProofs.SemanticRepresentation` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:representation.semantic_tree.failure_blocks_promotion` | `semantic-representation-and-tree-structured-models` | `AsiStackProofs.SemanticRepresentation` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:resources.budgets.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:resources.budgets.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:simulation.fidelity.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |

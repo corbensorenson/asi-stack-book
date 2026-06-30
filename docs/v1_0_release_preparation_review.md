@@ -33,14 +33,14 @@ python3 scripts/build_audio_script.py --check
 Results:
 
 - Release profile validation passed.
-- Reader spine validation passed for 46 chapters, with minimum reader-spine
+- Reader spine validation passed for 44 chapters, with minimum reader-spine
   chapter length 2,042 words.
-- Reader evidence-boundary validation passed for 46 chapters.
-- Reader overlay validation now passes with 33 active operations and 33 applied
+- Reader evidence-boundary validation passed for 44 chapters.
+- Reader overlay validation now passes with 31 active operations and 31 applied
   operations. The reader overlay log is recorded separately in
   `docs/reader_overlay_pilot.md`.
-- Reader edition check passed for 46 chapters and 51 files; 234 live-only
-  sections would be removed, 58 reader scaffold terms would be humanized, and 33
+- Reader edition check passed for 44 chapters and 49 files; 224 live-only
+  sections would be removed, 58 reader scaffold terms would be humanized, and 31
   reader overlay operations would apply.
 - Reader format render check passed for target formats `html`, `epub`, and
   `docx` as a readiness check.
@@ -148,7 +148,7 @@ Results:
 
 1. A validated live-book candidate needs to be selected and tagged.
 2. The generated reader manuscript has release-grade chapter-text review records
-   for all 46 chapters, but every row still carries release-record or
+   for all 44 chapters, but every row still carries release-record or
    artifact-review blockers.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.

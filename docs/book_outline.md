@@ -1911,16 +1911,18 @@ Lean proof targets:
 
 Stable ID: `compact-generative-systems-and-residual-honesty`
 
-Chapter job: Compact generators and generate/verify/repair receipts need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, fallback, or consumer-policy limits.
+Chapter job: Compact generators, generate/verify/repair receipts, and semantic representation leases need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, semantic grounding loss, hierarchy drift, fallback, or consumer-policy limits.
 
 Core claim: Compact generative systems should store the smallest useful governed generator plus the cheapest exact or scoped residual, while preserving verification, fallback, consumer policy, and residual-burden records.
+
+Folded semantic-representation subclaim: Semantic representations are task-scoped leases: graph nodes and semantic tokens may carry work only when provenance, grounding, utility, interoperability, permitted use, residual uncertainty, and supersession are explicit.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `cgs`, `rgs`, `bbvca_v9`, `bbvca_main` | Read first for compact-system and generate/verify/repair claims and mechanisms. |
-| Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold` | Mine after primary sources for edge/resource constraints, ratcheting, implementation lineage, artifact-compression comparison, and failure modes. |
+| Primary | `cgs`, `rgs`, `bbvca_v9`, `bbvca_main`, `treellm` | Read first for compact-system, generate/verify/repair, and semantic-representation claims and mechanisms. |
+| Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` | Mine after primary sources for edge/resource constraints, ratcheting, implementation lineage, artifact-compression comparison, semantic-IR pressure, proof-carrying claim graphs, optional cyclic substrate guardrails, and failure modes. |
 
 Draft arc:
 
@@ -1933,7 +1935,9 @@ Draft arc:
 - Mechanism: Preserve the folded generate/verify/repair lane as a compression receipt with receipt state, reconstruction contract, public law family, seed, search bound, generated regions, verification result, repair residual, fallback threshold, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims.
 - Mechanism: Treat compression as a transaction with candidate, verified-exact, verified-lossy, repaired-exact, literal-fallback, and quarantined states.
 - Mechanism: Scope compressed outputs by consumer policy so preview, routing, proof, audit, citation, benchmark, training, and exact-replay uses cannot borrow each other's authority.
-- Handoff: Time-domain acceleration inherits the same accepted-output, repair, fallback, and verifier-cost accounting in fast-generation records; RankFold/NeuralFold remains the standalone technique-facing artifact-compression chapter.
+- Mechanism: Preserve the folded semantic-representation lane as Semantic Representation Leasing: semantic nodes, graph paths, and semantic tokens carry work only with provenance, grounding state, adequacy, interoperability, permitted use, residual uncertainty, versioning, supersession, consumer policy, and quarantine/fallback behavior.
+- Mechanism: Track semantic-node lifecycle states: proposed, grounded, adequate-for-task, interoperable, superseded, stale, and quarantined.
+- Handoff: Time-domain acceleration inherits the same accepted-output, repair, fallback, semantic-lease, and verifier-cost accounting in fast-generation records; RankFold/NeuralFold remains the standalone technique-facing artifact-compression chapter.
 - Interface: Compression feeds memory and routing.
 - Interface: Evidence tests downstream utility, exactness, declared loss, and consumer-policy boundaries.
 - Interface: Procedural memory turns repeated generation into tools.
@@ -1949,6 +1953,10 @@ Primary invariants:
 - Search bounds are explicit.
 - Consumer use is scoped to the reconstruction contract and declared loss.
 - Negative rate results are preserved instead of rewritten as narrative success.
+- Semantic nodes are grounded or labeled speculative.
+- Hierarchy changes preserve prior references or record supersession.
+- Shared semantic graphs remain indexes and working representations, not independent source authorities.
+- Consumer use is scoped by grounding, adequacy, interoperability, residual uncertainty, and permitted-use fields.
 
 Failure modes to cover:
 
@@ -1960,12 +1968,17 @@ Failure modes to cover:
 - Repair larger than original data.
 - Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, citation, benchmark, or training work.
 - Proxy-rate drift, where search-time savings survive in prose after final serialization erases them.
+- False explainability.
+- Canonical graph capture, where a semantic graph becomes an unreviewed authority source.
+- Hierarchy drift and stale consumer mappings.
+- Semantic laundering, where a clean path explanation is cited instead of the source, proof, or test it was meant to index.
 
 Draft deliverables:
 
 - A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, authority boundary, use envelope, burden ledger, exact remainder, verification, support-state effect, and residual fields.
 - Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape, generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers/state, source refs, support-state effect, and non-claims only; utility and residual-burden behavior remain planned tests.
 - Implemented repository-level fixture: `compression_receipt.valid.json` validates receipt state, search bound, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims only; no codec, reconstruction benchmark, or rate experiment exists yet.
+- Implemented repository-level fixture: `semantic_node_record.valid.json` validates provenance, hierarchy, relations, tokenization contract, grounding state, versioning, residual uncertainty, permitted uses, evaluation refs, support-state effect, and non-claims only; no TreeLLM implementation, grounding benchmark, representation-utility test, or hierarchy-revision harness exists yet.
 - Planned Codex test: S/R/Q/G/V/E loop consistency test.
 - Implemented Lean predicate: unresolved obligations require residual records.
 - Implemented Lean predicate: lossy representations cannot be marked exact without verification evidence.
@@ -1978,7 +1991,12 @@ Draft deliverables:
 - Planned Codex test: Repair-cost accounting test.
 - Planned Codex test: Bounded-search failure test.
 - Planned Codex test: Consumer-policy enforcement test.
+- Planned Codex test: Grounding fidelity test.
+- Planned Codex test: Hierarchy revision test.
+- Planned Codex test: Representation utility benchmark.
+- Planned Codex test: Semantic consumer-policy test.
 - Historical public slug preserved by `chapters/generate-verify-repair-compression.html`; archived source manuscript retained under `archive/retired_chapters/generate-verify-repair-compression.qmd`.
+- Historical public slug preserved by `chapters/semantic-representation-and-tree-structured-models.html`; archived source manuscript retained under `archive/retired_chapters/semantic-representation-and-tree-structured-models.qmd`.
 
 Lean proof targets:
 
@@ -1988,6 +2006,8 @@ Lean proof targets:
 | `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
 | `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
 | `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
+| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | implemented |
+| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.SemanticRepresentation` | A hierarchy update preserves prior node references or records supersession. | implemented |
 
 ### Fast Generation Architectures
 
@@ -2134,68 +2154,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | implemented |
 | `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | implemented |
-
-### Semantic Representation and Tree-Structured Models
-
-Stable ID: `semantic-representation-and-tree-structured-models`
-
-Chapter job: The book needs a place for explicit semantic representations that may improve grounding, explainability, and efficient reasoning.
-
-Core claim: Tree-structured semantic representations should be treated as optional representation substrates that must prove grounding, utility, and interoperability.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `treellm` | Read first for chapter claims and mechanisms. |
-| Supporting | `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `cgs`, `circle_ai_architectures`, `coilra_multicoil_rope` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-
-Draft arc:
-
-- Problem: The book needs a place for explicit semantic representations that may improve grounding, explainability, and efficient reasoning.
-- Insufficiency: Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths.
-- Mechanism: Treat semantic nodes as scoped representation leases with concept labels, provenance, hierarchy/relation refs, tokenization contracts, grounding state, permitted uses, residual uncertainty, versioning, and evaluation refs.
-- Mechanism: Use tree or graph structure for retrieval, planning, compilation, and explanation only where grounding, adequacy, interoperability, and baseline comparisons justify the route.
-- Mechanism: Separate grounding, adequacy, and interoperability gates so hierarchy or compact semantic tokens cannot stand in for source support, task fit, or cross-layer usability.
-- Mechanism: Preserve provenance and supersession links so semantic graphs remain indexes and working representations rather than unreviewed authority sources.
-- Mechanism: Track semantic-node lifecycle states: proposed, grounded, adequate-for-task, interoperable, superseded, stale, and quarantined.
-- Mechanism: Require consumer-specific policies for VCM, claim ledgers, planning, cognitive compilation, compression, and human-reader explanation.
-- Handoff: Resource economics decides when semantic compression is actually cheaper after verification burden, repair, and downstream failures are counted.
-- Interface: Spinoza uses semantic claims.
-- Interface: VCM stores semantic pages.
-- Interface: Compression tests representation efficiency.
-
-Primary invariants:
-
-- Semantic nodes are grounded or labeled speculative.
-- Hierarchy changes are versioned.
-- Representation claims require tests.
-- Shared semantic graphs remain indexes and working representations, not independent source authorities.
-- Consumer use is scoped by grounding, adequacy, interoperability, and permitted-use fields.
-
-Failure modes to cover:
-
-- Hand-built ontology brittleness.
-- False explainability.
-- Hierarchy drift.
-- Graph migration debt, where downstream consumers keep using stale node meanings.
-- Semantic laundering, where a clean path explanation is cited instead of the source, proof, or test it was meant to index.
-
-Draft deliverables:
-
-- A semantic-node schema and evaluation plan for one grounded domain.
-- Implemented repository-level fixture: `semantic_node_record.valid.json` validates the semantic-node record shape only; no TreeLLM implementation, grounding benchmark, or hierarchy-revision harness exists yet.
-- Planned Codex test: Grounding fidelity test.
-- Planned Codex test: Hierarchy revision test.
-- Planned Codex test: Representation utility benchmark.
-- Planned Codex test: Consumer-policy test.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
-| `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | implemented |
-| `lean:representation.semantic_tree.failure_blocks_promotion` | `AsiStackProofs.SemanticRepresentation` | A hierarchy update preserves prior node references or records supersession. | implemented |
 
 ### Resource Economics and Token Budgets
 

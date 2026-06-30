@@ -2,25 +2,29 @@
 
 Last updated: 2026-06-30
 
-Decision: defer all remaining unexecuted consolidation packages for the
-current reader-curation cycle after the Part I pilot, conservative compression
-merge, intent/contracts merge execution, MoECOT runtime fold execution,
+Decision: defer any remaining unexecuted consolidation packages for the current
+reader-curation cycle after the Part I pilot, conservative compression merge,
+intent/contracts merge execution, MoECOT runtime fold execution,
 simulation-fidelity fold execution, static context ABI merge execution,
-verification/adversarial-review merge execution, and planning/DAG consolidation execution.
+verification/adversarial-review merge execution, planning/DAG consolidation
+execution, and semantic-representation fold execution.
 
-This record creates a `deferred_for_release` reader-work outcome for the
+This record preserves the `deferred_for_release` reader-work policy for any
 remaining pending merge and fold packages. It records that the Part I pilot,
 conservative compression merge, intent/contracts merge, static context ABI
-merge, verification/adversarial-review merge, and planning/DAG consolidation are
-no longer deferred, and that the MoECOT runtime fold and simulation-fidelity
-fold have moved from deferred fold disposition to executed history. This review itself does
+merge, verification/adversarial-review merge, planning/DAG consolidation, and
+semantic-representation fold are no longer deferred, and that the MoECOT runtime
+fold and simulation-fidelity fold have moved from deferred fold disposition to
+executed history. This review itself does
 not edit `book_structure.json`, does not execute any additional remaining merge
 or fold, does not approve any reader artifact, does not create external review,
 and does not change support states.
 
-The current canonical manifest has 45 chapters after the executed Part I pilot,
+The current canonical manifest has 44 chapters after the executed Part I pilot,
 conservative compression merge, intent/contracts merge, MoECOT runtime fold,
-simulation-fidelity fold, static context ABI merge, verification/adversarial-review merge, and planning/DAG consolidation.
+simulation-fidelity fold, static context ABI merge,
+verification/adversarial-review merge, planning/DAG consolidation, and
+semantic-representation fold.
 
 ## Reviewed Inputs
 
@@ -53,9 +57,12 @@ that the destination is stronger than the source chapters as one chapter.
 
 At the same time, the human-reader manuscript cannot stay blocked indefinitely
 while every consolidation package waits for outside review. The practical
-current release choice is to preserve the 45-chapter manifest after the Part I
+current release choice is to preserve the 44-chapter manifest after the Part I
 pilot, conservative compression merge, intent/contracts merge, MoECOT runtime
-fold, simulation-fidelity fold, static context ABI merge, verification/adversarial-review merge, and planning/DAG consolidation for the current reader-curation cycle, record remaining duplicate skeletons as
+fold, simulation-fidelity fold, static context ABI merge,
+verification/adversarial-review merge, planning/DAG consolidation, and
+semantic-representation fold for the current reader-curation cycle, record
+remaining duplicate skeletons as
 accepted temporary debt, and continue reader prose work with explicit
 consolidation caveats.
 
@@ -75,7 +82,7 @@ future execution package for the remaining queue.
 | Planning and DAG control | `review_ready` | `executed` | The 2026-06-30 planning/DAG consolidation accepted the one-skeleton destination, folded PlanForge DAGs and Intelligence Arbitrage into Planning as a Control Layer: DAGs and Intelligence Arbitrage, preserved the retired URL through a historical stub, archived the source chapter and reader draft, retained `cognitive-compilation-and-semantic-ir` as the semantic-IR lowering layer, and kept support at `argument`. | Curated prose should target `planning-as-a-control-layer` as the merged chapter; the standalone PlanForge reader draft remains historical only. |
 | MoECOT runtime fold | `fold_disposition_ready` | `executed` | The 2026-06-30 MoECOT fold accepted the destination inside Routing Heads and Specialist Cores, preserved the retired URL through a historical stub, archived the standalone source manuscript and reader draft, and kept support at `argument`. | Curated prose should target `routing-heads-and-specialist-cores` and its MoECOT Runtime Crosswalk; the standalone MoECOT reader draft remains historical only. |
 | Simulation fidelity fold | `fold_disposition_ready` | `executed` | The 2026-06-30 simulation-fidelity fold accepted the destination inside Resource Economics and Token Budgets, preserved the retired URL through a historical stub, archived the standalone source manuscript, and kept support at `argument`. | Curated prose should target `resource-economics-and-token-budgets` and its Simulation Fidelity and Claim Transport section; the standalone simulation-fidelity source manuscript remains historical only. |
-| Semantic representation fold | `fold_disposition_ready` | `deferred_for_release` | The fold remains dependent on a later representation-package execution decision after the conservative compression merge retained RankFold/NeuralFold as a standalone technique chapter. | Curated prose may proceed only if it preserves the dependency on the future representation-package decision. |
+| Semantic representation fold | `fold_disposition_ready` | `executed` | The 2026-06-30 semantic-representation fold accepted the destination inside Compact Generative Systems and Residual Honesty, preserved the retired URL through a historical stub, archived the standalone source manuscript, retired the standalone reader overlay, and kept support at `argument`. | Curated prose should target `compact-generative-systems-and-residual-honesty` and its Semantic Representation Leasing section; the standalone semantic-representation source manuscript remains historical only. |
 
 ## Accepted Temporary Debt
 
@@ -84,7 +91,7 @@ temporary debt:
 
 - repeated Problem, Insufficiency, Mechanism, Interface, Evidence,
   Implementation, and Handoff skeletons in the pending clusters;
-- stable chapter IDs and URLs for the 45 current manifest chapters plus historical stubs for the two folded Part I slugs, the folded GVR slug, the folded command-contract slug, the folded MoECOT slug, the folded simulation-fidelity slug, the folded semantic-pages slug, the folded tribunal slug, and the folded PlanForge slug;
+- stable chapter IDs and URLs for the 44 current manifest chapters plus historical stubs for the two folded Part I slugs, the folded GVR slug, the folded command-contract slug, the folded MoECOT slug, the folded simulation-fidelity slug, the folded semantic-pages slug, the folded tribunal slug, the folded PlanForge slug, and the folded semantic-representation slug;
 - reader curation against source chapter boundaries that may later be merged or
   folded;
 - reconciliation work if a later consolidation package executes and supersedes
@@ -95,10 +102,10 @@ work or execute unreviewed manifest changes.
 
 ## Deferred Chapter ID Set
 
-The deferred-for-release reader-work outcome applies to these current manifest
-chapter IDs:
-
-- `semantic-representation-and-tree-structured-models`
+The deferred-for-release reader-work outcome currently applies to no manifest
+chapter ID created by the semantic-representation package. If a later package is
+deferred, its current manifest chapter IDs should be listed here before reader
+curation depends on that deferral.
 
 ## Revisit Conditions
 
@@ -134,9 +141,10 @@ Every curated reader pass inside a deferred package must:
 - This review does not approve any destination draft.
 - This review records that the Part I pilot, conservative compression merge,
   intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold,
-  static context ABI merge, verification/adversarial-review merge, and
-  planning/DAG consolidation implemented historical stubs and changed chapter
-  count in their separate execution packages.
+  static context ABI merge, verification/adversarial-review merge,
+  planning/DAG consolidation, and semantic-representation fold implemented
+  historical stubs and changed chapter count in their separate execution
+  packages.
 - This review does not create human review, external review, peer review, proof
   evidence, test evidence, benchmark evidence, source-derived evidence, or
   artifact-review evidence.

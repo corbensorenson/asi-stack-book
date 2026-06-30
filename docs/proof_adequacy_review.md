@@ -97,11 +97,9 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `readiness-gates-residual-escrow-and-quarantine` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `moecot-runtime-and-multi-core-orchestration` | 2 | research-agenda until artifact import | Import/replay artifacts before adequacy can rise. |
 | `personal-compute-hives-and-federated-edge-intelligence` | 4 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `compact-generative-systems-and-residual-honesty` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `generate-verify-repair-compression` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
+| `compact-generative-systems-and-residual-honesty` | 6 | needs executable tests first | Compact-generation, generate/verify/repair, and folded semantic-representation hooks remain finite-record guards; add residual-behavior, reconstruction, semantic grounding, hierarchy-revision, consumer-policy, representation-utility, and baseline harnesses before stronger formalization. |
 | `fast-generation-architectures` | 2 | needs empirical or baseline tests first | Generation-mode accounting harness added; still build matched model workload, baseline, negative-control, quality, residual, and result records before stronger proof. |
 | `rankfold-neuralfold-and-artifact-compression` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `semantic-representation-and-tree-structured-models` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `resource-economics-and-token-budgets` | 2 | useful but too narrow | Generation-mode/resource-budget accounting, deterministic budget-ledger harnesses, and capacity-smoothing toy traces added; still add scheduler, real load-stability, verification-tax, KV-cache, and cost-quality tests. |
 | `resource-economics-and-token-budgets` | 4 | needs richer state-machine or review semantics | Budget lifecycle, simulation-transfer review, timing, and adversarial states before adequacy; includes folded Simulation Fidelity proof hooks. |
 | `mathematical-and-search-substrates` | 2 | needs empirical or baseline tests first | Build workload, baseline, and result record before stronger proof. |

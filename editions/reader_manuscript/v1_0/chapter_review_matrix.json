@@ -16,17 +16,17 @@
     "policy": "Keep chapter format-artifact blockers until every required reader format row is approved and an edition release record exists."
   },
   "review_status_counts": {
-    "reviewed": 45
+    "reviewed": 44
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 42,
-    "no_immediate_action": 45,
-    "reader_overlay_active": 20
+    "no_immediate_action": 44,
+    "reader_overlay_active": 19
   },
   "release_blocker_counts": {
-    "format_artifact_not_reviewed": 45,
-    "reader_release_record_not_created": 45
+    "format_artifact_not_reviewed": 44,
+    "reader_release_record_not_created": 44
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
   "chapters": [
@@ -759,29 +759,6 @@
         "docs/reader_part_iii_compression_full_review_pass.md#decisions"
       ],
       "review_notes": "Full generated-reader chapter review recorded. The existing overlay makes admission states readable while preserving full-artifact fallback, representation/reconstruction/ratio/utility split, residual coding, decode determinism, access-pattern policy, and artifact-evidence non-claims.",
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed"
-      ]
-    },
-    {
-      "part_id": "routing-compression-representation-substrates",
-      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
-      "chapter_id": "semantic-representation-and-tree-structured-models",
-      "title": "Semantic Representation and Tree-Structured Models",
-      "live_file": "chapters/semantic-representation-and-tree-structured-models.qmd",
-      "generated_reader_file": "build/reader_edition/chapters/semantic-representation-and-tree-structured-models.qmd",
-      "overlay_operation_count": 2,
-      "review_status": "reviewed",
-      "review_depth": "full_chapter_review",
-      "dispositions": [
-        "reader_overlay_active",
-        "no_immediate_action"
-      ],
-      "review_refs": [
-        "docs/reader_part_iii_representation_full_review_pass.md#decisions"
-      ],
-      "review_notes": "Full generated-reader chapter review recorded. Existing overlays keep the semantic-node lifecycle and consumer-policy material readable while preserving provenance, grounding, adequacy, interoperability, supersession, residual uncertainty, and source-authority boundaries.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

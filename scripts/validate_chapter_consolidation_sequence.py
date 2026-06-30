@@ -45,7 +45,6 @@ REQUIRED_IDS = {
     "cognitive-compilation-and-semantic-ir",
     "routing-heads-and-specialist-cores",
     "resource-economics-and-token-budgets",
-    "semantic-representation-and-tree-structured-models",
     "labor-os-and-typed-jobs",
     "runtime-adapters-tool-permissions-and-human-approval",
     "artifact-graphs-audit-logs-and-replay",
@@ -63,7 +62,7 @@ REQUIRED_IDS = {
 REQUIRED_FRAGMENTS = (
     "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
-    "45 manifest chapters after the executed Part I pilot",
+    "current canonical count is 44 manifest chapters",
     "Do not run a broad 54-to-44 manifest edit",
     "Do not target a fixed chapter count.",
     "Do not delete ideas merely to reduce repetition.",
@@ -103,7 +102,7 @@ REQUIRED_FRAGMENTS = (
     "Planning and DAG control | `executed`",
     "Source-blocked MoECOT runtime | `executed`",
     "Simulation fidelity | `executed`",
-    "Semantic representation | `fold_disposition_ready`",
+    "Semantic representation | `executed`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
     "Required Package Before Any Non-Pilot Merge",
@@ -112,7 +111,7 @@ REQUIRED_FRAGMENTS = (
     "Reader-work disposition",
     "Reader Work Sequencing",
     "Executed Fold-Disposition History",
-    "Remaining Fold-Disposition Packages",
+    "Semantic Fold-Disposition History",
     "docs/chapter_consolidation_fold_moecot_runtime.md",
     "docs/chapter_consolidation_fold_simulation_fidelity.md",
     "docs/chapter_consolidation_fold_semantic_representation.md",
@@ -167,6 +166,9 @@ COMPRESSION_REQUIRED_FRAGMENTS = (
 COMPRESSION_REQUIRED_IDS = {
     "compact-generative-systems-and-residual-honesty",
     "rankfold-neuralfold-and-artifact-compression",
+}
+
+COMPRESSION_HISTORICAL_IDS = {
     "semantic-representation-and-tree-structured-models",
 }
 
@@ -736,11 +738,11 @@ SIMULATION_FOLD_REQUIRED_FIXTURE_FRAGMENTS = {
 
 SEMANTIC_FOLD_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation Fold Disposition: Semantic Representation",
-    "Status: fold-disposition ready; human/external review not completed.",
-    "does not edit `book_structure.json`",
-    "Current state | `fold_disposition_ready`",
+    "Status: executed fold history; human/external review not completed.",
+    "The execution package edited `book_structure.json`",
+    "Current state | `executed`",
     "Semantic Representation Leasing",
-    "Do not execute this fold before the compression/representation package",
+    "Satisfied by the executed conservative compression merge",
     "Preservation Ledger",
     "Proposed Destination Outline",
     "Source Union",
@@ -755,19 +757,19 @@ SEMANTIC_FOLD_REQUIRED_FRAGMENTS = (
     "Execute fold after destination review",
     "Reject and retain standalone",
     "No support-state movement",
-    "This disposition does not merge or fold chapters.",
-    "This disposition does not change `book_structure.json`.",
+    "This disposition is now executed by the 2026-06-30 semantic-representation",
+    "The execution package changed `book_structure.json`.",
     "This disposition does not change Appendix C support states.",
 )
 
 SEMANTIC_FOLD_REQUIRED_IDS = {
-    "semantic-representation-and-tree-structured-models",
     "compact-generative-systems-and-residual-honesty",
     "rankfold-neuralfold-and-artifact-compression",
     "virtual-context-abi",
 }
 
 SEMANTIC_FOLD_HISTORICAL_IDS = {
+    "semantic-representation-and-tree-structured-models",
     "semantic-pages-context-cells-and-certificates",
 }
 
@@ -851,12 +853,12 @@ PUBLIC_REFERENCES = (
 
 RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation Release-Stability Review",
-    "Decision: defer all remaining unexecuted consolidation packages",
-    "`deferred_for_release` reader-work outcome",
+    "Decision: defer any remaining unexecuted consolidation packages",
+    "`deferred_for_release` reader-work policy",
     "does not execute any additional remaining merge or fold",
     "does not create external review",
     "does not change support states",
-    "The current canonical manifest has 45 chapters after the executed Part I pilot",
+    "The current canonical manifest has 44 chapters after the executed Part I pilot",
     "Reader Curation Outcome Table",
     "Constitutional alignment and agency/corrigibility",
     "Value conflict and contestable governance",
@@ -881,8 +883,8 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, verification/adversarial-review merge, and planning/DAG consolidation",
-    "The canonical manifest now has 45 chapters after the executed Part I pilot",
+    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, verification/adversarial-review merge, planning/DAG consolidation, and semantic-representation fold",
+    "The canonical manifest now has 44 chapters after the executed Part I pilot",
     "If a retired public chapter URL cannot be preserved or deliberately recorded",
     "Default URL Policy",
     "Keep the destination chapter's existing stable ID and public URL",
@@ -899,9 +901,10 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/semantic-pages-context-cells-and-certificates.html",
     "/chapters/unified-adaptive-tribunal-and-adversarial-review.html",
     "/chapters/planforge-dags-and-intelligence-arbitrage.html",
+    "/chapters/semantic-representation-and-tree-structured-models.html",
     "Validation Expectations",
     "Non-Claims",
-    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, verification/adversarial-review, and planning/DAG execution",
+    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, verification/adversarial-review, planning/DAG, and semantic-representation execution",
 )
 
 
@@ -934,8 +937,8 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 45:
-        errors.append("Consolidation sequence expects the current manifest to have 45 chapters after the planning/DAG consolidation.")
+    if len(ids) != 44:
+        errors.append("Consolidation sequence expects the current manifest to have 44 chapters after the semantic-representation fold.")
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -977,6 +980,12 @@ def main() -> None:
         if f"`{chapter_id}`" not in compression:
             errors.append(f"Compression dry run does not mention `{chapter_id}`.")
 
+    for chapter_id in sorted(COMPRESSION_HISTORICAL_IDS):
+        if chapter_id in ids:
+            errors.append(f"Compression dry-run historical chapter ID is still active in manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in compression:
+            errors.append(f"Compression dry run does not mention historical chapter `{chapter_id}`.")
+
     for source_id in sorted(COMPRESSION_REQUIRED_SOURCE_IDS):
         if f"`{source_id}`" not in compression:
             errors.append(f"Compression dry run missing source ID `{source_id}`.")
@@ -1004,6 +1013,12 @@ def main() -> None:
             errors.append(f"Compression destination chapter ID is missing from manifest: {chapter_id}")
         if f"`{chapter_id}`" not in compression_draft:
             errors.append(f"Compression destination draft does not mention `{chapter_id}`.")
+
+    for chapter_id in sorted(COMPRESSION_HISTORICAL_IDS):
+        if chapter_id in ids:
+            errors.append(f"Compression destination historical chapter ID is still active in manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in compression_draft:
+            errors.append(f"Compression destination draft does not mention historical chapter `{chapter_id}`.")
 
     for source_id in sorted(COMPRESSION_REQUIRED_SOURCE_IDS):
         if f"`{source_id}`" not in compression_draft:
@@ -1447,7 +1462,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "45-chapter manifest, executed Part I pilot, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, executed simulation-fidelity fold, executed static context ABI merge, executed verification/adversarial-review merge, and executed planning/DAG consolidation recorded with remaining candidate sequence."
+        "44-chapter manifest, executed Part I pilot, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, executed simulation-fidelity fold, executed static context ABI merge, executed verification/adversarial-review merge, executed planning/DAG consolidation, and executed semantic-representation fold recorded with remaining candidate sequence."
     )
 
 

@@ -36,7 +36,7 @@ CoilRA and MultiCoil RoPE explores cyclic/block-cyclic adapters, phase features,
 
 ## Book Chapters Supported
 
-- `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `coilra-multicoil-rope-and-cyclic-mixers` (CoilRA, MultiCoil RoPE, and Cyclic Mixers)
 

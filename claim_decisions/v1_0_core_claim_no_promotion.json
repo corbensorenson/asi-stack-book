@@ -379,33 +379,6 @@
       ]
     },
     {
-      "claim_id": "semantic-representation-and-tree-structured-models.core",
-      "chapter_id": "semantic-representation-and-tree-structured-models",
-      "chapter_title": "Semantic Representation and Tree-Structured Models",
-      "decision": "no_promotion",
-      "current_support_state": "argument",
-      "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and finite representation hooks, but no semantic representation runtime, tree-model benchmark, grounding-quality result, or interoperability test has been accepted.",
-      "required_evidence": [
-        "semantic representation benchmark",
-        "grounding and supersession tests",
-        "tree-model baseline comparison"
-      ],
-      "blockers": [
-        "no representation runtime",
-        "no grounding evaluation",
-        "no model-quality benchmark"
-      ],
-      "non_claims": [
-        "does not prove semantic grounding quality",
-        "does not prove tree-structured model advantage"
-      ],
-      "refs": [
-        "chapters/semantic-representation-and-tree-structured-models.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#semantic-representation-and-tree-structured-models.core"
-      ]
-    },
-    {
       "claim_id": "mathematical-and-search-substrates.core",
       "chapter_id": "mathematical-and-search-substrates",
       "chapter_title": "Mathematical and Search Substrates",

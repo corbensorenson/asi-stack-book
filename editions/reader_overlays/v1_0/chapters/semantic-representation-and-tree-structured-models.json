@@ -1,16 +1,16 @@
 {
   "schema_version": "0.1",
-  "target_file": "chapters/semantic-representation-and-tree-structured-models.qmd",
+  "target_file": "archive/retired_chapters/semantic-representation-and-tree-structured-models.qmd",
   "operations": [
     {
       "id": "v1_0.semantic_representation.mechanism_lifecycle_reader_replace",
-      "status": "active",
+      "status": "retired",
       "action": "replace_section",
       "section": {
         "level": 3,
         "title": "Semantic node lifecycle"
       },
-      "rationale": "Replace the semantic-node lifecycle table with reader prose while preserving the canonical AI/research mechanism and already-rendered diagram.",
+      "rationale": "Retired after the semantic-representation chapter folded into Compact Generative Systems on 2026-06-30; the semantic-leasing material now lives in canonical destination prose.",
       "content_lines": [
         "The semantic-node lifecycle is a rule for how much trust the stack may place in a representation. A node may begin as proposed, which means it can support search, discussion, and triage but not operational reliance. It can become grounded when active provenance exists. It can become adequate for a declared task when the required constraints survive representation. It can become interoperable only for named consumers that have actually consumed it without hidden translation loss.",
         "",
@@ -21,13 +21,13 @@
     },
     {
       "id": "v1_0.semantic_representation.interfaces_reader_replace",
-      "status": "active",
+      "status": "retired",
       "action": "replace_section",
       "section": {
         "level": 2,
         "title": "Interfaces"
       },
-      "rationale": "Turn the consumer-policy table into reader prose while retaining the same boundary vocabulary.",
+      "rationale": "Retired after the semantic-representation chapter folded into Compact Generative Systems on 2026-06-30; the destination chapter now carries semantic-node consumer policy in canonical prose.",
       "content_lines": [
         "Semantic structure is carried by the Semantic Node Record. Its minimum vocabulary is deliberately boring: node identity, concept label, provenance references, parent and child references, relation references, tokenization contract, grounding state, version, supersession links, residual uncertainty, permitted uses, and evaluation references. The point is not to make the record impressive. The point is to make later use inspectable.",
         "",

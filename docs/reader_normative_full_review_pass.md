@@ -50,7 +50,9 @@ does not approve the HTML, EPUB, DOCX, PDF, or audio outputs.
 
 ## Residuals
 
-- The remaining 45 chapters still need full chapter-text review.
+- The remaining chapter-text review queue has since been completed; use
+  `docs/reader_chapter_review_matrix.md` for the current 44-chapter release
+  blocker state.
 - The reviewed chapters still need artifact layout/navigation review in the
   intended release formats before they can be listed in a release record.
 - A future curated reader manuscript may still revise these chapters for prose

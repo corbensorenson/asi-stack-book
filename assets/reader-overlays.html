@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 33,
+  "operation_count": 31,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -343,30 +343,6 @@
       },
       "content": "An effect receipt exists to keep a successful tool response from turning into a broad success claim. It names the state before the effect when that state is available, then names the state after the effect so review can see what changed. External side effects are recorded separately because messages, deployments, payments, API calls, hardware actions, and institutional changes may need different rollback and incident paths.\n\nRollback handles name the actual mechanism for undoing or repairing an effect when such a mechanism exists. Irreversible residuals name what cannot be undone. Verification references point to checks that the effect matched the contract, while incident references point to denials, exceptions, partial failures, or later reviews.\n\nThe receipt therefore separates evidence of invocation from evidence of correctness. A tool may respond successfully while verification, rollback, approval scope, or residual accounting remains incomplete.",
       "rationale": "Replace the effect-receipt field table with reader prose while preserving the canonical AI/research receipt-field matrix."
-    },
-    {
-      "id": "v1_0.semantic_representation.mechanism_lifecycle_reader_replace",
-      "target_file": "chapters/semantic-representation-and-tree-structured-models.qmd",
-      "action": "replace_section",
-      "section": {
-        "level": 3,
-        "title": "Semantic node lifecycle",
-        "aliases": []
-      },
-      "content": "The semantic-node lifecycle is a rule for how much trust the stack may place in a representation. A node may begin as proposed, which means it can support search, discussion, and triage but not operational reliance. It can become grounded when active provenance exists. It can become adequate for a declared task when the required constraints survive representation. It can become interoperable only for named consumers that have actually consumed it without hidden translation loss.\n\nThe lifecycle also has negative and historical states. A superseded node remains available for lineage and migration, not fresh use. A stale node requires review because its provenance, hierarchy, or consumer assumptions may have changed. A quarantined node is misleading, ungrounded for its claimed use, or contradicted, so it cannot be used operationally except for debugging.\n\nThat lifecycle makes semantic graphs editable without becoming forgetful. Updating a node should preserve the old reference or record supersession, because downstream claims may still depend on the earlier meaning.",
-      "rationale": "Replace the semantic-node lifecycle table with reader prose while preserving the canonical AI/research mechanism and already-rendered diagram."
-    },
-    {
-      "id": "v1_0.semantic_representation.interfaces_reader_replace",
-      "target_file": "chapters/semantic-representation-and-tree-structured-models.qmd",
-      "action": "replace_section",
-      "section": {
-        "level": 2,
-        "title": "Interfaces",
-        "aliases": []
-      },
-      "content": "Semantic structure is carried by the Semantic Node Record. Its minimum vocabulary is deliberately boring: node identity, concept label, provenance references, parent and child references, relation references, tokenization contract, grounding state, version, supersession links, residual uncertainty, permitted uses, and evaluation references. The point is not to make the record impressive. The point is to make later use inspectable.\n\nDifferent consumers need different boundaries. VCM needs adequacy state, source coverage, and a loss contract before a node becomes a semantic page. Spinoza and the claim ledger need provenance, support tier, defeaters, and a downgrade path before a semantic claim can participate in belief revision. Planning needs permitted uses, residual uncertainty, and authority limits before it can safely plan through a node.\n\nCognitive compilation needs typed inputs, outputs, constraints, and repair behavior before it can lower the node into IR. Compression needs utility and fallback records for the represented task before a compact token can be treated as cheaper. Human readers need an explanation trace and visible non-claims, because a clean concept path can otherwise look more settled than the evidence allows.\n\nThat interface makes semantic representation a shared boundary rather than a private model feature. A node may be useful for routing while still disallowed for proof, citation, audit, or claim support. The representation earns trust only when the consuming layer can see what was preserved, what was dropped, and where to fall back.",
-      "rationale": "Turn the consumer-policy table into reader prose while retaining the same boundary vocabulary."
     },
     {
       "id": "v1_0.system_boundaries.permission_classes_reader_replace",

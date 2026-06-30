@@ -6017,30 +6017,43 @@
             "project_theseus_whitepaper",
             "bbvca_v9",
             "bbvca_main",
-            "rankfold_neuralfold"
+            "rankfold_neuralfold",
+            "treellm",
+            "spinoza",
+            "verification_bandwidth",
+            "cognitive_compilation",
+            "circle_ai_architectures",
+            "coilra_multicoil_rope"
           ],
           "source_queue": {
             "primary": [
               "cgs",
               "rgs",
               "bbvca_v9",
-              "bbvca_main"
+              "bbvca_main",
+              "treellm"
             ],
             "supporting": [
               "bugbrain",
               "simulation_scaling",
               "rmi",
               "project_theseus_whitepaper",
-              "rankfold_neuralfold"
+              "rankfold_neuralfold",
+              "spinoza",
+              "verification_bandwidth",
+              "cognitive_compilation",
+              "circle_ai_architectures",
+              "coilra_multicoil_rope"
             ],
             "variants": [],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
-              "Folded generate-verify-repair-compression into this destination chapter on 2026-06-30 through the conservative compression merge; preserve GVR receipt states, exactness/repair/fallback accounting, consumer policy, proof hooks, tests, source mappings, and history."
+              "Folded generate-verify-repair-compression into this destination chapter on 2026-06-30 through the conservative compression merge; preserve GVR receipt states, exactness/repair/fallback accounting, consumer policy, proof hooks, tests, source mappings, and history.",
+              "Folded semantic-representation-and-tree-structured-models into this destination chapter on 2026-06-30 as a Semantic Representation Leasing section; preserve semantic node records, grounding/adequacy/interoperability gates, proof hooks, fixtures, source mappings, restoration conditions, and history."
             ]
           },
-          "problem": "Compact generators and generate-verify-repair receipts need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, fallback, or consumer-policy limits.",
-          "insufficient": "Seed-size, compression-ratio, and generated-reconstruction claims can hide verification, repair, fallback, downstream utility, metadata, interface, governance, and human-review costs.",
+          "problem": "Compact generators and generate-verify-repair receipts need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, fallback, or consumer-policy limits. Semantic representations add the same risk at the meaning layer: a clean graph, tree, or token can look efficient while hiding provenance loss, hierarchy drift, consumer-policy mismatch, or residual uncertainty.",
+          "insufficient": "Seed-size, compression-ratio, and generated-reconstruction claims can hide verification, repair, fallback, downstream utility, metadata, interface, governance, and human-review costs. Semantic graphs and typed meaning structures are also insufficient by themselves when they lack provenance, task-scoped adequacy, interoperability records, supersession, fallback, and residual honesty.",
           "core_claim": "Compact generative systems should store the smallest useful governed generator plus the cheapest exact or scoped residual, while preserving verification, fallback, consumer policy, and residual-burden records.",
           "mechanism": [
             "Define compact generative cores and their residuals through a compactness ledger.",
@@ -6048,13 +6061,16 @@
             "Treat generate-verify-repair as the stricter exactness lane: generated regions, verifier results, repair residuals, literal fallback, proxy-rate status, final-rate status, and consumer policy travel in one receipt.",
             "Treat the raw LLM as a compressed generative engine, not as the entire intelligent system.",
             "Separate lawful generation from exact remainder and scoped loss.",
-            "Record where compactness, exactness, consumer policy, or rate accounting fails."
+            "Record where compactness, exactness, consumer policy, or rate accounting fails.",
+            "Fold semantic representation into the compression control plane as Semantic Representation Leasing: graph nodes, tree paths, and semantic tokens may carry work only with provenance, grounding state, permitted uses, consumer policy, adequacy limits, interoperability records, residual uncertainty, versioning, supersession, and quarantine or fallback behavior.",
+            "Keep semantic-node lifecycle states alongside compact-generation and compression-receipt states so proposed, grounded, adequate-for-task, interoperable, superseded, stale, and quarantined meaning objects cannot silently become source authorities."
           ],
           "interfaces": [
             "Compression feeds memory and routing through compactness ledgers and compression receipts.",
             "Evidence tests downstream utility, exactness, declared loss, and consumer-policy boundaries.",
             "Procedural memory turns repeated generation into tools only when residuals and verification remain visible.",
-            "Resource economics counts generation, verification, repair, metadata, interface, fallback, and human-review costs before efficiency claims."
+            "Resource economics counts generation, verification, repair, metadata, interface, fallback, and human-review costs before efficiency claims.",
+            "Semantic Node Records can feed VCM pages, Spinoza claim graphs, planning, cognitive compilation, compression records, and human explanation surfaces only within declared permitted uses and consumer policies."
           ],
           "invariants": [
             "Lossy claims are labeled.",
@@ -6063,7 +6079,11 @@
             "Verification precedes exactness claims.",
             "Repair cost and interface cost are counted before compression savings are claimed.",
             "Consumer use is scoped to the reconstruction contract, declared loss, and support-state boundary.",
-            "Compactness does not promote support state without a separate evidence-transition record."
+            "Compactness does not promote support state without a separate evidence-transition record.",
+            "Semantic nodes are grounded or labeled speculative.",
+            "Hierarchy changes preserve prior references or record supersession.",
+            "Shared semantic graphs remain indexes and working representations, not independent source authorities.",
+            "Consumer use is scoped by grounding, adequacy, interoperability, residual uncertainty, and permitted-use fields."
           ],
           "failure_modes": [
             "False lossless claims.",
@@ -6075,10 +6095,14 @@
             "Consumer-policy leakage from preview or lossy use into proof, audit, benchmark, citation, or training use.",
             "Proxy-rate drift after final serialization erases the apparent saving.",
             "Degenerate governance where the compact core evaluates its own adequacy.",
-            "Recursive instability when compact structures modify the system that defines their success."
+            "Recursive instability when compact structures modify the system that defines their success.",
+            "False explainability, where a clean semantic path is cited instead of the source, proof, or test it was meant to index.",
+            "Canonical graph capture, where a semantic graph becomes an unreviewed authority source.",
+            "Hierarchy drift or stale consumer mappings, where downstream systems keep using superseded node meanings.",
+            "Semantic laundering, where compact meaning structures hide uncertainty, provenance loss, or task-specific inadequacy."
           ],
-          "minimal_implementation": "A compact generative record plus compression receipt fixture suite with one residual-burden case, one lossy or blocked exactness case, one failed-verification case, one repair-or-fallback case, and one consumer-policy rejection.",
-          "beyond_state_of_art": "A mature compression control plane treats compact generators, generated reconstructions, exact repairs, scoped residuals, consumer policies, fallback, replay, and resource accounting as one audited representation market. It lets the stack choose the cheapest lawful representation for a task while preserving verifier quality, repair burden, exactness boundaries, declared loss, fallback availability, and non-claims. This remains a target architecture until public codec, verifier, utility, rate, and replay evidence exists.",
+          "minimal_implementation": "A compact generative record plus compression receipt fixture suite with one residual-burden case, one lossy or blocked exactness case, one failed-verification case, one repair-or-fallback case, and one consumer-policy rejection. The folded semantic-representation slice adds `semantic_node_record.valid.json` as a record-shape fixture for provenance, hierarchy, relation refs, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, evaluation refs, and consumer-policy limits; it remains record-shape validation only.",
+          "beyond_state_of_art": "A mature compression control plane treats compact generators, generated reconstructions, exact repairs, scoped residuals, consumer policies, fallback, replay, and resource accounting as one audited representation market. It lets the stack choose the cheapest lawful representation for a task while preserving verifier quality, repair burden, exactness boundaries, declared loss, fallback availability, and non-claims. This remains a target architecture until public codec, verifier, utility, rate, and replay evidence exists. The mature compression layer also leases semantic representations. Graph nodes, tree paths, and semantic tokens become task-scoped meaning objects whose provenance, grounding, adequacy, interoperability, supersession, consumer policy, and residual uncertainty travel with every use. They may reduce burden only when they preserve the constraints required by the consumer and fall back to fuller context, source artifacts, or quarantine when they do not.",
           "codex_tests": [
             "S/R/Q/G/V/E loop consistency test",
             "Residual burden test",
@@ -6086,7 +6110,11 @@
             "Fallback behavior test",
             "Reconstruction quality test",
             "Repair-cost accounting test",
-            "Bounded-search failure test"
+            "Bounded-search failure test",
+            "Grounding fidelity test",
+            "Hierarchy revision test",
+            "Representation utility benchmark",
+            "Consumer-policy test"
           ],
           "lean_module": "AsiStackProofs.CompactGenerativeSystems",
           "proof_targets": [
@@ -6113,13 +6141,25 @@
               "module": "AsiStackProofs.GenerateVerifyRepair",
               "target": "A failed verification blocks exactness promotion.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:representation.semantic_tree.operational_invariant",
+              "module": "AsiStackProofs.SemanticRepresentation",
+              "target": "A semantic node marked grounded has at least one provenance link.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:representation.semantic_tree.failure_blocks_promotion",
+              "module": "AsiStackProofs.SemanticRepresentation",
+              "target": "A hierarchy update preserves prior node references or records supersession.",
+              "status": "implemented"
             }
           ],
           "claim_source_mappings": [
             {
               "source_id": "cgs",
-              "mapped_support": "Supports the compact-generative core claim through the seed/rule system/memory-state/residual/error/verification/governance tuple, smallest-adequate-structure framing, generative leverage, residual burden, verification cost, governance power, and hidden-complexity debt metrics. Folded generate/verify/repair lineage: Supports residual accounting and governance around compressed generation through compact seeds, rule systems, residual/error channels, verification contracts, governance interfaces, and hidden complexity debt.",
-              "limits": "Conceptual framework and research program only; no local CGS benchmark, utility test, proof of compact adequacy, generator, or implementation has been run here. Folded GVR boundary: Does not establish that any generate-verify-repair codec preserves utility, improves rate, or reconstructs data in this repo.",
+              "mapped_support": "Supports the compact-generative core claim through the seed/rule system/memory-state/residual/error/verification/governance tuple, smallest-adequate-structure framing, generative leverage, residual burden, verification cost, governance power, and hidden-complexity debt metrics. Folded generate/verify/repair lineage: Supports residual accounting and governance around compressed generation through compact seeds, rule systems, residual/error channels, verification contracts, governance interfaces, and hidden complexity debt. Folded semantic-representation lineage: Supports compact semantic substrates only when compression, generation, residuals, verification, governance, hidden complexity, and permitted use remain explicit.",
+              "limits": "Conceptual framework and research program only; no local CGS benchmark, utility test, proof of compact adequacy, generator, or implementation has been run here. Folded GVR boundary: Does not establish that any generate-verify-repair codec preserves utility, improves rate, or reconstructs data in this repo. Folded semantic boundary: Does not prove fixed semantic tokens are adequate, grounded, or utility-preserving for any task.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/google_docs/cgs.txt:11-35",
@@ -6134,7 +6174,7 @@
                 "sources/raw/google_docs/cgs.txt:688-740",
                 "sources/raw/google_docs/cgs.txt:788-837"
               ],
-              "passage_review_note": "Reviewed local raw cache for CGS definition, seed/rule/memory/residual/verification/governance tuple, smallest-adequate-structure framing, false-compactness checks, criteria, laws, leverage, fidelity, residual burden, verification cost, governance power, and hidden-complexity debt; no local CGS benchmark, utility test, adequacy proof, generator, or implementation run is promoted. Folded GVR mapping: Reviewed local raw cache for compact seeds, rule systems, residual/error channels, verification contracts, residual accounting, hidden-complexity debt, and verification/governance cost accounting around compressed generation; no GVR codec, utility preservation result, rate improvement, or reconstruction result is promoted."
+              "passage_review_note": "Reviewed local raw cache for CGS definition, seed/rule/memory/residual/verification/governance tuple, smallest-adequate-structure framing, false-compactness checks, criteria, laws, leverage, fidelity, residual burden, verification cost, governance power, and hidden-complexity debt; no local CGS benchmark, utility test, adequacy proof, generator, or implementation run is promoted. Folded GVR mapping: Reviewed local raw cache for compact seeds, rule systems, residual/error channels, verification contracts, residual accounting, hidden-complexity debt, and verification/governance cost accounting around compressed generation; no GVR codec, utility preservation result, rate improvement, or reconstruction result is promoted. Folded semantic mapping: Reviewed local raw cache for compact seeds/rules/memory, residual/error channels, verification, governance interface, full cost accounting, residual honesty, fallback, permitted use, and hidden-complexity boundaries; no adequacy, grounding, or utility-preservation result for fixed semantic tokens is promoted."
             },
             {
               "source_id": "rgs",
@@ -6276,6 +6316,106 @@
                 "sources/raw/google_docs/rankfold_neuralfold.txt:499-510"
               ],
               "passage_review_note": "Reviewed local raw cache for WORM archival framing, RankFold low-rank residual coding, codec-aware residual bit cost, NeuralFold probe/route/fallback, exact residual reconstruction for byte streams, full byte accounting, deterministic decode and evaluation obligations, bounded residual coding, and archive pseudocode; no RankFold/NeuralFold implementation artifact, deterministic decoder run, compression benchmark, or reproduced ratio is promoted."
+            },
+            {
+              "source_id": "treellm",
+              "mapped_support": "Folded semantic-representation lineage: Supports the semantic-representation claim through traversable semantic graphs, path-derived fixed-size semantic tokens, residual attributes, graph updates, shared semantic graph usage, analogy/interpolation/counterfactual operations, and editable external knowledge.",
+              "limits": "Folded semantic boundary: Whitepaper/specification only; no local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, or verified token format exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/treellm.txt:7-8",
+                "sources/raw/google_docs/treellm.txt:19-19",
+                "sources/raw/google_docs/treellm.txt:29-37",
+                "sources/raw/google_docs/treellm.txt:44-52",
+                "sources/raw/google_docs/treellm.txt:79-79",
+                "sources/raw/google_docs/treellm.txt:94-106",
+                "sources/raw/google_docs/treellm.txt:110-116",
+                "sources/raw/google_docs/treellm.txt:173-189",
+                "sources/raw/google_docs/treellm.txt:209-210",
+                "sources/raw/google_docs/treellm.txt:262-271",
+                "sources/raw/google_docs/treellm.txt:429-432",
+                "sources/raw/google_docs/treellm.txt:481-493",
+                "sources/raw/google_docs/treellm.txt:751-820",
+                "sources/raw/google_docs/treellm.txt:848-848",
+                "sources/raw/google_docs/treellm.txt:1204-1214"
+              ],
+              "passage_review_note": "Folded semantic mapping: Reviewed local raw cache for traversable semantic DAG/lattice framing, path-derived fixed-size semantic tokens, residual fingerprints/attributes, multi-path updates, shared semantic graph use, analogy/interpolation/counterfactual operations, explanation traces, external editable knowledge, and Tree/Coil integration sketches. Strong source-reported model-size, grounding, reasoning, smartphone-scale, benchmark, superiority, or final-architecture claims are not validated or promoted."
+            },
+            {
+              "source_id": "spinoza",
+              "mapped_support": "Folded semantic-representation lineage: Supports routing semantic representations into evidence discipline through proof/citation/procedure-carrying claim graphs, belief revision, contradiction detection, defeaters, downgrade behavior, protected axioms, and verifier-scope limits.",
+              "limits": "Folded semantic boundary: Does not solve open-domain natural-language-to-logic translation or prove semantic graph adequacy in this repo.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/spinoza.txt:228-235",
+                "sources/raw/google_docs/spinoza.txt:292-320",
+                "sources/raw/google_docs/spinoza.txt:384-394",
+                "sources/raw/google_docs/spinoza.txt:403-445",
+                "sources/raw/google_docs/spinoza.txt:647-653",
+                "sources/raw/google_docs/spinoza.txt:757-766",
+                "sources/raw/google_docs/spinoza.txt:805-806"
+              ],
+              "passage_review_note": "Folded semantic mapping: Reviewed local raw cache for proof/citation/procedure-carrying claim graphs, verifier scope, support tiers, contradiction handling, proof caching, downgrades, protected axiom/schema governance, and tier-label enforcement; open-domain natural-language-to-logic translation and semantic graph adequacy are not promoted."
+            },
+            {
+              "source_id": "verification_bandwidth",
+              "mapped_support": "Folded semantic-representation lineage: Supports treating semantic units as verification objects by distinguishing context length from verification workspace, constraint checks, pairwise grinding, summary loss, and contradiction-rate pressure.",
+              "limits": "Folded semantic boundary: Conceptual framework only; no grounding, context-adequacy, or contradiction-reduction benchmark has been run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/verification_bandwidth.txt:6-12",
+                "sources/raw/google_docs/verification_bandwidth.txt:18-42",
+                "sources/raw/google_docs/verification_bandwidth.txt:65-70",
+                "sources/raw/google_docs/verification_bandwidth.txt:92-92"
+              ],
+              "passage_review_note": "Folded semantic mapping: Reviewed local raw cache for context length versus verification workspace, semantic units, pairwise constraint checks, effective verification workspace, summary loss, constraint loss, pairwise-cost pressure, and tree/DAG fidelity tradeoffs; no grounding, context-adequacy, or contradiction-reduction benchmark is promoted."
+            },
+            {
+              "source_id": "cognitive_compilation",
+              "mapped_support": "Folded semantic-representation lineage: Supports typed semantic IR through source plans, semantic atoms, inputs/outputs/constraints/dependencies, compiler passes, validation requirements, localized repair, and target lowering.",
+              "limits": "Folded semantic boundary: Architecture/evaluation-plan source only; no working cognitive compiler, trace suite, or empirical ablation exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_compilation.txt:4-5",
+                "sources/raw/google_docs/cognitive_compilation.txt:34-38",
+                "sources/raw/google_docs/cognitive_compilation.txt:114-135",
+                "sources/raw/google_docs/cognitive_compilation.txt:153-176",
+                "sources/raw/google_docs/cognitive_compilation.txt:193-205",
+                "sources/raw/google_docs/cognitive_compilation.txt:243-284",
+                "sources/raw/google_docs/cognitive_compilation.txt:290-309",
+                "sources/raw/google_docs/cognitive_compilation.txt:324-326",
+                "sources/raw/google_docs/cognitive_compilation.txt:385-399",
+                "sources/raw/google_docs/cognitive_compilation.txt:444-467",
+                "sources/raw/google_docs/cognitive_compilation.txt:497-503",
+                "sources/raw/google_docs/cognitive_compilation.txt:540-563"
+              ],
+              "passage_review_note": "Folded semantic mapping: Reviewed local raw cache for source plans, typed semantic IR, semantic atoms, inputs/outputs/constraints/dependencies, compiler passes, validation/linting, target lowering, execution DAGs, trace bundles, localized repair, and evaluation metrics; no working cognitive compiler, trace suite, or empirical ablation is promoted."
+            },
+            {
+              "source_id": "circle_ai_architectures",
+              "mapped_support": "Folded semantic-representation lineage: Supports optional representation-substrate discipline by requiring cyclic/coil structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure is real and baselines/negative controls exist.",
+              "limits": "Folded semantic boundary: No universal cyclic-model advantage, model-quality result, sidecar test, Lean build, MLX experiment, or benchmark fixture was run here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/circle_ai_architectures.md:9-13",
+                "sources/source_notes/circle_ai_architectures.md:17-21",
+                "sources/source_notes/circle_ai_architectures.md:25-28",
+                "sources/source_notes/circle_ai_architectures.md:32-47"
+              ],
+              "passage_review_note": "Folded semantic mapping: Reviewed public source note only because raw local project text is not copied into this repo. The note supports optional cyclic/coil substrate discipline, phase/recurrence/rotation/sparse-cyclic/harmonic/geometry-aware applicability, baseline and negative-control requirements, and proof/model-quality separation; no universal cyclic-model advantage, sidecar test, Lean build, MLX experiment, or benchmark fixture is promoted."
+            },
+            {
+              "source_id": "coilra_multicoil_rope",
+              "mapped_support": "Folded semantic-representation lineage: Supports cyclic adapter/mixer and position-encoding contracts through adapter-block indices, residues, winding, relative RoPE laws, circulant mixers, parameter accounting, baselines, and explicit non-claims.",
+              "limits": "Folded semantic boundary: Structural/parameter-accounting source only; no quality, speed, memory, training-stability, or context-length improvement has been shown here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/coilra_multicoil_rope.md:9-13",
+                "sources/source_notes/coilra_multicoil_rope.md:17-21",
+                "sources/source_notes/coilra_multicoil_rope.md:25-28",
+                "sources/source_notes/coilra_multicoil_rope.md:32-46"
+              ],
+              "passage_review_note": "Folded semantic mapping: Reviewed public source note only because raw local project text is not copied into this repo. The note supports adapter-block indices, residues, winding, relative RoPE laws, circulant/cyclic mixer structure, parameter accounting, baselines, wrong-period controls, and explicit non-claims; no quality, speed, memory, training-stability, or context-length improvement is promoted."
             }
           ],
           "draft_maturity": "v0.2 manuscript draft",
@@ -6865,209 +7005,6 @@
             "The compressed_artifact_record fixture validates schema/example consistency only; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run.",
             "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not reproduced here and are treated only as source-reported architecture/lineage context.",
             "No support-state promotion, raw source publication, codec correctness result, or downstream utility result is implied by this drafting pass."
-          ]
-        },
-        {
-          "id": "semantic-representation-and-tree-structured-models",
-          "title": "Semantic Representation and Tree-Structured Models",
-          "file": "chapters/semantic-representation-and-tree-structured-models.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "treellm",
-            "spinoza",
-            "verification_bandwidth",
-            "cognitive_compilation",
-            "cgs",
-            "circle_ai_architectures",
-            "coilra_multicoil_rope"
-          ],
-          "source_queue": {
-            "primary": [
-              "treellm"
-            ],
-            "supporting": [
-              "spinoza",
-              "verification_bandwidth",
-              "cognitive_compilation",
-              "cgs",
-              "circle_ai_architectures",
-              "coilra_multicoil_rope"
-            ],
-            "variants": [],
-            "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "The book needs a place for explicit semantic representations that may improve grounding, explainability, and efficient reasoning.",
-          "insufficient": "Opaque token prediction does not by itself expose concept hierarchy, source grounding, or interpretable reasoning paths.",
-          "core_claim": "Tree-structured semantic representations should be treated as optional representation substrates that must prove grounding, utility, and interoperability.",
-          "mechanism": [
-            "Represent concepts hierarchically.",
-            "Attach semantic tokens to provenance and use constraints.",
-            "Compare tree structures against neural-only baselines."
-          ],
-          "interfaces": [
-            "Spinoza uses semantic claims.",
-            "VCM stores semantic pages.",
-            "Compression tests representation efficiency."
-          ],
-          "invariants": [
-            "Semantic nodes are grounded or labeled speculative.",
-            "Hierarchy changes are versioned.",
-            "Representation claims require tests."
-          ],
-          "failure_modes": [
-            "Hand-built ontology brittleness.",
-            "False explainability.",
-            "Hierarchy drift."
-          ],
-          "minimal_implementation": "A semantic-node schema and evaluation plan for one grounded domain.",
-          "beyond_state_of_art": "Semantic representation works best as a task-specific leasing layer, not a permanent ontology. It gives the stack editable concept structure without letting a clean graph become a substitute for sources, proofs, artifacts, or tests. In the mature semantic leasing layer, semantic structure is leased for a task only when provenance, grounding, utility, interoperability, supersession, and consumer permissions are explicit.",
-          "codex_tests": [
-            "Grounding fidelity test",
-            "Hierarchy revision test",
-            "Representation utility benchmark"
-          ],
-          "lean_module": "AsiStackProofs.SemanticRepresentation",
-          "proof_targets": [
-            {
-              "tag": "lean:representation.semantic_tree.operational_invariant",
-              "module": "AsiStackProofs.SemanticRepresentation",
-              "target": "A semantic node marked grounded has at least one provenance link.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:representation.semantic_tree.failure_blocks_promotion",
-              "module": "AsiStackProofs.SemanticRepresentation",
-              "target": "A hierarchy update preserves prior node references or records supersession.",
-              "status": "implemented"
-            }
-          ],
-          "claim_source_mappings": [
-            {
-              "source_id": "treellm",
-              "mapped_support": "Supports the semantic-representation claim through traversable semantic graphs, path-derived fixed-size semantic tokens, residual attributes, graph updates, shared semantic graph usage, analogy/interpolation/counterfactual operations, and editable external knowledge.",
-              "limits": "Whitepaper/specification only; no local TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, or verified token format exists here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/treellm.txt:7-8",
-                "sources/raw/google_docs/treellm.txt:19-19",
-                "sources/raw/google_docs/treellm.txt:29-37",
-                "sources/raw/google_docs/treellm.txt:44-52",
-                "sources/raw/google_docs/treellm.txt:79-79",
-                "sources/raw/google_docs/treellm.txt:94-106",
-                "sources/raw/google_docs/treellm.txt:110-116",
-                "sources/raw/google_docs/treellm.txt:173-189",
-                "sources/raw/google_docs/treellm.txt:209-210",
-                "sources/raw/google_docs/treellm.txt:262-271",
-                "sources/raw/google_docs/treellm.txt:429-432",
-                "sources/raw/google_docs/treellm.txt:481-493",
-                "sources/raw/google_docs/treellm.txt:751-820",
-                "sources/raw/google_docs/treellm.txt:848-848",
-                "sources/raw/google_docs/treellm.txt:1204-1214"
-              ],
-              "passage_review_note": "Reviewed local raw cache for traversable semantic DAG/lattice framing, path-derived fixed-size semantic tokens, residual fingerprints/attributes, multi-path updates, shared semantic graph use, analogy/interpolation/counterfactual operations, explanation traces, external editable knowledge, and Tree/Coil integration sketches. Strong source-reported model-size, grounding, reasoning, smartphone-scale, benchmark, superiority, or final-architecture claims are not validated or promoted."
-            },
-            {
-              "source_id": "spinoza",
-              "mapped_support": "Supports routing semantic representations into evidence discipline through proof/citation/procedure-carrying claim graphs, belief revision, contradiction detection, defeaters, downgrade behavior, protected axioms, and verifier-scope limits.",
-              "limits": "Does not solve open-domain natural-language-to-logic translation or prove semantic graph adequacy in this repo.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/spinoza.txt:228-235",
-                "sources/raw/google_docs/spinoza.txt:292-320",
-                "sources/raw/google_docs/spinoza.txt:384-394",
-                "sources/raw/google_docs/spinoza.txt:403-445",
-                "sources/raw/google_docs/spinoza.txt:647-653",
-                "sources/raw/google_docs/spinoza.txt:757-766",
-                "sources/raw/google_docs/spinoza.txt:805-806"
-              ],
-              "passage_review_note": "Reviewed local raw cache for proof/citation/procedure-carrying claim graphs, verifier scope, support tiers, contradiction handling, proof caching, downgrades, protected axiom/schema governance, and tier-label enforcement; open-domain natural-language-to-logic translation and semantic graph adequacy are not promoted."
-            },
-            {
-              "source_id": "verification_bandwidth",
-              "mapped_support": "Supports treating semantic units as verification objects by distinguishing context length from verification workspace, constraint checks, pairwise grinding, summary loss, and contradiction-rate pressure.",
-              "limits": "Conceptual framework only; no grounding, context-adequacy, or contradiction-reduction benchmark has been run here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/verification_bandwidth.txt:6-12",
-                "sources/raw/google_docs/verification_bandwidth.txt:18-42",
-                "sources/raw/google_docs/verification_bandwidth.txt:65-70",
-                "sources/raw/google_docs/verification_bandwidth.txt:92-92"
-              ],
-              "passage_review_note": "Reviewed local raw cache for context length versus verification workspace, semantic units, pairwise constraint checks, effective verification workspace, summary loss, constraint loss, pairwise-cost pressure, and tree/DAG fidelity tradeoffs; no grounding, context-adequacy, or contradiction-reduction benchmark is promoted."
-            },
-            {
-              "source_id": "cognitive_compilation",
-              "mapped_support": "Supports typed semantic IR through source plans, semantic atoms, inputs/outputs/constraints/dependencies, compiler passes, validation requirements, localized repair, and target lowering.",
-              "limits": "Architecture/evaluation-plan source only; no working cognitive compiler, trace suite, or empirical ablation exists in this repository.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/cognitive_compilation.txt:4-5",
-                "sources/raw/google_docs/cognitive_compilation.txt:34-38",
-                "sources/raw/google_docs/cognitive_compilation.txt:114-135",
-                "sources/raw/google_docs/cognitive_compilation.txt:153-176",
-                "sources/raw/google_docs/cognitive_compilation.txt:193-205",
-                "sources/raw/google_docs/cognitive_compilation.txt:243-284",
-                "sources/raw/google_docs/cognitive_compilation.txt:290-309",
-                "sources/raw/google_docs/cognitive_compilation.txt:324-326",
-                "sources/raw/google_docs/cognitive_compilation.txt:385-399",
-                "sources/raw/google_docs/cognitive_compilation.txt:444-467",
-                "sources/raw/google_docs/cognitive_compilation.txt:497-503",
-                "sources/raw/google_docs/cognitive_compilation.txt:540-563"
-              ],
-              "passage_review_note": "Reviewed local raw cache for source plans, typed semantic IR, semantic atoms, inputs/outputs/constraints/dependencies, compiler passes, validation/linting, target lowering, execution DAGs, trace bundles, localized repair, and evaluation metrics; no working cognitive compiler, trace suite, or empirical ablation is promoted."
-            },
-            {
-              "source_id": "cgs",
-              "mapped_support": "Supports compact semantic substrates only when compression, generation, residuals, verification, governance, hidden complexity, and permitted use remain explicit.",
-              "limits": "Does not prove fixed semantic tokens are adequate, grounded, or utility-preserving for any task.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/cgs.txt:121-133",
-                "sources/raw/google_docs/cgs.txt:140-170",
-                "sources/raw/google_docs/cgs.txt:209-228",
-                "sources/raw/google_docs/cgs.txt:367-399",
-                "sources/raw/google_docs/cgs.txt:688-740",
-                "sources/raw/google_docs/cgs.txt:788-837"
-              ],
-              "passage_review_note": "Reviewed local raw cache for compact seeds/rules/memory, residual/error channels, verification, governance interface, full cost accounting, residual honesty, fallback, permitted use, and hidden-complexity boundaries; no adequacy, grounding, or utility-preservation result for fixed semantic tokens is promoted."
-            },
-            {
-              "source_id": "circle_ai_architectures",
-              "mapped_support": "Supports optional representation-substrate discipline by requiring cyclic/coil structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure is real and baselines/negative controls exist.",
-              "limits": "No universal cyclic-model advantage, model-quality result, sidecar test, Lean build, MLX experiment, or benchmark fixture was run here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/source_notes/circle_ai_architectures.md:9-13",
-                "sources/source_notes/circle_ai_architectures.md:17-21",
-                "sources/source_notes/circle_ai_architectures.md:25-28",
-                "sources/source_notes/circle_ai_architectures.md:32-47"
-              ],
-              "passage_review_note": "Reviewed public source note only because raw local project text is not copied into this repo. The note supports optional cyclic/coil substrate discipline, phase/recurrence/rotation/sparse-cyclic/harmonic/geometry-aware applicability, baseline and negative-control requirements, and proof/model-quality separation; no universal cyclic-model advantage, sidecar test, Lean build, MLX experiment, or benchmark fixture is promoted."
-            },
-            {
-              "source_id": "coilra_multicoil_rope",
-              "mapped_support": "Supports cyclic adapter/mixer and position-encoding contracts through adapter-block indices, residues, winding, relative RoPE laws, circulant mixers, parameter accounting, baselines, and explicit non-claims.",
-              "limits": "Structural/parameter-accounting source only; no quality, speed, memory, training-stability, or context-length improvement has been shown here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/source_notes/coilra_multicoil_rope.md:9-13",
-                "sources/source_notes/coilra_multicoil_rope.md:17-21",
-                "sources/source_notes/coilra_multicoil_rope.md:25-28",
-                "sources/source_notes/coilra_multicoil_rope.md:32-46"
-              ],
-              "passage_review_note": "Reviewed public source note only because raw local project text is not copied into this repo. The note supports adapter-block indices, residues, winding, relative RoPE laws, circulant/cyclic mixer structure, parameter accounting, baselines, wrong-period controls, and explicit non-claims; no quality, speed, memory, training-stability, or context-length improvement is promoted."
-            }
-          ],
-          "draft_maturity": "v0.2 manuscript draft",
-          "open_evidence_gaps": [
-            "Appendix C now records exact passage-reviewed mappings for all seven assigned semantic-representation sources; support remains at argument until grounding, hierarchy-revision, representation-utility, model-quality, or interoperability tests exist.",
-            "The semantic_node_record fixture validates schema/example consistency only; no TreeLLM implementation, semantic-token benchmark, grounding evaluation, hierarchy-revision harness, cyclic-substrate experiment, or model-quality benchmark has been run.",
-            "TreeLLM source-reported model-size, grounding, reasoning, benchmark, superiority, smartphone-scale, and final-architecture claims are not reproduced here and are treated only as source-reported representation-proposal context.",
-            "Circle/Coil mappings are passage-reviewed against public source notes only because raw local project text is not copied into this repo; they support optional-substrate guardrails, not quality or performance claims.",
-            "No support-state promotion, raw source publication, semantic graph adequacy result, or cyclic-model advantage is implied by this drafting pass."
           ]
         },
         {

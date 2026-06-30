@@ -28,7 +28,7 @@ The next reader-continuity pass added two active operations under `editions/read
 - `v1_0.artifact_stewards.autonomy_treasury_reader_replace` replaces the generated-reader and live Human-view `Autonomy and treasury modes` section.
 - `v1_0.artifact_stewards.project_objects_reader_replace` replaces the generated-reader and live Human-view `Project objects` section.
 
-The following reader-continuity pass added two active operations under `editions/reader_overlays/v1_0/chapters/semantic-representation-and-tree-structured-models.json`:
+The following reader-continuity pass originally added two operations under `editions/reader_overlays/v1_0/chapters/semantic-representation-and-tree-structured-models.json`. Those operations are now retired after the semantic-representation fold; the file remains historical lineage for reader-delta review:
 
 - `v1_0.semantic_representation.mechanism_lifecycle_reader_replace` replaces the generated-reader and live Human-view `Semantic node lifecycle` subsection while preserving the mechanism diagram.
 - `v1_0.semantic_representation.interfaces_reader_replace` replaces the generated-reader and live Human-view `Interfaces` section.
@@ -164,13 +164,13 @@ For live-site review, `assets/reader-overlays.html` should be regenerated from t
 
 Current local results for this overlay set:
 
-- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 33 active operations.
-- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 33 active and 33 applied operations.
-- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 33 active operations.
-- `python3 scripts/validate_reader_overlays.py --check` passed with 33 active operations and 33 applied operations.
-- `python3 scripts/build_reader_edition.py --check` passed for 54 chapters, 59 files, 275 stripped live-only sections, 60 humanized reader-scaffold terms, and 33 reader overlay operations applied.
-- `python3 scripts/validate_reader_spine.py --check` passed for 54 chapters, with minimum reader-spine length 1,963 words.
-- `python3 scripts/validate_reader_evidence_boundaries.py --check` passed for 54 chapters.
+- `python3 scripts/sync_reader_overlay_asset.py` regenerated `assets/reader-overlays.html` with 31 active operations.
+- `python3 scripts/build_reader_edition.py` regenerated `build/reader_edition/`; `reader_delta_report.md` records 31 active and 31 applied operations, with the retired semantic-representation operations skipped.
+- `python3 scripts/sync_reader_overlay_asset.py --check` passed with 31 active operations.
+- `python3 scripts/validate_reader_overlays.py --check` passed with 31 active operations and 31 applied operations.
+- `python3 scripts/build_reader_edition.py --check` passed for 44 chapters, 49 files, 224 stripped live-only sections, 58 humanized reader-scaffold terms, and 31 reader overlay operations applied.
+- `python3 scripts/validate_reader_spine.py --check` passed for 44 chapters.
+- `python3 scripts/validate_reader_evidence_boundaries.py --check` passed for 44 chapters.
 - `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html` completed and wrote `_site/index.html`.
 - `python3 scripts/validate_live_human_view.py` passed for 67 rendered book pages and 54 rendered chapter pages.
 - `node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports` passed for 112 rendered page-view pairs.

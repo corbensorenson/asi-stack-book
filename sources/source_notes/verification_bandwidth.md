@@ -46,10 +46,9 @@ Verification Bandwidth argues that long context should not be confused with long
 - `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
-- `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
-- `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 
 ## Claims To Add Or Update

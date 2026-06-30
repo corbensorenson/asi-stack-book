@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-30
 
-This file is the 45-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the 44-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ remaining lanes stay `planned, not executed`; they must not receive synthetic
 fixtures, pass/fail status, or support-state pressure merely for coverage.
 The active cycle selection is recorded in
 `docs/v1_x_active_evidence_cycle.md`: seven lanes are selected and the other
-thirty-eight remain planned-only.
+thirty-seven remain planned-only.
 
 Selection criteria:
 
@@ -71,10 +71,9 @@ support-state transition by itself.
 | III | `routing-heads-and-specialist-cores` | Routing harness plus MoE literature and folded MoECOT runtime crosswalk | Extend route-quality, specialist-readiness, and public-safe orchestration-record fixtures without treating MoECOT source reports as reproduced runtime evidence. | Explain routing as an operations problem, not only a neural layer, and show the MoECOT Runtime Crosswalk as a receipt shape rather than a standalone proof. | Route selection balances cost, adequacy, residuals, fallback, source-state partitions, and replay blockers without model-quality or runtime-execution claims. |
 | III | `readiness-gates-residual-escrow-and-quarantine` | Readiness/residual harness plus Theseus architecture gate | Add quarantine release, residual custody, expired evidence, and fallback cases. | Make readiness gates read like release engineering for intelligence. | Promotion blocked on expired evidence or uncustodied residuals. |
 | III | `personal-compute-hives-and-federated-edge-intelligence` | Theseus operator OS plus external distributed-systems baselines | Add lease, approval, runner, and federation negative controls. | Make the chapter useful to people imagining home and edge compute. | Lease fixture proves bounded compute delegation and revocation. |
-| III | `compact-generative-systems-and-residual-honesty` | Compression metrics, residual ledger, and generate/verify/repair harness | Add compression failure residuals, repair loop traces, failed-verification preservation, and quality baseline separation. | Explain compactness and repair as accountable loss, not magic. | Fixture records what is compressed, lost, checked, repaired, residualized, or rejected before any compactness claim promotes. |
+| III | `compact-generative-systems-and-residual-honesty` | Compression metrics, residual ledger, generate/verify/repair harness, semantic-node fixture, and folded semantic-leasing source lane | Add compression failure residuals, repair loop traces, failed-verification preservation, semantic preservation, hierarchy-supersession, consumer-policy, mismatch cases, and quality baseline separation. | Explain compactness, repair, and semantic leasing as accountable loss rather than magic or clean ontology. | Fixture records what is compressed, represented, lost, checked, repaired, residualized, superseded, quarantined, or rejected before any compactness or semantic-representation claim promotes. |
 | III | `fast-generation-architectures` | Generation-mode baseline harness plus external inference literature | Add quality-adjusted useful-solution-per-second and negative controls. | Explain speed as useful verified output, not latency alone. | Faster mode cannot promote on latency-only metrics. |
 | III | `rankfold-neuralfold-and-artifact-compression` | Artifact compression experiment | Add small public-safe artifact compression benchmark with quality checks. | Show the reader what folded artifacts look like before and after. | Compression ratio and quality/residual metrics are recorded separately. |
-| III | `semantic-representation-and-tree-structured-models` | Representation fixtures plus Circle/Coil source lanes | Add tree transform, semantic preservation, and mismatch cases. | Make representation concrete with tree examples and diagrams. | Transform preserves required semantic fields or fails with receipt. |
 | III | `resource-economics-and-token-budgets` | Costed-route slice, resource-budget ledger, folded simulation harness, and external verification baselines | Extend budget records to multi-step workflows, displaced costs, fidelity boundaries, physical constraints, and invalid extrapolation cases. | Explain resource economics as finite attention, finite money, and claim transport through named simulation envelopes. | Multi-step budget fixture rejects hidden or displaced cost, and simulation fixture rejects extrapolation beyond validated fidelity class. |
 | III | `mathematical-and-search-substrates` | Circle/Theseus transfer plus search fixtures | Import or define public-safe search/proof-contract trace. | Give readers a clear bridge between math substrate and AI behavior. | Trace separates search legality from performance or intelligence claims. |
 | III | `circle-calculus-and-proof-carrying-ai-contracts` | Circle public replay plus Lean consumer gate | Vendor/archive receipt fixture and add negative controls. | Explain proof-carrying contracts as receipts systems can check. | ASI validator accepts valid Circle receipt and rejects malformed ones. |

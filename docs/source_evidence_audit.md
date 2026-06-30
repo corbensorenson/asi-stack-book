@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 45 |
-| Assigned source/chapter pairs | 427 |
-| Exact claim-source mappings | 427 |
+| Chapters audited | 44 |
+| Assigned source/chapter pairs | 426 |
+| Exact claim-source mappings | 426 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 427 |
-| Source notes listing assigned chapter | 427 |
-| Passage-reviewed mappings recorded | 427 |
-| Support-state counts | {"argument": 45} |
+| Source notes present for assigned pairs | 426 |
+| Source notes listing assigned chapter | 426 |
+| Passage-reviewed mappings recorded | 426 |
+| Support-state counts | {"argument": 44} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -60,10 +60,9 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `routing-heads-and-specialist-cores` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
-| `compact-generative-systems-and-residual-honesty` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
+| `compact-generative-systems-and-residual-honesty` | 15 | 15 | 15 | 15 | 15 | argument | eligible for support review |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `semantic-representation-and-tree-structured-models` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `resource-economics-and-token-budgets` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `mathematical-and-search-substrates` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -98,10 +97,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `cognitive_loop_closure` | 11 | yes |
 | `genesiscode` | 10 | yes |
 | `planforge` | 10 | yes |
-| `cgs` | 8 | yes |
 | `verification_bandwidth` | 8 | yes |
 | `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
+| `cgs` | 7 | yes |
 | `ladon_manhattan` | 7 | yes |
 | `cognitive_compilation` | 7 | yes |
 | `alignment_field` | 7 | yes |
@@ -406,6 +405,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `bbvca_main` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `circle_ai_architectures` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `coilra_multicoil_rope` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
@@ -431,13 +436,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bugbrain` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `circle_ai_architectures` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-representation-and-tree-structured-models.core` | `semantic-representation-and-tree-structured-models` | `coilra_multicoil_rope` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |

@@ -255,7 +255,6 @@ def main() -> None:
             f"all {chapter_count} chapters have source-noted external positioning records",
             "0 explicit external-baseline exceptions",
             f"{chapter_count} of {chapter_count} chapters currently have in-prose `ext_*` positioning",
-            f"{chapter_count} chapters have source-noted external comparators",
             "0 carry explicit exceptions",
         ],
         "docs/publication_readiness.md": [

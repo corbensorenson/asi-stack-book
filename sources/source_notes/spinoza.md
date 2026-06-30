@@ -39,12 +39,11 @@ Spinoza proposes a bounded neurosymbolic reasoning architecture: neural systems 
 - The Virtual Context ABI: Typed Pages, Cells, and Certificates
 - Verification Bandwidth and Context Adequacy
 - Proof-Carrying Claims and Adversarial Review
-- Proof-Carrying Claims and Adversarial Review
 - Failure Modes of Ungoverned Intelligence
 - `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
 - `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - Fast Generation Architectures
-- Semantic Representation and Tree-Structured Models
+- Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty
 - Policy Optimization and Learning from Feedback
 - Artifact Steward Agents and Living Project Governance
 - Evidence States and Claim Discipline

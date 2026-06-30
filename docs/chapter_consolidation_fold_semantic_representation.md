@@ -1,13 +1,16 @@
 # Chapter Consolidation Fold Disposition: Semantic Representation
 
-Status: fold-disposition ready; human/external review not completed.
+Status: executed fold history; human/external review not completed.
 
-This is a review artifact for the governed consolidation sequence. It does not
-edit `book_structure.json`, merge chapters, fold chapters, change Appendix C
-support states, create source/proof/test evidence, approve reader artifacts, or
-promote any claim above `argument`.
+This is an executed-history artifact for the governed consolidation sequence.
+The execution package edited `book_structure.json`, folded the standalone
+chapter into Compact Generative Systems and Residual Honesty as Semantic
+Representation Leasing, archived the source manuscript, preserved the retired
+public URL through a static historical stub, and retired the standalone reader
+overlay. It does not change Appendix C support states, create source/proof/test
+evidence, approve reader artifacts, or promote any claim above `argument`.
 
-This disposition does not edit `book_structure.json`.
+The execution package changed `book_structure.json`.
 
 ## Candidate
 
@@ -15,12 +18,12 @@ This disposition does not edit `book_structure.json`.
 |---|---|
 | Fold candidate | `semantic-representation-and-tree-structured-models` |
 | Candidate title | Semantic Representation and Tree-Structured Models |
-| Proposed destination | `compact-generative-systems-and-residual-honesty`, if the compression/representation package is executed or revised to accept the fold. |
+| Proposed destination | `compact-generative-systems-and-residual-honesty`, now executed as the canonical destination. |
 | Destination title | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty |
-| Dependency | Do not execute this fold before the compression/representation package has an execute, revise, defer, or reject decision. |
+| Dependency | Satisfied by the executed conservative compression merge and this semantic-representation fold execution. |
 | Proposed fold section | Semantic Representation Leasing |
-| Current state | `fold_disposition_ready` |
-| Required decision | Execute fold after destination-package review, revise fold disposition, defer for release, or reject and retain standalone. |
+| Current state | `executed` |
+| Required decision | Historical record only; restore standalone only if the restoration conditions below are met by later evidence or review. |
 
 ## Rationale
 
@@ -42,11 +45,12 @@ tokens, semantic leases, hierarchy migration, and consumer-specific adequacy.
 Those are closer to compression, representation admission, and residual
 honesty than to the memory ABI.
 
-Because the destination compression package is itself review-ready but not
-executed, this fold disposition is dependency-bound. If review rejects the
-compression merge, or keeps RankFold/NeuralFold standalone in a way that changes
-the representation spine, this semantic disposition should be revised before
-any manifest edit.
+The destination compression package executed conservatively before this fold:
+Generate-Verify-Repair was folded into Compact Generative Systems and
+RankFold/NeuralFold remained a standalone technique chapter. That resolved the
+dependency by making semantic representation a representation-leasing facet of
+Compact Generative Systems rather than a second full chapter skeleton or a
+RankFold/NeuralFold technique chapter.
 
 The dependency chain runs through
 `compact-generative-systems-and-residual-honesty`,
@@ -61,7 +65,7 @@ they are not the default destination for this fold.
 | Preserved item | Destination treatment |
 |---|---|
 | TreeLLM semantic graph and path-token proposal | Preserve as a source-bounded representation proposal, not a reproduced model-size or reasoning-gain result. |
-| Semantic leasing discipline | Keep as a named Semantic Representation Leasing section inside the compression/representation destination if the fold executes. |
+| Semantic leasing discipline | Kept as a named Semantic Representation Leasing section inside the compression/representation destination. |
 | `Semantic Node Record` | Preserve as the representation-lease record beside compact-generative, compression-receipt, and compressed-artifact records. |
 | Provenance, grounding, permitted use, residual uncertainty, and supersession | Preserve as required fields before a semantic node can carry task authority. |
 | Consumer policies for VCM, Spinoza, planning, cognitive compilation, compression, and human explanation | Preserve as interface rules, not as evidence that all consumers work. |
@@ -72,9 +76,9 @@ they are not the default destination for this fold.
 
 ## Proposed Destination Outline
 
-If executed, the compression/representation destination should keep one chapter
-skeleton. Do not paste the full semantic-representation chapter after the
-compression chapter. The fold should add or revise these named pieces:
+The executed compression/representation destination keeps one chapter skeleton.
+It does not paste the full semantic-representation chapter after the compression
+chapter. The fold adds or revises these named pieces:
 
 1. In `Why existing approaches are insufficient`, add the warning that a clean
    semantic graph can hide uncertainty as easily as a smaller tensor can hide
@@ -104,8 +108,7 @@ compression chapter. The fold should add or revise these named pieces:
 
 ## Source Union
 
-If the fold executes after the compression/representation package is accepted,
-the destination chapter's source queue should union the current compression and
+The destination chapter's source queue now unions the current compression and
 semantic-representation sources:
 
 - `cgs`
@@ -130,9 +133,10 @@ path-token proposals, but it is still a whitepaper/specification here. It does
 not supply a local TreeLLM implementation, measured compression ratio,
 semantic-token benchmark, graph-grounding evaluation, or model-quality result.
 
-If the compression review chooses the Conservative option and keeps
+Because the compression review chose the conservative option and kept
 `rankfold-neuralfold-and-artifact-compression` standalone, this source union
-must be revised before any semantic fold executes.
+preserves RankFold/NeuralFold as a supporting source and keeps technique-specific
+proof/test work in the retained standalone chapter.
 
 ## External-Source Union
 
@@ -160,10 +164,9 @@ deployment behavior.
 
 ## Appendix C Row Plan
 
-If executed, `compact-generative-systems-and-residual-honesty.core` remains the
-destination core claim, or the revised compression destination's accepted core
-claim replaces it. The current semantic-representation core claim should become
-a section-level subclaim inside the compression/representation destination:
+`compact-generative-systems-and-residual-honesty.core` remains the destination
+core claim. The previous semantic-representation core claim is preserved as a
+section-level subclaim inside the compression/representation destination:
 
 > Semantic representations are task-scoped leases: graph nodes and semantic
 > tokens may carry work only when provenance, grounding, utility,
@@ -185,11 +188,10 @@ module. Semantic-specific proof tags:
 - `lean:representation.semantic_tree.operational_invariant`
 - `lean:representation.semantic_tree.failure_blocks_promotion`
 
-If this fold executes, these tags should stay attached to the destination
-chapter in `docs/book_outline.md` and the generated proof manifest. Do not
-retire semantic-representation proof tags merely because the chapter is folded;
-the grounded-provenance and hierarchy-supersession gates become more important
-after folding.
+These tags now stay attached to the destination chapter in `docs/book_outline.md`
+and the generated proof manifest. Do not retire semantic-representation proof
+tags merely because the chapter is folded; the grounded-provenance and
+hierarchy-supersession gates become more important after folding.
 
 The destination should also preserve the compression package proof tags already
 listed in `docs/chapter_consolidation_dry_run_compression.md` and
@@ -215,36 +217,34 @@ representation-utility benchmark, or support-state promotion.
 
 ## Reader Path And Handoff Repairs
 
-If executed:
-
 - The compression/representation destination's Human Reading Path should absorb
   semantic representation as the rule that a tidy meaning structure has to carry
   provenance, uncertainty, and permitted-use limits before it can replace fuller
   context.
-- The folded semantic-representation chapter should not remain in the reader
+- The folded semantic-representation chapter no longer remains in the reader
   spine as a second full chapter skeleton.
 - The predecessor Handoff before the folded chapter and the Handoff in the
-  destination chapter must be repaired with
+  destination chapter were repaired with
   `python3 scripts/chapter_adjacency_report.py --if-removing semantic-representation-and-tree-structured-models`
   and
   `python3 scripts/chapter_adjacency_report.py --chapter compact-generative-systems-and-residual-honesty`.
-- If the compression package executes before this fold, rerun adjacency reports
-  against the actual post-merge manifest before editing anything.
 - Reader overlays, curated-reader records, companion-note routing, and review
-  matrix rows that refer to the standalone semantic-representation chapter must
-  either point to the new section or record a release deferral.
+  matrix rows that referred to the standalone semantic-representation chapter now
+  either point to the destination chapter or record retired historical status.
 
 ## URL, Redirect, And History Policy
 
-Before any manifest edit, choose one public-history policy:
+The execution package uses the public-history policy required by
+`docs/chapter_consolidation_url_history_policy.md`:
 
-- keep `chapters/semantic-representation-and-tree-structured-models.qmd` as an
-  archival source file excluded from the manifest with a clear historical note;
-- add a public redirect or link note from the old chapter path to the
-  compression/representation section; or
-- defer the fold until the site has a durable folded-chapter URL policy.
-
-Do not silently remove a public chapter path.
+- `chapters/semantic-representation-and-tree-structured-models.qmd` is archived
+  under `archive/retired_chapters/semantic-representation-and-tree-structured-models.qmd`.
+- `chapters/semantic-representation-and-tree-structured-models.html` preserves
+  the retired public path with a static historical stub that points to
+  `compact-generative-systems-and-residual-honesty.html`.
+- The retired source chapter is removed from the normal book spine.
+- The retired path is not silently removed and is not source evidence, proof
+  evidence, or a reader-release artifact.
 
 ## Restoration Conditions
 
@@ -270,13 +270,17 @@ more of these public-safe artifacts becomes available and source-reviewed:
 
 ## Review Decision Surface
 
-Reviewers should choose one:
+The executed decision was:
 
 - **Execute fold after destination review:** Semantic Representation and
   Tree-Structured Models becomes a named Semantic Representation Leasing section
   inside the accepted compression/representation destination, while all source,
   proof, schema, reader, and restoration boundaries are preserved.
-- **Revise fold disposition:** Keep the candidate unexecuted and revise the
+
+Future reviewers may still choose one of these restoration outcomes if later
+evidence changes chapter ownership:
+
+- **Revise fold disposition:** Reopen the executed fold record and revise the
   destination, dependency, subclaim, source, proof, reader, or restoration
   treatment.
 - **Defer for release:** Keep both chapters unchanged for the current release
@@ -288,8 +292,9 @@ Reviewers should choose one:
 
 ## Non-Claims
 
-- This disposition does not merge or fold chapters.
-- This disposition does not change `book_structure.json`.
+- This disposition is now executed by the 2026-06-30 semantic-representation
+  fold package.
+- The execution package changed `book_structure.json`.
 - This disposition does not change Appendix C support states.
 - This disposition does not create source-derived, external-literature-backed,
   proof-derived, prototype-backed, synthetic-test-backed, or empirical support.
