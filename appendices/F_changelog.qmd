@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-30 - Roadmap execution pivot
+
+- Updated `docs/v1_x_beyond_sota_roadmap.md` after the latest Claude review
+  supplied by Corben to make the next phase implementation-first rather than
+  report-first.
+- Added a planning-freeze rule for already packaged consolidation work:
+  execute or explicitly reject/retain the Part I 4-to-2 consolidation pilot
+  before adding another consolidation planning surface for an existing package,
+  then batch remaining merge/fold packages one package per commit.
+- Added a whole-book proof attack milestone: every chapter should gain at
+  least one nontrivial Lean theorem over explicit records, transitions,
+  negative cases, residual paths, receipts, authority ceilings, readiness
+  gates, or support-state boundaries, or record a visible no-proof-yet blocker
+  tied to the core claim.
+- Tightened the reader milestone so the curated manuscript must become a
+  post-consolidation human-edit-ready book, not merely a set of first-pass
+  curated chapter records.
+- Replaced the suggested long-running goal with an implementation-first goal
+  focused on executing merges, deepening proofs, finishing the reader
+  manuscript, and preserving evidence honesty.
+- This does not execute a merge, change `book_structure.json`, change chapter
+  count, alter Appendix C or Appendix K, promote support states, create proof
+  results, create test results, create external review, approve reader
+  artifacts, or create EPUB, DOCX, PDF, HTML, audio, DOI, Zenodo, or
+  audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - MoECOT curated reader prose pass
 
 - Added a drafting-only curated reader chapter for
