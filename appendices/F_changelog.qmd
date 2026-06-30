@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-30 - Proof-carrying claim negative-case proofs
+
+- Strengthened `AsiStackProofs.ProofCarryingClaims` with two derived
+  negative-case theorems: one rejects passed verifier records that omit
+  verifier artifact refs, and one rejects negative verifier results that try
+  to produce scoped updates.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 287
+  theorem declarations, 115 direct/projection-style declarations, and 172
+  derived/decomposed declarations.
+- Updated the Proof-Carrying Claims chapter, proof adequacy review, candidate
+  status, v1.0/v1.x roadmap surfaces, focus audit, and status snapshot
+  validator to record the new proof-carrying claim proof increment.
+- This does not promote any Appendix C or chapter core claim, prove theorem
+  validity, validate citation accuracy, establish semantic equivalence,
+  measure verifier quality, execute deployed review behavior, or approve any
+  reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Artifact compression negative-case proofs
 
 - Strengthened `AsiStackProofs.ArtifactCompression` with two derived

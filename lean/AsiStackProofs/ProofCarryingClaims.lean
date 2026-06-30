@@ -126,6 +126,17 @@ theorem passed_verifier_result_requires_verifier_artifact_reference
   intro valid passed
   exact valid.2.2.2.2.2.2.2.2.1 passed
 
+theorem passed_verifier_without_artifact_reference_rejected
+    {record : ProofCarryingClaimRecord} :
+    record.verifierResult = VerifierResult.passed ->
+    record.verifierArtifactRefsPresent = false ->
+    ¬ ProofCarryingClaimRecordValid record := by
+  intro passed missingRefs valid
+  have refs :=
+    passed_verifier_result_requires_verifier_artifact_reference valid passed
+  rw [missingRefs] at refs
+  contradiction
+
 theorem negative_verifier_result_requires_non_promotional_effect
     {record : ProofCarryingClaimRecord} :
     ProofCarryingClaimRecordValid record ->
@@ -133,5 +144,16 @@ theorem negative_verifier_result_requires_non_promotional_effect
     NonPromotionalEffect record.claimValidityEffect := by
   intro valid negative
   exact valid.2.2.2.2.2.2.2.2.2 negative
+
+theorem negative_verifier_result_with_scoped_update_rejected
+    {record : ProofCarryingClaimRecord} :
+    NegativeVerifierResult record.verifierResult ->
+    record.claimValidityEffect = ClaimValidityEffect.scopedUpdate ->
+    ¬ ProofCarryingClaimRecordValid record := by
+  intro negative scopedUpdate valid
+  have effect :=
+    negative_verifier_result_requires_non_promotional_effect valid negative
+  rw [scopedUpdate] at effect
+  contradiction
 
 end AsiStackProofs.ProofCarryingClaims

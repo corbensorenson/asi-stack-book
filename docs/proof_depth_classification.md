@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 285 |
+| Theorem declarations classified | 287 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 170 |
+| Derived/decomposed theorem declarations | 172 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -83,7 +83,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 2 | 8 | 6 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | policy-optimization-and-learning-from-feedback | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 5 | 5 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 7 | 5 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -258,7 +258,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `failed_verifier_result_downgrades_or_blocks_claim_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `formal_support_tier_requires_valid_justification_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `negative_verifier_result_requires_non_promotional_effect` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaims.lean` | `negative_verifier_result_with_scoped_update_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_result_requires_verifier_artifact_reference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_without_artifact_reference_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `valid_proof_carrying_claim_record_preserves_mapping_scope_limits_and_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `contract_readiness_alone_cannot_promote_downstream_claim` | derived_or_decomposed | no | uses cases, have, rw, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `downstream_ready_receipt_exposes_boundary_fields` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

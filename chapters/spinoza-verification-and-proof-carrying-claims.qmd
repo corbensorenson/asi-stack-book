@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos` |
 | Source loading state | passage-reviewed local raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`, `uat`, `talos`; connector/source-note mapped: `coherence_exchange` |
-| Test state | `proof_carrying_claim` and `tribunal_review_record` fixture validation are implemented; `python3 scripts/validate_proof_carrying_claims.py` and `python3 scripts/validate_tribunal_review.py` pass bounded synthetic record checks; `AsiStackProofs.ProofCarryingClaims` and `AsiStackProofs.Tribunal` implement finite record predicates; theorem-validity, citation-accuracy, semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, runtime, and deployed-review tests remain unimplemented. |
+| Test state | `proof_carrying_claim` and `tribunal_review_record` fixture validation are implemented; `python3 scripts/validate_proof_carrying_claims.py` and `python3 scripts/validate_tribunal_review.py` pass bounded synthetic record checks; `AsiStackProofs.ProofCarryingClaims` now includes finite record predicates plus negative-case theorems rejecting passed verifier records without artifact refs and negative verifier results that try to produce scoped updates; `AsiStackProofs.Tribunal` implements finite record predicates; theorem-validity, citation-accuracy, semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, runtime, and deployed-review tests remain unimplemented. |
 
 The executed merge combines two verification-event families:
 
@@ -413,11 +413,14 @@ deployed review systems.
 These Lean hooks are implemented as finite-record predicates over
 proof-carrying claim records and tribunal review records. They prove only the
 record-level gates: formal support tiers require valid justification artifact
-references, failed verifier results block or downgrade rather than promote,
-tribunal verdicts include reviewer roles and dissent, and high-risk artifacts
-cannot be accepted when required tribunal review is absent. They do not prove
-verifier quality, theorem adequacy, semantic equivalence, reviewer
-independence, or verdict correctness.
+references, passed verifier records require verifier artifact refs, failed
+verifier results block or downgrade rather than promote, modeled passed
+records without verifier artifact refs are rejected, negative verifier results
+cannot produce scoped updates, tribunal verdicts include reviewer roles and
+dissent, and high-risk artifacts cannot be accepted when required tribunal
+review is absent. They do not prove verifier quality, theorem adequacy,
+semantic equivalence, reviewer independence, citation accuracy, or verdict
+correctness.
 
 ## Source crosswalk
 
