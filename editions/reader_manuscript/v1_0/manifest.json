@@ -436,6 +436,43 @@
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_coilra_cyclic_mixers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
+      "chapter_id": "constitutional-alignment-substrate",
+      "title": "Constitutional Alignment Substrate",
+      "file": "editions/reader_manuscript/v1_0/chapters/constitutional-alignment-substrate.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/constitutional-alignment-substrate.qmd",
+      "live_source_ref": "chapters/constitutional-alignment-substrate.qmd@108d09b00",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#constitutional-alignment-substrate.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#constitutional-alignment-substrate",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around constitutional commitments as runtime constraints: translation status, active and protected predicates, uncertainty labels, review routes, migration policy, constitutional diffs, least sufficient power, and non-claim boundaries; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external Constitutional AI records remain comparators rather than reproduced local evidence",
+        "proof/test status preserved without adding deployed policy-engine, red-team, runtime-gate, Constitutional AI reproduction, public-input, moral-correctness, reviewer-quality, rollback-execution, self-modification-safety, or whole-system alignment results",
+        "implementation horizon preserved without implying current constitutional constraint compiler deployment",
+        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with agency-dignity-and-corrigibility",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_constitutional_alignment_prose_pass.md with the release-stability consolidation caveat; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "title": "Context Transactions, Snapshots, Mounts, and Taint",
       "file": "editions/reader_manuscript/v1_0/chapters/context-transactions-snapshots-mounts-and-taint.qmd",

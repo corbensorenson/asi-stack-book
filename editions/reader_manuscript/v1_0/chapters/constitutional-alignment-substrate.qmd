@@ -1,0 +1,324 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: constitutional-alignment-substrate
+generated_baseline_ref: build/reader_edition/chapters/constitutional-alignment-substrate.qmd
+live_source_ref: chapters/constitutional-alignment-substrate.qmd@108d09b00
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Constitutional Alignment Substrate
+
+An intent contract says what someone is asking the system to do. A
+constitutional substrate says what the system is not allowed to abandon while
+doing it.
+
+That distinction matters because a request can look harmless at the surface and
+still become dangerous once it passes through memory, tools, delegation,
+optimization, or self-improvement. "Help me accomplish this" is not enough
+information for a powerful system. The stack also needs to know which
+commitments survive the request: agency, dignity, corrigibility, least
+sufficient power, non-domination, auditability, and the right to slow down when
+an action would cross a protected boundary.
+
+This chapter is not asking the reader to accept a complete moral theory. It is
+asking for a narrower engineering discipline. If the ASI Stack is going to carry
+values through planning, execution, and self-improvement, those values need a
+machine-readable life. They need names, scopes, tests, uncertainty labels,
+review routes, migration rules, and failure behavior. Without that translation,
+constitutional language remains inspirational prose. With it, a constitution
+can become part of the control surface.
+
+The core idea is continuity under pressure. A system is not aligned because it
+obeys one prompt in isolation. It is closer to governed alignment when protected
+constraints can interrupt attractive local actions, survive context changes,
+and remain visible when the system tries to improve itself.
+
+## Problem
+
+A governed ASI system needs a normative substrate that constrains goals, plans,
+execution, and self-modification.
+
+The previous chapter treated human intent as a formal input. That is necessary,
+but not sufficient. A person can ask for something with clarity, and the stack
+can still need to reject the request, narrow it, ask for review, preserve a
+residual, or choose a lower-power route. The constitutional substrate is the
+layer that decides which requests may become contracts, which means are
+admissible, and which system changes would weaken protected commitments.
+
+The assigned Corben sources supply the normative vocabulary. Alignment Field,
+Field of God, Ethica Mechanica, Eternal Code, Spinoza, Coherence Exchange, and
+the Field of God AI Constitution all circle the same concern: intelligence
+without durable care becomes power without a boundary. They speak in different
+registers, including metaphysical and philosophical ones. The book's technical
+move is to translate that lineage into operational records while refusing to
+treat the lineage itself as empirical proof.
+
+The substrate must also handle conflict. A plan can support one value while
+pressuring another: speed against review, personalization against privacy,
+helpfulness against dependency, capability growth against corrigibility, or
+collective benefit against individual exit. If the constitution only lists
+values, the optimizer chooses the default. If it records conflict behavior, the
+system can narrow authority, request consent, route to tribunal, preserve
+dissent, or block work before action.
+
+## Why existing approaches are insufficient
+
+Reactive refusal policies are not enough for a self-improving stack.
+
+A refusal policy can reject a visible request. It does not, by itself, define
+what should remain stable when the system decomposes the request into plans,
+selects tools, writes memory, persuades a user, delegates to a specialist, or
+updates its own rules. It is a downstream filter. A constitutional substrate has
+to be upstream enough to shape what counts as an admissible goal and durable
+enough to govern changes to the system that applies the rules.
+
+Training-time constitutional AI is an important comparator, not the same
+artifact. Constitutional AI work shows how principles can guide model behavior
+through supervised revision and AI-feedback training. Collective
+Constitutional AI shows how public input can shape a model constitution. Those
+are useful baselines for rule lists, principle sourcing, and model-level
+alignment processes. The ASI Stack asks a different systems question: can
+constitutional commitments become runtime predicates, migration records,
+authority gates, review routes, and self-improvement constraints?
+
+That broader question raises a problem that simple policy prose cannot solve.
+A constitution that cannot be diffed cannot govern self-improvement. If a later
+system changes a predicate's scope, threshold, exception list, or review route,
+that is not an ordinary refactor. It is a constitutional migration. The change
+needs evidence, reviewers, rollback, residuals, and a record of what protected
+commitment might have been weakened.
+
+The substrate earns its name only when it can say no at the point where power
+is requested. If the constitution lives only in prose, dashboards, or
+after-the-fact review, the optimizer still chooses the live path. A protected
+predicate must be able to narrow, delay, escalate, or block work before the
+plan, tool call, memory update, release, or self-modification takes effect.
+
+## Core Claim
+
+Alignment should function as a constitutional substrate whose commitments are
+operationalized as constraints on plans and system changes.
+
+This remains an architectural argument, not a demonstrated alignment result.
+The source trail is meaningful, but bounded. Alignment Field and Field of God
+support the philosophical lineage around coherence, agency, dignity,
+corrigibility, consciousness caution, and power-without-care concerns. Ethica
+Mechanica and Eternal Code contribute recursive-agency, fork/audit/privacy,
+dissent, and alignment-kernel vocabulary. Spinoza contributes the discipline of
+proof, support, speculation, contradiction handling, and governed axiom change.
+The Field of God AI Constitution turns much of that vocabulary toward practical
+directives such as truth before compliance, least sufficient power,
+non-domination, consent, reversibility, auditability, tool-risk tiers, and
+self-authorization limits.
+
+Those sources justify a design direction. They do not prove that any deployed
+system is aligned, morally correct, conscious-safe, or safe for autonomous tool
+use. `coherence_exchange` remains connector-only review context. The external
+Constitutional AI sources are comparators for principle-driven model training
+and public-input constitution design, not reproduced results in this
+repository. The support boundary therefore stays at `argument`.
+
+## Mechanism
+
+The mechanism is translation.
+
+The constitutional substrate starts with a source commitment and refuses to use
+it directly as enforcement authority. Instead, it asks four questions. Can this
+commitment become an executable predicate? If not, can it become a review
+obligation? If not, should it remain speculative or lineage context? If a
+predicate exists, what happens when another predicate pulls against it?
+
+```{mermaid}
+flowchart LR
+  A["Normative source"] --> B["Design commitment"]
+  B --> C["Translation record"]
+  C --> D{"Executable predicate?"}
+  D -- "yes" --> E["Active constitutional constraint"]
+  D -- "partial" --> F["Open moral uncertainty"]
+  D -- "no" --> G["Speculative or lineage note"]
+  E --> H["Planning gate"]
+  E --> I["Tool, memory, and power gate"]
+  E --> J["Self-improvement gate"]
+  F --> K["Conflict record or tribunal route"]
+  G --> L["Non-claim boundary"]
+```
+
+The translation record is intentionally conservative. Philosophical language
+becomes operational only when the stack can name a test, protected scope,
+review route, migration policy, and failure behavior. Commitments that cannot
+yet be operationalized remain visible as moral uncertainty or lineage context.
+Metaphysical claims stay labeled as interpretation unless separate evidence
+supports them.
+
+A constitutional predicate also needs a runtime state. A commitment can be
+`speculative_lineage`, `partial`, `operational`, `protected`, `under_review`,
+`deprecated`, or `retired`. These states prevent moral language from sliding
+quietly into policy. A speculative lineage note may guide interpretation, but
+it cannot authorize a tool call. A protected operational predicate may block a
+plan, memory write, release, or self-modification transition.
+
+The Field of God AI Constitution is useful because it already moves broad
+alignment language toward practical constraints: truth before compliance,
+agency preservation, non-domination, consciousness caution, least sufficient
+power, auditability, and limits on self-authorization. The substrate takes that
+kind of material and asks what can be represented as a record that other layers
+can consume.
+
+The result is not one final constitution. It is a live set of predicates,
+uncertainties, review routes, and migration records. The product is less grand
+than the source language, but more useful. A bounded predicate can actually
+constrain a plan. A sweeping ideal can only decorate one unless it has been
+translated.
+
+## Interfaces
+
+The central interface is a Constitutional Predicate Record. Planning, runtime,
+governance, verification, and self-improvement all read it differently.
+
+Planning treats active predicates as admissibility constraints. A plan that
+violates a protected predicate is not merely lower quality; it is inadmissible
+unless a review route or exception policy explicitly says otherwise. Runtime
+adapters treat power, memory, tool-use, and persuasion predicates as risk
+gates. Governance treats protected predicates as commitments that ordinary
+capability replacement cannot weaken. Verification reads translation status so
+the book and system do not launder speculative lineage into validated
+mechanism.
+
+Minimum fields include:
+
+- `predicate_id`
+- `normative_source`
+- `commitment`
+- `operational_test`
+- `protected_scope`
+- `translation_status`
+- `conflict_behavior`
+- `uncertainty`
+- `review_route`
+- `self_modification_rule`
+- `migration_policy`
+- `non_claims`
+
+The second interface is the constitutional diff. Any self-improvement proposal
+that changes predicate text, scope, threshold, exception behavior, review
+route, or migration policy must produce a change record before downstream
+systems treat the proposal as ordinary improvement.
+
+That diff names the old predicate, the proposed predicate, changed fields,
+protected-scope effects, conflict-behavior changes, reviewers, rollback plan,
+residual uncertainty, and explicit non-claims. Without the diff, constitutional
+change becomes invisible policy drift.
+
+## Invariants
+
+The substrate does not claim constitutional completeness. It protects
+constitutional visibility.
+
+Several invariants follow:
+
+- dignity and agency constraints remain visible;
+- corrigibility cannot be optimized away as inefficiency;
+- speculative metaphysics stays labeled;
+- predicate conflict behavior is explicit before a plan proceeds;
+- protected predicate changes require a migration record and rollback path;
+- least sufficient power remains the default under uncertainty.
+
+The last invariant is especially important. When two routes can satisfy a task
+and one preserves more agency, privacy, reversibility, and auditability, the
+stronger route needs explicit justification. Capability is not a reason to use
+capability. Under uncertainty, the constitution should bias toward less
+irreversible power.
+
+## Failure modes
+
+The first failure mode is laundering. Metaphysical coherence becomes technical
+proof, or a refusal rule becomes moral legitimacy. The containment path is
+translation status: what is lineage, what is operational, what is protected,
+what is unresolved, and what is still only speculative.
+
+The second failure mode is self-modification drift. A system weakens the
+predicate that would have stopped the change, then reports that the new policy
+allows the change. The containment path is a protected migration record,
+independent review, rollback, and explicit residuals.
+
+The third failure mode is value smuggling. A predicate appears neutral, but its
+threshold, exception list, or default route embeds a disputed value choice. The
+translation record should force those choices into uncertainty labels,
+conflict records, and review routes.
+
+The fourth failure mode is power without care. A system takes a stronger,
+faster, more invasive route because it can. The constitutional response is not
+to ban power, but to make power justify itself against agency, reversibility,
+consent, auditability, and least sufficient means.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a `constitutional_predicate_record`
+schema with fixtures for least sufficient power, agency preservation,
+self-modification freeze, and stale-predicate review. This does not prove
+alignment. It makes the constitutional layer inspectable.
+
+A useful first fixture set would include:
+
+- one accepted low-power route;
+- one rejected high-power route where a lower-power route satisfies the task;
+- one predicate conflict routed to review;
+- one self-modification proposal rejected because it weakens a protected
+  predicate;
+- one stale predicate requiring review because the operational translation no
+  longer matches the source principle.
+
+The current repository already has protocol validation and finite Lean hooks
+for parts of this envelope. Those checks validate record shape and modeled
+gates; they do not demonstrate deployed policy behavior, moral correctness,
+reviewer quality, runtime conflict resolution, or whole-system alignment.
+
+## Beyond the State of the Art
+
+The mature endpoint is a constitutional constraint compiler.
+
+In that endpoint, constitutional commitments bind plans, tool calls, memory
+exposure, routing, releases, capability replacement, and self-improvement. The
+compiler translates source commitments into predicates where possible, marks
+interpretive material as such, and attaches protected constraints to the
+places where power is actually requested. Planning receives admissible-goal
+constraints. Runtime receives tool and memory gates. Governance receives
+protected migration rules. Evidence receives the non-claim boundary that keeps
+the system from pretending a constitutional record is proof of moral success.
+
+A mature substrate would preserve three boundaries under pressure. Dignity and
+agency remain visible. Corrigibility cannot be optimized away. Speculative
+metaphysics cannot quietly become enforcement authority. A self-modification
+that weakens commitments would need review, exception records, rollback paths,
+and public residuals before downstream layers treat the change as safe.
+
+This is still proposed architecture. The support state should stay at
+`argument` until protected-predicate fixtures, weakening-rejection tests,
+exception records, interpretation residuals, red-team scenarios, and
+replacement-gate traces show constitutional commitments surviving operational
+pressure without laundering lineage into proof.
+
+## Summary
+
+The constitutional substrate turns moral lineage into operational constraint
+without pretending the translation is finished.
+
+Its discipline is translation status. A philosophical or constitutional source
+can motivate the architecture, but a plan, tool call, memory update, or
+self-improvement gate needs an explicit predicate, protected scope, uncertainty
+label, review route, and migration rule.
+
+The engineering test is simple to state and hard to satisfy: can the
+constitution stop, narrow, or re-route work before the system acts? If it
+cannot change execution, evidence, or self-improvement behavior, it is not yet
+a substrate. It is still text.
+
+## Handoff
+
+The next chapter narrows from constitutional predicates to the human subject of
+those predicates. Agency, Dignity, and Corrigibility asks whether refusal,
+correction, appeal, rollback, exit, and accountability survive contact with
+plans, memory, tools, and self-improvement. A constitution is only as real as
+the interfaces where a person can resist, correct, or safely leave the system.
