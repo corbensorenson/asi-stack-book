@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Executed consolidation of `intent-to-execution-contracts` and `command-contracts-and-semantic-interfaces`; the old command-contract slug is preserved by a static redirect and the source chapter is archived for lineage."
-  - "Source notes, schemas, fixtures, a synthetic plan-execution harness, and finite Lean predicates including a dispatch-route envelope support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, or deployed execution safety."
+  - "Source notes, schemas, fixtures, a synthetic plan-execution harness, and finite Lean predicates including a dispatch-route envelope and command-contract negative cases support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, or deployed execution safety."
   - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
 
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `software_magic_grimoire`; supporting: `talos`, `genesiscode`, `cognitive_compilation`; connector/recovery: `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`; connector/source-note only: `moecot` |
-| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes synthetic valid and expected-invalid plan-execution contract checks; `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` implement finite record predicates including a dispatch-route envelope; behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, and runtime execution tests remain planned. |
+| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes synthetic valid and expected-invalid plan-execution contract checks; `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` implement finite record predicates including a dispatch-route envelope, missing-field negative case, and hidden-override precedence negative case; behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, and runtime execution tests remain planned. |
 
 The executed merge combines two current record families:
 
@@ -374,10 +374,10 @@ letting prose style alter the permitted action surface.
 | Contract field completeness test | Check that `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures carry required objective, authority, output, verification, failure, handoff, artifact, feedback, residual, and non-claim fields. | implemented by protocol validation; validated locally |
 | Constraint preservation test | Check that a compiled execution job preserves parent contract constraints and does not widen authority during lowering. | implemented in `AsiStackProofs.IntentToExecution`; runtime lowering test not run |
 | Approval-gated execution test | Check that a modeled execution job missing required approval cannot transition to running. | implemented in `AsiStackProofs.IntentToExecution`; approval-service behavior not run |
-| Command schema validation test | Check that command contracts expose objective, constraints, output contract, verification, and failure behavior before planning input is accepted. | implemented in `AsiStackProofs.CommandContracts` and protocol fixtures |
+| Command schema validation test | Check that command contracts expose objective, constraints, output contract, verification, and failure behavior before planning input is accepted, and that a missing required field blocks completeness. | implemented in `AsiStackProofs.CommandContracts` and protocol fixtures |
 | Failure-behavior declaration test | Check that missing failure behavior blocks dispatch rather than becoming an implicit best-effort command. | implemented by finite predicates and synthetic fixture checks |
 | Execution dispatch route proof | Check that a finite dispatch review routes missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews to explicit outcomes. | implemented by Lean build; finite-record route coverage only |
-| Prompt override scenario | Check that hidden, retrieved, or conflicting instructions cannot override explicit contract constraints. | planned; not run against a deployed parser or model |
+| Prompt override scenario | Check that hidden, retrieved, or conflicting instructions cannot override explicit contract constraints. | implemented as finite `AsiStackProofs.CommandContracts` precedence negative case; not run against a deployed parser or model |
 | Field-confidence audit | Check that confirmed, policy-imposed, source-derived, defaulted, inferred, and missing fields preserve dispatch consequences. | planned; not run beyond record-shape checks |
 | Authority-inference block test | Check that inferred means, tools, disclosure, publication, or side effects route to draft-only or re-contract states. | planned; not run beyond finite record and fixture checks |
 
@@ -394,8 +394,9 @@ The destination chapter keeps both formal lanes:
   `lean:intent_execution.contracts.operational_invariant` and
   `lean:intent_execution.contracts.failure_blocks_promotion`, plus
   `lean:intent_execution.contracts.dispatch_route_envelope`;
-- `AsiStackProofs.CommandContracts` for required command fields and explicit
-  constraint precedence over hidden or conflicting instructions:
+- `AsiStackProofs.CommandContracts` for required command fields, missing-field
+  rejection, explicit constraint precedence over hidden or conflicting
+  instructions, and hidden-override rejection:
   `lean:command.semantic_interface.operational_invariant` and
   `lean:command.semantic_interface.failure_blocks_promotion`.
 

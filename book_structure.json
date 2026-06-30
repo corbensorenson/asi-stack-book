@@ -2714,7 +2714,7 @@
             {
               "name": "Command schema validation test",
               "implementation_status": "implemented",
-              "result_status": "passes via synthetic plan-execution contract harness"
+              "result_status": "passes via synthetic plan-execution contract harness and Lean missing-field negative case"
             },
             {
               "name": "Failure-behavior declaration test",
@@ -2728,8 +2728,8 @@
             },
             {
               "name": "Prompt override scenario",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean hidden-override negative case; no deployed parser or model claim"
             },
             {
               "name": "Field-confidence audit",

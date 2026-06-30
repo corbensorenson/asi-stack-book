@@ -69,10 +69,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Contract field completeness test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Constraint preservation test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Artifact traceability test | implemented | passes via synthetic plan-execution contract harness; no runtime artifact acceptance claim |
-| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Command schema validation test | implemented | passes via synthetic plan-execution contract harness |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Command schema validation test | implemented | passes via synthetic plan-execution contract harness and Lean missing-field negative case |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Failure-behavior declaration test | implemented | passes via synthetic plan-execution contract harness; no deployed dispatcher claim |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Execution dispatch route proof | implemented | passes via Lean build; finite dispatch-route coverage only |
-| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Prompt override scenario | planned | not run |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Prompt override scenario | implemented | passes via Lean hidden-override negative case; no deployed parser or model claim |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Field-confidence audit | planned | not run |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Authority-inference block test | planned | not run |
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Decomposition accuracy test | planned | not run |

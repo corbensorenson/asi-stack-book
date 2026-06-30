@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-30 - Command contract negative-case proofs
+
+- Strengthened `AsiStackProofs.CommandContracts` with two derived negative-case
+  theorems: one rejects complete command-contract status when any required
+  command field is missing, and one rejects accepted hidden or conflicting
+  overrides under explicit-constraint precedence.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 300
+  theorem declarations, 115 direct/projection-style declarations, and 185
+  derived/decomposed declarations.
+- Updated the Command Contracts chapter, manifest test rows, Appendix E, proof
+  adequacy review, candidate status, v1.0/v1.x roadmap surfaces, focus audit,
+  and status snapshot validator to record the new command-contract proof
+  increment. Refreshed the v1.0 status manuscript scale to 166,678 chapter
+  words excluding YAML and 174,025 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, parse commands,
+  run a deployed dispatcher, enforce approvals in a live service, execute
+  tools, measure prompt-injection resistance, replay an end-to-end runtime
+  trace, or approve any reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Artifact graph provenance negative-case proofs
 
 - Strengthened `AsiStackProofs.ArtifactGraph` with two derived negative-case
