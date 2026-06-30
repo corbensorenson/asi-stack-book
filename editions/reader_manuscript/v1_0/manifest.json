@@ -607,6 +607,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_claim_ledgers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "title": "Verification Bandwidth and Context Adequacy",
+      "file": "editions/reader_manuscript/v1_0/chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "live_source_ref": "chapters/verification-bandwidth-and-context-adequacy.qmd@6013d4743",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#verification-bandwidth-and-context-adequacy.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#verification-bandwidth-and-context-adequacy",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around context exposure versus verification capacity, target-claim scoped adequacy, semantic-unit comparison, compression/loss records, verification modes, support-state boundaries, minimum viable adequacy fixtures, and beyond-SOTA verification-capacity control; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external records remain comparators rather than claim support",
+        "proof/test status preserved without adding unrun contradiction-rate, distractor-resistance, summary-fidelity, adequacy-classifier, or deployment results",
+        "implementation horizon preserved without implying current verification-capacity control-plane deployment",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_verification_bandwidth_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {

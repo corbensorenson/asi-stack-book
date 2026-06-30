@@ -1,0 +1,295 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: verification-bandwidth-and-context-adequacy
+generated_baseline_ref: build/reader_edition/chapters/verification-bandwidth-and-context-adequacy.qmd
+live_source_ref: chapters/verification-bandwidth-and-context-adequacy.qmd@6013d4743
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Verification Bandwidth and Context Adequacy
+
+Long context can make a system sound informed before it is actually able to
+check what it is saying.
+
+That is the problem this chapter names. A model may hold a large packet of
+documents, memory pages, summaries, proofs, logs, and user instructions. It
+may cite them, summarize them, and weave them into a fluent answer. None of
+that proves it jointly compared the parts that matter for the claim at hand.
+The system may have generation capacity without verification bandwidth.
+
+Verification bandwidth is the amount of effective checking capacity available
+for a specific claim. It depends on the target claim, the semantic units that
+must be compared, the compression path used to fit them, the tools and proof
+checks available, the review time available, and the risk level of the
+decision. Context adequacy is the record that says whether the available
+context is enough for that work.
+
+The practical lesson is simple: having the text is not the same as being able
+to verify with it. A governed system should know when context is adequate for
+drafting, adequate for a local check, adequate for joint verification, or
+inadequate for the claim being made. When it is inadequate, the honest output
+is not a stronger sentence. It is a downgrade, split, residual, retrieval
+request, proof request, tribunal route, or human review route.
+
+## Problem
+
+The ASI Stack needs to distinguish access from understanding.
+
+VCM can produce an authorized, coherent, versioned context packet. Context
+transactions can preserve snapshots, mounts, taint, and deletion boundaries.
+Those are necessary gates, but they do not answer a different question: can
+this system verify this claim with this packet in this mode?
+
+A context packet can be perfectly legitimate and still be inadequate. It may
+contain the right documents but not enough active comparison budget. It may
+contain a useful summary that dropped the exact constraint that matters. It
+may support an orientation paragraph but not a safety claim. It may support a
+local citation check but not a cross-document contradiction judgment.
+
+Adequacy is therefore scoped. It is not a general property of a context
+window. It is a relation among a context packet, a target claim, a risk tier,
+and a verification mode. The same packet can be adequate for drafting and
+inadequate for promotion.
+
+## Why More Context Is Not Enough
+
+Long context improves exposure. It does not automatically improve checking.
+
+The `verification_bandwidth` source frames this as a bounded verification
+problem. To check whether two semantic units agree, the system needs enough
+effective workspace to compare them in detail. A large source can dominate
+attention. A small but decisive contradiction can be present and still not be
+checked. A chain of summaries can look locally coherent while hiding a global
+conflict.
+
+External long-context and evaluation work makes the same warning easier to
+place. LongBench and RULER stress long-context behavior. Lost in the Middle
+shows that placement inside a context window matters. LongLLMLingua highlights
+compression tradeoffs. ALCE and Self-RAG separate generated answers from
+retrieval, critique, and citation support. CheckList shows why aggregate
+accuracy is too blunt for behavioral claims. GPQA exposes hard oversight
+pressure, and Reluplex reminds us that property-specific verification is much
+narrower than a broad safety story. These are comparators and vocabulary, not
+evidence that this repository has run those evaluations.
+
+The failure mode is long-context theater: because a system has many relevant
+tokens in reach, it behaves as if the comparison has been performed. A reader
+sees breadth and mistakes it for verification. The adequacy layer exists to
+keep that mistake from becoming a support state.
+
+## Core Claim
+
+Context systems must distinguish generation capacity from verification
+bandwidth and declare when context is inadequate. In the live book, this
+chapter's core claim remains a design rationale at `argument` support.
+
+Verification Bandwidth supplies the generation-versus-verification distinction,
+semantic-unit comparison frame, dominant-component risk, transitive-decay
+risk, and proposed contradiction-rate test. VCM supplies adequacy and
+admission separation, use-relative context certificates, non-success states,
+and the rule that summaries cannot recover omitted information. Spinoza
+supplies the claim-ledger consequence: unsupported, unknown, or contradicted
+claims should not be promoted. TreeLLM supplies a possible explicit
+semantic-unit representation route. Editable VCM remains connector/source-note
+refinement context, not a reproduced benchmark.
+
+The current repo supports this claim only as architecture and record
+discipline. It has a `context_adequacy_record` schema, public fixtures, a
+synthetic context admission/adequacy harness, and finite Lean predicates for
+admission-versus-adequacy separation and high-risk support blocking. It has
+not measured model verification bandwidth, run the proposed contradiction-rate
+experiment, run a distractor-resistance benchmark, proved attention behavior,
+validated an adequacy classifier, or demonstrated deployed escalation.
+
+## Mechanism
+
+Verification bandwidth turns every important context packet into an adequacy
+question.
+
+```{mermaid}
+flowchart LR
+  Sources["Source units"] --> Packet["Admitted VCM packet"]
+  Packet --> Units["Semantic-unit inventory"]
+  Units --> Loss["Compression and loss record"]
+  Loss --> Mode["Verification mode"]
+  Mode --> Decision{"Adequate for target claim?"}
+  Decision -- "yes" --> Support["Bounded claim support"]
+  Decision -- "draft only" --> Draft["Drafting-only use"]
+  Decision -- "no" --> Escalate["Retrieve, split, prove, review, or residualize"]
+  Draft --> Ledger["Claim ledger"]
+  Support --> Ledger
+  Escalate --> Ledger
+  Ledger --> Boundary["Support-state boundary"]
+```
+
+The adequacy record begins by naming the claim. Then it names the context
+packet, the semantic units that matter, the compression path, the verification
+mode, the risk tier, the negative evidence, and the residuals.
+
+The key question is not "did the system read a lot?" The key question is
+"what comparison did the system actually perform?" Direct lookup, pairwise
+semantic comparison, schema validation, finite proof checking, tribunal
+review, human review, and summary-only review are different modes. They should
+not grant the same support.
+
+Adequacy states make that difference visible:
+
+- `absent`: required source units are not loaded or identified.
+- `drafting_only`: the packet is useful for orientation or prose, not support.
+- `local_check`: a narrow fact, citation, schema, or local relation was checked.
+- `joint_check`: the required semantic units were compared in the declared mode.
+- `summary_derived`: the claim rests on compressed material with known loss.
+- `escalated`: the packet is inadequate and has been routed to stronger review.
+- `contradicted`: the adequacy pass found a conflict that matters to the claim.
+
+A claim can still be useful when its context is inadequate. It can be drafted,
+queued, split, residualized, or escalated. What it cannot do is silently become
+verified because the context window was large.
+
+## Interfaces
+
+The central interface is the Context Adequacy Record. A useful record names:
+
+- `adequacy_id`
+- `target_claim_id`
+- `claim_scope`
+- `context_packet_ref`
+- `context_scope`
+- `risk_tier`
+- `semantic_units`
+- `compression_path`
+- `verification_mode`
+- `adequacy_state`
+- `residual_risks`
+- `negative_evidence`
+- `required_escalation`
+- `verification_artifact_refs`
+- `audit_refs`
+- `support_state_effect`
+- `non_claims`
+
+VCM declares packet admission and adequacy. Spinoza-style claim ledgers consume
+the result before support-state movement. Planning decides whether to retrieve
+more context, split the review, route to proof work, call a tribunal, ask a
+human, or preserve a residual.
+
+This interface prevents mode confusion. A schema check can prove that a record
+has the right fields while leaving the underlying empirical claim unverified.
+A Lean theorem can prove a finite predicate while leaving open whether the
+predicate models a real system. A summary can preserve orientation while
+dropping the constraint that decides a contradiction. The adequacy record keeps
+those boundaries attached to the claim.
+
+## Invariants
+
+Adequacy must be explicit. If the system cannot say what level of checking the
+context supports, the claim should not receive stronger support.
+
+More context must not be treated as proof. A larger window may increase
+available material while also increasing distractors, compression pressure,
+and missed contradictions.
+
+High-risk claims must pay a verification tax. If a claim can affect
+governance, planning, deployment, safety, or support-state movement, drafting
+adequacy is not enough.
+
+Adequacy must be scoped to a target claim and verification mode. A packet
+adequate for a chapter summary may be inadequate for a theorem claim, runtime
+claim, benchmark claim, or governance claim.
+
+Summary-derived support cannot exceed the declared loss and residual record.
+Compression may be necessary, but it must not pretend to preserve every
+constraint unless the preservation was actually checked.
+
+## Failure Modes
+
+Attention interference occurs when a large or salient unit suppresses checking
+against a smaller unit that carries the decisive constraint.
+
+False confidence from large context occurs when a system sounds more certain
+because it had more text nearby, not because it performed stronger checks.
+
+Verification skipped for cost reasons becomes dangerous when the skipped work
+is later treated as if it had passed.
+
+Adequacy laundering occurs when a packet adequate for drafting is reused as if
+it were adequate for support promotion.
+
+Mode confusion occurs when a local schema, proof, summary, retrieval, or human
+review result is used to support a broader claim than it actually checked.
+
+These failures are not solved by scolding the model to be careful. They need
+records that make the skipped comparison visible.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a context adequacy schema plus a fixture
+suite.
+
+The fixture suite should include admitted context that is adequate for
+drafting but inadequate for verification, a high-risk claim blocked from
+promotion, a summary-derived claim whose evidence ceiling is preserved, a
+conflict that forces escalation, and a mode-confusion case where a local check
+is prevented from supporting a broader claim.
+
+The current repository has part of this minimum. Protocol validation checks
+the public record shape. `scripts/validate_context_admission_adequacy.py`
+checks synthetic cross-record fixtures for admission/adequacy separation,
+escalation requirements, conflict blocking, stale certificate reuse, mode
+confusion, and open deletion materialization. `AsiStackProofs.VerificationBandwidth`
+contains finite predicates showing that an admitted packet may still be
+inadequate and that a high-risk claim with inadequate context cannot receive a
+verified support label.
+
+That is useful evidence for record discipline. It is not evidence of model
+verification capacity, contradiction-rate performance, distractor resistance,
+summary fidelity, deployed VCM behavior, adequacy-classifier correctness, or
+real escalation quality.
+
+## Beyond the State of the Art
+
+The mature endpoint is a verification-capacity control plane.
+
+In that endpoint, every important claim receives an adequacy record before it
+can receive stronger support. The record says which semantic units were
+available, which were compared, which were summarized, what was lost, what
+negative evidence appeared, what verification mode ran, and what escalation
+is required. The claim ledger then uses that record to block promotion,
+preserve residuals, or route to stronger review.
+
+Such a system would not reward long context by default. It would ask whether
+the context was checkable. It would treat context length as exposure,
+compression as risk, summaries as lossy artifacts unless proven otherwise, and
+verification as a scarce budget that must be routed.
+
+To reach that endpoint, the stack still needs adequacy classifiers,
+contradiction-rate suites, distractor-resistance tests, summary-loss tests,
+claim-ledger promotion gates, and review traces that show inadequate context
+being downgraded or escalated in practice.
+
+## Evidence Boundary
+
+This chapter is a control-boundary argument, not a measured model law.
+
+The live chapter remains at `argument` support. The current schemas, Lean
+predicates, and synthetic harness support only declared-record behavior: they
+show how the architecture should keep admission, adequacy, support labels,
+escalation, and non-claims separate. They do not show that a model can
+reliably recognize inadequate context, detect contradictions, resist
+distractors, or verify long-context claims in the wild.
+
+That boundary is essential. Verification bandwidth exists because systems are
+tempted to treat access as understanding. The chapter should not commit the
+same error about its own evidence.
+
+## Handoff
+
+Adequacy records need a durable destination. Otherwise, they remain comments
+around a claim rather than part of the claim's life.
+
+Claim Ledgers and Belief Revision receives the adequacy record and turns it
+into claim identity, support state, contradiction links, revision history,
+uncertainty, residuals, and promotion conditions. That is how the stack turns
+"we could not verify this" into evidence that future work can act on.

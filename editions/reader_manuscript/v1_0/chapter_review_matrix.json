@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 8,
+    "curated_manuscript_candidate": 9,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -541,12 +541,14 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_verification_full_review_pass.md#decisions"
+        "docs/reader_part_ii_verification_full_review_pass.md#decisions",
+        "docs/curated_reader_verification_bandwidth_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the verification-bandwidth chapter. Existing overlay is accepted for the reader path; generation-versus-verification, joint-check, summary-derived, escalation, contradiction, classifier, and test-suite boundaries remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the verification-bandwidth chapter. Existing overlay remains accepted, and a first drafting-only curated prose pass now foregrounds context exposure versus verification capacity, target-claim scoped adequacy, semantic-unit comparison, mode-confusion boundaries, proof/test limits, and non-promotion boundaries without approving release.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
