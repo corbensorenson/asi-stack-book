@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 282 |
+| Theorem declarations classified | 283 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 167 |
+| Derived/decomposed theorem declarations | 168 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -99,7 +99,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | compact-generative-systems-and-residual-honesty | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 3 | 9 | 1 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -344,6 +344,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `stale_qualification_lease_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `handoff_exceeding_caller_ceiling_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `layer_without_external_authority_requires_authorized_handoff` | derived_or_decomposed | no | uses cases, contradiction, rw |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `capability_or_self_evolution_promotion_blocked_without_passing_gate_reports` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TheseusReference.lean` | `implementation_reference_claim_names_report_config_or_tool_not_dashboard_only` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Tribunal.lean` | `high_risk_artifact_without_required_tribunal_review_cannot_be_accepted` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

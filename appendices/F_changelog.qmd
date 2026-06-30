@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-30 - Stack boundary trace proof
+
+- Strengthened `AsiStackProofs.StackBoundaries` with a finite
+  `StackTraceStep` record, `StackTraceValid` predicate, and a derived
+  negative-case theorem showing that a valid modeled trace cannot contain an
+  external-action step when the layer lacks external-action authority and the
+  handoff itself is unauthorized.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 283
+  theorem declarations, 115 direct/projection-style declarations, and 168
+  derived/decomposed declarations.
+- Updated the opening chapter, proof adequacy review, candidate status,
+  v1.0/v1.x roadmap surfaces, focus audit, and status snapshot validator to
+  record the new Stack Boundaries proof increment.
+- This does not promote any Appendix C or chapter core claim, prove
+  whole-stack safety, enforce deployed layer boundaries, validate
+  source-to-layer traceability, benchmark model quality, or create any reader,
+  ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Routing decision lease harness
 
 - Added `python3 scripts/validate_routing_decision_lease.py`, a

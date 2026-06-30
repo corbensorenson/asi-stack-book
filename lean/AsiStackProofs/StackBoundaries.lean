@@ -31,6 +31,29 @@ theorem layer_without_external_authority_requires_authorized_handoff
   | inr authorized =>
       exact authorized
 
+structure StackTraceStep where
+  layer : Layer
+  output : LayerOutput
+deriving DecidableEq, Repr
+
+def StackTraceValid (trace : List StackTraceStep) : Prop :=
+  ∀ step, step ∈ trace -> ExternalActionAllowed step.layer step.output
+
+theorem valid_stack_trace_rejects_unauthorized_external_handoff
+    {trace : List StackTraceStep} {layer : Layer} {handoff : Handoff} :
+    ({ layer := layer, output := .externalAction handoff } : StackTraceStep) ∈ trace ->
+    layer.hasExternalActionAuthority = false ->
+    handoff.authorized = false ->
+    ¬ StackTraceValid trace := by
+  intro present noAuthority unauthorized validTrace
+  unfold StackTraceValid at validTrace
+  have allowed :=
+    validTrace ({ layer := layer, output := .externalAction handoff } : StackTraceStep) present
+  have authorized :=
+    layer_without_external_authority_requires_authorized_handoff noAuthority allowed
+  rw [unauthorized] at authorized
+  contradiction
+
 inductive AuthorityLevel where
   | none
   | read
