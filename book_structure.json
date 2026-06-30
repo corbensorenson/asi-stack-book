@@ -4267,6 +4267,27 @@
               "name": "Consensus evidence test",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic tribunal review harness; no deployed tribunal or runtime-review claim"
+            },
+            {
+              "name": "High-risk accepted-verdict negative case",
+              "purpose": "Check that a finite high-risk accepted verdict without adversarial probes or reviewer-independence records rejects the probe-discipline predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no reviewer-independence or probe-quality claim",
+              "status": "implemented in AsiStackProofs.Tribunal; no adversarial-review quality claim"
+            },
+            {
+              "name": "Prior-review reuse negative case",
+              "purpose": "Check that accepted prior-review reuse over unchanged evidence rejects the guard predicate when the unchanged-evidence guard is absent.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no prior-review adequacy or semantic-equivalence claim",
+              "status": "implemented in AsiStackProofs.Tribunal; no semantic-equivalence claim"
+            },
+            {
+              "name": "Action verdict negative case",
+              "purpose": "Check that a finite action-requiring verdict rejects the action/constraint predicate when required actions or constraint effects are missing.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no deployed enforcement or verdict-correctness claim",
+              "status": "implemented in AsiStackProofs.Tribunal; no action-enforcement claim"
             }
           ],
           "lean_module": "AsiStackProofs.ProofCarryingClaims; AsiStackProofs.Tribunal",

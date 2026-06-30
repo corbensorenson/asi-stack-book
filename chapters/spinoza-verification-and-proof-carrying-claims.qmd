@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Executed consolidation of `spinoza-verification-and-proof-carrying-claims` and `unified-adaptive-tribunal-and-adversarial-review`; the old tribunal slug is preserved by a static history page and the source chapter is archived for lineage."
-  - "Source notes, schemas, synthetic proof-carrying-claim and tribunal-review harnesses, and finite Lean predicates support record discipline only; they do not prove theorem validity, citation accuracy, semantic equivalence, reviewer independence, adversarial-probe quality, verdict correctness, deployed review behavior, runtime behavior, or whole-system epistemic correctness."
+  - "Source notes, schemas, synthetic proof-carrying-claim and tribunal-review harnesses, and finite Lean predicates plus bounded tribunal negative cases for missing probes/independence, prior-review reuse without unchanged-evidence guard, and action verdicts without required-action/constraint records support record discipline only; they do not prove theorem validity, citation accuracy, semantic equivalence, reviewer independence, adversarial-probe quality, verdict correctness, deployed review behavior, runtime behavior, or whole-system epistemic correctness."
   - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos` |
 | Source loading state | passage-reviewed local raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`, `uat`, `talos`; connector/source-note mapped: `coherence_exchange` |
-| Test state | `proof_carrying_claim` and `tribunal_review_record` fixture validation are implemented; `python3 scripts/validate_proof_carrying_claims.py` and `python3 scripts/validate_tribunal_review.py` pass bounded synthetic record checks; `AsiStackProofs.ProofCarryingClaims` now includes finite record predicates plus negative-case theorems rejecting passed verifier records without artifact refs and negative verifier results that try to produce scoped updates; `AsiStackProofs.Tribunal` implements finite record predicates; theorem-validity, citation-accuracy, semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, runtime, and deployed-review tests remain unimplemented. |
+| Test state | `proof_carrying_claim` and `tribunal_review_record` fixture validation are implemented; `python3 scripts/validate_proof_carrying_claims.py` and `python3 scripts/validate_tribunal_review.py` pass bounded synthetic record checks; `AsiStackProofs.ProofCarryingClaims` now includes finite record predicates plus negative-case theorems rejecting passed verifier records without artifact refs and negative verifier results that try to produce scoped updates; `AsiStackProofs.Tribunal` implements finite record predicates plus negative-case theorems rejecting high-risk accepted verdicts without probes or reviewer-independence records, accepted prior-review reuse without an unchanged-evidence guard, and action verdicts without required-action or constraint-effect records; theorem-validity, citation-accuracy, semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, runtime, and deployed-review tests remain unimplemented. |
 
 The executed merge combines two verification-event families:
 
@@ -393,6 +393,9 @@ behavior rather than only schema-shaped discipline.
 | Tribunal review fixture validation | Check that the tribunal fixture records target, risk class, dossier, reviewer roles, probes, findings, evidence refs, dissent, unresolved issues, verdict, required actions, and human adjudication. | implemented by protocol validation; validated locally |
 | Tribunal verdict predicate | Check that modeled tribunal verdicts include reviewer roles, evidence references, and unresolved dissent. | implemented in `AsiStackProofs.Tribunal`; builds locally |
 | High-risk missing-review predicate | Check that high-risk artifacts cannot be accepted without required tribunal review. | implemented in `AsiStackProofs.Tribunal`; builds locally |
+| High-risk accepted-verdict negative case | Check that a finite high-risk accepted verdict without adversarial probes or reviewer-independence records rejects the probe-discipline predicate. | implemented in `AsiStackProofs.Tribunal.high_risk_accepted_verdict_without_probes_or_independence_rejected`; no reviewer-independence or probe-quality claim |
+| Prior-review reuse negative case | Check that finite accepted reuse of prior review over unchanged evidence rejects the guard predicate when the unchanged-evidence guard is absent. | implemented in `AsiStackProofs.Tribunal.accepted_prior_review_reuse_without_unchanged_evidence_guard_rejected`; no prior-review adequacy or semantic-equivalence claim |
+| Action verdict negative case | Check that a finite action-requiring verdict rejects the action/constraint predicate when required actions or constraint effects are missing. | implemented in `AsiStackProofs.Tribunal.action_verdict_without_actions_or_constraints_rejected`; no deployed enforcement or verdict-correctness claim |
 | Tier assignment over real verifier outputs | Check that support tiers match verifier result and limitations over actual verifier outputs and interpretation examples. | planned; not run |
 | Adversarial review quality test | Check reviewer routing, probe coverage, consensus quality, and action-linked verdict traces over reproducible dossiers. | planned; not run |
 
@@ -417,10 +420,14 @@ references, passed verifier records require verifier artifact refs, failed
 verifier results block or downgrade rather than promote, modeled passed
 records without verifier artifact refs are rejected, negative verifier results
 cannot produce scoped updates, tribunal verdicts include reviewer roles and
-dissent, and high-risk artifacts cannot be accepted when required tribunal
-review is absent. They do not prove verifier quality, theorem adequacy,
-semantic equivalence, reviewer independence, citation accuracy, or verdict
-correctness.
+dissent, high-risk artifacts cannot be accepted when required tribunal review
+is absent, high-risk accepted verdicts reject missing probe or independence
+records, accepted prior-review reuse rejects a missing unchanged-evidence
+guard, and action-requiring verdicts reject missing required-action or
+constraint-effect records. They do not prove verifier quality, theorem
+adequacy, semantic equivalence, reviewer independence, adversarial-probe
+quality, citation accuracy, verdict correctness, action enforcement, or
+deployed review behavior.
 
 ## Source crosswalk
 

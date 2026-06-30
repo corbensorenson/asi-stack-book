@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-30 - Tribunal review negative-case proofs
+
+- Strengthened `AsiStackProofs.Tribunal` with three derived negative-case
+  theorems: one rejects high-risk accepted verdicts without adversarial probes
+  or reviewer-independence records, one rejects accepted prior-review reuse over
+  unchanged evidence without an unchanged-evidence guard, and one rejects
+  action-requiring verdicts without required-action or constraint-effect
+  records.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 329
+  theorem declarations, 121 direct/projection-style declarations, and 208
+  derived/decomposed declarations.
+- Updated the Proof-Carrying Claims and Adversarial Review chapter, manifest
+  test rows, Appendix E, proof adequacy review, candidate status,
+  v1.0/v1.x roadmap surfaces, focus audit, and status snapshot validator.
+  Appendix E now records 156 implemented rows, 1 partial row, and 110 planned
+  rows. Refreshed the v1.0 status manuscript scale to 167,858 chapter words
+  excluding YAML and 175,319 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, prove theorem
+  validity, prove citation accuracy, prove semantic equivalence, validate
+  reviewer independence, validate adversarial-probe quality, prove verdict
+  correctness, enforce tribunal actions, execute human adjudication, deploy a
+  review system, or approve any reader, ebook, PDF, DOCX, or audio release
+  artifact.
+
 ## 2026-06-30 - Policy optimization promotion-boundary proofs
 
 - Strengthened `AsiStackProofs.PolicyOptimization` with three derived
