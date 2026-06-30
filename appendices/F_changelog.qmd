@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-06-30 - v1.x roadmap execution focus correction
+
+- Updated `docs/v1_x_beyond_sota_roadmap.md` so the active keystone set,
+  consolidation status, structural-cohesion row, execution tiers, v1.3 target,
+  and suggested long-running goal no longer tell future runs to execute
+  consolidation packages that have already executed or been retained.
+- The roadmap now treats the 44-chapter consolidation spine as stable unless
+  new source, evidence, external-review, or human-reader edit findings expose a
+  concrete duplicate artifact boundary.
+- The next execution focus is proof depth, public-safe evidence replay,
+  external grounding, and curated human-reader prose rather than additional
+  consolidation planning surfaces.
+- This does not change `book_structure.json`, merge or remove chapters,
+  promote support states, create external review, approve reader artifacts, or
+  claim any new proof/test result.
+
 ## 2026-06-30 - Proof-carrying claim negative-case proofs
 
 - Strengthened `AsiStackProofs.ProofCarryingClaims` with two derived

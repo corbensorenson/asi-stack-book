@@ -185,29 +185,26 @@ Do not reopen these unless a validator fails or a new change touches them:
 The next serious run should not treat all milestones as equal. The keystone set
 is:
 
-1. execute the highest-value consolidation merge end to end, beginning with the
-   Part I alignment/governance pilot, so the manifest starts moving from
-   repeated skeletons toward deeper chapter-owning artifacts;
-2. use the executed merge as the template to batch the remaining review-ready
-   merge and fold packages, one package per commit, with no new planning docs
-   unless execution reveals a concrete missing reconciliation field;
-3. deepen Lean proof coverage beyond the five safety-critical modules: for
+1. keep the executed 44-chapter consolidation spine stable unless new evidence,
+   external review, or human-reader edit findings expose a concrete duplicate
+   artifact boundary;
+2. deepen Lean proof coverage beyond the five safety-critical modules: for
    every chapter, replace projection-only hooks with at least one theorem over
    explicit records, transitions, negative cases, or state changes, or record a
    no-proof-yet blocker tied to the chapter claim;
-4. finish the curated human-reader manuscript as an editable book: complete the
-   remaining chapter prose only after merge/fold stability is clear, reconcile
-   curated source against the live book, and prepare the manuscript for Corben's
-   human edit rather than producing more per-chapter pass paperwork;
-5. make the honesty system legible in 60 seconds from README, landing page, and
+3. finish the curated human-reader manuscript as an editable book against the
+   current 44-chapter table of contents: reconcile curated source against the
+   live book and prepare the manuscript for Corben's human edit rather than
+   producing more per-chapter pass paperwork;
+4. make the honesty system legible in 60 seconds from README, landing page, and
    Human view, and keep the three bounded non-core evidence transitions visible
    without chapter-core promotion;
-6. solicit or record at least one external human review of the safety-critical,
+5. solicit or record at least one external human review of the safety-critical,
    support-state, and first executed consolidation surfaces;
-7. keep the chapter-level external-grounding lane current by mining each
+6. keep the chapter-level external-grounding lane current by mining each
    chapter's linked Corben papers for outside citations, recording vetted
    third-party sources in Appendix H, and marking genuine comparator gaps;
-8. make one Project Theseus or Circle evidence lane public-safe and
+7. make one Project Theseus or Circle evidence lane public-safe and
    CI-reproducible or CI-verifiable by archived digest, then execute only the
    5-8 highest-payoff per-chapter evidence lanes from
    `docs/per_chapter_evidence_plan.md`.
@@ -249,7 +246,7 @@ internal activity alone.
 | Compression/representation | Mostly architecture and source synthesis; Circle receipt is structural, not model-quality evidence. | Add one narrow artifact-compression, representation-preservation, or proof-contract lane with negative controls before stronger claims. |
 | Human/AI dual-edition publishing | Unusual and promising scaffold with reviewed reader HTML; not yet a polished human book or audio edition. | Graduate selected reader chapters into curated prose and approve artifacts only through exact release records. |
 | External literature/novelty | Placement gate now records 44/44 positioned chapters and 0 explicit external-baseline exceptions, but novelty questions and the depth of external engagement still remain. Some chapters can still read as Corben-originated nomenclature before readers see enough related outside literature. | Maintain the per-chapter external-grounding pack, keep mining citations inside each chapter's linked Corben papers, replace any future or regressed weak exception with source-noted literature where possible, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
-| Structural cohesion | The manifest is dynamic and complete, and the active shape is now 44 chapters after eight executed consolidation packages and folds. Remaining overlapping clusters may still preserve too much skeleton-level repetition. | Decide the remaining review-ready consolidation packages in priority order, continuing only when claim identity, source mappings, proof hooks, reader overlays, URL/history treatment, and handoffs stay intact. |
+| Structural cohesion | The manifest is dynamic and complete, and the active shape is now 44 chapters after the executed consolidation packages and folds. The known packaged queue is resolved for the current table of contents; future duplicate-boundary findings should be handled as concrete evidence or reader-edit issues, not new planning churn. | Keep the 44-chapter spine stable for proof, evidence, and reader work; reopen consolidation only when a specific chapter boundary becomes weaker than a named destination. |
 
 ## Defended Contribution Tracks
 
@@ -823,30 +820,30 @@ Goal: reduce structural repetition by merging genuinely overlapping chapters
 into fewer deeper chapters while preserving every useful idea, source boundary,
 claim boundary, proof hook, and reader path.
 
-Execution pivot:
+Current execution state:
 
-- No new consolidation dry-run, destination-draft, decision-review,
-  scorecard, packet, or roadmap-analysis document should be created for an
-  already packaged cluster until at least one merge or fold has executed.
-- The next action is to execute or reject the Part I 4-to-2 pilot, not to
-  describe it again. The first execution package should merge
-  `constitutional-alignment-substrate` with
-  `agency-dignity-and-corrigibility`, and
-  `moral-uncertainty-and-value-conflict` with
-  `governance-rights-fork-exit-and-audit`, unless a final review finds that
-  one of those destination drafts loses a distinct proof/evidence/reader
-  boundary.
-- Execution means changing the canonical surfaces: `book_structure.json`,
-  `docs/book_outline.md`, destination chapter files, source queues, Appendix C,
-  Appendix K, proof-manifest routing, handoffs, reader-manuscript records,
-  URL/history treatment, changelog, and validators in one coherent package.
-- After the pilot executes successfully, batch the remaining review-ready
-  packages using the same checklist. Each cluster gets one execution note in
-  the changelog and at most one concise ledger entry if validators require it.
-- Existing planning docs may stay as archival review inputs, but they should
-  stop growing. After two or more packages execute, condense superseded
-  planning material into one consolidation ledger and remove stale public
-  signals that imply unexecuted plans are the main product.
+- The Part I 4-to-2 pilot, conservative compression merge, intent/contracts
+  merge, MoECOT runtime fold, simulation-fidelity fold, static Context ABI
+  merge, verification/adversarial-review merge, planning/DAG consolidation,
+  and semantic-representation fold have executed through canonical surfaces.
+- The current manifest has 44 chapters, with retired source slugs preserved
+  through historical stubs, source chapters archived where appropriate,
+  reader-draft history preserved, and no support-state promotion from
+  consolidation.
+- No new consolidation dry-run, destination-draft, decision-review, scorecard,
+  packet, or roadmap-analysis document should be created for an already
+  packaged cluster. Future consolidation work is allowed only when new
+  evidence, external review, reader-edit findings, or a concrete duplicate
+  artifact boundary justifies a new execute/reject decision.
+- Any future execution still means changing the canonical surfaces:
+  `book_structure.json`, `docs/book_outline.md`, destination chapter files,
+  source queues, Appendix C, Appendix K, proof-manifest routing, handoffs,
+  reader-manuscript records, URL/history treatment, changelog, and validators
+  in one coherent package.
+- Existing planning docs stay as archival review inputs, but they should stop
+  growing. The current product should now move through proof depth, evidence
+  replay, external grounding, and curated-reader prose, not another
+  consolidation-planning layer.
 
 This is not a deletion pass and not a mandate to hit a target chapter count.
 The attached consolidation critique is useful planning input, but it is not
@@ -900,24 +897,16 @@ Follow-up review outcome:
   treatment, reader-overlay treatment, and URL/redirect policy are not cleanup
   chores after a merge. They are merge preconditions.
 - The Part I pilot, conservative compression merge, intent/contracts merge,
-  MoECOT runtime fold, simulation-fidelity fold, and static Context ABI merge
-  are now executed history with retired-URL treatment recorded in
-  `docs/chapter_consolidation_url_history_policy.md` and
+  MoECOT runtime fold, simulation-fidelity fold, static Context ABI merge,
+  verification/adversarial-review merge, planning/DAG control consolidation,
+  and semantic-representation fold are now executed history with retired-URL
+  treatment recorded in `docs/chapter_consolidation_url_history_policy.md` and
   `docs/chapter_history_ledger.md`.
-- Verification/adversarial review and planning/DAG control now have executed merge histories; semantic representation still has a dry-run
-  packages and one-skeleton destination drafts but remain unmerged. Semantic
-  representation has a fold disposition and remains
-  dependency-bound to the compression/representation package decision before
-  any reader curation or manifest edit depends on it.
-- The 2026-06-30 follow-up does not add a new cluster. It strengthens the
-  next-work rule: judge the current packages in order, then execute, revise,
-  defer, or reject/retain them with a recorded reason before source chapters in
-  those clusters are treated as stable reader-manuscript targets.
-- Broad human-reader curation should not harden duplicate chapter skeletons in
-  a pending consolidation cluster. Local prose cleanup is still allowed, but
-  curated-reader graduation for those source chapters should wait until the
-  cluster is executed, explicitly deferred for the release, or rejected/retained
-  with a reason.
+- The 2026-06-30 follow-up does not add a new cluster. Its current rule is now
+  stability, not more packaging: broad human-reader curation may proceed on the
+  44-chapter spine, while future consolidation requires a concrete new
+  source/evidence/reviewer/reader-edit finding and the same execute, revise,
+  defer, or reject/retain record discipline before any manifest edit.
 
 Attachment-specific verdict:
 
@@ -930,33 +919,34 @@ Attachment-specific verdict:
   44-chapter manifest is still correct when each chapter owns a distinct
   artifact, interface, proof family, evidence lane, implementation horizon, or
   reader throughline.
-- The strongest near-term action is review and decision, not more abstract
-  packaging: the project should now execute or reject the review-ready
-  packages, starting with the Part I pilot, and record only the minimum
-  decision evidence needed to preserve claim/source/proof/reader boundaries.
+- The strongest near-term action has moved past consolidation packaging: the
+  project should keep those executed decisions stable unless new evidence or
+  reader-edit findings expose a concrete duplicate boundary, and spend the next
+  cycles on proof depth, evidence replay, external grounding, and curated human
+  prose.
 - A merge that only shortens the book fails. A merge succeeds only when the
   destination chapter becomes easier to argue, cite, prove around, test, and
   read than the separate chapters.
 
 Consolidation decision queue:
 
-The next consolidation work should not create more destination drafts for
-packages that are already `review_ready`. It should walk a decision queue and
-produce an explicit execute, revise, defer, or reject result for each package
-before broad reader curation treats the source chapters as stable.
+The existing packaged queue has been resolved for the current manifest. The
+next consolidation work should not create more destination drafts for packages
+that are already executed or retained. It should create a new decision only
+when a concrete later finding changes chapter ownership.
 
 | Order | Package | Required decision | Execution note |
 |---|---|---|---|
-| 1 | Part I constitutional alignment and agency/corrigibility | Execute unless final source/proof/reader reconciliation finds a concrete loss. | Follow `docs/chapter_consolidation_url_history_policy.md` for the retired agency/corrigibility URL; preserve agency/corrigibility as sections, subclaims, proof hooks, and reader path in the destination chapter. |
-| 2 | Part I value conflict and contestable governance | Execute unless final source/proof/reader reconciliation finds a concrete loss. | Follow `docs/chapter_consolidation_url_history_policy.md` for the retired governance-rights URL and preserve fork, exit, audit, redaction, appeal, dissent, and revisit interfaces as sections or subclaims. |
-| 3 | Compression and residual honesty | Execute full merge, execute conservative merge, revise, defer, or reject. | The conservative branch keeps RankFold/NeuralFold standalone if review finds technique ownership. |
+| 1 | Part I constitutional alignment and agency/corrigibility | Executed. | Retired agency/corrigibility slug preserved; agency/corrigibility survives as sections, subclaims, proof hooks, and reader path in the destination chapter. |
+| 2 | Part I value conflict and contestable governance | Executed. | Retired governance-rights slug preserved; fork, exit, audit, redaction, appeal, dissent, and revisit interfaces survive as sections and subclaims. |
+| 3 | Compression and residual honesty | Conservative merge executed. | Generate-Verify-Repair folded into Compact Generative Systems; RankFold/NeuralFold retained as a standalone technique chapter. |
 | 4 | Intent and executable contracts | Executed. | `intent-to-execution-contracts` is now **Command Contracts: From Intent to Executable Work**; `human-intent-as-a-formal-input` remains the separate intent-intake chapter, and the retired command-contract URL is preserved as history. |
-| 5 | Static context ABI | Execute, revise, defer, or reject. | Keep context transactions and verification bandwidth standalone unless a later review changes their artifact ownership. |
-| 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep claim ledgers standalone as the belief-revision substrate. |
-| 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep cognitive compilation standalone as the semantic-IR and lowering-receipt layer. |
-| 8 | Fold-disposition candidates | Execute fold, revise, defer, or reject/retain. | MoECOT runtime and simulation fidelity have executed; semantic representation still has a fold disposition, and the next work is review and decision, not more packaging, before any manifest edit. |
+| 5 | Static context ABI | Executed. | Semantic pages and context-cell certificate material folded into the Virtual Context ABI; context transactions and verification bandwidth remain standalone. |
+| 6 | Verification and adversarial review | Executed. | Tribunal review folded into Proof-Carrying Claims and Adversarial Review; claim ledgers remain the belief-revision substrate. |
+| 7 | Planning and DAG control | Executed. | PlanForge folded into Planning as a Control Layer; cognitive compilation remains the semantic-IR and lowering-receipt layer. |
+| 8 | Fold-disposition candidates | Executed or retained. | MoECOT runtime, simulation fidelity, and semantic representation folds have executed; Runtime Adapters and Labor OS are retained as separate artifact owners unless later evidence changes that boundary. |
 
-Each decision record should name the reviewed package, reviewer or review
+Any future decision record should name the reviewed package, reviewer or review
 source, destination-skeleton judgment, claim/source/proof/reader impact,
 external-grounding adequacy, URL or redirect policy, validation scope,
 support-state effect, non-claims, and the exact decision. If execution is
@@ -1025,9 +1015,8 @@ Execution tiers:
 
 | Tier | Candidate work | Why it matters | Expected shape effect |
 |---|---|---|---|
-| Tier 1 | Alignment/governance philosophy; compression/representation; executed intent/contracts; context/memory static ABI. | These clusters repeat the most source families, chapter skeletons, and handoff language. The executed packages now provide the template; remaining packages should become fewer deeper chapters only if reconciliation passes. | About 14 source chapters become about 8-10 destination chapters, depending on whether RankFold/NeuralFold remains standalone and which remaining packages pass review. |
-| Tier 2 | Verification/review; planning/control; MoECOT placeholder fold. | These merges reduce thin or source-blocked chapters while preserving distinct substrates such as claim ledgers and cognitive IR. | About 7 source chapters become about 4-5 destination chapters. |
-| Fold-only review | Simulation fidelity and physical constraints; semantic representation and tree-structured models. | These look more like bounded feasibility or representation-substrate sections than standalone chapter-owning artifacts unless evidence review says otherwise. | Remove standalone skeletons only if their claims survive as named sections and subclaims. |
+| Executed packages | Alignment/governance philosophy; compression/representation; intent/contracts; context/memory static ABI; verification/review; planning/control; MoECOT runtime; simulation fidelity; semantic representation. | These packages reduced repeated skeletons while preserving source mappings, proof hooks, implementation horizons, URL history, and no-support-state-change boundaries. | Current canonical spine is 44 chapters; the next quality work should deepen those chapters rather than re-plan the same packages. |
+| Future-only review | Any later duplicate-boundary finding, including a possible runtime-adapter/Labor OS revisit. | Future consolidation is justified only by new source/evidence/reviewer/reader-edit findings that show a chapter no longer owns a distinct artifact, proof lane, evidence lane, implementation horizon, or reader throughline. | One package per commit only if the destination is stronger, not merely shorter. |
 | Protected set | Theseus, Circle/coil, the mathematical/search umbrella for now, recursive self-improvement, execution artifacts, evidence discipline, security kernel, benchmark ratchets, living-book methodology, and other high-ownership chapters listed below. | These chapters own distinct artifacts, proof paths, evidence lanes, or release machinery. | No merge unless later source/evidence review shows duplicate artifact ownership. |
 
 Candidate clusters to review:
@@ -2013,7 +2002,7 @@ explicitly passed or explicitly scoped out in a release record.
 |---|---|---|
 | `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Sixty-second trust surface exists; non-core evidence ledger visible; early external review requested or recorded; defended contribution tracks selected; per-chapter evidence plan split out with 5-8 lane cap; chapter-level external-grounding workflow defined; safety-critical proof specs include anti-projection and negative-case criteria. |
 | `v1.2` | Moves formal layer from projection-heavy traceability toward lightweight state-specification practice for safety-critical modules. | Five safety-critical modules gain `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases; first public-safe Theseus or Circle lane is CI-replayed or CI-verifiable by digest. |
-| `v1.3` | Moves structural cohesion and reader surface from generated projection toward a consolidated, curated human manuscript while preserving live-book evidence authority. | At least the Part I 4-to-2 consolidation pilot has executed or been explicitly rejected/retained with concrete loss reasons; no new consolidation planning packet was added before that execution decision; curated reader manuscript follows the resulting table of contents or records exact merge/fold blockers; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
+| `v1.3` | Moves structural cohesion and reader surface from generated projection toward a consolidated, curated human manuscript while preserving live-book evidence authority. | The 44-chapter consolidation spine remains stable unless a concrete duplicate-boundary finding reopens it; curated reader manuscript follows the current table of contents; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
 | `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; 5-8 selected chapter lanes have executed evidence or explicit no-promotion decisions; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
 | `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger Lean envelopes, prior-art-reviewed preprints, and DOI/archive metadata exist. |
 
@@ -2021,7 +2010,7 @@ explicitly passed or explicitly scoped out in a release record.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode and bring the project to true human-review readiness. Freeze new planning/report surfaces for already packaged work unless an executed change, validator, release record, or external reviewer requires them. Start by executing or explicitly rejecting/retaining the Part I 4-to-2 consolidation pilot, then batch the remaining review-ready merge and fold packages one package per commit while preserving `book_structure.json`, `docs/book_outline.md`, Appendix C, Appendix K, proof-manifest routing, source unions, reader records, handoffs, URL/history treatment, changelog, and no-support-state-promotion boundaries. Deepen Lean proof coverage across all chapters, not only the five safety-critical modules: each chapter should gain at least one nontrivial theorem over explicit records, transitions, negative cases, residual paths, receipts, authority ceilings, readiness gates, or support-state boundaries, or a visible no-proof-yet blocker tied to the core claim. Finish the curated human-reader manuscript against the post-consolidation table of contents, complete or defer the remaining uncurated chapters based on merge/fold stability, create a human-edit handoff packet for Corben, and keep the reader edition subordinate to the live AI/research evidence source. Continue only the high-payoff evidence work that changes proof, replay, source, claim, or artifact state: maintain the 60-second trust surface, keep non-core evidence visible without chapter-core promotion, solicit or record external human review, keep per-chapter external grounding current through source-noted Appendix H records, make Project Theseus or Circle evidence CI-replayable or digest-verifiable where public-safe, execute only selected high-payoff evidence lanes, and record demotions, rejections, blockers, and non-claims honestly. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build, and Quarto render for the changed surface; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
+> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode and bring the project to true human-review readiness. Keep the executed 44-chapter consolidation spine stable unless new evidence, external review, or human-reader edit findings expose a concrete duplicate artifact boundary; do not create more planning/report surfaces for already packaged work. Deepen Lean proof coverage across all chapters, not only the five safety-critical modules: each chapter should gain at least one nontrivial theorem over explicit records, transitions, negative cases, residual paths, receipts, authority ceilings, readiness gates, or support-state boundaries, or a visible no-proof-yet blocker tied to the core claim. Finish the curated human-reader manuscript against the current table of contents, create a human-edit handoff packet for Corben, and keep the reader edition subordinate to the live AI/research evidence source. Continue only high-payoff evidence work that changes proof, replay, source, claim, or artifact state: maintain the 60-second trust surface, keep non-core evidence visible without chapter-core promotion, solicit or record external human review, keep per-chapter external grounding current through source-noted Appendix H records, make Project Theseus or Circle evidence CI-replayable or digest-verifiable where public-safe, execute only selected high-payoff evidence lanes, and record demotions, rejections, blockers, and non-claims honestly. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
 
 ## Non-Claims
 
