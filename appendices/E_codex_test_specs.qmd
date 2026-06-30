@@ -171,6 +171,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Hierarchy revision test | planned | not run |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Representation utility benchmark | planned | not run |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Consumer-policy test | planned | not run |
+| `fast-generation-architectures` | Fast Generation Architectures | Acceleration accounting negative case | implemented | passes via Lean negative case; no decoder-speed, verifier-quality, or task-success claim |
+| `fast-generation-architectures` | Fast Generation Architectures | Failed-acceptance handling negative case | implemented | passes via Lean negative case; no fallback-runtime or repair-quality claim |
+| `fast-generation-architectures` | Fast Generation Architectures | High-risk fast-mode review negative case | implemented | passes via Lean negative case; no risk-classifier or mode-selector behavior claim |
 | `fast-generation-architectures` | Fast Generation Architectures | Autoregressive baseline speed-quality test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Speculative decoding acceptance test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Multi-token draft-head acceptance test | planned | not run |

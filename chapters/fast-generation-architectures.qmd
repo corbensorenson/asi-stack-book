@@ -4,7 +4,7 @@ chapter_id: "fast-generation-architectures"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "cgs"
   - "cognitive_loop_closure"
@@ -32,7 +32,7 @@ open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all assigned Fast Generation Architecture sources; support remains at argument until local autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, hybrid generation, or serving benchmarks exist, or external-literature support is explicitly promoted under a stronger evidence transition."
   - "The 2026-06-24 browser-GPT note remains author-intent and literature-queue context only; it is not treated as source-derived evidence."
   - "External literature mappings are reviewed against public arXiv abstract pages only unless a paper is later vendored or fully inspected; reported speedups, code artifacts, model checkpoints, hardware setups, and quality results remain source-reported and unreproduced."
-  - "Only the generation_mode_record fixture and narrow finite Lean promotion predicates have been implemented; no local decoding, diffusion, acceptance-rate, KV-cache, useful-solution-per-second, or serving benchmark has been run."
+  - "Only the generation_mode_record fixture, narrow finite Lean promotion predicates, and bounded negative cases for accepted-output accounting, verifier-cost accounting, failed acceptance, residual recording, fallback routing, and high-risk fast-mode review have been implemented; no local decoding, diffusion, acceptance-rate, KV-cache, useful-solution-per-second, or serving benchmark has been run."
 ---
 
 ## Chapter status
@@ -43,13 +43,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-30 |
 | Primary source records | `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`; variants/external literature: `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` |
 | Source loading state | source notes and passage-reviewed local raw-cache mappings exist for assigned internal sources; selected external literature mappings are passage-reviewed against public arXiv abstract/metadata pages only; the browser-GPT packet remains local-only author-intent context; no raw private source text or full external paper artifacts are published. |
-| Test state | `generation_mode_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.FastGeneration` implements two finite-record promotion predicates; no autoregressive baseline, speculative acceptance, MTP, diffusion, multi-seed, hybrid, risk-tiered, planner-selection, or KV-cache benchmark has been run. |
+| Test state | `generation_mode_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.FastGeneration` implements finite-record promotion predicates plus bounded negative cases for missing accepted-output/verifier-cost evidence, failed acceptance without fallback or residual handling, and high-risk fast-mode selection without verifier, override, or slower-fallback records; no autoregressive baseline, speculative acceptance, MTP, diffusion, multi-seed, hybrid, risk-tiered, planner-selection, or KV-cache benchmark has been run. |
 
 ## Drafting guardrail
 
@@ -266,7 +266,7 @@ A minimal implementation is a generation-mode registry and benchmark record with
 
 The first executable version should not attempt to implement every acceleration family. It starts with a generation-mode record, then runs a plain autoregressive baseline and one verifier-preserving acceleration path on a small task suite. The result should record proposed output, accepted output, wall-clock time, verifier cost, memory notes, task success, and fallback rate. A negative result is useful if it shows that a faster mode produced less useful output per second after verification.
 
-The current `generation_mode_record` fixture validates only the record shape: task, risk tier, budgets, context packet, mode, draft source, verifier, acceptance predicate, output accounting fields, promotion decision, measurement status, metric definitions, evidence references, and non-claims. It intentionally records `not_run`, `not measured`, and `not_evaluated` for the demo route.
+The current `generation_mode_record` fixture validates only the record shape: task, risk tier, budgets, context packet, mode, draft source, verifier, acceptance predicate, output accounting fields, promotion decision, measurement status, metric definitions, evidence references, and non-claims. It intentionally records `not_run`, `not measured`, and `not_evaluated` for the demo route. The Lean envelope adds bounded rejection cases for promotion candidates that omit accepted-output or verifier-cost evidence, failed accelerated drafts that keep promotion open without fallback or residual handling, and high-risk fast-mode selections that omit verifier, risk-override, or slower-fallback records.
 
 The registry should allow experimental entries such as `multi_seed_diffusion` or `hybrid_ar_diffusion_repair`, but those entries must remain unroutable or experimental until source notes and tests exist.
 
@@ -287,6 +287,9 @@ This generation-mode control plane is still proposed architecture. Support stays
 | Test | Purpose | Status |
 |---|---|---|
 | Generation-mode record fixture validation | Validate that a route record names task, risk tier, budgets, context packet, mode, draft source, verifier, acceptance predicate, accounting fields, metric definitions, evidence refs, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Acceleration accounting negative case | Prove that a finite promotion candidate is rejected when accepted-output or verifier-cost evidence is missing. | implemented in `AsiStackProofs.FastGeneration.promotion_candidate_missing_accepted_output_or_verifier_cost_rejected`; no decoder benchmark or quality result promoted |
+| Failed-acceptance handling negative case | Prove that a finite failed accelerated draft cannot satisfy the handling predicate when fallback, residual recording, or promotion blocking is absent. | implemented in `AsiStackProofs.FastGeneration.failed_acceptance_without_fallback_or_residual_rejected`; no fallback runtime executed |
+| High-risk fast-mode review negative case | Prove that a finite high-risk fast-mode selection is rejected when verifier, risk-override, or slower-fallback records are missing. | implemented in `AsiStackProofs.FastGeneration.high_risk_fast_mode_without_verifier_or_override_rejected`; no risk classifier or mode selector executed |
 | Autoregressive baseline speed-quality test | Establish the baseline wall-clock, accepted-output, and task-success measurements. | planned; not run |
 | Speculative decoding acceptance test | Measure proposed tokens, accepted tokens, rejected work, verifier cost, and output correctness under an explicit acceptance predicate. | planned; not run |
 | Multi-token draft-head acceptance test | Test whether k-token proposals improve accepted output per second after rejection and fallback are counted. | planned; not run |
@@ -307,7 +310,7 @@ The implemented row validates fixture/schema consistency only. The remaining row
 | `lean:fast_generation.mode_selection.operational_invariant` | `AsiStackProofs.FastGeneration` | A fast generation route records generation mode, verifier, acceptance predicate, risk tier, and fallback before promotion. | implemented |
 | `lean:fast_generation.verified_speed.failure_blocks_promotion` | `AsiStackProofs.FastGeneration` | Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over promotion fields and speed-evidence fields. They prove that a promoted route must expose its governing fields and that raw token-speed claims cannot promote when verified-output, task-success, or baseline evidence is missing. They do not prove that any decoder is faster, that any verifier preserves quality, or that any external literature claim has been reproduced.
+These Lean hooks are implemented as finite-record predicates over promotion fields, speed-evidence fields, acceptance-accounting fields, failed-acceptance handling, and high-risk fast-mode review. `AsiStackProofs.FastGeneration` now includes derived negative-case theorems for missing accepted-output or verifier-cost evidence, failed accelerated drafts without fallback or residual handling, and high-risk fast-mode selections without verifier, risk-override, or slower-fallback records. The module still does not prove that any decoder is faster, that any verifier preserves quality, that the route selector is adequate, that fallback execution works, or that any external literature claim has been reproduced.
 
 ## Source crosswalk
 

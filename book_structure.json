@@ -6773,6 +6773,27 @@
           "minimal_implementation": "A generation-mode registry and benchmark record with task risk, latency budget, context packet, mode, draft source, verifier, acceptance predicate, accepted tokens, wall-clock time, quality or pass result, compute and memory notes, fallback, and promotion decision.",
           "beyond_state_of_art": "The endpoint for fast generation is a governed generation-mode control plane. It lets the stack choose among slow, fast, speculative, parallel, recurrent, cached, and hybrid generation routes without allowing raw throughput to masquerade as capability or evidence. In the mature generation-mode controller, faster generation becomes routable only when task risk, accepted-output quality, verifier cost, fallback rate, latency, compute, memory, and serving pressure are measured together.",
           "codex_tests": [
+            {
+              "name": "Acceleration accounting negative case",
+              "purpose": "Check that a finite acceleration promotion candidate missing accepted-output or verifier-cost evidence rejects the promotion-accounting predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no decoder-speed, verifier-quality, or task-success claim",
+              "status": "implemented in AsiStackProofs.FastGeneration; no fast-decoder benchmark claim"
+            },
+            {
+              "name": "Failed-acceptance handling negative case",
+              "purpose": "Check that a failed accelerated draft without fallback, residual recording, or promotion blocking rejects the finite failed-acceptance predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no fallback-runtime or repair-quality claim",
+              "status": "implemented in AsiStackProofs.FastGeneration; no fallback execution claim"
+            },
+            {
+              "name": "High-risk fast-mode review negative case",
+              "purpose": "Check that a high-risk fast-mode selection missing verifier, risk-override, or slower-fallback records rejects the finite review predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no risk-classifier or mode-selector behavior claim",
+              "status": "implemented in AsiStackProofs.FastGeneration; no risk-routing behavior claim"
+            },
             "Autoregressive baseline speed-quality test",
             "Speculative decoding acceptance test",
             "Multi-token draft-head acceptance test",
@@ -7068,7 +7089,7 @@
             "Appendix C now records exact passage-reviewed mappings for all assigned Fast Generation Architecture sources; support remains at argument until local autoregressive, speculative, multi-token, diffusion, early-exit, state-space, KV-cache, hybrid generation, or serving benchmarks exist, or external-literature support is explicitly promoted under a stronger evidence transition.",
             "The 2026-06-24 browser-GPT note remains author-intent and literature-queue context only; it is not treated as source-derived evidence.",
             "External literature mappings are reviewed against public arXiv abstract pages only unless a paper is later vendored or fully inspected; reported speedups, code artifacts, model checkpoints, hardware setups, and quality results remain source-reported and unreproduced.",
-            "Only the generation_mode_record fixture and narrow finite Lean promotion predicates have been implemented; no local decoding, diffusion, acceptance-rate, KV-cache, useful-solution-per-second, or serving benchmark has been run."
+            "Only the generation_mode_record fixture, narrow finite Lean promotion predicates, and bounded negative cases for accepted-output accounting, verifier-cost accounting, failed acceptance, residual recording, fallback routing, and high-risk fast-mode review have been implemented; no local decoding, diffusion, acceptance-rate, KV-cache, useful-solution-per-second, or serving benchmark has been run."
           ]
         },
         {

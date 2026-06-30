@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-30 - Fast generation acceptance-accounting proofs
+
+- Strengthened `AsiStackProofs.FastGeneration` with three derived
+  negative-case theorems: one rejects acceleration promotion when
+  accepted-output or verifier-cost evidence is missing, one rejects failed
+  accelerated drafts without fallback or residual handling while promotion
+  remains open, and one rejects high-risk fast-mode selections missing
+  verifier, risk-override, or slower-fallback records.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 320
+  theorem declarations, 118 direct/projection-style declarations, and 202
+  derived/decomposed declarations.
+- Updated the Fast Generation chapter, manifest test rows, Appendix E, proof
+  adequacy review, candidate status, v1.0/v1.x roadmap surfaces, focus audit,
+  and status snapshot validator. Appendix E now records 150 implemented rows,
+  1 partial row, and 110 planned rows. Refreshed the v1.0 status manuscript
+  scale to 167,505 chapter words excluding YAML and 174,920 raw chapter-file
+  words.
+- This does not promote any Appendix C or chapter core claim, run an
+  autoregressive baseline, run speculative decoding, run diffusion generation,
+  run early-exit or state-space generation, measure KV-cache serving behavior,
+  prove route-selector quality, prove risk-classifier behavior, measure
+  speed-quality, prove useful-solution-per-second performance, validate
+  fallback runtime behavior, reproduce any external paper result, or approve
+  any reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Compact generation and semantic negative-case proofs
 
 - Strengthened `AsiStackProofs.CompactGenerativeSystems` with two derived
