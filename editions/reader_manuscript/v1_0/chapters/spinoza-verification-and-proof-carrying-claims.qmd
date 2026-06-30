@@ -1,0 +1,330 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: spinoza-verification-and-proof-carrying-claims
+generated_baseline_ref: build/reader_edition/chapters/spinoza-verification-and-proof-carrying-claims.qmd
+live_source_ref: chapters/spinoza-verification-and-proof-carrying-claims.qmd@3a0b64e5b
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Spinoza Verification and Proof-Carrying Claims
+
+Claim ledgers remember what the system believes. Spinoza asks what has to
+happen before one of those beliefs is allowed to become stronger.
+
+The answer is not "make every sentence a theorem." Most claims in an AI
+system will not fit cleanly into a proof assistant. Some need citations. Some
+need replay logs. Some need executable procedures. Some need benchmark
+artifacts. Some need human or adversarial review because the problem is not
+only formal validity but interpretation, stakes, and scope. Spinoza is the
+layer that chooses the right kind of justification and refuses to treat an
+impressive-looking artifact as broader evidence than it really is.
+
+The reader throughline is simple: a proof artifact earns trust by narrowing
+the claim it touches.
+
+That sentence matters because proof language is dangerous when it becomes
+rhetorical. A theorem tag, citation bundle, verifier log, or procedure trace
+can make a weak claim look finished. Spinoza should have the opposite effect.
+It should make the exact claim smaller, more inspectable, easier to challenge,
+and harder to launder into a stronger support state.
+
+## Problem
+
+Generated prose can sound justified before it is justified.
+
+A model can propose a claim, a proof sketch, a citation, a code path, a replay
+story, or a benchmark interpretation. None of those proposals is the same
+thing as verification. The system still has to ask what the claim means, what
+tier of support it is seeking, what artifact would count, who or what checked
+the artifact, what failed, and what the result is allowed to change.
+
+Claim ledgers give the claim an identity. Spinoza gives the claim an
+inspection envelope. A claim enters the envelope with a requested support
+tier, an interpretation mapping, a candidate justification artifact, and a
+consumer context. It leaves with a scoped update, no update, downgrade, block,
+or escalation. Passing the verifier is not the only meaningful outcome.
+Failure, timeout, and mismatch are evidence too.
+
+This is why the chapter belongs after claim ledgers. A ledger without
+verification can become bookkeeping around unsupported belief. Verification
+without a ledger can produce isolated artifacts that no later reader knows how
+to use. Spinoza connects the two.
+
+## Why Existing Approaches Are Insufficient
+
+Neural generation is not a verifier.
+
+It can produce a formal-looking object that proves the wrong target. It can
+cite a source that is adjacent but not supportive. It can write a convincing
+procedure without recording the execution environment. It can state that a
+proof failed and then continue in a tone that implies success. These failures
+are not accidents outside the design envelope. They are the reason the
+envelope exists.
+
+External formal-methods work gives the right comparison point. Proof-Carrying
+Code pairs executable artifacts with machine-checkable evidence against a
+host policy. Lean gives the proof-assistant vocabulary for propositions,
+records, inductive types, tactics, and proof terms. Those references ground
+the book's proof-carrying language, but they do not make this repository a
+Proof-Carrying Code implementation, and they do not make the current Lean
+modules semantically complete.
+
+The hard boundary is interpretation. A proof can be valid and still not mean
+what the prose claim meant. A source can be real and still not support the
+reading attached to it. A replay log can be faithful and still depend on
+environment assumptions. Spinoza therefore treats interpretation mapping,
+artifact validity, semantic adequacy, and support-state effect as separate
+fields.
+
+## Core Claim
+
+Spinoza-style verification should convert high-value claims into
+proof-carrying or justification-carrying artifacts with explicit tiers. This
+remains an architectural argument.
+
+The source basis is bounded. Spinoza supplies the core discipline: neural
+systems may propose, but symbolic or structured verifiers decide; formal scope
+is explicit; outward claims carry tiers; failed, timed-out, or unknown results
+do not become success. GenesisCode supplies the broader obligation-envelope
+pattern for executable artifacts: tests, property checks, proofs, provenance,
+resource budgets, capability policies, replay logs, and small trusted-core
+boundaries. Verification Bandwidth explains why fluent generation and large
+context do not substitute for joint verification. TreeLLM supplies a possible
+semantic-path substrate for interpretation mappings. Coherence Exchange is
+useful verification-supply-chain framing, but it remains speculative
+connector/source-note context.
+
+The live chapter core claim stays at `argument` support. The repository has a
+proof-carrying-claim schema, synthetic fixtures, a local harness, and finite
+Lean predicates over record fields. It does not have an open-domain verifier,
+proof generator, citation validator, semantic-equivalence checker,
+source-interpretation review, theorem-validity result, runtime trace, or
+whole-system epistemic-correctness result.
+
+## Mechanism
+
+Spinoza wraps selected claims in a justification envelope.
+
+The envelope begins with the claim ledger. The claim has an identity, current
+support state, source references, and requested tier. The verifier then needs
+an interpretation mapping: the bridge between the prose claim and the object
+being checked. Only after that mapping exists does the system choose a
+justification type.
+
+```{mermaid}
+flowchart LR
+  A["Claim ledger record"] --> B["Requested support tier"]
+  B --> C["Interpretation mapping"]
+  C --> D["Justification type"]
+  D --> E["Proof, citation, procedure, replay, benchmark, or tribunal dossier"]
+  E --> F{"Verifier result"}
+  F -- "pass" --> G["Scoped update"]
+  F -- "fail" --> H["Downgrade or block"]
+  F -- "timeout or mismatch" --> I["Residual or tribunal route"]
+  G --> J["Ledger effect with non-claims"]
+  H --> J
+  I --> J
+```
+
+The most important object in the diagram is not the proof. It is the ledger
+effect. A verifier pass may create a scoped update, not a broad promotion. A
+failed artifact may become a durable failed-attempt record. A mismatch may
+route to proof-adequacy review or tribunal review. A missing artifact may
+block the requested tier. The system records what happened so the same
+overclaim cannot be repeated under cleaner prose.
+
+Different claims need different evidence. A finite invariant can be routed to
+Lean. A source claim can require a citation dossier. A process claim can
+require an executable procedure or replay log. A disputed governance claim can
+require adversarial review. The common rule is that the justification type
+must match the claim's risk, scope, and consumer requirement.
+
+Spinoza's most useful behavior is downgrade discipline. Failed, timed-out, or
+mismatched verification lowers confidence, blocks promotion, or escalates the
+claim. It does not decorate the claim.
+
+## Interfaces
+
+The proof-carrying claim is the interface between ledger belief and verifier
+artifacts.
+
+A practical record needs at least these fields:
+
+- `proof_claim_id`
+- `claim_id`
+- `claim_scope`
+- `required_tier`
+- `justification_type`
+- `interpretation_mapping`
+- `interpretation_confidence`
+- `justification_artifact`
+- `artifact_validity_state`
+- `semantic_adequacy`
+- `verifier`
+- `verifier_result`
+- `verifier_artifact_refs`
+- `failed_attempt_refs`
+- `formal_scope`
+- `limitations`
+- `consumer_requirements`
+- `downgrade_rule`
+- `claim_validity_effect`
+- `residual_route`
+- `tribunal_ref`
+- `ledger_update`
+- `source_refs`
+- `support_state_effect`
+- `non_claims`
+
+These fields keep artifact validity separate from claim validity. A proof can
+be valid for a narrow formal target while the natural-language claim receives
+no promotion. A citation can be accurate while only supporting one part of a
+claim. A replay log can prove that a run happened without proving that the
+result generalizes. A tribunal dossier can document disagreement without
+turning disagreement into consensus.
+
+The claim ledger stores the resulting support effect. Lean and GenesisCode
+provide formal or executable hooks where the claim is precise enough. UAT
+receives claims whose interpretation, evidence conflict, or stakes need
+role-separated review.
+
+## Invariants
+
+The requested tier is explicit.
+
+A promoted claim needs a matching justification artifact.
+
+Verifier failures and mismatches are non-promotional.
+
+Artifact scope remains attached to the claim.
+
+Those invariants are enough to stop the most common laundering path. A model
+cannot say that a proof was attempted and therefore the claim is stronger. It
+has to show the artifact, the verifier result, the interpretation mapping, the
+formal scope, the limitations, the support-state effect, and the non-claims.
+
+The finite Lean hooks support this record-level boundary. They model formal
+tier reviews, failed-verifier promotion reviews, verifier results, claim
+validity effects, and proof-carrying claim records. They prove that a valid
+record carries the requested tier, interpretation mapping, confidence,
+artifact references, formal scope, limitations, support-state effect, and
+non-claims; that a passed verifier result requires verifier artifact
+references; and that failed, timed-out, or mismatched verifier results require
+non-promotional effects.
+
+They do not prove that natural-language formalization is correct. They do not
+prove theorem validity for arbitrary claims. They do not prove citation
+accuracy, verifier quality, source interpretation, runtime behavior, or
+epistemic correctness.
+
+## Failure Modes
+
+Certified delusion is the headline failure. The system has a formal-looking
+object, but the object certifies the wrong claim.
+
+Invalid formalization is the interpretation failure. The theorem or procedure
+may be coherent, but the mapping from prose to artifact is wrong, too narrow,
+or missing an important condition.
+
+Justification absence is the tier failure. A claim is placed in a support
+tier without the artifact that tier requires.
+
+Verification theater is the social failure. The presence of a theorem tag,
+proof label, citation count, or procedure log creates an aura of rigor while
+the support boundary has not changed.
+
+Stale proof reuse is the lifecycle failure. The claim later broadens, but the
+old artifact is still invoked as if it covered the new scope.
+
+Spinoza should make all five failures visible. If it cannot, the proof layer
+is not protecting the book or the system.
+
+## Minimum Viable Implementation
+
+The minimum viable Spinoza slice is a tiered proof-carrying claim schema with
+one non-philosophical invariant example and negative controls.
+
+The repository already has part of that slice. The proof-carrying-claim
+fixtures validate record shape for claim scope, justification type,
+interpretation confidence, verifier artifact refs, failed-attempt refs, formal
+scope, source refs, support-state effect, and non-claims. The local harness
+checks three valid fixtures and five expected-invalid fixtures. It rejects
+overpromotion paths such as a timeout that raises support, a mismatch that
+promotes, a passed verifier missing artifact refs, or a negative result
+without failed-attempt records.
+
+This is useful, but narrow. It is a synthetic record-discipline harness. It
+does not validate the referenced procedure, discharge a proof, check citation
+truth, prove semantic equivalence, or run a deployed verifier.
+
+The next minimum useful step would be a small real example: one formal target
+that passes but supports only a narrower claim, one failed verifier result
+that blocks promotion, one missing citation artifact that downgrades a
+source-derived claim, and one contested interpretation routed to UAT.
+
+## Beyond the State of the Art
+
+The mature version is a justification compiler for high-value claims.
+
+It would not try to formalize every sentence. It would decide which claims
+deserve stronger treatment, choose the right justification type, record the
+interpretation mapping, run the relevant verifier or review process, and write
+the result back to the claim ledger without overpromoting the prose claim.
+
+At product maturity, a Spinoza layer would include:
+
+- tier assignment based on claim type, risk, scope, and requested support
+  state;
+- interpretation mappings from prose to formal targets, source propositions,
+  procedure contracts, replay claims, benchmark claims, or tribunal questions;
+- verifier integrations for Lean-like proof checks, schema checks, executable
+  procedures, citation dossiers, replay logs, benchmark artifacts, and
+  adversarial review;
+- failed-attempt memory so bad mappings and unsupported promotions are not
+  retried as if they were new;
+- support-state effects that distinguish scoped update, no update, downgrade,
+  block, and tribunal escalation;
+- consumer requirements that state who is allowed to rely on the artifact and
+  for what purpose.
+
+The mature system would let rigor travel through the stack without inflating.
+A proof could support a small invariant inside a planner, a replay log could
+support one execution trace, a citation dossier could support one textual
+claim, and a tribunal could preserve unresolved disagreement. Each artifact
+would be strong because its boundary is explicit.
+
+## What Is Proven, And What Is Not
+
+The current repository proves and tests only record discipline.
+
+The proof-carrying-claim harness passed locally for three valid fixtures and
+five expected-invalid fixtures. The Lean module builds and proves finite
+record predicates about artifact references, verifier results, and
+non-promotional effects. Appendix C still keeps the chapter core claim at
+`argument`.
+
+The repo does not prove verifier quality, theorem validity for arbitrary
+claims, citation accuracy, open-domain autoformalization, semantic equivalence
+between prose and formal targets, source interpretation, runtime behavior, or
+whole-system epistemic correctness. It does not reproduce Proof-Carrying Code,
+import external Lean examples, or make GenesisCode operational.
+
+The pending consolidation caveat also matters. This chapter is inside the
+verification/adversarial-review package with Unified Adaptive Tribunal. This
+reader pass does not execute, reject, or authorize that future merge. It
+curates the current 54-chapter source chapter for the reader-manuscript cycle
+only.
+
+## Summary
+
+Spinoza Verification and Proof-Carrying Claims is the stack's answer to
+formal-looking overconfidence. It does not make every claim formal. It makes
+selected claims carry the artifact, mapping, verifier result, limitation, and
+ledger effect that would justify a stronger tier.
+
+That makes proof useful in the way this book needs proof to be useful: narrow,
+inspectable, reusable, and honest about what it does not cover. The next
+chapter handles the cases where one verifier or one artifact is not enough.
+Those cases need role-separated adversarial review.

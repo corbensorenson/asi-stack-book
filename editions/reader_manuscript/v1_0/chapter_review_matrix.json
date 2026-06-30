@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 45,
+    "curated_manuscript_candidate": 46,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -633,12 +633,15 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
-        "no_immediate_action"
+        "no_immediate_action",
+        "curated_manuscript_candidate"
       ],
       "review_refs": [
-        "docs/reader_part_ii_verification_full_review_pass.md#decisions"
+        "docs/reader_part_ii_verification_full_review_pass.md#decisions",
+        "docs/curated_reader_spinoza_prose_pass.md",
+        "docs/chapter_consolidation_release_stability_review.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the Spinoza chapter. Required tier, interpretation mapping, verifier result, failed attempts, semantic adequacy, downgrade discipline, and non-overclaim boundaries remain intact.",
+      "review_notes": "First drafting-only curated reader pass foregrounds proof-carrying claims as justification envelopes with requested tier, interpretation mapping, artifact validity, verifier result, failed-attempt memory, claim-validity effect, residual route, and non-claims. It preserves the no-theorem-validity, no-verifier-quality, no-citation-accuracy, no-semantic-equivalence, no-open-domain-autoformalization, no-runtime, no-support-state-movement, and no-consolidation-decision boundaries.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

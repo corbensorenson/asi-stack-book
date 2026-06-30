@@ -1693,6 +1693,43 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_semantic_pages_prose_pass.md. This is a drafting-only reader derivative, not a release-reviewed chapter, not equal authority with the live book, and not a static context ABI consolidation decision."
+    },
+    {
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "title": "Spinoza Verification and Proof-Carrying Claims",
+      "file": "editions/reader_manuscript/v1_0/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "live_source_ref": "chapters/spinoza-verification-and-proof-carrying-claims.qmd@3a0b64e5b",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#spinoza-verification-and-proof-carrying-claims.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#spinoza-verification-and-proof-carrying-claims",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes Spinoza around proof-carrying claims as justification envelopes: requested support tier, interpretation mapping, justification type, artifact validity, verifier result, failed-attempt memory, claim-validity effect, residual route, and non-claims; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved: chapter core claim remains argument",
+        "source boundary preserved for spinoza, genesiscode, coherence_exchange, verification_bandwidth, treellm, ext_proof_carrying_code_1997, and ext_lean4_theorem_proving",
+        "proof/test boundary preserved: synthetic proof-carrying-claim harness and finite Lean predicates only",
+        "no theorem-validity, verifier-quality, citation-accuracy, semantic-equivalence, open-domain-autoformalization, proof-generation, source-interpretation, runtime, or whole-system-epistemic-correctness claim added",
+        "implementation horizon preserved: tiered proof-carrying claim schema now, justification compiler as mature endpoint only",
+        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with unified-adaptive-tribunal-and-adversarial-review",
+        "release blockers preserved until reader reconciliation, format review, and edition release record exist"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_spinoza_prose_pass.md. This is a drafting-only reader derivative, not a release-reviewed chapter, not equal authority with the live book, and not a verification/adversarial-review consolidation decision."
     }
   ],
   "reconciliation_report": {
