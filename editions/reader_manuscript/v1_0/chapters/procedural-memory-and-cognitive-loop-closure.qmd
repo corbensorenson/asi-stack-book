@@ -1,0 +1,325 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: procedural-memory-and-cognitive-loop-closure
+generated_baseline_ref: build/reader_edition/chapters/procedural-memory-and-cognitive-loop-closure.qmd
+live_source_ref: chapters/procedural-memory-and-cognitive-loop-closure.qmd@41267f5a8
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Procedural Memory and Cognitive Loop Closure
+
+The execution layer leaves traces everywhere: plans, jobs, edits, adapter
+receipts, reviews, failures, residuals, replays, and repairs. Most of those
+traces should remain history. Some should become warnings. A few should become
+procedures.
+
+Procedural memory is the discipline for deciding which is which.
+
+The point is not to automate everything that repeats. That is how a system
+turns one lucky path into future damage. The point is to let repeated work earn
+reuse. A loop should close only when the stack can show comparable traces,
+failed traces, near misses, invariant structure, parameters, preconditions,
+postconditions, regression checks, monitoring signals, and retirement
+triggers.
+
+Memory becomes capability only when reuse carries the reason it was allowed.
+
+## Problem
+
+Repeated reasoning trajectories should not be improvised forever when they can
+become verified procedures or tools.
+
+The stack will see the same shapes of work again and again. A plan is
+decomposed, a file is changed, a test fails, a patch is repaired, an approval
+is requested, a result is reviewed, and a residual is recorded. Rebuilding that
+entire path from scratch every time wastes attention and creates drift.
+
+But raw repetition is not enough. A repeated trace can be a real procedure, a
+fragile coincidence, a local habit, a contaminated workflow, or a warning that
+the system keeps approaching the same failure. Procedural memory exists to
+separate those cases.
+
+The question is not "can this be automated?" The better question is "what
+would make this safe to reuse?"
+
+## Why Ordinary Memory Is Not Enough
+
+A long context, retrieval store, or prompt template can help an agent remember.
+It cannot by itself decide what should become operational machinery.
+
+MemGPT is a useful external orientation point because it treats long-running
+LLM systems as needing explicit memory tiers and control flow instead of
+unbounded context. Procedural memory accepts that pressure but applies it to
+workflows rather than only facts. A reusable procedure should not be a note
+that says "do what worked last time." It should be a qualified record that
+names when the procedure applies, when it does not apply, what evidence
+supports it, and what retires it.
+
+Repeated improvisation has one failure mode. Premature automation has another.
+The first wastes cognition; the second creates brittle capability. An agent
+that repeats a task from scratch may drift. An agent that promotes a single
+appealing trace into a tool may lock in hidden assumptions.
+
+The stack needs three modes to stay honest:
+
+- interpretation mode for novel, ambiguous, or high-context work;
+- compiled-tool mode for recurring procedures that have earned reuse;
+- failsafe or reflex mode for narrow safety-critical responses.
+
+Procedural memory is the gate between interpretation and compiled-tool mode.
+It should make that transition explicit instead of letting convenience become
+validation.
+
+## Core Claim
+
+Cognitive loop closure compiles repeated reasoning into verified parameterized
+tools and procedural memory. In the live book, this remains a design rationale
+at `argument` support.
+
+Cognitive Loop Closure supplies the main vocabulary: trajectory logging, loop
+detection, abstraction, active parameter discovery, tool synthesis,
+verification, registry, routing, monitoring, revision, retirement, and tool
+cards. RMI and RGS connect loop closure to ratcheting systems, benchmark
+pressure, residual escrow, and regression preservation. Benchmaxxing adds
+benchmark lifecycle and anti-Goodhart discipline. Talos supplies typed
+execution traces, audit, replay, feedback, and residual handling. Project
+Theseus sources supply implementation-lineage pressure around report-first
+tool closure and operator-visible work surfaces. MoECOT remains
+connector/source-note context until concrete runtime artifacts, code, logs,
+readiness records, or benchmark results are imported and inspected.
+
+The repository currently validates the shape of a procedural tool record and
+implements finite Lean predicates for two record-level gates: a generated tool
+must record source traces, parameters, and verification, and a failed
+regression blocks routable promotion. That is useful record discipline. It is
+not a loop detector, tool synthesizer, regression run, routing monitor,
+retirement automation, Talos loop-closure pipeline, MoECOT runtime
+reproduction, or Theseus execution replay.
+
+## Mechanism
+
+Loop closure begins after execution has left enough comparable trace to learn
+from. Artifact graphs provide the raw material: job paths, adapter effects,
+edits, approvals, tests, failures, residuals, replay limits, and review
+outcomes.
+
+Procedural memory turns that material into a promotion path.
+
+```{mermaid}
+flowchart LR
+  Trace["Candidate traces"] --> Cluster["Comparable loop cluster"]
+  Cluster --> Negative["Failures and near misses"]
+  Negative --> Invariant["Invariant abstraction"]
+  Invariant --> Params["Parameter discovery"]
+  Params --> Candidate["Tool candidate"]
+  Candidate --> Verify["Verification and regressions"]
+  Verify --> Gate{"Qualified reuse?"}
+  Gate -- "yes" --> Card["Routable procedure card"]
+  Gate -- "no" --> Residual["Quarantine, residual, or retire"]
+  Card --> Monitor["Monitoring and retirement trigger"]
+  Residual --> Monitor
+```
+
+The order matters. A trace does not become a tool because it looks elegant. It
+first joins a comparable loop cluster. The cluster includes successful traces,
+failed traces, near misses, rejected cases, and limiting conditions. The stack
+then asks what stayed invariant, what changed, which parameters matter, which
+preconditions are real, and which postconditions can be checked.
+
+Only then is there a tool candidate.
+
+The candidate still cannot become routable until verification and regression
+checks pass. If the checks fail, the result is not hidden inside a polished
+procedure. It becomes quarantine, residual, revision, or retirement.
+
+That is the difference between memory and habit. Habit repeats. Procedural
+memory explains why reuse is allowed.
+
+## Procedure Qualification
+
+The key artifact is a Procedure Qualification Packet around the smaller
+procedural tool record.
+
+It should name:
+
+- candidate traces;
+- rejected traces;
+- near misses;
+- abstraction rationale;
+- parameter-discovery notes;
+- preconditions;
+- postconditions;
+- verification result;
+- regression floor;
+- SCF target;
+- authority requirement;
+- runtime tier;
+- risk tier;
+- monitoring signal;
+- residuals;
+- retirement trigger;
+- explicit non-claims.
+
+The packet is not a badge of success. It is the evidence a gate needs in order
+to say yes, no, quarantine, revise, or retire.
+
+Negative examples are not clutter. They are the boundary of the procedure. A
+loop detector that sees only successful traces will overgeneralize. A tool
+card that omits near misses cannot explain where the procedure stops. A router
+that cannot see failures will reuse the tool outside its envelope.
+
+Procedural memory therefore keeps failures attached to reuse. A useful
+procedure is narrower than the traces that inspired it until evidence
+justifies widening the scope.
+
+## Interfaces
+
+Procedural memory sits between execution and routing.
+
+Artifact graphs supply traces. Runtime adapters supply effect receipts.
+Readiness gates decide whether a candidate can move into routable status.
+Stable capability fields give the generated procedure a capability boundary.
+Benchmark ratchets preserve the floor the procedure must not break. Routing
+heads select qualified tools only under the recorded scope.
+
+This interface prevents a private shortcut from becoming an ambient
+capability. A procedure can be useful and still not be routable. It may lack a
+regression floor, carry stale preconditions, require authority the current job
+does not have, depend on a retired SCF, or preserve a residual that blocks
+promotion.
+
+The procedure card should be easy for a future router to reject.
+
+## Invariants
+
+Only verified loops become routable tools.
+
+Comparable traces come before synthesis.
+
+Parameters, assumptions, preconditions, and postconditions are explicit.
+
+Negative examples stay attached to the reusable procedure.
+
+Failed regressions block routable promotion.
+
+Promotion records residuals instead of erasing them.
+
+Retirement triggers are part of the tool definition, not later maintenance
+notes.
+
+These invariants are the desired discipline. The repository currently checks
+only finite record predicates and a public procedural-tool fixture; it does
+not enforce the full procedure-qualification lifecycle in a running system.
+
+## Failure Modes
+
+Premature toolification occurs when one successful trace becomes a reusable
+tool before comparable cases, failures, parameters, and regression checks are
+known.
+
+Anecdote closure occurs when an appealing example is treated as a loop.
+
+Hidden-assumption closure occurs when a procedure works only because an
+unstated local condition happened to hold.
+
+Procedural memory poisoning occurs when bad traces, contaminated data, or
+unsafe shortcuts become reusable machinery.
+
+Route drift occurs when a verified tool is used outside its SCF, benchmark
+floor, authority envelope, or retirement condition.
+
+Tool immortality occurs when a once-valid procedure keeps running after
+sources change, APIs shift, governance rules tighten, or regressions fail.
+
+Each failure should keep the candidate in interpretation mode, quarantine,
+residual review, revision, or retirement. None should be hidden by calling the
+procedure "memory."
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a public trace-to-tool record discipline:
+a procedural tool schema, a valid fixture, finite promotion predicates, and a
+small synthetic trace set that exercises both promotion and rejection.
+
+The repository already has the first layer. The procedural tool record fixture
+checks source traces, invariant structure, parameters, preconditions,
+postconditions, verification result, risk/runtime tiers, monitoring plan,
+residuals, regressions, lifecycle state, and retirement criteria.
+`AsiStackProofs.ProceduralMemory` contains finite record predicates that a
+generated tool records its source traces, parameters, and verification result,
+and that a failed regression blocks routable promotion.
+
+The next honest slice would be deliberately small: three successes, one near
+miss, one failure, and one extracted tool candidate. The harness should prove
+that the candidate cites all source traces, narrows its scope around the
+failure, preserves the near miss, and remains unroutable until regression
+checks pass.
+
+It should also exercise rejection: a missing near miss, stale precondition,
+failed benchmark floor, unapproved authority requirement, or retired SCF keeps
+the tool in quarantine or retired state.
+
+That would still not be a deployed loop-closure system. It would be a
+public-safe proof-of-discipline that reuse can be denied.
+
+## Beyond the State of the Art
+
+The mature endpoint is a procedure foundry for verified reusable cognition.
+
+Such a foundry would mine artifact graphs, job receipts, adapter receipts,
+failures, residuals, and replay records. It would cluster comparable work,
+preserve successes and failures, abstract invariant structure, discover
+parameters, synthesize candidate procedures, verify regressions, bind each
+candidate to stable capability fields and readiness gates, attach monitoring,
+and retire stale tools.
+
+The product-level system would make reusable cognition stateful:
+
+- candidate trace;
+- loop cluster;
+- tool candidate;
+- verified reuse;
+- routable tool;
+- quarantined tool;
+- retired tool.
+
+A trace could not jump directly to routable behavior. A procedure could not
+escape its evidence envelope. A router could not treat memory as an ambient
+toolbox. A benchmark pass could not erase residuals. A once-good tool could
+not live forever without monitoring and retirement.
+
+That endpoint remains unimplemented here. Procedural memory stays at
+`argument` support until trace sets, loop detectors, tool candidates,
+regression harnesses, readiness gates, monitoring logs, retirement traces, and
+public-safe implementation records show that the stack can learn from
+repetition without letting repetition become ungoverned habit.
+
+## Evidence Boundary
+
+This chapter argues for governed loop closure. It does not claim that the ASI
+Stack currently generates verified tools from repeated work.
+
+Current evidence consists of source synthesis, passage-reviewed source
+mappings, source-noted external memory context, a public procedural-tool
+fixture, and finite Lean record predicates. Those artifacts support the shape
+of the promotion path. They do not prove loop detection, invariant
+abstraction, active parameter discovery, synthesized tool correctness,
+regression quality, routing monitor behavior, retirement automation, Talos
+loop-closure behavior, MoECOT runtime behavior, Project Theseus replay, or
+autonomous self-improvement.
+
+The chapter's own discipline is the same as the mechanism it describes:
+closure is allowed only where the evidence actually closes the loop.
+
+## Handoff
+
+Procedural memory completes the planning, memory, reasoning, and execution
+loop. Once procedures can be qualified, the next problem is selection.
+
+Routing Heads and Specialist Cores opens that next layer. It treats tools,
+procedures, specialists, and routes as candidates for governed selection, not
+as ambient capabilities available to every task. Procedural memory supplies
+the qualified candidates; routing decides when, where, and whether they should
+be used.

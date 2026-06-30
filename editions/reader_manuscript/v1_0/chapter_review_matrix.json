@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 13,
+    "curated_manuscript_candidate": 14,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -709,12 +709,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_full_review_completion.md#decisions"
+        "docs/reader_part_ii_full_review_completion.md#decisions",
+        "docs/curated_reader_procedural_memory_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the procedural memory chapter. Negative examples, quarantine, regression, monitoring, retirement, and loop-detector/tool-generation non-claim boundaries remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the procedural memory chapter. A first drafting-only curated prose pass now foregrounds earned automation, comparable traces, negative examples, invariant abstraction, procedure qualification, regression checks, quarantine/residuals, retirement triggers, proof/test limits, and loop-detector/tool-generation non-claims without approving release.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

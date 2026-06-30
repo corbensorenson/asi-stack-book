@@ -1,6 +1,6 @@
 # Governed Chapter Consolidation Sequence
 
-Last updated: 2026-06-29
+Last updated: 2026-06-30
 
 This record preserves the full consolidation sequence accepted for roadmap
 planning after review of the latest 54-to-44/47 chapter-shape critique. It is a
@@ -52,11 +52,13 @@ ideas become named mechanisms, sections, subclaims, source mappings, proof
 hooks, examples, or implementation-horizon facets. They do not survive by
 copying multiple full source-chapter skeletons into the destination draft.
 
-The 2026-06-29 attachment re-review does not add a new consolidation cluster.
-It confirms that the current decision queue is aimed correctly: the next useful
+The 2026-06-30 attachment review does not add a new consolidation cluster. It
+confirms that the current decision queue is aimed correctly: the next useful
 work is to judge the already packaged merge and fold candidates, starting with
 the Part I alignment/governance pilot, rather than drafting another abstract
-consolidation plan or editing the manifest broadly from the critique alone.
+consolidation plan or editing the manifest broadly from the critique alone. A
+successful consolidation must be one deeper chapter, not multiple source
+chapter skeletons concatenated under a new title.
 
 ## Attachment Disposition Summary
 
