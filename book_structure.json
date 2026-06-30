@@ -820,10 +820,34 @@
           "minimal_implementation": "A layered failure taxonomy tied to invariants, source queues, and future tests.",
           "beyond_state_of_art": "A useful failure model routes ordinary stack breakdowns before they disappear into behavior. It turns vague safety anxiety into typed breakdowns that can be detected, assigned to a layer, blocked, residualized, or escalated before they become invisible stack behavior. At the mature failure-radar boundary, ungoverned intelligence is monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language.",
           "codex_tests": [
-            "Authority creep scenario",
-            "Context pollution scenario",
-            "Evaluator drift scenario",
-            "Unverified-claim scenario"
+            {
+              "name": "Authority creep scenario",
+              "purpose": "Check the finite Lean incident-route predicate that authority over a modeled ceiling routes to authority review.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean incident-route predicate; no runtime authority gate run"
+            },
+            {
+              "name": "Context pollution scenario",
+              "purpose": "Check the finite Lean incident-route predicate that tainted context without an authority grant routes to quarantine.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean incident-route predicate; no context-admission detector run"
+            },
+            {
+              "name": "Evaluator drift scenario",
+              "purpose": "Check the finite Lean incident-route predicate that subject-modified evaluators route to frozen review.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean incident-route predicate; no evaluator-independence probe run"
+            },
+            {
+              "name": "Unverified-claim scenario",
+              "purpose": "Check the finite Lean incident-route predicate that requested claim promotion with failed verification routes to blocked promotion.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean incident-route predicate; no claim-verification harness run"
+            }
           ],
           "lean_module": "AsiStackProofs.FailureModes",
           "proof_targets": [

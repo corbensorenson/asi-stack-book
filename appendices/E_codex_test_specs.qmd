@@ -15,10 +15,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `system-boundaries-and-authority` | System Boundaries and Authority | Authority ceiling preservation test | implemented | passes via synthetic authority transition harness and strengthened finite Authority Lean decision envelope; no runtime enforcement claim |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Permission separation test | implemented | passes via synthetic authority transition harness |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Confused-deputy scenario | implemented | passes expected-invalid synthetic denial fixture; no runtime enforcement claim |
-| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Authority creep scenario | planned | not run |
-| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Context pollution scenario | planned | not run |
-| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Evaluator drift scenario | planned | not run |
-| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Unverified-claim scenario | planned | not run |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Authority creep scenario | implemented | passes via Lean build |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Context pollution scenario | implemented | passes via Lean build |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Evaluator drift scenario | implemented | passes via Lean build |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Unverified-claim scenario | implemented | passes via Lean build |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Support-state transition test | implemented | validated locally |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness test | planned | not run |

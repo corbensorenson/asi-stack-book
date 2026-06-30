@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 170 |
+| Theorem declarations classified | 174 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 55 |
+| Derived/decomposed theorem declarations | 59 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 29 |
 | Safety-critical direct/projection declarations | 10 |
@@ -70,7 +70,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 2 | 9 | 6 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -182,8 +182,12 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_effect_for_implies_terminal_state` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_state_cannot_be_promotion_target` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `unsupported_can_promote_to_argument` | derived_or_decomposed | no | uses constructor |
+| `lean/AsiStackProofs/FailureModes.lean` | `authority_over_ceiling_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `failed_required_invariant_blocks_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `subject_modified_evaluator_freezes_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `tainted_context_without_authority_grant_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `unbounded_authority_detected_as_governance_failure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FailureModes.lean` | `unverified_claim_promotion_blocks` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FastGeneration.lean` | `promoted_fast_generation_route_records_required_fields` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/FastGeneration.lean` | `raw_tokens_per_second_cannot_promote_without_verified_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `exact_reconstruction_claim_requires_generator_plus_repair` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

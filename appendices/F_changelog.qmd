@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-06-30 - Failure incident route proof envelope
+
+- Extended `AsiStackProofs.FailureModes` with a finite incident-route
+  vocabulary, incident record, and route function over authority overreach,
+  tainted context, context authority grants, subject-modified evaluators,
+  requested claim promotion, and verification status.
+- Added derived/decomposed Lean theorems showing that authority over a modeled
+  ceiling routes to authority review, tainted context without an authority grant
+  routes to quarantine, a subject-modified evaluator routes to frozen review,
+  and requested claim promotion with failed verification routes to blocked
+  promotion.
+- Updated the Failure Modes chapter, source-of-truth outline, Appendix E,
+  proof-depth and proof-adequacy surfaces, and v1.0 status guard. The proof
+  adequacy review now classifies Failure Modes as `useful but too narrow`,
+  because protocol fixture coverage and a finite incident-route envelope exist
+  while executable failure-detection behavior remains absent.
+- This does not promote any Appendix C or chapter core claim, implement a
+  runtime authority gate, run a context-admission detector, prove evaluator
+  independence, run a claim-verification harness, execute a failure-receipt
+  suite, prove recurrence escalation, deploy failure radar, approve reader
+  artifacts, or create EPUB, DOCX, PDF, audio, DOI, Zenodo, or audio-embedded
+  EPUB release artifacts.
+
 ## 2026-06-30 - Artifact steward lifecycle route proof envelope
 
 - Extended `AsiStackProofs.ArtifactStewardAgents` with a finite steward

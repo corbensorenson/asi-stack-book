@@ -343,10 +343,11 @@ Draft deliverables:
 
 - A layered failure taxonomy tied to invariants, source queues, future tests, failure class, affected contracts, boundary event state, severity, reversibility, recurrence, receipts, promotion blockers, normalization guards, learning paths, source refs, support-state effect, residuals, and non-claims.
 - Exact Appendix C claim-source mappings for the core claim across failure-boundary, context, execution, verification, governance-lineage, resource, VCM-variant, and implementation-reference sources; seven local mappings (`scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`) now have reviewed raw-cache passage references, while `vcm_editable` and `moecot` remain connector-only/source-note mapped. Support remains `argument` pending scenario tests or deployed detector evidence.
-- Planned Codex test: Authority creep scenario.
-- Planned Codex test: Context pollution scenario.
-- Planned Codex test: Evaluator drift scenario.
-- Planned Codex test: Unverified-claim scenario.
+- Implemented Lean incident-route envelope: authority over a modeled ceiling routes to authority review, tainted context without an authority grant routes to quarantine, subject-modified evaluators route to frozen review, and requested claim promotion with failed verification routes to blocked promotion.
+- Implemented Codex test: Authority creep scenario as a finite Lean incident-route predicate only; no runtime authority gate run.
+- Implemented Codex test: Context pollution scenario as a finite Lean incident-route predicate only; no context-admission detector run.
+- Implemented Codex test: Evaluator drift scenario as a finite Lean incident-route predicate only; no evaluator-independence probe run.
+- Implemented Codex test: Unverified-claim scenario as a finite Lean incident-route predicate only; no claim-verification harness run.
 
 Lean proof targets:
 
