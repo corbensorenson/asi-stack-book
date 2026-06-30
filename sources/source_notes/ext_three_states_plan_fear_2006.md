@@ -36,8 +36,7 @@ The F.E.A.R. planning talk belongs in the planning and runtime chapters as an ex
 
 ## Book Chapters Supported
 
-- `planning-as-a-control-layer` (Planning as a Control Layer)
-- `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
+- `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 

@@ -44,7 +44,7 @@ VIEA frames advanced AI as an intent-to-execution system rather than a response 
 - Recursive Self-Improvement Boundaries
 - Human Intent as a Formal Input
 - `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
-- Planning as a Control Layer
+- Planning as a Control Layer: DAGs and Intelligence Arbitrage
 - Cognitive Compilation and Semantic IR
 - The Virtual Context ABI: Typed Pages, Cells, and Certificates (`virtual-context-abi`)
 - Claim Ledgers and Belief Revision

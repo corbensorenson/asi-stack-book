@@ -934,38 +934,43 @@ Lean proof targets:
 | `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandContracts` | A valid command contract contains objective, constraints, output contract, verification, and failure behavior. | implemented |
 | `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandContracts` | A hidden or conflicting instruction cannot override an explicit contract constraint. | implemented |
 
-### Planning as a Control Layer
+### Planning as a Control Layer: DAGs and Intelligence Arbitrage
 
 Stable ID: `planning-as-a-control-layer`
 
-Chapter job: Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.
+Chapter job: Accepted goals need to become governed plan graphs and schedulable DAGs with dependencies, authority requirements, context demands, capability tiers, budgets, adequacy contracts, verification burdens, dispatch receipts, escalation paths, and residuals.
 
-Core claim: Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.
+Core claim: Planning should be a separate control layer that turns accepted command contracts into schedulable DAGs with explicit dependencies, authority ceilings, context demands, capability-tier assignments, adequacy contracts, verification burdens, cost/quality ledgers, escalation routes, and residuals.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `planforge`, `viea` | Read first for chapter claims and mechanisms. |
-| Supporting | `cognitive_compilation`, `software_magic_grimoire` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+| Primary | `planforge`, `viea`, `planforge_compiler_arch` | Read first for the control-layer claim, PlanForge DAG/scheduler vocabulary, and command-to-artifact spine. |
+| Supporting | `cognitive_compilation`, `software_magic_grimoire`, `tokenmana` | Mine after primary sources for compiler/IR pressure, guarded workflow vocabulary, budgets, capacity, latency, review, and human-friction constraints. |
+| Connector or recovery required | `moecot`, `coherence_exchange` | Use as source-note/connector context only unless raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. |
 
 Draft arc:
 
-- Problem: Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.
-- Insufficiency: Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.
-- Mechanism: Compile goals into strategic, tactical, and runtime plans.
-- Mechanism: Represent assumptions, task graph, dependency graph, required context, required tools, worker requirements, authority requirements, risk budget, compute budget, verification plan, replanning policy, stopping conditions, and failure behavior.
-- Mechanism: Delegate execution through typed contracts.
+- Problem: Accepted goals need governed plan graphs whose dependencies, authority requirements, context demands, capability tiers, budgets, adequacy contracts, verification burdens, stop conditions, dispatch receipts, escalation paths, and residuals remain inspectable before execution.
+- Insufficiency: Planning cannot be collapsed into prompting, memory, reasoning, routing, or execution because each layer has different authority and failure modes, and cheap route selection is not trustworthy unless adequacy, verification, and residual cost remain attached.
+- Mechanism: Compile accepted command contracts into strategic, tactical, and runtime plan graphs with assumptions, task nodes, dependencies, required context, tools, authority requirements, budgets, verification plans, replanning policy, stop conditions, and failure behavior.
 - Mechanism: Treat the plan graph as a refusal-friendly control artifact: missing context, blocked dependencies, authority overreach, exhausted budgets, and failed predicates become residuals before side effects.
 - Mechanism: Preserve stop conditions, authority ceilings, and alternative-route status during replanning; only dispatchable nodes with satisfied constraints lower into typed jobs.
 - Mechanism: Track plan node lifecycle states: proposed, blocked-context, blocked-authority, blocked-dependency, blocked-verification, dispatchable, dispatched, replanned, and stopped.
 - Mechanism: Emit dispatch receipts with satisfied constraints, context refs, authority basis, verification plan, replanning history, and typed-job refs.
 - Mechanism: Preserve authority budget, replanning history, blocked-node records, residual register, and non-claims so a candidate graph cannot masquerade as governed dispatch.
+- Mechanism: Specialize the plan graph into a schedulable PlanForge DAG whose nodes carry dependency order, context demand, authority state, capability tier, adequacy contract, quality predicate, verification requirement, budget limit, route assignment, merge condition, escalation path, and residual behavior.
+- Mechanism: Give each node both a work contract and an adequacy contract so schedulability depends on authority, context, quality predicate, verification, fallback, and downstream usability.
+- Mechanism: Track scheduling states such as ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, and merged.
+- Mechanism: Preserve scheduling state, adequacy contracts, merge conditions, assumption refs, cost-quality ledger, residuals, and non-claims so cheap branches cannot hide displaced verification, repair, or human cleanup.
+- Mechanism: Use local repair: when a source, assumption, route, or quality predicate changes, repair the affected subgraph and rerun only dependents whose obligations changed.
 - Interface: Alignment filters goals.
 - Interface: VCM supplies context packets.
-- Interface: Routing selects specialists.
-- Interface: Execution runs typed jobs.
+- Interface: Routing consumes capability annotations, adequacy contracts, route assignments, and escalation paths.
+- Interface: Cognitive Compilation receives accepted plan obligations for semantic IR lowering.
+- Interface: Labor OS and runtime adapters execute only typed jobs derived from dispatch receipts.
+- Interface: Evidence ledgers record assumptions, cost-quality decisions, residuals, verification results, and replanning events.
 
 Primary invariants:
 
@@ -974,6 +979,10 @@ Primary invariants:
 - Tool selection is justified by task requirements.
 - Only dispatchable nodes lower into typed jobs.
 - Candidate routes, blocked nodes, and review notes are not executable permission.
+- Dependency order is respected before dispatch.
+- Cost savings do not remove required verification.
+- Failed quality predicates route to escalation or residuals.
+- Merge gates compare assumptions, source versions, authority ceilings, and quality predicates before parallel branches are accepted together.
 
 Failure modes to cover:
 
@@ -982,12 +991,17 @@ Failure modes to cover:
 - Tool choice exceeds authority or budget.
 - Dispatch laundering, where a proposed or blocked node becomes a job because it appears in the graph.
 - Replanning erasure, where feedback changes the plan while hiding the authority, stop-condition, or residual delta.
+- Wrong capability-tier selection, where a cheap route produces plausible but inadequate work.
+- Dependency cycles, where a graph looks planned while no valid dispatch order exists.
+- Merge laundering, where parallel branches pass locally while relying on conflicting assumptions or source versions.
+- Arbitrage laundering, where verification, repair, or human cleanup is moved outside the cost-quality ledger.
 
 Draft deliverables:
 
-- A plan graph format with dependencies, context requests, authority budget, risk budgets, stop conditions, lifecycle states, dispatch receipts, blocked-node records, and residual register.
+- A plan graph and PlanForge DAG record surface with dependencies, context requests, authority budget, risk budgets, stop conditions, lifecycle states, dispatch receipts, blocked-node records, residual register, scheduling states, capability tiers, adequacy contracts, quality predicates, route assignments, merge conditions, assumption refs, escalation paths, cost-quality ledgers, and non-claims.
 - Implemented protocol validation: `plan_graph` fixture validates public record shape only, including authority budget, replanning history, lifecycle states, blocked nodes, dispatch receipts, residual register, and non-claims.
-- Exact Appendix C claim-source mappings for the planning-control claim across PlanForge planning middleware, VIEA orchestration/runtime spine, Cognitive Compilation source-plan/S-IR pipeline, Software Magic Grimoire spell-stack workflow discipline, and MoECOT runtime-reference context; the four local mappings (`planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`) now have reviewed passage references. `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending planner harnesses, dependency-order checks, context-demand tests, runtime replanning traces, or accepted evidence transitions.
+- Implemented protocol validation: `planforge_dag` fixture validates public record shape only, including nodes, edges, scheduling states, capability tiers, context requests, adequacy contracts, quality predicates, verification requirements, budget limits, route assignments, merge conditions, assumption refs, escalation policy, residuals, cost-quality ledger, and non-claims.
+- Exact Appendix C claim-source mappings for the merged planning-control claim across PlanForge planning middleware and DAG/MVI scheduling, VIEA orchestration/runtime spine, PlanForge compiler-architecture framing, Cognitive Compilation source-plan/S-IR and semantic-DAG routing/repair, Software Magic Grimoire spell-stack workflow discipline, TokenMana resource-governance pressure, Coherence Exchange speculative intelligence-arbitrage framing, and MoECOT runtime-reference context. Six local raw-cache mappings (`planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `planforge_compiler_arch`, `tokenmana`) have reviewed passage references. `coherence_exchange` and `moecot` remain source-note/connector mapped until usable raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. Support remains `argument` pending planner harnesses, dependency-order checks, context-demand tests, selected-tier adequacy tests, route traces, cost-quality results, runtime replanning traces, or accepted evidence transitions.
 - Planned Codex test: Decomposition accuracy test.
 - Implemented synthetic Codex test: Dependency ordering and blocked-versus-dispatchable state checks via `python3 scripts/validate_plan_execution_contracts.py`; runtime planner remains open.
 - Implemented finite-record proof follow-through: `AsiStackProofs.Planning` now includes a `PlanControlRecord` envelope for modeled dispatchable, blocked, and replanned records; it checks required dispatch gates, receipt separation, parent-authority preservation, replanning stop-condition preservation, residual bookkeeping, and non-claim presence without treating those predicates as planner-quality or runtime-replanning evidence.
@@ -995,6 +1009,11 @@ Draft deliverables:
 - Planned Codex test: Runtime replanning test.
 - Planned Codex test: Dispatch-state enforcement test.
 - Planned Codex test: Replanning-delta audit.
+- Implemented synthetic Codex test: DAG acyclicity test via `python3 scripts/validate_plan_execution_contracts.py`; deployed scheduler cycle rejection remains open.
+- Planned Codex test: Capability tier assignment test.
+- Implemented Lean proof target: a failed quality predicate routes to escalation or residual under the valid node-outcome predicate.
+- Planned Codex test: deployed scheduler cycle rejection.
+- Consolidation note: `planforge-dags-and-intelligence-arbitrage` folded into this chapter on 2026-06-30 as DAG scheduling, intelligence-arbitrage, capability-tier, adequacy-contract, cost-quality-ledger, escalation, residual, source-mapping, fixture, proof-hook, and history material; `cognitive-compilation-and-semantic-ir` remains standalone.
 
 Lean proof targets:
 
@@ -1002,64 +1021,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:planning.control_layer.operational_invariant` | `AsiStackProofs.Planning` | A plan node inherits the authority ceiling of its parent contract unless governance lowers it. | implemented |
 | `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | implemented |
-
-### PlanForge DAGs and Intelligence Arbitrage
-
-Stable ID: `planforge-dags-and-intelligence-arbitrage`
-
-Chapter job: Large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing.
-
-Core claim: PlanForge-style DAG planning can support intelligence arbitrage by assigning each node the minimum adequate capability and verification burden.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `planforge`, `planforge_compiler_arch` | Read first for chapter claims and mechanisms. |
-| Supporting | `coherence_exchange`, `cognitive_compilation`, `tokenmana` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
-
-Draft arc:
-
-- Problem: Large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing.
-- Insufficiency: Uniformly applying the strongest model to every task wastes compute and can obscure which tasks require verification or escalation.
-- Mechanism: Decompose goals into DAGs.
-- Mechanism: Annotate nodes with capability tier, budget, context request, risk, and verification requirement.
-- Mechanism: Merge redundant branches and escalate only when predicates fail.
-- Mechanism: Give each node both a work contract and an adequacy contract so schedulability depends on authority, context, quality predicate, verification, and failure behavior.
-- Mechanism: Track scheduling states such as ready, blocked by dependency, blocked by authority, blocked by context, blocked by budget, blocked by verifier, running, failed, residual, and merged.
-- Mechanism: Preserve scheduling state, adequacy contracts, merge conditions, assumption refs, cost-quality ledger, residuals, and non-claims so cheap branches cannot hide displaced verification, repair, or human cleanup.
-- Interface: Routing consumes capability annotations.
-- Interface: VCM consumes context requests.
-- Interface: Evidence records cost/quality results.
-
-Primary invariants:
-
-- Dependency order is respected.
-- Cost savings do not remove required verification.
-- Escalation paths are explicit.
-
-Failure modes to cover:
-
-- Wrong tier selection.
-- Dependency cycles.
-- Economic optimization overriding safety.
-
-Draft deliverables:
-
-- A DAG schema with node-level capability, scheduling state, adequacy contracts, verification annotations, merge conditions, assumption refs, cost-quality ledger, residuals, and non-claims.
-- Implemented protocol validation: `planforge_dag` fixture validates public record shape only.
-- Implemented Lean proof target: a dispatchable finite indexed plan-graph record carries an acyclicity certificate and ordered member dependency edges.
-- Exact Appendix C claim-source mappings for the PlanForge DAG claim across PlanForge DAG/MVI scheduling, PlanForge compiler-architecture framing, Coherence Exchange speculative intelligence-arbitrage framing, Cognitive Compilation semantic-DAG routing/repair, TokenMana resource-governance pressure, and MoECOT runtime-reference context; the four local mappings (`planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `tokenmana`) now have reviewed passage references. `coherence_exchange` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. Support remains `argument` pending deployed scheduler runs, route traces, tier-adequacy tests, cost-quality results, or accepted evidence transitions.
-- Implemented synthetic Codex test: DAG acyclicity test via `python3 scripts/validate_plan_execution_contracts.py`; deployed scheduler cycle rejection remains open.
-- Planned Codex test: Capability tier assignment test.
-- Implemented Lean proof target: a failed quality predicate routes to escalation or residual under the valid node-outcome predicate.
-- Planned Codex test: deployed scheduler cycle rejection.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
 | `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 

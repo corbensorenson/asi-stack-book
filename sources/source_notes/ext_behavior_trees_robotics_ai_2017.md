@@ -37,8 +37,7 @@ Behavior trees belong in the planning and runtime chapters as an external refere
 
 ## Book Chapters Supported
 
-- `planning-as-a-control-layer` (Planning as a Control Layer)
-- `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
+- `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 

@@ -18,14 +18,14 @@ implementation horizon, or explicit retirement decision.
 
 The Part I pilot, the conservative compression merge, the intent/contracts
 merge, the MoECOT runtime fold, the simulation-fidelity fold, the static
-context ABI merge, and the verification/adversarial-review merge have now
-executed through `book_structure.json`; the current canonical book has 46
+context ABI merge, the verification/adversarial-review merge, and the planning/DAG consolidation have now
+executed through `book_structure.json`; the current canonical book has 45
 manifest chapters. The remaining candidate packages still require their own
 package-specific decision and execution commit before any further manifest
 change. This is not a support-state transition. The current canonical count is
-46 manifest chapters after the executed Part I pilot, conservative compression
+45 manifest chapters after the executed Part I pilot, conservative compression
 merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold,
-static context ABI merge, and verification/adversarial-review merge.
+static context ABI merge, verification/adversarial-review merge, and planning/DAG consolidation.
 
 ## Decision Boundary
 
@@ -89,9 +89,10 @@ Accepted into the roadmap:
   constitutional-alignment plus agency/corrigibility, and consolidate moral
   uncertainty plus fork/exit/audit governance, if review accepts the destination
   drafts.
-- Verification/adversarial review and planning/DAG control remain real merge
-  candidates because they currently carry overlapping source families, claim
-  motions, and chapter skeletons.
+- Verification/adversarial review and planning/DAG control were real merge
+  candidates because they carried overlapping source families, claim motions,
+  and chapter skeletons; both have now executed with their proof/source/history
+  boundaries preserved.
 - Semantic representation remains a fold candidate, not a deletion target. The
   MoECOT runtime fold has executed into a named runtime crosswalk inside
   Routing Heads and Specialist Cores, the simulation-fidelity fold has
@@ -100,7 +101,9 @@ Accepted into the roadmap:
   executed into Command Contracts: From Intent to Executable Work, the static
   context ABI merge has executed into The Virtual Context ABI: Typed Pages,
   Cells, and Certificates, and the verification/adversarial-review merge has
-  executed into Proof-Carrying Claims and Adversarial Review. These executed
+  executed into Proof-Carrying Claims and Adversarial Review, and the
+  planning/DAG consolidation has executed into Planning as a Control Layer:
+  DAGs and Intelligence Arbitrage. These executed
   packages preserve source mappings, proof hooks, implementation-horizon
   facets, restoration conditions, and no-support-state-change boundaries.
 - The 44-chapter aggressive shape and roughly 47-chapter conservative shape
@@ -168,7 +171,7 @@ It records no accepted external review and no support-state effect.
 `deferred_for_release` reader-work outcome for every unexecuted review-ready or
 fold-disposition package in the current queue. It now applies to the remaining
 unexecuted packages only. The reader-curation cycle continues against the
-46-chapter manifest with explicit consolidation caveats while preserving every
+45-chapter manifest with explicit consolidation caveats while preserving every
 unexecuted package for later human or external review.
 
 The public URL/history precondition now has a policy surface:
@@ -231,7 +234,7 @@ merge lowers the chapter count.
 | Intent and executable contracts | `executed` | Use the executed merge as the template for future one-skeleton packages; restore a standalone command-contract chapter only if parser, dispatcher, approval-enforcement, or semantic-interface evidence makes it chapter-owning again. | Reader work should target Command Contracts: From Intent to Executable Work; the archived standalone command-contract reader draft remains historical only. |
 | Static context ABI | `executed` | Use the executed merge as the template for future one-skeleton context packages; restore a standalone semantic-pages chapter only if paired source/derived cells, certificate truthfulness tests, summary-fidelity tests, or independent interoperability evidence makes it chapter-owning again. | Reader work should target The Virtual Context ABI: Typed Pages, Cells, and Certificates; the archived semantic-pages reader draft remains historical only. |
 | Verification and adversarial review | `executed` | Use the executed merge as the template for future proof/review packages; restore a standalone tribunal chapter only if independent tribunal-pipeline evidence, reviewer-independence measurements, adversarial-probe-quality tests, verdict-correctness audits, or institutional contestability evidence makes it chapter-owning again. | Reader work should target Proof-Carrying Claims and Adversarial Review; the archived standalone tribunal reader draft remains historical only. |
-| Planning and DAG control | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the planning/DAG pair unless explicitly deferred or retained; reader curation may continue on semantic IR. |
+| Planning and DAG control | `executed` | Folded PlanForge DAGs and Intelligence Arbitrage into Planning as a Control Layer: DAGs and Intelligence Arbitrage. | Curated prose should target the merged planning chapter; Cognitive Compilation and Semantic IR remains standalone. |
 | Source-blocked MoECOT runtime | `executed` | Use the executed fold as the template for future source-blocked fold packages; restore a standalone chapter only if public-safe runtime, replay, benchmark, and corroboration evidence makes it chapter-owning. | Reader work should target Routing Heads and Specialist Cores plus the folded MoECOT Runtime Crosswalk; the archived standalone reader draft remains historical only. |
 | Simulation fidelity | `executed` | Use the executed fold as the template for future feasibility-bound fold packages; restore a standalone chapter only if public-safe simulation, physical-computation, benchmark-transfer, or independent review evidence makes it chapter-owning. | Reader work should target Resource Economics and Token Budgets plus the folded Simulation Fidelity and Claim Transport section; the archived standalone source manuscript remains historical only. |
 | Semantic representation | `fold_disposition_ready` | Review the fold disposition and decide execute fold after destination-package review, revise, defer, or reject/retain. | Preserve proof/test hooks, semantic-node records, dependency on compression-package review, and reader repairs if folded. |
@@ -254,7 +257,7 @@ blocked until the revision is reviewed.
 | 4 | Intent and executable contracts | Executed on 2026-06-30. | Retired command-contract slug preserved through historical stub; source chapter archived; `human-intent-as-a-formal-input` retained as intent intake; no support-state change. |
 | 5 | Static context ABI | Executed on 2026-06-30. | Retired semantic-pages slug preserved through historical stub; source chapter and curated reader draft archived; transaction/snapshot/taint and verification-bandwidth chapters retained standalone; no support-state change. |
 | 6 | Verification and adversarial review | Merge executed on 2026-06-30. | Retired tribunal slug preserved through historical stub; source chapter and curated reader draft archived; `claim-ledgers-and-belief-revision` retained as the durable belief-revision substrate; no support-state change. |
-| 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep `cognitive-compilation-and-semantic-ir` as the semantic-IR and lowering-receipt layer. |
+| 7 | Planning and DAG control | Executed. | Folded `planforge-dags-and-intelligence-arbitrage` into `planning-as-a-control-layer`; kept `cognitive-compilation-and-semantic-ir` as the semantic-IR and lowering-receipt layer. |
 | 8 | Fold-disposition candidates | Execute fold, revise, defer, or reject/retain. | MoECOT runtime has executed into Routing Heads and Specialist Cores; simulation fidelity has executed into Resource Economics and Token Budgets; semantic representation still has a fold disposition and requires review and decision before any manifest edit. |
 
 Every decision record should name the reviewed package, reviewer or review
@@ -305,7 +308,7 @@ throughline that justifies keeping the separate chapter boundary.
 | 1C | Intent and executable contracts | `intent-to-execution-contracts`; `command-contracts-and-semantic-interfaces` | Executed: merged command-contract semantic-interface material into **Command Contracts: From Intent to Executable Work** while keeping `human-intent-as-a-formal-input` separate. | Preserved intent-to-contract conversion, semantic interface rules, authority fields, execution receipts, validation states, field provenance/confidence, test hooks, proof tags, source mappings, URL stub, archive record, and no-support-state-change boundary. |
 | 1D | Static context ABI | `virtual-context-abi`; `semantic-pages-context-cells-and-certificates` | Executed: merged semantic-pages and context-cell certificate material into **The Virtual Context ABI: Typed Pages, Cells, and Certificates** while keeping `context-transactions-snapshots-mounts-and-taint` and `verification-bandwidth-and-context-adequacy` separate. | Preserved pages, cells, certificates, context addressing, source unions, proof hooks, implementation horizons, URL stub, archive record, and no-support-state-change boundary. |
 | 2A | Verification and adversarial review | `spinoza-verification-and-proof-carrying-claims`; `unified-adaptive-tribunal-and-adversarial-review` | **Proof-Carrying Claims and Adversarial Review** | Preserve proof-carrying claim tiers, tribunal review, adversarial dossiers, dissent, no-theorem-laundering boundaries, proof hooks, harness rows, and source unions. Keep `claim-ledgers-and-belief-revision` separate. |
-| 2B | Planning and DAG control | `planning-as-a-control-layer`; `planforge-dags-and-intelligence-arbitrage` | **Planning as a Control Layer: DAGs and Intelligence Arbitrage** | Preserve control-layer semantics, PlanForge DAGs, intelligence arbitrage, negative cases, proof hooks, and source unions. Keep `cognitive-compilation-and-semantic-ir` separate unless later review shows the IR has no independent chapter ownership. |
+| 2B | Planning and DAG control | `planning-as-a-control-layer`; `planforge-dags-and-intelligence-arbitrage` | Executed: folded PlanForge DAG and intelligence-arbitrage material into **Planning as a Control Layer: DAGs and Intelligence Arbitrage** while keeping `cognitive-compilation-and-semantic-ir` separate. | Preserved control-layer semantics, PlanForge DAGs, intelligence arbitrage, capability tiers, adequacy contracts, cost-quality ledgers, negative cases, proof hooks, source unions, URL stub, archive record, and no-support-state-change boundary. |
 | 2C | Source-blocked MoECOT runtime | `moecot-runtime-and-multi-core-orchestration`; `routing-heads-and-specialist-cores` | Executed: folded MoECOT runtime into Routing Heads and Specialist Cores until public-safe runtime, replay, benchmark, and corroboration evidence makes a standalone chapter chapter-owning again. | Preserved the multi-core orchestration runtime as the named MoECOT Runtime Crosswalk, source queue, proof tags, schema/fixture lane, blocker set, URL stub, archive record, and future chapter-restoration condition. |
 | Fold review | Simulation fidelity | `simulation-fidelity-and-physical-constraints`; `resource-economics-and-token-budgets`; efficient-ASI frame as secondary context only | Executed: folded simulation fidelity into Resource Economics and Token Budgets until public-safe simulation, physical-computation, benchmark-transfer, or independent review evidence makes a standalone chapter chapter-owning again. | Preserved physical/resource bounds, fidelity limitations, simulation contract fields, claim-transport boundaries, proof hooks, source queue, schema/fixture lane, URL stub, archive record, and no-overclaim language as the named Simulation Fidelity and Claim Transport section. |
 | Fold review | Semantic representation | `semantic-representation-and-tree-structured-models`; compression/representation cluster | Fold only if representation remains a substrate facet rather than a chapter-owning artifact, and only after the compression/representation destination package has a reviewed decision. | Preserve tree-structured representation, semantic-node records, source mappings, proof/test hooks, and restoration conditions as a named section or companion note. |
@@ -436,8 +439,6 @@ decisions change the downstream destination shape.
 
 The current deferred-for-release reader-work set is:
 
-- `planning-as-a-control-layer`
-- `planforge-dags-and-intelligence-arbitrage`
 - `semantic-representation-and-tree-structured-models`
 
 Any curated reader prose pass for pending-package chapters must cite

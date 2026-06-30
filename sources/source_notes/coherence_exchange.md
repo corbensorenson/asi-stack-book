@@ -37,7 +37,7 @@ The Coherence Exchange proposes an epistemic-liquidity layer where claims or kno
 - `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - Evidence States and Claim Discipline
 - Security Kernel and Digital SCIFs
-- PlanForge DAGs and Intelligence Arbitrage
+- Planning as a Control Layer: DAGs and Intelligence Arbitrage
 - Claim Ledgers and Belief Revision
 - Proof-Carrying Claims and Adversarial Review
 - Proof-Carrying Claims and Adversarial Review

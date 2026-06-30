@@ -37,7 +37,7 @@ AutoGen belongs in the planning, labor, runtime-adapter, and artifact-graph chap
 
 ## Book Chapters Supported
 
-- `planning-as-a-control-layer` (Planning as a Control Layer)
+- `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `labor-os-and-typed-jobs` (Labor OS and Typed Jobs)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `artifact-graphs-audit-logs-and-replay` (Artifact Graphs, Audit Logs, and Replay)

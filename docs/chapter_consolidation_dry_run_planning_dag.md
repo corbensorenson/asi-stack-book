@@ -1,6 +1,12 @@
 # Chapter Consolidation Dry Run: Planning And DAG Control
 
-Last updated: 2026-06-29
+Last updated: 2026-06-30
+
+Execution note: this dry-run package is historical. The planning/DAG
+consolidation executed on 2026-06-30, preserving this package as lineage while
+moving canonical authority to `book_structure.json`,
+`docs/book_outline.md`, `chapters/planning-as-a-control-layer.qmd`, and
+`docs/chapter_history_ledger.md`.
 
 This is a non-pilot dry-run package required by
 `docs/v1_x_beyond_sota_roadmap.md` and

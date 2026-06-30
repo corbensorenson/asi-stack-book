@@ -8,8 +8,8 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 
 | Metric | Count |
 |---|---:|
-| Manifest chapters | 46 |
-| Chapters with `ext_*` positioning before Source crosswalk | 46 |
+| Manifest chapters | 45 |
+| Chapters with `ext_*` positioning before Source crosswalk | 45 |
 | Chapters with explicit external-baseline exceptions | 0 |
 | Chapters with source-noted external targets but no in-prose positioning yet | 0 |
 | Chapters needing an exception or additional external source assignment | 0 |
@@ -33,7 +33,6 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 | `recursive-self-improvement-boundaries` | `positioned` | `ext_corrigibility_2015`, `ext_model_evaluation_extreme_risks_2023`, `ext_off_switch_game_2016`, `ext_optimal_policies_power_2019` | `ext_corrigibility_2015`, `ext_model_evaluation_extreme_risks_2023`, `ext_off_switch_game_2016`, `ext_optimal_policies_power_2019` | Keep source-note boundary and support-state language honest. |
 | `intent-to-execution-contracts` | `positioned` | `ext_dafny_2010`, `ext_react_2022` | `ext_dafny_2010`, `ext_react_2022` | Keep source-note boundary and support-state language honest. |
 | `planning-as-a-control-layer` | `positioned` | `ext_autogen_2023`, `ext_behavior_trees_robotics_ai_2017`, `ext_integrated_tamp_2020`, `ext_pddl_1998`, `ext_react_2022`, `ext_shop2_2003`, `ext_three_states_plan_fear_2006`, `ext_tla_plus_home_docs`, `ext_tree_of_thoughts_2023` | `ext_autogen_2023`, `ext_behavior_trees_robotics_ai_2017`, `ext_integrated_tamp_2020`, `ext_pddl_1998`, `ext_react_2022`, `ext_shop2_2003`, `ext_three_states_plan_fear_2006`, `ext_tla_plus_home_docs`, `ext_tree_of_thoughts_2023` | Keep source-note boundary and support-state language honest. |
-| `planforge-dags-and-intelligence-arbitrage` | `positioned` | `ext_behavior_trees_robotics_ai_2017`, `ext_integrated_tamp_2020`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_three_states_plan_fear_2006`, `ext_tree_of_thoughts_2023` | `ext_behavior_trees_robotics_ai_2017`, `ext_integrated_tamp_2020`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_three_states_plan_fear_2006`, `ext_tree_of_thoughts_2023` | Keep source-note boundary and support-state language honest. |
 | `cognitive-compilation-and-semantic-ir` | `positioned` | `ext_dreamcoder_2020`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023` | `ext_dreamcoder_2020`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023` | Keep source-note boundary and support-state language honest. |
 | `virtual-context-abi` | `positioned` | `ext_alce_2023`, `ext_longbench_2023`, `ext_longllmlingua_2023`, `ext_lost_in_middle_2023`, `ext_memgpt_2023`, `ext_rag_2020`, `ext_ruler_2024`, `ext_self_rag_2023` | `ext_alce_2023`, `ext_longbench_2023`, `ext_longllmlingua_2023`, `ext_lost_in_middle_2023`, `ext_memgpt_2023`, `ext_rag_2020`, `ext_ruler_2024`, `ext_self_rag_2023` | Keep source-note boundary and support-state language honest. |
 | `context-transactions-snapshots-mounts-and-taint` | `positioned` | `ext_longbench_2023`, `ext_longllmlingua_2023`, `ext_lost_in_middle_2023`, `ext_memgpt_2023`, `ext_rag_2020`, `ext_ruler_2024` | `ext_longbench_2023`, `ext_longllmlingua_2023`, `ext_lost_in_middle_2023`, `ext_memgpt_2023`, `ext_rag_2020`, `ext_ruler_2024` | Keep source-note boundary and support-state language honest. |

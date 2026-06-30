@@ -1,8 +1,10 @@
 # Consolidation Destination Draft: Planning as a Control Layer, DAGs and Intelligence Arbitrage
 
-Last updated: 2026-06-29
+Last updated: 2026-06-30
 
-Status: review-ready draft; human/external review not completed.
+Status: historical destination draft for an executed merge; human/external
+review was not completed, and canonical authority now lives in the surviving
+chapter and manifest.
 
 This is the destination-chapter draft for the non-pilot planning/DAG-control
 consolidation package. It is a review artifact only. It does not edit

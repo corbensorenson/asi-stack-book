@@ -43,8 +43,7 @@ Cognitive Compilation reframes complex generative work as a compiler pipeline. I
 
 - `human-intent-as-a-formal-input` (Human Intent as a Formal Input)
 - `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
-- `planning-as-a-control-layer` (Planning as a Control Layer)
-- `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
+- `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
 - `artifact-graphs-audit-logs-and-replay` (Artifact Graphs, Audit Logs, and Replay)
 - `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)

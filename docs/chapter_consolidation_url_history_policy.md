@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-30
 
-Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, and verification/adversarial-review merge through static historical stubs.
+Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, verification/adversarial-review merge, and planning/DAG consolidation through static historical stubs.
 
 Historical fold baseline: applied to the 2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold, simulation-fidelity fold, and static context ABI merge through static historical stubs.
 
@@ -12,18 +12,18 @@ consolidation package executes. It is a release-control policy, not source
 evidence, not an external review, and not a support-state transition. The
 2026-06-30 Part I pilot, conservative compression merge, intent/contracts
 merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge,
-and verification/adversarial-review merge applied the policy through static
+verification/adversarial-review merge, and planning/DAG consolidation applied the policy through static
 historical stubs and `docs/chapter_history_ledger.md`. The 2026-06-30 Part I,
 conservative compression, MoECOT, simulation-fidelity, static context ABI, and
-verification/adversarial-review execution packages were the historical fold
+verification/adversarial-review, and planning/DAG execution packages were the historical fold
 baseline before and alongside the later intent/contracts merge.
 
 ## Decision Boundary
 
-- The canonical manifest now has 46 chapters after the executed Part I pilot,
+- The canonical manifest now has 45 chapters after the executed Part I pilot,
   conservative compression merge, intent/contracts merge, MoECOT runtime fold,
   simulation-fidelity fold, static context ABI merge, and
-  verification/adversarial-review merge.
+  verification/adversarial-review merge, and planning/DAG consolidation.
 - This policy does not by itself retire, merge, redirect, or remove any chapter; execution commits do that work.
 - A future merge or fold remains blocked until its package explicitly records
   the URL treatment for every retired source chapter.
@@ -87,7 +87,8 @@ Every executed merge or fold must record:
 
 For the Part I alignment/governance pilot, conservative compression merge,
 intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static
-context ABI merge, and verification/adversarial-review merge:
+context ABI merge, verification/adversarial-review merge, and planning/DAG
+consolidation:
 
 | Proposed destination | Continuity URL | Retired source URL treatment |
 |---|---|---|
@@ -99,10 +100,12 @@ context ABI merge, and verification/adversarial-review merge:
 | `resource-economics-and-token-budgets` as **Resource Economics and Token Budgets** | Keep `/chapters/resource-economics-and-token-budgets.html`. | Preserved `/chapters/simulation-fidelity-and-physical-constraints.html` through a static historical stub in the 2026-06-30 simulation-fidelity fold. |
 | `virtual-context-abi` as **The Virtual Context ABI: Typed Pages, Cells, and Certificates** | Keep `/chapters/virtual-context-abi.html`. | Preserved `/chapters/semantic-pages-context-cells-and-certificates.html` through a static historical stub in the 2026-06-30 static context ABI merge. |
 | `spinoza-verification-and-proof-carrying-claims` as **Proof-Carrying Claims and Adversarial Review** | Keep `/chapters/spinoza-verification-and-proof-carrying-claims.html`. | Preserved `/chapters/unified-adaptive-tribunal-and-adversarial-review.html` through a static historical stub in the 2026-06-30 verification/adversarial-review merge. |
+| `planning-as-a-control-layer` as **Planning as a Control Layer: DAGs and Intelligence Arbitrage** | Keep `/chapters/planning-as-a-control-layer.html`. | Preserved `/chapters/planforge-dags-and-intelligence-arbitrage.html` through a static historical stub in the 2026-06-30 planning/DAG consolidation. |
 
 These defaults were applied to the Part I pilot, conservative compression
 merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold,
-static context ABI merge, and verification/adversarial-review merge and remain
+static context ABI merge, verification/adversarial-review merge, and
+planning/DAG consolidation and remain
 defaults for future accepted execution packages.
 
 ## Validation Expectations
@@ -126,7 +129,7 @@ Before a future merge commit is accepted, validation should prove:
 ## Non-Claims
 
 - This policy does not by itself execute a merge or fold.
-- The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, and verification/adversarial-review execution packages, not this policy text alone, implemented eight historical stubs and changed the manifest to 46 chapters.
+- The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, verification/adversarial-review, and planning/DAG execution packages, not this policy text alone, implemented nine historical stubs and changed the manifest to 45 chapters.
 - The 2026-06-30 Part I, conservative compression, MoECOT, simulation-fidelity, and static context ABI execution packages, not this policy text alone, implemented the earlier six historical stubs before the intent/contracts package added another stub.
 - This policy does not approve any destination draft.
 - This policy does not create external review evidence.

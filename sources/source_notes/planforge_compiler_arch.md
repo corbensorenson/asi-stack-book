@@ -37,7 +37,7 @@ PlanForge Compiler Architecture sharpens the planner-as-compiler frame. Agentic 
 
 ## Book Chapters Supported
 
-- `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
+- `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
 
 ## Claims To Add Or Update

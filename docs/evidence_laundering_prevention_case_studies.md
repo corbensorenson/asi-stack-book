@@ -17,7 +17,7 @@ release-control surfaces prevented evidence laundering.
 |---|---|
 | Case-study type | No-promotion / anti-laundering examples |
 | Live examples recorded | 3 |
-| Chapter core support effect | None; all 46 chapter core claims remain `argument`. |
+| Chapter core support effect | None; all 45 chapter core claims remain `argument`. |
 | True demotion/refutation example | Still missing; no chapter core claim is recorded as demoted or refuted by this note. |
 | Reviewer effect | None; this is not accepted external review. |
 

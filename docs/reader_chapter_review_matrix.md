@@ -12,13 +12,13 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 46 |
+| review_status:reviewed | 45 |
 | disposition:companion_note_candidate | 3 |
-| disposition:curated_manuscript_candidate | 43 |
-| disposition:no_immediate_action | 46 |
+| disposition:curated_manuscript_candidate | 42 |
+| disposition:no_immediate_action | 45 |
 | disposition:reader_overlay_active | 20 |
-| release_blocker:format_artifact_not_reviewed | 46 |
-| release_blocker:reader_release_record_not_created | 46 |
+| release_blocker:format_artifact_not_reviewed | 45 |
+| release_blocker:reader_release_record_not_created | 45 |
 
 ## Chapter Queue
 
@@ -38,7 +38,6 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part I - Foundations, Alignment, and Governance | `recursive-self-improvement-boundaries` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `intent-to-execution-contracts` | reviewed | full_chapter_review | 2 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `planning-as-a-control-layer` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `planforge-dags-and-intelligence-arbitrage` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `cognitive-compilation-and-semantic-ir` | reviewed | full_chapter_review | 0 | no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `virtual-context-abi` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `context-transactions-snapshots-mounts-and-taint` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |

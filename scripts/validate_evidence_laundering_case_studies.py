@@ -30,7 +30,7 @@ REQUIRED_REFS = (
 
 BOUNDARY_FRAGMENTS = (
     "No-promotion / anti-laundering examples",
-    "all 46 chapter core claims remain `argument`",
+    "all 45 chapter core claims remain `argument`",
     "True demotion/refutation example | Still missing",
     "not a new evidence-transition record",
     "not a demotion/refutation event",

@@ -352,7 +352,7 @@
     },
     {
       "tag": "lean:planforge.dag.operational_invariant",
-      "chapter_id": "planforge-dags-and-intelligence-arbitrage",
+      "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.PlanForge",
       "formal_target": "A dispatchable plan graph is acyclic and all dependencies precede dependents.",
       "target_status": "implemented",
@@ -362,7 +362,7 @@
     },
     {
       "tag": "lean:planforge.dag.failure_blocks_promotion",
-      "chapter_id": "planforge-dags-and-intelligence-arbitrage",
+      "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.PlanForge",
       "formal_target": "A node whose quality predicate fails must escalate or emit a residual.",
       "target_status": "implemented",

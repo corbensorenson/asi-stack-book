@@ -40,7 +40,7 @@ Software Magic Grimoire treats engineering vocabulary as operative language. A s
 
 - `human-intent-as-a-formal-input` (Human Intent as a Formal Input)
 - `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
-- `planning-as-a-control-layer` (Planning as a Control Layer)
+- `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `labor-os-and-typed-jobs` (Labor OS and Typed Jobs)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 

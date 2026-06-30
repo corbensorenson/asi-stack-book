@@ -39,7 +39,7 @@ TokenMana proposes regenerative capacity mechanisms for AI usage pricing and res
 
 ## Book Chapters Supported
 
-- `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
+- `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets; includes Simulation Fidelity and Claim Transport)

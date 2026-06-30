@@ -8,7 +8,7 @@ cycle in `docs/v1_x_active_evidence_cycle.md`. It is a planning and
 release-control surface, not evidence, not an accepted review, and not a
 support-state transition.
 
-The book remains broad, but this cycle does not try to make all 46 chapter
+The book remains broad, but this cycle does not try to make all 45 chapter
 claims equally defensible. It selects five contribution tracks for v1.x focus
 and marks three of them as deep-work tracks. The other two remain selected but
 supporting for this cycle.
@@ -20,8 +20,8 @@ supporting for this cycle.
 | Selected contribution tracks | 5 |
 | Deep-work tracks this cycle | 3 |
 | Deep-work cap | At most 3 tracks per v1.x cycle |
-| Active evidence-cycle lanes | 7 selected chapter lanes, 39 planned-only lanes |
-| Chapter core support effect | None; all 46 chapter core claims remain `argument`. |
+| Active evidence-cycle lanes | 7 selected chapter lanes, 38 planned-only lanes |
+| Chapter core support effect | None; all 45 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to accepted records only. |
 | Release effect | None; no reader, ebook, PDF, DOCX, audio, DOI, or archive artifact is approved. |
 
@@ -56,7 +56,7 @@ tracks, but this cycle should not widen into five simultaneous deep campaigns.
 
 - `docs/v1_x_active_evidence_cycle.md` remains the source for selected chapter
   lanes and planned-only lanes.
-- `docs/per_chapter_evidence_plan.md` remains the 46-chapter backlog.
+- `docs/per_chapter_evidence_plan.md` remains the 45-chapter backlog.
 - This record does not create new fixtures, tests, source records, proof
   results, external-review results, or support-state transitions.
 - This record does not promote any chapter core claim above `argument`.

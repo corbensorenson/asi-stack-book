@@ -15,8 +15,10 @@ Public review request issue:
 This packet does not edit `book_structure.json`, merge chapters, fold chapters,
 delete rendered pages, change URLs, change source mappings, change proof
 targets, change support states, approve reader artifacts, or create an
-external-review result. It is a request surface. A future review response must
-be recorded separately before it is treated as accepted review input.
+external-review result. It is a request surface and historical review index.
+Executed packages are marked as executed here only to prevent duplicate review
+work; their canonical authority lives in the manifest, chapter history ledger,
+and execution commits.
 
 Reviewer comments are review input, not source evidence, proof results,
 benchmark evidence, support-state promotion, or artifact approval. Reviewers
@@ -95,20 +97,20 @@ Optional context:
 
 ## Decision Queue Under Review
 
-The current default is no manifest edit. Each package needs a reviewed
-decision before execution.
+The current default is no further manifest edit. Executed rows are historical.
+Remaining unexecuted rows still need a reviewed decision before execution.
 
 | Order | Package | Current state | Review decision needed |
 |---|---|---|---|
-| 1 | Constitutional Alignment: Agency, Dignity, and Corrigibility | `review_ready` | Execute, revise, defer, reject, or no opinion. |
-| 2 | Moral Uncertainty, Value Conflict, and Contestable Governance | `review_ready` | Execute, revise, defer, reject, or no opinion. |
-| 3 | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | `review_ready` | Execute full merge, execute conservative merge, revise, defer, reject, or no opinion. |
-| 4 | Command Contracts: From Intent to Executable Work | `review_ready` | Execute, revise, defer, reject, or no opinion. |
-| 5 | The Virtual Context ABI: Typed Pages, Cells, and Certificates | `review_ready` | Execute, revise, defer, reject, or no opinion. |
-| 6 | Proof-Carrying Claims and Adversarial Review | `review_ready` | Execute, revise, defer, reject, or no opinion. |
-| 7 | Planning as a Control Layer: DAGs and Intelligence Arbitrage | `review_ready` | Execute, revise, defer, reject, or no opinion. |
-| 8 | MoECOT Runtime Crosswalk fold | `fold_disposition_ready` | Execute fold, revise, defer, reject/retain, or no opinion. |
-| 9 | Simulation Fidelity and Claim Transport fold | `fold_disposition_ready` | Execute fold, revise, defer, reject/retain, or no opinion. |
+| 1 | Constitutional Alignment: Agency, Dignity, and Corrigibility | `executed` | Historical; no duplicate review needed unless restoration evidence appears. |
+| 2 | Moral Uncertainty, Value Conflict, and Contestable Governance | `executed` | Historical; no duplicate review needed unless restoration evidence appears. |
+| 3 | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | `executed` | Conservative merge executed; no duplicate review needed unless restoration evidence appears. |
+| 4 | Command Contracts: From Intent to Executable Work | `executed` | Historical; no duplicate review needed unless command-interface evidence makes a standalone chapter chapter-owning again. |
+| 5 | The Virtual Context ABI: Typed Pages, Cells, and Certificates | `executed` | Historical; no duplicate review needed unless semantic-page evidence makes a standalone chapter chapter-owning again. |
+| 6 | Proof-Carrying Claims and Adversarial Review | `executed` | Historical; no duplicate review needed unless tribunal-pipeline evidence makes a standalone chapter chapter-owning again. |
+| 7 | Planning as a Control Layer: DAGs and Intelligence Arbitrage | `executed` | Historical; no duplicate review needed unless PlanForge scheduler evidence makes a standalone chapter chapter-owning again. |
+| 8 | MoECOT Runtime Crosswalk fold | `executed` | Historical; no duplicate review needed unless public-safe runtime evidence makes a standalone chapter chapter-owning again. |
+| 9 | Simulation Fidelity and Claim Transport fold | `executed` | Historical; no duplicate review needed unless public-safe simulator or transfer evidence makes a standalone chapter chapter-owning again. |
 | 10 | Semantic Representation Leasing fold | `fold_disposition_ready` | Execute fold after destination-package review, revise, defer, reject/retain, or no opinion. |
 
 If any package is accepted for execution, it should still be executed one

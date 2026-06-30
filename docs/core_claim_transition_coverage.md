@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 46 |
+| Manifest chapter core claims | 45 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 24 |
+| Accepted explicit no-promotion decisions | 23 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -62,7 +62,6 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `labor-os-and-typed-jobs.core` | Labor OS and Typed Jobs | `argument_only` | no deployed job lifecycle; no live approval service; no command-to-effect replay |
 | `mathematical-and-search-substrates.core` | Mathematical and Search Substrates | `argument_only` | no substrate benchmark; no baseline comparison; no measured adoption benefit |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | Personal Compute Hives and Federated Edge Intelligence | `argument_only` | no personal hive implementation; no federation runtime; no compute-market or edge benchmark |
-| `planforge-dags-and-intelligence-arbitrage.core` | PlanForge DAGs and Intelligence Arbitrage | `argument_only` | no real scheduler behavior; no measured arbitrage result; no route-quality benchmark |
 | `policy-optimization-and-learning-from-feedback.core` | Policy Optimization and Learning from Feedback | `argument_only` | no local policy optimization run; no update-quality measurement; no deployment or rollback trace |
 | `procedural-memory-and-cognitive-loop-closure.core` | Procedural Memory and Cognitive Loop Closure | `argument_only` | no loop-closure implementation; no reusable tool regression evidence; no deployed procedural-memory route |
 | `project-theseus-as-report-first-implementation-reference.core` | Project Theseus as Report-First Implementation Reference | `argument_only` | static architecture-gate import exists only as implementation-reference evidence; no clean live report bundle; no accepted Theseus gate replay; no general capability evidence |

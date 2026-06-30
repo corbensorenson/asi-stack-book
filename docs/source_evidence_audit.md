@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 46 |
-| Assigned source/chapter pairs | 430 |
-| Exact claim-source mappings | 430 |
+| Chapters audited | 45 |
+| Assigned source/chapter pairs | 427 |
+| Exact claim-source mappings | 427 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 430 |
-| Source notes listing assigned chapter | 430 |
-| Passage-reviewed mappings recorded | 430 |
-| Support-state counts | {"argument": 46} |
+| Source notes present for assigned pairs | 427 |
+| Source notes listing assigned chapter | 427 |
+| Passage-reviewed mappings recorded | 427 |
+| Support-state counts | {"argument": 45} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -46,8 +46,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `intent-to-execution-contracts` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `planforge-dags-and-intelligence-arbitrage` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `planning-as-a-control-layer` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `virtual-context-abi` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `context-transactions-snapshots-mounts-and-taint` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -87,8 +86,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | Source ID | Assigned chapter count | Source note exists |
 |---|---:|---|
 | `viea` | 23 | yes |
-| `moecot` | 23 | yes |
 | `talos` | 22 | yes |
+| `moecot` | 22 | yes |
 | `scf` | 15 | yes |
 | `spinoza` | 15 | yes |
 | `rmi` | 14 | yes |
@@ -96,15 +95,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `vcm_public` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
 | `coherence_exchange` | 11 | yes |
-| `planforge` | 11 | yes |
 | `cognitive_loop_closure` | 11 | yes |
 | `genesiscode` | 10 | yes |
+| `planforge` | 10 | yes |
 | `cgs` | 8 | yes |
 | `verification_bandwidth` | 8 | yes |
-| `cognitive_compilation` | 8 | yes |
 | `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
 | `ladon_manhattan` | 7 | yes |
+| `cognitive_compilation` | 7 | yes |
 | `alignment_field` | 7 | yes |
 | `field_of_god_ai_constitution` | 7 | yes |
 | `theseus_self_evolution_system` | 7 | yes |
@@ -286,12 +285,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
-| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
-| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `planforge_compiler_arch` | mapped | note present | chapter listed | passage-reviewed |
-| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
-| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
-| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
-| `planforge-dags-and-intelligence-arbitrage.core` | `planforge-dags-and-intelligence-arbitrage` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `planforge_compiler_arch` | mapped | note present | chapter listed | passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `planforge_compiler_arch` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |

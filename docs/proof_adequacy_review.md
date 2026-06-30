@@ -81,8 +81,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `security-kernel-and-digital-scifs` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `recursive-self-improvement-boundaries` | 2 | needs richer state-machine or review semantics | Model lifecycle, review, timing, and adversarial states before adequacy. |
 | `intent-to-execution-contracts` | 4 | useful but too narrow | Retain `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` as finite guards; add state-machine, parser/dispatcher, prompt-override, approval, and replayed trace tests before stronger claims. |
-| `planning-as-a-control-layer` | 2 | useful but too narrow | Plan-control record envelope added; still add decomposition, context-demand, runtime replanning, and planner-quality tests. |
-| `planforge-dags-and-intelligence-arbitrage` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
+| `planning-as-a-control-layer` | 4 | useful but too narrow | Plan-control and folded PlanForge DAG record envelopes are useful guards; still add decomposition, context-demand, dependency-ordering, route-selection, selected-tier adequacy, cost-quality, runtime replanning, and planner-quality tests before stronger claims. |
 | `cognitive-compilation-and-semantic-ir` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `virtual-context-abi` | 4 | needs executable tests first | Add deterministic resolver, admission, certificate-truthfulness, summary-fidelity, omission, and interoperability fixtures/harnesses before stronger formalization. |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |

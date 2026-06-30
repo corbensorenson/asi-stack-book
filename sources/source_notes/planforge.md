@@ -35,8 +35,7 @@ PlanForge is a planning middleware layer that compiles natural-language goals in
 ## Book Chapters Supported
 
 - Human Intent as a Formal Input
-- Planning as a Control Layer
-- PlanForge DAGs and Intelligence Arbitrage
+- Planning as a Control Layer: DAGs and Intelligence Arbitrage
 - Intent-to-Execution Contracts
 - Resource Economics and Token Budgets
 - Fast Generation Architectures

@@ -48,7 +48,7 @@ A future A+ version should be:
 
 ## Defended Contribution Tracks
 
-The project should not try to make all 46 chapters equally defensible in the
+The project should not try to make all 45 chapters equally defensible in the
 next cycle. It should select three to five contribution tracks and push those to
 real depth.
 
@@ -109,7 +109,7 @@ A skeptical visitor should not have to inspect the repository to discover that
 the project is honest. The README, landing page, and Human view should make
 these facts visible quickly:
 
-- all 46 chapter core claims remain `argument`;
+- all 45 chapter core claims remain `argument`;
 - three bounded non-core transitions exist and are narrow;
 - Lean coverage is broad but still shallow in safety-critical areas;
 - external literature is an active grounding workstream, not a completed claim

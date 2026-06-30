@@ -36,8 +36,7 @@ SHOP2 belongs in the planning chapters as an external reference for hierarchical
 
 ## Book Chapters Supported
 
-- `planning-as-a-control-layer` (Planning as a Control Layer)
-- `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
+- `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
 - `prototype-roadmap` (Prototype Roadmap)
 

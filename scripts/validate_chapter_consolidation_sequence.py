@@ -42,7 +42,6 @@ REQUIRED_IDS = {
     "spinoza-verification-and-proof-carrying-claims",
     "claim-ledgers-and-belief-revision",
     "planning-as-a-control-layer",
-    "planforge-dags-and-intelligence-arbitrage",
     "cognitive-compilation-and-semantic-ir",
     "routing-heads-and-specialist-cores",
     "resource-economics-and-token-budgets",
@@ -64,7 +63,7 @@ REQUIRED_IDS = {
 REQUIRED_FRAGMENTS = (
     "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
-    "46 manifest chapters after the executed Part I pilot",
+    "45 manifest chapters after the executed Part I pilot",
     "Do not run a broad 54-to-44 manifest edit",
     "Do not target a fixed chapter count.",
     "Do not delete ideas merely to reduce repetition.",
@@ -101,7 +100,7 @@ REQUIRED_FRAGMENTS = (
     "Intent and executable contracts | `executed`",
     "Static context ABI | `executed`",
     "Verification and adversarial review | `executed`",
-    "Planning and DAG control | `review_ready`",
+    "Planning and DAG control | `executed`",
     "Source-blocked MoECOT runtime | `executed`",
     "Simulation fidelity | `executed`",
     "Semantic representation | `fold_disposition_ready`",
@@ -515,7 +514,7 @@ PLANNING_DAG_REQUIRED_FRAGMENTS = (
 
 PLANNING_DAG_DRAFT_REQUIRED_FRAGMENTS = (
     "Consolidation Destination Draft: Planning as a Control Layer, DAGs and Intelligence Arbitrage",
-    "Status: review-ready draft; human/external review not completed.",
+    "Status: historical destination draft for an executed merge",
     "does not edit",
     "Destination continuity ID: `planning-as-a-control-layer`",
     "Proposed displayed title: **Planning as a Control Layer: DAGs and Intelligence",
@@ -542,7 +541,6 @@ PLANNING_DAG_DRAFT_REQUIRED_FRAGMENTS = (
 
 PLANNING_DAG_REQUIRED_IDS = {
     "planning-as-a-control-layer",
-    "planforge-dags-and-intelligence-arbitrage",
     "cognitive-compilation-and-semantic-ir",
 }
 
@@ -858,7 +856,7 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "does not execute any additional remaining merge or fold",
     "does not create external review",
     "does not change support states",
-    "The current canonical manifest has 46 chapters after the executed Part I pilot",
+    "The current canonical manifest has 45 chapters after the executed Part I pilot",
     "Reader Curation Outcome Table",
     "Constitutional alignment and agency/corrigibility",
     "Value conflict and contestable governance",
@@ -883,8 +881,8 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, and verification/adversarial-review merge",
-    "The canonical manifest now has 46 chapters after the executed Part I pilot",
+    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, verification/adversarial-review merge, and planning/DAG consolidation",
+    "The canonical manifest now has 45 chapters after the executed Part I pilot",
     "If a retired public chapter URL cannot be preserved or deliberately recorded",
     "Default URL Policy",
     "Keep the destination chapter's existing stable ID and public URL",
@@ -899,9 +897,11 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/moecot-runtime-and-multi-core-orchestration.html",
     "/chapters/simulation-fidelity-and-physical-constraints.html",
     "/chapters/semantic-pages-context-cells-and-certificates.html",
+    "/chapters/unified-adaptive-tribunal-and-adversarial-review.html",
+    "/chapters/planforge-dags-and-intelligence-arbitrage.html",
     "Validation Expectations",
     "Non-Claims",
-    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, and verification/adversarial-review execution",
+    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, verification/adversarial-review, and planning/DAG execution",
 )
 
 
@@ -934,8 +934,8 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 46:
-        errors.append("Consolidation sequence expects the current manifest to have 46 chapters after the verification/adversarial-review merge.")
+    if len(ids) != 45:
+        errors.append("Consolidation sequence expects the current manifest to have 45 chapters after the planning/DAG consolidation.")
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -1241,9 +1241,11 @@ def main() -> None:
 
     for chapter_id in sorted(PLANNING_DAG_REQUIRED_IDS):
         if chapter_id not in ids:
-            errors.append(f"Planning/DAG chapter ID is missing from manifest: {chapter_id}")
+            errors.append(f"Planning/DAG active chapter ID is missing from manifest: {chapter_id}")
         if f"`{chapter_id}`" not in planning_dag:
             errors.append(f"Planning/DAG dry run does not mention `{chapter_id}`.")
+    if "`planforge-dags-and-intelligence-arbitrage`" not in planning_dag:
+        errors.append("Planning/DAG dry run does not mention retired source chapter `planforge-dags-and-intelligence-arbitrage`.")
 
     for source_id in sorted(PLANNING_DAG_REQUIRED_SOURCE_IDS):
         if f"`{source_id}`" not in planning_dag:
@@ -1273,9 +1275,11 @@ def main() -> None:
 
     for chapter_id in sorted(PLANNING_DAG_REQUIRED_IDS):
         if chapter_id not in ids:
-            errors.append(f"Planning/DAG destination chapter ID is missing from manifest: {chapter_id}")
+            errors.append(f"Planning/DAG active destination chapter ID is missing from manifest: {chapter_id}")
         if f"`{chapter_id}`" not in planning_dag_draft:
             errors.append(f"Planning/DAG destination draft does not mention `{chapter_id}`.")
+    if "`planforge-dags-and-intelligence-arbitrage`" not in planning_dag_draft:
+        errors.append("Planning/DAG destination draft does not mention retired source chapter `planforge-dags-and-intelligence-arbitrage`.")
 
     for source_id in sorted(PLANNING_DAG_REQUIRED_SOURCE_IDS):
         if f"`{source_id}`" not in planning_dag_draft:
@@ -1443,7 +1447,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "46-chapter manifest, executed Part I pilot, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, executed simulation-fidelity fold, executed static context ABI merge, and executed verification/adversarial-review merge recorded with remaining candidate sequence."
+        "45-chapter manifest, executed Part I pilot, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, executed simulation-fidelity fold, executed static context ABI merge, executed verification/adversarial-review merge, and executed planning/DAG consolidation recorded with remaining candidate sequence."
     )
 
 

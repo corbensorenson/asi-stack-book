@@ -2768,7 +2768,7 @@
         },
         {
           "id": "planning-as-a-control-layer",
-          "title": "Planning as a Control Layer",
+          "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
           "file": "chapters/planning-as-a-control-layer.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
@@ -2778,49 +2778,72 @@
             "viea",
             "cognitive_compilation",
             "software_magic_grimoire",
-            "moecot"
+            "moecot",
+            "planforge_compiler_arch",
+            "coherence_exchange",
+            "tokenmana"
           ],
           "source_queue": {
             "primary": [
               "planforge",
-              "viea"
+              "viea",
+              "planforge_compiler_arch"
             ],
             "supporting": [
               "cognitive_compilation",
-              "software_magic_grimoire"
+              "software_magic_grimoire",
+              "tokenmana"
             ],
             "variants": [],
             "connector_or_recovery": [
-              "moecot"
+              "moecot",
+              "coherence_exchange"
             ],
-            "handoff_or_recovery_notes": []
+            "handoff_or_recovery_notes": [
+              "Folded PlanForge DAGs and Intelligence Arbitrage into this planning-control chapter on 2026-06-30; Cognitive Compilation and Semantic IR remains standalone."
+            ]
           },
-          "problem": "Goals need to become governed plans with dependencies, budgets, risk limits, tool choices, and stopping conditions.",
-          "insufficient": "Planning cannot be collapsed into memory, reasoning, or execution because each layer has different authority and failure modes.",
-          "core_claim": "Planning is a separate control layer that converts accepted goals into governed action without owning memory, reasoning, or side effects.",
+          "problem": "Accepted goals need governed plan graphs whose dependencies, authority requirements, context demands, capability tiers, budgets, adequacy contracts, verification burdens, stop conditions, dispatch receipts, escalation paths, and residuals remain inspectable before execution.",
+          "insufficient": "Planning cannot be collapsed into prompting, memory, reasoning, routing, or execution because each layer has different authority and failure modes, and cheap route selection is not trustworthy unless adequacy, verification, and residual cost remain attached.",
+          "core_claim": "Planning should be a separate control layer that turns accepted command contracts into schedulable DAGs with explicit dependencies, authority ceilings, context demands, capability-tier assignments, adequacy contracts, verification burdens, cost/quality ledgers, escalation routes, and residuals.",
           "mechanism": [
-            "Compile goals into strategic, tactical, and runtime plans.",
-            "Represent assumptions, task graph, dependency graph, required context, tools, worker requirements, authority requirements, budgets, verification plan, replanning policy, stopping conditions, and failure behavior.",
-            "Delegate execution through typed contracts."
+            "Compile accepted command contracts into strategic, tactical, and runtime plan graphs with assumptions, task nodes, dependencies, required context, tools, authority requirements, budgets, verification plans, replanning policy, stopping conditions, and failure behavior.",
+            "Represent plan node lifecycle states so proposed, blocked, review-only, dispatchable, dispatched, replanned, residualized, and stopped work cannot be confused with authorized execution.",
+            "Specialize the plan graph into a schedulable PlanForge DAG whose nodes carry capability tiers, adequacy contracts, quality predicates, route assignments, merge conditions, escalation paths, and cost-quality ledgers.",
+            "Delegate only dispatchable nodes through receipts to Semantic IR and typed jobs while preserving blocked nodes, rejected routes, local repair deltas, and non-claims."
           ],
           "interfaces": [
-            "Alignment filters goals.",
-            "VCM supplies context packets.",
-            "Routing selects specialists.",
-            "Execution runs typed jobs."
+            "Alignment filters goals before planning.",
+            "VCM supplies context packets and context adequacy records.",
+            "Routing consumes capability requirements, adequacy contracts, route assignments, and escalation paths.",
+            "Cognitive Compilation lowers accepted plan obligations into semantic IR.",
+            "Labor OS and runtime adapters execute only typed jobs derived from dispatch receipts.",
+            "Evidence ledgers record assumptions, cost-quality decisions, residuals, verification results, and replanning events."
           ],
           "invariants": [
             "Plans expose constraints and stop conditions.",
             "Runtime replanning preserves authority limits.",
-            "Tool selection is justified by task requirements."
+            "Tool selection is justified by task requirements.",
+            "Only dispatchable nodes lower into typed jobs.",
+            "Candidate routes, blocked nodes, and review notes are not executable permission.",
+            "Dependency order is respected before dispatch.",
+            "Cost savings do not remove required verification.",
+            "Failed quality predicates route to escalation or residuals.",
+            "Merge gates compare assumptions, source versions, authority ceilings, and quality predicates before parallel branches are accepted together."
           ],
           "failure_modes": [
             "Scope creep.",
             "Planning without replanning.",
-            "Tool choice exceeds authority or budget."
+            "Tool choice exceeds authority or budget.",
+            "Dispatch laundering, where a proposed or blocked node becomes a job because it appears in the graph.",
+            "Replanning erasure, where feedback changes the plan while hiding the authority, stop-condition, or residual delta.",
+            "Wrong capability-tier selection, where a cheap route produces plausible but inadequate work.",
+            "Dependency cycles, where a graph looks planned while no valid dispatch order exists.",
+            "Merge laundering, where parallel branches pass locally while relying on conflicting assumptions or source versions.",
+            "Arbitrage laundering, where verification, repair, or human cleanup is moved outside the cost-quality ledger."
           ],
-          "minimal_implementation": "A plan graph format with assumptions, task graph, dependencies, context and tool requirements, authority requirements, budgets, verification plan, replanning policy, stop conditions, and failure behavior.",
-          "beyond_state_of_art": "The mature version is a live control plane for work, not a better brainstorming step. It receives accepted command contracts, builds and maintains plan graphs, and decides which nodes are merely proposed, blocked, reviewable, dispatchable, dispatched, replanned, or stopped. It never owns memory, authority, verification, or side effects; it coordinates the handoffs that let those layers do their own jobs. As a control layer, planning is useful even when nothing executes. The planner can expose that a request is underspecified, a dependency is cyclic, a source is inadequate, a verifier is missing, a tool exceeds authority, a budget cannot support the quality predicate, or a stop condition has fired. Those outputs become plan residuals, not hidden failures.",
+          "minimal_implementation": "A public plan graph plus PlanForge DAG record surface with fixtures and validation for lifecycle states, dependency order, dispatch receipts, authority, capability tiers, adequacy contracts, cost-quality ledgers, residuals, invalid cycles, contract mismatch, requirement loss, unreceipted dispatch, and approval bypass, while leaving decomposition quality, selected-tier adequacy, route quality, runtime replanning, and deployed scheduler behavior unclaimed.",
+          "beyond_state_of_art": "The mature version is a governed scheduler and capacity allocator for cognitive work. It receives accepted command contracts, builds and maintains plan graphs, and decides which nodes are proposed, blocked, reviewable, dispatchable, dispatched, replanned, residualized, or stopped. It never owns memory, authority, verification, or side effects; it coordinates the handoffs that let those layers do their own jobs. Each node carries dependency order, context demand, authority state, capability tier, adequacy contract, verifier, cost envelope, route assignment, merge condition, escalation path, and residual behavior. Intelligence arbitrage is measured only after verification, repair, merge, human review, and residual cost are counted, so cheaper work is accepted only when it satisfies the node adequacy contract and remains useful to downstream dependents.",
           "codex_tests": [
             "Decomposition accuracy test",
             {
@@ -2829,7 +2852,18 @@
               "result_status": "passes via synthetic plan-execution contract harness"
             },
             "Context-demand prediction test",
-            "Runtime replanning test"
+            "Runtime replanning test",
+            {
+              "name": "DAG acyclicity test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no deployed scheduler claim"
+            },
+            "Capability tier assignment test",
+            {
+              "name": "Failed-quality fallback finite-record proof",
+              "implementation_status": "implemented",
+              "result_status": "builds in AsiStackProofs.PlanForge; no deployed scheduler claim"
+            }
           ],
           "lean_module": "AsiStackProofs.Planning",
           "proof_targets": [
@@ -2844,160 +2878,7 @@
               "module": "AsiStackProofs.Planning",
               "target": "A plan with unsatisfied required constraints cannot be dispatched.",
               "status": "implemented"
-            }
-          ],
-          "claim_source_mappings": [
-            {
-              "source_id": "planforge",
-              "mapped_support": "Defines planning middleware that decouples planning from execution through hierarchical decomposition, primitive action schemas, plan optimization, dependency inference, scheduling, minimum viable intelligence tiering, fallback requirements, and failure-driven replanning.",
-              "limits": "Conceptual whitepaper only here; no verified implementation, scheduler run, acyclicity checker, or benchmark result is present.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/planforge.txt:14-33",
-                "sources/raw/google_docs/planforge.txt:39-46",
-                "sources/raw/google_docs/planforge.txt:52-79",
-                "sources/raw/google_docs/planforge.txt:85-130",
-                "sources/raw/google_docs/planforge.txt:136-140",
-                "sources/raw/google_docs/planforge.txt:156-163",
-                "sources/raw/google_docs/planforge.txt:178-188"
-              ],
-              "passage_review_note": "Reviewed local raw cache for planning middleware, planning/execution decoupling, recursive decomposition, plan optimization and verification, dependency inference, MVI tiering, worker scheduling, execution handoff, replanning hooks, primitive schema, and high-impact approval gates; no scheduler run, acyclicity checker, benchmark, or implementation result is promoted."
             },
-            {
-              "source_id": "viea",
-              "mapped_support": "Supports the accepted-command-to-artifact spine with orchestration, routing, workflow-to-tool compilation, verification, runtime adapters, feedback, residuals, tools, benchmarks, and regression coverage.",
-              "limits": "Architecture proposal only; does not prove a deployed planner, runtime handoff, or end-to-end execution trace.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/viea.txt:14-17",
-                "sources/raw/google_docs/viea.txt:40-59",
-                "sources/raw/google_docs/viea.txt:60-67",
-                "sources/raw/google_docs/viea.txt:81-92",
-                "sources/raw/google_docs/viea.txt:138-173",
-                "sources/raw/google_docs/viea.txt:564-578",
-                "sources/raw/google_docs/viea.txt:582-595",
-                "sources/raw/google_docs/viea.txt:790-837",
-                "sources/raw/google_docs/viea.txt:1025-1052"
-              ],
-              "passage_review_note": "Reviewed local raw cache for the intent-to-execution spine, command contracts, artifact graph, orchestration/routing, bounded specialist modules, verification, workflow compilation, runtime adapters, feedback, residuals, and MVP vertical-loop components; no deployed planner, runtime handoff, or end-to-end execution trace is promoted."
-            },
-            {
-              "source_id": "cognitive_compilation",
-              "mapped_support": "Supports separating plan formation, semantic compilation, target compilation, execution, and repair while converting goals, constraints, interfaces, resources, and quality gates into source plans, typed semantic atoms, DAGs, validators, and repairable artifacts.",
-              "limits": "No local compiler, planner harness, task trace suite, or empirical ablation validates planning quality or repair locality.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/cognitive_compilation.txt:4-27",
-                "sources/raw/google_docs/cognitive_compilation.txt:31-58",
-                "sources/raw/google_docs/cognitive_compilation.txt:64-105",
-                "sources/raw/google_docs/cognitive_compilation.txt:114-145",
-                "sources/raw/google_docs/cognitive_compilation.txt:244-259",
-                "sources/raw/google_docs/cognitive_compilation.txt:304-327",
-                "sources/raw/google_docs/cognitive_compilation.txt:331-390",
-                "sources/raw/google_docs/cognitive_compilation.txt:428-437"
-              ],
-              "passage_review_note": "Reviewed local raw cache for plan formation, source-plan contracts, typed semantic DAGs, dependencies, capability/cost annotations, critical-path scheduling, localized repair, planner/executor context separation, append-only traces, implementation components, and validator-controlled outputs; no compiler prototype, planner harness, trace suite, or ablation result is promoted."
-            },
-            {
-              "source_id": "software_magic_grimoire",
-              "mapped_support": "Supports workflow control through named spell stacks with handoff artifacts, guards, entry rules, exit rules, loops, recursion, recovery paths, evidence-advancing loops, and mode separation.",
-              "limits": "Operational vocabulary only; no workflow engine, prompt-stack benchmark, or behavioral planning test is present.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/software_magic_grimoire.txt:69-82",
-                "sources/raw/google_docs/software_magic_grimoire.txt:129-152",
-                "sources/raw/google_docs/software_magic_grimoire.txt:575-598",
-                "sources/raw/google_docs/software_magic_grimoire.txt:3158-3188",
-                "sources/raw/google_docs/software_magic_grimoire.txt:3192-3235",
-                "sources/raw/google_docs/software_magic_grimoire.txt:3235-3275",
-                "sources/raw/google_docs/software_magic_grimoire.txt:3275-3295",
-                "sources/raw/google_docs/software_magic_grimoire.txt:3380-3407",
-                "sources/raw/google_docs/software_magic_grimoire.txt:3408-3429",
-                "sources/raw/google_docs/software_magic_grimoire.txt:3451-3471"
-              ],
-              "passage_review_note": "Reviewed local raw cache for bounded instruction artifacts, artifact boundaries, invariants, output shapes, verification, failure behavior, spell stacks, handoff artifacts, guards, entry/exit rules, loops, recursion, recovery paths, evidence-based iteration, release gates, stack identity, and stack failure modes; no workflow engine, prompt-stack benchmark, or behavioral planning test is promoted."
-            },
-            {
-              "source_id": "moecot",
-              "mapped_support": "Supports implementation-reference context for a compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, residual tracking, promotion blockers, and handoff.",
-              "limits": "Runtime and benchmark claims remain source-reported context until code, logs, release artifacts, or reproduced benchmarks are available.",
-              "passage_refs": [
-                "sources/source_notes/moecot.md:11-20",
-                "sources/source_notes/moecot.md:22-32",
-                "sources/source_notes/moecot.md:61-68"
-              ],
-              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
-              "passage_review_state": "reviewed"
-            }
-          ]
-        },
-        {
-          "id": "planforge-dags-and-intelligence-arbitrage",
-          "title": "PlanForge DAGs and Intelligence Arbitrage",
-          "file": "chapters/planforge-dags-and-intelligence-arbitrage.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "planforge",
-            "planforge_compiler_arch",
-            "coherence_exchange",
-            "cognitive_compilation",
-            "tokenmana",
-            "moecot"
-          ],
-          "source_queue": {
-            "primary": [
-              "planforge",
-              "planforge_compiler_arch"
-            ],
-            "supporting": [
-              "coherence_exchange",
-              "cognitive_compilation",
-              "tokenmana"
-            ],
-            "variants": [],
-            "connector_or_recovery": [
-              "moecot"
-            ],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "Large tasks require decomposition, scheduling, tiered model selection, and cost-aware routing.",
-          "insufficient": "Uniformly applying the strongest model to every task wastes compute and can obscure which tasks require verification or escalation.",
-          "core_claim": "PlanForge-style DAG planning can support intelligence arbitrage by assigning each node the minimum adequate capability and verification burden.",
-          "mechanism": [
-            "Decompose goals into DAGs.",
-            "Annotate nodes with capability tier, budget, context request, risk, and verification requirement.",
-            "Merge redundant branches and escalate only when predicates fail."
-          ],
-          "interfaces": [
-            "Routing consumes capability annotations.",
-            "VCM consumes context requests.",
-            "Evidence records cost/quality results."
-          ],
-          "invariants": [
-            "Dependency order is respected.",
-            "Cost savings do not remove required verification.",
-            "Escalation paths are explicit."
-          ],
-          "failure_modes": [
-            "Wrong tier selection.",
-            "Dependency cycles.",
-            "Economic optimization overriding safety."
-          ],
-          "minimal_implementation": "A DAG schema with node-level capability and verification annotations.",
-          "beyond_state_of_art": "The mature version is a governed scheduler and capacity allocator for cognitive work. It does not just draw a DAG. It turns plan nodes into schedulable units with dependency order, context demand, authority state, capability tier, adequacy contract, verifier, cost envelope, route assignment, merge condition, escalation path, and residual behavior. In a governed DAG scheduler, intelligence arbitrage is measured after verification, repair, merge, human review, and residual cost are counted. A cheap route only counts as adequate when its output satisfies the node's adequacy contract and remains useful to downstream dependents. An expensive route is justified when the risk, context burden, quality predicate, or failure cost demands it. The scheduler is therefore accountable for quality and authority, not just token spend.",
-          "codex_tests": [
-            {
-              "name": "DAG acyclicity test",
-              "implementation_status": "implemented",
-              "result_status": "passes via synthetic plan-execution contract harness; no deployed scheduler claim"
-            },
-            "Capability tier assignment test",
-            "Escalation trigger test"
-          ],
-          "lean_module": "AsiStackProofs.PlanForge",
-          "proof_targets": [
             {
               "tag": "lean:planforge.dag.operational_invariant",
               "module": "AsiStackProofs.PlanForge",
@@ -3030,26 +2911,22 @@
               "passage_review_note": "Reviewed local raw cache for DAG-style planning, recursive decomposition, primitive schemas, deduplication, pre/postcondition annotation, dependency inference, tier annotation, scheduling, fallback escalation, execution handoff, critical-path/slack scheduling, source-reported synthetic benchmark scenarios, watchdog validation, and MVI calibration limits; no scheduler implementation, reproduced benchmark, route trace, or cost-quality result is promoted."
             },
             {
-              "source_id": "planforge_compiler_arch",
-              "mapped_support": "Sharpens the planner-as-compiler framing with task graphs or IR, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, cost/latency profiles, parallel independent nodes, and critical-path scheduling.",
-              "limits": "Market and cost comparisons are motivating estimates only; this repository has not reproduced cost, time, or quality numbers.",
+              "source_id": "viea",
+              "mapped_support": "Supports the accepted-command-to-artifact spine with orchestration, routing, workflow-to-tool compilation, verification, runtime adapters, feedback, residuals, tools, benchmarks, and regression coverage.",
+              "limits": "Architecture proposal only; does not prove a deployed planner, runtime handoff, or end-to-end execution trace.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/raw/google_docs/planforge_compiler_arch.txt:1"
+                "sources/raw/google_docs/viea.txt:14-17",
+                "sources/raw/google_docs/viea.txt:40-59",
+                "sources/raw/google_docs/viea.txt:60-67",
+                "sources/raw/google_docs/viea.txt:81-92",
+                "sources/raw/google_docs/viea.txt:138-173",
+                "sources/raw/google_docs/viea.txt:564-578",
+                "sources/raw/google_docs/viea.txt:582-595",
+                "sources/raw/google_docs/viea.txt:790-837",
+                "sources/raw/google_docs/viea.txt:1025-1052"
               ],
-              "passage_review_note": "Reviewed local raw cache export, which is a compact one-line document, for the orchestration-gap framing, planner-as-compiler paradigm, typed primitives, dependency-aware optimized DAG, MVI routing, critical-path scheduling, execution handoff, watchdog validation/escalation, and source-reported synthetic cost/latency comparisons; market and cost comparisons remain motivating estimates, not reproduced local evidence."
-            },
-            {
-              "source_id": "coherence_exchange",
-              "mapped_support": "Supports the intelligence-arbitrage and coherence/liquidity framing by connecting PlanForge-style orchestration to verification supply chains, reviewable knowledge units, value/accounting mechanisms, and governance-visible movement of knowledge between agents or tools.",
-              "limits": "Speculative synthesis and connector-readable context only; economic, epistemic-liquidity, security, and institutional claims are not implemented or externally corroborated here.",
-              "passage_refs": [
-                "sources/source_notes/coherence_exchange.md:11-20",
-                "sources/source_notes/coherence_exchange.md:22-26",
-                "sources/source_notes/coherence_exchange.md:52-57"
-              ],
-              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
-              "passage_review_state": "reviewed"
+              "passage_review_note": "Reviewed local raw cache for the intent-to-execution spine, command contracts, artifact graph, orchestration/routing, bounded specialist modules, verification, workflow compilation, runtime adapters, feedback, residuals, and MVP vertical-loop components; no deployed planner, runtime handoff, or end-to-end execution trace is promoted."
             },
             {
               "source_id": "cognitive_compilation",
@@ -3069,6 +2946,35 @@
               "passage_review_note": "Reviewed local raw cache for semantic DAG compilation, dependency analysis, capability/cost annotations, critical-path and slack scheduling, MVC/capability routing, localized recompilation and repair, validator-backed artifacts, evaluation metrics, ablations, cycle rejection, and backpressure/resource budgets; no compiler, DAG benchmark, route-selection trace, or empirical ablation is promoted."
             },
             {
+              "source_id": "software_magic_grimoire",
+              "mapped_support": "Supports workflow control through named spell stacks with handoff artifacts, guards, entry rules, exit rules, loops, recursion, recovery paths, evidence-advancing loops, and mode separation.",
+              "limits": "Operational vocabulary only; no workflow engine, prompt-stack benchmark, or behavioral planning test is present.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/software_magic_grimoire.txt:69-82",
+                "sources/raw/google_docs/software_magic_grimoire.txt:129-152",
+                "sources/raw/google_docs/software_magic_grimoire.txt:575-598",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3158-3188",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3192-3235",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3235-3275",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3275-3295",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3380-3407",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3408-3429",
+                "sources/raw/google_docs/software_magic_grimoire.txt:3451-3471"
+              ],
+              "passage_review_note": "Reviewed local raw cache for bounded instruction artifacts, artifact boundaries, invariants, output shapes, verification, failure behavior, spell stacks, handoff artifacts, guards, entry/exit rules, loops, recursion, recovery paths, evidence-based iteration, release gates, stack identity, and stack failure modes; no workflow engine, prompt-stack benchmark, or behavioral planning test is promoted."
+            },
+            {
+              "source_id": "planforge_compiler_arch",
+              "mapped_support": "Sharpens the planner-as-compiler framing with task graphs or IR, typed primitives, dependencies, interfaces, quality gates, model/tool tier routing, cost/latency profiles, parallel independent nodes, and critical-path scheduling.",
+              "limits": "Market and cost comparisons are motivating estimates only; this repository has not reproduced cost, time, or quality numbers.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/planforge_compiler_arch.txt:1"
+              ],
+              "passage_review_note": "Reviewed local raw cache export, which is a compact one-line document, for the orchestration-gap framing, planner-as-compiler paradigm, typed primitives, dependency-aware optimized DAG, MVI routing, critical-path scheduling, execution handoff, watchdog validation/escalation, and source-reported synthetic cost/latency comparisons; market and cost comparisons remain motivating estimates, not reproduced local evidence."
+            },
+            {
               "source_id": "tokenmana",
               "mapped_support": "Supports treating budgets as governed capacity involving load variance, latency, burst limits, token-normalized cognitive friction, review capacity, and quality constraints rather than token counts alone.",
               "limits": "Economic model and study design only; no simulation, formal reproduction, usage data, or empirical welfare result exists in this repository.",
@@ -3081,6 +2987,18 @@
                 "sources/raw/google_docs/tokenmana.txt:1230-1246"
               ],
               "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst caps, load variance, convex infrastructure cost, pricing feedback, implementation parameters, load-stability limitations, temporal elasticity, token-normalized cognitive friction, opt-in empirical strategy, and privacy/scope constraints; no simulation, formal reproduction, usage data, productivity result, welfare result, or scheduler-budget result is promoted."
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Supports the intelligence-arbitrage and coherence/liquidity framing by connecting PlanForge-style orchestration to verification supply chains, reviewable knowledge units, value/accounting mechanisms, and governance-visible movement of knowledge between agents or tools.",
+              "limits": "Speculative synthesis and connector-readable context only; economic, epistemic-liquidity, security, and institutional claims are not implemented or externally corroborated here.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md:11-20",
+                "sources/source_notes/coherence_exchange.md:22-26",
+                "sources/source_notes/coherence_exchange.md:52-57"
+              ],
+              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
+              "passage_review_state": "reviewed"
             },
             {
               "source_id": "moecot",
@@ -5238,14 +5156,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },

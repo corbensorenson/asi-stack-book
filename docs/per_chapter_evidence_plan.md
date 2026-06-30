@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-30
 
-This file is the 46-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the 45-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ remaining lanes stay `planned, not executed`; they must not receive synthetic
 fixtures, pass/fail status, or support-state pressure merely for coverage.
 The active cycle selection is recorded in
 `docs/v1_x_active_evidence_cycle.md`: seven lanes are selected and the other
-thirty-nine remain planned-only.
+thirty-eight remain planned-only.
 
 Selection criteria:
 
@@ -57,8 +57,7 @@ support-state transition by itself.
 | I | `security-kernel-and-digital-scifs` | Security-kernel harness plus external security baselines | Add SCIF lifecycle, revocation, sanitization, and prompt-injection negative controls. | Make SCIFs feel like controlled rooms and handles, not jargon. | Receipt fixture proves handle-mediated use and rejects leak paths. |
 | I | `recursive-self-improvement-boundaries` | Safety-critical Lean plus Theseus self-evolution gate | Deepen accepted/rejected change model, evaluator separation, monitor window, and rollback. | Present RSI as controlled maintenance, not runaway mythology. | Accepted transition cannot widen authority or weaken protected invariants without review. |
 | II | `intent-to-execution-contracts` | Command-contract fixtures plus Lean semantic-interface crosswalk | Connect accepted intent, command fields, authority, receipts, artifacts, and residuals across typed execution records. | Show the path from "what I meant" to "what the system may do" without making prompt prose into permission. | Invalid intent-to-action mismatch, missing receipt, prompt/context override, or inferred-authority case is rejected with a receipt or residual. |
-| II | `planning-as-a-control-layer` | Theseus plan compiler plus Lean planning envelope | Import public-safe typed DAG and rejected invalid DAG. | Make planning read like controlled sequencing under uncertainty. | Public-safe DAG replay validates and invalid DAG fails. |
-| II | `planforge-dags-and-intelligence-arbitrage` | Theseus/PlanForge report | Validate arbitrage selection with costs, uncertainty, and fallback. | Explain intelligence arbitrage as routing work to the right kind of mind. | Fixture selects a route only when adequacy and cost constraints both pass. |
+| II | `planning-as-a-control-layer` | Theseus plan compiler, PlanForge DAG slice, and Lean planning/PlanForge envelope | Import public-safe typed DAG and rejected invalid DAG; add a route-adequacy fixture with cost, uncertainty, fallback, merge, and residual accounting. | Make planning read like controlled sequencing under uncertainty and explain intelligence arbitrage as routing work to the right kind of mind only when adequacy and verification remain attached. | Public-safe DAG replay validates, invalid DAG fails, and route selection passes only when adequacy and cost constraints both hold without displaced verification or cleanup. |
 | II | `cognitive-compilation-and-semantic-ir` | Compiler IR fixtures plus external program-synthesis baselines | Add semantic atom lowering and failed-preservation cases. | Use compilation as the bridge from thought to executable structure. | IR translation preserves required fields and rejects lossy lowering. |
 | II | `virtual-context-abi` | Context admission harness, certificate fixtures, Lean hooks, and VCM source notes | Add admission, mount, capability, typed page/cell, certificate-truthfulness, authority-ceiling, loss-contract, permitted-use, and context-window negative controls. | Make context feel like memory with permissions, receipts, and certificates that decide what memory can be trusted for. | Admission fixture rejects stale, conflicting, mode-confused, stale-certificate, missing-certificate, or authority-escalating packets and records residual. |
 | II | `context-transactions-snapshots-mounts-and-taint` | Context transaction harness | Add deletion closure, mount taint, snapshot conflict, and rollback cases. | Make taint and snapshots legible through file-system examples. | Transaction replay proves conflict/deletion gates fire. |

@@ -99,33 +99,6 @@
       ]
     },
     {
-      "claim_id": "planforge-dags-and-intelligence-arbitrage.core",
-      "chapter_id": "planforge-dags-and-intelligence-arbitrage",
-      "chapter_title": "PlanForge DAGs and Intelligence Arbitrage",
-      "decision": "no_promotion",
-      "current_support_state": "argument",
-      "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and finite DAG invariants, but no scheduler run, cost-quality comparison, route-allocation trace, or verified intelligence-arbitrage result has been accepted.",
-      "required_evidence": [
-        "DAG scheduler replay",
-        "cost-quality baseline and negative control",
-        "verification-cost accounting"
-      ],
-      "blockers": [
-        "no real scheduler behavior",
-        "no measured arbitrage result",
-        "no route-quality benchmark"
-      ],
-      "non_claims": [
-        "does not prove cost savings",
-        "does not prove planning quality"
-      ],
-      "refs": [
-        "chapters/planforge-dags-and-intelligence-arbitrage.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#planforge-dags-and-intelligence-arbitrage.core"
-      ]
-    },
-    {
       "claim_id": "cognitive-compilation-and-semantic-ir.core",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "chapter_title": "Cognitive Compilation and Semantic IR",

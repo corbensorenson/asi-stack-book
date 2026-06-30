@@ -9,13 +9,12 @@ Reader manuscript file:
 
 Live source file: `chapters/planning-as-a-control-layer.qmd`
 
-Consolidation caveat:
-`docs/chapter_consolidation_release_stability_review.md` records this chapter
-inside a `deferred_for_release` package with
-`planforge-dags-and-intelligence-arbitrage`. This pass curates the current
-source chapter for the reader-manuscript cycle only. It does not execute,
-reject, or authorize the future planning/DAG merge, and it preserves the
-then-current 54-chapter manifest boundary.
+Consolidation history:
+The 2026-06-30 planning/DAG consolidation folded
+`planforge-dags-and-intelligence-arbitrage` into this continuity chapter. This
+pass remains a drafting-only curated reader record for the merged destination;
+it does not approve a reader release, move support states, or claim deployed
+planning, scheduling, or intelligence-arbitrage behavior.
 
 ## Reader Promise
 
@@ -69,14 +68,15 @@ The reader throughline is:
   dispatchability, blocked records, replanning residuals, and non-claim
   presence only; it does not prove open-world planning quality or runtime
   safety.
-- The consolidation caveat is preserved: this reader pass does not decide the
-  future merge with `planforge-dags-and-intelligence-arbitrage`.
+- The consolidation history is preserved: the retired PlanForge reader draft is
+  archival, and active reader curation routes through this merged chapter.
 
 ## Non-Claims
 
 - This pass does not edit the live AI/research chapter.
 - This pass does not change `book_structure.json`.
-- This pass does not execute, reject, or authorize a chapter merge or fold.
+- This pass records reader curation after an executed chapter merge; it does
+  not authorize any additional chapter merge or fold.
 - This pass does not alter Appendix C or Appendix K.
 - This pass does not add, remove, normalize, or promote source records.
 - This pass does not claim deployed planner behavior, decomposition accuracy,
@@ -93,8 +93,9 @@ The reader throughline is:
 ## Remaining Blockers
 
 - Human editorial review has not approved this chapter for reader release.
-- The future planning/DAG consolidation package still needs a reviewer decision
-  before any merge with `planforge-dags-and-intelligence-arbitrage`.
+- Any future split, merge, or fold involving this chapter still needs the
+  governed consolidation path, URL/history handling, source/proof/test
+  reconciliation, and reader-lineage preservation.
 - Stronger planning-control evidence still needs public-safe planner traces,
   dispatch-state enforcement tests, context-demand tests, dependency-ordering
   tests beyond the current synthetic slice, replanning-delta audits,
