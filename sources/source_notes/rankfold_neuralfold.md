@@ -38,7 +38,7 @@ RankFold + NeuralFold proposes a tensor-centric archival stack for heterogeneous
 ## Book Chapters Supported
 
 - `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
 

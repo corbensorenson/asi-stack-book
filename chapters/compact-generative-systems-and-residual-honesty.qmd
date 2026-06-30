@@ -1,10 +1,10 @@
 ---
-title: "Compact Generative Systems and Residual Honesty"
+title: "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty"
 chapter_id: "compact-generative-systems-and-residual-honesty"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "cgs"
   - "rgs"
@@ -12,12 +12,16 @@ primary_sources:
   - "simulation_scaling"
   - "rmi"
   - "project_theseus_whitepaper"
+  - "bbvca_v9"
+  - "bbvca_main"
+  - "rankfold_neuralfold"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for all assigned Compact Generative Systems sources; support remains at argument until CGS utility, residual-burden behavior, fallback behavior, downstream utility tests, compact-adequacy proofs, generator behavior, or reproduced implementation evidence exist."
-  - "Only the compact_generative_record fixture and narrow finite Lean residual/exactness predicates have been implemented; the fixture validates generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers, promotion state, source refs, support-state effect, and non-claims only. No CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository."
-  - "BugBrain and Project Theseus passages are used as speculative/source-reported implementation lineage only; they do not prove edge AGI, consciousness, compact adequacy, or runtime behavior."
+  - "Appendix C records exact passage-reviewed mappings for all assigned compact-generation and folded generate/verify/repair sources; support remains at argument until CGS utility, residual-burden behavior, fallback behavior, reconstruction equality, repair-cost accounting, downstream utility tests, compact-adequacy proofs, generator behavior, codec evidence, or reproduced implementation evidence exist."
+  - "Only the compact_generative_record and compression_receipt fixtures plus narrow finite Lean residual/exactness/reconstruction predicates have been implemented; these validate record shape and bounded predicates only. No CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BBVCA Prototype A implementation, entropy coder, exact reconstruction harness, RankFold/NeuralFold artifact run, rate comparison, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository."
+  - "BugBrain, Project Theseus, BBVCA, and RankFold/NeuralFold passages are used as speculative, source-reported, or conceptual architecture lineage only; they do not prove edge AGI, consciousness, compact adequacy, codec correctness, compression efficiency, universality, runtime behavior, or deterministic decode behavior here."
+  - "The former `generate-verify-repair-compression` chapter was folded into this chapter on 2026-06-30 as a preserved subclaim and receipt lane; the merge changes chapter organization, not support state."
 ---
 
 ## Chapter status
@@ -28,47 +32,47 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
-| Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
+| Last updated | 2026-06-30 |
+| Primary source records | `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `bbvca_v9`, `bbvca_main`, `rankfold_neuralfold` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `cgs`, `rgs`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` |
-| Source loading state | source notes: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`; passage-reviewed local raw-cache mappings for `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`; passage-reviewed pinned local-project mapping for `project_theseus_whitepaper`; no raw source text is published |
-| Test state | `compact_generative_record.valid.json` passes repository-level protocol fixture validation for generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers, promotion state, source refs, support-state effect, and non-claims; finite residual/exactness predicates implemented in `AsiStackProofs.CompactGenerativeSystems`; chapter-specific CGS utility, fallback, and downstream tests remain planned. |
+| Source queue | primary: `cgs`, `rgs`, `bbvca_v9`, `bbvca_main`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold` |
+| Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; no raw source text is published |
+| Test state | `compact_generative_record.valid.json` and `compression_receipt.valid.json` pass repository-level protocol fixture validation; finite residual/exactness predicates are implemented in `AsiStackProofs.CompactGenerativeSystems`; finite reconstruction/verification predicates are implemented in `AsiStackProofs.GenerateVerifyRepair`; behavioral CGS utility, fallback, reconstruction-quality, repair-cost, bounded-search, consumer-policy, and downstream tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter uses Compact Generative Systems and Ratcheting Generative Systems as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, or that any local CGS implementation exists in this repository. The repo now proves two finite Lean predicates over compact-generative records, but those predicates do not measure compression utility.
+This chapter uses Compact Generative Systems, Ratcheting Generative Systems, and the folded Generate-Verify-Repair compression material as conceptual architecture sources. It does not claim that compactness has been benchmarked, that a particular compact core is adequate, that BBVCA has been implemented, or that any local compression codec exists in this repository. The repo now proves finite Lean predicates over compact-generative records and compression receipts, but those predicates do not measure compression utility, rate, decode behavior, or downstream artifact quality.
 
-After the personal-hive substrate, compactness becomes an economic and governance question rather than a style preference. The stack can use smaller seeds, summaries, procedures, or generators only when residual burden, verification cost, fallback, and authority remain visible.
+After the personal-hive substrate, compactness becomes an economic and governance question rather than a style preference. The stack can use smaller seeds, summaries, procedures, generators, or generated reconstructions only when residual burden, verification cost, repair cost, fallback, consumer policy, and authority remain visible.
 
 Compactness is therefore a state claim, not a word-count claim. A representation is compact only relative to a target, generator, verifier, residual channel, cost ledger, and permitted use.
 
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Once the stack has routed work onto governed compute, compactness becomes tempting. Smaller seeds, summaries, procedures, or generators matter only when the remaining burden is honest.
+Once the stack has routed work onto governed compute, compactness becomes tempting. Smaller seeds, summaries, procedures, generators, and generated reconstructions matter only when the remaining burden is honest.
 
-The test is whether compactness reduces total burden or merely moves it somewhere invisible. A compact representation should say what must be reconstructed, what must be verified, what fallback exists, what authority it has, what costs are counted, and what residual work it leaves for future reviewers or agents.
+The test is whether compactness reduces total burden or merely moves it somewhere invisible. A compact representation should say what must be reconstructed, what must be verified, what fallback exists, what authority it has, what costs are counted, and what residual work it leaves.
 
-Honest compactness is therefore a governance problem as much as an efficiency problem. The smaller object has to carry enough receipts for the stack to know when it is safe to use and when the full artifact must return. A summary, seed, or generator should lower cost without hiding its unpaid remainder.
+Honest compactness is therefore a governance problem. The smaller object has to carry enough receipts to show when it is safe to use, when it needs a repair residual, and when the full artifact must return. A summary, seed, generator, or repaired reconstruction should lower cost without hiding its unpaid remainder.
 
-Compact forms earn trust by preserving the path back to what they compressed. The residual is the price tag that keeps compactness from becoming self-deception: what must be checked, regenerated, expanded, compared, or refused. A compact object is best when it makes unpaid work visible, not when it makes omission harder.
+Compact forms earn trust by preserving the path back to what they compressed. The residual is the price tag that keeps compactness from becoming self-deception: what must be checked, regenerated, repaired, expanded, compared, or refused. A compact object is best when it makes unpaid work visible, not when it makes omission harder.
 :::
 
 ## Problem
 
-The efficient-ASI thesis depends on compact structures, but compactness is dangerous when it hides the cost of generation, verification, correction, or human review. A small seed that requires unbounded search is not efficient. A fluent generator that loses edge cases is not honest. A tiny controller that shifts work into invisible residuals is not governed.
+The efficient-ASI thesis depends on compact structures, but compactness is dangerous when it hides the cost of generation, verification, correction, repair, fallback, or human review. A small seed that requires unbounded search is not efficient. A generated reconstruction that skips exact repair is not exact. A fluent generator that loses edge cases is not honest. A tiny controller that shifts work into invisible residuals is not governed.
 
 CGS gives the book a vocabulary for this problem: seed, rule system, memory/state, residual/error, verification, and governance/generation interface. RGS adds the improvement loop: repeated successful behavior can become verified structure, but failures must stay in residual escrow and regressions must remain protected.
 
-The question is not whether a system is small. It is whether the smaller structure preserves enough of the task boundary that the remaining work is bounded, visible, and payable. If verification, repair, or human interpretation grows faster than the representation shrinks, the compact core may be an accounting error.
+The question is not whether a system is small. It is whether the smaller structure preserves enough of the task boundary that the remaining work is bounded, visible, and payable. If verification, repair, fallback, or human interpretation grows faster than the representation shrinks, the compact core may be an accounting error.
 
 ## Why existing approaches are insufficient
 
-Compression narratives often count the visible representation while ignoring the work needed to reconstruct or use it. A model can look compact by storing information in a generator, a prompt, a retrieval system, a human operator, a verifier, or a fallback path. If those burdens are not recorded, the architecture has not saved complexity; it has hidden it.
+Compression narratives often count the visible representation while ignoring the work needed to reconstruct or use it. A model can look compact by storing information in a generator, a prompt, a retrieval system, a human operator, a verifier, a repair stream, or a fallback path. If those burdens are not recorded, the architecture has not saved complexity; it has hidden it.
 
-Compression and representation baselines make residual accounting non-optional. Deep Compression (`ext_deep_compression_2015`) names pruning, quantization, and coding; knowledge distillation (`ext_knowledge_distillation_2015`) names teacher/student behavior transfer; DreamCoder (`ext_dreamcoder_2020`) frames reusable abstraction learning; Information Bottleneck (`ext_information_bottleneck_2000`) separates relevance from compression; and MDL (`ext_mdl_tutorial_2004`) makes model/data tradeoffs explicit. Compact generative systems use those baselines to require residual and verifier accounting, not to claim a local compression ratio or utility result.
+Compression and representation baselines make residual accounting non-optional. Deep Compression (`ext_deep_compression_2015`) names pruning, quantization, and coding; knowledge distillation (`ext_knowledge_distillation_2015`) names teacher/student behavior transfer; GPTQ (`ext_gptq_2022`) names post-training quantization; DreamCoder (`ext_dreamcoder_2020`) frames reusable abstraction learning; Information Bottleneck (`ext_information_bottleneck_2000`) separates relevance from compression; MDL (`ext_mdl_tutorial_2004`) makes model/data tradeoffs explicit; and CodeBLEU (`ext_codebleu_2020`) reminds artifact evaluation to include task-specific utility signals. Compact generative systems use those baselines to require residual, verifier, repair, and consumer-policy accounting, not to claim a local compression ratio or utility result.
 
 Compactness also does not imply interpretability or safety. A compressed rule can be opaque. A generated output can be plausible but unverified. A local embedded system can be resource-aware but untested. A simulation can be definable but physically infeasible. The stack therefore treats compactness as a contract with residuals, not as an achievement by itself.
 
@@ -76,13 +80,13 @@ Another insufficiency is evaluator capture. A compact generator can appear effic
 
 ## Core Claim
 
-[compact-generative-systems-and-residual-honesty.core, label: Design rationale, support: argument] A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.
+[compact-generative-systems-and-residual-honesty.core, label: Design rationale, support: argument] Compact generative systems should store the smallest useful governed generator plus the cheapest exact or scoped residual, while preserving verification, fallback, consumer policy, and residual-burden records.
 
-The claim remains at `argument` support. The source notes support source-derived discussion of compact seeds, residual burden, verification cost, governance interfaces, hidden complexity debt, and ratcheting, but no CGS benchmark, proof, or implementation has been run here.
+The claim remains at `argument` support. The source notes support discussion of compact seeds, residual burden, verification cost, repair streams, fallback, consumer policy, governance interfaces, hidden complexity debt, and ratcheting, but no CGS benchmark, codec, compression-rate experiment, proof of utility, or implementation has been run here.
 
 ### Claim-source mapping status
 
-Appendix C now carries passage-reviewed mappings for all six assigned sources. The mappings support compact seeds, rule systems, residual channels, verification contracts, governance interfaces, ratcheting pressure, physical/resource constraints, and report-first implementation discipline, not a demonstrated compact core, generator, fallback harness, downstream utility result, BugBrain build, simulation benchmark, or Theseus rerun.
+Appendix C now carries passage-reviewed mappings for all nine assigned sources. The mappings support compact seeds, rule systems, residual channels, verification contracts, repair streams, consumer policies, governance interfaces, ratcheting pressure, physical/resource constraints, and report-first implementation discipline, not a demonstrated compact core, generator, codec, fallback harness, downstream utility result, compression ratio, BugBrain build, simulation benchmark, or Theseus rerun.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -92,10 +96,13 @@ Appendix C now carries passage-reviewed mappings for all six assigned sources. T
 | `simulation_scaling` | Scope, clockspeed, fidelity, efficiency, physical capacity, and bottleneck accounting for making compactness resource-explicit. | Theoretical scaling framework only; no physical experiment, simulation benchmark, or independent literature audit was run. |
 | `rmi` | Benchmark frontier pressure, routed specialist attempts, residual escrow, loop closure, independent arm/router improvement, regression preservation, and lifecycle discipline. | No independent reproduction, benchmark run, prototype inspection, or empirical modular-intelligence result exists here. |
 | `project_theseus_whitepaper` | SymLiquid, SparkStream, Octopus routing, bounded specialist arms, benchmark/residual ledgers, checkpoints, trusted Hive nodes, observability, and evidence-before-growth discipline. | Source-reported implementation narrative only; current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
+| `bbvca_v9` | Reconstruction contracts, shared law families, exact repair streams, bounded local verification, explicit fallback, boundary/interface costs, proxy-rate versus final serialization discipline, and anti-universality constraints. | BBVCA Prototype A, compression ratios, codec correctness, and rate experiments have not been implemented or run here. |
+| `bbvca_main` | Hierarchical causal/volumetric reconstruction, compact generator states, deterministic laws, multiscale verification, side information, and repair risks as lineage for the stricter v9 formulation. | Earlier architecture draft only; use v9 for final bounded rate/exactness claims, and no local codec or benchmark exists. |
+| `rankfold_neuralfold` | Low-rank residual coding, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, deterministic decode, and reconstruction checks as comparison points for artifact compression. | Architecture and implementation-plan source only; no local compression benchmark, implementation artifact, deterministic decoder, or reproduced ratio is present. |
 
 ## Mechanism
 
-Compression begins before bytes. The ASI Stack first asks whether a smaller structure can generate, govern, predict, or coordinate a larger target without hiding the burden it fails to carry. CGS supplies the seed/rule/memory/residual/governance tuple, RGS and RMI supply ratchet pressure, BugBrain and Simulation Scaling keep local resource limits visible, and Project Theseus keeps the evidence-before-growth discipline attached to implementation work.
+Compression begins before bytes. The ASI Stack first asks whether a smaller structure can generate, govern, predict, reconstruct, or coordinate a larger target without hiding the burden it fails to carry. CGS supplies the seed/rule/memory/residual/governance tuple, BBVCA supplies the stricter generate/verify/repair exactness receipt, RGS and RMI supply ratchet pressure, BugBrain and Simulation Scaling keep local resource limits visible, and Project Theseus keeps the evidence-before-growth discipline attached to implementation work.
 
 After the runtime reference records what was routed, executed, replayed, and left residual, compact generation asks whether any part of that burden can be represented by a smaller lawful structure. The answer is useful only when the record still exposes the generation cost, verification cost, correction channel, fallback path, and authority boundary.
 
@@ -130,6 +137,40 @@ A compact generative system should answer five questions:
 The raw LLM fits this frame as a compressed generative engine, not as the whole intelligence. It can generate across many targets, but the stack still needs routing, verification, residuals, authority, and evidence around its outputs.
 
 A compact-system receipt separates three burdens: reconstruction burden, decision burden, and governance burden. Reconstruction burden is the cost of producing a usable artifact from the compact seed. Decision burden is the cost of knowing whether the artifact is adequate. Governance burden is the cost of approvals, non-claims, fallback, retirement, and residual review.
+
+Generate/verify/repair is the stricter receipt lane. It starts with a reconstruction contract, a public law family or generator, and an artifact-specific seed. The generator produces candidate regions. Verification compares those regions to the declared target. Mismatches become exact repair residuals, declared loss, literal fallback, quarantine, or negative rate evidence. Exactness belongs to the full receipt, not to the generator alone.
+
+```{mermaid}
+flowchart LR
+  A["Reconstruction contract"] --> B["Generator or public law family"]
+  A --> C["Artifact-specific seed"]
+  B --> D["Generate candidate"]
+  C --> D
+  D --> E{"Verification passes?"}
+  E -- "yes" --> F["Verified generated region"]
+  E -- "repair" --> G["Exact repair residual"]
+  E -- "no" --> H["Literal fallback or quarantine"]
+  F --> I["Final rate and burden ledger"]
+  G --> I
+  H --> I
+  I --> J["Consumer policy"]
+  J --> K["Admit, scope, or reject"]
+```
+
+**Reading the receipt lane:** Generated reconstruction is useful only when verification, repair, fallback, final-rate accounting, and consumer policy stay attached. A mismatch is not a defect to hide; it becomes a repair stream, declared loss, literal fallback, quarantine, or negative evidence for that representation.
+
+### Compression receipt states
+
+| State | Meaning | Allowed downstream use |
+|---|---|---|
+| `candidate` | A generator, seed, or law family has been proposed but not verified. | Search and analysis only. |
+| `verified_exact` | Decode plus recorded repair equals the target under the declared reconstruction contract. | Exact-use tasks within the declared contract. |
+| `verified_lossy` | Loss is declared and accepted for a bounded use envelope. | Drafting, routing, preview, or other loss-tolerant tasks only. |
+| `repaired_exact` | Exactness depends on a recorded repair residual. | Exact-use tasks, with repair, metadata, and interface costs counted. |
+| `literal_fallback` | Compression was not cheaper or verification failed; the full literal artifact is used. | Full-artifact route plus negative evidence for this method on this target. |
+| `quarantined` | Search, verification, decode, rate accounting, or consumer policy violated the contract. | No downstream use except debugging. |
+
+These are evidence states for a representation, not claims about universal compression. They let the system preserve failed experiments as useful negative evidence without converting them into codec success stories.
 
 ## Interfaces
 
@@ -172,12 +213,40 @@ Use envelopes belong on the compact-system record. A compact core can be accepta
 
 Residual-cost ownership belongs on the same record. A compact system may shift effort to verifiers, repair streams, fallback storage, human reviewers, or future runs. If those burdens are not attached to the record, compactness becomes a local win that exports cost to the rest of the stack.
 
+Compression receipts add the stricter reconstruction interface:
+
+- `artifact_id`
+- `receipt_state`
+- `reconstruction_contract`
+- `public_law_family`
+- `seed`
+- `search_bound`
+- `generated_regions`
+- `verification_result`
+- `repair_residual`
+- `fallback_threshold`
+- `interface_costs`
+- `consumer_policy`
+- `use_permissions`
+- `proxy_rate_status`
+- `final_serialization_status`
+- `rate_accounting`
+- `support_state_effect`
+- `evidence_refs`
+- `non_claims`
+
+The consumer policy is load-bearing. A receipt that is acceptable for routing preview may be forbidden for proof input, audit, citation, exact replay, benchmark construction, or training. The same generated reconstruction can therefore be useful and inadmissible at the same time, depending on the consumer.
+
 ## Invariants
 
 - Lossy claims are labeled.
 - Residual burden is visible.
 - Fallback exists when compact generation fails.
 - Verification cost is counted as part of the representation.
+- Verification precedes exactness claims.
+- Repair, metadata, interface, and fallback costs are counted before compression savings are claimed.
+- Consumer use is scoped to the reconstruction contract and declared loss.
+- Negative rate results are preserved instead of rewritten as narrative success.
 - Compactness does not promote support state without evidence.
 
 Compactness is not the invariant; accountability is. A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
@@ -191,6 +260,11 @@ Residual honesty also requires retaining the expensive reference path when the c
 - False lossless claims.
 - Hidden residual complexity.
 - Compactness that damages utility.
+- Unbounded search.
+- Verification skipped.
+- Repair larger than original data.
+- Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, benchmark, citation, or training work.
+- Proxy-rate drift, where search-time savings survive in prose after final serialization erases them.
 - Degenerate governance where the compact core evaluates its own adequacy.
 - Recursive instability when compact structures modify the system that defines their success.
 
@@ -208,6 +282,8 @@ The repository fixture validates that this public contract can be represented co
 
 A compact-core comparison fixture should carry the next slice: one compact seed with bounded reconstruction cost, one lossy seed that must remain non-exact, one generator failure routed to fallback, one residual displaced into human review, and one promotion blocked because the verifier is not independent. This comparison would make the compactness contract concrete while reporting no benchmark result.
 
+The folded generate/verify/repair slice adds the compression receipt. The smallest honest GVR fixture should include one candidate receipt, one verified-exact or repaired-exact receipt, one failed verification, one literal fallback or negative-rate case, and one consumer-policy rejection. That fixture is still not a codec benchmark; its evidential scope is the public record's distinction among exactness, declared loss, repair, fallback, quarantine, and consumer scope.
+
 ## Beyond the State of the Art
 
 Compact generative systems earn their place as a burden-accounting layer for compression and generation. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
@@ -217,6 +293,8 @@ Compactness becomes useful only when the generator, verifier, fallback, governan
 The mature layer would report reconstruction burden, decision burden, governance burden, verification status, verifier independence, fallback status, residual-burden status, downstream utility, latency, cost, residual volume, and hidden-complexity risk as separate evidence fields. Routing would use compact-core readiness and use envelopes; VCM and semantic pages would label loss, taint, and omissions; procedural memory would turn repeated generated behavior into verified tools; generate-verify-repair would record exact remainders; readiness gates would decide promotion or quarantine. Repeated successes could become tool candidates, but failed generations would become residual pressure, lossy seeds would stay scoped to safe uses, non-independent verifiers would block promotion, and utility-damaging cores would retire or route to fallback.
 
 The compact-generation boundary is still a design claim. The compactness claim stays at `argument` until exactness records, verifier outputs, reconstruction tests, residual-burden accounts, lossy-ablation cases, and fallback traces show which information compact generation preserved and which obligations it left behind.
+
+At the mature end state, the compact-generative-systems layer becomes a compression control plane. Each task asks for the cheapest lawful representation: full source, compact seed, generated reconstruction, repaired exact receipt, lossy preview, semantic page, specialist core, or rejection. The answer is based on total burden, verifier quality, residual honesty, consumer policy, replay need, downstream risk, and support-state limits, not on ratio alone. Until public codec, utility, rate, and replay evidence exists, that endpoint remains target architecture.
 
 ## Codex test plan
 
@@ -229,8 +307,15 @@ The compact-generation boundary is still a design claim. The compactness claim s
 | Residual burden behavior test | Check that lossy or partial generation cannot omit residual records in an executable harness. | planned; not run |
 | Downstream utility test | Check whether a compact core preserves task utility against a full or baseline representation. | planned; not run |
 | Fallback behavior test | Check that failed generation routes to fallback or residual pressure. | planned; not run |
+| Compression receipt fixture validation | Validate that a receipt records receipt state, reconstruction contract, law family, seed, search bound, generated regions, verification result, repair residual, fallback threshold, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Exact reconstruction predicate | Check that an exact claim requires generator output plus repair residual to equal the target in a finite record. | implemented in `AsiStackProofs.GenerateVerifyRepair`; checked by Lean build |
+| Failed verification promotion predicate | Check that failed verification blocks exactness promotion. | implemented in `AsiStackProofs.GenerateVerifyRepair`; checked by Lean build |
+| Reconstruction quality test | Run a generator and verifier against a declared target and check exact reconstruction when the receipt claims exactness; lossy contracts must name the loss. | planned; not run |
+| Repair-cost accounting test | Compare seed, law ID, repair residual, and metadata against a literal baseline and record a negative result when the repaired form is larger. | planned; not run |
+| Bounded-search failure test | Force the generator past its declared search budget and check that the result falls back, quarantines, or stays unpromoted. | planned; not run |
+| Consumer-policy enforcement test | Check that lossy, preview, or orientation receipts cannot feed exact replay, proof, audit, citation, benchmark, or training consumers without a stronger receipt. | planned; not run |
 
-The implemented row validates fixture/schema consistency only. The remaining rows are acceptance targets for future CGS experiments; they are not reported benchmark results. When a behavioral test is implemented, this chapter should link to the command, fixture, environment notes, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented rows validate fixture/schema consistency and finite-record Lean predicates only. The remaining rows are acceptance targets for future CGS and GVR experiments; they are not reported benchmark, codec, rate, or artifact-utility results. When a behavioral test is implemented, future revisions should link to the command, fixture, environment notes, corpus where applicable, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -238,8 +323,10 @@ The implemented row validates fixture/schema consistency only. The remaining row
 |---|---|---|---|
 | `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | implemented |
 | `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
+| `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
+| `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
 
-These Lean hooks are implemented as finite-record predicates. The validated JSON fixture and Lean predicates do not prove that compact representations preserve utility, reduce cost, or block promotion under all executable conditions.
+These Lean hooks are implemented as finite-record predicates. The validated JSON fixtures and Lean predicates do not prove that compact representations preserve utility, reduce cost, reconstruct real artifacts, improve compression rate, or block promotion under all executable conditions.
 
 ## Source crosswalk
 
@@ -251,19 +338,24 @@ These Lean hooks are implemented as finite-record predicates. The validated JSON
 | `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | source note available; local raw cache available |
 | `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |
 | `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | source note available |
+| `bbvca_v9` | BBVCA_v9_final_public_release | compression_representation | Preferred generate/verify/repair source for reconstruction contracts, repair streams, bounded verification, fallback, and rate discipline. | source note available; local raw cache available |
+| `bbvca_main` | Big Bang Volumetric Compression Architecture | compression_representation | Earlier/main BBVCA lineage for volumetric reconstruction, deterministic laws, multiscale verification, side information, and repair risks. | source note available; local raw cache available |
+| `rankfold_neuralfold` | RankFold + NeuralFold | compression_representation | Artifact-compression comparison point for low-rank residual coding, manifests, codec parameters, deterministic decode, and reconstruction checks. | source note available; local raw cache available |
 
-The crosswalk gives this chapter a compactness lineage: `cgs` supplies the seed/rule/memory/residual/governance tuple, `rgs` supplies promotion pressure through residual escrow and regression gates, and the supporting sources keep edge efficiency, physical feasibility, ratcheting, and report-first implementation visible. Availability of notes and raw cache lowers the drafting barrier; it does not by itself show that a compact core works.
+The crosswalk gives the compactness program a receipt lineage: `cgs` supplies the seed/rule/memory/residual/governance tuple; `bbvca_v9` supplies the stricter generate/verify/repair receipt discipline; `rgs` supplies promotion pressure through residual escrow and regression gates; and the supporting sources keep edge efficiency, physical feasibility, ratcheting, artifact-compression comparison, and report-first implementation visible. Availability of notes and raw cache lowers the drafting barrier; it does not by itself show that a compact core or compression receipt works.
 
 ## Summary
 
-Compact systems are useful when they generate more value than their hidden burdens cost. Residual-honest accounting therefore keeps seed, rule system, memory, generation, verification, residuals, governance, fallback, and evidence in the same record.
+Compact systems are useful when they generate or reconstruct more value than their hidden burdens cost. Residual-honest accounting therefore keeps seed, rule system, memory, generation, verification, repair, residuals, governance, fallback, consumer policy, and evidence in the same record.
 
-Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task. The same rule applies to compression that claims reconstruction: generation is allowed to be clever only when verification and repair pay the exact remainder.
+Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task. The same rule applies to compression that claims reconstruction: generation is allowed to be clever only when verification, repair, final-rate accounting, and consumer policy pay the exact or scoped remainder.
 
-The bridge is narrow but useful: compact systems can reduce burden, but exact reconstruction needs a stricter receipt that says precisely what the generator failed to carry.
+The bridge is narrow but useful: compact systems can reduce burden, but exact reconstruction needs a stricter receipt that says precisely what the generator failed to carry, what was repaired, when fallback won, and which consumers may rely on the result.
 
 Compactness has to survive total-cost accounting. If the seed is smaller but the hidden verification, repair, review, or authority cost grows without a record, the stack has not become more efficient.
 
 ## Handoff
 
-Compact systems become sharper when the claim changes from useful generation to exact reconstruction. Generate-Verify-Repair Compression takes residual honesty into that stricter setting. It requires a generator, declared reconstruction contract, verifier, repair stream, literal fallback, consumer policy, and cost ledger so a smaller representation cannot claim exactness unless the missing remainder is actually paid.
+Compact generation and generate/verify/repair receipts expose the cost of reconstructing stored artifacts; the same accounting applies when the system generates output over time. Fast Generation Architectures moves from compact representation to accelerated inference and drafting. It asks which generation mode is allowed, what verifier accepts, what fallback costs, and whether speed still improves the governed task after rejected output, repair, and accepted-output costs are counted.
+
+RankFold, NeuralFold, and Artifact Compression remains standalone after the conservative merge because it owns the technique-facing artifact and tensor-compression lane. It inherits the compact-system residual-honesty and consumer-policy requirements while asking a different question: when may a compressed artifact stand in for a full artifact for a specific task?

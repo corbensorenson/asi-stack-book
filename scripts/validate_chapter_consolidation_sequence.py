@@ -33,7 +33,6 @@ REQUIRED_IDS = {
     "constitutional-alignment-substrate",
     "moral-uncertainty-and-value-conflict",
     "compact-generative-systems-and-residual-honesty",
-    "generate-verify-repair-compression",
     "rankfold-neuralfold-and-artifact-compression",
     "intent-to-execution-contracts",
     "command-contracts-and-semantic-interfaces",
@@ -70,7 +69,7 @@ REQUIRED_IDS = {
 REQUIRED_FRAGMENTS = (
     "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
-    "52 manifest chapters after the Part I pilot",
+    "51 manifest chapters after the conservative compression merge",
     "Do not run a broad 54-to-44 manifest edit",
     "Do not target a fixed chapter count.",
     "Do not delete ideas merely to reduce repetition.",
@@ -103,7 +102,7 @@ REQUIRED_FRAGMENTS = (
     "one-skeleton destination judgment",
     "apply only one merge or fold package per commit.",
     "Fold-disposition candidates | Execute fold, revise, defer, or reject/retain.",
-    "Compression and residual honesty | `review_ready`",
+    "Compression and residual honesty | `executed`",
     "Intent and executable contracts | `review_ready`",
     "Static context ABI | `review_ready`",
     "Verification and adversarial review | `review_ready`",
@@ -172,7 +171,6 @@ COMPRESSION_REQUIRED_FRAGMENTS = (
 
 COMPRESSION_REQUIRED_IDS = {
     "compact-generative-systems-and-residual-honesty",
-    "generate-verify-repair-compression",
     "rankfold-neuralfold-and-artifact-compression",
     "semantic-representation-and-tree-structured-models",
 }
@@ -767,7 +765,6 @@ SEMANTIC_FOLD_REQUIRED_FRAGMENTS = (
 SEMANTIC_FOLD_REQUIRED_IDS = {
     "semantic-representation-and-tree-structured-models",
     "compact-generative-systems-and-residual-honesty",
-    "generate-verify-repair-compression",
     "rankfold-neuralfold-and-artifact-compression",
     "virtual-context-abi",
     "semantic-pages-context-cells-and-certificates",
@@ -855,10 +852,10 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation Release-Stability Review",
     "Decision: defer all remaining unexecuted consolidation packages",
     "`deferred_for_release` reader-work outcome",
-    "does not execute any remaining merge or fold",
+    "does not execute any additional remaining merge or fold",
     "does not create external review",
     "does not change support states",
-    "The current canonical manifest has 52 chapters after the executed Part I pilot.",
+    "The current canonical manifest has 51 chapters after the executed conservative compression merge.",
     "Reader Curation Outcome Table",
     "Constitutional alignment and agency/corrigibility",
     "Value conflict and contestable governance",
@@ -872,18 +869,18 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "Semantic representation fold",
     "Accepted Temporary Debt",
     "Requirements For Curated Reader Passes Inside Deferred Packages",
-    "This review does not execute any remaining merge or fold.",
+    "This review does not execute any additional remaining merge or fold.",
     "This review does not reject any package permanently.",
     "This review does not approve any destination draft.",
-    "This review records that the Part I pilot implemented historical stubs and changed chapter count",
+    "This review records that the Part I pilot and conservative compression merge implemented historical stubs and changed chapter count",
     "This review does not promote, demote, deprecate, or refute any chapter core",
 )
 
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot",
-    "The canonical manifest now has 52 chapters after the executed Part I pilot.",
+    "applied to the 2026-06-30 Part I pilot and conservative compression merge",
+    "The canonical manifest now has 51 chapters after the executed conservative compression merge.",
     "If a retired public chapter URL cannot be preserved or deliberately recorded",
     "Default URL Policy",
     "Keep the destination chapter's existing stable ID and public URL",
@@ -893,9 +890,10 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Pilot Defaults",
     "/chapters/agency-dignity-and-corrigibility.html",
     "/chapters/governance-rights-fork-exit-and-audit.html",
+    "/chapters/generate-verify-repair-compression.html",
     "Validation Expectations",
     "Non-Claims",
-    "The 2026-06-30 Part I execution package, not this policy text alone",
+    "The 2026-06-30 Part I and conservative compression execution packages, not this policy text alone",
 )
 
 
@@ -928,8 +926,8 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 52:
-        errors.append("Consolidation sequence expects the current manifest to have 52 chapters after the Part I pilot.")
+    if len(ids) != 51:
+        errors.append("Consolidation sequence expects the current manifest to have 51 chapters after the conservative compression merge.")
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -1405,7 +1403,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "52-chapter manifest and executed Part I pilot recorded with remaining candidate sequence."
+        "51-chapter manifest, executed Part I pilot, and executed conservative compression merge recorded with remaining candidate sequence."
     )
 
 

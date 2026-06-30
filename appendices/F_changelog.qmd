@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-06-30 - Conservative compression consolidation executed
+
+- Executed the governed conservative compression merge in
+  `book_structure.json`: folded `generate-verify-repair-compression` into
+  **Compact Generative Systems: Generate, Verify, Repair, and Residual
+  Honesty** while retaining `rankfold-neuralfold-and-artifact-compression` as
+  the standalone artifact/tensor-compression technique chapter.
+- Reduced the canonical manifest from 52 chapters to 51 chapters while
+  preserving the GVR receipt-state lane, exactness and repair residual
+  accounting, consumer-policy boundaries, source mappings, proof tags, proof
+  triage, test rows, implementation horizons, reader overlay treatment, and
+  no-support-state-change boundaries.
+- Moved the retired live manuscript under `archive/retired_chapters/`, added a
+  static historical stub for the retired public chapter slug, retargeted the
+  reader overlay to the merged destination chapter, updated
+  `docs/chapter_history_ledger.md`, and regenerated the affected source,
+  claim/evidence, test, proof, reader, status, grounding, and publication
+  surfaces.
+- This does not promote any chapter core claim above `argument`, create source
+  evidence, create proof results, create test results, prove compression
+  quality, prove codec correctness, prove repair-loop convergence, approve
+  reader artifacts, or create EPUB, DOCX, PDF, HTML, audio, DOI, Zenodo, or
+  audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Part I consolidation pilot executed
 
 - Executed the governed Part I 4-to-2 consolidation pilot in

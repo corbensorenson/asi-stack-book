@@ -4,7 +4,7 @@ Last updated: 2026-06-29
 
 This ledger names the current v1.x evidence-cycle chapter lanes selected from
 `docs/per_chapter_evidence_plan.md`. It exists to enforce the lane cap: this
-cycle selects seven high-payoff lanes and leaves the other forty-five chapter
+cycle selects seven high-payoff lanes and leaves the other forty-four chapter
 lanes planned-only. It is a planning and release-control record, not a
 support-state transition.
 
@@ -21,11 +21,11 @@ chapter-core promotion.
 | Field | Value |
 |---|---|
 | Selected chapter lanes | 7 |
-| Planned-only chapter lanes | 45 |
+| Planned-only chapter lanes | 44 |
 | Lane cap | 5-8 selected lanes per v1.x cycle |
-| Chapter core support effect | None; all 52 chapter core claims remain `argument`. |
+| Chapter core support effect | None; all 51 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to their accepted records. |
-| No-sweep rule | No 52-lane fixture sweep is claimed or implied. |
+| No-sweep rule | No 51-lane fixture sweep is claimed or implied. |
 
 ## Selected Lanes
 
@@ -76,7 +76,6 @@ support-state pressure, or release claim is created for them here.
 - `moecot-runtime-and-multi-core-orchestration`
 - `personal-compute-hives-and-federated-edge-intelligence`
 - `compact-generative-systems-and-residual-honesty`
-- `generate-verify-repair-compression`
 - `fast-generation-architectures`
 - `rankfold-neuralfold-and-artifact-compression`
 - `semantic-representation-and-tree-structured-models`

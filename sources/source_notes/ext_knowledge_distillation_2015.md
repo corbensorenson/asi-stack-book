@@ -37,7 +37,6 @@ Knowledge distillation belongs in the compactness, generate-verify-repair, artif
 ## Book Chapters Supported
 
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 

@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 52 |
-| Assigned source/chapter pairs | 449 |
-| Exact claim-source mappings | 449 |
+| Chapters audited | 51 |
+| Assigned source/chapter pairs | 448 |
+| Exact claim-source mappings | 448 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 449 |
-| Source notes listing assigned chapter | 449 |
-| Passage-reviewed mappings recorded | 449 |
-| Support-state counts | {"argument": 52} |
+| Source notes present for assigned pairs | 448 |
+| Source notes listing assigned chapter | 448 |
+| Passage-reviewed mappings recorded | 448 |
+| Support-state counts | {"argument": 51} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -65,8 +65,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
-| `compact-generative-systems-and-residual-honesty` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `generate-verify-repair-compression` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
+| `compact-generative-systems-and-residual-honesty` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `semantic-representation-and-tree-structured-models` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
@@ -106,8 +105,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `planforge` | 11 | yes |
 | `cognitive_loop_closure` | 11 | yes |
 | `verification_bandwidth` | 10 | yes |
-| `cgs` | 9 | yes |
 | `theseus_operator_os` | 9 | yes |
+| `cgs` | 8 | yes |
 | `cognitive_compilation` | 8 | yes |
 | `tokenmana` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
@@ -429,10 +428,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
-| `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |
-| `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `bbvca_main` | mapped | note present | chapter listed | passage-reviewed |
-| `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
-| `generate-verify-repair-compression.core` | `generate-verify-repair-compression` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `bbvca_main` | mapped | note present | chapter listed | passage-reviewed |
+| `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |

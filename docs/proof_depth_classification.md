@@ -72,7 +72,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 2 | 4 | 3 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | generate-verify-repair-compression | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |

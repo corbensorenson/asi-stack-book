@@ -14,7 +14,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Manifest status counts | {"implemented": 112} |
 | Triage class counts | {"formal-invariant": 112} |
 | Lean modules referenced | 54 |
-| Chapters with proof targets | 52 |
+| Chapters with proof targets | 51 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -101,14 +101,13 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `command-contracts-and-semantic-interfaces` | 2 | 2 | 0 | 0 |
-| `compact-generative-systems-and-residual-honesty` | 2 | 2 | 0 | 0 |
+| `compact-generative-systems-and-residual-honesty` | 4 | 4 | 0 | 0 |
 | `constitutional-alignment-substrate` | 4 | 4 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | 2 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 2 | 2 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 2 | 2 | 0 | 0 |
 | `fast-generation-architectures` | 2 | 2 | 0 | 0 |
-| `generate-verify-repair-compression` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 2 | 2 | 0 | 0 |
 | `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
 | `intent-to-execution-contracts` | 2 | 2 | 0 | 0 |
@@ -219,8 +218,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:personal_hives.federation_lease.operational_invariant` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.cgs.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.cgs.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.gvr.operational_invariant` | `generate-verify-repair-compression` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:compression.gvr.failure_blocks_promotion` | `generate-verify-repair-compression` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.gvr.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.gvr.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:fast_generation.mode_selection.operational_invariant` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:fast_generation.verified_speed.failure_blocks_promotion` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.operational_invariant` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |

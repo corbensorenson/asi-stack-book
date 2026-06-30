@@ -398,55 +398,34 @@
     {
       "claim_id": "compact-generative-systems-and-residual-honesty.core",
       "chapter_id": "compact-generative-systems-and-residual-honesty",
-      "chapter_title": "Compact Generative Systems and Residual Honesty",
+      "chapter_title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has architecture and source mappings, but no compact-generation backend, compression-quality measurement, residual-honesty benchmark, or model run has been accepted.",
+      "decision_reason": "The merged chapter has architecture, source mappings, record-shape fixtures, and finite Lean predicates for compact generation and generate/verify/repair receipts, but no compact-generation backend, codec, reconstruction benchmark, repair-cost measurement, residual-honesty benchmark, or model/artifact run has been accepted.",
       "required_evidence": [
         "compact-generation baseline",
         "quality and residual accounting",
-        "negative controls for hidden loss"
-      ],
-      "blockers": [
-        "no model or backend run",
-        "no compactness-quality benchmark",
-        "no residual honesty measurement"
-      ],
-      "non_claims": [
-        "does not prove compact generation quality",
-        "does not prove efficiency gains"
-      ],
-      "refs": [
-        "chapters/compact-generative-systems-and-residual-honesty.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honesty.core"
-      ]
-    },
-    {
-      "claim_id": "generate-verify-repair-compression.core",
-      "chapter_id": "generate-verify-repair-compression",
-      "chapter_title": "Generate-Verify-Repair Compression",
-      "decision": "no_promotion",
-      "current_support_state": "argument",
-      "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and repair-loop architecture, but no generate-verify-repair run, verifier-quality result, compression baseline, or repair-cost measurement has been accepted.",
-      "required_evidence": [
-        "generate-verify-repair trace",
+        "generate/verify/repair trace",
         "baseline compression comparison",
         "verifier and repair negative cases"
       ],
       "blockers": [
+        "no model or backend run",
+        "no compactness-quality benchmark",
         "no compression run",
         "no verifier evaluation",
         "no repair-cost accounting"
       ],
       "non_claims": [
+        "does not prove compact generation quality",
+        "does not prove efficiency gains",
         "does not prove compression quality",
         "does not prove repair loop convergence"
       ],
       "refs": [
-        "chapters/generate-verify-repair-compression.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#generate-verify-repair-compression.core"
+        "chapters/compact-generative-systems-and-residual-honesty.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honesty.core"
       ]
     },
     {

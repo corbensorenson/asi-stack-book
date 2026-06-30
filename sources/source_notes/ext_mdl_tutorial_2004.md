@@ -37,7 +37,6 @@ The MDL tutorial belongs in the compression and benchmark chapters as an externa
 ## Book Chapters Supported
 
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 

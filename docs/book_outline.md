@@ -2131,94 +2131,43 @@ Lean proof targets:
 | `lean:personal_hives.approval_gate.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present. | implemented |
 | `lean:personal_hives.federation_lease.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records. | implemented |
 
-### Compact Generative Systems and Residual Honesty
+### Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty
 
 Stable ID: `compact-generative-systems-and-residual-honesty`
 
-Chapter job: The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.
+Chapter job: Compact generators and generate/verify/repair receipts need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, fallback, or consumer-policy limits.
 
-Core claim: A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.
+Core claim: Compact generative systems should store the smallest useful governed generator plus the cheapest exact or scoped residual, while preserving verification, fallback, consumer policy, and residual-burden records.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `cgs`, `rgs` | Read first for chapter claims and mechanisms. |
-| Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Primary | `cgs`, `rgs`, `bbvca_v9`, `bbvca_main` | Read first for compact-system and generate/verify/repair claims and mechanisms. |
+| Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold` | Mine after primary sources for edge/resource constraints, ratcheting, implementation lineage, artifact-compression comparison, and failure modes. |
 
 Draft arc:
 
-- Problem: The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.
-- Insufficiency: Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.
+- Problem: Compact generators and generate/verify/repair receipts need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, fallback, or consumer-policy limits.
+- Insufficiency: Seed-size, compression-ratio, and generated-reconstruction claims can hide verification, repair, fallback, downstream utility, metadata, interface, governance, and human-review costs.
 - Mechanism: Treat compactness as a governed claim over seed, rule system, memory state, generator/decoder/controller, generation status, correction mechanism, verifier, verification status, verifier independence, residual channel, fallback path/status, residual-burden status, governance interface, authority boundary, use envelope, burden ledger, evidence/cost ledger, promotion blockers/state, source refs, support-state effect, and non-claims.
 - Mechanism: Use the seed/router/search/generator/verifier/residual loop to expose generation cost, verification cost, correction burden, hidden complexity, and authority limits before promotion.
 - Mechanism: Separate reconstruction burden, decision burden, and governance burden so compactness is judged by total recorded cost rather than seed size.
 - Mechanism: Require verifier separation and use envelopes so compact cores cannot self-promote their own adequacy for evidence, runtime, or replacement claims.
-- Handoff: Exact reconstruction claims flow to generate-verify-repair receipts, while time-domain acceleration claims flow to fast-generation records.
+- Mechanism: Preserve the folded generate/verify/repair lane as a compression receipt with receipt state, reconstruction contract, public law family, seed, search bound, generated regions, verification result, repair residual, fallback threshold, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims.
+- Mechanism: Treat compression as a transaction with candidate, verified-exact, verified-lossy, repaired-exact, literal-fallback, and quarantined states.
+- Mechanism: Scope compressed outputs by consumer policy so preview, routing, proof, audit, citation, benchmark, training, and exact-replay uses cannot borrow each other's authority.
+- Handoff: Time-domain acceleration inherits the same accepted-output, repair, fallback, and verifier-cost accounting in fast-generation records; RankFold/NeuralFold remains the standalone technique-facing artifact-compression chapter.
 - Interface: Compression feeds memory and routing.
-- Interface: Evidence tests downstream utility.
+- Interface: Evidence tests downstream utility, exactness, declared loss, and consumer-policy boundaries.
 - Interface: Procedural memory turns repeated generation into tools.
+- Interface: Resource economics counts generation, verification, repair, metadata, interface, fallback, and human-review costs before efficiency claims.
 
 Primary invariants:
 
 - Lossy claims are labeled.
 - Residual burden is visible.
 - Fallback exists when compact generation fails.
-
-Failure modes to cover:
-
-- False lossless claims.
-- Hidden residual complexity.
-- Compactness that damages utility.
-
-Draft deliverables:
-
-- A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, authority boundary, use envelope, burden ledger, exact remainder, verification, support-state effect, and residual fields.
-- Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape, generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers/state, source refs, support-state effect, and non-claims only; utility and residual-burden behavior remain planned tests.
-- Planned Codex test: S/R/Q/G/V/E loop consistency test.
-- Implemented Lean predicate: unresolved obligations require residual records.
-- Implemented Lean predicate: lossy representations cannot be marked exact without verification evidence.
-- Planned Codex test: Residual burden behavior test.
-- Planned Codex test: Downstream utility test.
-- Planned Codex test: Fallback behavior test.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
-| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | implemented |
-| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
-
-### Generate-Verify-Repair Compression
-
-Stable ID: `generate-verify-repair-compression`
-
-Chapter job: Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.
-
-Core claim: Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `bbvca_v9`, `bbvca_main` | Read first for chapter claims and mechanisms. |
-| Supporting | `cgs`, `rankfold_neuralfold` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-
-Draft arc:
-
-- Problem: Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.
-- Insufficiency: Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.
-- Mechanism: Record a compression receipt with receipt state, reconstruction contract, public law family, seed, search bound, generated regions, verification result, exact repair residual, fallback threshold, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims.
-- Mechanism: Separate proxy/search-rate estimates from final serialized costs, and record literal fallback or negative results when repair and metadata erase the saving.
-- Mechanism: Treat compression as a transaction with candidate, verified-exact, verified-lossy, repaired-exact, literal-fallback, and quarantined states.
-- Mechanism: Scope compressed outputs by consumer policy so preview, routing, proof, audit, citation, benchmark, training, and exact-replay uses cannot borrow each other's authority.
-- Handoff: The same draft/verify/repair accounting becomes accepted-output and verifier-cost accounting in fast generation.
-- Interface: Evidence measures reconstruction and utility.
-- Interface: Routing chooses compressed or full representation.
-- Interface: VCM uses summaries with loss contracts.
-
-Primary invariants:
-
 - Verification precedes exactness claims.
 - Repair cost is counted.
 - Search bounds are explicit.
@@ -2227,27 +2176,40 @@ Primary invariants:
 
 Failure modes to cover:
 
+- False lossless claims.
+- Hidden residual complexity.
+- Compactness that damages utility.
 - Unbounded search.
 - Verification skipped.
 - Repair larger than original data.
-- Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, or benchmark work.
+- Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, citation, benchmark, or training work.
 - Proxy-rate drift, where search-time savings survive in prose after final serialization erases them.
 
 Draft deliverables:
 
-- A compression record with generator, verification result, repair residual, fallback threshold, consumer policy, use permissions, proxy/final-rate status, and support-state effect.
+- A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, authority boundary, use envelope, burden ledger, exact remainder, verification, support-state effect, and residual fields.
+- Implemented repository-level fixture: `compact_generative_record.valid.json` validates the compact-generative record shape, generation status, verification status, fallback status, residual-burden status, correction mechanism, verifier independence, authority boundary, use envelope, burden ledger, cost accounting, promotion blockers/state, source refs, support-state effect, and non-claims only; utility and residual-burden behavior remain planned tests.
 - Implemented repository-level fixture: `compression_receipt.valid.json` validates receipt state, search bound, interface costs, consumer policy, use permissions, proxy-rate status, final-serialization status, rate accounting, support-state effect, evidence refs, and non-claims only; no codec, reconstruction benchmark, or rate experiment exists yet.
+- Planned Codex test: S/R/Q/G/V/E loop consistency test.
+- Implemented Lean predicate: unresolved obligations require residual records.
+- Implemented Lean predicate: lossy representations cannot be marked exact without verification evidence.
 - Implemented Lean predicate: exact reconstruction claims require generator output plus repair residual to equal the target in a finite record.
 - Implemented Lean predicate: failed verification blocks exactness promotion.
+- Planned Codex test: Residual burden behavior test.
+- Planned Codex test: Downstream utility test.
+- Planned Codex test: Fallback behavior test.
 - Planned Codex test: Reconstruction quality test.
 - Planned Codex test: Repair-cost accounting test.
 - Planned Codex test: Bounded-search failure test.
 - Planned Codex test: Consumer-policy enforcement test.
+- Historical public slug preserved by `chapters/generate-verify-repair-compression.html`; archived source manuscript retained under `archive/retired_chapters/generate-verify-repair-compression.qmd`.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
+| `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | implemented |
+| `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
 | `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
 | `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
 

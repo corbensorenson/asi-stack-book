@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 52 |
+| Manifest chapter core claims | 51 |
 | Accepted core evidence-transition records | 24 |
-| Accepted explicit no-promotion decisions | 28 |
+| Accepted explicit no-promotion decisions | 27 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -56,10 +56,9 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `cognitive-compilation-and-semantic-ir.core` | Cognitive Compilation and Semantic IR | `argument_only` | no compiler run; no artifact-generation benchmark; no accepted semantic repair evidence |
 | `coil-attention-cyclic-memory-and-recurrence-contracts.core` | Coil Attention, Cyclic Memory, and Recurrence Contracts | `argument_only` | no cyclic memory runtime; no retrieval-quality result; no alias-risk measurement |
 | `coilra-multicoil-rope-and-cyclic-mixers.core` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | `argument_only` | no baseline comparison; no quality or runtime measurement; no adoption canary route |
-| `compact-generative-systems-and-residual-honesty.core` | Compact Generative Systems and Residual Honesty | `argument_only` | no model or backend run; no compactness-quality benchmark; no residual honesty measurement |
+| `compact-generative-systems-and-residual-honesty.core` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | `argument_only` | no model or backend run; no compactness-quality benchmark; no compression run; no verifier evaluation; no repair-cost accounting |
 | `context-transactions-snapshots-mounts-and-taint.core` | Context Transactions, Snapshots, Mounts, and Taint | `argument_only` | no memory-store runtime; no deletion closure verification; no side-channel or branch-isolation review |
 | `failure-modes-of-ungoverned-intelligence.core` | Failure Modes of Ungoverned Intelligence | `argument_only` | no system-level red-team result yet; no empirical failure corpus evaluation; no deployed monitor or detector trace |
-| `generate-verify-repair-compression.core` | Generate-Verify-Repair Compression | `argument_only` | no compression run; no verifier evaluation; no repair-cost accounting |
 | `human-intent-as-a-formal-input.core` | Human Intent as a Formal Input | `argument_only` | no parser or compiler benchmark; no user-intent interpretation review; no accepted execution trace |
 | `integrated-reference-architecture.core` | Integrated Reference Architecture | `argument_only` | no whole-stack trace kernel; no cross-layer runtime replay; no system-level adversarial review yet |
 | `labor-os-and-typed-jobs.core` | Labor OS and Typed Jobs | `argument_only` | no deployed job lifecycle; no live approval service; no command-to-effect replay |

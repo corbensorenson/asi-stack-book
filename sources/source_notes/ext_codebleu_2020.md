@@ -37,7 +37,7 @@ CodeBLEU belongs in the benchmark, compression, steward, and prototype chapters 
 ## Book Chapters Supported
 
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `prototype-roadmap` (Prototype Roadmap)
 

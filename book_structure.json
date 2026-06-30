@@ -6475,7 +6475,7 @@
         },
         {
           "id": "compact-generative-systems-and-residual-honesty",
-          "title": "Compact Generative Systems and Residual Honesty",
+          "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
           "file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
@@ -6486,55 +6486,79 @@
             "bugbrain",
             "simulation_scaling",
             "rmi",
-            "project_theseus_whitepaper"
+            "project_theseus_whitepaper",
+            "bbvca_v9",
+            "bbvca_main",
+            "rankfold_neuralfold"
           ],
           "source_queue": {
             "primary": [
               "cgs",
-              "rgs"
+              "rgs",
+              "bbvca_v9",
+              "bbvca_main"
             ],
             "supporting": [
               "bugbrain",
               "simulation_scaling",
               "rmi",
-              "project_theseus_whitepaper"
+              "project_theseus_whitepaper",
+              "rankfold_neuralfold"
             ],
             "variants": [],
             "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
+            "handoff_or_recovery_notes": [
+              "Folded generate-verify-repair-compression into this destination chapter on 2026-06-30 through the conservative compression merge; preserve GVR receipt states, exactness/repair/fallback accounting, consumer policy, proof hooks, tests, source mappings, and history."
+            ]
           },
-          "problem": "The architecture needs a theory of compact systems that generate useful behavior without hiding unresolved complexity.",
-          "insufficient": "Compression can look efficient while moving burden into unmeasured reconstruction, verification, or human review work.",
-          "core_claim": "A compact generative system is useful only when compactness, generativity, governance, verification, and residual burden are all explicit.",
+          "problem": "Compact generators and generate-verify-repair receipts need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, fallback, or consumer-policy limits.",
+          "insufficient": "Seed-size, compression-ratio, and generated-reconstruction claims can hide verification, repair, fallback, downstream utility, metadata, interface, governance, and human-review costs.",
+          "core_claim": "Compact generative systems should store the smallest useful governed generator plus the cheapest exact or scoped residual, while preserving verification, fallback, consumer policy, and residual-burden records.",
           "mechanism": [
-            "Define compact generative cores and their residuals.",
+            "Define compact generative cores and their residuals through a compactness ledger.",
             "Use the seed/router/search/generator/verifier/residual loop as the default compression-control model.",
+            "Treat generate-verify-repair as the stricter exactness lane: generated regions, verifier results, repair residuals, literal fallback, proxy-rate status, final-rate status, and consumer policy travel in one receipt.",
             "Treat the raw LLM as a compressed generative engine, not as the entire intelligent system.",
-            "Separate lawful generation from exact remainder.",
-            "Record where compactness fails."
+            "Separate lawful generation from exact remainder and scoped loss.",
+            "Record where compactness, exactness, consumer policy, or rate accounting fails."
           ],
           "interfaces": [
-            "Compression feeds memory and routing.",
-            "Evidence tests downstream utility.",
-            "Procedural memory turns repeated generation into tools."
+            "Compression feeds memory and routing through compactness ledgers and compression receipts.",
+            "Evidence tests downstream utility, exactness, declared loss, and consumer-policy boundaries.",
+            "Procedural memory turns repeated generation into tools only when residuals and verification remain visible.",
+            "Resource economics counts generation, verification, repair, metadata, interface, fallback, and human-review costs before efficiency claims."
           ],
           "invariants": [
             "Lossy claims are labeled.",
             "Residual burden is visible.",
-            "Fallback exists when compact generation fails."
+            "Fallback exists when compact generation or generated reconstruction fails.",
+            "Verification precedes exactness claims.",
+            "Repair cost and interface cost are counted before compression savings are claimed.",
+            "Consumer use is scoped to the reconstruction contract, declared loss, and support-state boundary.",
+            "Compactness does not promote support state without a separate evidence-transition record."
           ],
           "failure_modes": [
             "False lossless claims.",
             "Hidden residual complexity.",
-            "Compactness that damages utility."
+            "Compactness that damages utility.",
+            "Unbounded search.",
+            "Verification skipped or scoped to the wrong contract.",
+            "Repair larger than original data.",
+            "Consumer-policy leakage from preview or lossy use into proof, audit, benchmark, citation, or training use.",
+            "Proxy-rate drift after final serialization erases the apparent saving.",
+            "Degenerate governance where the compact core evaluates its own adequacy.",
+            "Recursive instability when compact structures modify the system that defines their success."
           ],
-          "minimal_implementation": "A compactness ledger with seed, router/index, search/planning, generator/decoder, verifier/critic, residual correction, memory/governance hooks, exact remainder, verification, and residual fields.",
-          "beyond_state_of_art": "Compact generative systems earn their place as a burden-accounting layer for compression and generation. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit. In the mature compact-generation ledger, compactness is useful only when the generator, verifier, fallback, governance burden, reconstruction burden, decision burden, and residual burden are all counted.",
+          "minimal_implementation": "A compact generative record plus compression receipt fixture suite with one residual-burden case, one lossy or blocked exactness case, one failed-verification case, one repair-or-fallback case, and one consumer-policy rejection.",
+          "beyond_state_of_art": "A mature compression control plane treats compact generators, generated reconstructions, exact repairs, scoped residuals, consumer policies, fallback, replay, and resource accounting as one audited representation market. It lets the stack choose the cheapest lawful representation for a task while preserving verifier quality, repair burden, exactness boundaries, declared loss, fallback availability, and non-claims. This remains a target architecture until public codec, verifier, utility, rate, and replay evidence exists.",
           "codex_tests": [
             "S/R/Q/G/V/E loop consistency test",
             "Residual burden test",
             "Downstream utility test",
-            "Fallback behavior test"
+            "Fallback behavior test",
+            "Reconstruction quality test",
+            "Repair-cost accounting test",
+            "Bounded-search failure test"
           ],
           "lean_module": "AsiStackProofs.CompactGenerativeSystems",
           "proof_targets": [
@@ -6549,13 +6573,25 @@
               "module": "AsiStackProofs.CompactGenerativeSystems",
               "target": "A lossy representation cannot be marked exact without verification evidence.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:compression.gvr.operational_invariant",
+              "module": "AsiStackProofs.GenerateVerifyRepair",
+              "target": "An exact reconstruction claim requires generator output plus repair residual to equal the target.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:compression.gvr.failure_blocks_promotion",
+              "module": "AsiStackProofs.GenerateVerifyRepair",
+              "target": "A failed verification blocks exactness promotion.",
+              "status": "implemented"
             }
           ],
           "claim_source_mappings": [
             {
               "source_id": "cgs",
-              "mapped_support": "Supports the compact-generative core claim through the seed/rule system/memory-state/residual/error/verification/governance tuple, smallest-adequate-structure framing, generative leverage, residual burden, verification cost, governance power, and hidden-complexity debt metrics.",
-              "limits": "Conceptual framework and research program only; no local CGS benchmark, utility test, proof of compact adequacy, generator, or implementation has been run here.",
+              "mapped_support": "Supports the compact-generative core claim through the seed/rule system/memory-state/residual/error/verification/governance tuple, smallest-adequate-structure framing, generative leverage, residual burden, verification cost, governance power, and hidden-complexity debt metrics. Folded generate/verify/repair lineage: Supports residual accounting and governance around compressed generation through compact seeds, rule systems, residual/error channels, verification contracts, governance interfaces, and hidden complexity debt.",
+              "limits": "Conceptual framework and research program only; no local CGS benchmark, utility test, proof of compact adequacy, generator, or implementation has been run here. Folded GVR boundary: Does not establish that any generate-verify-repair codec preserves utility, improves rate, or reconstructs data in this repo.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/google_docs/cgs.txt:11-35",
@@ -6565,9 +6601,12 @@
                 "sources/raw/google_docs/cgs.txt:209-228",
                 "sources/raw/google_docs/cgs.txt:299-399",
                 "sources/raw/google_docs/cgs.txt:650-740",
-                "sources/raw/google_docs/cgs.txt:750-837"
+                "sources/raw/google_docs/cgs.txt:750-837",
+                "sources/raw/google_docs/cgs.txt:367-399",
+                "sources/raw/google_docs/cgs.txt:688-740",
+                "sources/raw/google_docs/cgs.txt:788-837"
               ],
-              "passage_review_note": "Reviewed local raw cache for CGS definition, seed/rule/memory/residual/verification/governance tuple, smallest-adequate-structure framing, false-compactness checks, criteria, laws, leverage, fidelity, residual burden, verification cost, governance power, and hidden-complexity debt; no local CGS benchmark, utility test, adequacy proof, generator, or implementation run is promoted."
+              "passage_review_note": "Reviewed local raw cache for CGS definition, seed/rule/memory/residual/verification/governance tuple, smallest-adequate-structure framing, false-compactness checks, criteria, laws, leverage, fidelity, residual burden, verification cost, governance power, and hidden-complexity debt; no local CGS benchmark, utility test, adequacy proof, generator, or implementation run is promoted. Folded GVR mapping: Reviewed local raw cache for compact seeds, rule systems, residual/error channels, verification contracts, residual accounting, hidden-complexity debt, and verification/governance cost accounting around compressed generation; no GVR codec, utility preservation result, rate improvement, or reconstruction result is promoted."
             },
             {
               "source_id": "rgs",
@@ -6646,91 +6685,11 @@
                 "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:764-787"
               ],
               "passage_review_note": "Reviewed pinned local-project source for SymLiquid, SparkStream, Octopus routing, bounded specialist arms, benchmark/residual ledgers, trusted Hive nodes, report-first JSON/JSONL truth, implementation snapshot boundaries, and roadmap pressure toward measured tools; no current Theseus reports, ledgers, code paths, command outputs, runtime result, or benchmark snapshot is promoted."
-            }
-          ],
-          "draft_maturity": "v0.2 manuscript draft",
-          "open_evidence_gaps": [
-            "Appendix C now records exact passage-reviewed mappings for all assigned Compact Generative Systems sources; support remains at argument until CGS utility, residual-burden behavior, fallback behavior, downstream utility tests, compact-adequacy proofs, generator behavior, or reproduced implementation evidence exist.",
-            "Only the compact_generative_record fixture and narrow finite Lean residual/exactness predicates have been implemented; no CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository.",
-            "BugBrain and Project Theseus passages are used as speculative/source-reported implementation lineage only; they do not prove edge AGI, consciousness, compact adequacy, or runtime behavior."
-          ]
-        },
-        {
-          "id": "generate-verify-repair-compression",
-          "title": "Generate-Verify-Repair Compression",
-          "file": "chapters/generate-verify-repair-compression.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "bbvca_v9",
-            "bbvca_main",
-            "cgs",
-            "rankfold_neuralfold"
-          ],
-          "source_queue": {
-            "primary": [
-              "bbvca_v9",
-              "bbvca_main"
-            ],
-            "supporting": [
-              "cgs",
-              "rankfold_neuralfold"
-            ],
-            "variants": [],
-            "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "Some representations may be compressed by storing a lawful generator plus exact repairs, but the book needs disciplined claims around this.",
-          "insufficient": "Compression narratives can overclaim exactness without bounded search, verification, repair accounting, and fallback criteria.",
-          "core_claim": "Generate-verify-repair compression should store the smallest useful lawful explanation plus the cheapest exact remainder when generation fails.",
-          "mechanism": [
-            "Generate from seeded local laws.",
-            "Verify against target.",
-            "Repair mismatches with exact residual mechanisms and record rate discipline."
-          ],
-          "interfaces": [
-            "Evidence measures reconstruction and utility.",
-            "Routing chooses compressed or full representation.",
-            "VCM uses summaries with loss contracts."
-          ],
-          "invariants": [
-            "Verification precedes exactness claims.",
-            "Repair cost is counted.",
-            "Search bounds are explicit."
-          ],
-          "failure_modes": [
-            "Unbounded search.",
-            "Verification skipped.",
-            "Repair larger than original data."
-          ],
-          "minimal_implementation": "A compression record with generator, verification result, repair residual, and fallback threshold.",
-          "beyond_state_of_art": "Generate-verify-repair compression only counts as compression when it refuses to treat approximate generation as storage savings until exactness, loss, repair, fallback, and final rate are all accounted for. Its product surface is a receipt ledger that lets later layers decide whether a smaller representation is lawful for the task they are about to perform. Generated compression can save space only after verification and repair account for the exact remainder, fallback, metadata, interface cost, and final serialized rate.",
-          "codex_tests": [
-            "Reconstruction quality test",
-            "Repair-cost accounting test",
-            "Bounded-search failure test"
-          ],
-          "lean_module": "AsiStackProofs.GenerateVerifyRepair",
-          "proof_targets": [
-            {
-              "tag": "lean:compression.gvr.operational_invariant",
-              "module": "AsiStackProofs.GenerateVerifyRepair",
-              "target": "An exact reconstruction claim requires generator output plus repair residual to equal the target.",
-              "status": "implemented"
             },
             {
-              "tag": "lean:compression.gvr.failure_blocks_promotion",
-              "module": "AsiStackProofs.GenerateVerifyRepair",
-              "target": "A failed verification blocks exactness promotion.",
-              "status": "implemented"
-            }
-          ],
-          "claim_source_mappings": [
-            {
               "source_id": "bbvca_v9",
-              "mapped_support": "Supports the generate-verify-repair claim through reconstruction contracts, shared law families, exact repair streams, bounded local verification, explicit fallback, boundary/interface costs, proxy-rate versus final serialization discipline, and anti-universality constraints.",
-              "limits": "Primary conceptual compression source, not reproduced evidence; BBVCA Prototype A, compression ratios, codec correctness, and rate experiments have not been implemented or run here.",
+              "mapped_support": "Folded generate/verify/repair lineage: Supports the generate-verify-repair claim through reconstruction contracts, shared law families, exact repair streams, bounded local verification, explicit fallback, boundary/interface costs, proxy-rate versus final serialization discipline, and anti-universality constraints.",
+              "limits": "Folded GVR boundary: Primary conceptual compression source, not reproduced evidence; BBVCA Prototype A, compression ratios, codec correctness, and rate experiments have not been implemented or run here.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/google_docs/bbvca_v9.txt:12-30",
@@ -6752,8 +6711,8 @@
             },
             {
               "source_id": "bbvca_main",
-              "mapped_support": "Supports the lineage from hierarchical causal/volumetric reconstruction, compact generator states, deterministic laws, multiscale verification, side information, and repair risks into the stricter v9 formulation.",
-              "limits": "Earlier architecture draft only; use v9 for final bounded rate/exactness claims, and no local codec or benchmark exists.",
+              "mapped_support": "Folded generate/verify/repair lineage: Supports the lineage from hierarchical causal/volumetric reconstruction, compact generator states, deterministic laws, multiscale verification, side information, and repair risks into the stricter v9 formulation.",
+              "limits": "Folded GVR boundary: Earlier architecture draft only; use v9 for final bounded rate/exactness claims, and no local codec or benchmark exists.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/google_docs/bbvca_main.txt:12-16",
@@ -6769,24 +6728,9 @@
               "passage_review_note": "Reviewed local raw cache for BBVCA lineage: hierarchical causal/volumetric reconstruction, compact generator states, deterministic expansion/decode, bounded side information, sparse corrections, literal fallback, multiscale/Merkle-style verification, lossless and near-lossless contract modes, and risks around side-information, search complexity, mapping sensitivity, and verification overhead; no local codec, benchmark, or reproduced compression result is promoted."
             },
             {
-              "source_id": "cgs",
-              "mapped_support": "Supports residual accounting and governance around compressed generation through compact seeds, rule systems, residual/error channels, verification contracts, governance interfaces, and hidden complexity debt.",
-              "limits": "Does not establish that any generate-verify-repair codec preserves utility, improves rate, or reconstructs data in this repo.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/cgs.txt:121-133",
-                "sources/raw/google_docs/cgs.txt:140-170",
-                "sources/raw/google_docs/cgs.txt:209-228",
-                "sources/raw/google_docs/cgs.txt:367-399",
-                "sources/raw/google_docs/cgs.txt:688-740",
-                "sources/raw/google_docs/cgs.txt:788-837"
-              ],
-              "passage_review_note": "Reviewed local raw cache for compact seeds, rule systems, residual/error channels, verification contracts, residual accounting, hidden-complexity debt, and verification/governance cost accounting around compressed generation; no GVR codec, utility preservation result, rate improvement, or reconstruction result is promoted."
-            },
-            {
               "source_id": "rankfold_neuralfold",
-              "mapped_support": "Supports artifact-compression comparison points through low-rank residual coding, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, deterministic decode, and reconstruction checks.",
-              "limits": "Architecture and implementation-plan source only; no local compression benchmark, implementation artifact, deterministic decoder, or reproduced ratio is present.",
+              "mapped_support": "Folded generate/verify/repair lineage: Supports artifact-compression comparison points through low-rank residual coding, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, deterministic decode, and reconstruction checks.",
+              "limits": "Folded GVR boundary: Architecture and implementation-plan source only; no local compression benchmark, implementation artifact, deterministic decoder, or reproduced ratio is present.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/google_docs/rankfold_neuralfold.txt:13-17",
@@ -6808,9 +6752,12 @@
           ],
           "draft_maturity": "v0.2 manuscript draft",
           "open_evidence_gaps": [
-            "Appendix C now records exact passage-reviewed mappings for all assigned Generate-Verify-Repair Compression sources; support remains at argument until a codec, bounded-search harness, reconstruction benchmark, repair-cost benchmark, final-rate experiment, or reproduced artifact-compression result exists.",
-            "Only the compression_receipt fixture and narrow finite Lean reconstruction/verification predicates have been implemented; no BBVCA Prototype A implementation, entropy coder, exact reconstruction harness, RankFold/NeuralFold artifact run, or rate comparison has been executed from this repository.",
-            "BBVCA main and RankFold/NeuralFold are used as architecture lineage and comparison points only; they do not prove codec correctness, compression efficiency, universality, or working decode behavior here."
+            "Appendix C now records exact passage-reviewed mappings for all assigned Compact Generative Systems sources; support remains at argument until CGS utility, residual-burden behavior, fallback behavior, downstream utility tests, compact-adequacy proofs, generator behavior, or reproduced implementation evidence exist.",
+            "Only the compact_generative_record fixture and narrow finite Lean residual/exactness predicates have been implemented; no CGS benchmark, utility test, generator, fallback harness, downstream behavior test, BugBrain build, simulation benchmark, or Theseus report rerun has been executed from this repository.",
+            "BugBrain and Project Theseus passages are used as speculative/source-reported implementation lineage only; they do not prove edge AGI, consciousness, compact adequacy, or runtime behavior.",
+            "Folded GVR gap: Appendix C now records exact passage-reviewed mappings for all assigned Generate-Verify-Repair Compression sources; support remains at argument until a codec, bounded-search harness, reconstruction benchmark, repair-cost benchmark, final-rate experiment, or reproduced artifact-compression result exists.",
+            "Folded GVR gap: Only the compression_receipt fixture and narrow finite Lean reconstruction/verification predicates have been implemented; no BBVCA Prototype A implementation, entropy coder, exact reconstruction harness, RankFold/NeuralFold artifact run, or rate comparison has been executed from this repository.",
+            "Folded GVR gap: BBVCA main and RankFold/NeuralFold are used as architecture lineage and comparison points only; they do not prove codec correctness, compression efficiency, universality, or working decode behavior here."
           ]
         },
         {

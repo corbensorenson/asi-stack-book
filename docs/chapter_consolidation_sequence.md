@@ -16,10 +16,10 @@ re-consolidation: fewer deeper chapter-owning artifacts, with every useful idea
 preserved as a section, subclaim, source mapping, proof hook, reader path,
 implementation horizon, or explicit retirement decision.
 
-The Part I pilot has now executed through `book_structure.json`; the current
-canonical book has 52 manifest chapters. The remaining candidate packages still
+The Part I pilot and the conservative compression merge have now executed
+through `book_structure.json`; the current canonical book has 51 manifest chapters. The remaining candidate packages still
 require their own package-specific decision and execution commit before any
-further manifest change. This is not a support-state transition. The current canonical count is 52 manifest chapters after the Part I pilot.
+further manifest change. This is not a support-state transition. The current canonical count is 51 manifest chapters after the conservative compression merge.
 
 ## Decision Boundary
 
@@ -211,7 +211,7 @@ merge lowers the chapter count.
 |---|---|---|---|
 | Part I alignment and agency/corrigibility | `executed` | Use as the template for future one-package execution commits. | Reader work should target the consolidated destination chapter. |
 | Part I value conflict and contestable governance | `executed` | Use as the template for future one-package execution commits. | Reader work should target the consolidated destination chapter. |
-| Compression and residual honesty | `review_ready` | Review the destination draft and decide execute full merge, execute conservative merge, revise, defer, or reject. | Avoid curated graduation of the source cluster unless explicitly deferred or retained. |
+| Compression and residual honesty | `executed` | Use the conservative merge as the template for future packages; keep RankFold/NeuralFold standalone unless later evidence changes its artifact ownership. | Reader work should target the merged compact-generative destination plus the retained RankFold technique chapter. |
 | Intent and executable contracts | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` reader work local until the contract boundary is clear. |
 | Static context ABI | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the static ABI pair unless explicitly deferred or retained; reader curation may continue on protected adjacent chapters. |
 | Verification and adversarial review | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the verification/review pair unless explicitly deferred or retained; reader curation may continue on claim ledgers. |
@@ -234,7 +234,7 @@ blocked until the revision is reviewed.
 |---|---|---|---|
 | 1 | Part I constitutional alignment and agency/corrigibility | Executed on 2026-06-30. | Retired agency/corrigibility slug preserved through historical stub; source chapter archived; no support-state change. |
 | 2 | Part I value conflict and contestable governance | Executed on 2026-06-30. | Retired governance-rights slug preserved through historical stub; source chapter archived; no support-state change. |
-| 3 | Compression and residual honesty | Execute full merge, execute conservative merge, revise, defer, or reject. | Keep RankFold/NeuralFold standalone if review finds concrete technique ownership. |
+| 3 | Compression and residual honesty | Conservative merge executed on 2026-06-30. | Retired GVR slug preserved through historical stub; source chapter archived; RankFold/NeuralFold retained as standalone technique chapter; no support-state change. |
 | 4 | Intent and executable contracts | Execute, revise, defer, or reject. | Keep `human-intent-as-a-formal-input` as intent intake and remove only duplicated contract skeleton. |
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep transaction/snapshot/taint and verification-bandwidth chapters standalone unless later review changes artifact ownership. |
 | 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep `claim-ledgers-and-belief-revision` as the durable belief-revision substrate. |

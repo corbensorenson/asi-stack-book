@@ -38,7 +38,6 @@ The information bottleneck method belongs in the representation and compression 
 
 - `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 
 ## Claims To Add Or Update

@@ -207,13 +207,14 @@ DECISION_REVIEW_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot through static historical stubs",
+    "applied to the 2026-06-30 Part I pilot and conservative compression merge through static historical stubs",
     "Default URL Policy",
     "Preserve every retired source chapter's public URL",
     "Pilot Defaults",
     "/chapters/agency-dignity-and-corrigibility.html",
     "/chapters/governance-rights-fork-exit-and-audit.html",
-    "The 2026-06-30 Part I execution package, not this policy text alone, implemented two historical stubs and changed the manifest to 52 chapters.",
+    "/chapters/generate-verify-repair-compression.html",
+    "The 2026-06-30 Part I and conservative compression execution packages, not this policy text alone, implemented three historical stubs and changed the manifest to 51 chapters.",
 )
 EXTERNAL_REVIEW_PACKET_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation External Review Packet",

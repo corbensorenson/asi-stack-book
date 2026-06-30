@@ -39,7 +39,6 @@ Compact Generative Systems, or CGS, argues that powerful systems often use a com
 
 - `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)

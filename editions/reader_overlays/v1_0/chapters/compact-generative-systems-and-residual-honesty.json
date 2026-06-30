@@ -1,16 +1,16 @@
 {
   "schema_version": "0.1",
-  "target_file": "chapters/generate-verify-repair-compression.qmd",
+  "target_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
   "operations": [
     {
-      "id": "v1_0.generate_verify_repair.receipt_states_reader_replace",
+      "id": "v1_0.compact_generative_systems.receipt_states_reader_replace",
       "status": "active",
       "action": "replace_section",
       "section": {
         "level": 3,
         "title": "Compression receipt states"
       },
-      "rationale": "Replace the compression-receipt state table with reader prose while preserving the canonical AI/research receipt-state matrix.",
+      "rationale": "Replace the folded compression-receipt state table with reader prose while preserving the canonical AI/research receipt-state matrix inside the merged compact-generative chapter.",
       "content_lines": [
         "Compression receipts move through states because exactness is not a feeling produced by an elegant generator. A candidate receipt means a generator, seed, or law family has been proposed but not verified, so it belongs only in search and analysis. Verified exact is stronger: decode plus recorded repair equals the target under the declared reconstruction contract. Verified lossy is different again; loss has been declared and accepted only inside a bounded use envelope such as preview, drafting, routing, or another loss-tolerant task.",
         "",

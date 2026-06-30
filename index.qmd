@@ -13,11 +13,11 @@
 </div>
 <div>
 <strong>Sources</strong>
-<span>185 public-safe records; 52/52 chapters externally positioned</span>
+<span>185 public-safe records; 51/51 chapters externally positioned</span>
 </div>
 <div>
 <strong>Claims</strong>
-<span>52 chapter core claims remain argument-level</span>
+<span>51 chapter core claims remain argument-level</span>
 </div>
 <div>
 <strong>Tests</strong>
@@ -31,7 +31,7 @@
 
 **What this is not.** This is not a validated ASI implementation, deployed safety system, benchmark-proven architecture, or claim that the chapter theses are already externally proven.
 
-**What is currently evidenced.** All 52 chapter core claims remain at `argument`. Three narrow non-core transitions are accepted in [`docs/non_core_evidence_ledger.md`](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/non_core_evidence_ledger.md): the Phase 5 harness registry runner and the costed-route/resource-budget slice are `synthetic-test-backed`, and one bounded Circle rope receipt replay is `prototype-backed`. Lean coverage is broad but still shallow in safety-critical modules. All 52 chapters now have source-noted external positioning records with 0 explicit external-baseline exceptions; that is a credibility and routing surface, not exhaustive literature synthesis or support-state promotion. Circle now also has a public ASI consumer-gate fixture checked by digest and negative controls in [`docs/circle_public_replay_consumer_gate.md`](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/circle_public_replay_consumer_gate.md), but it is a guard around receipt use, not a fourth accepted transition. Project Theseus has one public-safe static architecture-gate report import checked by digest in [`docs/theseus_report_import_slice.md`](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/theseus_report_import_slice.md), but this is implementation-reference evidence only and not a chapter-core promotion. Independent external human review is requested in [GitHub issue #1](https://github.com/corbensorenson/asi-stack-book/issues/1), but no review has been accepted as evidence.
+**What is currently evidenced.** All 51 chapter core claims remain at `argument`. Three narrow non-core transitions are accepted in [`docs/non_core_evidence_ledger.md`](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/non_core_evidence_ledger.md): the Phase 5 harness registry runner and the costed-route/resource-budget slice are `synthetic-test-backed`, and one bounded Circle rope receipt replay is `prototype-backed`. Lean coverage is broad but still shallow in safety-critical modules. All 51 chapters now have source-noted external positioning records with 0 explicit external-baseline exceptions; that is a credibility and routing surface, not exhaustive literature synthesis or support-state promotion. Circle now also has a public ASI consumer-gate fixture checked by digest and negative controls in [`docs/circle_public_replay_consumer_gate.md`](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/circle_public_replay_consumer_gate.md), but it is a guard around receipt use, not a fourth accepted transition. Project Theseus has one public-safe static architecture-gate report import checked by digest in [`docs/theseus_report_import_slice.md`](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/theseus_report_import_slice.md), but this is implementation-reference evidence only and not a chapter-core promotion. Independent external human review is requested in [GitHub issue #1](https://github.com/corbensorenson/asi-stack-book/issues/1), but no review has been accepted as evidence.
 
 ## Core thesis
 
@@ -111,4 +111,4 @@ Every major claim should carry a support state. The default state is `argument`.
 
 ## Living status
 
-This release is a tagged v1.0.0 living-book baseline, not a finished v1.x evidence-and-reader release. The chapters are written end to end, and the repo validates scaffold, source-note, proof-readiness, schema, fixture, Lean, reading-mode, and render health locally. External-grounding placement is closed at 52/52 positioned chapters with 0 explicit exceptions, but deeper prior-art work, chapter-core evidence transitions, chapter-level tests, stronger safety-critical proof semantics, clean Project Theseus replay, stronger Circle replay or vendored contract-pack lanes, governed consolidation, and human-reader curation remain active roadmap items until their artifacts are added and recorded.
+This release is a tagged v1.0.0 living-book baseline, not a finished v1.x evidence-and-reader release. The chapters are written end to end, and the repo validates scaffold, source-note, proof-readiness, schema, fixture, Lean, reading-mode, and render health locally. External-grounding placement is closed at 51/51 positioned chapters with 0 explicit exceptions, but deeper prior-art work, chapter-core evidence transitions, chapter-level tests, stronger safety-critical proof semantics, clean Project Theseus replay, stronger Circle replay or vendored contract-pack lanes, governed consolidation, and human-reader curation remain active roadmap items until their artifacts are added and recorded.

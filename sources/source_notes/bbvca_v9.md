@@ -43,7 +43,7 @@ BBVCA v9 defines generate-verify-repair compression under a contract-relative re
 ## Book Chapters Supported
 
 - `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 
 ## Claims To Add Or Update

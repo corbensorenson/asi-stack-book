@@ -37,7 +37,7 @@ GPTQ belongs in the artifact-compression, generate-verify-repair, resource-econo
 ## Book Chapters Supported
 
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `fast-generation-architectures` (Fast Generation Architectures)
 

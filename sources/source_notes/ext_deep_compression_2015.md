@@ -37,7 +37,6 @@ Deep Compression belongs in the compression and resource chapters as an external
 ## Book Chapters Supported
 
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 

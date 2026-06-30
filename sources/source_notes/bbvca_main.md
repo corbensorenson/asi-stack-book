@@ -38,7 +38,7 @@ BBVCA main introduces compression as hierarchical causal reconstruction from com
 
 ## Book Chapters Supported
 
-- `generate-verify-repair-compression` (Generate-Verify-Repair Compression)
+- `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 
 ## Claims To Add Or Update
 
