@@ -9503,6 +9503,27 @@
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures; no reward-hacking experiment run"
             },
+            {
+              "name": "Holdout and contamination negative case",
+              "purpose": "Check that a finite policy-promotion candidate missing holdout refs or contamination checks rejects the promotion-evidence predicate.",
+              "status": "implemented in AsiStackProofs.PolicyOptimization; no hidden-holdout operation or contamination detector run",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no hidden-holdout or contamination-detection claim"
+            },
+            {
+              "name": "Reward-proxy target-evaluation negative case",
+              "purpose": "Check that reward-proxy improvement used as sole evidence without target evaluation refs rejects the finite reward-proxy predicate.",
+              "status": "implemented in AsiStackProofs.PolicyOptimization; no reward-quality or task-success claim",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no reward-quality or task-success claim"
+            },
+            {
+              "name": "Authority-expansion negative case",
+              "purpose": "Check that an authority-expanding policy update missing governance approval or rollback records rejects the finite authority-expansion predicate.",
+              "status": "implemented in AsiStackProofs.PolicyOptimization; no deployed approval or rollback behavior claim",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no approval-quality or rollback-execution claim"
+            },
             "Router policy toy RL test",
             "Context-policy grounding reward test",
             "Reasoning-budget penalty test",

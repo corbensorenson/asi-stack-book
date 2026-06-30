@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-30 - Policy optimization promotion-boundary proofs
+
+- Strengthened `AsiStackProofs.PolicyOptimization` with three derived
+  negative-case theorems: one rejects policy promotion when holdout refs or
+  contamination checks are missing, one rejects reward-proxy improvement used
+  as sole evidence without target evaluation refs, and one rejects
+  authority-expanding policy updates without governance approval or rollback
+  records.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 326
+  theorem declarations, 121 direct/projection-style declarations, and 205
+  derived/decomposed declarations.
+- Updated the Policy Optimization chapter, manifest test rows, Appendix E,
+  proof adequacy review, candidate status, v1.0/v1.x roadmap surfaces, focus
+  audit, and status snapshot validator. Appendix E now records 153
+  implemented rows, 1 partial row, and 110 planned rows. Refreshed the v1.0
+  status manuscript scale to 167,698 chapter words excluding YAML and 175,138
+  raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, run PPO, DPO,
+  GRPO, RLVR, router-policy RL, context-policy RL, or reasoning-budget RL,
+  prove reward quality, prove optimizer convergence, prove policy safety,
+  prove reward-hacking resistance, validate hidden-holdout operations, validate
+  contamination detection, execute rollback, validate governance approval
+  quality, measure deployment behavior, or approve any reader, ebook, PDF,
+  DOCX, or audio release artifact.
+
 ## 2026-06-30 - Fast generation acceptance-accounting proofs
 
 - Strengthened `AsiStackProofs.FastGeneration` with three derived

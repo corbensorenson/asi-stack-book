@@ -60,7 +60,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | 4 | 6 | 4 | 4 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 2 | 8 | 4 | 4 |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | 2 | 2 | 2 | 2 |
+| `lean/AsiStackProofs/PolicyOptimization.lean` | 2 | 8 | 6 | 5 |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | 2 | 4 | 2 | 2 |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | 2 | 7 | 5 | 3 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 2 | 2 | 4 | 2 |

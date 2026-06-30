@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-28"
+last_updated: "2026-06-30"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -39,7 +39,7 @@ open_evidence_gaps:
   - "The 2026-06-24 browser-GPT note is author-intent and literature-queue context only; it is not treated as source-derived evidence."
   - "Appendix C now records passage-reviewed mappings for all twenty-seven assigned sources, including source-note-only review for MoECOT and external arXiv method-family records; support remains argument until accepted evidence transitions, local experiments, or stronger literature review justify promotion."
   - "No PPO, DPO, GRPO, RLVR, router-policy, context-policy, execution-policy, verifier-policy, or reasoning-budget training run has been implemented or reproduced in this repository."
-  - "The policy_optimization_record fixture validates schema/example consistency; AsiStackProofs.PolicyOptimization implements finite record predicates; and the benchmark anti-Goodhart harness validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior. None of these artifacts proves reward quality, optimizer convergence, benchmark improvement, policy safety, or reward-hacking resistance."
+  - "The policy_optimization_record fixture validates schema/example consistency; AsiStackProofs.PolicyOptimization implements finite record predicates plus bounded negative cases for missing holdout/contamination checks, reward-proxy promotion without target evaluation, and authority-expanding policy updates without approval or rollback; and the benchmark anti-Goodhart harness validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior. None of these artifacts proves reward quality, optimizer convergence, benchmark improvement, policy safety, reward-hacking resistance, or policy-update runtime behavior."
 ---
 
 ## Chapter status
@@ -50,13 +50,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-28 |
+| Last updated | 2026-06-30 |
 | Primary source records | `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, plus 15 external method-family records listed below. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; external variants: TRPO, PPO, ReMax, DPO, IPO/preference theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, RLHF limitations; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
 | Source loading state | source notes: all assigned ASI Stack sources plus 15 external policy/RL records; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot`; external literature: primary arXiv metadata and source notes recorded, no local reproduction |
-| Test state | `policy_optimization_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PolicyOptimization` implements finite policy-update record and reward/governance promotion gates; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior. No policy optimization experiment has been run. |
+| Test state | `policy_optimization_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PolicyOptimization` implements finite policy-update record and reward/governance promotion gates plus bounded negative cases for missing holdout or contamination checks, reward-proxy promotion without target evaluation, and authority-expanding policy updates without approval or rollback; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior. No policy optimization experiment has been run. |
 
 ## Drafting guardrail
 
@@ -251,7 +251,7 @@ Reward laundering is the policy-optimization failure. The policy improves the re
 
 Policy learning should begin as `policy_optimization_record.schema.json` with one valid fixture and a finite Lean module.
 
-The fixture records update state, target layer, policy ref, policy delta summary, training mode, feedback source, feedback admissibility, reward or preference signal, reward boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gate refs, authority effect, rollback plan, monitor window, evidence packet refs, deployment scope, promotion decision, measurement status, support-state effect, residuals, and non-claims. It validates the record shape only. It does not run PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, or reasoning-budget RL.
+The fixture records update state, target layer, policy ref, policy delta summary, training mode, feedback source, feedback admissibility, reward or preference signal, reward boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gate refs, authority effect, rollback plan, monitor window, evidence packet refs, deployment scope, promotion decision, measurement status, support-state effect, residuals, and non-claims. It validates the record shape only. The Lean envelope adds finite rejection cases for promotion candidates missing holdout or contamination checks, reward-proxy improvements used as sole evidence without target evaluation, and authority-expanding policy updates that omit governance approval or rollback. It does not run PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, or reasoning-budget RL.
 
 A policy-delta trace should carry the first governed-learning rehearsal: one offline preference update kept experimental, one reward-hacking probe that blocks promotion, one router-policy canary with authority unchanged, one latency reward rejected for suppressing verification, and one rollback dry run.
 
@@ -284,6 +284,9 @@ At the governed learning endpoint, learning would be continuous but never sovere
 | Length and latency penalty study | Test shorter reasoning or faster routing only when correctness, grounding, and verification adequacy are preserved. | planned; not run |
 | Reward-source admissibility test | Check that unverified reward sources cannot promote a policy update without evaluation and governance refs. | implemented by benchmark anti-Goodhart harness for synthetic admissibility/evidence/gate checks; no policy optimization run |
 | Reward hacking probe test | Check whether a candidate reward can be exploited without real task success. | implemented by benchmark anti-Goodhart harness for synthetic reward-probe and reward-as-truth rejection; no reward-hacking experiment run |
+| Holdout and contamination negative case | Prove that a finite promotion candidate missing holdout refs or contamination checks rejects the policy-promotion evidence predicate. | implemented in `AsiStackProofs.PolicyOptimization.promotion_candidate_missing_holdout_or_contamination_check_rejected`; no hidden-holdout operation or contamination detector run |
+| Reward-proxy target-evaluation negative case | Prove that a finite reward-proxy improvement used as sole evidence cannot satisfy promotion validity without target evaluation refs. | implemented in `AsiStackProofs.PolicyOptimization.reward_proxy_without_target_evaluation_rejected`; no reward-quality or task-success result promoted |
+| Authority-expansion negative case | Prove that a finite authority-expanding policy update cannot satisfy validity without governance approval and rollback records. | implemented in `AsiStackProofs.PolicyOptimization.authority_expanding_policy_update_without_approval_or_rollback_rejected`; no deployed approval or rollback behavior claim |
 | Router policy toy RL test | Train or simulate a small router-policy update with holdouts, baseline, latency, and authority constraints. | planned; not run |
 | Context-policy grounding reward test | Check whether reward design improves source-grounded context selection without context bloat. | planned; not run |
 | Reasoning-budget penalty test | Check whether shorter reasoning preserves correctness and verification adequacy. | planned; not run |
@@ -298,7 +301,7 @@ Only fixture-shape validation and finite record predicates are implemented. The 
 | `lean:policy_optimization.update.operational_invariant` | `AsiStackProofs.PolicyOptimization` | An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan. | implemented |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A policy update with unverified reward or missing governance gate cannot be promoted. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over policy-update reviews and reward/governance promotion reviews. They prove only the record-level gates: an admitted policy update exposes reward, evaluation, governance, and rollback fields, and an update with unverified reward or missing governance gate cannot be promoted. They do not prove reward quality, RL convergence, benchmark improvement, policy safety, route quality, context-selection quality, or resistance to all reward-hacking strategies.
+These Lean hooks are implemented as finite-record predicates over policy-update reviews, reward/governance promotion reviews, promotion-evidence reviews, reward-proxy reviews, and authority-expansion reviews. They prove only record-level gates: an admitted policy update exposes reward, evaluation, governance, and rollback fields; an update with unverified reward or missing governance gate cannot be promoted; promotion evidence cannot omit holdouts or contamination checks; a reward proxy cannot stand alone for target evaluation; and authority-expanding updates require governance approval and rollback records. They do not prove reward quality, RL convergence, benchmark improvement, policy safety, route quality, context-selection quality, reward-hacking resistance, hidden-holdout adequacy, contamination-detection quality, approval quality, rollback execution, or runtime policy-update behavior.
 
 ## Source-noted external literature
 
