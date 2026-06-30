@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-06-30 - Stable capability lifecycle route proof envelope
+
+- Extended `AsiStackProofs.StableCapabilityFields` with a finite SCF
+  lifecycle-route vocabulary, review record, and route function over field
+  identity, qualification, evidence refs, qualification-lease freshness,
+  evaluator independence, authority ceilings, governance grants, rollback
+  readiness, regression floors, open incidents, and default-route requests.
+- Added derived/decomposed Lean theorems showing that field-identity mismatch
+  rejects replacement; missing evidence and stale leases require
+  requalification; evaluator capture and authority expansion without a grant
+  route to governance review; open incidents require rollback; and a complete
+  default review can route to default use.
+- Added the `lean:scf.lifecycle.route_envelope` proof target to the outline,
+  manifest, proof triage, Stable Capability Fields chapter, and Appendix E.
+  The proof manifest now tracks 114 implemented finite-record targets, and the
+  proof-depth classifier now records 192 theorem declarations: 115
+  direct/projection-style and 77 derived/decomposed.
+- Updated the Stable Capability Fields chapter, proof-depth and proof-adequacy
+  surfaces, v1.0 roadmap/status surfaces, publication readiness note,
+  repository map, v0.2 manuscript status, and proof/code plan. The proof
+  adequacy review keeps Stable Capability Fields at `useful but too narrow`.
+- This does not promote any Appendix C or chapter core claim, implement a
+  deployed route validator, measure evaluator independence, execute rollback,
+  preserve real regression suites, enforce lifecycle transitions, prove
+  replacement safety, approve reader artifacts, or create EPUB, DOCX, PDF,
+  audio, DOI, Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Human intent resolution route proof envelope
 
 - Extended `AsiStackProofs.IntentContracts` with a finite

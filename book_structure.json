@@ -1845,6 +1845,13 @@
               "status": "implemented by readiness/residual gate harness; validated locally; deployed rollback not run",
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures; deployed rollback not run"
+            },
+            {
+              "name": "SCF lifecycle route proof",
+              "purpose": "Check that a finite SCF lifecycle-review record routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation away from default use.",
+              "status": "implemented in Lean; finite structured-record route only",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; no deployed lifecycle enforcement claim"
             }
           ],
           "lean_module": "AsiStackProofs.StableCapabilityFields",
@@ -1859,6 +1866,12 @@
               "tag": "lean:scf.field_identity.failure_blocks_promotion",
               "module": "AsiStackProofs.StableCapabilityFields",
               "target": "A replacement that expands authority without a governance grant is rejected.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:scf.lifecycle.route_envelope",
+              "module": "AsiStackProofs.StableCapabilityFields",
+              "target": "A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation away from default use.",
               "status": "implemented"
             }
           ],

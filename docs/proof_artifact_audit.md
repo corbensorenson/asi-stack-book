@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 113 |
-| Manifest status counts | {"implemented": 113} |
-| Triage class counts | {"formal-invariant": 113} |
+| Proof targets audited | 114 |
+| Manifest status counts | {"implemented": 114} |
+| Triage class counts | {"formal-invariant": 114} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -77,7 +77,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SelfImprovement.lean` | 2 | 5 | 6 | 4 |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 2 | 4 | 2 |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | 2 | 2 | 2 | 2 |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | 3 | 9 | 3 | 3 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 2 | 2 | 3 | 3 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 2 | 2 | 2 |
@@ -129,7 +129,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 2 | 2 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 4 | 4 | 0 | 0 |
-| `stable-capability-fields` | 2 | 2 | 0 | 0 |
+| `stable-capability-fields` | 3 | 3 | 0 | 0 |
 | `system-boundaries-and-authority` | 2 | 2 | 0 | 0 |
 | `the-efficient-asi-hypothesis` | 2 | 2 | 0 | 0 |
 | `verification-bandwidth-and-context-adequacy` | 2 | 2 | 0 | 0 |
@@ -162,6 +162,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.operational_invariant` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.failure_blocks_promotion` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scf.lifecycle.route_envelope` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:replacement.transaction.operational_invariant` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:replacement.transaction.failure_blocks_promotion` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.operational_invariant` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |

@@ -241,6 +241,16 @@
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
     },
     {
+      "tag": "lean:scf.lifecycle.route_envelope",
+      "chapter_id": "stable-capability-fields",
+      "module": "AsiStackProofs.StableCapabilityFields",
+      "formal_target": "A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation away from default use.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.StableCapabilityFields as a finite lifecycle-route function and derived route theorems for identity mismatch, missing evidence, stale lease, evaluator capture, authority expansion without grant, open incident, and complete default-review cases."
+    },
+    {
       "tag": "lean:replacement.transaction.operational_invariant",
       "chapter_id": "capability-replacement-and-rollback",
       "module": "AsiStackProofs.Replacement",

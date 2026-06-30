@@ -645,6 +645,7 @@ Draft deliverables:
 - Implemented Codex test: Route validity test, via `python3 scripts/validate_readiness_residual_gates.py` over synthetic costed-route/readiness-gate/replacement fixtures; deployed route enforcement remains unrun.
 - Planned Codex test: Authority non-escalation test.
 - Implemented Codex test: Rollback readiness test, via `python3 scripts/validate_readiness_residual_gates.py` over rollback receipt, monitor-state, and residual-escrow scenarios; deployed rollback remains unrun.
+- Implemented proof-backed check: finite SCF lifecycle route proof for identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation; this is structured-record coverage only, not deployed lifecycle enforcement.
 
 Lean proof targets:
 
@@ -652,6 +653,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:scf.field_identity.operational_invariant` | `AsiStackProofs.StableCapabilityFields` | An implementation can replace another only if it satisfies the field qualification predicate. | implemented |
 | `lean:scf.field_identity.failure_blocks_promotion` | `AsiStackProofs.StableCapabilityFields` | A replacement that expands authority without a governance grant is rejected. | implemented |
+| `lean:scf.lifecycle.route_envelope` | `AsiStackProofs.StableCapabilityFields` | A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation away from default use. | implemented |
 
 ### Capability Replacement and Rollback
 
@@ -2567,8 +2569,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 113 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 113 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 114 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 114 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Proof artifact traceability audit.

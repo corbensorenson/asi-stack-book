@@ -4,7 +4,7 @@ chapter_id: "stable-capability-fields"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-29"
+last_updated: "2026-06-30"
 primary_sources:
   - "scf"
   - "viea"
@@ -16,8 +16,8 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "External positioning now source-notes capability-based computer systems, Semantic Versioning, and SLSA as authority-boundary, versioned-interface, and provenance comparators; support remains at argument because no capability-system enforcement, SemVer compatibility checker, SLSA workflow, route validator, evaluator-integrity mechanism, or rollback execution has been reproduced in this repository."
   - "Four of five claim-source mappings now have reviewed passage references; `moecot` remains connector-only/source-note mapped until a durable local export or line-addressable connector capture is available."
-  - "The stable_capability_field fixture validates schema/example consistency for field version, owner, qualification status, qualification lease status, evaluator independence, route scope, route permission effect, consumer policy, readiness gate refs, field history refs, default-route blockers, source refs, support-state effect, rollback obligations, and non-claims only; the readiness/residual gate harness now validates synthetic route-validity and rollback-readiness boundaries, but deployed route validation and rollback execution remain unimplemented."
-  - "The implemented StableCapabilityFields Lean predicates cover finite replacement records only; they do not prove deployed route validation, evaluator integrity, or rollback readiness."
+  - "The stable_capability_field fixture validates schema/example consistency for field version, owner, qualification status, qualification lease status, evaluator independence, route scope, route permission effect, consumer policy, readiness gate refs, field history refs, default-route blockers, source refs, support-state effect, rollback obligations, and non-claims only; the readiness/residual gate harness now validates synthetic route-validity and rollback-readiness boundaries, and Lean now checks a finite SCF lifecycle route envelope, but deployed route validation and rollback execution remain unimplemented."
+  - "The implemented StableCapabilityFields Lean predicates cover finite replacement and lifecycle-review records only; they do not prove deployed route validation, evaluator integrity, rollback execution, or lifecycle enforcement."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -29,13 +29,13 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-29 |
+| Last updated | 2026-06-30 |
 | Primary source records | `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`; supporting: `viea`, `talos`, `ladon_manhattan`; connector/recovery: `moecot`; external variants: `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` |
 | Source loading state | source notes: `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot`; passage-reviewed local raw cache: `scf`, `viea`, `talos`, `ladon_manhattan`; connector-only/source-note mapped: `moecot` |
-| Test state | `stable_capability_field.valid.json` passes protocol fixture validation; `AsiStackProofs.StableCapabilityFields` builds locally; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic route-validity and rollback-readiness boundaries. Deployed route validation, evaluator-integrity enforcement, and rollback execution remain planned. |
+| Test state | `stable_capability_field.valid.json` passes protocol fixture validation; `AsiStackProofs.StableCapabilityFields` builds locally with replacement and lifecycle route predicates; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic route-validity and rollback-readiness boundaries. Deployed route validation, evaluator-integrity enforcement, lifecycle enforcement, and rollback execution remain planned. |
 
 ## Drafting guardrail
 
@@ -206,6 +206,8 @@ The first SCF implementation surface is the existing `stable_capability_field` s
 
 A field history fixture should make identity, lifecycle, and evidence aging concrete: one field, two candidate implementations, one preserved regression, one failed canary, one expired qualification lease, one incident-triggered review, and one rollback path. That fixture would not claim a deployed route validator.
 
+The current formal slice models only the finite lifecycle decision after an SCF review record exists. It checks that identity mismatch rejects replacement, missing evidence or stale qualification leases require requalification, evaluator capture and authority expansion without a grant route to governance review, incidents route to rollback, and a complete default request can route to default use. That is useful lifecycle discipline, but it does not implement the route validator, measure evaluator independence, run rollback, or enforce lifecycle transitions in a deployed system.
+
 ## Beyond the State of the Art
 
 Stable capability fields give the stack a capability-identity and replacement market. It lets implementations improve, migrate, split, merge, retire, or roll back while the consuming system continues to know which capability is qualified, under what authority, with which evidence and residuals.
@@ -225,6 +227,7 @@ This capability-identity market is still a proposed control layer. SCF support s
 | Route validity test | Check that route grants, profile claims, leases, and state paths are valid for the field. | implemented by readiness/residual gate harness for synthetic route/gate/replacement records; deployed route validation not run |
 | Authority non-escalation finite-record proof | Check that authority-expanding replacement is rejected when no governance grant is present. | implemented in `AsiStackProofs.StableCapabilityFields`; runtime route enforcement not run |
 | Rollback readiness test | Check that recovery and state-migration paths exist before default promotion. | implemented by readiness/residual gate harness for rollback receipt and monitor-state requirements; deployed rollback not run |
+| SCF lifecycle route proof | Check that a finite lifecycle-review record routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation away from default use. | implemented in Lean; finite record only |
 
 ### Formalization hooks
 
@@ -232,8 +235,9 @@ This capability-identity market is still a proposed control layer. SCF support s
 |---|---|---|---|
 | `lean:scf.field_identity.operational_invariant` | `AsiStackProofs.StableCapabilityFields` | An implementation can replace another only if it satisfies the field qualification predicate. | implemented |
 | `lean:scf.field_identity.failure_blocks_promotion` | `AsiStackProofs.StableCapabilityFields` | A replacement that expands authority without a governance grant is rejected. | implemented |
+| `lean:scf.lifecycle.route_envelope` | `AsiStackProofs.StableCapabilityFields` | A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation away from default use. | implemented |
 
-These proof targets are implemented only over finite Lean replacement records in `AsiStackProofs.StableCapabilityFields`. They prove that an allowed replacement record carries the field qualification predicate, and that a replacement requesting authority above the field ceiling is rejected when no governance grant is present. They do not prove route validity, evaluator integrity, rollback readiness, or deployed lifecycle enforcement.
+These proof targets are implemented only over finite Lean replacement and lifecycle-review records in `AsiStackProofs.StableCapabilityFields`. They prove that an allowed replacement record carries the field qualification predicate, that a replacement requesting authority above the field ceiling is rejected when no governance grant is present, and that selected lifecycle records route identity, evidence, lease, evaluator, authority, incident, rollback, and regression failures away from default use. They do not prove deployed route validity, evaluator-integrity measurement, rollback execution, or lifecycle enforcement.
 
 ## Source crosswalk
 
