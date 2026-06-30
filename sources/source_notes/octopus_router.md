@@ -39,7 +39,6 @@ The Octopus Router Architecture, or ORA, proposes a system-level modular AI desi
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `integrated-reference-architecture` (Integrated Reference Architecture)

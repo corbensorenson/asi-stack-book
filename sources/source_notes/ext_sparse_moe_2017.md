@@ -37,7 +37,6 @@ This source belongs in the routing and MoECOT chapters as the external origin po
 ## Book Chapters Supported
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 

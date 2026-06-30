@@ -41,7 +41,7 @@ Benchmaxxing frames AI development as a performance ratchet: evaluate against a 
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
+- `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)

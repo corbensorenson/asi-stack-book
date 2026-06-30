@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 51 |
+| Manifest chapter core claims | 50 |
 | Accepted core evidence-transition records | 24 |
-| Accepted explicit no-promotion decisions | 27 |
+| Accepted explicit no-promotion decisions | 26 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -63,7 +63,6 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `integrated-reference-architecture.core` | Integrated Reference Architecture | `argument_only` | no whole-stack trace kernel; no cross-layer runtime replay; no system-level adversarial review yet |
 | `labor-os-and-typed-jobs.core` | Labor OS and Typed Jobs | `argument_only` | no deployed job lifecycle; no live approval service; no command-to-effect replay |
 | `mathematical-and-search-substrates.core` | Mathematical and Search Substrates | `argument_only` | no substrate benchmark; no baseline comparison; no measured adoption benefit |
-| `moecot-runtime-and-multi-core-orchestration.core` | MoECOT Runtime and Multi-Core Orchestration | `argument_only` | authenticated runtime source remains incomplete; no orchestration benchmark; no imported runtime replay artifact |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | Personal Compute Hives and Federated Edge Intelligence | `argument_only` | no personal hive implementation; no federation runtime; no compute-market or edge benchmark |
 | `planforge-dags-and-intelligence-arbitrage.core` | PlanForge DAGs and Intelligence Arbitrage | `argument_only` | no real scheduler behavior; no measured arbitrage result; no route-quality benchmark |
 | `policy-optimization-and-learning-from-feedback.core` | Policy Optimization and Learning from Feedback | `argument_only` | no local policy optimization run; no update-quality measurement; no deployment or rollback trace |
@@ -71,7 +70,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `project-theseus-as-report-first-implementation-reference.core` | Project Theseus as Report-First Implementation Reference | `argument_only` | static architecture-gate import exists only as implementation-reference evidence; no clean live report bundle; no accepted Theseus gate replay; no general capability evidence |
 | `prototype-roadmap.core` | Prototype Roadmap | `argument_only` | no prototype phase acceptance record; no implementation benchmark; no governed replacement run |
 | `rankfold-neuralfold-and-artifact-compression.core` | RankFold, NeuralFold, and Artifact Compression | `argument_only` | no compression ratio result; no utility benchmark; no baseline-symmetric comparison |
-| `routing-heads-and-specialist-cores.core` | Routing Heads and Specialist Cores | `argument_only` | no real routing trace; no capability-quality measurement; no authority-enforced specialist lease |
+| `routing-heads-and-specialist-cores.core` | Routing Heads and Specialist Cores | `argument_only` | no real routing trace; no capability-quality measurement; no authority-enforced specialist lease; no imported MoECOT orchestration benchmark or replay artifact |
 | `semantic-pages-context-cells-and-certificates.core` | Semantic Pages, Context Cells, and Certificates | `argument_only` | no VCM resolver trace; no certificate truthfulness evaluation; no model-facing adequacy result |
 | `semantic-representation-and-tree-structured-models.core` | Semantic Representation and Tree-Structured Models | `argument_only` | no representation runtime; no grounding evaluation; no model-quality benchmark |
 | `simulation-fidelity-and-physical-constraints.core` | Simulation Fidelity and Physical Constraints | `argument_only` | no simulation run; no transfer-validity review; no physical constraint measurement |

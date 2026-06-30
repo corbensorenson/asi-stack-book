@@ -42,7 +42,6 @@ SCF separates a capability's durable semantic identity from the replaceable mach
 - Recursive Self-Improvement Boundaries
 - Routing Heads and Specialist Cores
 - Readiness Gates, Residual Escrow, and Quarantine
-- MoECOT Runtime and Multi-Core Orchestration
 - Personal Compute Hives and Federated Edge Intelligence
 - Executable Specifications and Lean Proof Envelope
 - Policy Optimization and Learning from Feedback

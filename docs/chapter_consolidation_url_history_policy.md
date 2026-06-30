@@ -2,18 +2,20 @@
 
 Last updated: 2026-06-30
 
-Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot and conservative compression merge through static historical stubs.
+Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot, conservative compression merge, and MoECOT runtime fold through static historical stubs.
 
 This policy defines how public chapter URLs, stable chapter IDs, source history,
 and reader/research traceability must be handled when a governed
 consolidation package executes. It is a release-control policy, not source
 evidence, not an external review, and not a support-state transition. The
-2026-06-30 Part I pilot and conservative compression merge applied the policy through static historical stubs and
+2026-06-30 Part I pilot, conservative compression merge, and MoECOT runtime
+fold applied the policy through static historical stubs and
 `docs/chapter_history_ledger.md`.
 
 ## Decision Boundary
 
-- The canonical manifest now has 51 chapters after the executed conservative compression merge.
+- The canonical manifest now has 50 chapters after the executed Part I pilot,
+  conservative compression merge, and MoECOT runtime fold.
 - This policy does not by itself retire, merge, redirect, or remove any chapter; execution commits do that work.
 - A future merge or fold remains blocked until its package explicitly records
   the URL treatment for every retired source chapter.
@@ -75,15 +77,18 @@ Every executed merge or fold must record:
 
 ## Pilot Defaults
 
-For the Part I alignment/governance pilot and conservative compression merge:
+For the Part I alignment/governance pilot, conservative compression merge, and
+MoECOT runtime fold:
 
 | Proposed destination | Continuity URL | Retired source URL treatment |
 |---|---|---|
 | `constitutional-alignment-substrate` as **Constitutional Alignment: Agency, Dignity, and Corrigibility** | Keep `/chapters/constitutional-alignment-substrate.html`. | Preserved `/chapters/agency-dignity-and-corrigibility.html` through a static historical stub in the 2026-06-30 execution package. |
 | `moral-uncertainty-and-value-conflict` as **Moral Uncertainty, Value Conflict, and Contestable Governance** | Keep `/chapters/moral-uncertainty-and-value-conflict.html`. | Preserved `/chapters/governance-rights-fork-exit-and-audit.html` through a static historical stub in the 2026-06-30 execution package. |
 | `compact-generative-systems-and-residual-honesty` as **Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty** | Keep `/chapters/compact-generative-systems-and-residual-honesty.html`. | Preserved `/chapters/generate-verify-repair-compression.html` through a static historical stub in the 2026-06-30 conservative compression merge. |
+| `routing-heads-and-specialist-cores` as **Routing Heads and Specialist Cores** | Keep `/chapters/routing-heads-and-specialist-cores.html`. | Preserved `/chapters/moecot-runtime-and-multi-core-orchestration.html` through a static historical stub in the 2026-06-30 MoECOT runtime fold. |
 
-These defaults were applied to the Part I pilot and conservative compression merge and remain defaults for future
+These defaults were applied to the Part I pilot, conservative compression
+merge, and MoECOT runtime fold and remain defaults for future
 accepted execution packages.
 
 ## Validation Expectations
@@ -107,7 +112,9 @@ Before a future merge commit is accepted, validation should prove:
 ## Non-Claims
 
 - This policy does not by itself execute a merge or fold.
-- The 2026-06-30 Part I and conservative compression execution packages, not this policy text alone, implemented three historical stubs and changed the manifest to 51 chapters.
+- The 2026-06-30 Part I, conservative compression, and MoECOT execution
+  packages, not this policy text alone, implemented four historical stubs and
+  changed the manifest to 50 chapters.
 - This policy does not approve any destination draft.
 - This policy does not create external review evidence.
 - This policy does not promote any claim support state.

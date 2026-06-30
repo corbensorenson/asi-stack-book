@@ -1710,14 +1710,14 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around routes as task-local authority leases: specialist registries, routing decision records, route receipts, rejected candidates, granted and denied authority, readiness, fallback, residual ownership, and MoECOT runtime-crosswalk caveats; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
+      "divergence_summary": "First curated reader prose pass now maps MoECOT runtime material into the active Routing Heads chapter: routes as task-local authority leases, specialist registries, routing decision records, route receipts, rejected candidates, granted and denied authority, readiness, fallback, residual ownership, MoECOT runtime-crosswalk caveats, and source-state separation; no claim meaning, support state, source boundary, proof/test status, implementation horizon, route-quality claim, MoECOT runtime result, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; external routing and MoE records remain comparators rather than local route-quality evidence",
         "proof/test status preserved without adding unrun routing accuracy, learned-router quality, specialist adequacy, deployed authority enforcement, route-quality dominance, MoECOT runtime, MoECOT replay, MoECOT benchmark, current Theseus runtime, or safety results",
         "implementation horizon preserved without implying current governed routing-market deployment",
-        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md and docs/chapter_consolidation_fold_moecot_runtime.md; this pass does not execute, reject, or authorize the MoECOT runtime fold",
+        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md and docs/chapter_consolidation_fold_moecot_runtime.md; the MoECOT runtime fold is executed only in the live AI/research source, with the curated reader draft still blocked pending reconciliation",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -1727,44 +1727,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_routing_heads_prose_pass.md with the release-stability MoECOT fold caveat; not release-reviewed and not equal authority to the live AI/research chapter."
-    },
-    {
-      "chapter_id": "moecot-runtime-and-multi-core-orchestration",
-      "title": "MoECOT Runtime and Multi-Core Orchestration",
-      "file": "editions/reader_manuscript/v1_0/chapters/moecot-runtime-and-multi-core-orchestration.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/moecot-runtime-and-multi-core-orchestration.qmd",
-      "live_source_ref": "chapters/moecot-runtime-and-multi-core-orchestration.qmd@08816c2cb",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#moecot-runtime-and-multi-core-orchestration.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#moecot-runtime-and-multi-core-orchestration",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated reader prose pass reframes MoECOT as a runtime evidence-packet factory: compact orchestrator, route head, specialist lanes, control-plane gates, ledgers, replay references, handoff, denied paths, residuals, promotion blockers, source-reported fields, locally reproduced fields, externally corroborated fields, and blocked fields; no claim meaning, support state, source boundary, proof/test status, implementation horizon, fold decision, or release approval is changed.",
-      "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support",
-        "source boundary preserved; MoECOT connector/source-note context and moecot_md variant context remain implementation-reference context rather than reproduced evidence",
-        "proof/test status preserved without adding MoECOT runtime execution, benchmark reproduction, replay correctness, specialist adequacy, deployed enforcement, security result, current Theseus runtime behavior, or public-safe artifact-import claims",
-        "implementation horizon preserved without implying current MoECOT runtime deployment",
-        "fold-disposition caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future fold into routing-heads-and-specialist-cores",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_moecot_runtime_prose_pass.md with the source-blocked and deferred-fold caveat; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass remains drafting-only; the 2026-06-30 MoECOT fold moves active live-source authority into routing-heads-and-specialist-cores while the archived standalone reader draft remains historical and not release-reviewed."
     }
   ],
   "reconciliation_report": {

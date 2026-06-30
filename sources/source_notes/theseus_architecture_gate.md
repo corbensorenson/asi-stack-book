@@ -40,7 +40,7 @@ The Theseus architecture gate is a pre-training promotion check. It prevents hea
 
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
+- `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus as Report-First Implementation Reference)

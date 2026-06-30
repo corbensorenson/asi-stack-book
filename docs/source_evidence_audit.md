@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 51 |
-| Assigned source/chapter pairs | 448 |
-| Exact claim-source mappings | 448 |
+| Chapters audited | 50 |
+| Assigned source/chapter pairs | 442 |
+| Exact claim-source mappings | 442 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 448 |
-| Source notes listing assigned chapter | 448 |
-| Passage-reviewed mappings recorded | 448 |
-| Support-state counts | {"argument": 51} |
+| Source notes present for assigned pairs | 442 |
+| Source notes listing assigned chapter | 442 |
+| Passage-reviewed mappings recorded | 442 |
+| Support-state counts | {"argument": 50} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -61,9 +61,8 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `runtime-adapters-tool-permissions-and-human-approval` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
-| `routing-heads-and-specialist-cores` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `routing-heads-and-specialist-cores` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
-| `moecot-runtime-and-multi-core-orchestration` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
@@ -92,23 +91,23 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | Source ID | Assigned chapter count | Source note exists |
 |---|---:|---|
 | `viea` | 24 | yes |
-| `moecot` | 24 | yes |
 | `talos` | 23 | yes |
+| `moecot` | 23 | yes |
 | `spinoza` | 16 | yes |
 | `scf` | 15 | yes |
-| `rmi` | 15 | yes |
+| `rmi` | 14 | yes |
 | `benchmaxxing` | 14 | yes |
 | `vcm_public` | 13 | yes |
-| `project_theseus_whitepaper` | 13 | yes |
 | `coherence_exchange` | 12 | yes |
+| `project_theseus_whitepaper` | 12 | yes |
 | `genesiscode` | 11 | yes |
 | `planforge` | 11 | yes |
 | `cognitive_loop_closure` | 11 | yes |
 | `verification_bandwidth` | 10 | yes |
-| `theseus_operator_os` | 9 | yes |
 | `cgs` | 8 | yes |
 | `cognitive_compilation` | 8 | yes |
 | `tokenmana` | 8 | yes |
+| `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
 | `simulation_scaling` | 7 | yes |
 | `ladon_manhattan` | 7 | yes |
@@ -118,11 +117,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `theseus_self_evolution_system` | 7 | yes |
 | `theseus_architecture_gate` | 7 | yes |
 | `software_magic_grimoire` | 6 | yes |
-| `octopus_router` | 6 | yes |
 | `circle_ai_contract_suite` | 6 | yes |
-| `beastbrain` | 5 | yes |
 | `uat` | 5 | yes |
 | `treellm` | 5 | yes |
+| `octopus_router` | 5 | yes |
+| `beastbrain` | 4 | yes |
 | `rankfold_neuralfold` | 4 | yes |
 | `context_engineer` | 4 | yes |
 | `bugbrain` | 4 | yes |
@@ -376,9 +375,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `viea` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `moecot_md` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `scf` | mapped | note present | chapter listed | passage-reviewed |
@@ -388,18 +393,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `beastbrain` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `viea` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `scf` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `talos` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `moecot_md` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
-| `moecot-runtime-and-multi-core-orchestration.core` | `moecot-runtime-and-multi-core-orchestration` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `talos` | mapped | note present | chapter listed | passage-reviewed |

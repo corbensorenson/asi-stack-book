@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-06-30 - MoECOT runtime fold executed
+
+- Executed the governed MoECOT runtime fold in `book_structure.json`: folded
+  `moecot-runtime-and-multi-core-orchestration` into **Routing Heads and
+  Specialist Cores** as the named MoECOT Runtime Crosswalk while preserving
+  runtime evidence-packet fields, source-state partitions, route authority
+  ledgers, replay refs, denied routes, failed gates, residuals, source
+  mappings, proof tags, schema/fixture lanes, and restoration conditions.
+- Reduced the canonical manifest from 51 chapters to 50 chapters while keeping
+  MoECOT as implementation-reference context only until public-safe runtime
+  artifacts, replay logs, benchmark records, or external corroboration are
+  imported and inspected.
+- Moved the retired live manuscript and curated reader draft under archive
+  paths, added a static historical stub for the retired public chapter slug,
+  retargeted source/proof/reader records to Routing Heads and Specialist
+  Cores, and updated the consolidation sequence, URL/history policy, release
+  stability record, and chapter-history ledger.
+- This does not promote any chapter core claim above `argument`, create source
+  evidence, create proof results, create test results, reproduce MoECOT runtime
+  behavior, reproduce benchmarks, prove replay correctness, approve reader
+  artifacts, or create EPUB, DOCX, PDF, HTML, audio, DOI, Zenodo, or
+  audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Conservative compression consolidation executed
 
 - Executed the governed conservative compression merge in

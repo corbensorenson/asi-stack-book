@@ -48,7 +48,6 @@ MoECOT is an implementation-reference architecture for governed, skill-native, l
 - Artifact Graphs, Audit Logs, and Replay
 - Runtime Adapters, Tool Permissions, and Human Approval
 - Procedural Memory and Cognitive Loop Closure
-- MoECOT Runtime and Multi-Core Orchestration
 - Routing Heads and Specialist Cores
 - Readiness Gates, Residual Escrow, and Quarantine
 - Benchmark Ratchets and Anti-Goodhart Evidence

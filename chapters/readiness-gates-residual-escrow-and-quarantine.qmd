@@ -270,4 +270,4 @@ A readiness decision should still be understandable after the module changes nam
 
 ## Handoff
 
-Readiness gates define what evidence a module owes before ordinary routing, but the architecture still needs a concrete runtime reference that can emit those records. MoECOT Runtime and Multi-Core Orchestration occupies that implementation-reference role. It shows how route heads, specialist cores, fail-closed gates, ledgers, replay hooks, denied routes, and promotion blockers would have to appear in one orchestrated system.
+Readiness gates define what evidence a module owes before ordinary routing, and the Routing Heads chapter now carries the MoECOT runtime crosswalk for the records a concrete orchestrator would have to emit. Personal Compute Hives and Federated Edge Intelligence moves the next concern from runtime packet shape to substrate: where route decisions, specialist work, ledgers, replay hooks, residuals, and approvals may run without confusing reachable devices for authorized devices.

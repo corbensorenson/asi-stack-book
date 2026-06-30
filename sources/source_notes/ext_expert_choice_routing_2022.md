@@ -37,7 +37,6 @@ Expert Choice Routing belongs in the routing, MoECOT, resource-economics, and re
 ## Book Chapters Supported
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 

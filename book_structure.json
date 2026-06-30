@@ -5281,30 +5281,45 @@
             "beastbrain",
             "cognitive_loop_closure",
             "rgs",
+            "benchmaxxing",
+            "viea",
+            "scf",
+            "talos",
+            "moecot_md",
             "moecot",
             "project_theseus_whitepaper",
-            "theseus_operator_os"
+            "theseus_operator_os",
+            "theseus_architecture_gate"
           ],
           "source_queue": {
             "primary": [
               "octopus_router",
-              "rmi"
+              "rmi",
+              "benchmaxxing"
             ],
             "supporting": [
               "beastbrain",
               "cognitive_loop_closure",
               "rgs",
+              "viea",
+              "scf",
+              "talos",
               "project_theseus_whitepaper",
-              "theseus_operator_os"
+              "theseus_operator_os",
+              "theseus_architecture_gate"
             ],
-            "variants": [],
+            "variants": [
+              "moecot_md"
+            ],
             "connector_or_recovery": [
               "moecot"
             ],
-            "handoff_or_recovery_notes": []
+            "handoff_or_recovery_notes": [
+              "Folded moecot-runtime-and-multi-core-orchestration into this destination chapter on 2026-06-30; preserve MoECOT runtime-crosswalk records, source mappings, proof hooks, schema fixtures, restoration conditions, and no-support-state-promotion boundary."
+            ]
           },
           "problem": "The architecture needs to allocate cognition across specialists rather than force one system to do every task.",
-          "insufficient": "Monolithic scaling and static tool lists do not provide local memories, bounded authority, specialist lifecycle, or readiness-aware routing.",
+          "insufficient": "Monolithic scaling, static tool lists, and branded runtime references do not provide local memories, bounded authority, specialist lifecycle, readiness-aware routing, replay, or source-state separation.",
           "core_claim": "ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.",
           "claim_source_mappings": [
             {
@@ -5391,16 +5406,104 @@
               "passage_review_note": "Reviewed local raw cache for logged attempts, repeated-success tool promotion, residual maps and escrow, router choice among reasoning/tools/reflexes, intervention ladders, regression preservation, verification governance, benchmark/model/tool/residual ledgers, and safety constraints; no benchmark run, tool-promotion trace, regression data, or implemented ratchet is promoted."
             },
             {
-              "source_id": "moecot",
-              "mapped_support": "Supports implementation-reference routing through compact orchestration, routed specialist lanes, fail-closed control planes, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking.",
-              "limits": "Connector-readable implementation-reference source only; runtime code, route logs, benchmark artifacts, and replay records have not been inspected or reproduced here.",
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports runtime promotion discipline through benchmark lifecycle, wall diagnosis, model/benchmark ledgers, anti-Goodhart safeguards, regression conversion, residual preservation, and architecture-change criteria.",
+              "limits": "No local benchmark harness, mutation, holdout, run, or reproduced performance claim exists here.",
+              "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/source_notes/moecot.md:11-20",
-                "sources/source_notes/moecot.md:22-32",
-                "sources/source_notes/moecot.md:61-68"
+                "sources/raw/google_docs/benchmaxxing.txt:19-29",
+                "sources/raw/google_docs/benchmaxxing.txt:49-70",
+                "sources/raw/google_docs/benchmaxxing.txt:269-325",
+                "sources/raw/google_docs/benchmaxxing.txt:329-335",
+                "sources/raw/google_docs/benchmaxxing.txt:491-530",
+                "sources/raw/google_docs/benchmaxxing.txt:559-630",
+                "sources/raw/google_docs/benchmaxxing.txt:706-712"
               ],
-              "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
-              "passage_review_state": "reviewed"
+              "passage_review_note": "Reviewed local raw cache for benchmark-frontier pressure, saturation-to-regression discipline, residual reports, wall diagnosis, architecture-change criteria, benchmark lifecycle states, anti-Goodhart safeguards, holdouts/mutation/transfer checks, and separate safety benchmarks; no benchmark harness, holdout, mutation, run, or reproduced performance claim is promoted."
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supports connecting MoECOT to the broader intent-to-execution spine: command contracts, artifacts, specialist-routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
+              "limits": "No completed VIEA deployment, runtime trace, or verified execution result exists in this repository.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/viea.txt:11-76",
+                "sources/raw/google_docs/viea.txt:80-95",
+                "sources/raw/google_docs/viea.txt:255-272",
+                "sources/raw/google_docs/viea.txt:276-320",
+                "sources/raw/google_docs/viea.txt:564-595",
+                "sources/raw/google_docs/viea.txt:708-718",
+                "sources/raw/google_docs/viea.txt:1315-1359"
+              ],
+              "passage_review_note": "Reviewed local raw cache for the intent-to-execution loop, command contracts, artifact graph, specialist routing, runtime targets, verification gates, feedback, benchmarks-as-curriculum, bounded specialist responsibilities, explicit support states, residuals, and final intent-to-runtime distillation; no completed VIEA deployment or runtime trace is promoted."
+            },
+            {
+              "source_id": "scf",
+              "mapped_support": "Supports treating runtime cores as replaceable capability implementations behind stable contracts, evidence registries, scoped qualifications, route validation, lifecycle events, incidents, appeals, rollback, and authority boundaries.",
+              "limits": "Does not prove MoECOT core safety, evaluator quality, or production replacement behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/scf.txt:40-48",
+                "sources/raw/google_docs/scf.txt:56-64",
+                "sources/raw/google_docs/scf.txt:106-115",
+                "sources/raw/google_docs/scf.txt:279-301",
+                "sources/raw/google_docs/scf.txt:302-315",
+                "sources/raw/google_docs/scf.txt:410-431",
+                "sources/raw/google_docs/scf.txt:533-548",
+                "sources/raw/google_docs/scf.txt:844-895"
+              ],
+              "passage_review_note": "Reviewed local raw cache for stable substitution boundaries, qualification and authority requirements, route validity, lifecycle transition semantics, goalpost firewall, append-only evidence graph, qualification/recovery stages, monitoring, revocation, fallback, and quarantine; no MoECOT core safety, evaluator quality, or production replacement behavior is promoted."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports runtime execution discipline through typed jobs, deterministic control planes, factory execution, adjudication, delivery, feedback, evidence records, audit logs, replay, tool isolation, and approval gates.",
+              "limits": "No Talos runtime, MoECOT-Talos integration, replay run, security result, or benchmark has been reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/talos.txt:5038-5065",
+                "sources/raw/google_docs/talos.txt:5070-5086",
+                "sources/raw/google_docs/talos.txt:5149-5173",
+                "sources/raw/google_docs/talos.txt:5177-5182",
+                "sources/raw/google_docs/talos.txt:5230-5245",
+                "sources/raw/google_docs/talos.txt:5400-5424",
+                "sources/raw/google_docs/talos.txt:5473-5515",
+                "sources/raw/google_docs/talos.txt:5592-5595"
+              ],
+              "passage_review_note": "Reviewed local raw cache for Talos as an AI labor operating system/control plane, contract locks, MVI routing, secure execution factory, verification judiciary, fail-closed sidecars, human escalation, operational walkthrough, factory/judiciary flow, and auditability emphasis; no Talos runtime, MoECOT-Talos integration, replay run, security result, or benchmark is promoted."
+            },
+            {
+              "source_id": "moecot_md",
+              "mapped_support": "Supports terminology normalization for compact orchestrator, specialist lanes, control-plane ledgers, readiness gates, replay, and fail-closed promotion as a Markdown/export variant of the MoECOT source.",
+              "limits": "Variant source only; it is not independent corroboration and does not verify benchmark, readiness, or runtime behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
+              ],
+              "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
+            },
+            {
+              "source_id": "moecot",
+              "mapped_support": "Supports the folded MoECOT runtime crosswalk inside the routing claim through compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, residual tracking, and explicit limitations.",
+              "limits": "Readable source note only; code, logs, benchmark artifacts, replay records, and release artifacts have not been imported, inspected, or reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=222-765",
+                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=2150-2665",
+                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=4949-5597",
+                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=5810-6519",
+                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=6569-7286",
+                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=7325-7907",
+                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=41312-48999"
+              ],
+              "passage_review_note": "Reviewed authenticated Google Docs paragraph-indexed extraction for MoECOT abstract, canonical runtime, governance plane, readiness gate, task runtime, evidence/replay integrity, truthful constraints, and update procedure. The source supports implementation-reference mapping only; code, logs, benchmark artifacts, replay records, release artifacts, and local reproduction remain absent."
             },
             {
               "source_id": "project_theseus_whitepaper",
@@ -5429,6 +5532,18 @@
                 "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:148-152"
               ],
               "passage_review_note": "Reviewed local public-project source for shared command vocabulary, durable work board, node registry, skill registry, tool hooks, feedback routing, task/dependency/event substrate, node role routing, TTL/kill-switch/isolation safety gates, and dashboard visibility; no Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard run is promoted."
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports runtime-readiness gating through pre-training checks for ratchet completeness, router readiness, safety ledger, regression suite, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero.",
+              "limits": "Reported gate snapshot is not reproduced evidence; current gate artifacts were not regenerated or independently inspected here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:1-18",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:20-47",
+                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:49-59"
+              ],
+              "passage_review_note": "Reviewed local Theseus architecture-gate source at commit 1ad88a22 for pre-training promotion checks, direct and ratchet-run commands, reported current gate fields, 14 gate predicates, external-inference-zero requirement, residual handling, rerun conditions, and necessary-not-sufficient boundary; no gate report was regenerated or independently verified here."
             }
           ],
           "mechanism": [
@@ -5439,17 +5554,27 @@
           "interfaces": [
             "Planning requests capabilities.",
             "Governance bounds specialists.",
-            "Evidence updates readiness."
+            "Evidence updates readiness.",
+            "MoECOT runtime packets extend route receipts with command refs, specialist lanes, control-plane gates, ledgers, replay refs, handoff refs, denied routes, failed gates, missing replay refs, source-reported fields, reproduced fields, blocked fields, and non-claims.",
+            "SCFs govern whether a routed runtime lane can become a default route or replacement implementation."
           ],
           "invariants": [
             "Specialist authority is local.",
             "Routing decisions are logged.",
-            "Fallback paths remain available."
+            "Fallback paths remain available.",
+            "Implementation evidence is separated from design argument.",
+            "Runtime promotion follows readiness gates.",
+            "Control-plane gates fail closed when evidence, authority, or replay is missing.",
+            "A source-reported benchmark artifact is not a reproduced book result."
           ],
           "failure_modes": [
             "Wrong specialist selection.",
             "Router overconfidence.",
-            "Specialist authority leak."
+            "Specialist authority leak.",
+            "Treating implementation branding as architecture proof.",
+            "Losing cross-layer traceability.",
+            "Specialist lanes mutating authority without control-plane approval.",
+            "Replay theater that preserves successful paths while omitting failed gates, denied routes, human interventions, missing sources, and residual cases."
           ],
           "minimal_implementation": "A router registry with capability metadata, cost, authority, and fallback rules.",
           "beyond_state_of_art": "Routing becomes strategic when it is a governed capability market inside the stack. It is not a bigger tool picker. It is a control boundary that can select among specialists, proof checkers, retrieval lanes, local runtime cores, human review, and fallback routes while preserving the authority, evidence, and residual obligations attached to the choice. In the mature routing market, route selection is a governed lease, not a suggestion engine: a lightweight head selects bounded specialists only with the authority, context, tools, fallback, and residual ownership the task permits.",
@@ -5468,6 +5593,15 @@
               "status": "implemented by readiness/residual gate harness; validated locally; live fallback routing not run",
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures; live fallback routing not run"
+            },
+            "MoECOT source-ingestion gate",
+            "Runtime crosswalk completeness test",
+            {
+              "name": "Readiness/replay mapping review",
+              "purpose": "Check that readiness decisions reference route evidence, residual escrow, fallback, and replacement decisions rather than source branding alone; replay refs remain outside this harness.",
+              "status": "partially implemented by readiness/residual gate harness for readiness mapping; replay mapping remains planned",
+              "implementation_status": "partial",
+              "result_status": "readiness mapping validated locally by synthetic fixtures; replay mapping not run"
             }
           ],
           "lean_module": "AsiStackProofs.Routing",
@@ -5482,6 +5616,18 @@
               "tag": "lean:routing.specialists.failure_blocks_promotion",
               "module": "AsiStackProofs.Routing",
               "target": "A failed readiness predicate routes to fallback or residual, not promotion.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:moecot.runtime.operational_invariant",
+              "module": "AsiStackProofs.MoECOTRuntime",
+              "target": "A runtime core promotion requires readiness, regression, and replay evidence references.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:moecot.runtime.failure_blocks_promotion",
+              "module": "AsiStackProofs.MoECOTRuntime",
+              "target": "A runtime claim sourced only from unavailable text cannot be promoted above argument state.",
               "status": "implemented"
             }
           ]
@@ -5723,302 +5869,6 @@
               "target": "A quarantined module cannot be selected for ordinary execution routes.",
               "status": "implemented"
             }
-          ]
-        },
-        {
-          "id": "moecot-runtime-and-multi-core-orchestration",
-          "title": "MoECOT Runtime and Multi-Core Orchestration",
-          "file": "chapters/moecot-runtime-and-multi-core-orchestration.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "octopus_router",
-            "rmi",
-            "benchmaxxing",
-            "beastbrain",
-            "viea",
-            "scf",
-            "talos",
-            "moecot_md",
-            "moecot",
-            "project_theseus_whitepaper",
-            "theseus_operator_os",
-            "theseus_architecture_gate"
-          ],
-          "source_queue": {
-            "primary": [
-              "octopus_router",
-              "rmi",
-              "benchmaxxing"
-            ],
-            "supporting": [
-              "beastbrain",
-              "viea",
-              "scf",
-              "talos",
-              "project_theseus_whitepaper",
-              "theseus_operator_os",
-              "theseus_architecture_gate"
-            ],
-            "variants": [
-              "moecot_md"
-            ],
-            "connector_or_recovery": [
-              "moecot"
-            ],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "The book needs a concrete implementation reference for governed multi-core orchestration, ledgers, replay, and benchmark promotion.",
-          "insufficient": "A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts.",
-          "core_claim": "MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined.",
-          "claim_source_mappings": [
-            {
-              "source_id": "octopus_router",
-              "mapped_support": "Supports the MoECOT runtime crosswalk through head/router selection, specialist arms, dynamic loading, permission envelopes, memory routing, local benchmark ratchets, arm cards, split/merge/retire policies, and verification/composition routes.",
-              "limits": "Does not prove MoECOT or any router implementation; no routing benchmark or specialist runtime run exists here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/octopus_router.txt:10-47",
-                "sources/raw/google_docs/octopus_router.txt:61-69",
-                "sources/raw/google_docs/octopus_router.txt:366-403",
-                "sources/raw/google_docs/octopus_router.txt:407-420",
-                "sources/raw/google_docs/octopus_router.txt:480-507",
-                "sources/raw/google_docs/octopus_router.txt:543-582",
-                "sources/raw/google_docs/octopus_router.txt:755-789",
-                "sources/raw/google_docs/octopus_router.txt:1216-1294"
-              ],
-              "passage_review_note": "Reviewed local raw cache for the head/router and specialist-arm model, dynamic loading, scoped permission envelopes, local memory/benchmarks/residuals, verification/composition, registry arm cards, quarantine boundaries, split/merge/retire lifecycle, and implementation roadmap; no ORA runtime, routing benchmark, or MoECOT execution result is promoted."
-            },
-            {
-              "source_id": "rmi",
-              "mapped_support": "Supports multi-core orchestration through head/router, specialist arms, arm registry, memory/permission/tool routers, benchmark ledger, residual escrow ledger, verification/safety layer, regression floors, and lifecycle discipline.",
-              "limits": "No empirical modular-intelligence result, benchmark reproduction, or prototype inspection has been performed in this repo.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/rmi.txt:60-86",
-                "sources/raw/google_docs/rmi.txt:93-105",
-                "sources/raw/google_docs/rmi.txt:195-230",
-                "sources/raw/google_docs/rmi.txt:418-448",
-                "sources/raw/google_docs/rmi.txt:736-842",
-                "sources/raw/google_docs/rmi.txt:1031-1070",
-                "sources/raw/google_docs/rmi.txt:1328-1365"
-              ],
-              "passage_review_note": "Reviewed local raw cache for RMI execution modes, head/router and arm registry, memory/permission/tool routers, benchmark and residual ledgers, verification/safety layer, mastery thresholds, critical-failure vetoes, residual escrow, specialist lifecycle, and safety/runtime tiers; no empirical modular-intelligence result, benchmark reproduction, or prototype inspection is promoted."
-            },
-            {
-              "source_id": "benchmaxxing",
-              "mapped_support": "Supports runtime promotion discipline through benchmark lifecycle, wall diagnosis, model/benchmark ledgers, anti-Goodhart safeguards, regression conversion, residual preservation, and architecture-change criteria.",
-              "limits": "No local benchmark harness, mutation, holdout, run, or reproduced performance claim exists here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/benchmaxxing.txt:19-29",
-                "sources/raw/google_docs/benchmaxxing.txt:49-70",
-                "sources/raw/google_docs/benchmaxxing.txt:269-325",
-                "sources/raw/google_docs/benchmaxxing.txt:329-335",
-                "sources/raw/google_docs/benchmaxxing.txt:491-530",
-                "sources/raw/google_docs/benchmaxxing.txt:559-630",
-                "sources/raw/google_docs/benchmaxxing.txt:706-712"
-              ],
-              "passage_review_note": "Reviewed local raw cache for benchmark-frontier pressure, saturation-to-regression discipline, residual reports, wall diagnosis, architecture-change criteria, benchmark lifecycle states, anti-Goodhart safeguards, holdouts/mutation/transfer checks, and separate safety benchmarks; no benchmark harness, holdout, mutation, run, or reproduced performance claim is promoted."
-            },
-            {
-              "source_id": "beastbrain",
-              "mapped_support": "Supports whole-stack runtime shape through a local/stateful OS-like intelligence process with memory substrate, planning, routing, verification, security, consolidation, interface surfaces, and local deployment vocabulary.",
-              "limits": "Architecture lineage only; cost, SSD-first, hardware, and benchmark claims are source-reported and unverified here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/beastbrain.txt:1097-1106",
-                "sources/raw/google_docs/beastbrain.txt:1150-1160",
-                "sources/raw/google_docs/beastbrain.txt:1171-1175",
-                "sources/raw/google_docs/beastbrain.txt:1195-1225",
-                "sources/raw/google_docs/beastbrain.txt:1226-1242",
-                "sources/raw/google_docs/beastbrain.txt:6963-6995"
-              ],
-              "passage_review_note": "Reviewed local raw cache for the local/stateful organism framing, OS-like intelligence process, memory substrate, recursive specialist inference, PlanForge orchestration, intelligence-tier scheduling, governance/security gate, Digital SCIF boundary, contract-first workflow, live verification, and tribunal review; architecture lineage only, with no cost, hardware, benchmark, or deployment claim promoted."
-            },
-            {
-              "source_id": "viea",
-              "mapped_support": "Supports connecting MoECOT to the broader intent-to-execution spine: command contracts, artifacts, specialist-routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage.",
-              "limits": "No completed VIEA deployment, runtime trace, or verified execution result exists in this repository.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/viea.txt:11-76",
-                "sources/raw/google_docs/viea.txt:80-95",
-                "sources/raw/google_docs/viea.txt:255-272",
-                "sources/raw/google_docs/viea.txt:276-320",
-                "sources/raw/google_docs/viea.txt:564-595",
-                "sources/raw/google_docs/viea.txt:708-718",
-                "sources/raw/google_docs/viea.txt:1315-1359"
-              ],
-              "passage_review_note": "Reviewed local raw cache for the intent-to-execution loop, command contracts, artifact graph, specialist routing, runtime targets, verification gates, feedback, benchmarks-as-curriculum, bounded specialist responsibilities, explicit support states, residuals, and final intent-to-runtime distillation; no completed VIEA deployment or runtime trace is promoted."
-            },
-            {
-              "source_id": "scf",
-              "mapped_support": "Supports treating runtime cores as replaceable capability implementations behind stable contracts, evidence registries, scoped qualifications, route validation, lifecycle events, incidents, appeals, rollback, and authority boundaries.",
-              "limits": "Does not prove MoECOT core safety, evaluator quality, or production replacement behavior.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/scf.txt:40-48",
-                "sources/raw/google_docs/scf.txt:56-64",
-                "sources/raw/google_docs/scf.txt:106-115",
-                "sources/raw/google_docs/scf.txt:279-301",
-                "sources/raw/google_docs/scf.txt:302-315",
-                "sources/raw/google_docs/scf.txt:410-431",
-                "sources/raw/google_docs/scf.txt:533-548",
-                "sources/raw/google_docs/scf.txt:844-895"
-              ],
-              "passage_review_note": "Reviewed local raw cache for stable substitution boundaries, qualification and authority requirements, route validity, lifecycle transition semantics, goalpost firewall, append-only evidence graph, qualification/recovery stages, monitoring, revocation, fallback, and quarantine; no MoECOT core safety, evaluator quality, or production replacement behavior is promoted."
-            },
-            {
-              "source_id": "talos",
-              "mapped_support": "Supports runtime execution discipline through typed jobs, deterministic control planes, factory execution, adjudication, delivery, feedback, evidence records, audit logs, replay, tool isolation, and approval gates.",
-              "limits": "No Talos runtime, MoECOT-Talos integration, replay run, security result, or benchmark has been reproduced here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/talos.txt:5038-5065",
-                "sources/raw/google_docs/talos.txt:5070-5086",
-                "sources/raw/google_docs/talos.txt:5149-5173",
-                "sources/raw/google_docs/talos.txt:5177-5182",
-                "sources/raw/google_docs/talos.txt:5230-5245",
-                "sources/raw/google_docs/talos.txt:5400-5424",
-                "sources/raw/google_docs/talos.txt:5473-5515",
-                "sources/raw/google_docs/talos.txt:5592-5595"
-              ],
-              "passage_review_note": "Reviewed local raw cache for Talos as an AI labor operating system/control plane, contract locks, MVI routing, secure execution factory, verification judiciary, fail-closed sidecars, human escalation, operational walkthrough, factory/judiciary flow, and auditability emphasis; no Talos runtime, MoECOT-Talos integration, replay run, security result, or benchmark is promoted."
-            },
-            {
-              "source_id": "moecot_md",
-              "mapped_support": "Supports terminology normalization for compact orchestrator, specialist lanes, control-plane ledgers, readiness gates, replay, and fail-closed promotion as a Markdown/export variant of the MoECOT source.",
-              "limits": "Variant source only; it is not independent corroboration and does not verify benchmark, readiness, or runtime behavior.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
-              ],
-              "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
-            },
-            {
-              "source_id": "moecot",
-              "mapped_support": "Supports the core implementation-reference claim through compact orchestrator, specialist lanes, fail-closed control plane, run/task/control-plane ledgers, readiness gates, replay, handoff, promotion blockers, residual tracking, and explicit limitations.",
-              "limits": "Readable source note only; code, logs, benchmark artifacts, replay records, and release artifacts have not been imported, inspected, or reproduced.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=222-765",
-                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=2150-2665",
-                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=4949-5597",
-                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=5810-6519",
-                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=6569-7286",
-                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=7325-7907",
-                "google-doc:1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM:startIndex=41312-48999"
-              ],
-              "passage_review_note": "Reviewed authenticated Google Docs paragraph-indexed extraction for MoECOT abstract, canonical runtime, governance plane, readiness gate, task runtime, evidence/replay integrity, truthful constraints, and update procedure. The source supports implementation-reference mapping only; code, logs, benchmark artifacts, replay records, release artifacts, and local reproduction remain absent."
-            },
-            {
-              "source_id": "project_theseus_whitepaper",
-              "mapped_support": "Supports a report-first implementation analogue with compact substrate, autonomy control loop, Octopus router, bounded specialist arms, benchmark/residual ledgers, checkpoints, Hive runtime, observability, and trusted-node task allowlists.",
-              "limits": "Source-reported implementation narrative only; current reports, ledgers, code paths, and command outputs were not rerun here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:17-76",
-                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:121-138",
-                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:211-249",
-                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:251-325",
-                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:491-505",
-                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:675-715",
-                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:748-765",
-                "local-project:Theseus-Hive@1ad88a22:docs/PROJECT_THESEUS_WHITEPAPER.md:811-822"
-              ],
-              "passage_review_note": "Reviewed local Theseus project source at commit 1ad88a22 for report-first RMI loop, compact substrate, SparkStream control plane, Octopus Router, bounded specialist arms, benchmark/residual ledgers, self-evolution ladder, safety gates, Hive task allowlists, observability reports, and failure-mode mitigations; no current reports, code paths, command outputs, or benchmark ledgers were rerun from this repo."
-            },
-            {
-              "source_id": "theseus_operator_os",
-              "mapped_support": "Supports operator-visible runtime surfaces through command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, safety gates, TTLs, kill switches, signed updates, and isolation.",
-              "limits": "No Hive board, database, node registry, command channel, dashboard, or hook ledger was run from this repository.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:13-30",
-                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:32-52",
-                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:54-74",
-                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:76-114",
-                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:116-146",
-                "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:148-155"
-              ],
-              "passage_review_note": "Reviewed local Theseus Operator OS source at commit 1ad88a22 for shared command vocabulary, durable SQLite work board, background/watch/wake contracts, node registry, artifact sync, work-board executor, node placement, feedback routing, TTLs, kill switches, signed updates, and safety-visible dashboard surfaces; no Hive board, database, node registry, dashboard, or hook ledger was run here."
-            },
-            {
-              "source_id": "theseus_architecture_gate",
-              "mapped_support": "Supports runtime-readiness gating through pre-training checks for ratchet completeness, router readiness, safety ledger, regression suite, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero.",
-              "limits": "Reported gate snapshot is not reproduced evidence; current gate artifacts were not regenerated or independently inspected here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:1-18",
-                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:20-47",
-                "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:49-59"
-              ],
-              "passage_review_note": "Reviewed local Theseus architecture-gate source at commit 1ad88a22 for pre-training promotion checks, direct and ratchet-run commands, reported current gate fields, 14 gate predicates, external-inference-zero requirement, residual handling, rerun conditions, and necessary-not-sufficient boundary; no gate report was regenerated or independently verified here."
-            }
-          ],
-          "mechanism": [
-            "Use MoECOT as a runtime crosswalk for router, specialist, ledger, benchmark, and replay concepts.",
-            "Keep direct MoECOT claims conservative until the primary source is ingested.",
-            "Map MoECOT mechanisms to other stack layers rather than making it a separate silo."
-          ],
-          "interfaces": [
-            "Routing selects cores.",
-            "SCFs govern replacement.",
-            "Evidence and replay ledgers evaluate runtime changes."
-          ],
-          "invariants": [
-            "MoECOT claims stay at argument level until source notes exist.",
-            "Implementation evidence is separated from design argument.",
-            "Runtime promotion follows readiness gates."
-          ],
-          "failure_modes": [
-            "Overclaiming unavailable source content.",
-            "Treating implementation branding as architecture proof.",
-            "Losing cross-layer traceability."
-          ],
-          "minimal_implementation": "A MoECOT crosswalk chapter with authenticated-source gap markers and runtime-interface tables.",
-          "beyond_state_of_art": "MoECOT-style orchestration earns its role as a compact runtime only when it carries command intake through routed execution, replay, handoff, residual escrow, and readiness update without asking the reader to trust the runtime's name. Its product surface is an evidence packet factory. Implementation-reference status depends on public-safe run packets, task ledgers, control-plane gates, replay refs, residual handoffs, and readiness boundaries.",
-          "codex_tests": [
-            "MoECOT source-ingestion gate",
-            "Runtime crosswalk completeness test",
-            {
-              "name": "Readiness/replay mapping review",
-              "purpose": "Check that readiness decisions reference route evidence, residual escrow, fallback, and replacement decisions rather than source branding alone; replay refs remain outside this harness.",
-              "status": "partially implemented by readiness/residual gate harness for readiness mapping; replay mapping remains planned",
-              "implementation_status": "partial",
-              "result_status": "readiness mapping validated locally by synthetic fixtures; replay mapping not run"
-            }
-          ],
-          "lean_module": "AsiStackProofs.MoECOTRuntime",
-          "proof_targets": [
-            {
-              "tag": "lean:moecot.runtime.operational_invariant",
-              "module": "AsiStackProofs.MoECOTRuntime",
-              "target": "A runtime core promotion requires readiness, regression, and replay evidence references.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:moecot.runtime.failure_blocks_promotion",
-              "module": "AsiStackProofs.MoECOTRuntime",
-              "target": "A runtime claim sourced only from unavailable text cannot be promoted above argument state.",
-              "status": "implemented"
-            }
-          ],
-          "draft_maturity": "chapter draft",
-          "open_evidence_gaps": [
-            "Appendix C now records exact passage-reviewed mappings for all assigned MoECOT runtime sources; support remains at argument until MoECOT runtime artifacts, replay records, benchmark records, or reproduced local runs exist.",
-            "Only protocol schema/fixture validation and finite Lean predicates are implemented; no MoECOT runtime artifact, replay, or benchmark run has been imported or reproduced for this chapter.",
-            "No support-state promotion is implied by this passage-review pass."
           ]
         },
         {

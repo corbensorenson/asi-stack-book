@@ -321,51 +321,28 @@
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and finite routing hooks, but no router run, specialist-core benchmark, fallback trace, or route-quality measurement has been accepted.",
+      "decision_reason": "The chapter has source mappings, finite routing hooks, and a folded MoECOT runtime-crosswalk hook set, but no router run, specialist-core benchmark, runtime replay, orchestration artifact, fallback trace, or route-quality measurement has been accepted.",
       "required_evidence": [
         "route-selection replay",
         "specialist baseline comparison",
-        "fallback and residual accounting"
+        "fallback and residual accounting",
+        "public-safe MoECOT runtime or replay packet with readiness and regression evidence refs"
       ],
       "blockers": [
         "no real routing trace",
         "no capability-quality measurement",
-        "no authority-enforced specialist lease"
+        "no authority-enforced specialist lease",
+        "no imported MoECOT orchestration benchmark or replay artifact"
       ],
       "non_claims": [
         "does not prove routing efficiency",
-        "does not prove specialist-core quality"
-      ],
-      "refs": [
-        "chapters/routing-heads-and-specialist-cores.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#routing-heads-and-specialist-cores.core"
-      ]
-    },
-    {
-      "claim_id": "moecot-runtime-and-multi-core-orchestration.core",
-      "chapter_id": "moecot-runtime-and-multi-core-orchestration",
-      "chapter_title": "MoECOT Runtime and Multi-Core Orchestration",
-      "decision": "no_promotion",
-      "current_support_state": "argument",
-      "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and finite runtime-promotion hooks, but authenticated MoECOT runtime artifacts, orchestration logs, benchmark records, and replay bundles have not been imported or accepted.",
-      "required_evidence": [
-        "public-safe MoECOT replay bundle",
-        "runtime orchestration trace",
-        "readiness and regression evidence refs"
-      ],
-      "blockers": [
-        "authenticated runtime source remains incomplete",
-        "no orchestration benchmark",
-        "no imported runtime replay artifact"
-      ],
-      "non_claims": [
+        "does not prove specialist-core quality",
         "does not prove MoECOT runtime behavior",
         "does not prove low-parameter ASI performance"
       ],
       "refs": [
-        "chapters/moecot-runtime-and-multi-core-orchestration.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#moecot-runtime-and-multi-core-orchestration.core"
+        "chapters/routing-heads-and-specialist-cores.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#routing-heads-and-specialist-cores.core"
       ]
     },
     {

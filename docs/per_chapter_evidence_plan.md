@@ -1,8 +1,8 @@
 # Per-Chapter Evidence Plan
 
-Last updated: 2026-06-29
+Last updated: 2026-06-30
 
-This file is the 52-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the 50-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ remaining lanes stay `planned, not executed`; they must not receive synthetic
 fixtures, pass/fail status, or support-state pressure merely for coverage.
 The active cycle selection is recorded in
 `docs/v1_x_active_evidence_cycle.md`: seven lanes are selected and the other
-forty-five remain planned-only.
+forty-three remain planned-only.
 
 Selection criteria:
 
@@ -72,9 +72,8 @@ support-state transition by itself.
 | II | `artifact-graphs-audit-logs-and-replay` | Artifact graph replay harness plus Theseus report | Add graph integrity, provenance mismatch, and replay failure cases. | Show artifacts as memory the system can audit. | Replay reproduces expected graph or records exact divergence. |
 | II | `runtime-adapters-tool-permissions-and-human-approval` | Runtime adapter harness plus Theseus operator OS | Add approval expiry, rollback handles, irreversible residuals, and authority receipts. | Make tool use feel like bounded action with human checkpoints. | High-impact adapter call fails without current approval and receipt. |
 | II | `procedural-memory-and-cognitive-loop-closure` | Theseus self-evolution/operator traces plus loop harness | Add policy update, regression, and rollback memory traces. | Explain learning as disciplined update of procedures, not vague improvement. | Memory update fixture preserves failed attempts and rollback path. |
-| III | `routing-heads-and-specialist-cores` | Routing harness plus MoE literature | Extend route-quality and specialist-readiness fixtures. | Explain routing as an operations problem, not only a neural layer. | Route selection balances cost, adequacy, residuals, and fallback. |
+| III | `routing-heads-and-specialist-cores` | Routing harness plus MoE literature and folded MoECOT runtime crosswalk | Extend route-quality, specialist-readiness, and public-safe orchestration-record fixtures without treating MoECOT source reports as reproduced runtime evidence. | Explain routing as an operations problem, not only a neural layer, and show the MoECOT Runtime Crosswalk as a receipt shape rather than a standalone proof. | Route selection balances cost, adequacy, residuals, fallback, source-state partitions, and replay blockers without model-quality or runtime-execution claims. |
 | III | `readiness-gates-residual-escrow-and-quarantine` | Readiness/residual harness plus Theseus architecture gate | Add quarantine release, residual custody, expired evidence, and fallback cases. | Make readiness gates read like release engineering for intelligence. | Promotion blocked on expired evidence or uncustodied residuals. |
-| III | `moecot-runtime-and-multi-core-orchestration` | Theseus/MoECOT report plus routing harness | Import orchestration trace only after public-safe sanitization. | Explain multi-core orchestration through work allocation and receipts. | Trace validates routing and authority boundaries without model-quality claim. |
 | III | `personal-compute-hives-and-federated-edge-intelligence` | Theseus operator OS plus external distributed-systems baselines | Add lease, approval, runner, and federation negative controls. | Make the chapter useful to people imagining home and edge compute. | Lease fixture proves bounded compute delegation and revocation. |
 | III | `compact-generative-systems-and-residual-honesty` | Compression metrics, residual ledger, and generate/verify/repair harness | Add compression failure residuals, repair loop traces, failed-verification preservation, and quality baseline separation. | Explain compactness and repair as accountable loss, not magic. | Fixture records what is compressed, lost, checked, repaired, residualized, or rejected before any compactness claim promotes. |
 | III | `fast-generation-architectures` | Generation-mode baseline harness plus external inference literature | Add quality-adjusted useful-solution-per-second and negative controls. | Explain speed as useful verified output, not latency alone. | Faster mode cannot promote on latency-only metrics. |

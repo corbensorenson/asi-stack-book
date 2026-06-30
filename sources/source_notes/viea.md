@@ -54,7 +54,7 @@ VIEA frames advanced AI as an intent-to-execution system rather than a response 
 - Runtime Adapters, Tool Permissions, and Human Approval
 - Resource Economics and Token Budgets
 - Executable Specifications and Lean Proof Envelope
-- MoECOT Runtime and Multi-Core Orchestration
+- `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Prototype Roadmap

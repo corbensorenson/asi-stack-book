@@ -43,7 +43,6 @@ Ratcheting Modular Intelligence, or RMI, argues that AI systems should improve b
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `fast-generation-architectures` (Fast Generation Architectures)

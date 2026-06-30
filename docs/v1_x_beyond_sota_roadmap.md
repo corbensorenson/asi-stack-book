@@ -23,10 +23,12 @@ evidence or claims.
 ## Purpose
 
 The v1.0.0 release proved that the repository can function as a public living
-book: manifest-driven structure, 54 drafted chapters, source notes, claim/source
-traceability, finite-record Lean hooks, schema fixtures, reader profiles,
-Human view, a reviewed reader HTML artifact, a deployed Quarto site, and three
-narrow non-core evidence transitions.
+book: manifest-driven structure, the original 54 drafted chapters, source
+notes, claim/source traceability, finite-record Lean hooks, schema fixtures,
+reader profiles, Human view, a reviewed reader HTML artifact, a deployed
+Quarto site, and three narrow non-core evidence transitions. The current v1.x
+working table of contents has since consolidated to 50 active manifest
+chapters through governed execution packages.
 
 The next phase should not spend another cycle proving that the scaffold exists.
 It should retire the important IOUs:
@@ -40,7 +42,8 @@ It should retire the important IOUs:
 - every chapter needs a real external-grounding pass so Corben-originated
   nomenclature is related to known papers, standards, benchmarks, and adjacent
   systems before readers are asked to accept the stack vocabulary;
-- the 54-chapter expansion may now be over-split in several thematic clusters,
+- the original 54-chapter expansion may still be over-split in several
+  thematic clusters,
   so repetition should be reduced through governed consolidation rather than
   prose polishing alone;
 - Project Theseus and Circle evidence need public-safe replay paths rather than
@@ -80,7 +83,7 @@ This roadmap reconciles:
   proof-depth and Theseus/Circle evidence progress but flags that
   consolidation has produced many planning artifacts and no manifest merges;
 - Codex verification of Claude's claims against the local tree;
-- `book_structure.json`, which currently defines four parts, 54 chapters, and
+- `book_structure.json`, which currently defines four parts, 50 chapters, and
   11 appendices;
 - `docs/book_outline.md`, which remains the drafting, source, and proof target
   source of truth;
@@ -94,20 +97,20 @@ not be quoted in the book as an external authority.
 
 | Priority | Finding | Verified state | Roadmap consequence |
 |---|---|---|---|
-| P0 | The 54-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Move the 54-row plan to `docs/per_chapter_evidence_plan.md`, cap each v1.x cycle at 5-8 executed lanes, and leave the rest explicitly planned. |
+| P0 | The 50-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 50-row plan in `docs/per_chapter_evidence_plan.md`, cap each v1.x cycle at 5-8 executed lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
 | P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 158 theorem declarations, 112 direct/projection-style, 46 derived/decomposed, and 29 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` has at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose; `Alignment`, `Corrigibility`, `GovernanceRights`, and `ValueConflict` now each have four derived/decomposed transition/control/preservation/review theorems, and `SelfImprovement` now has three derived/decomposed lifecycle/review theorems, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
-| P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 54 chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
-| P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, but several clusters now repeat the same chapter skeleton around overlapping claims. Several consolidation packages are now review-ready, but no manifest merge has been authorized. The useful target is not "shorter book"; it is one skeleton per real chapter-owning artifact. | Add a governed consolidation milestone with a decision queue: review the existing destination drafts, execute/revise/defer/reject one cluster at a time, preserve ideas as sections/subclaims/proof hooks/source mappings, and require claim/source/proof/reader/URL reconciliation before changing the manifest. |
-| P0 | Planning churn is now a release risk. | The local tree now has 190 files under `docs/`, including 24 `chapter_consolidation*` documents, while the canonical manifest still has 54 chapters and no executed consolidation merge. The proof and evidence work had substance, but the consolidation track is over-documented relative to execution. | Freeze new planning/report surfaces for existing packages. Execute one merge or fold end to end before adding another consolidation document, then batch the rest using the executed merge as the template. |
+| P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 50 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
+| P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, and the Part I, conservative compression, and MoECOT packages have now reduced the active manifest to 50 chapters. Several remaining clusters still repeat the same chapter skeleton around overlapping claims. The useful target is not "shorter book"; it is one skeleton per real chapter-owning artifact. | Continue the governed consolidation queue one package at a time: execute, revise, defer, or reject existing destination drafts and fold dispositions while preserving ideas as sections/subclaims/proof hooks/source mappings and requiring claim/source/proof/reader/URL reconciliation before changing the manifest. |
+| P0 | Planning churn is now a release risk. | The local tree has many planning and review surfaces, while the best recent progress came from executed packages that changed the manifest, archived retired chapters, and preserved URLs. The proof and evidence work has substance, but the consolidation track should keep moving by execution, not new packet layers. | Freeze new planning/report surfaces for existing packages. Execute or reject one merge or fold end to end before adding another consolidation document, then batch the rest using the executed packages as the template. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
-| P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 54 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Add a separate non-core evidence ledger section or companion appendix so readers can see what is actually measured without mistaking it for chapter-core promotion. |
-| P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 54 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
+| P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 50 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
+| P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 50 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with forty-nine drafting-only curated chapter records and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
-| P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest: 54 core claims remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with forty-six drafting-only curated chapter records and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
+| P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 50 core claims still remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
 ## Operating Principles
 
@@ -166,7 +169,7 @@ Do not reopen these unless a validator fails or a new change touches them:
   surfaces;
 - Appendix G and Appendix H are correctly split between Corben-owned sources
   and external sources;
-- all 54 current chapters exist with required sections, source mappings, proof
+- all 50 current chapters exist with required sections, source mappings, proof
   hooks, implementation horizons, diagrams, and Human Reading Path bridges;
 - source notes exist for current assigned source records;
 - source-to-chapter and claim-source mappings are complete for the current
@@ -245,8 +248,8 @@ internal activity alone.
 | Routing/resource efficiency | One bounded synthetic selector slice; below real routing SOTA and no deployed scheduler evidence. | Extend only if a public fixture or trace includes baseline, negative control, quality/adequacy, cost, residuals, and replay. |
 | Compression/representation | Mostly architecture and source synthesis; Circle receipt is structural, not model-quality evidence. | Add one narrow artifact-compression, representation-preservation, or proof-contract lane with negative controls before stronger claims. |
 | Human/AI dual-edition publishing | Unusual and promising scaffold with reviewed reader HTML; not yet a polished human book or audio edition. | Graduate selected reader chapters into curated prose and approve artifacts only through exact release records. |
-| External literature/novelty | Placement gate now records 54/54 positioned chapters and 0 explicit external-baseline exceptions, but novelty questions and the depth of external engagement still remain. Some chapters can still read as Corben-originated nomenclature before readers see enough related outside literature. | Maintain the per-chapter external-grounding pack, keep mining citations inside each chapter's linked Corben papers, replace any future or regressed weak exception with source-noted literature where possible, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
-| Structural cohesion | The manifest is dynamic and complete, but the 54-chapter shape may preserve too much skeleton-level repetition in overlapping clusters. | Decide the review-ready consolidation packages in priority order, starting with the alignment/governance pilot, then continue only when claim identity, source mappings, proof hooks, reader overlays, URL/history treatment, and handoffs stay intact. |
+| External literature/novelty | Placement gate now records 50/50 positioned chapters and 0 explicit external-baseline exceptions, but novelty questions and the depth of external engagement still remain. Some chapters can still read as Corben-originated nomenclature before readers see enough related outside literature. | Maintain the per-chapter external-grounding pack, keep mining citations inside each chapter's linked Corben papers, replace any future or regressed weak exception with source-noted literature where possible, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
+| Structural cohesion | The manifest is dynamic and complete, and the active shape is now 50 chapters after three executed consolidation packages. Remaining overlapping clusters may still preserve too much skeleton-level repetition. | Decide the remaining review-ready consolidation packages in priority order, continuing only when claim identity, source mappings, proof hooks, reader overlays, URL/history treatment, and handoffs stay intact. |
 
 ## Defended Contribution Tracks
 
@@ -326,7 +329,7 @@ Tasks:
 
 - Update the README, landing page, and live Human view entry path so a first-time
   visitor can quickly see:
-  - all 54 chapter core claims remain `argument`;
+  - all 50 chapter core claims remain `argument`;
   - three bounded non-core evidence transitions exist and are narrow;
   - Lean coverage is broad but still shallow in safety-critical areas;
   - Project Theseus and Circle are related project lanes, not independent
@@ -361,7 +364,7 @@ Tasks:
   - `resource-economics.costed_route_budget_slice` as
     `synthetic-test-backed`;
   - `circle-calculus.external_rope_receipt_replay` as `prototype-backed`.
-- Link that surface from Appendix C without changing the fact that all 54
+- Link that surface from Appendix C without changing the fact that all 50
   chapter core claims remain `argument`.
 - Add a validation check that prevents non-core transitions from being rendered
   as chapter-core promotions.
@@ -371,7 +374,7 @@ Tasks:
 Acceptance bar:
 
 - Appendix C or a sibling appendix surfaces the three earned transitions;
-- the chapter-core matrix still reports 54 `argument` support states;
+- the chapter-core matrix still reports 50 `argument` support states;
 - validation rejects accidental chapter-core promotion language.
 
 ### Milestone 1.5 - Early External Review
@@ -480,8 +483,8 @@ formalized honestly.
 
 Current proof status:
 
-- `proofs/proof_manifest.json` records 112 implemented proof targets across
-  all 54 manifest chapters.
+- `proofs/proof_manifest.json` records implemented proof targets across all 50
+  manifest chapters after the MoECOT fold preserved its proof tags in Routing.
 - `docs/proof_depth_classification.md` records 158 theorem declarations, 46
   derived/decomposed theorem declarations, and 112 direct/projection-style
   theorem declarations.
@@ -628,7 +631,7 @@ Current status after the first ASI-side Circle consumer gate:
 Goal: maintain a named evidence lane for every chapter without turning the next
 v1.x cycle into another shallow breadth sweep.
 
-The full 54-row backlog lives in `docs/per_chapter_evidence_plan.md`. Treat that
+The full 50-row backlog lives in `docs/per_chapter_evidence_plan.md`. Treat that
 file as a menu of possible lanes, not as a checklist to complete in one run. A
 v1.x cycle should execute at most 5-8 chapter lanes, chosen for evidential
 payoff and load-bearing importance; the rest stay `planned, not executed` with
@@ -650,7 +653,7 @@ Selection rule:
 
 Acceptance bar:
 
-- `docs/per_chapter_evidence_plan.md` remains current with all 54 chapter lanes;
+- `docs/per_chapter_evidence_plan.md` remains current with all 50 chapter lanes;
 - the active v1.x cycle names the 5-8 selected lanes and explicitly leaves all
   others planned;
 - any executed lane records command/replay path, negative controls where
@@ -668,10 +671,10 @@ Current status for the initial v1.x active evidence cycle:
   `executable-specifications-and-lean-proof-envelope`,
   `project-theseus-as-report-first-implementation-reference`, and
   `living-book-methodology`.
-- The remaining forty-seven manifest chapter lanes are explicitly planned-only
+- The remaining forty-three manifest chapter lanes are explicitly planned-only
   for this cycle.
 - `scripts/validate_v1_x_active_evidence_cycle.py` enforces the selected-lane
-  count, checks that selected plus planned-only lanes cover all 54 manifest
+  count, checks that selected plus planned-only lanes cover all 50 manifest
   chapters exactly once, and requires the current no-chapter-core-promotion
   boundary.
 
@@ -841,10 +844,11 @@ not deletion, prose-only tightening, or a blind chapter-count target.
 
 Diagnostic target shape:
 
-- Aggressive consolidation could move the current 54-chapter shape toward
-  roughly 44 deeper chapters.
-- Conservative consolidation could leave the book closer to 47 chapters by
-  keeping technique-owning chapters such as RankFold/NeuralFold separate.
+- Aggressive consolidation was originally framed as moving the 54-chapter shape
+  toward roughly 44 deeper chapters.
+- Conservative consolidation was originally framed as leaving the book closer to 47 chapters by keeping technique-owning chapters such as
+  RankFold/NeuralFold separate. The current executed path has reached 50 active
+  chapters while retaining RankFold/NeuralFold and folding MoECOT into Routing.
 - Neither count is a success metric. The success metric is less repeated
   skeleton, stronger chapter ownership, preserved source/proof/claim coverage,
   and better reader flow.
@@ -896,7 +900,7 @@ Attachment-specific verdict:
   cases, external positioning, proof limits, and reader flow.
 - The proposal is not accepted as a chapter-count target or a direct cut list.
   A 44-ish table of contents is useful as a pressure test; a retained
-  54-chapter manifest is still correct when each chapter owns a distinct
+  50-chapter manifest is still correct when each chapter owns a distinct
   artifact, interface, proof family, evidence lane, implementation horizon, or
   reader throughline.
 - The strongest near-term action is review and decision, not more abstract
@@ -1053,9 +1057,10 @@ Candidate clusters to review:
     artifact unless a pilot shows the IR claim has no independent chapter
     ownership.
 - Possible folds:
-  - fold `moecot-runtime-and-multi-core-orchestration` into
-    `routing-heads-and-specialist-cores` if its source remains insufficiently
-    mined for standalone chapter evidence;
+  - executed: `moecot-runtime-and-multi-core-orchestration` is folded into
+    `routing-heads-and-specialist-cores` until public-safe runtime, replay,
+    benchmark, and corroboration evidence make a standalone chapter
+    chapter-owning again;
   - review `docs/chapter_consolidation_fold_simulation_fidelity.md` and fold
     `simulation-fidelity-and-physical-constraints` into
     `resource-economics-and-token-budgets` as a Simulation Fidelity and Claim
@@ -1180,18 +1185,19 @@ Current status:
   candidates each require their own package or explicit review decision before
   any future manifest edit.
 - The sequence now records consolidation states so candidates cannot jump from
-  "interesting idea" to manifest change: the Part I pilot is `review_ready`,
-  compression, intent/contracts, static context ABI, verification/adversarial
-  review, and planning/DAG control are `review_ready`, MoECOT runtime,
-  simulation fidelity, and semantic representation are
-  `fold_disposition_ready`, and runtime-adapters/Labor OS is
+  "interesting idea" to manifest change: the Part I pilot, conservative
+  compression merge, and MoECOT runtime fold are `executed`;
+  intent/contracts, static context ABI, verification/adversarial review, and
+  planning/DAG control are `review_ready`; simulation fidelity and semantic
+  representation remain `fold_disposition_ready`; and runtime-adapters/Labor
+  OS is
   `rejected_or_retained` unless a later evidence review finds duplicate
   artifact ownership. The latest attachment does not add another merge
   package; it reinforces the duty to decide the existing queue.
-- The pilot proposes two future merges:
-  `constitutional-alignment-substrate` with
+- The pilot executed two merges:
+  `constitutional-alignment-substrate` absorbed
   `agency-dignity-and-corrigibility`, and
-  `moral-uncertainty-and-value-conflict` with
+  `moral-uncertainty-and-value-conflict` absorbed
   `governance-rights-fork-exit-and-audit`.
 - The roadmap now records a tiered consolidation sequence and diagnostic target
   shape: an aggressive pass may land near 44 chapters, while a conservative
@@ -1199,7 +1205,7 @@ Current status:
   reduction and never a reason to drop an idea.
 - `scripts/validate_chapter_consolidation_sequence.py` keeps the sequence
   visible from the roadmap, README, publication readiness, and repository map
-  while confirming the canonical manifest still has 54 chapters.
+  while confirming the canonical manifest now has 50 chapters.
 - The latest 54-to-44 consolidation critique is accepted as roadmap guidance,
   not as a direct manifest-edit instruction. Its strongest recommendation is
   sequencing: resolve the highest-repetition merge pilot before broad
@@ -1469,7 +1475,7 @@ Tasks:
 - Add a "reader promise" note to each curated chapter: what a human should
   understand after reading it, without changing claim support.
 - After consolidation execution starts, run a book-level reader edit over the
-  destination table of contents, not the old 54-chapter shape. This pass should
+  destination table of contents, not the old pre-consolidation 54-chapter shape. This pass should
   remove duplicated introductions, repair part transitions, normalize examples,
   and make the prose ready for Corben's human editing notes.
 
@@ -1488,82 +1494,21 @@ Acceptance bar:
 
 Current status:
 
-- `editions/reader_manuscript/v1_0/manifest.json` is now in `drafting` status
-  with forty-nine curated chapter records:
-  `asi-is-a-stack-not-a-model`,
-  `the-efficient-asi-hypothesis`,
-  `system-boundaries-and-authority`,
-  `failure-modes-of-ungoverned-intelligence`,
-  `evidence-states-and-claim-discipline`,
-  `human-intent-as-a-formal-input`,
-  `constitutional-alignment-substrate`,
-  `agency-dignity-and-corrigibility`,
-  `moral-uncertainty-and-value-conflict`,
-  `governance-rights-fork-exit-and-audit`,
-  `security-kernel-and-digital-scifs`,
-  `stable-capability-fields`,
-  `capability-replacement-and-rollback`,
-  `routing-heads-and-specialist-cores`,
-  `moecot-runtime-and-multi-core-orchestration`,
-  `readiness-gates-residual-escrow-and-quarantine`,
-  `cognitive-compilation-and-semantic-ir`,
-  `context-transactions-snapshots-mounts-and-taint`,
-  `verification-bandwidth-and-context-adequacy`,
-  `claim-ledgers-and-belief-revision`,
-  `spinoza-verification-and-proof-carrying-claims`,
-  `unified-adaptive-tribunal-and-adversarial-review`,
-  `labor-os-and-typed-jobs`,
-  `artifact-graphs-audit-logs-and-replay`,
-  `runtime-adapters-tool-permissions-and-human-approval`,
-  `procedural-memory-and-cognitive-loop-closure`,
-  `benchmark-ratchets-and-anti-goodhart-evidence`,
-  `policy-optimization-and-learning-from-feedback`,
-  `integrated-reference-architecture`,
-  `project-theseus-as-report-first-implementation-reference`,
-  `prototype-roadmap`,
-  `living-book-methodology`,
-  `open-research-agenda-and-bibliography-plan`,
-  `personal-compute-hives-and-federated-edge-intelligence`,
-  `resource-economics-and-token-budgets`,
-  `fast-generation-architectures`,
-  `mathematical-and-search-substrates`,
-  `coil-attention-cyclic-memory-and-recurrence-contracts`,
-  `coilra-multicoil-rope-and-cyclic-mixers`,
-  `recursive-self-improvement-boundaries`,
-  `intent-to-execution-contracts`,
-  `command-contracts-and-semantic-interfaces`,
-  `planning-as-a-control-layer`,
-  `planforge-dags-and-intelligence-arbitrage`,
-  `virtual-context-abi`,
-  `semantic-pages-context-cells-and-certificates`,
-  `circle-calculus-and-proof-carrying-ai-contracts`,
-  `executable-specifications-and-lean-proof-envelope`, and
-  `artifact-steward-agents-and-living-project-governance`.
-- The current curated set follows the consolidation-aware curation gate: it
-  favors protected standalone chapters outside pending merge packages, and now
-  permits source chapters inside deferred packages only when the prose-pass
-  record cites `docs/chapter_consolidation_release_stability_review.md`.
-  `human-intent-as-a-formal-input` remains local prose work whose handoff must
-  be revisited if later consolidation decisions change the downstream contract
-  or alignment chapter shape. `constitutional-alignment-substrate`,
-  `agency-dignity-and-corrigibility`,
-  `moral-uncertainty-and-value-conflict`, and
-  `governance-rights-fork-exit-and-audit` are deferred-package curated passes:
-  they do not decide the future Constitutional Alignment or contestable
-  governance merges. `intent-to-execution-contracts` and
-  `command-contracts-and-semantic-interfaces` are deferred-package curated
-  passes for the intent/command-contract package and do not decide the future
-  merge between them. `planning-as-a-control-layer` and
-  `planforge-dags-and-intelligence-arbitrage` are deferred-package curated
-  passes for the planning/DAG package and do not decide the future merge
-  between them. `virtual-context-abi` is a deferred-package curated pass for
-  the static context ABI package and does not decide the future merge with
-  `semantic-pages-context-cells-and-certificates`; that semantic-pages pass is
-  now also curated under the same caveat and does not decide the future merge
-  with `virtual-context-abi`. `spinoza-verification-and-proof-carrying-claims`
-  and `unified-adaptive-tribunal-and-adversarial-review` are deferred-package
-  curated passes for the verification/adversarial-review package and do not
-  decide the future merge between them.
+- `editions/reader_manuscript/v1_0/manifest.json` is in `drafting` status with
+  46 active curated chapter records after the Part I, conservative compression,
+  and MoECOT folds. Retired standalone curated drafts are archived under
+  `editions/reader_manuscript/v1_0/archive/retired_chapters/` and are
+  historical reference only.
+- The current curated set follows the consolidation-aware curation gate:
+  protected standalone chapters may continue toward human-edit readiness;
+  chapters inside remaining deferred merge/fold packages must keep scoped
+  caveats; executed destinations should carry the folded material as sections,
+  not resurrect retired reader chapters.
+- The detailed active queue is enforced by
+  `editions/reader_manuscript/v1_0/manifest.json`,
+  `editions/reader_manuscript/v1_0/chapter_review_matrix.json`, and
+  `docs/reader_chapter_review_matrix.md`; the roadmap should not duplicate the
+  full chapter catalog.
 - `editions/reader_manuscript/v1_0/chapters/asi-is-a-stack-not-a-model.qmd`
   now has a first curated prose pass from the generated reader baseline as a
   drafting source only.
@@ -1782,23 +1727,20 @@ Current status:
   drafting source only.
 - `docs/curated_reader_routing_heads_prose_pass.md` records the curation
   scope, reader promise, meaning-preservation checks, non-claims, remaining
-  blockers, the deferred MoECOT fold caveat, and no routing-accuracy,
-  learned-router-quality, specialist-adequacy, deployed-authority-enforcement,
-  route-quality-dominance, MoECOT-runtime, current-Theseus-runtime, or release
-  boundary for that pass.
-- `editions/reader_manuscript/v1_0/chapters/moecot-runtime-and-multi-core-orchestration.qmd`
-  now has a first curated prose pass from the generated reader baseline as a
-  drafting source only. It is a deferred fold-disposition chapter for the
-  MoECOT runtime package and does not execute, reject, or authorize the future
-  fold into `routing-heads-and-specialist-cores`.
-- `docs/curated_reader_moecot_runtime_prose_pass.md` records the curation
-  scope, reader promise, meaning-preservation checks, non-claims, remaining
-  blockers, source-blocked caveat, and deferred-fold caveat for that pass,
-  including no MoECOT runtime execution, benchmark reproduction, replay
-  correctness, current report-bundle verification, worker/core balance trace,
-  isolation result, specialist adequacy, routing quality, model quality,
-  current Theseus runtime behavior, support-state movement, reader-release
-  approval, or merge/fold decision.
+  blockers, the now-executed MoECOT Runtime Crosswalk fold, and no
+  routing-accuracy, learned-router-quality, specialist-adequacy,
+  deployed-authority-enforcement, route-quality-dominance, MoECOT-runtime,
+  current-Theseus-runtime, or release boundary for that pass.
+- `editions/reader_manuscript/v1_0/archive/retired_chapters/moecot-runtime-and-multi-core-orchestration.qmd`
+  preserves the standalone MoECOT curated reader draft as historical reference
+  only. Active reader work now targets
+  `routing-heads-and-specialist-cores` and its folded MoECOT Runtime Crosswalk.
+- `docs/curated_reader_moecot_runtime_prose_pass.md` remains the historical
+  curation record for that archived draft, including no MoECOT runtime
+  execution, benchmark reproduction, replay correctness, current report-bundle
+  verification, worker/core balance trace, isolation result, specialist
+  adequacy, routing quality, model quality, current Theseus runtime behavior,
+  support-state movement, or reader-release approval.
 - `editions/reader_manuscript/v1_0/chapters/readiness-gates-residual-escrow-and-quarantine.qmd`
   now has a first curated prose pass from the generated reader baseline as a
   drafting source only.
@@ -2090,12 +2032,12 @@ explicitly passed or explicitly scoped out in a release record.
 | Prior CI gate | Previous GitHub Pages run checked, local validation run, and no known failed prior run ignored. | Do not commit or tag until the prior failure is fixed or scoped. |
 | Execution-over-reports gate | At least one review-ready consolidation package has executed or been explicitly rejected/retained before any new consolidation planning packet is added for an existing package. | The roadmap is still producing planning surface instead of reducing duplicate chapter structure. |
 | Sixty-second trust surface | README, landing page, or Human view entry path makes current evidence, non-claims, proof limits, self-sourcing boundaries, and external-review status legible quickly. | Cold readers cannot distinguish disciplined research program from overbroad theory. |
-| Non-core evidence visibility | Appendix C or sibling surface names the three current non-core transitions and keeps all 54 core claims at `argument` unless separately promoted. | Readers cannot tell what evidence exists. |
+| Non-core evidence visibility | Appendix C or sibling surface names the three current non-core transitions and keeps all 50 core claims at `argument` unless separately promoted. | Readers cannot tell what evidence exists. |
 | Early external review | At least one external review record exists, or a dated blocker records outreach and scope. | The release remains self-reviewed. |
 | Defended contribution focus | The release names three to five contribution tracks and at most three deep-work tracks for the cycle. | The project remains broad without defended results. |
 | Safety-critical Lean depth | Five targeted modules include `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases, or a release record explicitly keeps them projection-only. | Formal layer remains v1.0-depth. |
 | Public replay/import | At least one Theseus or Circle lane is CI-replayed or CI-verifiable by pinned digest with negative controls. | Imported evidence remains local-summary only. |
-| Chapter-lane cap | The release names 5-8 executed chapter lanes and leaves the rest planned; no 54-lane synthetic sweep is claimed. | Breadth trap not controlled. |
+| Chapter-lane cap | The release names 5-8 executed chapter lanes and leaves the rest planned; no 50-lane synthetic sweep is claimed. | Breadth trap not controlled. |
 | Per-chapter external grounding | Every chapter has source-noted external comparators, candidate backlog, or an explicit exception; accepted third-party records appear in generated Appendix H. | The book still reads as self-sourced nomenclature. |
 | Proof/evidence coverage | Each executed lane names whether its strongest evidence path is Lean, Theseus, Circle, external literature, external review, or an explicit no-promotion blocker. | Arguments remain prose-only without a testable support route. |
 | External-SOTA distance | The release updates distance from SOTA, not only internal activity. | "Beyond-SOTA" remains unaudited. |

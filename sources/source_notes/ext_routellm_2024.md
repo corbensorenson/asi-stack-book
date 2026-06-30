@@ -37,7 +37,6 @@ RouteLLM belongs in the routing, MoECOT, resource-economics, and policy-optimiza
 ## Book Chapters Supported
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 

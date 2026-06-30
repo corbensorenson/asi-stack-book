@@ -33,7 +33,7 @@ CoilMoECOT combines the MoECOT runtime substrate with a coil/specialist-core fam
 ## Book Chapters Supported
 
 - Mathematical and Search Substrates
-- MoECOT Runtime and Multi-Core Orchestration
+- `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - Coil Attention, Cyclic Memory, and Recurrence Contracts
 - CoilRA, MultiCoil RoPE, and Cyclic Mixers
 - Prototype Roadmap

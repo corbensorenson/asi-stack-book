@@ -31,7 +31,7 @@ The Markdown MoECOT file is a variant/source export of the MoECOT whitepaper. It
 
 ## Book Chapters Supported
 
-- MoECOT Runtime and Multi-Core Orchestration
+- `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Living Book Methodology

@@ -48,7 +48,7 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 - Artifact Graphs, Audit Logs, and Replay
 - Runtime Adapters, Tool Permissions, and Human Approval
 - Procedural Memory and Cognitive Loop Closure
-- MoECOT Runtime and Multi-Core Orchestration
+- `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - Personal Compute Hives and Federated Edge Intelligence
 - Security Kernel and Digital SCIFs
 - Executable Specifications and Lean Proof Envelope

@@ -41,7 +41,6 @@ The Hive Operator OS is the usability and control layer for Project Theseus Hive
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)
 - `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `integrated-reference-architecture` (Integrated Reference Architecture)

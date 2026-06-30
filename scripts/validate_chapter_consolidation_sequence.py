@@ -47,7 +47,6 @@ REQUIRED_IDS = {
     "planning-as-a-control-layer",
     "planforge-dags-and-intelligence-arbitrage",
     "cognitive-compilation-and-semantic-ir",
-    "moecot-runtime-and-multi-core-orchestration",
     "routing-heads-and-specialist-cores",
     "simulation-fidelity-and-physical-constraints",
     "resource-economics-and-token-budgets",
@@ -69,7 +68,7 @@ REQUIRED_IDS = {
 REQUIRED_FRAGMENTS = (
     "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
-    "51 manifest chapters after the conservative compression merge",
+    "50 manifest chapters after the executed Part I pilot",
     "Do not run a broad 54-to-44 manifest edit",
     "Do not target a fixed chapter count.",
     "Do not delete ideas merely to reduce repetition.",
@@ -107,7 +106,7 @@ REQUIRED_FRAGMENTS = (
     "Static context ABI | `review_ready`",
     "Verification and adversarial review | `review_ready`",
     "Planning and DAG control | `review_ready`",
-    "Source-blocked MoECOT runtime | `fold_disposition_ready`",
+    "Source-blocked MoECOT runtime | `executed`",
     "Simulation fidelity | `fold_disposition_ready`",
     "Semantic representation | `fold_disposition_ready`",
     "Candidate Sequence",
@@ -117,6 +116,7 @@ REQUIRED_FRAGMENTS = (
     "Repetition-removal ledger",
     "Reader-work disposition",
     "Reader Work Sequencing",
+    "Executed Fold-Disposition History",
     "Remaining Fold-Disposition Packages",
     "docs/chapter_consolidation_fold_moecot_runtime.md",
     "docs/chapter_consolidation_fold_simulation_fidelity.md",
@@ -855,7 +855,7 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "does not execute any additional remaining merge or fold",
     "does not create external review",
     "does not change support states",
-    "The current canonical manifest has 51 chapters after the executed conservative compression merge.",
+    "The current canonical manifest has 50 chapters after the executed Part I pilot",
     "Reader Curation Outcome Table",
     "Constitutional alignment and agency/corrigibility",
     "Value conflict and contestable governance",
@@ -865,6 +865,7 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "Proof-carrying claims and adversarial review",
     "Planning and DAG control",
     "MoECOT runtime fold",
+    "`executed`",
     "Simulation fidelity fold",
     "Semantic representation fold",
     "Accepted Temporary Debt",
@@ -872,15 +873,15 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "This review does not execute any additional remaining merge or fold.",
     "This review does not reject any package permanently.",
     "This review does not approve any destination draft.",
-    "This review records that the Part I pilot and conservative compression merge implemented historical stubs and changed chapter count",
+    "This review records that the Part I pilot, conservative compression merge,",
     "This review does not promote, demote, deprecate, or refute any chapter core",
 )
 
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot and conservative compression merge",
-    "The canonical manifest now has 51 chapters after the executed conservative compression merge.",
+    "applied to the 2026-06-30 Part I pilot, conservative compression merge, and MoECOT runtime fold",
+    "The canonical manifest now has 50 chapters after the executed Part I pilot",
     "If a retired public chapter URL cannot be preserved or deliberately recorded",
     "Default URL Policy",
     "Keep the destination chapter's existing stable ID and public URL",
@@ -891,9 +892,10 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/agency-dignity-and-corrigibility.html",
     "/chapters/governance-rights-fork-exit-and-audit.html",
     "/chapters/generate-verify-repair-compression.html",
+    "/chapters/moecot-runtime-and-multi-core-orchestration.html",
     "Validation Expectations",
     "Non-Claims",
-    "The 2026-06-30 Part I and conservative compression execution packages, not this policy text alone",
+    "The 2026-06-30 Part I, conservative compression, and MoECOT execution",
 )
 
 
@@ -926,8 +928,8 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 51:
-        errors.append("Consolidation sequence expects the current manifest to have 51 chapters after the conservative compression merge.")
+    if len(ids) != 50:
+        errors.append("Consolidation sequence expects the current manifest to have 50 chapters after the MoECOT runtime fold.")
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -1272,8 +1274,10 @@ def main() -> None:
             errors.append(f"MoECOT fold disposition missing required boundary: {fragment}")
 
     for chapter_id in sorted(MOECOT_FOLD_REQUIRED_IDS):
-        if chapter_id not in ids:
-            errors.append(f"MoECOT fold chapter ID is missing from manifest: {chapter_id}")
+        if chapter_id == "routing-heads-and-specialist-cores" and chapter_id not in ids:
+            errors.append(f"MoECOT fold destination chapter ID is missing from manifest: {chapter_id}")
+        if chapter_id == "moecot-runtime-and-multi-core-orchestration" and chapter_id in ids:
+            errors.append(f"MoECOT retired chapter ID is still active in manifest: {chapter_id}")
         if f"`{chapter_id}`" not in moecot_fold:
             errors.append(f"MoECOT fold disposition does not mention `{chapter_id}`.")
 
@@ -1403,7 +1407,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "51-chapter manifest, executed Part I pilot, and executed conservative compression merge recorded with remaining candidate sequence."
+        "50-chapter manifest, executed Part I pilot, executed conservative compression merge, and executed MoECOT runtime fold recorded with remaining candidate sequence."
     )
 
 

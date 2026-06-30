@@ -111,12 +111,12 @@ No result is recorded here unless a test has actually been implemented and run.
 | `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Specialist routing accuracy test | planned | not run |
 | `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Authority-bounded routing test | implemented | validated locally by synthetic fixtures; deployed router enforcement not run |
 | `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Fallback route test | implemented | validated locally by synthetic fixtures; live fallback routing not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | MoECOT source-ingestion gate | planned | not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Runtime crosswalk completeness test | planned | not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Readiness/replay mapping review | partial | readiness mapping validated locally by synthetic fixtures; replay mapping not run |
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Readiness gate enforcement test | implemented | validated locally by synthetic fixtures |
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Residual escrow integrity test | implemented | validated locally by synthetic fixtures |
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Quarantine behavior test | implemented | validated locally by synthetic fixtures; live routing enforcement not run |
-| `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | MoECOT source-ingestion gate | planned | not run |
-| `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Runtime crosswalk completeness test | planned | not run |
-| `moecot-runtime-and-multi-core-orchestration` | MoECOT Runtime and Multi-Core Orchestration | Readiness/replay mapping review | partial | readiness mapping validated locally by synthetic fixtures; replay mapping not run |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Device registry fixture validation | implemented | passes via protocol fixture validation |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Portal, approval, bid, and federation fixture validation | implemented | passes via protocol fixture validation |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Policy-first scheduling denial test | implemented | passes via Lean build |

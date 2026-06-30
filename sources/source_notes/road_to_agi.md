@@ -32,7 +32,7 @@ Road To AGI is a strategic remaining-work and status source for the MoECOT track
 
 ## Book Chapters Supported
 
-- MoECOT Runtime and Multi-Core Orchestration
+- `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - Prototype Roadmap
 - Benchmark Ratchets and Anti-Goodhart Evidence
 - Integrated Reference Architecture

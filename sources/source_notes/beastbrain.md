@@ -43,7 +43,6 @@ BeastBrain is a system-architecture blueprint for local, stateful, SSD-native in
 - `asi-is-a-stack-not-a-model` (ASI Is a Stack, Not a Model)
 - `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `prototype-roadmap` (Prototype Roadmap)
 
 ## Claims To Add Or Update

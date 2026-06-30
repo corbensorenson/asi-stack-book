@@ -37,7 +37,6 @@ This survey belongs in the routing, MoECOT, resource-economics, and open-researc
 ## Book Chapters Supported
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 

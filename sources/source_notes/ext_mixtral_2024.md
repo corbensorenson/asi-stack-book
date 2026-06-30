@@ -37,7 +37,6 @@ Mixtral belongs in the routing, MoECOT, fast-generation, and resource-economics 
 ## Book Chapters Supported
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 

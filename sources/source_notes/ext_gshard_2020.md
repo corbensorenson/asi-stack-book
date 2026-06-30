@@ -37,7 +37,6 @@ GShard belongs in the routing, MoECOT, and resource chapters as an external syst
 ## Book Chapters Supported
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
-- `moecot-runtime-and-multi-core-orchestration` (MoECOT Runtime and Multi-Core Orchestration)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 

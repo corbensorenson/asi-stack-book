@@ -1872,8 +1872,9 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `octopus_router`, `rmi` | Read first for chapter claims and mechanisms. |
-| Supporting | `beastbrain`, `cognitive_loop_closure`, `rgs`, `project_theseus_whitepaper`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Primary | `octopus_router`, `rmi`, `benchmaxxing` | Read first for chapter claims, routing mechanisms, and runtime-promotion pressure. |
+| Supporting | `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` | Mine after primary sources for cross-layer connections, variants, runtime packet boundaries, and failure modes. |
+| Variants / alternate releases | `moecot_md` | Use only to compare versions or recover missing detail. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1885,11 +1886,14 @@ Draft arc:
 - Mechanism: emit route receipts that record selected specialist, rejected candidates, granted authority subset, denied authority, context lease, tool lease, readiness state, verifier requirement, budget, fallback, expiry, and residual owner.
 - Mechanism: record non-selection evidence so rejected candidates inform readiness, resource policy, and future routing.
 - Mechanism: Preserve registry epoch, owner, authority envelope, memory/tool lease policies, route limitations, route receipt, residual owner, and non-claims so selected and rejected specialists remain inspectable after the route expires.
+- Mechanism: Fold MoECOT as a runtime crosswalk by mapping compact orchestrator, route head, specialist lanes, control-plane gates, ledgers, replay refs, handoffs, residuals, and promotion blockers onto route receipts and runtime evidence packets.
+- Mechanism: Separate source-reported, locally reproduced, externally corroborated, and blocked runtime fields so implementation-reference context cannot become benchmark, replay, or deployment evidence by branding alone.
 - Handoff: Failed or uncertain routes flow to readiness gates, residual escrow, fallback routes, or tribunal/review rather than ordinary execution.
 - Interface: Planning requests capabilities.
 - Interface: Governance bounds specialists.
 - Interface: Evidence updates readiness.
 - Interface: artifact graphs and evidence ledgers retain route receipts for downstream claim traceability.
+- Interface: MoECOT orchestration records extend route receipts with command refs, specialist lanes, control-plane gates, route authority ledgers, replay refs, denied routes, failed gates, missing replay refs, handoff refs, source-state partitions, residuals, and non-claims.
 
 Primary invariants:
 
@@ -1897,6 +1901,8 @@ Primary invariants:
 - Routing decisions are logged.
 - Fallback paths remain available.
 - The router selects the least-capable adequate specialist unless task risk, context demand, verifier requirement, or fallback policy justifies broader capability.
+- Implementation evidence is separated from design argument.
+- Runtime promotion follows readiness gates.
 
 Failure modes to cover:
 
@@ -1904,17 +1910,26 @@ Failure modes to cover:
 - Router overconfidence.
 - Specialist authority leak.
 - Route laundering: broad successful routes justify broader authority without proving narrower specialists were inadequate.
+- Implementation branding as proof.
+- Replay theater that preserves successful paths while omitting failed gates, denied routes, human interventions, missing sources, and residual cases.
 
 Draft deliverables:
 
 - A router registry with capability metadata, cost, authority, leases, route limitations, route receipts, non-selection evidence, expiry, residual ownership, and fallback rules.
-- Exact Appendix C claim-source mappings for routing heads: five local raw-cache mappings and two local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only.
+- Exact Appendix C claim-source mappings for routing heads and the folded MoECOT runtime crosswalk: local raw-cache, local public-project, and authenticated connector mappings are passage-reviewed or connector-reviewed while runtime artifacts remain unimported.
 - Implemented protocol validation: `specialist_registry_record` and `routing_decision_record` fixtures validate public record shape only.
+- Implemented protocol validation: `moecot_orchestration_record` fixture validates public runtime-packet record shape only.
 - Planned Codex test: Specialist routing accuracy test.
+- Planned Codex test: MoECOT source-ingestion gate.
+- Planned Codex test: Runtime crosswalk completeness test.
 - Implemented Lean predicate: selected routes satisfy authority and readiness.
 - Implemented Lean predicate: failed readiness routes to fallback or residual rather than promotion.
+- Implemented Lean predicate: runtime core promotion requires readiness, regression, and replay evidence references.
+- Implemented Lean predicate: claims sourced only from unavailable runtime text cannot promote above `argument`.
 - Implemented Codex test: Authority-bounded routing test, via `python3 scripts/validate_readiness_residual_gates.py` over route authority ceilings, gate authority scopes, allowed routes, and blocked routes; deployed router enforcement remains unrun.
 - Implemented Codex test: Fallback route test, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default and quarantine fallback preservation; live fallback route execution remains unrun.
+- Partially implemented Codex test: Readiness/replay mapping review, via `python3 scripts/validate_readiness_residual_gates.py` for readiness mapping across route evidence, gate decisions, residual escrow, fallback, and replacement decisions; MoECOT replay mapping remains planned and unrun.
+- Historical public slug preserved by `chapters/moecot-runtime-and-multi-core-orchestration.html`; archived source manuscript retained under `archive/retired_chapters/moecot-runtime-and-multi-core-orchestration.qmd`.
 
 Lean proof targets:
 
@@ -1922,6 +1937,8 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | implemented |
 | `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | implemented |
+| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
+| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
 
 ### Readiness Gates, Residual Escrow, and Quarantine
 
@@ -1987,67 +2004,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | implemented |
 | `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | implemented |
-
-### MoECOT Runtime and Multi-Core Orchestration
-
-Stable ID: `moecot-runtime-and-multi-core-orchestration`
-
-Chapter job: The book needs a concrete implementation reference for governed multi-core orchestration, ledgers, replay, and benchmark promotion.
-
-Core claim: MoECOT should be treated as the implementation-reference layer for a governed low-parameter multi-core ASI stack once its authenticated source is fully mined.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `octopus_router`, `rmi`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
-| Supporting | `beastbrain`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| Variants / alternate releases | `moecot_md` | Use only to compare versions or recover missing detail. |
-| Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
-
-Draft arc:
-
-- Problem: The book needs a concrete implementation reference for governed multi-core orchestration, ledgers, replay, and benchmark promotion.
-- Insufficiency: A purely abstract stack can fail to specify runtime state, registry boundaries, readiness gates, replay, and operational artifacts.
-- Mechanism: Treat MoECOT as a runtime evidence-packet target that binds command, route head, specialist cores, control-plane gates, ledgers, readiness refs, replay refs, handoff state, promotion blockers, residuals, and source-claim state.
-- Mechanism: Keep direct MoECOT claims conservative until runtime artifacts, replay records, benchmark records, or reproduced local runs exist.
-- Mechanism: separate source-reported, locally reproduced, externally corroborated, and blocked fields inside each runtime evidence packet.
-- Mechanism: record cold-start-to-handoff traces, including denied routes, failed gates, missing replay refs, unresolved handoffs, and residual branches.
-- Mechanism: Preserve runtime packet state, route authority ledger, denied routes, failed gates, missing replay refs, source-reported fields, locally reproduced fields, externally corroborated fields, blocked fields, and non-claims so a runtime name cannot stand in for replay or benchmark evidence.
-- Handoff: A concrete runtime must still land on an owned, leased, or project compute substrate whose reachability does not imply authority.
-- Interface: Routing selects cores.
-- Interface: SCFs govern replacement.
-- Interface: Evidence and replay ledgers evaluate runtime changes.
-- Interface: route authority ledger records command authorization, specialist authority envelopes, tool and memory permissions, and denied authority changes.
-
-Primary invariants:
-
-- MoECOT claims stay at argument level until source notes exist.
-- Implementation evidence is separated from design argument.
-- Runtime promotion follows readiness gates.
-- Runtime evidence states remain separate across design example, reproduced artifact, benchmark evidence, and blocked source field.
-
-Failure modes to cover:
-
-- Overclaiming unavailable source content.
-- Treating implementation branding as architecture proof.
-- Losing cross-layer traceability.
-- Replay theater that preserves successful paths while omitting failed gates, denied routes, human interventions, missing sources, and residual cases.
-
-Draft deliverables:
-
-- A MoECOT crosswalk chapter with authenticated-source gap markers and runtime-interface tables.
-- Implemented protocol validation: `moecot_orchestration_record` fixture validates public record shape only.
-- Planned Codex test: MoECOT source-ingestion gate.
-- Planned Codex test: Runtime crosswalk completeness test.
-- Partially implemented Codex test: Readiness/replay mapping review, via `python3 scripts/validate_readiness_residual_gates.py` for readiness mapping across route evidence, gate decisions, residual escrow, fallback, and replacement decisions; MoECOT replay mapping remains planned and unrun.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
-| `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
-| `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
 
 ### Personal Compute Hives and Federated Edge Intelligence
 

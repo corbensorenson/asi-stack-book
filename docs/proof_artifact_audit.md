@@ -14,7 +14,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Manifest status counts | {"implemented": 112} |
 | Triage class counts | {"formal-invariant": 112} |
 | Lean modules referenced | 54 |
-| Chapters with proof targets | 51 |
+| Chapters with proof targets | 50 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -114,7 +114,6 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `labor-os-and-typed-jobs` | 2 | 2 | 0 | 0 |
 | `living-book-methodology` | 2 | 2 | 0 | 0 |
 | `mathematical-and-search-substrates` | 2 | 2 | 0 | 0 |
-| `moecot-runtime-and-multi-core-orchestration` | 2 | 2 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 4 | 4 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 4 | 4 | 0 | 0 |
@@ -128,7 +127,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `readiness-gates-residual-escrow-and-quarantine` | 2 | 2 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 2 | 2 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 2 | 2 | 0 | 0 |
-| `routing-heads-and-specialist-cores` | 2 | 2 | 0 | 0 |
+| `routing-heads-and-specialist-cores` | 4 | 4 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 2 | 2 | 0 | 0 |
 | `semantic-pages-context-cells-and-certificates` | 2 | 2 | 0 | 0 |
@@ -208,10 +207,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:routing.specialists.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:routing.specialists.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:moecot.runtime.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:moecot.runtime.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.failure_blocks_promotion` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:moecot.runtime.operational_invariant` | `moecot-runtime-and-multi-core-orchestration` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:moecot.runtime.failure_blocks_promotion` | `moecot-runtime-and-multi-core-orchestration` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:personal_hives.scheduling.operational_invariant` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:personal_hives.policy_first.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:personal_hives.approval_gate.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
