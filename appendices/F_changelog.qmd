@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-30 - Runtime adapter permission negative-case proofs
+
+- Strengthened `AsiStackProofs.RuntimeAdapters` with two derived negative-case
+  theorems: one rejects a modeled adapter invocation that lacks the parent
+  job's required permission, and one rejects high-impact unapproved adapter
+  calls that try to remain unrejected.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 291
+  theorem declarations, 115 direct/projection-style declarations, and 176
+  derived/decomposed declarations.
+- Updated the Runtime Adapters chapter, proof adequacy review, candidate
+  status, v1.0/v1.x roadmap surfaces, focus audit, and status snapshot
+  validator to record the new runtime-adapter proof increment.
+- This does not promote any Appendix C or chapter core claim, execute a
+  deployed adapter, prove sandbox isolation, validate an approval service,
+  prove secret-handle safety, execute rollback, validate live effect receipts,
+  or approve any reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Personal compute hive approval and lease proofs
 
 - Strengthened `AsiStackProofs.PersonalComputeHives` with two derived

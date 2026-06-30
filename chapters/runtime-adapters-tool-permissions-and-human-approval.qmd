@@ -4,7 +4,7 @@ chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-28"
+last_updated: "2026-06-30"
 primary_sources:
   - "talos"
   - "viea"
@@ -18,7 +18,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact claim-source mappings with passage-reviewed references for five local raw-cache sources plus two local public-project sources; `moecot` remains connector/source-note mapped."
-  - "Protocol schema/fixture validation, narrow Lean permission/approval predicates, and a synthetic runtime-adapter permission harness are implemented; the fixture now records invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims. No deployed adapter execution, sandbox, approval-service, rollback execution, or secret-handle safety test has been run for this chapter."
+  - "Protocol schema/fixture validation, narrow Lean permission/approval predicates, Runtime Adapters negative-case theorems, and a synthetic runtime-adapter permission harness are implemented; the fixture now records invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims. No deployed adapter execution, sandbox, approval-service, rollback execution, or secret-handle safety test has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -30,17 +30,17 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-28 |
+| Last updated | 2026-06-30 |
 | Primary source records | `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; passage-reviewed local public-project source: `field_of_god_ai_constitution`, `theseus_operator_os`; connector/source-note mapped: `moecot` |
-| Test state | Runtime adapter fixture validation now includes invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims; finite permission and approval predicates are implemented in `AsiStackProofs.RuntimeAdapters`; `python3 scripts/validate_runtime_adapter_permissions.py` checks synthetic typed-job, adapter-invocation, and authority-use-receipt consistency for permissions, approval gates, expiry markers, receipts, rollback handles, irreversible residuals, and authority receipt alignment. Deployed adapter execution, sandbox isolation, approval-service behavior, rollback execution, and secret-handle safety remain untested. |
+| Test state | Runtime adapter fixture validation now includes invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims; finite permission and approval predicates plus negative-case theorems are implemented in `AsiStackProofs.RuntimeAdapters` for missing parent-job permission and high-impact unapproved adapter calls that try to remain unrejected; `python3 scripts/validate_runtime_adapter_permissions.py` checks synthetic typed-job, adapter-invocation, and authority-use-receipt consistency for permissions, approval gates, expiry markers, receipts, rollback handles, irreversible residuals, and authority receipt alignment. Deployed adapter execution, sandbox isolation, approval-service behavior, rollback execution, and secret-handle safety remain untested. |
 
 ## Drafting guardrail
 
-This chapter treats runtime adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture and now proves two finite Lean predicates over permission and approval records. Seven assigned source mappings have passage-reviewed refs, while `moecot` remains connector/source-note mapped. The fixture does not call a tool, inject a secret, enforce a live approval service, or produce a real rollback handle.
+This chapter treats runtime adapters as effect-boundary records, not as proof that tools were safely executed. The repo validates an adapter-invocation fixture and now proves two finite predicates plus two negative-case theorems over permission and approval records. Seven assigned source mappings have passage-reviewed refs, while `moecot` remains connector/source-note mapped. The fixture does not call a tool, inject a secret, enforce a live approval service, or produce a real rollback handle.
 
 This chapter sits after artifact graphs so the reader already has the evidence surface in mind before the book turns to external effects. The runtime adapter is the narrow point where a typed job may receive authority, use a tool, produce an effect receipt, and hand evidence back to the artifact graph.
 
@@ -243,7 +243,7 @@ A runtime-adapter contract with permissions, approval requirements, and result e
 
 The adapter boundary begins with a `runtime_adapter_invocation` schema and fixture. It validates adapter ID, invocation state, target, capability, permission, sandbox, impact class, risk tier, approval scope/expiry, authority handle, effect lease, effect receipt, pre/post state refs, external side effects, verification refs, rollback handle, irreversible residuals, incident/audit refs, support-state effect, residuals, and non-claims. It does not execute a tool.
 
-The runtime-adapter fixture checks the invocation envelope. `AsiStackProofs.RuntimeAdapters` adds a bounded permission predicate showing that a valid invocation requires the parent job permission list to include the adapter capability, plus a bounded approval predicate requiring a high-impact unapproved invocation to be rejected. The synthetic runtime-adapter permission harness now adds cross-record checks over typed jobs, adapter invocations, and authority-use receipts: valid fixtures cover low-impact local write and high-impact approved preview-deployment records, while expected-invalid fixtures reject missing permissions, high-impact approval bypass, expired approval, missing effect receipts, and irreversible effects without rollback or residual records. This is still fixture behavior, not tool execution, sandbox isolation, human approval workflow, secret-handle safety, effect receipt validity in a live adapter, or rollback execution.
+The runtime-adapter fixture checks the invocation envelope. `AsiStackProofs.RuntimeAdapters` adds a bounded permission predicate showing that a valid invocation requires the parent job permission list to include the adapter capability, plus a bounded approval predicate requiring a high-impact unapproved invocation to be rejected. It also adds negative-case theorems showing that missing parent-job permission invalidates the modeled invocation and that a high-impact unapproved adapter call cannot remain unrejected while satisfying the approval-rejection predicate. The synthetic runtime-adapter permission harness now adds cross-record checks over typed jobs, adapter invocations, and authority-use receipts: valid fixtures cover low-impact local write and high-impact approved preview-deployment records, while expected-invalid fixtures reject missing permissions, high-impact approval bypass, expired approval, missing effect receipts, and irreversible effects without rollback or residual records. This is still fixture behavior, not tool execution, sandbox isolation, human approval workflow, secret-handle safety, effect receipt validity in a live adapter, or rollback execution.
 
 ## Beyond the State of the Art
 
@@ -266,13 +266,13 @@ This lease-bound action surface is still proposed architecture. Tool-use support
 | Test | Purpose | Status |
 |---|---|---|
 | Runtime adapter fixture validation | Check that the adapter fixture matches the public schema and declares job, adapter, target, capability, permission, sandbox, invocation state, impact class, risk tier, approval scope/expiry, authority handle, inputs, effect lease, receipt refs, rollback handle, irreversible residuals, incident/audit refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
-| Adapter permission predicate | Check that adapter capability is included in the parent job's permissions. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
-| Approval gate rejection predicate | Check that high-impact adapter calls without approval are rejected. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
+| Adapter permission predicate and missing-permission negative case | Check that adapter capability is included in the parent job's permissions and that a modeled invocation without that parent-job permission is not valid. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
+| Approval gate rejection predicate and unrejected-negative case | Check that high-impact adapter calls without approval are rejected and that a high-impact unapproved call cannot remain unrejected while satisfying the approval predicate. | implemented in `AsiStackProofs.RuntimeAdapters`; checked by Lean build |
 | Rollback handle capture test | Check that deployment/effect records capture rollback handles or residuals. | implemented in `python3 scripts/validate_runtime_adapter_permissions.py`; synthetic records only |
 | Approval-scope expiry test | Check that stale, underscoped, or reused approvals deny later high-impact invocations. | implemented in `python3 scripts/validate_runtime_adapter_permissions.py`; synthetic records only |
 | Effect-receipt completeness test | Check that pre-state, post-state, side effects, verification refs, rollback handles, and irreversible residuals are represented before route promotion. | implemented in `python3 scripts/validate_runtime_adapter_permissions.py`; synthetic records only |
 
-Fixture-shape validation, two bounded Lean predicates, and the synthetic runtime-adapter permission harness are implemented. The remaining tests require a deployed adapter harness, sandbox, parent job permission lookup against real jobs, high-impact classification against policy, live approval decisions, live effect receipts, rollback execution, and secret-handle safety checks.
+Fixture-shape validation, four bounded Lean theorem declarations over two finite predicates, and the synthetic runtime-adapter permission harness are implemented. The remaining tests require a deployed adapter harness, sandbox, parent job permission lookup against real jobs, high-impact classification against policy, live approval decisions, live effect receipts, rollback execution, and secret-handle safety checks.
 
 ### Formalization hooks
 
@@ -281,7 +281,7 @@ Fixture-shape validation, two bounded Lean predicates, and the synthetic runtime
 | `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability. | implemented |
 | `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval is rejected. | implemented |
 
-These proof hooks are implemented as finite-record predicates. They do not prove sandboxing, authority-handle mediation, actual tool invocation, effect receipt validity, or rollback behavior.
+These proof hooks are implemented as finite-record predicates plus negative-case theorems over modeled records. They do not prove sandboxing, authority-handle mediation, actual tool invocation, effect receipt validity, approval-service quality, secret-handle safety, or rollback behavior.
 
 ## Source crosswalk
 

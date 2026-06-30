@@ -26,6 +26,15 @@ theorem valid_invocation_has_required_permission
   intro valid
   exact valid
 
+theorem invocation_without_parent_permission_rejected
+    {job : ParentJob} {invocation : AdapterInvocation} :
+    invocation.capability ∉ job.permissions ->
+      ¬ InvocationPermissionValid job invocation := by
+  intro missingPermission valid
+  unfold InvocationPermissionValid at valid
+  unfold PermissionIncluded at valid
+  contradiction
+
 def ApprovalRejectionValid (invocation : AdapterInvocation) : Prop :=
   invocation.highImpact = true ->
     invocation.approvalRecorded = false ->
@@ -39,5 +48,18 @@ theorem high_impact_adapter_without_approval_is_rejected
     invocation.rejected = true := by
   intro valid highImpact missingApproval
   exact valid highImpact missingApproval
+
+theorem high_impact_adapter_without_approval_cannot_be_unrejected
+    {invocation : AdapterInvocation} :
+    invocation.highImpact = true ->
+      invocation.approvalRecorded = false ->
+        invocation.rejected = false ->
+          ¬ ApprovalRejectionValid invocation := by
+  intro highImpact missingApproval notRejected valid
+  have rejected :=
+    high_impact_adapter_without_approval_is_rejected
+      valid highImpact missingApproval
+  rw [notRejected] at rejected
+  contradiction
 
 end AsiStackProofs.RuntimeAdapters
