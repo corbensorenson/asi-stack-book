@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-30 - Procedural memory negative-case proofs
+
+- Strengthened `AsiStackProofs.ProceduralMemory` with two derived
+  negative-case theorems: one rejects generated-tool records that lack source
+  traces, parameters, or verification results, and one rejects failed
+  regression reviews that try to keep routable promotion.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 293
+  theorem declarations, 115 direct/projection-style declarations, and 178
+  derived/decomposed declarations.
+- Updated the Procedural Memory chapter, proof adequacy review, candidate
+  status, v1.0/v1.x roadmap surfaces, focus audit, and status snapshot
+  validator to record the new procedural-memory proof increment.
+- This does not promote any Appendix C or chapter core claim, run a deployed
+  loop detector, synthesize a real tool, validate generated-tool correctness,
+  measure regression quality, run a route monitor, automate retirement, or
+  approve any reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Runtime adapter permission negative-case proofs
 
 - Strengthened `AsiStackProofs.RuntimeAdapters` with two derived negative-case
