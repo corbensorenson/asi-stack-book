@@ -114,4 +114,76 @@ theorem sunset_criteria_block_ordinary_work_until_review_opened
   intro valid criteriaMet noReview
   exact valid criteriaMet noReview
 
+inductive StewardLifecycleRoute where
+  | ordinaryWork
+  | requestApproval
+  | quarantineEvent
+  | openSunsetReview
+deriving DecidableEq, Repr
+
+structure StewardLifecycleDecision where
+  eventTainted : Bool
+  eventReviewCompleted : Bool
+  sunsetCriteriaMet : Bool
+  sunsetReviewOpened : Bool
+  autonomyIncreaseRequested : Bool
+  charterApprovalPresent : Bool
+  treasurySpendRequested : Bool
+  withinTreasuryPolicy : Bool
+deriving DecidableEq, Repr
+
+def StewardLifecycleRouteFor (decision : StewardLifecycleDecision) : StewardLifecycleRoute :=
+  if decision.eventTainted = true ∧ decision.eventReviewCompleted = false then
+    StewardLifecycleRoute.quarantineEvent
+  else if decision.sunsetCriteriaMet = true ∧ decision.sunsetReviewOpened = false then
+    StewardLifecycleRoute.openSunsetReview
+  else if decision.autonomyIncreaseRequested = true ∧ decision.charterApprovalPresent = false then
+    StewardLifecycleRoute.requestApproval
+  else if decision.treasurySpendRequested = true ∧ decision.withinTreasuryPolicy = false then
+    StewardLifecycleRoute.requestApproval
+  else
+    StewardLifecycleRoute.ordinaryWork
+
+theorem tainted_event_without_review_routes_to_quarantine
+    {decision : StewardLifecycleDecision} :
+    decision.eventTainted = true ->
+    decision.eventReviewCompleted = false ->
+    StewardLifecycleRouteFor decision = StewardLifecycleRoute.quarantineEvent := by
+  intro tainted unreviewed
+  unfold StewardLifecycleRouteFor
+  simp [tainted, unreviewed]
+
+theorem sunset_criteria_without_open_review_routes_to_sunset_review
+    {decision : StewardLifecycleDecision} :
+    decision.eventTainted = false ->
+    decision.sunsetCriteriaMet = true ->
+    decision.sunsetReviewOpened = false ->
+    StewardLifecycleRouteFor decision = StewardLifecycleRoute.openSunsetReview := by
+  intro untainted criteriaMet noReview
+  unfold StewardLifecycleRouteFor
+  simp [untainted, criteriaMet, noReview]
+
+theorem autonomy_escalation_without_charter_approval_routes_to_approval
+    {decision : StewardLifecycleDecision} :
+    decision.eventTainted = false ->
+    decision.sunsetCriteriaMet = false ->
+    decision.autonomyIncreaseRequested = true ->
+    decision.charterApprovalPresent = false ->
+    StewardLifecycleRouteFor decision = StewardLifecycleRoute.requestApproval := by
+  intro untainted noSunset escalation noApproval
+  unfold StewardLifecycleRouteFor
+  simp [untainted, noSunset, escalation, noApproval]
+
+theorem treasury_spend_outside_policy_routes_to_approval
+    {decision : StewardLifecycleDecision} :
+    decision.eventTainted = false ->
+    decision.sunsetCriteriaMet = false ->
+    decision.autonomyIncreaseRequested = false ->
+    decision.treasurySpendRequested = true ->
+    decision.withinTreasuryPolicy = false ->
+    StewardLifecycleRouteFor decision = StewardLifecycleRoute.requestApproval := by
+  intro untainted noSunset noEscalation spend outsidePolicy
+  unfold StewardLifecycleRouteFor
+  simp [untainted, noSunset, noEscalation, spend, outsidePolicy]
+
 end AsiStackProofs.ArtifactStewardAgents

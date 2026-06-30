@@ -2790,16 +2790,17 @@ Draft deliverables:
 - Implemented Lean predicate: protected steward actions without explicit approval evidence cannot execute.
 - Implemented Lean predicate: stewarded release publication requires test, evidence, changelog, residual, and approval records.
 - Implemented Lean predicate: sunset criteria block ordinary work generation until a sunset review opens.
+- Implemented Lean lifecycle-route envelope: tainted unreviewed events route to quarantine, sunset criteria without an open review route to sunset review, autonomy escalation without charter approval routes to approval, and treasury spend outside policy routes to approval.
 - Implemented Codex test: Project steward manifest fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Treasury policy and event-taint fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Work contract authority denial as a finite Lean predicate only.
 - Implemented Codex test: Treasury spend-cap/protected-action denial as a finite Lean predicate only.
-- Planned Codex test: Untrusted event taint test.
+- Implemented Codex test: Untrusted event taint as a finite Lean lifecycle-route predicate only; no workflow scan or steward event-intake run exists.
 - Planned Codex test: Contribution ledger separation test.
-- Planned Codex test: Sunset criteria test.
+- Implemented Codex test: Sunset criteria as finite Lean sunset and lifecycle-route predicates only; no steward loop exists.
 - Implemented Codex test: Release evidence handoff test, via `python3 scripts/validate_benchmark_antigoodhart.py` over steward release actions requiring ratchet refs, policy refs, and approval refs; no steward agent or release runner exists.
 - Planned Codex test: Project federation contract test.
-- Planned Codex test: Autonomy-mode transition test.
+- Implemented Codex test: Autonomy-mode transition as finite Lean lifecycle-route predicates only; no steward autonomy transition runner or treasury executor exists.
 
 Lean proof targets:
 

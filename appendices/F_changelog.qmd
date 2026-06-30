@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-06-30 - Artifact steward lifecycle route proof envelope
+
+- Extended `AsiStackProofs.ArtifactStewardAgents` with a finite steward
+  lifecycle-route vocabulary, decision record, and route function over tainted
+  events, sunset criteria, autonomy escalation, charter approval, treasury
+  spending, and treasury-policy boundaries.
+- Added derived/decomposed Lean theorems showing that tainted unreviewed events
+  route to quarantine, sunset criteria without an open review route to sunset
+  review, autonomy escalation without charter approval routes to approval, and
+  treasury spending outside policy routes to approval.
+- Updated the Artifact Steward Agents chapter, source-of-truth outline,
+  Appendix E, proof-depth and proof-adequacy surfaces, and v1.0 status guard.
+  The proof adequacy review now classifies Artifact Steward Agents as `useful
+  but too narrow`, because schema fixtures, release/sunset/work-contract
+  predicates, a synthetic release-evidence handoff, and a finite lifecycle-route
+  envelope exist while executable steward behavior remains absent.
+- This does not promote any Appendix C or chapter core claim, implement a
+  steward bot, run an event-intake scanner, defend a real workflow against
+  injection, execute treasury policy, run governance or federation machinery,
+  test contribution-ledger separation, execute a sunset workflow, publish a
+  stewarded release, approve reader artifacts, or create EPUB, DOCX, PDF,
+  audio, DOI, Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Benchmark ratchet decision proof envelope
 
 - Extended `AsiStackProofs.BenchmarkRatchets` with a finite benchmark lifecycle

@@ -9710,9 +9710,21 @@
               "result_status": "passes via Lean build",
               "status": "implemented as a finite Lean predicate; no treasury engine run"
             },
-            "Untrusted event taint test",
+            {
+              "name": "Untrusted event taint test",
+              "purpose": "Check the finite Lean lifecycle-route predicate that tainted, unreviewed repository or worker events route to quarantine rather than ordinary work.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as a finite Lean lifecycle-route predicate; no workflow scan or steward event-intake run"
+            },
             "Contribution ledger separation test",
-            "Sunset criteria test",
+            {
+              "name": "Sunset criteria test",
+              "purpose": "Check finite Lean sunset and lifecycle-route predicates that configured sunset criteria block ordinary work and route to sunset review when no review is open.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as finite Lean sunset and lifecycle-route predicates; no steward loop exists"
+            },
             {
               "name": "Release evidence handoff test",
               "purpose": "Check that steward release actions reference benchmark ratchet and policy update evidence and carry approval refs when approvals are required.",
@@ -9721,7 +9733,13 @@
               "status": "implemented by benchmark anti-Goodhart harness; no steward agent executed"
             },
             "Project federation contract test",
-            "Autonomy-mode transition test",
+            {
+              "name": "Autonomy-mode transition test",
+              "purpose": "Check finite Lean lifecycle-route predicates that autonomy escalation without charter approval and over-policy treasury spend route to approval.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as finite Lean lifecycle-route predicates; no steward autonomy transition or treasury engine exists"
+            },
             {
               "name": "Release evidence gate test",
               "purpose": "Check the finite Lean predicate that stewarded release publication requires test, evidence, changelog, residual, and approval records.",

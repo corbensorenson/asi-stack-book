@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 166 |
+| Theorem declarations classified | 170 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 51 |
+| Derived/decomposed theorem declarations | 55 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 29 |
 | Safety-critical direct/projection declarations | 10 |
@@ -55,7 +55,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 4 | 4 | 4 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 4 | 8 | 4 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 8 | 1 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -121,10 +121,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promoted_compression_record_cannot_omit_residual_or_fallback_metadata` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `missing_required_provenance_blocks_promoted_claim_support` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_records_parent_job_and_context_refs` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `autonomy_escalation_without_charter_approval_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `dispatched_steward_contract_records_required_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `protected_steward_action_without_approval_cannot_execute` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `stewarded_release_publication_requires_test_evidence_changelog_residual_and_approval_records` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `sunset_criteria_block_ordinary_work_until_review_opened` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `sunset_criteria_without_open_review_routes_to_sunset_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `tainted_event_without_review_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `treasury_spend_outside_policy_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `missing_grant_blocks_over_ceiling_execution` | derived_or_decomposed | no | uses cases, contradiction, rcases, rw |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_has_effect_receipt` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_preserves_caller_ceiling` | derived_or_decomposed | no | uses rcases, rw, unfold |

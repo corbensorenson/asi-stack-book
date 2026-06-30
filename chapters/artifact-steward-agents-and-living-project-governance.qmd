@@ -4,7 +4,7 @@ chapter_id: "artifact-steward-agents-and-living-project-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "chapter draft"
-last_updated: "2026-06-28"
+last_updated: "2026-06-30"
 primary_sources:
   - "viea"
   - "talos"
@@ -33,7 +33,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all assigned Artifact Steward Agents sources; support remains at argument until a steward bot, treasury executor, event-taint workflow, contributor-ledger service, governance runner, release gate, sunset protocol, or behavioral tests exist."
-  - "Record-shape schemas, valid fixtures, narrow finite Lean predicates, and the benchmark anti-Goodhart harness's synthetic release evidence/approval handoff are implemented; no steward bot, treasury policy engine, event-taint workflow, governance system, project federation harness, release runner, or sunset protocol has been executed from this repository."
+  - "Record-shape schemas, valid fixtures, narrow finite Lean predicates, a finite steward lifecycle route envelope, and the benchmark anti-Goodhart harness's synthetic release evidence/approval handoff are implemented; no steward bot, treasury policy engine, event-taint workflow, governance system, project federation harness, release runner, or sunset protocol has been executed from this repository."
   - "External tooling and governance sources are reviewed as adjacent substrate/risk references only; they do not prove the ASI Stack steward design or any safety, legal, funding, governance, or capture-resistance property."
 ---
 
@@ -44,12 +44,12 @@ open_evidence_gaps:
 | Chapter ID | `artifact-steward-agents-and-living-project-governance` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Last updated | 2026-06-28 |
+| Last updated | 2026-06-30 |
 | Primary source records | `viea`, `talos`, `planforge`, `vcm_public`, `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution`, plus external source notes for GitHub webhooks, self-hosted runners, OpenZeppelin Governor, Open Collective, GitHub Sponsors, Akash, Golem, agentic workflow injection, and DAO delegation concentration |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes. Internal/local raw passages, authenticated connector text, tracked local-project passages, official documentation pages, and arXiv abstracts have now been passage-reviewed for the chapter. The steward-agent architecture remains a synthesis. The browser note is local-only planning context. |
-| Test state | Record-shape fixtures for the steward charter, work contract, contribution ledger entry, action decision, sunset review, treasury policy, and event-taint record validate locally; four finite Lean predicates build; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic release evidence and approval handoff behavior. No steward bot, treasury policy engine, event-taint workflow, governance runner, release runner, or project federation harness has been run. |
+| Test state | Record-shape fixtures for the steward charter, work contract, contribution ledger entry, action decision, sunset review, treasury policy, and event-taint record validate locally; finite Lean predicates now include work-contract, protected-action, release-gate, sunset-review, and lifecycle-route envelopes; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic release evidence and approval handoff behavior. No steward bot, treasury policy engine, event-taint workflow, governance runner, release runner, sunset protocol, or project federation harness has been run. |
 
 ## Drafting guardrail
 
@@ -302,12 +302,12 @@ The completed stewardship surface would make projects more understandable and le
 | Treasury spend-cap test | Confirm proposed spend above policy threshold becomes an approval request, not an executable action. | implemented as a finite Lean protected-action predicate; no treasury engine run |
 | Release evidence gate test | Confirm a stewarded release publication requires test, evidence, changelog, residual, and approval records. | implemented as a finite Lean predicate; no release runner exists |
 | Sunset ordinary-work block test | Confirm ordinary work generation is blocked when sunset criteria are met and no sunset review has opened. | implemented as a finite Lean predicate; no steward loop exists |
-| Untrusted event taint test | Confirm issue, PR, comment, or worker text is treated as tainted context and cannot become control instructions without review. | planned; not run |
+| Untrusted event taint test | Confirm issue, PR, comment, or worker text routes to quarantine when tainted and unreviewed. | implemented as a finite Lean lifecycle-route predicate; no workflow scan or steward event-intake run |
 | Contribution ledger separation test | Confirm compensation, reputation, governance influence, evidence credit, and authorship are represented separately. | planned; not run |
-| Sunset criteria test | Confirm a project that meets configured inactivity or mission-failure thresholds triggers sunset review rather than ordinary work generation. | planned; not run |
+| Sunset criteria test | Confirm a project that meets configured inactivity or mission-failure thresholds triggers sunset review rather than ordinary work generation. | implemented as finite Lean sunset and lifecycle-route predicates; no steward loop exists |
 | Release evidence handoff test | Confirm release notes and claim updates reference actual tests, proof outputs, source mappings, or reviewer approvals before publication. | implemented by benchmark anti-Goodhart harness for synthetic ratchet/policy evidence refs and approval refs; no steward release runner exists |
 | Project federation contract test | Confirm a worker, personal hive, rented node, or external steward receives only a scoped work contract and cannot inherit project authority. | planned; not run |
-| Autonomy-mode transition test | Confirm a steward cannot move from assisted to bounded autonomy without charter, budget, evidence, rollback, and approval records. | planned; not run |
+| Autonomy-mode transition test | Confirm a steward cannot move from assisted to bounded autonomy without charter approval and that over-policy treasury spend routes to approval. | implemented as finite Lean lifecycle-route predicates; no steward autonomy transition or treasury engine exists |
 
 ## Formalization hooks
 
@@ -318,7 +318,7 @@ The completed stewardship surface would make projects more understandable and le
 | `lean:artifact_stewards.release_gate.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A stewarded release publication requires test, evidence, changelog, residual, and approval records. | implemented |
 | `lean:artifact_stewards.sunset_review.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened. | implemented |
 
-These are not proofs of good governance. They are finite-record safety checks over declared work-contract and protected-action review fields; they do not prove institutional capture resistance, legal authority, treasury safety, or human project quality.
+These are not proofs of good governance. They are finite-record safety checks over declared work-contract, protected-action, release, sunset, and lifecycle-route fields. The lifecycle route model checks only that unreviewed tainted events quarantine, unreviewed sunset criteria open sunset review, autonomy escalation without charter approval routes to approval, and over-policy treasury spend routes to approval. It does not prove institutional capture resistance, legal authority, treasury safety, workflow-injection resistance, event scanner quality, release safety, steward autonomy, or human project quality.
 
 ## Source crosswalk
 
