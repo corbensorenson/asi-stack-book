@@ -1473,6 +1473,44 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass completed; see docs/curated_reader_governance_rights_prose_pass.md. Deferred contestable-governance consolidation caveat remains active; not release-reviewed."
+    },
+    {
+      "chapter_id": "intent-to-execution-contracts",
+      "title": "Intent-to-Execution Contracts",
+      "file": "editions/reader_manuscript/v1_0/chapters/intent-to-execution-contracts.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/intent-to-execution-contracts.qmd",
+      "live_source_ref": "chapters/intent-to-execution-contracts.qmd@1ae9f1601",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#intent-to-execution-contracts.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#intent-to-execution-contracts",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "Curated reader source reframes intent-to-execution contracts around the boundary between response and execution, intent survival, contract lowering, authority deltas, acceptance separability, re-contract events, stop states, artifact identity, feedback, and residuals; no claim, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release record changes.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose: core claim remains argument",
+        "source boundary preserved: Corben sources remain design lineage and trace vocabulary, external ReAct remains a comparator",
+        "MoECOT remains connector/source-note mapped without imported runtime artifacts, logs, reports, or benchmark records",
+        "proof/test status preserved: IntentToExecution Lean hooks and synthetic plan-execution harness remain finite record and synthetic cross-record checks only",
+        "implementation horizon preserved without implying deployed intent runtime, parser, approval service, artifact verifier, replay system, or vertical execution slice",
+        "release blocker status preserved until an edition release record clears it",
+        "no parser correctness, planner quality, runtime execution, tool-effect enforcement, artifact acceptance, replay correctness, benchmark performance, ReAct reproduction, MoECOT runtime reproduction, or support-state movement claim added",
+        "deferred consolidation caveat preserved: no merge with command-contracts-and-semantic-interfaces executed, rejected, or authorized"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass completed; see docs/curated_reader_intent_execution_prose_pass.md. Deferred intent/command-contract consolidation caveat remains active; not release-reviewed."
     }
   ],
   "reconciliation_report": {

@@ -1,6 +1,6 @@
 # v1.0 Curated Reader Reconciliation Report
 
-Status: drafting; thirty-nine curated reader chapters have first prose curation passes,
+Status: drafting; forty curated reader chapters have first prose curation passes,
 with release blockers still active.
 
 This report is the required reconciliation surface for any future curated v1.0 reader manuscript. It is not a reader release record, not an ebook/document/PDF/audio artifact record, not a support-state promotion, and not an equal source of truth beside the live AI/research book.
@@ -15,7 +15,7 @@ This report is the required reconciliation surface for any future curated v1.0 r
   Verification Bandwidth, Claim Ledgers, Labor OS, Artifact Graphs, Runtime
   Adapters, Procedural Memory, Benchmark Ratchets, Policy Optimization,
   Integrated Reference Architecture, Project Theseus, Prototype Roadmap,
-  Living Book Methodology, Open Research Agenda, Recursive Self-Improvement,
+  Living Book Methodology, Open Research Agenda, Recursive Self-Improvement, Intent-to-Execution Contracts,
   Personal Compute Hives, Resource Economics, Fast Generation, Mathematical and Search Substrates, Coil Attention
   and Cyclic Memory,
   CoilRA and Cyclic Mixers,
@@ -25,7 +25,7 @@ This report is the required reconciliation surface for any future curated v1.0 r
   semantic overlays as the
   release baseline; see
   `docs/curated_reader_graduation_review.md`
-- Chapter records: 39 drafting records
+- Chapter records: 40 drafting records
 - Active reader baseline: generated reader source plus semantic reader overlays
 - Manifest source of truth: `book_structure.json`
 - Review queue: `editions/reader_manuscript/v1_0/chapter_review_matrix.json`
@@ -80,6 +80,7 @@ If a reader edit discovers that the live AI/research source is wrong, thin, misl
 | `circle-calculus-and-proof-carrying-ai-contracts` | `editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd` | `build/reader_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd` | `chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd@b51f5dca1` | `drafting` | First curated prose pass completed for opening, proof-versus-performance throughline, receipt lifecycle explanation, Circle consumer-gate boundary repair, minimum viable implementation alignment, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_circle_contracts_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 | `executable-specifications-and-lean-proof-envelope` | `editions/reader_manuscript/v1_0/chapters/executable-specifications-and-lean-proof-envelope.qmd` | `build/reader_edition/chapters/executable-specifications-and-lean-proof-envelope.qmd` | `chapters/executable-specifications-and-lean-proof-envelope.qmd@8f1a27c5a` | `drafting` | First curated prose pass completed for opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, minimum viable implementation boundary, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_executable_specs_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 | `recursive-self-improvement-boundaries` | `editions/reader_manuscript/v1_0/chapters/recursive-self-improvement-boundaries.qmd` | `build/reader_edition/chapters/recursive-self-improvement-boundaries.qmd` | `chapters/recursive-self-improvement-boundaries.qmd@c9524280` | `drafting` | First curated prose pass completed for opening, pacing, paragraph order, section flow, transitions, boundary-delta explanation, gate-state explanation, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_recursive_self_improvement_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
+| `intent-to-execution-contracts` | `editions/reader_manuscript/v1_0/chapters/intent-to-execution-contracts.qmd` | `build/reader_edition/chapters/intent-to-execution-contracts.qmd` | `chapters/intent-to-execution-contracts.qmd@1ae9f1601` | `drafting` | First curated prose pass completed for opening, pacing, paragraph order, section flow, transition prose, response-versus-execution throughline, intent-survival framing, contract-lowering explanation, authority-delta boundary, acceptance-separability boundary, re-contract/stop-state explanation, artifact-identity and residual boundaries, and proof/test boundary clarification; no claim meaning, support-state, source, proof/test, implementation-horizon, consolidation decision, manifest chapter identity, or release-artifact divergence has been approved. Review record: `docs/curated_reader_intent_execution_prose_pass.md`; consolidation caveat: `docs/chapter_consolidation_release_stability_review.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 | `artifact-steward-agents-and-living-project-governance` | `editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd` | `build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd` | `chapters/artifact-steward-agents-and-living-project-governance.qmd@0f6382f1` | `drafting` | First curated prose pass completed for opening, pacing, paragraph order, section flow, transitions, and compression; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved. Review record: `docs/curated_reader_artifact_steward_prose_pass.md`. | `reader_release_record_not_created`, `format_artifact_not_reviewed`, `curated_reconciliation_not_approved` |
 
 ## Required Checks Before Reader Release

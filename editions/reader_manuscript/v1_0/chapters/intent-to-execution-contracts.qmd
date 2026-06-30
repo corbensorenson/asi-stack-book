@@ -1,0 +1,307 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: intent-to-execution-contracts
+generated_baseline_ref: build/reader_edition/chapters/intent-to-execution-contracts.qmd
+live_source_ref: chapters/intent-to-execution-contracts.qmd@1ae9f1601
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Intent-to-Execution Contracts
+
+A response is not execution.
+
+Part I built the boundaries: authority, evidence, agency, value conflict,
+governance rights, stable capability identity, rollback, security, and
+self-improvement limits. Part II begins when those boundaries have to do work.
+A person asks for something. The system must decide what was requested, what
+is allowed, what evidence is needed, which tools may be used, what artifact
+would count as success, and when the right answer is to stop.
+
+That movement from request to work is too important to leave inside a fluent
+answer. The ASI Stack inserts an intent-to-execution contract between human
+purpose and runtime action. The contract gives the work an address. It says
+what the system understood, what it is allowed to try, what it must not do,
+what would count as satisfaction, which side effects require approval, which
+artifacts must be produced, and which residuals remain if the work cannot
+continue.
+
+The throughline is simple: intent has to survive the trip to execution.
+
+## Problem
+
+Human goals need a typed path into execution that preserves requirements,
+artifacts, verification, deployment, and feedback.
+
+A human request usually starts as ordinary language. Ordinary language is rich
+enough to express purpose, but too loose to authorize a governed runtime. A
+request can contain a desired outcome, an implied deadline, sensitive data,
+ambiguous permissions, hidden assumptions, and unstated acceptance criteria.
+If the system moves directly from that request to a model response or tool
+call, it has already blurred purpose, authorization, means, and acceptance.
+
+The intent-to-execution contract separates those pieces. Desire is not
+authorization. Authorization is not permission to use every means. Producing a
+useful artifact is not the same as satisfying the contract. A successful
+subtask is not necessarily a successful parent request.
+
+VIEA supplies the execution spine: intent becomes command contracts, durable
+artifacts, routed work, verified outputs, runtime execution, feedback, and
+residuals. Talos adds typed-job lifecycle, audit, replay, approval, and
+delivery pressure. Software Magic Grimoire supplies the bounded instruction
+envelope. GenesisCode separates AI proposals from capability-mediated effects,
+provenance, replay logs, and obligations. MoECOT remains runtime-reference
+context for compact orchestration, specialist lanes, readiness gates, ledgers,
+replay, and handoff, but its code, logs, benchmark artifacts, and release
+records have not been imported or reproduced here.
+
+The engineering result is a chain, not a paragraph: intent contract, command
+contract, plan graph, typed jobs, authority transitions, runtime action,
+artifact, verification record, feedback, and residuals.
+
+## Why existing approaches are insufficient
+
+A model response can sound like completed work while hiding the state that
+would make the work accountable.
+
+The response may omit missing approvals. It may cite sources without attaching
+source boundaries. It may describe a tool action that was never run. It may
+produce an artifact whose identity is not recorded. It may satisfy a local
+instruction while violating the parent request. It may keep going after the
+authorized means have ended because completion looks helpful.
+
+ReAct-style agent loops provide a useful external comparison: reasoning,
+acting, and observing can be interleaved rather than collapsed into one final
+answer. The ASI Stack keeps that comparison narrow. It does not reproduce
+ReAct prompts, environments, tasks, or scores. It uses the comparison to show
+why acting systems need a stricter contract surface around reasoning and tool
+use: lifecycle state, artifact identity, authority, evidence, refusal
+conditions, and residuals must be visible before a response is treated as
+work.
+
+Prompt discipline helps, but prompts alone are not enough. A strong prompt can
+shape a response. It cannot by itself prove that constraints survived
+planning, that side effects were authorized, that an artifact was accepted, or
+that a blocked path was recorded. The contract boundary exists so downstream
+layers do not infer authority from helpful prose.
+
+Missing fields are also information. If acceptance criteria, authority,
+allowed tools, verifier, budget, or failure behavior are absent, the system
+should not invent permissive defaults. It should ask, narrow, defer, or stop.
+
+## Core Claim
+
+Governed execution transforms intent into explicit contracts before any tool
+or runtime action occurs.
+
+This remains an architectural argument. The live AI/research chapter records
+the claim at `argument` support. The source notes, schemas, fixtures,
+synthetic plan-execution harness, and finite Lean predicates support record
+discipline for intent, command, planning, job, artifact, and approval
+boundaries. They do not prove a deployed runtime, replayed vertical slice,
+artifact satisfaction, parser quality, tool-effect enforcement, approval
+service behavior, benchmark performance, or end-to-end execution correctness.
+
+The claim is therefore not that the repo already executes intent. The claim is
+that governed execution should not begin until intent has been converted into
+a contract whose fields can be inspected, lowered, blocked, verified, and
+revisited.
+
+## Mechanism
+
+The intent-to-execution layer turns a request into a trace.
+
+The trace begins with an intent contract. It records the request summary,
+desired outcome, allowed means, forbidden means, authority ceiling, source
+boundaries, acceptance criteria, evidence requirements, escalation conditions,
+stop conditions, open ambiguities, bounded defaults, re-contract triggers, and
+non-claims.
+
+The command contract narrows that intent into operational language. The plan
+graph decomposes the command. Typed jobs inherit the relevant constraints.
+Authority transitions say which side effects are allowed, denied, expired, or
+pending approval. Runtime adapters may act only when the authority gate
+allows them. Artifacts point back to the parent intent. Verification records
+decide whether local outputs satisfy the relevant criteria. Feedback updates
+claims, regressions, tools, and residuals.
+
+```{mermaid}
+flowchart LR
+  Intent["Human intent"] --> IC["Intent contract"]
+  IC --> CC["Command contract"]
+  CC --> Plan["Plan graph"]
+  Plan --> Jobs["Typed jobs"]
+  Jobs --> Gate{"Authority and approval gate"}
+  Gate -- "allowed" --> Runtime["Runtime adapter or tool"]
+  Gate -- "missing or denied" --> Stop["Stop, residual, or re-contract"]
+  Runtime --> Artifact["Artifact"]
+  Artifact --> Verify["Verification record"]
+  Verify --> Feedback["Feedback and evidence ledger"]
+  Stop --> Feedback
+```
+
+The important feature is not motion. It is controlled handoff. Each layer
+receives a bounded object rather than an ambient desire. Each layer either
+produces the next artifact or records why it cannot. If a planner discovers
+that the objective is underspecified, the tool exceeds authority, the context
+is inadequate, the verifier cannot check the output, or the cost exceeds the
+budget, the correct move is re-contract, escalation, deferral, or refusal.
+
+Helpful overrun becomes a failure mode. The system may predict that the human
+would appreciate extra work, but prediction is not authority. Extra scope has
+to become a new contract request.
+
+## Interfaces
+
+Intent enters execution through the Intent-to-Execution Trace.
+
+Minimum fields span the parent intent contract and the trace:
+
+- `trace_id`
+- `intent_contract`
+- `intake_state`
+- `command_contract`
+- `plan_graph`
+- `typed_jobs`
+- `authority_transitions`
+- `handoff_receipts`
+- `dispatch_receipts`
+- `artifacts`
+- `verification_records`
+- `delivery_or_deployment`
+- `feedback_refs`
+- `recontract_events`
+- `stop_or_fault_state`
+- `residuals`
+- `bounded_defaults`
+- `recontract_triggers`
+- `non_claims`
+
+Intent contracts feed planning. Command contracts bind procedure and output
+requirements. Plan graphs organize dependency order. Typed jobs carry
+executable units. Authority transitions control side effects. Runtime adapters
+act only inside approved authority. Verification records compare artifacts
+against acceptance criteria. Evidence ledgers record satisfaction, failure,
+repair, and residuals.
+
+Authority deltas are part of the interface. Intent may authorize a goal.
+Command contracts narrow the means. Plans allocate tasks. Jobs request tools.
+Runtime adapters request effects. Each step can preserve, narrow, expire,
+deny, or require approval. It cannot silently widen.
+
+## Invariants
+
+Contract constraints survive compilation.
+
+Side effects require explicit execution authority.
+
+Artifacts remain linked to source intent.
+
+Acceptance remains separate from production. Producing an artifact, running a
+tool, or finishing a subtask is not the same as satisfying the parent intent.
+The trace must keep local completion separate from contract satisfaction.
+
+Residual obligations survive partial success. A useful artifact can still
+leave unanswered questions, failed checks, missing approvals, or deferred
+work. Those residuals must travel forward rather than being erased by the
+fact that something was delivered.
+
+Contract closure requires an explicit acceptance state, not merely the absence
+of an error.
+
+## Failure modes
+
+Response mistaken for completed work is the first failure. The system writes
+something that sounds finished while leaving tests, evidence, approvals,
+source boundaries, or artifact identity outside the record.
+
+Artifact identity loss breaks audit and repair. Later systems cannot inspect,
+reproduce, roll back, or improve work if they cannot connect the artifact to
+the intent, command, job, verifier, feedback, and residuals that produced it.
+
+Approval bypass turns planning into execution authority. A plan can describe a
+tool path, but description is not permission to run the tool.
+
+Helpful overrun happens when the system expands scope because the expansion
+seems useful. Governed execution treats that as a re-contract event, not a
+success.
+
+Stale acceptance happens when an old approval is reused after the artifact,
+tool, authority, cost, or risk tier changed.
+
+Trace laundering happens when a shaped record is treated as execution
+evidence. A valid schema instance is not a run. A synthetic fixture is not a
+deployed runtime. A Lean predicate over finite records is not artifact
+satisfaction.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is an `intent_contract` schema, a
+`command_contract` schema, an `intent_execution_trace` schema, and a two-path
+public-safe trace fixture.
+
+One path should lower an intent into a command, plan, typed job, authority
+transition, artifact reference, verification record, feedback record, and
+accepted residual state. The second path should stop because authority,
+context, approval, verifier, or budget is missing. The stop path is as
+important as the success path because governed execution needs visible
+non-execution states.
+
+The current repository already has the schema surfaces, protocol fixture
+validation, the synthetic plan-execution contract harness, and finite Lean
+predicates for parent-constraint preservation and missing-approval blocking.
+Those checks are useful controls. They validate public record shape and
+synthetic cross-record consistency. They do not show that a real request was
+parsed, planned, authorized, executed, verified, accepted, or replayed.
+
+## Beyond the State of the Art
+
+The mature endpoint is a contract operating spine for the whole stack.
+
+Every serious request would enter as a durable intake object. It would receive
+an explicit authority envelope, lower through command, plan, job, runtime,
+artifact, verification, delivery, feedback, and residual records, and remain
+inspectable after the work is done. A human, reviewer, runtime, or later AI
+agent could ask what was requested, what was authorized, which defaults were
+used, which re-contract events occurred, which jobs ran, which side effects
+were approved, which artifacts were produced, which validators accepted them,
+and which residuals remain.
+
+This would make stopping normal. Missing context, missing approval, missing
+verifier, budget exhaustion, violated constraints, or forbidden means would
+not be conversational failures. They would be governed stop states.
+
+The final product surface would look less like a chat transcript and more like
+a work ledger with contract intelligence: intake contracts, lowering receipts,
+authority transitions, typed jobs, runtime receipts, artifact identities,
+verification records, feedback links, and residual ledgers. Later optimization
+could improve each layer only by preserving the contract trail.
+
+That endpoint remains a target architecture. The current support state stays
+at `argument` until replayed execution traces, acceptance receipts, approval
+records, artifact checks, and review logs show that useful results were also
+contract-linked, authority-preserving, and accepted under their stated
+criteria.
+
+## Summary
+
+Intent-to-Execution Contracts make the first operational handoff in Part II.
+
+They turn human purpose into a traceable chain of intent, command, plan, job,
+authority, artifact, verification, feedback, and residuals. The point is not
+paperwork. The point is continuity: requirements, authority, artifacts, and
+evidence have to survive the trip from purpose to action.
+
+A downstream layer should never have to guess whether it is allowed to act. If
+it has to guess, the trace should stop, ask, narrow, or re-contract.
+
+## Handoff
+
+Intent contracts preserve purpose, authority, and residuals across the first
+translation from human request to governed work. That translation has to
+become compact enough for machines to validate without turning language into
+hidden permission. Command Contracts and Semantic Interfaces follows by
+supplying the operational language: fields, defaults, failure behavior, and
+verification duties that planners can consume without guessing what the human
+meant.
