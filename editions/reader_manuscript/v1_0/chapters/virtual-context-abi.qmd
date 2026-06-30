@@ -1,0 +1,291 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: virtual-context-abi
+generated_baseline_ref: build/reader_edition/chapters/virtual-context-abi.qmd
+live_source_ref: chapters/virtual-context-abi.qmd@feeac6c71
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Virtual Context ABI
+
+Planning and compilation both need memory, but memory is dangerous when it
+arrives as an anonymous pile of text. A model can be given a long prompt, a
+retrieved passage, a summary, a private note, an old plan, or a source packet.
+Those objects may all fit in the same context window, but they are not the same
+kind of thing. They do not have the same authority, freshness, evidence value,
+or permitted use.
+
+The Virtual Context ABI is the interface that keeps those differences visible.
+It sits between durable memory and the working context a model is allowed to
+see. It says what can be addressed, which version is being mounted, which
+snapshot is current, which representation is being used, what authority labels
+travel with the packet, how long the packet is leased, and what kind of fault
+must be reported if the context is missing, stale, unsafe, conflicting, or
+inadequate.
+
+The central reader idea is simple: context is not governed memory until it has
+an address, a version, a lease, an authority boundary, and a fault path.
+
+## Problem
+
+Long-horizon agents need a stable interface between durable memory and
+model-visible working context.
+
+The ASI Stack cannot treat memory as "whatever is currently in the prompt." A
+long-running system has old evidence, revised evidence, private material,
+summaries, active plans, failed attempts, source notes, audit records,
+permission constraints, and temporary task context. Some of that material
+should be visible to a worker. Some should be visible only to a verifier. Some
+should be visible only through a summary. Some should not be visible at all.
+
+That is why VCM is framed as an ABI: a stable calling convention for context.
+A planner should be able to request a context packet by semantic address,
+version, mount, snapshot, representation need, authority label, adequacy target,
+and lease boundary. The memory system should respond with a materialization
+receipt or a typed fault, not a best-effort blob.
+
+The distinction between durable memory and active context matters. Durable
+memory is the store of things the system can potentially refer to. Active
+context is the task-relative view the model is currently allowed to use. The
+ABI governs the translation from one to the other.
+
+## Why Existing Approaches Are Insufficient
+
+Long context windows and ordinary retrieval do not define addressability,
+evidence, authority, adequacy, or fault behavior.
+
+A larger window gives the model more room. It does not tell the system whether
+a passage is current, authorized, adequate for verification, safe for the
+worker, or traceable to a source. Retrieval answers a different question:
+"what looks relevant?" The ABI has to answer harder questions: which version,
+under which mount, for which task, under which authority, with which
+representation losses, and with what failure behavior?
+
+The surrounding literature makes the pressure visible. RAG distinguishes
+retrieved evidence from parametric memory. Long-context evaluations and
+position-sensitivity work show that fitting text into a window is not the same
+as reliably using it. Memory-operating-system approaches show that external
+memory needs policy. Citation and self-retrieval work show why evidence must be
+attached to generated claims. Prompt-compression work shows that representation
+loss has to be named rather than hidden.
+
+VCM does not claim superiority over those systems here. It turns their pressure
+into a control interface: admitted context is not automatically adequate
+context, and available memory is not automatically authorized context.
+
+## Core Claim
+
+Virtual Context Memory should expose a Virtual Context ABI with stable
+addresses, versions, mounts, snapshots, fault classes, representation
+contracts, and lifecycle operations. This remains an architectural argument.
+
+The support is bounded. VCM public v1 supplies the control-plane vocabulary for
+semantic objects, versions, representations, validations, packets,
+materializations, authority binding, admission, adequacy, typed non-success,
+and audit records. Context Engineer supplies the information-supply-chain and
+need-to-know pressure. Verification Bandwidth explains why admitted context may
+still be inadequate for checking a claim. VIEA connects context materialization
+to the broader intent-to-execution spine. Editable VCM and MoECOT are useful
+refinement and runtime-reference sources, but they do not provide local
+resolver or runtime evidence.
+
+The live chapter therefore stays at `argument` support. The repository has
+schema validation, finite Lean hooks, and a synthetic admission/adequacy
+harness. It does not have a deployed VCM resolver, planner-guided context
+compiler, snapshot service, adequacy classifier, model-facing context run,
+VCM-Bench reproduction, leak-prevention benchmark, or MoECOT runtime trace.
+
+## Mechanism
+
+The ABI turns a memory request into either a governed materialization or a
+typed refusal.
+
+```{mermaid}
+flowchart LR
+  A["Task context request"] --> B["Semantic address"]
+  B --> C["Version and mount"]
+  C --> D["Snapshot binding"]
+  D --> E["Representation contract"]
+  E --> F{"Admission allowed?"}
+  F -- "no" --> G["Typed fault"]
+  F -- "yes" --> H{"Adequate for target?"}
+  H -- "yes" --> I["Leased materialization"]
+  H -- "no" --> G
+  I --> J["Context receipt"]
+  G --> J
+```
+
+The diagram is not a resolver implementation. It shows the contract. A context
+request must pass through address, version, mount, snapshot, representation,
+admission, and adequacy before it becomes usable model-visible context. Failure
+is not an exception to hide. It is one of the ABI's official outputs.
+
+The mechanism separates four states that ordinary retrieval often collapses.
+A request can be well formed. A reference can resolve. A packet can be
+authorized. A materialization can be adequate for a particular target. Those
+are not the same state. A packet may be admitted for drafting but inadequate
+for verification. A source may be known but outside the worker's authority. A
+summary may be useful for orientation but too lossy for citation. A snapshot
+may be valid at one point and stale later.
+
+The ABI should therefore emit receipts. A context receipt says what was
+requested, what resolved, what representation was built, which authority labels
+apply, what the packet may support, when the lease expires, and which fault or
+residual remains. That receipt is what lets auditors reconstruct why a model
+saw a packet and what the packet was allowed to mean.
+
+## Interfaces
+
+Planning requests context. VCM resolves and compiles it. Execution receives
+only authority-appropriate materializations.
+
+The minimum context ABI record includes request identity, task identity,
+lifecycle state, request validity, semantic address, version, mount, mount
+scope, snapshot, resolution validity, resolver policy, representation contract,
+authority labels, authority ceiling, materialization validity, admission state,
+adequacy state, adequacy requirement, fault state, materialization reference,
+consumer policy, support boundary, lease expiry, replay boundary, source
+references, residuals, audit references, support-state effect, and non-claims.
+
+Those fields keep a simple phrase like "context available" from hiding too
+much. Available for what? Under whose authority? From which snapshot? With
+which representation loss? Adequate for drafting, verification, execution, or
+only orientation? Reusable after the current task, or expired with the lease?
+
+This is where VCM connects to the surrounding stack. Command contracts define
+what the worker is allowed to do. Planning names the context need. Cognitive
+Compilation says which semantic atoms require evidence. Semantic pages and
+context cells carry smaller evidence boundaries inside the materialized packet.
+Claim ledgers later decide what the packet can support.
+
+## Invariants
+
+Addresses and versions must be stable. A claim should not depend on "whatever
+retrieval returned at the time." It should depend on a context reference that
+can be reconstructed.
+
+Admission and adequacy must remain distinct. A packet that is safe to show a
+worker may still be inadequate for the claim being checked. A packet that is
+adequate for orientation may be inadequate for proof, citation, release, or
+self-improvement.
+
+Faults must be typed and visible. Missing, stale, conflicting, revoked,
+unauthorized, infeasible, unsafe, unknown, and inadequate context should not be
+laundered into a confident answer. The correct output may be ask, abstain,
+deny, retry, escalate, quarantine, or residualize.
+
+The current Lean hooks are narrow but useful. They prove finite-record
+properties: a resolved context reference must have a matching address, version,
+and snapshot binding, and a mandatory context miss must produce a typed fault
+instead of a best-effort materialization. They do not prove a real resolver or
+context compiler.
+
+## Failure Modes
+
+Flat transcript memory loses addresses, versions, leases, authority labels, and
+support boundaries. The model remembers text but not the contract around the
+text.
+
+Stale context makes an old correct answer look current. Without a snapshot and
+lease boundary, the system may reuse a packet after its assumptions have
+expired.
+
+Silent unsafe fit is worse than refusal. A worker may receive context it should
+not see, or use a packet for a purpose it was never authorized to support. That
+failure is especially dangerous because it can look like helpful memory.
+
+Fault compression is another failure. Several precise context faults can be
+summarized into one vague note like "uncertain context." That destroys the
+decision surface. A missing source, stale certificate, revoked mount,
+unauthorized packet, and inadequate representation require different responses.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a context ABI schema, valid and invalid
+fixtures, finite proof hooks, and a synthetic harness that refuses to collapse
+admission into adequacy.
+
+The repository already has this narrow surface. `schemas/context_abi_record`
+defines the public record shape. `AsiStackProofs.VirtualContextABI` covers the
+finite snapshot-binding and mandatory-miss fault predicates. The context
+admission/adequacy harness checks synthetic context ABI records, context
+packets, semantic page certificates, context transactions, and adequacy records.
+Its recorded local run passed three valid fixtures and rejected five
+expected-invalid fixtures covering admission-as-verification, conflict
+promotion, deleted derivative materialization, mode confusion, and stale
+certificate use.
+
+That is meaningful evidence for record discipline. It is not evidence for a
+deployed VCM service. It does not prove semantic-address resolver correctness,
+summary fidelity, contradiction-rate improvement, distractor resistance,
+runtime memory-store behavior, or model-facing context quality.
+
+The next practical slice should be a resolver fixture set: one valid request
+that resolves to a leased materialization, one mandatory miss that emits a
+typed fault, one resolved packet rejected as inadequate for verification, one
+packet denied by mount policy, and one lease-expired reuse attempt blocked. It
+would sharpen the ABI semantics without pretending to be a full memory product.
+
+## Beyond the State of the Art
+
+The mature Virtual Context ABI is a memory operating interface for long-horizon
+AI work. It is not just a larger retrieval system. It is the stable syscall
+layer that lets planners, compilers, workers, verifiers, and auditors request
+context by address, version, mount, snapshot, representation need, authority
+label, adequacy target, and lease boundary.
+
+With that interface, a model never receives anonymous "relevant context." It
+receives a materialization receipt. The receipt says what was requested, what
+resolved, what representation was built, which authority labels apply, which
+uses are permitted, when the lease expires, whether the packet is adequate for
+the target claim, and which fault or residual remains. If any of those states
+are missing, the system asks, abstains, retries, escalates, or records a typed
+fault rather than hallucinating a usable memory view.
+
+At product maturity, the context ABI would also support replay. A later audit
+could reconstruct the exact context view used by a plan, job, claim, artifact,
+or release. A downstream worker could request more authority or a richer
+representation without inheriting ambient permission. A self-improvement
+candidate could not smuggle stale or unauthorized context into its own
+justification.
+
+That endpoint is not implemented here. The book should not claim it until
+resolver behavior, context-compiler traces, adequacy labels, conformance tests,
+runtime audit records, and model-facing results are present.
+
+## What Is Proven, And What Is Not
+
+The current project checks schema shape, synthetic admission/adequacy
+consistency, stale-certificate rejection, deletion-closure blocking,
+mode-confusion blocking, and finite Lean lookup properties.
+
+It does not prove VCM resolver behavior, context compiler behavior,
+transactional memory-store correctness, summary fidelity, contradiction-rate
+reduction, distractor resistance, leak prevention, deployed Digital SCIF
+behavior, MoECOT runtime behavior, VCM-Bench performance, model-facing context
+quality, or source-interpretation adequacy.
+
+This distinction matters because memory systems are easy to overtrust. If a
+packet feels relevant, the model may treat it as evidence. If a summary sounds
+complete, the reader may treat it as faithful. If a context window is large,
+the system may treat it as understanding. The ABI exists to stop those
+collapses.
+
+## Summary
+
+The Virtual Context ABI makes context access explicit. It separates durable
+memory from working context, gives context stable addresses and versions, binds
+materializations to snapshots and leases, preserves authority labels, records
+adequacy boundaries, and emits typed faults when memory cannot responsibly be
+used.
+
+The rule is not "retrieve more." The rule is "make memory accountable before it
+shapes reasoning." A governed AI system should know what the model saw, why it
+was allowed to see it, what it was allowed to infer, when the context expired,
+and what failures remained.
+
+The next chapter goes inside the packet. Semantic Pages, Context Cells, and
+Certificates asks what each page, cell, summary, and compressed representation
+must carry so evidence boundaries survive once context has been materialized.

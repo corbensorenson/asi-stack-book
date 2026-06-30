@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 43,
+    "curated_manuscript_candidate": 44,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -510,12 +510,15 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_context_full_review_pass.md#decisions"
+        "docs/reader_part_ii_context_full_review_pass.md#decisions",
+        "docs/curated_reader_virtual_context_abi_prose_pass.md",
+        "docs/chapter_consolidation_release_stability_review.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the Virtual Context ABI chapter. Address, version, mount, snapshot, representation, authority, admission, adequacy, lease, typed fault, and resolver non-claim boundaries remain clear.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the Virtual Context ABI chapter. A first drafting-only curated prose pass now foregrounds context as governed memory only when address, version, lease, authority boundary, and fault path are explicit. The deferred static-context-ABI merge caveat is recorded; this is not a release review, not a manifest merge, and not a claim of deployed VCM behavior, resolver correctness, context compiler correctness, snapshot-service behavior, adequacy-classifier quality, materialization correctness, summary fidelity, contradiction-rate reduction, distractor resistance, leak prevention, Digital SCIF behavior, transactional memory-store behavior, VCM-Bench performance, model-facing context quality, MoECOT runtime behavior, source-interpretation adequacy, or support-state movement.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
