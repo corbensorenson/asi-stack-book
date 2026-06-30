@@ -11585,6 +11585,20 @@
             "Source inventory validation test",
             "Source-note backlog audit",
             {
+              "name": "Source-derived claim evidence gate",
+              "purpose": "Check that a source-derived claim without a source note or ingested-source artifact is rejected at the finite record layer.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean source-record negative case; no citation-accuracy or source-interpretation claim",
+              "status": "implemented in AsiStackProofs.BibliographyPlan; no citation-accuracy claim"
+            },
+            {
+              "name": "New-source assignment gate",
+              "purpose": "Check that an accepted new-source assignment cannot target a nonexistent chapter id.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean nonexistent-chapter negative case; no real new-paper triage-quality claim",
+              "status": "implemented in AsiStackProofs.BibliographyPlan; no new-paper triage-quality claim"
+            },
+            {
               "name": "New-paper triage scenario",
               "purpose": "Check whether a synthetic intake case updates an existing chapter, proposes a new boundary, defers unread external literature, or rejects a duplicate variant without changing support state.",
               "implementation_status": "implemented",

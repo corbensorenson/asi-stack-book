@@ -4,7 +4,7 @@ chapter_id: "open-research-agenda-and-bibliography-plan"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "verification_bandwidth"
   - "benchmaxxing"
@@ -31,7 +31,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all twenty-one assigned sources, including source-note-only connector/recovery sources and pinned local Project Theseus/Circle/constitution references; support remains argument until external literature normalization, direct citation checks, new-paper triage rehearsals, artifact reproduction, or accepted evidence transitions justify promotion."
-  - "The research_backlog_record and new_paper_triage_scenario fixtures and AsiStackProofs.BibliographyPlan finite-record predicates validate backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary-decision rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, non-claims, source-note gates, chapter-assignment gates, and synthetic update/propose/defer/reject decisions only; they do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, public-release permission, or real new-paper triage quality."
+  - "The research_backlog_record and new_paper_triage_scenario fixtures and AsiStackProofs.BibliographyPlan finite-record predicates with negative cases validate backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary-decision rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, non-claims, source-note gates, chapter-assignment gates, and synthetic update/propose/defer/reject decisions only; they do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, public-release permission, or real new-paper triage quality."
   - "Connector/recovery and variant sources remain bounded: MoECOT, CoilMoECOT, Road To AGI, and VCM Editable do not promote runtime, benchmark, model-facing, or citation-normalized third-party claims."
   - "No chapter-core support-state promotion, external-literature normalization result, direct citation check, benchmark reproduction, runtime artifact, model-quality result, broad Circle command coverage, current Theseus report verification, policy-engine result, or raw source publication is implied by this drafting pass; the separate Circle rope receipt slice remains bounded to its own evidence transition."
 ---
@@ -44,13 +44,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-30 |
 | Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `benchmaxxing`; supporting: `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
 | Source loading state | source notes: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; raw cache: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`; source-note-only or connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`; pinned local references: Project Theseus, Circle Math, and Field of God AI Constitution |
-| Test state | Source inventory validation, source-note validation, `research_backlog_record.valid.json`, and `new_paper_triage_scenario.valid.json` protocol fixture validation pass; the backlog fixture carries triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims; the triage scenario fixture covers synthetic update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate cases only; `AsiStackProofs.BibliographyPlan` implements finite source-derived-claim ingestion and source-assignment gates. |
+| Test state | Source inventory validation, source-note validation, `research_backlog_record.valid.json`, and `new_paper_triage_scenario.valid.json` protocol fixture validation pass; the backlog fixture carries triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims; the triage scenario fixture covers synthetic update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate cases only; `AsiStackProofs.BibliographyPlan` implements finite source-derived-claim ingestion and source-assignment gates plus negative cases for missing source records and nonexistent chapter assignments. |
 
 ## Drafting guardrail
 
@@ -232,6 +232,8 @@ When the bibliography becomes active infrastructure, it would tell the book what
 | Research backlog record fixture validation | Validate that a backlog record names source/gap, triage state, access state, source storage policy, public-safety state, assigned chapters, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, source-note state, claim mapping state, external-literature need, proof/test backlog, required pre-drafting work, evidence-transition preconditions, insertion decision, source refs, promotion blockers, support-state effect, residuals, next action, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Source inventory validation test | Check that assigned source IDs exist before chapter claims use them. | implemented by validation; validated locally |
 | Source-note backlog audit | Check which assigned sources still lack usable source notes. | source notes, exact core-claim mappings, and passage-reviewed mapping refs currently exist for assigned sources; external-literature normalization and evidence transitions remain incomplete |
+| Source-derived claim evidence gate | Check that a source-derived claim without a source note or ingested-source artifact is rejected at the finite record layer. | implemented in `AsiStackProofs.BibliographyPlan`; citation-accuracy and source-interpretation quality not proved |
+| New-source assignment gate | Check that an accepted new-source assignment cannot target a nonexistent chapter id. | implemented in `AsiStackProofs.BibliographyPlan`; real new-paper triage quality not proved |
 | New-paper triage scenario | Check whether a synthetic intake case updates an existing chapter, proposes a new boundary, defers unread external literature, or rejects a duplicate variant without changing support state. | implemented by protocol validation; validated locally |
 
 ### Formalization hooks
@@ -241,7 +243,7 @@ When the bibliography becomes active infrastructure, it would tell the book what
 | `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | implemented |
 | `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over source-derived claim and new-source assignment reviews. They prove only the record-level gates: a source-derived claim requires a source note or equivalent ingested-source artifact, and an accepted new-source assignment requires an existing chapter id. They do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, or new-paper triage quality.
+These Lean hooks are implemented as finite-record predicates plus negative-case theorems over source-derived claim and new-source assignment reviews. They prove only the record-level gates: a source-derived claim requires a source note or equivalent ingested-source artifact, a missing source record rejects source-derived support, an accepted new-source assignment requires an existing chapter id, and a nonexistent chapter blocks accepted assignment. They do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, or new-paper triage quality.
 
 ## Source crosswalk
 

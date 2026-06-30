@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-30 - Bibliography source-gate negative-case proofs
+
+- Strengthened `AsiStackProofs.BibliographyPlan` with two derived
+  negative-case theorems: one rejects source-derived claims without a source
+  note or ingested-source artifact, and one rejects accepted new-source
+  assignments to nonexistent chapters.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 302
+  theorem declarations, 115 direct/projection-style declarations, and 187
+  derived/decomposed declarations.
+- Updated the Open Research Agenda and Bibliography Plan chapter, manifest test
+  rows, Appendix E, proof adequacy review, candidate status, v1.0/v1.x roadmap
+  surfaces, focus audit, and status snapshot validator to record the new
+  bibliography proof increment. Refreshed the v1.0 status manuscript scale to
+  166,763 chapter words excluding YAML and 174,113 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, normalize
+  external literature, prove citation accuracy, prove source-interpretation
+  quality, approve public release of private source material, rehearse a real
+  new-paper triage, or approve any reader, ebook, PDF, DOCX, or audio release
+  artifact.
+
 ## 2026-06-30 - Command contract negative-case proofs
 
 - Strengthened `AsiStackProofs.CommandContracts` with two derived negative-case

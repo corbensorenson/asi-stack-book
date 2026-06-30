@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 300 |
+| Theorem declarations classified | 302 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 185 |
+| Derived/decomposed theorem declarations | 187 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -58,7 +58,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 4 | 8 | 4 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 8 | 1 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 2 | 5 | 4 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -146,8 +146,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `capability_promotion_requires_benchmark_evidence_and_preserved_regressions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_review_cannot_promote_readiness` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `saturated_benchmark_alone_cannot_promote_higher_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/BibliographyPlan.lean` | `accepted_new_source_assignment_to_nonexistent_chapter_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `new_source_cannot_be_assigned_to_nonexistent_chapter` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_requires_source_note_or_ingested_source_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_without_source_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `accepted_belief_revision_promotion_requires_evidence_handled_contradiction_and_increase` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `claim_update_preserves_prior_evidence_and_revision_history` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_blocks_belief_revision_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

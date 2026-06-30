@@ -249,6 +249,8 @@ No result is recorded here unless a test has actually been implemented and run.
 | `living-book-methodology` | Living Book Methodology | Changelog update check | planned | not run |
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source inventory validation test | planned | not run |
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source-note backlog audit | planned | not run |
+| `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source-derived claim evidence gate | implemented | passes via Lean source-record negative case; no citation-accuracy or source-interpretation claim |
+| `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | New-source assignment gate | implemented | passes via Lean nonexistent-chapter negative case; no real new-paper triage-quality claim |
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | New-paper triage scenario | implemented | validated locally |
 
 ## Repository-Level Implemented Checks
