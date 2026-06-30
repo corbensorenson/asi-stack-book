@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 44,
+    "curated_manuscript_candidate": 45,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -535,12 +535,15 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_context_full_review_pass.md#decisions"
+        "docs/reader_part_ii_context_full_review_pass.md#decisions",
+        "docs/curated_reader_semantic_pages_prose_pass.md",
+        "docs/chapter_consolidation_release_stability_review.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the semantic pages chapter. Source binding, loss contract, permitted use, authority ceiling, revocation, and certificate-truthfulness limits remain explicit.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the semantic pages chapter. A first drafting-only curated prose pass now foregrounds certificates as representation receipts for provenance, loss, authority ceiling, permitted use, validity, revocation, residual risk, and non-claims. The deferred static-context-ABI merge caveat is recorded; this is not a release review, not a manifest merge, and not a claim of semantic summary-fidelity evaluation, certificate-truthfulness checking, omission-completeness checking, open-domain autoformalization, source-interpretation adequacy, VCM-Bench performance, model-facing context quality, leak prevention, contradiction-rate reduction, Context Engineer benchmark reproduction, deployed Digital SCIF behavior, source-reported benchmark reproduction, or support-state movement.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

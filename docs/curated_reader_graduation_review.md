@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 44
-- Curated chapter records: 44 drafting records for
+- Curated-manuscript candidates: 45
+- Curated chapter records: 45 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -90,7 +90,7 @@ Prototype Roadmap, Living Book Methodology, Open Research Agenda, Personal
 Compute Hives, Resource Economics, Mathematical and Search Substrates,
 Coil Attention and Cyclic Memory,
 CoilRA and Cyclic Mixers, Recursive Self-Improvement, Planning as a Control
-Layer, PlanForge DAGs and Intelligence Arbitrage, Virtual Context ABI,
+Layer, PlanForge DAGs and Intelligence Arbitrage, Virtual Context ABI, Semantic Pages and Context Cells,
 `circle-calculus-and-proof-carrying-ai-contracts`,
 `executable-specifications-and-lean-proof-envelope`, and
 `artifact-steward-agents-and-living-project-governance`; do not treat any file
@@ -162,6 +162,7 @@ executing, rejecting, or authorizing the future Constitutional Alignment merge.
 | `planning-as-a-control-layer` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `planforge-dags-and-intelligence-arbitrage` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_planning_control_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed planner behavior, decomposition accuracy, dependency soundness, scheduler correctness, context-demand prediction, runtime replanning, dispatch safety, tool execution, PlanForge runtime behavior, MoECOT runtime behavior, benchmark performance, support-state movement, or manifest merge/fold decision is implied. |
 | `planforge-dags-and-intelligence-arbitrage` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `planning-as-a-control-layer` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_planforge_dag_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed PlanForge behavior, scheduler correctness, route-selection quality, selected-tier adequacy, cost savings, cost-quality dominance, decomposition accuracy, dependency inference quality, parser behavior, runtime replanning, dispatch safety, tool execution, MoECOT runtime behavior, benchmark performance, support-state movement, or manifest merge/fold decision is implied. |
 | `virtual-context-abi` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `semantic-pages-context-cells-and-certificates` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_virtual_context_abi_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed VCM behavior, resolver correctness, context compiler correctness, snapshot-service behavior, adequacy-classifier quality, materialization correctness, summary fidelity, contradiction-rate reduction, distractor resistance, leak prevention, Digital SCIF behavior, transactional memory-store behavior, VCM-Bench performance, model-facing context quality, MoECOT runtime behavior, source-interpretation adequacy, support-state movement, or manifest merge/fold decision is implied. |
+| `semantic-pages-context-cells-and-certificates` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `virtual-context-abi` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_semantic_pages_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no semantic summary-fidelity evaluation, certificate-truthfulness checking, omission-completeness checking, open-domain autoformalization, source-interpretation adequacy, VCM-Bench performance, model-facing context quality, leak prevention, contradiction-rate reduction, Context Engineer benchmark reproduction, deployed Digital SCIF behavior, source-reported benchmark reproduction, support-state movement, or manifest merge/fold decision is implied. |
 | `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `executable-specifications-and-lean-proof-envelope` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlay | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_executable_specs_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
@@ -198,7 +199,7 @@ true:
 
 ## Non-Claims
 
-- This review creates forty-four drafting-only curated reader chapter files for
+- This review creates forty-five drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

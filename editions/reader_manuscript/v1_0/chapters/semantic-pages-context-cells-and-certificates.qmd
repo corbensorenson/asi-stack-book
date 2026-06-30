@@ -1,0 +1,322 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: semantic-pages-context-cells-and-certificates
+generated_baseline_ref: build/reader_edition/chapters/semantic-pages-context-cells-and-certificates.qmd
+live_source_ref: chapters/semantic-pages-context-cells-and-certificates.qmd@4527feafe
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Semantic Pages, Context Cells, and Certificates
+
+The Virtual Context ABI gets context into the working surface. This chapter
+asks what happens next.
+
+Once a packet has been materialized, the system still has to know what each
+piece of context is allowed to mean. A paragraph can be a raw source excerpt,
+a lossy summary, a redacted instruction, a planning hint, a claim cell, a
+contradiction pair, or a reader paraphrase. Those objects can all be made of
+words, but they do not carry the same authority. Treating them as the same
+kind of context is how a useful summary becomes false evidence.
+
+Semantic pages and context cells are the book's answer to that problem. They
+make context into typed units. Certificates make the units honest. A
+certificate says where the cell came from, what was omitted, what was lost in
+translation or compression, which authority ceiling survived, which uses are
+allowed, whether the cell is current, and what residual risk remains.
+
+The reader throughline is simple: a summary is not reusable context until it
+carries its loss, provenance, authority, permitted use, and revocation state
+with it.
+
+## Problem
+
+Compiled context needs typed semantic units and proof-carrying summaries that
+preserve provenance and loss contracts.
+
+The ABI can say that a context packet was requested, resolved, materialized,
+leased, or faulted. That still does not tell the next layer what each unit
+inside the packet is. A worker may receive a small planning brief. A verifier
+may need the exact source. A claim ledger may need citation links and
+contradiction history. An executor may need a redacted instruction with a
+lower authority ceiling than the source. A reader edition may need a paraphrase
+that is useful for orientation but useless as evidence.
+
+All of those can derive from the same source. They should not inherit the same
+meaning.
+
+Without typed cells and representation certificates, compact context drifts.
+A planning summary later sounds like evidence. A redacted instruction is
+mistaken for the full source. A paraphrase from a reader edition becomes a
+supporting citation. A quote stripped of its clearance label is sent to a
+worker that was never allowed to see it. The error is not only that something
+was summarized. The error is that the summary lost the contract around what it
+was allowed to do.
+
+## Why Existing Approaches Are Insufficient
+
+Summaries can look authoritative while dropping source bindings, omissions,
+authority ceilings, or allowed-use limits.
+
+Retrieval makes relevant material available. Long-context models make larger
+material visible. Memory systems make prior state reusable. None of that is
+enough if the derived representation does not carry what changed during
+compression. A summary may preserve the main point while dropping dissent,
+chronology, uncertainty, exact wording, source revocation, or a limit on who
+may use it. That kind of loss is easy to miss because the output still reads
+fluently.
+
+The external context literature supplies useful pressure without proving this
+certificate scheme. RAG makes retrieved evidence explicit. Memory-operating
+approaches show why context needs policy. Long-context evaluations and
+position-sensitivity work show that fitting text into a window is not the same
+as reliably using it. Self-retrieval and citation-support work make the
+boundary between generation and evidence visible. Prompt-compression work
+shows why compressed representations need loss accounting.
+
+Semantic pages do not claim to beat those systems here. They add a contract
+around the derived object. The question becomes not "is this text relevant?"
+but "what kind of cell is this, which source binds it, what did it drop, who
+may use it, and what may it support?"
+
+## Core Claim
+
+VCM should represent context as typed semantic pages or cells with
+evidence-carrying representation certificates. This remains an architectural
+argument.
+
+The support is bounded. VCM public v1 supplies semantic objects,
+representations, validations, packets, materializations, source and authority
+binding, protected compilation, adequacy/admission separation, revocation,
+invalidation, and audit records. Verification Bandwidth explains why lossy
+summaries reduce verification capacity unless loss is visible. Spinoza
+supplies claim/evidence-cell pressure through proof-, citation-, and
+procedure-carrying claim graphs. Context Engineer supplies structured mission
+briefs, clearance fields, context shards, and need-to-know delivery. Editable
+VCM is useful terminology and future citation-triage context, not local
+certificate-system evidence.
+
+The live claim therefore stays at `argument` support. The repository has a
+schema/fixture surface, finite Lean predicates, and a synthetic
+context-admission/adequacy harness. It does not have a semantic
+summary-fidelity evaluator, certificate truthfulness checker,
+omission-completeness audit, open-domain autoformalization result,
+benchmark reproduction, or model-facing certificate result.
+
+## Mechanism
+
+The mechanism is a representation receipt. A source becomes one or more cells,
+and every derived cell carries a certificate.
+
+```{mermaid}
+flowchart LR
+  A["Source cell"] --> B["Representation choice"]
+  B --> C["Exact excerpt"]
+  B --> D["Lossy planning summary"]
+  B --> E["Redacted execution packet"]
+  B --> F["Claim or contradiction cell"]
+  C --> G["Semantic page certificate"]
+  D --> G
+  E --> G
+  F --> G
+  G --> H{"Use allowed?"}
+  H -- "yes" --> I["Packet, plan, claim ledger, or artifact"]
+  H -- "no" --> J["Typed refusal or residual"]
+```
+
+The certificate records the type of representation. Exact carriage, lossy
+summary, redaction, abstraction, translation, and derived inference have
+different rights and different risks. Calling them all "context" loses the
+reason the certificate exists.
+
+The certificate also records the source bindings, derivation links,
+transaction references, artifact references, omissions, loss contract,
+authority ceiling, permitted uses, validity window, verification state,
+revocation state, residual risks, and non-claims. Those fields are not
+ceremonial. They determine whether a cell can be used for planning, citation,
+execution, proof support, contradiction checking, reader orientation, or none
+of the above.
+
+The important move is that one source can produce several honest
+representations. The exact excerpt can support quotation. The planning summary
+can help a scheduler choose work. The redacted execution packet can be shown to
+a worker without leaking source material. The contradiction cell can be routed
+to a claim ledger. The reader paraphrase can help a human understand the idea.
+Each cell may be useful, but each is useful under a different contract.
+
+## Interfaces
+
+Semantic pages sit at the boundary between memory, planning, reasoning, and
+execution.
+
+Planning consumes constraint cells, decision cells, and planning summaries.
+Spinoza-style claim ledgers consume claim/evidence cells, citation links,
+proof artifacts, procedure records, contradiction records, defeaters, and
+revision history. Execution receives only representations whose certificate
+allows the action and authority context. Artifact graphs consume certificate
+references when a derived representation becomes part of durable work.
+
+A practical semantic page certificate needs at least these fields:
+
+- `page_id`
+- `cell_type`
+- `source_bindings`
+- `derived_from`
+- `transaction_refs`
+- `artifact_refs`
+- `representation_kind`
+- `loss_contract`
+- `omissions`
+- `authority_ceiling`
+- `permitted_uses`
+- `validity_window`
+- `verification_state`
+- `revocation_state`
+- `residual_risks`
+- `non_claims`
+
+Those fields prevent a cell from silently changing role. A planning summary
+does not become a citation because it appears in a claim discussion. A
+reader-edition paraphrase does not become proof support because it reads more
+cleanly than the source. An exact excerpt does not become executable
+permission because it contains an instruction. A redacted packet does not
+become a full source because it came from one.
+
+## Invariants
+
+Authority labels survive summarization.
+
+Loss contracts are explicit.
+
+A derived cell points back to source bindings.
+
+A derived cell points back to the transaction or artifact record that created
+the representation when that record exists.
+
+Authority non-escalation is the most important invariant. A summary cannot
+become more citable, more executable, more secret-cleared, or more verified
+than the source and certificate allow. Moving a cell into a plan, claim
+ledger, job, report, or reader edition cannot broaden its permitted use. If
+the target use falls outside the certificate, the system needs a stronger
+representation, a new review, or a refusal.
+
+The current Lean hooks are narrow. They prove finite-record properties: a
+valid derived context cell carries source bindings plus loss/use declarations,
+and a summary that respects source authority cannot raise its authority
+ceiling above the source cells. They do not prove that the summary is faithful,
+that omissions are complete, or that the certificate truthfully describes the
+source.
+
+## Failure Modes
+
+Summary overconfidence is the everyday failure. A short, fluent cell sounds
+complete, so a reader or model treats it as if it preserved every relevant
+constraint.
+
+Provenance loss is the traceability failure. The cell keeps the gist but loses
+the source binding needed to audit, quote, challenge, or revise it.
+
+Authority escalation via compression is the governance failure. A source with
+a narrow authority label is compressed into a harmless-looking note and then
+used in a setting where the source itself would have been denied.
+
+Certificate laundering is subtler. The cell has a certificate, so downstream
+layers stop asking whether the certificate is current, truthful, and adequate
+for the new use. The certificate should make review easier. It should not make
+review optional.
+
+Stale-cell reuse is the lifecycle failure. A source is corrected, revoked, or
+tainted, but an older derived cell remains in circulation as if nothing
+changed.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a semantic-page certificate schema,
+valid and invalid fixtures, finite proof hooks, and a synthetic cross-record
+harness that blocks stale, lossy, or authority-escalating use.
+
+The repository has that narrow surface. The semantic page certificate fixture
+validates record shape: source bindings, derivation, transaction references,
+artifact references, representation kind, loss contract, omissions, authority
+ceiling, permitted uses, validity, verification state, revocation state,
+residual risks, and non-claims. `AsiStackProofs.ContextCertificates` proves
+finite-record certificate completeness and authority non-escalation
+properties. The context admission/adequacy harness checks synthetic cross-record
+consistency for context ABI records, context packets, semantic page
+certificates, context transactions, and adequacy records. Its recorded local
+run passed three valid fixtures and rejected five expected-invalid fixtures.
+
+That is evidence for record discipline. It is not evidence that summaries are
+semantically faithful. It does not prove omission completeness, certificate
+truthfulness, source interpretation, open-domain claim formalization,
+contradiction-rate reduction, leak prevention, or model-facing context quality.
+
+The next useful slice is a paired source/derived-cell fixture set: one source
+excerpt, one exact evidence cell, one lossy planning summary with omissions
+declared, one redacted execution cell with a lower authority ceiling, one
+reader paraphrase marked orientation-only, one stale certificate invalidated by
+source revocation, and one attempted use outside the certificate blocked. That
+would make the certificate semantics testable without pretending to solve
+natural-language summary fidelity.
+
+## Beyond the State of the Art
+
+The mature version is a representation-certification system for context.
+It does not merely summarize sources. It turns raw sources, exact excerpts,
+planning briefs, redacted instructions, claim cells, contradiction pairs, and
+derived inferences into typed objects whose permitted use, loss, authority,
+and provenance remain attached wherever the object travels.
+
+At that maturity, a model does not receive "a summary." It receives a
+certificate-bearing cell. The certificate says whether the cell is exact or
+lossy, which source and transaction created it, which artifact carries it,
+what was omitted, what authority ceiling survived, whether it may support a
+claim, whether it may drive execution, whether it is adequate for the current
+target, whether it has expired, and what residual remains.
+
+The result is not anti-compression. It is governed compression. The system can
+make context smaller, safer, more task-relative, and more readable while still
+preserving the liabilities of the source. A good certificate makes a compact
+cell harder to misuse as it travels.
+
+That endpoint is not implemented here. It needs paired source/derived-cell
+fixtures, certificate truthfulness tests, summary-fidelity tests, omission
+audits, stale/revoked-cell conformance checks, downstream use gates, and
+model-facing evaluation before it can support stronger claims.
+
+## What Is Proven, And What Is Not
+
+The current project proves and tests record-level discipline.
+
+It checks certificate shape. It checks finite derived-cell completeness. It
+checks finite authority non-escalation for summary cells. It checks synthetic
+cross-record behavior where stale certificates, weak verification modes,
+conflicts, propagated taint, and open deletion obligations cannot become
+evidence-ready support.
+
+It does not prove the truth of a certificate. It does not prove that a summary
+preserves all relevant meaning. It does not detect every omission. It does not
+prove that a claim cell captures the correct formalization. It does not run a
+VCM-Bench result, reproduce Context Engineer benchmark figures, validate a
+deployed Digital SCIF, or show that model outputs improve when using certified
+cells.
+
+The boundary matters because certificates are powerful notation. They make a
+representation auditable. They do not make it true.
+
+## Summary
+
+Semantic pages and context cells make context units typed. Certificates keep
+those units from losing their obligations as they move through the stack.
+
+The rule is not "never summarize." The rule is "do not let a summary forget
+what it dropped." A governed system can use exact excerpts, planning briefs,
+redacted packets, claim cells, contradiction pairs, and reader paraphrases, but
+each representation has to carry its provenance, loss, authority, permitted
+use, validity, revocation state, and residual risk.
+
+The next layer turns those certified cells into a changing memory state.
+Context Transactions, Snapshots, Mounts, and Taint asks how context updates,
+branches, deletion obligations, taint, and stale views become auditable events
+instead of silent edits.

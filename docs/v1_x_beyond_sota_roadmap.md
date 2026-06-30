@@ -94,7 +94,7 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 54 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with forty-four drafting-only curated chapter records and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with forty-five drafting-only curated chapter records and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest: 54 core claims remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
 ## Operating Principles
@@ -1359,7 +1359,7 @@ Acceptance bar:
 Current status:
 
 - `editions/reader_manuscript/v1_0/manifest.json` is now in `drafting` status
-  with forty-four curated chapter records:
+  with forty-five curated chapter records:
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -1401,6 +1401,7 @@ Current status:
   `planning-as-a-control-layer`,
   `planforge-dags-and-intelligence-arbitrage`,
   `virtual-context-abi`,
+  `semantic-pages-context-cells-and-certificates`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
   `artifact-steward-agents-and-living-project-governance`.
@@ -1423,7 +1424,9 @@ Current status:
   passes for the planning/DAG package and do not decide the future merge
   between them. `virtual-context-abi` is a deferred-package curated pass for
   the static context ABI package and does not decide the future merge with
-  `semantic-pages-context-cells-and-certificates`.
+  `semantic-pages-context-cells-and-certificates`; that semantic-pages pass is
+  now also curated under the same caveat and does not decide the future merge
+  with `virtual-context-abi`.
 - `editions/reader_manuscript/v1_0/chapters/asi-is-a-stack-not-a-model.qmd`
   now has a first curated prose pass from the generated reader baseline as a
   drafting source only.
@@ -1541,6 +1544,22 @@ Current status:
   memory-store behavior, VCM-Bench performance, model-facing context quality,
   MoECOT runtime behavior, source-interpretation adequacy, support-state
   movement, reader-release approval, or merge/fold decision.
+- `editions/reader_manuscript/v1_0/chapters/semantic-pages-context-cells-and-certificates.qmd`
+  now has a first curated prose pass from the generated reader baseline as a
+  drafting source only. It is the second source chapter inside the
+  deferred-for-release static context ABI package to graduate under the
+  release-stability caveat; it does not execute, reject, or authorize the
+  future merge with `virtual-context-abi`.
+- `docs/curated_reader_semantic_pages_prose_pass.md` records the curation
+  scope, reader promise, meaning-preservation checks, non-claims, remaining
+  blockers, and consolidation caveat for that pass, including no semantic
+  summary-fidelity evaluation, certificate-truthfulness checking,
+  omission-completeness checking, open-domain autoformalization,
+  source-interpretation adequacy, VCM-Bench performance, model-facing context
+  quality, leak prevention, contradiction-rate reduction, Context Engineer
+  benchmark reproduction, deployed Digital SCIF behavior, source-reported
+  benchmark reproduction, support-state movement, reader-release approval, or
+  merge/fold decision.
 - `editions/reader_manuscript/v1_0/chapters/constitutional-alignment-substrate.qmd`
   now has a first curated prose pass from the generated reader baseline as a
   drafting source only. This is the first source chapter inside a
