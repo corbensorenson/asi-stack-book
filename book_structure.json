@@ -3784,6 +3784,11 @@
               "name": "Verification escalation test",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic context admission/adequacy harness; no deployed escalation claim"
+            },
+            {
+              "name": "Verification adequacy route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite verification-adequacy route coverage only"
             }
           ],
           "lean_module": "AsiStackProofs.VerificationBandwidth",
@@ -3798,6 +3803,12 @@
               "tag": "lean:verification_bandwidth.adequacy.failure_blocks_promotion",
               "module": "AsiStackProofs.VerificationBandwidth",
               "target": "A high-risk claim with inadequate context cannot receive a verified support label.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:verification_bandwidth.adequacy.route_envelope",
+              "module": "AsiStackProofs.VerificationBandwidth",
+              "target": "A structured verification-adequacy review routes missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews into explicit outcomes.",
               "status": "implemented"
             }
           ],

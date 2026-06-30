@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `vcm_public`; supporting: `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
 | Source loading state | passage-reviewed local raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/source-note mapped: `vcm_editable` |
-| Test state | `context_adequacy_record.valid.json` passes protocol fixture validation with claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims; `AsiStackProofs.VerificationBandwidth` implements finite adequacy/admission separation and inadequate-context support blocking gates; `python3 scripts/validate_context_admission_adequacy.py` implements synthetic adequacy-label and escalation gates; contradiction-rate and distractor-resistance tests remain planned. |
+| Test state | `context_adequacy_record.valid.json` passes protocol fixture validation with claim scope, context packet ref, context scope, risk tier, negative evidence, verification artifact refs, audit refs, support-state effect, and non-claims; `AsiStackProofs.VerificationBandwidth` implements finite adequacy/admission separation, inadequate-context support blocking, and verification-adequacy route gates; `python3 scripts/validate_context_admission_adequacy.py` implements synthetic adequacy-label and escalation gates; contradiction-rate and distractor-resistance tests remain planned. |
 
 ## Drafting guardrail
 
@@ -234,9 +234,10 @@ This verification-budget layer is still a target architecture. Verification-band
 | Distractor resistance test | Compare contradiction detection when a decisive small unit is paired with a dominant distractor unit. | planned; not run |
 | Adequacy labeling test | Check that drafting-adequate context is blocked from verification-backed support when pairwise checking is absent. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no model verification-bandwidth claim |
 | Verification escalation test | Check that high-risk claims with inadequate context route to tribunal, proof, retrieval, split-context, or human review instead of promotion. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed escalation claim |
+| Verification adequacy route proof | Check that a finite verification-adequacy review routes missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews to explicit outcomes. | implemented by Lean build; finite verification-adequacy route coverage only |
 | Mode-confusion audit | Check that schema, proof, summary, human-review, and empirical modes are not used to support broader claims than they actually verify. | planned; not run |
 
-The fixture-shape check, finite-record proof predicates, and synthetic context admission/adequacy harness are implemented. Distractor resistance, contradiction-rate measurement, semantic adequacy classification, and deployed claim-ledger outcomes still require a synthetic contradiction suite, logged prompts or deterministic checkers, and reviewable claim-ledger results.
+The fixture-shape check, finite-record proof predicates, and synthetic context admission/adequacy harness are implemented. The finite route proof records how modeled adequacy reviews should route, not whether a model actually has enough verification bandwidth. Distractor resistance, contradiction-rate measurement, semantic adequacy classification, and deployed claim-ledger outcomes still require a synthetic contradiction suite, logged prompts or deterministic checkers, and reviewable claim-ledger results.
 
 ### Formalization hooks
 
@@ -244,8 +245,9 @@ The fixture-shape check, finite-record proof predicates, and synthetic context a
 |---|---|---|---|
 | `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidth` | A context packet admitted for use may still be marked inadequate for a target claim. | implemented |
 | `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `AsiStackProofs.VerificationBandwidth` | A high-risk claim with inadequate context cannot receive a verified support label. | implemented |
+| `lean:verification_bandwidth.adequacy.route_envelope` | `AsiStackProofs.VerificationBandwidth` | A structured verification-adequacy review routes missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews into explicit outcomes. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over context-packet and claim-support reviews. They prove only the record-level gates: admission and adequacy are distinct states, and a high-risk claim with inadequate context cannot receive a verified support label. They do not prove a model's internal verification bandwidth, contradiction-rate performance, distractor resistance, or escalation quality.
+These Lean hooks are implemented as finite-record predicates over context-packet, claim-support, and verification-adequacy reviews. They prove only the record-level gates: admission and adequacy are distinct states, a high-risk claim with inadequate context cannot receive a verified support label, and a modeled adequacy review routes invalid, residual, draft-support, or verified-support states explicitly. They do not prove a model's internal verification bandwidth, contradiction-rate performance, distractor resistance, or escalation quality.
 
 ## Source crosswalk
 

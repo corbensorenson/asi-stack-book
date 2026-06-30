@@ -104,6 +104,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Distractor resistance test | planned | not run |
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Adequacy labeling test | implemented | passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim |
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Verification escalation test | implemented | passes via synthetic context admission/adequacy harness; no deployed escalation claim |
+| `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Verification adequacy route proof | implemented | passes via Lean build; finite verification-adequacy route coverage only |
 | `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Claim extraction test | planned | not run |
 | `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Contradiction detection test | implemented | passing via synthetic claim ledger revision harness; no open-domain contradiction detection claim |
 | `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Belief revision test | implemented | passing via synthetic claim ledger revision harness; no deployed belief engine claim |
@@ -291,16 +292,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 120 |
+| Proof targets covered by triage | 121 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 120 |
+| implemented | 121 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 120 |
+| implemented | formal-invariant | lean-candidate | 121 |

@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 120 |
-| Manifest status counts | {"implemented": 120} |
-| Triage class counts | {"formal-invariant": 120} |
+| Proof targets audited | 121 |
+| Manifest status counts | {"implemented": 121} |
+| Triage class counts | {"formal-invariant": 121} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -83,7 +83,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/TypedJobs.lean` | 2 | 2 | 3 | 3 |
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 6 | 8 | 4 |
-| `lean/AsiStackProofs/VerificationBandwidth.lean` | 2 | 2 | 1 | 2 |
+| `lean/AsiStackProofs/VerificationBandwidth.lean` | 3 | 12 | 2 | 3 |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | 3 | 13 | 5 | 5 |
 
 ## Chapter Coverage
@@ -132,7 +132,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `stable-capability-fields` | 3 | 3 | 0 | 0 |
 | `system-boundaries-and-authority` | 2 | 2 | 0 | 0 |
 | `the-efficient-asi-hypothesis` | 2 | 2 | 0 | 0 |
-| `verification-bandwidth-and-context-adequacy` | 2 | 2 | 0 | 0 |
+| `verification-bandwidth-and-context-adequacy` | 3 | 3 | 0 | 0 |
 | `virtual-context-abi` | 5 | 5 | 0 | 0 |
 
 ## Target Trace
@@ -193,6 +193,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:vcm.transactions.failure_blocks_promotion` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:verification_bandwidth.adequacy.operational_invariant` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:verification_bandwidth.adequacy.route_envelope` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:claims.ledger.operational_invariant` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:claims.ledger.failure_blocks_promotion` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:spinoza.proof_carrying.operational_invariant` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaims` | triage ok; module ok; chapter tag ok; limitation ok |

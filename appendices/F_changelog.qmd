@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-06-30 - Verification bandwidth adequacy route proof envelope
+
+- Extended `AsiStackProofs.VerificationBandwidth` with a finite
+  verification-adequacy route vocabulary, review record, and route function over
+  claim presence, context admission, context adequacy for the claim, high-risk
+  status, pairwise-check requirements, verification artifact presence, negative
+  evidence, contradictions, residuals, draft support requests, and verified
+  support requests.
+- Added derived/decomposed Lean theorems showing that missing claims reject
+  adequacy review; unadmitted context requests context; high-risk inadequate
+  context blocks verified support; missing pairwise checks require pairwise
+  checks; missing verification artifacts require artifacts; open negative
+  evidence escalates risk; contradictions block verified support; known
+  residuals are recorded; complete verified reviews can allow verified support;
+  and complete draft reviews can allow draft support.
+- Added the `lean:verification_bandwidth.adequacy.route_envelope` proof target
+  to the outline, manifest, proof triage, Verification Bandwidth chapter, and
+  Appendix E. The proof manifest now tracks 121 implemented finite-record
+  targets, and the proof-depth classifier now records 270 theorem declarations:
+  115 direct/projection-style and 155 derived/decomposed.
+- Updated the Verification Bandwidth chapter, proof-depth and proof-adequacy
+  surfaces, v1.0 roadmap/status surfaces, v0.2 manuscript status, publication
+  readiness note, repository map, and proof/code plan. The proof adequacy review
+  keeps Verification Bandwidth in `needs executable tests first`.
+- This does not promote any Appendix C or chapter core claim, measure model
+  verification bandwidth, run a contradiction-rate suite, test distractor
+  resistance, classify semantic adequacy in the wild, validate escalation
+  quality, approve reader artifacts, or create EPUB, DOCX, PDF, audio, DOI,
+  Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Virtual Context ABI context admission route proof envelope
 
 - Extended `AsiStackProofs.VirtualContextABI` with a finite context-admission

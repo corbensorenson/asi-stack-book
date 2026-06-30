@@ -551,6 +551,16 @@
       "rationale": "Implemented in AsiStackProofs.VerificationBandwidth as a finite claim-support predicate: high-risk claims with inadequate context cannot receive verified support."
     },
     {
+      "tag": "lean:verification_bandwidth.adequacy.route_envelope",
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "module": "AsiStackProofs.VerificationBandwidth",
+      "formal_target": "A structured verification-adequacy review routes missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews into explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.VerificationBandwidth as a finite verification-adequacy route function and derived route theorems for missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews."
+    },
+    {
       "tag": "lean:claims.ledger.operational_invariant",
       "chapter_id": "claim-ledgers-and-belief-revision",
       "module": "AsiStackProofs.ClaimLedger",
