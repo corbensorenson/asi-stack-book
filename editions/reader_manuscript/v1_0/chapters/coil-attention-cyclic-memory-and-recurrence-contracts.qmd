@@ -1,0 +1,328 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: coil-attention-cyclic-memory-and-recurrence-contracts
+generated_baseline_ref: build/reader_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd
+live_source_ref: chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd@957755b9c
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Coil Attention, Cyclic Memory, and Recurrence Contracts
+
+Memory is where structural language most easily starts pretending to be
+understanding.
+
+A slot can be fresh without being useful. A lag can be covered without the
+right dependency being captured. A recurrence loop can keep producing work
+after it has stopped making progress. A ring buffer can look orderly while
+hiding alias collisions. Long context can sound continuous while the actual
+memory contract is broken.
+
+Coil attention and cyclic memory are valuable only if they make those facts
+more visible. The point is not to claim that cyclic structure creates better
+retrieval or better reasoning. The point is to give later consumers a record:
+which slots were used, how many times an address wrapped, which lags were
+covered, what freshness policy applied, when recurrence had to stop, what
+fallback existed, and which claims remain blocked.
+
+That is why this chapter treats cyclic memory as a contract layer. It lets
+memory become inspectable before it becomes trusted.
+
+## Problem
+
+Long-context systems often fail quietly.
+
+The model may produce fluent text while reading stale state. A sparse attention
+pattern may cover the positions it promised while missing the dependency the
+task needed. A recurrence schedule may reduce active tokens while creating a
+loop that never exits. A residue-only address may hide the fact that multiple
+historical items share the same slot. A compressed or cyclic memory may appear
+efficient while silently widening the authority of context that was supposed
+to remain scoped.
+
+The failure is not cyclic structure itself. Cyclic structure can be useful. It
+can expose aliasing, coverage, freshness, recurrence depth, and fallback
+behavior in ways that ordinary model traces do not. The failure is claim
+confusion: treating those exposed structural facts as evidence that the system
+retrieved the right content, reasoned well, saved memory in a useful way, or
+extended context length in a task-relevant way.
+
+The stack needs a place for the cheap facts and the hard claims to stay
+separate.
+
+## Why Existing Approaches Are Insufficient
+
+Ordinary memory language is too forgiving. A system can say it "remembered" a
+document when all it actually preserved was a pointer, slot, key, summary, or
+compressed trace. It can say a lag was "covered" when the coverage is
+structural rather than semantic. It can say a cache is "fresh" when freshness
+only means version recency, not adequacy for the current claim.
+
+VCM and Verification Bandwidth make the distinction sharper. Context
+admission, authority, adequacy, freshness, verification capacity, and task
+success are not the same property. A governed context object arrives with
+address, version, authority, lease, taint, and adequacy state. A memory module
+then represents that object inside slots, windows, recurrence schedules, or
+compressed traces. The representation may preserve useful structural facts.
+It does not, by itself, prove that the model used the information correctly.
+
+The external recurrence and long-range sequence literature gives useful
+comparison vocabulary through Transformer-XL, Compressive Transformers, and
+RetNet. Those sources help position segment-level recurrence, compressed
+memory, retention, and attention/recurrence tradeoffs as known families of
+sequence-memory design. In this repository, they remain source-noted
+comparators only. Their reported results are not reproduced here, and they do
+not make a Coil retrieval-quality, reasoning-quality, speed, memory-savings,
+or long-context claim true.
+
+Finite proofs and learned behavior meet at the hardest boundary. A proof can
+certify a slot property, coverage condition, alias rule, or loop-exit
+condition. It cannot certify that a learned model retrieved the right
+information or solved the task unless a workload-specific evaluation supplies
+that evidence.
+
+## Core Claim
+
+Coil attention and memory contracts should be used as structural guardrails for
+cyclic memory, sparse coverage, recurrence schedules, and work-budget
+admission, not as claims of retrieval or reasoning quality.
+
+That claim remains a design rationale at `argument` support. The live chapter,
+Appendix C, source notes, external comparator notes, schema fixture, and Lean
+hooks describe a structural contract boundary. They do not prove retrieval
+quality, reasoning quality, long-context usefulness, speed, memory reduction,
+KV-cache behavior, sparse-attention adequacy, learned-memory behavior, or
+transfer success.
+
+The useful move is custody, not promotion. A memory contract should say what
+happened to the context object as it moved through slots, winding, freshness,
+coverage, recurrence, and fallback. It should also say which later claims are
+not allowed to ride along.
+
+## Mechanism
+
+The mechanism is the Cyclic Memory Contract.
+
+The contract starts with a memory or attention request and records how the
+request becomes a finite structure. It keeps residue and winding together so
+slot reuse does not erase history. It records provenance for reused slots. It
+keeps VCM packet references attached so context authority and adequacy do not
+disappear inside a model component. It records freshness windows, stale-read
+policy, sparse coverage, uncovered lags, recurrence schedules, active work,
+loop exits, fallback attention, admission state, baselines, probes, residuals,
+and non-claims.
+
+The contract is not a quality certificate. It is a guardrail. It tells a
+planner whether a memory representation is structurally admissible. It tells a
+verifier whether recurrence had an exit. It tells a benchmark adapter what
+ordinary baselines must be compared. It tells a downstream route whether a
+claim is structural-only, eligible for workload evaluation, blocked, or forced
+to fall back.
+
+```{mermaid}
+flowchart LR
+  A["Governed context packet"] --> B["Slot and residue mapping"]
+  B --> C["Winding and provenance"]
+  C --> D["Freshness and coverage checks"]
+  D --> E["Recurrence budget and exit"]
+  E --> F{"Contract admissible?"}
+  F -- "yes" --> G["Structural guardrail"]
+  F -- "no" --> H["Fallback or residual escrow"]
+  G --> I["Consumer may use only supported axes"]
+  H --> I
+  I --> J["Workload evidence still required for quality"]
+```
+
+**What the contract shows:** a context packet can be mapped into cyclic memory
+without losing slot, winding, freshness, coverage, recurrence, fallback, and
+authority information. Passing that contract admits a structural guardrail. It
+does not prove useful memory.
+
+The default response to missing information is conservative. Missing winding
+becomes visible alias risk. Partial coverage keeps fallback attention
+available. A stale read fails closed or enters residual escrow. A recurrence
+budget exits instead of treating more loops as free intelligence. A missing
+baseline blocks promotion.
+
+Those are modest controls, but they are the controls that make the idea
+testable.
+
+## Interfaces
+
+The Cyclic Memory Contract is the interface between governed context and memory
+mechanisms.
+
+At minimum, it needs a contract identity, memory target, memory-authority
+scope, VCM packet references, slot count, residue policy, winding policy,
+state-carry boundary, freshness window, stale-read policy, coverage claim,
+recurrence schedule, loop-exit condition, fallback attention, admission state,
+baseline references, probe requirements, authority non-widening rule,
+residuals, evidence references, and non-claims.
+
+Different consumers read different parts of the same record. A memory module
+uses slot and winding fields. A recurrence controller uses work budget and exit
+conditions. A VCM layer checks that authority, lease, taint, and adequacy did
+not widen. A verifier checks whether structural facts are being overread. A
+benchmark harness checks whether the structural protections improve a workload
+against ordinary attention, FIFO, LRU, content-gated memory, slot-only memory,
+or slot-plus-winding baselines.
+
+The consumer rule is narrow: no consumer may convert structural coverage into
+semantic adequacy without separate evidence. A fresh slot can help decide
+whether a route is allowed to proceed. It cannot prove the route knows what it
+is doing.
+
+## Invariants
+
+Residue-only aliasing must remain visible. If two historical states can land
+in the same residue class, the record must preserve winding or provenance
+instead of pretending the residue is enough.
+
+Structural coverage is not semantic coverage. A lag, stride, or sparse orbit
+can be covered while the task still lacks the relevant information.
+
+Recurrence budgets require exits. A loop that cannot stop is not a reasoning
+advance; it is unbounded work with a story attached.
+
+Stale reads fail closed or enter residual escrow. Old state cannot become
+fresh authority just because the model can still speak fluently.
+
+Representation cannot widen authority. Mapping a governed context packet into
+slots, recurrence traces, or compressed attention cannot expand its permitted
+use, lease, adequacy, or access boundary.
+
+Those invariants are deliberately structural. They make memory safer to test.
+They do not claim the memory is useful yet.
+
+## Failure Modes
+
+Alias hiding is the first failure. The system uses residue-only diagnostics and
+forgets that multiple histories may share the same apparent address.
+
+Freshness laundering is the second. A current slot or version is treated as if
+it proved the content was task-relevant.
+
+Coverage laundering is the third. A sparse pattern covers a structural lag,
+then the result is described as if arbitrary semantic dependency were solved.
+
+Overthinking is the recurrence failure. The loop continues because it can,
+not because it has a bounded reason to continue.
+
+Baseline omission is the evaluation failure. A cyclic memory mechanism looks
+promising because it was never compared against ordinary attention, FIFO, LRU,
+content-gated memory, local/global attention, or another simple control.
+
+Each failure produces or preserves a visible state: blocked promotion,
+fallback, residual escrow, workload-evaluation-only status, or retirement.
+Hidden memory failure is more dangerous than recorded memory failure.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a contract-backed memory and attention
+evaluation plan.
+
+The repository already has a valid cyclic-memory contract fixture. It records
+memory target, memory-authority scope, VCM packet references, slot count,
+residue and winding policies, state-carry boundary, freshness window,
+stale-read policy, coverage claim, recurrence schedule, loop exit, fallback,
+admission state, baseline references, probe requirements, authority
+non-widening, residuals, non-claims, and evidence references.
+
+That fixture validates record shape. It is not a KV-cache freshness checker,
+sparse-coverage harness, recurrence benchmark, learned-memory workload,
+Circle-generated contract pack, or Theseus transfer consumer. It does not show
+retrieval quality, reasoning quality, speed, memory savings, or long-context
+utility.
+
+The next honest minimum is a small trace set: one slot reuse with winding
+preserved, one stale read blocked or residualized, one sparse coverage gap
+that triggers fallback, and one recurrence schedule that exits. Only after
+those structural traces exist should a workload harness ask whether the
+contracts help task behavior.
+
+## Beyond the State of the Art
+
+The mature endpoint is a memory-admission and recurrence-control plane.
+
+In that plane, cyclic memory does not sell itself as intelligence. It exposes
+the state that later components need in order to decide whether memory is safe
+to use. Slot, winding, freshness, aliasing, sparse coverage, active work, loop
+exit, fallback, baseline, and residual fields become ordinary admission facts.
+
+The plane would let VCM provide governed context identity and authority, memory
+modules provide structural diagnostics, proof receipts preserve finite facts,
+and benchmark adapters decide whether those facts improve actual workloads. A
+route could use a cyclic memory mechanism as a specialist only when the record
+shows that the relevant axis is supported and the unsupported axes remain
+blocked.
+
+At maturity, a cyclic memory path would be reversible and narrow. Missing
+winding would create alias residuals. Stale reads would fail closed. Coverage
+gaps would trigger fallback. Exhausted recurrence budgets would exit. Favorable
+workload results would be scoped to the tested workload. Negative controls
+would remain attached. Retrieval quality and reasoning quality would move only
+through evidence, not through structural elegance.
+
+This remains beyond the current evidence state. The chapter should stay at
+`argument` until alias-boundary tests, stale-read probes, sparse-coverage
+cases, recurrence-exit traces, retrieval-quality records, workload baselines,
+reset behavior, and promotion reviews show when cyclic memory improves
+continuity without letting old state become hidden authority.
+
+## Proof And Test Boundary
+
+The Lean hooks for this chapter live in
+`AsiStackProofs.CoilAttentionMemory`. They prove narrow finite-record gates:
+cyclic memory claims must record residue and winding or visible alias residual
+risk, and sparse coverage or freshness facts alone cannot promote a retrieval
+quality claim.
+
+Those hooks do not prove KV-cache behavior, sparse-attention coverage,
+recurrence-exit behavior, freshness performance, retrieval quality, reasoning
+quality, memory savings, speed, long-context usefulness, or model behavior.
+
+The implemented protocol fixture validates the contract shape. The planned
+tests still need concrete memory traces, stale-read cases, sparse-coverage
+cases, recurrence schedules, baselines, commands, environment notes, and result
+artifacts before they can support stronger claims.
+
+## Source Boundary
+
+The chapter uses Coil Attention and Memory for cyclic slots, winding,
+freshness, sparse coverage, recurrence budgets, loop exits, work budgets, and
+alias diagnostics. It uses the Circle AI Contract Suite for theorem-linked
+contract family language. It uses Theseus Circle Transfer for transfer
+discipline and public/private result boundaries. It uses VCM for governed
+context identity, authority, adequacy, taint, revocation, invalidation, audit,
+and non-success states.
+
+Transformer-XL, Compressive Transformers, and RetNet provide external
+sequence-memory and recurrence comparators. They are positioning sources here,
+not reproduced results.
+
+None of these mappings promotes a Coil memory mechanism to a deployed memory
+system, long-context result, retrieval-quality result, reasoning-quality
+result, speed result, memory-savings result, or transfer result.
+
+## Summary
+
+Cyclic memory is useful when it makes memory easier to inspect.
+
+A contract can say which slot was used, whether winding was preserved, which
+lags were covered, whether a stale read was blocked, when recurrence had to
+exit, what fallback remained, and which claims are still non-claims. That is
+valuable because it narrows the system's authority over its own memory story.
+
+The architecture should welcome cyclic memory only under that discipline. The
+cheap structural facts should be easy to carry. The hard quality claims should
+stay hard.
+
+## Handoff
+
+Memory contracts preserve structural facts at the memory boundary. The next
+substrate problem is what happens when cyclic structure moves into adapters,
+position encodings, route heads, and mixers. CoilRA, MultiCoil RoPE, and Cyclic
+Mixers carries the same discipline into those mechanisms: exact structure,
+ordinary baselines, hardware costs, workload fit, and failure cases before
+adoption.

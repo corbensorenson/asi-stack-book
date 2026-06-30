@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 22,
+    "curated_manuscript_candidate": 23,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -1031,12 +1031,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions"
+        "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
+        "docs/curated_reader_coil_attention_memory_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. The chapter preserves structural memory versus useful memory: slot coverage, winding, freshness, recurrence exits, fallback, VCM authority, baseline obligations, and retrieval-quality non-claims remain visible.",
+      "review_notes": "Full generated-reader chapter review recorded. First curated reader prose pass now reframes the chapter around structural memory versus useful memory, cyclic memory contracts, VCM chain of custody, residue/winding alias visibility, stale-read policy, recurrence exits, fallback, baseline obligations, and non-claims while preserving the argument-level support boundary.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

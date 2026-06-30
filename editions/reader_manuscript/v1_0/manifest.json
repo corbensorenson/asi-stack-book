@@ -1113,6 +1113,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_mathematical_search_substrates_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
+      "file": "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "live_source_ref": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd@957755b9c",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#coil-attention-cyclic-memory-and-recurrence-contracts.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#coil-attention-cyclic-memory-and-recurrence-contracts",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around memory custody and recurrence control: cyclic memory contracts expose residue, winding, freshness, sparse coverage, recurrence exits, fallback, authority, and baseline obligations while keeping structural memory separate from retrieval or reasoning quality.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "source boundary preserved: Coil Attention and Memory, Circle AI Contract Suite, Theseus Circle Transfer, VCM, and external recurrence comparators remain structural-contract, context, transfer-boundary, or comparator sources inside recorded limits",
+        "proof/test status preserved without adding KV-cache freshness checks, sparse-coverage harnesses, recurrence benchmarks, learned-memory workloads, Circle-generated contract packs, Theseus transfer consumers, external benchmark reproduction, retrieval-quality results, reasoning-quality results, speed results, memory-savings results, long-context results, or support-state results",
+        "implementation horizon preserved without implying a deployed memory-admission or recurrence-control plane",
+        "release blocker status preserved until reconciliation, format review, and an edition release record clear it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_coil_attention_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {

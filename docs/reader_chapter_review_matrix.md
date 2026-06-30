@@ -14,7 +14,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 |---|---:|
 | review_status:reviewed | 54 |
 | disposition:companion_note_candidate | 3 |
-| disposition:curated_manuscript_candidate | 22 |
+| disposition:curated_manuscript_candidate | 23 |
 | disposition:no_immediate_action | 54 |
 | disposition:reader_overlay_active | 20 |
 | release_blocker:format_artifact_not_reviewed | 54 |
@@ -67,7 +67,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part III - Routing, Compression, Representation, and Substrates | `simulation-fidelity-and-physical-constraints` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `mathematical-and-search-substrates` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `circle-calculus-and-proof-carrying-ai-contracts` | reviewed | full_chapter_review | 2 | reader_overlay_active, companion_note_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `coil-attention-cyclic-memory-and-recurrence-contracts` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `coil-attention-cyclic-memory-and-recurrence-contracts` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `coilra-multicoil-rope-and-cyclic-mixers` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `executable-specifications-and-lean-proof-envelope` | reviewed | full_chapter_review | 1 | reader_overlay_active, companion_note_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `benchmark-ratchets-and-anti-goodhart-evidence` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
