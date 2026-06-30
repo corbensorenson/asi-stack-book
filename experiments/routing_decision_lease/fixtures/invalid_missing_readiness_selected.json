@@ -1,0 +1,319 @@
+{
+  "scenario_id": "invalid_missing_readiness_selected",
+  "expected_route": "selected",
+  "required_capabilities": [
+    "chapter-to-source routing"
+  ],
+  "max_authority_rank": 2,
+  "authority_ranks": {
+    "specialist://source-routing-core": 2,
+    "specialist://frontier-general-core": 5,
+    "specialist://stale-routing-core": 1,
+    "specialist://human-review-fallback": 2
+  },
+  "expected_rejections": [
+    {
+      "specialist_id": "specialist://frontier-general-core",
+      "must_mention": [
+        "overprivileged"
+      ]
+    },
+    {
+      "specialist_id": "specialist://stale-routing-core",
+      "must_mention": [
+        "readiness"
+      ]
+    }
+  ],
+  "non_claims": [
+    "This routing fixture does not prove routing accuracy or promote any support state."
+  ],
+  "specialist_registry": [
+    {
+      "specialist_id": "specialist://source-routing-core",
+      "registry_epoch": "fixture-epoch-002",
+      "owner": "book-maintenance-agent",
+      "capabilities": [
+        "source-note lookup",
+        "chapter-to-source routing"
+      ],
+      "authority_envelope": [
+        "public_read",
+        "public_transform"
+      ],
+      "authority_scope": "public book sources only",
+      "memory_lease_policy": "tracked source notes only",
+      "memory_refs": [
+        "sources/source_notes/octopus_router.md",
+        "sources/source_notes/rmi.md"
+      ],
+      "tool_lease_policy": "read-only repository inspection",
+      "tool_permissions": [
+        "read repository files"
+      ],
+      "runtime_tier": "local-analysis",
+      "cost_profile": "bounded public-source route",
+      "readiness_state": "qualified",
+      "quality_predicates": [
+        "preserve source IDs",
+        "preserve support-state boundary"
+      ],
+      "fallback_routes": [
+        "specialist://human-review-fallback"
+      ],
+      "residual_refs": [
+        "residual://no-learned-router"
+      ],
+      "evidence_refs": [
+        "tests/fixtures/protocol_records/routing_decision_record.valid.json"
+      ],
+      "route_limitations": [
+        "no learned-router result",
+        "no routing-quality benchmark"
+      ],
+      "non_claims": [
+        "Registry fixture does not prove specialist quality or promote support state."
+      ]
+    },
+    {
+      "specialist_id": "specialist://frontier-general-core",
+      "registry_epoch": "fixture-epoch-002",
+      "owner": "book-maintenance-agent",
+      "capabilities": [
+        "source-note lookup",
+        "chapter-to-source routing",
+        "external tool use"
+      ],
+      "authority_envelope": [
+        "public_read",
+        "public_transform",
+        "external_effect",
+        "restricted_source"
+      ],
+      "authority_scope": "too broad for this public route",
+      "memory_lease_policy": "could request broader memory than needed",
+      "memory_refs": [
+        "sources/source_notes"
+      ],
+      "tool_lease_policy": "would require approval for external tools",
+      "tool_permissions": [
+        "read repository files",
+        "request external tool"
+      ],
+      "runtime_tier": "frontier",
+      "cost_profile": "overprivileged high-cost fallback",
+      "readiness_state": "default",
+      "quality_predicates": [
+        "broad drafting quality"
+      ],
+      "fallback_routes": [
+        "specialist://human-review-fallback"
+      ],
+      "residual_refs": [
+        "residual://overprivileged-for-public-route"
+      ],
+      "evidence_refs": [
+        "sources/source_notes/rmi.md"
+      ],
+      "route_limitations": [
+        "overprivileged for this route"
+      ],
+      "non_claims": [
+        "Registry fixture does not prove frontier quality or promote support state."
+      ]
+    },
+    {
+      "specialist_id": "specialist://stale-routing-core",
+      "registry_epoch": "fixture-epoch-001",
+      "owner": "book-maintenance-agent",
+      "capabilities": [
+        "chapter-to-source routing"
+      ],
+      "authority_envelope": [
+        "public_read"
+      ],
+      "authority_scope": "read-only stale route",
+      "memory_lease_policy": "old source-note snapshot",
+      "memory_refs": [
+        "sources/source_notes"
+      ],
+      "tool_lease_policy": "read-only repository inspection",
+      "tool_permissions": [
+        "read repository files"
+      ],
+      "runtime_tier": "local-analysis",
+      "cost_profile": "cheap but stale",
+      "readiness_state": "quarantined",
+      "quality_predicates": [
+        "requires requalification"
+      ],
+      "fallback_routes": [
+        "specialist://human-review-fallback"
+      ],
+      "residual_refs": [
+        "residual://stale-routing-core"
+      ],
+      "evidence_refs": [
+        "docs/proof_adequacy_review.md"
+      ],
+      "route_limitations": [
+        "quarantined until readiness rerun"
+      ],
+      "non_claims": [
+        "Registry fixture does not prove stale route quality or promote support state."
+      ]
+    },
+    {
+      "specialist_id": "specialist://human-review-fallback",
+      "registry_epoch": "fixture-epoch-002",
+      "owner": "book-maintenance-agent",
+      "capabilities": [
+        "human review"
+      ],
+      "authority_envelope": [
+        "public_read",
+        "public_transform"
+      ],
+      "authority_scope": "manual review fallback only",
+      "memory_lease_policy": "tracked public context only",
+      "memory_refs": [
+        "docs/book_outline.md"
+      ],
+      "tool_lease_policy": "manual review only",
+      "tool_permissions": [
+        "read repository files"
+      ],
+      "runtime_tier": "human-review",
+      "cost_profile": "slower fallback",
+      "readiness_state": "default",
+      "quality_predicates": [
+        "can adjudicate rejected route"
+      ],
+      "fallback_routes": [
+        "residual://manual-routing-review"
+      ],
+      "residual_refs": [
+        "residual://manual-routing-review"
+      ],
+      "evidence_refs": [
+        "docs/v1_0_focus_audit.md"
+      ],
+      "route_limitations": [
+        "not automatic routing"
+      ],
+      "non_claims": [
+        "Registry fixture does not prove human review quality or promote support state."
+      ]
+    }
+  ],
+  "routing_decision": {
+    "decision_id": "routing-invalid-missing-readiness",
+    "task_id": "task://route-public-source-crosswalk",
+    "capability_request": "Map routing source notes into public-safe chapter mechanism.",
+    "candidate_specialists": [
+      "specialist://source-routing-core",
+      "specialist://frontier-general-core",
+      "specialist://stale-routing-core",
+      "specialist://human-review-fallback"
+    ],
+    "selected_specialist": "specialist://stale-routing-core",
+    "rejected_candidates": [
+      "specialist://source-routing-core",
+      "specialist://frontier-general-core"
+    ],
+    "non_selection_evidence": [
+      "specialist://source-routing-core rejected despite being ready.",
+      "specialist://frontier-general-core rejected as overprivileged."
+    ],
+    "route_shape": "single",
+    "route_receipt": "receipt://routing-lease-001",
+    "authority_check": "passed",
+    "granted_authority_subset": [
+      "public_read",
+      "public_transform"
+    ],
+    "denied_authority": [
+      "external_effect",
+      "restricted_source"
+    ],
+    "readiness_check": "ready",
+    "context_lease": "lease://public-source-notes-valid",
+    "tool_lease": "lease://read-only-repository",
+    "verifier_requirement": "validate routing decision lease fixtures before claiming implemented record gate",
+    "budget": "local public-safe analysis only",
+    "expiry": "end_of_fixture_task",
+    "cost_quality_reason": "Invalid mutation selects a quarantined specialist.",
+    "fallback_route": "specialist://human-review-fallback",
+    "residual_owner": "book-maintenance-agent",
+    "residuals": [
+      "No learned router or routing-quality benchmark has been run."
+    ],
+    "ledger_refs": [
+      "experiments/routing_decision_lease/fixtures/valid_least_capable_route.json"
+    ],
+    "non_claims": [
+      "Routing decision fixture does not prove route quality or promote support state."
+    ]
+  },
+  "moecot_orchestration": {
+    "run_id": "moecot-route-lease-001",
+    "runtime_packet_state": "design_example",
+    "command_ref": "command://route-public-source-crosswalk",
+    "orchestrator_id": "orchestrator://routing-fixture",
+    "route_head": "route-head://fixture",
+    "specialist_cores": [
+      "specialist://source-routing-core"
+    ],
+    "control_plane_gates": [
+      "authority check",
+      "readiness check",
+      "source-claim-state check"
+    ],
+    "route_authority_ledger": [
+      "granted public_read",
+      "denied external_effect"
+    ],
+    "ledger_refs": [
+      "routing-lease-001"
+    ],
+    "readiness_gate_refs": [
+      "readiness-gate-demo-001"
+    ],
+    "replay_refs": [
+      "not-run: fixture only"
+    ],
+    "denied_routes": [
+      "specialist://frontier-general-core"
+    ],
+    "failed_gates": [
+      "no local MoECOT replay artifact"
+    ],
+    "missing_replay_refs": [
+      "MoECOT runtime replay not imported"
+    ],
+    "handoff_refs": [
+      "chapters/routing-heads-and-specialist-cores.qmd"
+    ],
+    "promotion_blockers": [
+      "runtime replay missing",
+      "benchmark result missing"
+    ],
+    "residuals": [
+      "source-reported runtime fields remain argument only"
+    ],
+    "source_reported_fields": [
+      "compact orchestrator",
+      "specialist lanes"
+    ],
+    "locally_reproduced_fields": [],
+    "externally_corroborated_fields": [],
+    "blocked_fields": [
+      "runtime replay",
+      "benchmark reproduction"
+    ],
+    "source_claim_state": "argument",
+    "non_claims": [
+      "MoECOT fixture does not prove runtime behavior or promote support state."
+    ]
+  }
+}

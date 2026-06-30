@@ -9,9 +9,9 @@ This review classifies the 122 implemented Lean proof targets by adequacy for th
 | Adequacy class | Targets | Meaning |
 |---|---:|---|
 | adequate finite-record invariant | 8 | The current Lean predicate is adequate for a narrow repository/process or finite-record claim if the claim text remains narrow. |
-| useful but too narrow | 45 | The predicate is a useful guard, but the chapter needs state-machine, trace, integration, empirical, or benchmark tests before the proof can support the larger boundary. |
+| useful but too narrow | 47 | The predicate is a useful guard, but the chapter needs state-machine, trace, integration, empirical, or benchmark tests before the proof can support the larger boundary. |
 | needs richer state-machine or review semantics | 19 | The current finite record omits timing, lifecycle, review, social, adversarial, or governance semantics that are central to the chapter. |
-| needs executable tests first | 34 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
+| needs executable tests first | 32 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
 | needs empirical or baseline tests first | 10 | Performance, efficiency, policy, substrate, or quality claims need workloads, baselines, measurements, and negative controls before proof adequacy can rise; deterministic accounting harnesses may check record discipline but do not replace model or workload results. |
 | research-agenda until artifact import | 6 | The proof target remains a placeholder guard until external/local project artifacts are imported, built, replayed, or otherwise inspected. |
 
@@ -93,7 +93,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `artifact-graphs-audit-logs-and-replay` | 2 | useful but too narrow | Synthetic artifact-graph replay harness added; still add deployed artifact graph service, real replay engine, audit reconstruction service, provenance completeness checker, and imported produced-artifact traces before stronger claims. |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | useful but too narrow | Synthetic runtime-adapter permission harness added; still add deployed sandbox, approval-service, secret-handle, rollback-execution, and effect-receipt tests. |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | useful but too narrow | Synthetic procedural-memory loop harness added; still add deployed loop detector, tool synthesizer, generated-tool correctness checks, regression-quality benchmarks, route monitor, and retirement automation before stronger claims. |
-| `routing-heads-and-specialist-cores` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
+| `routing-heads-and-specialist-cores` | 2 | useful but too narrow | Synthetic routing decision lease harness added; still add learned-router, route-quality, deployed authority-enforcement, runtime route execution, MoECOT replay, orchestration benchmark, and specialist-quality tests before stronger claims. |
 | `readiness-gates-residual-escrow-and-quarantine` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `moecot-runtime-and-multi-core-orchestration` | 2 | research-agenda until artifact import | Import/replay artifacts before adequacy can rise. |
 | `personal-compute-hives-and-federated-edge-intelligence` | 4 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
@@ -407,6 +407,25 @@ still does not establish deployed loop detection, tool synthesis, generated
 tool correctness, regression quality, route quality, monitoring automation,
 retirement automation, or source interpretation adequacy.
 
+### Routing Decision Lease Harness
+
+The Routing Heads follow-through increment did not add Lean code. It added
+`python3 scripts/validate_routing_decision_lease.py`, a synthetic
+book-gate-only harness over specialist registry records, routing decision
+records, and MoECOT orchestration packets. The harness checks least-authority
+eligible selection, overprivileged specialist rejection, missing-readiness
+fallback, expired lease residualization, rejected-candidate evidence, residual
+ownership, selected-specialist registration, and MoECOT source-boundary
+promotion blockers.
+
+This moves `routing-heads-and-specialist-cores` from `needs executable tests
+first` to `useful but too narrow`. The Lean targets remain finite-record
+predicates and the harness remains synthetic fixture behavior. It still does
+not establish learned-router quality, route-quality measurement, deployed
+authority enforcement, specialist quality, runtime route execution, MoECOT
+replay, orchestration benchmarks, model quality, or source interpretation
+adequacy.
+
 ### Fast Generation Baseline Accounting Harness
 
 The Fast Generation follow-through increment did not add Lean code and did not
@@ -664,6 +683,6 @@ deployed policy preserves dissent.
 
 ## Result
 
-The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The proof-depth classifier now makes that limitation measurable: most theorem declarations are direct/projection-style, but all five safety-critical modules now have at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Human Intent, Command Contracts, Cognitive Compilation, Virtual Context ABI, Verification Bandwidth, Labor OS, Stable Capability Fields, Capability Replacement, Security Kernel, Authority, Planning, Evidence States, Benchmark Ratchets, Claim Ledger, Proof-Carrying Claims, Alignment, Corrigibility, Governance Rights, Self-Improvement, and Value Conflict now have stronger finite-record envelopes; Alignment, Corrigibility, Governance Rights, and Value Conflict now have second v1.x depth increments, while Self-Improvement now has an additional transition-route depth increment, Cognitive Compilation now has a semantic-lowering route envelope, Virtual Context ABI now has a context-admission route envelope, Verification Bandwidth now has a verification-adequacy route envelope, and Labor OS now has a job-execution route envelope; Runtime Adapters now has a synthetic permission harness; Artifact Graphs now has a synthetic replay/audit consistency harness; Procedural Memory now has a synthetic loop-qualification harness; Fast Generation now has deterministic baseline-accounting fixtures that define what future model runs must record; and Resource Economics now has deterministic paired budget-accounting, budget-ledger, and capacity-smoothing toy-trace coverage that is still too narrow for scheduler, real load, serving, or economic claims. No increment moves a chapter support state.
+The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The proof-depth classifier now makes that limitation measurable: most theorem declarations are direct/projection-style, but all five safety-critical modules now have at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Human Intent, Command Contracts, Cognitive Compilation, Virtual Context ABI, Verification Bandwidth, Labor OS, Stable Capability Fields, Capability Replacement, Security Kernel, Authority, Planning, Evidence States, Benchmark Ratchets, Claim Ledger, Proof-Carrying Claims, Alignment, Corrigibility, Governance Rights, Self-Improvement, and Value Conflict now have stronger finite-record envelopes; Alignment, Corrigibility, Governance Rights, and Value Conflict now have second v1.x depth increments, while Self-Improvement now has an additional transition-route depth increment, Cognitive Compilation now has a semantic-lowering route envelope, Virtual Context ABI now has a context-admission route envelope, Verification Bandwidth now has a verification-adequacy route envelope, and Labor OS now has a job-execution route envelope; Runtime Adapters now has a synthetic permission harness; Artifact Graphs now has a synthetic replay/audit consistency harness; Procedural Memory now has a synthetic loop-qualification harness; Routing Heads now has a synthetic route-lease harness; Fast Generation now has deterministic baseline-accounting fixtures that define what future model runs must record; and Resource Economics now has deterministic paired budget-accounting, budget-ledger, and capacity-smoothing toy-trace coverage that is still too narrow for scheduler, real load, serving, or economic claims. No increment moves a chapter support state.
 
 No Appendix C support state changes were made.

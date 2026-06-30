@@ -25,7 +25,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "The former `moecot-runtime-and-multi-core-orchestration` chapter was folded into this chapter on 2026-06-30 as a named runtime crosswalk; the fold changes chapter organization, not support state."
   - "Appendix C now records exact passage-reviewed mappings for all assigned routing and folded MoECOT runtime-crosswalk sources; support remains at argument until routing benchmarks, learned-router harnesses, runtime routes, authority-enforcement tests, MoECOT replay records, or orchestration artifacts exist."
-  - "Protocol schema/fixture validation, narrow Lean routing/readiness predicates, MoECOT runtime source-boundary predicates, and the readiness/residual gate harness's synthetic authority-bounded/fallback route checks are implemented; no specialist-routing benchmark, learned-router harness, runtime route, MoECOT replay, orchestration benchmark, or deployed authority-enforcement test has been run for this chapter."
+  - "Protocol schema/fixture validation, narrow Lean routing/readiness predicates, MoECOT runtime source-boundary predicates, the readiness/residual gate harness's synthetic authority-bounded/fallback route checks, and the synthetic routing decision lease harness are implemented; no specialist-routing benchmark, learned-router harness, runtime route, MoECOT replay, orchestration benchmark, route-quality measurement, or deployed authority-enforcement test has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -43,11 +43,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; variant: `moecot_md`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; authenticated connector text reviewed for `moecot` and the `moecot_md` variant; raw source text is not published. |
-| Test state | Specialist registry, routing decision, and MoECOT orchestration fixture validation implemented; finite routing/readiness predicates implemented in `AsiStackProofs.Routing`; finite MoECOT runtime-promotion and unavailable-source predicates implemented in `AsiStackProofs.MoECOTRuntime`; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic authority-bounded, fallback, and readiness-mapping behavior. Routing accuracy, learned-router, runtime-route, MoECOT replay, orchestration benchmark, and deployed authority-enforcement tests remain planned. |
+| Test state | Specialist registry, routing decision, and MoECOT orchestration fixture validation implemented; finite routing/readiness predicates implemented in `AsiStackProofs.Routing`; finite MoECOT runtime-promotion and unavailable-source predicates implemented in `AsiStackProofs.MoECOTRuntime`; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic authority-bounded, fallback, and readiness-mapping behavior; `python3 scripts/validate_routing_decision_lease.py` validates synthetic least-capable selection, overprivileged rejection, readiness fallback, expired-lease residualization, rejected-candidate evidence, residual ownership, and MoECOT source-boundary non-claims. Routing accuracy, learned-router quality, runtime-route execution, MoECOT replay, orchestration benchmark, route-quality measurement, and deployed authority-enforcement tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter is architecture argument grounded in available source notes and passage-reviewed mappings. Octopus Router Architecture and RMI supply the routing vocabulary; Benchmaxxing, SCF, Talos, Project Theseus, and MoECOT supply runtime-evidence pressure. The folded MoECOT material is treated as an implementation-reference crosswalk, not as reproduced runtime evidence. The repo now proves finite Lean predicates over route records and MoECOT source-boundary records, but no local specialist-routing benchmark, learned-router harness, authority-enforcement harness, MoECOT replay, orchestration benchmark, or runtime reproduction has been run for this chapter.
+This chapter is architecture argument grounded in available source notes and passage-reviewed mappings. Octopus Router Architecture and RMI supply the routing vocabulary; Benchmaxxing, SCF, Talos, Project Theseus, and MoECOT supply runtime-evidence pressure. The folded MoECOT material is treated as an implementation-reference crosswalk, not as reproduced runtime evidence. The repo now proves finite Lean predicates over route records and MoECOT source-boundary records and runs a synthetic route-lease harness over specialist registries, routing decisions, and MoECOT source-state packets, but no local specialist-routing benchmark, learned-router harness, authority-enforcement harness, MoECOT replay, orchestration benchmark, route-quality measurement, or runtime reproduction has been run for this chapter.
 
 Opening Part III, this chapter receives the verified procedures and specialist candidates that Part II made possible. The new problem is selection under constraint: which bounded capability may act, under which authority, with which readiness state, and with which fallback if the route fails.
 
@@ -287,9 +287,9 @@ The `specialist_registry_record` schema describes a bounded specialist core. The
 
 `AsiStackProofs.Routing` adds a bounded selection predicate requiring a selected route to satisfy authority and readiness, plus a bounded readiness-failure predicate requiring fallback or residual rather than promotion. Actual router implementation, specialist selection, and routing-quality measurement remain outside this finite receipt predicate.
 
-A route-receipt suite should make routing discipline visible: one least-capable adequate route, one rejected overprivileged specialist, one missing-readiness fallback, one expired context lease, and one residual owner assigned after failed composition.
+The synthetic routing decision lease harness makes the first route-receipt discipline executable. It checks three valid and six expected-invalid packets for least-capable adequate selection, rejected overprivileged specialists, missing-readiness fallback, expired context leases, residual ownership, selected-specialist registration, rejected-candidate evidence, and MoECOT source-boundary non-claims.
 
-The folded MoECOT slice adds an orchestration fixture and finite source-boundary predicates. The smallest honest runtime-crosswalk fixture records one accepted command, one denied route, one missing replay reference, one residual handoff, one failed gate, and one promotion blocker. That fixture checks record shape and evidence partitioning only; it is not a runtime replay, orchestration benchmark, specialist-quality result, or deployment claim.
+The folded MoECOT slice adds an orchestration fixture, finite source-boundary predicates, and source-only packet checks inside the route-lease harness. The smallest honest runtime-crosswalk fixture records one accepted command, one denied route, one missing replay reference, one residual handoff, one failed gate, and one promotion blocker. These checks cover record shape, route-lease discipline, and evidence partitioning only; they are not runtime replay, orchestration benchmarks, specialist-quality results, route-quality measurements, or deployment claims.
 
 ## Beyond the State of the Art
 
@@ -311,6 +311,7 @@ At maturity, the same routing surface can admit MoECOT-style runtime packets wit
 |---|---|---|
 | Specialist registry and routing decision fixture validation | Check that the specialist registry and routing decision fixtures match their public schemas and declare capabilities, authority, memory, tools, readiness, predicates, candidates, selected route, checks, fallback, residuals, and ledgers. | implemented by protocol validation; validated locally |
 | Specialist routing accuracy test | Check that capability requests select specialists with matching declared capabilities under synthetic tasks. | planned; not run |
+| Routing decision lease harness | Check synthetic route leases for least-capable adequate selection, overprivileged rejection, missing-readiness fallback, expired-lease residualization, rejected-candidate evidence, residual ownership, and MoECOT source-boundary non-claims. | implemented by `python3 scripts/validate_routing_decision_lease.py`; no learned-router, route-quality, MoECOT replay, or deployed authority-enforcement claim |
 | Authority/readiness route predicate | Check that a selected route satisfies authority and readiness. | implemented in `AsiStackProofs.Routing`; checked by Lean build |
 | Failed-readiness fallback predicate | Check that failed readiness routes to fallback or residual rather than promotion. | implemented in `AsiStackProofs.Routing`; checked by Lean build |
 | Authority-bounded routing test | Check that a selected route cannot exceed the gate authority scope or use a blocked route during canary/default promotion. | implemented by readiness/residual gate harness for synthetic route/gate/replacement records; deployed router enforcement not run |
@@ -320,7 +321,7 @@ At maturity, the same routing surface can admit MoECOT-style runtime packets wit
 | Runtime crosswalk completeness test | Check that a runtime record links command, route, cores, gates, ledgers, replay, handoff, and residuals. | planned; not run |
 | Readiness/replay mapping review | Check that promotion decisions reference readiness and replay artifacts, not source branding alone. | partially implemented by readiness/residual gate harness for readiness mapping; MoECOT replay mapping not run |
 
-Fixture-shape validation, four bounded Lean predicates, and the readiness/residual harness's synthetic route authority/fallback/readiness-mapping checks are implemented. Routing accuracy and MoECOT runtime claims still require synthetic routing tasks, candidate specialists, readiness states, learned-router or policy-router code, imported runtime packets, replay refs, benchmark records, and logged route outcomes.
+Fixture-shape validation, four bounded Lean predicates, the readiness/residual harness's synthetic route authority/fallback/readiness-mapping checks, and the synthetic routing decision lease harness are implemented. Routing accuracy and MoECOT runtime claims still require real routing tasks, candidate specialists, readiness states, learned-router or policy-router code, imported runtime packets, concrete replay refs, benchmark records, and logged route outcomes.
 
 ### Formalization hooks
 
@@ -331,7 +332,7 @@ Fixture-shape validation, four bounded Lean predicates, and the readiness/residu
 | `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
 | `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
 
-These proof hooks are implemented as finite-record predicates. They do not prove routing accuracy, specialist quality, learned-router behavior, runtime enforcement, MoECOT runtime behavior, replay correctness, benchmark results, specialist-core quality, deployment readiness, or source-reported performance.
+These proof hooks are implemented as finite-record predicates. The companion synthetic route-lease harness checks record-level selection and refusal discipline. Together they do not prove routing accuracy, specialist quality, learned-router behavior, runtime enforcement, MoECOT runtime behavior, replay correctness, benchmark results, specialist-core quality, deployment readiness, or source-reported performance.
 
 ## Source crosswalk
 
@@ -356,7 +357,7 @@ The routing sources support specialist selection, lifecycle state, residual-awar
 
 ## Summary
 
-Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure. The folded MoECOT material adds the runtime packet shape that a concrete orchestrator would need to emit. The present evidence stops before route quality and runtime behavior: the sources and fixtures define the decision surface, while local router runs, specialist-selection benchmarks, MoECOT replay packets, residual-routing traces, and safety evaluations remain future work.
+Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure. The folded MoECOT material adds the runtime packet shape that a concrete orchestrator would need to emit. The present evidence stops before route quality and runtime behavior: the sources, fixtures, Lean predicates, readiness/residual harness, and route-lease harness define the decision surface, while local router runs, specialist-selection benchmarks, MoECOT replay packets, residual-routing traces, and safety evaluations remain future work.
 
 The router therefore becomes a control surface for capability, authority, memory, cost, fallback, and lifecycle rather than a clever dispatcher. The readiness gate is what the router must respect: a capability can be semantically appropriate and still not ready for ordinary use.
 

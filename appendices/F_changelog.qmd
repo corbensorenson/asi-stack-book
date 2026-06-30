@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-06-30 - Routing decision lease harness
+
+- Added `python3 scripts/validate_routing_decision_lease.py`, a
+  chapter-specific book-gate harness over synthetic specialist registry,
+  routing decision, and MoECOT orchestration packets.
+- Added 3 valid and 6 expected-invalid fixtures under
+  `experiments/routing_decision_lease/` covering least-capable adequate
+  selection, overprivileged specialist rejection, missing-readiness fallback,
+  expired-lease residualization, selected-specialist registration, rejected
+  candidate evidence, residual ownership, and MoECOT source-boundary
+  non-claims.
+- Wired the harness into `scripts/validate_book.py`, Appendix E, the Routing
+  Heads chapter, `docs/book_outline.md`, `book_structure.json`,
+  `docs/routing_decision_lease_harness.md`, `docs/proof_adequacy_review.md`,
+  v1 status/roadmap surfaces, publication readiness, repository map, README,
+  and v0.2 manuscript status.
+- Moved the two Routing Heads proof targets in the proof adequacy review from
+  `needs executable tests first` to `useful but too narrow`. The proof target
+  count remains 122; the adequacy class counts are now 8 adequate finite-record,
+  47 useful-but-too-narrow, 19 richer-semantics-needed, 32 executable-tests-needed,
+  10 empirical/baseline-tests-needed, and 6 research-agenda-until-artifact-import.
+- This does not promote any Appendix C or chapter core claim, implement a
+  learned router, prove routing accuracy, measure route quality, enforce
+  authority in a deployed runtime, replay MoECOT, validate specialist quality,
+  create a benchmark result, or approve any reader, ebook, PDF, DOCX, or audio
+  artifact.
+
 ## 2026-06-30 - Procedural memory loop harness
 
 - Added `python3 scripts/validate_procedural_memory_loop.py`, a
@@ -19,7 +46,7 @@
   readiness, repository map, README, and v0.2 manuscript status.
 - Moved the two Procedural Memory proof targets in the proof adequacy review
   from `needs executable tests first` to `useful but too narrow`. The proof
-  target count remains 122; the adequacy class counts are now 8 adequate
+  target count remained 122; the adequacy class counts at that point were 8 adequate
   finite-record, 45 useful-but-too-narrow, 19 richer-semantics-needed, 34
   executable-tests-needed, 10 empirical/baseline-tests-needed, and 6
   research-agenda-until-artifact-import.

@@ -128,6 +128,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Tool abstraction test | implemented | passes via synthetic procedural memory loop harness; no generated-tool correctness claim |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Verified tool regression test | implemented | passes via synthetic procedural memory loop harness; no deployed regression-quality or routing claim |
 | `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Specialist routing accuracy test | planned | not run |
+| `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Routing decision lease harness | implemented | passes via synthetic routing decision lease harness; no learned-router, route-quality, MoECOT replay, or deployed authority-enforcement claim |
 | `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Authority-bounded routing test | implemented | validated locally by synthetic fixtures; deployed router enforcement not run |
 | `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | Fallback route test | implemented | validated locally by synthetic fixtures; live fallback routing not run |
 | `routing-heads-and-specialist-cores` | Routing Heads and Specialist Cores | MoECOT source-ingestion gate | planned | not run |

@@ -5443,6 +5443,13 @@
           "codex_tests": [
             "Specialist routing accuracy test",
             {
+              "name": "Routing decision lease harness",
+              "purpose": "Check synthetic route leases for least-capable adequate selection, overprivileged specialist rejection, readiness fallback, expired-lease residualization, and MoECOT source-boundary non-claims.",
+              "status": "implemented by routing decision lease harness; validated locally; no learned-router or routing-quality claim",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic routing decision lease harness; no learned-router, route-quality, MoECOT replay, or deployed authority-enforcement claim"
+            },
+            {
               "name": "Authority-bounded routing test",
               "purpose": "Check that a selected route cannot exceed the readiness gate authority scope or use a blocked route during canary/default promotion.",
               "status": "implemented by readiness/residual gate harness; validated locally; deployed router enforcement not run",
