@@ -102,7 +102,7 @@ REQUIRED_FRAGMENTS = (
     "Every decision record should name the reviewed package",
     "one-skeleton destination judgment",
     "apply only one merge or fold package per commit.",
-    "Remaining fold candidates | Produce fold dispositions before any manifest or reader-work dependency.",
+    "Fold-disposition candidates | Execute fold, revise, defer, or reject/retain.",
     "Compression and residual honesty | `review_ready`",
     "Intent and executable contracts | `review_ready`",
     "Static context ABI | `review_ready`",

@@ -1,5 +1,45 @@
 # Changelog
 
+## 2026-06-29 - Runtime adapters curated reader prose pass
+
+- Added a drafting-only curated reader chapter for
+  `runtime-adapters-tool-permissions-and-human-approval` at
+  `editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd`.
+- Added `docs/curated_reader_runtime_adapters_prose_pass.md` to record the
+  reader promise, curation scope, meaning-preservation checks, non-claims, and
+  remaining release blockers for the pass.
+- Updated the curated reader manifest, reconciliation report, roadmap, reader
+  review matrix, README, repository map, release-edition plan, v1 status
+  snapshot, edition READMEs, and validation strings from nineteen to twenty
+  drafting-only curated chapters and from twelve to thirteen
+  curated-manuscript candidates.
+- This does not change the live AI/research chapter, alter Appendix C, promote
+  support states, claim a deployed runtime adapter service, claim sandbox
+  isolation, claim approval-service behavior, claim secret-handle safety, claim
+  live effect receipt validation, claim rollback execution, claim incident
+  response, claim runtime security, claim benchmark performance, claim Talos
+  runtime behavior, claim MoECOT runtime reproduction, claim ReAct
+  reproduction, claim Simplex-level runtime assurance, claim Copilot-style
+  runtime monitoring, claim proof-carrying-code enforcement, approve reader
+  artifacts, execute a chapter merge or fold, change chapter count, or create
+  EPUB, DOCX, PDF, HTML, audio, or audio-embedded EPUB release artifacts.
+
+## 2026-06-29 - Consolidation decision queue refresh
+
+- Re-reviewed the latest chapter re-consolidation idea and kept its core
+  direction: reduce repeated chapter skeletons through governed consolidation,
+  not deletion, not a fixed chapter-count target, and not an immediate
+  `book_structure.json` edit.
+- Updated `docs/v1_x_beyond_sota_roadmap.md` and
+  `docs/chapter_consolidation_sequence.md` so the next consolidation action is
+  review and execute/revise/defer/reject decisions for existing review-ready
+  merge packages and existing fold-disposition candidates, not more abstract
+  planning or redundant fold packaging.
+- This does not execute a merge or fold, change the 54-chapter manifest, alter
+  Appendix C, promote support states, approve reader artifacts, or create
+  proof, test, source, benchmark, external-review, ebook, PDF, DOCX, audio, or
+  release evidence.
+
 ## 2026-06-29 - Labor OS curated reader prose pass
 
 - Added a drafting-only curated reader chapter for

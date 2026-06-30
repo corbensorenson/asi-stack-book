@@ -1,0 +1,344 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: runtime-adapters-tool-permissions-and-human-approval
+generated_baseline_ref: build/reader_edition/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd
+live_source_ref: chapters/runtime-adapters-tool-permissions-and-human-approval.qmd@c28d894f1
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Runtime Adapters, Tool Permissions, and Human Approval
+
+An AI system becomes dangerous at the boundary where thought turns into
+effect.
+
+Before that boundary, a model may be wrong, persuasive, confused, or useful
+without changing the world. After that boundary, it can write files, call
+services, send messages, deploy code, spend money, use credentials, move
+hardware, or alter an institutional record. The stack therefore needs a
+specific object at this edge: a runtime adapter.
+
+A runtime adapter is not just a tool wrapper. It is a capability lease for an
+external effect. It decides which typed job may use which capability, against
+which target, in which sandbox, under which approval, with which authority
+handle, producing which receipt, rollback path, residual, and evidence record.
+
+The design goal is simple: no external effect should be treated as just
+another thought.
+
+## Problem
+
+Plans become real-world effects only through tools, runtimes, deployment
+adapters, and approval gates.
+
+Labor OS turns accepted work into typed jobs. Artifact graphs preserve the
+history of work products. But neither one should directly touch the world.
+The runtime adapter is the narrow edge where a bounded job receives a bounded
+authority lease.
+
+This matters because tools are not neutral. A file edit may destroy evidence.
+An API call may expose data. A deployment may change a public system. A
+message may create obligations. A payment may move money. A credential may
+open a channel the model should never see. A hardware action may create
+physical risk. Those effects need a different control surface than ordinary
+reasoning.
+
+The adapter boundary is where the stack stops asking only "is this a good
+idea?" and starts asking "is this action authorized, scoped, reversible,
+auditable, and safe enough to attempt?"
+
+## Why Tool Calling Is Not Enough
+
+Tool calling without a permission and approval model turns reasoning errors
+into side effects.
+
+A tool call is often presented as a convenience: the model needs information,
+so it calls search; it needs to edit code, so it calls the filesystem; it
+needs to ship something, so it calls a deployment path. But a tool call is an
+authority transfer. It gives cognition a route into external state.
+
+External literature gives useful comparison points. ReAct connects reasoning
+with actions and observations. Runtime-assurance systems such as Black-Box
+Simplex show that advanced controllers can be wrapped by safety-oriented
+switching logic. Runtime monitors such as Copilot show another tradition of
+checking behavior while systems run. Proof-carrying code and Dafny point to
+checkable obligations before code is trusted. Task-and-motion planning and
+behavior trees expose action boundaries in robotics. These are orientation
+sources, not local reproduction claims. This repository has not imported their
+proofs, reproduced their benchmarks, or built an adapter assurance case from
+them.
+
+The ASI Stack's adapter claim is narrower: every external effect should pass
+through a record that exposes capability, approval, receipt, rollback, and
+residual state.
+
+## Core Claim
+
+Runtime adapters should enforce typed permissions, sandboxing, human approval,
+and post-action evidence capture. In the live book, this claim remains a
+design rationale at `argument` support.
+
+Talos supplies controlled runtime and approval discipline. VIEA supplies the
+intent-to-runtime feedback boundary. Ladon and the Manhattan Protocol supply
+handle-mediated authority and secret isolation. GenesisCode supplies
+capability-mediated effects and deterministic effect-log discipline. Software
+Magic Grimoire supplies guarded workflow language. Field of God AI
+Constitution supplies consent, reversibility, least sufficient power, risk
+tiers, auditability, and no self-authorization. Theseus Operator OS supplies
+operator-visible runtime control. MoECOT remains implementation-reference
+context only until runtime artifacts, logs, replay records, or benchmark
+records are imported and inspected.
+
+The current repository validates a `runtime_adapter_invocation` fixture,
+implements finite Lean predicates for adapter permission and high-impact
+approval rejection, and runs a synthetic runtime-adapter permission harness
+over typed jobs, adapter invocations, and authority-use receipts. That is
+record-gate evidence. It is not deployed adapter execution, sandbox isolation,
+live approval-service behavior, live rollback execution, secret-handle safety,
+runtime security, Talos runtime behavior, MoECOT runtime reproduction, or a
+benchmark result.
+
+## Mechanism
+
+The adapter converts a typed job request into a scoped effect lease.
+
+```{mermaid}
+flowchart LR
+  Job["Typed job"] --> Contract["Adapter contract"]
+  Contract --> Capability["Capability check"]
+  Capability --> Handle["Authority / secret handle"]
+  Handle --> Approval{"Approval required?"}
+  Approval -- "yes" --> Human["Scoped approval record"]
+  Approval -- "no" --> Lease["Effect lease"]
+  Human --> Lease
+  Lease --> Invoke["Sandboxed invocation"]
+  Invoke --> Receipt["Effect receipt"]
+  Receipt --> Rollback["Rollback handle or residual"]
+  Rollback --> Evidence["Artifact graph / evidence ledger"]
+  Receipt --> Incident["Incident or audit path"]
+```
+
+The typed job names the intended work. The adapter contract names the target
+type, requested capability, sandbox mode, input and output contract, approval
+requirement, risk tier, and evidence obligations. Permission checks decide
+whether the parent job is allowed to request that adapter capability. Authority
+handles remain outside model-visible context unless a policy and approval
+path authorizes their use.
+
+If approval is required, the approval must be scoped. It should name the
+target, risk tier, duration, allowed reuse, revocation path, approving role,
+and audit references. A human "yes" to one deployment, message, payment,
+credential use, or hardware action is not a permanent license for future
+similar actions.
+
+If the adapter runs, it returns an effect receipt. The receipt says what was
+requested, what was approved, what was invoked, what changed, what verified,
+what failed, what can be rolled back, what cannot be undone, and what evidence
+or incident trail now exists.
+
+## Effect Receipts
+
+The effect receipt is the adapter's most important artifact.
+
+A successful API response is not the same as a successful task. It may prove
+only that the call returned. It does not prove that the call was authorized,
+safe, useful, reversible, complete, or aligned with the parent plan.
+
+The receipt should therefore separate:
+
+- the job request;
+- the adapter capability;
+- the permission basis;
+- the approval record;
+- the authority handle;
+- the sandbox mode;
+- the pre-state reference;
+- the post-state reference;
+- the external side effects;
+- the verification references;
+- the rollback handle;
+- the irreversible residuals;
+- the incident references;
+- the audit references;
+- the support-state effect;
+- the non-claims.
+
+This is how the stack avoids receipt laundering. A tool call can succeed while
+verification remains incomplete. A deployment can succeed while rollback is
+missing. A message can be sent while residual obligations remain. The receipt
+keeps those distinctions visible.
+
+## Interfaces
+
+Runtime work reaches the world through the Runtime Adapter Invocation.
+
+Execution owns adapters. Security mediates authority handles and secrets.
+Human approval supplies scoped authorization. Evidence records effect
+receipts, rollback handles, irreversible residuals, incident references, and
+deployment outcomes. Procedural memory later examines repeated traces only
+after the adapter record says what actually happened.
+
+A useful adapter invocation record names:
+
+- `invocation_id`
+- `invocation_state`
+- `job_id`
+- `adapter_id`
+- `target_type`
+- `capability`
+- `permission_required`
+- `sandbox_mode`
+- `impact_class`
+- `risk_tier`
+- `approval_required`
+- `approval_record`
+- `approval_scope`
+- `approval_expiry`
+- `authority_handle`
+- `effect_lease`
+- `effect_receipt`
+- `pre_state_ref`
+- `post_state_ref`
+- `external_side_effects`
+- `verification_refs`
+- `rollback_handle`
+- `irreversible_residuals`
+- `incident_refs`
+- `audit_refs`
+- `residuals`
+- `support_state_effect`
+- `non_claims`
+
+The adapter should be able to say no. Denial is not a failure of intelligence.
+It is the point of the boundary when permission, approval, sandboxing,
+rollback, or evidence is missing.
+
+## Invariants
+
+No adapter executes beyond granted scope.
+
+High-impact actions require current approval.
+
+Approval scope expires and does not authorize unrelated reuse.
+
+Authority handles are not exposed to model-visible context merely because a
+tool request exists.
+
+Rollback handles are captured when available, and irreversible residuals are
+declared when rollback is unavailable.
+
+Effect receipts separate request, approval, execution, verification, rollback,
+residual, and support-state effect.
+
+These invariants describe the desired boundary. The repository currently
+checks finite record predicates and synthetic fixtures; it does not enforce
+these invariants in a deployed adapter service.
+
+## Failure Modes
+
+Tool overreach occurs when an adapter performs beyond the granted permission
+or target.
+
+Approval bypass occurs when high-impact action proceeds without a current,
+scoped approval record.
+
+Approval laundering occurs when a narrow approval is reused as broad
+authorization for similar but unapproved effects.
+
+Receipt laundering occurs when a successful tool response is treated as
+verified task success.
+
+Secret-handle leakage occurs when authority meant to stay opaque becomes
+model-visible context.
+
+Rollback fiction occurs when the record claims reversibility without an actual
+rollback path or without naming irreversible residuals.
+
+Each failure should block dispatch, force escalation, create an incident
+record, or leave a residual that future ledgers cannot ignore.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a runtime-adapter invocation schema,
+public fixtures, finite permission and approval predicates, and a synthetic
+cross-record harness.
+
+The repository currently has that record surface. The fixture validates
+invocation state, impact class, risk tier, approval scope and expiry, effect
+lease, pre/post state refs, external side effects, verification refs,
+irreversible residuals, incident and audit refs, support-state effect, and
+non-claims. `AsiStackProofs.RuntimeAdapters` proves finite predicates that a
+valid invocation requires the parent job permission list to include the
+adapter capability and that a high-impact unapproved invocation is rejected.
+`scripts/validate_runtime_adapter_permissions.py` checks synthetic typed-job,
+adapter-invocation, and authority-use-receipt consistency for permissions,
+approval gates, expiry markers, receipts, rollback handles, irreversible
+residuals, and authority receipt alignment.
+
+That implementation is useful, but it remains a record-gate harness. It does
+not execute a tool, run a sandbox, mediate a real secret, conduct a live human
+approval workflow, validate a live effect receipt, execute rollback, or prove
+tool safety.
+
+The next honest slice would run one deliberately small adapter fixture end to
+end in a safe local environment: a low-impact local write with approval not
+required, a high-impact dry-run deployment requiring approval, a stale-approval
+negative case, a missing-permission negative case, and an irreversible-effect
+record that is rejected unless residuals are explicit.
+
+## Beyond the State of the Art
+
+The mature endpoint is a capability firewall for AI effects.
+
+In that endpoint, tools are not ambient functions. A typed job receives a
+scoped, expiring effect lease only after the stack checks the target,
+capability, sandbox, authority handle, approval requirement, risk tier,
+pre-state, expected post-state, rollback path, evidence obligations, and
+active governance constraints.
+
+The adapter service can cover documents, code, APIs, services, databases,
+deployments, messages, payments, credentials, hardware, fabrication, robotics,
+and organizational workflows. Each target family can define its own effect
+receipt, rollback semantics, incident path, and approval policy while still
+sharing the same core adapter grammar.
+
+The product-level endpoint is not faster tool calling. It is lease-bound
+action: a system where every external effect carries a permission basis,
+approval record, authority boundary, sandbox mode, receipt, verification
+trail, rollback or residual record, and evidence-state effect.
+
+That endpoint remains unimplemented here. The live claim stays at `argument`
+until adapter harnesses, sandbox checks, approval workflows, secret-handle
+tests, rollback records, effect-receipt validation, negative controls,
+benchmarks, security reviews, and public-safe runtime traces justify a
+stronger state.
+
+## Evidence Boundary
+
+This chapter argues for capability-mediated external effects. It does not
+claim that the ASI Stack can safely use arbitrary tools.
+
+Current evidence consists of source synthesis, passage-reviewed source
+mappings, public schemas and fixtures, finite Lean predicates, and a synthetic
+runtime-adapter permission harness. Those artifacts support the shape of the
+control surface. They do not prove deployed adapter behavior, sandbox
+isolation, approval-service correctness, secret-handle safety, live effect
+receipt validity, rollback execution, incident response, benchmark
+performance, security behavior, Talos runtime behavior, MoECOT runtime
+reproduction, ReAct reproduction, Simplex-level assurance, Copilot-style
+runtime monitoring, or proof-carrying-code enforcement.
+
+The adapter exists to keep authority from leaking through convenience. The
+chapter preserves the same discipline about its own evidence.
+
+## Handoff
+
+Runtime adapters produce the receipts that make repeated tool use learnable.
+But repetition alone is not memory.
+
+Procedural Memory and Cognitive Loop Closure takes adapter traces and asks
+which patterns can be safely abstracted, parameterized, verified, registered,
+monitored, and retired. The handoff is deliberately strict: a pattern becomes
+memory only when its authority scope, failures, regressions, residuals, and
+retirement triggers are visible.

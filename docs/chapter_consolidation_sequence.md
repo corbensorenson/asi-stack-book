@@ -182,7 +182,7 @@ Use this rubric before any non-pilot consolidation package:
 
 Do not create more destination drafts for packages that are already
 `review_ready`. The next consolidation work should record decisions against
-the existing packages, then package the remaining fold candidates. A
+the existing review-ready merge packages and fold-disposition candidates. A
 review-ready package moves to `executed`, `deferred_for_release`, or
 `rejected_or_retained` only through a recorded decision; a revised package stays
 blocked until the revision is reviewed.
@@ -196,7 +196,7 @@ blocked until the revision is reviewed.
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep transaction/snapshot/taint and verification-bandwidth chapters standalone unless later review changes artifact ownership. |
 | 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep `claim-ledgers-and-belief-revision` as the durable belief-revision substrate. |
 | 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep `cognitive-compilation-and-semantic-ir` as the semantic-IR and lowering-receipt layer. |
-| 8 | Remaining fold candidates | Produce fold dispositions before any manifest or reader-work dependency. | MoECOT runtime, simulation fidelity, and semantic representation now have fold dispositions; each still needs a reviewed execute, revise, defer, or reject/retain decision before any manifest edit. |
+| 8 | Fold-disposition candidates | Execute fold, revise, defer, or reject/retain. | MoECOT runtime, simulation fidelity, and semantic representation already have fold dispositions; the next work is review and decision, not more packaging, before any manifest edit. |
 
 Every decision record should name the reviewed package, reviewer or review
 source, one-skeleton destination judgment, claim/source/proof/reader impact,
