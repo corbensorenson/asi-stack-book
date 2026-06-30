@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 38,
+    "curated_manuscript_candidate": 39,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -263,10 +263,13 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_i_full_review_completion.md#decisions"
+        "docs/reader_part_i_full_review_completion.md#decisions",
+        "docs/curated_reader_governance_rights_prose_pass.md",
+        "docs/chapter_consolidation_release_stability_review.md"
       ],
       "review_notes": "Full generated-reader chapter-text review recorded for the governance-rights chapter. Audit, exit, fork, dissent, redaction, appeal, rights-preservation receipts, and safety-limited denial paths remain intact; no additional reader-only overlay is needed.",
       "release_blockers": [

@@ -1,0 +1,315 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: governance-rights-fork-exit-and-audit
+generated_baseline_ref: build/reader_edition/chapters/governance-rights-fork-exit-and-audit.qmd
+live_source_ref: chapters/governance-rights-fork-exit-and-audit.qmd@761aa06dc
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Governance Rights: Fork, Exit, and Audit
+
+A right becomes real at the moment it becomes inconvenient.
+
+The previous chapter gave unresolved value conflict a durable record. That is
+not enough. A record can exist and still be trapped inside the system that
+created it. The affected person may be unable to inspect it, challenge it,
+leave with enough continuity to keep working, or fork the project without
+losing the very evidence that justified dissent.
+
+Governance rights are the layer that prevents moral residuals from becoming
+decorative. Audit, exit, fork, appeal, and dissent are not only ideals. In the
+ASI Stack they are interfaces: request paths, receipts, evidence bundles,
+redaction rules, preservation obligations, appeal routes, and safety limits.
+
+The test is practical. Does the right still work when the system operator
+would rather it did not? If a policy update, memory migration, model
+replacement, or governance transition can quietly remove the path, the right
+was never part of the architecture. It was a sentence in a policy document.
+
+## Problem
+
+Powerful AI infrastructure needs rights and mechanisms that prevent governance
+lock-in and hidden control.
+
+The stack is meant to plan, remember, reason, route work, use tools, revise
+beliefs, and improve its own components. That makes governance a runtime
+problem. A person should not have to trust the same opaque authority that made
+the contested decision, holds the logs, controls the export path, defines the
+appeal process, and decides whether a fork is allowed.
+
+Value conflict makes this sharper. If a system records disagreement but keeps
+the record behind one authority boundary, it has not made disagreement
+contestable. It has archived dissent in a room the affected party cannot
+enter.
+
+The chapter's source family supplies the vocabulary. Ethica Mechanica gives
+the strongest reviewed lineage for contestable recursive governance, public
+correction, agency, institutional memory, fork, exit, audit, and hard-coded
+rights. Coherence Exchange contributes useful connector-side framing around
+fork, exit, audit, contestability, verification supply chains, and governance
+interfaces, but it remains source-note mapped rather than line-addressed in a
+local raw cache here. Alignment Field and the AI Constitution supply
+non-domination, agency, consent, reversibility, auditability, least sufficient
+power, and self-improvement review constraints. Ladon/Manhattan contributes
+the authority-boundary lesson: credential use, permission lookup, and
+execution compartments have to be inspectable without revealing the secrets
+they protect. Spinoza and UAT contribute claim-revision and adversarial-review
+discipline.
+
+Those sources do not prove that this repository has built a legitimate
+institution. They justify a design requirement: governance rights need
+technical form.
+
+## Why existing approaches are insufficient
+
+Transparency is too weak.
+
+A system can show an explanation while withholding the logs that matter. It
+can publish a policy while hiding the appeal path. It can permit exit while
+keeping the memory, provenance, tools, identity, or project graph that makes
+exit materially usable. It can permit fork while discarding safety obligations
+or source lineage. It can allow dissent while making dissent impossible to
+carry into future decisions.
+
+That failure is not hypothetical. Any sufficiently complex platform can turn
+administration into control. A migration drops older logs. A new policy
+changes appeal semantics. A replacement implementation removes an export hook.
+A secret-management layer authorizes a tool call but leaves the affected user
+unable to inspect who used the authority and why. Each event can look like
+ordinary maintenance unless the rights layer names it as a preservation
+failure.
+
+External alignment and governance literature helps bound the claim. The
+corrigibility and off-switch sources show why human correction channels cannot
+be treated as optional afterthoughts. Collective Constitutional AI gives a
+public-input constitutional baseline, but one-time principle sourcing does not
+replace runtime appeal, audit, exit, or fork interfaces. Contestable AI by
+design gives a governance comparator for challenge and review, but this
+repository has not implemented that framework or validated institutional
+redress. These are comparators, not evidence that the ASI Stack already
+provides legal rights, deployed portability, or real governance legitimacy.
+
+The insufficiency is therefore precise: governance language without material
+routes is not a right. It is an aspiration.
+
+## Core Claim
+
+Fork, exit, audit, dissent, and contestability should be treated as technical
+governance interfaces, not only political ideals.
+
+This remains an architectural argument. The live AI/research chapter keeps the
+core claim at `argument` support. The source notes, schema, synthetic fixture
+harness, and Lean module show that the project can model certain record
+shapes and finite preservation gates. They do not prove institutional
+governance rights, legal rights, deployed runtime enforcement, real fork or
+exit usability, reviewer independence, source interpretation adequacy,
+redaction quality, or deployed contestability.
+
+The important word is "interface." An interface has a caller, a scope, an
+artifact, a response, an error state, and a contract for what happens next. A
+governance right should be held to the same standard.
+
+## Mechanism
+
+The rights layer creates a Governance Right Record whenever someone exercises
+or preserves audit, exit, fork, appeal, or dissent.
+
+The record names the right holder, the right type, the scope, the requested
+material, the available material, the withheld material, the safety
+constraints, the access path, the redaction or denial reason, the appeal path,
+the expiry or revisit condition, the challenged-party independence rule, the
+preservation obligation, and the receipt references.
+
+That is the difference between a promise and a route. If audit is granted, the
+record says which artifacts were made available. If material is redacted, the
+record says what was withheld and why. If exit is requested, the record says
+what portable bundle or snapshot exists. If a fork is unsafe, the record says
+which safety, privacy, source, or obligation boundary blocked it and how the
+request can be reviewed. If dissent is preserved, the record names how it will
+travel into later governance decisions.
+
+```{mermaid}
+flowchart LR
+  Request["Rights request"] --> Record["Governance Right Record"]
+  Record --> Audit["Audit artifacts"]
+  Record --> Exit["Exit/export route"]
+  Record --> Fork["Fork boundary"]
+  Record --> Dissent["Dissent channel"]
+  Record --> Redaction["Withheld material and reason"]
+  Audit --> Receipt["Rights receipt"]
+  Exit --> Receipt
+  Fork --> Receipt
+  Dissent --> Receipt
+  Redaction --> Receipt
+  Receipt --> Check["Preservation check"]
+  Check -- "usable and safe" --> Proceed["Transition may proceed"]
+  Check -- "missing, unsafe, or captured" --> Review["Block, residualize, or escalate"]
+  Proceed --> Ledger["Evidence and governance ledger"]
+  Review --> Ledger
+```
+
+The preservation check is where rights become operational. A governance
+transition may proceed only if the relevant rights survive it. Missing audit
+paths, unsafe forks, redaction without appeal, removed protected rights, or
+missing exit capability route to review or residualization rather than silent
+promotion.
+
+This layer also prevents capture by record custody. The challenged authority
+can participate in review, but it cannot be the only keeper of the record,
+denial reason, appeal path, or export state. A right controlled solely by the
+party it constrains is too easy to erase.
+
+## Interfaces
+
+The minimum Governance Right Record carries these fields:
+
+- `right_id`
+- `right_type`
+- `request_state`
+- `holder`
+- `scope`
+- `required_artifacts`
+- `material_available`
+- `material_withheld`
+- `safety_constraints`
+- `access_path`
+- `denial_or_redaction_reason`
+- `appeal_path`
+- `expiry_or_revisit`
+- `challenged_party_independence`
+- `preservation_rule`
+- `preservation_obligation`
+- `receipt_refs`
+- `test_hook`
+- `non_claims`
+
+Governance issues rights. Memory, security, and execution layers produce the
+artifacts that make rights inspectable. Stable Capability Fields preserve
+rights across replacement. Evidence ledgers record whether the right was
+materially usable rather than merely declared.
+
+Rights outcomes need separate states. Access failure is not the same as
+justified denial. Redacted access is not the same as full access. Partial
+export is not the same as portable export. A contested decision is not the
+same as preserved dissent. If all non-success states collapse into refusal,
+the system cannot be audited.
+
+The interface standard is material usability. A declared audit right is weak
+if records are missing, unreadable, unauthenticated, or held only by the
+challenged party. A declared exit right is weak if the export omits the state
+needed to continue elsewhere. A declared fork right is dangerous if it
+silently drops safety obligations, private data boundaries, source lineage, or
+redaction constraints.
+
+## Invariants
+
+Audit records cannot be silently deleted.
+
+Exit paths remain materially usable.
+
+Fork rights do not bypass safety constraints.
+
+The challenged authority cannot be the only keeper of the record, denial
+reason, appeal path, or export state.
+
+Rights attach to the governed relationship, not to one convenient
+implementation. A user should not lose audit, appeal, export, or fork paths
+because a model, memory system, policy engine, or steward agent was replaced.
+If the replacement cannot carry the rights receipt forward, the replacement is
+not ready for default use.
+
+The safety side matters just as much. A right is not a permission to leak
+secrets, expose private data, bypass source obligations, or copy dangerous
+tools. A safe denial can be legitimate. The requirement is that denial becomes
+an inspectable artifact rather than a disappearance.
+
+## Failure modes
+
+Governance capture occurs when one authority controls policy, logs, appeal,
+and revision.
+
+Data hostage-taking converts dependency into control. A person may technically
+leave, but the system keeps the only usable memory, provenance, artifact
+graph, or source context.
+
+Opaque policy updates turn governance into a moving target. The user can no
+longer tell which rules applied when the contested decision happened.
+
+Rights theater is the polite version of the same failure. The system publishes
+rights language, but logs, exports, redaction rules, appeal channels, and
+preservation hooks are unavailable when the right would constrain the system.
+
+Fork laundering is a special risk. A fork can preserve dissent, but it can
+also become an excuse to strip safety obligations, privacy constraints, or
+source lineage. Fork rights are valuable only when they carry obligations with
+the portable state.
+
+Review capture occurs when the appeal process exists but the record, evidence,
+or denial reason is still controlled by the challenged party.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a `governance_right_record` schema plus
+fixtures for audit, exit, fork, appeal, and dissent.
+
+The fixture suite should include one complete audit response, one justified
+redaction with an appeal path, one exit export with a portable state bundle,
+one fork request blocked because safety obligations cannot transfer, one
+preserved dissent record, and one invalid case where the challenged party is
+the only keeper of the appeal path.
+
+The current repository already has the schema, protocol fixture validation,
+the synthetic governance-rights harness, and finite Lean gates for audit/exit
+preservation, protected-right removal, constrained-fork review, redaction
+appeal, and missing-exit residualization. Those are useful controls. They
+validate record discipline in synthetic cases. They do not prove legal rights,
+institutional quality, actual access-path availability, redaction adequacy,
+deployed export behavior, real fork safety, or independent review.
+
+## Beyond the State of the Art
+
+The mature endpoint is contestability infrastructure for a self-improving
+stack.
+
+In that endpoint, every high-impact governance transition carries rights
+receipts. Policy updates preserve audit and appeal. Memory migrations preserve
+exit and export continuity. Capability replacement preserves protected rights
+rather than deleting old paths. Fork requests carry source, privacy, and safety
+obligations. Dissent can survive a decision and remain visible to later
+review, rollback, or constitutional revision.
+
+The system is not merely transparent. It is contestable under pressure. It can
+say what was requested, what was granted, what was withheld, why it was
+withheld, who can review it, what survives transition, and what remains
+residualized.
+
+That endpoint is not implemented here. It requires public-safe traces, richer
+fixtures, data-portability reviews, safety-limited fork scenarios, independent
+review records, and runtime artifacts before any stronger support state would
+be warranted. The current chapter names the architecture and the evidence path
+without claiming the institution already exists.
+
+## Summary
+
+Governance Rights: Fork, Exit, and Audit turns contestability into an
+engineering surface.
+
+The chapter's discipline is simple: make the right callable, make the response
+inspectable, make denial reviewable, make exit usable, make fork safe, and
+make dissent difficult to erase.
+
+The healthiest governance system is not one that never says no. It is one
+that can say no with a record, a reason, a boundary, and an appeal path, while
+preserving the rights that let people challenge or leave the system that made
+the decision.
+
+## Handoff
+
+Rights need stable targets. Stable Capability Fields follows because audit,
+exit, fork, rollback, and appeal cannot depend on a temporary implementation
+name that disappears during replacement. Stable fields give capabilities
+persistent identities, evaluator policies, evidence histories, and authority
+ceilings so governance rights can attach to what a capability is supposed to
+do, not merely to the current code path.

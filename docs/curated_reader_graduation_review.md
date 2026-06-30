@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 38
-- Curated chapter records: 38 drafting records for
+- Curated-manuscript candidates: 39
+- Curated chapter records: 39 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -35,6 +35,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `constitutional-alignment-substrate`,
   `agency-dignity-and-corrigibility`,
   `moral-uncertainty-and-value-conflict`,
+  `governance-rights-fork-exit-and-audit`,
   `security-kernel-and-digital-scifs`,
   `stable-capability-fields`,
   `capability-replacement-and-rollback`,
@@ -123,6 +124,7 @@ executing, rejecting, or authorizing the future Constitutional Alignment merge.
 | `constitutional-alignment-substrate` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `agency-dignity-and-corrigibility` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_constitutional_alignment_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed constitutional alignment, moral-correctness proof, Constitutional AI reproduction, public-input governance legitimacy, runtime policy engine, or manifest merge/fold decision is implied. |
 | `agency-dignity-and-corrigibility` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `constitutional-alignment-substrate` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_agency_dignity_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed agency preservation, dignity preservation, manipulation resistance, runtime corrigibility, intervention tolerance, shutdown compliance, Corrigibility proof reproduction, Off-Switch Game reproduction, high-impact approval quality, rollback execution, or manifest merge/fold decision is implied. |
 | `moral-uncertainty-and-value-conflict` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `governance-rights-fork-exit-and-audit` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_moral_uncertainty_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no moral correctness, solved moral uncertainty, classification quality, reviewer independence, tribunal quality, runtime policy behavior, deployed conflict handling, institutional legitimacy, external experiment reproduction, or manifest merge/fold decision is implied. |
+| `governance-rights-fork-exit-and-audit` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `moral-uncertainty-and-value-conflict` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_governance_rights_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no legal rights, institutional legitimacy, deployed governance rights, real audit availability, real export usability, data portability, fork safety, runtime enforcement, redaction quality, reviewer independence, public legitimacy, external framework reproduction, or manifest merge/fold decision is implied. |
 | `security-kernel-and-digital-scifs` | protected standalone security-boundary chapter outside the pending consolidation cluster; owns least-exposure, handle-lease, Digital SCIF, and authority-receipt reader vocabulary | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_security_kernel_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed security, sandbox-isolation, side-channel-resistance, prompt-injection-containment, OWASP-conformance, or NIST-zero-trust-implementation claim is implied. |
 | `stable-capability-fields` | protected standalone capability-identity chapter outside the pending consolidation cluster; owns field/implementation separation, qualification leases, route-validation boundaries, authority ceilings, and rollback obligations | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_stable_capability_fields_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed route validation, authority enforcement, replacement safety, rollback execution, SLSA workflow, SemVer checker, object-capability implementation, or MoECOT runtime reproduction claim is implied. |
 | `capability-replacement-and-rollback` | protected standalone replacement-control chapter outside the pending consolidation cluster; owns candidate/accepted replacement separation, regression floors, residual escrow, monitor windows, rollback receipts, and evaluator independence | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_capability_replacement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed replacement behavior, real regression-suite quality, monitor-window success, rollback execution, evaluator-integrity enforcement, authority enforcement, MoECOT runtime reproduction, or implemented-corrigibility claim is implied. |
@@ -185,7 +187,7 @@ true:
 
 ## Non-Claims
 
-- This review creates thirty-eight drafting-only curated reader chapter files for
+- This review creates thirty-nine drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.
