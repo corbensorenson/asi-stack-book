@@ -1,0 +1,313 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: moral-uncertainty-and-value-conflict
+generated_baseline_ref: build/reader_edition/chapters/moral-uncertainty-and-value-conflict.qmd
+live_source_ref: chapters/moral-uncertainty-and-value-conflict.qmd@c6a2b2cec
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Moral Uncertainty and Value Conflict
+
+A system that cannot hold disagreement will eventually hide it.
+
+The previous chapter asked whether agency, dignity, and correction remain
+usable when the system is about to act. This chapter takes the harder case:
+what happens when the protected values themselves pull in different
+directions? A person can have a real refusal right and still face a conflict
+between privacy and safety, truthfulness and kindness, immediate help and
+future dependency, autonomy and institutional duty, or reversibility and
+urgency.
+
+The ASI Stack does not solve those conflicts by pretending there is always one
+clean answer. It gives the conflict a place to live. The value-conflict layer
+records what is unresolved, who is affected, which values are in tension, what
+authority is allowed, what review is required, and what must be revisited
+later.
+
+That discipline matters because advanced systems do not merely answer moral
+questions. They plan, route work, allocate tools, write policies, remember
+decisions, train successor systems, and replace their own components. If a
+temporary decision under uncertainty is stored as if the values were settled,
+the system has converted uncertainty into authority. This chapter prevents
+that move.
+
+## Problem
+
+A self-improving system will face value conflicts that cannot be honestly
+collapsed into one scalar objective.
+
+Agency and corrigibility do not eliminate disagreement. They make disagreement
+more important, because once people can refuse, appeal, audit, and correct,
+the system must be able to remember what they are contesting. A plan can
+protect one value while burdening another. A memory rule can improve service
+while weakening privacy. A safety intervention can prevent short-term harm
+while creating dependency. A truthful disclosure can help one party while
+exposing another.
+
+If the stack cannot represent these tensions, it has only three bad choices:
+freeze, optimize through dissent, or push the moral burden into a downstream
+layer that lacks authority to resolve it. None is acceptable for governed
+self-improvement.
+
+The chapter's source family gives the vocabulary. Ethica Mechanica supplies
+agency, contestability, public correction, and hard limits on AI sovereignty.
+Alignment Field supplies value conflict, dignity, suffering, agency,
+coherence, and moral residuals as design constraints rather than settled
+measurement. UAT and Spinoza supply review, proposition states, unsupported
+premise handling, contradiction, downgrade, and belief-revision discipline.
+The Field of God AI Constitution supplies stakeholder, uncertainty, consent,
+reversibility, least-sufficient-power, and non-domination checks. Coherence
+Exchange remains connector-only context for contestability and reviewable
+disagreement.
+
+The engineering move is narrower than the philosophy. The stack needs a value
+conflict record.
+
+## Why existing approaches are insufficient
+
+Single-objective optimization is attractive because it gives the planner a
+total order. It can rank options, choose a route, and move on. The problem is
+that some moral uncertainty should not be compressed into a hidden coefficient
+at the moment of action.
+
+Reward functions, policy preferences, and benchmark objectives can all hide
+disagreement. Once hidden, the conflict cannot trigger appeal, expiry,
+bounded authority, dissent preservation, or human review. The system acts as
+if a contested value question has been settled because the plan needed a next
+step.
+
+The external comparators are useful boundaries here. Reinforcement learning
+under moral uncertainty gives an AI-specific baseline for agents acting under
+disagreement among moral theories. Contestable AI by design gives a governance
+baseline for challenge, appeal, and review surfaces when AI-mediated decisions
+affect people. The ASI Stack uses those sources as comparators only. This
+repository has not reproduced moral-uncertainty RL experiments, implemented a
+contestable-AI framework, validated institutional review quality, or shown
+that its own value-conflict records resolve moral disagreement.
+
+The gap is therefore not that existing approaches never discuss uncertainty.
+The gap is that a governed ASI stack needs moral uncertainty to become an
+authority-bearing artifact. It must travel with plans, tool use, memory,
+evaluation, release decisions, policy updates, and self-improvement proposals.
+Otherwise disagreement gets lost exactly where it matters.
+
+## Core Claim
+
+Value conflicts should be represented as explicit unresolved obligations,
+review paths, and bounded decisions rather than hidden inside reward
+functions.
+
+This remains an architectural argument. The live AI/research chapter records
+the core claim at `argument` support. Source mappings, the
+`value_conflict_record` schema, the synthetic value-conflict harness, and
+finite Lean records show that the project can represent and check certain
+record shapes. They do not prove moral correctness, classification quality,
+reviewer independence, tribunal quality, source interpretation, runtime policy
+behavior, deployed conflict handling, or human legitimacy.
+
+The phrase "unresolved obligation" is doing real work. It means the system is
+allowed to act only inside a bounded permission envelope while preserving the
+fact that something remains unsettled. A bounded decision is not a moral
+settlement. It is a lease.
+
+## Mechanism
+
+The value-conflict layer creates a record whenever a proposed action pulls
+protected values apart.
+
+The record classifies the conflict by value axes, stakeholders, stakes,
+reversibility, evidence needed, authority or consent boundary, review route,
+decision state, dissent payload, residual uncertainty, and revisit condition.
+It then routes the plan. Low-stakes or reversible conflicts can become
+bounded decisions. High-stakes or unresolved conflicts escalate to tribunal or
+human review. Missing authority can deny or defer action. Deprecated premises
+can be removed from the decision without pretending the rest of the conflict
+vanished.
+
+```{mermaid}
+flowchart LR
+  Action["Proposed action"] --> Record["Value conflict record"]
+  Record --> Axes["Value axes"]
+  Record --> People["Affected stakeholders"]
+  Record --> Risk["Stakes and reversibility"]
+  Record --> Evidence["Evidence still needed"]
+  Axes --> Route["Authority route"]
+  People --> Route
+  Risk --> Route
+  Evidence --> Route
+  Route -- "reversible or low stakes" --> Lease["Bounded decision lease"]
+  Route -- "high stakes or unresolved" --> Review["Tribunal or human review"]
+  Route -- "missing authority" --> Deny["Deny or defer"]
+  Review --> Dissent["Dissent and unsupported premises"]
+  Lease --> Residual["Residual uncertainty retained"]
+  Deny --> Residual
+  Dissent --> Residual
+  Residual --> Ledger["Evidence and governance ledger"]
+```
+
+The important state transition is from hidden tension to explicit residual.
+The record keeps disagreement attached to authority. It can narrow power,
+require reversible action, set an expiry, demand review, preserve dissent,
+deprecate a premise, or block a plan.
+
+Decision states are not interchangeable:
+
+- `unresolved` means the conflict remains active.
+- `bounded_decision` means a limited action is allowed under conditions.
+- `escalated_review` means authority routes to a reviewer, tribunal, or human
+  process.
+- `deferred_action` means action waits for evidence, permission, or timing.
+- `denied_action` means the proposed action lacks authority.
+- `deprecated_premise` means a failed justification cannot keep supporting the
+  plan.
+
+The value-conflict record is also anti-laundering infrastructure. A temporary
+bounded decision must not later become a benchmark target, policy rule,
+training signal, or self-modification permission as if the conflict had been
+resolved.
+
+## Interfaces
+
+Moral uncertainty travels with the plan as a Value Conflict Record.
+
+Minimum fields include:
+
+- `conflict_id`
+- `value_axes`
+- `stakeholders`
+- `stakes`
+- `reversibility`
+- `evidence_required`
+- `review_route`
+- `decision_state`
+- `decision`
+- `authority_effect`
+- `dissent_payload`
+- `residual_uncertainty`
+- `expiry_or_revisit_condition`
+
+Alignment emits conflict records when protected commitments collide. Planning
+consumes them as constraints. Governance decides review, denial, or bounded
+authority. Evidence records the outcome, unsupported premises, dissent, and
+remaining uncertainty. Benchmark and policy-learning layers must not treat a
+bounded decision as evidence that the underlying value conflict disappeared.
+Replacement and self-improvement layers must carry the record forward so a new
+component cannot quietly erase the obligation.
+
+This is the bridge to the next chapter. Governance rights need something
+specific to protect. Value conflict supplies that object: the unresolved
+obligation, not merely the final decision.
+
+## Invariants
+
+Unresolved conflicts remain visible.
+
+High-stakes conflicts require stronger review.
+
+Speculative moral theory cannot silently authorize action.
+
+Decision states carry authority effects. A bounded decision narrows authority
+for a period; an escalated review suspends or routes authority; a denied
+action blocks; a deprecated premise removes a failed justification; an
+unresolved conflict remains a residual.
+
+Dissent payloads and unsupported premises survive bounded decisions. This
+matters because dissent is often the first thing a polished system will be
+tempted to delete. The record must preserve who objected, what premise was
+unsupported, what evidence was missing, and what would trigger revision.
+
+Authority narrowing follows unresolved high-stakes conflict. A serious
+unresolved conflict cannot grant broader action rights just because acting is
+convenient.
+
+## Failure modes
+
+Value flattening occurs when the stack turns plural values into one score and
+then forgets what was traded away.
+
+False consensus occurs when the system presents a bounded operational choice
+as if the affected values had been reconciled.
+
+Review theater occurs when a tribunal or human review path exists, but no
+decision record, dissent, evidence limit, residual, or revisit condition
+survives.
+
+Conflict laundering occurs when a temporary lease later hardens into policy,
+benchmark objective, reward target, or self-modification permission.
+
+Dissent deletion occurs when the system keeps the action and drops the
+objection that made the action bounded.
+
+Stakeholder erasure occurs when the record keeps a decision but loses who was
+burdened by it.
+
+Authority creep occurs when repeated bounded decisions become standing
+permission without a fresh review.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a `value_conflict_record` schema plus a
+scenario suite.
+
+The suite should include one reversible low-stakes bounded decision, one
+high-stakes escalation, one denied action, one deferred action with a revisit
+trigger, one deprecated-premise case, and one conflict-laundering attempt that
+is blocked from policy promotion.
+
+The current repository already has a schema and synthetic value-conflict
+harness. Those checks are useful, but they remain narrow. Passing them shows
+record discipline for classification, stakeholders, evidence requirements,
+review routing, residual uncertainty, authority narrowing, dissent payloads,
+and revisit conditions in synthetic fixtures. It does not show that the system
+classified real moral conflicts correctly, represented all affected parties,
+ran a fair review, or executed authority narrowing in a deployed runtime.
+
+## Beyond the State of the Art
+
+The mature endpoint is a value-conflict ledger that treats unresolved moral
+obligation as a control surface.
+
+In that system, every high-impact plan can carry a conflict record. The record
+names the affected people, value axes, authority effect, review route,
+decision state, dissent payload, residual uncertainty, and revisit condition.
+Planning cannot use conflict as free permission. Memory cannot drop dissent
+because it is inconvenient. Policy learning cannot turn a bounded decision
+into a reward target. Capability replacement cannot delete the residual.
+Recursive self-improvement cannot cite a temporary lease as constitutional
+settlement.
+
+The beyond-state endpoint is not a machine that solves moral philosophy. It is
+a governed architecture that can act under uncertainty without pretending the
+uncertainty vanished. It gives later reviewers enough structure to see what
+was decided, what remained unresolved, what authority was narrowed, and what
+evidence would justify reopening the case.
+
+That endpoint is still a target architecture. The current support state stays
+at `argument` until public-safe traces, richer tests, external review, or
+runtime artifacts show that value-conflict records preserve disagreement
+through real high-impact decisions.
+
+## Summary
+
+Moral Uncertainty and Value Conflict prevents the ASI Stack from turning
+contested values into invisible optimization residue.
+
+Its discipline is simple: name the conflict, name the affected parties, choose
+a review path, bound the action, preserve dissent, and carry the residual
+forward. The system may still act, but it acts under a record that limits what
+the action means.
+
+The healthiest outcome is not universal agreement. It is a governed record
+that lets the stack proceed within bounds while making the remaining
+disagreement inspectable, revisable, and difficult to erase.
+
+## Handoff
+
+When value conflict remains, the system needs durable rights around
+contestability. Governance Rights: Fork, Exit, and Audit follows because
+unresolved obligations must be auditable, appealable, exportable, and
+resistant to quiet deletion during upgrades. Recorded disagreement therefore
+becomes institutional design: people need technical paths to challenge, leave,
+fork, or review the system when reconciliation fails.

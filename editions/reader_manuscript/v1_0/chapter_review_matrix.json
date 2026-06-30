@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 37,
+    "curated_manuscript_candidate": 38,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -238,12 +238,15 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_normative_full_review_pass.md#decisions"
+        "docs/reader_normative_full_review_pass.md#decisions",
+        "docs/curated_reader_moral_uncertainty_prose_pass.md",
+        "docs/chapter_consolidation_release_stability_review.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the value-conflict chapter. Stakeholder, dissent, bounded-lease, review-route, residual, and authority-effect boundaries remain intact; no additional reader-only overlay is needed.",
+      "review_notes": "First drafting-only curated reader prose pass completed under the release-stability consolidation caveat; reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and the future merge with governance-rights-fork-exit-and-audit is not executed, rejected, or authorized.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

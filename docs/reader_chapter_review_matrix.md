@@ -14,7 +14,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 |---|---:|
 | review_status:reviewed | 54 |
 | disposition:companion_note_candidate | 3 |
-| disposition:curated_manuscript_candidate | 37 |
+| disposition:curated_manuscript_candidate | 38 |
 | disposition:no_immediate_action | 54 |
 | disposition:reader_overlay_active | 20 |
 | release_blocker:format_artifact_not_reviewed | 54 |
@@ -32,7 +32,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part I - Foundations, Alignment, and Governance | `human-intent-as-a-formal-input` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `constitutional-alignment-substrate` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `agency-dignity-and-corrigibility` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part I - Foundations, Alignment, and Governance | `moral-uncertainty-and-value-conflict` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part I - Foundations, Alignment, and Governance | `moral-uncertainty-and-value-conflict` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `governance-rights-fork-exit-and-audit` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `stable-capability-fields` | reviewed | full_chapter_review | 0 | no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part I - Foundations, Alignment, and Governance | `capability-replacement-and-rollback` | reviewed | full_chapter_review | 0 | no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
