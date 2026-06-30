@@ -94,7 +94,7 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 54 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with thirty-two drafting-only curated chapter records and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with thirty-three drafting-only curated chapter records and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest: 54 core claims remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
 ## Operating Principles
@@ -1185,6 +1185,15 @@ Current status:
   54-to-44 manifest edit. The two useful pilot artifacts are review-ready
   destination chapter drafts written as one chapter with one skeleton, followed
   by a decision to execute, defer, or reject each merge.
+- The latest pasted consolidation recommendation reinforces the existing queue
+  rather than changing it: alignment/governance philosophy, compression and
+  residual honesty, intent/contracts, static context ABI, verification/review,
+  planning/DAG control, MoECOT runtime, simulation fidelity, and semantic
+  representation remain the packages to decide. The roadmap accepts the
+  recommendation's central rule that every accepted package must collapse
+  duplicated skeletons while preserving ideas as sections, subclaims, proof
+  hooks, source mappings, implementation horizons, reader paths, or explicit
+  no-promotion/retirement decisions.
 - `docs/chapter_consolidation_destination_draft_constitutional_alignment.md`
   now records the first review-ready destination draft for
   **Constitutional Alignment: Agency, Dignity, and Corrigibility**. It is
@@ -1307,7 +1316,7 @@ Acceptance bar:
 Current status:
 
 - `editions/reader_manuscript/v1_0/manifest.json` is now in `drafting` status
-  with thirty-two curated chapter records:
+  with thirty-three curated chapter records:
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -1333,6 +1342,7 @@ Current status:
   `living-book-methodology`,
   `open-research-agenda-and-bibliography-plan`,
   `personal-compute-hives-and-federated-edge-intelligence`,
+  `resource-economics-and-token-budgets`,
   `mathematical-and-search-substrates`,
   `coil-attention-cyclic-memory-and-recurrence-contracts`,
   `coilra-multicoil-rope-and-cyclic-mixers`,
