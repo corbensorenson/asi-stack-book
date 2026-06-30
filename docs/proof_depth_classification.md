@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 338 |
+| Theorem declarations classified | 343 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 217 |
+| Derived/decomposed theorem declarations | 222 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -93,7 +93,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 2 | 3 | 3 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 2 | 8 | 3 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -339,9 +339,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_adapter_without_approval_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `invocation_without_parent_permission_rejected` | derived_or_decomposed | no | uses contradiction, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `valid_invocation_has_required_permission` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `canary_substrate_without_complete_evidence_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_requires_passing_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_without_passing_evidence_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_record_includes_baseline_measured_target_and_falsification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_record_missing_required_field_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_without_passing_evidence_remains_non_core` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `unproven_qualified_substrate_rejected` | derived_or_decomposed | no | uses have, rw, simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `clean_authorized_use_is_allowed` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `inactive_lease_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `insufficient_clearance_blocks_protected_scif_entry` | derived_or_decomposed | no | uses cases, contradiction, rw |

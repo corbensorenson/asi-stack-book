@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-30 - Search substrate adoption-boundary proofs
+
+- Strengthened `AsiStackProofs.SearchSubstrates` with five derived
+  negative-case theorems: one rejects missing substrate-adoption fields, one
+  rejects an unproven substrate marked qualified, one rejects a qualified
+  substrate without passing evidence, one rejects consumer reliance on
+  unmeasured or blocked substrate axes, and one rejects canary promotion
+  without workload, baseline, negative-control, or result-report fields.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 343
+  theorem declarations, 121 direct/projection-style declarations, and 222
+  derived/decomposed declarations.
+- Updated the Mathematical and Search Substrates chapter, manifest test rows,
+  Appendix E, proof adequacy review, candidate status, v1.0/v1.x roadmap
+  surfaces, focus audit, and status snapshot validator. Appendix E now records
+  170 implemented rows, 1 partial row, and 110 planned rows. Refreshed the
+  v1.0 status manuscript scale to 168,499 chapter words excluding YAML and
+  176,043 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, run a substrate
+  A/B test, run a representation-efficiency benchmark, run a CoilMoECOT
+  benchmark, run a Mamba comparison, run a Circle substrate sidecar, run a
+  Theseus transfer consumer, prove substrate quality, prove routing quality,
+  prove compression quality, or approve any reader, ebook, PDF, DOCX, or audio
+  release artifact.
+
 ## 2026-06-30 - Cyclic mixer adoption-boundary proofs
 
 - Strengthened `AsiStackProofs.CyclicMixers` with five derived negative-case

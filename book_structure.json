@@ -7754,6 +7754,41 @@
           "minimal_implementation": "A technical-substrate appendix plan with experiment matrix and adoption gates.",
           "beyond_state_of_art": "Mathematical and search substrates need an adoption exchange before they can affect ordinary routes. It keeps unusual mathematics available for narrow specialist routes while making every adoption decision baseline-bound, falsifiable, consumer-gated, and reversible. In the mature substrate adoption exchange, mathematical substrates remain optional specialists until baseline-symmetric workloads show where they improve search, routing, compression, representation, and verifier workload without hiding tradeoffs.",
           "codex_tests": [
+            {
+              "name": "Required-field negative case",
+              "purpose": "Check that a substrate adoption record missing baseline refs, measured target, or falsification criterion rejects the finite adoption-field predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no substrate-quality claim",
+              "status": "implemented in AsiStackProofs.SearchSubstrates; no substrate adoption claim"
+            },
+            {
+              "name": "Unproven qualified-state negative case",
+              "purpose": "Check that an unproven substrate marked qualified cannot satisfy the finite non-core-state predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no core-substrate promotion claim",
+              "status": "implemented in AsiStackProofs.SearchSubstrates; no core-substrate promotion"
+            },
+            {
+              "name": "Qualified-without-evidence negative case",
+              "purpose": "Check that a qualified substrate with false passing-evidence rejects the finite core-adoption predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no empirical substrate result",
+              "status": "implemented in AsiStackProofs.SearchSubstrates; no empirical substrate result"
+            },
+            {
+              "name": "Consumer-axis negative case",
+              "purpose": "Check that consumer reliance on an unmeasured or blocked substrate axis rejects the finite consumer-axis predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no routing, compression, or reasoning-quality claim",
+              "status": "implemented in AsiStackProofs.SearchSubstrates; no axis-quality claim"
+            },
+            {
+              "name": "Canary evidence-packet negative case",
+              "purpose": "Check that canary substrate promotion missing workload, baseline, negative-control, or result-report fields rejects the finite canary-evidence predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no canary benchmark claim",
+              "status": "implemented in AsiStackProofs.SearchSubstrates; no canary benchmark result"
+            },
             "Baseline comparison test",
             "Representation efficiency test",
             "Falsification review",

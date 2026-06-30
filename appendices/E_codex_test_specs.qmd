@@ -204,6 +204,11 @@ No result is recorded here unless a test has actually been implemented and run.
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Fidelity declaration test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource-bound simulation sanity check | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Simulation approximation audit | planned | not run |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Required-field negative case | implemented | passes via Lean negative case; no substrate-quality claim |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Unproven qualified-state negative case | implemented | passes via Lean negative case; no core-substrate promotion claim |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Qualified-without-evidence negative case | implemented | passes via Lean negative case; no empirical substrate result |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Consumer-axis negative case | implemented | passes via Lean negative case; no routing, compression, or reasoning-quality claim |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Canary evidence-packet negative case | implemented | passes via Lean negative case; no canary benchmark claim |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Baseline comparison test | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Representation efficiency test | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Falsification review | planned | not run |

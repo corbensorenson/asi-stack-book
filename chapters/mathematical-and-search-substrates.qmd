@@ -4,7 +4,7 @@ chapter_id: "mathematical-and-search-substrates"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "genesiscode"
   - "temporal_coil_research"
@@ -21,7 +21,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all eleven assigned mathematical/search-substrate sources; support remains at argument until substrate A/B runs, representation-efficiency benchmarks, CoilMoECOT benchmarks, Circle substrate-sidecar evidence, Mamba comparisons, or accepted chapter-core evidence transitions exist."
-  - "The substrate_adoption_record fixture validates schema/example consistency for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, Circle substrate sidecar run, or Theseus transfer consumer run has been executed from this repo. The separate Circle external rope receipt slice does not validate substrate adoption."
+  - "The substrate_adoption_record fixture validates schema/example consistency for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; AsiStackProofs.SearchSubstrates implements finite-record adoption-field and promotion gates plus bounded negative cases for missing required fields, unproven qualified states, qualified states without passing evidence, unmeasured or blocked consumer-axis reliance, and incomplete canary evidence packets; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, Circle substrate sidecar run, or Theseus transfer consumer run has been executed from this repo. The separate Circle external rope receipt slice does not validate substrate adoption."
   - "Temporal Coil, Circle, and Theseus references include source-reported or local-project process/fixture context, but this repo did not rerun or import their artifacts as validated book evidence."
   - "TreeLLM and CoilLattice claims are treated as speculative representation-substrate proposals until a verified token format, implementation, compression result, reasoning benchmark, or grounding benchmark exists."
   - "Mamba is used only as external sequence-substrate context from the public arXiv abstract/metadata; no local Mamba training, serving, benchmark, routing, or downstream-quality result is implied."
@@ -36,13 +36,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-30 |
 | Primary source records | `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`, `ext_mamba_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`, `temporal_coil_research`; supporting: `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; variants/external literature: `ext_mamba_2023`; connector/recovery: `coilmoecot` |
 | Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; local raw-cache mappings exist for `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, and `simulation_scaling`; `coilmoecot` is connector/source-note reviewed because its raw cache is an auth-gate placeholder; Circle and Theseus mappings use pinned local-project references; `ext_mamba_2023` uses public arXiv abstract/metadata and a local source note; raw private source text is not published. |
-| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims; baseline comparison, representation-efficiency, sequence-substrate A/B, and falsification tests remain planned. |
+| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims; `AsiStackProofs.SearchSubstrates` implements finite adoption-field and promotion gates plus negative cases for missing required fields, unproven qualified states, qualified states without passing evidence, unmeasured or blocked consumer-axis reliance, and incomplete canary evidence packets; baseline comparison, representation-efficiency, sequence-substrate A/B, and falsification tests remain planned. |
 
 ## Drafting guardrail
 
@@ -250,12 +250,17 @@ This substrate-adoption gate is still an architectural proposal. The substrate c
 | Test | Purpose | Status |
 |---|---|---|
 | Substrate adoption record fixture validation | Validate that a candidate substrate records intended use, expected advantage, baselines, baseline obligations, negative controls, proof boundary, experiment requirements, consumer gate/policy, axis ledger, falsification condition, adoption state, routing-permission effect, fallback substrate, retirement or supersession path, support-state effect, residuals, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Required-field negative case | Prove that a substrate adoption record missing baseline refs, measured target, or falsification criterion rejects the finite adoption-field predicate. | implemented in `AsiStackProofs.SearchSubstrates.substrate_adoption_record_missing_required_field_rejected`; no substrate-quality claim |
+| Unproven qualified-state negative case | Prove that an unproven substrate marked qualified cannot satisfy the finite non-core-state predicate. | implemented in `AsiStackProofs.SearchSubstrates.unproven_qualified_substrate_rejected`; no core-substrate promotion claim |
+| Qualified-without-evidence negative case | Prove that a qualified substrate with false passing-evidence rejects the finite core-adoption predicate. | implemented in `AsiStackProofs.SearchSubstrates.qualified_substrate_without_passing_evidence_rejected`; no empirical substrate result |
+| Consumer-axis negative case | Prove that consumer reliance on an unmeasured or blocked substrate axis rejects the finite consumer-axis predicate. | implemented in `AsiStackProofs.SearchSubstrates.consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`; no routing, compression, or reasoning-quality claim |
+| Canary evidence-packet negative case | Prove that canary substrate promotion missing workload, baseline, negative-control, or result-report fields rejects the finite canary-evidence predicate. | implemented in `AsiStackProofs.SearchSubstrates.canary_substrate_without_complete_evidence_packet_rejected`; no canary benchmark claim |
 | Baseline comparison test | Check that adoption records name ordinary baselines before quality claims. | planned; not run |
 | Representation efficiency test | Check whether a substrate improves a bounded representation task against a baseline. | planned; not run |
 | Falsification review | Check that the record names what would count against adoption. | planned; not run |
 | Sequence-substrate A/B comparison test | Check whether a state-space or recurrent sequence substrate improves a declared workload against a transformer baseline with verifier adequacy and fallback recorded. | planned; not run |
 
-The implemented row validates fixture/schema consistency only. The remaining rows require concrete workloads, baselines, negative controls, and run artifacts; they are not reported substrate results. When a substrate test is implemented, this chapter should link to the command, fixture, environment notes, workload, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented rows validate fixture/schema consistency and finite-record negative cases only. The remaining rows require concrete workloads, baselines, negative controls, and run artifacts; they are not reported substrate results. When a substrate test is implemented, this chapter should link to the command, fixture, environment notes, workload, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -264,7 +269,7 @@ The implemented row validates fixture/schema consistency only. The remaining row
 | `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record includes baseline, measured target, and falsification criterion. | implemented |
 | `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate without passing evidence remains non-core. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over substrate-adoption and promotion-review fields. They prove only that the record exposes baseline, measured-target, and falsification fields, and that a substrate without passing evidence remains in a non-core state. They do not prove that any substrate improves search, routing, compression, representation, long-context behavior, runtime, or model quality.
+These Lean hooks are implemented as finite-record predicates over substrate-adoption and promotion-review fields. They prove only that the record exposes baseline, measured-target, and falsification fields, and that a substrate without passing evidence remains in a non-core state. The module also now proves bounded negative cases named `substrate_adoption_record_missing_required_field_rejected`, `unproven_qualified_substrate_rejected`, `qualified_substrate_without_passing_evidence_rejected`, `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`, and `canary_substrate_without_complete_evidence_packet_rejected`. These cases reject malformed substrate-adoption records; they do not prove that any substrate improves search, routing, compression, representation, long-context behavior, runtime, verifier burden, or model quality.
 
 ## Source crosswalk
 
