@@ -141,8 +141,13 @@ The pilot already has:
 
 The full consolidation decision queue now also has
 `docs/chapter_consolidation_full_review_packet.md`, a request surface for all
-review-ready merge packages and fold dispositions. It records no accepted
-review, no manifest authorization, and no support-state effect.
+review-ready merge packages and fold dispositions. That packet now asks
+reviewers to apply the 54-to-44/47 critique as a one-skeleton depth test by
+naming the repeated skeleton load removed and the mechanism-depth,
+negative-control, external-positioning, proof-limit, implementation-trace,
+example, or reader-continuity work where the saved space should be reinvested.
+It records no accepted review, no manifest authorization, and no support-state
+effect.
 
 `docs/chapter_consolidation_release_stability_review.md` now records a
 `deferred_for_release` reader-work outcome for every unexecuted review-ready or

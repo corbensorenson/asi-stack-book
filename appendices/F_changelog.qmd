@@ -65,6 +65,10 @@
 - Updated `docs/chapter_consolidation_sequence.md` with the same scorecard so
   future merge/fold decisions preserve chapter ownership, source/proof/claim
   routing, reader value, URL/history policy, and no-promotion boundaries.
+- Updated `docs/chapter_consolidation_full_review_packet.md` so reviewers
+  apply the 54-to-44/47 critique as a one-skeleton depth test: each execute
+  recommendation should name the repeated skeleton load removed and where the
+  saved space is reinvested.
 - Updated `scripts/validate_chapter_consolidation_sequence.py` so the new
   scorecard remains part of the validated consolidation control surface.
 - This does not edit `book_structure.json`, merge or fold chapters, change the

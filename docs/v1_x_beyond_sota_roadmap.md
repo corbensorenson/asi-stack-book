@@ -1243,9 +1243,13 @@ Current status:
 - `docs/chapter_consolidation_full_review_packet.md` now gives reviewers a
   full decision-queue surface for all review-ready merge packages and fold
   dispositions, including the five non-pilot destination drafts and the three
-  fold-disposition packages. It is a request surface only: no external review
-  has been accepted, no package is authorized, no manifest edit is made, and no
-  support state moves.
+  fold-disposition packages. It now also asks reviewers to apply the 54-to-44/47
+  critique as a one-skeleton depth test by naming the repeated skeleton load
+  removed and the mechanism, negative-control, external-positioning,
+  proof-limit, implementation-trace, example, or reader-continuity work where
+  the saved space should be reinvested. It is a request surface only: no
+  external review has been accepted, no package is authorized, no manifest edit
+  is made, and no support state moves.
 - `docs/chapter_consolidation_release_stability_review.md` now records a
   `deferred_for_release` reader-work outcome for every unexecuted
   review-ready or fold-disposition package in the consolidation queue. It is a

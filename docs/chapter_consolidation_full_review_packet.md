@@ -1,6 +1,6 @@
 # Chapter Consolidation Full Review Packet
 
-Last updated: 2026-06-29
+Last updated: 2026-06-30
 
 This packet is a supplemental review surface for the governed consolidation
 sequence. It is designed for human or external reviewers who can judge whether
@@ -24,6 +24,37 @@ are asked to choose execute, revise, defer, reject, or no opinion for each
 package. A reviewer cannot promote a claim unless a separate accepted
 evidence-transition record later names independently source-noted material,
 proof results, replay artifacts, test results, or artifact-review evidence.
+
+## Applying The 54-To-44/47 Critique
+
+The current consolidation proposal is accepted as a real review prompt, not as
+a direct edit instruction. Its useful claim is that several current chapters
+repeat one another because adjacent mechanisms were split into separate
+full-chapter skeletons. The remedy is fewer, deeper chapter-owning artifacts
+only when every useful idea survives as a named section, subclaim, source row,
+proof hook, reader path, implementation-horizon facet, restoration condition,
+or explicit retirement decision.
+
+Use the 44-ish aggressive shape and 47-ish conservative shape only as pressure
+tests. A reviewer should not prefer a package because it lowers the chapter
+count. A package should execute only if the destination chapter is easier to
+argue, cite, prove around, test, listen to, and maintain than the source
+chapters.
+
+The review priority implied by the critique is:
+
+1. Decide the Part I alignment/governance pilot first.
+2. Then decide compression/residual honesty, intent/contracts, static context
+   ABI, verification/adversarial review, and planning/DAG control.
+3. Then decide the fold-disposition candidates: MoECOT runtime, simulation
+   fidelity, and semantic representation.
+4. Leave protected standalone artifacts alone unless later source, proof,
+   evidence, or reader review shows duplicate ownership.
+
+For every execute recommendation, reviewers should name the repeated skeleton
+load removed and the reinvestment target: mechanism depth, negative controls,
+external positioning, proof-limit clarity, implementation traces, concrete
+examples, or reader continuity.
 
 ## Review Inputs
 
@@ -91,22 +122,24 @@ policy, local validation, and Quarto render in that execution commit.
    record, source row, reader section, or restoration condition?
 2. Does a proposed destination read as one chapter with one skeleton, or does
    it still read as source chapters pasted together?
-3. Does any package lose a source ID, external comparator, subclaim, proof tag,
+3. If a package executes, which repeated source-chapter skeleton sections
+   disappear, and where is the saved space reinvested?
+4. Does any package lose a source ID, external comparator, subclaim, proof tag,
    Lean module, schema, fixture, harness row, implementation horizon, reader
    path, or handoff that should remain visible?
-4. Does any proposed core claim become broader than Appendix C, the source
+5. Does any proposed core claim become broader than Appendix C, the source
    crosswalks, proof limitations, or evidence-transition boundaries allow?
-5. Would execution make the human-reader book clearer, or would separate
+6. Would execution make the human-reader book clearer, or would separate
    chapters better preserve safety, governance, citation, teaching, or evidence
    clarity?
-6. Are the proposed dependency constraints correct, especially the semantic
+7. Are the proposed dependency constraints correct, especially the semantic
    representation fold's dependency on the compression/representation package?
-7. Are the stable-ID, URL, redirect, historical-stub, and chapter-history
+8. Are the stable-ID, URL, redirect, historical-stub, and chapter-history
    defaults in `docs/chapter_consolidation_url_history_policy.md` acceptable
    for a public living book?
-8. Which external comparator families should be source-noted before any package
+9. Which external comparator families should be source-noted before any package
    becomes canonical?
-9. Which packages should be executed in v1.x, which should be revised, which
+10. Which packages should be executed in v1.x, which should be revised, which
    should be deferred, and which should be rejected or retained standalone?
 
 ## Response Template
