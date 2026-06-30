@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-06-30 - Security kernel authority-use route proof envelope
+
+- Extended `AsiStackProofs.SecurityKernel` with a finite security-kernel route
+  vocabulary, authority-use review record, and route function over handle
+  presence, lease activity, approval state, boundary authorization,
+  substitution permission, clearance sufficiency, SCIF requirement and spawn
+  state, sanitization state, prompt-injection detection, residual leak risk,
+  and revocation requests.
+- Added derived/decomposed Lean theorems showing that missing handles, inactive
+  leases, unauthorized boundaries, missing substitution permission, and
+  insufficient clearance deny ordinary use; missing approval requests approval;
+  revocation requests revoke the handle; detected prompt injection and residual
+  leak risk record leak residuals; missing required SCIFs route to SCIF spawn;
+  unsanitized output routes to sanitization; and clean authorized use is
+  allowed.
+- Added the `lean:security.scif.route_envelope` proof target to the outline,
+  manifest, proof triage, Security Kernel and Digital SCIFs chapter, and
+  Appendix E. The proof manifest now tracks 116 implemented finite-record
+  targets, and the proof-depth classifier now records 212 theorem declarations:
+  115 direct/projection-style and 97 derived/decomposed.
+- Updated the Security Kernel and Digital SCIFs chapter, proof-depth and
+  proof-adequacy surfaces, v1.0 roadmap/status surfaces, publication readiness
+  note, repository map, v0.2 manuscript status, and proof/code plan. The proof
+  adequacy review keeps Security Kernel at `useful but too narrow`.
+- This does not promote any Appendix C or chapter core claim, implement a real
+  security kernel, substitute real secrets, prove sandbox isolation, validate
+  side-channel safety, establish prompt-injection containment, prove deployed
+  revocation behavior, approve reader artifacts, or create EPUB, DOCX, PDF,
+  audio, DOI, Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Capability replacement transaction route proof envelope
 
 - Extended `AsiStackProofs.Replacement` with a finite replacement-transaction

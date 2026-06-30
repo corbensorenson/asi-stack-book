@@ -2226,6 +2226,11 @@
               "name": "Prompt-injection containment scenario",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic security kernel harness; no runtime prompt-injection containment claim"
+            },
+            {
+              "name": "Security kernel route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite authority-use route coverage only"
             }
           ],
           "lean_module": "AsiStackProofs.SecurityKernel",
@@ -2240,6 +2245,12 @@
               "tag": "lean:security.scif.failure_blocks_promotion",
               "module": "AsiStackProofs.SecurityKernel",
               "target": "A context packet with insufficient clearance cannot enter a protected SCIF.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:security.scif.route_envelope",
+              "module": "AsiStackProofs.SecurityKernel",
+              "target": "A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes.",
               "status": "implemented"
             }
           ],

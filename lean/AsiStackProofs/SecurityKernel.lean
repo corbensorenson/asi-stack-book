@@ -60,4 +60,256 @@ theorem insufficient_clearance_blocks_protected_scif_entry
   | inr enoughClearance =>
       exact Nat.not_le_of_gt insufficient enoughClearance
 
+inductive SecurityKernelRoute where
+  | denyUse
+  | requestApproval
+  | spawnScif
+  | sanitizeAndCommit
+  | recordLeakResidual
+  | revokeHandle
+  | allowUse
+deriving DecidableEq, Repr
+
+structure AuthorityUseReview where
+  handlePresent : Bool
+  leaseActive : Bool
+  approvalPresent : Bool
+  boundaryAuthorized : Bool
+  permitsSecretSubstitution : Bool
+  clearanceSufficient : Bool
+  scifRequired : Bool
+  scifSpawned : Bool
+  rawOutputSanitized : Bool
+  promptInjectionDetected : Bool
+  residualLeakRisk : Bool
+  revocationRequested : Bool
+deriving DecidableEq, Repr
+
+def SecurityKernelRouteFor
+    (review : AuthorityUseReview) : SecurityKernelRoute :=
+  if review.handlePresent = false then
+    SecurityKernelRoute.denyUse
+  else if review.revocationRequested = true then
+    SecurityKernelRoute.revokeHandle
+  else if review.leaseActive = false then
+    SecurityKernelRoute.denyUse
+  else if review.approvalPresent = false then
+    SecurityKernelRoute.requestApproval
+  else if review.boundaryAuthorized = false then
+    SecurityKernelRoute.denyUse
+  else if review.permitsSecretSubstitution = false then
+    SecurityKernelRoute.denyUse
+  else if review.clearanceSufficient = false then
+    SecurityKernelRoute.denyUse
+  else if review.promptInjectionDetected = true then
+    SecurityKernelRoute.recordLeakResidual
+  else if review.scifRequired = true ∧ review.scifSpawned = false then
+    SecurityKernelRoute.spawnScif
+  else if review.rawOutputSanitized = false then
+    SecurityKernelRoute.sanitizeAndCommit
+  else if review.residualLeakRisk = true then
+    SecurityKernelRoute.recordLeakResidual
+  else
+    SecurityKernelRoute.allowUse
+
+theorem missing_handle_denies_authority_use
+    {review : AuthorityUseReview} :
+    review.handlePresent = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.denyUse := by
+  intro missingHandle
+  unfold SecurityKernelRouteFor
+  simp [missingHandle]
+
+theorem revocation_request_revokes_handle
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = true ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.revokeHandle := by
+  intro handlePresent revocationRequested
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, revocationRequested]
+
+theorem inactive_lease_denies_authority_use
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.denyUse := by
+  intro handlePresent noRevocation inactiveLease
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, inactiveLease]
+
+theorem missing_approval_requests_approval
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.requestApproval := by
+  intro handlePresent noRevocation leaseActive missingApproval
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, missingApproval]
+
+theorem unauthorized_boundary_denies_authority_use
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = true ->
+    review.boundaryAuthorized = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.denyUse := by
+  intro handlePresent noRevocation leaseActive approvalPresent
+    unauthorized
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, approvalPresent,
+    unauthorized]
+
+theorem missing_secret_substitution_permission_denies_authority_use
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = true ->
+    review.boundaryAuthorized = true ->
+    review.permitsSecretSubstitution = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.denyUse := by
+  intro handlePresent noRevocation leaseActive approvalPresent
+    boundaryAuthorized missingPermission
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, approvalPresent,
+    boundaryAuthorized, missingPermission]
+
+theorem insufficient_clearance_denies_authority_use
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = true ->
+    review.boundaryAuthorized = true ->
+    review.permitsSecretSubstitution = true ->
+    review.clearanceSufficient = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.denyUse := by
+  intro handlePresent noRevocation leaseActive approvalPresent
+    boundaryAuthorized permitsSubstitution insufficientClearance
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, approvalPresent,
+    boundaryAuthorized, permitsSubstitution, insufficientClearance]
+
+theorem prompt_injection_records_leak_residual
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = true ->
+    review.boundaryAuthorized = true ->
+    review.permitsSecretSubstitution = true ->
+    review.clearanceSufficient = true ->
+    review.promptInjectionDetected = true ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.recordLeakResidual := by
+  intro handlePresent noRevocation leaseActive approvalPresent
+    boundaryAuthorized permitsSubstitution clearanceSufficient
+    promptInjection
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, approvalPresent,
+    boundaryAuthorized, permitsSubstitution, clearanceSufficient,
+    promptInjection]
+
+theorem missing_required_scif_routes_to_scif_spawn
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = true ->
+    review.boundaryAuthorized = true ->
+    review.permitsSecretSubstitution = true ->
+    review.clearanceSufficient = true ->
+    review.promptInjectionDetected = false ->
+    review.scifRequired = true ->
+    review.scifSpawned = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.spawnScif := by
+  intro handlePresent noRevocation leaseActive approvalPresent
+    boundaryAuthorized permitsSubstitution clearanceSufficient
+    noPromptInjection scifRequired missingScif
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, approvalPresent,
+    boundaryAuthorized, permitsSubstitution, clearanceSufficient,
+    noPromptInjection, scifRequired, missingScif]
+
+theorem unsanitized_output_routes_to_sanitization
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = true ->
+    review.boundaryAuthorized = true ->
+    review.permitsSecretSubstitution = true ->
+    review.clearanceSufficient = true ->
+    review.promptInjectionDetected = false ->
+    review.scifRequired = false ->
+    review.rawOutputSanitized = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.sanitizeAndCommit := by
+  intro handlePresent noRevocation leaseActive approvalPresent
+    boundaryAuthorized permitsSubstitution clearanceSufficient
+    noPromptInjection noScifRequired unsanitizedOutput
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, approvalPresent,
+    boundaryAuthorized, permitsSubstitution, clearanceSufficient,
+    noPromptInjection, noScifRequired, unsanitizedOutput]
+
+theorem residual_risk_records_leak_residual
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = true ->
+    review.boundaryAuthorized = true ->
+    review.permitsSecretSubstitution = true ->
+    review.clearanceSufficient = true ->
+    review.promptInjectionDetected = false ->
+    review.scifRequired = false ->
+    review.rawOutputSanitized = true ->
+    review.residualLeakRisk = true ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.recordLeakResidual := by
+  intro handlePresent noRevocation leaseActive approvalPresent
+    boundaryAuthorized permitsSubstitution clearanceSufficient
+    noPromptInjection noScifRequired sanitizedOutput residualRisk
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, approvalPresent,
+    boundaryAuthorized, permitsSubstitution, clearanceSufficient,
+    noPromptInjection, noScifRequired, sanitizedOutput, residualRisk]
+
+theorem clean_authorized_use_is_allowed
+    {review : AuthorityUseReview} :
+    review.handlePresent = true ->
+    review.revocationRequested = false ->
+    review.leaseActive = true ->
+    review.approvalPresent = true ->
+    review.boundaryAuthorized = true ->
+    review.permitsSecretSubstitution = true ->
+    review.clearanceSufficient = true ->
+    review.promptInjectionDetected = false ->
+    review.scifRequired = false ->
+    review.rawOutputSanitized = true ->
+    review.residualLeakRisk = false ->
+    SecurityKernelRouteFor review =
+      SecurityKernelRoute.allowUse := by
+  intro handlePresent noRevocation leaseActive approvalPresent
+    boundaryAuthorized permitsSubstitution clearanceSufficient
+    noPromptInjection noScifRequired sanitizedOutput noResidualRisk
+  unfold SecurityKernelRouteFor
+  simp [handlePresent, noRevocation, leaseActive, approvalPresent,
+    boundaryAuthorized, permitsSubstitution, clearanceSufficient,
+    noPromptInjection, noScifRequired, sanitizedOutput, noResidualRisk]
+
 end AsiStackProofs.SecurityKernel

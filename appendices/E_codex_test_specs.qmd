@@ -60,6 +60,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Sanitized-output residual test | implemented | passing via synthetic security kernel harness; no leak-prevention or summary-safety claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security-overhead budget preservation test | implemented | passing via synthetic security kernel harness; no runtime budget enforcement or security-economics claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Prompt-injection containment scenario | implemented | passing via synthetic security kernel harness; no runtime prompt-injection containment claim |
+| `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security kernel route proof | implemented | passes via Lean build; finite authority-use route coverage only |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Protected-invariant preservation test | implemented | validated locally by synthetic fixtures; deployed recursive self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Evaluator independence test | implemented | validated locally by synthetic fixtures; broader self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement rollback scenario | implemented | validated locally by synthetic fixtures; live self-improvement rollback not run |
@@ -286,16 +287,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 115 |
+| Proof targets covered by triage | 116 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 115 |
+| implemented | 116 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 115 |
+| implemented | formal-invariant | lean-candidate | 116 |

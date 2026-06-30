@@ -779,6 +779,7 @@ Draft deliverables:
 - Implemented synthetic Codex test: Sanitized-output residual test via `python3 scripts/validate_security_kernel.py`; leak prevention and summary-safety claims remain open.
 - Implemented synthetic Codex test: Security-overhead budget preservation test via `python3 scripts/validate_security_kernel.py`; runtime budget enforcement and security-economics claims remain open.
 - Implemented synthetic Codex test: Prompt-injection containment scenario via `python3 scripts/validate_security_kernel.py`; runtime prompt-injection containment remains open.
+- Implemented proof-backed check: finite authority-use route proof for missing handles, revocation requests, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing required SCIFs, unsanitized output, residual leak risk, and clean authorized use; this is structured-record route coverage only, not deployed kernel security, sandbox isolation, side-channel defense, or prompt-injection containment.
 
 Lean proof targets:
 
@@ -786,6 +787,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:security.scif.operational_invariant` | `AsiStackProofs.SecurityKernel` | A secret handle can be substituted only inside an authorized execution boundary. | implemented |
 | `lean:security.scif.failure_blocks_promotion` | `AsiStackProofs.SecurityKernel` | A context packet with insufficient clearance cannot enter a protected SCIF. | implemented |
+| `lean:security.scif.route_envelope` | `AsiStackProofs.SecurityKernel` | A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes. | implemented |
 
 ### Recursive Self-Improvement Boundaries
 
@@ -2571,8 +2573,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 115 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 115 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 116 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 116 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Proof artifact traceability audit.

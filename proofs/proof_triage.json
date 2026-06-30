@@ -301,6 +301,16 @@
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
     },
     {
+      "tag": "lean:security.scif.route_envelope",
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "module": "AsiStackProofs.SecurityKernel",
+      "formal_target": "A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SecurityKernel as a finite authority-use route function and derived route theorems for missing handles, revocation, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing required SCIFs, unsanitized output, residual leak risk, and clean authorized use."
+    },
+    {
       "tag": "lean:self_improvement.boundary.operational_invariant",
       "chapter_id": "recursive-self-improvement-boundaries",
       "module": "AsiStackProofs.SelfImprovement",

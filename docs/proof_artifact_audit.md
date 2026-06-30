@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 115 |
-| Manifest status counts | {"implemented": 115} |
-| Triage class counts | {"formal-invariant": 115} |
+| Proof targets audited | 116 |
+| Manifest status counts | {"implemented": 116} |
+| Triage class counts | {"formal-invariant": 116} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -73,7 +73,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Routing.lean` | 2 | 2 | 2 | 1 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 2 | 3 | 4 | 2 |
-| `lean/AsiStackProofs/SecurityKernel.lean` | 2 | 2 | 3 | 4 |
+| `lean/AsiStackProofs/SecurityKernel.lean` | 3 | 14 | 4 | 5 |
 | `lean/AsiStackProofs/SelfImprovement.lean` | 2 | 5 | 6 | 4 |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 2 | 4 | 2 |
@@ -127,7 +127,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `resource-economics-and-token-budgets` | 4 | 4 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 4 | 4 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
-| `security-kernel-and-digital-scifs` | 2 | 2 | 0 | 0 |
+| `security-kernel-and-digital-scifs` | 3 | 3 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 4 | 4 | 0 | 0 |
 | `stable-capability-fields` | 3 | 3 | 0 | 0 |
 | `system-boundaries-and-authority` | 2 | 2 | 0 | 0 |
@@ -168,6 +168,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:replacement.transaction.route_envelope` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.operational_invariant` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.failure_blocks_promotion` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:security.scif.route_envelope` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
