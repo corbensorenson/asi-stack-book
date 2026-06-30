@@ -352,6 +352,7 @@ The current allowed protected-reader set is:
 - `procedural-memory-and-cognitive-loop-closure`
 - `mathematical-and-search-substrates`
 - `coil-attention-cyclic-memory-and-recurrence-contracts`
+- `coilra-multicoil-rope-and-cyclic-mixers`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
 - `policy-optimization-and-learning-from-feedback`
 - `integrated-reference-architecture`

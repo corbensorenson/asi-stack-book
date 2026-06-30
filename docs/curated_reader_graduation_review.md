@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 23
-- Curated chapter records: 30 drafting records for
+- Curated-manuscript candidates: 24
+- Curated chapter records: 31 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -52,6 +52,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `open-research-agenda-and-bibliography-plan`,
   `mathematical-and-search-substrates`,
   `coil-attention-cyclic-memory-and-recurrence-contracts`,
+  `coilra-multicoil-rope-and-cyclic-mixers`,
   `recursive-self-improvement-boundaries`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
@@ -73,7 +74,7 @@ Labor OS, Artifact Graphs, Runtime Adapters, Procedural Memory,
 Benchmark Ratchets, Policy Optimization, Integrated Reference Architecture, Project Theseus,
 Prototype Roadmap, Living Book Methodology, Open Research Agenda,
 Mathematical and Search Substrates, Coil Attention and Cyclic Memory,
-Recursive Self-Improvement,
+CoilRA and Cyclic Mixers, Recursive Self-Improvement,
 `circle-calculus-and-proof-carrying-ai-contracts`,
 `executable-specifications-and-lean-proof-envelope`, and
 `artifact-steward-agents-and-living-project-governance`; do not treat any file
@@ -130,6 +131,7 @@ duplicate skeletons the consolidation pilot is trying to remove.
 | `open-research-agenda-and-bibliography-plan` | protected standalone final research-agenda chapter outside pending consolidation clusters; owns source-intake, bibliography-control, external-literature, backlog, new-paper triage, proof/test lane, and no-promotion boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_open_research_agenda_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no citation-normalization, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, public-release-permission, external-review, or support-state movement claim is implied. |
 | `mathematical-and-search-substrates` | protected standalone substrate-adoption chapter outside pending consolidation clusters; owns optional-substrate discipline, adoption records, axis ledgers, consumer gates, theorem-spillover controls, and retirement/falsification boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_mathematical_search_substrates_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no temporal-coil A/B run, representation-efficiency benchmark, CoilMoECOT route benchmark, Mamba comparison, Circle substrate sidecar, Theseus transfer consumer, useful-substrate result, model-quality result, or support-state movement claim is implied. |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | protected standalone cyclic-memory contract chapter outside pending consolidation clusters; owns structural memory versus useful memory, residue/winding visibility, freshness policy, sparse coverage, recurrence exits, fallback, baseline obligations, and retrieval-quality non-claims | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_coil_attention_memory_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no KV-cache freshness checker, sparse-coverage harness, recurrence benchmark, learned-memory workload, Circle contract pack, Theseus transfer consumer, external benchmark reproduction, retrieval-quality result, reasoning-quality result, speed result, memory-savings result, long-context result, or support-state movement claim is implied. |
+| `coilra-multicoil-rope-and-cyclic-mixers` | protected standalone cyclic-substrate evaluation chapter outside pending consolidation clusters; owns optional cyclic-substrate adoption, structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, and canary-route non-claims | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_coilra_cyclic_mixers_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no RoPE certifier run, sidecar regeneration, Circle contract pack, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, external Circle Lean build, Theseus transfer consumer, model-quality result, context-length result, runtime result, memory-savings result, training-stability result, hardware-efficiency result, deployment-readiness result, transfer result, or support-state movement claim is implied. |
 | `recursive-self-improvement-boundaries` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_recursive_self_improvement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
@@ -167,7 +169,7 @@ true:
 
 ## Non-Claims
 
-- This review creates thirty drafting-only curated reader chapter files for
+- This review creates thirty-one drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

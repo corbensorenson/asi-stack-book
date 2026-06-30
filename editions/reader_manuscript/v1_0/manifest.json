@@ -1149,6 +1149,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_coil_attention_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+      "file": "editions/reader_manuscript/v1_0/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "live_source_ref": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd@fbd273622",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#coilra-multicoil-rope-and-cyclic-mixers.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#coilra-multicoil-rope-and-cyclic-mixers",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around cyclic-substrate adoption discipline: structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, consumer policy, and canary routing stay separate from model-quality, runtime, memory, context-length, training-stability, deployment, and transfer claims.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "source boundary preserved: CoilRA/MultiCoil RoPE, RoPE position certifier, Circle AI Contract Suite, Theseus Circle Transfer, Circle AI Architectures, and external comparator families remain structural-contract, receipt-boundary, transfer-boundary, or comparator sources inside recorded limits",
+        "proof/test status preserved without adding RoPE certifier runs, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmarks, MLX model experiments, hardware-kernel benchmarks, downstream quality evaluations, external Circle Lean builds, Theseus transfer consumers, model-quality results, context-length results, runtime results, memory-savings results, training-stability results, hardware-efficiency results, deployment-readiness results, transfer results, or support-state results",
+        "implementation horizon preserved without implying a deployed cyclic-substrate evaluation lane or canary-route controller",
+        "release blocker status preserved until reconciliation, format review, and an edition release record clear it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_coilra_cyclic_mixers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {
