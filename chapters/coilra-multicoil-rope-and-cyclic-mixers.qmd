@@ -4,7 +4,7 @@ chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-29"
+last_updated: "2026-06-30"
 primary_sources:
   - "coilra_multicoil_rope"
   - "rope_position_certifier"
@@ -16,7 +16,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "External positioning now source-notes RoFormer/RoPE, LoRA, Mamba, and RetNet as position-encoding, adapter, state-space, and recurrence/attention comparators; support remains at argument because no RoPE certifier run, cyclic mixer benchmark, MLX experiment, hardware-kernel test, downstream quality evaluation, or baseline matrix has been reproduced in this repository."
   - "Appendix C now records exact passage-reviewed mappings for all five assigned CoilRA/MultiCoil/RoPE/cyclic-mixer sources; support remains argument until local RoPE certifier runs, cyclic mixer benchmarks, MLX experiments, hardware-kernel tests, downstream quality evaluations, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist."
-  - "The cyclic_mixer_evaluation_record fixture validates schema/example consistency for evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims; AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates only; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo."
+  - "The cyclic_mixer_evaluation_record fixture validates schema/example consistency for evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims; AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates plus bounded negative cases for missing claim partitions, missing baselines or tradeoff metrics, residue/winding alias gaps, incomplete tradeoff packets, and hardware mismatches without refusal paths; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo."
   - "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, replay receipts, check fingerprints, or validate external Circle Lean proofs as local evidence."
   - "Theseus transfer material is used only as source-reported experiment-design and claim-boundary context; no private Theseus payloads, scored benchmark artifacts, transfer reports, router-head traces, runtime/memory measurements, or promotion evidence were imported or reproduced here."
   - "No support-state promotion, raw source publication, CoilRA quality result, RoPE context-length result, cyclic mixer speed/runtime result, memory-savings result, training-stability result, hardware-efficiency result, deployment-readiness result, or transfer-result claim is implied by this drafting pass."
@@ -30,13 +30,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-29 |
+| Last updated | 2026-06-30 |
 | Primary source records | `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `coilra_multicoil_rope`, `rope_position_certifier`; supporting: `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures`; external variants: `ext_roformer_rope_2021`, `ext_lora_2021`, `ext_mamba_2023`, `ext_retnet_2023` |
 | Source loading state | source notes: `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
-| Test state | `cyclic_mixer_evaluation_record.valid.json` passes repository-level protocol fixture validation for evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims; `AsiStackProofs.CyclicMixers` implements finite structural-claim separation and baseline/tradeoff promotion gates; RoPE boundary, baseline matrix, alias diagnostic, and parameter/quality/runtime tests remain planned. |
+| Test state | `cyclic_mixer_evaluation_record.valid.json` passes repository-level protocol fixture validation for evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims; `AsiStackProofs.CyclicMixers` implements finite structural-claim separation and baseline/tradeoff gates plus negative cases for missing claim partitions, missing baselines or tradeoff metrics, residue/winding alias gaps, incomplete tradeoff packets, and hardware mismatches without refusal paths; RoPE certifier, cyclic mixer benchmark, MLX experiment, hardware-kernel benchmark, downstream quality, and parameter/quality/runtime tests remain planned. |
 
 ## Drafting guardrail
 
@@ -228,12 +228,17 @@ Cyclic-substrate adoption is therefore still a canary-route proposal. Promotion 
 | Test | Purpose | Status |
 |---|---|---|
 | Cyclic mixer evaluation record fixture validation | Validate that a cyclic-substrate evaluation records evaluation state, workload target, structural invariant, receipt refs, proof/receipt boundary, claim partitions, alias/load diagnostics, parameter accounting, hardware notes, hardware refusal path, baselines, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, required metrics, metrics status, tradeoff packet ref, consumer policy, adoption state/rationale, source refs, support-state effect, non-claims, and evidence references. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Claim-partition negative case | Prove that a cyclic mixer review missing structural, quality, runtime, memory, or parameter partition fields rejects the finite structural-claim predicate. | implemented in `AsiStackProofs.CyclicMixers.cyclic_mixer_claim_missing_claim_partition_rejected`; no model-quality, runtime, memory, or parameter-efficiency claim |
+| Baseline/tradeoff promotion negative case | Prove that a promoted cyclic substrate missing ordinary baselines or tradeoff metrics rejects the finite baseline/tradeoff predicate. | implemented in `AsiStackProofs.CyclicMixers.cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected`; no adoption or quality claim |
+| Residue/winding alias negative case | Prove that a reused cyclic slot or phase missing residue/winding structure and visible alias residuals rejects the finite alias-diagnostic predicate. | implemented in `AsiStackProofs.CyclicMixers.cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected`; no alias-behavior or long-context claim |
+| Tradeoff-packet negative case | Prove that a cyclic adoption candidate missing structural receipts, baseline matrix, resource costs, metrics, or tradeoff packet rejects the finite tradeoff-packet predicate. | implemented in `AsiStackProofs.CyclicMixers.cyclic_adoption_without_complete_tradeoff_packet_rejected`; no benchmark or measured tradeoff claim |
+| Hardware-refusal negative case | Prove that a cyclic adoption candidate with a reported hardware mismatch and no refusal path rejects the finite hardware-boundary predicate. | implemented in `AsiStackProofs.CyclicMixers.hardware_mismatch_without_refusal_path_rejected`; no hardware-kernel benchmark or deployment-readiness claim |
 | RoPE receipt boundary test | Check that exact/discretized receipts are separated from real-valued and model-quality claims. | planned; not run |
 | Cyclic mixer baseline matrix test | Check that dense, LoRA, RoPE, learned, recurrent, or state-space baselines are named before adoption. | planned; not run |
 | Residue/winding alias diagnostic | Check that alias diagnostics include winding when residue is insufficient. | planned; not run |
 | Parameter-quality-runtime separation test | Check that parameter count, quality, runtime, and memory claims are recorded separately. | planned; not run |
 
-The implemented row validates fixture/schema consistency only. The remaining rows require certifier output or model experiments with baselines, controls, metrics, hardware notes, and failure cases; they are not reported quality, runtime, memory, or context-length results. When a cyclic-substrate test is implemented, this chapter should link to the command, fixture, environment notes, workload, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented rows validate fixture/schema consistency and finite-record negative cases only. The remaining rows require certifier output or model experiments with baselines, controls, metrics, hardware notes, and failure cases; they are not reported quality, runtime, memory, or context-length results. When a cyclic-substrate test is implemented, this chapter should link to the command, fixture, environment notes, workload, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -242,7 +247,7 @@ The implemented row validates fixture/schema consistency only. The remaining row
 | `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | implemented |
 | `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over cyclic mixer claim reviews and substrate-promotion reviews. They prove only the record-level gates: structural invariants are recorded separately from quality, runtime, memory, and parameter claims, and promoted cyclic substrates require baseline references plus tradeoff metrics. They do not prove CoilRA, MultiCoil RoPE, cyclic mixer quality, context length, runtime, memory, hardware-kernel behavior, or parameter efficiency.
+These Lean hooks are implemented as finite-record predicates over cyclic mixer claim reviews and substrate-promotion reviews. They prove only the record-level gates: structural invariants are recorded separately from quality, runtime, memory, and parameter claims, and promoted cyclic substrates require baseline references plus tradeoff metrics. The module also now proves bounded negative cases named `cyclic_mixer_claim_missing_claim_partition_rejected`, `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected`, `cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected`, `cyclic_adoption_without_complete_tradeoff_packet_rejected`, and `hardware_mismatch_without_refusal_path_rejected`. These cases reject malformed records; they do not prove CoilRA, MultiCoil RoPE, cyclic mixer quality, context length, runtime, memory, hardware-kernel behavior, deployment readiness, or parameter efficiency.
 
 ## Source crosswalk
 

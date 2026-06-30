@@ -8353,6 +8353,41 @@
           "minimal_implementation": "A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.",
           "beyond_state_of_art": "The endpoint for cyclic mixers is an evaluation lane, not an assumed upgrade path. It lets the stack test phase, recurrence, residue/winding, relative-position, circulant, and block-cyclic ideas without spending structural proof as if it were quality, runtime, memory, or deployment evidence. In the mature cyclic-substrate evaluation lane, cyclic mixers are optional specialist substrates until structural receipts, diagnostics, hardware constraints, and baseline-symmetric tradeoff packets justify a scoped canary route.",
           "codex_tests": [
+            {
+              "name": "Claim-partition negative case",
+              "purpose": "Check that a cyclic mixer review missing structural, quality, runtime, memory, or parameter partition fields rejects the finite structural-claim predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no model-quality, runtime, memory, or parameter-efficiency claim",
+              "status": "implemented in AsiStackProofs.CyclicMixers; no cyclic mixer performance claim"
+            },
+            {
+              "name": "Baseline/tradeoff promotion negative case",
+              "purpose": "Check that a promoted cyclic substrate missing ordinary baselines or tradeoff metrics rejects the finite baseline/tradeoff predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no adoption or quality claim",
+              "status": "implemented in AsiStackProofs.CyclicMixers; no substrate-adoption claim"
+            },
+            {
+              "name": "Residue/winding alias negative case",
+              "purpose": "Check that a reused cyclic slot or phase missing residue/winding structure and visible alias residuals rejects the finite alias-diagnostic predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no alias-behavior or long-context claim",
+              "status": "implemented in AsiStackProofs.CyclicMixers; no RoPE or long-context behavior claim"
+            },
+            {
+              "name": "Tradeoff-packet negative case",
+              "purpose": "Check that a cyclic adoption candidate missing structural receipts, baseline matrix, resource costs, metrics, or tradeoff packet rejects the finite tradeoff-packet predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no measured tradeoff claim",
+              "status": "implemented in AsiStackProofs.CyclicMixers; no benchmark or tradeoff result"
+            },
+            {
+              "name": "Hardware-refusal negative case",
+              "purpose": "Check that a cyclic adoption candidate with a reported hardware mismatch and no refusal path rejects the finite hardware-boundary predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no hardware-kernel benchmark claim",
+              "status": "implemented in AsiStackProofs.CyclicMixers; no deployment-readiness claim"
+            },
             "RoPE receipt boundary test",
             "Cyclic mixer baseline matrix test",
             "Residue/winding alias diagnostic",
@@ -8361,7 +8396,7 @@
           "claim_label": "Design rationale",
           "open_evidence_gaps": [
             "Appendix C now records exact passage-reviewed mappings for all five assigned CoilRA/MultiCoil/RoPE/cyclic-mixer sources; support remains at argument until local RoPE certifier runs, cyclic mixer benchmarks, MLX experiments, hardware-kernel tests, downstream quality evaluations, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist.",
-            "The cyclic_mixer_evaluation_record fixture validates schema/example consistency and AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates only; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo.",
+            "The cyclic_mixer_evaluation_record fixture validates schema/example consistency and AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates plus bounded negative cases for missing claim partitions, missing baselines or tradeoff metrics, residue/winding alias gaps, incomplete tradeoff packets, and hardware mismatches without refusal paths; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo.",
             "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, replay receipts, check fingerprints, or validate external Circle Lean proofs as local evidence.",
             "Theseus transfer material is used only as source-reported experiment-design and claim-boundary context; no private Theseus payloads, scored benchmark artifacts, transfer reports, router-head traces, runtime/memory measurements, or promotion evidence were imported or reproduced here.",
             "No support-state promotion, raw source publication, CoilRA quality result, RoPE context-length result, cyclic mixer speed/runtime result, memory-savings result, training-stability result, hardware-efficiency result, deployment-readiness result, or transfer-result claim is implied by this drafting pass."

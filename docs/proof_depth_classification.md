@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 333 |
+| Theorem declarations classified | 338 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 212 |
+| Derived/decomposed theorem declarations | 217 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -67,7 +67,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 2 | 9 | 6 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -195,8 +195,13 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Corrigibility.lean` | `low_risk_unbounded_delegation_routes_to_narrowing` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Corrigibility.lean` | `protected_agency_rights_remain_available_after_accepted_transition` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Corrigibility.lean` | `transition_that_removes_required_correction_pathway_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_adoption_without_complete_tradeoff_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_mixer_claim_missing_claim_partition_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `hardware_mismatch_without_refusal_path_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Efficiency.lean` | `lower_cost_authorized_quality_candidate_rejects_minimum_viable_route` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/Efficiency.lean` | `minimum_viable_route_has_no_lower_cost_authorized_quality_candidate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Efficiency.lean` | `open_obligation_promotion_without_residual_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |

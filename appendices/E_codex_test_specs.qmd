@@ -220,6 +220,11 @@ No result is recorded here unless a test has actually been implemented and run.
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Sparse coverage gap test | planned | not run |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Recurrence budget and exit test | planned | not run |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Freshness stale-read rejection test | planned | not run |
+| `coilra-multicoil-rope-and-cyclic-mixers` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | Claim-partition negative case | implemented | passes via Lean negative case; no model-quality, runtime, memory, or parameter-efficiency claim |
+| `coilra-multicoil-rope-and-cyclic-mixers` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | Baseline/tradeoff promotion negative case | implemented | passes via Lean negative case; no adoption or quality claim |
+| `coilra-multicoil-rope-and-cyclic-mixers` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | Residue/winding alias negative case | implemented | passes via Lean negative case; no alias-behavior or long-context claim |
+| `coilra-multicoil-rope-and-cyclic-mixers` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | Tradeoff-packet negative case | implemented | passes via Lean negative case; no measured tradeoff claim |
+| `coilra-multicoil-rope-and-cyclic-mixers` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | Hardware-refusal negative case | implemented | passes via Lean negative case; no hardware-kernel benchmark claim |
 | `coilra-multicoil-rope-and-cyclic-mixers` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | RoPE receipt boundary test | planned | not run |
 | `coilra-multicoil-rope-and-cyclic-mixers` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | Cyclic mixer baseline matrix test | planned | not run |
 | `coilra-multicoil-rope-and-cyclic-mixers` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | Residue/winding alias diagnostic | planned | not run |

@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-30 - Cyclic mixer adoption-boundary proofs
+
+- Strengthened `AsiStackProofs.CyclicMixers` with five derived negative-case
+  theorems: one rejects missing claim partitions, one rejects cyclic substrate
+  promotion without ordinary baselines or tradeoff metrics, one rejects
+  residue/winding alias gaps without visible residuals, one rejects incomplete
+  adoption tradeoff packets, and one rejects hardware mismatches without a
+  refusal path.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 338
+  theorem declarations, 121 direct/projection-style declarations, and 217
+  derived/decomposed declarations.
+- Updated the CoilRA, MultiCoil RoPE, and Cyclic Mixers chapter, manifest test
+  rows, Appendix E, proof adequacy review, candidate status, v1.0/v1.x
+  roadmap surfaces, focus audit, and status snapshot validator. Appendix E now
+  records 165 implemented rows, 1 partial row, and 110 planned rows. Refreshed
+  the v1.0 status manuscript scale to 168,298 chapter words excluding YAML and
+  175,808 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, run a RoPE
+  certifier, import a Circle contract pack, run a cyclic mixer benchmark, run
+  an MLX model experiment, run a hardware-kernel benchmark, measure downstream
+  quality, prove long-context behavior, show memory savings, prove deployment
+  readiness, or approve any reader, ebook, PDF, DOCX, or audio release
+  artifact.
+
 ## 2026-06-30 - Coil attention memory negative-case proofs
 
 - Strengthened `AsiStackProofs.CoilAttentionMemory` with four derived
