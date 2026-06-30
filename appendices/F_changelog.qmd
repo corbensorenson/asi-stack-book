@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-30 - Consolidation release-stability reader-work decision
+
+- Added `docs/chapter_consolidation_release_stability_review.md` to record a
+  `deferred_for_release` reader-work outcome for all unexecuted review-ready
+  merge packages and fold-disposition packages in the current consolidation
+  queue.
+- Updated the consolidation sequence, v1.x roadmap, README, publication
+  readiness, repository map, and consolidation sequence validator so future
+  curated-reader passes inside deferred packages must record consolidation
+  caveats while preserving the 54-chapter manifest.
+- This does not execute, reject, or authorize any merge or fold, edit
+  `book_structure.json`, change chapter count, retire chapter URLs, alter
+  Appendix C or Appendix K, change source records or proof targets, create
+  human/external review, approve reader artifacts, move support states, or
+  create EPUB, DOCX, PDF, HTML, audio, or audio-embedded EPUB release
+  artifacts.
+
 ## 2026-06-30 - Fast generation curated reader prose pass
 
 - Added a drafting-only curated reader chapter for

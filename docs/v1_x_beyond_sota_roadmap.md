@@ -1216,10 +1216,19 @@ Current status:
   fold-disposition packages. It is a request surface only: no external review
   has been accepted, no package is authorized, no manifest edit is made, and no
   support state moves.
+- `docs/chapter_consolidation_release_stability_review.md` now records a
+  `deferred_for_release` reader-work outcome for every unexecuted
+  review-ready or fold-disposition package in the consolidation queue. It is a
+  release-stability decision for human-reader curation only: no merge or fold
+  is executed, no package is permanently rejected, no destination draft is
+  approved, no chapter count changes, no support state moves, and no external
+  review is created. Curated reader work may now proceed inside those source
+  chapters only when the prose-pass note records the relevant consolidation
+  caveat.
 - Broad reader polish should avoid the four pending Part I consolidation source
-  chapters until the pilot is executed or rejected. Reader curation may continue
-  on chapters outside the pending cluster, and local prose fixes may continue
-  anywhere when they do not entrench duplicate chapter structure.
+  chapters unless the release-stability caveat is recorded. Reader curation may
+  continue on chapters outside the pending cluster, and local prose fixes may
+  continue anywhere when they do not entrench duplicate chapter structure.
 - The compression candidate should not be merged from the roadmap table,
   dry-run package, or destination draft alone. It still needs review and an
   execute-full, execute-conservative, revise, defer, or reject decision. The

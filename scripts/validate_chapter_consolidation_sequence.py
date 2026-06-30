@@ -21,6 +21,7 @@ PLANNING_DAG_DESTINATION_DRAFT = ROOT / "docs" / "chapter_consolidation_destinat
 MOECOT_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_moecot_runtime.md"
 SIMULATION_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_simulation_fidelity.md"
 SEMANTIC_FOLD_DISPOSITION = ROOT / "docs" / "chapter_consolidation_fold_semantic_representation.md"
+RELEASE_STABILITY_REVIEW = ROOT / "docs" / "chapter_consolidation_release_stability_review.md"
 URL_HISTORY_POLICY = ROOT / "docs" / "chapter_consolidation_url_history_policy.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 README = ROOT / "README.md"
@@ -847,7 +848,38 @@ PUBLIC_REFERENCES = (
     "docs/chapter_consolidation_fold_simulation_fidelity.md",
     "docs/chapter_consolidation_fold_semantic_representation.md",
     "docs/chapter_consolidation_full_review_packet.md",
+    "docs/chapter_consolidation_release_stability_review.md",
     "scripts/validate_chapter_consolidation_sequence.py",
+)
+
+RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
+    "Chapter Consolidation Release-Stability Review",
+    "Decision: defer all unexecuted consolidation packages for the current",
+    "`deferred_for_release` reader-work outcome",
+    "does not edit `book_structure.json`",
+    "does not merge chapters",
+    "does not fold chapters",
+    "does not create external review",
+    "does not change support states",
+    "The current canonical manifest remains 54 chapters.",
+    "Reader Curation Outcome Table",
+    "Constitutional alignment and agency/corrigibility",
+    "Value conflict and contestable governance",
+    "Compression and residual honesty",
+    "Intent and executable contracts",
+    "Static context ABI",
+    "Proof-carrying claims and adversarial review",
+    "Planning and DAG control",
+    "MoECOT runtime fold",
+    "Simulation fidelity fold",
+    "Semantic representation fold",
+    "Accepted Temporary Debt",
+    "Requirements For Curated Reader Passes Inside Deferred Packages",
+    "This review does not execute any merge or fold.",
+    "This review does not reject any package permanently.",
+    "This review does not approve any destination draft.",
+    "This review does not change chapter count.",
+    "This review does not promote, demote, deprecate, or refute any chapter core",
 )
 
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
@@ -1330,6 +1362,38 @@ def main() -> None:
     for fragment in sorted(SEMANTIC_FOLD_REQUIRED_FIXTURE_FRAGMENTS):
         if f"`{fragment}`" not in semantic_fold:
             errors.append(f"Semantic fold disposition missing fixture, schema, or validator `{fragment}`.")
+
+    try:
+        release_stability_review = read_text(RELEASE_STABILITY_REVIEW)
+    except FileNotFoundError:
+        errors.append("Missing docs/chapter_consolidation_release_stability_review.md")
+        release_stability_review = ""
+
+    for fragment in RELEASE_STABILITY_REQUIRED_FRAGMENTS:
+        if fragment not in release_stability_review:
+            errors.append(f"Release-stability review missing required boundary: {fragment}")
+
+    for chapter_id in sorted(REQUIRED_IDS):
+        if f"`{chapter_id}`" not in release_stability_review and chapter_id not in {
+            "human-intent-as-a-formal-input",
+            "context-transactions-snapshots-mounts-and-taint",
+            "verification-bandwidth-and-context-adequacy",
+            "claim-ledgers-and-belief-revision",
+            "cognitive-compilation-and-semantic-ir",
+            "labor-os-and-typed-jobs",
+            "runtime-adapters-tool-permissions-and-human-approval",
+            "artifact-graphs-audit-logs-and-replay",
+            "procedural-memory-and-cognitive-loop-closure",
+            "recursive-self-improvement-boundaries",
+            "circle-calculus-and-proof-carrying-ai-contracts",
+            "coil-attention-cyclic-memory-and-recurrence-contracts",
+            "coilra-multicoil-rope-and-cyclic-mixers",
+            "mathematical-and-search-substrates",
+            "project-theseus-as-report-first-implementation-reference",
+            "executable-specifications-and-lean-proof-envelope",
+            "living-book-methodology",
+        }:
+            errors.append(f"Release-stability review does not mention deferred chapter `{chapter_id}`.")
 
     for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
         text = read_text(path)

@@ -133,6 +133,13 @@ The full consolidation decision queue now also has
 review-ready merge packages and fold dispositions. It records no accepted
 review, no manifest authorization, and no support-state effect.
 
+`docs/chapter_consolidation_release_stability_review.md` now records a
+`deferred_for_release` reader-work outcome for every unexecuted review-ready or
+fold-disposition package in the current queue. It does not execute, reject, or
+authorize any merge or fold. It allows the current reader-curation cycle to
+continue against the 54-chapter manifest with explicit consolidation caveats
+while preserving every package for later human or external review.
+
 The public URL/history precondition now has a policy surface:
 `docs/chapter_consolidation_url_history_policy.md`. It sets the default
 continuity URL, retired URL, redirect or historical-stub, and chapter-history
@@ -324,6 +331,12 @@ consolidation cluster until that cluster is executed, revised, rejected, or
 explicitly deferred for the release. Local prose fixes remain allowed when they
 do not entrench duplicate structure.
 
+The current release-stability decision explicitly defers all unexecuted
+review-ready merge packages and fold-disposition packages for this
+reader-curation cycle. This means reader work may proceed inside those source
+chapters only with a recorded consolidation caveat; it does not mean the
+packages are rejected, executed, or authorized for manifest changes.
+
 Reader curation may continue outside pending clusters, especially where the
 chapter owns a distinct artifact, proof lane, evidence lane, or implementation
 path. The current rule is consolidation-aware, not chapter-count driven:
@@ -369,6 +382,32 @@ The current allowed protected-reader set is:
 because the current consolidation queue keeps it as the intent-intake chapter;
 its handoff must be revisited if the intent/contracts or Part I alignment
 decisions change the downstream destination shape.
+
+The current deferred-for-release reader-work set is:
+
+- `constitutional-alignment-substrate`
+- `agency-dignity-and-corrigibility`
+- `moral-uncertainty-and-value-conflict`
+- `governance-rights-fork-exit-and-audit`
+- `intent-to-execution-contracts`
+- `command-contracts-and-semantic-interfaces`
+- `planning-as-a-control-layer`
+- `planforge-dags-and-intelligence-arbitrage`
+- `virtual-context-abi`
+- `semantic-pages-context-cells-and-certificates`
+- `spinoza-verification-and-proof-carrying-claims`
+- `unified-adaptive-tribunal-and-adversarial-review`
+- `routing-heads-and-specialist-cores`
+- `moecot-runtime-and-multi-core-orchestration`
+- `compact-generative-systems-and-residual-honesty`
+- `generate-verify-repair-compression`
+- `rankfold-neuralfold-and-artifact-compression`
+- `semantic-representation-and-tree-structured-models`
+- `simulation-fidelity-and-physical-constraints`
+
+Any curated reader prose pass for those chapters must cite
+`docs/chapter_consolidation_release_stability_review.md` or record an
+equivalent consolidation caveat in its prose-pass review note.
 
 ## Non-Pilot Review-Ready Packages
 
