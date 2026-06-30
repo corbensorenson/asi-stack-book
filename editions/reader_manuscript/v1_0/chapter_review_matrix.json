@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 15,
+    "curated_manuscript_candidate": 16,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -1122,12 +1122,14 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions"
+        "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
+        "docs/curated_reader_policy_optimization_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. Existing overlays make method-family material readable while preserving target-policy identity, reward admissibility, drift limits, holdouts, reward-hacking probes, rollback, authority conservation, and non-promotion boundaries.",
+      "review_notes": "Full generated-reader chapter review recorded. Existing overlays keep method-family material readable, and a first drafting-only curated prose pass now foregrounds policy updates as governed behavior-change leases: target policy, feedback admissibility, reward boundary, drift bounds, holdouts, regressions, reward-hacking probes, authority conservation, rollback, promotion gates, method-family nonclaims, proof/test limits, and no local training-result boundaries without approving release.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

@@ -321,6 +321,7 @@ The current allowed protected-reader set is:
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `procedural-memory-and-cognitive-loop-closure`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
+- `policy-optimization-and-learning-from-feedback`
 - `recursive-self-improvement-boundaries`
 - `circle-calculus-and-proof-carrying-ai-contracts`
 - `executable-specifications-and-lean-proof-envelope`

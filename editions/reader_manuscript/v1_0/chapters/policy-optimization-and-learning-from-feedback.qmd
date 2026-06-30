@@ -1,0 +1,380 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: policy-optimization-and-learning-from-feedback
+generated_baseline_ref: build/reader_edition/chapters/policy-optimization-and-learning-from-feedback.qmd
+live_source_ref: chapters/policy-optimization-and-learning-from-feedback.qmd@912e1c9c7
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Policy Optimization and Learning from Feedback
+
+Benchmark ratchets create pressure. They say: this capability improved here,
+regressed there, saturated this test, failed that case, and still owes these
+residuals.
+
+Policy optimization is what decides whether that pressure is allowed to change
+future behavior.
+
+That makes policy optimization dangerous in a different way than benchmarking.
+A benchmark can overstate what happened. A policy update can make the
+overstatement habitual. It can teach a planner to skip an expensive check, a
+router to choose the cheap path, a context policy to retrieve less than the
+task needs, a verifier to reward a style of answer, or a generator to shorten
+reasoning before adequacy has been proven.
+
+The ASI Stack therefore treats policy optimization as a governed actuator, not
+as a magic alignment layer and not as a model-tuning side quest. A policy update
+is a behavior-change lease. It names what may change, why the feedback is
+admissible, how far the behavior may move, what regressions must be preserved,
+what authority must remain unchanged, how rollback works, and who or what can
+promote the update.
+
+Feedback may teach the system what to prefer. It may not silently teach the
+system what it is allowed to ignore.
+
+## Problem
+
+Every serious AI system produces feedback. Human preferences, benchmark
+scores, tool results, verifier judgments, context-grounding checks, latency
+measurements, failed tasks, governance violations, and user corrections all
+say something about future behavior.
+
+The question is not whether to learn from that feedback. The question is which
+policy is being updated, what the feedback is allowed to mean, what evidence
+must accompany the update, and where the update is forced to stop.
+
+In a stack architecture, the word "policy" does not mean only model weights.
+The planner has policies for decomposition, stopping, escalation, and tool
+choice. The context layer has policies for retrieval, compression, grounding,
+refresh, and taint handling. The router has policies for specialist choice,
+fallback, cost, latency, and readiness. Verifiers have policies for critique,
+abstention, contradiction detection, and escalation. Execution layers have
+policies for tool permission, job order, approval, replay, and rollback.
+Governance layers have policies for promotion, quarantine, replacement, and
+appeal.
+
+If those surfaces can learn, they need a shared discipline. Otherwise a local
+reward can become a system-wide behavior change without the claim, evidence,
+authority, and rollback surfaces noticing.
+
+## Why Ordinary Optimization Is Not Enough
+
+RLHF, PPO-style online reinforcement learning, DPO-style preference
+optimization, verifier rewards, reasoning RL, and related methods are often
+presented as model-improvement recipes. That is useful, but it is too narrow
+for this book.
+
+The ASI Stack needs to ask a prior question: what kind of thing is being
+updated?
+
+A planner update is not the same as a router update. A context-policy update
+is not the same as a generator update. A verifier update is not the same as a
+governance update. A latency reward is not the same as a correctness reward. A
+human preference label is not the same as a proof, a test, a tool result, or a
+deployment observation.
+
+The most common failure is reward substitution. A proxy stands in for a real
+target. The score rises, the preference model smiles, the verifier gives a
+pass, the answer gets shorter, or the router gets cheaper. Then the writeup
+describes that proxy movement as truthfulness, safety, capability, adequacy,
+or readiness.
+
+That is evidence laundering through optimization.
+
+Policy optimization must keep the proxy and the target claim separate. It
+must record what the feedback can say, what it cannot say, what probes tried
+to break it, what regressions must remain true, and what governance gate is
+allowed to promote or block the change.
+
+## Core Claim
+
+Policy optimization is the stack's learning actuator: it can update planners,
+routers, context selectors, verifiers, execution policies, and generators, but
+governance decides which feedback is admissible and whether any update may be
+promoted.
+
+In the live book, this remains a design rationale at `argument` support.
+
+The assigned ASI Stack sources support the surrounding architecture:
+benchmark pressure, residual escrow, proof and verification discipline,
+context adequacy, typed execution ledgers, routing, resource budgets,
+procedural loop closure, and stable capability gates. The external RL and
+preference-optimization sources provide method-family context and failure
+cautions. They do not mean this repository has run PPO, DPO, GRPO, RLVR,
+router-policy RL, context-policy RL, reasoning-budget RL, or any other policy
+training experiment.
+
+The point of the chapter is the boundary around learning, not a claim that the
+learning system already exists.
+
+## Mechanism
+
+A policy update begins with an update record.
+
+The record identifies the target policy, the proposed behavior delta, the
+training or update family, the feedback source, the reward or preference
+boundary, the verifier references, the update constraint, the drift bound, the
+holdouts, the regressions, the reward-hacking probes, the governance gate, the
+authority effect, the rollback plan, the monitor window, the deployment scope,
+the evidence packet references, the residuals, the support-state effect, and
+the non-claims.
+
+That sounds bureaucratic because behavior change is where small shortcuts can
+become durable. The record exists so the update cannot hide behind the fact
+that the score improved.
+
+```{mermaid}
+flowchart LR
+  Feedback["Feedback artifact"] --> Admission["Admissibility check"]
+  Admission --> Target["Target policy + update family"]
+  Target --> Boundary["Reward or preference boundary"]
+  Boundary --> Constraint["Drift bound + rollback plan"]
+  Constraint --> Tests["Holdouts, regressions, probes"]
+  Tests --> Gate{"Governance gate promotes?"}
+  Gate -- "yes" --> Lease["Behavior-change lease"]
+  Gate -- "no" --> Residual["Quarantine, rollback, or residual"]
+  Lease --> Ledger["Claim/evidence ledger"]
+  Residual --> Ledger
+```
+
+The sequence matters. Feedback does not update behavior merely because it
+exists. It first has to be admissible for the target policy. Then the target
+policy has to be explicit. Then the reward boundary has to explain what the
+signal can and cannot mean. Then drift, rollback, holdouts, regressions, and
+reward-hacking probes have to constrain the update. Only then can a governance
+gate decide whether the behavior change becomes ordinary behavior, remains
+experimental, or is blocked.
+
+This is how the stack keeps learning from becoming authority by training side
+effect.
+
+## The Behavior-Change Lease
+
+The easiest way to read this chapter is to think of each accepted update as a
+lease rather than a permanent promotion.
+
+A lease grants a candidate behavior limited room to operate. It has a target
+layer, a scope, a monitor window, a rollback handle, regression obligations,
+and a review condition. The prior behavior remains recoverable. The new
+behavior remains accountable to the evidence that justified it.
+
+For a planner, the lease might allow a new decomposition policy only for a
+class of tasks with preserved constraints and explicit escalation rules. For a
+router, it might allow a cheaper specialist route only when readiness, quality,
+and authority gates still pass. For a context selector, it might allow
+compression only when source grounding and adequacy are preserved. For a
+verifier, it might allow a new critique policy only after false positives,
+false negatives, and gaming probes are recorded. For a generation-mode policy,
+it might allow a faster path only when accepted-output quality and fallback
+remain visible.
+
+The mature update is not "the model got better." It is: this policy changed
+inside this boundary, for this evidence, with these residuals, under this
+rollback condition.
+
+## Method Families
+
+The external policy-optimization literature gives the book a vocabulary of
+possible update mechanisms.
+
+Trust-region and clipped online methods such as TRPO and PPO help frame
+bounded policy movement and update-size control. Simpler or critic-light
+policy-gradient methods, including ReMax-like and REINFORCE-style RLHF
+baselines, remind the stack that a heavy PPO pipeline is not the only serious
+form of reinforcement learning. Offline preference methods such as DPO, IPO,
+ORPO, KTO, and SimPO frame updates from preference or binary feedback when
+online rollout is not the right first step. Reasoning RL, sequence-level
+variants, group-relative methods, early-exit work, and long-context verifier
+reward work supply context for reasoning budgets, sequence objectives, and
+grounded context rewards.
+
+Those method families are tools. They are not governance.
+
+The architectural rule is that the target policy should be named before the
+optimizer is named. A PPO-like update to a router, a DPO-like update to a
+generator, an RLVR update to a context policy, and a latency reward for a
+generation-mode selector have different failure modes. The method family does
+not erase the need for feedback admissibility, reward boundaries, drift
+limits, holdouts, regressions, reward-hacking probes, rollback, and promotion
+review.
+
+That is also why the chapter avoids treating acronyms as progress. Acronyms
+change quickly. The durable question is whether the update can be recorded,
+bounded, tested, reverted, and honestly described.
+
+## Interfaces
+
+Policy optimization sits after evidence pressure and before durable behavior
+change.
+
+Benchmark ratchets and residual ledgers provide pressure. Spinoza-style
+verification, tests, VCM adequacy checks, Talos artifacts, tool results,
+governance findings, and human feedback can become candidate reward or
+preference signals. The policy-update record classifies those signals and
+routes them through evaluation. SCF and governance gates decide whether a
+change is promoted, quarantined, rolled back, or left experimental. Appendix C
+or a non-core evidence ledger records any support-state effect.
+
+```{mermaid}
+flowchart TD
+  Bench["Benchmark ratchets + residuals"] --> Signal["Candidate signal"]
+  Verify["Verifiers, tests, context checks"] --> Signal
+  Human["Human feedback + governance findings"] --> Signal
+  Signal --> Record["Policy update record"]
+  Record --> Eval["Holdouts, regressions, reward-hacking probes"]
+  Eval --> Governance["SCF / governance decision"]
+  Governance --> Promote["Scoped lease"]
+  Governance --> Block["Blocked update"]
+  Promote --> Evidence["Evidence ledger"]
+  Block --> Evidence
+```
+
+The interface should make rejection ordinary. A result can be useful as a
+diagnostic while still being inadmissible for training. A reward can be useful
+for a narrow policy while still unable to move a claim. A policy can improve a
+proxy while still failing the target evaluation. A training run can pass while
+deployment remains blocked. A rollback handle can exist while rollback
+effectiveness remains untested.
+
+Those distinctions are not pessimism. They are how a learning system avoids
+mistaking motion for progress.
+
+## Invariants
+
+Reward is not evidence unless the verifier and evaluation boundary are
+recorded.
+
+Policy updates cannot expand authority by training side effect.
+
+A faster, cheaper, shorter, or more fluent policy is not promoted unless task
+success, grounding, safety constraints, and regressions are preserved.
+
+Reward-hacking probes are part of the update record, not optional commentary.
+
+Rollback remains available for promoted updates, and rollback claims remain
+bounded until exercised or dry-run.
+
+Training evidence, evaluation evidence, governance evidence, deployment
+evidence, rollback evidence, and long-term safety evidence remain separate.
+
+Proxy improvement cannot promote the target claim without target-specific
+evaluation, residuals, and failure probes.
+
+## Failure Modes
+
+Reward hacking is the obvious failure: the policy learns to satisfy the
+reward while missing the task.
+
+Verifier gaming is its close cousin: the policy learns the verifier's blind
+spots instead of the underlying constraint.
+
+Preference overfitting occurs when a policy learns the style, deference,
+length, confidence, or emotional shape that wins labels while losing truth or
+task quality.
+
+Shortcut learning appears when a planner, router, or context policy finds a
+cheap local path that passes the visible test while damaging cross-layer
+traceability.
+
+Latency pressure can suppress verification. Context compression can suppress
+adequacy. Routing cost pressure can bypass readiness. Generation-mode
+pressure can reward speed without accepted-output quality. Governance-policy
+pressure can reward clean-looking decisions while erasing dissent, appeal, or
+rollback.
+
+The hard failure is reward laundering. The system improves the reward, then a
+human or AI narrator describes the improvement as capability, truth,
+readiness, safety, or deployment permission. The update record exists to stop
+that narration before it becomes institutional memory.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a policy optimization record schema, one
+valid fixture, finite Lean predicates, and a validation path that proves
+restraint rather than learning performance.
+
+The repository already has that first layer. The policy optimization fixture
+records the update state, target layer, policy reference, policy delta,
+training mode, feedback source, feedback admissibility, reward boundary,
+verifier references, reward-hacking probes, update constraint, drift bound,
+holdouts, regressions, evaluation references, governance gates, authority
+effect, rollback plan, monitor window, evidence packet references, deployment
+scope, promotion decision, measurement status, support-state effect,
+residuals, and non-claims. The Lean module implements finite record
+predicates over admitted update records and reward/governance promotion
+blocking. The benchmark anti-Goodhart harness checks synthetic feedback
+admissibility, reward-boundary, reward-hacking-probe, evidence-packet,
+governance-gate, blocked-ratchet, and promotion-gate behavior.
+
+Those artifacts prove protocol discipline only. They do not prove reward
+quality, optimizer convergence, benchmark improvement, policy safety, route
+quality, context-selection quality, rollback success, or resistance to all
+reward-hacking strategies.
+
+The next honest slice would be a small policy-delta rehearsal: one offline
+preference update kept experimental, one reward-hacking probe that blocks
+promotion, one router-policy canary with authority unchanged, one latency
+reward rejected for suppressing verification, and one rollback dry run. The
+goal would be to show that the stack can refuse bad learning pressure, not to
+announce that the learning system is solved.
+
+## Beyond the State of the Art
+
+The mature endpoint is a governed learning operating system for the stack.
+
+At that endpoint, planners, routers, context selectors, verifiers, execution
+policies, generation modes, and governance assistants can improve over time
+without gaining new authority by training side effect. Each update is a
+behavior-change lease with a target policy, old and new behavior, admissible
+feedback, reward or preference boundary, update family, drift bound, holdouts,
+regressions, reward-hacking probes, authority effect, rollback plan, monitor
+window, deployment scope, evidence packets, residuals, and non-claims.
+
+The product-level surface would include a stack-wide policy registry,
+reward-source admission gates, canary suites, holdouts, regression floors,
+reward-hacking probes, rollback handles, monitor windows, promotion decisions,
+and downgrade triggers. PPO-like, DPO-like, GRPO-like, RLVR-like,
+context-policy, router-policy, verifier-policy, or custom control-policy
+updates would be implementation choices under the same governance record.
+
+Learning would be continuous but never sovereign. The system could improve
+its habits while the authority envelope, evidence ledger, rollback path, and
+human/governance controls remain legible.
+
+That endpoint remains unimplemented here.
+
+## Evidence Boundary
+
+This chapter argues for governed policy updates. It does not claim that this
+repository has trained a policy, improved a model, reproduced an RLHF result,
+validated a reward model, solved reward hacking, or demonstrated governed
+deployment.
+
+Current evidence consists of source synthesis, source-note mappings, external
+method-family orientation, a policy optimization schema fixture, finite Lean
+record predicates, and synthetic gate checks in the benchmark anti-Goodhart
+harness. The chapter's core claim stays at `argument` support.
+
+External sources such as TRPO, PPO, ReMax, DPO, IPO, ORPO, KTO, SimPO,
+REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF
+limitations provide comparison language and known failure cautions. They do
+not import local experiments or make the ASI Stack's policy-update claim
+empirical.
+
+The clean boundary is simple: a reward signal is not a truth signal, a
+training run is not a governance grant, and a benchmark improvement is not a
+deployment right.
+
+## Handoff
+
+Governed learning improves behavior inside a field. Durable artifacts need a
+larger form of continuity: memory across releases, contributors, budgets,
+governance decisions, evidence records, project milestones, and eventual
+sunset.
+
+Artifact Steward Agents and Living Project Governance carries the same
+discipline into project life. It asks how an artifact can preserve mission,
+memory, roadmap, treasury limits, contributor ledgers, work contracts, and
+tainted event intake without granting an AI ownership.
