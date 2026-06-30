@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 40
-- Curated chapter records: 40 drafting records for
+- Curated-manuscript candidates: 41
+- Curated chapter records: 41 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -63,6 +63,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `coilra-multicoil-rope-and-cyclic-mixers`,
   `recursive-self-improvement-boundaries`,
   `intent-to-execution-contracts`,
+  `command-contracts-and-semantic-interfaces`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
   `artifact-steward-agents-and-living-project-governance`
@@ -153,6 +154,7 @@ executing, rejecting, or authorizing the future Constitutional Alignment merge.
 | `coilra-multicoil-rope-and-cyclic-mixers` | protected standalone cyclic-substrate evaluation chapter outside pending consolidation clusters; owns optional cyclic-substrate adoption, structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, and canary-route non-claims | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_coilra_cyclic_mixers_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no RoPE certifier run, sidecar regeneration, Circle contract pack, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, external Circle Lean build, Theseus transfer consumer, model-quality result, context-length result, runtime result, memory-savings result, training-stability result, hardware-efficiency result, deployment-readiness result, transfer result, or support-state movement claim is implied. |
 | `recursive-self-improvement-boundaries` | `curated_manuscript_candidate`; pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_recursive_self_improvement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `intent-to-execution-contracts` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `command-contracts-and-semantic-interfaces` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_intent_execution_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed intent-to-execution runtime, parser correctness, planner quality, command compiler correctness, approval enforcement, runtime adapter safety, tool execution, artifact acceptance, replayed vertical slice, behavioral execution test, benchmark performance, ReAct reproduction, MoECOT runtime reproduction, or manifest merge/fold decision is implied. |
+| `command-contracts-and-semantic-interfaces` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `intent-to-execution-contracts` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_command_contracts_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed command-contract runtime, prompt safety, parser completeness, semantic extraction quality, prompt-injection resistance, dispatch enforcement, hidden-context override defense, command compiler correctness, Dafny compatibility, SMT-backed proof, functional-correctness verification, empirical productivity gain, benchmark performance, tool-effect enforcement, approval-service behavior, execution correctness, or manifest merge/fold decision is implied. |
 | `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `executable-specifications-and-lean-proof-envelope` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlay | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_executable_specs_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
@@ -189,7 +191,7 @@ true:
 
 ## Non-Claims
 
-- This review creates forty drafting-only curated reader chapter files for
+- This review creates forty-one drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

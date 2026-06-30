@@ -55,7 +55,7 @@ must preserve the claim boundary.
 - This review does not approve a reader release.
 - This review does not approve EPUB, PDF, DOCX, HTML, AZW3, MOBI, Markdown,
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
-- This review records that forty drafting-only curated reader chapters now
+- This review records that forty-one drafting-only curated reader chapters now
   exist; it does not approve any chapter for release.
 - This review records three drafting companion notes for dense proof/governance
   chapters; it does not approve them as e-reader, audio, or release artifacts.

@@ -1511,6 +1511,43 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass completed; see docs/curated_reader_intent_execution_prose_pass.md. Deferred intent/command-contract consolidation caveat remains active; not release-reviewed."
+    },
+    {
+      "chapter_id": "command-contracts-and-semantic-interfaces",
+      "title": "Command Contracts and Semantic Interfaces",
+      "file": "editions/reader_manuscript/v1_0/chapters/command-contracts-and-semantic-interfaces.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/command-contracts-and-semantic-interfaces.qmd",
+      "live_source_ref": "chapters/command-contracts-and-semantic-interfaces.qmd@9f8589b00",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#command-contracts-and-semantic-interfaces.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#command-contracts-and-semantic-interfaces",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "Curated reader source reframes command contracts around the first dispatch boundary after intent, the semantic firewall between rich context and operational permission, field provenance/confidence, validation states, dispatch blocking, and command fields as the control surface for planning; no claim, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release record changes.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose: core claim remains argument",
+        "source boundary preserved: Corben sources remain design lineage and interface vocabulary, external Dafny remains a comparator",
+        "proof/test status preserved: CommandContracts Lean hooks, command_contract schema, protocol fixture validation, and synthetic plan-execution harness remain finite record and synthetic cross-record checks only",
+        "implementation horizon preserved without implying deployed command parser, prompt firewall, dispatch service, conflict checker, verifier-ready compiler, or execution trace",
+        "release blocker status preserved until an edition release record clears it",
+        "no prompt-safety, parser-completeness, semantic-extraction-quality, prompt-injection-resistance, dispatch-enforcement, Dafny-compatibility, functional-correctness, empirical-productivity, execution-correctness, or support-state movement claim added",
+        "deferred consolidation caveat preserved: no merge with intent-to-execution-contracts executed, rejected, or authorized"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass completed; see docs/curated_reader_command_contracts_prose_pass.md. Deferred intent/command-contract consolidation caveat remains active; not release-reviewed."
     }
   ],
   "reconciliation_report": {

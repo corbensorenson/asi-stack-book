@@ -1,0 +1,314 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: command-contracts-and-semantic-interfaces
+generated_baseline_ref: build/reader_edition/chapters/command-contracts-and-semantic-interfaces.qmd
+live_source_ref: chapters/command-contracts-and-semantic-interfaces.qmd@9f8589b
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Command Contracts and Semantic Interfaces
+
+A command is where a request becomes inspectable.
+
+The previous chapter followed intent as it moved toward execution. That trace
+can name purpose, authority, artifacts, verification, feedback, and residuals,
+but the stack still needs a smaller object at the point where planning begins.
+It needs a command that is compact enough for machines to consume and explicit
+enough for humans to audit.
+
+That is the command contract. It is not a decorative prompt format. It is the
+first semantic interface downstream layers are allowed to treat as planning
+input. Natural language can remain attached, examples can help, style notes
+can guide the result, and retrieved context can inform the work, but those
+materials do not get to become hidden permission. The explicit fields control
+dispatch.
+
+The throughline is simple: language can inform work, but command fields govern
+work.
+
+## Problem
+
+The stack needs a compact command language that is expressive enough for AI
+cooperation and precise enough for validation.
+
+Human requests arrive with more meaning than a schema can capture. They carry
+tone, history, implied goals, examples, priorities, and sometimes ambiguity.
+An AI system should not flatten all of that richness into sterile machine
+syntax. But it also cannot let a blob of prose decide what tools may run, what
+private information may be used, what output counts as success, or what should
+happen when the work fails.
+
+The command contract keeps the operational pieces visible. It names the role,
+objective, context references, constraints, procedure, allowed means,
+forbidden means, output contract, verification duties, failure behavior,
+authority ceiling, approval requirements, expected artifacts, feedback route,
+re-contract points, dispatch blockers, and non-claims.
+
+Software Magic Grimoire supplies the vocabulary for bounded operative
+language: roles, objectives, constraints, procedures, outputs, verification,
+failure behavior, guards, loops, handoffs, and recovery paths. VIEA supplies
+the intent-to-execution spine that makes those fields part of a larger work
+trace. GenesisCode adds the discipline that privileged effects need
+recognizable protocol shapes, provenance, obligations, and capability
+boundaries. Cognitive Compilation and Talos show why the command must lower
+cleanly into source plans, semantic atoms, typed jobs, evidence records,
+approval gates, and replayable work.
+
+The command contract is therefore the earliest place where helpfulness has to
+become a bounded obligation.
+
+## Why existing approaches are insufficient
+
+Prompt prose often hides objectives, constraints, output contracts, and
+failure behavior in unstructured language.
+
+A free-form prompt can be excellent for exploration. It lets a human think in
+ordinary language and lets a model infer structure. But exploration and
+execution are different states. The moment a prompt becomes a work order, its
+implicit parts start to matter: what is the actual objective, what sources are
+allowed, what constraints outrank convenience, what artifact should exist at
+the end, what verifier should judge it, what side effects are permitted, and
+what should happen if the instruction conflicts with context?
+
+Without a semantic interface, the system guesses. It may treat an example as a
+requirement, a style note as a constraint, a retrieved passage as an
+instruction, or a likely tool path as permission. It may also produce a good
+answer that cannot be accepted because no one recorded what acceptance meant.
+
+Structured prompts can fail in the same way. Moving vague prose into YAML or
+JSON does not make the command governable. A field that says "do what is
+needed" is still unbounded. An output contract that says "make it good" is
+not testable. An authority field inferred from context is not authorization.
+
+Dafny provides a useful outside comparison from specification-oriented
+programming. Its lesson for this chapter is not that the ASI Stack has Dafny
+proofs for command contracts. It does not. The useful comparison is the
+separation between a specification, an implementation, a verifier, and runtime
+behavior. Command contracts borrow that separation at the human/AI boundary:
+make the obligations explicit before pretending they can be checked.
+
+## Core Claim
+
+Command contracts should use explicit semantic interfaces for objective,
+context, constraints, procedure, output, verification, and failure behavior.
+
+The live AI/research chapter records this as a design rationale at `argument`
+support. The repository has source notes, schema surfaces, fixture validation,
+finite Lean predicates, and a synthetic plan-execution harness. Those artifacts
+support record discipline and cross-record consistency. They do not prove
+prompt safety, parser completeness, semantic extraction quality, dispatch
+enforcement, prompt-injection resistance, empirical productivity gains, or
+deployed execution.
+
+The claim is deliberately modest: if a command is going to become planning
+input, it should expose the fields that downstream layers need in order to
+plan, block, clarify, verify, refuse, or record a residual.
+
+## Mechanism
+
+The mechanism is a semantic firewall.
+
+The raw request, conversation history, retrieved context, examples, and style
+instructions can all sit near the command. They can inform interpretation. But
+they cannot silently override explicit objective, constraints, authority,
+output, verification, or failure behavior.
+
+```{mermaid}
+flowchart LR
+  Request["Natural-language request"] --> Extract["Semantic extraction"]
+  Context["Context, examples, prior text"] --> Review["Precedence review"]
+  Extract --> Fields["Command fields"]
+  Fields --> Review
+  Review -->|passes| Planning["Planning input"]
+  Review -->|missing field| Clarify["Clarify or re-contract"]
+  Review -->|conflict| Residual["Conflict residual"]
+  Review -->|inferred authority| Block["Dispatch blocked"]
+  Clarify --> Fields
+  Residual --> Ledger["Evidence and residual ledger"]
+  Block --> Ledger
+```
+
+The contract has two jobs. First, it compresses the work into fields another
+layer can inspect. Second, it records the confidence of those fields. A
+confirmed field is different from a defaulted field. A policy-imposed
+constraint is different from a source-derived requirement. An inferred tool
+path is different from an authorized tool path. Missing values are not
+annoyances; they are dispatch blockers or re-contract points.
+
+Command validation states keep this pre-execution boundary explicit. A `draft`
+contract is still being extracted. `field_complete` means the slots exist, not
+that they are trustworthy. `conflict_detected` means context or fields clash
+with explicit constraints. `authority_inferred` means a means, tool,
+disclosure, publication, or other effect was guessed rather than granted.
+`dispatch_blocked` means a required output, verification, failure, approval,
+or authority field is missing or vague. Only `validated_for_planning` can
+lower into a plan graph, and even that state does not say the plan or final
+artifact is correct.
+
+This is why the command interface belongs between intent and planning. It
+lets the planner consume bounded work rather than ambient desire.
+
+## Interfaces
+
+Command semantics are carried by the Command Contract.
+
+The minimum interface includes:
+
+- `contract_id`
+- `intent_id`
+- `validation_state`
+- `role`
+- `objective`
+- `context_refs`
+- `field_provenance`
+- `field_confidence`
+- `constraints`
+- `procedure`
+- `allowed_means`
+- `forbidden_means`
+- `bounded_defaults`
+- `output_contract`
+- `verification`
+- `failure_behavior`
+- `authority_ceiling`
+- `authority_basis`
+- `required_approvals`
+- `expected_artifacts`
+- `feedback_route`
+- `recontract_points`
+- `dispatch_blockers`
+- `non_claims`
+
+Planning consumes the command. Execution enforces allowed means and output
+contracts. Verification checks declared criteria and failure behavior. Evidence
+records which fields were satisfied, repaired, escalated, superseded, or left
+residual.
+
+The important interface detail is field status. `confirmed` fields may support
+planning because they were explicitly stated or accepted. `policy_imposed`
+fields can constrain planning but cannot broaden authority. `source_derived`
+fields can carry source-limited requirements. `defaulted` fields need a scope
+and a re-contract trigger. `inferred` fields can help draft a command, but
+they cannot authorize side effects. `missing` fields block dispatch or narrow
+the response to clarification.
+
+A command can therefore be useful before it is executable. That distinction is
+one of its main safety properties.
+
+## Invariants
+
+A command exposes output and verification requirements.
+
+Failure behavior is declared.
+
+Implicit instructions do not override explicit constraints.
+
+Field provenance and confidence remain visible to planning and verification.
+
+Inferred or defaulted authority cannot authorize side effects.
+
+The override invariant is the center of the chapter. If a retrieved passage,
+tool result, prior conversation, or user-provided example conflicts with the
+command contract, the system should not choose the most fluent interpretation.
+It should record the conflict, ask, narrow, block dispatch, or create a
+residual.
+
+The output-test coupling matters too. A command without an expected artifact
+or verifier is not ready for governed planning because later layers cannot
+tell whether the work succeeded.
+
+## Failure modes
+
+Semantic ambiguity produces false agreement. The human, model, planner, and
+reviewer all think the command is clear until the artifact arrives and exposes
+that they meant different things.
+
+Prompt injection through context attacks the semantic firewall. A retrieved
+or pasted instruction tries to act like a higher-priority command. The contract
+must make that visible as conflict, not as ordinary context.
+
+Unspecified output contracts make verification subjective. If success is not
+named, the system may optimize for fluency instead of acceptance.
+
+Field laundering happens when vague prose is moved into a formal slot and
+treated as if it became testable. A field is not governable merely because it
+has a key name.
+
+Authority inference is the dangerous case. The system sees a likely means and
+treats it as if the human granted it. In a governed stack, inferred means can
+support a draft or a clarification question. They cannot open a side-effect
+path.
+
+Trace laundering is a related evidence failure. A valid command schema
+instance is not execution, and a synthetic fixture is not a deployed command
+firewall.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a public-safe `command_contract` record
+plus fixture checks that distinguish valid command shape from blocked command
+state.
+
+The current repository already has the schema surface, protocol fixture
+validation, finite Lean gates for required fields and explicit-constraint
+precedence, and the synthetic plan-execution harness. Those checks are useful
+because they make command fields, failure behavior, dispatch blockers,
+approval state, and cross-record consistency inspectable.
+
+The next small implementation slice should add a command-conflict fixture set:
+one clean command, one missing output contract, one hidden-context override,
+one inferred-authority case, and one declared failure-behavior case. That
+would test the semantic firewall more directly while still staying below any
+claim of deployed prompt security.
+
+The current MVI remains protocol discipline, not behavior proof.
+
+## Beyond the State of the Art
+
+The mature endpoint is a semantic control language for governed work.
+
+In that endpoint, command contracts are not prompt templates. They are the
+shared language used by humans, planners, verifiers, job runners, policy
+layers, and future AI agents to agree on what the next unit of work means
+before any execution path opens.
+
+Every command field carries provenance, confidence, precedence, and dispatch
+consequence. Context can be rich without becoming authority. Examples can
+guide output without rewriting constraints. Style can help communication
+without changing verification. Source material can inform the answer without
+turning into a hidden instruction channel.
+
+The product-level version would include reusable command templates, conflict
+checkers, field-confidence policies, verifier-ready obligations, lowering
+rules into plan graphs, and dispatch gates that refuse vague, conflicting,
+missing, or authority-inferred commands. It would make "no" and "not yet" as
+normal as "continue."
+
+That endpoint is still architecture. It needs parser behavior, conflict tests,
+override tests, dispatch enforcement, downstream traces, and human review
+before it can support stronger claims.
+
+## Summary
+
+Command contracts turn language into inspectable obligation.
+
+They keep the raw richness of human communication nearby while exposing the
+fields that planning, execution, verification, and evidence need. Their value
+is not bureaucracy. Their value is precedence: explicit objective, constraint,
+authority, output, verification, and failure behavior outrank helpful but
+unbounded context.
+
+The command surface should be short enough to use and strict enough to reject.
+That is how a governed stack keeps language useful without letting it become
+ambient control.
+
+## Handoff
+
+Once the command exposes objective, constraints, output contract,
+verification, failure behavior, and authority boundaries, the stack can ask
+what order the work should happen in. Planning as a Control Layer takes the
+validated command surface and turns it into dependencies, budgets, context
+requests, authority limits, blocked-node records, and stop conditions before
+any executable job exists.
