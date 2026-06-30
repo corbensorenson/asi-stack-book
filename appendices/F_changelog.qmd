@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-06-30 - Compact generation and semantic negative-case proofs
+
+- Strengthened `AsiStackProofs.CompactGenerativeSystems` with two derived
+  negative-case theorems: one rejects unresolved obligations without residual
+  records, and one rejects lossy unverified representations marked exact.
+- Strengthened `AsiStackProofs.GenerateVerifyRepair` with two derived
+  negative-case theorems: one rejects exact reconstruction claims when
+  generator output plus repair residual does not equal the target, and one
+  rejects exactness promotion after failed verification.
+- Strengthened `AsiStackProofs.SemanticRepresentation` with two derived
+  negative-case theorems: one rejects grounded semantic nodes with no
+  provenance links, and one rejects hierarchy updates that neither preserve
+  prior references nor record supersession.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 314
+  theorem declarations, 115 direct/projection-style declarations, and 199
+  derived/decomposed declarations.
+- Updated the Compact Generative Systems and Residual Honesty chapter,
+  manifest test rows, Appendix E, proof adequacy review, candidate status,
+  v1.0/v1.x roadmap surfaces, focus audit, and status snapshot validator.
+  Refreshed the v1.0 status manuscript scale to 167,318 chapter words
+  excluding YAML and 174,715 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, prove compact
+  utility, implement a codec, prove reconstruction quality, measure repair
+  cost, run fallback behavior, prove semantic grounding quality, validate
+  hierarchy migration, measure representation utility, improve model quality,
+  enforce downstream consumer policy, or approve any reader, ebook, PDF, DOCX,
+  or audio release artifact.
+
 ## 2026-06-30 - Efficient ASI route and residual negative-case proofs
 
 - Strengthened `AsiStackProofs.Efficiency` with two derived negative-case

@@ -42,7 +42,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | 3 | 14 | 3 | 3 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/CommandContracts.lean` | 2 | 4 | 2 | 2 |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | 2 | 2 | 2 | 1 |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | 2 | 4 | 2 | 1 |
 | `lean/AsiStackProofs/ContextCertificates.lean` | 2 | 3 | 5 | 3 |
 | `lean/AsiStackProofs/ContextTransactions.lean` | 2 | 3 | 3 | 4 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 2 | 6 | 8 | 4 |
@@ -51,7 +51,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/EvidenceStates.lean` | 2 | 9 | 7 | 2 |
 | `lean/AsiStackProofs/FailureModes.lean` | 2 | 6 | 3 | 2 |
 | `lean/AsiStackProofs/FastGeneration.lean` | 2 | 2 | 4 | 2 |
-| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 2 | 3 | 2 |
+| `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 6 | 8 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 3 | 8 | 3 | 3 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 3 | 11 | 3 | 3 |
@@ -75,7 +75,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 2 | 3 | 4 | 2 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 3 | 14 | 4 | 5 |
 | `lean/AsiStackProofs/SelfImprovement.lean` | 3 | 21 | 7 | 5 |
-| `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 2 | 3 | 2 |
+| `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 4 | 4 | 2 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 3 | 9 | 3 | 3 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 2 | 3 | 4 | 4 |

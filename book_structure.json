@@ -6309,6 +6309,48 @@
           "minimal_implementation": "A compact generative record plus compression receipt fixture suite with one residual-burden case, one lossy or blocked exactness case, one failed-verification case, one repair-or-fallback case, and one consumer-policy rejection. The folded semantic-representation slice adds `semantic_node_record.valid.json` as a record-shape fixture for provenance, hierarchy, relation refs, tokenization contract, grounding state, versioning, supersession, residual uncertainty, permitted uses, evaluation refs, and consumer-policy limits; it remains record-shape validation only.",
           "beyond_state_of_art": "A mature compression control plane treats compact generators, generated reconstructions, exact repairs, scoped residuals, consumer policies, fallback, replay, and resource accounting as one audited representation market. It lets the stack choose the cheapest lawful representation for a task while preserving verifier quality, repair burden, exactness boundaries, declared loss, fallback availability, and non-claims. This remains a target architecture until public codec, verifier, utility, rate, and replay evidence exists. The mature compression layer also leases semantic representations. Graph nodes, tree paths, and semantic tokens become task-scoped meaning objects whose provenance, grounding, adequacy, interoperability, supersession, consumer policy, and residual uncertainty travel with every use. They may reduce burden only when they preserve the constraints required by the consumer and fall back to fuller context, source artifacts, or quarantine when they do not.",
           "codex_tests": [
+            {
+              "name": "Residual honesty negative case",
+              "purpose": "Check that unresolved obligations without residual records reject the finite residual-honesty predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no behavioral residual-burden measurement claim",
+              "status": "implemented in AsiStackProofs.CompactGenerativeSystems; no behavioral residual-burden claim"
+            },
+            {
+              "name": "Lossy exactness negative case",
+              "purpose": "Check that a lossy unverified representation marked exact rejects the finite exactness predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no codec-correctness or exact-reconstruction claim",
+              "status": "implemented in AsiStackProofs.CompactGenerativeSystems; no codec-correctness claim"
+            },
+            {
+              "name": "Exact reconstruction mismatch negative case",
+              "purpose": "Check that an exact claim whose generator output plus repair residual does not equal the target rejects the finite exact-reconstruction predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no real reconstruction-quality claim",
+              "status": "implemented in AsiStackProofs.GenerateVerifyRepair; no reconstruction-quality claim"
+            },
+            {
+              "name": "Failed verification promotion negative case",
+              "purpose": "Check that failed verification with exactness promotion rejects the finite failed-verification predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no verifier-quality or codec-behavior claim",
+              "status": "implemented in AsiStackProofs.GenerateVerifyRepair; no verifier-quality claim"
+            },
+            {
+              "name": "Semantic grounded-provenance negative case",
+              "purpose": "Check that a grounded semantic node with zero provenance links rejects the finite grounding predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no grounding-quality or semantic-utility claim",
+              "status": "implemented in AsiStackProofs.SemanticRepresentation; no grounding-quality claim"
+            },
+            {
+              "name": "Semantic hierarchy-supersession negative case",
+              "purpose": "Check that a hierarchy update with neither preserved references nor supersession rejects the finite update predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no downstream hierarchy-migration behavior claim",
+              "status": "implemented in AsiStackProofs.SemanticRepresentation; no hierarchy-migration behavior claim"
+            },
             "S/R/Q/G/V/E loop consistency test",
             "Residual burden test",
             "Downstream utility test",

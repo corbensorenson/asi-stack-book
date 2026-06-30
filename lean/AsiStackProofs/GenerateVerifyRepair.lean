@@ -21,6 +21,15 @@ theorem exact_reconstruction_claim_requires_generator_plus_repair
   intro valid exactClaim
   exact valid exactClaim
 
+theorem exact_reconstruction_claim_with_mismatched_repair_rejected
+    {record : ReconstructionRecord} :
+    record.exactClaim = true ->
+    record.generatorOutput + record.repairResidual ≠ record.target ->
+    ¬ ExactReconstructionClaimValid record := by
+  intro exactClaim mismatch valid
+  have reconstructs := valid exactClaim
+  exact mismatch reconstructs
+
 structure VerificationReview where
   verificationPassed : Bool
   exactnessPromoted : Bool
@@ -36,5 +45,15 @@ theorem failed_verification_blocks_exactness_promotion
     review.exactnessPromoted = false := by
   intro valid failed
   exact valid failed
+
+theorem failed_verification_with_exactness_promotion_rejected
+    {review : VerificationReview} :
+    review.verificationPassed = false ->
+    review.exactnessPromoted = true ->
+    ¬ FailedVerificationBlocksPromotion review := by
+  intro failed promoted valid
+  have blocked := valid failed
+  rw [promoted] at blocked
+  cases blocked
 
 end AsiStackProofs.GenerateVerifyRepair
