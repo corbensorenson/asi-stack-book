@@ -1077,11 +1077,12 @@ Current status:
 - The sequence now records consolidation states so candidates cannot jump from
   "interesting idea" to manifest change: the Part I pilot is `review_ready`,
   compression, intent/contracts, static context ABI, verification/adversarial
-  review, and planning/DAG control are `review_ready`, the remaining
-  non-packaged merge clusters are `planned_candidate`, MoECOT runtime,
+  review, and planning/DAG control are `review_ready`, MoECOT runtime,
   simulation fidelity, and semantic representation are
-  `fold_disposition_ready`, and runtime-adapters/Labor OS is retained unless a
-  later evidence review finds duplicate artifact ownership.
+  `fold_disposition_ready`, and runtime-adapters/Labor OS is
+  `rejected_or_retained` unless a later evidence review finds duplicate
+  artifact ownership. The latest attachment does not add another merge
+  package; it reinforces the duty to decide the existing queue.
 - The pilot proposes two future merges:
   `constitutional-alignment-substrate` with
   `agency-dignity-and-corrigibility`, and
@@ -1259,10 +1260,12 @@ Current status:
   review is created. Curated reader work may now proceed inside those source
   chapters only when the prose-pass note records the relevant consolidation
   caveat.
-- Broad reader polish should avoid the four pending Part I consolidation source
-  chapters unless the release-stability caveat is recorded. Reader curation may
-  continue on chapters outside the pending cluster, and local prose fixes may
-  continue anywhere when they do not entrench duplicate chapter structure.
+- Broad reader polish may proceed inside deferred consolidation packages only
+  when the relevant prose-pass record cites the release-stability caveat and
+  preserves future reconciliation. That permission is release pragmatism, not
+  an accepted merge, retained-chapter decision, support-state movement, or
+  proof of table-of-contents quality. Local prose fixes may continue anywhere
+  when they do not entrench duplicate chapter structure.
 - The compression candidate should not be merged from the roadmap table,
   dry-run package, or destination draft alone. It still needs review and an
   execute-full, execute-conservative, revise, defer, or reject decision. The

@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-30 - Consolidation roadmap attachment clarification
+
+- Re-reviewed the latest pasted consolidation proposal and confirmed that its
+  useful force is already part of the v1.x roadmap: reduce repeated chapter
+  skeletons through governed consolidation, not deletion or a direct
+  54-to-44 manifest edit.
+- Tightened `docs/v1_x_beyond_sota_roadmap.md` so the current state is clear:
+  no new merge package was added, the existing review-ready and
+  fold-disposition queue remains the decision surface, runtime-adapters/Labor
+  OS remains retained unless later evidence changes artifact ownership, and
+  reader curation inside deferred packages requires an explicit
+  release-stability caveat.
+- This does not edit `book_structure.json`, change chapter count, execute or
+  reject a merge or fold, approve destination drafts, approve reader artifacts,
+  change Appendix C support states, change Appendix K implementation horizons,
+  create external review, or create evidence, proof, benchmark, EPUB, DOCX,
+  PDF, HTML, audio, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - UAT curated reader prose pass
 
 - Added a drafting-only curated reader chapter for
