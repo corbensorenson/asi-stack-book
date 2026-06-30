@@ -1,0 +1,247 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: moecot-runtime-and-multi-core-orchestration
+generated_baseline_ref: build/reader_edition/chapters/moecot-runtime-and-multi-core-orchestration.qmd
+live_source_ref: chapters/moecot-runtime-and-multi-core-orchestration.qmd@08816c2cb
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# MoECOT Runtime and Multi-Core Orchestration
+
+Routing says which capability should act. Readiness gates say whether that
+capability is allowed to act now. A runtime has to do the more concrete work:
+accept the command, select bounded specialist lanes, apply gates, record what
+happened, preserve replay handles, hand off the result, and leave residuals
+where the evidence ran out.
+
+MoECOT matters here because it gives the book a concrete runtime shape to
+reason about. It is a compact-orchestrator pattern with specialist lanes,
+control-plane gates, ledgers, replay, handoff, readiness updates, and explicit
+limits. That makes it useful as implementation-reference context for the ASI
+Stack.
+
+The boundary is just as important as the shape. This chapter does not treat
+MoECOT as reproduced evidence that the stack works. The source note, connector
+context, schema, finite Lean gates, and synthetic readiness mapping help define
+what runtime evidence would have to look like. They do not prove benchmark
+performance, deployment readiness, model quality, specialist adequacy, security
+behavior, replay correctness, or production safety.
+
+## Problem
+
+An architecture can sound coherent while still having no believable runtime
+surface. It can name planning, routing, memory, verification, execution,
+benchmarks, and self-improvement, but if there is no record that shows how a
+command moved through those layers, the system is still mostly prose.
+
+The runtime layer is where the stack has to stop being atmospheric. A command
+must enter with an authority envelope. A route head must choose a lane. A
+specialist core must do bounded work. A control plane must accept, deny, or
+pause. Ledgers must record the decision. Replay references must exist or be
+marked missing. Handoff must name the next owner. Residuals must stay visible.
+
+MoECOT is the current reference shape for that runtime boundary. Its role is to
+say what an evidence-rich multi-core orchestration packet should contain, not
+to ask readers to trust a runtime name.
+
+## Why Ordinary Runtime Stories Fail
+
+Many runtime descriptions collapse three different things:
+
+- an architectural intention;
+- a source-reported implementation story;
+- a reproduced result.
+
+The ASI Stack cannot allow those to become one confidence label. A named
+runtime can be useful and still unverified. A source can describe a benchmark
+artifact without the book having reproduced the benchmark. A schema can validate
+record shape without proving that a real run happened. A Lean theorem can prove
+a finite gate over declared fields without proving that the underlying runtime
+is safe or effective.
+
+That distinction is the point of this chapter. MoECOT is not used as a shortcut
+around evidence discipline. It is used as a stress test for it. If a compact
+orchestrator, route head, specialist core, ledger, replay handle, or readiness
+gate cannot say whether it is source-reported, locally reproduced, externally
+corroborated, or blocked, then it is not yet usable as evidence.
+
+The relevant external comparison is therefore orchestration and routing, not a
+MoECOT benchmark claim. Planning systems, sparse expert routing, conditional
+computation, and cost-quality routers help place the chapter. They do not prove
+that MoECOT has matched those baselines inside this repository.
+
+## Core Claim
+
+MoECOT should be treated as the implementation-reference layer for a governed
+low-parameter multi-core ASI stack once its authenticated source is fully mined
+(evidence boundary: architectural argument).
+
+That claim remains at `argument` support. The current evidence supports a
+runtime crosswalk: compact orchestrator, specialist lanes, fail-closed control
+plane, run and task ledgers, readiness gates, replay, handoff, promotion
+blockers, and residual tracking. It does not support a runtime success claim.
+
+The fold decision also remains open. A recorded fold disposition proposes that
+this chapter may later become a named MoECOT Runtime Crosswalk section inside
+`routing-heads-and-specialist-cores`. That fold has not executed. The current
+reader manuscript keeps the standalone chapter for this release cycle while
+preserving the future fold or restoration condition.
+
+## Mechanism
+
+The clean way to read MoECOT is as an evidence-packet factory.
+
+A command arrives. The compact orchestrator receives it. The route head selects
+one or more specialist lanes. Each lane receives bounded authority, bounded
+context, and bounded tools. The control plane applies readiness and promotion
+gates. Ledgers record the route, gate decisions, authority state, denied paths,
+failed gates, replay references, handoff state, and residuals. Only then can a
+future reviewer decide whether the run is a design example, source-reported
+artifact, imported artifact, locally reproduced result, or blocked claim.
+
+```{mermaid}
+flowchart LR
+  Command["Command with authority envelope"] --> Orchestrator["Compact orchestrator"]
+  Orchestrator --> Head["Route head"]
+  Head --> CoreA["Specialist core A"]
+  Head --> CoreB["Specialist core B"]
+  Head --> CoreC["Specialist core C"]
+  CoreA --> Gates["Control-plane gates"]
+  CoreB --> Gates
+  CoreC --> Gates
+  Gates --> Ledger["Run, task, and authority ledgers"]
+  Ledger --> Replay["Replay refs and missing-replay markers"]
+  Replay --> Decision{"Promotion allowed?"}
+  Decision -- "yes, within scope" --> Handoff["Handoff or delivery"]
+  Decision -- "no" --> Residual["Residual escrow and blockers"]
+  Handoff --> Readiness["Readiness update"]
+  Residual --> Readiness
+```
+
+The diagram is not a deployed runtime claim. It is the record path a runtime
+would have to satisfy before stronger claims were allowed.
+
+The important design move is that denied paths are first-class. A missing replay
+reference, failed gate, denied route, absent ledger, unresolved handoff, or
+source-only field is not a footnote. It is runtime state. It explains why a
+claim cannot promote.
+
+## The Orchestration Record
+
+The minimum public boundary is the `MoECOT Orchestration Record`. It should
+make the runtime answer ordinary review questions without appealing to the
+runtime's name.
+
+The record needs a run identity, command reference, orchestrator identity,
+route head, specialist cores, control-plane gates, route-authority ledger,
+ordinary ledger references, readiness-gate references, replay references,
+denied routes, failed gates, missing replay references, handoff references,
+promotion blockers, residuals, source-reported fields, locally reproduced
+fields, externally corroborated fields, blocked fields, source-claim state, and
+non-claims.
+
+Those fields keep useful but weak evidence from laundering itself. A packet can
+be complete as a design example and still empty as a reproduced benchmark. It
+can be source-reported but not imported. It can have a schema-valid shape while
+still lacking the replay references that would justify promotion. It can be
+valuable for prototype planning while remaining unusable as support for a
+chapter-core claim.
+
+## Invariants
+
+The runtime invariant is traceability across layers. A runtime route should be
+traceable to a command, route choice, specialist lane, authority envelope,
+gate decision, ledger entry, replay state, handoff owner, and residual set.
+Without that trace, orchestration is bypassing the stack rather than
+implementing it.
+
+The evidence invariant is separation. Source-reported fields, locally
+reproduced fields, externally corroborated fields, and blocked fields must not
+collapse into a single "implemented" label.
+
+The promotion invariant is fail-closed. Runtime promotion requires readiness,
+regression, and replay evidence references. A runtime claim sourced only from
+unavailable or uninspected text cannot move above argument support. The Lean
+module for this chapter records those gates as finite predicates. That is
+useful traceability, not proof of runtime behavior.
+
+## Failure Modes
+
+The first failure mode is implementation branding as proof. A runtime can have
+a good name, a plausible diagram, and persuasive source language while still
+failing to produce public evidence packets.
+
+The second failure mode is replay theater. A runtime preserves a replay handle
+for the success path while failed gates, denied routes, human interventions,
+missing sources, and residual branches disappear. That kind of replay can make
+an orchestrator look cleaner than it is.
+
+The third failure mode is authority drift. Specialist lanes can become useful
+enough that the system starts granting them broader context, broader tools, or
+replacement status without recording the authority delta. Multi-core
+orchestration without an authority ledger becomes parallelized permission
+creep.
+
+The fourth failure mode is evidence-state collapse. A source-reported benchmark
+artifact becomes a book-verified benchmark. A schema-valid fixture becomes a
+runtime replay. A finite Lean gate becomes a safety proof. The chapter exists
+to keep those collapses visible.
+
+## Minimum Viable Implementation
+
+The minimum viable MoECOT artifact is not a full runtime. It is a public-safe
+orchestration packet that proves the book knows what to ask for.
+
+The smallest useful packet would include one accepted command, one denied route,
+one failed or missing replay reference, one residual handoff, one promotion
+blocker, and the explicit split between source-reported, locally reproduced,
+externally corroborated, and blocked fields. That packet could validate the
+record shape without claiming deployment.
+
+Current implemented support is narrower than that. The repository has the
+schema for the orchestration record, finite Lean gates over declared promotion
+fields, and a synthetic readiness/residual mapping slice. The MoECOT experiment
+directory remains planned. No MoECOT runtime artifact, replay record, benchmark
+record, current report bundle, worker/core balance trace, isolation result, or
+local run has been imported or reproduced.
+
+## Beyond the State of the Art
+
+The mature version is not a larger agent loop. It is a runtime that produces
+reviewable evidence as a normal side effect of doing work.
+
+In that end state, a compact orchestrator would receive typed commands, lease
+specialist lanes, enforce authority and context boundaries, run or deny work,
+record gate decisions, emit replay references, hand off artifacts, preserve
+failed branches, and update readiness without smuggling trust through branding.
+The product would be a chain of evidence packets: command packet, route packet,
+specialist packet, control-plane packet, replay packet, handoff packet, and
+residual packet.
+
+That is beyond the current repository. The current chapter can describe the
+target and validate some record discipline. It cannot claim that MoECOT already
+achieves the target.
+
+## Summary
+
+MoECOT gives the book a concrete runtime shape, and the book gives MoECOT a
+strict evidence boundary. The result is a useful implementation-reference lane:
+specific enough to guide future prototypes, but bounded enough that runtime
+specificity does not become proof.
+
+The open work is direct and practical. Import or generate public-safe runtime
+packets. Preserve denied paths and missing evidence. Replay what can be replayed
+and mark what cannot. Keep source-reported fields separate from locally
+reproduced fields. Only then can MoECOT move from runtime crosswalk to stronger
+implementation evidence.
+
+## Handoff
+
+The next question is where such a runtime lands. A route can choose a specialist
+and a runtime can produce an evidence packet, but actual work still happens on
+devices, nodes, stores, runners, and rented machines with identity, privacy,
+cost, locality, energy, and revocation constraints. Personal Compute Hives and
+Federated Edge Intelligence moves from orchestration records to the governed
+compute substrate underneath them.
