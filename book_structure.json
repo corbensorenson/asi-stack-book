@@ -10190,9 +10190,27 @@
           "minimal_implementation": "A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented.",
           "beyond_state_of_art": "The integration endpoint is a trace kernel for the whole ASI Stack. The stack would not be a diagram of cooperating layers; it would be an inspectable machine that can explain what authority entered, which artifacts were produced, what evidence changed, which residuals survived, and why a path was promoted, blocked, narrowed, rolled back, or escalated. A mature reference trace kernel would make every significant run emit a Reference Trace Record. The record would connect human intent, constitutional authority, command contracts, plan DAGs, VCM packets, route decisions, claim envelopes, work orders, execution logs, proof/spec receipts, benchmark ratchets, policy-update leases, steward decisions, SCF transitions, release notes, and residual ledgers. The reference architecture would be judged by whether those records survive happy paths and blocked paths, not by how coherent the diagram looks.",
           "codex_tests": [
-            "End-to-end intent trace test",
-            "Artifact continuity audit",
-            "Authority stop-condition test"
+            {
+              "name": "End-to-end intent trace test",
+              "purpose": "Check deterministic reference-trace fixtures for required layer terms from intent through SCF, stable artifact refs, source-note refs, validation commands, evidence deltas, and residual deltas.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_reference_trace.py`",
+              "status": "implemented as a deterministic fixture harness; no integrated runtime trace or replayed demo exists"
+            },
+            {
+              "name": "Artifact continuity audit",
+              "purpose": "Check deterministic reference-trace fixtures for parent artifact refs, authority-chain/delta visibility, artifact count, and residual preservation.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_reference_trace.py`",
+              "status": "implemented as a deterministic fixture harness; no live artifact-continuity audit exists"
+            },
+            {
+              "name": "Authority stop-condition test",
+              "purpose": "Check deterministic blocked reference-trace fixtures for stop conditions and promotion blockers when execution authority is missing.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_reference_trace.py`",
+              "status": "implemented as a deterministic fixture harness; no deployed authority stop-condition checker exists"
+            }
           ],
           "lean_module": "AsiStackProofs.ReferenceArchitecture",
           "proof_targets": [

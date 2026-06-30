@@ -453,6 +453,31 @@
     ]
   },
   {
+    "id": "reference_trace",
+    "name": "Reference trace harness",
+    "command": "python3 scripts/validate_reference_trace.py",
+    "script": "scripts/validate_reference_trace.py",
+    "doc": "docs/reference_trace_harness.md",
+    "experiment_dir": "experiments/reference_trace",
+    "fixture_dir": "experiments/reference_trace/fixtures",
+    "result_record": "experiments/reference_trace/results/2026-06-30-local.md",
+    "expected_valid_fixtures": 2,
+    "expected_invalid_fixtures": 6,
+    "result_summary": "Reference trace harness passed: 2 valid fixture(s), 6 expected-invalid fixture(s).",
+    "primary_chapters": [
+      "integrated-reference-architecture",
+      "intent-to-execution-contracts",
+      "planning-as-a-control-layer",
+      "virtual-context-abi",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "recursive-self-improvement-boundaries"
+    ],
+    "non_claims": [
+      "Does not prove an integrated ASI Stack runtime, deployed layer behavior, artifact continuity in a live trace, authority-stop enforcement, runtime replay, model quality, benchmark performance, or safety.",
+      "Does not promote Appendix C support states."
+    ]
+  },
+  {
     "id": "capacity_smoothing",
     "name": "Capacity smoothing toy harness",
     "command": "python3 scripts/validate_capacity_smoothing.py",

@@ -1,0 +1,25 @@
+{
+  "scenario_id": "invalid-missing-parent-artifacts",
+  "reference_trace_record": {
+    "trace_id": "reference-trace-invalid-parentage-001",
+    "trace_state": "fixture_validated",
+    "execution_boundary": "fixture_only",
+    "intent_ref": "intent://missing-parentage",
+    "parent_artifact_refs": [],
+    "authority_chain": ["intent grants book-maintenance authority", "SCF review remains required"],
+    "authority_deltas": ["intent authority narrows to fixture edits"],
+    "layer_handoffs": ["intent -> plan -> context -> route -> verification -> execution -> evidence -> SCF"],
+    "artifacts": ["command://a", "plan://b", "context://c", "route://d", "claim://e", "work://f"],
+    "evidence_updates": ["record-shape evidence only"],
+    "evidence_deltas": ["support state remains argument"],
+    "residual_deltas": ["runtime trace remains absent"],
+    "stop_conditions": ["missing runtime trace"],
+    "missing_contracts": ["no runtime contract"],
+    "validation_commands": ["python3 scripts/validate_reference_trace.py"],
+    "promotion_blockers": ["fixture only"],
+    "source_refs": ["sources/source_notes/viea.md"],
+    "support_state_effect": "record_shape_only",
+    "non_claims": ["does not promote any support state", "does not prove runtime behavior"]
+  },
+  "non_claims": ["does not promote Appendix C support states", "does not prove runtime behavior"]
+}

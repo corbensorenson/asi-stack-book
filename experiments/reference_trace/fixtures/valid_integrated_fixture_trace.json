@@ -1,0 +1,89 @@
+{
+  "scenario_id": "valid-integrated-fixture-trace",
+  "reference_trace_record": {
+    "trace_id": "reference-trace-fixture-approved-001",
+    "trace_state": "fixture_validated",
+    "execution_boundary": "fixture_only",
+    "intent_ref": "intent://human-book-maintenance-request",
+    "parent_artifact_refs": [
+      "intent://human-book-maintenance-request",
+      "command://chapter-update-contract",
+      "plan://reference-trace-dry-run"
+    ],
+    "authority_chain": [
+      "intent contract grants book-maintenance authority",
+      "governance boundary preserves support-state discipline",
+      "SCF review remains required for capability promotion"
+    ],
+    "authority_deltas": [
+      "intent authority narrows to chapter and fixture edits",
+      "plan authority does not grant runtime execution",
+      "SCF authority remains review-only"
+    ],
+    "layer_handoffs": [
+      "intent -> governance command contract",
+      "governance -> plan DAG",
+      "plan -> VCM context packet",
+      "context -> route decision",
+      "route -> verification claim envelope",
+      "verification -> execution work order",
+      "execution -> evidence ledger update",
+      "evidence -> SCF improvement gate"
+    ],
+    "artifacts": [
+      "command://chapter-update-contract",
+      "plan://reference-trace-dry-run",
+      "context://source-bound-packet",
+      "route://bounded-reference-route",
+      "claim://argument-only-reference-claim",
+      "work://fixture-only-work-order",
+      "audit://fixture-validation-log",
+      "evidence://record-shape-only-update",
+      "scf://no-promotion-review"
+    ],
+    "evidence_updates": [
+      "reference trace fixture shape validated",
+      "no chapter core support state increased"
+    ],
+    "evidence_deltas": [
+      "record-shape evidence added",
+      "support state remains argument"
+    ],
+    "residual_deltas": [
+      "runtime trace harness remains absent",
+      "artifact continuity audit remains future work"
+    ],
+    "stop_conditions": [
+      "missing runtime trace",
+      "missing authority stop-condition checker",
+      "missing artifact continuity audit"
+    ],
+    "missing_contracts": [
+      "no deployed runtime contract"
+    ],
+    "validation_commands": [
+      "python3 scripts/validate_reference_trace.py",
+      "python3 scripts/validate_protocol_examples.py"
+    ],
+    "promotion_blockers": [
+      "fixture-only trace",
+      "no integrated runtime replay"
+    ],
+    "source_refs": [
+      "sources/source_notes/viea.md",
+      "sources/source_notes/scf.md",
+      "sources/source_notes/vcm_public.md",
+      "sources/source_notes/talos.md"
+    ],
+    "support_state_effect": "record_shape_only",
+    "non_claims": [
+      "does not promote any support state",
+      "does not prove an integrated runtime",
+      "does not prove deployed authority enforcement"
+    ]
+  },
+  "non_claims": [
+    "does not promote Appendix C support states",
+    "does not prove runtime integration or deployed stack behavior"
+  ]
+}

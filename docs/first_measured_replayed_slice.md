@@ -40,9 +40,9 @@ python3 scripts/validate_evidence_transitions.py
 ## Inputs
 
 - `experiments/phase5_harness_registry.json`
-- 21 registered harness commands
-- 60 valid synthetic fixtures across registered harness fixture directories
-- 102 expected-invalid synthetic fixtures across registered harness fixture directories
+- 22 registered harness commands
+- 62 valid synthetic fixtures across registered harness fixture directories
+- 108 expected-invalid synthetic fixtures across registered harness fixture directories
 - Expected registry summaries stored in each registry entry
 
 ## Output
@@ -51,8 +51,8 @@ The command wrote `docs/phase5_harness_runner.md`.
 
 Observed result:
 
-- 21 registered harnesses run
-- 21 harnesses passing return-code and expected-summary checks
+- 22 registered harnesses run
+- 22 harnesses passing return-code and expected-summary checks
 - 0 harnesses requiring attention
 
 ## Negative Controls

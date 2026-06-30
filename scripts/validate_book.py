@@ -82,6 +82,7 @@ REQUIRED = [
     "scripts/validate_benchmark_antigoodhart.py",
     "scripts/validate_generation_mode_baselines.py",
     "scripts/validate_resource_budget_ledgers.py",
+    "scripts/validate_reference_trace.py",
     "scripts/validate_capacity_smoothing.py",
     "scripts/validate_costed_route_resource_slice.py",
     "scripts/validate_circle_external_receipt_slice.py",
@@ -124,6 +125,7 @@ REQUIRED = [
     "docs/benchmark_antigoodhart_harness.md",
     "docs/generation_mode_baseline_harness.md",
     "docs/resource_budget_ledger_harness.md",
+    "docs/reference_trace_harness.md",
     "docs/capacity_smoothing_harness.md",
     "docs/costed_route_resource_slice.md",
     "docs/circle_external_receipt_slice.md",
@@ -162,6 +164,7 @@ REQUIRED = [
     "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
+    "experiments/reference_trace/results/2026-06-30-local.md",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
@@ -678,6 +681,7 @@ def main() -> None:
     run_validator("validate_benchmark_antigoodhart.py")
     run_validator("validate_generation_mode_baselines.py")
     run_validator("validate_resource_budget_ledgers.py")
+    run_validator("validate_reference_trace.py")
     run_validator("validate_capacity_smoothing.py")
     run_validator("validate_costed_route_resource_slice.py")
     run_validator("validate_circle_external_receipt_slice.py")

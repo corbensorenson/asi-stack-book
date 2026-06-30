@@ -1,0 +1,25 @@
+{
+  "scenario_id": "invalid-promotion-without-validation-command",
+  "reference_trace_record": {
+    "trace_id": "reference-trace-invalid-promotion-001",
+    "trace_state": "fixture_validated",
+    "execution_boundary": "fixture_only",
+    "intent_ref": "intent://promotion-without-validation",
+    "parent_artifact_refs": ["intent://promotion-without-validation", "plan://trace"],
+    "authority_chain": ["intent grants book-maintenance authority", "SCF review remains required"],
+    "authority_deltas": ["runtime authority not granted"],
+    "layer_handoffs": ["intent -> plan -> context -> route -> verification -> execution -> evidence -> SCF"],
+    "artifacts": ["command://a", "plan://b", "context://c", "route://d", "claim://e", "work://f"],
+    "evidence_updates": ["claim promoted to synthetic-test-backed"],
+    "evidence_deltas": ["support promotion recorded"],
+    "residual_deltas": ["runtime trace remains absent"],
+    "stop_conditions": ["missing runtime trace"],
+    "missing_contracts": ["no runtime contract"],
+    "validation_commands": [],
+    "promotion_blockers": ["fixture only"],
+    "source_refs": ["sources/source_notes/viea.md"],
+    "support_state_effect": "eligible_for_trace_review",
+    "non_claims": ["does not promote any support state", "does not prove runtime behavior"]
+  },
+  "non_claims": ["does not promote Appendix C support states", "does not prove runtime behavior"]
+}

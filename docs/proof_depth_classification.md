@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 174 |
+| Theorem declarations classified | 179 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 59 |
+| Derived/decomposed theorem declarations | 64 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 29 |
 | Safety-critical direct/projection declarations | 10 |
@@ -88,7 +88,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -242,6 +242,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReadinessGates.lean` | `promoted_decision_requires_all_required_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_module_cannot_be_selected_for_ordinary_route` | derived_or_decomposed | no | uses unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `end_to_end_trace_contains_required_artifacts_for_layer_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_authority_deltas_routes_to_authority_repair` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_parent_artifacts_routes_to_parentage_repair` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_required_governance_gate_blocks_trace` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_residual_deltas_routes_to_residual_preservation` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_validation_command_requires_validation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_with_missing_governance_gate_cannot_be_marked_valid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_regression_blocks_replacement_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_commit_requires_evidence_and_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

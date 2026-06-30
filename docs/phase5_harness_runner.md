@@ -10,8 +10,8 @@ This is a synthetic-harness execution record. It does **not** promote Appendix C
 
 | Metric | Value |
 |---|---:|
-| Registered harnesses run | 21 |
-| Harnesses passing return code and summary check | 21 |
+| Registered harnesses run | 22 |
+| Harnesses passing return code and summary check | 22 |
 | Harnesses requiring attention | 0 |
 
 ## Results
@@ -38,4 +38,5 @@ This is a synthetic-harness execution record. It does **not** promote Appendix C
 | `benchmark_antigoodhart` | `python3 scripts/validate_benchmark_antigoodhart.py` | pass | yes | `experiments/benchmark_antigoodhart/results/2026-06-28-local.md` | Benchmark anti-Goodhart harness passed: 2 valid fixture(s), 5 expected-invalid fixture(s). |
 | `generation_mode_baselines` | `python3 scripts/validate_generation_mode_baselines.py` | pass | yes | `experiments/generation_mode_baselines/results/2026-06-28-local.md` | Generation mode baseline harness passed: 2 valid fixture(s), 4 expected-invalid fixture(s). |
 | `resource_budget_ledgers` | `python3 scripts/validate_resource_budget_ledgers.py` | pass | yes | `experiments/resource_budget_ledgers/results/2026-06-28-local.md` | Resource budget ledger harness passed: 5 valid fixture(s), 5 expected-invalid fixture(s). |
+| `reference_trace` | `python3 scripts/validate_reference_trace.py` | pass | yes | `experiments/reference_trace/results/2026-06-30-local.md` | Reference trace harness passed: 2 valid fixture(s), 6 expected-invalid fixture(s). |
 | `capacity_smoothing` | `python3 scripts/validate_capacity_smoothing.py` | pass | yes | `experiments/capacity_smoothing/results/2026-06-28-local.md` | Capacity smoothing toy harness passed: 2 valid fixture(s), 3 expected-invalid fixture(s). |

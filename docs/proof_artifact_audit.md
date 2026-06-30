@@ -67,7 +67,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 3 | 2 | 1 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 2 | 3 | 2 | 2 |
 | `lean/AsiStackProofs/ReadinessGates.lean` | 2 | 2 | 3 | 2 |
-| `lean/AsiStackProofs/ReferenceArchitecture.lean` | 2 | 2 | 2 | 2 |
+| `lean/AsiStackProofs/ReferenceArchitecture.lean` | 2 | 7 | 3 | 3 |
 | `lean/AsiStackProofs/Replacement.lean` | 2 | 2 | 2 | 1 |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | 2 | 2 | 4 | 2 |
 | `lean/AsiStackProofs/Routing.lean` | 2 | 2 | 2 | 1 |

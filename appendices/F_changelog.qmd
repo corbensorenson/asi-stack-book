@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-06-30 - Reference trace harness and route envelope
+
+- Added `python3 scripts/validate_reference_trace.py`, a deterministic
+  reference-trace harness with 2 valid fixtures and 6 expected-invalid fixtures
+  for parent artifact continuity, authority-chain and authority-delta
+  visibility, layer coverage from intent through SCF, artifact count, evidence
+  and residual deltas, validation command refs, source-note refs, blocked-path
+  stop conditions, promotion blockers, non-promoting support effects, and
+  explicit non-claims.
+- Registered the harness in the Phase 5 harness registry, wired it into
+  `scripts/validate_book.py`, reran the registry runner, and updated the
+  current registry-runner surface from 21 to 22 registered harnesses with 62
+  valid fixtures and 108 expected-invalid fixtures.
+- Extended `AsiStackProofs.ReferenceArchitecture` with a finite trace-route
+  envelope and derived/decomposed theorems routing missing parent artifacts,
+  authority deltas, residual deltas, governance gates, and validation commands
+  to repair, blocking, residual preservation, or validation rather than accepted
+  trace status.
+- Updated the Integrated Reference Architecture chapter, source-of-truth
+  outline, Appendix E, proof-depth and proof-adequacy surfaces, v1.0 status
+  guard, Phase 5 registry/runner records, roadmap, README, publication
+  readiness note, and measured-slice ledger. The proof adequacy review now
+  classifies Integrated Reference Architecture as `useful but too narrow`.
+- This does not promote any Appendix C or chapter core claim, execute an
+  integrated ASI runtime, replay a deployed trace, prove live artifact
+  continuity, enforce authority stop conditions in a real runtime, prove model
+  quality, prove benchmark quality, approve reader artifacts, or create EPUB,
+  DOCX, PDF, audio, DOI, Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Failure incident route proof envelope
 
 - Extended `AsiStackProofs.FailureModes` with a finite incident-route

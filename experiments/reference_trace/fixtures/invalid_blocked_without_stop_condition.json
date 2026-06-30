@@ -1,0 +1,25 @@
+{
+  "scenario_id": "invalid-blocked-without-stop-condition",
+  "reference_trace_record": {
+    "trace_id": "reference-trace-invalid-blocked-001",
+    "trace_state": "blocked",
+    "execution_boundary": "fixture_only",
+    "intent_ref": "intent://blocked-without-stop",
+    "parent_artifact_refs": ["intent://blocked-without-stop", "plan://trace"],
+    "authority_chain": ["intent grants planning authority", "SCF review remains required"],
+    "authority_deltas": ["runtime authority denied"],
+    "layer_handoffs": ["intent -> plan -> context -> route -> verification -> execution -> evidence -> SCF"],
+    "artifacts": ["command://a", "plan://b", "context://c", "route://d", "claim://e", "work://f"],
+    "evidence_updates": ["blocked path recorded"],
+    "evidence_deltas": ["support state remains argument"],
+    "residual_deltas": ["runtime authorization remains unavailable"],
+    "stop_conditions": [],
+    "missing_contracts": ["runtime execution contract missing"],
+    "validation_commands": ["python3 scripts/validate_reference_trace.py"],
+    "promotion_blockers": ["authority stop condition active"],
+    "source_refs": ["sources/source_notes/viea.md"],
+    "support_state_effect": "blocks_promotion",
+    "non_claims": ["does not promote any support state", "does not prove runtime behavior"]
+  },
+  "non_claims": ["does not promote Appendix C support states", "does not prove runtime behavior"]
+}

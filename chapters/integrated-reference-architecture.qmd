@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "viea"
   - "scf"
@@ -30,7 +30,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all twenty assigned sources, including source-note-only review for MoECOT and VCM Editable plus pinned local Theseus project-file references; support remains argument until integrated trace artifacts, tests, reproduced reports, or accepted evidence transitions justify promotion."
-  - "The reference_trace_record fixture validates schema/example consistency, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; AsiStackProofs.ReferenceArchitecture implements finite record predicates only; no end-to-end runtime trace harness, authority stop-condition checker, artifact continuity audit, deployed runtime, or report replay has been run."
+  - "The reference_trace_record fixture validates schema/example consistency, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; `python3 scripts/validate_reference_trace.py` now checks deterministic valid and expected-invalid reference-trace fixtures for parentage, layer coverage, authority deltas, residuals, stop conditions, validation commands, and support-state non-promotion. AsiStackProofs.ReferenceArchitecture implements finite record predicates only; no end-to-end runtime trace, deployed authority stop-condition checker, live artifact continuity audit, deployed runtime, or report replay has been run."
   - "Local Theseus project references are report-first implementation context only; one static architecture-gate report fixture is now digest-verified as implementation-reference evidence, but no current Theseus dashboards, commands, board steps, compiler proof, end-to-end trace, or benchmark ledgers were rerun from this repository."
   - "No support-state promotion, integrated runtime claim, benchmark success, model-quality result, deployment readiness, or raw source publication is implied."
 ---
@@ -43,13 +43,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-30 |
 | Primary source records | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; connector/recovery: `moecot`, `vcm_editable` |
 | Source loading state | source notes: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; raw cache: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`; connector/recovery: `moecot`, `vcm_editable` |
-| Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation with trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; `AsiStackProofs.ReferenceArchitecture` implements finite handoff-artifact and governance-gate trace predicates; end-to-end trace, artifact continuity, and authority stop-condition tests remain planned. |
+| Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation with trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; `python3 scripts/validate_reference_trace.py` checks 2 valid and 6 expected-invalid deterministic reference-trace fixtures; `AsiStackProofs.ReferenceArchitecture` implements finite handoff-artifact and governance-gate trace predicates. No integrated runtime trace, live artifact-continuity audit, deployed authority stop-condition checker, or runtime replay exists. |
 
 ## Drafting guardrail
 
@@ -214,11 +214,11 @@ When the trace kernel works, a future implementation could be evaluated by trace
 | Test | Purpose | Status |
 |---|---|---|
 | Reference trace record fixture validation | Validate that an end-to-end trace record names trace state, execution boundary, intent, parent artifacts, authority chain/deltas, layer handoffs, artifacts, evidence updates/deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
-| End-to-end intent trace test | Execute or replay a demo from intent to plan, context, claim, job, artifact, and evidence record with stable IDs at every layer. | planned; not run |
-| Artifact continuity audit | Check that every handoff cites parent artifacts, authority refs, evidence refs, residuals, and missing-contract records where needed. | planned; not run |
-| Authority stop-condition test | Check that missing authorization, violated stop conditions, or unaccepted residuals block execution rather than becoming silent warnings. | planned; not run |
+| End-to-end intent trace test | Check deterministic reference-trace fixtures for required layer terms from intent through SCF, stable artifact refs, source-note refs, validation commands, evidence deltas, and residual deltas. | implemented by `python3 scripts/validate_reference_trace.py`; no integrated runtime trace or replayed demo exists |
+| Artifact continuity audit | Check deterministic reference-trace fixtures for parent artifact refs, authority-chain/delta visibility, artifact count, and residual preservation. | implemented by `python3 scripts/validate_reference_trace.py`; no live artifact-continuity audit exists |
+| Authority stop-condition test | Check deterministic blocked reference-trace fixtures for stop conditions and promotion blockers when execution authority is missing. | implemented by `python3 scripts/validate_reference_trace.py`; no deployed authority stop-condition checker exists |
 
-The implemented row validates fixture/schema consistency only. The remaining rows require an actual trace harness or replayable demo with typed artifacts across layers; they are not reported runtime results. When an integration test is implemented, this chapter should link to the command, fixture, environment notes, trace artifacts, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented rows validate deterministic fixture behavior only. They do not execute the architecture or replay a deployed demo with typed artifacts across layers. A future runtime integration test still needs the command, environment notes, trace artifacts, and result summary for an actual run.
 
 ### Formalization hooks
 
@@ -227,7 +227,7 @@ The implemented row validates fixture/schema consistency only. The remaining row
 | `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | implemented |
 | `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over layer-handoff and governance-gate trace reviews. They prove only the record-level gates: a declared handoff has its required artifact, and a trace missing a required governance gate cannot be marked valid. They do not prove an implemented ASI runtime, real layer enforcement, artifact continuity across a deployed trace, or authority stop-condition behavior.
+These Lean hooks are implemented as finite-record predicates over layer-handoff, governance-gate, and trace-route reviews. They prove only the record-level gates: a declared handoff has its required artifact, a trace missing a required governance gate cannot be marked valid, and modeled traces with missing parent artifacts, missing authority deltas, missing residual deltas, missing required governance gates, or missing validation commands route to repair, blocking, or validation rather than accepted trace status. The deterministic reference-trace harness adds fixture-level checks for parentage, layer coverage, authority deltas, residuals, blocked-path stop conditions, validation commands, and support-state non-promotion. Together these checks do not prove an implemented ASI runtime, real layer enforcement, artifact continuity across a deployed trace, authority stop-condition behavior, or runtime replay.
 
 ## Source crosswalk
 

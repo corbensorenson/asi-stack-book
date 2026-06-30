@@ -25,7 +25,7 @@
     "validation_command",
     "public_safe_result_record"
   ],
-  "transition_reason": "The local replay command loaded experiments/phase5_harness_registry.json, executed all 21 registered harness commands, and verified that every output contained its registry result_summary. The registry covers 60 valid synthetic fixtures and 102 expected-invalid synthetic fixtures across the registered harness directories. This is enough to support the narrow repository-infrastructure claim that the harness registry is replayable and summary-checked; it is not evidence for any broader ASI Stack runtime, model, safety, benchmark, or chapter-core claim.",
+  "transition_reason": "The local replay command loaded experiments/phase5_harness_registry.json, executed all 22 registered harness commands, and verified that every output contained its registry result_summary. The registry covers 62 valid synthetic fixtures and 108 expected-invalid synthetic fixtures across the registered harness directories. This is enough to support the narrow repository-infrastructure claim that the harness registry is replayable and summary-checked; it is not evidence for any broader ASI Stack runtime, model, safety, benchmark, or chapter-core claim.",
   "required_artifacts": [
     "registry-driven runner script",
     "Phase 5 harness registry",
@@ -52,7 +52,7 @@
   "verification_command": "python3 scripts/run_phase5_harnesses.py --write-report && python3 scripts/validate_book.py && python3 scripts/validate_evidence_transitions.py",
   "verification_result": "pass",
   "negative_results": [
-    "expected-invalid fixture sets are present across all 21 registered harness lanes",
+    "expected-invalid fixture sets are present across all 22 registered harness lanes",
     "the replay validates registry-driven synthetic harness execution only",
     "no chapter core claim is promoted above argument",
     "no model, runtime, benchmark, source-interpretation, or deployed-safety result is claimed"

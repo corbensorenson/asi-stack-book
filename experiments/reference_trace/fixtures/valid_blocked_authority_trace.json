@@ -1,0 +1,87 @@
+{
+  "scenario_id": "valid-blocked-authority-trace",
+  "reference_trace_record": {
+    "trace_id": "reference-trace-blocked-authority-001",
+    "trace_state": "blocked",
+    "execution_boundary": "fixture_only",
+    "intent_ref": "intent://restricted-execution-request",
+    "parent_artifact_refs": [
+      "intent://restricted-execution-request",
+      "command://restricted-command-contract",
+      "plan://blocked-reference-trace"
+    ],
+    "authority_chain": [
+      "intent grants planning authority only",
+      "governance denies runtime execution authority",
+      "SCF gate preserves review requirement"
+    ],
+    "authority_deltas": [
+      "execution authority denied at governance gate",
+      "plan narrowed to blocked trace record",
+      "SCF promotion authority withheld"
+    ],
+    "layer_handoffs": [
+      "intent -> governance command contract",
+      "governance -> plan DAG",
+      "plan -> VCM context packet",
+      "context -> route decision",
+      "route -> verification claim envelope",
+      "verification -> execution work order",
+      "execution -> evidence ledger update",
+      "evidence -> SCF improvement gate"
+    ],
+    "artifacts": [
+      "command://restricted-command-contract",
+      "plan://blocked-reference-trace",
+      "context://source-bound-packet",
+      "route://denied-runtime-route",
+      "claim://blocked-execution-claim",
+      "work://blocked-work-order",
+      "audit://authority-denial-log",
+      "evidence://blocked-path-record",
+      "scf://promotion-blocker"
+    ],
+    "evidence_updates": [
+      "blocked path recorded as fixture evidence only",
+      "authority denial preserved"
+    ],
+    "evidence_deltas": [
+      "blocked trace added",
+      "support state remains argument"
+    ],
+    "residual_deltas": [
+      "runtime authorization remains unavailable",
+      "blocked path requires human review before any execution"
+    ],
+    "stop_conditions": [
+      "missing execution authority",
+      "unaccepted residual",
+      "governance review required"
+    ],
+    "missing_contracts": [
+      "runtime execution contract missing"
+    ],
+    "validation_commands": [
+      "python3 scripts/validate_reference_trace.py"
+    ],
+    "promotion_blockers": [
+      "authority stop condition active",
+      "governance gate missing execution approval"
+    ],
+    "source_refs": [
+      "sources/source_notes/viea.md",
+      "sources/source_notes/scf.md",
+      "sources/source_notes/talos.md"
+    ],
+    "support_state_effect": "blocks_promotion",
+    "non_claims": [
+      "does not promote any support state",
+      "does not prove runtime authority enforcement",
+      "does not prove deployed rollback behavior"
+    ]
+  },
+  "non_claims": [
+    "does not promote Appendix C support states",
+    "does not prove deployed runtime behavior"
+  ]
+}

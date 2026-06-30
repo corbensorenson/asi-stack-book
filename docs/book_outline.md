@@ -2857,10 +2857,12 @@ Failure modes to cover:
 Draft deliverables:
 
 - A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented.
-- Implemented repository-level fixture: `reference_trace_record.valid.json` validates reference-trace record shape, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims only; no integrated runtime trace harness, artifact continuity audit, or authority stop-condition checker exists yet.
-- Planned Codex test: End-to-end intent trace test.
-- Planned Codex test: Artifact continuity audit.
-- Planned Codex test: Authority stop-condition test.
+- Implemented repository-level fixture: `reference_trace_record.valid.json` validates reference-trace record shape, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims only.
+- Implemented Lean trace-route envelope: missing parent artifacts route to parentage repair, missing authority deltas route to authority-delta repair, missing residual deltas route to residual preservation, missing required governance gates block the trace, and missing validation commands require validation.
+- Implemented deterministic reference trace harness: `python3 scripts/validate_reference_trace.py` checks 2 valid and 6 expected-invalid reference-trace fixtures for parent artifact continuity, authority-chain and authority-delta visibility, layer coverage from intent through SCF, artifact count, evidence and residual deltas, validation command refs, source-note refs, blocked-path stop conditions, promotion blockers, non-promoting support effects, and explicit non-claims.
+- Implemented Codex test: End-to-end intent trace test as deterministic fixture coverage only; no integrated runtime trace or replayed demo exists.
+- Implemented Codex test: Artifact continuity audit as deterministic fixture coverage only; no live artifact-continuity audit exists.
+- Implemented Codex test: Authority stop-condition test as deterministic blocked-trace fixture coverage only; no deployed authority stop-condition checker exists.
 
 Lean proof targets:
 
