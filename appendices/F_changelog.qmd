@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-30 - Benchmark ratchet decision proof envelope
+
+- Extended `AsiStackProofs.BenchmarkRatchets` with a finite benchmark lifecycle
+  vocabulary, ratchet-decision review record, and accepted-decision predicate
+  for readiness promotion, regression-floor movement, quarantine, and blocked
+  promotion.
+- Added derived/decomposed Lean theorems showing that accepted readiness
+  promotion records require transfer-or-mutation checks, preserved negative
+  results, and preserved regressions; saturated benchmarks moved to
+  regression-floor status require preserved regression records; and
+  contaminated reviews cannot promote readiness.
+- Updated the Benchmark Ratchets chapter, proof-depth and proof-adequacy
+  surfaces, and v1.0 status guard. The proof adequacy review now classifies
+  Benchmark Ratchets as `useful but too narrow`, because the synthetic
+  anti-Goodhart harness and finite decision envelope exist while empirical
+  benchmark work remains absent.
+- This does not promote any Appendix C or chapter core claim, report benchmark
+  success, run a hidden holdout, test transfer, audit contamination, replay
+  source-reported benchmark results, prove anti-Goodhart effectiveness, validate
+  model quality, approve reader artifacts, or create EPUB, DOCX, PDF, audio,
+  DOI, Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Evidence-state terminal and demotion gates
 
 - Extended `AsiStackProofs.EvidenceStates` with terminal `deprecated` and

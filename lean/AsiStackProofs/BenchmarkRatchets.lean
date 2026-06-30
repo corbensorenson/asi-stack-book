@@ -42,4 +42,79 @@ theorem saturated_benchmark_alone_cannot_promote_higher_readiness
   intro valid saturated soleEvidence
   exact valid saturated soleEvidence
 
+inductive BenchmarkLifecycle where
+  | candidate
+  | frontier
+  | regressionFloor
+  | contaminated
+  | retired
+deriving DecidableEq, Repr
+
+inductive RatchetDecision where
+  | keepFrontier
+  | promoteReadiness
+  | moveToRegressionFloor
+  | quarantine
+  | blockPromotion
+deriving DecidableEq, Repr
+
+structure RatchetDecisionReview where
+  lifecycle : BenchmarkLifecycle
+  benchmarkSaturated : Bool
+  contaminationSuspected : Bool
+  transferOrMutationCheckPresent : Bool
+  regressionRecordsPreserved : Bool
+  negativeResultsPreserved : Bool
+  decision : RatchetDecision
+deriving DecidableEq, Repr
+
+def RatchetDecisionAccepted (review : RatchetDecisionReview) : Prop :=
+  match review.decision with
+  | .promoteReadiness =>
+      review.regressionRecordsPreserved = true ∧
+        review.transferOrMutationCheckPresent = true ∧
+          review.negativeResultsPreserved = true ∧
+            review.contaminationSuspected = false
+  | .moveToRegressionFloor =>
+      review.benchmarkSaturated = true ∧
+        review.regressionRecordsPreserved = true
+  | .quarantine =>
+      review.contaminationSuspected = true
+  | .blockPromotion => True
+  | .keepFrontier => True
+
+theorem accepted_readiness_promotion_requires_transfer_negative_and_regression_records
+    {review : RatchetDecisionReview} :
+    RatchetDecisionAccepted review ->
+    review.decision = RatchetDecision.promoteReadiness ->
+    review.transferOrMutationCheckPresent = true ∧
+      review.negativeResultsPreserved = true ∧
+        review.regressionRecordsPreserved = true := by
+  intro accepted promoted
+  unfold RatchetDecisionAccepted at accepted
+  rw [promoted] at accepted
+  exact And.intro accepted.2.1 (And.intro accepted.2.2.1 accepted.1)
+
+theorem accepted_saturated_floor_requires_regression_records
+    {review : RatchetDecisionReview} :
+    RatchetDecisionAccepted review ->
+    review.decision = RatchetDecision.moveToRegressionFloor ->
+    review.benchmarkSaturated = true ∧
+      review.regressionRecordsPreserved = true := by
+  intro accepted floor
+  unfold RatchetDecisionAccepted at accepted
+  rw [floor] at accepted
+  exact accepted
+
+theorem contaminated_review_cannot_promote_readiness
+    {review : RatchetDecisionReview} :
+    RatchetDecisionAccepted review ->
+    review.contaminationSuspected = true ->
+    review.decision = RatchetDecision.promoteReadiness ->
+    False := by
+  intro accepted contaminated promoted
+  unfold RatchetDecisionAccepted at accepted
+  rw [promoted] at accepted
+  simp [contaminated] at accepted
+
 end AsiStackProofs.BenchmarkRatchets

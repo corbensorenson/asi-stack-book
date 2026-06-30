@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 112 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 163 |
+| Theorem declarations classified | 166 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 48 |
+| Derived/decomposed theorem declarations | 51 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 29 |
 | Safety-critical direct/projection declarations | 10 |
@@ -57,7 +57,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 4 | 4 | 4 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 8 | 1 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 2 | 5 | 4 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -133,7 +133,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Authority.lean` | `valid_deny_decision_has_no_effect_receipt` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_escalation_routes_to_review` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_transition_without_grant_preserves_ceiling` | derived_or_decomposed | no | uses cases, contradiction, rcases, rw |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_readiness_promotion_requires_transfer_negative_and_regression_records` | derived_or_decomposed | no | uses rw, unfold |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_saturated_floor_requires_regression_records` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `capability_promotion_requires_benchmark_evidence_and_preserved_regressions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_review_cannot_promote_readiness` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `saturated_benchmark_alone_cannot_promote_higher_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `new_source_cannot_be_assigned_to_nonexistent_chapter` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_requires_source_note_or_ingested_source_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
