@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 10,
+    "curated_manuscript_candidate": 11,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -658,12 +658,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_full_review_completion.md#decisions"
+        "docs/reader_part_ii_full_review_completion.md#decisions",
+        "docs/curated_reader_artifact_graphs_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the artifact graph chapter. Artifact identity, provenance, replay grade, context transaction refs, claim/test links, evidence gates, and reuse limits remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the artifact graph chapter. A first drafting-only curated prose pass now foregrounds inspectable work products, artifact identity, provenance, audit events, replay grades, claim/test links, evidence gates, residuals, proof/test limits, and replay-service non-claims without approving release.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
