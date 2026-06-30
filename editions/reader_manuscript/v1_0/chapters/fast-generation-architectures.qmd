@@ -1,0 +1,385 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: fast-generation-architectures
+generated_baseline_ref: build/reader_edition/chapters/fast-generation-architectures.qmd
+live_source_ref: chapters/fast-generation-architectures.qmd@2eb3290f9
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Fast Generation Architectures
+
+Fast generation is not the art of making a model talk faster. In this stack,
+it is the discipline of deciding when a faster path is still allowed to count
+as useful work.
+
+That distinction matters because speed is seductive. A system that produces
+twice as many tokens per second can feel smarter even when more of those tokens
+need repair, more context has been dropped, more memory pressure has been
+created, or the verifier has quietly become the true bottleneck. A serving
+system can improve aggregate throughput while doing little for the single
+high-risk request that needs a correct artifact. A speculative or diffusion
+route can look efficient when proposed spans are counted and much less
+impressive after accepted spans, fallback, hardware cost, and task success are
+counted.
+
+The stack therefore treats generation speed as a governed route choice. A fast
+mode is valuable when it preserves the slow obligations that make output
+usable: context adequacy, verifier access, acceptance predicates, fallback,
+repair, memory accounting, and evidence recording. Raw velocity is not enough.
+Speed becomes progress only after the whole route has paid for acceptance.
+
+The reader promise for this chapter is simple: by the end, fast generation
+should look less like a leaderboard metric and more like a control plane for
+choosing, verifying, and retiring generation modes.
+
+## Problem
+
+The ordinary language-model generation path is serial. A model commits one
+token, appends it to the context, runs another step, commits another token, and
+keeps going. That left-to-right path is simple to reason about, but it consumes
+time that the rest of the stack also needs. Planning, retrieval, tool use,
+artifact construction, proof checks, benchmark replay, and human review all
+compete for the same latency and compute budget.
+
+If generation is too slow, the system is tempted to spend less time planning or
+checking. If generation is accelerated without governance, the system can fail
+faster. It may emit fluent output before context has been admitted, before a
+claim has been verified, before a tool result has been replayed, or before a
+human approval path has had time to matter.
+
+The architecture needs a generation layer that asks a more precise question:
+which parts of the output must be generated sequentially, which parts can be
+drafted in parallel, which drafts can be accepted cheaply, which uncertain
+spans should be repaired, and which tasks require a slower mode because the
+risk of accepting bad output is too high?
+
+That is the role of Fast Generation Architectures. It turns generation speed
+into a routable, auditable, revocable policy decision.
+
+## Why Existing Approaches Are Insufficient
+
+Standard autoregressive decoding gives the stack a baseline, but it also makes
+generation latency a structural tax. Inference-acceleration work attacks that
+tax from many directions: speculative decoding, multi-token prediction,
+multi-head drafting, feature-level drafting, lookahead branches, early exits,
+state-space sequence models, KV-cache systems, diffusion language models, and
+hybrid routes.
+
+Those methods are real adjacent work, and the live chapter source matrix links
+them as external literature context. But none of that literature, by itself,
+answers the stack question. A method can report speedups in its own setting
+without proving that this repository has reproduced them, that a governed
+planner can select them safely, that the verifier can keep up, or that the
+accepted artifact is better per second after repair and fallback are counted.
+
+The insufficient approach is to count what was easy to measure and then let the
+result stand for intelligence. Proposed tokens are not accepted tokens.
+Accepted text is not yet a trusted artifact. Aggregate throughput is not the
+same thing as single-request adequacy. A lower-latency route is not equivalent
+to a safer or more capable route unless the evidence packet says what moved,
+what failed, what was repaired, and what was paid elsewhere.
+
+The accounting unit has to be stricter than tokens per second. The stack cares
+about accepted or verified correct output per wall-clock time, and about task
+success per wall-clock time, under a declared task and risk model. Even those
+metrics are not enough alone. They become meaningful only when the route also
+records verification cost, memory pressure, fallback, repair, and promotion
+decision.
+
+This is why fast generation cannot live as a loose collection of tricks. It
+needs a mode registry, a selector, an acceptance loop, and a no-promotion rule
+for latency-only wins.
+
+## Core Claim
+
+Fast generation should be treated as a governed, planner-selected choice among
+autoregressive, speculative, multi-token, diffusion, early-exit, state-space,
+KV-cache, and hybrid modes selected by task risk, quality target, latency
+budget, compute, memory, and verification burden.
+
+The evidence boundary is architectural argument. The current repository
+contains a generation-mode record fixture and finite Lean predicates for
+promotion discipline. It also contains source-noted external literature for
+the method taxonomy. It does not contain a local decoding benchmark, diffusion
+benchmark, MTP run, speculative-acceptance experiment, serving deployment,
+KV-cache audit, useful-solution-per-second result, or reproduced speedup.
+
+The claim is not that one acceleration family wins. The claim is that the
+stack needs a policy surface where those families can be compared by accepted
+work, verifier cost, risk class, memory burden, fallback, and task success.
+
+## Mechanism
+
+Fast generation is the time-domain companion to compact generation. In
+compression, the stack asks whether a smaller representation can reconstruct or
+serve the needed artifact without hiding residuals. In fast generation, it asks
+whether a faster route can produce accepted useful work without hiding rejected
+drafts, verifier load, repair cost, memory pressure, or risk.
+
+The generation-mode record is therefore a receipt for time. It records what
+the route tried to save, which mode was selected, what the generator proposed,
+what the verifier accepted, what was rejected or repaired, what fallback ran,
+and whether the useful solution rate improved after the whole route was
+counted.
+
+The operational boundary begins with a mode selector.
+
+```{mermaid}
+flowchart LR
+  A["Goal and risk tier"] --> B["PlanForge mode selector"]
+  C["VCM context packet"] --> B
+  D["Latency, compute, memory budget"] --> B
+  B -- "select by task, risk, and budget" --> E{"Generation mode"}
+  E -- "known baseline" --> F["Autoregressive route"]
+  E -- "draft route" --> G["Speculative or MTP route"]
+  E -- "sketch route" --> H["Diffusion or sketch-first route"]
+  E -- "serving route" --> I["Early-exit, state-space, or KV-cache route"]
+  E -- "composed route" --> J["Hybrid route"]
+  F --> K["Proposed tokens, spans, or artifact fragments"]
+  G --> K
+  H --> K
+  I --> K
+  J --> K
+  K --> L["Verifier and acceptance predicate"]
+  L -- "accepted" --> M["Accepted verified output"]
+  L -- "rejected or partial" --> N["Repair, fallback, or slower mode"]
+  M --> O["Talos artifact and evidence record"]
+  N --> P["Rejected work, residual, and verifier cost"]
+  O --> Q["Speed-quality ledger"]
+  P --> Q
+  Q --> R["SCF promotion, quarantine, or retirement"]
+```
+
+The selector belongs near planning because the right generation mode depends
+on task shape. A low-risk autocomplete can tolerate a cheap accelerated path.
+A code patch can use a draft route if tests and review are strong enough. A
+high-risk claim, authority escalation, or irreversible action can force a
+slower verified route even when a faster route exists.
+
+The context packet matters because speed cannot compensate for the wrong
+context. A route that drafts quickly from stale, tainted, under-admitted, or
+over-compressed context should fail at the context or acceptance boundary, not
+receive credit for low latency. VCM supplies the bounded context packet;
+Spinoza-style verification and task-specific validators decide what can be
+accepted; Talos turns accepted output into artifacts; Benchmaxxing records the
+speed-quality evidence; SCF decides whether the mode is default,
+experimental, quarantined, or retired.
+
+The mechanism is deliberately conservative. Proposed work is logged, but only
+accepted work counts. Rejected spans are not hidden. Fallback is not treated as
+an implementation detail. Memory pressure and verifier cost are part of the
+route, not footnotes.
+
+## Generation-Mode Families
+
+The taxonomy is plural because generation speed is not one bottleneck.
+
+The autoregressive baseline remains the fallback and measurement anchor. It is
+slow, but it gives the stack a known left-to-right route against which faster
+routes can be compared.
+
+Multi-token prediction, speculative decoding, multi-head internal drafting,
+and feature-level drafting all try to propose more future work from a cheaper
+path. Their central risk is the difference between proposed and accepted work.
+A draft route that proposes many tokens but accepts few may shift the cost to
+verification, repair, or fallback.
+
+Lookahead and trie-style retrieval reuse likely continuations from prior
+patterns. They are attractive when work repeats, but the stack has to guard
+against stale procedural shortcuts. A retrieved branch must still be checked
+against the current task, source state, and risk class.
+
+Diffusion language modeling and sketch-first generation attack seriality by
+refining many positions or spans in parallel. That changes the shape of the
+verification burden. The stack must verify span commitments, uncertainty
+repair, and final task success, not just report that the generation process was
+less left-to-right.
+
+Early-exit and self-speculative inference use cheaper intermediate outputs as
+drafts and later layers as verifiers or correctors. State-space and recurrent
+alternatives attack sequence-processing cost through a different substrate.
+KV-cache and serving-layer accelerators improve memory layout, batching, and
+throughput around generation. These are useful axes, but they do not collapse
+into one claim. A serving-memory win, a decoding win, a training-objective win,
+and a task-success win need different records.
+
+Hybrid routes are especially tempting. A future system might combine
+autoregressive anchors, multi-token drafting, diffusion repair, retrieval
+branches, and verifier-guided selection. The book can name that endpoint as an
+architecture target, but it cannot treat it as implemented. Hybrid routes stay
+experimental until their records show accepted output, task success, verifier
+cost, memory pressure, fallback, and negative cases.
+
+## Interfaces
+
+The generation layer speaks through a Generation Mode Record.
+
+Minimum fields include:
+
+- `task_id`
+- `risk_tier`
+- `latency_budget`
+- `compute_budget`
+- `memory_budget`
+- `context_packet_id`
+- `generation_mode`
+- `draft_source`
+- `verifier`
+- `acceptance_predicate`
+- `proposed_tokens_or_spans`
+- `accepted_tokens_or_spans`
+- `wall_clock_time`
+- `quality_or_pass_result`
+- `repair_or_fallback`
+- `promotion_decision`
+- `non_claims`
+
+Those fields look mundane because the record is meant to resist laundering. A
+fast-generation chapter should not become a pile of impressive method names
+without a route, verifier, fallback, or promotion rule.
+
+PlanForge chooses the generation mode. VCM supplies the bounded context.
+Generators emit drafts, sketches, spans, or candidates. Spinoza-style
+verifiers, test harnesses, or task-specific validators check acceptance
+predicates. Talos turns accepted output into artifacts. Benchmark ratchets
+compare speed and quality. Stable capability fields govern whether the mode is
+default, experimental, quarantined, or retired.
+
+The consumer policy is as important as the method list. A high-risk task can
+disallow a fast route. A low-risk draft can accept provisional output with an
+explicit fallback. A budget-constrained task can reduce scope rather than
+quietly lowering the verification bar.
+
+## Invariants
+
+The core invariant is that raw speed cannot promote a generation mode by
+itself.
+
+- Every accelerated route names its mode, verifier, acceptance predicate, risk
+  tier, and fallback.
+- Proposed output is counted separately from accepted output.
+- Accepted output is counted separately from useful task success.
+- High-risk tasks can force slower verified generation.
+- Verification cost, memory pressure, repair, and fallback are part of the
+  route cost.
+- External method reports remain source-reported until reproduced, fully
+  inspected, or promoted through a separate accepted evidence transition.
+- A failed or missing verifier blocks promotion, even if latency improves.
+
+These invariants do not forbid fast decoding. They prevent fast decoding from
+being mistaken for demonstrated capability. They keep acceleration tied to the
+same evidence discipline as the rest of the stack.
+
+## Failure Modes
+
+Fast generation fails when speed is measured at the wrong boundary.
+
+The first failure mode is quality hiding. A faster route emits more output, but
+more of it is wrong, partial, under-sourced, or expensive to repair. The route
+looks good only while repair and review are off the ledger.
+
+The second is verifier inversion. The generator becomes faster, but the
+verifier becomes the bottleneck. If verifier capacity is scarce, the system can
+produce a backlog of plausible drafts that cannot be accepted in time.
+
+The third is distribution drift. Draft heads, latent predictors, retrieval
+branches, diffusion sketches, or cached continuations can leave the region
+where the acceptance predicate was reliable. A mode that works for ordinary
+text may fail for code, proofs, citations, tool plans, or authority-bearing
+actions.
+
+The fourth is memory illusion. KV-cache management, batching, and serving
+optimizations improve throughput, but the stack mistakes aggregate serving
+capacity for single-request quality or lower risk.
+
+The fifth is multi-seed waste. Running many trajectories can improve
+robustness only if selection and verification are cheap enough to beat a
+single stronger route. Otherwise, multi-seed generation is more expensive
+candidate production with a nicer story.
+
+The sixth is fallback omission. The route accepts uncertainty without a
+slower path, repair path, residual record, or quarantine. That is the failure
+this chapter is most designed to prevent.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is not a universal fast decoder. It is a
+generation-mode registry and benchmark record.
+
+The first useful slice should compare a plain baseline with one
+verifier-preserving accelerated path on a small task suite. The record should
+include the task, risk tier, latency budget, context packet, generation mode,
+draft source, verifier, acceptance predicate, proposed output, accepted output,
+wall-clock time, quality or pass result, compute and memory notes, fallback,
+promotion decision, evidence references, and non-claims.
+
+The current repository fixture validates the shape of such a record only. It
+does not run a decoding benchmark. It intentionally keeps demo measurements at
+`not_run`, `not measured`, or `not_evaluated` where appropriate.
+
+That is still useful. A record-shape fixture gives the stack a place to put
+future evidence without letting future evidence blur the boundaries. It can
+record a negative result honestly: a route was faster, but useful verified
+work per second went down after verifier cost, repair, memory pressure, and
+fallback were counted.
+
+## Beyond the State of the Art
+
+The mature endpoint is a governed generation-mode control plane.
+
+Such a controller would let the stack choose among slow, fast, speculative,
+parallel, recurrent, cached, and hybrid generation routes without allowing raw
+throughput to masquerade as capability. It would maintain a registry of modes,
+a task-risk classifier, context-admission checks, draft-source records,
+verifier receipts, acceptance predicates, repair and fallback routes,
+memory-pressure accounting, and promotion gates.
+
+In that mature system, fast generation is not a single model trick. It is a
+portfolio of routeable specialists. A speculative route might be default for
+low-risk drafting. A multi-token route might be allowed for boilerplate but
+blocked for evidence-bearing claims. A diffusion or hybrid route might propose
+sketches that a slower verifier repairs. A serving-memory route might improve
+throughput without making any claim about reasoning quality. A high-risk route
+can still demand the slow baseline if that is what adequate verification
+requires.
+
+The evidence surface would separate proposed spans from accepted spans,
+wall-clock latency from useful solution rate, raw throughput from verifier
+cost, and serving-layer wins from quality claims. Accepted acceleration paths
+would become routable specialists. Rejected drafts would become evidence about
+verifier bottlenecks. Drift would become readiness residual. High-risk tasks
+would keep their right to be slow.
+
+That endpoint remains proposed architecture. Support stays at `argument` until
+mode-selection records, latency/quality comparisons, verifier acceptance
+traces, raw-speed failure cases, fallback routes, and promotion packets show
+where fast generation is adequate and where it is only fast.
+
+## Summary
+
+Fast Generation Architectures defines the stack's generation substrate. Its
+thesis is not "make tokens faster." Its thesis is that generation speed becomes
+useful only when the stack can select a mode, verify accepted output, count
+repair and fallback, account for memory and verifier burden, and promote the
+mode through evidence rather than excitement.
+
+The chapter connects compression, routing, execution, evidence, and external
+inference-acceleration literature. PlanForge selects the route. VCM supplies
+context. The generator drafts. Verifiers accept or reject. Talos artifactizes.
+Benchmark ratchets measure. Stable capability fields decide whether the mode
+is ready, experimental, quarantined, or retired.
+
+The conservative boundary is the point: speed becomes an architecture win only
+when the accepted-output ledger survives contact with verification bandwidth,
+memory pressure, fallback cost, and downstream task success.
+
+## Handoff
+
+Fast generation reduces time pressure at the output boundary, but stored and
+routed artifacts still need compression contracts of their own. RankFold,
+NeuralFold, and Artifact Compression narrows the focus to reusable artifacts:
+how archive forms, deterministic decode checks, probes, fallback, utility, and
+cost accounting decide whether a compressed artifact can safely replace or
+accompany its fuller source.

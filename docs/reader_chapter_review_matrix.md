@@ -14,7 +14,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 |---|---:|
 | review_status:reviewed | 54 |
 | disposition:companion_note_candidate | 3 |
-| disposition:curated_manuscript_candidate | 34 |
+| disposition:curated_manuscript_candidate | 35 |
 | disposition:no_immediate_action | 54 |
 | disposition:reader_overlay_active | 20 |
 | release_blocker:format_artifact_not_reviewed | 54 |
@@ -60,7 +60,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part III - Routing, Compression, Representation, and Substrates | `personal-compute-hives-and-federated-edge-intelligence` | reviewed | full_chapter_review | 6 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `compact-generative-systems-and-residual-honesty` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `generate-verify-repair-compression` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `fast-generation-architectures` | reviewed | full_chapter_review | 2 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `fast-generation-architectures` | reviewed | full_chapter_review | 2 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `rankfold-neuralfold-and-artifact-compression` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `semantic-representation-and-tree-structured-models` | reviewed | full_chapter_review | 2 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `resource-economics-and-token-budgets` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |

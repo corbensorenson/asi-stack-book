@@ -80,6 +80,42 @@
   },
   "chapter_records": [
     {
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "title": "Artifact Graphs, Audit Logs, and Replay",
+      "file": "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "live_source_ref": "chapters/artifact-graphs-audit-logs-and-replay.qmd@4090d18b4",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#artifact-graphs-audit-logs-and-replay",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around work that remains inspectable after production, artifact identity, parent jobs, source/context refs, context transactions, tool refs, audit events, replay grades, claim/test links, evidence gates, residuals, allowed reuse, minimum viable replay packets, and beyond-SOTA evidence graphs; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external records remain comparators rather than claim support",
+        "proof/test status preserved without adding unrun artifact-graph service, audit-reconstruction, replay-engine, produced-artifact-completeness, provenance-completeness, benchmark, security, proof-carrying-code, SWE-bench, AutoGen, or MoECOT runtime results",
+        "implementation horizon preserved without implying current evidence-graph deployment",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_artifact_graphs_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "title": "Artifact Steward Agents and Living Project Governance",
       "file": "editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd",
@@ -150,14 +186,14 @@
       "review_notes": "First prose curation pass recorded in docs/curated_reader_asi_stack_prose_pass.md; not release-reviewed."
     },
     {
-      "chapter_id": "the-efficient-asi-hypothesis",
-      "title": "The Efficient ASI Hypothesis",
-      "file": "editions/reader_manuscript/v1_0/chapters/the-efficient-asi-hypothesis.qmd",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
+      "file": "editions/reader_manuscript/v1_0/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/the-efficient-asi-hypothesis.qmd",
-      "live_source_ref": "chapters/the-efficient-asi-hypothesis.qmd@a5583f1e",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#the-efficient-asi-hypothesis.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#the-efficient-asi-hypothesis",
+      "generated_baseline_ref": "build/reader_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "live_source_ref": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd@b99a95481",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#benchmark-ratchets-and-anti-goodhart-evidence.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#benchmark-ratchets-and-anti-goodhart-evidence",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -167,12 +203,13 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, route-outcome explanation, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "divergence_summary": "First curated reader prose pass reframes the chapter around benchmark scores as pressure signals that require evidence packets: evidence-state classification, run records, baselines, residuals, regression floors, anti-Goodhart checks, contamination and transfer boundaries, and claim-specific promotion decisions; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external benchmark-science sources remain orientation and vocabulary, not local reproduction",
+        "proof/test status preserved without adding empirical benchmark, hidden-holdout, transfer, contamination, source-reported replay, Theseus-readiness, deployment-readiness, model-quality, or ASI-progress results",
+        "implementation horizon preserved without implying current benchmark-OS deployment",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -182,17 +219,17 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_efficient_asi_prose_pass.md; not release-reviewed."
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_benchmark_ratchets_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
-      "chapter_id": "recursive-self-improvement-boundaries",
-      "title": "Recursive Self-Improvement Boundaries",
-      "file": "editions/reader_manuscript/v1_0/chapters/recursive-self-improvement-boundaries.qmd",
+      "chapter_id": "capability-replacement-and-rollback",
+      "title": "Capability Replacement and Rollback",
+      "file": "editions/reader_manuscript/v1_0/chapters/capability-replacement-and-rollback.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/recursive-self-improvement-boundaries.qmd",
-      "live_source_ref": "chapters/recursive-self-improvement-boundaries.qmd@c9524280",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#recursive-self-improvement-boundaries.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#recursive-self-improvement-boundaries",
+      "generated_baseline_ref": "build/reader_edition/chapters/capability-replacement-and-rollback.qmd",
+      "live_source_ref": "chapters/capability-replacement-and-rollback.qmd@26297f08a",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#capability-replacement-and-rollback.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#capability-replacement-and-rollback",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -202,7 +239,7 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, boundary-delta explanation, gate-state explanation, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, candidate-versus-accepted-replacement explanation, transaction-state explanation, rollback-receipt explanation, regression-floor and evaluator-independence boundaries, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
@@ -217,42 +254,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_recursive_self_improvement_prose_pass.md; not release-reviewed."
-    },
-    {
-      "chapter_id": "human-intent-as-a-formal-input",
-      "title": "Human Intent as a Formal Input",
-      "file": "editions/reader_manuscript/v1_0/chapters/human-intent-as-a-formal-input.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/human-intent-as-a-formal-input.qmd",
-      "live_source_ref": "chapters/human-intent-as-a-formal-input.qmd@72f4c7365",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#human-intent-as-a-formal-input.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#human-intent-as-a-formal-input",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, intent-state explanation, external-comparator boundary repair, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_human_intent_prose_pass.md; not release-reviewed."
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_capability_replacement_prose_pass.md; not release-reviewed."
     },
     {
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
@@ -291,288 +293,6 @@
       "review_notes": "First prose curation pass recorded in docs/curated_reader_circle_contracts_prose_pass.md; not release-reviewed."
     },
     {
-      "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "title": "Executable Specifications and Lean Proof Envelope",
-      "file": "editions/reader_manuscript/v1_0/chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "live_source_ref": "chapters/executable-specifications-and-lean-proof-envelope.qmd@8f1a27c5a",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#executable-specifications-and-lean-proof-envelope.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#executable-specifications-and-lean-proof-envelope",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "paragraph ordering",
-        "chapter compression",
-        "companion-note integration"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, and minimum viable implementation boundary were edited for human reading while preserving claim meaning and evidence boundaries.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_executable_specs_prose_pass.md; not release-reviewed."
-    },
-    {
-      "chapter_id": "evidence-states-and-claim-discipline",
-      "title": "Evidence States and Claim Discipline",
-      "file": "editions/reader_manuscript/v1_0/chapters/evidence-states-and-claim-discipline.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/evidence-states-and-claim-discipline.qmd",
-      "live_source_ref": "chapters/evidence-states-and-claim-discipline.qmd@28fcd839c",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#evidence-states-and-claim-discipline.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#evidence-states-and-claim-discipline",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, evidence-state traffic-control throughline, source-boundary explanation, support-label/support-state distinction, demotion path, implementation boundary, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_evidence_states_prose_pass.md; not release-reviewed."
-    },
-    {
-      "chapter_id": "system-boundaries-and-authority",
-      "title": "System Boundaries and Authority",
-      "file": "editions/reader_manuscript/v1_0/chapters/system-boundaries-and-authority.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/system-boundaries-and-authority.qmd",
-      "live_source_ref": "chapters/system-boundaries-and-authority.qmd@753d3404f",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#system-boundaries-and-authority.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#system-boundaries-and-authority",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, can/may distinction, denial-as-control explanation, permission-class taxonomy, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_system_boundaries_prose_pass.md; not release-reviewed."
-    },
-    {
-      "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "title": "Failure Modes of Ungoverned Intelligence",
-      "file": "editions/reader_manuscript/v1_0/chapters/failure-modes-of-ungoverned-intelligence.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/failure-modes-of-ungoverned-intelligence.qmd",
-      "live_source_ref": "chapters/failure-modes-of-ungoverned-intelligence.qmd@2917337c0",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#failure-modes-of-ungoverned-intelligence.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#failure-modes-of-ungoverned-intelligence",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, diagnostic-clarity throughline, failure-as-obligation-map explanation, interface compression, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_failure_modes_prose_pass.md; not release-reviewed."
-    },
-    {
-      "chapter_id": "security-kernel-and-digital-scifs",
-      "title": "Security Kernel and Digital SCIFs",
-      "file": "editions/reader_manuscript/v1_0/chapters/security-kernel-and-digital-scifs.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/security-kernel-and-digital-scifs.qmd",
-      "live_source_ref": "chapters/security-kernel-and-digital-scifs.qmd@b585d5429",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#security-kernel-and-digital-scifs.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#security-kernel-and-digital-scifs",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, least-exposure throughline, handle-lease explanation, Digital SCIF lifecycle explanation, receipt-boundary explanation, proof/test boundary clarification, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_security_kernel_prose_pass.md; not release-reviewed."
-    },
-    {
-      "chapter_id": "stable-capability-fields",
-      "title": "Stable Capability Fields",
-      "file": "editions/reader_manuscript/v1_0/chapters/stable-capability-fields.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/stable-capability-fields.qmd",
-      "live_source_ref": "chapters/stable-capability-fields.qmd@c798c5da7",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#stable-capability-fields.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#stable-capability-fields",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, field/implementation explanation, scoped qualification and lease explanation, route-validator explanation, lifecycle/evidence/rollback boundary, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_stable_capability_fields_prose_pass.md; not release-reviewed."
-    },
-    {
-      "chapter_id": "capability-replacement-and-rollback",
-      "title": "Capability Replacement and Rollback",
-      "file": "editions/reader_manuscript/v1_0/chapters/capability-replacement-and-rollback.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/capability-replacement-and-rollback.qmd",
-      "live_source_ref": "chapters/capability-replacement-and-rollback.qmd@26297f08a",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#capability-replacement-and-rollback.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#capability-replacement-and-rollback",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, candidate-versus-accepted-replacement explanation, transaction-state explanation, rollback-receipt explanation, regression-floor and evaluator-independence boundaries, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_capability_replacement_prose_pass.md; not release-reviewed."
-    },
-    {
-      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "title": "Readiness Gates, Residual Escrow, and Quarantine",
-      "file": "editions/reader_manuscript/v1_0/chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
-      "live_source_ref": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd@b6c86ba39",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#readiness-gates-residual-escrow-and-quarantine.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#readiness-gates-residual-escrow-and-quarantine",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First prose curation pass completed from the generated reader baseline, emphasizing readiness as scoped permission, residual custody, productive quarantine, stale-gate prevention, and lifecycle control; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it",
-        "meaning-changing caveats either preserved or fixed in the live chapter"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_readiness_gates_prose_pass.md; not release-reviewed."
-    },
-    {
       "chapter_id": "claim-ledgers-and-belief-revision",
       "title": "Claim Ledgers and Belief Revision",
       "file": "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
@@ -609,14 +329,14 @@
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_claim_ledgers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
-      "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "title": "Verification Bandwidth and Context Adequacy",
-      "file": "editions/reader_manuscript/v1_0/chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "title": "Cognitive Compilation and Semantic IR",
+      "file": "editions/reader_manuscript/v1_0/chapters/cognitive-compilation-and-semantic-ir.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/verification-bandwidth-and-context-adequacy.qmd",
-      "live_source_ref": "chapters/verification-bandwidth-and-context-adequacy.qmd@6013d4743",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#verification-bandwidth-and-context-adequacy.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#verification-bandwidth-and-context-adequacy",
+      "generated_baseline_ref": "build/reader_edition/chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "live_source_ref": "chapters/cognitive-compilation-and-semantic-ir.qmd@a57098412",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#cognitive-compilation-and-semantic-ir.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#cognitive-compilation-and-semantic-ir",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -626,13 +346,12 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around context exposure versus verification capacity, target-claim scoped adequacy, semantic-unit comparison, compression/loss records, verification modes, support-state boundaries, minimum viable adequacy fixtures, and beyond-SOTA verification-capacity control; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated prose pass completed from generated reader baseline; opening, pacing, paragraph order, section flow, transitions, obligation-addressability throughline, semantic IR as artifact-language framing, lowering-receipt explanation, validator-failure/localized-repair boundary, minimum viable implementation boundary, and proof/test boundary clarification revised for human-reader flow.",
       "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support",
-        "source boundary preserved; external records remain comparators rather than claim support",
-        "proof/test status preserved without adding unrun contradiction-rate, distractor-resistance, summary-fidelity, adequacy-classifier, or deployment results",
-        "implementation horizon preserved without implying current verification-capacity control-plane deployment",
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -642,7 +361,79 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_verification_bandwidth_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_cognitive_compilation_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
+      "file": "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "live_source_ref": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd@957755b9c",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#coil-attention-cyclic-memory-and-recurrence-contracts.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#coil-attention-cyclic-memory-and-recurrence-contracts",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around memory custody and recurrence control: cyclic memory contracts expose residue, winding, freshness, sparse coverage, recurrence exits, fallback, authority, and baseline obligations while keeping structural memory separate from retrieval or reasoning quality.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "source boundary preserved: Coil Attention and Memory, Circle AI Contract Suite, Theseus Circle Transfer, VCM, and external recurrence comparators remain structural-contract, context, transfer-boundary, or comparator sources inside recorded limits",
+        "proof/test status preserved without adding KV-cache freshness checks, sparse-coverage harnesses, recurrence benchmarks, learned-memory workloads, Circle-generated contract packs, Theseus transfer consumers, external benchmark reproduction, retrieval-quality results, reasoning-quality results, speed results, memory-savings results, long-context results, or support-state results",
+        "implementation horizon preserved without implying a deployed memory-admission or recurrence-control plane",
+        "release blocker status preserved until reconciliation, format review, and an edition release record clear it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_coil_attention_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+      "file": "editions/reader_manuscript/v1_0/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "live_source_ref": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd@fbd273622",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#coilra-multicoil-rope-and-cyclic-mixers.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#coilra-multicoil-rope-and-cyclic-mixers",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around cyclic-substrate adoption discipline: structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, consumer policy, and canary routing stay separate from model-quality, runtime, memory, context-length, training-stability, deployment, and transfer claims.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "source boundary preserved: CoilRA/MultiCoil RoPE, RoPE position certifier, Circle AI Contract Suite, Theseus Circle Transfer, Circle AI Architectures, and external comparator families remain structural-contract, receipt-boundary, transfer-boundary, or comparator sources inside recorded limits",
+        "proof/test status preserved without adding RoPE certifier runs, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmarks, MLX model experiments, hardware-kernel benchmarks, downstream quality evaluations, external Circle Lean builds, Theseus transfer consumers, model-quality results, context-length results, runtime results, memory-savings results, training-stability results, hardware-efficiency results, deployment-readiness results, transfer results, or support-state results",
+        "implementation horizon preserved without implying a deployed cyclic-substrate evaluation lane or canary-route controller",
+        "release blocker status preserved until reconciliation, format review, and an edition release record clear it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_coilra_cyclic_mixers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
@@ -681,14 +472,14 @@
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_context_transactions_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
-      "chapter_id": "artifact-graphs-audit-logs-and-replay",
-      "title": "Artifact Graphs, Audit Logs, and Replay",
-      "file": "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "title": "Evidence States and Claim Discipline",
+      "file": "editions/reader_manuscript/v1_0/chapters/evidence-states-and-claim-discipline.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/artifact-graphs-audit-logs-and-replay.qmd",
-      "live_source_ref": "chapters/artifact-graphs-audit-logs-and-replay.qmd@4090d18b4",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#artifact-graphs-audit-logs-and-replay",
+      "generated_baseline_ref": "build/reader_edition/chapters/evidence-states-and-claim-discipline.qmd",
+      "live_source_ref": "chapters/evidence-states-and-claim-discipline.qmd@28fcd839c",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#evidence-states-and-claim-discipline.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#evidence-states-and-claim-discipline",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -698,13 +489,12 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around work that remains inspectable after production, artifact identity, parent jobs, source/context refs, context transactions, tool refs, audit events, replay grades, claim/test links, evidence gates, residuals, allowed reuse, minimum viable replay packets, and beyond-SOTA evidence graphs; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, evidence-state traffic-control throughline, source-boundary explanation, support-label/support-state distinction, demotion path, implementation boundary, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support",
-        "source boundary preserved; external records remain comparators rather than claim support",
-        "proof/test status preserved without adding unrun artifact-graph service, audit-reconstruction, replay-engine, produced-artifact-completeness, provenance-completeness, benchmark, security, proof-carrying-code, SWE-bench, AutoGen, or MoECOT runtime results",
-        "implementation horizon preserved without implying current evidence-graph deployment",
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -714,7 +504,184 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_artifact_graphs_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_evidence_states_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "title": "Executable Specifications and Lean Proof Envelope",
+      "file": "editions/reader_manuscript/v1_0/chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "live_source_ref": "chapters/executable-specifications-and-lean-proof-envelope.qmd@8f1a27c5a",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#executable-specifications-and-lean-proof-envelope.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#executable-specifications-and-lean-proof-envelope",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "paragraph ordering",
+        "chapter compression",
+        "companion-note integration"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, and minimum viable implementation boundary were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_executable_specs_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "title": "Failure Modes of Ungoverned Intelligence",
+      "file": "editions/reader_manuscript/v1_0/chapters/failure-modes-of-ungoverned-intelligence.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/failure-modes-of-ungoverned-intelligence.qmd",
+      "live_source_ref": "chapters/failure-modes-of-ungoverned-intelligence.qmd@2917337c0",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#failure-modes-of-ungoverned-intelligence.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#failure-modes-of-ungoverned-intelligence",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, diagnostic-clarity throughline, failure-as-obligation-map explanation, interface compression, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_failure_modes_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "fast-generation-architectures",
+      "title": "Fast Generation Architectures",
+      "file": "editions/reader_manuscript/v1_0/chapters/fast-generation-architectures.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/fast-generation-architectures.qmd",
+      "live_source_ref": "chapters/fast-generation-architectures.qmd@2eb3290f9",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#fast-generation-architectures.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#fast-generation-architectures",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated prose pass completed from generated reader baseline; opening, pacing, paragraph order, section flow, transitions, generation-speed-as-route-choice throughline, proposed-versus-accepted-output boundary, generation-mode record explanation, verifier/fallback/memory-pressure accounting, minimum viable implementation boundary, and proof/test boundary clarification revised for human-reader flow.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_fast_generation_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "human-intent-as-a-formal-input",
+      "title": "Human Intent as a Formal Input",
+      "file": "editions/reader_manuscript/v1_0/chapters/human-intent-as-a-formal-input.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/human-intent-as-a-formal-input.qmd",
+      "live_source_ref": "chapters/human-intent-as-a-formal-input.qmd@72f4c7365",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#human-intent-as-a-formal-input.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#human-intent-as-a-formal-input",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, intent-state explanation, external-comparator boundary repair, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_human_intent_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "integrated-reference-architecture",
+      "title": "Integrated Reference Architecture",
+      "file": "editions/reader_manuscript/v1_0/chapters/integrated-reference-architecture.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/integrated-reference-architecture.qmd",
+      "live_source_ref": "chapters/integrated-reference-architecture.qmd@e323268f5",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#integrated-reference-architecture.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#integrated-reference-architecture",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around the integrated stack as a trace kernel: parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, downstream rejection, and blocked paths that remain as visible as happy paths; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external comparators and local project references remain orientation and implementation-reference context, not integrated-runtime evidence",
+        "proof/test status preserved without adding end-to-end runtime trace, artifact-continuity, authority-stop, benchmark, current-Theseus, compiler-proof, operator-board, deployment-readiness, model-quality, or stack-safety results",
+        "implementation horizon preserved without implying current trace-kernel deployment",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_integrated_reference_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "labor-os-and-typed-jobs",
@@ -753,14 +720,14 @@
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_labor_os_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
-      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "title": "Runtime Adapters, Tool Permissions, and Human Approval",
-      "file": "editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "chapter_id": "living-book-methodology",
+      "title": "Living Book Methodology",
+      "file": "editions/reader_manuscript/v1_0/chapters/living-book-methodology.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
-      "live_source_ref": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd@c28d894f1",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#runtime-adapters-tool-permissions-and-human-approval",
+      "generated_baseline_ref": "build/reader_edition/chapters/living-book-methodology.qmd",
+      "live_source_ref": "chapters/living-book-methodology.qmd@af85e47e6",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#living-book-methodology.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#living-book-methodology",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -770,13 +737,14 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around runtime adapters as capability leases for external effects, typed jobs, adapter contracts, capability checks, authority handles, scoped approval records, effect leases, sandboxed invocations, effect receipts, rollback handles, irreversible residuals, incident paths, artifact graphs, evidence ledgers, and the beyond-SOTA capability-firewall endpoint; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated reader prose pass reframes the methodology around the book as a governed research instrument: stable IDs, source notes, claim states, proof/test hooks, release records, reader projections, change packets, and publication-laundering controls are made readable while preserving the argument-level chapter core claim.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support",
-        "source boundary preserved; external runtime-action and assurance records remain comparators rather than local reproduction evidence",
-        "proof/test status preserved without adding unrun adapter-service, sandbox, approval-service, secret-handle, live effect-receipt, rollback, incident-response, runtime-security, benchmark, Talos-runtime, MoECOT-runtime, ReAct, Simplex, Copilot, or proof-carrying-code results",
-        "implementation horizon preserved without implying current capability-firewall deployment",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "narrow non-core Phase 5 harness registry runner transition is surfaced only as synthetic-test-backed for that non-core lane, not as chapter-core promotion",
+        "source boundary preserved; Benchmaxxing, VIEA, Cognitive Loop Closure, BugBrain, MoECOT, MoECOT Markdown, and Road To AGI remain methodology, lineage, implementation-reference, variant, or source-reported context inside their stated limits",
+        "proof/test status preserved without adding manuscript-quality, source-interpretation-quality, rendered-site-availability, external-review, reader-release, audio-production, ASI-capability, or support-state results",
+        "implementation horizon preserved without implying an autonomous living-book research OS has been implemented",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -786,17 +754,17 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_runtime_adapters_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_living_book_methodology_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
-      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
-      "title": "Procedural Memory and Cognitive Loop Closure",
-      "file": "editions/reader_manuscript/v1_0/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+      "chapter_id": "mathematical-and-search-substrates",
+      "title": "Mathematical and Search Substrates",
+      "file": "editions/reader_manuscript/v1_0/chapters/mathematical-and-search-substrates.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-      "live_source_ref": "chapters/procedural-memory-and-cognitive-loop-closure.qmd@41267f5a8",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#procedural-memory-and-cognitive-loop-closure.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#procedural-memory-and-cognitive-loop-closure",
+      "generated_baseline_ref": "build/reader_edition/chapters/mathematical-and-search-substrates.qmd",
+      "live_source_ref": "chapters/mathematical-and-search-substrates.qmd@2345f296f",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#mathematical-and-search-substrates.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#mathematical-and-search-substrates",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -806,13 +774,13 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around earned automation: comparable traces, negative examples, invariant abstraction, parameter discovery, procedure qualification, regression checks, quarantine, residuals, and retirement triggers; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated reader prose pass reframes the chapter around disciplined optionality: substrates enter through adoption records, not fascination; structural, empirical, consumer, and retirement lanes stay separate; axis ledgers prevent theorem or performance spillover; and optional mathematical/search substrates remain argument-level candidates until scoped evidence exists.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support",
-        "source boundary preserved; MemGPT remains external orientation and MoECOT remains connector/source-note context",
-        "proof/test status preserved without adding unrun loop-detector, tool-synthesis, parameter-discovery, regression, routing-monitor, retirement-automation, Talos-loop-closure, MoECOT-runtime, Project-Theseus-replay, or autonomous-self-improvement results",
-        "implementation horizon preserved without implying current procedure-foundry deployment",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "source boundary preserved; GenesisCode, Temporal Coil, Cognitive Compilation, TreeLLM, Simulation Scaling, CoilMoECOT, Circle, Theseus transfer, and Mamba remain optional-substrate, proof-boundary, transfer-boundary, or external sequence-substrate context inside their stated limits",
+        "proof/test status preserved without adding temporal-coil A/B runs, representation-efficiency benchmarks, CoilMoECOT route benchmarks, Mamba comparisons, Circle substrate sidecars, Theseus transfer consumers, model-quality results, routing-quality results, compression-quality results, search-quality results, or support-state results",
+        "implementation horizon preserved without implying a substrate adoption exchange or useful substrate has been implemented",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -822,17 +790,17 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_procedural_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_mathematical_search_substrates_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
-      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
-      "file": "editions/reader_manuscript/v1_0/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "title": "Open Research Agenda and Bibliography Plan",
+      "file": "editions/reader_manuscript/v1_0/chapters/open-research-agenda-and-bibliography-plan.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-      "live_source_ref": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd@b99a95481",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#benchmark-ratchets-and-anti-goodhart-evidence.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#benchmark-ratchets-and-anti-goodhart-evidence",
+      "generated_baseline_ref": "build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "live_source_ref": "chapters/open-research-agenda-and-bibliography-plan.qmd@04b32c959",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#open-research-agenda-and-bibliography-plan.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#open-research-agenda-and-bibliography-plan",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -842,13 +810,13 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around benchmark scores as pressure signals that require evidence packets: evidence-state classification, run records, baselines, residuals, regression floors, anti-Goodhart checks, contamination and transfer boundaries, and claim-specific promotion decisions; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated reader prose pass reframes the final chapter as the book's research-intake contract: source states, Appendix G/H ownership boundaries, backlog records, new-paper triage, proof/test lanes, no-promotion blockers, and release traces are made readable while preserving the argument-level chapter core claim.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support",
-        "source boundary preserved; external benchmark-science sources remain orientation and vocabulary, not local reproduction",
-        "proof/test status preserved without adding empirical benchmark, hidden-holdout, transfer, contamination, source-reported replay, Theseus-readiness, deployment-readiness, model-quality, or ASI-progress results",
-        "implementation horizon preserved without implying current benchmark-OS deployment",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "source boundary preserved; all assigned sources remain research-agenda, backlog, implementation-reference, proof-contract, connector/recovery, or external-literature context inside their stated limits",
+        "proof/test status preserved without adding citation-accuracy, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, source-interpretation-quality, public-release-permission, external-review, or support-state results",
+        "implementation horizon preserved without implying the mature active research graph has been implemented",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -858,7 +826,42 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_benchmark_ratchets_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_open_research_agenda_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "title": "Personal Compute Hives and Federated Edge Intelligence",
+      "file": "editions/reader_manuscript/v1_0/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "live_source_ref": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd@71a8bf5a1",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#personal-compute-hives-and-federated-edge-intelligence.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#personal-compute-hives-and-federated-edge-intelligence",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, reachability-versus-authority throughline, policy-first placement explanation, owned and rented device role explanation, family/project mediation boundary, Hive-to-Hive protocol boundary, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_personal_compute_hives_prose_pass.md; not release-reviewed."
     },
     {
       "chapter_id": "policy-optimization-and-learning-from-feedback",
@@ -897,14 +900,14 @@
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_policy_optimization_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
-      "chapter_id": "integrated-reference-architecture",
-      "title": "Integrated Reference Architecture",
-      "file": "editions/reader_manuscript/v1_0/chapters/integrated-reference-architecture.qmd",
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "title": "Procedural Memory and Cognitive Loop Closure",
+      "file": "editions/reader_manuscript/v1_0/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/integrated-reference-architecture.qmd",
-      "live_source_ref": "chapters/integrated-reference-architecture.qmd@e323268f5",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#integrated-reference-architecture.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#integrated-reference-architecture",
+      "generated_baseline_ref": "build/reader_edition/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+      "live_source_ref": "chapters/procedural-memory-and-cognitive-loop-closure.qmd@41267f5a8",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#procedural-memory-and-cognitive-loop-closure.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#procedural-memory-and-cognitive-loop-closure",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -914,13 +917,13 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around the integrated stack as a trace kernel: parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, downstream rejection, and blocked paths that remain as visible as happy paths; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated reader prose pass reframes the chapter around earned automation: comparable traces, negative examples, invariant abstraction, parameter discovery, procedure qualification, regression checks, quarantine, residuals, and retirement triggers; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
-        "source boundary preserved; external comparators and local project references remain orientation and implementation-reference context, not integrated-runtime evidence",
-        "proof/test status preserved without adding end-to-end runtime trace, artifact-continuity, authority-stop, benchmark, current-Theseus, compiler-proof, operator-board, deployment-readiness, model-quality, or stack-safety results",
-        "implementation horizon preserved without implying current trace-kernel deployment",
+        "source boundary preserved; MemGPT remains external orientation and MoECOT remains connector/source-note context",
+        "proof/test status preserved without adding unrun loop-detector, tool-synthesis, parameter-discovery, regression, routing-monitor, retirement-automation, Talos-loop-closure, MoECOT-runtime, Project-Theseus-replay, or autonomous-self-improvement results",
+        "implementation horizon preserved without implying current procedure-foundry deployment",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -930,7 +933,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_integrated_reference_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_procedural_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
@@ -1006,14 +1009,14 @@
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_prototype_roadmap_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
-      "chapter_id": "living-book-methodology",
-      "title": "Living Book Methodology",
-      "file": "editions/reader_manuscript/v1_0/chapters/living-book-methodology.qmd",
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "title": "Readiness Gates, Residual Escrow, and Quarantine",
+      "file": "editions/reader_manuscript/v1_0/chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/living-book-methodology.qmd",
-      "live_source_ref": "chapters/living-book-methodology.qmd@af85e47e6",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#living-book-methodology.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#living-book-methodology",
+      "generated_baseline_ref": "build/reader_edition/chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "live_source_ref": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd@b6c86ba39",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#readiness-gates-residual-escrow-and-quarantine.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#readiness-gates-residual-escrow-and-quarantine",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -1023,15 +1026,14 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the methodology around the book as a governed research instrument: stable IDs, source notes, claim states, proof/test hooks, release records, reader projections, change packets, and publication-laundering controls are made readable while preserving the argument-level chapter core claim.",
+      "divergence_summary": "First prose curation pass completed from the generated reader baseline, emphasizing readiness as scoped permission, residual custody, productive quarantine, stale-gate prevention, and lifecycle control; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved.",
       "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support for the chapter core claim",
-        "narrow non-core Phase 5 harness registry runner transition is surfaced only as synthetic-test-backed for that non-core lane, not as chapter-core promotion",
-        "source boundary preserved; Benchmaxxing, VIEA, Cognitive Loop Closure, BugBrain, MoECOT, MoECOT Markdown, and Road To AGI remain methodology, lineage, implementation-reference, variant, or source-reported context inside their stated limits",
-        "proof/test status preserved without adding manuscript-quality, source-interpretation-quality, rendered-site-availability, external-review, reader-release, audio-production, ASI-capability, or support-state results",
-        "implementation horizon preserved without implying an autonomous living-book research OS has been implemented",
-        "release blocker status preserved until an edition release record clears it"
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it",
+        "meaning-changing caveats either preserved or fixed in the live chapter"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1040,17 +1042,17 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_living_book_methodology_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_readiness_gates_prose_pass.md; not release-reviewed."
     },
     {
-      "chapter_id": "open-research-agenda-and-bibliography-plan",
-      "title": "Open Research Agenda and Bibliography Plan",
-      "file": "editions/reader_manuscript/v1_0/chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "title": "Recursive Self-Improvement Boundaries",
+      "file": "editions/reader_manuscript/v1_0/chapters/recursive-self-improvement-boundaries.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd",
-      "live_source_ref": "chapters/open-research-agenda-and-bibliography-plan.qmd@04b32c959",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#open-research-agenda-and-bibliography-plan.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#open-research-agenda-and-bibliography-plan",
+      "generated_baseline_ref": "build/reader_edition/chapters/recursive-self-improvement-boundaries.qmd",
+      "live_source_ref": "chapters/recursive-self-improvement-boundaries.qmd@c9524280",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#recursive-self-improvement-boundaries.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#recursive-self-improvement-boundaries",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -1060,151 +1062,7 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the final chapter as the book's research-intake contract: source states, Appendix G/H ownership boundaries, backlog records, new-paper triage, proof/test lanes, no-promotion blockers, and release traces are made readable while preserving the argument-level chapter core claim.",
-      "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support for the chapter core claim",
-        "source boundary preserved; all assigned sources remain research-agenda, backlog, implementation-reference, proof-contract, connector/recovery, or external-literature context inside their stated limits",
-        "proof/test status preserved without adding citation-accuracy, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, source-interpretation-quality, public-release-permission, external-review, or support-state results",
-        "implementation horizon preserved without implying the mature active research graph has been implemented",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_open_research_agenda_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
-    },
-    {
-      "chapter_id": "mathematical-and-search-substrates",
-      "title": "Mathematical and Search Substrates",
-      "file": "editions/reader_manuscript/v1_0/chapters/mathematical-and-search-substrates.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/mathematical-and-search-substrates.qmd",
-      "live_source_ref": "chapters/mathematical-and-search-substrates.qmd@2345f296f",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#mathematical-and-search-substrates.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#mathematical-and-search-substrates",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around disciplined optionality: substrates enter through adoption records, not fascination; structural, empirical, consumer, and retirement lanes stay separate; axis ledgers prevent theorem or performance spillover; and optional mathematical/search substrates remain argument-level candidates until scoped evidence exists.",
-      "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support for the chapter core claim",
-        "source boundary preserved; GenesisCode, Temporal Coil, Cognitive Compilation, TreeLLM, Simulation Scaling, CoilMoECOT, Circle, Theseus transfer, and Mamba remain optional-substrate, proof-boundary, transfer-boundary, or external sequence-substrate context inside their stated limits",
-        "proof/test status preserved without adding temporal-coil A/B runs, representation-efficiency benchmarks, CoilMoECOT route benchmarks, Mamba comparisons, Circle substrate sidecars, Theseus transfer consumers, model-quality results, routing-quality results, compression-quality results, search-quality results, or support-state results",
-        "implementation horizon preserved without implying a substrate adoption exchange or useful substrate has been implemented",
-        "release blocker status preserved until an edition release record clears it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_mathematical_search_substrates_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
-    },
-    {
-      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
-      "file": "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
-      "live_source_ref": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd@957755b9c",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#coil-attention-cyclic-memory-and-recurrence-contracts.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#coil-attention-cyclic-memory-and-recurrence-contracts",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around memory custody and recurrence control: cyclic memory contracts expose residue, winding, freshness, sparse coverage, recurrence exits, fallback, authority, and baseline obligations while keeping structural memory separate from retrieval or reasoning quality.",
-      "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support for the chapter core claim",
-        "source boundary preserved: Coil Attention and Memory, Circle AI Contract Suite, Theseus Circle Transfer, VCM, and external recurrence comparators remain structural-contract, context, transfer-boundary, or comparator sources inside recorded limits",
-        "proof/test status preserved without adding KV-cache freshness checks, sparse-coverage harnesses, recurrence benchmarks, learned-memory workloads, Circle-generated contract packs, Theseus transfer consumers, external benchmark reproduction, retrieval-quality results, reasoning-quality results, speed results, memory-savings results, long-context results, or support-state results",
-        "implementation horizon preserved without implying a deployed memory-admission or recurrence-control plane",
-        "release blocker status preserved until reconciliation, format review, and an edition release record clear it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_coil_attention_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
-    },
-    {
-      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
-      "file": "editions/reader_manuscript/v1_0/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
-      "live_source_ref": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd@fbd273622",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#coilra-multicoil-rope-and-cyclic-mixers.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#coilra-multicoil-rope-and-cyclic-mixers",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around cyclic-substrate adoption discipline: structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, consumer policy, and canary routing stay separate from model-quality, runtime, memory, context-length, training-stability, deployment, and transfer claims.",
-      "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
-        "support-state boundary preserved at argument support for the chapter core claim",
-        "source boundary preserved: CoilRA/MultiCoil RoPE, RoPE position certifier, Circle AI Contract Suite, Theseus Circle Transfer, Circle AI Architectures, and external comparator families remain structural-contract, receipt-boundary, transfer-boundary, or comparator sources inside recorded limits",
-        "proof/test status preserved without adding RoPE certifier runs, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmarks, MLX model experiments, hardware-kernel benchmarks, downstream quality evaluations, external Circle Lean builds, Theseus transfer consumers, model-quality results, context-length results, runtime results, memory-savings results, training-stability results, hardware-efficiency results, deployment-readiness results, transfer results, or support-state results",
-        "implementation horizon preserved without implying a deployed cyclic-substrate evaluation lane or canary-route controller",
-        "release blocker status preserved until reconciliation, format review, and an edition release record clear it"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_coilra_cyclic_mixers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
-    },
-    {
-      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
-      "title": "Personal Compute Hives and Federated Edge Intelligence",
-      "file": "editions/reader_manuscript/v1_0/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-      "live_source_ref": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd@71a8bf5a1",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#personal-compute-hives-and-federated-edge-intelligence.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#personal-compute-hives-and-federated-edge-intelligence",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, reachability-versus-authority throughline, policy-first placement explanation, owned and rented device role explanation, family/project mediation boundary, Hive-to-Hive protocol boundary, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, boundary-delta explanation, gate-state explanation, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
@@ -1219,7 +1077,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_personal_compute_hives_prose_pass.md; not release-reviewed."
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_recursive_self_improvement_prose_pass.md; not release-reviewed."
     },
     {
       "chapter_id": "resource-economics-and-token-budgets",
@@ -1257,14 +1115,14 @@
       "review_notes": "First prose curation pass recorded in docs/curated_reader_resource_economics_prose_pass.md; not release-reviewed."
     },
     {
-      "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "title": "Cognitive Compilation and Semantic IR",
-      "file": "editions/reader_manuscript/v1_0/chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "title": "Runtime Adapters, Tool Permissions, and Human Approval",
+      "file": "editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
       "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "live_source_ref": "chapters/cognitive-compilation-and-semantic-ir.qmd@a57098412",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#cognitive-compilation-and-semantic-ir.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#cognitive-compilation-and-semantic-ir",
+      "generated_baseline_ref": "build/reader_edition/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "live_source_ref": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd@c28d894f1",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#runtime-adapters-tool-permissions-and-human-approval",
       "curation_scope": [
         "pacing",
         "chapter openings and closings",
@@ -1274,7 +1132,43 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated prose pass completed from generated reader baseline; opening, pacing, paragraph order, section flow, transitions, obligation-addressability throughline, semantic IR as artifact-language framing, lowering-receipt explanation, validator-failure/localized-repair boundary, minimum viable implementation boundary, and proof/test boundary clarification revised for human-reader flow.",
+      "divergence_summary": "First curated reader prose pass reframes the chapter around runtime adapters as capability leases for external effects, typed jobs, adapter contracts, capability checks, authority handles, scoped approval records, effect leases, sandboxed invocations, effect receipts, rollback handles, irreversible residuals, incident paths, artifact graphs, evidence ledgers, and the beyond-SOTA capability-firewall endpoint; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external runtime-action and assurance records remain comparators rather than local reproduction evidence",
+        "proof/test status preserved without adding unrun adapter-service, sandbox, approval-service, secret-handle, live effect-receipt, rollback, incident-response, runtime-security, benchmark, Talos-runtime, MoECOT-runtime, ReAct, Simplex, Copilot, or proof-carrying-code results",
+        "implementation horizon preserved without implying current capability-firewall deployment",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_runtime_adapters_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "title": "Security Kernel and Digital SCIFs",
+      "file": "editions/reader_manuscript/v1_0/chapters/security-kernel-and-digital-scifs.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/security-kernel-and-digital-scifs.qmd",
+      "live_source_ref": "chapters/security-kernel-and-digital-scifs.qmd@b585d5429",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#security-kernel-and-digital-scifs.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#security-kernel-and-digital-scifs",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, least-exposure throughline, handle-lease explanation, Digital SCIF lifecycle explanation, receipt-boundary explanation, proof/test boundary clarification, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
@@ -1289,7 +1183,148 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_cognitive_compilation_prose_pass.md; not release-reviewed."
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_security_kernel_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "stable-capability-fields",
+      "title": "Stable Capability Fields",
+      "file": "editions/reader_manuscript/v1_0/chapters/stable-capability-fields.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/stable-capability-fields.qmd",
+      "live_source_ref": "chapters/stable-capability-fields.qmd@c798c5da7",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#stable-capability-fields.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#stable-capability-fields",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, field/implementation explanation, scoped qualification and lease explanation, route-validator explanation, lifecycle/evidence/rollback boundary, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_stable_capability_fields_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "system-boundaries-and-authority",
+      "title": "System Boundaries and Authority",
+      "file": "editions/reader_manuscript/v1_0/chapters/system-boundaries-and-authority.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/system-boundaries-and-authority.qmd",
+      "live_source_ref": "chapters/system-boundaries-and-authority.qmd@753d3404f",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#system-boundaries-and-authority.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#system-boundaries-and-authority",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, can/may distinction, denial-as-control explanation, permission-class taxonomy, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_system_boundaries_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "title": "The Efficient ASI Hypothesis",
+      "file": "editions/reader_manuscript/v1_0/chapters/the-efficient-asi-hypothesis.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/the-efficient-asi-hypothesis.qmd",
+      "live_source_ref": "chapters/the-efficient-asi-hypothesis.qmd@a5583f1e",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#the-efficient-asi-hypothesis.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#the-efficient-asi-hypothesis",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, route-outcome explanation, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved in reader prose",
+        "source boundary preserved or reconciled back to the live chapter",
+        "proof/test status preserved without adding unrun results",
+        "implementation horizon preserved without implying current implementation",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_efficient_asi_prose_pass.md; not release-reviewed."
+    },
+    {
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "title": "Verification Bandwidth and Context Adequacy",
+      "file": "editions/reader_manuscript/v1_0/chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "live_source_ref": "chapters/verification-bandwidth-and-context-adequacy.qmd@6013d4743",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#verification-bandwidth-and-context-adequacy.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#verification-bandwidth-and-context-adequacy",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around context exposure versus verification capacity, target-claim scoped adequacy, semantic-unit comparison, compression/loss records, verification modes, support-state boundaries, minimum viable adequacy fixtures, and beyond-SOTA verification-capacity control; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external records remain comparators rather than claim support",
+        "proof/test status preserved without adding unrun contradiction-rate, distractor-resistance, summary-fidelity, adequacy-classifier, or deployment results",
+        "implementation horizon preserved without implying current verification-capacity control-plane deployment",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_verification_bandwidth_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {
