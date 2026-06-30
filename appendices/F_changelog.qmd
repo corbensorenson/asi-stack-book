@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-30 - Consolidation execution gate tightened
+
+- Reviewed the latest pasted consolidation critique and kept its useful
+  conclusion: the book should reduce repeated chapter skeletons through
+  governed re-consolidation, not through deletion or a fixed 44-chapter target.
+- Updated `docs/v1_x_beyond_sota_roadmap.md` and
+  `docs/chapter_consolidation_sequence.md` with a concrete execution gate:
+  review-ready packages must receive an execute, revise, defer, or
+  reject/retain decision before manifest edits or broad curated-reader
+  graduation of source chapters inside pending clusters.
+- Added the requirement that executed packages include manifest, outline,
+  Appendix C, Appendix K, source, proof, reader, URL/history, scaffold,
+  validation, and changelog treatment in one reviewable change set, plus a
+  repetition-removal ledger showing where the saved chapter skeleton space
+  goes.
+- This does not merge chapters, change `book_structure.json`, change the
+  54-chapter manifest, alter Appendix C, promote support states, approve reader
+  artifacts, or create proof, test, source, benchmark, external-review, ebook,
+  PDF, DOCX, audio, or release evidence.
+
 ## 2026-06-30 - Open research agenda curated reader prose pass
 
 - Added a drafting-only curated reader chapter for

@@ -804,6 +804,29 @@ legible. If a package is deferred or rejected, record the reader-work
 disposition so curated prose may continue without pretending the repetition
 question disappeared.
 
+Consolidation execution gate:
+
+- A review-ready merge package may not be executed only because it reduces the
+  table of contents. It must show that one destination skeleton improves the
+  argument by making the mechanism, evidence path, proof limits, implementation
+  horizon, and reader handoff clearer than the separate source chapters.
+- Before a source chapter inside a pending package graduates into the curated
+  reader manuscript, the package needs one of three recorded stability
+  outcomes: `executed`, `deferred_for_release`, or
+  `rejected_or_retained`. A revise decision means the package is still pending.
+  Without a stability outcome, only local prose cleanup is allowed.
+- A deferred package must say why the current release is allowed to keep the
+  duplicate skeletons, what reader confusion remains, and when the decision
+  should be revisited.
+- A rejected or retained package must name the distinct artifact, proof lane,
+  evidence lane, implementation horizon, or reader throughline that justifies
+  keeping the chapters separate.
+- An executed package must include the manifest edit, outline update, Appendix
+  C reconciliation, Appendix K implementation-horizon reconciliation, proof
+  manifest handling, source-union handling, reader-overlay or curated-reader
+  repair, URL/history treatment, scaffold sync, validation output, and a
+  changelog entry in the same reviewable change set.
+
 Decision rubric:
 
 - A chapter is chapter-owning when it owns a distinct artifact, interface,

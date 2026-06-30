@@ -208,6 +208,36 @@ executed, apply only one merge or fold package per commit. If a package is
 deferred or rejected, record whether curated-reader work is unblocked, still
 paused, or allowed only as local cleanup.
 
+## Execution Gate
+
+The consolidation critique is now a release-control gate, not a direct
+manifest-edit instruction. A package can move to `executed` only when the
+review record shows that the destination chapter is stronger than the source
+chapters as one chapter, not merely shorter as a table-of-contents entry.
+
+Before executing a merge or fold, the change set must include:
+
+- the accepted decision record and reviewer or review-source reference;
+- the `book_structure.json` edit, outline update, Appendix C reconciliation,
+  Appendix K implementation-horizon reconciliation, source-union handling,
+  proof-manifest handling, reader-overlay or curated-reader repair,
+  URL/history treatment, scaffold sync, validation output, and changelog entry;
+- a repetition-removal ledger naming which repeated skeleton sections were
+  removed and how the saved space became mechanism depth, external comparison,
+  negative cases, proof-limit clarity, examples, implementation traces, or
+  reader continuity;
+- a no-support-state-change boundary unless a separate accepted evidence
+  transition exists.
+
+Before graduating curated-reader prose for a source chapter inside a pending
+merge or fold package, the package must have a recorded `executed`,
+`deferred_for_release`, or `rejected_or_retained` outcome. If the outcome is
+`deferred_for_release`, the record must name the reader confusion and duplicate
+structure accepted for the release plus the condition for revisiting the
+decision. If the outcome is `rejected_or_retained`, the record must name the
+artifact, proof lane, evidence lane, implementation horizon, or reader
+throughline that justifies keeping the separate chapter boundary.
+
 ## Candidate Sequence
 
 | Tier | Candidate cluster | Source chapters | Default destination or action | Preservation requirement |
