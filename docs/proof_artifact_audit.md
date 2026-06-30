@@ -69,14 +69,14 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ReadinessGates.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | 2 | 7 | 3 | 3 |
 | `lean/AsiStackProofs/Replacement.lean` | 3 | 10 | 3 | 2 |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | 2 | 2 | 4 | 2 |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | 2 | 4 | 4 | 2 |
 | `lean/AsiStackProofs/Routing.lean` | 2 | 3 | 2 | 1 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 2 | 3 | 4 | 2 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 3 | 14 | 4 | 5 |
 | `lean/AsiStackProofs/SelfImprovement.lean` | 3 | 21 | 7 | 5 |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 2 | 3 | 2 |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 2 | 4 | 2 |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 4 | 4 | 2 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 3 | 9 | 3 | 3 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 2 | 3 | 4 | 4 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 2 | 2 | 2 | 2 |

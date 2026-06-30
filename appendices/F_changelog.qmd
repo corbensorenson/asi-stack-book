@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-30 - Resource and simulation negative-case proofs
+
+- Strengthened `AsiStackProofs.ResourceEconomics` with two derived
+  negative-case theorems: one rejects disabled required safety gates under the
+  budget-gate preservation predicate, and one rejects high-risk work with
+  insufficient verification budget that tries to remain an ordinary dispatch.
+- Strengthened `AsiStackProofs.SimulationFidelity` with two derived
+  negative-case theorems: one rejects simulation evidence without declared
+  scope, and one rejects promoted results that exceed declared fidelity
+  support.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 306
+  theorem declarations, 115 direct/projection-style declarations, and 191
+  derived/decomposed declarations.
+- Updated the Resource Economics and Token Budgets chapter, manifest test rows,
+  Appendix E, proof adequacy review, candidate status, v1.0/v1.x roadmap
+  surfaces, focus audit, and status snapshot validator. Refreshed the v1.0
+  status manuscript scale to 166,933 chapter words excluding YAML and 174,306
+  raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, implement a
+  budget scheduler, measure real load stability, optimize verification tax,
+  reproduce KV-cache or serving behavior, prove economic optimality, prove
+  simulator adequacy, establish physical feasibility, validate open-world
+  transfer, or approve any reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Bibliography source-gate negative-case proofs
 
 - Strengthened `AsiStackProofs.BibliographyPlan` with two derived

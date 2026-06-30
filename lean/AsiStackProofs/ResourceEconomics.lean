@@ -20,6 +20,16 @@ theorem task_budget_cannot_disable_required_safety_or_verification_gates
   intro preserved safetyRequired verificationRequired
   exact ⟨preserved.1 safetyRequired, preserved.2 verificationRequired⟩
 
+theorem required_safety_gate_disabled_rejects_budget_gate_preservation
+    {review : BudgetGateReview} :
+    review.requiredSafetyGate = true ->
+    review.safetyGateDisabled = true ->
+    ¬ RequiredGatesPreserved review := by
+  intro safetyRequired disabled preserved
+  have preservedSafety := preserved.1 safetyRequired
+  rw [disabled] at preservedSafety
+  cases preservedSafety
+
 inductive RiskClass where
   | low
   | medium
@@ -68,5 +78,16 @@ theorem high_risk_task_with_insufficient_verification_budget_is_not_dispatched
     BlockedOrEscalated review.decision := by
   intro valid highRisk insufficient
   exact valid highRisk insufficient
+
+theorem high_risk_insufficient_budget_dispatch_rejected
+    {review : VerificationBudgetReview} :
+    HighRisk review.riskClass ->
+    review.verificationBudgetSufficient = false ->
+    review.decision = BudgetDecision.dispatch ->
+    ¬ HighRiskVerificationBudgetValid review := by
+  intro highRisk insufficient dispatched valid
+  have blocked := valid highRisk insufficient
+  rw [dispatched] at blocked
+  cases blocked
 
 end AsiStackProofs.ResourceEconomics
