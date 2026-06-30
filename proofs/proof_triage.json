@@ -361,6 +361,16 @@
       "rationale": "Implemented in AsiStackProofs.IntentToExecution as a finite approval-review predicate: missing required approval blocks transition to running."
     },
     {
+      "tag": "lean:intent_execution.contracts.dispatch_route_envelope",
+      "chapter_id": "intent-to-execution-contracts",
+      "module": "AsiStackProofs.IntentToExecution",
+      "formal_target": "A structured execution dispatch review routes missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews into explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.IntentToExecution as a finite dispatch-route function and derived route theorems for missing contracts, missing objectives, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews."
+    },
+    {
       "tag": "lean:command.semantic_interface.operational_invariant",
       "chapter_id": "intent-to-execution-contracts",
       "module": "AsiStackProofs.CommandContracts",

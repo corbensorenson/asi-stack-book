@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-06-30 - Execution dispatch route proof envelope
+
+- Extended `AsiStackProofs.IntentToExecution` with a finite execution dispatch
+  route vocabulary, review record, and route function over contract presence,
+  objective/constraint/authority completeness, parent-authority preservation,
+  hidden override detection, required approvals, artifact declarations,
+  verification plans, residual knowledge, and dispatch requests.
+- Added derived/decomposed Lean theorems showing that missing contracts reject
+  dispatch; missing objectives request clarification; authority widening and
+  hidden overrides block dispatch; missing required approvals route to approval;
+  missing artifacts request clarification; missing verification plans route to
+  verification; known residuals are recorded; and complete dispatch reviews are
+  ready for dispatch.
+- Added the `lean:intent_execution.contracts.dispatch_route_envelope` proof
+  target to the outline, manifest, proof triage, Command Contracts chapter, and
+  Appendix E. The proof manifest now tracks 118 implemented finite-record
+  targets, and the proof-depth classifier now records 237 theorem declarations:
+  115 direct/projection-style and 122 derived/decomposed.
+- Updated the Command Contracts chapter, proof-depth and proof-adequacy
+  surfaces, v1.0 roadmap/status surfaces, v0.2 manuscript status, publication
+  readiness note, repository map, and proof/code plan. The proof adequacy review
+  keeps Command Contracts in `useful but too narrow`.
+- This does not promote any Appendix C or chapter core claim, demonstrate
+  command parsing, deploy a dispatcher, validate prompt-override defenses,
+  execute approval gates, prove tool-effect containment, approve reader
+  artifacts, or create EPUB, DOCX, PDF, audio, DOI, Zenodo, or audio-embedded
+  EPUB release artifacts.
+
 ## 2026-06-30 - Self-improvement transition route proof envelope
 
 - Extended `AsiStackProofs.SelfImprovement` with a finite

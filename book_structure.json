@@ -2722,6 +2722,11 @@
               "result_status": "passes via synthetic plan-execution contract harness; no deployed dispatcher claim"
             },
             {
+              "name": "Execution dispatch route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite dispatch-route coverage only"
+            },
+            {
               "name": "Prompt override scenario",
               "implementation_status": "planned",
               "result_status": "not run"
@@ -2749,6 +2754,12 @@
               "tag": "lean:intent_execution.contracts.failure_blocks_promotion",
               "module": "AsiStackProofs.IntentToExecution",
               "target": "An execution job without required approval cannot transition to running.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:intent_execution.contracts.dispatch_route_envelope",
+              "module": "AsiStackProofs.IntentToExecution",
+              "target": "A structured execution dispatch review routes missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews into explicit outcomes.",
               "status": "implemented"
             },
             {

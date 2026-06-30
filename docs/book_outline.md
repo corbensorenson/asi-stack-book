@@ -931,6 +931,7 @@ Draft deliverables:
 - Implemented synthetic Codex test: Artifact traceability test via `python3 scripts/validate_plan_execution_contracts.py`; runtime artifact acceptance remains open.
 - Implemented synthetic Codex test: Command schema validation test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
 - Implemented synthetic Codex test: Failure-behavior declaration test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
+- Implemented proof-backed check: finite execution dispatch route proof for missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews; this is structured-record route coverage only, not deployed dispatcher behavior.
 - Planned Codex test: Prompt override scenario.
 - Planned Codex test: Field-confidence audit.
 - Planned Codex test: Authority-inference block test.
@@ -942,6 +943,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:intent_execution.contracts.operational_invariant` | `AsiStackProofs.IntentToExecution` | A compiled execution job preserves the parent contract constraints. | implemented |
 | `lean:intent_execution.contracts.failure_blocks_promotion` | `AsiStackProofs.IntentToExecution` | An execution job without required approval cannot transition to running. | implemented |
+| `lean:intent_execution.contracts.dispatch_route_envelope` | `AsiStackProofs.IntentToExecution` | A structured execution dispatch review routes missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews into explicit outcomes. | implemented |
 | `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandContracts` | A valid command contract contains objective, constraints, output contract, verification, and failure behavior. | implemented |
 | `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandContracts` | A hidden or conflicting instruction cannot override an explicit contract constraint. | implemented |
 
@@ -2575,8 +2577,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 117 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 117 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 118 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 118 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Proof artifact traceability audit.

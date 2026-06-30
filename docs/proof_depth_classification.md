@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 117 |
+| Proof targets in manifest | 118 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 228 |
+| Theorem declarations classified | 237 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 113 |
+| Derived/decomposed theorem declarations | 122 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -75,7 +75,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 4 | 4 | 4 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -206,8 +206,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentContracts.lean` | `missing_intent_text_rejects_as_non_executable` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `non_goal_conflict_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `prohibited_action_rejects_as_non_executable` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `authority_widening_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `compiled_execution_job_preserves_parent_contract_constraints` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `complete_dispatch_review_is_ready` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `execution_job_without_required_approval_cannot_transition_to_running` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `hidden_override_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `known_residual_records_execution_residual` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `missing_artifacts_request_execution_clarification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `missing_contract_rejects_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `missing_objective_requests_execution_clarification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `missing_verification_plan_routes_to_verification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentToExecution.lean` | `required_approval_missing_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `every_manifest_chapter_has_outline_targets_and_claim_placeholders` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_without_regenerated_scaffold_and_proof_manifest_is_invalid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_claim_from_unavailable_text_only_cannot_promote_above_argument` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

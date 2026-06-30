@@ -71,6 +71,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Artifact traceability test | implemented | passes via synthetic plan-execution contract harness; no runtime artifact acceptance claim |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Command schema validation test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Failure-behavior declaration test | implemented | passes via synthetic plan-execution contract harness; no deployed dispatcher claim |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Execution dispatch route proof | implemented | passes via Lean build; finite dispatch-route coverage only |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Prompt override scenario | planned | not run |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Field-confidence audit | planned | not run |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Authority-inference block test | planned | not run |
@@ -288,16 +289,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 117 |
+| Proof targets covered by triage | 118 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 117 |
+| implemented | 118 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 117 |
+| implemented | formal-invariant | lean-candidate | 118 |
