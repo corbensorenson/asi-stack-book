@@ -1004,6 +1004,43 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_prototype_roadmap_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "title": "Living Book Methodology",
+      "file": "editions/reader_manuscript/v1_0/chapters/living-book-methodology.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/living-book-methodology.qmd",
+      "live_source_ref": "chapters/living-book-methodology.qmd@af85e47e6",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#living-book-methodology.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#living-book-methodology",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the methodology around the book as a governed research instrument: stable IDs, source notes, claim states, proof/test hooks, release records, reader projections, change packets, and publication-laundering controls are made readable while preserving the argument-level chapter core claim.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "narrow non-core Phase 5 harness registry runner transition is surfaced only as synthetic-test-backed for that non-core lane, not as chapter-core promotion",
+        "source boundary preserved; Benchmaxxing, VIEA, Cognitive Loop Closure, BugBrain, MoECOT, MoECOT Markdown, and Road To AGI remain methodology, lineage, implementation-reference, variant, or source-reported context inside their stated limits",
+        "proof/test status preserved without adding manuscript-quality, source-interpretation-quality, rendered-site-availability, external-review, reader-release, audio-production, ASI-capability, or support-state results",
+        "implementation horizon preserved without implying an autonomous living-book research OS has been implemented",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_living_book_methodology_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {

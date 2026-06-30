@@ -1,0 +1,336 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: living-book-methodology
+generated_baseline_ref: build/reader_edition/chapters/living-book-methodology.qmd
+live_source_ref: chapters/living-book-methodology.qmd@af85e47e6
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Living Book Methodology
+
+A book about governed self-improvement has to be careful about how it
+improves.
+
+If the manuscript quietly rewrites old claims, forgets why a source was added,
+renumbers chapters by hand, loses proof targets, hides failed validations, or
+publishes reader editions without saying what was stripped away, then the book
+has already contradicted its own architecture. It would be asking future AI
+systems to preserve provenance, authority, residuals, and rollback while its
+own evidence trail dissolved into ordinary editorial drift.
+
+The living-book method is the discipline that prevents that. It treats the
+book as a governed artifact graph that happens to render as prose. The graph
+contains the manifest, outline, source inventory, source notes, claim matrix,
+proof manifest, schemas, tests, changelog, release records, reader projections,
+and public site. The prose is what readers see first. The graph is what lets
+readers, reviewers, and future agents see how the prose is allowed to change.
+
+This does not make the thesis true. It makes the state of the thesis
+inspectable.
+
+That distinction matters. A rendered website, a clean validator run, a release
+record, or a polished reader chapter can show publication discipline. It cannot
+prove the ASI Stack works. The living book earns trust by making that boundary
+hard to miss.
+
+## Problem
+
+The book itself must remain a living technical system rather than a static
+anthology.
+
+The architecture is too broad, too source-dependent, and too update-sensitive
+for a one-time manuscript. New AI papers will arrive. Existing papers will
+need better external grounding. Project Theseus and Circle evidence lanes may
+become cleaner, or may reveal that a claim should stay weaker. Lean modules may
+move from field projections to real transition predicates. Some chapters may
+split. Others may merge because the current shape repeats the same skeleton
+around adjacent ideas.
+
+Without a living method, every improvement creates a new risk. A stronger
+paragraph might hide that the support state did not move. A new citation might
+enter prose before a source note exists. A chapter merge might lose a proof
+hook. A reader edition might sound more certain than the live AI/research
+chapter. A future writing agent might add a chapter and force every downstream
+number, cross-reference, and release note to be repaired by hand.
+
+The problem is not that the book changes. The problem is ungoverned change.
+
+## Why Static Books Are Not Enough
+
+Static books are good at freezing a polished argument. They are bad at showing
+how an argument earned, lost, or failed to earn support.
+
+A PDF can be beautiful and still hide the difference between a conjecture, a
+source-derived comparison, a locally replayed fixture, a Lean theorem, and a
+failed experiment. A wiki can change quickly and still lose claim identity. A
+repository can run tests and still fail to tell humans what those tests mean.
+A chat transcript can preserve author intent and still be unusable as public
+evidence.
+
+The ASI Stack needs all of those virtues without accepting their failure
+modes. It needs readable prose, stable public structure, source provenance,
+validation, proof hooks, version history, and explicit non-claims.
+
+External governance and evaluation work raises the same pressure from another
+direction. Risk-management frameworks, frontier-governance literature,
+transparent benchmark reporting, living benchmark practice, and contamination
+analysis all point toward lifecycle accountability. They do not validate this
+book's claims. They do show why a serious technical argument should expose its
+evidence state instead of treating publication as proof.
+
+The audience split makes the requirement stricter. AI systems need the
+structured scaffold. Researchers need sources, claim states, proof targets, and
+evidence ledgers. Interested human readers need coherent prose that does not
+ask them to wade through the same machinery on every page. A living book has
+to serve all three without letting three separate manuscripts drift into three
+separate truths.
+
+## Core Claim
+
+The living book should model the ASI Stack discipline through manifest-driven
+Quarto, source queues, claim/evidence matrices, proof manifests, tests,
+changelogs, and releases.
+
+In the live AI/research book, that remains a design rationale at `argument`
+support. The repository demonstrates parts of the method through generated
+scaffolds, validators, proof manifests, schema fixtures, changelog entries,
+release records, commits, and GitHub Pages publication. Those artifacts support
+release discipline. They do not prove that every chapter is correct, that every
+source has been interpreted perfectly, that the human-reader book is finished,
+or that any ASI implementation is validated.
+
+There is one narrow non-core evidence transition attached to this chapter's
+methodology lane: the Phase 5 harness registry runner is recorded as
+`synthetic-test-backed`. That status belongs to a specific registry-runner
+claim, not to the chapter core claim and not to the ASI Stack as a whole.
+
+The claim is modest on purpose. It says that a book about governed intelligence
+should itself be governed.
+
+## The Living Method
+
+The method starts with stable identity.
+
+`book_structure.json` controls the order of parts, chapters, files, and
+appendices. That means chapters can move, split, merge, or be inserted without
+manual renumbering becoming part of the intellectual task. `docs/book_outline.md`
+controls chapter jobs, source queues, proof scope, mechanisms, failure modes,
+and future writing targets. Source notes record what has actually been read.
+Appendix C records claim labels and support states. The proof manifest records
+formalization targets. The changelog records meaningful movement.
+
+The separation is what makes later automation possible. A future agent should
+not need private memory to know what to load, what changed, which source is
+allowed to support which claim, or which validation command must run before
+publication. The repository should tell it.
+
+The source discipline is equally important. Corben-authored papers, local
+projects, external literature, conversation-mined packets, Google Drive
+documents, and blocked sources do not have the same evidential role.
+Conversation-derived material can preserve author intent, terminology,
+lineage, and recovery tasks. It is not external evidence. Source-reported
+benchmarks stay source-reported until artifacts are imported or reproduced.
+External literature must have inventory records and source notes before it
+becomes chapter prose or support language.
+
+The same discipline applies to edition work. The live book remains the
+canonical AI/research surface. Human view, curated reader chapters, EPUB, PDF,
+DOCX, and audio scripts are projections from a validated live state. They may
+change pacing, examples, openings, closings, and section flow. They may not
+change claim meaning, support states, source boundaries, proof status, test
+status, implementation horizons, or release artifact existence.
+
+The human-readable book can diverge in voice. It cannot diverge in truth.
+
+## Change Packets
+
+The unit of living-book progress is a change packet.
+
+A useful change packet says which chapter IDs changed, which source IDs are
+involved, which claim IDs or support states were touched, which proof tags,
+schemas, fixtures, or release records moved, which validation commands ran,
+which render target was checked, which audience profile was affected, and what
+the change does not imply.
+
+Most of that packet is distributed across ordinary repository surfaces: the
+diff, changelog, source notes, Appendix C, proof manifest, release records, and
+validation output. The point is not to create paperwork for its own sake. The
+point is to make revision auditable after the author, editor, or AI assistant
+has moved on.
+
+Benchmaxxing gives the book a ratchet metaphor: progress should leave a harder
+frontier, a preserved regression floor, and visible residuals. VIEA gives it
+artifact discipline: important outputs become durable records, not just useful
+responses. Cognitive Loop Closure explains why repeated maintenance should
+become scripts, validators, or reusable procedures. BugBrain is useful here as
+a cautionary lineage source: explicit build and test workflows matter, but
+speculative claims stay speculative. MoECOT and Road To AGI contribute runtime
+and remaining-work discipline while remaining source-reported until public-safe
+artifacts are imported or replayed.
+
+The living-book method borrows that discipline for writing.
+
+## Operating Loop
+
+```{mermaid}
+flowchart LR
+  Idea["New source, result, critique, or idea"] --> Triage["Triage source role and chapter ownership"]
+  Triage --> Notes["Source note, blocker, or author-intent record"]
+  Notes --> Draft["Live chapter or outline revision"]
+  Draft --> Claims["Claim and evidence matrix check"]
+  Claims --> Proofs["Proof, schema, fixture, or no-promotion blocker"]
+  Proofs --> Validate["Validation and Quarto render"]
+  Validate --> Release["Changelog, commit, release record, public site"]
+  Release --> Reader["Human view or reader derivative"]
+  Reader --> Residuals["Residuals, review notes, and next backlog"]
+  Residuals --> Triage
+
+  Notes -. "no note, no source-derived support" .-> Claims
+  Proofs -. "no run, no result" .-> Claims
+  Reader -. "projection, not equal authority" .-> Claims
+  Validate -. "failure blocks publication" .-> Draft
+```
+
+The loop is a publication ratchet. It starts with a new input and ends with
+residuals that become the next input. The dashed edges are the important part:
+no note means no source-derived support, no run means no result, a reader
+projection is not equal authority, and a failed validation blocks publication.
+
+This is also how the book becomes easier to maintain over time. Repeated
+manual work should become a script, schema, validator, proof target, checklist,
+or release record. But closure has to be earned. A workflow should not become
+automation until its inputs, outputs, failure behavior, and review path are
+clear enough to preserve the evidence boundary.
+
+## Interfaces And Invariants
+
+The methodology has simple interfaces.
+
+Source ingestion feeds source notes. Drafting feeds the claim matrix. Tests,
+proofs, and replayable fixtures feed support-state decisions only through
+accepted evidence-transition records. Release records feed the public site and
+major-version publication history. Reader and audio workspaces derive from the
+live source, then record what was stripped, rewritten, reviewed, or left
+blocked.
+
+The invariants are stricter than the interfaces:
+
+- no fabricated source content;
+- no fabricated test results;
+- no hidden support-state movement;
+- deprecated or refuted claims remain visible;
+- stable IDs preserve lineage across chapter splits, merges, moves, proof
+  target changes, and releases;
+- release records state what was not reviewed, rendered, proved, tested, or
+  packaged.
+
+The hardest invariant is evidence separation. A source note, a schema check, a
+Lean build, a Quarto render, a GitHub Pages deployment, a reader-artifact
+review, and a human editorial judgment are different artifacts. They may all
+matter. They cannot collapse into one vague word like "validated."
+
+## Failure Modes
+
+The living-book layer fails when publication activity is laundered into
+evidence.
+
+A polished chapter can make an unsupported idea feel inevitable. A successful
+render can make a weak citation feel safe. A generated EPUB can make an
+unreviewed reader edition feel released. A passing schema can make a protocol
+record look operational. A green Pages run can make a reader forget that all
+chapter core claims may still be at `argument`.
+
+The method has to fight that failure directly. The public entry surface should
+say what is evidenced and what is not. Appendix C should keep core support
+states visible. The non-core evidence ledger should surface narrow wins without
+promoting chapter cores. The roadmap should record blockers, demotions, and
+negative outcomes instead of hiding them behind optimistic prose.
+
+Another failure is automation drift. A validator can keep passing after the
+writing contract has changed. That is why the book needs reviews of the
+validators themselves, not only more validators. A living system is not
+trustworthy because it has scripts. It is trustworthy when its scripts still
+enforce the contract readers are relying on.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is already visible in the public Quarto
+repository: manifest-driven book order, stable chapter IDs, source inventory,
+source notes, claim/evidence matrix, proof manifest, validation scripts,
+reader-overlay machinery, release records, Git history, and GitHub Pages.
+
+That is enough to start the living-book method. It is not enough to declare the
+book finished. The current release machinery validates release-record shape,
+audience scope, derived-artifact boundaries, scaffold/proof sync, and
+publication hygiene. It leaves manuscript quality, source accuracy, claim
+truth, external review, reader-release approval, and audio production open
+unless separate records say otherwise.
+
+The next practical object is a more explicit change-packet record. It should
+make one chapter edit, one outline update, one proof-manifest shift, one
+reader-generation event, or one blocked release easy to inspect as a single
+auditable unit. That would reduce dependence on conversational memory and make
+future autonomous writing runs less ambiguous.
+
+## Beyond The State Of The Art
+
+The mature endpoint is a research operating system that renders as a book.
+
+In that endpoint, a future agent can receive a new AI paper, decide whether it
+belongs in an existing chapter or a new one, add public-safe source metadata,
+write a source note, update the outline, adjust proof and test backlogs, draft
+the relevant prose, update claim/evidence records, run validation, render the
+site, and prepare reader/audiobook derivatives without hand-renumbering or
+hidden claim promotion.
+
+The live site remains the canonical AI/research surface. Human view gives
+interested readers a cleaner on-site path. Major-version reader editions,
+ebooks, PDFs, DOCX files, and audio scripts are downstream projections with
+release records and review gates. A target format is not an artifact. A
+generated artifact is not an approved artifact. An approved reader artifact is
+not evidence that the ASI Stack works.
+
+At full maturity, the living-book system would also be able to lose cleanly. A
+source could contradict a chapter. A proof attempt could fail. A benchmark lane
+could demote a claim. A consolidation review could merge chapters or reject a
+proposed merge. An external reviewer could say the contribution is not novel
+or is already handled by prior work. The book would preserve that result
+instead of smoothing it away.
+
+That is the real ambition of the methodology: not continuous praise, but
+continuous accountability.
+
+## What This Chapter Does Not Prove
+
+This reader chapter does not approve a reader release. It does not create an
+EPUB, PDF, DOCX, audiobook, or audio-embedded edition. It does not prove source
+interpretation quality, manuscript quality, rendered-site availability,
+external-review adequacy, or ASI capability. It does not move the chapter core
+claim above `argument`.
+
+It records a human-reader prose pass over the methodology. The live AI/research
+chapter, Appendix C, proof manifest, release records, and validation outputs
+remain the authority for claims and evidence.
+
+## Summary
+
+Living Book Methodology is the book's self-governance layer. It says that the
+manuscript should improve the way the architecture says intelligence should
+improve: through stable identity, source discipline, claim states, proof and
+test hooks, release records, residuals, and visible non-claims.
+
+The point is not bureaucracy. The point is memory. A future reader, reviewer,
+or AI assistant should be able to resume from the repository state rather than
+from private recollection. If the repo cannot explain what changed, why it
+changed, what ran, what failed, what is evidenced, and what remains blocked,
+the living-book layer is not alive enough.
+
+## Handoff
+
+A living methodology needs a managed backlog. Open Research Agenda and
+Bibliography Plan supplies that control surface: what still needs to be read,
+mined, compared, tested, proved, imported, reviewed, merged, deferred, or
+rejected. It keeps future additions from turning the architecture back into a
+pile of papers.

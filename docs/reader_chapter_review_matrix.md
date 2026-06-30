@@ -14,7 +14,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 |---|---:|
 | review_status:reviewed | 54 |
 | disposition:companion_note_candidate | 3 |
-| disposition:curated_manuscript_candidate | 19 |
+| disposition:curated_manuscript_candidate | 20 |
 | disposition:no_immediate_action | 54 |
 | disposition:reader_overlay_active | 20 |
 | release_blocker:format_artifact_not_reviewed | 54 |
@@ -76,7 +76,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part IV - Evidence, Implementation, and the Living Book | `integrated-reference-architecture` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `project-theseus-as-report-first-implementation-reference` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `prototype-roadmap` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part IV - Evidence, Implementation, and the Living Book | `living-book-methodology` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `living-book-methodology` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `open-research-agenda-and-bibliography-plan` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 
 ## Non-Claims
