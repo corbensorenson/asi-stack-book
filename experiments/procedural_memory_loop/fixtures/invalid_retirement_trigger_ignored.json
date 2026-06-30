@@ -1,0 +1,46 @@
+{
+  "scenario_id": "procedural-memory.invalid.retirement-trigger-ignored",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/retirement-ignored",
+    "source_traces": ["trace://retire-success-001", "trace://retire-success-002", "trace://retire-success-003", "trace://retire-near-001"],
+    "invariant_structure": "tool ignores a stale-precondition retirement trigger",
+    "parameters": ["input"],
+    "preconditions": ["old API exists"],
+    "postconditions": ["output exists"],
+    "verification_result": "pass",
+    "risk_tier": "medium",
+    "runtime_tier": "drafting-tool",
+    "monitoring_plan": "retire on old API removal",
+    "residuals": ["old API removed"],
+    "regressions": ["regression://old-api"],
+    "lifecycle_state": "routable",
+    "retirement_criteria": ["old API removed"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://retire-success-001", "loop_key": "retirement", "outcome": "success"},
+      {"trace_id": "trace://retire-success-002", "loop_key": "retirement", "outcome": "success"},
+      {"trace_id": "trace://retire-success-003", "loop_key": "retirement", "outcome": "success"},
+      {"trace_id": "trace://retire-near-001", "loop_key": "retirement", "outcome": "near_miss"}
+    ],
+    "negative_examples": [],
+    "near_misses": ["trace://retire-near-001"],
+    "abstraction": {
+      "invariant_structure": "tool ignores a stale-precondition retirement trigger",
+      "parameters": ["input"],
+      "preconditions": ["old API exists"],
+      "postconditions": ["output exists"]
+    },
+    "non_claims": ["does not promote support state"]
+  },
+  "regression_review": {
+    "tests": ["regression://old-api"],
+    "failed_tests": [],
+    "benchmark_floor_passed": true,
+    "scf_active": false,
+    "retirement_triggered": true,
+    "promotion_request": "keep_routable"
+  },
+  "expected_route": "routable",
+  "non_claims": ["does not promote chapter core support state"]
+}

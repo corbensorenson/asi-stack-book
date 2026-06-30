@@ -1,0 +1,46 @@
+{
+  "scenario_id": "procedural-memory.invalid.failed-regression-routable",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/failed-regression-routable",
+    "source_traces": ["trace://fail-success-001", "trace://fail-success-002", "trace://fail-success-003", "trace://fail-negative-001"],
+    "invariant_structure": "tool with failed regression tries to remain routable",
+    "parameters": ["input"],
+    "preconditions": ["input exists"],
+    "postconditions": ["output exists"],
+    "verification_result": "fail",
+    "risk_tier": "medium",
+    "runtime_tier": "drafting-tool",
+    "monitoring_plan": "rerun failed regression",
+    "residuals": ["failed regression"],
+    "regressions": ["regression://failed-boundary"],
+    "lifecycle_state": "routable",
+    "retirement_criteria": ["failed regression repeats"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://fail-success-001", "loop_key": "failed-regression", "outcome": "success"},
+      {"trace_id": "trace://fail-success-002", "loop_key": "failed-regression", "outcome": "success"},
+      {"trace_id": "trace://fail-success-003", "loop_key": "failed-regression", "outcome": "success"},
+      {"trace_id": "trace://fail-negative-001", "loop_key": "failed-regression", "outcome": "failure"}
+    ],
+    "negative_examples": ["trace://fail-negative-001"],
+    "near_misses": [],
+    "abstraction": {
+      "invariant_structure": "tool with failed regression tries to remain routable",
+      "parameters": ["input"],
+      "preconditions": ["input exists"],
+      "postconditions": ["output exists"]
+    },
+    "non_claims": ["does not promote support state"]
+  },
+  "regression_review": {
+    "tests": ["regression://failed-boundary"],
+    "failed_tests": ["regression://failed-boundary"],
+    "benchmark_floor_passed": false,
+    "scf_active": true,
+    "retirement_triggered": false,
+    "promotion_request": "make_routable"
+  },
+  "expected_route": "routable",
+  "non_claims": ["does not promote chapter core support state"]
+}

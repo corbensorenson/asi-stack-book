@@ -1,0 +1,43 @@
+{
+  "scenario_id": "procedural-memory.invalid.single-trace-toolification",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/single-trace-shortcut",
+    "source_traces": ["trace://shortcut-success-001"],
+    "invariant_structure": "repeat one successful shortcut",
+    "parameters": ["target"],
+    "preconditions": ["target exists"],
+    "postconditions": ["shortcut output exists"],
+    "verification_result": "pass",
+    "risk_tier": "low",
+    "runtime_tier": "drafting-tool",
+    "monitoring_plan": "none",
+    "residuals": ["single trace only"],
+    "regressions": ["regression://shortcut-smoke"],
+    "lifecycle_state": "routable",
+    "retirement_criteria": ["shortcut fails"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://shortcut-success-001", "loop_key": "shortcut", "outcome": "success"}
+    ],
+    "negative_examples": [],
+    "near_misses": [],
+    "abstraction": {
+      "invariant_structure": "repeat one successful shortcut",
+      "parameters": ["target"],
+      "preconditions": ["target exists"],
+      "postconditions": ["shortcut output exists"]
+    },
+    "non_claims": ["does not promote support state"]
+  },
+  "regression_review": {
+    "tests": ["regression://shortcut-smoke"],
+    "failed_tests": [],
+    "benchmark_floor_passed": true,
+    "scf_active": true,
+    "retirement_triggered": false,
+    "promotion_request": "make_routable"
+  },
+  "expected_route": "routable",
+  "non_claims": ["does not promote chapter core support state"]
+}

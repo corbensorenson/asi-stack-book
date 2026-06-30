@@ -5050,9 +5050,21 @@
           "minimal_implementation": "A loop closure pipeline from trace detection to verified tool record.",
           "beyond_state_of_art": "The mature version is a procedure foundry for verified reusable cognition. It does not merely cache prompts or scripts. It mines artifact traces, clusters comparable work, preserves failures and near misses, abstracts the invariant structure, discovers parameters, synthesizes candidate procedures, verifies regressions, attaches monitoring and retirement rules, and then offers qualified tools to Part III routing. In procedural memory, reusable cognition has states rather than vibes: candidate trace, loop cluster, tool candidate, verified reuse, routable tool, quarantined tool, retired tool. A trace cannot jump straight into routable behavior because it looks elegant. The procedure card must carry source traces, rejected traces, near misses, abstraction rationale, preconditions, postconditions, SCF target, benchmark floor, authority requirement, monitoring signal, retirement trigger, and non-claims.",
           "codex_tests": [
-            "Loop detection test",
-            "Tool abstraction test",
-            "Verified tool regression test"
+            {
+              "name": "Loop detection test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic procedural memory loop harness; no deployed loop detector or tool-synthesis claim"
+            },
+            {
+              "name": "Tool abstraction test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic procedural memory loop harness; no generated-tool correctness claim"
+            },
+            {
+              "name": "Verified tool regression test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic procedural memory loop harness; no deployed regression-quality or routing claim"
+            }
           ],
           "lean_module": "AsiStackProofs.ProceduralMemory",
           "proof_targets": [

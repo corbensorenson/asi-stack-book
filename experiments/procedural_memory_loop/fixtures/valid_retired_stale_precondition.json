@@ -1,0 +1,57 @@
+{
+  "scenario_id": "procedural-memory.valid.retired-stale-precondition",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/old-reader-export",
+    "source_traces": [
+      "trace://reader-export-success-001",
+      "trace://reader-export-success-002",
+      "trace://reader-export-success-003",
+      "trace://reader-export-near-miss-001"
+    ],
+    "invariant_structure": "export a reader artifact using a retired format path",
+    "parameters": ["reader_profile", "output_format"],
+    "preconditions": ["old reader export path exists"],
+    "postconditions": ["reader artifact path recorded"],
+    "verification_result": "pass",
+    "risk_tier": "medium",
+    "runtime_tier": "reader-build",
+    "monitoring_plan": "retire when reader export path is superseded",
+    "residuals": ["superseded export path"],
+    "regressions": ["regression://reader-export-path"],
+    "lifecycle_state": "retired",
+    "retirement_criteria": ["reader export path superseded", "profile no longer accepted"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://reader-export-success-001", "loop_key": "reader-export", "outcome": "success"},
+      {"trace_id": "trace://reader-export-success-002", "loop_key": "reader-export", "outcome": "success"},
+      {"trace_id": "trace://reader-export-success-003", "loop_key": "reader-export", "outcome": "success"},
+      {"trace_id": "trace://reader-export-near-miss-001", "loop_key": "reader-export", "outcome": "near_miss"}
+    ],
+    "negative_examples": [],
+    "near_misses": ["trace://reader-export-near-miss-001"],
+    "abstraction": {
+      "invariant_structure": "export a reader artifact using a retired format path",
+      "parameters": ["reader_profile", "output_format"],
+      "preconditions": ["old reader export path exists"],
+      "postconditions": ["reader artifact path recorded"]
+    },
+    "non_claims": [
+      "does not promote support state",
+      "does not approve reader artifacts"
+    ]
+  },
+  "regression_review": {
+    "tests": ["regression://reader-export-path"],
+    "failed_tests": [],
+    "benchmark_floor_passed": false,
+    "scf_active": false,
+    "retirement_triggered": true,
+    "promotion_request": "retire"
+  },
+  "expected_route": "retired",
+  "non_claims": [
+    "does not promote chapter core support state",
+    "does not approve reader release artifacts"
+  ]
+}

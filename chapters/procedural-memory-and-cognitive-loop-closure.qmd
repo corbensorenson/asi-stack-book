@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for eight assigned sources; `moecot` remains connector/source-note mapped only, and support remains at argument until loop-detection, tool-synthesis, routing, or regression harnesses exist."
-  - "Only protocol schema/fixture validation is implemented; no loop-detection, tool-synthesis, procedure-qualification, negative-example preservation, or regression harness has been run for this chapter."
+  - "Protocol schema/fixture validation, finite Lean gates, and the synthetic procedural-memory loop harness are implemented; no deployed loop detector, tool synthesizer, generated-tool correctness check, routing monitor, regression-quality benchmark, or retirement automation exists."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -37,11 +37,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `cognitive_loop_closure`; supporting: `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/source-note mapped only: `moecot` |
-| Test state | Procedural tool fixture validation implemented; `AsiStackProofs.ProceduralMemory` implements finite generated-tool artifact and failed-regression routable-promotion gates; loop-detection, procedure-qualification, negative-example preservation, retirement-trigger, and regression behavior tests remain planned. |
+| Test state | Procedural tool fixture validation and `python3 scripts/validate_procedural_memory_loop.py` are implemented; the harness checks synthetic trace clustering, negative-example preservation, abstraction fields, regression quarantine, retirement triggers, and source-trace mismatch. `AsiStackProofs.ProceduralMemory` implements finite generated-tool artifact and failed-regression routable-promotion gates. Deployed loop detection, tool synthesis, generated-tool correctness, route monitoring, regression-quality benchmarking, and retirement automation remain planned. |
 
 ## Drafting guardrail
 
-Procedural memory is a governed promotion path from traces to tools. Eight source mappings have been checked against local passages, and `moecot` remains connector/source-note mapped only. The repo validates a procedural-tool fixture, but it does not yet run loop detection, tool synthesis, active parameter discovery, regression testing, routing, monitoring, or retirement automation.
+Procedural memory is a governed promotion path from traces to tools. Eight source mappings have been checked against local passages, and `moecot` remains connector/source-note mapped only. The repo validates a procedural-tool fixture and runs a synthetic procedural-memory loop harness over qualification packets, negative examples, abstraction fields, regression reviews, source traces, and retirement triggers. It does not yet run a deployed loop detector, tool synthesizer, active parameter-discovery system, generated-tool correctness check, routing monitor, regression-quality benchmark, or retirement automation.
 
 Execution history becomes future execution capacity only after review. The loop-closure layer does not assume that every successful trace deserves automation; it asks which repeated, bounded, verified patterns are mature enough to become routable tools.
 
@@ -195,13 +195,13 @@ Tool immortality is the memory-layer failure. A procedure that was once verified
 
 A loop closure pipeline from trace detection to verified tool record.
 
-Procedural memory begins with a `procedural_tool_record` schema and fixture. It should validate source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
+Procedural memory begins with a `procedural_tool_record` schema and fixture. It validates source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
 
-The candidate tool-card fixture checks only record shape. Repeated trace existence, invariant abstraction correctness, tool behavior, and regression success remain open until a harness records them.
+The synthetic procedural-memory loop harness now adds a small procedure-qualification gate around that record shape. It checks three valid and six expected-invalid packets for comparable success traces, near misses or failures, preserved negative examples, explicit parameters/preconditions/postconditions, matching invariant structure, regression quarantine, retirement triggers, and source-trace mismatch.
 
-A miniature trace set is the right first loop-closure harness: three successes, one near miss, one failure, and one extracted tool candidate. The harness should verify that the candidate cites all source traces, narrows its scope around the failure, and remains unroutable until regression checks pass.
+The miniature trace set is still synthetic record-gate evidence. It shows how the book expects a procedure candidate to cite source traces, preserve failures, narrow scope, and deny routable promotion when regressions or retirement triggers fire.
 
-That harness should also prove a negative path: a candidate with a missing near-miss, stale precondition, failed benchmark floor, or retired SCF stays in quarantine. The book does not need a large production loop detector to demonstrate the discipline; it needs a small public-safe fixture that shows how reuse can be denied.
+This is enough to make the qualification discipline executable, but not enough to show a working loop-closure product. A real MVI still needs deployed trace mining, candidate generation, regression execution, route monitoring, and retirement automation.
 
 ## Beyond the State of the Art
 
@@ -224,14 +224,14 @@ This procedural-memory loop is still proposed architecture. Procedural memory re
 | Test | Purpose | Status |
 |---|---|---|
 | Procedural tool fixture validation | Check that the procedural-tool fixture matches the public schema and declares source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring, residuals, regressions, lifecycle, and retirement criteria. | implemented by protocol validation; validated locally |
-| Loop detection test | Check that candidate tools reference repeated source traces rather than a single anecdote. | planned; not run |
+| Loop detection test | Check that candidate tools reference repeated source traces rather than a single anecdote. | implemented for synthetic qualification packets by `python3 scripts/validate_procedural_memory_loop.py`; no deployed loop detector claim |
 | Procedure qualification state test | Check that a trace cannot jump from candidate trace to routable tool without loop clustering, abstraction, parameter discovery, verification, and readiness review. | planned; not run |
-| Negative-example preservation test | Check that near misses, rejected traces, and failures remain attached to the candidate and narrow its scope. | planned; not run |
-| Tool abstraction test | Check that parameters, assumptions, preconditions, and postconditions are explicit. | planned; not run |
-| Verified tool regression test | Check that failed regression blocks routable promotion. | planned; not run |
-| Retirement trigger test | Check that stale preconditions, failed floors, or SCF retirement move a routable tool to quarantine or retired state. | planned; not run |
+| Negative-example preservation test | Check that near misses, rejected traces, and failures remain attached to the candidate and narrow its scope. | implemented for synthetic qualification packets by `python3 scripts/validate_procedural_memory_loop.py`; no deployed interpretation claim |
+| Tool abstraction test | Check that parameters, assumptions, preconditions, and postconditions are explicit. | implemented for synthetic qualification packets by `python3 scripts/validate_procedural_memory_loop.py`; no generated-tool correctness claim |
+| Verified tool regression test | Check that failed regression blocks routable promotion. | implemented for synthetic qualification packets by `python3 scripts/validate_procedural_memory_loop.py`; no deployed regression-quality or routing claim |
+| Retirement trigger test | Check that stale preconditions, failed floors, or SCF retirement move a routable tool to quarantine or retired state. | implemented for synthetic qualification packets by `python3 scripts/validate_procedural_memory_loop.py`; no deployed retirement automation claim |
 
-Only fixture-shape validation is implemented. The remaining tests need repeated traces, synthesized tool candidates, regression cases, and routing/retirement decisions.
+Fixture-shape validation, finite Lean gates, and the synthetic procedure-qualification harness are implemented. Remaining tests need deployed repeated-trace mining, synthesized tool candidates, generated-tool correctness checks, regression-quality benchmarks, routing monitors, and retirement automation.
 
 ### Formalization hooks
 
@@ -240,7 +240,7 @@ Only fixture-shape validation is implemented. The remaining tests need repeated 
 | `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | implemented |
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over generated-tool records and regression-promotion reviews. They prove only the record-level gates: a generated tool records source traces, parameters, and a verification result, and a failed regression blocks routable-status promotion. They do not prove loop detection, invariant abstraction, parameter discovery, synthesized tool correctness, monitoring quality, or retirement automation.
+These Lean hooks are implemented as finite-record predicates over generated-tool records and regression-promotion reviews. They prove only the record-level gates: a generated tool records source traces, parameters, and a verification result, and a failed regression blocks routable-status promotion. The companion synthetic harness makes loop-qualification record discipline executable, but neither Lean nor the harness proves deployed loop detection, invariant abstraction quality, parameter-discovery quality, synthesized tool correctness, monitoring quality, regression quality, or retirement automation.
 
 ## Source crosswalk
 
@@ -260,7 +260,7 @@ The source set covers loop closure, procedural memory, ratchets, regressions, an
 
 ## Summary
 
-Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. The present evidence boundary is still a ledger boundary: the sources and mappings explain what such closure requires, while tool generation, procedure qualification, retirement tests, and a full loop-closure run remain unexecuted.
+Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. The present evidence boundary is still a record-gate boundary: the sources and mappings explain what such closure requires, Lean checks two narrow finite-record gates, and the synthetic harness checks procedure-qualification packet discipline, while deployed tool generation, regression-quality testing, routing, monitoring, retirement automation, and a full loop-closure run remain unexecuted.
 
 The discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used. That is the hinge into Part III: once procedures and specialists exist, the next problem is routing them without hiding residuals or letting capability outrun readiness.
 

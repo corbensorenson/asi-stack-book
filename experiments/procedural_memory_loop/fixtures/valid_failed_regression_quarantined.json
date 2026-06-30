@@ -1,0 +1,57 @@
+{
+  "scenario_id": "procedural-memory.valid.failed-regression-quarantined",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/source-summary-reuse",
+    "source_traces": [
+      "trace://summary-success-001",
+      "trace://summary-success-002",
+      "trace://summary-success-003",
+      "trace://summary-failure-001"
+    ],
+    "invariant_structure": "summarize a source note and preserve support-state non-promotion boundaries",
+    "parameters": ["source_note", "target_chapter", "support_boundary"],
+    "preconditions": ["source note exists", "target chapter is declared"],
+    "postconditions": ["summary artifact recorded", "support boundary recorded"],
+    "verification_result": "fail",
+    "risk_tier": "medium",
+    "runtime_tier": "drafting-tool",
+    "monitoring_plan": "quarantine on failed support-boundary regression",
+    "residuals": ["failed support-boundary regression"],
+    "regressions": ["regression://support-boundary-preservation"],
+    "lifecycle_state": "quarantined",
+    "retirement_criteria": ["repeat failure after repair attempt", "source policy changes"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://summary-success-001", "loop_key": "source-summary", "outcome": "success"},
+      {"trace_id": "trace://summary-success-002", "loop_key": "source-summary", "outcome": "success"},
+      {"trace_id": "trace://summary-success-003", "loop_key": "source-summary", "outcome": "success"},
+      {"trace_id": "trace://summary-failure-001", "loop_key": "source-summary", "outcome": "failure"}
+    ],
+    "negative_examples": ["trace://summary-failure-001"],
+    "near_misses": [],
+    "abstraction": {
+      "invariant_structure": "summarize a source note and preserve support-state non-promotion boundaries",
+      "parameters": ["source_note", "target_chapter", "support_boundary"],
+      "preconditions": ["source note exists", "target chapter is declared"],
+      "postconditions": ["summary artifact recorded", "support boundary recorded"]
+    },
+    "non_claims": [
+      "does not promote support state",
+      "does not prove summarization quality"
+    ]
+  },
+  "regression_review": {
+    "tests": ["regression://support-boundary-preservation"],
+    "failed_tests": ["regression://support-boundary-preservation"],
+    "benchmark_floor_passed": false,
+    "scf_active": true,
+    "retirement_triggered": false,
+    "promotion_request": "quarantine"
+  },
+  "expected_route": "quarantined",
+  "non_claims": [
+    "does not promote chapter core support state",
+    "does not prove deployed procedural memory"
+  ]
+}

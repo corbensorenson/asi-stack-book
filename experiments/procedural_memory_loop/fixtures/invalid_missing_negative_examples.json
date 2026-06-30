@@ -1,0 +1,45 @@
+{
+  "scenario_id": "procedural-memory.invalid.missing-negative-examples",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/no-negative-examples",
+    "source_traces": ["trace://loop-success-001", "trace://loop-success-002", "trace://loop-success-003"],
+    "invariant_structure": "repeat successes without preserving failures",
+    "parameters": ["input"],
+    "preconditions": ["input exists"],
+    "postconditions": ["output exists"],
+    "verification_result": "pass",
+    "risk_tier": "low",
+    "runtime_tier": "drafting-tool",
+    "monitoring_plan": "rerun smoke test",
+    "residuals": ["no negative examples"],
+    "regressions": ["regression://loop-smoke"],
+    "lifecycle_state": "routable",
+    "retirement_criteria": ["smoke test fails"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://loop-success-001", "loop_key": "loop", "outcome": "success"},
+      {"trace_id": "trace://loop-success-002", "loop_key": "loop", "outcome": "success"},
+      {"trace_id": "trace://loop-success-003", "loop_key": "loop", "outcome": "success"}
+    ],
+    "negative_examples": [],
+    "near_misses": [],
+    "abstraction": {
+      "invariant_structure": "repeat successes without preserving failures",
+      "parameters": ["input"],
+      "preconditions": ["input exists"],
+      "postconditions": ["output exists"]
+    },
+    "non_claims": ["does not promote support state"]
+  },
+  "regression_review": {
+    "tests": ["regression://loop-smoke"],
+    "failed_tests": [],
+    "benchmark_floor_passed": true,
+    "scf_active": true,
+    "retirement_triggered": false,
+    "promotion_request": "make_routable"
+  },
+  "expected_route": "routable",
+  "non_claims": ["does not promote chapter core support state"]
+}

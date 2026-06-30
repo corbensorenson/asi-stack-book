@@ -1,0 +1,60 @@
+{
+  "scenario_id": "procedural-memory.valid.routable-with-negative-examples",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/validate-render",
+    "source_traces": [
+      "trace://render-success-001",
+      "trace://render-success-002",
+      "trace://render-success-003",
+      "trace://render-near-miss-001",
+      "trace://render-failure-001"
+    ],
+    "invariant_structure": "validate source tree, render HTML, record output, and block support promotion unless validation artifacts pass",
+    "parameters": ["validation_command", "render_target", "output_artifact"],
+    "preconditions": ["repository root exists", "required validators are installed", "render target is declared"],
+    "postconditions": ["validation result recorded", "render output recorded", "non-claim boundary preserved"],
+    "verification_result": "pass",
+    "risk_tier": "low",
+    "runtime_tier": "local-build",
+    "monitoring_plan": "rerun on chapter or scaffold changes and quarantine on validation failure",
+    "residuals": ["synthetic loop-closure fixture only"],
+    "regressions": ["regression://render-validation-smoke", "regression://support-promotion-blocker"],
+    "lifecycle_state": "routable",
+    "retirement_criteria": ["validator set changes", "render target changes", "support-state policy changes"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://render-success-001", "loop_key": "render-validation", "outcome": "success"},
+      {"trace_id": "trace://render-success-002", "loop_key": "render-validation", "outcome": "success"},
+      {"trace_id": "trace://render-success-003", "loop_key": "render-validation", "outcome": "success"},
+      {"trace_id": "trace://render-near-miss-001", "loop_key": "render-validation", "outcome": "near_miss"},
+      {"trace_id": "trace://render-failure-001", "loop_key": "render-validation", "outcome": "failure"}
+    ],
+    "negative_examples": ["trace://render-failure-001"],
+    "near_misses": ["trace://render-near-miss-001"],
+    "abstraction": {
+      "invariant_structure": "validate source tree, render HTML, record output, and block support promotion unless validation artifacts pass",
+      "parameters": ["validation_command", "render_target", "output_artifact"],
+      "preconditions": ["repository root exists", "required validators are installed", "render target is declared"],
+      "postconditions": ["validation result recorded", "render output recorded", "non-claim boundary preserved"]
+    },
+    "non_claims": [
+      "does not promote support state",
+      "does not prove deployed tool synthesis",
+      "does not prove model quality"
+    ]
+  },
+  "regression_review": {
+    "tests": ["regression://render-validation-smoke", "regression://support-promotion-blocker"],
+    "failed_tests": [],
+    "benchmark_floor_passed": true,
+    "scf_active": true,
+    "retirement_triggered": false,
+    "promotion_request": "make_routable"
+  },
+  "expected_route": "routable",
+  "non_claims": [
+    "does not promote chapter core support state",
+    "does not prove deployed procedural memory"
+  ]
+}

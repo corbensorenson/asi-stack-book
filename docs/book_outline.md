@@ -1676,12 +1676,13 @@ Draft deliverables:
 - A loop closure pipeline from trace detection to verified tool record.
 - Exact Appendix C claim-source mappings for procedural memory: five local raw-cache mappings and three local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only.
 - Implemented protocol validation: `procedural_tool_record` fixture validates public record shape only.
-- Planned Codex test: Loop detection test.
+- Implemented synthetic Codex test: `python3 scripts/validate_procedural_memory_loop.py` checks qualification packets for comparable repeated trace clusters, negative-example preservation, abstraction fields, regression quarantine, retirement triggers, source-trace mismatch, and explicit non-claim boundaries. It remains synthetic record-gate evidence only, not deployed loop-detection, tool-synthesis, generated-tool correctness, regression-quality, route-quality, monitoring, or retirement-automation evidence.
+- Implemented Codex test: Loop detection test, for synthetic qualification packets only.
 - Planned Codex test: Procedure qualification state test.
-- Planned Codex test: Negative-example preservation test.
-- Planned Codex test: Tool abstraction test.
-- Planned Codex test: Verified tool regression test.
-- Planned Codex test: Retirement trigger test.
+- Implemented Codex test: Negative-example preservation test, for synthetic qualification packets only.
+- Implemented Codex test: Tool abstraction test, for synthetic qualification packets only.
+- Implemented Codex test: Verified tool regression test, for synthetic qualification packets only.
+- Implemented Codex test: Retirement trigger test, for synthetic qualification packets only.
 
 Lean proof targets:
 

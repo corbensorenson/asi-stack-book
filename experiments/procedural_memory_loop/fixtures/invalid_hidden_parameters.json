@@ -1,0 +1,46 @@
+{
+  "scenario_id": "procedural-memory.invalid.hidden-parameters",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/hidden-parameters",
+    "source_traces": ["trace://hidden-success-001", "trace://hidden-success-002", "trace://hidden-success-003", "trace://hidden-failure-001"],
+    "invariant_structure": "tool hides its parameterization",
+    "parameters": [],
+    "preconditions": ["input exists"],
+    "postconditions": ["output exists"],
+    "verification_result": "pass",
+    "risk_tier": "low",
+    "runtime_tier": "drafting-tool",
+    "monitoring_plan": "rerun smoke test",
+    "residuals": ["parameters missing"],
+    "regressions": ["regression://hidden-parameter-smoke"],
+    "lifecycle_state": "routable",
+    "retirement_criteria": ["smoke test fails"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://hidden-success-001", "loop_key": "hidden-parameters", "outcome": "success"},
+      {"trace_id": "trace://hidden-success-002", "loop_key": "hidden-parameters", "outcome": "success"},
+      {"trace_id": "trace://hidden-success-003", "loop_key": "hidden-parameters", "outcome": "success"},
+      {"trace_id": "trace://hidden-failure-001", "loop_key": "hidden-parameters", "outcome": "failure"}
+    ],
+    "negative_examples": ["trace://hidden-failure-001"],
+    "near_misses": [],
+    "abstraction": {
+      "invariant_structure": "tool hides its parameterization",
+      "parameters": [],
+      "preconditions": ["input exists"],
+      "postconditions": ["output exists"]
+    },
+    "non_claims": ["does not promote support state"]
+  },
+  "regression_review": {
+    "tests": ["regression://hidden-parameter-smoke"],
+    "failed_tests": [],
+    "benchmark_floor_passed": true,
+    "scf_active": true,
+    "retirement_triggered": false,
+    "promotion_request": "make_routable"
+  },
+  "expected_route": "routable",
+  "non_claims": ["does not promote chapter core support state"]
+}

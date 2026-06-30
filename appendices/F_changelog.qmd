@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-06-30 - Procedural memory loop harness
+
+- Added `python3 scripts/validate_procedural_memory_loop.py`, a
+  chapter-specific book-gate harness over synthetic procedural tool records,
+  qualification packets, candidate traces, negative examples, abstraction
+  fields, regression reviews, expected routes, and non-claim boundaries.
+- Added 3 valid and 6 expected-invalid fixtures under
+  `experiments/procedural_memory_loop/` covering a routable packet with three
+  comparable successes plus near-miss/failure boundaries, a failed-regression
+  quarantine packet, a stale-precondition retirement packet, single-trace
+  toolification, missing negative examples, failed-regression promotion, hidden
+  parameters, ignored retirement triggers, and source-trace mismatch.
+- Wired the harness into `scripts/validate_book.py`, Appendix E, the
+  Procedural Memory chapter, `docs/book_outline.md`, `book_structure.json`,
+  `docs/procedural_memory_loop_harness.md`,
+  `docs/proof_adequacy_review.md`, v1 status/roadmap surfaces, publication
+  readiness, repository map, README, and v0.2 manuscript status.
+- Moved the two Procedural Memory proof targets in the proof adequacy review
+  from `needs executable tests first` to `useful but too narrow`. The proof
+  target count remains 122; the adequacy class counts are now 8 adequate
+  finite-record, 45 useful-but-too-narrow, 19 richer-semantics-needed, 34
+  executable-tests-needed, 10 empirical/baseline-tests-needed, and 6
+  research-agenda-until-artifact-import.
+- This does not promote any Appendix C or chapter core claim, implement a
+  deployed loop detector, tool synthesizer, generated-tool correctness check,
+  regression-quality benchmark, route monitor, retirement automation, reader
+  artifact, EPUB, DOCX, PDF, audio, DOI, Zenodo, or audio-embedded EPUB release
+  artifact.
+
 ## 2026-06-30 - Artifact Graph replay harness
 
 - Added `python3 scripts/validate_artifact_graph_replay.py`, a

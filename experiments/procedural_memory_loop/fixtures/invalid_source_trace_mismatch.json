@@ -1,0 +1,46 @@
+{
+  "scenario_id": "procedural-memory.invalid.source-trace-mismatch",
+  "procedural_tool": {
+    "tool_id": "tool://asi-stack/source-trace-mismatch",
+    "source_traces": ["trace://mismatch-success-001", "trace://mismatch-success-002", "trace://mismatch-success-003"],
+    "invariant_structure": "tool omits its failure trace from source_traces",
+    "parameters": ["input"],
+    "preconditions": ["input exists"],
+    "postconditions": ["output exists"],
+    "verification_result": "pass",
+    "risk_tier": "low",
+    "runtime_tier": "drafting-tool",
+    "monitoring_plan": "rerun smoke test",
+    "residuals": ["failure trace omitted"],
+    "regressions": ["regression://mismatch-smoke"],
+    "lifecycle_state": "routable",
+    "retirement_criteria": ["smoke test fails"]
+  },
+  "qualification_packet": {
+    "candidate_traces": [
+      {"trace_id": "trace://mismatch-success-001", "loop_key": "trace-mismatch", "outcome": "success"},
+      {"trace_id": "trace://mismatch-success-002", "loop_key": "trace-mismatch", "outcome": "success"},
+      {"trace_id": "trace://mismatch-success-003", "loop_key": "trace-mismatch", "outcome": "success"},
+      {"trace_id": "trace://mismatch-failure-001", "loop_key": "trace-mismatch", "outcome": "failure"}
+    ],
+    "negative_examples": ["trace://mismatch-failure-001"],
+    "near_misses": [],
+    "abstraction": {
+      "invariant_structure": "tool omits its failure trace from source_traces",
+      "parameters": ["input"],
+      "preconditions": ["input exists"],
+      "postconditions": ["output exists"]
+    },
+    "non_claims": ["does not promote support state"]
+  },
+  "regression_review": {
+    "tests": ["regression://mismatch-smoke"],
+    "failed_tests": [],
+    "benchmark_floor_passed": true,
+    "scf_active": true,
+    "retirement_triggered": false,
+    "promotion_request": "make_routable"
+  },
+  "expected_route": "routable",
+  "non_claims": ["does not promote chapter core support state"]
+}
