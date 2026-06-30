@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-30 - Routing and MoECOT negative-case proofs
+
+- Strengthened `AsiStackProofs.Routing` with a derived negative-case theorem
+  rejecting selected routes that lack authority or readiness.
+- Strengthened `AsiStackProofs.MoECOTRuntime` with two derived negative-case
+  theorems: one rejects runtime-core promotion records missing readiness,
+  regression, or replay evidence references, and one rejects unavailable-text
+  runtime claims that try to promote above `argument`.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 296
+  theorem declarations, 115 direct/projection-style declarations, and 181
+  derived/decomposed declarations.
+- Updated the Routing Heads chapter, proof adequacy review, candidate status,
+  v1.0/v1.x roadmap surfaces, focus audit, and status snapshot validator to
+  record the new routing/MoECOT proof increment.
+- This does not promote any Appendix C or chapter core claim, run a learned
+  router, measure route quality, enforce deployed authority, replay MoECOT,
+  run orchestration benchmarks, prove specialist quality, or approve any
+  reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Procedural memory negative-case proofs
 
 - Strengthened `AsiStackProofs.ProceduralMemory` with two derived

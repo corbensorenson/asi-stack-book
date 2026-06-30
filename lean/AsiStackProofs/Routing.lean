@@ -25,6 +25,21 @@ theorem selected_specialist_satisfies_authority_and_readiness
   intro admissible selected
   exact admissible selected
 
+theorem selected_route_without_authority_or_readiness_rejected
+    {route : SpecialistRoute} :
+    route.outcome = RouteOutcome.selected ->
+      (route.authoritySatisfied = false ∨ route.readinessSatisfied = false) ->
+        ¬ SelectedRouteAdmissible route := by
+  intro selected missingGate admissible
+  have required := admissible selected
+  cases missingGate with
+  | inl missingAuthority =>
+      rw [missingAuthority] at required
+      cases required.1
+  | inr missingReadiness =>
+      rw [missingReadiness] at required
+      cases required.2
+
 def ReadinessFailureHandled (route : SpecialistRoute) : Prop :=
   route.readinessSatisfied = false ->
     route.outcome = RouteOutcome.fallback ∨ route.outcome = RouteOutcome.residual

@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 293 |
+| Theorem declarations classified | 296 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 178 |
+| Derived/decomposed theorem declarations | 181 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -77,7 +77,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 4 | 6 | 4 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 2 | 8 | 6 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -91,7 +91,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 2 | 3 | 3 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -234,7 +234,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | `every_manifest_chapter_has_outline_targets_and_claim_placeholders` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_without_regenerated_scaffold_and_proof_manifest_is_invalid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_claim_from_unavailable_text_only_cannot_promote_above_argument` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_missing_evidence_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_requires_readiness_regression_and_replay_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/MoECOTRuntime.lean` | `unavailable_text_only_with_promotion_above_argument_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `admitted_hive_job_has_identity_data_tool_federation_and_approval_checks` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_missing_lease_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_requires_lease_scope_sandbox_evidence_expiration_and_revocation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
@@ -296,6 +298,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_task_with_insufficient_verification_budget_is_not_dispatched` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `task_budget_cannot_disable_required_safety_or_verification_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Routing.lean` | `failed_readiness_routes_to_fallback_or_residual_not_promotion` | derived_or_decomposed | no | uses cases, constructor, have, rw |
+| `lean/AsiStackProofs/Routing.lean` | `selected_route_without_authority_or_readiness_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/Routing.lean` | `selected_specialist_satisfies_authority_and_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_adapter_without_approval_cannot_be_unrejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_adapter_without_approval_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
