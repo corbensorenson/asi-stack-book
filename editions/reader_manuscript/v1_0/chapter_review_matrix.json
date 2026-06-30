@@ -16,17 +16,17 @@
     "policy": "Keep chapter format-artifact blockers until every required reader format row is approved and an edition release record exists."
   },
   "review_status_counts": {
-    "reviewed": 48
+    "reviewed": 47
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 45,
-    "no_immediate_action": 48,
+    "curated_manuscript_candidate": 44,
+    "no_immediate_action": 47,
     "reader_overlay_active": 20
   },
   "release_blocker_counts": {
-    "format_artifact_not_reviewed": 48,
-    "reader_release_record_not_created": 48
+    "format_artifact_not_reviewed": 47,
+    "reader_release_record_not_created": 47
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
   "chapters": [
@@ -428,7 +428,7 @@
       "part_id": "planning-memory-reasoning-execution",
       "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
       "chapter_id": "virtual-context-abi",
-      "title": "Virtual Context ABI",
+      "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
       "live_file": "chapters/virtual-context-abi.qmd",
       "generated_reader_file": "build/reader_edition/chapters/virtual-context-abi.qmd",
       "overlay_operation_count": 0,
@@ -444,31 +444,6 @@
         "docs/chapter_consolidation_release_stability_review.md"
       ],
       "review_notes": "Full generated-reader chapter-text review recorded for the Virtual Context ABI chapter. A first drafting-only curated prose pass now foregrounds context as governed memory only when address, version, lease, authority boundary, and fault path are explicit. The deferred static-context-ABI merge caveat is recorded; this is not a release review, not a manifest merge, and not a claim of deployed VCM behavior, resolver correctness, context compiler correctness, snapshot-service behavior, adequacy-classifier quality, materialization correctness, summary fidelity, contradiction-rate reduction, distractor resistance, leak prevention, Digital SCIF behavior, transactional memory-store behavior, VCM-Bench performance, model-facing context quality, MoECOT runtime behavior, source-interpretation adequacy, or support-state movement.",
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed"
-      ]
-    },
-    {
-      "part_id": "planning-memory-reasoning-execution",
-      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
-      "chapter_id": "semantic-pages-context-cells-and-certificates",
-      "title": "Semantic Pages, Context Cells, and Certificates",
-      "live_file": "chapters/semantic-pages-context-cells-and-certificates.qmd",
-      "generated_reader_file": "build/reader_edition/chapters/semantic-pages-context-cells-and-certificates.qmd",
-      "overlay_operation_count": 0,
-      "review_status": "reviewed",
-      "review_depth": "full_chapter_review",
-      "dispositions": [
-        "curated_manuscript_candidate",
-        "no_immediate_action"
-      ],
-      "review_refs": [
-        "docs/reader_part_ii_context_full_review_pass.md#decisions",
-        "docs/curated_reader_semantic_pages_prose_pass.md",
-        "docs/chapter_consolidation_release_stability_review.md"
-      ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the semantic pages chapter. A first drafting-only curated prose pass now foregrounds certificates as representation receipts for provenance, loss, authority ceiling, permitted use, validity, revocation, residual risk, and non-claims. The deferred static-context-ABI merge caveat is recorded; this is not a release review, not a manifest merge, and not a claim of semantic summary-fidelity evaluation, certificate-truthfulness checking, omission-completeness checking, open-domain autoformalization, source-interpretation adequacy, VCM-Bench performance, model-facing context quality, leak prevention, contradiction-rate reduction, Context Engineer benchmark reproduction, deployed Digital SCIF behavior, source-reported benchmark reproduction, or support-state movement.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

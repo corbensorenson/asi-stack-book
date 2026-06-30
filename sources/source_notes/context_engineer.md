@@ -40,8 +40,7 @@ Context Engineer treats context as an information supply chain. Instead of dumpi
 ## Book Chapters Supported
 
 - `security-kernel-and-digital-scifs` (Security Kernel and Digital SCIFs)
-- `virtual-context-abi` (Virtual Context ABI)
-- `semantic-pages-context-cells-and-certificates` (Semantic Pages, Context Cells, and Certificates)
+- `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `context-transactions-snapshots-mounts-and-taint` (Context Transactions, Snapshots, Mounts, and Taint)
 
 ## Claims To Add Or Update

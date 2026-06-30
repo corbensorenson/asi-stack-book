@@ -5,8 +5,7 @@ Last updated: 2026-06-28
 This note records a release-grade chapter-text review pass for the remaining
 four generated reader chapters in Part II. It completes generated-reader
 chapter-text review for Part II by covering typed jobs, artifact continuity,
-runtime adapters, and procedural memory. It is not a full 54-chapter reader
-release review, not an artifact layout review, and not an edition release
+runtime adapters, and procedural memory. It is not a full reader release review, not an artifact layout review, and not an edition release
 record.
 
 ## Source State

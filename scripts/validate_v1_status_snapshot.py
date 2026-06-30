@@ -163,6 +163,14 @@ def main() -> None:
     reader_no_action = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:no_immediate_action")
     reader_companion = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:companion_note_candidate")
     reader_curated = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:curated_manuscript_candidate")
+    reader_high_priority = summary_metric(
+        ROOT / "docs" / "reader_continuity_audit.md",
+        "High-priority heuristic review chapters",
+    )
+    reader_medium_priority = summary_metric(
+        ROOT / "docs" / "reader_continuity_audit.md",
+        "Medium-priority heuristic review chapters",
+    )
 
     expected_fragments = [
         f"| Book structure | {len(structure.get('parts', []))} parts, {len(chapters)} manifest-driven chapters, {len(appendices)} appendices |",
@@ -288,7 +296,7 @@ def main() -> None:
         "`docs/release_reproducibility.md`",
         "`python3 scripts/validate_release_reproducibility.py`",
         f"| Chapter handoffs | All {len(chapters)} manifest chapters now end with reader-facing `Handoff` sections: non-final chapters name the next manifest chapter title and avoid numbered chapter references, while the final chapter closes the book-level arc; generated reader chapters must preserve the same single Handoff continuity after live-only stripping |",
-        "the reader release has a tracked semantic overlay manifest as the editable delta source, generated reader delta report path as review output with a zero-active-operation note or operation digests and before/after excerpts, embedded live Human-view overlay payload for major-version human-edition deltas, and a generated reader-continuity audit with 0 high-priority and 3 medium-priority heuristic review rows",
+        f"the reader release has a tracked semantic overlay manifest as the editable delta source, generated reader delta report path as review output with a zero-active-operation note or operation digests and before/after excerpts, embedded live Human-view overlay payload for major-version human-edition deltas, and a generated reader-continuity audit with {reader_high_priority} high-priority and {reader_medium_priority} medium-priority heuristic review rows",
         "The generated-reader chapter-text review queue is complete across all parts, with review records from `docs/reader_opening_full_review_pass.md` through `docs/reader_part_iv_completion_full_review_pass.md` plus first-pass matrix decisions in `docs/reader_part_i_review_pass.md`, `docs/reader_part_ii_review_pass.md`, `docs/reader_part_iii_review_pass.md`, and `docs/reader_part_iv_review_pass.md`, without treating those notes as release approval.",
         f"The synced chapter review matrix records {len(chapters)} reader-review rows with {reader_reviewed} `reviewed`, 0 `spot_checked`, 0 `not_started`, {reader_overlay_active} active-overlay chapters, {reader_no_action} no-immediate-action decisions, {reader_companion} companion-note candidates, {reader_curated} curated-manuscript candidates, and release blockers on every row until future final reader-manuscript packaging explicitly clears chapter-level release blockers.",
         "`docs/reader_artifact_inspection_manifest.md` records a tracked local HTML/EPUB/DOCX structural-inspection summary for ignored snapshots",
@@ -299,7 +307,7 @@ def main() -> None:
         "`docs/reader_format_review_matrix.md` records the HTML row as release-approved against `release_records/2026-06-29-v1-reader-html-855dc277.json` while EPUB, DOCX, and PDF retain format-specific review blockers.",
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`",
         "The current v1.0 reader-overlay set carries 33 active operations across 20 chapters for Human view and generated reader editions only.",
-        f"The curated reader-manuscript manifest exists with `{reader_manifest.get('status')}` status and {len(curated_records)} drafting-only curated chapter records after the Part I consolidation; retired standalone Part I reader drafts are archived as history, and the active manifest remains a subordinate narrative derivative whose reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
+        f"The curated reader-manuscript manifest exists with `{reader_manifest.get('status')}` status and {len(curated_records)} drafting-only curated chapter records; retired standalone reader drafts are archived as history, and the active manifest remains a subordinate narrative derivative whose reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
         "`editions/reader_overlays/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`",

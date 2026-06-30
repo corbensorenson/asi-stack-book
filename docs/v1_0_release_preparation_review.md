@@ -94,14 +94,14 @@ Results:
   full-PDF-layout blocker. EPUB has a metadata/source-spine probe but remains
   blocked until application/e-reader review happens; DOCX and PDF remain
   probe/spot-check artifacts only.
-- Audio script check passed for 59 script files generated for review.
+- Audio script check passed for 52 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
   not a reader-release approval.
 - `docs/reader_chapter_review_matrix.md` records the manifest-synced
-  54-chapter reader-review queue: 54 `reviewed`, 0 `spot_checked`, 0
-  `not_started`, 20 active-overlay chapters, 54 no-immediate-action decisions,
-  3 companion-note candidates, 1 curated-manuscript candidate, and release
+  47-chapter reader-review queue: 47 `reviewed`, 0 `spot_checked`, 0
+  `not_started`, 20 active-overlay chapters, 47 no-immediate-action decisions,
+  3 companion-note candidates, 44 curated-manuscript candidates, and release
   blockers on every row until release records and artifact review exist.
 
 ## Current Release State

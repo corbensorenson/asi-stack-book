@@ -124,7 +124,7 @@ too many state transitions at once.
   governance approval, canary monitoring, rollback, promotion, outcome ledger,
   and next review trigger.
 - `python3 scripts/validate_visual_coverage.py` passed after the split.
-- The chapter corpus now has 60 Mermaid diagrams across 54 manifest chapters.
+- The chapter corpus now has 55 Mermaid diagrams across 47 manifest chapters.
 
 This is a readability improvement only. It does not change Fast Generation's
 or Recursive Self-Improvement's support state, prove speed-quality performance,
@@ -133,7 +133,7 @@ model/runtime behavior.
 
 ## Diagram Audit
 
-The chapter corpus currently has 60 Mermaid diagrams across 54 manifest
+The chapter corpus currently has 55 Mermaid diagrams across 47 manifest
 chapters. The largest chapter diagrams by non-comment Mermaid line count were:
 
 | Diagram | Lines | Edges | Initial assessment |

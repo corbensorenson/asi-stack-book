@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 48 |
-| Assigned source/chapter pairs | 437 |
-| Exact claim-source mappings | 437 |
+| Chapters audited | 47 |
+| Assigned source/chapter pairs | 433 |
+| Exact claim-source mappings | 433 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 437 |
-| Source notes listing assigned chapter | 437 |
-| Passage-reviewed mappings recorded | 437 |
-| Support-state counts | {"argument": 48} |
+| Source notes present for assigned pairs | 433 |
+| Source notes listing assigned chapter | 433 |
+| Passage-reviewed mappings recorded | 433 |
+| Support-state counts | {"argument": 47} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -49,8 +49,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `planforge-dags-and-intelligence-arbitrage` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `virtual-context-abi` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `semantic-pages-context-cells-and-certificates` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `virtual-context-abi` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `context-transactions-snapshots-mounts-and-taint` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `verification-bandwidth-and-context-adequacy` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `claim-ledgers-and-belief-revision` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -95,25 +94,25 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `scf` | 15 | yes |
 | `rmi` | 14 | yes |
 | `benchmaxxing` | 14 | yes |
-| `vcm_public` | 13 | yes |
+| `vcm_public` | 12 | yes |
 | `coherence_exchange` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
 | `planforge` | 11 | yes |
 | `cognitive_loop_closure` | 11 | yes |
 | `genesiscode` | 10 | yes |
-| `verification_bandwidth` | 10 | yes |
+| `verification_bandwidth` | 9 | yes |
 | `cgs` | 8 | yes |
 | `cognitive_compilation` | 8 | yes |
 | `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
 | `ladon_manhattan` | 7 | yes |
-| `vcm_editable` | 7 | yes |
 | `alignment_field` | 7 | yes |
 | `field_of_god_ai_constitution` | 7 | yes |
 | `theseus_self_evolution_system` | 7 | yes |
 | `theseus_architecture_gate` | 7 | yes |
 | `tokenmana` | 7 | yes |
 | `simulation_scaling` | 6 | yes |
+| `vcm_editable` | 6 | yes |
 | `circle_ai_contract_suite` | 6 | yes |
 | `uat` | 5 | yes |
 | `software_magic_grimoire` | 5 | yes |
@@ -121,13 +120,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `octopus_router` | 5 | yes |
 | `beastbrain` | 4 | yes |
 | `rankfold_neuralfold` | 4 | yes |
-| `context_engineer` | 4 | yes |
 | `bugbrain` | 4 | yes |
 | `circle_ai_architectures` | 4 | yes |
 | `circle_calculus_core` | 4 | yes |
 | `road_to_agi` | 4 | yes |
 | `aletheia` | 3 | yes |
 | `bbvca_v9` | 3 | yes |
+| `context_engineer` | 3 | yes |
 | `rgs` | 3 | yes |
 | `moecot_md` | 3 | yes |
 | `coilra_multicoil_rope` | 3 | yes |
@@ -305,11 +304,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `virtual-context-abi.core` | `virtual-context-abi` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |
-| `semantic-pages-context-cells-and-certificates.core` | `semantic-pages-context-cells-and-certificates` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |

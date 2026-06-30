@@ -291,8 +291,8 @@ Active overlay set:
 Automated continuity audit:
 
 - `python3 scripts/audit_reader_continuity.py --write` generated `docs/reader_continuity_audit.md` from a temporary reader-edition workspace.
-- The audit measures 54 reader chapters, 121,839 reader words, 33 active/applied reader-overlay operations, 0 table rows, 60 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
-- It identifies 0 high-priority and 3 medium-priority heuristic review chapters. The remaining rows are a triage queue for manual reader review, not defects and not evidence of release readiness.
+- The audit measures 47 reader chapters, 111,779 reader words, 33 active/applied reader-overlay operations, 11 table rows, 55 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current heuristic.
+- It identifies 1 high-priority and 3 medium-priority heuristic review chapters. The remaining rows are a triage queue for manual reader review, not defects and not evidence of release readiness.
 - The audit is not a reviewed reader release, ebook artifact, audio artifact, support-state promotion, source-derived evidence update, proof result, benchmark result, runtime result, or substitute for reading the manuscript.
 - `docs/reader_continuity_review.md` records the first manual decisions for the three medium-priority rows. The two proof-heavy chapters are no-action for now with companion-note/glossary candidates, and the long Artifact Steward chapter is retained with future curated-reader compression as a possible release-editing task.
 

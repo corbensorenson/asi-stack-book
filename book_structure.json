@@ -3244,7 +3244,7 @@
         },
         {
           "id": "virtual-context-abi",
-          "title": "Virtual Context ABI",
+          "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
           "file": "chapters/virtual-context-abi.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
@@ -3255,7 +3255,8 @@
             "verification_bandwidth",
             "viea",
             "vcm_editable",
-            "moecot"
+            "moecot",
+            "spinoza"
           ],
           "source_queue": {
             "primary": [
@@ -3264,7 +3265,8 @@
             "supporting": [
               "context_engineer",
               "verification_bandwidth",
-              "viea"
+              "viea",
+              "spinoza"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -3273,38 +3275,57 @@
             ],
             "handoff_or_recovery_notes": []
           },
-          "problem": "Long-horizon agents need a stable interface between durable memory and model-visible working context.",
-          "insufficient": "Long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior.",
-          "core_claim": "Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations.",
+          "problem": "Long-horizon agents need a stable context interface whose addresses, versions, materializations, typed pages, context cells, certificates, authority labels, loss contracts, adequacy states, and faults remain inspectable across planning, reasoning, execution, and audit.",
+          "insufficient": "Long context windows, retrieval systems, and summaries can move text close to a model without defining stable addressability, representation authority, source bindings, omission records, permitted uses, adequacy boundaries, or typed failure behavior.",
+          "core_claim": "Virtual Context Memory should expose a Virtual Context ABI that materializes typed pages and context cells with stable addresses, versions, certificates, authority ceilings, loss/use contracts, adequacy states, residuals, and typed faults.",
           "mechanism": [
-            "Separate durable memory from active context.",
-            "Compile task-relative context packets through an ABI.",
-            "Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable.",
-            "Expose unsafe, unknown, or unsatisfied context states rather than hiding them."
+            "Resolve context requests through addresses, versions, mounts, snapshots, representation needs, authority ceilings, adequacy targets, leases, and typed fault behavior.",
+            "Represent materialized context as typed pages or cells such as constraints, claims, decisions, corrections, exact excerpts, summaries, redactions, abstractions, translations, or derived inferences.",
+            "Attach representation certificates with source refs, omissions, loss contracts, permitted uses, authority ceilings, validity state, revocation state, transaction refs, artifact refs, and residuals.",
+            "Hand off admitted context to verification-bandwidth checks without treating admission as adequacy for a target claim."
           ],
           "interfaces": [
-            "Planning requests context.",
-            "VCM compiles packets.",
-            "Execution receives authority-appropriate context."
+            "Planning requests context by task, address, authority, representation need, and adequacy target.",
+            "VCM materializes packets and cells with static address, version, certificate, source-ref, authority, loss, use, lease, residual, and fault fields.",
+            "Spinoza and claim ledgers consume claim and evidence cells without treating certificates as support-state decisions.",
+            "Execution consumes only permitted representations, and artifact graphs store certificate references when derived context becomes durable work."
           ],
           "invariants": [
             "Addresses and versions are stable.",
-            "Context adequacy is distinct from admission.",
-            "Faults are typed and visible."
+            "Source bindings survive representation changes.",
+            "Authority labels survive summarization.",
+            "Loss and permitted-use contracts are explicit.",
+            "Context admission and context adequacy remain distinct.",
+            "Mandatory context misses produce typed faults rather than best-effort packets.",
+            "Summaries cannot increase the authority ceiling of their source cells.",
+            "Revoked or stale certificates cannot be treated as current support."
           ],
           "failure_modes": [
             "Flat transcript memory.",
             "Stale context.",
-            "Silent unsafe fit."
+            "Summary overconfidence.",
+            "Provenance loss.",
+            "Authority escalation through compression.",
+            "Unsafe fit.",
+            "Adequacy laundering."
           ],
-          "minimal_implementation": "A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.",
-          "beyond_state_of_art": "The mature version is a memory operating interface for long-horizon AI work. It is not a larger retrieval system. It is the stable syscall layer that lets planners, compilers, workers, verifiers, and auditors request context by address, version, mount, snapshot, representation need, authority label, adequacy target, and lease boundary. With a real context ABI, a model never receives anonymous \"relevant context.\" It receives a materialization receipt. The receipt says what was requested, what resolved, what representation was built, which authority labels apply, which uses are permitted, when the lease expires, whether the packet is adequate for the target claim, and which fault or residual remains. If any of those states are missing, the system asks, abstains, retries, escalates, or records a typed fault rather than hallucinating a usable memory view.",
+          "minimal_implementation": "A context ABI record plus semantic-page certificate fixtures validated by the context admission/adequacy harness, covering address, version, mount, snapshot, representation, source refs, authority ceiling, loss/use contract, adequacy state, residuals, and fault behavior.",
+          "beyond_state_of_art": "A mature Virtual Context ABI is the memory syscall layer for long-horizon AI work: planners, verifiers, workers, claim ledgers, reader editions, and auditors request typed context objects by stable address, version, mount, snapshot, representation need, authority label, adequacy target, certificate, lease, and residual boundary. The endpoint is a governed context fabric where exact source excerpts, summaries, redactions, planning briefs, claim cells, contradiction pairs, reader paraphrases, and execution packets can derive from shared sources without pretending they have the same authority or evidential role.",
           "codex_tests": [
-            "Address/version stability test",
+            {
+              "name": "Context ABI fixture validation",
+              "implementation_status": "implemented",
+              "result_status": "passes via protocol fixture validation; shape only"
+            },
+            {
+              "name": "Address/version stability test",
+              "implementation_status": "implemented",
+              "result_status": "passes through finite Lean context-reference predicates"
+            },
             {
               "name": "Admission vs adequacy test",
               "implementation_status": "implemented",
-              "result_status": "passes via synthetic context admission/adequacy harness"
+              "result_status": "passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim"
             },
             {
               "name": "Conflict adequacy classification test",
@@ -3315,6 +3336,36 @@
               "name": "Context fault behavior test",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic context admission/adequacy harness; no deployed resolver claim"
+            },
+            {
+              "name": "Semantic page certificate fixture validation",
+              "implementation_status": "implemented",
+              "result_status": "passes via protocol fixture validation; shape only"
+            },
+            {
+              "name": "Certificate completeness test",
+              "implementation_status": "implemented",
+              "result_status": "passes through finite Lean certificate predicates"
+            },
+            {
+              "name": "Authority preservation test",
+              "implementation_status": "implemented",
+              "result_status": "passes through finite Lean authority predicates"
+            },
+            {
+              "name": "Summary fidelity boundary test",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context admission/adequacy harness for loss/omission gate behavior; no semantic fidelity claim"
+            },
+            {
+              "name": "Resolver conformance test",
+              "implementation_status": "planned",
+              "result_status": "not run"
+            },
+            {
+              "name": "Certificate truthfulness test",
+              "implementation_status": "planned",
+              "result_status": "not run"
             }
           ],
           "lean_module": "AsiStackProofs.VirtualContextABI",
@@ -3329,6 +3380,18 @@
               "tag": "lean:vcm.abi.failure_blocks_promotion",
               "module": "AsiStackProofs.VirtualContextABI",
               "target": "A mandatory context miss produces a typed fault rather than a best-effort packet.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:vcm.certificates.operational_invariant",
+              "module": "AsiStackProofs.ContextCertificates",
+              "target": "A derived context cell carries source bindings and a declared loss/use contract.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:vcm.certificates.failure_blocks_promotion",
+              "module": "AsiStackProofs.ContextCertificates",
+              "target": "A summary cannot increase the authority ceiling of its source cells.",
               "status": "implemented"
             }
           ],
@@ -3414,116 +3477,6 @@
               ],
               "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
               "passage_review_state": "reviewed"
-            }
-          ]
-        },
-        {
-          "id": "semantic-pages-context-cells-and-certificates",
-          "title": "Semantic Pages, Context Cells, and Certificates",
-          "file": "chapters/semantic-pages-context-cells-and-certificates.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "vcm_public",
-            "verification_bandwidth",
-            "spinoza",
-            "context_engineer",
-            "vcm_editable"
-          ],
-          "source_queue": {
-            "primary": [
-              "vcm_public"
-            ],
-            "supporting": [
-              "verification_bandwidth",
-              "spinoza",
-              "context_engineer"
-            ],
-            "variants": [],
-            "connector_or_recovery": [
-              "vcm_editable"
-            ],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.",
-          "insufficient": "Summaries can look authoritative while dropping source bindings, omissions, authority ceilings, or allowed-use limits.",
-          "core_claim": "VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates.",
-          "mechanism": [
-            "Classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells.",
-            "Attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses.",
-            "Use task-relative representation graphs instead of one linear compression ladder."
-          ],
-          "interfaces": [
-            "Spinoza consumes claim/evidence cells.",
-            "Planning consumes constraints and decisions.",
-            "Execution receives only permitted representations."
-          ],
-          "invariants": [
-            "Authority labels survive summarization.",
-            "Loss contracts are explicit.",
-            "A derived cell points back to source bindings."
-          ],
-          "failure_modes": [
-            "Summary overconfidence.",
-            "Provenance loss.",
-            "Authority escalation via compression."
-          ],
-          "minimal_implementation": "A semantic-page schema with certificate fields and example source-to-summary derivation.",
-          "beyond_state_of_art": "The mature version is a representation-certification system for context. It does not merely summarize sources. It turns raw sources, exact excerpts, planning briefs, redacted instructions, claim cells, contradiction pairs, and derived inferences into typed objects whose permitted use, loss, authority, and provenance remain attached wherever the object travels. With certified context cells, the same source can produce several honest cells: an exact evidence excerpt, a lossy planning brief, a redacted execution packet, a contradiction-checking pair, and a reader-edition paraphrase. Each cell carries a certificate saying what it is, what it came from, what was omitted, which transaction created it, which artifact carries it, what authority ceiling survived, what use is permitted, and what residual risk remains.",
-          "codex_tests": [
-            "Certificate completeness test",
-            "Authority preservation test",
-            {
-              "name": "Summary fidelity test",
-              "implementation_status": "implemented",
-              "result_status": "passes via synthetic context admission/adequacy harness for loss/omission gate behavior; no semantic fidelity claim"
-            }
-          ],
-          "lean_module": "AsiStackProofs.ContextCertificates",
-          "proof_targets": [
-            {
-              "tag": "lean:vcm.certificates.operational_invariant",
-              "module": "AsiStackProofs.ContextCertificates",
-              "target": "A derived context cell carries source bindings and a declared loss/use contract.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:vcm.certificates.failure_blocks_promotion",
-              "module": "AsiStackProofs.ContextCertificates",
-              "target": "A summary cannot increase the authority ceiling of its source cells.",
-              "status": "implemented"
-            }
-          ],
-          "claim_source_mappings": [
-            {
-              "source_id": "vcm_public",
-              "mapped_support": "Supports typed context units through semantic objects, representations, validations, packets, materializations, source and authority binding, protected compilation, adequacy/admission separation, revocation, invalidation, and audit records.",
-              "limits": "VCM evidence remains bounded to control-plane properties; no end-to-end model superiority, summary fidelity test, or certificate truthfulness run exists here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/vcm_public.txt:360-369",
-                "sources/raw/google_docs/vcm_public.txt:389-394",
-                "sources/raw/google_docs/vcm_public.txt:774-793",
-                "sources/raw/google_docs/vcm_public.txt:794-841",
-                "sources/raw/google_docs/vcm_public.txt:843-851",
-                "sources/raw/google_docs/vcm_public.txt:866-870"
-              ],
-              "passage_review_note": "Reviewed local raw cache for context cells, semantic pages, stable logical addresses, page state fields, representation certificates, task-relative representation graphs, exact-decode versus semantic-materialization boundaries, future-query/strict-summary limits, use-relative sufficiency, authority non-escalation, evidence/authority separation, conformance boundaries, and model-facing non-results; no summary-fidelity checker, certificate truthfulness run, or end-to-end model superiority claim is promoted."
-            },
-            {
-              "source_id": "verification_bandwidth",
-              "mapped_support": "Supports making representation loss visible by distinguishing semantic units, verification workspace, pairwise grinding, summary fidelity tradeoffs, transitive decay, and contradiction-rate/residual accounting.",
-              "limits": "The proposed verification and contradiction-rate tests have not been run; source-proposed theoretical claims remain unpromoted.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/verification_bandwidth.txt:17-30",
-                "sources/raw/google_docs/verification_bandwidth.txt:33-42",
-                "sources/raw/google_docs/verification_bandwidth.txt:62-72",
-                "sources/raw/google_docs/verification_bandwidth.txt:74-85",
-                "sources/raw/google_docs/verification_bandwidth.txt:87-92"
-              ],
-              "passage_review_note": "Reviewed local raw cache for semantic-unit definitions, effective verification workspace, coherence as constraint satisfaction, pairwise grinding, the two-body verification limit, lossy summary pressure, interface-verification tradeoffs, hierarchical summary fidelity tradeoffs, the proposed contradiction-rate test, RAG-as-engineering-compromise framing, and verification bandwidth as the limiting factor; no contradiction-rate experiment, summary-fidelity benchmark, or mechanized theorem is promoted."
             },
             {
               "source_id": "spinoza",
@@ -3548,34 +3501,6 @@
                 "sources/raw/google_docs/spinoza.txt:1397-1401"
               ],
               "passage_review_note": "Reviewed local raw cache for proof-carrying and citation/procedure-carrying belief graphs, proposition-node metadata, justification edges, tier labels, bounded formal scope, proof/citation/procedure artifacts, dependency tracing, contradiction revision, tier non-upgrade rules, certified-delusion limits, semantic-isolation risk controls, and audit-trail expectations; no open-domain autoformalization, arbitrary theorem validity, whole-system epistemic correctness, or certificate truthfulness result is promoted."
-            },
-            {
-              "source_id": "context_engineer",
-              "mapped_support": "Supports mission briefs and structured context objects under need-to-know constraints, clearance levels, context shards, memory masks, ephemeral sensitive context, sanitized outputs, and information-flow controls.",
-              "limits": "Synthetic benchmark claims are source-reported only; no leak, hallucination, cost, latency, or summary-fidelity harness is reproduced here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/context_engineer.txt:17-27",
-                "sources/raw/google_docs/context_engineer.txt:31-64",
-                "sources/raw/google_docs/context_engineer.txt:125-164",
-                "sources/raw/google_docs/context_engineer.txt:171-212",
-                "sources/raw/google_docs/context_engineer.txt:238-250",
-                "sources/raw/google_docs/context_engineer.txt:277-290"
-              ],
-              "passage_review_note": "Reviewed local raw cache for context-as-supply-chain framing, need-to-know delivery, governor placement, layered memory, briefer/mission-brief compression, context-as-code fields, clearance levels, context shards, memory masks, allowed-tool lists, Digital SCIF lifecycle, zeroization, sanitized commits, information-flow controls, source-reported benchmark figures, and limitations around software-only isolation and summarization loss; no local leak, hallucination, cost, latency, or summary-fidelity harness result is promoted."
-            },
-            {
-              "source_id": "vcm_editable",
-              "mapped_support": "Supports task-relative representation graphs and evidence-carrying certificates for planner-guided context compilation, authority non-escalation, protected compilation, mounts, snapshots, and materializations.",
-              "limits": "Connector-readable terminology refinement only; no VCM-Bench, certificate checker, or model-facing result has been run in this repo.",
-              "passage_refs": [
-                "sources/source_notes/vcm_editable.md:11-20",
-                "sources/source_notes/vcm_editable.md:22-29",
-                "sources/source_notes/vcm_editable.md:31-36",
-                "sources/source_notes/vcm_editable.md:47-52"
-              ],
-              "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, external-literature candidates, and citation-normalization warnings; no VCM-Bench or model-facing result is promoted.",
-              "passage_review_state": "reviewed"
             }
           ]
         },

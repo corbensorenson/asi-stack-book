@@ -6,7 +6,7 @@ This note records a release-grade chapter-text review pass for the final three
 generated reader chapters in Part III and the first generated reader chapter in
 Part IV. It reviews proof-carrying Circle contracts, cyclic memory contracts,
 cyclic mixer evaluation, and the executable specification/Lean proof envelope.
-It is not a full 54-chapter reader release review, not an artifact layout
+It is not a full reader release review, not an artifact layout
 review, and not an edition release record.
 
 ## Source State

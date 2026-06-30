@@ -36,8 +36,7 @@ Self-RAG belongs in the VCM, semantic-page, verification-bandwidth, and claim-le
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` (Virtual Context ABI)
-- `semantic-pages-context-cells-and-certificates` (Semantic Pages, Context Cells, and Certificates)
+- `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `claim-ledgers-and-belief-revision` (Claim Ledgers and Belief Revision)
 

@@ -1,10 +1,10 @@
 ---
-title: "Virtual Context ABI"
+title: "The Virtual Context ABI: Typed Pages, Cells, and Certificates"
 chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -12,13 +12,13 @@ primary_sources:
   - "viea"
   - "vcm_editable"
   - "moecot"
+  - "spinoza"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` and `moecot` remain connector/source-note mapped, and support remains argument until resolver, context compiler, adequacy classifier, or VCM conformance tests exist."
-  - "Protocol schema/fixture validation and the synthetic context admission/adequacy harness are implemented; the harness checks admission/adequacy separation, conflict classification, fault-state preservation, stale-certificate blocking, deletion-closure blocking, and mode-confusion cases, but no VCM resolver or context compiler tests have been run for this chapter."
-  - "Lean coverage is limited to finite context-reference and lookup records; real resolver, adequacy classifier, and context compiler behavior remain unimplemented."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Executed consolidation of `virtual-context-abi` and `semantic-pages-context-cells-and-certificates`; the old semantic-pages slug is preserved by a static redirect and the source chapter is archived for lineage."
+  - "Source notes, schemas, fixtures, a synthetic context admission/adequacy harness, and finite Lean predicates support static context record discipline only; they do not prove resolver correctness, context compiler quality, semantic summary fidelity, certificate truthfulness, deletion closure, transaction isolation, verification bandwidth, model-facing context performance, or deployed memory-store behavior."
+  - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
 
 ## Chapter status
@@ -29,221 +29,368 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
-| Primary source records | `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot` |
+| Last updated | 2026-06-30 |
+| Primary source records | `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`, `spinoza` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`; connector/recovery: `vcm_editable`, `moecot` |
-| Source loading state | source notes: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`; connector/source-note only: `vcm_editable`, `moecot` |
-| Test state | Context ABI fixture validation now includes lifecycle state, mount scope, resolver policy, authority ceiling, adequacy requirement, consumer policy, replay boundary, source refs, support-state effect, and non-claims; `AsiStackProofs.VirtualContextABI` finite-record proofs and `python3 scripts/validate_context_admission_adequacy.py` synthetic admission/adequacy, conflict, and fault-boundary checks are implemented; resolver and compiler tests remain planned. |
+| Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/recovery: `vcm_editable`, `moecot` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/source-note only: `vcm_editable`, `moecot` |
+| Test state | `context_abi_record.valid.json`, `semantic_page_certificate.valid.json`, and related context packet/adequacy/transaction fixtures pass protocol validation; `python3 scripts/validate_context_admission_adequacy.py` passes synthetic admission/adequacy, certificate-use, stale-certificate, deletion-closure, and mode-confusion checks; `AsiStackProofs.VirtualContextABI` and `AsiStackProofs.ContextCertificates` implement finite record predicates; resolver, context compiler, summary-fidelity, certificate-truthfulness, deletion-closure, transaction-isolation, and model-facing memory tests remain planned. |
+
+The executed merge combines two current record families:
+
+- context ABI records, which ask whether context requests, addresses, versions,
+  mounts, snapshots, materialization states, authority labels, adequacy
+  requirements, leases, residuals, source refs, and typed faults are explicit;
+- semantic page certificate records, which ask whether typed context cells,
+  source bindings, omissions, loss contracts, permitted uses, authority
+  ceilings, revocation states, transaction refs, and artifact refs survive
+  representation changes.
+
+Both record families remain visible in the destination's implementation
+horizon, test plan, source crosswalk, and formalization hooks. The former
+standalone semantic-pages chapter is retired from the active spine, archived
+under `archive/retired_chapters/`, and preserved through the public slug
+`chapters/semantic-pages-context-cells-and-certificates.html`.
 
 ## Drafting guardrail
 
-This chapter treats VCM as a control-plane interface, not as a completed memory product. The repo validates a context ABI record shape and implements narrow finite-record Lean predicates for snapshot-bound reference resolution and mandatory-miss fault behavior. It does not yet contain a resolver, planner-guided context compiler, snapshot service, adequacy classifier, or conformance run.
+A context ABI is not the same thing as a working memory system. It is the
+record layer a governed stack needs before context resolver behavior, summary
+truthfulness, deletion closure, transaction isolation, verification adequacy,
+or model use can be tested honestly.
 
-It follows cognitive compilation because semantic atoms need source context, but they should receive a governed materialization rather than an accidental slice of transcript or retrieval output.
-
-The ABI is the context layer's syscall surface. A planner should ask for context through stable addresses, mounts, representation needs, authority labels, and adequacy targets, not by smuggling retrieval instructions into prose.
+The argument does not ask readers to believe that a long-context model can use
+every loaded fact correctly. It asks a narrower systems question: when context
+is materialized for a planner, verifier, worker, claim ledger, or reader
+edition, what typed object, address, version, certificate, authority, loss,
+adequacy, lease, fault, and residual information must survive?
 
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Cognitive compilation needs context, but context should not arrive as an accidental transcript dump. The Virtual Context ABI defines the interface between durable memory and the working context a model is allowed to see: what may be mounted, which version is being used, how long the materialization lasts, and what the consumer may infer from it.
+A model can sound as if it remembers everything across a long conversation. A
+governed system has to be able to say what it actually gave the model.
 
-Memory access is a contract. Retrieved text, private notes, old plans, source packets, and summaries are not interchangeable just because they fit in a prompt. The ABI gives context a boundary so later reasoning can be replayed, faulted, or refused instead of reconstructed from vibes.
+The difference is the context interface. Instead of dumping "relevant text"
+into a prompt, the stack materializes typed context objects. Each object has an
+address, a version, a source boundary, an authority label, a representation
+type, a certificate, and a reason it is allowed to be used. A short summary, a
+redacted instruction, an exact quote, a claim cell, and a reader-edition
+paraphrase are not the same kind of object. They should not carry the same
+permission or evidential weight.
 
-The aim is to make memory useful without letting every remembered thing become equally authorized context.
+The static Context ABI is the interface for that discipline. The next context
+layer handles transactions, snapshots, mounts, taint, and deletion over time.
+The verification-bandwidth layer then asks whether the admitted context is
+strong enough for a particular claim.
 
-A good context interface makes refusal as explainable as retrieval. The missing packet, stale snapshot, or forbidden source becomes part of the answer instead of a hidden weakness.
-
-The ABI should make context failure explicit before reasoning depends on it. A broken mount should fail loudly before it shapes action, memory, or authority.
+The reader-level point is simple: context is not governed memory until it has
+an identity, a certificate, a lease, an authority boundary, and a fault path.
 :::
 
 ## Problem
 
-Long-horizon agents need a stable interface between durable memory and model-visible working context.
+Long-horizon agents need a stable context interface whose addresses, versions,
+materializations, typed pages, context cells, certificates, authority labels,
+loss contracts, adequacy states, and faults remain inspectable across
+planning, reasoning, execution, and audit.
 
-The planning chapters define what work needs context. VCM defines how that context is addressed, compiled, represented, admitted, checked, faulted, and audited. The central distinction is durable memory versus model-visible working context: the model should receive a task-relative materialization, not a raw dump of everything the system knows.
+Without that interface, memory becomes prose. A retrieved passage, old
+conversation, compressed summary, redacted brief, policy excerpt, source
+quote, and derived inference can all appear as plain tokens. The model can use
+them, but the stack cannot later explain which object was supplied, which
+version it came from, what was omitted, which authority ceiling applied, which
+uses were permitted, whether the packet was adequate for the target claim, or
+which fault should have blocked use.
 
-VCM is therefore an ABI: a stable contract between planners, memory stores, context compilers, verifiers, execution adapters, and auditors. It must expose addresses, versions, mounts, snapshots, representation contracts, adequacy states, authority labels, and typed faults.
-
-The ABI also needs lease semantics. A materialization is valid for a task, snapshot, authority state, representation contract, and time window. It should not become ambient memory for later plans merely because it is already in the transcript.
+The Virtual Context ABI owns the static shape of that interface. It says what
+a context request can ask for, what a materialized packet must report, and how
+typed pages, cells, and certificates travel into planning, execution, evidence,
+and reader-facing artifacts.
 
 ## Why existing approaches are insufficient
 
-Long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior.
+Long context windows, retrieval systems, and summaries can move text close to a
+model without defining stable addressability, representation authority, source
+bindings, omission records, permitted uses, adequacy boundaries, or typed
+failure behavior.
 
-Long context is capacity, not governance. A retrieved passage may be stale, revoked, unauthenticated, infeasible to use, unsafe for the current worker, or inadequate for the claim being checked. A bigger window can also hide conflicts by making the model generate across text it cannot jointly verify.
+A retrieval result can be relevant and still be stale. A summary can be useful
+and still omit the clause that matters. A redaction can be safe for a worker
+and inadequate for a claim. A source can be allowed for orientation but not for
+support-state promotion. A context packet can be syntactically well formed and
+still be inadequate for the target question. If the interface does not expose
+those distinctions, the system may treat all loaded text as if it had the same
+authority and evidence weight.
 
-The external context literature makes that boundary concrete. RAG (`ext_rag_2020`) separates parametric memory from retrieved evidence, Lost in the Middle (`ext_lost_in_middle_2023`) shows position sensitivity inside long contexts, MemGPT (`ext_memgpt_2023`) frames virtual context management and memory tiers, LongBench (`ext_longbench_2023`) and RULER (`ext_ruler_2024`) stress long-context evaluation, ALCE (`ext_alce_2023`) evaluates citation support, Self-RAG (`ext_self_rag_2023`) adds adaptive retrieval/reflection, and LongLLMLingua (`ext_longllmlingua_2023`) foregrounds prompt-compression tradeoffs. VCM turns those pressures into an ABI for admission, adequacy, authority, and fault states; it does not claim superior context performance here.
-
-Ordinary retrieval usually answers "what looks relevant?" VCM must also answer "which version, under which mount, for which task, under which authority, with which representation losses, and what happens if the context is missing, conflicting, unsafe, unknown, or unsatisfiable?"
-
-Best-effort retrieval can be actively harmful when the task requires mandatory context. If the required context is missing, stale, unsafe, or unresolved, the correct output is a typed miss or escalation, not a plausible substitute.
+External comparators help position the ABI boundary but do not prove it.
+Retrieval-augmented generation, long-context benchmarks, memory-augmented LLM
+systems, citation-oriented generation, self-reflective retrieval, and prompt
+compression literature all illuminate adjacent parts of the problem. The ASI
+Stack destination chapter is not claiming those systems have been reproduced
+here. It uses them as comparators while asking a systems question: what ABI
+prevents context from becoming anonymous prompt mass?
 
 ## Core Claim
 
-[virtual-context-abi.core, label: Design rationale, support: argument] Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations.
+[virtual-context-abi.core, label: Design rationale, support: argument] Virtual
+Context Memory should expose a Virtual Context ABI that materializes typed pages
+and context cells with stable addresses, versions, certificates, authority
+ceilings, loss/use contracts, adequacy states, residuals, and typed faults.
 
-The claim remains at `argument` support. VCM public v1 supplies the ABI, source binding, adequacy/admission, typed non-success, and audit vocabulary. Context Engineer supplies the context-supply-chain pressure. Verification Bandwidth explains why admitted context may still be inadequate. VIEA connects context materializations to intent and evidence ledgers. The editable VCM and MoECOT sources are available for future refinement, not local implementation proof.
+The claim remains at `argument` support. The source corpus supports the
+architecture vocabulary and drafting lineage. The checked fixtures and Lean
+modules show that the repository can express record-shape checks, synthetic
+negative cases, and small finite invariants. They do not show that a VCM
+resolver is correct, that summary certificates are truthful in open domains,
+that models use context reliably, or that a deployed memory system enforces
+the ABI.
 
-### Claim-source mapping status
-
-Appendix C maps this VCM ABI claim to all assigned source notes. Four local raw-cache mappings are now passage-reviewed. The mappings support addresses, versions, mounts, snapshots, representation contracts, adequacy states, and typed faults as a control interface, not a deployed resolver, adequacy classifier, context compiler, or model-facing VCM result. `vcm_editable` and `moecot` remain connector/source-note mapped until durable raw text, code, logs, conformance artifacts, benchmark records, or external corroboration are imported or inspected.
-
-| Source | What it supports | Limit |
-|---|---|---|
-| `vcm_public` | Passage-reviewed: compiled working context over a versioned semantic address space, semantic object/version/representation/validation/packet/materialization identities, source/authority binding, role-indexed obligations, adequacy/admission separation, protected compilation, semantic faults, snapshot/revocation/invalidation coherence, signed protocol boundaries, conformance coverage, and core record fields. | No local resolver, context compiler, VCM-Bench run, frozen-model result, or end-to-end superiority result exists here. |
-| `context_engineer` | Passage-reviewed: context supply chains with a governor between planner and worker, layered memory, briefer agents, structured mission briefs, clearance levels, context shards, memory masks, allowed tools, Digital SCIF lifecycle, zeroization, sanitized commits, and information-flow controls. | Reported hallucination, leak, cost, and latency benchmark claims are source-reported only; no harness, raw runs, leak result, latency result, or security result is reproduced here. |
-| `verification_bandwidth` | Passage-reviewed: context admission must stay separate from verification adequacy because long context, effective verification workspace, semantic-unit comparison, pairwise grinding, attention budget, transitive decay, summary loss, and contradiction-rate testing constrain verification. | The proposed contradiction-rate or adequacy tests have not been run or mechanized here. |
-| `viea` | Passage-reviewed: context materializations feed the intent-to-execution spine through structured command contracts, artifact graphs, specialist routing, context allocation, permission envelopes, claim/verification ledgers, residuals, runtime adapters, feedback, tools, benchmarks, and active-context selection. | No deployed context handoff, runtime adapter, verified VIEA execution trace, or reproduced benchmark exists in this repo. |
-| `vcm_editable` | Connector/source-note mapped: refines ABI terminology around stable addresses, mounts, snapshots, materializations, representation graphs, certificates, protected compilation, authority non-escalation, semantic paging, transactions, and benchmark agenda. | Connector-readable refinement only; no local VCM-Bench or model-facing result is recorded. |
-| `moecot` | Connector/source-note mapped: runtime-reference context for governed orchestration with specialist lanes, fail-closed ledgers, replay, handoff, readiness gates, promotion blockers, and residual tracking. | Runtime and benchmark artifacts have not been imported, inspected, or reproduced. |
+The folded source claim from
+`semantic-pages-context-cells-and-certificates` is a preserved subclaim:
+context should be represented as typed semantic pages or cells with
+evidence-carrying representation certificates that preserve source bindings,
+omissions, authority ceilings, loss contracts, and permitted uses.
 
 ## Mechanism
 
-After semantic IR defines the atoms that need evidence, VCM defines how context is addressed and materialized for those atoms. VCM public v1 supplies semantic objects, immutable versions, representations, validations, materializations, source/authority binding, adequacy/admission separation, and typed non-success states. Context Engineer frames context as a need-to-know supply chain. Verification Bandwidth explains why admitted context can still be inadequate for a claim. VIEA ties materializations back to artifacts and ledgers, while editable VCM and MoECOT provide refinement and runtime-reference pressure without becoming local resolver evidence.
+The destination mechanism has four lanes.
 
-A Context ABI Record is the contract that keeps those concerns from collapsing into a raw retrieval dump.
+The first lane is context addressing. A context request names the task, address
+or address pattern, version requirement, mount scope, snapshot, representation
+need, authority ceiling, adequacy target, consumer policy, lease, and fault
+behavior. A materialization receipt then records what resolved, what failed,
+what was omitted, which source refs were used, and which residuals remain.
 
-The negative claim is explicit: the ABI is a record-level contract, not evidence that context resolution works under load. VCM public v1 justifies a record-level ABI and fault vocabulary; Context Engineer justifies the supply-chain and compartmentalization pressure; Verification Bandwidth justifies treating admitted context as potentially verification-inadequate; VIEA justifies the handoff into specialists, permission envelopes, ledgers, and runtime targets. The repository still lacks evidence for semantic-address resolution, adequacy classification, context-packet compilation under load, VCM-Bench reproduction, and validation of source-reported hallucination, leak, cost, latency, or runtime claims.
+The second lane is typed semantic structure. Context is not only text. It can
+arrive as constraint cells, claim cells, decision cells, correction cells,
+event cells, artifact cells, exact excerpts, lossy summaries, redactions,
+abstractions, translations, or derived inferences. The type tells downstream
+layers what kind of object they are holding before they treat it as evidence,
+instruction, background, or executable constraint.
+
+The third lane is representation certification. A certificate binds the cell
+to source refs, omissions, loss contract, permitted uses, authority ceiling,
+validity state, revocation state, transaction refs, artifact refs, and
+residuals. A summary can be admitted as a planning brief without becoming
+evidence for a claim. A redaction can be safe for execution without being
+adequate for verification. A reader-edition paraphrase can be readable without
+becoming a source quotation.
+
+The fourth lane is typed fault and adequacy handoff. The ABI can report
+missing, unsafe, unknown, conflicting, stale, revoked, unauthorized, or
+unsatisfiable context rather than materializing best-effort prompt text. It can
+also state whether a packet is admitted for use while leaving adequacy for a
+target claim to the verification-bandwidth layer.
 
 ```{mermaid}
 flowchart LR
-  A["Plan context request"] --> B["Semantic address"]
-  B --> C["Version + mount"]
-  C --> D["Snapshot"]
-  D --> E["Representation contract"]
-  E --> F{"Admission allowed?"}
-  F -- "yes" --> G{"Adequate for target?"}
-  F -- "no" --> H["Typed fault"]
-  G -- "yes" --> I["Context packet / materialization"]
-  G -- "no" --> H
-  I --> J["Audit + evidence refs"]
-  H --> J
+  Request["Context request"] -- "asks by task, address, version" --> ABI["Virtual Context ABI"]
+  ABI -- "resolves static handle" --> Address["Address, version, mount, snapshot"]
+  ABI -- "materializes typed object" --> Cell["Typed page or context cell"]
+  Cell -- "carries source and loss record" --> Cert["Representation certificate"]
+  Cert -- "permits bounded use" --> Packet["Materialized context packet"]
+  Packet -- "orients work" --> Plan["Planning or execution use"]
+  Packet -- "offers bounded support" --> Claim["Claim ledger or verifier use"]
+  Packet -- "records influence" --> Artifact["Artifact or reader-edition use"]
+  Packet -- "refuses unsafe use" --> Fault["Typed fault or residual"]
+  Packet -- "defers claim fitness" --> Adequacy["Adequacy handoff"]
+  Address -- "hands dynamic state to" --> Transaction["Context transactions, mounts, taint"]
+  Adequacy -- "hands support sufficiency to" --> Verification["Verification bandwidth"]
 ```
 
-**Reading the context ABI:** The ABI resolves a context request through address, version, mount, snapshot, and representation before deciding whether use is allowed and adequate. Admission and adequacy are separate gates, and a typed fault is a legitimate output rather than a hidden retrieval failure.
+**How to read the static context flow:** The flow starts with a context
+request, not an anonymous prompt append. The ABI binds addresses, versions,
+mounts, snapshots, typed cells, and certificates before context is materialized
+for a planner, verifier, worker, artifact, or reader edition. Dynamic memory
+events move to the transaction chapter, and adequacy judgments move to the
+verification-bandwidth chapter.
 
-The ABI separates durable memory from active context and compiles task-relative packets through stable addresses, versions, mounts, snapshots, representation contracts, authority labels, admission states, adequacy states, and typed faults. Adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, and unsatisfiable are first-class outputs, not comments appended after a best-effort retrieval.
+The important movement is from untyped prompt content to inspected context
+objects. A planner, verifier, worker, or reader artifact receives a packet that
+can explain itself.
 
-Admission and adequacy are separate. A packet can be admitted for drafting but inadequate for verification. A source can be known but not authorized. A representation can be useful for planning but too lossy for citation or proof. These distinctions need states, not vibes.
+### Representation examples
 
-Typed non-success states are part of the design: unknown, deferred, infeasible, unsafe, ask, abstain, deny, retry, and residual. A VCM layer that always returns "best effort context" is not a governed context layer.
+The same source can produce different honest cells:
 
-The ABI should separate request validity, resolution validity, materialization validity, and adequacy validity. A request can be well formed but unresolved. A reference can resolve but be unauthorized. A materialization can be authorized but inadequate for verification. Each state should be visible before the model uses the packet.
+| Representation | Permitted role | Boundary |
+|---|---|---|
+| Exact excerpt | Citation, quote review, contradiction check | Cannot be shown where authority or clearance forbids the source. |
+| Lossy planning summary | Planning orientation and dependency discovery | Cannot become proof, citation, or support-state promotion. |
+| Redacted execution packet | Worker instruction under narrower disclosure | Cannot be treated as the full source or as broadened permission. |
+| Claim or contradiction cell | Claim ledger review and belief revision | Support state remains a claim-ledger decision, not a certificate side effect. |
+| Reader-edition paraphrase | Human orientation | Cannot become source evidence or proof support. |
+
+These examples are design semantics. They are not evidence that a summary
+fidelity checker or deployed VCM service exists.
 
 ## Interfaces
 
-Context interoperability is carried by the Context ABI Record.
+Planning requests context by task, address, authority, representation need,
+and adequacy target. Planning should receive enough structure to know whether
+context is a constraint, claim, decision, source excerpt, summary, or residual.
 
-- Planning requests context.
-- VCM compiles packets.
-- Execution receives authority-appropriate context.
+VCM materializes packets and cells. It owns the static address, version,
+certificate, source-ref, authority, loss, use, lease, residual, and fault
+fields.
 
-Minimum fields:
+Spinoza and claim ledgers consume claim and evidence cells. They can cite a
+certificate, but the certificate itself does not settle the claim. The claim
+ledger still owns support state, contradiction, revision, and promotion
+decisions.
 
-- `request_id`
-- `task_id`
-- `lifecycle_state`
-- `request_validity`
-- `semantic_address`
-- `version`
-- `mount`
-- `mount_scope`
-- `snapshot_id`
-- `resolution_validity`
-- `resolver_policy`
-- `representation_contract`
-- `authority_labels`
-- `authority_ceiling`
-- `materialization_validity`
-- `admission_state`
-- `adequacy_state`
-- `adequacy_requirement`
-- `fault_state`
-- `materialization_ref`
-- `consumer_policy`
-- `support_boundary`
-- `lease_expiry`
-- `replay_boundary`
-- `source_refs`
-- `residuals`
-- `audit_refs`
-- `support_state_effect`
-- `non_claims`
+Execution consumes only permitted representations. A redacted execution packet
+can guide a worker without exposing every source or granting authority beyond
+its certificate.
 
-Planning requests context by task and semantic address. VCM resolves versions and mounts, compiles a representation, and emits either a materialization or a typed fault. Execution receives only context whose authority labels and representation contract are compatible with the route.
+Artifact graphs store certificate references when context-derived
+representations become durable work products. That lets a later audit recover
+which context object influenced an artifact.
 
-Context receipts are the ABI's audit artifact. A receipt says what was requested, what was resolved, what was materialized, which authority labels apply, what the representation can support, when the lease expires, and which fault or residual remains. That receipt is what lets audits replay context use.
+Context transactions supply dynamic semantics. Snapshot consistency, branch
+isolation, mount permissions, taint propagation, deletion closure, and
+declassification stay with
+`context-transactions-snapshots-mounts-and-taint`.
 
-The context-reference schema distinguishes lifecycle state, request validity, resolution validity, resolver policy, mount scope, authority ceiling, materialization validity, adequacy requirement, consumer policy, support boundary, lease expiry, replay boundary, source refs, support-state effect, residuals, and non-claims. These fields keep a well-formed request, a resolved address, an authorized materialization, and a verification-adequate packet from collapsing into one "context available" state.
+Verification bandwidth evaluates adequacy. A packet can be validly admitted
+and still inadequate for a high-risk claim. That distinction stays with
+`verification-bandwidth-and-context-adequacy`.
+
+Minimum ABI and certificate fields include:
+
+| Record family | Representative fields |
+|---|---|
+| Context ABI record | `request_id`, `task_id`, `semantic_address`, `version`, `mount`, `snapshot_id`, `representation_contract`, `authority_ceiling`, `admission_state`, `adequacy_state`, `fault_state`, `materialization_ref`, `lease_expiry`, `source_refs`, `residuals`, `audit_refs`, `non_claims` |
+| Semantic page certificate | `page_id`, `cell_type`, `source_bindings`, `derived_from`, `transaction_refs`, `artifact_refs`, `representation_kind`, `loss_contract`, `omissions`, `authority_ceiling`, `permitted_uses`, `validity_window`, `verification_state`, `revocation_state`, `residual_risks`, `non_claims` |
 
 ## Invariants
 
 - Addresses and versions are stable.
-- Context adequacy is distinct from admission.
-- Faults are typed and visible.
+- Source bindings survive representation changes.
+- Authority labels survive summarization.
+- Loss and permitted-use contracts are explicit.
+- Derived cells point back to source bindings.
+- Derived cells point to the transaction or artifact record that created the
+  representation when that record exists.
+- Context admission and context adequacy remain distinct.
+- Mandatory context misses produce typed faults rather than best-effort
+  packets.
+- Summaries cannot increase the authority ceiling of their source cells.
+- Revoked or stale certificates cannot be treated as current support.
 
-Address stability is what makes later verification possible: a claim should not depend on "whatever retrieval returned at the time." Snapshot validity is what makes context replay possible. Typed faults are what prevent missing context from being laundered into confident output.
-
-Non-widening materialization keeps compiled context from becoming ambient permission. A context packet cannot broaden authority, source scope, task scope, or permitted use relative to its request and mount policy. If downstream work needs more, it asks again.
-
-Lease expiry and permitted-use constraints travel with derived views, summaries, citations, and replay packets.
-
-Replay packets also preserve mount faults so later auditors can distinguish missing context from accepted context.
+Together, these invariants keep memory from turning into an untyped prompt
+append. A context packet may be useful, but usefulness is not enough. The stack
+must also know which source object it came from, which representation was
+chosen, which authority survived, which losses were declared, which uses are
+permitted, whether a lease or certificate has expired, and whether a typed fault
+should have blocked the packet before a model, worker, verifier, claim ledger,
+or reader artifact consumed it.
 
 ## Failure modes
 
-- Flat transcript memory.
-- Stale context.
-- Silent unsafe fit.
+Flat transcript memory treats all prior text as one undifferentiated source of
+truth.
 
-Flat transcript memory loses addresses, versions, and authority labels. Stale context makes a correct old answer look current. Silent unsafe fit is worse than denial because it feeds a worker context it should not see or use. Each should produce a typed fault or residual before the packet is used.
+Stale context lets an old version or revoked cell keep influencing work after
+its validity changed.
 
-Context lease drift is the ABI failure. A packet created for drafting or review is later reused for execution, citation, or self-improvement after its snapshot, authority, or adequacy assumptions no longer hold. The ABI should force a fresh request or residual.
+Summary overconfidence lets a lossy representation appear stronger than the
+source material it compressed.
 
-Fault compression weakens the same boundary when several typed context faults are summarized into one vague uncertainty note.
+Provenance loss severs a derived cell from the source bindings and omissions
+that explain what it can support.
+
+Authority escalation through compression lets a summary, redaction, or
+paraphrase carry more permission than its source.
+
+Unsafe fit happens when a packet is admitted because it is relevant but the
+authority, clearance, loss, or adequacy record should have blocked use.
+
+Adequacy laundering happens when a context packet adequate for orientation or
+drafting is reused as if it were adequate for claim support.
 
 ## Minimum Viable Implementation
 
-A context ABI table covering address, version, mount, snapshot, representation, adequacy states, and fault operations.
+The minimum viable implementation is not a full memory system. It is a public
+record surface that can represent the static ABI and reject a few dishonest
+collapses.
 
-The context ABI begins as a `context_abi_record` schema and fixture. It validates the shape of lifecycle state, request validity, address, version, mount, mount scope, snapshot, resolution validity, resolver policy, representation, authority, authority ceiling, materialization validity, admission, adequacy, adequacy requirement, fault, materialization, consumer policy, support boundary, lease expiry, replay boundary, source refs, residual, audit, support-state effect, and non-claim fields. The Lean work is confined to the ABI lookup boundary: finite context-reference records, snapshot bindings, and lookup records; a resolved reference must have a matching address, version, and snapshot binding; and a mandatory miss must produce a typed fault rather than a best-effort materialization.
+The implementation preserves:
 
-The record is an executable shape constraint. Real semantic-address resolver correctness, materialization adequacy, and deployed context-service fault coverage remain outside the Lean predicates.
+- `schemas/context_abi_record.schema.json`;
+- `schemas/semantic_page_certificate.schema.json`;
+- `schemas/context_packet.schema.json`;
+- `schemas/context_adequacy_record.schema.json`;
+- `schemas/context_transaction_record.schema.json`;
+- `experiments/context_admission_adequacy/fixtures/valid_local_check_public_context.json`;
+- `experiments/context_admission_adequacy/fixtures/valid_admitted_but_inadequate.json`;
+- `experiments/context_admission_adequacy/fixtures/valid_conflict_escalation.json`;
+- `experiments/context_admission_adequacy/fixtures/invalid_admission_as_verification.json`;
+- `experiments/context_admission_adequacy/fixtures/invalid_conflict_promoted.json`;
+- `experiments/context_admission_adequacy/fixtures/invalid_stale_certificate_use.json`;
+- `python3 scripts/validate_context_admission_adequacy.py`.
 
-A resolver fixture set would make the ABI's refusal paths visible: one valid request that resolves to a leased materialization, one mandatory miss that emits a typed fault, one resolved packet rejected for inadequate verification support, one packet denied by mount policy, and one lease-expired reuse attempt blocked. The set would test ABI semantics while leaving deployed VCM service behavior unclaimed.
+That MVI is useful because it tests the representation boundary. It does not
+prove that a real resolver can find the right context, that summaries are
+semantically faithful, that a model will use the packet correctly, or that a
+memory store enforces transactions.
+
+The next practical slice is a resolver fixture set: one valid request that
+resolves to a leased materialization, one mandatory miss that emits a typed
+fault, one resolved packet rejected as inadequate for verification, one packet
+denied by mount policy, and one lease-expired reuse attempt blocked. It would
+sharpen the ABI semantics without pretending to be a full memory product.
 
 ## Beyond the State of the Art
 
-The Virtual Context ABI reaches product form as the memory operating interface for long-horizon AI work. It is not a larger retrieval system. It is the stable syscall layer that lets planners, compilers, workers, verifiers, and auditors request context by address, version, mount, snapshot, representation need, authority label, adequacy target, and lease boundary.
+A mature Context ABI would make context behave like governed infrastructure
+rather than prompt decoration. Planners, compilers, workers, verifiers, claim
+ledgers, auditors, reader editions, and later AI agents would request and
+receive context through stable identities, explicit versions, permissioned
+representations, and typed refusal paths instead of anonymous retrieved text.
 
-With a real context ABI, a model never receives anonymous "relevant context." It receives a materialization receipt. The receipt says what was requested, what resolved, what representation was built, which authority labels apply, which uses are permitted, when the lease expires, whether the packet is adequate for the target claim, and which fault or residual remains. If any of those states are missing, the system asks, abstains, retries, escalates, or records a typed fault rather than hallucinating a usable memory view.
+In that mature system, a model never receives anonymous "relevant context." It
+receives a materialization receipt and typed cells. The receipt says what was
+requested, which address and version resolved, what representation was built,
+which authority labels survived, what was omitted, which uses are permitted,
+when the lease expires, which certificate applies, whether the packet is only
+admitted or also adequate for the target claim, and which fault or residual
+remains.
 
-A memory ABI needs:
+The endpoint is a governed context fabric: exact source excerpts, summaries,
+redactions, planning briefs, claim cells, contradiction pairs, reader
+paraphrases, and execution packets can all be materialized from shared sources
+without pretending they have the same authority or evidential role. The
+architecture should make context safer by making its boundaries explicit. It
+does not become validated until resolver behavior, certificate truthfulness,
+transaction semantics, verification adequacy, and model-facing outcomes are
+tested separately.
 
-- A resolver for semantic addresses, immutable versions, mounts, snapshots, and representation contracts.
-- A context compiler that emits leased materializations with authority labels, support boundaries, consumer policies, audit refs, and non-claims.
-- Typed fault behavior for missing, stale, conflicting, revoked, unauthorized, infeasible, unsafe, unknown, or inadequate context.
-- Admission/adequacy separation, so drafting-acceptable packets cannot silently become verification evidence.
-- Replay tools that reconstruct the exact context view used by a plan, job, claim, artifact, or release.
-
-This context ABI is still a design target. VCM interface support remains `argument` until resolver behavior, context-compiler traces, adequacy labels, conformance tests, and runtime audit records show what the model saw, why it was allowed to see it, what it was allowed to mean, and whether it was adequate for the work.
+At full maturity, this layer would feel less like prompt construction and more
+like an operating-system interface for context. A planner could request the
+least sufficient packet for a task; a verifier could reject a packet whose
+certificate is stale, lossy, or underpowered for the claim; a worker could
+receive a redacted instruction without inheriting broader authority; and an
+auditor could replay which context object reached which artifact. The ambitious
+end state is not infinite memory. It is governed materialization: every use of
+memory has an address, representation, certificate, lease, authority boundary,
+adequacy handoff, and typed refusal path.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Context ABI fixture validation | Check that the context ABI fixture includes lifecycle state, request, address, version, mount scope, snapshot, resolver policy, representation contract, authority ceiling, admission, adequacy requirement, fault, materialization, consumer policy, replay boundary, source refs, support-state effect, and audit fields. | implemented by protocol validation; validated locally |
-| Snapshot-bound reference predicate | Check that a resolved finite context-reference record has a matching address, version, and snapshot binding. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
-| Admission vs adequacy test | Check that admitted context can still be labeled inadequate for a target claim. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed adequacy-classifier claim |
-| Conflict adequacy classification test | Check that conflicting context emits a typed adequacy or fault state. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no conflict-adjudication claim |
+| Context ABI fixture validation | Check that the context ABI fixture declares lifecycle, request, address, version, mount, snapshot, resolver policy, representation, authority, admission, adequacy, fault, materialization, support boundary, source refs, support-state effect, audit refs, and non-claims. | implemented by protocol validation; validated locally |
+| Semantic page certificate fixture validation | Check that the semantic page certificate fixture declares source bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. | implemented by protocol validation; validated locally |
+| Address/version stability predicate | Check that a resolved finite context-reference record has a matching address, version, and snapshot binding. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
 | Mandatory-miss fault predicate | Check that mandatory misses produce typed faults instead of best-effort packets. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
-| Synthetic context fault harness | Check that non-success ABI states, stale certificates, and mode-confusion cases cannot become evidence-ready context. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver claim |
+| Derived-cell certificate predicate | Check that valid derived cells carry source bindings, a loss contract, and permitted uses. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
+| Authority preservation predicate | Check that summaries respecting their sources cannot increase the authority ceiling of source cells. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
+| Synthetic context admission/adequacy harness | Check that admission, adequacy, stale certificates, deletion closure, and mode-confusion cases cannot become evidence-ready context. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver or summary-fidelity claim |
 | Resolver conformance test | Check that a deployed resolver rejects invalid addresses, versions, mounts, and snapshots before materialization. | planned; not run |
-
-The fixture-shape check, finite-record proof predicates, and synthetic cross-record context harness are implemented. Resolver behavior, deployed adequacy classification, service-level fault emission, and context-compiler traces still require a concrete VCM service or deterministic resolver harness.
+| Certificate truthfulness test | Check that certificate declarations match paired source and derived cells. | planned; not run |
 
 ### Formalization hooks
 
@@ -251,30 +398,77 @@ The fixture-shape check, finite-record proof predicates, and synthetic cross-rec
 |---|---|---|---|
 | `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | implemented |
 | `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | implemented |
+| `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
+| `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
 
-These proof hooks are implemented only over finite Lean context-reference and lookup records. `AsiStackProofs.VirtualContextABI` checks that a resolved reference has a matching address, version, and snapshot binding, and that a mandatory miss emits a typed fault with no best-effort materialization. The proof does not implement a VCM resolver, adequacy classifier, snapshot service, or context compiler.
+These proof hooks are implemented only over finite Lean records. They check
+resolved-reference matching, mandatory-miss faulting, derived-cell field
+presence, and source-authority non-escalation. They do not prove open-domain
+source selection, semantic fidelity, deployed memory behavior, transaction
+isolation, deletion closure, or model use.
+
+Adjacent proof hooks remain with protected standalone chapters:
+`lean:vcm.transactions.operational_invariant`,
+`lean:vcm.transactions.failure_blocks_promotion`,
+`lean:verification_bandwidth.adequacy.operational_invariant`, and
+`lean:verification_bandwidth.adequacy.failure_blocks_promotion`.
+
+## External positioning
+
+The ABI argument uses external sources as comparators, not local reproduction
+evidence. RAG (`ext_rag_2020`) positions retrieval as explicit evidence
+supply; Lost in the Middle (`ext_lost_in_middle_2023`) and long-context
+benchmarks (`ext_longbench_2023`, `ext_ruler_2024`) position context capacity
+and attention-use limits; MemGPT (`ext_memgpt_2023`) positions memory as a
+managed system; ALCE (`ext_alce_2023`) positions citation support;
+Self-RAG (`ext_self_rag_2023`) positions retrieval/reflection decisions; and
+LongLLMLingua (`ext_longllmlingua_2023`) positions prompt-compression loss.
+The narrower contribution is the static ABI and certificate
+boundary that keeps those context objects from becoming anonymous prompt mass.
 
 ## Source crosswalk
 
-| Source ID | Title | Layer | Planned use | Readiness |
-|---|---|---|---|---|
-| `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache passage-reviewed |
-| `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache passage-reviewed |
-| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache passage-reviewed |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
-| `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| Source ID | Planned use | Readiness |
+|---|---|---|
+| `vcm_public` | Primary source for semantic objects, versions, representations, validations, packets, materializations, source/authority binding, adequacy/admission separation, semantic faults, semantic pages, certificates, and conformance boundaries. | source note available; local raw cache passage-reviewed |
+| `context_engineer` | Context supply-chain, need-to-know delivery, structured mission briefs, clearance fields, context shards, memory masks, allowed tools, and Digital SCIF pressure. | source note available; local raw cache passage-reviewed |
+| `verification_bandwidth` | Distinguishes admitted context from verification-adequate context and motivates explicit summary-loss and adequacy boundaries. | source note available; local raw cache passage-reviewed |
+| `viea` | Connects context materializations to command contracts, artifact graphs, specialist routing, permission envelopes, claim ledgers, residuals, runtime adapters, and feedback. | source note available; local raw cache passage-reviewed |
+| `spinoza` | Supplies claim/evidence cell pressure, proof/citation/procedure-carrying claim graphs, support tiers, contradiction revision, and tier non-upgrade rules. | source note available; local raw cache passage-reviewed |
+| `vcm_editable` | Connector-readable refinement for stable addresses, mounts, snapshots, task-relative representation graphs, certificates, protected compilation, and planner-guided semantic paging. | source note available; connector/source-note mapped |
+| `moecot` | Runtime-reference context for governed orchestration, fail-closed ledgers, replay, handoffs, readiness gates, promotion blockers, and residual tracking. | source note available; connector/source-note mapped |
 
-The VCM source set anchors the ABI and context-supply-chain vocabulary. Four mappings have passage review, but the core claim stays at `argument` because connector mappings remain unreviewed and resolver behavior, adequacy classification, context compilation, VCM conformance artifacts, model-facing results, and benchmark claims remain unpromoted.
+The mappings support static context ABI and certificate vocabulary. They do not
+support claims of resolver correctness, summary fidelity, certificate
+truthfulness, contradiction-rate improvement, context compiler performance,
+memory-store behavior, or model-facing context quality.
 
 ## Summary
 
-The Virtual Context ABI is the memory/context contract. It keeps durable memory separate from working context while making addresses, versions, mounts, snapshots, representation contracts, authority, adequacy, faults, materializations, and audits explicit.
+The Virtual Context ABI is the static interface between durable memory and
+model-visible context. It gives context a stable identity before the stack uses
+it. A context packet should say where it came from, which version it
+represents, what type of cell it is, what was omitted, which authority
+survived, which uses are permitted, whether the packet is admitted or adequate,
+and which fault or residual remains.
 
-The rule is simple: context that cannot be addressed, versioned, authorized, represented, and faulted should not be silently treated as usable memory. The materialized packet then needs internal rules for what each page, cell, and summary must carry so compressed context does not impersonate evidence.
+Typed pages and representation certificates are not an optional second idea.
+They are what make the ABI meaningful. Without them, stable addresses can
+still deliver anonymous prompt material. With them, the stack can distinguish
+exact evidence from lossy summaries, redacted execution context, claim cells,
+planning briefs, and reader paraphrases.
 
-Context access should be replayable. If a future auditor cannot reconstruct why the model saw a packet, what it was allowed to mean, and when its authority expired, the ABI did not do its job. This is one of the central differences between ordinary context engineering and governed context. The goal is not simply to fit more material into a prompt or retrieve more relevant snippets. The goal is to make context an authorized, versioned, lossy-or-lossless, evidence-bounded object whose misuse can be detected. Only then can memory support planning, verification, tool use, and self-improvement without becoming an invisible source of overconfidence.
+The boundary remains narrow: the static context interface is separate from
+transactional memory behavior, deletion closure, taint propagation,
+verification bandwidth, and claim-ledger belief revision. Those remain separate
+chapters with their own proof and evidence lanes.
 
 ## Handoff
 
-The ABI names memory handles and access rules, but the materialized context still has to carry provenance, compression loss, authority, and permitted uses at a smaller unit of work. Semantic Pages, Context Cells, and Certificates gives those packets internal structure. It turns retrieved or compressed material into inspectable cells whose evidence limits can travel with the representation instead of disappearing into prompt text.
+The next layer is dynamic context behavior. Once the stack has typed context
+objects with addresses and certificates, it needs to explain how those objects
+change over time: which events are committed, which snapshot is visible, which
+mount is readable, which branch was used, which derivatives were created, how
+taint propagates, and how deletion or declassification obligations close.
+
+That is the job of **Context Transactions, Snapshots, Mounts, and Taint**.

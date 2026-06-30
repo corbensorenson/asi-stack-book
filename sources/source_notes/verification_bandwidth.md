@@ -43,8 +43,7 @@ Verification Bandwidth argues that long context should not be confused with long
 ## Book Chapters Supported
 
 - `evidence-states-and-claim-discipline` (Evidence States and Claim Discipline)
-- `virtual-context-abi` (Virtual Context ABI)
-- `semantic-pages-context-cells-and-certificates` (Semantic Pages, Context Cells, and Certificates)
+- `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `spinoza-verification-and-proof-carrying-claims` (Spinoza Verification and Proof-Carrying Claims)
 - `unified-adaptive-tribunal-and-adversarial-review` (Unified Adaptive Tribunal and Adversarial Review)

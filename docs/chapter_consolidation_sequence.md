@@ -16,14 +16,15 @@ re-consolidation: fewer deeper chapter-owning artifacts, with every useful idea
 preserved as a section, subclaim, source mapping, proof hook, reader path,
 implementation horizon, or explicit retirement decision.
 
-The Part I pilot, the conservative compression merge, the intent/contracts merge, the MoECOT runtime
-fold, and the simulation-fidelity fold have now executed through
-`book_structure.json`; the current canonical book has 48 manifest chapters. The remaining candidate packages still
+The Part I pilot, the conservative compression merge, the intent/contracts
+merge, the MoECOT runtime fold, the simulation-fidelity fold, and the static
+context ABI merge have now executed through `book_structure.json`; the current
+canonical book has 47 manifest chapters. The remaining candidate packages still
 require their own package-specific decision and execution commit before any
 further manifest change. This is not a support-state transition. The current
-canonical count is 48 manifest chapters after the executed Part I pilot,
-conservative compression merge, intent/contracts merge, MoECOT runtime fold, and simulation-fidelity
-fold.
+canonical count is 47 manifest chapters after the executed Part I pilot,
+conservative compression merge, intent/contracts merge, MoECOT runtime fold,
+simulation-fidelity fold, and static context ABI merge.
 
 ## Decision Boundary
 
@@ -87,17 +88,17 @@ Accepted into the roadmap:
   constitutional-alignment plus agency/corrigibility, and consolidate moral
   uncertainty plus fork/exit/audit governance, if review accepts the destination
   drafts.
-- Compression, intent/contracts, static context ABI, verification/adversarial
-  review, and planning/DAG control are real merge candidates because they
-  currently carry overlapping source families, claim motions, and chapter
-  skeletons.
+- Verification/adversarial review and planning/DAG control remain real merge
+  candidates because they currently carry overlapping source families, claim
+  motions, and chapter skeletons.
 - Semantic representation remains a fold candidate, not a deletion target. The
   MoECOT runtime fold has executed into a named runtime crosswalk inside
   Routing Heads and Specialist Cores, the simulation-fidelity fold has
   executed into a named Simulation Fidelity and Claim Transport section inside
-  Resource Economics and Token Budgets, and the intent/contracts merge has
-  executed into Command Contracts: From Intent to Executable Work. These
-  executed packages preserve source mappings,
+  Resource Economics and Token Budgets, the intent/contracts merge has
+  executed into Command Contracts: From Intent to Executable Work, and the
+  static context ABI merge has executed into The Virtual Context ABI: Typed
+  Pages, Cells, and Certificates. These executed packages preserve source mappings,
   proof hooks, implementation-horizon facets, restoration conditions, and
   no-support-state-change boundaries.
 - The 44-chapter aggressive shape and roughly 47-chapter conservative shape
@@ -165,15 +166,16 @@ It records no accepted external review and no support-state effect.
 `deferred_for_release` reader-work outcome for every unexecuted review-ready or
 fold-disposition package in the current queue. It now applies to the remaining
 unexecuted packages only. The reader-curation cycle continues against the
-48-chapter manifest with explicit consolidation caveats while preserving every
+47-chapter manifest with explicit consolidation caveats while preserving every
 unexecuted package for later human or external review.
 
 The public URL/history precondition now has a policy surface:
 `docs/chapter_consolidation_url_history_policy.md`. It sets the default
 continuity URL, retired URL, redirect or historical-stub, and chapter-history
 ledger requirements for future execution commits. It has now been applied to
-the Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, and
-simulation-fidelity fold through static historical stubs and
+the Part I pilot, conservative compression merge, intent/contracts merge,
+MoECOT runtime fold, simulation-fidelity fold, and static context ABI merge
+through static historical stubs and
 `docs/chapter_history_ledger.md`; it
 remains the policy for future unexecuted packages.
 
@@ -224,7 +226,7 @@ merge lowers the chapter count.
 | Part I value conflict and contestable governance | `executed` | Use as the template for future one-package execution commits. | Reader work should target the consolidated destination chapter. |
 | Compression and residual honesty | `executed` | Use the conservative merge as the template for future packages; keep RankFold/NeuralFold standalone unless later evidence changes its artifact ownership. | Reader work should target the merged compact-generative destination plus the retained RankFold technique chapter. |
 | Intent and executable contracts | `executed` | Use the executed merge as the template for future one-skeleton packages; restore a standalone command-contract chapter only if parser, dispatcher, approval-enforcement, or semantic-interface evidence makes it chapter-owning again. | Reader work should target Command Contracts: From Intent to Executable Work; the archived standalone command-contract reader draft remains historical only. |
-| Static context ABI | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the static ABI pair unless explicitly deferred or retained; reader curation may continue on protected adjacent chapters. |
+| Static context ABI | `executed` | Use the executed merge as the template for future one-skeleton context packages; restore a standalone semantic-pages chapter only if paired source/derived cells, certificate truthfulness tests, summary-fidelity tests, or independent interoperability evidence makes it chapter-owning again. | Reader work should target The Virtual Context ABI: Typed Pages, Cells, and Certificates; the archived semantic-pages reader draft remains historical only. |
 | Verification and adversarial review | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the verification/review pair unless explicitly deferred or retained; reader curation may continue on claim ledgers. |
 | Planning and DAG control | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the planning/DAG pair unless explicitly deferred or retained; reader curation may continue on semantic IR. |
 | Source-blocked MoECOT runtime | `executed` | Use the executed fold as the template for future source-blocked fold packages; restore a standalone chapter only if public-safe runtime, replay, benchmark, and corroboration evidence makes it chapter-owning. | Reader work should target Routing Heads and Specialist Cores plus the folded MoECOT Runtime Crosswalk; the archived standalone reader draft remains historical only. |
@@ -247,7 +249,7 @@ blocked until the revision is reviewed.
 | 2 | Part I value conflict and contestable governance | Executed on 2026-06-30. | Retired governance-rights slug preserved through historical stub; source chapter archived; no support-state change. |
 | 3 | Compression and residual honesty | Conservative merge executed on 2026-06-30. | Retired GVR slug preserved through historical stub; source chapter archived; RankFold/NeuralFold retained as standalone technique chapter; no support-state change. |
 | 4 | Intent and executable contracts | Executed on 2026-06-30. | Retired command-contract slug preserved through historical stub; source chapter archived; `human-intent-as-a-formal-input` retained as intent intake; no support-state change. |
-| 5 | Static context ABI | Execute, revise, defer, or reject. | Keep transaction/snapshot/taint and verification-bandwidth chapters standalone unless later review changes artifact ownership. |
+| 5 | Static context ABI | Executed on 2026-06-30. | Retired semantic-pages slug preserved through historical stub; source chapter and curated reader draft archived; transaction/snapshot/taint and verification-bandwidth chapters retained standalone; no support-state change. |
 | 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep `claim-ledgers-and-belief-revision` as the durable belief-revision substrate. |
 | 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep `cognitive-compilation-and-semantic-ir` as the semantic-IR and lowering-receipt layer. |
 | 8 | Fold-disposition candidates | Execute fold, revise, defer, or reject/retain. | MoECOT runtime has executed into Routing Heads and Specialist Cores; simulation fidelity has executed into Resource Economics and Token Budgets; semantic representation still has a fold disposition and requires review and decision before any manifest edit. |
@@ -298,7 +300,7 @@ throughline that justifies keeping the separate chapter boundary.
 | 1A | Value conflict and contestable governance | `moral-uncertainty-and-value-conflict`; `governance-rights-fork-exit-and-audit` | **Moral Uncertainty, Value Conflict, and Contestable Governance** | Preserve value-conflict records, fork/exit/audit/redaction/appeal interfaces, dissent/revisit paths, both Lean modules, all proof tags, and source unions. |
 | 1B | Compression and residual honesty | `compact-generative-systems-and-residual-honesty`; `generate-verify-repair-compression`; `rankfold-neuralfold-and-artifact-compression` | **Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty** | Preserve the compact-generator principle, GVR loop, RankFold/NeuralFold technique, residual honesty, compression limits, source unions, proof hooks, and implementation horizons. Conservative option: keep `rankfold-neuralfold-and-artifact-compression` standalone if it still owns a concrete technique. |
 | 1C | Intent and executable contracts | `intent-to-execution-contracts`; `command-contracts-and-semantic-interfaces` | Executed: merged command-contract semantic-interface material into **Command Contracts: From Intent to Executable Work** while keeping `human-intent-as-a-formal-input` separate. | Preserved intent-to-contract conversion, semantic interface rules, authority fields, execution receipts, validation states, field provenance/confidence, test hooks, proof tags, source mappings, URL stub, archive record, and no-support-state-change boundary. |
-| 1D | Static context ABI | `virtual-context-abi`; `semantic-pages-context-cells-and-certificates` | **The Virtual Context ABI: Typed Pages, Cells, and Certificates** | Preserve pages, cells, certificates, context addressing, source unions, proof hooks, and implementation horizons. Keep `context-transactions-snapshots-mounts-and-taint` and `verification-bandwidth-and-context-adequacy` separate. |
+| 1D | Static context ABI | `virtual-context-abi`; `semantic-pages-context-cells-and-certificates` | Executed: merged semantic-pages and context-cell certificate material into **The Virtual Context ABI: Typed Pages, Cells, and Certificates** while keeping `context-transactions-snapshots-mounts-and-taint` and `verification-bandwidth-and-context-adequacy` separate. | Preserved pages, cells, certificates, context addressing, source unions, proof hooks, implementation horizons, URL stub, archive record, and no-support-state-change boundary. |
 | 2A | Verification and adversarial review | `spinoza-verification-and-proof-carrying-claims`; `unified-adaptive-tribunal-and-adversarial-review` | **Proof-Carrying Claims and Adversarial Review** | Preserve proof-carrying claim tiers, tribunal review, adversarial dossiers, dissent, no-theorem-laundering boundaries, proof hooks, harness rows, and source unions. Keep `claim-ledgers-and-belief-revision` separate. |
 | 2B | Planning and DAG control | `planning-as-a-control-layer`; `planforge-dags-and-intelligence-arbitrage` | **Planning as a Control Layer: DAGs and Intelligence Arbitrage** | Preserve control-layer semantics, PlanForge DAGs, intelligence arbitrage, negative cases, proof hooks, and source unions. Keep `cognitive-compilation-and-semantic-ir` separate unless later review shows the IR has no independent chapter ownership. |
 | 2C | Source-blocked MoECOT runtime | `moecot-runtime-and-multi-core-orchestration`; `routing-heads-and-specialist-cores` | Executed: folded MoECOT runtime into Routing Heads and Specialist Cores until public-safe runtime, replay, benchmark, and corroboration evidence makes a standalone chapter chapter-owning again. | Preserved the multi-core orchestration runtime as the named MoECOT Runtime Crosswalk, source queue, proof tags, schema/fixture lane, blocker set, URL stub, archive record, and future chapter-restoration condition. |
@@ -401,6 +403,7 @@ The current allowed protected-reader set is:
 - `stable-capability-fields`
 - `capability-replacement-and-rollback`
 - `readiness-gates-residual-escrow-and-quarantine`
+- `virtual-context-abi`
 - `context-transactions-snapshots-mounts-and-taint`
 - `verification-bandwidth-and-context-adequacy`
 - `claim-ledgers-and-belief-revision`
@@ -430,16 +433,10 @@ decisions change the downstream destination shape.
 
 The current deferred-for-release reader-work set is:
 
-- `constitutional-alignment-substrate`
-- `moral-uncertainty-and-value-conflict`
 - `planning-as-a-control-layer`
 - `planforge-dags-and-intelligence-arbitrage`
-- `virtual-context-abi`
-- `semantic-pages-context-cells-and-certificates`
 - `spinoza-verification-and-proof-carrying-claims`
 - `unified-adaptive-tribunal-and-adversarial-review`
-- `compact-generative-systems-and-residual-honesty`
-- `rankfold-neuralfold-and-artifact-compression`
 - `semantic-representation-and-tree-structured-models`
 
 Any curated reader prose pass for pending-package chapters must cite
@@ -472,16 +469,16 @@ destination chapter when it needs historical context.
   remains historical review/control lineage, not source evidence and not a
   support-state transition.
 - `docs/chapter_consolidation_dry_run_context_abi.md` records the Tier 1D
-  dry-run package for the static context ABI cluster. It does not edit
-  `book_structure.json`, authorize a manifest merge, or move support states.
-  It keeps `context-transactions-snapshots-mounts-and-taint`,
+  dry-run package for the static context ABI cluster. It has now executed
+  through the 2026-06-30 static context ABI merge package. It kept
+  `context-transactions-snapshots-mounts-and-taint`,
   `verification-bandwidth-and-context-adequacy`, and
   `claim-ledgers-and-belief-revision` standalone.
 - `docs/chapter_consolidation_destination_draft_context_abi.md` records the
   one-skeleton destination draft for **The Virtual Context ABI: Typed Pages,
-  Cells, and Certificates**. It is review-ready but not reviewed, not
-  canonical, and not a manifest edit. The next decision is execute, revise,
-  defer, or reject.
+  Cells, and Certificates**. It is now canonical through the executed merge;
+  the draft remains historical review/control lineage, not source evidence and
+  not a support-state transition.
 - `docs/chapter_consolidation_dry_run_verification_review.md` records the Tier
   2A dry-run package for the verification and adversarial-review cluster. It
   does not edit `book_structure.json`, authorize a manifest merge, or move
@@ -522,6 +519,23 @@ packages that have already changed the manifest.
   `schemas/command_contract.schema.json`,
   `schemas/intent_execution_trace.schema.json`, the plan-execution contract
   harness, source unions, external comparator unions, reader-overlay repairs,
+  URL/history policy, restoration conditions, and the no-support-state-change
+  boundary.
+
+- `docs/chapter_consolidation_dry_run_context_abi.md` and
+  `docs/chapter_consolidation_destination_draft_context_abi.md` record the
+  executed merge package for `semantic-pages-context-cells-and-certificates`
+  into **The Virtual Context ABI: Typed Pages, Cells, and Certificates**. It is
+  now executed through the 2026-06-30 static context ABI merge package. The
+  retired public slug is preserved with a static historical stub, the live
+  source manuscript and curated reader draft are archived, and the current
+  canonical route for reader and research work is `virtual-context-abi`. It
+  preserves `AsiStackProofs.VirtualContextABI`,
+  `AsiStackProofs.ContextCertificates`,
+  `schemas/context_abi_record.schema.json`,
+  `schemas/semantic_page_certificate.schema.json`,
+  `schemas/context_packet.schema.json`, the context admission/adequacy harness,
+  source unions, external comparator unions, reader repair requirements,
   URL/history policy, restoration conditions, and the no-support-state-change
   boundary.
 
@@ -574,10 +588,11 @@ packages that have already changed the manifest.
 ## Non-Claims
 
 - This sequence records the executed Part I pilot, conservative compression
-  merge, intent/contracts merge, MoECOT runtime fold, and simulation-fidelity
-  fold and does not merge any remaining package by itself.
+  merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold,
+  and static context ABI merge and does not merge any remaining package by
+  itself.
 - This sequence reflects the 2026-06-30 Part I, compression,
-  intent/contracts, MoECOT, and simulation-fidelity manifest changes and does
+  intent/contracts, MoECOT, simulation-fidelity, and static context ABI manifest changes and does
   not authorize any further `book_structure.json` change by itself.
 - Exact boundary: this sequence does not authorize any further `book_structure.json` change.
 - This sequence does not change Appendix C support states.

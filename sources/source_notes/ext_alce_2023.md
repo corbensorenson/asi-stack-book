@@ -36,7 +36,7 @@ ALCE belongs in the VCM, verification-bandwidth, claim-ledger, and benchmark cha
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` (Virtual Context ABI)
+- `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `claim-ledgers-and-belief-revision` (Claim Ledgers and Belief Revision)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)

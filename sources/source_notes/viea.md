@@ -46,7 +46,7 @@ VIEA frames advanced AI as an intent-to-execution system rather than a response 
 - `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
 - Planning as a Control Layer
 - Cognitive Compilation and Semantic IR
-- Virtual Context ABI
+- The Virtual Context ABI: Typed Pages, Cells, and Certificates (`virtual-context-abi`)
 - Claim Ledgers and Belief Revision
 - Labor OS and Typed Jobs
 - Artifact Graphs, Audit Logs, and Replay

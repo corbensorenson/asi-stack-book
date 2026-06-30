@@ -4,7 +4,7 @@ Last updated: 2026-06-28
 
 This note records the first release-grade chapter-text review pass for the
 generated v1.0 reader manuscript. It reviews the opening three generated reader
-chapters end to end. It is not a full 54-chapter reader release review, not an
+chapters end to end. It is not a full reader release review, not an
 artifact layout review, and not an edition release record.
 
 ## Source State

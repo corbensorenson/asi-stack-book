@@ -12,13 +12,13 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 48 |
+| review_status:reviewed | 47 |
 | disposition:companion_note_candidate | 3 |
-| disposition:curated_manuscript_candidate | 45 |
-| disposition:no_immediate_action | 48 |
+| disposition:curated_manuscript_candidate | 44 |
+| disposition:no_immediate_action | 47 |
 | disposition:reader_overlay_active | 20 |
-| release_blocker:format_artifact_not_reviewed | 48 |
-| release_blocker:reader_release_record_not_created | 48 |
+| release_blocker:format_artifact_not_reviewed | 47 |
+| release_blocker:reader_release_record_not_created | 47 |
 
 ## Chapter Queue
 
@@ -41,7 +41,6 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part II - Planning, Memory, Reasoning, and Execution | `planforge-dags-and-intelligence-arbitrage` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `cognitive-compilation-and-semantic-ir` | reviewed | full_chapter_review | 0 | no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `virtual-context-abi` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `semantic-pages-context-cells-and-certificates` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `context-transactions-snapshots-mounts-and-taint` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `verification-bandwidth-and-context-adequacy` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `claim-ledgers-and-belief-revision` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |

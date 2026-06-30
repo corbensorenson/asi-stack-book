@@ -153,33 +153,6 @@
       ]
     },
     {
-      "claim_id": "semantic-pages-context-cells-and-certificates.core",
-      "chapter_id": "semantic-pages-context-cells-and-certificates",
-      "chapter_title": "Semantic Pages, Context Cells, and Certificates",
-      "decision": "no_promotion",
-      "current_support_state": "argument",
-      "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and finite certificate hooks, but no resolver implementation, certificate checker run, summary-fidelity benchmark, or context-cell interoperability test has been accepted.",
-      "required_evidence": [
-        "context-cell certificate checker",
-        "summary-fidelity and omission tests",
-        "interoperability or replay packet"
-      ],
-      "blockers": [
-        "no VCM resolver trace",
-        "no certificate truthfulness evaluation",
-        "no model-facing adequacy result"
-      ],
-      "non_claims": [
-        "does not prove context representation adequacy",
-        "does not prove summary fidelity"
-      ],
-      "refs": [
-        "chapters/semantic-pages-context-cells-and-certificates.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#semantic-pages-context-cells-and-certificates.core"
-      ]
-    },
-    {
       "claim_id": "context-transactions-snapshots-mounts-and-taint.core",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "chapter_title": "Context Transactions, Snapshots, Mounts, and Taint",

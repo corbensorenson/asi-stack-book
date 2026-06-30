@@ -4,7 +4,7 @@ Last updated: 2026-06-28
 
 This note records the second release-grade chapter-text review pass for the
 generated v1.0 reader manuscript. It reviews the failure, evidence, and intent
-boundary sequence end to end. It is not a full 54-chapter reader release review,
+boundary sequence end to end. It is not a full reader release review,
 not an artifact layout review, and not an edition release record.
 
 ## Source State
@@ -50,7 +50,8 @@ not approve the HTML, EPUB, DOCX, PDF, or audio outputs.
 
 ## Residuals
 
-- The remaining 48 chapters still need full chapter-text review.
+- The current 47 active chapters still need format-level artifact review before
+  any reader release can be approved.
 - The reviewed chapters still need artifact layout/navigation review in the
   intended release formats before they can be listed in a release record.
 - A future curated reader manuscript may still revise these chapters for prose

@@ -32,7 +32,7 @@ This note records manual decisions made after reading the medium-priority rows f
 
 The three medium-priority heuristic rows have been read and classified. The audit can continue to show the same rows because it measures density and length mechanically; the manual decision is that they are not current blockers for the generated reader path.
 
-The remaining Phase 2 work is the full chapter-by-chapter continuity pass across the 54-chapter reader manuscript, with special attention to the low-priority rows that are dense, long, or central to later release artifacts.
+The remaining Phase 2 work is the full chapter-by-chapter continuity pass across the current reader manuscript, with special attention to the low-priority rows that are dense, long, or central to later release artifacts.
 
 ## Non-Claims
 

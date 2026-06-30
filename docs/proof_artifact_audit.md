@@ -14,7 +14,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Manifest status counts | {"implemented": 112} |
 | Triage class counts | {"formal-invariant": 112} |
 | Lean modules referenced | 54 |
-| Chapters with proof targets | 48 |
+| Chapters with proof targets | 47 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -129,7 +129,6 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `routing-heads-and-specialist-cores` | 4 | 4 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 2 | 2 | 0 | 0 |
-| `semantic-pages-context-cells-and-certificates` | 2 | 2 | 0 | 0 |
 | `semantic-representation-and-tree-structured-models` | 2 | 2 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 2 | 2 | 0 | 0 |
 | `stable-capability-fields` | 2 | 2 | 0 | 0 |
@@ -137,7 +136,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `the-efficient-asi-hypothesis` | 2 | 2 | 0 | 0 |
 | `unified-adaptive-tribunal-and-adversarial-review` | 2 | 2 | 0 | 0 |
 | `verification-bandwidth-and-context-adequacy` | 2 | 2 | 0 | 0 |
-| `virtual-context-abi` | 2 | 2 | 0 | 0 |
+| `virtual-context-abi` | 4 | 4 | 0 | 0 |
 
 ## Target Trace
 
@@ -183,8 +182,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:cognitive_compilation.ir.failure_blocks_promotion` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.abi.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.abi.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.certificates.operational_invariant` | `semantic-pages-context-cells-and-certificates` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:vcm.certificates.failure_blocks_promotion` | `semantic-pages-context-cells-and-certificates` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.certificates.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.certificates.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.transactions.operational_invariant` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.transactions.failure_blocks_promotion` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:verification_bandwidth.adequacy.operational_invariant` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |

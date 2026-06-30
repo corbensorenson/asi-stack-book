@@ -1122,60 +1122,71 @@ Lean proof targets:
 | `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilation` | A compiled artifact preserves all required IR obligations. | implemented |
 | `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilation` | A repair that invalidates an existing obligation cannot be accepted without updating the ledger. | implemented |
 
-### Virtual Context ABI
+### The Virtual Context ABI: Typed Pages, Cells, and Certificates
 
 Stable ID: `virtual-context-abi`
 
-Chapter job: Long-horizon agents need a stable interface between durable memory and model-visible working context.
+Chapter job: Long-horizon agents need a stable context interface whose addresses, versions, materializations, typed pages, context cells, certificates, authority labels, loss contracts, adequacy states, and faults remain inspectable across planning, reasoning, execution, and audit.
 
-Core claim: Virtual Context Memory should expose a Virtual Context ABI with stable addresses, versions, mounts, snapshots, fault classes, representation contracts, and lifecycle operations.
+Core claim: Virtual Context Memory should expose a Virtual Context ABI that materializes typed pages and context cells with stable addresses, versions, certificates, authority ceilings, loss/use contracts, adequacy states, residuals, and typed faults.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `vcm_public` | Read first for chapter claims and mechanisms. |
-| Supporting | `context_engineer`, `verification_bandwidth`, `viea` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| Connector or recovery required | `vcm_editable`, `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+| Primary | `vcm_public` | Read first for the ABI, semantic-page, certificate, admission, adequacy, and typed-fault vocabulary. |
+| Supporting | `context_engineer`, `verification_bandwidth`, `viea`, `spinoza` | Mine after primary sources for context supply-chain pressure, verification-capacity limits, execution-spine connections, and claim/evidence cell boundaries. |
+| Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
 
 Draft arc:
 
-- Problem: Long-horizon agents need a stable interface between durable memory and model-visible working context.
-- Insufficiency: Long context windows and ordinary retrieval do not define addressability, evidence, authority, adequacy, or fault behavior.
-- Mechanism: Separate durable memory from active context.
-- Mechanism: Compile task-relative context packets through an ABI.
-- Mechanism: Report adequacy outcomes such as adequate, missing, conflicting, unsafe, unknown, or unsatisfiable.
-- Mechanism: Expose unsafe, unknown, or unsatisfied context states rather than hiding them.
-- Mechanism: Separate request validity, resolution validity, materialization validity, and adequacy validity so well-formed requests, resolved references, authorized packets, and verification-adequate packets remain distinct states.
-- Mechanism: Emit context receipts with request, resolution, materialization, authority labels, support boundary, lease expiration, fault state, and residuals for replayable audits.
-- Mechanism: Preserve request validity, resolution validity, materialization validity, support boundary, lease expiry, residuals, and non-claims so "context available" cannot collapse request, authority, and adequacy into one state.
-- Interface: Planning requests context.
-- Interface: VCM compiles packets.
-- Interface: Execution receives authority-appropriate context.
+- Problem: Long-horizon agents need a stable context interface whose addresses, versions, materializations, typed pages, context cells, certificates, authority labels, loss contracts, adequacy states, and faults remain inspectable across planning, reasoning, execution, and audit.
+- Insufficiency: Long context windows, retrieval systems, and summaries can move text close to a model without defining stable addressability, representation authority, source bindings, omission records, permitted uses, adequacy boundaries, or typed failure behavior.
+- Mechanism: Resolve context requests through address, version, mount, snapshot, representation need, authority ceiling, adequacy target, consumer policy, lease, and typed fault behavior.
+- Mechanism: Represent materialized context as typed pages or cells: constraints, claims, decisions, corrections, events, artifacts, exact excerpts, lossy summaries, redactions, abstractions, translations, and derived inferences.
+- Mechanism: Attach representation certificates with source refs, omissions, loss contracts, permitted uses, authority ceilings, validity state, revocation state, transaction refs, artifact refs, residual risks, and non-claims.
+- Mechanism: Separate request validity, resolution validity, materialization validity, admission validity, and adequacy validity so context availability cannot become evidence readiness.
+- Mechanism: Treat certificate updates, revocations, stale certificates, and attempted use outside the certificate as auditable state transitions rather than prose edits.
+- Mechanism: Preserve a static-versus-dynamic boundary: this chapter owns address/cell/certificate shape; `context-transactions-snapshots-mounts-and-taint` owns transaction, branch, taint, deletion, and declassification semantics.
+- Mechanism: Preserve an admission-versus-verification boundary: this chapter can record admitted context; `verification-bandwidth-and-context-adequacy` owns whether admitted context is adequate for a target claim.
+- Interface: Planning requests context by task, address, authority, representation need, and adequacy target.
+- Interface: VCM materializes packets and cells with static address, version, certificate, source-ref, authority, loss, use, lease, residual, and fault fields.
+- Interface: Spinoza and claim ledgers consume claim/evidence cells without treating certificates as support-state decisions.
+- Interface: Execution consumes only permitted representations.
+- Interface: Artifact graphs store certificate references when context-derived representations become durable work products.
 
 Primary invariants:
 
 - Addresses and versions are stable.
-- Context adequacy is distinct from admission.
-- Faults are typed and visible.
+- Source bindings survive representation changes.
+- Authority labels survive summarization.
+- Loss and permitted-use contracts are explicit.
+- Derived cells point back to source bindings.
+- Context admission and context adequacy remain distinct.
+- Mandatory context misses produce typed faults rather than best-effort packets.
+- Summaries cannot increase the authority ceiling of their source cells.
+- Revoked or stale certificates cannot be treated as current support.
 
 Failure modes to cover:
 
 - Flat transcript memory.
 - Stale context.
-- Silent unsafe fit.
+- Summary overconfidence.
+- Provenance loss.
+- Authority escalation through compression.
+- Unsafe fit.
+- Adequacy laundering.
+- Certificate laundering.
 
 Draft deliverables:
 
-- A context ABI table covering lifecycle state, request validity, address, version, mount scope, snapshot, resolution validity, resolver policy, representation, authority ceiling, materialization validity, adequacy requirement, consumer policy, support boundary, lease expiry, replay boundary, source refs, residuals, and fault operations.
-- Implemented protocol validation: `context_abi_record` fixture validates public record shape, lifecycle state, resolver policy, mount scope, authority ceiling, adequacy requirement, replay boundary, source refs, support-state effect, and non-claims only.
-- Implemented Lean proof target: resolved finite context-reference records require matching address, version, and snapshot bindings.
-- Exact Appendix C claim-source mappings for the Virtual Context ABI claim across VCM public-v1 control-plane/ABI vocabulary, Context Engineer context-supply-chain pressure, Verification Bandwidth adequacy limits, VIEA context allocation and execution-spine integration, editable VCM refinement context, and MoECOT runtime-reference context; the four local mappings (`vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`) now have reviewed passage references. `vcm_editable` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, conformance artifacts, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending resolver behavior, adequacy classification, context compiler traces, VCM conformance artifacts, model-facing results, benchmark reproduction, or accepted evidence transitions.
-- Implemented synthetic Codex test: Admission vs adequacy test via `python3 scripts/validate_context_admission_adequacy.py`; deployed adequacy classifier remains open.
-- Implemented synthetic Codex test: Conflict adequacy classification test via `python3 scripts/validate_context_admission_adequacy.py`; conflict adjudication remains open.
-- Implemented Lean proof target: mandatory context misses produce typed faults instead of best-effort packets.
-- Implemented synthetic Codex test: Context fault behavior test via `python3 scripts/validate_context_admission_adequacy.py`; deployed resolver conformance remains open.
-- Planned Codex test: deployed resolver conformance test.
+- A merged static ABI/certificate chapter that preserves context ABI records and semantic page certificates as one interface skeleton rather than two repeated context chapters.
+- Implemented protocol validation: `context_abi_record` and `semantic_page_certificate` fixtures validate public record shapes only, including lifecycle, request, address, version, mount, snapshot, representation, authority, admission, adequacy, fault, source bindings, derivation, loss contract, permitted uses, revocation state, support-state effect, residuals, and non-claims.
+- Exact Appendix C claim-source mappings for `virtual-context-abi.core` across VCM public-v1, Context Engineer, Verification Bandwidth, VIEA, Spinoza, editable VCM, and MoECOT; the local raw-cache mappings are passage-reviewed where available, while connector-only sources remain bounded.
+- Folded-history preservation for `semantic-pages-context-cells-and-certificates.core` as a subclaim about typed pages, context cells, representation certificates, source bindings, omissions, authority ceilings, loss contracts, and permitted uses.
+- Implemented synthetic Codex tests: admission versus adequacy, conflict adequacy classification, context fault behavior, stale certificate rejection, and admission-as-verification rejection via `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver, memory store, summary fidelity, certificate truthfulness, model-facing context, or VCM-Bench result is claimed.
+- Planned Codex tests: resolver conformance, summary-fidelity evaluator, certificate truthfulness checker, and paired source/derived-cell omission audit.
+- Historical treatment: `semantic-pages-context-cells-and-certificates` is archived and redirected to `virtual-context-abi`; the old chapter can be restored only if paired source/derived cells, certificate truthfulness tests, summary-fidelity tests, or independent interoperability evidence make it chapter-owning again.
 
 Lean proof targets:
 
@@ -1183,65 +1194,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | implemented |
 | `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | implemented |
-
-### Semantic Pages, Context Cells, and Certificates
-
-Stable ID: `semantic-pages-context-cells-and-certificates`
-
-Chapter job: Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.
-
-Core claim: VCM should represent context as typed semantic pages or cells with evidence-carrying representation certificates.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `vcm_public` | Read first for chapter claims and mechanisms. |
-| Supporting | `verification_bandwidth`, `spinoza`, `context_engineer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| Connector or recovery required | `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
-
-Draft arc:
-
-- Problem: Compiled context needs typed semantic units and proof-carrying summaries that preserve provenance and loss contracts.
-- Insufficiency: Summaries can look authoritative while dropping source bindings, omissions, authority ceilings, or allowed-use limits.
-- Mechanism: Classify pages as constraints, claims, decisions, corrections, events, artifacts, and other typed cells.
-- Mechanism: Attach certificates with source bindings, omissions, validity, authority ceilings, and permitted uses.
-- Mechanism: Use task-relative representation graphs instead of one linear compression ladder.
-- Mechanism: Distinguish exact carriage, lossy summary, redaction, abstraction, translation, and derived inference so each representation kind preserves its use boundary.
-- Mechanism: Treat certificate updates, revocations, stale certificates, and attempted use outside the certificate as auditable state transitions rather than prose edits.
-- Mechanism: link certificates to context transactions and artifact records so derived representations keep their creation/update boundary when they travel into plans, jobs, evidence, or reader editions.
-- Interface: Spinoza consumes claim/evidence cells.
-- Interface: Planning consumes constraints and decisions.
-- Interface: Execution receives only permitted representations.
-- Interface: Artifact graphs consume certificate references when context-derived representations become durable work products.
-
-Primary invariants:
-
-- Authority labels survive summarization.
-- Loss contracts are explicit.
-- A derived cell points back to source bindings.
-- A derived cell points back to the transaction or artifact record that created the representation when that record exists.
-
-Failure modes to cover:
-
-- Summary overconfidence.
-- Provenance loss.
-- Authority escalation via compression.
-
-Draft deliverables:
-
-- A semantic-page schema with certificate fields and example source-to-summary derivation.
-- Implemented protocol validation: `semantic_page_certificate` fixture validates public record shape, transaction refs, artifact refs, revocation state, and non-claims only.
-- Implemented Lean proof target: valid derived cells carry source bindings, loss contracts, and permitted-use declarations.
-- Implemented Lean proof target: summaries respecting source cells cannot increase source authority ceilings.
-- Exact Appendix C claim-source mappings for the Semantic Pages claim across VCM public-v1 context cells/semantic pages/representation certificates, Verification Bandwidth summary-loss pressure, Spinoza proof/citation/procedure-carrying claim records, Context Engineer structured mission briefs and clearance fields, and editable VCM refinement context; the four local mappings (`vcm_public`, `verification_bandwidth`, `spinoza`, `context_engineer`) now have reviewed passage references. `vcm_editable` remains connector/source-note mapped until usable raw text, conformance artifacts, certificate checker results, benchmark records, or external corroboration are imported or inspected. Support remains `argument` pending paired source/derived cells, summary-fidelity tests, omission-completeness checks, certificate truthfulness tests, open-domain formalization evidence, or accepted evidence transitions.
-- Implemented synthetic Codex test: Summary fidelity boundary test via `python3 scripts/validate_context_admission_adequacy.py`; semantic fidelity evaluator remains open.
-- Planned Codex test: certificate truthfulness test.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
 | `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
 | `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
 

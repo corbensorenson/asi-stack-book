@@ -84,8 +84,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `planning-as-a-control-layer` | 2 | useful but too narrow | Plan-control record envelope added; still add decomposition, context-demand, runtime replanning, and planner-quality tests. |
 | `planforge-dags-and-intelligence-arbitrage` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `cognitive-compilation-and-semantic-ir` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `virtual-context-abi` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
-| `semantic-pages-context-cells-and-certificates` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
+| `virtual-context-abi` | 4 | needs executable tests first | Add deterministic resolver, admission, certificate-truthfulness, summary-fidelity, omission, and interoperability fixtures/harnesses before stronger formalization. |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `verification-bandwidth-and-context-adequacy` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `claim-ledgers-and-belief-revision` | 2 | useful but too narrow | Belief-revision record envelope added; still add extraction, contradiction, surface-sync, and substantive revision tests. |

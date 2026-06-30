@@ -2,26 +2,27 @@
 
 Last updated: 2026-06-30
 
-Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, and simulation-fidelity fold through static historical stubs.
+Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, and static context ABI merge through static historical stubs.
 
-Historical fold baseline: applied to the 2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold, and simulation-fidelity fold through static historical stubs.
+Historical fold baseline: applied to the 2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold, simulation-fidelity fold, and static context ABI merge through static historical stubs.
 
 This policy defines how public chapter URLs, stable chapter IDs, source history,
 and reader/research traceability must be handled when a governed
 consolidation package executes. It is a release-control policy, not source
 evidence, not an external review, and not a support-state transition. The
 2026-06-30 Part I pilot, conservative compression merge, intent/contracts
-merge, MoECOT runtime fold, and simulation-fidelity fold applied the policy
-through static historical stubs and `docs/chapter_history_ledger.md`. The
-2026-06-30 Part I, conservative compression, MoECOT, and simulation-fidelity
-execution packages were the historical fold baseline before the later
+merge, MoECOT runtime fold, simulation-fidelity fold, and static context ABI
+merge applied the policy through static historical stubs and
+`docs/chapter_history_ledger.md`. The 2026-06-30 Part I, conservative
+compression, MoECOT, simulation-fidelity, and static context ABI execution
+packages were the historical fold baseline before and alongside the later
 intent/contracts merge.
 
 ## Decision Boundary
 
-- The canonical manifest now has 48 chapters after the executed Part I pilot,
+- The canonical manifest now has 47 chapters after the executed Part I pilot,
   conservative compression merge, intent/contracts merge, MoECOT runtime fold,
-  and simulation-fidelity fold.
+  simulation-fidelity fold, and static context ABI merge.
 - This policy does not by itself retire, merge, redirect, or remove any chapter; execution commits do that work.
 - A future merge or fold remains blocked until its package explicitly records
   the URL treatment for every retired source chapter.
@@ -84,7 +85,8 @@ Every executed merge or fold must record:
 ## Pilot Defaults
 
 For the Part I alignment/governance pilot, conservative compression merge,
-intent/contracts merge, MoECOT runtime fold, and simulation-fidelity fold:
+intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, and
+static context ABI merge:
 
 | Proposed destination | Continuity URL | Retired source URL treatment |
 |---|---|---|
@@ -94,10 +96,12 @@ intent/contracts merge, MoECOT runtime fold, and simulation-fidelity fold:
 | `intent-to-execution-contracts` as **Command Contracts: From Intent to Executable Work** | Keep `/chapters/intent-to-execution-contracts.html`. | Preserved `/chapters/command-contracts-and-semantic-interfaces.html` through a static historical stub in the 2026-06-30 intent/contracts merge. |
 | `routing-heads-and-specialist-cores` as **Routing Heads and Specialist Cores** | Keep `/chapters/routing-heads-and-specialist-cores.html`. | Preserved `/chapters/moecot-runtime-and-multi-core-orchestration.html` through a static historical stub in the 2026-06-30 MoECOT runtime fold. |
 | `resource-economics-and-token-budgets` as **Resource Economics and Token Budgets** | Keep `/chapters/resource-economics-and-token-budgets.html`. | Preserved `/chapters/simulation-fidelity-and-physical-constraints.html` through a static historical stub in the 2026-06-30 simulation-fidelity fold. |
+| `virtual-context-abi` as **The Virtual Context ABI: Typed Pages, Cells, and Certificates** | Keep `/chapters/virtual-context-abi.html`. | Preserved `/chapters/semantic-pages-context-cells-and-certificates.html` through a static historical stub in the 2026-06-30 static context ABI merge. |
 
 These defaults were applied to the Part I pilot, conservative compression
-merge, intent/contracts merge, MoECOT runtime fold, and simulation-fidelity
-fold and remain defaults for future accepted execution packages.
+merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold,
+and static context ABI merge and remain defaults for future accepted execution
+packages.
 
 ## Validation Expectations
 
@@ -120,8 +124,8 @@ Before a future merge commit is accepted, validation should prove:
 ## Non-Claims
 
 - This policy does not by itself execute a merge or fold.
-- The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, and simulation-fidelity execution packages, not this policy text alone, implemented six historical stubs and changed the manifest to 48 chapters.
-- The 2026-06-30 Part I, conservative compression, MoECOT, and simulation-fidelity execution packages, not this policy text alone, implemented the earlier five historical stubs before the intent/contracts package added the sixth.
+- The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, and static context ABI execution packages, not this policy text alone, implemented seven historical stubs and changed the manifest to 47 chapters.
+- The 2026-06-30 Part I, conservative compression, MoECOT, simulation-fidelity, and static context ABI execution packages, not this policy text alone, implemented the earlier six historical stubs before the intent/contracts package added another stub.
 - This policy does not approve any destination draft.
 - This policy does not create external review evidence.
 - This policy does not promote any claim support state.

@@ -4,7 +4,7 @@ Last updated: 2026-06-28
 
 This note records first Phase 2 generated-reader review passes over Part I
 chapters that were previously `not_started` in the reader chapter review
-matrix. It is not a full 54-chapter reader release review, not an artifact
+matrix. It is not a full reader release review, not an artifact
 layout review, and not an edition release record.
 
 ## Source State

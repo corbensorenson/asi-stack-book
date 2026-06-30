@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-28
 
-This note records first Phase 2 generated-reader review passes over the remaining Part IV chapters that were previously `not_started` in the reader chapter review matrix. It is not a full 54-chapter reader release review, not an artifact layout review, not a curated manuscript graduation, and not an edition release record.
+This note records first Phase 2 generated-reader review passes over the remaining Part IV chapters that were previously `not_started` in the reader chapter review matrix. It is not a full reader release review, not an artifact layout review, not a curated manuscript graduation, and not an edition release record.
 
 ## Scope
 

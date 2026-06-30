@@ -5,7 +5,7 @@ Last updated: 2026-06-28
 This note records a release-grade chapter-text review pass for the next four
 generated reader chapters in Part II. It reviews the transition from context
 adequacy into claim ledgers, proof-carrying claim envelopes, and bounded
-adversarial review. It is not a full 54-chapter reader release review, not an
+adversarial review. It is not a full reader release review, not an
 artifact layout review, and not an edition release record.
 
 ## Source State

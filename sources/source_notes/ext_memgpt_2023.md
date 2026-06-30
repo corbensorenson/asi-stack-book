@@ -36,8 +36,7 @@ MemGPT belongs in the VCM, semantic-page, context-transaction, verification-band
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` (Virtual Context ABI)
-- `semantic-pages-context-cells-and-certificates` (Semantic Pages, Context Cells, and Certificates)
+- `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `context-transactions-snapshots-mounts-and-taint` (Context Transactions, Snapshots, Mounts, and Taint)
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)

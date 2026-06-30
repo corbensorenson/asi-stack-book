@@ -5,16 +5,18 @@ Date: 2026-06-30
 Chapter: `semantic-pages-context-cells-and-certificates`
 
 Reader manuscript file:
-`editions/reader_manuscript/v1_0/chapters/semantic-pages-context-cells-and-certificates.qmd`
+`editions/reader_manuscript/v1_0/archive/retired_chapters/semantic-pages-context-cells-and-certificates.qmd`
 
-Live source file: `chapters/semantic-pages-context-cells-and-certificates.qmd`
+Live source file:
+`archive/retired_chapters/semantic-pages-context-cells-and-certificates.qmd`
 
 Consolidation caveat:
-`docs/chapter_consolidation_release_stability_review.md` records this chapter
-inside a `deferred_for_release` package with `virtual-context-abi`. This pass
-curates the current source chapter for the reader-manuscript cycle only. It
-does not execute, reject, or authorize the future static context ABI merge, and
-it preserves the current 54-chapter manifest boundary.
+The 2026-06-30 static context ABI consolidation executed after this pass:
+the standalone semantic-pages source chapter and curated reader draft are now
+archived as historical lineage, and active reader work routes through
+`virtual-context-abi`. This note remains drafting history only; it does not
+create a live reader chapter, release artifact, support-state transition, or
+source-evidence record.
 
 ## Reader Promise
 
@@ -72,8 +74,10 @@ The reader throughline is:
 - The current Lean module proves finite-record properties over derived-cell
   completeness and source-to-summary authority non-escalation only; it does
   not evaluate natural-language summaries or certificate truthfulness.
-- The consolidation caveat is preserved: this reader pass does not decide the
-  future merge with `virtual-context-abi`.
+- The consolidation caveat is updated: the static context ABI merge has
+  executed, and the material preserved here now belongs to the merged
+  `virtual-context-abi` destination unless future evidence restores a separate
+  chapter.
 
 ## Non-Claims
 

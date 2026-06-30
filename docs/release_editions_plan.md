@@ -224,8 +224,8 @@ The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHE
 The audio manifest carries the same human-consumption bundle policy, but only to enforce dependency direction. Audio is not a shortcut around reader review, and audio embedded in EPUB remains a separate checked artifact.
 
 The tracked audio-script probe manifest records the current local workspace
-facts: 59 generated script files, preserved implementation horizons, 5 table
-treatment notes, 60 Mermaid diagram notes, 1 image note, and MP3/M4B/
+facts: 52 generated script files, preserved implementation horizons, 7 table
+treatment notes, 55 Mermaid diagram notes, 1 image note, and MP3/M4B/
 audio-embedded EPUB targets still marked `target_not_generated`. This keeps
 audio preparation visible without approving narration or claiming audio files
 exist.

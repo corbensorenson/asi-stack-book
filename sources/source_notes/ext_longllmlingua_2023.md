@@ -36,7 +36,7 @@ LongLLMLingua belongs in the VCM, context-transaction, verification-bandwidth, a
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` (Virtual Context ABI)
+- `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `context-transactions-snapshots-mounts-and-taint` (Context Transactions, Snapshots, Mounts, and Taint)
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)

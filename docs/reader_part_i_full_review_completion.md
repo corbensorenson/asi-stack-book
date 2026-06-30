@@ -5,8 +5,7 @@ Last updated: 2026-06-28
 This note records the fourth release-grade chapter-text review pass for the
 generated v1.0 reader manuscript and completes full chapter-text review for Part
 I. It reviews the governance-rights, stable-field, replacement, security, and
-recursive-improvement sequence end to end. It is not a full 54-chapter reader
-release review, not an artifact layout review, and not an edition release
+recursive-improvement sequence end to end. It is not a full reader release review, not an artifact layout review, and not an edition release
 record.
 
 ## Source State

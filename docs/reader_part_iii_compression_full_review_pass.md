@@ -5,7 +5,7 @@ Last updated: 2026-06-28
 This note records a release-grade chapter-text review pass for the next four
 generated reader chapters in Part III. It reviews compact generation,
 generate-verify-repair compression, fast generation, and artifact compression.
-It is not a full 54-chapter reader release review, not an artifact layout
+It is not a full reader release review, not an artifact layout
 review, and not an edition release record.
 
 ## Source State

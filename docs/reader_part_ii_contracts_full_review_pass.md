@@ -5,7 +5,7 @@ Last updated: 2026-06-28
 This note records a release-grade chapter-text review pass for the first four
 generated reader chapters in Part II. It reviews the operational handoff from
 accepted intent into command contracts, governed planning, and schedulable DAG
-work. It is not a full 54-chapter reader release review, not an artifact layout
+work. It is not a full reader release review, not an artifact layout
 review, and not an edition release record.
 
 ## Source State

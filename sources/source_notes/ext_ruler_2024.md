@@ -37,7 +37,7 @@ RULER belongs in the verification-bandwidth, VCM, context-transaction, and bench
 ## Book Chapters Supported
 
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
-- `virtual-context-abi` (Virtual Context ABI)
+- `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `context-transactions-snapshots-mounts-and-taint` (Context Transactions, Snapshots, Mounts, and Taint)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 

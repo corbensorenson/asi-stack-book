@@ -36,10 +36,9 @@ This source belongs in the context and verification-bandwidth chapters as an ext
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` (Virtual Context ABI)
+- `virtual-context-abi` (The Virtual Context ABI: Typed Pages, Cells, and Certificates)
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `context-transactions-snapshots-mounts-and-taint` (Context Transactions, Snapshots, Mounts, and Taint)
-- `semantic-pages-context-cells-and-certificates` (Semantic Pages, Context Cells, and Certificates)
 
 ## Claims To Add Or Update
 

@@ -34,8 +34,7 @@ The editable VCM source sharpens VCM as an evidence-carrying, planner-guided con
 ## Book Chapters Supported
 
 - Failure Modes of Ungoverned Intelligence
-- Virtual Context ABI
-- Semantic Pages, Context Cells, and Certificates
+- The Virtual Context ABI: Typed Pages, Cells, and Certificates
 - Context Transactions, Snapshots, Mounts, and Taint
 - Verification Bandwidth and Context Adequacy
 - Integrated Reference Architecture

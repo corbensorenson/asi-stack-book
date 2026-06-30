@@ -43,7 +43,7 @@ MoECOT is an implementation-reference architecture for governed, skill-native, l
 - Command Contracts: From Intent to Executable Work
 - Planning as a Control Layer
 - PlanForge DAGs and Intelligence Arbitrage
-- Virtual Context ABI
+- The Virtual Context ABI: Typed Pages, Cells, and Certificates (`virtual-context-abi`)
 - Labor OS and Typed Jobs
 - Artifact Graphs, Audit Logs, and Replay
 - Runtime Adapters, Tool Permissions, and Human Approval

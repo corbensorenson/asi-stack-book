@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-30
 
-This file is the 48-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the 47-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ remaining lanes stay `planned, not executed`; they must not receive synthetic
 fixtures, pass/fail status, or support-state pressure merely for coverage.
 The active cycle selection is recorded in
 `docs/v1_x_active_evidence_cycle.md`: seven lanes are selected and the other
-forty-one remain planned-only.
+forty remain planned-only.
 
 Selection criteria:
 
@@ -60,8 +60,7 @@ support-state transition by itself.
 | II | `planning-as-a-control-layer` | Theseus plan compiler plus Lean planning envelope | Import public-safe typed DAG and rejected invalid DAG. | Make planning read like controlled sequencing under uncertainty. | Public-safe DAG replay validates and invalid DAG fails. |
 | II | `planforge-dags-and-intelligence-arbitrage` | Theseus/PlanForge report | Validate arbitrage selection with costs, uncertainty, and fallback. | Explain intelligence arbitrage as routing work to the right kind of mind. | Fixture selects a route only when adequacy and cost constraints both pass. |
 | II | `cognitive-compilation-and-semantic-ir` | Compiler IR fixtures plus external program-synthesis baselines | Add semantic atom lowering and failed-preservation cases. | Use compilation as the bridge from thought to executable structure. | IR translation preserves required fields and rejects lossy lowering. |
-| II | `virtual-context-abi` | Context admission harness plus VCM source notes | Add admission, mount, capability, and context-window negative controls. | Make context feel like memory with permissions and receipts. | Admission fixture rejects stale, conflicting, or mode-confused packets. |
-| II | `semantic-pages-context-cells-and-certificates` | Certificate fixtures plus Lean | Link certificates to context-cell admission and adequacy checks. | Explain certificates as labels that decide what memory can be trusted for. | Stale/missing certificate blocks use and records residual. |
+| II | `virtual-context-abi` | Context admission harness, certificate fixtures, Lean hooks, and VCM source notes | Add admission, mount, capability, typed page/cell, certificate-truthfulness, authority-ceiling, loss-contract, permitted-use, and context-window negative controls. | Make context feel like memory with permissions, receipts, and certificates that decide what memory can be trusted for. | Admission fixture rejects stale, conflicting, mode-confused, stale-certificate, missing-certificate, or authority-escalating packets and records residual. |
 | II | `context-transactions-snapshots-mounts-and-taint` | Context transaction harness | Add deletion closure, mount taint, snapshot conflict, and rollback cases. | Make taint and snapshots legible through file-system examples. | Transaction replay proves conflict/deletion gates fire. |
 | II | `verification-bandwidth-and-context-adequacy` | Adequacy harness plus external context-eval literature | Add verifier-capacity constraints and escalation paths. | Explain why a model cannot verify everything it can read. | Adequacy record rejects context that exceeds verifier bandwidth. |
 | II | `claim-ledgers-and-belief-revision` | Claim-ledger harness plus Lean | Add revision-history preservation, contradiction quarantine, and split claims. | Make belief revision read like version control for truth claims. | Contradictory evidence changes ledger state without silent promotion. |

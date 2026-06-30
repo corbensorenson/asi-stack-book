@@ -35,8 +35,7 @@ VCM treats the context window as a compiled working cache over a larger versione
 ## Book Chapters Supported
 
 - Failure Modes of Ungoverned Intelligence
-- Virtual Context ABI
-- Semantic Pages, Context Cells, and Certificates
+- The Virtual Context ABI: Typed Pages, Cells, and Certificates
 - Context Transactions, Snapshots, Mounts, and Taint
 - Verification Bandwidth and Context Adequacy
 - Claim Ledgers and Belief Revision

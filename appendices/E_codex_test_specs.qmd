@@ -77,13 +77,17 @@ No result is recorded here unless a test has actually been implemented and run.
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Requirement preservation test | implemented | passes via synthetic plan-execution contract harness |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Incremental repair regression test | planned | not run |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Target compilation audit | planned | not run |
-| `virtual-context-abi` | Virtual Context ABI | Address/version stability test | planned | not run |
-| `virtual-context-abi` | Virtual Context ABI | Admission vs adequacy test | implemented | passes via synthetic context admission/adequacy harness |
-| `virtual-context-abi` | Virtual Context ABI | Conflict adequacy classification test | implemented | passes via synthetic context admission/adequacy harness; no adjudication claim |
-| `virtual-context-abi` | Virtual Context ABI | Context fault behavior test | implemented | passes via synthetic context admission/adequacy harness; no deployed resolver claim |
-| `semantic-pages-context-cells-and-certificates` | Semantic Pages, Context Cells, and Certificates | Certificate completeness test | planned | not run |
-| `semantic-pages-context-cells-and-certificates` | Semantic Pages, Context Cells, and Certificates | Authority preservation test | planned | not run |
-| `semantic-pages-context-cells-and-certificates` | Semantic Pages, Context Cells, and Certificates | Summary fidelity test | implemented | passes via synthetic context admission/adequacy harness for loss/omission gate behavior; no semantic fidelity claim |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Context ABI fixture validation | implemented | passes via protocol fixture validation; shape only |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Address/version stability test | implemented | passes through finite Lean context-reference predicates |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Admission vs adequacy test | implemented | passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Conflict adequacy classification test | implemented | passes via synthetic context admission/adequacy harness; no adjudication claim |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Context fault behavior test | implemented | passes via synthetic context admission/adequacy harness; no deployed resolver claim |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Semantic page certificate fixture validation | implemented | passes via protocol fixture validation; shape only |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Certificate completeness test | implemented | passes through finite Lean certificate predicates |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Authority preservation test | implemented | passes through finite Lean authority predicates |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Summary fidelity boundary test | implemented | passes via synthetic context admission/adequacy harness for loss/omission gate behavior; no semantic fidelity claim |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Resolver conformance test | planned | not run |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Certificate truthfulness test | planned | not run |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Read-your-writes snapshot test | planned | not run |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Taint propagation test | planned | not run |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Deletion closure test | implemented | passes via synthetic context admission/adequacy harness; no memory-store claim |

@@ -36,7 +36,7 @@ Spinoza proposes a bounded neurosymbolic reasoning architecture: neural systems 
 ## Book Chapters Supported
 
 - Claim Ledgers and Belief Revision
-- Semantic Pages, Context Cells, and Certificates
+- The Virtual Context ABI: Typed Pages, Cells, and Certificates
 - Verification Bandwidth and Context Adequacy
 - Spinoza Verification and Proof-Carrying Claims
 - Unified Adaptive Tribunal and Adversarial Review

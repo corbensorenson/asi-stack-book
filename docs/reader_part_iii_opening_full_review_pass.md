@@ -5,7 +5,7 @@ Last updated: 2026-06-28
 This note records a release-grade chapter-text review pass for the opening four
 generated reader chapters in Part III. It reviews routing, readiness, MoECOT as
 implementation-reference context, and personal compute hives. It is not a full
-54-chapter reader release review, not an artifact layout review, and not an
+reader release review, not an artifact layout review, and not an
 edition release record.
 
 ## Source State

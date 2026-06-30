@@ -10,12 +10,11 @@ Reader manuscript file:
 Live source file: `chapters/virtual-context-abi.qmd`
 
 Consolidation caveat:
-`docs/chapter_consolidation_release_stability_review.md` records this chapter
-inside a `deferred_for_release` package with
-`semantic-pages-context-cells-and-certificates`. This pass curates the current
-source chapter for the reader-manuscript cycle only. It does not execute,
-reject, or authorize the future static context ABI merge, and it preserves the
-current 54-chapter manifest boundary.
+The 2026-06-30 static context ABI consolidation executed after this pass:
+`semantic-pages-context-cells-and-certificates` is now archived as historical
+reader/source lineage, and active reader work routes through
+`virtual-context-abi`. This prose-pass note remains drafting history, not a
+reader release, support-state transition, or source-evidence record.
 
 ## Reader Promise
 
@@ -74,14 +73,16 @@ The reader throughline is:
 - The current Lean module proves finite-record properties over snapshot-bound
   reference resolution and mandatory-miss fault behavior only; it does not
   implement a VCM resolver, materializer, compiler, or adequacy classifier.
-- The consolidation caveat is preserved: this reader pass does not decide the
-  future merge with `semantic-pages-context-cells-and-certificates`.
+- The consolidation caveat is updated: the static context ABI merge has
+  executed, and this reader pass now applies to the merged destination rather
+  than to an undecided future package.
 
 ## Non-Claims
 
 - This pass does not edit the live AI/research chapter.
 - This pass does not change `book_structure.json`.
-- This pass does not execute, reject, or authorize a chapter merge or fold.
+- This pass did not itself execute, reject, or authorize a chapter merge or
+  fold; the later static context ABI package executed separately.
 - This pass does not alter Appendix C or Appendix K.
 - This pass does not add, remove, normalize, or promote source records.
 - This pass does not claim deployed VCM behavior, resolver correctness, context
@@ -98,9 +99,9 @@ The reader throughline is:
 ## Remaining Blockers
 
 - Human editorial review has not approved this chapter for reader release.
-- The future static context ABI consolidation package still needs a reviewer
-  decision before any merge with
-  `semantic-pages-context-cells-and-certificates`.
+- The archived standalone semantic-pages reader draft remains historical only;
+  future work should edit the active `virtual-context-abi` curated reader
+  chapter unless new evidence restores a separate semantic-pages chapter.
 - Stronger VCM evidence still needs a public-safe resolver fixture set,
   context-compiler trace, adequacy-classifier test, snapshot/revocation
   conformance test, context-packet replay audit, contradiction-rate experiment,
