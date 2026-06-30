@@ -4,7 +4,7 @@ chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "chapter draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "field_of_god_ai_constitution"
   - "scf"
@@ -48,7 +48,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes. Internal/local raw passages and tracked local-project passages have now been passage-reviewed for the chapter; official external tooling pages were reviewed as adjacent substrate references. The core claim remains a design synthesis. The browser note is local-only planning context. |
-| Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, `HiveSchedulingDecision`, `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease` validate locally, and four finite Lean predicates build. No hive scheduler, live registry, portal approval service, federation, rented-node test, cross-router connectivity test, child-routing test, dropout recovery test, or energy-aware scheduling test has been run. |
+| Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, `HiveSchedulingDecision`, `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease` validate locally; `AsiStackProofs.PersonalComputeHives` builds four finite predicates plus negative-case theorems rejecting high-risk execution without a bound approval receipt and external access with a missing lease boundary. No hive scheduler, live registry, portal approval service, federation, rented-node test, cross-router connectivity test, child-routing test, dropout recovery test, or energy-aware scheduling test has been run. |
 
 ## Drafting guardrail
 
@@ -313,7 +313,7 @@ This personal compute hive is still a proposed architecture. Hive support remain
 | `lean:personal_hives.approval_gate.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present. | implemented |
 | `lean:personal_hives.federation_lease.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records. | implemented |
 
-These targets are implemented as finite record predicates. They do not prove a distributed scheduler, network boundary, rented-node sandbox, family-governance policy, or privacy guarantee.
+These targets are implemented as finite record predicates. The current Lean envelope now includes negative-case theorems for missing bound approval on high-risk execution and missing lease-boundary fields on external hive access. It still does not prove a distributed scheduler, network boundary, rented-node sandbox, family-governance policy, privacy guarantee, approval-service behavior, or live federation behavior.
 
 ## Source crosswalk
 

@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 287 |
+| Theorem declarations classified | 289 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 172 |
+| Derived/decomposed theorem declarations | 174 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -78,7 +78,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 4 | 4 | 4 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 4 | 6 | 4 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 2 | 8 | 6 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | policy-optimization-and-learning-from-feedback | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -236,8 +236,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_claim_from_unavailable_text_only_cannot_promote_above_argument` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_requires_readiness_regression_and_replay_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `admitted_hive_job_has_identity_data_tool_federation_and_approval_checks` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_missing_lease_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_requires_lease_scope_sandbox_evidence_expiration_and_revocation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `faster_forbidden_node_cannot_be_selected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `high_risk_hive_job_missing_bound_approval_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `high_risk_hive_job_without_bound_approval_cannot_execute` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PlanForge.lean` | `dependency_precedence_blocks_self_dependency` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/PlanForge.lean` | `dispatchable_plan_graph_is_index_acyclic_and_ordered` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

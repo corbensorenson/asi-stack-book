@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-30 - Personal compute hive approval and lease proofs
+
+- Strengthened `AsiStackProofs.PersonalComputeHives` with two derived
+  negative-case theorems: one rejects high-risk hive execution that lacks a
+  bound approval receipt, and one rejects external hive access when any
+  required federation-lease boundary field is missing.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 289
+  theorem declarations, 115 direct/projection-style declarations, and 174
+  derived/decomposed declarations.
+- Updated the Personal Compute Hives chapter, proof adequacy review, candidate
+  status, v1.0/v1.x roadmap surfaces, focus audit, and status snapshot
+  validator to record the new hive proof increment.
+- This does not promote any Appendix C or chapter core claim, implement a hive
+  scheduler, run a device registry, validate a portal approval service,
+  execute a federation protocol, prove rented-node sandboxing, establish
+  privacy guarantees, or approve any reader, ebook, PDF, DOCX, or audio
+  release artifact.
+
 ## 2026-06-30 - v1.x roadmap execution focus correction
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` so the active keystone set,
