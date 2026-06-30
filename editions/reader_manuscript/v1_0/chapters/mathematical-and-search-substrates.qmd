@@ -1,0 +1,346 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: mathematical-and-search-substrates
+generated_baseline_ref: build/reader_edition/chapters/mathematical-and-search-substrates.qmd
+live_source_ref: chapters/mathematical-and-search-substrates.qmd@2345f296f
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Mathematical and Search Substrates
+
+Some ideas are too interesting to ignore and too weakly evidenced to trust.
+
+This chapter is about that middle state. The ASI Stack contains a family of
+candidate substrates: small calculi, semantic graphs, cyclic address spaces,
+coils, compiler IRs, state-space sequence models, proof receipts, and geometric
+search structures. Any one of them might become useful. None of them should
+become load-bearing just because the mathematics is elegant.
+
+The governing rule is simple: a substrate enters the stack through an adoption
+record, not through fascination. It needs a task boundary, ordinary baseline,
+negative control, proof boundary, falsification condition, consumer gate,
+fallback path, and explicit non-claims. Until then, it remains optional.
+
+Optional does not mean unserious. It means the architecture keeps a place where
+unusual mathematics can be tested without quietly turning into doctrine. A
+candidate can be real in one sense and still unready in another. A theorem may
+establish a structural property without saying anything about speed. A
+sequence model may report efficiency without proving that it improves this
+stack's routing, compression, or reasoning behavior. A graph representation
+may look natural and still lose to a simpler baseline on the workload that
+matters.
+
+The value of this layer is disciplined optionality. The stack should be able to
+ask: what if this substrate helps? It should also be able to answer: what would
+make us stop using it?
+
+## Problem
+
+Exploratory substrates are seductive because they make the system feel deeper
+before they make it better.
+
+A new calculus can make every later mechanism look more principled. A cyclic
+address law can make a memory system feel inevitable. A semantic graph can make
+context feel organized. A state-space backbone can make long sequences feel
+solved. A proof-carrying receipt can make a candidate look safer than it is.
+
+The danger is not that these ideas are false. The danger is that they are
+partly true, in ways that can leak past their evidence.
+
+The source corpus points to many candidates worth keeping in view:
+GenesisCode-style small deterministic kernels, Temporal Coil A/B discipline,
+Cognitive Compilation as semantic IR, TreeLLM-style graph representations,
+Simulation Scaling constraints, CoilMoECOT specialist routing, Circle
+proof-boundary work, proof-carrying circular computation, Theseus transfer
+boundaries, and Mamba as external sequence-substrate context. They do not all
+say the same thing, but they create the same architectural problem: how should
+the stack hold a promising substrate before it is proven useful?
+
+The answer is not to ban speculative substrates. The answer is to make them
+easier to reject as they become more interesting.
+
+## Why Existing Approaches Are Insufficient
+
+Most technical projects have weak holding states for attractive mechanisms.
+An idea is either outside the system, inside the system, or informally
+"promising." That middle word does too much work.
+
+For this book, "promising" is not a support state. It does not authorize a
+route. It does not establish a chapter claim. It does not let a proof of one
+property stand in for a benchmark on another. It does not let a local project
+artifact become public evidence without an import or replay boundary.
+
+The failure mode is cross-axis leakage. A substrate can have a structural
+theorem but no performance evidence. It can improve memory use while increasing
+verification burden. It can look good under one workload while failing a
+negative control. It can be useful for compression and irrelevant for routing.
+It can be a good research lead and still a bad default.
+
+Without an adoption protocol, those axes blur. Mathematical elegance becomes
+authority. A single favorable run becomes a trend. A theorem about cyclic
+coverage becomes a story about model quality. A benchmark plan becomes a
+benchmark result. A sequence-backbone efficiency claim becomes permission to
+reuse the substrate for unrelated reasoning or search claims.
+
+The stack needs a way to say "keep testing this" without saying "trust this."
+
+## Core Claim
+
+Coils, calculi, and geometric search belong in the stack as optional specialist
+substrates until tests show where they improve search, routing, or compression.
+
+That claim remains a design rationale at `argument` support. The live chapter,
+Appendix C, source notes, schemas, fixtures, and Lean hooks describe a
+governance surface for substrate adoption. They do not prove that any substrate
+improves model quality, search quality, routing quality, compression,
+representation efficiency, long-context behavior, runtime, or ASI progress.
+
+The important distinction is between admission and adoption. Admission means a
+candidate is clear enough to register. Adoption means a consumer may rely on it
+for a bounded purpose. Promotion requires evidence for that purpose, not a
+general feeling that the substrate is mathematically beautiful.
+
+## Mechanism
+
+The mechanism is the Substrate Adoption Record.
+
+The record asks what the substrate is for, what ordinary baseline it must beat,
+what negative control might embarrass it, what proof or deterministic fixture
+actually exists, which consumer is allowed to rely on it, which axes remain
+unmeasured, what routing permission follows, what fallback remains available,
+and what condition would retire or supersede the idea.
+
+The record also names the adoption state. A substrate may be:
+
+- exploratory, when it is registered but not relied on;
+- structural-only, when a finite fact or proof receipt exists but workload
+  evidence does not;
+- canary, when a narrow consumer may try it under monitoring;
+- qualified-for-scope, when it has evidence for one bounded use;
+- blocked, when a required proof, baseline, control, or report is missing;
+- retired or superseded, when evidence or a better alternative narrows the
+  path.
+
+Those states matter only if they change behavior. A label that does not affect
+consumer access, testing, routing, fallback, or evidence obligations is not
+governance.
+
+```{mermaid}
+flowchart LR
+  A["Candidate substrate"] --> B["Intended use"]
+  B --> C["Baseline and negative control"]
+  C --> D["Proof or experiment boundary"]
+  D --> E["Axis ledger"]
+  E --> F["Consumer gate"]
+  F --> G{"Evidence sufficient for this use?"}
+  G -- "yes" --> H["Canary or qualified specialist route"]
+  G -- "no" --> I["Exploratory, structural-only, blocked, or retired"]
+  H --> J["Fallback and monitoring"]
+  I --> K["Research backlog and residuals"]
+  J --> L["Revisit on failure, drift, or supersession"]
+  K --> L
+```
+
+**What the adoption gate shows:** the substrate is not judged as an identity.
+It is judged for a particular use, against a particular baseline, with a
+particular consumer, proof boundary, fallback, and retirement condition.
+
+## The Four Adoption Lanes
+
+The adoption packet has four lanes because a substrate can be meaningful in
+one lane and still blocked in another.
+
+The structural lane asks what formal or deterministic fact exists. A Circle
+receipt, theorem reference, cyclic address property, fixture digest, or
+compiler record may be useful here. But structural truth travels only as far as
+the finite model and proof statement allow. It is not a runtime result.
+
+The empirical lane asks for the workload, metric, baseline, negative control,
+script, report, and failed attempts. This is where most attractive substrates
+should wait. Without comparable workloads, a favorable anecdote is not enough.
+
+The consumer lane asks who may rely on the substrate and for what. A route may
+consume a search-quality axis only if that axis is supported. A compression
+consumer may not borrow a memory claim. A proof consumer may not borrow a
+model-quality claim.
+
+The retirement lane asks what would narrow, supersede, or stop adoption. This
+is how optionality stays honest. A substrate without a falsification condition
+is not ready to guide architecture.
+
+Together, the four lanes let the book keep speculative mathematics alive
+without letting it become unearned authority.
+
+## Interfaces
+
+The Substrate Adoption Record is the interface between substrate research and
+the rest of the stack.
+
+It records substrate identity, intended use, expected advantage, baselines,
+baseline obligations, negative controls, proof boundary, experiment
+requirements, consumer gate, consumer policy, axis ledger, falsification
+condition, adoption state, routing-permission effect, fallback substrate,
+retirement or supersession path, support-state effect, residuals, evidence
+references, and non-claims.
+
+Routing reads the record as specialist permission. Compression reads it as a
+representation-efficiency question. Proof envelopes read it as structural
+boundary. Fast-generation routes may read it only for supported axes. Readiness
+gates decide whether the candidate stays exploratory, enters canary use, is
+qualified for one scope, or is blocked.
+
+The axis ledger is the key. It separates structure, speed, memory, routing
+quality, compression quality, search quality, verifier burden, and downstream
+task quality. A substrate can pass one axis and fail another without
+contradiction. The consumer gate prevents the passing axis from laundering the
+blocked one.
+
+## Invariants
+
+The first invariant is that exploratory claims stay exploratory.
+
+The second is that baselines and negative controls remain attached. A result
+without the ordinary comparison and embarrassing control is not ready to
+change architecture.
+
+The third is that structural proof is not task proof. A theorem can prove a
+finite property while leaving speed, search, compression, routing, and model
+quality untouched.
+
+The fourth is that a substrate without passing evidence remains non-core. It
+may stay in the research backlog. It may enter structural-only discussion. It
+may motivate a canary plan. It may not become a hidden dependency.
+
+The fifth is that consumers may not rely on unmeasured, blocked, or explicitly
+excluded axes. That rule is what lets the book discuss Mamba-like
+sequence-substrate context, Circle-like proof receipts, TreeLLM-like graph
+representations, and coil-like cyclic mechanisms without pretending they all
+support the same claims.
+
+## Failure Modes
+
+Theorem spillover is the central failure mode. A proof about an address,
+phase, recurrence, or coverage property is treated as evidence for a quality
+claim the theorem never stated.
+
+Performance overclaiming is the empirical twin. A narrow or source-reported
+result is stretched into a general route, compression, search, or reasoning
+claim before the local workload exists.
+
+Substrate capture is the organizational version. The team becomes attached to
+the elegant mechanism and begins treating ordinary baselines as distractions.
+The adoption record fights that by requiring fallback substrates, residuals,
+negative controls, and retirement triggers.
+
+There are quieter failures too: single-seed experiments promoted as stable
+results, structural fixtures mistaken for learned-model benchmarks, sequence
+throughput used for unrelated quality axes, and hidden negative results left
+out of the research memory. All of them should produce blocked promotion,
+residual records, fallback to ordinary substrates, or retirement.
+
+Negative results are useful. Hidden negative results are debt.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is not a successful substrate. It is a
+technical-substrate appendix plan with an experiment matrix and adoption gates.
+
+The repository already has a substrate-adoption fixture that validates the
+shape of the record: intended use, expected advantage, baselines, baseline
+obligations, negative controls, proof boundary, experiment requirements,
+consumer gate and policy, axis ledger, falsification condition, adoption state,
+routing-permission effect, fallback substrate, retirement or supersession
+path, support-state effect, residuals, evidence references, and non-claims.
+
+That fixture is a governance check. It does not show that a substrate works.
+It does not run a temporal-coil A/B test, representation-efficiency benchmark,
+CoilMoECOT route benchmark, Mamba comparison, Circle substrate sidecar, or
+Theseus transfer consumer. The separate Circle external rope receipt slice
+does not validate substrate adoption.
+
+The next honest minimum would be a small trace: register one substrate, attach
+a structural-only receipt or planned workload, reject an unsupported consumer
+request, attempt a negative control, narrow the adoption state, preserve the
+fallback, and record the residual. That would make optionality executable
+before any substrate becomes load-bearing.
+
+## Beyond the State of the Art
+
+The mature endpoint is a substrate adoption exchange.
+
+In that exchange, unusual mathematics can be proposed, registered, tested,
+blocked, canaried, qualified for a narrow scope, retired, or superseded without
+rewriting the whole architecture. Each candidate carries its own baselines,
+negative controls, proof boundary, axis ledger, consumer permissions, fallback
+path, and non-claims.
+
+The exchange would let a governed route ask for a specialist substrate the way
+it asks for a tool: show the scope, evidence, residuals, and permission. A
+compression layer could inspect representation evidence without inheriting
+routing claims. A proof layer could use structural receipts without inheriting
+model-quality claims. A fast-generation route could consume only the speed axis
+if that axis is measured and relevant. A canary route could use a substrate
+under monitoring while the default path remains ordinary and reversible.
+
+This is beyond the current state of the book. The chapter's claim should remain
+at `argument` until baseline comparisons, search-result verification, adoption
+records, tradeoff benchmarks, failure cases, rollback criteria, and consumer
+gates show when a mathematical or search substrate deserves broader use.
+
+## Proof And Test Boundary
+
+The Lean hooks for this chapter are finite-record checks in
+`AsiStackProofs.SearchSubstrates`. They support two narrow ideas: a substrate
+adoption record exposes baseline, measured-target, and falsification fields;
+and a substrate without passing evidence remains non-core.
+
+Those hooks do not prove substrate usefulness. They do not prove a deployed
+search algorithm, compression method, route, sequence model, cyclic backend,
+or reasoning system. The implemented protocol fixture validates record shape.
+The planned tests still need workloads, baselines, negative controls, scripts,
+environment notes, and result artifacts before they can support stronger
+claims.
+
+## Source Boundary
+
+The chapter uses its assigned sources as context for optional substrate
+discipline. GenesisCode supplies small-kernel and obligation language.
+Temporal Coil Research supplies A/B discipline. Cognitive Compilation and
+TreeLLM supply compiler and graph-substrate frames. Simulation Scaling keeps
+resource constraints visible. CoilMoECOT remains a design/spec source rather
+than route evidence. Circle sources supply proof-boundary discipline. Theseus
+Circle Transfer supplies transfer-boundary discipline. Mamba supplies external
+sequence-substrate context.
+
+None of those mappings promotes a substrate to core architecture. They are
+chapter-level support for the adoption discipline, not reproduced benchmarks,
+local model results, deployment evidence, or proof that a substrate improves
+the ASI Stack.
+
+## Summary
+
+This chapter protects both ambition and rigor.
+
+It protects ambition by keeping mathematical and search substrates available.
+The stack should not close itself against coils, calculi, semantic graphs,
+cyclic compute, compiler IRs, or sequence-substrate alternatives just because
+the first public evidence is incomplete.
+
+It protects rigor by refusing to let those ideas become architecture without
+adoption records. Every candidate has to say what it is for, what baseline it
+must beat, what proof boundary it carries, what empirical facts it lacks, what
+consumer may rely on it, and what result would stop adoption.
+
+A good substrate should become more testable as it becomes more exciting. If
+it cannot be falsified, routed narrowly, or retired, it is not ready to govern
+anything.
+
+## Handoff
+
+Once a substrate has a finite structural fact worth carrying, the next problem
+is transport. Circle Calculus and Proof-Carrying AI Contracts gives that path:
+theorem references, receipts, fingerprints, deterministic fields, validator
+state, consumer gates, and non-claims that let downstream systems inspect
+structure without treating it as model quality or deployment evidence.

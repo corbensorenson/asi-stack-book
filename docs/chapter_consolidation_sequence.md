@@ -350,6 +350,7 @@ The current allowed protected-reader set is:
 - `artifact-graphs-audit-logs-and-replay`
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `procedural-memory-and-cognitive-loop-closure`
+- `mathematical-and-search-substrates`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
 - `policy-optimization-and-learning-from-feedback`
 - `integrated-reference-architecture`

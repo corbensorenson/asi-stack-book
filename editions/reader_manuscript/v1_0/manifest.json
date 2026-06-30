@@ -1077,6 +1077,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_open_research_agenda_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "mathematical-and-search-substrates",
+      "title": "Mathematical and Search Substrates",
+      "file": "editions/reader_manuscript/v1_0/chapters/mathematical-and-search-substrates.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/mathematical-and-search-substrates.qmd",
+      "live_source_ref": "chapters/mathematical-and-search-substrates.qmd@2345f296f",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#mathematical-and-search-substrates.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#mathematical-and-search-substrates",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around disciplined optionality: substrates enter through adoption records, not fascination; structural, empirical, consumer, and retirement lanes stay separate; axis ledgers prevent theorem or performance spillover; and optional mathematical/search substrates remain argument-level candidates until scoped evidence exists.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "source boundary preserved; GenesisCode, Temporal Coil, Cognitive Compilation, TreeLLM, Simulation Scaling, CoilMoECOT, Circle, Theseus transfer, and Mamba remain optional-substrate, proof-boundary, transfer-boundary, or external sequence-substrate context inside their stated limits",
+        "proof/test status preserved without adding temporal-coil A/B runs, representation-efficiency benchmarks, CoilMoECOT route benchmarks, Mamba comparisons, Circle substrate sidecars, Theseus transfer consumers, model-quality results, routing-quality results, compression-quality results, search-quality results, or support-state results",
+        "implementation horizon preserved without implying a substrate adoption exchange or useful substrate has been implemented",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_mathematical_search_substrates_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {

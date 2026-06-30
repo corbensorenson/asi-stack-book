@@ -213,7 +213,7 @@ matrix is recorded in
 `docs/reader_chapter_review_matrix.md` with 54 `reviewed` chapters, 0
 `spot_checked` chapters, 0 `not_started` chapters, 20 chapters carrying active
 reader overlays, 54 no-immediate-action decisions, 3 companion-note candidates,
-and 21 curated-manuscript candidates. `docs/reader_format_dry_run.md` records a
+and 22 curated-manuscript candidates. `docs/reader_format_dry_run.md` records a
 local HTML/EPUB/DOCX render dry run, basic structural artifact inspection, and
 UTF-8 PDF probe with ignored snapshots; `docs/reader_artifact_inspection_manifest.md`
 now preserves a tracked HTML/EPUB/DOCX structural-inspection summary for ignored
@@ -299,7 +299,7 @@ Automated continuity audit:
 Chapter review matrix:
 
 - `python3 scripts/sync_reader_chapter_review_matrix.py --write` generated `editions/reader_manuscript/v1_0/chapter_review_matrix.json` and `docs/reader_chapter_review_matrix.md` from the manifest order plus current reader-overlay counts.
-- The matrix currently records 54 chapter rows: 54 `reviewed` rows from the full generated-reader chapter-text review passes, 0 `spot_checked` rows, 0 `not_started` rows, 20 chapters with active reader overlays, 54 no-immediate-action decisions, 3 companion-note candidates, and 21 curated-manuscript candidates.
+- The matrix currently records 54 chapter rows: 54 `reviewed` rows from the full generated-reader chapter-text review passes, 0 `spot_checked` rows, 0 `not_started` rows, 20 chapters with active reader overlays, 54 no-immediate-action decisions, 3 companion-note candidates, and 22 curated-manuscript candidates.
 - All rows retain reader-release and format-artifact blockers. The full chapter-text review blocker is cleared for every current chapter, but the matrix is still a review queue, not a reviewed reader release.
 - The matrix keeps the future curated reader manuscript path dynamic: chapter IDs, part order, live files, generated-reader file paths, and overlay counts sync from `book_structure.json` and overlay files, while review status and disposition remain explicit reader-review decisions.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` now provides the dormant reconciliation template for future curated reader chapters, including generated-reader baselines, live-source refs, divergence summaries, blocked evidence divergence, and release blockers.

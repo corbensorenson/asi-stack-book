@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 21,
+    "curated_manuscript_candidate": 22,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -983,12 +983,14 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_representation_full_review_pass.md#decisions"
+        "docs/reader_part_iii_representation_full_review_pass.md#decisions",
+        "docs/curated_reader_mathematical_search_substrates_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. The existing overlay makes adoption packet lanes readable while preserving baselines, negative controls, axis ledgers, consumer gates, structural-only states, falsification criteria, and optional-substrate non-claims.",
+      "review_notes": "Full generated-reader chapter review recorded. First curated reader prose pass now reframes the chapter around disciplined optionality, substrate adoption records, structural/empirical/consumer/retirement lanes, axis ledgers, theorem-spillover controls, and optional-substrate non-claims while preserving the argument-level support boundary.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
