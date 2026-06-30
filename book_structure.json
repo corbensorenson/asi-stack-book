@@ -419,6 +419,20 @@
           "minimal_implementation": "A costed route ledger with quality predicates, residual accounting, and fallback criteria.",
           "beyond_state_of_art": "Efficient ASI is best understood as an operating system for cognition. It routes, compresses, reuses, verifies, and accounts for work so capability grows by removing waste and preserving residuals, not by assuming that more parameters or more tokens are the only path forward. In the mature cognition OS, capability improves only when routed, compressed, reused, governed, and tested cognition leaves visible cost, quality, fallback, and residual records.",
           "codex_tests": [
+            {
+              "name": "Lower-cost candidate negative case",
+              "purpose": "Check that a listed lower-cost authorized route satisfying the declared quality predicate rejects the finite minimum-viable-route predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no route-search completeness or cost-estimate accuracy claim",
+              "status": "implemented in AsiStackProofs.Efficiency; no route-search completeness or cost-estimate accuracy claim"
+            },
+            {
+              "name": "Open-obligation residual negative case",
+              "purpose": "Check that a promotion candidate with open obligations and no residual record rejects the finite residual-promotion predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no residual-burden measurement or utility-preservation claim",
+              "status": "implemented in AsiStackProofs.Efficiency; no residual-burden measurement or utility-preservation claim"
+            },
             "Minimum viable route test",
             "Residual burden accounting test",
             "Utility-preserving compression test"

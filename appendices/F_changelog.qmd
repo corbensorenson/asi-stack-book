@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-30 - Efficient ASI route and residual negative-case proofs
+
+- Strengthened `AsiStackProofs.Efficiency` with two derived negative-case
+  theorems: one rejects minimum-viable route claims when a listed lower-cost
+  authorized route satisfies the declared quality predicate, and one rejects
+  open-obligation promotion without a residual record.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 308
+  theorem declarations, 115 direct/projection-style declarations, and 193
+  derived/decomposed declarations.
+- Updated The Efficient ASI Hypothesis chapter, manifest test rows, Appendix
+  E, proof adequacy review, candidate status, v1.0/v1.x roadmap surfaces,
+  focus audit, and status snapshot validator. Refreshed the v1.0 status
+  manuscript scale to 167,038 chapter words excluding YAML and 174,427 raw
+  chapter-file words.
+- This does not promote any Appendix C or chapter core claim, prove route-search
+  completeness, verify cost-estimate accuracy, measure route quality, measure
+  residual burden, establish compression utility, prove measured efficiency, or
+  approve any reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Resource and simulation negative-case proofs
 
 - Strengthened `AsiStackProofs.ResourceEconomics` with two derived

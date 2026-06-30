@@ -23,6 +23,15 @@ theorem minimum_viable_route_has_no_lower_cost_authorized_quality_candidate
   intro minimumViable reviewPresent
   exact minimumViable review reviewPresent
 
+theorem lower_cost_authorized_quality_candidate_rejects_minimum_viable_route
+    {reviews : List RouteComparisonReview} {review : RouteComparisonReview} :
+    review ∈ reviews ->
+    LowerCostAuthorizedQualityCandidate review ->
+    ¬ MinimumViableRoute reviews := by
+  intro reviewPresent lowerCostCandidate minimumViable
+  have rejected := minimumViable review reviewPresent
+  exact rejected lowerCostCandidate
+
 structure ResidualPromotionReview where
   openObligations : Bool
   promotionCandidate : Bool
@@ -42,5 +51,16 @@ theorem routed_or_compressed_result_with_open_obligations_requires_residual_reco
     review.residualRecordPresent = true := by
   intro valid obligationsOpen promoted
   exact valid obligationsOpen promoted
+
+theorem open_obligation_promotion_without_residual_record_rejected
+    {review : ResidualPromotionReview} :
+    review.openObligations = true ->
+    review.promotionCandidate = true ->
+    review.residualRecordPresent = false ->
+    ¬ OpenObligationPromotionValid review := by
+  intro obligationsOpen promoted missingResidual valid
+  have residual := valid obligationsOpen promoted
+  rw [missingResidual] at residual
+  cases residual
 
 end AsiStackProofs.Efficiency
