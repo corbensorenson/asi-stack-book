@@ -115,6 +115,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Dissent preservation test | implemented | passing via synthetic tribunal review harness; no consensus-quality or verdict-correctness claim |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Consensus evidence test | implemented | passing via synthetic tribunal review harness; no deployed tribunal or runtime-review claim |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job lifecycle test | implemented | passes via Lean build and synthetic plan-execution contract harness |
+| `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Job execution route proof | implemented | passes via Lean build; finite job-execution route coverage only |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Tool permission enforcement test | planned | not run |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Human approval gate test | implemented | passes via Lean build and synthetic approval-bypass fixture; no approval-service claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact traceability test | planned | not run |
@@ -292,16 +293,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 121 |
+| Proof targets covered by triage | 122 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 121 |
+| implemented | 122 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 121 |
+| implemented | formal-invariant | lean-candidate | 122 |

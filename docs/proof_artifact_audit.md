@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 121 |
-| Manifest status counts | {"implemented": 121} |
-| Triage class counts | {"formal-invariant": 121} |
+| Proof targets audited | 122 |
+| Manifest status counts | {"implemented": 122} |
+| Triage class counts | {"formal-invariant": 122} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -81,7 +81,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/StackBoundaries.lean` | 2 | 2 | 3 | 3 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 2 | 2 | 2 |
-| `lean/AsiStackProofs/TypedJobs.lean` | 2 | 2 | 3 | 3 |
+| `lean/AsiStackProofs/TypedJobs.lean` | 3 | 14 | 4 | 4 |
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 6 | 8 | 4 |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | 3 | 12 | 2 | 3 |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | 3 | 13 | 5 | 5 |
@@ -110,7 +110,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `human-intent-as-a-formal-input` | 3 | 3 | 0 | 0 |
 | `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
 | `intent-to-execution-contracts` | 5 | 5 | 0 | 0 |
-| `labor-os-and-typed-jobs` | 2 | 2 | 0 | 0 |
+| `labor-os-and-typed-jobs` | 3 | 3 | 0 | 0 |
 | `living-book-methodology` | 2 | 2 | 0 | 0 |
 | `mathematical-and-search-substrates` | 2 | 2 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 4 | 4 | 0 | 0 |
@@ -202,6 +202,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:tribunal.review.failure_blocks_promotion` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.Tribunal` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.operational_invariant` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.failure_blocks_promotion` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:jobs.lifecycle.execution_route_envelope` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifacts.graph.operational_invariant` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifacts.graph.failure_blocks_promotion` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.operational_invariant` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |

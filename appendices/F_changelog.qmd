@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-06-30 - Labor OS job execution route proof envelope
+
+- Extended `AsiStackProofs.TypedJobs` with a finite job-execution route
+  vocabulary, review record, and route function over job presence, contract
+  locking, lifecycle validity, approval requirements, approval records,
+  permission satisfaction, scheduler slots, dispatch requests, running
+  observations, output delivery, verification state, residuals, failures, and
+  retirement requests.
+- Added derived/decomposed Lean theorems showing that missing jobs reject
+  execution; unlocked contracts request contracts; invalid lifecycle states
+  block dispatch; missing required approvals require approval; missing
+  permissions block dispatch; observed failures record failures; known residuals
+  are recorded; delivered but unverified outputs route to adjudication;
+  delivered and verified outputs become evidence-ready; dispatch without a
+  scheduler slot routes to scheduling; dispatch with a scheduler slot runs the
+  job; and complete retirement reviews retire the job.
+- Added `lean:jobs.lifecycle.execution_route_envelope` to the outline,
+  manifest, proof triage, Labor OS chapter, and Appendix E. The proof manifest
+  now tracks 122 targets; proof-depth now records 282 theorem declarations: 115
+  direct/projection-style and 167 derived/decomposed.
+- Updated Labor OS chapter, proof-depth and proof-adequacy surfaces, v1 roadmap
+  and status surfaces, v0.2 status, publication readiness, repository map, and
+  proof/code plan. Proof adequacy moves Labor OS to `useful but too narrow`.
+- This does not promote any Appendix C or chapter core claim, implement a
+  scheduler, approval service, adapter runner, permission enforcer, replay
+  harness, deployed job runtime, reader artifact, EPUB, DOCX, PDF, audio, DOI,
+  Zenodo, or audio-embedded EPUB release artifact.
+
 ## 2026-06-30 - Verification bandwidth adequacy route proof envelope
 
 - Extended `AsiStackProofs.VerificationBandwidth` with a finite

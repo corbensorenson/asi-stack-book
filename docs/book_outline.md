@@ -1484,6 +1484,7 @@ Draft deliverables:
 - Implemented protocol validation: `typed_job` fixture validates public record shape only.
 - Implemented Lean predicate: a transition record marked valid must use the declared finite lifecycle relation.
 - Implemented synthetic Codex test: Typed job lifecycle test via `python3 scripts/validate_plan_execution_contracts.py`; deployed job runner remains open.
+- Implemented proof-backed check: finite job-execution route coverage for missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests.
 - Planned Codex test: Tool permission enforcement test.
 - Implemented Lean predicate: an approval-required job cannot be allowed to run before approval is recorded.
 - Implemented synthetic Codex test: Human approval gate test via `python3 scripts/validate_plan_execution_contracts.py`; deployed approval service remains open.
@@ -1496,6 +1497,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | implemented |
 | `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | implemented |
+| `lean:jobs.lifecycle.execution_route_envelope` | `AsiStackProofs.TypedJobs` | A structured job-execution review routes missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests into explicit outcomes. | implemented |
 
 ### Artifact Graphs, Audit Logs, and Replay
 
@@ -2583,8 +2585,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 121 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 121 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 122 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 122 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Proof artifact traceability audit.

@@ -641,6 +641,16 @@
       "rationale": "Implemented in AsiStackProofs.TypedJobs as a finite approval predicate: approval-required jobs cannot be allowed to run when no approval record exists."
     },
     {
+      "tag": "lean:jobs.lifecycle.execution_route_envelope",
+      "chapter_id": "labor-os-and-typed-jobs",
+      "module": "AsiStackProofs.TypedJobs",
+      "formal_target": "A structured job-execution review routes missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests into explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TypedJobs as a finite job-execution route function and derived route theorems for missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests."
+    },
+    {
       "tag": "lean:artifacts.graph.operational_invariant",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactGraph",

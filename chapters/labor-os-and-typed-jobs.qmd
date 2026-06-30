@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`; supporting: `viea`, `genesiscode`, `software_magic_grimoire`; variant: `talos_md`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`; connector/source-note mapped: `talos_md`, `moecot` |
-| Test state | Typed job fixture validation implemented; finite lifecycle and approval predicates implemented in `AsiStackProofs.TypedJobs`; `python3 scripts/validate_plan_execution_contracts.py` checks synthetic active-job receipt and approval-bypass cases; scheduler, permission, adapter, replay, and deployed approval-service tests remain planned. |
+| Test state | Typed job fixture validation implemented; finite lifecycle, approval, and job-execution route predicates implemented in `AsiStackProofs.TypedJobs`; `python3 scripts/validate_plan_execution_contracts.py` checks synthetic active-job receipt and approval-bypass cases; scheduler, permission, adapter, replay, and deployed approval-service tests remain planned. |
 
 ## Drafting guardrail
 
@@ -256,12 +256,13 @@ This accountable execution layer is still an architectural target. Leave typed-j
 | Typed job fixture validation | Check that the typed-job fixture matches the public schema and declares contract, type, lifecycle state, adapter, inputs, outputs, permissions, approval state, failure behavior, audit events, and replay status. | implemented by protocol validation; validated locally |
 | Typed job lifecycle predicate | Check that a transition record marked valid uses the declared finite lifecycle relation. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |
 | Plan-execution typed-job dispatch harness | Check that active typed jobs match the command contract, appear in dispatch receipts, and do not bypass required approval. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic records only |
+| Job execution route proof | Check that a finite job-execution review routes missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests to explicit outcomes. | implemented by Lean build; finite job-execution route coverage only |
 | Tool permission enforcement test | Check that declared permissions cover requested adapter capabilities. | planned; not run |
 | Human approval gate predicate | Check that an approval-required job cannot be allowed to run before approval is recorded. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |
 | Delivery versus evidence-ready test | Check that delivered jobs without verification, artifact capture, audit, residual, and replay/non-replay fields cannot support promotion. | planned; not run |
 | Job parentage trace test | Check that each job traces to parent contract, plan node, approval if needed, adapter, artifact, and residual records. | planned; not run |
 
-Fixture-shape validation and two bounded Lean predicates are implemented. The remaining tests require a lifecycle checker, permission harness, approval service, adapter runner, or job runner that can reject invalid transitions, missing approvals, and unauthorized effects in an executable environment.
+Fixture-shape validation, bounded Lean predicates, and the finite job-execution route proof are implemented. The remaining tests require a lifecycle checker, permission harness, approval service, adapter runner, or job runner that can reject invalid transitions, missing approvals, and unauthorized effects in an executable environment.
 
 ### Formalization hooks
 
@@ -269,8 +270,9 @@ Fixture-shape validation and two bounded Lean predicates are implemented. The re
 |---|---|---|---|
 | `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | implemented |
 | `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | implemented |
+| `lean:jobs.lifecycle.execution_route_envelope` | `AsiStackProofs.TypedJobs` | A structured job-execution review routes missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests into explicit outcomes. | implemented |
 
-These proof hooks are implemented as finite-record predicates. They prove the bounded lifecycle and approval claims stated above; they do not prove the existence or correctness of a full labor-OS runtime.
+These proof hooks are implemented as finite-record predicates. They prove the bounded lifecycle and approval claims stated above and route modeled job states to explicit outcomes; they do not prove the existence or correctness of a full labor-OS runtime.
 
 ## Source crosswalk
 
