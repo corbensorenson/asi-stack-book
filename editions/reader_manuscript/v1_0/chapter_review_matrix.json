@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 11,
+    "curated_manuscript_candidate": 12,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -635,13 +635,15 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "reader_overlay_active",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_full_review_completion.md#decisions"
+        "docs/reader_part_ii_full_review_completion.md#decisions",
+        "docs/curated_reader_labor_os_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the Labor OS chapter. Existing overlay is accepted for the reader path; typed work, approval, delivery, evidence readiness, replay, parentage, and deployed scheduler non-claim boundaries remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the Labor OS chapter. Existing overlay remains accepted, and a first drafting-only curated prose pass now foregrounds typed jobs as the execution unit, contract locks, permission checks, approval gates, runtime-adapter boundaries, completion receipts, delivery-versus-evidence readiness, proof/test limits, and scheduler/runtime non-claims without approving release.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
