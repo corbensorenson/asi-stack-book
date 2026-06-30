@@ -1548,6 +1548,43 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass completed; see docs/curated_reader_command_contracts_prose_pass.md. Deferred intent/command-contract consolidation caveat remains active; not release-reviewed."
+    },
+    {
+      "chapter_id": "planning-as-a-control-layer",
+      "title": "Planning as a Control Layer",
+      "file": "editions/reader_manuscript/v1_0/chapters/planning-as-a-control-layer.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/planning-as-a-control-layer.qmd",
+      "live_source_ref": "chapters/planning-as-a-control-layer.qmd@d028c2c0c",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#planning-as-a-control-layer.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#planning-as-a-control-layer",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around planning as a controlled delay before execution: plan graphs, node lifecycle states, blocked work, dispatch receipts, typed-job handoff, residuals, replanning deltas, schema/harness boundaries, and finite-record proof limits; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, manifest chapter identity, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external planning records remain comparators rather than reproduced local evidence",
+        "proof/test status preserved without adding deployed planner behavior, decomposition accuracy, dependency soundness, scheduler correctness, context-demand prediction, runtime replanning, dispatch safety, parser behavior, tool execution, runtime adapter safety, approval-service behavior, ReAct reproduction, Tree-of-Thoughts reproduction, PDDL/SHOP2/TAMP implementation, AutoGen reproduction, PlanForge runtime behavior, MoECOT runtime behavior, benchmark performance, source-interpretation adequacy, or support-state movement claims",
+        "implementation horizon preserved without implying current planning control-plane deployment",
+        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with planforge-dags-and-intelligence-arbitrage",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_planning_control_prose_pass.md with the release-stability consolidation caveat; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {

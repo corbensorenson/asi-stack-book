@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 41,
+    "curated_manuscript_candidate": 42,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -436,12 +436,15 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_ii_contracts_full_review_pass.md#decisions"
+        "docs/reader_part_ii_contracts_full_review_pass.md#decisions",
+        "docs/curated_reader_planning_control_prose_pass.md",
+        "docs/chapter_consolidation_release_stability_review.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the planning chapter. Existing overlay is accepted for the reader path; proposed, blocked, dispatchable, replanned, stopped, and residual work remain distinct without claiming planner quality or dispatch safety.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the planning chapter. Existing overlay is accepted for the reader path; proposed, blocked, dispatchable, replanned, stopped, and residual work remain distinct without claiming planner quality or dispatch safety. First curated reader prose pass is recorded under the planning/DAG release-stability consolidation caveat; the row is now marked as a curated-manuscript candidate while release blockers remain active and no support-state movement or merge decision is implied.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

@@ -1,0 +1,361 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: planning-as-a-control-layer
+generated_baseline_ref: build/reader_edition/chapters/planning-as-a-control-layer.qmd
+live_source_ref: chapters/planning-as-a-control-layer.qmd@d028c2c0c
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Planning as a Control Layer
+
+A command can be valid and still be unready to act on. It may have a clear
+objective, explicit constraints, a known output shape, and a verification rule,
+but still lack the shape of the work. Something has to decide what steps exist,
+which steps depend on other steps, what context is missing, which tools would
+be needed, where authority stops, and what would count as a reason to refuse,
+pause, or replan.
+
+That layer is planning.
+
+In this stack, planning is not brainstorming. It is not a private chain of
+thought, and it is not a promise that the system knows how to execute the work.
+Planning is a controlled delay before action. It turns an accepted command into
+a visible plan graph so the system can inspect the work before the work touches
+memory, tools, users, money, files, networks, or external systems.
+
+The planner earns its place when it makes non-action legible. A good plan does
+not only say what should happen next. It says which nodes are blocked, which
+dependencies are missing, which verifier is unavailable, which source is not
+adequate, which tool exceeds authority, which budget cannot support the quality
+predicate, and which stop condition has already fired. Those are not side
+notes. They are the point of the control layer.
+
+Planning is useful because many dangerous actions begin as plausible steps. A
+graph full of plausible steps is not a governed system. The graph becomes
+governed only when proposed work, blocked work, reviewable work, dispatchable
+work, executed work, replanned work, and stopped work remain different states.
+
+## Problem
+
+Goals need to become governed plans with dependencies, budgets, risk limits,
+tool choices, and stopping conditions.
+
+The previous chapters built the front of the stack. Human intent becomes a
+formal input. Intent-to-execution contracts preserve the difference between
+what a person wants and what an executable system is allowed to do. Command
+contracts turn rich language into fields that can be inspected and refused.
+
+But a command contract is still not a work schedule. It does not tell the
+system how the task decomposes, what order the pieces should happen in, where
+context must be fetched, which worker or specialist is appropriate, what budget
+is sufficient, how failure changes the route, or when the safest result is to
+stop.
+
+Without a planning layer, those decisions get pushed into places that should
+not own them. Memory starts to create work by deciding what context implies.
+Reasoning starts to spend authority by turning an argument into an action.
+Execution starts to discover dependencies after side effects have already
+happened. Routing starts to treat cost and capability as the whole problem.
+
+Planning gives the stack a place to say: here is the work we think exists, here
+is why it is ordered this way, here is what is missing, here is what cannot be
+done yet, and here is the narrow subset that may become typed jobs.
+
+## Why Existing Approaches Are Insufficient
+
+Modern agent systems already contain planning ideas. ReAct keeps action and
+observation in a loop. Tree of Thoughts explores intermediate paths. PDDL and
+SHOP2 separate domains, problems, and hierarchical task decomposition. Task and
+motion planning separates discrete plans from feasibility. Behavior trees and
+GOAP-style systems show practical ways to organize reactive action. AutoGen and
+similar multi-agent systems make orchestration explicit. TLA+ gives a language
+for system modeling and state transitions.
+
+Those references matter because they show that planning is not a new word for
+"thinking harder." Planning has long meant structure: states, operators,
+preconditions, decomposition, feasibility, observation, coordination, and
+modeling.
+
+The ASI Stack uses that background differently. It does not claim to reproduce
+those systems, beat their benchmarks, or provide a deployed planner. The claim
+here is architectural: planning should be its own control layer between
+accepted commands and execution.
+
+That separation matters because the planner has a different failure mode than
+memory, reasoning, routing, or execution.
+
+Memory can over-expose context. Reasoning can rationalize unsupported steps.
+Routing can pick the cheapest inadequate worker. Execution can create real
+effects before the obligation is understood. Planning can fail by making the
+work look orderly while hiding whether it is authorized, verified, affordable,
+or even executable.
+
+The most dangerous planner is not the one that admits it is blocked. The
+dangerous planner is the one that turns every plausible node into a job.
+
+## Core Claim
+
+Planning is a separate control layer that converts accepted goals into governed
+action without owning memory, reasoning, or side effects (evidence boundary:
+architectural argument).
+
+PlanForge supplies the planning-middleware vocabulary: decomposition,
+dependencies, scheduling, intelligence tiering, fallback, and replanning. VIEA
+supplies the accepted-command-to-artifact spine. Cognitive Compilation supplies
+the compiler-pipeline pressure: goals become source plans, semantic
+intermediate representations, validators, and repairable artifacts. Software
+Magic Grimoire supplies bounded workflow language: handoffs, guards, entry and
+exit rules, loops, recursion, and recovery paths. MoECOT supplies
+implementation-reference context for orchestration, ledgers, readiness gates,
+replay, residuals, and promotion blockers.
+
+Those sources support the architecture vocabulary. They do not prove planner
+quality in this repository. They do not show a deployed scheduler, dependency
+soundness, context-demand prediction, runtime replanning, or end-to-end tool
+execution.
+
+## Mechanism
+
+The planning artifact is the plan graph.
+
+A plan graph receives a validated command contract and expands it into
+assumptions, nodes, dependencies, context requests, tool requirements,
+authority requirements, budgets, verification plans, replanning policy, stop
+conditions, dispatch state, residuals, and non-claims.
+
+The graph is not a job queue. It is a control surface. It lets the system ask
+which parts of the work are merely proposed, which are blocked, which need
+review, which are ready to dispatch, which have already been dispatched, which
+changed after feedback, and which have stopped.
+
+```{mermaid}
+flowchart LR
+  A["Accepted command contract"] --> B["Plan graph"]
+  B --> C["Assumptions and dependencies"]
+  B --> D["Context, authority, risk, and budget requests"]
+  B --> E["Verification plan and stop conditions"]
+  C --> F{"Node state"}
+  D --> F
+  E --> F
+  F -- "proposed or blocked" --> G["Plan residual"]
+  F -- "reviewable" --> H["Human or governance review"]
+  F -- "dispatchable" --> I["Dispatch receipt"]
+  I --> J["Typed job"]
+  J --> K["Runtime feedback"]
+  K --> L{"Replan needed?"}
+  L -- "yes" --> B
+  L -- "no" --> M["Plan ledger"]
+  G --> M
+  H --> M
+```
+
+The key boundary is the dispatch receipt. A node can be useful without being
+dispatchable. It can clarify a dependency, expose a missing source, estimate a
+budget, or identify an approval requirement. But it should not become a typed
+job until the graph records satisfied constraints, context references, an
+authority basis, a verification plan, and a parent command.
+
+That dispatch receipt is the bridge to the Labor OS. Without it, a downstream
+tool call may still happen in an ad hoc system, but the book should not treat
+that as governed execution.
+
+### Node States
+
+A plan graph needs more than "todo" and "done."
+
+Proposed nodes are decomposition candidates. They may be useful, but they have
+not earned dispatch. Nodes blocked on context need missing material or a
+narrower target. Nodes blocked on authority need a new contract, an approval
+route, or a refusal. Nodes blocked on dependencies wait for upstream artifacts,
+reviews, or decisions. Nodes blocked on verification need a success predicate
+before the system can honestly lower them into work.
+
+Dispatchable nodes are different. They have satisfied constraints, context,
+authority, dependencies, and verification plans. Dispatched nodes have produced
+job packets. Replanned nodes record what changed after feedback while
+preserving the original authority and stop-condition boundaries. Stopped nodes
+preserve the reason work ended: denial, risk, budget exhaustion, missing
+source, failed predicate, or triggered stop condition.
+
+This state vocabulary turns the plan into a governed object. The graph can
+contain ideas, questions, dependencies, and refusals without treating them all
+as permission.
+
+## Interfaces
+
+Planning sits between command contracts and execution, but it touches almost
+every layer around it.
+
+Alignment filters which goals may become planning inputs. Governance constrains
+authority, review, refusal, appeal, and stop conditions. VCM supplies context
+packets and source adequacy. Routing selects specialists only after the plan
+names requirements. Reasoning and verification help judge assumptions and
+success predicates. Execution receives typed jobs only from dispatchable plan
+nodes. Evidence records assumptions, residuals, verification results,
+replanning events, and non-claims.
+
+Minimum plan-graph fields include:
+
+- `plan_id`
+- `command_contract`
+- `assumptions`
+- `nodes`
+- `dependencies`
+- `context_requests`
+- `tool_requirements`
+- `authority_requirements`
+- `authority_budget`
+- `risk_budget`
+- `compute_budget`
+- `verification_plan`
+- `replanning_policy`
+- `replanning_history`
+- `stop_conditions`
+- `node_lifecycle_states`
+- `blocked_nodes`
+- `dispatch_receipts`
+- `residual_register`
+- `dispatch_state`
+- `non_claims`
+
+Those fields do not make the planner good. They make the planner inspectable.
+The difference matters. A record shape can be validated before anyone knows
+whether the decomposition was clever, efficient, or complete.
+
+## Invariants
+
+The planning layer has a small set of obligations.
+
+Plans expose constraints and stop conditions. Runtime replanning preserves
+authority limits. Tool selection is justified by task requirements. Only
+dispatchable nodes lower into typed jobs. Candidate routes, blocked nodes, and
+review notes are not executable permission.
+
+The cleanest invariant is authority inheritance. A plan node should not exceed
+the parent command's authority ceiling unless governance explicitly narrows or
+changes the boundary. Replanning may change order, route, or decomposition. It
+may not silently widen authority by calling the change adaptation.
+
+Stop conditions need the same treatment. A failed path can produce a better
+route, but it should not erase the condition that told the original work when
+to stop, escalate, or ask for review.
+
+The plan ledger should also preserve rejected or discarded routes when those
+routes explain risk, budget, source inadequacy, or verification burden. A plan
+that only records the happy path is hard to audit after failure.
+
+## Failure Modes
+
+Planning fails when the graph creates the appearance of control without
+actually controlling dispatch.
+
+Scope creep appears when the plan adds goals that were never accepted. Planning
+without replanning appears when the first failure produces improvisation
+instead of controlled repair. Tool overreach appears when a useful step asks
+for a tool, permission, or budget beyond the parent contract. Dispatch
+laundering appears when a proposed or blocked node becomes a job because it was
+written down in the graph. Replanning erasure appears when feedback changes the
+plan while hiding the authority delta, stop-condition delta, or residual.
+
+These are not rare corner cases. They are the default failure pressures of
+agentic systems. Once a system has momentum, a plausible plan can become an
+excuse for action. The control layer exists to interrupt that slide.
+
+The best failure signal is often a visible blocked node. A blocked context node
+says the source is not adequate. A blocked authority node says the system lacks
+permission. A blocked verification node says success cannot yet be judged. A
+stopped node says the right outcome was non-execution.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a public plan-graph record and a small
+cross-record gate.
+
+The repository already has the basic pieces for that narrow slice: a
+`plan_graph` schema, a PlanForge DAG schema, typed-job records, semantic-atom
+records, and a synthetic plan-execution contract harness. The harness checks
+that command contracts, plan graphs, DAGs, semantic atoms, and typed jobs agree
+on parentage and obligation boundaries. It rejects cycles, contract mismatch,
+dispatch without receipt, lost requirements, and approval bypasses. It also
+accepts a blocked-authority plan that preserves residuals without pretending
+to dispatch work.
+
+That is useful, but small. It validates cross-record discipline, not planner
+intelligence. It does not measure decomposition quality, context-demand
+prediction, scheduler performance, runtime replanning, or tool execution.
+
+The minimum next improvement would be a tiny control-layer fixture with one
+valid dispatchable node, one blocked dependency, one missing-context node, one
+authority-exceeding tool request, and one replanning event that preserves the
+original stop condition. That would demonstrate the semantics of planning as
+control without implying that the system can plan well in the open world.
+
+## Beyond the State of the Art
+
+The mature endpoint is a live control plane for work.
+
+In that mature system, planning would receive accepted command contracts and
+maintain plan graphs over time. Strategic, tactical, and runtime views would
+share the same parent contract. Every node would carry assumptions,
+dependencies, context needs, authority basis, budgets, risk limits,
+verification plans, stop conditions, and residual ownership. Dispatch receipts
+would bind each job to a plan node, a satisfied-constraint set, a context
+packet, a verifier, and the parent command.
+
+The mature system would be useful even when nothing executes. It would show
+blocked context, blocked authority, blocked verification, cyclic dependency,
+budget pressure, source inadequacy, missing approval, and human-review queues
+before side effects occur. It would let a team inspect why work is waiting,
+why work was stopped, and why some possible route was not allowed.
+
+This endpoint is still an architectural target. The current repository does
+not contain a deployed planning control plane. It contains a schema, source
+mapping, finite-record proof hooks, and synthetic cross-record tests that make
+the boundary more explicit.
+
+## What Is Proven, And What Is Not
+
+The Lean module `AsiStackProofs.Planning` models finite records around
+authority inheritance, dispatchability, blocked plans, replanning, residuals,
+and non-claims. It proves small properties over those records: unsatisfied
+constraints block dispatch, valid dispatchable records have required gates,
+blocked records have no dispatch receipt, replanned records preserve control
+residuals, and valid planning records keep non-claims present.
+
+Those theorems are useful because they make the intended boundary executable
+as a formal envelope. They are not broad correctness proofs. They do not prove
+that a real planner decomposes tasks well, finds the right dependencies,
+predicts missing context, chooses the best route, preserves authority in a
+live runtime, or succeeds at execution.
+
+The honest status is therefore: planning support remains `argument`. The
+formal and synthetic artifacts make the shape of the claim more disciplined,
+but they do not promote the chapter core claim.
+
+## Summary
+
+Planning is the stack's control surface between accepted commands and typed
+jobs. It converts intent into a visible graph of obligations: assumptions,
+dependencies, context, tools, authority, budgets, verification, stop
+conditions, residuals, and dispatch state.
+
+The chapter's central distinction is proposed work versus authorized work. A
+plan may contain many useful nodes, but only dispatchable nodes should lower
+into jobs. Blocked nodes, missing sources, authority gaps, failed predicates,
+and stop conditions are valuable planning outputs because they prevent
+plausible action from becoming unauthorized action.
+
+That is why planning belongs between command contracts and execution. It lets
+the system slow down in a structured way. It turns "we could do this" into the
+more important question: "which parts of this are actually allowed to become
+work?"
+
+## Handoff
+
+This chapter described planning as a control layer. The next chapter sharpens
+that control layer into schedulable PlanForge DAGs and intelligence arbitrage:
+which nodes need expensive cognition, which can run cheaply, which require
+fallbacks, and which residuals must be preserved before the system can claim
+that a cheaper route was adequate.
