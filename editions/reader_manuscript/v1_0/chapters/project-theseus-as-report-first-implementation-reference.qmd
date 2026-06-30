@@ -1,0 +1,307 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: project-theseus-as-report-first-implementation-reference
+generated_baseline_ref: build/reader_edition/chapters/project-theseus-as-report-first-implementation-reference.qmd
+live_source_ref: chapters/project-theseus-as-report-first-implementation-reference.qmd@9ea087fd0
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Project Theseus as Report-First Implementation Reference
+
+An architecture becomes more serious when it has to explain itself through
+records.
+
+That is the role Project Theseus plays in this book. Theseus is not used here
+as proof that the ASI Stack already works. It is used as an implementation
+reference: a nearby system that makes the book ask what a governed,
+self-improving AI project would have to leave behind if it wanted to be
+inspectable after the fact.
+
+A dashboard can make a project feel alive. It can show green checks, queued
+work, current pressure, and apparent progress. But a dashboard is not the
+evidence object. The evidence object is the report bundle underneath it: the
+contract, route, work item, gate, residual, checksum, replay note, missing
+artifact, and non-claim that survive when the screen is closed.
+
+Project Theseus matters because it pressures the ASI Stack toward that kind of
+record. It gives the book a concrete way to think about plans, gates, ledgers,
+work boards, checkpoints, and self-evolution controls without letting private
+or source-reported implementation status become public empirical proof.
+
+The whole chapter can be reduced to one discipline: if a claim depends on a
+run, the report has to carry it.
+
+## Problem
+
+The ASI Stack cannot remain only a set of conceptual layers.
+
+Intent, governance, planning, memory, routing, execution, evidence, benchmarks,
+and self-improvement all sound plausible when they are drawn separately. The
+harder question is what happens when a system actually tries to operate them
+together. Which goal was admitted? Which plan was compiled? Which route was
+chosen? Which work item changed? Which gate passed or failed? Which residual
+remained? Which artifact can a reviewer inspect later?
+
+Project Theseus gives the book an implementation reference for those
+questions. Its source notes describe report-first machinery: pressure loops,
+plan compiler contracts, architecture gates, residual escrow, operator work
+boards, checkpoints, and self-evolution controls.
+
+The boundary is as important as the reference. The public book cannot claim
+current Theseus benchmark performance, training readiness, dashboard state,
+self-evolution safety, model quality, or deployment readiness unless the
+relevant reports, commands, environments, and publication permissions are
+present here. They are not.
+
+That makes Theseus more useful, not less. The point is not to say, "a prototype
+exists somewhere, therefore the architecture is proven." The point is to ask
+what a prototype would have to report before anyone should trust it.
+
+## Why Dashboards Do Not Count
+
+A prototype roadmap is not enough. Neither is a screenshot, status page, or
+confident summary.
+
+Self-improving systems are especially vulnerable to narrative overclaim. The
+tempting story is always that the loop improved itself. The governed story has
+to be more boring and more exact:
+
+- what pressure entered the system;
+- what authority allowed the attempt;
+- what artifact changed;
+- what gate accepted, narrowed, or blocked the change;
+- what residual survived;
+- what future reviewer can inspect.
+
+Dashboards can help operators see those facts, but dashboards should not be
+where the facts live. The report bundle is the authority surface. It should
+outlive the run, name its own limits, and make missing artifacts visible.
+
+This is where Theseus connects to adjacent reporting disciplines. Model cards,
+dataset datasheets, AI service FactSheets, and machine-learning
+reproducibility checklists all push toward structured disclosure, provenance,
+intended-use boundaries, limitation reporting, and artifact review. Theseus
+report packets would need those ideas plus additional fields for gates,
+residuals, work-board entries, replay state, publication boundaries, and
+non-claims. The comparison is orienting only; this repository has not produced
+or reproduced those external artifacts for Theseus.
+
+## Core Claim
+
+Project Theseus should be mined as a report-first implementation reference for
+RMI, showing how pressure, residuals, gates, ledgers, operator work boards,
+checkpoints, and self-evolution governance can instantiate the ASI Stack
+without promoting local results as general capability claims.
+
+In the live book, that claim remains a design rationale at `argument` support.
+
+The source notes are strong enough to guide design discussion. They are not
+enough to promote the chapter's core claim. The separate Project Theseus import
+adds one static, digest-verified architecture-gate report fixture; it does not
+give this repository a clean live Theseus replay, reproduced benchmark run,
+current dashboard verification, private workload publication, or model-quality
+result.
+
+The distinction is the chapter's main contribution. Theseus can teach the book
+what evidence should look like while the book refuses to claim that the
+evidence already proves more than it does.
+
+## The Report Loop
+
+The implementation pattern is a loop:
+
+1. pressure enters as a goal, benchmark, operator task, or unresolved residual;
+2. a plan compiler turns that pressure into a contract and semantic work
+   structure;
+3. routing selects bounded machinery to attempt the work;
+4. execution emits artifacts, reports, logs, and work-board updates;
+5. gates decide what can be accepted, narrowed, blocked, quarantined, or sent
+   back for review;
+6. residuals become the next pressure instead of disappearing.
+
+In Theseus terms, the useful artifact is not the fact that the loop exists. The
+useful artifact is the record showing what happened at each step.
+
+```{mermaid}
+flowchart LR
+  Pressure["Goal, benchmark, task, or residual"] --> Contract["Plan contract and semantic IR"]
+  Contract --> Route["Bounded route and tool choice"]
+  Route --> Work["Work item, arm, tool, or Hive task"]
+  Work --> Bundle["Report bundle"]
+  Bundle --> Gate["Architecture, resource, safety, or promotion gate"]
+  Gate --> Decision["Accept, narrow, block, quarantine, or review"]
+  Decision --> Residual["Residual and next pressure"]
+  Residual --> Pressure
+
+  Bundle --> Boundary["Public claim boundary"]
+  Boundary --> Missing["Missing artifact row"]
+  Boundary --> NonClaim["Non-claims"]
+  Boundary -. "prevents" .-> Overclaim["Dashboard or local status becoming public proof"]
+```
+
+The loop is governed only if the blocked path is as visible as the successful
+path. A missing command, dirty checkout, absent checksum, private payload, or
+unreplayed report should not be smoothed over. It should become a row that
+prevents stronger claims.
+
+## What The Static Import Means
+
+The ASI Stack repository currently contains one public-safe Project Theseus
+report import lane. It imports a sanitized architecture-gate summary as a
+static fixture, verifies the pinned source-artifact digest, records a 14-of-14
+gate summary with zero external inference calls, and rejects invalid mutations
+for digest mismatch, private-payload copying, and support-promotion overclaim.
+
+That is useful. It proves that this repository can hold a public-safe Theseus
+report contract, verify a digest boundary, and reject a few obvious forms of
+evidence laundering.
+
+It is also narrow. The import does not rerun Project Theseus. It does not prove
+that the current checkout is clean. It does not reproduce a benchmark. It does
+not inspect a live dashboard. It does not authorize training. It does not move
+the Project Theseus chapter core claim above `argument`.
+
+The right lesson is procedural: the report lane is promising because it can say
+no. It can reject private payload leakage, digest drift, and support-state
+overclaim before those errors become prose.
+
+## Interfaces
+
+The Theseus reference connects to the ASI Stack through reportable interfaces:
+
+- plan compiler contracts, semantic IR DAGs, context slices, route decisions,
+  claim targets, and replay traces;
+- architecture gates for training, promotion, self-evolution, resource use,
+  safety ledgers, residual escrow, and external-inference boundaries;
+- operator work boards, task states, node registries, command vocabulary,
+  hooks, feedback routes, TTLs, kill switches, and approval surfaces;
+- benchmark ledgers and capability matrices that preserve floors and residuals
+  instead of turning local status into general readiness;
+- Circle transfer records that can supply deterministic structural receipts
+  without becoming model-quality, speed, context-length, or ASI-progress
+  evidence.
+
+For future ingestion, these surfaces should be wrapped in a Theseus Report
+Packet. A packet should name the originating pressure, contract hash,
+work-board item, route, report bundle path, gate result, residual, replay
+command, environment boundary, artifact checksum, reviewer decision,
+publication permission, missing artifacts, and non-claims.
+
+Only a replayed or otherwise accepted evidence transition should affect
+Appendix C. A source note can explain why a design appears in the book. An
+imported report can show what a local system recorded. A reproduced run can
+support a narrower transition. A missing artifact blocks movement. Those are
+different states, and the reader should never have to guess which one is being
+used.
+
+## Invariants
+
+Theseus is valuable to the ASI Stack only if it preserves the boundary between
+implementation reference and public evidence.
+
+The important invariants are simple:
+
+- reports survive the run and are not replaced by dashboard prose;
+- private experiments and public calibration remain separated;
+- current-state claims require current artifacts, not historical source notes;
+- promotion requires present, passing gate records where the policy demands
+  them;
+- missing artifacts remain visible;
+- source-reported status does not become reproduced evidence by being retold;
+- self-evolution proposals follow an intervention ladder instead of inheriting
+  trust from momentum.
+
+The live Lean hooks capture a small formal version of this discipline. They
+model record-level predicates saying that an implementation-reference claim
+needs a report, config, or tool surface rather than dashboard prose alone, and
+that capability or self-evolution promotion is blocked when required gate
+reports are absent or failing. Those hooks do not prove that a Theseus run
+succeeded; they prove only the shape of the gate the book wants to enforce.
+
+## Failure Modes
+
+The failure modes are the usual ways a prototype story becomes stronger than
+its artifacts.
+
+Latest-file reporting can overwrite lineage. Benchmark pressure can turn into
+capability theater. Teacher dependence can replace local evidence. Architecture
+churn can outrun residual diagnosis. Remote work can proceed without
+allowlists, TTLs, or kill switches. A local report can be narrated as public
+proof. A dashboard can make missing commands and private artifacts feel
+irrelevant.
+
+The most dangerous failure is report-state drift. A historical source note, an
+imported static report, a clean rerun, and a current live dashboard are not the
+same thing. If the prose treats them as equivalent, the book has laundered its
+own evidence.
+
+The antidote is not distrust of prototypes. It is stronger bookkeeping.
+Prototype pressure should create better questions: which artifact is missing,
+which claim is blocked, which gate needs a replay, which residual owner is
+unclear, and which non-claim should remain attached to the next summary.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a public-safe report crosswalk.
+
+It should map one ASI Stack layer to one Theseus report, config, or tool
+surface, then record the evidence state, missing artifacts, public claim
+boundary, and non-claims. It should include at least one blocked or missing row
+so the system demonstrates refusal, not just acceptance.
+
+The repository already has the first narrow pieces: a crosswalk-style fixture
+and a static architecture-gate import validator. The next honest step is not a
+larger claim. It is a miniature public-safe report bundle containing one goal
+contract, one plan/compiler artifact, one work-board item, one gate record, one
+residual, one non-claim, one missing artifact, one replay boundary, and one
+review note.
+
+That would let the book show report-first discipline without exposing private
+workloads or implying broad capability evidence.
+
+## Beyond The State Of The Art
+
+The mature version is a public-safe implementation-reference lab.
+
+In that lab, Theseus reports, configs, gates, ledgers, work-board entries,
+residuals, replay notes, and publication boundaries would be importable as
+bundles. Dashboards could visualize the bundles, but they would not replace
+them. Each bundle would identify the ASI Stack layer it exercises, the command
+or report source, configuration, environment boundary, artifact checksum, gate
+result, residual, missing artifact, public claim boundary, and non-claims.
+
+A mature report lab would also make failures first-class. Failed replays,
+blocked promotions, dirty checkouts, private payload boundaries, stale
+dashboards, missing checksums, and inconclusive gates would all remain visible.
+That visibility is what would make the lab useful to researchers and ordinary
+readers at the same time. It would show not only what the system can do, but
+what the system is not yet allowed to say.
+
+At that endpoint, Theseus would be a falsifiable reference for implementation
+evidence. Every report would either support a narrow public boundary or
+explicitly fail to do so.
+
+## Summary
+
+Project Theseus gives the book a practical implementation reference for
+report-first AI systems: pressure, residuals, plan contracts, gates, ledgers,
+operator work boards, checkpoints, and self-evolution governance.
+
+The public boundary stays strict. The static architecture-gate import shows how
+one Theseus report can be mirrored safely, but it does not become a clean
+replay, benchmark result, current dashboard inspection, deployment claim,
+training authorization, or support-state promotion.
+
+That caution is the value of the chapter. Theseus shows what kind of evidence
+the stack should want, while the living book records exactly what evidence it
+does and does not have.
+
+## Handoff
+
+Project Theseus shows what report-first implementation evidence should look
+like. Prototype Roadmap turns that evidence appetite into dependency order:
+source inventory, claim ledgers, schemas, validation, and release discipline
+first; contracts, context, jobs, adapters, routing, readiness, benchmarks, and
+self-improvement later.

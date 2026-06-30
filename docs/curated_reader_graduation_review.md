@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 17
-- Curated chapter records: 24 drafting records for
+- Curated-manuscript candidates: 18
+- Curated chapter records: 25 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -46,6 +46,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `benchmark-ratchets-and-anti-goodhart-evidence`,
   `policy-optimization-and-learning-from-feedback`,
   `integrated-reference-architecture`,
+  `project-theseus-as-report-first-implementation-reference`,
   `recursive-self-improvement-boundaries`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
@@ -64,7 +65,7 @@ System Boundaries, Failure Modes, Evidence States, Human Intent, Security
 Kernel, Stable Capability Fields, Capability Replacement and Rollback,
 Readiness Gates, Context Transactions, Verification Bandwidth, Claim Ledgers,
 Labor OS, Artifact Graphs, Runtime Adapters, Procedural Memory,
-Benchmark Ratchets, Policy Optimization, Integrated Reference Architecture,
+Benchmark Ratchets, Policy Optimization, Integrated Reference Architecture, Project Theseus,
 Recursive Self-Improvement,
 `circle-calculus-and-proof-carrying-ai-contracts`,
 `executable-specifications-and-lean-proof-envelope`, and
@@ -116,6 +117,7 @@ duplicate skeletons the consolidation pilot is trying to remove.
 | `benchmark-ratchets-and-anti-goodhart-evidence` | protected standalone evidence-governance chapter outside pending consolidation clusters; owns score-versus-evidence distinction, evidence-state classification, run records, residuals, regression floors, anti-Goodhart checks, contamination/transfer boundaries, and claim-specific promotion decisions | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_benchmark_ratchets_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no empirical benchmark success, hidden-holdout validity, benchmark transfer, contamination resistance, regression-suite quality, anti-Goodhart effectiveness, source-reported replay, current Theseus readiness, deployment readiness, model quality, or ASI-progress claim is implied. |
 | `policy-optimization-and-learning-from-feedback` | protected standalone governed-learning chapter outside pending consolidation clusters; owns policy updates as behavior-change leases, target-policy identity, feedback admissibility, reward boundaries, drift bounds, holdouts, regressions, reward-hacking probes, authority conservation, rollback, and promotion gates | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_policy_optimization_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, reasoning-budget RL, reward-model validation, preference-data quality, optimizer convergence, benchmark improvement, policy safety, route quality, context-selection quality, rollback success, governed deployment, or reward-hacking-resistance claim is implied. |
 | `integrated-reference-architecture` | protected standalone synthesis chapter outside pending consolidation clusters; owns the reference trace kernel, parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, blocked-path visibility, and downstream trace rejection | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_integrated_reference_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no integrated runtime, end-to-end trace harness, artifact-continuity audit, authority stop-condition execution, deployed authority enforcement, replayed runtime trace, current Theseus dashboard or command result, operator-board execution, compiler proof, benchmark ledger replay, model-quality result, deployment-readiness, stack-safety, or public empirical-proof claim is implied. |
+| `project-theseus-as-report-first-implementation-reference` | protected standalone implementation-reference chapter outside pending consolidation clusters; owns the report-first Theseus boundary, static import boundary, missing-artifact visibility, and no-promotion discipline | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_project_theseus_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no clean live Theseus replay, current dashboard state, reproduced benchmark, model-quality result, deployment readiness, training authorization, self-evolution safety, public-compute readiness, or support-state movement claim is implied. |
 | `recursive-self-improvement-boundaries` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_recursive_self_improvement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
@@ -153,7 +155,7 @@ true:
 
 ## Non-Claims
 
-- This review creates twenty-four drafting-only curated reader chapter files for
+- This review creates twenty-five drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

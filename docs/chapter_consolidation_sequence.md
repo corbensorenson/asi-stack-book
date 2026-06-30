@@ -323,6 +323,7 @@ The current allowed protected-reader set is:
 - `benchmark-ratchets-and-anti-goodhart-evidence`
 - `policy-optimization-and-learning-from-feedback`
 - `integrated-reference-architecture`
+- `project-theseus-as-report-first-implementation-reference`
 - `recursive-self-improvement-boundaries`
 - `circle-calculus-and-proof-carrying-ai-contracts`
 - `executable-specifications-and-lean-proof-envelope`

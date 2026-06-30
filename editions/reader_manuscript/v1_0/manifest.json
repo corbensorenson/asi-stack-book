@@ -931,6 +931,43 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_integrated_reference_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "title": "Project Theseus as Report-First Implementation Reference",
+      "file": "editions/reader_manuscript/v1_0/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "live_source_ref": "chapters/project-theseus-as-report-first-implementation-reference.qmd@9ea087fd0",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#project-theseus-as-report-first-implementation-reference.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#project-theseus-as-report-first-implementation-reference",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around Project Theseus as a report-first implementation-reference lab: reports are evidence objects, dashboards are surfaces, static architecture-gate import remains narrow, missing artifacts block stronger claims, and no clean replay or support-state promotion is implied.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; Project Theseus remains local implementation-reference context, not independent third-party evidence or reproduced runtime proof",
+        "static architecture-gate import preserved as public-safe digest-verified implementation-reference evidence only, without clean live replay, benchmark reproduction, dashboard verification, private workload publication, or support-state movement",
+        "proof/test status preserved without adding report-bundle completeness, replay-readiness, work-board, artifact-gap, self-evolution ladder, model-quality, deployment-readiness, training-authorization, or ASI-capability results",
+        "implementation horizon preserved without implying current public-safe report lab deployment",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_project_theseus_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {
