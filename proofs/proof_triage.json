@@ -481,6 +481,16 @@
       "rationale": "Implemented in AsiStackProofs.VirtualContextABI as a finite lookup predicate: mandatory misses emit typed faults and no best-effort materialization."
     },
     {
+      "tag": "lean:vcm.abi.context_admission_route_envelope",
+      "chapter_id": "virtual-context-abi",
+      "module": "AsiStackProofs.VirtualContextABI",
+      "formal_target": "A structured context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews into explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.VirtualContextABI as a finite context-admission route function and derived route theorems for malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews."
+    },
+    {
       "tag": "lean:vcm.certificates.operational_invariant",
       "chapter_id": "virtual-context-abi",
       "module": "AsiStackProofs.ContextCertificates",

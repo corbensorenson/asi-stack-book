@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 119 |
-| Manifest status counts | {"implemented": 119} |
-| Triage class counts | {"formal-invariant": 119} |
+| Proof targets audited | 120 |
+| Manifest status counts | {"implemented": 120} |
+| Triage class counts | {"formal-invariant": 120} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -84,7 +84,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/TypedJobs.lean` | 2 | 2 | 3 | 3 |
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 6 | 8 | 4 |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | 2 | 2 | 1 | 2 |
-| `lean/AsiStackProofs/VirtualContextABI.lean` | 2 | 2 | 4 | 4 |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | 3 | 13 | 5 | 5 |
 
 ## Chapter Coverage
 
@@ -133,7 +133,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `system-boundaries-and-authority` | 2 | 2 | 0 | 0 |
 | `the-efficient-asi-hypothesis` | 2 | 2 | 0 | 0 |
 | `verification-bandwidth-and-context-adequacy` | 2 | 2 | 0 | 0 |
-| `virtual-context-abi` | 4 | 4 | 0 | 0 |
+| `virtual-context-abi` | 5 | 5 | 0 | 0 |
 
 ## Target Trace
 
@@ -186,6 +186,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.abi.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.abi.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.abi.context_admission_route_envelope` | `virtual-context-abi` | `AsiStackProofs.VirtualContextABI` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.certificates.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.certificates.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.ContextCertificates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.transactions.operational_invariant` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |

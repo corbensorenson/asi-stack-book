@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-06-30 - Virtual Context ABI context admission route proof envelope
+
+- Extended `AsiStackProofs.VirtualContextABI` with a finite context-admission
+  route vocabulary, review record, and route function over request
+  well-formedness, address and version declarations, request-bounded authority,
+  context availability, mandatory lookup status, certificate requirements,
+  certificate freshness, taint, adequacy requirements, adequacy results,
+  residuals, and materialization requests.
+- Added derived/decomposed Lean theorems showing that malformed requests reject;
+  missing addresses request context; authority escapes require authority review;
+  absent mandatory context issues a typed fault; absent optional context requests
+  context; missing certificates require certificates; stale certificates require
+  refresh; tainted context quarantines; failed adequacy requires adequacy review;
+  known residuals are recorded; and complete materialization reviews can
+  materialize context.
+- Added the `lean:vcm.abi.context_admission_route_envelope` proof target to the
+  outline, manifest, proof triage, Virtual Context ABI chapter, and Appendix E.
+  The proof manifest now tracks 120 implemented finite-record targets, and the
+  proof-depth classifier now records 260 theorem declarations: 115
+  direct/projection-style and 145 derived/decomposed.
+- Updated the Virtual Context ABI chapter, proof-depth and proof-adequacy
+  surfaces, v1.0 roadmap/status surfaces, v0.2 manuscript status, publication
+  readiness note, repository map, and proof/code plan. The proof adequacy review
+  keeps Virtual Context ABI in `needs executable tests first`.
+- This does not promote any Appendix C or chapter core claim, implement a
+  resolver, prove certificate truthfulness, measure semantic fidelity, enforce
+  deletion closure, test transaction isolation, validate model-facing memory
+  behavior, approve reader artifacts, or create EPUB, DOCX, PDF, audio, DOI,
+  Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Cognitive compilation semantic lowering route proof envelope
 
 - Extended `AsiStackProofs.CognitiveCompilation` with a finite semantic

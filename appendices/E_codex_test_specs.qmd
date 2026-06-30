@@ -91,6 +91,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Admission vs adequacy test | implemented | passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Conflict adequacy classification test | implemented | passes via synthetic context admission/adequacy harness; no adjudication claim |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Context fault behavior test | implemented | passes via synthetic context admission/adequacy harness; no deployed resolver claim |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Context admission route proof | implemented | passes via Lean build; finite context-admission route coverage only |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Semantic page certificate fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Certificate completeness test | implemented | passes through finite Lean certificate predicates |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Authority preservation test | implemented | passes through finite Lean authority predicates |
@@ -290,16 +291,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 119 |
+| Proof targets covered by triage | 120 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 119 |
+| implemented | 120 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 119 |
+| implemented | formal-invariant | lean-candidate | 120 |

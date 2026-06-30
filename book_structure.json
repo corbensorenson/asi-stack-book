@@ -3383,6 +3383,11 @@
               "result_status": "passes via synthetic context admission/adequacy harness; no deployed resolver claim"
             },
             {
+              "name": "Context admission route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite context-admission route coverage only"
+            },
+            {
               "name": "Semantic page certificate fixture validation",
               "implementation_status": "implemented",
               "result_status": "passes via protocol fixture validation; shape only"
@@ -3425,6 +3430,12 @@
               "tag": "lean:vcm.abi.failure_blocks_promotion",
               "module": "AsiStackProofs.VirtualContextABI",
               "target": "A mandatory context miss produces a typed fault rather than a best-effort packet.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:vcm.abi.context_admission_route_envelope",
+              "module": "AsiStackProofs.VirtualContextABI",
+              "target": "A structured context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews into explicit outcomes.",
               "status": "implemented"
             },
             {

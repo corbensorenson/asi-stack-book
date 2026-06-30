@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 119 |
+| Proof targets in manifest | 120 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 249 |
+| Theorem declarations classified | 260 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 134 |
+| Derived/decomposed theorem declarations | 145 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -105,7 +105,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/VirtualContextABI.lean` | virtual-context-abi | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | virtual-context-abi | 3 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 
 ## Theorem Classification
 
@@ -358,8 +358,19 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_high_stakes_conflict_without_revisit_path_is_blocked` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `admitted_context_packet_may_still_be_marked_inadequate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `high_risk_claim_with_inadequate_context_cannot_receive_verified_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `authority_escape_requires_context_authority_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `complete_context_review_materializes` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `failed_adequacy_requires_adequacy_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `known_context_residual_records_residual` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `malformed_context_request_rejects` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `mandatory_absent_context_issues_typed_fault` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `mandatory_context_miss_produces_typed_fault_not_best_effort` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `missing_address_requests_context` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `missing_certificate_requires_certificate` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `optional_absent_context_requests_context` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `resolved_context_reference_has_valid_snapshot_binding` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `stale_certificate_requires_refresh` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextABI.lean` | `tainted_context_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 
 ## Validation Errors
 

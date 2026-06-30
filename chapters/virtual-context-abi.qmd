@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/source-note only: `vcm_editable`, `moecot` |
-| Test state | `context_abi_record.valid.json`, `semantic_page_certificate.valid.json`, and related context packet/adequacy/transaction fixtures pass protocol validation; `python3 scripts/validate_context_admission_adequacy.py` passes synthetic admission/adequacy, certificate-use, stale-certificate, deletion-closure, and mode-confusion checks; `AsiStackProofs.VirtualContextABI` and `AsiStackProofs.ContextCertificates` implement finite record predicates; resolver, context compiler, summary-fidelity, certificate-truthfulness, deletion-closure, transaction-isolation, and model-facing memory tests remain planned. |
+| Test state | `context_abi_record.valid.json`, `semantic_page_certificate.valid.json`, and related context packet/adequacy/transaction fixtures pass protocol validation; `python3 scripts/validate_context_admission_adequacy.py` passes synthetic admission/adequacy, certificate-use, stale-certificate, deletion-closure, and mode-confusion checks; `AsiStackProofs.VirtualContextABI` and `AsiStackProofs.ContextCertificates` implement finite record predicates including a context-admission route envelope; resolver, context compiler, summary-fidelity, certificate-truthfulness, deletion-closure, transaction-isolation, and model-facing memory tests remain planned. |
 
 The executed merge combines two current record families:
 
@@ -386,6 +386,7 @@ adequacy handoff, and typed refusal path.
 | Semantic page certificate fixture validation | Check that the semantic page certificate fixture declares source bindings, derivation, transaction refs, artifact refs, representation kind, loss contract, omissions, authority, permitted uses, validity, verification state, revocation state, residual risks, and non-claims. | implemented by protocol validation; validated locally |
 | Address/version stability predicate | Check that a resolved finite context-reference record has a matching address, version, and snapshot binding. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
 | Mandatory-miss fault predicate | Check that mandatory misses produce typed faults instead of best-effort packets. | implemented in `AsiStackProofs.VirtualContextABI`; builds locally |
+| Context admission route proof | Check that a finite context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews to explicit outcomes. | implemented by Lean build; finite context-admission route coverage only |
 | Derived-cell certificate predicate | Check that valid derived cells carry source bindings, a loss contract, and permitted uses. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
 | Authority preservation predicate | Check that summaries respecting their sources cannot increase the authority ceiling of source cells. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
 | Synthetic context admission/adequacy harness | Check that admission, adequacy, stale certificates, deletion closure, and mode-confusion cases cannot become evidence-ready context. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver or summary-fidelity claim |
@@ -398,12 +399,14 @@ adequacy handoff, and typed refusal path.
 |---|---|---|---|
 | `lean:vcm.abi.operational_invariant` | `AsiStackProofs.VirtualContextABI` | A context reference resolves only when the requested address and version are valid for the snapshot. | implemented |
 | `lean:vcm.abi.failure_blocks_promotion` | `AsiStackProofs.VirtualContextABI` | A mandatory context miss produces a typed fault rather than a best-effort packet. | implemented |
+| `lean:vcm.abi.context_admission_route_envelope` | `AsiStackProofs.VirtualContextABI` | A structured context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews into explicit outcomes. | implemented |
 | `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
 | `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
 
 These proof hooks are implemented only over finite Lean records. They check
 resolved-reference matching, mandatory-miss faulting, derived-cell field
-presence, and source-authority non-escalation. They do not prove open-domain
+presence, source-authority non-escalation, and context-admission route coverage
+for modeled invalid or complete review states. They do not prove open-domain
 source selection, semantic fidelity, deployed memory behavior, transaction
 isolation, deletion closure, or model use.
 
