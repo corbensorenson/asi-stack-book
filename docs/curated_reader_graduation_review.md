@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 20
-- Curated chapter records: 27 drafting records for
+- Curated-manuscript candidates: 21
+- Curated chapter records: 28 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -49,6 +49,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `project-theseus-as-report-first-implementation-reference`,
   `prototype-roadmap`,
   `living-book-methodology`,
+  `open-research-agenda-and-bibliography-plan`,
   `recursive-self-improvement-boundaries`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
@@ -68,7 +69,8 @@ Kernel, Stable Capability Fields, Capability Replacement and Rollback,
 Readiness Gates, Context Transactions, Verification Bandwidth, Claim Ledgers,
 Labor OS, Artifact Graphs, Runtime Adapters, Procedural Memory,
 Benchmark Ratchets, Policy Optimization, Integrated Reference Architecture, Project Theseus,
-Prototype Roadmap, Living Book Methodology, Recursive Self-Improvement,
+Prototype Roadmap, Living Book Methodology, Open Research Agenda,
+Recursive Self-Improvement,
 `circle-calculus-and-proof-carrying-ai-contracts`,
 `executable-specifications-and-lean-proof-envelope`, and
 `artifact-steward-agents-and-living-project-governance`; do not treat any file
@@ -122,6 +124,7 @@ duplicate skeletons the consolidation pilot is trying to remove.
 | `project-theseus-as-report-first-implementation-reference` | protected standalone implementation-reference chapter outside pending consolidation clusters; owns the report-first Theseus boundary, static import boundary, missing-artifact visibility, and no-promotion discipline | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_project_theseus_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no clean live Theseus replay, current dashboard state, reproduced benchmark, model-quality result, deployment readiness, training authorization, self-evolution safety, public-compute readiness, or support-state movement claim is implied. |
 | `prototype-roadmap` | protected standalone build-order chapter outside pending consolidation clusters; owns phase sequencing, dependency gates, phase debt, roadmap-as-non-evidence boundaries, and delayed self-improvement | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_prototype_roadmap_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no phase acceptance, dependency-gate audit, phase execution, benchmark result, model-quality result, deployment readiness, self-improvement readiness, roadmap-controller deployment, or support-state movement claim is implied. |
 | `living-book-methodology` | protected standalone living-method chapter outside pending consolidation clusters; owns the book-as-governed-research-instrument throughline, stable IDs, change packets, tri-audience derivation, publication-laundering controls, and non-claim boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_living_book_methodology_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no manuscript-quality, source-interpretation-quality, rendered-site-availability, external-review, reader-release, audio-production, ASI-capability, or support-state movement claim is implied. |
+| `open-research-agenda-and-bibliography-plan` | protected standalone final research-agenda chapter outside pending consolidation clusters; owns source-intake, bibliography-control, external-literature, backlog, new-paper triage, proof/test lane, and no-promotion boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_open_research_agenda_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no citation-normalization, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, public-release-permission, external-review, or support-state movement claim is implied. |
 | `recursive-self-improvement-boundaries` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_recursive_self_improvement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
@@ -159,7 +162,7 @@ true:
 
 ## Non-Claims
 
-- This review creates twenty-seven drafting-only curated reader chapter files for
+- This review creates twenty-eight drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

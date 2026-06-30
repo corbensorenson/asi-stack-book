@@ -1041,6 +1041,42 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_living_book_methodology_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+    },
+    {
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "title": "Open Research Agenda and Bibliography Plan",
+      "file": "editions/reader_manuscript/v1_0/chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "live_source_ref": "chapters/open-research-agenda-and-bibliography-plan.qmd@04b32c959",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#open-research-agenda-and-bibliography-plan.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#open-research-agenda-and-bibliography-plan",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the final chapter as the book's research-intake contract: source states, Appendix G/H ownership boundaries, backlog records, new-paper triage, proof/test lanes, no-promotion blockers, and release traces are made readable while preserving the argument-level chapter core claim.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support for the chapter core claim",
+        "source boundary preserved; all assigned sources remain research-agenda, backlog, implementation-reference, proof-contract, connector/recovery, or external-literature context inside their stated limits",
+        "proof/test status preserved without adding citation-accuracy, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, source-interpretation-quality, public-release-permission, external-review, or support-state results",
+        "implementation horizon preserved without implying the mature active research graph has been implemented",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_open_research_agenda_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {

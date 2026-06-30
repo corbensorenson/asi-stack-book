@@ -1,0 +1,354 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: open-research-agenda-and-bibliography-plan
+generated_baseline_ref: build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd
+live_source_ref: chapters/open-research-agenda-and-bibliography-plan.qmd@04b32c959
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Open Research Agenda and Bibliography Plan
+
+The book should not end by pretending the work is finished.
+
+If the ASI Stack is a governed research program, its final chapter has to name
+the unfinished work as carefully as the earlier chapters name mechanisms. A
+book like this can fail at the very end by turning open questions into a vague
+gesture: more papers to read, more tests to run, more proofs to write, more
+systems to build. That is not enough. Future work has to be routed.
+
+The open research agenda is that routing layer. It says which sources have
+been loaded, which sources remain private or connector-bound, which external
+literature has only been noted, which claims are still blocked, which proof or
+test lane could move them, and when a new paper should update an existing
+chapter instead of creating another one.
+
+The bibliography is not a trophy case. It is an intake system.
+
+That distinction keeps the book corrigible after publication. A future reader,
+reviewer, or AI assistant should be able to ask a simple question: what would
+have to happen before this claim gets stronger? The answer should not depend
+on memory, enthusiasm, or scattered notes. It should be visible in the source
+inventory, source notes, claim matrix, proof manifest, research backlog,
+appendices, and release records.
+
+## Problem
+
+A living book can decay into a pile of references unless it has a research
+backlog with admission rules.
+
+New sources will arrive. Some will strengthen an existing layer. Some will
+show that a chapter is too broad. Some will be interesting but unread. Some
+will contain external citations that need to be checked directly before they
+can become this book's citations. Some will report results that cannot be used
+until artifacts, commands, environments, and public-release permissions are
+available.
+
+The dangerous move is to let all of those states blur together. A title in a
+queue is not a source note. A source note is not a reproduced result. A
+private artifact is not public evidence. A generated appendix is not a support
+transition. A future proof target is not a theorem about the deployed system.
+
+The agenda exists to prevent that blur.
+
+## Why A Static Bibliography Is Not Enough
+
+A normal bibliography tells readers where ideas came from. It does not usually
+tell a future writing agent what it is allowed to do next.
+
+For this book, that next-step information is part of the architecture. The
+manifest tells the system where the chapter belongs. The outline tells a
+future agent what to load first. Appendix G separates Corben-authored,
+Corben-supplied, recovered, and local-project sources from outside literature.
+Appendix H separates external sources by other authors and organizations.
+Appendix C records the current claim/support boundary. Source notes record
+what has actually been reviewed. The research backlog records what remains
+blocked.
+
+Without that state, the book would drift. A chapter might cite a source
+because the source appears in a table. A paper might create a duplicate
+chapter even though it only renames an existing interface. A benchmark claim
+might sound stronger because it sits near a benchmark source. An external
+reference named inside a Corben paper might become a citation before the
+reference itself is checked.
+
+That is how a living book becomes a confident scrapbook.
+
+The agenda also protects the reader. The final chapter should not bury the
+book's uncertainty behind a polished ending. It should say what is still open
+in a way that makes the next action executable: fetch the source, write the
+note, normalize the citation, add the fixture, formalize the predicate, run
+the benchmark, import the artifact, update the chapter, or close the item as
+out of scope.
+
+## Core Claim
+
+The bibliography and research agenda should map source families, external
+literature queues, missing papers, proof targets, experiment backlogs, and
+chapter insertion rules.
+
+In the live AI/research book, that remains a design rationale at `argument`
+support. The repository has source inventory records, source notes, chapter
+source queues, exact claim-source mappings, passage-reviewed mapping refs for
+the assigned sources, protocol fixtures, and finite Lean hooks. Those are
+real governance surfaces. They do not prove citation accuracy, external
+literature completeness, source-interpretation quality, new-paper triage
+quality, benchmark reproduction, artifact reproduction, or chapter truth.
+
+That boundary is the point. The agenda is evidence discipline for future
+work, not proof that future work has already been done.
+
+## The Research Graph
+
+The mature object is a research graph, not a list.
+
+Each node in the graph has an identity and a state. A source can be
+discovered, inventoried, cached, connector-readable, source-noted,
+passage-reviewed, mapped to claims, integrated into prose, tested,
+mechanized, reproduced, deprecated, refuted, blocked, or rejected. A chapter
+can be canonical live prose, generated reader output, curated reader
+derivative, companion-note material, or release-approved artifact. A claim can
+remain at `argument`, move through an accepted evidence transition, or stay
+blocked by missing evidence.
+
+Those states are not bureaucracy. They are how the book remembers what it is
+allowed to know.
+
+The current final chapter has a deliberately broad source queue because it
+governs the backlog for the whole stack. Verification Bandwidth and
+Benchmaxxing supply the primary agenda pressure: context adequacy,
+semantic-unit verification, contradiction-rate tests, benchmark lifecycles,
+residuals, and anti-Goodhart safeguards. Supporting sources such as Stable
+Capability Fields, PlanForge, VCM, Spinoza, Talos, RMI, CGS, GenesisCode,
+Simulation Scaling, Project Theseus, Circle, and the constitutional sources
+name future proof, test, artifact, and governance lanes. Connector and recovery
+sources such as MoECOT, CoilMoECOT, Road To AGI, and VCM Editable remain
+bounded by their source-note and access status.
+
+The chapter may use those materials to organize the backlog. It may not use
+them to imply completed runtime, benchmark, model-quality, source-citation, or
+deployment results.
+
+## Intake And Triage
+
+Every new AI paper or artifact should enter through a triage decision before
+it changes prose.
+
+The first question is not "is this interesting?" Most things are interesting.
+The first question is "what boundary does this affect?" A new source may:
+
+- update an existing chapter;
+- add a missing source note or external-literature record;
+- create a proof or experiment backlog item;
+- propose a new chapter only if it owns a distinct interface, invariant,
+  artifact type, or failure mode;
+- route to an appendix or companion note;
+- remain blocked because source access, public-safety status, or citation
+  metadata is not good enough;
+- be rejected as duplicate, superseded, out of scope, or unsupported.
+
+That triage rule is what lets the book stay dynamic without becoming
+shapeless. A living book should be easy to update, but it should not reward
+every new paper with a new chapter. The best use of many sources is to deepen
+an existing boundary.
+
+The current repository already has synthetic protocol coverage for this shape:
+the new-paper triage scenario fixture checks update-existing,
+propose-new-chapter, defer-external-literature, and reject-duplicate cases.
+That fixture is useful, but narrow. It validates record shape and decision
+categories. It does not prove that a future real paper has been judged well.
+
+```{mermaid}
+flowchart TD
+  Source["New paper, artifact, critique, or missing source"] --> Inventory["Inventory record"]
+  Inventory --> Access["Access and public-safety policy"]
+  Access --> Note{"Readable and permitted?"}
+  Note -- "yes" --> SourceNote["Source note or external source note"]
+  Note -- "not yet" --> Backlog["Backlog item with blocker and non-claims"]
+  SourceNote --> Boundary{"Existing chapter boundary?"}
+  Boundary -- "yes" --> Existing["Update source queue, claim map, or proof/test backlog"]
+  Boundary -- "no" --> NewChapter["Propose precise chapter boundary"]
+  Boundary -- "unclear" --> Review["Merge/split/defer review"]
+  Existing --> Evidence["Evidence transition or no-promotion blocker"]
+  NewChapter --> Evidence
+  Review --> Evidence
+  Backlog --> Evidence
+  Evidence --> Release["Changelog, validation, release record if applicable"]
+
+  SourceNote -. "source note is not reproduction" .-> Evidence
+  Backlog -. "blocked item is not evidence" .-> Evidence
+  Release -. "publication is not support promotion" .-> Evidence
+```
+
+The dashed edges are the important controls: source notes are not
+reproduction, blocked items are not evidence, and publication is not support
+promotion.
+
+## Interfaces
+
+The research agenda is held together by several public interfaces.
+
+`sources/source_inventory.json` gives every accepted source a stable identity.
+Source notes record what has actually been read or inspected. Appendix G
+contains Corben-side and local-project material. Appendix H contains external
+sources by other authors and organizations. `docs/book_outline.md` tells
+future writing runs which sources to load for each chapter. `book_structure.json`
+keeps parts and chapters stable without manual numbering. Appendix C keeps
+claim support visible. The proof manifest and Lean modules record formal
+targets. Protocol fixtures record synthetic intake and backlog shapes.
+
+The Research Backlog Record is the agenda's main work order. It should name
+the source or gap, access state, storage policy, public-safety state, assigned
+chapters, chapter action policy, decision refs, deduplication state, merge or
+split policy, source-note state, claim-mapping state, passage-review state,
+external-literature need, proof or test backlog, evidence-transition
+preconditions, required pre-drafting work, source refs, support-state effect,
+promotion blockers, residuals, next action, and non-claims.
+
+That sounds dense because the failure modes are dense. The record exists so a
+future assistant can tell the difference between "read this," "cite this,"
+"test this," "formalize this," "do not publish this," and "do not promote
+this."
+
+## Invariants
+
+The agenda has five hard invariants.
+
+First, do not cite unread sources as support.
+
+Second, do not infer bibliographic metadata. If a source record is incomplete,
+the incompleteness is a blocker, not an invitation to guess.
+
+Third, new papers update inventory and triage state before they update chapter
+claims.
+
+Fourth, missing or private sources are backlog items, not evidence.
+
+Fifth, new chapters are added only when they own a distinct boundary. The book
+is meant to be precise, not inflated.
+
+These invariants also apply to local projects. Project Theseus and Circle are
+valuable implementation and proof-contract references, but local availability
+does not automatically become public evidence. The book can record static
+imports, consumer gates, pinned digests, and bounded receipt slices. It cannot
+generalize from those artifacts into broad claims about deployed capability,
+model quality, transfer performance, runtime safety, or ASI progress.
+
+## Failure Modes
+
+The most common failure is citation drift. A source starts as a queue item,
+then appears in a matrix, then becomes familiar enough that prose treats it as
+support even though the relevant passages were never checked. The cure is
+state separation: queued, unread, source-noted, passage-reviewed, mapped,
+tested, reproduced, and promoted are different states.
+
+The second failure is duplicate expansion. A new paper can bring useful
+language without owning a new chapter. If the book creates a chapter for every
+new vocabulary family, it becomes an anthology again. The agenda should push
+new material toward existing boundaries unless the source really introduces a
+new artifact, interface, invariant, or failure mode.
+
+The third failure is backlog rot. Future-work lists can become a place where
+hard tasks go to disappear. A serious backlog item needs a next action small
+enough to execute: fetch, cache, read, note, cite, test, formalize, reproduce,
+revise, reject, or close.
+
+The fourth failure is evidence laundering through publication. A rendered
+site, a generated bibliography, a valid schema, a Lean build, a passing
+fixture, or a reader artifact can be important. None of those artifacts
+automatically changes a chapter core claim. Support moves only through the
+claim/evidence discipline recorded elsewhere in the book.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is already visible as a conservative source
+governance system: a split Corben/local source appendix and external-source
+appendix, source inventory, source notes, source queues, exact claim-source
+mappings, proof targets, research backlog schema, new-paper triage scenario,
+and validation commands.
+
+That is enough to stop the worst drift. A new source has somewhere to land. A
+future chapter proposal has to name its boundary. External literature stays
+separate from Corben-side material. Connector-readable or private material can
+inform planning without pretending to be public evidence. The book can record
+blocked work without smoothing it into prose.
+
+It is not enough to claim the agenda is complete. The current minimum does not
+perform direct citation checks for every external reference, normalize every
+outside bibliography trail mined from Corben papers, rehearse a live user
+paper intake, reproduce benchmark artifacts, import all private project
+results, or prove semantic adequacy of future triage decisions.
+
+The next honest exercise is a live intake run against a real user-provided AI
+paper or artifact with public-safety policy, source note, chapter decision,
+claim mapping, proof/test backlog, and no-promotion blockers recorded before
+any prose change.
+
+## Beyond The State Of The Art
+
+The mature endpoint is an active research graph for the whole ASI Stack.
+
+In that version, every paper, project record, external reference,
+conversation-mined packet, artifact, benchmark result, proof target, missing
+source, and reader-edition blocker has a durable state. The graph knows what
+has been read, what has been checked, what is private, what is source-reported,
+what is externally grounded, what has a proof path, what has a replay path,
+what has failed, what has been refuted, and what is not allowed to support a
+claim.
+
+A future writing agent could bring a new paper to the repository and receive a
+bounded decision: update these chapters, add these source notes, do not create
+a new chapter, create this proof target, run this fixture, add these external
+comparators, leave support unchanged, and record these blockers. A future
+reader edition could derive from the same graph without changing claim truth.
+A future release could say exactly which source, proof, test, reader, and
+audio artifacts were produced and reviewed.
+
+That endpoint would make bibliography part of governance. It would not make
+the ASI Stack true by itself. It would make future truth-seeking harder to
+fake.
+
+## Test And Proof Boundaries
+
+This chapter has useful executable support, but the support is narrow.
+
+The source inventory and source-note validators check that source records and
+notes stay structurally consistent. Protocol validation checks the research
+backlog and new-paper triage fixtures. `AsiStackProofs.BibliographyPlan`
+proves finite-record gates: a source-derived claim requires a source note or
+equivalent ingested-source artifact, and an accepted new-source assignment
+requires an existing chapter id.
+
+Those checks are valuable because they prevent specific classes of drift. They
+do not prove citation accuracy, literature completeness, reviewer judgment,
+chapter-boundary quality, source interpretation, benchmark truth, public
+release permission, or future triage wisdom.
+
+The right conclusion is not "the agenda is validated." The right conclusion is
+"the first gates exist, and the harder evidence work remains visible."
+
+## Closing The Book Openly
+
+This final chapter hands the reader back to the workflow.
+
+The ASI Stack has been presented as a governed architecture: authority stays
+bounded, claims carry evidence states, proofs stay scoped, tests require
+artifacts, reader editions derive from the live source, and self-improvement
+has to pass through gates. The book should obey the same rule. It should keep
+improving only by leaving public-safe traces of what changed, what stayed
+speculative, what failed, what was deferred, and what evidence would be needed
+to say more.
+
+The ending, then, is not a sealed conclusion. It is a map of responsible next
+work.
+
+## Handoff
+
+Future work should begin at the research graph, not in free-form prose. Add or
+update the source record. Write the source note. Decide the chapter boundary.
+Record the proof or test route. Keep support unchanged unless an accepted
+evidence transition says otherwise. Update the reader surface only after the
+live evidence boundary is clear.
+
+That is how the living book remains alive without becoming ungoverned.

@@ -326,6 +326,7 @@ The current allowed protected-reader set is:
 - `project-theseus-as-report-first-implementation-reference`
 - `prototype-roadmap`
 - `living-book-methodology`
+- `open-research-agenda-and-bibliography-plan`
 - `recursive-self-improvement-boundaries`
 - `circle-calculus-and-proof-carrying-ai-contracts`
 - `executable-specifications-and-lean-proof-envelope`
