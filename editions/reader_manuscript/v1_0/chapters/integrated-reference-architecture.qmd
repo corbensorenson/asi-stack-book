@@ -1,0 +1,353 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: integrated-reference-architecture
+generated_baseline_ref: build/reader_edition/chapters/integrated-reference-architecture.qmd
+live_source_ref: chapters/integrated-reference-architecture.qmd@e323268f5
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Integrated Reference Architecture
+
+After the layers have all been named, the machine has to come back together.
+
+Intent, governance, planning, memory, routing, verification, execution,
+evidence, benchmarks, policy updates, stewardship, and self-improvement cannot
+remain a set of impressive diagrams. They have to compose into one inspectable
+flow. A reader should be able to follow a request through the stack and answer
+four questions at every handoff:
+
+- what artifact arrived;
+- what authority came with it;
+- what evidence changed;
+- what residual or stop condition survived.
+
+That is the role of the integrated reference architecture. It is not a claim
+that a complete ASI runtime exists. It is the trace contract a future runtime
+would have to satisfy.
+
+The happy path matters, but the blocked path matters more. A governed system
+earns trust when a missing approval, inadequate context packet, failed
+verification, unaccepted residual, captured evaluator, or absent rollback path
+can stop the run in a way that remains visible later. If the blocked path
+disappears into logs, dashboards, or prose, the architecture is not integrated.
+It is only narrated.
+
+Integration succeeds when the trace remains understandable after every layer
+has done its work.
+
+## Problem
+
+The book has spent many chapters separating responsibilities. Authority is not
+planning. Planning is not memory. Memory is not verification. Verification is
+not execution. Execution is not evidence. Evidence is not policy
+optimization. Policy optimization is not self-improvement permission.
+
+That separation is necessary. It prevents a single agent loop from swallowing
+every boundary into hidden prompt state.
+
+But separation creates its own problem. A system can have a planner, a context
+compiler, a router, a verifier, an execution OS, a benchmark harness, and a
+steward agent, while still failing to answer whether the final action is
+covered by the original authority grant. It can produce many local receipts
+without producing one accountable run.
+
+The integrated reference architecture is the answer to that problem. It asks
+whether the stack can carry one request from authorized intent to artifact and
+evidence-backed change without losing parentage, authority, evidence,
+residuals, or stop conditions.
+
+## Why A Layer Diagram Is Not Enough
+
+A layer diagram can make a system look coherent before it is coherent.
+
+Boxes can line up. Arrows can point in the right direction. A planner can hand
+something to a memory system, a router can select a specialist, a verifier can
+score a claim, an execution layer can produce an artifact, and a benchmark
+ratchet can report pressure. But if the handoff artifacts cannot be joined
+afterward, the architecture is still brittle.
+
+The failure is architectural fragmentation. Each layer may be locally
+reasonable, but the run as a whole cannot explain itself. Authority may be
+ambient. Context may be unversioned. Evidence may be implied. Residuals may be
+mentioned once and then lost. Benchmarks may become promotion pressure without
+the old regression floor. A self-improvement candidate may inherit trust
+because it arrived late in the pipeline rather than because it passed a gate.
+
+The reference architecture therefore treats integration as a trace problem. It
+does not ask whether the diagram has every modern subsystem. It asks whether a
+future implementation can emit enough record structure for a skeptical reader,
+reviewer, or downstream machine to reconstruct what happened and why it was
+allowed.
+
+External systems help orient the problem. Task-and-motion planning and
+behavior trees name planning/execution interfaces. Distributed conditional
+computation names routing and specialization pressure. TLA+, PRISM, and
+runtime assurance work name formal and runtime control lanes. The ASI Stack's
+specific contribution is the cross-layer handoff ledger: one record family
+that keeps authority, evidence, artifacts, and residuals joined across those
+lanes.
+
+## Core Claim
+
+The stack can be specified as an integrated reference architecture with typed
+handoffs, authority stops, artifacts, evidence updates, and self-improvement
+gates.
+
+In the live book, this remains a design rationale at `argument` support.
+
+The source notes support architecture synthesis across intent, command
+contracts, plans, VCM, routing, claims, execution, benchmarks, stable
+capability fields, Project Theseus, MoECOT, and report-first implementation
+references. They do not show a completed integrated stack run in this
+repository.
+
+That boundary is important. A reference architecture is a specification target
+for composition. It is not evidence that the composition already works.
+
+## Mechanism
+
+The mechanism is a Reference Trace Record.
+
+A request enters through human intent and constitutional authority. Governance
+turns that into a command contract or blocks it. Planning compiles the contract
+into a plan DAG. Memory supplies source-bound context packets and adequacy
+judgments. Routing selects capability under authority and readiness limits.
+Verification checks claims, proof obligations, residuals, and route
+assumptions. Execution produces work artifacts, receipts, audit logs, and
+runtime results. Evidence ledgers record what changed and what did not.
+Benchmark ratchets preserve floors, residuals, and pressure. Policy updates
+may propose behavior-change leases. Steward agents preserve project continuity.
+SCF and self-improvement gates decide whether anything is promoted, narrowed,
+rolled back, quarantined, or returned for review.
+
+At each boundary, the next layer receives a typed artifact rather than an
+informal summary.
+
+```{mermaid}
+sequenceDiagram
+  participant H as Human
+  participant G as Governance
+  participant P as Planner
+  participant M as VCM
+  participant R as Router
+  participant V as Verifier
+  participant E as Execution
+  participant L as Evidence
+  participant S as SCF Gate
+
+  H->>G: intent plus authority request
+  G->>P: command contract or denial
+  P->>M: plan needs and context obligations
+  M->>P: source-bound context packet
+  P->>R: plan DAG with capability requirements
+  R->>V: route decision, limits, residuals
+  V->>E: verified work order or rejection
+  E->>L: artifact, receipt, audit log
+  L->>S: evidence delta and regression status
+  S->>G: promote, narrow, rollback, quarantine, or review
+```
+
+The trace record is not only a timeline. It carries parent artifacts,
+authority deltas, evidence deltas, residual deltas, stop conditions, missing
+contracts, validation commands, source references, support-state effects, and
+non-claims.
+
+Parentage says which artifact produced which next artifact. Authority deltas
+say whether permission was granted, narrowed, expired, denied, escalated, or
+returned for human review. Evidence deltas say whether any claim, support
+state, benchmark floor, proof target, readiness gate, policy update, or release
+record changed. Residual deltas say what missing context, failed verification,
+contamination, safety debt, unfunded work, governance concern, or unresolved
+source gap survived the handoff.
+
+The trace turns integration into a falsifiable surface. If a layer claims to
+improve the system, the trace should show what it received, what it emitted,
+what authority it carried, what evidence it changed, and what later layer was
+allowed to depend on it.
+
+## Happy Paths And Blocked Paths
+
+A happy path is not enough.
+
+A happy path can show that the stack knows how to move forward when everything
+is clean. The user intent is authorized. The plan is well formed. The context
+packet is adequate. The route is allowed. The verifier accepts the work order.
+Execution succeeds. The evidence ledger records a narrow update. The SCF gate
+allows a scoped promotion.
+
+That path is useful, but it is also the easiest path to fake.
+
+The blocked path is harder and more important. Missing authority should create
+a denial or escalation record. Inadequate context should block or narrow the
+plan. A route with a readiness mismatch should leave a residual. A failed
+proof or test should stop execution. A benchmark with contamination risk
+should block promotion. A policy update with reward-hacking pressure should
+remain experimental or roll back. A self-improvement candidate without
+independent evaluation should not become the new evaluator.
+
+The trace should preserve both outcomes. The architecture is governed only if
+the failed path is as inspectable as the successful path.
+
+## Interfaces
+
+The interface is the Reference Trace Record.
+
+It should name the trace state, execution boundary, originating intent, parent
+artifacts, authority chain, layer handoffs, emitted artifacts, evidence
+updates, residual deltas, stop conditions, missing contracts, validation
+commands, promotion blockers, source references, support-state effects, and
+non-claims.
+
+The record gives every chapter a place in the whole stack:
+
+- intent and governance define admissible work;
+- command contracts and planning define executable structure;
+- VCM defines source-bound working memory;
+- routing defines which capability may act;
+- claim ledgers and proof-carrying claims define evidence obligations;
+- Labor OS, artifact graphs, and runtime adapters define execution receipts;
+- procedural memory defines reusable work;
+- benchmark ratchets define pressure and regression floors;
+- policy optimization defines governed behavior change;
+- artifact stewardship defines project continuity;
+- SCF and self-improvement gates define promotion, rollback, quarantine, and
+  review.
+
+The record also gives future implementations a clean refusal path. A consumer
+should be able to reject a trace when required artifacts, source references,
+validation commands, approvals, non-claims, or rollback handles are missing.
+
+## Invariants
+
+No layer bypasses governance.
+
+Artifacts remain traceable across handoffs.
+
+Authority is preserved, narrowed, expired, denied, escalated, or returned for
+review. It is never silently widened by downstream success.
+
+Evidence deltas name exactly what changed and what did not.
+
+Residual deltas remain visible until resolved, accepted, quarantined, or
+explicitly carried forward.
+
+Self-improvement follows evidence and authority gates.
+
+Blank fields do not hide missing work. A missing contract, missing approval,
+missing validation command, missing source reference, missing rollback path, or
+missing non-claim should block, narrow, or defer the trace.
+
+## Failure Modes
+
+Integration theater occurs when every layer appears in a diagram but the real
+run still depends on informal summaries, ambient authority, unversioned
+context, unsupported evidence, or ignored stop conditions.
+
+Trace fragmentation occurs when each layer produces a local receipt that
+cannot be joined into one accountable run.
+
+Planning/execution collapse occurs when the plan disappears into execution
+and the final artifact can no longer explain which constraints, context
+obligations, or authority limits shaped it.
+
+Evidence laundering occurs when a local artifact, benchmark score, report, or
+schema fixture is narrated as broader proof than the trace permits.
+
+Self-improvement bypass occurs when a candidate change inherits trust from the
+pipeline instead of passing evaluator-independence, authority, rollback,
+regression, and residual gates.
+
+Project theater is the implementation-reference version of the same failure:
+dashboards, reports, work boards, or local project notes look concrete, but no
+public-safe replay or digest-pinned artifact can show what happened.
+
+The reference architecture should make these failures obvious. A broken run
+should leave missing parentage, unsupported evidence deltas, unresolved
+residuals, or stop conditions that were acknowledged but ignored.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a reference flow diagram, a
+`reference_trace_record` schema fixture, and finite Lean predicates over
+record-level handoff and governance gates.
+
+The repository already has that first layer. The fixture validates record
+shape, trace state, execution boundary, parent artifacts, authority deltas,
+evidence deltas, residual deltas, promotion blockers, source references,
+support-state effect, and non-claims. The Lean module proves finite
+record-level predicates: a declared handoff has its required artifact, and a
+trace missing a required governance gate cannot be marked valid.
+
+Those artifacts are useful specification discipline. They do not execute the
+architecture, replay a runtime trace, prove artifact continuity across a
+deployed system, enforce authority stops, verify a benchmark, prove model
+quality, or demonstrate deployment readiness.
+
+The next honest implementation slice would be a tiny dry-run trace set: one
+approved flow that carries stable artifact IDs from intent through plan,
+context, route, work order, audit log, evidence update, and release note; and
+one blocked flow that stops because authority, context adequacy,
+verification, residual acceptance, or rollback is missing. That would still be
+a fixture or dry run, not a deployed integrated runtime.
+
+## Beyond the State of the Art
+
+The mature endpoint is a trace kernel for the whole ASI Stack.
+
+At that endpoint, every significant run emits a Reference Trace Record. The
+record connects human intent, constitutional authority, command contracts,
+plan DAGs, VCM packets, route decisions, claim envelopes, work orders,
+execution logs, proof/spec receipts, benchmark ratchets, policy-update
+leases, steward decisions, stable capability field transitions, release
+records, and residual ledgers.
+
+The product-level system would be judged by trace quality before anyone
+argued about intelligence. Can it show parentage? Can it show authority
+deltas? Can it show evidence deltas? Can it show residuals? Can it show why a
+path was promoted, blocked, narrowed, rolled back, quarantined, or escalated?
+Can downstream consumers reject a trace when a required artifact, approval,
+source reference, validation command, or non-claim is missing?
+
+The endpoint would make integration theater expensive. Informal summaries,
+ambient authority, unversioned context, unsupported evidence deltas,
+unaccepted residuals, ignored stop conditions, and hidden rollback gaps would
+be visible defects in the trace record.
+
+That endpoint remains unimplemented here.
+
+## Evidence Boundary
+
+This chapter specifies how the stack should compose. It does not claim that a
+complete integrated runtime exists.
+
+Current evidence consists of source synthesis, source-note mappings, external
+system-orientation records, a reference-trace schema fixture, finite Lean
+record predicates, and bounded Project Theseus implementation-reference
+material. The chapter's core claim stays at `argument` support.
+
+Project Theseus is useful precisely because it is report-first: it shows how
+parts of this trace could become inspectable machinery without letting local
+reports stand in for public empirical proof. The current static
+architecture-gate import demonstrates a report-import boundary. It is not an
+end-to-end runtime trace, current dashboard state, benchmark ledger replay,
+compiler proof, operator-board execution, model-quality result, or deployment
+readiness claim.
+
+The clean boundary is simple: if a future demo cannot produce parent
+artifacts, authority deltas, evidence deltas, residual deltas, blocked-path
+records, and no-claims, it may still be interesting, but it has not yet
+instantiated this reference architecture.
+
+## Handoff
+
+The integrated trace defines what a complete stack must preserve. The next
+chapter narrows that target into a bounded implementation reference.
+
+Project Theseus as Report-First Implementation Reference shows where parts of
+the trace can become concrete: pressure loops, residuals, plan contracts,
+gates, ledgers, operator work boards, checkpoints, and self-evolution
+governance. Its value is not that it proves the whole ASI Stack. Its value is
+that it gives future work a report-first path toward public-safe replay,
+digest-pinned artifacts, explicit non-claims, and eventually stronger evidence.
