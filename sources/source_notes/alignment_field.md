@@ -38,7 +38,7 @@ The Alignment Field source family supplies the book's philosophical and normativ
 - `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - Security Kernel and Digital SCIFs
 - Recursive Self-Improvement Boundaries
-- Simulation Fidelity and Physical Constraints
+- Resource Economics and Token Budgets (Simulation Fidelity and Claim Transport section)
 - Integrated Reference Architecture
 - Open Research Agenda and Bibliography Plan
 

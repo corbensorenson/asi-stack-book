@@ -22,7 +22,7 @@ python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_mani
 |---|---:|
 | Source profile | `reader_release` |
 | Audio profile | `audio_release` |
-| Script files | 55 |
+| Script files | 54 |
 | Implementation-horizon script status | pass |
 | Review status | review_required |
 

@@ -1,13 +1,16 @@
 # Chapter Consolidation Fold Disposition: Simulation Fidelity
 
-Status: fold-disposition ready; human/external review not completed.
+Status: executed fold history; human/external review not completed.
 
-This is a review artifact for the governed consolidation sequence. It does not
-edit `book_structure.json`, merge chapters, fold chapters, change Appendix C
-support states, create source/proof/test evidence, approve reader artifacts, or
-promote any claim above `argument`.
+This is an executed review artifact for the governed consolidation sequence.
+The execution package edited `book_structure.json`, folded the source chapter
+into `resource-economics-and-token-budgets`, archived the source manuscript,
+preserved the old public URL through a static historical stub, and regenerated
+the derived scaffold. It did not change Appendix C support states, create
+source/proof/test evidence, approve reader artifacts, or promote any claim
+above `argument`.
 
-This disposition does not edit `book_structure.json`.
+The execution package changed `book_structure.json`.
 
 ## Candidate
 
@@ -19,8 +22,8 @@ This disposition does not edit `book_structure.json`.
 | Destination title | Resource Economics and Token Budgets |
 | Secondary frame | `the-efficient-asi-hypothesis` may keep the high-level efficiency implication, but should not own the fold. |
 | Proposed fold section | Simulation Fidelity and Claim Transport |
-| Current state | `fold_disposition_ready` |
-| Required decision | Execute fold, revise fold disposition, defer for release, or reject and retain standalone. |
+| Current state | `executed` |
+| Required decision | Executed on 2026-06-30; restore standalone only under the restoration conditions below. |
 
 ## Rationale
 
@@ -234,7 +237,8 @@ Reviewers should choose one:
 - **Execute fold:** Simulation Fidelity and Physical Constraints becomes a
   named Simulation Fidelity and Claim Transport section inside Resource
   Economics, while all source, proof, schema, reader, and restoration
-  boundaries are preserved.
+  boundaries are preserved. This disposition is now executed by the
+  2026-06-30 simulation-fidelity fold package.
 - **Revise fold disposition:** Keep the candidate unexecuted and revise the
   destination, subclaim, source, proof, reader, or restoration treatment.
 - **Defer for release:** Keep both chapters unchanged for the current release
@@ -246,8 +250,8 @@ Reviewers should choose one:
 
 ## Non-Claims
 
-- This disposition does not merge or fold chapters.
-- This disposition does not change `book_structure.json`.
+- This disposition is now executed by the 2026-06-30 simulation-fidelity fold package.
+- The execution package changed `book_structure.json`.
 - This disposition does not change Appendix C support states.
 - This disposition does not create source-derived, external-literature-backed,
   proof-derived, prototype-backed, synthetic-test-backed, or empirical support.

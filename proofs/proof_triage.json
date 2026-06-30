@@ -812,23 +812,23 @@
     },
     {
       "tag": "lean:simulation.fidelity.operational_invariant",
-      "chapter_id": "simulation-fidelity-and-physical-constraints",
+      "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.SimulationFidelity",
       "formal_target": "A simulation claim includes declared scope, fidelity, and resource bounds.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.SimulationFidelity as a finite claim-field predicate: simulation claims used as evidence require declared scope, fidelity, and resource bounds."
+      "rationale": "Implemented in AsiStackProofs.SimulationFidelity as a finite claim-field predicate: simulation claims used as evidence require declared scope, fidelity, and resource bounds. Folded into Resource Economics and Token Budgets on 2026-06-30 as the Simulation Fidelity and Claim Transport proof lane."
     },
     {
       "tag": "lean:simulation.fidelity.failure_blocks_promotion",
-      "chapter_id": "simulation-fidelity-and-physical-constraints",
+      "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.SimulationFidelity",
       "formal_target": "An experiment result cannot exceed the declared fidelity support of its simulation.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.SimulationFidelity as a finite fidelity-support predicate: promoted experiment results cannot exceed declared support level."
+      "rationale": "Implemented in AsiStackProofs.SimulationFidelity as a finite fidelity-support predicate: promoted experiment results cannot exceed declared support level. Folded into Resource Economics and Token Budgets on 2026-06-30 as the Simulation Fidelity and Claim Transport proof lane."
     },
     {
       "tag": "lean:substrates.search.operational_invariant",

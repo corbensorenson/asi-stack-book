@@ -847,8 +847,9 @@ Diagnostic target shape:
 - Aggressive consolidation was originally framed as moving the 54-chapter shape
   toward roughly 44 deeper chapters.
 - Conservative consolidation was originally framed as leaving the book closer to 47 chapters by keeping technique-owning chapters such as
-  RankFold/NeuralFold separate. The current executed path has reached 50 active
-  chapters while retaining RankFold/NeuralFold and folding MoECOT into Routing.
+  RankFold/NeuralFold separate. The current executed path has reached 49 active
+  chapters while retaining RankFold/NeuralFold, folding MoECOT into Routing,
+  and folding simulation fidelity into Resource Economics.
 - Neither count is a success metric. The success metric is less repeated
   skeleton, stronger chapter ownership, preserved source/proof/claim coverage,
   and better reader flow.
@@ -871,17 +872,15 @@ Follow-up review outcome:
 - Appendix C reconciliation, source-ID union, Lean/proof-tag union, fixture
   treatment, reader-overlay treatment, and URL/redirect policy are not cleanup
   chores after a merge. They are merge preconditions.
-- The Part I pilot is now `review_ready`, meaning destination drafts exist but
-  require an execute, revise, defer, or reject decision plus execution of the
-  retired-URL treatment required by
-  `docs/chapter_consolidation_url_history_policy.md` before any canonical
-  chapter identity changes.
-- Compression, intent/contracts, static context ABI, verification/adversarial
-  review, and planning/DAG control now have dry-run packages and one-skeleton
-  destination drafts but remain unmerged. MoECOT, simulation fidelity, and
-  semantic representation now have fold dispositions; semantic representation
-  remains dependency-bound to the compression/representation package decision
-  before any reader curation or manifest edit depends on it.
+- The Part I pilot, conservative compression merge, MoECOT runtime fold, and
+  simulation-fidelity fold are now executed history with retired-URL treatment
+  recorded in `docs/chapter_consolidation_url_history_policy.md` and
+  `docs/chapter_history_ledger.md`.
+- Intent/contracts, static context ABI, verification/adversarial review, and
+  planning/DAG control now have dry-run packages and one-skeleton destination
+  drafts but remain unmerged. Semantic representation has a fold disposition
+  and remains dependency-bound to the compression/representation package
+  decision before any reader curation or manifest edit depends on it.
 - The 2026-06-30 follow-up does not add a new cluster. It strengthens the
   next-work rule: judge the current packages in order, then execute, revise,
   defer, or reject/retain them with a recorded reason before source chapters in
@@ -900,7 +899,7 @@ Attachment-specific verdict:
   cases, external positioning, proof limits, and reader flow.
 - The proposal is not accepted as a chapter-count target or a direct cut list.
   A 44-ish table of contents is useful as a pressure test; a retained
-  50-chapter manifest is still correct when each chapter owns a distinct
+  49-chapter manifest is still correct when each chapter owns a distinct
   artifact, interface, proof family, evidence lane, implementation horizon, or
   reader throughline.
 - The strongest near-term action is review and decision, not more abstract
@@ -927,7 +926,7 @@ before broad reader curation treats the source chapters as stable.
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep context transactions and verification bandwidth standalone unless a later review changes their artifact ownership. |
 | 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep claim ledgers standalone as the belief-revision substrate. |
 | 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep cognitive compilation standalone as the semantic-IR and lowering-receipt layer. |
-| 8 | Fold-disposition candidates | Execute fold, revise, defer, or reject/retain. | MoECOT runtime, simulation fidelity, and semantic representation already have fold dispositions; the next work is review and decision, not more packaging, before any manifest edit. |
+| 8 | Fold-disposition candidates | Execute fold, revise, defer, or reject/retain. | MoECOT runtime and simulation fidelity have executed; semantic representation still has a fold disposition, and the next work is review and decision, not more packaging, before any manifest edit. |
 
 Each decision record should name the reviewed package, reviewer or review
 source, destination-skeleton judgment, claim/source/proof/reader impact,
@@ -1061,12 +1060,12 @@ Candidate clusters to review:
     `routing-heads-and-specialist-cores` until public-safe runtime, replay,
     benchmark, and corroboration evidence make a standalone chapter
     chapter-owning again;
-  - review `docs/chapter_consolidation_fold_simulation_fidelity.md` and fold
-    `simulation-fidelity-and-physical-constraints` into
+  - executed: `simulation-fidelity-and-physical-constraints` is folded into
     `resource-economics-and-token-budgets` as a Simulation Fidelity and Claim
-    Transport section if its standalone claim remains only a feasibility-bound
-    note; keep the efficient-ASI frame as secondary context rather than the
-    owning destination;
+    Transport section until public-safe simulator artifacts,
+    physical-computation audits, fidelity calibration, benchmark-transfer
+    negative cases, or independent review make a standalone chapter
+    chapter-owning again;
   - review `docs/chapter_consolidation_fold_semantic_representation.md` and
     fold `semantic-representation-and-tree-structured-models` into the
     compression/representation cluster only if its representation-substrate
@@ -1180,16 +1179,17 @@ Current status:
   the Part I alignment/governance philosophy cluster.
 - `docs/chapter_consolidation_sequence.md` records the full governed sequence
   for the latest 54-to-44/47 critique: the Part I pilot stays first, while the
-  compression, intent/contract, context, verification, planning, MoECOT,
-  simulation-fidelity, semantic-representation, and low-priority runtime-adapter
+  intent/contract, context, verification, planning, semantic-representation,
+  and low-priority runtime-adapter
   candidates each require their own package or explicit review decision before
   any future manifest edit.
 - The sequence now records consolidation states so candidates cannot jump from
   "interesting idea" to manifest change: the Part I pilot, conservative
-  compression merge, and MoECOT runtime fold are `executed`;
+  compression merge, MoECOT runtime fold, and simulation-fidelity fold are
+  `executed`;
   intent/contracts, static context ABI, verification/adversarial review, and
-  planning/DAG control are `review_ready`; simulation fidelity and semantic
-  representation remain `fold_disposition_ready`; and runtime-adapters/Labor
+  planning/DAG control are `review_ready`; semantic representation remains
+  `fold_disposition_ready`; and runtime-adapters/Labor
   OS is
   `rejected_or_retained` unless a later evidence review finds duplicate
   artifact ownership. The latest attachment does not add another merge
@@ -1205,7 +1205,7 @@ Current status:
   reduction and never a reason to drop an idea.
 - `scripts/validate_chapter_consolidation_sequence.py` keeps the sequence
   visible from the roadmap, README, publication readiness, and repository map
-  while confirming the canonical manifest now has 50 chapters.
+  while confirming the canonical manifest now has 49 chapters.
 - The latest 54-to-44 consolidation critique is accepted as roadmap guidance,
   not as a direct manifest-edit instruction. Its strongest recommendation is
   sequencing: resolve the highest-repetition merge pilot before broad
@@ -1897,14 +1897,12 @@ Current status:
   `curated_reconciliation_not_approved` blockers active.
 - No curated reader chapter is release-approved, and generated reader HTML
   remains the only reviewed reader artifact.
-- Five current manifest chapters still lack curated reader manuscript files:
+- Three current manifest chapters still lack curated reader manuscript files:
   `compact-generative-systems-and-residual-honesty`,
-  `generate-verify-repair-compression`,
   `rankfold-neuralfold-and-artifact-compression`,
-  `semantic-representation-and-tree-structured-models`, and
-  `simulation-fidelity-and-physical-constraints`. Because each sits inside a
-  pending compression, representation, or fold package, finish or defer them
-  only after the relevant consolidation execution decision.
+  and `semantic-representation-and-tree-structured-models`. Because each sits
+  inside a pending representation or retained-technique reader decision, finish
+  or defer them only after the relevant consolidation or curation decision.
 
 ### Milestone 8 - Visual, Ebook, PDF, DOCX, And Audio Quality
 

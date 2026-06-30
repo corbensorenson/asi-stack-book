@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 50 |
-| Assigned source/chapter pairs | 442 |
-| Exact claim-source mappings | 442 |
+| Chapters audited | 49 |
+| Assigned source/chapter pairs | 441 |
+| Exact claim-source mappings | 441 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 442 |
-| Source notes listing assigned chapter | 442 |
-| Passage-reviewed mappings recorded | 442 |
-| Support-state counts | {"argument": 50} |
+| Source notes present for assigned pairs | 441 |
+| Source notes listing assigned chapter | 441 |
+| Passage-reviewed mappings recorded | 441 |
+| Support-state counts | {"argument": 49} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -68,8 +68,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `semantic-representation-and-tree-structured-models` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
-| `resource-economics-and-token-budgets` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
-| `simulation-fidelity-and-physical-constraints` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `resource-economics-and-token-budgets` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `mathematical-and-search-substrates` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
@@ -106,16 +105,16 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `verification_bandwidth` | 10 | yes |
 | `cgs` | 8 | yes |
 | `cognitive_compilation` | 8 | yes |
-| `tokenmana` | 8 | yes |
 | `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
-| `simulation_scaling` | 7 | yes |
 | `ladon_manhattan` | 7 | yes |
 | `vcm_editable` | 7 | yes |
 | `alignment_field` | 7 | yes |
 | `field_of_god_ai_constitution` | 7 | yes |
 | `theseus_self_evolution_system` | 7 | yes |
 | `theseus_architecture_gate` | 7 | yes |
+| `tokenmana` | 7 | yes |
+| `simulation_scaling` | 6 | yes |
 | `software_magic_grimoire` | 6 | yes |
 | `circle_ai_contract_suite` | 6 | yes |
 | `uat` | 5 | yes |
@@ -168,6 +167,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_llada_2025` | 1 | yes |
 | `ext_scaling_dllms_2026` | 1 | yes |
 | `rankfold_compressor` | 1 | yes |
+| `ext_reluplex_2017` | 1 | yes |
 | `temporal_coil_research` | 1 | yes |
 | `coil_attention_memory` | 1 | yes |
 | `ext_trpo_2015` | 1 | yes |
@@ -463,12 +463,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `coilra_multicoil_rope` | mapped | note present | chapter listed | passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_pagedattention_vllm_2023` | mapped | note present | chapter listed | passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
-| `simulation-fidelity-and-physical-constraints.core` | `simulation-fidelity-and-physical-constraints` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_reluplex_2017` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `temporal_coil_research` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |

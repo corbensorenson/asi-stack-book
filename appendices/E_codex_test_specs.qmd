@@ -161,9 +161,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Risk-adjusted verification test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Capacity smoothing toy harness | implemented | passing via `python3 scripts/validate_capacity_smoothing.py` |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | KV-cache memory accounting scenario | planned | not run |
-| `simulation-fidelity-and-physical-constraints` | Simulation Fidelity and Physical Constraints | Fidelity declaration test | planned | not run |
-| `simulation-fidelity-and-physical-constraints` | Simulation Fidelity and Physical Constraints | Resource-bound sanity check | planned | not run |
-| `simulation-fidelity-and-physical-constraints` | Simulation Fidelity and Physical Constraints | Simulation approximation audit | planned | not run |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Simulation contract record fixture validation | implemented | passing via `python3 scripts/validate_protocol_examples.py` |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Fidelity declaration test | planned | not run |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource-bound simulation sanity check | planned | not run |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Simulation approximation audit | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Baseline comparison test | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Representation efficiency test | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Falsification review | planned | not run |

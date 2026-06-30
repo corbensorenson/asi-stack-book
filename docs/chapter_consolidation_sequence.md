@@ -16,13 +16,14 @@ re-consolidation: fewer deeper chapter-owning artifacts, with every useful idea
 preserved as a section, subclaim, source mapping, proof hook, reader path,
 implementation horizon, or explicit retirement decision.
 
-The Part I pilot, the conservative compression merge, and the MoECOT runtime
-fold have now executed through `book_structure.json`; the current canonical
-book has 50 manifest chapters. The remaining candidate packages still
+The Part I pilot, the conservative compression merge, the MoECOT runtime
+fold, and the simulation-fidelity fold have now executed through
+`book_structure.json`; the current canonical book has 49 manifest chapters. The remaining candidate packages still
 require their own package-specific decision and execution commit before any
 further manifest change. This is not a support-state transition. The current
-canonical count is 50 manifest chapters after the executed Part I pilot,
-conservative compression merge, and MoECOT runtime fold.
+canonical count is 49 manifest chapters after the executed Part I pilot,
+conservative compression merge, MoECOT runtime fold, and simulation-fidelity
+fold.
 
 ## Decision Boundary
 
@@ -90,11 +91,13 @@ Accepted into the roadmap:
   review, and planning/DAG control are real merge candidates because they
   currently carry overlapping source families, claim motions, and chapter
   skeletons.
-- Simulation fidelity and semantic representation remain fold candidates, not
-  deletion targets. The MoECOT runtime fold has executed into a named runtime
-  crosswalk inside Routing Heads and Specialist Cores, preserving source
-  mappings, proof hooks, implementation-horizon facets, restoration
-  conditions, and no-support-state-change boundaries.
+- Semantic representation remains a fold candidate, not a deletion target. The
+  MoECOT runtime fold has executed into a named runtime crosswalk inside
+  Routing Heads and Specialist Cores, and the simulation-fidelity fold has
+  executed into a named Simulation Fidelity and Claim Transport section inside
+  Resource Economics and Token Budgets. Both folds preserve source mappings,
+  proof hooks, implementation-horizon facets, restoration conditions, and
+  no-support-state-change boundaries.
 - The 44-chapter aggressive shape and roughly 47-chapter conservative shape
   are useful pressure tests only. They are not release goals.
 - The implementation rule is one skeleton per destination chapter. A successful
@@ -160,15 +163,16 @@ It records no accepted external review and no support-state effect.
 `deferred_for_release` reader-work outcome for every unexecuted review-ready or
 fold-disposition package in the current queue. It now applies to the remaining
 unexecuted packages only. The reader-curation cycle continues against the
-50-chapter manifest with explicit consolidation caveats while preserving every
+49-chapter manifest with explicit consolidation caveats while preserving every
 unexecuted package for later human or external review.
 
 The public URL/history precondition now has a policy surface:
 `docs/chapter_consolidation_url_history_policy.md`. It sets the default
 continuity URL, retired URL, redirect or historical-stub, and chapter-history
 ledger requirements for future execution commits. It has now been applied to
-the Part I pilot, conservative compression merge, and MoECOT runtime fold
-through static historical stubs and `docs/chapter_history_ledger.md`; it
+the Part I pilot, conservative compression merge, MoECOT runtime fold, and
+simulation-fidelity fold through static historical stubs and
+`docs/chapter_history_ledger.md`; it
 remains the policy for future unexecuted packages.
 
 The current pilot state is `executed`: both destination chapters are now
@@ -222,7 +226,7 @@ merge lowers the chapter count.
 | Verification and adversarial review | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the verification/review pair unless explicitly deferred or retained; reader curation may continue on claim ledgers. |
 | Planning and DAG control | `review_ready` | Review the destination draft and decide execute, revise, defer, or reject. | Avoid curated graduation of the planning/DAG pair unless explicitly deferred or retained; reader curation may continue on semantic IR. |
 | Source-blocked MoECOT runtime | `executed` | Use the executed fold as the template for future source-blocked fold packages; restore a standalone chapter only if public-safe runtime, replay, benchmark, and corroboration evidence makes it chapter-owning. | Reader work should target Routing Heads and Specialist Cores plus the folded MoECOT Runtime Crosswalk; the archived standalone reader draft remains historical only. |
-| Simulation fidelity | `fold_disposition_ready` | Review the fold disposition and decide execute fold, revise, defer, or reject/retain. | Preserve physical-constraint caveats, simulation contract fields, proof hooks, and reader repairs if folded. |
+| Simulation fidelity | `executed` | Use the executed fold as the template for future feasibility-bound fold packages; restore a standalone chapter only if public-safe simulation, physical-computation, benchmark-transfer, or independent review evidence makes it chapter-owning. | Reader work should target Resource Economics and Token Budgets plus the folded Simulation Fidelity and Claim Transport section; the archived standalone source manuscript remains historical only. |
 | Semantic representation | `fold_disposition_ready` | Review the fold disposition and decide execute fold after destination-package review, revise, defer, or reject/retain. | Preserve proof/test hooks, semantic-node records, dependency on compression-package review, and reader repairs if folded. |
 | Runtime adapters and Labor OS | `rejected_or_retained` unless later evidence changes artifact ownership | Revisit only if tool-permission adapters stop owning a distinct artifact. | Reader curation may proceed because the current split has artifact ownership. |
 
@@ -244,7 +248,7 @@ blocked until the revision is reviewed.
 | 5 | Static context ABI | Execute, revise, defer, or reject. | Keep transaction/snapshot/taint and verification-bandwidth chapters standalone unless later review changes artifact ownership. |
 | 6 | Verification and adversarial review | Execute, revise, defer, or reject. | Keep `claim-ledgers-and-belief-revision` as the durable belief-revision substrate. |
 | 7 | Planning and DAG control | Execute, revise, defer, or reject. | Keep `cognitive-compilation-and-semantic-ir` as the semantic-IR and lowering-receipt layer. |
-| 8 | Fold-disposition candidates | Execute fold, revise, defer, or reject/retain. | MoECOT runtime has executed into Routing Heads and Specialist Cores; simulation fidelity and semantic representation still have fold dispositions and require review and decision before any manifest edit. |
+| 8 | Fold-disposition candidates | Execute fold, revise, defer, or reject/retain. | MoECOT runtime has executed into Routing Heads and Specialist Cores; simulation fidelity has executed into Resource Economics and Token Budgets; semantic representation still has a fold disposition and requires review and decision before any manifest edit. |
 
 Every decision record should name the reviewed package, reviewer or review
 source, one-skeleton destination judgment, claim/source/proof/reader impact,
@@ -296,7 +300,7 @@ throughline that justifies keeping the separate chapter boundary.
 | 2A | Verification and adversarial review | `spinoza-verification-and-proof-carrying-claims`; `unified-adaptive-tribunal-and-adversarial-review` | **Proof-Carrying Claims and Adversarial Review** | Preserve proof-carrying claim tiers, tribunal review, adversarial dossiers, dissent, no-theorem-laundering boundaries, proof hooks, harness rows, and source unions. Keep `claim-ledgers-and-belief-revision` separate. |
 | 2B | Planning and DAG control | `planning-as-a-control-layer`; `planforge-dags-and-intelligence-arbitrage` | **Planning as a Control Layer: DAGs and Intelligence Arbitrage** | Preserve control-layer semantics, PlanForge DAGs, intelligence arbitrage, negative cases, proof hooks, and source unions. Keep `cognitive-compilation-and-semantic-ir` separate unless later review shows the IR has no independent chapter ownership. |
 | 2C | Source-blocked MoECOT runtime | `moecot-runtime-and-multi-core-orchestration`; `routing-heads-and-specialist-cores` | Executed: folded MoECOT runtime into Routing Heads and Specialist Cores until public-safe runtime, replay, benchmark, and corroboration evidence makes a standalone chapter chapter-owning again. | Preserved the multi-core orchestration runtime as the named MoECOT Runtime Crosswalk, source queue, proof tags, schema/fixture lane, blocker set, URL stub, archive record, and future chapter-restoration condition. |
-| Fold review | Simulation fidelity | `simulation-fidelity-and-physical-constraints`; `resource-economics-and-token-budgets`; efficient-ASI frame as secondary context only | Fold if the standalone claim remains only a feasibility-bound note. | Preserve physical/resource bounds, fidelity limitations, simulation contract fields, claim-transport boundaries, proof hooks, and no-overclaim language as a named section. |
+| Fold review | Simulation fidelity | `simulation-fidelity-and-physical-constraints`; `resource-economics-and-token-budgets`; efficient-ASI frame as secondary context only | Executed: folded simulation fidelity into Resource Economics and Token Budgets until public-safe simulation, physical-computation, benchmark-transfer, or independent review evidence makes a standalone chapter chapter-owning again. | Preserved physical/resource bounds, fidelity limitations, simulation contract fields, claim-transport boundaries, proof hooks, source queue, schema/fixture lane, URL stub, archive record, and no-overclaim language as the named Simulation Fidelity and Claim Transport section. |
 | Fold review | Semantic representation | `semantic-representation-and-tree-structured-models`; compression/representation cluster | Fold only if representation remains a substrate facet rather than a chapter-owning artifact, and only after the compression/representation destination package has a reviewed decision. | Preserve tree-structured representation, semantic-node records, source mappings, proof/test hooks, and restoration conditions as a named section or companion note. |
 | Low priority | Runtime adapters and Labor OS | `runtime-adapters-tool-permissions-and-human-approval`; `labor-os-and-typed-jobs` | No current merge; only revisit if tool-permission adapters stop owning a distinct artifact. | Preserve permissioning, human approval, runtime receipts, Labor OS typed jobs, and execution-harness separation. |
 
@@ -437,7 +441,6 @@ The current deferred-for-release reader-work set is:
 - `compact-generative-systems-and-residual-honesty`
 - `rankfold-neuralfold-and-artifact-compression`
 - `semantic-representation-and-tree-structured-models`
-- `simulation-fidelity-and-physical-constraints`
 
 Any curated reader prose pass for pending-package chapters must cite
 `docs/chapter_consolidation_release_stability_review.md` or record an
@@ -516,22 +519,24 @@ destination chapter when it needs historical context.
   `schemas/moecot_orchestration_record.schema.json`, source unions, external
   comparator unions, reader repair requirements, URL/history policy, restoration
   conditions, and the no-support-state-change boundary.
-
-## Remaining Fold-Disposition Packages
-
 - `docs/chapter_consolidation_fold_simulation_fidelity.md` records the second
   fold disposition package, for `simulation-fidelity-and-physical-constraints`
   into a named Simulation Fidelity and Claim Transport section inside
-  `resource-economics-and-token-budgets`. It is fold-disposition ready but not
-  reviewed, not executed, not canonical, and not a manifest edit. The next
-  decision is execute fold, revise, defer, or reject/retain. It preserves
+  `resource-economics-and-token-budgets`. It is now executed through the
+  2026-06-30 simulation-fidelity fold package. The retired public slug is
+  preserved with a static historical stub, the live source manuscript is
+  archived, and the current canonical route for reader and research work is
+  Resource Economics and Token Budgets. It preserves
   `AsiStackProofs.ResourceEconomics`, `AsiStackProofs.SimulationFidelity`,
   `schemas/resource_budget_record.schema.json`,
   `schemas/simulation_contract_record.schema.json`, source unions, external
   comparator unions, reader repair requirements, URL/history policy,
   restoration conditions, and the no-support-state-change boundary.
+
+## Remaining Fold-Disposition Packages
+
 - `docs/chapter_consolidation_fold_semantic_representation.md` records the
-  third fold disposition package, for
+  remaining fold disposition package, for
   `semantic-representation-and-tree-structured-models` into a named Semantic
   Representation Leasing section inside the compression/representation
   destination package if review accepts that dependency. It is
@@ -548,8 +553,11 @@ destination chapter when it needs historical context.
 
 ## Non-Claims
 
-- This sequence records the executed Part I pilot and does not merge any remaining package by itself.
-- This sequence reflects the 2026-06-30 Part I manifest change and does not authorize any further `book_structure.json` change by itself.
+- This sequence records the executed Part I pilot, conservative compression
+  merge, MoECOT runtime fold, and simulation-fidelity fold and does not merge
+  any remaining package by itself.
+- This sequence reflects the 2026-06-30 Part I, compression, MoECOT, and
+  simulation-fidelity manifest changes and does not authorize any further `book_structure.json` change by itself.
 - This sequence does not change Appendix C support states.
 - This sequence does not create source-derived, external-literature-backed,
   proof-derived, prototype-backed, synthetic-test-backed, or empirical support.

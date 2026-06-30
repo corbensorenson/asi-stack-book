@@ -42,7 +42,7 @@ Compact Generative Systems, or CGS, argues that powerful systems often use a com
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
-- `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
+- `resource-economics-and-token-budgets` (Resource Economics and Token Budgets; includes Simulation Fidelity and Claim Transport)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 

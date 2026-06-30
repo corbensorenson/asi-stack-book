@@ -48,7 +48,6 @@ REQUIRED_IDS = {
     "planforge-dags-and-intelligence-arbitrage",
     "cognitive-compilation-and-semantic-ir",
     "routing-heads-and-specialist-cores",
-    "simulation-fidelity-and-physical-constraints",
     "resource-economics-and-token-budgets",
     "semantic-representation-and-tree-structured-models",
     "labor-os-and-typed-jobs",
@@ -68,7 +67,7 @@ REQUIRED_IDS = {
 REQUIRED_FRAGMENTS = (
     "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
-    "50 manifest chapters after the executed Part I pilot",
+    "49 manifest chapters after the executed Part I pilot",
     "Do not run a broad 54-to-44 manifest edit",
     "Do not target a fixed chapter count.",
     "Do not delete ideas merely to reduce repetition.",
@@ -107,7 +106,7 @@ REQUIRED_FRAGMENTS = (
     "Verification and adversarial review | `review_ready`",
     "Planning and DAG control | `review_ready`",
     "Source-blocked MoECOT runtime | `executed`",
-    "Simulation fidelity | `fold_disposition_ready`",
+    "Simulation fidelity | `executed`",
     "Semantic representation | `fold_disposition_ready`",
     "Candidate Sequence",
     "Protected Standalone Chapters",
@@ -670,9 +669,9 @@ MOECOT_FOLD_REQUIRED_FIXTURE_FRAGMENTS = {
 
 SIMULATION_FOLD_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation Fold Disposition: Simulation Fidelity",
-    "Status: fold-disposition ready; human/external review not completed.",
-    "does not edit `book_structure.json`",
-    "Current state | `fold_disposition_ready`",
+    "Status: executed fold history; human/external review not completed.",
+    "The execution package edited `book_structure.json`",
+    "Current state | `executed`",
     "Simulation Fidelity and Claim Transport",
     "Preservation Ledger",
     "Proposed Destination Outline",
@@ -688,13 +687,12 @@ SIMULATION_FOLD_REQUIRED_FRAGMENTS = (
     "Execute fold",
     "Reject and retain standalone",
     "No support-state movement",
-    "This disposition does not merge or fold chapters.",
-    "This disposition does not change `book_structure.json`.",
+    "This disposition is now executed by the 2026-06-30 simulation-fidelity fold package.",
+    "The execution package changed `book_structure.json`.",
     "This disposition does not change Appendix C support states.",
 )
 
 SIMULATION_FOLD_REQUIRED_IDS = {
-    "simulation-fidelity-and-physical-constraints",
     "resource-economics-and-token-budgets",
     "the-efficient-asi-hypothesis",
 }
@@ -855,7 +853,7 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "does not execute any additional remaining merge or fold",
     "does not create external review",
     "does not change support states",
-    "The current canonical manifest has 50 chapters after the executed Part I pilot",
+    "The current canonical manifest has 49 chapters after the executed Part I pilot",
     "Reader Curation Outcome Table",
     "Constitutional alignment and agency/corrigibility",
     "Value conflict and contestable governance",
@@ -880,8 +878,8 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot, conservative compression merge, and MoECOT runtime fold",
-    "The canonical manifest now has 50 chapters after the executed Part I pilot",
+    "applied to the 2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold, and simulation-fidelity fold",
+    "The canonical manifest now has 49 chapters after the executed Part I pilot",
     "If a retired public chapter URL cannot be preserved or deliberately recorded",
     "Default URL Policy",
     "Keep the destination chapter's existing stable ID and public URL",
@@ -893,9 +891,10 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/governance-rights-fork-exit-and-audit.html",
     "/chapters/generate-verify-repair-compression.html",
     "/chapters/moecot-runtime-and-multi-core-orchestration.html",
+    "/chapters/simulation-fidelity-and-physical-constraints.html",
     "Validation Expectations",
     "Non-Claims",
-    "The 2026-06-30 Part I, conservative compression, and MoECOT execution",
+    "The 2026-06-30 Part I, conservative compression, MoECOT, and simulation-fidelity execution",
 )
 
 
@@ -928,8 +927,8 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 50:
-        errors.append("Consolidation sequence expects the current manifest to have 50 chapters after the MoECOT runtime fold.")
+    if len(ids) != 49:
+        errors.append("Consolidation sequence expects the current manifest to have 49 chapters after the simulation-fidelity fold.")
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -1407,7 +1406,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "50-chapter manifest, executed Part I pilot, executed conservative compression merge, and executed MoECOT runtime fold recorded with remaining candidate sequence."
+        "49-chapter manifest, executed Part I pilot, executed conservative compression merge, executed MoECOT runtime fold, and executed simulation-fidelity fold recorded with remaining candidate sequence."
     )
 
 

@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-06-30 - Simulation fidelity fold executed
+
+- Executed the governed simulation-fidelity fold in `book_structure.json`:
+  folded `simulation-fidelity-and-physical-constraints` into **Resource
+  Economics and Token Budgets** as the named Simulation Fidelity and Claim
+  Transport section while preserving simulation-contract records, fidelity
+  boundaries, temporal semantics, resource bills, omitted variables,
+  approximation liberties, instrumentation effects, transfer decisions, source
+  mappings, proof tags, schema/fixture lanes, and restoration conditions.
+- Reduced the canonical manifest from 50 chapters to 49 chapters while keeping
+  simulation fidelity as contract-relative claim transport only until
+  public-safe simulator artifacts, physical-computation audits, fidelity
+  calibration, benchmark-transfer negative cases, or independent review create
+  a distinct chapter-owning evidence lane.
+- Moved the retired live manuscript under `archive/retired_chapters/`, added a
+  static historical stub for the retired public chapter slug, retargeted
+  source/proof/reader/evidence records to Resource Economics and Token Budgets,
+  updated the consolidation sequence, URL/history policy, release-stability
+  record, active evidence cycle, chapter-history ledger, and public status
+  surfaces, and regenerated the affected source, claim/evidence, test, proof,
+  reader, grounding, audio-script, and protocol surfaces.
+- This does not promote any chapter core claim above `argument`, create source
+  evidence, create proof results, create simulator or physical-feasibility
+  results, create benchmark-transfer results, approve reader artifacts, or
+  create EPUB, DOCX, PDF, HTML, audio, DOI, Zenodo, or audio-embedded EPUB
+  release artifacts.
+
 ## 2026-06-30 - MoECOT runtime fold executed
 
 - Executed the governed MoECOT runtime fold in `book_structure.json`: folded

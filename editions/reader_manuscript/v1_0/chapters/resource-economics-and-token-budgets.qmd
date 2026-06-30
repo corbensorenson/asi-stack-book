@@ -260,13 +260,13 @@ above local optimization.
 The same rule governs self-improvement. A system may not call itself more
 efficient by moving verification, security, or human repair cost out of sight.
 
-With compactness, speed, representation, and budgets bounded, the sequence can
-ask which simulation and mathematical substrates are legitimate targets for
-adoption rather than architectural fashion. Simulation, cyclic mixers, and
-mathematical substrates are not adopted because they look elegant or cheap.
-They have to enter through resource, fidelity, baseline, and evidence
-contracts.
+With compactness, speed, representation, budgets, and simulation contracts
+bounded, the sequence can ask which mathematical substrates are legitimate
+targets for adoption rather than architectural fashion. Synthetic results,
+cyclic mixers, and mathematical substrates are not adopted because they look
+elegant or cheap. They have to enter through resource, fidelity, baseline, and
+evidence contracts.
 
 ## Handoff
 
-Resource budgets decide what the stack can afford to try, but some experiments are only meaningful inside a bounded model of the world. Simulation Fidelity and Physical Constraints defines that boundary. It treats simulation as an instrument with clocks, approximations, bottlenecks, omitted physics, transfer rules, and non-claims, so cheap exploration cannot silently become deployment evidence.
+Resource budgets decide what the stack can afford to try, and simulation contracts decide what a synthetic experiment is allowed to mean. Mathematical and Search Substrates extends that discipline to unusual calculi, cyclic structures, semantic graphs, search spaces, and sequence alternatives. Candidate substrates can remain interesting only while carrying baselines, falsification conditions, readiness states, proof boundaries, resource bills, fidelity limits, and ordinary fallback paths.

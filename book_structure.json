@@ -7407,7 +7407,11 @@
             "viea",
             "project_theseus_whitepaper",
             "coilra_multicoil_rope",
-            "ext_pagedattention_vllm_2023"
+            "cgs",
+            "rankfold_neuralfold",
+            "alignment_field",
+            "ext_pagedattention_vllm_2023",
+            "ext_reluplex_2017"
           ],
           "source_queue": {
             "primary": [
@@ -7419,43 +7423,62 @@
               "simulation_scaling",
               "viea",
               "project_theseus_whitepaper",
-              "coilra_multicoil_rope"
+              "coilra_multicoil_rope",
+              "cgs",
+              "rankfold_neuralfold",
+              "alignment_field"
             ],
             "variants": [
-              "ext_pagedattention_vllm_2023"
+              "ext_pagedattention_vllm_2023",
+              "ext_reluplex_2017"
             ],
             "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
+            "handoff_or_recovery_notes": [
+              "simulation-fidelity-and-physical-constraints folded into this chapter as Simulation Fidelity and Claim Transport on 2026-06-30; old public URL preserved through a static historical stub."
+            ]
           },
-          "problem": "Compute, context, verification, and human attention are scarce resources that the architecture must allocate explicitly.",
-          "insufficient": "Ignoring resource economics makes high-quality verification unaffordable and encourages synchronized overload or hidden cost shifts.",
+          "problem": "Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.",
+          "insufficient": "Ignoring resource economics or fidelity boundaries makes high-quality verification unaffordable, encourages synchronized overload or hidden cost shifts, and lets synthetic results travel farther than their contracts support.",
           "core_claim": "Resource governance accounts for token budgets, verification tax, load stability, and risk-adjusted inference value.",
           "mechanism": [
-            "Track task value, uncertainty, cost of error, and inference cost.",
+            "Track task value, uncertainty, cost of error, inference cost, verification tax, protected overhead, and displaced costs.",
             "Use regenerative or budgeted capacity mechanisms where useful.",
             "Escalate verification when risk justifies the cost.",
-            "Separate aggregate serving throughput and memory pressure from single-request verified-output value."
+            "Separate aggregate serving throughput and memory pressure from single-request verified-output value.",
+            "Attach Simulation Contract Records when simulated, synthetic, benchmark, or scenario results are used as evidence.",
+            "Block, downgrade, or residualize claims whose simulation scope, fidelity, temporal semantics, resource bill, bottlenecks, omissions, or transfer decision do not support the stronger claim."
           ],
           "interfaces": [
             "Planning allocates budgets.",
             "Routing chooses costed specialists.",
             "Evidence measures cost-quality tradeoffs.",
-            "Serving infrastructure reports memory and throughput costs without converting them into quality claims."
+            "Serving infrastructure reports memory and throughput costs without converting them into quality claims.",
+            "Simulation records declare fidelity, resource bills, omitted variables, instrumentation effects, transfer decisions, and non-claims before synthetic results enter claim ledgers."
           ],
           "invariants": [
             "Budgets do not override protected safety gates.",
             "High-risk tasks pay verification cost.",
             "Cost savings are recorded with quality results.",
-            "Serving-throughput gains remain separate from verified-output and task-success claims."
+            "Serving-throughput gains remain separate from verified-output and task-success claims.",
+            "Protected overhead is budgeted explicitly and cannot be silently deleted.",
+            "Displaced costs remain residuals until measured or accepted by a scoped evidence transition.",
+            "Simulation fidelity, scope, and resource bounds are declared before synthetic results support a claim.",
+            "Simulation results do not transfer beyond their supported claim boundary by default.",
+            "Approximation liberties, omitted variables, and instrumentation effects remain visible after results are summarized."
           ],
           "failure_modes": [
             "Cost-cutting verification away.",
             "Load-synchronized degradation.",
             "Resource hoarding by low-value tasks.",
-            "Aggregate serving throughput mistaken for lower single-request risk or better answer quality."
+            "Aggregate serving throughput mistaken for lower single-request risk or better answer quality.",
+            "Protected-overhead deletion.",
+            "Review-capacity capture.",
+            "Simulation laundering: clean synthetic results described as if omitted variables, bottlenecks, and transfer limits were irrelevant.",
+            "Sandbox-to-world transfer without a declared fidelity and resource contract.",
+            "Parent-physics assumption drift without updating the simulation contract."
           ],
-          "minimal_implementation": "A resource ledger with budget, risk, cost, quality, and verification tax fields.",
-          "beyond_state_of_art": "Resource economics matures into a risk-aware budget operating system for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, or residualize work without letting local cost pressure delete verification, security, approval, replay, rollback, or human review. In the mature budget OS, cognition has a budget, but the budget cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, or residual burden.",
+          "minimal_implementation": "A resource ledger with budget, risk, cost, quality, verification tax, protected-overhead, displaced-cost, and evidence-reference fields, plus a companion Simulation Contract Record for synthetic or simulated results with scope, fidelity, temporal semantics, resource bill, bottlenecks, omissions, instrumentation effects, transfer decision, support-state effect, residual risks, and non-claims.",
+          "beyond_state_of_art": "Resource economics matures into a risk-aware budget operating system and claim-transport layer for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, residualize work, or downgrade synthetic evidence without letting local cost pressure delete verification, security, approval, replay, rollback, human review, fidelity limits, or transfer boundaries. In the mature budget OS, cognition has a budget and simulations have contracts: budgets cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, residual burden, or the requirement that simulated results travel only as far as declared scope, fidelity, resources, omissions, and transfer decisions allow.",
           "codex_tests": [
             {
               "name": "Generation-mode resource-budget alignment harness",
@@ -7480,7 +7503,17 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_capacity_smoothing.py`"
             },
-            "KV-cache memory accounting scenario"
+            "KV-cache memory accounting scenario",
+            {
+              "name": "Simulation contract record fixture validation",
+              "purpose": "Validate that simulation claims record contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omissions, approximation liberties, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims.",
+              "status": "implemented; passing via `python3 scripts/validate_protocol_examples.py`",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_protocol_examples.py`"
+            },
+            "Fidelity declaration test",
+            "Resource-bound simulation sanity check",
+            "Simulation approximation audit"
           ],
           "lean_module": "AsiStackProofs.ResourceEconomics",
           "proof_targets": [
@@ -7494,6 +7527,18 @@
               "tag": "lean:resources.budgets.failure_blocks_promotion",
               "module": "AsiStackProofs.ResourceEconomics",
               "target": "A high-risk task with insufficient verification budget is blocked or escalated.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:simulation.fidelity.operational_invariant",
+              "module": "AsiStackProofs.SimulationFidelity",
+              "target": "A simulation claim includes declared scope, fidelity, and resource bounds.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:simulation.fidelity.failure_blocks_promotion",
+              "module": "AsiStackProofs.SimulationFidelity",
+              "target": "An experiment result cannot exceed the declared fidelity support of its simulation.",
               "status": "implemented"
             }
           ],
@@ -7631,110 +7676,6 @@
                 "external-paper:https://arxiv.org/abs/2309.06180:abstract / KV-cache memory bottleneck / dynamic cache growth and fragmentation / PagedAttention virtual-memory paging / vLLM cache sharing / reported throughput gains"
               ],
               "passage_review_note": "Reviewed public arXiv abstract/metadata for KV-cache memory management, batching, fragmentation, duplication, PagedAttention, vLLM cache sharing, and source-reported throughput gains; no deployment, cache-isolation audit, serving benchmark, local throughput measurement, latency result, or verified-output quality result is reproduced."
-            }
-          ],
-          "draft_maturity": "v0.2 manuscript draft",
-          "open_evidence_gaps": [
-            "Appendix C now records exact passage-reviewed mappings for all eight assigned resource-economics sources; support remains at argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, cost-quality experiments, or accepted evidence transitions exist.",
-            "The resource_budget_record fixture validates schema/example consistency only, including budget_state, protected_overhead, and displaced_costs fields; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, protected-overhead accounting test, displaced-cost residual test, cost-quality experiment, or scheduler trace has been run.",
-            "Coherence Exchange, Project Theseus Whitepaper, and CoilRA/MultiCoil RoPE mappings are passage-reviewed against public source notes only because raw connector/local-project text is not copied into this repo; they support framing and accounting discipline, not implemented mechanisms or empirical claims.",
-            "PagedAttention/vLLM is reviewed against the public arXiv abstract/metadata only; reported throughput gains, cache-sharing behavior, code artifacts, latency results, and quality behavior remain source-reported and unreproduced.",
-            "No support-state promotion, raw source publication, economic result, scheduler result, serving result, welfare result, or quality result is implied by this drafting pass."
-          ]
-        },
-        {
-          "id": "simulation-fidelity-and-physical-constraints",
-          "title": "Simulation Fidelity and Physical Constraints",
-          "file": "chapters/simulation-fidelity-and-physical-constraints.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "simulation_scaling",
-            "cgs",
-            "rankfold_neuralfold",
-            "tokenmana",
-            "alignment_field"
-          ],
-          "source_queue": {
-            "primary": [
-              "simulation_scaling"
-            ],
-            "supporting": [
-              "cgs",
-              "rankfold_neuralfold",
-              "tokenmana",
-              "alignment_field"
-            ],
-            "variants": [],
-            "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "The architecture needs a realism check on simulations, nested worlds, fidelity, clockspeed, and compute constraints.",
-          "insufficient": "Simulation-based claims can become unbounded if scope, fidelity, resource cost, and observer effects are not explicit.",
-          "core_claim": "Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.",
-          "mechanism": [
-            "Define scope, clockspeed, fidelity, and resource demand.",
-            "Use simulation limits to constrain roadmap and benchmark claims.",
-            "Record liberties or approximations explicitly."
-          ],
-          "interfaces": [
-            "Efficiency theory uses resource constraints.",
-            "Benchmarks record fidelity limits.",
-            "Alignment scenarios avoid unbounded simulation claims."
-          ],
-          "invariants": [
-            "Fidelity is declared.",
-            "Resource bounds are explicit.",
-            "Speculative simulation metaphysics stays separated from engineering claims."
-          ],
-          "failure_modes": [
-            "Overclaiming nested simulation feasibility.",
-            "Ignoring resource ceilings.",
-            "Treating approximate simulations as ground truth."
-          ],
-          "minimal_implementation": "A simulation-fidelity checklist and cost/fidelity table for experiment design.",
-          "beyond_state_of_art": "Simulation becomes useful as a claim-transport layer. It lets the stack run synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models while preventing their results from traveling farther than their scope, fidelity, resources, and omissions allow. In the mature simulation claim-transport layer, a simulation result travels only as far as its fidelity standard, scope, assumptions, omitted variables, resource bill, and transfer decision allow.",
-          "codex_tests": [
-            "Fidelity declaration test",
-            "Resource-bound sanity check",
-            "Simulation approximation audit"
-          ],
-          "lean_module": "AsiStackProofs.SimulationFidelity",
-          "proof_targets": [
-            {
-              "tag": "lean:simulation.fidelity.operational_invariant",
-              "module": "AsiStackProofs.SimulationFidelity",
-              "target": "A simulation claim includes declared scope, fidelity, and resource bounds.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:simulation.fidelity.failure_blocks_promotion",
-              "module": "AsiStackProofs.SimulationFidelity",
-              "target": "An experiment result cannot exceed the declared fidelity support of its simulation.",
-              "status": "implemented"
-            }
-          ],
-          "claim_source_mappings": [
-            {
-              "source_id": "simulation_scaling",
-              "mapped_support": "Supports the simulation-fidelity claim through contract-relative feasibility: declared scope, clockspeed, fidelity, temporal semantics, demand estimates, available capacity, and bottlenecks such as compute, memory, heat, bandwidth, and latency.",
-              "limits": "Theoretical synthesis only; no physical experiment, simulation benchmark, feasibility calculator, or independent literature audit was run here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/simulation_scaling.txt:9-19",
-                "sources/raw/google_docs/simulation_scaling.txt:28-41",
-                "sources/raw/google_docs/simulation_scaling.txt:44-57",
-                "sources/raw/google_docs/simulation_scaling.txt:145-150",
-                "sources/raw/google_docs/simulation_scaling.txt:191-216",
-                "sources/raw/google_docs/simulation_scaling.txt:220-239",
-                "sources/raw/google_docs/simulation_scaling.txt:245-266",
-                "sources/raw/google_docs/simulation_scaling.txt:445-467",
-                "sources/raw/google_docs/simulation_scaling.txt:470-483",
-                "sources/raw/google_docs/simulation_scaling.txt:486-512",
-                "sources/raw/google_docs/simulation_scaling.txt:540-564"
-              ],
-              "passage_review_note": "Reviewed local raw cache for contract-relative simulation demand, declared scope, clockspeed, fidelity/efficiency, temporal semantics, capacity as memory/rate/dissipation bottlenecks, approximation liberties, same-physics feasibility limits, and tradeoff geometry; no physical experiment, simulation benchmark, feasibility calculator, or independent literature audit is promoted."
             },
             {
               "source_id": "cgs",
@@ -7772,25 +7713,6 @@
               "passage_review_note": "Reviewed local raw cache for WORM archival scope, artifact and simulation-field streams, manifests/container routing, deterministic decode/evaluation requirements, residual coding, full byte accounting, fallback, and decode-cost limits; no artifact compressor, trace-store benchmark, deterministic decoder, or reproduced compression ratio is promoted."
             },
             {
-              "source_id": "tokenmana",
-              "mapped_support": "Supports treating simulation as a scarce-resource choice through bounded capacity, burst controls, load variance, cognitive friction, and quality/cost measurement ideas.",
-              "limits": "No TokenMana simulation, pricing experiment, human study, or local load-stability evidence exists here.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/tokenmana.txt:9-12",
-                "sources/raw/google_docs/tokenmana.txt:19-28",
-                "sources/raw/google_docs/tokenmana.txt:37-55",
-                "sources/raw/google_docs/tokenmana.txt:67-75",
-                "sources/raw/google_docs/tokenmana.txt:156-188",
-                "sources/raw/google_docs/tokenmana.txt:227-239",
-                "sources/raw/google_docs/tokenmana.txt:267-280",
-                "sources/raw/google_docs/tokenmana.txt:305-319",
-                "sources/raw/google_docs/tokenmana.txt:380-424",
-                "sources/raw/google_docs/tokenmana.txt:458-483"
-              ],
-              "passage_review_note": "Reviewed local raw cache for regenerative capacity, bounded burst pools, load variance, renewal clustering, convex infrastructure cost, temporal elasticity, quality/cognitive-friction measurement, and empirical-study design; no TokenMana simulation, pricing experiment, human study, welfare result, or load-stability result is promoted."
-            },
-            {
               "source_id": "alignment_field",
               "mapped_support": "Supports using simulation scenarios only with visible normative/speculative boundaries around agency, dignity, confinement, consciousness heuristics, and metaphysical assumptions.",
               "limits": "Philosophical/normative source, not physics or simulation evidence; consciousness and metaphysical claims remain speculative.",
@@ -7804,15 +7726,28 @@
                 "sources/raw/google_docs/alignment_field.txt:705-735"
               ],
               "passage_review_note": "Reviewed local raw cache for the distinction between behavioral simulation and interiority, recursive self-modeling, relational bandwidth, isolation/confinement harms, machine-consciousness threshold language, explicit model limitations, and metaphysical boundary material; used only as normative/speculative guardrail, not physics or simulation evidence."
+            },
+            {
+              "source_id": "ext_reluplex_2017",
+              "mapped_support": "Supports scoped property-verification comparison: formal or synthetic results gain authority only inside declared model/property boundaries and should produce counterexamples or no-transfer outcomes when boundaries fail.",
+              "limits": "External paper only; no Reluplex run, ACAS Xu reproduction, ASI Stack model verification, broad system-safety proof, simulation-transfer result, or physical-feasibility result has been reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "external-paper:https://arxiv.org/abs/1702.01135:abstract / ReLU neural-network property verification / counterexamples / ACAS Xu evaluation boundary",
+                "sources/source_notes/ext_reluplex_2017.md:8-31",
+                "sources/source_notes/ext_reluplex_2017.md:35-54"
+              ],
+              "passage_review_note": "Reviewed public arXiv abstract/metadata and local source note for SMT-style ReLU-network property verification, counterexample discipline, safety-critical property scope, and limits; no local verification run, ACAS Xu reproduction, ASI Stack model guarantee, broad safety proof, or simulation-transfer result is reproduced."
             }
           ],
           "draft_maturity": "v0.2 manuscript draft",
           "open_evidence_gaps": [
-            "Appendix C now records exact passage-reviewed mappings for all five assigned simulation-fidelity sources; support remains at argument until a physical-computation audit, simulation benchmark, feasibility calculator, independent external literature review, or accepted evidence transition exists.",
-            "The simulation_contract_record fixture validates schema/example consistency only; no physical-computation audit, simulation benchmark, feasibility calculator, resource-bound sanity check, approximation audit, or external literature review has been run.",
-            "Simulation Scaling is treated as internal theoretical synthesis and design framing, not as reproduced physics evidence or an independent literature audit.",
-            "Alignment Field is used only for normative/speculative boundary handling around simulation scenarios; it is not physics or simulation evidence, and consciousness/metaphysical claims remain speculative.",
-            "No support-state promotion, raw source publication, physical feasibility result, simulator result, or benchmark-transfer result is implied by this drafting pass."
+            "Appendix C now records exact passage-reviewed mappings for the folded resource-economics and simulation-fidelity source union; support remains at argument until TokenMana simulations, PlanForge scheduler benchmarks, welfare/load studies, serving-memory audits, simulation-transfer reviews, physical-computation audits, cost-quality experiments, or accepted evidence transitions exist.",
+            "The resource_budget_record and simulation_contract_record fixtures validate schema/example consistency only; deterministic generation-mode, resource-budget ledger, and capacity-smoothing harnesses check record-accounting discipline and toy traces only; no TokenMana load simulation, PlanForge scheduler benchmark, welfare study, KV-cache memory audit, simulation benchmark, physical-computation audit, cost-quality experiment, or scheduler trace has been run.",
+            "Coherence Exchange, Project Theseus Whitepaper, and CoilRA/MultiCoil RoPE mappings are passage-reviewed against public source notes only because raw connector/local-project text is not copied into this repo; they support framing and accounting discipline, not implemented mechanisms or empirical claims.",
+            "CGS, RankFold/NeuralFold, and Alignment Field are preserved from the retired simulation-fidelity chapter as hidden-burden and normative-boundary context only; they do not create simulator, physics, consciousness, model-quality, or compression-performance evidence.",
+            "PagedAttention/vLLM and Reluplex are reviewed as external comparators only; reported serving results, cache-sharing behavior, ReLU property-verification results, code artifacts, latency results, quality behavior, and safety implications remain source-reported and unreproduced.",
+            "No support-state promotion, raw source publication, economic result, scheduler result, serving result, welfare result, simulator result, physical-feasibility result, benchmark-transfer result, or quality result is implied by this drafting pass."
           ]
         },
         {

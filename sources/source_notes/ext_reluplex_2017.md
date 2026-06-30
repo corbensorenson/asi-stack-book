@@ -39,7 +39,7 @@ Reluplex belongs in the verification-bandwidth, proof-envelope, benchmark, and s
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
 - `executable-specifications-and-lean-proof-envelope` (Executable Specifications and Lean Proof Envelope)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
-- `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
+- `resource-economics-and-token-budgets` (Resource Economics and Token Budgets; includes Simulation Fidelity and Claim Transport)
 
 ## Claims To Add Or Update
 
@@ -51,4 +51,4 @@ Reluplex belongs in the verification-bandwidth, proof-envelope, benchmark, and s
 
 - Which ASI Stack properties are precise enough for neural-network or route-verification tooling?
 - How should counterexamples flow into the claim ledger and benchmark ratchet?
-- What simulation-fidelity record would be needed before a verified property matters operationally?
+- What simulation-fidelity record inside Resource Economics would be needed before a verified property matters operationally?

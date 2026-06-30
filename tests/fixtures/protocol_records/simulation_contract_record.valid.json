@@ -1,25 +1,50 @@
 {
   "simulation_id": "simulation-contract-demo-001",
-  "claim_id": "simulation-fidelity-and-physical-constraints.core",
+  "claim_id": "resource-economics-and-token-budgets.core",
   "contract_version": "v0.1",
   "claim_class": "scenario_exploration",
   "scope": "toy contract for checking that simulated evidence has declared boundaries",
   "fidelity_standard": "conceptual fidelity only; no physical simulation is run",
   "fidelity_state": "declared",
   "temporal_semantics": "offline review",
-  "input_assumptions": ["schema validation is the only executed operation"],
-  "demand_estimate": ["local validation time", "no external compute benchmark"],
-  "resource_bill": ["repository fixture validation only"],
-  "capacity_bottlenecks": ["human review", "Quarto render time"],
-  "omitted_variables": ["physical compute limits", "open-world transfer variables"],
-  "approximation_liberties": ["uses schema fixture instead of a simulator"],
-  "instrumentation_effects": ["validation records field presence only"],
+  "input_assumptions": [
+    "schema validation is the only executed operation"
+  ],
+  "demand_estimate": [
+    "local validation time",
+    "no external compute benchmark"
+  ],
+  "resource_bill": [
+    "repository fixture validation only"
+  ],
+  "capacity_bottlenecks": [
+    "human review",
+    "Quarto render time"
+  ],
+  "omitted_variables": [
+    "physical compute limits",
+    "open-world transfer variables"
+  ],
+  "approximation_liberties": [
+    "uses schema fixture instead of a simulator"
+  ],
+  "instrumentation_effects": [
+    "validation records field presence only"
+  ],
   "supported_claim_boundary": "record-shape validation only; no simulation feasibility result",
   "observed_result_boundary": "no simulated result is observed by this fixture",
   "transfer_decision": "not_evaluated",
   "support_state_effect": "record_shape_only",
   "failure_behavior": "claims missing declared fidelity, resources, or transfer boundary remain blocked or residualized",
-  "residual_risks": ["external physical-computation references remain queued"],
-  "evidence_refs": ["sources/source_notes/simulation_scaling.md"],
-  "non_claims": ["no physical feasibility claim", "no simulation benchmark claim", "no transfer result"]
+  "residual_risks": [
+    "external physical-computation references remain queued"
+  ],
+  "evidence_refs": [
+    "sources/source_notes/simulation_scaling.md"
+  ],
+  "non_claims": [
+    "no physical feasibility claim",
+    "no simulation benchmark claim",
+    "no transfer result"
+  ]
 }

@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 50 |
+| Manifest chapter core claims | 49 |
 | Accepted core evidence-transition records | 24 |
-| Accepted explicit no-promotion decisions | 26 |
+| Accepted explicit no-promotion decisions | 25 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -73,7 +73,6 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `routing-heads-and-specialist-cores.core` | Routing Heads and Specialist Cores | `argument_only` | no real routing trace; no capability-quality measurement; no authority-enforced specialist lease; no imported MoECOT orchestration benchmark or replay artifact |
 | `semantic-pages-context-cells-and-certificates.core` | Semantic Pages, Context Cells, and Certificates | `argument_only` | no VCM resolver trace; no certificate truthfulness evaluation; no model-facing adequacy result |
 | `semantic-representation-and-tree-structured-models.core` | Semantic Representation and Tree-Structured Models | `argument_only` | no representation runtime; no grounding evaluation; no model-quality benchmark |
-| `simulation-fidelity-and-physical-constraints.core` | Simulation Fidelity and Physical Constraints | `argument_only` | no simulation run; no transfer-validity review; no physical constraint measurement |
 | `verification-bandwidth-and-context-adequacy.core` | Verification Bandwidth and Context Adequacy | `argument_only` | no adequacy classifier run; no contradiction-rate measurement; no verification-bandwidth benchmark |
 
 ## Non-Claims

@@ -16,17 +16,17 @@
     "policy": "Keep chapter format-artifact blockers until every required reader format row is approved and an edition release record exists."
   },
   "review_status_counts": {
-    "reviewed": 50
+    "reviewed": 49
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
     "curated_manuscript_candidate": 46,
-    "no_immediate_action": 50,
+    "no_immediate_action": 49,
     "reader_overlay_active": 20
   },
   "release_blocker_counts": {
-    "format_artifact_not_reviewed": 50,
-    "reader_release_record_not_created": 50
+    "format_artifact_not_reviewed": 49,
+    "reader_release_record_not_created": 49
   },
   "release_rule": "No reader, ebook, document, PDF, audio, or curated manuscript release can use a chapter until its review status and blockers are reconciled in a release record.",
   "chapters": [
@@ -904,28 +904,6 @@
         "docs/curated_reader_resource_economics_prose_pass.md"
       ],
       "review_notes": "Full generated-reader chapter review recorded. Budgets remain framed as policy objects that preserve verification tax, protected overhead, displaced costs, serving pressure, rejected savings, and no-cost-cutting-of-governance boundaries. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and no scheduler, economics, serving, welfare, cost-quality, or reader-artifact claim is approved.",
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed"
-      ]
-    },
-    {
-      "part_id": "routing-compression-representation-substrates",
-      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
-      "chapter_id": "simulation-fidelity-and-physical-constraints",
-      "title": "Simulation Fidelity and Physical Constraints",
-      "live_file": "chapters/simulation-fidelity-and-physical-constraints.qmd",
-      "generated_reader_file": "build/reader_edition/chapters/simulation-fidelity-and-physical-constraints.qmd",
-      "overlay_operation_count": 0,
-      "review_status": "reviewed",
-      "review_depth": "full_chapter_review",
-      "dispositions": [
-        "no_immediate_action"
-      ],
-      "review_refs": [
-        "docs/reader_part_iii_representation_full_review_pass.md#decisions"
-      ],
-      "review_notes": "Full generated-reader chapter review recorded. Simulation remains framed as a claim-transport contract with scope, fidelity, resource bill, omitted variables, instrumentation effects, transfer decision, downgrade behavior, and non-claims intact.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

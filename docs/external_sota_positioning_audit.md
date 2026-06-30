@@ -8,8 +8,8 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 
 | Metric | Count |
 |---|---:|
-| Manifest chapters | 50 |
-| Chapters with `ext_*` positioning before Source crosswalk | 50 |
+| Manifest chapters | 49 |
+| Chapters with `ext_*` positioning before Source crosswalk | 49 |
 | Chapters with explicit external-baseline exceptions | 0 |
 | Chapters with source-noted external targets but no in-prose positioning yet | 0 |
 | Chapters needing an exception or additional external source assignment | 0 |
@@ -54,8 +54,7 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 | `fast-generation-architectures` | `positioned` | `ext_eagle_2024`, `ext_layerskip_2024`, `ext_llada_2025`, `ext_lookahead_decoding_2024`, `ext_mamba_2023`, `ext_medusa_2024`, `ext_multi_token_prediction_2024`, `ext_pagedattention_vllm_2023`, `ext_scaling_dllms_2026`, `ext_speculative_decoding_2022` | `ext_gptq_2022`, `ext_mixtral_2024` | Keep source-note boundary and support-state language honest. |
 | `rankfold-neuralfold-and-artifact-compression` | `positioned` | `ext_deep_compression_2015`, `ext_dreamcoder_2020`, `ext_gptq_2022`, `ext_knowledge_distillation_2015`, `ext_lora_2021`, `ext_mdl_tutorial_2004`, `ext_qlora_2023` | `ext_deep_compression_2015`, `ext_dreamcoder_2020`, `ext_gptq_2022`, `ext_knowledge_distillation_2015`, `ext_lora_2021`, `ext_mdl_tutorial_2004`, `ext_qlora_2023` | Keep source-note boundary and support-state language honest. |
 | `semantic-representation-and-tree-structured-models` | `positioned` | `ext_information_bottleneck_2000`, `ext_lora_2021` | `ext_information_bottleneck_2000`, `ext_lora_2021` | Keep source-note boundary and support-state language honest. |
-| `resource-economics-and-token-budgets` | `positioned` | `ext_pagedattention_vllm_2023` | `ext_deep_compression_2015`, `ext_expert_choice_routing_2022`, `ext_frugalgpt_2023`, `ext_gptq_2022`, `ext_gshard_2020`, `ext_hybrid_llm_2024`, `ext_information_bottleneck_2000`, `ext_knowledge_distillation_2015`, `ext_longllmlingua_2023`, `ext_lora_2021`, `ext_mixtral_2024`, `ext_moe_llm_survey_2024`, `ext_qlora_2023`, `ext_routellm_2024`, `ext_sparse_moe_2017`, `ext_switch_transformer_2021` | Keep source-note boundary and support-state language honest. |
-| `simulation-fidelity-and-physical-constraints` | `positioned` | `ext_reluplex_2017` | `ext_reluplex_2017` | Keep source-note boundary and support-state language honest. |
+| `resource-economics-and-token-budgets` | `positioned` | `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` | `ext_deep_compression_2015`, `ext_expert_choice_routing_2022`, `ext_frugalgpt_2023`, `ext_gptq_2022`, `ext_gshard_2020`, `ext_hybrid_llm_2024`, `ext_information_bottleneck_2000`, `ext_knowledge_distillation_2015`, `ext_longllmlingua_2023`, `ext_lora_2021`, `ext_mixtral_2024`, `ext_moe_llm_survey_2024`, `ext_qlora_2023`, `ext_reluplex_2017`, `ext_routellm_2024`, `ext_sparse_moe_2017`, `ext_switch_transformer_2021` | Keep source-note boundary and support-state language honest. |
 | `mathematical-and-search-substrates` | `positioned` | `ext_mamba_2023` | `ext_dreamcoder_2020` | Keep source-note boundary and support-state language honest. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `positioned` | `ext_lean4_theorem_proving` | `ext_lean4_theorem_proving` | Keep source-note boundary and support-state language honest. |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | `positioned` | `ext_compressive_transformer_2019`, `ext_retnet_2023`, `ext_transformer_xl_2019` | `ext_compressive_transformer_2019`, `ext_retnet_2023`, `ext_transformer_xl_2019` | Keep source-note boundary and support-state language honest. |

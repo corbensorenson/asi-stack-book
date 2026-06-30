@@ -4,19 +4,20 @@ Last updated: 2026-06-30
 
 Decision: defer all remaining unexecuted consolidation packages for the
 current reader-curation cycle after the Part I pilot, conservative compression
-merge, and MoECOT runtime fold execution.
+merge, MoECOT runtime fold execution, and simulation-fidelity fold execution.
 
 This record creates a `deferred_for_release` reader-work outcome for the
 remaining pending merge and fold packages. It records that the Part I pilot and
 conservative compression merge are no longer deferred, and that the MoECOT
-runtime fold has moved from deferred fold disposition to executed history. This
-review itself does
+runtime fold and simulation-fidelity fold have moved from deferred fold
+disposition to executed history. This review itself does
 not edit `book_structure.json`, does not execute any additional remaining merge
 or fold, does not approve any reader artifact, does not create external review,
 and does not change support states.
 
-The current canonical manifest has 50 chapters after the executed Part I pilot,
-conservative compression merge, and MoECOT runtime fold.
+The current canonical manifest has 49 chapters after the executed Part I pilot,
+conservative compression merge, MoECOT runtime fold, and simulation-fidelity
+fold.
 
 ## Reviewed Inputs
 
@@ -49,9 +50,9 @@ that the destination is stronger than the source chapters as one chapter.
 
 At the same time, the human-reader manuscript cannot stay blocked indefinitely
 while every consolidation package waits for outside review. The practical
-current release choice is to preserve the 50-chapter manifest after the Part I
-pilot, conservative compression merge, and MoECOT runtime fold for the current
-reader-curation cycle, record remaining duplicate skeletons as
+current release choice is to preserve the 49-chapter manifest after the Part I
+pilot, conservative compression merge, MoECOT runtime fold, and
+simulation-fidelity fold for the current reader-curation cycle, record remaining duplicate skeletons as
 accepted temporary debt, and continue reader prose work with explicit
 consolidation caveats.
 
@@ -70,7 +71,7 @@ future execution package for the remaining queue.
 | Proof-carrying claims and adversarial review | `review_ready` | `deferred_for_release` | The destination draft may reduce repetition, but proof-carrying claim tiers and tribunal review need reviewer judgment before they become one chapter. | Curated prose may proceed for both verification/review source chapters with a proof/review merge caveat. |
 | Planning and DAG control | `review_ready` | `deferred_for_release` | The destination draft is plausible, but planning-control and PlanForge DAG ownership should be reviewed before a canonical merge. | Curated prose may proceed for both planning source chapters with a planning/DAG merge caveat. |
 | MoECOT runtime fold | `fold_disposition_ready` | `executed` | The 2026-06-30 MoECOT fold accepted the destination inside Routing Heads and Specialist Cores, preserved the retired URL through a historical stub, archived the standalone source manuscript and reader draft, and kept support at `argument`. | Curated prose should target `routing-heads-and-specialist-cores` and its MoECOT Runtime Crosswalk; the standalone MoECOT reader draft remains historical only. |
-| Simulation fidelity fold | `fold_disposition_ready` | `deferred_for_release` | The physical-constraint idea may belong in resource economics, but the current release keeps the chapter boundary until fold execution is accepted. | Curated prose may proceed only if it preserves the feasibility-bound and future fold caveat. |
+| Simulation fidelity fold | `fold_disposition_ready` | `executed` | The 2026-06-30 simulation-fidelity fold accepted the destination inside Resource Economics and Token Budgets, preserved the retired URL through a historical stub, archived the standalone source manuscript, and kept support at `argument`. | Curated prose should target `resource-economics-and-token-budgets` and its Simulation Fidelity and Claim Transport section; the standalone simulation-fidelity source manuscript remains historical only. |
 | Semantic representation fold | `fold_disposition_ready` | `deferred_for_release` | The fold remains dependent on a later representation-package execution decision after the conservative compression merge retained RankFold/NeuralFold as a standalone technique chapter. | Curated prose may proceed only if it preserves the dependency on the future representation-package decision. |
 
 ## Accepted Temporary Debt
@@ -80,7 +81,7 @@ temporary debt:
 
 - repeated Problem, Insufficiency, Mechanism, Interface, Evidence,
   Implementation, and Handoff skeletons in the pending clusters;
-- stable chapter IDs and URLs for the 50 current manifest chapters plus historical stubs for the two folded Part I slugs, the folded GVR slug, and the folded MoECOT slug;
+- stable chapter IDs and URLs for the 49 current manifest chapters plus historical stubs for the two folded Part I slugs, the folded GVR slug, the folded MoECOT slug, and the folded simulation-fidelity slug;
 - reader curation against source chapter boundaries that may later be merged or
   folded;
 - reconciliation work if a later consolidation package executes and supersedes
@@ -107,9 +108,8 @@ chapter IDs:
 - `routing-heads-and-specialist-cores`
 - `compact-generative-systems-and-residual-honesty`
 - `rankfold-neuralfold-and-artifact-compression`
-- `semantic-representation-and-tree-structured-models`
-- `simulation-fidelity-and-physical-constraints`
 - `resource-economics-and-token-budgets`
+- `semantic-representation-and-tree-structured-models`
 
 ## Revisit Conditions
 
@@ -144,8 +144,8 @@ Every curated reader pass inside a deferred package must:
 - This review does not reject any package permanently.
 - This review does not approve any destination draft.
 - This review records that the Part I pilot, conservative compression merge,
-  and MoECOT runtime fold implemented historical stubs and changed chapter
-  count in their separate execution packages.
+  MoECOT runtime fold, and simulation-fidelity fold implemented historical
+  stubs and changed chapter count in their separate execution packages.
 - This review does not create human review, external review, peer review, proof
   evidence, test evidence, benchmark evidence, source-derived evidence, or
   artifact-review evidence.

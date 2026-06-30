@@ -106,7 +106,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `rankfold-neuralfold-and-artifact-compression` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `semantic-representation-and-tree-structured-models` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `resource-economics-and-token-budgets` | 2 | useful but too narrow | Generation-mode/resource-budget accounting, deterministic budget-ledger harnesses, and capacity-smoothing toy traces added; still add scheduler, real load-stability, verification-tax, KV-cache, and cost-quality tests. |
-| `simulation-fidelity-and-physical-constraints` | 2 | needs richer state-machine or review semantics | Model lifecycle, review, timing, and adversarial states before adequacy. |
+| `resource-economics-and-token-budgets` | 4 | needs richer state-machine or review semantics | Budget lifecycle, simulation-transfer review, timing, and adversarial states before adequacy; includes folded Simulation Fidelity proof hooks. |
 | `mathematical-and-search-substrates` | 2 | needs empirical or baseline tests first | Build workload, baseline, and result record before stronger proof. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2 | research-agenda until artifact import | Import/replay artifacts before adequacy can rise. |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |

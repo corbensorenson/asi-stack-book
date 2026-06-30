@@ -2381,33 +2381,36 @@ Lean proof targets:
 
 Stable ID: `resource-economics-and-token-budgets`
 
-Chapter job: Compute, context, verification, and human attention are scarce resources that the architecture must allocate explicitly.
+Chapter job: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
 
 Core claim: Resource governance accounts for token budgets, verification tax, load stability, and risk-adjusted inference value.
+
+Folded simulation-fidelity subclaim: simulation and synthetic-environment results are resource-governed claim-transport records whose support cannot exceed declared scope, fidelity, temporal semantics, resource bill, assumptions, omitted variables, instrumentation effects, residual risks, and transfer decision.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `tokenmana`, `planforge` | Read first for chapter claims and mechanisms. |
-| Supporting | `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External literature variants | `ext_pagedattention_vllm_2023` | Read for KV-cache memory, batching, and serving-throughput accounting; treat reported serving results as source-reported until reproduced. |
+| Primary | `tokenmana`, `planforge` | Read first for budget, scheduler, and scarcity framing. |
+| Supporting | `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `cgs`, `rankfold_neuralfold`, `alignment_field` | Mine after primary sources for cross-layer budget pressure, simulation fidelity, hidden residual burden, execution/report discipline, normative boundaries, and failure modes. |
+| External literature variants | `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` | Read for serving-memory economics and scoped property-verification comparison; treat reported results as source-reported until reproduced. |
 
 Draft arc:
 
-- Problem: Compute, context, verification, and human attention are scarce resources that the architecture must allocate explicitly.
-- Insufficiency: Ignoring resource economics makes high-quality verification unaffordable and encourages synchronized overload or hidden cost shifts.
-- Mechanism: Record value hypothesis, risk class, capacity pool, cost estimate, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence refs.
-- Mechanism: Let budgets choose dispatch, escalation, deferral, scope reduction, rejection, or residual accounting without disabling protected verification or safety gates.
-- Mechanism: Treat security overhead, approval overhead, replay cost, human review, repair burden, and non-action costs as budget fields rather than invisible externalities.
-- Mechanism: Prevent efficiency laundering: cheaper routes that shift work into future debugging, hidden human repair, lost evidence, or unrecorded security risk must emit residual costs or be rejected.
-- Mechanism: Track budget adjudication states such as proposed, priced, underfunded, protected-overhead-required, dispatchable, escalated, deferred, scope-reduced, rejected, and residualized.
-- Mechanism: Record displaced costs from future debugging, reviewer burden, hidden context reconstruction, private-data exposure, benchmark contamination, rollback difficulty, or evidence loss before accepting a cheaper route.
-- Handoff: Simulation, mathematical, cyclic, and search substrates enter only through resource, fidelity, baseline, and evidence contracts rather than elegance or apparent cheapness.
+- Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
+- Insufficiency: Ignoring resource economics or fidelity boundaries makes high-quality verification unaffordable, encourages synchronized overload or hidden cost shifts, and lets synthetic results travel farther than their contracts support.
+- Mechanism: Track task value, uncertainty, cost of error, inference cost, verification tax, protected overhead, and displaced costs.
+- Mechanism: Use regenerative or budgeted capacity mechanisms where useful.
+- Mechanism: Escalate verification when risk justifies the cost.
+- Mechanism: Separate aggregate serving throughput and memory pressure from single-request verified-output value.
+- Mechanism: Attach Simulation Contract Records when simulated, synthetic, benchmark, or scenario results are used as evidence.
+- Mechanism: Block, downgrade, or residualize claims whose simulation scope, fidelity, temporal semantics, resource bill, bottlenecks, omissions, or transfer decision do not support the stronger claim.
+- Handoff: Mathematical, cyclic, and search substrates enter only through resource, fidelity, baseline, and evidence contracts rather than elegance or apparent cheapness.
 - Interface: Planning allocates budgets.
 - Interface: Routing chooses costed specialists.
 - Interface: Evidence measures cost-quality tradeoffs.
 - Interface: Serving infrastructure reports memory and throughput costs without converting them into quality claims.
+- Interface: Simulation records declare fidelity, resource bills, omitted variables, instrumentation effects, transfer decisions, and non-claims before synthetic results enter claim ledgers.
 
 Primary invariants:
 
@@ -2417,6 +2420,9 @@ Primary invariants:
 - Serving-throughput gains remain separate from verified-output and task-success claims.
 - Protected overhead is budgeted explicitly and cannot be silently deleted.
 - Displaced costs remain residuals until measured or accepted by a scoped evidence transition.
+- Simulation fidelity, scope, and resource bounds are declared before synthetic results support a claim.
+- Simulation results do not transfer beyond their supported claim boundary by default.
+- Approximation liberties, omitted variables, and instrumentation effects remain visible after results are summarized.
 
 Failure modes to cover:
 
@@ -2426,18 +2432,23 @@ Failure modes to cover:
 - Aggregate serving throughput mistaken for lower single-request risk or better answer quality.
 - Protected-overhead deletion.
 - Review-capacity capture.
+- Simulation laundering: clean synthetic results described as if omitted variables, bottlenecks, and transfer limits were irrelevant.
+- Sandbox-to-world transfer without a declared fidelity and resource contract.
+- Parent-physics assumption drift without updating the simulation contract.
 
 Draft deliverables:
 
-- A resource ledger with budget, risk, cost, quality, and verification tax fields.
-- Implemented repository-level fixture: `resource_budget_record.valid.json` validates the budget-record shape, including budget state, protected overhead, and displaced costs only; no TokenMana simulation, PlanForge scheduler benchmark, protected-overhead accounting test, displaced-cost residual test, or welfare/load study exists yet.
-- Planned Codex test: Budget allocation test.
-- Planned Codex test: Risk-adjusted verification test.
-- Planned Codex test: Protected-overhead accounting test.
-- Planned Codex test: Displaced-cost residual test.
-- Planned Codex test: Review-capacity hoarding test.
-- Planned Codex test: Load stability scenario.
-- Planned Codex test: KV-cache memory accounting scenario.
+- A resource ledger with budget, risk, cost, quality, verification tax, protected-overhead, displaced-cost, and evidence-reference fields, plus a companion Simulation Contract Record for synthetic or simulated results with scope, fidelity, temporal semantics, resource bill, bottlenecks, omissions, instrumentation effects, transfer decision, support-state effect, residual risks, and non-claims.
+- Codex test: Generation-mode resource-budget alignment harness - Check that deterministic generation-mode scenarios carry matching resource-budget records with task/risk alignment, verification tax, protected overhead, safety gates, residuals, evidence refs, and no-promotion boundaries (implemented; passing via `python3 scripts/validate_generation_mode_baselines.py`).
+- Codex test: Resource budget ledger harness - Check deterministic Resource Budget Record decisions for dispatch, escalation, protected overhead, displaced-cost residualization, review-capacity hoarding, evidence refs, and no-promotion boundaries (implemented; passing via `python3 scripts/validate_resource_budget_ledgers.py`).
+- Planned Codex test: Budget allocation test
+- Planned Codex test: Risk-adjusted verification test
+- Codex test: Capacity smoothing toy harness - Check deterministic toy capacity traces for bounded regeneration arithmetic, priority deferral under blocked high-risk work, scope reduction, overload rejection, and no-promotion boundaries (implemented; passing via `python3 scripts/validate_capacity_smoothing.py`).
+- Planned Codex test: KV-cache memory accounting scenario
+- Implemented repository-level fixture: Simulation contract record fixture validation - Validate that simulation claims record contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omissions, approximation liberties, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims (implemented; passing via `python3 scripts/validate_protocol_examples.py`).
+- Planned Codex test: Fidelity declaration test
+- Planned Codex test: Resource-bound simulation sanity check
+- Planned Codex test: Simulation approximation audit
 
 Lean proof targets:
 
@@ -2445,62 +2456,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:resources.budgets.operational_invariant` | `AsiStackProofs.ResourceEconomics` | A task budget cannot disable required safety or verification gates. | implemented |
 | `lean:resources.budgets.failure_blocks_promotion` | `AsiStackProofs.ResourceEconomics` | A high-risk task with insufficient verification budget is blocked or escalated. | implemented |
-
-### Simulation Fidelity and Physical Constraints
-
-Stable ID: `simulation-fidelity-and-physical-constraints`
-
-Chapter job: The architecture needs a realism check on simulations, nested worlds, fidelity, clockspeed, and compute constraints.
-
-Core claim: Simulation and fidelity claims should be bounded by resource constraints and used as design constraints rather than assumed unlimited substrates.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `simulation_scaling` | Read first for chapter claims and mechanisms. |
-| Supporting | `cgs`, `rankfold_neuralfold`, `tokenmana`, `alignment_field` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-
-Draft arc:
-
-- Problem: The architecture needs a realism check on simulations, nested worlds, fidelity, clockspeed, and compute constraints.
-- Insufficiency: Simulation-based claims can become unbounded if scope, fidelity, resource cost, and observer effects are not explicit.
-- Mechanism: Turn every simulator, synthetic benchmark, or nested-world scenario into a contract with declared scope, clockspeed, fidelity, temporal semantics, resource demand, approximation liberties, and supported-claim boundary.
-- Mechanism: Use the contract to decide whether a simulation supports a unit invariant, a bounded benchmark, a roadmap constraint, or only a speculative scenario note.
-- Mechanism: Route failed or under-specified simulation claims into residuals, reduced scope, or blocked status instead of treating approximate worlds as ground truth.
-- Mechanism: Treat simulation as a translation problem whose results can travel back only along the declared variables, omissions, bottlenecks, and fidelity boundary.
-- Mechanism: emit fidelity receipts that record contract version, claim class, fidelity state, assumptions, omitted variables, resource bill, observed result boundary, claim boundary, transfer decision, support-state effect, failure behavior, instrumentation effects, and non-claims.
-- Interface: Efficiency theory uses resource constraints.
-- Interface: Benchmarks record fidelity limits.
-- Interface: Alignment scenarios avoid unbounded simulation claims.
-- Interface: classify simulation results as invariant checks, benchmark comparisons, feasibility estimates, scenario explorations, safety rehearsals, or speculative thought experiments.
-
-Primary invariants:
-
-- Fidelity is declared.
-- Resource bounds are explicit.
-- Speculative simulation metaphysics stays separated from engineering claims.
-- Simulation results do not transfer beyond the declared claim boundary by default.
-
-Failure modes to cover:
-
-- Overclaiming nested simulation feasibility.
-- Ignoring resource ceilings.
-- Treating approximate simulations as ground truth.
-- Simulation laundering: clean synthetic results described as if omitted variables, bottlenecks, and transfer limits were irrelevant.
-
-Draft deliverables:
-
-- A simulation-fidelity checklist and cost/fidelity table for experiment design.
-- Implemented repository-level fixture: `simulation_contract_record.valid.json` validates the simulation-contract record shape, claim class, fidelity state, transfer decision, support-state effect, failure behavior, instrumentation effects, and non-claims only; no feasibility calculator, simulation benchmark, or external physical-computation audit exists yet.
-- Planned Codex test: Fidelity declaration test.
-- Planned Codex test: Resource-bound sanity check.
-- Planned Codex test: Simulation approximation audit.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
 | `lean:simulation.fidelity.operational_invariant` | `AsiStackProofs.SimulationFidelity` | A simulation claim includes declared scope, fidelity, and resource bounds. | implemented |
 | `lean:simulation.fidelity.failure_blocks_promotion` | `AsiStackProofs.SimulationFidelity` | An experiment result cannot exceed the declared fidelity support of its simulation. | implemented |
 

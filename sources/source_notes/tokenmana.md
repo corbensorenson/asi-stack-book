@@ -42,7 +42,7 @@ TokenMana proposes regenerative capacity mechanisms for AI usage pricing and res
 - `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
-- `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
+- `resource-economics-and-token-budgets` (Resource Economics and Token Budgets; includes Simulation Fidelity and Claim Transport)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)

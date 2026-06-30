@@ -207,7 +207,7 @@ DECISION_REVIEW_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot, conservative compression merge, and MoECOT runtime fold through static historical stubs",
+    "applied to the 2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold, and simulation-fidelity fold through static historical stubs",
     "Default URL Policy",
     "Preserve every retired source chapter's public URL",
     "Pilot Defaults",
@@ -215,7 +215,8 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/governance-rights-fork-exit-and-audit.html",
     "/chapters/generate-verify-repair-compression.html",
     "/chapters/moecot-runtime-and-multi-core-orchestration.html",
-    "The 2026-06-30 Part I, conservative compression, and MoECOT execution",
+    "/chapters/simulation-fidelity-and-physical-constraints.html",
+    "The 2026-06-30 Part I, conservative compression, MoECOT, and simulation-fidelity execution",
 )
 EXTERNAL_REVIEW_PACKET_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation External Review Packet",

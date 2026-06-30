@@ -460,33 +460,6 @@
       ]
     },
     {
-      "claim_id": "simulation-fidelity-and-physical-constraints.core",
-      "chapter_id": "simulation-fidelity-and-physical-constraints",
-      "chapter_title": "Simulation Fidelity and Physical Constraints",
-      "decision": "no_promotion",
-      "current_support_state": "argument",
-      "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and finite fidelity hooks, but no simulation transfer study, resource-bound experiment, fidelity calibration, or physical-constraint benchmark has been accepted.",
-      "required_evidence": [
-        "simulation fidelity calibration",
-        "resource-bound transfer test",
-        "negative cases for overgeneralized simulation claims"
-      ],
-      "blockers": [
-        "no simulation run",
-        "no transfer-validity review",
-        "no physical constraint measurement"
-      ],
-      "non_claims": [
-        "does not prove simulation results transfer",
-        "does not prove physical feasibility"
-      ],
-      "refs": [
-        "chapters/simulation-fidelity-and-physical-constraints.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#simulation-fidelity-and-physical-constraints.core"
-      ]
-    },
-    {
       "claim_id": "mathematical-and-search-substrates.core",
       "chapter_id": "mathematical-and-search-substrates",
       "chapter_title": "Mathematical and Search Substrates",

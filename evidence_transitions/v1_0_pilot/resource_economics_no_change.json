@@ -7,7 +7,9 @@
     "docs/generation_mode_baseline_harness.md",
     "docs/resource_budget_ledger_harness.md",
     "docs/capacity_smoothing_harness.md",
-    "docs/external_literature_backfill_phase6.md"
+    "docs/external_literature_backfill_phase6.md",
+    "archive/retired_chapters/simulation-fidelity-and-physical-constraints.qmd",
+    "chapters/simulation-fidelity-and-physical-constraints.html"
   ],
   "claim_record_refs": [
     "book_structure.json",
@@ -16,21 +18,26 @@
     "schemas/generation_mode_record.schema.json",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
-    "experiments/capacity_smoothing/results/2026-06-28-local.md"
+    "experiments/capacity_smoothing/results/2026-06-28-local.md",
+    "schemas/simulation_contract_record.schema.json",
+    "tests/fixtures/protocol_records/simulation_contract_record.valid.json",
+    "proofs/proof_triage.json"
   ],
   "old_support_state": "argument",
   "new_support_state": "argument",
   "transition_effect": "no_change",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "deterministic resource-budget, generation-mode, budget-ledger, and capacity-smoothing toy-trace accounting only; no budget scheduler, review-queue optimizer, load-stability experiment, KV-cache memory measurement, cost-quality economics result, verification-tax optimization, runtime budget enforcement, or serving benchmark",
+  "scope_boundary": "deterministic resource-budget, generation-mode, budget-ledger, capacity-smoothing toy-trace, and simulation-contract record accounting only; no budget scheduler, review-queue optimizer, load-stability experiment, KV-cache memory measurement, cost-quality economics result, verification-tax optimization, runtime budget enforcement, serving benchmark, simulation run, physical-computation audit, fidelity calibration, or benchmark-transfer review",
   "evidence_roles": [
     "deterministic_harness",
     "schema_fixture",
     "external_literature_context",
     "chapter_limitations",
-    "source_evidence_audit"
+    "source_evidence_audit",
+    "simulation_contract_record fixture validates record shape only",
+    "SimulationFidelity Lean hooks are finite record-level predicates only"
   ],
-  "transition_reason": "The repository now has resource-budget schema validation, generation-mode fixtures that require budget refs, useful-solution-per-second accounting, quality metrics, residual metrics, fallback behavior, and no-promotion boundaries, a deterministic budget-ledger harness for dispatch, high-risk escalation, protected overhead, displaced-cost residualization, scarce review-capacity deferral, and expected-invalid shortcut rejection, plus a capacity-smoothing toy harness for bounded regeneration arithmetic, priority deferral, scope reduction, and overload rejection. The Resource Economics chapter already frames budgets as typed records for value, risk, capacity, verification tax, protected gates, serving pressure, and residuals. These artifacts improve the record discipline for future budget tests, but they do not implement a budget scheduler, optimize a review queue, measure real load stability, reproduce KV-cache memory behavior, quantify verification-tax optimization, or establish an economic outcome.",
+  "transition_reason": "The repository now has resource-budget schema validation, generation-mode fixtures that require budget refs, useful-solution-per-second accounting, quality metrics, residual metrics, fallback behavior, and no-promotion boundaries, a deterministic budget-ledger harness for dispatch, high-risk escalation, protected overhead, displaced-cost residualization, scarce review-capacity deferral, and expected-invalid shortcut rejection, plus a capacity-smoothing toy harness for bounded regeneration arithmetic, priority deferral, scope reduction, and overload rejection. The Resource Economics chapter already frames budgets as typed records for value, risk, capacity, verification tax, protected gates, serving pressure, and residuals. These artifacts improve the record discipline for future budget tests, but they do not implement a budget scheduler, optimize a review queue, measure real load stability, reproduce KV-cache memory behavior, quantify verification-tax optimization, or establish an economic outcome. The folded simulation-fidelity lane adds a Simulation Contract Record fixture and finite Lean predicates for scope/fidelity/resource completeness and declared-support limits, but those artifacts remain record discipline only and do not validate simulator adequacy, physical feasibility, or transfer.",
   "required_artifacts": [
     "budget allocator or scheduler run with task, route, capacity, and protected-gate records",
     "load-stability scenario with burst, regeneration, deferral, and failure accounting",
@@ -39,7 +46,10 @@
     "KV-cache or serving-memory measurement tied to resource-budget records",
     "cost-quality tradeoff run with residual and human-review accounting",
     "independent review of source interpretation adequacy",
-    "accepted upward evidence-transition review for any narrowed stronger claim"
+    "accepted upward evidence-transition review for any narrowed stronger claim",
+    "simulation-transfer review with declared scope, fidelity, resource bill, omissions, instrumentation effects, transfer decision, and negative cases",
+    "physical-computation audit tied to an actual simulation claim",
+    "fidelity calibration benchmark with baseline and no-transfer cases"
   ],
   "artifact_refs": [
     "docs/generation_mode_baseline_harness.md",
@@ -53,7 +63,10 @@
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
     "schemas/resource_budget_record.schema.json",
     "schemas/generation_mode_record.schema.json",
-    "docs/phase5_harness_registry.md"
+    "docs/phase5_harness_registry.md",
+    "schemas/simulation_contract_record.schema.json",
+    "tests/fixtures/protocol_records/simulation_contract_record.valid.json",
+    "lean/AsiStackProofs/SimulationFidelity.lean"
   ],
   "evidence_packet_refs": [
     "docs/v1_0_candidate_status.md",
@@ -63,7 +76,8 @@
   "source_mapping_refs": [
     "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core",
     "docs/source_evidence_audit.md#resource-economics-and-token-budgets.core",
-    "appendices/H_external_sources.qmd#ext_pagedattention_vllm_2023"
+    "appendices/H_external_sources.qmd#ext_pagedattention_vllm_2023",
+    "appendices/H_external_sources.qmd#ext_reluplex_2017"
   ],
   "verification_command": "python3 scripts/validate_generation_mode_baselines.py && python3 scripts/validate_resource_budget_ledgers.py && python3 scripts/validate_capacity_smoothing.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_v1_status_snapshot.py",
   "verification_result": "pass",
@@ -75,7 +89,9 @@
     "no budget scheduler or allocator was run",
     "no review-capacity queue optimizer was run",
     "no load-stability or verification-tax experiment was run",
-    "no KV-cache, serving, or economic result is established"
+    "no KV-cache, serving, or economic result is established",
+    "no simulation run, fidelity calibration, or transfer-validity review was run",
+    "no physical-computation audit or physical constraint measurement is established"
   ],
   "negative_evidence_refs": [
     "chapters/resource-economics-and-token-budgets.qmd",
@@ -93,9 +109,11 @@
     "chapter text interpreted as measured budget optimization",
     "scarce review-capacity fixture interpreted as deployed queue behavior",
     "KV-cache or serving context treated as reproduced local performance evidence",
-    "support-state promotion without accepted transition"
+    "support-state promotion without accepted transition",
+    "simulation_contract_record fixture interpreted as a simulator result",
+    "SimulationFidelity record predicates interpreted as physical feasibility or transfer evidence"
   ],
-  "promotion_burden": "Move above argument only after the claim is narrowed to deterministic accounting or toy-trace behavior that passed, or after budget-allocation runs, review-capacity allocation traces, real load-stability scenarios, cost-quality-residual measurements, serving-memory or KV-cache measurements, verification-tax experiments, and independent source-interpretation review are recorded with accepted evidence-transition records.",
+  "promotion_burden": "Move above argument only after the claim is narrowed to deterministic accounting or toy-trace behavior that passed, or after budget-allocation runs, review-capacity allocation traces, real load-stability scenarios, cost-quality-residual measurements, serving-memory or KV-cache measurements, verification-tax experiments, and independent source-interpretation review are recorded with accepted evidence-transition records. Folded simulation-fidelity claims also require simulation-transfer reviews, physical-computation audits, fidelity calibration, benchmark-transfer negative cases, and accepted evidence-transition records before any stronger resource or simulation claim is promoted.",
   "limitations": [
     "deterministic fixtures do not implement a scheduler or allocator",
     "scarce review-capacity fixtures do not optimize or measure a real review queue",
@@ -103,7 +121,9 @@
     "schema validation does not prove load stability or budget optimality",
     "external serving literature supplies comparison vocabulary rather than reproduced local measurements",
     "verification tax remains a required accounting field, not an optimized result",
-    "no independent economic, serving, or source-interpretation review has been recorded"
+    "no independent economic, serving, or source-interpretation review has been recorded",
+    "simulation-contract schema validation does not prove simulator adequacy, physical feasibility, or transfer",
+    "finite SimulationFidelity predicates prove record-level gates only, not external physics assumptions or open-world deployment relevance"
   ],
   "review_status": "accepted",
   "reviewer_refs": [
@@ -116,7 +136,9 @@
     "no load-stability experiment",
     "no KV-cache or serving benchmark",
     "no cost-quality economics result",
-    "no independent review"
+    "no independent review",
+    "no simulation run or transfer-validity review",
+    "no physical-computation audit or fidelity calibration"
   ],
   "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-efficiency-accounting-evidence-transition-no-changes",
   "support_state_effect": "argument_only",
@@ -126,6 +148,8 @@
     "does not prove review-capacity optimization",
     "does not prove load stability",
     "does not prove KV-cache or serving performance",
-    "does not prove verification-tax optimization or economic outcomes"
+    "does not prove verification-tax optimization or economic outcomes",
+    "does not prove simulation results transfer",
+    "does not prove physical feasibility or simulator adequacy"
   ]
 }

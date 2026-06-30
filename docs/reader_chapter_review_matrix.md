@@ -12,13 +12,13 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 
 | Kind | Count |
 |---|---:|
-| review_status:reviewed | 50 |
+| review_status:reviewed | 49 |
 | disposition:companion_note_candidate | 3 |
 | disposition:curated_manuscript_candidate | 46 |
-| disposition:no_immediate_action | 50 |
+| disposition:no_immediate_action | 49 |
 | disposition:reader_overlay_active | 20 |
-| release_blocker:format_artifact_not_reviewed | 50 |
-| release_blocker:reader_release_record_not_created | 50 |
+| release_blocker:format_artifact_not_reviewed | 49 |
+| release_blocker:reader_release_record_not_created | 49 |
 
 ## Chapter Queue
 
@@ -60,7 +60,6 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part III - Routing, Compression, Representation, and Substrates | `rankfold-neuralfold-and-artifact-compression` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `semantic-representation-and-tree-structured-models` | reviewed | full_chapter_review | 2 | reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `resource-economics-and-token-budgets` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `simulation-fidelity-and-physical-constraints` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `mathematical-and-search-substrates` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `circle-calculus-and-proof-carrying-ai-contracts` | reviewed | full_chapter_review | 2 | reader_overlay_active, curated_manuscript_candidate, companion_note_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `coil-attention-cyclic-memory-and-recurrence-contracts` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |

@@ -44,7 +44,7 @@ Simulation Scaling Law treats simulation feasibility as contract-relative. A sim
 - `failure-modes-of-ungoverned-intelligence` (Failure Modes of Ungoverned Intelligence)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
-- `simulation-fidelity-and-physical-constraints` (Simulation Fidelity and Physical Constraints)
+- `resource-economics-and-token-budgets` (Resource Economics and Token Budgets; includes Simulation Fidelity and Claim Transport)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 
