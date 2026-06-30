@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-06-30 - Capability replacement transaction route proof envelope
+
+- Extended `AsiStackProofs.Replacement` with a finite replacement-transaction
+  route vocabulary, review record, and route function over prior and candidate
+  artifacts, identity preservation, authority scope, governance approval,
+  qualification evidence, evaluator independence, regression results, rollback
+  receipts, rollback dry runs, residual escrow, monitor incidents, and
+  default-route requests.
+- Added derived/decomposed Lean theorems showing that missing prior artifacts
+  reject the proposal; authority expansion without approval and evaluator
+  capture route to governance review; failed regressions quarantine the
+  candidate; missing rollback receipts require precheck; failed rollback dry
+  runs route to canary-only; monitor incidents require rollback; and a complete
+  default review can commit default.
+- Added the `lean:replacement.transaction.route_envelope` proof target to the
+  outline, manifest, proof triage, Capability Replacement and Rollback chapter,
+  and Appendix E. The proof manifest now tracks 115 implemented finite-record
+  targets, and the proof-depth classifier now records 200 theorem declarations:
+  115 direct/projection-style and 85 derived/decomposed.
+- Updated the Capability Replacement and Rollback chapter, proof-depth and
+  proof-adequacy surfaces, v1.0 roadmap/status surfaces, publication readiness
+  note, repository map, v0.2 manuscript status, and proof/code plan. The proof
+  adequacy review keeps Capability Replacement at `useful but too narrow`.
+- This does not promote any Appendix C or chapter core claim, run a real
+  replacement, measure regression-suite quality, observe a monitor window,
+  execute rollback, validate artifact replay, prove deployed replacement
+  safety, approve reader artifacts, or create EPUB, DOCX, PDF, audio, DOI,
+  Zenodo, or audio-embedded EPUB release artifacts.
+
 ## 2026-06-30 - Stable capability lifecycle route proof envelope
 
 - Extended `AsiStackProofs.StableCapabilityFields` with a finite SCF

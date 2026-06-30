@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 114 |
+| Proof targets in manifest | 115 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 192 |
+| Theorem declarations classified | 200 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 77 |
+| Derived/decomposed theorem declarations | 85 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 29 |
 | Safety-critical direct/projection declarations | 10 |
@@ -89,7 +89,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -254,7 +254,15 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_residual_deltas_routes_to_residual_preservation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_validation_command_requires_validation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_with_missing_governance_gate_cannot_be_marked_valid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Replacement.lean` | `authority_expansion_without_approval_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `captured_evaluator_routes_replacement_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `complete_replacement_review_commits_default` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_regression_blocks_replacement_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `failed_regression_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `failed_rollback_dry_run_routes_to_canary_only` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `missing_prior_artifact_rejects_replacement` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `missing_rollback_receipt_requires_precheck` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `monitor_incident_requires_rollback` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_commit_requires_evidence_and_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_task_with_insufficient_verification_budget_is_not_dispatched` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `task_budget_cannot_disable_required_safety_or_verification_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

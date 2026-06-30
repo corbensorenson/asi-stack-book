@@ -53,6 +53,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Replacement transaction test | implemented | validated locally by synthetic fixtures; deployed replacement behavior not run |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Regression preservation test | implemented | validated locally by synthetic fixtures; real regression suite not run |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Rollback execution dry run | implemented | validated locally by synthetic fixtures; production rollback not executed |
+| `capability-replacement-and-rollback` | Capability Replacement and Rollback | Replacement transaction route proof | implemented | passes via Lean build; no deployed replacement execution claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Secret-handle substitution test | implemented | passing via synthetic security kernel harness; no secret-handle safety or sandbox-isolation claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Handle lease expiry/reuse test | implemented | passing via synthetic security kernel harness; no deployed lease or revocation behavior claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | SCIF least-privilege test | implemented | passing via synthetic security kernel harness; no least-privilege context or side-channel safety claim |
@@ -285,16 +286,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 114 |
+| Proof targets covered by triage | 115 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 114 |
+| implemented | 115 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 114 |
+| implemented | formal-invariant | lean-candidate | 115 |

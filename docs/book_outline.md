@@ -710,6 +710,7 @@ Draft deliverables:
 - Planned Codex test: Replacement transaction test.
 - Implemented Codex test: Regression preservation test, via `python3 scripts/validate_readiness_residual_gates.py` over failed-regression and missing-regression promotion blockers; real regression-suite coverage remains unrun.
 - Implemented Codex test: Rollback execution dry run, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default rollback dry-run requirements; production rollback execution remains unrun.
+- Implemented proof-backed check: finite replacement transaction route proof for missing artifacts, authority expansion, evaluator capture, failed regression, missing rollback receipts, failed rollback dry runs, and monitor incidents; this is structured-record coverage only, not deployed replacement execution.
 
 Lean proof targets:
 
@@ -717,6 +718,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:replacement.transaction.operational_invariant` | `AsiStackProofs.Replacement` | A replacement commit requires qualification evidence and rollback metadata. | implemented |
 | `lean:replacement.transaction.failure_blocks_promotion` | `AsiStackProofs.Replacement` | A failed regression blocks promotion of the replacement. | implemented |
+| `lean:replacement.transaction.route_envelope` | `AsiStackProofs.Replacement` | A structured replacement-transaction review routes missing artifacts, authority expansion, evaluator capture, failed regression, missing rollback receipts, failed rollback dry runs, and monitor incidents away from default promotion. | implemented |
 
 ### Security Kernel and Digital SCIFs
 
@@ -2569,8 +2571,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 114 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 114 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 115 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 115 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Proof artifact traceability audit.

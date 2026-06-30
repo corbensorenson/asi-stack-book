@@ -2024,6 +2024,13 @@
               "status": "implemented by readiness/residual gate harness; validated locally; production rollback not executed",
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures; production rollback not executed"
+            },
+            {
+              "name": "Replacement transaction route proof",
+              "purpose": "Check that a finite replacement-transaction review routes missing artifacts, authority expansion, evaluator capture, failed regression, missing rollback receipts, failed rollback dry runs, and monitor incidents away from default promotion.",
+              "status": "implemented in Lean; finite structured-record route only",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; no deployed replacement execution claim"
             }
           ],
           "lean_module": "AsiStackProofs.Replacement",
@@ -2038,6 +2045,12 @@
               "tag": "lean:replacement.transaction.failure_blocks_promotion",
               "module": "AsiStackProofs.Replacement",
               "target": "A failed regression blocks promotion of the replacement.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:replacement.transaction.route_envelope",
+              "module": "AsiStackProofs.Replacement",
+              "target": "A structured replacement-transaction review routes missing artifacts, authority expansion, evaluator capture, failed regression, missing rollback receipts, failed rollback dry runs, and monitor incidents away from default promotion.",
               "status": "implemented"
             }
           ],
