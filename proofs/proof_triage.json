@@ -131,6 +131,16 @@
       "rationale": "Implemented in AsiStackProofs.IntentContracts as a finite authority-compilation predicate: missing required authority blocks executable-job compilation."
     },
     {
+      "tag": "lean:intent.resolution.route_envelope",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "module": "AsiStackProofs.IntentContracts",
+      "formal_target": "A structured intent-resolution record routes missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps to rejection, clarification, or review before compilation.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.IntentContracts as a finite route function and derived route theorems for missing text, prohibited action, ambiguity, non-goal conflict, missing high-impact authority, and irreversible high-impact review cases."
+    },
+    {
       "tag": "lean:alignment.constitution.operational_invariant",
       "chapter_id": "constitutional-alignment-substrate",
       "module": "AsiStackProofs.Alignment",

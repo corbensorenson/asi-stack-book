@@ -473,6 +473,7 @@ Draft deliverables:
 - Planned Codex test: Stop-condition preservation test.
 - Planned Codex test: Re-contract trigger test.
 - Planned Codex test: Bounded-default audit.
+- Implemented proof-backed check: finite intent-resolution route proof for missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps; this is structured-record coverage only, not natural-language parsing or deployed intake behavior.
 
 Lean proof targets:
 
@@ -480,6 +481,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | implemented |
 | `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | implemented |
+| `lean:intent.resolution.route_envelope` | `AsiStackProofs.IntentContracts` | A structured intent-resolution record routes missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps to rejection, clarification, or review before compilation. | implemented |
 
 ### Constitutional Alignment: Agency, Dignity, and Corrigibility
 
@@ -2565,8 +2567,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 112 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 112 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 113 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 113 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Proof artifact traceability audit.

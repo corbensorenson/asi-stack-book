@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 112 |
-| Manifest status counts | {"implemented": 112} |
-| Triage class counts | {"formal-invariant": 112} |
+| Proof targets audited | 113 |
+| Manifest status counts | {"implemented": 113} |
+| Triage class counts | {"formal-invariant": 113} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -53,7 +53,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/FastGeneration.lean` | 2 | 2 | 4 | 2 |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 2 | 3 | 2 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 6 | 8 | 4 |
-| `lean/AsiStackProofs/IntentContracts.lean` | 2 | 2 | 2 | 2 |
+| `lean/AsiStackProofs/IntentContracts.lean` | 3 | 8 | 3 | 3 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/LivingBook.lean` | 2 | 2 | 2 | 2 |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 2 | 2 | 2 |
@@ -107,7 +107,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 2 | 2 | 0 | 0 |
 | `fast-generation-architectures` | 2 | 2 | 0 | 0 |
-| `human-intent-as-a-formal-input` | 2 | 2 | 0 | 0 |
+| `human-intent-as-a-formal-input` | 3 | 3 | 0 | 0 |
 | `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
 | `intent-to-execution-contracts` | 4 | 4 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 2 | 2 | 0 | 0 |
@@ -151,6 +151,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:evidence.support_state.failure_blocks_promotion` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.operational_invariant` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:corrigibility.agency.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |

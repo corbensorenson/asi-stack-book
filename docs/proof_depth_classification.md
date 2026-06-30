@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 112 |
+| Proof targets in manifest | 113 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 179 |
+| Theorem declarations classified | 185 |
 | Direct/projection-style theorem declarations | 115 |
-| Derived/decomposed theorem declarations | 64 |
+| Derived/decomposed theorem declarations | 70 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 29 |
 | Safety-critical direct/projection declarations | 10 |
@@ -74,7 +74,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
@@ -198,8 +198,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernanceRights.lean` | `missing_exit_capability_preserves_exit_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `redaction_without_appeal_path_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `transition_removing_protected_right_is_rejected_or_invalid` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/IntentContracts.lean` | `ambiguous_intent_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `compiled_intent_contract_preserves_declared_constraints_and_stop_conditions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentContracts.lean` | `contract_missing_required_authority_cannot_compile_to_executable_job` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/IntentContracts.lean` | `high_impact_without_authority_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `irreversible_high_impact_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `missing_intent_text_rejects_as_non_executable` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `non_goal_conflict_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `prohibited_action_rejects_as_non_executable` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `compiled_execution_job_preserves_parent_contract_constraints` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `execution_job_without_required_approval_cannot_transition_to_running` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `every_manifest_chapter_has_outline_targets_and_claim_placeholders` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-30 - Human intent resolution route proof envelope
+
+- Extended `AsiStackProofs.IntentContracts` with a finite
+  intent-resolution route vocabulary, record, and route function over missing
+  intent text, prohibited requested action, ambiguity, non-goal conflict,
+  high-impact work, authority grants, and reversibility.
+- Added derived/decomposed Lean theorems showing that missing text and
+  prohibited actions route to non-executable rejection, ambiguous intent and
+  non-goal conflicts route to clarification, high-impact work without authority
+  routes to review, and irreversible high-impact work routes to review.
+- Added the `lean:intent.resolution.route_envelope` proof target to the
+  outline, manifest, proof triage, Human Intent chapter, and Appendix E. The
+  proof manifest now tracks 113 implemented finite-record targets, and the
+  proof-depth classifier now records 185 theorem declarations: 115
+  direct/projection-style and 70 derived/decomposed.
+- Updated the Human Intent chapter, proof-depth and proof-adequacy surfaces,
+  v1.0 roadmap/status surfaces, publication readiness note, repository map,
+  and proof/code plan. The proof adequacy review keeps Human Intent at `useful
+  but too narrow`.
+- This does not promote any Appendix C or chapter core claim, implement a
+  natural-language intent parser, extract authority from raw user text, run a
+  stop-condition lowering test, execute a re-contract trigger test, run a
+  bounded-default audit, validate reviewer quality, approve reader artifacts, or
+  create EPUB, DOCX, PDF, audio, DOI, Zenodo, or audio-embedded EPUB release
+  artifacts.
+
 ## 2026-06-30 - Reference trace harness and route envelope
 
 - Added `python3 scripts/validate_reference_trace.py`, a deterministic

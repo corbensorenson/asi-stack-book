@@ -23,9 +23,12 @@ No result is recorded here unless a test has actually been implemented and run.
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Changelog consistency audit | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent resolution route proof | implemented | passes via Lean build; finite structured-record route only |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent parsing ambiguity test | planned | not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Authority extraction test | planned | not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Stop-condition preservation test | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Re-contract trigger test | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Bounded-default audit | planned | not run |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional consistency test | implemented | passing via synthetic constitutional alignment harness; no deployed constitutional-alignment or moral-correctness claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Predicate-conflict routing test | implemented | passing via synthetic constitutional alignment harness; no runtime conflict-resolution or review-quality claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional migration test | implemented | passing via synthetic constitutional alignment harness; no deployed migration or rollback behavior claim |
@@ -281,16 +284,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 112 |
+| Proof targets covered by triage | 113 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 112 |
+| implemented | 113 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 112 |
+| implemented | formal-invariant | lean-candidate | 113 |

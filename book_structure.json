@@ -1158,9 +1158,36 @@
           "minimal_implementation": "An intent-contract schema and example transformations from request to governed task.",
           "beyond_state_of_art": "Human intent enters the mature stack through a compiler that turns goals into bounded command contracts. It preserves goals, constraints, authority, evidence requirements, artifacts, stop conditions, ambiguity, and consent so downstream capability cannot treat a loose request as unlimited permission. The mature intent compiler admits intent as a structured agreement, not a prompt-shaped wish: goals, constraints, authority, artifacts, evidence requirements, ambiguities, and stop conditions travel together.",
           "codex_tests": [
-            "Intent parsing ambiguity test",
-            "Authority extraction test",
-            "Stop-condition preservation test"
+            {
+              "name": "Intent resolution route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite structured-record route only"
+            },
+            {
+              "name": "Intent parsing ambiguity test",
+              "implementation_status": "planned",
+              "result_status": "not run"
+            },
+            {
+              "name": "Authority extraction test",
+              "implementation_status": "planned",
+              "result_status": "not run"
+            },
+            {
+              "name": "Stop-condition preservation test",
+              "implementation_status": "planned",
+              "result_status": "not run"
+            },
+            {
+              "name": "Re-contract trigger test",
+              "implementation_status": "planned",
+              "result_status": "not run"
+            },
+            {
+              "name": "Bounded-default audit",
+              "implementation_status": "planned",
+              "result_status": "not run"
+            }
           ],
           "lean_module": "AsiStackProofs.IntentContracts",
           "proof_targets": [
@@ -1174,6 +1201,12 @@
               "tag": "lean:intent.contract.failure_blocks_promotion",
               "module": "AsiStackProofs.IntentContracts",
               "target": "A contract missing required authority cannot compile to an executable job.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:intent.resolution.route_envelope",
+              "module": "AsiStackProofs.IntentContracts",
+              "target": "A structured intent-resolution record routes missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps to rejection, clarification, or review before compilation.",
               "status": "implemented"
             }
           ]
