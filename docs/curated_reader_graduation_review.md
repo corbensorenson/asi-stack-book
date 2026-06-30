@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 36
-- Curated chapter records: 36 drafting records for
+- Curated-manuscript candidates: 37
+- Curated chapter records: 37 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -33,6 +33,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `evidence-states-and-claim-discipline`,
   `human-intent-as-a-formal-input`,
   `constitutional-alignment-substrate`,
+  `agency-dignity-and-corrigibility`,
   `security-kernel-and-digital-scifs`,
   `stable-capability-fields`,
   `capability-replacement-and-rollback`,
@@ -73,7 +74,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 
 Graduate drafting-only curated reader sources for the opener, Efficient ASI,
 System Boundaries, Failure Modes, Evidence States, Human Intent,
-Constitutional Alignment, Security Kernel, Stable Capability Fields,
+Constitutional Alignment, Agency and Dignity, Security Kernel, Stable Capability Fields,
 Capability Replacement and Rollback, Readiness Gates, Cognitive Compilation,
 Context Transactions, Verification Bandwidth, Claim Ledgers, Labor OS,
 Artifact Graphs, Runtime Adapters, Procedural Memory, Benchmark Ratchets,
@@ -119,6 +120,7 @@ executing, rejecting, or authorizing the future Constitutional Alignment merge.
 | `evidence-states-and-claim-discipline` | `curated_manuscript_candidate`; protected standalone evidence-discipline chapter and active evidence-cycle lane outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_evidence_states_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no claim-support movement is implied. |
 | `human-intent-as-a-formal-input` | `curated_manuscript_candidate`; local prose improvement allowed by the consolidation decision review; outside the pending four-chapter merge cluster but adjacent to a possible future Constitutional Alignment destination | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_human_intent_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and the handoff must be revisited if the Part I consolidation changes the Constitutional Alignment destination. |
 | `constitutional-alignment-substrate` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `agency-dignity-and-corrigibility` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_constitutional_alignment_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed constitutional alignment, moral-correctness proof, Constitutional AI reproduction, public-input governance legitimacy, runtime policy engine, or manifest merge/fold decision is implied. |
+| `agency-dignity-and-corrigibility` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `constitutional-alignment-substrate` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_agency_dignity_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed agency preservation, dignity preservation, manipulation resistance, runtime corrigibility, intervention tolerance, shutdown compliance, Corrigibility proof reproduction, Off-Switch Game reproduction, high-impact approval quality, rollback execution, or manifest merge/fold decision is implied. |
 | `security-kernel-and-digital-scifs` | protected standalone security-boundary chapter outside the pending consolidation cluster; owns least-exposure, handle-lease, Digital SCIF, and authority-receipt reader vocabulary | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_security_kernel_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed security, sandbox-isolation, side-channel-resistance, prompt-injection-containment, OWASP-conformance, or NIST-zero-trust-implementation claim is implied. |
 | `stable-capability-fields` | protected standalone capability-identity chapter outside the pending consolidation cluster; owns field/implementation separation, qualification leases, route-validation boundaries, authority ceilings, and rollback obligations | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_stable_capability_fields_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed route validation, authority enforcement, replacement safety, rollback execution, SLSA workflow, SemVer checker, object-capability implementation, or MoECOT runtime reproduction claim is implied. |
 | `capability-replacement-and-rollback` | protected standalone replacement-control chapter outside the pending consolidation cluster; owns candidate/accepted replacement separation, regression floors, residual escrow, monitor windows, rollback receipts, and evaluator independence | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_capability_replacement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed replacement behavior, real regression-suite quality, monitor-window success, rollback execution, evaluator-integrity enforcement, authority enforcement, MoECOT runtime reproduction, or implemented-corrigibility claim is implied. |
@@ -181,7 +183,7 @@ true:
 
 ## Non-Claims
 
-- This review creates thirty-six drafting-only curated reader chapter files for
+- This review creates thirty-seven drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.
