@@ -5,21 +5,23 @@ Last updated: 2026-06-30
 Decision: defer all remaining unexecuted consolidation packages for the
 current reader-curation cycle after the Part I pilot, conservative compression
 merge, intent/contracts merge execution, MoECOT runtime fold execution,
-simulation-fidelity fold execution, and static context ABI merge execution.
+simulation-fidelity fold execution, static context ABI merge execution, and
+verification/adversarial-review merge execution.
 
 This record creates a `deferred_for_release` reader-work outcome for the
 remaining pending merge and fold packages. It records that the Part I pilot,
 conservative compression merge, intent/contracts merge, and static context ABI
-merge are no longer deferred, and that the MoECOT runtime fold and
-simulation-fidelity fold have moved from deferred fold disposition to executed
-history. This review itself does
+merge are no longer deferred, that the verification/adversarial-review merge is
+no longer deferred, and that the MoECOT runtime fold and simulation-fidelity
+fold have moved from deferred fold disposition to executed history. This review itself does
 not edit `book_structure.json`, does not execute any additional remaining merge
 or fold, does not approve any reader artifact, does not create external review,
 and does not change support states.
 
-The current canonical manifest has 47 chapters after the executed Part I pilot,
+The current canonical manifest has 46 chapters after the executed Part I pilot,
 conservative compression merge, intent/contracts merge, MoECOT runtime fold,
-simulation-fidelity fold, and static context ABI merge.
+simulation-fidelity fold, static context ABI merge, and
+verification/adversarial-review merge.
 
 ## Reviewed Inputs
 
@@ -52,9 +54,10 @@ that the destination is stronger than the source chapters as one chapter.
 
 At the same time, the human-reader manuscript cannot stay blocked indefinitely
 while every consolidation package waits for outside review. The practical
-current release choice is to preserve the 47-chapter manifest after the Part I
+current release choice is to preserve the 46-chapter manifest after the Part I
 pilot, conservative compression merge, intent/contracts merge, MoECOT runtime
-fold, simulation-fidelity fold, and static context ABI merge for the current reader-curation cycle, record remaining duplicate skeletons as
+fold, simulation-fidelity fold, static context ABI merge, and
+verification/adversarial-review merge for the current reader-curation cycle, record remaining duplicate skeletons as
 accepted temporary debt, and continue reader prose work with explicit
 consolidation caveats.
 
@@ -70,7 +73,7 @@ future execution package for the remaining queue.
 | Compression and residual honesty | `review_ready` | `executed` | The 2026-06-30 conservative merge accepted the destination chapter, folded Generate-Verify-Repair into compact-generative systems, preserved the retired URL through a historical stub, archived the source chapter, retained RankFold/NeuralFold as a standalone technique chapter, and kept support at `argument`. | Curated prose should target `compact-generative-systems-and-residual-honesty` as the merged chapter plus `rankfold-neuralfold-and-artifact-compression` as the retained technique chapter. |
 | Intent and executable contracts | `review_ready` | `executed` | The 2026-06-30 intent/contracts merge accepted the one-skeleton destination, folded command-interface material into Command Contracts: From Intent to Executable Work, preserved the retired URL through a historical stub, archived the source chapter and reader draft, retained `human-intent-as-a-formal-input` as the intake chapter, and kept support at `argument`. | Curated prose should target `intent-to-execution-contracts` as the merged chapter; the standalone command-contract reader draft remains historical only. |
 | Static context ABI | `review_ready` | `executed` | The 2026-06-30 static context ABI merge accepted the one-skeleton destination, folded semantic-pages and context-cell certificate material into The Virtual Context ABI: Typed Pages, Cells, and Certificates, preserved the retired URL through a historical stub, archived the source chapter and reader draft, retained transaction/snapshot/taint and verification-bandwidth as standalone chapters, and kept support at `argument`. | Curated prose should target `virtual-context-abi` as the merged chapter; the standalone semantic-pages reader draft remains historical only. |
-| Proof-carrying claims and adversarial review | `review_ready` | `deferred_for_release` | The destination draft may reduce repetition, but proof-carrying claim tiers and tribunal review need reviewer judgment before they become one chapter. | Curated prose may proceed for both verification/review source chapters with a proof/review merge caveat. |
+| Proof-carrying claims and adversarial review | `review_ready` | `executed` | The 2026-06-30 verification/adversarial-review merge accepted the one-skeleton destination, folded tribunal review into Proof-Carrying Claims and Adversarial Review, preserved the retired URL through a historical stub, archived the source chapter and reader draft, retained `claim-ledgers-and-belief-revision` as the belief-revision substrate, and kept support at `argument`. | Curated prose should target `spinoza-verification-and-proof-carrying-claims` as the merged chapter; the standalone tribunal reader draft remains historical only. |
 | Planning and DAG control | `review_ready` | `deferred_for_release` | The destination draft is plausible, but planning-control and PlanForge DAG ownership should be reviewed before a canonical merge. | Curated prose may proceed for both planning source chapters with a planning/DAG merge caveat. |
 | MoECOT runtime fold | `fold_disposition_ready` | `executed` | The 2026-06-30 MoECOT fold accepted the destination inside Routing Heads and Specialist Cores, preserved the retired URL through a historical stub, archived the standalone source manuscript and reader draft, and kept support at `argument`. | Curated prose should target `routing-heads-and-specialist-cores` and its MoECOT Runtime Crosswalk; the standalone MoECOT reader draft remains historical only. |
 | Simulation fidelity fold | `fold_disposition_ready` | `executed` | The 2026-06-30 simulation-fidelity fold accepted the destination inside Resource Economics and Token Budgets, preserved the retired URL through a historical stub, archived the standalone source manuscript, and kept support at `argument`. | Curated prose should target `resource-economics-and-token-budgets` and its Simulation Fidelity and Claim Transport section; the standalone simulation-fidelity source manuscript remains historical only. |
@@ -83,7 +86,7 @@ temporary debt:
 
 - repeated Problem, Insufficiency, Mechanism, Interface, Evidence,
   Implementation, and Handoff skeletons in the pending clusters;
-- stable chapter IDs and URLs for the 47 current manifest chapters plus historical stubs for the two folded Part I slugs, the folded GVR slug, the folded command-contract slug, the folded MoECOT slug, the folded simulation-fidelity slug, and the folded semantic-pages slug;
+- stable chapter IDs and URLs for the 46 current manifest chapters plus historical stubs for the two folded Part I slugs, the folded GVR slug, the folded command-contract slug, the folded MoECOT slug, the folded simulation-fidelity slug, the folded semantic-pages slug, and the folded tribunal slug;
 - reader curation against source chapter boundaries that may later be merged or
   folded;
 - reconciliation work if a later consolidation package executes and supersedes
@@ -99,8 +102,6 @@ chapter IDs:
 
 - `planning-as-a-control-layer`
 - `planforge-dags-and-intelligence-arbitrage`
-- `spinoza-verification-and-proof-carrying-claims`
-- `unified-adaptive-tribunal-and-adversarial-review`
 - `semantic-representation-and-tree-structured-models`
 
 ## Revisit Conditions
@@ -137,7 +138,7 @@ Every curated reader pass inside a deferred package must:
 - This review does not approve any destination draft.
 - This review records that the Part I pilot, conservative compression merge,
   intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, and
-  static context ABI merge
+  static context ABI merge, and verification/adversarial-review merge
   implemented historical stubs and changed chapter count in their separate
   execution packages.
 - This review does not create human review, external review, peer review, proof

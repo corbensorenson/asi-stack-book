@@ -8,8 +8,8 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 
 | Metric | Count |
 |---|---:|
-| Manifest chapters | 47 |
-| Chapters with `ext_*` positioning before Source crosswalk | 47 |
+| Manifest chapters | 46 |
+| Chapters with `ext_*` positioning before Source crosswalk | 46 |
 | Chapters with explicit external-baseline exceptions | 0 |
 | Chapters with source-noted external targets but no in-prose positioning yet | 0 |
 | Chapters needing an exception or additional external source assignment | 0 |
@@ -39,8 +39,7 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 | `context-transactions-snapshots-mounts-and-taint` | `positioned` | `ext_longbench_2023`, `ext_longllmlingua_2023`, `ext_lost_in_middle_2023`, `ext_memgpt_2023`, `ext_rag_2020`, `ext_ruler_2024` | `ext_longbench_2023`, `ext_longllmlingua_2023`, `ext_lost_in_middle_2023`, `ext_memgpt_2023`, `ext_rag_2020`, `ext_ruler_2024` | Keep source-note boundary and support-state language honest. |
 | `verification-bandwidth-and-context-adequacy` | `positioned` | `ext_alce_2023`, `ext_checklist_2020`, `ext_gpqa_2023`, `ext_longbench_2023`, `ext_longllmlingua_2023`, `ext_reluplex_2017`, `ext_ruler_2024` | `ext_alce_2023`, `ext_checklist_2020`, `ext_gpqa_2023`, `ext_longbench_2023`, `ext_longllmlingua_2023`, `ext_lost_in_middle_2023`, `ext_memgpt_2023`, `ext_rag_2020`, `ext_reluplex_2017`, `ext_ruler_2024`, `ext_self_rag_2023` | Keep source-note boundary and support-state language honest. |
 | `claim-ledgers-and-belief-revision` | `positioned` | `ext_alce_2023`, `ext_checklist_2020`, `ext_self_rag_2023` | `ext_alce_2023`, `ext_checklist_2020`, `ext_self_rag_2023` | Keep source-note boundary and support-state language honest. |
-| `spinoza-verification-and-proof-carrying-claims` | `positioned` | `ext_lean4_theorem_proving`, `ext_proof_carrying_code_1997` | `ext_lean4_theorem_proving`, `ext_proof_carrying_code_1997` | Keep source-note boundary and support-state language honest. |
-| `unified-adaptive-tribunal-and-adversarial-review` | `positioned` | `ext_contestable_ai_design_2022` | `ext_contestable_ai_design_2022` | Keep source-note boundary and support-state language honest. |
+| `spinoza-verification-and-proof-carrying-claims` | `positioned` | `ext_contestable_ai_design_2022`, `ext_lean4_theorem_proving`, `ext_proof_carrying_code_1997` | `ext_contestable_ai_design_2022`, `ext_lean4_theorem_proving`, `ext_proof_carrying_code_1997` | Keep source-note boundary and support-state language honest. |
 | `labor-os-and-typed-jobs` | `positioned` | `ext_autogen_2023`, `ext_swe_bench_2023` | `ext_autogen_2023`, `ext_swe_bench_2023` | Keep source-note boundary and support-state language honest. |
 | `artifact-graphs-audit-logs-and-replay` | `positioned` | `ext_autogen_2023`, `ext_proof_carrying_code_1997`, `ext_react_2022`, `ext_swe_bench_2023` | `ext_autogen_2023`, `ext_proof_carrying_code_1997`, `ext_react_2022`, `ext_swe_bench_2023` | Keep source-note boundary and support-state language honest. |
 | `runtime-adapters-tool-permissions-and-human-approval` | `positioned` | `ext_behavior_trees_robotics_ai_2017`, `ext_black_box_simplex_2021`, `ext_copilot_runtime_monitor_2010`, `ext_dafny_2010`, `ext_integrated_tamp_2020`, `ext_off_switch_game_2016`, `ext_proof_carrying_code_1997`, `ext_react_2022` | `ext_autogen_2023`, `ext_behavior_trees_robotics_ai_2017`, `ext_black_box_simplex_2021`, `ext_copilot_runtime_monitor_2010`, `ext_dafny_2010`, `ext_integrated_tamp_2020`, `ext_nist_zero_trust_architecture_2020`, `ext_off_switch_game_2016`, `ext_owasp_llm_top_10_2025`, `ext_proof_carrying_code_1997`, `ext_react_2022`, `ext_three_states_plan_fear_2006` | Keep source-note boundary and support-state language honest. |

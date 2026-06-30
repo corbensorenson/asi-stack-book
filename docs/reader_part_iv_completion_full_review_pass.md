@@ -58,7 +58,7 @@ The generated reader text was read end to end for:
 
 The final four Part IV generated reader chapters can move from spot-checked
 status to reviewed chapter-text status in the reader review matrix. This
-completes the 54-chapter generated-reader chapter-text review queue for the
+completed the then-active 54-chapter generated-reader chapter-text review queue for the
 current v1.0 reader source.
 
 The chapters still retain release blockers for missing reader release records

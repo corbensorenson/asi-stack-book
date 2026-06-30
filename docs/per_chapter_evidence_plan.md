@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-30
 
-This file is the 47-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the 46-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ remaining lanes stay `planned, not executed`; they must not receive synthetic
 fixtures, pass/fail status, or support-state pressure merely for coverage.
 The active cycle selection is recorded in
 `docs/v1_x_active_evidence_cycle.md`: seven lanes are selected and the other
-forty remain planned-only.
+thirty-nine remain planned-only.
 
 Selection criteria:
 
@@ -64,8 +64,7 @@ support-state transition by itself.
 | II | `context-transactions-snapshots-mounts-and-taint` | Context transaction harness | Add deletion closure, mount taint, snapshot conflict, and rollback cases. | Make taint and snapshots legible through file-system examples. | Transaction replay proves conflict/deletion gates fire. |
 | II | `verification-bandwidth-and-context-adequacy` | Adequacy harness plus external context-eval literature | Add verifier-capacity constraints and escalation paths. | Explain why a model cannot verify everything it can read. | Adequacy record rejects context that exceeds verifier bandwidth. |
 | II | `claim-ledgers-and-belief-revision` | Claim-ledger harness plus Lean | Add revision-history preservation, contradiction quarantine, and split claims. | Make belief revision read like version control for truth claims. | Contradictory evidence changes ledger state without silent promotion. |
-| II | `spinoza-verification-and-proof-carrying-claims` | Proof-carrying claim harness plus Circle lane | Add verifier mismatch and tier downgrade cases. | Explain proof-carrying claims through receipts, not mystique. | Invalid proof artifact blocks claim tier escalation. |
-| II | `unified-adaptive-tribunal-and-adversarial-review` | Tribunal harness plus external review baselines | Add reviewer capture, dissent, and required-action cases. | Present tribunals as adversarial review loops for hard decisions. | Captured or evidence-thin verdict cannot become accepted review. |
+| II | `spinoza-verification-and-proof-carrying-claims` | Proof-carrying claim and tribunal review harnesses plus Circle lane and external review baselines | Add verifier mismatch, tier downgrade, reviewer capture, dissent, unchanged-evidence, and required-action cases. | Explain proof-carrying claims and adversarial review through receipts, dossiers, dissent, and bounded ledger effects rather than mystique or consensus theater. | Invalid proof artifact, missing tribunal review, captured reviewer path, or evidence-thin verdict blocks claim tier escalation or accepted review. |
 | II | `labor-os-and-typed-jobs` | Theseus operator OS plus typed-job fixtures | Import a public-safe job lifecycle trace. | Make agent labor feel like accountable work tickets. | Job cannot dispatch without requirements, permissions, and receipt path. |
 | II | `artifact-graphs-audit-logs-and-replay` | Artifact graph replay harness plus Theseus report | Add graph integrity, provenance mismatch, and replay failure cases. | Show artifacts as memory the system can audit. | Replay reproduces expected graph or records exact divergence. |
 | II | `runtime-adapters-tool-permissions-and-human-approval` | Runtime adapter harness plus Theseus operator OS | Add approval expiry, rollback handles, irreversible residuals, and authority receipts. | Make tool use feel like bounded action with human checkpoints. | High-impact adapter call fails without current approval and receipt. |

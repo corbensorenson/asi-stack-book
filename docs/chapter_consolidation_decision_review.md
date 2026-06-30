@@ -68,8 +68,9 @@ reviewed chapter.
 
 ## Why Deferral Is The Right Current Action
 
-- The current manifest still validates as 54 chapters, and many release-control
-  surfaces intentionally count and review those 54 chapters.
+- The then-current manifest still validated as 54 chapters, and many
+  release-control surfaces intentionally counted and reviewed those 54
+  chapters.
 - `docs/book_outline.md`, Appendix C, reader-review matrices, active evidence
   lanes, status snapshots, external-grounding reports, and rendered handoffs
   would all need coordinated updates for a real merge.

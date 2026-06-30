@@ -1379,55 +1379,64 @@ Lean proof targets:
 | `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | implemented |
 | `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | implemented |
 
-### Spinoza Verification and Proof-Carrying Claims
+### Proof-Carrying Claims and Adversarial Review
 
 Stable ID: `spinoza-verification-and-proof-carrying-claims`
 
-Chapter job: The stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects.
+Chapter job: High-value claims and high-risk artifacts need a governed verification path that can choose proof, citation, procedure, replay, benchmark, or adversarial-review treatment without laundering failed, mismatched, or contested evidence into support.
 
-Core claim: Spinoza-style verification should convert high-value claims into proof-carrying or justification-carrying artifacts with explicit tiers.
+Core claim: Selected claims and artifacts should move through proof-carrying, justification-carrying, or adversarial-review envelopes that record tier, interpretation mapping, evidence dossier, verifier or tribunal result, dissent, limitations, failed attempts, required actions, residuals, and ledger effects.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `spinoza` | Read first for chapter claims and mechanisms. |
-| Supporting | `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Primary | `spinoza` | Read first for proof-carrying claims, tier discipline, verifier separation, and no-theorem-laundering boundaries. |
+| Supporting | `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos` | Mine after primary sources for obligation envelopes, verification-workspace limits, semantic traces, tribunal review, typed review artifacts, and execution consequences. |
+| External comparator | `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_contestable_ai_design_2022` | Use after source notes for proof-carrying-code, theorem-proving, and contestable-review positioning; do not treat comparators as local verifier, theorem-validity, tribunal-quality, or institutional-adequacy evidence. |
 
 Draft arc:
 
-- Problem: The stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects.
-- Insufficiency: Neural generation alone cannot guarantee semantic consistency, source grounding, or formal validity.
-- Mechanism: Wrap selected ledger claims in proof-carrying or justification-carrying envelopes that include required tier, interpretation mapping, justification artifact, verifier result, limitations, downgrade rule, and residual route.
-- Mechanism: Separate neural proposal from verifier judgment, so failed, timed-out, or mismatched verification lowers confidence or escalates instead of becoming a success story.
-- Mechanism: Match justification type to claim type: formal proof, citation dossier, executable procedure, replay log, benchmark artifact, or tribunal review.
-- Mechanism: Record formalization mismatches, failed verification, missing artifacts, unsupported citations, and narrow successful proofs as evidence that bounds the claim rather than decorating it.
-- Mechanism: Separate artifact validity from claim validity with semantic adequacy, consumer requirements, claim-validity effect, residual route, and non-claims, so a narrow proof cannot promote a broader natural-language claim.
-- Handoff: Claims whose mapping, stakes, or evidence conflict exceed one verifier move to UAT.
-- Interface: Claim ledger stores proof status.
-- Interface: GenesisCode and Lean provide formal hooks.
-- Interface: UAT provides adversarial review.
+- Problem: High-value claims and high-risk artifacts need a governed verification path that can choose proof, citation, procedure, replay, benchmark, or adversarial-review treatment without laundering failed, mismatched, or contested evidence into support.
+- Insufficiency: Neural generation, one-pass self-critique, and informal review can produce plausible justification language without preserving proof scope, verifier result, evidence dossier, dissent, failed attempts, verdict constraints, or downgrade routes.
+- Mechanism: Select a verification route for each selected claim or artifact: formal proof, citation dossier, executable procedure, replay log, benchmark artifact, tribunal review, downgrade, block, or escalation.
+- Mechanism: Record interpretation mapping, justification artifact, verifier result, failed attempts, limitations, semantic adequacy, and support-state effect before any stronger claim standing is allowed.
+- Mechanism: Escalate contested, high-risk, or mismatched cases into tribunal records with bounded dossiers, reviewer roles, adversarial probes, dissent, verdict constraints, and required actions.
+- Mechanism: Write bounded effects back to the claim ledger and execution layers: no change, downgrade, block, revise, scoped accept, dispatch blocker, authority narrowing, human sign-off, or residual work.
+- Handoff: Verification outcomes that constrain downstream work flow to Labor OS and Typed Jobs.
+- Interface: Claim ledgers supply stable claim identity and receive bounded verification outcomes.
+- Interface: Lean, GenesisCode, Circle-style proof contracts, procedures, replay logs, and benchmark artifacts supply formal or executable evidence when appropriate.
+- Interface: UAT-style tribunal review handles contested, high-risk, or mismatched cases.
 
 Primary invariants:
 
 - Proof tier is explicit.
-- A justification artifact is required for promoted claims.
-- Unsupported claims remain marked speculative or blocked.
+- Formal, citation, and procedure tiers require matching artifacts.
+- Failed, timed-out, or mismatched verification blocks promotion or routes to downgrade, no change, block, or escalation.
+- Narrow passes cannot promote broader natural-language claims without semantic adequacy review.
+- Dissent remains visible.
+- High-risk artifacts cannot bypass required tribunal review.
+- Prior review over unchanged evidence cannot quietly reverse a rejection into acceptance.
 
 Failure modes to cover:
 
 - Certified delusion.
 - Invalid formalization.
 - Justification artifact missing.
+- Reviewer collusion.
+- Consensus theater.
+- Critique without action.
+- Repeated-review laundering.
 
 Draft deliverables:
 
-- A tiered proof-carrying claim schema with one non-philosophical invariant example and explicit claim-scope, justification-type, interpretation-confidence, artifact-validity, semantic-adequacy, verifier-artifact, failed-attempt, formal-scope, consumer-requirement, claim-validity-effect, source-ref, support-state-effect, residual-route, and non-claim fields.
-- Exact Appendix C claim-source mappings for `spinoza-verification-and-proof-carrying-claims.core` across Spinoza, GenesisCode, Coherence Exchange, Verification Bandwidth, and TreeLLM; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
-- Implemented protocol validation: `proof_carrying_claim` fixture validates public record shape, claim scope, justification type, interpretation confidence, verifier artifact refs, failed-attempt refs, formal scope, source refs, support-state effect, and non-claims only.
-- Planned Codex test: Proof artifact presence test.
-- Planned Codex test: Tier assignment test.
-- Planned Codex test: Formalization mismatch review.
+- A proof-carrying-claim schema and tribunal-review schema with synthetic valid and expected-invalid fixtures for narrow formal passes, citation no-change, mismatch escalation, missing artifacts, failed verification, high-risk review, dissent, and prior-review laundering.
+- Exact Appendix C claim-source mappings for `spinoza-verification-and-proof-carrying-claims.core` across Spinoza, GenesisCode, Coherence Exchange, Verification Bandwidth, TreeLLM, UAT, and Talos; six local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
+- Folded-history preservation for `unified-adaptive-tribunal-and-adversarial-review.core` as a subclaim about bounded dossiers, reviewer roles, adversarial probes, dissent, verdict constraints, cycle caps, unchanged-evidence guards, and required actions.
+- Implemented protocol validation: `proof_carrying_claim` and `tribunal_review_record` fixtures validate public record shape only.
+- Implemented Codex tests: proof-carrying claim synthetic harness and tribunal-review synthetic harness.
+- Planned Codex test: Tier assignment over real verifier outputs.
+- Planned Codex test: Adversarial review quality over reproducible dossiers.
 
 Lean proof targets:
 
@@ -1435,65 +1444,10 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaims` | A claim at a formal support tier carries a valid proof or justification artifact reference. | implemented |
 | `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | implemented |
-
-### Unified Adaptive Tribunal and Adversarial Review
-
-Stable ID: `unified-adaptive-tribunal-and-adversarial-review`
-
-Chapter job: Complex claims and artifacts need adversarial review that is more structured than one model critique.
-
-Core claim: A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `uat` | Read first for chapter claims and mechanisms. |
-| Supporting | `spinoza`, `coherence_exchange`, `talos`, `verification_bandwidth` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External comparator | `ext_contestable_ai_design_2022` | Use after source note for contestable-AI positioning around challenge, appeal, dissent, and review surfaces; do not treat it as evidence of tribunal correctness or institutional adequacy. |
-
-Draft arc:
-
-- Problem: Complex claims and artifacts need adversarial review that is more structured than one model critique.
-- Insufficiency: Single-pass self-review misses blind spots, evaluator drift, and consensus without evidence.
-- Mechanism: Escalate contested or high-risk claims into bounded tribunal records with dossier refs, reviewer roles, adversarial probes, evidence-linked findings, dissent, unresolved issues, verdict, and required actions.
-- Mechanism: Preserve review boundaries by requiring dossier-scoped evidence, hard cycle caps, and human adjudication where risk or uncertainty remains.
-- Mechanism: Treat tribunal review as a lifecycle: admission, dossier construction, role assignment, adversarial probing, finding capture, dissent preservation, verdict, required action, and ledger or execution update.
-- Mechanism: Convert tribunal results into machine-readable constraints that can block dispatch, narrow authority, require source fetch, create residuals, or update claim state.
-- Mechanism: Preserve review state, dossier boundary, reviewer independence note, cycle cap, prior review refs, unchanged-evidence guard, retrieval-expansion policy, constraint effects, and non-claims so repeated review cannot launder an unchanged evidence set into acceptance.
-- Handoff: Accepted or blocked outcomes flow back into the claim ledger and execution layers as tier decisions, residuals, required actions, or human sign-off.
-- Interface: Spinoza consumes tribunal results.
-- Interface: Planning escalates risky nodes to tribunal.
-- Interface: Evidence records reviewer outcomes.
-
-Primary invariants:
-
-- Dissent is preserved.
-- Consensus requires evidence.
-- High-risk reviews are reproducible enough to audit.
-
-Failure modes to cover:
-
-- Reviewer collusion.
-- Consensus theater.
-- Critique without action.
-
-Draft deliverables:
-
-- A tribunal protocol for claim/artifact review with review lifecycle, dossier boundary, independence note, cycle cap, repeated-review guard, retrieval-expansion policy, reviewer roles, constraint effects, and output schema.
-- Exact Appendix C claim-source mappings for `unified-adaptive-tribunal-and-adversarial-review.core` across UAT, Spinoza, Coherence Exchange, Talos, and Verification Bandwidth; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
-- Source-noted external positioning now uses `ext_contestable_ai_design_2022` as a comparator for contestable review and challenge surfaces. This replaces the former external-baseline exception only for positioning and does not promote support state.
-- Implemented protocol validation: `tribunal_review_record` fixture validates public record shape only.
-- Planned Codex test: Adversarial review coverage test.
-- Planned Codex test: Dissent preservation test.
-- Planned Codex test: Consensus evidence test.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
 | `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | implemented |
 | `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | implemented |
+
+Historical treatment: `unified-adaptive-tribunal-and-adversarial-review` is archived and redirected to `spinoza-verification-and-proof-carrying-claims`; the old chapter can be restored only if independent tribunal pipeline evidence, reviewer-independence measurements, adversarial-probe-quality tests, verdict-correctness audits, or institutional contestability evidence make it chapter-owning again.
 
 ### Labor OS and Typed Jobs
 

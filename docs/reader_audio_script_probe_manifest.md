@@ -22,7 +22,7 @@ python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_mani
 |---|---:|
 | Source profile | `reader_release` |
 | Audio profile | `audio_release` |
-| Script files | 52 |
+| Script files | 51 |
 | Implementation-horizon script status | pass |
 | Review status | review_required |
 
@@ -35,8 +35,8 @@ Required review files are generated in the ignored workspace:
 
 | Material | Count |
 |---|---:|
-| Tables | 7 |
-| Mermaid diagrams | 55 |
+| Tables | 8 |
+| Mermaid diagrams | 54 |
 | Code/schema blocks | 0 |
 | Images | 1 |
 

@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 47 |
-| Assigned source/chapter pairs | 433 |
-| Exact claim-source mappings | 433 |
+| Chapters audited | 46 |
+| Assigned source/chapter pairs | 430 |
+| Exact claim-source mappings | 430 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 433 |
-| Source notes listing assigned chapter | 433 |
-| Passage-reviewed mappings recorded | 433 |
-| Support-state counts | {"argument": 47} |
+| Source notes present for assigned pairs | 430 |
+| Source notes listing assigned chapter | 430 |
+| Passage-reviewed mappings recorded | 430 |
+| Support-state counts | {"argument": 46} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -53,8 +53,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `context-transactions-snapshots-mounts-and-taint` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `verification-bandwidth-and-context-adequacy` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `claim-ledgers-and-belief-revision` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `unified-adaptive-tribunal-and-adversarial-review` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `spinoza-verification-and-proof-carrying-claims` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `labor-os-and-typed-jobs` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `runtime-adapters-tool-permissions-and-human-approval` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
@@ -90,18 +89,18 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `viea` | 23 | yes |
 | `moecot` | 23 | yes |
 | `talos` | 22 | yes |
-| `spinoza` | 16 | yes |
 | `scf` | 15 | yes |
+| `spinoza` | 15 | yes |
 | `rmi` | 14 | yes |
 | `benchmaxxing` | 14 | yes |
 | `vcm_public` | 12 | yes |
-| `coherence_exchange` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
+| `coherence_exchange` | 11 | yes |
 | `planforge` | 11 | yes |
 | `cognitive_loop_closure` | 11 | yes |
 | `genesiscode` | 10 | yes |
-| `verification_bandwidth` | 9 | yes |
 | `cgs` | 8 | yes |
+| `verification_bandwidth` | 8 | yes |
 | `cognitive_compilation` | 8 | yes |
 | `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
@@ -325,11 +324,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
-| `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `uat` | mapped | note present | chapter listed | passage-reviewed |
-| `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
-| `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
-| `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `talos` | mapped | note present | chapter listed | passage-reviewed |
-| `unified-adaptive-tribunal-and-adversarial-review.core` | `unified-adaptive-tribunal-and-adversarial-review` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
+| `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `uat` | mapped | note present | chapter listed | passage-reviewed |
+| `spinoza-verification-and-proof-carrying-claims.core` | `spinoza-verification-and-proof-carrying-claims` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |

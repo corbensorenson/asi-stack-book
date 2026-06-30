@@ -21,11 +21,11 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 ## Current State
 
 - Curated reader manuscript status: `drafting`
-- Generated-reader chapter-text review: complete for all 54 current chapters
+- Generated-reader chapter-text review: complete for all 46 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
 - Curated-manuscript candidates: 49
-- Curated chapter records: 49 drafting records for
+- Curated chapter records: 43 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -204,7 +204,7 @@ true:
 
 ## Non-Claims
 
-- This review creates forty-nine drafting-only curated reader chapter files for
+- This review creates forty-three drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

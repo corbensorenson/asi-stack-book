@@ -40,7 +40,6 @@ REQUIRED_IDS = {
     "context-transactions-snapshots-mounts-and-taint",
     "verification-bandwidth-and-context-adequacy",
     "spinoza-verification-and-proof-carrying-claims",
-    "unified-adaptive-tribunal-and-adversarial-review",
     "claim-ledgers-and-belief-revision",
     "planning-as-a-control-layer",
     "planforge-dags-and-intelligence-arbitrage",
@@ -65,7 +64,7 @@ REQUIRED_IDS = {
 REQUIRED_FRAGMENTS = (
     "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
-    "47 manifest chapters after the executed Part I pilot",
+    "46 manifest chapters after the executed Part I pilot",
     "Do not run a broad 54-to-44 manifest edit",
     "Do not target a fixed chapter count.",
     "Do not delete ideas merely to reduce repetition.",
@@ -101,7 +100,7 @@ REQUIRED_FRAGMENTS = (
     "Compression and residual honesty | `executed`",
     "Intent and executable contracts | `executed`",
     "Static context ABI | `executed`",
-    "Verification and adversarial review | `review_ready`",
+    "Verification and adversarial review | `executed`",
     "Planning and DAG control | `review_ready`",
     "Source-blocked MoECOT runtime | `executed`",
     "Simulation fidelity | `executed`",
@@ -441,8 +440,11 @@ VERIFICATION_REVIEW_DRAFT_REQUIRED_FRAGMENTS = (
 
 VERIFICATION_REVIEW_REQUIRED_IDS = {
     "spinoza-verification-and-proof-carrying-claims",
-    "unified-adaptive-tribunal-and-adversarial-review",
     "claim-ledgers-and-belief-revision",
+}
+
+VERIFICATION_REVIEW_HISTORICAL_IDS = {
+    "unified-adaptive-tribunal-and-adversarial-review",
 }
 
 VERIFICATION_REVIEW_REQUIRED_SOURCE_IDS = {
@@ -856,7 +858,7 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "does not execute any additional remaining merge or fold",
     "does not create external review",
     "does not change support states",
-    "The current canonical manifest has 47 chapters after the executed Part I pilot",
+    "The current canonical manifest has 46 chapters after the executed Part I pilot",
     "Reader Curation Outcome Table",
     "Constitutional alignment and agency/corrigibility",
     "Value conflict and contestable governance",
@@ -881,8 +883,8 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, and static context ABI merge",
-    "The canonical manifest now has 47 chapters after the executed Part I pilot",
+    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, and verification/adversarial-review merge",
+    "The canonical manifest now has 46 chapters after the executed Part I pilot",
     "If a retired public chapter URL cannot be preserved or deliberately recorded",
     "Default URL Policy",
     "Keep the destination chapter's existing stable ID and public URL",
@@ -899,7 +901,7 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/semantic-pages-context-cells-and-certificates.html",
     "Validation Expectations",
     "Non-Claims",
-    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, and static context ABI execution",
+    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, and verification/adversarial-review execution",
 )
 
 
@@ -932,8 +934,8 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 47:
-        errors.append("Consolidation sequence expects the current manifest to have 47 chapters after the static context ABI merge.")
+    if len(ids) != 46:
+        errors.append("Consolidation sequence expects the current manifest to have 46 chapters after the verification/adversarial-review merge.")
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -1167,6 +1169,12 @@ def main() -> None:
         if f"`{chapter_id}`" not in verification_review:
             errors.append(f"Verification/review dry run does not mention `{chapter_id}`.")
 
+    for chapter_id in sorted(VERIFICATION_REVIEW_HISTORICAL_IDS):
+        if chapter_id in ids:
+            errors.append(f"Verification/review retired chapter ID is still active in manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in verification_review:
+            errors.append(f"Verification/review dry run does not mention retired chapter `{chapter_id}`.")
+
     for source_id in sorted(VERIFICATION_REVIEW_REQUIRED_SOURCE_IDS):
         if f"`{source_id}`" not in verification_review:
             errors.append(f"Verification/review dry run missing source ID `{source_id}`.")
@@ -1198,6 +1206,12 @@ def main() -> None:
             errors.append(f"Verification/review destination chapter ID is missing from manifest: {chapter_id}")
         if f"`{chapter_id}`" not in verification_review_draft:
             errors.append(f"Verification/review destination draft does not mention `{chapter_id}`.")
+
+    for chapter_id in sorted(VERIFICATION_REVIEW_HISTORICAL_IDS):
+        if chapter_id in ids:
+            errors.append(f"Verification/review retired destination chapter ID is still active in manifest: {chapter_id}")
+        if f"`{chapter_id}`" not in verification_review_draft:
+            errors.append(f"Verification/review destination draft does not mention retired chapter `{chapter_id}`.")
 
     for source_id in sorted(VERIFICATION_REVIEW_REQUIRED_SOURCE_IDS):
         if f"`{source_id}`" not in verification_review_draft:
@@ -1429,7 +1443,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "47-chapter manifest, executed Part I pilot, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, executed simulation-fidelity fold, and executed static context ABI merge recorded with remaining candidate sequence."
+        "46-chapter manifest, executed Part I pilot, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, executed simulation-fidelity fold, executed static context ABI merge, and executed verification/adversarial-review merge recorded with remaining candidate sequence."
     )
 
 

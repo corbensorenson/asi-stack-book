@@ -38,8 +38,8 @@ Spinoza proposes a bounded neurosymbolic reasoning architecture: neural systems 
 - Claim Ledgers and Belief Revision
 - The Virtual Context ABI: Typed Pages, Cells, and Certificates
 - Verification Bandwidth and Context Adequacy
-- Spinoza Verification and Proof-Carrying Claims
-- Unified Adaptive Tribunal and Adversarial Review
+- Proof-Carrying Claims and Adversarial Review
+- Proof-Carrying Claims and Adversarial Review
 - Failure Modes of Ungoverned Intelligence
 - `constitutional-alignment-substrate` (Constitutional Alignment: Agency, Dignity, and Corrigibility)
 - `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)

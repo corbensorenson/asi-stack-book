@@ -37,7 +37,7 @@ Proof-Carrying Code belongs in the proof-envelope and runtime-adapter chapters a
 ## Book Chapters Supported
 
 - `executable-specifications-and-lean-proof-envelope` (Executable Specifications and Lean Proof Envelope)
-- `spinoza-verification-and-proof-carrying-claims` (Spinoza Verification and Proof-Carrying Claims)
+- `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `artifact-graphs-audit-logs-and-replay` (Artifact Graphs, Audit Logs, and Replay)
 

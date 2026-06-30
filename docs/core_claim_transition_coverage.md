@@ -9,8 +9,8 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 47 |
-| Accepted core evidence-transition records | 23 |
+| Manifest chapter core claims | 46 |
+| Accepted core evidence-transition records | 22 |
 | Accepted explicit no-promotion decisions | 24 |
 | Missing core-claim coverage | 0 |
 
@@ -41,7 +41,6 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `stable-capability-fields.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/stable_capability_fields_no_change.json` |
 | `system-boundaries-and-authority.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/system_boundaries_no_change.json` |
 | `the-efficient-asi-hypothesis.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/efficient_asi_no_change.json` |
-| `unified-adaptive-tribunal-and-adversarial-review.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/uat_no_change.json` |
 | `virtual-context-abi.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/virtual_context_abi_no_change.json` |
 
 ## Explicit No-Promotion Decisions

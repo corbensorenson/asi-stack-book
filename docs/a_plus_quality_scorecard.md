@@ -41,14 +41,14 @@ A future A+ version should be:
 | Evidence | Three narrow non-core transitions exist, one Project Theseus static architecture-gate import is CI-verifiable by digest, and one Circle consumer gate is CI-verifiable by digest plus negative controls, but evidence remains thin. | At least one selected Theseus or Circle lane moves beyond guarded public fixtures into clean replay, archived public packs, or accepted bounded transitions where the evidence justifies it, and selected chapter-adjacent claims have accepted transitions. | Milestones 3, 4, and v1.x release gate |
 | Formal rigor | Most Lean theorems are projection-style. | Safety-critical modules include derived/decomposed theorems, anti-projection conclusions, and negative cases. | Milestone 2 |
 | Human readability | Human view exists, but many chapters remain dense and spec-like. | A curated reader pilot reads like a book and preserves evidence boundaries. | Milestone 7 |
-| Structural cohesion | The 54-chapter shape is useful for coverage, but some overlapping clusters repeat the same skeleton around adjacent claims. | The governed consolidation sequence is reviewed cluster by cluster; accepted merges become deeper one-skeleton chapters, rejected merges stay separate with reasons, and no idea is silently dropped. | Milestone 6.5 |
+| Structural cohesion | The original 54-chapter expansion was useful for coverage, but some overlapping clusters still repeat the same skeleton around adjacent claims. | The governed consolidation sequence is reviewed cluster by cluster; accepted merges become deeper one-skeleton chapters, rejected merges stay separate with reasons, and no idea is silently dropped. | Milestone 6.5 |
 | External grounding | External positioning exists, but literature was added late and unevenly. | Every chapter has a source-noted external comparator, adjacent literature family, candidate backlog, or explicit exception; likely sources are mined first from the chapter's linked Corben-paper bibliographies. | Milestone 5.5, Milestone 6, and Milestone 9 |
 | Researcher/AI usefulness | Useful as a structured reference today. | Useful as a reproducible research program with selected defended contributions and clear open problems. | v1.x evidence release gate |
 | Field impact odds | Low until external review and defended results exist. | At least one external reviewer, one reproducible evidence lane, and one prior-art-reviewed contribution extraction exist. | Keystone set |
 
 ## Defended Contribution Tracks
 
-The project should not try to make all 54 chapters equally defensible in the
+The project should not try to make all 46 chapters equally defensible in the
 next cycle. It should select three to five contribution tracks and push those to
 real depth.
 
@@ -109,7 +109,7 @@ A skeptical visitor should not have to inspect the repository to discover that
 the project is honest. The README, landing page, and Human view should make
 these facts visible quickly:
 
-- all 54 chapter core claims remain `argument`;
+- all 46 chapter core claims remain `argument`;
 - three bounded non-core transitions exist and are narrow;
 - Lean coverage is broad but still shallow in safety-critical areas;
 - external literature is an active grounding workstream, not a completed claim

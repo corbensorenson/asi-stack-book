@@ -4,7 +4,7 @@ Last updated: 2026-06-30
 
 This packet is a supplemental review surface for the governed consolidation
 sequence. It is designed for human or external reviewers who can judge whether
-the current 54-chapter living-book shape should execute, revise, defer, or
+the then-current 54-chapter living-book shape should execute, revise, defer, or
 reject specific merge/fold packages before any canonical manifest edit.
 
 Public review request issue:

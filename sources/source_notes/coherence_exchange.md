@@ -39,8 +39,8 @@ The Coherence Exchange proposes an epistemic-liquidity layer where claims or kno
 - Security Kernel and Digital SCIFs
 - PlanForge DAGs and Intelligence Arbitrage
 - Claim Ledgers and Belief Revision
-- Spinoza Verification and Proof-Carrying Claims
-- Unified Adaptive Tribunal and Adversarial Review
+- Proof-Carrying Claims and Adversarial Review
+- Proof-Carrying Claims and Adversarial Review
 - Resource Economics and Token Budgets
 - Benchmark Ratchets and Anti-Goodhart Evidence
 - Artifact Steward Agents and Living Project Governance

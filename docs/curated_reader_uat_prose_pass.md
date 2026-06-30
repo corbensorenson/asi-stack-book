@@ -16,7 +16,7 @@ inside a `deferred_for_release` package with
 `spinoza-verification-and-proof-carrying-claims`. This pass curates the
 current source chapter for the reader-manuscript cycle only. It does not
 execute, reject, or authorize the future verification/adversarial-review merge,
-and it preserves the current 54-chapter manifest boundary.
+and it preserved the then-current 54-chapter manifest boundary.
 
 ## Reader Promise
 

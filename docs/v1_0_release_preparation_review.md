@@ -33,14 +33,14 @@ python3 scripts/build_audio_script.py --check
 Results:
 
 - Release profile validation passed.
-- Reader spine validation passed for 54 chapters, with minimum reader-spine
-  chapter length 1,963 words.
-- Reader evidence-boundary validation passed for 54 chapters.
+- Reader spine validation passed for 46 chapters, with minimum reader-spine
+  chapter length 2,042 words.
+- Reader evidence-boundary validation passed for 46 chapters.
 - Reader overlay validation now passes with 33 active operations and 33 applied
   operations. The reader overlay log is recorded separately in
   `docs/reader_overlay_pilot.md`.
-- Reader edition check passed for 54 chapters and 59 files; 275 live-only
-  sections would be removed, 60 reader scaffold terms would be humanized, and 33
+- Reader edition check passed for 46 chapters and 51 files; 234 live-only
+  sections would be removed, 58 reader scaffold terms would be humanized, and 33
   reader overlay operations would apply.
 - Reader format render check passed for target formats `html`, `epub`, and
   `docx` as a readiness check.
@@ -94,14 +94,14 @@ Results:
   full-PDF-layout blocker. EPUB has a metadata/source-spine probe but remains
   blocked until application/e-reader review happens; DOCX and PDF remain
   probe/spot-check artifacts only.
-- Audio script check passed for 52 script files generated for review.
+- Audio script check passed for 51 script files generated for review.
 - `docs/reader_continuity_review.md` records first manual decisions for the
   three medium-priority reader-continuity audit rows. This is a triage review,
   not a reader-release approval.
 - `docs/reader_chapter_review_matrix.md` records the manifest-synced
-  47-chapter reader-review queue: 47 `reviewed`, 0 `spot_checked`, 0
-  `not_started`, 20 active-overlay chapters, 47 no-immediate-action decisions,
-  3 companion-note candidates, 44 curated-manuscript candidates, and release
+  46-chapter reader-review queue: 46 `reviewed`, 0 `spot_checked`, 0
+  `not_started`, 20 active-overlay chapters, 46 no-immediate-action decisions,
+  3 companion-note candidates, 43 curated-manuscript candidates, and release
   blockers on every row until release records and artifact review exist.
 
 ## Current Release State
@@ -128,7 +128,7 @@ Results:
   They are reader-only semantic deltas, not a reviewed reader release.
 - The reader chapter review matrix is a release-control queue only. It preserves
   manifest chapter identity, current overlay counts, and review blockers; the
-  full 54-chapter generated-reader chapter-text review queue is complete, but
+  full 46-chapter generated-reader chapter-text review queue is complete, but
   the matrix is not a reader release record and does not make any artifact
   release-ready.
 - The reader format review matrix is also a release-control queue only. It
@@ -148,7 +148,7 @@ Results:
 
 1. A validated live-book candidate needs to be selected and tagged.
 2. The generated reader manuscript has release-grade chapter-text review records
-   for all 54 chapters, but every row still carries release-record or
+   for all 46 chapters, but every row still carries release-record or
    artifact-review blockers.
 3. Reader-only prose needs curated overlays or a future curated parallel
    derivative manuscript where generated stripping is not enough.

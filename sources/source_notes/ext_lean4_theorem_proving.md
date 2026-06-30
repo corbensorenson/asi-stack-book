@@ -38,7 +38,7 @@ Theorem Proving in Lean 4 belongs in the proof-envelope, Circle, Spinoza, and re
 
 - `executable-specifications-and-lean-proof-envelope` (Executable Specifications and Lean Proof Envelope)
 - `circle-calculus-and-proof-carrying-ai-contracts` (Circle Calculus and Proof-Carrying AI Contracts)
-- `spinoza-verification-and-proof-carrying-claims` (Spinoza Verification and Proof-Carrying Claims)
+- `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 
 ## Claims To Add Or Update

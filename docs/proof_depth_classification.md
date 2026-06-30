@@ -101,7 +101,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
-| `lean/AsiStackProofs/Tribunal.lean` | unified-adaptive-tribunal-and-adversarial-review | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |

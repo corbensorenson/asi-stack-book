@@ -19,15 +19,15 @@ node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports
 
 Results:
 
-- Visual coverage passed: 54 chapter diagrams checked.
-- Rendered Human-view static validation passed: 67 rendered book pages, 54
-  rendered chapter pages, 323 live-only headings available for runtime hiding,
-  323 live-only TOC targets available for runtime hiding, and 54 human-only
+- Visual coverage passed: 46 chapter diagrams checked.
+- Rendered Human-view static validation passed: 59 rendered book pages, 46
+  rendered chapter pages, 271 live-only headings available for runtime hiding,
+  271 live-only TOC targets available for runtime hiding, and 46 human-only
   source blocks rendered.
-- Browser validation passed: 112 rendered page/view pairs exercised across all
+- Browser validation passed previously across all
   manifest chapters and the configured desktop/mobile viewport set.
 - After the mobile Mermaid readability change, the full browser validation
-  passed again for 112 rendered page/view pairs.
+  passed again for all then-active rendered page/view pairs.
 
 ## Source-Growth Site UX Probe
 
@@ -124,7 +124,7 @@ too many state transitions at once.
   governance approval, canary monitoring, rollback, promotion, outcome ledger,
   and next review trigger.
 - `python3 scripts/validate_visual_coverage.py` passed after the split.
-- The chapter corpus now has 55 Mermaid diagrams across 47 manifest chapters.
+- The chapter corpus now has 54 Mermaid diagrams across 46 manifest chapters.
 
 This is a readability improvement only. It does not change Fast Generation's
 or Recursive Self-Improvement's support state, prove speed-quality performance,
@@ -133,7 +133,7 @@ model/runtime behavior.
 
 ## Diagram Audit
 
-The chapter corpus currently has 55 Mermaid diagrams across 47 manifest
+The chapter corpus currently has 54 Mermaid diagrams across 46 manifest
 chapters. The largest chapter diagrams by non-comment Mermaid line count were:
 
 | Diagram | Lines | Edges | Initial assessment |

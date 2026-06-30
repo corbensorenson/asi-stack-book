@@ -3982,7 +3982,7 @@
         },
         {
           "id": "spinoza-verification-and-proof-carrying-claims",
-          "title": "Spinoza Verification and Proof-Carrying Claims",
+          "title": "Proof-Carrying Claims and Adversarial Review",
           "file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
@@ -3992,7 +3992,9 @@
             "genesiscode",
             "coherence_exchange",
             "verification_bandwidth",
-            "treellm"
+            "treellm",
+            "uat",
+            "talos"
           ],
           "source_queue": {
             "primary": [
@@ -4002,15 +4004,17 @@
               "genesiscode",
               "coherence_exchange",
               "verification_bandwidth",
-              "treellm"
+              "treellm",
+              "uat",
+              "talos"
             ],
             "variants": [],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": []
           },
-          "problem": "The stack needs a way to move selected claims from generated prose toward auditable, proof-carrying objects.",
-          "insufficient": "Neural generation alone cannot guarantee semantic consistency, source grounding, or formal validity.",
-          "core_claim": "Spinoza-style verification should convert high-value claims into proof-carrying or justification-carrying artifacts with explicit tiers.",
+          "problem": "High-value claims and high-risk artifacts need a governed verification path that can choose proof, citation, procedure, replay, benchmark, or adversarial-review treatment without laundering failed, mismatched, or contested evidence into support.",
+          "insufficient": "Neural generation, one-pass self-critique, and informal review can produce plausible justification language without preserving proof scope, verifier result, evidence dossier, dissent, failed attempts, verdict constraints, or downgrade routes.",
+          "core_claim": "Selected claims and artifacts should move through proof-carrying, justification-carrying, or adversarial-review envelopes that record tier, interpretation mapping, evidence dossier, verifier or tribunal result, dissent, limitations, failed attempts, required actions, residuals, and ledger effects.",
           "claim_source_mappings": [
             {
               "source_id": "spinoza",
@@ -4082,95 +4086,7 @@
                 "sources/raw/google_docs/treellm.txt:184-210"
               ],
               "passage_review_note": "Reviewed local raw cache for the explicit traversable probabilistic DAG proposal, concept/question/relation nodes, weighted edges, multi-entry roots, convergent paths, fixed semantic-token path IDs and residual vectors, self-tokenizing bootstrap loop, exact-question-path trace framing, editable external DAG, multi-path traversal, cryptographically signed append-only DAG/log proposal, path assignment, and disambiguation-child handling; no TreeLLM implementation, measured compression ratio, benchmarked reasoning gain, verified token format, perfect grounding, or model-size/performance claim is promoted."
-            }
-          ],
-          "mechanism": [
-            "Separate heuristic proposal from symbolic or structured interrogation.",
-            "Attach formal interpretation mappings, proof bundles, or citation-backed dossiers.",
-            "Downgrade or escalate claims that cannot meet their required tier."
-          ],
-          "interfaces": [
-            "Claim ledger stores proof status.",
-            "GenesisCode and Lean provide formal hooks.",
-            "UAT provides adversarial review."
-          ],
-          "invariants": [
-            "Proof tier is explicit.",
-            "A justification artifact is required for promoted claims.",
-            "Unsupported claims remain marked speculative or blocked."
-          ],
-          "failure_modes": [
-            "Certified delusion.",
-            "Invalid formalization.",
-            "Justification artifact missing."
-          ],
-          "minimal_implementation": "A tiered proof-carrying claim schema with one non-philosophical invariant example.",
-          "beyond_state_of_art": "The mature version is a justification compiler for high-value claims. It does not make every statement formal. It decides which claims deserve stronger treatment, chooses the right justification type, records the interpretation mapping, runs the relevant verifier or review process, and writes the result back to the claim ledger without overpromoting the natural-language claim. In a Spinoza-style verifier, proof-carrying is a tiered workflow rather than a label. A claim can receive a formal proof, citation dossier, executable procedure, replay log, benchmark artifact, tribunal verdict, failed-attempt record, or downgrade route. The system can pass a narrow proof while leaving the broader prose claim unpromoted, or fail a verifier while preserving the failed attempt as evidence against future overclaiming.",
-          "codex_tests": [
-            {
-              "name": "Proof artifact presence test",
-              "implementation_status": "implemented",
-              "result_status": "passing via synthetic proof-carrying claim harness; no theorem-validity or verifier-quality claim"
             },
-            {
-              "name": "Tier assignment test",
-              "implementation_status": "implemented",
-              "result_status": "passing via synthetic proof-carrying claim harness; no open-domain tier assignment claim"
-            },
-            {
-              "name": "Formalization mismatch review",
-              "implementation_status": "implemented",
-              "result_status": "passing via synthetic proof-carrying claim harness mismatch fixture; no semantic-equivalence guarantee"
-            }
-          ],
-          "lean_module": "AsiStackProofs.ProofCarryingClaims",
-          "proof_targets": [
-            {
-              "tag": "lean:spinoza.proof_carrying.operational_invariant",
-              "module": "AsiStackProofs.ProofCarryingClaims",
-              "target": "A claim at a formal support tier carries a valid proof or justification artifact reference.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:spinoza.proof_carrying.failure_blocks_promotion",
-              "module": "AsiStackProofs.ProofCarryingClaims",
-              "target": "A failed verifier result downgrades or blocks the claim rather than promoting it.",
-              "status": "implemented"
-            }
-          ]
-        },
-        {
-          "id": "unified-adaptive-tribunal-and-adversarial-review",
-          "title": "Unified Adaptive Tribunal and Adversarial Review",
-          "file": "chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
-          "status": "conceptual",
-          "evidence_level": "argument",
-          "claim_label": "Design rationale",
-          "source_ids": [
-            "uat",
-            "spinoza",
-            "coherence_exchange",
-            "talos",
-            "verification_bandwidth"
-          ],
-          "source_queue": {
-            "primary": [
-              "uat"
-            ],
-            "supporting": [
-              "spinoza",
-              "coherence_exchange",
-              "talos",
-              "verification_bandwidth"
-            ],
-            "variants": [],
-            "connector_or_recovery": [],
-            "handoff_or_recovery_notes": []
-          },
-          "problem": "Complex claims and artifacts need adversarial review that is more structured than one model critique.",
-          "insufficient": "Single-pass self-review misses blind spots, evaluator drift, and consensus without evidence.",
-          "core_claim": "A tribunal layer should coordinate multiple reviewers, adversarial probes, consensus rules, and documented uncertainty.",
-          "claim_source_mappings": [
             {
               "source_id": "uat",
               "mapped_support": "Supports tribunal coordination through orthogonal priors, retrieval dossiers, atomic proposition states, bounded adversarial siege, rotating logic/citation/omission critiques, hard cycle caps, compression checks, SME checkpoints, and final sign-off.",
@@ -4186,32 +4102,6 @@
                 "sources/raw/google_docs/uat.txt:400-453"
               ],
               "passage_review_note": "Reviewed local raw cache for the UAT reference architecture as a human-in-the-loop SME force multiplier, retrieval-source-bound claims, orthogonal structural/retrieval/dialectical priors, raw fact dossiers, atomic proposition decomposition, verified/inferred/unsupported states, SME_REVIEW handling, bounded adversarial siege, red-team access limited to dossier and draft rather than original prompt, rotating logic/citation/omission attack vectors, double-lock stability checks, hard cycle caps, atomic compression preserving verified proposition counts, correlated-hallucination, decomposition-loss, plateau-trapping, tool-fragility limits, adjudication pass, and final sign-off; no local multi-reviewer run, reviewer-independence validation, threshold reproduction, or tribunal-quality result is promoted."
-            },
-            {
-              "source_id": "spinoza",
-              "mapped_support": "Supports tribunal consequences through tiered claim support, verifier separation, contradiction handling, and downgrade/block behavior for claims that fail required justification.",
-              "limits": "Does not prove reviewer independence, adversarial-probe quality, or verdict correctness.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/spinoza.txt:327-389",
-                "sources/raw/google_docs/spinoza.txt:402-445",
-                "sources/raw/google_docs/spinoza.txt:757-799",
-                "sources/raw/google_docs/spinoza.txt:1013-1023",
-                "sources/raw/google_docs/spinoza.txt:1496-1506"
-              ],
-              "passage_review_note": "Reviewed local raw cache for neural-proposer/symbolic-verifier/belief-maintainer separation, proposal-only learned models, proof/refute/unknown verifier outcomes, certified/supported/speculative tiers, bounded contradiction revision, dependency and unsat-core tracing, entrenchment-scored retraction, proof invalidation, logged revision outcomes, object-level tiers, downgrade to in-revision or lower tiers, citation-backed interpretation mappings, reproducible procedure logs, unresolved ambiguity output fields, and audit trails populated from System-2 artifacts; no reviewer independence, adversarial-probe quality, consensus quality, human adjudication quality, or verdict-correctness result is promoted."
-            },
-            {
-              "source_id": "coherence_exchange",
-              "mapped_support": "Supports governance-visible review paths through verification supply chains, contestability, fork, exit, audit, and review-market framing.",
-              "limits": "Speculative governance and exchange language is not treated as tested institutional design or implementation evidence.",
-              "passage_refs": [
-                "sources/source_notes/coherence_exchange.md:11-20",
-                "sources/source_notes/coherence_exchange.md:22-26",
-                "sources/source_notes/coherence_exchange.md:52-57"
-              ],
-              "passage_review_note": "Reviewed source note only for Coherence Exchange context: Verified Epistemic Units, verification supply chains, intelligence arbitrage, fork/exit/audit, contestability, value/accounting, and governance-interface framing; speculative economics, institutional design, security, and implementation claims are not promoted.",
-              "passage_review_state": "reviewed"
             },
             {
               "source_id": "talos",
@@ -4230,44 +4120,58 @@
                 "sources/raw/google_docs/talos.txt:6507-6535"
               ],
               "passage_review_note": "Reviewed local raw cache for Talos as a deterministic, auditable, job-based cognitive-manufacturing model, conversion of untrusted generative outputs into structured evidence-bound uncertainty-aware artifacts, typed atomic claims, immutable content-addressed evidence, verified/uncertain/refuted claim states, fixed job pipelines, raw prompt shielding from verification agents, machine-readable claim graphs, evidence-set world boundaries, independent adversarial agents seeking contradictions/counterexamples/missing dependencies, threshold failure and retrieval re-entry, proof bundles, logged/hashed/auditable I/O, replay/re-verification/evidence audit, human adjudication in job runs, residual-risk logging, and explicit cost/certainty tradeoffs; no Talos tribunal pipeline, security result, replay log, benchmark, or proof bundle has been reproduced."
-            },
-            {
-              "source_id": "verification_bandwidth",
-              "mapped_support": "Supports tribunal escalation when verification requires more than a larger context window, especially for contradiction pressure, summary loss, and effective verification-workspace limits.",
-              "limits": "Conceptual/theoretical support only here; no contradiction-rate or adequacy benchmark has been executed.",
-              "passage_review_state": "reviewed",
-              "passage_refs": [
-                "sources/raw/google_docs/verification_bandwidth.txt:6-13",
-                "sources/raw/google_docs/verification_bandwidth.txt:30-42",
-                "sources/raw/google_docs/verification_bandwidth.txt:68-83",
-                "sources/raw/google_docs/verification_bandwidth.txt:92-93"
-              ],
-              "passage_review_note": "Reviewed local raw cache for the distinction between local generation and global relational verification, pairwise grinding over semantic units, Effective Verification Workspace/Two-Body Limit, lossy compression when joint units exceed the workspace, quadratic pairwise verification cost, fidelity/scale tradeoff in tree/DAG summary verification, the proposed Constraint Satisfaction Test with explicit final grinding step, Logical Contradiction Rate metric, and context as the maximum scope of rigorous constraint verification; no contradiction-rate experiment, adequacy benchmark, workspace measurement, or mechanized theorem is promoted."
             }
           ],
           "mechanism": [
-            "Assign reviewer roles and critique objectives.",
-            "Use adversarial checks for high-risk claims.",
-            "Record dissent, unresolved issues, and human-adjudication points."
+            "Select a verification route for each high-value claim or high-risk artifact: formal proof, citation dossier, executable procedure, replay log, benchmark artifact, tribunal review, downgrade, block, or escalation.",
+            "Record interpretation mapping, justification artifact, verifier result, failed attempts, limitations, semantic adequacy, and support-state effect before any stronger claim standing is allowed.",
+            "Escalate contested, high-risk, or mismatched cases into tribunal records with bounded dossiers, reviewer roles, adversarial probes, dissent, verdict constraints, and required actions.",
+            "Write bounded effects back to the claim ledger and execution layers: no change, downgrade, block, revise, scoped accept, dispatch blocker, authority narrowing, human sign-off, or residual work."
           ],
           "interfaces": [
-            "Spinoza consumes tribunal results.",
-            "Planning escalates risky nodes to tribunal.",
-            "Evidence records reviewer outcomes."
+            "Claim ledgers supply stable claim identity and receive bounded verification outcomes.",
+            "VCM and semantic context cells supply source and evidence objects without making context availability equal verification success.",
+            "Lean, GenesisCode, Circle-style proof contracts, procedure logs, replay logs, and benchmark artifacts supply formal or executable evidence when appropriate.",
+            "UAT-style tribunal review handles contested, high-risk, or mismatched cases.",
+            "Planning and execution consume verification outcomes as constraints, blockers, required actions, or residuals."
           ],
           "invariants": [
-            "Dissent is preserved.",
-            "Consensus requires evidence.",
-            "High-risk reviews are reproducible enough to audit."
+            "Proof tier is explicit.",
+            "Formal, citation, and procedure tiers require matching artifacts.",
+            "Failed, timed-out, or mismatched verification blocks promotion or routes to downgrade, no change, block, or escalation.",
+            "Narrow passes cannot promote broader natural-language claims without semantic adequacy review.",
+            "Dissent remains visible.",
+            "High-risk artifacts cannot bypass required tribunal review.",
+            "Prior review over unchanged evidence cannot quietly reverse a rejection into acceptance."
           ],
           "failure_modes": [
+            "Certified delusion.",
+            "Invalid formalization.",
+            "Justification artifact missing.",
+            "Theorem laundering.",
             "Reviewer collusion.",
             "Consensus theater.",
-            "Critique without action."
+            "Critique without action.",
+            "Repeated-review laundering."
           ],
-          "minimal_implementation": "A tribunal protocol for claim/artifact review with reviewer roles and output schema.",
-          "beyond_state_of_art": "The mature version is a review operating system for contested claims and high-risk artifacts. It does not simply ask several models for opinions. It creates a bounded dossier, assigns role-separated reviewers, runs adversarial probes, records evidence-linked findings, preserves dissent, applies cycle caps, and converts verdicts into machine-readable constraints. At tribunal scale, review is expensive but actionable. It can accept a claim within a scope, require a source fetch, downgrade a claim, block dispatch, narrow authority, demand a human sign-off, preserve dissent, or create residual work. Re-running the tribunal over unchanged evidence cannot quietly turn rejection into acceptance; the unchanged-evidence guard and prior review refs make that laundering visible.",
+          "minimal_implementation": "A proof-carrying-claim schema and tribunal-review schema with synthetic valid and expected-invalid fixtures for narrow formal passes, citation no-change, mismatch escalation, missing artifacts, failed verification, high-risk review, dissent, and prior-review laundering.",
+          "beyond_state_of_art": "The product-level endpoint is a verification operating system that routes each high-value claim or high-risk artifact to the cheapest adequate verifier or review process, records interpretation mappings, failed attempts, timeouts, dissent, required actions, and non-claims, then writes bounded effects back to claim ledgers and execution constraints without confusing artifact validity, verdict scope, semantic adequacy, or support-state movement.",
           "codex_tests": [
+            {
+              "name": "Proof artifact presence test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic proof-carrying claim harness; no theorem-validity or verifier-quality claim"
+            },
+            {
+              "name": "Tier assignment test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic proof-carrying claim harness; no open-domain tier assignment claim"
+            },
+            {
+              "name": "Formalization mismatch review",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic proof-carrying claim harness mismatch fixture; no semantic-equivalence guarantee"
+            },
             {
               "name": "Adversarial review coverage test",
               "implementation_status": "implemented",
@@ -4284,8 +4188,20 @@
               "result_status": "passing via synthetic tribunal review harness; no deployed tribunal or runtime-review claim"
             }
           ],
-          "lean_module": "AsiStackProofs.Tribunal",
+          "lean_module": "AsiStackProofs.ProofCarryingClaims; AsiStackProofs.Tribunal",
           "proof_targets": [
+            {
+              "tag": "lean:spinoza.proof_carrying.operational_invariant",
+              "module": "AsiStackProofs.ProofCarryingClaims",
+              "target": "A claim at a formal support tier carries a valid proof or justification artifact reference.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:spinoza.proof_carrying.failure_blocks_promotion",
+              "module": "AsiStackProofs.ProofCarryingClaims",
+              "target": "A failed verifier result downgrades or blocks the claim rather than promoting it.",
+              "status": "implemented"
+            },
             {
               "tag": "lean:tribunal.review.operational_invariant",
               "module": "AsiStackProofs.Tribunal",
@@ -5322,14 +5238,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },

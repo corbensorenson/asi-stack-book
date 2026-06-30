@@ -110,7 +110,7 @@ behavior, cross-reference behavior, or application-specific e-reader layout.
 
 ## Broader HTML Navigation And Layout Probe
 
-After the 54-chapter generated-reader chapter-text review queue was completed,
+After the generated-reader chapter-text review queue was completed,
 the local HTML, EPUB, and DOCX reader artifacts were regenerated from the
 current source:
 

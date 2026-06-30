@@ -1548,11 +1548,11 @@
     },
     {
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
-      "title": "Spinoza Verification and Proof-Carrying Claims",
+      "title": "Proof-Carrying Claims and Adversarial Review",
       "file": "editions/reader_manuscript/v1_0/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
       "reconciliation_status": "drafting",
       "generated_baseline_ref": "build/reader_edition/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
-      "live_source_ref": "chapters/spinoza-verification-and-proof-carrying-claims.qmd@3a0b64e5b",
+      "live_source_ref": "chapters/spinoza-verification-and-proof-carrying-claims.qmd@verification-review-merge",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#spinoza-verification-and-proof-carrying-claims.core",
       "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#spinoza-verification-and-proof-carrying-claims",
       "curation_scope": [
@@ -1564,52 +1564,15 @@
         "sentence-level voice",
         "chapter compression"
       ],
-      "divergence_summary": "First curated reader prose pass reframes Spinoza around proof-carrying claims as justification envelopes: requested support tier, interpretation mapping, justification type, artifact validity, verifier result, failed-attempt memory, claim-validity effect, residual route, and non-claims; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
-      "meaning_preservation_checks": [
-        "support-state boundary preserved: chapter core claim remains argument",
-        "source boundary preserved for spinoza, genesiscode, coherence_exchange, verification_bandwidth, treellm, ext_proof_carrying_code_1997, and ext_lean4_theorem_proving",
-        "proof/test boundary preserved: synthetic proof-carrying-claim harness and finite Lean predicates only",
-        "no theorem-validity, verifier-quality, citation-accuracy, semantic-equivalence, open-domain-autoformalization, proof-generation, source-interpretation, runtime, or whole-system-epistemic-correctness claim added",
-        "implementation horizon preserved: tiered proof-carrying claim schema now, justification compiler as mature endpoint only",
-        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with unified-adaptive-tribunal-and-adversarial-review",
-        "release blockers preserved until reader reconciliation, format review, and edition release record exist"
-      ],
-      "release_blockers": [
-        "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
-      ],
-      "canonical_change_required": false,
-      "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_spinoza_prose_pass.md. This is a drafting-only reader derivative, not a release-reviewed chapter, not equal authority with the live book, and not a verification/adversarial-review consolidation decision."
-    },
-    {
-      "chapter_id": "unified-adaptive-tribunal-and-adversarial-review",
-      "title": "Unified Adaptive Tribunal and Adversarial Review",
-      "file": "editions/reader_manuscript/v1_0/chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
-      "reconciliation_status": "drafting",
-      "generated_baseline_ref": "build/reader_edition/chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
-      "live_source_ref": "chapters/unified-adaptive-tribunal-and-adversarial-review.qmd@89c8d600d",
-      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#unified-adaptive-tribunal-and-adversarial-review.core",
-      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#unified-adaptive-tribunal-and-adversarial-review",
-      "curation_scope": [
-        "pacing",
-        "chapter openings and closings",
-        "paragraph ordering",
-        "section flow",
-        "transition prose",
-        "sentence-level voice",
-        "chapter compression"
-      ],
-      "divergence_summary": "First curated reader prose pass reframes UAT around tribunal review as bounded escalation whose verdicts must change ledger or execution state: dossier boundaries, role-separated reviewers, adversarial probes, evidence-linked findings, dissent, unchanged-evidence guards, required actions, constraint effects, and human adjudication hooks; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
+      "divergence_summary": "Merged curated reader prose pass after verification/adversarial-review consolidation: the active reader chapter now combines proof-carrying claim tiers, justification envelopes, verifier results, failed-attempt memory, tribunal dossiers, adversarial probes, dissent, required actions, ledger writeback, and non-claims while preserving support state, source boundaries, proof/test status, implementation horizons, and release blockers.",
       "meaning_preservation_checks": [
         "support-state boundary preserved: chapter core claim remains a Design rationale at argument support",
-        "source boundary preserved for uat, spinoza, coherence_exchange, talos, verification_bandwidth, and ext_contestable_ai_design_2022",
-        "proof/test boundary preserved: synthetic tribunal-review harness and finite Lean predicates only",
-        "no reviewer-independence, adversarial-probe-quality, consensus-quality, verdict-correctness, human-adjudication-quality, tribunal-quality, deployed-contestability, institutional-adequacy, source-interpretation, Talos-runtime, Spinoza-verifier, verification-bandwidth-benchmark, Coherence-Exchange-implementation, multi-reviewer-UAT-pipeline, or support-state movement claim added",
-        "implementation horizon preserved: tribunal-review schema and fixture discipline now, operating system for contested claims as mature endpoint only",
-        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with spinoza-verification-and-proof-carrying-claims",
-        "release blockers preserved until reader reconciliation, format review, and edition release record exist"
+        "source boundary preserved for spinoza, genesiscode, coherence_exchange, verification_bandwidth, treellm, uat, talos, ext_proof_carrying_code_1997, ext_lean4_theorem_proving, and ext_contestable_ai_design_2022",
+        "proof/test boundary preserved: synthetic proof-carrying-claim and tribunal-review harnesses plus finite Lean predicates only",
+        "no theorem-validity, verifier-quality, citation-accuracy, semantic-equivalence, open-domain-autoformalization, proof-generation, reviewer-independence, adversarial-probe-quality, consensus-quality, verdict-correctness, human-adjudication-quality, tribunal-quality, deployed-contestability, institutional-adequacy, source-interpretation, Talos-runtime, Spinoza-verifier, verification-bandwidth-benchmark, Coherence-Exchange-implementation, multi-reviewer-UAT-pipeline, runtime, whole-system-epistemic-correctness, or support-state movement claim added",
+        "implementation horizon preserved: proof-carrying-claim and tribunal-review schemas now, verification operating system as mature endpoint only",
+        "executed consolidation caveat preserved: unified-adaptive-tribunal-and-adversarial-review is archived as historical reader/source lineage, not a live reader chapter",
+        "release blocker status preserved until reader reconciliation, format review, and edition release record exist"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1618,7 +1581,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_uat_prose_pass.md. This is a drafting-only reader derivative, not a release-reviewed chapter, not equal authority with the live book, and not a verification/adversarial-review consolidation decision."
+      "review_notes": "Merged drafting-only curated reader prose now targets the executed verification/adversarial-review destination. This is not a release-reviewed chapter, not equal authority with the live book, and not a support-state, proof/test, reviewer-independence, verdict-correctness, runtime, deployed-review, or tribunal-quality claim."
     },
     {
       "chapter_id": "routing-heads-and-specialist-cores",

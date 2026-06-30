@@ -15,7 +15,7 @@ inside a `deferred_for_release` package with
 `governance-rights-fork-exit-and-audit`. This pass curates the current source
 chapter for the reader-manuscript cycle only. It does not execute, reject, or
 authorize the future contestable-governance merge, and it preserves the
-current 54-chapter manifest boundary.
+then-current 54-chapter manifest boundary.
 
 ## Reader Promise
 

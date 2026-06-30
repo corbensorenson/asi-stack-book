@@ -207,7 +207,7 @@ DECISION_REVIEW_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, and static context ABI merge",
+    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, and verification/adversarial-review merge",
     "Default URL Policy",
     "Preserve every retired source chapter's public URL",
     "Pilot Defaults",
@@ -218,7 +218,8 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/moecot-runtime-and-multi-core-orchestration.html",
     "/chapters/simulation-fidelity-and-physical-constraints.html",
     "/chapters/semantic-pages-context-cells-and-certificates.html",
-    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, and static context ABI execution",
+    "/chapters/unified-adaptive-tribunal-and-adversarial-review.html",
+    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, and verification/adversarial-review execution",
 )
 EXTERNAL_REVIEW_PACKET_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation External Review Packet",
@@ -241,7 +242,7 @@ ROADMAP_REQUIRED_FRAGMENTS = (
     "Decision from the 2026-06-29 consolidation review",
     "The right response is re-consolidation into chapter-owning artifacts",
     "roughly 44 deeper chapters",
-    "active shape at 47 chapters",
+    "current 46-chapter manifest",
     "`mathematical-and-search-substrates`",
     "`project-theseus-as-report-first-implementation-reference`",
     "`semantic-representation-and-tree-structured-models`",

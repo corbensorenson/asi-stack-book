@@ -40,7 +40,7 @@ TreeLLM proposes replacing opaque memorized knowledge with an explicit, traversa
 
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
 - `verification-bandwidth-and-context-adequacy` (Verification Bandwidth and Context Adequacy)
-- `spinoza-verification-and-proof-carrying-claims` (Spinoza Verification and Proof-Carrying Claims)
+- `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
 - `semantic-representation-and-tree-structured-models` (Semantic Representation and Tree-Structured Models)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
 

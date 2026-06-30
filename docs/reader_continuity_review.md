@@ -4,13 +4,13 @@ Status: manual Phase 2 review log for the generated v1.0 reader manuscript.
 
 Last updated: 2026-06-28
 
-This note records manual decisions made after reading the medium-priority rows from `docs/reader_continuity_audit.md`. It is not a full 54-chapter continuity review, not a reader release, and not a claim that any ebook, document, PDF, or audio artifact exists.
+This note records manual decisions made after reading medium-priority rows from `docs/reader_continuity_audit.md`. It is not a full 46-chapter continuity review, not a reader release, and not a claim that any ebook, document, PDF, or audio artifact exists.
 
 ## Source State
 
 - Generated reader source: `build/reader_edition/`
 - Reader overlay set: 33 active and 33 applied operations
-- Reader continuity audit: 54 chapters, 121,727 reader words, 0 high-priority heuristic rows, 3 medium-priority heuristic rows, 0 table rows, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
+- Reader continuity audit: 46 chapters, 109,659 reader words, 2 high-priority heuristic rows, 3 medium-priority heuristic rows, 15 table rows, 54 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
 - Live source of truth: Quarto chapters plus `book_structure.json`, `docs/book_outline.md`, Appendix C, source appendices, proof/test records, implementation horizons, and release records
 
 ## Decision Rules

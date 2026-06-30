@@ -38,7 +38,7 @@ This source is a governance comparator for the book's treatment of contestabilit
 
 - `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `governance-rights-fork-exit-and-audit` (Governance Rights, Fork, Exit, and Audit)
-- `unified-adaptive-tribunal-and-adversarial-review` (Unified Adaptive Tribunal and Adversarial Review)
+- `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
 
 ## Claims To Add Or Update
 

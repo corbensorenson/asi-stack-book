@@ -43,7 +43,7 @@ GenesisCode frames AI-assisted programming as an evidence-carrying software syst
 - `system-boundaries-and-authority` (System Boundaries and Authority)
 - `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
-- `spinoza-verification-and-proof-carrying-claims` (Spinoza Verification and Proof-Carrying Claims)
+- `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
 - `labor-os-and-typed-jobs` (Labor OS and Typed Jobs)
 - `artifact-graphs-audit-logs-and-replay` (Artifact Graphs, Audit Logs, and Replay)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)

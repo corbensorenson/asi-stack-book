@@ -50,7 +50,7 @@ not approve the HTML, EPUB, DOCX, PDF, or audio outputs.
 
 ## Residuals
 
-- The current 47 active chapters still need format-level artifact review before
+- The current 46 active chapters still need format-level artifact review before
   any reader release can be approved.
 - The reviewed chapters still need artifact layout/navigation review in the
   intended release formats before they can be listed in a release record.

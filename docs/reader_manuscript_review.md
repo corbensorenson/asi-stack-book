@@ -15,14 +15,14 @@ python3 scripts/build_reader_edition.py
 Generated workspace:
 
 - `build/reader_edition/`
-- 54 chapters
-- 59 generated files
+- 46 chapters
+- 51 generated files
 - target formats listed by profile: HTML, EPUB, PDF, DOCX
-- 275 live-only sections removed
-- 54 human-only bridges unwrapped
-- 54 raw core-claim markers removed
+- 234 live-only sections removed
+- 46 human-only bridges unwrapped
+- 46 raw core-claim markers removed
 - 50 repeated support-boilerplate passages humanized
-- 60 reader scaffold terms humanized
+- 58 reader scaffold terms humanized
 - 33 active reader-overlay operations applied
 
 Generated review files inspected:
@@ -78,7 +78,7 @@ Representative generated chapters spot-read:
 - The Labor OS reader overlay converts the typed-job lifecycle-state table into narrative prose while keeping the canonical AI/research lifecycle matrix in the live source.
 - The Circle Contracts reader overlays convert the proof-receipt lifecycle and mature proof-contract transport sections into narrative prose while keeping the canonical AI/research receipt-state matrix and target transport checklist in the live source.
 - The Executable Specifications reader overlay converts the mature proof-envelope target checklist into narrative prose while keeping the canonical AI/research proof/spec registry and semantic-adequacy requirements in the live source.
-- Human Reading Path bridges survive as ordinary prose, and reader-spine validation confirms all 54 chapters preserve Handoff continuity.
+- Human Reading Path bridges survive as ordinary prose, and reader-spine validation confirms all 46 chapters preserve Handoff continuity.
 - Raw core-claim markers and repeated support boilerplate are stripped or humanized while the evidence boundary remains visible in the Core Claim prose.
 - Source crosswalks, Codex test plans, drafting guardrails, and most live/research scaffolding are removed from the reader source.
 - The reader delta workflow is in the correct shape: tracked overlays are the editable reader-delta source; generated reader files and generated delta reports are disposable review output.
@@ -91,7 +91,7 @@ The current generated reader source now has a deterministic heuristic audit at `
 python3 scripts/audit_reader_continuity.py --write
 ```
 
-The audit currently measures 47 reader chapters, 52 generated files, 111,779 reader words, 33 active and applied reader-overlay operations, 11 table rows, 55 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 1 high-priority and 3 medium-priority heuristic review chapters; the remaining queue is continuity review, not release approval.
+The audit currently measures 46 reader chapters, 51 generated files, 109,659 reader words, 33 active and applied reader-overlay operations, 15 table rows, 54 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 2 high-priority and 3 medium-priority heuristic review chapters; the remaining queue is continuity review, not release approval.
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 
@@ -116,7 +116,7 @@ python3 scripts/sync_reader_chapter_review_matrix.py --write
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
 
-The current matrix records 54 manifest-aligned chapter rows: 54 `reviewed`
+The current matrix records 46 manifest-aligned chapter rows: 46 `reviewed`
 rows from `docs/reader_opening_full_review_pass.md`,
 `docs/reader_boundary_full_review_pass.md`, and
 `docs/reader_normative_full_review_pass.md`, and
@@ -131,8 +131,8 @@ rows from `docs/reader_opening_full_review_pass.md`,
 `docs/reader_part_iii_iv_proof_bridge_full_review_pass.md`, and
 `docs/reader_part_iv_evidence_governance_full_review_pass.md`, and
 `docs/reader_part_iv_completion_full_review_pass.md`. It has 0 `spot_checked`
-rows, 0 `not_started` rows, 20 chapters with active reader overlays, 54 no-immediate-action decisions, 3 companion-note
-candidates, and 1 curated-manuscript candidate. The reviewed rows have cleared
+rows, 0 `not_started` rows, 20 chapters with active reader overlays, 46 no-immediate-action decisions, 3 companion-note
+candidates, and 43 curated-manuscript candidates. The reviewed rows have cleared
 the `full_chapter_review_not_recorded` blocker, but all rows still retain
 release blockers until reader release records and format artifact review exist.
 The matrix is a chapter-text review queue and release-control surface, not a
@@ -140,7 +140,7 @@ reader release or format-artifact approval.
 
 ## Residuals
 
-- The generated manuscript now has full chapter-text review records for all 54 chapters. That completes the generated-reader chapter-text queue, but it does not create a tagged reader release, a curated parallel reader manuscript, or reviewed format artifacts.
+- The generated manuscript now has full chapter-text review records for all 46 chapters. That completes the generated-reader chapter-text queue, but it does not create a tagged reader release, a curated parallel reader manuscript, or reviewed format artifacts.
 - The prose is still derived from the live AI/research book. It reads better than the live scaffold, but many chapters still carry technical interfaces, minimum-field lists, Mermaid diagrams, and implementation language that may need compression, rephrasing, or companion-note treatment for relaxed reading.
 - Some reader chapters still contain useful but dense schema-like material. The current three companion-note candidates now have routing decisions in `docs/reader_companion_note_routing_review.md` and `editions/reader_manuscript/v1_0/companion_note_routing.json`, plus drafting companion notes under `editions/reader_manuscript/v1_0/companion_notes/`; a final human edition still needs release review before any generated companion notes, e-reader notes, or audio treatment can be approved.
 - The original baseline had zero active overlay operations. That baseline has been superseded by the opening-chapter, Efficient ASI, Human Intent, System Boundaries, Evidence States, Personal Compute Hives, Command Contracts, Planning, Verification Bandwidth, Runtime Adapters, Labor OS, Circle Contracts, Generate-Verify-Repair, Fast Generation, RankFold/NeuralFold, Mathematical and Search Substrates, Policy Optimization, Artifact Steward Agents, Executable Specifications, and Semantic Representation reader-overlay operations in `docs/reader_overlay_pilot.md`; broader reader-only prose pacing, example insertion, and section-flow edits remain open.

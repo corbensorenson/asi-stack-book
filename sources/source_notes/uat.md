@@ -45,7 +45,7 @@ The Unified Adaptive Tribunal is a protocol for turning multi-model drafting int
 - `evidence-states-and-claim-discipline` (Evidence States and Claim Discipline)
 - `moral-uncertainty-and-value-conflict` (Moral Uncertainty, Value Conflict, and Contestable Governance)
 - `claim-ledgers-and-belief-revision` (Claim Ledgers and Belief Revision)
-- `unified-adaptive-tribunal-and-adversarial-review` (Unified Adaptive Tribunal and Adversarial Review)
+- `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 
 ## Claims To Add Or Update
