@@ -2,15 +2,15 @@
 Curated reader manuscript draft.
 chapter_id: intent-to-execution-contracts
 generated_baseline_ref: build/reader_edition/chapters/intent-to-execution-contracts.qmd
-live_source_ref: chapters/intent-to-execution-contracts.qmd@1ae9f1601
+live_source_ref: chapters/intent-to-execution-contracts.qmd@post-intent-contracts-merge
 This file is a reader-prose derivative only. Preserve claim meaning,
 support-state boundaries, source boundaries, proof/test status,
 implementation horizons, and release blockers.
 -->
 
-# Intent-to-Execution Contracts
+# Command Contracts: From Intent to Executable Work
 
-A response is not execution.
+A response is not execution, and a prompt is not permission.
 
 Part I built the boundaries: authority, evidence, agency, value conflict,
 governance rights, stable capability identity, rollback, security, and
@@ -20,19 +20,21 @@ is allowed, what evidence is needed, which tools may be used, what artifact
 would count as success, and when the right answer is to stop.
 
 That movement from request to work is too important to leave inside a fluent
-answer. The ASI Stack inserts an intent-to-execution contract between human
+answer. The ASI Stack inserts a command contract between accepted human
 purpose and runtime action. The contract gives the work an address. It says
 what the system understood, what it is allowed to try, what it must not do,
 what would count as satisfaction, which side effects require approval, which
 artifacts must be produced, and which residuals remain if the work cannot
 continue.
 
-The throughline is simple: intent has to survive the trip to execution.
+The throughline is simple: ordinary language can begin the work, but explicit
+fields have to govern the work.
 
 ## Problem
 
-Human goals need a typed path into execution that preserves requirements,
-artifacts, verification, deployment, and feedback.
+Accepted human intent needs a typed command contract whose meaning, authority,
+artifacts, verification, failure behavior, and receipts remain inspectable
+from intake through delivery.
 
 A human request usually starts as ordinary language. Ordinary language is rich
 enough to express purpose, but too loose to authorize a governed runtime. A
@@ -41,10 +43,10 @@ ambiguous permissions, hidden assumptions, and unstated acceptance criteria.
 If the system moves directly from that request to a model response or tool
 call, it has already blurred purpose, authorization, means, and acceptance.
 
-The intent-to-execution contract separates those pieces. Desire is not
-authorization. Authorization is not permission to use every means. Producing a
-useful artifact is not the same as satisfying the contract. A successful
-subtask is not necessarily a successful parent request.
+The command contract separates those pieces. Desire is not authorization.
+Authorization is not permission to use every means. Producing a useful
+artifact is not the same as satisfying the contract. A successful subtask is
+not necessarily a successful parent request.
 
 VIEA supplies the execution spine: intent becomes command contracts, durable
 artifacts, routed work, verified outputs, runtime execution, feedback, and
@@ -56,9 +58,9 @@ context for compact orchestration, specialist lanes, readiness gates, ledgers,
 replay, and handoff, but its code, logs, benchmark artifacts, and release
 records have not been imported or reproduced here.
 
-The engineering result is a chain, not a paragraph: intent contract, command
-contract, plan graph, typed jobs, authority transitions, runtime action,
-artifact, verification record, feedback, and residuals.
+The engineering result is a chain, not a paragraph: intent receipt, command
+contract, semantic fields, plan graph, typed jobs, authority transitions,
+runtime action, artifact, verification record, feedback, and residuals.
 
 ## Why existing approaches are insufficient
 
@@ -92,8 +94,9 @@ should not invent permissive defaults. It should ask, narrow, defer, or stop.
 
 ## Core Claim
 
-Governed execution transforms intent into explicit contracts before any tool
-or runtime action occurs.
+Governed work should pass through explicit command contracts that bind intent,
+semantic fields, authority, artifacts, verification, failure behavior,
+execution receipts, and residuals before tools or runtimes act.
 
 This remains an architectural argument. The live AI/research chapter records
 the claim at `argument` support. The source notes, schemas, fixtures,
@@ -108,6 +111,12 @@ that governed execution should not begin until intent has been converted into
 a contract whose fields can be inspected, lowered, blocked, verified, and
 revisited.
 
+The folded command-interface claim becomes a subclaim here: objective,
+context, constraints, procedure, output, verification, failure behavior, field
+provenance, field confidence, authority basis, re-contract points, and
+dispatch blockers need to be explicit before a later layer may treat the
+request as executable work.
+
 ## Mechanism
 
 The intent-to-execution layer turns a request into a trace.
@@ -118,13 +127,16 @@ boundaries, acceptance criteria, evidence requirements, escalation conditions,
 stop conditions, open ambiguities, bounded defaults, re-contract triggers, and
 non-claims.
 
-The command contract narrows that intent into operational language. The plan
-graph decomposes the command. Typed jobs inherit the relevant constraints.
-Authority transitions say which side effects are allowed, denied, expired, or
-pending approval. Runtime adapters may act only when the authority gate
-allows them. Artifacts point back to the parent intent. Verification records
-decide whether local outputs satisfy the relevant criteria. Feedback updates
-claims, regressions, tools, and residuals.
+The command contract narrows that intent into operational language. It names
+role, objective, context, constraints, allowed means, forbidden means, output,
+verification, failure behavior, authority, approvals, expected artifacts,
+feedback route, re-contract points, dispatch blockers, and non-claims. The
+plan graph decomposes the command. Typed jobs inherit the relevant
+constraints. Authority transitions say which side effects are allowed, denied,
+expired, or pending approval. Runtime adapters may act only when the authority
+gate allows them. Artifacts point back to the parent intent. Verification
+records decide whether local outputs satisfy the relevant criteria. Feedback
+updates claims, regressions, tools, and residuals.
 
 ```{mermaid}
 flowchart LR
@@ -151,6 +163,13 @@ budget, the correct move is re-contract, escalation, deferral, or refusal.
 Helpful overrun becomes a failure mode. The system may predict that the human
 would appreciate extra work, but prediction is not authority. Extra scope has
 to become a new contract request.
+
+The command fields also carry provenance. A confirmed field can support
+planning. A policy-imposed field can constrain planning but cannot broaden
+authority. A source-derived field must stay inside its source limits. A
+defaulted field needs a scope and re-contract trigger. An inferred field can
+help a draft, but it cannot authorize side effects. A missing field blocks
+dispatch or narrows the response to clarification.
 
 ## Interfaces
 
@@ -184,6 +203,14 @@ executable units. Authority transitions control side effects. Runtime adapters
 act only inside approved authority. Verification records compare artifacts
 against acceptance criteria. Evidence ledgers record satisfaction, failure,
 repair, and residuals.
+
+Command contracts move through pre-execution validation states. Draft
+contracts cannot dispatch. Field-complete contracts are ready for review, not
+execution. Conflict-detected contracts produce residuals or clarification.
+Authority-inferred contracts stay draft-only or return to the human boundary.
+Dispatch-blocked contracts wait until output, verification, failure,
+approval, and authority fields are concrete. Only validated-for-planning
+contracts may lower into a plan graph.
 
 Authority deltas are part of the interface. Intent may authorize a goal.
 Command contracts narrow the means. Plans allocate tasks. Jobs request tools.
@@ -286,22 +313,21 @@ criteria.
 
 ## Summary
 
-Intent-to-Execution Contracts make the first operational handoff in Part II.
+Command Contracts make the first operational handoff in Part II.
 
-They turn human purpose into a traceable chain of intent, command, plan, job,
-authority, artifact, verification, feedback, and residuals. The point is not
-paperwork. The point is continuity: requirements, authority, artifacts, and
-evidence have to survive the trip from purpose to action.
+They turn human purpose into a traceable chain of intent, semantic fields,
+command, plan, job, authority, artifact, verification, feedback, and
+residuals. The point is not paperwork. The point is continuity: requirements,
+authority, artifacts, and evidence have to survive the trip from purpose to
+action.
 
 A downstream layer should never have to guess whether it is allowed to act. If
 it has to guess, the trace should stop, ask, narrow, or re-contract.
 
 ## Handoff
 
-Intent contracts preserve purpose, authority, and residuals across the first
-translation from human request to governed work. That translation has to
-become compact enough for machines to validate without turning language into
-hidden permission. Command Contracts and Semantic Interfaces follows by
-supplying the operational language: fields, defaults, failure behavior, and
-verification duties that planners can consume without guessing what the human
-meant.
+Command contracts preserve purpose, authority, and residuals across the first
+translation from human request to governed work. Planning as a Control Layer
+receives that validated command surface and turns it into dependencies,
+budgets, context requests, blocked-node records, dispatchable work, and stop
+conditions before any executable job exists.

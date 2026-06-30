@@ -33,10 +33,10 @@ The following reader-continuity pass added two active operations under `editions
 - `v1_0.semantic_representation.mechanism_lifecycle_reader_replace` replaces the generated-reader and live Human-view `Semantic node lifecycle` subsection while preserving the mechanism diagram.
 - `v1_0.semantic_representation.interfaces_reader_replace` replaces the generated-reader and live Human-view `Interfaces` section.
 
-The next reader-continuity pass added two active operations under `editions/reader_overlays/v1_0/chapters/command-contracts-and-semantic-interfaces.json`:
+The intent/contracts consolidation pass moved the command-contract reader-overlay material under `editions/reader_overlays/v1_0/chapters/intent-to-execution-contracts.json`:
 
-- `v1_0.command_contracts.validation_states_reader_replace` replaces the generated-reader and live Human-view `Command contract validation states` subsection while preserving the mechanism diagram.
-- `v1_0.command_contracts.interfaces_reader_replace` replaces the generated-reader and live Human-view `Interfaces` section.
+- `v1_0.intent_execution.validation_states_reader_replace` replaces the generated-reader and live Human-view `Command contract validation states` subsection while preserving the mechanism diagram.
+- `v1_0.intent_execution.interfaces_reader_replace` replaces the generated-reader and live Human-view `Interfaces` section.
 
 The following reader-continuity pass added two active operations under `editions/reader_overlays/v1_0/chapters/fast-generation-architectures.json`:
 
@@ -124,7 +124,7 @@ The Artifact Steward Agents overlays convert autonomy, treasury, project-object,
 
 The Semantic Representation overlays convert the semantic-node lifecycle and consumer-policy tables into narrative prose while preserving the canonical AI/research mechanism, record vocabulary, and Mermaid gate. They reduce the generated reader manuscript's table load without claiming a TreeLLM implementation, semantic graph implementation, grounding benchmark, hierarchy-revision result, representation-utility result, consumer-policy harness, or support-state promotion.
 
-The Command Contracts overlays convert command validation-state and field-status tables into narrative prose while preserving the canonical AI/research command contract vocabulary, state matrix, and interface fields. They reduce the generated reader manuscript's table load without claiming a parser, prompt-injection defense, dispatcher, command-system implementation, override-test result, field-confidence audit, authority-inference block result, or support-state promotion.
+The Command Contracts overlays convert command validation-state and field-status tables into narrative prose inside the active Intent-to-Execution destination chapter while preserving the canonical AI/research command contract vocabulary, state matrix, and interface fields. They reduce the generated reader manuscript's table load without claiming a parser, prompt-injection defense, dispatcher, command-system implementation, override-test result, field-confidence audit, authority-inference block result, or support-state promotion.
 
 The Fast Generation overlays convert the metric code block and generation-mode taxonomy table into narrative prose while preserving the canonical AI/research formulas, comparison matrix, and mode vocabulary. They reduce generated reader code/table load without claiming an autoregressive baseline, speculative decoding run, multi-token prediction result, diffusion result, early-exit result, state-space result, KV-cache benchmark, hybrid-generation result, speed-quality benchmark, or support-state promotion.
 

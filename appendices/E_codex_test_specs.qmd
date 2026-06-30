@@ -58,12 +58,15 @@ No result is recorded here unless a test has actually been implemented and run.
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Protected-invariant preservation test | implemented | validated locally by synthetic fixtures; deployed recursive self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Evaluator independence test | implemented | validated locally by synthetic fixtures; broader self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement rollback scenario | implemented | validated locally by synthetic fixtures; live self-improvement rollback not run |
-| `intent-to-execution-contracts` | Intent-to-Execution Contracts | Contract field completeness test | implemented | passes via synthetic plan-execution contract harness |
-| `intent-to-execution-contracts` | Intent-to-Execution Contracts | Constraint preservation test | implemented | passes via synthetic plan-execution contract harness |
-| `intent-to-execution-contracts` | Intent-to-Execution Contracts | Artifact traceability test | implemented | passes via synthetic plan-execution contract harness; no runtime artifact acceptance claim |
-| `command-contracts-and-semantic-interfaces` | Command Contracts and Semantic Interfaces | Command schema validation test | implemented | passes via synthetic plan-execution contract harness |
-| `command-contracts-and-semantic-interfaces` | Command Contracts and Semantic Interfaces | Failure-behavior declaration test | implemented | passes via synthetic plan-execution contract harness |
-| `command-contracts-and-semantic-interfaces` | Command Contracts and Semantic Interfaces | Prompt override scenario | planned | not run |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent and trace fixture validation | implemented | passes via protocol fixture validation; shape only |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Contract field completeness test | implemented | passes via synthetic plan-execution contract harness |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Constraint preservation test | implemented | passes via synthetic plan-execution contract harness |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Artifact traceability test | implemented | passes via synthetic plan-execution contract harness; no runtime artifact acceptance claim |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Command schema validation test | implemented | passes via synthetic plan-execution contract harness |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Failure-behavior declaration test | implemented | passes via synthetic plan-execution contract harness; no deployed dispatcher claim |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Prompt override scenario | planned | not run |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Field-confidence audit | planned | not run |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Authority-inference block test | planned | not run |
 | `planning-as-a-control-layer` | Planning as a Control Layer | Decomposition accuracy test | planned | not run |
 | `planning-as-a-control-layer` | Planning as a Control Layer | Dependency ordering test | implemented | passes via synthetic plan-execution contract harness |
 | `planning-as-a-control-layer` | Planning as a Control Layer | Context-demand prediction test | planned | not run |

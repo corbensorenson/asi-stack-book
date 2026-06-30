@@ -14,7 +14,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Manifest status counts | {"implemented": 112} |
 | Triage class counts | {"formal-invariant": 112} |
 | Lean modules referenced | 54 |
-| Chapters with proof targets | 49 |
+| Chapters with proof targets | 48 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -100,7 +100,6 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `cognitive-compilation-and-semantic-ir` | 2 | 2 | 0 | 0 |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
-| `command-contracts-and-semantic-interfaces` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 4 | 4 | 0 | 0 |
 | `constitutional-alignment-substrate` | 4 | 4 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | 2 | 0 | 0 |
@@ -110,7 +109,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `fast-generation-architectures` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 2 | 2 | 0 | 0 |
 | `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
-| `intent-to-execution-contracts` | 2 | 2 | 0 | 0 |
+| `intent-to-execution-contracts` | 4 | 4 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 2 | 2 | 0 | 0 |
 | `living-book-methodology` | 2 | 2 | 0 | 0 |
 | `mathematical-and-search-substrates` | 2 | 2 | 0 | 0 |
@@ -174,8 +173,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:command.semantic_interface.operational_invariant` | `command-contracts-and-semantic-interfaces` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:command.semantic_interface.failure_blocks_promotion` | `command-contracts-and-semantic-interfaces` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:command.semantic_interface.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:command.semantic_interface.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.operational_invariant` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planforge.dag.operational_invariant` | `planforge-dags-and-intelligence-arbitrage` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |

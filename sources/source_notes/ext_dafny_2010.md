@@ -37,7 +37,7 @@ Dafny belongs in the proof-envelope, command-contract, runtime-adapter, and prot
 ## Book Chapters Supported
 
 - `executable-specifications-and-lean-proof-envelope` (Executable Specifications and Lean Proof Envelope)
-- `command-contracts-and-semantic-interfaces` (Command Contracts and Semantic Interfaces)
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `prototype-roadmap` (Prototype Roadmap)
 

@@ -80,8 +80,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `capability-replacement-and-rollback` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `security-kernel-and-digital-scifs` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
 | `recursive-self-improvement-boundaries` | 2 | needs richer state-machine or review semantics | Model lifecycle, review, timing, and adversarial states before adequacy. |
-| `intent-to-execution-contracts` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
-| `command-contracts-and-semantic-interfaces` | 2 | useful but too narrow | Retain as finite guard; add state-machine or trace tests. |
+| `intent-to-execution-contracts` | 4 | useful but too narrow | Retain `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` as finite guards; add state-machine, parser/dispatcher, prompt-override, approval, and replayed trace tests before stronger claims. |
 | `planning-as-a-control-layer` | 2 | useful but too narrow | Plan-control record envelope added; still add decomposition, context-demand, runtime replanning, and planner-quality tests. |
 | `planforge-dags-and-intelligence-arbitrage` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
 | `cognitive-compilation-and-semantic-ir` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |

@@ -91,30 +91,6 @@
       "rationale": "Replace the dense proof-contract transport target architecture with reader prose while preserving the canonical AI/research receipt-field requirements."
     },
     {
-      "id": "v1_0.command_contracts.validation_states_reader_replace",
-      "target_file": "chapters/command-contracts-and-semantic-interfaces.qmd",
-      "action": "replace_section",
-      "section": {
-        "level": 3,
-        "title": "Command contract validation states",
-        "aliases": []
-      },
-      "content": "Command contracts move through pre-execution validation states. A draft contract is still being extracted or normalized, so it cannot dispatch planning work. A field-complete contract has the required slots, but those slots may still contain inferred or defaulted values, so it is ready for validation and review rather than execution.\n\nIf context, examples, hidden instructions, or fields conflict with explicit constraints, the contract enters conflict-detected state and should produce a residual or clarification. If a means, tool, disclosure, publication, or other effect was inferred rather than granted, the contract is authority-inferred and must stay draft-only or be re-contracted.\n\nDispatch is blocked when required output, verification, failure, approval, or authority fields are missing or vague. A contract becomes validated for planning only after required fields are concrete and precedence review passes. If a newer contract replaces it, the old contract becomes a historical trace rather than active permission.\n\nThese states do not say the work is correct. They only say whether the command is clear enough to become planning input.",
-      "rationale": "Replace the command-contract validation-state table with reader prose while preserving the canonical AI/research state matrix."
-    },
-    {
-      "id": "v1_0.command_contracts.interfaces_reader_replace",
-      "target_file": "chapters/command-contracts-and-semantic-interfaces.qmd",
-      "action": "replace_section",
-      "section": {
-        "level": 2,
-        "title": "Interfaces",
-        "aliases": []
-      },
-      "content": "Command semantics are carried by the Command Contract. The record keeps the operational pieces together: contract identity, intent link, validation state, role, objective, context references, field provenance, field confidence, constraints, procedure, allowed and forbidden means, bounded defaults, output contract, verification, failure behavior, authority ceiling, authority basis, approvals, expected artifacts, feedback route, re-contract points, dispatch blockers, and non-claims.\n\nThe interface is narrower than natural language on purpose. The raw request can stay attached for review, but the structured fields control dispatch. Planning consumes the command. Execution enforces allowed means and output contracts. Verification checks declared criteria and failure behavior. Evidence records which fields were satisfied, repaired, escalated, or left residual.\n\nEach field also carries status. Confirmed fields may support planning because they were explicitly stated or accepted by the relevant boundary. Policy-imposed fields can constrain planning but cannot broaden authority. Source-derived fields may support context or requirements only within the source's limits. Defaulted fields need a scope and a re-contract trigger. Inferred fields can help a draft, but they cannot authorize side effects. Missing required fields block dispatch or narrow the response to clarification.\n\nThat metadata keeps confidence from becoming hidden evidence. A field can be useful and still too weak to authorize work.",
-      "rationale": "Turn the command-contract field and field-status tables into reader prose without changing the canonical interface vocabulary."
-    },
-    {
       "id": "v1_0.compact_generative_systems.receipt_states_reader_replace",
       "target_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
       "action": "replace_section",
@@ -185,6 +161,30 @@
       },
       "content": "Intent intake needs states because a request is not permission just because it is understandable. A raw request can be interpreted and reviewed, but it should not dispatch work. An interpreted request has a structured reading, yet open assumptions may still limit it to drafting, option generation, or clarification. A bounded default is a low-risk assumption with scope and rollback; it may guide planning only inside that stated boundary.\n\nWhen missing information would change outcome, authority, evidence, or affected parties, the right state is clarification required. When the outcome is clear but the required means are not authorized, the state is authority pending: the system can ask for approval, offer a narrower route, or produce draft-only work, but it cannot quietly take the stronger power.\n\nAn accepted contract is the first state that can lower into command contracts and plan sources, because objective, means, evidence, and stop conditions are sufficiently bounded. If downstream work changes the means, authority, publication surface, affected parties, evidence burden, or stop conditions, the work returns to re-contracting. Denied, stale, superseded, or outside-policy requests become lineage and residual records only.\n\nThese states keep the human request corrigible. They let the system help where the lease is clear and stop where a useful interpretation would become unauthorized action.",
       "rationale": "Replace the intent-intake state table with reader prose while preserving the canonical AI/research state matrix."
+    },
+    {
+      "id": "v1_0.intent_execution.validation_states_reader_replace",
+      "target_file": "chapters/intent-to-execution-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Command contract validation states",
+        "aliases": []
+      },
+      "content": "Command contracts move through pre-execution validation states. A draft contract is still being extracted or normalized, so it cannot dispatch planning work. A field-complete contract has the required slots, but those slots may still contain inferred or defaulted values, so it is ready for validation and review rather than execution.\n\nIf context, examples, hidden instructions, or fields conflict with explicit constraints, the contract enters conflict-detected state and should produce a residual or clarification. If a means, tool, disclosure, publication, or other effect was inferred rather than granted, the contract is authority-inferred and must stay draft-only or be re-contracted.\n\nDispatch is blocked when required output, verification, failure, approval, or authority fields are missing or vague. A contract becomes validated for planning only after required fields are concrete and precedence review passes. If a newer contract replaces it, the old contract becomes a historical trace rather than active permission.\n\nThese states do not say the work is correct. They only say whether the command is clear enough to become planning input.",
+      "rationale": "Replace the command-contract validation-state table with reader prose while preserving the canonical AI/research state matrix."
+    },
+    {
+      "id": "v1_0.intent_execution.interfaces_reader_replace",
+      "target_file": "chapters/intent-to-execution-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "Command semantics are carried by the Command Contract. The record keeps the operational pieces together: contract identity, intent link, validation state, role, objective, context references, field provenance, field confidence, constraints, procedure, allowed and forbidden means, bounded defaults, output contract, verification, failure behavior, authority ceiling, authority basis, approvals, expected artifacts, feedback route, re-contract points, dispatch blockers, and non-claims.\n\nThe interface is narrower than natural language on purpose. The raw request can stay attached for review, but the structured fields control dispatch. Planning consumes the command. Execution enforces allowed means and output contracts. Verification checks declared criteria and failure behavior. Evidence records which fields were satisfied, repaired, escalated, or left residual.\n\nEach field also carries status. Confirmed fields may support planning because they were explicitly stated or accepted by the relevant boundary. Policy-imposed fields can constrain planning but cannot broaden authority. Source-derived fields may support context or requirements only within the source's limits. Defaulted fields need a scope and a re-contract trigger. Inferred fields can help a draft, but they cannot authorize side effects. Missing required fields block dispatch or narrow the response to clarification.\n\nThat metadata keeps confidence from becoming hidden evidence. A field can be useful and still too weak to authorize work.",
+      "rationale": "Turn the command-contract field and field-status tables into reader prose without changing the canonical interface vocabulary."
     },
     {
       "id": "v1_0.labor_os.lifecycle_states_reader_replace",

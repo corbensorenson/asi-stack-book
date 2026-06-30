@@ -1,4 +1,4 @@
-# Curated Reader Prose Pass: Intent-to-Execution Contracts
+# Curated Reader Prose Pass: Command Contracts From Intent To Executable Work
 
 Date: 2026-06-30
 
@@ -10,12 +10,11 @@ Reader manuscript file:
 Live source file: `chapters/intent-to-execution-contracts.qmd`
 
 Consolidation caveat:
-`docs/chapter_consolidation_release_stability_review.md` records this chapter
-inside a `deferred_for_release` package with
-`command-contracts-and-semantic-interfaces`. This pass curates the current
-source chapter for the reader-manuscript cycle only. It does not execute,
-reject, or authorize the future intent/command-contract merge, and it
-preserves the current 54-chapter manifest boundary.
+`docs/chapter_history_ledger.md` records that
+`command-contracts-and-semantic-interfaces` folded into this destination
+chapter on 2026-06-30. This pass is now historical input to the merged reader
+chapter; it does not approve a reader release artifact and does not promote any
+support state.
 
 ## Reader Promise
 
@@ -24,7 +23,7 @@ same thing as governed execution.
 
 The reader throughline is:
 
-> intent has to survive the trip to execution.
+> language can begin the work, but explicit fields have to govern the work.
 
 ## Curation Scope
 
@@ -70,14 +69,14 @@ The reader throughline is:
   runtime adapter safety, tool-effect enforcement, approval-service behavior,
   artifact satisfaction, replay correctness, benchmark performance, or
   end-to-end execution correctness.
-- The consolidation caveat is preserved: this reader pass does not decide the
-  future merge with `command-contracts-and-semantic-interfaces`.
+- The consolidation caveat is preserved: the later intent/contracts merge is
+  executed as a chapter-boundary change only, with no support-state promotion.
 
 ## Non-Claims
 
 - This pass does not edit the live AI/research chapter.
 - This pass does not change `book_structure.json`.
-- This pass does not execute, reject, or authorize a chapter merge or fold.
+- This pass does not itself execute, reject, or authorize a chapter merge or fold.
 - This pass does not alter Appendix C or Appendix K.
 - This pass does not add, remove, normalize, or promote source records.
 - This pass does not claim deployed intent-to-execution runtime behavior,
@@ -93,9 +92,9 @@ The reader throughline is:
 ## Remaining Blockers
 
 - Human editorial review has not approved this chapter for reader release.
-- The future intent/command-contract consolidation package still needs a
-  reviewer decision before any merge with
-  `command-contracts-and-semantic-interfaces`.
+- The intent/command-contract consolidation package has executed; remaining
+  reader work is human editorial review and reconciliation of the merged
+  destination chapter, not a separate command-contract chapter release.
 - Stronger execution-contract evidence still needs public-safe traces or tests
   that preserve intent identity, command contract, plan graph, typed jobs,
   authority transitions, handoff receipts, dispatch receipts, artifacts,

@@ -41,8 +41,7 @@ GenesisCode frames AI-assisted programming as an evidence-carrying software syst
 ## Book Chapters Supported
 
 - `system-boundaries-and-authority` (System Boundaries and Authority)
-- `intent-to-execution-contracts` (Intent-to-Execution Contracts)
-- `command-contracts-and-semantic-interfaces` (Command Contracts and Semantic Interfaces)
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
 - `spinoza-verification-and-proof-carrying-claims` (Spinoza Verification and Proof-Carrying Claims)
 - `labor-os-and-typed-jobs` (Labor OS and Typed Jobs)

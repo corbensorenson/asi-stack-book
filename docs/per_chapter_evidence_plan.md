@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-30
 
-This file is the 50-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the 48-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ remaining lanes stay `planned, not executed`; they must not receive synthetic
 fixtures, pass/fail status, or support-state pressure merely for coverage.
 The active cycle selection is recorded in
 `docs/v1_x_active_evidence_cycle.md`: seven lanes are selected and the other
-forty-three remain planned-only.
+forty-one remain planned-only.
 
 Selection criteria:
 
@@ -56,8 +56,7 @@ support-state transition by itself.
 | I | `capability-replacement-and-rollback` | Replacement transaction harness | Connect replacement evidence, rollback, monitor state, and residual escrow. | Use product-upgrade analogies without losing safety constraints. | Valid replacement transaction and invalid promotion fixture both replay. |
 | I | `security-kernel-and-digital-scifs` | Security-kernel harness plus external security baselines | Add SCIF lifecycle, revocation, sanitization, and prompt-injection negative controls. | Make SCIFs feel like controlled rooms and handles, not jargon. | Receipt fixture proves handle-mediated use and rejects leak paths. |
 | I | `recursive-self-improvement-boundaries` | Safety-critical Lean plus Theseus self-evolution gate | Deepen accepted/rejected change model, evaluator separation, monitor window, and rollback. | Present RSI as controlled maintenance, not runaway mythology. | Accepted transition cannot widen authority or weaken protected invariants without review. |
-| II | `intent-to-execution-contracts` | Command-contract fixtures plus Lean | Connect formal intent records to typed execution artifacts. | Show the path from "what I meant" to "what the system may do." | Invalid intent-to-action mismatch is rejected with receipt. |
-| II | `command-contracts-and-semantic-interfaces` | Schema/fixture/Lean crosswalk | Add richer semantic interface fixtures and mismatch cases. | Explain contracts as readable promises between layers. | Schema, fixture, and Lean abstraction agree or document intentional abstraction. |
+| II | `intent-to-execution-contracts` | Command-contract fixtures plus Lean semantic-interface crosswalk | Connect accepted intent, command fields, authority, receipts, artifacts, and residuals across typed execution records. | Show the path from "what I meant" to "what the system may do" without making prompt prose into permission. | Invalid intent-to-action mismatch, missing receipt, prompt/context override, or inferred-authority case is rejected with a receipt or residual. |
 | II | `planning-as-a-control-layer` | Theseus plan compiler plus Lean planning envelope | Import public-safe typed DAG and rejected invalid DAG. | Make planning read like controlled sequencing under uncertainty. | Public-safe DAG replay validates and invalid DAG fails. |
 | II | `planforge-dags-and-intelligence-arbitrage` | Theseus/PlanForge report | Validate arbitrage selection with costs, uncertainty, and fallback. | Explain intelligence arbitrage as routing work to the right kind of mind. | Fixture selects a route only when adequacy and cost constraints both pass. |
 | II | `cognitive-compilation-and-semantic-ir` | Compiler IR fixtures plus external program-synthesis baselines | Add semantic atom lowering and failed-preservation cases. | Use compilation as the bridge from thought to executable structure. | IR translation preserves required fields and rejects lossy lowering. |

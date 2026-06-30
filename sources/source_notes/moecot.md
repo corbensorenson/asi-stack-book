@@ -40,7 +40,7 @@ MoECOT is an implementation-reference architecture for governed, skill-native, l
 - Stable Capability Fields
 - Capability Replacement and Rollback
 - Recursive Self-Improvement Boundaries
-- Intent-to-Execution Contracts
+- Command Contracts: From Intent to Executable Work
 - Planning as a Control Layer
 - PlanForge DAGs and Intelligence Arbitrage
 - Virtual Context ABI

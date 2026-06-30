@@ -2,21 +2,26 @@
 
 Last updated: 2026-06-30
 
-Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold, and simulation-fidelity fold through static historical stubs.
+Status: active policy for future consolidation execution; applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, and simulation-fidelity fold through static historical stubs.
+
+Historical fold baseline: applied to the 2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold, and simulation-fidelity fold through static historical stubs.
 
 This policy defines how public chapter URLs, stable chapter IDs, source history,
 and reader/research traceability must be handled when a governed
 consolidation package executes. It is a release-control policy, not source
 evidence, not an external review, and not a support-state transition. The
-2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold,
-and simulation-fidelity fold applied the policy through static historical stubs and
-`docs/chapter_history_ledger.md`.
+2026-06-30 Part I pilot, conservative compression merge, intent/contracts
+merge, MoECOT runtime fold, and simulation-fidelity fold applied the policy
+through static historical stubs and `docs/chapter_history_ledger.md`. The
+2026-06-30 Part I, conservative compression, MoECOT, and simulation-fidelity
+execution packages were the historical fold baseline before the later
+intent/contracts merge.
 
 ## Decision Boundary
 
-- The canonical manifest now has 49 chapters after the executed Part I pilot,
-  conservative compression merge, MoECOT runtime fold, and
-  simulation-fidelity fold.
+- The canonical manifest now has 48 chapters after the executed Part I pilot,
+  conservative compression merge, intent/contracts merge, MoECOT runtime fold,
+  and simulation-fidelity fold.
 - This policy does not by itself retire, merge, redirect, or remove any chapter; execution commits do that work.
 - A future merge or fold remains blocked until its package explicitly records
   the URL treatment for every retired source chapter.
@@ -79,19 +84,20 @@ Every executed merge or fold must record:
 ## Pilot Defaults
 
 For the Part I alignment/governance pilot, conservative compression merge,
-MoECOT runtime fold, and simulation-fidelity fold:
+intent/contracts merge, MoECOT runtime fold, and simulation-fidelity fold:
 
 | Proposed destination | Continuity URL | Retired source URL treatment |
 |---|---|---|
 | `constitutional-alignment-substrate` as **Constitutional Alignment: Agency, Dignity, and Corrigibility** | Keep `/chapters/constitutional-alignment-substrate.html`. | Preserved `/chapters/agency-dignity-and-corrigibility.html` through a static historical stub in the 2026-06-30 execution package. |
 | `moral-uncertainty-and-value-conflict` as **Moral Uncertainty, Value Conflict, and Contestable Governance** | Keep `/chapters/moral-uncertainty-and-value-conflict.html`. | Preserved `/chapters/governance-rights-fork-exit-and-audit.html` through a static historical stub in the 2026-06-30 execution package. |
 | `compact-generative-systems-and-residual-honesty` as **Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty** | Keep `/chapters/compact-generative-systems-and-residual-honesty.html`. | Preserved `/chapters/generate-verify-repair-compression.html` through a static historical stub in the 2026-06-30 conservative compression merge. |
+| `intent-to-execution-contracts` as **Command Contracts: From Intent to Executable Work** | Keep `/chapters/intent-to-execution-contracts.html`. | Preserved `/chapters/command-contracts-and-semantic-interfaces.html` through a static historical stub in the 2026-06-30 intent/contracts merge. |
 | `routing-heads-and-specialist-cores` as **Routing Heads and Specialist Cores** | Keep `/chapters/routing-heads-and-specialist-cores.html`. | Preserved `/chapters/moecot-runtime-and-multi-core-orchestration.html` through a static historical stub in the 2026-06-30 MoECOT runtime fold. |
 | `resource-economics-and-token-budgets` as **Resource Economics and Token Budgets** | Keep `/chapters/resource-economics-and-token-budgets.html`. | Preserved `/chapters/simulation-fidelity-and-physical-constraints.html` through a static historical stub in the 2026-06-30 simulation-fidelity fold. |
 
 These defaults were applied to the Part I pilot, conservative compression
-merge, MoECOT runtime fold, and simulation-fidelity fold and remain defaults
-for future accepted execution packages.
+merge, intent/contracts merge, MoECOT runtime fold, and simulation-fidelity
+fold and remain defaults for future accepted execution packages.
 
 ## Validation Expectations
 
@@ -114,7 +120,8 @@ Before a future merge commit is accepted, validation should prove:
 ## Non-Claims
 
 - This policy does not by itself execute a merge or fold.
-- The 2026-06-30 Part I, conservative compression, MoECOT, and simulation-fidelity execution packages, not this policy text alone, implemented five historical stubs and changed the manifest to 49 chapters.
+- The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, and simulation-fidelity execution packages, not this policy text alone, implemented six historical stubs and changed the manifest to 48 chapters.
+- The 2026-06-30 Part I, conservative compression, MoECOT, and simulation-fidelity execution packages, not this policy text alone, implemented the earlier five historical stubs before the intent/contracts package added the sixth.
 - This policy does not approve any destination draft.
 - This policy does not create external review evidence.
 - This policy does not promote any claim support state.

@@ -37,7 +37,7 @@ ReAct belongs in the planning and execution chapters as an external reference fo
 ## Book Chapters Supported
 
 - `planning-as-a-control-layer` (Planning as a Control Layer)
-- `intent-to-execution-contracts` (Intent-to-Execution Contracts)
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
 - `artifact-graphs-audit-logs-and-replay` (Artifact Graphs, Audit Logs, and Replay)
 

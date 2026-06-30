@@ -1,22 +1,23 @@
 ---
-title: "Intent-to-Execution Contracts"
+title: "Command Contracts: From Intent to Executable Work"
 chapter_id: "intent-to-execution-contracts"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "viea"
   - "talos"
   - "software_magic_grimoire"
   - "genesiscode"
   - "moecot"
+  - "cognitive_compilation"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Four local raw-cache mappings are passage-reviewed for `viea`, `talos`, `software_magic_grimoire`, and `genesiscode`; `moecot` remains connector/source-note mapped without usable local raw text."
-  - "Only protocol schema/fixture validation is implemented; no behavioral execution tests have been run for this chapter."
-  - "No support-state promotion is implied by this drafting pass."
+  - "Executed consolidation of `intent-to-execution-contracts` and `command-contracts-and-semantic-interfaces`; the old command-contract slug is preserved by a static redirect and the source chapter is archived for lineage."
+  - "Source notes, schemas, fixtures, a synthetic plan-execution harness, and finite Lean predicates support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, or deployed execution safety."
+  - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
 
 ## Chapter status
@@ -27,231 +28,434 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
-| Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot` |
+| Last updated | 2026-06-30 |
+| Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`, `cognitive_compilation` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `viea`; supporting: `talos`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
-| Source loading state | source notes: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`; connector/recovery without local raw passage review: `moecot` |
-| Test state | `intent_contract.valid.json` and `intent_execution_trace.valid.json` pass protocol fixture validation; `AsiStackProofs.IntentToExecution` implements finite constraint-preservation and missing-approval running gates; `python3 scripts/validate_plan_execution_contracts.py` passes synthetic cross-record checks for contract field completeness, constraint preservation, artifact traceability, dependency order, dispatch receipts, and approval gating; behavioral execution, replay, and real artifact acceptance remain planned. |
+| Source queue | primary: `viea`, `software_magic_grimoire`; supporting: `talos`, `genesiscode`, `cognitive_compilation`; connector/recovery: `moecot` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`; connector/source-note only: `moecot` |
+| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes synthetic valid and expected-invalid plan-execution contract checks; `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` implement finite record predicates; behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, and runtime execution tests remain planned. |
+
+The executed merge combines two current record families:
+
+- intent-to-execution traces, which ask whether accepted intent, constraints, approvals, artifacts, handoffs, dispatch receipts, evidence updates, feedback, stop/fault states, and residuals remain linked from request to delivery;
+- command contracts, which ask whether objective, context, constraints, procedure, output contract, verification, failure behavior, field provenance, field confidence, bounded defaults, authority basis, re-contract points, and dispatch blockers are explicit before planning or execution can proceed.
+
+Both record families remain visible in the destination's implementation horizon, test plan, source crosswalk, and formalization hooks. The former standalone command-contract chapter is retired from the active spine, archived under `archive/retired_chapters/`, and preserved through the public slug `chapters/command-contracts-and-semantic-interfaces.html`.
 
 ## Drafting guardrail
 
-This chapter treats execution as a governed trace, not as a successful response. The repository contains draft schemas and fixtures for the trace shape, but it does not yet contain a deployed intent-to-execution runtime, a replayed vertical slice, or empirical evidence that a contract was satisfied.
+A command contract is not the same thing as a working parser or a secure
+dispatcher. It is the record a governed stack needs before parser quality,
+planner handoff, runtime enforcement, approval behavior, and artifact
+traceability can be tested honestly.
 
-It opens Part II by turning Part I's governance boundary into an operational spine. The system can now ask not only whether a request is admissible, but how that request becomes planned, authorized, executed, verified, and fed back without losing its original constraints.
-
-The contract is an authority-preserving lease over work. It says what the system is allowed to try, which means are forbidden, what result would count as satisfaction, which side effects require approval, and when the system must come back to the human or governance layer instead of improvising.
+The argument does not ask readers to believe that a model can
+extract intent perfectly. It asks a narrower systems question: once
+intent has been accepted for work, what semantic fields, authority limits,
+receipts, artifacts, verification paths, failure behavior, and residuals must
+survive before tools or runtimes act?
 
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Governed capability needs a path from accepted boundaries into inspectable work. A real request must move through those boundaries without turning into an untraceable conversation. The answer is an intent-to-execution contract: a path from purpose to plan, artifact, authority check, execution, verification, feedback, and residual. The contract is useful only if another component, reviewer, or future run can inspect it without guessing what the system thought it was allowed to do.
+A person can ask for a complicated thing in ordinary language, with examples,
+hopes, limits, and uncertainty. A system should not treat that ordinary
+language as unlimited permission.
 
-The architecture now shifts from principles to machinery. A useful AI system should not merely respond well. It should be able to show what request it understood, what work it created, what powers it used, what evidence it produced, and what remains unresolved. That trace is not paperwork for its own sake. It is the control surface that lets planning, tool use, memory, approval, rollback, and later learning stay attached to the original intent instead of drifting into improvisation. The contract keeps that trace anchored when later systems optimize around it across the full work path. That trace has to travel across layers before later optimization can remain accountable.
+The first operational move is translation. The request becomes a contract that
+separates what the person wants from what the system is allowed to do, what it
+must produce, how success will be checked, what failure means, and when it has
+to stop or ask again. The contract is not a bureaucratic form. It is the
+boundary that prevents a helpful response from turning into an unauthorized
+action.
+
+The path starts where the Human Intent layer hands off. The raw request
+has been captured, ambiguity has been bounded or escalated, and authority has
+been scoped. Now the stack needs a command object that planners, verifiers, job
+runners, runtime adapters, evidence ledgers, and later AI agents can all read
+without guessing.
+
+The contract turns uncertainty into visible fields so downstream layers can
+refuse safely. That visibility keeps tools from acting on guesses or hidden
+permission.
 :::
 
 ## Problem
 
-Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.
+Accepted human intent needs a typed command contract whose semantics,
+authority, artifacts, verification, failure behavior, and execution receipts
+remain inspectable from intake through delivery.
 
-Part I produced governed intent: purpose, authority ceilings, protected invariants, rights, and self-improvement boundaries. Part II begins when that intent must become work. VIEA's central move is that intent should not jump straight to a model response or a tool call. It should become a chain of typed artifacts: intent contract, command contract, plan, typed job, runtime action, artifact, verification record, feedback, and residuals.
+Human Intent keeps raw human intent from becoming unrestricted
+execution authority. That does not yet make the work executable. The system
+still needs to decide what the next unit of work means, which constraints are
+binding, which context is informative rather than authoritative, which side
+effects are allowed, which artifact must be produced, which verifier can accept
+it, and what happens when the work fails.
 
-The bridge between governance and cognition is the intent-to-execution contract. Planning, memory, routing, execution, and evidence can only do disciplined work if the request they receive has a durable identity, constraints, acceptance conditions, side-effect limits, and an artifact trace.
-
-The bridge has to separate desire, authorization, means, and acceptance. A human may want an outcome without authorizing every path to that outcome. A plan may find a clever means that violates the contract. An artifact may be useful without satisfying the acceptance predicate. Treating those as separate fields keeps execution from expanding beyond intent.
+The command-contract layer owns that translation. It turns accepted intent
+into a semantic interface that downstream layers can inspect. Planning can
+consume it without inventing authority. Execution can consume typed jobs
+derived from it without treating a conversational answer as completed work.
+Evidence can attach validation, feedback, and residuals to the thing that was
+actually requested.
 
 ## Why existing approaches are insufficient
 
-A model response is not an execution contract; it lacks lifecycle, acceptance, artifact identity, and side-effect control.
+Prompt prose, model responses, and ad hoc task descriptions blur objective,
+context, constraints, authority, output contract, verification, failure
+behavior, artifact identity, and side-effect control.
 
-The common failure is to treat fluent text as completed work. A response can sound responsive while hiding missing approvals, untracked source boundaries, unverifiable artifacts, unexecuted tests, or side effects that were never authorized. Talos sharpens the point: work should enter a job lifecycle, not a loose conversational state. GenesisCode adds the software version of the same boundary: proposals, effects, replay logs, and obligations must be separated.
+A prompt can contain an objective, examples, background context, style
+requests, hidden assumptions, previous conversation, retrieved text, and
+instructions from several parties. Without a contract boundary, those
+materials can override each other silently. A model may answer as though it
+has completed work when it has only described work. A planner may infer a
+tool permission because the means seems obvious. A runtime may execute an
+effect because a downstream node was dispatched, even though the original
+request never granted that authority.
 
-ReAct-style agent loops in `ext_react_2022` give the nearest external comparison: reasoning, acting, and observation can be interleaved without collapsing all work into one final answer. Intent-to-execution contracts add a stricter acceptance surface around that loop: lifecycle state, artifact identity, authority, evidence, and refusal conditions must be present before a response is treated as executable work. The comparison does not reproduce ReAct behavior or prove this contract layer is sufficient.
-
-The contract boundary exists because later layers should not infer authority from prose. A planner can decompose a contract. A runtime can enforce a contract. A verifier can check a contract. A bare response cannot reliably do any of those things.
-
-The missing-field case is just as important as the filled-field case. If the contract does not specify authority, acceptance, allowed tools, failure behavior, or approval path, downstream layers should not silently infer permissive defaults. They should emit clarification requests, draft-only routes, residuals, or blocked states.
+External comparators help position the argument but do not prove it. ReAct
+shows the importance of interleaving reasoning and action, while Dafny
+positions the value of explicit specifications and verification conditions.
+The ASI Stack destination chapter is not claiming either system has been
+reproduced here or that command contracts provide equivalent formal guarantees.
+It uses them as comparators while asking a systems question: what semantic
+record prevents a request, prompt, plan, job, artifact, and evidence update
+from losing their shared meaning?
 
 ## Core Claim
 
-[intent-to-execution-contracts.core, label: Design rationale, support: argument] Governed execution transforms intent into explicit contracts before any tool or runtime action occurs.
+[intent-to-execution-contracts.core, label: Design rationale, support: argument] Governed work should pass through explicit command contracts that bind intent,
+semantic interface fields, authority, artifacts, verification, failure
+behavior, execution receipts, and residuals before tools or runtimes act.
 
-The claim remains at `argument` support. VIEA supplies the intent-to-artifact spine, Talos supplies the typed-job and audit pressure, Software Magic Grimoire supplies the command-envelope vocabulary, GenesisCode supplies effect/provenance discipline, and MoECOT is still treated as an implementation-reference route rather than local proof.
+The claim remains at `argument` support. The source
+corpus supports the architecture vocabulary and drafting lineage. The current
+fixtures and Lean modules show that the repository can express record-shape
+checks, synthetic negative cases, and small finite invariants. They do not show
+that a parser is correct, that a dispatcher enforces authority in the real
+world, that a tool call is safe, or that a deployed runtime follows these
+contracts.
 
-### Claim-source mapping status
-
-Appendix C now maps this core claim to all assigned source notes, and four local raw-cache mappings have been passage-reviewed. Those reviewed passages support the need for an intent-to-execution contract boundary before tool or runtime action, but they do not prove a deployed runtime, trace replay, artifact satisfaction, or behavioral execution tests. `moecot` remains a connector/source-note mapping until public-safe runtime artifacts or usable raw text are available.
-
-| Source | What it supports | Limit |
-|---|---|---|
-| `viea` | Passage-reviewed: intent becomes structured command contracts, durable artifacts, routed work, verified outputs, runtime execution, feedback, residuals, tools, benchmarks, and regression coverage. | Architecture proposal only; no deployed runtime, replayed vertical slice, or artifact-satisfaction test is proven here. |
-| `talos` | Passage-reviewed: work lowers into typed job lifecycles with decomposition, contract locks, execution, adjudication, delivery, feedback, audit, replay, approvals, and residual feedback. | Security, approval behavior, benchmark claims, and tool-effect enforcement are not reproduced or verified in this repository. |
-| `software_magic_grimoire` | Passage-reviewed: bounded operational instructions with roles, objectives, context, constraints, procedure, output, verification, failure behavior, handoff artifacts, guards, and recovery paths. | Promptcraft vocabulary only; no empirical prompt-performance result, execution runtime, or behavioral test is present. |
-| `genesiscode` | Passage-reviewed: AI proposals remain separate from execution through deterministic kernels, capability-mediated effects, semantic patches, provenance hashes, replay logs, obligations, and protocol seals. | No prototype, replay checker, proof artifact, benchmark, or security audit is present here. |
-| `moecot` | Runtime-reference context for compact orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, residual tracking, and handoff. | Connector-readable context only; code, logs, release artifacts, and benchmarks have not been imported or reproduced. |
+The folded source claim from `command-contracts-and-semantic-interfaces`
+is a preserved subclaim: explicit semantic interfaces are required
+for objective, context, constraints, procedure, output, verification, failure
+behavior, field provenance, field confidence, authority basis, re-contract
+points, and dispatch blockers.
 
 ## Mechanism
 
-VIEA supplies the spine: intent becomes command contracts, durable artifacts, routed work, runtime execution, verification, feedback, and residuals. Talos adds the job-lifecycle pressure that makes work auditable and replayable. Software Magic Grimoire supplies the bounded instruction envelope, GenesisCode keeps proposals and effects behind provenance and obligation boundaries, and MoECOT supplies runtime-reference ledgers, readiness gates, replay, and handoff language without becoming local runtime proof.
+The destination mechanism has three lanes.
 
-The passage-reviewed sources sharpen the boundary rather than relaxing it. They support the contract shape, trace vocabulary, artifact discipline, and effect/provenance interface. They do not establish that a contract compiler exists, that side effects were enforced, that a runtime adapter ran, or that an artifact satisfied its intent. Those stronger claims require a replayed vertical slice with command, environment, artifact, verification, approval, and residual records.
+The first lane is intake-to-contract continuity. It receives an accepted intent
+receipt from `human-intent-as-a-formal-input`, then records the command's
+objective, constraints, authority envelope, allowed means, disallowed means,
+acceptance criteria, stop conditions, evidence requirements, artifacts, and
+clarification or re-contract triggers. It preserves the difference between
+what a person expressed and what the system is authorized to do.
 
-An Intent-to-Execution Trace is the record that lets those pieces hand off without treating a fluent response as completed work.
+The second lane is semantic interface discipline. It gives each command field
+provenance and confidence: confirmed, policy-imposed, source-derived,
+defaulted, inferred, or missing. Context, examples, retrieved text, previous
+conversation, and style notes can inform work, but they cannot override
+explicit objective, constraints, authority, output contract, verification, or
+failure behavior. Missing or inferred authority can support clarification or a
+draft-only route. It cannot authorize side effects.
+
+The third lane is execution traceability. It records handoff receipts,
+dispatch receipts, job references, artifact references, verifier decisions,
+feedback, residuals, stop/fault states, and non-claims. The point is not to
+make execution automatic. The point is to ensure that when execution does
+occur, the repository can tell which contract authorized it, which artifacts
+resulted, which validators accepted them, and which residuals remain.
 
 ```{mermaid}
 flowchart LR
-  A["Human intent"] --> B["Intent contract"]
-  B --> C["Command contract"]
-  C --> D["Plan graph"]
-  D --> E["Typed jobs"]
-  E --> F{"Authority + approval gate"}
-  F -- "allow" --> G["Runtime adapter / tool"]
-  F -- "deny or missing" --> H["Residual / escalation"]
-  G --> I["Artifact"]
-  I --> J["Verification record"]
-  J --> K["Feedback + evidence ledger"]
-  H --> K
+  Intent["Accepted intent receipt"] --> Contract["Command contract"]
+  Contract --> Fields["Semantic fields with provenance"]
+  Fields --> Authority["Authority basis and side-effect envelope"]
+  Fields --> Output["Output and verification contract"]
+  Authority --> Gate["Dispatch gate"]
+  Output --> Gate
+  Gate -- "blocked" --> Recontract["Clarify or re-contract"]
+  Gate -- "accepted" --> Plan["Planning control layer"]
+  Plan --> Job["Typed job or runtime handoff"]
+  Job --> Artifact["Artifact and delivery receipt"]
+  Artifact --> Evidence["Evidence, feedback, and residuals"]
+  Recontract --> Evidence
 ```
 
-**How to read the execution trace:** Read the trace left to right as a responsibility handoff: intent becomes contracts, contracts become jobs, and the approval gate can deny or escalate work before any tool runs. Both the successful artifact path and the residual path end in the evidence ledger, because an honest execution system records blocked work as carefully as completed work.
+The important movement is from conversational request to executable unit
+without treating the conversation as the authority source after a contract has
+been accepted. The command contract is a semantic firewall: context can inform
+the contract, but it does not become a hidden command channel.
 
-The trace represents command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback. Each transition routes the contract through the layer that actually owns the next responsibility: planning decomposes, memory supplies bounded context, verification checks acceptance, execution causes side effects only under authority, and evidence attaches the result back to claims, regressions, and residuals.
+**How to read the command-contract flow:** The flow starts with an accepted
+intent receipt, not an open-ended prompt. Semantic fields, authority basis,
+output contract, and verification contract must converge before dispatch. A
+missing or conflicting field routes to clarification or re-contracting, while a
+validated contract can lower into planning, typed jobs, artifacts, evidence,
+feedback, and residual records.
 
-The trace is append-only at the level that matters: each transition either produces the next artifact or records why it could not. If a contract cannot be planned, that is a residual. If a job cannot run because approval is missing, that is a residual. If an artifact is produced but verification fails, that is a residual with a repair path.
+That firewall also gives later layers a common refusal surface. A planner can
+say that authority is missing without judging the user's motives. A runtime
+adapter can decline a tool effect because the contract lacks an approval
+receipt. An evidence ledger can record that delivery failed because the
+verifier was absent rather than because the model was unwilling. The same
+record therefore supports progress, refusal, and accountability without making
+any layer infer hidden permission.
 
-Feedback belongs inside execution, not after it. Result artifacts should update claims, regression suites, tools, and future plans. Failures should become residuals, not disappear into the next prompt.
+### Command contract validation states
 
-The trace should also preserve re-contract points. If planning discovers that the original objective is underspecified, the required tool exceeds authority, the context is inadequate, the verifier cannot check the output, or the cost exceeds budget, the correct move is not creative completion. It is re-contract, escalation, deferral, or refusal.
+Command contracts move through explicit validation states:
 
-The updated public record shape makes that refusal path explicit. Intent contracts now carry an intake state, bounded defaults, re-contract triggers, and non-claims. The execution trace carries handoff receipts, dispatch receipts, re-contract events, stop or fault state, and non-claims. Those fields do not make the trace executable. They make it harder for a future implementation, reviewer, or chapter-writing run to confuse "the record was shaped correctly" with "the work was authorized, run, verified, or accepted."
+| State | Meaning | Allowed movement |
+|---|---|---|
+| `draft` | Fields are being extracted or normalized. | No planning dispatch. |
+| `field_complete` | Required fields exist but may include inferred/defaulted values. | Validation and review only. |
+| `conflict_detected` | Context, examples, hidden instructions, or fields conflict with explicit constraints. | Residual or clarification. |
+| `authority_inferred` | A means, tool, disclosure, publication, or effect is inferred rather than granted. | Draft-only or re-contract. |
+| `dispatch_blocked` | Required output, verification, failure, approval, or authority field is missing or vague. | No plan node dispatch. |
+| `validated_for_planning` | Required fields are concrete and precedence review passed. | May lower into a plan graph. |
+| `superseded` | A newer command contract replaces the current one. | Historical trace only. |
+
+These states are intentionally pre-execution states. They do not say the work is correct. They only say whether the contract is clear enough to become planning input.
 
 ## Interfaces
 
-Intent enters execution through the Intent-to-Execution Trace.
+Human Intent intake supplies raw request context, confirmed assumptions,
+bounded defaults, unauthorized means, required approvals, re-contract triggers,
+review refs, and downstream contract refs. The destination must not absorb that
+chapter. It depends on it.
 
-- Intent contracts feed planning.
-- Execution consumes typed jobs derived from contracts.
-- Evidence records contract satisfaction.
+The planning control layer consumes validated command contracts and produces
+plan graphs, blocked states, dispatchable nodes, or residuals. Planning does
+not get to invent authority when the contract is incomplete.
 
-Minimum interface fields span the parent intent contract and the execution trace:
+PlanForge and Cognitive Compilation lower command contracts into DAGs,
+semantic atoms, target-specific instructions, validators, and repairable
+artifacts. Their lowering steps must preserve authority, constraints, output
+contracts, and failure behavior.
 
-- `trace_id`
-- `intent_contract`
-- `intake_state`
-- `command_contract`
-- `plan_graph`
-- `typed_jobs`
-- `authority_transitions`
-- `handoff_receipts`
-- `dispatch_receipts`
-- `artifacts`
-- `verification_records`
-- `delivery_or_deployment`
-- `feedback_refs`
-- `recontract_events`
-- `stop_or_fault_state`
-- `residuals`
-- `bounded_defaults`
-- `recontract_triggers`
-- `non_claims`
+Labor OS and typed jobs consume only job records derived from accepted command
+contracts. A job without required approval or dispatch receipt stays blocked.
 
-Intent contracts feed planning. Command contracts bind procedure and outputs. Plan graphs decompose the work. Typed jobs carry executable units. Authority transitions control side effects. Verification records decide whether the artifact satisfies the original intent.
+Runtime adapters and tool permissions enforce the side-effect envelope. A tool
+permission is not implied by usefulness; it has to be present in the contract
+or granted by a later approval record.
 
-Every lowering step records authority deltas. Intent may authorize a goal; command contracts narrow procedure; plans allocate tasks; jobs request tools; runtime adapters ask for effects. Each step can preserve, narrow, expire, deny, or require approval. It cannot silently widen.
+Artifact graphs and evidence ledgers bind results back to the source contract.
+The system should be able to ask what was requested, what was authorized, which
+jobs ran, what artifacts were produced, which validators accepted them, and
+which residuals remain.
+
+
+Each field carries confidence/provenance metadata:
+
+| Field status | Meaning | Dispatch rule |
+|---|---|---|
+| `confirmed` | Explicitly stated or accepted by the user/governance boundary. | May support planning. |
+| `policy_imposed` | Added by active policy, constitution, or safety rule. | May constrain planning; cannot broaden authority. |
+| `source_derived` | Taken from an authorized source artifact. | May support context or requirements within source limits. |
+| `defaulted` | Filled by a bounded default. | Must carry scope and re-contract trigger. |
+| `inferred` | Guessed from context or pattern. | Cannot authorize side effects. |
+| `missing` | Required value absent. | Blocks dispatch or narrows output to clarification/draft. |
+
+This metadata keeps field confidence from becoming hidden evidence. A field can be useful and still too weak to authorize work.
 
 ## Invariants
 
 - Contract constraints survive compilation.
 - Side effects require explicit execution authority.
 - Artifacts remain linked to source intent.
+- Objective, context, constraints, procedure, output contract, verification,
+  and failure behavior are visible before dispatch.
+- Hidden, retrieved, or conflicting instructions cannot override explicit
+  contract constraints.
+- Field provenance and confidence remain visible to planning and verification.
+- Inferred or defaulted authority cannot authorize side effects.
+- Re-contracting is required when downstream work changes allowed means,
+  authority ceiling, affected parties, evidence requirements, publication
+  surface, or stop conditions.
+- A missing dispatch receipt blocks execution.
 
-Preservation across compilation is the key invariant: the plan, job, artifact, and verification record must still be traceable to the parent intent. If the system cannot show that lineage, it has not executed the intent; it has only produced something near it.
-
-Acceptance separability keeps local work from impersonating contract satisfaction. Producing an artifact, running a tool, or satisfying a subtask is not the same as satisfying the parent intent. The trace must keep local completion separate from contract satisfaction.
-
-Residual obligations also survive acceptance, so later repair cannot treat partial success as closed intent.
-
-Contract closure requires an explicit acceptance state, not merely the absence of an error.
+These invariants are deliberately narrow. They do not say that the request was
+wise, that the parser understood every nuance, or that the resulting artifact
+is correct. They say that governed work must not cross the boundary from
+conversation to action while losing constraints, authority, artifact identity,
+verification duties, or failure behavior. Contract-envelope preservation
+matters here, not success of the task.
 
 ## Failure modes
 
-- Response mistaken for completed work.
-- Artifact identity lost.
-- Approval bypass.
+Response substitution happens when a fluent answer is treated as the artifact
+or action the user requested.
 
-The first failure is especially dangerous for a living book: a chapter can be drafted without the evidence matrix, source trace, or validation state being updated. Artifact identity loss breaks audit and repair. Approval bypass turns planning into execution authority. Trace failures block promotion until the trace is repaired.
+Artifact identity loss happens when output exists but is no longer tied to the
+contract, acceptance criteria, verifier, or residual record that should explain
+why it counts.
 
-Helpful overrun is the contract failure that feels productive. The system goes beyond the contract because it predicts that the human would approve, then records the extra work as initiative. Governed execution should treat unapproved expansion as a new contract request, not as success.
+Approval bypass happens when urgency, familiarity, prior trust, or likely
+usefulness is treated as permission to act.
 
-Stale acceptance appears when an old approval is reused after the artifact, tool, or risk tier changed.
+Semantic ambiguity happens when objective, context, procedure, output, or
+failure behavior are all mixed in prose without field-level commitments.
+
+Prompt or context override happens when retrieved text, examples, previous
+conversation, or hidden instructions defeat the explicit contract.
+
+Field laundering happens when vague prose is moved into a formal field without
+becoming testable.
+
+Authority inference happens when a likely means is treated as if the human
+granted it.
 
 ## Minimum Viable Implementation
 
-A command-contract schema and one end-to-end intent-to-artifact trace.
+The smallest honest implementation is the existing synthetic plan-execution
+contract harness plus its record families:
 
-The intent-to-execution path starts with an `intent_contract` schema, a `command_contract` schema, and an `intent_execution_trace` fixture that links an intent contract, plan graph reference, typed job, authority transition, handoff receipt, dispatch receipt, artifact, verification record, re-contract event, stop or fault state, and residuals. Validation confirms trace shape only; whether the work satisfied the intent remains unverified.
+- an `intent_contract` record for accepted intent, authority, ambiguity, stop
+  conditions, and evidence requirements;
+- a `command_contract` record for semantic fields, field provenance, field
+  confidence, bounded defaults, authority basis, output contract,
+  verification, failure behavior, re-contract points, and dispatch blockers;
+- an `intent_execution_trace` record for handoffs, dispatch receipts, jobs,
+  artifacts, evidence deltas, feedback, residuals, and non-claims.
 
-Those records are implemented only as public protocol artifacts. They can validate that the trace names the required links and non-claims; they cannot show that the links were executed, authorized, accepted, or useful.
+The MVI keeps at least these negative cases visible: dispatch without a
+receipt, approval bypass, lost requirement, contract mismatch, and cycle in
+the plan graph. Passing the harness validates synthetic record discipline. It
+does not validate parser quality, prompt-injection defense, human approval
+behavior, tool-effect enforcement, or runtime execution.
 
-A two-path vertical-slice fixture would make the contract chain visible: one contract that lowers into a permitted job and accepted artifact, and one contract that stops because authority, context, approval, verifier, or budget is missing. The slice would exercise preservation and stop conditions while leaving behavioral execution unclaimed.
+A useful first implementation would expose the command contract as a small
+JSON-backed object with validators, fixtures, and a blocking dispatcher stub.
+It would accept an already-scoped intent record, produce either a validated
+contract or a residual asking for clarification, and require every downstream
+plan node to cite the contract field it depends on. The stub could be modest,
+but it must make the refusal path first-class rather than treating missing
+authority as an exception hidden in logs.
 
 ## Beyond the State of the Art
 
-Intent-to-execution contracts mature into the operating spine for the whole stack, not a larger form of the minimal fixture. Every serious request would enter as a durable intake object, receive an explicit authority envelope, lower through command, plan, job, artifact, verification, delivery, feedback, and residual records, and remain inspectable after the work is done.
+The mature endpoint is a command-contract operating spine for governed work.
+Humans, planners, verifiers, job runners, policy layers, runtime adapters, and
+future AI agents share one semantic control language before work becomes
+executable.
 
-Once contracts become the execution spine, no response is allowed to masquerade as execution. A human, reviewer, runtime, or later AI agent can ask what was requested, what was authorized, which defaults were used, what re-contract events occurred, which jobs ran, which side effects were approved, which artifacts were produced, which validators accepted them, and which residuals remain. The system can pause or stop for missing context, missing approval, missing verifier, budget exhaustion, or violated constraints without treating that stop as conversational failure.
+In that end state, every serious request receives a durable intake object and
+an explicit command contract. Every field carries provenance and confidence.
+Every side-effect route has an authority basis. Every plan node can be traced
+back to the contract it serves. Every job has a dispatch receipt. Every
+artifact has an identity, verifier, delivery record, feedback state, and
+residual ledger. The system can pause for missing context, missing approval,
+missing verifier, budget exhaustion, contract mismatch, or stop-condition
+activation without treating that pause as conversational failure.
 
-The final product surface would look like a work ledger with contract intelligence:
+This endpoint remains speculative architecture until a separate implementation
+or evaluation lane produces public evidence: parser tests, dispatch
+enforcement, approval-path checks, tool-effect controls, replayed vertical
+traces, negative controls, and accepted evidence-transition records.
 
-- Intake contracts preserve user purpose, constraints, rights, authority basis, bounded defaults, stop conditions, and non-claims.
-- Lowering receipts prove that command contracts, plan nodes, typed jobs, runtime calls, artifacts, and verification records still point back to the same parent intent.
-- Runtime gates consume explicit authority transitions rather than inferring permission from helpful prose.
-- Re-contract events are first-class records, so discovered scope changes, approval gaps, verifier gaps, or impossible budgets become new decisions instead of hidden improvisation.
-- Feedback closes into claims, regressions, tools, source notes, and residual ledgers, which lets future work reuse what was learned without inventing a false success record.
-
-This governed transaction protocol is still proposed architecture. Keep the transaction claim at `argument` until contract schemas, parent-child trace checks, approval gates, replayed execution records, acceptance receipts, and review logs show that a useful result was also contract-linked, authority-preserving, and accepted under the stated criteria.
+The logical endpoint is not a larger prompt template. It is an operating
+contract language with stable semantics across humans, models, planners,
+verifiers, ledgers, and tool boundaries. A mature stack could compare contracts
+across versions, detect when a plan drifts from its objective, quarantine jobs
+whose authority source changed, and summarize residual obligations without
+letting prose style alter the permitted action surface.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Intent and trace fixture validation | Check that the intent and trace fixtures match the public schemas and preserve intake state, handoff receipts, dispatch receipts, re-contract triggers, stop/fault state, residuals, and non-claims. | implemented by protocol validation; validated locally |
-| Contract field completeness test | Check that required objective, constraints, outputs, verification, approvals, and failure behavior are present. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic records only |
-| Constraint preservation test | Check that constraints in the intent contract remain visible in command, plan, job, and artifact records. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; no runtime trace claim |
-| Artifact traceability test | Check that produced artifacts point back to intent, command, verification, and residual records. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic artifact refs only |
+| Contract field completeness test | Check that `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures carry required objective, authority, output, verification, failure, handoff, artifact, feedback, residual, and non-claim fields. | implemented by protocol validation; validated locally |
+| Constraint preservation test | Check that a compiled execution job preserves parent contract constraints and does not widen authority during lowering. | implemented in `AsiStackProofs.IntentToExecution`; runtime lowering test not run |
+| Approval-gated execution test | Check that a modeled execution job missing required approval cannot transition to running. | implemented in `AsiStackProofs.IntentToExecution`; approval-service behavior not run |
+| Command schema validation test | Check that command contracts expose objective, constraints, output contract, verification, and failure behavior before planning input is accepted. | implemented in `AsiStackProofs.CommandContracts` and protocol fixtures |
+| Failure-behavior declaration test | Check that missing failure behavior blocks dispatch rather than becoming an implicit best-effort command. | implemented by finite predicates and synthetic fixture checks |
+| Prompt override scenario | Check that hidden, retrieved, or conflicting instructions cannot override explicit contract constraints. | planned; not run against a deployed parser or model |
+| Field-confidence audit | Check that confirmed, policy-imposed, source-derived, defaulted, inferred, and missing fields preserve dispatch consequences. | planned; not run beyond record-shape checks |
+| Authority-inference block test | Check that inferred means, tools, disclosure, publication, or side effects route to draft-only or re-contract states. | planned; not run beyond finite record and fixture checks |
 
-The shape checks, finite Lean predicates, and synthetic plan-execution harness now cover narrow record consistency. A stronger claim still requires an executable vertical slice or a replayed trace with command, environment, artifact, verification, and residual records.
+The current repository state supports synthetic plan-execution contract
+validation and finite Lean predicates only. The limitation is stated plainly.
 
-### Formalization hooks
+## Formalization hooks
 
-| Tag | Module | Target | Status |
-|---|---|---|---|
-| `lean:intent_execution.contracts.operational_invariant` | `AsiStackProofs.IntentToExecution` | A compiled execution job preserves the parent contract constraints. | implemented |
-| `lean:intent_execution.contracts.failure_blocks_promotion` | `AsiStackProofs.IntentToExecution` | An execution job without required approval cannot transition to running. | implemented |
+The destination chapter keeps both formal lanes:
 
-These Lean hooks are implemented as finite-record predicates over execution compilation and approval reviews. They prove only the record-level gates: a compiled job preserves declared parent constraints when the review says preservation is valid, and a job missing required approval cannot transition to running. They do not prove a deployed runtime, trace replay, tool-effect enforcement, artifact satisfaction, or end-to-end execution correctness.
+- `AsiStackProofs.IntentToExecution` for parent-contract constraint
+  preservation and approval-gated execution job transitions:
+  `lean:intent_execution.contracts.operational_invariant` and
+  `lean:intent_execution.contracts.failure_blocks_promotion`;
+- `AsiStackProofs.CommandContracts` for required command fields and explicit
+  constraint precedence over hidden or conflicting instructions:
+  `lean:command.semantic_interface.operational_invariant` and
+  `lean:command.semantic_interface.failure_blocks_promotion`.
+
+The merged chapter does not take over `AsiStackProofs.IntentContracts`,
+because raw intent intake remains a separate Part I chapter.
+
+Formal limitation and non-claim boundary: these Lean hooks are finite-record
+traceability predicates. They do not prove parser completeness, prompt-injection
+resistance, deployed command dispatch, approval-service correctness, runtime
+execution correctness, model behavior, or source interpretation.
+
+External positioning: the destination treats `ext_react_2022` as an adjacent
+reasoning/action-trace baseline and `ext_dafny_2010` as an adjacent
+specification-and-verification-condition baseline. The comparison is about
+interfaces and evidence boundaries, not a claim that the ASI Stack has
+implemented ReAct behavior, Dafny-style verification, parser completeness,
+dispatcher correctness, or functional correctness.
 
 ## Source crosswalk
 
-| Source ID | Title | Layer | Planned use | Readiness |
-|---|---|---|---|---|
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
-| `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache passage-reviewed |
-| `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | source note available; local raw cache passage-reviewed |
-| `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache passage-reviewed |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+The Corben/local source crosswalk is organized by lane:
 
-The assigned sources establish the trace vocabulary for intent, plan, job, artifact, verification, feedback, and residual links. Four local source mappings now have passage review, but the core claim stays at `argument` until a local vertical slice records execution evidence or another accepted evidence transition justifies narrower promotion.
+- intent-to-execution lineage: `viea`, `talos`,
+  `software_magic_grimoire`, `genesiscode`, and `moecot`;
+- semantic-interface lineage: `software_magic_grimoire`, `viea`,
+  `genesiscode`, `cognitive_compilation`, and `talos`.
+
+The external-source crosswalk stays comparator-only:
+
+- `ext_react_2022` for reasoning/action interleaving and action traces;
+- `ext_dafny_2010` for specification and verification-condition discipline.
+
+The adjacent human-intent chapter keeps its own comparator family:
+`ext_goal_oriented_requirements_engineering_2001`,
+`ext_cooperative_inverse_rl_2016`, and
+`ext_deep_rl_human_preferences_2017`.
+
+No listed external source is local reproduction evidence.
 
 ## Summary
 
-Intent-to-execution contracts are the first operational handoff. They turn human intent into a traceable chain of contracts, plans, jobs, artifacts, verification, feedback, and residuals.
+The merged destination chapter makes executable work depend on explicit
+semantic contracts rather than conversational momentum. A request can begin in
+ordinary language, but tool use, runtime dispatch, artifact delivery, and
+evidence updates need a contract object that preserves meaning, authority, and
+failure behavior.
 
-The point is not bureaucracy. It is continuity: requirements, authority, artifacts, and evidence have to survive the trip from purpose to action. That trace narrows into the command language that makes the first machine-readable handoff precise.
-
-A downstream layer should never have to guess whether it is allowed to act. If it has to guess, the trace should stop or re-contract. This is also where the human-facing promise becomes concrete. A person should be able to see how a request was interpreted, which constraints traveled with it, which authority was granted, which assumptions were introduced, and which residuals remained unresolved. That visibility makes later automation less mysterious and more accountable. Planning can decompose the work, memory can supply context, and tools can execute only because the contract gives them a bounded object to inherit rather than an ambient desire to satisfy.
+The contract is not a claim that parsing is solved. It is the artifact that
+makes parser quality, planner handoff, approval enforcement, runtime behavior,
+and artifact satisfaction testable later. When a field is missing, authority is
+inferred, a receipt is absent, or a requirement is lost, the correct result is
+not silent execution. It is clarification, re-contracting, a blocked dispatch,
+or an explicit residual. That makes the layer useful even before it is strong:
+every blocked command teaches the stack which field, approval, verifier, or
+handoff is still missing.
 
 ## Handoff
 
-Intent contracts preserve purpose, authority, and residuals across the first translation from human request to governed work. That translation has to become compact enough for machines to validate without turning language into hidden permission. Command Contracts and Semantic Interfaces supplies the operational language: fields, defaults, failure behavior, and verification duties that planners can consume without guessing what the human meant.
+Command Contracts: From Intent to Executable Work receives the conceptual
+handoff from **Human Intent as a Formal Input** and hands off directly to
+**Planning as a Control Layer**.
+
+The Human Intent chapter remains focused on the moment before the
+contract: raw request capture, ambiguity, authority extraction, bounded
+defaults, re-contract triggers, and stop-condition preservation. Planning then receives accepted command contracts and decides whether work is blocked,
+reviewable, dispatchable, dispatched, replanned, or stopped.

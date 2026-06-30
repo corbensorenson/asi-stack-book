@@ -1,9 +1,9 @@
 {
   "schema_version": "0.1",
-  "target_file": "chapters/command-contracts-and-semantic-interfaces.qmd",
+  "target_file": "chapters/intent-to-execution-contracts.qmd",
   "operations": [
     {
-      "id": "v1_0.command_contracts.validation_states_reader_replace",
+      "id": "v1_0.intent_execution.validation_states_reader_replace",
       "status": "active",
       "action": "replace_section",
       "section": {
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "id": "v1_0.command_contracts.interfaces_reader_replace",
+      "id": "v1_0.intent_execution.interfaces_reader_replace",
       "status": "active",
       "action": "replace_section",
       "section": {

@@ -42,7 +42,7 @@ Cognitive Compilation reframes complex generative work as a compiler pipeline. I
 ## Book Chapters Supported
 
 - `human-intent-as-a-formal-input` (Human Intent as a Formal Input)
-- `command-contracts-and-semantic-interfaces` (Command Contracts and Semantic Interfaces)
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
 - `planning-as-a-control-layer` (Planning as a Control Layer)
 - `planforge-dags-and-intelligence-arbitrage` (PlanForge DAGs and Intelligence Arbitrage)
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)

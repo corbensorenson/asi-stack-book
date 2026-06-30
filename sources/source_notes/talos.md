@@ -41,8 +41,7 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 - Capability Replacement and Rollback
 - Recursive Self-Improvement Boundaries
 - Human Intent as a Formal Input
-- Intent-to-Execution Contracts
-- Command Contracts and Semantic Interfaces
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work; includes folded command-contract semantic-interface material)
 - Unified Adaptive Tribunal and Adversarial Review
 - Labor OS and Typed Jobs
 - Artifact Graphs, Audit Logs, and Replay

@@ -4,20 +4,21 @@ Last updated: 2026-06-30
 
 Decision: defer all remaining unexecuted consolidation packages for the
 current reader-curation cycle after the Part I pilot, conservative compression
-merge, MoECOT runtime fold execution, and simulation-fidelity fold execution.
+merge, intent/contracts merge execution, MoECOT runtime fold execution, and
+simulation-fidelity fold execution.
 
 This record creates a `deferred_for_release` reader-work outcome for the
 remaining pending merge and fold packages. It records that the Part I pilot and
-conservative compression merge are no longer deferred, and that the MoECOT
-runtime fold and simulation-fidelity fold have moved from deferred fold
-disposition to executed history. This review itself does
+conservative compression merge and intent/contracts merge are no longer
+deferred, and that the MoECOT runtime fold and simulation-fidelity fold have
+moved from deferred fold disposition to executed history. This review itself does
 not edit `book_structure.json`, does not execute any additional remaining merge
 or fold, does not approve any reader artifact, does not create external review,
 and does not change support states.
 
-The current canonical manifest has 49 chapters after the executed Part I pilot,
-conservative compression merge, MoECOT runtime fold, and simulation-fidelity
-fold.
+The current canonical manifest has 48 chapters after the executed Part I pilot,
+conservative compression merge, intent/contracts merge, MoECOT runtime fold,
+and simulation-fidelity fold.
 
 ## Reviewed Inputs
 
@@ -50,9 +51,9 @@ that the destination is stronger than the source chapters as one chapter.
 
 At the same time, the human-reader manuscript cannot stay blocked indefinitely
 while every consolidation package waits for outside review. The practical
-current release choice is to preserve the 49-chapter manifest after the Part I
-pilot, conservative compression merge, MoECOT runtime fold, and
-simulation-fidelity fold for the current reader-curation cycle, record remaining duplicate skeletons as
+current release choice is to preserve the 48-chapter manifest after the Part I
+pilot, conservative compression merge, intent/contracts merge, MoECOT runtime
+fold, and simulation-fidelity fold for the current reader-curation cycle, record remaining duplicate skeletons as
 accepted temporary debt, and continue reader prose work with explicit
 consolidation caveats.
 
@@ -66,7 +67,7 @@ future execution package for the remaining queue.
 | Constitutional alignment and agency/corrigibility | `review_ready` | `executed` | The 2026-06-30 pilot accepted the destination chapter, preserved the retired URL through a historical stub, archived the source chapter, and kept support at `argument`. | Curated prose should target `constitutional-alignment-substrate` as the consolidated chapter. |
 | Value conflict and contestable governance | `review_ready` | `executed` | The 2026-06-30 pilot accepted the destination chapter, preserved the retired URL through a historical stub, archived the source chapter, and kept support at `argument`. | Curated prose should target `moral-uncertainty-and-value-conflict` as the consolidated chapter. |
 | Compression and residual honesty | `review_ready` | `executed` | The 2026-06-30 conservative merge accepted the destination chapter, folded Generate-Verify-Repair into compact-generative systems, preserved the retired URL through a historical stub, archived the source chapter, retained RankFold/NeuralFold as a standalone technique chapter, and kept support at `argument`. | Curated prose should target `compact-generative-systems-and-residual-honesty` as the merged chapter plus `rankfold-neuralfold-and-artifact-compression` as the retained technique chapter. |
-| Intent and executable contracts | `review_ready` | `deferred_for_release` | The destination draft is plausible, but the current release keeps intent-to-execution and command-interface chapters separate until the contract boundary is reviewed. | Curated prose may proceed for both Part II source chapters; `human-intent-as-a-formal-input` keeps its existing handoff caveat. |
+| Intent and executable contracts | `review_ready` | `executed` | The 2026-06-30 intent/contracts merge accepted the one-skeleton destination, folded command-interface material into Command Contracts: From Intent to Executable Work, preserved the retired URL through a historical stub, archived the source chapter and reader draft, retained `human-intent-as-a-formal-input` as the intake chapter, and kept support at `argument`. | Curated prose should target `intent-to-execution-contracts` as the merged chapter; the standalone command-contract reader draft remains historical only. |
 | Static context ABI | `review_ready` | `deferred_for_release` | The typed-page/certificate fold is plausible, but VCM addressing and semantic-cell certificate ownership need review before canonical identity changes. | Curated prose may proceed for `virtual-context-abi` and `semantic-pages-context-cells-and-certificates` with a static-ABI merge caveat. |
 | Proof-carrying claims and adversarial review | `review_ready` | `deferred_for_release` | The destination draft may reduce repetition, but proof-carrying claim tiers and tribunal review need reviewer judgment before they become one chapter. | Curated prose may proceed for both verification/review source chapters with a proof/review merge caveat. |
 | Planning and DAG control | `review_ready` | `deferred_for_release` | The destination draft is plausible, but planning-control and PlanForge DAG ownership should be reviewed before a canonical merge. | Curated prose may proceed for both planning source chapters with a planning/DAG merge caveat. |
@@ -81,7 +82,7 @@ temporary debt:
 
 - repeated Problem, Insufficiency, Mechanism, Interface, Evidence,
   Implementation, and Handoff skeletons in the pending clusters;
-- stable chapter IDs and URLs for the 49 current manifest chapters plus historical stubs for the two folded Part I slugs, the folded GVR slug, the folded MoECOT slug, and the folded simulation-fidelity slug;
+- stable chapter IDs and URLs for the 48 current manifest chapters plus historical stubs for the two folded Part I slugs, the folded GVR slug, the folded command-contract slug, the folded MoECOT slug, and the folded simulation-fidelity slug;
 - reader curation against source chapter boundaries that may later be merged or
   folded;
 - reconciliation work if a later consolidation package executes and supersedes
@@ -97,8 +98,6 @@ chapter IDs:
 
 - `constitutional-alignment-substrate`
 - `moral-uncertainty-and-value-conflict`
-- `intent-to-execution-contracts`
-- `command-contracts-and-semantic-interfaces`
 - `planning-as-a-control-layer`
 - `planforge-dags-and-intelligence-arbitrage`
 - `virtual-context-abi`
@@ -144,8 +143,9 @@ Every curated reader pass inside a deferred package must:
 - This review does not reject any package permanently.
 - This review does not approve any destination draft.
 - This review records that the Part I pilot, conservative compression merge,
-  MoECOT runtime fold, and simulation-fidelity fold implemented historical
-  stubs and changed chapter count in their separate execution packages.
+  intent/contracts merge, MoECOT runtime fold, and simulation-fidelity fold
+  implemented historical stubs and changed chapter count in their separate
+  execution packages.
 - This review does not create human review, external review, peer review, proof
   evidence, test evidence, benchmark evidence, source-derived evidence, or
   artifact-review evidence.

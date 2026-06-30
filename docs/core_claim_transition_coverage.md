@@ -9,8 +9,8 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 49 |
-| Accepted core evidence-transition records | 24 |
+| Manifest chapter core claims | 48 |
+| Accepted core evidence-transition records | 23 |
 | Accepted explicit no-promotion decisions | 25 |
 | Missing core-claim coverage | 0 |
 
@@ -23,7 +23,6 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/benchmark_ratchets_no_change.json` |
 | `capability-replacement-and-rollback.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/capability_replacement_no_change.json` |
 | `claim-ledgers-and-belief-revision.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/claim_ledgers_no_change.json` |
-| `command-contracts-and-semantic-interfaces.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/command_contracts_no_change.json` |
 | `constitutional-alignment-substrate.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/constitutional_alignment_no_change.json` |
 | `evidence-states-and-claim-discipline.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/evidence_states_no_change.json` |
 | `executable-specifications-and-lean-proof-envelope.core` | `no_change` | `argument` | `evidence_transitions/v1_0_pilot/proof_envelope_no_change.json` |

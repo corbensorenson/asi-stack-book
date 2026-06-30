@@ -858,56 +858,72 @@ Part source loading queue:
 | Supporting | `software_magic_grimoire`, `context_engineer`, `black_hole_context_manager`, `verification_bandwidth`, `treellm`, `spinoza_composer`, `ladon_manhattan`, `theseus_operator_os` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
 | Connector or recovery required | `vcm_editable`, `moecot`, `talos_md` | Use Google Drive connector or mark blocked before source-derived claims. |
 
-### Intent-to-Execution Contracts
+### Command Contracts: From Intent to Executable Work
 
 Stable ID: `intent-to-execution-contracts`
 
-Chapter job: Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.
+Chapter job: Accepted human intent needs a typed command contract whose semantics, authority, artifacts, verification, failure behavior, and execution receipts remain inspectable from intake through delivery.
 
-Core claim: Governed execution transforms intent into explicit contracts before any tool or runtime action occurs.
+Core claim: Governed work should pass through explicit command contracts that bind intent, semantic interface fields, authority, artifacts, verification, failure behavior, execution receipts, and residuals before tools or runtimes act.
 
 Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `viea` | Read first for chapter claims and mechanisms. |
-| Supporting | `talos`, `software_magic_grimoire`, `genesiscode` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+| Primary | `viea`, `software_magic_grimoire` | Read first for the intent-to-execution spine and command-field vocabulary. |
+| Supporting | `talos`, `genesiscode`, `cognitive_compilation` | Mine for typed-job, proposal/effect, protocol-shape, and semantic-lowering connections. |
+| Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived runtime claims. |
 
 Draft arc:
 
-- Problem: Human goals need a typed path into execution that preserves requirements, artifacts, verification, deployment, and feedback.
-- Insufficiency: A model response is not an execution contract; it lacks lifecycle, acceptance, artifact identity, and side-effect control.
-- Mechanism: Represent command contracts with inputs, constraints, artifacts, tools, evidence, approvals, and feedback.
-- Mechanism: Route contracts through planning, memory, verification, and execution layers.
-- Mechanism: Attach result artifacts back to the claim and evidence ledger.
-- Mechanism: Separate desire, authorization, means, and acceptance so helpful overrun becomes a re-contract request rather than silent execution authority.
-- Mechanism: Preserve authority deltas and re-contract points when planning discovers missing approval, inadequate context, unverifiable output, budget pressure, or forbidden means.
-- Mechanism: Record intake state, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, and explicit non-claims so trace-shape validation is not mistaken for execution evidence.
-- Interface: Intent contracts feed planning.
-- Interface: Execution consumes typed jobs derived from contracts.
-- Interface: Evidence records contract satisfaction.
+- Problem: Accepted human intent needs a typed command contract whose semantics, authority, artifacts, verification, failure behavior, and execution receipts remain inspectable from intake through delivery.
+- Insufficiency: Prompt prose, model responses, and ad hoc task descriptions blur objective, context, constraints, authority, output contract, verification, failure behavior, artifact identity, and side-effect control.
+- Mechanism: Receive an accepted intent receipt and bind objective, constraints, authority, artifacts, evidence requirements, stop conditions, and re-contract triggers into a command contract.
+- Mechanism: Treat command contracts as semantic firewalls: retrieved context, examples, prior conversation, and style notes can inform work but cannot override explicit objective, constraints, authority, verification, or failure behavior.
+- Mechanism: Mark field provenance and confidence states: confirmed, policy-imposed, source-derived, defaulted, inferred, and missing.
+- Mechanism: Track command validation states: draft, field-complete, conflict-detected, authority-inferred, dispatch-blocked, validated-for-planning, and superseded.
+- Mechanism: Record handoff receipts, dispatch receipts, job refs, artifact refs, verifier decisions, feedback, residuals, stop/fault states, and non-claims.
+- Interface: Human Intent intake supplies raw request context, bounded defaults, unauthorized means, required approvals, and re-contract triggers.
+- Interface: Planning consumes validated command contracts and emits plan graphs, blocked states, dispatchable nodes, or residuals.
+- Interface: Labor OS, runtime adapters, artifact graphs, and evidence ledgers consume only records derived from accepted contracts and return receipts.
 
 Primary invariants:
 
 - Contract constraints survive compilation.
 - Side effects require explicit execution authority.
 - Artifacts remain linked to source intent.
+- Objective, context, constraints, procedure, output contract, verification, and failure behavior are visible before dispatch.
+- Hidden, retrieved, or conflicting instructions cannot override explicit contract constraints.
+- Field provenance and confidence remain visible to planning and verification.
+- Inferred or defaulted authority cannot authorize side effects.
+- Re-contracting is required when downstream work changes allowed means, authority ceiling, affected parties, evidence requirements, publication surface, or stop conditions.
+- A missing dispatch receipt blocks execution.
 
 Failure modes to cover:
 
 - Response mistaken for completed work.
 - Artifact identity lost.
 - Approval bypass.
+- Semantic ambiguity.
+- Prompt or context override.
+- Unspecified output contract.
+- Field laundering, where vague prose is moved into a formal field without becoming testable.
+- Authority inference, where a likely means is treated as if the human granted it.
 
 Draft deliverables:
 
-- Intent-contract, command-contract, and intent-to-execution trace schemas with one public-safe intent-to-artifact trace shape.
-- Implemented protocol validation: `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures validate public record shape only, including intake state, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, and non-claims.
-- Exact Appendix C claim-source mappings for the core intent-to-execution claim across VIEA intent/artifact/runtime feedback discipline, Talos typed-job/audit/replay discipline, Software Magic Grimoire command-envelope vocabulary, GenesisCode proposal/effect/provenance boundaries, and MoECOT runtime-reference context; four local mappings (`viea`, `talos`, `software_magic_grimoire`, `genesiscode`) now have reviewed passage references, while `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending contract-completeness tests, constraint-preservation tests, artifact-traceability tests, approval/runtime enforcement evidence, replayed vertical-slice artifacts, or accepted evidence transitions.
+- Intent-contract, command-contract, and intent-execution-trace fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, and cycle cases.
+- Implemented protocol validation: `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures validate public record shape only, including intake state, field provenance, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, dispatch blockers, and non-claims.
+- Exact Appendix C claim-source mappings for the merged command-contract claim across VIEA intent/artifact/runtime feedback discipline, Talos typed-job/audit/replay discipline, Software Magic Grimoire command-envelope vocabulary, GenesisCode proposal/effect/provenance boundaries, MoECOT runtime-reference context, and Cognitive Compilation source-plan/S-IR lowering. Five local mappings (`viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`) have reviewed passage references, while `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending command parser tests, dispatch-blocking tests, prompt-override scenarios, semantic-extraction quality checks, approval/runtime enforcement evidence, replayed vertical-slice artifacts, or accepted evidence transitions.
 - Implemented synthetic Codex test: Contract field completeness test via `python3 scripts/validate_plan_execution_contracts.py`; vertical execution remains open.
 - Implemented synthetic Codex test: Constraint preservation test via `python3 scripts/validate_plan_execution_contracts.py`; replayed trace remains open.
 - Implemented synthetic Codex test: Artifact traceability test via `python3 scripts/validate_plan_execution_contracts.py`; runtime artifact acceptance remains open.
+- Implemented synthetic Codex test: Command schema validation test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
+- Implemented synthetic Codex test: Failure-behavior declaration test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
+- Planned Codex test: Prompt override scenario.
+- Planned Codex test: Field-confidence audit.
+- Planned Codex test: Authority-inference block test.
+- Consolidation note: `command-contracts-and-semantic-interfaces` folded into this chapter on 2026-06-30 as semantic-interface fields, validation states, proof hooks, fixture/test rows, source mappings, and lineage; the old public slug is preserved by a static redirect and the retired source chapter is archived.
 
 Lean proof targets:
 
@@ -915,69 +931,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:intent_execution.contracts.operational_invariant` | `AsiStackProofs.IntentToExecution` | A compiled execution job preserves the parent contract constraints. | implemented |
 | `lean:intent_execution.contracts.failure_blocks_promotion` | `AsiStackProofs.IntentToExecution` | An execution job without required approval cannot transition to running. | implemented |
-
-### Command Contracts and Semantic Interfaces
-
-Stable ID: `command-contracts-and-semantic-interfaces`
-
-Chapter job: The stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation.
-
-Core claim: Command contracts should use explicit semantic interfaces for objective, context, constraints, procedure, output, verification, and failure behavior.
-
-Source loading queue:
-
-| Role | Source IDs | Loading instruction |
-|---|---|---|
-| Primary | `software_magic_grimoire`, `viea` | Read first for chapter claims and mechanisms. |
-| Supporting | `genesiscode`, `cognitive_compilation`, `talos` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-
-Draft arc:
-
-- Problem: The stack needs compact command language that is expressive enough for AI cooperation and precise enough for validation.
-- Insufficiency: Prompt prose often hides objectives, constraints, output contracts, and failure behavior in unstructured language.
-- Mechanism: Turn recurring command patterns into reusable templates.
-- Mechanism: Treat software words as coordination primitives.
-- Mechanism: Bind semantic interfaces to schemas and tests.
-- Mechanism: Treat command contracts as semantic firewalls: retrieved context, examples, prior conversation, and style notes can inform work but cannot override explicit objective, constraints, authority, verification, or failure behavior.
-- Mechanism: Mark field confidence and missing/inferred authority so planning can distinguish authorized means from inferred defaults, draft-only routes, clarifications, and residuals.
-- Mechanism: Track command validation states: draft, field-complete, conflict-detected, authority-inferred, dispatch-blocked, validated-for-planning, and superseded.
-- Mechanism: Attach field provenance and confidence states: confirmed, policy-imposed, source-derived, defaulted, inferred, and missing.
-- Mechanism: Preserve bounded defaults, authority basis, re-contract points, dispatch blockers, and non-claims as first-class fields so future parser and dispatcher tests can distinguish record shape from enforcement.
-- Interface: Planning consumes structured commands.
-- Interface: Execution enforces output contracts.
-- Interface: Verification checks stated failure behavior.
-
-Primary invariants:
-
-- A command exposes output and verification requirements.
-- Failure behavior is declared.
-- Implicit instructions do not override explicit constraints.
-- Field provenance and confidence remain visible to planning and verification.
-- Inferred or defaulted authority cannot authorize side effects.
-
-Failure modes to cover:
-
-- Semantic ambiguity.
-- Prompt injection through context.
-- Unspecified output contract.
-- Field laundering, where vague prose is moved into a formal field without becoming testable.
-- Authority inference, where a likely means is treated as if the human granted it.
-
-Draft deliverables:
-
-- A canonical command-contract template used by future chapter drafting and experiment prompts.
-- Implemented protocol validation: `command_contract` fixture validates public record shape only, including validation state, field provenance, field confidence, bounded defaults, authority basis, re-contract points, dispatch blockers, and non-claims.
-- Exact Appendix C claim-source mappings for the core command-contract claim across Software Magic Grimoire command-envelope vocabulary, VIEA structured command layers, GenesisCode protocol/effect boundaries, Cognitive Compilation source-plan/S-IR lowering, and Talos typed-job contract discipline; all five local mappings (`software_magic_grimoire`, `viea`, `genesiscode`, `cognitive_compilation`, `talos`) now have reviewed passage references. Support remains `argument` pending command parser tests, dispatch-blocking tests, prompt-override scenarios, semantic-extraction quality checks, or accepted evidence transitions.
-- Implemented synthetic Codex test: Command schema validation test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
-- Implemented synthetic Codex test: Failure-behavior declaration test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
-- Planned Codex test: Prompt override scenario.
-- Planned Codex test: Field-confidence audit.
-- Planned Codex test: Authority-inference block test.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
 | `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandContracts` | A valid command contract contains objective, constraints, output contract, verification, and failure behavior. | implemented |
 | `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandContracts` | A hidden or conflicting instruction cannot override an explicit contract constraint. | implemented |
 

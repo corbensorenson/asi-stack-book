@@ -35,7 +35,6 @@ REQUIRED_IDS = {
     "compact-generative-systems-and-residual-honesty",
     "rankfold-neuralfold-and-artifact-compression",
     "intent-to-execution-contracts",
-    "command-contracts-and-semantic-interfaces",
     "human-intent-as-a-formal-input",
     "virtual-context-abi",
     "semantic-pages-context-cells-and-certificates",
@@ -67,7 +66,7 @@ REQUIRED_IDS = {
 REQUIRED_FRAGMENTS = (
     "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
-    "49 manifest chapters after the executed Part I pilot",
+    "48 manifest chapters after the executed Part I pilot",
     "Do not run a broad 54-to-44 manifest edit",
     "Do not target a fixed chapter count.",
     "Do not delete ideas merely to reduce repetition.",
@@ -101,7 +100,7 @@ REQUIRED_FRAGMENTS = (
     "apply only one merge or fold package per commit.",
     "Fold-disposition candidates | Execute fold, revise, defer, or reject/retain.",
     "Compression and residual honesty | `executed`",
-    "Intent and executable contracts | `review_ready`",
+    "Intent and executable contracts | `executed`",
     "Static context ABI | `review_ready`",
     "Verification and adversarial review | `review_ready`",
     "Planning and DAG control | `review_ready`",
@@ -253,7 +252,6 @@ INTENT_DRAFT_REQUIRED_FRAGMENTS = (
 
 INTENT_REQUIRED_IDS = {
     "intent-to-execution-contracts",
-    "command-contracts-and-semantic-interfaces",
     "human-intent-as-a-formal-input",
     "planning-as-a-control-layer",
 }
@@ -853,7 +851,7 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "does not execute any additional remaining merge or fold",
     "does not create external review",
     "does not change support states",
-    "The current canonical manifest has 49 chapters after the executed Part I pilot",
+    "The current canonical manifest has 48 chapters after the executed Part I pilot",
     "Reader Curation Outcome Table",
     "Constitutional alignment and agency/corrigibility",
     "Value conflict and contestable governance",
@@ -878,8 +876,8 @@ RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
 URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation URL and History Policy",
     "active policy for future consolidation execution",
-    "applied to the 2026-06-30 Part I pilot, conservative compression merge, MoECOT runtime fold, and simulation-fidelity fold",
-    "The canonical manifest now has 49 chapters after the executed Part I pilot",
+    "applied to the 2026-06-30 Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, and simulation-fidelity fold",
+    "The canonical manifest now has 48 chapters after the executed Part I pilot",
     "If a retired public chapter URL cannot be preserved or deliberately recorded",
     "Default URL Policy",
     "Keep the destination chapter's existing stable ID and public URL",
@@ -890,11 +888,12 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "/chapters/agency-dignity-and-corrigibility.html",
     "/chapters/governance-rights-fork-exit-and-audit.html",
     "/chapters/generate-verify-repair-compression.html",
+    "/chapters/command-contracts-and-semantic-interfaces.html",
     "/chapters/moecot-runtime-and-multi-core-orchestration.html",
     "/chapters/simulation-fidelity-and-physical-constraints.html",
     "Validation Expectations",
     "Non-Claims",
-    "The 2026-06-30 Part I, conservative compression, MoECOT, and simulation-fidelity execution",
+    "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, and simulation-fidelity execution",
 )
 
 
@@ -927,8 +926,8 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 49:
-        errors.append("Consolidation sequence expects the current manifest to have 49 chapters after the simulation-fidelity fold.")
+    if len(ids) != 48:
+        errors.append("Consolidation sequence expects the current manifest to have 48 chapters after the intent/contracts merge.")
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -1406,7 +1405,7 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "49-chapter manifest, executed Part I pilot, executed conservative compression merge, executed MoECOT runtime fold, and executed simulation-fidelity fold recorded with remaining candidate sequence."
+        "48-chapter manifest, executed Part I pilot, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, and executed simulation-fidelity fold recorded with remaining candidate sequence."
     )
 
 

@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-30 - Intent/contracts consolidation executed
+
+- Executed the governed intent/contracts merge in `book_structure.json`:
+  folded `command-contracts-and-semantic-interfaces` into
+  **Command Contracts: From Intent to Executable Work** while retaining
+  `human-intent-as-a-formal-input` as the separate Part I intake, ambiguity,
+  authority-extraction, bounded-default, re-contract, and stop-condition
+  chapter.
+- Reduced the canonical manifest from 49 chapters to 48 chapters while
+  preserving semantic-interface fields, validation states, field provenance and
+  confidence, context/prompt override boundaries, dispatch blockers, command
+  schema fixtures, source mappings, proof tags, reader overlays, curated-reader
+  lineage, URL history, and no-support-state-change boundaries.
+- Moved the retired live manuscript and curated reader draft under archive
+  paths, added a static historical stub for the retired public chapter slug,
+  retargeted source/proof/reader/evidence records to the active destination,
+  and regenerated the affected source, claim/evidence, test, proof, reader,
+  grounding, audio-script, and protocol surfaces.
+- This does not promote any chapter core claim above `argument`, create source
+  evidence, create proof results, create test results, prove parser
+  completeness, prove prompt-injection resistance, prove deployed command
+  dispatch, prove approval-service correctness, approve reader artifacts, or
+  create EPUB, DOCX, PDF, HTML, audio, DOI, Zenodo, or audio-embedded EPUB
+  release artifacts.
+
 ## 2026-06-30 - Simulation fidelity fold executed
 
 - Executed the governed simulation-fidelity fold in `book_structure.json`:

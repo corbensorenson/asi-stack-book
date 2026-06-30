@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 49 |
-| Assigned source/chapter pairs | 441 |
-| Exact claim-source mappings | 441 |
+| Chapters audited | 48 |
+| Assigned source/chapter pairs | 437 |
+| Exact claim-source mappings | 437 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 441 |
-| Source notes listing assigned chapter | 441 |
-| Passage-reviewed mappings recorded | 441 |
-| Support-state counts | {"argument": 49} |
+| Source notes present for assigned pairs | 437 |
+| Source notes listing assigned chapter | 437 |
+| Passage-reviewed mappings recorded | 437 |
+| Support-state counts | {"argument": 48} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -45,8 +45,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
-| `intent-to-execution-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `command-contracts-and-semantic-interfaces` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `intent-to-execution-contracts` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `planning-as-a-control-layer` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `planforge-dags-and-intelligence-arbitrage` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -89,9 +88,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 
 | Source ID | Assigned chapter count | Source note exists |
 |---|---:|---|
-| `viea` | 24 | yes |
-| `talos` | 23 | yes |
+| `viea` | 23 | yes |
 | `moecot` | 23 | yes |
+| `talos` | 22 | yes |
 | `spinoza` | 16 | yes |
 | `scf` | 15 | yes |
 | `rmi` | 14 | yes |
@@ -99,9 +98,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `vcm_public` | 13 | yes |
 | `coherence_exchange` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
-| `genesiscode` | 11 | yes |
 | `planforge` | 11 | yes |
 | `cognitive_loop_closure` | 11 | yes |
+| `genesiscode` | 10 | yes |
 | `verification_bandwidth` | 10 | yes |
 | `cgs` | 8 | yes |
 | `cognitive_compilation` | 8 | yes |
@@ -115,9 +114,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `theseus_architecture_gate` | 7 | yes |
 | `tokenmana` | 7 | yes |
 | `simulation_scaling` | 6 | yes |
-| `software_magic_grimoire` | 6 | yes |
 | `circle_ai_contract_suite` | 6 | yes |
 | `uat` | 5 | yes |
+| `software_magic_grimoire` | 5 | yes |
 | `treellm` | 5 | yes |
 | `octopus_router` | 5 | yes |
 | `beastbrain` | 4 | yes |
@@ -283,11 +282,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
-| `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
-| `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `viea` | mapped | note present | chapter listed | passage-reviewed |
-| `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
-| `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
-| `command-contracts-and-semantic-interfaces.core` | `command-contracts-and-semantic-interfaces` | `talos` | mapped | note present | chapter listed | passage-reviewed |
+| `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |

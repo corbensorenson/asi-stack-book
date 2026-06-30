@@ -312,7 +312,7 @@
     },
     {
       "tag": "lean:command.semantic_interface.operational_invariant",
-      "chapter_id": "command-contracts-and-semantic-interfaces",
+      "chapter_id": "intent-to-execution-contracts",
       "module": "AsiStackProofs.CommandContracts",
       "formal_target": "A valid command contract contains objective, constraints, output contract, verification, and failure behavior.",
       "target_status": "implemented",
@@ -322,7 +322,7 @@
     },
     {
       "tag": "lean:command.semantic_interface.failure_blocks_promotion",
-      "chapter_id": "command-contracts-and-semantic-interfaces",
+      "chapter_id": "intent-to-execution-contracts",
       "module": "AsiStackProofs.CommandContracts",
       "formal_target": "A hidden or conflicting instruction cannot override an explicit contract constraint.",
       "target_status": "implemented",

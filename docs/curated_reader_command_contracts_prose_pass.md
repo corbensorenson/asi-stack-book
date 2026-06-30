@@ -5,17 +5,18 @@ Date: 2026-06-30
 Chapter: `command-contracts-and-semantic-interfaces`
 
 Reader manuscript file:
-`editions/reader_manuscript/v1_0/chapters/command-contracts-and-semantic-interfaces.qmd`
+`editions/reader_manuscript/v1_0/archive/retired_chapters/command-contracts-and-semantic-interfaces.qmd`
 
-Live source file: `chapters/command-contracts-and-semantic-interfaces.qmd`
+Archived live source file:
+`archive/retired_chapters/command-contracts-and-semantic-interfaces.qmd`
+
+Active destination file: `chapters/intent-to-execution-contracts.qmd`
 
 Consolidation caveat:
-`docs/chapter_consolidation_release_stability_review.md` records this chapter
-inside a `deferred_for_release` package with
-`intent-to-execution-contracts`. This pass curates the current source chapter
-for the reader-manuscript cycle only. It does not execute, reject, or
-authorize the future intent/command-contract merge, and it preserves the
-current 54-chapter manifest boundary.
+`docs/chapter_history_ledger.md` records that this standalone source chapter
+folded into `intent-to-execution-contracts` on 2026-06-30. This pass is now
+historical reader-lineage material for the merged chapter, not an active
+reader chapter record and not a release approval.
 
 ## Reader Promise
 
