@@ -1730,6 +1730,43 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_spinoza_prose_pass.md. This is a drafting-only reader derivative, not a release-reviewed chapter, not equal authority with the live book, and not a verification/adversarial-review consolidation decision."
+    },
+    {
+      "chapter_id": "unified-adaptive-tribunal-and-adversarial-review",
+      "title": "Unified Adaptive Tribunal and Adversarial Review",
+      "file": "editions/reader_manuscript/v1_0/chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/unified-adaptive-tribunal-and-adversarial-review.qmd",
+      "live_source_ref": "chapters/unified-adaptive-tribunal-and-adversarial-review.qmd@89c8d600d",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#unified-adaptive-tribunal-and-adversarial-review.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#unified-adaptive-tribunal-and-adversarial-review",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes UAT around tribunal review as bounded escalation whose verdicts must change ledger or execution state: dossier boundaries, role-separated reviewers, adversarial probes, evidence-linked findings, dissent, unchanged-evidence guards, required actions, constraint effects, and human adjudication hooks; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "support-state boundary preserved: chapter core claim remains a Design rationale at argument support",
+        "source boundary preserved for uat, spinoza, coherence_exchange, talos, verification_bandwidth, and ext_contestable_ai_design_2022",
+        "proof/test boundary preserved: synthetic tribunal-review harness and finite Lean predicates only",
+        "no reviewer-independence, adversarial-probe-quality, consensus-quality, verdict-correctness, human-adjudication-quality, tribunal-quality, deployed-contestability, institutional-adequacy, source-interpretation, Talos-runtime, Spinoza-verifier, verification-bandwidth-benchmark, Coherence-Exchange-implementation, multi-reviewer-UAT-pipeline, or support-state movement claim added",
+        "implementation horizon preserved: tribunal-review schema and fixture discipline now, operating system for contested claims as mature endpoint only",
+        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md; this pass does not execute, reject, or authorize the future merge with spinoza-verification-and-proof-carrying-claims",
+        "release blockers preserved until reader reconciliation, format review, and edition release record exist"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_uat_prose_pass.md. This is a drafting-only reader derivative, not a release-reviewed chapter, not equal authority with the live book, and not a verification/adversarial-review consolidation decision."
     }
   ],
   "reconciliation_report": {

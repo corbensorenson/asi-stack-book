@@ -1,0 +1,320 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: unified-adaptive-tribunal-and-adversarial-review
+generated_baseline_ref: build/reader_edition/chapters/unified-adaptive-tribunal-and-adversarial-review.qmd
+live_source_ref: chapters/unified-adaptive-tribunal-and-adversarial-review.qmd@89c8d600d
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Unified Adaptive Tribunal and Adversarial Review
+
+Claim ledgers remember what the system believes. Spinoza asks what kind of
+justification a claim needs before it can become stronger. The tribunal exists
+for the claims and artifacts that are still too contested, too high-stakes, or
+too ambiguous for one verifier result.
+
+The tribunal is not a machine for manufacturing certainty. It is an escalation
+protocol. A claim enters with a dossier, a risk class, a boundary around what
+evidence is in scope, and a reason ordinary verification was not enough. It
+leaves as an accepted claim within limits, a revision order, a blocked claim,
+an expanded retrieval request, a human adjudication request, or a residual that
+later work must carry.
+
+The reader throughline is simple: review must change state.
+
+That is the difference between serious adversarial review and decorative
+critique. A review that produces a paragraph of concerns but changes no claim,
+plan, permission, residual, or required action is not part of the stack. It is
+commentary. A tribunal verdict should become a ledger update or an execution
+constraint, or it should admit that it did not settle the matter.
+
+## Problem
+
+Some decisions are too consequential for a single model's confidence.
+
+The stack can already hold claim identity in a ledger and ask Spinoza for a
+proof-carrying, citation-carrying, procedure-carrying, or review-carrying
+justification. But there are claims where the hard part is not only whether an
+artifact exists. The hard part is whether the evidence boundary is adequate,
+whether the interpretation is contested, whether the stakes require dissent to
+remain visible, and whether unresolved objections should block downstream
+work.
+
+Those cases need more than a pass/fail verifier. They need a bounded review
+process that can assign roles, stress the claim from different angles, preserve
+minority objections, and return an action that the rest of the system must
+respect.
+
+The tribunal is that process. It does not replace proof, source review,
+benchmarks, or human judgment. It coordinates them when a claim is important
+enough that the system needs an auditable disagreement record before moving.
+
+## Why Existing Approaches Are Insufficient
+
+Self-critique is cheap.
+
+A model can criticize its own answer and still share the same blind spots that
+produced the answer. Multiple model reviewers can also collapse into consensus
+theater if they receive the same evidence, optimize for agreement, or fail to
+record what each role actually tested. A committee is not automatically more
+truthful than one reviewer. Sometimes it is only a larger surface for confident
+language.
+
+The failure mode is review laundering. A claim gets rejected, revised, or
+blocked, then it is sent through another review pass over the same evidence
+until the prose sounds measured enough to pass. Nothing changed except tone.
+The tribunal record exists to make that path visible. It records prior review
+references, the unchanged-evidence guard, dissent, unresolved issues, required
+actions, and constraint effects.
+
+The external contestable-AI literature is useful here because it keeps the
+chapter grounded in a known governance problem: affected parties need ways to
+challenge, appeal, audit, and dispute AI-mediated decisions. In this book, that
+maps to tribunal dossiers, dissent preservation, appeal routes, and required
+actions. It does not prove that this repository has implemented a contestable
+institution or validated a tribunal process.
+
+## Core Claim
+
+A tribunal layer should coordinate multiple reviewers, adversarial probes,
+consensus rules, and documented uncertainty. This remains an architectural
+argument.
+
+The source basis is bounded. UAT supplies the retrieval-bounded proposition
+review pattern: structural priors, retrieval dossiers, atomic proposition
+states, adversarial siege, hard cycle caps, and human checkpoints. Spinoza
+supplies the tier and downgrade consequences when verification fails, times
+out, or exposes ambiguity. Talos supplies the execution pressure: review
+outputs have to become typed, auditable artifacts with claim graphs, evidence
+sets, proof bundles, logs, replay, residual risk, and human adjudication.
+Verification Bandwidth explains why tribunal escalation is sometimes the right
+answer to inadequate verification workspace rather than simply adding more
+context. Coherence Exchange remains speculative connector/source-note framing,
+not implemented institutional evidence.
+
+The live chapter core claim stays at `argument` support. The repository has a
+tribunal-review schema, synthetic fixtures, a local harness, and finite Lean
+predicates over record fields. It does not have a working multi-reviewer UAT
+pipeline, measured reviewer independence, validated adversarial probe quality,
+validated verdict correctness, institutional contestability, runtime behavior,
+or support-state movement for the chapter core claim.
+
+## Mechanism
+
+The tribunal begins when ordinary verification is not enough.
+
+An escalated target enters with a `target_ref`, `risk_class`,
+`dossier_boundary`, and `dossier_refs`. The dossier boundary matters because a
+tribunal is not allowed to quietly use hidden evidence and then present its
+verdict as dossier-bounded. If retrieval expands, the expansion has to be
+recorded as part of the review.
+
+The next move is role separation. Review roles can include logic critic,
+citation critic, omission critic, safety critic, implementation critic, domain
+reviewer, or human adjudicator. The point is not to multiply voices. The point
+is to create different attack surfaces and record which one found what.
+
+Then come adversarial probes. A probe can test whether the claim follows from
+the dossier, whether sources actually support the interpretation, whether an
+important omitted case changes the result, whether a safety constraint is being
+weakened, or whether the proposed action should be blocked until a human
+decides.
+
+```{mermaid}
+flowchart LR
+  A["Escalated claim or artifact"] --> B["Bounded review dossier"]
+  B --> C["Role-separated reviewers"]
+  C --> D["Adversarial probes"]
+  D --> E["Evidence-linked findings"]
+  E --> F{"Verdict changes state?"}
+  F -- "accept within scope" --> G["Ledger update with limits"]
+  F -- "revise / reject / block" --> H["Required action"]
+  F -- "not settled" --> I["Dissent, residual, or retrieval expansion"]
+  G --> J["Planning and execution constraints"]
+  H --> J
+  I --> J
+```
+
+The diagram's important question is not whether the tribunal reached
+agreement. It is whether the verdict changed the state of the stack. An
+accepted claim should carry scope limits. A revision should create required
+work. A rejection should block promotion. A blocked result should stop dispatch
+or narrow authority. An unresolved result should preserve dissent, residuals,
+or retrieval expansion needs.
+
+The tribunal record is therefore an interface object, not a transcript. It
+records reviewer roles, adversarial probes, findings, evidence references,
+dissent, unresolved issues, verdict, required actions, constraint effects,
+human adjudication, and non-claims. The review can be discussed in prose, but
+the state change has to be machine-readable.
+
+## Interfaces
+
+Spinoza sends claims to the tribunal when proof, citation, procedure, or replay
+artifacts are not enough to settle the risk. A semantic mismatch, unresolved
+ambiguity, missing evidence, contested interpretation, or high-impact decision
+can all become tribunal routes.
+
+Planning sends work to the tribunal when a plan node would otherwise cross a
+risk boundary without enough review. A tribunal result can block dispatch,
+narrow adapter permissions, require a source fetch, create a residual task, or
+ask for human sign-off.
+
+Claim ledgers consume the result. They store whether the claim was accepted
+within a scope, downgraded, blocked, revised, or left unresolved. They also
+store the dissent and unresolved issues so future work cannot erase them by
+restating the claim more smoothly.
+
+A practical tribunal-review record needs at least these fields:
+
+- `review_id`
+- `target_ref`
+- `review_state`
+- `risk_class`
+- `dossier_boundary`
+- `dossier_refs`
+- `reviewer_independence`
+- `reviewer_roles`
+- `adversarial_probes`
+- `cycle_cap`
+- `prior_review_refs`
+- `unchanged_evidence_guard`
+- `retrieval_expansion_policy`
+- `findings`
+- `evidence_refs`
+- `dissent`
+- `unresolved_issues`
+- `verdict`
+- `required_actions`
+- `constraint_effects`
+- `human_adjudication`
+- `non_claims`
+
+These fields do not prove that reviewers are independent or that a verdict is
+correct. They make it harder to hide when those properties are missing.
+
+## Invariants
+
+Dissent is preserved.
+
+Consensus requires evidence.
+
+High-risk review needs enough role separation, probes, and dossier references
+to be audited later.
+
+Those are modest invariants, but they are useful. They prevent a verdict from
+being treated as finished when it has no evidence references, no recorded
+roles, no adversarial probes, or no unresolved-issue record. They also prevent
+the most dangerous version of review laundering: repeating review over the same
+evidence and treating a cleaner consensus statement as new support.
+
+Scope is part of the invariant. A tribunal can accept a claim only inside the
+scope it reviewed. If the claim later appears in a broader context, the ledger
+has to carry the original limits forward or require a new review.
+
+## Failure Modes
+
+The first failure mode is collusion. Reviewers can collude explicitly, but they
+can also collude structurally by sharing prompts, hidden assumptions, context
+gaps, incentives, or blind spots. A tribunal record should make role collapse
+visible before its verdict binds downstream work.
+
+The second failure mode is consensus theater. Agreement without evidence can
+look like progress because it feels socially settled. The record has to ask
+what findings, evidence refs, and probes actually support the verdict.
+
+The third failure mode is critique without action. A review that notices a
+problem and then allows the same claim, plan, permission, or release to move
+unchanged is ornamental. Required actions and constraint effects are the
+discipline that turns critique into governance.
+
+The fourth failure mode is tribunal overuse. If every uncertain sentence
+requires a tribunal, the stack becomes too slow to operate. Tribunal review
+belongs at escalation points: high-risk artifacts, contested claims,
+proof-mismatch cases, unresolved value conflicts, safety-relevant plan nodes,
+and places where ordinary verification lacks adequate workspace.
+
+## Minimum Viable Implementation
+
+The minimum viable tribunal is a schema and fixture set for review records.
+
+The current repository already has that narrow slice: a
+`tribunal_review_record` schema, valid and expected-invalid fixtures, and a
+validator. The harness checks record discipline around high-risk reviewer
+roles, adversarial probes, dossier refs, accept verdict evidence refs, dissent
+preservation, prior-review laundering, required actions, constraint effects,
+and explicit non-claims.
+
+That is useful, but it is not a tribunal pipeline. It validates the envelope,
+not the quality of the reviewers inside it. It does not measure independence,
+probe quality, consensus quality, verdict correctness, human adjudication, or
+runtime behavior.
+
+The next honest implementation step would be a small contested-claim rehearsal:
+one high-risk claim that cannot be accepted without review, one tribunal record
+with role-separated probes and preserved dissent, one verdict that expands
+retrieval rather than promoting the claim, and one repeated review attempt
+blocked because the evidence set did not change.
+
+## Beyond the State of the Art
+
+The mature tribunal is an operating system for contested claims and high-risk
+artifacts.
+
+In that system, ordinary verification handles routine support. Tribunal review
+handles escalation. Dossier construction tools define the evidence boundary.
+Role templates assign logic, citation, omission, implementation, security,
+governance, and domain reviewers. Probe workflows run with cycle caps. Dissent
+and unresolved issues remain attached to the verdict. Required actions become
+ledger updates, source requests, authority narrowing, plan blocks, residual
+tasks, or human adjudication.
+
+The mature endpoint is not more debate. It is more consequential review. The
+tribunal can say: accept within this scope, revise this claim, reject this
+artifact, block this dispatch, narrow this permission, fetch this source, ask
+this human, or carry this residual. Re-running review over unchanged evidence
+cannot quietly promote the claim because the prior-review guard exposes the
+attempt.
+
+That endpoint is still target architecture. The book can describe it, and the
+repository can validate small record-level pieces, but no chapter prose should
+pretend the mature tribunal exists here today.
+
+## Proof and Test Boundary
+
+The Lean module for this chapter proves finite-record gates. It can show that
+a valid issued verdict record includes reviewer roles, evidence references, and
+unresolved-dissent recording. It can also show that a high-risk artifact
+missing required tribunal review cannot be accepted under the modeled record.
+
+Those are record properties. They do not prove reviewer independence,
+adversarial-probe quality, verdict correctness, consensus quality, human
+adjudication quality, runtime behavior, institutional contestability, or
+source interpretation.
+
+The tribunal harness has a similarly narrow boundary. It passed locally over
+three valid fixtures and five expected-invalid fixtures. That result supports
+synthetic record discipline only. It does not promote the chapter core claim.
+
+## Summary
+
+Unified Adaptive Tribunal and Adversarial Review gives the stack a way to
+escalate claims that ordinary verification cannot responsibly settle. It uses
+dossier boundaries, role-separated reviewers, adversarial probes,
+evidence-linked findings, dissent, unresolved issues, verdicts, required
+actions, and human adjudication hooks.
+
+The important rule is that review must change state. It should update a ledger,
+block a claim, revise an artifact, narrow authority, demand a source, preserve
+dissent, or create a residual. If nothing changes except the presence of a
+critique paragraph, the tribunal layer has failed.
+
+## Handoff
+
+Tribunal review only matters if its decisions alter downstream work. Labor OS
+and Typed Jobs turns accepted, narrowed, blocked, or revised decisions into
+controlled units of execution with lifecycle state, permissions, artifacts,
+audit events, replay declarations, and failure behavior. That is where
+deliberation becomes governed labor instead of another recommendation.

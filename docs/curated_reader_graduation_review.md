@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 46
-- Curated chapter records: 46 drafting records for
+- Curated-manuscript candidates: 47
+- Curated chapter records: 47 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -45,6 +45,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `verification-bandwidth-and-context-adequacy`,
   `claim-ledgers-and-belief-revision`,
   `spinoza-verification-and-proof-carrying-claims`,
+  `unified-adaptive-tribunal-and-adversarial-review`,
   `labor-os-and-typed-jobs`,
   `artifact-graphs-audit-logs-and-replay`,
   `runtime-adapters-tool-permissions-and-human-approval`,
@@ -68,6 +69,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `planning-as-a-control-layer`,
   `planforge-dags-and-intelligence-arbitrage`,
   `virtual-context-abi`,
+  `semantic-pages-context-cells-and-certificates`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
   `artifact-steward-agents-and-living-project-governance`
@@ -84,7 +86,7 @@ Graduate drafting-only curated reader sources for the opener, Efficient ASI,
 System Boundaries, Failure Modes, Evidence States, Human Intent,
 Constitutional Alignment, Agency and Dignity, Moral Uncertainty, Security Kernel, Stable Capability Fields,
 Capability Replacement and Rollback, Readiness Gates, Cognitive Compilation,
-Context Transactions, Verification Bandwidth, Claim Ledgers, Spinoza Verification, Labor OS,
+Context Transactions, Verification Bandwidth, Claim Ledgers, Spinoza Verification, Unified Adaptive Tribunal, Labor OS,
 Artifact Graphs, Runtime Adapters, Procedural Memory, Benchmark Ratchets,
 Policy Optimization, Integrated Reference Architecture, Project Theseus,
 Prototype Roadmap, Living Book Methodology, Open Research Agenda, Personal
@@ -114,9 +116,9 @@ source.
 After the release-stability review, curated-reader work may enter a pending
 consolidation cluster only when the prose-pass record cites
 `docs/chapter_consolidation_release_stability_review.md` and keeps the merge
-or fold caveat active. `constitutional-alignment-substrate` is the first such
-deferred-package pass: it improves the current reader manuscript without
-executing, rejecting, or authorizing the future Constitutional Alignment merge.
+or fold caveat active. The deferred-package passes now improve current reader
+manuscript prose without executing, rejecting, or authorizing their future
+merge or fold packages.
 
 ## Candidate Chapters
 
@@ -141,6 +143,7 @@ executing, rejecting, or authorizing the future Constitutional Alignment merge.
 | `verification-bandwidth-and-context-adequacy` | protected standalone context-adequacy chapter outside the pending static context ABI merge package; owns generation-versus-verification, target-claim scoped adequacy, semantic-unit comparison, escalation, and mode-confusion boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_verification_bandwidth_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no contradiction-rate benchmark, distractor-resistance result, summary-fidelity result, adequacy-classifier correctness, deployed VCM behavior, deployed escalation, or support-state movement claim is implied. |
 | `claim-ledgers-and-belief-revision` | protected standalone belief-revision substrate outside the pending verification/adversarial-review merge package; owns claim identity, support states, contradiction links, revision history, downgrade behavior, and confidence-laundering boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_claim_ledgers_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no claim-extraction, contradiction-detection, semantic-equivalence, citation-correctness, belief-engine, deployed-epistemic-correctness, or support-state movement claim is implied. |
 | `spinoza-verification-and-proof-carrying-claims` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `unified-adaptive-tribunal-and-adversarial-review` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_spinoza_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no theorem validity, verifier quality, citation accuracy, semantic equivalence, open-domain autoformalization, proof generation, source interpretation, Proof-Carrying Code implementation, GenesisCode implementation, TreeLLM implementation, runtime behavior, deployed contradiction detection, whole-system epistemic correctness, support-state movement, or manifest merge/fold decision is implied. |
+| `unified-adaptive-tribunal-and-adversarial-review` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future merge with `spinoza-verification-and-proof-carrying-claims` remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_uat_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no reviewer independence, adversarial-probe quality, consensus quality, verdict correctness, human-adjudication quality, tribunal quality, deployed contestability, institutional adequacy, source interpretation, Talos runtime behavior, Spinoza verifier behavior, verification-bandwidth benchmark behavior, Coherence Exchange implementation, multi-reviewer UAT pipeline behavior, support-state movement, or manifest merge/fold decision is implied. |
 | `labor-os-and-typed-jobs` | protected standalone execution-boundary chapter outside pending consolidation clusters; owns typed jobs, contract locks, permission checks, approval gates, runtime-adapter boundaries, completion receipts, delivery-versus-evidence readiness, residuals, quarantine, and artifact handoff | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_labor_os_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed Labor OS, scheduler, permission service, approval service, adapter runner, replay system, benchmark, security result, AutoGen reproduction, SWE-bench reproduction, Talos runtime, or MoECOT runtime reproduction claim is implied. |
 | `artifact-graphs-audit-logs-and-replay` | protected standalone execution-continuity chapter outside pending consolidation clusters; owns artifact identity, provenance, audit events, replay grades, claim/test links, evidence gates, residuals, and allowed reuse | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_graphs_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no artifact-graph service, replay engine, audit reconstruction, produced-artifact completeness, provenance-completeness service, benchmark, security result, proof-carrying-code implementation, SWE-bench reproduction, AutoGen reproduction, or MoECOT runtime reproduction claim is implied. |
 | `runtime-adapters-tool-permissions-and-human-approval` | protected standalone execution-effect boundary chapter outside pending consolidation clusters; owns capability leases, typed permissions, sandbox modes, authority handles, scoped approval, effect receipts, rollback or residual records, incident paths, and evidence-state boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_runtime_adapters_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed runtime adapter service, sandbox isolation, approval service, secret-handle safety, live effect receipt validation, rollback execution, incident response, runtime security, benchmark performance, Talos runtime, MoECOT runtime reproduction, ReAct reproduction, Simplex-level assurance, Copilot-style runtime monitoring, proof-carrying-code enforcement, or deployed approval enforcement claim is implied. |
@@ -201,7 +204,7 @@ true:
 
 ## Non-Claims
 
-- This review creates forty-six drafting-only curated reader chapter files for
+- This review creates forty-seven drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.
