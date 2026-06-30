@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 47
-- Curated chapter records: 47 drafting records for
+- Curated-manuscript candidates: 48
+- Curated chapter records: 48 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -39,6 +39,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `security-kernel-and-digital-scifs`,
   `stable-capability-fields`,
   `capability-replacement-and-rollback`,
+  `routing-heads-and-specialist-cores`,
   `readiness-gates-residual-escrow-and-quarantine`,
   `cognitive-compilation-and-semantic-ir`,
   `context-transactions-snapshots-mounts-and-taint`,
@@ -85,7 +86,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 Graduate drafting-only curated reader sources for the opener, Efficient ASI,
 System Boundaries, Failure Modes, Evidence States, Human Intent,
 Constitutional Alignment, Agency and Dignity, Moral Uncertainty, Security Kernel, Stable Capability Fields,
-Capability Replacement and Rollback, Readiness Gates, Cognitive Compilation,
+Capability Replacement and Rollback, Routing Heads, Readiness Gates, Cognitive Compilation,
 Context Transactions, Verification Bandwidth, Claim Ledgers, Spinoza Verification, Unified Adaptive Tribunal, Labor OS,
 Artifact Graphs, Runtime Adapters, Procedural Memory, Benchmark Ratchets,
 Policy Optimization, Integrated Reference Architecture, Project Theseus,
@@ -137,6 +138,7 @@ merge or fold packages.
 | `security-kernel-and-digital-scifs` | protected standalone security-boundary chapter outside the pending consolidation cluster; owns least-exposure, handle-lease, Digital SCIF, and authority-receipt reader vocabulary | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_security_kernel_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed security, sandbox-isolation, side-channel-resistance, prompt-injection-containment, OWASP-conformance, or NIST-zero-trust-implementation claim is implied. |
 | `stable-capability-fields` | protected standalone capability-identity chapter outside the pending consolidation cluster; owns field/implementation separation, qualification leases, route-validation boundaries, authority ceilings, and rollback obligations | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_stable_capability_fields_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed route validation, authority enforcement, replacement safety, rollback execution, SLSA workflow, SemVer checker, object-capability implementation, or MoECOT runtime reproduction claim is implied. |
 | `capability-replacement-and-rollback` | protected standalone replacement-control chapter outside the pending consolidation cluster; owns candidate/accepted replacement separation, regression floors, residual escrow, monitor windows, rollback receipts, and evaluator independence | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_capability_replacement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed replacement behavior, real regression-suite quality, monitor-window success, rollback execution, evaluator-integrity enforcement, authority enforcement, MoECOT runtime reproduction, or implemented-corrigibility claim is implied. |
+| `routing-heads-and-specialist-cores` | `curated_manuscript_candidate`; deferred-package reader pass allowed by `docs/chapter_consolidation_release_stability_review.md`; future MoECOT runtime fold remains undecided | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_routing_heads_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no routing accuracy, learned-router quality, specialist adequacy, deployed authority enforcement, route-quality dominance, cost savings, MoECOT runtime behavior, MoECOT replay, current Theseus runtime behavior, support-state movement, or manifest merge/fold decision is implied. |
 | `readiness-gates-residual-escrow-and-quarantine` | protected standalone readiness-control chapter outside the pending consolidation cluster; owns scoped permission, residual escrow, productive quarantine, stale-gate prevention, inherited residuals, and lifecycle control | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_readiness_gates_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed readiness engine, residual-ledger storage, benchmark quality, live quarantine routing, gate-expiry enforcement, live rerouting, current Theseus runtime behavior, or MoECOT replay claim is implied. |
 | `cognitive-compilation-and-semantic-ir` | protected standalone semantic-IR and lowering chapter outside pending consolidation clusters; owns obligation addressability, semantic atoms, lowering receipts, validator failure routing, localized repair, and compiler non-claims | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_cognitive_compilation_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no source-plan parser, target-lowering correctness, compiler correctness, localized-repair performance, artifact-validator adequacy, quality improvement, cost improvement, deployed compiler behavior, or support-state movement claim is implied. |
 | `context-transactions-snapshots-mounts-and-taint` | protected standalone transaction-memory chapter outside the pending static context ABI merge package; owns memory-as-accountable-state, mounted snapshots, branches, taint/deletion closure, typed faults, and downstream artifact inheritance | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_context_transactions_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no memory-store behavior, read-your-writes result, branch-isolation result, mount-visibility result, replay correctness, poisoning resistance, side-channel defense, VCM conformance, or Digital SCIF implementation claim is implied. |
@@ -204,7 +206,7 @@ true:
 
 ## Non-Claims
 
-- This review creates forty-seven drafting-only curated reader chapter files for
+- This review creates forty-eight drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

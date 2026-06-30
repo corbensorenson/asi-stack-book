@@ -1,0 +1,318 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: routing-heads-and-specialist-cores
+generated_baseline_ref: build/reader_edition/chapters/routing-heads-and-specialist-cores.qmd
+live_source_ref: chapters/routing-heads-and-specialist-cores.qmd@7516e20c2
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Routing Heads and Specialist Cores
+
+A system with many abilities does not become governed by having all of them
+available at once. It becomes governed when it can decide which ability is
+allowed to act, what it is allowed to see, what tools it may use, how ready it
+is for this work, and where responsibility goes when the route fails.
+
+That is the routing problem. It is not only a question of speed or cost. It is
+the moment where capability becomes authority. A specialist may be the best
+semantic fit and still be too broad, too stale, too expensive, too private, too
+untested, or too dangerous for the task in front of it.
+
+The ASI Stack treats a route as a lease. A route temporarily grants a bounded
+specialist the context, tools, budget, verifier, fallback, and residual burden
+needed for one piece of work. The lease expires. The record remains. A
+governed router must remember not only why one specialist was selected, but
+also why other plausible specialists were refused.
+
+This is where modular intelligence stops being a pile of tools and becomes a
+control surface.
+
+## Problem
+
+Part II built the surfaces a system can route through: plans, contracts,
+context, claim ledgers, proof-carrying claims, execution jobs, audit logs,
+runtime adapters, and procedural memory. Once those surfaces exist, the next
+problem is selection under constraint.
+
+The stack cannot send every task to one general cognitive core and still claim
+local memory, local authority, readiness-aware selection, or clean rollback.
+The more work the system accepts, the more it needs a way to say: this bounded
+capability may act here, under this evidence state, with this authority subset,
+against this fallback.
+
+The Octopus Router source gives the chapter its head-and-arms vocabulary: a
+small resident router selects dynamically loaded specialist arms. RMI adds the
+ratchet: attempts, logs, residuals, benchmark pressure, regression
+preservation, and lifecycle discipline. Project Theseus adds local-first
+implementation pressure around registries, task allowlists, operator boards,
+and visible safety gates. MoECOT remains runtime-reference context only; its
+source and artifacts have not been reproduced here.
+
+The hard part is refusing the plausible route. A specialist can look relevant
+while missing the necessary authority, readiness, context, budget, proof
+boundary, or fallback. A routing chapter that only celebrates successful
+selection would miss the governance problem. The useful record is the one that
+preserves rejected candidates and the reasons they were rejected.
+
+## Why Ordinary Routing Fails
+
+Ordinary routing often optimizes the wrong thing. A load balancer may ask
+which worker is available. A model router may ask which model gives the best
+quality per dollar. A tool-using agent may ask which tool name appears to fit
+the prompt. Those are useful questions, but they are not enough for governed
+intelligence.
+
+A route can mutate an artifact, read a memory, call a tool, use a private
+context, consult a proof checker, spend a budget, or advise a high-impact
+decision. That makes routing an authority decision. The router needs a
+registry and a receipt, not only a confidence score.
+
+External routing work is still the right baseline. Sparse MoE, GShard, Switch
+Transformers, Expert Choice routing, Mixtral, the MoE survey literature,
+FrugalGPT, Hybrid LLM, and RouteLLM all make conditional computation,
+capacity, learned routing, and cost-quality tradeoffs explicit. The ASI Stack
+does not claim to outperform those systems here. It borrows the comparison
+vocabulary and adds a different obligation: the route must carry authority,
+readiness, fallback, residuals, and non-claims.
+
+Prompt-only orchestration fails this boundary most often. It can choose a tool
+or model and produce a good answer, while leaving no durable explanation of
+the route. Later, the system cannot reconstruct which candidates were rejected,
+which authority was denied, which context lease was granted, which fallback was
+available, or which residual was left behind. That is how a clever dispatcher
+becomes an ungoverned capability transfer.
+
+## Core Claim
+
+ASI scales through a lightweight routing head that selects bounded specialist
+cores with local tools, memory, and authority. In the live AI/research book,
+this claim remains a design rationale supported at `argument`.
+
+The current evidence supports the chapter as architecture, not as a measured
+router. The assigned sources justify discussion of router heads, specialist
+arms, permission envelopes, memory routing, residual-aware routing, tool
+cards, arm lifecycle, and operator-visible routing. The repository also has
+public schemas, fixtures, two finite Lean hooks, and synthetic
+readiness/residual checks that touch authority-bounded and fallback routing.
+
+Those artifacts do not prove routing accuracy, learned-router quality,
+specialist adequacy, deployed authority enforcement, route-quality dominance,
+MoECOT runtime behavior, current Theseus runtime behavior, or safety. The
+point is to make the route inspectable before claiming it works.
+
+## Mechanism
+
+The mechanism has three parts: a specialist registry, a routing decision
+record, and a route receipt.
+
+The registry describes the standing maximum envelope of a specialist. It says
+what the specialist can do, who owns it, what memory and tools it may lease,
+what authority ceiling applies, what it costs, what readiness state it is in,
+what quality predicates are relevant, what fallback routes exist, and what the
+record does not claim.
+
+The routing decision record describes one act of selection. It begins with a
+capability request from a plan or job. It lists candidate specialists. It names
+the selected specialist and the rejected candidates. It records the route
+shape, the authority check, the granted authority subset, the denied authority,
+the readiness check, the context lease, the tool lease, the verifier
+requirement, the budget, the expiry, the fallback route, and the residual
+owner.
+
+The receipt is the portable artifact. It lets later layers reconstruct why the
+system chose this specialist now, why it did not choose another one, and what
+obligations survived the route.
+
+```{mermaid}
+flowchart LR
+  Request["Capability request"] --> Registry["Specialist registry"]
+  Registry --> Fit["Capability fit"]
+  Fit --> Authority["Authority envelope"]
+  Authority --> Ready["Readiness state"]
+  Ready --> Cost["Cost and quality"]
+  Cost --> Decision{"Adequate route?"}
+  Decision -- "yes" --> Lease["Task-local route lease"]
+  Decision -- "no" --> Fallback["Fallback, review, or residual"]
+  Lease --> Receipt["Route receipt"]
+  Fallback --> Receipt
+  Receipt --> Ledger["Evidence and residual ledger"]
+```
+
+The routing head should stay small. Its work is to select, load, coordinate,
+verify, and log. Specialist cores carry bounded local capability: tools,
+memory, benchmarks, residuals, permissions, runtime tier, and verification
+contracts. A core may be a model, proof checker, retrieval lane, planning
+compiler, human review lane, mathematical substrate, tool stack, or composite
+worker. What matters is not the form of the core. What matters is that the
+route grants only the task-local subset it is allowed to use.
+
+The router also needs route shapes. Some tasks need one specialist. Some need
+sequential routing, where one specialist prepares work for another. Some need
+parallel routing, where independent specialists produce comparable outputs.
+Some need debate or adjudication because disagreement is useful evidence. Some
+need verification routing, where one core checks another. Some need reflex or
+failsafe routes for known safety-critical cases. All of these shapes still
+need the same receipt discipline.
+
+MoECOT is the deferred runtime-crosswalk case. The consolidation roadmap may
+later fold the standalone MoECOT runtime chapter into this chapter as a named
+runtime section if review accepts that move. This curated reader pass does not
+execute that fold. It treats MoECOT as source-note runtime context for compact
+orchestration, specialist lanes, control-plane gates, ledgers, replay refs,
+handoffs, promotion blockers, and residuals. No MoECOT replay, benchmark,
+route log, or deployment behavior is claimed.
+
+## Interfaces
+
+Routing sits between plans and execution. Planning requests capabilities, not
+personalities. Governance bounds authority. Context systems lease memory and
+context. Readiness gates decide whether a specialist is ordinary, canary,
+diagnostic, quarantined, or unavailable. Artifact graphs preserve the route so
+downstream claims can trace where an output came from.
+
+The Specialist Registry Record is the interface for standing specialist
+identity: specialist ID, registry epoch, owner, capabilities, authority
+envelope, memory lease policy, tool permissions, runtime tier, cost profile,
+readiness state, quality predicates, fallback routes, residual references,
+evidence references, route limitations, and non-claims.
+
+The Routing Decision Record is the interface for one route: decision ID, task
+ID, capability request, candidate specialists, selected specialist, rejected
+candidates, non-selection evidence, route shape, route receipt, authority
+check, granted authority subset, denied authority, readiness check, context
+lease, tool lease, verifier requirement, budget, expiry, cost-quality reason,
+fallback route, residual owner, residuals, ledger references, and non-claims.
+
+The record is intentionally dense because the failure is usually a missing
+field. If the system cannot say what authority was denied, a later reviewer may
+assume it was granted. If it cannot say which specialists were rejected, a
+later optimizer may treat the chosen path as obviously best. If it cannot say
+who owns the residual, the failed route becomes someone else's invisible work.
+
+## Invariants
+
+Specialist authority is local. A specialist's existence does not grant it
+global permission. The registry declares a maximum envelope, and the route
+grants a smaller task-local lease.
+
+Selection and authorization are different predicates. A specialist can be the
+best semantic match and still be blocked by authority, readiness, context,
+budget, or fallback requirements.
+
+The router should prefer the least capable adequate route. It should not call
+a broader, stronger, or more privileged specialist unless task risk, context
+demand, verifier need, or fallback policy justifies that extra power.
+
+Readiness failures do not become silent execution. They route to fallback,
+review, quarantine, diagnostic use, or residual escrow.
+
+Rejected candidates matter. Non-selection evidence is part of the learning
+surface, because future routing quality depends on knowing what the system did
+not use and why.
+
+The current Lean hooks cover only a small finite-record version of this
+boundary: a selected route satisfies authority and readiness, and failed
+readiness routes to fallback or residual rather than promotion. They do not
+prove real router behavior, learned selection, specialist quality, or runtime
+enforcement.
+
+## Failure Modes
+
+Wrong specialist selection should become a residual and a future benchmark
+case, not a quiet mistake.
+
+Router overconfidence turns a plausible match into a permission grant. The
+right response is an authority or readiness block, not a more fluent answer.
+
+Authority leak happens when a specialist receives broader memory, tools, or
+mutation rights than the task required. This is a governance incident, not a
+mere routing inefficiency.
+
+Specialist proliferation creates a registry full of stale, redundant, or
+unowned cores. RMI's lifecycle language matters here: specialists need split,
+merge, retire, quarantine, and retrain paths.
+
+Composition hallucination appears when multiple specialists return partial
+answers and the head fuses them into a confident output without preserving
+conflict, uncertainty, or verification duty.
+
+Route laundering is the chapter's sharpest failure. A broad specialist is used
+because it is convenient. The output succeeds. That success is then treated as
+evidence that broad authority was justified, even though the route never proved
+that narrower specialists were inadequate. A route receipt should make that
+move visible.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is not a learned router. It is a registry
+schema, a routing decision schema, and a small fixture suite that makes route
+decisions inspectable.
+
+The first useful route suite should include one least-capable adequate route,
+one rejected overprivileged specialist, one missing-readiness fallback, one
+expired context lease, and one failed composition with a named residual owner.
+That is enough to test whether the record can carry the obligation.
+
+The current repository has part of this minimum. The specialist registry and
+routing decision schemas validate record shape. `AsiStackProofs.Routing`
+contains two finite predicates over route records. The readiness/residual gate
+harness checks synthetic authority-bounded and fallback-route behavior across
+route/gate/replacement records.
+
+This is a contract surface, not a deployed router. It does not measure routing
+accuracy, train a router, enforce runtime authority, prove specialist
+adequacy, run MoECOT, or rerun Theseus.
+
+## Beyond the State of the Art
+
+The mature endpoint is a governed capability market inside the stack. It is
+not a larger tool picker. It is a routing control plane that can choose among
+specialists, proof checkers, retrieval lanes, local runtime cores, human
+review, compression systems, mathematical substrates, and fallback routes
+while preserving the authority, evidence, and residual obligations attached to
+that choice.
+
+In that mature system, every specialist has a capability card, readiness
+state, authority envelope, memory and tool lease policy, cost and latency
+profile, proof or verifier requirements, fallback routes, retirement criteria,
+and non-claims. Every route produces a receipt. Every receipt can feed
+benchmark ratchets, residual escrow, artifact graphs, claim ledgers, and
+policy updates.
+
+The strategic gain is not simply cheaper inference. It is safer delegation
+under evidence. A system can call a small specialist because the small
+specialist is enough. It can call a human because the route demands human
+judgment. It can call a proof checker because the claim requires a proof
+boundary. It can refuse all available specialists because the authority,
+readiness, or fallback conditions are not satisfied.
+
+That is the beyond-state-of-the-art target. It remains unvalidated here. The
+chapter names the product-level endpoint so implementation work has a precise
+shape, not so the book can claim the endpoint already exists.
+
+## Summary
+
+Routing makes modular intelligence governable only when it is recorded as a
+bounded decision. The head selects. The specialist acts inside a local
+envelope. Evidence updates readiness. Rejections shape future policy.
+Residuals become visible work.
+
+The present repository stops before route-quality evidence. It has source
+mappings, external comparators, schemas, finite Lean predicates, and synthetic
+gate checks. It does not have a measured specialist router, learned router,
+runtime enforcement result, MoECOT replay, current Theseus runtime rerun, or
+support-state promotion.
+
+A route should answer a simple question: why this specialist, under this
+authority, now? If that answer cannot be reconstructed, the router is not yet
+a governed control surface.
+
+## Handoff
+
+Selection is not qualification. Routing can nominate a specialist, but
+Readiness Gates, Residual Escrow, and Quarantine decides whether that
+specialist is ordinary, canary, diagnostic, quarantined, retired, or blocked.
+The next chapter gives route candidates a lifecycle so promising capability
+does not become permission before the evidence is ready.

@@ -14,7 +14,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 |---|---:|
 | review_status:reviewed | 54 |
 | disposition:companion_note_candidate | 3 |
-| disposition:curated_manuscript_candidate | 47 |
+| disposition:curated_manuscript_candidate | 48 |
 | disposition:no_immediate_action | 54 |
 | disposition:reader_overlay_active | 20 |
 | release_blocker:format_artifact_not_reviewed | 54 |
@@ -54,7 +54,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part II - Planning, Memory, Reasoning, and Execution | `artifact-graphs-audit-logs-and-replay` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `runtime-adapters-tool-permissions-and-human-approval` | reviewed | full_chapter_review | 1 | curated_manuscript_candidate, reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `procedural-memory-and-cognitive-loop-closure` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `routing-heads-and-specialist-cores` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `routing-heads-and-specialist-cores` | reviewed | full_chapter_review | 0 | no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `readiness-gates-residual-escrow-and-quarantine` | reviewed | full_chapter_review | 0 | no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `moecot-runtime-and-multi-core-orchestration` | reviewed | full_chapter_review | 0 | no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `personal-compute-hives-and-federated-edge-intelligence` | reviewed | full_chapter_review | 6 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |

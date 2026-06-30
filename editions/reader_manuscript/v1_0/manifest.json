@@ -1767,6 +1767,43 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass recorded in docs/curated_reader_uat_prose_pass.md. This is a drafting-only reader derivative, not a release-reviewed chapter, not equal authority with the live book, and not a verification/adversarial-review consolidation decision."
+    },
+    {
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "title": "Routing Heads and Specialist Cores",
+      "file": "editions/reader_manuscript/v1_0/chapters/routing-heads-and-specialist-cores.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/routing-heads-and-specialist-cores.qmd",
+      "live_source_ref": "chapters/routing-heads-and-specialist-cores.qmd@7516e20c2",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#routing-heads-and-specialist-cores.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#routing-heads-and-specialist-cores",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "paragraph ordering",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader prose pass reframes the chapter around routes as task-local authority leases: specialist registries, routing decision records, route receipts, rejected candidates, granted and denied authority, readiness, fallback, residual ownership, and MoECOT runtime-crosswalk caveats; no claim meaning, support state, source boundary, proof/test status, implementation horizon, consolidation decision, or release approval is changed.",
+      "meaning_preservation_checks": [
+        "core claim meaning preserved in reader prose",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved; external routing and MoE records remain comparators rather than local route-quality evidence",
+        "proof/test status preserved without adding unrun routing accuracy, learned-router quality, specialist adequacy, deployed authority enforcement, route-quality dominance, MoECOT runtime, MoECOT replay, MoECOT benchmark, current Theseus runtime, or safety results",
+        "implementation horizon preserved without implying current governed routing-market deployment",
+        "consolidation caveat preserved under docs/chapter_consolidation_release_stability_review.md and docs/chapter_consolidation_fold_moecot_runtime.md; this pass does not execute, reject, or authorize the MoECOT runtime fold",
+        "release blocker status preserved until an edition release record clears it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_routing_heads_prose_pass.md with the release-stability MoECOT fold caveat; not release-reviewed and not equal authority to the live AI/research chapter."
     }
   ],
   "reconciliation_report": {
