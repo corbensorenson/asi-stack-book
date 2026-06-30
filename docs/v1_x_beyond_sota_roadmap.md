@@ -99,7 +99,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, cap each v1.x cycle at 5-8 executed lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 329 theorem declarations, 121 direct/projection-style, 208 derived/decomposed, and 45 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` has at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose; `Alignment`, `Corrigibility`, `GovernanceRights`, and `ValueConflict` now each have four derived/decomposed transition/control/preservation/review theorems, and `SelfImprovement` now has nineteen derived/decomposed boundary, lifecycle, and transition-route theorems, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
+| P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 333 theorem declarations, 121 direct/projection-style, 212 derived/decomposed, and 45 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` has at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose; `Alignment`, `Corrigibility`, `GovernanceRights`, and `ValueConflict` now each have four derived/decomposed transition/control/preservation/review theorems, and `SelfImprovement` now has nineteen derived/decomposed boundary, lifecycle, and transition-route theorems, while 10 safety-critical theorem declarations remain direct/projection-style. | Keep those five modules as the first formal-depth workstream. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, and the Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, verification/adversarial-review, planning/DAG, and semantic-representation packages have now reduced the active manifest to 44 chapters. Several remaining clusters still repeat the same chapter skeleton around overlapping claims. The useful target is not "shorter book"; it is one skeleton per real chapter-owning artifact. | Continue the governed consolidation queue one package at a time: execute, revise, defer, or reject existing destination drafts and fold dispositions while preserving ideas as sections/subclaims/proof hooks/source mappings and requiring claim/source/proof/reader/URL reconciliation before changing the manifest. |
@@ -463,7 +463,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   blocking when residual uncertainty is missing, bounded-decision dissent
   residualization, and authority narrowing for unresolved conflict without
   authority narrowing.
-- The generated proof-depth report records 329 theorem declarations, 208
+- The generated proof-depth report records 333 theorem declarations, 212
   derived/decomposed declarations, 45 safety-critical declarations, and 10
   remaining safety-critical direct/projection declarations.
 - The relevant chapter limitation sections now state what these finite-record
@@ -484,7 +484,7 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 329 theorem declarations, 208
+- `docs/proof_depth_classification.md` records 333 theorem declarations, 212
   derived/decomposed theorem declarations, and 121 direct/projection-style
   theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
@@ -555,6 +555,14 @@ Current proof status:
   promotion, which improves proof depth for RankFold/NeuralFold while leaving
   compression-ratio, decoder, behavioral fallback, and downstream-utility tests
   as the chapter's real blockers.
+- `AsiStackProofs.CoilAttentionMemory` now has finite negative-case theorems
+  for hidden aliasing, structure-only retrieval-quality promotion, recurrence
+  admission without work-budget/exit/fallback records, and stale reads admitted
+  as fresh without residual escrow; this reduces the projection-only surface
+  for Coil Attention while leaving real memory traces, sparse-coverage cases,
+  recurrence schedules, stale-read probes, Circle/Theseus consumer gates,
+  retrieval-quality tests, long-context tests, and learned-model behavior as
+  blockers.
 - `AsiStackProofs.ProofCarryingClaims` now has finite negative-case theorems
   rejecting passed verifier records without verifier artifact refs and negative
   verifier results that try to produce scoped updates; this reduces the

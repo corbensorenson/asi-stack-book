@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 329 |
+| Theorem declarations classified | 333 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 208 |
+| Derived/decomposed theorem declarations | 212 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -61,7 +61,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 2 | 5 | 4 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -170,7 +170,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `repair_invalidating_existing_obligation_requires_ledger_update` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `validator_failure_routes_to_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `cyclic_memory_claim_records_residue_and_winding_or_visible_alias_residual` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `recurrence_without_budget_exit_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `reused_cyclic_slot_without_winding_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `sparse_coverage_or_freshness_alone_cannot_promote_retrieval_quality` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `stale_read_admitted_as_fresh_without_residual_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `structure_only_retrieval_quality_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `accepted_hidden_override_violates_explicit_constraint_precedence` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/CommandContracts.lean` | `hidden_or_conflicting_instruction_cannot_override_explicit_constraint` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CommandContracts.lean` | `missing_required_field_blocks_complete_command_contract` | derived_or_decomposed | no | uses cases, rw, unfold |

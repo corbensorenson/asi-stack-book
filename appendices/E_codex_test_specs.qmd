@@ -212,6 +212,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Theorem-id resolution test | planned | not run |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Non-claim preservation test | planned | not run |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Receipt replay and fingerprint test | planned | not run |
+| `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Hidden alias negative case | implemented | passes via Lean negative case; no alias behavior or retrieval-quality claim |
+| `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Structure-only quality-promotion negative case | implemented | passes via Lean negative case; no retrieval-quality claim |
+| `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Recurrence admission negative case | implemented | passes via Lean negative case; no recurrence-exit behavior claim |
+| `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Stale-read residual negative case | implemented | passes via Lean negative case; no KV-cache freshness behavior claim |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Cyclic alias visibility test | planned | not run |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Sparse coverage gap test | planned | not run |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | Coil Attention, Cyclic Memory, and Recurrence Contracts | Recurrence budget and exit test | planned | not run |

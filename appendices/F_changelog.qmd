@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-30 - Coil attention memory negative-case proofs
+
+- Strengthened `AsiStackProofs.CoilAttentionMemory` with four derived
+  negative-case theorems: one rejects reused cyclic slots with missing
+  residue/winding and no visible alias residual, one rejects structure-only
+  retrieval-quality promotion without semantic-quality evidence, one rejects
+  recurrence admission without work-budget, exit-condition, or fallback
+  records, and one rejects stale reads admitted as fresh without residual
+  escrow.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 333
+  theorem declarations, 121 direct/projection-style declarations, and 212
+  derived/decomposed declarations.
+- Updated the Coil Attention, Cyclic Memory, and Recurrence Contracts chapter,
+  manifest test rows, Appendix E, proof adequacy review, candidate status,
+  v1.0/v1.x roadmap surfaces, focus audit, and status snapshot validator.
+  Appendix E now records 160 implemented rows, 1 partial row, and 110 planned
+  rows. Refreshed the v1.0 status manuscript scale to 168,069 chapter words
+  excluding YAML and 175,554 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, run Circle
+  sidecars, import generated contract packs, run Theseus transfer consumers,
+  validate KV-cache freshness behavior, prove sparse-attention coverage
+  behavior, prove recurrence-exit behavior, measure retrieval quality, measure
+  long-context quality, show memory savings, improve learned-model behavior, or
+  approve any reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Tribunal review negative-case proofs
 
 - Strengthened `AsiStackProofs.Tribunal` with three derived negative-case

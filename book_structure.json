@@ -8157,6 +8157,34 @@
           "minimal_implementation": "A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.",
           "beyond_state_of_art": "Coil memory is useful only when it becomes a memory-admission and recurrence-control plane. It makes slot, lag, freshness, aliasing, active-work, and loop-exit facts available to the stack without confusing those facts with retrieval quality or reasoning success. In the mature recurrence-control plane, coil memory provides structural guardrails for slots, lag, freshness, coverage, recurrence, and work budgets while leaving retrieval quality and reasoning quality to separate evidence.",
           "codex_tests": [
+            {
+              "name": "Hidden alias negative case",
+              "purpose": "Check that a reused cyclic slot with missing residue or winding and no visible alias residual rejects the finite alias-boundary predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no alias behavior or retrieval-quality claim",
+              "status": "implemented in AsiStackProofs.CoilAttentionMemory; no alias behavior claim"
+            },
+            {
+              "name": "Structure-only quality-promotion negative case",
+              "purpose": "Check that sparse coverage and freshness facts with no semantic-quality evidence cannot satisfy quality-promotion validity when retrieval quality is promoted.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no retrieval-quality claim",
+              "status": "implemented in AsiStackProofs.CoilAttentionMemory; no retrieval-quality claim"
+            },
+            {
+              "name": "Recurrence admission negative case",
+              "purpose": "Check that enabled recurrence missing work-budget, exit-condition, or fallback records rejects the finite recurrence-admission predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no recurrence-exit behavior claim",
+              "status": "implemented in AsiStackProofs.CoilAttentionMemory; no recurrence behavior claim"
+            },
+            {
+              "name": "Stale-read residual negative case",
+              "purpose": "Check that a stale read admitted as fresh without residual escrow rejects the finite stale-read admission predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no KV-cache freshness behavior claim",
+              "status": "implemented in AsiStackProofs.CoilAttentionMemory; no freshness behavior claim"
+            },
             "Cyclic alias visibility test",
             "Sparse coverage gap test",
             "Recurrence budget and exit test",
@@ -8165,7 +8193,7 @@
           "claim_label": "Design rationale",
           "open_evidence_gaps": [
             "Appendix C now records exact passage-reviewed mappings for all four assigned coil-attention and cyclic-memory sources; support remains at argument until local KV-cache freshness checkers, sparse-coverage harnesses, recurrence benchmarks, learned-model memory tests, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist.",
-            "The cyclic_memory_contract fixture validates schema/example consistency and AsiStackProofs.CoilAttentionMemory implements local finite-record alias and promotion gates only; no Circle sidecar, contract generator, KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, or Theseus transfer command has been run from this repo.",
+            "The cyclic_memory_contract fixture validates schema/example consistency and AsiStackProofs.CoilAttentionMemory implements local finite-record alias/promotion gates plus bounded negative cases for hidden aliasing, structure-only retrieval-quality promotion, recurrence admission without budget/exit/fallback records, and stale reads admitted as fresh without residual escrow; no Circle sidecar, contract generator, KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, or Theseus transfer command has been run from this repo.",
             "Pinned Circle project references support structural-contract and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, or validate external Circle Lean proofs as local evidence.",
             "VCM material is used only for governed context/addressability, authority, adequacy/admission, taint, revocation, invalidation, audit, and residency boundaries; it does not support recurrence quality, retrieval quality, long-context performance, or learned memory behavior.",
             "No support-state promotion, raw source publication, downstream model-quality result, retrieval-quality result, long-context result, performance result, memory-savings result, or transfer-result claim is implied by this drafting pass."
