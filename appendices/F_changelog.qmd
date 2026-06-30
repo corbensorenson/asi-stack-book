@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-30 - Artifact compression negative-case proofs
+
+- Strengthened `AsiStackProofs.ArtifactCompression` with two derived
+  negative-case theorems: one rejects compressed-artifact use when the task
+  probe failed and no fallback route exists, and one rejects promotion when
+  residual or fallback metadata is missing.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 285
+  theorem declarations, 115 direct/projection-style declarations, and 170
+  derived/decomposed declarations.
+- Updated the RankFold/NeuralFold chapter, proof adequacy review, candidate
+  status, v1.0/v1.x roadmap surfaces, focus audit, and status snapshot
+  validator to record the new artifact-compression proof increment.
+- This does not promote any Appendix C or chapter core claim, prove a
+  compression ratio, validate decoder correctness, execute behavioral fallback,
+  measure downstream utility, establish benchmark performance, or approve any
+  reader, ebook, PDF, DOCX, or audio release artifact.
+
 ## 2026-06-30 - Stack boundary trace proof
 
 - Strengthened `AsiStackProofs.StackBoundaries` with a finite

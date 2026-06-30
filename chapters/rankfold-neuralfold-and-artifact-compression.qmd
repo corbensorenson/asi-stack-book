@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
 | Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, and `bugbrain`; no raw private source text is published. |
-| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback and residual/fallback metadata predicates; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
+| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback and residual/fallback metadata predicates plus negative-case theorems blocking failed-probe/no-fallback use and promotion with missing residual or fallback metadata; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -260,7 +260,7 @@ The implemented row validates fixture/schema consistency only. The remaining row
 | `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | implemented |
 | `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over artifact-use and metadata fields. They prove only the record-level gates: a compressed artifact selected for a task must have a passed probe or fallback route, and a promoted compression record must expose residual and fallback metadata. They do not prove a compression ratio, decoder correctness, task utility, or benchmark result.
+These Lean hooks are implemented as finite-record predicates over artifact-use and metadata fields. The module now includes negative-case theorems showing that a compressed artifact use is invalid when the probe failed and no fallback is routed, and that a promotion candidate is invalid when residual or fallback metadata is missing. They prove only those record-level gates; they do not prove a compression ratio, decoder correctness, task utility, behavioral fallback execution, or benchmark result.
 
 ## Source crosswalk
 
