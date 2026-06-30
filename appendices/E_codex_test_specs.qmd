@@ -118,9 +118,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Job execution route proof | implemented | passes via Lean build; finite job-execution route coverage only |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Tool permission enforcement test | planned | not run |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Human approval gate test | implemented | passes via Lean build and synthetic approval-bypass fixture; no approval-service claim |
-| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact traceability test | planned | not run |
-| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Audit reconstruction test | planned | not run |
-| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Replay metadata completeness test | planned | not run |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact traceability test | implemented | passing via Lean predicate and synthetic artifact graph replay harness; no deployed artifact-service claim |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Audit reconstruction test | implemented | passing via synthetic artifact graph replay harness; no deployed audit-reconstruction claim |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Replay metadata completeness test | implemented | passing via synthetic artifact graph replay harness; no deployed replay-engine claim |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Adapter permission test | implemented | passes via synthetic runtime adapter permission harness |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Approval gate enforcement test | implemented | passes via synthetic runtime adapter permission harness |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Rollback handle capture test | implemented | passes via synthetic runtime adapter permission harness; no real rollback execution claim |

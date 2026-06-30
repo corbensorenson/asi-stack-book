@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-06-30 - Artifact Graph replay harness
+
+- Added `python3 scripts/validate_artifact_graph_replay.py`, a
+  chapter-specific book-gate harness over synthetic artifact graph records,
+  typed jobs, context transactions, semantic page certificates, and replay
+  attempts.
+- Added 2 valid and 6 expected-invalid fixtures under
+  `experiments/artifact_graph_replay/` covering a byte-exact bounded-review
+  packet, a partial replay packet that blocks promotion, parent-job mismatch,
+  missing observed artifact, partial replay attempting promotion,
+  stale-certificate reuse, missing audit path, and support-state review without
+  a replay-validated context transaction.
+- Wired the harness into `scripts/validate_book.py`, Appendix E, the Artifact
+  Graphs chapter, `docs/book_outline.md`, `book_structure.json`,
+  `docs/artifact_graph_replay_harness.md`, `docs/proof_adequacy_review.md`,
+  v1 status/roadmap surfaces, publication readiness, repository map, README,
+  and v0.2 manuscript status.
+- Moved the two Artifact Graphs proof targets in the proof adequacy review from
+  `needs executable tests first` to `useful but too narrow`. The proof target
+  count remains 122; the adequacy class counts are now 8 adequate finite-record,
+  43 useful-but-too-narrow, 19 richer-semantics-needed, 36
+  executable-tests-needed, 10 empirical/baseline-tests-needed, and 6
+  research-agenda-until-artifact-import.
+- This does not promote any Appendix C or chapter core claim, implement a
+  deployed artifact graph service, replay engine, audit reconstruction service,
+  provenance completeness checker, imported produced-artifact trace, reader
+  artifact, EPUB, DOCX, PDF, audio, DOI, Zenodo, or audio-embedded EPUB release
+  artifact.
+
 ## 2026-06-30 - Labor OS job execution route proof envelope
 
 - Extended `AsiStackProofs.TypedJobs` with a finite job-execution route

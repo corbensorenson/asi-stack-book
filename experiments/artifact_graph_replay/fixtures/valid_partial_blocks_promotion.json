@@ -1,0 +1,134 @@
+{
+  "scenario_id": "artifact-graph.valid.partial-blocks-promotion",
+  "artifact_graph": {
+    "artifact_id": "artifact://asi-stack/draft/partial-replay",
+    "artifact_type": "draft-note",
+    "parent_job": "job-artifact-replay-002",
+    "source_refs": ["chapters/artifact-graphs-audit-logs-and-replay.qmd"],
+    "context_refs": ["book_structure.json"],
+    "context_transaction_refs": ["ctx-artifact-replay-002"],
+    "semantic_certificate_refs": ["cert-artifact-replay-002"],
+    "tool_refs": ["manual-review"],
+    "claim_refs": ["artifact-graphs-audit-logs-and-replay.core"],
+    "test_refs": ["python3 scripts/validate_artifact_graph_replay.py"],
+    "audit_events": [
+      "job_locked",
+      "job_dispatched",
+      "artifact_produced",
+      "artifact_recorded"
+    ],
+    "replay_metadata": "Partial replay preserves parentage and missing-environment residuals.",
+    "replay_grade": "partial",
+    "environment_assumptions": ["manual review notes available"],
+    "provenance_status": "partial",
+    "replay_limits": ["no byte-exact rerun", "environment not confirmed"],
+    "evidence_gate": "blocks promoted claim support; record only until replay packet is repaired",
+    "residuals": ["missing byte-exact replay", "no independent audit reconstruction"],
+    "non_claims": [
+      "does not promote support state",
+      "does not prove audit reconstruction",
+      "does not prove replayability"
+    ]
+  },
+  "typed_job": {
+    "job_id": "job-artifact-replay-002",
+    "contract_id": "command-artifact-replay-002",
+    "job_type": "draft-artifact-note",
+    "lifecycle_state": "delivered",
+    "runtime_adapter": "manual-review",
+    "inputs": ["chapters/artifact-graphs-audit-logs-and-replay.qmd"],
+    "outputs": ["artifact://asi-stack/draft/partial-replay"],
+    "permissions": ["read public chapter"],
+    "approval_state": "not_required",
+    "failure_behavior": ["record replay residual", "block promoted support"],
+    "audit_events": [
+      "job_locked",
+      "job_dispatched",
+      "artifact_produced",
+      "artifact_recorded"
+    ],
+    "replay_status": "not_run"
+  },
+  "context_transaction": {
+    "transaction_id": "ctx-artifact-replay-002",
+    "transaction_state": "committed",
+    "transaction_validity_state": "shape_validated",
+    "operation": "derive",
+    "snapshot_id": "snapshot-artifact-replay-002",
+    "snapshot_boundary": "partial public-safe fixture snapshot",
+    "mounts": ["chapters"],
+    "mount_policy": "public repository files only",
+    "read_set": ["chapters/artifact-graphs-audit-logs-and-replay.qmd"],
+    "write_set": ["artifact://asi-stack/draft/partial-replay"],
+    "branch_policy": "fixture-only draft branch",
+    "isolation_state": "not_applicable",
+    "taint_labels": ["public-safe"],
+    "taint_propagation": "not_applicable",
+    "deletion_obligations": [],
+    "rollback_or_deletion_closure": "discard draft artifact if replay packet fails",
+    "declassification_refs": [],
+    "derivative_refs": ["artifact://asi-stack/draft/partial-replay"],
+    "contradiction_refs": [],
+    "materialization_state": "partial",
+    "closure_state": "satisfied",
+    "faults": [],
+    "context_abi_refs": ["book_structure.json"],
+    "source_refs": ["chapters/artifact-graphs-audit-logs-and-replay.qmd"],
+    "audit_refs": ["job_locked", "job_dispatched", "artifact_produced", "artifact_recorded"],
+    "consumer_policy": "Record-only use until replay residuals are closed.",
+    "verification_refs": ["python3 scripts/validate_artifact_graph_replay.py"],
+    "promotion_blockers": ["partial replay", "environment not confirmed"],
+    "replay_boundary": "Partial fixture records why promotion is blocked.",
+    "support_state_effect": "blocks_promotion",
+    "non_claims": [
+      "does not promote support state",
+      "does not prove replayability",
+      "does not prove source interpretation"
+    ]
+  },
+  "semantic_certificate": {
+    "page_id": "cert-artifact-replay-002",
+    "cell_type": "artifact",
+    "source_bindings": ["chapters/artifact-graphs-audit-logs-and-replay.qmd"],
+    "derived_from": ["book_structure.json"],
+    "transaction_refs": ["ctx-artifact-replay-002"],
+    "artifact_refs": ["artifact://asi-stack/draft/partial-replay"],
+    "representation_kind": "partial artifact replay packet",
+    "loss_contract": "records residuals rather than evidence readiness",
+    "omissions": ["byte-exact rerun", "independent reviewer"],
+    "authority_ceiling": "record_only",
+    "permitted_uses": ["residual tracking", "chapter test plan"],
+    "validity_window": "until replay residuals are repaired",
+    "verification_state": "adequate_for_drafting",
+    "revocation_state": "active",
+    "residual_risks": ["not adequate for support-state promotion"],
+    "non_claims": [
+      "does not promote support state",
+      "does not prove replayability",
+      "does not authorize claim promotion"
+    ]
+  },
+  "replay_attempt": {
+    "replay_grade": "partial",
+    "command_refs": ["python3 scripts/validate_artifact_graph_replay.py"],
+    "observed_artifacts": ["artifact://asi-stack/draft/partial-replay"],
+    "audit_reconstruction": [
+      "job_locked",
+      "job_dispatched",
+      "artifact_produced",
+      "artifact_recorded"
+    ],
+    "environment_confirmed": false,
+    "evidence_request": "record_only",
+    "support_state_effect": "blocks_promotion",
+    "non_claims": [
+      "does not promote support state",
+      "does not prove replay completeness"
+    ]
+  },
+  "expected_reuse": "blocked_from_promotion",
+  "non_claims": [
+    "does not promote chapter core support state",
+    "does not prove deployed artifact graph behavior"
+  ]
+}

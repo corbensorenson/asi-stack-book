@@ -1551,8 +1551,9 @@ Draft deliverables:
 - Implemented protocol validation: `artifact_graph_record` fixture validates public record shape, context transaction refs, semantic certificate refs, replay grade, evidence gate, residuals, and non-claims only.
 - Implemented Lean predicate: a produced artifact record must expose parent-job and source/context references.
 - Implemented Lean predicate: missing required provenance blocks promoted-claim support.
-- Planned Codex test: Audit reconstruction test.
-- Planned Codex test: Replay metadata completeness test.
+- Implemented synthetic Codex test: `python3 scripts/validate_artifact_graph_replay.py` checks artifact parentage, typed job outputs, context transaction refs, semantic certificate refs, source-ref coverage, replay grade, observed artifacts, audit reconstruction, stale-certificate blocking, and promotion-blocking boundaries. It remains synthetic record-gate evidence only, not a deployed artifact graph, replay engine, audit-reconstruction service, or source-interpretation claim.
+- Implemented synthetic Codex test: Audit reconstruction test via `python3 scripts/validate_artifact_graph_replay.py`; deployed audit reconstruction remains open.
+- Implemented synthetic Codex test: Replay metadata completeness test via `python3 scripts/validate_artifact_graph_replay.py`; deployed replay engine remains open.
 
 Lean proof targets:
 

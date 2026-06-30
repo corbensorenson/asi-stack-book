@@ -4621,9 +4621,21 @@
           "minimal_implementation": "An artifact graph schema with job, source, context, and evidence edges.",
           "beyond_state_of_art": "The mature version is an evidence graph for work products. It does not merely store files. It records the lineage, role, provenance, replay grade, environment assumptions, context transactions, semantic certificates, audit events, claim links, test links, residuals, and evidence gate for every artifact that the stack may later reuse. Inside an evidence graph, artifacts can become context, evidence, regression cases, release inputs, compression targets, procedural-memory traces, or reader-edition material only through declared gates. A path on disk is not enough. The artifact node must say what created it, what sources and context shaped it, what can be replayed, what cannot be replayed, and which claims or tests it is allowed to affect.",
           "codex_tests": [
-            "Artifact traceability test",
-            "Audit reconstruction test",
-            "Replay metadata completeness test"
+            {
+              "name": "Artifact traceability test",
+              "implementation_status": "implemented",
+              "result_status": "passing via Lean predicate and synthetic artifact graph replay harness; no deployed artifact-service claim"
+            },
+            {
+              "name": "Audit reconstruction test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic artifact graph replay harness; no deployed audit-reconstruction claim"
+            },
+            {
+              "name": "Replay metadata completeness test",
+              "implementation_status": "implemented",
+              "result_status": "passing via synthetic artifact graph replay harness; no deployed replay-engine claim"
+            }
           ],
           "lean_module": "AsiStackProofs.ArtifactGraph",
           "proof_targets": [
