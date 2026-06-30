@@ -11413,9 +11413,62 @@
           "minimal_implementation": "A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, and GitHub Pages.",
           "beyond_state_of_art": "The endpoint is a research operating system that happens to render as a book. The live site would remain the canonical, AI-readable, researcher-auditable surface, while Human view, reader editions, ebook formats, and future audio scripts would be derived projections with explicit strip policies and release records. A mature living-book workflow would let a future agent ingest a new AI paper, mine its public-safe content, decide whether to update a chapter or add a precise new one, update the outline and manifest, generate proof/test backlog, draft or revise prose, validate source/evidence boundaries, render the live site, and prepare reader editions without hand-renumbering or hidden support-state changes.",
           "codex_tests": [
-            "Quarto render check",
-            "Manifest/outline consistency check",
-            "Changelog update check"
+            {
+              "name": "Living book release record validation",
+              "purpose": "Check that public release records validate release state, audience profile, canonical scope, commit, render output, scaffold/proof sync, validation commands, changelog refs, public URL, derived artifacts, support-state effect, residuals, and non-claims.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_protocol_examples.py`; release hygiene only",
+              "status": "implemented; no manuscript-quality or claim-truth proof"
+            },
+            {
+              "name": "Quarto render check",
+              "purpose": "Check that the public book renders locally to HTML.",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `quarto render --to html`; no site-availability or manuscript-quality claim",
+              "status": "implemented; validated locally"
+            },
+            {
+              "name": "Reading-mode toggle check",
+              "purpose": "Check that the live-site Human view toggle is included by generated Quarto assets and tracks live-only heading policy.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_reading_mode_toggle.py`; no reader-artifact approval",
+              "status": "implemented; validated locally"
+            },
+            {
+              "name": "Manifest/outline consistency check",
+              "purpose": "Check that the drafting outline matches manifest chapter order, titles, core claims, assigned sources, and Lean proof targets.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_outline_consistency.py`; no source-interpretation proof",
+              "status": "implemented; validated locally"
+            },
+            {
+              "name": "Manifest artifact negative case",
+              "purpose": "Check that a manifest chapter missing outline proof targets or generated claim placeholders rejects the finite drafting-artifact predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no editorial-completeness claim",
+              "status": "implemented in AsiStackProofs.LivingBook; no manuscript-quality claim"
+            },
+            {
+              "name": "Structural sync negative case",
+              "purpose": "Check that a structural update marked valid without scaffold or proof-manifest regeneration rejects the finite structural-update predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no publication-quality claim",
+              "status": "implemented in AsiStackProofs.LivingBook; no publication-quality claim"
+            },
+            {
+              "name": "Release readiness negative case",
+              "purpose": "Check that a ready release missing render validation, validation commands, changelog refs, or residual records rejects the finite release-readiness predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no release approval beyond recorded artifacts",
+              "status": "implemented in AsiStackProofs.LivingBook; no release-artifact approval"
+            },
+            {
+              "name": "Derived artifact boundary negative case",
+              "purpose": "Check that a reader, ebook, document, companion, or audio derivative without source commit, strip policy, review state, or support-state effect rejects the finite derived-artifact predicate.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no ebook, PDF, DOCX, or audio artifact approval",
+              "status": "implemented in AsiStackProofs.LivingBook; no derived-artifact approval"
+            }
           ],
           "lean_module": "AsiStackProofs.LivingBook",
           "proof_targets": [

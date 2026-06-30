@@ -55,7 +55,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 6 | 8 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 3 | 8 | 3 | 3 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 3 | 11 | 3 | 3 |
-| `lean/AsiStackProofs/LivingBook.lean` | 2 | 2 | 2 | 2 |
+| `lean/AsiStackProofs/LivingBook.lean` | 2 | 6 | 4 | 4 |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 4 | 2 | 2 |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | 4 | 6 | 4 | 4 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |

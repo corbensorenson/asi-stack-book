@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-06-30 - Living book release-boundary proofs
+
+- Strengthened `AsiStackProofs.LivingBook` with four derived negative-case
+  theorems: one rejects manifest chapters missing outline proof targets or
+  generated claim placeholders, one rejects structural updates marked valid
+  without scaffold or proof-manifest regeneration, one rejects release
+  readiness without render validation, validation commands, changelog refs, or
+  residual records, and one rejects derived artifacts without source-commit,
+  strip-policy, review-state, or support-state-effect boundaries.
+- Regenerated `docs/proof_depth_classification.md` and
+  `docs/proof_artifact_audit.md`; the proof-depth classifier now reports 347
+  theorem declarations, 121 direct/projection-style declarations, and 226
+  derived/decomposed declarations.
+- Updated the Living Book Methodology chapter, manifest test rows, Appendix E,
+  proof adequacy review, candidate status, v1.0/v1.x roadmap surfaces, focus
+  audit, and status snapshot validator. Appendix E now records 178 implemented
+  rows, 1 partial row, and 107 planned rows. Refreshed the v1.0 status
+  manuscript scale to 168,678 chapter words excluding YAML and 176,246 raw
+  chapter-file words.
+- This does not promote any Appendix C or chapter core claim, prove manuscript
+  quality, prove source interpretation quality, approve a reader/ebook/PDF/DOCX
+  artifact, approve an audio artifact, prove GitHub Pages availability, or
+  approve any release artifact beyond recorded validation scope.
+
 ## 2026-06-30 - Search substrate adoption-boundary proofs
 
 - Strengthened `AsiStackProofs.SearchSubstrates` with five derived

@@ -4,7 +4,7 @@ chapter_id: "living-book-methodology"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-06-30"
 primary_sources:
   - "benchmaxxing"
   - "viea"
@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all seven assigned sources, including source-note-only MoECOT/Road To AGI context; support remains argument because release checks prove repository hygiene, not manuscript quality or the truth of chapter claims."
-  - "The living_book_release_record fixture and AsiStackProofs.LivingBook finite-record predicates validate release-record shape, audience scope, derived-artifact boundaries, support-state effect, manifest linkage, and structural-update sync predicates only; they do not prove manuscript quality, source interpretation quality, editorial completeness, reader artifact production, audio artifact production, or GitHub Pages availability."
+  - "The living_book_release_record fixture and AsiStackProofs.LivingBook finite-record predicates validate release-record shape, audience scope, derived-artifact boundaries, support-state effect, manifest linkage, structural-update sync predicates, and bounded negative cases for missing drafting artifacts, unsynced structural updates, release readiness without validation/changelog/residuals, and derived artifacts missing source/review/support-state boundaries only; they do not prove manuscript quality, source interpretation quality, editorial completeness, reader artifact production, audio artifact production, or GitHub Pages availability."
   - "BugBrain is used only as cautionary implementation-lineage context; no build, emulation, flash, bridge, hardware, AGI, or consciousness claim is promoted."
   - "No support-state promotion, manuscript-quality result, rendered-site quality result, reader/audio artifact, MoECOT runtime artifact, benchmark result, autonomous loop-closure implementation, or raw source publication is implied by this drafting pass."
 ---
@@ -30,13 +30,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-06-30 |
 | Primary source records | `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `viea`; supporting: `bugbrain`, `cognitive_loop_closure`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`; raw cache: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`; source-note-only or connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
-| Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, public release-record validation, and `AsiStackProofs.LivingBook` finite manifest/drafting-artifact and structural-update sync predicates run in the current publication gate; live release records now carry audience scope, derived-artifact boundaries, and support-state effect; claim-quality review remains human/editorial and no reader/audio artifact is implied. |
+| Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, public release-record validation, and `AsiStackProofs.LivingBook` finite manifest/drafting-artifact and structural-update sync predicates run in the current publication gate; `AsiStackProofs.LivingBook` also implements negative cases for missing drafting artifacts, unsynced structural updates, release readiness without validation/changelog/residuals, and derived artifacts missing source/review/support-state boundaries; claim-quality review remains human/editorial and no reader/audio artifact is implied. |
 
 ## Drafting guardrail
 
@@ -211,6 +211,10 @@ In the living research OS, "write the book" would be a governed build goal, not 
 | Reading-mode toggle check | Check that the live-site Human view toggle is included by the generated Quarto config and tracks the reader-release strip-heading policy. | implemented by `scripts/validate_reading_mode_toggle.py`; validated locally |
 | Manifest/outline consistency check | Check that scaffold and proof manifest are regenerated from their sources of truth. | implemented; validated locally |
 | Changelog update check | Check that meaningful changes are recorded before publication. | implemented manually; validated locally |
+| Manifest artifact negative case | Prove that a manifest chapter missing outline proof targets or generated claim placeholders rejects the finite drafting-artifact predicate. | implemented in `AsiStackProofs.LivingBook.manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected`; no editorial-completeness claim |
+| Structural sync negative case | Prove that a structural update marked valid without scaffold or proof-manifest regeneration rejects the finite structural-update predicate. | implemented in `AsiStackProofs.LivingBook.structural_update_marked_valid_without_sync_artifacts_rejected`; no publication-quality claim |
+| Release readiness negative case | Prove that a ready release missing render validation, validation commands, changelog refs, or residual records rejects the finite release-readiness predicate. | implemented in `AsiStackProofs.LivingBook.release_ready_without_validation_changelog_or_residuals_rejected`; no release approval beyond recorded artifacts |
+| Derived artifact boundary negative case | Prove that a reader, ebook, document, companion, or audio derivative without source commit, strip policy, review state, or support-state effect rejects the finite derived-artifact predicate. | implemented in `AsiStackProofs.LivingBook.derived_artifact_without_source_review_or_support_boundary_rejected`; no ebook, PDF, DOCX, or audio artifact approval |
 
 These checks validate release discipline. They do not validate every chapter claim, source interpretation, or editorial quality judgment.
 
@@ -221,7 +225,7 @@ These checks validate release discipline. They do not validate every chapter cla
 | `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | Every chapter in the manifest has outline proof targets and generated claim placeholders. | implemented |
 | `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A structural update without regenerated scaffold/proof manifest is invalid. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over chapter-manifest and structural-update reviews. They prove only the record-level gates: a manifest chapter has outline proof targets and generated claim placeholders, and a structural update marked valid requires regenerated scaffold and proof manifest. They do not prove manuscript quality, source-to-claim completeness, editorial judgment, or GitHub Pages availability.
+These Lean hooks are implemented as finite-record predicates over chapter-manifest and structural-update reviews. They prove only the record-level gates: a manifest chapter has outline proof targets and generated claim placeholders, and a structural update marked valid requires regenerated scaffold and proof manifest. The module also now proves bounded negative cases named `manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected`, `structural_update_marked_valid_without_sync_artifacts_rejected`, `release_ready_without_validation_changelog_or_residuals_rejected`, and `derived_artifact_without_source_review_or_support_boundary_rejected`. These cases reject malformed maintenance/release records; they do not prove manuscript quality, source-to-claim completeness, editorial judgment, GitHub Pages availability, reader artifact approval, or audio artifact approval.
 
 ## Source crosswalk
 

@@ -279,9 +279,14 @@ No result is recorded here unless a test has actually been implemented and run.
 | `prototype-roadmap` | Prototype Roadmap | Phase acceptance checklist | planned | not run |
 | `prototype-roadmap` | Prototype Roadmap | Dependency gate review | planned | not run |
 | `prototype-roadmap` | Prototype Roadmap | Prototype evidence-state audit | implemented | validated locally by synthetic fixtures; full phase acceptance audit not run |
-| `living-book-methodology` | Living Book Methodology | Quarto render check | planned | not run |
-| `living-book-methodology` | Living Book Methodology | Manifest/outline consistency check | planned | not run |
-| `living-book-methodology` | Living Book Methodology | Changelog update check | planned | not run |
+| `living-book-methodology` | Living Book Methodology | Living book release record validation | implemented | passes via `python3 scripts/validate_protocol_examples.py`; release hygiene only |
+| `living-book-methodology` | Living Book Methodology | Quarto render check | implemented | validated locally by `quarto render --to html`; no site-availability or manuscript-quality claim |
+| `living-book-methodology` | Living Book Methodology | Reading-mode toggle check | implemented | passes via `python3 scripts/validate_reading_mode_toggle.py`; no reader-artifact approval |
+| `living-book-methodology` | Living Book Methodology | Manifest/outline consistency check | implemented | passes via `python3 scripts/validate_outline_consistency.py`; no source-interpretation proof |
+| `living-book-methodology` | Living Book Methodology | Manifest artifact negative case | implemented | passes via Lean negative case; no editorial-completeness claim |
+| `living-book-methodology` | Living Book Methodology | Structural sync negative case | implemented | passes via Lean negative case; no publication-quality claim |
+| `living-book-methodology` | Living Book Methodology | Release readiness negative case | implemented | passes via Lean negative case; no release approval beyond recorded artifacts |
+| `living-book-methodology` | Living Book Methodology | Derived artifact boundary negative case | implemented | passes via Lean negative case; no ebook, PDF, DOCX, or audio artifact approval |
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source inventory validation test | planned | not run |
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source-note backlog audit | planned | not run |
 | `open-research-agenda-and-bibliography-plan` | Open Research Agenda and Bibliography Plan | Source-derived claim evidence gate | implemented | passes via Lean source-record negative case; no citation-accuracy or source-interpretation claim |
