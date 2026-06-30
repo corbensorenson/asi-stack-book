@@ -312,6 +312,15 @@ The current allowed protected-reader set is:
 - `security-kernel-and-digital-scifs`
 - `stable-capability-fields`
 - `capability-replacement-and-rollback`
+- `readiness-gates-residual-escrow-and-quarantine`
+- `context-transactions-snapshots-mounts-and-taint`
+- `verification-bandwidth-and-context-adequacy`
+- `claim-ledgers-and-belief-revision`
+- `labor-os-and-typed-jobs`
+- `artifact-graphs-audit-logs-and-replay`
+- `runtime-adapters-tool-permissions-and-human-approval`
+- `procedural-memory-and-cognitive-loop-closure`
+- `benchmark-ratchets-and-anti-goodhart-evidence`
 - `recursive-self-improvement-boundaries`
 - `circle-calculus-and-proof-carrying-ai-contracts`
 - `executable-specifications-and-lean-proof-envelope`

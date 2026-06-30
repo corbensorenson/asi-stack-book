@@ -1,0 +1,319 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: benchmark-ratchets-and-anti-goodhart-evidence
+generated_baseline_ref: build/reader_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd
+live_source_ref: chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd@b99a95481
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Benchmark Ratchets and Anti-Goodhart Evidence
+
+A benchmark score is not evidence by itself.
+
+It becomes evidence only after the system can say what was measured, under
+what conditions, against which baseline, with which failures preserved, with
+which contamination risks acknowledged, and for which exact claim the result
+is allowed to matter.
+
+That is the purpose of a benchmark ratchet. The score applies pressure, but
+the ratchet remembers. It records the run, the floor, the frontier, the
+residuals, the negative cases, the anti-Goodhart checks, and the promotion
+decision. Without that record, a score is just a number looking for a story.
+
+The ASI Stack cannot let numbers write their own stories.
+
+## Problem
+
+Capability claims need pressure. A system that never measures itself can drift
+into comfortable fiction. But fixed benchmarks can become traps. They can be
+memorized, saturated, gamed, leaked, overfit, or made irrelevant by changing
+requirements. They can also hide regressions when a single headline number
+improves while a neighboring behavior gets worse.
+
+Self-improving systems make the problem sharper. A system may learn what a
+benchmark rewards, route around expensive checks, optimize presentation over
+capability, or treat public calibration surfaces as training material. If the
+only durable artifact is the score, future agents will not know whether the
+system learned the capability, learned the test, found a shortcut, or merely
+shifted failure somewhere less visible.
+
+Benchmark ratchets exist to make progress cumulative without making claims
+inflationary. A frontier benchmark should push the stack into new work. Once
+that frontier becomes easy, it should become a regression floor. The important
+record is not only that the system cleared the bar. It is what must never be
+lost after the bar moves.
+
+## Why Ordinary Benchmarks Are Not Enough
+
+Ordinary benchmark reporting often compresses too much into one number. That
+compression is convenient for comparison, but it is dangerous for governance.
+The stack needs to distinguish broad benchmark context, real local execution,
+source-reported results, schema fixtures, synthetic probes, reproduced
+benchmarks, negative runs, contamination findings, and empirical capability
+evidence.
+
+External benchmark science gives the chapter its comparison set. MMLU,
+BIG-bench, HELM, GPQA, SWE-bench, LiveBench, Dynabench, CheckList, benchmark
+contamination work, and Goodhart taxonomy work all point at different pieces
+of the same pressure: breadth, multi-metric evaluation, hard expert questions,
+real-world software work, living and contamination-limited tests, dynamic
+adversarial data, behavioral test matrices, training/test overlap, and proxy
+failure.
+
+The book uses those sources as orientation and vocabulary. It does not claim
+that this repository has run those benchmarks, reproduced their scores,
+audited their datasets, or proved that ASI Stack tests resist contamination.
+That distinction matters. External benchmarks can teach what an evidence
+packet should preserve without becoming local evidence for a chapter claim.
+
+Goodhart pressure begins before anyone behaves maliciously. If speed is the
+visible metric, verification can quietly shrink. If pass rate is the visible
+metric, difficult cases can be avoided. If a public benchmark is the visible
+metric, memory, prompts, examples, and training pressure can bend around that
+surface until the benchmark stops measuring what it was meant to measure.
+
+The ratchet is the countermeasure: keep the floor, expose the residuals, and
+create a harder frontier instead of turning one score into broad permission.
+
+## Core Claim
+
+Benchmark ratchets should preserve regressions, create harder frontiers,
+record residuals, and resist Goodhart pressure. In the live book, this remains
+a design rationale at `argument` support.
+
+Benchmaxxing supplies the benchmark-lifecycle frame: frontiers, diagnostics,
+regression floors, retired benchmarks, wall diagnosis, ledgers, holdouts,
+mutation, transfer checks, contamination audits, and anti-Goodhart discipline.
+RMI connects benchmark pressure to residual escrow, mastery thresholds,
+regression preservation, and modular capability ratchets. Cognitive Loop
+Closure connects benchmark floors to reusable tools and retirement pressure.
+UAT, Coherence Exchange, TokenMana, MoECOT, Road To AGI, and Project Theseus
+sources provide review, governance, resource, runtime, roadmap, and
+implementation-reference context.
+
+Those sources support the architecture of the record. They do not prove a
+benchmark gain in this repository.
+
+## Mechanism
+
+A benchmark ratchet turns a result into an evidence-state decision.
+
+The first step is classification. Is this a candidate metric, a schema fixture,
+a synthetic probe, a source-reported result, a locally reproduced run, a
+frontier probe, a regression floor, a contaminated result, a blocked result,
+or a retired benchmark? Those states cannot collapse into one word like
+"passed."
+
+The second step is memory. A benchmark result needs a run record, baseline,
+environment, command or replay reference, data boundary, negative results,
+residuals, and reviewer decision. If the benchmark is public, the packet also
+needs a public-calibration boundary. If the result might move a support state,
+the packet needs holdout, transfer, mutation, or contamination checks
+appropriate to the claim.
+
+The third step is asymmetry. Failure can immediately create a residual,
+regression, quarantine, diagnosis, or blocked promotion. Success only opens a
+review path. To become claim evidence, success must survive baseline
+comparison, negative-result accounting, contamination review, and a
+claim-specific promotion decision.
+
+```{mermaid}
+flowchart LR
+  Metric["Candidate metric or frontier"] --> Class["Evidence-state classification"]
+  Class --> Run["Run record, baseline, environment"]
+  Run --> State["Mastery, saturation, wall diagnosis"]
+  State --> Residual["Residual escrow + negative results"]
+  Residual --> Split["Regression floor + harder frontier"]
+  Split --> Checks["Holdout, transfer, mutation, contamination"]
+  Checks --> Gate{"Move readiness or claim support?"}
+  Gate -- "yes" --> Scoped["Scoped support-state transition"]
+  Gate -- "no" --> Blocked["Blocked promotion or residual queue"]
+  Scoped --> Matrix["Claim/evidence matrix"]
+  Blocked --> Matrix
+```
+
+This is why the ratchet is a memory system. It makes the future system harder
+to fool by preserving what the past system forgot, failed, or nearly
+overclaimed.
+
+## The Ratchet Packet
+
+The benchmark ratchet record is the minimum interface. It should name:
+
+- the capability or stable capability field under pressure;
+- the benchmark and benchmark lifecycle state;
+- run references, command references, environment, and data boundary;
+- baseline references and mastery threshold;
+- saturation state and wall diagnosis;
+- residual escrow and negative results;
+- regression references that future systems must preserve;
+- anti-Goodhart checks, including contamination and public-calibration notes;
+- holdout, mutation, or transfer status where those checks are required;
+- the exact claim that may move;
+- the exact claims that may not move;
+- promotion decision and support-state effect;
+- reviewer, automation, or gate responsible for the decision.
+
+If any of those fields are missing, the packet can still be useful. It just
+cannot honestly move a support state.
+
+This protects against evidence-class laundering. A book-build check is not a
+model benchmark. A schema fixture is not an empirical run. A synthetic probe is
+not a deployment result. A source-reported command is not a local reproduction.
+A locally reproduced benchmark is not automatically proof of broad readiness.
+The packet keeps those distinctions visible.
+
+## Interfaces
+
+Benchmark ratchets sit between evaluation, readiness gates, stable capability
+fields, procedural memory, Appendix C, the prototype roadmap, and the
+changelog.
+
+Readiness gates consume benchmark state only when the evidence class is clear.
+Stable capability fields keep the result attached to the capability that
+earned it rather than to a vague model or product identity. Procedural memory
+uses preserved floors as tool-retirement pressure: if a generated procedure
+fails a floor it once relied on, the tool should be revised, quarantined, or
+retired. Appendix C records claim support movement only after an accepted
+evidence transition. The changelog records evidence movement so later readers
+can see when and why a boundary changed.
+
+The interface should make rejection easy. A future router, reviewer, or
+release gate should be able to say: this result is source-reported only, this
+result lacks contamination review, this result has no preserved regression
+floor, this result is useful as a smoke test but cannot move readiness, or
+this result supports only a narrow claim.
+
+## Invariants
+
+No test success is claimed without execution.
+
+Synthetic and empirical evidence remain distinct.
+
+Source-reported, fixture, reproduced, and empirical results never collapse
+into one evidence class.
+
+Regressions are preserved.
+
+Saturated benchmarks become floors, not permanent definitions of intelligence.
+
+Negative and inconclusive results remain visible.
+
+Public-calibration boundaries are preserved even when a benchmark is useful.
+
+A benchmark supports only the claim it actually measured under the recorded
+conditions. Broader readiness, deployment safety, model quality, or ASI
+progress requires separate evidence.
+
+## Failure Modes
+
+Benchmark overfitting occurs when the system learns the benchmark style rather
+than the target capability.
+
+Hidden regression deletion occurs when a new score improves while older
+requirements quietly fail.
+
+Claim support inflation occurs when a narrow result is narrated as broad
+readiness.
+
+Evidence-class collapse occurs when a fixture, local book validation,
+source-reported command, synthetic probe, or reproduced benchmark is treated
+as the same kind of evidence.
+
+Floor/frontier inversion occurs when a saturated benchmark is used to promote
+readiness while the next frontier remains untested.
+
+Public-calibration leakage occurs when visible benchmark artifacts become part
+of the system's training, prompting, examples, or tuning surface.
+
+Benchmark nostalgia occurs when a historically important benchmark remains in
+the story after it no longer applies pressure. The ratchet should preserve it
+as a floor or historical note, not as proof of current frontier competence.
+
+Every one of these failures should block promotion, create a residual, or
+downgrade support until the evidence boundary is repaired.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a benchmark-evidence decision record plus
+a small validation harness that proves restraint.
+
+The repository already has the first layer: a benchmark ratchet record fixture,
+finite Lean predicates for record-level promotion gates, and a synthetic
+anti-Goodhart harness. The harness checks saturation, holdout/contamination
+and mutation-or-transfer gates, regression references, negative-result
+retention, and promotion-blocking semantics.
+
+That is useful protocol discipline. It is not an empirical benchmark run. It
+does not prove hidden holdout quality, transfer validity, contamination
+resistance, regression-suite quality, anti-Goodhart effectiveness, source
+reported benchmark replay, Theseus readiness, or model capability.
+
+The next honest slice would be a toy ratchet ledger: one passing run record,
+one failed neighboring case, one intentionally contaminated case, one
+source-reported-only case, one saturated benchmark moved to regression, and
+one blocked promotion. The purpose would not be to announce capability. The
+purpose would be to show that the stack can refuse to spend weak evidence.
+
+## Beyond the State of the Art
+
+The mature endpoint is a benchmark operating system, not a leaderboard
+appendix.
+
+Every evaluation becomes a governed evidence packet. A task can begin as a
+candidate metric, become a frontier probe, graduate into a regression floor,
+enter contamination review, be retired, or remain blocked. Success never moves
+a claim by itself. It opens a promotion review that compares baselines,
+residuals, negative results, holdouts, transfer checks, mutation checks,
+public-calibration limits, and the exact claim under review.
+
+The product-level endpoint would manage:
+
+- benchmark lifecycle state;
+- versioned admission rules;
+- public and private calibration boundaries;
+- run records and replay artifacts;
+- contamination and transfer reviews;
+- floor/frontier transitions;
+- residual escrow;
+- regression obligations;
+- support-state effect;
+- downgrade triggers;
+- direct links to SCFs, readiness gates, procedural memory, Appendix C, and
+  release records.
+
+In that endpoint, a capability is not "better" because one score improved. It
+is better only inside a recorded evidence boundary, with regressions preserved
+and residuals visible. If the boundary does not hold, the claim does not move.
+
+That endpoint remains unimplemented here.
+
+## Evidence Boundary
+
+This chapter argues for governed benchmark memory. It does not claim that the
+ASI Stack has run an empirical benchmark suite or improved model capability.
+
+Current evidence consists of source synthesis, source-note mappings, external
+benchmark-science orientation, a benchmark-ratchet fixture, finite Lean
+record predicates, and a synthetic anti-Goodhart validation harness. Those
+artifacts support the shape of the evidence packet. They do not prove
+benchmark success, hidden-holdout validity, transfer, contamination
+resistance, regression-suite quality, source-reported benchmark replay,
+Theseus readiness, deployment readiness, model quality, or ASI progress.
+
+The chapter therefore keeps its own score honest: it can describe the ratchet
+that would be needed before benchmark evidence moves a claim, but it cannot
+pretend that the ratchet has already produced empirical evidence.
+
+## Handoff
+
+Benchmark ratchets create pressure. Pressure becomes system change only
+through an update mechanism.
+
+Policy Optimization and Learning from Feedback defines that learning actuator.
+It records target layer, reward boundary, feedback admissibility, verifier
+references, holdouts, drift limits, rollback, monitor windows, governance
+gates, and residuals so rewards, preferences, benchmark results, or verifier
+signals cannot become authority by training side effect.

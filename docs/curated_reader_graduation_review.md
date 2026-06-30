@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 54 current chapters
 - Active reader-overlay operations: 33
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 14
-- Curated chapter records: 21 drafting records for
+- Curated-manuscript candidates: 15
+- Curated chapter records: 22 drafting records for
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -43,6 +43,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
   `artifact-graphs-audit-logs-and-replay`,
   `runtime-adapters-tool-permissions-and-human-approval`,
   `procedural-memory-and-cognitive-loop-closure`,
+  `benchmark-ratchets-and-anti-goodhart-evidence`,
   `recursive-self-improvement-boundaries`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`, and
@@ -61,7 +62,8 @@ System Boundaries, Failure Modes, Evidence States, Human Intent, Security
 Kernel, Stable Capability Fields, Capability Replacement and Rollback,
 Readiness Gates, Context Transactions, Verification Bandwidth, Claim Ledgers,
 Labor OS, Artifact Graphs, Runtime Adapters, Procedural Memory,
-Recursive Self-Improvement, `circle-calculus-and-proof-carrying-ai-contracts`,
+Benchmark Ratchets, Recursive Self-Improvement,
+`circle-calculus-and-proof-carrying-ai-contracts`,
 `executable-specifications-and-lean-proof-envelope`, and
 `artifact-steward-agents-and-living-project-governance`; do not treat any file
 as a reader release artifact.
@@ -108,6 +110,7 @@ duplicate skeletons the consolidation pilot is trying to remove.
 | `artifact-graphs-audit-logs-and-replay` | protected standalone execution-continuity chapter outside pending consolidation clusters; owns artifact identity, provenance, audit events, replay grades, claim/test links, evidence gates, residuals, and allowed reuse | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_graphs_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no artifact-graph service, replay engine, audit reconstruction, produced-artifact completeness, provenance-completeness service, benchmark, security result, proof-carrying-code implementation, SWE-bench reproduction, AutoGen reproduction, or MoECOT runtime reproduction claim is implied. |
 | `runtime-adapters-tool-permissions-and-human-approval` | protected standalone execution-effect boundary chapter outside pending consolidation clusters; owns capability leases, typed permissions, sandbox modes, authority handles, scoped approval, effect receipts, rollback or residual records, incident paths, and evidence-state boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_runtime_adapters_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no deployed runtime adapter service, sandbox isolation, approval service, secret-handle safety, live effect receipt validation, rollback execution, incident response, runtime security, benchmark performance, Talos runtime, MoECOT runtime reproduction, ReAct reproduction, Simplex-level assurance, Copilot-style runtime monitoring, proof-carrying-code enforcement, or deployed approval enforcement claim is implied. |
 | `procedural-memory-and-cognitive-loop-closure` | protected standalone procedural-reuse chapter outside pending consolidation clusters; owns comparable traces, failures and near misses, invariant abstraction, parameter discovery, procedure qualification, regression checks, quarantine/residual handling, monitoring, and retirement triggers | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_procedural_memory_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no loop detector, tool synthesis, parameter-discovery engine, deployed tool behavior, regression success, routing monitor, retirement automation, Talos loop-closure behavior, MoECOT runtime reproduction, Project Theseus replay, or autonomous self-improvement claim is implied. |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | protected standalone evidence-governance chapter outside pending consolidation clusters; owns score-versus-evidence distinction, evidence-state classification, run records, residuals, regression floors, anti-Goodhart checks, contamination/transfer boundaries, and claim-specific promotion decisions | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_benchmark_ratchets_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no empirical benchmark success, hidden-holdout validity, benchmark transfer, contamination resistance, regression-suite quality, anti-Goodhart effectiveness, source-reported replay, current Theseus readiness, deployment readiness, model quality, or ASI-progress claim is implied. |
 | `recursive-self-improvement-boundaries` | pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_recursive_self_improvement_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `artifact-steward-agents-and-living-project-governance` | `curated_manuscript_candidate`, `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_artifact_steward_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | `companion_note_candidate`, active overlays | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; companion/glossary treatment remains active, reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
@@ -145,7 +148,7 @@ true:
 
 ## Non-Claims
 
-- This review creates twenty-one drafting-only curated reader chapter files for
+- This review creates twenty-two drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

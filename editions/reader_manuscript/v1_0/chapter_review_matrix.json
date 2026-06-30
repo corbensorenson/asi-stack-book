@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 14,
+    "curated_manuscript_candidate": 15,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -1097,12 +1097,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions"
+        "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
+        "docs/curated_reader_benchmark_ratchets_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. Score/result boundaries, evidence-class separation, regression floors, residuals, saturation, contamination, transfer, public-calibration, and promotion-decision constraints remain visible.",
+      "review_notes": "Full generated-reader chapter review recorded. A first drafting-only curated prose pass now foregrounds benchmark scores as pressure signals, evidence packets, evidence-class separation, residuals, regression floors, contamination/transfer boundaries, anti-Goodhart checks, proof/test limits, and no empirical benchmark/result non-claims without approving release.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
