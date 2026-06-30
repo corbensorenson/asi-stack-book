@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 33,
+    "curated_manuscript_candidate": 34,
     "no_immediate_action": 54,
     "reader_overlay_active": 20
   },
@@ -462,12 +462,14 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
-        "no_immediate_action"
+        "no_immediate_action",
+        "curated_manuscript_candidate"
       ],
       "review_refs": [
-        "docs/reader_part_ii_context_full_review_pass.md#decisions"
+        "docs/reader_part_ii_context_full_review_pass.md#decisions",
+        "docs/curated_reader_cognitive_compilation_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review recorded for the cognitive compilation chapter. Semantic atoms, lowering receipts, local repair, validator receipts, and compiler non-claim boundaries remain visible.",
+      "review_notes": "Full generated-reader chapter-text review recorded for the cognitive compilation chapter. Semantic atoms, lowering receipts, local repair, validator receipts, and compiler non-claim boundaries remain visible. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and no compiler, target-lowering, localized-repair, validator-adequacy, quality, cost, or reader-artifact claim is approved.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

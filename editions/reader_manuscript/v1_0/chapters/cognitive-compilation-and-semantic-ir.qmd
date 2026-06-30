@@ -1,0 +1,287 @@
+<!--
+Curated reader manuscript draft.
+chapter_id: cognitive-compilation-and-semantic-ir
+generated_baseline_ref: build/reader_edition/chapters/cognitive-compilation-and-semantic-ir.qmd
+live_source_ref: chapters/cognitive-compilation-and-semantic-ir.qmd@a57098412
+This file is a reader-prose derivative only. Preserve claim meaning,
+support-state boundaries, source boundaries, proof/test status,
+implementation horizons, and release blockers.
+-->
+
+# Cognitive Compilation and Semantic IR
+
+Plans do not become reliable artifacts just because they are scheduled. A plan
+still has to cross the gap between "what should happen" and "what was actually
+built." Cognitive compilation names that gap and gives it an engineering
+surface.
+
+The central idea is familiar from ordinary software compilers. Useful systems
+rarely jump straight from human intention to machine behavior. They pass
+through intermediate forms: source plans, typed records, dependency graphs,
+lowering steps, validators, error messages, and repair loops. Advanced AI work
+needs the same discipline. Code, prose, diagrams, schemas, proof targets, and
+tool jobs should not appear as polished blobs with no visible lineage. They
+should be lowered through addressable obligations.
+
+Semantic IR is the artifact language for that lowering. It lets the stack say
+what each unit of work is for, what it depends on, what it must preserve, which
+validator can reject it, what authority it needs, and how far a repair is
+allowed to reach. Once obligations have addresses, a failure can become local.
+A broken requirement does not have to trigger a full regeneration of the whole
+artifact. The system can inspect the atom, dependency, validator, lowering
+receipt, or repair ledger that failed.
+
+That is the reader promise of this chapter: generated work should be explainable
+through the obligations it preserved. If the stack cannot trace a target output
+back to source plan, semantic atoms, assumptions, validators, and residuals, it
+has generated an artifact rather than compiled one.
+
+## Problem
+
+LLM workflows need intermediate representations that separate requirements,
+plans, artifacts, repairs, and target runtimes.
+
+Direct generation compresses too many jobs into a single act. A prompt or chat
+turn asks the model to infer the user's real goal, preserve earlier constraints,
+choose a structure, write the artifact, satisfy unstated validators, and repair
+whatever breaks. Sometimes that works. But when the work becomes long,
+high-risk, reused, reviewed, or changed by multiple agents, the absence of an
+intermediate form becomes expensive.
+
+The stack needs a place where intent stops being only prose and becomes a
+structured build surface. Planning can decide what work should happen, but the
+compiler layer must decide how that work is represented before it is executed.
+The semantic IR gives downstream layers a way to ask simple questions: what is
+this artifact preserving, what can reject it, what authority applies, and what
+repair is allowed?
+
+That separation matters because failure is normal. Generated work often fails
+by omission, drift, hidden assumption, invalid dependency, stale context, or a
+validator that was never made explicit. Without an intermediate representation,
+the repair path is usually more prompting. With semantic IR, the repair path can
+start at the failed obligation.
+
+## Why existing approaches are insufficient
+
+Generate-from-prompt workflows entangle requirements and implementation, drift
+over long contexts, and make incremental repair fragile.
+
+The `cognitive_compilation` source supplies the main pressure: complex
+generative work should be staged as plan formation, semantic compilation,
+target compilation, validation, and localized repair. PlanForge contributes the
+scheduling view: work units need dependencies, quality gates, model/tool tiers,
+and critical-path awareness. GenesisCode contributes provenance and obligation
+discipline. TreeLLM contributes the representation intuition that structure
+should be navigable outside model weights. VIEA connects the compiler to the
+larger intent-to-artifact ledger.
+
+External baselines sharpen the analogy without proving this stack. PDDL and
+SHOP2 show why explicit action models and decomposition methods can matter.
+Tree of Thoughts treats reasoning paths as inspectable candidates. DreamCoder
+shows how reusable abstractions can change the search space. Those sources
+make semantic IR easier to position, but this repository has not reproduced
+planner results, program-synthesis results, or reasoning-search benchmarks.
+
+Prompting can remain the human input surface. It should not be the only
+internal build artifact. A conversation transcript is too unstable to carry all
+requirements, assumptions, dependencies, validators, authority limits, and
+repair scopes by itself.
+
+## Core Claim
+
+Cognitive compilation should transform goals into semantic intermediate
+representations that can be optimized, verified, repaired, and targeted.
+
+The evidence boundary is architectural argument. The assigned source notes and
+passage-reviewed mappings support discussion of semantic IR, compiler-style
+boundaries, provenance, explicit semantic substrates, and artifact-ledger
+integration. They do not establish compiler correctness, arbitrary source-plan
+parsing, target-lowering preservation, localized-repair performance, artifact
+validator adequacy, quality improvement, or cost improvement in this
+repository.
+
+## Mechanism
+
+Cognitive compilation inserts a compiler boundary between a planned task and a
+finished artifact. The boundary takes a source plan and lowers it into semantic
+atoms. Those atoms form a DAG: each atom has a purpose, dependencies,
+obligations, constraints, assumptions, authority requirements, validator state,
+target hints, lowering state, repair scope, source references, residuals, and a
+support-state effect.
+
+The DAG is where other layers can participate. Planning can schedule the atoms.
+Virtual context can supply the right evidence and memory. Execution can turn
+target-ready atoms into jobs or artifacts. Verification can reject failed
+validators. The artifact graph can record what was built and why. Claim ledgers
+can record whether a repair changed an obligation.
+
+```{mermaid}
+flowchart LR
+  Goal["Goal and command contract"] --> Plan["Source plan"]
+  Plan --> IR["Semantic IR DAG"]
+  IR --> Passes["Compiler passes: normalize, type, lint, schedule"]
+  Passes --> Target["Target IR or job graph"]
+  Target --> Artifact["Artifact"]
+  Artifact --> Check{"Validator pass?"}
+  Check -- "yes" --> Ledger["Artifact graph + claim ledger"]
+  Check -- "no" --> Repair["Localized repair on failed IR nodes"]
+  Repair --> Passes
+  Ledger --> Boundary["Support boundary recorded"]
+  Boundary --> Feedback["Reusable compiler feedback"]
+```
+
+**What the semantic compiler shows:** Work moves from goal to source plan,
+then through semantic IR into a target artifact. Validator failure routes back
+to the failed IR boundary instead of restarting the entire artifact by default.
+
+The lowering receipt is the second key object. It records which semantic atoms
+produced a target artifact, which obligations were preserved, which assumptions
+were introduced, which validators passed or failed, and which residuals remain.
+Without that receipt, a finished file can look credible while hiding the path
+by which it forgot its requirements.
+
+The compiler boundary should also make acceptance states explicit. A source
+plan can be accepted or rejected. A semantic IR can be well formed or invalid.
+A lowering pass can preserve obligations or break them. A target artifact can
+pass or fail its validator. Treating those states as one vague "done" state is
+how generation becomes evidence laundering.
+
+## Interfaces
+
+The interface is a typed semantic DAG, not a prose plan.
+
+Planning owns graph formation and scheduling. The compiler owns obligation
+preservation across lowering. Execution owns side effects and delivered
+artifacts. Verification owns acceptance or rejection. The artifact graph owns
+durable lineage. Claim ledgers own support-state and revision consequences.
+
+A minimum semantic atom needs fields for identity, source plan, intent,
+obligation references, obligation status, inputs, outputs, constraints,
+dependencies, assumptions, authority, IR validity, validator status, target,
+lowering state, target artifact, lowering receipt, repair scope, repair ledger,
+source references, residuals, support-state effect, and non-claims.
+
+The current public schema provides that record shape. It is useful because it
+gives future traces a stable place to put obligations, assumptions, validator
+state, lowering receipts, repair refs, residuals, and non-claims. It is not a
+compiler. A record shape can tell later work where evidence belongs; it cannot
+prove that arbitrary goals can be parsed into correct atoms or lowered into
+valid artifacts.
+
+## Invariants
+
+- IR preserves declared requirements.
+- Repair changes are localized and auditable.
+- Target compilation records assumptions.
+- Lowering receipts name obligations, validators, residuals, and introduced
+  assumptions.
+- A syntactically valid artifact cannot count as semantically accepted unless
+  its required obligations remain visible.
+
+Obligation non-erasure is the central invariant. A compiler pass may refine,
+split, defer, reject, or explicitly revise an obligation. It may not silently
+drop it. If an obligation no longer applies, the ledger needs a revision
+reason rather than an absent edge.
+
+Repair locality is the practical invariant. When a validator fails, the system
+should identify the failed atom, dependency, target artifact, and repair scope.
+If a repair changes a prior obligation, the claim ledger must record that the
+build graph changed. Otherwise the final artifact can appear to satisfy the
+original plan after the plan has quietly moved.
+
+## Failure modes
+
+- IR drift.
+- Compiler hallucination.
+- Repair that breaks earlier requirements.
+- Semantic under-specification, where the graph is well typed but omits what
+  the human actually cared about.
+- Validator scarcity, where prose, diagrams, or policy claims lack checks that
+  can reject bad lowering.
+- Compilation overhead, where the IR layer costs more than the task deserves.
+- Compilation laundering, where a syntactic schema pass is mistaken for
+  obligation preservation.
+
+The hardest failure is not a malformed record. The hardest failure is a clean
+record that represents the wrong obligation. That is why source-plan quality,
+validator adequacy, and reviewable lowering receipts matter as much as schema
+validity.
+
+Compilation should therefore be selective. Small low-risk tasks may not need
+the full compiler path. Long-lived, high-risk, reusable, multi-agent, or
+repair-heavy artifacts do. The IR layer earns its cost when it prevents hidden
+requirement loss, makes repair local, or gives reviewers a clear line from
+artifact back to obligation.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is not a general cognitive compiler. It is
+a hand-authored semantic-atom trace for one artifact type, plus a compile,
+verify, fail, and repair loop around that trace.
+
+The first useful slice could take a small source plan, lower it into a semantic
+atom DAG, produce one target artifact, attach one lowering receipt, run one
+passing validator, run one failing validator, and demonstrate one localized
+repair that updates the repair ledger without regenerating unrelated work. The
+target artifact could be a chapter section, a protocol schema, a small code
+file, or a proof-target stub.
+
+The repository already has a semantic atom schema shape, finite Lean predicates
+over obligation preservation and repair-ledger gates, and synthetic
+plan-execution checks that touch requirement preservation. That is record and
+fixture coverage. It does not yet include a source-plan parser, target-lowering
+engine, artifact validator suite, localized-repair benchmark, or quality/cost
+comparison against direct generation.
+
+## Beyond the State of the Art
+
+In mature form, cognitive compilation becomes a build system for cognitive work.
+Goals, command contracts, plans, sources, authority limits, validators, and
+context requirements lower into semantic IR before producing code, prose,
+schemas, proof targets, experiments, or tool jobs.
+
+The mature product surface is not only a generator. It is a compiler workbench
+that shows the obligation graph behind every important artifact. A reviewer can
+ask why a section exists, which source plan created it, what it must preserve,
+which validator accepted it, what assumption was introduced, which residual is
+open, and what downstream artifact must rebuild if the obligation changes.
+
+The mature toolchain would include source-plan language, typed semantic atoms,
+dependency analysis, validator routing, target backends, lowering receipts,
+localized repair, artifact graph integration, claim-ledger integration, and
+rebuild logic. It would know when a small direct-generation path is cheaper and
+when risk, reuse, or repair burden requires the full compiler boundary.
+
+That endpoint is a target architecture, not a current result. The present
+support boundary remains architectural argument until compiler traces, lowering
+rules, validators, repair-locality tests, target backends, negative controls,
+and benchmark comparisons show that the stack can rebuild cognitive artifacts
+while keeping semantic obligations addressable.
+
+## Summary
+
+Cognitive Compilation and Semantic IR gives the stack a compiler boundary
+between intention and artifact. It changes the question from "did the model
+produce something plausible?" to "which obligations did this artifact preserve,
+which validators accepted it, and where can repair safely happen?"
+
+The idea is powerful because it makes partial correctness visible. A generated
+artifact can be wrong in many ways, but an obligation graph can show where the
+wrongness entered: source plan, semantic atom, dependency, assumption,
+validator, lowering receipt, or repair ledger.
+
+The present evidence remains deliberately narrow. The chapter has source
+grounding, a public semantic-atom record shape, finite Lean gates, and synthetic
+requirement-preservation checks. It does not yet have a working cognitive
+compiler. The path forward is a small, public-safe trace that proves the
+control surface can preserve obligations, reject a broken lowering, and repair
+locally before any broader compiler claim moves.
+
+## Handoff
+
+Semantic IR can only preserve obligations when the context feeding those
+obligations is addressable, authorized, and reviewable. Virtual Context ABI
+defines that memory boundary. It gives compiled work stable context handles,
+versions, mounts, snapshots, representation contracts, adequacy signals, and
+fault behavior so semantic atoms do not inherit invisible memory or stale
+evidence.
