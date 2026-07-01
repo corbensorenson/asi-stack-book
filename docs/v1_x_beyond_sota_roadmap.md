@@ -566,12 +566,15 @@ Current proof status:
   theorems rejecting missing residual records, lossy exactness overclaim,
   mismatched exact reconstruction, failed-verification promotion, grounded
   semantic nodes without provenance, and hierarchy updates with neither
-  preserved references nor supersession; this reduces the projection-only
-  surface for Compact Generative Systems while leaving compact utility, codec
-  correctness, reconstruction quality, repair-cost accounting, fallback
-  behavior, semantic grounding quality, hierarchy-migration behavior,
-  representation utility, model quality, and downstream consumer-policy tests
-  as blockers.
+  preserved references nor supersession, plus a finite compact-admission route
+  for source artifact, compression-boundary, residual, lossy-exactness,
+  reconstruction-evidence, fallback, verifier-cost, semantic-provenance,
+  hierarchy-migration, evidence-transition, and non-claim-boundary gaps; this
+  reduces the projection-only surface for Compact Generative Systems while
+  leaving compact utility, codec correctness, reconstruction quality,
+  repair-cost accounting, fallback behavior, semantic grounding quality,
+  hierarchy-migration behavior, representation utility, model quality, and
+  downstream consumer-policy tests as blockers.
 - `AsiStackProofs.FastGeneration` now has finite negative-case theorems
   rejecting promotion candidates missing accepted-output or verifier-cost
   records, failed accelerated drafts without fallback or residual handling,
@@ -922,7 +925,7 @@ Per-chapter burn-down:
 | `routing-heads-and-specialist-cores` | Strong chapter with remaining planned tests. | Finish planned routing tests with authority/readiness/residual non-claims; avoid turning route-quality fixtures into learned-router claims. |
 | `readiness-gates-residual-escrow-and-quarantine` | Lifecycle control plane deserved broader transition proof coverage. | Partially executed: added a finite readiness lifecycle-transition relation for candidate, shadow, canary, qualified, default-ready, quarantined, retired, and superseded records, with hard requirements for evidence freshness, residual escrow, fallback, expiry, regression floor, authority scope, route permission, supersession record, and retirement receipt. Remaining work: executable lifecycle fixtures, deployed lifecycle transition execution, residual-ledger storage, live quarantine routing, gate-quality checks, terminal-state governance, MoECOT replay, benchmark evidence, and current-readiness evidence. |
 | `personal-compute-hives-and-federated-edge-intelligence` | Ambitious, sprawling chapter with many planned tests and formerly missing chapter-level Lean module mapping. | Metadata mapping is fixed; next implement hive scheduler, policy membrane, portal approval, federation lease, dropout, energy, audit replay, and rented-node tests; tighten speculative product vocabulary. |
-| `compact-generative-systems-and-residual-honesty` | Longest chapter has narrow proof coverage relative to scope and many planned tests. | Add residual-honesty, reconstruction-exactness, fallback-completeness, verification-cost, and semantic-representation migration invariants; import real compression/repair measurements only from inspected CGS/BBVCA/RankFold artifacts. |
+| `compact-generative-systems-and-residual-honesty` | Longest chapter has broader finite proof coverage after the compact-admission route, but many planned behavioral tests remain. | Partially executed: added finite residual/exactness negative cases plus a compact-admission route for source artifact, compression-boundary, residual, lossy-exactness, reconstruction-evidence, fallback, verifier-cost, semantic-provenance, hierarchy-migration, evidence-transition, non-claim-boundary, and complete-admission outcomes. Remaining work: implement executable residual-burden, fallback, reconstruction-quality, repair-cost, bounded-search, semantic grounding, hierarchy-revision, representation-utility, consumer-policy, and downstream utility tests; import real compression/repair measurements only from inspected CGS/BBVCA/RankFold artifacts. |
 | `fast-generation-architectures` | Excellent external grounding and one public-safe Theseus generation-mode negative-promotion import, but public speed-quality tests are still planned. | Cleanly replay or archive a public-safe Theseus generation-mode task bundle with baseline, negative control, cost, quality, verifier, residual records, and useful-solution-per-second accounting before stronger support. |
 | `rankfold-neuralfold-and-artifact-compression` | Real compression implementation evidence is not surfaced enough. | Import RankFold/NeuralFold compression-ratio, decode-determinism, fallback, and utility measurements from actual implementation artifacts or record blockers. |
 | `resource-economics-and-token-budgets` | Proof coverage is modest for chapter weight and load-stability tests remain planned. | Deepen budget-gating/protected-overhead theorems and implement load-stability, displaced-cost, reviewer-capacity, and protected-overhead tests. |

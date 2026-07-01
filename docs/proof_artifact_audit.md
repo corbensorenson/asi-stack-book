@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 139 |
-| Manifest status counts | {"implemented": 139} |
-| Triage class counts | {"formal-invariant": 139} |
+| Proof targets audited | 140 |
+| Manifest status counts | {"implemented": 140} |
+| Triage class counts | {"formal-invariant": 140} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -42,7 +42,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | 3 | 14 | 3 | 3 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 6 | 4 | 4 |
 | `lean/AsiStackProofs/CommandContracts.lean` | 2 | 4 | 2 | 2 |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | 2 | 4 | 2 | 1 |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | 3 | 16 | 4 | 2 |
 | `lean/AsiStackProofs/ContextCertificates.lean` | 3 | 18 | 6 | 4 |
 | `lean/AsiStackProofs/ContextTransactions.lean` | 2 | 17 | 7 | 6 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 2 | 18 | 9 | 5 |
@@ -100,7 +100,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `cognitive-compilation-and-semantic-ir` | 3 | 3 | 0 | 0 |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
-| `compact-generative-systems-and-residual-honesty` | 6 | 6 | 0 | 0 |
+| `compact-generative-systems-and-residual-honesty` | 7 | 7 | 0 | 0 |
 | `constitutional-alignment-substrate` | 5 | 5 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | 2 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 3 | 3 | 0 | 0 |
@@ -233,6 +233,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:personal_hives.work_admission.lifecycle_route` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.cgs.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.cgs.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.cgs.admission_route` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.gvr.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.gvr.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.GenerateVerifyRepair` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:representation.semantic_tree.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.SemanticRepresentation` | triage ok; module ok; chapter tag ok; limitation ok |

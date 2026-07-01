@@ -191,6 +191,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Hive work admission lifecycle route proof | implemented | passes via Lean build; finite hive-work admission route coverage only |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Residual honesty negative case | implemented | passes via Lean negative case; no behavioral residual-burden measurement claim |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Lossy exactness negative case | implemented | passes via Lean negative case; no codec-correctness or exact-reconstruction claim |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Compact admission route | implemented | passes via Lean route theorems; no codec behavior, semantic utility, compression-rate, fallback execution, or support-state promotion claim |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Exact reconstruction mismatch negative case | implemented | passes via Lean negative case; no real reconstruction-quality claim |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Failed verification promotion negative case | implemented | passes via Lean negative case; no verifier-quality or codec-behavior claim |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Semantic grounded-provenance negative case | implemented | passes via Lean negative case; no grounding-quality or semantic-utility claim |
@@ -401,16 +402,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 139 |
+| Proof targets covered by triage | 140 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 139 |
+| implemented | 140 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 139 |
+| implemented | formal-invariant | lean-candidate | 140 |

@@ -6622,6 +6622,13 @@
               "status": "implemented in AsiStackProofs.CompactGenerativeSystems; no codec-correctness claim"
             },
             {
+              "name": "Compact admission route",
+              "purpose": "Check that a modeled compact-generation review routes missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no codec behavior, semantic utility, compression-rate, fallback execution, or support-state promotion claim",
+              "status": "implemented in AsiStackProofs.CompactGenerativeSystems; no codec, utility, rate, fallback-execution, or promotion claim"
+            },
+            {
               "name": "Exact reconstruction mismatch negative case",
               "purpose": "Check that an exact claim whose generator output plus repair residual does not equal the target rejects the finite exact-reconstruction predicate.",
               "implementation_status": "implemented",
@@ -6673,6 +6680,12 @@
               "tag": "lean:compression.cgs.failure_blocks_promotion",
               "module": "AsiStackProofs.CompactGenerativeSystems",
               "target": "A lossy representation cannot be marked exact without verification evidence.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:compression.cgs.admission_route",
+              "module": "AsiStackProofs.CompactGenerativeSystems",
+              "target": "A modeled compact-generation admission review routes missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
               "status": "implemented"
             },
             {

@@ -921,6 +921,16 @@
       "rationale": "Implemented in AsiStackProofs.CompactGenerativeSystems as a finite exactness predicate: lossy representations without verification evidence cannot be marked exact."
     },
     {
+      "tag": "lean:compression.cgs.admission_route",
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "module": "AsiStackProofs.CompactGenerativeSystems",
+      "formal_target": "A modeled compact-generation admission review routes missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CompactGenerativeSystems as a finite admission-route function and derived route theorems for missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, support-promotion attempts without evidence transitions, missing non-claim boundaries, and complete compact-representation admission."
+    },
+    {
       "tag": "lean:compression.gvr.operational_invariant",
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "module": "AsiStackProofs.GenerateVerifyRepair",

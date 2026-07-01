@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Expand Compact Generative admission proofs
+
+- Added a finite `CompactAdmissionReview` and
+  `CompactAdmissionRouteFor` model to
+  `AsiStackProofs.CompactGenerativeSystems`, with derived route theorems for
+  missing source artifacts, compression boundaries, residual records, lossy
+  exactness overclaims, reconstruction evidence, fallback paths, verifier-cost
+  records, semantic provenance, hierarchy-migration records, evidence
+  transitions, non-claim boundaries, and complete compact-representation
+  admission.
+- Updated the Compact Generative Systems chapter, outline, manifest proof
+  target/test rows, proof triage, and roadmap burn-down row to record the
+  broader finite-record proof envelope.
+- Compact Generative Systems remains at `argument`; this does not prove codec
+  behavior, compression rate, reconstruction quality, fallback execution,
+  semantic grounding, representation utility, model quality, or support-state
+  promotion.
+
 ## 2026-07-01 - Expand Planning graph admission proofs
 
 - Added a finite `PlanGraphAdmissionReview` and

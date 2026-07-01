@@ -2048,6 +2048,7 @@ Draft deliverables:
 - Planned Codex test: S/R/Q/G/V/E loop consistency test.
 - Implemented Lean predicate: unresolved obligations require residual records.
 - Implemented Lean predicate: lossy representations cannot be marked exact without verification evidence.
+- Implemented Lean route: modeled compact-generation admission reviews route missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.
 - Implemented Lean predicate: exact reconstruction claims require generator output plus repair residual to equal the target in a finite record.
 - Implemented Lean predicate: failed verification blocks exactness promotion.
 - Planned Codex test: Residual burden behavior test.
@@ -2070,6 +2071,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:compression.cgs.operational_invariant` | `AsiStackProofs.CompactGenerativeSystems` | A compact representation with unresolved obligations carries residual records. | implemented |
 | `lean:compression.cgs.failure_blocks_promotion` | `AsiStackProofs.CompactGenerativeSystems` | A lossy representation cannot be marked exact without verification evidence. | implemented |
+| `lean:compression.cgs.admission_route` | `AsiStackProofs.CompactGenerativeSystems` | A modeled compact-generation admission review routes missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
 | `lean:compression.gvr.operational_invariant` | `AsiStackProofs.GenerateVerifyRepair` | An exact reconstruction claim requires generator output plus repair residual to equal the target. | implemented |
 | `lean:compression.gvr.failure_blocks_promotion` | `AsiStackProofs.GenerateVerifyRepair` | A failed verification blocks exactness promotion. | implemented |
 | `lean:representation.semantic_tree.operational_invariant` | `AsiStackProofs.SemanticRepresentation` | A semantic node marked grounded has at least one provenance link. | implemented |

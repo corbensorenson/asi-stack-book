@@ -54,4 +54,174 @@ theorem lossy_unverified_representation_marked_exact_rejected
   rw [exactMarked] at notExact
   cases notExact
 
+inductive CompactAdmissionRoute where
+  | requestSourceArtifact
+  | requestCompressionBoundary
+  | requestResidualRecord
+  | blockLossyExactnessOverclaim
+  | requestReconstructionEvidence
+  | requestFallbackPath
+  | requestVerifierCost
+  | requestSemanticProvenance
+  | requestMigrationRecord
+  | requestEvidenceTransition
+  | preserveNonClaimBoundary
+  | admitCompactRepresentation
+deriving DecidableEq, Repr
+
+structure CompactAdmissionReview where
+  sourceArtifactPresent : Bool
+  compressionBoundaryDeclared : Bool
+  residualRecordPresent : Bool
+  lossyRepresentation : Bool
+  markedExact : Bool
+  verificationEvidencePresent : Bool
+  reconstructionEvidencePresent : Bool
+  fallbackPathPresent : Bool
+  verifierCostRecorded : Bool
+  semanticNodeGrounded : Bool
+  semanticProvenancePresent : Bool
+  hierarchyChanged : Bool
+  migrationRecordPresent : Bool
+  supportPromotionRequested : Bool
+  evidenceTransitionPresent : Bool
+  nonClaimBoundaryPresent : Bool
+deriving DecidableEq, Repr
+
+def CompactAdmissionRouteFor
+    (review : CompactAdmissionReview) :
+    CompactAdmissionRoute :=
+  if review.sourceArtifactPresent = false then
+    CompactAdmissionRoute.requestSourceArtifact
+  else if review.compressionBoundaryDeclared = false then
+    CompactAdmissionRoute.requestCompressionBoundary
+  else if review.residualRecordPresent = false then
+    CompactAdmissionRoute.requestResidualRecord
+  else if review.lossyRepresentation = true ∧
+      review.markedExact = true ∧
+        review.verificationEvidencePresent = false then
+    CompactAdmissionRoute.blockLossyExactnessOverclaim
+  else if review.reconstructionEvidencePresent = false then
+    CompactAdmissionRoute.requestReconstructionEvidence
+  else if review.fallbackPathPresent = false then
+    CompactAdmissionRoute.requestFallbackPath
+  else if review.verifierCostRecorded = false then
+    CompactAdmissionRoute.requestVerifierCost
+  else if review.semanticNodeGrounded = true ∧
+      review.semanticProvenancePresent = false then
+    CompactAdmissionRoute.requestSemanticProvenance
+  else if review.hierarchyChanged = true ∧
+      review.migrationRecordPresent = false then
+    CompactAdmissionRoute.requestMigrationRecord
+  else if review.supportPromotionRequested = true ∧
+      review.evidenceTransitionPresent = false then
+    CompactAdmissionRoute.requestEvidenceTransition
+  else if review.nonClaimBoundaryPresent = false then
+    CompactAdmissionRoute.preserveNonClaimBoundary
+  else
+    CompactAdmissionRoute.admitCompactRepresentation
+
+def completeCompactAdmissionReview : CompactAdmissionReview where
+  sourceArtifactPresent := true
+  compressionBoundaryDeclared := true
+  residualRecordPresent := true
+  lossyRepresentation := false
+  markedExact := false
+  verificationEvidencePresent := true
+  reconstructionEvidencePresent := true
+  fallbackPathPresent := true
+  verifierCostRecorded := true
+  semanticNodeGrounded := true
+  semanticProvenancePresent := true
+  hierarchyChanged := true
+  migrationRecordPresent := true
+  supportPromotionRequested := false
+  evidenceTransitionPresent := true
+  nonClaimBoundaryPresent := true
+
+theorem missing_source_artifact_requests_source :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          sourceArtifactPresent := false } =
+      CompactAdmissionRoute.requestSourceArtifact := by
+  simp [CompactAdmissionRouteFor]
+
+theorem missing_compression_boundary_requests_boundary :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          compressionBoundaryDeclared := false } =
+      CompactAdmissionRoute.requestCompressionBoundary := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem missing_residual_record_requests_residual :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          residualRecordPresent := false } =
+      CompactAdmissionRoute.requestResidualRecord := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem lossy_exact_claim_without_verification_blocks_admission :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          lossyRepresentation := true
+          markedExact := true
+          verificationEvidencePresent := false } =
+      CompactAdmissionRoute.blockLossyExactnessOverclaim := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem missing_reconstruction_evidence_requests_evidence :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          reconstructionEvidencePresent := false } =
+      CompactAdmissionRoute.requestReconstructionEvidence := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem missing_fallback_path_requests_fallback :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          fallbackPathPresent := false } =
+      CompactAdmissionRoute.requestFallbackPath := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem missing_verifier_cost_requests_cost_record :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          verifierCostRecorded := false } =
+      CompactAdmissionRoute.requestVerifierCost := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem grounded_semantic_node_without_provenance_requests_provenance :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          semanticProvenancePresent := false } =
+      CompactAdmissionRoute.requestSemanticProvenance := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem hierarchy_change_without_migration_requests_migration :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          migrationRecordPresent := false } =
+      CompactAdmissionRoute.requestMigrationRecord := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem support_promotion_without_transition_requests_transition :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          supportPromotionRequested := true
+          evidenceTransitionPresent := false } =
+      CompactAdmissionRoute.requestEvidenceTransition := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem missing_nonclaim_boundary_preserves_boundary :
+    CompactAdmissionRouteFor
+        { completeCompactAdmissionReview with
+          nonClaimBoundaryPresent := false } =
+      CompactAdmissionRoute.preserveNonClaimBoundary := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
+theorem complete_compact_admission_allows_representation :
+    CompactAdmissionRouteFor completeCompactAdmissionReview =
+      CompactAdmissionRoute.admitCompactRepresentation := by
+  simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
+
 end AsiStackProofs.CompactGenerativeSystems
