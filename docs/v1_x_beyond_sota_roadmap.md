@@ -447,6 +447,18 @@ Acceptance bar:
 - no reviewer comment is treated as proof, citation, or support-state evidence
   unless it is backed by independently source-noted material.
 
+Current status:
+
+- Public request issue #1 is open, with supplemental consolidation and full
+  consolidation request updates recorded under `external_reviews/request_updates/`.
+- `external_reviews/blockers/no_named_external_reviewer_2026-07-01.json` records
+  the current dated blocker: the public request is open, but no named
+  independent reviewer response has been accepted and no direct outreach target
+  has been authorized.
+- The blocker has no source-evidence, support-state, artifact-release, or
+  evidence-transition effect. Actionable routing remains pending until an
+  accepted review record exists.
+
 ### Milestone 2 - Safety-Critical Lean Depth
 
 Goal: move the five safety-critical Lean modules from projection-only hooks

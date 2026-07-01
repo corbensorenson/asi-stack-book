@@ -25,6 +25,8 @@ CONSOLIDATION_COMMENT_URL = (
 FULL_CONSOLIDATION_COMMENT_URL = (
     "https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4837313658"
 )
+CURRENT_BLOCKER_ID = "no-named-external-reviewer-2026-07-01"
+CURRENT_BLOCKER_PATH = "external_reviews/blockers/no_named_external_reviewer_2026-07-01.json"
 
 
 def load_json(path: Path) -> Any:
@@ -101,6 +103,13 @@ def semantic_errors(path: Path, value: dict[str, Any]) -> list[str]:
             errors.append(f"{relative}: accepted_review must list reviewed scope.")
         if value.get("support_state_effect") != "review_input_only":
             errors.append(f"{relative}: accepted_review must remain review_input_only for support_state_effect.")
+    elif record_type == "review_blocker":
+        if status != "blocked":
+            errors.append(f"{relative}: review_blocker must have review_status blocked.")
+        if not value.get("acceptance_blockers"):
+            errors.append(f"{relative}: review_blocker must list acceptance_blockers.")
+        if value.get("attribution_boundary") not in {"public_request", "not_applicable"}:
+            errors.append(f"{relative}: review_blocker must use public_request or not_applicable attribution boundary.")
     else:
         if status == "accepted":
             errors.append(f"{relative}: only accepted_review records may have review_status accepted.")
@@ -137,8 +146,10 @@ def main() -> None:
 
     accepted_records: list[Path] = []
     request_update_records: list[Path] = []
+    blocker_records: list[Path] = []
     saw_consolidation_request = False
     saw_full_consolidation_request = False
+    saw_current_blocker = False
 
     for record_path in records:
         value = load_json(record_path)
@@ -150,6 +161,14 @@ def main() -> None:
                 accepted_records.append(record_path)
             if value.get("record_type") == "request_update":
                 request_update_records.append(record_path)
+            if value.get("record_type") == "review_blocker":
+                blocker_records.append(record_path)
+            if (
+                str(record_path.relative_to(ROOT)) == CURRENT_BLOCKER_PATH
+                and value.get("record_id") == CURRENT_BLOCKER_ID
+                and value.get("review_status") == "blocked"
+            ):
+                saw_current_blocker = True
             refs = value.get("public_request_refs", [])
             if ISSUE_URL in refs and CONSOLIDATION_COMMENT_URL in refs:
                 saw_consolidation_request = True
@@ -169,6 +188,12 @@ def main() -> None:
         errors.append("No intake record preserves the consolidation issue comment URL.")
     if not saw_full_consolidation_request:
         errors.append("No intake record preserves the full consolidation issue comment URL.")
+    if not saw_current_blocker:
+        errors.append("No intake record preserves the current dated no-named-reviewer blocker.")
+    if CURRENT_BLOCKER_PATH not in status_text:
+        errors.append("external_review_status.md does not reference the current external-review blocker record.")
+    if "no named independent reviewer response or approved direct outreach target" not in status_text:
+        errors.append("external_review_status.md does not explain the current outreach blocker.")
 
     if errors:
         fail(errors)
@@ -176,7 +201,7 @@ def main() -> None:
     print(
         "External review intake validation passed: "
         f"{len(records)} record(s), {len(request_update_records)} request update(s), "
-        f"{len(accepted_records)} accepted review(s)."
+        f"{len(blocker_records)} blocker(s), {len(accepted_records)} accepted review(s)."
     )
 
 

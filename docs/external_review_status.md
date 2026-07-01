@@ -1,6 +1,6 @@
 # External Review Status
 
-Last updated: 2026-06-29
+Last updated: 2026-07-01
 
 This ledger records the early external-review state for the v1.x roadmap. It is
 a review-control surface, not evidence and not a support-state transition.
@@ -16,8 +16,9 @@ a review-control surface, not evidence and not a support-state transition.
 | Supplemental consolidation packet | `docs/chapter_consolidation_external_review_packet.md` |
 | Full consolidation packet | `docs/chapter_consolidation_full_review_packet.md` |
 | Structured request-update records | `external_reviews/request_updates/consolidation_review_request_2026-06-29.json`; `external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json` |
+| Dated outreach blocker | `external_reviews/blockers/no_named_external_reviewer_2026-07-01.json` |
 | Intake validation | `python3 scripts/validate_external_review_intake.py` |
-| Review state | Requested publicly; no independent external review has been accepted yet. |
+| Review state | Requested publicly; no independent external review has been accepted yet. Dated outreach blocker: no named independent reviewer response or approved direct outreach target. |
 | Review scope requested | Safety-critical Lean limitations, Appendix C support states, non-core evidence ledger, v1.x Beyond-SOTA roadmap, one representative Human view chapter, the two Part I consolidation destination drafts, the five non-pilot review-ready consolidation packages, and the three fold-disposition packages. |
 | Support-state effect | None. |
 | Artifact-release effect | None. |
@@ -44,9 +45,15 @@ a review-control surface, not evidence and not a support-state transition.
 No independent external human review response has been accepted into the
 repository yet.
 
-The current structured intake records preserve the public supplemental
+The current structured request-update records preserve the public supplemental
 consolidation-review solicitations only. They record no reviewer finding and no
 reviewer decision.
+
+The current dated blocker records that the public request is open, but no named
+independent reviewer with relevant safety, formal-methods, governance,
+AI-systems, evaluation, or technical-publishing expertise has provided an
+accepted response or been authorized for direct outreach. The blocker is a
+process state, not review input and not evidence.
 
 ## Acceptance Criteria For A Future Review Record
 

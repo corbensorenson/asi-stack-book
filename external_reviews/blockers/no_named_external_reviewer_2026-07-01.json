@@ -1,0 +1,66 @@
+{
+  "record_id": "no-named-external-reviewer-2026-07-01",
+  "record_type": "review_blocker",
+  "review_status": "blocked",
+  "date": "2026-07-01",
+  "public_request_refs": [
+    "https://github.com/corbensorenson/asi-stack-book/issues/1",
+    "https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101",
+    "https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4837313658"
+  ],
+  "packet_refs": [
+    "docs/external_review_packet.md",
+    "docs/external_review_status.md",
+    "docs/chapter_consolidation_external_review_packet.md",
+    "docs/chapter_consolidation_full_review_packet.md"
+  ],
+  "reviewer_background": "blocked; public GitHub request is open, but no named independent reviewer with safety, formal-methods, governance, AI-systems, evaluation, or technical-publishing expertise has provided an accepted response or been authorized for direct outreach",
+  "review_scope_refs": [
+    "docs/proof_depth_classification.md",
+    "docs/proof_adequacy_review.md",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "docs/non_core_evidence_ledger.md",
+    "docs/v1_x_beyond_sota_roadmap.md",
+    "docs/external_sota_positioning_audit.md",
+    "docs/chapter_consolidation_full_review_packet.md",
+    "docs/reader_chapter_review_matrix.md"
+  ],
+  "findings_summary": "No independent external human review has been accepted. The public request remains open, but the current blocker is lack of a named reviewer response or approved direct outreach target; therefore review input cannot yet be routed to proof, source, chapter, reader, evidence, or roadmap tasks.",
+  "decisions": [
+    {
+      "target": "Milestone 1.5 early external review",
+      "decision": "defer",
+      "reason": "Public request is open, but no accepted independent reviewer response exists and no named direct reviewer has been authorized for outreach."
+    },
+    {
+      "target": "Support-state or artifact-release movement from external review",
+      "decision": "reject",
+      "reason": "A blocker record is not a review record, source evidence, artifact approval, or evidence transition."
+    }
+  ],
+  "follow_up_refs": [
+    "docs/external_review_status.md",
+    "docs/external_review_packet.md",
+    "docs/v1_x_beyond_sota_roadmap.md",
+    "https://github.com/corbensorenson/asi-stack-book/issues/1"
+  ],
+  "acceptance_blockers": [
+    "accepted independent external reviewer response",
+    "reviewer expertise or anonymized background recorded",
+    "reviewed scope recorded",
+    "actionable findings routed to proof, source, chapter, reader, evidence, roadmap, demotion, rejection, or blocker tasks",
+    "publication and attribution boundary recorded",
+    "support-state, artifact-release, and evidence effects preserved as none unless separately changed by an accepted evidence-transition or release record"
+  ],
+  "support_state_effect": "none",
+  "artifact_release_effect": "none",
+  "evidence_effect": "none",
+  "attribution_boundary": "public_request",
+  "non_claims": [
+    "This blocker does not create an accepted external-review result.",
+    "This blocker does not create source evidence, proof evidence, benchmark evidence, reviewer-quality evidence, or support-state evidence.",
+    "This blocker does not authorize a chapter merge, chapter fold, chapter rewrite, or edit to book_structure.json.",
+    "This blocker does not approve reader, ebook, PDF, DOCX, audio, DOI, archive, or release readiness.",
+    "All chapter core claims remain at argument support unless separately changed by an accepted evidence-transition record."
+  ]
+}

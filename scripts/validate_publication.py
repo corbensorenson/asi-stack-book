@@ -28,6 +28,7 @@ REQUIRED_FILES = [
     "docs/external_review_status.md",
     "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
     "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json",
+    "external_reviews/blockers/no_named_external_reviewer_2026-07-01.json",
     "docs/defended_contribution_tracks.md",
     "docs/defended_contribution_prior_art_positioning.md",
     "docs/evidence_laundering_prevention_case_studies.md",
