@@ -23,7 +23,7 @@ It does **not** treat any protocol record as verified merely because one lane pa
 | `runtime_adapter_invocation` | `schemas/runtime_adapter_invocation.schema.json` | 29 | 2/5 | `scripts/validate_runtime_adapter_permissions.py` | lean/AsiStackProofs/RuntimeAdapters.lean (ParentJob, AdapterInvocation) | 6 | 20 | 3 | registry ok | ok |
 | `self_improvement_transition` | `schemas/self_improvement_transition.schema.json` | 12 | 3/7 | `scripts/validate_self_improvement_boundaries.py` | lean/AsiStackProofs/SelfImprovement.lean (ImprovementTransitionReview, SelfEvaluationReview) | 3 | 9 | 0 | registry ok | ok |
 | `replacement_transaction` | `schemas/replacement_transaction.schema.json` | 23 | 3/6 | `scripts/validate_capability_replacement.py` | lean/AsiStackProofs/Replacement.lean (ReplacementCommit) | 4 | 19 | 0 | registry ok | ok |
-| `readiness_gate_record` | `schemas/readiness_gate_record.schema.json` | 28 | 4/5 | `scripts/validate_readiness_residual_gates.py` | lean/AsiStackProofs/ReadinessGates.lean (GateReview, RouteSelection) | 5 | 23 | 0 | registry ok | ok |
+| `readiness_gate_record` | `schemas/readiness_gate_record.schema.json` | 28 | 4/5 | `scripts/validate_readiness_residual_gates.py` | lean/AsiStackProofs/ReadinessGates.lean (GateReview, RouteSelection, ReadinessTransitionReview, QuarantineRoutingReview, StaleGateReuseReview) | 9 | 19 | 0 | registry ok | ok |
 | `belief_revision_record` | `schemas/belief_revision_record.schema.json` | 17 | 3/4 | `scripts/validate_claim_ledger_revision.py` | lean/AsiStackProofs/ClaimLedger.lean (BeliefRevisionRecord, ClaimUpdate, PromotionReview) | 9 | 8 | 0 | registry ok | ok |
 | `proof_carrying_claim` | `schemas/proof_carrying_claim.schema.json` | 25 | 3/5 | `scripts/validate_proof_carrying_claims.py` | lean/AsiStackProofs/ProofCarryingClaims.lean (ProofCarryingClaimRecord, FormalTierClaimReview, FailedVerifierPromotionReview) | 11 | 14 | 0 | registry ok | ok |
 | `tribunal_review_record` | `schemas/tribunal_review_record.schema.json` | 22 | 3/5 | `scripts/validate_tribunal_review.py` | lean/AsiStackProofs/Tribunal.lean (TribunalVerdictReview, HighRiskArtifactAcceptanceReview) | 7 | 15 | 0 | registry ok | ok |
@@ -123,24 +123,24 @@ It does **not** treat any protocol record as verified merely because one lane pa
 | `readiness_gate_record` | `candidate_state` | Harness | Fixture state. |
 | `readiness_gate_record` | `closure_conditions` | Harness | Harness-level closure rule. |
 | `readiness_gate_record` | `current_state` | Lean | RouteSelection.state |
-| `readiness_gate_record` | `decision` | Lean | GateReview.decision |
+| `readiness_gate_record` | `decision` | Lean | GateReview.decision; ReadinessTransitionReview.transitionAccepted; StaleGateReuseReview.promotedDecisionAccepted |
 | `readiness_gate_record` | `diagnostic_permissions` | Harness | Harness-level diagnostic permission rule. |
 | `readiness_gate_record` | `evidence_state` | Harness | Fixture evidence state. |
-| `readiness_gate_record` | `expiry` | Harness | Harness-level expiry. |
-| `readiness_gate_record` | `fallback_path` | Harness | Harness-level fallback path. |
+| `readiness_gate_record` | `expiry` | Lean | ReadinessTransitionReview.expiryRecorded; StaleGateReuseReview.gateExpired |
+| `readiness_gate_record` | `fallback_path` | Lean | ReadinessTransitionReview.fallbackPathPresent; QuarantineRoutingReview.fallbackPathPresent |
 | `readiness_gate_record` | `field_id` | Harness | Capability-field reference. |
 | `readiness_gate_record` | `floor_evidence` | Harness | Harness-level floor evidence. |
 | `readiness_gate_record` | `freshness_window` | Harness | Fixture freshness rule. |
 | `readiness_gate_record` | `frontier_evidence` | Harness | Harness-level frontier evidence. |
-| `readiness_gate_record` | `gate_evidence` | Lean | GateReview.allRequiredGatesPass |
+| `readiness_gate_record` | `gate_evidence` | Lean | GateReview.allRequiredGatesPass; ReadinessTransitionReview.gateEvidenceFresh |
 | `readiness_gate_record` | `gate_id` | Harness | Trace identity. |
 | `readiness_gate_record` | `inherited_residuals` | Harness | Harness-level inherited residuals. |
 | `readiness_gate_record` | `next_review_trigger` | Harness | Trace/lifecycle reference. |
 | `readiness_gate_record` | `non_claims` | Harness | Non-claim boundary checked by harness. |
 | `readiness_gate_record` | `promotion_blockers` | Harness | Harness-level blocker list. |
-| `readiness_gate_record` | `quarantine_conditions` | Harness | Harness-level quarantine rule. |
+| `readiness_gate_record` | `quarantine_conditions` | Lean | QuarantineRoutingReview.targetQuarantined |
 | `readiness_gate_record` | `regression_results` | Harness | Harness-level regression record. |
-| `readiness_gate_record` | `residual_escrow` | Harness | Harness-level residual record. |
+| `readiness_gate_record` | `residual_escrow` | Lean | ReadinessTransitionReview.residualEscrowCarried; StaleGateReuseReview.residualRecorded |
 | `readiness_gate_record` | `review_refs` | Harness | Trace references. |
 | `readiness_gate_record` | `target_id` | Harness | Target reference. |
 | `readiness_gate_record` | `target_kind` | Harness | Target type label. |

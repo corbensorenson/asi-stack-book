@@ -1838,6 +1838,10 @@ Draft deliverables:
 - Implemented protocol validation: `readiness_gate_record` fixture validates public record shape, field identity, workload family, freshness window, route permissions, inherited residuals, fallback path, expiry, and non-claims only.
 - Implemented Lean predicate: promoted decisions require all required gates to pass.
 - Implemented Lean predicate: quarantined targets cannot be selected for ordinary execution routes.
+- Implemented Lean negative case: promoted readiness decisions with failed required gates are rejected.
+- Implemented Lean negative case: accepted stronger readiness transitions missing fresh gate evidence, residual escrow, fallback path, or expiry records are rejected.
+- Implemented Lean negative case: quarantined targets selected for ordinary routing or selected for diagnostic routing without fallback are rejected.
+- Implemented Lean negative case: promoted reuse of expired or architecture-stale gates without rerun and residual records is rejected.
 - Implemented Codex test: Readiness transition enforcement test, via `python3 scripts/validate_readiness_residual_gates.py` over canary, default, quarantine, and expired-rerun scenarios; deployed readiness-engine behavior remains unrun.
 - Implemented Codex test: Residual escrow integrity test, via `python3 scripts/validate_readiness_residual_gates.py` over route residual obligations and inherited residual custody; residual-ledger storage remains unrun.
 - Implemented Codex test: Quarantine routing harness test, via `python3 scripts/validate_readiness_residual_gates.py` over blocked selected routes and preserved fallback routes; live quarantine routing remains unrun.
@@ -1848,6 +1852,8 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | implemented |
 | `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | implemented |
+
+Implemented negative-case theorems now cover failed promoted gates, accepted stronger transitions missing freshness/residual/fallback/expiry records, quarantined ordinary routes or diagnostic routes without fallback, and stale-gate reuse without rerun/residual records. These remain record-level gates only; they do not prove benchmark quality, residual-ledger storage, lifecycle engine behavior, live routing enforcement, MoECOT replay, or current readiness.
 
 ### Personal Compute Hives and Federated Edge Intelligence
 

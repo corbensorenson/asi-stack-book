@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 356 |
+| Theorem declarations classified | 360 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 235 |
+| Derived/decomposed theorem declarations | 239 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -87,7 +87,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 2 | 1 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -317,8 +317,12 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_phase_claim_promotion_requires_evidence_artifacts` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `phase_milestone_cannot_promote_claim_without_evidence_artifacts` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `roadmap_phase_unlock_requires_passing_acceptance_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `accepted_stronger_transition_missing_required_record_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `promoted_decision_requires_all_required_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `promoted_decision_with_failed_required_gates_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_module_cannot_be_selected_for_ordinary_route` | derived_or_decomposed | no | uses unfold |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_target_ordinary_or_unbacked_diagnostic_route_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `stale_gate_reuse_without_rerun_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `end_to_end_trace_contains_required_artifacts_for_layer_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_authority_deltas_routes_to_authority_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_parent_artifacts_routes_to_parentage_repair` | derived_or_decomposed | no | uses simp, unfold |

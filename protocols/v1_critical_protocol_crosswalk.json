@@ -223,9 +223,10 @@
       "result_record": "experiments/readiness_residual_gates/results/2026-06-28-local.md",
       "phase5_registry_id": "readiness_residual_gates",
       "appendix_e_markers": [
-        "Readiness gate enforcement test",
+        "Readiness gate fixture validation",
+        "Readiness gate promotion predicate",
         "Residual escrow integrity test",
-        "Quarantine behavior test"
+        "Quarantine routing harness test"
       ],
       "primary_chapters": [
         "routing-heads-and-specialist-cores",
@@ -236,14 +237,37 @@
       "lean_module": "lean/AsiStackProofs/ReadinessGates.lean",
       "lean_structures": [
         "GateReview",
-        "RouteSelection"
+        "RouteSelection",
+        "ReadinessTransitionReview",
+        "QuarantineRoutingReview",
+        "StaleGateReuseReview"
       ],
       "lean_mapped_fields": {
-        "decision": "GateReview.decision",
-        "gate_evidence": "GateReview.allRequiredGatesPass",
+        "decision": [
+          "GateReview.decision",
+          "ReadinessTransitionReview.transitionAccepted",
+          "StaleGateReuseReview.promotedDecisionAccepted"
+        ],
+        "gate_evidence": [
+          "GateReview.allRequiredGatesPass",
+          "ReadinessTransitionReview.gateEvidenceFresh"
+        ],
         "current_state": "RouteSelection.state",
         "allowed_routes": "RouteSelection.ordinaryRouteSelected",
-        "blocked_routes": "RouteSelection.ordinaryRouteSelected"
+        "blocked_routes": "RouteSelection.ordinaryRouteSelected",
+        "residual_escrow": [
+          "ReadinessTransitionReview.residualEscrowCarried",
+          "StaleGateReuseReview.residualRecorded"
+        ],
+        "quarantine_conditions": "QuarantineRoutingReview.targetQuarantined",
+        "fallback_path": [
+          "ReadinessTransitionReview.fallbackPathPresent",
+          "QuarantineRoutingReview.fallbackPathPresent"
+        ],
+        "expiry": [
+          "ReadinessTransitionReview.expiryRecorded",
+          "StaleGateReuseReview.gateExpired"
+        ]
       },
       "harness_only_fields": {
         "gate_id": "Trace identity.",
@@ -257,21 +281,17 @@
         "floor_evidence": "Harness-level floor evidence.",
         "frontier_evidence": "Harness-level frontier evidence.",
         "regression_results": "Harness-level regression record.",
-        "residual_escrow": "Harness-level residual record.",
         "inherited_residuals": "Harness-level inherited residuals.",
         "authority_scope": "Harness-level authority scope.",
         "promotion_blockers": "Harness-level blocker list.",
-        "quarantine_conditions": "Harness-level quarantine rule.",
         "diagnostic_permissions": "Harness-level diagnostic permission rule.",
-        "fallback_path": "Harness-level fallback path.",
-        "expiry": "Harness-level expiry.",
         "closure_conditions": "Harness-level closure rule.",
         "review_refs": "Trace references.",
         "next_review_trigger": "Trace/lifecycle reference.",
         "non_claims": "Non-claim boundary checked by harness."
       },
       "abstracted_fields": {},
-      "abstraction_note": "Lean covers a narrow gate-pass and route-selection predicate. It does not prove route quality, evidence freshness, quarantine enforcement, fallback behavior, or deployed readiness governance."
+      "abstraction_note": "Lean covers finite gate-pass, route-selection, transition-completeness, quarantine-route, and stale-gate reuse predicates. It does not prove route quality, gate quality, evidence freshness in a deployed system, residual-ledger storage, quarantine enforcement, fallback execution, MoECOT replay, or deployed readiness governance."
     },
     {
       "id": "belief_revision_record",

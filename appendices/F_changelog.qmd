@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-30 - Readiness lifecycle boundary proofs
+
+- Strengthened `AsiStackProofs.ReadinessGates` with four derived negative-case
+  theorems: one rejects promoted decisions with failed required gates, one
+  rejects accepted stronger transitions missing fresh evidence, residual
+  escrow, fallback, or expiry records, one rejects quarantined ordinary routing
+  or diagnostic routing without fallback, and one rejects stale gate reuse
+  without rerun or residual records.
+- Regenerated `docs/proof_depth_classification.md`,
+  `docs/proof_artifact_audit.md`, `proofs/proof_manifest.json`, and Appendix
+  E; the proof-depth classifier now reports 360 theorem declarations, 121
+  direct/projection-style declarations, and 239 derived/decomposed
+  declarations.
+- Updated the Readiness Gates chapter, outline, manifest test rows, proof
+  adequacy review, manuscript status, candidate status, v1.0/v1.x roadmap
+  surfaces, focus audit, and status snapshot validator. Appendix E now records
+  201 implemented rows, 1 partial row, and 110 planned rows. Refreshed the
+  v1.0 status manuscript scale to 169,368 chapter words excluding YAML and
+  177,000 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, run a readiness
+  engine, validate gate quality, execute residual-ledger storage, enforce live
+  quarantine routing, replay MoECOT, prove benchmark quality, prove current
+  readiness, approve a reader/ebook/PDF/DOCX/audio artifact, or approve any
+  release artifact beyond recorded validation scope.
+
 ## 2026-06-30 - Circle proof-contract boundary proofs
 
 - Strengthened `AsiStackProofs.ProofCarryingContracts` with four derived

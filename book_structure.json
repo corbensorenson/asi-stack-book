@@ -5738,25 +5738,74 @@
           "beyond_state_of_art": "Readiness is the lifecycle control plane for every routable or replaceable capability in the stack. It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use. In the mature readiness control plane, readiness is a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, rollback consequences, and review ownership.",
           "codex_tests": [
             {
-              "name": "Readiness gate enforcement test",
-              "purpose": "Check that canary/default, quarantine, and rerun decisions require compatible evidence state, lifecycle state, route state, authority scope, and replacement decision.",
-              "status": "implemented by readiness/residual gate harness; validated locally",
+              "name": "Readiness gate fixture validation",
+              "purpose": "Check that the readiness fixture matches the public schema and declares target, field identity, lifecycle states, workload family, freshness window, evidence, regression results, residual escrow, inherited residuals, authority, route permissions, blockers, quarantine conditions, fallback, expiry, decision, reviews, next trigger, and non-claims.",
               "implementation_status": "implemented",
-              "result_status": "validated locally by synthetic fixtures"
+              "result_status": "passes via `python3 scripts/validate_protocol_examples.py`; schema/fixture consistency only",
+              "status": "implemented by protocol validation; validated locally"
+            },
+            {
+              "name": "Readiness gate promotion predicate",
+              "purpose": "Check that promoted decisions require all required gates to pass.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; record-boundary predicate only",
+              "status": "implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build"
+            },
+            {
+              "name": "Quarantine ordinary-route predicate",
+              "purpose": "Check that quarantined targets cannot be selected for ordinary execution routes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; no live quarantine routing claim",
+              "status": "implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build"
+            },
+            {
+              "name": "Failed-gate promotion negative case",
+              "purpose": "Reject promoted readiness decisions when all required gates have not passed.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no gate-quality or deployment-readiness claim",
+              "status": "implemented; passes via Lean negative case"
+            },
+            {
+              "name": "Accepted stronger-transition negative case",
+              "purpose": "Reject accepted stronger readiness transitions when fresh gate evidence, residual escrow, fallback path, or expiry records are missing.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no lifecycle-engine behavior claim",
+              "status": "implemented; passes via Lean negative case"
+            },
+            {
+              "name": "Quarantine route-boundary negative case",
+              "purpose": "Reject quarantined targets that are selected for ordinary routing or selected for diagnostic routing without a fallback path.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no live route-enforcement claim",
+              "status": "implemented; passes via Lean negative case"
+            },
+            {
+              "name": "Stale-gate reuse negative case",
+              "purpose": "Reject promoted reuse of expired or architecture-stale gates when rerun and residual records are missing.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no rerun execution or current-readiness claim",
+              "status": "implemented; passes via Lean negative case"
+            },
+            {
+              "name": "Readiness transition enforcement test",
+              "purpose": "Check that a target cannot enter a stronger state unless the gate decision permits it in an executable lifecycle harness.",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; deployed readiness engine not run",
+              "status": "implemented by readiness/residual gate harness for synthetic canary, default, quarantine, and expired-rerun scenarios; deployed readiness engine not run"
             },
             {
               "name": "Residual escrow integrity test",
-              "purpose": "Check that route residual obligations and inherited residuals are carried into gate or replacement escrow before promotion.",
-              "status": "implemented by readiness/residual gate harness; validated locally",
+              "purpose": "Check that residuals remain attached after canary or promotion decisions.",
               "implementation_status": "implemented",
-              "result_status": "validated locally by synthetic fixtures"
+              "result_status": "validated locally by synthetic fixtures; residual-ledger storage not run",
+              "status": "implemented by readiness/residual gate harness for route residual obligations and inherited residual custody; residual-ledger storage not run"
             },
             {
-              "name": "Quarantine behavior test",
-              "purpose": "Check that a failed route is blocked, a fallback route remains allowed, and the replacement transaction records quarantine rather than promotion.",
-              "status": "implemented by readiness/residual gate harness; validated locally; live routing enforcement not run",
+              "name": "Quarantine routing harness test",
+              "purpose": "Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis.",
               "implementation_status": "implemented",
-              "result_status": "validated locally by synthetic fixtures; live routing enforcement not run"
+              "result_status": "validated locally by synthetic fixtures; live quarantine routing not run",
+              "status": "implemented by readiness/residual gate harness for blocked selected routes and preserved fallback routes; live quarantine routing not run"
             }
           ],
           "lean_module": "AsiStackProofs.ReadinessGates",

@@ -4,7 +4,7 @@ chapter_id: "readiness-gates-residual-escrow-and-quarantine"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-28"
+last_updated: "2026-06-30"
 primary_sources:
   - "rmi"
   - "benchmaxxing"
@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for eight assigned sources; `moecot` remains connector/source-note mapped only until runtime/source artifacts, readiness records, ledgers, replay logs, benchmark records, or external corroboration are imported and inspected."
-  - "Protocol schema/fixture validation, narrow Lean gate/quarantine predicates, and the readiness/residual gate harness's synthetic transition, residual-escrow, quarantine, expired-rerun, fallback, and rollback-readiness checks are implemented; no readiness engine, residual-ledger storage, benchmark harness, live quarantine routing, or MoECOT replay has been run for this chapter."
+  - "Protocol schema/fixture validation, narrow Lean gate/quarantine predicates plus negative cases for failed promoted gates, stronger transitions missing freshness/residual/fallback/expiry records, quarantined ordinary routing or diagnostic routing without fallback, stale-gate reuse without rerun/residual records, and the readiness/residual gate harness's synthetic transition, residual-escrow, quarantine, expired-rerun, fallback, and rollback-readiness checks are implemented; no readiness engine, residual-ledger storage, benchmark harness, live quarantine routing, or MoECOT replay has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -31,13 +31,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-28 |
+| Last updated | 2026-06-30 |
 | Primary source records | `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; connector/recovery: `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`; passage-reviewed local public-project sources: `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; connector/source-note only: `moecot` |
-| Test state | Readiness gate fixture validation includes field identity, workload family, freshness window, inherited residuals, route permissions, fallback path, expiry, and non-claims; finite gate/quarantine predicates are implemented in `AsiStackProofs.ReadinessGates`; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic transition, residual-escrow, quarantine, expired-rerun, fallback, and rollback-readiness checks. Readiness-engine behavior, residual-ledger storage, benchmark evidence, live quarantine routing, and MoECOT replay remain planned. |
+| Test state | Readiness gate fixture validation includes field identity, workload family, freshness window, inherited residuals, route permissions, fallback path, expiry, and non-claims; finite gate/quarantine predicates and negative cases for failed promoted gates, incomplete stronger transitions, quarantined route misuse, and stale-gate reuse are implemented in `AsiStackProofs.ReadinessGates`; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic transition, residual-escrow, quarantine, expired-rerun, fallback, and rollback-readiness checks. Readiness-engine behavior, residual-ledger storage, benchmark evidence, live quarantine routing, and MoECOT replay remain planned. |
 
 ## Drafting guardrail
 
@@ -227,6 +227,10 @@ This readiness lifecycle is still a design target. Readiness remains at `argumen
 | Readiness gate fixture validation | Check that the readiness fixture matches the public schema and declares target, field identity, lifecycle states, workload family, freshness window, evidence, regression results, residual escrow, inherited residuals, authority, route permissions, blockers, quarantine conditions, fallback, expiry, decision, reviews, next trigger, and non-claims. | implemented by protocol validation; validated locally |
 | Readiness gate promotion predicate | Check that promoted decisions require all required gates to pass. | implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build |
 | Quarantine ordinary-route predicate | Check that quarantined targets cannot be selected for ordinary execution routes. | implemented in `AsiStackProofs.ReadinessGates`; checked by Lean build |
+| Failed-gate promotion negative case | Reject promoted readiness decisions when all required gates have not passed. | implemented; passes via Lean negative case; no gate-quality or deployment-readiness claim |
+| Accepted stronger-transition negative case | Reject accepted stronger readiness transitions when fresh gate evidence, residual escrow, fallback path, or expiry records are missing. | implemented; passes via Lean negative case; no lifecycle-engine behavior claim |
+| Quarantine route-boundary negative case | Reject quarantined targets that are selected for ordinary routing or selected for diagnostic routing without a fallback path. | implemented; passes via Lean negative case; no live route-enforcement claim |
+| Stale-gate reuse negative case | Reject promoted reuse of expired or architecture-stale gates when rerun and residual records are missing. | implemented; passes via Lean negative case; no rerun execution or current-readiness claim |
 | Readiness transition enforcement test | Check that a target cannot enter a stronger state unless the gate decision permits it in an executable lifecycle harness. | implemented by readiness/residual gate harness for synthetic canary, default, quarantine, and expired-rerun scenarios; deployed readiness engine not run |
 | Residual escrow integrity test | Check that residuals remain attached after canary or promotion decisions. | implemented by readiness/residual gate harness for route residual obligations and inherited residual custody; residual-ledger storage not run |
 | Quarantine routing harness test | Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis. | implemented by readiness/residual gate harness for blocked selected routes and preserved fallback routes; live quarantine routing not run |
@@ -240,7 +244,7 @@ Fixture-shape validation, two bounded Lean predicates, and the readiness/residua
 | `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | implemented |
 | `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | implemented |
 
-These proof hooks are implemented as finite-record predicates. They do not prove benchmark quality, residual escrow integrity, lifecycle transition correctness, or routing-harness behavior.
+These proof hooks are implemented as finite-record predicates over gate decisions, route selections, transition records, quarantine routing reviews, and stale-gate reuse reviews. The derived negative cases are `promoted_decision_with_failed_required_gates_rejected`, `accepted_stronger_transition_missing_required_record_rejected`, `quarantined_target_ordinary_or_unbacked_diagnostic_route_rejected`, and `stale_gate_reuse_without_rerun_or_residual_rejected`. They prove only record-level gates: promoted decisions cannot survive failed required gates; accepted stronger transitions require fresh evidence, residual escrow, fallback, and expiry records; quarantined targets cannot be ordinary-routed or diagnostic-routed without fallback; and stale gate reuse requires rerun and residual records. They do not prove benchmark quality, residual-ledger storage, lifecycle transition execution, live routing enforcement, MoECOT replay, or current readiness of any module.
 
 ## Source crosswalk
 
