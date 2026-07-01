@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 44 |
-| Assigned source/chapter pairs | 426 |
-| Exact claim-source mappings | 426 |
+| Assigned source/chapter pairs | 431 |
+| Exact claim-source mappings | 431 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 426 |
-| Source notes listing assigned chapter | 426 |
-| Passage-reviewed mappings recorded | 426 |
+| Source notes present for assigned pairs | 431 |
+| Source notes listing assigned chapter | 431 |
+| Passage-reviewed mappings recorded | 431 |
 | Support-state counts | {"argument": 44} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -36,7 +36,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `asi-is-a-stack-not-a-model` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `failure-modes-of-ungoverned-intelligence` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
+| `failure-modes-of-ungoverned-intelligence` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `constitutional-alignment-substrate` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
@@ -140,6 +140,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_pagedattention_vllm_2023` | 2 | yes |
 | `ext_mamba_2023` | 2 | yes |
 | `coilmoecot` | 2 | yes |
+| `ext_concrete_ai_safety_2016` | 1 | yes |
+| `ext_goal_misgeneralization_2022` | 1 | yes |
+| `ext_learned_optimization_risks_2019` | 1 | yes |
+| `ext_optimal_policies_power_2019` | 1 | yes |
+| `ext_goodhart_variants_2018` | 1 | yes |
 | `eternal_code` | 1 | yes |
 | `black_hole_context_manager` | 1 | yes |
 | `talos_md` | 1 | yes |
@@ -222,6 +227,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `simulation_scaling` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `vcm_editable` | mapped | note present | chapter listed | passage-reviewed |
 | `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_concrete_ai_safety_2016` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_goal_misgeneralization_2022` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_learned_optimization_risks_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_optimal_policies_power_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `failure-modes-of-ungoverned-intelligence.core` | `failure-modes-of-ungoverned-intelligence` | `ext_goodhart_variants_2018` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `viea` | mapped | note present | chapter listed | passage-reviewed |

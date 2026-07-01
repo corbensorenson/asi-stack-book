@@ -15,10 +15,15 @@ primary_sources:
   - "simulation_scaling"
   - "vcm_editable"
   - "moecot"
+  - "ext_concrete_ai_safety_2016"
+  - "ext_goal_misgeneralization_2022"
+  - "ext_learned_optimization_risks_2019"
+  - "ext_optimal_policies_power_2019"
+  - "ext_goodhart_variants_2018"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C, and seven of nine mappings carry reviewed local raw-cache passage references; `vcm_editable` and `moecot` remain connector-only/source-note mapped, while scenario coverage and failure-detector evidence remain incomplete."
+  - "The core claim now has exact source-note mappings for all assigned sources in Appendix C: seven local raw-cache mappings, two connector/source-note mappings, and five external-literature mappings. Scenario coverage and failure-detector evidence remain incomplete."
   - "The failure_boundary_map fixture validates schema/example consistency, failure class, affected contract refs, promotion blocker, source refs, support-state effect, and non-claims only; authority-creep, context-pollution, evaluator-drift, and unverified-claim scenarios are implemented only as finite Lean incident-route predicates."
   - "The implemented FailureModes Lean predicates cover finite-record invariant failure, unbounded-authority detection, incident routing for authority overreach, tainted context, subject-modified evaluators, unverified claim promotion, and failure recurrence/receipt escalation routing only; they do not prove deployed failure detection or containment."
   - "No support-state promotion is implied by this drafting pass."
@@ -33,11 +38,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-07-01 |
-| Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot` |
+| Primary source records | `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`, `vcm_editable`, `moecot`, `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `scf`, `vcm_public`, `talos`; supporting: `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector/recovery: `vcm_editable`, `moecot` |
-| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector-only/source-note mapped: `vcm_editable`, `moecot` |
+| Source queue | primary: `scf`, `vcm_public`, `talos`; supporting: `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; external variants: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018`; connector/recovery: `vcm_editable`, `moecot` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector-only/source-note mapped: `vcm_editable`, `moecot`; external-literature source-note mapped: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018` |
 | Test state | `failure_boundary_map.valid.json` passes protocol fixture validation with failure class, affected contract refs, promotion blocker, source refs, support-state effect, and non-claims, and `AsiStackProofs.FailureModes` builds locally with finite invariant, governance-failure, incident-route, and recurrence-escalation predicates; no runtime authority gate, context-admission detector, evaluator-independence probe, claim-verification harness, recurrence detector, or deployed failure detector has run. |
 
 ## Drafting guardrail
@@ -76,7 +81,17 @@ High-level safety language misses earlier engineering failures such as goal misb
 
 Broad terms such as "alignment failure" and "unsafe autonomy" are too large to test directly. They can hide the smaller event that actually broke the system: a stale context packet was admitted, a route bypassed its authority ceiling, a verifier was trained on the same signal it was meant to judge, a residual was deleted, or a benchmark became the target rather than the pressure surface.
 
-The external safety literature gives the taxonomy an outside pressure point. `ext_concrete_ai_safety_2016` names accident-risk families such as side effects, reward hacking, scalable oversight, safe exploration, and distributional shift, while `ext_optimal_policies_power_2019` formalizes why broad objectives can create option-preservation and power-seeking pressure. The ASI Stack does not claim those sources validate its failure map; it uses them to keep the map from becoming only an internal vocabulary.
+The external safety literature gives the taxonomy an outside pressure point.
+`ext_concrete_ai_safety_2016` names accident-risk families such as side
+effects, reward hacking, scalable oversight, safe exploration, and
+distributional shift. `ext_goal_misgeneralization_2022` distinguishes capable
+behavior from correctly bound goals. `ext_learned_optimization_risks_2019`
+grounds mesa-optimization and learned-objective mismatch. `ext_optimal_policies_power_2019`
+grounds option-preservation and power-seeking pressure, while
+`ext_goodhart_variants_2018` keeps metric and proxy failures from collapsing
+into a single benchmark-capture story. The ASI Stack does not claim those
+sources validate its failure map; it uses them to keep the map from becoming
+only an internal vocabulary.
 
 The ASI Stack therefore treats failure modes as first-class architectural objects. A failure should map to an invariant, a detector, an evidence record, and a containment path. If it cannot be mapped, the right conclusion is not that the failure is impossible; it is that the stack is missing a boundary.
 
@@ -86,11 +101,28 @@ This makes near misses valuable. A denied authority escalation, rejected context
 
 [failure-modes-of-ungoverned-intelligence.core, label: Design rationale, support: argument] Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed.
 
-The claim remains at `argument` support. Seven local raw-cache mappings now carry reviewed passage references: SCF for lifecycle, authority, evaluator, route, and self-ratification risks; VCM for context, taint, stale-state, and authority-boundary risks; Talos for execution, tool-control, audit, replay, and secret-boundary risks; Spinoza for verification and downgrade risks; Field of God for philosophical governance lineage; VIEA for durable artifact, residual, and claim-ledger failures; and Simulation Scaling for resource-contract failures. `vcm_editable` and `moecot` remain connector-only/source-note mapped. Those sources supply architecture vocabulary, not empirical incident evidence or detector/prevention evidence.
+The claim remains at `argument` support. Seven local raw-cache mappings carry
+reviewed passage references: SCF for lifecycle, authority, evaluator, route,
+and self-ratification risks; VCM for context, taint, stale-state, and
+authority-boundary risks; Talos for execution, tool-control, audit, replay, and
+secret-boundary risks; Spinoza for verification and downgrade risks; Field of
+God for philosophical governance lineage; VIEA for durable artifact, residual,
+and claim-ledger failures; and Simulation Scaling for resource-contract
+failures. `vcm_editable` and `moecot` remain connector-only/source-note
+mapped. Five external-literature mappings ground the taxonomy against
+accident-risk, goal-misgeneralization, learned-optimization, power-seeking, and
+Goodhart/proxy-failure families. Those sources supply architecture vocabulary
+and outside comparators, not empirical incident evidence or detector/prevention
+evidence.
 
 ### Claim-source mapping status
 
-Appendix C now maps this core failure claim to every assigned source note. Seven local source mappings include reviewed raw-cache passage references; `vcm_editable` and `moecot` remain connector-only/source-note mapped. The mappings support the obligation map for failure boundaries, not a claim that the stack already detects or prevents the failures.
+Appendix C now maps this core failure claim to every assigned source note.
+Seven local source mappings include reviewed raw-cache passage references,
+`vcm_editable` and `moecot` remain connector-only/source-note mapped, and five
+external-literature mappings provide source-note reviewed taxonomy context.
+The mappings support the obligation map for failure boundaries, not a claim
+that the stack already detects or prevents the failures.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -103,6 +135,11 @@ Appendix C now maps this core failure claim to every assigned source note. Seven
 | `simulation_scaling` | Resource and simulation failures from unstated scope, fidelity, temporal contracts, bottlenecks, or vague simulation arguments used as capability evidence. | Theoretical synthesis only; no physical experiment or simulation benchmark. |
 | `vcm_editable` | Planner hints becoming access authority, compiled context hiding missing evidence or revocation, and source references drifting into uncited third-party claims. | Connector-readable variant; no VCM-Bench or model-facing result is recorded. |
 | `moecot` | Runtime overpromotion, source-reported benchmark claims treated as verified, and specialist lanes escalating authority without control-plane evidence. | Implementation-reference context only until artifacts are inspected or reproduced. |
+| `ext_concrete_ai_safety_2016` | Accident-risk families: side effects, reward hacking, scalable oversight, safe exploration, and distributional shift. | External taxonomy only; no mitigation, environment, benchmark, or local detector is reproduced. |
+| `ext_goal_misgeneralization_2022` | Goal misbinding where competent behavior can persist out of distribution while pursuing the wrong objective. | External RL setting only; no local goal-misgeneralization trace or objective-preservation test is reproduced. |
+| `ext_learned_optimization_risks_2019` | Mesa-optimization, hidden optimizer risk, and learned-objective mismatch. | Conceptual literature grounding only; no mesa-optimizer example, transparency method, or deceptive-alignment detector is reproduced. |
+| `ext_optimal_policies_power_2019` | Option-preservation and power-seeking pressure as reasons to account for authority expansion. | External formal framing only; no local theorem, environment, or runtime authority-control result is imported. |
+| `ext_goodhart_variants_2018` | Proxy-metric failure families that help separate benchmark capture, reward drift, and evaluator gaming. | External taxonomy only; no local Goodhart classifier, benchmark audit, or anti-Goodhart protection is implemented here. |
 
 ## Mechanism
 
@@ -258,12 +295,23 @@ These proof targets are implemented only over finite Lean records in `AsiStackPr
 | `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | source note available; local raw-cache passages reviewed for this chapter |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| `ext_concrete_ai_safety_2016` | Concrete Problems in AI Safety | alignment_control | External accident-risk taxonomy for side effects, reward hacking, scalable oversight, safe exploration, and distributional shift. | source note available; not reproduced |
+| `ext_goal_misgeneralization_2022` | Goal Misgeneralization in Deep Reinforcement Learning | alignment_control | External grounding for objective misbinding where competence remains but the goal is wrong. | source note available; not reproduced |
+| `ext_learned_optimization_risks_2019` | Risks from Learned Optimization in Advanced Machine Learning Systems | alignment_control | External grounding for mesa-optimization, hidden optimizer risk, and learned-objective mismatch. | source note available; not reproduced |
+| `ext_optimal_policies_power_2019` | Optimal Policies Tend to Seek Power | alignment_control | External power-seeking and option-preservation comparator for authority creep and route expansion. | source note available; not reproduced |
+| `ext_goodhart_variants_2018` | Categorizing Variants of Goodhart's Law | goodhart_failure_taxonomy | External proxy-failure taxonomy for benchmark capture, reward drift, and evaluator gaming. | source note available; not reproduced |
 
 The crosswalk names the source family for the taxonomy. It does not turn every listed failure into a demonstrated incident or a solved safety property.
 
 ## Summary
 
-Failure Modes of Ungoverned Intelligence gives the stack its obligation map. Each failure names a boundary that must detect, contain, and preserve evidence: authority for overreach, VCM for polluted context, verification for false certainty, execution controls for side effects, and evidence ledgers for residuals and negative results.
+Failure Modes of Ungoverned Intelligence gives the stack its obligation map.
+Each failure names a boundary that must detect, contain, and preserve evidence:
+authority for overreach, VCM for polluted context, verification for false
+certainty, execution controls for side effects, and evidence ledgers for
+residuals and negative results. The external comparator set now ties the
+chapter's internal failure names to accident-risk, goal-misgeneralization,
+learned-optimization, power-seeking, and Goodhart/proxy-failure literature.
 
 The failure taxonomy appears early because the rest of the book should read like a response to it. If a later mechanism cannot say which failure it prevents, detects, or makes recoverable, it is probably decorative. Claim/evidence discipline keeps prevention, detection, residuals, and negative results from disappearing into smoother prose.
 

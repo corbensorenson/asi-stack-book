@@ -697,7 +697,12 @@
             "viea",
             "simulation_scaling",
             "vcm_editable",
-            "moecot"
+            "moecot",
+            "ext_concrete_ai_safety_2016",
+            "ext_goal_misgeneralization_2022",
+            "ext_learned_optimization_risks_2019",
+            "ext_optimal_policies_power_2019",
+            "ext_goodhart_variants_2018"
           ],
           "source_queue": {
             "primary": [
@@ -711,7 +716,13 @@
               "viea",
               "simulation_scaling"
             ],
-            "variants": [],
+            "variants": [
+              "ext_concrete_ai_safety_2016",
+              "ext_goal_misgeneralization_2022",
+              "ext_learned_optimization_risks_2019",
+              "ext_optimal_policies_power_2019",
+              "ext_goodhart_variants_2018"
+            ],
             "connector_or_recovery": [
               "vcm_editable",
               "moecot"
@@ -848,6 +859,66 @@
                 "sources/source_notes/moecot.md:61-68"
               ],
               "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_concrete_ai_safety_2016",
+              "mapped_support": "Grounds the failure taxonomy against external accident-risk families: unintended side effects, reward hacking, scalable oversight, safe exploration, and distributional shift.",
+              "limits": "External taxonomy only; no Concrete Problems benchmark, environment, mitigation, or ASI Stack detector/prevention result is reproduced.",
+              "passage_refs": [
+                "sources/source_notes/ext_concrete_ai_safety_2016.md:16-23",
+                "sources/source_notes/ext_concrete_ai_safety_2016.md:27-35",
+                "sources/source_notes/ext_concrete_ai_safety_2016.md:39-46"
+              ],
+              "passage_review_note": "Reviewed source note for accident-risk families and repository non-claims; use as external taxonomy context only, not evidence that any local mechanism solves those risks.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_goal_misgeneralization_2022",
+              "mapped_support": "Grounds goal misbinding as a distinct failure family where competent behavior can persist out of distribution while the pursued goal is wrong.",
+              "limits": "External RL setting only; no local goal-misgeneralization environment, policy trace, mitigation, or objective-preservation test is reproduced.",
+              "passage_refs": [
+                "sources/source_notes/ext_goal_misgeneralization_2022.md:16-23",
+                "sources/source_notes/ext_goal_misgeneralization_2022.md:27-35",
+                "sources/source_notes/ext_goal_misgeneralization_2022.md:45-47"
+              ],
+              "passage_review_note": "Reviewed source note for capability-versus-goal generalization and wrong-objective residuals; use to sharpen goal-misbinding vocabulary without claiming detection.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_learned_optimization_risks_2019",
+              "mapped_support": "Grounds hidden optimizer, mesa-optimization, and learned-objective mismatch as external failure families for evaluator, route, and self-improvement boundaries.",
+              "limits": "Conceptual literature grounding only; no mesa-optimizer example, interpretability analysis, deceptive-alignment detector, or local mitigation is reproduced.",
+              "passage_refs": [
+                "sources/source_notes/ext_learned_optimization_risks_2019.md:16-23",
+                "sources/source_notes/ext_learned_optimization_risks_2019.md:27-35",
+                "sources/source_notes/ext_learned_optimization_risks_2019.md:45-47"
+              ],
+              "passage_review_note": "Reviewed source note for learned optimizers and learned-objective mismatch; use as external risk vocabulary only, not proof of deployed optimizer transparency.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_optimal_policies_power_2019",
+              "mapped_support": "Grounds power-seeking and option-preservation pressure as external risk language for authority creep, route expansion, memory retention, and self-improvement boundaries.",
+              "limits": "External formal framing only; no local model, theorem reproduction, environment, or runtime authority-control result is imported.",
+              "passage_refs": [
+                "sources/source_notes/ext_optimal_policies_power_2019.md:16-23",
+                "sources/source_notes/ext_optimal_policies_power_2019.md:27-35",
+                "sources/source_notes/ext_optimal_policies_power_2019.md:39-46"
+              ],
+              "passage_review_note": "Reviewed source note for option-preservation and power-seeking pressure; use to justify explicit authority accounting without claiming prevention.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_goodhart_variants_2018",
+              "mapped_support": "Grounds benchmark capture, reward proxy failure, evaluator gaming, and metric drift as separate proxy-failure families rather than one generic evidence problem.",
+              "limits": "External taxonomy only; no local Goodhart classifier, benchmark audit, evaluator-gaming result, or anti-Goodhart protection is implemented by this mapping.",
+              "passage_refs": [
+                "sources/source_notes/ext_goodhart_variants_2018.md:16-23",
+                "sources/source_notes/ext_goodhart_variants_2018.md:27-35",
+                "sources/source_notes/ext_goodhart_variants_2018.md:39-48"
+              ],
+              "passage_review_note": "Reviewed source note for proxy-metric failure variants; use to sharpen benchmark-capture language without implying benchmark validity.",
               "passage_review_state": "reviewed"
             }
           ],

@@ -36,6 +36,7 @@ The Goodhart variants paper belongs in the benchmark, policy-optimization, stewa
 
 ## Book Chapters Supported
 
+- `failure-modes-of-ungoverned-intelligence` (Failure Modes of Ungoverned Intelligence)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)

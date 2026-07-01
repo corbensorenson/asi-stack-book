@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 125
+- `source_note_available_uncached`: 128
 
 ## Records
 
@@ -75,6 +75,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
 | `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
 | `ext_concrete_ai_safety_2016` | Concrete Problems in AI Safety | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_goal_misgeneralization_2022` | Goal Misgeneralization in Deep Reinforcement Learning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_learned_optimization_risks_2019` | Risks from Learned Optimization in Advanced Machine Learning Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_constitutional_ai_2022` | Constitutional AI: Harmlessness from AI Feedback | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_collective_constitutional_ai_2024` | Collective Constitutional AI: Aligning a Language Model with Public Input | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_corrigibility_2015` | Corrigibility | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
@@ -89,6 +91,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_nist_zero_trust_architecture_2020` | Zero Trust Architecture | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_saltzer_schroeder_protection_1975` | The Protection of Information in Computer Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_capability_based_computer_systems_1984` | Capability-Based Computer Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_confused_deputy_hardy_1988` | The Confused Deputy: (or why capabilities might have been invented) | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_semver_2_0_0` | Semantic Versioning 2.0.0 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_slsa_v1_0` | SLSA v1.0 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_react_2022` | ReAct: Synergizing Reasoning and Acting in Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

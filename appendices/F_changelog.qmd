@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Ground failure modes in safety taxonomies
+
+- Added external source records and source notes for Langosco et al.'s goal
+  misgeneralization work and Hubinger et al.'s learned-optimization risk paper,
+  and connected the existing Concrete Problems, Optimal Policies Seek Power, and
+  Goodhart-variant notes to Failure Modes of Ungoverned Intelligence.
+- Updated `failure-modes-of-ungoverned-intelligence` so its failure vocabulary
+  maps to source-noted accident-risk, goal-misgeneralization,
+  learned-optimization, power-seeking, and Goodhart/proxy-failure families.
+- Regenerated generated source and claim/evidence appendices and recorded the
+  v1.x roadmap burn-down. This is external taxonomy grounding only; it does not
+  reproduce the cited experiments, prove detector quality, show mitigation
+  effectiveness, establish deceptive-alignment detection, or promote chapter
+  support state.
+
 ## 2026-07-01 - Add intent-origin contract negative controls
 
 - Extended `scripts/validate_plan_execution_contracts.py` with optional

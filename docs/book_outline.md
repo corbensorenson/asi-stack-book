@@ -318,6 +318,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `scf`, `vcm_public`, `talos` | Read first for chapter claims and mechanisms. |
 | Supporting | `spinoza`, `field_of_god`, `viea`, `simulation_scaling` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018` | Load after internal failure-mode sources to map stack vocabulary to accident-risk, goal-misgeneralization, learned-optimization, power-seeking, and Goodhart/proxy-failure families. Treat them as taxonomy grounding, not proof that the ASI Stack detects or prevents these failures. |
 | Connector or recovery required | `vcm_editable`, `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:

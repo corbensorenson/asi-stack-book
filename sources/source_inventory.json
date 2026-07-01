@@ -727,6 +727,44 @@
     "doi": "10.48550/arXiv.1606.06565"
   },
   {
+    "id": "ext_goal_misgeneralization_2022",
+    "title": "Goal Misgeneralization in Deep Reinforcement Learning",
+    "priority": "external_literature",
+    "layer": "alignment_control",
+    "chapter_targets": [
+      "failure-modes-of-ungoverned-intelligence",
+      "policy-optimization-and-learning-from-feedback",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/2105.14111",
+    "notes": "External alignment-control source for distinguishing capability generalization from goal generalization failures, used to ground goal-misbinding and out-of-distribution objective failure language.",
+    "source_type": "arxiv_and_conference",
+    "arxiv_id": "2105.14111",
+    "published": "2021-05-28",
+    "updated": "2023-01-09",
+    "citation_label": "Langosco et al. (2022), Goal Misgeneralization in Deep Reinforcement Learning",
+    "doi": "10.48550/arXiv.2105.14111"
+  },
+  {
+    "id": "ext_learned_optimization_risks_2019",
+    "title": "Risks from Learned Optimization in Advanced Machine Learning Systems",
+    "priority": "external_literature",
+    "layer": "alignment_control",
+    "chapter_targets": [
+      "failure-modes-of-ungoverned-intelligence",
+      "recursive-self-improvement-boundaries",
+      "policy-optimization-and-learning-from-feedback"
+    ],
+    "url": "https://arxiv.org/abs/1906.01820",
+    "notes": "External alignment-control source for mesa-optimization and learned-objective mismatch, used to ground hidden optimizer, proxy-objective, and deceptive-alignment-adjacent failure language.",
+    "source_type": "arxiv",
+    "arxiv_id": "1906.01820",
+    "published": "2019-06-05",
+    "updated": "2021-12-01",
+    "citation_label": "Hubinger et al. (2019), Risks from Learned Optimization",
+    "doi": "10.48550/arXiv.1906.01820"
+  },
+  {
     "id": "ext_constitutional_ai_2022",
     "title": "Constitutional AI: Harmlessness from AI Feedback",
     "priority": "external_literature",
@@ -2058,6 +2096,7 @@
     "priority": "external_literature",
     "layer": "goodhart_failure_taxonomy",
     "chapter_targets": [
+      "failure-modes-of-ungoverned-intelligence",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "policy-optimization-and-learning-from-feedback",
       "artifact-steward-agents-and-living-project-governance",
