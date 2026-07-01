@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-07-01 - Authority lifecycle admission proof
+
+- Strengthened `AsiStackProofs.Authority` with a finite
+  `AuthorityLifecycleRoute`, `AuthorityLifecycleReview`, and
+  `AuthorityLifecycleRouteFor` decision surface over authority requests,
+  principals, operations, permission classes, caller ceilings, target
+  requirements, delegation chains, grant records, inactive grants, expired
+  grants, revoked grants, scope mismatches, grant-ceiling gaps, approval gaps,
+  effect or denial receipt gaps, audit refs, support-promotion requests,
+  evidence-transition records, and non-claim boundaries.
+- Added the third System Boundaries and Authority proof target,
+  `lean:authority.lifecycle.admission_route`, plus derived route theorems
+  showing that missing authority records, inactive/expired/revoked grants,
+  scope mismatches, grant-ceiling gaps, approval gaps, receipt gaps, audit
+  gaps, evidence-transition gaps, and non-claim-boundary gaps route to explicit
+  modeled outcomes before the finite authority lifecycle record is admitted.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 332
+  generated chapter-level rows: 232 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 131 implemented targets, and the proof-depth
+  classifier now reports 552 theorem declarations, 121 direct/projection-style
+  declarations, and 431 derived/decomposed declarations.
+- Updated the System Boundaries and Authority chapter, book outline, proof
+  adequacy review, v1.x/v1.0 roadmap/status surfaces, focus audit, publication
+  readiness, repository map, proof/code plan, manuscript status, and status
+  snapshot guard. This does not promote, demote, deprecate, or refute any live
+  claim; prove deployed authorization enforcement, runtime adapter behavior,
+  revocation propagation in a service, tool-wrapper security, approval-service
+  quality, support-state promotion, reader artifact approval, release status,
+  model capability, or audio artifact readiness.
+
 ## 2026-07-01 - Stack contract admission lifecycle proof
 
 - Strengthened `AsiStackProofs.StackBoundaries` with a finite

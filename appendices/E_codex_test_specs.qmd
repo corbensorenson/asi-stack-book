@@ -16,6 +16,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Minimum viable route test | planned | not run |
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Residual burden accounting test | planned | not run |
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Utility-preserving compression test | planned | not run |
+| `system-boundaries-and-authority` | System Boundaries and Authority | Authority lifecycle route proof | implemented | passes via Lean route theorems; no deployed authorization enforcement, runtime adapter behavior, revocation propagation, tool-wrapper security, approval-service quality, support-state promotion, or model capability claim |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Authority ceiling preservation test | implemented | passes via synthetic authority transition harness and strengthened finite Authority Lean decision envelope; no runtime enforcement claim |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Permission separation test | implemented | passes via synthetic authority transition harness |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Confused-deputy scenario | implemented | passes expected-invalid synthetic denial fixture; no runtime enforcement claim |
@@ -382,16 +383,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 130 |
+| Proof targets covered by triage | 131 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 130 |
+| implemented | 131 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 130 |
+| implemented | formal-invariant | lean-candidate | 131 |

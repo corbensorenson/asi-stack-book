@@ -288,6 +288,7 @@ Draft deliverables:
 - Implemented synthetic Codex test and proof follow-through: Authority ceiling preservation test via `python3 scripts/validate_authority_transitions.py`, plus the finite `AsiStackProofs.Authority` decision envelope for modeled allow/deny/escalate records; deployed enforcement remains open.
 - Implemented synthetic Codex test: Permission separation test via `python3 scripts/validate_authority_transitions.py`; deployed enforcement remains open.
 - Implemented synthetic Codex test: Confused-deputy scenario via expected-invalid authority-transition fixture; runtime adapter probe remains open.
+- Implemented Lean proof target: finite authority lifecycle admission route for missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grant records, inactive/expired/revoked grants, scope mismatches, grant-ceiling gaps, approval gaps, effect or denial receipt gaps, audit refs, evidence-transition records, and non-claim boundaries.
 - Planned Codex test: Revocation propagation test.
 
 Lean proof targets:
@@ -296,6 +297,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.Authority` | Every transition preserves or lowers the active authority ceiling unless a governance grant is present. | implemented |
 | `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.Authority` | A missing grant blocks execution rather than becoming default authorization. | implemented |
+| `lean:authority.lifecycle.admission_route` | `AsiStackProofs.Authority` | Modeled authority lifecycle admission routes missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grants, active grant state, expiry and revocation boundaries, scope matches, grant-ceiling coverage, approval records, effect or denial receipts, audit refs, evidence-transition records, and non-claim boundaries to explicit outcomes. | implemented |
 
 ### Failure Modes of Ungoverned Intelligence
 
@@ -2624,8 +2626,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 130 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 130 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 131 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 131 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

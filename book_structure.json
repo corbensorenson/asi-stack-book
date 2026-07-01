@@ -634,6 +634,11 @@
           "beyond_state_of_art": "System authority needs a type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do. In the mature authority architecture, authority becomes typed, bounded, revocable, and attached to concrete principals, layers, fields, tools, artifacts, and routes.",
           "codex_tests": [
             {
+              "name": "Authority lifecycle route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no deployed authorization enforcement, runtime adapter behavior, revocation propagation, tool-wrapper security, approval-service quality, support-state promotion, or model capability claim"
+            },
+            {
               "name": "Authority ceiling preservation test",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic authority transition harness and strengthened finite Authority Lean decision envelope; no runtime enforcement claim"
@@ -661,6 +666,12 @@
               "tag": "lean:authority.ceiling.failure_blocks_promotion",
               "module": "AsiStackProofs.Authority",
               "target": "A missing grant blocks execution rather than becoming default authorization.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:authority.lifecycle.admission_route",
+              "module": "AsiStackProofs.Authority",
+              "target": "Modeled authority lifecycle admission routes missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grants, active grant state, expiry and revocation boundaries, scope matches, grant-ceiling coverage, approval records, effect or denial receipts, audit refs, evidence-transition records, and non-claim boundaries to explicit outcomes.",
               "status": "implemented"
             }
           ]

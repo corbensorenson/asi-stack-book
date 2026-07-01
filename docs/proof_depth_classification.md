@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 130 |
+| Proof targets in manifest | 131 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 532 |
+| Theorem declarations classified | 552 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 411 |
+| Derived/decomposed theorem declarations | 431 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 69 |
 | Safety-critical direct/projection declarations | 10 |
@@ -56,7 +56,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 2 | 4 | 1 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 4 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 8 | 1 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 3 | 28 | 1 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 3 | 19 | 4 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -156,7 +156,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `support_state_change_without_transition_requests_evidence_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `tainted_event_without_review_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `treasury_spend_outside_policy_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `authority_lifecycle_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `complete_authority_lifecycle_admits_record` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `expired_grant_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `grant_ceiling_gap_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `inactive_grant_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_audit_refs_requests_audit_refs` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_caller_ceiling_requests_caller_ceiling` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_delegation_chain_requests_delegation_chain` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_denial_receipt_requests_denial_receipt` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_effect_receipt_requests_effect_receipt` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `missing_grant_blocks_over_ceiling_execution` | derived_or_decomposed | no | uses cases, contradiction, rcases, rw |
+| `lean/AsiStackProofs/Authority.lean` | `missing_grant_requests_grant_record` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_operation_requests_operation` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_permission_class_requests_permission_class` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_principal_requests_principal` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `missing_target_requirement_requests_target_requirement` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `no_authority_request_stays_idle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `promotion_request_without_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `required_approval_gap_requests_approval` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `revoked_grant_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `scope_mismatch_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_has_effect_receipt` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_preserves_caller_ceiling` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_target_within_active_ceiling` | derived_or_decomposed | no | uses rcases, rw, unfold |

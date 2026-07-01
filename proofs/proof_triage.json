@@ -91,6 +91,16 @@
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
     },
     {
+      "tag": "lean:authority.lifecycle.admission_route",
+      "chapter_id": "system-boundaries-and-authority",
+      "module": "AsiStackProofs.Authority",
+      "formal_target": "Modeled authority lifecycle admission routes missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grants, active grant state, expiry and revocation boundaries, scope matches, grant-ceiling coverage, approval records, effect or denial receipts, audit refs, evidence-transition records, and non-claim boundaries to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Authority as a finite authority lifecycle route over explicit principal, operation, permission, ceiling, delegation, grant, revocation, approval, receipt, audit, evidence-transition, and non-claim-boundary records; it does not prove deployed authorization enforcement, runtime adapter behavior, revocation propagation, approval-service quality, tool-wrapper security, or support-state promotion."
+    },
+    {
       "tag": "lean:failure.invariant_violation.operational_invariant",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
       "module": "AsiStackProofs.FailureModes",

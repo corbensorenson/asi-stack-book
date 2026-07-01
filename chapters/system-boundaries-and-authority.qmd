@@ -4,7 +4,7 @@ chapter_id: "system-boundaries-and-authority"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-28"
+last_updated: "2026-07-01"
 primary_sources:
   - "viea"
   - "scf"
@@ -17,7 +17,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and five of six mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
   - "The authority transition harness validates synthetic authority-transition gate semantics for scoped allow, over-ceiling denial, approval escalation, missing receipts, permission-class collapse, and confused-deputy shortcuts; deployed authorization enforcement, runtime adapter behavior, revocation propagation, and tool-wrapper security remain unimplemented."
-  - "The implemented Authority Lean predicates cover finite-record ceiling preservation, missing-grant denial, and record-aware allow/deny/escalate decision envelope constraints; they do not prove deployed authorization enforcement."
+  - "The implemented Authority Lean predicates cover finite-record ceiling preservation, missing-grant denial, record-aware allow/deny/escalate decision envelope constraints, and authority lifecycle admission routing for inactive, expired, revoked, over-ceiling, unapproved, unreceipted, unaudited, evidence-transition-missing, and non-claim-boundary-missing records; they do not prove deployed authorization enforcement."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -29,13 +29,13 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-28 |
+| Last updated | 2026-07-01 |
 | Primary source records | `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`; supporting: `talos`, `ladon_manhattan`, `genesiscode`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot`; passage-reviewed local raw cache: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`; connector-only/source-note mapped: `moecot` |
-| Test state | `authority_transition_record.valid.json` passes protocol fixture validation, `AsiStackProofs.Authority` builds locally, and `python3 scripts/validate_authority_transitions.py` passes with 3 valid and 3 expected-invalid synthetic authority-transition fixtures; deployed permission enforcement, runtime adapter behavior, revocation propagation, and tool-wrapper security remain planned. |
+| Test state | `authority_transition_record.valid.json` passes protocol fixture validation, `AsiStackProofs.Authority` builds locally, and `python3 scripts/validate_authority_transitions.py` passes with 3 valid and 3 expected-invalid synthetic authority-transition fixtures; the Authority lifecycle route proof builds over finite records; deployed permission enforcement, runtime adapter behavior, revocation propagation, and tool-wrapper security remain planned. |
 
 ## Drafting guardrail
 
@@ -243,6 +243,7 @@ This authority type system is still an architectural target. The synthetic harne
 | Authority transition record validation | Check that the authority fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Authority ceiling finite-record proof | Check that valid modeled authority records preserve ceilings, receipts, denial state, review routes, and non-claim/audit requirements. | implemented in `AsiStackProofs.Authority`; runtime denial test not run |
 | Authority transition harness | Check synthetic allow, denial, escalation, missing receipt, permission-collapse, and confused-deputy records against authority-gate semantics. | implemented by `python3 scripts/validate_authority_transitions.py`; 3 valid and 3 expected-invalid fixtures passed locally |
+| Authority lifecycle route proof | Check finite authority lifecycle routing for missing principal, operation, permission class, caller ceiling, target requirement, delegation chain, grant, active grant state, expiry, revocation, scope, grant ceiling, approval, receipt, audit, evidence-transition, and non-claim-boundary records. | implemented in `AsiStackProofs.Authority`; no deployed enforcement, runtime adapter behavior, revocation propagation, approval-service quality, or tool-wrapper security claim |
 | Permission separation test | Check that read, transform, disclose, write, execute, and approve permissions stay distinct. | implemented for synthetic transition fixtures; deployed enforcement not run |
 | Confused-deputy scenario | Check that a low-authority requester cannot borrow a tool's broader raw capability. | implemented for expected-invalid synthetic fixture; runtime adapter probe not run |
 | Revocation propagation test | Check that expired or revoked grants fail later transition records, including delegated and replacement contexts. | planned; not run |
@@ -253,8 +254,9 @@ This authority type system is still an architectural target. The synthetic harne
 |---|---|---|---|
 | `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.Authority` | Every transition preserves or lowers the active authority ceiling unless a governance grant is present. | implemented |
 | `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.Authority` | A missing grant blocks execution rather than becoming default authorization. | implemented |
+| `lean:authority.lifecycle.admission_route` | `AsiStackProofs.Authority` | Modeled authority lifecycle admission routes missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grants, active grant state, expiry and revocation boundaries, scope matches, grant-ceiling coverage, approval records, effect or denial receipts, audit refs, evidence-transition records, and non-claim boundaries to explicit outcomes. | implemented |
 
-These proof targets are implemented only over finite Lean records in `AsiStackProofs.Authority`. They prove that a valid transition with no grant cannot raise the active ceiling, that an over-ceiling execution request with no grant is not authorized by the model, and that a modeled authority decision envelope preserves the narrow allow/deny/escalate requirements for effect receipts, denial reasons, review routes, audit references, non-claims, caller ceilings, and active ceilings. The synthetic authority harness exercises related fixture behavior outside Lean. These surfaces do not prove tool-wrapper enforcement, runtime confused-deputy resistance, revocation propagation, or deployed policy behavior; those remain planned tests and implementation obligations.
+These proof targets are implemented only over finite Lean records in `AsiStackProofs.Authority`. They prove that a valid transition with no grant cannot raise the active ceiling, that an over-ceiling execution request with no grant is not authorized by the model, that a modeled authority decision envelope preserves the narrow allow/deny/escalate requirements for effect receipts, denial reasons, review routes, audit references, non-claims, caller ceilings, and active ceilings, and that a modeled lifecycle review routes missing authority records, inactive grants, expired grants, revoked grants, scope mismatches, grant-ceiling gaps, approval gaps, receipt gaps, audit gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes before admission. The synthetic authority harness exercises related fixture behavior outside Lean. These surfaces do not prove tool-wrapper enforcement, runtime confused-deputy resistance, revocation propagation in a deployed service, approval-service quality, or deployed policy behavior; those remain planned tests and implementation obligations.
 
 ## Source crosswalk
 
