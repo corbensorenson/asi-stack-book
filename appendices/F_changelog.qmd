@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Add Resource flagship lane replay
+
+- Added `scripts/run_resource_flagship_lane.py` and
+  `scripts/validate_resource_flagship_lane.py` so the selected Resource
+  Economics flagship evidence lane can be replayed from one command.
+- Added `docs/resource_flagship_lane_run.md` and
+  `experiments/resource_flagship_lane/results/2026-07-01-local.json`. The run
+  composes ten existing validators, command-output digests, the accepted
+  non-core costed-route transition, the Resource Economics chapter-core
+  no-change decision, and 19 tracked artifact hashes.
+- Wired the aggregate replay into the Resource Economics chapter, manifest,
+  active evidence-cycle ledger, v1.x roadmap burn-down, repository map,
+  publication-readiness surface, README, and book validation. This is aggregate
+  local replay and drift detection only; it does not create a new support-state
+  transition, promote the Resource Economics chapter core, approve artifacts,
+  or prove deployed scheduler behavior, production workload behavior,
+  model-quality, economic outcomes, or external review.
+
 ## 2026-07-01 - Add curated reader edition build path
 
 - Added `scripts/build_curated_reader_edition.py` to assemble the tracked
