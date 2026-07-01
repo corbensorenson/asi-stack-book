@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-07-01 - Governance-right lifecycle route proof
+
+- Strengthened `AsiStackProofs.GovernanceRights` with a finite
+  `GovernanceRightLifecycleRoute`, `GovernanceRightLifecycle`, and
+  `GovernanceRightLifecycleRouteFor` decision surface over governance-action
+  records, audit requests, audit material, redaction reasons and appeal,
+  exit/export boundaries, fork safety review, fork obligation preservation,
+  protected-right removal, dissent records, replacement preservation, durable
+  receipts, support-state change requests, and evidence-transition records.
+- Added derived route theorems showing that missing governance records reject the
+  transition, missing audit material requests audit material, redaction without
+  appeal requests appeal, exit without portable-state boundaries requests exit
+  export, fork without safety review blocks as unsafe, fork without obligation
+  preservation preserves fork obligations, protected-right removal blocks the
+  lifecycle, dissent without records preserves dissent, replacement without
+  rights receipts preserves replacement obligations, missing durable receipts
+  preserve receipts, support-state changes without evidence-transition records
+  request evidence review, and complete contestable records can allow a bounded
+  transition.
+- Added the governance-right lifecycle route envelope to `book_structure.json`
+  and regenerated Appendix E. Appendix E now records 324 generated chapter-level
+  rows: 224 implemented, 1 partial, and 99 planned. The proof-depth classifier
+  now reports 419 theorem declarations, 121 direct/projection-style
+  declarations, and 298 derived/decomposed declarations across 123 manifest
+  proof targets; the five safety-critical modules now contain 69 theorem
+  declarations, 10 direct/projection-style and 59 derived/decomposed.
+- Updated the consolidated Moral Uncertainty/Governance chapter, book outline,
+  proof adequacy review, proof-depth/audit reports, v1.0 roadmap/status
+  surfaces, focus audit, and status snapshot guard. This does not implement
+  legal rights, institutional adequacy, real export usability, fork safety,
+  redaction quality, SCF replacement, deployed governance enforcement,
+  support-state promotion, reader artifact approval, or release approval.
+
 ## 2026-07-01 - Corrigibility agency-correction route proof
 
 - Strengthened `AsiStackProofs.Corrigibility` with a finite

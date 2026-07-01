@@ -1627,9 +1627,16 @@
               "name": "Fork-right safety test",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic governance rights harness; no deployed fork enforcement or legal-rights claim"
+            },
+            {
+              "name": "Governance rights lifecycle route envelope",
+              "purpose": "Check that finite governance-right lifecycle records route missing governance records, missing audit material, redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations, protected-right removal, unrecorded dissent, replacement receipt loss, missing durable receipts, missing evidence-transition records, and complete contestable transitions to distinct modeled outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim",
+              "status": "implemented in AsiStackProofs.GovernanceRights; no deployed governance-right behavior claim"
             }
           ],
-          "lean_module": "AsiStackProofs.ValueConflict",
+          "lean_module": "AsiStackProofs.ValueConflict; AsiStackProofs.GovernanceRights",
           "proof_targets": [
             {
               "tag": "lean:values.conflict.operational_invariant",

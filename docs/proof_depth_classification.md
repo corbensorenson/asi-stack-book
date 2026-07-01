@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 123 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 407 |
+| Theorem declarations classified | 419 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 286 |
+| Derived/decomposed theorem declarations | 298 |
 | Unknown or mixed theorem declarations | 0 |
-| Safety-critical theorem declarations | 57 |
+| Safety-critical theorem declarations | 69 |
 | Safety-critical direct/projection declarations | 10 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -32,7 +32,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
@@ -73,7 +73,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 2 | 8 | 5 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -255,11 +255,23 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `exact_reconstruction_claim_with_mismatched_repair_rejected` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `failed_verification_blocks_exactness_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `failed_verification_with_exactness_promotion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `audit_request_without_material_requests_audit_material` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `complete_governance_right_lifecycle_allows_transition` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `constrained_fork_without_audit_path_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `constrained_fork_without_safety_obligations_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `dissent_without_record_preserves_dissent` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `exit_without_portable_state_requests_exit_export` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `fork_without_obligation_preservation_preserves_fork_obligations` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `fork_without_safety_review_blocks_unsafe_fork` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `governance_transition_preserves_required_audit_and_exit_capabilities` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `missing_durable_receipt_preserves_receipt` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `missing_exit_capability_preserves_exit_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `missing_governance_record_rejected` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `protected_right_removal_blocks_lifecycle` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `redaction_without_appeal_path_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `redaction_without_appeal_requests_redaction_appeal` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `replacement_without_rights_receipts_preserves_obligations` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `support_change_without_evidence_transition_requests_governance_evidence` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `transition_removing_protected_right_is_rejected_or_invalid` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentContracts.lean` | `ambiguous_intent_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `compiled_intent_contract_preserves_declared_constraints_and_stop_conditions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

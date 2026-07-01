@@ -4,7 +4,7 @@ chapter_id: "moral-uncertainty-and-value-conflict"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v1.x consolidated manuscript"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "ethica_mechanica"
   - "alignment_field"
@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The consolidated contestability layer preserves value-conflict and governance-right mappings at argument support only; no moral-correctness, legal-rights, institutional-adequacy, reviewer-independence, export-usability, fork-safety, or deployed-governance claim is promoted."
-  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems remain bounded record checks; real review quality, runtime contestability, actual exit/fork usability, and SCF replacement behavior remain open."
+  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems and governance-right lifecycle route checks remain bounded record checks; real review quality, runtime contestability, actual exit/fork usability, fork-safety review, redaction quality, and SCF replacement behavior remain open."
   - "External comparators for moral-uncertainty RL, contestable AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment, legal process, or deployed governance result is reproduced here."
 ---
 
@@ -25,10 +25,11 @@ open_evidence_gaps:
 
 The consolidated contestability layer remains conceptual. Its core claim
 remains `Design rationale` with `argument` support. Existing source notes,
-synthetic harnesses, and finite-record Lean theorems make the idea more
-inspectable, but they do not prove moral correctness, legal rights,
-institutional adequacy, reviewer independence, real export usability, safe
-fork execution, or deployed governance enforcement.
+synthetic harnesses, finite-record Lean theorems, and a bounded governance-right
+lifecycle route make the idea more inspectable, but they do not prove moral
+correctness, legal rights, institutional adequacy, reviewer independence, real
+export usability, safe fork execution, redaction quality, SCF replacement
+behavior, or deployed governance enforcement.
 
 The consolidated layer combines two record families:
 
@@ -387,6 +388,7 @@ the merged core claim at `argument`.
 | Bounded-decision lease test | Check that bounded decisions preserve authority limits, dissent payloads, expiry, and revisit triggers. | modeled by finite Lean and synthetic fixtures; deployed policy behavior not run |
 | Governance-rights fixture validation | Check that rights records preserve audit material, appeal paths, exit/fork access, fork safety, preservation obligations, durable receipts, and non-claims. | implemented by protocol validation and current harnesses |
 | Rights preservation check | Check that audit, exit, fork, dissent, redaction, and appeal paths survive a governed transition. | modeled by finite Lean and synthetic fixtures; real interface usability not run |
+| Governance rights lifecycle route envelope | Check that finite governance-right lifecycle records route missing governance records, audit material gaps, redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations, protected-right removal, unrecorded dissent, replacement receipt loss, missing durable receipts, evidence-transition gaps, and complete contestable transitions to explicit outcomes. | implemented in `AsiStackProofs.GovernanceRights`; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim |
 | Replacement-preservation check | Check that capability replacement does not drop unresolved conflict residuals or rights receipts. | planned integration path; no deployed SCF replacement run is claimed |
 
 ## Formalization hooks
@@ -398,10 +400,19 @@ the merged core claim at `argument`.
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 
-The consolidated proof boundary preserves the limitation boundary from both source manuscripts. These Lean modules prove small finite-record properties and rejection
-cases for declared records. Direct/projection hooks remain projection-only traceability unless the theorem reasons over an explicit transition, negative case, residual path, authority ceiling, or support-state boundary. They do not prove moral correctness, automatic
-value classification, reviewer quality, legal rights, actual export usability,
-safe forks, institutional contestability, redaction quality, SCF replacement
+The consolidated proof boundary preserves the limitation boundary from both
+source manuscripts. These Lean modules prove small finite-record properties,
+rejection cases, and bounded route outcomes for declared records.
+Direct/projection hooks remain projection-only traceability unless the theorem
+reasons over an explicit transition, negative case, residual path, authority
+ceiling, or support-state boundary. The Governance Rights module now also checks
+a finite lifecycle route for missing governance records, audit material,
+redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations,
+protected-right removal, unrecorded dissent, replacement receipt loss, durable
+receipt gaps, evidence-transition requirements, and complete contestable
+transitions. These hooks do not prove moral correctness, automatic value
+classification, reviewer quality, legal rights, actual export usability, safe
+forks, institutional contestability, redaction quality, SCF replacement
 behavior, or deployed rights enforcement.
 
 ## Source crosswalk
