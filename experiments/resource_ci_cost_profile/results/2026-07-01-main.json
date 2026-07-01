@@ -1,0 +1,168 @@
+{
+  "branch": "main",
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/build_resource_ci_cost_profile.py --write-result",
+  "evidence_transition_created": false,
+  "failure_events": [
+    {
+      "failure_stage": "Check generated scaffold",
+      "failure_type": "generated_scaffold_drift",
+      "log_command": "gh run view 28521511292 --log-failed",
+      "log_summary": {
+        "excerpt": [
+          "build\tCheck generated scaffold\t2026-07-01T13:34:51.3277905Z \u001b[36;1mgit diff --exit-code\u001b[0m",
+          "build\tCheck generated scaffold\t2026-07-01T13:34:51.4934103Z diff --git a/appendices/E_codex_test_specs.qmd b/appendices/E_codex_test_specs.qmd",
+          "build\tCheck generated scaffold\t2026-07-01T13:34:51.4935498Z --- a/appendices/E_codex_test_specs.qmd",
+          "build\tCheck generated scaffold\t2026-07-01T13:34:51.4935862Z +++ b/appendices/E_codex_test_specs.qmd",
+          "build\tCheck generated scaffold\t2026-07-01T13:34:51.4943725Z -| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource workflow trace harness | implemented | passing via `python3 scripts/validate_resource_workflow_trace.py`; no deployed scheduler, physical-feasibility, model-quality, or economic-outcome claim |",
+          "build\tCheck generated scaffold\t2026-07-01T13:34:51.5477458Z ##[error]Process completed with exit code 1."
+        ],
+        "sha256": "d398d0b41b5b10f9c661f528fe1b0177816658afe23bdbc5bed230efe12b713d"
+      },
+      "run_id": 28521511292,
+      "title": "Add Resource Economics workflow trace"
+    }
+  ],
+  "metrics": {
+    "completed_duration_seconds_mean": 219.0,
+    "completed_duration_seconds_median": 213,
+    "completed_duration_seconds_total": 1533,
+    "completed_run_count": 7,
+    "failure_count": 1,
+    "in_progress_count": 1,
+    "run_count": 8,
+    "success_count": 6,
+    "success_duration_seconds_mean": 251.833
+  },
+  "non_claims": [
+    "This CI cost profile does not promote any chapter core claim above argument.",
+    "This CI cost profile does not create a support-state transition.",
+    "This CI cost profile does not prove deployed scheduler behavior, runtime budget enforcement, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement.",
+    "This CI cost profile records GitHub Actions publication-pipeline metadata only; it is not a production workload trace or external review."
+  ],
+  "profile_id": "resource-ci-cost-profile-2026-07-01-main",
+  "record_kind": "resource_ci_cost_profile",
+  "recorded_at_utc": "2026-07-01T14:09:33Z",
+  "repair_events": [
+    {
+      "failed_run_id": 28521511292,
+      "repair_boundary": "The next completed successful Pages run demonstrates that the publication gate recovered; it does not prove the underlying chapter claim.",
+      "repair_conclusion": "success",
+      "repair_duration_seconds": 356,
+      "repair_run_id": 28522244545,
+      "repair_title": "Bridge resource workflow trace to Lean"
+    }
+  ],
+  "runs": [
+    {
+      "conclusion": "",
+      "created_at": "2026-07-01T14:05:10Z",
+      "duration_seconds": 169,
+      "event": "push",
+      "head_sha": "37444d8d954a41e1208322c234722700993e4587",
+      "run_id": 28523473993,
+      "status": "in_progress",
+      "title": "Add Resource Economics live replay probe",
+      "updated_at": "2026-07-01T14:07:59Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28523473993",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-01T13:46:15Z",
+      "duration_seconds": 356,
+      "event": "push",
+      "head_sha": "7a7b6445ffe75d7974eb905ab249569d44ccc880",
+      "run_id": 28522244545,
+      "status": "completed",
+      "title": "Bridge resource workflow trace to Lean",
+      "updated_at": "2026-07-01T13:52:11Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28522244545",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "failure",
+      "created_at": "2026-07-01T13:34:32Z",
+      "duration_seconds": 22,
+      "event": "push",
+      "head_sha": "e11bc9937b8c4975baf6927963683e92b8a1735e",
+      "run_id": 28521511292,
+      "status": "completed",
+      "title": "Add Resource Economics workflow trace",
+      "updated_at": "2026-07-01T13:34:54Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28521511292",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-01T13:15:26Z",
+      "duration_seconds": 249,
+      "event": "push",
+      "head_sha": "7bbca308504153df42a326d1a5a328c9346a5e4c",
+      "run_id": 28520304363,
+      "status": "completed",
+      "title": "Focus active evidence cycle on flagship lane",
+      "updated_at": "2026-07-01T13:19:35Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28520304363",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-01T13:03:04Z",
+      "duration_seconds": 206,
+      "event": "push",
+      "head_sha": "296b644f393c2d2581433c9fdc9f8a99e904c87f",
+      "run_id": 28519529265,
+      "status": "completed",
+      "title": "Add Theseus generation-mode Lean bridge",
+      "updated_at": "2026-07-01T13:06:30Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28519529265",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-01T12:47:26Z",
+      "duration_seconds": 290,
+      "event": "push",
+      "head_sha": "98201b8d8aba30bc7ece9e563252e6c4dabc2986",
+      "run_id": 28518591525,
+      "status": "completed",
+      "title": "Import Theseus generation-mode gate summary",
+      "updated_at": "2026-07-01T12:52:16Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28518591525",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-01T12:20:45Z",
+      "duration_seconds": 197,
+      "event": "push",
+      "head_sha": "887c7491457cd72a8a0cb1850e20a78399c887e4",
+      "run_id": 28517067320,
+      "status": "completed",
+      "title": "Add readiness lifecycle transition proofs",
+      "updated_at": "2026-07-01T12:24:02Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28517067320",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-01T12:10:35Z",
+      "duration_seconds": 213,
+      "event": "push",
+      "head_sha": "7f719dcc544127f462c18a3a58e9d28473e66f07",
+      "run_id": 28516497144,
+      "status": "completed",
+      "title": "Add SCF lifecycle transition proofs",
+      "updated_at": "2026-07-01T12:14:08Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28516497144",
+      "workflow": "Publish Quarto site"
+    }
+  ],
+  "source_commands": [
+    "gh run list --workflow Publish Quarto site --branch main --limit 8 --json databaseId,displayTitle,headSha,status,conclusion,createdAt,updatedAt,event,workflowName,url",
+    "gh run view <failed-run-id> --log-failed"
+  ],
+  "support_state_effect": "none",
+  "workflow": "Publish Quarto site"
+}

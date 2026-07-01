@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Add Resource Economics CI cost profile
+
+- Added `scripts/build_resource_ci_cost_profile.py`,
+  `scripts/validate_resource_ci_cost_profile.py`,
+  `docs/resource_ci_cost_profile.md`, and
+  `experiments/resource_ci_cost_profile/results/2026-07-01-main.json`.
+- The profile records eight actual GitHub Pages publication workflow runs,
+  seven completed runs, six successful completed runs, one generated-scaffold
+  failure, one repair run, elapsed-duration metrics, the failed-run log digest,
+  and the no-claim repair boundary.
+- Wired the profile into `scripts/validate_book.py`, the active evidence cycle,
+  the Resource Economics chapter, v1/v1.x roadmap and status surfaces, README,
+  and the repository map.
+- This does not promote, demote, deprecate, or refute any live claim; create a
+  deployed scheduler result, production workload trace, live model-quality
+  result, physical-feasibility result, simulator-adequacy result, economic
+  outcome, external review, reader release, or support-state transition.
+
 ## 2026-07-01 - Add Resource Economics live replay probe
 
 - Added `scripts/run_resource_live_probe.py`,

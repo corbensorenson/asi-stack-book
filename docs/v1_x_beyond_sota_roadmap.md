@@ -1107,6 +1107,17 @@ Current status for the focused v1.x active evidence cycle:
   repository evidence only: it is not a deployed scheduler log, live workload
   quality review, human-repair measurement, physical-feasibility review,
   simulator-adequacy result, or support-state transition.
+- `docs/resource_ci_cost_profile.md` adds a CI publication cost profile for
+  the same lane: `python3 scripts/build_resource_ci_cost_profile.py --write-result`
+  records eight actual GitHub Pages workflow runs, seven completed runs, six
+  successful completed runs, one generated-scaffold failure, one repair run,
+  and publication-duration metrics, while
+  `python3 scripts/validate_resource_ci_cost_profile.py` validates the recorded
+  timestamps, durations, failure classification, repair boundary, source
+  commands, and non-claims offline. This is real publication-pipeline metadata,
+  but it remains a repository operations trace: it does not prove deployed
+  resource scheduling, workload quality, model quality, economic outcomes,
+  physical feasibility, simulator adequacy, or support-state movement.
 - The simulation-transfer boundary harness remains folded into Resource
   Economics as a support boundary: it rejects missing fidelity, unbounded world
   transfer, missing resource bills, missing bottleneck residuals, ignored
@@ -1122,10 +1133,11 @@ Current status for the focused v1.x active evidence cycle:
   is not evidence" gap without claiming a speed-quality result, live Theseus
   replay, public benchmark run, or chapter-core support-state movement.
 - The next evidence work should deepen the flagship Resource Economics lane by
-  replacing fixture-declared quality and local command replay with live or
-  externally reviewable workload quality review, production scheduler logs,
-  measured displaced-cost accounting, physical-feasibility review, and measured
-  simulation outputs before opening a new active cycle.
+  replacing fixture-declared quality, local command replay, and CI publication
+  metadata with live or externally reviewable workload quality review,
+  production scheduler logs, measured displaced-cost accounting,
+  physical-feasibility review, and measured simulation outputs before opening a
+  new active cycle.
 
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 
