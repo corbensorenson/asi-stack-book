@@ -2993,6 +2993,11 @@
               "name": "Failed-quality fallback finite-record proof",
               "implementation_status": "implemented",
               "result_status": "builds in AsiStackProofs.PlanForge; no deployed scheduler claim"
+            },
+            {
+              "name": "Plan-control dispatch route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite dispatch-route coverage only"
             }
           ],
           "lean_module": "AsiStackProofs.Planning",

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-01 - Planning dispatch-route proof
+
+- Strengthened `AsiStackProofs.Planning` with a finite `PlanControlRoute`,
+  `PlanDispatchReady`, and `PlanControlRouteFor` decision surface, plus the
+  derived theorem
+  `valid_dispatchable_plan_routes_to_allow_dispatch` showing that a valid
+  modeled dispatchable record routes to `allowDispatch` after its command,
+  constraint, stop-condition, context, verification, receipt, and
+  no-blocked-node gates hold.
+- Updated the Planning chapter, Appendix E, book outline, proof adequacy
+  review, proof-depth/audit reports, v1.0/v1.x roadmap surfaces, v1.0 status
+  surfaces, and status snapshot guard. The proof-depth classifier now reports
+  372 theorem declarations, 121 direct/projection-style declarations, and 251
+  derived/decomposed declarations across 123 manifest proof targets.
+- This does not prove planner quality, decomposition accuracy, selected-tier
+  adequacy, route quality, scheduler behavior, deployed dispatch, runtime
+  replanning, support-state promotion, reader artifact approval, or release
+  approval.
+
 ## 2026-07-01 - Live claim-surface narrowing record
 
 - Added the live claim-revision record

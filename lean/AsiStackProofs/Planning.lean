@@ -133,6 +133,37 @@ structure PlanControlRecordValid (record : PlanControlRecord) : Prop where
     record.nodeState = PlanDispatchState.replanned ->
       record.residualRegisterPresent = true
 
+inductive PlanControlRoute where
+  | holdForPlanning
+  | blockForMissingGate
+  | keepBlocked
+  | allowDispatch
+  | replanWithResidual
+  | stop
+deriving DecidableEq, Repr
+
+def PlanDispatchReady (record : PlanControlRecord) : Bool :=
+  record.commandValidatedForPlanning &&
+    record.requiredConstraintsSatisfied &&
+      record.stopConditionsDeclared &&
+        record.contextRequirementsDeclared &&
+          record.verificationPlanDeclared &&
+            !record.blockedNodesPresent &&
+              record.dispatchReceiptsPresent
+
+def PlanControlRouteFor (record : PlanControlRecord) : PlanControlRoute :=
+  match record.nodeState with
+  | PlanDispatchState.proposed => PlanControlRoute.holdForPlanning
+  | PlanDispatchState.blocked => PlanControlRoute.keepBlocked
+  | PlanDispatchState.dispatchable =>
+      if PlanDispatchReady record then
+        PlanControlRoute.allowDispatch
+      else
+        PlanControlRoute.blockForMissingGate
+  | PlanDispatchState.dispatched => PlanControlRoute.allowDispatch
+  | PlanDispatchState.replanned => PlanControlRoute.replanWithResidual
+  | PlanDispatchState.stopped => PlanControlRoute.stop
+
 theorem valid_dispatchable_plan_has_required_gates
     {record : PlanControlRecord} :
     PlanControlRecordValid record ->
@@ -203,5 +234,28 @@ theorem valid_plan_control_record_preserves_non_claim_boundary
     record.nonClaimsPresent = true := by
   intro valid
   exact valid.nonClaimsPresent
+
+theorem valid_dispatchable_plan_routes_to_allow_dispatch
+    {record : PlanControlRecord} :
+    PlanControlRecordValid record ->
+    record.nodeState = PlanDispatchState.dispatchable ->
+    PlanControlRouteFor record = PlanControlRoute.allowDispatch := by
+  intro valid dispatchable
+  have gates := valid_dispatchable_plan_has_required_gates valid dispatchable
+  have receipt := valid_dispatchable_plan_has_receipt_and_no_blocked_nodes valid dispatchable
+  rcases gates with ⟨commandValid, constraintsSatisfied, stopDeclared, contextDeclared, verificationDeclared⟩
+  rcases receipt with ⟨receiptPresent, noBlockedNodes⟩
+  unfold PlanControlRouteFor PlanDispatchReady
+  rw [
+    dispatchable,
+    commandValid,
+    constraintsSatisfied,
+    stopDeclared,
+    contextDeclared,
+    verificationDeclared,
+    noBlockedNodes,
+    receiptPresent
+  ]
+  simp
 
 end AsiStackProofs.Planning
