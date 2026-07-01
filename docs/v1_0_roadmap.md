@@ -524,7 +524,8 @@ Initial completion:
 - The result record is `experiments/plan_execution_contracts/results/2026-06-28-local.md`.
 - The plan-execution harness checks synthetic command-contract, plan-graph, PlanForge DAG, semantic-atom, and typed-job consistency only. It does not prove planner quality, scheduler behavior, deployed execution, runtime adapter safety, parser quality, benchmark performance, or support-state promotion.
 - `python3 scripts/validate_runtime_adapter_permissions.py` passed locally on 2026-06-28 with 2 valid fixtures and 5 expected-invalid fixtures.
-- The result record is `experiments/runtime_adapter_permissions/results/2026-06-28-local.md`.
+- `python3 scripts/validate_runtime_adapter_permissions.py` passed locally on 2026-07-01 with 2 valid fixtures and 7 expected-invalid fixtures after adding ambient-authority confused-deputy and revoked-receipt probes.
+- The current result record is `experiments/runtime_adapter_permissions/results/2026-07-01-local.md`; the 2026-06-28 result remains historical.
 - The runtime adapter permission harness checks synthetic typed-job, runtime-adapter-invocation, and authority-use-receipt consistency for permission coverage, high-impact approval gates, approval expiry markers, effect receipts, rollback handles, irreversible residuals, and authority receipt alignment only. It does not prove deployed adapter behavior, sandbox isolation, approval-service quality, secret-handle safety, rollback execution, runtime behavior, or support-state promotion.
 - `python3 scripts/validate_context_admission_adequacy.py` passed locally on 2026-06-28 with 3 valid fixtures and 5 expected-invalid fixtures.
 - The result record is `experiments/context_admission_adequacy/results/2026-06-28-local.md`.

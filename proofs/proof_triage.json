@@ -784,11 +784,11 @@
       "tag": "lean:runtime.adapters.failure_blocks_promotion",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A high-impact adapter call without approval or a required rollback handle is rejected, and mismatched, expired, or unsandboxed effect leases cannot validate invocation.",
+      "formal_target": "A high-impact adapter call without approval or a required rollback handle is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as finite approval, lease, and rollback-obligation predicates: high-impact calls without approval or required rollback handles are rejected, and mismatched, expired, or unsandboxed leases cannot validate invocation."
+      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as finite approval, lease, rollback-obligation, confused-deputy, sandbox-escape, and dispatch-route predicates: high-impact calls without approval or required rollback handles are rejected, mismatched, expired, or unsandboxed leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch."
     },
     {
       "tag": "lean:procedural.loop_closure.operational_invariant",

@@ -52,6 +52,9 @@ permission to change proof or test status.
 - Preserved the current evidence boundary that public schemas, fixtures,
   finite Lean predicates, and a synthetic runtime-adapter permission harness
   support record discipline only.
+- Reconciled the reader chapter with the 2026-07-01 harness expansion: the
+  permission harness now includes ambient-authority confused-deputy and
+  revoked-receipt expected-invalid probes without claiming deployed behavior.
 - Preserved the missing-work boundary: no deployed adapter service, sandbox
   isolation, approval service, secret-handle safety, live effect receipt,
   rollback execution, runtime security, benchmark, Talos runtime, MoECOT
@@ -66,7 +69,7 @@ permission to change proof or test status.
 | Core claim meaning preserved | Pass. The curated draft keeps the claim that runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; external records remain comparators and orientation points. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that finite Lean predicates and synthetic runtime-adapter validation do not prove deployed adapter behavior, sandbox isolation, approval-service correctness, secret-handle safety, live effect receipt validity, rollback execution, incident response, benchmark performance, security behavior, Talos runtime behavior, MoECOT runtime reproduction, ReAct reproduction, Simplex-level assurance, Copilot-style runtime monitoring, or proof-carrying-code enforcement. |
+| Proof/test status preserved | Pass. The curated draft keeps the boundary that finite Lean predicates and synthetic runtime-adapter validation, including ambient-authority confused-deputy and revoked-receipt probes, do not prove deployed adapter behavior, sandbox isolation, approval-service correctness, revocation propagation, secret-handle safety, live effect receipt validity, rollback execution, incident response, benchmark performance, security behavior, Talos runtime behavior, MoECOT runtime reproduction, ReAct reproduction, Simplex-level assurance, Copilot-style runtime monitoring, or proof-carrying-code enforcement. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains runtime-adapter invocation schemas, fixtures, finite permission/approval predicates, and a synthetic cross-record harness; the mature endpoint remains an unimplemented capability firewall for AI effects. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 

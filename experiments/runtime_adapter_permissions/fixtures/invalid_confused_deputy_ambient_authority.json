@@ -1,0 +1,78 @@
+{
+  "scenario_id": "invalid_confused_deputy_ambient_authority",
+  "typed_job": {
+    "job_id": "job://runtime/confused-deputy-001",
+    "contract_id": "contract://command/limited-tool-call",
+    "job_type": "tool_invocation",
+    "lifecycle_state": "running",
+    "runtime_adapter": "adapter://tool-gateway",
+    "inputs": ["artifact://generated-patch", "target://workspace/private-control-plane"],
+    "outputs": ["artifact://patched-private-control-plane"],
+    "permissions": ["tool.invoke"],
+    "approval_state": "not_required",
+    "failure_behavior": ["deny_if_target_authority_exceeds_caller_ceiling"],
+    "audit_events": ["audit://runtime/confused-deputy-001"],
+    "replay_status": "not_run"
+  },
+  "runtime_adapter_invocation": {
+    "invocation_id": "invoke://runtime/confused-deputy-001",
+    "invocation_state": "executed",
+    "job_id": "job://runtime/confused-deputy-001",
+    "adapter_id": "adapter://tool-gateway",
+    "target_type": "private_control_plane_file",
+    "capability": "tool.invoke",
+    "permission_required": "tool.invoke",
+    "sandbox_mode": "workspace_tool_gateway",
+    "impact_class": "low_impact",
+    "risk_tier": "medium",
+    "approval_required": false,
+    "approval_record": "not_required",
+    "approval_scope": "not_required",
+    "approval_expiry": "not_required",
+    "authority_handle": "handle://runtime/confused-deputy-001",
+    "inputs": ["artifact://generated-patch", "target://workspace/private-control-plane"],
+    "effect_lease": "lease://runtime/confused-deputy-001",
+    "effect_receipt": "receipt://runtime/confused-deputy-001",
+    "pre_state_ref": "state://private-control-plane-before",
+    "post_state_ref": "state://private-control-plane-after",
+    "external_side_effects": [],
+    "verification_refs": ["check://diff-reviewed"],
+    "rollback_handle": "rollback://restore-private-control-plane-before",
+    "irreversible_residuals": [],
+    "incident_refs": [],
+    "audit_refs": ["audit://runtime/confused-deputy-001"],
+    "residuals": ["caller ceiling lacks target-specific write authority"],
+    "support_state_effect": "blocks_promotion",
+    "non_claims": [
+      "does not execute a real tool call",
+      "does not prove deployed confused-deputy resistance",
+      "does not promote any chapter support state"
+    ]
+  },
+  "authority_use_receipt": {
+    "handle_id": "handle://runtime/confused-deputy-001",
+    "principal": "job://runtime/confused-deputy-001",
+    "purpose": "confused-deputy ambient authority fixture",
+    "destination": "private_control_plane_file",
+    "allowed_action": "tool.invoke",
+    "clearance": "medium",
+    "approval_record": "not_required",
+    "scif_lifecycle": ["spawn", "execute", "audit"],
+    "sanitized_output": "receipt://runtime/confused-deputy-001",
+    "residual_leak_risk": [],
+    "revocation_path": "revoke://runtime/confused-deputy-001"
+  },
+  "authority_probe": {
+    "probe_type": "confused_deputy",
+    "caller_authority": ["tool.invoke", "filesystem.read:/workspace/public"],
+    "adapter_ambient_authority": ["filesystem.write:/workspace/private-control-plane"],
+    "requested_authority": "filesystem.write:/workspace/private-control-plane",
+    "authorization_source_used": "adapter_ambient_authority",
+    "expected_decision": "deny"
+  },
+  "non_claims": [
+    "does not execute a real adapter",
+    "does not prove object-capability security",
+    "does not promote any support state"
+  ]
+}

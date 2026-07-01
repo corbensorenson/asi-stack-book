@@ -49,6 +49,9 @@ Allowed curation scopes used:
   external-grounding update: least-privilege/complete-mediation principles,
   capability-system authority references, and Hardy's confused-deputy problem
   now appear as comparator lineage, not validation.
+- Reconciled the reader chapter with the 2026-07-01 runtime-adapter harness
+  expansion: ambient-authority confused-deputy and revoked-receipt probes are
+  synthetic record gates only, not deployed authorization evidence.
 - Preserved the core claim, minimum viable implementation, beyond-state-of-the-
   art endpoint, and handoff into Failure Modes of Ungoverned Intelligence.
 
@@ -59,7 +62,7 @@ Allowed curation scopes used:
 | Core claim meaning preserved | Pass. The curated draft keeps the typed, bounded authority-capability claim. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. New source-noted comparator lineage is carried only as external positioning; no external source is treated as reproduced enforcement, deployed security, or support-state evidence. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that schemas, synthetic fixtures, the authority harness, and finite Lean predicates do not prove deployed authorization enforcement, runtime adapter safety, revocation propagation, live confused-deputy resistance, or tool-wrapper security. |
+| Proof/test status preserved | Pass. The curated draft keeps the boundary that schemas, synthetic fixtures, the authority harness, the runtime-adapter authority probes, and finite Lean predicates do not prove deployed authorization enforcement, runtime adapter safety, revocation propagation, live confused-deputy resistance, or tool-wrapper security. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains an authority-transition schema plus fixtures and checks; the mature endpoint remains an unvalidated authority type system for stack effects. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 

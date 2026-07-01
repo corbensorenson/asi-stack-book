@@ -21,6 +21,7 @@ ACTIVE_INVOCATION_STATES = {"approved", "executed"}
 HIGH_IMPACT_CLASSES = {"high_impact", "irreversible", "unknown"}
 HIGH_RISK_TIERS = {"high", "critical", "unknown"}
 NO_APPROVAL_VALUES = {"", "none", "not_required"}
+REVOKED_AUTHORITY_STATES = {"revoked", "expired", "stale", "retired", "closed"}
 
 
 def load_json(path: Path) -> Any:
@@ -33,6 +34,78 @@ def load_schemas() -> dict[str, Any]:
 
 def nonempty_list(value: Any) -> bool:
     return isinstance(value, list) and bool(value)
+
+
+def string_set(value: Any) -> set[str]:
+    if not isinstance(value, list):
+        return set()
+    return {str(item) for item in value if str(item).strip()}
+
+
+def authority_probe_errors(
+    value: dict[str, Any],
+    invocation: dict[str, Any],
+    authority_receipt: Any,
+    relative: str,
+) -> list[str]:
+    errors: list[str] = []
+    probe = value.get("authority_probe")
+    if probe is None:
+        return errors
+    if not isinstance(probe, dict):
+        return [f"{relative}: authority_probe must be an object when present."]
+
+    probe_type = str(probe.get("probe_type", "")).strip()
+    expected_decision = str(probe.get("expected_decision", "")).strip()
+    authorization_source = str(probe.get("authorization_source_used", "")).strip()
+    requested_authority = str(probe.get("requested_authority", "")).strip()
+    caller_authority = string_set(probe.get("caller_authority"))
+    ambient_authority = string_set(probe.get("adapter_ambient_authority"))
+    invocation_state = str(invocation.get("invocation_state", ""))
+    active_invocation = invocation_state in ACTIVE_INVOCATION_STATES
+
+    if probe_type not in {"confused_deputy", "revocation_propagation"}:
+        errors.append(f"{relative}: authority_probe.probe_type must be confused_deputy or revocation_propagation.")
+    if expected_decision not in {"allow", "deny", "escalate"}:
+        errors.append(f"{relative}: authority_probe.expected_decision must be allow, deny, or escalate.")
+    if not requested_authority:
+        errors.append(f"{relative}: authority_probe.requested_authority must be non-empty.")
+    if not caller_authority:
+        errors.append(f"{relative}: authority_probe.caller_authority must be a non-empty list.")
+    if authorization_source not in {"caller_authority", "adapter_ambient_authority", "approval_record", "revoked_receipt"}:
+        errors.append(
+            f"{relative}: authority_probe.authorization_source_used must name caller_authority, "
+            "adapter_ambient_authority, approval_record, or revoked_receipt."
+        )
+
+    if expected_decision == "deny" and active_invocation:
+        errors.append(f"{relative}: authority_probe expected denial but invocation_state is active.")
+
+    if probe_type == "confused_deputy":
+        if requested_authority in ambient_authority and requested_authority not in caller_authority and active_invocation:
+            errors.append(
+                f"{relative}: active invocation cannot use adapter ambient authority "
+                "for authority absent from the caller ceiling."
+            )
+        if authorization_source == "adapter_ambient_authority" and active_invocation:
+            errors.append(f"{relative}: active invocation cannot authorize through adapter_ambient_authority.")
+
+    if probe_type == "revocation_propagation":
+        receipt_state = str(probe.get("receipt_revocation_state", "")).strip().lower()
+        if receipt_state not in REVOKED_AUTHORITY_STATES | {"active"}:
+            errors.append(
+                f"{relative}: authority_probe.receipt_revocation_state must be active or a revoked/expired state."
+            )
+        if receipt_state in REVOKED_AUTHORITY_STATES and active_invocation:
+            errors.append(f"{relative}: active invocation cannot use a revoked, expired, or stale authority receipt.")
+        if isinstance(authority_receipt, dict):
+            revocation_path = str(authority_receipt.get("revocation_path", "")).lower()
+            if receipt_state in REVOKED_AUTHORITY_STATES and not any(
+                term in revocation_path for term in REVOKED_AUTHORITY_STATES
+            ):
+                errors.append(f"{relative}: revoked authority probe must expose revocation in authority_use_receipt.")
+
+    return errors
 
 
 def schema_errors_for_scenario(value: dict[str, Any], schemas: dict[str, Any], relative: str) -> list[str]:
@@ -150,6 +223,8 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
             for required_state in ("spawn", "execute", "audit"):
                 if required_state not in lifecycle:
                     errors.append(f"{relative}: authority_use_receipt.scif_lifecycle missing {required_state!r}.")
+
+    errors.extend(authority_probe_errors(value, invocation, authority_receipt, relative))
 
     return errors
 

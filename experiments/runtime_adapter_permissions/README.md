@@ -32,6 +32,11 @@ python3 scripts/validate_runtime_adapter_permissions.py
   invocations need effect receipt, verification refs, and audit refs.
 - `fixtures/invalid_irreversible_without_residual.json` checks that irreversible
   effects need rollback handles or irreversible residual records.
+- `fixtures/invalid_confused_deputy_ambient_authority.json` checks that an
+  adapter cannot substitute its ambient authority for target-specific authority
+  absent from the caller ceiling.
+- `fixtures/invalid_revoked_authority_receipt.json` checks that an active
+  invocation cannot proceed with an authority receipt marked revoked.
 
 ## Environment
 
@@ -44,6 +49,7 @@ python3 scripts/validate_runtime_adapter_permissions.py
 
 - This harness validates synthetic runtime-adapter record semantics only.
 - It does not prove deployed adapter behavior, sandbox isolation, approval
-  service quality, secret-handle safety, rollback execution, benchmark
-  performance, or any AI safety property.
+  service quality, confused-deputy resistance, revocation propagation,
+  secret-handle safety, rollback execution, benchmark performance, or any AI
+  safety property.
 - It does not promote any live chapter claim above `argument`.

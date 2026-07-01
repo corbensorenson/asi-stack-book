@@ -272,9 +272,10 @@ non-claims. `AsiStackProofs.RuntimeAdapters` proves finite predicates that a
 valid invocation requires the parent job permission list to include the
 adapter capability and that a high-impact unapproved invocation is rejected.
 `scripts/validate_runtime_adapter_permissions.py` checks synthetic typed-job,
-adapter-invocation, and authority-use-receipt consistency for permissions,
-approval gates, expiry markers, receipts, rollback handles, irreversible
-residuals, and authority receipt alignment.
+adapter-invocation, authority-use-receipt, and authority-probe consistency for
+permissions, approval gates, expiry markers, receipts, rollback handles,
+irreversible residuals, authority receipt alignment, ambient-authority
+confused-deputy rejection, and revoked-receipt blocking.
 
 That implementation is useful, but it remains a record-gate harness. It does
 not execute a tool, run a sandbox, mediate a real secret, conduct a live human

@@ -287,11 +287,12 @@ Failure modes to cover:
 Draft deliverables:
 
 - A small authority schema and transition table used by chapter examples and future Lean proofs, including permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry/review condition, audit refs, and non-claims.
-- Exact Appendix C claim-source mappings for the core claim across `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, and `moecot`; support remains `argument` pending denial fixtures, permission-separation tests, confused-deputy probes, or deployed enforcement artifacts.
+- Exact Appendix C claim-source mappings for the core claim across `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, and `moecot`; support remains `argument` after synthetic denial fixtures, permission-separation tests, runtime-adapter ambient-authority probes, and revoked-receipt probes because deployed enforcement artifacts or accepted narrowed evidence transitions are still required for stronger claims.
 - Source-noted external positioning through `ext_saltzer_schroeder_protection_1975`, `ext_capability_based_computer_systems_1984`, and `ext_confused_deputy_hardy_1988`: least privilege, complete mediation, capability-style authority-bearing references, and confused-deputy authority laundering are treated as comparator vocabulary for authority-transition records, not as proof of deployed ASI Stack security.
 - Implemented synthetic Codex test and proof follow-through: Authority ceiling preservation test via `python3 scripts/validate_authority_transitions.py`, plus the finite `AsiStackProofs.Authority` decision envelope for modeled allow/deny/escalate records; deployed enforcement remains open.
 - Implemented synthetic Codex test: Permission separation test via `python3 scripts/validate_authority_transitions.py`; deployed enforcement remains open.
-- Implemented synthetic Codex test: Confused-deputy scenario via expected-invalid authority-transition fixture; runtime adapter probe remains open.
+- Implemented synthetic Codex test: Confused-deputy scenario via expected-invalid authority-transition fixture and runtime-adapter ambient-authority fixture; deployed adapter resistance remains open.
+- Implemented synthetic Codex test: Revoked authority receipt scenario via expected-invalid runtime-adapter fixture; deployed revocation propagation remains open.
 - Implemented Lean proof target: finite authority lifecycle admission route for missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grant records, inactive/expired/revoked grants, scope mismatches, grant-ceiling gaps, approval gaps, effect or denial receipt gaps, audit refs, evidence-transition records, and non-claim boundaries.
 - Planned Codex test: Revocation propagation test.
 
@@ -1646,14 +1647,14 @@ Draft deliverables:
 - Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability and its effect lease to be active, scoped to that capability, and sandboxed.
 - Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.
 - Implemented Lean negative cases: mismatched, expired, or unsandboxed effect leases cannot validate invocation, and a high-impact rollback-required invocation without a rollback handle cannot remain unrejected.
-- Implemented synthetic Codex test: `python3 scripts/validate_runtime_adapter_permissions.py` checks typed-job, runtime-adapter-invocation, and authority-use-receipt consistency for permission coverage, high-impact approval gates, approval expiry markers, effect receipts, rollback handles, irreversible residuals, and authority receipt alignment. It remains synthetic record-gate evidence only, not deployed adapter, sandbox, approval-service, rollback-execution, or secret-handle evidence.
+- Implemented synthetic Codex test: `python3 scripts/validate_runtime_adapter_permissions.py` checks typed-job, runtime-adapter-invocation, authority-use-receipt, and authority-probe consistency for permission coverage, high-impact approval gates, approval expiry markers, effect receipts, rollback handles, irreversible residuals, authority receipt alignment, ambient-authority confused-deputy rejection, and revoked-receipt blocking. It remains synthetic record-gate evidence only, not deployed adapter, sandbox, approval-service, rollback-execution, deployed revocation propagation, or secret-handle evidence.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability and its effect lease is active, scoped to that capability, and sandboxed. | implemented |
-| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval or a required rollback handle is rejected, and mismatched, expired, or unsandboxed effect leases cannot validate invocation. | implemented |
+| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval or a required rollback handle is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch. | implemented |
 
 ### Procedural Memory and Cognitive Loop Closure
 

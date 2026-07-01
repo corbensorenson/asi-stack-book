@@ -648,12 +648,17 @@
               "implementation_status": "implemented",
               "result_status": "passes via synthetic authority transition harness"
             },
-            {
-              "name": "Confused-deputy scenario",
-              "implementation_status": "implemented",
-              "result_status": "passes expected-invalid synthetic denial fixture; no runtime enforcement claim"
-            }
-          ],
+          {
+            "name": "Confused-deputy scenario",
+            "implementation_status": "implemented",
+            "result_status": "passes expected-invalid synthetic denial fixture; no runtime enforcement claim"
+          },
+          {
+            "name": "Runtime adapter authority probe",
+            "implementation_status": "implemented",
+            "result_status": "passes via runtime adapter expected-invalid ambient-authority and revoked-receipt probes; synthetic record-gate evidence only, no deployed enforcement claim"
+          }
+        ],
           "lean_module": "AsiStackProofs.Authority",
           "proof_targets": [
             {
@@ -5063,12 +5068,22 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite lease-scope predicate only"
             },
-            {
-              "name": "Rollback obligation rejection proof",
-              "implementation_status": "implemented",
-              "result_status": "passes via Lean build; finite rollback-obligation predicate only"
-            }
-          ],
+          {
+            "name": "Rollback obligation rejection proof",
+            "implementation_status": "implemented",
+            "result_status": "passes via Lean build; finite rollback-obligation predicate only"
+          },
+          {
+            "name": "Confused-deputy ambient-authority probe",
+            "implementation_status": "implemented",
+            "result_status": "passes via expected-invalid synthetic runtime adapter fixture; no deployed confused-deputy resistance claim"
+          },
+          {
+            "name": "Revoked authority receipt probe",
+            "implementation_status": "implemented",
+            "result_status": "passes via expected-invalid synthetic runtime adapter fixture; no deployed revocation propagation claim"
+          }
+        ],
           "lean_module": "AsiStackProofs.RuntimeAdapters",
           "proof_targets": [
             {
@@ -5080,7 +5095,7 @@
             {
               "tag": "lean:runtime.adapters.failure_blocks_promotion",
               "module": "AsiStackProofs.RuntimeAdapters",
-              "target": "A high-impact adapter call without approval or a required rollback handle is rejected, and mismatched, expired, or unsandboxed effect leases cannot validate invocation.",
+              "target": "A high-impact adapter call without approval or a required rollback handle is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch.",
               "status": "implemented"
             }
           ]

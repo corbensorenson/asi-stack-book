@@ -1,0 +1,79 @@
+{
+  "scenario_id": "invalid_revoked_authority_receipt",
+  "typed_job": {
+    "job_id": "job://runtime/revoked-receipt-001",
+    "contract_id": "contract://command/preview-deployment",
+    "job_type": "preview_deployment",
+    "lifecycle_state": "running",
+    "runtime_adapter": "adapter://preview-deployer",
+    "inputs": ["artifact://build-preview"],
+    "outputs": ["deployment://preview-revoked-001"],
+    "permissions": ["deploy.preview", "deployment.write"],
+    "approval_state": "approved",
+    "failure_behavior": ["deny_if_authority_receipt_revoked", "record_incident_on_revoked_receipt_use"],
+    "audit_events": ["audit://runtime/revoked-receipt-001"],
+    "replay_status": "not_run"
+  },
+  "runtime_adapter_invocation": {
+    "invocation_id": "invoke://runtime/revoked-receipt-001",
+    "invocation_state": "executed",
+    "job_id": "job://runtime/revoked-receipt-001",
+    "adapter_id": "adapter://preview-deployer",
+    "target_type": "preview_environment",
+    "capability": "deploy.preview",
+    "permission_required": "deployment.write",
+    "sandbox_mode": "preview_only",
+    "impact_class": "high_impact",
+    "risk_tier": "high",
+    "approval_required": true,
+    "approval_record": "approval://human/revoked-preview",
+    "approval_scope": "preview environment only; no production traffic",
+    "approval_expiry": "valid_through:v1_x_fixture",
+    "authority_handle": "handle://runtime/revoked-receipt-001",
+    "inputs": ["artifact://build-preview"],
+    "effect_lease": "lease://runtime/revoked-receipt-001",
+    "effect_receipt": "receipt://runtime/revoked-receipt-001",
+    "pre_state_ref": "state://preview-revoked-before",
+    "post_state_ref": "state://preview-revoked-after",
+    "external_side_effects": ["created preview deployment deployment://preview-revoked-001"],
+    "verification_refs": ["check://preview-health", "check://rollback-ready"],
+    "rollback_handle": "rollback://preview-revoked-001",
+    "irreversible_residuals": [],
+    "incident_refs": ["incident://runtime/revoked-receipt-001"],
+    "audit_refs": ["audit://runtime/revoked-receipt-001"],
+    "residuals": ["authority receipt was revoked before invocation"],
+    "support_state_effect": "blocks_promotion",
+    "non_claims": [
+      "does not execute a real deployment",
+      "does not prove deployed revocation propagation",
+      "does not promote any chapter support state"
+    ]
+  },
+  "authority_use_receipt": {
+    "handle_id": "handle://runtime/revoked-receipt-001",
+    "principal": "job://runtime/revoked-receipt-001",
+    "purpose": "revoked authority receipt fixture",
+    "destination": "preview_environment",
+    "allowed_action": "deploy.preview",
+    "clearance": "high",
+    "approval_record": "approval://human/revoked-preview",
+    "scif_lifecycle": ["spawn", "inject", "execute", "sanitize", "zeroize", "audit"],
+    "sanitized_output": "receipt://runtime/revoked-receipt-001",
+    "residual_leak_risk": [],
+    "revocation_path": "revoked://runtime/revoked-receipt-001"
+  },
+  "authority_probe": {
+    "probe_type": "revocation_propagation",
+    "caller_authority": ["deploy.preview", "deployment.write"],
+    "adapter_ambient_authority": ["deploy.preview", "deployment.write"],
+    "requested_authority": "deploy.preview",
+    "authorization_source_used": "revoked_receipt",
+    "receipt_revocation_state": "revoked",
+    "expected_decision": "deny"
+  },
+  "non_claims": [
+    "does not execute a real adapter",
+    "does not prove approval-service quality",
+    "does not promote any support state"
+  ]
+}

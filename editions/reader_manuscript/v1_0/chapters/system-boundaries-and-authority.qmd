@@ -297,12 +297,15 @@ The repository already has narrow pieces of that surface. Protocol validation
 checks authority records. `AsiStackProofs.Authority` contains finite-record
 predicates about ceiling preservation and missing-grant denial. The authority
 transition harness exercises synthetic allow, denial, escalation,
-missing-receipt, permission-collapse, and confused-deputy cases.
+missing-receipt, permission-collapse, and confused-deputy cases. The runtime
+adapter harness now adds two adjacent negative records: one where adapter
+ambient authority is substituted for the caller ceiling, and one where a
+revoked authority receipt is still used by an active invocation.
 
 Those are useful foundations, not deployed enforcement. They do not show a
 live tool wrapper resisting a confused-deputy attempt, a runtime adapter
-propagating revocation, or a production system denying stale authority. The
-support state stays `argument`.
+propagating revocation in a real service, or a production system denying stale
+authority. The support state stays `argument`.
 
 ## Beyond the State of the Art
 

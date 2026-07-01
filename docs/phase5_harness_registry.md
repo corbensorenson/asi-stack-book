@@ -1,6 +1,6 @@
 # Phase 5 Harness Registry
 
-Last updated: 2026-06-30
+Last updated: 2026-07-01
 
 This registry records the Phase 5 executable harness set for the v1.0 candidate pass. The machine-readable source is `experiments/phase5_harness_registry.json`; the guard is `scripts/validate_phase5_harness_registry.py`.
 
@@ -24,7 +24,7 @@ The registry exists to keep the public evidence surface aligned. A Phase 5 harne
 | Capability replacement harness | `python3 scripts/validate_capability_replacement.py` | 3 valid, 6 expected-invalid | `experiments/capability_replacement/results/2026-06-28-local.md` |
 | Self-improvement boundary harness | `python3 scripts/validate_self_improvement_boundaries.py` | 3 valid, 7 expected-invalid | `experiments/self_improvement_boundaries/results/2026-06-28-local.md` |
 | Plan-execution contract harness | `python3 scripts/validate_plan_execution_contracts.py` | 2 valid, 5 expected-invalid | `experiments/plan_execution_contracts/results/2026-06-28-local.md` |
-| Runtime adapter permission harness | `python3 scripts/validate_runtime_adapter_permissions.py` | 2 valid, 5 expected-invalid | `experiments/runtime_adapter_permissions/results/2026-06-28-local.md` |
+| Runtime adapter permission harness | `python3 scripts/validate_runtime_adapter_permissions.py` | 2 valid, 7 expected-invalid | `experiments/runtime_adapter_permissions/results/2026-07-01-local.md` |
 | Context admission/adequacy harness | `python3 scripts/validate_context_admission_adequacy.py` | 3 valid, 5 expected-invalid | `experiments/context_admission_adequacy/results/2026-06-28-local.md` |
 | Readiness/residual gate harness | `python3 scripts/validate_readiness_residual_gates.py` | 4 valid, 5 expected-invalid | `experiments/readiness_residual_gates/results/2026-06-28-local.md` |
 | Benchmark anti-Goodhart harness | `python3 scripts/validate_benchmark_antigoodhart.py` | 2 valid, 5 expected-invalid | `experiments/benchmark_antigoodhart/results/2026-06-28-local.md` |
