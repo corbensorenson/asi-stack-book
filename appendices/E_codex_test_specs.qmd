@@ -95,6 +95,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Capability tier assignment test | planned | not run |
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Failed-quality fallback finite-record proof | implemented | builds in AsiStackProofs.PlanForge; no deployed scheduler claim |
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Plan-control dispatch route proof | implemented | passes via Lean build; finite dispatch-route coverage only |
+| `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Plan-graph admission lifecycle route proof | implemented | passes via Lean build; finite plan-graph admission route coverage only, with no planner-quality, scheduler, route-quality, or runtime-replanning claim |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Requirement preservation test | implemented | passes via synthetic plan-execution contract harness |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Semantic lowering route proof | implemented | passes via Lean build; finite semantic-lowering route coverage only |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Incremental repair regression test | planned | not run |
@@ -400,16 +401,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 138 |
+| Proof targets covered by triage | 139 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 138 |
+| implemented | 139 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 138 |
+| implemented | formal-invariant | lean-candidate | 139 |

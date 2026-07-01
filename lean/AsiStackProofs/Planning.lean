@@ -258,4 +258,430 @@ theorem valid_dispatchable_plan_routes_to_allow_dispatch
   ]
   simp
 
+inductive PlanGraphAdmissionRoute where
+  | missingCommandContract
+  | missingDecomposition
+  | cyclicGraph
+  | unorderedDependencies
+  | authorityEscalation
+  | missingContextDemand
+  | missingAdequacyContract
+  | missingVerificationPlan
+  | missingDispatchGate
+  | missingDispatchReceipt
+  | invalidReplanDelta
+  | missingResidualRegister
+  | missingNonClaimBoundary
+  | admissible
+deriving DecidableEq, Repr
+
+structure PlanGraphAdmissionReview where
+  commandContractAccepted : Bool
+  decompositionComplete : Bool
+  acyclicCertificate : Bool
+  dependenciesOrdered : Bool
+  authorityWithinParent : Bool
+  contextDemandDeclared : Bool
+  adequacyContractDeclared : Bool
+  verificationPlanDeclared : Bool
+  dispatchGateSatisfied : Bool
+  dispatchReceiptPresent : Bool
+  replanAttempted : Bool
+  replanPreservesAuthority : Bool
+  replanPreservesStopConditions : Bool
+  residualRegisterPresent : Bool
+  nonClaimsPresent : Bool
+deriving DecidableEq, Repr
+
+def ReplanControlsPreserved (review : PlanGraphAdmissionReview) : Prop :=
+  review.replanAttempted = false ∨
+    (review.replanPreservesAuthority = true ∧
+      review.replanPreservesStopConditions = true ∧
+        review.residualRegisterPresent = true)
+
+def PlanGraphAdmissionRouteFor
+    (review : PlanGraphAdmissionReview) :
+    PlanGraphAdmissionRoute :=
+  if !review.commandContractAccepted then
+    PlanGraphAdmissionRoute.missingCommandContract
+  else if !review.decompositionComplete then
+    PlanGraphAdmissionRoute.missingDecomposition
+  else if !review.acyclicCertificate then
+    PlanGraphAdmissionRoute.cyclicGraph
+  else if !review.dependenciesOrdered then
+    PlanGraphAdmissionRoute.unorderedDependencies
+  else if !review.authorityWithinParent then
+    PlanGraphAdmissionRoute.authorityEscalation
+  else if !review.contextDemandDeclared then
+    PlanGraphAdmissionRoute.missingContextDemand
+  else if !review.adequacyContractDeclared then
+    PlanGraphAdmissionRoute.missingAdequacyContract
+  else if !review.verificationPlanDeclared then
+    PlanGraphAdmissionRoute.missingVerificationPlan
+  else if !review.dispatchGateSatisfied then
+    PlanGraphAdmissionRoute.missingDispatchGate
+  else if !review.dispatchReceiptPresent then
+    PlanGraphAdmissionRoute.missingDispatchReceipt
+  else if review.replanAttempted then
+    if review.replanPreservesAuthority &&
+        review.replanPreservesStopConditions &&
+          review.residualRegisterPresent then
+      if review.nonClaimsPresent then
+        PlanGraphAdmissionRoute.admissible
+      else
+        PlanGraphAdmissionRoute.missingNonClaimBoundary
+    else
+      PlanGraphAdmissionRoute.invalidReplanDelta
+  else if !review.residualRegisterPresent then
+    PlanGraphAdmissionRoute.missingResidualRegister
+  else if !review.nonClaimsPresent then
+    PlanGraphAdmissionRoute.missingNonClaimBoundary
+  else
+    PlanGraphAdmissionRoute.admissible
+
+theorem missing_command_contract_blocks_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.missingCommandContract := by
+  intro missingContract
+  unfold PlanGraphAdmissionRouteFor
+  rw [missingContract]
+  simp
+
+theorem incomplete_decomposition_blocks_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.missingDecomposition := by
+  intro commandAccepted incompleteDecomposition
+  unfold PlanGraphAdmissionRouteFor
+  rw [commandAccepted, incompleteDecomposition]
+  simp
+
+theorem cyclic_plan_graph_blocks_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.cyclicGraph := by
+  intro commandAccepted decompositionComplete cyclicGraph
+  unfold PlanGraphAdmissionRouteFor
+  rw [commandAccepted, decompositionComplete, cyclicGraph]
+  simp
+
+theorem unordered_dependencies_block_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.unorderedDependencies := by
+  intro commandAccepted decompositionComplete acyclic unorderedDependencies
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    unorderedDependencies
+  ]
+  simp
+
+theorem authority_escalation_blocks_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.authorityEscalation := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityEscalates
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityEscalates
+  ]
+  simp
+
+theorem missing_context_demand_blocks_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.missingContextDemand := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk missingContext
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    missingContext
+  ]
+  simp
+
+theorem missing_adequacy_contract_blocks_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = true ->
+    review.adequacyContractDeclared = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.missingAdequacyContract := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk contextOk missingAdequacy
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    contextOk,
+    missingAdequacy
+  ]
+  simp
+
+theorem missing_verification_plan_blocks_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = true ->
+    review.adequacyContractDeclared = true ->
+    review.verificationPlanDeclared = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.missingVerificationPlan := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk contextOk adequacyOk missingVerification
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    contextOk,
+    adequacyOk,
+    missingVerification
+  ]
+  simp
+
+theorem missing_dispatch_gate_blocks_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = true ->
+    review.adequacyContractDeclared = true ->
+    review.verificationPlanDeclared = true ->
+    review.dispatchGateSatisfied = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.missingDispatchGate := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk contextOk adequacyOk verificationOk missingGate
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    contextOk,
+    adequacyOk,
+    verificationOk,
+    missingGate
+  ]
+  simp
+
+theorem missing_dispatch_receipt_blocks_plan_graph_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = true ->
+    review.adequacyContractDeclared = true ->
+    review.verificationPlanDeclared = true ->
+    review.dispatchGateSatisfied = true ->
+    review.dispatchReceiptPresent = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.missingDispatchReceipt := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk contextOk adequacyOk verificationOk gateOk missingReceipt
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    contextOk,
+    adequacyOk,
+    verificationOk,
+    gateOk,
+    missingReceipt
+  ]
+  simp
+
+theorem replanning_without_authority_preservation_blocks_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = true ->
+    review.adequacyContractDeclared = true ->
+    review.verificationPlanDeclared = true ->
+    review.dispatchGateSatisfied = true ->
+    review.dispatchReceiptPresent = true ->
+    review.replanAttempted = true ->
+    review.replanPreservesAuthority = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.invalidReplanDelta := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk contextOk adequacyOk verificationOk gateOk receiptOk replan attemptedWidening
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    contextOk,
+    adequacyOk,
+    verificationOk,
+    gateOk,
+    receiptOk,
+    replan,
+    attemptedWidening
+  ]
+  simp
+
+theorem missing_residual_register_blocks_new_plan_admission
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = true ->
+    review.adequacyContractDeclared = true ->
+    review.verificationPlanDeclared = true ->
+    review.dispatchGateSatisfied = true ->
+    review.dispatchReceiptPresent = true ->
+    review.replanAttempted = false ->
+    review.residualRegisterPresent = false ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.missingResidualRegister := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk contextOk adequacyOk verificationOk gateOk receiptOk noReplan missingResiduals
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    contextOk,
+    adequacyOk,
+    verificationOk,
+    gateOk,
+    receiptOk,
+    noReplan,
+    missingResiduals
+  ]
+  simp
+
+theorem complete_new_plan_graph_routes_to_admissible
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = true ->
+    review.adequacyContractDeclared = true ->
+    review.verificationPlanDeclared = true ->
+    review.dispatchGateSatisfied = true ->
+    review.dispatchReceiptPresent = true ->
+    review.replanAttempted = false ->
+    review.residualRegisterPresent = true ->
+    review.nonClaimsPresent = true ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.admissible := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk contextOk adequacyOk verificationOk gateOk receiptOk noReplan residuals nonClaims
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    contextOk,
+    adequacyOk,
+    verificationOk,
+    gateOk,
+    receiptOk,
+    noReplan,
+    residuals,
+    nonClaims
+  ]
+  simp
+
+theorem complete_replanned_graph_routes_to_admissible
+    {review : PlanGraphAdmissionReview} :
+    review.commandContractAccepted = true ->
+    review.decompositionComplete = true ->
+    review.acyclicCertificate = true ->
+    review.dependenciesOrdered = true ->
+    review.authorityWithinParent = true ->
+    review.contextDemandDeclared = true ->
+    review.adequacyContractDeclared = true ->
+    review.verificationPlanDeclared = true ->
+    review.dispatchGateSatisfied = true ->
+    review.dispatchReceiptPresent = true ->
+    review.replanAttempted = true ->
+    review.replanPreservesAuthority = true ->
+    review.replanPreservesStopConditions = true ->
+    review.residualRegisterPresent = true ->
+    review.nonClaimsPresent = true ->
+    PlanGraphAdmissionRouteFor review =
+      PlanGraphAdmissionRoute.admissible := by
+  intro commandAccepted decompositionComplete acyclic ordered authorityOk contextOk adequacyOk verificationOk gateOk receiptOk replan authorityPreserved stopsPreserved residuals nonClaims
+  unfold PlanGraphAdmissionRouteFor
+  rw [
+    commandAccepted,
+    decompositionComplete,
+    acyclic,
+    ordered,
+    authorityOk,
+    contextOk,
+    adequacyOk,
+    verificationOk,
+    gateOk,
+    receiptOk,
+    replan,
+    authorityPreserved,
+    stopsPreserved,
+    residuals,
+    nonClaims
+  ]
+  simp
+
 end AsiStackProofs.Planning

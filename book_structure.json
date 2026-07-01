@@ -3106,6 +3106,11 @@
               "name": "Plan-control dispatch route proof",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite dispatch-route coverage only"
+            },
+            {
+              "name": "Plan-graph admission lifecycle route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite plan-graph admission route coverage only, with no planner-quality, scheduler, route-quality, or runtime-replanning claim"
             }
           ],
           "lean_module": "AsiStackProofs.Planning",
@@ -3120,6 +3125,12 @@
               "tag": "lean:planning.control_layer.failure_blocks_promotion",
               "module": "AsiStackProofs.Planning",
               "target": "A plan with unsatisfied required constraints cannot be dispatched.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:planning.control_layer.plan_graph_admission_route",
+              "module": "AsiStackProofs.Planning",
+              "target": "Modeled plan-graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries to explicit outcomes.",
               "status": "implemented"
             },
             {

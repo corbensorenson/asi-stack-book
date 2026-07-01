@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 138 |
-| Manifest status counts | {"implemented": 138} |
-| Triage class counts | {"formal-invariant": 138} |
+| Proof targets audited | 139 |
+| Manifest status counts | {"implemented": 139} |
+| Triage class counts | {"formal-invariant": 139} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -59,7 +59,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 4 | 2 | 2 |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | 5 | 22 | 5 | 5 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |
-| `lean/AsiStackProofs/Planning.lean` | 2 | 9 | 6 | 4 |
+| `lean/AsiStackProofs/Planning.lean` | 3 | 23 | 8 | 5 |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | 3 | 15 | 7 | 6 |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | 2 | 19 | 7 | 3 |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | 2 | 7 | 5 | 3 |
@@ -116,7 +116,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `moral-uncertainty-and-value-conflict` | 5 | 5 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 5 | 5 | 0 | 0 |
-| `planning-as-a-control-layer` | 4 | 4 | 0 | 0 |
+| `planning-as-a-control-layer` | 5 | 5 | 0 | 0 |
 | `policy-optimization-and-learning-from-feedback` | 3 | 3 | 0 | 0 |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 2 | 0 | 0 |
 | `project-theseus-as-report-first-implementation-reference` | 2 | 2 | 0 | 0 |
@@ -186,6 +186,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:command.semantic_interface.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.CommandContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.operational_invariant` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:planning.control_layer.plan_graph_admission_route` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planforge.dag.operational_invariant` | `planning-as-a-control-layer` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planforge.dag.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_compilation.ir.operational_invariant` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilation` | triage ok; module ok; chapter tag ok; limitation ok |

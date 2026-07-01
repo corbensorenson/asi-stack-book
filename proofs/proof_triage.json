@@ -481,6 +481,16 @@
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
     },
     {
+      "tag": "lean:planning.control_layer.plan_graph_admission_route",
+      "chapter_id": "planning-as-a-control-layer",
+      "module": "AsiStackProofs.Planning",
+      "formal_target": "Modeled plan-graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Planning as a finite plan-graph admission route function and derived route theorems for missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, non-claim boundaries, and complete new or replanned graph records."
+    },
+    {
       "tag": "lean:planforge.dag.operational_invariant",
       "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.PlanForge",

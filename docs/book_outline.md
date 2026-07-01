@@ -1035,6 +1035,7 @@ Draft deliverables:
 - Planned Codex test: Decomposition accuracy test.
 - Implemented synthetic Codex test: Dependency ordering and blocked-versus-dispatchable state checks via `python3 scripts/validate_plan_execution_contracts.py`; runtime planner remains open.
 - Implemented finite-record proof follow-through: `AsiStackProofs.Planning` now includes a `PlanControlRecord` envelope for modeled dispatchable, blocked, and replanned records plus a finite `PlanControlRouteFor` dispatch decision; it checks required dispatch gates, receipt separation, parent-authority preservation, replanning stop-condition preservation, residual bookkeeping, non-claim presence, and valid dispatchable-record routing to `allowDispatch` without treating those predicates as planner-quality, route-quality, scheduler, or runtime-replanning evidence.
+- Implemented finite-record proof follow-through: `AsiStackProofs.Planning` now includes a `PlanGraphAdmissionReview` and `PlanGraphAdmissionRouteFor` decision surface for missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries; this remains record-routing evidence only, not decomposition quality, selected-tier adequacy, route quality, scheduler behavior, or deployed replanning.
 - Planned Codex test: Context-demand prediction test.
 - Planned Codex test: Runtime replanning test.
 - Planned Codex test: Dispatch-state enforcement test.
@@ -1051,6 +1052,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:planning.control_layer.operational_invariant` | `AsiStackProofs.Planning` | A plan node inherits the authority ceiling of its parent contract unless governance lowers it. | implemented |
 | `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | implemented |
+| `lean:planning.control_layer.plan_graph_admission_route` | `AsiStackProofs.Planning` | Modeled plan-graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 

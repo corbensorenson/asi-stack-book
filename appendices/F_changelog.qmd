@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-01 - Expand Planning graph admission proofs
+
+- Added a finite `PlanGraphAdmissionReview` and
+  `PlanGraphAdmissionRouteFor` model to `AsiStackProofs.Planning`, with
+  derived route theorems for missing command-contract acceptance, complete
+  decomposition, acyclicity, dependency order, authority inheritance, context
+  demand, adequacy contract, verification plan, dispatch gate, dispatch
+  receipt, replanning controls, residual register, and non-claim boundary.
+- Updated the Planning chapter, outline, manifest proof target/test rows,
+  proof adequacy review, and roadmap burn-down row to record the broader
+  finite-record proof envelope.
+- Planning remains at `argument`; this does not prove decomposition quality,
+  planner quality, graph completeness, selected-tier adequacy, route quality,
+  scheduler behavior, cost-quality dominance, runtime replanning, deployed
+  execution, or support-state promotion.
+
 ## 2026-07-01 - Add Procedural Memory external comparators
 
 - Added source inventory records and public source notes for Toolformer
