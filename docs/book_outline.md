@@ -1966,15 +1966,16 @@ Draft deliverables:
 - Implemented Codex test: Portal, approval, bid, and federation fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Policy-first scheduling denial as a finite Lean predicate only.
 - Implemented Codex test: Hive work admission lifecycle route as a finite Lean route predicate only.
-- Planned Codex test: Data locality and rented-node denial test.
-- Planned Codex test: Phone approval gate test.
-- Planned Codex test: Child topic routing test.
-- Planned Codex test: External project sandbox contract test.
-- Planned Codex test: Audit replay test.
+- Implemented Codex test: Hive admission harness through `python3 scripts/validate_hive_admission.py`, covering 2 valid and 8 expected-invalid synthetic Personal Compute Hive admission fixtures for policy-first scheduling, data locality/rented-node denial, approval receipts, guardian portal routing, federation lease boundaries, job bidding, energy/dropout residuals, audit replay refs, and support-state non-promotion.
+- Implemented Codex test: Data locality and rented-node denial as synthetic record validation only; no rented-node sandbox, privacy guarantee, or deployed scheduler claim.
+- Implemented Codex test: Phone approval gate as synthetic record validation only; no approval-service, phone-portal, or deployed execution claim.
+- Implemented Codex test: Child topic routing as synthetic record validation only; no family-governance engine or child-safety behavior claim.
+- Implemented Codex test: External project sandbox contract as synthetic record validation only; no network overlay, federation run, or rented-node sandbox claim.
+- Implemented Codex test: Audit replay as audit-ref and residual-presence validation only; no replay service or deployed audit reconstruction claim.
 - Planned Codex test: Cross-router connectivity test.
-- Planned Codex test: Job bidding test.
-- Planned Codex test: Device dropout test.
-- Planned Codex test: Energy-aware scheduling test.
+- Implemented Codex test: Job bidding as synthetic bid-selection and policy-blocked rejection validation only; no scheduler-quality or optimality claim.
+- Implemented Codex test: Device dropout as dropout/requeue residual-presence validation only; no recovery run or live device dropout claim.
+- Implemented Codex test: Energy-aware scheduling as synthetic energy-budget and thermal-risk rejection validation only; no energy measurement or live scheduling claim.
 - Planned Codex test: Portal continuity test.
 
 Lean proof targets:

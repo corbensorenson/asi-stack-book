@@ -1,0 +1,91 @@
+{
+  "scenario_id": "invalid_missing_audit_replay_refs",
+  "device_resource_cards": [
+    {
+      "device_id": "device://home-desktop-gpu-demo",
+      "owner_principal": "principal://owner",
+      "trust_tier": "owner_private",
+      "locality_class": "home",
+      "compute_profile": "local worker",
+      "storage_profile": "private workspace",
+      "network_profile": "home network",
+      "allowed_data_classes": ["public_source_notes"],
+      "allowed_tool_classes": ["schema_validation"],
+      "secret_handle_capability": "none",
+      "operator_presence_mode": "not_required",
+      "enrollment_status": "active",
+      "revocation_path": "revoke device"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://owner-phone",
+    "human_principal": "principal://owner",
+    "input_modes": ["status"],
+    "output_modes": ["status"],
+    "authority_level": "approval_surface",
+    "privacy_context": "public",
+    "attention_level": "interactive",
+    "locality_class": "mobile",
+    "safe_output_profile": "status only",
+    "revocation_path": "disable portal",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_contract": {
+    "job_id": "hive-job://missing-audit",
+    "objective": "Run public validation without replayable audit evidence.",
+    "context_packet_refs": ["context://public"],
+    "data_classes": ["public_source_notes"],
+    "tool_classes": ["schema_validation"],
+    "authority_ceiling": "public validation only",
+    "physical_risk_tier": "low",
+    "federation_scope": "local_only",
+    "budget_limit": "no spend",
+    "energy_policy": "within budget",
+    "deadline": "fixture",
+    "required_approvals": [],
+    "verification_predicate": "validator exits",
+    "residual_policy": "record residual",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://missing-audit",
+      "job_id": "hive-job://missing-audit",
+      "bidder_device_id": "device://home-desktop-gpu-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "5 minutes",
+      "estimated_cost": "zero",
+      "estimated_energy": "within budget",
+      "data_transfer_estimate": "public data only",
+      "thermal_risk": "low",
+      "interruption_risk": "low",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "eligible",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove runtime scheduler.", "Does not promote chapter support state."]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://missing-audit",
+    "job_id": "hive-job://missing-audit",
+    "eligible_nodes": ["device://home-desktop-gpu-demo"],
+    "rejected_nodes": [],
+    "selected_node_id": "device://home-desktop-gpu-demo",
+    "selected_reason": "selected without audit command refs",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": [],
+    "data_placement_refs": ["context://public"],
+    "secret_handle_plan": "no secrets",
+    "estimated_cost": "zero",
+    "estimated_energy": "within budget",
+    "isolation_mode": "local process",
+    "expiration": "fixture",
+    "evidence_refs": ["docs/hive_admission_harness.md"],
+    "residuals": ["record only"],
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "approval_receipts": [],
+  "federation_leases": [],
+  "non_claims": ["Does not execute a deployed hive scheduler.", "Does not promote chapter support state."]
+}

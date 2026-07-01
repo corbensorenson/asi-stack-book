@@ -1,0 +1,125 @@
+{
+  "scenario_id": "invalid_rented_node_private_data_selected",
+  "device_resource_cards": [
+    {
+      "device_id": "device://rented-gpu-fast-demo",
+      "owner_principal": "principal://rented-provider",
+      "trust_tier": "rented_public",
+      "locality_class": "rented_region",
+      "compute_profile": "fast rented GPU",
+      "storage_profile": "ephemeral public scratch",
+      "network_profile": "public sandbox egress only",
+      "allowed_data_classes": ["personal_private", "public_source_notes"],
+      "allowed_tool_classes": ["schema_validation"],
+      "secret_handle_capability": "none",
+      "operator_presence_mode": "not_required",
+      "enrollment_status": "active",
+      "revocation_path": "delete lease"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://owner-phone",
+    "human_principal": "principal://owner",
+    "input_modes": ["approval"],
+    "output_modes": ["status"],
+    "authority_level": "approval_surface",
+    "privacy_context": "personal_private",
+    "attention_level": "interactive",
+    "locality_class": "mobile",
+    "safe_output_profile": "status only",
+    "revocation_path": "revoke portal",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_contract": {
+    "job_id": "hive-job://private-on-rented",
+    "objective": "Incorrectly send private draft context to a rented node.",
+    "context_packet_refs": ["context://private-draft"],
+    "data_classes": ["personal_private"],
+    "tool_classes": ["schema_validation"],
+    "authority_ceiling": "read private draft",
+    "physical_risk_tier": "medium",
+    "federation_scope": "rented",
+    "budget_limit": "metered",
+    "energy_policy": "not checked",
+    "deadline": "fixture",
+    "required_approvals": ["approval://owner-private-rented"],
+    "verification_predicate": "validator exits",
+    "residual_policy": "record residual",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://rented-private",
+      "job_id": "hive-job://private-on-rented",
+      "bidder_device_id": "device://rented-gpu-fast-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "3 minutes",
+      "estimated_cost": "metered",
+      "estimated_energy": "unknown",
+      "data_transfer_estimate": "private draft upload",
+      "thermal_risk": "unknown",
+      "interruption_risk": "medium",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "incorrectly marked eligible",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove deployed runtime scheduler.", "Does not promote chapter support state."]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://private-on-rented",
+    "job_id": "hive-job://private-on-rented",
+    "eligible_nodes": ["device://rented-gpu-fast-demo"],
+    "rejected_nodes": [],
+    "selected_node_id": "device://rented-gpu-fast-demo",
+    "selected_reason": "selected for speed",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": ["approval://owner-private-rented"],
+    "data_placement_refs": ["context://private-draft"],
+    "secret_handle_plan": "no secrets",
+    "estimated_cost": "metered",
+    "estimated_energy": "unknown",
+    "isolation_mode": "rented sandbox",
+    "expiration": "fixture",
+    "evidence_refs": ["docs/hive_admission_harness.md", "scripts/validate_hive_admission.py"],
+    "residuals": ["audit replay is record-level only"],
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "approval_receipts": [
+    {
+      "approval_id": "approval://owner-private-rented",
+      "approver_principal": "principal://owner",
+      "portal_id": "portal://owner-phone",
+      "job_id": "hive-job://private-on-rented",
+      "approval_scope": "Approve private rented execution.",
+      "granted_permissions": ["schema_validation"],
+      "denied_permissions": [],
+      "valid_from": "2026-07-01T00:00:00Z",
+      "valid_until": "fixture",
+      "reversal_path": "stop job",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove deployed approval runtime.", "Does not promote chapter support state."]
+    }
+  ],
+  "federation_leases": [
+    {
+      "lease_id": "hive-lease://private-rented",
+      "provider_hive": "hive://rented",
+      "requester_hive": "hive://personal",
+      "job_contract_ref": "hive-job://private-on-rented",
+      "allowed_job_classes": ["schema_validation"],
+      "allowed_data_classes": ["personal_private"],
+      "allowed_tool_classes": ["schema_validation"],
+      "network_scope": "sandbox egress only",
+      "sandbox_manifest_ref": "sandbox://fixture",
+      "budget_limit": "metered",
+      "payment_or_credit_ref": "credit://fixture",
+      "evidence_obligations": ["artifact_log", "validator_command"],
+      "issued_at": "2026-07-01T00:00:00Z",
+      "expires_at": "fixture",
+      "revocation_path": "delete sandbox",
+      "non_claims": ["Does not prove deployed federation runtime.", "Does not promote chapter support state."]
+    }
+  ],
+  "non_claims": ["Does not execute a deployed hive scheduler.", "Does not promote chapter support state."]
+}

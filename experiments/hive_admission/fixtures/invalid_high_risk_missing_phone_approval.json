@@ -1,0 +1,91 @@
+{
+  "scenario_id": "invalid_high_risk_missing_phone_approval",
+  "device_resource_cards": [
+    {
+      "device_id": "device://home-desktop-gpu-demo",
+      "owner_principal": "principal://owner",
+      "trust_tier": "owner_private",
+      "locality_class": "home",
+      "compute_profile": "local worker",
+      "storage_profile": "private workspace",
+      "network_profile": "home network",
+      "allowed_data_classes": ["personal_private"],
+      "allowed_tool_classes": ["local_render"],
+      "secret_handle_capability": "handles_only",
+      "operator_presence_mode": "phone_approval",
+      "enrollment_status": "active",
+      "revocation_path": "revoke device"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://owner-phone",
+    "human_principal": "principal://owner",
+    "input_modes": ["approval"],
+    "output_modes": ["status"],
+    "authority_level": "approval_surface",
+    "privacy_context": "personal_private",
+    "attention_level": "interactive",
+    "locality_class": "mobile",
+    "safe_output_profile": "status only",
+    "revocation_path": "revoke portal",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_contract": {
+    "job_id": "hive-job://high-risk-no-approval",
+    "objective": "Run high-risk local tool use without the required phone approval.",
+    "context_packet_refs": ["context://private"],
+    "data_classes": ["personal_private"],
+    "tool_classes": ["local_render"],
+    "authority_ceiling": "local high-risk execution",
+    "physical_risk_tier": "high",
+    "federation_scope": "local_only",
+    "budget_limit": "local only",
+    "energy_policy": "within budget",
+    "deadline": "fixture",
+    "required_approvals": ["approval://owner-required"],
+    "verification_predicate": "validator exits",
+    "residual_policy": "record residual",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://home-high-risk",
+      "job_id": "hive-job://high-risk-no-approval",
+      "bidder_device_id": "device://home-desktop-gpu-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "10 minutes",
+      "estimated_cost": "zero external spend",
+      "estimated_energy": "within budget",
+      "data_transfer_estimate": "local only",
+      "thermal_risk": "low",
+      "interruption_risk": "medium",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "incorrectly eligible without approval",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove runtime scheduler quality.", "Does not promote chapter support state."]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://high-risk-no-approval",
+    "job_id": "hive-job://high-risk-no-approval",
+    "eligible_nodes": ["device://home-desktop-gpu-demo"],
+    "rejected_nodes": [],
+    "selected_node_id": "device://home-desktop-gpu-demo",
+    "selected_reason": "selected without approval",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": [],
+    "data_placement_refs": ["context://private"],
+    "secret_handle_plan": "handles only",
+    "estimated_cost": "zero external spend",
+    "estimated_energy": "within budget",
+    "isolation_mode": "local",
+    "expiration": "fixture",
+    "evidence_refs": ["docs/hive_admission_harness.md", "scripts/validate_hive_admission.py"],
+    "residuals": ["audit replay is record-level only"],
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "approval_receipts": [],
+  "federation_leases": [],
+  "non_claims": ["Does not execute a deployed hive scheduler.", "Does not promote chapter support state."]
+}

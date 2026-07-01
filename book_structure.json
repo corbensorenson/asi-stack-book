@@ -6553,15 +6553,70 @@
               "result_status": "passes via Lean build",
               "status": "implemented as a finite Lean predicate; no scheduler run"
             },
-            "Data locality and rented-node denial test",
-            "Phone approval gate test",
-            "Child topic routing test",
-            "External project sandbox contract test",
-            "Audit replay test",
+            {
+              "name": "Hive admission harness",
+              "purpose": "Check deterministic Personal Compute Hive admission packets for policy-first scheduling, data locality, approval receipts, guardian portal routing, federation leases, energy/dropout residuals, audit evidence refs, and no-promotion boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py; 2 valid and 8 expected-invalid synthetic fixtures",
+              "status": "implemented as synthetic record validation only; no deployed hive, scheduler, device registry, network overlay, approval service, guardian-policy engine, rented-node sandbox, federation, energy measurement, dropout recovery, privacy, security, or support-state claim"
+            },
+            {
+              "name": "Data locality and rented-node denial test",
+              "purpose": "Confirm private or family data cannot be sent to a rented node unless the job contract explicitly permits the exposure class.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py",
+              "status": "implemented as synthetic record validation; no rented-node sandbox, privacy guarantee, or deployed scheduler claim"
+            },
+            {
+              "name": "Phone approval gate test",
+              "purpose": "Confirm a high-risk or high-spend job cannot execute until a bound approval receipt exists.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py",
+              "status": "implemented as synthetic record validation; no approval-service, phone-portal, or deployed execution claim"
+            },
+            {
+              "name": "Child topic routing test",
+              "purpose": "Confirm child-facing portals deny or escalate sensitive topics according to guardian policy rather than routing them to ordinary workers.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py",
+              "status": "implemented as synthetic record validation; no family-governance engine or child-safety behavior claim"
+            },
+            {
+              "name": "External project sandbox contract test",
+              "purpose": "Confirm project-to-personal federation receives only a sandboxed lease and cannot discover private network resources.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py",
+              "status": "implemented as synthetic record validation; no network overlay, federation run, or rented-node sandbox claim"
+            },
+            {
+              "name": "Audit replay test",
+              "purpose": "Reconstruct why a job ran on a node from device cards, job contract, scheduling decision, approvals, and evidence refs.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py",
+              "status": "implemented as audit-ref and residual-presence validation; no replay service or deployed audit reconstruction claim"
+            },
             "Cross-router connectivity test",
-            "Job bidding test",
-            "Device dropout test",
-            "Energy-aware scheduling test",
+            {
+              "name": "Job bidding test",
+              "purpose": "Confirm eligible nodes can estimate latency, cost, energy, locality, and capability after policy filtering.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py",
+              "status": "implemented as synthetic bid-selection and policy-blocked rejection validation; no scheduler-quality or optimality claim"
+            },
+            {
+              "name": "Device dropout test",
+              "purpose": "Confirm a job records residuals and recovers or requeues when the selected device leaves the hive.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py",
+              "status": "implemented as dropout/requeue residual-presence validation; no recovery run or live device dropout claim"
+            },
+            {
+              "name": "Energy-aware scheduling test",
+              "purpose": "Confirm battery, thermal, and quiet-hour constraints can reject or down-rank otherwise capable nodes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_hive_admission.py",
+              "status": "implemented as synthetic energy-budget and thermal-risk rejection validation; no energy measurement or live scheduling claim"
+            },
             "Portal continuity test",
             {
               "name": "Bound approval receipt test",
@@ -6619,8 +6674,8 @@
           ],
           "draft_maturity": "chapter draft",
           "open_evidence_gaps": [
-            "Appendix C now records exact passage-reviewed mappings for all assigned Personal Compute Hives sources; support remains at argument until a live device registry, policy-first scheduler, portal approval service, federation protocol, family-governance policy engine, rented-node sandbox, or behavioral tests exist.",
-            "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no personal hive scheduler, network overlay, device registry, approval portal, rented-node sandbox, or federation run has been executed from this repository.",
+            "Appendix C now records exact passage-reviewed mappings for all assigned Personal Compute Hives sources; support remains at argument because the new hive admission harness is synthetic record validation only and no live device registry, policy-first scheduler, portal approval service, federation protocol, family-governance policy engine, rented-node sandbox, or deployed behavioral tests exist.",
+            "Record-shape schemas, valid fixtures, narrow finite Lean predicates, and the synthetic hive admission harness have been implemented; no personal hive scheduler, network overlay, device registry, approval portal, rented-node sandbox, federation run, energy measurement, dropout recovery run, privacy guarantee, or security result has been executed from this repository.",
             "External tooling sources are reviewed as adjacent substrate references only; they do not prove the ASI Stack hive design or any safety property."
           ],
           "lean_module": "AsiStackProofs.PersonalComputeHives"

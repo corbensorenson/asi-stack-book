@@ -1,0 +1,93 @@
+{
+  "scenario_id": "invalid_child_topic_without_guardian_surface",
+  "device_resource_cards": [
+    {
+      "device_id": "device://family-tablet-demo",
+      "owner_principal": "principal://guardian",
+      "guardian_principal": "principal://guardian",
+      "trust_tier": "family_managed",
+      "locality_class": "home",
+      "compute_profile": "family tablet portal",
+      "storage_profile": "family profile cache",
+      "network_profile": "home network",
+      "allowed_data_classes": ["family_sensitive"],
+      "allowed_tool_classes": ["schema_validation"],
+      "secret_handle_capability": "none",
+      "operator_presence_mode": "guardian_required",
+      "enrollment_status": "active",
+      "revocation_path": "disable family portal"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://child-tablet",
+    "human_principal": "principal://child",
+    "guardian_principal": "principal://guardian",
+    "input_modes": ["chat"],
+    "output_modes": ["explanation"],
+    "authority_level": "ordinary_request",
+    "privacy_context": "family_sensitive",
+    "attention_level": "interactive",
+    "locality_class": "home",
+    "safe_output_profile": "ordinary child-facing output",
+    "revocation_path": "disable portal",
+    "non_claims": ["Does not prove deployed family runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_contract": {
+    "job_id": "hive-job://child-sensitive-topic",
+    "objective": "Answer a child-sensitive guardian topic without guardian routing.",
+    "context_packet_refs": ["context://family-sensitive"],
+    "data_classes": ["family_sensitive"],
+    "tool_classes": ["schema_validation"],
+    "authority_ceiling": "ordinary child request",
+    "physical_risk_tier": "medium",
+    "federation_scope": "family",
+    "budget_limit": "local only",
+    "energy_policy": "within budget",
+    "deadline": "fixture",
+    "required_approvals": ["approval://guardian-required"],
+    "verification_predicate": "guardian-sensitive routing is checked",
+    "residual_policy": "record residual",
+    "non_claims": ["Does not prove deployed family runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://family-tablet",
+      "job_id": "hive-job://child-sensitive-topic",
+      "bidder_device_id": "device://family-tablet-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "1 minute",
+      "estimated_cost": "zero external spend",
+      "estimated_energy": "within budget",
+      "data_transfer_estimate": "family sensitive local context",
+      "thermal_risk": "low",
+      "interruption_risk": "low",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "incorrectly eligible without guardian surface",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove runtime family scheduler.", "Does not promote chapter support state."]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://child-sensitive-topic",
+    "job_id": "hive-job://child-sensitive-topic",
+    "eligible_nodes": ["device://family-tablet-demo"],
+    "rejected_nodes": [],
+    "selected_node_id": "device://family-tablet-demo",
+    "selected_reason": "ordinary route",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": [],
+    "data_placement_refs": ["context://family-sensitive"],
+    "secret_handle_plan": "no secrets",
+    "estimated_cost": "zero external spend",
+    "estimated_energy": "within budget",
+    "isolation_mode": "local family portal",
+    "expiration": "fixture",
+    "evidence_refs": ["docs/hive_admission_harness.md", "scripts/validate_hive_admission.py"],
+    "residuals": ["audit replay is record-level only"],
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "approval_receipts": [],
+  "federation_leases": [],
+  "non_claims": ["Does not execute a deployed family hive.", "Does not promote chapter support state."]
+}

@@ -1,0 +1,91 @@
+{
+  "scenario_id": "invalid_dropout_without_requeue_residual",
+  "device_resource_cards": [
+    {
+      "device_id": "device://mobile-laptop-demo",
+      "owner_principal": "principal://owner",
+      "trust_tier": "owner_private",
+      "locality_class": "mobile",
+      "compute_profile": "laptop worker",
+      "storage_profile": "local cache",
+      "network_profile": "mobile network",
+      "allowed_data_classes": ["public_source_notes"],
+      "allowed_tool_classes": ["schema_validation"],
+      "secret_handle_capability": "none",
+      "operator_presence_mode": "local_present",
+      "enrollment_status": "active",
+      "revocation_path": "disable laptop worker"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://owner-phone",
+    "human_principal": "principal://owner",
+    "input_modes": ["status"],
+    "output_modes": ["status"],
+    "authority_level": "approval_surface",
+    "privacy_context": "public",
+    "attention_level": "interactive",
+    "locality_class": "mobile",
+    "safe_output_profile": "status only",
+    "revocation_path": "disable portal",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_contract": {
+    "job_id": "hive-job://dropout-no-residual",
+    "objective": "Run public validation on an interruptible device without dropout residual.",
+    "context_packet_refs": ["context://public"],
+    "data_classes": ["public_source_notes"],
+    "tool_classes": ["schema_validation"],
+    "authority_ceiling": "public validation only",
+    "physical_risk_tier": "low",
+    "federation_scope": "local_only",
+    "budget_limit": "no spend",
+    "energy_policy": "within budget",
+    "deadline": "fixture",
+    "required_approvals": [],
+    "verification_predicate": "validator exits",
+    "residual_policy": "record residual",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://dropout-high-risk",
+      "job_id": "hive-job://dropout-no-residual",
+      "bidder_device_id": "device://mobile-laptop-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "10 minutes",
+      "estimated_cost": "zero",
+      "estimated_energy": "within budget",
+      "data_transfer_estimate": "public data only",
+      "thermal_risk": "low",
+      "interruption_risk": "high",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "incorrectly eligible without dropout plan",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove runtime scheduler.", "Does not promote chapter support state."]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://dropout-no-residual",
+    "job_id": "hive-job://dropout-no-residual",
+    "eligible_nodes": ["device://mobile-laptop-demo"],
+    "rejected_nodes": [],
+    "selected_node_id": "device://mobile-laptop-demo",
+    "selected_reason": "selected without interruption plan",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": [],
+    "data_placement_refs": ["context://public"],
+    "secret_handle_plan": "no secrets",
+    "estimated_cost": "zero",
+    "estimated_energy": "within budget",
+    "isolation_mode": "local process",
+    "expiration": "fixture",
+    "evidence_refs": ["docs/hive_admission_harness.md", "scripts/validate_hive_admission.py"],
+    "residuals": ["audit replay is record-level only"],
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "approval_receipts": [],
+  "federation_leases": [],
+  "non_claims": ["Does not execute a deployed hive scheduler.", "Does not promote chapter support state."]
+}

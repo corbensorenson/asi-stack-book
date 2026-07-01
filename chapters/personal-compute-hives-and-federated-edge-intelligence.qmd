@@ -31,8 +31,8 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records exact passage-reviewed mappings for all assigned Personal Compute Hives sources; support remains at argument until a live device registry, policy-first scheduler, portal approval service, federation protocol, family-governance policy engine, rented-node sandbox, or behavioral tests exist."
-  - "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no personal hive scheduler, network overlay, device registry, approval portal, rented-node sandbox, or federation run has been executed from this repository."
+  - "Appendix C now records exact passage-reviewed mappings for all assigned Personal Compute Hives sources; support remains at argument because the new hive admission harness is synthetic record validation only and no live device registry, policy-first scheduler, portal approval service, federation protocol, family-governance policy engine, rented-node sandbox, or deployed behavioral tests exist."
+  - "Record-shape schemas, valid fixtures, narrow finite Lean predicates, and the synthetic hive admission harness have been implemented; no personal hive scheduler, network overlay, device registry, approval portal, rented-node sandbox, federation run, energy measurement, dropout recovery run, privacy guarantee, or security result has been executed from this repository."
   - "External tooling sources are reviewed as adjacent substrate references only; they do not prove the ASI Stack hive design or any safety property."
 ---
 
@@ -43,12 +43,12 @@ open_evidence_gaps:
 | Chapter ID | `personal-compute-hives-and-federated-edge-intelligence` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-07-01 |
 | Primary source records | `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, plus external source notes for Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, IPFS, Akash, Golem, and GitHub self-hosted runners |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes. Internal/local raw passages and tracked local-project passages have now been passage-reviewed for the chapter; official external tooling pages were reviewed as adjacent substrate references. The core claim remains a design synthesis. The browser note is local-only planning context. |
-| Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, `HiveSchedulingDecision`, `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease` validate locally; `AsiStackProofs.PersonalComputeHives` builds four finite predicates plus negative-case theorems rejecting high-risk execution without a bound approval receipt and external access with a missing lease boundary. No hive scheduler, live registry, portal approval service, federation, rented-node test, cross-router connectivity test, child-routing test, dropout recovery test, or energy-aware scheduling test has been run. |
+| Test state | Record-shape fixtures for `DeviceResourceCard`, `HiveJobContract`, `HiveSchedulingDecision`, `PortalCard`, `HiveApprovalReceipt`, `HiveJobBid`, and `HiveFederationLease` validate locally; `AsiStackProofs.PersonalComputeHives` builds four finite predicates plus negative-case theorems rejecting high-risk execution without a bound approval receipt and external access with a missing lease boundary. `python3 scripts/validate_hive_admission.py` passes on 2 valid and 8 expected-invalid synthetic hive admission fixtures for policy-first scheduling, data locality/rented-node denial, approval receipts, guardian portal routing, federation lease boundaries, job bidding, energy/dropout residuals, audit replay refs, and support-state non-promotion. No hive scheduler, live registry, portal approval service, network overlay, federation run, rented-node sandbox, cross-router connectivity test, portal-continuity test, energy measurement, dropout recovery run, privacy guarantee, or security result has been run. |
 
 ## Drafting guardrail
 
@@ -294,15 +294,16 @@ This personal compute hive is still a proposed architecture. Hive support remain
 | Bound approval receipt test | Confirm a high-risk job that requires approval cannot execute unless a bound receipt exists. | implemented as a finite Lean predicate; no approval service run |
 | Federation lease boundary test | Confirm external hive access requires active lease, scope, sandbox, evidence, expiration, and revocation fields. | implemented as a finite Lean predicate; no federation run |
 | Hive work admission lifecycle route proof | Confirm a finite hive-work admission review routes malformed jobs, missing identity/data/tool policy, registry gaps, scheduler-policy gaps, high-risk jobs without approval, external access without leases or sandbox records, missing cost or energy budgets, missing dropout plans, missing audit receipt plans, missing residual owners, and support-promotion attempts without evidence transitions to explicit outcomes. | implemented as a finite Lean route predicate; no scheduler, registry, portal, device, rented-node, or federation run |
-| Data locality and rented-node denial test | Confirm private or family data cannot be sent to a rented node unless the job contract explicitly permits the exposure class. | planned; not run |
-| Phone approval gate test | Confirm a high-risk or high-spend job cannot execute until a bound approval receipt exists. | planned; not run |
-| Child topic routing test | Confirm child-facing portals deny or escalate sensitive topics according to guardian policy rather than routing them to ordinary workers. | planned; not run |
-| External project sandbox contract test | Confirm project-to-personal federation receives only a sandboxed lease and cannot discover private network resources. | planned; not run |
-| Audit replay test | Reconstruct why a job ran on a node from device cards, job contract, scheduling decision, approvals, and evidence refs. | planned; not run |
+| Hive admission harness | Check deterministic Personal Compute Hive admission packets for policy-first scheduling, data locality, approval receipts, guardian portal routing, federation leases, energy/dropout residuals, audit evidence refs, and no-promotion boundaries. | implemented as synthetic record validation by `python3 scripts/validate_hive_admission.py`; 2 valid and 8 expected-invalid fixtures pass; no deployed hive, scheduler, device registry, network overlay, approval service, guardian-policy engine, rented-node sandbox, federation, energy measurement, dropout recovery, privacy, security, or support-state claim |
+| Data locality and rented-node denial test | Confirm private or family data cannot be sent to a rented node unless the job contract explicitly permits the exposure class. | implemented as synthetic record validation; no rented-node sandbox, privacy guarantee, or deployed scheduler claim |
+| Phone approval gate test | Confirm a high-risk or high-spend job cannot execute until a bound approval receipt exists. | implemented as synthetic record validation; no approval-service, phone-portal, or deployed execution claim |
+| Child topic routing test | Confirm child-facing portals deny or escalate sensitive topics according to guardian policy rather than routing them to ordinary workers. | implemented as synthetic record validation; no family-governance engine or child-safety behavior claim |
+| External project sandbox contract test | Confirm project-to-personal federation receives only a sandboxed lease and cannot discover private network resources. | implemented as synthetic record validation; no network overlay, federation run, or rented-node sandbox claim |
+| Audit replay test | Reconstruct why a job ran on a node from device cards, job contract, scheduling decision, approvals, and evidence refs. | implemented as audit-ref and residual-presence validation; no replay service or deployed audit reconstruction claim |
 | Cross-router connectivity test | Confirm home, workshop, and mobile nodes can be represented as one logical hive without making network reachability an authority grant. | planned; not run |
-| Job bidding test | Confirm eligible nodes can estimate latency, cost, energy, locality, and capability after policy filtering. | planned; not run |
-| Device dropout test | Confirm a job records residuals and recovers or requeues when the selected device leaves the hive. | planned; not run |
-| Energy-aware scheduling test | Confirm battery, thermal, and quiet-hour constraints can reject or down-rank otherwise capable nodes. | planned; not run |
+| Job bidding test | Confirm eligible nodes can estimate latency, cost, energy, locality, and capability after policy filtering. | implemented as synthetic bid-selection and policy-blocked rejection validation; no scheduler-quality or optimality claim |
+| Device dropout test | Confirm a job records residuals and recovers or requeues when the selected device leaves the hive. | implemented as dropout/requeue residual-presence validation; no recovery run or live device dropout claim |
+| Energy-aware scheduling test | Confirm battery, thermal, and quiet-hour constraints can reject or down-rank otherwise capable nodes. | implemented as synthetic energy-budget and thermal-risk rejection validation; no energy measurement or live scheduling claim |
 | Portal continuity test | Confirm a user can leave a site with a phone portal while approval authority remains scoped and auditable. | planned; not run |
 
 ## Formalization hooks

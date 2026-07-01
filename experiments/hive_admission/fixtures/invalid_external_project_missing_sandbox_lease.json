@@ -1,0 +1,106 @@
+{
+  "scenario_id": "invalid_external_project_missing_sandbox_lease",
+  "device_resource_cards": [
+    {
+      "device_id": "device://rented-gpu-public-demo",
+      "owner_principal": "principal://rented-provider",
+      "trust_tier": "rented_public",
+      "locality_class": "rented_region",
+      "compute_profile": "rented GPU",
+      "storage_profile": "ephemeral scratch",
+      "network_profile": "public provider",
+      "allowed_data_classes": ["public_source_notes", "synthetic_test_data"],
+      "allowed_tool_classes": ["schema_validation"],
+      "secret_handle_capability": "none",
+      "operator_presence_mode": "not_required",
+      "enrollment_status": "active",
+      "revocation_path": "delete lease"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://owner-project-approval",
+    "human_principal": "principal://owner",
+    "input_modes": ["approval"],
+    "output_modes": ["status"],
+    "authority_level": "approval_surface",
+    "privacy_context": "project",
+    "attention_level": "interactive",
+    "locality_class": "mobile",
+    "safe_output_profile": "project metadata only",
+    "revocation_path": "revoke portal",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_contract": {
+    "job_id": "hive-job://project-without-sandbox",
+    "objective": "Run public project work on a rented node without a real sandbox lease.",
+    "context_packet_refs": ["context://public"],
+    "data_classes": ["public_source_notes", "synthetic_test_data"],
+    "tool_classes": ["schema_validation"],
+    "authority_ceiling": "public schema validation",
+    "physical_risk_tier": "none",
+    "federation_scope": "rented",
+    "budget_limit": "metered",
+    "energy_policy": "residualized",
+    "deadline": "fixture",
+    "required_approvals": ["approval://owner-public-rented-job"],
+    "verification_predicate": "validator exits",
+    "residual_policy": "record residual",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://rented-no-sandbox",
+      "job_id": "hive-job://project-without-sandbox",
+      "bidder_device_id": "device://rented-gpu-public-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "5 minutes",
+      "estimated_cost": "metered",
+      "estimated_energy": "residualized",
+      "data_transfer_estimate": "public data only",
+      "thermal_risk": "unknown",
+      "interruption_risk": "medium",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "incorrectly eligible without sandbox lease",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove runtime federation.", "Does not promote chapter support state."]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://project-without-sandbox",
+    "job_id": "hive-job://project-without-sandbox",
+    "eligible_nodes": ["device://rented-gpu-public-demo"],
+    "rejected_nodes": [],
+    "selected_node_id": "device://rented-gpu-public-demo",
+    "selected_reason": "selected for project work",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": ["approval://owner-public-rented-job"],
+    "data_placement_refs": ["context://public"],
+    "secret_handle_plan": "no secrets",
+    "estimated_cost": "metered",
+    "estimated_energy": "residualized",
+    "isolation_mode": "rented execution",
+    "expiration": "fixture",
+    "evidence_refs": ["docs/hive_admission_harness.md", "scripts/validate_hive_admission.py"],
+    "residuals": ["audit replay is record-level only"],
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "approval_receipts": [
+    {
+      "approval_id": "approval://owner-public-rented-job",
+      "approver_principal": "principal://owner",
+      "portal_id": "portal://owner-project-approval",
+      "job_id": "hive-job://project-without-sandbox",
+      "approval_scope": "Approve public rented job.",
+      "granted_permissions": ["schema_validation"],
+      "denied_permissions": ["private_data"],
+      "valid_from": "2026-07-01T00:00:00Z",
+      "valid_until": "fixture",
+      "reversal_path": "stop job",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove approval runtime.", "Does not promote chapter support state."]
+    }
+  ],
+  "federation_leases": [],
+  "non_claims": ["Does not execute a deployed rented hive.", "Does not promote chapter support state."]
+}

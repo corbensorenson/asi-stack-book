@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Add hive admission harness
+
+- Added `scripts/validate_hive_admission.py` with 2 valid and 8
+  expected-invalid synthetic Personal Compute Hive admission fixtures covering
+  policy-first scheduling, data locality/rented-node denial, approval receipts,
+  guardian portal routing, sandboxed federation lease boundaries, job bidding,
+  energy/dropout residuals, audit evidence refs, and support-state
+  non-promotion.
+- Added `docs/hive_admission_harness.md` and
+  `experiments/hive_admission/results/2026-07-01-local.md` to record the local
+  passing result and non-claim boundary.
+- Updated the Personal Compute Hives chapter, outline, manifest, v1.x roadmap
+  burn-down, and validation wiring. This is synthetic record validation only; it
+  does not prove a deployed hive, scheduler, device registry, network overlay,
+  approval service, guardian-policy engine, rented-node sandbox, federation run,
+  energy measurement, dropout recovery, privacy, security, or support-state
+  promotion.
+
 ## 2026-07-01 - Add serving-memory budget ledger guard
 
 - Extended the Resource Budget Ledger harness to 6 valid and 7 expected-invalid

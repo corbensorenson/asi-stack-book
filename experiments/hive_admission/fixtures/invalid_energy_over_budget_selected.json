@@ -1,0 +1,91 @@
+{
+  "scenario_id": "invalid_energy_over_budget_selected",
+  "device_resource_cards": [
+    {
+      "device_id": "device://mobile-phone-demo",
+      "owner_principal": "principal://owner",
+      "trust_tier": "owner_private",
+      "locality_class": "mobile",
+      "compute_profile": "phone worker",
+      "storage_profile": "mobile cache",
+      "network_profile": "mobile network",
+      "allowed_data_classes": ["public_source_notes"],
+      "allowed_tool_classes": ["schema_validation"],
+      "secret_handle_capability": "none",
+      "operator_presence_mode": "local_present",
+      "enrollment_status": "active",
+      "revocation_path": "disable phone worker"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://owner-phone",
+    "human_principal": "principal://owner",
+    "input_modes": ["status"],
+    "output_modes": ["status"],
+    "authority_level": "approval_surface",
+    "privacy_context": "personal_private",
+    "attention_level": "interactive",
+    "locality_class": "mobile",
+    "safe_output_profile": "status only",
+    "revocation_path": "disable portal",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_contract": {
+    "job_id": "hive-job://energy-over-budget",
+    "objective": "Run public validation on a phone despite energy over budget.",
+    "context_packet_refs": ["context://public"],
+    "data_classes": ["public_source_notes"],
+    "tool_classes": ["schema_validation"],
+    "authority_ceiling": "public validation only",
+    "physical_risk_tier": "low",
+    "federation_scope": "local_only",
+    "budget_limit": "no spend",
+    "energy_policy": "do not run if over budget",
+    "deadline": "fixture",
+    "required_approvals": [],
+    "verification_predicate": "validator exits",
+    "residual_policy": "record residual",
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://phone-energy-over-budget",
+      "job_id": "hive-job://energy-over-budget",
+      "bidder_device_id": "device://mobile-phone-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "5 minutes",
+      "estimated_cost": "zero",
+      "estimated_energy": "over budget battery drain",
+      "data_transfer_estimate": "public data only",
+      "thermal_risk": "high",
+      "interruption_risk": "medium",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "incorrectly eligible despite energy over budget",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": ["Does not prove runtime scheduler.", "Does not promote chapter support state."]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://energy-over-budget",
+    "job_id": "hive-job://energy-over-budget",
+    "eligible_nodes": ["device://mobile-phone-demo"],
+    "rejected_nodes": [],
+    "selected_node_id": "device://mobile-phone-demo",
+    "selected_reason": "selected despite energy over budget",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": [],
+    "data_placement_refs": ["context://public"],
+    "secret_handle_plan": "no secrets",
+    "estimated_cost": "zero",
+    "estimated_energy": "over budget battery drain",
+    "isolation_mode": "local phone process",
+    "expiration": "fixture",
+    "evidence_refs": ["docs/hive_admission_harness.md", "scripts/validate_hive_admission.py"],
+    "residuals": ["audit replay is record-level only"],
+    "non_claims": ["Does not prove deployed runtime hive.", "Does not promote chapter support state."]
+  },
+  "approval_receipts": [],
+  "federation_leases": [],
+  "non_claims": ["Does not execute a deployed hive scheduler.", "Does not promote chapter support state."]
+}

@@ -1,0 +1,192 @@
+{
+  "scenario_id": "valid_rented_public_sandboxed_project_job",
+  "device_resource_cards": [
+    {
+      "device_id": "device://rented-gpu-public-demo",
+      "owner_principal": "principal://rented-provider",
+      "trust_tier": "rented_public",
+      "locality_class": "rented_region",
+      "compute_profile": "rented GPU for public synthetic work",
+      "storage_profile": "ephemeral scratch only",
+      "network_profile": "sandbox egress only; no owner LAN discovery",
+      "allowed_data_classes": ["public_source_notes", "synthetic_test_data"],
+      "allowed_tool_classes": ["schema_validation", "public_test"],
+      "secret_handle_capability": "none",
+      "operator_presence_mode": "not_required",
+      "enrollment_status": "active",
+      "revocation_path": "revoke federation lease and delete provider sandbox"
+    },
+    {
+      "device_id": "device://home-desktop-reserved",
+      "owner_principal": "principal://owner",
+      "trust_tier": "owner_private",
+      "locality_class": "home",
+      "compute_profile": "reserved local desktop",
+      "storage_profile": "private workspace",
+      "network_profile": "home network",
+      "allowed_data_classes": ["personal_private", "public_source_notes", "synthetic_test_data"],
+      "allowed_tool_classes": ["schema_validation", "public_test"],
+      "secret_handle_capability": "handles_only",
+      "operator_presence_mode": "phone_approval",
+      "enrollment_status": "active",
+      "revocation_path": "suspend device card"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://owner-project-approval",
+    "human_principal": "principal://owner",
+    "input_modes": ["approval", "budget review"],
+    "output_modes": ["lease summary", "audit bundle"],
+    "authority_level": "approval_surface",
+    "privacy_context": "project",
+    "attention_level": "interactive",
+    "locality_class": "mobile",
+    "safe_output_profile": "project metadata only",
+    "revocation_path": "revoke project approval lease",
+    "non_claims": [
+      "Does not prove deployed runtime hive federation.",
+      "Does not promote chapter support state."
+    ]
+  },
+  "job_contract": {
+    "job_id": "hive-job://public-project-schema-test",
+    "objective": "Run a public synthetic project schema test on a rented sandbox.",
+    "context_packet_refs": ["context://public-project-fixture"],
+    "data_classes": ["public_source_notes", "synthetic_test_data"],
+    "tool_classes": ["schema_validation", "public_test"],
+    "authority_ceiling": "run public tests in a sandbox only",
+    "physical_risk_tier": "none",
+    "federation_scope": "rented",
+    "budget_limit": "metered spend cap: 1 synthetic unit",
+    "energy_policy": "provider energy not used as quality evidence",
+    "deadline": "synthetic fixture deadline",
+    "required_approvals": ["approval://owner-public-rented-job"],
+    "verification_predicate": "public test artifact and validator command are returned",
+    "residual_policy": "if rented node drops out, mark residual and do not retry with private data",
+    "non_claims": [
+      "Does not execute a deployed rented-node hive.",
+      "Does not promote chapter support state."
+    ]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://rented-public-sandbox",
+      "job_id": "hive-job://public-project-schema-test",
+      "bidder_device_id": "device://rented-gpu-public-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "5 minutes",
+      "estimated_cost": "within metered spend cap",
+      "estimated_energy": "provider energy recorded as residual, not quality",
+      "data_transfer_estimate": "public and synthetic data only",
+      "thermal_risk": "unknown",
+      "interruption_risk": "medium",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "eligible only because job is public/synthetic and lease supplies sandbox, budget, evidence, expiration, and revocation",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": [
+        "Does not prove runtime rented-node sandbox quality.",
+        "Does not promote chapter support state."
+      ]
+    },
+    {
+      "bid_id": "hive-bid://home-desktop-reserved",
+      "job_id": "hive-job://public-project-schema-test",
+      "bidder_device_id": "device://home-desktop-reserved",
+      "bid_status": "declined",
+      "estimated_latency": "20 minutes",
+      "estimated_cost": "zero external spend",
+      "estimated_energy": "reserved for local private work",
+      "data_transfer_estimate": "none",
+      "thermal_risk": "low",
+      "interruption_risk": "low",
+      "privacy_fit": "high",
+      "capability_fit": "medium",
+      "policy_reason": "declined to preserve local private capacity",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": [
+        "Does not prove scheduler optimality.",
+        "Does not promote chapter support state."
+      ]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://rented-public-sandboxed-project",
+    "job_id": "hive-job://public-project-schema-test",
+    "eligible_nodes": ["device://rented-gpu-public-demo"],
+    "rejected_nodes": [
+      {
+        "node_id": "device://home-desktop-reserved",
+        "reason": "declined to preserve local private capacity"
+      }
+    ],
+    "selected_node_id": "device://rented-gpu-public-demo",
+    "selected_reason": "selected only after federation lease, sandbox, budget, evidence, expiration, approval, and revocation checks",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": ["approval://owner-public-rented-job"],
+    "data_placement_refs": ["context://public-project-fixture", "hive-lease://public-project-rented-demo"],
+    "secret_handle_plan": "no secrets; rented node receives no private handles",
+    "estimated_cost": "within metered spend cap",
+    "estimated_energy": "provider energy residualized",
+    "isolation_mode": "rented sandbox with no owner LAN discovery",
+    "expiration": "fixture decision expires after validation",
+    "evidence_refs": [
+      "docs/hive_admission_harness.md",
+      "scripts/validate_hive_admission.py"
+    ],
+    "residuals": [
+      "audit replay is record-level only",
+      "dropout recovery would mark residual and avoid private retry"
+    ],
+    "non_claims": [
+      "Does not prove deployed rented-node runtime or sandbox behavior.",
+      "Does not promote chapter support state."
+    ]
+  },
+  "approval_receipts": [
+    {
+      "approval_id": "approval://owner-public-rented-job",
+      "approver_principal": "principal://owner",
+      "portal_id": "portal://owner-project-approval",
+      "job_id": "hive-job://public-project-schema-test",
+      "approval_scope": "Approve this public synthetic rented sandbox job only.",
+      "granted_permissions": ["schema_validation", "public_test", "rented_sandbox"],
+      "denied_permissions": ["private_data", "private_network", "secret_handles"],
+      "valid_from": "2026-07-01T00:00:00Z",
+      "valid_until": "fixture validation run ends",
+      "reversal_path": "revoke lease and stop rented sandbox",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": [
+        "Does not prove deployed approval runtime.",
+        "Does not promote chapter support state."
+      ]
+    }
+  ],
+  "federation_leases": [
+    {
+      "lease_id": "hive-lease://public-project-rented-demo",
+      "provider_hive": "hive://rented-provider-demo",
+      "requester_hive": "hive://personal-demo",
+      "job_contract_ref": "hive-job://public-project-schema-test",
+      "allowed_job_classes": ["schema_validation", "public_test"],
+      "allowed_data_classes": ["public_source_notes", "synthetic_test_data"],
+      "allowed_tool_classes": ["schema_validation", "public_test"],
+      "network_scope": "sandbox egress only; no owner LAN discovery",
+      "sandbox_manifest_ref": "sandbox://public-project-rented-fixture",
+      "budget_limit": "metered spend cap: 1 synthetic unit",
+      "payment_or_credit_ref": "credit://synthetic-fixture",
+      "evidence_obligations": ["artifact_log", "validator_command", "audit_bundle", "non_claims"],
+      "issued_at": "2026-07-01T00:00:00Z",
+      "expires_at": "fixture validation run ends",
+      "revocation_path": "delete sandbox and revoke lease",
+      "non_claims": [
+        "Does not prove deployed federation runtime.",
+        "Does not promote chapter support state."
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not execute a deployed personal compute hive, scheduler, network overlay, rented-node sandbox, or approval service.",
+    "Does not promote chapter support state."
+  ]
+}

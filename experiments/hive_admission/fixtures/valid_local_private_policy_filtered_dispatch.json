@@ -1,0 +1,170 @@
+{
+  "scenario_id": "valid_local_private_policy_filtered_dispatch",
+  "device_resource_cards": [
+    {
+      "device_id": "device://home-desktop-gpu-demo",
+      "owner_principal": "principal://owner",
+      "trust_tier": "owner_private",
+      "locality_class": "home",
+      "compute_profile": "local GPU worker; synthetic fixture only",
+      "storage_profile": "private workspace cache",
+      "network_profile": "home network, no federation",
+      "allowed_data_classes": ["personal_private", "public_source_notes", "synthetic_test_data"],
+      "allowed_tool_classes": ["schema_validation", "local_render"],
+      "secret_handle_capability": "handles_only",
+      "operator_presence_mode": "phone_approval",
+      "enrollment_status": "active",
+      "revocation_path": "revoke device card and delete active job leases"
+    },
+    {
+      "device_id": "device://rented-gpu-fast-demo",
+      "owner_principal": "principal://rented-provider",
+      "trust_tier": "rented_public",
+      "locality_class": "rented_region",
+      "compute_profile": "fast rented GPU; fixture only",
+      "storage_profile": "ephemeral public scratch",
+      "network_profile": "public sandbox egress only",
+      "allowed_data_classes": ["public_source_notes", "synthetic_test_data"],
+      "allowed_tool_classes": ["schema_validation"],
+      "secret_handle_capability": "none",
+      "operator_presence_mode": "not_required",
+      "enrollment_status": "active",
+      "revocation_path": "delete provider lease and reject future bids"
+    }
+  ],
+  "portal_card": {
+    "portal_id": "portal://owner-phone",
+    "human_principal": "principal://owner",
+    "input_modes": ["touch approval", "status review"],
+    "output_modes": ["job summary", "approval receipt"],
+    "authority_level": "approval_surface",
+    "privacy_context": "personal_private",
+    "attention_level": "interactive",
+    "locality_class": "mobile",
+    "safe_output_profile": "status and residuals only; no private data displayed in public",
+    "revocation_path": "disable portal approval lease",
+    "non_claims": [
+      "Does not prove a deployed runtime hive or scheduler.",
+      "Does not promote chapter support state."
+    ]
+  },
+  "job_contract": {
+    "job_id": "hive-job://local-private-render-check",
+    "objective": "Run a local private draft render check with no rented-node exposure.",
+    "context_packet_refs": ["context://private-draft-render-fixture"],
+    "data_classes": ["personal_private", "public_source_notes"],
+    "tool_classes": ["schema_validation", "local_render"],
+    "authority_ceiling": "read private draft and run local validators only",
+    "physical_risk_tier": "medium",
+    "federation_scope": "local_only",
+    "budget_limit": "no external spend; local foreground run only",
+    "energy_policy": "battery protected; desktop allowed within quiet-hour budget",
+    "deadline": "synthetic fixture deadline",
+    "required_approvals": ["approval://owner-local-private-job"],
+    "verification_predicate": "render/check command exits cleanly and records residuals",
+    "residual_policy": "if selected device drops out, requeue locally and preserve audit residual",
+    "non_claims": [
+      "Does not execute a deployed personal compute hive.",
+      "Does not promote chapter support state."
+    ]
+  },
+  "job_bids": [
+    {
+      "bid_id": "hive-bid://home-desktop-local-private",
+      "job_id": "hive-job://local-private-render-check",
+      "bidder_device_id": "device://home-desktop-gpu-demo",
+      "bid_status": "eligible",
+      "estimated_latency": "15 minutes",
+      "estimated_cost": "zero external spend",
+      "estimated_energy": "within desktop quiet-hour budget",
+      "data_transfer_estimate": "local workspace only",
+      "thermal_risk": "low",
+      "interruption_risk": "medium",
+      "privacy_fit": "high",
+      "capability_fit": "high",
+      "policy_reason": "eligible after identity, data, tool, energy, dropout, and approval policy filtering",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": [
+        "Does not prove runtime scheduler quality.",
+        "Does not promote chapter support state."
+      ]
+    },
+    {
+      "bid_id": "hive-bid://rented-fast-blocked-private",
+      "job_id": "hive-job://local-private-render-check",
+      "bidder_device_id": "device://rented-gpu-fast-demo",
+      "bid_status": "policy_blocked",
+      "estimated_latency": "3 minutes, faster but rejected",
+      "estimated_cost": "metered external spend",
+      "estimated_energy": "provider energy unknown",
+      "data_transfer_estimate": "would expose personal_private context",
+      "thermal_risk": "unknown",
+      "interruption_risk": "unknown",
+      "privacy_fit": "blocked",
+      "capability_fit": "high",
+      "policy_reason": "faster rented node is policy blocked because local_only personal_private data cannot leave the owner hive",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": [
+        "Does not prove deployed runtime hive or rented-node sandbox behavior.",
+        "Does not promote chapter support state."
+      ]
+    }
+  ],
+  "scheduling_decision": {
+    "decision_id": "hive-decision://local-private-policy-filtered",
+    "job_id": "hive-job://local-private-render-check",
+    "eligible_nodes": ["device://home-desktop-gpu-demo"],
+    "rejected_nodes": [
+      {
+        "node_id": "device://rented-gpu-fast-demo",
+        "reason": "faster but policy blocked by local_only personal_private data boundary"
+      }
+    ],
+    "selected_node_id": "device://home-desktop-gpu-demo",
+    "selected_reason": "selected after policy-first filtering, approval receipt, energy budget, and dropout residual review",
+    "policy_filter_status": "passed",
+    "approval_receipt_refs": ["approval://owner-local-private-job"],
+    "data_placement_refs": ["context://private-draft-render-fixture"],
+    "secret_handle_plan": "handles_only; no raw credential material enters the model context",
+    "estimated_cost": "zero external spend",
+    "estimated_energy": "within desktop quiet-hour budget",
+    "isolation_mode": "local sandboxed process; no federation",
+    "expiration": "fixture decision expires after validation",
+    "evidence_refs": [
+      "docs/hive_admission_harness.md",
+      "scripts/validate_hive_admission.py"
+    ],
+    "residuals": [
+      "audit replay is record-level only",
+      "dropout recovery is represented as requeue residual, not executed"
+    ],
+    "non_claims": [
+      "Does not prove deployed hive scheduler or network behavior.",
+      "Does not promote chapter support state."
+    ]
+  },
+  "approval_receipts": [
+    {
+      "approval_id": "approval://owner-local-private-job",
+      "approver_principal": "principal://owner",
+      "portal_id": "portal://owner-phone",
+      "job_id": "hive-job://local-private-render-check",
+      "approval_scope": "Approve local-only private render check on home desktop for this job only.",
+      "granted_permissions": ["local_render", "schema_validation"],
+      "denied_permissions": ["rented_node", "external_network", "private_data_export"],
+      "valid_from": "2026-07-01T00:00:00Z",
+      "valid_until": "fixture validation run ends",
+      "reversal_path": "stop job and delete local approval receipt",
+      "evidence_refs": ["docs/hive_admission_harness.md"],
+      "non_claims": [
+        "Does not prove a deployed approval-service runtime.",
+        "Does not promote chapter support state."
+      ]
+    }
+  ],
+  "federation_leases": [],
+  "non_claims": [
+    "Does not execute a deployed personal compute hive, scheduler, network overlay, or approval service.",
+    "Does not promote chapter support state."
+  ]
+}
