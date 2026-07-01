@@ -5279,6 +5279,11 @@
               "name": "Verified tool regression test",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic procedural memory loop harness; no deployed regression-quality or routing claim"
+            },
+            {
+              "name": "Procedure lifecycle route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean lifecycle route proof and fixture-shaped bridge records for valid routable, quarantined, and retired synthetic scenarios; no deployed loop-detector, tool-synthesis, routing, regression-quality, or retirement-automation claim"
             }
           ],
           "lean_module": "AsiStackProofs.ProceduralMemory",

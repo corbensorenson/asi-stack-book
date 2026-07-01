@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 138 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 717 |
+| Theorem declarations classified | 732 |
 | Direct/projection-style theorem declarations | 144 |
-| Derived/decomposed theorem declarations | 573 |
+| Derived/decomposed theorem declarations | 588 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -82,7 +82,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 2 | 9 | 6 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | policy-optimization-and-learning-from-feedback | 3 | 15 | 5 | 10 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProceduralMemory.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 7 | 5 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -540,7 +540,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `failed_regression_with_routable_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `generated_tool_missing_closure_artifact_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `generated_tool_records_source_traces_parameters_and_verification_result` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_failed_regression_routes_quarantine` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_failed_verification_runs_verification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_active_scf_requires_scf` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_benchmark_floor_preserves_floor` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_closure_artifacts_records_artifacts` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_comparable_traces_collects_traces` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_monitoring_plan_requires_monitoring` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_negative_examples_preserves_examples` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_non_claims_preserves_non_claims` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_missing_residuals_preserves_residuals` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `routable_retirement_trigger_routes_retirement` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `tool_with_failed_regression_cannot_be_promoted_to_routable_status` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `unverified_source_state_cannot_become_routable` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `valid_failed_regression_quarantined_fixture_admitted` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `valid_retired_stale_precondition_fixture_admitted` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ProceduralMemory.lean` | `valid_routable_with_negative_examples_fixture_admitted` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `failed_verifier_result_downgrades_or_blocks_claim_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `formal_support_tier_requires_valid_justification_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `negative_verifier_result_requires_non_promotional_effect` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

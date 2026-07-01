@@ -1702,6 +1702,7 @@ Draft deliverables:
 - Exact Appendix C claim-source mappings for procedural memory: five local raw-cache mappings and three local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped only.
 - Implemented protocol validation: `procedural_tool_record` fixture validates public record shape only.
 - Implemented synthetic Codex test: `python3 scripts/validate_procedural_memory_loop.py` checks qualification packets for comparable repeated trace clusters, negative-example preservation, abstraction fields, regression quarantine, retirement triggers, source-trace mismatch, and explicit non-claim boundaries. It remains synthetic record-gate evidence only, not deployed loop-detection, tool-synthesis, generated-tool correctness, regression-quality, route-quality, monitoring, or retirement-automation evidence.
+- Implemented Lean lifecycle route envelope: modeled routable transitions require comparable traces, negative examples, closure artifacts, verification, clean regressions, benchmark floor, active SCF target, retirement handling, monitoring plan, residuals, non-claims, and a verified or routable source state; valid routable, quarantined, and retired synthetic fixture shapes have Lean bridge records.
 - Implemented Codex test: Loop detection test, for synthetic qualification packets only.
 - Planned Codex test: Procedure qualification state test.
 - Implemented Codex test: Negative-example preservation test, for synthetic qualification packets only.

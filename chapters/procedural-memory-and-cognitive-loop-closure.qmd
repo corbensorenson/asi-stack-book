@@ -4,7 +4,7 @@ chapter_id: "procedural-memory-and-cognitive-loop-closure"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "cognitive_loop_closure"
   - "rmi"
@@ -19,7 +19,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for eight assigned sources; `moecot` remains connector/source-note mapped only, and support remains at argument until loop-detection, tool-synthesis, routing, or regression harnesses exist."
-  - "Protocol schema/fixture validation, finite Lean gates with negative-case theorems, and the synthetic procedural-memory loop harness are implemented; no deployed loop detector, tool synthesizer, generated-tool correctness check, routing monitor, regression-quality benchmark, or retirement automation exists."
+  - "Protocol schema/fixture validation, finite Lean gates, lifecycle-route theorems, fixture-shaped Lean bridge records, and the synthetic procedural-memory loop harness are implemented; no deployed loop detector, tool synthesizer, generated-tool correctness check, routing monitor, regression-quality benchmark, or retirement automation exists."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -31,17 +31,17 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-01 |
 | Primary source records | `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`, `moecot`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cognitive_loop_closure`; supporting: `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `cognitive_loop_closure`, `rmi`, `rgs`, `benchmaxxing`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os`; connector/source-note mapped only: `moecot` |
-| Test state | Procedural tool fixture validation and `python3 scripts/validate_procedural_memory_loop.py` are implemented; the harness checks synthetic trace clustering, negative-example preservation, abstraction fields, regression quarantine, retirement triggers, and source-trace mismatch. `AsiStackProofs.ProceduralMemory` implements finite generated-tool artifact and failed-regression routable-promotion gates plus negative-case theorems for missing closure artifacts and failed-regression promotion attempts. Deployed loop detection, tool synthesis, generated-tool correctness, route monitoring, regression-quality benchmarking, and retirement automation remain planned. |
+| Test state | Procedural tool fixture validation and `python3 scripts/validate_procedural_memory_loop.py` are implemented; the harness checks synthetic trace clustering, negative-example preservation, abstraction fields, regression quarantine, retirement triggers, and source-trace mismatch. `AsiStackProofs.ProceduralMemory` implements finite generated-tool artifact, failed-regression routable-promotion, lifecycle-route, and fixture-shaped bridge records for routable, quarantined, and retired scenarios. Deployed loop detection, tool synthesis, generated-tool correctness, route monitoring, regression-quality benchmarking, and retirement automation remain planned. |
 
 ## Drafting guardrail
 
-Procedural memory is a governed promotion path from traces to tools. Eight source mappings have been checked against local passages, and `moecot` remains connector/source-note mapped only. The repo validates a procedural-tool fixture, proves finite generated-tool and failed-regression gates with negative cases, and runs a synthetic procedural-memory loop harness over qualification packets, negative examples, abstraction fields, regression reviews, source traces, and retirement triggers. It does not yet run a deployed loop detector, tool synthesizer, active parameter-discovery system, generated-tool correctness check, routing monitor, regression-quality benchmark, or retirement automation.
+Procedural memory is a governed promotion path from traces to tools. Eight source mappings have been checked against local passages, and `moecot` remains connector/source-note mapped only. The repo validates a procedural-tool fixture, proves finite generated-tool, failed-regression, and lifecycle-route gates with fixture-shaped bridge records, and runs a synthetic procedural-memory loop harness over qualification packets, negative examples, abstraction fields, regression reviews, source traces, and retirement triggers. It does not yet run a deployed loop detector, tool synthesizer, active parameter-discovery system, generated-tool correctness check, routing monitor, regression-quality benchmark, or retirement automation.
 
 Execution history becomes future execution capacity only after review. The loop-closure layer does not assume that every successful trace deserves automation; it asks which repeated, bounded, verified patterns are mature enough to become routable tools.
 
@@ -199,7 +199,7 @@ Procedural memory begins with a `procedural_tool_record` schema and fixture. It 
 
 The synthetic procedural-memory loop harness now adds a small procedure-qualification gate around that record shape. It checks three valid and six expected-invalid packets for comparable success traces, near misses or failures, preserved negative examples, explicit parameters/preconditions/postconditions, matching invariant structure, regression quarantine, retirement triggers, and source-trace mismatch.
 
-`AsiStackProofs.ProceduralMemory` adds finite record gates for generated tools and regression promotion reviews. The new negative-case theorems show that a generated tool missing source traces, parameters, or a verification result cannot satisfy the closure-artifact predicate, and that a failed-regression review cannot both satisfy the promotion-blocking predicate and keep routable status promoted.
+`AsiStackProofs.ProceduralMemory` adds finite record gates for generated tools, regression promotion reviews, and lifecycle transitions. The module now has 19 theorem declarations, including 17 derived/decomposed declarations. Its lifecycle route model rejects routable promotion when comparable trace clusters, negative examples, closure artifacts, verification, regression preservation, benchmark floor, active SCF target, retirement handling, monitoring plan, residuals, non-claims, or verified source state are missing. It also includes fixture-shaped Lean bridge records for the harness's valid routable-with-negative-examples, failed-regression-quarantined, and retired-stale-precondition scenarios.
 
 The miniature trace set is still synthetic record-gate evidence. It shows how the book expects a procedure candidate to cite source traces, preserve failures, narrow scope, and deny routable promotion when regressions or retirement triggers fire.
 
@@ -232,8 +232,9 @@ This procedural-memory loop is still proposed architecture. Procedural memory re
 | Tool abstraction test | Check that parameters, assumptions, preconditions, and postconditions are explicit. | implemented for synthetic qualification packets by `python3 scripts/validate_procedural_memory_loop.py`; no generated-tool correctness claim |
 | Verified tool regression test | Check that failed regression blocks routable promotion. | implemented for synthetic qualification packets by `python3 scripts/validate_procedural_memory_loop.py`; no deployed regression-quality or routing claim |
 | Retirement trigger test | Check that stale preconditions, failed floors, or SCF retirement move a routable tool to quarantine or retired state. | implemented for synthetic qualification packets by `python3 scripts/validate_procedural_memory_loop.py`; no deployed retirement automation claim |
+| Procedure lifecycle route proof | Check that modeled routable promotion requires comparable traces, negative examples, closure artifacts, verification, clean regressions, benchmark floor, active SCF target, retirement handling, monitoring, residuals, non-claims, and a verified/routable source state, with fixture-shaped bridge records for valid routable, quarantined, and retired scenarios. | implemented in `AsiStackProofs.ProceduralMemory`; checked by Lean build |
 
-Fixture-shape validation, four finite Lean theorem declarations over two record gates, and the synthetic procedure-qualification harness are implemented. Remaining tests need deployed repeated-trace mining, synthesized tool candidates, generated-tool correctness checks, regression-quality benchmarks, routing monitors, and retirement automation.
+Fixture-shape validation, 19 finite Lean theorem declarations over generated-tool, regression-promotion, lifecycle-route, and fixture-bridge records, and the synthetic procedure-qualification harness are implemented. Remaining tests need deployed repeated-trace mining, synthesized tool candidates, generated-tool correctness checks, regression-quality benchmarks, routing monitors, and retirement automation.
 
 ### Formalization hooks
 
@@ -242,7 +243,7 @@ Fixture-shape validation, four finite Lean theorem declarations over two record 
 | `lean:procedural.loop_closure.operational_invariant` | `AsiStackProofs.ProceduralMemory` | A generated tool records its source traces, parameters, and verification result. | implemented |
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `AsiStackProofs.ProceduralMemory` | A tool with failed regression cannot be promoted to routable status. | implemented |
 
-These Lean hooks are implemented as finite-record predicates plus negative-case theorems over generated-tool records and regression-promotion reviews. They prove only the record-level gates: a generated tool records source traces, parameters, and a verification result; a generated-tool record missing any closure artifact cannot satisfy that predicate; a failed regression blocks routable-status promotion; and a failed-regression record cannot remain promoted while satisfying the blocking predicate. The companion synthetic harness makes loop-qualification record discipline executable, but neither Lean nor the harness proves deployed loop detection, invariant abstraction quality, parameter-discovery quality, synthesized tool correctness, monitoring quality, regression quality, or retirement automation.
+These Lean hooks are implemented as finite-record predicates plus negative-case, lifecycle-route, and fixture-bridge theorems over generated-tool records, regression-promotion reviews, and modeled procedure transitions. They cover closure artifacts, failed-regression promotion blocking, routable-transition prerequisites, quarantine on regression failure, retirement-trigger handling, and fixture-shaped admission for the three valid synthetic harness scenarios. The companion synthetic harness makes loop-qualification record discipline executable, but neither Lean nor the harness proves deployed loop detection, invariant abstraction quality, parameter-discovery quality, synthesized tool correctness, monitoring quality, regression quality, or retirement automation.
 
 ## Source crosswalk
 
@@ -262,7 +263,7 @@ The source set covers loop closure, procedural memory, ratchets, regressions, an
 
 ## Summary
 
-Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. The present evidence boundary is still a record-gate boundary: the sources and mappings explain what such closure requires, Lean checks two narrow finite-record gates plus two negative cases, and the synthetic harness checks procedure-qualification packet discipline, while deployed tool generation, regression-quality testing, routing, monitoring, retirement automation, and a full loop-closure run remain unexecuted.
+Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. The present evidence boundary is still a record-gate boundary: the sources and mappings explain what such closure requires, Lean checks finite generated-tool, regression, lifecycle-route, and fixture-bridge gates, and the synthetic harness checks procedure-qualification packet discipline, while deployed tool generation, regression-quality testing, routing, monitoring, retirement automation, and a full loop-closure run remain unexecuted.
 
 The discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used. That is the hinge into Part III: once procedures and specialists exist, the next problem is routing them without hiding residuals or letting capability outrun readiness.
 

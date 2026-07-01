@@ -514,7 +514,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 717 theorem declarations, 573
+- The generated proof-depth report records 732 theorem declarations, 588
   derived/decomposed declarations, 0 unknown/mixed declarations, 102
   safety-critical declarations, and 10 remaining safety-critical
   direct/projection declarations.
@@ -536,7 +536,7 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 717 theorem declarations, 573
+- `docs/proof_depth_classification.md` records 732 theorem declarations, 588
   derived/decomposed theorem declarations, 144 direct/projection-style theorem
   declarations, and 0 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
@@ -744,13 +744,17 @@ Current proof status:
   ledger storage, live quarantine routing, gate-quality checks, terminal-state
   governance, MoECOT replay, benchmark evidence, and current-readiness
   evidence.
-- `AsiStackProofs.ProceduralMemory` now has finite negative-case theorems
-  rejecting generated-tool records missing source traces, parameters, or
-  verification results, and failed-regression reviews that try to keep routable
-  promotion; this reduces the projection-only surface for Procedural Memory
-  while leaving deployed loop detection, tool synthesis, generated-tool
-  correctness, regression-quality benchmarking, routing monitors, and
-  retirement automation as blockers.
+- `AsiStackProofs.ProceduralMemory` now has finite generated-tool,
+  failed-regression, lifecycle-route, and fixture-bridge coverage. Its derived
+  theorems reject modeled routable transitions missing comparable trace
+  clusters, negative examples, closure artifacts, verification, clean
+  regressions, benchmark floor, active SCF target, retirement handling,
+  monitoring plans, residuals, non-claims, or verified source state, and they
+  admit the valid routable, quarantined, and retired synthetic fixture shapes.
+  This reduces the projection-only surface for Procedural Memory while leaving
+  deployed loop detection, tool synthesis, generated-tool correctness,
+  regression-quality benchmarking, routing monitors, and retirement automation
+  as blockers.
 - `AsiStackProofs.Routing` and `AsiStackProofs.MoECOTRuntime` now have finite
   negative-case theorems rejecting selected routes missing authority/readiness,
   runtime-core promotions missing readiness/regression/replay evidence, and
@@ -914,7 +918,7 @@ Per-chapter burn-down:
 | `labor-os-and-typed-jobs` | Durable-execution/workflow-orchestration anchoring and planned tests need completion. | Source-note Temporal, workflow orchestration, BPMN/Airflow, and scheduler comparators; implement planned typed-job tests. |
 | `artifact-graphs-audit-logs-and-replay` | Provenance/replay proof coverage was narrow; finite route coverage is now broader than the deployed evidence. | Partially executed: added provenance closure, replay-grade sufficiency, claim/test-link integrity, stale-certificate, non-claim, blocked-promotion, and complete-admission route theorems. Remaining work: pursue real produced-artifact traces, deployed artifact graph service behavior, real replay, audit reconstruction, and provenance-completeness checking before stronger claims. |
 | `runtime-adapters-tool-permissions-and-human-approval` | Safety-critical action boundary had too few adversarial proof scenarios relative to its role as the external-effect boundary. | Partially executed: added a finite runtime-adapter route model for scoped approval, effect-lease scope/expiry/sandbox, parent and lease authority ceilings, confused-deputy rejection, sandbox-escape rejection, rollback-handle requests, effect-receipt/audit/non-claim blockers, and complete low-impact dispatch. Remaining work: executable/live adapter harness, real sandbox isolation, approval-service behavior, secret-handle safety, rollback execution, live effect-receipt validation, and broader harness parity. |
-| `procedural-memory-and-cognitive-loop-closure` | Narrow proof coverage and light skill-library/tool-synthesis anchoring. | Add promotion-gating and regression-preservation theorems; source-note Voyager, DreamCoder, learned-tool, and tool-making-agent comparators where appropriate. |
+| `procedural-memory-and-cognitive-loop-closure` | Narrow proof coverage is partially addressed; external tool-synthesis/skill-library anchoring remains light. | Partially executed: added promotion-gating, regression-preservation, lifecycle-route, and synthetic-fixture bridge theorems for routable, quarantined, and retired procedure states. Remaining work: source-note Voyager, DreamCoder, learned-tool, and tool-making-agent comparators where appropriate; build deployed or replayed loop-detection, tool-synthesis, generated-tool correctness, routing-monitor, regression-quality, and retirement-automation evidence before stronger claims. |
 | `routing-heads-and-specialist-cores` | Strong chapter with remaining planned tests. | Finish planned routing tests with authority/readiness/residual non-claims; avoid turning route-quality fixtures into learned-router claims. |
 | `readiness-gates-residual-escrow-and-quarantine` | Lifecycle control plane deserved broader transition proof coverage. | Partially executed: added a finite readiness lifecycle-transition relation for candidate, shadow, canary, qualified, default-ready, quarantined, retired, and superseded records, with hard requirements for evidence freshness, residual escrow, fallback, expiry, regression floor, authority scope, route permission, supersession record, and retirement receipt. Remaining work: executable lifecycle fixtures, deployed lifecycle transition execution, residual-ledger storage, live quarantine routing, gate-quality checks, terminal-state governance, MoECOT replay, benchmark evidence, and current-readiness evidence. |
 | `personal-compute-hives-and-federated-edge-intelligence` | Ambitious, sprawling chapter with many planned tests and formerly missing chapter-level Lean module mapping. | Metadata mapping is fixed; next implement hive scheduler, policy membrane, portal approval, federation lease, dropout, energy, audit replay, and rented-node tests; tighten speculative product vocabulary. |

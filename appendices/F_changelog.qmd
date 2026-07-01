@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Expand Procedural Memory lifecycle proofs
+
+- Added a finite `ProcedureLifecycleRoute` model to
+  `AsiStackProofs.ProceduralMemory` with derived route theorems for comparable
+  trace clusters, negative-example preservation, closure artifacts,
+  verification, regression quarantine, benchmark floors, active SCF targets,
+  retirement triggers, monitoring plans, residuals, non-claim boundaries, and
+  verified source states.
+- Added fixture-shaped Lean bridge records for the procedural-memory loop
+  harness's valid routable-with-negative-examples, failed-regression-quarantined,
+  and retired-stale-precondition scenarios.
+- Updated the Procedural Memory chapter, book outline, manifest test rows,
+  proof-depth report, proof-artifact audit, proof adequacy review, v1.x roadmap,
+  proof/code plan, and v1.0 proof-envelope status guard. Procedural Memory
+  remains at `argument`; no deployed loop detector, tool synthesizer,
+  generated-tool correctness result, routing monitor, regression-quality
+  benchmark, retirement automation, or support-state promotion is claimed.
+
 ## 2026-07-01 - Expand Artifact Graph route proofs
 
 - Added replay-grade and artifact-admission route coverage to
