@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-07-01 - Evidence-state transition lifecycle route proof
+
+- Strengthened `AsiStackProofs.EvidenceStates` with a finite
+  `EvidenceTransitionRoute`, `EvidenceTransitionReview`, and
+  `EvidenceTransitionRouteFor` decision surface over requested support-state
+  movements, claim records, scope boundaries, declared support-state effects,
+  support-effect mismatches, accepted reviews, required evidence bundles,
+  negative evidence, downgrade triggers, terminal effects, changelog refs, and
+  non-claim boundaries.
+- Added the third Evidence States proof target,
+  `lean:evidence.support_state.transition_lifecycle_route`, plus derived route
+  theorems showing that no-change requests stay no-change; missing claim
+  records reject a transition; missing scope, effect, review, evidence,
+  negative-evidence, downgrade-trigger, terminal-effect, changelog, and
+  non-claim-boundary records route to explicit modeled outcomes; effect
+  mismatches block transition; and a complete synthetic-test-backed transition
+  can accept within the finite record model.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 326
+  generated chapter-level rows: 226 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 125 implemented targets, and the proof-depth classifier
+  now reports 448 theorem declarations, 121 direct/projection-style
+  declarations, and 327 derived/decomposed declarations.
+- Updated the Evidence States chapter, book outline, proof adequacy review,
+  v1.x/v1.0 roadmap/status surfaces, focus audit, publication readiness,
+  repository map, proof/code plan, manuscript status, and status snapshot guard.
+  This does not promote, demote, deprecate, or refute any live claim; prove
+  source interpretation; prove evidence-bundle completeness; prove reviewer
+  quality; prove changelog completeness; validate runtime behavior; approve a
+  reader artifact; or change release status.
+
 ## 2026-07-01 - Claim-ledger revision lifecycle route proof
 
 - Strengthened `AsiStackProofs.ClaimLedger` with a finite

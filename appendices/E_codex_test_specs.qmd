@@ -22,6 +22,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Evaluator drift scenario | implemented | passes via Lean build |
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Unverified-claim scenario | implemented | passes via Lean build |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Support-state transition test | implemented | validated locally |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence transition lifecycle route | implemented | passes via Lean route theorems; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, runtime-behavior, or support-state-promotion claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Changelog consistency audit | planned | not run |
@@ -376,16 +377,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 124 |
+| Proof targets covered by triage | 125 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 124 |
+| implemented | 125 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 124 |
+| implemented | formal-invariant | lean-candidate | 125 |

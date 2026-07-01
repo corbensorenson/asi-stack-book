@@ -1019,6 +1019,12 @@
               "result_status": "validated locally",
               "status": "implemented by support-state transition harness; synthetic fixture validation only"
             },
+            {
+              "name": "Evidence transition lifecycle route",
+              "purpose": "Check that modeled evidence-transition requests route no-change, missing claim record, scope-boundary gaps, support-effect gaps, support-effect mismatch, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatch, missing changelog refs, missing non-claim boundaries, and complete transitions to explicit finite outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, runtime-behavior, or support-state-promotion claim"
+            },
             "Claim ledger completeness test",
             "Evidence bundle completeness test",
             "Changelog consistency audit"
@@ -1035,6 +1041,12 @@
               "tag": "lean:evidence.support_state.failure_blocks_promotion",
               "module": "AsiStackProofs.EvidenceStates",
               "target": "A claim cannot be promoted when required evidence is absent.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:evidence.support_state.transition_lifecycle_route",
+              "module": "AsiStackProofs.EvidenceStates",
+              "target": "A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes.",
               "status": "implemented"
             }
           ]

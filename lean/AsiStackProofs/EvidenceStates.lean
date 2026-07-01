@@ -134,4 +134,260 @@ theorem accepted_terminal_transition_blocks_promotion_to_new_state
   intro accepted
   exact terminal_state_cannot_be_promotion_target (terminal_effect_for_implies_terminal_state accepted.1)
 
+inductive EvidenceTransitionRoute where
+  | allowNoChange
+  | rejectMissingClaimRecord
+  | requestScopeBoundary
+  | requestSupportStateEffect
+  | blockSupportStateEffectMismatch
+  | requestAcceptedReview
+  | requestRequiredEvidence
+  | requestNegativeEvidence
+  | requestDowngradeTrigger
+  | requestTerminalEffect
+  | requestChangelogRef
+  | preserveNonClaimBoundary
+  | acceptTransition
+deriving DecidableEq, Repr
+
+structure EvidenceTransitionReview where
+  transitionRequested : Bool
+  claimRecordPresent : Bool
+  scopeBoundaryPresent : Bool
+  supportStateEffectDeclared : Bool
+  supportStateEffectMatchesRecord : Bool
+  oldState : SupportState
+  newState : SupportState
+  effect : TransitionEffect
+  acceptedReviewPresent : Bool
+  sourceNotePresent : Bool
+  prototypeInspectionPresent : Bool
+  syntheticTestRunPresent : Bool
+  empiricalTestRunPresent : Bool
+  externalLiteraturePresent : Bool
+  negativeEvidenceRefsPresent : Bool
+  downgradeTriggerPresent : Bool
+  changelogRefPresent : Bool
+  nonClaimBoundaryPresent : Bool
+deriving DecidableEq, Repr
+
+def EvidenceAvailableFor :
+    SupportState -> EvidenceTransitionReview -> Bool
+  | .unsupported, _ => true
+  | .argument, _ => true
+  | .sourceDerived, review => review.sourceNotePresent
+  | .prototypeBacked, review => review.prototypeInspectionPresent
+  | .syntheticTestBacked, review => review.syntheticTestRunPresent
+  | .empiricalTestBacked, review => review.empiricalTestRunPresent
+  | .externalLiteratureBacked, review => review.externalLiteraturePresent
+  | .deprecated, _ => false
+  | .refuted, _ => false
+
+def TerminalStateBool : SupportState -> Bool
+  | .deprecated => true
+  | .refuted => true
+  | _ => false
+
+def TerminalEffectMatches :
+    SupportState -> TransitionEffect -> Bool
+  | .deprecated, .deprecated => true
+  | .refuted, .refuted => true
+  | _, _ => false
+
+def EvidenceTransitionRouteFor
+    (review : EvidenceTransitionReview) :
+    EvidenceTransitionRoute :=
+  if review.transitionRequested = false then
+    EvidenceTransitionRoute.allowNoChange
+  else if review.claimRecordPresent = false then
+    EvidenceTransitionRoute.rejectMissingClaimRecord
+  else if review.scopeBoundaryPresent = false then
+    EvidenceTransitionRoute.requestScopeBoundary
+  else if review.supportStateEffectDeclared = false then
+    EvidenceTransitionRoute.requestSupportStateEffect
+  else if review.supportStateEffectMatchesRecord = false then
+    EvidenceTransitionRoute.blockSupportStateEffectMismatch
+  else if TerminalStateBool review.newState = true then
+    if TerminalEffectMatches review.newState review.effect = false then
+      EvidenceTransitionRoute.requestTerminalEffect
+    else if review.negativeEvidenceRefsPresent = false then
+      EvidenceTransitionRoute.requestNegativeEvidence
+    else if review.acceptedReviewPresent = false then
+      EvidenceTransitionRoute.requestAcceptedReview
+    else if review.changelogRefPresent = false then
+      EvidenceTransitionRoute.requestChangelogRef
+    else if review.nonClaimBoundaryPresent = false then
+      EvidenceTransitionRoute.preserveNonClaimBoundary
+    else
+      EvidenceTransitionRoute.acceptTransition
+  else if review.effect = TransitionEffect.upward then
+    if review.acceptedReviewPresent = false then
+      EvidenceTransitionRoute.requestAcceptedReview
+    else if EvidenceAvailableFor review.newState review = false then
+      EvidenceTransitionRoute.requestRequiredEvidence
+    else if review.nonClaimBoundaryPresent = false then
+      EvidenceTransitionRoute.preserveNonClaimBoundary
+    else
+      EvidenceTransitionRoute.acceptTransition
+  else if review.effect = TransitionEffect.downward then
+    if review.negativeEvidenceRefsPresent = false then
+      EvidenceTransitionRoute.requestNegativeEvidence
+    else if review.downgradeTriggerPresent = false then
+      EvidenceTransitionRoute.requestDowngradeTrigger
+    else if review.changelogRefPresent = false then
+      EvidenceTransitionRoute.requestChangelogRef
+    else if review.nonClaimBoundaryPresent = false then
+      EvidenceTransitionRoute.preserveNonClaimBoundary
+    else
+      EvidenceTransitionRoute.acceptTransition
+  else if review.nonClaimBoundaryPresent = false then
+    EvidenceTransitionRoute.preserveNonClaimBoundary
+  else
+    EvidenceTransitionRoute.acceptTransition
+
+def completeEvidenceTransitionReview : EvidenceTransitionReview where
+  transitionRequested := true
+  claimRecordPresent := true
+  scopeBoundaryPresent := true
+  supportStateEffectDeclared := true
+  supportStateEffectMatchesRecord := true
+  oldState := SupportState.argument
+  newState := SupportState.syntheticTestBacked
+  effect := TransitionEffect.upward
+  acceptedReviewPresent := true
+  sourceNotePresent := true
+  prototypeInspectionPresent := true
+  syntheticTestRunPresent := true
+  empiricalTestRunPresent := true
+  externalLiteraturePresent := true
+  negativeEvidenceRefsPresent := true
+  downgradeTriggerPresent := true
+  changelogRefPresent := true
+  nonClaimBoundaryPresent := true
+
+theorem no_requested_transition_allows_no_change :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          transitionRequested := false } =
+      EvidenceTransitionRoute.allowNoChange := by
+  simp [EvidenceTransitionRouteFor]
+
+theorem missing_claim_record_rejects_evidence_transition :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          claimRecordPresent := false } =
+      EvidenceTransitionRoute.rejectMissingClaimRecord := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview]
+
+theorem missing_scope_boundary_requests_scope_boundary :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          scopeBoundaryPresent := false } =
+      EvidenceTransitionRoute.requestScopeBoundary := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview]
+
+theorem missing_support_state_effect_requests_effect_record :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          supportStateEffectDeclared := false } =
+      EvidenceTransitionRoute.requestSupportStateEffect := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview]
+
+theorem mismatched_support_state_effect_blocks_transition :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          supportStateEffectMatchesRecord := false } =
+      EvidenceTransitionRoute.blockSupportStateEffectMismatch := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview]
+
+theorem upward_transition_without_review_requests_review :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          acceptedReviewPresent := false } =
+      EvidenceTransitionRoute.requestAcceptedReview := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    TerminalStateBool]
+
+theorem source_derived_without_source_note_requests_required_evidence :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          newState := SupportState.sourceDerived
+          sourceNotePresent := false } =
+      EvidenceTransitionRoute.requestRequiredEvidence := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    EvidenceAvailableFor, TerminalStateBool]
+
+theorem synthetic_test_backed_without_test_run_requests_required_evidence :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          syntheticTestRunPresent := false } =
+      EvidenceTransitionRoute.requestRequiredEvidence := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    EvidenceAvailableFor, TerminalStateBool]
+
+theorem downward_transition_without_negative_evidence_requests_negative_evidence :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          effect := TransitionEffect.downward
+          oldState := SupportState.syntheticTestBacked
+          newState := SupportState.argument
+          negativeEvidenceRefsPresent := false } =
+      EvidenceTransitionRoute.requestNegativeEvidence := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    TerminalStateBool]
+
+theorem downward_transition_without_trigger_requests_downgrade_trigger :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          effect := TransitionEffect.downward
+          oldState := SupportState.syntheticTestBacked
+          newState := SupportState.argument
+          downgradeTriggerPresent := false } =
+      EvidenceTransitionRoute.requestDowngradeTrigger := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    TerminalStateBool]
+
+theorem terminal_refutation_with_wrong_effect_requests_terminal_effect :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          newState := SupportState.refuted
+          effect := TransitionEffect.noChange } =
+      EvidenceTransitionRoute.requestTerminalEffect := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    TerminalStateBool, TerminalEffectMatches]
+
+theorem terminal_refutation_without_negative_evidence_requests_negative_evidence :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          newState := SupportState.refuted
+          effect := TransitionEffect.refuted
+          negativeEvidenceRefsPresent := false } =
+      EvidenceTransitionRoute.requestNegativeEvidence := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    TerminalStateBool, TerminalEffectMatches]
+
+theorem terminal_refutation_without_changelog_requests_changelog :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          newState := SupportState.refuted
+          effect := TransitionEffect.refuted
+          changelogRefPresent := false } =
+      EvidenceTransitionRoute.requestChangelogRef := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    TerminalStateBool, TerminalEffectMatches]
+
+theorem transition_without_nonclaims_preserves_nonclaim_boundary :
+    EvidenceTransitionRouteFor
+        { completeEvidenceTransitionReview with
+          nonClaimBoundaryPresent := false } =
+      EvidenceTransitionRoute.preserveNonClaimBoundary := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    EvidenceAvailableFor, TerminalStateBool]
+
+theorem complete_synthetic_test_backed_transition_accepts :
+    EvidenceTransitionRouteFor completeEvidenceTransitionReview =
+      EvidenceTransitionRoute.acceptTransition := by
+  simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
+    EvidenceAvailableFor, TerminalStateBool]
+
 end AsiStackProofs

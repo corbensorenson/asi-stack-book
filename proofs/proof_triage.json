@@ -111,6 +111,16 @@
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
     },
     {
+      "tag": "lean:evidence.support_state.transition_lifecycle_route",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "module": "AsiStackProofs.EvidenceStates",
+      "formal_target": "A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.EvidenceStates as a finite transition-lifecycle route function and derived route theorems for no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, missing non-claim boundaries, and complete transition acceptance."
+    },
+    {
       "tag": "lean:intent.contract.operational_invariant",
       "chapter_id": "human-intent-as-a-formal-input",
       "module": "AsiStackProofs.IntentContracts",

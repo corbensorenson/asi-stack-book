@@ -4,7 +4,7 @@ chapter_id: "evidence-states-and-claim-discipline"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "benchmaxxing"
   - "spinoza"
@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records a claim-level source-note map for this chapter's core claim, and five of six assigned mappings have local raw-cache passage review; the support state remains argument until the remaining connector-only mapping is reviewed and an evidence transition is accepted."
-  - "The claim_record and evidence_transition_record fixtures and evidence-state Lean proofs validate narrow transition surfaces only; the fixtures now record source mapping status, source mapping refs, evidence readiness state, required next evidence, claim surface refs, claim record refs, transition validity state, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, acceptance blockers, reviewer independence, changelog ref, support-state effect, and non-claims. The support-state harness now includes synthetic downward demotion and terminal refutation cases, but no live claim is demoted or refuted. Claim-ledger completeness, evidence bundle completeness, accepted transition review, and changelog audits remain unimplemented."
+  - "The claim_record and evidence_transition_record fixtures and evidence-state Lean proofs validate narrow transition surfaces only; the fixtures now record source mapping status, source mapping refs, evidence readiness state, required next evidence, claim surface refs, claim record refs, transition validity state, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, acceptance blockers, reviewer independence, changelog ref, support-state effect, and non-claims. The support-state harness includes synthetic downward demotion and terminal refutation cases, and Lean now includes a finite transition-lifecycle route envelope for no-change, missing record, scope, support-effect, review, evidence, negative-evidence, downgrade-trigger, terminal-effect, changelog, and non-claim-boundary cases; no live claim is promoted, demoted, deprecated, or refuted. Claim-ledger completeness, evidence bundle completeness, accepted transition review, and changelog audits remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -28,14 +28,14 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-01 |
 | Primary source records | `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `spinoza`, `viea`; supporting: `uat`, `coherence_exchange`, `verification_bandwidth` |
 | Source loading state | source notes: `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth`; raw cache: `benchmaxxing`, `spinoza`, `viea`, `uat`, `verification_bandwidth`; connector/recovery: `coherence_exchange` |
 | Source evidence review state | Five of six claim-source mappings have reviewed local raw-cache passage references in `book_structure.json`; `coherence_exchange` remains connector-only/source-note mapped. |
-| Test state | `claim_record.valid.json` and `evidence_transition_record.valid.json` pass protocol fixture validation for source mapping status, source mapping refs, evidence readiness state, required next evidence, claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims; `python3 scripts/validate_support_state_transitions.py` now passes with four valid and four expected-invalid synthetic fixtures covering no-change, upward promotion, downward demotion, and terminal refutation gate behavior; evidence-state Lean hooks build locally; source evidence audit records the five reviewed mappings; claim-ledger completeness, evidence bundle completeness, accepted live transition review, and changelog consistency audits remain planned. |
+| Test state | `claim_record.valid.json` and `evidence_transition_record.valid.json` pass protocol fixture validation for source mapping status, source mapping refs, evidence readiness state, required next evidence, claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims; `python3 scripts/validate_support_state_transitions.py` passes with four valid and four expected-invalid synthetic fixtures covering no-change, upward promotion, downward demotion, and terminal refutation gate behavior; evidence-state Lean hooks now include a finite transition-lifecycle route envelope; source evidence audit records the five reviewed mappings; claim-ledger completeness, evidence bundle completeness, accepted live transition review, and changelog consistency audits remain planned. |
 
 ## Drafting guardrail
 
@@ -225,7 +225,9 @@ Evidence smoothing is a prose-quality failure with epistemic consequences. A rev
 
 ## Minimum Viable Implementation
 
-The minimal evidence-control surface is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, Appendix C, one valid claim fixture, one valid transition fixture, the support-state transition harness, and the Lean evidence-state proof module. Schema validation checks claim shape, source-mapping status, evidence-readiness state, required next evidence, transition shape, claim surface refs, claim-record refs, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, acceptance blockers, reviewer independence, changelog linkage, support-state effect, and non-claims. The support-state harness now exercises synthetic no-change, upward, downward, and terminal refutation transitions, including invalid controls for unreviewed promotion, failed verification, reasonless demotion, and unsupported refutation. The Lean module proves the narrow support-state invariant in this repository, including that terminal states are not promotion targets. Neither artifact promotes, demotes, deprecates, or refutes any chapter claim without claim-specific evidence and accepted review.
+The minimal evidence-control surface is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, Appendix C, one valid claim fixture, one valid transition fixture, the support-state transition harness, and the Lean evidence-state proof module. Schema validation checks claim shape, source-mapping status, evidence-readiness state, required next evidence, transition shape, claim surface refs, claim-record refs, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, acceptance blockers, reviewer independence, changelog linkage, support-state effect, and non-claims.
+
+The support-state harness exercises synthetic no-change, upward, downward, and terminal refutation transitions, including invalid controls for unreviewed promotion, failed verification, reasonless demotion, and unsupported refutation. The Lean module proves narrow support-state invariants in this repository, including that terminal states are not promotion targets and that a finite transition-lifecycle route sends missing claim records, scope boundaries, support-state effects, effect mismatches, missing review, missing required evidence, missing negative evidence, missing downgrade triggers, wrong terminal effects, missing changelog refs, and missing non-claim boundaries to explicit modeled outcomes. Neither artifact promotes, demotes, deprecates, or refutes any chapter claim without claim-specific evidence and accepted review.
 
 An evidence-receipt suite is the right first exercise: one lineage-only source, one direct-support source, one failed verification, one schema-only validation, one finite Lean predicate, and one benchmark result whose scope is deliberately narrower than the prose claim.
 
@@ -246,6 +248,7 @@ This ledger is a proposed evidence-control system for the book and stack. Its su
 | Claim record validation | Check that the claim fixture records source mapping status, source mapping refs, evidence readiness state, required next evidence, promotion blockers, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Evidence transition record validation | Check that the transition fixture records support states, claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, verification result, downgrade triggers, promotion burden, limitations, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Support-state transition test | Check synthetic no-change, upward, downward, and terminal refutation evidence-transition records, including invalid controls for unreviewed promotion, failed verification, reasonless demotion, and unsupported refutation. | implemented; validated locally |
+| Evidence transition lifecycle route | Check that modeled evidence-transition requests route no-change, missing claim record, scope-boundary gaps, support-effect gaps, support-effect mismatch, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatch, missing changelog refs, missing non-claim boundaries, and complete transitions to explicit finite outcomes. | implemented in `AsiStackProofs.EvidenceStates`; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, or runtime-behavior claim |
 | Claim ledger completeness test | Check that every major chapter claim appears in Appendix C with label, support state, and open gap. | planned; not run |
 | Evidence bundle completeness test | Check that test-backed claims include command, environment, logs, metrics, limitations, and negative results. | planned; not run |
 | Changelog consistency audit | Check that meaningful support-state, proof, schema, source, or publication changes are recorded. | planned; not run |
@@ -256,8 +259,9 @@ This ledger is a proposed evidence-control system for the book and stack. Its su
 |---|---|---|---|
 | `lean:evidence.support_state.operational_invariant` | `AsiStackProofs.EvidenceStates` | Support-state transitions require the corresponding evidence artifact. | implemented |
 | `lean:evidence.support_state.failure_blocks_promotion` | `AsiStackProofs.EvidenceStates` | A claim cannot be promoted when required evidence is absent. | implemented |
+| `lean:evidence.support_state.transition_lifecycle_route` | `AsiStackProofs.EvidenceStates` | A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
 
-These two evidence-state hooks are implemented in the local Lean workspace. The module also now models `deprecated` and `refuted` as terminal support states and proves narrow terminal/downgrade guard theorems over finite records. Their scope is narrow: they check transition discipline, not the truth of any source-derived or benchmark-backed claim and not the correctness of any live demotion/refutation decision.
+These evidence-state hooks are implemented in the local Lean workspace. The module models `deprecated` and `refuted` as terminal support states, proves narrow terminal/downgrade guard theorems over finite records, and now includes a finite transition-lifecycle route envelope. Their scope is narrow: they check transition discipline, not the truth of any source-derived or benchmark-backed claim, not evidence-bundle completeness, not reviewer quality, and not the correctness of any live promotion, demotion, deprecation, or refutation decision.
 
 ## Source crosswalk
 

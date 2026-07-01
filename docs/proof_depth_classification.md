@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 124 |
+| Proof targets in manifest | 125 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 433 |
+| Theorem declarations classified | 448 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 312 |
+| Derived/decomposed theorem declarations | 327 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 69 |
 | Safety-critical direct/projection declarations | 10 |
@@ -69,7 +69,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 2 | 9 | 6 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 3 | 24 | 6 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 2 | 8 | 5 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -245,12 +245,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_downgrade_transition_requires_negative_evidence_and_trigger` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_blocks_promotion_to_new_state` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_requires_negative_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `complete_synthetic_test_backed_transition_accepts` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `downward_transition_without_negative_evidence_requests_negative_evidence` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `downward_transition_without_trigger_requests_downgrade_trigger` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `mismatched_support_state_effect_blocks_transition` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `missing_claim_record_rejects_evidence_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `missing_required_evidence_blocks_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `missing_scope_boundary_requests_scope_boundary` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `missing_support_state_effect_requests_effect_record` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `no_requested_transition_allows_no_change` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `no_self_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `source_derived_without_source_note_requests_required_evidence` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `support_state_transition_requires_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `synthetic_test_backed_without_test_run_requests_required_evidence` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_effect_for_implies_terminal_state` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_refutation_with_wrong_effect_requests_terminal_effect` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_refutation_without_changelog_requests_changelog` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_refutation_without_negative_evidence_requests_negative_evidence` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_state_cannot_be_promotion_target` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `transition_without_nonclaims_preserves_nonclaim_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `unsupported_can_promote_to_argument` | derived_or_decomposed | no | uses constructor |
+| `lean/AsiStackProofs/EvidenceStates.lean` | `upward_transition_without_review_requests_review` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FailureModes.lean` | `authority_over_ceiling_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `failed_required_invariant_blocks_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `subject_modified_evaluator_freezes_review` | derived_or_decomposed | no | uses simp, unfold |
