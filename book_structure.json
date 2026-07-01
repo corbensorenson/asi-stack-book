@@ -8949,6 +8949,34 @@
               "status": "implemented by Lean build"
             },
             {
+              "name": "Implemented-target missing artifact/build negative case",
+              "purpose": "Reject implemented proof-target status when the target lacks a module/artifact reference or passing verifier/build record.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no filesystem discovery or proof-adequacy claim",
+              "status": "implemented in AsiStackProofs.ProofEnvelope"
+            },
+            {
+              "name": "Non-Lean artifact proof-laundering negative case",
+              "purpose": "Reject schema, process, behavior, benchmark, external-theorem, or backlog artifacts that are presented as Lean proof claims.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no claim about artifact semantic adequacy",
+              "status": "implemented in AsiStackProofs.ProofEnvelope"
+            },
+            {
+              "name": "Support-promotion boundary negative case",
+              "purpose": "Reject support-state promotion from a proof artifact without accepted evidence transition, semantic adequacy, limitations, non-claims, and consumer-requirement match.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no Appendix C or chapter-core promotion",
+              "status": "implemented in AsiStackProofs.ProofEnvelope"
+            },
+            {
+              "name": "External theorem reference boundary negative case",
+              "purpose": "Reject external-theorem references that lack artifact refs, resolved theorem IDs, or non-claim boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no external theorem ownership or transfer claim",
+              "status": "implemented in AsiStackProofs.ProofEnvelope"
+            },
+            {
               "name": "Proof target coverage summary",
               "purpose": "Classify proof targets by status, triage class, and recommended route.",
               "implementation_status": "implemented",

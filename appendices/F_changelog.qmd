@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-30 - Proof-envelope artifact authority proofs
+
+- Strengthened `AsiStackProofs.ProofEnvelope` with four derived negative-case
+  theorems: one rejects implemented targets missing module or build records,
+  one rejects non-Lean artifacts presented as Lean proofs, one rejects support
+  promotion without accepted transition, semantic adequacy, limitations,
+  non-claims, and consumer-requirement records, and one rejects external
+  theorem references without artifact refs, resolved theorem IDs, or non-claim
+  boundaries.
+- Regenerated `docs/proof_depth_classification.md`,
+  `docs/proof_artifact_audit.md`, `proofs/proof_manifest.json`, and Appendix
+  E; the proof-depth classifier now reports 364 theorem declarations, 121
+  direct/projection-style declarations, and 243 derived/decomposed
+  declarations.
+- Updated the Proof Envelope chapter, outline, manifest test rows, proof
+  adequacy review, manuscript status, candidate status, v1.0/v1.x roadmap
+  surfaces, focus audit, and status snapshot validator. Appendix E now records
+  205 implemented rows, 1 partial row, and 110 planned rows. Refreshed the
+  v1.0 status manuscript scale to 169,609 chapter words excluding YAML and
+  177,241 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, inspect the
+  filesystem, discover missing proof opportunities, validate external theorem
+  content, judge semantic adequacy, validate source interpretation, approve a
+  reader/ebook/PDF/DOCX/audio artifact, or approve any release artifact beyond
+  recorded validation scope.
+
 ## 2026-06-30 - Readiness lifecycle boundary proofs
 
 - Strengthened `AsiStackProofs.ReadinessGates` with four derived negative-case

@@ -2603,11 +2603,15 @@ Draft deliverables:
 
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
-- Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target and non-operational routing requirements without claiming broad system proof, source correctness, model quality, or benchmark evidence.
+- Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 122 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 122 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
+- Implemented Codex test: Implemented-target missing artifact/build negative case.
+- Implemented Codex test: Non-Lean artifact proof-laundering negative case.
+- Implemented Codex test: Support-promotion boundary negative case.
+- Implemented Codex test: External theorem reference boundary negative case.
 - Implemented Codex test: Proof artifact traceability audit.
 - Planned Codex test: Semantic proof adequacy audit.
 
@@ -2617,6 +2621,15 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:proofs.envelope.operational_invariant` | `AsiStackProofs.ProofEnvelope` | A proof target marked implemented has an existing module and passes the build. | implemented |
 | `lean:proofs.envelope.failure_blocks_promotion` | `AsiStackProofs.ProofEnvelope` | A proof target for a non-operational claim remains planned or blocked, not implemented. | implemented |
+
+Additional implemented theorem boundaries in `AsiStackProofs.ProofEnvelope`
+reject implemented targets missing module/build records, non-Lean artifacts
+presented as Lean proofs, support promotion without accepted transition,
+semantic adequacy, limitations, non-claims, and consumer-requirement records,
+and external-theorem references without artifact refs, resolved theorem IDs, or
+non-claim boundaries. These remain proof-envelope discipline only; they do not
+validate external theorem content, judge semantic adequacy, inspect the
+filesystem, or promote any chapter core claim.
 
 ### Benchmark Ratchets and Anti-Goodhart Evidence
 

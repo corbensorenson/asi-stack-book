@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 360 |
+| Theorem declarations classified | 364 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 239 |
+| Derived/decomposed theorem declarations | 243 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -85,7 +85,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProceduralMemory.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 7 | 5 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -311,9 +311,13 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `downstream_ready_receipt_missing_boundary_field_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `passing_replay_without_replay_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `promoted_downstream_claim_without_contract_ready_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `external_theorem_without_ids_or_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `implemented_target_has_module_and_passing_build` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `implemented_target_missing_module_or_build_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `non_lean_artifact_cannot_claim_lean_proof` | derived_or_decomposed | no | uses have, unfold |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `non_operational_target_not_implemented` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `non_operational_target_remains_planned_or_blocked` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `support_promotion_without_transition_or_boundaries_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_phase_claim_promotion_requires_evidence_artifacts` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `phase_milestone_cannot_promote_claim_without_evidence_artifacts` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `roadmap_phase_unlock_requires_passing_acceptance_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
