@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 132 |
-| Manifest status counts | {"implemented": 132} |
-| Triage class counts | {"formal-invariant": 132} |
+| Proof targets audited | 133 |
+| Manifest status counts | {"implemented": 133} |
+| Triage class counts | {"formal-invariant": 133} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -31,7 +31,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Lean module path | Targets | Theorems | Defs | Structures |
 |---|---:|---:|---:|---:|
-| `lean/AsiStackProofs/Alignment.lean` | 2 | 6 | 8 | 4 |
+| `lean/AsiStackProofs/Alignment.lean` | 3 | 23 | 10 | 5 |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | 3 | 19 | 6 | 3 |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | 2 | 4 | 3 | 1 |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 4 | 16 | 7 | 7 |
@@ -101,7 +101,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 6 | 6 | 0 | 0 |
-| `constitutional-alignment-substrate` | 4 | 4 | 0 | 0 |
+| `constitutional-alignment-substrate` | 5 | 5 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 2 | 2 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 3 | 3 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
@@ -159,6 +159,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:alignment.constitution.lifecycle_admission_route` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:corrigibility.agency.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |

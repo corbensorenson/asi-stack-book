@@ -211,6 +211,16 @@
       "rationale": "Implemented in AsiStackProofs.Alignment as a finite self-modification predicate: weakening a protected predicate requires rejection."
     },
     {
+      "tag": "lean:alignment.constitution.lifecycle_admission_route",
+      "chapter_id": "constitutional-alignment-substrate",
+      "module": "AsiStackProofs.Alignment",
+      "formal_target": "Modeled constitutional lifecycle admission routes missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Alignment as a finite constitutional lifecycle route over predicate, normative-source, operational-test, protected-scope, conflict-behavior, review-route, migration-policy, self-modification-rule, agency-rights, material-usability, pre-effect-review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records; it does not prove moral correctness, deployed alignment, rights usability, reviewer-independence quality, rollback execution, consent quality, support-state promotion, or runtime policy behavior."
+    },
+    {
       "tag": "lean:corrigibility.agency.operational_invariant",
       "chapter_id": "constitutional-alignment-substrate",
       "module": "AsiStackProofs.Corrigibility",

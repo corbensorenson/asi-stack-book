@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The consolidated alignment/governance layer preserves constitutional-predicate and agency-rights mappings at argument support only; no deployed alignment, dignity preservation, corrigibility, consent-quality, reviewer-independence, or moral-correctness claim is promoted."
-  - "Synthetic constitutional-alignment and agency-rights harnesses plus finite-record Lean theorems and agency-correction route checks remain bounded record checks; runtime policy behavior, material rights usability under pressure, manipulation resistance, approval-service quality, rollback/shutdown execution, and red-team evidence remain open."
+  - "Synthetic constitutional-alignment and agency-rights harnesses plus finite-record Lean theorems, constitutional lifecycle route checks, and agency-correction route checks remain bounded record checks; runtime policy behavior, material rights usability under pressure, manipulation resistance, approval-service quality, reviewer-independence quality, rollback/shutdown execution, and red-team evidence remain open."
   - "External comparators for Constitutional AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment or deployed control result is reproduced here."
 ---
 
@@ -25,11 +25,11 @@ open_evidence_gaps:
 
 The consolidated alignment/governance layer remains conceptual. Its core claim
 remains `Design rationale` with `argument` support. Existing source notes,
-synthetic harnesses, finite-record Lean theorems, and a bounded
-agency-correction lifecycle route make the idea more inspectable, but they do
-not prove deployed constitutional alignment, human dignity preservation, runtime
-corrigibility, consent quality, reviewer independence, moral correctness, or
-institutional adequacy.
+synthetic harnesses, finite-record Lean theorems, a bounded constitutional
+lifecycle route, and a bounded agency-correction lifecycle route make the idea
+more inspectable, but they do not prove deployed constitutional alignment,
+human dignity preservation, runtime corrigibility, consent quality, reviewer
+independence, moral correctness, or institutional adequacy.
 
 The consolidated layer combines two record families:
 
@@ -375,6 +375,7 @@ the merged core claim at `argument`.
 | Agency rights checklist validation | Check that the rights fixture records affected parties, review, appeal, rollback, accountability, and residual risk. | implemented by protocol validation and current harnesses |
 | Material-usability rights test | Check that declared rights are usable before the relevant effect where timing matters. | modeled by synthetic fixtures; real interface usability not run |
 | Corrigibility pathway test | Check that update, rollback, shutdown, or correction paths remain available after transition. | modeled by finite Lean and synthetic fixtures; deployed shutdown, rollback, and correction behavior not run |
+| Constitutional lifecycle admission route envelope | Check that finite constitutional lifecycle records route missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented in `AsiStackProofs.Alignment`; no moral-correctness, deployed alignment, rights-usability, reviewer-independence quality, rollback execution, consent-quality, support-state-promotion, or runtime-policy claim |
 | Agency correction lifecycle route envelope | Check that finite agency-correction lifecycle records route missing affected-party records, material notice, pre-effect review, bounded delegation, approval, correction paths, rollback/shutdown paths, dependency residuals, degradation reasons, accountability, evidence-transition records, and complete bounded action to explicit outcomes. | implemented in `AsiStackProofs.Corrigibility`; no deployed rights-usability, approval-service quality, consent-quality, rollback/shutdown execution, manipulation-resistance, dignity-preservation, or support-state-promotion claim |
 
 ## Formalization hooks
@@ -383,6 +384,7 @@ the merged core claim at `argument`.
 |---|---|---|---|
 | `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | implemented |
 | `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | implemented |
+| `lean:alignment.constitution.lifecycle_admission_route` | `AsiStackProofs.Alignment` | Modeled constitutional lifecycle admission routes missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
 | `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | implemented |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | implemented |
 
@@ -391,8 +393,14 @@ source manuscripts. These Lean modules prove small finite-record properties,
 rejection cases, and bounded route outcomes for declared records. Direct/projection
 hooks remain projection-only traceability unless the theorem reasons over an
 explicit transition, negative case, residual path, authority ceiling, or
-support-state boundary. The Corrigibility module now also checks a finite
-agency-correction lifecycle route for missing affected-party records, material
+support-state boundary. The Alignment module now also checks a finite
+constitutional lifecycle route for missing predicate, normative-source,
+operational-test, protected-scope, conflict-behavior, review-route,
+migration-policy, self-modification-rule, agency-rights, material-usability,
+pre-effect-review, rollback, correction, reviewer-independence,
+evidence-transition, and non-claim-boundary records. The Corrigibility module
+now also checks a finite agency-correction lifecycle route for missing
+affected-party records, material
 notice, pre-effect review, bounded delegation, approval, correction paths,
 rollback or shutdown paths, dependency residuals, degradation reasons,
 accountability, evidence-transition records, and complete bounded action. These

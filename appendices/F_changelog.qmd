@@ -1,5 +1,41 @@
 # Changelog
 
+## 2026-07-01 - Constitutional lifecycle admission proof
+
+- Strengthened `AsiStackProofs.Alignment` with a finite
+  `ConstitutionalLifecycleRoute`, `ConstitutionalLifecycleReview`, and
+  `ConstitutionalLifecycleRouteFor` decision surface over predicate records,
+  normative sources, operational tests, protected scopes, conflict behavior,
+  review routes, migration policies, self-modification rules, agency-rights
+  links, material usability records, high-impact action status, pre-effect
+  review, rollback paths, correction paths, independent reviewer records,
+  evidence-transition records, and non-claim boundaries.
+- Added the third Alignment proof target,
+  `lean:alignment.constitution.lifecycle_admission_route`, plus route theorems
+  showing that missing constitutional lifecycle fields route to explicit record
+  requests; high-impact actions without pre-effect review, rollback, or
+  correction paths route to blocking outcomes; high-impact actions without
+  independent reviewer records route to reviewer-gap handling; support-promotion
+  attempts without evidence transitions route to transition review; and missing
+  non-claim boundaries route to boundary preservation.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 334
+  generated chapter-level rows: 234 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 133 implemented targets, and the proof-depth
+  classifier now reports 585 theorem declarations, 121 direct/projection-style
+  declarations, and 464 derived/decomposed declarations.
+- Updated the Constitutional Alignment chapter, book outline, proof adequacy
+  review, v1.x/v1.0 roadmap/status surfaces, focus audit, publication
+  readiness, repository map, proof/code plan, manuscript status, proof-envelope
+  chapter, and status snapshot guard. Updated the reader HTML artifact browser
+  validator to derive its expected page count from the generated reader
+  manifest instead of a stale hard-coded threshold. This does not promote,
+  demote, deprecate, or refute any live claim; prove moral correctness,
+  deployed constitutional alignment, rights usability, reviewer-independence
+  quality, rollback execution, consent quality, support-state promotion,
+  runtime policy behavior, reader artifact approval, release status, model
+  capability, or audio artifact readiness.
+
 ## 2026-07-01 - Failure recurrence escalation proof
 
 - Strengthened `AsiStackProofs.FailureModes` with a finite

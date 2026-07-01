@@ -534,6 +534,7 @@ Draft deliverables:
 - Exact Appendix C claim-source mappings for the merged core claim across seven Corben/local sources; duplicate folded mappings are merged by source ID so support remains `argument` and passage-review boundaries remain visible.
 - Source-noted external positioning through Constitutional AI, Collective Constitutional AI, corrigibility, and off-switch work; no training run, public-input process, corrigibility theorem, or shutdown-incentive result is reproduced.
 - Implemented synthetic Codex tests from both source chapters via `python3 scripts/validate_constitutional_alignment.py` and `python3 scripts/validate_agency_rights.py`; deployed constitutional alignment, agency preservation, dignity preservation, consent quality, material rights usability, manipulation resistance, and reviewer independence remain open.
+- Implemented Lean follow-through: `AsiStackProofs.Alignment` includes a finite constitutional lifecycle admission route for missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records without claiming moral correctness, deployed alignment, rights usability, reviewer-independence quality, rollback execution, consent quality, support-state promotion, or runtime policy behavior.
 - Implemented Lean follow-through: `AsiStackProofs.Corrigibility` includes a finite agency-correction lifecycle route envelope for missing affected-party records, material notice, pre-effect review, bounded delegation, approval, correction paths, rollback/shutdown paths, dependency residuals, degradation reasons, accountability, evidence-transition records, and complete bounded action without claiming deployed rights usability, approval-service quality, consent quality, rollback/shutdown execution, manipulation resistance, dignity preservation, or support-state promotion.
 - Historical public slug preserved by `chapters/agency-dignity-and-corrigibility.html`; archived source manuscript retained under `archive/retired_chapters/agency-dignity-and-corrigibility.qmd`.
 
@@ -543,6 +544,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.Alignment` | An admitted plan satisfies every active constitutional predicate. | implemented |
 | `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.Alignment` | A self-modification that weakens a protected predicate is rejected. | implemented |
+| `lean:alignment.constitution.lifecycle_admission_route` | `AsiStackProofs.Alignment` | Modeled constitutional lifecycle admission routes missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
 | `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | implemented |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | implemented |
 
@@ -2628,8 +2630,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 132 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 132 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 133 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 133 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

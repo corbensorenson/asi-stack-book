@@ -12,13 +12,13 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 132 |
+| Proof targets in manifest | 133 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 568 |
+| Theorem declarations classified | 585 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 447 |
+| Derived/decomposed theorem declarations | 464 |
 | Unknown or mixed theorem declarations | 0 |
-| Safety-critical theorem declarations | 69 |
+| Safety-critical theorem declarations | 86 |
 | Safety-critical direct/projection declarations | 10 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -30,7 +30,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
-| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 3 | 23 | 2 | 21 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -52,7 +52,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
-| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 3 | 23 | 2 | 21 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 2 | 4 | 1 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 4 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -113,10 +113,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 |---|---|---|---|---|
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_transition_cannot_drop_protected_predicate` | derived_or_decomposed | yes | uses contradiction, rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `admitted_plan_satisfies_every_active_constitutional_predicate` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Alignment.lean` | `complete_constitutional_lifecycle_admits_constraint` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `constitutional_record_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `detected_conflict_without_route_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `high_impact_without_correction_blocks` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `high_impact_without_independent_reviewer_routes_gap` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `high_impact_without_pre_effect_review_blocks` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `high_impact_without_rollback_blocks` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_agency_rights_link_requests_link` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_conflict_behavior_requests_behavior` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_material_usability_requests_usability` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_migration_policy_requests_policy` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_normative_source_requests_source` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_operational_test_requests_test` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_predicate_record_requests_predicate_record` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_protected_scope_requests_scope` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_review_route_requests_review` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `missing_self_modification_rule_requests_rule` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `protected_migration_without_rollback_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `protected_predicate_weakening_without_reviewer_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `self_modification_that_weakens_protected_predicate_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Alignment.lean` | `support_promotion_without_alignment_transition_requests_transition` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `complete_compression_admission_allows_compressed_artifact` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `compressed_artifact_use_requires_probe_or_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `compressed_use_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |

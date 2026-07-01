@@ -14,6 +14,7 @@ const { pathToFileURL } = require("url");
 
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_SITE = path.join(ROOT, "build", "reader_edition", "format_artifacts", "html", "_reader_site");
+const DEFAULT_MANIFEST = path.join(ROOT, "build", "reader_edition", "reader_manifest.json");
 const DEFAULT_REPORT = path.join(ROOT, "build", "reader_html_artifact_browser_report.json");
 const VIEWPORTS = {
   desktop: { width: 1280, height: 900 },
@@ -140,6 +141,17 @@ function relative(filePath) {
   return path.relative(ROOT, filePath);
 }
 
+function expectedHtmlFileCount() {
+  if (!fs.existsSync(DEFAULT_MANIFEST)) {
+    throw new Error(`Reader manifest not found: ${DEFAULT_MANIFEST}`);
+  }
+  const manifest = JSON.parse(fs.readFileSync(DEFAULT_MANIFEST, "utf8"));
+  if (!Number.isInteger(manifest.files) || manifest.files < 1) {
+    throw new Error("Reader manifest is missing a positive integer files count.");
+  }
+  return manifest.files;
+}
+
 async function inspectPage(page, filePath, viewportName, viewportSize) {
   await page.setViewportSize(viewportSize);
   await page.goto(pathToFileURL(filePath).href, { waitUntil: "load" });
@@ -198,8 +210,9 @@ async function main() {
   }
 
   const files = htmlFiles(args.site);
-  if (files.length < 59) {
-    throw new Error(`Expected at least 59 reader HTML files, found ${files.length}.`);
+  const expectedFiles = expectedHtmlFileCount();
+  if (files.length < expectedFiles) {
+    throw new Error(`Expected at least ${expectedFiles} reader HTML files, found ${files.length}.`);
   }
 
   const playwright = loadPlaywright();
@@ -227,6 +240,7 @@ async function main() {
   const report = {
     schema_version: "0.1",
     artifact_root: relative(args.site),
+    expected_page_count: expectedFiles,
     page_count: files.length,
     viewport_count: Object.keys(VIEWPORTS).length,
     page_view_pairs: results.length,

@@ -46,6 +46,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Timing-before-effect test | implemented | passing via synthetic agency rights harness; no deployed pre-effect review enforcement claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Corrigibility pathway test | implemented | passing via synthetic agency rights harness; no deployed shutdown, rollback, or correction-pathway claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | High-impact approval test | implemented | passing via synthetic agency rights harness; no approval-service quality or reviewer-independence claim |
+| `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional lifecycle admission route envelope | implemented | passes via Lean route theorems; no moral-correctness, deployed alignment, rights-usability, reviewer-independence quality, rollback execution, consent-quality, support-state-promotion, or runtime-policy claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Agency correction lifecycle route envelope | implemented | passes via Lean route theorems; no deployed rights-usability, approval-service quality, consent-quality, rollback/shutdown execution, manipulation-resistance, dignity-preservation, or support-state-promotion claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Value conflict classification test | implemented | passing via synthetic value conflict harness; no moral-correctness or classification-quality claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Review escalation test | implemented | passing via synthetic value conflict harness; no reviewer-independence or review-quality claim |
@@ -384,16 +385,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 132 |
+| Proof targets covered by triage | 133 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 132 |
+| implemented | 133 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 132 |
+| implemented | formal-invariant | lean-candidate | 133 |

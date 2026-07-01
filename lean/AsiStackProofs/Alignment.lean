@@ -196,4 +196,391 @@ theorem detected_conflict_without_route_preserves_residual
   simp at safe
   exact safe
 
+inductive ConstitutionalLifecycleRoute where
+  | requestPredicateRecord
+  | requestNormativeSource
+  | requestOperationalTest
+  | requestProtectedScope
+  | requestConflictBehavior
+  | requestReviewRoute
+  | requestMigrationPolicy
+  | requestSelfModificationRule
+  | requestAgencyRightsLink
+  | requestMaterialUsability
+  | blockHighImpactUntilPreEffectReview
+  | blockHighImpactUntilRollback
+  | blockHighImpactUntilCorrection
+  | routeReviewerIndependenceGap
+  | requestEvidenceTransition
+  | preserveNonClaimBoundary
+  | admitConstitutionalConstraint
+deriving DecidableEq, Repr
+
+structure ConstitutionalLifecycleReview where
+  predicateRecorded : Bool
+  normativeSourceRecorded : Bool
+  operationalTestRecorded : Bool
+  protectedScopeRecorded : Bool
+  conflictBehaviorRecorded : Bool
+  reviewRouteRecorded : Bool
+  migrationPolicyRecorded : Bool
+  selfModificationRuleRecorded : Bool
+  agencyRightsLinked : Bool
+  materialUsabilityRecorded : Bool
+  highImpactAction : Bool
+  preEffectReviewRecorded : Bool
+  rollbackPathRecorded : Bool
+  correctionPathRecorded : Bool
+  independentReviewerRecorded : Bool
+  supportPromotionRequested : Bool
+  evidenceTransitionRecorded : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def ConstitutionalLifecycleRouteFor
+    (review : ConstitutionalLifecycleReview) : ConstitutionalLifecycleRoute :=
+  if review.predicateRecorded = false then
+    ConstitutionalLifecycleRoute.requestPredicateRecord
+  else if review.normativeSourceRecorded = false then
+    ConstitutionalLifecycleRoute.requestNormativeSource
+  else if review.operationalTestRecorded = false then
+    ConstitutionalLifecycleRoute.requestOperationalTest
+  else if review.protectedScopeRecorded = false then
+    ConstitutionalLifecycleRoute.requestProtectedScope
+  else if review.conflictBehaviorRecorded = false then
+    ConstitutionalLifecycleRoute.requestConflictBehavior
+  else if review.reviewRouteRecorded = false then
+    ConstitutionalLifecycleRoute.requestReviewRoute
+  else if review.migrationPolicyRecorded = false then
+    ConstitutionalLifecycleRoute.requestMigrationPolicy
+  else if review.selfModificationRuleRecorded = false then
+    ConstitutionalLifecycleRoute.requestSelfModificationRule
+  else if review.agencyRightsLinked = false then
+    ConstitutionalLifecycleRoute.requestAgencyRightsLink
+  else if review.materialUsabilityRecorded = false then
+    ConstitutionalLifecycleRoute.requestMaterialUsability
+  else if review.highImpactAction = true ∧
+      review.preEffectReviewRecorded = false then
+    ConstitutionalLifecycleRoute.blockHighImpactUntilPreEffectReview
+  else if review.highImpactAction = true ∧
+      review.rollbackPathRecorded = false then
+    ConstitutionalLifecycleRoute.blockHighImpactUntilRollback
+  else if review.highImpactAction = true ∧
+      review.correctionPathRecorded = false then
+    ConstitutionalLifecycleRoute.blockHighImpactUntilCorrection
+  else if review.highImpactAction = true ∧
+      review.independentReviewerRecorded = false then
+    ConstitutionalLifecycleRoute.routeReviewerIndependenceGap
+  else if review.supportPromotionRequested = true ∧
+      review.evidenceTransitionRecorded = false then
+    ConstitutionalLifecycleRoute.requestEvidenceTransition
+  else if review.nonClaimBoundaryRecorded = false then
+    ConstitutionalLifecycleRoute.preserveNonClaimBoundary
+  else
+    ConstitutionalLifecycleRoute.admitConstitutionalConstraint
+
+def completeConstitutionalLifecycleReview : ConstitutionalLifecycleReview :=
+  { predicateRecorded := true,
+    normativeSourceRecorded := true,
+    operationalTestRecorded := true,
+    protectedScopeRecorded := true,
+    conflictBehaviorRecorded := true,
+    reviewRouteRecorded := true,
+    migrationPolicyRecorded := true,
+    selfModificationRuleRecorded := true,
+    agencyRightsLinked := true,
+    materialUsabilityRecorded := true,
+    highImpactAction := false,
+    preEffectReviewRecorded := true,
+    rollbackPathRecorded := true,
+    correctionPathRecorded := true,
+    independentReviewerRecorded := true,
+    supportPromotionRequested := false,
+    evidenceTransitionRecorded := true,
+    nonClaimBoundaryRecorded := true }
+
+theorem missing_predicate_record_requests_predicate_record
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestPredicateRecord := by
+  intro missingPredicate
+  unfold ConstitutionalLifecycleRouteFor
+  simp [missingPredicate]
+
+theorem missing_normative_source_requests_source
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestNormativeSource := by
+  intro predicate sourceMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, sourceMissing]
+
+theorem missing_operational_test_requests_test
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestOperationalTest := by
+  intro predicate source testMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, testMissing]
+
+theorem missing_protected_scope_requests_scope
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestProtectedScope := by
+  intro predicate source test scopeMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scopeMissing]
+
+theorem missing_conflict_behavior_requests_behavior
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestConflictBehavior := by
+  intro predicate source test scope conflictMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflictMissing]
+
+theorem missing_review_route_requests_review
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestReviewRoute := by
+  intro predicate source test scope conflict reviewMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewMissing]
+
+theorem missing_migration_policy_requests_policy
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestMigrationPolicy := by
+  intro predicate source test scope conflict reviewRoute migrationMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migrationMissing]
+
+theorem missing_self_modification_rule_requests_rule
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestSelfModificationRule := by
+  intro predicate source test scope conflict reviewRoute migration ruleMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, ruleMissing]
+
+theorem missing_agency_rights_link_requests_link
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = true ->
+    review.agencyRightsLinked = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestAgencyRightsLink := by
+  intro predicate source test scope conflict reviewRoute migration rule linkMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, rule,
+    linkMissing]
+
+theorem missing_material_usability_requests_usability
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = true ->
+    review.agencyRightsLinked = true ->
+    review.materialUsabilityRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestMaterialUsability := by
+  intro predicate source test scope conflict reviewRoute migration rule link
+    usabilityMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, rule,
+    link, usabilityMissing]
+
+theorem high_impact_without_pre_effect_review_blocks
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = true ->
+    review.agencyRightsLinked = true ->
+    review.materialUsabilityRecorded = true ->
+    review.highImpactAction = true ->
+    review.preEffectReviewRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.blockHighImpactUntilPreEffectReview := by
+  intro predicate source test scope conflict reviewRoute migration rule link usability
+    highImpact missingReview
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, rule,
+    link, usability, highImpact, missingReview]
+
+theorem high_impact_without_rollback_blocks
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = true ->
+    review.agencyRightsLinked = true ->
+    review.materialUsabilityRecorded = true ->
+    review.highImpactAction = true ->
+    review.preEffectReviewRecorded = true ->
+    review.rollbackPathRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.blockHighImpactUntilRollback := by
+  intro predicate source test scope conflict reviewRoute migration rule link usability
+    highImpact preEffect rollbackMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, rule,
+    link, usability, highImpact, preEffect, rollbackMissing]
+
+theorem high_impact_without_correction_blocks
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = true ->
+    review.agencyRightsLinked = true ->
+    review.materialUsabilityRecorded = true ->
+    review.highImpactAction = true ->
+    review.preEffectReviewRecorded = true ->
+    review.rollbackPathRecorded = true ->
+    review.correctionPathRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.blockHighImpactUntilCorrection := by
+  intro predicate source test scope conflict reviewRoute migration rule link usability
+    highImpact preEffect rollback correctionMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, rule,
+    link, usability, highImpact, preEffect, rollback, correctionMissing]
+
+theorem high_impact_without_independent_reviewer_routes_gap
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = true ->
+    review.agencyRightsLinked = true ->
+    review.materialUsabilityRecorded = true ->
+    review.highImpactAction = true ->
+    review.preEffectReviewRecorded = true ->
+    review.rollbackPathRecorded = true ->
+    review.correctionPathRecorded = true ->
+    review.independentReviewerRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.routeReviewerIndependenceGap := by
+  intro predicate source test scope conflict reviewRoute migration rule link usability
+    highImpact preEffect rollback correction reviewerMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, rule,
+    link, usability, highImpact, preEffect, rollback, correction, reviewerMissing]
+
+theorem support_promotion_without_alignment_transition_requests_transition
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = true ->
+    review.agencyRightsLinked = true ->
+    review.materialUsabilityRecorded = true ->
+    review.highImpactAction = false ->
+    review.supportPromotionRequested = true ->
+    review.evidenceTransitionRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.requestEvidenceTransition := by
+  intro predicate source test scope conflict reviewRoute migration rule link usability
+    notHighImpact promotion transitionMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, rule,
+    link, usability, notHighImpact, promotion, transitionMissing]
+
+theorem constitutional_record_without_nonclaim_boundary_preserves_boundary
+    {review : ConstitutionalLifecycleReview} :
+    review.predicateRecorded = true ->
+    review.normativeSourceRecorded = true ->
+    review.operationalTestRecorded = true ->
+    review.protectedScopeRecorded = true ->
+    review.conflictBehaviorRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.migrationPolicyRecorded = true ->
+    review.selfModificationRuleRecorded = true ->
+    review.agencyRightsLinked = true ->
+    review.materialUsabilityRecorded = true ->
+    review.highImpactAction = false ->
+    review.supportPromotionRequested = false ->
+    review.nonClaimBoundaryRecorded = false ->
+    ConstitutionalLifecycleRouteFor review =
+      ConstitutionalLifecycleRoute.preserveNonClaimBoundary := by
+  intro predicate source test scope conflict reviewRoute migration rule link usability
+    notHighImpact noPromotion boundaryMissing
+  unfold ConstitutionalLifecycleRouteFor
+  simp [predicate, source, test, scope, conflict, reviewRoute, migration, rule,
+    link, usability, notHighImpact, noPromotion, boundaryMissing]
+
+theorem complete_constitutional_lifecycle_admits_constraint :
+    ConstitutionalLifecycleRouteFor completeConstitutionalLifecycleReview =
+      ConstitutionalLifecycleRoute.admitConstitutionalConstraint := by
+  unfold ConstitutionalLifecycleRouteFor completeConstitutionalLifecycleReview
+  simp
+
 end AsiStackProofs.Alignment

@@ -1409,6 +1409,13 @@
               "result_status": "passing via synthetic agency rights harness; no approval-service quality or reviewer-independence claim"
             },
             {
+              "name": "Constitutional lifecycle admission route envelope",
+              "purpose": "Check that finite constitutional lifecycle records route missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no moral-correctness, deployed alignment, rights-usability, reviewer-independence quality, rollback execution, consent-quality, support-state-promotion, or runtime-policy claim",
+              "status": "implemented in AsiStackProofs.Alignment; no deployed constitutional alignment behavior claim"
+            },
+            {
               "name": "Agency correction lifecycle route envelope",
               "purpose": "Check that finite agency-correction lifecycle records route missing affected-party records, missing material notice, missing pre-effect review, unbounded delegation, missing approval, lost correction paths, missing rollback or shutdown paths, dependency residuals, degraded rights, missing accountability, missing evidence-transition records, and complete bounded action to distinct modeled outcomes.",
               "implementation_status": "implemented",
@@ -1428,6 +1435,12 @@
               "tag": "lean:alignment.constitution.failure_blocks_promotion",
               "module": "AsiStackProofs.Alignment",
               "target": "A self-modification that weakens a protected predicate is rejected.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:alignment.constitution.lifecycle_admission_route",
+              "module": "AsiStackProofs.Alignment",
+              "target": "Modeled constitutional lifecycle admission routes missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes.",
               "status": "implemented"
             },
             {
