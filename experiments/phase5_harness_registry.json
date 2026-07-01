@@ -255,10 +255,10 @@
     "doc": "docs/capability_replacement_harness.md",
     "experiment_dir": "experiments/capability_replacement",
     "fixture_dir": "experiments/capability_replacement/fixtures",
-    "result_record": "experiments/capability_replacement/results/2026-06-28-local.md",
-    "expected_valid_fixtures": 3,
-    "expected_invalid_fixtures": 6,
-    "result_summary": "Capability replacement harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).",
+    "result_record": "experiments/capability_replacement/results/2026-07-01-local.md",
+    "expected_valid_fixtures": 5,
+    "expected_invalid_fixtures": 9,
+    "result_summary": "Capability replacement harness passed: 5 valid fixture(s), 9 expected-invalid fixture(s).",
     "primary_chapters": [
       "capability-replacement-and-rollback",
       "stable-capability-fields",
@@ -266,7 +266,7 @@
       "readiness-gates-residual-escrow-and-quarantine"
     ],
     "non_claims": [
-      "Does not prove deployed replacement behavior, runtime route quality, evaluator integrity, authority enforcement, rollback execution, regression quality, or source interpretation.",
+      "Does not prove deployed replacement behavior, runtime route quality, evaluator integrity, authority enforcement, rollback execution, regression quality, source interpretation, model quality, production model rollout, or model-monitor behavior.",
       "Does not promote Appendix C support states."
     ]
   },

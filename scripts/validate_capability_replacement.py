@@ -18,6 +18,17 @@ SCHEMA = ROOT / "schemas" / "replacement_transaction.schema.json"
 AUTHORITY_BAD_TERMS = {"ambient", "any tool", "root", "unbounded", "unrestricted", "widens authority"}
 EVALUATOR_BAD_TERMS = {"candidate validates itself", "same implementation", "self-attested", "self-judged"}
 ROLLBACK_TERMS = {"fallback", "restore", "rollback", "revert"}
+MODEL_ROLLOUT_MARKERS = {"model", "prediction", "serving", "inference", "ml-pipeline"}
+MODEL_ROLLOUT_REQUIRED_TERMS = {
+    "data": "data validation",
+    "schema": "schema validation",
+    "model": "model quality or model identity",
+    "serving": "serving or prediction-service integration",
+    "monitor": "monitoring or monitor trigger coverage",
+}
+MODEL_ROLLOUT_TRIGGER_TERMS = {"data", "schema", "drift", "model", "serving", "latency", "monitor", "regression"}
+IRREVERSIBLE_EFFECT_TERMS = {"irreversible", "external effect", "effect", "logged prediction", "compensation"}
+WEAK_OWNER_TERMS = {"candidate", "self", "none", "missing", "unowned"}
 
 
 def load_json(path: Path) -> Any:
@@ -42,6 +53,20 @@ def nonempty_list(record: dict[str, Any], key: str) -> bool:
 
 def contains_any(text: str, terms: set[str]) -> bool:
     return any(term in text for term in terms)
+
+
+def is_model_rollout(record: dict[str, Any]) -> bool:
+    rollout_surface = as_text(
+        [
+            record.get("transaction_id", ""),
+            record.get("field_id", ""),
+            record.get("prior_implementation", ""),
+            record.get("candidate_implementation", ""),
+            record.get("qualification_evidence", []),
+            record.get("canary_scope", ""),
+        ]
+    ).lower()
+    return contains_any(rollout_surface, MODEL_ROLLOUT_MARKERS)
 
 
 def semantic_errors(record: dict[str, Any], relative: str) -> list[str]:
@@ -127,6 +152,44 @@ def semantic_errors(record: dict[str, Any], relative: str) -> list[str]:
     for term in ("runtime", "support"):
         if term not in non_claim_text:
             errors.append(f"{relative}: non_claims must mention {term}.")
+
+    if is_model_rollout(record):
+        model_surface = as_text(
+            [
+                record.get("precheck_results", []),
+                record.get("qualification_evidence", []),
+                record.get("regression_results", []),
+                record.get("monitor_window", ""),
+                record.get("canary_scope", ""),
+            ]
+        ).lower()
+        for token, label in MODEL_ROLLOUT_REQUIRED_TERMS.items():
+            if token not in model_surface:
+                errors.append(f"{relative}: model rollout records must include {label}.")
+        if "baseline" not in regression_text or not any(term in regression_text for term in ("regression", "floor")):
+            errors.append(f"{relative}: model rollout records must preserve a baseline regression floor.")
+        trigger_text = as_text(rollback_receipt.get("trigger_conditions", []) if isinstance(rollback_receipt, dict) else []).lower()
+        if decision in {"canary", "commit", "rollback"} and not contains_any(trigger_text, MODEL_ROLLOUT_TRIGGER_TERMS):
+            errors.append(f"{relative}: model rollout rollback triggers must name monitored data/schema/model/serving/drift/regression conditions.")
+        if "model" not in non_claim_text:
+            errors.append(f"{relative}: model rollout non_claims must mention model-behavior boundaries.")
+
+    if isinstance(rollback_receipt, dict) and rollback_receipt.get("irreversible_effects"):
+        effect_text = as_text(rollback_receipt.get("irreversible_effects", [])).lower()
+        effect_boundary = as_text(
+            [
+                record.get("residual_escrow", []),
+                record.get("promotion_blockers", []),
+                record.get("non_claims", []),
+            ]
+        ).lower()
+        owner = str(rollback_receipt.get("owner", "")).lower()
+        if not contains_any(effect_boundary, IRREVERSIBLE_EFFECT_TERMS):
+            errors.append(f"{relative}: irreversible rollback effects must be carried into residuals, blockers, or non-claims.")
+        if contains_any(owner, WEAK_OWNER_TERMS):
+            errors.append(f"{relative}: irreversible rollback effects require an accountable non-candidate owner.")
+        if "irreversible" not in effect_text and "external" not in effect_text and "logged" not in effect_text:
+            errors.append(f"{relative}: irreversible_effects entries must explicitly identify irreversible, external, or logged effects.")
 
     return errors
 

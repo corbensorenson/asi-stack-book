@@ -1,0 +1,61 @@
+{
+  "transaction_id": "replacement://model-rollout-unowned-irreversible-effect",
+  "transaction_state": "canary",
+  "field_id": "field://prediction-service-risk-model",
+  "prior_implementation": "impl://risk-model-v1",
+  "candidate_implementation": "impl://risk-model-v2",
+  "identity_preservation": "Candidate preserves the same prediction-service-risk-model field identity.",
+  "precheck_results": [
+    "field identity unchanged",
+    "data validation gate passed",
+    "schema validation gate passed",
+    "serving integration gate passed"
+  ],
+  "qualification_evidence": [
+    "model quality check passed",
+    "monitor trigger coverage recorded"
+  ],
+  "regression_results": [
+    "baseline regression floor preserved for model fixture",
+    "serving latency regression check passed"
+  ],
+  "authority_check": "candidate stays within the same authority ceiling and does not expand prediction-service action rights",
+  "evaluator_independence": "Independent model rollout review owns the canary decision.",
+  "residual_escrow": [
+    "residual: canary is not production"
+  ],
+  "rollback_plan": "Rollback by restoring impl://risk-model-v1.",
+  "rollback_receipt": {
+    "prior_artifact": "impl://risk-model-v1",
+    "state_migration_status": "fixture_only_no_training_state_migration",
+    "reversible_fields": [
+      "model alias",
+      "serving route weight"
+    ],
+    "irreversible_effects": [
+      "prediction traces exported to downstream action log"
+    ],
+    "dry_run_status": "pass",
+    "trigger_conditions": [
+      "model quality regression",
+      "data drift monitor breach"
+    ],
+    "owner": "candidate"
+  },
+  "approval_record": "approval://model-canary-004",
+  "canary_scope": "model canary for prediction-service fixture route only",
+  "monitor_window": "fixture monitor active for data schema model and serving regression signals",
+  "monitor_status": "active",
+  "decision": "canary",
+  "promotion_blockers": [
+    "default approval missing"
+  ],
+  "source_refs": [
+    "sources/source_notes/ext_google_cloud_mlops_cd.md"
+  ],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove runtime model replacement behavior",
+    "does not promote support state"
+  ]
+}

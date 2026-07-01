@@ -1,6 +1,6 @@
 # Capability Replacement Harness
 
-Last updated: 2026-06-28
+Last updated: 2026-07-01
 
 The twentieth Phase 5 harness checks synthetic replacement-transaction
 fixtures under `experiments/capability_replacement/`.
@@ -25,6 +25,11 @@ fixtures under `experiments/capability_replacement/`.
   `approval://` record, passing monitor status, and no unresolved promotion
   blockers.
 - Failed regression evidence blocks canary, commit, and retire decisions.
+- Model-rollout records must carry data validation, schema validation,
+  model-quality, serving-integration, monitor-trigger, and baseline-regression
+  language before canary, commit, or rollback decisions can pass.
+- Rollback receipts with irreversible effects must carry those effects into
+  residuals, blockers, or non-claims and must name a non-candidate owner.
 - Non-claims must preserve runtime and support-state boundaries.
 
 ## Command
@@ -35,14 +40,14 @@ python3 scripts/validate_capability_replacement.py
 
 ## Current Local Result
 
-The 2026-06-28 local run passed:
+The 2026-07-01 local run passed:
 
 ```text
-Capability replacement harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).
+Capability replacement harness passed: 5 valid fixture(s), 9 expected-invalid fixture(s).
 ```
 
 The result record is
-`experiments/capability_replacement/results/2026-06-28-local.md`.
+`experiments/capability_replacement/results/2026-07-01-local.md`.
 
 ## Boundary
 
@@ -52,9 +57,13 @@ transaction-record level: field identity, prior and candidate implementations,
 qualification evidence, regression results, authority checks, evaluator
 separation, residual escrow, rollback receipts, approvals, monitor state,
 promotion blockers, and explicit non-claims have to line up.
+The model-rollout extension adds synthetic record checks for data/schema/model
+serving gates, baseline regression floors, monitor-trigger rollback
+conditions, and irreversible-effect ownership.
 
 It is not a deployed replacement-behavior result, runtime route-quality result,
 evaluator-integrity proof, authority-enforcement result, rollback-execution
 trace, regression-quality result, source-interpretation review,
-reader-release review, or model-behavior result. It does not promote Appendix
-C, validate deployed AI behavior, or approve reader artifacts.
+reader-release review, production model-rollout result, model-monitor result,
+or model-behavior result. It does not promote Appendix C, validate deployed AI
+behavior, or approve reader artifacts.

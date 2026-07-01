@@ -2219,10 +2219,10 @@
           "codex_tests": [
             {
               "name": "Replacement transaction test",
-              "purpose": "Check that replacement transaction records preserve field identity, qualification evidence, regression results, non-widening authority checks, evaluator separation, residual escrow, rollback receipts, approvals, monitor state, promotion blockers, and non-claim boundaries.",
+              "purpose": "Check that replacement transaction records preserve field identity, qualification evidence, regression results, non-widening authority checks, evaluator separation, residual escrow, rollback receipts, approvals, monitor state, promotion blockers, model-rollout gates, irreversible-effect ownership, and non-claim boundaries.",
               "status": "implemented by capability replacement harness; validated locally; no deployed replacement-behavior claim",
               "implementation_status": "implemented",
-              "result_status": "validated locally by synthetic fixtures; deployed replacement behavior not run"
+              "result_status": "validated locally by 5 valid and 9 expected-invalid synthetic fixtures; deployed replacement behavior, production model rollout, model-monitor behavior, and real rollback execution not run"
             },
             {
               "name": "Regression preservation test",

@@ -1,0 +1,67 @@
+{
+  "transaction_id": "replacement://model-rollout-monitor-rollback",
+  "transaction_state": "rolled_back",
+  "field_id": "field://prediction-service-risk-model",
+  "prior_implementation": "impl://risk-model-v1",
+  "candidate_implementation": "impl://risk-model-v2",
+  "identity_preservation": "Candidate attempted the same prediction-service-risk-model field identity without redefining the serving interface.",
+  "precheck_results": [
+    "field identity unchanged",
+    "data validation gate passed before canary",
+    "schema validation gate passed before canary",
+    "serving integration gate passed before canary"
+  ],
+  "qualification_evidence": [
+    "model quality check passed before canary",
+    "monitor trigger coverage existed for data drift, schema drift, model quality, serving latency, and regression floor"
+  ],
+  "regression_results": [
+    "baseline regression floor failed during model canary monitor",
+    "serving latency regression stayed within threshold"
+  ],
+  "authority_check": "candidate stayed within the same authority ceiling and did not expand prediction-service action rights",
+  "evaluator_independence": "Independent model rollout review marked the monitor failure and owns the rollback decision.",
+  "residual_escrow": [
+    "residual: failed model canary monitor event preserved for later review",
+    "residual: irreversible logged prediction traces remain external-effect audit material"
+  ],
+  "rollback_plan": "Rollback to impl://risk-model-v1 by restoring the model alias and setting candidate canary route weight to zero.",
+  "rollback_receipt": {
+    "prior_artifact": "impl://risk-model-v1",
+    "state_migration_status": "rolled_back_to_prior_model_alias_without_training_state_migration",
+    "reversible_fields": [
+      "model alias",
+      "serving route weight",
+      "canary exposure"
+    ],
+    "irreversible_effects": [
+      "logged prediction traces from failed canary remain irreversible external effects for audit"
+    ],
+    "dry_run_status": "pass",
+    "trigger_conditions": [
+      "model regression floor monitor failure",
+      "data drift monitor breach"
+    ],
+    "owner": "model rollout governance reviewer"
+  },
+  "approval_record": "approval://model-rollback-001",
+  "canary_scope": "model canary stopped after monitor trigger",
+  "monitor_window": "fixture monitor failed for data schema model serving regression signals",
+  "monitor_status": "fail",
+  "decision": "rollback",
+  "promotion_blockers": [
+    "model canary monitor failed",
+    "irreversible logged prediction effects preserved as residual"
+  ],
+  "source_refs": [
+    "sources/source_notes/ext_google_cloud_mlops_cd.md",
+    "sources/source_notes/ext_kubernetes_deployments_docs.md"
+  ],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove runtime model rollback behavior",
+    "does not prove production model rollout",
+    "does not promote support state",
+    "does not prove model quality"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "transaction_id": "replacement://model-rollout-canary-gated",
+  "transaction_state": "canary",
+  "field_id": "field://prediction-service-risk-model",
+  "prior_implementation": "impl://risk-model-v1",
+  "candidate_implementation": "impl://risk-model-v2",
+  "identity_preservation": "Candidate preserves the same prediction-service-risk-model field identity and serving interface.",
+  "precheck_results": [
+    "field identity unchanged",
+    "data validation gate passed",
+    "schema validation gate passed",
+    "serving interface unchanged"
+  ],
+  "qualification_evidence": [
+    "model quality check passed against fixture holdout",
+    "serving integration canary configuration reviewed",
+    "monitor trigger coverage recorded for data drift, schema drift, model quality, and latency regression"
+  ],
+  "regression_results": [
+    "baseline regression floor preserved for fixture holdout",
+    "model regression floor remains visible before default promotion",
+    "serving latency regression check passed for fixture trace"
+  ],
+  "authority_check": "candidate stays within the same authority ceiling and does not expand prediction-service action rights",
+  "evaluator_independence": "Independent model rollout review owns the canary decision and candidate cannot approve itself.",
+  "residual_escrow": [
+    "residual: irreversible logged prediction traces remain external-effect audit material; no user-facing action is approved",
+    "residual: fixture canary is not a production model rollout"
+  ],
+  "rollback_plan": "Rollback by restoring impl://risk-model-v1 as the prediction-service model alias and disabling candidate canary traffic.",
+  "rollback_receipt": {
+    "prior_artifact": "impl://risk-model-v1",
+    "state_migration_status": "canary_alias_only_no_training_state_migration",
+    "reversible_fields": [
+      "model alias",
+      "serving route weight",
+      "canary exposure"
+    ],
+    "irreversible_effects": [
+      "logged prediction traces are retained as irreversible external effects for audit only"
+    ],
+    "dry_run_status": "pass",
+    "trigger_conditions": [
+      "data drift monitor breach",
+      "schema validation monitor breach",
+      "model quality regression",
+      "serving latency regression"
+    ],
+    "owner": "model rollout governance reviewer"
+  },
+  "approval_record": "approval://model-canary-001",
+  "canary_scope": "model canary for prediction-service fixture route only",
+  "monitor_window": "fixture monitor active for data schema model and serving regression signals",
+  "monitor_status": "active",
+  "decision": "canary",
+  "promotion_blockers": [
+    "no production model rollout",
+    "monitor window still active",
+    "no default-route approval"
+  ],
+  "source_refs": [
+    "sources/source_notes/ext_google_cloud_mlops_cd.md",
+    "sources/source_notes/ext_argo_rollouts_docs.md"
+  ],
+  "support_state_effect": "argument_only",
+  "non_claims": [
+    "does not prove runtime model replacement behavior",
+    "does not prove production model rollout",
+    "does not promote support state",
+    "does not prove rollback execution"
+  ]
+}

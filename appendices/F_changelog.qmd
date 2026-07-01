@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-01 - Add model-rollout replacement controls
+
+- Extended `scripts/validate_capability_replacement.py` with synthetic
+  model-rollout checks for data validation, schema validation, model
+  quality/identity, serving integration, monitor triggers, baseline regression
+  floors, rollback trigger conditions, irreversible-effect residualization, and
+  non-candidate ownership.
+- Added two valid and three expected-invalid replacement fixtures plus
+  `experiments/capability_replacement/results/2026-07-01-local.md`; the local
+  run passes with 5 valid and 9 expected-invalid fixtures.
+- Updated the Capability Replacement chapter, outline, Phase 5 registry,
+  runner/status surfaces, Appendix E generation, and v1.x roadmap burn-down.
+  This is synthetic record-gate evidence only; it does not prove production
+  model rollout, model-monitor behavior, deployed replacement behavior, real
+  regression quality, rollback execution, model quality, source interpretation,
+  support-state promotion, or reader-artifact approval.
+
 ## 2026-07-01 - Ground replacement in rollout and MLOps practice
 
 - Added external source records and source notes for Argo Rollouts progressive
