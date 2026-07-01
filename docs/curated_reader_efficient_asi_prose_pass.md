@@ -44,6 +44,11 @@ Allowed curation scopes used:
 - Preserved the Mermaid route-ledger diagram, core claim, evidence boundary,
   minimum viable implementation, beyond-state-of-the-art endpoint, and handoff
   into System Boundaries and Authority.
+- Reconciled the reader Beyond-SOTA endpoint with the live chapter's
+  2026-07-01 roadmap burn-down update: the mature endpoint is now a governed
+  route economy rather than a generic operating-system metaphor, and it links
+  conditional computation, model cascades, compression, fast generation, and
+  benchmark ratchets to a shared accounting surface.
 - Added a reader-only bridge to the adjacent Resource Economics selector slice:
   the Efficient ASI chapter now names the bounded verified route, adequate
   overkill baseline, cheaper failed-verification control, cheaper
@@ -64,8 +69,9 @@ Allowed curation scopes used:
 
 ## Non-Claims
 
-- This pass does not change the live AI/research chapter.
-- This pass does not change `book_structure.json`.
+- This pass includes a live/reader reconciliation update to the Beyond-SOTA
+  endpoint and the manifest mature-endpoint field; it does not change claim
+  meaning, support-state boundaries, or source assignments.
 - This pass does not alter Appendix C, source assignments, proof targets, test
   status, implementation horizons, or release records.
 - This pass does not approve the curated chapter for reader release.

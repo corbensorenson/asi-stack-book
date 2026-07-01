@@ -222,6 +222,7 @@ Draft deliverables:
 - Implemented repository-level fixture: `costed_route_record.valid.json` validates route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims only; no route-search, residual-burden, or utility-preserving compression test exists yet.
 - Implemented Lean proof target: finite efficiency-claim admission lifecycle route for missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps.
 - Exact Appendix C claim-source mappings for the core claim across all assigned efficiency, compression, simulation, lineage, and implementation-reference sources; support remains `argument` pending measured route, cost, residual, and compression evidence.
+- Source-noted external positioning through `ext_sparse_moe_2017`, `ext_frugalgpt_2023`, and `ext_bigbench_2022`: conditional computation, model cascades, and benchmark breadth are treated as adjacent cost surfaces that need route-ledger authority, predicate, fallback, residual, and support-state accounting; no MoE, cascade, or BIG-bench result is reproduced.
 - Planned Codex test: Minimum viable route test.
 - Planned Codex test: Residual burden accounting test.
 - Planned Codex test: Utility-preserving compression test.
