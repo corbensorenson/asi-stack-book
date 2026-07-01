@@ -113,6 +113,7 @@ REQUIRED = [
     "scripts/validate_theseus_support_replay_probe.py",
     "scripts/validate_phase5_harness_registry.py",
     "scripts/build_reader_edition.py",
+    "scripts/build_curated_reader_edition.py",
     "scripts/build_source_matrix.py",
     "schemas/book_structure.schema.json",
     "docs/book_outline.md",
@@ -681,6 +682,7 @@ def main() -> None:
     run_validator("validate_reader_evidence_boundaries.py", "--check")
     run_validator("audit_reader_continuity.py", "--check")
     run_validator("validate_reader_manuscript_manifest.py")
+    run_validator("build_curated_reader_edition.py", "--check")
     run_validator("validate_reader_artifact_inspection_manifest.py")
     run_validator("validate_reader_epub_probe_manifest.py")
     run_validator("validate_reader_docx_probe_manifest.py")

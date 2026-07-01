@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-01 - Add curated reader edition build path
+
+- Added `scripts/build_curated_reader_edition.py` to assemble the tracked
+  curated reader-manuscript chapters into an ignored local Quarto review
+  workspace under `build/curated_reader_edition/`.
+- The new check validates that all 44 active manifest chapters have matching
+  curated source files, exactly one Handoff section, preserved release blockers,
+  and no live-only reader-scaffold headings before a curated review workspace is
+  generated.
+- Ran a local curated-reader HTML render with
+  `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render
+  build/curated_reader_edition --to html`, producing
+  `build/curated_reader_edition/_reader_site/index.html`. This is source-level
+  renderability evidence only; it does not approve curated reconciliation,
+  reader formats, e-reader behavior, audio, claim support states, or release
+  artifacts.
+- Wired the curated build check into `scripts/validate_book.py` and updated the
+  reader runbook, roadmap, README, editions guide, and repository map.
+
 ## 2026-07-01 - Add Resource load-stability probe
 
 - Added `scripts/run_resource_load_stability_probe.py` and

@@ -2074,9 +2074,12 @@ Execution pivot:
   the reader table of contents, every remaining chapter has either curated
   prose or a recorded reason to wait, and a book-level continuity edit has
   removed repeated scaffolding and repaired transitions.
-- The next reader task is not another review report. It is to finish the
-  remaining non-curated chapters where their boundaries survive consolidation,
-  then reconcile the curated manuscript against the post-merge live book.
+- The next reader task is not another review report. All 44 active manifest
+  chapters now have tracked drafting-only curated reader files, and
+  `scripts/build_curated_reader_edition.py --check` verifies that those files
+  assemble into a renderable local Quarto review workspace. The remaining work
+  is source-level reconciliation, book-level continuity editing, Corben voice
+  review, and artifact review, not coverage bookkeeping.
 - Human-reader source may become a parallel derivative prose source for
   pacing, examples, openings, closings, and audio flow, but the live book
   remains authority for claims, support states, source boundaries, proof/test
@@ -2123,6 +2126,12 @@ Tasks:
   - `artifact-steward-agents-and-living-project-governance`.
 - Use `scripts/init_curated_reader_chapter.py --chapter-id <id>` in dry-run
   mode before creating any curated chapter.
+- Use `scripts/build_curated_reader_edition.py --check` after curated-reader
+  edits, and use `python3 scripts/build_curated_reader_edition.py --output
+  build/curated_reader_edition` plus `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+  quarto render build/curated_reader_edition --to html` for local source-level
+  review. This proves renderability of the tracked curated source only; it does
+  not approve a reader artifact or clear release blockers.
 - Graduate only chapters where overlays are too small for the required edit:
   new openings, reordered examples, sustained analogies, narrative continuity,
   section compression, or audio pacing.
@@ -2187,6 +2196,14 @@ Current status:
   the machine-checkable handoff metadata and draft key-figure coverage gap, but
   it does not approve the prose, fabricate authorial experience, review the
   figures as final art, or create an edition release artifact.
+- `scripts/build_curated_reader_edition.py --check` now validates that the
+  tracked curated reader manuscript maps to the 44 active manifest chapters,
+  preserves the required release blockers, and can be assembled as Quarto
+  source. A local review build rendered successfully to HTML at
+  `build/curated_reader_edition/_reader_site/index.html`; the build report
+  preserves `review_required` status and all 44
+  `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, and
+  `reader_release_record_not_created` blockers.
 - The current curated set follows the consolidation-aware curation gate:
   protected standalone chapters may continue toward human-edit readiness;
   chapters inside remaining deferred merge/fold packages must keep scoped
@@ -2519,7 +2536,9 @@ Current status:
   `format_artifact_not_reviewed`, and
   `curated_reconciliation_not_approved` blockers active.
 - No curated reader chapter is release-approved, and generated reader HTML
-  remains the only reviewed reader artifact.
+  remains the only reviewed reader artifact. The curated reader manuscript now
+  has a renderable local HTML review path, but that path is not a release
+  record, not format approval, and not support-state movement.
 - The previous Compact Generative Systems and RankFold/NeuralFold gaps now have
   drafting-only curated reader files plus prose-pass reconciliation notes. This
   closes the active-file coverage gap, but it does not approve the reader

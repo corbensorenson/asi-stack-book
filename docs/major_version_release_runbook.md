@@ -65,6 +65,7 @@ python3 scripts/validate_reader_epub_probe_manifest.py
 python3 scripts/validate_reader_docx_probe_manifest.py
 python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/validate_reader_audio_script_probe_manifest.py
+python3 scripts/build_curated_reader_edition.py --check
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/sync_reader_format_review_matrix.py --check
 python3 scripts/validate_book.py
@@ -93,6 +94,7 @@ python3 scripts/validate_reader_epub_probe_manifest.py
 python3 scripts/validate_reader_docx_probe_manifest.py
 python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/validate_reader_audio_script_probe_manifest.py
+python3 scripts/build_curated_reader_edition.py --check
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 python3 scripts/sync_reader_format_review_matrix.py --check
 python3 scripts/validate_human_reading_paths.py
@@ -110,6 +112,15 @@ python3 scripts/build_reader_edition.py
 Then review `build/reader_edition/READER_RELEASE_CHECKLIST.md`, `build/reader_edition/companion_notes.md`, `build/reader_edition/reader_delta_report.md`, `docs/reader_continuity_audit.md`, `docs/reader_chapter_review_matrix.md`, `docs/reader_format_review_matrix.md`, `docs/reader_html_artifact_browser_review.md`, `docs/reader_epub_probe_manifest.md`, `docs/reader_docx_probe_manifest.md`, `docs/reader_pdf_probe_manifest.md`, `docs/reader_audio_script_probe_manifest.md`, `editions/reader_manuscript/v1_0/companion_note_routing.json`, the live `assets/reader-overlays.html` payload and runtime-count validation when active overlays exist, and the generated manuscript before rendering release artifacts. The delta report carries a zero-active-operation note or operation digests and before/after excerpts for review, not editable patch instructions. The chapter review matrix names each chapter's review status, active-overlay count, companion-note candidates, curated-manuscript candidates, and release blockers. The format review matrix names local render/inspection evidence and format-level blockers; it does not approve artifacts without an edition release record. The reader HTML browser review records all-page/all-viewport browser evidence for the generated HTML artifact; it is not a release record. The EPUB probe manifest records exact local metadata, navigation, sampled spine/source-card evidence, and residual e-reader blockers; it is not EPUB approval. The DOCX probe manifest records exact local LibreOffice conversion metrics, sampled source-card pages, and residual DOCX blockers; it is not DOCX approval. The PDF probe manifest records exact local probe metrics, sampled source-card pages, and residual PDF blockers; it is not PDF approval. The audio-script probe manifest records script-preparation counts and target audio artifact blockers; it is not narration approval or an audio release record. The companion routing manifest names the current reader/e-reader/audio treatment for dense proof/governance chapters; it is not a release record or a substitute for meaning-critical prose in the reader spine. If review finds a reader-only prose change, edit the tracked overlay operation under `editions/reader_overlays/` and regenerate; do not edit generated reader source or hand-patch the generated delta report.
 
 If the reader release has graduated to a curated reader manuscript, do not treat generated source as the only review target. Use `editions/reader_manuscript/v1_0/manifest.json` as the source-status record, use `editions/reader_manuscript/v1_0/chapter_review_matrix.json` as the chapter review queue, use `editions/reader_manuscript/v1_0/reconciliation_report.md` as the chapter-by-chapter reconciliation surface, use generated reader source as the reconciliation baseline, then review the curated manuscript chapter by chapter against the manifest and evidence boundaries before rendering.
+
+Generate the tracked curated-reader source workspace only as a review input:
+
+```bash
+python3 scripts/build_curated_reader_edition.py --output build/curated_reader_edition
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render build/curated_reader_edition --to html
+```
+
+Then review `build/curated_reader_edition/CURATED_READER_REVIEW_CHECKLIST.md` and `build/curated_reader_edition/curated_reader_build_report.json`. This build path proves the curated chapter drafts are renderable Quarto source; it does not approve curated reconciliation, reader formats, e-reader behavior, audio, or any claim-support movement.
 
 Attempt specific formats and record actual local outcomes:
 
