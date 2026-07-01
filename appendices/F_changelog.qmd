@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Expand security-kernel negative fixtures
+
+- Extended `scripts/validate_security_kernel.py` with expired/stale/revoked
+  approval rejection and broader overbroad-context/ambient-authority terms for
+  SCIF admission.
+- Added two expected-invalid security-kernel fixtures:
+  `invalid_expired_approval.json` rejects a schema-shaped but expired approval
+  record, and `invalid_overbroad_scif_context.json` rejects all-context/private
+  source admission as least-privilege failure. The local harness now passes with
+  3 valid and 8 expected-invalid fixtures.
+- Updated the Security Kernel chapter, curated reader manuscript note, outline,
+  v1.x roadmap, Phase 5 registry, and status surfaces. This remains synthetic
+  authority-use receipt discipline only; it does not prove deployed kernel
+  behavior, sandbox isolation, side-channel safety, approval-service expiry
+  behavior, real secret-handle safety, prompt-injection containment,
+  least-privilege context behavior, security-overhead budget preservation, or
+  support-state promotion.
+
 ## 2026-07-01 - Add runtime-adapter authority probes
 
 - Extended `scripts/validate_runtime_adapter_permissions.py` with optional

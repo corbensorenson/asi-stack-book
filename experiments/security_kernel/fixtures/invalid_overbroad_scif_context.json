@@ -1,0 +1,23 @@
+{
+  "handle_id": "handle://scif/overbroad-context",
+  "principal": "context-compiler-demo",
+  "purpose": "Query all context and full project memory for a sensitive local analysis.",
+  "destination": "digital-scif-demo-container",
+  "allowed_action": "query_all_private_sources_inside_scif",
+  "clearance": "scif-demo-compartment",
+  "approval_record": "approval://security-demo-106",
+  "scif_lifecycle": [
+    "spawn",
+    "inject",
+    "execute",
+    "sanitize",
+    "zeroize",
+    "commit",
+    "audit"
+  ],
+  "sanitized_output": "sanitized summary only: denied material redacted and no secret context copied.",
+  "residual_leak_risk": [
+    "does not prove runtime least-privilege enforcement or support-state promotion"
+  ],
+  "revocation_path": "revoke context lease after commit and delete temporary SCIF mapping"
+}

@@ -2332,12 +2332,12 @@
             {
               "name": "Handle lease expiry/reuse test",
               "implementation_status": "implemented",
-              "result_status": "passing via synthetic security kernel harness; no deployed lease or revocation behavior claim"
+              "result_status": "passing via synthetic security kernel harness including expired-approval and revocation-path discipline; no deployed lease or revocation behavior claim"
             },
             {
               "name": "SCIF least-privilege test",
               "implementation_status": "implemented",
-              "result_status": "passing via synthetic security kernel harness; no least-privilege context or side-channel safety claim"
+              "result_status": "passing via synthetic security kernel harness including overbroad-context rejection; no least-privilege context or side-channel safety claim"
             },
             {
               "name": "Sanitized-output residual test",
@@ -2346,8 +2346,8 @@
             },
             {
               "name": "Security-overhead budget preservation test",
-              "implementation_status": "implemented",
-              "result_status": "passing via synthetic security kernel harness; no runtime budget enforcement or security-economics claim"
+              "implementation_status": "planned",
+              "result_status": "planned; no budget-preservation fixture or runtime budget/security-economics claim"
             },
             {
               "name": "Prompt-injection containment scenario",

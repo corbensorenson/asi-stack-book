@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Security Kernel and Digital SCIFs
 
-Last updated: 2026-06-29
+Last updated: 2026-07-01
 
 Chapter ID: `security-kernel-and-digital-scifs`
 
@@ -46,9 +46,11 @@ permission to change proof or test status.
   comparators, not conformance evidence.
 - Preserved the live chapter's current evidence boundary: synthetic
   security-kernel receipt checks and finite Lean predicates support record
-  discipline only; they do not prove deployed containment, sandbox isolation,
-  side-channel resistance, prompt-injection containment, runtime policy
-  behavior, or source interpretation.
+  discipline only; the receipt checks now include expired-approval and
+  overbroad-SCIF-context negative fixtures, but they do not prove deployed
+  containment, sandbox isolation, side-channel resistance, prompt-injection
+  containment, runtime policy behavior, budget preservation, or source
+  interpretation.
 - Preserved the core claim, minimum viable implementation, beyond-state-of-the-
   art endpoint, and handoff into Recursive Self-Improvement Boundaries.
 
@@ -68,7 +70,8 @@ permission to change proof or test status.
 - This pass does not change the live AI/research chapter.
 - This pass does not change `book_structure.json`.
 - This pass does not alter Appendix C, source assignments, proof targets, test
-  status, implementation horizons, or release records.
+  statuses outside the security-kernel reader reconciliation, implementation
+  horizons, or release records.
 - This pass does not approve the curated chapter for reader release.
 - This pass does not create EPUB, DOCX, PDF, HTML, audio, or audio-embedded EPUB
   artifacts.
@@ -76,8 +79,9 @@ permission to change proof or test status.
 - This pass does not claim OWASP conformance, NIST zero-trust implementation,
   Saltzer-Schroeder completeness, deployed security-kernel behavior, sandbox
   isolation, side-channel resistance, prompt-injection containment,
-  least-privilege context behavior, secret-handle safety, or runtime policy
-  enforcement.
+  deployed approval-expiry enforcement, least-privilege context behavior,
+  secret-handle safety, security-overhead budget preservation, or runtime
+  policy enforcement.
 
 ## Remaining Blockers
 

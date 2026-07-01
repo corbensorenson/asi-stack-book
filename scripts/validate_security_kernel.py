@@ -17,14 +17,23 @@ SCHEMA = ROOT / "schemas" / "authority_use_receipt.schema.json"
 
 REQUIRED_LIFECYCLE = {"spawn", "inject", "execute", "sanitize", "zeroize", "commit", "audit"}
 SCOPING_BAD_TERMS = {
+    "all context",
     "all destinations",
+    "all memory",
+    "all private sources",
+    "all sources",
     "all tools",
     "ambient",
     "any action",
     "any destination",
     "do anything",
+    "entire workspace",
+    "full project memory",
     "unbounded",
+    "unbounded context",
+    "unscoped context",
 }
+APPROVAL_BAD_TERMS = {"expired", "reused", "revoked", "stale", "superseded"}
 SECRET_LEAK_TERMS = {
     "api_key=",
     "credential bytes:",
@@ -86,6 +95,8 @@ def semantic_errors(record: dict[str, Any], relative: str) -> list[str]:
 
     if approval in {"", "none", "missing", "pending"} or not approval.startswith("approval://"):
         errors.append(f"{relative}: approval_record must reference a concrete approval artifact.")
+    elif contains_any(approval, APPROVAL_BAD_TERMS):
+        errors.append(f"{relative}: approval_record must not be expired, revoked, stale, superseded, or reused.")
 
     if not isinstance(lifecycle, list):
         errors.append(f"{relative}: scif_lifecycle must be an array.")

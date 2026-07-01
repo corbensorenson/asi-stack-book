@@ -214,7 +214,7 @@ def main() -> None:
         "the constitutional alignment harness checks 3 valid and 5 expected-invalid constitutional-predicate fixtures",
         "the governance rights harness checks 3 valid and 5 expected-invalid governance-right fixtures",
         "the agency rights harness checks 3 valid and 6 expected-invalid agency-right checklist fixtures",
-        "the security kernel harness checks 3 valid and 6 expected-invalid authority-use receipt fixtures",
+        "the security kernel harness checks 3 valid and 8 expected-invalid authority-use receipt fixtures",
         "the stable capability fields harness checks 3 valid and 6 expected-invalid stable-capability-field fixtures",
         "the capability replacement harness checks 3 valid and 6 expected-invalid replacement-transaction fixtures",
         "the self-improvement boundary harness checks 3 valid and 7 expected-invalid self-improvement-transition fixtures",

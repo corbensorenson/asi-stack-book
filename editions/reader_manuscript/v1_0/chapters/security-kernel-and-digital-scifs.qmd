@@ -106,11 +106,15 @@ that Digital SCIFs prevent all leakage.
 The current evidence surface is narrow. Appendix C maps the core claim to
 Ladon/Manhattan, Context Engineer, Talos, Alignment Field, and Coherence
 Exchange. Appendix E records a synthetic security-kernel harness for
-authority-use receipts. The Lean module models finite authorization,
-clearance, handle substitution, and protected-SCIF admission predicates. Those
-artifacts help keep the boundary explicit. They do not prove runtime policy
-behavior, sandbox isolation, side-channel resistance, least-privilege context
-behavior, prompt-injection containment, or source interpretation.
+authority-use receipts, including expected failures for expired approval,
+overbroad SCIF context, unsafe output, missing approval, missing residuals,
+missing zeroization, ambient authority, and prompt-injection leakage. The Lean
+module models finite authorization, clearance, handle substitution, and
+protected-SCIF admission predicates. Those artifacts help keep the boundary
+explicit. They do not prove runtime policy behavior, sandbox isolation,
+side-channel resistance, deployed approval-expiry enforcement, least-privilege
+context behavior, prompt-injection containment, security-overhead budget
+preservation, or source interpretation.
 
 ## Mechanism
 
@@ -241,15 +245,16 @@ The fixture gives an agent `handle://demo-secret`, asks it to perform one
 authorized action, substitutes the fake secret outside model-visible logs, and
 checks that the transcript contains the handle and sanitized result but not the
 secret value. The same fixture set should include denied destination,
-overbroad SCIF admission, expired handle reuse, missing approval, unsafe
-sanitized summary, and prompt-injection non-disclosure cases.
+overbroad SCIF admission, expired approval, handle-reuse discipline, missing
+approval, unsafe sanitized summary, and prompt-injection non-disclosure cases.
 
 The repository already has a bounded start: a synthetic security-kernel
 harness checks authority-use receipt discipline for handle mediation, approval
-artifacts, bounded action scope, SCIF lifecycle completeness, sanitization,
-residual leak-risk notes, revocation paths, and prompt-injection
-non-disclosure boundaries. The Lean module adds finite-record predicates for
-authorization, clearance, handle substitution, and protected-SCIF admission.
+artifacts, expired-approval refusal, bounded action scope, overbroad-context
+rejection, SCIF lifecycle completeness, sanitization, residual leak-risk
+notes, revocation paths, and prompt-injection non-disclosure boundaries. The
+Lean module adds finite-record predicates for authorization, clearance, handle
+substitution, and protected-SCIF admission.
 
 That is still receipt discipline, not deployed containment. The next useful
 step is a public-safe toy runtime trace where a model-facing transcript, a
@@ -284,8 +289,8 @@ kernel, redaction policy, or audit path is a protected transition.
 
 This remains a target architecture, not a validation claim. The present support
 state stays at `argument` until receipt validation is joined by stronger
-runtime traces, negative controls, threat models, security review, and
-evidence-transition records.
+runtime traces, negative controls, threat models, security review,
+security-overhead budget tests, and evidence-transition records.
 
 ## Summary
 

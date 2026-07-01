@@ -43,7 +43,7 @@ python3 scripts/validate_evidence_transitions.py
 - `experiments/phase5_harness_registry.json`
 - 22 registered harness commands
 - 62 valid synthetic fixtures across registered harness fixture directories
-- 108 expected-invalid synthetic fixtures across registered harness fixture directories
+- 110 expected-invalid synthetic fixtures across registered harness fixture directories
 - Expected registry summaries stored in each registry entry
 
 ## Output
