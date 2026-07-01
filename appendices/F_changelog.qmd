@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-01 - Harden chapter-review roadmap accountability
+
+- Updated the v1.x chapter-review burn-down milestone so the Claude review's
+  human-reader notes are explicitly treated as seam/opening samples, not final
+  prose review or release approval.
+- Added burn-down status semantics and a Batch 0 execution rule so future runs
+  select one row, choose a closure class, make an artifact-backed change, and
+  update only the affected row instead of creating more review/report churn.
+- Extended `scripts/validate_chapter_review_burndown.py` to guard those
+  roadmap accountability rules. This is roadmap discipline only; it does not
+  create source evidence, proof results, test results, support-state movement,
+  external-review records, or reader-release approval.
+
 ## 2026-07-01 - Reject over-budget Resource workflow traces
 
 - Added `invalid_capacity_budget_overrun.json` to the Resource workflow trace

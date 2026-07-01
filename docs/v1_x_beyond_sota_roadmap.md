@@ -849,6 +849,10 @@ Source review:
 - `docs/CHAPTER_REVIEWS.md` is reviewer guidance only. It is not source
   evidence, not an external citation, not a proof result, and not a
   support-state transition.
+- The human-reader comments in that review are seam/opening samples, not a full
+  line edit of every reader chapter. Treat them as useful smoke tests for reader
+  flow, not as release approval, final prose review, or proof that a chapter is
+  ready for Corben's edit.
 - Treat "light anchoring" as a request to deepen tracked source-note links and
   name prior-art families already adjacent to the chapter, not as permission to
   add placeholder citations.
@@ -874,6 +878,20 @@ Current status from this review:
   placeholder work cells, loss of the review calibration notes, and unverified
   Circle wording. This is a coverage guard for the work queue only; it does not
   grade chapters, create source evidence, or close any row.
+
+Burn-down status semantics:
+
+- `open`: the review weakness is still broad and no artifact-backed closure has
+  narrowed it yet.
+- `partially executed`: at least one real proof, source, evidence, reader, or
+  manifest change has narrowed the weakness, but the row still names concrete
+  remaining work.
+- `blocked`: the next honest closure requires unavailable source text, private
+  project artifacts, hardware, external review, or Corben authorial input; the
+  blocker must be dated and specific.
+- `closed by artifact`: allowed only when the row names the closing artifact or
+  validation path and there is no remaining review weakness of that class. Do
+  not use this status for a row that merely has better prose or a roadmap note.
 
 Masterwork closure gates:
 
@@ -902,6 +920,11 @@ Priority order:
 
 Execution batches:
 
+- Batch 0, row selection and accounting: pick one row, choose one closure class,
+  make an artifact-backed change, then update only that row's remaining-work
+  text and the changelog. Do not open a second review pass or a new report when
+  a proof, source note, evidence fixture, reader prose edit, or blocker record
+  would move the row directly.
 - Batch 1, proof and action-boundary depth: finish the already-started proof
   coverage campaign for Context Transactions, Artifact Graphs, Procedural
   Memory, Planning, Compact Generative Systems, Resource Economics, and any
