@@ -1,0 +1,185 @@
+{
+  "artifact_refs": [
+    "docs/costed_route_resource_slice.md",
+    "docs/resource_workflow_trace.md",
+    "docs/resource_live_probe.md",
+    "scripts/validate_costed_route_resource_slice.py",
+    "scripts/validate_resource_workflow_trace.py",
+    "scripts/validate_resource_budget_ledgers.py",
+    "scripts/validate_capacity_smoothing.py",
+    "scripts/validate_simulation_transfer_boundaries.py",
+    "lean/AsiStackProofs/ResourceEconomics.lean",
+    "lean/AsiStackProofs/SimulationFidelity.lean",
+    "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json",
+    "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
+    "experiments/capacity_smoothing/results/2026-06-28-local.md",
+    "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md",
+    "experiments/resource_live_probe/results/2026-07-01-local.json"
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_resource_live_probe.py --write-result",
+  "evidence_transition_created": false,
+  "local_only": true,
+  "non_claims": [
+    "This local replay probe does not promote any chapter core claim above argument.",
+    "This local replay probe does not create a support-state transition.",
+    "This local replay probe does not prove deployed scheduler behavior, runtime budget enforcement, TokenMana behavior, PlanForge behavior, model quality, economic outcomes, physical feasibility, simulator adequacy, or open-world transfer.",
+    "This local replay probe records repository command execution only; it is not a live workload quality review, production scheduler log, human-repair measurement, or external physical-feasibility review."
+  ],
+  "pass": true,
+  "probe_id": "resource-live-probe-2026-07-01-local",
+  "record_kind": "resource_live_probe",
+  "recorded_at_utc": "2026-07-01T13:53:22Z",
+  "replay_commands": [
+    {
+      "command": "python3 scripts/validate_costed_route_resource_slice.py",
+      "elapsed_ms": 81.034,
+      "evidence_surface": "non-core synthetic-test-backed costed-route/resource-budget slice",
+      "exit_code": 0,
+      "id": "costed_route_resource_slice",
+      "output_excerpt": [
+        "Costed route/resource slice validation passed: selected route://bounded-transform-plus-verifier, baseline route://frontier-manual-review, negative controls route://cheap-unverified-transform, route://hidden-residual-auto-merge, 66.98% synthetic cost reduction; Lean fixture aligned."
+      ],
+      "output_sha256": "8ba746139be157e9f1c52f7361893b4e826ee98c727a1f8dd8f2d525dff3ab87"
+    },
+    {
+      "command": "python3 scripts/validate_resource_workflow_trace.py",
+      "elapsed_ms": 66.777,
+      "evidence_surface": "deterministic multi-step Resource Economics workflow trace",
+      "exit_code": 0,
+      "id": "resource_workflow_trace",
+      "output_excerpt": [
+        "Resource workflow trace validation passed: 1 valid fixture(s), 4 expected-invalid fixture(s), 3 step(s), 119.7 cost units."
+      ],
+      "output_sha256": "5682f5d8f668332865212b62bfc1772945d22056ac8bdad7b17a25d6186e1724"
+    },
+    {
+      "command": "python3 scripts/validate_resource_budget_ledgers.py",
+      "elapsed_ms": 33.635,
+      "evidence_surface": "Resource Budget Record fixture decisions",
+      "exit_code": 0,
+      "id": "resource_budget_ledgers",
+      "output_excerpt": [
+        "Resource budget ledger harness passed: 5 valid fixture(s), 5 expected-invalid fixture(s)."
+      ],
+      "output_sha256": "64fcf9f5f6651cee82234fdcedf4db7908462a14d9607e0519e4ade7980b43c6"
+    },
+    {
+      "command": "python3 scripts/validate_capacity_smoothing.py",
+      "elapsed_ms": 47.589,
+      "evidence_surface": "bounded-capacity toy trace fixtures",
+      "exit_code": 0,
+      "id": "capacity_smoothing",
+      "output_excerpt": [
+        "Capacity smoothing toy harness passed: 2 valid fixture(s), 3 expected-invalid fixture(s)."
+      ],
+      "output_sha256": "3dbcd9e6d7b31f7f16a8bb840e9217caf05639c6581467358a9ee801138d7eee"
+    },
+    {
+      "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
+      "elapsed_ms": 41.835,
+      "evidence_surface": "simulation-transfer boundary fixtures folded into Resource Economics",
+      "exit_code": 0,
+      "id": "simulation_transfer_boundaries",
+      "output_excerpt": [
+        "Simulation transfer boundary harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s)."
+      ],
+      "output_sha256": "b07672e94a08982bac662b65fcfd87f32d2d27cba7ec427c9bc05e53c5afb73c"
+    }
+  ],
+  "summary": "Resource live probe replayed five local Resource Economics validators and recorded command-output digests plus tracked artifact hashes without creating a support-state transition.",
+  "support_state_effect": "none",
+  "tracked_artifacts": [
+    {
+      "bytes": 4469,
+      "lines": 112,
+      "path": "docs/costed_route_resource_slice.md",
+      "sha256": "9aca52fdec47c644c1dac6b936620d955a1606c90a75106aa7cbcec592766df5"
+    },
+    {
+      "bytes": 3919,
+      "lines": 91,
+      "path": "docs/resource_workflow_trace.md",
+      "sha256": "333f2d31fefd85bf9c23f3dd54de8e049e72872076d102e9b6560743252a4be0"
+    },
+    {
+      "bytes": 3145,
+      "lines": 74,
+      "path": "docs/resource_live_probe.md",
+      "sha256": "4c55a8ab45b2d6a42bb88ee074c0e2948cc7afdf915faebb0ae6932683229c08"
+    },
+    {
+      "bytes": 21740,
+      "lines": 478,
+      "path": "scripts/validate_costed_route_resource_slice.py",
+      "sha256": "bcd0f39912455d58b98b7793b747757da3f152e141f1cf284b6fc654caa6d38e"
+    },
+    {
+      "bytes": 20418,
+      "lines": 470,
+      "path": "scripts/validate_resource_workflow_trace.py",
+      "sha256": "1619067aee20497fd38181ec47121714147f134acc8f0f81cfe90ff9bd06b3dd"
+    },
+    {
+      "bytes": 9084,
+      "lines": 218,
+      "path": "scripts/validate_resource_budget_ledgers.py",
+      "sha256": "0b99c4305205b39bacfe102abebf70b3c4b5a0a3c3c9f1b47541b9fa2fdf1339"
+    },
+    {
+      "bytes": 7010,
+      "lines": 172,
+      "path": "scripts/validate_capacity_smoothing.py",
+      "sha256": "8b63bc77e55a897fdb568ce0f524b5cd1cd6936c8bcc70dd066d5076e80bdfc2"
+    },
+    {
+      "bytes": 10272,
+      "lines": 229,
+      "path": "scripts/validate_simulation_transfer_boundaries.py",
+      "sha256": "b1cd3adf0e682edacb6a8ad8b09d93ccd9d81e0ddef7db0446279c57a7610538"
+    },
+    {
+      "bytes": 8923,
+      "lines": 258,
+      "path": "lean/AsiStackProofs/ResourceEconomics.lean",
+      "sha256": "b5ed7e4ac878f2aa3d16b4cf784f5e574303f23dd1a49436567f1a88345bd331"
+    },
+    {
+      "bytes": 2439,
+      "lines": 68,
+      "path": "lean/AsiStackProofs/SimulationFidelity.lean",
+      "sha256": "7698e640501456a011794c6e02449aa8fb566fffe91eb6766599b7db52dbbb57"
+    },
+    {
+      "bytes": 3535,
+      "lines": 67,
+      "path": "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
+      "sha256": "f408691c7fd6c861ae5f0af0107598fa9e89cb4a4acdb38ae8d3d2c0c31f12cd"
+    },
+    {
+      "bytes": 1130,
+      "lines": 30,
+      "path": "experiments/resource_workflow_trace/results/2026-07-01-local.json",
+      "sha256": "9a391f9c8e426c6c1df74f1105b1b5f33b80ad1559c602b08caf68b0b8e66c81"
+    },
+    {
+      "bytes": 832,
+      "lines": 29,
+      "path": "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
+      "sha256": "bcb21723cf3d04e1a9af3798886ccfaa3caad75768628c4b55c665c4d5346892"
+    },
+    {
+      "bytes": 791,
+      "lines": 28,
+      "path": "experiments/capacity_smoothing/results/2026-06-28-local.md",
+      "sha256": "222570bf578c03515f6b616ea38217e14db1bd8020240816c5581cac0bb682a2"
+    },
+    {
+      "bytes": 799,
+      "lines": 24,
+      "path": "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md",
+      "sha256": "1d7f6057484ad5591eb0489e1e61534f092c739418a6af57ece66c69fe5f0a17"
+    }
+  ]
+}

@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Add Resource Economics live replay probe
+
+- Added `scripts/run_resource_live_probe.py`,
+  `scripts/validate_resource_live_probe.py`, `docs/resource_live_probe.md`, and
+  `experiments/resource_live_probe/results/2026-07-01-local.json`.
+- The probe replays five local Resource Economics validators, records exit
+  codes, elapsed milliseconds, command-output digests, and tracked artifact
+  hashes, then validates that support-state effect remains `none`.
+- Wired the probe into `scripts/validate_book.py`, Appendix E through
+  `book_structure.json`, the Resource Economics chapter, the active evidence
+  cycle, v1 status snapshot, v1/v1.x roadmap surfaces, README, and repository
+  map.
+- This does not promote, demote, deprecate, or refute any live claim; create a
+  deployed scheduler result, live workload-quality review, production
+  scheduler log, physical-feasibility result, simulator-adequacy result,
+  model-quality result, economic outcome, reader release, or support-state
+  transition.
+
 ## 2026-07-01 - Add Resource Economics workflow trace
 
 - Added `scripts/validate_resource_workflow_trace.py`,

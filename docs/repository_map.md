@@ -107,6 +107,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/non_core_evidence_ledger.md` | Public trust-surface ledger for the three accepted non-core upward transitions, one count-surface narrowing record, and the explicit no-chapter-core-promotion boundary, validated against the transition and claim-revision records. | tracked |
 | `docs/costed_route_resource_slice.md` | First bounded non-infrastructure measured/replayed slice for costed-route/resource-budget selector discipline. | tracked |
 | `docs/resource_workflow_trace.md` | Deterministic Resource Economics workflow trace for selected-route cost recomputation, scheduler-ordering checks, displaced-cost residual controls, and physical-feasibility overclaim rejection. | tracked |
+| `docs/resource_live_probe.md` | Local Resource Economics command-replay probe recording five validator replays, output digests, elapsed times, artifact hashes, and no-transition boundaries. | tracked |
 | `docs/circle_external_receipt_slice.md` | First bounded imported external prototype receipt slice for a local Circle rope contract replay. | tracked |
 | `docs/circle_public_replay_consumer_gate.md` | Public ASI-side Circle consumer-gate fixture, digest check, and mutation-control record for guarded proof-contract receipt use. | tracked |
 | `docs/theseus_report_import_slice.md` | First public-safe Project Theseus static architecture-gate report import, CI-verifiable by digest and negative controls without chapter-core promotion. | tracked |

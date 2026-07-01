@@ -1097,6 +1097,16 @@ Current status for the focused v1.x active evidence cycle:
   does not prove deployed scheduler behavior, model quality, TokenMana or
   PlanForge behavior, economic outcomes, simulator adequacy, or physical
   feasibility.
+- `docs/resource_live_probe.md` adds a local command-replay probe for the
+  flagship lane: `python3 scripts/run_resource_live_probe.py --write-result`
+  records five Resource Economics validator replays with exit codes, elapsed
+  milliseconds, command-output digests, and tracked artifact hashes, while
+  `python3 scripts/validate_resource_live_probe.py` replays the commands and
+  checks the no-transition boundary. This improves reproducibility and drift
+  detection for the Resource Economics evidence surface, but it remains local
+  repository evidence only: it is not a deployed scheduler log, live workload
+  quality review, human-repair measurement, physical-feasibility review,
+  simulator-adequacy result, or support-state transition.
 - The simulation-transfer boundary harness remains folded into Resource
   Economics as a support boundary: it rejects missing fidelity, unbounded world
   transfer, missing resource bills, missing bottleneck residuals, ignored
@@ -1112,10 +1122,10 @@ Current status for the focused v1.x active evidence cycle:
   is not evidence" gap without claiming a speed-quality result, live Theseus
   replay, public benchmark run, or chapter-core support-state movement.
 - The next evidence work should deepen the flagship Resource Economics lane by
-  replacing fixture-declared quality and cost fields with live or externally
-  reviewable workload quality review, scheduler logs, measured displaced-cost
-  accounting, physical-feasibility review, and measured simulation outputs
-  before opening a new active cycle.
+  replacing fixture-declared quality and local command replay with live or
+  externally reviewable workload quality review, production scheduler logs,
+  measured displaced-cost accounting, physical-feasibility review, and measured
+  simulation outputs before opening a new active cycle.
 
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 
