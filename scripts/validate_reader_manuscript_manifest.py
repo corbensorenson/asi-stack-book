@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Any
 
@@ -21,9 +22,53 @@ MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 ALLOWED_STATUS = {"not_graduated", "drafting", "reconciliation", "release_candidate", "released"}
 ALLOWED_RECONCILIATION_STATUS = {"not_started", "drafting", "blocked", "reconciled"}
 ALLOWED_CURATION_CONTRACT_STATUS = {"active_contract"}
+ALLOWED_READER_HANDOFF_STATUS = {"drafting_handoff_ready"}
+ALLOWED_FIGURE_TARGET_STATUS = {"target_defined_not_final_art"}
 ALLOWED_ROUTING_STATUS = {
     "retain_in_reader_spine_with_companion_note",
     "future_curated_review_with_companion_note",
+}
+FIRST_PERSON_RE = re.compile(r"\b(i|me|my|mine|we|our|ours|us)\b", re.IGNORECASE)
+REQUIRED_READER_HANDOFF_FIELDS = {
+    "schema_version",
+    "major_version",
+    "status",
+    "relationship",
+    "single_thesis",
+    "part_arcs",
+    "signature_ideas",
+    "key_figure_targets",
+    "corben_voice_pass_slots",
+    "non_claims",
+}
+REQUIRED_PART_ARC_FIELDS = {
+    "part_id",
+    "title",
+    "reader_arc",
+    "reader_stakes",
+    "handoff_payoff",
+}
+REQUIRED_SIGNATURE_IDEA_FIELDS = {
+    "id",
+    "label",
+    "reader_promise",
+    "anchor_chapter_ids",
+}
+REQUIRED_FIGURE_TARGET_FIELDS = {
+    "id",
+    "working_title",
+    "purpose",
+    "candidate_chapter_ids",
+    "status",
+    "release_boundary",
+}
+REQUIRED_VOICE_SLOT_FIELDS = {
+    "slot_id",
+    "location",
+    "prompt",
+    "source_chapter_ids",
+    "requires_author_input",
+    "must_not_fabricate",
 }
 REQUIRED_CURATION_CONTRACT_FIELDS = {
     "schema_version",
@@ -52,6 +97,9 @@ REQUIRED_CURATED_CHAPTER_RECORD_FIELDS = {
     "claim_boundary_ref",
     "implementation_horizon_ref",
     "curation_scope",
+    "reader_stakes",
+    "reader_payoff",
+    "voice_pass_slot_ids",
     "divergence_summary",
     "meaning_preservation_checks",
     "release_blockers",
@@ -86,6 +134,7 @@ REQUIRED_FIELDS = {
     "format_review_matrix",
     "curation_contract",
     "chapter_records",
+    "reader_handoff_contract",
     "reconciliation_report",
     "non_claims",
 }
@@ -123,10 +172,35 @@ def require_string_list(owner: str, key: str, value: Any, errors: list[str]) -> 
     return result
 
 
+def require_substantive_string(
+    owner: str,
+    key: str,
+    value: Any,
+    errors: list[str],
+    *,
+    min_words: int = 8,
+    no_first_person: bool = False,
+) -> str:
+    if not isinstance(value, str) or len(value.split()) < min_words:
+        errors.append(f"{owner}: {key} must be a substantive sentence.")
+        return ""
+    if no_first_person and FIRST_PERSON_RE.search(value):
+        errors.append(f"{owner}: {key} must not fabricate first-person authorial voice.")
+    return value
+
+
 def require_existing_path(owner: str, path_value: str, errors: list[str]) -> None:
     path = ROOT / path_value
     if not path.exists():
         errors.append(f"{owner}: referenced path does not exist: {path_value}")
+
+
+def flatten_parts(structure: dict[str, Any]) -> list[dict[str, Any]]:
+    parts: list[dict[str, Any]] = []
+    for part in structure.get("parts", []):
+        if isinstance(part, dict) and isinstance(part.get("id"), str):
+            parts.append(part)
+    return parts
 
 
 def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
@@ -278,6 +352,185 @@ def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
             errors.append(
                 "curation_contract.policy must mention parallel derivative, subordinate status, and support states."
             )
+
+
+def validate_reader_handoff_contract(
+    data: dict[str, Any],
+    parts: list[dict[str, Any]],
+    chapters: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> set[str]:
+    handoff = data.get("reader_handoff_contract")
+    if not isinstance(handoff, dict):
+        errors.append("reader_handoff_contract must be an object.")
+        return set()
+
+    missing = sorted(REQUIRED_READER_HANDOFF_FIELDS - set(handoff))
+    if missing:
+        errors.append(f"reader_handoff_contract missing required fields: {missing}")
+        return set()
+
+    if handoff.get("schema_version") != "0.1":
+        errors.append("reader_handoff_contract.schema_version must be 0.1.")
+    if handoff.get("major_version") != "v1.0":
+        errors.append("reader_handoff_contract.major_version must be v1.0.")
+    if handoff.get("status") not in ALLOWED_READER_HANDOFF_STATUS:
+        errors.append(
+            f"reader_handoff_contract.status must be one of {sorted(ALLOWED_READER_HANDOFF_STATUS)}."
+        )
+    if handoff.get("relationship") != "reader_handoff_not_release_record":
+        errors.append("reader_handoff_contract.relationship must be reader_handoff_not_release_record.")
+
+    thesis = require_substantive_string(
+        "reader_handoff_contract",
+        "single_thesis",
+        handoff.get("single_thesis"),
+        errors,
+        min_words=22,
+        no_first_person=True,
+    ).lower()
+    for phrase in ("governed", "stack", "evidence"):
+        if thesis and phrase not in thesis:
+            errors.append(f"reader_handoff_contract.single_thesis must mention {phrase}.")
+
+    expected_part_ids = [str(part.get("id")) for part in parts]
+    expected_part_titles = {str(part.get("id")): str(part.get("title")) for part in parts}
+    part_arcs = handoff.get("part_arcs")
+    if not isinstance(part_arcs, list) or len(part_arcs) != len(expected_part_ids):
+        errors.append("reader_handoff_contract.part_arcs must contain exactly one record per book part.")
+    else:
+        seen_parts: list[str] = []
+        for index, arc in enumerate(part_arcs):
+            owner = f"reader_handoff_contract.part_arcs[{index}]"
+            if not isinstance(arc, dict):
+                errors.append(f"{owner} must be an object.")
+                continue
+            missing_arc = sorted(REQUIRED_PART_ARC_FIELDS - set(arc))
+            if missing_arc:
+                errors.append(f"{owner} missing required fields: {missing_arc}")
+                continue
+            part_id = arc.get("part_id")
+            if not isinstance(part_id, str) or part_id not in expected_part_ids:
+                errors.append(f"{owner}: part_id must reference a manifest part.")
+            else:
+                seen_parts.append(part_id)
+                if arc.get("title") != expected_part_titles.get(part_id):
+                    errors.append(f"{owner}: title must match book_structure.json title.")
+            for key in ("reader_arc", "reader_stakes", "handoff_payoff"):
+                require_substantive_string(owner, key, arc.get(key), errors, min_words=10, no_first_person=True)
+        if seen_parts != expected_part_ids:
+            errors.append("reader_handoff_contract.part_arcs must follow book_structure.json part order.")
+
+    signatures = handoff.get("signature_ideas")
+    if not isinstance(signatures, list) or not 8 <= len(signatures) <= 12:
+        errors.append("reader_handoff_contract.signature_ideas must contain 8 to 12 records.")
+    else:
+        seen_signatures: set[str] = set()
+        for index, idea in enumerate(signatures):
+            owner = f"reader_handoff_contract.signature_ideas[{index}]"
+            if not isinstance(idea, dict):
+                errors.append(f"{owner} must be an object.")
+                continue
+            missing_idea = sorted(REQUIRED_SIGNATURE_IDEA_FIELDS - set(idea))
+            if missing_idea:
+                errors.append(f"{owner} missing required fields: {missing_idea}")
+                continue
+            idea_id = idea.get("id")
+            if not isinstance(idea_id, str) or not idea_id.strip():
+                errors.append(f"{owner}: id must be a non-empty string.")
+            elif idea_id in seen_signatures:
+                errors.append(f"{owner}: duplicate id {idea_id}.")
+            else:
+                seen_signatures.add(idea_id)
+            require_substantive_string(owner, "label", idea.get("label"), errors, min_words=2)
+            require_substantive_string(
+                owner, "reader_promise", idea.get("reader_promise"), errors, min_words=8, no_first_person=True
+            )
+            anchors = require_string_list(owner, "anchor_chapter_ids", idea.get("anchor_chapter_ids"), errors)
+            invalid = sorted(anchor for anchor in anchors if anchor not in chapters)
+            if invalid:
+                errors.append(f"{owner}: anchor_chapter_ids reference unknown chapters: {invalid}")
+
+    figures = handoff.get("key_figure_targets")
+    if not isinstance(figures, list) or not 8 <= len(figures) <= 12:
+        errors.append("reader_handoff_contract.key_figure_targets must contain 8 to 12 records.")
+    else:
+        seen_figures: set[str] = set()
+        for index, figure in enumerate(figures):
+            owner = f"reader_handoff_contract.key_figure_targets[{index}]"
+            if not isinstance(figure, dict):
+                errors.append(f"{owner} must be an object.")
+                continue
+            missing_figure = sorted(REQUIRED_FIGURE_TARGET_FIELDS - set(figure))
+            if missing_figure:
+                errors.append(f"{owner} missing required fields: {missing_figure}")
+                continue
+            figure_id = figure.get("id")
+            if not isinstance(figure_id, str) or not figure_id.strip():
+                errors.append(f"{owner}: id must be a non-empty string.")
+            elif figure_id in seen_figures:
+                errors.append(f"{owner}: duplicate id {figure_id}.")
+            else:
+                seen_figures.add(figure_id)
+            if figure.get("status") not in ALLOWED_FIGURE_TARGET_STATUS:
+                errors.append(
+                    f"{owner}: status must be one of {sorted(ALLOWED_FIGURE_TARGET_STATUS)}."
+                )
+            require_substantive_string(owner, "working_title", figure.get("working_title"), errors, min_words=3)
+            require_substantive_string(owner, "purpose", figure.get("purpose"), errors, min_words=10, no_first_person=True)
+            candidates = require_string_list(
+                owner, "candidate_chapter_ids", figure.get("candidate_chapter_ids"), errors
+            )
+            invalid = sorted(candidate for candidate in candidates if candidate not in chapters)
+            if invalid:
+                errors.append(f"{owner}: candidate_chapter_ids reference unknown chapters: {invalid}")
+            boundary = require_substantive_string(
+                owner, "release_boundary", figure.get("release_boundary"), errors, min_words=8, no_first_person=True
+            ).lower()
+            if boundary and ("not a completed" not in boundary or "not reviewed" not in boundary):
+                errors.append(f"{owner}: release_boundary must state the target is not a completed and not reviewed artifact.")
+
+    voice_slots = handoff.get("corben_voice_pass_slots")
+    slot_ids: set[str] = set()
+    if not isinstance(voice_slots, list) or not 8 <= len(voice_slots) <= 12:
+        errors.append("reader_handoff_contract.corben_voice_pass_slots must contain 8 to 12 records.")
+    else:
+        for index, slot in enumerate(voice_slots):
+            owner = f"reader_handoff_contract.corben_voice_pass_slots[{index}]"
+            if not isinstance(slot, dict):
+                errors.append(f"{owner} must be an object.")
+                continue
+            missing_slot = sorted(REQUIRED_VOICE_SLOT_FIELDS - set(slot))
+            if missing_slot:
+                errors.append(f"{owner} missing required fields: {missing_slot}")
+                continue
+            slot_id = slot.get("slot_id")
+            if not isinstance(slot_id, str) or not slot_id.strip():
+                errors.append(f"{owner}: slot_id must be a non-empty string.")
+            elif slot_id in slot_ids:
+                errors.append(f"{owner}: duplicate slot_id {slot_id}.")
+            else:
+                slot_ids.add(slot_id)
+            require_substantive_string(owner, "location", slot.get("location"), errors, min_words=3)
+            require_substantive_string(owner, "prompt", slot.get("prompt"), errors, min_words=10)
+            if slot.get("requires_author_input") is not True:
+                errors.append(f"{owner}: requires_author_input must be true.")
+            if slot.get("must_not_fabricate") is not True:
+                errors.append(f"{owner}: must_not_fabricate must be true.")
+            source_chapter_ids = require_string_list(
+                owner, "source_chapter_ids", slot.get("source_chapter_ids"), errors
+            )
+            invalid = sorted(chapter_id for chapter_id in source_chapter_ids if chapter_id not in chapters)
+            if invalid:
+                errors.append(f"{owner}: source_chapter_ids reference unknown chapters: {invalid}")
+
+    non_claims = require_string_list("reader_handoff_contract", "non_claims", handoff.get("non_claims"), errors)
+    non_claim_text = " ".join(non_claims).lower()
+    for phrase in ("not a reader release", "does not promote", "does not fabricate"):
+        if phrase not in non_claim_text:
+            errors.append(f"reader_handoff_contract.non_claims must include boundary phrase: {phrase}")
+
+    return slot_ids
 
 
 def validate_curation_contract(data: dict[str, Any], errors: list[str]) -> dict[str, Any] | None:
@@ -563,6 +816,7 @@ def validate_chapter_records(
     data: dict[str, Any],
     chapters: dict[str, dict[str, Any]],
     contract: dict[str, Any] | None,
+    voice_slot_ids: set[str],
     errors: list[str],
 ) -> None:
     records = data.get("chapter_records")
@@ -611,6 +865,27 @@ def validate_chapter_records(
             invalid_scopes = sorted(scope for scope in scopes if scope not in allowed_scopes)
             if invalid_scopes:
                 errors.append(f"{owner}: curation_scope includes scopes not allowed by contract: {invalid_scopes}")
+
+        require_substantive_string(
+            owner,
+            "reader_stakes",
+            record.get("reader_stakes"),
+            errors,
+            min_words=10,
+            no_first_person=True,
+        )
+        require_substantive_string(
+            owner,
+            "reader_payoff",
+            record.get("reader_payoff"),
+            errors,
+            min_words=10,
+            no_first_person=True,
+        )
+        voice_slots = require_string_list(owner, "voice_pass_slot_ids", record.get("voice_pass_slot_ids"), errors)
+        invalid_voice_slots = sorted(slot_id for slot_id in voice_slots if slot_id not in voice_slot_ids)
+        if invalid_voice_slots:
+            errors.append(f"{owner}: voice_pass_slot_ids reference unknown slots: {invalid_voice_slots}")
 
         divergence_summary = record.get("divergence_summary")
         if not isinstance(divergence_summary, str) or len(divergence_summary.split()) < 8:
@@ -713,11 +988,13 @@ def main() -> None:
         errors.append(f"{rel(MANIFEST)} must contain an object.")
         data = {}
     structure = load_json(ROOT / "book_structure.json")
+    parts = flatten_parts(structure if isinstance(structure, dict) else {})
     chapters = flatten_chapters(structure if isinstance(structure, dict) else {})
 
     validate_manifest(data, errors)
     curation_contract = validate_curation_contract(data, errors)
-    validate_chapter_records(data, chapters, curation_contract, errors)
+    voice_slot_ids = validate_reader_handoff_contract(data, parts, chapters, errors)
+    validate_chapter_records(data, chapters, curation_contract, voice_slot_ids, errors)
     validate_companion_note_routing(data, chapters, errors)
     validate_reconciliation_report(data, errors)
     validate_docs_reference_manifest(errors)

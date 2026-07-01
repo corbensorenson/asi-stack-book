@@ -36,6 +36,7 @@ DEFAULT_MEANING_CHECKS = [
     "implementation horizon preserved without implying current implementation",
     "release blocker status preserved until an edition release record clears it",
 ]
+DEFAULT_VOICE_PASS_SLOT_ID = "opening-origin"
 
 
 def load_json(path: Path) -> Any:
@@ -101,11 +102,31 @@ def starter_text(chapter: dict[str, Any], generated_path: Path, head: str) -> st
     return marker + baseline
 
 
-def build_record(chapter: dict[str, Any], generated_path: Path, curated_path: Path, head: str) -> dict[str, Any]:
+def default_voice_pass_slot_id(manifest: dict[str, Any]) -> str:
+    handoff = manifest.get("reader_handoff_contract")
+    if not isinstance(handoff, dict):
+        return DEFAULT_VOICE_PASS_SLOT_ID
+    slots = handoff.get("corben_voice_pass_slots")
+    if not isinstance(slots, list):
+        return DEFAULT_VOICE_PASS_SLOT_ID
+    for slot in slots:
+        if isinstance(slot, dict) and isinstance(slot.get("slot_id"), str) and slot["slot_id"].strip():
+            return slot["slot_id"]
+    return DEFAULT_VOICE_PASS_SLOT_ID
+
+
+def build_record(
+    chapter: dict[str, Any],
+    generated_path: Path,
+    curated_path: Path,
+    head: str,
+    manifest: dict[str, Any],
+) -> dict[str, Any]:
     chapter_id = str(chapter["id"])
+    title = str(chapter["title"])
     return {
         "chapter_id": chapter_id,
-        "title": chapter["title"],
+        "title": title,
         "file": relative(curated_path),
         "reconciliation_status": "drafting",
         "generated_baseline_ref": relative(generated_path),
@@ -113,6 +134,15 @@ def build_record(chapter: dict[str, Any], generated_path: Path, curated_path: Pa
         "claim_boundary_ref": f"appendices/C_claim_evidence_matrix.qmd#{chapter_id}.core",
         "implementation_horizon_ref": f"appendices/K_implementation_horizons.qmd#{chapter_id}",
         "curation_scope": DEFAULT_CURATION_SCOPE,
+        "reader_stakes": (
+            f"Readers need to understand why {title} matters to the ASI Stack before the "
+            "curated prose can become release-candidate human reading."
+        ),
+        "reader_payoff": (
+            f"The reader should leave {title} with a clear boundary, an implementation horizon, "
+            "and the evidence limits that keep the idea honest."
+        ),
+        "voice_pass_slot_ids": [default_voice_pass_slot_id(manifest)],
         "divergence_summary": (
             "Curated reader source initialized from the generated reader baseline "
             "for future prose editing; no meaning divergence has been approved yet."
@@ -171,7 +201,7 @@ def main() -> None:
 
     curated_path = curated_chapter_path(chapter)
     head = git_head()
-    record = build_record(chapter, generated_path, curated_path, head)
+    record = build_record(chapter, generated_path, curated_path, head, manifest)
     records = manifest.get("chapter_records")
     if not isinstance(records, list):
         print("manifest chapter_records must be a list.", file=sys.stderr)

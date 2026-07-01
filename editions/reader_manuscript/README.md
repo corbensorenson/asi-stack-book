@@ -5,7 +5,10 @@ work when generated reader source plus semantic overlays are no longer enough.
 
 The current v1.0 state is `drafting`. `v1_0/manifest.json` records forty-four
 drafting-only curated chapter records, with no active manifest chapter missing a
-curated reader file, but none are release-approved and none are equal authority
+curated reader file. It also records a machine-checked reader handoff contract:
+one book-level thesis, four part arcs, ten recurring signature ideas, ten
+key-figure targets, twelve Corben voice-pass slots, and per-chapter
+stakes/payoff fields. None are release-approved, and none are equal authority
 beside the live book. The live Quarto book, generated reader
 edition, and reader overlays remain the active release path until reconciliation,
 format artifact review, and an edition release record actually exist.
@@ -24,6 +27,11 @@ Validate the manifest with:
 python3 scripts/validate_reader_manuscript_manifest.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
+
+The handoff metadata is not a substitute for Corben's review. Voice-pass slots
+mark where author-supplied first-person experience, project history, conviction,
+or final cadence is needed; agent-written prose must not fill those slots as if
+it were approved authorial voice.
 
 Generated reader files under `build/reader_edition/` are still disposable. Do not copy or hand-edit them here as a release shortcut. The durable reader-review queue is `v1_0/chapter_review_matrix.json`, with a public summary at `docs/reader_chapter_review_matrix.md`; run `python3 scripts/sync_reader_chapter_review_matrix.py --write` after chapter, overlay, or review-decision changes. A curated chapter belongs here only after a review decision says overlays are too small for the intended human-reader edit and the chapter has a reconciliation record back to the live manifest chapter.
 

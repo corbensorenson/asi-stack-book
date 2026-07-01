@@ -53,6 +53,425 @@
     "A reconciliation report exists before any reader artifact is rendered from curated source.",
     "The release record names curated reader source only after review actually happens."
   ],
+  "reader_handoff_contract": {
+    "schema_version": "0.1",
+    "major_version": "v1.0",
+    "status": "drafting_handoff_ready",
+    "relationship": "reader_handoff_not_release_record",
+    "single_thesis": "Advanced AI should be built as a governed stack of bounded capabilities, evidence states, executable contracts, resource-aware routes, and reviewable artifacts, so self-improvement can proceed only through visible claims, receipts, residuals, and rollback paths.",
+    "part_arcs": [
+      {
+        "part_id": "foundations-alignment-governance",
+        "title": "Part I - Foundations, Alignment, and Governance",
+        "reader_arc": "The reader first learns why advanced intelligence needs boundaries, evidence discipline, contestable values, stable capability identity, security, and recursive-improvement limits before any impressive capability can be trusted.",
+        "reader_stakes": "Without this part, the book would look like an engineering catalog rather than an answer to authority, failure, value conflict, and self-improvement risk.",
+        "handoff_payoff": "By the end of the part, the reader should treat alignment as a governed control architecture rather than a promise attached to a model."
+      },
+      {
+        "part_id": "planning-memory-reasoning-execution",
+        "title": "Part II - Planning, Memory, Reasoning, and Execution",
+        "reader_arc": "The reader then follows an intent as it becomes executable work, planned steps, semantic representations, accountable context, verification records, belief updates, typed jobs, tool effects, and reusable procedures.",
+        "reader_stakes": "Without this part, the stack would have principles but no accountable path from a human request to a completed artifact.",
+        "handoff_payoff": "By the end of the part, the reader should see cognition as a chain of contracts whose failures remain inspectable instead of disappearing into chat output."
+      },
+      {
+        "part_id": "routing-compression-representation-substrates",
+        "title": "Part III - Routing, Compression, Representation, and Substrates",
+        "reader_arc": "The third part explains how a governed stack chooses specialists, readiness states, compute locations, compression modes, speed paths, budgets, mathematical substrates, and cyclic memory structures without confusing efficiency with evidence.",
+        "reader_stakes": "Without this part, the book would leave efficiency as a vague hope instead of a governed allocation problem with residuals and negative controls.",
+        "handoff_payoff": "By the end of the part, the reader should understand that efficient ASI is a routing and representation discipline, not merely faster token production."
+      },
+      {
+        "part_id": "evidence-implementation-living-book",
+        "title": "Part IV - Evidence, Implementation, and the Living Book",
+        "reader_arc": "The final part turns the architecture back onto its own claims through proofs, benchmarks, governed feedback, stewardship, integration traces, implementation references, prototype sequence, publication method, and open research debt.",
+        "reader_stakes": "Without this part, the book would ask for belief instead of showing how claims are tested, limited, corrected, and carried forward.",
+        "handoff_payoff": "By the end of the part, the reader should know which pieces are argued, which are mechanized or measured, and what work remains before stronger claims are honest."
+      }
+    ],
+    "signature_ideas": [
+      {
+        "id": "stack_not_model",
+        "label": "Stack, Not Model",
+        "reader_promise": "Capability becomes safer and more useful when the reader can name the layer, boundary, receipt, and accountable owner of each action.",
+        "anchor_chapter_ids": [
+          "asi-is-a-stack-not-a-model",
+          "integrated-reference-architecture"
+        ]
+      },
+      {
+        "id": "authority_before_action",
+        "label": "Authority Before Action",
+        "reader_promise": "No component should act, delegate, expose data, or spend resources without an inspectable authority record and refusal route.",
+        "anchor_chapter_ids": [
+          "system-boundaries-and-authority",
+          "runtime-adapters-tool-permissions-and-human-approval",
+          "security-kernel-and-digital-scifs"
+        ]
+      },
+      {
+        "id": "evidence_state_discipline",
+        "label": "Evidence States",
+        "reader_promise": "The book stays honest by separating what is imagined, argued, source-derived, tested, measured, mechanized, deprecated, or refuted.",
+        "anchor_chapter_ids": [
+          "evidence-states-and-claim-discipline",
+          "claim-ledgers-and-belief-revision",
+          "benchmark-ratchets-and-anti-goodhart-evidence"
+        ]
+      },
+      {
+        "id": "residual_honesty",
+        "label": "Residual Honesty",
+        "reader_promise": "Unresolved risk, verification debt, displaced cost, and uncertainty should remain visible rather than being hidden behind a successful output.",
+        "anchor_chapter_ids": [
+          "readiness-gates-residual-escrow-and-quarantine",
+          "compact-generative-systems-and-residual-honesty",
+          "resource-economics-and-token-budgets"
+        ]
+      },
+      {
+        "id": "work_as_typed_artifacts",
+        "label": "Typed Work",
+        "reader_promise": "Intelligent work becomes governable when requests, jobs, effects, outputs, approvals, and audit events are typed artifacts rather than informal impressions.",
+        "anchor_chapter_ids": [
+          "intent-to-execution-contracts",
+          "labor-os-and-typed-jobs",
+          "artifact-graphs-audit-logs-and-replay"
+        ]
+      },
+      {
+        "id": "memory_as_accountable_state",
+        "label": "Accountable Memory",
+        "reader_promise": "Context is not just more tokens; it is state with provenance, scope, taint, deletion, adequacy, and downstream accountability.",
+        "anchor_chapter_ids": [
+          "virtual-context-abi",
+          "context-transactions-snapshots-mounts-and-taint",
+          "procedural-memory-and-cognitive-loop-closure"
+        ]
+      },
+      {
+        "id": "routing_as_governance",
+        "label": "Routing as Governance",
+        "reader_promise": "Choosing a model, specialist, compute host, or method is itself an authority and evidence decision with costs and residuals.",
+        "anchor_chapter_ids": [
+          "routing-heads-and-specialist-cores",
+          "personal-compute-hives-and-federated-edge-intelligence",
+          "resource-economics-and-token-budgets"
+        ]
+      },
+      {
+        "id": "improvement_as_transaction",
+        "label": "Transactional Improvement",
+        "reader_promise": "Self-improvement should look like controlled replacement, qualification, monitoring, rollback, and residual ownership rather than unchecked mutation.",
+        "anchor_chapter_ids": [
+          "stable-capability-fields",
+          "capability-replacement-and-rollback",
+          "recursive-self-improvement-boundaries"
+        ]
+      },
+      {
+        "id": "proofs_as_receipts",
+        "label": "Proofs as Receipts",
+        "reader_promise": "Formal work should function as scoped receipts attached to claims, contracts, and replayable artifacts instead of decorative rigor.",
+        "anchor_chapter_ids": [
+          "executable-specifications-and-lean-proof-envelope",
+          "circle-calculus-and-proof-carrying-ai-contracts",
+          "spinoza-verification-and-proof-carrying-claims"
+        ]
+      },
+      {
+        "id": "living_book_as_control_system",
+        "label": "Living Book",
+        "reader_promise": "The book itself should behave like the system it describes: versioned, evidence-aware, reviewer-facing, and capable of honest correction.",
+        "anchor_chapter_ids": [
+          "living-book-methodology",
+          "artifact-steward-agents-and-living-project-governance",
+          "open-research-agenda-and-bibliography-plan"
+        ]
+      }
+    ],
+    "key_figure_targets": [
+      {
+        "id": "asi_stack_control_plane",
+        "working_title": "ASI Stack Control Plane",
+        "purpose": "Show the whole stack as bounded layers from intent through evidence, execution, routing, improvement, and release records.",
+        "candidate_chapter_ids": [
+          "asi-is-a-stack-not-a-model",
+          "integrated-reference-architecture"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "authority_to_effect_path",
+        "working_title": "Authority to Effect Path",
+        "purpose": "Make the reader see how permissions, approvals, leases, adapters, receipts, rollback, and incidents constrain tool use.",
+        "candidate_chapter_ids": [
+          "system-boundaries-and-authority",
+          "runtime-adapters-tool-permissions-and-human-approval",
+          "security-kernel-and-digital-scifs"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "evidence_state_ladder",
+        "working_title": "Evidence State Ladder",
+        "purpose": "Separate claim labels from support states and show how promotions, demotions, refutations, blockers, and non-claims move.",
+        "candidate_chapter_ids": [
+          "evidence-states-and-claim-discipline",
+          "benchmark-ratchets-and-anti-goodhart-evidence"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "intent_to_artifact_trace",
+        "working_title": "Intent to Artifact Trace",
+        "purpose": "Follow one reader-facing request through command contract, plan, job, adapter call, artifact graph, audit log, and replay grade.",
+        "candidate_chapter_ids": [
+          "intent-to-execution-contracts",
+          "planning-as-a-control-layer",
+          "labor-os-and-typed-jobs",
+          "artifact-graphs-audit-logs-and-replay"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "context_transaction_lifecycle",
+        "working_title": "Context Transaction Lifecycle",
+        "purpose": "Show snapshots, mounts, taint, certificates, adequacy checks, belief updates, and deletion closure as one accountable memory flow.",
+        "candidate_chapter_ids": [
+          "virtual-context-abi",
+          "context-transactions-snapshots-mounts-and-taint",
+          "verification-bandwidth-and-context-adequacy",
+          "claim-ledgers-and-belief-revision"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "readiness_residual_quarantine_map",
+        "working_title": "Readiness, Residual, Quarantine Map",
+        "purpose": "Show how uncertain outputs, residual risk, insufficient evidence, and blocked routes are preserved instead of silently promoted.",
+        "candidate_chapter_ids": [
+          "readiness-gates-residual-escrow-and-quarantine",
+          "compact-generative-systems-and-residual-honesty",
+          "resource-economics-and-token-budgets"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "route_selection_budget_tradeoff",
+        "working_title": "Route Selection Budget Tradeoff",
+        "purpose": "Explain governed route choice across specialist fitness, authority, readiness, protected overhead, cost, negative controls, and residuals.",
+        "candidate_chapter_ids": [
+          "routing-heads-and-specialist-cores",
+          "personal-compute-hives-and-federated-edge-intelligence",
+          "resource-economics-and-token-budgets"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "compression_and_generation_acceptance",
+        "working_title": "Compression and Generation Acceptance",
+        "purpose": "Compare compact generation, fast generation, artifact compression, and verification so speed or compression never becomes acceptance by itself.",
+        "candidate_chapter_ids": [
+          "compact-generative-systems-and-residual-honesty",
+          "fast-generation-architectures",
+          "rankfold-neuralfold-and-artifact-compression"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "cyclic_substrate_adoption_gate",
+        "working_title": "Cyclic Substrate Adoption Gate",
+        "purpose": "Show optional mathematical substrates moving through structural receipts, baseline symmetry, consumer gates, canaries, and retirement paths.",
+        "candidate_chapter_ids": [
+          "mathematical-and-search-substrates",
+          "circle-calculus-and-proof-carrying-ai-contracts",
+          "coil-attention-cyclic-memory-and-recurrence-contracts",
+          "coilra-multicoil-rope-and-cyclic-mixers"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      },
+      {
+        "id": "living_book_release_pipeline",
+        "working_title": "Living Book Release Pipeline",
+        "purpose": "Make the live AI view, human reader manuscript, proof and evidence artifacts, release records, and open research backlog legible.",
+        "candidate_chapter_ids": [
+          "living-book-methodology",
+          "open-research-agenda-and-bibliography-plan",
+          "artifact-steward-agents-and-living-project-governance"
+        ],
+        "status": "target_defined_not_final_art",
+        "release_boundary": "This is not a completed figure and not reviewed as a release artifact."
+      }
+    ],
+    "corben_voice_pass_slots": [
+      {
+        "slot_id": "opening-origin",
+        "location": "Opening thesis passages",
+        "prompt": "Corben should supply the plain-language reason this architecture matters and the reader promise the opening must carry.",
+        "source_chapter_ids": [
+          "asi-is-a-stack-not-a-model",
+          "the-efficient-asi-hypothesis"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "boundary-scar",
+        "location": "Boundary and failure passages",
+        "prompt": "Corben should decide which real project pressures made authority boundaries and failure obligations feel non-negotiable.",
+        "source_chapter_ids": [
+          "system-boundaries-and-authority",
+          "failure-modes-of-ungoverned-intelligence",
+          "security-kernel-and-digital-scifs"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "evidence-discipline",
+        "location": "Evidence honesty passages",
+        "prompt": "Corben should provide the authorial language for why support states, demotions, and no-promotion decisions deserve reader trust.",
+        "source_chapter_ids": [
+          "evidence-states-and-claim-discipline",
+          "benchmark-ratchets-and-anti-goodhart-evidence"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "human-stakes",
+        "location": "Human and governance passages",
+        "prompt": "Corben should choose the human stakes vocabulary for intent, dignity, corrigibility, moral uncertainty, and contestable governance.",
+        "source_chapter_ids": [
+          "human-intent-as-a-formal-input",
+          "constitutional-alignment-substrate",
+          "moral-uncertainty-and-value-conflict"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "improvement-governance",
+        "location": "Improvement and replacement passages",
+        "prompt": "Corben should state the desired reader feeling around upgrades, rollback, stable capability identity, and recursive improvement limits.",
+        "source_chapter_ids": [
+          "stable-capability-fields",
+          "capability-replacement-and-rollback",
+          "recursive-self-improvement-boundaries"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "execution-craft",
+        "location": "Execution trace passages",
+        "prompt": "Corben should mark where concrete implementation memory can make contracts, jobs, adapters, artifact graphs, and procedures feel lived-in.",
+        "source_chapter_ids": [
+          "intent-to-execution-contracts",
+          "labor-os-and-typed-jobs",
+          "artifact-graphs-audit-logs-and-replay",
+          "runtime-adapters-tool-permissions-and-human-approval",
+          "procedural-memory-and-cognitive-loop-closure"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "memory-experience",
+        "location": "Context and memory passages",
+        "prompt": "Corben should identify the most intuitive way to make accountable context, taint, verification bandwidth, and belief revision memorable.",
+        "source_chapter_ids": [
+          "cognitive-compilation-and-semantic-ir",
+          "virtual-context-abi",
+          "context-transactions-snapshots-mounts-and-taint",
+          "verification-bandwidth-and-context-adequacy",
+          "claim-ledgers-and-belief-revision"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "resource-tradeoff",
+        "location": "Efficiency and resource passages",
+        "prompt": "Corben should supply the practical resource tradeoffs that make routing, owned compute, fast generation, compression, and budgets feel concrete.",
+        "source_chapter_ids": [
+          "routing-heads-and-specialist-cores",
+          "personal-compute-hives-and-federated-edge-intelligence",
+          "compact-generative-systems-and-residual-honesty",
+          "fast-generation-architectures",
+          "rankfold-neuralfold-and-artifact-compression",
+          "resource-economics-and-token-budgets"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "substrate-curiosity",
+        "location": "Mathematical substrate passages",
+        "prompt": "Corben should decide how much wonder, restraint, and falsifiability belongs in the mathematical and cyclic substrate chapters.",
+        "source_chapter_ids": [
+          "mathematical-and-search-substrates",
+          "circle-calculus-and-proof-carrying-ai-contracts",
+          "coil-attention-cyclic-memory-and-recurrence-contracts",
+          "coilra-multicoil-rope-and-cyclic-mixers"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "proof-practice",
+        "location": "Formal proof passages",
+        "prompt": "Corben should choose the practical language for formal proofs as useful receipts rather than claims of total correctness.",
+        "source_chapter_ids": [
+          "executable-specifications-and-lean-proof-envelope",
+          "spinoza-verification-and-proof-carrying-claims",
+          "circle-calculus-and-proof-carrying-ai-contracts"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "implementation-history",
+        "location": "Implementation reference passages",
+        "prompt": "Corben should provide project-history context for Theseus, reference traces, artifact stewardship, and prototype order where public-safe.",
+        "source_chapter_ids": [
+          "integrated-reference-architecture",
+          "project-theseus-as-report-first-implementation-reference",
+          "prototype-roadmap",
+          "artifact-steward-agents-and-living-project-governance"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      },
+      {
+        "slot_id": "reader-close",
+        "location": "Closing research passages",
+        "prompt": "Corben should decide the closing invitation, unresolved questions, and reader handoff for the living-book method and open agenda.",
+        "source_chapter_ids": [
+          "living-book-methodology",
+          "open-research-agenda-and-bibliography-plan"
+        ],
+        "requires_author_input": true,
+        "must_not_fabricate": true
+      }
+    ],
+    "non_claims": [
+      "This handoff contract is not a reader release record.",
+      "This handoff contract does not promote any Appendix C support state.",
+      "This handoff contract does not fabricate Corben first-person experience, personal lessons, project history, conviction, or authorial approval.",
+      "This handoff contract does not create, approve, or review EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts."
+    ]
+  },
   "companion_note_routing": {
     "path": "editions/reader_manuscript/v1_0/companion_note_routing.json",
     "review": "docs/reader_companion_note_routing_review.md",
@@ -97,6 +516,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need produced work to remain inspectable after completion, because outputs without provenance cannot carry durable evidence.",
+      "reader_payoff": "The payoff is an artifact graph that links parent jobs, sources, context, tools, tests, audits, replay grades, and allowed reuse.",
+      "voice_pass_slot_ids": [
+        "execution-craft"
+      ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around work that remains inspectable after production, artifact identity, parent jobs, source/context refs, context transactions, tool refs, audit events, replay grades, claim/test links, evidence gates, residuals, allowed reuse, minimum viable replay packets, and beyond-SOTA evidence graphs; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
@@ -133,6 +557,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see living artifacts as governed projects with stewardship, contribution ledgers, sunset paths, and federation boundaries.",
+      "reader_payoff": "The payoff is a project-governance model that can keep the book and related codebases maintainable as they evolve.",
+      "voice_pass_slot_ids": [
+        "implementation-history"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -168,6 +597,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must understand why the single-model frame hides authority, evidence, memory, routing, and execution boundaries that determine whether advanced AI can be governed.",
+      "reader_payoff": "The payoff is a durable map: every later chapter becomes a layer in a stack rather than a disconnected proposal.",
+      "voice_pass_slot_ids": [
+        "opening-origin"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -202,6 +636,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers must understand why scores become dangerous when optimized without evidence packets, baselines, residuals, and anti-Goodhart checks.",
+      "reader_payoff": "The payoff is a benchmark governance model that uses tests to constrain claims instead of manufacturing confidence.",
+      "voice_pass_slot_ids": [
+        "evidence-discipline"
       ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around benchmark scores as pressure signals that require evidence packets: evidence-state classification, run records, baselines, residuals, regression floors, anti-Goodhart checks, contamination and transfer boundaries, and claim-specific promotion decisions; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
@@ -239,6 +678,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need to see improvement as a reversible transaction rather than a one-way upgrade narrative that hides regressions.",
+      "reader_payoff": "The payoff is a concrete replacement lifecycle with candidate separation, regression floors, monitoring windows, rollback receipts, and residual owners.",
+      "voice_pass_slot_ids": [
+        "improvement-governance"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, candidate-versus-accepted-replacement explanation, transaction-state explanation, rollback-receipt explanation, regression-floor and evaluator-independence boundaries, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -275,6 +719,12 @@
         "chapter compression",
         "companion-note integration"
       ],
+      "reader_stakes": "Readers must see Circle-style contract ideas as scoped proof-carrying receipts, not a shortcut to general AI correctness.",
+      "reader_payoff": "The payoff is a contract-consumer frame that lets formal artifacts guide adoption while preserving workload and replay blockers.",
+      "voice_pass_slot_ids": [
+        "substrate-curiosity",
+        "proof-practice"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-versus-performance throughline, receipt lifecycle explanation, Circle consumer-gate boundary repair, and minimum viable implementation alignment were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -309,6 +759,12 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need claims to have identities, histories, contradictions, and downgrade paths rather than floating as persuasive prose.",
+      "reader_payoff": "The payoff is a belief-revision ledger that makes evidence changes, counterevidence, and support-state movement inspectable.",
+      "voice_pass_slot_ids": [
+        "memory-experience",
+        "evidence-discipline"
       ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around truth-claim version control, ledger identity, support states, contradiction links, revision history, publication-boundary discipline, minimum viable record fixtures, and beyond-SOTA epistemic version control; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
@@ -346,6 +802,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need to see how natural-language goals can lower into semantic units without pretending the compiler has proved correctness.",
+      "reader_payoff": "The payoff is a semantic-IR layer that makes obligations addressable, repairable, and testable before execution consumes them.",
+      "voice_pass_slot_ids": [
+        "memory-experience"
+      ],
       "divergence_summary": "First curated prose pass completed from generated reader baseline; opening, pacing, paragraph order, section flow, transitions, obligation-addressability throughline, semantic IR as artifact-language framing, lowering-receipt explanation, validator-failure/localized-repair boundary, minimum viable implementation boundary, and proof/test boundary clarification revised for human-reader flow.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -380,6 +841,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need cyclic memory to distinguish structural recurrence from useful memory and retrieval quality.",
+      "reader_payoff": "The payoff is a recurrence contract that tracks freshness, sparse coverage, exits, fallbacks, and baseline obligations.",
+      "voice_pass_slot_ids": [
+        "substrate-curiosity"
       ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around memory custody and recurrence control: cyclic memory contracts expose residue, winding, freshness, sparse coverage, recurrence exits, fallback, authority, and baseline obligations while keeping structural memory separate from retrieval or reasoning quality.",
       "meaning_preservation_checks": [
@@ -417,6 +883,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see cyclic mixer ideas through adoption gates rather than aesthetic mathematical appeal.",
+      "reader_payoff": "The payoff is a cyclic-substrate evaluation path with diagnostics, parameter ledgers, negative controls, canaries, and retirement paths.",
+      "voice_pass_slot_ids": [
+        "substrate-curiosity"
+      ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around cyclic-substrate adoption discipline: structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, consumer policy, and canary routing stay separate from model-quality, runtime, memory, context-length, training-stability, deployment, and transfer claims.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
@@ -452,6 +923,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers must see alignment as a substrate for agency, dignity, corrigibility, and intervention rather than a generic virtue label.",
+      "reader_payoff": "The payoff is a reader-facing account of alignment as enforceable constitutional structure with explicit non-claims about deployment and moral completion.",
+      "voice_pass_slot_ids": [
+        "human-stakes"
       ],
       "divergence_summary": "Curated reader record remains active after the Part I consolidation: the human-prose path now treats constitutional predicates, agency, dignity, and corrigibility as one alignment boundary; no claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, or release approval is changed.",
       "meaning_preservation_checks": [
@@ -489,6 +965,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need memory changes to feel as accountable as code or money movements, because hidden context mutations corrupt later artifacts.",
+      "reader_payoff": "The payoff is a transaction model for snapshots, mounts, taint, deletion closure, and downstream inheritance.",
+      "voice_pass_slot_ids": [
+        "memory-experience"
+      ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around memory as accountable state, transactional context views, immutable events, versioned pages, mounts, snapshots, branches, taint/deletion closure, typed faults, downstream artifact inheritance, minimum viable transaction fixtures, and beyond-SOTA transactional memory; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
@@ -524,6 +1005,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers must trust that the book can distinguish aspiration from proof, measurement, source interpretation, and unsupported speculation.",
+      "reader_payoff": "The payoff is a shared evidence grammar that keeps ambitious architecture claims readable without laundering their support state.",
+      "voice_pass_slot_ids": [
+        "evidence-discipline"
       ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, evidence-state traffic-control throughline, source-boundary explanation, support-label/support-state distinction, demotion path, implementation boundary, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
@@ -561,6 +1047,11 @@
         "chapter compression",
         "companion-note integration"
       ],
+      "reader_stakes": "Readers need formal proof to feel useful and limited, because proof artifacts can either clarify boundaries or overstate them.",
+      "reader_payoff": "The payoff is a proof-envelope discipline that ties Lean, schemas, validators, and tests to scoped claims and known limits.",
+      "voice_pass_slot_ids": [
+        "proof-practice"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, and minimum viable implementation boundary were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -595,6 +1086,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need failure modes before mechanisms, because the architecture exists to prevent predictable ungoverned behaviors from becoming normal operating practice.",
+      "reader_payoff": "The payoff is a failure vocabulary that turns abstract AI risk into concrete obligations, detections, and blocked paths.",
+      "voice_pass_slot_ids": [
+        "boundary-scar"
       ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, diagnostic-clarity throughline, failure-as-obligation-map explanation, interface compression, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
@@ -631,6 +1127,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see speed as valuable only when accepted outputs, verifier cost, fallback cost, and quality residuals are counted.",
+      "reader_payoff": "The payoff is a fast-generation evaluation frame that separates raw throughput from useful accepted work under governance.",
+      "voice_pass_slot_ids": [
+        "resource-tradeoff"
+      ],
       "divergence_summary": "First curated prose pass completed from generated reader baseline; opening, pacing, paragraph order, section flow, transitions, generation-speed-as-route-choice throughline, proposed-versus-accepted-output boundary, generation-mode record explanation, verifier/fallback/memory-pressure accounting, minimum viable implementation boundary, and proof/test boundary clarification revised for human-reader flow.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -666,6 +1167,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need to see how human wishes become structured inputs without pretending that language alone captures authority, preference, or consent.",
+      "reader_payoff": "The payoff is a formal-intent bridge that makes later plans and jobs accountable to the request that created them.",
+      "voice_pass_slot_ids": [
+        "human-stakes"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, intent-state explanation, external-comparator boundary repair, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -700,6 +1206,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need one end-to-end trace that shows the stack working as a coherent architecture rather than a glossary.",
+      "reader_payoff": "The payoff is an integration map where authority, evidence, residuals, artifacts, and stop conditions can be followed together.",
+      "voice_pass_slot_ids": [
+        "implementation-history"
       ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around the integrated stack as a trace kernel: parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, downstream rejection, and blocked paths that remain as visible as happy paths; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
@@ -737,6 +1248,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see execution as typed labor with contracts, permission checks, completion receipts, and residuals rather than autonomous activity.",
+      "reader_payoff": "The payoff is an operating-system view of AI work where jobs can be scheduled, refused, audited, replayed, or quarantined.",
+      "voice_pass_slot_ids": [
+        "execution-craft"
+      ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around typed jobs as the governed unit of execution, plan-node parentage, contract locks, permission checks, approval gates, runtime adapters, bounded workspaces, completion receipts, artifact handoff, residuals, quarantine, delivery-versus-evidence readiness, minimum viable lifecycle harnesses, and the beyond-SOTA Labor OS endpoint; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
@@ -772,6 +1288,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers must understand why the book is itself part of the architecture rather than a static explanation of it.",
+      "reader_payoff": "The payoff is a living-publication method where versions, overlays, reader editions, evidence changes, and corrections remain controlled.",
+      "voice_pass_slot_ids": [
+        "reader-close"
       ],
       "divergence_summary": "First curated reader prose pass reframes the methodology around the book as a governed research instrument: stable IDs, source notes, claim states, proof/test hooks, release records, reader projections, change packets, and publication-laundering controls are made readable while preserving the argument-level chapter core claim.",
       "meaning_preservation_checks": [
@@ -810,6 +1331,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need optional mathematical substrates to be exciting without being treated as magic architecture upgrades.",
+      "reader_payoff": "The payoff is an adoption discipline where substrates earn use through receipts, baselines, consumer gates, and retirement criteria.",
+      "voice_pass_slot_ids": [
+        "substrate-curiosity"
+      ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around disciplined optionality: substrates enter through adoption records, not fascination; structural, empirical, consumer, and retirement lanes stay separate; axis ledgers prevent theorem or performance spillover; and optional mathematical/search substrates remain argument-level candidates until scoped evidence exists.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
@@ -845,6 +1371,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need a disciplined ending that names what remains unresolved instead of ending with premature closure.",
+      "reader_payoff": "The payoff is an agenda that routes new sources, proofs, tests, external reviews, and future editions without claiming completion.",
+      "voice_pass_slot_ids": [
+        "reader-close"
       ],
       "divergence_summary": "First curated reader prose pass reframes the final chapter as the book's research-intake contract: source states, Appendix G/H ownership boundaries, backlog records, new-paper triage, proof/test lanes, no-promotion blockers, and release traces are made readable while preserving the argument-level chapter core claim.",
       "meaning_preservation_checks": [
@@ -882,6 +1413,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see owned and federated compute as authority-managed infrastructure, not just cheaper or more available hardware.",
+      "reader_payoff": "The payoff is a hive model for placement, approvals, leases, energy budgets, family or project mediation, and federation boundaries.",
+      "voice_pass_slot_ids": [
+        "resource-tradeoff"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, reachability-versus-authority throughline, policy-first placement explanation, owned and rented device role explanation, family/project mediation boundary, Hive-to-Hive protocol boundary, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -916,6 +1452,12 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need feedback learning to preserve authority, reward boundaries, holdouts, drift limits, and rollback obligations.",
+      "reader_payoff": "The payoff is a governed-learning frame where policy updates are leased behavior changes rather than unmanaged optimization.",
+      "voice_pass_slot_ids": [
+        "improvement-governance",
+        "evidence-discipline"
       ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around policy updates as governed behavior-change leases: target policy, admissible feedback, reward boundary, drift bound, holdouts, regressions, reward-hacking probes, authority conservation, rollback, governance promotion, residuals, and exact support-state effects; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
@@ -953,6 +1495,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need the system to learn procedures without silently converting anecdotes into untested habits or self-improvement claims.",
+      "reader_payoff": "The payoff is a loop-closure model where repeated work can become qualified procedure only after comparable traces and regression checks.",
+      "voice_pass_slot_ids": [
+        "execution-craft"
+      ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around earned automation: comparable traces, negative examples, invariant abstraction, parameter discovery, procedure qualification, regression checks, quarantine, residuals, and retirement triggers; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
@@ -988,6 +1535,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers must know what Theseus can and cannot prove for the book before implementation references become persuasive.",
+      "reader_payoff": "The payoff is a report-first implementation boundary that uses public-safe artifacts without overstating live replay or deployment.",
+      "voice_pass_slot_ids": [
+        "implementation-history"
       ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around Project Theseus as a report-first implementation-reference lab: reports are evidence objects, dashboards are surfaces, static architecture-gate import remains narrow, missing artifacts block stronger claims, and no clean replay or support-state promotion is implied.",
       "meaning_preservation_checks": [
@@ -1026,6 +1578,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need build order because a complete architecture can still fail if dependencies, gates, and phases are sequenced badly.",
+      "reader_payoff": "The payoff is a phased path that converts the architecture into testable implementation work while keeping self-improvement delayed.",
+      "voice_pass_slot_ids": [
+        "implementation-history"
+      ],
       "divergence_summary": "First curated reader prose pass reframes the roadmap around phase-gated build order: source and claim hygiene before artifact graphs, contracts, execution, routing, benchmarks, replacement, and bounded self-improvement; roadmap phases remain dependency controls, not phase-acceptance evidence or support-state movement.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
@@ -1061,6 +1618,12 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need to know where uncertain work goes when it is useful but not yet safe, complete, or sufficiently evidenced.",
+      "reader_payoff": "The payoff is a readiness system that keeps residuals owned, quarantined, revisitable, and visible instead of smoothing them into acceptance.",
+      "voice_pass_slot_ids": [
+        "resource-tradeoff",
+        "evidence-discipline"
       ],
       "divergence_summary": "First prose curation pass completed from the generated reader baseline, emphasizing readiness as scoped permission, residual custody, productive quarantine, stale-gate prevention, and lifecycle control; no claim meaning, support-state, source, proof/test, implementation-horizon, or release-artifact divergence has been approved.",
       "meaning_preservation_checks": [
@@ -1098,6 +1661,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see recursive improvement as the highest-pressure case for authority, evidence, rollback, and residual discipline.",
+      "reader_payoff": "The payoff is a boundary model for self-improvement that permits progress only through inspectable transactions and stop conditions.",
+      "voice_pass_slot_ids": [
+        "improvement-governance"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, boundary-delta explanation, gate-state explanation, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -1133,6 +1701,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must understand budgets as governance instruments because attention, verification, compute, and opportunity cost shape every route.",
+      "reader_payoff": "The payoff is a cost ledger that makes protected overhead, displaced costs, scarce resources, and cost-quality residuals explicit.",
+      "voice_pass_slot_ids": [
+        "resource-tradeoff"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, budget-as-governance throughline, local-cheapness versus full-system-efficiency boundary, Resource Budget Record explanation, minimum viable implementation boundary, and proof/test boundary clarification were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -1167,6 +1740,12 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers must see external effects as governed adapter calls with scoped permission and approval instead of convenient tool access.",
+      "reader_payoff": "The payoff is a tool-use boundary where leases, approvals, receipts, incident paths, and rollback or residual records constrain action.",
+      "voice_pass_slot_ids": [
+        "execution-craft",
+        "boundary-scar"
       ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around runtime adapters as capability leases for external effects, typed jobs, adapter contracts, capability checks, authority handles, scoped approval records, effect leases, sandboxed invocations, effect receipts, rollback handles, irreversible residuals, incident paths, artifact graphs, evidence ledgers, and the beyond-SOTA capability-firewall endpoint; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
@@ -1204,6 +1783,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see why secret handling, handle leases, isolation, and least exposure are architecture requirements rather than operational details.",
+      "reader_payoff": "The payoff is a security-kernel lens that constrains context, tools, compute hives, and human approval throughout the stack.",
+      "voice_pass_slot_ids": [
+        "boundary-scar"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, least-exposure throughline, handle-lease explanation, Digital SCIF lifecycle explanation, receipt-boundary explanation, proof/test boundary clarification, and summary were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -1238,6 +1822,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers must understand why capability identity should survive implementation swaps without letting labels conceal regressions or authority changes.",
+      "reader_payoff": "The payoff is a stable-field vocabulary that makes replacement, routing, monitoring, and rollback legible across changing implementations.",
+      "voice_pass_slot_ids": [
+        "improvement-governance"
       ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, field/implementation explanation, scoped qualification and lease explanation, route-validator explanation, lifecycle/evidence/rollback boundary, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
@@ -1274,6 +1863,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see that capability without named authority boundaries turns every helpful action into a potential escalation or invisible delegation.",
+      "reader_payoff": "The payoff is a permission-first frame for every later tool call, route, memory access, and self-improvement step.",
+      "voice_pass_slot_ids": [
+        "boundary-scar"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transition prose, can/may distinction, denial-as-control explanation, permission-class taxonomy, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -1309,6 +1903,12 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see efficiency as a governance requirement, because intelligence that burns unlimited verification, compute, and human attention cannot scale responsibly.",
+      "reader_payoff": "The payoff is a sharper thesis that useful ASI depends on bounded routing, compression, and evidence costs as much as raw capability.",
+      "voice_pass_slot_ids": [
+        "opening-origin",
+        "resource-tradeoff"
+      ],
       "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, route-outcome explanation, and compression were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -1343,6 +1943,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers must understand that more context can exceed the system's ability to verify what matters for a target claim.",
+      "reader_payoff": "The payoff is an adequacy frame that separates generation capacity from verification capacity and routes uncertainty instead of hiding it.",
+      "voice_pass_slot_ids": [
+        "memory-experience"
       ],
       "divergence_summary": "First curated reader prose pass reframes the chapter around context exposure versus verification capacity, target-claim scoped adequacy, semantic-unit comparison, compression/loss records, verification modes, support-state boundaries, minimum viable adequacy fixtures, and beyond-SOTA verification-capacity control; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
@@ -1380,6 +1985,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need a way to handle value conflict without pretending plural stakes collapse into one hidden optimizer preference.",
+      "reader_payoff": "The payoff is a contestable-governance frame where uncertainty, dissent, review, narrowed authority, and revisit obligations remain visible.",
+      "voice_pass_slot_ids": [
+        "human-stakes"
+      ],
       "divergence_summary": "Curated reader record remains active after the Part I consolidation: the human-prose path now treats moral uncertainty, value conflict, fork, exit, audit, redaction, appeal, and contestable governance as one boundary; no claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose after folding governance rights into the value-conflict and contestable-governance boundary",
@@ -1415,6 +2025,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need to see the exact point where a vague request becomes executable work with obligations and refusal conditions.",
+      "reader_payoff": "The payoff is a command-contract frame that anchors planning, jobs, tool calls, and artifact review to one accountable input.",
+      "voice_pass_slot_ids": [
+        "execution-craft"
       ],
       "divergence_summary": "Curated prose now follows the executed intent/contracts merge, combining intent-to-execution trace pacing with command-field, validation-state, authority, and residual language while preserving the live chapter claim boundary.",
       "meaning_preservation_checks": [
@@ -1455,6 +2070,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must understand planning as control over work, evidence, budgets, and risk instead of a prettier chain-of-thought transcript.",
+      "reader_payoff": "The payoff is a planning model where DAGs, arbitrage, dispatch, and stop conditions become inspectable governance surfaces.",
+      "voice_pass_slot_ids": [
+        "execution-craft"
+      ],
       "divergence_summary": "Curated reader prose now treats planning and PlanForge DAG/intelligence-arbitrage material as one chapter: planning as controlled delay before action, schedulable DAGs, node lifecycle states, blocked work, dispatch receipts, adequacy contracts, route assignments, cost-quality ledgers, residuals, Semantic IR handoff, schema/harness boundaries, and finite-record Planning plus PlanForge proof limits; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose after folding PlanForge DAG and intelligence-arbitrage material into the planning-control chapter",
@@ -1492,6 +2112,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must see context as a typed interface with pages, cells, certificates, and scope instead of a bag of prompt text.",
+      "reader_payoff": "The payoff is a context ABI that gives memory consumers explicit contracts for provenance, adequacy, visibility, and refusal.",
+      "voice_pass_slot_ids": [
+        "memory-experience"
+      ],
       "divergence_summary": "Merged curated prose pass after static context ABI consolidation: the active reader chapter now combines ABI addressing, typed pages, context cells, representation certificates, authority/loss/permitted-use boundaries, finite proof/test limits, and the transaction/verification handoff while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
@@ -1527,6 +2152,11 @@
         "transition prose",
         "sentence-level voice",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need verification and adversarial review to function as claim discipline without implying automatic truth or theorem-grade certainty.",
+      "reader_payoff": "The payoff is a proof-carrying-claim model that keeps receipts, reviewers, counterarguments, and unresolved doubts attached to claims.",
+      "voice_pass_slot_ids": [
+        "proof-practice"
       ],
       "divergence_summary": "Merged curated reader prose pass after verification/adversarial-review consolidation: the active reader chapter now combines proof-carrying claim tiers, justification envelopes, verifier results, failed-attempt memory, tribunal dossiers, adversarial probes, dissent, required actions, ledger writeback, and non-claims while preserving support state, source boundaries, proof/test status, implementation horizons, and release blockers.",
       "meaning_preservation_checks": [
@@ -1565,6 +2195,11 @@
         "sentence-level voice",
         "chapter compression"
       ],
+      "reader_stakes": "Readers must understand route choice as a governed decision over capability, authority, readiness, cost, and residuals.",
+      "reader_payoff": "The payoff is a specialist-routing frame that makes MoE-style efficiency compatible with receipts, fallbacks, and non-claims.",
+      "voice_pass_slot_ids": [
+        "resource-tradeoff"
+      ],
       "divergence_summary": "First curated reader prose pass now maps MoECOT runtime material into the active Routing Heads chapter: routes as task-local authority leases, specialist registries, routing decision records, route receipts, rejected candidates, granted and denied authority, readiness, fallback, residual ownership, MoECOT runtime-crosswalk caveats, and source-state separation; no claim meaning, support state, source boundary, proof/test status, implementation horizon, route-quality claim, MoECOT runtime result, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
@@ -1602,6 +2237,11 @@
         "paragraph ordering",
         "chapter compression"
       ],
+      "reader_stakes": "Readers need compact generation to preserve unresolved obligations instead of rewarding short outputs that conceal verification debt.",
+      "reader_payoff": "The payoff is a generate-verify-repair frame where compression remains accountable to residuals, gates, and evidence boundaries.",
+      "voice_pass_slot_ids": [
+        "resource-tradeoff"
+      ],
       "divergence_summary": "First curated reader pass strengthens the human-reader opening around residual honesty: small only counts after the remainder is named. It preserves CGS, generate/verify/repair, semantic-leasing, proof/test, source, and support-state boundaries without adding implementation or benchmark claims.",
       "meaning_preservation_checks": [
         "support-state boundary remains design rationale with argument support",
@@ -1636,6 +2276,11 @@
         "sentence-level voice",
         "paragraph ordering",
         "chapter compression"
+      ],
+      "reader_stakes": "Readers need artifact compression to remain deterministic, inspectable, and claim-bounded instead of becoming lossy authority laundering.",
+      "reader_payoff": "The payoff is a compression frame where folded artifacts carry receipts, decoders, utility limits, and reconstruction boundaries.",
+      "voice_pass_slot_ids": [
+        "resource-tradeoff"
       ],
       "divergence_summary": "First curated reader pass strengthens the archive-facing opening around routed artifact compression: a compressed artifact earns one use at a time. It preserves RankFold/NeuralFold, BBVCA, CGS, source, proof/test, and support-state boundaries without adding compressor or benchmark claims.",
       "meaning_preservation_checks": [

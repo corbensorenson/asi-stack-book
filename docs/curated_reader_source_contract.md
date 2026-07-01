@@ -1,12 +1,18 @@
 # Curated Reader Source Contract
 
-Last updated: 2026-06-28
+Last updated: 2026-07-01
 
 This document explains the machine-readable contract in
 `editions/reader_manuscript/v1_0/curation_contract.json`. It is the rule for
 the future point where the normal human-reader book stops being only generated
 reader source plus semantic overlays and starts carrying manually edited chapter
 files.
+
+The same validator also checks the reader handoff contract embedded in
+`editions/reader_manuscript/v1_0/manifest.json`. That handoff contract records
+the book-level human-reader thesis, part arcs, recurring signature ideas,
+key-figure targets, Corben voice-pass slots, and per-chapter stakes/payoffs.
+It is editorial scaffolding for review, not a reader release record.
 
 ## Relationship To The Live Book
 
@@ -56,12 +62,17 @@ Every future curated chapter record must name:
 - the live source commit or tag reference;
 - the claim-boundary and implementation-horizon references;
 - the allowed curation scope used by the edit;
+- chapter-specific reader stakes and reader payoff;
+- the Corben voice-pass slot IDs that should be reviewed before final prose;
 - a divergence summary;
 - meaning-preservation checks;
 - active release blockers;
 - whether a canonical live-source change is required.
 
 `python3 scripts/validate_reader_manuscript_manifest.py` enforces this contract.
+It also requires the top-level handoff contract to preserve its single thesis,
+part arcs, 8-12 signature ideas, 8-12 key-figure targets, and 8-12 author
+voice-pass slots without fabricating first-person experience.
 
 To initialize a future curated chapter without hand-building the record, first
 generate the reader baseline, then run the initializer in dry-run mode:
