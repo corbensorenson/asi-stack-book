@@ -41,6 +41,11 @@ The reader throughline is:
   hidden-residual control, finite selector-state Lean replay, and local live
   probe as a reproducibility/evidence-boundary story rather than a scheduler or
   economic result.
+- Added a third reader-only update after the Resource workflow trace-property
+  bridge: the curated chapter now explains the three-event workflow trace,
+  event-to-summary cost/review/verification rollup, high-risk-first ordering,
+  guard preservation, and the boundary between fixture trace evidence and
+  deployed scheduler evidence.
 
 ## Meaning-Preservation Checks
 
@@ -52,6 +57,10 @@ The reader throughline is:
 - The prose preserves the new selector-state trace theorem as a narrow bridge
   over fixture state only; it does not treat the theorem as deployed routing,
   model-quality, scheduler-quality, or cost-quality evidence.
+- The prose preserves the new workflow trace-property bridge as a narrow bridge
+  over finite dispatch events only; it does not treat event rollup,
+  high-risk-first ordering, or guard preservation as deployed scheduling,
+  live workload-quality, physical-feasibility, or economic evidence.
 - PagedAttention/vLLM remains serving-layer resource context only; no local
   deployment, KV-cache audit, latency result, throughput result, or quality
   result is implied.
@@ -70,8 +79,8 @@ The reader throughline is:
   reproduction, cost-quality experiments, scarce-resource scheduler traces,
   value-of-computation comparisons, or economic outcomes.
 - This pass does not claim that the accepted costed-route slice, selector-state
-  theorem, or local live probe promotes the `resource-economics-and-token-budgets`
-  chapter core claim.
+  theorem, workflow trace-property bridge, or local live probe promotes the
+  `resource-economics-and-token-budgets` chapter core claim.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.

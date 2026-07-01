@@ -2,7 +2,7 @@
 Curated reader manuscript draft.
 chapter_id: resource-economics-and-token-budgets
 generated_baseline_ref: build/reader_edition/chapters/resource-economics-and-token-budgets.qmd
-live_source_ref: chapters/resource-economics-and-token-budgets.qmd@7c0d47824
+live_source_ref: chapters/resource-economics-and-token-budgets.qmd@19731066f
 This file is a reader-prose derivative only. Preserve claim meaning,
 support-state boundaries, source boundaries, proof/test status,
 implementation horizons, and release blockers.
@@ -252,6 +252,17 @@ That makes the flagship evidence lane easier to rerun and harder to quietly
 reinterpret, while leaving production scheduler logs, workload-quality review,
 physical-feasibility review, and measured simulation outputs as real blockers.
 
+The workflow trace adds a second kind of proof bridge for the reader to notice.
+Instead of only naming the selected route, it carries three dispatch events:
+high-risk release review, source-crosswalk refresh, and low-risk index cleanup.
+The Lean fixture checks that the event costs, review minutes, and verification
+minutes roll up to the public summary; that high-risk release work stays ahead
+of lower-risk work; and that protected overhead, residual ownership, and
+non-claim boundaries remain attached to the selected events. That is still a
+fixture trace, not a scheduler. Its value is narrower and more important: it
+shows what accountable resource evidence has to preserve before a budget story
+is allowed to become a bigger claim.
+
 ## Beyond the State of the Art
 
 Resource economics matures into a risk-aware budget operating system for
@@ -290,8 +301,8 @@ above local optimization.
 
 The flagship slice now gives the reader one concrete pattern to look for:
 accepted savings are compared to a baseline, rejected against cheaper invalid
-controls, checked by a finite proof bridge, and kept inside non-claims until
-stronger evidence exists.
+controls, checked by finite selector and workflow trace bridges, and kept
+inside non-claims until stronger evidence exists.
 
 The same rule governs self-improvement. A system may not call itself more
 efficient by moving verification, security, or human repair cost out of sight.
