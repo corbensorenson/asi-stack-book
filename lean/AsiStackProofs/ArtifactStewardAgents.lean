@@ -186,4 +186,275 @@ theorem treasury_spend_outside_policy_routes_to_approval
   unfold StewardLifecycleRouteFor
   simp [untainted, noSunset, noEscalation, spend, outsidePolicy]
 
+inductive StewardContributionRoute where
+  | requestLedgerRepair
+  | rejectCollapsedGovernance
+  | requestEvidenceTransition
+  | acceptLedger
+deriving DecidableEq, Repr
+
+structure StewardContributionLedgerReview where
+  ledgerEntryProposed : Bool
+  authorshipCreditRecorded : Bool
+  reviewCreditRecorded : Bool
+  evidenceCreditRecorded : Bool
+  compensationRecorded : Bool
+  reputationSignalRecorded : Bool
+  governanceEffectRecorded : Bool
+  conflictDisclosureRecorded : Bool
+  collapsedScoreUsedForGovernance : Bool
+  supportStateChangeRequested : Bool
+  evidenceTransitionRecordPresent : Bool
+deriving DecidableEq, Repr
+
+def StewardContributionRouteFor
+    (review : StewardContributionLedgerReview) : StewardContributionRoute :=
+  if review.ledgerEntryProposed = false then
+    StewardContributionRoute.requestLedgerRepair
+  else if review.authorshipCreditRecorded = false then
+    StewardContributionRoute.requestLedgerRepair
+  else if review.reviewCreditRecorded = false then
+    StewardContributionRoute.requestLedgerRepair
+  else if review.evidenceCreditRecorded = false then
+    StewardContributionRoute.requestLedgerRepair
+  else if review.compensationRecorded = false then
+    StewardContributionRoute.requestLedgerRepair
+  else if review.reputationSignalRecorded = false then
+    StewardContributionRoute.requestLedgerRepair
+  else if review.governanceEffectRecorded = false then
+    StewardContributionRoute.requestLedgerRepair
+  else if review.conflictDisclosureRecorded = false then
+    StewardContributionRoute.requestLedgerRepair
+  else if review.collapsedScoreUsedForGovernance = true then
+    StewardContributionRoute.rejectCollapsedGovernance
+  else if
+      review.supportStateChangeRequested = true &&
+        review.evidenceTransitionRecordPresent = false then
+    StewardContributionRoute.requestEvidenceTransition
+  else
+    StewardContributionRoute.acceptLedger
+
+theorem missing_authorship_credit_routes_to_ledger_repair
+    {review : StewardContributionLedgerReview} :
+    review.ledgerEntryProposed = true ->
+    review.authorshipCreditRecorded = false ->
+      StewardContributionRouteFor review =
+        StewardContributionRoute.requestLedgerRepair := by
+  intro proposed missingAuthorship
+  simp [StewardContributionRouteFor, proposed, missingAuthorship]
+
+theorem collapsed_contribution_score_cannot_drive_governance_effect
+    {review : StewardContributionLedgerReview} :
+    review.ledgerEntryProposed = true ->
+    review.authorshipCreditRecorded = true ->
+    review.reviewCreditRecorded = true ->
+    review.evidenceCreditRecorded = true ->
+    review.compensationRecorded = true ->
+    review.reputationSignalRecorded = true ->
+    review.governanceEffectRecorded = true ->
+    review.conflictDisclosureRecorded = true ->
+    review.collapsedScoreUsedForGovernance = true ->
+      StewardContributionRouteFor review =
+        StewardContributionRoute.rejectCollapsedGovernance := by
+  intro proposed authorship reviewCredit evidenceCredit compensation reputation governance conflict collapsed
+  simp [
+    StewardContributionRouteFor,
+    proposed,
+    authorship,
+    reviewCredit,
+    evidenceCredit,
+    compensation,
+    reputation,
+    governance,
+    conflict,
+    collapsed,
+  ]
+
+theorem support_state_change_without_transition_requests_evidence_transition
+    {review : StewardContributionLedgerReview} :
+    review.ledgerEntryProposed = true ->
+    review.authorshipCreditRecorded = true ->
+    review.reviewCreditRecorded = true ->
+    review.evidenceCreditRecorded = true ->
+    review.compensationRecorded = true ->
+    review.reputationSignalRecorded = true ->
+    review.governanceEffectRecorded = true ->
+    review.conflictDisclosureRecorded = true ->
+    review.collapsedScoreUsedForGovernance = false ->
+    review.supportStateChangeRequested = true ->
+    review.evidenceTransitionRecordPresent = false ->
+      StewardContributionRouteFor review =
+        StewardContributionRoute.requestEvidenceTransition := by
+  intro proposed authorship reviewCredit evidenceCredit compensation reputation governance conflict
+    notCollapsed supportChange missingTransition
+  simp [
+    StewardContributionRouteFor,
+    proposed,
+    authorship,
+    reviewCredit,
+    evidenceCredit,
+    compensation,
+    reputation,
+    governance,
+    conflict,
+    notCollapsed,
+    supportChange,
+    missingTransition,
+  ]
+
+theorem separated_contribution_ledger_without_support_change_accepts
+    {review : StewardContributionLedgerReview} :
+    review.ledgerEntryProposed = true ->
+    review.authorshipCreditRecorded = true ->
+    review.reviewCreditRecorded = true ->
+    review.evidenceCreditRecorded = true ->
+    review.compensationRecorded = true ->
+    review.reputationSignalRecorded = true ->
+    review.governanceEffectRecorded = true ->
+    review.conflictDisclosureRecorded = true ->
+    review.collapsedScoreUsedForGovernance = false ->
+    review.supportStateChangeRequested = false ->
+      StewardContributionRouteFor review =
+        StewardContributionRoute.acceptLedger := by
+  intro proposed authorship reviewCredit evidenceCredit compensation reputation governance conflict
+    notCollapsed noSupportChange
+  simp [
+    StewardContributionRouteFor,
+    proposed,
+    authorship,
+    reviewCredit,
+    evidenceCredit,
+    compensation,
+    reputation,
+    governance,
+    conflict,
+    notCollapsed,
+    noSupportChange,
+  ]
+
+inductive StewardFederationRoute where
+  | reject
+  | requestContract
+  | requestApproval
+  | requestEvidenceBundle
+  | dispatchScoped
+deriving DecidableEq, Repr
+
+structure StewardFederationContractReview where
+  federationRequested : Bool
+  workContractPresent : Bool
+  workerAuthorityBounded : Bool
+  allowedToolsRecorded : Bool
+  forbiddenToolsRecorded : Bool
+  dataClassAllowed : Bool
+  budgetWithinPolicy : Bool
+  evidenceBundleRequired : Bool
+  workerReceivesProjectAuthority : Bool
+  externalSpendRequested : Bool
+  approvalPresent : Bool
+deriving DecidableEq, Repr
+
+def StewardFederationRouteFor
+    (review : StewardFederationContractReview) : StewardFederationRoute :=
+  if review.federationRequested = false then
+    StewardFederationRoute.reject
+  else if review.workContractPresent = false then
+    StewardFederationRoute.requestContract
+  else if review.workerReceivesProjectAuthority = true then
+    StewardFederationRoute.reject
+  else if review.workerAuthorityBounded = false then
+    StewardFederationRoute.reject
+  else if review.allowedToolsRecorded = false then
+    StewardFederationRoute.requestContract
+  else if review.forbiddenToolsRecorded = false then
+    StewardFederationRoute.requestContract
+  else if review.dataClassAllowed = false then
+    StewardFederationRoute.reject
+  else if review.budgetWithinPolicy = false then
+    StewardFederationRoute.requestApproval
+  else if review.externalSpendRequested = true && review.approvalPresent = false then
+    StewardFederationRoute.requestApproval
+  else if review.evidenceBundleRequired = false then
+    StewardFederationRoute.requestEvidenceBundle
+  else
+    StewardFederationRoute.dispatchScoped
+
+theorem federation_without_work_contract_requests_contract
+    {review : StewardFederationContractReview} :
+    review.federationRequested = true ->
+    review.workContractPresent = false ->
+      StewardFederationRouteFor review =
+        StewardFederationRoute.requestContract := by
+  intro requested missingContract
+  simp [StewardFederationRouteFor, requested, missingContract]
+
+theorem federated_worker_cannot_inherit_project_authority
+    {review : StewardFederationContractReview} :
+    review.federationRequested = true ->
+    review.workContractPresent = true ->
+    review.workerReceivesProjectAuthority = true ->
+      StewardFederationRouteFor review = StewardFederationRoute.reject := by
+  intro requested contractPresent inheritsAuthority
+  simp [StewardFederationRouteFor, requested, contractPresent, inheritsAuthority]
+
+theorem external_federation_spend_without_approval_routes_to_approval
+    {review : StewardFederationContractReview} :
+    review.federationRequested = true ->
+    review.workContractPresent = true ->
+    review.workerReceivesProjectAuthority = false ->
+    review.workerAuthorityBounded = true ->
+    review.allowedToolsRecorded = true ->
+    review.forbiddenToolsRecorded = true ->
+    review.dataClassAllowed = true ->
+    review.budgetWithinPolicy = true ->
+    review.externalSpendRequested = true ->
+    review.approvalPresent = false ->
+      StewardFederationRouteFor review =
+        StewardFederationRoute.requestApproval := by
+  intro requested contractPresent noInheritedAuthority bounded allowedTools forbiddenTools dataAllowed
+    budgetOk spend missingApproval
+  simp [
+    StewardFederationRouteFor,
+    requested,
+    contractPresent,
+    noInheritedAuthority,
+    bounded,
+    allowedTools,
+    forbiddenTools,
+    dataAllowed,
+    budgetOk,
+    spend,
+    missingApproval,
+  ]
+
+theorem complete_scoped_federation_dispatches
+    {review : StewardFederationContractReview} :
+    review.federationRequested = true ->
+    review.workContractPresent = true ->
+    review.workerReceivesProjectAuthority = false ->
+    review.workerAuthorityBounded = true ->
+    review.allowedToolsRecorded = true ->
+    review.forbiddenToolsRecorded = true ->
+    review.dataClassAllowed = true ->
+    review.budgetWithinPolicy = true ->
+    review.externalSpendRequested = false ->
+    review.evidenceBundleRequired = true ->
+      StewardFederationRouteFor review =
+        StewardFederationRoute.dispatchScoped := by
+  intro requested contractPresent noInheritedAuthority bounded allowedTools forbiddenTools dataAllowed
+    budgetOk noSpend evidenceRequired
+  simp [
+    StewardFederationRouteFor,
+    requested,
+    contractPresent,
+    noInheritedAuthority,
+    bounded,
+    allowedTools,
+    forbiddenTools,
+    dataAllowed,
+    budgetOk,
+    noSpend,
+    evidenceRequired,
+  ]
+
 end AsiStackProofs.ArtifactStewardAgents

@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-01 - Artifact steward contribution and federation proofs
+
+- Strengthened `AsiStackProofs.ArtifactStewardAgents` with finite
+  `StewardContributionLedgerReview` and `StewardFederationContractReview`
+  decision surfaces for separated contribution records, support-transition
+  boundaries, scoped worker contracts, inherited-project-authority rejection,
+  external-spend approval routing, and evidence-bundle requirements.
+- Added derived theorems showing that missing authorship credit routes to ledger
+  repair, collapsed contribution scores cannot drive governance effects,
+  support-state changes without evidence-transition records request evidence
+  transition, separated non-promoting ledgers can be accepted, missing
+  federation work contracts request contract repair, federated workers cannot
+  inherit project authority, external federation spend without approval routes
+  to approval, and complete scoped federation records can dispatch.
+- Updated `book_structure.json`, Appendix E, the Artifact Steward Agents chapter,
+  book outline, proof adequacy review, proof-depth/audit reports, v1.0/v1.x
+  roadmap surfaces, and status snapshot guard. Appendix E now records 221
+  implemented chapter rows, 1 partial row, and 99 planned rows; the proof-depth
+  classifier now reports 387 theorem declarations, 121 direct/projection-style
+  declarations, and 266 derived/decomposed declarations across 123 manifest
+  proof targets.
+- This does not implement a steward bot, event-intake scanner, workflow
+  injection defense, treasury executor, contribution-ledger service, governance
+  runner, project federation harness, sunset workflow, release runner,
+  behavioral steward loop, support-state promotion, reader artifact approval, or
+  release approval.
+
 ## 2026-07-01 - Prototype phase-route proof
 
 - Strengthened `AsiStackProofs.PrototypeRoadmap` with a finite

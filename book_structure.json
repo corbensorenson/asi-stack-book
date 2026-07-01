@@ -10376,7 +10376,13 @@
               "result_status": "passes via Lean build",
               "status": "implemented as a finite Lean lifecycle-route predicate; no workflow scan or steward event-intake run"
             },
-            "Contribution ledger separation test",
+            {
+              "name": "Contribution ledger separation test",
+              "purpose": "Check finite Lean contribution-ledger route predicates that separated authorship, review, evidence, compensation, reputation, governance, and conflict records are required, collapsed governance scoring is rejected, and support-state changes require evidence-transition records.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as finite Lean contribution-ledger route predicates; no contributor-ledger service exists"
+            },
             {
               "name": "Sunset criteria test",
               "purpose": "Check finite Lean sunset and lifecycle-route predicates that configured sunset criteria block ordinary work and route to sunset review when no review is open.",
@@ -10391,7 +10397,13 @@
               "result_status": "validated locally by synthetic fixtures; no steward release run",
               "status": "implemented by benchmark anti-Goodhart harness; no steward agent executed"
             },
-            "Project federation contract test",
+            {
+              "name": "Project federation contract test",
+              "purpose": "Check finite Lean federation-contract route predicates that scoped work contracts are required, federated workers cannot inherit project authority, external spend without approval routes to approval, and complete scoped contracts dispatch only with evidence-bundle requirements.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build",
+              "status": "implemented as finite Lean federation-contract route predicates; no project federation harness exists"
+            },
             {
               "name": "Autonomy-mode transition test",
               "purpose": "Check finite Lean lifecycle-route predicates that autonomy escalation without charter approval and over-policy treasury spend route to approval.",

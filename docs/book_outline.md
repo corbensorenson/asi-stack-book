@@ -2849,15 +2849,17 @@ Draft deliverables:
 - Implemented Lean predicate: stewarded release publication requires test, evidence, changelog, residual, and approval records.
 - Implemented Lean predicate: sunset criteria block ordinary work generation until a sunset review opens.
 - Implemented Lean lifecycle-route envelope: tainted unreviewed events route to quarantine, sunset criteria without an open review route to sunset review, autonomy escalation without charter approval routes to approval, and treasury spend outside policy routes to approval.
+- Implemented Lean contribution-ledger route envelope: missing separated authorship/review/evidence/compensation/reputation/governance/conflict records route to ledger repair, collapsed governance scoring is rejected, support-state changes without evidence-transition records request evidence review, and complete separated non-promoting ledgers can be accepted.
+- Implemented Lean federation-contract route envelope: missing scoped work contracts request contract repair, federated workers cannot inherit project authority, external spend without approval routes to approval, and complete scoped federation contracts dispatch only with an evidence-bundle requirement.
 - Implemented Codex test: Project steward manifest fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Treasury policy and event-taint fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Work contract authority denial as a finite Lean predicate only.
 - Implemented Codex test: Treasury spend-cap/protected-action denial as a finite Lean predicate only.
 - Implemented Codex test: Untrusted event taint as a finite Lean lifecycle-route predicate only; no workflow scan or steward event-intake run exists.
-- Planned Codex test: Contribution ledger separation test.
+- Implemented Codex test: Contribution ledger separation as finite Lean contribution-ledger route predicates only; no contributor-ledger service exists.
 - Implemented Codex test: Sunset criteria as finite Lean sunset and lifecycle-route predicates only; no steward loop exists.
 - Implemented Codex test: Release evidence handoff test, via `python3 scripts/validate_benchmark_antigoodhart.py` over steward release actions requiring ratchet refs, policy refs, and approval refs; no steward agent or release runner exists.
-- Planned Codex test: Project federation contract test.
+- Implemented Codex test: Project federation contract as finite Lean federation-contract route predicates only; no project federation harness exists.
 - Implemented Codex test: Autonomy-mode transition as finite Lean lifecycle-route predicates only; no steward autonomy transition runner or treasury executor exists.
 
 Lean proof targets:
