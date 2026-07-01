@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Reject over-budget Resource workflow traces
+
+- Added `invalid_capacity_budget_overrun.json` to the Resource workflow trace
+  harness so otherwise eligible selected routes are rejected when their
+  aggregate resource bill exceeds the declared workload budget.
+- Extended `scripts/validate_resource_workflow_trace.py` to require the tracked
+  result record's expected-invalid control-name list, and deepened
+  `AsiStackProofs.ResourceEconomics` with a finite
+  `capacityBudgetOverrunRejected` summary guard and theorem.
+- Refreshed the Resource live probe, proof manifest surfaces, Resource
+  Economics chapter, roadmap/status pages, and Appendix E. This remains
+  deterministic fixture discipline: it does not prove deployed scheduler
+  behavior, real load stability, workload quality, physical feasibility,
+  economic outcomes, or any chapter-core support-state promotion.
+
 ## 2026-07-01 - Harden Theseus generation-mode import gates
 
 - Extended the public-safe Project Theseus generation-mode import validator to

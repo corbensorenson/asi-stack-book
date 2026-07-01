@@ -1157,7 +1157,7 @@
       "chapter_title": "Resource Economics and Token Budgets",
       "tag": "lean:resources.workflow_trace.trace_property_bridge",
       "module": "AsiStackProofs.ResourceEconomics",
-      "formal_target": "The finite Resource workflow trace fixture carries dispatch events whose costs, review minutes, and verification minutes roll up to the public summary, whose schedule keeps high-risk release work before lower-risk work, and whose selected events preserve protected-overhead, residual-ownership, and non-claim guard flags.",
+      "formal_target": "The finite Resource workflow trace fixture carries dispatch events whose costs, review minutes, and verification minutes roll up to the public summary, whose schedule keeps high-risk release work before lower-risk work, whose selected events preserve protected-overhead, residual-ownership, and non-claim guard flags, and whose public negative controls reject over-budget aggregate resource bills.",
       "status": "implemented",
       "outline_line": 2332,
       "module_path": "lean/AsiStackProofs/ResourceEconomics.lean"

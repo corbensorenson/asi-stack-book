@@ -269,6 +269,7 @@ structure WorkflowTraceSummary where
   displacedCostsResidualized : Bool
   physicalFeasibilityOverclaimRejected : Bool
   latencyOnlySelectionRejected : Bool
+  capacityBudgetOverrunRejected : Bool
   supportStateEffectNone : Bool
   nonClaimBoundary : Bool
 deriving DecidableEq, Repr
@@ -279,11 +280,12 @@ def WorkflowTraceValid (summary : WorkflowTraceSummary) : Prop :=
     summary.totalCostTenths = 1197 ∧
     summary.reviewMinutesUsed = 26 ∧
     summary.verificationMinutesUsed = 21 ∧
-    summary.expectedInvalidControlCount = 4 ∧
+    summary.expectedInvalidControlCount = 5 ∧
     summary.highRiskFirst = true ∧
     summary.displacedCostsResidualized = true ∧
     summary.physicalFeasibilityOverclaimRejected = true ∧
     summary.latencyOnlySelectionRejected = true ∧
+    summary.capacityBudgetOverrunRejected = true ∧
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
 
@@ -293,11 +295,12 @@ def resourceWorkflowTraceFixture : WorkflowTraceSummary :=
     totalCostTenths := 1197,
     reviewMinutesUsed := 26,
     verificationMinutesUsed := 21,
-    expectedInvalidControlCount := 4,
+    expectedInvalidControlCount := 5,
     highRiskFirst := true,
     displacedCostsResidualized := true,
     physicalFeasibilityOverclaimRejected := true,
     latencyOnlySelectionRejected := true,
+    capacityBudgetOverrunRejected := true,
     supportStateEffectNone := true,
     nonClaimBoundary := true }
 
@@ -319,6 +322,10 @@ theorem resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim :
 
 theorem resource_workflow_trace_fixture_rejects_latency_only_selection :
     resourceWorkflowTraceFixture.latencyOnlySelectionRejected = true := by
+  rfl
+
+theorem resource_workflow_trace_fixture_rejects_capacity_budget_overrun :
+    resourceWorkflowTraceFixture.capacityBudgetOverrunRejected = true := by
   rfl
 
 theorem resource_workflow_trace_fixture_has_no_support_promotion :

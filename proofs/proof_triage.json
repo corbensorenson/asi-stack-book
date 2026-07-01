@@ -1084,11 +1084,11 @@
       "tag": "lean:resources.workflow_trace.trace_property_bridge",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.ResourceEconomics",
-      "formal_target": "The finite Resource workflow trace fixture carries dispatch events whose costs, review minutes, and verification minutes roll up to the public summary, whose schedule keeps high-risk release work before lower-risk work, and whose selected events preserve protected-overhead, residual-ownership, and non-claim guard flags.",
+      "formal_target": "The finite Resource workflow trace fixture carries dispatch events whose costs, review minutes, and verification minutes roll up to the public summary, whose schedule keeps high-risk release work before lower-risk work, whose selected events preserve protected-overhead, residual-ownership, and non-claim guard flags, and whose public negative controls reject over-budget aggregate resource bills.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite dispatch-event bridge over the public Resource workflow trace: it proves fixture event costs, review minutes, and verification minutes roll up to the tracked summary, preserves high-risk-first order, and preserves protected-overhead, residual-ownership, and non-claim guard flags. It does not prove deployed scheduler behavior, live workload quality, physical feasibility, economic outcomes, or chapter-core support-state promotion."
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite dispatch-event bridge over the public Resource workflow trace: it proves fixture event costs, review minutes, and verification minutes roll up to the tracked summary, preserves high-risk-first order, preserves protected-overhead, residual-ownership, and non-claim guard flags, and records the over-budget aggregate-resource-bill rejection in the public summary bridge. It does not prove deployed scheduler behavior, live workload quality, physical feasibility, economic outcomes, or chapter-core support-state promotion."
     },
     {
       "tag": "lean:resources.capacity_smoothing.reviewer_trace_bridge",

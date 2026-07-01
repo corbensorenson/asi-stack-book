@@ -24,6 +24,7 @@ REQUIRED_LEAN_THEOREMS = (
     "resource_workflow_trace_fixture_residualizes_displaced_costs",
     "resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim",
     "resource_workflow_trace_fixture_rejects_latency_only_selection",
+    "resource_workflow_trace_fixture_rejects_capacity_budget_overrun",
     "resource_workflow_trace_fixture_has_no_support_promotion",
     "resource_workflow_trace_fixture_events_roll_up_to_summary",
     "resource_workflow_trace_fixture_events_keep_high_risk_first",
@@ -317,6 +318,7 @@ def validate_result(
     expected: dict[str, Any],
     valid_count: int,
     invalid_count: int,
+    invalid_control_names: list[str],
     expected_alignment: dict[str, Any],
     errors: list[str],
 ) -> None:
@@ -345,6 +347,8 @@ def validate_result(
             errors.append(f"{rel(RESULT)}: {key} must be {expected_value!r}.")
     if value.get("selected_routes") != expected["selected_routes"]:
         errors.append(f"{rel(RESULT)}: selected_routes mismatch.")
+    if value.get("expected_invalid_controls") != invalid_control_names:
+        errors.append(f"{rel(RESULT)}: expected_invalid_controls must equal {invalid_control_names!r}.")
     if value.get("lean_fixture_alignment") != expected_alignment:
         errors.append(f"{rel(RESULT)}: lean_fixture_alignment must equal {expected_alignment!r}.")
     result_non_claims = text_blob(value.get("non_claims", []))
@@ -417,6 +421,7 @@ def public_lean_alignment(fields: dict[str, str]) -> dict[str, Any]:
         "displaced_costs_residualized": bool_value("displacedCostsResidualized"),
         "physical_feasibility_overclaim_rejected": bool_value("physicalFeasibilityOverclaimRejected"),
         "latency_only_selection_rejected": bool_value("latencyOnlySelectionRejected"),
+        "capacity_budget_overrun_rejected": bool_value("capacityBudgetOverrunRejected"),
         "support_state_effect_none": bool_value("supportStateEffectNone"),
         "non_claim_boundary": bool_value("nonClaimBoundary"),
     }
@@ -435,6 +440,7 @@ def validate_lean_fixture(expected: dict[str, Any], invalid_count: int, errors: 
         "displacedCostsResidualized": "true",
         "physicalFeasibilityOverclaimRejected": "true",
         "latencyOnlySelectionRejected": "true",
+        "capacityBudgetOverrunRejected": "true",
         "supportStateEffectNone": "true",
         "nonClaimBoundary": "true",
     }
@@ -462,6 +468,7 @@ def main() -> None:
     errors: list[str] = []
     valid_count = 0
     invalid_count = 0
+    invalid_control_names: list[str] = []
     valid_summaries: list[dict[str, Any]] = []
     for fixture in fixtures:
         relative = rel(fixture)
@@ -486,6 +493,7 @@ def main() -> None:
                 valid_summaries.append(summary)
         else:
             invalid_count += 1
+            invalid_control_names.append(fixture.name)
             if not fixture_errors:
                 errors.append(f"{relative}: expected invalid fixture passed validation.")
 
@@ -493,7 +501,14 @@ def main() -> None:
         errors.append("Exactly one valid public workflow trace is expected for this narrow slice.")
     else:
         expected_alignment = validate_lean_fixture(valid_summaries[0], invalid_count, errors)
-        validate_result(valid_summaries[0], valid_count, invalid_count, expected_alignment, errors)
+        validate_result(
+            valid_summaries[0],
+            valid_count,
+            invalid_count,
+            invalid_control_names,
+            expected_alignment,
+            errors,
+        )
         validate_summary(valid_summaries[0], valid_count, invalid_count, errors)
 
     if errors:

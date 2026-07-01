@@ -20,7 +20,7 @@ python3 scripts/validate_resource_workflow_trace.py
 ```
 
 The command recomputes the selected-route totals from tracked fixture fields,
-checks 1 valid fixture and 4 expected-invalid controls, and verifies this
+checks 1 valid fixture and 5 expected-invalid controls, and verifies this
 summary plus the tracked result record.
 
 ## Public Trace
@@ -61,7 +61,8 @@ count, selected-route count, total cost tenths, review minutes, verification
 minutes, expected-invalid control count, high-risk-first ordering,
 displaced-cost residualization, physical-feasibility-overclaim rejection,
 latency-only selection rejection, support-state non-promotion, and non-claim
-boundaries.
+selection rejection, capacity-budget-overrun rejection, support-state
+non-promotion, and non-claim boundaries.
 
 The Lean module now also carries a finite dispatch-event trace for the three
 selected workflow routes. The checked theorem set proves that those events roll
@@ -75,8 +76,8 @@ under `lean_fixture_alignment`: the checked theorem names and the exact field
 alignment for step count, selected-route count, total cost tenths,
 review minutes, verification minutes, expected-invalid controls,
 high-risk-first ordering, residual ownership, physical-feasibility rejection,
-latency-only rejection, support-state non-promotion, and non-claim boundary
-preservation.
+latency-only rejection, capacity-budget-overrun rejection, support-state
+non-promotion, and non-claim boundary preservation.
 
 This bridge proves fixture alignment only. It does not prove deployed scheduler
 behavior, route-search completeness, physical feasibility, model quality,
@@ -87,6 +88,9 @@ transition.
 
 - `invalid_latency_only_selector.json` rejects a selected route whose low
   latency hides failed quality and partial verification.
+- `invalid_capacity_budget_overrun.json` rejects otherwise eligible selected
+  routes when their aggregate resource bill exceeds the declared workload
+  budget.
 - `invalid_displaced_cost_erased.json` rejects a dispatch that records future
   debugging and reviewer burden but erases residual ownership.
 - `invalid_physical_feasibility_overclaim.json` rejects a toy accounting trace
