@@ -484,4 +484,79 @@ theorem complete_generation_mode_admission_allows_fast_mode :
       .admitFastGenerationMode := by
   simp [GenerationModeAdmissionRouteFor, completeGenerationModeAdmissionReview]
 
+structure TheseusGenerationModeImportSummary where
+  modeCount : Nat
+  comparisonCount : Nat
+  hardGapCount : Nat
+  boundaryGateCount : Nat
+  boundaryGatesPassed : Nat
+  acceptedSpeedLiftWarningCount : Nat
+  zeroTaskPassWarningCount : Nat
+  promotableComparisonCount : Nat
+  usefulSolutionPerSecondMilli : Nat
+  privatePayloadCopied : Bool
+  supportPromotionRequested : Bool
+  rawSpeedPromotionRequested : Bool
+deriving DecidableEq, Repr
+
+def TheseusGenerationModeImportPublicSafe
+    (summary : TheseusGenerationModeImportSummary) : Prop :=
+  summary.privatePayloadCopied = false ∧
+    summary.supportPromotionRequested = false ∧
+      summary.rawSpeedPromotionRequested = false
+
+def TheseusGenerationModeImportMatchesPublicSummary
+    (summary : TheseusGenerationModeImportSummary) : Prop :=
+  summary.modeCount = 18 ∧
+    summary.comparisonCount = 13 ∧
+      summary.hardGapCount = 0 ∧
+        summary.boundaryGateCount = 5 ∧
+          summary.boundaryGatesPassed = 5 ∧
+            summary.acceptedSpeedLiftWarningCount = 5 ∧
+              summary.zeroTaskPassWarningCount = 13 ∧
+                summary.promotableComparisonCount = 0 ∧
+                  summary.usefulSolutionPerSecondMilli = 0 ∧
+                    TheseusGenerationModeImportPublicSafe summary
+
+def TheseusGenerationModeImportPromotionPermitted
+    (summary : TheseusGenerationModeImportSummary) : Prop :=
+  summary.promotableComparisonCount > 0 ∧
+    summary.usefulSolutionPerSecondMilli > 0
+
+def theseusGenerationModeImportFixture :
+    TheseusGenerationModeImportSummary := {
+  modeCount := 18
+  comparisonCount := 13
+  hardGapCount := 0
+  boundaryGateCount := 5
+  boundaryGatesPassed := 5
+  acceptedSpeedLiftWarningCount := 5
+  zeroTaskPassWarningCount := 13
+  promotableComparisonCount := 0
+  usefulSolutionPerSecondMilli := 0
+  privatePayloadCopied := false
+  supportPromotionRequested := false
+  rawSpeedPromotionRequested := false
+}
+
+theorem theseus_generation_mode_import_fixture_matches_public_summary :
+    TheseusGenerationModeImportMatchesPublicSummary
+      theseusGenerationModeImportFixture := by
+  simp [TheseusGenerationModeImportMatchesPublicSummary,
+    TheseusGenerationModeImportPublicSafe, theseusGenerationModeImportFixture]
+
+theorem theseus_generation_mode_import_has_no_promotable_comparisons :
+    theseusGenerationModeImportFixture.promotableComparisonCount = 0 := by
+  rfl
+
+theorem theseus_generation_mode_import_speed_lift_not_useful_solution_evidence :
+    theseusGenerationModeImportFixture.acceptedSpeedLiftWarningCount > 0 ∧
+      ¬ TheseusGenerationModeImportPromotionPermitted
+        theseusGenerationModeImportFixture := by
+  constructor
+  · decide
+  · intro permitted
+    simp [TheseusGenerationModeImportPromotionPermitted,
+      theseusGenerationModeImportFixture] at permitted
+
 end AsiStackProofs.FastGeneration

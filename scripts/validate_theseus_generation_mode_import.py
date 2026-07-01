@@ -5,6 +5,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Any
 
@@ -17,6 +18,7 @@ VALID_DIR = ROOT / "experiments" / "theseus_generation_mode_import" / "fixtures"
 INVALID_DIR = ROOT / "experiments" / "theseus_generation_mode_import" / "fixtures" / "invalid"
 RESULT = ROOT / "experiments" / "theseus_generation_mode_import" / "results" / "2026-07-01-local.json"
 SUMMARY = ROOT / "docs" / "theseus_generation_mode_import_slice.md"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "FastGeneration.lean"
 
 EXPECTED_REPORT_ID = "theseus.generation_mode_gate.20260701.public_static_import"
 EXPECTED_SOURCE_SHA256 = "a711d0dbca9779f26d4b0a63db18ce1fc574ade47a262f5140a9a7b6d325e90b"
@@ -54,6 +56,11 @@ REQUIRED_NON_CLAIMS = (
     "does not prove generation speed",
     "does not authorize heavy training",
     "does not copy private task rows",
+)
+REQUIRED_LEAN_THEOREMS = (
+    "theseus_generation_mode_import_fixture_matches_public_summary",
+    "theseus_generation_mode_import_has_no_promotable_comparisons",
+    "theseus_generation_mode_import_speed_lift_not_useful_solution_evidence",
 )
 
 
@@ -293,6 +300,86 @@ def validate_invalid_fixture(path: Path, schema: dict[str, Any], errors: list[st
         errors.append(f"{owner}: expected error fragment {expected_fragment!r}; got {observed_errors}.")
 
 
+def parse_lean_import_fixture(errors: list[str]) -> dict[str, str]:
+    if not LEAN_FIXTURE.exists():
+        errors.append(f"Missing {rel(LEAN_FIXTURE)}.")
+        return {}
+    text = LEAN_FIXTURE.read_text(encoding="utf-8")
+    declared_theorems = set(re.findall(r"^theorem\s+(\w+)\b", text, re.MULTILINE))
+    for theorem in REQUIRED_LEAN_THEOREMS:
+        if theorem not in declared_theorems:
+            errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
+
+    fixture_match = re.search(
+        r"def\s+theseusGenerationModeImportFixture\s*:\s*\n\s*TheseusGenerationModeImportSummary\s*:=\s*\{(?P<body>.*?)\n\}",
+        text,
+        re.DOTALL,
+    )
+    if not fixture_match:
+        errors.append(f"{rel(LEAN_FIXTURE)} missing theseusGenerationModeImportFixture.")
+        return {}
+    fields = {
+        match.group("field"): match.group("value").strip()
+        for match in re.finditer(
+            r"^\s*(?P<field>\w+)\s*:=\s*(?P<value>[^,\n}]+)",
+            fixture_match.group("body"),
+            re.MULTILINE,
+        )
+    }
+    expected_fields = {
+        "modeCount",
+        "comparisonCount",
+        "hardGapCount",
+        "boundaryGateCount",
+        "boundaryGatesPassed",
+        "acceptedSpeedLiftWarningCount",
+        "zeroTaskPassWarningCount",
+        "promotableComparisonCount",
+        "usefulSolutionPerSecondMilli",
+        "privatePayloadCopied",
+        "supportPromotionRequested",
+        "rawSpeedPromotionRequested",
+    }
+    missing = sorted(expected_fields - set(fields))
+    for field in missing:
+        errors.append(f"{rel(LEAN_FIXTURE)} fixture missing field {field}.")
+    return fields
+
+
+def validate_lean_fixture_alignment(report: dict[str, Any], result: dict[str, Any], errors: list[str]) -> None:
+    fields = parse_lean_import_fixture(errors)
+    if not fields:
+        return
+    summary = report.get("gate_summary", {})
+    public_safety = report.get("public_safety", {})
+    expected_fields = {
+        "modeCount": str(summary.get("mode_count")),
+        "comparisonCount": str(summary.get("comparison_count")),
+        "hardGapCount": str(summary.get("hard_gap_count")),
+        "boundaryGateCount": str(summary.get("boundary_gate_count")),
+        "boundaryGatesPassed": str(summary.get("boundary_gates_passed")),
+        "acceptedSpeedLiftWarningCount": str(summary.get("warnings_with_accepted_speed_lift")),
+        "zeroTaskPassWarningCount": str(summary.get("warnings_with_zero_candidate_task_pass")),
+        "promotableComparisonCount": str(summary.get("promotable_comparison_count")),
+        "usefulSolutionPerSecondMilli": "0" if summary.get("mean_useful_solution_per_second") == 0.0 else "nonzero",
+        "privatePayloadCopied": "false" if public_safety.get("private_payload_copied") is False else "true",
+        "supportPromotionRequested": "false" if report.get("support_state_effect") == "no_chapter_core_claim_promotion" else "true",
+        "rawSpeedPromotionRequested": "false",
+    }
+    for field, expected in expected_fields.items():
+        if fields.get(field) != expected:
+            errors.append(f"{rel(LEAN_FIXTURE)} fixture field {field} must be {expected!r}, got {fields.get(field)!r}.")
+
+    expected_alignment = {
+        "lean_module": rel(LEAN_FIXTURE),
+        "fixture_def": "theseusGenerationModeImportFixture",
+        "checked_summary_fields": sorted(expected_fields),
+        "checked_theorem_names": list(REQUIRED_LEAN_THEOREMS),
+    }
+    if result.get("lean_fixture_alignment") != expected_alignment:
+        errors.append(f"{rel(RESULT)}: lean_fixture_alignment must equal {expected_alignment!r}.")
+
+
 def validate_result(expected: dict[str, Any], errors: list[str]) -> None:
     if not RESULT.exists():
         errors.append(f"Missing {rel(RESULT)}.")
@@ -320,6 +407,9 @@ def validate_summary(expected_digest: str, errors: list[str]) -> None:
         "18 modes",
         "13 comparisons",
         "zero promotable comparisons",
+        "Lean Fixture Bridge",
+        "theseusGenerationModeImportFixture",
+        "not a speed-quality experiment",
         "live_theseus_generation_mode_rerun_blocked_dirty_checkout",
         "Does not promote any chapter core claim above `argument`.",
         "Does not prove generation speed",
@@ -342,6 +432,7 @@ def main() -> None:
         errors.append(f"{rel(INVALID_DIR)} must contain exactly four expected-invalid mutation fixtures.")
 
     report_digest = ""
+    accepted_report: dict[str, Any] | None = None
     for path in valid_paths:
         value = load_json(path)
         if not isinstance(value, dict):
@@ -351,6 +442,7 @@ def main() -> None:
         errors.extend(report_errors)
         if not report_errors:
             report_digest = stable_hash(value)
+            accepted_report = value
 
     for path in invalid_paths:
         validate_invalid_fixture(path, schema, errors)
@@ -376,6 +468,8 @@ def main() -> None:
             "ci_verification_command": "python3 scripts/validate_theseus_generation_mode_import.py",
         }
         validate_result(expected_result, errors)
+        if accepted_report is not None and RESULT.exists():
+            validate_lean_fixture_alignment(accepted_report, load_json(RESULT), errors)
         validate_summary(report_digest, errors)
 
     if errors:

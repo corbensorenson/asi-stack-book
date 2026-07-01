@@ -16,6 +16,29 @@
   "warnings_with_accepted_speed_lift": 5,
   "support_state_effect": "no_chapter_core_claim_promotion",
   "ci_verification_command": "python3 scripts/validate_theseus_generation_mode_import.py",
+  "lean_fixture_alignment": {
+    "lean_module": "lean/AsiStackProofs/FastGeneration.lean",
+    "fixture_def": "theseusGenerationModeImportFixture",
+    "checked_summary_fields": [
+      "acceptedSpeedLiftWarningCount",
+      "boundaryGateCount",
+      "boundaryGatesPassed",
+      "comparisonCount",
+      "hardGapCount",
+      "modeCount",
+      "privatePayloadCopied",
+      "promotableComparisonCount",
+      "rawSpeedPromotionRequested",
+      "supportPromotionRequested",
+      "usefulSolutionPerSecondMilli",
+      "zeroTaskPassWarningCount"
+    ],
+    "checked_theorem_names": [
+      "theseus_generation_mode_import_fixture_matches_public_summary",
+      "theseus_generation_mode_import_has_no_promotable_comparisons",
+      "theseus_generation_mode_import_speed_lift_not_useful_solution_evidence"
+    ]
+  },
   "non_claims": [
     "does not promote any chapter core claim above argument",
     "does not prove generation speed, useful-solution-per-second improvement, model quality, routing quality, benchmark quality, safety, alignment, transfer, or ASI",

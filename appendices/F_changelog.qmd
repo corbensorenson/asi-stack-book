@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-01 - Theseus generation-mode Lean fixture bridge
+
+- Added a finite `AsiStackProofs.FastGeneration` fixture for the public-safe
+  Project Theseus generation-mode import summary and proved that the imported
+  accepted-span speed-lift warnings do not permit promotion without useful
+  solution evidence or promotable comparisons.
+- Extended `scripts/validate_theseus_generation_mode_import.py` to check the
+  public JSON summary against the Lean fixture fields and theorem names, and
+  updated the result record, Fast Generation chapter, proof manifest, v1.x
+  roadmap, active evidence cycle, proof-depth report, proof adequacy review, and
+  v1.0 status snapshot.
+- This does not promote, demote, deprecate, or refute any live claim; create a
+  live Theseus rerun, generation-speed result, useful-solution-per-second
+  improvement, model-quality evidence, benchmark result, public task bundle,
+  reader release, EPUB, PDF, DOCX, audio artifact, or support-state movement.
+
 ## 2026-07-01 - Project Theseus generation-mode import
 
 - Added a public-safe Project Theseus generation-mode gate import lane with

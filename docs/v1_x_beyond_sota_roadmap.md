@@ -115,7 +115,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 668 theorem declarations, 137 direct/projection-style, 531 derived/decomposed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 671 theorem declarations, 138 direct/projection-style, 533 derived/decomposed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and explicit Corben voice-pass slots. |
@@ -514,7 +514,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 668 theorem declarations, 531
+- The generated proof-depth report records 671 theorem declarations, 533
   derived/decomposed declarations, 102 safety-critical declarations, and 10
   remaining safety-critical direct/projection declarations.
 - The relevant chapter limitation sections now state what these finite-record
@@ -535,8 +535,8 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 668 theorem declarations, 531
-  derived/decomposed theorem declarations, and 137 direct/projection-style
+- `docs/proof_depth_classification.md` records 671 theorem declarations, 533
+  derived/decomposed theorem declarations, and 138 direct/projection-style
   theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
   external-handoff rejection theorem and a finite layer-contract admission
@@ -968,6 +968,10 @@ Current status after the first two ASI-side Project Theseus imports:
   passing, zero promotable comparisons, zero useful-solution-per-second, and
   rejects expected-invalid mutations for private-payload copying, support
   promotion overclaim, raw-speed promotion, and useful-speed overclaim.
+- The same validator now checks a finite `AsiStackProofs.FastGeneration` Lean
+  fixture bridge for the public summary fields and theorem names, so the
+  imported no-promotion counts cannot drift from the book-side proof layer
+  without failing validation.
 - `docs/theseus_generation_mode_import_slice.md` records the exact import
   boundary: useful as implementation-reference and negative promotion evidence,
   not a clean live Theseus rerun, not a generation-speed result, not a
@@ -1095,9 +1099,10 @@ Current status for the initial v1.x active evidence cycle:
   Ratchets, and the Project Theseus chapter: the imported gate records 18 modes,
   13 comparisons, zero hard gaps, five passing hard boundaries, five accepted
   span-speed lifts, zero useful-solution-per-second, and zero promotable
-  comparisons. This helps close the "raw speed is not evidence" gap without
-  claiming a speed-quality result, live Theseus replay, public benchmark run, or
-  chapter-core support-state movement.
+  comparisons, and the ASI-side validator now checks the public summary against
+  a finite `AsiStackProofs.FastGeneration` fixture. This helps close the "raw
+  speed is not evidence" gap without claiming a speed-quality result, live
+  Theseus replay, public benchmark run, or chapter-core support-state movement.
 - The next edit to the active-cycle record should narrow it around one flagship
   measured result rather than extending the eight-lane breadth set.
 

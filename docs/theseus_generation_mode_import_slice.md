@@ -5,8 +5,9 @@ Date: 2026-07-01
 This record documents the second public-safe Project Theseus report import lane
 inside **The ASI Stack** repository. It imports a sanitized generation-mode gate
 summary as a static fixture, verifies pinned source-artifact digests, and checks
-four expected-invalid mutation controls. It does not rerun Project Theseus from
-this repository.
+four expected-invalid mutation controls. It also checks that the public JSON
+summary stays aligned with a finite `AsiStackProofs.FastGeneration` Lean
+fixture. It does not rerun Project Theseus from this repository.
 
 Accepted imported report:
 `theseus.generation_mode_gate.20260701.public_static_import`
@@ -69,6 +70,23 @@ The imported hard boundary gates are:
 This is negative evidence against raw-throughput promotion. It shows the report
 discipline detecting that faster accepted-span accounting is insufficient when
 verified task success stays at zero.
+
+## Lean Fixture Bridge
+
+The validator checks `lean/AsiStackProofs/FastGeneration.lean` for
+`theseusGenerationModeImportFixture` and the theorem names
+`theseus_generation_mode_import_fixture_matches_public_summary`,
+`theseus_generation_mode_import_has_no_promotable_comparisons`, and
+`theseus_generation_mode_import_speed_lift_not_useful_solution_evidence`.
+The finite Lean fixture must match the public JSON summary for the 18 mode
+count, 13 comparison count, zero hard gaps, five boundary gates, five
+accepted-span speed-lift warnings, thirteen zero-task-pass warnings, zero
+promotable comparisons, zero useful-solution-per-second evidence, and
+public-safety/support-state/raw-speed overclaim boundaries.
+
+This bridge makes the imported no-promotion decision harder to drift inside the
+book's proof layer. It is still only a finite fixture bridge over a static
+summary; it is not a clean Theseus replay and not a speed-quality experiment.
 
 ## Negative Controls
 

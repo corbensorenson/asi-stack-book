@@ -207,7 +207,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `fast-generation-architectures` | Fast Generation Architectures | Failed-acceptance handling negative case | implemented | passes via Lean negative case; no fallback-runtime or repair-quality claim |
 | `fast-generation-architectures` | Fast Generation Architectures | High-risk fast-mode review negative case | implemented | passes via Lean negative case; no risk-classifier or mode-selector behavior claim |
 | `fast-generation-architectures` | Fast Generation Architectures | Generation-mode admission lifecycle route | implemented | passes via Lean route theorems; no route-selector behavior, speedup, verifier-quality, fallback-runtime, or benchmark claim |
-| `fast-generation-architectures` | Fast Generation Architectures | Project Theseus generation-mode import validation | implemented | passes via `python3 scripts/validate_theseus_generation_mode_import.py`; no live Theseus replay, speed-quality win, useful-solution-per-second improvement, or support-state promotion |
+| `fast-generation-architectures` | Fast Generation Architectures | Project Theseus generation-mode import validation | implemented | passes via `python3 scripts/validate_theseus_generation_mode_import.py`; finite `AsiStackProofs.FastGeneration` fixture matches the public summary; no live Theseus replay, speed-quality win, useful-solution-per-second improvement, or support-state promotion |
 | `fast-generation-architectures` | Fast Generation Architectures | Autoregressive baseline speed-quality test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Speculative decoding acceptance test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Multi-token draft-head acceptance test | planned | not run |
@@ -396,16 +396,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 137 |
+| Proof targets covered by triage | 138 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 137 |
+| implemented | 138 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 137 |
+| implemented | formal-invariant | lean-candidate | 138 |

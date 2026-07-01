@@ -961,6 +961,16 @@
       "rationale": "Implemented in AsiStackProofs.FastGeneration as a finite admission-lifecycle route function and derived route theorems for missing mode records, context packets, risk tiers, quality targets, verifiers, acceptance predicates, baselines, accepted outputs, verifier costs, failed-acceptance fallback and residual handling, high-risk override gaps, slow verified fallback gaps, budget gaps, evidence-transition gaps, non-claim-boundary gaps, and complete fast-mode admission."
     },
     {
+      "tag": "lean:fast_generation.theseus_import_fixture_bridge",
+      "chapter_id": "fast-generation-architectures",
+      "module": "AsiStackProofs.FastGeneration",
+      "formal_target": "The public Project Theseus generation-mode import fixture matches a finite Lean summary fixture and proves the imported accepted-span speed-lift warnings do not permit promotion without useful-solution evidence or promotable comparisons.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.FastGeneration and checked by scripts/validate_theseus_generation_mode_import.py as a finite fixture bridge over the public static import summary. It aligns the JSON mode/comparison/no-promotion counts with Lean constants and proves only the no-promotion boundary; it does not prove generation speed, useful-solution-per-second improvement, model quality, benchmark quality, or a live Project Theseus replay."
+    },
+    {
       "tag": "lean:compression.artifacts.operational_invariant",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "module": "AsiStackProofs.ArtifactCompression",
