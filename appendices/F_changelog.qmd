@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-01 - Add chapter-review burn-down execution batches
+
+- Reviewed `docs/CHAPTER_REVIEWS.md` and the active v1.x roadmap, confirming
+  that the calibrated 44-chapter review is represented as a roadmap burn-down
+  queue rather than a source/evidence surface.
+- Added execution batches to Milestone 2.5 so future work attacks proof depth,
+  verified project evidence, external grounding, and reader craft in that
+  order, with completion tied to artifact commits or recorded blockers.
+- Tightened the suggested long-running goal so it explicitly works the
+  chapter-review burn-down through proof/evidence/source/reader changes, not
+  another grading pass. No claim support state, source evidence, proof result,
+  or test result changed.
+
 ## 2026-07-01 - Expand Runtime Adapters route proofs
 
 - Added a finite `RuntimeAdapterRoute` review model to
