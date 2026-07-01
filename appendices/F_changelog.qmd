@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-01 - Runtime adapter lease and rollback proofs
+
+- Strengthened `AsiStackProofs.RuntimeAdapters` with finite effect-lease and
+  rollback-obligation predicates plus derived negative cases for mismatched
+  effect leases, expired leases, unsandboxed leases, and high-impact
+  rollback-required invocations without rollback handles.
+- Updated the Runtime Adapters chapter, book outline, proof manifest, proof
+  triage, proof-depth classification, proof artifact audit, proof adequacy
+  review, Appendix E, and v1.x roadmap proof-count surfaces. The proof-depth
+  classifier now reports 642 theorem declarations, 123 direct/projection-style
+  declarations, and 519 derived/decomposed declarations.
+- This does not promote, demote, deprecate, or refute any live claim; create
+  deployed adapter execution, sandbox isolation, approval-service behavior,
+  secret-handle safety, live rollback execution, live effect-receipt validity,
+  runtime safety, benchmark performance, source evidence, external review,
+  reader release, EPUB, PDF, DOCX, audio artifact, or support-state movement.
+
 ## 2026-07-01 - Chapter review burn-down roadmap
 
 - Added the calibrated `docs/CHAPTER_REVIEWS.md` chapter-by-chapter reviewer

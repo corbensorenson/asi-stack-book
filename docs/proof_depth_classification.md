@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 137 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 636 |
-| Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 515 |
+| Theorem declarations classified | 642 |
+| Direct/projection-style theorem declarations | 123 |
+| Derived/decomposed theorem declarations | 519 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -92,7 +92,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 10 | 4 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 2 | 8 | 3 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -581,10 +581,16 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Routing.lean` | `route_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Routing.lean` | `selected_route_without_authority_or_readiness_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/Routing.lean` | `selected_specialist_satisfies_authority_and_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `expired_effect_lease_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_adapter_without_approval_cannot_be_unrejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_adapter_without_approval_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_rollback_required_without_handle_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `invocation_without_parent_permission_rejected` | derived_or_decomposed | no | uses contradiction, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `mismatched_effect_lease_rejected` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `rollback_required_without_handle_cannot_be_unrejected` | derived_or_decomposed | no | uses contradiction, have, rw |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `unsandboxed_effect_lease_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `valid_invocation_has_required_permission` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `valid_leased_invocation_has_active_scoped_sandbox` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `canary_substrate_without_complete_evidence_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_requires_passing_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

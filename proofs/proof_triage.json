@@ -764,21 +764,21 @@
       "tag": "lean:runtime.adapters.operational_invariant",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A runtime adapter invocation is valid only when job permissions include the adapter capability.",
+      "formal_target": "A runtime adapter invocation is valid only when job permissions include the adapter capability and its effect lease is active, scoped to that capability, and sandboxed.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite permission predicate: valid adapter invocations require the parent job permissions to include the adapter capability."
+      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as finite permission and effect-lease predicates: valid adapter invocations require parent job permission plus an active, capability-scoped, sandboxed effect lease."
     },
     {
       "tag": "lean:runtime.adapters.failure_blocks_promotion",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A high-impact adapter call without approval is rejected.",
+      "formal_target": "A high-impact adapter call without approval or a required rollback handle is rejected, and mismatched, expired, or unsandboxed effect leases cannot validate invocation.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite approval predicate: high-impact adapter invocations without approval are rejected."
+      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as finite approval, lease, and rollback-obligation predicates: high-impact calls without approval or required rollback handles are rejected, and mismatched, expired, or unsandboxed leases cannot validate invocation."
     },
     {
       "tag": "lean:procedural.loop_closure.operational_invariant",

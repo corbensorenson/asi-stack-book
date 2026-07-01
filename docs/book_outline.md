@@ -1635,16 +1635,17 @@ Draft deliverables:
 - A runtime-adapter contract with permissions, approval requirements, invocation state, impact class, risk tier, effect lease, pre/post state refs, external side effects, verification refs, rollback and irreversible residual fields, incident/audit refs, support-state effect, and non-claims.
 - Exact Appendix C claim-source mappings for `runtime-adapters-tool-permissions-and-human-approval.core` across Talos, VIEA, Ladon/Manhattan, Software Magic Grimoire, GenesisCode, MoECOT, Field of God AI Constitution, and Theseus Operator OS; five local raw-cache mappings and two local public-project mappings are passage-reviewed, while `moecot` remains connector/source-note mapped.
 - Implemented protocol validation: `runtime_adapter_invocation` fixture validates public record shape, invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, and non-claims only.
-- Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability.
+- Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability and its effect lease to be active, scoped to that capability, and sandboxed.
 - Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.
+- Implemented Lean negative cases: mismatched, expired, or unsandboxed effect leases cannot validate invocation, and a high-impact rollback-required invocation without a rollback handle cannot remain unrejected.
 - Implemented synthetic Codex test: `python3 scripts/validate_runtime_adapter_permissions.py` checks typed-job, runtime-adapter-invocation, and authority-use-receipt consistency for permission coverage, high-impact approval gates, approval expiry markers, effect receipts, rollback handles, irreversible residuals, and authority receipt alignment. It remains synthetic record-gate evidence only, not deployed adapter, sandbox, approval-service, rollback-execution, or secret-handle evidence.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability. | implemented |
-| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval is rejected. | implemented |
+| `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability and its effect lease is active, scoped to that capability, and sandboxed. | implemented |
+| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval or a required rollback handle is rejected, and mismatched, expired, or unsandboxed effect leases cannot validate invocation. | implemented |
 
 ### Procedural Memory and Cognitive Loop Closure
 

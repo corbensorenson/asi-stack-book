@@ -5035,6 +5035,16 @@
               "name": "Rollback handle capture test",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic runtime adapter permission harness; no real rollback execution claim"
+            },
+            {
+              "name": "Effect lease scope and sandbox proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite lease-scope predicate only"
+            },
+            {
+              "name": "Rollback obligation rejection proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite rollback-obligation predicate only"
             }
           ],
           "lean_module": "AsiStackProofs.RuntimeAdapters",
@@ -5042,13 +5052,13 @@
             {
               "tag": "lean:runtime.adapters.operational_invariant",
               "module": "AsiStackProofs.RuntimeAdapters",
-              "target": "A runtime adapter invocation is valid only when job permissions include the adapter capability.",
+              "target": "A runtime adapter invocation is valid only when job permissions include the adapter capability and its effect lease is active, scoped to that capability, and sandboxed.",
               "status": "implemented"
             },
             {
               "tag": "lean:runtime.adapters.failure_blocks_promotion",
               "module": "AsiStackProofs.RuntimeAdapters",
-              "target": "A high-impact adapter call without approval is rejected.",
+              "target": "A high-impact adapter call without approval or a required rollback handle is rejected, and mismatched, expired, or unsandboxed effect leases cannot validate invocation.",
               "status": "implemented"
             }
           ]
