@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-01 - Smooth Virtual Context ABI merge scaffold
+
+- Rewrote the `virtual-context-abi` mechanism section so the live chapter no
+  longer presents the destination mechanism as four merge "lanes"; the prose
+  now follows the ABI flow from context request through materialization
+  receipt, typed object, representation certificate, and fault/adequacy
+  handoff.
+- Smoothed the curated reader opening for the same chapter and updated
+  `docs/curated_reader_virtual_context_abi_prose_pass.md` with the
+  meaning-preservation boundary.
+- Updated the v1.x chapter-review burn-down row for Virtual Context ABI. This
+  is reader-craft work only; it does not change claim meaning, support state,
+  source mappings, proof/test status, implementation horizons, release status,
+  resolver behavior, certificate truthfulness, summary fidelity, or deployed
+  memory-store claims.
+
 ## 2026-07-01 - Add Resource flagship lane replay
 
 - Added `scripts/run_resource_flagship_lane.py` and

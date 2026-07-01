@@ -2,6 +2,8 @@
 
 Date: 2026-06-30
 
+Follow-up: 2026-07-01
+
 Chapter: `virtual-context-abi`
 
 Reader manuscript file:
@@ -15,6 +17,13 @@ The 2026-06-30 static context ABI consolidation executed after this pass:
 reader/source lineage, and active reader work routes through
 `virtual-context-abi`. This prose-pass note remains drafting history, not a
 reader release, support-state transition, or source-evidence record.
+
+2026-07-01 follow-up:
+The live chapter's mechanism prose and the curated reader opening were smoothed
+to remove visible merge-scaffold language around "lanes" and "the merged
+chapter." The edited text now describes the context request, materialization
+receipt, typed context object, representation certificate, and fault/adequacy
+handoff as one continuous ABI flow.
 
 ## Reader Promise
 
@@ -43,6 +52,9 @@ The reader throughline is:
 - Reworked the Mermaid diagram around task requests, semantic addresses,
   versions, mounts, snapshots, representation contracts, admission, adequacy,
   leased materializations, typed faults, and context receipts.
+- Smoothed the 2026-07-01 live and curated mechanism prose so the destination
+  no longer reads as a list of merge lanes while preserving ABI, certificate,
+  refusal, source, and evidence boundaries.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint without implying a deployed VCM resolver, context compiler,
   snapshot service, adequacy classifier, VCM-Bench result, or MoECOT runtime.
@@ -79,7 +91,10 @@ The reader throughline is:
 
 ## Non-Claims
 
-- This pass does not edit the live AI/research chapter.
+- The original 2026-06-30 pass did not edit the live AI/research chapter; the
+  2026-07-01 follow-up edits live and curated prose only and does not change
+  claim meaning, support state, source mapping, proof/test status, or release
+  status.
 - This pass does not change `book_structure.json`.
 - This pass did not itself execute, reject, or authorize a chapter merge or
   fold; the later static context ABI package executed separately.

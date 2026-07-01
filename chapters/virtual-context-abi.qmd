@@ -155,34 +155,36 @@ omissions, authority ceilings, loss contracts, and permitted uses.
 
 ## Mechanism
 
-The destination mechanism has four lanes.
+The ABI begins with a context request that names the task, address or address
+pattern, version requirement, mount scope, snapshot, representation need,
+authority ceiling, adequacy target, consumer policy, lease, and fault behavior.
+It does not return anonymous prompt mass. It returns a materialization receipt
+that says what resolved, what failed, what was omitted, which source refs were
+used, which representation was built, which uses are allowed, and which
+residuals remain.
 
-The first lane is context addressing. A context request names the task, address
-or address pattern, version requirement, mount scope, snapshot, representation
-need, authority ceiling, adequacy target, consumer policy, lease, and fault
-behavior. A materialization receipt then records what resolved, what failed,
-what was omitted, which source refs were used, and which residuals remain.
+The materialized object is typed before downstream layers can treat it as
+evidence, instruction, background, or executable constraint. Context can arrive
+as constraint cells, claim cells, decision cells, correction cells, event
+cells, artifact cells, exact excerpts, lossy summaries, redactions,
+abstractions, translations, or derived inferences. The type matters because a
+planning summary, a source quote, a reader paraphrase, and a redacted execution
+packet may share words while carrying different permissions and evidential
+weight.
 
-The second lane is typed semantic structure. Context is not only text. It can
-arrive as constraint cells, claim cells, decision cells, correction cells,
-event cells, artifact cells, exact excerpts, lossy summaries, redactions,
-abstractions, translations, or derived inferences. The type tells downstream
-layers what kind of object they are holding before they treat it as evidence,
-instruction, background, or executable constraint.
+A representation certificate binds each cell to source refs, omissions, loss
+contract, permitted uses, authority ceiling, validity state, revocation state,
+transaction refs, artifact refs, and residuals. The certificate is not a claim
+settlement. It is a use contract: a summary can be admitted as a planning brief
+without becoming evidence for a claim; a redaction can be safe for execution
+without being adequate for verification; and a reader-edition paraphrase can be
+readable without becoming a source quotation.
 
-The third lane is representation certification. A certificate binds the cell
-to source refs, omissions, loss contract, permitted uses, authority ceiling,
-validity state, revocation state, transaction refs, artifact refs, and
-residuals. A summary can be admitted as a planning brief without becoming
-evidence for a claim. A redaction can be safe for execution without being
-adequate for verification. A reader-edition paraphrase can be readable without
-becoming a source quotation.
-
-The fourth lane is typed fault and adequacy handoff. The ABI can report
-missing, unsafe, unknown, conflicting, stale, revoked, unauthorized, or
-unsatisfiable context rather than materializing best-effort prompt text. It can
-also state whether a packet is admitted for use while leaving adequacy for a
-target claim to the verification-bandwidth layer.
+Faults are part of the interface. The ABI can report missing, unsafe, unknown,
+conflicting, stale, revoked, unauthorized, or unsatisfiable context instead of
+materializing best-effort prompt text. It can also say that a packet is
+admitted for use while leaving adequacy for a target claim to the
+verification-bandwidth layer.
 
 ```{mermaid}
 flowchart LR
