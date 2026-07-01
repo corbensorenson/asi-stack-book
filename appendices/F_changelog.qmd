@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-01 - Readiness lifecycle transition proofs
+
+- Strengthened `AsiStackProofs.ReadinessGates` with a finite
+  lifecycle-transition relation over candidate, shadow, canary, qualified,
+  default-ready, quarantined, retired, and superseded readiness records.
+- Added derived transition theorems for forward/terminal lifecycle routing,
+  no transition from retired state, core evidence/residual/fallback/expiry
+  records, qualified/default readiness records, quarantine ordinary-route
+  blocking, supersession records, and retirement receipts.
+- Updated the Readiness Gates chapter, book outline, proof manifest, proof
+  triage, proof-depth classification, proof artifact audit, proof adequacy
+  review, Appendix E, and v1.x roadmap proof-count surfaces. The proof-depth
+  classifier now reports 668 theorem declarations, 137 direct/projection-style
+  declarations, and 531 derived/decomposed declarations.
+- This does not promote, demote, deprecate, or refute any live claim; create
+  deployed lifecycle transition execution, residual-ledger storage, live
+  quarantine routing, gate-quality evidence, terminal-state governance, MoECOT
+  replay, benchmark evidence, current-readiness evidence, source evidence,
+  external review, reader release, EPUB, PDF, DOCX, audio artifact, or
+  support-state movement.
+
 ## 2026-07-01 - Stable capability lifecycle transition proofs
 
 - Strengthened `AsiStackProofs.StableCapabilityFields` with a finite

@@ -5993,6 +5993,12 @@
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures; live quarantine routing not run",
               "status": "implemented by readiness/residual gate harness for blocked selected routes and preserved fallback routes; live quarantine routing not run"
+            },
+            {
+              "name": "Readiness lifecycle transition proof",
+              "purpose": "Check that finite readiness lifecycle transitions stay on candidate/shadow/canary/qualified/default/quarantine/superseded/retired paths and reject default, quarantine, supersession, or retirement transitions without the required evidence, residual escrow, fallback, expiry, regression, authority, route, receipt, or supersession records.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite transition-record predicate only"
             }
           ],
           "lean_module": "AsiStackProofs.ReadinessGates",
@@ -6000,13 +6006,13 @@
             {
               "tag": "lean:readiness.gates.operational_invariant",
               "module": "AsiStackProofs.ReadinessGates",
-              "target": "A module can enter promoted state only after all required gates pass.",
+              "target": "A module can enter promoted or stronger readiness states only after required gates and finite lifecycle records for fresh evidence, residual escrow, fallback, expiry, regression floor, authority scope, and route permission are present.",
               "status": "implemented"
             },
             {
               "tag": "lean:readiness.gates.failure_blocks_promotion",
               "module": "AsiStackProofs.ReadinessGates",
-              "target": "A quarantined module cannot be selected for ordinary execution routes.",
+              "target": "A quarantined, superseded, retired, stale, or incomplete readiness transition cannot be used for ordinary promotion without the required fallback, residual, rerun, supersession, or retirement records.",
               "status": "implemented"
             }
           ]

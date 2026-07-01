@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 137 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 655 |
-| Direct/projection-style theorem declarations | 130 |
-| Derived/decomposed theorem declarations | 525 |
+| Theorem declarations classified | 668 |
+| Direct/projection-style theorem declarations | 137 |
+| Derived/decomposed theorem declarations | 531 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -87,7 +87,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 2 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 19 | 8 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -535,11 +535,24 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `self_improvement_without_independent_evaluator_rejected` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `accepted_stronger_transition_missing_required_record_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `allowed_readiness_transition_requires_core_records` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `default_readiness_requires_regression_authority_and_route` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `default_readiness_without_authority_scope_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `default_readiness_without_regression_floor_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `promoted_decision_requires_all_required_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `promoted_decision_with_failed_required_gates_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `qualified_readiness_requires_regression_floor` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `quarantine_transition_blocks_ordinary_and_requires_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_lifecycle_transition_with_ordinary_route_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_module_cannot_be_selected_for_ordinary_route` | derived_or_decomposed | no | uses unfold |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_target_ordinary_or_unbacked_diagnostic_route_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `readiness_lifecycle_transition_must_be_forward_or_terminal` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `retired_readiness_state_cannot_transition` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `retirement_requires_receipt_and_residual_escrow` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `retirement_without_receipt_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `stale_gate_reuse_without_rerun_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `supersession_requires_record_and_residual_escrow` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `supersession_without_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `end_to_end_trace_contains_required_artifacts_for_layer_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_authority_deltas_routes_to_authority_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_parent_artifacts_routes_to_parentage_repair` | derived_or_decomposed | no | uses simp, unfold |

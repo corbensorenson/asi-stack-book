@@ -51,6 +51,7 @@ inductive ReadinessState where
   | defaultReady
   | quarantined
   | retired
+  | superseded
 deriving DecidableEq, Repr
 
 structure RouteSelection where
@@ -193,5 +194,215 @@ theorem stale_gate_reuse_without_rerun_or_residual_rejected
       | inr residualMissing =>
           rw [residualMissing] at residualRecorded
           contradiction
+
+structure ReadinessLifecycleTransition where
+  fromState : ReadinessState
+  toState : ReadinessState
+  gateEvidenceFresh : Bool
+  residualEscrowCarried : Bool
+  fallbackPathPresent : Bool
+  expiryRecorded : Bool
+  regressionFloorPreserved : Bool
+  authorityScopePreserved : Bool
+  ordinaryRouteAllowed : Bool
+  diagnosticRouteAllowed : Bool
+  supersessionRecordPresent : Bool
+  retirementReceiptPresent : Bool
+deriving DecidableEq, Repr
+
+def ReadinessForwardStep
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  (transition.fromState = ReadinessState.candidate ∧
+      transition.toState = ReadinessState.shadow) ∨
+    (transition.fromState = ReadinessState.shadow ∧
+      transition.toState = ReadinessState.canary) ∨
+    (transition.fromState = ReadinessState.canary ∧
+      transition.toState = ReadinessState.qualified) ∨
+    (transition.fromState = ReadinessState.qualified ∧
+      transition.toState = ReadinessState.defaultReady) ∨
+    (transition.toState = ReadinessState.quarantined) ∨
+    (transition.toState = ReadinessState.superseded) ∨
+    (transition.toState = ReadinessState.retired)
+
+def ReadinessTransitionNotFromRetired
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  transition.fromState ≠ ReadinessState.retired
+
+def ReadinessTransitionCoreRecordsPresent
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  transition.gateEvidenceFresh = true ∧
+    transition.residualEscrowCarried = true ∧
+      transition.fallbackPathPresent = true ∧
+        transition.expiryRecorded = true
+
+def QualifiedReadinessReady
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  transition.toState = ReadinessState.qualified ->
+    transition.regressionFloorPreserved = true
+
+def DefaultReadinessReady
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  transition.toState = ReadinessState.defaultReady ->
+    transition.regressionFloorPreserved = true ∧
+      transition.authorityScopePreserved = true ∧
+        transition.ordinaryRouteAllowed = true
+
+def QuarantineReadinessReady
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  transition.toState = ReadinessState.quarantined ->
+    transition.ordinaryRouteAllowed = false ∧
+      transition.diagnosticRouteAllowed = true ∧
+        transition.fallbackPathPresent = true
+
+def SupersessionReadinessReady
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  transition.toState = ReadinessState.superseded ->
+    transition.supersessionRecordPresent = true ∧
+      transition.residualEscrowCarried = true
+
+def RetirementReadinessReady
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  transition.toState = ReadinessState.retired ->
+    transition.retirementReceiptPresent = true ∧
+      transition.residualEscrowCarried = true
+
+def ReadinessLifecycleTransitionAllowed
+    (transition : ReadinessLifecycleTransition) : Prop :=
+  ReadinessForwardStep transition ∧
+    ReadinessTransitionNotFromRetired transition ∧
+      ReadinessTransitionCoreRecordsPresent transition ∧
+        QualifiedReadinessReady transition ∧
+          DefaultReadinessReady transition ∧
+            QuarantineReadinessReady transition ∧
+              SupersessionReadinessReady transition ∧
+                RetirementReadinessReady transition
+
+theorem readiness_lifecycle_transition_must_be_forward_or_terminal
+    {transition : ReadinessLifecycleTransition} :
+    ReadinessLifecycleTransitionAllowed transition ->
+      ReadinessForwardStep transition := by
+  intro allowed
+  exact allowed.left
+
+theorem retired_readiness_state_cannot_transition
+    {transition : ReadinessLifecycleTransition} :
+    transition.fromState = ReadinessState.retired ->
+      ¬ ReadinessLifecycleTransitionAllowed transition := by
+  intro retiredFrom allowed
+  have notRetired := allowed.right.left
+  exact notRetired retiredFrom
+
+theorem allowed_readiness_transition_requires_core_records
+    {transition : ReadinessLifecycleTransition} :
+    ReadinessLifecycleTransitionAllowed transition ->
+      transition.gateEvidenceFresh = true ∧
+        transition.residualEscrowCarried = true ∧
+          transition.fallbackPathPresent = true ∧
+            transition.expiryRecorded = true := by
+  intro allowed
+  exact allowed.right.right.left
+
+theorem qualified_readiness_requires_regression_floor
+    {transition : ReadinessLifecycleTransition} :
+    ReadinessLifecycleTransitionAllowed transition ->
+      transition.toState = ReadinessState.qualified ->
+        transition.regressionFloorPreserved = true := by
+  intro allowed toQualified
+  exact allowed.right.right.right.left toQualified
+
+theorem default_readiness_requires_regression_authority_and_route
+    {transition : ReadinessLifecycleTransition} :
+    ReadinessLifecycleTransitionAllowed transition ->
+      transition.toState = ReadinessState.defaultReady ->
+        transition.regressionFloorPreserved = true ∧
+          transition.authorityScopePreserved = true ∧
+            transition.ordinaryRouteAllowed = true := by
+  intro allowed toDefault
+  exact allowed.right.right.right.right.left toDefault
+
+theorem default_readiness_without_regression_floor_rejected
+    {transition : ReadinessLifecycleTransition} :
+    transition.toState = ReadinessState.defaultReady ->
+      transition.regressionFloorPreserved = false ->
+        ¬ ReadinessLifecycleTransitionAllowed transition := by
+  intro toDefault regressionMissing allowed
+  have defaultReady :=
+    default_readiness_requires_regression_authority_and_route allowed toDefault
+  rw [regressionMissing] at defaultReady
+  cases defaultReady.left
+
+theorem default_readiness_without_authority_scope_rejected
+    {transition : ReadinessLifecycleTransition} :
+    transition.toState = ReadinessState.defaultReady ->
+      transition.authorityScopePreserved = false ->
+        ¬ ReadinessLifecycleTransitionAllowed transition := by
+  intro toDefault authorityMissing allowed
+  have defaultReady :=
+    default_readiness_requires_regression_authority_and_route allowed toDefault
+  have authorityReady := defaultReady.right.left
+  rw [authorityMissing] at authorityReady
+  cases authorityReady
+
+theorem quarantine_transition_blocks_ordinary_and_requires_fallback
+    {transition : ReadinessLifecycleTransition} :
+    ReadinessLifecycleTransitionAllowed transition ->
+      transition.toState = ReadinessState.quarantined ->
+        transition.ordinaryRouteAllowed = false ∧
+          transition.diagnosticRouteAllowed = true ∧
+            transition.fallbackPathPresent = true := by
+  intro allowed toQuarantined
+  exact allowed.right.right.right.right.right.left toQuarantined
+
+theorem quarantined_lifecycle_transition_with_ordinary_route_rejected
+    {transition : ReadinessLifecycleTransition} :
+    transition.toState = ReadinessState.quarantined ->
+      transition.ordinaryRouteAllowed = true ->
+        ¬ ReadinessLifecycleTransitionAllowed transition := by
+  intro toQuarantined ordinaryAllowed allowed
+  have quarantineReady :=
+    quarantine_transition_blocks_ordinary_and_requires_fallback
+      allowed toQuarantined
+  rw [ordinaryAllowed] at quarantineReady
+  cases quarantineReady.left
+
+theorem supersession_requires_record_and_residual_escrow
+    {transition : ReadinessLifecycleTransition} :
+    ReadinessLifecycleTransitionAllowed transition ->
+      transition.toState = ReadinessState.superseded ->
+        transition.supersessionRecordPresent = true ∧
+          transition.residualEscrowCarried = true := by
+  intro allowed toSuperseded
+  exact allowed.right.right.right.right.right.right.left toSuperseded
+
+theorem supersession_without_record_rejected
+    {transition : ReadinessLifecycleTransition} :
+    transition.toState = ReadinessState.superseded ->
+      transition.supersessionRecordPresent = false ->
+        ¬ ReadinessLifecycleTransitionAllowed transition := by
+  intro toSuperseded recordMissing allowed
+  have supersessionReady :=
+    supersession_requires_record_and_residual_escrow allowed toSuperseded
+  rw [recordMissing] at supersessionReady
+  cases supersessionReady.left
+
+theorem retirement_requires_receipt_and_residual_escrow
+    {transition : ReadinessLifecycleTransition} :
+    ReadinessLifecycleTransitionAllowed transition ->
+      transition.toState = ReadinessState.retired ->
+        transition.retirementReceiptPresent = true ∧
+          transition.residualEscrowCarried = true := by
+  intro allowed toRetired
+  exact allowed.right.right.right.right.right.right.right toRetired
+
+theorem retirement_without_receipt_rejected
+    {transition : ReadinessLifecycleTransition} :
+    transition.toState = ReadinessState.retired ->
+      transition.retirementReceiptPresent = false ->
+        ¬ ReadinessLifecycleTransitionAllowed transition := by
+  intro toRetired receiptMissing allowed
+  have retirementReady :=
+    retirement_requires_receipt_and_residual_escrow allowed toRetired
+  rw [receiptMissing] at retirementReady
+  cases retirementReady.left
 
 end AsiStackProofs.ReadinessGates

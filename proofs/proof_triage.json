@@ -834,21 +834,21 @@
       "tag": "lean:readiness.gates.operational_invariant",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "module": "AsiStackProofs.ReadinessGates",
-      "formal_target": "A module can enter promoted state only after all required gates pass.",
+      "formal_target": "A module can enter promoted or stronger readiness states only after required gates and finite lifecycle records for fresh evidence, residual escrow, fallback, expiry, regression floor, authority scope, and route permission are present.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.ReadinessGates as a finite gate predicate: promoted decisions require all required gates to pass."
+      "rationale": "Implemented in AsiStackProofs.ReadinessGates as finite promotion and lifecycle-transition predicates: promoted decisions require all required gates, and stronger readiness/default transitions require fresh evidence, residual escrow, fallback, expiry, regression, authority, and route records where applicable."
     },
     {
       "tag": "lean:readiness.gates.failure_blocks_promotion",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "module": "AsiStackProofs.ReadinessGates",
-      "formal_target": "A quarantined module cannot be selected for ordinary execution routes.",
+      "formal_target": "A quarantined, superseded, retired, stale, or incomplete readiness transition cannot be used for ordinary promotion without the required fallback, residual, rerun, supersession, or retirement records.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.ReadinessGates as a finite quarantine predicate: quarantined targets cannot be selected for ordinary routes."
+      "rationale": "Implemented in AsiStackProofs.ReadinessGates as finite quarantine, stale-gate, supersession, retirement, and lifecycle-transition negative cases: quarantined targets cannot be ordinary routed, stale gates require rerun/residual records, supersession and retirement require explicit records, and retired states cannot emit allowed transitions."
     },
     {
       "tag": "lean:moecot.runtime.operational_invariant",

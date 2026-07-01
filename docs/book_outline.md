@@ -1868,6 +1868,7 @@ Draft deliverables:
 - Implemented Lean negative case: accepted stronger readiness transitions missing fresh gate evidence, residual escrow, fallback path, or expiry records are rejected.
 - Implemented Lean negative case: quarantined targets selected for ordinary routing or selected for diagnostic routing without fallback are rejected.
 - Implemented Lean negative case: promoted reuse of expired or architecture-stale gates without rerun and residual records is rejected.
+- Implemented Lean lifecycle transition relation: finite readiness transitions over candidate, shadow, canary, qualified, default-ready, quarantined, retired, and superseded states require forward/terminal paths, fresh gate evidence, residual escrow, fallback path, expiry records, regression floors, authority scope, route permissions, supersession records, or retirement receipts as applicable.
 - Implemented Codex test: Readiness transition enforcement test, via `python3 scripts/validate_readiness_residual_gates.py` over canary, default, quarantine, and expired-rerun scenarios; deployed readiness-engine behavior remains unrun.
 - Implemented Codex test: Residual escrow integrity test, via `python3 scripts/validate_readiness_residual_gates.py` over route residual obligations and inherited residual custody; residual-ledger storage remains unrun.
 - Implemented Codex test: Quarantine routing harness test, via `python3 scripts/validate_readiness_residual_gates.py` over blocked selected routes and preserved fallback routes; live quarantine routing remains unrun.
@@ -1876,10 +1877,10 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted state only after all required gates pass. | implemented |
-| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined module cannot be selected for ordinary execution routes. | implemented |
+| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessGates` | A module can enter promoted or stronger readiness states only after required gates and finite lifecycle records for fresh evidence, residual escrow, fallback, expiry, regression floor, authority scope, and route permission are present. | implemented |
+| `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessGates` | A quarantined, superseded, retired, stale, or incomplete readiness transition cannot be used for ordinary promotion without the required fallback, residual, rerun, supersession, or retirement records. | implemented |
 
-Implemented negative-case theorems now cover failed promoted gates, accepted stronger transitions missing freshness/residual/fallback/expiry records, quarantined ordinary routes or diagnostic routes without fallback, and stale-gate reuse without rerun/residual records. These remain record-level gates only; they do not prove benchmark quality, residual-ledger storage, lifecycle engine behavior, live routing enforcement, MoECOT replay, or current readiness.
+Implemented negative-case theorems now cover failed promoted gates, accepted stronger transitions missing freshness/residual/fallback/expiry records, quarantined ordinary routes or diagnostic routes without fallback, stale-gate reuse without rerun/residual records, default readiness without regression or authority scope, quarantined lifecycle transitions with ordinary routing, supersession without a supersession record, retirement without a receipt, and transition from retired state. These remain record-level gates only; they do not prove benchmark quality, residual-ledger storage, lifecycle engine behavior, live routing enforcement, MoECOT replay, or current readiness.
 
 ### Personal Compute Hives and Federated Edge Intelligence
 
