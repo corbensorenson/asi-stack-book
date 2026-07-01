@@ -4,7 +4,7 @@ chapter_id: "readiness-gates-residual-escrow-and-quarantine"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "rmi"
   - "benchmaxxing"
@@ -31,7 +31,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-01 |
 | Primary source records | `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -98,6 +98,12 @@ Appendix C now maps this readiness-gate claim to all assigned source notes and r
 | `project_theseus_whitepaper` | Residual escrow, benchmark floors, frontier/diagnostic/regression/public-calibration/retired benchmark states, specialist lifecycle, safety-visible gates, and report-first implementation discipline. | passage-reviewed local public-project source | Current machine-readable reports and benchmark ledgers were not rerun or verified from this repo. |
 | `theseus_architecture_gate` | Pre-training checks for ratchet completeness, router readiness, safety ledger, regression suite, public calibration, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, external-inference zero, and the imported static architecture-gate summary verified by ASI-side digest. | passage-reviewed local public-project source plus static import fixture | The reported green snapshot is represented only by the digest-verified fixture in `docs/theseus_report_import_slice.md`; no clean live Theseus command, current dashboard, or benchmark environment was rerun here. |
 | `theseus_self_evolution_system` | Intervention ladders, ATTD repo-health gates, guarded teacher edits, architecture experiment governance, outcome ledgers, lifecycle-governed cells, and loop closure into local tools. | passage-reviewed local public-project source | No Theseus scripts, ATTD reports, branch flow, teacher runner, outcome ledger, dashboard endpoint, or autonomous-improvement result was executed. |
+
+## Draft Key Figure: Readiness, Residual, Quarantine Map
+
+![Draft readiness residual quarantine map.](../assets/diagrams/readiness-residual-quarantine-map.svg){#fig-readiness-residual-quarantine-map fig-alt="Draft readiness residual quarantine map showing a candidate route or replacement proposal entering a readiness gate record, splitting into limited allowed use, residual escrow, quarantine, blocker handling, review rerun, gate-laundering boundary, and support-state non-claim boundary."}
+
+**How to read the readiness-residual figure:** Read the figure as a route-permission map, not as a claim that a deployed readiness engine exists. A candidate route, tool, specialist, memory packet, runtime lane, or replacement proposal enters a readiness gate record with field identity, workload scope, fresh evidence, expiry, authority, allowed routes, fallback, rollback path, residual escrow, non-claims, review refs, and next review trigger. If the envelope is adequate, the target may move to limited allowed use such as shadow, canary, qualified, or default within that envelope. If uncertainty remains, residual escrow preserves inherited failures, blocked obligations, owners, and review conditions. If evidence is missing, expired, authority-mismatched, or hides residuals, quarantine blocks ordinary routing while preserving diagnostic replay only with a visible fallback. Renaming, wrapping, splitting, merging, retraining, or retiring a target cannot erase failed gates or inherited residuals. The figure is a draft reader aid, not proof of readiness-engine behavior, residual-ledger storage, quarantine enforcement, safety, benchmark performance, support-state movement, or release approval.
 
 ## Mechanism
 

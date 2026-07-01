@@ -1,5 +1,41 @@
 # Changelog
 
+## 2026-07-01 - Chapter review burn-down roadmap
+
+- Added the calibrated `docs/CHAPTER_REVIEWS.md` chapter-by-chapter reviewer
+  pass as planning input and updated `docs/v1_x_beyond_sota_roadmap.md` with a
+  44-row masterwork burn-down table that routes each reviewed weakness to
+  proof, source-grounding, evidence-import, reader-prose, or explicit blocker
+  work.
+- Fixed the verified chapter-level proof metadata gap in `book_structure.json`
+  by assigning `AsiStackProofs.PersonalComputeHives` to
+  `personal-compute-hives-and-federated-edge-intelligence` and
+  `AsiStackProofs.ArtifactStewardAgents` to
+  `artifact-steward-agents-and-living-project-governance`.
+- This does not create new theorem results, external citations, source
+  evidence, test results, reader release approval, external-review authority,
+  chapter-core support-state movement, deployment readiness, model-quality
+  claims, safety claims, EPUB, PDF, DOCX, or audio artifacts.
+
+## 2026-07-01 - Draft readiness residual quarantine figure
+
+- Added `assets/diagrams/readiness-residual-quarantine-map.svg` as the seventh
+  draft key-figure asset from the reader handoff contract and embedded it in
+  `chapters/readiness-gates-residual-escrow-and-quarantine.qmd` with a
+  text-equivalent reading note and explicit readiness/residual/quarantine
+  non-claims.
+- Updated the curated reader-manuscript figure target to reference the draft
+  SVG, chapter usage, text-equivalent section, and `draft_not_release_reviewed`
+  state.
+- Updated the visual asset README and refreshed the tracked audio-script probe
+  counts to include the eighth image treatment note while preserving all audio
+  release blockers.
+- This does not promote, demote, deprecate, or refute any live claim; create
+  a deployed readiness engine, residual-ledger storage, quarantine enforcement,
+  safety result, benchmark performance result, source evidence, proof result,
+  test result, external review, reviewed figure artifact, reader release, EPUB,
+  PDF, DOCX, audio artifact, deployment claim, or support-state movement.
+
 ## 2026-07-01 - Draft context-transaction lifecycle figure
 
 - Added `assets/diagrams/context-transaction-lifecycle.svg` as the sixth draft

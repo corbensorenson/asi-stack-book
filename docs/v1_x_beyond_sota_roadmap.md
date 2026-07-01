@@ -92,6 +92,12 @@ This roadmap reconciles:
   Codex can prepare structure, continuity, visual craft, and authorial handoff
   surfaces, but cannot fabricate Corben's lived voice, personal lessons, or
   conviction;
+- the calibrated 2026-07-01 chapter-by-chapter external-review pass in
+  `docs/CHAPTER_REVIEWS.md`, which covers all 44 chapters and both live and
+  reader versions while explicitly correcting its own proxy errors: low
+  `ext_` count means external-anchoring depth, not missing positioning; low
+  theorem count means narrow coverage, not weak proof; and planned-test counts
+  are qualitative signals until rechecked chapter by chapter;
 - Codex verification of Claude's claims against the local tree;
 - `book_structure.json`, which currently defines four parts, 44 chapters, and
   11 appendices;
@@ -116,6 +122,7 @@ not be quoted in the book as an external authority.
 | P0 | Codex must not counterfeit the author's presence. | Agent-written first-person lessons, personal stakes, scars, or hard-won conviction would be fabricated unless Corben supplies them. | Codex may prepare prompts, candidate cuts, continuity edits, and placeholder notes for Corben; first-person lived experience and final authorial voice must be supplied or approved by Corben before release. |
 | P0 | The consolidation problem is mostly executed; the remaining risk is linkrot and reopening churn. | The manifest is 44 chapters, the executed fold packages preserve source/proof/reader lineage, ten retired public slugs have historical HTML stubs, and `validate_chapter_consolidation_sequence.py` now guards those stubs directly. | Keep the 44-chapter spine stable. Do not reopen consolidation unless a named external review, source, evidence lane, or reader edit shows a specific chapter boundary is weaker than a destination. |
 | P0 | Planning churn is now a release risk. | The local tree already has enough roadmap, review, scorecard, grounding, and release surfaces to execute. The best recent progress changed proof code, manifests, stubs, reader source, and evidence fixtures. | New reports are out of scope unless required by a validator, release record, external reviewer response, or an executed proof/evidence/reader/artifact change. Default to code, proof, source, evidence, reader, or artifact work. |
+| P0 | The chapter-by-chapter review should become a burn-down queue, not another grade sheet. | `docs/CHAPTER_REVIEWS.md` identifies concrete per-chapter weaknesses after self-auditing its proxies. Codex verified the two manifest proof-mapping bugs: `personal-compute-hives-and-federated-edge-intelligence` and `artifact-steward-agents-and-living-project-governance` had missing chapter-level `lean_module` values despite on-disk Lean modules with 22 and 16 theorem/lemma declarations. | Keep the review as planning input only, track every chapter weakness in the roadmap burn-down below, and execute fixes as proof, source-note, evidence-import, reader-prose, or manifest changes. The two `lean_module` mappings are fixed in `book_structure.json` in the current workset; no support state moves. |
 | P0 | The project needs one real measured result more than another internal sweep. | The current three upward transitions are narrow non-core lanes. No 44 chapter core claims have moved above `argument`, and no empirical lane yet demonstrates an architecture claim with baseline and negative control. | Choose one efficiency, routing, compression, or context lane; implement a one-command reproducible run with baseline, negative control, residuals, and an accepted promotion or no-promotion decision. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 44 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
@@ -765,6 +772,115 @@ Acceptance bar:
   changes;
 - no support state moves unless a separate accepted evidence-transition record
   justifies it.
+
+### Milestone 2.5 - Chapter-by-Chapter Masterwork Burn-Down
+
+Goal: convert the calibrated 44-chapter external-review pass into executed
+chapter work. This is not another scorecard. It is the concrete burn-down queue
+for making the weakest chapter surfaces as proved, grounded, voiced, and
+evidence-aware as the strongest ones.
+
+Source review:
+
+- `docs/CHAPTER_REVIEWS.md` is reviewer guidance only. It is not source
+  evidence, not an external citation, not a proof result, and not a
+  support-state transition.
+- Treat "light anchoring" as a request to deepen tracked source-note links and
+  name prior-art families already adjacent to the chapter, not as permission to
+  add placeholder citations.
+- Treat "narrow proof coverage" as a request for more scenarios, transition
+  invariants, negative cases, or Lean/Python fixture-equivalence bridges, not as
+  a claim that existing proofs are unsound.
+- Re-read the full chapter, its source queue, Appendix C row, proof module,
+  harnesses, and reader projection before editing prose or tests.
+
+Current status from this review:
+
+- The two verified chapter-level proof-mapping bugs are fixed in
+  `book_structure.json`: `personal-compute-hives-and-federated-edge-intelligence`
+  now names `AsiStackProofs.PersonalComputeHives`, and
+  `artifact-steward-agents-and-living-project-governance` now names
+  `AsiStackProofs.ArtifactStewardAgents`. This exposes existing module
+  ownership; it does not create new theorem results or support-state movement.
+- `docs/CHAPTER_REVIEWS.md` should remain a living reviewer-input document only
+  when a real reviewer supplies a new pass. Do not churn it after every small
+  chapter edit.
+
+Priority order:
+
+1. Fix metadata and visibility bugs first.
+2. Expand safety-critical proof coverage where AI can act, route, replace,
+   remember, or promote: Runtime Adapters, Stable Capability Fields, Readiness
+   Gates, Context Transactions, Compact Generative Systems, Artifact Graphs,
+   Procedural Memory, and Planning.
+3. Surface real Circle/Theseus/project evidence where it already exists before
+   writing new synthetic fixtures.
+4. Backfill external anchoring through `sources/source_inventory.json` and
+   source notes only after reading the source.
+5. Improve reader prose and Beyond-SOTA sections where the review found recap,
+   merge seams, or undersold contribution.
+
+Per-chapter burn-down:
+
+| Chapter | Weakness to overcome | Required roadmap work |
+|---|---|---|
+| `asi-is-a-stack-not-a-model` | Beyond-SOTA restates the core thesis more than it argues against alternative framings. | Rewrite mature-endpoint prose against monolithic-scaling, agent-loop, and compound-AI-system framings; finish planned tests only with recorded commands and non-claims. |
+| `the-efficient-asi-hypothesis` | Light anchoring to efficient-inference/routing literature and a surviving generic "operating system" opener. | Cross-link source-noted efficiency literature already used in Fast Generation and Policy Optimization; rewrite the Beyond-SOTA opener in chapter-specific language. |
+| `system-boundaries-and-authority` | Strong proof, but object-capability/confused-deputy lineage is not explicit enough. | Add source-noted object-capability and capability-security anchoring where it clarifies the "can vs. may" boundary; preserve no-deployed-safety claim. |
+| `failure-modes-of-ungoverned-intelligence` | Stack failure vocabulary is not mapped tightly enough to established AI-safety failure taxonomies. | Map named failure modes to source-noted taxonomy families such as specification gaming, reward hacking, goal misgeneralization, and deceptive alignment where warranted. |
+| `evidence-states-and-claim-discipline` | The chapter undersells the novelty of support-state discipline. | Reframe it as a methodological contribution paired with Living Book Methodology; finish planned tests without turning clearer prose into stronger evidence. |
+| `human-intent-as-a-formal-input` | Foundational chapter still needs broader proof coverage and planned behavioral tests. | Add intent-to-contract preservation, ambiguity-forces-clarification, and hidden-override negative cases; implement planned tests; deepen source-noted links to instruction-following, preference elicitation, and RLHF-intent literature. |
+| `constitutional-alignment-substrate` | Source lineage can read metaphysical if not labeled tightly. | Audit prose for unlabeled metaphysics; keep speculative source lineage marked as author-intent context; add machine-ethics/value-alignment anchoring only from source notes. |
+| `moral-uncertainty-and-value-conflict` | Value conflict needs more explicit connection to moral uncertainty, social choice, and rights-as-interface examples. | Add a worked fork/exit/audit example and deepen source-noted moral-uncertainty, social-choice, preference-aggregation, and mechanism-design positioning. |
+| `stable-capability-fields` | Central primitive has narrower lifecycle proof coverage than its importance warrants. | Build a full SCF lifecycle state-machine proof lane for shadow/canary/qualified/default/deprecated/retired, including qualification-forces-evidence and replacement-cannot-widen-authority invariants. |
+| `capability-replacement-and-rollback` | Deployment/MLOps prior art is lightly anchored despite strong canary/rollback prose. | Source-note and name progressive delivery, canary, blue-green, feature-flag, model-rollout, and regression-gating comparators; preserve rollback transaction boundaries. |
+| `security-kernel-and-digital-scifs` | Planned prompt-injection containment and least-privilege tests remain high-value blockers. | Implement the planned security-kernel tests, especially prompt-injection containment, secret-handle refusal, approval expiry, and least-privilege negative cases; ground SCIF wording if retained. |
+| `recursive-self-improvement-boundaries` | Some behavioral tests remain planned and external RSI/evaluator-capture anchoring can deepen. | Implement planned boundary tests; source-note RSI, self-improvement, mesa-optimization, evaluator-capture, and STOP-adjacent literature; keep Theseus self-sourcing bounded. |
+| `intent-to-execution-contracts` | Typed-workflow/API-contract anchoring is light and the "three lanes" merge scaffold is visible. | Add source-noted structured-command, API-contract, DSL, and typed-workflow comparators; smooth lane language into prose. |
+| `planning-as-a-control-layer` | Central merged chapter needs plan-graph proof coverage and planned tests executed. | Add plan-graph acyclicity, authority inheritance down the DAG, dispatch-gating, decomposition, dependency-ordering, and replanning tests with negative cases. |
+| `cognitive-compilation-and-semantic-ir` | Program-synthesis, IR, and translation-validation lineage needs clearer external grounding. | Source-note program-synthesis, compiler IR, and translation-validation comparators; keep compiler analogy tied to obligation preservation rather than metaphor alone. |
+| `virtual-context-abi` | Minor merge-scaffold residue around the "four lanes" framing. | Smooth lane wording into natural mechanism prose while preserving the ABI/certificate/refusal boundary and existing evidence limits. |
+| `context-transactions-snapshots-mounts-and-taint` | Rich formal mechanism has narrow proof coverage. | Deepen `ContextTransactions` with snapshot-coherence, taint-monotonicity, branch isolation, and deletion-closure completeness theorems plus matching fixture negatives. |
+| `verification-bandwidth-and-context-adequacy` | Strong idea could carry empirical adequacy tests and sharper framing. | Finish contradiction-rate/context-adequacy tests if measurable; sharpen "long-context theater" as a precise, evidence-bounded frame. |
+| `claim-ledgers-and-belief-revision` | Belief-revision lineage is lightly anchored. | Source-note AGM, truth-maintenance, and formal epistemology comparators; show claim-ledger revision as an architecture bridge, not only bookkeeping. |
+| `spinoza-verification-and-proof-carrying-claims` | Proof-carrying, autoformalization, LLM-judge, debate, and "Spinoza" naming need outside-reader grounding. | Add source-noted proof-carrying-code, autoformalization, debate, and LLM-as-judge positioning; evaluate whether the chapter name earns its cognitive load in reader prose. |
+| `labor-os-and-typed-jobs` | Durable-execution/workflow-orchestration anchoring and planned tests need completion. | Source-note Temporal, workflow orchestration, BPMN/Airflow, and scheduler comparators; implement planned typed-job tests. |
+| `artifact-graphs-audit-logs-and-replay` | Provenance/replay proof coverage is narrow. | Add provenance-closure, replay-grade monotonicity, claim/test-link integrity, and blocked-promotion negative cases; pursue real artifact replay traces where available. |
+| `runtime-adapters-tool-permissions-and-human-approval` | Safety-critical action boundary has too few adversarial proof scenarios. | High priority: expand `RuntimeAdapters` around effect-lease scope/expiry, adapter authority non-escalation, rollback obligation, confused-deputy rejection, sandbox-escape refusal, and high-impact approval negatives. |
+| `procedural-memory-and-cognitive-loop-closure` | Narrow proof coverage and light skill-library/tool-synthesis anchoring. | Add promotion-gating and regression-preservation theorems; source-note Voyager, DreamCoder, learned-tool, and tool-making-agent comparators where appropriate. |
+| `routing-heads-and-specialist-cores` | Strong chapter with remaining planned tests. | Finish planned routing tests with authority/readiness/residual non-claims; avoid turning route-quality fixtures into learned-router claims. |
+| `readiness-gates-residual-escrow-and-quarantine` | Lifecycle control plane deserves broader transition proof coverage. | Deepen `ReadinessGates` into a state machine for shadow, canary, qualified, default, quarantined, retired, and superseded transitions; keep residual escrow and fallback as hard invariants. |
+| `personal-compute-hives-and-federated-edge-intelligence` | Ambitious, sprawling chapter with many planned tests and formerly missing chapter-level Lean module mapping. | Metadata mapping is fixed; next implement hive scheduler, policy membrane, portal approval, federation lease, dropout, energy, audit replay, and rented-node tests; tighten speculative product vocabulary. |
+| `compact-generative-systems-and-residual-honesty` | Longest chapter has narrow proof coverage relative to scope and many planned tests. | Add residual-honesty, reconstruction-exactness, fallback-completeness, verification-cost, and semantic-representation migration invariants; import real compression/repair measurements only from inspected CGS/BBVCA/RankFold artifacts. |
+| `fast-generation-architectures` | Excellent external grounding but speed-quality tests are still planned. | Import or reproduce public-safe Theseus generation-mode benchmarks with baseline, negative control, cost, quality, verifier, and residual records. |
+| `rankfold-neuralfold-and-artifact-compression` | Real compression implementation evidence is not surfaced enough. | Import RankFold/NeuralFold compression-ratio, decode-determinism, fallback, and utility measurements from actual implementation artifacts or record blockers. |
+| `resource-economics-and-token-budgets` | Proof coverage is modest for chapter weight and load-stability tests remain planned. | Deepen budget-gating/protected-overhead theorems and implement load-stability, displaced-cost, reviewer-capacity, and protected-overhead tests. |
+| `mathematical-and-search-substrates` | Umbrella chapter risks repeating Circle/coil specifics. | Keep it focused on adoption discipline: baseline-bound, falsifiable, reversible, support-state bounded; defer substrate specifics to the Circle/coil chapters. |
+| `circle-calculus-and-proof-carrying-ai-contracts` | The chapter abstracts away from Circle's most concrete proved results. | Surface exact public-safe Circle evidence: theorem IDs, RoPE receipt boundary, exact `1/328459` margin, trichotomy, undecided interval, and non-claims after verifying source artifacts. |
+| `coil-attention-cyclic-memory-and-recurrence-contracts` | Specialist chapter is sound but could show concrete Circle backing. | Optionally surface source-verified Circle coil-attention proof artifacts; keep structure-versus-quality boundary explicit. |
+| `coilra-multicoil-rope-and-cyclic-mixers` | Planned tests and exact-collision proof results need better surfacing. | Implement planned tests and surface source-verified RoPE/cyclic mixer exact-collision or certifier results without implying model-quality gains. |
+| `executable-specifications-and-lean-proof-envelope` | Proof-governance chapter should show the book's real proof layer more concretely. | Refresh proof-depth numbers from validators, explain derived/projection labels, and use the book's Lean layer as a worked proof-etiquette example. |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | Proof coverage is narrow and Theseus benchmark practice is under-surfaced. | Deepen benchmark-lifecycle proofs; ground public-calibration locks, honest weak scores, residual escrow, and benchmark-state transitions in verified Theseus artifacts. |
+| `policy-optimization-and-learning-from-feedback` | Planned tests remain; topic is necessarily derivative unless a rollback demo exists. | Implement planned policy-update tests and, if feasible, build a tiny policy-update-with-rollback demo with reward-hacking probes, holdout checks, and non-claims. |
+| `artifact-steward-agents-and-living-project-governance` | Former chapter-level Lean module mapping bug hid a distinctive steward proof lane from the chapter metadata. | Metadata mapping is fixed; next polish the chapter around bounded continuity, federation, treasury, release gate, sunset, and stewardship evidence without implying autonomous governance safety. |
+| `integrated-reference-architecture` | Reads more like recap than showpiece. | Build one end-to-end worked trace through intent, constitution, planning, context, routing, verification, execution, evidence, and improvement with actual artifact and authority records. |
+| `project-theseus-as-report-first-implementation-reference` | Describes Theseus abstractly instead of showing its real public-safe substance. | Surface verified Theseus artifacts, RMI design law, gate states, benchmark numbers, and blockers; implement planned Theseus tests only from public-safe replay or digest-verifiable imports. |
+| `prototype-roadmap` | Solid roadmap chapter with a small planned-test tail. | Implement the remaining tests and keep phase language from becoming evidence language. |
+| `living-book-methodology` | The demonstrated living-book method is undersold. | Reframe it with Evidence States as the methodological contribution: manifest-driven source of truth, claim ledger, proof manifest, evidence transitions, no-axiom discipline, and release records. |
+| `open-research-agenda-and-bibliography-plan` | Backmatter role is appropriate, but source ownership must stay crisp. | Keep Appendix G/H separation and future-source triage discipline crisp; no action beyond maintaining external-literature boundary unless new source work changes it. |
+
+Acceptance bar:
+
+- each row has either an executed commit, an explicit blocker, or an active
+  issue/roadmap subtask before the next major release;
+- proof rows run `lake build`, `scripts/validate_proof_depth.py`, and relevant
+  fixture validators;
+- source rows add or update source notes before chapter prose uses the source;
+- evidence-import rows include replay/digest, baseline or negative controls
+  where relevant, residuals, and non-claims;
+- reader/craft rows update the Human view/reader manuscript without fabricating
+  Corben's first-person voice or support-state movement;
+- no row is marked complete merely because the roadmap names it.
 
 ### Milestone 3 - Project Theseus Evidence Import
 
@@ -2216,7 +2332,7 @@ Current status:
 - `scripts/build_audio_script.py --check` generates 49 review-script files and
   verifies that every chapter script preserves both implementation-horizon
   sections.
-- The first six draft key-figure assets tied to the reader handoff contract
+- The first seven draft key-figure assets tied to the reader handoff contract
   now exist: `assets/diagrams/asi-stack-control-plane.svg` in
   `chapters/asi-is-a-stack-not-a-model.qmd` and
   `assets/diagrams/authority-to-effect-path.svg` in
@@ -2227,8 +2343,10 @@ Current status:
   `chapters/evidence-states-and-claim-discipline.qmd` and
   `assets/diagrams/intent-to-artifact-trace.svg` in
   `chapters/intent-to-execution-contracts.qmd`, plus
+  `assets/diagrams/readiness-residual-quarantine-map.svg` in
+  `chapters/readiness-gates-residual-escrow-and-quarantine.qmd` and
   `assets/diagrams/route-selection-budget-tradeoff.svg` in
-  `chapters/resource-economics-and-token-budgets.qmd`. All six have
+  `chapters/resource-economics-and-token-budgets.qmd`. All seven have
   text-equivalent reading notes, and the manifest keeps them at
   `draft_not_release_reviewed` with no new support-state, enforcement,
   security, proof, test, external-review, or artifact-release effect.
@@ -2242,7 +2360,7 @@ Current status:
   `scripts/validate_reader_audio_script_probe_manifest.py` now record and
   validate the tracked local audio-script probe: 49 script files, preserved
   implementation horizons, 8 table treatment notes, 53 Mermaid diagram notes,
-  7 image notes, and MP3/M4B/audio-embedded EPUB targets still marked
+  8 image notes, and MP3/M4B/audio-embedded EPUB targets still marked
   `target_not_generated`. This is not narration approval, an audiobook, or an
   audio release record.
 

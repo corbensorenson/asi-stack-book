@@ -10,6 +10,7 @@ Current visual assets:
 - `assets/diagrams/context-transaction-lifecycle.svg`: draft key figure for the context-transaction chapter's snapshot, mount, taint, deletion-closure, and downstream handoff lifecycle; not a release-reviewed artifact.
 - `assets/diagrams/evidence-state-ladder.svg`: draft key figure for the evidence-discipline chapter's claim/support transition path; not a release-reviewed artifact.
 - `assets/diagrams/intent-to-artifact-trace.svg`: draft key figure for the command-contract chapter's intent-to-artifact continuity path; not a release-reviewed artifact.
+- `assets/diagrams/readiness-residual-quarantine-map.svg`: draft key figure for the readiness chapter's gate, residual escrow, quarantine, review, and support-state boundary map; not a release-reviewed artifact.
 - `assets/diagrams/route-selection-budget-tradeoff.svg`: draft key figure for the Resource Economics chapter's costed-route selector and protected-budget tradeoff; not a release-reviewed artifact.
 
 Diagram rules:

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Readiness residual quarantine map draft figure</title>
+  <desc id="desc">A draft systems diagram showing candidate routes entering a readiness gate, evidence, authority, freshness, fallback, and residual checks, then moving either to limited allowed use, residual escrow, quarantine, review rerun, or a ledgered non-claim without implying a deployed readiness engine.</desc>
+  <defs>
+    <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#256b7c"/>
+    </marker>
+    <marker id="arrow-rose" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#8a5264"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#a86f45"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#18202a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #d8dee6; stroke-width: 2; }
+      .input { fill: #f5f1fa; stroke: #765a8a; stroke-width: 2.5; }
+      .gate { fill: #f4f8fa; stroke: #256b7c; stroke-width: 2.5; }
+      .ok { fill: #f2f8f5; stroke: #497b5b; stroke-width: 2.5; }
+      .escrow { fill: #fff8f2; stroke: #a86f45; stroke-width: 2.5; }
+      .blocked { fill: #fbf3f5; stroke: #8a5264; stroke-width: 2.5; }
+      .ledger { fill: #ffffff; stroke: #5a6675; stroke-width: 2.5; }
+      .ink { fill: #18202a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #5a6675; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 750; }
+      .small { font-size: 18px; font-weight: 650; }
+      .tiny { font-size: 15px; font-weight: 550; }
+      .caption { font-size: 16px; font-weight: 600; }
+      .line { fill: none; stroke: #256b7c; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-teal); }
+      .rose { fill: none; stroke: #8a5264; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-rose); }
+      .amber { fill: none; stroke: #a86f45; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-amber); }
+      .dash { fill: none; stroke: #5a6675; stroke-width: 2.5; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink label" x="58" y="62">Readiness, Residual, Quarantine Map</text>
+  <text class="muted caption" x="58" y="92">Draft key figure. Readiness changes route permission only when evidence, scope, residuals, and fallback are recorded.</text>
+
+  <rect class="input" x="54" y="126" width="230" height="148" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="82" y="164">Candidate route</text>
+  <text class="muted tiny" x="82" y="196">module, tool, specialist,</text>
+  <text class="muted tiny" x="82" y="220">memory packet, runtime lane,</text>
+  <text class="muted tiny" x="82" y="244">or replacement proposal</text>
+
+  <rect class="gate" x="344" y="98" width="276" height="224" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="372" y="136">Readiness gate record</text>
+  <text class="muted tiny" x="372" y="168">field identity and workload</text>
+  <text class="muted tiny" x="372" y="192">fresh evidence and expiry</text>
+  <text class="muted tiny" x="372" y="216">authority and allowed routes</text>
+  <text class="muted tiny" x="372" y="240">fallback and rollback path</text>
+  <text class="muted tiny" x="372" y="264">residual escrow and non-claims</text>
+  <text class="muted tiny" x="372" y="288">review refs and next trigger</text>
+
+  <rect class="ok" x="706" y="72" width="236" height="136" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="734" y="110">Limited allowed use</text>
+  <text class="muted tiny" x="734" y="142">shadow, canary, qualified,</text>
+  <text class="muted tiny" x="734" y="166">or default only inside</text>
+  <text class="muted tiny" x="734" y="190">the recorded envelope</text>
+
+  <rect class="escrow" x="706" y="248" width="236" height="136" rx="12"/>
+  <text class="ink small" x="734" y="286">Residual escrow</text>
+  <text class="muted tiny" x="734" y="318">inherited failures, edge cases,</text>
+  <text class="muted tiny" x="734" y="342">blocked obligations, owner,</text>
+  <text class="muted tiny" x="734" y="366">and next review condition</text>
+
+  <rect class="blocked" x="706" y="424" width="236" height="150" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="734" y="462">Quarantine</text>
+  <text class="muted tiny" x="734" y="494">ordinary routing blocked</text>
+  <text class="muted tiny" x="734" y="518">diagnostic replay allowed</text>
+  <text class="muted tiny" x="734" y="542">only with fallback visible</text>
+
+  <rect class="blocked" x="1000" y="122" width="148" height="174" rx="12"/>
+  <text class="ink small" x="1020" y="160">Blockers</text>
+  <text class="muted tiny" x="1020" y="192">missing</text>
+  <text class="muted tiny" x="1020" y="216">expired</text>
+  <text class="muted tiny" x="1020" y="240">mismatch</text>
+  <text class="muted tiny" x="1020" y="264">hidden tail</text>
+
+  <rect class="ledger" x="1000" y="366" width="148" height="150" rx="12"/>
+  <text class="ink small" x="1020" y="404">Review</text>
+  <text class="muted tiny" x="1020" y="436">rerun gate</text>
+  <text class="muted tiny" x="1020" y="460">revise scope</text>
+  <text class="muted tiny" x="1020" y="484">split, retire,</text>
+  <text class="muted tiny" x="1020" y="508">or supersede</text>
+
+  <rect class="panel" x="54" y="472" width="566" height="114" rx="12"/>
+  <text class="ink small" x="82" y="510">Gate laundering boundary</text>
+  <text class="muted tiny" x="82" y="542">Renaming, wrapping, merging, splitting, or retraining cannot erase failed gates,</text>
+  <text class="muted tiny" x="82" y="566">expired evidence, inherited residuals, blocked routes, fallback duties, or non-claims.</text>
+
+  <rect class="panel" x="54" y="626" width="890" height="66" rx="12"/>
+  <text class="ink small" x="82" y="666">Support-state rule</text>
+  <text class="muted tiny" x="260" y="666">A diagram, source note, or shape-valid fixture is not a readiness engine, benchmark result, safety result, or promotion.</text>
+
+  <path class="line" d="M284 200 C310 200,326 200,338 200"/>
+  <path class="line" d="M620 176 C654 144,674 132,700 130"/>
+  <path class="amber" d="M620 224 C654 264,674 300,700 316"/>
+  <path class="rose" d="M620 266 C654 356,674 476,700 498"/>
+  <path class="rose" d="M942 492 C972 452,986 414,994 386"/>
+  <path class="amber" d="M942 316 C976 292,990 252,994 226"/>
+  <path class="line" d="M942 140 C970 140,986 170,994 194"/>
+  <path class="dash" d="M1000 450 C868 628,700 648,626 546"/>
+  <path class="dash" d="M706 542 C592 624,456 646,284 660"/>
+
+  <text class="muted tiny" x="58" y="738">Status: draft visual asset; not release-reviewed. Support effect: none. It does not prove readiness-engine behavior, residual-ledger storage, quarantine enforcement, safety, benchmark performance, or release approval.</text>
+</svg>
