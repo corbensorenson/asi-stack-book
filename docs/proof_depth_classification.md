@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 137 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 642 |
-| Direct/projection-style theorem declarations | 123 |
-| Derived/decomposed theorem declarations | 519 |
+| Theorem declarations classified | 655 |
+| Direct/projection-style theorem declarations | 130 |
+| Derived/decomposed theorem declarations | 525 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -98,7 +98,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 3 | 9 | 1 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 3 | 22 | 8 | 14 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 21 | 1 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -642,14 +642,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `promoted_experiment_result_cannot_exceed_declared_fidelity_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `promoted_result_above_declared_fidelity_rejected` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `simulation_claim_used_as_evidence_includes_scope_fidelity_and_bounds` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `allowed_transition_must_be_forward_or_quarantine` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `allowed_transition_preserves_field_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `authority_expanding_replacement_without_grant_rejected` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `authority_expansion_without_grant_routes_to_governance_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `canary_transition_requires_evidence_and_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `captured_evaluator_routes_to_governance_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `complete_default_review_routes_to_default` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_authority_expansion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_transition_requires_full_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_with_open_incident_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_without_qualification_evidence_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_without_regression_floor_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_without_rollback_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `deprecated_transition_requires_notice` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `field_identity_mismatch_rejects_replacement` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `missing_evidence_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `open_incident_requires_rollback` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `qualified_transition_requires_evidence_and_regression_floor` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `replacement_requires_field_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `retired_state_cannot_transition` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `retirement_transition_requires_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `stale_qualification_lease_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `complete_layer_contract_admission_allows_contract` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `handoff_exceeding_caller_ceiling_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

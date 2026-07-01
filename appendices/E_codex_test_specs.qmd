@@ -61,6 +61,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `stable-capability-fields` | Stable Capability Fields | Authority non-escalation test | implemented | validated locally by synthetic fixtures; deployed authority enforcement not run |
 | `stable-capability-fields` | Stable Capability Fields | Rollback readiness test | implemented | validated locally by synthetic fixtures; deployed rollback not run |
 | `stable-capability-fields` | Stable Capability Fields | SCF lifecycle route proof | implemented | passes via Lean build; no deployed lifecycle enforcement claim |
+| `stable-capability-fields` | Stable Capability Fields | SCF lifecycle state-machine proof | implemented | passes via Lean build; finite transition-record predicate only |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Replacement transaction test | implemented | validated locally by synthetic fixtures; deployed replacement behavior not run |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Regression preservation test | implemented | validated locally by synthetic fixtures; real regression suite not run |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Rollback execution dry run | implemented | validated locally by synthetic fixtures; production rollback not executed |

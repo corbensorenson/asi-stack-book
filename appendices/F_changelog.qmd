@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-01 - Stable capability lifecycle transition proofs
+
+- Strengthened `AsiStackProofs.StableCapabilityFields` with a finite
+  lifecycle-state transition relation over shadow, canary, qualified, default,
+  deprecated, retired, and quarantined records.
+- Added derived transition theorems for preserved field identity, forward
+  lifecycle or quarantine routing, no transition from retired state, canary
+  evidence/rollback readiness, qualification evidence/regression floors,
+  default-promotion readiness, default-promotion negative cases, deprecation
+  notice, and retirement receipt requirements.
+- Updated the Stable Capability Fields chapter, book outline, proof manifest,
+  proof triage, proof-depth classification, proof artifact audit, proof
+  adequacy review, Appendix E, and v1.x roadmap proof-count surfaces. The
+  proof-depth classifier now reports 655 theorem declarations, 130
+  direct/projection-style declarations, and 525 derived/decomposed
+  declarations.
+- This does not promote, demote, deprecate, or refute any live claim; create
+  deployed route validation, evaluator-integrity measurement, real regression
+  preservation, terminal-state governance, lifecycle enforcement, rollback
+  execution, source evidence, external review, reader release, EPUB, PDF, DOCX,
+  audio artifact, or support-state movement.
+
 ## 2026-07-01 - Runtime adapter lease and rollback proofs
 
 - Strengthened `AsiStackProofs.RuntimeAdapters` with finite effect-lease and

@@ -198,4 +198,213 @@ theorem complete_default_review_routes_to_default
     evaluatorIndependent, withinCeiling, noIncident, rollbackReady,
     regressionPreserved, defaultRequested]
 
+inductive ScfLifecycleState where
+  | shadow
+  | canary
+  | qualified
+  | default
+  | deprecated
+  | retired
+  | quarantined
+deriving DecidableEq, Repr
+
+structure ScfLifecycleTransition where
+  fromState : ScfLifecycleState
+  toState : ScfLifecycleState
+  fieldIdentityPreserved : Bool
+  qualificationEvidencePresent : Bool
+  regressionFloorPreserved : Bool
+  authorityWithinCeiling : Bool
+  rollbackReady : Bool
+  incidentOpen : Bool
+  deprecationNoticePresent : Bool
+  retirementReceiptPresent : Bool
+deriving DecidableEq, Repr
+
+def ForwardLifecycleStep (transition : ScfLifecycleTransition) : Prop :=
+  (transition.fromState = ScfLifecycleState.shadow ∧
+      transition.toState = ScfLifecycleState.canary) ∨
+    (transition.fromState = ScfLifecycleState.canary ∧
+      transition.toState = ScfLifecycleState.qualified) ∨
+    (transition.fromState = ScfLifecycleState.qualified ∧
+      transition.toState = ScfLifecycleState.default) ∨
+    (transition.fromState = ScfLifecycleState.default ∧
+      transition.toState = ScfLifecycleState.deprecated) ∨
+    (transition.fromState = ScfLifecycleState.deprecated ∧
+      transition.toState = ScfLifecycleState.retired) ∨
+    (transition.incidentOpen = true ∧
+      transition.toState = ScfLifecycleState.quarantined)
+
+def TransitionIdentityPreserved
+    (transition : ScfLifecycleTransition) : Prop :=
+  transition.fieldIdentityPreserved = true
+
+def TransitionNotFromRetired
+    (transition : ScfLifecycleTransition) : Prop :=
+  transition.fromState ≠ ScfLifecycleState.retired
+
+def CanaryTransitionReady
+    (transition : ScfLifecycleTransition) : Prop :=
+  transition.toState = ScfLifecycleState.canary ->
+    transition.qualificationEvidencePresent = true ∧
+      transition.rollbackReady = true
+
+def QualifiedTransitionReady
+    (transition : ScfLifecycleTransition) : Prop :=
+  transition.toState = ScfLifecycleState.qualified ->
+    transition.qualificationEvidencePresent = true ∧
+      transition.regressionFloorPreserved = true
+
+def DefaultTransitionReady
+    (transition : ScfLifecycleTransition) : Prop :=
+  transition.toState = ScfLifecycleState.default ->
+    transition.qualificationEvidencePresent = true ∧
+      transition.regressionFloorPreserved = true ∧
+        transition.authorityWithinCeiling = true ∧
+          transition.rollbackReady = true ∧
+            transition.incidentOpen = false
+
+def DeprecationTransitionReady
+    (transition : ScfLifecycleTransition) : Prop :=
+  transition.toState = ScfLifecycleState.deprecated ->
+    transition.deprecationNoticePresent = true
+
+def RetirementTransitionReady
+    (transition : ScfLifecycleTransition) : Prop :=
+  transition.toState = ScfLifecycleState.retired ->
+    transition.retirementReceiptPresent = true
+
+def ScfLifecycleTransitionAllowed
+    (transition : ScfLifecycleTransition) : Prop :=
+  ForwardLifecycleStep transition ∧
+    TransitionIdentityPreserved transition ∧
+      TransitionNotFromRetired transition ∧
+        CanaryTransitionReady transition ∧
+          QualifiedTransitionReady transition ∧
+            DefaultTransitionReady transition ∧
+              DeprecationTransitionReady transition ∧
+                RetirementTransitionReady transition
+
+theorem allowed_transition_preserves_field_identity
+    {transition : ScfLifecycleTransition} :
+    ScfLifecycleTransitionAllowed transition ->
+      transition.fieldIdentityPreserved = true := by
+  intro allowed
+  exact allowed.right.left
+
+theorem allowed_transition_must_be_forward_or_quarantine
+    {transition : ScfLifecycleTransition} :
+    ScfLifecycleTransitionAllowed transition ->
+      ForwardLifecycleStep transition := by
+  intro allowed
+  exact allowed.left
+
+theorem retired_state_cannot_transition
+    {transition : ScfLifecycleTransition} :
+    transition.fromState = ScfLifecycleState.retired ->
+      ¬ ScfLifecycleTransitionAllowed transition := by
+  intro retiredFrom allowed
+  have notRetired := allowed.right.right.left
+  exact notRetired retiredFrom
+
+theorem canary_transition_requires_evidence_and_rollback
+    {transition : ScfLifecycleTransition} :
+    ScfLifecycleTransitionAllowed transition ->
+      transition.toState = ScfLifecycleState.canary ->
+        transition.qualificationEvidencePresent = true ∧
+          transition.rollbackReady = true := by
+  intro allowed toCanary
+  exact allowed.right.right.right.left toCanary
+
+theorem qualified_transition_requires_evidence_and_regression_floor
+    {transition : ScfLifecycleTransition} :
+    ScfLifecycleTransitionAllowed transition ->
+      transition.toState = ScfLifecycleState.qualified ->
+        transition.qualificationEvidencePresent = true ∧
+          transition.regressionFloorPreserved = true := by
+  intro allowed toQualified
+  exact allowed.right.right.right.right.left toQualified
+
+theorem default_transition_requires_full_readiness
+    {transition : ScfLifecycleTransition} :
+    ScfLifecycleTransitionAllowed transition ->
+      transition.toState = ScfLifecycleState.default ->
+        transition.qualificationEvidencePresent = true ∧
+          transition.regressionFloorPreserved = true ∧
+            transition.authorityWithinCeiling = true ∧
+              transition.rollbackReady = true ∧
+                transition.incidentOpen = false := by
+  intro allowed toDefault
+  exact allowed.right.right.right.right.right.left toDefault
+
+theorem default_without_qualification_evidence_rejected
+    {transition : ScfLifecycleTransition} :
+    transition.toState = ScfLifecycleState.default ->
+      transition.qualificationEvidencePresent = false ->
+        ¬ ScfLifecycleTransitionAllowed transition := by
+  intro toDefault missingEvidence allowed
+  have ready := default_transition_requires_full_readiness allowed toDefault
+  rw [missingEvidence] at ready
+  cases ready.left
+
+theorem default_without_regression_floor_rejected
+    {transition : ScfLifecycleTransition} :
+    transition.toState = ScfLifecycleState.default ->
+      transition.regressionFloorPreserved = false ->
+        ¬ ScfLifecycleTransitionAllowed transition := by
+  intro toDefault missingRegression allowed
+  have ready := default_transition_requires_full_readiness allowed toDefault
+  have regressionReady := ready.right.left
+  rw [missingRegression] at regressionReady
+  cases regressionReady
+
+theorem default_authority_expansion_rejected
+    {transition : ScfLifecycleTransition} :
+    transition.toState = ScfLifecycleState.default ->
+      transition.authorityWithinCeiling = false ->
+        ¬ ScfLifecycleTransitionAllowed transition := by
+  intro toDefault authorityExpansion allowed
+  have ready := default_transition_requires_full_readiness allowed toDefault
+  have authorityReady := ready.right.right.left
+  rw [authorityExpansion] at authorityReady
+  cases authorityReady
+
+theorem default_without_rollback_rejected
+    {transition : ScfLifecycleTransition} :
+    transition.toState = ScfLifecycleState.default ->
+      transition.rollbackReady = false ->
+        ¬ ScfLifecycleTransitionAllowed transition := by
+  intro toDefault rollbackMissing allowed
+  have ready := default_transition_requires_full_readiness allowed toDefault
+  have rollbackReady := ready.right.right.right.left
+  rw [rollbackMissing] at rollbackReady
+  cases rollbackReady
+
+theorem default_with_open_incident_rejected
+    {transition : ScfLifecycleTransition} :
+    transition.toState = ScfLifecycleState.default ->
+      transition.incidentOpen = true ->
+        ¬ ScfLifecycleTransitionAllowed transition := by
+  intro toDefault incidentOpen allowed
+  have ready := default_transition_requires_full_readiness allowed toDefault
+  have noIncident := ready.right.right.right.right
+  rw [incidentOpen] at noIncident
+  cases noIncident
+
+theorem deprecated_transition_requires_notice
+    {transition : ScfLifecycleTransition} :
+    ScfLifecycleTransitionAllowed transition ->
+      transition.toState = ScfLifecycleState.deprecated ->
+        transition.deprecationNoticePresent = true := by
+  intro allowed toDeprecated
+  exact allowed.right.right.right.right.right.right.left toDeprecated
+
+theorem retirement_transition_requires_receipt
+    {transition : ScfLifecycleTransition} :
+    ScfLifecycleTransitionAllowed transition ->
+      transition.toState = ScfLifecycleState.retired ->
+        transition.retirementReceiptPresent = true := by
+  intro allowed toRetired
+  exact allowed.right.right.right.right.right.right.right toRetired
+
 end AsiStackProofs.StableCapabilityFields

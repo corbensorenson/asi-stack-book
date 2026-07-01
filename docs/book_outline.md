@@ -662,6 +662,7 @@ Draft deliverables:
 - Planned Codex test: Authority non-escalation test.
 - Implemented Codex test: Rollback readiness test, via `python3 scripts/validate_readiness_residual_gates.py` over rollback receipt, monitor-state, and residual-escrow scenarios; deployed rollback remains unrun.
 - Implemented proof-backed check: finite SCF lifecycle route proof for identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation; this is structured-record coverage only, not deployed lifecycle enforcement.
+- Implemented proof-backed check: finite SCF lifecycle state-machine proof over shadow, canary, qualified, default, deprecated, retired, and quarantined transition records. It requires preserved field identity, rejects transitions from retired state, constrains default promotion by evidence, regression floor, authority ceiling, rollback readiness, and incident closure, and requires deprecation notices and retirement receipts for terminal transitions.
 
 Lean proof targets:
 
@@ -669,7 +670,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:scf.field_identity.operational_invariant` | `AsiStackProofs.StableCapabilityFields` | An implementation can replace another only if it satisfies the field qualification predicate. | implemented |
 | `lean:scf.field_identity.failure_blocks_promotion` | `AsiStackProofs.StableCapabilityFields` | A replacement that expands authority without a governance grant is rejected. | implemented |
-| `lean:scf.lifecycle.route_envelope` | `AsiStackProofs.StableCapabilityFields` | A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation away from default use. | implemented |
+| `lean:scf.lifecycle.route_envelope` | `AsiStackProofs.StableCapabilityFields` | A structured SCF lifecycle review and finite lifecycle-state transition relation route identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, missing regression preservation, missing deprecation notice, and missing retirement receipt away from default or terminal promotion. | implemented |
 
 ### Capability Replacement and Rollback
 
