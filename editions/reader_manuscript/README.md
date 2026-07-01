@@ -3,9 +3,10 @@
 This directory is the tracked home for manually edited human-reader manuscript
 work when generated reader source plus semantic overlays are no longer enough.
 
-The current v1.0 state is `drafting`. `v1_0/manifest.json` records forty-two
-drafting-only curated chapter records, but none are release-approved and none
-are equal authority beside the live book. The live Quarto book, generated reader
+The current v1.0 state is `drafting`. `v1_0/manifest.json` records forty-four
+drafting-only curated chapter records, with no active manifest chapter missing a
+curated reader file, but none are release-approved and none are equal authority
+beside the live book. The live Quarto book, generated reader
 edition, and reader overlays remain the active release path until reconciliation,
 format artifact review, and an edition release record actually exist.
 

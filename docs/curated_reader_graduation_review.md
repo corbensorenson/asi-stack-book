@@ -24,8 +24,8 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Generated-reader chapter-text review: complete for all 44 current chapters
 - Active reader-overlay operations: 31
 - Companion-note candidates: 3
-- Curated-manuscript candidates: 42
-- Curated chapter records: 42 drafting records for
+- Curated-manuscript candidates: 44
+- Curated chapter records: 44 drafting records; see `editions/reader_manuscript/v1_0/manifest.json` and `editions/reader_manuscript/v1_0/reconciliation_report.md` for the current chapter-level list. Earlier curated records include
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -197,7 +197,7 @@ true:
 
 ## Non-Claims
 
-- This review creates forty-two drafting-only curated reader chapter files for
+- This review records forty-four drafting-only curated reader chapter files for
   future prose editing; it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.

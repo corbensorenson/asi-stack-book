@@ -20,7 +20,7 @@
   },
   "disposition_counts": {
     "companion_note_candidate": 3,
-    "curated_manuscript_candidate": 42,
+    "curated_manuscript_candidate": 44,
     "no_immediate_action": 44,
     "reader_overlay_active": 19
   },
@@ -705,12 +705,13 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
         "docs/reader_part_iii_compression_full_review_pass.md#decisions"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. Compactness remains framed as burden accounting: reconstruction, decision, governance, verifier independence, fallback, residual displacement, use envelopes, and non-promotion boundaries stay visible.",
+      "review_notes": "Drafting-only curated reader manuscript file now exists; release blockers remain active and this row is not a release approval.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -753,12 +754,13 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
         "docs/reader_part_iii_compression_full_review_pass.md#decisions"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. The existing overlay makes admission states readable while preserving full-artifact fallback, representation/reconstruction/ratio/utility split, residual coding, decode determinism, access-pattern policy, and artifact-evidence non-claims.",
+      "review_notes": "Drafting-only curated reader manuscript file now exists; release blockers remain active and this row is not a release approval.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

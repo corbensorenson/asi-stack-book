@@ -1583,6 +1583,76 @@
       "canonical_change_required": false,
       "canonical_change_ref": "",
       "review_notes": "First curated reader prose pass remains drafting-only; the 2026-06-30 MoECOT fold moves active live-source authority into routing-heads-and-specialist-cores while the archived standalone reader draft remains historical and not release-reviewed."
+    },
+    {
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
+      "file": "editions/reader_manuscript/v1_0/chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "live_source_ref": "chapters/compact-generative-systems-and-residual-honesty.qmd@2a2dd4bad",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honesty.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#compact-generative-systems-and-residual-honesty",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "paragraph ordering",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader pass strengthens the human-reader opening around residual honesty: small only counts after the remainder is named. It preserves CGS, generate/verify/repair, semantic-leasing, proof/test, source, and support-state boundaries without adding implementation or benchmark claims.",
+      "meaning_preservation_checks": [
+        "support-state boundary remains design rationale with argument support",
+        "source boundary preserved: CGS, BBVCA, TreeLLM, RankFold, BugBrain, and related sources remain architectural/contextual unless locally reproduced",
+        "proof/test status preserved: current Lean and fixture work supports record-shape and bounded predicate checks only",
+        "implementation horizon preserved without implying codec, utility, TreeLLM, or semantic-graph implementation",
+        "release blocker status preserved until human editorial review, artifact review, and edition release record clear it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "See docs/curated_reader_compact_generative_systems_prose_pass.md. Drafting-only first curated reader pass; not release-reviewed."
+    },
+    {
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "title": "RankFold, NeuralFold, and Artifact Compression",
+      "file": "editions/reader_manuscript/v1_0/chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "reconciliation_status": "drafting",
+      "generated_baseline_ref": "build/reader_edition/chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "live_source_ref": "chapters/rankfold-neuralfold-and-artifact-compression.qmd@2a2dd4bad",
+      "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#rankfold-neuralfold-and-artifact-compression.core",
+      "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#rankfold-neuralfold-and-artifact-compression",
+      "curation_scope": [
+        "pacing",
+        "chapter openings and closings",
+        "section flow",
+        "transition prose",
+        "sentence-level voice",
+        "paragraph ordering",
+        "chapter compression"
+      ],
+      "divergence_summary": "First curated reader pass strengthens the archive-facing opening around routed artifact compression: a compressed artifact earns one use at a time. It preserves RankFold/NeuralFold, BBVCA, CGS, source, proof/test, and support-state boundaries without adding compressor or benchmark claims.",
+      "meaning_preservation_checks": [
+        "support-state boundary remains design rationale with argument support",
+        "source boundary preserved: RankFold/NeuralFold, RankFold compressor, BBVCA, CGS, and external compression sources remain architectural/contextual unless locally reproduced",
+        "proof/test status preserved: current fixture work supports record-shape checks only",
+        "implementation horizon preserved without implying compressor, deterministic decoder, corpus benchmark, utility probe, or admission-system implementation",
+        "release blocker status preserved until human editorial review, artifact review, and edition release record clear it"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "curated_reconciliation_not_approved"
+      ],
+      "canonical_change_required": false,
+      "canonical_change_ref": "",
+      "review_notes": "See docs/curated_reader_rankfold_artifact_compression_prose_pass.md. Drafting-only first curated reader pass; not release-reviewed."
     }
   ],
   "reconciliation_report": {

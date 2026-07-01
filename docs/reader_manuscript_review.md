@@ -132,7 +132,7 @@ rows from `docs/reader_opening_full_review_pass.md`,
 `docs/reader_part_iv_evidence_governance_full_review_pass.md`, and
 `docs/reader_part_iv_completion_full_review_pass.md`. It has 0 `spot_checked`
 rows, 0 `not_started` rows, 19 chapters with active reader overlays, 44 no-immediate-action decisions, 3 companion-note
-candidates, and 42 curated-manuscript candidates. The reviewed rows have cleared
+candidates, and 44 curated-manuscript candidates. The reviewed rows have cleared
 the `full_chapter_review_not_recorded` blocker, but all rows still retain
 release blockers until reader release records and format artifact review exist.
 The matrix is a chapter-text review queue and release-control surface, not a
