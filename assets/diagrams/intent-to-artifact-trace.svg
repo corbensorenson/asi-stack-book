@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Intent to artifact trace draft figure</title>
+  <desc id="desc">A draft systems diagram showing accepted intent becoming a command contract, plan graph, typed job, approval and authority check, adapter effect, artifact graph node, evidence ledger update, replay status, feedback, residuals, and non-claims.</desc>
+  <defs>
+    <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#256b7c"/>
+    </marker>
+    <marker id="arrow-copper" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#a86f45"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#18202a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #d8dee6; stroke-width: 2; }
+      .contract { fill: #f5f1fa; stroke: #765a8a; stroke-width: 2.5; }
+      .work { fill: #f4f8fa; stroke: #256b7c; stroke-width: 2.5; }
+      .gate { fill: #fff8f2; stroke: #a86f45; stroke-width: 2.5; }
+      .artifact { fill: #f2f8f5; stroke: #497b5b; stroke-width: 2.5; }
+      .residual { fill: #fbf3f5; stroke: #8a5264; stroke-width: 2.5; }
+      .ink { fill: #18202a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #5a6675; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 750; }
+      .small { font-size: 18px; font-weight: 650; }
+      .tiny { font-size: 15px; font-weight: 550; }
+      .caption { font-size: 16px; font-weight: 600; }
+      .line { fill: none; stroke: #256b7c; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-teal); }
+      .copper { fill: none; stroke: #a86f45; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-copper); }
+      .dash { fill: none; stroke: #5a6675; stroke-width: 2.5; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink label" x="58" y="62">Intent to Artifact Trace</text>
+  <text class="muted caption" x="58" y="92">Draft key figure. Work is governed only if the request, contract, job, effect, artifact, and evidence path stay linked.</text>
+
+  <rect class="panel" x="54" y="132" width="178" height="122" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="80" y="170">Accepted intent</text>
+  <text class="muted tiny" x="80" y="202">objective, limits,</text>
+  <text class="muted tiny" x="80" y="226">authority scope</text>
+
+  <rect class="contract" x="284" y="112" width="208" height="162" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="312" y="150">Command contract</text>
+  <text class="muted tiny" x="312" y="182">semantic fields</text>
+  <text class="muted tiny" x="312" y="206">output contract</text>
+  <text class="muted tiny" x="312" y="230">verification and stops</text>
+
+  <rect class="work" x="552" y="92" width="190" height="126" rx="12"/>
+  <text class="ink small" x="580" y="130">Plan graph</text>
+  <text class="muted tiny" x="580" y="162">dependencies,</text>
+  <text class="muted tiny" x="580" y="186">blocked nodes, routes</text>
+
+  <rect class="work" x="552" y="260" width="190" height="126" rx="12"/>
+  <text class="ink small" x="580" y="298">Typed job</text>
+  <text class="muted tiny" x="580" y="330">lifecycle, inputs,</text>
+  <text class="muted tiny" x="580" y="354">outputs, replay duty</text>
+
+  <rect class="gate" x="804" y="140" width="184" height="142" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="832" y="178">Authority gate</text>
+  <text class="muted tiny" x="832" y="210">approval, lease,</text>
+  <text class="muted tiny" x="832" y="234">permission class,</text>
+  <text class="muted tiny" x="832" y="258">stop condition</text>
+
+  <rect class="gate" x="804" y="326" width="184" height="122" rx="12"/>
+  <text class="ink small" x="832" y="364">Adapter effect</text>
+  <text class="muted tiny" x="832" y="396">tool call, write,</text>
+  <text class="muted tiny" x="832" y="420">publish, spend</text>
+
+  <rect class="artifact" x="1044" y="126" width="112" height="142" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="1064" y="164">Artifact</text>
+  <text class="muted tiny" x="1064" y="196">node</text>
+  <text class="muted tiny" x="1064" y="220">audit refs</text>
+  <text class="muted tiny" x="1064" y="244">lineage</text>
+
+  <rect class="artifact" x="804" y="520" width="352" height="98" rx="12"/>
+  <text class="ink small" x="832" y="558">Evidence, replay, and feedback</text>
+  <text class="muted tiny" x="832" y="590">claim/test links, replay grade, residuals, reviewer notes, changelog refs</text>
+
+  <rect class="residual" x="284" y="506" width="458" height="112" rx="12"/>
+  <text class="ink small" x="312" y="544">Refusal, residual, or re-contract path</text>
+  <text class="muted tiny" x="312" y="576">ambiguity, authority overreach, missing approval, failed verification,</text>
+  <text class="muted tiny" x="312" y="600">unreplayable effect, incomplete artifact, or non-claim boundary</text>
+
+  <rect class="panel" x="54" y="650" width="870" height="62" rx="12"/>
+  <text class="ink small" x="82" y="688">Boundary rule</text>
+  <text class="muted tiny" x="230" y="688">A useful output is not governed work until the trace preserves authority, artifact, replay, residual, and evidence boundaries.</text>
+
+  <path class="line" d="M232 194 C252 194,266 194,278 194"/>
+  <path class="line" d="M492 178 C520 160,534 154,546 154"/>
+  <path class="line" d="M648 218 L648 254"/>
+  <path class="line" d="M742 322 C774 306,788 246,798 214"/>
+  <path class="line" d="M896 282 L896 320"/>
+  <path class="line" d="M988 390 C1018 364,1034 250,1038 208"/>
+  <path class="line" d="M1100 268 C1100 390,1040 486,1010 516"/>
+  <path class="line" d="M980 618 C930 650,788 666,726 618"/>
+  <path class="copper" d="M492 234 C502 356,424 470,388 500"/>
+  <path class="copper" d="M742 366 C742 432,720 480,696 500"/>
+  <path class="copper" d="M896 448 C860 486,802 506,742 534"/>
+  <path class="dash" d="M742 562 C760 562,776 562,798 562"/>
+
+  <text class="muted tiny" x="58" y="738">Status: draft visual asset; not release-reviewed. Support effect: none. It does not prove parser, planner, dispatcher, adapter, artifact, or replay behavior.</text>
+</svg>
