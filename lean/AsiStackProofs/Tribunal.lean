@@ -141,4 +141,220 @@ theorem action_verdict_without_actions_or_constraints_rejected
           rw [constraintsMissing] at constraintsRecorded
           contradiction
 
+inductive TribunalReviewRoute where
+  | rejectMissingReview
+  | requestDossier
+  | requestAdversarialProbe
+  | requestIndependentReviewer
+  | rejectChangedEvidenceReuse
+  | preserveDissent
+  | requestActionConstraints
+  | requestEvidenceTransition
+  | acceptBoundedVerdict
+deriving DecidableEq, Repr
+
+structure TribunalReviewLifecycle where
+  reviewRequested : Bool
+  dossierPresent : Bool
+  highRisk : Bool
+  adversarialProbeRecorded : Bool
+  independentReviewerPresent : Bool
+  evidenceRefsPresent : Bool
+  priorReviewReused : Bool
+  evidenceUnchanged : Bool
+  dissentPresent : Bool
+  dissentRecorded : Bool
+  actionVerdict : Bool
+  requiredActionRecorded : Bool
+  constraintsRecorded : Bool
+  supportStateChangeRequested : Bool
+  evidenceTransitionRecordPresent : Bool
+deriving DecidableEq, Repr
+
+def TribunalReviewRouteFor (review : TribunalReviewLifecycle) :
+    TribunalReviewRoute :=
+  if review.reviewRequested = false then
+    TribunalReviewRoute.rejectMissingReview
+  else if review.dossierPresent = false then
+    TribunalReviewRoute.requestDossier
+  else if review.evidenceRefsPresent = false then
+    TribunalReviewRoute.requestDossier
+  else if review.highRisk = true ∧ review.adversarialProbeRecorded = false then
+    TribunalReviewRoute.requestAdversarialProbe
+  else if review.highRisk = true ∧ review.independentReviewerPresent = false then
+    TribunalReviewRoute.requestIndependentReviewer
+  else if review.priorReviewReused = true ∧ review.evidenceUnchanged = false then
+    TribunalReviewRoute.rejectChangedEvidenceReuse
+  else if review.dissentPresent = true ∧ review.dissentRecorded = false then
+    TribunalReviewRoute.preserveDissent
+  else if review.actionVerdict = true ∧
+      (review.requiredActionRecorded = false ∨
+        review.constraintsRecorded = false) then
+    TribunalReviewRoute.requestActionConstraints
+  else if review.supportStateChangeRequested = true ∧
+      review.evidenceTransitionRecordPresent = false then
+    TribunalReviewRoute.requestEvidenceTransition
+  else
+    TribunalReviewRoute.acceptBoundedVerdict
+
+theorem tribunal_route_missing_review_rejects :
+    TribunalReviewRouteFor {
+      reviewRequested := false,
+      dossierPresent := false,
+      highRisk := false,
+      adversarialProbeRecorded := false,
+      independentReviewerPresent := false,
+      evidenceRefsPresent := false,
+      priorReviewReused := false,
+      evidenceUnchanged := false,
+      dissentPresent := false,
+      dissentRecorded := false,
+      actionVerdict := false,
+      requiredActionRecorded := false,
+      constraintsRecorded := false,
+      supportStateChangeRequested := false,
+      evidenceTransitionRecordPresent := false
+    } = TribunalReviewRoute.rejectMissingReview := by
+  simp [TribunalReviewRouteFor]
+
+theorem high_risk_without_probe_routes_to_adversarial_probe :
+    TribunalReviewRouteFor {
+      reviewRequested := true,
+      dossierPresent := true,
+      highRisk := true,
+      adversarialProbeRecorded := false,
+      independentReviewerPresent := true,
+      evidenceRefsPresent := true,
+      priorReviewReused := false,
+      evidenceUnchanged := true,
+      dissentPresent := false,
+      dissentRecorded := false,
+      actionVerdict := false,
+      requiredActionRecorded := true,
+      constraintsRecorded := true,
+      supportStateChangeRequested := false,
+      evidenceTransitionRecordPresent := true
+    } = TribunalReviewRoute.requestAdversarialProbe := by
+  simp [TribunalReviewRouteFor]
+
+theorem high_risk_without_independent_reviewer_routes_to_independent_review :
+    TribunalReviewRouteFor {
+      reviewRequested := true,
+      dossierPresent := true,
+      highRisk := true,
+      adversarialProbeRecorded := true,
+      independentReviewerPresent := false,
+      evidenceRefsPresent := true,
+      priorReviewReused := false,
+      evidenceUnchanged := true,
+      dissentPresent := false,
+      dissentRecorded := false,
+      actionVerdict := false,
+      requiredActionRecorded := true,
+      constraintsRecorded := true,
+      supportStateChangeRequested := false,
+      evidenceTransitionRecordPresent := true
+    } = TribunalReviewRoute.requestIndependentReviewer := by
+  simp [TribunalReviewRouteFor]
+
+theorem changed_evidence_blocks_prior_review_reuse :
+    TribunalReviewRouteFor {
+      reviewRequested := true,
+      dossierPresent := true,
+      highRisk := false,
+      adversarialProbeRecorded := true,
+      independentReviewerPresent := true,
+      evidenceRefsPresent := true,
+      priorReviewReused := true,
+      evidenceUnchanged := false,
+      dissentPresent := false,
+      dissentRecorded := false,
+      actionVerdict := false,
+      requiredActionRecorded := true,
+      constraintsRecorded := true,
+      supportStateChangeRequested := false,
+      evidenceTransitionRecordPresent := true
+    } = TribunalReviewRoute.rejectChangedEvidenceReuse := by
+  simp [TribunalReviewRouteFor]
+
+theorem unrecorded_dissent_routes_to_dissent_preservation :
+    TribunalReviewRouteFor {
+      reviewRequested := true,
+      dossierPresent := true,
+      highRisk := false,
+      adversarialProbeRecorded := true,
+      independentReviewerPresent := true,
+      evidenceRefsPresent := true,
+      priorReviewReused := false,
+      evidenceUnchanged := true,
+      dissentPresent := true,
+      dissentRecorded := false,
+      actionVerdict := false,
+      requiredActionRecorded := true,
+      constraintsRecorded := true,
+      supportStateChangeRequested := false,
+      evidenceTransitionRecordPresent := true
+    } = TribunalReviewRoute.preserveDissent := by
+  simp [TribunalReviewRouteFor]
+
+theorem action_verdict_without_constraints_routes_to_action_constraints :
+    TribunalReviewRouteFor {
+      reviewRequested := true,
+      dossierPresent := true,
+      highRisk := false,
+      adversarialProbeRecorded := true,
+      independentReviewerPresent := true,
+      evidenceRefsPresent := true,
+      priorReviewReused := false,
+      evidenceUnchanged := true,
+      dissentPresent := false,
+      dissentRecorded := false,
+      actionVerdict := true,
+      requiredActionRecorded := false,
+      constraintsRecorded := true,
+      supportStateChangeRequested := false,
+      evidenceTransitionRecordPresent := true
+    } = TribunalReviewRoute.requestActionConstraints := by
+  simp [TribunalReviewRouteFor]
+
+theorem support_change_without_evidence_transition_routes_to_evidence_review :
+    TribunalReviewRouteFor {
+      reviewRequested := true,
+      dossierPresent := true,
+      highRisk := false,
+      adversarialProbeRecorded := true,
+      independentReviewerPresent := true,
+      evidenceRefsPresent := true,
+      priorReviewReused := false,
+      evidenceUnchanged := true,
+      dissentPresent := false,
+      dissentRecorded := false,
+      actionVerdict := false,
+      requiredActionRecorded := true,
+      constraintsRecorded := true,
+      supportStateChangeRequested := true,
+      evidenceTransitionRecordPresent := false
+    } = TribunalReviewRoute.requestEvidenceTransition := by
+  simp [TribunalReviewRouteFor]
+
+theorem complete_bounded_tribunal_review_accepts :
+    TribunalReviewRouteFor {
+      reviewRequested := true,
+      dossierPresent := true,
+      highRisk := true,
+      adversarialProbeRecorded := true,
+      independentReviewerPresent := true,
+      evidenceRefsPresent := true,
+      priorReviewReused := true,
+      evidenceUnchanged := true,
+      dissentPresent := true,
+      dissentRecorded := true,
+      actionVerdict := true,
+      requiredActionRecorded := true,
+      constraintsRecorded := true,
+      supportStateChangeRequested := false,
+      evidenceTransitionRecordPresent := true
+    } = TribunalReviewRoute.acceptBoundedVerdict := by
+  simp [TribunalReviewRouteFor]
+
 end AsiStackProofs.Tribunal

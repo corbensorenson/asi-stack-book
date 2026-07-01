@@ -4316,6 +4316,13 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean negative case; no deployed enforcement or verdict-correctness claim",
               "status": "implemented in AsiStackProofs.Tribunal; no action-enforcement claim"
+            },
+            {
+              "name": "Tribunal lifecycle route envelope",
+              "purpose": "Check that finite tribunal review lifecycle records route missing review, high-risk probe and independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review to distinct modeled outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no tribunal runtime, reviewer-quality, probe-quality, verdict-correctness, action-enforcement, or support-state-promotion claim",
+              "status": "implemented in AsiStackProofs.Tribunal; no deployed tribunal behavior claim"
             }
           ],
           "lean_module": "AsiStackProofs.ProofCarryingClaims; AsiStackProofs.Tribunal",

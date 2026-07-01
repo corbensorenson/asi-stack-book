@@ -1416,6 +1416,7 @@ Draft deliverables:
 - Folded-history preservation for `unified-adaptive-tribunal-and-adversarial-review.core` as a subclaim about bounded dossiers, reviewer roles, adversarial probes, dissent, verdict constraints, cycle caps, unchanged-evidence guards, and required actions.
 - Implemented protocol validation: `proof_carrying_claim` and `tribunal_review_record` fixtures validate public record shape only.
 - Implemented Codex tests: proof-carrying claim synthetic harness and tribunal-review synthetic harness.
+- Implemented Lean follow-through: `AsiStackProofs.Tribunal` now includes a finite lifecycle route envelope for missing review, high-risk probe/independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review, without claiming reviewer quality, probe quality, verdict correctness, action enforcement, deployed tribunal behavior, or support-state promotion.
 - Planned Codex test: Tier assignment over real verifier outputs.
 - Planned Codex test: Adversarial review quality over reproducible dossiers.
 

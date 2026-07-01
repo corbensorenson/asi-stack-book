@@ -123,6 +123,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | High-risk accepted-verdict negative case | implemented | passes via Lean negative case; no reviewer-independence or probe-quality claim |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Prior-review reuse negative case | implemented | passes via Lean negative case; no prior-review adequacy or semantic-equivalence claim |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Action verdict negative case | implemented | passes via Lean negative case; no deployed enforcement or verdict-correctness claim |
+| `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Tribunal lifecycle route envelope | implemented | passes via Lean route theorems; no tribunal runtime, reviewer-quality, probe-quality, verdict-correctness, action-enforcement, or support-state-promotion claim |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job lifecycle test | implemented | passes via Lean build and synthetic plan-execution contract harness |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Job execution route proof | implemented | passes via Lean build; finite job-execution route coverage only |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Tool permission enforcement test | planned | not run |

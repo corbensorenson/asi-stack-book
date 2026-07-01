@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-07-01 - Tribunal lifecycle route proof
+
+- Strengthened the folded `AsiStackProofs.Tribunal` proof surface with a finite
+  `TribunalReviewRoute`, `TribunalReviewLifecycle`, and
+  `TribunalReviewRouteFor` decision function over missing review, dossier and
+  evidence refs, high-risk probe and independence records, prior-review reuse,
+  changed evidence, dissent preservation, action constraints, support-state
+  change requests, and evidence-transition records.
+- Added derived route theorems showing that missing review rejects the record,
+  high-risk probe gaps route to adversarial probing, high-risk independence gaps
+  route to independent review, changed evidence blocks prior-review reuse,
+  unrecorded dissent routes to dissent preservation, action verdicts missing
+  records route to action constraints, support-state changes without
+  evidence-transition records route to evidence review, and complete bounded
+  review can accept within scope.
+- Added the Tribunal lifecycle route envelope to `book_structure.json` and
+  regenerated Appendix E. Appendix E now records 322 generated chapter-level
+  rows: 222 implemented, 1 partial, and 99 planned. The proof-depth classifier
+  now reports 395 theorem declarations, 121 direct/projection-style
+  declarations, and 274 derived/decomposed declarations across 123 manifest
+  proof targets.
+- Updated the folded Spinoza/Tribunal chapter, book outline, proof adequacy
+  review, proof-depth/audit reports, v1.0 roadmap/status/focus surfaces, and
+  status snapshot guard. This does not implement a live tribunal, reviewer
+  independence audit, adversarial-probe-quality test, verdict-correctness test,
+  action enforcement, appeal-quality test, support-state promotion, reader
+  artifact approval, or release approval.
+
 ## 2026-07-01 - Artifact steward contribution and federation proofs
 
 - Strengthened `AsiStackProofs.ArtifactStewardAgents` with finite

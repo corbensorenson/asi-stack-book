@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 123 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 387 |
+| Theorem declarations classified | 395 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 266 |
+| Derived/decomposed theorem declarations | 274 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -101,7 +101,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 3 | 9 | 1 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 3 | 12 | 2 | 10 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -450,9 +450,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TheseusReference.lean` | `replay_ready_without_replay_boundary_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `accepted_prior_review_reuse_without_unchanged_evidence_guard_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `action_verdict_without_actions_or_constraints_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/Tribunal.lean` | `action_verdict_without_constraints_routes_to_action_constraints` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Tribunal.lean` | `changed_evidence_blocks_prior_review_reuse` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Tribunal.lean` | `complete_bounded_tribunal_review_accepts` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Tribunal.lean` | `high_risk_accepted_verdict_without_probes_or_independence_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `high_risk_artifact_without_required_tribunal_review_cannot_be_accepted` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Tribunal.lean` | `high_risk_without_independent_reviewer_routes_to_independent_review` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Tribunal.lean` | `high_risk_without_probe_routes_to_adversarial_probe` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Tribunal.lean` | `support_change_without_evidence_transition_routes_to_evidence_review` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Tribunal.lean` | `tribunal_route_missing_review_rejects` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Tribunal.lean` | `tribunal_verdict_includes_roles_evidence_and_unresolved_dissent` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Tribunal.lean` | `unrecorded_dissent_routes_to_dissent_preservation` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TypedJobs.lean` | `complete_retirement_review_retires_job` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `delivered_unverified_output_routes_to_adjudication` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `delivered_verified_output_is_evidence_ready` | derived_or_decomposed | no | uses simp, unfold |
