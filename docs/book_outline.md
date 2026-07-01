@@ -1353,6 +1353,7 @@ Draft deliverables:
 - Planned Codex test: Contradiction detection test.
 - Implemented Lean proof target: finite claim updates preserve prior evidence and revision-history references.
 - Implemented Lean proof target: open contradictions block promotion until handled.
+- Implemented Lean proof target: finite revision-lifecycle routing sends missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit modeled outcomes.
 - Planned Codex test: belief revision engine test.
 
 Lean proof targets:
@@ -1361,6 +1362,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | implemented |
 | `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | implemented |
+| `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedger` | A modeled revision request routes missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
 
 ### Proof-Carrying Claims and Adversarial Review
 
@@ -2610,8 +2612,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 123 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 123 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 124 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 124 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

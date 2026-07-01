@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-07-01 - Claim-ledger revision lifecycle route proof
+
+- Strengthened `AsiStackProofs.ClaimLedger` with a finite
+  `ClaimLedgerRevisionRoute`, `ClaimLedgerRevisionReview`, and
+  `ClaimLedgerRevisionRouteFor` decision surface over revision requests, claim
+  identity, support-state records, evidence-transition material, evidence refs,
+  support-state increases, contradiction state, history refs, non-overwrite
+  attestations, surface synchronization, split history, downgrade reasons,
+  residual refs, and non-claim boundaries.
+- Added a third Claim Ledger proof target,
+  `lean:claims.ledger.revision_lifecycle_route`, plus derived route theorems
+  showing that missing claim identity is rejected; support-state gaps request
+  repair; unsupported promotions request evidence-transition material; open
+  contradiction promotions are blocked; non-promotional open contradictions
+  request handling; missing history, non-overwrite attestations, surface sync,
+  split history, downgrade reasons, residual refs, and non-claim boundaries
+  route to explicit repair or preservation outcomes; and complete modeled
+  revisions can accept.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 325
+  generated chapter-level rows: 225 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 124 implemented targets, and the proof-depth classifier
+  now reports 433 theorem declarations, 121 direct/projection-style
+  declarations, and 312 derived/decomposed declarations.
+- Updated the Claim Ledgers chapter, Proof Envelope chapter, book outline,
+  proof adequacy review, v1.x/v1.0 roadmap/status surfaces, focus audit,
+  publication readiness, repository map, and status snapshot guard. This does
+  not implement open-domain claim extraction, contradiction-detection quality,
+  semantic-equivalence checking, deployed surface synchronization, substantive
+  belief revision, verifier integration, support-state promotion, reader
+  artifact approval, or release approval.
+
 ## 2026-07-01 - Governance-right lifecycle route proof
 
 - Strengthened `AsiStackProofs.GovernanceRights` with a finite

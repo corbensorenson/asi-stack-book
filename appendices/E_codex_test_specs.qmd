@@ -116,6 +116,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Claim extraction test | planned | not run |
 | `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Contradiction detection test | implemented | passing via synthetic claim ledger revision harness; no open-domain contradiction detection claim |
 | `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Belief revision test | implemented | passing via synthetic claim ledger revision harness; no deployed belief engine claim |
+| `claim-ledgers-and-belief-revision` | Claim Ledgers and Belief Revision | Claim ledger revision lifecycle route | implemented | passes via Lean route theorems; no open-domain extraction, semantic-equivalence, contradiction-quality, deployed belief-engine, or support-state-promotion claim |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Proof artifact presence test | implemented | passing via synthetic proof-carrying claim harness; no theorem-validity or verifier-quality claim |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Tier assignment test | implemented | passing via synthetic proof-carrying claim harness; no open-domain tier assignment claim |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Formalization mismatch review | implemented | passing via synthetic proof-carrying claim harness mismatch fixture; no semantic-equivalence guarantee |
@@ -375,16 +376,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 123 |
+| Proof targets covered by triage | 124 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 123 |
+| implemented | 124 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 123 |
+| implemented | formal-invariant | lean-candidate | 124 |

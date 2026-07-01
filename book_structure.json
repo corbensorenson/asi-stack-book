@@ -4085,6 +4085,11 @@
               "name": "Belief revision test",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic claim ledger revision harness; no deployed belief engine claim"
+            },
+            {
+              "name": "Claim ledger revision lifecycle route",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no open-domain extraction, semantic-equivalence, contradiction-quality, deployed belief-engine, or support-state-promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.ClaimLedger",
@@ -4099,6 +4104,12 @@
               "tag": "lean:claims.ledger.failure_blocks_promotion",
               "module": "AsiStackProofs.ClaimLedger",
               "target": "A contradiction prevents promotion until resolved, bounded, or recorded as residual.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:claims.ledger.revision_lifecycle_route",
+              "module": "AsiStackProofs.ClaimLedger",
+              "target": "A modeled revision request routes missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit outcomes.",
               "status": "implemented"
             }
           ]

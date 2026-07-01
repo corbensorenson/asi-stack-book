@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-06-25",
+  "updated": "2026-07-01",
   "generated_from": "proofs/proof_manifest.json",
   "note": "Initial conservative triage. It prevents ceremonial Lean by distinguishing formal invariants from schema, process, and research targets.",
   "triage_classes": {
@@ -579,6 +579,16 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.ClaimLedger as a finite promotion-review predicate: open contradictions block promotion until handled."
+    },
+    {
+      "tag": "lean:claims.ledger.revision_lifecycle_route",
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "module": "AsiStackProofs.ClaimLedger",
+      "formal_target": "A modeled revision request routes missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ClaimLedger as a finite revision-lifecycle route function and derived route theorems for missing claim identity, missing support-state records, unsupported promotion, open contradictions, missing history, non-overwrite attestation gaps, surface-sync gaps, split-history gaps, downgrade-reason gaps, residual-record gaps, non-claim-boundary gaps, and complete revision acceptance."
     },
     {
       "tag": "lean:spinoza.proof_carrying.operational_invariant",

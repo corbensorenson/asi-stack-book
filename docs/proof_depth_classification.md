@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 123 |
+| Proof targets in manifest | 124 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 419 |
+| Theorem declarations classified | 433 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 298 |
+| Derived/decomposed theorem declarations | 312 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 69 |
 | Safety-critical direct/projection declarations | 10 |
@@ -59,7 +59,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 8 | 1 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 2 | 5 | 4 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 3 | 19 | 4 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -160,8 +160,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_without_source_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `accepted_belief_revision_promotion_requires_evidence_handled_contradiction_and_increase` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `claim_update_preserves_prior_evidence_and_revision_history` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `complete_claim_ledger_revision_accepts` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `downgrade_without_reason_requests_downgrade_reason` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `incomplete_surface_sync_requests_synchronization` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `missing_support_state_record_requests_support_state_record` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_blocks_belief_revision_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_blocks_claim_promotion` | derived_or_decomposed | no | uses rw, unfold |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_promotion_is_blocked` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_without_promotion_requests_handling` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `promotion_without_evidence_refs_requests_evidence_transition` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `promotion_without_evidence_transition_requests_evidence_transition` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `required_residual_without_refs_requests_residual_record` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `revision_request_missing_claim_identity_rejected` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_history_refs_preserves_history` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_non_claim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_non_overwrite_attestation_preserves_attestation` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `split_without_child_history_preserves_split_history` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `valid_belief_revision_record_preserves_identity_history_and_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `authority_escape_blocks_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `compiled_artifact_preserves_all_required_ir_obligations` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

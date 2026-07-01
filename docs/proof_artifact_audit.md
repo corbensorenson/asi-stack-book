@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 123 |
-| Manifest status counts | {"implemented": 123} |
-| Triage class counts | {"formal-invariant": 123} |
+| Proof targets audited | 124 |
+| Manifest status counts | {"implemented": 124} |
+| Triage class counts | {"formal-invariant": 124} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -38,7 +38,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Authority.lean` | 2 | 8 | 6 | 4 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 2 | 5 | 3 | 3 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 4 | 2 | 2 |
-| `lean/AsiStackProofs/ClaimLedger.lean` | 2 | 5 | 4 | 3 |
+| `lean/AsiStackProofs/ClaimLedger.lean` | 3 | 19 | 6 | 4 |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | 3 | 14 | 3 | 3 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 6 | 4 | 4 |
 | `lean/AsiStackProofs/CommandContracts.lean` | 2 | 4 | 2 | 2 |
@@ -96,7 +96,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 2 | 2 | 0 | 0 |
 | `capability-replacement-and-rollback` | 3 | 3 | 0 | 0 |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2 | 2 | 0 | 0 |
-| `claim-ledgers-and-belief-revision` | 2 | 2 | 0 | 0 |
+| `claim-ledgers-and-belief-revision` | 3 | 3 | 0 | 0 |
 | `cognitive-compilation-and-semantic-ir` | 3 | 3 | 0 | 0 |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
@@ -196,6 +196,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:verification_bandwidth.adequacy.route_envelope` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:claims.ledger.operational_invariant` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:claims.ledger.failure_blocks_promotion` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:claims.ledger.revision_lifecycle_route` | `claim-ledgers-and-belief-revision` | `AsiStackProofs.ClaimLedger` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:spinoza.proof_carrying.operational_invariant` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaims` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:spinoza.proof_carrying.failure_blocks_promotion` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaims` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:tribunal.review.operational_invariant` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.Tribunal` | triage ok; module ok; chapter tag ok; limitation ok |
