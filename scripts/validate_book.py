@@ -98,6 +98,8 @@ REQUIRED = [
     "scripts/validate_resource_workflow_trace.py",
     "scripts/run_resource_live_probe.py",
     "scripts/validate_resource_live_probe.py",
+    "scripts/run_resource_workload_quality_probe.py",
+    "scripts/validate_resource_workload_quality_probe.py",
     "scripts/build_resource_ci_cost_profile.py",
     "scripts/validate_resource_ci_cost_profile.py",
     "scripts/validate_circle_external_receipt_slice.py",
@@ -157,6 +159,7 @@ REQUIRED = [
     "docs/costed_route_resource_slice.md",
     "docs/resource_workflow_trace.md",
     "docs/resource_live_probe.md",
+    "docs/resource_workload_quality_probe.md",
     "docs/resource_ci_cost_profile.md",
     "docs/circle_external_receipt_slice.md",
     "docs/circle_public_replay_consumer_gate.md",
@@ -208,6 +211,7 @@ REQUIRED = [
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "experiments/resource_workflow_trace/results/2026-07-01-local.json",
     "experiments/resource_live_probe/results/2026-07-01-local.json",
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
     "experiments/resource_ci_cost_profile/results/2026-07-01-main.json",
     "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
     "experiments/circle_public_replay/results/2026-06-29-local.json",
@@ -741,6 +745,7 @@ def main() -> None:
     run_validator("validate_costed_route_resource_slice.py")
     run_validator("validate_resource_workflow_trace.py")
     run_validator("validate_resource_live_probe.py")
+    run_validator("validate_resource_workload_quality_probe.py")
     run_validator("validate_resource_ci_cost_profile.py")
     run_validator("validate_circle_external_receipt_slice.py")
     run_validator("validate_circle_public_replay.py")

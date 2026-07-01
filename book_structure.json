@@ -7950,6 +7950,13 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_resource_live_probe.py`; local repository command replay only; no deployed scheduler, physical-feasibility, model-quality, economic-outcome, or support-state-transition claim"
             },
+            {
+              "name": "Resource workload-quality probe",
+              "purpose": "Measure a scoped local Resource workflow trace review route against a broader Resource Economics replay baseline, reject a cheaper no-op success-text route, record residuals and non-claims, and preserve the no-transition boundary.",
+              "status": "implemented; passing via `python3 scripts/validate_resource_workload_quality_probe.py`",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_resource_workload_quality_probe.py`; local single-run repository task only; no stable-speedup, deployed-scheduler, model-quality, economic-outcome, external-review, or support-state-transition claim"
+            },
             "Budget allocation test",
             "Risk-adjusted verification test",
             {

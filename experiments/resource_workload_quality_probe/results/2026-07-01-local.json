@@ -1,0 +1,132 @@
+{
+  "artifact_refs": [
+    "docs/resource_workflow_trace.md",
+    "docs/resource_live_probe.md",
+    "scripts/validate_resource_workflow_trace.py",
+    "scripts/validate_resource_live_probe.py",
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json",
+    "experiments/resource_live_probe/results/2026-07-01-local.json",
+    "lean/AsiStackProofs/ResourceEconomics.lean",
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json"
+  ],
+  "baseline_route_id": "route://baseline-full-resource-lane-replay",
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_resource_workload_quality_probe.py --write-result",
+  "evidence_transition_created": false,
+  "local_only": true,
+  "negative_control_is_cheaper_than_selected": true,
+  "negative_control_rejected": true,
+  "negative_control_route_id": "route://negative-no-op-success-text",
+  "non_claims": [
+    "This workload-quality probe does not promote any chapter core claim above argument.",
+    "This workload-quality probe does not create a support-state transition.",
+    "This workload-quality probe does not prove stable speedup, deployed scheduler behavior, TokenMana behavior, PlanForge behavior, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement outside this local repository task.",
+    "The selected route is scoped to Resource workflow trace review only and does not replace the full book gate, release gate, production scheduler logs, human-repair measurement, or external review."
+  ],
+  "observed_selected_vs_baseline_elapsed_reduction_percent": 86.741,
+  "pass": true,
+  "probe_id": "resource-workload-quality-probe-2026-07-01-local",
+  "record_kind": "resource_workload_quality_probe",
+  "recorded_at_utc": "2026-07-01T22:27:05Z",
+  "residuals": [
+    "The selected scoped validator does not check unrelated Resource Economics artifacts that the baseline live probe checks.",
+    "The elapsed-time comparison is a local single-run measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
+    "The no-op negative control demonstrates that a fast successful process is not adequate unless it runs the required validator and produces the expected validation surface."
+  ],
+  "routes": [
+    {
+      "command": "python3 scripts/validate_resource_live_probe.py",
+      "elapsed_ms": 208.982,
+      "eligible": true,
+      "exit_code": 0,
+      "output_excerpt": [
+        "Resource live probe validation passed: 5 local command replay(s), 15 tracked artifact digest(s), support-state effect none."
+      ],
+      "output_sha256": "04135f62605ad8cbde0dcdf6841b51442665c6cffdf93c89595fac8f4f79d0a9",
+      "quality_pass": true,
+      "quality_scope": "Full Resource Economics local replay surface.",
+      "required_output": "Resource live probe validation passed",
+      "role": "baseline",
+      "route_id": "route://baseline-full-resource-lane-replay"
+    },
+    {
+      "command": "python3 scripts/validate_resource_workflow_trace.py",
+      "elapsed_ms": 27.709,
+      "eligible": true,
+      "exit_code": 0,
+      "output_excerpt": [
+        "Resource workflow trace validation passed: 1 valid fixture(s), 5 expected-invalid fixture(s), 3 step(s), 119.7 cost units."
+      ],
+      "output_sha256": "328decae80aead8a803fc8155b85df0cd049812e364a621ac2da7b609c1f1977",
+      "quality_pass": true,
+      "quality_scope": "Scoped Resource workflow trace fixture and Lean/Python alignment review.",
+      "required_output": "Resource workflow trace validation passed",
+      "role": "selected",
+      "route_id": "route://selected-scoped-workflow-trace-validator"
+    },
+    {
+      "command": "python3 -c \"print('skipped resource workflow trace validator')\"",
+      "elapsed_ms": 21.46,
+      "eligible": false,
+      "exit_code": 0,
+      "output_excerpt": [
+        "skipped resource workflow trace validator"
+      ],
+      "output_sha256": "49b57f00c6bff2f590d87f6a582ff5573a358b255938d47dea6bc8f159ba2b22",
+      "quality_pass": false,
+      "quality_scope": "Invalid shortcut that returns quickly without running the required validator.",
+      "required_output": "Resource workflow trace validation passed",
+      "role": "negative_control",
+      "route_id": "route://negative-no-op-success-text"
+    }
+  ],
+  "scoped_task": "resource-workflow-trace-integrity-review",
+  "selected_is_cheaper_than_baseline": true,
+  "selected_route_id": "route://selected-scoped-workflow-trace-validator",
+  "summary": "Local Resource Economics workload-quality probe selected a scoped workflow-trace validator over the broader Resource live probe baseline while rejecting a cheaper no-op success-text route.",
+  "support_state_effect": "none",
+  "tracked_artifacts": [
+    {
+      "bytes": 5120,
+      "lines": 111,
+      "path": "docs/resource_workflow_trace.md",
+      "sha256": "92570b099d1cdf381ec44990aade94230f72e9a725f6fb1d43aa26c5f2a976c0"
+    },
+    {
+      "bytes": 3145,
+      "lines": 74,
+      "path": "docs/resource_live_probe.md",
+      "sha256": "4c55a8ab45b2d6a42bb88ee074c0e2948cc7afdf915faebb0ae6932683229c08"
+    },
+    {
+      "bytes": 23073,
+      "lines": 526,
+      "path": "scripts/validate_resource_workflow_trace.py",
+      "sha256": "389d4d6e9593520f23b95d95810d19e01d5d225795984d12a8394d6007c0e14b"
+    },
+    {
+      "bytes": 7797,
+      "lines": 200,
+      "path": "scripts/validate_resource_live_probe.py",
+      "sha256": "01627c7c27032af715e6d3e1af143241a65cee627b84da68ce7be7b9d02bc6d7"
+    },
+    {
+      "bytes": 2603,
+      "lines": 62,
+      "path": "experiments/resource_workflow_trace/results/2026-07-01-local.json",
+      "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
+    },
+    {
+      "bytes": 7897,
+      "lines": 185,
+      "path": "experiments/resource_live_probe/results/2026-07-01-local.json",
+      "sha256": "8d1aed2cb83e543ef12baf9f94509be6dec4a946255d1aefa6c2750d8e08f08d"
+    },
+    {
+      "bytes": 20501,
+      "lines": 567,
+      "path": "lean/AsiStackProofs/ResourceEconomics.lean",
+      "sha256": "eca9a3841d8ee497574ea3adee2508dc183176c9987d30951bd4254f796993a3"
+    }
+  ]
+}

@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-01 - Add Resource workload-quality probe
+
+- Added `scripts/run_resource_workload_quality_probe.py` and
+  `scripts/validate_resource_workload_quality_probe.py` for the flagship
+  Resource Economics lane.
+- The local measured result in
+  `experiments/resource_workload_quality_probe/results/2026-07-01-local.json`
+  records three route candidates for `resource-workflow-trace-integrity-review`:
+  a broader Resource live-probe baseline at 208.982 ms, a selected scoped
+  workflow-trace validator at 27.709 ms, and a cheaper no-op success-text
+  negative control at 21.46 ms that is rejected for not running the required
+  validator.
+- Added `docs/resource_workload_quality_probe.md` and wired the result into the
+  Resource Economics chapter, outline, manifest, Appendix E generation, v1.x
+  evidence-cycle status, v1.0 status guards, and book validation. This is a
+  local single-run repository-task measurement only; it does not prove stable
+  speedup, deployed scheduler behavior, TokenMana or PlanForge behavior, model
+  quality, economic outcomes, physical feasibility, external review, or
+  support-state promotion.
+
 ## 2026-07-01 - Add hive admission harness
 
 - Added `scripts/validate_hive_admission.py` with 2 valid and 8
