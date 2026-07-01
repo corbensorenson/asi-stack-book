@@ -1776,6 +1776,7 @@ Draft deliverables:
 - Planned Codex test: Runtime crosswalk completeness test.
 - Implemented Lean predicate: selected routes satisfy authority and readiness.
 - Implemented Lean predicate: failed readiness routes to fallback or residual rather than promotion.
+- Implemented Lean predicate: finite routing-decision lifecycle routing sends missing capability requests, missing specialist registries, authority mismatches, readiness failures, fallback/residual handling, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, residual-owner gaps, and missing non-claim boundaries to explicit modeled outcomes.
 - Implemented Lean predicate: runtime core promotion requires readiness, regression, and replay evidence references.
 - Implemented Lean predicate: claims sourced only from unavailable runtime text cannot promote above `argument`.
 - Implemented Codex test: Authority-bounded routing test, via `python3 scripts/validate_readiness_residual_gates.py` over route authority ceilings, gate authority scopes, allowed routes, and blocked routes; deployed router enforcement remains unrun.
@@ -1789,6 +1790,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:routing.specialists.operational_invariant` | `AsiStackProofs.Routing` | A router may select only specialists whose authority and readiness satisfy the task requirement. | implemented |
 | `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.Routing` | A failed readiness predicate routes to fallback or residual, not promotion. | implemented |
+| `lean:routing.specialists.decision_lifecycle_route` | `AsiStackProofs.Routing` | A modeled routing decision routes missing requests, registry gaps, authority mismatches, readiness failures, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, residual ownership gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
 | `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.MoECOTRuntime` | A runtime core promotion requires readiness, regression, and replay evidence references. | implemented |
 | `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.MoECOTRuntime` | A runtime claim sourced only from unavailable text cannot be promoted above argument state. | implemented |
 
@@ -2614,8 +2616,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 125 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 125 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 126 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 126 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

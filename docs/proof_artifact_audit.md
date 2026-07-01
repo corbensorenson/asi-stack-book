@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 125 |
-| Manifest status counts | {"implemented": 125} |
-| Triage class counts | {"formal-invariant": 125} |
+| Proof targets audited | 126 |
+| Manifest status counts | {"implemented": 126} |
+| Triage class counts | {"formal-invariant": 126} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -70,7 +70,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | 2 | 7 | 3 | 3 |
 | `lean/AsiStackProofs/Replacement.lean` | 3 | 10 | 3 | 2 |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | 2 | 4 | 4 | 2 |
-| `lean/AsiStackProofs/Routing.lean` | 2 | 3 | 2 | 1 |
+| `lean/AsiStackProofs/Routing.lean` | 3 | 16 | 4 | 2 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 2 | 8 | 6 | 4 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 3 | 14 | 4 | 5 |
@@ -125,7 +125,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `readiness-gates-residual-escrow-and-quarantine` | 2 | 2 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 4 | 4 | 0 | 0 |
-| `routing-heads-and-specialist-cores` | 4 | 4 | 0 | 0 |
+| `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 3 | 3 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 4 | 4 | 0 | 0 |
@@ -213,6 +213,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:routing.specialists.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:routing.specialists.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:routing.specialists.decision_lifecycle_route` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:moecot.runtime.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:moecot.runtime.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |

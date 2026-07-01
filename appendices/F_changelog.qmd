@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-07-01 - Routing decision lifecycle route proof
+
+- Strengthened `AsiStackProofs.Routing` with a finite
+  `RoutingDecisionRoute`, `RoutingDecisionReview`, and
+  `RoutingDecisionRouteFor` decision surface over route requests, capability
+  request presence, specialist registration, authority satisfaction, readiness
+  satisfaction, fallback and residual-owner handling, fresh leases,
+  cost-quality records, least-capable adequate selection, rejected-candidate
+  evidence, non-claim boundaries, and complete route selection.
+- Added the third Routing Heads proof target,
+  `lean:routing.specialists.decision_lifecycle_route`, plus derived route
+  theorems showing that missing capability requests, missing specialist
+  registries, authority mismatches, readiness failures, fallback/residual
+  gaps, stale leases, missing cost-quality records, overprivileged selections,
+  missing rejected-candidate evidence, residual-owner gaps, and missing
+  non-claim boundaries route to explicit modeled outcomes.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 327
+  generated chapter-level rows: 227 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 126 implemented targets, and the proof-depth
+  classifier now reports 461 theorem declarations, 121 direct/projection-style
+  declarations, and 340 derived/decomposed declarations.
+- Updated the Routing Heads chapter, book outline, proof adequacy review,
+  v1.x/v1.0 roadmap/status surfaces, focus audit, publication readiness,
+  repository map, proof/code plan, manuscript status, and status snapshot
+  guard. This does not promote, demote, deprecate, or refute any live claim;
+  prove learned-router quality; prove route-quality measurement; prove runtime
+  authority enforcement; prove specialist adequacy; replay MoECOT; validate an
+  orchestration benchmark; approve a reader artifact; or change release status.
+
 ## 2026-07-01 - Evidence-state transition lifecycle route proof
 
 - Strengthened `AsiStackProofs.EvidenceStates` with a finite

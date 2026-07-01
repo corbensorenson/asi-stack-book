@@ -5557,6 +5557,12 @@
               "result_status": "passes via synthetic routing decision lease harness; no learned-router, route-quality, MoECOT replay, or deployed authority-enforcement claim"
             },
             {
+              "name": "Routing decision lifecycle route",
+              "purpose": "Check that modeled routing decisions route missing capability requests, missing specialist registries, authority mismatches, readiness failures, fallback/residual handling, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, residual-owner gaps, missing non-claim boundaries, and complete selections to explicit finite outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no learned-router, route-quality, runtime enforcement, specialist-quality, MoECOT replay, benchmark, or support-state-promotion claim"
+            },
+            {
               "name": "Authority-bounded routing test",
               "purpose": "Check that a selected route cannot exceed the readiness gate authority scope or use a blocked route during canary/default promotion.",
               "status": "implemented by readiness/residual gate harness; validated locally; deployed router enforcement not run",
@@ -5592,6 +5598,12 @@
               "tag": "lean:routing.specialists.failure_blocks_promotion",
               "module": "AsiStackProofs.Routing",
               "target": "A failed readiness predicate routes to fallback or residual, not promotion.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:routing.specialists.decision_lifecycle_route",
+              "module": "AsiStackProofs.Routing",
+              "target": "A modeled routing decision routes missing requests, registry gaps, authority mismatches, readiness failures, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, residual ownership gaps, and missing non-claim boundaries to explicit outcomes.",
               "status": "implemented"
             },
             {

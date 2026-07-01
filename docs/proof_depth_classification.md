@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 125 |
+| Proof targets in manifest | 126 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 448 |
+| Theorem declarations classified | 461 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 327 |
+| Derived/decomposed theorem declarations | 340 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 69 |
 | Safety-critical direct/projection declarations | 10 |
@@ -91,7 +91,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 2 | 8 | 3 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -424,7 +424,20 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_task_with_insufficient_verification_budget_is_not_dispatched` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `required_safety_gate_disabled_rejects_budget_gate_preservation` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `task_budget_cannot_disable_required_safety_or_verification_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Routing.lean` | `authority_mismatch_blocks_route_selection` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `complete_routing_decision_selects_specialist` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Routing.lean` | `failed_readiness_routes_to_fallback_or_residual_not_promotion` | derived_or_decomposed | no | uses cases, constructor, have, rw |
+| `lean/AsiStackProofs/Routing.lean` | `missing_capability_request_rejects_route` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `missing_cost_quality_record_requests_record` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `missing_fresh_lease_requests_lease` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `missing_rejected_candidate_evidence_requests_evidence` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `missing_specialist_registry_requests_registry` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `no_route_request_stays_no_route` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `overprivileged_selection_requests_least_capable_justification` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `readiness_failure_with_fallback_routes_to_fallback` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `readiness_failure_without_fallback_or_residual_owner_requests_owner` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `readiness_failure_without_fallback_residualizes_when_owner_present` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Routing.lean` | `route_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Routing.lean` | `selected_route_without_authority_or_readiness_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/Routing.lean` | `selected_specialist_satisfies_authority_and_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_adapter_without_approval_cannot_be_unrejected` | derived_or_decomposed | no | uses contradiction, have, rw |

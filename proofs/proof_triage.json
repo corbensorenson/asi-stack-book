@@ -751,6 +751,16 @@
       "rationale": "Implemented in AsiStackProofs.Routing as a finite readiness-failure predicate: failed readiness routes to fallback or residual and is not promoted."
     },
     {
+      "tag": "lean:routing.specialists.decision_lifecycle_route",
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "module": "AsiStackProofs.Routing",
+      "formal_target": "A modeled routing decision routes missing requests, registry gaps, authority mismatches, readiness failures, stale leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, residual ownership gaps, and missing non-claim boundaries to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Routing as a finite routing-decision lifecycle route function and derived route theorems for missing capability requests, missing specialist registries, authority mismatches, readiness failures, fallback and residual handling, missing leases, missing cost-quality records, overprivileged selections, missing rejected-candidate evidence, residual-owner gaps, missing non-claim boundaries, and complete route selection."
+    },
+    {
       "tag": "lean:readiness.gates.operational_invariant",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "module": "AsiStackProofs.ReadinessGates",
