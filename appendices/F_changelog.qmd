@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-06-30 - Simulation transfer boundary harness
+
+- Added the book-gate-only simulation-transfer boundary harness in
+  `scripts/validate_simulation_transfer_boundaries.py`, with 3 valid fixtures
+  and 6 expected-invalid fixtures under
+  `experiments/simulation_transfer_boundaries/`. The harness checks synthetic
+  simulation-transfer records for fidelity declarations, resource bills,
+  bottlenecks, omissions, approximation liberties, instrumentation effects,
+  transfer decisions, residual/downgrade behavior, unbounded world-transfer
+  rejection, and support-state non-promotion.
+- Updated the Resource Economics chapter, book outline, Appendix E, active
+  evidence-cycle ledger, proof adequacy review, v1.0 status surfaces, roadmap
+  surfaces, repository map, README, and validation wiring. Appendix E now
+  records 213 implemented chapter rows, 1 partial row, and 103 planned rows;
+  the public status surfaces now track 27 harnesses, including 5
+  book-gate-only chapter harnesses. Refreshed the v1.0 status manuscript scale
+  to 169,989 chapter words excluding YAML and 177,657 raw chapter-file words.
+- This does not run a simulator, prove simulator adequacy, validate physical
+  feasibility, measure workload quality, prove transfer to the world, reproduce
+  benchmark or economic results, promote the Resource Economics chapter core
+  claim, or approve any reader/ebook/PDF/DOCX/audio/release artifact.
+
 ## 2026-06-30 - Cyclic memory contract harness
 
 - Added the book-gate-only cyclic-memory contract harness in

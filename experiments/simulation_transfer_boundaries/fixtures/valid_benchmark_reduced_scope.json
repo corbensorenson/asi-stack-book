@@ -1,0 +1,78 @@
+{
+  "scenario_id": "sim-transfer-valid-benchmark-reduced-001",
+  "simulation_contract_record": {
+    "simulation_id": "sim-transfer-benchmark-reduced-001",
+    "claim_id": "resource-economics.simulation_benchmark_boundary",
+    "contract_version": "v0.2",
+    "claim_class": "benchmark_comparison",
+    "scope": "Synthetic benchmark comparison for one declared resource-accounting fixture.",
+    "fidelity_standard": "Benchmark fixture fidelity with approximation limits declared.",
+    "fidelity_state": "declared",
+    "temporal_semantics": "Offline batch fixture with no deployment timing semantics.",
+    "input_assumptions": [
+      "Benchmark inputs are synthetic.",
+      "Quality is not measured outside the fixture boundary."
+    ],
+    "demand_estimate": [
+      "One validator run.",
+      "No external model calls."
+    ],
+    "resource_bill": [
+      "Local fixture validation cost.",
+      "No GPU or serving cost."
+    ],
+    "capacity_bottlenecks": [
+      "Manual fixture construction.",
+      "No live queue pressure."
+    ],
+    "omitted_variables": [
+      "User traffic.",
+      "KV-cache pressure.",
+      "Human-review fatigue."
+    ],
+    "approximation_liberties": [
+      "Uses fixture records instead of a real workload.",
+      "Uses declared outcome states instead of measured model quality."
+    ],
+    "instrumentation_effects": [
+      "The validator can only inspect fields encoded in the fixture."
+    ],
+    "supported_claim_boundary": "Reduced-scope benchmark-record discipline only.",
+    "observed_result_boundary": "A broader deployment comparison is downgraded to benchmark-record discipline.",
+    "transfer_decision": "reduced_scope",
+    "support_state_effect": "blocks_promotion",
+    "failure_behavior": "Requested deployment transfer is downgraded and residualized.",
+    "residual_risks": [
+      "residual: no deployment workload",
+      "downgrade: benchmark fixture only"
+    ],
+    "evidence_refs": [
+      "docs/simulation_transfer_boundary_harness.md"
+    ],
+    "non_claims": [
+      "does not promote chapter core support state",
+      "no physical deployment claim",
+      "no simulator adequacy claim",
+      "no open-world transfer result"
+    ]
+  },
+  "transfer_review": {
+    "requested_claim_boundary": "deployment world comparison",
+    "result_use": "reduced-scope benchmark-record discipline",
+    "fidelity_declared": true,
+    "resources_declared": true,
+    "bottlenecks_declared": true,
+    "omissions_declared": true,
+    "instrumentation_recorded": true,
+    "boundary_respected": false,
+    "residual_or_downgrade_recorded": true,
+    "overclaim_requested": true,
+    "support_promotion_requested": false
+  },
+  "non_claims": [
+    "does not promote support state",
+    "does not prove physical deployment behavior",
+    "does not prove simulator adequacy",
+    "does not prove open-world transfer"
+  ]
+}

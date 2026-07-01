@@ -1,0 +1,68 @@
+{
+  "scenario_id": "sim-transfer-invalid-instrumentation-ignored-001",
+  "simulation_contract_record": {
+    "simulation_id": "sim-transfer-instrumentation-ignored-001",
+    "claim_id": "resource-economics.simulation_instrumentation_ignored",
+    "contract_version": "v0.2",
+    "claim_class": "benchmark_comparison",
+    "scope": "Benchmark comparison attempts transfer while ignoring instrumentation effects.",
+    "fidelity_standard": "benchmark fixture fidelity",
+    "fidelity_state": "declared",
+    "temporal_semantics": "offline fixture",
+    "input_assumptions": [
+      "synthetic benchmark"
+    ],
+    "demand_estimate": [
+      "one validator run"
+    ],
+    "resource_bill": [
+      "local validation"
+    ],
+    "capacity_bottlenecks": [
+      "manual review"
+    ],
+    "omitted_variables": [
+      "serving load"
+    ],
+    "approximation_liberties": [
+      "declared outcome states"
+    ],
+    "instrumentation_effects": [],
+    "supported_claim_boundary": "benchmark fixture",
+    "observed_result_boundary": "attempted instrumentation-free transfer",
+    "transfer_decision": "transfer_within_boundary",
+    "support_state_effect": "argument_only",
+    "failure_behavior": "should block transfer when instrumentation effects are ignored",
+    "residual_risks": [
+      "instrumentation effect omitted"
+    ],
+    "evidence_refs": [
+      "docs/simulation_transfer_boundary_harness.md"
+    ],
+    "non_claims": [
+      "does not promote chapter core support state",
+      "no physical feasibility claim",
+      "no simulator adequacy claim",
+      "no open-world transfer result"
+    ]
+  },
+  "transfer_review": {
+    "requested_claim_boundary": "benchmark fixture",
+    "result_use": "instrumentation-free transfer",
+    "fidelity_declared": true,
+    "resources_declared": true,
+    "bottlenecks_declared": true,
+    "omissions_declared": true,
+    "instrumentation_recorded": false,
+    "boundary_respected": true,
+    "residual_or_downgrade_recorded": false,
+    "overclaim_requested": false,
+    "support_promotion_requested": false
+  },
+  "non_claims": [
+    "does not promote support state",
+    "does not prove physical feasibility",
+    "does not prove simulator adequacy",
+    "does not prove open-world transfer"
+  ]
+}

@@ -7492,9 +7492,27 @@
               "result_status": "passes via Lean negative case; no physical-feasibility or open-world-transfer claim",
               "status": "implemented in AsiStackProofs.SimulationFidelity; no physical-feasibility or open-world-transfer claim"
             },
-            "Fidelity declaration test",
-            "Resource-bound simulation sanity check",
-            "Simulation approximation audit"
+            {
+              "name": "Fidelity declaration test",
+              "purpose": "Check that transferred or reduced-scope simulation claims carry declared fidelity before they are used as evidence.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_simulation_transfer_boundaries.py`; no simulator-adequacy or physical-feasibility claim",
+              "status": "implemented by simulation transfer boundary harness; no simulator-adequacy, physical-feasibility, or open-world-transfer claim"
+            },
+            {
+              "name": "Resource-bound simulation sanity check",
+              "purpose": "Check that simulation-transfer fixtures record resource bills, bottlenecks, omitted variables, residuals, and blocked or reduced transfer decisions.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_simulation_transfer_boundaries.py`; deterministic fixture discipline only",
+              "status": "implemented by simulation transfer boundary harness; no scheduler, economic, simulator, or transfer-performance claim"
+            },
+            {
+              "name": "Simulation approximation audit",
+              "purpose": "Check that approximation liberties and instrumentation effects stay visible and cannot support unbounded transfer or support-state promotion.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_simulation_transfer_boundaries.py`; no support-state promotion",
+              "status": "implemented by simulation transfer boundary harness; no benchmark-reproduction, physical-feasibility, or open-world-transfer claim"
+            }
           ],
           "lean_module": "AsiStackProofs.ResourceEconomics",
           "proof_targets": [

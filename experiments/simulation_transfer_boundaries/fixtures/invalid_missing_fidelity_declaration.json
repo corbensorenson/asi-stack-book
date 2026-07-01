@@ -1,0 +1,70 @@
+{
+  "scenario_id": "sim-transfer-invalid-missing-fidelity-001",
+  "simulation_contract_record": {
+    "simulation_id": "sim-transfer-missing-fidelity-001",
+    "claim_id": "resource-economics.simulation_missing_fidelity",
+    "contract_version": "v0.2",
+    "claim_class": "unit_invariant",
+    "scope": "Fixture attempts transfer without declared fidelity.",
+    "fidelity_standard": "not specified enough for transfer",
+    "fidelity_state": "under_specified",
+    "temporal_semantics": "offline fixture",
+    "input_assumptions": [
+      "inputs are synthetic"
+    ],
+    "demand_estimate": [
+      "one validator run"
+    ],
+    "resource_bill": [
+      "local validation"
+    ],
+    "capacity_bottlenecks": [
+      "manual review"
+    ],
+    "omitted_variables": [
+      "hardware behavior"
+    ],
+    "approximation_liberties": [
+      "toy state"
+    ],
+    "instrumentation_effects": [
+      "field inspection only"
+    ],
+    "supported_claim_boundary": "unit fixture",
+    "observed_result_boundary": "attempted transfer",
+    "transfer_decision": "transfer_within_boundary",
+    "support_state_effect": "argument_only",
+    "failure_behavior": "should block without fidelity declaration",
+    "residual_risks": [
+      "missing fidelity declaration"
+    ],
+    "evidence_refs": [
+      "docs/simulation_transfer_boundary_harness.md"
+    ],
+    "non_claims": [
+      "does not promote chapter core support state",
+      "no physical feasibility claim",
+      "no simulator adequacy claim",
+      "no open-world transfer result"
+    ]
+  },
+  "transfer_review": {
+    "requested_claim_boundary": "unit fixture",
+    "result_use": "attempted transfer",
+    "fidelity_declared": false,
+    "resources_declared": true,
+    "bottlenecks_declared": true,
+    "omissions_declared": true,
+    "instrumentation_recorded": true,
+    "boundary_respected": true,
+    "residual_or_downgrade_recorded": false,
+    "overclaim_requested": false,
+    "support_promotion_requested": false
+  },
+  "non_claims": [
+    "does not promote support state",
+    "does not prove physical feasibility",
+    "does not prove simulator adequacy",
+    "does not prove open-world transfer"
+  ]
+}

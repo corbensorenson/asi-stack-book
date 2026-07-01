@@ -2254,9 +2254,10 @@ Draft deliverables:
 - Codex test: Capacity smoothing toy harness - Check deterministic toy capacity traces for bounded regeneration arithmetic, priority deferral under blocked high-risk work, scope reduction, overload rejection, and no-promotion boundaries (implemented; passing via `python3 scripts/validate_capacity_smoothing.py`).
 - Planned Codex test: KV-cache memory accounting scenario
 - Implemented repository-level fixture: Simulation contract record fixture validation - Validate that simulation claims record contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omissions, approximation liberties, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims (implemented; passing via `python3 scripts/validate_protocol_examples.py`).
-- Planned Codex test: Fidelity declaration test
-- Planned Codex test: Resource-bound simulation sanity check
-- Planned Codex test: Simulation approximation audit
+- Implemented book-gate harness: `python3 scripts/validate_simulation_transfer_boundaries.py` validates 3 valid and 6 expected-invalid simulation-transfer fixtures for fidelity declaration, resource bills, capacity bottlenecks, omitted variables, approximation liberties, instrumentation effects, transfer decisions, residual/downgrade behavior, unbounded world-transfer rejection, and support-state non-promotion; this is not a simulator run, physical-feasibility result, open-world-transfer result, scheduler result, or economic result.
+- Implemented Codex test: Fidelity declaration test, via `python3 scripts/validate_simulation_transfer_boundaries.py`; no simulator-adequacy or physical-feasibility claim.
+- Implemented Codex test: Resource-bound simulation sanity check, via `python3 scripts/validate_simulation_transfer_boundaries.py`; deterministic fixture discipline only.
+- Implemented Codex test: Simulation approximation audit, via `python3 scripts/validate_simulation_transfer_boundaries.py`; no benchmark-reproduction, physical-feasibility, open-world-transfer, or support-state claim.
 
 Lean proof targets:
 

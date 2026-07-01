@@ -86,6 +86,7 @@ REQUIRED = [
     "scripts/validate_benchmark_antigoodhart.py",
     "scripts/validate_generation_mode_baselines.py",
     "scripts/validate_resource_budget_ledgers.py",
+    "scripts/validate_simulation_transfer_boundaries.py",
     "scripts/validate_reference_trace.py",
     "scripts/validate_capacity_smoothing.py",
     "scripts/validate_costed_route_resource_slice.py",
@@ -697,6 +698,7 @@ def main() -> None:
     run_validator("validate_benchmark_antigoodhart.py")
     run_validator("validate_generation_mode_baselines.py")
     run_validator("validate_resource_budget_ledgers.py")
+    run_validator("validate_simulation_transfer_boundaries.py")
     run_validator("validate_reference_trace.py")
     run_validator("validate_capacity_smoothing.py")
     run_validator("validate_costed_route_resource_slice.py")

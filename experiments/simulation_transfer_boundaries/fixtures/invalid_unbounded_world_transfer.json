@@ -1,0 +1,71 @@
+{
+  "scenario_id": "sim-transfer-invalid-world-transfer-001",
+  "simulation_contract_record": {
+    "simulation_id": "sim-transfer-world-transfer-001",
+    "claim_id": "resource-economics.simulation_world_transfer",
+    "contract_version": "v0.2",
+    "claim_class": "unit_invariant",
+    "scope": "Toy result is overstated as deployment evidence.",
+    "fidelity_standard": "toy fixture fidelity only",
+    "fidelity_state": "declared",
+    "temporal_semantics": "offline fixture",
+    "input_assumptions": [
+      "synthetic constants"
+    ],
+    "demand_estimate": [
+      "one validator run"
+    ],
+    "resource_bill": [
+      "local validation"
+    ],
+    "capacity_bottlenecks": [
+      "manual review"
+    ],
+    "omitted_variables": [
+      "deployment workload",
+      "hardware behavior"
+    ],
+    "approximation_liberties": [
+      "toy state"
+    ],
+    "instrumentation_effects": [
+      "field inspection only"
+    ],
+    "supported_claim_boundary": "unit fixture only",
+    "observed_result_boundary": "attempted deployment world transfer",
+    "transfer_decision": "transfer_within_boundary",
+    "support_state_effect": "argument_only",
+    "failure_behavior": "should block world transfer",
+    "residual_risks": [
+      "deployment transfer not supported"
+    ],
+    "evidence_refs": [
+      "docs/simulation_transfer_boundary_harness.md"
+    ],
+    "non_claims": [
+      "does not promote chapter core support state",
+      "no physical deployment claim",
+      "no simulator adequacy claim",
+      "no open-world transfer result"
+    ]
+  },
+  "transfer_review": {
+    "requested_claim_boundary": "deployment world claim",
+    "result_use": "deployment evidence",
+    "fidelity_declared": true,
+    "resources_declared": true,
+    "bottlenecks_declared": true,
+    "omissions_declared": true,
+    "instrumentation_recorded": true,
+    "boundary_respected": false,
+    "residual_or_downgrade_recorded": false,
+    "overclaim_requested": true,
+    "support_promotion_requested": false
+  },
+  "non_claims": [
+    "does not promote support state",
+    "does not prove physical deployment behavior",
+    "does not prove simulator adequacy",
+    "does not prove open-world transfer"
+  ]
+}

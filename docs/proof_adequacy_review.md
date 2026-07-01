@@ -100,8 +100,8 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `compact-generative-systems-and-residual-honesty` | 6 | needs executable tests first | Compact-generation, generate/verify/repair, and folded semantic-representation hooks remain finite-record guards; add residual-behavior, reconstruction, semantic grounding, hierarchy-revision, consumer-policy, representation-utility, and baseline harnesses before stronger formalization. |
 | `fast-generation-architectures` | 2 | needs empirical or baseline tests first | Generation-mode accounting harness added; still build matched model workload, baseline, negative-control, quality, residual, and result records before stronger proof. |
 | `rankfold-neuralfold-and-artifact-compression` | 2 | needs executable tests first | Compression negative-case Lean envelope added; still add compression-ratio, decoder, probe-route fallback, downstream-utility, and behavioral admission tests before adequacy can rise. |
-| `resource-economics-and-token-budgets` | 2 | useful but too narrow | Generation-mode/resource-budget accounting, deterministic budget-ledger harnesses, and capacity-smoothing toy traces added; still add scheduler, real load-stability, verification-tax, KV-cache, and cost-quality tests. |
-| `resource-economics-and-token-budgets` | 4 | needs richer state-machine or review semantics | Budget lifecycle, simulation-transfer review, timing, and adversarial states before adequacy; includes folded Simulation Fidelity proof hooks. |
+| `resource-economics-and-token-budgets` | 2 | useful but too narrow | Generation-mode/resource-budget accounting, deterministic budget-ledger harnesses, capacity-smoothing toy traces, and simulation-transfer boundary fixtures added; still add scheduler, real load-stability, verification-tax, KV-cache, physical-feasibility, real simulator, and cost-quality tests. |
+| `resource-economics-and-token-budgets` | 4 | needs richer state-machine or review semantics | Budget lifecycle, timing, adversarial states, real simulation outputs, physical-feasibility review, and open-world transfer semantics before adequacy; includes folded Simulation Fidelity proof hooks. |
 | `mathematical-and-search-substrates` | 2 | needs empirical or baseline tests first | Search-substrate adoption-boundary negative-case Lean envelope added; still build workload, baseline, result record, representation-efficiency benchmark, sequence-substrate A/B, and falsification review before stronger proof. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2 | research-agenda until artifact import | Circle proof-contract negative-case Lean envelope added; still import/replay artifacts before adequacy can rise. |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | useful but too narrow | Synthetic cyclic-memory contract harness added; still add KV-cache certifiers, recurrence benchmarks, learned-memory workloads, retrieval-quality tests, long-context tests, Circle commands, and Theseus transfer consumers before stronger claims. |
@@ -642,18 +642,25 @@ scenario must carry a matching `resource_budget_record`. The chapter also uses
 `python3 scripts/validate_resource_budget_ledgers.py`, a deterministic ledger
 harness over Resource Budget Record decisions for low-risk dispatch, high-risk
 escalation, protected-overhead dispatch, displaced-cost residualization,
-review-capacity hoarding, evidence refs, and support-state non-promotion, plus
+review-capacity hoarding, evidence refs, and support-state non-promotion;
 `python3 scripts/validate_capacity_smoothing.py`, a deterministic toy trace
 harness for bounded regeneration arithmetic, priority deferral, scope reduction,
-overload rejection, and no-promotion boundaries.
+overload rejection, and no-promotion boundaries; and
+`python3 scripts/validate_simulation_transfer_boundaries.py`, a deterministic
+simulation-transfer harness over 3 valid and 6 expected-invalid fixtures for
+fidelity declaration, resource bills, capacity bottlenecks, omissions,
+approximation liberties, instrumentation effects, transfer decisions, residual
+or downgrade behavior, unbounded world-transfer rejection, and support-state
+non-promotion.
 
 This keeps `resource-economics-and-token-budgets` in the `useful but too
 narrow` class. The Lean modules now have mixed finite-record depth rather than
 pure projection hooks, and the harnesses are deterministic fixture accounting
-and toy trace checks. They do not implement a budget scheduler, measure real
-load stability, optimize verification tax, reproduce KV-cache or serving-memory
-behavior, measure cost-quality economics, establish runtime budget enforcement,
-prove simulator adequacy, or validate open-world transfer.
+toy trace, and claim-transport checks. They do not implement a budget scheduler,
+measure real load stability, optimize verification tax, reproduce KV-cache or
+serving-memory behavior, measure cost-quality economics, establish runtime
+budget enforcement, run a simulator, prove simulator adequacy, validate physical
+feasibility, or validate open-world transfer.
 
 ### Evidence State Terminal Transition Envelope
 

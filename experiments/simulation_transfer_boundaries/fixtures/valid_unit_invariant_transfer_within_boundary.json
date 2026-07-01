@@ -1,0 +1,75 @@
+{
+  "scenario_id": "sim-transfer-valid-unit-invariant-001",
+  "simulation_contract_record": {
+    "simulation_id": "sim-transfer-unit-invariant-001",
+    "claim_id": "resource-economics.simulation_unit_invariant",
+    "contract_version": "v0.2",
+    "claim_class": "unit_invariant",
+    "scope": "Toy unit simulator checking budget-gate arithmetic in one declared record family.",
+    "fidelity_standard": "Exact within hand-authored fixture arithmetic only.",
+    "fidelity_state": "declared",
+    "temporal_semantics": "Single offline fixture replay.",
+    "input_assumptions": [
+      "All inputs are fixture constants.",
+      "No external runtime state is read."
+    ],
+    "demand_estimate": [
+      "One local validator run."
+    ],
+    "resource_bill": [
+      "Local JSON validation.",
+      "Semantic transfer-boundary guard checks."
+    ],
+    "capacity_bottlenecks": [
+      "Human review of fixture assumptions."
+    ],
+    "omitted_variables": [
+      "Live scheduler latency.",
+      "Hardware behavior.",
+      "Open-world workload variation."
+    ],
+    "approximation_liberties": [
+      "Hand-authored toy state rather than a live simulator."
+    ],
+    "instrumentation_effects": [
+      "Validator observes declared fields only."
+    ],
+    "supported_claim_boundary": "Unit-invariant fixture boundary only.",
+    "observed_result_boundary": "Validator accepts a declared unit-invariant transfer within boundary.",
+    "transfer_decision": "transfer_within_boundary",
+    "support_state_effect": "argument_only",
+    "failure_behavior": "Over-boundary transfer is blocked or residualized.",
+    "residual_risks": [
+      "No simulator adequacy result.",
+      "No physical feasibility result."
+    ],
+    "evidence_refs": [
+      "docs/simulation_transfer_boundary_harness.md"
+    ],
+    "non_claims": [
+      "does not promote chapter core support state",
+      "no physical feasibility claim",
+      "no simulator adequacy claim",
+      "no open-world transfer result"
+    ]
+  },
+  "transfer_review": {
+    "requested_claim_boundary": "unit-invariant fixture boundary only",
+    "result_use": "bounded unit-invariant rehearsal",
+    "fidelity_declared": true,
+    "resources_declared": true,
+    "bottlenecks_declared": true,
+    "omissions_declared": true,
+    "instrumentation_recorded": true,
+    "boundary_respected": true,
+    "residual_or_downgrade_recorded": false,
+    "overclaim_requested": false,
+    "support_promotion_requested": false
+  },
+  "non_claims": [
+    "does not promote support state",
+    "does not prove physical feasibility",
+    "does not prove simulator adequacy",
+    "does not prove open-world transfer"
+  ]
+}

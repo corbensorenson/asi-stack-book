@@ -1,0 +1,73 @@
+{
+  "scenario_id": "sim-transfer-valid-scenario-only-001",
+  "simulation_contract_record": {
+    "simulation_id": "sim-transfer-scenario-only-001",
+    "claim_id": "resource-economics.simulation_scenario_boundary",
+    "contract_version": "v0.2",
+    "claim_class": "scenario_exploration",
+    "scope": "Scenario-only rehearsal for naming omitted variables and transfer blockers.",
+    "fidelity_standard": "Narrative scenario fidelity only.",
+    "fidelity_state": "declared",
+    "temporal_semantics": "No physical time semantics; scenario ordering only.",
+    "input_assumptions": [
+      "Scenario assumptions are author-declared.",
+      "No simulator engine is executed."
+    ],
+    "demand_estimate": [
+      "Local fixture review only."
+    ],
+    "resource_bill": [
+      "JSON validation and semantic guard checks."
+    ],
+    "capacity_bottlenecks": [
+      "No capacity bottleneck is measured; bottleneck remains a named assumption."
+    ],
+    "omitted_variables": [
+      "Parent-physics drift.",
+      "Hardware heat.",
+      "User workload distribution."
+    ],
+    "approximation_liberties": [
+      "Scenario uses qualitative labels."
+    ],
+    "instrumentation_effects": [
+      "No instrumentation beyond the fixture record."
+    ],
+    "supported_claim_boundary": "scenario-only boundary for residual routing",
+    "observed_result_boundary": "scenario-only blocker record",
+    "transfer_decision": "scenario_only",
+    "support_state_effect": "blocks_promotion",
+    "failure_behavior": "Scenario output remains scenario-only and blocks broader transfer.",
+    "residual_risks": [
+      "residual: omitted variables must be tested before transfer"
+    ],
+    "evidence_refs": [
+      "docs/simulation_transfer_boundary_harness.md"
+    ],
+    "non_claims": [
+      "does not promote chapter core support state",
+      "no physical feasibility claim",
+      "no simulator adequacy claim",
+      "no open-world transfer result"
+    ]
+  },
+  "transfer_review": {
+    "requested_claim_boundary": "scenario-only residual routing",
+    "result_use": "scenario-only blocker",
+    "fidelity_declared": true,
+    "resources_declared": true,
+    "bottlenecks_declared": true,
+    "omissions_declared": true,
+    "instrumentation_recorded": true,
+    "boundary_respected": true,
+    "residual_or_downgrade_recorded": true,
+    "overclaim_requested": false,
+    "support_promotion_requested": false
+  },
+  "non_claims": [
+    "does not promote support state",
+    "does not prove physical feasibility",
+    "does not prove simulator adequacy",
+    "does not prove open-world transfer"
+  ]
+}

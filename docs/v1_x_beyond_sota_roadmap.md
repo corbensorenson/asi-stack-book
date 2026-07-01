@@ -848,20 +848,25 @@ Acceptance bar:
 
 Current status for the initial v1.x active evidence cycle:
 
-- `docs/v1_x_active_evidence_cycle.md` selects seven chapter lanes:
+- `docs/v1_x_active_evidence_cycle.md` selects eight chapter lanes:
   `evidence-states-and-claim-discipline`,
   `recursive-self-improvement-boundaries`,
   `resource-economics-and-token-budgets`,
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `executable-specifications-and-lean-proof-envelope`,
   `project-theseus-as-report-first-implementation-reference`, and
-  `living-book-methodology`.
-- The remaining thirty-seven manifest chapter lanes are explicitly planned-only
+  `living-book-methodology`, plus
+  `coil-attention-cyclic-memory-and-recurrence-contracts`.
+- The remaining thirty-six manifest chapter lanes are explicitly planned-only
   for this cycle.
 - `scripts/validate_v1_x_active_evidence_cycle.py` enforces the selected-lane
   count, checks that selected plus planned-only lanes cover all 44 manifest
   chapters exactly once, and requires the current no-chapter-core-promotion
   boundary.
+- The active-cycle record now includes the synthetic simulation-transfer
+  boundary harness for Resource Economics and the cyclic-memory contract
+  harness for Coil Attention. Both are useful gate hardening; neither creates a
+  chapter-core support-state transition.
 
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 
