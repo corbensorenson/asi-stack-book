@@ -589,6 +589,7 @@ Draft deliverables:
 - Exact Appendix C claim-source mappings for the merged core claim across seven Corben/local sources; duplicate folded mappings are merged by source ID so support remains `argument` and passage-review boundaries remain visible.
 - Source-noted external positioning through moral-uncertainty RL, contestable AI, Collective Constitutional AI, corrigibility, and off-switch work; no experiment, legal process, public-input governance process, or deployed contestability result is reproduced.
 - Implemented synthetic Codex tests from both source chapters via `python3 scripts/validate_value_conflicts.py` and `python3 scripts/validate_governance_rights.py`; moral correctness, classification quality, reviewer independence, real exit/fork usability, legal rights, and runtime governance enforcement remain open.
+- Implemented Lean follow-through: `AsiStackProofs.ValueConflict` includes a finite value-conflict lifecycle admission route for missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries without claiming moral correctness, classification quality, reviewer quality, deployed contestability, legal rights, support-state promotion, or runtime governance behavior.
 - Implemented Lean follow-through: `AsiStackProofs.GovernanceRights` includes a finite governance-right lifecycle route envelope for missing governance records, audit material gaps, redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations, protected-right removal, unrecorded dissent, replacement receipt loss, durable receipt gaps, evidence-transition requirements, and complete contestable transitions without claiming legal rights, institutional adequacy, export usability, fork safety, redaction quality, SCF replacement, deployed governance, or support-state promotion.
 - Historical public slug preserved by `chapters/governance-rights-fork-exit-and-audit.html`; archived source manuscript retained under `archive/retired_chapters/governance-rights-fork-exit-and-audit.qmd`.
 
@@ -598,6 +599,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
 | `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
+| `lean:values.conflict.lifecycle_admission_route` | `AsiStackProofs.ValueConflict` | Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 
@@ -2630,8 +2632,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 133 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 133 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 134 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 134 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

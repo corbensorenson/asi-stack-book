@@ -1689,6 +1689,13 @@
               "result_status": "passing via synthetic value conflict harness; no runtime policy or deployed decision claim"
             },
             {
+              "name": "Value conflict lifecycle admission route envelope",
+              "purpose": "Check that finite value-conflict lifecycle records route missing conflict records, value axes, stakeholder records, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, high-stakes residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries to explicit outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no moral-correctness, classification-quality, reviewer-quality, deployed contestability, legal-rights, support-state-promotion, or runtime-governance claim",
+              "status": "implemented in AsiStackProofs.ValueConflict; no deployed value-conflict behavior claim"
+            },
+            {
               "name": "Audit-record availability test",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic governance rights harness; no institutional auditability or legal-rights claim"
@@ -1723,6 +1730,12 @@
               "tag": "lean:values.conflict.failure_blocks_promotion",
               "module": "AsiStackProofs.ValueConflict",
               "target": "A high-stakes conflict cannot bypass the required review predicate.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:values.conflict.lifecycle_admission_route",
+              "module": "AsiStackProofs.ValueConflict",
+              "target": "Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes.",
               "status": "implemented"
             },
             {

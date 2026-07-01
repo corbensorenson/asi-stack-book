@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 133 |
-| Manifest status counts | {"implemented": 133} |
-| Triage class counts | {"formal-invariant": 133} |
+| Proof targets audited | 134 |
+| Manifest status counts | {"implemented": 134} |
+| Triage class counts | {"formal-invariant": 134} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -82,7 +82,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/TheseusReference.lean` | 2 | 7 | 5 | 5 |
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 13 | 6 | 6 |
 | `lean/AsiStackProofs/TypedJobs.lean` | 3 | 14 | 4 | 4 |
-| `lean/AsiStackProofs/ValueConflict.lean` | 2 | 6 | 8 | 4 |
+| `lean/AsiStackProofs/ValueConflict.lean` | 3 | 22 | 10 | 5 |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | 3 | 12 | 2 | 3 |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | 3 | 13 | 5 | 5 |
 
@@ -113,7 +113,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `labor-os-and-typed-jobs` | 3 | 3 | 0 | 0 |
 | `living-book-methodology` | 2 | 2 | 0 | 0 |
 | `mathematical-and-search-substrates` | 2 | 2 | 0 | 0 |
-| `moral-uncertainty-and-value-conflict` | 4 | 4 | 0 | 0 |
+| `moral-uncertainty-and-value-conflict` | 5 | 5 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 4 | 4 | 0 | 0 |
 | `planning-as-a-control-layer` | 4 | 4 | 0 | 0 |
@@ -164,6 +164,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:corrigibility.agency.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:values.conflict.lifecycle_admission_route` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governance.rights.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.operational_invariant` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |

@@ -12,13 +12,13 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 133 |
+| Proof targets in manifest | 134 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 585 |
+| Theorem declarations classified | 601 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 464 |
+| Derived/decomposed theorem declarations | 480 |
 | Unknown or mixed theorem declarations | 0 |
-| Safety-critical theorem declarations | 86 |
+| Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -34,7 +34,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 3 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
 
@@ -103,7 +103,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 3 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 3 | 12 | 2 | 10 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | virtual-context-abi | 3 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 
@@ -666,11 +666,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobs.lean` | `recorded_valid_job_transition_uses_declared_lifecycle_relation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobs.lean` | `unlocked_contract_requests_job_contract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_routes_to_preservation` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `complete_value_conflict_lifecycle_admits_bounded_decision` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `decision_with_unresolved_protected_conflict_carries_residual_record` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_conflict_cannot_bypass_required_review` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_unresolved_conflict_without_residual_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_without_residual_blocks` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_without_review_blocks` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_authority_boundary_requests_boundary` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_conflict_record_requests_record` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_evidence_requirement_requests_evidence` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_expiry_or_revisit_requests_revisit` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_reversibility_record_requests_reversibility` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_review_route_requests_route` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_stakeholder_record_requests_stakeholders` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_stakes_record_requests_stakes` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_value_axes_requests_axes` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `support_promotion_without_value_conflict_transition_requests_transition` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_conflict_without_authority_narrowing_routes_to_narrowing` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_conflict_without_narrowed_authority_routes_to_narrowing` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_high_stakes_conflict_without_revisit_path_is_blocked` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_conflict_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `admitted_context_packet_may_still_be_marked_inadequate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `complete_draft_review_allows_draft_support` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `complete_verified_review_allows_verified_support` | derived_or_decomposed | no | uses simp, unfold |

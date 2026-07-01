@@ -261,6 +261,16 @@
       "rationale": "Implemented in AsiStackProofs.ValueConflict as a finite high-stakes review predicate: a high-stakes conflict without required review cannot be accepted."
     },
     {
+      "tag": "lean:values.conflict.lifecycle_admission_route",
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "module": "AsiStackProofs.ValueConflict",
+      "formal_target": "Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ValueConflict as a finite value-conflict lifecycle route over conflict records, value axes, stakeholder records, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries; it does not prove moral correctness, classification quality, reviewer quality, deployed contestability, legal rights, support-state promotion, or runtime governance behavior."
+    },
+    {
       "tag": "lean:governance.rights.operational_invariant",
       "chapter_id": "moral-uncertainty-and-value-conflict",
       "module": "AsiStackProofs.GovernanceRights",

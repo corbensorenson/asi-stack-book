@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The consolidated contestability layer preserves value-conflict and governance-right mappings at argument support only; no moral-correctness, legal-rights, institutional-adequacy, reviewer-independence, export-usability, fork-safety, or deployed-governance claim is promoted."
-  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems and governance-right lifecycle route checks remain bounded record checks; real review quality, runtime contestability, actual exit/fork usability, fork-safety review, redaction quality, and SCF replacement behavior remain open."
+  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems, value-conflict lifecycle route checks, and governance-right lifecycle route checks remain bounded record checks; real review quality, runtime contestability, actual exit/fork usability, fork-safety review, redaction quality, and SCF replacement behavior remain open."
   - "External comparators for moral-uncertainty RL, contestable AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment, legal process, or deployed governance result is reproduced here."
 ---
 
@@ -25,11 +25,12 @@ open_evidence_gaps:
 
 The consolidated contestability layer remains conceptual. Its core claim
 remains `Design rationale` with `argument` support. Existing source notes,
-synthetic harnesses, finite-record Lean theorems, and a bounded governance-right
-lifecycle route make the idea more inspectable, but they do not prove moral
-correctness, legal rights, institutional adequacy, reviewer independence, real
-export usability, safe fork execution, redaction quality, SCF replacement
-behavior, or deployed governance enforcement.
+synthetic harnesses, finite-record Lean theorems, a bounded value-conflict
+lifecycle route, and a bounded governance-right lifecycle route make the idea
+more inspectable, but they do not prove moral correctness, legal rights,
+institutional adequacy, reviewer independence, real export usability, safe fork
+execution, redaction quality, SCF replacement behavior, or deployed governance
+enforcement.
 
 The consolidated layer combines two record families:
 
@@ -386,6 +387,7 @@ the merged core claim at `argument`.
 | Value-conflict fixture validation | Check that conflict records preserve value axes, stakeholders, residual uncertainty, dissent, review routes, and non-claims. | implemented by protocol validation and current harnesses |
 | High-stakes review gate | Check that unresolved high-stakes conflicts require review and residual uncertainty. | modeled by finite Lean and synthetic fixtures; moral correctness and reviewer quality not run |
 | Bounded-decision lease test | Check that bounded decisions preserve authority limits, dissent payloads, expiry, and revisit triggers. | modeled by finite Lean and synthetic fixtures; deployed policy behavior not run |
+| Value conflict lifecycle admission route envelope | Check that finite value-conflict lifecycle records route missing conflict records, value axes, stakeholder records, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, high-stakes residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries to explicit outcomes. | implemented in `AsiStackProofs.ValueConflict`; no moral-correctness, classification-quality, reviewer-quality, deployed contestability, legal-rights, support-state-promotion, or runtime-governance claim |
 | Governance-rights fixture validation | Check that rights records preserve audit material, appeal paths, exit/fork access, fork safety, preservation obligations, durable receipts, and non-claims. | implemented by protocol validation and current harnesses |
 | Rights preservation check | Check that audit, exit, fork, dissent, redaction, and appeal paths survive a governed transition. | modeled by finite Lean and synthetic fixtures; real interface usability not run |
 | Governance rights lifecycle route envelope | Check that finite governance-right lifecycle records route missing governance records, audit material gaps, redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations, protected-right removal, unrecorded dissent, replacement receipt loss, missing durable receipts, evidence-transition gaps, and complete contestable transitions to explicit outcomes. | implemented in `AsiStackProofs.GovernanceRights`; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim |
@@ -397,6 +399,7 @@ the merged core claim at `argument`.
 |---|---|---|---|
 | `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
 | `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
+| `lean:values.conflict.lifecycle_admission_route` | `AsiStackProofs.ValueConflict` | Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 
@@ -405,9 +408,14 @@ source manuscripts. These Lean modules prove small finite-record properties,
 rejection cases, and bounded route outcomes for declared records.
 Direct/projection hooks remain projection-only traceability unless the theorem
 reasons over an explicit transition, negative case, residual path, authority
-ceiling, or support-state boundary. The Governance Rights module now also checks
-a finite lifecycle route for missing governance records, audit material,
-redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations,
+ceiling, or support-state boundary. The Value Conflict module now also checks a
+finite lifecycle route for missing conflict records, value axes, stakeholder
+records, stakes, reversibility, authority boundaries, evidence requirements,
+review routes, high-stakes review, residual uncertainty, dissent preservation,
+authority narrowing, expiry or revisit records, evidence-transition records,
+and non-claim boundaries. The Governance Rights module now also checks a finite
+lifecycle route for missing governance records, audit material, redaction
+appeal gaps, exit/export gaps, unsafe forks, missing fork obligations,
 protected-right removal, unrecorded dissent, replacement receipt loss, durable
 receipt gaps, evidence-transition requirements, and complete contestable
 transitions. These hooks do not prove moral correctness, automatic value

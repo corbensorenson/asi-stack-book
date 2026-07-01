@@ -213,4 +213,368 @@ theorem unresolved_conflict_without_authority_narrowing_routes_to_narrowing
   simp at safe
   exact safe
 
+inductive ValueConflictLifecycleRoute where
+  | requestConflictRecord
+  | requestValueAxes
+  | requestStakeholderRecord
+  | requestStakesRecord
+  | requestReversibilityRecord
+  | requestAuthorityBoundary
+  | requestEvidenceRequirement
+  | requestReviewRoute
+  | blockHighStakesUntilReview
+  | blockHighStakesUntilResidual
+  | preserveDissentPayload
+  | narrowAuthority
+  | requestExpiryOrRevisit
+  | requestEvidenceTransition
+  | preserveNonClaimBoundary
+  | admitBoundedConflictDecision
+deriving DecidableEq, Repr
+
+structure ValueConflictLifecycleReview where
+  conflictRecordPresent : Bool
+  valueAxesRecorded : Bool
+  stakeholderRecordPresent : Bool
+  stakesRecorded : Bool
+  reversibilityRecorded : Bool
+  authorityBoundaryRecorded : Bool
+  evidenceRequirementRecorded : Bool
+  reviewRouteRecorded : Bool
+  highStakesConflict : Bool
+  unresolvedConflict : Bool
+  reviewPresent : Bool
+  residualUncertaintyRecorded : Bool
+  boundedDecision : Bool
+  dissentPayloadPreserved : Bool
+  authorityNarrowed : Bool
+  expiryOrRevisitRecorded : Bool
+  supportPromotionRequested : Bool
+  evidenceTransitionRecorded : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def ValueConflictLifecycleRouteFor
+    (review : ValueConflictLifecycleReview) : ValueConflictLifecycleRoute :=
+  if review.conflictRecordPresent = false then
+    ValueConflictLifecycleRoute.requestConflictRecord
+  else if review.valueAxesRecorded = false then
+    ValueConflictLifecycleRoute.requestValueAxes
+  else if review.stakeholderRecordPresent = false then
+    ValueConflictLifecycleRoute.requestStakeholderRecord
+  else if review.stakesRecorded = false then
+    ValueConflictLifecycleRoute.requestStakesRecord
+  else if review.reversibilityRecorded = false then
+    ValueConflictLifecycleRoute.requestReversibilityRecord
+  else if review.authorityBoundaryRecorded = false then
+    ValueConflictLifecycleRoute.requestAuthorityBoundary
+  else if review.evidenceRequirementRecorded = false then
+    ValueConflictLifecycleRoute.requestEvidenceRequirement
+  else if review.reviewRouteRecorded = false then
+    ValueConflictLifecycleRoute.requestReviewRoute
+  else if review.highStakesConflict = true ∧ review.reviewPresent = false then
+    ValueConflictLifecycleRoute.blockHighStakesUntilReview
+  else if review.highStakesConflict = true ∧
+      review.residualUncertaintyRecorded = false then
+    ValueConflictLifecycleRoute.blockHighStakesUntilResidual
+  else if review.boundedDecision = true ∧
+      review.dissentPayloadPreserved = false then
+    ValueConflictLifecycleRoute.preserveDissentPayload
+  else if review.unresolvedConflict = true ∧ review.authorityNarrowed = false then
+    ValueConflictLifecycleRoute.narrowAuthority
+  else if review.expiryOrRevisitRecorded = false then
+    ValueConflictLifecycleRoute.requestExpiryOrRevisit
+  else if review.supportPromotionRequested = true ∧
+      review.evidenceTransitionRecorded = false then
+    ValueConflictLifecycleRoute.requestEvidenceTransition
+  else if review.nonClaimBoundaryRecorded = false then
+    ValueConflictLifecycleRoute.preserveNonClaimBoundary
+  else
+    ValueConflictLifecycleRoute.admitBoundedConflictDecision
+
+def completeValueConflictLifecycleReview : ValueConflictLifecycleReview :=
+  { conflictRecordPresent := true,
+    valueAxesRecorded := true,
+    stakeholderRecordPresent := true,
+    stakesRecorded := true,
+    reversibilityRecorded := true,
+    authorityBoundaryRecorded := true,
+    evidenceRequirementRecorded := true,
+    reviewRouteRecorded := true,
+    highStakesConflict := false,
+    unresolvedConflict := false,
+    reviewPresent := true,
+    residualUncertaintyRecorded := true,
+    boundedDecision := true,
+    dissentPayloadPreserved := true,
+    authorityNarrowed := true,
+    expiryOrRevisitRecorded := true,
+    supportPromotionRequested := false,
+    evidenceTransitionRecorded := true,
+    nonClaimBoundaryRecorded := true }
+
+theorem missing_conflict_record_requests_record
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestConflictRecord := by
+  intro missingRecord
+  unfold ValueConflictLifecycleRouteFor
+  simp [missingRecord]
+
+theorem missing_value_axes_requests_axes
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestValueAxes := by
+  intro record axesMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axesMissing]
+
+theorem missing_stakeholder_record_requests_stakeholders
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestStakeholderRecord := by
+  intro record axes stakeholdersMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholdersMissing]
+
+theorem missing_stakes_record_requests_stakes
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestStakesRecord := by
+  intro record axes stakeholders stakesMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakesMissing]
+
+theorem missing_reversibility_record_requests_reversibility
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestReversibilityRecord := by
+  intro record axes stakeholders stakes reversibilityMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibilityMissing]
+
+theorem missing_authority_boundary_requests_boundary
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestAuthorityBoundary := by
+  intro record axes stakeholders stakes reversibility authorityMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authorityMissing]
+
+theorem missing_evidence_requirement_requests_evidence
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestEvidenceRequirement := by
+  intro record axes stakeholders stakes reversibility authority evidenceMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority,
+    evidenceMissing]
+
+theorem missing_review_route_requests_route
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = true ->
+    review.reviewRouteRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestReviewRoute := by
+  intro record axes stakeholders stakes reversibility authority evidence routeMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority, evidence,
+    routeMissing]
+
+theorem high_stakes_without_review_blocks
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.highStakesConflict = true ->
+    review.reviewPresent = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.blockHighStakesUntilReview := by
+  intro record axes stakeholders stakes reversibility authority evidence route
+    highStakes reviewMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority, evidence,
+    route, highStakes, reviewMissing]
+
+theorem high_stakes_without_residual_blocks
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.highStakesConflict = true ->
+    review.reviewPresent = true ->
+    review.residualUncertaintyRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.blockHighStakesUntilResidual := by
+  intro record axes stakeholders stakes reversibility authority evidence route
+    highStakes reviewPresent residualMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority, evidence,
+    route, highStakes, reviewPresent, residualMissing]
+
+theorem bounded_decision_without_dissent_routes_to_preservation
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.highStakesConflict = false ->
+    review.boundedDecision = true ->
+    review.dissentPayloadPreserved = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.preserveDissentPayload := by
+  intro record axes stakeholders stakes reversibility authority evidence route
+    notHighStakes bounded dissentMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority, evidence,
+    route, notHighStakes, bounded, dissentMissing]
+
+theorem unresolved_conflict_without_narrowed_authority_routes_to_narrowing
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.highStakesConflict = false ->
+    review.boundedDecision = false ->
+    review.unresolvedConflict = true ->
+    review.authorityNarrowed = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.narrowAuthority := by
+  intro record axes stakeholders stakes reversibility authority evidence route
+    notHighStakes notBounded unresolved notNarrowed
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority, evidence,
+    route, notHighStakes, notBounded, unresolved, notNarrowed]
+
+theorem missing_expiry_or_revisit_requests_revisit
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.highStakesConflict = false ->
+    review.boundedDecision = false ->
+    review.unresolvedConflict = false ->
+    review.expiryOrRevisitRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestExpiryOrRevisit := by
+  intro record axes stakeholders stakes reversibility authority evidence route
+    notHighStakes notBounded resolved revisitMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority, evidence,
+    route, notHighStakes, notBounded, resolved, revisitMissing]
+
+theorem support_promotion_without_value_conflict_transition_requests_transition
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.highStakesConflict = false ->
+    review.boundedDecision = false ->
+    review.unresolvedConflict = false ->
+    review.expiryOrRevisitRecorded = true ->
+    review.supportPromotionRequested = true ->
+    review.evidenceTransitionRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.requestEvidenceTransition := by
+  intro record axes stakeholders stakes reversibility authority evidence route
+    notHighStakes notBounded resolved revisit promotion transitionMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority, evidence,
+    route, notHighStakes, notBounded, resolved, revisit, promotion,
+    transitionMissing]
+
+theorem value_conflict_without_nonclaim_boundary_preserves_boundary
+    {review : ValueConflictLifecycleReview} :
+    review.conflictRecordPresent = true ->
+    review.valueAxesRecorded = true ->
+    review.stakeholderRecordPresent = true ->
+    review.stakesRecorded = true ->
+    review.reversibilityRecorded = true ->
+    review.authorityBoundaryRecorded = true ->
+    review.evidenceRequirementRecorded = true ->
+    review.reviewRouteRecorded = true ->
+    review.highStakesConflict = false ->
+    review.boundedDecision = false ->
+    review.unresolvedConflict = false ->
+    review.expiryOrRevisitRecorded = true ->
+    review.supportPromotionRequested = false ->
+    review.nonClaimBoundaryRecorded = false ->
+    ValueConflictLifecycleRouteFor review =
+      ValueConflictLifecycleRoute.preserveNonClaimBoundary := by
+  intro record axes stakeholders stakes reversibility authority evidence route
+    notHighStakes notBounded resolved revisit noPromotion boundaryMissing
+  unfold ValueConflictLifecycleRouteFor
+  simp [record, axes, stakeholders, stakes, reversibility, authority, evidence,
+    route, notHighStakes, notBounded, resolved, revisit, noPromotion,
+    boundaryMissing]
+
+theorem complete_value_conflict_lifecycle_admits_bounded_decision :
+    ValueConflictLifecycleRouteFor completeValueConflictLifecycleReview =
+      ValueConflictLifecycleRoute.admitBoundedConflictDecision := by
+  unfold ValueConflictLifecycleRouteFor completeValueConflictLifecycleReview
+  simp
+
 end AsiStackProofs.ValueConflict

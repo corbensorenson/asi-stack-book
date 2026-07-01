@@ -51,6 +51,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Value conflict classification test | implemented | passing via synthetic value conflict harness; no moral-correctness or classification-quality claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Review escalation test | implemented | passing via synthetic value conflict harness; no reviewer-independence or review-quality claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Residual uncertainty preservation test | implemented | passing via synthetic value conflict harness; no runtime policy or deployed decision claim |
+| `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Value conflict lifecycle admission route envelope | implemented | passes via Lean route theorems; no moral-correctness, classification-quality, reviewer-quality, deployed contestability, legal-rights, support-state-promotion, or runtime-governance claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Audit-record availability test | implemented | passing via synthetic governance rights harness; no institutional auditability or legal-rights claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Exit-path preservation test | implemented | passing via synthetic governance rights harness; no runtime portability or deployed exit-right claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Fork-right safety test | implemented | passing via synthetic governance rights harness; no deployed fork enforcement or legal-rights claim |
@@ -385,16 +386,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 133 |
+| Proof targets covered by triage | 134 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 133 |
+| implemented | 134 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 133 |
+| implemented | formal-invariant | lean-candidate | 134 |
