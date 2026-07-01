@@ -1,0 +1,80 @@
+{
+  "scenario_id": "ctx-memory-valid-tainted-branch-blocked-001",
+  "allowed_mounts": ["restricted"],
+  "memory_events": [
+    {
+      "event_id": "event-secret-source",
+      "cell_id": "cell-secret",
+      "snapshot_id": "snapshot-branch-a",
+      "mount": "restricted",
+      "committed": true,
+      "deleted": false,
+      "visible_in_snapshots": ["snapshot-branch-a"],
+      "taint_labels": ["restricted"],
+      "derivative_of": []
+    },
+    {
+      "event_id": "event-secret-derivative",
+      "cell_id": "cell-secret-derivative",
+      "snapshot_id": "snapshot-branch-a",
+      "mount": "restricted",
+      "committed": true,
+      "deleted": false,
+      "visible_in_snapshots": ["snapshot-branch-a"],
+      "taint_labels": ["restricted"],
+      "derivative_of": ["cell-secret"]
+    }
+  ],
+  "context_transactions": [
+    {
+      "transaction_id": "tx-tainted-branch-blocked",
+      "transaction_state": "committed",
+      "transaction_validity_state": "store_validated",
+      "operation": "derive",
+      "snapshot_id": "snapshot-branch-a",
+      "snapshot_boundary": "synthetic isolated branch snapshot",
+      "mounts": ["restricted"],
+      "mount_policy": "restricted fixture mount with taint propagation",
+      "read_set": ["cell-secret"],
+      "write_set": ["cell-secret-derivative"],
+      "branch_policy": "branch cannot merge while restricted taint remains",
+      "isolation_state": "isolated",
+      "taint_labels": ["restricted"],
+      "taint_propagation": "propagated",
+      "deletion_obligations": [],
+      "rollback_or_deletion_closure": "no deletion obligation",
+      "declassification_refs": [],
+      "derivative_refs": ["cell-secret"],
+      "contradiction_refs": [],
+      "materialization_state": "blocked",
+      "closure_state": "not_applicable",
+      "faults": [],
+      "context_abi_refs": ["abi://ctx-memory-fixture"],
+      "source_refs": ["source://fixture-secret"],
+      "audit_refs": ["audit://ctx-memory-tainted-branch"],
+      "consumer_policy": "blocked from ordinary materialization while taint remains",
+      "verification_refs": ["validator://context-transaction-memory-store"],
+      "promotion_blockers": ["restricted taint remains undeclassified"],
+      "replay_boundary": "synthetic fixture artifact replay boundary",
+      "support_state_effect": "blocks_promotion",
+      "non_claims": ["synthetic fixture only", "no deployed memory-store claim", "does not promote support state"]
+    }
+  ],
+  "artifact_replay_refs": ["artifact://ctx-memory/tainted-branch-boundary"],
+  "store_review": {
+    "read_visibility_checked": true,
+    "branch_isolation_checked": true,
+    "mount_visibility_checked": true,
+    "deletion_closure_checked": true,
+    "taint_propagation_checked": true,
+    "replay_boundary_recorded": true,
+    "support_promotion_requested": false,
+    "deployed_store_claim_requested": false,
+    "replay_boundary_note": "artifact://ctx-memory/tainted-branch-boundary records the synthetic fixture replay boundary"
+  },
+  "non_claims": [
+    "synthetic context memory-store fixture only",
+    "no deployed memory-store behavior is claimed",
+    "does not promote support state"
+  ]
+}

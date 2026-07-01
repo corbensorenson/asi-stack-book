@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-01 - Context transaction memory-store harness
+
+- Added the book-gate-only context transaction memory-store harness in
+  `scripts/validate_context_transaction_memory_store.py`, with 3 valid fixtures
+  and 6 expected-invalid fixtures under
+  `experiments/context_transaction_memory_store/`. The harness validates
+  bounded `context_transaction_record` plus synthetic memory-event wrappers for
+  committed-read visibility, mount faults, branch isolation,
+  deletion-closure/materialization blocking, taint/declassification, replay
+  boundaries, and support-state non-promotion.
+- Updated the Context Transactions chapter, book outline, Appendix E, proof
+  adequacy review, v1.0 status/focus/roadmap surfaces, no-promotion ledger,
+  repository map, README, publication readiness, and validation wiring.
+  Appendix E now records 321 generated chapter-level rows with 219
+  implemented, 1 partial, and 101 planned rows; public status surfaces now
+  track 28 wired harnesses, including 6 book-gate-only chapter harnesses.
+- Refreshed `docs/source_readiness_report.md` during the audit-basis check so
+  source-note availability counts match the current source inventory.
+- This does not implement a deployed memory store, prove VCM conformance,
+  validate runtime branch isolation or side-channel safety, reproduce
+  VCM-Bench, promote the Context Transactions chapter core claim, approve a
+  reader artifact, or approve a release.
+
 ## 2026-07-01 - Context materialization deletion-closure proof
 
 - Strengthened `AsiStackProofs.ContextTransactions` with finite

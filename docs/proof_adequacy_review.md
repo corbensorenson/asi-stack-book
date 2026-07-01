@@ -84,7 +84,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `planning-as-a-control-layer` | 4 | useful but too narrow | Plan-control, dispatch-route, and folded PlanForge DAG record envelopes are useful guards; still add decomposition, context-demand, dependency-ordering, route-selection, selected-tier adequacy, cost-quality, runtime replanning, and planner-quality tests before stronger claims. |
 | `cognitive-compilation-and-semantic-ir` | 3 | needs executable tests first | Semantic-lowering route envelope added; still add source-plan parser, target-lowering traces, validator behavior, localized repair, and artifact-audit harnesses before stronger claims. |
 | `virtual-context-abi` | 5 | needs executable tests first | Context-admission route envelope added; still add deployed resolver, certificate-truthfulness, summary-fidelity, omission, transaction-isolation, interoperability, and model-facing memory tests before stronger claims. |
-| `context-transactions-snapshots-mounts-and-taint` | 2 | useful but too narrow | Materialization/deletion-closure route envelope added; still add memory-store, branch-isolation, mount-visibility, deployed deletion-closure, and replay tests. |
+| `context-transactions-snapshots-mounts-and-taint` | 2 | useful but too narrow | Materialization/deletion-closure route envelope and bounded memory-store fixture harness added; still add deployed memory-store behavior, runtime branch isolation, mount enforcement, deployed deletion closure, side-channel review, VCM conformance, and richer replay tests. |
 | `verification-bandwidth-and-context-adequacy` | 3 | needs executable tests first | Verification-adequacy route envelope added; still add contradiction suites, distractor-resistance measurements, semantic adequacy classifiers, deployed claim-ledger outcomes, and escalation-quality tests before stronger claims. |
 | `claim-ledgers-and-belief-revision` | 2 | useful but too narrow | Belief-revision record envelope added; still add extraction, contradiction, surface-sync, and substantive revision tests. |
 | `spinoza-verification-and-proof-carrying-claims` | 2 | useful but too narrow | Proof-carrying claim record and negative-case Lean envelopes added; still add verifier-output, interpretation-mapping, citation/procedure, mismatch, and failed-attempt tests. |
@@ -282,6 +282,23 @@ guard for materialization and deletion obligations, but it still does not
 implement a transactional memory store, prove branch isolation, enforce mount
 visibility, execute deployed deletion closure, validate declassification
 quality, or replay real memory transactions.
+
+### Context Transaction Memory-Store Harness Boundary
+
+The Context Transactions executable-test increment added
+`python3 scripts/validate_context_transaction_memory_store.py` with 3 valid and
+6 expected-invalid fixtures under `experiments/context_transaction_memory_store/`.
+The harness validates bounded `context_transaction_record` and synthetic
+memory-event wrappers for committed-read visibility, unauthorized mount faults,
+branch-isolation leakage, deletion-closure/materialization blocking,
+taint/declassification, replay-boundary recording, and support-state
+non-promotion.
+
+This moves the chapter beyond pure shape validation for its first memory-store
+rehearsal, but it remains fixture discipline. It does not implement a deployed
+memory store, prove VCM resolver behavior, enforce runtime mount visibility,
+prove branch isolation outside the fixture, validate side-channel safety,
+reproduce VCM-Bench, or move the chapter core claim above `argument`.
 
 ### Verification Bandwidth Adequacy Route Envelope
 

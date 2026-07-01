@@ -1,0 +1,69 @@
+{
+  "scenario_id": "ctx-memory-invalid-support-promotion-001",
+  "allowed_mounts": ["workspace"],
+  "memory_events": [
+    {
+      "event_id": "event-promotion",
+      "cell_id": "cell-promotion",
+      "snapshot_id": "snapshot-promotion",
+      "mount": "workspace",
+      "committed": true,
+      "deleted": false,
+      "visible_in_snapshots": ["snapshot-promotion"],
+      "taint_labels": [],
+      "derivative_of": []
+    }
+  ],
+  "context_transactions": [
+    {
+      "transaction_id": "tx-support-promotion",
+      "transaction_state": "committed",
+      "transaction_validity_state": "store_validated",
+      "operation": "read",
+      "snapshot_id": "snapshot-promotion",
+      "snapshot_boundary": "synthetic fixture snapshot",
+      "mounts": ["workspace"],
+      "mount_policy": "workspace fixture mount",
+      "read_set": ["cell-promotion"],
+      "write_set": [],
+      "branch_policy": "main branch",
+      "isolation_state": "not_applicable",
+      "taint_labels": [],
+      "taint_propagation": "not_applicable",
+      "deletion_obligations": [],
+      "rollback_or_deletion_closure": "no deletion obligation",
+      "declassification_refs": [],
+      "derivative_refs": [],
+      "contradiction_refs": [],
+      "materialization_state": "materializable",
+      "closure_state": "not_applicable",
+      "faults": [],
+      "context_abi_refs": ["abi://ctx-memory-fixture"],
+      "source_refs": ["source://fixture-promotion"],
+      "audit_refs": ["audit://ctx-memory-support-promotion"],
+      "consumer_policy": "fixture local check only",
+      "verification_refs": ["validator://context-transaction-memory-store"],
+      "promotion_blockers": [],
+      "replay_boundary": "synthetic fixture artifact replay boundary",
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "non_claims": ["synthetic fixture only", "no deployed memory-store claim", "does not promote support state"]
+    }
+  ],
+  "artifact_replay_refs": ["artifact://ctx-memory/support-promotion-boundary"],
+  "store_review": {
+    "read_visibility_checked": true,
+    "branch_isolation_checked": true,
+    "mount_visibility_checked": true,
+    "deletion_closure_checked": true,
+    "taint_propagation_checked": true,
+    "replay_boundary_recorded": true,
+    "support_promotion_requested": true,
+    "deployed_store_claim_requested": false,
+    "replay_boundary_note": "artifact://ctx-memory/support-promotion-boundary records the synthetic fixture replay boundary"
+  },
+  "non_claims": [
+    "synthetic context memory-store fixture only",
+    "no deployed memory-store behavior is claimed",
+    "does not promote support state"
+  ]
+}

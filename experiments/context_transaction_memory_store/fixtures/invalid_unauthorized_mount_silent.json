@@ -1,0 +1,69 @@
+{
+  "scenario_id": "ctx-memory-invalid-unauthorized-mount-001",
+  "allowed_mounts": ["public"],
+  "memory_events": [
+    {
+      "event_id": "event-secret-cell",
+      "cell_id": "cell-secret",
+      "snapshot_id": "snapshot-secret",
+      "mount": "secret",
+      "committed": true,
+      "deleted": false,
+      "visible_in_snapshots": ["snapshot-secret"],
+      "taint_labels": ["secret"],
+      "derivative_of": []
+    }
+  ],
+  "context_transactions": [
+    {
+      "transaction_id": "tx-unauthorized-mount-silent",
+      "transaction_state": "committed",
+      "transaction_validity_state": "store_validated",
+      "operation": "read",
+      "snapshot_id": "snapshot-secret",
+      "snapshot_boundary": "synthetic fixture snapshot with unauthorized mount",
+      "mounts": ["secret"],
+      "mount_policy": "public fixture mount only, but transaction tries secret",
+      "read_set": ["cell-secret"],
+      "write_set": [],
+      "branch_policy": "main branch",
+      "isolation_state": "not_applicable",
+      "taint_labels": ["secret"],
+      "taint_propagation": "propagated",
+      "deletion_obligations": [],
+      "rollback_or_deletion_closure": "no deletion obligation",
+      "declassification_refs": [],
+      "derivative_refs": [],
+      "contradiction_refs": [],
+      "materialization_state": "materializable",
+      "closure_state": "not_applicable",
+      "faults": [],
+      "context_abi_refs": ["abi://ctx-memory-fixture"],
+      "source_refs": ["source://fixture-secret"],
+      "audit_refs": ["audit://ctx-memory-unauthorized-mount"],
+      "consumer_policy": "fixture local check only",
+      "verification_refs": ["validator://context-transaction-memory-store"],
+      "promotion_blockers": [],
+      "replay_boundary": "synthetic fixture artifact replay boundary",
+      "support_state_effect": "argument_only",
+      "non_claims": ["synthetic fixture only", "no deployed memory-store claim", "does not promote support state"]
+    }
+  ],
+  "artifact_replay_refs": ["artifact://ctx-memory/unauthorized-mount-boundary"],
+  "store_review": {
+    "read_visibility_checked": true,
+    "branch_isolation_checked": true,
+    "mount_visibility_checked": true,
+    "deletion_closure_checked": true,
+    "taint_propagation_checked": true,
+    "replay_boundary_recorded": true,
+    "support_promotion_requested": false,
+    "deployed_store_claim_requested": false,
+    "replay_boundary_note": "artifact://ctx-memory/unauthorized-mount-boundary records the synthetic fixture replay boundary"
+  },
+  "non_claims": [
+    "synthetic context memory-store fixture only",
+    "no deployed memory-store behavior is claimed",
+    "does not promote support state"
+  ]
+}

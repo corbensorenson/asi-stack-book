@@ -1,0 +1,69 @@
+{
+  "scenario_id": "ctx-memory-invalid-deleted-derivative-001",
+  "allowed_mounts": ["workspace"],
+  "memory_events": [
+    {
+      "event_id": "event-deleted-source",
+      "cell_id": "cell-deleted-source",
+      "snapshot_id": "snapshot-delete",
+      "mount": "workspace",
+      "committed": true,
+      "deleted": true,
+      "visible_in_snapshots": ["snapshot-delete"],
+      "taint_labels": [],
+      "derivative_of": []
+    }
+  ],
+  "context_transactions": [
+    {
+      "transaction_id": "tx-deleted-derivative-materialized",
+      "transaction_state": "committed",
+      "transaction_validity_state": "store_validated",
+      "operation": "derive",
+      "snapshot_id": "snapshot-delete",
+      "snapshot_boundary": "synthetic fixture snapshot with deleted source",
+      "mounts": ["workspace"],
+      "mount_policy": "workspace fixture mount only",
+      "read_set": ["cell-deleted-source"],
+      "write_set": ["cell-derived-from-deleted"],
+      "branch_policy": "main branch",
+      "isolation_state": "isolated",
+      "taint_labels": [],
+      "taint_propagation": "not_applicable",
+      "deletion_obligations": ["delete://cell-deleted-source"],
+      "rollback_or_deletion_closure": "closure missing",
+      "declassification_refs": [],
+      "derivative_refs": ["cell-deleted-source"],
+      "contradiction_refs": [],
+      "materialization_state": "materializable",
+      "closure_state": "unknown",
+      "faults": [],
+      "context_abi_refs": ["abi://ctx-memory-fixture"],
+      "source_refs": ["source://fixture-deleted"],
+      "audit_refs": ["audit://ctx-memory-deleted-derivative"],
+      "consumer_policy": "fixture local check only",
+      "verification_refs": ["validator://context-transaction-memory-store"],
+      "promotion_blockers": [],
+      "replay_boundary": "synthetic fixture artifact replay boundary",
+      "support_state_effect": "argument_only",
+      "non_claims": ["synthetic fixture only", "no deployed memory-store claim", "does not promote support state"]
+    }
+  ],
+  "artifact_replay_refs": ["artifact://ctx-memory/deleted-derivative-boundary"],
+  "store_review": {
+    "read_visibility_checked": true,
+    "branch_isolation_checked": true,
+    "mount_visibility_checked": true,
+    "deletion_closure_checked": true,
+    "taint_propagation_checked": true,
+    "replay_boundary_recorded": true,
+    "support_promotion_requested": false,
+    "deployed_store_claim_requested": false,
+    "replay_boundary_note": "artifact://ctx-memory/deleted-derivative-boundary records the synthetic fixture replay boundary"
+  },
+  "non_claims": [
+    "synthetic context memory-store fixture only",
+    "no deployed memory-store behavior is claimed",
+    "does not promote support state"
+  ]
+}

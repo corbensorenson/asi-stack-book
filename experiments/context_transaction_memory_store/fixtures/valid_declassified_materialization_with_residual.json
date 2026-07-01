@@ -1,0 +1,80 @@
+{
+  "scenario_id": "ctx-memory-valid-declassified-residual-001",
+  "allowed_mounts": ["restricted", "public"],
+  "memory_events": [
+    {
+      "event_id": "event-restricted-source",
+      "cell_id": "cell-restricted-source",
+      "snapshot_id": "snapshot-declass",
+      "mount": "restricted",
+      "committed": true,
+      "deleted": false,
+      "visible_in_snapshots": ["snapshot-declass"],
+      "taint_labels": ["restricted"],
+      "derivative_of": []
+    },
+    {
+      "event_id": "event-public-derivative",
+      "cell_id": "cell-public-derivative",
+      "snapshot_id": "snapshot-declass",
+      "mount": "public",
+      "committed": true,
+      "deleted": false,
+      "visible_in_snapshots": ["snapshot-declass"],
+      "taint_labels": [],
+      "derivative_of": ["cell-restricted-source"]
+    }
+  ],
+  "context_transactions": [
+    {
+      "transaction_id": "tx-declassified-materialization",
+      "transaction_state": "committed",
+      "transaction_validity_state": "replay_validated",
+      "operation": "declassify",
+      "snapshot_id": "snapshot-declass",
+      "snapshot_boundary": "synthetic declassification fixture snapshot",
+      "mounts": ["restricted", "public"],
+      "mount_policy": "restricted source can produce public derivative only through declassification ref",
+      "read_set": ["cell-restricted-source"],
+      "write_set": ["cell-public-derivative"],
+      "branch_policy": "main branch with residual record",
+      "isolation_state": "isolated",
+      "taint_labels": ["restricted"],
+      "taint_propagation": "declassified",
+      "deletion_obligations": [],
+      "rollback_or_deletion_closure": "no deletion obligation; residual recorded",
+      "declassification_refs": ["declass://ctx-memory/restricted-to-public"],
+      "derivative_refs": ["cell-restricted-source"],
+      "contradiction_refs": [],
+      "materialization_state": "materializable",
+      "closure_state": "satisfied",
+      "faults": [],
+      "context_abi_refs": ["abi://ctx-memory-fixture"],
+      "source_refs": ["source://fixture-restricted"],
+      "audit_refs": ["audit://ctx-memory-declassification"],
+      "consumer_policy": "fixture local check with residual risk preserved",
+      "verification_refs": ["validator://context-transaction-memory-store"],
+      "promotion_blockers": [],
+      "replay_boundary": "synthetic fixture artifact replay boundary",
+      "support_state_effect": "argument_only",
+      "non_claims": ["synthetic fixture only", "no deployed memory-store claim", "does not promote support state"]
+    }
+  ],
+  "artifact_replay_refs": ["artifact://ctx-memory/declassification-boundary"],
+  "store_review": {
+    "read_visibility_checked": true,
+    "branch_isolation_checked": true,
+    "mount_visibility_checked": true,
+    "deletion_closure_checked": true,
+    "taint_propagation_checked": true,
+    "replay_boundary_recorded": true,
+    "support_promotion_requested": false,
+    "deployed_store_claim_requested": false,
+    "replay_boundary_note": "artifact://ctx-memory/declassification-boundary records the synthetic fixture replay boundary"
+  },
+  "non_claims": [
+    "synthetic context memory-store fixture only",
+    "no deployed memory-store behavior is claimed",
+    "does not promote support state"
+  ]
+}

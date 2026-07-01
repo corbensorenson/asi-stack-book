@@ -137,6 +137,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/procedural_memory_loop_harness.md` | Book-gate procedural-memory loop harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/routing_decision_lease_harness.md` | Book-gate routing decision lease harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/cyclic_memory_contract_harness.md` | Book-gate cyclic-memory contract harness summary, command, local result, and non-claim boundary. | tracked |
+| `docs/context_transaction_memory_store_harness.md` | Book-gate context transaction memory-store harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/context_admission_adequacy_harness.md` | Phase 5 context admission/adequacy harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/readiness_residual_harness.md` | Phase 5 readiness/residual gate harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/benchmark_antigoodhart_harness.md` | Phase 5 benchmark anti-Goodhart harness summary, command, local result, and non-claim boundary. | tracked |

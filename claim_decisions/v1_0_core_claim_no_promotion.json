@@ -132,7 +132,7 @@
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings, finite transaction hooks, synthetic context-admission deletion-closure fixtures, and finite materialization/deletion-closure route proofs, but no memory-store implementation, deployed taint propagation run, deployed deletion-closure verification, or branch-isolation replay has been accepted.",
+      "decision_reason": "The chapter has source mappings, finite transaction hooks, synthetic context-admission deletion-closure fixtures, finite materialization/deletion-closure route proofs, and a bounded synthetic memory-store harness, but no deployed memory-store implementation, deployed taint propagation run, deployed deletion-closure verification, side-channel review, or branch-isolation replay has been accepted.",
       "required_evidence": [
         "transactional context replay",
         "taint and deletion-closure negative cases",
@@ -140,7 +140,7 @@
       ],
       "blockers": [
         "no memory-store runtime",
-        "finite deletion-closure fixture/proof coverage only",
+        "finite deletion-closure and bounded synthetic memory-store fixture/proof coverage only",
         "no deployed deletion-closure, side-channel, or branch-isolation review"
       ],
       "non_claims": [

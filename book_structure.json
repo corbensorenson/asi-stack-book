@@ -3660,9 +3660,9 @@
               "result_status": "passes via Lean build; finite materialization/deletion-closure coverage only"
             },
             {
-              "name": "Memory-store conformance test",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "name": "Bounded memory-store conformance harness",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic context transaction memory-store harness; no deployed memory-store claim"
             }
           ],
           "lean_module": "AsiStackProofs.ContextTransactions",
@@ -3684,7 +3684,7 @@
             {
               "source_id": "vcm_public",
               "mapped_support": "Supports transactional context semantics through immutable content versions, semantic objects, source and authority binding, protected compilation, snapshot coherence, revocation, invalidation, audit records, and visible non-success states.",
-              "limits": "No local memory store, resolver, deletion-closure harness, branch-isolation test, or VCM conformance run is present.",
+              "limits": "No deployed memory store, resolver, runtime branch-isolation test, side-channel validation, VCM-Bench result, or VCM conformance run is present; bounded synthetic deletion-closure and memory-store fixture harnesses do not promote source-derived support.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/google_docs/vcm_public.txt:203-230",
@@ -3696,7 +3696,7 @@
                 "sources/raw/google_docs/vcm_public.txt:1266-1276",
                 "sources/raw/google_docs/vcm_public.txt:1277-1325"
               ],
-              "passage_review_note": "Reviewed local raw cache for object/version/representation/validation/packet/materialization identities, role-indexed obligations, representation graphs, protected compilation, semantic faults, runtime materialization keys, core-vs-transactions separation, immutable versions, pinned snapshots, commit/merge/branch/invalidation/deletion-closure ownership, race-free invalidation, residue reports, conformance boundaries, semantic page state, memory transactions, atomic commits, causal ordering, copy-on-write branches, cache invalidation, task checkpoints, access-controlled mount/read/write/share/delete operations, execution classes, summarization-preserved authority, and write-time controls; no local memory store, resolver, deletion-closure harness, branch-isolation test, or VCM conformance run is promoted."
+              "passage_review_note": "Reviewed local raw cache for object/version/representation/validation/packet/materialization identities, role-indexed obligations, representation graphs, protected compilation, semantic faults, runtime materialization keys, core-vs-transactions separation, immutable versions, pinned snapshots, commit/merge/branch/invalidation/deletion-closure ownership, race-free invalidation, residue reports, conformance boundaries, semantic page state, memory transactions, atomic commits, causal ordering, copy-on-write branches, cache invalidation, task checkpoints, access-controlled mount/read/write/share/delete operations, execution classes, summarization-preserved authority, and write-time controls; bounded synthetic deletion-closure and memory-store fixture harnesses exist, but no deployed memory store, resolver, runtime branch-isolation test, side-channel validation, VCM-Bench result, or VCM conformance run is promoted."
             },
             {
               "source_id": "ladon_manhattan",
@@ -3749,7 +3749,7 @@
             {
               "source_id": "vcm_editable",
               "mapped_support": "Refines the transaction vocabulary with stable addresses, mounts, snapshots, materializations, planner-guided semantic paging, protected compilation, authority non-escalation, and transactional/governed memory.",
-              "limits": "Connector-readable variant only; no local VCM-Bench, memory-store conformance run, or model-facing result exists here.",
+              "limits": "Connector-readable variant only; no local VCM-Bench, deployed memory-store conformance run, or model-facing result exists here; bounded synthetic memory-store fixtures do not validate this source variant.",
               "passage_refs": [
                 "sources/source_notes/vcm_editable.md:11-20",
                 "sources/source_notes/vcm_editable.md:22-29",
