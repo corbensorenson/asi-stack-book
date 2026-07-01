@@ -2437,10 +2437,12 @@ Draft deliverables:
 - Implemented repository-level fixture: `proof_contract_receipt_record.valid.json` validates proof-contract receipt record shape, receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims only; it does not validate a vendored Circle contract pack, ASI Stack consumer gate, or chapter-core proof-contract transport claim.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, fingerprint check, or vendored contract pack exists yet.
 - Implemented external receipt slice: `docs/circle_external_receipt_slice.md`, `experiments/circle_external_receipt_slice/results/2026-06-29-local.json`, and `evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json` record one bounded local Circle rope-position receipt replay for `circle-calculus.external_rope_receipt_replay` only; it does not promote `circle-calculus-and-proof-carrying-ai-contracts.core`.
+- Implemented concrete evidence surface: `python3 scripts/validate_circle_concrete_evidence_surface.py` checks that the chapter and outline surface Circle commit `63b0f511`, `CC-AI-CONTRACT-ROPE-001`, requested margin `1/328459`, certifier `theorem_count 55`, ready digest `fields=31 missing=0 theorems=75`, seven required theorem IDs, fingerprints, the ASI consumer gate, and non-claims; it does not promote chapter-core support.
 - Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary, consumer-gate promotion, missing-boundary, missing-contract-readiness, stale/unsupported-consumer, and replay-artifact requirements without claiming deployed Circle theorem transport.
 - Implemented Codex test: Proof target record fixture validation
 - Implemented Codex test: Proof contract receipt record fixture validation
 - Implemented Codex test: Circle public consumer-gate validation
+- Implemented Codex test: Circle concrete receipt evidence-surface validation
 - Implemented Codex test: Receipt boundary Lean predicate
 - Implemented Codex test: Consumer gate promotion predicate
 - Implemented Codex test: Missing receipt-boundary negative case
@@ -2580,7 +2582,9 @@ Draft deliverables:
 - A mixer and position-substrate experiment matrix with structural proof references, ordinary baselines, quality/runtime/memory/parameter metrics, alias and load diagnostics, and explicit non-claims.
 - Implemented repository-level fixture: `cyclic_mixer_evaluation_record.valid.json` validates the cyclic-mixer evaluation record shape, evaluation state, workload target, receipt refs, claim partition, hardware refusal path, baseline matrix refs, baseline symmetry, negative controls, failure-case refs, resource costs, metrics status, tradeoff packet ref, consumer policy, adoption rationale, source refs, support-state effect, and non-claims only; no RoPE certifier run, MLX experiment, hardware-kernel benchmark, or model-quality evaluation exists yet.
 - Source-noted external positioning through RoFormer/RoPE, LoRA, Mamba, and RetNet; no baseline matrix, quality, context-length, runtime, memory, training-stability, hardware-efficiency, or deployment result is reproduced or promoted.
+- Implemented concrete RoPE boundary surface: `python3 scripts/validate_circle_concrete_evidence_surface.py` checks that the recorded Circle RoPE receipt facts, including `evidence.exact_discrete_pass=true` and `evidence.total_bank_collision_pair_count=0`, are surfaced only as diagnostic structural evidence and do not promote chapter-core support, model quality, context length, speed, memory, hardware efficiency, deployment readiness, transfer, or ASI.
 - Planned Codex test: RoPE receipt boundary test
+- Implemented Codex test: Circle concrete RoPE boundary evidence-surface validation
 - Planned Codex test: Cyclic mixer baseline matrix test
 - Planned Codex test: Residue/winding alias diagnostic
 - Planned Codex test: Parameter-quality-runtime separation test

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Surface concrete Circle receipt evidence
+
+- Added `scripts/validate_circle_concrete_evidence_surface.py` and wired it
+  into the full book gate to keep the concrete Circle external receipt facts
+  visible in the Circle and CoilRA chapters, outline, and manifest test rows.
+- Updated Circle Calculus and CoilRA chapter prose to surface the public-safe
+  `CC-AI-CONTRACT-ROPE-001` receipt boundary: Circle commit `63b0f511`,
+  requested margin `1/328459`, `theorem_count 55`, ready digest
+  `fields=31 missing=0 theorems=75`, seven checked theorem IDs, fingerprints,
+  ASI consumer-gate behavior, exact/discretized fields, and non-claims.
+- This is visibility and boundary preservation for an existing non-core Circle
+  receipt lane only; it does not rerun Circle, vendor a contract pack, promote
+  any chapter core claim, or prove model quality, context length, speed, memory,
+  deployment safety, transfer, or ASI.
+
 ## 2026-07-01 - Guard chapter review burn-down roadmap
 
 - Integrated the calibrated chapter-by-chapter reviewer pass into the v1.x

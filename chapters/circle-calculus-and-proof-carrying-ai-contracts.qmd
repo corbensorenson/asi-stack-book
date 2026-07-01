@@ -4,7 +4,7 @@ chapter_id: "circle-calculus-and-proof-carrying-ai-contracts"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "circle_calculus_core"
   - "circle_ai_contract_suite"
@@ -16,7 +16,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all five assigned proof-carrying contract sources; support remains at argument until local Circle theorem-id resolution, clean replay from this repo, vendored contract packs, Circle Lean builds, downstream workloads, or accepted chapter-core evidence transitions exist."
   - "The proof_target_record and proof_contract_receipt_record fixtures validate proof-record and receipt-record schema/example consistency; the receipt fixture now records receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. `AsiStackProofs.ProofCarryingContracts` implements local finite-record boundary predicates plus negative cases for missing receipt fields, missing contract readiness, stale/unsupported consumer gates, and replay artifacts. `scripts/validate_circle_public_replay.py` now validates one public ASI-side consumer-gate fixture by pinned digest and rejects digest-mismatch, missing-theorem, stale-contract, and unsupported-transfer mutations; no external Circle Lean build, theorem-id resolver, Circle contract command, sidecar regeneration, or vendored contract pack has been run from this repo."
-  - "Pinned Circle project references support proof-boundary and contract-shape discussion, the external Circle receipt slice records a local clean-checkout replay, and the ASI-side consumer gate validates downstream receipt boundaries; this chapter still does not claim local Circle proof ownership, vendored contract artifacts, or downstream model-quality evidence."
+  - "Pinned Circle project references support proof-boundary and contract-shape discussion, the external Circle receipt slice records a local clean-checkout replay for Circle commit `63b0f511`, and the ASI-side consumer gate validates downstream receipt boundaries for `CC-AI-CONTRACT-ROPE-001`; the Circle chapter still does not claim local Circle proof ownership, vendored contract artifacts, chapter-core support promotion, or downstream model-quality evidence."
   - "RoPE material is used only for exact/discretized position-bookkeeping contract boundaries and numerical-diagnostic separation; it does not support model-quality, context-length, speed, memory, training-stability, or deployment-readiness claims."
   - "No chapter-core support-state promotion, raw source publication, local Circle proof ownership claim, clean Circle replay from this repo, downstream model-quality claim, or substrate-performance claim is implied by this drafting pass."
 ---
@@ -29,13 +29,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-01 |
 | Primary source records | `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`; supporting: `proof_carrying_circular_computation`, `circle_ai_architectures` |
 | Source loading state | source notes and passage-reviewed pinned local Circle project mappings exist for all assigned sources; raw project text is not copied into this repo; the external Circle receipt slice records a local clean-checkout replay, and the ASI-side consumer gate records a public receipt fixture without copying generated contract packs here |
-| Test state | `proof_target_record.valid.json` and `proof_contract_receipt_record.valid.json` pass repository-level protocol fixture validation, with proof-contract receipts now covering receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims; `AsiStackProofs.ProofCarryingContracts` passes the Lean build for receipt-boundary, consumer-gate, missing-boundary, missing-readiness, stale/unsupported-consumer, and replay-artifact predicates; `python3 scripts/validate_circle_public_replay.py` validates the pinned Circle consumer-gate fixture and rejects digest-mismatch, missing-theorem, stale-contract, and unsupported-transfer mutations; theorem-id resolution, clean Circle replay from this repo, vendored pack checks, and downstream workload preservation checks remain planned. |
+| Test state | `proof_target_record.valid.json` and `proof_contract_receipt_record.valid.json` pass repository-level protocol fixture validation, with proof-contract receipts now covering receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims; `AsiStackProofs.ProofCarryingContracts` passes the Lean build for receipt-boundary, consumer-gate, missing-boundary, missing-readiness, stale/unsupported-consumer, and replay-artifact predicates; `python3 scripts/validate_circle_public_replay.py` validates the pinned Circle consumer-gate fixture and rejects digest-mismatch, missing-theorem, stale-contract, and unsupported-transfer mutations; `python3 scripts/validate_circle_concrete_evidence_surface.py` checks that the concrete Circle receipt facts remain visible without chapter-core or model-quality promotion; theorem-id resolution, clean Circle replay from this repo, vendored pack checks, and downstream workload preservation checks remain planned. |
 
 ## Drafting guardrail
 
@@ -122,6 +122,26 @@ Operationally, the layer should produce artifacts that can be inspected without 
 The repository now mechanizes the smallest boundary that can be stated without importing the external Circle proof stack: a downstream-ready receipt must expose theorem references, deterministic fields, and an explicit non-claim boundary, and a downstream promotion gate must demand workload, baseline, metric, and evidence-artifact fields beyond contract readiness. The public `proof_contract_receipt_record` schema adds the adjacent receipt fields that prose needs: receipt state, finite-model scope, proof boundary, proof status, source version, content fingerprint, fingerprint status, resolver status, replay status, consumer permissions, consumer state, staleness policy, failure behavior, source refs, support-state effect, and evidence references. The Circle consumer-gate validator applies those fields to the pinned `CC-AI-CONTRACT-ROPE-001` receipt and rejects malformed or overclaimed uses, while remaining silent about unrun Circle commands in this repository.
 
 The contract should therefore be read in two layers. The proof layer says whether a finite structural fact has a theorem-linked receipt. The consumer layer says whether that receipt is adequate for a particular downstream use. Passing the first layer can be necessary for the second, but it is never sufficient by itself.
+
+### Concrete Circle Receipt Boundary
+
+The public-safe Circle lane is now concrete enough to show, but only as a bounded receipt boundary. The imported record says that an external Circle checkout at commit `63b0f511` built the `Circle` Lean target, certified the `CC-AI-CONTRACT-ROPE-001` `rope_position_distinguishability` contract for requested margin `1/328459`, emitted a ready digest, accepted a receipt, and passed the recorded public-safe external test batch. That does not promote the Circle core claim; it shows one narrow proof-contract receipt path that downstream ASI Stack consumers can check.
+
+| Field | Recorded value | Boundary |
+|---|---|---|
+| External source state | Circle checkout commit `63b0f511`, clean after the corrected commands | External local replay summary; the Circle project is not vendored here. |
+| Contract | `CC-AI-CONTRACT-ROPE-001`, family `rope_position_distinguishability` | Structural proof-contract receipt only. |
+| Requested margin | `1/328459` | Recorded request boundary; not a general context-length result. |
+| Certifier result | `status proved`, `request_passed true`, `decision passed`, `assurance mixed_theorem_and_computation`, `theorem_count 55` | Certifier receipt evidence, not model-quality evidence. |
+| Ready digest | `ready=True fields=31 missing=0 theorems=75` | Contract-pack readiness summary, not downstream usefulness. |
+| Deterministic evidence fields | `evidence.d19_proved_request_status="proved"`, `evidence.d19_proved_first_channel_bank_transfer=true`, `evidence.real_phase_dirichlet_witness_guardrail=true`, `evidence.exact_discrete_pass=true`, `evidence.total_bank_collision_pair_count=0` | Exact/discretized receipt fields and guardrails only. |
+| Seven theorem IDs checked by the ASI consumer gate | `AIRA-T0058`, `AIRA-T0059`, `AIRA-T0171`, `AIRA-T0172`, `AIRA-T0239`, `AIRA-T0240`, `AIRA-T0241` | Required theorem references for this receipt boundary only. |
+| Recommendation | `ROPE-USE-D19-MARGIN-FRONTIER` | Planner guidance attached to the receipt, not an adoption decision. |
+| Fingerprints | receipt `91b72a6dcf821a9733f21800cd1093a3d0665588022031ba72c94893800330c3`; normalized request `20e68c5f787e267c6611bc57b8d8e98e1cb0f5a74f272379716a5d83e761407d`; contract pack `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`; contract `a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468` | Replay and staleness checks, not proof of deployed transport. |
+| External test batch | `145 passed in 718.24s (0:11:58)` | External Circle public-safe batch; not an ASI Stack runtime or workload evaluation. |
+| ASI consumer gate | Rejects digest mismatch, missing required theorem ID, stale contract fingerprint status, and unsupported transfer-claim use | Public fixture guard for downstream receipt use. |
+
+The concrete surface matters because it gives readers numbers, theorem IDs, fingerprints, and rejection behavior instead of abstract proof language. Its non-claims matter just as much: it does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, or ASI; it does not prove deployed proof-contract transport inside The ASI Stack; and it does not promote any chapter core claim above `argument`.
 
 ### Proof receipt lifecycle
 
@@ -227,6 +247,7 @@ The current book has not demonstrated that transport service. `argument` remains
 | Proof target record fixture validation | Validate that a proof target record names chapter, Lean tag, target kind, formal target, artifact refs, verifier command/result, support-state effect, limitations, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Proof contract receipt record fixture validation | Validate that a theorem-linked receipt record exposes receipt state, finite-model scope, proof boundary, theorem refs, proof status, fingerprint field/status, resolver/replay states, consumer gate/state, staleness policy, failure behavior, source refs, support-state effect, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Circle public consumer-gate validation | Validate the pinned `CC-AI-CONTRACT-ROPE-001` receipt boundary against the proof-contract receipt schema and reject digest-mismatch, missing-theorem, stale-contract, and unsupported-transfer mutations. | implemented; passing via `python3 scripts/validate_circle_public_replay.py` |
+| Circle concrete receipt evidence-surface validation | Check that the concrete public-safe Circle facts remain visible in the Circle chapter and the outline while preserving chapter-core, model-quality, context-length, runtime, transfer, deployment, and ASI non-claims. | implemented; passing via `python3 scripts/validate_circle_concrete_evidence_surface.py` |
 | Receipt boundary Lean predicate | Prove that a downstream-ready proof-carrying receipt exposes theorem references, deterministic fields, and an explicit non-claim boundary. | implemented in `AsiStackProofs.ProofCarryingContracts`; passing via `cd lean && lake build` |
 | Consumer gate promotion predicate | Prove that contract readiness alone cannot promote a downstream claim when workload, baseline, metric, or evidence-artifact fields are missing. | implemented in `AsiStackProofs.ProofCarryingContracts`; passing via `cd lean && lake build` |
 | Missing receipt-boundary negative case | Reject downstream-ready receipt status when theorem refs, deterministic fields, or non-claim boundary fields are missing. | implemented; passes via Lean negative case; no theorem-resolution or replay claim |
@@ -238,7 +259,7 @@ The current book has not demonstrated that transport service. `argument` remains
 | Non-claim preservation test | Check that summaries and consumers preserve the non-claim boundary in text and records rather than treating readiness as proof of workload performance. | planned; not run |
 | Receipt replay and fingerprint test | Replay the receipt, recompute fingerprints, and fail the contract when content, theorem refs, or deterministic fields diverge. | planned; not run |
 
-The implemented rows validate fixture/schema consistency, the ASI-side public Circle consumer gate, and local finite-record Lean predicates only. The remaining rows require Circle contract artifacts or a local surrogate with theorem IDs, receipts, fingerprints, replay commands, and explicit non-claims; they are not reported results. When a stronger contract test is implemented, this chapter should link to the command, fixture, environment notes, artifact pack, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented rows validate fixture/schema consistency, the ASI-side public Circle consumer gate, and local finite-record Lean predicates only. The remaining rows require Circle contract artifacts or a local surrogate with theorem IDs, receipts, fingerprints, replay commands, and explicit non-claims; they are not reported results. When a stronger contract test is implemented, the Circle chapter should link to the command, fixture, environment notes, artifact pack, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 

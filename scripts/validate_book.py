@@ -101,6 +101,7 @@ REQUIRED = [
     "scripts/validate_resource_ci_cost_profile.py",
     "scripts/validate_circle_external_receipt_slice.py",
     "scripts/validate_circle_public_replay.py",
+    "scripts/validate_circle_concrete_evidence_surface.py",
     "scripts/validate_theseus_report.py",
     "scripts/validate_theseus_generation_mode_import.py",
     "scripts/run_theseus_support_replay_probe.py",
@@ -739,6 +740,7 @@ def main() -> None:
     run_validator("validate_resource_ci_cost_profile.py")
     run_validator("validate_circle_external_receipt_slice.py")
     run_validator("validate_circle_public_replay.py")
+    run_validator("validate_circle_concrete_evidence_surface.py")
     run_validator("validate_theseus_report.py")
     run_validator("validate_theseus_generation_mode_import.py")
     run_validator("validate_theseus_support_replay_probe.py")

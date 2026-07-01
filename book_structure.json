@@ -8426,6 +8426,13 @@
               "status": "implemented; passing via `python3 scripts/validate_circle_public_replay.py`"
             },
             {
+              "name": "Circle concrete receipt evidence-surface validation",
+              "purpose": "Check that concrete public-safe Circle receipt facts are surfaced in the chapter and outline while preserving chapter-core, model-quality, context-length, runtime, transfer, deployment, and ASI non-claims.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_circle_concrete_evidence_surface.py`; roadmap/reader visibility only, no support-state promotion",
+              "status": "implemented; passing via `python3 scripts/validate_circle_concrete_evidence_surface.py`"
+            },
+            {
               "name": "Receipt boundary Lean predicate",
               "purpose": "Prove that a downstream-ready proof-carrying receipt exposes theorem references, deterministic fields, and an explicit non-claim boundary.",
               "implementation_status": "implemented",
@@ -8475,8 +8482,8 @@
           "claim_label": "Design rationale",
           "open_evidence_gaps": [
             "Appendix C now records exact passage-reviewed mappings for all five assigned proof-carrying contract sources; support remains at argument until local Circle theorem-id resolution, clean replay from this repo, vendored contract packs, Circle Lean builds, downstream workloads, or accepted chapter-core evidence transitions exist.",
-            "The proof_target_record and proof_contract_receipt_record fixtures validate proof-record and receipt-record schema/example consistency; the receipt fixture now records receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. AsiStackProofs.ProofCarryingContracts implements local finite-record boundary predicates plus negative cases for missing receipt fields, missing contract readiness, stale/unsupported consumer gates, and replay artifacts. scripts/validate_circle_public_replay.py validates one public ASI-side consumer-gate fixture by pinned digest and rejects digest-mismatch, missing-theorem, stale-contract, and unsupported-transfer mutations; no external Circle Lean build, theorem-id resolver, Circle contract command, sidecar regeneration, or vendored contract pack has been run from this repo.",
-            "Pinned Circle project references support proof-boundary and contract-shape discussion, the external Circle receipt slice records a local clean-checkout replay, and the ASI-side consumer gate validates downstream receipt boundaries; this chapter still does not claim local Circle proof ownership, vendored contract artifacts, or downstream model-quality evidence.",
+            "The proof_target_record and proof_contract_receipt_record fixtures validate proof-record and receipt-record schema/example consistency; the receipt fixture now records receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims. AsiStackProofs.ProofCarryingContracts implements local finite-record boundary predicates plus negative cases for missing receipt fields, missing contract readiness, stale/unsupported consumer gates, and replay artifacts. scripts/validate_circle_public_replay.py validates one public ASI-side consumer-gate fixture by pinned digest and rejects digest-mismatch, missing-theorem, stale-contract, and unsupported-transfer mutations. scripts/validate_circle_concrete_evidence_surface.py checks that the concrete Circle receipt facts remain visible without chapter-core, model-quality, context-length, runtime, transfer, deployment, or ASI promotion; no external Circle Lean build, theorem-id resolver, Circle contract command, sidecar regeneration, or vendored contract pack has been run from this repo.",
+            "Pinned Circle project references support proof-boundary and contract-shape discussion, the external Circle receipt slice records a local clean-checkout replay for Circle commit 63b0f511, and the ASI-side consumer gate validates downstream receipt boundaries for CC-AI-CONTRACT-ROPE-001; this chapter still does not claim local Circle proof ownership, vendored contract artifacts, chapter-core support promotion, or downstream model-quality evidence.",
             "RoPE material is used only for exact/discretized position-bookkeeping contract boundaries and numerical-diagnostic separation; it does not support model-quality, context-length, speed, memory, training-stability, or deployment-readiness claims.",
             "No chapter-core support-state promotion, raw source publication, local Circle proof ownership claim, clean Circle replay from this repo, downstream model-quality claim, or substrate-performance claim is implied by this drafting pass."
           ],
@@ -8890,6 +8897,13 @@
               "result_status": "passes via Lean negative case; no hardware-kernel benchmark claim",
               "status": "implemented in AsiStackProofs.CyclicMixers; no deployment-readiness claim"
             },
+            {
+              "name": "Circle concrete RoPE boundary evidence-surface validation",
+              "purpose": "Check that the recorded Circle RoPE receipt boundary is surfaced as exact/discretized structural evidence only, with model-quality, context-length, runtime, memory, hardware, transfer, deployment, ASI, and support-state non-claims preserved.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_circle_concrete_evidence_surface.py`; structural diagnostic visibility only",
+              "status": "implemented; passing via `python3 scripts/validate_circle_concrete_evidence_surface.py`"
+            },
             "RoPE receipt boundary test",
             "Cyclic mixer baseline matrix test",
             "Residue/winding alias diagnostic",
@@ -8898,8 +8912,8 @@
           "claim_label": "Design rationale",
           "open_evidence_gaps": [
             "Appendix C now records exact passage-reviewed mappings for all five assigned CoilRA/MultiCoil/RoPE/cyclic-mixer sources; support remains at argument until local RoPE certifier runs, cyclic mixer benchmarks, MLX experiments, hardware-kernel tests, downstream quality evaluations, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist.",
-            "The cyclic_mixer_evaluation_record fixture validates schema/example consistency and AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates plus bounded negative cases for missing claim partitions, missing baselines or tradeoff metrics, residue/winding alias gaps, incomplete tradeoff packets, and hardware mismatches without refusal paths; no RoPE certifier command, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo.",
-            "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, replay receipts, check fingerprints, or validate external Circle Lean proofs as local evidence.",
+            "The cyclic_mixer_evaluation_record fixture validates schema/example consistency and AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates plus bounded negative cases for missing claim partitions, missing baselines or tradeoff metrics, residue/winding alias gaps, incomplete tradeoff packets, and hardware mismatches without refusal paths; scripts/validate_circle_concrete_evidence_surface.py checks that the recorded Circle RoPE receipt boundary is surfaced only as structural diagnostic evidence; no RoPE certifier command rerun, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo.",
+            "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, and the separate public-safe Circle receipt lane now gives this chapter one concrete RoPE receipt boundary for diagnostic structural use; this ASI Stack repo still did not rerun Circle commands, import generated contract packs, replay receipts from source, validate external Circle Lean proofs locally, or produce a quality/context-length/runtime result.",
             "Theseus transfer material is used only as source-reported experiment-design and claim-boundary context; no private Theseus payloads, scored benchmark artifacts, transfer reports, router-head traces, runtime/memory measurements, or promotion evidence were imported or reproduced here.",
             "No support-state promotion, raw source publication, CoilRA quality result, RoPE context-length result, cyclic mixer speed/runtime result, memory-savings result, training-stability result, hardware-efficiency result, deployment-readiness result, or transfer-result claim is implied by this drafting pass."
           ],
