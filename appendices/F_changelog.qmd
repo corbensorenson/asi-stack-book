@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-01 - Add Compact GVR synthetic evidence slice
+
+- Added `scripts/validate_compact_gvr_slice.py`,
+  `docs/compact_gvr_slice.md`,
+  `experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json`,
+  `experiments/compact_gvr_slice/results/2026-07-01-local.json`, and
+  `evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json`
+  for a bounded synthetic Compact Generative Systems receipt lane.
+- The slice compares a 368-byte literal baseline with a 78-byte exact
+  repeat-generator-plus-repair receipt, rejects lossy exactness,
+  negative-rate/no-fallback, and bounded-search-overrun controls, and checks a
+  finite `AsiStackProofs.CompactGenerativeSystems` fixture bridge.
+- Updated the non-core evidence ledger, measured-slice ledger, evidence
+  transition overview, README trust surface, v1.x roadmap, v1.0 status guard,
+  proof manifest, proof adequacy review, Compact Generative Systems chapter,
+  outline, and generated test appendix wiring. Only
+  `compact-generative-systems.compact_gvr_receipt_slice` moves to
+  `synthetic-test-backed`; all 44 chapter core claims remain at `argument`.
+
 ## 2026-07-01 - Expand Compact Generative admission proofs
 
 - Added a finite `CompactAdmissionReview` and

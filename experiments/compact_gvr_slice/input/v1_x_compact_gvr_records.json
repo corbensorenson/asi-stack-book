@@ -1,0 +1,158 @@
+{
+  "schema_version": "0.1",
+  "slice_id": "v1_x_compact_gvr_slice",
+  "claim_id": "compact-generative-systems.compact_gvr_receipt_slice",
+  "purpose": "Replay a bounded public-safe synthetic generate-verify-repair receipt slice with a literal baseline, one exact compact generator-plus-repair receipt, and negative controls for lossy exactness, negative-rate/no-fallback accounting, and bounded-search overrun.",
+  "target_text": "SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;",
+  "selection_policy": {
+    "baseline_rule": "The literal baseline serializes the complete target text and reconstructs it exactly.",
+    "eligible_receipt_rule": "A compact receipt is eligible only when it reconstructs the target exactly, is marked exact, passes verification, stays below the literal baseline byte count, keeps fallback and residual owner fields, stays within the declared search bound, preserves exact_replay consumer policy, and keeps non-claim boundaries.",
+    "selection_rule": "Select the eligible compact receipt with the lowest serialized byte count.",
+    "negative_control_rule": "Lossy exactness, negative-rate/no-fallback, and bounded-search-overrun receipts must be rejected and residualized."
+  },
+  "baseline_receipt_id": "receipt://literal-baseline",
+  "expected_selected_receipt": "receipt://repeat-generator-plus-repair",
+  "negative_control_receipt_ids": [
+    "receipt://lossy-summary-marked-exact",
+    "receipt://negative-rate-no-fallback",
+    "receipt://bounded-search-overrun"
+  ],
+  "cases": [
+    {
+      "receipt_id": "receipt://literal-baseline",
+      "role": "literal_baseline",
+      "serialized_form": "SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;",
+      "generation": {
+        "mode": "literal",
+        "literal": "SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;SOURCE->VERIFY->REPAIR;"
+      },
+      "marked_exact": true,
+      "verification_result": "pass",
+      "fallback_present": true,
+      "residual_owner": "residual://literal-baseline-none",
+      "search_bound": 0,
+      "search_steps": 0,
+      "consumer_policy": [
+        "exact_replay",
+        "baseline_comparison"
+      ],
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "non_claims": [
+        "synthetic literal baseline only",
+        "does not promote any chapter core claim",
+        "does not prove compression utility, codec correctness, semantic utility, model quality, or benchmark performance"
+      ]
+    },
+    {
+      "receipt_id": "receipt://repeat-generator-plus-repair",
+      "role": "selected_compact_receipt",
+      "serialized_form": "law=repeat;seed=SOURCE->VERIFY->REPAIR;count=15;repair=SOURCE->VERIFY->REPAIR;",
+      "generation": {
+        "mode": "repeat",
+        "seed": "SOURCE->VERIFY->REPAIR;",
+        "count": 15,
+        "repair_residual": "SOURCE->VERIFY->REPAIR;"
+      },
+      "marked_exact": true,
+      "verification_result": "pass",
+      "fallback_present": true,
+      "residual_owner": "residual://explicit-repair-tail",
+      "search_bound": 2,
+      "search_steps": 1,
+      "consumer_policy": [
+        "exact_replay",
+        "synthetic_fixture_only"
+      ],
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "non_claims": [
+        "synthetic compact receipt only",
+        "does not promote any chapter core claim",
+        "does not prove compression utility, codec correctness, semantic utility, model quality, or benchmark performance"
+      ]
+    },
+    {
+      "receipt_id": "receipt://lossy-summary-marked-exact",
+      "role": "lossy_exactness_control",
+      "serialized_form": "law=repeat;seed=SOURCE->VERIFY->REPAIR;count=15;repair=",
+      "generation": {
+        "mode": "repeat",
+        "seed": "SOURCE->VERIFY->REPAIR;",
+        "count": 15,
+        "repair_residual": ""
+      },
+      "marked_exact": true,
+      "verification_result": "fail",
+      "fallback_present": true,
+      "residual_owner": "residual://mismatched-tail",
+      "search_bound": 2,
+      "search_steps": 1,
+      "consumer_policy": [
+        "exact_replay",
+        "synthetic_fixture_only"
+      ],
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "non_claims": [
+        "synthetic lossy exactness negative control only",
+        "does not promote any chapter core claim",
+        "does not prove compression utility, codec correctness, semantic utility, model quality, or benchmark performance"
+      ]
+    },
+    {
+      "receipt_id": "receipt://negative-rate-no-fallback",
+      "role": "negative_rate_no_fallback_control",
+      "serialized_form": "law=repeat;seed=SOURCE->VERIFY->REPAIR;count=16;repair=;metadata=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "generation": {
+        "mode": "repeat",
+        "seed": "SOURCE->VERIFY->REPAIR;",
+        "count": 16,
+        "repair_residual": ""
+      },
+      "marked_exact": true,
+      "verification_result": "pass",
+      "fallback_present": false,
+      "residual_owner": "residual://negative-rate",
+      "search_bound": 2,
+      "search_steps": 1,
+      "consumer_policy": [
+        "exact_replay",
+        "synthetic_fixture_only"
+      ],
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "non_claims": [
+        "synthetic negative-rate and fallback negative control only",
+        "does not promote any chapter core claim",
+        "does not prove compression utility, codec correctness, semantic utility, model quality, or benchmark performance"
+      ]
+    },
+    {
+      "receipt_id": "receipt://bounded-search-overrun",
+      "role": "bounded_search_control",
+      "serialized_form": "law=search-repeat;seed=SOURCE->VERIFY->REPAIR;count=?;bound=2;attempts=5",
+      "generation": {
+        "mode": "search_overrun",
+        "seed": "SOURCE->VERIFY->REPAIR;",
+        "attempted_count": 5
+      },
+      "marked_exact": false,
+      "verification_result": "not_run",
+      "fallback_present": true,
+      "residual_owner": "residual://search-overrun",
+      "search_bound": 2,
+      "search_steps": 5,
+      "consumer_policy": [
+        "synthetic_fixture_only"
+      ],
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "non_claims": [
+        "synthetic bounded-search negative control only",
+        "does not promote any chapter core claim",
+        "does not prove compression utility, codec correctness, semantic utility, model quality, or benchmark performance"
+      ]
+    }
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not prove compression utility, codec correctness, semantic utility, model quality, or benchmark performance",
+    "does not prove deployed generator, verifier, fallback execution, or reconstruction behavior outside this synthetic fixture"
+  ]
+}

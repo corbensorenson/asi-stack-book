@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 140 |
+| Proof targets in manifest | 141 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 758 |
-| Direct/projection-style theorem declarations | 144 |
+| Theorem declarations classified | 763 |
+| Direct/projection-style theorem declarations | 148 |
 | Derived/decomposed theorem declarations | 614 |
-| Unknown or mixed theorem declarations | 0 |
+| Unknown or mixed theorem declarations | 1 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
 | Safety-critical chapter classifications present | 5/5 |
@@ -63,7 +63,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 3 | 16 | 2 | 14 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 4 | 21 | 6 | 14 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 3 | 18 | 2 | 16 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 17 | 2 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -273,10 +273,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CommandContracts.lean` | `hidden_or_conflicting_instruction_cannot_override_explicit_constraint` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CommandContracts.lean` | `missing_required_field_blocks_complete_command_contract` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `valid_command_contract_contains_required_interface_fields` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `bounded_search_overrun_fixture_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `compact_gvr_fixture_selected_beats_literal_baseline` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `compact_gvr_fixture_selected_is_eligible` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `complete_compact_admission_allows_representation` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `grounded_semantic_node_without_provenance_requests_provenance` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `hierarchy_change_without_migration_requests_migration` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_exact_claim_without_verification_blocks_admission` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_marked_exact_fixture_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_representation_without_verification_cannot_be_marked_exact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_unverified_representation_marked_exact_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_compression_boundary_requests_boundary` | derived_or_decomposed | no | uses simp |
@@ -286,6 +290,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_residual_record_requests_residual` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_source_artifact_requests_source` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_verifier_cost_requests_cost_record` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `negative_rate_without_fallback_fixture_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `support_promotion_without_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_require_residual_records` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_without_residual_records_rejected` | derived_or_decomposed | no | uses cases, have, rw |

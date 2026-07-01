@@ -224,4 +224,87 @@ theorem complete_compact_admission_allows_representation :
       CompactAdmissionRoute.admitCompactRepresentation := by
   simp [CompactAdmissionRouteFor, completeCompactAdmissionReview]
 
+inductive CompactGVRFixtureReceipt where
+  | literalBaseline
+  | repeatGeneratorPlusRepair
+  | lossySummaryMarkedExact
+  | negativeRateNoFallback
+  | boundedSearchOverrun
+deriving DecidableEq, Repr
+
+structure CompactGVRFixtureAssessment where
+  serializedBytes : Nat
+  exactReconstruction : Bool
+  fallbackPresent : Bool
+  residualVisible : Bool
+  searchWithinBound : Bool
+  eligible : Bool
+deriving DecidableEq, Repr
+
+def compactGVRFixtureAssessment :
+    CompactGVRFixtureReceipt -> CompactGVRFixtureAssessment
+  | .literalBaseline =>
+      { serializedBytes := 368
+        exactReconstruction := true
+        fallbackPresent := true
+        residualVisible := true
+        searchWithinBound := true
+        eligible := false }
+  | .repeatGeneratorPlusRepair =>
+      { serializedBytes := 78
+        exactReconstruction := true
+        fallbackPresent := true
+        residualVisible := true
+        searchWithinBound := true
+        eligible := true }
+  | .lossySummaryMarkedExact =>
+      { serializedBytes := 55
+        exactReconstruction := false
+        fallbackPresent := true
+        residualVisible := true
+        searchWithinBound := true
+        eligible := false }
+  | .negativeRateNoFallback =>
+      { serializedBytes := 485
+        exactReconstruction := true
+        fallbackPresent := false
+        residualVisible := true
+        searchWithinBound := true
+        eligible := false }
+  | .boundedSearchOverrun =>
+      { serializedBytes := 72
+        exactReconstruction := false
+        fallbackPresent := true
+        residualVisible := true
+        searchWithinBound := false
+        eligible := false }
+
+def CompactGVRFixtureSelected : CompactGVRFixtureReceipt :=
+  .repeatGeneratorPlusRepair
+
+theorem compact_gvr_fixture_selected_is_eligible :
+    (compactGVRFixtureAssessment CompactGVRFixtureSelected).eligible = true := by
+  rfl
+
+theorem lossy_marked_exact_fixture_rejected :
+    (compactGVRFixtureAssessment
+      CompactGVRFixtureReceipt.lossySummaryMarkedExact).eligible = false := by
+  rfl
+
+theorem negative_rate_without_fallback_fixture_rejected :
+    (compactGVRFixtureAssessment
+      CompactGVRFixtureReceipt.negativeRateNoFallback).eligible = false := by
+  rfl
+
+theorem bounded_search_overrun_fixture_rejected :
+    (compactGVRFixtureAssessment
+      CompactGVRFixtureReceipt.boundedSearchOverrun).eligible = false := by
+  rfl
+
+theorem compact_gvr_fixture_selected_beats_literal_baseline :
+    (compactGVRFixtureAssessment CompactGVRFixtureSelected).serializedBytes <
+      (compactGVRFixtureAssessment
+        CompactGVRFixtureReceipt.literalBaseline).serializedBytes := by
+  decide
+
 end AsiStackProofs.CompactGenerativeSystems

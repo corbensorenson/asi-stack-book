@@ -14,7 +14,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
-TRANSITION_DIR = ROOT / "evidence_transitions" / "v1_0_measured"
 CLAIM_REVISION = ROOT / "claim_revisions" / "v1_x" / "manifest_core_claim_count_narrowing.json"
 APPENDIX_C = ROOT / "appendices" / "C_claim_evidence_matrix.qmd"
 README = ROOT / "README.md"
@@ -23,21 +22,25 @@ INDEX = ROOT / "index.qmd"
 EXPECTED = {
     "living-book-methodology.phase5_harness_registry_runner": {
         "state": "synthetic-test-backed",
-        "transition": "phase5_harness_runner_synthetic_test_backed.json",
+        "transition": "evidence_transitions/v1_0_measured/phase5_harness_runner_synthetic_test_backed.json",
     },
     "resource-economics.costed_route_budget_slice": {
         "state": "synthetic-test-backed",
-        "transition": "costed_route_resource_slice_synthetic_test_backed.json",
+        "transition": "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
     },
     "circle-calculus.external_rope_receipt_replay": {
         "state": "prototype-backed",
-        "transition": "circle_external_rope_receipt_prototype_backed.json",
+        "transition": "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
+    },
+    "compact-generative-systems.compact_gvr_receipt_slice": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
     },
 }
 
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
-    "Accepted non-core upward transitions | 3 narrow transitions.",
+    "Accepted non-core upward transitions | 4 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Chapter-core promotion effect | None.",
@@ -100,7 +103,7 @@ def main() -> None:
             errors.append(f"{CLAIM_REVISION.relative_to(ROOT)} must not cite accepted transitions")
 
     for claim_id, expected in EXPECTED.items():
-        record_path = TRANSITION_DIR / expected["transition"]
+        record_path = ROOT / expected["transition"]
         record = load_transition(record_path)
         if record.get("claim_id") != claim_id:
             errors.append(
@@ -138,7 +141,7 @@ def main() -> None:
     if errors:
         fail(errors)
 
-    print("Non-core evidence ledger validation passed: 3 accepted non-core transitions, 0 chapter-core promotions.")
+    print("Non-core evidence ledger validation passed: 4 accepted non-core transitions, 0 chapter-core promotions.")
 
 
 if __name__ == "__main__":

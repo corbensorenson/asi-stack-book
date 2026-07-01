@@ -26,7 +26,7 @@ The v1.0.0 release proved that the repository can function as a public living
 book: manifest-driven structure, the original 54 drafted chapters, source
 notes, claim/source traceability, finite-record Lean hooks, schema fixtures,
 reader profiles, Human view, a reviewed reader HTML artifact, a deployed
-Quarto site, and three narrow non-core evidence transitions. The current v1.x
+Quarto site, and four narrow non-core evidence transitions. The current v1.x
 working table of contents has since consolidated to 44 active manifest
 chapters through governed execution packages.
 
@@ -125,13 +125,13 @@ not be quoted in the book as an external authority.
 | P0 | The chapter-by-chapter review should become a burn-down queue, not another grade sheet. | `docs/CHAPTER_REVIEWS.md` identifies concrete per-chapter weaknesses after self-auditing its proxies. Codex verified the two manifest proof-mapping bugs: `personal-compute-hives-and-federated-edge-intelligence` and `artifact-steward-agents-and-living-project-governance` had missing chapter-level `lean_module` values despite on-disk Lean modules with 22 and 16 theorem/lemma declarations. | Keep the review as planning input only, track every chapter weakness in the roadmap burn-down below, and execute fixes as proof, source-note, evidence-import, reader-prose, or manifest changes. The two `lean_module` mappings are fixed in `book_structure.json` in the current workset; no support state moves. |
 | P0 | The project needs one real measured result more than another internal sweep. | The current three upward transitions are narrow non-core lanes. No 44 chapter core claims have moved above `argument`, and no empirical lane yet demonstrates an architecture claim with baseline and negative control. | Choose one efficiency, routing, compression, or context lane; implement a one-command reproducible run with baseline, negative control, residuals, and an accepted promotion or no-promotion decision. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
-| P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 44 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
+| P1 | Appendix C hides the four earned non-core transitions too well. | Appendix C correctly says all 44 chapter core claims remain `argument`, but it does not make the four non-core transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first imports are intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes; `docs/theseus_report_import_slice.md` records one static digest-verified architecture-gate report import; `docs/theseus_generation_mode_import_slice.md` records one static digest-verified generation-mode import; and `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static imports and support probe as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
 | P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft assets plus text-equivalent chapter anchors. There is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
 | P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated; ten reader-handoff key figures now have draft SVG assets and accessibility-oriented prose equivalents, but they remain draft reader aids rather than release-reviewed art. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, stable across web, EPUB, PDF, DOCX, and audio companion treatment, and reviewed as artifacts before reader release. |
-| P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 44 core claims still remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
+| P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 44 core claims still remain `argument`; four narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
 ## Operating Principles
 
@@ -205,7 +205,7 @@ Do not reopen these unless a validator fails or a new change touches them:
 - source notes exist for current assigned source records;
 - source-to-chapter and claim-source mappings are complete for the current
   manifest;
-- three narrow non-core evidence transitions are recorded;
+- four narrow non-core evidence transitions are recorded;
 - all chapter core claims remain at `argument`;
 - reader HTML is the only release-approved human artifact;
 - EPUB, DOCX, PDF, e-reader app review, audio, DOI/Zenodo, screen-reader pass,
@@ -232,7 +232,7 @@ is:
    explicit voice-pass slots where only Corben can supply first-person lessons,
    conviction, or lived project stakes;
 6. make the honesty system legible in 60 seconds from README, landing page, and
-   Human view, and keep the three bounded non-core evidence transitions visible
+   Human view, and keep the four bounded non-core evidence transitions visible
    without chapter-core promotion;
 7. keep the chapter-level external-grounding lane current by mining each
    chapter's linked Corben papers for outside citations, recording vetted
@@ -370,7 +370,7 @@ Tasks:
 - Update the README, landing page, and live Human view entry path so a first-time
   visitor can quickly see:
   - all 44 chapter core claims remain `argument`;
-  - three bounded non-core evidence transitions exist and are narrow;
+  - four bounded non-core evidence transitions exist and are narrow;
   - Lean coverage is broad but still shallow in safety-critical areas;
   - Project Theseus and Circle are related project lanes, not independent
     third-party evidence unless imported through a public-safe replay gate;
@@ -404,6 +404,8 @@ Tasks:
   - `resource-economics.costed_route_budget_slice` as
     `synthetic-test-backed`;
   - `circle-calculus.external_rope_receipt_replay` as `prototype-backed`.
+  - `compact-generative-systems.compact_gvr_receipt_slice` as
+    `synthetic-test-backed`.
 - Link that surface from Appendix C without changing the fact that all 44
   chapter core claims remain `argument`.
 - Add a validation check that prevents non-core transitions from being rendered
@@ -413,7 +415,7 @@ Tasks:
 
 Acceptance bar:
 
-- Appendix C or a sibling appendix surfaces the three earned transitions;
+- Appendix C or a sibling appendix surfaces the four earned transitions;
 - the chapter-core matrix still reports 44 `argument` support states;
 - validation rejects accidental chapter-core promotion language.
 
@@ -1189,6 +1191,17 @@ Current status for the focused v1.x active evidence cycle:
   transfer, missing resource bills, missing bottleneck residuals, ignored
   instrumentation, and support-state promotion, but it does not create a new
   evidence transition.
+- The Compact GVR synthetic slice is an executed chapter-review burn-down item
+  for Compact Generative Systems rather than a new broad active-cycle sweep:
+  `python3 scripts/validate_compact_gvr_slice.py` recomputes five public-safe
+  compact-generation receipt records, compares a 368-byte literal baseline to a
+  78-byte exact repeat-generator-plus-repair receipt, rejects lossy exactness,
+  negative-rate/no-fallback, and bounded-search-overrun controls, checks a
+  finite `AsiStackProofs.CompactGenerativeSystems` fixture bridge, and accepts
+  only the non-core `compact-generative-systems.compact_gvr_receipt_slice`
+  transition as `synthetic-test-backed`. The chapter core claim remains
+  `argument`, and real codec/generator/verifier, corpus, fallback execution,
+  semantic utility, model quality, and downstream utility evidence remain open.
 - The Project Theseus generation-mode import is a direct support lane connected
   to Fast Generation and the Project Theseus implementation-reference chapter:
   the imported gate records 18 modes, 13 comparisons, zero hard gaps, five
@@ -2606,7 +2619,7 @@ explicitly passed or explicitly scoped out in a release record.
 | Execution-over-reports gate | Any new roadmap, report, review packet, or scorecard is paired with an executed proof, evidence, source, reader, artifact, release, or external-review change, or is explicitly required by a validator. | The project is spending cycles on planning surfaces instead of changing artifacts. |
 | Retired URL preservation | The ten retired consolidation URLs have static historical stubs with refresh/canonical targets into active manifest chapters, guarded by `scripts/validate_chapter_consolidation_sequence.py`. | Public links from the pre-consolidation book can silently rot. |
 | Sixty-second trust surface | README, landing page, or Human view entry path makes current evidence, non-claims, proof limits, self-sourcing boundaries, and external-review status legible quickly. | Cold readers cannot distinguish disciplined research program from overbroad theory. |
-| Non-core evidence visibility | Appendix C or sibling surface names the three current non-core transitions and keeps all 44 core claims at `argument` unless separately promoted. | Readers cannot tell what evidence exists. |
+| Non-core evidence visibility | Appendix C or sibling surface names the four current non-core transitions and keeps all 44 core claims at `argument` unless separately promoted. | Readers cannot tell what evidence exists. |
 | Early external review | At least one external review record exists, or a dated blocker records outreach and scope. | The release remains self-reviewed. |
 | Defended contribution focus | The release names three to five contribution tracks and at most three deep-work tracks for the cycle. | The project remains broad without defended results. |
 | Safety-critical Lean depth | Five targeted modules include `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases, or a release record explicitly keeps them projection-only. | Formal layer remains v1.0-depth. |

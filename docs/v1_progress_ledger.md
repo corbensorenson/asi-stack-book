@@ -9,7 +9,7 @@ remaining blockers, and release-classification boundaries are visible.
 The current state is a tagged v1.0.0 living-book evidence-and-reader release
 boundary for source commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`. It has a
 release-gate audit, reviewed local reader HTML artifact, complete chapter-core
-no-promotion coverage, two bounded synthetic-test-backed measured/replayed
+no-promotion coverage, three bounded synthetic-test-backed measured/replayed
 transitions plus one prototype-backed imported Circle receipt transition outside
 chapter core claims, proof-depth honesty, protocol crosswalks, external-SOTA
 placement, architecture desk red-team coverage, final citation metadata, and a

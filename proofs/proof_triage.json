@@ -931,6 +931,16 @@
       "rationale": "Implemented in AsiStackProofs.CompactGenerativeSystems as a finite admission-route function and derived route theorems for missing source artifacts, compression boundaries, residual records, lossy exactness overclaims, reconstruction evidence, fallback paths, verifier-cost records, semantic provenance, hierarchy-migration records, support-promotion attempts without evidence transitions, missing non-claim boundaries, and complete compact-representation admission."
     },
     {
+      "tag": "lean:compression.cgs.gvr_fixture_bridge",
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "module": "AsiStackProofs.CompactGenerativeSystems",
+      "formal_target": "The compact GVR synthetic slice has a finite Lean fixture bridge matching the literal baseline, selected compact receipt, lossy exactness control, negative-rate/no-fallback control, bounded-search-overrun control, and selected-versus-baseline byte relation.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CompactGenerativeSystems as a finite fixture bridge for the compact GVR synthetic slice: the selected repeat-generator-plus-repair receipt is eligible, lossy exactness, negative-rate/no-fallback, and bounded-search-overrun controls are ineligible, and the selected modeled byte count is below the literal baseline."
+    },
+    {
       "tag": "lean:compression.gvr.operational_invariant",
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "module": "AsiStackProofs.GenerateVerifyRepair",

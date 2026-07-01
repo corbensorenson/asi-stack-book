@@ -87,6 +87,7 @@ REQUIRED = [
     "scripts/validate_readiness_residual_gates.py",
     "scripts/validate_benchmark_antigoodhart.py",
     "scripts/validate_generation_mode_baselines.py",
+    "scripts/validate_compact_gvr_slice.py",
     "scripts/validate_resource_budget_ledgers.py",
     "scripts/validate_simulation_transfer_boundaries.py",
     "scripts/validate_reference_trace.py",
@@ -145,6 +146,7 @@ REQUIRED = [
     "docs/readiness_residual_harness.md",
     "docs/benchmark_antigoodhart_harness.md",
     "docs/generation_mode_baseline_harness.md",
+    "docs/compact_gvr_slice.md",
     "docs/resource_budget_ledger_harness.md",
     "docs/reference_trace_harness.md",
     "docs/capacity_smoothing_harness.md",
@@ -189,6 +191,7 @@ REQUIRED = [
     "experiments/capability_replacement/results/2026-06-28-local.md",
     "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
+    "experiments/compact_gvr_slice/results/2026-07-01-local.json",
     "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
     "experiments/reference_trace/results/2026-06-30-local.md",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
@@ -723,6 +726,7 @@ def main() -> None:
     run_validator("validate_readiness_residual_gates.py")
     run_validator("validate_benchmark_antigoodhart.py")
     run_validator("validate_generation_mode_baselines.py")
+    run_validator("validate_compact_gvr_slice.py")
     run_validator("validate_resource_budget_ledgers.py")
     run_validator("validate_simulation_transfer_boundaries.py")
     run_validator("validate_reference_trace.py")

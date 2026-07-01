@@ -1,0 +1,113 @@
+{
+  "transition_id": "v1_x_measured.compact_gvr_slice.synthetic_test_backed",
+  "claim_id": "compact-generative-systems.compact_gvr_receipt_slice",
+  "claim_surface_refs": [
+    "docs/compact_gvr_slice.md",
+    "docs/first_measured_replayed_slice.md",
+    "docs/evidence_transition_pilot.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json",
+    "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+    "scripts/validate_compact_gvr_slice.py",
+    "schemas/evidence_transition_record.schema.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "synthetic-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded synthetic compact-generation/GVR receipt claim moves to synthetic-test-backed: the validator recomputes one public-safe literal baseline, selects one exact compact generator-plus-repair receipt, rejects lossy exactness, negative-rate/no-fallback, and bounded-search-overrun controls, and checks a finite Lean fixture bridge with matching byte counts and receipt outcomes.",
+  "evidence_roles": [
+    "compact_generation_receipt_replay",
+    "literal_baseline",
+    "exact_reconstruction_check",
+    "repair_residual_accounting",
+    "fallback_boundary_check",
+    "negative_rate_control",
+    "lossy_exactness_negative_control",
+    "bounded_search_negative_control",
+    "lean_fixture_alignment_gate",
+    "public_safe_result_record"
+  ],
+  "transition_reason": "The local validation command checked five tracked compact-generation receipt records. It kept the literal baseline at 368 bytes, selected receipt://repeat-generator-plus-repair at 78 bytes with exact reconstruction, explicit repair residual, fallback, residual owner, exact-replay policy, and bounded search, and reported a 78.8 percent synthetic byte reduction versus the literal baseline. It rejected receipt://lossy-summary-marked-exact because verification failed and reconstruction mismatched, rejected receipt://negative-rate-no-fallback because it was larger than the literal baseline and had no fallback despite exact reconstruction, and rejected receipt://bounded-search-overrun because it exceeded the declared search bound, did not run verification, lacked exact-replay policy, and reconstructed the wrong target. This supports only the narrow recorded receipt-discipline claim, not deployed compression, codec correctness, semantic utility, model quality, benchmark performance, or chapter core claims.",
+  "required_artifacts": [
+    "public-safe compact GVR input record",
+    "tracked deterministic result record",
+    "local validation command",
+    "literal baseline",
+    "lossy exactness negative control",
+    "negative-rate/no-fallback negative control",
+    "bounded-search-overrun negative control",
+    "Lean fixture alignment with receipt constructors, byte counts, selected receipt, and rejected controls",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json",
+    "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+    "scripts/validate_compact_gvr_slice.py",
+    "lean/AsiStackProofs/CompactGenerativeSystems.lean",
+    "docs/compact_gvr_slice.md",
+    "scripts/validate_evidence_transitions.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/compact_gvr_slice.md",
+    "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+    "lean/AsiStackProofs/CompactGenerativeSystems.lean",
+    "docs/first_measured_replayed_slice.md",
+    "docs/evidence_transition_pilot.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "docs/compact_gvr_slice.md#accepted-narrow-claim"
+  ],
+  "verification_command": "python3 scripts/validate_compact_gvr_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "receipt://lossy-summary-marked-exact is smaller at 55 bytes but rejected because verification_result is fail and exact reconstruction is false",
+    "receipt://negative-rate-no-fallback reconstructs exactly but is rejected because it is 485 bytes versus the 368-byte literal baseline and fallback is missing",
+    "receipt://bounded-search-overrun is rejected because search_steps 5 exceeds search_bound 2, verification is not run, exact replay is not allowed, and exact reconstruction is false",
+    "no chapter core claim is promoted above argument",
+    "no deployed compression, codec correctness, fallback execution, semantic utility, model-quality, benchmark, source-interpretation, safety, or ASI outcome is claimed"
+  ],
+  "negative_evidence_refs": [
+    "experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json",
+    "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+    "docs/compact_gvr_slice.md"
+  ],
+  "downgrade_triggers": [
+    "validator fails to reject the lossy exactness negative control",
+    "validator fails to reject the negative-rate/no-fallback negative control",
+    "validator fails to reject the bounded-search-overrun negative control",
+    "selected receipt no longer reconstructs exactly",
+    "selected receipt is not smaller than the literal baseline",
+    "result record drifts from recomputed byte counts or selected receipt",
+    "Lean fixture bridge drifts from the public JSON/result fixture",
+    "chapter prose interprets this slice as deployed compression, codec correctness, model quality, benchmark performance, source interpretation, safety, ASI, or chapter-core evidence"
+  ],
+  "promotion_burden": "Broader compact-generation or compression claims require a separate accepted transition with a real codec or generator, independent verifier or reconstruction harness, corpus or task suite, downstream utility metrics, fallback execution traces, semantic/consumer-policy tests, public-safe implementation artifacts, independent review where relevant, and explicit non-claims.",
+  "limitations": [
+    "synthetic public-safe receipt records only",
+    "local deterministic validation rather than a deployed compact generator or codec",
+    "toy repeat rule rather than learned generation",
+    "exact string equality rather than semantic verification",
+    "single synthetic target rather than a corpus",
+    "does not measure model quality, benchmark quality, semantic utility, compression utility over workloads, fallback execution, or safety outcomes",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent external audit",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-01---compact-gvr-synthetic-slice",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not prove compression utility, codec correctness, semantic utility, model quality, or benchmark performance",
+    "does not prove deployed generator, verifier, fallback execution, or reconstruction behavior outside this synthetic fixture",
+    "does not prove source interpretation, ASI capability, governance effectiveness, safety, or runtime behavior",
+    "does not replace future real compression, GVR, RankFold, BBVCA, Theseus, Circle, external-review, or corpus-backed evidence"
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-07-01-local-compact-gvr-slice",
+  "slice_id": "v1_x_compact_gvr_slice",
+  "input_ref": "experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json",
+  "command": "python3 scripts/validate_compact_gvr_slice.py",
+  "environment": "local deterministic Python validation over tracked public-safe synthetic compact-generation records",
+  "target_bytes": 368,
+  "baseline_receipt": "receipt://literal-baseline",
+  "baseline_bytes": 368,
+  "selected_receipt": "receipt://repeat-generator-plus-repair",
+  "selected_bytes": 78,
+  "byte_reduction_vs_literal_percent": 78.8,
+  "eligible_receipts": [
+    "receipt://repeat-generator-plus-repair"
+  ],
+  "negative_control_receipts": [
+    "receipt://bounded-search-overrun",
+    "receipt://lossy-summary-marked-exact",
+    "receipt://negative-rate-no-fallback"
+  ],
+  "rejected_receipts": [
+    {
+      "receipt_id": "receipt://lossy-summary-marked-exact",
+      "role": "lossy_exactness_control",
+      "status": "rejected",
+      "representation_bytes": 55,
+      "exact_reconstruction": false,
+      "rejection_reasons": [
+        "verification_result=fail",
+        "reconstruction_mismatch"
+      ]
+    },
+    {
+      "receipt_id": "receipt://negative-rate-no-fallback",
+      "role": "negative_rate_no_fallback_control",
+      "status": "rejected",
+      "representation_bytes": 485,
+      "exact_reconstruction": true,
+      "rejection_reasons": [
+        "fallback_missing",
+        "not_smaller_than_literal_baseline"
+      ]
+    },
+    {
+      "receipt_id": "receipt://bounded-search-overrun",
+      "role": "bounded_search_control",
+      "status": "rejected",
+      "representation_bytes": 72,
+      "exact_reconstruction": false,
+      "rejection_reasons": [
+        "not_marked_exact",
+        "verification_result=not_run",
+        "reconstruction_mismatch",
+        "search_bound_exceeded",
+        "consumer_policy_lacks_exact_replay"
+      ]
+    }
+  ],
+  "case_results": [
+    {
+      "receipt_id": "receipt://literal-baseline",
+      "role": "literal_baseline",
+      "status": "baseline",
+      "representation_bytes": 368,
+      "exact_reconstruction": true,
+      "rejection_reasons": [
+        "not_smaller_than_literal_baseline"
+      ]
+    },
+    {
+      "receipt_id": "receipt://repeat-generator-plus-repair",
+      "role": "selected_compact_receipt",
+      "status": "eligible",
+      "representation_bytes": 78,
+      "exact_reconstruction": true,
+      "rejection_reasons": []
+    },
+    {
+      "receipt_id": "receipt://lossy-summary-marked-exact",
+      "role": "lossy_exactness_control",
+      "status": "rejected",
+      "representation_bytes": 55,
+      "exact_reconstruction": false,
+      "rejection_reasons": [
+        "verification_result=fail",
+        "reconstruction_mismatch"
+      ]
+    },
+    {
+      "receipt_id": "receipt://negative-rate-no-fallback",
+      "role": "negative_rate_no_fallback_control",
+      "status": "rejected",
+      "representation_bytes": 485,
+      "exact_reconstruction": true,
+      "rejection_reasons": [
+        "fallback_missing",
+        "not_smaller_than_literal_baseline"
+      ]
+    },
+    {
+      "receipt_id": "receipt://bounded-search-overrun",
+      "role": "bounded_search_control",
+      "status": "rejected",
+      "representation_bytes": 72,
+      "exact_reconstruction": false,
+      "rejection_reasons": [
+        "not_marked_exact",
+        "verification_result=not_run",
+        "reconstruction_mismatch",
+        "search_bound_exceeded",
+        "consumer_policy_lacks_exact_replay"
+      ]
+    }
+  ],
+  "acceptance_predicate": "The selected compact receipt must reconstruct the target exactly, remain below the literal baseline byte count, keep repair residual and fallback records visible, stay within the search bound, preserve exact-replay consumer policy, and reject lossy exactness, negative-rate/no-fallback, and bounded-search-overrun controls.",
+  "lean_fixture_alignment": {
+    "lean_module": "lean/AsiStackProofs/CompactGenerativeSystems.lean",
+    "selected_constructor": "repeatGeneratorPlusRepair",
+    "baseline_constructor": "literalBaseline",
+    "receipt_constructors": {
+      "receipt://literal-baseline": "literalBaseline",
+      "receipt://repeat-generator-plus-repair": "repeatGeneratorPlusRepair",
+      "receipt://lossy-summary-marked-exact": "lossySummaryMarkedExact",
+      "receipt://negative-rate-no-fallback": "negativeRateNoFallback",
+      "receipt://bounded-search-overrun": "boundedSearchOverrun"
+    },
+    "checked_theorem_names": [
+      "compact_gvr_fixture_selected_is_eligible",
+      "lossy_marked_exact_fixture_rejected",
+      "negative_rate_without_fallback_fixture_rejected",
+      "bounded_search_overrun_fixture_rejected",
+      "compact_gvr_fixture_selected_beats_literal_baseline"
+    ]
+  },
+  "verification_result": "pass",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "residuals": [
+    "The selected receipt uses an explicit repair residual and fallback path.",
+    "The lossy exactness negative control is rejected after reconstruction mismatch and failed verification.",
+    "The negative-rate/no-fallback control is rejected despite exact reconstruction because its serialized form is larger than the literal baseline and fallback is missing.",
+    "The bounded-search-overrun control is rejected because attempted search exceeds the declared bound.",
+    "The result is synthetic and local; no deployed codec, generator, verifier, compression-utility, model-quality, or chapter-core claim is made."
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove compression utility, codec correctness, semantic utility, model quality, or benchmark performance",
+    "does not prove deployed generator, verifier, fallback execution, or reconstruction behavior outside this synthetic fixture"
+  ]
+}

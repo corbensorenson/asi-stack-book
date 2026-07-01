@@ -2,13 +2,14 @@
 
 Date: 2026-06-29
 
-This record documents v1.0 measured/replayed slices that clear bounded support
+This record documents measured/replayed slices that clear bounded support
 transitions. They are intentionally narrow: the first supports only the
 repository-infrastructure claim that the Phase 5 harness registry can be
 replayed by a single runner command against the current public-safe synthetic
 fixture set, the second supports only a synthetic costed-route/resource-budget
-selector discipline claim, and the third supports only a local external Circle
-receipt replay for one rope-position contract.
+selector discipline claim, the third supports only a local external Circle
+receipt replay for one rope-position contract, and the fourth supports only a
+synthetic compact GVR receipt-discipline claim.
 
 They do not support ASI capability, deployed safety, model quality, benchmark
 performance, runtime enforcement, source interpretation, transfer, or any
@@ -225,3 +226,82 @@ The next imported-prototype slice should either vendor a public contract pack,
 add an explicit public replay fixture, or route a proof-contract receipt through
 an ASI Stack consumer gate. Broader Circle and proof-carrying-computation claims
 still need separate accepted transitions.
+
+## Accepted Narrow Claim 4
+
+Claim ID: `compact-generative-systems.compact_gvr_receipt_slice`
+
+Claim: A bounded compact-generation receipt validator can compare a literal
+baseline against a compact generator-plus-repair receipt, reject lossy exactness
+overclaims, reject negative-rate/no-fallback receipts, reject bounded-search
+overruns, and keep residual, fallback, consumer-policy, and non-claim
+boundaries visible.
+
+Support transition: `argument` to `synthetic-test-backed`
+
+Transition record:
+`evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json`
+
+Result record: `docs/compact_gvr_slice.md`
+
+## Command
+
+```bash
+python3 scripts/validate_compact_gvr_slice.py
+```
+
+The command recomputes the tracked result from
+`experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json`, checks the
+tracked JSON result, checks the public summary, checks the evidence-transition
+record, and checks the finite Lean fixture bridge in
+`AsiStackProofs.CompactGenerativeSystems`.
+
+## Inputs
+
+- One literal baseline receipt: `receipt://literal-baseline`
+- One selected exact compact receipt:
+  `receipt://repeat-generator-plus-repair`
+- Three negative controls:
+  `receipt://lossy-summary-marked-exact`,
+  `receipt://negative-rate-no-fallback`, and
+  `receipt://bounded-search-overrun`
+
+## Output
+
+Observed result:
+
+- Selected receipt: `receipt://repeat-generator-plus-repair`
+- Baseline receipt: `receipt://literal-baseline`
+- Selected serialized bytes: 78
+- Literal baseline bytes: 368
+- Byte reduction versus literal baseline: 78.8 percent
+- Negative controls rejected: 3 of 3
+- Lean fixture alignment: receipt constructors, selected receipt, baseline,
+  control rejection theorems, and selected-versus-baseline byte relation matched
+
+## Negative Controls
+
+The lossy exactness control is smaller than the selected receipt, but it is
+rejected because verification fails and reconstruction does not match the
+target. The negative-rate/no-fallback control reconstructs exactly, but its
+serialized form is larger than the literal baseline and it has no fallback
+path. The bounded-search control is rejected because the attempted search
+exceeds the declared bound, verification is not run, exact replay is not
+allowed, and reconstruction does not match the target.
+
+## Non-Claims
+
+- Does not promote any chapter core claim above `argument`.
+- Does not prove compression utility, codec correctness, semantic utility,
+  model quality, or benchmark performance.
+- Does not prove deployed generator, verifier, fallback execution, or
+  reconstruction behavior outside this synthetic fixture.
+
+## Residuals
+
+The next compact-generation evidence slice should use real CGS, BBVCA,
+RankFold, or related implementation artifacts with corpus/task coverage,
+independent reconstruction or semantic verification, fallback execution,
+repair-cost accounting, consumer-policy tests, downstream utility metrics, and
+a separate support-state decision. The current slice proves only bounded
+synthetic receipt discipline.
