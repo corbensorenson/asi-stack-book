@@ -2216,11 +2216,13 @@ Current status:
 - `scripts/build_audio_script.py --check` generates 49 review-script files and
   verifies that every chapter script preserves both implementation-horizon
   sections.
-- `assets/diagrams/asi-stack-control-plane.svg` is now the first draft
-  key-figure asset tied to the reader handoff contract. It appears in
-  `chapters/asi-is-a-stack-not-a-model.qmd` with a text-equivalent reading
-  note, and the manifest keeps it at `draft_not_release_reviewed` with no
-  support-state or artifact-release effect.
+- The first two draft key-figure assets tied to the reader handoff contract
+  now exist: `assets/diagrams/asi-stack-control-plane.svg` in
+  `chapters/asi-is-a-stack-not-a-model.qmd` and
+  `assets/diagrams/authority-to-effect-path.svg` in
+  `chapters/system-boundaries-and-authority.qmd`. Both have text-equivalent
+  reading notes, and the manifest keeps them at `draft_not_release_reviewed`
+  with no support-state, enforcement, security, or artifact-release effect.
 - The generated audio workspace now includes `pronunciation_glossary.md` and
   `proof_equation_reading_rules.md`. The latter is a required review artifact
   for theorem IDs, equations, support states, proof statuses, schema fields,
@@ -2231,7 +2233,7 @@ Current status:
   `scripts/validate_reader_audio_script_probe_manifest.py` now record and
   validate the tracked local audio-script probe: 49 script files, preserved
   implementation horizons, 8 table treatment notes, 53 Mermaid diagram notes,
-  2 image notes, and MP3/M4B/audio-embedded EPUB targets still marked
+  3 image notes, and MP3/M4B/audio-embedded EPUB targets still marked
   `target_not_generated`. This is not narration approval, an audiobook, or an
   audio release record.
 

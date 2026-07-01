@@ -6,6 +6,7 @@ Current visual assets:
 
 - `assets/images/asi-stack-hero.png`: generated text-free hero image for the landing page.
 - `assets/diagrams/asi-stack-control-plane.svg`: draft key figure for the opening chapter's stack-control-plane thesis; not a release-reviewed artifact.
+- `assets/diagrams/authority-to-effect-path.svg`: draft key figure for the authority chapter's permission-to-effect path; not a release-reviewed artifact.
 
 Diagram rules:
 

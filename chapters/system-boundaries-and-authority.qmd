@@ -96,6 +96,14 @@ Appendix C now records exact source-note mappings for this core authority claim.
 | `genesiscode` | Proposal/execution separation through deterministic kernels, effect capability boundaries, semantic patches, provenance hashes, replay logs, obligations, and protocol seals. | No prototype, replay checker, proof module, benchmark, or audit is present. |
 | `moecot` | Fail-closed runtime authority through compact orchestration, specialist lanes, control-plane ledgers, readiness gates, promotion blockers, replay, and handoff. | Runtime and benchmark claims remain implementation-reference context. |
 
+## Draft Key Figure: Authority to Effect Path
+
+::: {.asi-key-figure}
+![Draft authority-to-effect path.](../assets/diagrams/authority-to-effect-path.svg){#fig-authority-to-effect-path fig-alt="Draft authority-to-effect path figure showing a requester, permission-class check, authority ceiling, scoped approval, authorized adapter handoff, external effect, effect receipt, denial or escalation path, rollback, and incident handling."}
+:::
+
+**How to read the authority-to-effect figure:** Follow a requested operation from left to right. Capability is not enough: the permission class, caller ceiling, active grant, expiry, and review route must agree before a runtime adapter may create an external effect. The lower path is just as important as the allowed path: missing authority, over-ceiling delegation, expired grants, or unsafe effects produce denial, escalation, rollback, incident review, residual custody, and no support-state promotion. The figure is a draft reader aid, not deployed enforcement evidence, security validation, external review, or release approval.
+
 ## Mechanism
 
 Authority is the stack's answer to the question "who may cause an effect?" VIEA separates intent, contracts, runtime adapters, and ledgers. SCF binds stable capability identity to qualifications, grants, evaluator policy, lifecycle events, and recovery. Talos keeps execution inside typed jobs, approval gates, evidence, audit, and replay. Ladon/Manhattan keeps secrets behind handles, GenesisCode keeps effects behind capability boundaries and protocol seals, and MoECOT keeps specialist lanes inside a fail-closed control plane.
