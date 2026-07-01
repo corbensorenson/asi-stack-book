@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-06-30 - Circle proof-contract boundary proofs
+
+- Strengthened `AsiStackProofs.ProofCarryingContracts` with four derived
+  negative-case theorems: one rejects downstream-ready receipts missing theorem
+  refs, deterministic fields, or non-claim boundaries; one rejects promoted
+  downstream claims without contract readiness; one rejects stale or
+  unsupported consumer-gate acceptance; and one rejects passing replay status
+  without replay command, source digest, receipt fingerprint, recomputed
+  deterministic fields, or theorem refs.
+- Regenerated `docs/proof_depth_classification.md`,
+  `docs/proof_artifact_audit.md`, `proofs/proof_manifest.json`, and Appendix
+  E; the proof-depth classifier now reports 356 theorem declarations, 121
+  direct/projection-style declarations, and 235 derived/decomposed
+  declarations.
+- Updated the Circle proof-carrying contracts chapter, outline, manifest test
+  rows, proof adequacy review, manuscript status, candidate status,
+  v1.0/v1.x roadmap surfaces, focus audit, and status snapshot validator.
+  Appendix E now records 194 implemented rows, 1 partial row, and 110 planned
+  rows. Refreshed the v1.0 status manuscript scale to 169,158 chapter words
+  excluding YAML and 176,761 raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, resolve external
+  theorem IDs, replay Circle receipts from source, vendor Circle packs, approve
+  transfer, approve a reader/ebook/PDF/DOCX/audio artifact, prove model quality,
+  or approve any release artifact beyond recorded validation scope.
+
 ## 2026-06-30 - Theseus report-boundary proofs
 
 - Strengthened `AsiStackProofs.TheseusReference` with five derived

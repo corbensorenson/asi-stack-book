@@ -2380,9 +2380,17 @@ Draft deliverables:
 - Implemented repository-level fixture: `proof_contract_receipt_record.valid.json` validates proof-contract receipt record shape, receipt state, proof boundary, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims only; it does not validate a vendored Circle contract pack, ASI Stack consumer gate, or chapter-core proof-contract transport claim.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, fingerprint check, or vendored contract pack exists yet.
 - Implemented external receipt slice: `docs/circle_external_receipt_slice.md`, `experiments/circle_external_receipt_slice/results/2026-06-29-local.json`, and `evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json` record one bounded local Circle rope-position receipt replay for `circle-calculus.external_rope_receipt_replay` only; it does not promote `circle-calculus-and-proof-carrying-ai-contracts.core`.
-- Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary and consumer-gate promotion requirements without claiming deployed Circle theorem transport.
-- Implemented Codex test: Proof contract receipt schema validation test.
-- Planned Codex test: Circle contract pack validation test
+- Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary, consumer-gate promotion, missing-boundary, missing-contract-readiness, stale/unsupported-consumer, and replay-artifact requirements without claiming deployed Circle theorem transport.
+- Implemented Codex test: Proof target record fixture validation
+- Implemented Codex test: Proof contract receipt record fixture validation
+- Implemented Codex test: Circle public consumer-gate validation
+- Implemented Codex test: Receipt boundary Lean predicate
+- Implemented Codex test: Consumer gate promotion predicate
+- Implemented Codex test: Missing receipt-boundary negative case
+- Implemented Codex test: Contract-readiness promotion negative case
+- Implemented Codex test: Stale or unsupported consumer-gate negative case
+- Implemented Codex test: Replay artifact negative case
+- Planned Codex test: Contract schema validation test
 - Planned Codex test: Theorem-id resolution test
 - Planned Codex test: Non-claim preservation test
 - Planned Codex test: Receipt replay and fingerprint test
@@ -2393,6 +2401,8 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:circle_contracts.receipt_requires_boundary.operational_invariant` | `AsiStackProofs.ProofCarryingContracts` | A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use. | implemented |
 | `lean:circle_contracts.consumer_gate.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingContracts` | A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact. | implemented |
+
+Implemented negative-case theorems now reject downstream-ready receipts missing theorem refs, deterministic fields, or non-claim boundaries; promoted downstream claims without contract readiness; consumer-gate acceptance with unresolved refs, fingerprint mismatch, stale contract state, disallowed consumer state, unsupported transfer claims, or missing non-claims; and passing replay status without replay command, source digest, receipt fingerprint, recomputed deterministic fields, or theorem refs. These remain record-level gates only; they do not resolve external theorem IDs, replay Circle receipts from source, vendor Circle packs, approve transfer, promote support state, or evaluate downstream model behavior.
 
 ### Coil Attention, Cyclic Memory, and Recurrence Contracts
 

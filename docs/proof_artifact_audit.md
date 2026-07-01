@@ -63,7 +63,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PolicyOptimization.lean` | 2 | 8 | 6 | 5 |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | 2 | 4 | 2 | 2 |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | 2 | 7 | 5 | 3 |
-| `lean/AsiStackProofs/ProofCarryingContracts.lean` | 2 | 2 | 4 | 2 |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | 2 | 6 | 6 | 4 |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 3 | 2 | 1 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 2 | 3 | 2 | 2 |
 | `lean/AsiStackProofs/ReadinessGates.lean` | 2 | 2 | 3 | 2 |

@@ -213,6 +213,15 @@ No result is recorded here unless a test has actually been implemented and run.
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Representation efficiency test | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Falsification review | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Sequence-substrate A/B comparison test | planned | not run |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Proof target record fixture validation | implemented | passes via `python3 scripts/validate_protocol_examples.py`; proof-record schema consistency only |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Proof contract receipt record fixture validation | implemented | passes via `python3 scripts/validate_protocol_examples.py`; receipt-record schema consistency only |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Circle public consumer-gate validation | implemented | passes via `python3 scripts/validate_circle_public_replay.py`; no local Circle replay or downstream model-quality claim |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Receipt boundary Lean predicate | implemented | passes via Lean build; record-boundary predicate only |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Consumer gate promotion predicate | implemented | passes via Lean build; no workload or model-quality claim |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Missing receipt-boundary negative case | implemented | passes via Lean negative case; no theorem-resolution or replay claim |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Contract-readiness promotion negative case | implemented | passes via Lean negative case; no consumer acceptance or quality claim |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Stale or unsupported consumer-gate negative case | implemented | passes via Lean negative case; no transfer or support-state claim |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Replay artifact negative case | implemented | passes via Lean negative case; no replay execution claim |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Contract schema validation test | planned | not run |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Theorem-id resolution test | planned | not run |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Non-claim preservation test | planned | not run |
