@@ -1074,11 +1074,21 @@
       "tag": "lean:resources.costed_route.fixture_bridge",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.ResourceEconomics",
-      "formal_target": "The four-route costed-route fixture rejects the failed-verification and hidden-residual controls, keeps the bounded transform route eligible, proves it is lowest-cost among eligible modeled routes, and exposes field-level Python/Lean fixture alignment in the tracked result record.",
+      "formal_target": "The four-route costed-route fixture rejects the failed-verification and hidden-residual controls, keeps the bounded transform route eligible, proves it is lowest-cost among eligible modeled routes, and proves a finite selector-state replay ends with that route after rejecting the cheaper controls.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite bridge over the public four-route costed-route fixture: it proves the bounded route is eligible, the failed-verification and hidden-residual controls are rejected, the bounded route is lowest-cost among modeled eligible routes, and the tracked result record exposes the Python/Lean field alignment for route constructors, costs, eligibility booleans, negative controls, and selector-trace expectations. It does not prove deployed routing, scheduler behavior, workload quality, economic optimality, or chapter-core support-state promotion."
+    },
+    {
+      "tag": "lean:resources.workflow_trace.trace_property_bridge",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.ResourceEconomics",
+      "formal_target": "The finite Resource workflow trace fixture carries dispatch events whose costs, review minutes, and verification minutes roll up to the public summary, whose schedule keeps high-risk release work before lower-risk work, and whose selected events preserve protected-overhead, residual-ownership, and non-claim guard flags.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite dispatch-event bridge over the public Resource workflow trace: it proves fixture event costs, review minutes, and verification minutes roll up to the tracked summary, preserves high-risk-first order, and preserves protected-overhead, residual-ownership, and non-claim guard flags. It does not prove deployed scheduler behavior, live workload quality, physical feasibility, economic outcomes, or chapter-core support-state promotion."
     },
     {
       "tag": "lean:simulation.fidelity.operational_invariant",

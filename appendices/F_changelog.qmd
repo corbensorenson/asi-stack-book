@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-01 - Add Resource workflow trace-property bridge
+
+- Extended `AsiStackProofs.ResourceEconomics` with a finite dispatch-event trace
+  for the Resource Economics workflow fixture, including event rollup,
+  high-risk-first order, protected-overhead, residual-ownership, and non-claim
+  guard preservation theorems.
+- Updated `scripts/validate_resource_workflow_trace.py` and the tracked
+  workflow result record so the public evidence lane now exposes
+  trace-property Python/Lean fixture alignment, including review-minute and
+  verification-minute fields.
+- Refreshed the Resource live-probe result, proof manifest, proof triage,
+  proof-depth/audit surfaces, Resource Economics chapter, outline, v1.x active
+  evidence cycle, v1.x roadmap, and status snapshot. This does not prove a
+  deployed scheduler, live workload quality, physical feasibility, economic
+  outcomes, model quality, or chapter-core support-state promotion.
+
 ## 2026-07-01 - Ground failure modes in safety taxonomies
 
 - Added external source records and source notes for Langosco et al.'s goal

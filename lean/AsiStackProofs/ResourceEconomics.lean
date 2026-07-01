@@ -262,6 +262,8 @@ structure WorkflowTraceSummary where
   stepCount : Nat
   selectedRouteCount : Nat
   totalCostTenths : Nat
+  reviewMinutesUsed : Nat
+  verificationMinutesUsed : Nat
   expectedInvalidControlCount : Nat
   highRiskFirst : Bool
   displacedCostsResidualized : Bool
@@ -275,6 +277,8 @@ def WorkflowTraceValid (summary : WorkflowTraceSummary) : Prop :=
   summary.stepCount = 3 ∧
     summary.selectedRouteCount = 3 ∧
     summary.totalCostTenths = 1197 ∧
+    summary.reviewMinutesUsed = 26 ∧
+    summary.verificationMinutesUsed = 21 ∧
     summary.expectedInvalidControlCount = 4 ∧
     summary.highRiskFirst = true ∧
     summary.displacedCostsResidualized = true ∧
@@ -287,6 +291,8 @@ def resourceWorkflowTraceFixture : WorkflowTraceSummary :=
   { stepCount := 3,
     selectedRouteCount := 3,
     totalCostTenths := 1197,
+    reviewMinutesUsed := 26,
+    verificationMinutesUsed := 21,
     expectedInvalidControlCount := 4,
     highRiskFirst := true,
     displacedCostsResidualized := true,
@@ -318,5 +324,107 @@ theorem resource_workflow_trace_fixture_rejects_latency_only_selection :
 theorem resource_workflow_trace_fixture_has_no_support_promotion :
     resourceWorkflowTraceFixture.supportStateEffectNone = true := by
   rfl
+
+inductive WorkflowStep where
+  | highRiskReleaseGate
+  | sourceCrosswalkRefresh
+  | lowRiskIndexCleanup
+deriving DecidableEq, Repr
+
+inductive WorkflowSelectedRoute where
+  | humanVerifierReleaseGate
+  | boundedCrosswalkRefresh
+  | localIndexCleanup
+deriving DecidableEq, Repr
+
+structure WorkflowDispatchEvent where
+  step : WorkflowStep
+  selectedRoute : WorkflowSelectedRoute
+  dispatchOrder : Nat
+  costTenths : Nat
+  reviewMinutes : Nat
+  verificationMinutes : Nat
+  highRisk : Bool
+  protectedOverheadPaid : Bool
+  residualsOwned : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def resourceWorkflowTraceFixtureEvents : List WorkflowDispatchEvent :=
+  [
+    { step := .highRiskReleaseGate,
+      selectedRoute := .humanVerifierReleaseGate,
+      dispatchOrder := 1,
+      costTenths := 732,
+      reviewMinutes := 18,
+      verificationMinutes := 12,
+      highRisk := true,
+      protectedOverheadPaid := true,
+      residualsOwned := true,
+      nonClaimBoundary := true },
+    { step := .sourceCrosswalkRefresh,
+      selectedRoute := .boundedCrosswalkRefresh,
+      dispatchOrder := 2,
+      costTenths := 382,
+      reviewMinutes := 8,
+      verificationMinutes := 6,
+      highRisk := false,
+      protectedOverheadPaid := true,
+      residualsOwned := true,
+      nonClaimBoundary := true },
+    { step := .lowRiskIndexCleanup,
+      selectedRoute := .localIndexCleanup,
+      dispatchOrder := 3,
+      costTenths := 83,
+      reviewMinutes := 0,
+      verificationMinutes := 3,
+      highRisk := false,
+      protectedOverheadPaid := true,
+      residualsOwned := true,
+      nonClaimBoundary := true }
+  ]
+
+def workflowTraceCostTenths : List WorkflowDispatchEvent -> Nat
+  | [] => 0
+  | event :: rest => event.costTenths + workflowTraceCostTenths rest
+
+def workflowTraceReviewMinutes : List WorkflowDispatchEvent -> Nat
+  | [] => 0
+  | event :: rest => event.reviewMinutes + workflowTraceReviewMinutes rest
+
+def workflowTraceVerificationMinutes : List WorkflowDispatchEvent -> Nat
+  | [] => 0
+  | event :: rest => event.verificationMinutes + workflowTraceVerificationMinutes rest
+
+def workflowTraceHighRiskFirst (events : List WorkflowDispatchEvent) : Bool :=
+  events.all (fun high =>
+    events.all (fun low =>
+      if high.highRisk && (! low.highRisk) then
+        decide (high.dispatchOrder < low.dispatchOrder)
+      else
+        true))
+
+def workflowTraceGuardsPreserved (events : List WorkflowDispatchEvent) : Bool :=
+  events.all (fun event =>
+    event.protectedOverheadPaid && event.residualsOwned && event.nonClaimBoundary)
+
+theorem resource_workflow_trace_fixture_events_roll_up_to_summary :
+    workflowTraceCostTenths resourceWorkflowTraceFixtureEvents =
+        resourceWorkflowTraceFixture.totalCostTenths ∧
+      workflowTraceReviewMinutes resourceWorkflowTraceFixtureEvents =
+        resourceWorkflowTraceFixture.reviewMinutesUsed ∧
+      workflowTraceVerificationMinutes resourceWorkflowTraceFixtureEvents =
+        resourceWorkflowTraceFixture.verificationMinutesUsed ∧
+      resourceWorkflowTraceFixtureEvents.length =
+        resourceWorkflowTraceFixture.selectedRouteCount := by
+  native_decide
+
+theorem resource_workflow_trace_fixture_events_keep_high_risk_first :
+    workflowTraceHighRiskFirst resourceWorkflowTraceFixtureEvents = true := by
+  native_decide
+
+theorem resource_workflow_trace_fixture_events_preserve_guard_flags :
+    workflowTraceGuardsPreserved resourceWorkflowTraceFixtureEvents = true := by
+  native_decide
 
 end AsiStackProofs.ResourceEconomics

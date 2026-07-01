@@ -53,21 +53,30 @@ Observed deterministic fixture summary:
 | `step://source-crosswalk-refresh` | `route://bounded-crosswalk-refresh` | The latency-only route fails quality and leaves displaced reader repair unowned; the manual baseline is eligible but more costly. |
 | `step://low-risk-index-cleanup` | `route://local-index-cleanup` | The local route passes the fixture quality predicate without consuming scarce human review capacity. |
 
-## Lean Fixture Bridge
+## Lean Trace-Property Bridge
 
 The validator also checks that the finite workflow summary fixture in
 `AsiStackProofs.ResourceEconomics` matches the public result record for step
-count, selected-route count, total cost tenths, expected-invalid control count,
-high-risk-first ordering, displaced-cost residualization,
-physical-feasibility-overclaim rejection, latency-only selection rejection,
-support-state non-promotion, and non-claim boundaries.
+count, selected-route count, total cost tenths, review minutes, verification
+minutes, expected-invalid control count, high-risk-first ordering,
+displaced-cost residualization, physical-feasibility-overclaim rejection,
+latency-only selection rejection, support-state non-promotion, and non-claim
+boundaries.
 
-The tracked result record now carries that summary-level bridge explicitly
+The Lean module now also carries a finite dispatch-event trace for the three
+selected workflow routes. The checked theorem set proves that those events roll
+up to the summary totals, keep the high-risk release gate before lower-risk
+work, and preserve protected-overhead, residual-ownership, and non-claim guard
+flags. This is a trace-property bridge over the tracked fixture, not a live
+scheduler proof.
+
+The tracked result record now carries that trace-property bridge explicitly
 under `lean_fixture_alignment`: the checked theorem names and the exact field
 alignment for step count, selected-route count, total cost tenths,
-expected-invalid controls, high-risk-first ordering, residual ownership,
-physical-feasibility rejection, latency-only rejection, support-state
-non-promotion, and non-claim boundary preservation.
+review minutes, verification minutes, expected-invalid controls,
+high-risk-first ordering, residual ownership, physical-feasibility rejection,
+latency-only rejection, support-state non-promotion, and non-claim boundary
+preservation.
 
 This bridge proves fixture alignment only. It does not prove deployed scheduler
 behavior, route-search completeness, physical feasibility, model quality,

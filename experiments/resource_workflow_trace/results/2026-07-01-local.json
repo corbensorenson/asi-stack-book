@@ -17,7 +17,7 @@
     "route://bounded-crosswalk-refresh"
   ],
   "lean_fixture_alignment": {
-    "proof_bridge_type": "summary-level Python/Lean fixture equivalence",
+    "proof_bridge_type": "trace-property Python/Lean fixture equivalence",
     "lean_module": "lean/AsiStackProofs/ResourceEconomics.lean",
     "checked_theorem_names": [
       "resource_workflow_trace_fixture_valid",
@@ -25,12 +25,17 @@
       "resource_workflow_trace_fixture_residualizes_displaced_costs",
       "resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim",
       "resource_workflow_trace_fixture_rejects_latency_only_selection",
-      "resource_workflow_trace_fixture_has_no_support_promotion"
+      "resource_workflow_trace_fixture_has_no_support_promotion",
+      "resource_workflow_trace_fixture_events_roll_up_to_summary",
+      "resource_workflow_trace_fixture_events_keep_high_risk_first",
+      "resource_workflow_trace_fixture_events_preserve_guard_flags"
     ],
     "field_alignment": {
       "step_count": 3,
       "selected_route_count": 3,
       "total_cost_tenths": 1197,
+      "review_minutes_used": 26,
+      "verification_minutes_used": 21,
       "expected_invalid_control_count": 4,
       "high_risk_first": true,
       "displaced_costs_residualized": true,

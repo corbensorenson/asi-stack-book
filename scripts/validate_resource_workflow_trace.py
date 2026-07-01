@@ -25,6 +25,9 @@ REQUIRED_LEAN_THEOREMS = (
     "resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim",
     "resource_workflow_trace_fixture_rejects_latency_only_selection",
     "resource_workflow_trace_fixture_has_no_support_promotion",
+    "resource_workflow_trace_fixture_events_roll_up_to_summary",
+    "resource_workflow_trace_fixture_events_keep_high_risk_first",
+    "resource_workflow_trace_fixture_events_preserve_guard_flags",
 )
 
 
@@ -407,6 +410,8 @@ def public_lean_alignment(fields: dict[str, str]) -> dict[str, Any]:
         "step_count": int(fields["stepCount"]),
         "selected_route_count": int(fields["selectedRouteCount"]),
         "total_cost_tenths": int(fields["totalCostTenths"]),
+        "review_minutes_used": int(fields["reviewMinutesUsed"]),
+        "verification_minutes_used": int(fields["verificationMinutesUsed"]),
         "expected_invalid_control_count": int(fields["expectedInvalidControlCount"]),
         "high_risk_first": bool_value("highRiskFirst"),
         "displaced_costs_residualized": bool_value("displacedCostsResidualized"),
@@ -423,6 +428,8 @@ def validate_lean_fixture(expected: dict[str, Any], invalid_count: int, errors: 
         "stepCount": str(expected["step_count"]),
         "selectedRouteCount": str(expected["selected_route_count"]),
         "totalCostTenths": str(int(round(float(expected["total_cost_units"]) * 10))),
+        "reviewMinutesUsed": str(int(round(float(expected["review_minutes_used"])))),
+        "verificationMinutesUsed": str(int(round(float(expected["verification_minutes_used"])))),
         "expectedInvalidControlCount": str(invalid_count),
         "highRiskFirst": "true",
         "displacedCostsResidualized": "true",
@@ -440,7 +447,7 @@ def validate_lean_fixture(expected: dict[str, Any], invalid_count: int, errors: 
     if set(expected_fields) - set(fields):
         return {}
     return {
-        "proof_bridge_type": "summary-level Python/Lean fixture equivalence",
+        "proof_bridge_type": "trace-property Python/Lean fixture equivalence",
         "lean_module": rel(LEAN_FIXTURE),
         "checked_theorem_names": list(REQUIRED_LEAN_THEOREMS),
         "field_alignment": public_lean_alignment(expected_fields),

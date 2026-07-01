@@ -1211,9 +1211,13 @@ Current status for the focused v1.x active evidence cycle:
   protected review overhead, displaced-cost residual ownership,
   physical-feasibility overclaim rejection, and no-promotion boundaries. This
   validator also checks the public result against a finite
-  `AsiStackProofs.ResourceEconomics` workflow-trace summary fixture, and the
-  tracked result exposes the summary-level Python/Lean alignment fields and
-  checked theorem names. This still does not prove deployed scheduler behavior,
+  `AsiStackProofs.ResourceEconomics` workflow-trace fixture, and the tracked
+  result now exposes trace-property Python/Lean alignment fields and checked
+  theorem names. The Lean fixture carries finite dispatch events whose costs,
+  review minutes, and verification minutes roll up to the public summary, whose
+  order keeps the protected high-risk release gate before lower-risk work, and
+  whose selected events preserve protected-overhead, residual-ownership, and
+  non-claim guard flags. This still does not prove deployed scheduler behavior,
   model quality, TokenMana or PlanForge behavior, economic outcomes, simulator
   adequacy, or physical feasibility.
 - `docs/resource_live_probe.md` adds a local command-replay probe for the
