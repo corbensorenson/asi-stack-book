@@ -16,7 +16,8 @@ python3 scripts/validate_plan_execution_contracts.py
 ## Fixtures
 
 - `fixtures/valid_dispatchable_linear_plan.json` checks a linear dispatchable
-  plan where command, graph, DAG, semantic atom, and typed jobs agree.
+  plan where intent-origin, command, graph, DAG, semantic atom, and typed jobs
+  agree.
 - `fixtures/valid_blocked_authority_plan.json` checks that a blocked plan can
   preserve residuals without dispatch receipts.
 - `fixtures/invalid_cycle_in_dag.json` checks that cyclic dependencies are
@@ -29,6 +30,12 @@ python3 scripts/validate_plan_execution_contracts.py
   obligations block a dispatchable plan.
 - `fixtures/invalid_approval_bypass.json` checks that approval-required active
   jobs cannot dispatch without approval.
+- `fixtures/invalid_ambiguity_dispatched.json` checks that unresolved intent
+  ambiguity cannot validate and dispatch a plan.
+- `fixtures/invalid_hidden_override_applied.json` checks that hidden override
+  requests must be rejected, quarantined, or ignored before planning.
+- `fixtures/invalid_authority_widened_from_intent.json` checks that a command
+  contract cannot widen the explicit intent authority ceiling.
 
 ## Environment
 
@@ -41,6 +48,7 @@ python3 scripts/validate_plan_execution_contracts.py
 
 - This harness validates synthetic cross-record gate semantics only.
 - It does not prove planner quality, scheduler behavior, deployed execution,
-  runtime adapter safety, semantic-parser quality, benchmark performance, or
-  any AI safety property.
+  runtime adapter safety, semantic-parser quality, prompt-injection
+  containment, authority-extraction quality, benchmark performance, or any AI
+  safety property.
 - It does not promote any live chapter claim above `argument`.

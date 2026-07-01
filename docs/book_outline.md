@@ -945,7 +945,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- Intent-contract, command-contract, and intent-execution-trace fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, and cycle cases.
+- Intent-contract, command-contract, intent-execution-trace, and intent-origin fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, cycle, ambiguity, hidden-override, and authority-widening cases.
 - Implemented protocol validation: `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures validate public record shape only, including intake state, field provenance, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, dispatch blockers, and non-claims.
 - Exact Appendix C claim-source mappings for the merged command-contract claim across VIEA intent/artifact/runtime feedback discipline, Talos typed-job/audit/replay discipline, Software Magic Grimoire command-envelope vocabulary, GenesisCode proposal/effect/provenance boundaries, MoECOT runtime-reference context, and Cognitive Compilation source-plan/S-IR lowering. Five local mappings (`viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`) have reviewed passage references, while `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending command parser tests, dispatch-blocking tests, prompt-override scenarios, semantic-extraction quality checks, approval/runtime enforcement evidence, replayed vertical-slice artifacts, or accepted evidence transitions.
 - Implemented synthetic Codex test: Contract field completeness test via `python3 scripts/validate_plan_execution_contracts.py`; vertical execution remains open.
@@ -954,7 +954,11 @@ Draft deliverables:
 - Implemented synthetic Codex test: Command schema validation test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
 - Implemented synthetic Codex test: Failure-behavior declaration test via `python3 scripts/validate_plan_execution_contracts.py`; parser/deployed dispatcher remains open.
 - Implemented proof-backed check: finite execution dispatch route proof for missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews; this is structured-record route coverage only, not deployed dispatcher behavior.
-- Planned Codex test: Prompt override scenario.
+- Implemented synthetic Codex test: Prompt override scenario via `python3 scripts/validate_plan_execution_contracts.py`; deployed prompt-injection containment remains open.
+- Implemented synthetic Codex test: Intent-origin preservation fixture via `python3 scripts/validate_plan_execution_contracts.py`; parser, dispatcher, and runtime behavior remain open.
+- Implemented synthetic Codex test: Ambiguity dispatch block fixture via `python3 scripts/validate_plan_execution_contracts.py`; natural-language ambiguity parsing remains open.
+- Implemented synthetic Codex test: Hidden override rejection fixture via `python3 scripts/validate_plan_execution_contracts.py`; deployed prompt-injection containment remains open.
+- Implemented synthetic Codex test: Intent-authority ceiling fixture via `python3 scripts/validate_plan_execution_contracts.py`; deployed authority extraction and approval service behavior remain open.
 - Planned Codex test: Field-confidence audit.
 - Planned Codex test: Authority-inference block test.
 - Consolidation note: `command-contracts-and-semantic-interfaces` folded into this chapter on 2026-06-30 as semantic-interface fields, validation states, proof hooks, fixture/test rows, source mappings, and lineage; the old public slug is preserved by a static redirect and the retired source chapter is archived.

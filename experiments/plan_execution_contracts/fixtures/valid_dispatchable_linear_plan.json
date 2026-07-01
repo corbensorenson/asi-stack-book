@@ -1,5 +1,18 @@
 {
   "scenario_id": "plan-exec-valid-linear-001",
+  "intent_origin": {
+    "accepted_intent_id": "intent-plan-exec-001",
+    "ambiguity_state": "resolved",
+    "clarification_status": "resolved",
+    "unresolved_questions": [],
+    "explicit_constraints": ["do not fabricate source content", "do not promote support states without evidence"],
+    "explicit_forbidden_means": ["publish raw private source text", "claim unrun tests passed"],
+    "explicit_stop_conditions": ["missing source text", "render failure", "support-state promotion request"],
+    "explicit_authority_ceiling": "write_public_book_only",
+    "recontract_triggers": ["private source quotation", "support-state promotion", "new publication target"],
+    "hidden_override_requests": [],
+    "hidden_override_disposition": "none"
+  },
   "command_contract": {
     "contract_id": "command-plan-exec-001",
     "intent_id": "intent-plan-exec-001",

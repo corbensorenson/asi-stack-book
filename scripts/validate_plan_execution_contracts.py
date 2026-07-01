@@ -20,8 +20,10 @@ SCHEMAS = {
 }
 
 ACTIVE_JOB_STATES = {"dispatchable", "running", "delivered", "adjudicating"}
+ACTIVE_PLAN_STATES = {"dispatchable", "running", "complete"}
 APPROVAL_MEANINGFUL_NONE = {"none", "none for public-safe local draft edits", "not_required"}
 BAD_OBLIGATION_STATES = {"deferred", "rejected", "unknown", "blocked"}
+ACCEPTED_HIDDEN_OVERRIDE_DISPOSITIONS = {"rejected", "quarantined", "ignored"}
 
 
 def load_json(path: Path) -> Any:
@@ -107,6 +109,105 @@ def meaningful_approval_required(required_approvals: list[Any]) -> bool:
     return not normalized.issubset(APPROVAL_MEANINGFUL_NONE)
 
 
+def as_string_set(value: Any) -> set[str]:
+    if not isinstance(value, list):
+        return set()
+    return {str(item) for item in value}
+
+
+def intent_origin_errors(
+    origin: dict[str, Any],
+    command: dict[str, Any],
+    plan: dict[str, Any],
+    relative: str,
+) -> list[str]:
+    errors: list[str] = []
+
+    intent_id = origin.get("accepted_intent_id")
+    if not isinstance(intent_id, str) or not intent_id.strip():
+        errors.append(f"{relative}:intent_origin.accepted_intent_id must be a non-empty string.")
+    elif intent_id != command.get("intent_id"):
+        errors.append(f"{relative}: intent_origin.accepted_intent_id must match command_contract.intent_id.")
+
+    explicit_constraints = as_string_set(origin.get("explicit_constraints"))
+    if explicit_constraints:
+        command_constraints = as_string_set(command.get("constraints"))
+        missing_constraints = sorted(explicit_constraints - command_constraints)
+        if missing_constraints:
+            errors.append(
+                f"{relative}: command_contract.constraints lost explicit intent constraints "
+                f"{missing_constraints}."
+            )
+
+    explicit_forbidden = as_string_set(origin.get("explicit_forbidden_means"))
+    if explicit_forbidden:
+        command_forbidden = as_string_set(command.get("forbidden_means"))
+        missing_forbidden = sorted(explicit_forbidden - command_forbidden)
+        if missing_forbidden:
+            errors.append(
+                f"{relative}: command_contract.forbidden_means lost explicit forbidden means "
+                f"{missing_forbidden}."
+            )
+
+    explicit_stop_conditions = as_string_set(origin.get("explicit_stop_conditions"))
+    if explicit_stop_conditions:
+        plan_stop_conditions = as_string_set(plan.get("stop_conditions"))
+        missing_stop_conditions = sorted(explicit_stop_conditions - plan_stop_conditions)
+        if missing_stop_conditions:
+            errors.append(
+                f"{relative}: plan_graph.stop_conditions lost explicit intent stop conditions "
+                f"{missing_stop_conditions}."
+            )
+
+    recontract_triggers = as_string_set(origin.get("recontract_triggers"))
+    if recontract_triggers:
+        command_recontract_points = as_string_set(command.get("recontract_points"))
+        missing_recontract_points = sorted(recontract_triggers - command_recontract_points)
+        if missing_recontract_points:
+            errors.append(
+                f"{relative}: command_contract.recontract_points lost explicit re-contract triggers "
+                f"{missing_recontract_points}."
+            )
+
+    explicit_authority = origin.get("explicit_authority_ceiling")
+    if isinstance(explicit_authority, str) and explicit_authority.strip():
+        if command.get("authority_ceiling") != explicit_authority:
+            errors.append(
+                f"{relative}: command_contract.authority_ceiling widened or changed explicit intent authority "
+                f"{explicit_authority!r}."
+            )
+
+    hidden_overrides = origin.get("hidden_override_requests", [])
+    if hidden_overrides:
+        if not isinstance(hidden_overrides, list):
+            errors.append(f"{relative}:intent_origin.hidden_override_requests must be a list.")
+        disposition = str(origin.get("hidden_override_disposition", "")).strip().lower()
+        if disposition not in ACCEPTED_HIDDEN_OVERRIDE_DISPOSITIONS:
+            errors.append(
+                f"{relative}: hidden override requests must be rejected, quarantined, or ignored before planning."
+            )
+        provenance_text = " ".join(str(item).lower() for item in command.get("field_provenance", []))
+        if "hidden" in provenance_text and disposition != "rejected":
+            errors.append(f"{relative}: hidden override provenance cannot authorize command fields.")
+
+    ambiguity_state = str(origin.get("ambiguity_state", "")).strip().lower()
+    clarification_status = str(origin.get("clarification_status", "")).strip().lower()
+    unresolved_questions = origin.get("unresolved_questions", [])
+    has_unresolved_questions = isinstance(unresolved_questions, list) and bool(unresolved_questions)
+    unresolved_ambiguity = ambiguity_state in {"clarification_required", "unresolved"} or (
+        has_unresolved_questions and clarification_status != "resolved"
+    )
+    if unresolved_ambiguity:
+        if command.get("validation_state") == "validated_for_planning":
+            errors.append(f"{relative}: unresolved intent ambiguity cannot validate a command for planning.")
+        if plan.get("dispatch_state") in ACTIVE_PLAN_STATES:
+            errors.append(f"{relative}: unresolved intent ambiguity must block dispatch until clarification.")
+        if not plan.get("blocked_nodes"):
+            errors.append(f"{relative}: unresolved intent ambiguity must identify blocked plan nodes.")
+
+    return errors
+
+
 def schema_errors_for_scenario(value: dict[str, Any], schemas: dict[str, Any], relative: str) -> list[str]:
     errors: list[str] = []
     for field in ("command_contract", "plan_graph", "planforge_dag"):
@@ -138,6 +239,13 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
     dag = value["planforge_dag"]
     typed_jobs = value.get("typed_jobs", [])
     semantic_atoms = value.get("semantic_atoms", [])
+
+    intent_origin = value.get("intent_origin")
+    if intent_origin is not None:
+        if not isinstance(intent_origin, dict):
+            errors.append(f"{relative}: intent_origin must be an object when present.")
+        else:
+            errors.extend(intent_origin_errors(intent_origin, command, plan, relative))
 
     contract_id = str(command["contract_id"])
     plan_id = str(plan["plan_id"])
@@ -171,7 +279,7 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
     errors.extend(graph_errors(dag_nodes, dag_edges, "planforge_dag", relative))
 
     dispatch_state = str(plan.get("dispatch_state", ""))
-    if dispatch_state in {"dispatchable", "running", "complete"}:
+    if dispatch_state in ACTIVE_PLAN_STATES:
         if command.get("validation_state") != "validated_for_planning":
             errors.append(f"{relative}: dispatchable/running/complete plan requires validated command contract.")
         if plan.get("blocked_nodes"):
@@ -228,7 +336,7 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
         if missing_obligations:
             errors.append(f"{atom_prefix}: obligation_status missing refs {sorted(missing_obligations)}.")
         bad_status = sorted(ref for ref, status in status_by_ref.items() if status in BAD_OBLIGATION_STATES)
-        if dispatch_state in {"dispatchable", "running", "complete"} and bad_status:
+        if dispatch_state in ACTIVE_PLAN_STATES and bad_status:
             errors.append(f"{atom_prefix}: dispatchable plan cannot have unresolved obligations {bad_status}.")
         if set(str(item) for item in atom.get("authority_required", [])) - authority_requirements:
             errors.append(f"{atom_prefix}: authority_required must be covered by plan authority_requirements.")

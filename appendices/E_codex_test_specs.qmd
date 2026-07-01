@@ -32,10 +32,13 @@ No result is recorded here unless a test has actually been implemented and run.
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Changelog consistency audit | planned | not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent resolution route proof | implemented | passes via Lean build; finite structured-record route only |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent-origin preservation fixture | implemented | passes via synthetic plan-execution contract harness; no natural-language parser or authority-extraction claim |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Ambiguity dispatch block fixture | implemented | passes via synthetic plan-execution contract harness; no parser-quality claim |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Hidden override rejection fixture | implemented | passes via synthetic plan-execution contract harness; no deployed prompt-injection containment claim |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent parsing ambiguity test | planned | not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Authority extraction test | planned | not run |
-| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Stop-condition preservation test | planned | not run |
-| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Re-contract trigger test | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Stop-condition preservation test | partially implemented | plan-level preservation passes via synthetic plan-execution contract harness; runtime preservation not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Re-contract trigger test | partially implemented | command-contract trigger preservation passes via synthetic plan-execution contract harness; runtime re-contract behavior not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Bounded-default audit | planned | not run |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional consistency test | implemented | passing via synthetic constitutional alignment harness; no deployed constitutional-alignment or moral-correctness claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Predicate-conflict routing test | implemented | passing via synthetic constitutional alignment harness; no runtime conflict-resolution or review-quality claim |
@@ -86,6 +89,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Failure-behavior declaration test | implemented | passes via synthetic plan-execution contract harness; no deployed dispatcher claim |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Execution dispatch route proof | implemented | passes via Lean build; finite dispatch-route coverage only |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Prompt override scenario | implemented | passes via Lean hidden-override negative case; no deployed parser or model claim |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent-origin preservation fixture | implemented | passes via synthetic plan-execution contract harness; no parser, dispatcher, or runtime claim |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Ambiguity dispatch block fixture | implemented | passes via synthetic plan-execution contract harness; no natural-language ambiguity parser claim |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Hidden override rejection fixture | implemented | passes via synthetic plan-execution contract harness; no deployed prompt-injection containment claim |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent-authority ceiling fixture | implemented | passes via synthetic plan-execution contract harness; no deployed authority-extraction or approval-service claim |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Field-confidence audit | planned | not run |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Authority-inference block test | planned | not run |
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Decomposition accuracy test | planned | not run |

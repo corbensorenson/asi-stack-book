@@ -28,13 +28,13 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-01 |
 | Primary source records | `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`; supporting: `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos`; external variants: `ext_goal_oriented_requirements_engineering_2001`, `ext_cooperative_inverse_rl_2016`, `ext_deep_rl_human_preferences_2017` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` |
-| Test state | `intent_contract.valid.json` passes protocol fixture validation; `AsiStackProofs.IntentContracts` implements finite preservation, missing-authority, and intent-resolution route predicates; ambiguity parsing, authority extraction, and end-to-end stop-condition preservation tests remain planned. |
+| Test state | `intent_contract.valid.json` passes protocol fixture validation; `AsiStackProofs.IntentContracts` implements finite preservation, missing-authority, and intent-resolution route predicates; `python3 scripts/validate_plan_execution_contracts.py` now includes synthetic intent-origin checks for explicit-constraint preservation, unresolved-ambiguity dispatch blocking, hidden-override rejection, authority-ceiling preservation, stop-condition preservation, and re-contract trigger preservation; natural-language ambiguity parsing, authority extraction quality, and end-to-end runtime preservation tests remain planned. |
 
 ## Drafting guardrail
 
@@ -242,10 +242,13 @@ This intent compiler is still a proposed stack layer. Intent formalization stays
 |---|---|---|
 | Intent contract fixture validation | Check that the intent contract fixture matches the public schema. | implemented by protocol validation; validated locally |
 | Intent resolution route proof | Check that a structured intent-resolution record routes missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps to rejection, clarification, or review before compilation. | implemented in Lean; finite record only |
+| Intent-origin preservation fixture | Check that explicit intent constraints, forbidden means, stop conditions, re-contract triggers, and authority ceiling survive into command and plan records. | implemented by synthetic plan-execution contract harness; no natural-language parser or authority-extraction claim |
+| Ambiguity dispatch block fixture | Check that an unresolved ambiguity fixture cannot be validated for planning or dispatched. | implemented by synthetic plan-execution contract harness; no parser-quality claim |
+| Hidden override rejection fixture | Check that hidden override requests cannot authorize planning unless rejected, quarantined, or ignored. | implemented by synthetic plan-execution contract harness; no deployed prompt-injection containment claim |
 | Intent parsing ambiguity test | Check that ambiguous requests produce open ambiguities, clarification, or bounded defaults rather than executable certainty. | planned; not run |
 | Authority extraction test | Check that desired outcomes and allowed means are separated and authority ceilings are explicit. | planned; not run |
-| Stop-condition preservation test | Check that stop conditions survive lowering into plans, semantic atoms, and jobs. | planned; not run |
-| Re-contract trigger test | Check that changed means, authority, publication surface, affected parties, evidence requirements, or stop conditions return to the contract boundary. | planned; not run |
+| Stop-condition preservation test | Check that stop conditions survive lowering into plans, semantic atoms, and jobs. | partially implemented by synthetic plan-execution contract harness for plan-level preservation only; runtime preservation not run |
+| Re-contract trigger test | Check that changed means, authority, publication surface, affected parties, evidence requirements, or stop conditions return to the contract boundary. | partially implemented by synthetic plan-execution contract harness for command-contract trigger preservation only; runtime re-contract behavior not run |
 | Bounded-default audit | Check that low-risk assumptions are recorded with scope, rollback, and non-authority status before planning uses them. | planned; not run |
 
 ### Formalization hooks

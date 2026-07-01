@@ -1,6 +1,6 @@
 # Plan-Execution Contract Harness
 
-Last updated: 2026-06-28
+Last updated: 2026-07-01
 
 The third Phase 5 harness checks synthetic cross-record consistency for command
 contracts, plan graphs, PlanForge DAGs, semantic atoms, and typed jobs under
@@ -22,6 +22,12 @@ contracts, plan graphs, PlanForge DAGs, semantic atoms, and typed jobs under
 - Expected artifacts must be traceable to a typed-job output or semantic-atom
   target artifact.
 - Approval-required active jobs must carry approved approval state.
+- When an optional synthetic `intent_origin` block is present, explicit intent
+  constraints, forbidden means, stop conditions, re-contract triggers, and the
+  authority ceiling must survive into command and plan records.
+- Unresolved ambiguity must block validation and dispatch until clarification.
+- Hidden override requests must be rejected, quarantined, or ignored before
+  planning.
 
 ## Command
 
@@ -31,23 +37,25 @@ python3 scripts/validate_plan_execution_contracts.py
 
 ## Current Local Result
 
-The 2026-06-28 local run passed:
+The 2026-07-01 local run passed:
 
 ```text
-Plan-execution contract harness passed: 2 valid fixture(s), 5 expected-invalid fixture(s).
+Plan-execution contract harness passed: 2 valid fixture(s), 8 expected-invalid fixture(s).
 ```
 
 The result record is
-`experiments/plan_execution_contracts/results/2026-06-28-local.md`.
+`experiments/plan_execution_contracts/results/2026-07-01-local.md`.
 
 ## Boundary
 
 This is synthetic cross-record gate validation. It improves executable evidence
 discipline because it catches cyclic plans, contract mismatches, unreceipted
-dispatch, lost requirements, and approval bypasses across existing record
+dispatch, lost requirements, approval bypasses, unresolved ambiguity dispatch,
+unrejected hidden overrides, and authority widening across existing record
 schemas.
 
 It is not a planner benchmark, deployed scheduler test, parser-quality result,
-runtime adapter test, tool-execution trace, or proof of AI behavior. It does
-not promote Appendix C, prove source interpretation, prove proof adequacy,
+prompt-injection containment result, authority-extraction result, runtime
+adapter test, tool-execution trace, or proof of AI behavior. It does not
+promote Appendix C, prove source interpretation, prove proof adequacy,
 reproduce a benchmark, or validate runtime behavior.

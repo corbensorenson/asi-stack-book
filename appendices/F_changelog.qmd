@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-01 - Add intent-origin contract negative controls
+
+- Extended `scripts/validate_plan_execution_contracts.py` with optional
+  `intent_origin` checks for explicit constraint preservation, forbidden-means
+  preservation, stop-condition preservation, re-contract trigger preservation,
+  authority-ceiling preservation, unresolved-ambiguity blocking, and
+  hidden-override disposition.
+- Added three expected-invalid plan-execution fixtures:
+  `invalid_ambiguity_dispatched.json` rejects dispatch with unresolved
+  clarification requirements, `invalid_hidden_override_applied.json` rejects an
+  accepted hidden override before planning, and
+  `invalid_authority_widened_from_intent.json` rejects widening from
+  `write_public_book_only` to deployment authority. The local harness now
+  passes with 2 valid and 8 expected-invalid fixtures.
+- Updated Human Intent, Command Contracts, the outline, Appendix E, the Phase 5
+  registry/runner surfaces, v1 status, and the v1.x roadmap burn-down. This is
+  synthetic record-gate evidence only; it does not prove natural-language
+  parser quality, deployed prompt-injection containment, authority-extraction
+  quality, approval-service behavior, runtime execution, or support-state
+  promotion.
+
 ## 2026-07-01 - Reject security-overhead budget laundering
 
 - Extended `scripts/validate_resource_budget_ledgers.py` with a

@@ -1245,6 +1245,21 @@
               "result_status": "passes via Lean build; finite structured-record route only"
             },
             {
+              "name": "Intent-origin preservation fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no natural-language parser or authority-extraction claim"
+            },
+            {
+              "name": "Ambiguity dispatch block fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no parser-quality claim"
+            },
+            {
+              "name": "Hidden override rejection fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no deployed prompt-injection containment claim"
+            },
+            {
               "name": "Intent parsing ambiguity test",
               "implementation_status": "planned",
               "result_status": "not run"
@@ -1256,13 +1271,13 @@
             },
             {
               "name": "Stop-condition preservation test",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "implementation_status": "partially implemented",
+              "result_status": "plan-level preservation passes via synthetic plan-execution contract harness; runtime preservation not run"
             },
             {
               "name": "Re-contract trigger test",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "implementation_status": "partially implemented",
+              "result_status": "command-contract trigger preservation passes via synthetic plan-execution contract harness; runtime re-contract behavior not run"
             },
             {
               "name": "Bounded-default audit",
@@ -2815,7 +2830,7 @@
             "Field laundering, where vague prose is moved into a formal field without becoming testable.",
             "Authority inference, where a likely means is treated as if the human granted it."
           ],
-          "minimal_implementation": "Intent-contract, command-contract, and intent-execution-trace fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, and cycle cases.",
+          "minimal_implementation": "Intent-contract, command-contract, intent-execution-trace, and intent-origin fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, cycle, ambiguity, hidden-override, and authority-widening cases.",
           "beyond_state_of_art": "A mature command-contract spine gives humans, planners, verifiers, job runners, policy layers, runtime adapters, and later AI agents one semantic control language for executable work. Every serious request would enter as a durable intake object, receive an explicit authority envelope, lower through command, plan, job, artifact, verification, delivery, feedback, and residual records, and remain inspectable after the work is done. Every field would carry provenance and confidence; every side-effect route would have an authority basis; every plan node would trace back to the contract it serves; every job would have a dispatch receipt; every artifact would have an identity, verifier, delivery record, feedback state, and residual ledger. This endpoint remains speculative architecture until parser tests, dispatch enforcement, approval-path checks, tool-effect controls, replayed vertical traces, negative controls, and accepted evidence-transition records exist.",
           "codex_tests": [
             {
@@ -2857,6 +2872,26 @@
               "name": "Prompt override scenario",
               "implementation_status": "implemented",
               "result_status": "passes via Lean hidden-override negative case; no deployed parser or model claim"
+            },
+            {
+              "name": "Intent-origin preservation fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no parser, dispatcher, or runtime claim"
+            },
+            {
+              "name": "Ambiguity dispatch block fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no natural-language ambiguity parser claim"
+            },
+            {
+              "name": "Hidden override rejection fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no deployed prompt-injection containment claim"
+            },
+            {
+              "name": "Intent-authority ceiling fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness; no deployed authority-extraction or approval-service claim"
             },
             {
               "name": "Field-confidence audit",
