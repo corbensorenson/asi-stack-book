@@ -67,4 +67,74 @@ theorem untainted_derivative_from_tainted_source_requires_declassification
   | true =>
       rfl
 
+structure ContextMaterializationRecord where
+  materializationReady : Bool
+  deletionObligationOpen : Bool
+  deletionClosureRecorded : Bool
+  declassificationAuthorized : Bool
+  residualRecordPresent : Bool
+  nonClaimsPresent : Bool
+deriving DecidableEq, Repr
+
+def DeletionClosureSatisfied (record : ContextMaterializationRecord) : Prop :=
+  record.deletionObligationOpen = false ∨
+    record.deletionClosureRecorded = true ∨
+      record.declassificationAuthorized = true
+
+def ContextMaterializationAllowed (record : ContextMaterializationRecord) : Prop :=
+  record.materializationReady = true ∧
+    record.nonClaimsPresent = true ∧
+      DeletionClosureSatisfied record
+
+inductive ContextMaterializationRoute where
+  | materialize
+  | blockForDeletionClosure
+  | holdForResidual
+  | blockForResidualRecord
+deriving DecidableEq, Repr
+
+def ContextMaterializationRouteFor
+    (record : ContextMaterializationRecord) : ContextMaterializationRoute :=
+  if record.materializationReady then
+    if record.deletionObligationOpen &&
+        !record.deletionClosureRecorded &&
+          !record.declassificationAuthorized then
+      ContextMaterializationRoute.blockForDeletionClosure
+    else
+      ContextMaterializationRoute.materialize
+  else if record.residualRecordPresent then
+    ContextMaterializationRoute.holdForResidual
+  else
+    ContextMaterializationRoute.blockForResidualRecord
+
+theorem open_deletion_without_closure_or_declassification_blocks_materialization
+    {record : ContextMaterializationRecord} :
+    record.deletionObligationOpen = true ->
+    record.deletionClosureRecorded = false ->
+    record.declassificationAuthorized = false ->
+    ¬ ContextMaterializationAllowed record := by
+  intro openDeletion missingClosure noDeclassification allowed
+  rcases allowed with ⟨_ready, _nonClaims, closureSatisfied⟩
+  unfold DeletionClosureSatisfied at closureSatisfied
+  rcases closureSatisfied with noOpenDeletion | closureRecorded | declassified
+  · rw [openDeletion] at noOpenDeletion
+    cases noOpenDeletion
+  · rw [missingClosure] at closureRecorded
+    cases closureRecorded
+  · rw [noDeclassification] at declassified
+    cases declassified
+
+theorem ready_open_deletion_without_closure_routes_to_deletion_block
+    {record : ContextMaterializationRecord} :
+    record.materializationReady = true ->
+    record.deletionObligationOpen = true ->
+    record.deletionClosureRecorded = false ->
+    record.declassificationAuthorized = false ->
+    ContextMaterializationRouteFor record =
+      ContextMaterializationRoute.blockForDeletionClosure := by
+  intro ready openDeletion missingClosure noDeclassification
+  unfold ContextMaterializationRouteFor
+  rw [ready, openDeletion, missingClosure, noDeclassification]
+  simp
+
 end AsiStackProofs.ContextTransactions

@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 123 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 372 |
+| Theorem declarations classified | 374 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 251 |
+| Derived/decomposed theorem declarations | 253 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -65,7 +65,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -186,6 +186,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextCertificates.lean` | `authority_preservation_rejects_escalating_summary` | derived_or_decomposed | no | uses have, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `derived_context_cell_carries_bindings_and_loss_use_contracts` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `summary_authority_cannot_exceed_source_ceiling` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `open_deletion_without_closure_or_declassification_blocks_materialization` | derived_or_decomposed | no | uses cases, rcases, rw, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `ready_open_deletion_without_closure_routes_to_deletion_block` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `snapshot_read_sees_committed_event_in_declared_view` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `tainted_source_taints_derivative_without_declassification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `untainted_derivative_from_tainted_source_requires_declassification` | derived_or_decomposed | no | uses cases, have, rw |

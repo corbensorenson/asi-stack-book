@@ -101,9 +101,12 @@ No result is recorded here unless a test has actually been implemented and run.
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Summary fidelity boundary test | implemented | passes via synthetic context admission/adequacy harness for loss/omission gate behavior; no semantic fidelity claim |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Resolver conformance test | planned | not run |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Certificate truthfulness test | planned | not run |
-| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Read-your-writes snapshot test | planned | not run |
-| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Taint propagation test | planned | not run |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Context transaction fixture validation | implemented | passes via protocol fixture validation; shape only |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Snapshot read finite-record proof | implemented | builds in AsiStackProofs.ContextTransactions; no memory-store claim |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Taint propagation finite-record proof | implemented | builds in AsiStackProofs.ContextTransactions; no deployed taint engine claim |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Deletion closure test | implemented | passes via synthetic context admission/adequacy harness; no memory-store claim |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Deletion materialization route proof | implemented | passes via Lean build; finite materialization/deletion-closure coverage only |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Memory-store conformance test | planned | not run |
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Distractor resistance test | planned | not run |
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Adequacy labeling test | implemented | passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim |
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Verification escalation test | implemented | passes via synthetic context admission/adequacy harness; no deployed escalation claim |

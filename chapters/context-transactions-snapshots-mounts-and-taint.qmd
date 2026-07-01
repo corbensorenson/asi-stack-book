@@ -16,7 +16,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Four local raw-cache mappings are passage-reviewed; `vcm_editable` remains connector/source-note mapped, and support remains argument until memory-store, branch-isolation, deletion-closure, or taint conformance tests exist."
   - "Protocol schema/fixture validation and the synthetic context admission/adequacy harness are implemented; the harness rejects open deletion obligations that are materialized or made evidence-ready and checks context-ABI/transaction snapshot references, but no transactional memory-store tests have been run for this chapter."
-  - "Lean coverage is limited to finite event/snapshot and taint-propagation records; memory-store, branch-isolation, and deletion-closure behavior remain unimplemented."
+  - "Lean coverage is limited to finite event/snapshot, taint-propagation, and materialization/deletion-closure route records; memory-store behavior, branch isolation, mount visibility, deployed deletion closure, and poisoning resistance remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -34,11 +34,11 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/source-note only: `vcm_editable` |
-| Test state | Context transaction fixture validation now includes transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, declassification refs, derivative refs, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, context ABI refs, source refs, support-state effect, and non-claims; `AsiStackProofs.ContextTransactions` finite-record proofs and `python3 scripts/validate_context_admission_adequacy.py` synthetic deletion-closure and transaction-reference gates are implemented; memory-store tests remain planned. |
+| Test state | Context transaction fixture validation now includes transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, declassification refs, derivative refs, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, context ABI refs, source refs, support-state effect, and non-claims; `AsiStackProofs.ContextTransactions` finite-record proofs now cover snapshot reads, taint propagation, unclosed deletion-obligation materialization blocking, and a materialization route to a deletion-closure block; `python3 scripts/validate_context_admission_adequacy.py` synthetic deletion-closure and transaction-reference gates are implemented; memory-store tests remain planned. |
 
 ## Drafting guardrail
 
-This chapter treats context transactions as a required runtime contract, not as an implemented database. The repo validates a transaction record fixture and implements narrow finite-record Lean predicates for committed-event snapshot reads and taint propagation without declassification. It does not yet implement a memory store, mounts, branch isolation, deletion closure, or copy-on-write branches.
+This chapter treats context transactions as a required runtime contract, not as an implemented database. The repo validates a transaction record fixture and implements narrow finite-record Lean predicates for committed-event snapshot reads, taint propagation without declassification, and materialization blocking when an open deletion obligation lacks closure or declassification. It does not yet implement a memory store, mounts, branch isolation, deployed deletion closure, or copy-on-write branches.
 
 It follows the certificate chapter because typed cells still need runtime semantics. Provenance and loss contracts are not enough if the memory view is stale, mixed across branches, or derived from tainted material.
 
@@ -207,9 +207,9 @@ Snapshot fiction makes the problem operational. The system behaves as if it read
 
 A transaction model for context reads, writes, branches, and deletion closure.
 
-Transactional context starts as a `context_transaction_record` schema and fixture. It validates transaction state, transaction validity state, operation, snapshot, snapshot boundary, mounts, mount policy, read/write sets, branch policy, isolation state, taint labels, taint propagation, deletion obligations, rollback/deletion closure, declassification refs, derivative refs, contradiction refs, materialization state, closure state, faults, context ABI refs, source refs, audit refs, consumer policy, verification refs, promotion blockers, replay boundary, support-state effect, and non-claims. Formalization begins at transactional record boundaries: finite committed events, snapshot views, and derived taint records; a valid snapshot read exposes a committed event in the declared view; and tainted sources produce tainted derivatives unless declassification is authorized.
+Transactional context starts as a `context_transaction_record` schema and fixture. It validates transaction state, transaction validity state, operation, snapshot, snapshot boundary, mounts, mount policy, read/write sets, branch policy, isolation state, taint labels, taint propagation, deletion obligations, rollback/deletion closure, declassification refs, derivative refs, contradiction refs, materialization state, closure state, faults, context ABI refs, source refs, audit refs, consumer policy, verification refs, promotion blockers, replay boundary, support-state effect, and non-claims. Formalization begins at transactional record boundaries: finite committed events, snapshot views, derived taint records, and materialization/deletion-closure records; a valid snapshot read exposes a committed event in the declared view; tainted sources produce tainted derivatives unless declassification is authorized; and a ready materialization with an open deletion obligation but no closure or declassification routes to a deletion-closure block.
 
-The context-transaction fixture checks the record surface rather than a deployed memory service. Read-your-writes consistency across a store, branch isolation, deletion closure, and poisoning resistance remain future implementation and test claims beyond the finite transaction predicates.
+The context-transaction fixture checks the record surface rather than a deployed memory service. Read-your-writes consistency across a store, branch isolation, deployed deletion closure, and poisoning resistance remain future implementation and test claims beyond the finite transaction predicates.
 
 A tiny memory-store fixture set would give the transaction model its first behavioral rehearsal: one coherent snapshot read, one branch that cannot merge because taint remains, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact graph node that records the replay boundary. The set would test transaction semantics while leaving production memory behavior unclaimed.
 
@@ -237,9 +237,10 @@ This governable-memory state layer is still an architectural target. Keep the me
 | Snapshot read predicate | Check that a valid finite snapshot read sees a committed event in its declared view. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
 | Taint propagation predicate | Check that tainted source context produces tainted derived context unless declassification is authorized. | implemented in `AsiStackProofs.ContextTransactions`; builds locally |
 | Synthetic deletion-closure harness | Check that deleted or revoked source material cannot reappear through derivatives without a closure record. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no memory-store claim |
+| Deletion materialization route proof | Check that finite materialization records with open deletion obligations and no closure or declassification cannot be allowed and route to a deletion-closure block when otherwise ready. | implemented in `AsiStackProofs.ContextTransactions`; no deployed memory-store or deletion service claim |
 | Memory-store conformance test | Check read-your-writes, branch isolation, mount visibility, and committed-event replay in an executable store harness. | planned; not run |
 
-The fixture-shape check, finite-record proof predicates, and synthetic deletion-closure harness are implemented. Store consistency, branch isolation, deployed deletion closure, and replay behavior still require a small memory-store harness with committed events, derived cells, declassification policy, and deletion/revocation cases.
+The fixture-shape check, finite-record proof predicates, and synthetic deletion-closure harness are implemented. The new materialization route proof keeps unclosed deletion obligations from being modeled as allowed materializations, but store consistency, branch isolation, deployed deletion closure, and replay behavior still require a small memory-store harness with committed events, derived cells, declassification policy, and deletion/revocation cases.
 
 ### Formalization hooks
 
@@ -248,7 +249,7 @@ The fixture-shape check, finite-record proof predicates, and synthetic deletion-
 | `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactions` | A snapshot read sees the committed events in its declared view. | implemented |
 | `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactions` | A tainted source produces tainted derived context unless declassification is authorized. | implemented |
 
-These proof hooks are implemented only over finite Lean event/snapshot and taint records. `AsiStackProofs.ContextTransactions` checks that valid snapshot reads expose committed events in their declared view, and that tainted sources taint derived context unless declassification is authorized. The proof does not implement a transactional memory store, branch isolation, mount visibility, deletion closure, or poisoning resistance.
+These proof hooks are implemented only over finite Lean event/snapshot, taint, and materialization/deletion-closure records. `AsiStackProofs.ContextTransactions` checks that valid snapshot reads expose committed events in their declared view, that tainted sources taint derived context unless declassification is authorized, that an open deletion obligation without closure or declassification blocks allowed materialization, and that a ready record in that state routes to a deletion-closure block. The proof does not implement a transactional memory store, branch isolation, mount visibility, deployed deletion closure, or poisoning resistance.
 
 ## Source crosswalk
 

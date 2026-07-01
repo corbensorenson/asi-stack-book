@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-01 - Context materialization deletion-closure proof
+
+- Strengthened `AsiStackProofs.ContextTransactions` with finite
+  materialization/deletion-closure records, an allowed-materialization
+  predicate, and a route surface for materialization, deletion-closure blocks,
+  residual holds, and missing-residual-record blocks.
+- Added derived theorems showing that an open deletion obligation without a
+  closure record or declassification authorization blocks allowed
+  materialization, and routes an otherwise ready record to a deletion-closure
+  block.
+- Updated the Context Transactions chapter, Appendix E, book outline, proof
+  adequacy review, proof-depth/audit reports, v1.0/v1.x roadmap surfaces, and
+  public status surfaces. The proof-depth classifier now reports 374 theorem
+  declarations, 121 direct/projection-style declarations, and 253
+  derived/decomposed declarations across 123 manifest proof targets; Appendix E
+  now records 321 generated chapter-level rows with 218 implemented, 1 partial,
+  and 102 planned rows.
+- This does not prove memory-store behavior, branch isolation, mount
+  visibility, deployed deletion closure, declassification quality, poisoning
+  resistance, support-state promotion, reader artifact approval, or release
+  approval.
+
 ## 2026-07-01 - Planning dispatch-route proof
 
 - Strengthened `AsiStackProofs.Planning` with a finite `PlanControlRoute`,

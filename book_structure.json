@@ -3634,12 +3634,35 @@
           "minimal_implementation": "A transaction model for context reads, writes, branches, and deletion closure.",
           "beyond_state_of_art": "The mature version is a transactional memory substrate for AI context. It does not treat memory as a vector store with annotations. It treats every context view as the product of committed events, versioned pages, mount policies, snapshots, branch rules, taint propagation, deletion obligations, declassification decisions, and replay boundaries. Under transactional context memory, every materialized context view can explain itself. It can show which immutable events were visible, which branch was used, which mounts were readable or writable, which cells were actually read, which derivatives were created, which taint labels propagated, which deletion obligations closed, which contradictions were recorded, and why a view was allowed to feed a job, artifact, claim, or release.",
           "codex_tests": [
-            "Read-your-writes snapshot test",
-            "Taint propagation test",
+            {
+              "name": "Context transaction fixture validation",
+              "implementation_status": "implemented",
+              "result_status": "passes via protocol fixture validation; shape only"
+            },
+            {
+              "name": "Snapshot read finite-record proof",
+              "implementation_status": "implemented",
+              "result_status": "builds in AsiStackProofs.ContextTransactions; no memory-store claim"
+            },
+            {
+              "name": "Taint propagation finite-record proof",
+              "implementation_status": "implemented",
+              "result_status": "builds in AsiStackProofs.ContextTransactions; no deployed taint engine claim"
+            },
             {
               "name": "Deletion closure test",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic context admission/adequacy harness; no memory-store claim"
+            },
+            {
+              "name": "Deletion materialization route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite materialization/deletion-closure coverage only"
+            },
+            {
+              "name": "Memory-store conformance test",
+              "implementation_status": "planned",
+              "result_status": "not run"
             }
           ],
           "lean_module": "AsiStackProofs.ContextTransactions",
