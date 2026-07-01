@@ -2,7 +2,7 @@
 Curated reader manuscript draft.
 chapter_id: resource-economics-and-token-budgets
 generated_baseline_ref: build/reader_edition/chapters/resource-economics-and-token-budgets.qmd
-live_source_ref: chapters/resource-economics-and-token-budgets.qmd@406c78ab7
+live_source_ref: chapters/resource-economics-and-token-budgets.qmd@7c0d47824
 This file is a reader-prose derivative only. Preserve claim meaning,
 support-state boundaries, source boundaries, proof/test status,
 implementation horizons, and release blockers.
@@ -228,6 +228,29 @@ ledger tests budget semantics while leaving economic results unclaimed.
 
 A first budget ledger shows the rejected route alongside the chosen route, because hidden savings are not governed savings.
 
+The current repository evidence makes that idea concrete in one narrow slice.
+Four costed routes are compared: an adequate but expensive manual-review
+baseline, a bounded transform route with verification, a cheaper route that
+fails verification, and a cheaper route that hides residual cost. The accepted
+slice selects the bounded transform route only after the cheaper failed route
+and the hidden-residual route are rejected. The Lean bridge then replays the
+same selector state and checks that the final state saw two eligible routes,
+two cheaper rejected controls, and the selected bounded route.
+
+That is the kind of accounting the chapter is asking for. The result is not a
+budget scheduler, not an economic theorem, and not evidence that the core
+Resource Economics claim is implemented. It is a small public-safe receipt for
+one sentence of discipline: a system should not call a route cheaper when the
+savings come from lost verification or displaced cost.
+
+The local live probe adds reproducibility rather than broader truth. It runs
+the costed-route slice, workflow trace, budget-ledger checks,
+capacity-smoothing toy traces, and simulation-transfer boundary checks as a
+single replay surface, then records command-output digests and artifact hashes.
+That makes the flagship evidence lane easier to rerun and harder to quietly
+reinterpret, while leaving production scheduler logs, workload-quality review,
+physical-feasibility review, and measured simulation outputs as real blockers.
+
 ## Beyond the State of the Art
 
 Resource economics matures into a risk-aware budget operating system for
@@ -247,6 +270,13 @@ checks, load/friction tests, value-of-computation comparisons, scarce-resource
 scheduler traces, and rejected-saving records show that resource discipline
 improves the stack without hiding risk.
 
+The selector slice is a useful seed for that endpoint because it already has
+the shape mature evidence needs: baseline, negative controls, residual
+ownership, a replay command, a proof bridge, and explicit non-claims. The next
+step is not to make the slice sound larger. The next step is to attach the
+same discipline to real workloads, real quality review, and real displaced
+costs.
+
 ## Summary
 
 Resources are part of governance. A system that cannot account for tokens,
@@ -256,6 +286,11 @@ efficiency.
 Budget pressure becomes an explicit record so the stack can save cost where it
 is safe, spend verification where risk demands it, and keep protected gates
 above local optimization.
+
+The flagship slice now gives the reader one concrete pattern to look for:
+accepted savings are compared to a baseline, rejected against cheaper invalid
+controls, checked by a finite proof bridge, and kept inside non-claims until
+stronger evidence exists.
 
 The same rule governs self-improvement. A system may not call itself more
 efficient by moving verification, security, or human repair cost out of sight.

@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Resource Economics and Token Budgets
 
-Date: 2026-06-30
+Date: 2026-07-01
 
 Chapter: `resource-economics-and-token-budgets`
 
@@ -35,6 +35,12 @@ The reader throughline is:
   welfare result, load-stability result, or cost-quality result exists.
 - Preserved the proof/test boundary for `AsiStackProofs.ResourceEconomics`,
   deterministic budget-ledger harnesses, and toy capacity-smoothing traces.
+- Added a second reader-only update after the Resource Economics selector-trace
+  bridge: the curated chapter now explains the four-route accepted slice,
+  adequate baseline, cheaper failed-verification control, cheaper
+  hidden-residual control, finite selector-state Lean replay, and local live
+  probe as a reproducibility/evidence-boundary story rather than a scheduler or
+  economic result.
 
 ## Meaning-Preservation Checks
 
@@ -43,6 +49,9 @@ The reader throughline is:
   mappings, proof status, test status, evidence level, or release records.
 - The prose keeps fixture validation, deterministic ledger checks, toy capacity
   traces, serving-memory references, and economic claims separate.
+- The prose preserves the new selector-state trace theorem as a narrow bridge
+  over fixture state only; it does not treat the theorem as deployed routing,
+  model-quality, scheduler-quality, or cost-quality evidence.
 - PagedAttention/vLLM remains serving-layer resource context only; no local
   deployment, KV-cache audit, latency result, throughput result, or quality
   result is implied.
@@ -60,6 +69,9 @@ The reader throughline is:
   benchmarks, welfare or load studies, serving-memory audits, KV-cache
   reproduction, cost-quality experiments, scarce-resource scheduler traces,
   value-of-computation comparisons, or economic outcomes.
+- This pass does not claim that the accepted costed-route slice, selector-state
+  theorem, or local live probe promotes the `resource-economics-and-token-budgets`
+  chapter core claim.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.
@@ -67,9 +79,11 @@ The reader throughline is:
 ## Remaining Blockers
 
 - Human editorial review has not approved this chapter for reader release.
-- A stronger resource-economics evidence lane still needs public-safe traces or
-  fixtures that name baseline, cost, quality predicate, verification tax,
+- A stronger resource-economics evidence lane still needs workload-facing
+  traces that name baseline, cost, quality predicate, verification tax,
   protected overhead, displaced costs, negative controls, commands,
-  limitations, counterevidence, and non-claims.
+  limitations, counterevidence, and non-claims, plus production scheduler logs,
+  measured displaced-cost accounting, physical-feasibility review, and measured
+  simulation outputs where those claims are in scope.
 - Any future support-state movement requires an accepted evidence-transition
   record; the current curated prose pass is reader work only.
