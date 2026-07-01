@@ -118,9 +118,10 @@ Generate the tracked curated-reader source workspace only as a review input:
 ```bash
 python3 scripts/build_curated_reader_edition.py --output build/curated_reader_edition
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render build/curated_reader_edition --to html
+node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json
 ```
 
-Then review `build/curated_reader_edition/CURATED_READER_REVIEW_CHECKLIST.md` and `build/curated_reader_edition/curated_reader_build_report.json`. This build path proves the curated chapter drafts are renderable Quarto source; it does not approve curated reconciliation, reader formats, e-reader behavior, audio, or any claim-support movement.
+Then review `build/curated_reader_edition/CURATED_READER_REVIEW_CHECKLIST.md`, `build/curated_reader_edition/curated_reader_build_report.json`, and `build/curated_reader_edition/curated_reader_html_browser_report.json`. This build path proves the curated chapter drafts are renderable Quarto source and can pass a local all-page desktop/mobile browser sweep; it does not approve curated reconciliation, reader formats, e-reader behavior, audio, or any claim-support movement.
 
 Attempt specific formats and record actual local outcomes:
 

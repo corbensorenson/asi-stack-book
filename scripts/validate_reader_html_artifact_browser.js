@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 /*
-Validate the generated reader HTML artifact in a real browser.
+Validate a reader HTML artifact in a real browser.
 
-This is an artifact-review helper, not a release approval tool. Run
-`python3 scripts/render_reader_formats.py --formats html epub docx` first so
-the ignored reader HTML snapshot exists under build/reader_edition.
+This is an artifact-review helper, not a release approval tool. For generated
+reader artifacts, run `python3 scripts/render_reader_formats.py --formats html
+epub docx` first so the ignored reader HTML snapshot exists under
+build/reader_edition. For curated reader source review, run
+`python3 scripts/build_curated_reader_edition.py --output
+build/curated_reader_edition` and render that workspace to HTML first.
 */
 
 const fs = require("fs");
@@ -33,6 +36,7 @@ const LIVE_ONLY_MARKERS = [
 function parseArgs(argv) {
   const args = {
     site: DEFAULT_SITE,
+    manifest: DEFAULT_MANIFEST,
     report: DEFAULT_REPORT,
     strict: false,
   };
@@ -42,6 +46,8 @@ function parseArgs(argv) {
       args.strict = true;
     } else if (value === "--site") {
       args.site = path.resolve(argv[++index]);
+    } else if (value === "--manifest") {
+      args.manifest = path.resolve(argv[++index]);
     } else if (value === "--report") {
       args.report = path.resolve(argv[++index]);
     } else {
@@ -141,11 +147,11 @@ function relative(filePath) {
   return path.relative(ROOT, filePath);
 }
 
-function expectedHtmlFileCount() {
-  if (!fs.existsSync(DEFAULT_MANIFEST)) {
-    throw new Error(`Reader manifest not found: ${DEFAULT_MANIFEST}`);
+function expectedHtmlFileCount(manifestPath) {
+  if (!fs.existsSync(manifestPath)) {
+    throw new Error(`Reader manifest not found: ${manifestPath}`);
   }
-  const manifest = JSON.parse(fs.readFileSync(DEFAULT_MANIFEST, "utf8"));
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
   if (!Number.isInteger(manifest.files) || manifest.files < 1) {
     throw new Error("Reader manifest is missing a positive integer files count.");
   }
@@ -210,7 +216,7 @@ async function main() {
   }
 
   const files = htmlFiles(args.site);
-  const expectedFiles = expectedHtmlFileCount();
+  const expectedFiles = expectedHtmlFileCount(args.manifest);
   if (files.length < expectedFiles) {
     throw new Error(`Expected at least ${expectedFiles} reader HTML files, found ${files.length}.`);
   }
@@ -240,6 +246,7 @@ async function main() {
   const report = {
     schema_version: "0.1",
     artifact_root: relative(args.site),
+    manifest: relative(args.manifest),
     expected_page_count: expectedFiles,
     page_count: files.length,
     viewport_count: Object.keys(VIEWPORTS).length,

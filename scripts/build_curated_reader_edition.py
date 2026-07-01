@@ -190,6 +190,7 @@ def write_curated_checklist(output_dir: Path, copied: list[dict[str, str]]) -> s
         "- [ ] Confirm reader-only reordering or compression did not remove meaning-critical caveats.",
         "- [ ] Confirm chapter handoffs preserve the manifest order and final chapter closes the book-level arc.",
         "- [ ] Treat `reader_delta_report.md` and reader-overlay metadata as baseline-generator context only; the tracked curated chapter files are the source under review in this workspace.",
+        "- [ ] Run `node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json` after rendering curated HTML.",
         "- [ ] Render any target formats only after this source-level review passes.",
         "- [ ] Keep EPUB, DOCX, PDF, HTML, e-reader, and audio approvals separate until exact artifacts are reviewed and release-recorded.",
         "",

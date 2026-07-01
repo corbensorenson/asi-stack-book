@@ -16,6 +16,11 @@
   renderability evidence only; it does not approve curated reconciliation,
   reader formats, e-reader behavior, audio, claim support states, or release
   artifacts.
+- Extended `scripts/validate_reader_html_artifact_browser.js` with a
+  `--manifest` option so the same browser artifact check can validate the
+  curated review workspace. The local curated HTML browser sweep passed 98
+  page-view pairs across 49 pages at desktop and mobile widths, without
+  creating a release record or artifact approval.
 - Wired the curated build check into `scripts/validate_book.py` and updated the
   reader runbook, roadmap, README, editions guide, and repository map.
 

@@ -2129,9 +2129,14 @@ Tasks:
 - Use `scripts/build_curated_reader_edition.py --check` after curated-reader
   edits, and use `python3 scripts/build_curated_reader_edition.py --output
   build/curated_reader_edition` plus `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
-  quarto render build/curated_reader_edition --to html` for local source-level
-  review. This proves renderability of the tracked curated source only; it does
-  not approve a reader artifact or clear release blockers.
+  quarto render build/curated_reader_edition --to html` plus
+  `node scripts/validate_reader_html_artifact_browser.js --strict --site
+  build/curated_reader_edition/_reader_site --manifest
+  build/curated_reader_edition/reader_manifest.json --report
+  build/curated_reader_edition/curated_reader_html_browser_report.json` for
+  local source-level review. This proves renderability and local browser
+  viability of the tracked curated source only; it does not approve a reader
+  artifact or clear release blockers.
 - Graduate only chapters where overlays are too small for the required edit:
   new openings, reordered examples, sustained analogies, narrative continuity,
   section compression, or audio pacing.
@@ -2200,8 +2205,13 @@ Current status:
   tracked curated reader manuscript maps to the 44 active manifest chapters,
   preserves the required release blockers, and can be assembled as Quarto
   source. A local review build rendered successfully to HTML at
-  `build/curated_reader_edition/_reader_site/index.html`; the build report
-  preserves `review_required` status and all 44
+  `build/curated_reader_edition/_reader_site/index.html`, and
+  `node scripts/validate_reader_html_artifact_browser.js --strict --site
+  build/curated_reader_edition/_reader_site --manifest
+  build/curated_reader_edition/reader_manifest.json --report
+  build/curated_reader_edition/curated_reader_html_browser_report.json` passed
+  98 page-view pairs across 49 pages. The build report preserves
+  `review_required` status and all 44
   `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, and
   `reader_release_record_not_created` blockers.
 - The current curated set follows the consolidation-aware curation gate:

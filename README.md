@@ -368,6 +368,7 @@ Generate or check the tracked curated-reader manuscript as a local Quarto review
 python3 scripts/build_curated_reader_edition.py --check
 python3 scripts/build_curated_reader_edition.py --output build/curated_reader_edition
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render build/curated_reader_edition --to html
+node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json
 ```
 
 Render selected reader-edition formats and record actual local outcomes:
