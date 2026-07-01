@@ -36,6 +36,15 @@ The command recomputes the result from the tracked input and verifies the
 tracked result record, this summary, and the accepted evidence-transition
 record.
 
+## Lean Fixture Bridge
+
+The command also checks that the finite Lean fixture in
+`AsiStackProofs.ResourceEconomics` matches the tracked JSON route costs,
+selected route, rejection controls, and eligibility fields. This links the
+public-safe replay to `lean/AsiStackProofs/ResourceEconomics.lean` without
+claiming scheduler completeness, deployed routing behavior, economic
+optimality, or chapter-core support-state promotion.
+
 ## Inputs
 
 - `experiments/costed_route_resource_slice/input/v1_0_costed_routes.json`

@@ -7670,6 +7670,13 @@
               "result_status": "passes via Lean negative case; no real resource-allocation performance claim",
               "status": "implemented in AsiStackProofs.ResourceEconomics; no real resource-allocation performance claim"
             },
+            {
+              "name": "Costed-route Lean fixture alignment gate",
+              "purpose": "Check that the finite Resource Economics Lean fixture matches the public costed-route JSON route costs, selected route, negative controls, and eligibility fields used by the measured/replayed slice.",
+              "status": "implemented; passing via `python3 scripts/validate_costed_route_resource_slice.py`",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_costed_route_resource_slice.py`; no deployed scheduler, route-search completeness, or economic-optimality claim"
+            },
             "Budget allocation test",
             "Risk-adjusted verification test",
             {

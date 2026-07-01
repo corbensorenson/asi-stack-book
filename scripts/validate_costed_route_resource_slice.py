@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Any
 
@@ -21,6 +22,7 @@ TRANSITION = (
 )
 ROUTE_SCHEMA = ROOT / "schemas" / "costed_route_record.schema.json"
 BUDGET_SCHEMA = ROOT / "schemas" / "resource_budget_record.schema.json"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
 
 GOOD_OUTCOMES = {"adequate_minimum", "adequate_overkill"}
 BAD_HIDDEN_COST_WORDS = {"failed", "missing", "unbounded", "lost"}
@@ -33,6 +35,18 @@ REQUIRED_NON_CLAIMS = (
     "does not promote any chapter core claim",
     "does not prove deployed routing",
     "does not measure model quality",
+)
+ROUTE_ID_TO_LEAN_CONSTRUCTOR = {
+    "route://frontier-manual-review": "frontierManualReview",
+    "route://bounded-transform-plus-verifier": "boundedTransformPlusVerifier",
+    "route://cheap-unverified-transform": "cheapUnverifiedTransform",
+    "route://hidden-residual-auto-merge": "hiddenResidualAutoMerge",
+}
+REQUIRED_LEAN_THEOREMS = (
+    "costed_route_fixture_selected_is_eligible",
+    "cheap_unverified_transform_rejected_by_fixture",
+    "hidden_residual_auto_merge_rejected_by_fixture",
+    "selected_route_is_lowest_cost_eligible_in_fixture",
 )
 
 
@@ -119,6 +133,10 @@ def validate_summary(expected_result: dict[str, Any], errors: list[str]) -> None
         "`route://cheap-unverified-transform` | negative control | 2.3 | rejected",
         "`route://hidden-residual-auto-merge` | hidden-residual control | 8.2 | rejected",
         "66.98 percent cheaper",
+        "Lean Fixture Bridge",
+        "The command also checks that the finite Lean fixture in",
+        "`AsiStackProofs.ResourceEconomics` matches the tracked JSON route costs",
+        "selected route, rejection controls, and eligibility fields",
         "Does not promote any chapter core claim above `argument`.",
         "Does not prove deployed routing",
     ]
@@ -154,9 +172,159 @@ def validate_transition(expected_result: dict[str, Any], errors: list[str]) -> N
         refs = value.get("artifact_refs", []) + value.get("evidence_packet_refs", []) + value.get("claim_surface_refs", [])
         if ref not in refs:
             errors.append(f"{rel(TRANSITION)} must reference {ref}.")
+    refs = value.get("artifact_refs", []) + value.get("evidence_packet_refs", []) + value.get("claim_record_refs", [])
+    if rel(LEAN_FIXTURE) not in refs:
+        errors.append(f"{rel(TRANSITION)} must reference {rel(LEAN_FIXTURE)}.")
     if expected_result["selected_route"] not in value.get("transition_reason", ""):
         errors.append(f"{rel(TRANSITION)} transition_reason must name selected route.")
     validate_non_claims(rel(TRANSITION), value.get("non_claims"), errors)
+
+
+def lean_bool(value: bool) -> str:
+    return "true" if value else "false"
+
+
+def parse_lean_costed_route_fixture(errors: list[str]) -> tuple[set[str], str, dict[str, dict[str, str]]]:
+    if not LEAN_FIXTURE.exists():
+        errors.append(f"Missing {rel(LEAN_FIXTURE)}.")
+        return set(), "", {}
+    text = LEAN_FIXTURE.read_text(encoding="utf-8")
+
+    constructor_match = re.search(
+        r"inductive\s+CostedRoute\s+where(?P<body>.*?)deriving\s+DecidableEq",
+        text,
+        re.DOTALL,
+    )
+    if not constructor_match:
+        errors.append(f"{rel(LEAN_FIXTURE)} is missing CostedRoute constructors.")
+        constructors: set[str] = set()
+    else:
+        constructors = set(re.findall(r"^\s*\|\s+(\w+)\s*$", constructor_match.group("body"), re.MULTILINE))
+
+    selected_match = re.search(
+        r"def\s+CostedRouteFixtureSelected\s*:\s*CostedRoute\s*:=\s*\n\s*\.(\w+)",
+        text,
+    )
+    selected_constructor = selected_match.group(1) if selected_match else ""
+    if not selected_constructor:
+        errors.append(f"{rel(LEAN_FIXTURE)} is missing CostedRouteFixtureSelected.")
+
+    expected_theorem_set = set(REQUIRED_LEAN_THEOREMS)
+    declared_theorem_set = set(re.findall(r"^theorem\s+(\w+)\b", text, re.MULTILINE))
+    missing_theorems = sorted(expected_theorem_set - declared_theorem_set)
+    for theorem in missing_theorems:
+        errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
+
+    fixture_match = re.search(
+        r"def\s+costedRouteFixtureAssessment\s*:\s*CostedRoute\s*->\s*CostedRouteAssessment(?P<body>.*?)\n\ndef\s+CostedRouteFixtureSelected",
+        text,
+        re.DOTALL,
+    )
+    assessments: dict[str, dict[str, str]] = {}
+    if not fixture_match:
+        errors.append(f"{rel(LEAN_FIXTURE)} is missing costedRouteFixtureAssessment.")
+        return constructors, selected_constructor, assessments
+
+    for match in re.finditer(
+        r"^\s*\|\s+\.(?P<constructor>\w+)\s*=>\s*\{(?P<body>.*?)(?=^\s*\|\s+\.|\Z)",
+        fixture_match.group("body"),
+        re.MULTILINE | re.DOTALL,
+    ):
+        body = match.group("body")
+        fields = {
+            field_match.group("field"): field_match.group("value").strip()
+            for field_match in re.finditer(
+                r"^\s*(?P<field>\w+)\s*:=\s*(?P<value>[^,\n}]+)",
+                body,
+                re.MULTILINE,
+            )
+        }
+        assessments[match.group("constructor")] = fields
+    return constructors, selected_constructor, assessments
+
+
+def expected_lean_assessment(wrapper: dict[str, Any], computed_cost: float) -> dict[str, str]:
+    route_id = wrapper["route_id"]
+    route_record = wrapper["costed_route_record"]
+    budget_record = wrapper["resource_budget_record"]
+    hidden_cost_text = text_blob(route_record.get("hidden_cost_checks", []))
+    hidden_residual_displaced = any(
+        phrase in hidden_cost_text
+        for phrase in ("missing residual ownership", "lost reviewer handoff")
+    )
+    residual_owned = (
+        bool(route_record.get("residual_obligations"))
+        and bool(budget_record.get("residuals"))
+        and not hidden_residual_displaced
+    )
+    non_claim_text = text_blob(route_record.get("non_claims", []))
+    return {
+        "route": f".{ROUTE_ID_TO_LEAN_CONSTRUCTOR[route_id]}",
+        "costTenths": str(int(round(computed_cost * 10))),
+        "verificationPassed": lean_bool(route_record.get("verification_result") == "pass"),
+        "adequateOutcome": lean_bool(route_record.get("outcome_state") in GOOD_OUTCOMES),
+        "promotionCandidate": lean_bool(route_record.get("promotion_candidate") is True),
+        "budgetDispatchable": lean_bool(
+            budget_record.get("budget_state") == "dispatchable"
+            and budget_record.get("budget_decision") == "dispatch"
+        ),
+        "residualOwned": lean_bool(residual_owned),
+        "hiddenCostDisplaced": lean_bool(hidden_residual_displaced),
+        "fallbackVisible": lean_bool(bool(route_record.get("fallback_route"))),
+        "nonClaimBoundary": lean_bool(all(phrase in non_claim_text for phrase in REQUIRED_NON_CLAIMS)),
+    }
+
+
+def validate_lean_fixture_alignment(
+    routes: list[dict[str, Any]],
+    result: dict[str, Any],
+    computed_costs: dict[str, float],
+    errors: list[str],
+) -> dict[str, Any]:
+    constructors, selected_constructor, assessments = parse_lean_costed_route_fixture(errors)
+    expected_constructors = set(ROUTE_ID_TO_LEAN_CONSTRUCTOR.values())
+    if constructors != expected_constructors:
+        errors.append(
+            f"{rel(LEAN_FIXTURE)} CostedRoute constructors must be {sorted(expected_constructors)!r}, got {sorted(constructors)!r}."
+        )
+    expected_selected_constructor = ROUTE_ID_TO_LEAN_CONSTRUCTOR.get(result.get("selected_route"))
+    if selected_constructor != expected_selected_constructor:
+        errors.append(
+            f"{rel(LEAN_FIXTURE)} selected constructor must be {expected_selected_constructor!r}, got {selected_constructor!r}."
+        )
+
+    for wrapper in routes:
+        if not isinstance(wrapper, dict):
+            continue
+        route_id = wrapper.get("route_id")
+        if route_id not in ROUTE_ID_TO_LEAN_CONSTRUCTOR:
+            continue
+        if not isinstance(wrapper.get("costed_route_record"), dict) or not isinstance(
+            wrapper.get("resource_budget_record"), dict
+        ):
+            continue
+        constructor = ROUTE_ID_TO_LEAN_CONSTRUCTOR[route_id]
+        fields = assessments.get(constructor)
+        if fields is None:
+            errors.append(f"{rel(LEAN_FIXTURE)} missing fixture assessment for .{constructor}.")
+            continue
+        expected_fields = expected_lean_assessment(wrapper, computed_costs[route_id])
+        for field, expected_value in expected_fields.items():
+            if fields.get(field) != expected_value:
+                errors.append(
+                    f"{rel(LEAN_FIXTURE)} .{constructor}.{field} must be {expected_value!r}, got {fields.get(field)!r}."
+                )
+
+    expected_alignment = {
+        "lean_module": rel(LEAN_FIXTURE),
+        "checked_constructor_count": EXPECTED_ROUTE_COUNT,
+        "selected_constructor": expected_selected_constructor,
+        "route_constructors": dict(sorted(ROUTE_ID_TO_LEAN_CONSTRUCTOR.items())),
+        "checked_theorem_names": list(REQUIRED_LEAN_THEOREMS),
+    }
+    if result.get("lean_fixture_alignment") != expected_alignment:
+        errors.append(f"{rel(RESULT)}: lean_fixture_alignment must equal {expected_alignment!r}.")
+    return expected_alignment
 
 
 def main() -> None:
@@ -277,6 +445,7 @@ def main() -> None:
         "computed_cost_units": dict(sorted(computed_costs.items())),
         "cost_reduction_vs_baseline_percent": reduction,
     }
+    validate_lean_fixture_alignment(routes, result, computed_costs, errors)
 
     for key, expected_value in expected_result.items():
         if result.get(key) != expected_value:
@@ -301,7 +470,7 @@ def main() -> None:
     print(
         "Costed route/resource slice validation passed: "
         f"selected {selected}, baseline {baseline}, negative controls {', '.join(expected_result['negative_control_routes'])}, "
-        f"{reduction:.2f}% synthetic cost reduction."
+        f"{reduction:.2f}% synthetic cost reduction; Lean fixture aligned."
     )
 
 

@@ -221,6 +221,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource budget ledger harness | implemented | passing via `python3 scripts/validate_resource_budget_ledgers.py` |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Required budget-gate preservation negative case | implemented | passes via Lean negative case; no scheduler-quality or economic-optimality claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | High-risk insufficient-budget dispatch negative case | implemented | passes via Lean negative case; no real resource-allocation performance claim |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Costed-route Lean fixture alignment gate | implemented | passing via `python3 scripts/validate_costed_route_resource_slice.py`; no deployed scheduler, route-search completeness, or economic-optimality claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Budget allocation test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Risk-adjusted verification test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Capacity smoothing toy harness | implemented | passing via `python3 scripts/validate_capacity_smoothing.py` |

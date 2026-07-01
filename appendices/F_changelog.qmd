@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-01 - Costed-route Lean fixture alignment gate
+
+- Extended `scripts/validate_costed_route_resource_slice.py` so the existing
+  one-command costed-route replay now parses
+  `lean/AsiStackProofs/ResourceEconomics.lean` and checks that the finite Lean
+  fixture matches the public JSON route constructors, selected constructor,
+  route costs, negative controls, and eligibility booleans.
+- Updated the tracked costed-route result record and accepted evidence
+  transition to carry the Lean fixture alignment facts, downgrade trigger, and
+  `lean/AsiStackProofs/ResourceEconomics.lean` artifact reference.
+- Added the manifest-backed Appendix E row for the Resource Economics
+  costed-route Lean fixture alignment gate and regenerated the scaffold. The
+  current Appendix E chapter-level count is now 338 rows: 238 implemented, 1
+  partial, and 99 planned.
+- Updated the Resource Economics chapter, book outline, measured-slice docs,
+  active evidence-cycle ledger, README, v1.x roadmap/status/focus surfaces, and
+  status snapshot guard. This does not promote, demote, deprecate, or refute
+  any live claim; create a deployed router, scheduler, route-search
+  completeness result, workload result, economic result, model-quality result,
+  benchmark result, safety result, source-interpretation result, external
+  review, reader release, ebook, PDF, DOCX, or audio artifact.
+
 ## 2026-07-01 - Costed-route Lean selector bridge
 
 - Added `lean:resources.costed_route.fixture_bridge` to the Resource Economics

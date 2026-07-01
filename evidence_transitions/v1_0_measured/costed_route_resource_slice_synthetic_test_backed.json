@@ -27,6 +27,7 @@
     "cheap_failed_negative_control",
     "hidden_residual_negative_control",
     "validation_command",
+    "lean_fixture_alignment_gate",
     "public_safe_result_record"
   ],
   "transition_reason": "The local validation command checked four Costed Route Record instances and four Resource Budget Record instances against their schemas, recomputed the deterministic cost formula, rejected route://cheap-unverified-transform because verification failed, outcome_state was cheap_brittle, promotion_candidate was false, and the budget was residualized, rejected route://hidden-residual-auto-merge because surface verification passed but outcome_state was hidden_cost with missing residual ownership and residualized budget state, then selected route://bounded-transform-plus-verifier over the eligible route://frontier-manual-review baseline with a 66.98 percent synthetic cost reduction. This supports only the narrow recorded selector discipline claim, not deployed routing, scheduler behavior, model quality, benchmark quality, or chapter core claims.",
@@ -37,18 +38,21 @@
     "resource-budget schema validation",
     "failed-verification negative-control rejection",
     "hidden-residual negative-control rejection",
+    "Lean fixture alignment with public route costs and eligibility fields",
     "accepted bounded evidence-transition record"
   ],
   "artifact_refs": [
     "experiments/costed_route_resource_slice/input/v1_0_costed_routes.json",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "scripts/validate_costed_route_resource_slice.py",
+    "lean/AsiStackProofs/ResourceEconomics.lean",
     "docs/costed_route_resource_slice.md",
     "scripts/validate_evidence_transitions.py"
   ],
   "evidence_packet_refs": [
     "docs/costed_route_resource_slice.md",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
+    "lean/AsiStackProofs/ResourceEconomics.lean",
     "docs/first_measured_replayed_slice.md",
     "docs/evidence_transition_pilot.md"
   ],
@@ -75,6 +79,7 @@
     "selected route is not the lowest-cost eligible route",
     "baseline route is no longer eligible",
     "result record drifts from recomputed cost units",
+    "Lean fixture drifts from the public costed-route JSON fixture or result record",
     "chapter prose interprets this slice as deployed runtime, model, benchmark, scheduler, safety, or economic evidence"
   ],
   "promotion_burden": "Broader routing or resource-economics claims require a separate accepted transition with real route-quality measurements, deployed scheduler traces, load or serving-system measurements, TokenMana or PlanForge prototype runs, hidden-cost audits over real tasks, independent review where relevant, and explicit non-claims.",

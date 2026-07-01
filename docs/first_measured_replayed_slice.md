@@ -98,7 +98,9 @@ python3 scripts/validate_costed_route_resource_slice.py
 The command recomputes the tracked result from
 `experiments/costed_route_resource_slice/input/v1_0_costed_routes.json`, checks
 the tracked JSON result, checks the public summary, and checks the accepted
-transition record.
+transition record. It also checks that the finite Lean fixture in
+`AsiStackProofs.ResourceEconomics` stays aligned with the public JSON route
+costs, selected route, negative controls, and eligibility fields.
 
 ## Inputs
 
@@ -125,6 +127,8 @@ Observed result:
 - Baseline synthetic cost units: 43.0
 - Hidden-residual control synthetic cost units: 8.2
 - Cost reduction versus baseline: 66.98 percent
+- Lean fixture alignment: route constructors, selected constructor, costs,
+  negative controls, and eligibility booleans matched
 
 ## Negative Controls
 

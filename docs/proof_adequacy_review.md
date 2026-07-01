@@ -783,6 +783,9 @@ It now also mirrors the public four-route costed selector fixture at
 tenth-cost granularity: the bounded transform route is eligible, the failed
 verification and hidden-residual lower-cost controls are rejected, and the
 selected route is lowest-cost among the modeled eligible routes.
+The costed-route validator checks that this finite Lean fixture stays aligned
+with the public JSON/result fixture for route constructors, costs, selection,
+negative controls, and eligibility fields.
 `AsiStackProofs.SimulationFidelity` rejects simulation evidence without a
 declared scope and rejects promoted experiment results that exceed declared
 fidelity support. The deterministic generation-mode baseline harness still

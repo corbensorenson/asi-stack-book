@@ -30,6 +30,23 @@
   },
   "cost_reduction_vs_baseline_percent": 66.98,
   "acceptance_predicate": "The selected route is the lowest-cost eligible route, the baseline is eligible but more expensive, and both lower-cost negative controls are rejected: one for failed verification/cheap_brittle output and one for hidden residual displacement despite surface verification passing.",
+  "lean_fixture_alignment": {
+    "lean_module": "lean/AsiStackProofs/ResourceEconomics.lean",
+    "checked_constructor_count": 4,
+    "selected_constructor": "boundedTransformPlusVerifier",
+    "route_constructors": {
+      "route://bounded-transform-plus-verifier": "boundedTransformPlusVerifier",
+      "route://cheap-unverified-transform": "cheapUnverifiedTransform",
+      "route://frontier-manual-review": "frontierManualReview",
+      "route://hidden-residual-auto-merge": "hiddenResidualAutoMerge"
+    },
+    "checked_theorem_names": [
+      "costed_route_fixture_selected_is_eligible",
+      "cheap_unverified_transform_rejected_by_fixture",
+      "hidden_residual_auto_merge_rejected_by_fixture",
+      "selected_route_is_lowest_cost_eligible_in_fixture"
+    ]
+  },
   "verification_result": "pass",
   "support_state_effect": "eligible_for_bounded_evidence_review",
   "residuals": [
