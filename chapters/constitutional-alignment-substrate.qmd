@@ -4,7 +4,7 @@ chapter_id: "constitutional-alignment-substrate"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v1.x consolidated manuscript"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "alignment_field"
   - "field_of_god"
@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The consolidated alignment/governance layer preserves constitutional-predicate and agency-rights mappings at argument support only; no deployed alignment, dignity preservation, corrigibility, consent-quality, reviewer-independence, or moral-correctness claim is promoted."
-  - "Synthetic constitutional-alignment and agency-rights harnesses plus finite-record Lean theorems remain bounded record checks; runtime policy behavior, material rights usability under pressure, manipulation resistance, approval-service quality, and red-team evidence remain open."
+  - "Synthetic constitutional-alignment and agency-rights harnesses plus finite-record Lean theorems and agency-correction route checks remain bounded record checks; runtime policy behavior, material rights usability under pressure, manipulation resistance, approval-service quality, rollback/shutdown execution, and red-team evidence remain open."
   - "External comparators for Constitutional AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment or deployed control result is reproduced here."
 ---
 
@@ -25,10 +25,11 @@ open_evidence_gaps:
 
 The consolidated alignment/governance layer remains conceptual. Its core claim
 remains `Design rationale` with `argument` support. Existing source notes,
-synthetic harnesses, and finite-record Lean theorems make the idea more
-inspectable, but they do not prove deployed constitutional alignment, human
-dignity preservation, runtime corrigibility, consent quality, reviewer
-independence, moral correctness, or institutional adequacy.
+synthetic harnesses, finite-record Lean theorems, and a bounded
+agency-correction lifecycle route make the idea more inspectable, but they do
+not prove deployed constitutional alignment, human dignity preservation, runtime
+corrigibility, consent quality, reviewer independence, moral correctness, or
+institutional adequacy.
 
 The consolidated layer combines two record families:
 
@@ -374,6 +375,7 @@ the merged core claim at `argument`.
 | Agency rights checklist validation | Check that the rights fixture records affected parties, review, appeal, rollback, accountability, and residual risk. | implemented by protocol validation and current harnesses |
 | Material-usability rights test | Check that declared rights are usable before the relevant effect where timing matters. | modeled by synthetic fixtures; real interface usability not run |
 | Corrigibility pathway test | Check that update, rollback, shutdown, or correction paths remain available after transition. | modeled by finite Lean and synthetic fixtures; deployed shutdown, rollback, and correction behavior not run |
+| Agency correction lifecycle route envelope | Check that finite agency-correction lifecycle records route missing affected-party records, material notice, pre-effect review, bounded delegation, approval, correction paths, rollback/shutdown paths, dependency residuals, degradation reasons, accountability, evidence-transition records, and complete bounded action to explicit outcomes. | implemented in `AsiStackProofs.Corrigibility`; no deployed rights-usability, approval-service quality, consent-quality, rollback/shutdown execution, manipulation-resistance, dignity-preservation, or support-state-promotion claim |
 
 ## Formalization hooks
 
@@ -384,10 +386,20 @@ the merged core claim at `argument`.
 | `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.Corrigibility` | Protected agency rights remain available after an accepted transition. | implemented |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.Corrigibility` | A transition that removes a required correction pathway is rejected. | implemented |
 
-The consolidated proof boundary preserves the limitation boundary from both source manuscripts. These Lean modules prove small finite-record properties and rejection
-cases for declared records. Direct/projection hooks remain projection-only traceability unless the theorem reasons over an explicit transition, negative case, residual path, authority ceiling, or support-state boundary. They do not prove moral correctness, deployed
-alignment, human dignity, manipulation resistance, consent quality,
-institutional review quality, runtime corrigibility, or whole-system safety.
+The consolidated proof boundary preserves the limitation boundary from both
+source manuscripts. These Lean modules prove small finite-record properties,
+rejection cases, and bounded route outcomes for declared records. Direct/projection
+hooks remain projection-only traceability unless the theorem reasons over an
+explicit transition, negative case, residual path, authority ceiling, or
+support-state boundary. The Corrigibility module now also checks a finite
+agency-correction lifecycle route for missing affected-party records, material
+notice, pre-effect review, bounded delegation, approval, correction paths,
+rollback or shutdown paths, dependency residuals, degradation reasons,
+accountability, evidence-transition records, and complete bounded action. These
+hooks do not prove moral correctness, deployed alignment, human dignity,
+manipulation resistance, consent quality, institutional review quality, runtime
+corrigibility, approval-service quality, rollback or shutdown execution, or
+whole-system safety.
 
 ## Source crosswalk
 

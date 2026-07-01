@@ -1,5 +1,40 @@
 # Changelog
 
+## 2026-07-01 - Corrigibility agency-correction route proof
+
+- Strengthened `AsiStackProofs.Corrigibility` with a finite
+  `AgencyCorrectionRoute`, `AgencyCorrectionLifecycle`, and
+  `AgencyCorrectionRouteFor` decision surface over affected-party records,
+  material notice, pre-effect review, approval, bounded delegation, correction
+  pathways, rollback or shutdown paths, dependency residuals, degraded-right
+  reasons, accountable principals, support-state change requests, and
+  evidence-transition records.
+- Added derived route theorems showing that missing affected-party records
+  reject an agency action, missing material notice requests material notice,
+  high-impact action without pre-effect review blocks, unbounded delegation
+  requests bounded delegation, high-impact action without approval requests
+  approval, lost correction paths block the action, high-impact action without
+  rollback or shutdown paths requests a control path, dependency risk without a
+  residual preserves a residual, degraded rights without reasons require
+  degradation records, missing accountability preserves accountability,
+  support-state changes without evidence-transition records request evidence
+  review, and complete bounded agency-correction records can allow bounded
+  action.
+- Added the agency-correction lifecycle route envelope to `book_structure.json`
+  and regenerated Appendix E. Appendix E now records 323 generated chapter-level
+  rows: 223 implemented, 1 partial, and 99 planned. The proof-depth classifier
+  now reports 407 theorem declarations, 121 direct/projection-style
+  declarations, and 286 derived/decomposed declarations across 123 manifest
+  proof targets; the five safety-critical modules now contain 57 theorem
+  declarations, 10 direct/projection-style and 47 derived/decomposed.
+- Updated the consolidated Constitutional Alignment/Agency chapter, book
+  outline, proof adequacy review, proof-depth/audit reports, v1.0 roadmap/status
+  surfaces, focus audit, and status snapshot guard. This does not implement
+  deployed rights usability, approval-service quality, consent-quality evidence,
+  rollback or shutdown execution, manipulation-resistance evidence, dignity
+  preservation, runtime corrigibility, support-state promotion, reader artifact
+  approval, or release approval.
+
 ## 2026-07-01 - Tribunal lifecycle route proof
 
 - Strengthened the folded `AsiStackProofs.Tribunal` proof surface with a finite

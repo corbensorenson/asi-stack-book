@@ -1345,9 +1345,16 @@
               "name": "High-impact approval test",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic agency rights harness; no approval-service quality or reviewer-independence claim"
+            },
+            {
+              "name": "Agency correction lifecycle route envelope",
+              "purpose": "Check that finite agency-correction lifecycle records route missing affected-party records, missing material notice, missing pre-effect review, unbounded delegation, missing approval, lost correction paths, missing rollback or shutdown paths, dependency residuals, degraded rights, missing accountability, missing evidence-transition records, and complete bounded action to distinct modeled outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no deployed rights-usability, approval-service quality, consent-quality, rollback/shutdown execution, manipulation-resistance, dignity-preservation, or support-state-promotion claim",
+              "status": "implemented in AsiStackProofs.Corrigibility; no deployed corrigibility behavior claim"
             }
           ],
-          "lean_module": "AsiStackProofs.Alignment",
+          "lean_module": "AsiStackProofs.Alignment; AsiStackProofs.Corrigibility",
           "proof_targets": [
             {
               "tag": "lean:alignment.constitution.operational_invariant",
