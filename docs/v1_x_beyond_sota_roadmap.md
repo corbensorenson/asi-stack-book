@@ -115,7 +115,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 678 theorem declarations, 143 direct/projection-style, 535 derived/decomposed, 0 unknown/mixed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 685 theorem declarations, 143 direct/projection-style, 542 derived/decomposed, 0 unknown/mixed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and explicit Corben voice-pass slots. |
@@ -514,7 +514,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 678 theorem declarations, 535
+- The generated proof-depth report records 685 theorem declarations, 542
   derived/decomposed declarations, 0 unknown/mixed declarations, 102
   safety-critical declarations, and 10 remaining safety-critical
   direct/projection declarations.
@@ -536,7 +536,7 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 678 theorem declarations, 535
+- `docs/proof_depth_classification.md` records 685 theorem declarations, 542
   derived/decomposed theorem declarations, 143 direct/projection-style theorem
   declarations, and 0 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
@@ -700,11 +700,14 @@ Current proof status:
   projection-only surface for Personal Compute Hives while leaving scheduler,
   registry, approval-service, federation, rented-node, connectivity, dropout,
   receipt replay, residual-ledger, and energy-aware behavioral tests as blockers.
-- `AsiStackProofs.RuntimeAdapters` now has finite negative-case theorems
-  rejecting modeled invocations that lack parent-job permission, high-impact
-  unapproved adapter calls that try to remain unrejected, mismatched effect
-  leases, expired effect leases, unsandboxed effect leases, and high-impact
-  rollback-required calls without rollback handles; this reduces the
+- `AsiStackProofs.RuntimeAdapters` now has finite negative-case and route
+  theorems rejecting modeled invocations that lack parent-job permission,
+  high-impact unapproved or underscoped-approved adapter calls, mismatched
+  effect leases, expired effect leases, unsandboxed effect leases,
+  over-ceiling requested authority, confused-deputy attempts, sandbox-escape
+  attempts, high-impact rollback-required calls without rollback handles, and
+  missing effect-receipt/audit/non-claim records; it also proves one complete
+  low-impact reviewed invocation routes to dispatch. This reduces the
   projection-only surface for Runtime Adapters while leaving deployed adapter
   execution, real sandbox isolation, approval-service behavior, secret-handle
   safety, rollback execution, and live effect-receipt validation as blockers.
@@ -868,7 +871,7 @@ Per-chapter burn-down:
 | `spinoza-verification-and-proof-carrying-claims` | Proof-carrying, autoformalization, LLM-judge, debate, and "Spinoza" naming need outside-reader grounding. | Add source-noted proof-carrying-code, autoformalization, debate, and LLM-as-judge positioning; evaluate whether the chapter name earns its cognitive load in reader prose. |
 | `labor-os-and-typed-jobs` | Durable-execution/workflow-orchestration anchoring and planned tests need completion. | Source-note Temporal, workflow orchestration, BPMN/Airflow, and scheduler comparators; implement planned typed-job tests. |
 | `artifact-graphs-audit-logs-and-replay` | Provenance/replay proof coverage is narrow. | Add provenance-closure, replay-grade monotonicity, claim/test-link integrity, and blocked-promotion negative cases; pursue real artifact replay traces where available. |
-| `runtime-adapters-tool-permissions-and-human-approval` | Safety-critical action boundary has too few adversarial proof scenarios. | High priority: expand `RuntimeAdapters` around effect-lease scope/expiry, adapter authority non-escalation, rollback obligation, confused-deputy rejection, sandbox-escape refusal, and high-impact approval negatives. |
+| `runtime-adapters-tool-permissions-and-human-approval` | Safety-critical action boundary had too few adversarial proof scenarios relative to its role as the external-effect boundary. | Partially executed: added a finite runtime-adapter route model for scoped approval, effect-lease scope/expiry/sandbox, parent and lease authority ceilings, confused-deputy rejection, sandbox-escape rejection, rollback-handle requests, effect-receipt/audit/non-claim blockers, and complete low-impact dispatch. Remaining work: executable/live adapter harness, real sandbox isolation, approval-service behavior, secret-handle safety, rollback execution, live effect-receipt validation, and broader harness parity. |
 | `procedural-memory-and-cognitive-loop-closure` | Narrow proof coverage and light skill-library/tool-synthesis anchoring. | Add promotion-gating and regression-preservation theorems; source-note Voyager, DreamCoder, learned-tool, and tool-making-agent comparators where appropriate. |
 | `routing-heads-and-specialist-cores` | Strong chapter with remaining planned tests. | Finish planned routing tests with authority/readiness/residual non-claims; avoid turning route-quality fixtures into learned-router claims. |
 | `readiness-gates-residual-escrow-and-quarantine` | Lifecycle control plane deserved broader transition proof coverage. | Partially executed: added a finite readiness lifecycle-transition relation for candidate, shadow, canary, qualified, default-ready, quarantined, retired, and superseded records, with hard requirements for evidence freshness, residual escrow, fallback, expiry, regression floor, authority scope, route permission, supersession record, and retirement receipt. Remaining work: executable lifecycle fixtures, deployed lifecycle transition execution, residual-ledger storage, live quarantine routing, gate-quality checks, terminal-state governance, MoECOT replay, benchmark evidence, and current-readiness evidence. |

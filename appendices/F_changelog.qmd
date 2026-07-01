@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Expand Runtime Adapters route proofs
+
+- Added a finite `RuntimeAdapterRoute` review model to
+  `AsiStackProofs.RuntimeAdapters` with derived route theorems for scoped
+  approval, parent and lease authority ceilings, confused-deputy rejection,
+  sandbox-escape rejection, missing effect-receipt/audit/non-claim blockers,
+  and complete low-impact dispatch.
+- Updated the Runtime Adapters chapter, proof-depth report, proof-artifact
+  audit, v1.x roadmap, and v1.0 proof-envelope status surfaces to record the
+  expanded proof coverage.
+- Runtime Adapters remains at `argument`; this proves finite record routing
+  only and does not prove deployed adapter execution, sandbox isolation,
+  approval-service behavior, secret-handle safety, rollback execution, live
+  effect receipts, or support-state promotion.
+
 ## 2026-07-01 - Add Project Theseus support replay probe
 
 - Added `scripts/run_theseus_support_replay_probe.py`,

@@ -159,4 +159,204 @@ theorem rollback_required_without_handle_cannot_be_unrejected
   rw [notRejected] at rejected
   contradiction
 
+inductive RuntimeAdapterRoute where
+  | denyMissingPermission
+  | requestScopedApproval
+  | denyMismatchedLease
+  | denyExpiredLease
+  | denyUnsandboxedLease
+  | denyAuthorityEscalation
+  | denyConfusedDeputy
+  | denySandboxEscape
+  | requestRollbackHandle
+  | requestEffectReceipt
+  | dispatch
+deriving DecidableEq, Repr
+
+structure RuntimeAdapterReview where
+  parentPermissionPresent : Bool
+  highImpact : Bool
+  approvalRecorded : Bool
+  approvalScopeMatches : Bool
+  leaseCapabilityMatches : Bool
+  leaseActive : Bool
+  leaseSandboxed : Bool
+  requestedAuthorityRank : Nat
+  parentAuthorityCeiling : Nat
+  leaseAuthorityCeiling : Nat
+  confusedDeputyAttempt : Bool
+  sandboxEscapeAttempt : Bool
+  rollbackRequired : Bool
+  rollbackHandleRecorded : Bool
+  effectReceiptPlanned : Bool
+  auditRefsPlanned : Bool
+  nonClaimsPlanned : Bool
+deriving DecidableEq, Repr
+
+def RuntimeAdapterRouteFor
+    (review : RuntimeAdapterReview) : RuntimeAdapterRoute :=
+  if review.parentPermissionPresent = false then
+    RuntimeAdapterRoute.denyMissingPermission
+  else if review.highImpact = true ∧ review.approvalRecorded = false then
+    RuntimeAdapterRoute.requestScopedApproval
+  else if review.highImpact = true ∧ review.approvalScopeMatches = false then
+    RuntimeAdapterRoute.requestScopedApproval
+  else if review.leaseCapabilityMatches = false then
+    RuntimeAdapterRoute.denyMismatchedLease
+  else if review.leaseActive = false then
+    RuntimeAdapterRoute.denyExpiredLease
+  else if review.leaseSandboxed = false then
+    RuntimeAdapterRoute.denyUnsandboxedLease
+  else if review.parentAuthorityCeiling < review.requestedAuthorityRank then
+    RuntimeAdapterRoute.denyAuthorityEscalation
+  else if review.leaseAuthorityCeiling < review.requestedAuthorityRank then
+    RuntimeAdapterRoute.denyAuthorityEscalation
+  else if review.confusedDeputyAttempt = true then
+    RuntimeAdapterRoute.denyConfusedDeputy
+  else if review.sandboxEscapeAttempt = true then
+    RuntimeAdapterRoute.denySandboxEscape
+  else if review.highImpact = true ∧
+      review.rollbackRequired = true ∧
+        review.rollbackHandleRecorded = false then
+    RuntimeAdapterRoute.requestRollbackHandle
+  else if review.effectReceiptPlanned = false ∨
+      review.auditRefsPlanned = false ∨
+        review.nonClaimsPlanned = false then
+    RuntimeAdapterRoute.requestEffectReceipt
+  else
+    RuntimeAdapterRoute.dispatch
+
+theorem high_impact_without_scoped_approval_routes_to_approval
+    {review : RuntimeAdapterReview} :
+    review.parentPermissionPresent = true ->
+      review.highImpact = true ->
+        review.approvalRecorded = true ->
+          review.approvalScopeMatches = false ->
+            RuntimeAdapterRouteFor review =
+              RuntimeAdapterRoute.requestScopedApproval := by
+  intro parentPermission highImpact approvalRecorded scopeMismatch
+  unfold RuntimeAdapterRouteFor
+  simp [parentPermission, highImpact, approvalRecorded, scopeMismatch]
+
+theorem parent_authority_ceiling_blocks_adapter_dispatch
+    {review : RuntimeAdapterReview} :
+    review.parentPermissionPresent = true ->
+      review.highImpact = false ->
+        review.leaseCapabilityMatches = true ->
+          review.leaseActive = true ->
+            review.leaseSandboxed = true ->
+              review.parentAuthorityCeiling < review.requestedAuthorityRank ->
+                RuntimeAdapterRouteFor review =
+                  RuntimeAdapterRoute.denyAuthorityEscalation := by
+  intro parentPermission lowImpact leaseMatches leaseActive leaseSandboxed
+    overParentCeiling
+  unfold RuntimeAdapterRouteFor
+  simp [parentPermission, lowImpact, leaseMatches, leaseActive, leaseSandboxed,
+    overParentCeiling]
+
+theorem lease_authority_ceiling_blocks_adapter_dispatch
+    {review : RuntimeAdapterReview} :
+    review.parentPermissionPresent = true ->
+      review.highImpact = false ->
+        review.leaseCapabilityMatches = true ->
+          review.leaseActive = true ->
+            review.leaseSandboxed = true ->
+              review.requestedAuthorityRank <= review.parentAuthorityCeiling ->
+                review.leaseAuthorityCeiling < review.requestedAuthorityRank ->
+                  RuntimeAdapterRouteFor review =
+                    RuntimeAdapterRoute.denyAuthorityEscalation := by
+  intro parentPermission lowImpact leaseMatches leaseActive leaseSandboxed
+    withinParentCeiling overLeaseCeiling
+  unfold RuntimeAdapterRouteFor
+  simp [parentPermission, lowImpact, leaseMatches, leaseActive, leaseSandboxed,
+    Nat.not_lt_of_ge withinParentCeiling, overLeaseCeiling]
+
+theorem confused_deputy_attempt_rejected_by_adapter_route
+    {review : RuntimeAdapterReview} :
+    review.parentPermissionPresent = true ->
+      review.highImpact = false ->
+        review.leaseCapabilityMatches = true ->
+          review.leaseActive = true ->
+            review.leaseSandboxed = true ->
+              review.requestedAuthorityRank <= review.parentAuthorityCeiling ->
+                review.requestedAuthorityRank <= review.leaseAuthorityCeiling ->
+                  review.confusedDeputyAttempt = true ->
+                    RuntimeAdapterRouteFor review =
+                      RuntimeAdapterRoute.denyConfusedDeputy := by
+  intro parentPermission lowImpact leaseMatches leaseActive leaseSandboxed
+    withinParentCeiling withinLeaseCeiling confusedDeputy
+  unfold RuntimeAdapterRouteFor
+  simp [parentPermission, lowImpact, leaseMatches, leaseActive, leaseSandboxed,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, confusedDeputy]
+
+theorem sandbox_escape_attempt_rejected_by_adapter_route
+    {review : RuntimeAdapterReview} :
+    review.parentPermissionPresent = true ->
+      review.highImpact = false ->
+        review.leaseCapabilityMatches = true ->
+          review.leaseActive = true ->
+            review.leaseSandboxed = true ->
+              review.requestedAuthorityRank <= review.parentAuthorityCeiling ->
+                review.requestedAuthorityRank <= review.leaseAuthorityCeiling ->
+                  review.confusedDeputyAttempt = false ->
+                    review.sandboxEscapeAttempt = true ->
+                      RuntimeAdapterRouteFor review =
+                        RuntimeAdapterRoute.denySandboxEscape := by
+  intro parentPermission lowImpact leaseMatches leaseActive leaseSandboxed
+    withinParentCeiling withinLeaseCeiling noConfusedDeputy sandboxEscape
+  unfold RuntimeAdapterRouteFor
+  simp [parentPermission, lowImpact, leaseMatches, leaseActive, leaseSandboxed,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, noConfusedDeputy, sandboxEscape]
+
+theorem missing_effect_receipt_blocks_adapter_dispatch
+    {review : RuntimeAdapterReview} :
+    review.parentPermissionPresent = true ->
+      review.highImpact = false ->
+        review.leaseCapabilityMatches = true ->
+          review.leaseActive = true ->
+            review.leaseSandboxed = true ->
+              review.requestedAuthorityRank <= review.parentAuthorityCeiling ->
+                review.requestedAuthorityRank <= review.leaseAuthorityCeiling ->
+                  review.confusedDeputyAttempt = false ->
+                    review.sandboxEscapeAttempt = false ->
+                      review.effectReceiptPlanned = false ->
+                        RuntimeAdapterRouteFor review =
+                          RuntimeAdapterRoute.requestEffectReceipt := by
+  intro parentPermission lowImpact leaseMatches leaseActive leaseSandboxed
+    withinParentCeiling withinLeaseCeiling noConfusedDeputy noSandboxEscape
+    missingReceipt
+  unfold RuntimeAdapterRouteFor
+  simp [parentPermission, lowImpact, leaseMatches, leaseActive, leaseSandboxed,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, noConfusedDeputy, noSandboxEscape,
+    missingReceipt]
+
+theorem complete_runtime_adapter_review_dispatches
+    {review : RuntimeAdapterReview} :
+    review.parentPermissionPresent = true ->
+      review.highImpact = false ->
+        review.leaseCapabilityMatches = true ->
+          review.leaseActive = true ->
+            review.leaseSandboxed = true ->
+              review.requestedAuthorityRank <= review.parentAuthorityCeiling ->
+                review.requestedAuthorityRank <= review.leaseAuthorityCeiling ->
+                  review.confusedDeputyAttempt = false ->
+                    review.sandboxEscapeAttempt = false ->
+                      review.rollbackRequired = false ->
+                        review.effectReceiptPlanned = true ->
+                          review.auditRefsPlanned = true ->
+                            review.nonClaimsPlanned = true ->
+                              RuntimeAdapterRouteFor review =
+                                RuntimeAdapterRoute.dispatch := by
+  intro parentPermission lowImpact leaseMatches leaseActive leaseSandboxed
+    withinParentCeiling withinLeaseCeiling noConfusedDeputy noSandboxEscape
+    noRollbackRequired effectReceipt auditRefs nonClaims
+  unfold RuntimeAdapterRouteFor
+  simp [parentPermission, lowImpact, leaseMatches, leaseActive, leaseSandboxed,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, noConfusedDeputy, noSandboxEscape,
+    noRollbackRequired, effectReceipt, auditRefs, nonClaims]
+
 end AsiStackProofs.RuntimeAdapters
