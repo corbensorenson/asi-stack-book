@@ -1803,7 +1803,7 @@ Draft deliverables:
 - Implemented protocol validation: `specialist_registry_record` and `routing_decision_record` fixtures validate public record shape only.
 - Implemented protocol validation: `moecot_orchestration_record` fixture validates public runtime-packet record shape only.
 - Planned Codex test: Specialist routing accuracy test.
-- Implemented synthetic Codex test: `python3 scripts/validate_routing_decision_lease.py` checks routing lease packets for least-capable adequate route selection, overprivileged specialist rejection, missing-readiness fallback, expired-lease residualization, rejected-candidate evidence, residual ownership, MoECOT source-boundary promotion blockers, and explicit non-claim boundaries. It remains synthetic record-gate evidence only, not learned-router, route-quality, deployed authority-enforcement, specialist-quality, MoECOT replay, or benchmark evidence.
+- Implemented synthetic Codex test: `python3 scripts/validate_routing_decision_lease.py` checks routing lease packets for least-capable adequate route selection, overprivileged specialist rejection, selected-route authority-envelope containment, missing-readiness fallback, expired-lease residualization, rejected-candidate evidence, residual ownership, MoECOT source-boundary promotion blockers, and explicit non-claim boundaries. It remains synthetic record-gate evidence only, not learned-router, route-quality, deployed authority-enforcement, specialist-quality, MoECOT replay, or benchmark evidence.
 - Planned Codex test: MoECOT source-ingestion gate.
 - Planned Codex test: Runtime crosswalk completeness test.
 - Implemented Lean predicate: selected routes satisfy authority and readiness.

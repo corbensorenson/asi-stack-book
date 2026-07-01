@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-01 - Add routing authority-envelope negative fixture
+
+- Extended `scripts/validate_routing_decision_lease.py` so selected route
+  grants must stay inside the selected specialist registry authority envelope.
+- Added an expected-invalid routing fixture for an authority-widening grant and
+  refreshed the routing harness result to 3 valid and 7 expected-invalid
+  fixtures.
+- Updated Routing Heads, the outline, proof-adequacy note, routing harness
+  documentation, v1.x roadmap burn-down, and book validation wiring. This is
+  synthetic record-gate evidence only; it does not prove routing accuracy,
+  learned-router quality, MoECOT replay, deployed authority enforcement,
+  route-quality measurement, benchmark performance, model quality, or
+  support-state promotion.
+
 ## 2026-07-01 - Tighten chapter-review roadmap burn-down
 
 - Updated the v1.x roadmap's chapter-review burn-down milestone with explicit

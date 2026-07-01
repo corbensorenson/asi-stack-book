@@ -150,6 +150,15 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
     candidates = {str(item) for item in routing.get("candidate_specialists", [])}
     rejected = {str(item) for item in routing.get("rejected_candidates", [])}
     non_selection_blob = text_blob(routing.get("non_selection_evidence", []))
+    granted_authority = {
+        str(item)
+        for item in require_list(
+            routing,
+            "granted_authority_subset",
+            errors,
+            f"{relative}:routing_decision",
+        )
+    }
     expected_route = str(value.get("expected_route", ""))
     if expected_route not in {"selected", "fallback", "residual", "blocked"}:
         errors.append(f"{relative}: expected_route must be selected, fallback, residual, or blocked.")
@@ -162,6 +171,16 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
         errors.append(f"{relative}: every candidate specialist must have a registry record; missing {missing_candidates}.")
     if fallback_route not in candidates:
         errors.append(f"{relative}: fallback_route must also be a candidate specialist.")
+
+    selected_registry = by_id.get(selected, {})
+    if selected_registry:
+        selected_envelope = {str(item) for item in selected_registry.get("authority_envelope", [])}
+        outside_envelope = sorted(granted_authority - selected_envelope)
+        if outside_envelope:
+            errors.append(
+                f"{relative}: granted_authority_subset contains authority outside "
+                f"the selected specialist envelope: {outside_envelope}."
+            )
 
     for expected in value.get("expected_rejections", []):
         if not isinstance(expected, dict):
@@ -197,7 +216,6 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
             best_candidates = {candidate for rank, candidate in eligible if rank == best_rank}
             if selected not in best_candidates:
                 errors.append(f"{relative}: selected_specialist must be one of the least-authority eligible specialists {sorted(best_candidates)}.")
-        selected_registry = by_id.get(selected, {})
         if selected_registry and not has_capabilities(selected_registry, required_capabilities):
             errors.append(f"{relative}: selected specialist does not cover required capabilities.")
         if selected_registry and not is_ready(selected_registry):

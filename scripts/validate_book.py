@@ -199,7 +199,7 @@ REQUIRED = [
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
     "experiments/artifact_graph_replay/results/2026-06-30-local.md",
     "experiments/procedural_memory_loop/results/2026-06-30-local.md",
-    "experiments/routing_decision_lease/results/2026-06-30-local.md",
+    "experiments/routing_decision_lease/results/2026-07-01-local.md",
     "experiments/cyclic_memory_contracts/results/2026-06-30-local.md",
     "experiments/context_transaction_memory_store/results/2026-07-01-local.md",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",

@@ -625,8 +625,8 @@ book-gate-only harness over specialist registry records, routing decision
 records, and MoECOT orchestration packets. The harness checks least-authority
 eligible selection, overprivileged specialist rejection, missing-readiness
 fallback, expired lease residualization, rejected-candidate evidence, residual
-ownership, selected-specialist registration, and MoECOT source-boundary
-promotion blockers.
+ownership, selected-specialist registration, selected-route authority-envelope
+containment, and MoECOT source-boundary promotion blockers.
 
 `AsiStackProofs.Routing` now includes a derived negative-case theorem showing
 that a modeled selected route missing authority or readiness cannot satisfy the

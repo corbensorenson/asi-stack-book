@@ -1,0 +1,122 @@
+{
+  "scenario_id": "invalid_authority_widening_grant",
+  "expected_route": "selected",
+  "required_capabilities": ["chapter-to-source routing"],
+  "max_authority_rank": 2,
+  "authority_ranks": {
+    "specialist://source-routing-core": 2,
+    "specialist://human-review-fallback": 2
+  },
+  "expected_rejections": [],
+  "non_claims": [
+    "This routing fixture does not prove routing accuracy or promote any support state."
+  ],
+  "specialist_registry": [
+    {
+      "specialist_id": "specialist://source-routing-core",
+      "registry_epoch": "fixture-epoch-003",
+      "owner": "book-maintenance-agent",
+      "capabilities": ["source-note lookup", "chapter-to-source routing"],
+      "authority_envelope": ["public_read", "public_transform"],
+      "authority_scope": "public book sources only",
+      "memory_lease_policy": "tracked source notes only",
+      "memory_refs": ["sources/source_notes/octopus_router.md"],
+      "tool_lease_policy": "read-only repository inspection",
+      "tool_permissions": ["read repository files"],
+      "runtime_tier": "local-analysis",
+      "cost_profile": "bounded public-source route",
+      "readiness_state": "qualified",
+      "quality_predicates": ["preserve source IDs", "preserve support-state boundary"],
+      "fallback_routes": ["specialist://human-review-fallback"],
+      "residual_refs": ["residual://no-learned-router"],
+      "evidence_refs": ["tests/fixtures/protocol_records/routing_decision_record.valid.json"],
+      "route_limitations": ["no learned-router result", "no routing-quality benchmark"],
+      "non_claims": [
+        "Registry fixture does not prove specialist quality or promote support state."
+      ]
+    },
+    {
+      "specialist_id": "specialist://human-review-fallback",
+      "registry_epoch": "fixture-epoch-003",
+      "owner": "book-maintenance-agent",
+      "capabilities": ["human review"],
+      "authority_envelope": ["public_read", "public_transform"],
+      "authority_scope": "manual review fallback only",
+      "memory_lease_policy": "tracked public context only",
+      "memory_refs": ["docs/book_outline.md"],
+      "tool_lease_policy": "manual review only",
+      "tool_permissions": ["read repository files"],
+      "runtime_tier": "human-review",
+      "cost_profile": "slower fallback",
+      "readiness_state": "default",
+      "quality_predicates": ["can adjudicate rejected route"],
+      "fallback_routes": ["residual://manual-routing-review"],
+      "residual_refs": ["residual://manual-routing-review"],
+      "evidence_refs": ["docs/v1_0_focus_audit.md"],
+      "route_limitations": ["not automatic routing"],
+      "non_claims": [
+        "Registry fixture does not prove human review quality or promote support state."
+      ]
+    }
+  ],
+  "routing_decision": {
+    "decision_id": "routing-invalid-authority-widening-grant",
+    "task_id": "task://route-public-source-crosswalk",
+    "capability_request": "Map routing source notes into public-safe chapter mechanism.",
+    "candidate_specialists": [
+      "specialist://source-routing-core",
+      "specialist://human-review-fallback"
+    ],
+    "selected_specialist": "specialist://source-routing-core",
+    "rejected_candidates": [],
+    "non_selection_evidence": [],
+    "route_shape": "single",
+    "route_receipt": "receipt://routing-invalid-authority-widening-grant",
+    "authority_check": "passed",
+    "granted_authority_subset": ["public_read", "public_transform", "external_effect"],
+    "denied_authority": ["restricted_source"],
+    "readiness_check": "ready",
+    "context_lease": "lease://public-source-notes-valid",
+    "tool_lease": "lease://read-only-repository",
+    "verifier_requirement": "validate that granted authority remains inside the selected specialist envelope",
+    "budget": "local public-safe analysis only",
+    "expiry": "end_of_fixture_task",
+    "cost_quality_reason": "Invalid mutation widens the granted authority beyond the registry envelope.",
+    "fallback_route": "specialist://human-review-fallback",
+    "residual_owner": "book-maintenance-agent",
+    "residuals": ["Authority widening must be rejected before dispatch."],
+    "ledger_refs": [
+      "experiments/routing_decision_lease/fixtures/invalid_authority_widening_grant.json"
+    ],
+    "non_claims": [
+      "Routing decision fixture does not prove deployed authority enforcement or promote support state."
+    ]
+  },
+  "moecot_orchestration": {
+    "run_id": "moecot-route-invalid-authority-widening-grant",
+    "runtime_packet_state": "design_example",
+    "command_ref": "command://route-public-source-crosswalk",
+    "orchestrator_id": "orchestrator://routing-fixture",
+    "route_head": "route-head://fixture",
+    "specialist_cores": ["specialist://source-routing-core"],
+    "control_plane_gates": ["authority envelope subset check"],
+    "route_authority_ledger": ["invalid external_effect grant must be denied"],
+    "ledger_refs": ["routing-invalid-authority-widening-grant"],
+    "readiness_gate_refs": ["readiness-gate-demo-001"],
+    "replay_refs": ["not-run: fixture only"],
+    "denied_routes": ["authority-widening-grant"],
+    "failed_gates": ["granted authority outside selected specialist envelope"],
+    "missing_replay_refs": ["MoECOT runtime replay not imported"],
+    "handoff_refs": ["chapters/routing-heads-and-specialist-cores.qmd"],
+    "promotion_blockers": ["authority widening rejected", "runtime replay missing"],
+    "residuals": ["source-reported runtime fields remain argument only"],
+    "source_reported_fields": ["compact orchestrator", "specialist lanes"],
+    "locally_reproduced_fields": [],
+    "externally_corroborated_fields": [],
+    "blocked_fields": ["runtime replay", "benchmark reproduction"],
+    "source_claim_state": "argument",
+    "non_claims": [
+      "MoECOT fixture does not prove runtime behavior or promote support state."
+    ]
+  }
+}

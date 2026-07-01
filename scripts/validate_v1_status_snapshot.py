@@ -221,7 +221,7 @@ def main() -> None:
         "the plan-execution contract harness checks 2 valid and 8 expected-invalid command-contract, plan-graph, DAG, semantic-atom, typed-job, and optional intent-origin fixtures",
         "the artifact graph replay harness checks 2 valid and 6 expected-invalid artifact-graph replay fixtures",
         "the procedural memory loop harness checks 3 valid and 6 expected-invalid procedural-memory fixtures",
-        "the routing decision lease harness checks 3 valid and 6 expected-invalid routing lease fixtures",
+        "the routing decision lease harness checks 3 valid and 7 expected-invalid routing lease fixtures",
         "the cyclic memory contract harness checks 3 valid and 6 expected-invalid cyclic-memory contract fixtures",
         "the context transaction memory-store harness checks 3 valid and 6 expected-invalid context-transaction memory-store fixtures",
         "the generation mode baseline harness checks 2 valid and 4 expected-invalid generation-mode/resource-budget fixtures",
