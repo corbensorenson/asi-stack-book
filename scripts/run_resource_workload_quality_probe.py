@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from statistics import median
 from datetime import datetime, timezone
 from pathlib import Path
 import shlex
@@ -18,6 +19,7 @@ RESULT = ROOT / "experiments" / "resource_workload_quality_probe" / "results" / 
 PROBE_ID = "resource-workload-quality-probe-2026-07-01-local"
 RESULT_COMMAND = "python3 scripts/run_resource_workload_quality_probe.py --write-result"
 SCOPED_TASK = "resource-workflow-trace-integrity-review"
+SAMPLE_COUNT = 5
 
 ROUTES = [
     {
@@ -62,7 +64,7 @@ NON_CLAIMS = [
 
 RESIDUALS = [
     "The selected scoped validator does not check unrelated Resource Economics artifacts that the baseline live probe checks.",
-    "The elapsed-time comparison is a local single-run measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
+    "The elapsed-time comparison is a local five-sample median measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
     "The no-op negative control demonstrates that a fast successful process is not adequate unless it runs the required validator and produces the expected validation surface.",
 ]
 
@@ -82,7 +84,7 @@ def command_argv(command: str) -> list[str]:
     return parts
 
 
-def run_route(route: dict[str, str]) -> dict[str, Any]:
+def run_route_sample(route: dict[str, str]) -> dict[str, Any]:
     started = time.perf_counter()
     result = subprocess.run(
         command_argv(route["command"]),
@@ -96,16 +98,39 @@ def run_route(route: dict[str, str]) -> dict[str, Any]:
     output_excerpt = [line for line in combined_output.strip().splitlines() if line][:6]
     quality_pass = result.returncode == 0 and route["required_output"] in combined_output
     return {
-        "route_id": route["route_id"],
-        "role": route["role"],
-        "command": route["command"],
-        "required_output": route["required_output"],
-        "quality_scope": route["quality_scope"],
         "exit_code": result.returncode,
         "elapsed_ms": elapsed_ms,
         "output_sha256": sha256_text(combined_output),
         "output_excerpt": output_excerpt,
         "quality_pass": quality_pass,
+    }
+
+
+def run_route(route: dict[str, str]) -> dict[str, Any]:
+    samples = [run_route_sample(route) for _ in range(SAMPLE_COUNT)]
+    elapsed_values = [float(sample["elapsed_ms"]) for sample in samples]
+    output_hashes = [str(sample["output_sha256"]) for sample in samples]
+    exit_codes = [int(sample["exit_code"]) for sample in samples]
+    quality_passes = [bool(sample["quality_pass"]) for sample in samples]
+    quality_pass = all(quality_passes)
+    return {
+        "route_id": route["route_id"],
+        "role": route["role"],
+        "command": route["command"],
+        "required_output": route["required_output"],
+        "quality_scope": route["quality_scope"],
+        "sample_count": SAMPLE_COUNT,
+        "sample_elapsed_ms": elapsed_values,
+        "elapsed_ms": round(float(median(elapsed_values)), 3),
+        "elapsed_ms_min": round(min(elapsed_values), 3),
+        "elapsed_ms_max": round(max(elapsed_values), 3),
+        "exit_code": 0 if all(code == 0 for code in exit_codes) else next(code for code in exit_codes if code != 0),
+        "exit_codes": exit_codes,
+        "output_sha256": output_hashes[0],
+        "output_sha256es": output_hashes,
+        "output_excerpt": samples[0]["output_excerpt"],
+        "quality_pass": quality_pass,
+        "sample_quality_passes": quality_passes,
         "eligible": quality_pass,
     }
 
@@ -157,7 +182,7 @@ def build_record() -> dict[str, Any]:
         "selected_is_cheaper_than_baseline": selected_is_cheaper,
         "negative_control_is_cheaper_than_selected": negative_is_cheaper,
         "negative_control_rejected": not negative["quality_pass"],
-        "summary": "Local Resource Economics workload-quality probe selected a scoped workflow-trace validator over the broader Resource live probe baseline while rejecting a cheaper no-op success-text route.",
+        "summary": "Local Resource Economics workload-quality probe selected a scoped workflow-trace validator over the broader Resource live probe baseline using five-sample median elapsed time while rejecting a cheaper no-op success-text route.",
         "routes": route_records,
         "residuals": RESIDUALS,
         "non_claims": NON_CLAIMS,

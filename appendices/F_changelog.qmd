@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Repeat Resource workload-quality probe samples
+
+- Hardened `scripts/run_resource_workload_quality_probe.py` and
+  `scripts/validate_resource_workload_quality_probe.py` so the Resource
+  workload-quality probe records five local samples per route and selects by
+  median elapsed time.
+- Regenerated
+  `experiments/resource_workload_quality_probe/results/2026-07-01-local.json`
+  with a baseline median of 160.387 ms, selected scoped-validator median of
+  26.511 ms, rejected no-op median of 20.558 ms, and 83.471 percent observed
+  selected-vs-baseline median elapsed reduction.
+- Updated the Resource Economics chapter, outline, manifest, roadmap,
+  evidence-cycle record, no-change evidence transition, v1 status surfaces, and
+  probe documentation to label this as repeated local repository-task evidence
+  only. It still does not prove stable speedup, deployed scheduler behavior,
+  model quality, economic outcomes, external workload-quality review, or
+  support-state promotion.
+
 ## 2026-07-01 - Add Resource workload-quality probe
 
 - Added `scripts/run_resource_workload_quality_probe.py` and
@@ -15,7 +33,7 @@
 - Added `docs/resource_workload_quality_probe.md` and wired the result into the
   Resource Economics chapter, outline, manifest, Appendix E generation, v1.x
   evidence-cycle status, v1.0 status guards, and book validation. This is a
-  local single-run repository-task measurement only; it does not prove stable
+  initial local repository-task measurement only; it does not prove stable
   speedup, deployed scheduler behavior, TokenMana or PlanForge behavior, model
   quality, economic outcomes, physical feasibility, external review, or
   support-state promotion.

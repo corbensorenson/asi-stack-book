@@ -23,67 +23,160 @@
     "This workload-quality probe does not prove stable speedup, deployed scheduler behavior, TokenMana behavior, PlanForge behavior, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement outside this local repository task.",
     "The selected route is scoped to Resource workflow trace review only and does not replace the full book gate, release gate, production scheduler logs, human-repair measurement, or external review."
   ],
-  "observed_selected_vs_baseline_elapsed_reduction_percent": 86.741,
+  "observed_selected_vs_baseline_elapsed_reduction_percent": 83.471,
   "pass": true,
   "probe_id": "resource-workload-quality-probe-2026-07-01-local",
   "record_kind": "resource_workload_quality_probe",
-  "recorded_at_utc": "2026-07-01T22:27:05Z",
+  "recorded_at_utc": "2026-07-01T22:42:49Z",
   "residuals": [
     "The selected scoped validator does not check unrelated Resource Economics artifacts that the baseline live probe checks.",
-    "The elapsed-time comparison is a local single-run measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
+    "The elapsed-time comparison is a local five-sample median measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
     "The no-op negative control demonstrates that a fast successful process is not adequate unless it runs the required validator and produces the expected validation surface."
   ],
   "routes": [
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 208.982,
+      "elapsed_ms": 160.387,
+      "elapsed_ms_max": 274.867,
+      "elapsed_ms_min": 155.069,
       "eligible": true,
       "exit_code": 0,
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "output_excerpt": [
         "Resource live probe validation passed: 5 local command replay(s), 15 tracked artifact digest(s), support-state effect none."
       ],
       "output_sha256": "04135f62605ad8cbde0dcdf6841b51442665c6cffdf93c89595fac8f4f79d0a9",
+      "output_sha256es": [
+        "04135f62605ad8cbde0dcdf6841b51442665c6cffdf93c89595fac8f4f79d0a9",
+        "04135f62605ad8cbde0dcdf6841b51442665c6cffdf93c89595fac8f4f79d0a9",
+        "04135f62605ad8cbde0dcdf6841b51442665c6cffdf93c89595fac8f4f79d0a9",
+        "04135f62605ad8cbde0dcdf6841b51442665c6cffdf93c89595fac8f4f79d0a9",
+        "04135f62605ad8cbde0dcdf6841b51442665c6cffdf93c89595fac8f4f79d0a9"
+      ],
       "quality_pass": true,
       "quality_scope": "Full Resource Economics local replay surface.",
       "required_output": "Resource live probe validation passed",
       "role": "baseline",
-      "route_id": "route://baseline-full-resource-lane-replay"
+      "route_id": "route://baseline-full-resource-lane-replay",
+      "sample_count": 5,
+      "sample_elapsed_ms": [
+        194.119,
+        274.867,
+        159.207,
+        155.069,
+        160.387
+      ],
+      "sample_quality_passes": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 27.709,
+      "elapsed_ms": 26.511,
+      "elapsed_ms_max": 27.656,
+      "elapsed_ms_min": 25.886,
       "eligible": true,
       "exit_code": 0,
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "output_excerpt": [
         "Resource workflow trace validation passed: 1 valid fixture(s), 5 expected-invalid fixture(s), 3 step(s), 119.7 cost units."
       ],
       "output_sha256": "328decae80aead8a803fc8155b85df0cd049812e364a621ac2da7b609c1f1977",
+      "output_sha256es": [
+        "328decae80aead8a803fc8155b85df0cd049812e364a621ac2da7b609c1f1977",
+        "328decae80aead8a803fc8155b85df0cd049812e364a621ac2da7b609c1f1977",
+        "328decae80aead8a803fc8155b85df0cd049812e364a621ac2da7b609c1f1977",
+        "328decae80aead8a803fc8155b85df0cd049812e364a621ac2da7b609c1f1977",
+        "328decae80aead8a803fc8155b85df0cd049812e364a621ac2da7b609c1f1977"
+      ],
       "quality_pass": true,
       "quality_scope": "Scoped Resource workflow trace fixture and Lean/Python alignment review.",
       "required_output": "Resource workflow trace validation passed",
       "role": "selected",
-      "route_id": "route://selected-scoped-workflow-trace-validator"
+      "route_id": "route://selected-scoped-workflow-trace-validator",
+      "sample_count": 5,
+      "sample_elapsed_ms": [
+        27.077,
+        27.656,
+        26.361,
+        25.886,
+        26.511
+      ],
+      "sample_quality_passes": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
     },
     {
       "command": "python3 -c \"print('skipped resource workflow trace validator')\"",
-      "elapsed_ms": 21.46,
+      "elapsed_ms": 20.558,
+      "elapsed_ms_max": 20.862,
+      "elapsed_ms_min": 19.687,
       "eligible": false,
       "exit_code": 0,
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "output_excerpt": [
         "skipped resource workflow trace validator"
       ],
       "output_sha256": "49b57f00c6bff2f590d87f6a582ff5573a358b255938d47dea6bc8f159ba2b22",
+      "output_sha256es": [
+        "49b57f00c6bff2f590d87f6a582ff5573a358b255938d47dea6bc8f159ba2b22",
+        "49b57f00c6bff2f590d87f6a582ff5573a358b255938d47dea6bc8f159ba2b22",
+        "49b57f00c6bff2f590d87f6a582ff5573a358b255938d47dea6bc8f159ba2b22",
+        "49b57f00c6bff2f590d87f6a582ff5573a358b255938d47dea6bc8f159ba2b22",
+        "49b57f00c6bff2f590d87f6a582ff5573a358b255938d47dea6bc8f159ba2b22"
+      ],
       "quality_pass": false,
       "quality_scope": "Invalid shortcut that returns quickly without running the required validator.",
       "required_output": "Resource workflow trace validation passed",
       "role": "negative_control",
-      "route_id": "route://negative-no-op-success-text"
+      "route_id": "route://negative-no-op-success-text",
+      "sample_count": 5,
+      "sample_elapsed_ms": [
+        20.558,
+        20.862,
+        20.608,
+        19.687,
+        20.247
+      ],
+      "sample_quality_passes": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ],
   "scoped_task": "resource-workflow-trace-integrity-review",
   "selected_is_cheaper_than_baseline": true,
   "selected_route_id": "route://selected-scoped-workflow-trace-validator",
-  "summary": "Local Resource Economics workload-quality probe selected a scoped workflow-trace validator over the broader Resource live probe baseline while rejecting a cheaper no-op success-text route.",
+  "summary": "Local Resource Economics workload-quality probe selected a scoped workflow-trace validator over the broader Resource live probe baseline using five-sample median elapsed time while rejecting a cheaper no-op success-text route.",
   "support_state_effect": "none",
   "tracked_artifacts": [
     {

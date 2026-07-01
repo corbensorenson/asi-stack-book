@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import re
+from statistics import median
 import sys
 from typing import Any
 
@@ -14,6 +15,7 @@ from run_resource_workload_quality_probe import (
     RESULT,
     RESULT_COMMAND,
     ROUTES,
+    SAMPLE_COUNT,
     SCOPED_TASK,
     TRACKED_ARTIFACTS,
     ROOT,
@@ -83,8 +85,8 @@ def validate_record_shape(value: dict[str, Any], errors: list[str]) -> None:
         errors.append(f"{rel(RESULT)}: recorded_at_utc must be a UTC timestamp ending in Z.")
 
     summary = value.get("summary")
-    if not isinstance(summary, str) or "scoped workflow-trace validator" not in summary:
-        errors.append(f"{rel(RESULT)}: summary must describe the scoped workflow-trace selection.")
+    if not isinstance(summary, str) or "five-sample median elapsed time" not in summary:
+        errors.append(f"{rel(RESULT)}: summary must describe the five-sample scoped workflow-trace selection.")
 
     if value.get("residuals") != RESIDUALS:
         errors.append(f"{rel(RESULT)}: residuals must match the runner residual list.")
@@ -123,10 +125,40 @@ def validate_routes(value: dict[str, Any], errors: list[str]) -> None:
                 errors.append(f"{owner}: {key} must be {expected[key]!r}.")
         if recorded.get("exit_code") != 0:
             errors.append(f"{owner}: route command must exit 0 so quality is not confused with process failure.")
-        if not isinstance(recorded.get("elapsed_ms"), (int, float)) or recorded["elapsed_ms"] <= 0:
-            errors.append(f"{owner}: elapsed_ms must be a positive measured number.")
+        if recorded.get("sample_count") != SAMPLE_COUNT:
+            errors.append(f"{owner}: sample_count must be {SAMPLE_COUNT}.")
+        samples = recorded.get("sample_elapsed_ms")
+        if not isinstance(samples, list) or len(samples) != SAMPLE_COUNT:
+            errors.append(f"{owner}: sample_elapsed_ms must contain {SAMPLE_COUNT} samples.")
+            samples = []
+        if any(not isinstance(sample, (int, float)) or isinstance(sample, bool) or sample <= 0 for sample in samples):
+            errors.append(f"{owner}: every sample_elapsed_ms value must be a positive measured number.")
+        if samples:
+            expected_median = round(float(median(samples)), 3)
+            expected_min = round(float(min(samples)), 3)
+            expected_max = round(float(max(samples)), 3)
+            if recorded.get("elapsed_ms") != expected_median:
+                errors.append(f"{owner}: elapsed_ms must equal the median sample value {expected_median}.")
+            if recorded.get("elapsed_ms_min") != expected_min:
+                errors.append(f"{owner}: elapsed_ms_min must equal {expected_min}.")
+            if recorded.get("elapsed_ms_max") != expected_max:
+                errors.append(f"{owner}: elapsed_ms_max must equal {expected_max}.")
         if not isinstance(recorded.get("output_sha256"), str) or not SHA_RE.match(recorded["output_sha256"]):
             errors.append(f"{owner}: output_sha256 must be a SHA-256 hex digest.")
+        sample_hashes = recorded.get("output_sha256es")
+        if not isinstance(sample_hashes, list) or len(sample_hashes) != SAMPLE_COUNT:
+            errors.append(f"{owner}: output_sha256es must contain {SAMPLE_COUNT} sample digests.")
+            sample_hashes = []
+        if any(not isinstance(item, str) or not SHA_RE.match(item) for item in sample_hashes):
+            errors.append(f"{owner}: every output_sha256es value must be a SHA-256 hex digest.")
+        if sample_hashes and set(sample_hashes) != {recorded.get("output_sha256")}:
+            errors.append(f"{owner}: sample output digests must be stable and match output_sha256.")
+        exit_codes = recorded.get("exit_codes")
+        if exit_codes != [0] * SAMPLE_COUNT:
+            errors.append(f"{owner}: exit_codes must record {SAMPLE_COUNT} successful process exits.")
+        quality_passes = recorded.get("sample_quality_passes")
+        if not isinstance(quality_passes, list) or len(quality_passes) != SAMPLE_COUNT:
+            errors.append(f"{owner}: sample_quality_passes must contain {SAMPLE_COUNT} values.")
         excerpt = recorded.get("output_excerpt")
         if not isinstance(excerpt, list) or not excerpt:
             errors.append(f"{owner}: output_excerpt must be a non-empty list.")
@@ -137,6 +169,8 @@ def validate_routes(value: dict[str, Any], errors: list[str]) -> None:
             errors.append(f"{owner}: current replay output digest differs from recorded digest.")
         if replayed["quality_pass"] != recorded.get("quality_pass"):
             errors.append(f"{owner}: current replay quality result differs from recorded quality result.")
+        if set(replayed["output_sha256es"]) != {recorded.get("output_sha256")}:
+            errors.append(f"{owner}: current replay output digests are not stable against the recorded digest.")
 
     baseline = route_by_role(routes, "baseline")
     selected = route_by_role(routes, "selected")
@@ -160,7 +194,7 @@ def validate_routes(value: dict[str, Any], errors: list[str]) -> None:
     if not value.get("negative_control_rejected"):
         errors.append(f"{rel(RESULT)}: negative_control_rejected must be true.")
     if not value.get("selected_is_cheaper_than_baseline"):
-        errors.append(f"{rel(RESULT)}: selected_is_cheaper_than_baseline must be true for this recorded local run.")
+        errors.append(f"{rel(RESULT)}: selected_is_cheaper_than_baseline must be true for this recorded local median run.")
     if selected.get("elapsed_ms", 0) >= baseline.get("elapsed_ms", 0):
         errors.append(f"{rel(RESULT)}: selected route elapsed_ms must be lower than baseline elapsed_ms.")
     if not value.get("negative_control_is_cheaper_than_selected"):
