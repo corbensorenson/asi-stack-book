@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-01 - Complete reader key-figure draft asset set
+
+- Added draft SVG assets for Compression and Generation Acceptance, Cyclic
+  Substrate Adoption Gate, and Living Book Release Pipeline, completing draft
+  asset coverage for the ten current reader-handoff key-figure targets.
+- Wired the three figures into their anchor chapters with `fig-alt` text and
+  prose text equivalents, then recorded the asset paths and text-equivalent
+  anchors in `editions/reader_manuscript/v1_0/manifest.json`.
+- Strengthened `scripts/validate_reader_manuscript_manifest.py` so a
+  `drafting_handoff_ready` reader handoff requires draft assets for all
+  key-figure targets and checks that text-equivalent anchors resolve to real
+  chapter headings.
+- Refreshed the generated reader-continuity audit and audio-script probe
+  companion-treatment image count so downstream reader/audio review manifests
+  match the new chapter figures.
+- Updated roadmap, status, README, repository map, and diagram inventory
+  surfaces to distinguish draft figure coverage from release-reviewed figure
+  artifacts. No support-state promotion, final art approval, manuscript-quality
+  approval, reader release, ebook, audio artifact, benchmark result, or proof
+  result is claimed.
+
 ## 2026-07-01 - Refresh Resource Economics core no-change transition
 
 - Refreshed

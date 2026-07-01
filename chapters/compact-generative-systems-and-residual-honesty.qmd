@@ -4,7 +4,7 @@ chapter_id: "compact-generative-systems-and-residual-honesty"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "cgs"
   - "rgs"
@@ -118,6 +118,14 @@ Appendix C now carries passage-reviewed mappings for all fifteen assigned source
 | `cognitive_compilation` | Typed semantic IR, source plans, semantic atoms, compiler passes, validation requirements, localized repair, and target lowering. | No working cognitive compiler, trace suite, or empirical ablation exists in this repository. |
 | `circle_ai_architectures` | Optional representation-substrate discipline for phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic transforms, or geometry-aware structure with baselines and negative controls. | Source-note-only local project context; no cyclic-model advantage, model-quality result, sidecar test, Lean build, MLX experiment, or benchmark fixture is claimed. |
 | `coilra_multicoil_rope` | Adapter-block indices, residues, winding, relative RoPE laws, circulant mixers, parameter accounting, baselines, wrong-period controls, and explicit non-claims. | Source-note-only local project context; no quality, speed, memory, training-stability, or context-length improvement has been shown. |
+
+## Draft Key Figure: Compression and Generation Acceptance
+
+::: {.asi-key-figure}
+![Draft compression and generation acceptance.](../assets/diagrams/compression-and-generation-acceptance.svg){#fig-compression-and-generation-acceptance fig-alt="Draft compression and generation acceptance figure showing target burden flowing through compact generation, fast generation, and artifact compression paths before verifier, residual, fallback, and consumer-policy gates decide accepted use or blocked routes."}
+:::
+
+**How to read the compression and generation acceptance figure:** Read compactness, speed, and artifact compression as candidate routes, not as acceptance by themselves. A compact seed, fast generator, or compressed artifact must still pass a separate verifier gate, expose residual and fallback burden, and satisfy consumer policy before a bounded use can be accepted. Failed verifier output, hidden repair work, missing fallback, or disallowed consumer scope routes to a visible block rather than being counted as efficiency. The figure is a draft reader aid, not proof of a compression ratio, useful-speed result, model-quality result, deployed verifier, release-reviewed artifact, or support-state promotion.
 
 ## Mechanism
 

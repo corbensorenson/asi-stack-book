@@ -30,6 +30,8 @@ ALLOWED_ROUTING_STATUS = {
     "future_curated_review_with_companion_note",
 }
 FIRST_PERSON_RE = re.compile(r"\b(i|me|my|mine|we|our|ours|us)\b", re.IGNORECASE)
+MARKDOWN_HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
+EXPLICIT_ANCHOR_RE = re.compile(r"\{#([A-Za-z0-9_-]+)\}\s*$")
 REQUIRED_READER_HANDOFF_FIELDS = {
     "schema_version",
     "major_version",
@@ -194,6 +196,26 @@ def require_existing_path(owner: str, path_value: str, errors: list[str]) -> Non
     path = ROOT / path_value
     if not path.exists():
         errors.append(f"{owner}: referenced path does not exist: {path_value}")
+
+
+def markdown_heading_anchors(path: Path) -> set[str]:
+    anchors: set[str] = set()
+    for line in path.read_text(encoding="utf-8").splitlines():
+        match = MARKDOWN_HEADING_RE.match(line)
+        if not match:
+            continue
+        title = match.group(2).strip()
+        explicit = EXPLICIT_ANCHOR_RE.search(title)
+        if explicit:
+            anchors.add(explicit.group(1))
+            title = EXPLICIT_ANCHOR_RE.sub("", title).strip()
+        title = re.sub(r"`([^`]+)`", r"\1", title)
+        title = re.sub(r"[^a-z0-9 _-]+", "", title.lower())
+        title = re.sub(r"[\s_]+", "-", title)
+        title = re.sub(r"-+", "-", title).strip("-")
+        if title:
+            anchors.add(title)
+    return anchors
 
 
 def flatten_parts(structure: dict[str, Any]) -> list[dict[str, Any]]:
@@ -491,6 +513,8 @@ def validate_reader_handoff_contract(
             if boundary and ("not a completed" not in boundary or "not reviewed" not in boundary):
                 errors.append(f"{owner}: release_boundary must state the target is not a completed and not reviewed artifact.")
             draft_asset_path = figure.get("draft_asset_path")
+            if handoff.get("status") == "drafting_handoff_ready" and draft_asset_path is None:
+                errors.append(f"{owner}: drafting_handoff_ready requires draft_asset_path.")
             if draft_asset_path is not None:
                 if not isinstance(draft_asset_path, str) or not draft_asset_path.startswith("assets/diagrams/"):
                     errors.append(f"{owner}: draft_asset_path must stay under assets/diagrams/.")
@@ -508,9 +532,14 @@ def validate_reader_handoff_contract(
                 if not isinstance(text_ref, str) or "#" not in text_ref:
                     errors.append(f"{owner}: text_equivalent_ref must include a path and anchor.")
                 else:
-                    text_path = text_ref.split("#", 1)[0]
-                    if not (ROOT / text_path).exists():
+                    text_path, anchor = text_ref.split("#", 1)
+                    chapter_path = ROOT / text_path
+                    if not chapter_path.exists():
                         errors.append(f"{owner}: text_equivalent_ref path does not exist: {text_path}")
+                    elif anchor not in markdown_heading_anchors(chapter_path):
+                        errors.append(
+                            f"{owner}: text_equivalent_ref anchor does not match a markdown heading: {text_ref}"
+                        )
 
     voice_slots = handoff.get("corben_voice_pass_slots")
     slot_ids: set[str] = set()

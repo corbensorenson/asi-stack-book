@@ -129,8 +129,8 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/figures/voice slots, and no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
-| P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated, but the strongest figures remain mostly default Mermaid/technical scaffolding rather than crafted book figures. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, and stable across web, EPUB, PDF, DOCX, and audio companion treatment. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft assets plus text-equivalent chapter anchors. There is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
+| P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated; ten reader-handoff key figures now have draft SVG assets and accessibility-oriented prose equivalents, but they remain draft reader aids rather than release-reviewed art. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, stable across web, EPUB, PDF, DOCX, and audio companion treatment, and reviewed as artifacts before reader release. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 44 core claims still remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
 ## Operating Principles
@@ -1949,7 +1949,8 @@ Acceptance bar:
   present agent-invented first-person material as Corben's experience;
 - the reader manuscript has a book-level thesis, part arcs, a named set of
   recurring signature ideas, chapter-specific stakes/payoffs, key-figure
-  targets, and voice-pass slots without changing evidence boundaries.
+  targets with draft assets and text-equivalent chapter anchors, and voice-pass
+  slots without changing evidence boundaries.
 
 Current status:
 
@@ -1963,10 +1964,11 @@ Current status:
   historical reference only.
 - The same manifest now carries a validated `reader_handoff_contract` with one
   book-level thesis, four part arcs, ten recurring signature ideas, ten
-  key-figure targets, twelve Corben voice-pass slots, and per-chapter
-  stakes/payoffs. This closes the machine-checkable handoff metadata gap, but
-  it does not approve the prose, fabricate authorial experience, or create an
-  edition release artifact.
+  key-figure targets with draft assets and text-equivalent chapter anchors,
+  twelve Corben voice-pass slots, and per-chapter stakes/payoffs. This closes
+  the machine-checkable handoff metadata and draft key-figure coverage gap, but
+  it does not approve the prose, fabricate authorial experience, review the
+  figures as final art, or create an edition release artifact.
 - The current curated set follows the consolidation-aware curation gate:
   protected standalone chapters may continue toward human-edit readiness;
   chapters inside remaining deferred merge/fold packages must keep scoped
@@ -2339,13 +2341,17 @@ Tasks:
   should be shortened, moved to companion notes, or summarized in the human
   reader path. This is reader-edition selection, not live-source deletion.
 - Tie figure craft to the narrative arc: key figures should carry the book's
-  core ideas visually rather than merely restating section headings.
+  core ideas visually rather than merely restating section headings. The
+  current ten reader-handoff figure targets now have draft SVG assets and
+  text-equivalent chapter anchors; the remaining work is visual polish,
+  format-specific inspection, and release review.
 
 Acceptance bar:
 
 - The reader manuscript has one explicit thesis, part arcs, recurring
-  signature ideas, chapter-specific stakes/payoffs, key-figure targets, and
-  voice-pass slots that a non-research reader could review before line editing.
+  signature ideas, chapter-specific stakes/payoffs, key-figure targets with
+  draft assets and text-equivalent chapter anchors, and voice-pass slots that a
+  non-research reader could review before line editing.
 - The authorial-pass queue is explicit: every first-person or personal-history
   slot is supplied by Corben, marked as needing Corben, or removed.
 - No agent-generated prose claims Corben's personal experience, intent, or
@@ -2359,10 +2365,11 @@ Acceptance bar:
 Current status:
 
 - Partially executed. The reader-manuscript manifest now records and validates
-  the thesis, part arcs, recurring signature ideas, key-figure targets,
-  chapter-level stakes/payoffs, and Corben voice-pass slots. This is handoff
-  structure only; it is not source evidence, external review, support-state
-  evidence, authorial approval, or release approval.
+  the thesis, part arcs, recurring signature ideas, key-figure targets with
+  draft assets and text-equivalent chapter anchors, chapter-level
+  stakes/payoffs, and Corben voice-pass slots. This is handoff structure only;
+  it is not source evidence, external review, support-state evidence, final
+  figure review, authorial approval, or release approval.
 - The current curated reader manuscript remains drafting-only. Existing prose
   passes can support the craft pass, but Corben still needs to supply or
   approve voice-pass language before the book can be treated as an authored
@@ -2548,8 +2555,8 @@ explicitly passed or explicitly scoped out in a release record.
 | `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Retired URL stubs are guarded; sixty-second trust surface exists; non-core evidence ledger visible; one external review request, response, or dated blocker is recorded; one flagship measured lane is selected with baseline/negative-control design. |
 | `v1.2` | Moves from internal discipline to a reproducible architecture-relevant result. | The flagship measured lane has a one-command run, baseline, negative control, residuals, non-claims, and an accepted evidence transition or explicit no-promotion decision; any Theseus/Circle import used by the lane is CI-verifiable by digest or replay. |
 | `v1.3` | Moves formal layer from finite-record routing toward executable-model practice. | One selected proof/evidence lane has a transition-system invariant, trace property, or Lean/Python fixture-equivalence check; theorem-count growth alone does not satisfy the target. |
-| `v1.4` | Moves reader surface from generated projection toward a handoff-ready human manuscript. | Curated reader manuscript follows the stable 44-chapter table of contents, includes a book-level thesis, part arcs, signature ideas, chapter stakes/payoffs, key-figure targets, authorial-pass queue, and Corben voice blockers, is ready for Corben human review, reader HTML remains validated, and EPUB/DOCX/PDF blockers have concrete review status. |
-| `v1.5` | Moves the human edition from clean technical prose toward a crafted artifact. | Key figures, visual identity, EPUB/DOCX/PDF layout probes, audio-script treatment, and companion-note routing are reviewed enough to show exactly what remains before a polished major reader release. |
+| `v1.4` | Moves reader surface from generated projection toward a handoff-ready human manuscript. | Curated reader manuscript follows the stable 44-chapter table of contents, includes a book-level thesis, part arcs, signature ideas, chapter stakes/payoffs, key-figure targets with draft assets and text equivalents, authorial-pass queue, and Corben voice blockers, is ready for Corben human review, reader HTML remains validated, and EPUB/DOCX/PDF blockers have concrete review status. |
+| `v1.5` | Moves the human edition from clean technical prose toward a crafted artifact. | Key figures have moved beyond draft coverage into visual review, visual identity, EPUB/DOCX/PDF layout probes, audio-script treatment, and companion-note routing are reviewed enough to show exactly what remains before a polished major reader release. |
 | `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; one flagship measured lane has executed evidence or an explicit no-promotion decision; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
 | `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger executable-model proofs, prior-art-reviewed preprints, and DOI/archive metadata exist. |
 

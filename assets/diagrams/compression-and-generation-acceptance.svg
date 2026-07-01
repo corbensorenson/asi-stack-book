@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Compression and generation acceptance draft figure</title>
+  <desc id="desc">A draft systems diagram showing compact generation, fast generation, and artifact compression feeding verifier, residual, fallback, and consumer-policy gates before acceptance.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#315f8c"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#9b4d55"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="126%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#142033" flood-opacity="0.13"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #d7dee8; stroke-width: 2; }
+      .path { fill: #f3f8fb; stroke: #315f8c; stroke-width: 2.4; }
+      .gate { fill: #f8f6fb; stroke: #6f5b8d; stroke-width: 2.4; }
+      .accept { fill: #f1f8f4; stroke: #4f7d60; stroke-width: 2.8; }
+      .reject { fill: #fbf3f4; stroke: #9b4d55; stroke-width: 2.4; }
+      .ink { fill: #18202a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #5d6876; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 760; }
+      .small { font-size: 18px; font-weight: 680; }
+      .tiny { font-size: 15px; font-weight: 560; }
+      .caption { font-size: 16px; font-weight: 600; }
+      .line { fill: none; stroke: #315f8c; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-blue); }
+      .redline { fill: none; stroke: #9b4d55; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-red); }
+      .dash { fill: none; stroke: #687484; stroke-width: 2.5; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink label" x="58" y="62">Compression and Generation Acceptance</text>
+  <text class="muted caption" x="58" y="92">Draft key figure: compact or fast output is not accepted until verifier, residual, fallback, and consumer gates pass.</text>
+
+  <rect class="panel" x="54" y="136" width="214" height="122" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="82" y="174">Target burden</text>
+  <text class="muted tiny" x="82" y="204">task, artifact, source,</text>
+  <text class="muted tiny" x="82" y="228">utility, constraints</text>
+
+  <rect class="path" x="330" y="80" width="220" height="112" rx="12"/>
+  <text class="ink small" x="358" y="118">Compact generator</text>
+  <text class="muted tiny" x="358" y="148">seed + rule + residual</text>
+  <text class="muted tiny" x="358" y="172">hidden burden visible</text>
+
+  <rect class="path" x="330" y="224" width="220" height="112" rx="12"/>
+  <text class="ink small" x="358" y="262">Fast generation</text>
+  <text class="muted tiny" x="358" y="292">accepted output rate</text>
+  <text class="muted tiny" x="358" y="316">quality and repair cost</text>
+
+  <rect class="path" x="330" y="368" width="220" height="112" rx="12"/>
+  <text class="ink small" x="358" y="406">Artifact compression</text>
+  <text class="muted tiny" x="358" y="436">decoder + manifest</text>
+  <text class="muted tiny" x="358" y="460">reconstruction boundary</text>
+
+  <rect class="gate" x="626" y="94" width="226" height="104" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="654" y="132">Verifier gate</text>
+  <text class="muted tiny" x="654" y="162">separate check or critic</text>
+  <text class="muted tiny" x="654" y="184">no self-acceptance</text>
+
+  <rect class="gate" x="626" y="230" width="226" height="104" rx="12"/>
+  <text class="ink small" x="654" y="268">Residual gate</text>
+  <text class="muted tiny" x="654" y="298">lost work, repair stream,</text>
+  <text class="muted tiny" x="654" y="320">fallback and owner</text>
+
+  <rect class="gate" x="626" y="366" width="226" height="104" rx="12"/>
+  <text class="ink small" x="654" y="404">Consumer policy</text>
+  <text class="muted tiny" x="654" y="434">allowed use, scope,</text>
+  <text class="muted tiny" x="654" y="456">support-state effect</text>
+
+  <rect class="accept" x="932" y="126" width="212" height="132" rx="12" filter="url(#shadow)"/>
+  <text class="ink small" x="960" y="164">Accepted use</text>
+  <text class="muted tiny" x="960" y="194">bounded deployment</text>
+  <text class="muted tiny" x="960" y="218">or review candidate</text>
+  <text class="muted tiny" x="960" y="242">with receipts attached</text>
+
+  <rect class="reject" x="932" y="326" width="212" height="132" rx="12"/>
+  <text class="ink small" x="960" y="364">Blocked route</text>
+  <text class="muted tiny" x="960" y="394">quality, residual,</text>
+  <text class="muted tiny" x="960" y="418">fallback, or policy</text>
+  <text class="muted tiny" x="960" y="442">failed visibly</text>
+
+  <rect class="panel" x="98" y="570" width="1004" height="104" rx="12"/>
+  <text class="ink small" x="126" y="608">Acceptance rule</text>
+  <text class="muted tiny" x="126" y="640">Compression, speed, or small representation is not evidence by itself. Acceptance requires utility, verifier separation, residual custody, fallback, and allowed-use policy.</text>
+  <text class="muted tiny" x="126" y="664">Status: draft visual asset; not release-reviewed; no compression ratio, useful-speed, model-quality, or support-state promotion claim.</text>
+
+  <path class="line" d="M268 197 C292 154,306 132,324 128"/>
+  <path class="line" d="M268 197 C292 226,306 264,324 280"/>
+  <path class="line" d="M268 197 C292 340,306 408,324 424"/>
+  <path class="line" d="M550 136 C584 136,600 138,620 146"/>
+  <path class="line" d="M550 280 C584 250,600 244,620 274"/>
+  <path class="line" d="M550 424 C584 420,600 416,620 418"/>
+  <path class="line" d="M852 146 C888 150,906 170,926 190"/>
+  <path class="line" d="M852 282 C888 250,906 226,926 210"/>
+  <path class="line" d="M852 418 C888 346,906 260,926 226"/>
+  <path class="redline" d="M852 418 C890 418,908 398,926 392"/>
+  <path class="dash" d="M1038 326 L1038 258"/>
+</svg>

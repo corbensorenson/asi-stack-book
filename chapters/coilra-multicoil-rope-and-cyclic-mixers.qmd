@@ -4,7 +4,7 @@ chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "coilra_multicoil_rope"
   - "rope_position_certifier"
@@ -96,6 +96,14 @@ Appendix C now records passage-reviewed mappings for all five assigned sources. 
 | `circle_ai_contract_suite` | Contract-family fields for RoPE, multicoil phase, cyclic mixers, receipts, theorem ids, consumer readiness, fingerprints, normalized parameters, acceptance-policy surfaces, and explicit boundaries/non-claims. | A separate external Circle rope receipt slice is recorded in `docs/circle_external_receipt_slice.md`, but no vendored contract pack, downstream consumer, acceptance-policy integration, transfer consumer, model-quality result, or external Circle Lean dependency is validated from this repo. |
 | `theseus_circle_transfer` | Phase-feature invariance, mixer parameter accounting, report-only consumers, workload smoke/proxy/scored layers, baseline/negative-control/report requirements, and disallowed public quality/runtime/memory/transfer claims. | Source-reported private transfer artifacts remain nonlocal context; no ASI Stack transfer consumer, smoke workload, proxy benchmark, scored private benchmark import, inference run, report artifact, router-head trace, runtime/memory measurement, or promotion evidence was executed or imported. |
 | `circle_ai_architectures` | Cyclic or coil structure only where phase, recurrence, rotation, sparse cyclic mixing, circular memory, harmonic/circulant structure, or geometry-aware structure is real and controlled by baselines and negative controls. | No universal cyclic-model advantage, ASI Stack sidecar test, ASI Stack MLX experiment, imported benchmark fixture, model-quality result, speed result, memory result, or deployment result was run or imported here. |
+
+## Draft Key Figure: Cyclic Substrate Adoption Gate
+
+::: {.asi-key-figure}
+![Draft cyclic substrate adoption gate.](../assets/diagrams/cyclic-substrate-adoption-gate.svg){#fig-cyclic-substrate-adoption-gate fig-alt="Draft cyclic substrate adoption gate figure showing a cyclic candidate such as RoPE, CoilRA, a circulant mixer, or cyclic memory moving through structural receipts, baseline symmetry, measured tradeoffs, canary routing, and retirement paths."}
+:::
+
+**How to read the cyclic substrate adoption figure:** Read the top path as an adoption gate and the lower path as a refusal to spend structural credit as performance evidence. A cyclic candidate can have a real invariant, theorem id, digest, diagnostic, or receipt and still remain structural-only until ordinary baselines, measured tradeoffs, canary limits, rollback, and retirement paths are present. Parameter count, elegance, and exact cyclic facts do not by themselves become model quality, context length, runtime, memory, training-stability, hardware-efficiency, deployment, or support-state claims. The figure is a draft reader aid, not a release-reviewed artifact or evidence that a cyclic substrate should be adopted.
 
 ## Mechanism
 
