@@ -16,24 +16,35 @@
     {
       "route_id": "route://cheap-unverified-transform",
       "reason": "route_state fallback_required, verification_result fail, outcome_state cheap_brittle, promotion_candidate False, budget_state residualized, budget_decision residual"
+    },
+    {
+      "route_id": "route://hidden-residual-auto-merge",
+      "reason": "route_state evaluated, verification_result pass, outcome_state hidden_cost, promotion_candidate True, budget_state residualized, budget_decision residual"
     }
   ],
   "computed_cost_units": {
     "route://bounded-transform-plus-verifier": 14.2,
     "route://cheap-unverified-transform": 2.3,
-    "route://frontier-manual-review": 43.0
+    "route://frontier-manual-review": 43.0,
+    "route://hidden-residual-auto-merge": 8.2
   },
   "cost_reduction_vs_baseline_percent": 66.98,
-  "acceptance_predicate": "The selected route is the lowest-cost eligible route, the baseline is eligible but more expensive, and the cheaper negative control is rejected for failed verification, cheap_brittle outcome, and residualized budget state.",
+  "acceptance_predicate": "The selected route is the lowest-cost eligible route, the baseline is eligible but more expensive, and both lower-cost negative controls are rejected: one for failed verification/cheap_brittle output and one for hidden residual displacement despite surface verification passing.",
   "verification_result": "pass",
   "support_state_effect": "eligible_for_bounded_evidence_review",
   "residuals": [
     "The selected route preserves a sampled-review residual and fallback path.",
+    "The cheap failed negative control is residualized after verification failure.",
+    "The hidden-residual negative control is residualized because reviewer handoff and residual ownership are missing despite surface verification passing.",
     "The result is synthetic and local; no deployed scheduler, router, model, benchmark, or economic claim is made."
   ],
   "non_claims": [
     "does not promote any chapter core claim above argument",
     "does not prove deployed routing, scheduler, runtime, load, KV-cache, or economic behavior",
     "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes"
+  ],
+  "negative_control_routes": [
+    "route://cheap-unverified-transform",
+    "route://hidden-residual-auto-merge"
   ]
 }

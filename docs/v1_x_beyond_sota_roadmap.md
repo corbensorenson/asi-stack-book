@@ -922,6 +922,13 @@ Current status for the initial v1.x active evidence cycle:
   boundary harness for Resource Economics and the cyclic-memory contract
   harness for Coil Attention. Both are useful gate hardening; neither creates a
   chapter-core support-state transition.
+- The Resource Economics costed-route lane now has a four-route one-command
+  replay: an adequate overkill baseline remains eligible, the selected bounded
+  route remains the lowest-cost eligible route, a cheaper failed-verification
+  route is rejected, and a cheaper hidden-residual route is rejected despite
+  surface verification passing. This deepens the flagship measured lane while
+  preserving the non-core `synthetic-test-backed` scope and no chapter-core
+  promotion.
 - The next edit to the active-cycle record should narrow it around one flagship
   measured result rather than extending the eight-lane breadth set.
 

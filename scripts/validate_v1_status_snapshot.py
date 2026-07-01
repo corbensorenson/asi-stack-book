@@ -303,7 +303,7 @@ def main() -> None:
         "`docs/capacity_smoothing_harness.md`",
         "`python3 scripts/validate_capacity_smoothing.py`",
         "`experiments/capacity_smoothing/`",
-        "| Non-infrastructure measured slice | The first bounded non-infrastructure measured/replayed slice checks three Costed Route Records and three Resource Budget Records, rejects the cheaper failed negative control `route://cheap-unverified-transform`, keeps the adequate overkill baseline `route://frontier-manual-review` eligible, and selects `route://bounded-transform-plus-verifier` with a 66.98 percent synthetic cost reduction while preserving fallback, residual, and non-claim boundaries.",
+        "| Non-infrastructure measured slice | The first bounded non-infrastructure measured/replayed slice checks four Costed Route Records and four Resource Budget Records, rejects the cheaper failed-verification negative control `route://cheap-unverified-transform`, rejects the cheaper hidden-residual negative control `route://hidden-residual-auto-merge`, keeps the adequate overkill baseline `route://frontier-manual-review` eligible, and selects `route://bounded-transform-plus-verifier` with a 66.98 percent synthetic cost reduction while preserving fallback, residual, and non-claim boundaries.",
         "`docs/costed_route_resource_slice.md`",
         "`experiments/costed_route_resource_slice/input/v1_0_costed_routes.json`",
         "`experiments/costed_route_resource_slice/results/2026-06-29-local.json`",

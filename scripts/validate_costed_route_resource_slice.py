@@ -24,6 +24,11 @@ BUDGET_SCHEMA = ROOT / "schemas" / "resource_budget_record.schema.json"
 
 GOOD_OUTCOMES = {"adequate_minimum", "adequate_overkill"}
 BAD_HIDDEN_COST_WORDS = {"failed", "missing", "unbounded", "lost"}
+EXPECTED_ROUTE_COUNT = 4
+EXPECTED_NEGATIVE_CONTROL_IDS = {
+    "route://cheap-unverified-transform",
+    "route://hidden-residual-auto-merge",
+}
 REQUIRED_NON_CLAIMS = (
     "does not promote any chapter core claim",
     "does not prove deployed routing",
@@ -112,6 +117,7 @@ def validate_summary(expected_result: dict[str, Any], errors: list[str]) -> None
         "`route://bounded-transform-plus-verifier` | selected candidate | 14.2 | eligible",
         "`route://frontier-manual-review` | adequate overkill baseline | 43.0 | eligible",
         "`route://cheap-unverified-transform` | negative control | 2.3 | rejected",
+        "`route://hidden-residual-auto-merge` | hidden-residual control | 8.2 | rejected",
         "66.98 percent cheaper",
         "Does not promote any chapter core claim above `argument`.",
         "Does not prove deployed routing",
@@ -166,8 +172,8 @@ def main() -> None:
         fail([f"{rel(RESULT)} must contain an object."])
 
     routes = data.get("routes")
-    if not isinstance(routes, list) or len(routes) != 3:
-        errors.append(f"{rel(INPUT)}: routes must contain exactly three records.")
+    if not isinstance(routes, list) or len(routes) != EXPECTED_ROUTE_COUNT:
+        errors.append(f"{rel(INPUT)}: routes must contain exactly {EXPECTED_ROUTE_COUNT} records.")
         routes = []
 
     route_ids: list[str] = []
@@ -219,12 +225,22 @@ def main() -> None:
     expected_selected = data.get("expected_selected_route")
     baseline = data.get("baseline_route_id")
     negative_control = data.get("negative_control_route_id")
+    negative_controls = data.get("negative_control_route_ids")
     if not isinstance(expected_selected, str) or expected_selected not in computed_costs:
         errors.append("expected_selected_route must name one route.")
     if not isinstance(baseline, str) or baseline not in computed_costs:
         errors.append("baseline_route_id must name one route.")
     if not isinstance(negative_control, str) or negative_control not in computed_costs:
         errors.append("negative_control_route_id must name one route.")
+    if not isinstance(negative_controls, list) or set(negative_controls) != EXPECTED_NEGATIVE_CONTROL_IDS:
+        errors.append(
+            "negative_control_route_ids must name the cheap failed and hidden-residual negative controls."
+        )
+        negative_controls = []
+    else:
+        for route_id in negative_controls:
+            if route_id not in computed_costs:
+                errors.append(f"negative_control_route_ids includes unknown route {route_id}.")
 
     if eligible_routes:
         selected = min(eligible_routes, key=lambda route_id: (computed_costs[route_id], route_id))
@@ -240,6 +256,10 @@ def main() -> None:
         errors.append("Baseline route must remain eligible so the slice has an adequate overkill comparison.")
     if negative_control and negative_control not in {row["route_id"] for row in rejected_routes}:
         errors.append("Negative control route must be rejected.")
+    rejected_route_ids = {row["route_id"] for row in rejected_routes}
+    for route_id in negative_controls:
+        if route_id not in rejected_route_ids:
+            errors.append(f"Negative control route {route_id} must be rejected.")
     if selected and baseline:
         reduction = round(((computed_costs[baseline] - computed_costs[selected]) / computed_costs[baseline]) * 100, 2)
     else:
@@ -251,6 +271,7 @@ def main() -> None:
         "selected_route": selected,
         "baseline_route": baseline,
         "negative_control_route": negative_control,
+        "negative_control_routes": sorted(str(route_id) for route_id in negative_controls),
         "eligible_routes": eligible_routes_sorted,
         "rejected_routes": rejected_routes_sorted,
         "computed_cost_units": dict(sorted(computed_costs.items())),
@@ -279,7 +300,7 @@ def main() -> None:
 
     print(
         "Costed route/resource slice validation passed: "
-        f"selected {selected}, baseline {baseline}, negative control {negative_control}, "
+        f"selected {selected}, baseline {baseline}, negative controls {', '.join(expected_result['negative_control_routes'])}, "
         f"{reduction:.2f}% synthetic cost reduction."
     )
 

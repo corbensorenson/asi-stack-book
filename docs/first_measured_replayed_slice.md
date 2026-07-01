@@ -76,8 +76,8 @@ the stronger desire for non-infrastructure evidence.
 
 Claim ID: `resource-economics.costed_route_budget_slice`
 
-Claim: A bounded costed-route/resource-budget selector can reject a cheaper
-route that fails verification and residual handling, compare against an
+Claim: A bounded costed-route/resource-budget selector can reject cheaper
+routes that fail verification, residual ownership, or hidden-cost handling, compare against an
 adequate overkill baseline, and select the lowest-cost adequate route when the
 route record and budget record preserve verification, fallback, residual, and
 non-claim boundaries.
@@ -102,16 +102,17 @@ transition record.
 
 ## Inputs
 
-- Three costed route records validating against
+- Four costed route records validating against
   `schemas/costed_route_record.schema.json`
-- Three resource budget records validating against
+- Four resource budget records validating against
   `schemas/resource_budget_record.schema.json`
 - One adequate overkill baseline route:
   `route://frontier-manual-review`
 - One selected adequate lower-cost route:
   `route://bounded-transform-plus-verifier`
-- One cheaper negative control:
+- Two cheaper negative controls:
   `route://cheap-unverified-transform`
+  and `route://hidden-residual-auto-merge`
 
 ## Output
 
@@ -122,14 +123,18 @@ Observed result:
 - Negative control: `route://cheap-unverified-transform`
 - Selected synthetic cost units: 14.2
 - Baseline synthetic cost units: 43.0
+- Hidden-residual control synthetic cost units: 8.2
 - Cost reduction versus baseline: 66.98 percent
 
 ## Negative Controls
 
-The cheaper negative-control route has 2.3 synthetic cost units but is rejected
+The cheap failed negative-control route has 2.3 synthetic cost units but is rejected
 because verification failed, the outcome is `cheap_brittle`, the route is not a
-promotion candidate, and the budget is residualized. This establishes only the
-bounded selector discipline encoded in the tracked records and validator.
+promotion candidate, and the budget is residualized. The hidden-residual
+negative-control route has 8.2 synthetic cost units and passes surface
+verification, but it is rejected because it hides reviewer handoff and residual
+ownership costs. This establishes only the bounded selector discipline encoded
+in the tracked records and validator.
 
 ## Residuals
 

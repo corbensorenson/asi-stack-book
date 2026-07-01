@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-01 - Costed-route hidden-residual control
+
+- Deepened the bounded costed-route/resource-budget measured slice from a
+  three-route fixture to a four-route fixture: the validator now rejects both
+  `route://cheap-unverified-transform` for failed verification and
+  `route://hidden-residual-auto-merge` for hidden residual displacement despite
+  surface verification passing.
+- Updated `experiments/costed_route_resource_slice/input/v1_0_costed_routes.json`,
+  `experiments/costed_route_resource_slice/results/2026-06-29-local.json`,
+  `scripts/validate_costed_route_resource_slice.py`, the accepted transition
+  record, the measured-slice docs, the active v1.x evidence-cycle ledger, the
+  v1.x roadmap, README, and status guards so the one-command replay now checks
+  two lower-cost negative controls.
+- The selected route remains `route://bounded-transform-plus-verifier`, the
+  adequate overkill baseline remains `route://frontier-manual-review`, and the
+  synthetic cost reduction remains 66.98 percent under the tracked toy formula.
+- This does not promote, demote, deprecate, or refute any chapter core claim;
+  create a deployed router, scheduler, load result, economic result, benchmark
+  result, model-quality result, safety result, source-interpretation result,
+  external review, reader release, ebook, PDF, DOCX, or audio artifact.
+
 ## 2026-07-01 - Complete active reader-manuscript coverage
 
 - Added drafting-only curated reader manuscript chapters for

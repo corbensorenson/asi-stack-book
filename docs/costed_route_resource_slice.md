@@ -15,8 +15,8 @@ interpretation, safety, or any chapter core claim.
 
 Claim ID: `resource-economics.costed_route_budget_slice`
 
-Claim: A bounded costed-route/resource-budget selector can reject a cheaper
-route that fails verification and residual handling, compare against an
+Claim: A bounded costed-route/resource-budget selector can reject cheaper
+routes that fail verification, residual ownership, or hidden-cost handling, compare against an
 adequate overkill baseline, and select the lowest-cost adequate route when the
 route record and budget record preserve verification, fallback, residual, and
 non-claim boundaries.
@@ -39,16 +39,17 @@ record.
 ## Inputs
 
 - `experiments/costed_route_resource_slice/input/v1_0_costed_routes.json`
-- Three costed route records validating against
+- Four costed route records validating against
   `schemas/costed_route_record.schema.json`
-- Three resource budget records validating against
+- Four resource budget records validating against
   `schemas/resource_budget_record.schema.json`
 - One adequate overkill baseline route:
   `route://frontier-manual-review`
 - One selected adequate lower-cost route:
   `route://bounded-transform-plus-verifier`
-- One cheaper negative control:
+- Two cheaper negative controls:
   `route://cheap-unverified-transform`
+  and `route://hidden-residual-auto-merge`
 
 ## Selection Rule
 
@@ -70,18 +71,25 @@ residual, and non-claim boundaries visible.
 | `route://bounded-transform-plus-verifier` | selected candidate | 14.2 | eligible |
 | `route://frontier-manual-review` | adequate overkill baseline | 43.0 | eligible |
 | `route://cheap-unverified-transform` | negative control | 2.3 | rejected |
+| `route://hidden-residual-auto-merge` | hidden-residual control | 8.2 | rejected |
 
 The selected route is 66.98 percent cheaper than the adequate overkill
 baseline under the tracked synthetic cost formula.
 
-## Negative Control
+## Negative Controls
 
-The cheaper negative-control route is rejected because it has
+The cheap failed negative-control route is rejected because it has
 `verification_result: fail`, `outcome_state: cheap_brittle`,
 `promotion_candidate: false`, `budget_state: residualized`, and
-`budget_decision: residual`. The slice therefore does not choose the cheapest
-route; it chooses the cheapest route that clears the recorded quality,
-verification, budget, fallback, residual, and non-claim gates.
+`budget_decision: residual`.
+
+The hidden-residual negative-control route is rejected even though surface
+verification passes, because it has `outcome_state: hidden_cost`,
+`budget_state: residualized`, `budget_decision: residual`, missing residual
+ownership, and lost reviewer handoff. The slice therefore does not choose the
+cheapest route or the route that merely passes a shallow surface check; it
+chooses the cheapest route that clears the recorded quality, verification,
+budget, fallback, residual, and non-claim gates.
 
 ## Non-Claims
 

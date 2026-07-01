@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "slice_id": "v1_0_costed_route_resource_slice",
   "claim_id": "resource-economics.costed_route_budget_slice",
-  "purpose": "Replay a bounded public-safe costed-route/resource-budget selection with an adequate overkill baseline, one adequate lower-cost route, and one cheap negative control.",
+  "purpose": "Replay a bounded public-safe costed-route/resource-budget selection with an adequate overkill baseline, one adequate lower-cost route, one cheap failed negative control, and one hidden-residual negative control.",
   "route_task_id": "task://reader-source-card-refresh",
   "selection_policy": {
     "quality_predicate": "Route must preserve source-card text, compact evidence-boundary text, fallback, residual obligations, and no support-state promotion.",
@@ -26,11 +26,13 @@
         "candidate_routes": [
           "route://frontier-manual-review",
           "route://bounded-transform-plus-verifier",
-          "route://cheap-unverified-transform"
+          "route://cheap-unverified-transform",
+          "route://hidden-residual-auto-merge"
         ],
         "selected_route": "route://frontier-manual-review",
         "rejected_lower_cost_routes": [
-          "route://cheap-unverified-transform"
+          "route://cheap-unverified-transform",
+          "route://hidden-residual-auto-merge"
         ],
         "verification_result": "pass",
         "outcome_state": "adequate_overkill",
@@ -116,11 +118,13 @@
         "candidate_routes": [
           "route://frontier-manual-review",
           "route://bounded-transform-plus-verifier",
-          "route://cheap-unverified-transform"
+          "route://cheap-unverified-transform",
+          "route://hidden-residual-auto-merge"
         ],
         "selected_route": "route://bounded-transform-plus-verifier",
         "rejected_lower_cost_routes": [
-          "route://cheap-unverified-transform"
+          "route://cheap-unverified-transform",
+          "route://hidden-residual-auto-merge"
         ],
         "verification_result": "pass",
         "outcome_state": "adequate_minimum",
@@ -206,7 +210,8 @@
         "candidate_routes": [
           "route://frontier-manual-review",
           "route://bounded-transform-plus-verifier",
-          "route://cheap-unverified-transform"
+          "route://cheap-unverified-transform",
+          "route://hidden-residual-auto-merge"
         ],
         "selected_route": "route://cheap-unverified-transform",
         "rejected_lower_cost_routes": [],
@@ -280,11 +285,106 @@
           "docs/costed_route_resource_slice.md"
         ]
       }
+    },
+    {
+      "route_id": "route://hidden-residual-auto-merge",
+      "role": "hidden_residual_negative_control",
+      "costed_route_record": {
+        "task_id": "task://reader-source-card-refresh",
+        "route_state": "evaluated",
+        "task_contract_ref": "intent://reader-source-card-refresh",
+        "quality_predicate": "Preserve source-card text, compact evidence-boundary text, fallback route, and support-state boundary.",
+        "authority_ceiling": "tracked_file_write",
+        "candidate_routes": [
+          "route://frontier-manual-review",
+          "route://bounded-transform-plus-verifier",
+          "route://cheap-unverified-transform",
+          "route://hidden-residual-auto-merge"
+        ],
+        "selected_route": "route://hidden-residual-auto-merge",
+        "rejected_lower_cost_routes": [
+          "route://cheap-unverified-transform"
+        ],
+        "verification_result": "pass",
+        "outcome_state": "hidden_cost",
+        "cost_accounting": {
+          "estimated_tokens": 5200,
+          "estimated_time_seconds": 60,
+          "tool_cost_units": 0.4
+        },
+        "cost_classes": [
+          "automated merge",
+          "shallow verification",
+          "hidden review burden",
+          "residual"
+        ],
+        "hidden_cost_checks": [
+          "surface source-card text preserved",
+          "evidence-boundary text preserved",
+          "missing residual ownership for sampled-review gap",
+          "lost reviewer handoff in summary"
+        ],
+        "residual_obligations": [
+          "residual://hidden-review-displacement"
+        ],
+        "fallback_route": "route://frontier-manual-review",
+        "promotion_candidate": true,
+        "support_state_effect": "blocks_promotion",
+        "non_claims": [
+          "synthetic hidden-residual negative control only",
+          "does not promote any chapter core claim",
+          "does not prove deployed routing, scheduler, runtime, load, KV-cache, or economic behavior",
+          "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes"
+        ]
+      },
+      "resource_budget_record": {
+        "budget_id": "budget://hidden-residual-auto-merge",
+        "task_id": "route://hidden-residual-auto-merge",
+        "value_hypothesis": "A route can preserve surface text yet still be rejected when it hides reviewer handoff and residual ownership costs.",
+        "risk_class": "medium",
+        "capacity_pool": "local deterministic validation process",
+        "budget_state": "residualized",
+        "cost_estimate": [
+          "5200 estimated tokens",
+          "60 estimated seconds",
+          "0.4 tool cost units"
+        ],
+        "verification_tax": [
+          "surface checks passed",
+          "residual ownership check failed"
+        ],
+        "protected_overhead": [
+          "fallback required",
+          "residual owner required before dispatch"
+        ],
+        "displaced_costs": [
+          "hidden reviewer repair burden would move to future release work"
+        ],
+        "quality_predicate": "The route preserves visible text but hides residual ownership and reviewer handoff burden.",
+        "safety_gates": [
+          "no support-state promotion",
+          "hidden residual cost blocks dispatch",
+          "residual must remain visible and owned"
+        ],
+        "budget_decision": "residual",
+        "escalation_rule": "Fallback to bounded-transform-plus-verifier or frontier-manual-review when residual ownership is missing.",
+        "residuals": [
+          "Hidden reviewer handoff and residual ownership gaps are residualized and block dispatch.",
+          "No scheduler, runtime, load, or economic result is claimed."
+        ],
+        "evidence_refs": [
+          "docs/costed_route_resource_slice.md"
+        ]
+      }
     }
   ],
   "non_claims": [
     "does not promote any chapter core claim above argument",
     "does not prove deployed routing, scheduler, runtime, load, KV-cache, or economic behavior",
     "does not measure model quality, benchmark quality, useful-solution performance, or safety outcomes"
+  ],
+  "negative_control_route_ids": [
+    "route://cheap-unverified-transform",
+    "route://hidden-residual-auto-merge"
   ]
 }

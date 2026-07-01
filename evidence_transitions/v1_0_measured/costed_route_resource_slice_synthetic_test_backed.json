@@ -19,22 +19,24 @@
   "new_support_state": "synthetic-test-backed",
   "transition_effect": "upward",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "Only the bounded synthetic costed-route/resource-budget selection claim moves to synthetic-test-backed: the validator recomputes one public-safe three-route slice, rejects the cheap failed negative control, compares against an adequate overkill baseline, and selects the lowest-cost eligible route while preserving fallback, residual, and non-claim boundaries.",
+  "scope_boundary": "Only the bounded synthetic costed-route/resource-budget selection claim moves to synthetic-test-backed: the validator recomputes one public-safe four-route slice, rejects the cheap failed-verification negative control, rejects the hidden-residual negative control, compares against an adequate overkill baseline, and selects the lowest-cost eligible route while preserving fallback, residual, and non-claim boundaries.",
   "evidence_roles": [
     "costed_route_replay",
     "resource_budget_record",
     "adequate_overkill_baseline",
-    "cheap_negative_control",
+    "cheap_failed_negative_control",
+    "hidden_residual_negative_control",
     "validation_command",
     "public_safe_result_record"
   ],
-  "transition_reason": "The local validation command checked three Costed Route Record instances and three Resource Budget Record instances against their schemas, recomputed the deterministic cost formula, rejected route://cheap-unverified-transform because verification failed, outcome_state was cheap_brittle, promotion_candidate was false, and the budget was residualized, then selected route://bounded-transform-plus-verifier over the eligible route://frontier-manual-review baseline with a 66.98 percent synthetic cost reduction. This supports only the narrow recorded selector discipline claim, not deployed routing, scheduler behavior, model quality, benchmark quality, or chapter core claims.",
+  "transition_reason": "The local validation command checked four Costed Route Record instances and four Resource Budget Record instances against their schemas, recomputed the deterministic cost formula, rejected route://cheap-unverified-transform because verification failed, outcome_state was cheap_brittle, promotion_candidate was false, and the budget was residualized, rejected route://hidden-residual-auto-merge because surface verification passed but outcome_state was hidden_cost with missing residual ownership and residualized budget state, then selected route://bounded-transform-plus-verifier over the eligible route://frontier-manual-review baseline with a 66.98 percent synthetic cost reduction. This supports only the narrow recorded selector discipline claim, not deployed routing, scheduler behavior, model quality, benchmark quality, or chapter core claims.",
   "required_artifacts": [
-    "public-safe three-route input record",
+    "public-safe four-route input record",
     "tracked deterministic result record",
     "costed-route schema validation",
     "resource-budget schema validation",
-    "negative-control rejection",
+    "failed-verification negative-control rejection",
+    "hidden-residual negative-control rejection",
     "accepted bounded evidence-transition record"
   ],
   "artifact_refs": [
@@ -57,6 +59,7 @@
   "verification_result": "pass",
   "negative_results": [
     "route://cheap-unverified-transform is cheaper at 2.3 synthetic cost units but rejected because verification_result is fail, outcome_state is cheap_brittle, promotion_candidate is false, budget_state is residualized, and budget_decision is residual",
+    "route://hidden-residual-auto-merge is cheaper at 8.2 synthetic cost units and passes surface verification but is rejected because outcome_state is hidden_cost, residual ownership is missing, reviewer handoff is lost, budget_state is residualized, and budget_decision is residual",
     "route://frontier-manual-review remains eligible as an adequate overkill baseline at 43.0 synthetic cost units but is not selected because route://bounded-transform-plus-verifier is eligible at 14.2 synthetic cost units",
     "no chapter core claim is promoted above argument",
     "no deployed routing, scheduler, runtime, benchmark, model-quality, source-interpretation, safety, or economic outcome is claimed"
@@ -67,7 +70,8 @@
     "docs/costed_route_resource_slice.md"
   ],
   "downgrade_triggers": [
-    "validator fails to reject the cheaper failed negative control",
+    "validator fails to reject the cheaper failed-verification negative control",
+    "validator fails to reject the hidden-residual negative control",
     "selected route is not the lowest-cost eligible route",
     "baseline route is no longer eligible",
     "result record drifts from recomputed cost units",

@@ -4,10 +4,11 @@ This experiment records a bounded v1.0 non-infrastructure measured/replayed
 slice for the ASI Stack release gate.
 
 The slice uses public-safe synthetic route and budget records to test one
-claim: a costed-route selector can reject a cheaper inadequate route, compare
+claim: a costed-route selector can reject cheaper inadequate routes, compare
 against an adequate overkill baseline, and select the lowest-cost adequate
 route only when resource-budget gates, verification, fallback, residual, and
-non-claim boundaries are present.
+non-claim boundaries are present. The current fixture includes one failed
+verification control and one hidden-residual control.
 
 It is not a model run, runtime router, scheduler, benchmark, economic result,
 or deployed safety result.
