@@ -514,7 +514,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 697 theorem declarations, 554
+- The generated proof-depth report records 717 theorem declarations, 573
   derived/decomposed declarations, 0 unknown/mixed declarations, 102
   safety-critical declarations, and 10 remaining safety-critical
   direct/projection declarations.
@@ -536,8 +536,8 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 697 theorem declarations, 554
-  derived/decomposed theorem declarations, 143 direct/projection-style theorem
+- `docs/proof_depth_classification.md` records 717 theorem declarations, 573
+  derived/decomposed theorem declarations, 144 direct/projection-style theorem
   declarations, and 0 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
   external-handoff rejection theorem and a finite layer-contract admission
@@ -768,13 +768,16 @@ Current proof status:
   measurement, lifecycle-engine behavior, residual-ledger storage, live
   quarantine routing, rollback execution, MoECOT replay, current-readiness
   checks, and benchmark quality as blockers.
-- `AsiStackProofs.ArtifactGraph` now has finite negative-case theorems
-  rejecting produced artifacts missing parent/source/context refs and
-  incomplete or blocked provenance attempting promoted claim support; this
-  reduces the projection-only surface for Artifact Graphs while leaving
-  deployed artifact graph service behavior, real replay, audit reconstruction,
-  provenance completeness checking, and imported produced-artifact traces as
-  blockers.
+- `AsiStackProofs.ArtifactGraph` now has finite provenance, replay-grade,
+  claim/test-link, stale-certificate, promotion, non-claim, and
+  artifact-admission route coverage. Its derived theorems reject modeled
+  artifacts missing parent/source/context/transaction/certificate/tool/claim/
+  test/audit/replay/evidence/non-claim fields, insufficient replay grade, stale
+  certificates, and blocked promotion, while admitting complete non-promoted or
+  approved-promoted records. This reduces the projection-only surface for
+  Artifact Graphs while leaving deployed artifact graph service behavior, real
+  replay, audit reconstruction, provenance completeness checking, and imported
+  produced-artifact traces as blockers.
 - The safety-critical modules have real derived/decomposed depth now, but many
   non-safety-critical chapters still have only traceability-style projection
   hooks.
@@ -909,7 +912,7 @@ Per-chapter burn-down:
 | `claim-ledgers-and-belief-revision` | Belief-revision lineage is lightly anchored. | Source-note AGM, truth-maintenance, and formal epistemology comparators; show claim-ledger revision as an architecture bridge, not only bookkeeping. |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-carrying, autoformalization, LLM-judge, debate, and "Spinoza" naming need outside-reader grounding. | Add source-noted proof-carrying-code, autoformalization, debate, and LLM-as-judge positioning; evaluate whether the chapter name earns its cognitive load in reader prose. |
 | `labor-os-and-typed-jobs` | Durable-execution/workflow-orchestration anchoring and planned tests need completion. | Source-note Temporal, workflow orchestration, BPMN/Airflow, and scheduler comparators; implement planned typed-job tests. |
-| `artifact-graphs-audit-logs-and-replay` | Provenance/replay proof coverage is narrow. | Add provenance-closure, replay-grade monotonicity, claim/test-link integrity, and blocked-promotion negative cases; pursue real artifact replay traces where available. |
+| `artifact-graphs-audit-logs-and-replay` | Provenance/replay proof coverage was narrow; finite route coverage is now broader than the deployed evidence. | Partially executed: added provenance closure, replay-grade sufficiency, claim/test-link integrity, stale-certificate, non-claim, blocked-promotion, and complete-admission route theorems. Remaining work: pursue real produced-artifact traces, deployed artifact graph service behavior, real replay, audit reconstruction, and provenance-completeness checking before stronger claims. |
 | `runtime-adapters-tool-permissions-and-human-approval` | Safety-critical action boundary had too few adversarial proof scenarios relative to its role as the external-effect boundary. | Partially executed: added a finite runtime-adapter route model for scoped approval, effect-lease scope/expiry/sandbox, parent and lease authority ceilings, confused-deputy rejection, sandbox-escape rejection, rollback-handle requests, effect-receipt/audit/non-claim blockers, and complete low-impact dispatch. Remaining work: executable/live adapter harness, real sandbox isolation, approval-service behavior, secret-handle safety, rollback execution, live effect-receipt validation, and broader harness parity. |
 | `procedural-memory-and-cognitive-loop-closure` | Narrow proof coverage and light skill-library/tool-synthesis anchoring. | Add promotion-gating and regression-preservation theorems; source-note Voyager, DreamCoder, learned-tool, and tool-making-agent comparators where appropriate. |
 | `routing-heads-and-specialist-cores` | Strong chapter with remaining planned tests. | Finish planned routing tests with authority/readiness/residual non-claims; avoid turning route-quality fixtures into learned-router claims. |

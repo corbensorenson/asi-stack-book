@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-01 - Expand Artifact Graph route proofs
+
+- Added replay-grade and artifact-admission route coverage to
+  `AsiStackProofs.ArtifactGraph`, bringing the module to 24 theorem declarations
+  with derived route/negative-case coverage for missing parent/source/context/
+  transaction/certificate/tool/claim/test/audit/replay/evidence/non-claim
+  fields, stale certificates, blocked promotion, and complete modeled admission.
+- Updated the Artifact Graphs chapter, book outline, manifest test rows,
+  proof-depth report, proof-artifact audit, proof adequacy review, v1.x roadmap,
+  proof/code plan, and v1.0 proof-envelope status guard to record the broader
+  finite-record proof envelope.
+- Artifact Graphs remains at `argument`; this does not prove a deployed artifact
+  graph service, real replay engine, audit reconstruction service, provenance
+  completeness checker, imported produced-artifact traces, benchmark result, or
+  support-state promotion.
+
 ## 2026-07-01 - Expand Context Transactions route proofs
 
 - Added a finite `ContextTransactionRoute` review model to
