@@ -1,0 +1,117 @@
+{
+  "artifact_refs": [
+    "docs/theseus_report_import_slice.md",
+    "docs/theseus_generation_mode_import_slice.md",
+    "docs/theseus_support_replay_probe.md",
+    "scripts/validate_theseus_report.py",
+    "scripts/validate_theseus_generation_mode_import.py",
+    "lean/AsiStackProofs/FastGeneration.lean",
+    "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
+    "experiments/theseus_import/results/2026-06-29-local.json",
+    "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json",
+    "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
+    "experiments/theseus_support_replay_probe/results/2026-07-01-local.json"
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_theseus_support_replay_probe.py --write-result",
+  "evidence_transition_created": false,
+  "local_only": true,
+  "non_claims": [
+    "This Theseus support replay probe does not promote any chapter core claim above argument.",
+    "This Theseus support replay probe does not create a support-state transition.",
+    "This Theseus support replay probe does not rerun Project Theseus, prove deployed Theseus runtime behavior, prove generation speed, prove useful-solution-per-second improvement, prove model quality, prove routing quality, prove benchmark quality, prove safety, prove alignment, prove transfer, or prove ASI.",
+    "This Theseus support replay probe records repository command execution over public-safe static imports only; it is not a clean live Theseus replay, public task-bundle run, production dashboard record, or external review."
+  ],
+  "pass": true,
+  "probe_id": "theseus-support-replay-probe-2026-07-01-local",
+  "record_kind": "theseus_support_replay_probe",
+  "recorded_at_utc": "2026-07-01T15:16:27Z",
+  "replay_commands": [
+    {
+      "command": "python3 scripts/validate_theseus_report.py",
+      "elapsed_ms": 30.511,
+      "evidence_surface": "public-safe static Project Theseus architecture-gate import",
+      "exit_code": 0,
+      "id": "theseus_architecture_gate_import",
+      "output_excerpt": [
+        "Project Theseus report validation passed: 1 valid report, 3 expected-invalid controls, digest c33ea5d8d466e394ac556eebd623fb0eb43f601d79ea5f66021ec57762751923."
+      ],
+      "output_sha256": "cbf3d334f79e535c2b6c07a455a84985af774a801ee2b3f084dbfe28a4f7623d"
+    },
+    {
+      "command": "python3 scripts/validate_theseus_generation_mode_import.py",
+      "elapsed_ms": 55.85,
+      "evidence_surface": "public-safe static Project Theseus generation-mode import plus Fast Generation Lean bridge",
+      "exit_code": 0,
+      "id": "theseus_generation_mode_import",
+      "output_excerpt": [
+        "Project Theseus generation-mode import validation passed: 1 valid report, 4 expected-invalid controls, digest 0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709."
+      ],
+      "output_sha256": "0a83956dd8289bd6a676ebaa540fbb67c428bafa7e33060d64d9a9698ddd082b"
+    }
+  ],
+  "summary": "Theseus support replay probe replayed the public-safe architecture-gate import and generation-mode import validators, then recorded command-output digests and tracked artifact hashes without creating a support-state transition.",
+  "support_state_effect": "none",
+  "tracked_artifacts": [
+    {
+      "bytes": 4232,
+      "lines": 118,
+      "path": "docs/theseus_report_import_slice.md",
+      "sha256": "7a1360efbbcbe9bb28d441dc0a4210ab850aeb0ca1e78bbe137bc32b7b51f651"
+    },
+    {
+      "bytes": 5654,
+      "lines": 137,
+      "path": "docs/theseus_generation_mode_import_slice.md",
+      "sha256": "96a7e1673f9477e69be3f5612fb3440ae350e047b4a77322adb884a62dfa5192"
+    },
+    {
+      "bytes": 3150,
+      "lines": 73,
+      "path": "docs/theseus_support_replay_probe.md",
+      "sha256": "2d1ad82cbaaba56d87c7fdc5bade2fa7b349058c9689f814bf862e7abd405a58"
+    },
+    {
+      "bytes": 12951,
+      "lines": 318,
+      "path": "scripts/validate_theseus_report.py",
+      "sha256": "12d705c974de2589ed24c3cac723f0bf36e566e0df8732a079fd6d597dbd506d"
+    },
+    {
+      "bytes": 21265,
+      "lines": 486,
+      "path": "scripts/validate_theseus_generation_mode_import.py",
+      "sha256": "f9d58e00c1f4e4b8a0ceed80d3df9ed710fa0df3c54605916aa98a0715decdee"
+    },
+    {
+      "bytes": 21263,
+      "lines": 562,
+      "path": "lean/AsiStackProofs/FastGeneration.lean",
+      "sha256": "41c2431360de5ef42010fcdeb0453498f5993fb86b888e06c305e6f96037c333"
+    },
+    {
+      "bytes": 7621,
+      "lines": 174,
+      "path": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
+      "sha256": "b95e9ed63a1492eeed8b335a219d41b9264c02a71e6a4e8c4e738f76f9625769"
+    },
+    {
+      "bytes": 1207,
+      "lines": 21,
+      "path": "experiments/theseus_import/results/2026-06-29-local.json",
+      "sha256": "d50105dbb1d2679cfd5c96677871030b60f7ce04fe7e9f437c0cd1174c4d0a90"
+    },
+    {
+      "bytes": 12824,
+      "lines": 264,
+      "path": "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json",
+      "sha256": "492041459a221bf207cf55c72495a8376f3cc40e934c47283489c15d5dfba1d8"
+    },
+    {
+      "bytes": 2248,
+      "lines": 48,
+      "path": "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
+      "sha256": "3e4d210d8186ad406bab9ed71792ca44e2e550f4d71ae8b8092337d0a1151d4b"
+    }
+  ]
+}

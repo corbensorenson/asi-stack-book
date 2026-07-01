@@ -128,7 +128,7 @@ not be quoted in the book as an external authority.
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 44 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
-| P1 | Project Theseus is the right implementation reference; the first import is intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes, and `docs/theseus_report_import_slice.md` now records one static digest-verified architecture-gate report import. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static import as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
+| P1 | Project Theseus is the right implementation reference; the first imports are intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes; `docs/theseus_report_import_slice.md` records one static digest-verified architecture-gate report import; `docs/theseus_generation_mode_import_slice.md` records one static digest-verified generation-mode import; and `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static imports and support probe as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
 | P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft assets plus text-equivalent chapter anchors. There is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
 | P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated; ten reader-handoff key figures now have draft SVG assets and accessibility-oriented prose equivalents, but they remain draft reader aids rather than release-reviewed art. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, stable across web, EPUB, PDF, DOCX, and audio companion treatment, and reviewed as artifacts before reader release. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 44 core claims still remain `argument`; three narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
@@ -977,6 +977,16 @@ Current status after the first two ASI-side Project Theseus imports:
   boundary: useful as implementation-reference and negative promotion evidence,
   not a clean live Theseus rerun, not a generation-speed result, not a
   support-state transition, and not a chapter-core promotion.
+- `scripts/run_theseus_support_replay_probe.py --write-result` and
+  `scripts/validate_theseus_support_replay_probe.py` now record and validate a
+  local support replay probe over the two public-safe Project Theseus import
+  validators, with command-output digests, elapsed records, tracked artifact
+  hashes, and explicit no-transition boundaries.
+- `docs/theseus_support_replay_probe.md` records the exact probe boundary:
+  reproducibility and accounting over static imports only, not a clean live
+  Theseus replay, not a public task-bundle run, not external review, not a
+  generation-speed or useful-solution-per-second result, and not a
+  support-state transition.
 - The remaining stronger milestone work is a clean Project Theseus replay or
   archived public release fixture, public task bundle, quality/residual review,
   plus any separate accepted evidence-transition record if a bounded non-core
@@ -1136,6 +1146,14 @@ Current status for the focused v1.x active evidence cycle:
   `AsiStackProofs.FastGeneration` fixture. This closes the immediate "raw speed
   is not evidence" gap without claiming a speed-quality result, live Theseus
   replay, public benchmark run, or chapter-core support-state movement.
+- `docs/theseus_support_replay_probe.md` adds a local replay-accounting probe
+  for the same support surface: the runner executes the architecture-gate import
+  validator and the generation-mode import validator, records output digests and
+  tracked artifact hashes, and the validator replays both commands before the
+  full book gate passes. This improves drift detection for the Project Theseus
+  support lane without claiming a clean live Theseus run, public task bundle,
+  model-quality result, generation-speed result, external review, or
+  support-state transition.
 - The next evidence work should deepen the flagship Resource Economics lane by
   replacing fixture-declared quality, local command replay, and CI publication
   metadata with live or externally reviewable workload quality review,

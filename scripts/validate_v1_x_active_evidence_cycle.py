@@ -32,6 +32,7 @@ STATIC_REQUIRED_FRAGMENTS = (
     "docs/simulation_transfer_boundary_harness.md",
     "docs/theseus_report_import_slice.md",
     "docs/theseus_generation_mode_import_slice.md",
+    "docs/theseus_support_replay_probe.md",
     "lean/AsiStackProofs/FastGeneration.lean",
 )
 
@@ -131,6 +132,10 @@ def main() -> None:
         "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
         "lean/AsiStackProofs/FastGeneration.lean",
         "scripts/validate_theseus_generation_mode_import.py",
+        "docs/theseus_support_replay_probe.md",
+        "experiments/theseus_support_replay_probe/results/2026-07-01-local.json",
+        "scripts/run_theseus_support_replay_probe.py",
+        "scripts/validate_theseus_support_replay_probe.py",
     )
     for relative in referenced_paths:
         if relative not in text:

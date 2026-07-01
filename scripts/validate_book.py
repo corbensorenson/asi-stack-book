@@ -101,6 +101,8 @@ REQUIRED = [
     "scripts/validate_circle_public_replay.py",
     "scripts/validate_theseus_report.py",
     "scripts/validate_theseus_generation_mode_import.py",
+    "scripts/run_theseus_support_replay_probe.py",
+    "scripts/validate_theseus_support_replay_probe.py",
     "scripts/validate_phase5_harness_registry.py",
     "scripts/build_reader_edition.py",
     "scripts/build_source_matrix.py",
@@ -115,6 +117,7 @@ REQUIRED = [
     "docs/source_evidence_audit.md",
     "docs/core_claim_transition_coverage.md",
     "docs/v1_x_active_evidence_cycle.md",
+    "docs/CHAPTER_REVIEWS.md",
     "docs/chapter_consolidation_sequence.md",
     "docs/chapter_consolidation_pilot_plan.md",
     "docs/chapter_consolidation_dry_run_constitutional_alignment.md",
@@ -153,6 +156,7 @@ REQUIRED = [
     "docs/circle_public_replay_consumer_gate.md",
     "docs/theseus_report_import_slice.md",
     "docs/theseus_generation_mode_import_slice.md",
+    "docs/theseus_support_replay_probe.md",
     "docs/phase5_harness_registry.md",
     "docs/claim_ledger_revision_harness.md",
     "docs/proof_carrying_claim_harness.md",
@@ -201,6 +205,7 @@ REQUIRED = [
     "experiments/circle_public_replay/results/2026-06-29-local.json",
     "experiments/theseus_import/results/2026-06-29-local.json",
     "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
+    "experiments/theseus_support_replay_probe/results/2026-07-01-local.json",
     "evidence_transitions/README.md",
     "claim_decisions/v1_0_core_claim_no_promotion.json",
     "editions/release_profiles.json",
@@ -730,6 +735,7 @@ def main() -> None:
     run_validator("validate_circle_public_replay.py")
     run_validator("validate_theseus_report.py")
     run_validator("validate_theseus_generation_mode_import.py")
+    run_validator("validate_theseus_support_replay_probe.py")
     run_validator("validate_phase5_harness_registry.py")
     run_validator("run_phase5_harnesses.py")
     print("Book validation passed.")

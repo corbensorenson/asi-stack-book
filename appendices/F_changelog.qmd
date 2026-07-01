@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Add Project Theseus support replay probe
+
+- Added `scripts/run_theseus_support_replay_probe.py`,
+  `scripts/validate_theseus_support_replay_probe.py`,
+  `docs/theseus_support_replay_probe.md`, and
+  `experiments/theseus_support_replay_probe/results/2026-07-01-local.json`
+  as a local replay-accounting probe over the two public-safe Project Theseus
+  import validators.
+- Wired the probe into `scripts/validate_book.py`, the active evidence-cycle
+  ledger, the v1.0 status guard, the defended-contribution track record, the
+  roadmap, the repository map, README, and the affected Project Theseus and
+  Fast Generation chapter status surfaces.
+- This records command-output digests and tracked artifact hashes for the
+  static ASI-side Theseus imports only. It does not create a clean live Theseus
+  replay, public task-bundle run, generation-speed result,
+  useful-solution-per-second result, model-quality result, support-state
+  transition, or chapter-core promotion.
+
 ## 2026-07-01 - Connect Efficient ASI reader thesis to selector evidence
 
 - Updated the drafting curated reader chapter for The Efficient ASI Hypothesis
