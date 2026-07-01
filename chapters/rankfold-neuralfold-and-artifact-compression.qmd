@@ -4,7 +4,7 @@ chapter_id: "rankfold-neuralfold-and-artifact-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-07-01"
 primary_sources:
   - "rankfold_neuralfold"
   - "rankfold_compressor"
@@ -15,7 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all five assigned artifact-compression sources; support remains at argument until a compressor, deterministic decoder, corpus benchmark, utility probe, or accepted evidence transition exists."
-  - "The compressed_artifact_record fixture validates schema/example consistency for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims only; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run."
+  - "The compressed_artifact_record fixture validates schema/example consistency for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims only; `AsiStackProofs.ArtifactCompression` now includes a finite admission lifecycle route envelope over compressed-artifact use boundaries; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run."
   - "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not reproduced here and are treated only as source-reported architecture/lineage context."
   - "No support-state promotion, raw source publication, codec correctness result, or downstream utility result is implied by this drafting pass."
 ---
@@ -28,13 +28,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-07-01 |
 | Primary source records | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
 | Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, and `bugbrain`; no raw private source text is published. |
-| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback and residual/fallback metadata predicates plus negative-case theorems blocking failed-probe/no-fallback use and promotion with missing residual or fallback metadata; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
+| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback, residual/fallback metadata, and admission-lifecycle route predicates plus negative-case theorems blocking failed-probe/no-fallback use, promotion with missing residual or fallback metadata, and modeled admission gaps; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -250,8 +250,9 @@ This artifact-compression admission layer is still an architectural target. The 
 | Probe-route fallback test | Check that a failed task probe routes to the full artifact. | planned; not run |
 | Downstream utility preservation test | Compare compressed and full artifacts on a bounded task suite. | planned; not run |
 | Access-pattern admission test | Check that cold archive, hot retrieval, exact replay, preview, benchmark, and audit consumers receive only compressed artifacts admitted for their use envelope. | planned; not run |
+| Artifact compression admission lifecycle route | Check that a modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit finite outcomes. | implemented in `AsiStackProofs.ArtifactCompression`; no compression ratio, decoder correctness, downstream utility, behavioral fallback, benchmark, support-state-promotion, or codec-performance claim |
 
-The implemented row validates fixture/schema consistency only. The remaining rows require an actual compressor/decoder or a bounded toy surrogate, plus baseline artifacts and task probes; they are not reported results. When a behavioral test is implemented, the chapter should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented fixture row validates schema consistency only, and the implemented lifecycle row checks only a finite modeled route. The remaining rows require an actual compressor/decoder or a bounded toy surrogate, plus baseline artifacts and task probes; they are not reported results. When a behavioral test is implemented, the chapter should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -259,8 +260,9 @@ The implemented row validates fixture/schema consistency only. The remaining row
 |---|---|---|---|
 | `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | implemented |
 | `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | implemented |
+| `lean:compression.artifacts.admission_lifecycle_route` | `AsiStackProofs.ArtifactCompression` | A modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over artifact-use and metadata fields. The module now includes negative-case theorems showing that a compressed artifact use is invalid when the probe failed and no fallback is routed, and that a promotion candidate is invalid when residual or fallback metadata is missing. They prove only those record-level gates; they do not prove a compression ratio, decoder correctness, task utility, behavioral fallback execution, or benchmark result.
+These Lean hooks are implemented as finite-record predicates over artifact-use, metadata, and admission-review fields. The module now includes negative-case theorems showing that a compressed artifact use is invalid when the probe failed and no fallback is routed, that a promotion candidate is invalid when residual or fallback metadata is missing, and that modeled admission reviews route missing full-artifact preservation, manifest, use-envelope, access-pattern, admission-state, decode-determinism, exact-replay readiness, probe, fallback, residual, utility, evidence-transition, and non-claim-boundary gaps to explicit outcomes. They prove only those record-level gates; they do not prove a compression ratio, decoder correctness, task utility, behavioral fallback execution, codec performance, support-state promotion, or benchmark result.
 
 ## Source crosswalk
 

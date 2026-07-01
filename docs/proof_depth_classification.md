@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 126 |
+| Proof targets in manifest | 127 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 461 |
+| Theorem declarations classified | 476 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 340 |
+| Derived/decomposed theorem declarations | 355 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 69 |
 | Safety-critical direct/projection declarations | 10 |
@@ -53,7 +53,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 2 | 4 | 1 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 4 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 8 | 1 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -117,10 +117,25 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Alignment.lean` | `protected_migration_without_rollback_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `protected_predicate_weakening_without_reviewer_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `self_modification_that_weakens_protected_predicate_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `complete_compression_admission_allows_compressed_artifact` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `compressed_artifact_use_requires_probe_or_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `compressed_use_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `exact_replay_without_readiness_blocks_use` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `failed_required_probe_with_fallback_routes_to_fallback` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `failed_required_probe_without_fallback_requests_artifact` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `invalid_compressed_artifact_use_without_probe_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_access_pattern_requests_access_pattern` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_compression_manifest_requests_manifest` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_decoder_determinism_requests_record` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_full_artifact_requests_preservation` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_residual_metadata_requests_residual_record` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_use_envelope_requests_envelope` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `missing_utility_evidence_requests_evidence` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `no_compressed_use_request_stays_idle` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promoted_compression_record_cannot_omit_residual_or_fallback_metadata` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promotion_candidate_missing_residual_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `promotion_request_without_transition_requests_transition` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | `unadmitted_state_blocks_compressed_use` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `incomplete_or_blocked_provenance_blocks_promoted_claim_support` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `missing_required_provenance_blocks_promoted_claim_support` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_missing_trace_refs_rejected` | derived_or_decomposed | no | uses cases, have, rw |

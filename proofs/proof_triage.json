@@ -901,6 +901,16 @@
       "rationale": "Implemented in AsiStackProofs.ArtifactCompression as a finite metadata-completeness predicate: promotion requires residual and fallback metadata."
     },
     {
+      "tag": "lean:compression.artifacts.admission_lifecycle_route",
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "module": "AsiStackProofs.ArtifactCompression",
+      "formal_target": "A modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactCompression as a finite admission-lifecycle route function and derived route theorems for missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, fallback-artifact gaps, residual-metadata gaps, utility-evidence gaps, missing evidence-transition records for support-promotion requests, missing non-claim boundaries, and complete compressed-artifact admission."
+    },
+    {
       "tag": "lean:representation.semantic_tree.operational_invariant",
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "module": "AsiStackProofs.SemanticRepresentation",

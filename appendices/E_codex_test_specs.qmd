@@ -207,6 +207,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Compression ratio test | planned | not run |
 | `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Probe-route fallback test | planned | not run |
 | `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Downstream utility preservation test | planned | not run |
+| `rankfold-neuralfold-and-artifact-compression` | RankFold, NeuralFold, and Artifact Compression | Artifact compression admission lifecycle route | implemented | passes via Lean route theorems; no compression ratio, decoder correctness, downstream utility, behavioral fallback, benchmark, support-state-promotion, or codec-performance claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Generation-mode resource-budget alignment harness | implemented | passing via `python3 scripts/validate_generation_mode_baselines.py` |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource budget ledger harness | implemented | passing via `python3 scripts/validate_resource_budget_ledgers.py` |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Required budget-gate preservation negative case | implemented | passes via Lean negative case; no scheduler-quality or economic-optimality claim |
@@ -378,16 +379,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 126 |
+| Proof targets covered by triage | 127 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 126 |
+| implemented | 127 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 126 |
+| implemented | formal-invariant | lean-candidate | 127 |

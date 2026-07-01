@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-07-01 - Artifact compression admission lifecycle proof
+
+- Strengthened `AsiStackProofs.ArtifactCompression` with a finite
+  `CompressionAdmissionRoute`, `CompressionAdmissionReview`, and
+  `CompressionAdmissionRouteFor` decision surface over compressed-artifact use
+  requests, preserved full artifacts, compression manifests, use envelopes,
+  access patterns, admission states, decoder-determinism records, exact-replay
+  readiness, task probes, fallback artifacts, residual metadata, utility
+  evidence, evidence-transition records, and non-claim boundaries.
+- Added the third RankFold/NeuralFold proof target,
+  `lean:compression.artifacts.admission_lifecycle_route`, plus derived route
+  theorems showing that missing preserved full artifacts, missing manifests,
+  use-envelope and access-pattern gaps, unadmitted states,
+  decoder-determinism gaps, exact-replay readiness failures, failed probes,
+  missing fallback artifacts, residual-metadata gaps, utility-evidence gaps,
+  support-promotion gaps, missing evidence-transition records, and missing
+  non-claim boundaries route to explicit modeled outcomes.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 328
+  generated chapter-level rows: 228 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 127 implemented targets, and the proof-depth
+  classifier now reports 476 theorem declarations, 121 direct/projection-style
+  declarations, and 355 derived/decomposed declarations.
+- Updated the RankFold/NeuralFold chapter, book outline, proof adequacy review,
+  v1.x/v1.0 roadmap/status surfaces, focus audit, publication readiness,
+  repository map, proof/code plan, manuscript status, and status snapshot
+  guard. This does not promote, demote, deprecate, or refute any live claim;
+  prove compression ratio, decoder correctness, task utility, downstream
+  utility, behavioral fallback execution, codec performance, benchmark
+  performance, support-state promotion, reader artifact approval, release
+  status, or audio artifact readiness.
+
 ## 2026-07-01 - Routing decision lifecycle route proof
 
 - Strengthened `AsiStackProofs.Routing` with a finite

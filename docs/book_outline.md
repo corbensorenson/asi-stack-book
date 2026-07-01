@@ -2183,6 +2183,7 @@ Draft deliverables:
 
 - A compressed artifact record with task family, access pattern, admission state, ratio, metadata costs, residual, probe, fallback trigger, exact-replay status, consumer policy, support-state effect, and utility fields.
 - Implemented repository-level fixture: `compressed_artifact_record.valid.json` validates the artifact-compression record shape, task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims only; no decoder, corpus benchmark, or downstream utility probe exists yet.
+- Implemented Lean predicate: finite artifact-compression admission lifecycle routing sends missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit modeled outcomes.
 - Planned Codex test: Compression ratio test.
 - Planned Codex test: Probe-route fallback test.
 - Planned Codex test: Downstream utility preservation test.
@@ -2194,6 +2195,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:compression.artifacts.operational_invariant` | `AsiStackProofs.ArtifactCompression` | A compressed artifact used for a task must pass that task probe or route to fallback. | implemented |
 | `lean:compression.artifacts.failure_blocks_promotion` | `AsiStackProofs.ArtifactCompression` | A compression record cannot omit residual or fallback metadata. | implemented |
+| `lean:compression.artifacts.admission_lifecycle_route` | `AsiStackProofs.ArtifactCompression` | A modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
 
 ### Resource Economics and Token Budgets
 
@@ -2616,8 +2618,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 126 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 126 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 127 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 127 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

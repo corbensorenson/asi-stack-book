@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 126 |
-| Manifest status counts | {"implemented": 126} |
-| Triage class counts | {"formal-invariant": 126} |
+| Proof targets audited | 127 |
+| Manifest status counts | {"implemented": 127} |
+| Triage class counts | {"formal-invariant": 127} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -32,7 +32,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Lean module path | Targets | Theorems | Defs | Structures |
 |---|---:|---:|---:|---:|
 | `lean/AsiStackProofs/Alignment.lean` | 2 | 6 | 8 | 4 |
-| `lean/AsiStackProofs/ArtifactCompression.lean` | 2 | 4 | 4 | 2 |
+| `lean/AsiStackProofs/ArtifactCompression.lean` | 3 | 19 | 6 | 3 |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | 2 | 4 | 3 | 1 |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 4 | 16 | 7 | 7 |
 | `lean/AsiStackProofs/Authority.lean` | 2 | 8 | 6 | 4 |
@@ -121,7 +121,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 2 | 0 | 0 |
 | `project-theseus-as-report-first-implementation-reference` | 2 | 2 | 0 | 0 |
 | `prototype-roadmap` | 2 | 2 | 0 | 0 |
-| `rankfold-neuralfold-and-artifact-compression` | 2 | 2 | 0 | 0 |
+| `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 2 | 2 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 4 | 4 | 0 | 0 |
@@ -232,6 +232,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:fast_generation.verified_speed.failure_blocks_promotion` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.operational_invariant` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.failure_blocks_promotion` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:compression.artifacts.admission_lifecycle_route` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:resources.budgets.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:resources.budgets.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:simulation.fidelity.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |

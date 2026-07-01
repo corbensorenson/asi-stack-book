@@ -7302,7 +7302,13 @@
           "codex_tests": [
             "Compression ratio test",
             "Probe-route fallback test",
-            "Downstream utility preservation test"
+            "Downstream utility preservation test",
+            {
+              "name": "Artifact compression admission lifecycle route",
+              "purpose": "Check that a modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit finite outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no compression ratio, decoder correctness, downstream utility, behavioral fallback, benchmark, support-state-promotion, or codec-performance claim"
+            }
           ],
           "lean_module": "AsiStackProofs.ArtifactCompression",
           "proof_targets": [
@@ -7316,6 +7322,12 @@
               "tag": "lean:compression.artifacts.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactCompression",
               "target": "A compression record cannot omit residual or fallback metadata.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:compression.artifacts.admission_lifecycle_route",
+              "module": "AsiStackProofs.ArtifactCompression",
+              "target": "A modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit outcomes.",
               "status": "implemented"
             }
           ],
