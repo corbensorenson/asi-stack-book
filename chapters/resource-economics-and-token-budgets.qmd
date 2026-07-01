@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-01 |
 | Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `cgs`, `rankfold_neuralfold`, `alignment_field`, `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -47,11 +47,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter uses TokenMana and PlanForge as resource-governance and planning sources, Simulation Scaling as a contract-relative physical/fidelity source, and PagedAttention/vLLM plus Reluplex as external comparators for serving economics and scoped formal verification. It does not reproduce TokenMana formal results, run load simulations, deploy vLLM, audit KV-cache behavior, run a simulator, reproduce Reluplex, validate physical feasibility, or claim measured welfare, profit, latency, throughput, productivity, transfer, or safety effects.
+TokenMana and PlanForge appear here as resource-governance and planning sources, Simulation Scaling as a contract-relative physical/fidelity source, and PagedAttention/vLLM plus Reluplex as external comparators for serving economics and scoped formal verification. The book does not reproduce TokenMana formal results, run load simulations, deploy vLLM, audit KV-cache behavior, run a simulator, reproduce Reluplex, validate physical feasibility, or claim measured welfare, profit, latency, throughput, productivity, transfer, or safety effects.
 
-Closing the compression/resource cluster, this chapter asks whether the stack actually saved anything after verification, repair, fallback, memory pressure, human review, and risk are counted. A cheaper representation or faster route is only efficient when the budget record still preserves protected gates and task success.
+Closing the compression/resource cluster, resource economics asks whether the stack actually saved anything after verification, repair, fallback, memory pressure, human review, and risk are counted. A cheaper representation or faster route is only efficient when the budget record still preserves protected gates and task success.
 
-This chapter is the cost counterpart to the security kernel. Least exposure, verification, review, replay, and rollback all consume resources. A governed stack has to budget for those costs explicitly rather than letting local optimization make them disappear.
+Resource economics is the cost counterpart to the security kernel. Least exposure, verification, review, replay, and rollback all consume resources. A governed stack has to budget for those costs explicitly rather than letting local optimization make them disappear.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -109,6 +109,14 @@ Appendix C now carries passage-reviewed mappings for the resource-economics and 
 | `alignment_field` | Normative/speculative boundaries around agency, dignity, confinement, consciousness heuristics, and metaphysical assumptions in simulation scenarios. | Philosophical/normative source, not physics or simulation evidence; consciousness and metaphysical claims remain speculative. |
 | `ext_pagedattention_vllm_2023` | KV-cache memory management, batching, cache sharing, fragmentation, aggregate throughput, and serving latency as a resource-economics lane separate from verified-output quality. | Reviewed against public arXiv abstract/metadata only; no vLLM/PagedAttention deployment, cache audit, serving benchmark, local throughput measurement, latency result, or quality result has been reproduced. |
 | `ext_reluplex_2017` | Scoped property verification as an external example of a result whose claim boundary is useful precisely because the model class and property are explicit. | External paper only; no Reluplex run, ACAS Xu reproduction, ASI Stack model verification, broad system-safety proof, or simulation-transfer result has been reproduced. |
+
+## Draft Key Figure: Route Selection Budget Tradeoff
+
+::: {.asi-key-figure}
+![Draft route-selection budget tradeoff.](../assets/diagrams/route-selection-budget-tradeoff.svg){#fig-route-selection-budget-tradeoff fig-alt="Draft route-selection budget tradeoff figure showing a task request, eligibility gates, selected bounded transform plus verifier route at 14.2 cost units, adequate overkill baseline at 43.0 cost units, rejected failed-verification route at 2.3 cost units, rejected hidden-residual route at 8.2 cost units, and no deployed-router or core-claim-promotion boundary."}
+:::
+
+**How to read the route-selection figure:** The figure summarizes the bounded public costed-route slice, not a deployed scheduler. Read it from left to right: the task request enters eligibility gates, where verification, adequacy, budget dispatch, fallback, residual custody, and non-claims must all remain visible. The cheapest route is rejected because verification fails. The hidden-residual route is rejected because residual ownership and reviewer handoff are lost even though it looks cheaper than the selected route. The adequate overkill baseline stays eligible but costs more. The selected route is the lowest-cost eligible route in this synthetic fixture, with the already recorded 66.98 percent synthetic cost reduction against the adequate overkill baseline. The figure does not promote the Resource Economics core claim, prove deployed routing, measure model quality, establish scheduler behavior, or create a new evidence transition.
 
 ## Mechanism
 
