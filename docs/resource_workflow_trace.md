@@ -62,6 +62,13 @@ high-risk-first ordering, displaced-cost residualization,
 physical-feasibility-overclaim rejection, latency-only selection rejection,
 support-state non-promotion, and non-claim boundaries.
 
+The tracked result record now carries that summary-level bridge explicitly
+under `lean_fixture_alignment`: the checked theorem names and the exact field
+alignment for step count, selected-route count, total cost tenths,
+expected-invalid controls, high-risk-first ordering, residual ownership,
+physical-feasibility rejection, latency-only rejection, support-state
+non-promotion, and non-claim boundary preservation.
+
 This bridge proves fixture alignment only. It does not prove deployed scheduler
 behavior, route-search completeness, physical feasibility, model quality,
 economic outcomes, simulator adequacy, or a chapter-core support-state

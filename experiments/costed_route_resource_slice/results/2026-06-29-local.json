@@ -31,6 +31,7 @@
   "cost_reduction_vs_baseline_percent": 66.98,
   "acceptance_predicate": "The selected route is the lowest-cost eligible route, the baseline is eligible but more expensive, and both lower-cost negative controls are rejected: one for failed verification/cheap_brittle output and one for hidden residual displacement despite surface verification passing.",
   "lean_fixture_alignment": {
+    "proof_bridge_type": "field-level Python/Lean fixture equivalence",
     "lean_module": "lean/AsiStackProofs/ResourceEconomics.lean",
     "checked_constructor_count": 4,
     "selected_constructor": "boundedTransformPlusVerifier",
@@ -46,7 +47,67 @@
       "hidden_residual_auto_merge_rejected_by_fixture",
       "selected_route_is_lowest_cost_eligible_in_fixture",
       "costed_route_fixture_trace_selects_lowest_eligible_route"
-    ]
+    ],
+    "field_alignment": {
+      "route://bounded-transform-plus-verifier": {
+        "route_constructor": "boundedTransformPlusVerifier",
+        "cost_tenths": 142,
+        "verification_passed": true,
+        "adequate_outcome": true,
+        "promotion_candidate": true,
+        "budget_dispatchable": true,
+        "residual_owned": true,
+        "hidden_cost_displaced": false,
+        "fallback_visible": true,
+        "non_claim_boundary": true,
+        "eligible_by_json_rule": true
+      },
+      "route://cheap-unverified-transform": {
+        "route_constructor": "cheapUnverifiedTransform",
+        "cost_tenths": 23,
+        "verification_passed": false,
+        "adequate_outcome": false,
+        "promotion_candidate": false,
+        "budget_dispatchable": false,
+        "residual_owned": true,
+        "hidden_cost_displaced": false,
+        "fallback_visible": true,
+        "non_claim_boundary": true,
+        "eligible_by_json_rule": false
+      },
+      "route://frontier-manual-review": {
+        "route_constructor": "frontierManualReview",
+        "cost_tenths": 430,
+        "verification_passed": true,
+        "adequate_outcome": true,
+        "promotion_candidate": true,
+        "budget_dispatchable": true,
+        "residual_owned": true,
+        "hidden_cost_displaced": false,
+        "fallback_visible": true,
+        "non_claim_boundary": true,
+        "eligible_by_json_rule": true
+      },
+      "route://hidden-residual-auto-merge": {
+        "route_constructor": "hiddenResidualAutoMerge",
+        "cost_tenths": 82,
+        "verification_passed": true,
+        "adequate_outcome": false,
+        "promotion_candidate": true,
+        "budget_dispatchable": false,
+        "residual_owned": false,
+        "hidden_cost_displaced": true,
+        "fallback_visible": true,
+        "non_claim_boundary": true,
+        "eligible_by_json_rule": false
+      }
+    },
+    "selector_trace_expected": {
+      "best_route": "route://bounded-transform-plus-verifier",
+      "best_cost_tenths": 142,
+      "eligible_seen": 2,
+      "rejected_cheaper_seen": 2
+    }
   },
   "verification_result": "pass",
   "support_state_effect": "eligible_for_bounded_evidence_review",

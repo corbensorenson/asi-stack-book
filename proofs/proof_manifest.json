@@ -1147,7 +1147,7 @@
       "chapter_title": "Resource Economics and Token Budgets",
       "tag": "lean:resources.costed_route.fixture_bridge",
       "module": "AsiStackProofs.ResourceEconomics",
-      "formal_target": "The four-route costed-route fixture rejects the failed-verification and hidden-residual controls, keeps the bounded transform route eligible, and proves it is lowest-cost among eligible modeled routes.",
+      "formal_target": "The four-route costed-route fixture rejects the failed-verification and hidden-residual controls, keeps the bounded transform route eligible, proves it is lowest-cost among eligible modeled routes, and exposes field-level Python/Lean fixture alignment in the tracked result record.",
       "status": "implemented",
       "outline_line": 2317,
       "module_path": "lean/AsiStackProofs/ResourceEconomics.lean"

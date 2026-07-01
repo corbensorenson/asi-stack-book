@@ -30,11 +30,11 @@
   "pass": true,
   "probe_id": "resource-live-probe-2026-07-01-local",
   "record_kind": "resource_live_probe",
-  "recorded_at_utc": "2026-07-01T14:51:49Z",
+  "recorded_at_utc": "2026-07-01T17:57:04Z",
   "replay_commands": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 27.029,
+      "elapsed_ms": 26.537,
       "evidence_surface": "non-core synthetic-test-backed costed-route/resource-budget slice",
       "exit_code": 0,
       "id": "costed_route_resource_slice",
@@ -45,7 +45,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 26.614,
+      "elapsed_ms": 26.065,
       "evidence_surface": "deterministic multi-step Resource Economics workflow trace",
       "exit_code": 0,
       "id": "resource_workflow_trace",
@@ -56,7 +56,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 26.151,
+      "elapsed_ms": 23.389,
       "evidence_surface": "Resource Budget Record fixture decisions",
       "exit_code": 0,
       "id": "resource_budget_ledgers",
@@ -67,7 +67,7 @@
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 59.785,
+      "elapsed_ms": 53.734,
       "evidence_surface": "bounded-capacity toy trace fixtures",
       "exit_code": 0,
       "id": "capacity_smoothing",
@@ -78,7 +78,7 @@
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 36.509,
+      "elapsed_ms": 26.214,
       "evidence_surface": "simulation-transfer boundary fixtures folded into Resource Economics",
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
@@ -92,16 +92,16 @@
   "support_state_effect": "none",
   "tracked_artifacts": [
     {
-      "bytes": 4953,
-      "lines": 120,
+      "bytes": 5424,
+      "lines": 128,
       "path": "docs/costed_route_resource_slice.md",
-      "sha256": "a02fbee88cc9fab46588f963d25a956b4eb8eab0ecb64d9766caa563adb335be"
+      "sha256": "6e472c355d39e5f6265ff89fe6df2c6cd7954e9efbc5ced02602d39c043ef1b1"
     },
     {
-      "bytes": 3919,
-      "lines": 91,
+      "bytes": 4335,
+      "lines": 98,
       "path": "docs/resource_workflow_trace.md",
-      "sha256": "333f2d31fefd85bf9c23f3dd54de8e049e72872076d102e9b6560743252a4be0"
+      "sha256": "ef2534b02ccb29a6e67b9e0cd5177a1152c337cae3ed7641d18b4fb3ba9d2962"
     },
     {
       "bytes": 3145,
@@ -110,16 +110,16 @@
       "sha256": "4c55a8ab45b2d6a42bb88ee074c0e2948cc7afdf915faebb0ae6932683229c08"
     },
     {
-      "bytes": 21804,
-      "lines": 479,
+      "bytes": 23507,
+      "lines": 518,
       "path": "scripts/validate_costed_route_resource_slice.py",
-      "sha256": "6ce590f631d4bb0a7a4380b62f8cb0b75cd50b4b1b0900c2aed0c490c320f537"
+      "sha256": "ab620eb00064725d47f15b23a6ed5191266196be180a416772f82869cc6448e6"
     },
     {
-      "bytes": 20418,
-      "lines": 470,
+      "bytes": 21920,
+      "lines": 504,
       "path": "scripts/validate_resource_workflow_trace.py",
-      "sha256": "1619067aee20497fd38181ec47121714147f134acc8f0f81cfe90ff9bd06b3dd"
+      "sha256": "58a6a61b443fcd0a7ba914b8c12f3ac630dd72626012c3b9f01e6d4523c7fa93"
     },
     {
       "bytes": 9084,
@@ -152,16 +152,16 @@
       "sha256": "7698e640501456a011794c6e02449aa8fb566fffe91eb6766599b7db52dbbb57"
     },
     {
-      "bytes": 3601,
-      "lines": 68,
+      "bytes": 5763,
+      "lines": 129,
       "path": "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
-      "sha256": "63ab9c3c2c92bfd7b854151be3e95b6b9ec6048c95695d4a94e6c963a01d656b"
+      "sha256": "075febf47d0135491f418adccd4890d4a969e18fe0855fc12d820d31e70a53fd"
     },
     {
-      "bytes": 1130,
-      "lines": 30,
+      "bytes": 2160,
+      "lines": 54,
       "path": "experiments/resource_workflow_trace/results/2026-07-01-local.json",
-      "sha256": "9a391f9c8e426c6c1df74f1105b1b5f33b80ad1559c602b08caf68b0b8e66c81"
+      "sha256": "369daba02ae11d1549f8aeb4e55f1ee579e1ae2b32cfa45098b3c1609409142b"
     },
     {
       "bytes": 832,

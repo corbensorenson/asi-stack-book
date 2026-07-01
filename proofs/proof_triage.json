@@ -1074,11 +1074,11 @@
       "tag": "lean:resources.costed_route.fixture_bridge",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.ResourceEconomics",
-      "formal_target": "The four-route costed-route fixture rejects the failed-verification and hidden-residual controls, keeps the bounded transform route eligible, and proves it is lowest-cost among eligible modeled routes.",
+      "formal_target": "The four-route costed-route fixture rejects the failed-verification and hidden-residual controls, keeps the bounded transform route eligible, proves it is lowest-cost among eligible modeled routes, and exposes field-level Python/Lean fixture alignment in the tracked result record.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite bridge over the public four-route costed-route fixture: it proves the bounded route is eligible, the failed-verification and hidden-residual controls are rejected, and the bounded route is lowest-cost among modeled eligible routes. It does not prove deployed routing, scheduler behavior, workload quality, economic optimality, or chapter-core support-state promotion."
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite bridge over the public four-route costed-route fixture: it proves the bounded route is eligible, the failed-verification and hidden-residual controls are rejected, the bounded route is lowest-cost among modeled eligible routes, and the tracked result record exposes the Python/Lean field alignment for route constructors, costs, eligibility booleans, negative controls, and selector-trace expectations. It does not prove deployed routing, scheduler behavior, workload quality, economic optimality, or chapter-core support-state promotion."
     },
     {
       "tag": "lean:simulation.fidelity.operational_invariant",

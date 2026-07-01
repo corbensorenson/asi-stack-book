@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-01 - Expose Resource Economics fixture bridge fields
+
+- Strengthened the Resource Economics flagship evidence lane by requiring the
+  costed-route and workflow-trace result records to expose their Python/Lean
+  fixture-equivalence fields directly.
+- `scripts/validate_costed_route_resource_slice.py` now checks that
+  `lean_fixture_alignment` records route constructors, per-route costs,
+  eligibility booleans, negative controls, non-claim boundaries, and selector
+  trace expectations; `scripts/validate_resource_workflow_trace.py` now checks
+  the workflow result's summary-level Lean alignment fields and theorem names.
+- Updated the Resource Economics chapter, costed-route summary, workflow-trace
+  summary, outline, and v1.x roadmap. This is fixture-level bridge visibility
+  only; it does not prove deployed scheduling, route-search completeness,
+  model quality, economic outcomes, physical feasibility, or chapter-core
+  support-state promotion.
+
 ## 2026-07-01 - Surface concrete Circle receipt evidence
 
 - Added `scripts/validate_circle_concrete_evidence_surface.py` and wired it

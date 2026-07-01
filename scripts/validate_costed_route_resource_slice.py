@@ -276,6 +276,35 @@ def expected_lean_assessment(wrapper: dict[str, Any], computed_cost: float) -> d
     }
 
 
+def public_lean_alignment(route_id: str, fields: dict[str, str]) -> dict[str, Any]:
+    def bool_value(field: str) -> bool:
+        return fields[field] == "true"
+
+    eligible = (
+        bool_value("verificationPassed")
+        and bool_value("adequateOutcome")
+        and bool_value("promotionCandidate")
+        and bool_value("budgetDispatchable")
+        and bool_value("residualOwned")
+        and not bool_value("hiddenCostDisplaced")
+        and bool_value("fallbackVisible")
+        and bool_value("nonClaimBoundary")
+    )
+    return {
+        "route_constructor": fields["route"].removeprefix("."),
+        "cost_tenths": int(fields["costTenths"]),
+        "verification_passed": bool_value("verificationPassed"),
+        "adequate_outcome": bool_value("adequateOutcome"),
+        "promotion_candidate": bool_value("promotionCandidate"),
+        "budget_dispatchable": bool_value("budgetDispatchable"),
+        "residual_owned": bool_value("residualOwned"),
+        "hidden_cost_displaced": bool_value("hiddenCostDisplaced"),
+        "fallback_visible": bool_value("fallbackVisible"),
+        "non_claim_boundary": bool_value("nonClaimBoundary"),
+        "eligible_by_json_rule": eligible,
+    }
+
+
 def validate_lean_fixture_alignment(
     routes: list[dict[str, Any]],
     result: dict[str, Any],
@@ -294,6 +323,7 @@ def validate_lean_fixture_alignment(
             f"{rel(LEAN_FIXTURE)} selected constructor must be {expected_selected_constructor!r}, got {selected_constructor!r}."
         )
 
+    field_alignment: dict[str, dict[str, Any]] = {}
     for wrapper in routes:
         if not isinstance(wrapper, dict):
             continue
@@ -315,13 +345,22 @@ def validate_lean_fixture_alignment(
                 errors.append(
                     f"{rel(LEAN_FIXTURE)} .{constructor}.{field} must be {expected_value!r}, got {fields.get(field)!r}."
                 )
+        field_alignment[route_id] = public_lean_alignment(route_id, expected_fields)
 
     expected_alignment = {
+        "proof_bridge_type": "field-level Python/Lean fixture equivalence",
         "lean_module": rel(LEAN_FIXTURE),
         "checked_constructor_count": EXPECTED_ROUTE_COUNT,
         "selected_constructor": expected_selected_constructor,
         "route_constructors": dict(sorted(ROUTE_ID_TO_LEAN_CONSTRUCTOR.items())),
         "checked_theorem_names": list(REQUIRED_LEAN_THEOREMS),
+        "field_alignment": dict(sorted(field_alignment.items())),
+        "selector_trace_expected": {
+            "best_route": result.get("selected_route"),
+            "best_cost_tenths": 142,
+            "eligible_seen": 2,
+            "rejected_cheaper_seen": 2,
+        },
     }
     if result.get("lean_fixture_alignment") != expected_alignment:
         errors.append(f"{rel(RESULT)}: lean_fixture_alignment must equal {expected_alignment!r}.")

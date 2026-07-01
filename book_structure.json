@@ -7755,14 +7755,14 @@
             },
             {
               "name": "Costed-route Lean fixture alignment gate",
-              "purpose": "Check that the finite Resource Economics Lean fixture matches the public costed-route JSON route costs, selected route, negative controls, and eligibility fields used by the measured/replayed slice.",
+              "purpose": "Check that the finite Resource Economics Lean fixture matches the public costed-route JSON route costs, selected route, negative controls, eligibility fields, selector-trace expectation, and tracked result-record field alignment used by the measured/replayed slice.",
               "status": "implemented; passing via `python3 scripts/validate_costed_route_resource_slice.py`",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_costed_route_resource_slice.py`; no deployed scheduler, route-search completeness, or economic-optimality claim"
             },
             {
               "name": "Resource workflow trace harness",
-              "purpose": "Check a deterministic multi-step workflow for selected-route cost recomputation, high-risk-first scheduler ordering, protected review overhead, displaced-cost residual ownership, physical-feasibility overclaim rejection, Lean fixture alignment, and no-promotion boundaries.",
+              "purpose": "Check a deterministic multi-step workflow for selected-route cost recomputation, high-risk-first scheduler ordering, protected review overhead, displaced-cost residual ownership, physical-feasibility overclaim rejection, tracked result-record summary alignment with the finite Lean fixture, and no-promotion boundaries.",
               "status": "implemented; passing via `python3 scripts/validate_resource_workflow_trace.py`",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_resource_workflow_trace.py`; no deployed scheduler, physical-feasibility, model-quality, or economic-outcome claim"

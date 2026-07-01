@@ -53,6 +53,14 @@ that the replay ends with the selected route, two eligible routes seen, and two
 cheaper rejected controls. This is still fixture-level trace evidence, not a
 deployed scheduler proof.
 
+The tracked result record now carries the field-level bridge explicitly under
+`lean_fixture_alignment`: route constructors, per-route `cost_tenths`, the
+verification, adequacy, promotion, dispatch, residual, hidden-cost, fallback,
+and non-claim booleans checked against Lean, plus the expected selector trace
+summary. The public artifact can therefore be audited without treating the
+validator source code as the only place where the Python/Lean equivalence is
+visible.
+
 ## Inputs
 
 - `experiments/costed_route_resource_slice/input/v1_0_costed_routes.json`

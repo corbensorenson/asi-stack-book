@@ -310,7 +310,13 @@ def fixture_expectation(path: Path) -> bool | None:
     return None
 
 
-def validate_result(expected: dict[str, Any], valid_count: int, invalid_count: int, errors: list[str]) -> None:
+def validate_result(
+    expected: dict[str, Any],
+    valid_count: int,
+    invalid_count: int,
+    expected_alignment: dict[str, Any],
+    errors: list[str],
+) -> None:
     if not RESULT.exists():
         errors.append(f"Missing {rel(RESULT)}.")
         return
@@ -336,6 +342,8 @@ def validate_result(expected: dict[str, Any], valid_count: int, invalid_count: i
             errors.append(f"{rel(RESULT)}: {key} must be {expected_value!r}.")
     if value.get("selected_routes") != expected["selected_routes"]:
         errors.append(f"{rel(RESULT)}: selected_routes mismatch.")
+    if value.get("lean_fixture_alignment") != expected_alignment:
+        errors.append(f"{rel(RESULT)}: lean_fixture_alignment must equal {expected_alignment!r}.")
     result_non_claims = text_blob(value.get("non_claims", []))
     for term in ("does not promote", "does not prove", "does not create"):
         if term not in result_non_claims:
@@ -391,7 +399,25 @@ def parse_lean_fixture(errors: list[str]) -> dict[str, str]:
     }
 
 
-def validate_lean_fixture(expected: dict[str, Any], invalid_count: int, errors: list[str]) -> None:
+def public_lean_alignment(fields: dict[str, str]) -> dict[str, Any]:
+    def bool_value(field: str) -> bool:
+        return fields[field] == "true"
+
+    return {
+        "step_count": int(fields["stepCount"]),
+        "selected_route_count": int(fields["selectedRouteCount"]),
+        "total_cost_tenths": int(fields["totalCostTenths"]),
+        "expected_invalid_control_count": int(fields["expectedInvalidControlCount"]),
+        "high_risk_first": bool_value("highRiskFirst"),
+        "displaced_costs_residualized": bool_value("displacedCostsResidualized"),
+        "physical_feasibility_overclaim_rejected": bool_value("physicalFeasibilityOverclaimRejected"),
+        "latency_only_selection_rejected": bool_value("latencyOnlySelectionRejected"),
+        "support_state_effect_none": bool_value("supportStateEffectNone"),
+        "non_claim_boundary": bool_value("nonClaimBoundary"),
+    }
+
+
+def validate_lean_fixture(expected: dict[str, Any], invalid_count: int, errors: list[str]) -> dict[str, Any]:
     fields = parse_lean_fixture(errors)
     expected_fields = {
         "stepCount": str(expected["step_count"]),
@@ -411,6 +437,14 @@ def validate_lean_fixture(expected: dict[str, Any], invalid_count: int, errors: 
                 f"{rel(LEAN_FIXTURE)} resourceWorkflowTraceFixture.{field} "
                 f"must be {expected_value!r}, got {fields.get(field)!r}."
             )
+    if set(expected_fields) - set(fields):
+        return {}
+    return {
+        "proof_bridge_type": "summary-level Python/Lean fixture equivalence",
+        "lean_module": rel(LEAN_FIXTURE),
+        "checked_theorem_names": list(REQUIRED_LEAN_THEOREMS),
+        "field_alignment": public_lean_alignment(expected_fields),
+    }
 
 
 def main() -> None:
@@ -451,9 +485,9 @@ def main() -> None:
     if len(valid_summaries) != 1:
         errors.append("Exactly one valid public workflow trace is expected for this narrow slice.")
     else:
-        validate_result(valid_summaries[0], valid_count, invalid_count, errors)
+        expected_alignment = validate_lean_fixture(valid_summaries[0], invalid_count, errors)
+        validate_result(valid_summaries[0], valid_count, invalid_count, expected_alignment, errors)
         validate_summary(valid_summaries[0], valid_count, invalid_count, errors)
-        validate_lean_fixture(valid_summaries[0], invalid_count, errors)
 
     if errors:
         fail(errors)

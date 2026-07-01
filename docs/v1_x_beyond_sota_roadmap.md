@@ -1159,9 +1159,12 @@ Current status for the focused v1.x active evidence cycle:
   eligibility fields, including the finite selector-state trace theorem
   `costed_route_fixture_trace_selects_lowest_eligible_route`. The trace proves
   the replay ends with the selected route after seeing two eligible routes and
-  rejecting two cheaper controls. This is the current flagship measured lane
-  while preserving the non-core `synthetic-test-backed` scope and no
-  chapter-core promotion.
+  rejecting two cheaper controls. The tracked result now exposes the
+  field-level Python/Lean alignment directly: constructors, route costs,
+  verification/adequacy/promotion/dispatch/residual/fallback/non-claim
+  booleans, eligibility decisions, and selector-trace expectations. This is the
+  current flagship measured lane while preserving the non-core
+  `synthetic-test-backed` scope and no chapter-core promotion.
 - `docs/resource_workflow_trace.md` adds the next deterministic public trace
   for the same flagship lane: `python3 scripts/validate_resource_workflow_trace.py`
   checks 1 valid and 4 expected-invalid multi-step workflow fixtures for
@@ -1169,10 +1172,11 @@ Current status for the focused v1.x active evidence cycle:
   protected review overhead, displaced-cost residual ownership,
   physical-feasibility overclaim rejection, and no-promotion boundaries. This
   validator also checks the public result against a finite
-  `AsiStackProofs.ResourceEconomics` workflow-trace summary fixture. This still
-  does not prove deployed scheduler behavior, model quality, TokenMana or
-  PlanForge behavior, economic outcomes, simulator adequacy, or physical
-  feasibility.
+  `AsiStackProofs.ResourceEconomics` workflow-trace summary fixture, and the
+  tracked result exposes the summary-level Python/Lean alignment fields and
+  checked theorem names. This still does not prove deployed scheduler behavior,
+  model quality, TokenMana or PlanForge behavior, economic outcomes, simulator
+  adequacy, or physical feasibility.
 - `docs/resource_live_probe.md` adds a local command-replay probe for the
   flagship lane: `python3 scripts/run_resource_live_probe.py --write-result`
   records five Resource Economics validator replays with exit codes, elapsed
