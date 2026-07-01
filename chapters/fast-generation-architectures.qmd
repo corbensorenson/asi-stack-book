@@ -268,6 +268,8 @@ The first executable version should not attempt to implement every acceleration 
 
 The current `generation_mode_record` fixture validates only the record shape: task, risk tier, budgets, context packet, mode, draft source, verifier, acceptance predicate, output accounting fields, promotion decision, measurement status, metric definitions, evidence references, and non-claims. It intentionally records `not_run`, `not measured`, and `not_evaluated` for the demo route. The Lean envelope adds bounded rejection cases for promotion candidates that omit accepted-output or verifier-cost evidence, failed accelerated drafts that keep promotion open without fallback or residual handling, and high-risk fast-mode selections that omit verifier, risk-override, or slower-fallback records.
 
+The Project Theseus generation-mode import adds the first public-safe implementation-reference slice for this boundary. The imported static gate summary records 18 modes, 13 comparisons, zero hard gaps, five hard boundary gates passing, and zero promotable comparisons. Five comparisons saw accepted-span speed lift, but every candidate task-pass count stayed at zero and useful solution per second stayed at zero, so the import functions as negative evidence against raw-throughput promotion rather than as a speedup result. The ASI repository validates only the sanitized summary and digests; it does not copy private task rows, candidate outputs, prompts, training rows, checkpoints, traces, or benchmark payloads, and it does not rerun Theseus.
+
 The registry should allow experimental entries such as `multi_seed_diffusion` or `hybrid_ar_diffusion_repair`, but those entries must remain unroutable or experimental until source notes and tests exist.
 
 ## Beyond the State of the Art
@@ -291,6 +293,7 @@ This generation-mode control plane is still proposed architecture. Support stays
 | Failed-acceptance handling negative case | Prove that a finite failed accelerated draft cannot satisfy the handling predicate when fallback, residual recording, or promotion blocking is absent. | implemented in `AsiStackProofs.FastGeneration.failed_acceptance_without_fallback_or_residual_rejected`; no fallback runtime executed |
 | High-risk fast-mode review negative case | Prove that a finite high-risk fast-mode selection is rejected when verifier, risk-override, or slower-fallback records are missing. | implemented in `AsiStackProofs.FastGeneration.high_risk_fast_mode_without_verifier_or_override_rejected`; no risk classifier or mode selector executed |
 | Generation-mode admission lifecycle route | Prove that a finite fast-generation admission review routes missing mode records, context packets, risk tiers, quality targets, verifiers, acceptance predicates, baselines, accepted outputs, verifier costs, fallback and residual handling, high-risk overrides, budget records, evidence transitions, and non-claim boundaries to explicit outcomes. | implemented in `AsiStackProofs.FastGeneration`; no route-selector behavior, speedup, verifier-quality, fallback-runtime, or benchmark claim |
+| Project Theseus generation-mode import validation | Validate a public-safe static Theseus generation-mode gate summary with 18 modes, 13 comparisons, zero hard gaps, zero promotable comparisons, and mutation controls for private payloads, support overclaim, raw-speed promotion, and useful-speed overclaim. | implemented; passing via `python3 scripts/validate_theseus_generation_mode_import.py`; no live Theseus replay, generation-speed result, useful-solution-per-second win, or support-state promotion |
 | Autoregressive baseline speed-quality test | Establish the baseline wall-clock, accepted-output, and task-success measurements. | planned; not run |
 | Speculative decoding acceptance test | Measure proposed tokens, accepted tokens, rejected work, verifier cost, and output correctness under an explicit acceptance predicate. | planned; not run |
 | Multi-token draft-head acceptance test | Test whether k-token proposals improve accepted output per second after rejection and fallback are counted. | planned; not run |
@@ -302,7 +305,7 @@ This generation-mode control plane is still proposed architecture. Support stays
 | Risk-tiered decoding enforcement test | Ensure high-risk tasks route to slower verified modes when policy requires it. | planned; not run |
 | KV-cache throughput accounting test | Separate aggregate serving throughput, memory pressure, and single-request verified output. | planned; not run |
 
-The implemented row validates fixture/schema consistency only. The remaining rows are a backlog for turning the design rationale into prototype-backed or external-literature-backed claims.
+The implemented rows validate record discipline, finite admission gates, and one static Theseus import boundary. The remaining rows are a backlog for turning the design rationale into prototype-backed or external-literature-backed claims.
 
 ## Formalization hooks
 

@@ -1,0 +1,264 @@
+{
+  "schema_version": "0.1",
+  "report_id": "theseus.generation_mode_gate.20260701.public_static_import",
+  "trace_class": "generation_mode_gate",
+  "source_project": {
+    "name": "Project Theseus / SymLiquid RMI",
+    "repository_url": "https://github.com/corbensorenson/symliquid-rmi",
+    "local_checkout_ref": "/Users/corbensorenson/Documents/Theseus-Hive",
+    "git_commit": "1ad88a22",
+    "worktree_state": "dirty_at_import_review"
+  },
+  "tool": {
+    "name": "scripts/generation_mode_gate.py",
+    "version_ref": "Project Theseus local working tree reviewed 2026-07-01; tool sha256 e99477a1b9546c14c60dc8e2b442f1437274d7ba367e717c23b608fb41fd290b",
+    "replay_command_if_clean": "python3 scripts/generation_mode_gate.py --config configs/generation_mode_registry.json --out reports/generation_mode_registry.json --markdown-out reports/generation_mode_registry.md"
+  },
+  "input_class": "Project Theseus generation-mode registry over decode, fanout, verifier, VCM, and tool-assisted completion accounting; imported as a static public-safe summary, not rerun from this repository.",
+  "source_artifacts": [
+    {
+      "source_path": "reports/generation_mode_registry.json",
+      "source_artifact_sha256": "a711d0dbca9779f26d4b0a63db18ce1fc574ade47a262f5140a9a7b6d325e90b",
+      "artifact_role": "report",
+      "source_artifact_status": "sanitized_static_import",
+      "sanitization_summary": "The ASI-side fixture records summary counts, boundary gates, comparison decisions, rules, digests, residuals, and non-claims. It does not copy task rows, prompts, candidate outputs, model checkpoints, training rows, private traces, or benchmark payloads."
+    },
+    {
+      "source_path": "configs/generation_mode_registry.json",
+      "source_artifact_sha256": "eebf96a7cf0a6c30c9203d2f11377c953973694a34dec8f095c8b76e378114c7",
+      "artifact_role": "config",
+      "source_artifact_status": "digest_only",
+      "sanitization_summary": "The config digest identifies the reviewed registry. The ASI-side fixture does not vendor the full Project Theseus config."
+    },
+    {
+      "source_path": "scripts/generation_mode_gate.py",
+      "source_artifact_sha256": "e99477a1b9546c14c60dc8e2b442f1437274d7ba367e717c23b608fb41fd290b",
+      "artifact_role": "tool",
+      "source_artifact_status": "digest_only",
+      "sanitization_summary": "The tool digest identifies the reviewed gate implementation. The ASI-side fixture does not vendor Project Theseus tool code."
+    }
+  ],
+  "public_safety": {
+    "redaction_state": "public_safe_static_summary",
+    "private_payload_copied": false,
+    "redactions": [
+      "No raw task rows copied.",
+      "No prompts copied.",
+      "No candidate outputs copied.",
+      "No training rows copied.",
+      "No model checkpoints copied.",
+      "No private traces copied.",
+      "No benchmark payloads copied."
+    ],
+    "public_safety_reviewer": "Codex local public-safety pass on 2026-07-01"
+  },
+  "gate_summary": {
+    "policy": "project_theseus_generation_mode_gate_v1",
+    "trigger_state": "YELLOW",
+    "mode_count": 18,
+    "comparison_count": 13,
+    "hard_gap_count": 0,
+    "warning_count": 13,
+    "promotable_comparison_count": 0,
+    "modes_with_task_pass_evidence": 0,
+    "modes_with_missing_report_refs": 0,
+    "modes_with_fallback_burden": 0,
+    "mean_accepted_span_per_second": 0.209103,
+    "mean_useful_solution_per_second": 0.0,
+    "boundary_gate_count": 5,
+    "boundary_gates_passed": 5,
+    "warnings_with_accepted_speed_lift": 5,
+    "warnings_with_zero_candidate_task_pass": 13
+  },
+  "boundary_gates": [
+    {
+      "id": "public_benchmark_training_forbidden",
+      "passed": true,
+      "severity": "hard",
+      "evidence": false
+    },
+    {
+      "id": "runtime_external_inference_forbidden",
+      "passed": true,
+      "severity": "hard",
+      "evidence": false
+    },
+    {
+      "id": "fallback_template_router_tool_credit_forbidden",
+      "passed": true,
+      "severity": "hard",
+      "evidence": false
+    },
+    {
+      "id": "raw_throughput_only_promotion_forbidden",
+      "passed": true,
+      "severity": "hard",
+      "evidence": false
+    },
+    {
+      "id": "mixed_metric_overclaim_forbidden",
+      "passed": true,
+      "severity": "hard",
+      "evidence": false
+    }
+  ],
+  "negative_comparisons": [
+    {
+      "id": "broad8_no_plan_vs_semantic_head_v1",
+      "accepted_speed_lift": false,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_until_behavior_nonregression_and_speed_lift"
+    },
+    {
+      "id": "broad4_plan_aux_no_head_vs_semantic_head_v1",
+      "accepted_speed_lift": true,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "coverage_lift_observed_but_not_promotable_until_functional_pass_moves_above_zero"
+    },
+    {
+      "id": "broad4_plan_aux_head_vs_body_semantics_v1",
+      "accepted_speed_lift": false,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_lm_and_plan_loss_improved_but_functional_pass_still_zero"
+    },
+    {
+      "id": "broad4_body_semantics_vs_plan_semantic_slots_v1",
+      "accepted_speed_lift": false,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_richer_prefix_regressed_to_zero_verified_learned_candidates"
+    },
+    {
+      "id": "broad4_plan_semantic_slots_vs_update_contract_v1",
+      "accepted_speed_lift": true,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_candidate_emission_and_runtime_load_recovered_but_task_pass_count_remains_zero"
+    },
+    {
+      "id": "broad4_update_contract_vs_plan_subspace_v1",
+      "accepted_speed_lift": true,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_plan_prefix_diversity_and_plan_loss_improved_but_functional_pass_remains_zero"
+    },
+    {
+      "id": "broad4_plan_subspace_vs_body_action_v1",
+      "accepted_speed_lift": false,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_body_action_weighting_improved_plan_accuracy_but_regressed_decode_coverage_and_kept_zero_pass"
+    },
+    {
+      "id": "broad4_plan_subspace_vs_algorithmic_replay_v1",
+      "accepted_speed_lift": true,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_private_replay_lowered_lm_loss_but_broad_functional_pass_stayed_zero"
+    },
+    {
+      "id": "broad4_algorithmic_replay_vs_escape_replay_v1",
+      "accepted_speed_lift": false,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_escape_replay_shifted_failure_shape_to_decode_starvation_and_zero_pass"
+    },
+    {
+      "id": "broad4_escape_replay_vs_statement_slots_v1",
+      "accepted_speed_lift": false,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_statement_slots_recovered_candidate_coverage_but_broad_functional_pass_stayed_zero"
+    },
+    {
+      "id": "broad4_statement_slots_vs_action_trace_pairwise_v1",
+      "accepted_speed_lift": true,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_action_trace_pairwise_reduced_candidate_count_and_kept_broad_functional_pass_zero"
+    },
+    {
+      "id": "broad4_action_trace_pairwise_vs_source_slot_head_v1",
+      "accepted_speed_lift": false,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_source_slot_head_improved_emitted_loadable_candidate_coverage_but_kept_functional_pass_zero"
+    },
+    {
+      "id": "broad4_source_slot_head_vs_expression_vocab_guard_v1",
+      "accepted_speed_lift": false,
+      "useful_speed_lift": false,
+      "candidate_task_pass_count": 0,
+      "promotable": false,
+      "promotion_decision": "not_promotable_expression_slot_canonicalization_improved_auxiliary_accuracy_but_kept_functional_pass_zero_and_body_semantics_collapsed"
+    }
+  ],
+  "rules": {
+    "speed_claim": "Speed claims must report accepted spans per second and useful verified solutions per second separately.",
+    "promotion": "A faster mode is not promotable if verifier pass, integrity, context adequacy, no-cheat counters, or fallback burden regresses.",
+    "kv_claim": "VCM descriptor reuse is not native model KV/prefix-cache parity unless a model-runtime lifecycle test passes.",
+    "learned_generation": "Generation-mode acceleration does not bypass candidate-integrity or learned-generation claim rules."
+  },
+  "failed_attempts": [
+    {
+      "attempt_id": "live_theseus_generation_mode_rerun_blocked_dirty_checkout",
+      "outcome": "blocked",
+      "reason": "The local Project Theseus checkout contained modified and untracked files, including private-data surfaces, so this ASI Stack increment imports only a static sanitized report digest and does not claim a fresh live rerun."
+    }
+  ],
+  "residuals": [
+    "The ASI Stack repository verifies the public-safe fixture and source-artifact digests; it does not run Project Theseus generation-mode commands in CI.",
+    "The source checkout was dirty at import review, so the static report digest is evidence of a checkpointed local report, not a current Theseus replay.",
+    "The imported report shows useful solution per second remained zero and no comparison was promotable, so it is negative evidence against raw-speed promotion rather than a speed-quality success.",
+    "Chapter-core claims remain at argument until a separate evidence-transition record is accepted."
+  ],
+  "replay": {
+    "mode": "digest_verification",
+    "command": "python3 scripts/validate_theseus_generation_mode_import.py",
+    "ci_verifiable": true,
+    "verifier": "ASI Stack validator checks schema, source digests, boundary gates, negative comparison count, zero promotable comparisons, useful-solution boundary, mutation controls, redaction boundary, result digest, and non-claims.",
+    "expected_source_artifact_sha256": "a711d0dbca9779f26d4b0a63db18ce1fc574ade47a262f5140a9a7b6d325e90b"
+  },
+  "connected_chapter_ids": [
+    "fast-generation-architectures",
+    "resource-economics-and-token-budgets",
+    "benchmark-ratchets-and-anti-goodhart-evidence",
+    "project-theseus-as-report-first-implementation-reference"
+  ],
+  "evidence_lane_refs": [
+    "docs/v1_x_beyond_sota_roadmap.md#milestone-3---project-theseus-evidence-import",
+    "docs/v1_x_beyond_sota_roadmap.md#milestone-5---flagship-measured-evidence-lane",
+    "docs/per_chapter_evidence_plan.md",
+    "docs/generation_mode_baseline_harness.md",
+    "docs/local_project_mining_theseus_circle.md"
+  ],
+  "support_state_effect": "no_chapter_core_claim_promotion",
+  "claim_boundaries": [
+    "This report can be cited as public-safe implementation-reference evidence that a Project Theseus checkpointed generation-mode gate recorded 18 modes, 13 comparisons, zero hard gaps, five hard boundary gates passing, and zero promotable comparisons.",
+    "This report is negative evidence against raw-throughput promotion: five comparisons saw accepted-span speed lift but every candidate task-pass count stayed zero and useful solution per second stayed zero.",
+    "This report cannot by itself promote generation-speed, model-quality, routing-quality, benchmark, resource-economics, Project Theseus, or ASI claims.",
+    "A future promotion would need a clean replay, public task bundle or archived fixture, quality and residual review, negative controls, and an accepted evidence-transition record."
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove generation speed, useful-solution-per-second improvement, model quality, routing quality, benchmark quality, safety, alignment, transfer, or ASI",
+    "does not authorize heavy training inside The ASI Stack book or reproduce the Project Theseus generation-mode pipeline",
+    "does not copy private task rows, prompts, candidate outputs, training rows, checkpoints, traces, or benchmark payloads into this public repository",
+    "does not replace future clean Project Theseus replay, public task bundle, external review, or chapter-core evidence-transition review"
+  ]
+}

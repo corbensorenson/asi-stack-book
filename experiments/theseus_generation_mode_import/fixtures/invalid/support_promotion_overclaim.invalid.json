@@ -1,0 +1,9 @@
+{
+  "case_id": "support_promotion_overclaim",
+  "base_report": "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json",
+  "mutation": {
+    "path": "support_state_effect",
+    "value": "eligible_for_bounded_evidence_review"
+  },
+  "expected_error_fragment": "support state effect must remain no_chapter_core_claim_promotion"
+}

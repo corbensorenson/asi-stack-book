@@ -35,6 +35,21 @@ Generation mode baseline harness passed: 2 valid fixture(s), 4 expected-invalid 
 The result record is
 `experiments/generation_mode_baselines/results/2026-06-28-local.md`.
 
+## Related Project Theseus Import
+
+`docs/theseus_generation_mode_import_slice.md` records a separate public-safe
+static import from Project Theseus. That import validates a sanitized
+generation-mode gate summary with 18 modes, 13 comparisons, zero hard gaps,
+zero promotable comparisons, and expected-invalid controls for private-payload
+copying, support-promotion overclaim, raw-speed promotion, and useful-speed
+overclaim.
+
+The import complements this harness by showing a concrete negative promotion
+decision from a report-first implementation reference. It does not rerun
+Project Theseus, copy private task rows or candidate outputs, prove speed,
+prove useful-solution-per-second improvement, or promote Fast Generation above
+`argument`.
+
 ## Boundary
 
 This is a deterministic empirical-accounting slice. It improves executable

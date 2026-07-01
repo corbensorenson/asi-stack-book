@@ -873,7 +873,7 @@ Per-chapter burn-down:
 | `readiness-gates-residual-escrow-and-quarantine` | Lifecycle control plane deserved broader transition proof coverage. | Partially executed: added a finite readiness lifecycle-transition relation for candidate, shadow, canary, qualified, default-ready, quarantined, retired, and superseded records, with hard requirements for evidence freshness, residual escrow, fallback, expiry, regression floor, authority scope, route permission, supersession record, and retirement receipt. Remaining work: executable lifecycle fixtures, deployed lifecycle transition execution, residual-ledger storage, live quarantine routing, gate-quality checks, terminal-state governance, MoECOT replay, benchmark evidence, and current-readiness evidence. |
 | `personal-compute-hives-and-federated-edge-intelligence` | Ambitious, sprawling chapter with many planned tests and formerly missing chapter-level Lean module mapping. | Metadata mapping is fixed; next implement hive scheduler, policy membrane, portal approval, federation lease, dropout, energy, audit replay, and rented-node tests; tighten speculative product vocabulary. |
 | `compact-generative-systems-and-residual-honesty` | Longest chapter has narrow proof coverage relative to scope and many planned tests. | Add residual-honesty, reconstruction-exactness, fallback-completeness, verification-cost, and semantic-representation migration invariants; import real compression/repair measurements only from inspected CGS/BBVCA/RankFold artifacts. |
-| `fast-generation-architectures` | Excellent external grounding but speed-quality tests are still planned. | Import or reproduce public-safe Theseus generation-mode benchmarks with baseline, negative control, cost, quality, verifier, and residual records. |
+| `fast-generation-architectures` | Excellent external grounding and one public-safe Theseus generation-mode negative-promotion import, but public speed-quality tests are still planned. | Cleanly replay or archive a public-safe Theseus generation-mode task bundle with baseline, negative control, cost, quality, verifier, residual records, and useful-solution-per-second accounting before stronger support. |
 | `rankfold-neuralfold-and-artifact-compression` | Real compression implementation evidence is not surfaced enough. | Import RankFold/NeuralFold compression-ratio, decode-determinism, fallback, and utility measurements from actual implementation artifacts or record blockers. |
 | `resource-economics-and-token-budgets` | Proof coverage is modest for chapter weight and load-stability tests remain planned. | Deepen budget-gating/protected-overhead theorems and implement load-stability, displaced-cost, reviewer-capacity, and protected-overhead tests. |
 | `mathematical-and-search-substrates` | Umbrella chapter risks repeating Circle/coil specifics. | Keep it focused on adoption discipline: baseline-bound, falsifiable, reversible, support-state bounded; defer substrate specifics to the Circle/coil chapters. |
@@ -936,7 +936,7 @@ Acceptance bar:
   evidence without overclaiming;
 - any support-state transition remains narrow and recorded.
 
-Current status after the first ASI-side Project Theseus import:
+Current status after the first two ASI-side Project Theseus imports:
 
 - `schemas/theseus_report.schema.json` defines the public-safe Project Theseus
   report contract.
@@ -954,9 +954,28 @@ Current status after the first ASI-side Project Theseus import:
 - `docs/theseus_report_import_slice.md` records the exact import boundary:
   useful as implementation-reference evidence, not a clean live Theseus rerun,
   not a support-state transition, and not a chapter-core promotion.
+- `schemas/theseus_generation_mode_import.schema.json` defines the public-safe
+  Project Theseus generation-mode gate import contract.
+- `experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json`
+  imports a sanitized static generation-mode gate summary from the local
+  Project Theseus checkout at commit `1ad88a22`.
+- The imported generation-mode source report is pinned by SHA-256
+  `a711d0dbca9779f26d4b0a63db18ce1fc574ade47a262f5140a9a7b6d325e90b`, and
+  the public ASI fixture is pinned by SHA-256
+  `0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709`.
+- `scripts/validate_theseus_generation_mode_import.py` validates the summary,
+  requires 18 modes, 13 comparisons, zero hard gaps, five hard boundary gates
+  passing, zero promotable comparisons, zero useful-solution-per-second, and
+  rejects expected-invalid mutations for private-payload copying, support
+  promotion overclaim, raw-speed promotion, and useful-speed overclaim.
+- `docs/theseus_generation_mode_import_slice.md` records the exact import
+  boundary: useful as implementation-reference and negative promotion evidence,
+  not a clean live Theseus rerun, not a generation-speed result, not a
+  support-state transition, and not a chapter-core promotion.
 - The remaining stronger milestone work is a clean Project Theseus replay or
-  archived public release fixture plus any separate accepted evidence-transition
-  record if a bounded non-core claim is later promoted.
+  archived public release fixture, public task bundle, quality/residual review,
+  plus any separate accepted evidence-transition record if a bounded non-core
+  claim is later promoted.
 
 ### Milestone 4 - Circle Public Replay And Consumer Gate
 
@@ -1071,6 +1090,14 @@ Current status for the initial v1.x active evidence cycle:
   fixture against the public JSON costs, selected route, negative controls, and
   eligibility fields. This deepens the flagship measured lane while preserving
   the non-core `synthetic-test-backed` scope and no chapter-core promotion.
+- The Project Theseus generation-mode import adds a public-safe negative
+  promotion lane connected to Fast Generation, Resource Economics, Benchmark
+  Ratchets, and the Project Theseus chapter: the imported gate records 18 modes,
+  13 comparisons, zero hard gaps, five passing hard boundaries, five accepted
+  span-speed lifts, zero useful-solution-per-second, and zero promotable
+  comparisons. This helps close the "raw speed is not evidence" gap without
+  claiming a speed-quality result, live Theseus replay, public benchmark run, or
+  chapter-core support-state movement.
 - The next edit to the active-cycle record should narrow it around one flagship
   measured result rather than extending the eight-lane breadth set.
 

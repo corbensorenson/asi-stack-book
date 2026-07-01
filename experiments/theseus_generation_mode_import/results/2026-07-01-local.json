@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-07-01-theseus-generation-mode-public-import",
+  "slice_id": "theseus_generation_mode_import",
+  "validation_result": "pass",
+  "accepted_report_id": "theseus.generation_mode_gate.20260701.public_static_import",
+  "accepted_public_report_sha256": "0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709",
+  "source_artifact_sha256": "a711d0dbca9779f26d4b0a63db18ce1fc574ade47a262f5140a9a7b6d325e90b",
+  "valid_report_count": 1,
+  "expected_invalid_count": 4,
+  "accepted_mode_count": 18,
+  "accepted_comparison_count": 13,
+  "accepted_hard_gap_count": 0,
+  "accepted_promotable_comparison_count": 0,
+  "accepted_useful_solution_per_second": 0.0,
+  "warnings_with_accepted_speed_lift": 5,
+  "support_state_effect": "no_chapter_core_claim_promotion",
+  "ci_verification_command": "python3 scripts/validate_theseus_generation_mode_import.py",
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not prove generation speed, useful-solution-per-second improvement, model quality, routing quality, benchmark quality, safety, alignment, transfer, or ASI",
+    "does not authorize heavy training inside The ASI Stack book or reproduce the Project Theseus generation-mode pipeline",
+    "does not copy private task rows, prompts, candidate outputs, training rows, checkpoints, traces, or benchmark payloads into this public repository"
+  ]
+}

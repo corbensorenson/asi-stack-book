@@ -7078,6 +7078,13 @@
               "result_status": "passes via Lean route theorems; no route-selector behavior, speedup, verifier-quality, fallback-runtime, or benchmark claim",
               "status": "implemented in AsiStackProofs.FastGeneration; no fast-decoder or mode-selector benchmark claim"
             },
+            {
+              "name": "Project Theseus generation-mode import validation",
+              "purpose": "Validate one public-safe digest-verified static Theseus generation-mode gate summary with 18 modes, 13 comparisons, zero hard gaps, zero promotable comparisons, and expected-invalid private-payload, support-overclaim, raw-speed-promotion, and useful-speed-overclaim controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_generation_mode_import.py`; no live Theseus replay, speed-quality win, useful-solution-per-second improvement, or support-state promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_generation_mode_import.py`"
+            },
             "Autoregressive baseline speed-quality test",
             "Speculative decoding acceptance test",
             "Multi-token draft-head acceptance test",
@@ -11249,6 +11256,13 @@
               "implementation_status": "implemented",
               "result_status": "passes via `python3 scripts/validate_theseus_report.py`; no live replay or support-state promotion",
               "status": "implemented; passing via `python3 scripts/validate_theseus_report.py`"
+            },
+            {
+              "name": "Static generation-mode gate import validation",
+              "purpose": "Validate one public-safe digest-verified static Theseus generation-mode gate report fixture and expected-invalid private-payload, support-overclaim, raw-speed-promotion, and useful-speed-overclaim controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_generation_mode_import.py`; no live replay, generation-speed claim, model-quality claim, or support-state promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_generation_mode_import.py`"
             },
             {
               "name": "Dashboard-only implementation-reference negative case",

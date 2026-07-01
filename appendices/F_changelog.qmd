@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-01 - Project Theseus generation-mode import
+
+- Added a public-safe Project Theseus generation-mode gate import lane with
+  `schemas/theseus_generation_mode_import.schema.json`,
+  `experiments/theseus_generation_mode_import/`, and
+  `scripts/validate_theseus_generation_mode_import.py`.
+- The imported static summary records 18 modes, 13 comparisons, zero hard gaps,
+  zero promotable comparisons, zero useful-solution-per-second, five passing
+  hard boundary gates, pinned source/config/tool digests, and four
+  expected-invalid mutation controls for private-payload copying,
+  support-promotion overclaim, raw-speed promotion, and useful-speed overclaim.
+- Updated the Fast Generation and Project Theseus chapters, active evidence
+  cycle, per-chapter evidence plan, v1.x roadmap, repository map, v1.0 status,
+  Appendix E generator, and main book validator to surface the import as
+  implementation-reference and negative promotion evidence.
+- This does not promote, demote, deprecate, or refute any live claim; create a
+  clean Theseus replay, public task bundle, generation-speed result,
+  useful-solution-per-second improvement, model-quality evidence, benchmark
+  result, private workload publication, source interpretation promotion,
+  reader release, EPUB, PDF, DOCX, audio artifact, or support-state movement.
+
 ## 2026-07-01 - Readiness lifecycle transition proofs
 
 - Strengthened `AsiStackProofs.ReadinessGates` with a finite

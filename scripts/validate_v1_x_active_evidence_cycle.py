@@ -36,6 +36,7 @@ STATIC_REQUIRED_FRAGMENTS = (
     "docs/circle_public_replay_consumer_gate.md",
     "docs/cyclic_memory_contract_harness.md",
     "docs/theseus_report_import_slice.md",
+    "docs/theseus_generation_mode_import_slice.md",
     "docs/phase5_harness_runner.md",
     "docs/proof_depth_classification.md",
 )
@@ -132,6 +133,9 @@ def main() -> None:
         "docs/proof_artifact_audit.md",
         "experiments/theseus_import/results/2026-06-29-local.json",
         "scripts/validate_theseus_report.py",
+        "docs/theseus_generation_mode_import_slice.md",
+        "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
+        "scripts/validate_theseus_generation_mode_import.py",
         "docs/phase5_harness_runner.md",
         "experiments/phase5_harness_registry.json",
     )
