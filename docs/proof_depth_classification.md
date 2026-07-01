@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 129 |
+| Proof targets in manifest | 130 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 514 |
+| Theorem declarations classified | 532 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 393 |
+| Derived/decomposed theorem declarations | 411 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 69 |
 | Safety-critical direct/projection declarations | 10 |
@@ -99,7 +99,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 3 | 9 | 1 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 21 | 1 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -557,8 +557,26 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `open_incident_requires_rollback` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `replacement_requires_field_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `stale_qualification_lease_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `complete_layer_contract_admission_allows_contract` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `handoff_exceeding_caller_ceiling_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `layer_contract_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `layer_without_external_authority_requires_authorized_handoff` | derived_or_decomposed | no | uses cases, contradiction, rw |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_authority_ceiling_requests_ceiling` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_evidence_gate_requests_evidence_gate` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_failure_mode_requests_failure_mode` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_handoff_protocol_requests_protocol` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_input_artifacts_requests_input_artifacts` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_invariant_requests_invariant` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_layer_identity_requests_identity` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_lifecycle_state_requests_lifecycle` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_output_artifacts_requests_output_artifacts` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_owner_requests_owner` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_responsibility_requests_responsibility` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_source_mapping_requests_mapping` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `missing_support_state_effect_requests_boundary` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `no_layer_contract_request_stays_idle` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `possible_external_action_without_authority_or_handoff_blocks_contract` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `promotion_request_without_stack_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `accepted_promotion_with_missing_or_failing_gate_reports_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/TheseusReference.lean` | `capability_or_self_evolution_promotion_blocked_without_passing_gate_reports` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

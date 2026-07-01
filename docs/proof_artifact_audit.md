@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 129 |
-| Manifest status counts | {"implemented": 129} |
-| Triage class counts | {"formal-invariant": 129} |
+| Proof targets audited | 130 |
+| Manifest status counts | {"implemented": 130} |
+| Triage class counts | {"formal-invariant": 130} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -78,7 +78,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 4 | 4 | 2 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 3 | 9 | 3 | 3 |
-| `lean/AsiStackProofs/StackBoundaries.lean` | 2 | 3 | 4 | 4 |
+| `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 21 | 6 | 5 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 2 | 7 | 5 | 5 |
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 13 | 6 | 6 |
 | `lean/AsiStackProofs/TypedJobs.lean` | 3 | 14 | 4 | 4 |
@@ -92,7 +92,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 |---|---:|---:|---:|---:|
 | `artifact-graphs-audit-logs-and-replay` | 2 | 2 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 4 | 4 | 0 | 0 |
-| `asi-is-a-stack-not-a-model` | 2 | 2 | 0 | 0 |
+| `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 2 | 2 | 0 | 0 |
 | `capability-replacement-and-rollback` | 3 | 3 | 0 | 0 |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2 | 2 | 0 | 0 |
@@ -141,6 +141,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 |---|---|---|---|
 | `lean:stack.layer_boundaries.operational_invariant` | `asi-is-a-stack-not-a-model` | `AsiStackProofs.StackBoundaries` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:stack.layer_boundaries.failure_blocks_promotion` | `asi-is-a-stack-not-a-model` | `AsiStackProofs.StackBoundaries` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:stack.layer_contract.admission_lifecycle_route` | `asi-is-a-stack-not-a-model` | `AsiStackProofs.StackBoundaries` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.minimum_viable.operational_invariant` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.minimum_viable.failure_blocks_promotion` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.claim_admission_lifecycle_route` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |

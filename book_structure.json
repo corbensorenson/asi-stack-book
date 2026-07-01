@@ -187,6 +187,13 @@
           "minimal_implementation": "A stack map, layer-boundary table, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.",
           "beyond_state_of_art": "A finished ASI stack treats model weights as one replaceable component inside a governed machine. The product-level endpoint is not a larger agent; it is an architecture where alignment, memory, planning, execution, routing, evidence, compression, and self-improvement remain separate enough to inspect and compose. The target doctrine is deliberately simple: efficient ASI is a governed stack of cooperating layers, not one undifferentiated model.",
           "codex_tests": [
+            {
+              "name": "Layer-contract admission lifecycle route",
+              "purpose": "Check that finite layer-contract admission requests missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, source mappings, support-state boundaries, evidence transitions, and non-claim boundaries before admitting the record, and blocks possible external action when neither external authority nor authorized handoff is recorded.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no deployed layer enforcement, source-to-layer traceability completeness, runtime authority behavior, whole-system safety, support-state promotion, or model capability claim",
+              "status": "implemented in AsiStackProofs.StackBoundaries; no deployed stack enforcement or whole-system safety claim"
+            },
             "Layer-boundary audit",
             "Source-to-layer traceability review",
             "Claim-support label audit"
@@ -203,6 +210,12 @@
               "tag": "lean:stack.layer_boundaries.failure_blocks_promotion",
               "module": "AsiStackProofs.StackBoundaries",
               "target": "A handoff that exceeds the caller authority ceiling is rejected.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:stack.layer_contract.admission_lifecycle_route",
+              "module": "AsiStackProofs.StackBoundaries",
+              "target": "Modeled layer-contract admission routes missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
               "status": "implemented"
             }
           ]

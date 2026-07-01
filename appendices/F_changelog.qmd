@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-07-01 - Stack contract admission lifecycle proof
+
+- Strengthened `AsiStackProofs.StackBoundaries` with a finite
+  `LayerContractAdmissionRoute`, `LayerContractAdmissionReview`, and
+  `LayerContractAdmissionRouteFor` decision surface over layer-contract
+  requests, layer identity, lifecycle state, owner, responsibility, input and
+  output artifacts, authority ceilings, handoff protocols, invariants, failure
+  modes, evidence gates, external-action authority or authorized handoff
+  records, source mappings, support-state effects, evidence-transition records,
+  and non-claim boundaries.
+- Added the third opening-stack proof target,
+  `lean:stack.layer_contract.admission_lifecycle_route`, plus derived route
+  theorems showing that missing layer identity, lifecycle state, owner,
+  responsibility, input artifacts, output artifacts, authority ceilings,
+  handoff protocols, invariants, failure modes, evidence gates, external-action
+  authority or handoff records, source mappings, support-state boundaries,
+  evidence-transition records, and non-claim boundaries route to explicit
+  modeled outcomes before the finite layer-contract record is admitted.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 331
+  generated chapter-level rows: 231 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 130 implemented targets, and the proof-depth
+  classifier now reports 532 theorem declarations, 121 direct/projection-style
+  declarations, and 411 derived/decomposed declarations.
+- Updated the opening stack chapter, book outline, proof adequacy review,
+  v1.x/v1.0 roadmap/status surfaces, focus audit, publication readiness,
+  repository map, proof/code plan, manuscript status, and status snapshot
+  guard. This does not promote, demote, deprecate, or refute any live claim;
+  prove deployed layer enforcement, source-to-layer traceability completeness,
+  runtime authority behavior, whole-system safety, model capability,
+  support-state promotion, reader artifact approval, release status, or audio
+  artifact readiness.
+
 ## 2026-07-01 - Efficient ASI claim admission lifecycle proof
 
 - Strengthened `AsiStackProofs.Efficiency` with a finite

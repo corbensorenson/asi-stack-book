@@ -31,6 +31,16 @@
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
     },
     {
+      "tag": "lean:stack.layer_contract.admission_lifecycle_route",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "module": "AsiStackProofs.StackBoundaries",
+      "formal_target": "Modeled layer-contract admission routes missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.StackBoundaries as a finite layer-contract admission route over explicit boundary, authority, handoff, source, support-state, evidence-transition, and non-claim records; it does not prove deployed layer enforcement, source-to-layer traceability completeness, runtime authority behavior, whole-system safety, support-state promotion, or model capability."
+    },
+    {
       "tag": "lean:efficiency.minimum_viable.operational_invariant",
       "chapter_id": "the-efficient-asi-hypothesis",
       "module": "AsiStackProofs.Efficiency",

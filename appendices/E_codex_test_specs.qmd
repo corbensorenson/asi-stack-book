@@ -6,6 +6,7 @@ No result is recorded here unless a test has actually been implemented and run.
 
 | Chapter ID | Chapter | Test spec | Implementation status | Result status |
 |---|---|---|---|---|
+| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Layer-contract admission lifecycle route | implemented | passes via Lean route theorems; no deployed layer enforcement, source-to-layer traceability completeness, runtime authority behavior, whole-system safety, support-state promotion, or model capability claim |
 | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Layer-boundary audit | planned | not run |
 | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Source-to-layer traceability review | planned | not run |
 | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Claim-support label audit | planned | not run |
@@ -381,16 +382,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 129 |
+| Proof targets covered by triage | 130 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 129 |
+| implemented | 130 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 129 |
+| implemented | formal-invariant | lean-candidate | 130 |
