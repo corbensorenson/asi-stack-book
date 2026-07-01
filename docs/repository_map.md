@@ -115,7 +115,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/public_site_accessibility_review.md` | Phase 7 accessibility-readiness ledger for the live site, including assistive hooks, diagram text equivalents, residuals, and non-claims. | tracked |
 | `docs/v1_progress_ledger.md` | Compact v1.0 progress ledger for phase status, release classification, and remaining blockers. | tracked |
 | `docs/v1_0_release_gate_audit.md` | Gate-by-gate v1.0 Definition-of-Done audit, evidence refs, residuals, and final-release boundary. | tracked |
-| `docs/proof_adequacy_review.md` | Phase 4 proof adequacy review classifying all 131 Lean targets by what they do and do not justify. | tracked |
+| `docs/proof_adequacy_review.md` | Phase 4 proof adequacy review classifying all 132 Lean targets by what they do and do not justify. | tracked |
 | `docs/proof_depth_classification.md` | Generated Phase 4 proof-shape report classifying Lean theorem declarations as direct/projection-style, derived/decomposed, or unknown/mixed. | tracked |
 | `docs/protocol_record_crosswalk.md` | Generated Phase 5A report reconciling v1-critical schemas, fixtures, harnesses, Appendix E markers, chapters, and Lean abstractions. | tracked |
 | `docs/claim_ledger_revision_harness.md` | Phase 5 claim-ledger revision harness summary, command, local result, and non-claim boundary. | tracked |

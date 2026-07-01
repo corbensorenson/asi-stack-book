@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 131 |
+| Proof targets in manifest | 132 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 552 |
+| Theorem declarations classified | 568 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 431 |
+| Derived/decomposed theorem declarations | 447 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 69 |
 | Safety-critical direct/projection declarations | 10 |
@@ -70,7 +70,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 3 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 3 | 24 | 6 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 3 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 3 | 27 | 5 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -321,8 +321,24 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EvidenceStates.lean` | `unsupported_can_promote_to_argument` | derived_or_decomposed | no | uses constructor |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `upward_transition_without_review_requests_review` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FailureModes.lean` | `authority_over_ceiling_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `complete_failure_record_closes_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `failed_required_invariant_blocks_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `failure_record_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `missing_boundary_requests_boundary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `missing_containment_requests_containment` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `missing_failure_class_requests_class` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `missing_learning_path_requests_learning_path` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `missing_normalization_guard_requests_guard` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `missing_owner_requests_owner` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `missing_receipt_requests_receipt` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `missing_residual_requests_residual` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `no_failure_record_stays_idle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `open_escape_path_without_quarantine_quarantines` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `promotion_request_without_review_blocks_promotion` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `recurring_failure_without_review_escalates` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `severe_irreversible_failure_without_review_escalates` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `subject_modified_evaluator_freezes_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `support_promotion_without_failure_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `tainted_context_without_authority_grant_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `unbounded_authority_detected_as_governance_failure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/FailureModes.lean` | `unverified_claim_promotion_blocks` | derived_or_decomposed | no | uses simp, unfold |

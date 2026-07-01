@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-07-01 - Failure recurrence escalation proof
+
+- Strengthened `AsiStackProofs.FailureModes` with a finite
+  `FailureRecurrenceRoute`, `FailureRecurrenceReview`, and
+  `FailureRecurrenceRouteFor` decision surface over failure records, failure
+  classes, boundary records, receipts, owners, containment records, residuals,
+  learning paths, normalization guards, recurrence observations, severe
+  irreversible failures, promotion requests, review records, escape paths,
+  quarantine records, evidence-transition records, and non-claim boundaries.
+- Added the third Failure Modes proof target,
+  `lean:failure.recurrence.escalation_route`, plus route theorems showing that
+  missing failure class, boundary, receipt, owner, containment, residual,
+  learning-path, normalization-guard, evidence-transition, and non-claim
+  records route to explicit outcomes; recurring unreviewed failures and severe
+  irreversible unreviewed failures escalate; promotion attempts without review
+  block promotion; and open escape paths without quarantine route to
+  quarantine.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 333
+  generated chapter-level rows: 233 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 132 implemented targets, and the proof-depth
+  classifier now reports 568 theorem declarations, 121 direct/projection-style
+  declarations, and 447 derived/decomposed declarations.
+- Updated the Failure Modes chapter, book outline, proof adequacy review,
+  v1.x/v1.0 roadmap/status surfaces, focus audit, publication readiness,
+  repository map, proof/code plan, manuscript status, proof-envelope chapter,
+  and status snapshot guard. This does not promote, demote, deprecate, or
+  refute any live claim; prove support-state promotion, runtime failure
+  detection, recurrence detection, evaluator-independence, context
+  containment, claim-verification quality, deployed failure radar, reader
+  artifact approval, release status, model capability, or audio artifact
+  readiness.
+
 ## 2026-07-01 - Authority lifecycle admission proof
 
 - Strengthened `AsiStackProofs.Authority` with a finite

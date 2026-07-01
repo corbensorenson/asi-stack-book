@@ -872,6 +872,13 @@
           "beyond_state_of_art": "A useful failure model routes ordinary stack breakdowns before they disappear into behavior. It turns vague safety anxiety into typed breakdowns that can be detected, assigned to a layer, blocked, residualized, or escalated before they become invisible stack behavior. At the mature failure-radar boundary, ungoverned intelligence is monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language.",
           "codex_tests": [
             {
+              "name": "Failure recurrence escalation route",
+              "purpose": "Check the finite Lean recurrence-route predicate for missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no runtime failure detector, evaluator-independence probe, context containment, claim-verification quality, recurrence detector, or support-state promotion claim",
+              "status": "implemented as a finite Lean recurrence-route predicate; no deployed failure detector run"
+            },
+            {
               "name": "Authority creep scenario",
               "purpose": "Check the finite Lean incident-route predicate that authority over a modeled ceiling routes to authority review.",
               "implementation_status": "implemented",
@@ -912,6 +919,12 @@
               "tag": "lean:failure.invariant_violation.failure_blocks_promotion",
               "module": "AsiStackProofs.FailureModes",
               "target": "An unbounded authority field is detected as a governance failure.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:failure.recurrence.escalation_route",
+              "module": "AsiStackProofs.FailureModes",
+              "target": "Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes.",
               "status": "implemented"
             }
           ]

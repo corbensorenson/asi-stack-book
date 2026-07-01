@@ -354,6 +354,7 @@ Draft deliverables:
 - Implemented Codex test: Context pollution scenario as a finite Lean incident-route predicate only; no context-admission detector run.
 - Implemented Codex test: Evaluator drift scenario as a finite Lean incident-route predicate only; no evaluator-independence probe run.
 - Implemented Codex test: Unverified-claim scenario as a finite Lean incident-route predicate only; no claim-verification harness run.
+- Implemented Lean proof target: finite failure recurrence and receipt escalation route for missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records; deployed detection and prevention remain open.
 
 Lean proof targets:
 
@@ -361,6 +362,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | implemented |
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | An unbounded authority field is detected as a governance failure. | implemented |
+| `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
 
 ### Evidence States and Claim Discipline
 
@@ -2626,8 +2628,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 131 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 131 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 132 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 132 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

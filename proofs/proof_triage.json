@@ -121,6 +121,16 @@
       "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
     },
     {
+      "tag": "lean:failure.recurrence.escalation_route",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "module": "AsiStackProofs.FailureModes",
+      "formal_target": "Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.FailureModes as a finite recurrence and failure-receipt route over explicit failure class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary records; it does not prove runtime scenario coverage, evaluator independence, context containment, claim-verifier quality, recurrence detection, deployed failure detection, or support-state promotion."
+    },
+    {
       "tag": "lean:evidence.support_state.operational_invariant",
       "chapter_id": "evidence-states-and-claim-discipline",
       "module": "AsiStackProofs.EvidenceStates",
