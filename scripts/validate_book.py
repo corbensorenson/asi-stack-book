@@ -58,6 +58,7 @@ REQUIRED = [
     "scripts/validate_core_claim_decisions.py",
     "scripts/validate_core_claim_promotion_paths.py",
     "scripts/validate_v1_x_active_evidence_cycle.py",
+    "scripts/validate_chapter_review_burndown.py",
     "scripts/validate_chapter_consolidation_pilot_plan.py",
     "scripts/validate_chapter_consolidation_sequence.py",
     "scripts/build_chapter_external_grounding_status.py",
@@ -698,6 +699,7 @@ def main() -> None:
     run_validator("validate_evidence_laundering_case_studies.py")
     run_validator("validate_core_claim_promotion_paths.py")
     run_validator("validate_v1_x_active_evidence_cycle.py")
+    run_validator("validate_chapter_review_burndown.py")
     run_validator("validate_chapter_consolidation_sequence.py")
     run_validator("validate_chapter_consolidation_pilot_plan.py")
     run_validator("validate_chapter_external_grounding_status.py")

@@ -855,6 +855,11 @@ Current status from this review:
 - `docs/CHAPTER_REVIEWS.md` should remain a living reviewer-input document only
   when a real reviewer supplies a new pass. Do not churn it after every small
   chapter edit.
+- `python3 scripts/validate_chapter_review_burndown.py` now guards this
+  roadmap section against dropped manifest chapters, stale chapter IDs,
+  placeholder work cells, loss of the review calibration notes, and unverified
+  Circle wording. This is a coverage guard for the work queue only; it does not
+  grade chapters, create source evidence, or close any row.
 
 Priority order:
 
@@ -932,7 +937,7 @@ Per-chapter burn-down:
 | `rankfold-neuralfold-and-artifact-compression` | Real compression implementation evidence is not surfaced enough. | Import RankFold/NeuralFold compression-ratio, decode-determinism, fallback, and utility measurements from actual implementation artifacts or record blockers. |
 | `resource-economics-and-token-budgets` | Proof coverage is modest for chapter weight and load-stability tests remain planned. | Deepen budget-gating/protected-overhead theorems and implement load-stability, displaced-cost, reviewer-capacity, and protected-overhead tests. |
 | `mathematical-and-search-substrates` | Umbrella chapter risks repeating Circle/coil specifics. | Keep it focused on adoption discipline: baseline-bound, falsifiable, reversible, support-state bounded; defer substrate specifics to the Circle/coil chapters. |
-| `circle-calculus-and-proof-carrying-ai-contracts` | The chapter abstracts away from Circle's most concrete proved results. | Surface exact public-safe Circle evidence: theorem IDs, RoPE receipt boundary, exact `1/328459` margin, trichotomy, undecided interval, and non-claims after verifying source artifacts. |
+| `circle-calculus-and-proof-carrying-ai-contracts` | The chapter abstracts away from Circle's most concrete proved results. | Surface exact source-verified, public-safe Circle evidence: theorem IDs, RoPE receipt boundary, exact `1/328459` margin where verified, accepted receipt and consumer-gate facts, and non-claims; do not use trichotomy/undecided-interval language unless the Circle artifacts explicitly verify that phrasing. |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | Specialist chapter is sound but could show concrete Circle backing. | Optionally surface source-verified Circle coil-attention proof artifacts; keep structure-versus-quality boundary explicit. |
 | `coilra-multicoil-rope-and-cyclic-mixers` | Planned tests and exact-collision proof results need better surfacing. | Implement planned tests and surface source-verified RoPE/cyclic mixer exact-collision or certifier results without implying model-quality gains. |
 | `executable-specifications-and-lean-proof-envelope` | Proof-governance chapter should show the book's real proof layer more concretely. | Refresh proof-depth numbers from validators, explain derived/projection labels, and use the book's Lean layer as a worked proof-etiquette example. |
@@ -949,6 +954,9 @@ Acceptance bar:
 
 - each row has either an executed commit, an explicit blocker, or an active
   issue/roadmap subtask before the next major release;
+- `python3 scripts/validate_chapter_review_burndown.py` passes, proving only
+  that every current manifest chapter has a calibrated roadmap row and that no
+  row uses placeholder or stale chapter language;
 - proof rows run `lake build`, `scripts/validate_proof_depth.py`, and relevant
   fixture validators;
 - source rows add or update source notes before chapter prose uses the source;

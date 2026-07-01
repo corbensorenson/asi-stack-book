@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-01 - Guard chapter review burn-down roadmap
+
+- Integrated the calibrated chapter-by-chapter reviewer pass into the v1.x
+  roadmap as a guarded 44-row burn-down queue rather than another scorecard.
+- Added `scripts/validate_chapter_review_burndown.py` and wired it into the
+  full book gate so every current manifest chapter must keep a concrete
+  roadmap row, stale chapter IDs are rejected, placeholder rows are rejected,
+  and Circle-specific claims stay source-verified before surfacing.
+- Updated the generated Appendix E repository-check catalog. This is planning
+  and validation discipline only; it does not create source evidence, prove
+  chapter quality, run tests, or move any support state.
+
 ## 2026-07-01 - Add Compact GVR synthetic evidence slice
 
 - Added `scripts/validate_compact_gvr_slice.py`,
