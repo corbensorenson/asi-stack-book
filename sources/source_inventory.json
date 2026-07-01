@@ -972,14 +972,32 @@
     "priority": "external_literature",
     "layer": "capability_security",
     "chapter_targets": [
+      "system-boundaries-and-authority",
       "stable-capability-fields"
     ],
     "url": "https://homes.cs.washington.edu/~levy/capabook/",
-    "notes": "External capability-system comparator for authority-bearing capabilities, protection domains, and permission boundaries that help position SCF authority ceilings without claiming ASI Stack capability enforcement.",
+    "notes": "External capability-system comparator for authority-bearing capabilities, protection domains, and permission boundaries that help position System Boundaries authority records and SCF authority ceilings without claiming ASI Stack capability enforcement.",
     "source_type": "book",
     "published": "1984",
     "updated": "1984",
     "citation_label": "Levy (1984), Capability-Based Computer Systems"
+  },
+  {
+    "id": "ext_confused_deputy_hardy_1988",
+    "title": "The Confused Deputy: (or why capabilities might have been invented)",
+    "priority": "external_literature",
+    "layer": "capability_security",
+    "chapter_targets": [
+      "system-boundaries-and-authority",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://dl.acm.org/doi/10.1145/54289.871709",
+    "notes": "External confused-deputy source for authority laundering, ambient authority, and the capability-security motivation for binding designation to permission at tool and handoff boundaries.",
+    "source_type": "journal_article",
+    "published": "1988-10-01",
+    "updated": "1988-10-01",
+    "citation_label": "Hardy (1988), The Confused Deputy",
+    "doi": "10.1145/54289.871709"
   },
   {
     "id": "ext_semver_2_0_0",

@@ -10,9 +10,8 @@ implementation horizons, and release blockers.
 
 # System Boundaries and Authority
 
-The first two chapters ask the reader to see ASI as a stack and to take
-efficiency seriously without mistaking it for cheapness. This chapter adds the
-guardrail that makes both ideas usable: the stack must know the difference
+The stack frame and the efficiency claim now need the guardrail that makes
+both ideas usable: the system must know the difference
 between what a component can do and what it may do.
 
 That distinction is not cosmetic. A planner can describe a correct action. A
@@ -26,11 +25,10 @@ the ways intelligence stays inside its contract. The system must be able to
 say: the plan is coherent, the source is available, the model is capable, and
 the action is still not authorized.
 
-The reader promise of this chapter is simple. By the end, "authority" should
-feel less like an abstract safety word and more like a concrete transition
-record: who is asking, what boundary they want to cross, which grant they
-have, which ceiling binds them, what happens if the grant is missing, and what
-receipt remains after the decision.
+By the end, "authority" should feel less like an abstract safety word and more
+like a concrete transition record: who is asking, what boundary they want to
+cross, which grant they have, which ceiling binds them, what happens if the
+grant is missing, and what receipt remains after the decision.
 
 ## Problem
 
@@ -51,7 +49,7 @@ capability attached to a principal, layer, tool, field, artifact, route, or
 handoff. It has to expire, be revocable, leave audit evidence, and fail closed
 when the grant is absent.
 
-The sources behind the live chapter converge on that pressure from different
+The source queue converges on that pressure from different
 directions. VIEA needs authority boundaries so intent-to-execution does not
 become intent-to-side-effect. SCF needs them so a replacement implementation
 does not inherit powers simply by occupying a stable capability field. Talos
@@ -90,6 +88,16 @@ on power-seeking pressure warns that capable agents can prefer options that
 preserve or expand their influence under broad objectives. Those sources help
 explain why authority boundaries matter. They do not show that this repository
 has deployed enforcement.
+
+The security lineage is more specific. Classic protection principles give the
+authority layer least-privilege and complete-mediation language.
+Capability-system work treats some references as carrying authority rather
+than only naming an object. Hardy's confused-deputy problem names the failure
+that keeps returning here: a lower-authority requester induces a higher-authority tool to
+act under the tool's broader power. The ASI Stack does not claim to implement
+object-capability security, but it uses that lineage to explain why caller
+ceilings, delegation chains, expiry, and effect receipts have to travel with
+the handoff.
 
 The failure mode becomes sharper under self-improvement. A replacement
 implementation may be better at the task while accidentally receiving the old
@@ -260,6 +268,12 @@ higher-authority tool to do something that the layer itself could not do. If
 the tool runs under its own raw capability rather than the requester's ceiling,
 the boundary has failed. The fix is to bind the operation to the requester's
 authority, not merely to the tool's power.
+
+In practice, that means a tool call should not inherit authority simply
+because the tool can perform the operation. The request has to carry its own
+ceiling, grant, delegation chain, expiry state, and receipt obligation. If
+those fields are missing, denial is the correct result even when the tool
+would succeed technically.
 
 Memory creates the parallel version of the same failure. Seeing a secret,
 policy, instruction, or source is mistaken for permission to disclose or act

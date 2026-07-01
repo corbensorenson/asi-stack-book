@@ -251,6 +251,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `viea`, `scf` | Read first for chapter claims and mechanisms. |
 | Supporting | `talos`, `ladon_manhattan`, `genesiscode` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_saltzer_schroeder_protection_1975`, `ext_capability_based_computer_systems_1984`, `ext_confused_deputy_hardy_1988` | Load after internal authority sources to position the chapter against least-privilege/complete-mediation principles, capability-system authority boundaries, and confused-deputy authority laundering. Treat them as comparators, not proof of deployed ASI Stack enforcement. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -287,6 +288,7 @@ Draft deliverables:
 
 - A small authority schema and transition table used by chapter examples and future Lean proofs, including permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry/review condition, audit refs, and non-claims.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, and `moecot`; support remains `argument` pending denial fixtures, permission-separation tests, confused-deputy probes, or deployed enforcement artifacts.
+- Source-noted external positioning through `ext_saltzer_schroeder_protection_1975`, `ext_capability_based_computer_systems_1984`, and `ext_confused_deputy_hardy_1988`: least privilege, complete mediation, capability-style authority-bearing references, and confused-deputy authority laundering are treated as comparator vocabulary for authority-transition records, not as proof of deployed ASI Stack security.
 - Implemented synthetic Codex test and proof follow-through: Authority ceiling preservation test via `python3 scripts/validate_authority_transitions.py`, plus the finite `AsiStackProofs.Authority` decision envelope for modeled allow/deny/escalate records; deployed enforcement remains open.
 - Implemented synthetic Codex test: Permission separation test via `python3 scripts/validate_authority_transitions.py`; deployed enforcement remains open.
 - Implemented synthetic Codex test: Confused-deputy scenario via expected-invalid authority-transition fixture; runtime adapter probe remains open.

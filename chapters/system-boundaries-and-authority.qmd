@@ -16,6 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and five of six mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
+  - "Source-noted external security comparators now position the authority layer against least-privilege and complete-mediation principles, capability-based authority references, and Hardy's confused-deputy problem; none of those sources is treated as deployed ASI Stack enforcement."
   - "The authority transition harness validates synthetic authority-transition gate semantics for scoped allow, over-ceiling denial, approval escalation, missing receipts, permission-class collapse, and confused-deputy shortcuts; deployed authorization enforcement, runtime adapter behavior, revocation propagation, and tool-wrapper security remain unimplemented."
   - "The implemented Authority Lean predicates cover finite-record ceiling preservation, missing-grant denial, record-aware allow/deny/escalate decision envelope constraints, and authority lifecycle admission routing for inactive, expired, revoked, over-ceiling, unapproved, unreceipted, unaudited, evidence-transition-missing, and non-claim-boundary-missing records; they do not prove deployed authorization enforcement."
   - "No support-state promotion is implied by this drafting pass."
@@ -33,8 +34,8 @@ open_evidence_gaps:
 | Primary source records | `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `viea`, `scf`; supporting: `talos`, `ladon_manhattan`, `genesiscode`; connector/recovery: `moecot` |
-| Source loading state | source notes: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot`; passage-reviewed local raw cache: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`; connector-only/source-note mapped: `moecot` |
+| Source queue | primary: `viea`, `scf`; supporting: `talos`, `ladon_manhattan`, `genesiscode`; external comparators: `ext_saltzer_schroeder_protection_1975`, `ext_capability_based_computer_systems_1984`, `ext_confused_deputy_hardy_1988`; connector/recovery: `moecot` |
+| Source loading state | source notes: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`, `moecot`, `ext_saltzer_schroeder_protection_1975`, `ext_capability_based_computer_systems_1984`, `ext_confused_deputy_hardy_1988`; passage-reviewed local raw cache: `viea`, `scf`, `talos`, `ladon_manhattan`, `genesiscode`; connector-only/source-note mapped: `moecot` |
 | Test state | `authority_transition_record.valid.json` passes protocol fixture validation, `AsiStackProofs.Authority` builds locally, and `python3 scripts/validate_authority_transitions.py` passes with 3 valid and 3 expected-invalid synthetic authority-transition fixtures; the Authority lifecycle route proof builds over finite records; deployed permission enforcement, runtime adapter behavior, revocation propagation, and tool-wrapper security remain planned. |
 
 ## Drafting guardrail
@@ -71,7 +72,7 @@ Informal ownership boundaries let planning authority, memory access, tool use, a
 
 Prompt rules and role labels are too weak to carry authority. "You are an assistant" does not say whether the system can read a private source, call a shell, modify a file, push a commit, spend money, disclose a secret, update an evaluator, or approve its own replacement. Tool wrappers help, but only if the wrapper is part of a typed authority model rather than a list of convenient function names.
 
-The external baselines locate the gap rather than solving it. `ext_nist_ai_rmf_1_0_2023` and `ext_frontier_ai_regulation_2023` provide risk-management and frontier-governance vocabulary around roles, lifecycle duties, assessment, and oversight, while `ext_optimal_policies_power_2019` gives a formal warning that capable agents can tend toward option preservation and power seeking under broad objectives. Authority records translate that pressure into typed permission boundaries; the external sources do not prove the record design enforces them.
+The external baselines locate the gap rather than solving it. `ext_nist_ai_rmf_1_0_2023` and `ext_frontier_ai_regulation_2023` provide risk-management and frontier-governance vocabulary around roles, lifecycle duties, assessment, and oversight, while `ext_optimal_policies_power_2019` gives a formal warning that capable agents can tend toward option preservation and power seeking under broad objectives. Security and systems sources sharpen the engineering boundary: `ext_saltzer_schroeder_protection_1975` gives least-privilege and complete-mediation comparators, `ext_capability_based_computer_systems_1984` grounds capability-style authority-bearing references, and `ext_confused_deputy_hardy_1988` names the failure where a deputy exercises broader authority on behalf of a lower-authority requester. Authority records translate that pressure into typed permission boundaries; the external sources do not prove the record design enforces them.
 
 The recurring failure is permission collapse. Read access becomes write access. Planning becomes execution. A source summary becomes authorization. A benchmark result becomes promotion authority. A generated patch becomes accepted code. The ASI Stack treats each collapse as a missing transition record, not as an inevitable side effect of autonomy. When the record is missing, the architecture should not infer permission from competence, convenience, or user enthusiasm.
 
@@ -224,6 +225,8 @@ A boundary record must make grant expiry, revocation, delegation depth, and deni
 
 The confused-deputy pattern is central. A low-authority layer can ask a higher-authority tool to do something that the layer itself could not do. Without a transition record, the tool may inherit the user's broad session power rather than the requester's narrow grant. Memory creates a parallel failure: seeing a secret, policy, or instruction is mistaken for permission to disclose or execute it. The fix is to bind every operation to the requester's ceiling, not merely to the tool's raw capability.
 
+This is the authority layer's object-capability lineage in ordinary stack language. A capability is not only a word for "skill"; in the security tradition it is an authority-bearing reference. The ASI Stack does not claim to implement object-capability security, but it borrows the discipline: a request should carry the authority it is allowed to exercise, and a tool should not be able to launder a caller into the tool's broader ambient power. Caller ceiling, delegation chain, target-required authority, expiry, and effect receipt are the fields that make that lineage visible in the book's authority record.
+
 ## Minimum Viable Implementation
 
 The first useful authority artifact is an `authority_transition_record` schema plus fixtures for allowed handoff, denial, escalation, missing receipt, permission collapse, and confused-deputy cases. It stays small enough to support Lean and test work: principal, requested operation, permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry or review, decision, effect receipt, audit references, and non-claims.
@@ -276,8 +279,11 @@ These proof targets are implemented only over finite Lean records in `AsiStackPr
 | `ladon_manhattan` | Ladon & The Manhattan Protocol | security_governance | Kernel-level security architecture for high-agency AI. | source note available; local raw cache available |
 | `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| `ext_saltzer_schroeder_protection_1975` | The Protection of Information in Computer Systems | security_principles | External comparator for least privilege, complete mediation, fail-safe defaults, and related protection principles. | source note available; comparator only |
+| `ext_capability_based_computer_systems_1984` | Capability-Based Computer Systems | capability_security | External comparator for authority-bearing capabilities, protection domains, delegation, and permission boundaries. | source note available; comparator only |
+| `ext_confused_deputy_hardy_1988` | The Confused Deputy | capability_security | External comparator for authority laundering when a deputy uses its broader authority for a lower-authority requester. | source note available; comparator only |
 
-The crosswalk names the source family for authority control, but it is not itself a grant, proof, or reproduced implementation.
+The crosswalk names the source family for authority control, but it is not itself a grant, proof, or reproduced implementation. External rows provide comparator vocabulary only; no object-capability system, confused-deputy exploit, runtime adapter denial, or deployed authorization service has been reproduced here.
 
 ## Summary
 

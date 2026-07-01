@@ -45,6 +45,10 @@ Allowed curation scopes used:
 - Preserved the live chapter's evidence boundary: the schema, fixtures,
   harness, and Lean predicates are useful narrow surfaces, not deployed
   authorization enforcement.
+- Reconciled the reader chapter with the live chapter's 2026-07-01
+  external-grounding update: least-privilege/complete-mediation principles,
+  capability-system authority references, and Hardy's confused-deputy problem
+  now appear as comparator lineage, not validation.
 - Preserved the core claim, minimum viable implementation, beyond-state-of-the-
   art endpoint, and handoff into Failure Modes of Ungoverned Intelligence.
 
@@ -54,15 +58,16 @@ Allowed curation scopes used:
 |---|---|
 | Core claim meaning preserved | Pass. The curated draft keeps the typed, bounded authority-capability claim. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
-| Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; the draft keeps the live chapter's comparator-only boundary. |
+| Source boundary preserved | Pass. New source-noted comparator lineage is carried only as external positioning; no external source is treated as reproduced enforcement, deployed security, or support-state evidence. |
 | Proof/test status preserved | Pass. The curated draft keeps the boundary that schemas, synthetic fixtures, the authority harness, and finite Lean predicates do not prove deployed authorization enforcement, runtime adapter safety, revocation propagation, live confused-deputy resistance, or tool-wrapper security. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains an authority-transition schema plus fixtures and checks; the mature endpoint remains an unvalidated authority type system for stack effects. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
 
-- This pass does not change the live AI/research chapter.
-- This pass does not change `book_structure.json`.
+- This pass includes a live/reader reconciliation update to external
+  comparator positioning and source inventory surfaces; it does not change
+  claim meaning, support-state boundaries, proof targets, or release records.
 - This pass does not alter Appendix C, source assignments, proof targets, test
   status, implementation horizons, or release records.
 - This pass does not approve the curated chapter for reader release.
@@ -72,6 +77,8 @@ Allowed curation scopes used:
 - This pass does not claim deployed authorization enforcement, runtime adapter
   safety, revocation propagation, live confused-deputy resistance, or
   tool-wrapper security.
+- This pass does not claim object-capability security or reproduce Hardy's
+  confused-deputy scenario.
 
 ## Remaining Blockers
 

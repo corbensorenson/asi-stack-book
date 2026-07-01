@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Ground System Boundaries in capability security lineage
+
+- Added `ext_confused_deputy_hardy_1988` to the external source inventory and
+  source notes, and widened the existing capability-systems source note so
+  System Boundaries can use it as comparator context alongside SCF.
+- Updated System Boundaries live and curated reader prose to name the
+  least-privilege, complete-mediation, capability-system, and confused-deputy
+  lineage behind caller ceilings, delegation chains, expiry, effect receipts,
+  and no-ambient-authority handoffs.
+- Updated the outline, v1.x roadmap burn-down row, curated reader pass note,
+  and source appendices through the generated scaffold path. This is external
+  grounding only; it does not reproduce a capability system, run a live
+  confused-deputy exploit, prove runtime adapter security, or move any support
+  state.
+
 ## 2026-07-01 - Strengthen opener mature-endpoint contrast
 
 - Updated the ASI Stack opener's live chapter, curated reader chapter, outline,

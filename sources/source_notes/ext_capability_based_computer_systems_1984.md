@@ -12,7 +12,7 @@
 
 ## Thesis
 
-Capability-based computer systems are a direct external comparator for authority-bearing references and protection boundaries. They help position Stable Capability Fields beside established systems work on capabilities while preserving the ASI Stack distinction between a capability name, its authority ceiling, and the implementation that may satisfy it.
+Capability-based computer systems are a direct external comparator for authority-bearing references and protection boundaries. They help position System Boundaries and Stable Capability Fields beside established systems work on capabilities while preserving the ASI Stack distinction between a capability name, its authority ceiling, and the implementation that may satisfy it.
 
 ## Mechanisms
 
@@ -35,11 +35,12 @@ Capability-based computer systems are a direct external comparator for authority
 
 ## Book Chapters Supported
 
+- `system-boundaries-and-authority` (System Boundaries and Authority)
 - `stable-capability-fields` (Stable Capability Fields)
 
 ## Claims To Add Or Update
 
-- Use this source to position SCF authority ceilings beside capability-system authority boundaries.
+- Use this source to position authority-transition records and SCF authority ceilings beside capability-system authority boundaries.
 - Keep SCF as a broader governed capability-identity record, not a claim of implemented object-capability security.
 - Do not promote deployed route validation, least-authority enforcement, confinement, or revocation behavior without local evidence.
 
