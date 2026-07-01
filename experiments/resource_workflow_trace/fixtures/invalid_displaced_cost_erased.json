@@ -1,0 +1,85 @@
+{
+  "trace_id": "resource-workflow-trace-invalid-displaced-cost",
+  "protected_high_risk_first": false,
+  "workload": {
+    "description": "Expected-invalid trace erasing displaced review and debugging costs.",
+    "capacity_budget": {
+      "tokens": 10000,
+      "seconds": 600,
+      "tool_units": 3,
+      "review_minutes": 20,
+      "verification_minutes": 20
+    }
+  },
+  "steps": [
+    {
+      "step_id": "step://source-crosswalk-refresh",
+      "risk_class": "medium",
+      "scheduler_decision": "dispatch",
+      "selected_route": "route://hidden-repair-crosswalk-refresh",
+      "route_candidates": [
+        {
+          "route_id": "route://hidden-repair-crosswalk-refresh",
+          "quality_predicate": "Source crosswalk preserves passage refs, source boundaries, and support-state limits.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 2500,
+          "estimated_seconds": 120,
+          "tool_cost_units": 0,
+          "review_minutes": 0,
+          "verification_minutes": 3,
+          "protected_overhead": [
+            "source-boundary audit retained"
+          ],
+          "displaced_costs": [
+            "future debugging shifted to the reader",
+            "reviewer burden hidden"
+          ],
+          "residuals": [],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        }
+      ]
+    }
+  ],
+  "scheduler_trace": [
+    {
+      "step_id": "step://source-crosswalk-refresh",
+      "selected_route": "route://hidden-repair-crosswalk-refresh",
+      "dispatch_order": 1
+    }
+  ],
+  "simulation_review": {
+    "scope": "Toy deterministic capacity accounting for one selected route.",
+    "fidelity_state": "toy_model",
+    "resource_bill": [
+      "2500 selected-route tokens"
+    ],
+    "capacity_bottlenecks": [
+      "review minutes"
+    ],
+    "omitted_variables": [
+      "reader repair time"
+    ],
+    "instrumentation_effects": [
+      "repair burden is a fixture field"
+    ],
+    "observed_outputs": {
+      "total_cost_units": 9.0
+    },
+    "transfer_decision": "scenario_only",
+    "support_state_effect": "none",
+    "non_claims": [
+      "Does not promote any chapter core claim.",
+      "Does not prove deployed scheduler behavior.",
+      "Does not prove physical feasibility or simulator adequacy."
+    ]
+  },
+  "non_claims": [
+    "Does not promote any chapter core claim.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, KV-cache behavior, economic outcomes, physical feasibility, or model quality."
+  ]
+}

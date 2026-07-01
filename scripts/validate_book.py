@@ -92,6 +92,7 @@ REQUIRED = [
     "scripts/validate_reference_trace.py",
     "scripts/validate_capacity_smoothing.py",
     "scripts/validate_costed_route_resource_slice.py",
+    "scripts/validate_resource_workflow_trace.py",
     "scripts/validate_circle_external_receipt_slice.py",
     "scripts/validate_circle_public_replay.py",
     "scripts/validate_theseus_report.py",
@@ -141,6 +142,7 @@ REQUIRED = [
     "docs/reference_trace_harness.md",
     "docs/capacity_smoothing_harness.md",
     "docs/costed_route_resource_slice.md",
+    "docs/resource_workflow_trace.md",
     "docs/circle_external_receipt_slice.md",
     "docs/circle_public_replay_consumer_gate.md",
     "docs/theseus_report_import_slice.md",
@@ -186,6 +188,7 @@ REQUIRED = [
     "experiments/cyclic_memory_contracts/results/2026-06-30-local.md",
     "experiments/context_transaction_memory_store/results/2026-07-01-local.md",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json",
     "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
     "experiments/circle_public_replay/results/2026-06-29-local.json",
     "experiments/theseus_import/results/2026-06-29-local.json",
@@ -712,6 +715,7 @@ def main() -> None:
     run_validator("validate_reference_trace.py")
     run_validator("validate_capacity_smoothing.py")
     run_validator("validate_costed_route_resource_slice.py")
+    run_validator("validate_resource_workflow_trace.py")
     run_validator("validate_circle_external_receipt_slice.py")
     run_validator("validate_circle_public_replay.py")
     run_validator("validate_theseus_report.py")

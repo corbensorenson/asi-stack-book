@@ -1,0 +1,244 @@
+{
+  "trace_id": "resource-workflow-trace-2026-07-01",
+  "protected_high_risk_first": true,
+  "workload": {
+    "description": "Deterministic public-safe resource workflow trace for a three-step book-maintenance workload.",
+    "capacity_budget": {
+      "tokens": 20000,
+      "seconds": 900,
+      "tool_units": 5,
+      "review_minutes": 45,
+      "verification_minutes": 30
+    }
+  },
+  "steps": [
+    {
+      "step_id": "step://high-risk-release-gate",
+      "risk_class": "high",
+      "scheduler_decision": "dispatch",
+      "selected_route": "route://human-verifier-release-gate",
+      "route_candidates": [
+        {
+          "route_id": "route://fast-auto-release-gate",
+          "quality_predicate": "Release-gate decision preserves validation, review, rollback, and non-claim boundaries.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 2200,
+          "estimated_seconds": 90,
+          "tool_cost_units": 0,
+          "review_minutes": 0,
+          "verification_minutes": 4,
+          "protected_overhead": [],
+          "displaced_costs": [
+            "human review burden is skipped"
+          ],
+          "residuals": [
+            "unreviewed release decision remains a blocking residual"
+          ],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior or runtime behavior."
+          ]
+        },
+        {
+          "route_id": "route://human-verifier-release-gate",
+          "quality_predicate": "Release-gate decision preserves validation, review, rollback, and non-claim boundaries.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 6200,
+          "estimated_seconds": 480,
+          "tool_cost_units": 1,
+          "review_minutes": 18,
+          "verification_minutes": 12,
+          "protected_overhead": [
+            "human review retained",
+            "audit and rollback checks retained"
+          ],
+          "displaced_costs": [
+            "manual review time is visible rather than hidden"
+          ],
+          "residuals": [
+            "Manual review cost is measured in this deterministic trace.",
+            "No scheduler or economic result is claimed."
+          ],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        }
+      ]
+    },
+    {
+      "step_id": "step://source-crosswalk-refresh",
+      "risk_class": "medium",
+      "scheduler_decision": "dispatch",
+      "selected_route": "route://bounded-crosswalk-refresh",
+      "route_candidates": [
+        {
+          "route_id": "route://manual-crosswalk-refresh",
+          "quality_predicate": "Source crosswalk preserves passage refs, source boundaries, and support-state limits.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 9000,
+          "estimated_seconds": 600,
+          "tool_cost_units": 1,
+          "review_minutes": 20,
+          "verification_minutes": 10,
+          "protected_overhead": [
+            "source-boundary audit retained"
+          ],
+          "displaced_costs": [
+            "manual review time is high but visible"
+          ],
+          "residuals": [
+            "Manual review cost is bounded in the trace."
+          ],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        },
+        {
+          "route_id": "route://bounded-crosswalk-refresh",
+          "quality_predicate": "Source crosswalk preserves passage refs, source boundaries, and support-state limits.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 4200,
+          "estimated_seconds": 240,
+          "tool_cost_units": 1,
+          "review_minutes": 8,
+          "verification_minutes": 6,
+          "protected_overhead": [
+            "source-boundary audit retained"
+          ],
+          "displaced_costs": [
+            "sampled review leaves residual editorial review"
+          ],
+          "residuals": [
+            "Residual editorial review is bounded and named."
+          ],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        },
+        {
+          "route_id": "route://latency-only-crosswalk-refresh",
+          "quality_predicate": "Source crosswalk preserves passage refs, source boundaries, and support-state limits.",
+          "verification_result": "partial",
+          "quality_result": "fail",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 1500,
+          "estimated_seconds": 60,
+          "tool_cost_units": 0,
+          "review_minutes": 0,
+          "verification_minutes": 0,
+          "protected_overhead": [
+            "source-boundary audit named but not performed"
+          ],
+          "displaced_costs": [
+            "future debugging shifted to reader review"
+          ],
+          "residuals": [],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        }
+      ]
+    },
+    {
+      "step_id": "step://low-risk-index-cleanup",
+      "risk_class": "low",
+      "scheduler_decision": "dispatch",
+      "selected_route": "route://local-index-cleanup",
+      "route_candidates": [
+        {
+          "route_id": "route://local-index-cleanup",
+          "quality_predicate": "Index cleanup preserves generated-file boundaries and validation references.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 1800,
+          "estimated_seconds": 120,
+          "tool_cost_units": 0,
+          "review_minutes": 0,
+          "verification_minutes": 3,
+          "protected_overhead": [
+            "generated-file boundary retained"
+          ],
+          "displaced_costs": [],
+          "residuals": [
+            "No displaced review burden identified in this fixture."
+          ],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        }
+      ]
+    }
+  ],
+  "scheduler_trace": [
+    {
+      "step_id": "step://high-risk-release-gate",
+      "selected_route": "route://human-verifier-release-gate",
+      "dispatch_order": 1
+    },
+    {
+      "step_id": "step://source-crosswalk-refresh",
+      "selected_route": "route://bounded-crosswalk-refresh",
+      "dispatch_order": 2
+    },
+    {
+      "step_id": "step://low-risk-index-cleanup",
+      "selected_route": "route://local-index-cleanup",
+      "dispatch_order": 3
+    }
+  ],
+  "simulation_review": {
+    "scope": "Toy deterministic capacity accounting for the three tracked workflow steps only.",
+    "fidelity_state": "toy_model",
+    "resource_bill": [
+      "12200 selected-route tokens",
+      "840 selected-route seconds",
+      "2 selected-route tool units",
+      "26 selected-route review minutes",
+      "21 selected-route verification minutes"
+    ],
+    "capacity_bottlenecks": [
+      "human review minutes",
+      "verification minutes"
+    ],
+    "omitted_variables": [
+      "real model latency",
+      "real reviewer fatigue",
+      "network and CI variance",
+      "editorial taste"
+    ],
+    "instrumentation_effects": [
+      "route costs are deterministic accounting fields, not measured wall-clock costs",
+      "quality predicates are fixture fields, not human editorial judgments"
+    ],
+    "observed_outputs": {
+      "total_cost_units": 119.7,
+      "selected_step_count": 3
+    },
+    "transfer_decision": "scenario_only",
+    "support_state_effect": "none",
+    "non_claims": [
+      "Does not promote any chapter core claim.",
+      "Does not prove deployed scheduler behavior.",
+      "Does not prove physical feasibility or simulator adequacy."
+    ]
+  },
+  "non_claims": [
+    "Does not promote any chapter core claim.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, KV-cache behavior, economic outcomes, physical feasibility, or model quality.",
+    "Does not create a support-state transition."
+  ]
+}

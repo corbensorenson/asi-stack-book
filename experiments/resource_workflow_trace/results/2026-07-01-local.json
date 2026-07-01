@@ -1,0 +1,30 @@
+{
+  "result_id": "resource-workflow-trace-2026-07-01-local",
+  "command": "python3 scripts/validate_resource_workflow_trace.py",
+  "valid_fixture_count": 1,
+  "expected_invalid_fixture_count": 4,
+  "trace_id": "resource-workflow-trace-2026-07-01",
+  "step_count": 3,
+  "total_cost_units": 119.7,
+  "total_tokens": 12200,
+  "review_minutes_used": 26,
+  "verification_minutes_used": 21,
+  "transfer_decision": "scenario_only",
+  "support_state_effect": "none",
+  "selected_routes": [
+    "route://human-verifier-release-gate",
+    "route://local-index-cleanup",
+    "route://bounded-crosswalk-refresh"
+  ],
+  "expected_invalid_controls": [
+    "invalid_latency_only_selector.json",
+    "invalid_displaced_cost_erased.json",
+    "invalid_physical_feasibility_overclaim.json",
+    "invalid_scheduler_starves_high_risk.json"
+  ],
+  "non_claims": [
+    "Does not promote any chapter core claim.",
+    "Does not prove deployed scheduler behavior, runtime behavior, load stability, KV-cache behavior, economic outcomes, physical feasibility, simulator adequacy, or model quality.",
+    "Does not create a support-state transition."
+  ]
+}

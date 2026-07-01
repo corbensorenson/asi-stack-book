@@ -1,0 +1,124 @@
+{
+  "trace_id": "resource-workflow-trace-invalid-starvation",
+  "protected_high_risk_first": true,
+  "workload": {
+    "description": "Expected-invalid trace scheduling low-risk work before protected high-risk review.",
+    "capacity_budget": {
+      "tokens": 12000,
+      "seconds": 900,
+      "tool_units": 4,
+      "review_minutes": 40,
+      "verification_minutes": 30
+    }
+  },
+  "steps": [
+    {
+      "step_id": "step://high-risk-release-gate",
+      "risk_class": "high",
+      "scheduler_decision": "dispatch",
+      "selected_route": "route://human-verifier-release-gate",
+      "route_candidates": [
+        {
+          "route_id": "route://human-verifier-release-gate",
+          "quality_predicate": "Release-gate decision preserves validation, review, rollback, and non-claim boundaries.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 6200,
+          "estimated_seconds": 480,
+          "tool_cost_units": 1,
+          "review_minutes": 18,
+          "verification_minutes": 12,
+          "protected_overhead": [
+            "human review retained",
+            "audit and rollback checks retained"
+          ],
+          "displaced_costs": [
+            "manual review time is visible rather than hidden"
+          ],
+          "residuals": [
+            "Manual review cost is measured in this deterministic trace."
+          ],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        }
+      ]
+    },
+    {
+      "step_id": "step://low-risk-index-cleanup",
+      "risk_class": "low",
+      "scheduler_decision": "dispatch",
+      "selected_route": "route://local-index-cleanup",
+      "route_candidates": [
+        {
+          "route_id": "route://local-index-cleanup",
+          "quality_predicate": "Index cleanup preserves generated-file boundaries and validation references.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 1800,
+          "estimated_seconds": 120,
+          "tool_cost_units": 0,
+          "review_minutes": 0,
+          "verification_minutes": 3,
+          "protected_overhead": [
+            "generated-file boundary retained"
+          ],
+          "displaced_costs": [],
+          "residuals": [
+            "No displaced review burden identified in this fixture."
+          ],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        }
+      ]
+    }
+  ],
+  "scheduler_trace": [
+    {
+      "step_id": "step://low-risk-index-cleanup",
+      "selected_route": "route://local-index-cleanup",
+      "dispatch_order": 1
+    },
+    {
+      "step_id": "step://high-risk-release-gate",
+      "selected_route": "route://human-verifier-release-gate",
+      "dispatch_order": 2
+    }
+  ],
+  "simulation_review": {
+    "scope": "Toy deterministic capacity accounting for two selected workflow steps.",
+    "fidelity_state": "toy_model",
+    "resource_bill": [
+      "8000 selected-route tokens"
+    ],
+    "capacity_bottlenecks": [
+      "human review minutes",
+      "verification minutes"
+    ],
+    "omitted_variables": [
+      "real queue latency"
+    ],
+    "instrumentation_effects": [
+      "dispatch_order is a fixture field"
+    ],
+    "observed_outputs": {
+      "total_cost_units": 81.5
+    },
+    "transfer_decision": "scenario_only",
+    "support_state_effect": "none",
+    "non_claims": [
+      "Does not promote any chapter core claim.",
+      "Does not prove deployed scheduler behavior.",
+      "Does not prove physical feasibility or simulator adequacy."
+    ]
+  },
+  "non_claims": [
+    "Does not promote any chapter core claim.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, KV-cache behavior, economic outcomes, physical feasibility, or model quality."
+  ]
+}

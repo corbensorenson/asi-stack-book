@@ -1086,6 +1086,15 @@ Current status for the focused v1.x active evidence cycle:
   eligibility fields. This is the current flagship measured lane while
   preserving the non-core `synthetic-test-backed` scope and no chapter-core
   promotion.
+- `docs/resource_workflow_trace.md` adds the next deterministic public trace
+  for the same flagship lane: `python3 scripts/validate_resource_workflow_trace.py`
+  checks 1 valid and 4 expected-invalid multi-step workflow fixtures for
+  selected-route cost recomputation, high-risk-first scheduler ordering,
+  protected review overhead, displaced-cost residual ownership,
+  physical-feasibility overclaim rejection, and no-promotion boundaries. This
+  still does not prove deployed scheduler behavior, model quality, TokenMana or
+  PlanForge behavior, economic outcomes, simulator adequacy, or physical
+  feasibility.
 - The simulation-transfer boundary harness remains folded into Resource
   Economics as a support boundary: it rejects missing fidelity, unbounded world
   transfer, missing resource bills, missing bottleneck residuals, ignored
@@ -1100,10 +1109,11 @@ Current status for the focused v1.x active evidence cycle:
   `AsiStackProofs.FastGeneration` fixture. This closes the immediate "raw speed
   is not evidence" gap without claiming a speed-quality result, live Theseus
   replay, public benchmark run, or chapter-core support-state movement.
-- The next evidence work should deepen the flagship Resource Economics lane
-  with a larger public trace, workload quality review, displaced-cost
-  accounting, scheduler traces, and physical/simulation-fidelity review before
-  opening a new active cycle.
+- The next evidence work should deepen the flagship Resource Economics lane by
+  replacing fixture-declared quality and cost fields with live or externally
+  reviewable workload quality review, scheduler logs, measured displaced-cost
+  accounting, physical-feasibility review, and measured simulation outputs
+  before opening a new active cycle.
 
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 

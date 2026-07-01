@@ -42,6 +42,7 @@ REQUIRED_FRAGMENTS = (
     "docs/theseus_generation_mode_import_slice.md",
     "docs/circle_public_replay_consumer_gate.md",
     "docs/costed_route_resource_slice.md",
+    "docs/resource_workflow_trace.md",
     "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
 )
 
@@ -112,6 +113,8 @@ def main() -> None:
         "lean/AsiStackProofs/FastGeneration.lean",
         "docs/circle_public_replay_consumer_gate.md",
         "docs/costed_route_resource_slice.md",
+        "docs/resource_workflow_trace.md",
+        "experiments/resource_workflow_trace/results/2026-07-01-local.json",
         "docs/readiness_residual_harness.md",
     ]:
         if not (ROOT / relative).exists():

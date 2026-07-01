@@ -1,0 +1,83 @@
+{
+  "trace_id": "resource-workflow-trace-invalid-physical-overclaim",
+  "protected_high_risk_first": false,
+  "workload": {
+    "description": "Expected-invalid trace treating toy accounting as physical feasibility evidence.",
+    "capacity_budget": {
+      "tokens": 10000,
+      "seconds": 600,
+      "tool_units": 3,
+      "review_minutes": 20,
+      "verification_minutes": 20
+    }
+  },
+  "steps": [
+    {
+      "step_id": "step://low-risk-index-cleanup",
+      "risk_class": "low",
+      "scheduler_decision": "dispatch",
+      "selected_route": "route://local-index-cleanup",
+      "route_candidates": [
+        {
+          "route_id": "route://local-index-cleanup",
+          "quality_predicate": "Index cleanup preserves generated-file boundaries and validation references.",
+          "verification_result": "pass",
+          "quality_result": "pass",
+          "budget_decision": "dispatch",
+          "estimated_tokens": 1800,
+          "estimated_seconds": 120,
+          "tool_cost_units": 0,
+          "review_minutes": 0,
+          "verification_minutes": 3,
+          "protected_overhead": [
+            "generated-file boundary retained"
+          ],
+          "displaced_costs": [],
+          "residuals": [
+            "No displaced review burden identified in this fixture."
+          ],
+          "non_claims": [
+            "Does not promote any support state.",
+            "Does not prove scheduler behavior, runtime behavior, or economic outcomes."
+          ]
+        }
+      ]
+    }
+  ],
+  "scheduler_trace": [
+    {
+      "step_id": "step://low-risk-index-cleanup",
+      "selected_route": "route://local-index-cleanup",
+      "dispatch_order": 1
+    }
+  ],
+  "simulation_review": {
+    "scope": "Toy deterministic capacity accounting for one selected route.",
+    "fidelity_state": "toy_model",
+    "resource_bill": [
+      "1800 selected-route tokens"
+    ],
+    "capacity_bottlenecks": [
+      "verification minutes"
+    ],
+    "omitted_variables": [
+      "real hardware and reviewer behavior"
+    ],
+    "instrumentation_effects": [
+      "quality predicate is a fixture field"
+    ],
+    "observed_outputs": {
+      "total_cost_units": 8.3
+    },
+    "transfer_decision": "generalized_physical_feasibility",
+    "support_state_effect": "synthetic-test-backed",
+    "non_claims": [
+      "Does not promote any chapter core claim.",
+      "Does not prove deployed scheduler behavior."
+    ]
+  },
+  "non_claims": [
+    "Does not promote any chapter core claim.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, KV-cache behavior, economic outcomes, physical feasibility, or model quality."
+  ]
+}
