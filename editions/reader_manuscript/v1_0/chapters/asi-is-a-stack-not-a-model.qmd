@@ -301,10 +301,14 @@ renumbering chapters, hiding ownership, or silently changing support state.
 
 ## Beyond the State of the Art
 
-A finished ASI stack treats model weights as one replaceable component inside
-a governed machine. The endpoint is not a larger agent. It is an architecture
-where alignment, memory, planning, execution, routing, evidence, compression,
-and self-improvement remain separate enough to inspect and compose.
+A finished ASI stack is not a larger model, a more elaborate agent loop, or a
+compound-AI toolkit with a nicer diagram. Scale can improve a component, but
+weights do not carry authority ceilings or rollback ownership. Agent loops
+can organize tool use, but a loop is not a governed institution unless every
+action path preserves permission, evidence, residuals, and refusal. Modular
+systems show that decomposition matters, but decomposition alone does not
+create claim ledgers, replacement transactions, or recursive-improvement
+boundaries.
 
 In the mature reference architecture, alignment and governance constrain every
 downstream layer. Planning, memory, reasoning, execution, routing,
@@ -313,6 +317,13 @@ Recursive improvement becomes a governed transition with records, gates, and
 rollback paths rather than an ambient property of intelligence. Source queues
 and evidence states keep future writing runs from turning the book back into
 an anthology or allowing polished synthesis to outpace support.
+
+The mature stack absorbs what those other frames get right while making their
+missing contracts explicit. Model weights become one replaceable component.
+Agentic planning becomes a bounded planning layer. Tools and experts become
+routed capabilities with authority ceilings and evidence gates. Every layer
+has to name its responsibility, artifact, invariant, failure mode, promotion
+rule, non-claims, and rollback path before the reader is asked to trust it.
 
 This stack doctrine is still an architectural claim. It stays at `argument`
 support until layer-boundary records, source-to-layer reviews,

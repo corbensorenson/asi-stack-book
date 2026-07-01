@@ -33,8 +33,12 @@ Allowed curation scopes used:
 - Compressed list-heavy interface material into prose while preserving the
   Layer Boundary Record fields and their purpose.
 - Preserved the Mermaid stack map and layer-contract lifecycle diagrams.
+- Reconciled the reader Beyond-SOTA endpoint with the live chapter's
+  2026-07-01 roadmap burn-down update: the endpoint now argues directly
+  against scale-only, generic agent-loop, and compound/modular AI framings
+  while preserving the comparator-only source boundary.
 - Preserved the core claim, evidence boundary, minimum viable implementation,
-  beyond-state-of-the-art endpoint, and handoff into the efficiency chapter.
+  and handoff into the efficiency chapter.
 
 ## Meaning Preservation Checks
 
@@ -49,8 +53,9 @@ Allowed curation scopes used:
 
 ## Non-Claims
 
-- This pass does not change the live AI/research chapter.
-- This pass does not change `book_structure.json`.
+- This pass includes a live/reader reconciliation update to the Beyond-SOTA
+  endpoint and the manifest mature-endpoint field; it does not change claim
+  meaning, support-state boundaries, or source assignments.
 - This pass does not alter Appendix C, source assignments, proof targets, test
   status, implementation horizons, or release records.
 - This pass does not approve the curated chapter for reader release.
