@@ -692,6 +692,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `scf`, `rmi`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
 | Supporting | `cognitive_loop_closure`, `talos` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs` | Use only for progressive-delivery, feature-flag, model-delivery, rollout-history, and rollback vocabulary; do not treat as evidence that ASI replacement or production model rollout has been implemented. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -699,6 +700,7 @@ Draft arc:
 - Problem: Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
 - Insufficiency: Ad hoc upgrades make it hard to know whether a system improved, drifted, lost a regression, or captured its evaluator.
 - Mechanism: Turn each proposed improvement into a replacement transaction with wall diagnosis, evidence packet, prechecks, gates, canary, residual escrow, monitor window, and rollback obligation.
+- Mechanism: Position canary, blue-green, feature-flag, rollout-history, model-delivery, monitoring, and rollback-trigger vocabulary against source-noted external comparators, then preserve the ASI-specific transaction boundary around field identity, authority ceilings, evaluator independence, regression floors, residual ownership, rollback receipts, and support-state effects.
 - Mechanism: Run field-identity, authority, qualification, regression-floor, holdout, and residual checks before commit.
 - Mechanism: Treat failed gates and benchmark transfer failures as residuals rather than disappearing work.
 - Mechanism: Keep candidate improvement, canary use, default promotion, monitor evidence/status, promotion blockers, and rollback obligation as separate transaction states.
@@ -730,6 +732,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A replacement transaction schema with transaction state, identity-preservation, precheck, gate, commit, canary scope, monitor status, evaluator-independence, rollback receipt, promotion blockers, source refs, support-state effect, residual, and non-claim fields.
+- Source-noted external positioning through Argo Rollouts progressive delivery, Fowler/Hodgson feature toggles, Google Cloud MLOps continuous delivery, and Kubernetes Deployments rollout history/rollback; no rollout controller, feature-flag service, ML pipeline, model deployment, monitor trigger, or production rollback is reproduced or promoted.
 - Planned Codex test: Replacement transaction test.
 - Implemented Codex test: Regression preservation test, via `python3 scripts/validate_readiness_residual_gates.py` over failed-regression and missing-regression promotion blockers; real regression-suite coverage remains unrun.
 - Implemented Codex test: Rollback execution dry run, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default rollback dry-run requirements; production rollback execution remains unrun.

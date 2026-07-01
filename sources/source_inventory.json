@@ -2959,6 +2959,66 @@
     "citation_label": "Pineau et al. (2021), Improving Reproducibility in Machine Learning Research"
   },
   {
+    "id": "ext_argo_rollouts_docs",
+    "title": "Argo Rollouts Documentation: Kubernetes Progressive Delivery Controller",
+    "priority": "external_literature",
+    "layer": "progressive_delivery_rollback",
+    "chapter_targets": [
+      "capability-replacement-and-rollback"
+    ],
+    "url": "https://argo-rollouts.readthedocs.io/en/stable/",
+    "notes": "External progressive-delivery comparator for blue-green rollout, canary rollout, metric analysis, automated promotion, and automated rollback vocabulary.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "",
+    "citation_label": "Argo Rollouts Documentation, Kubernetes Progressive Delivery Controller"
+  },
+  {
+    "id": "ext_feature_toggles_fowler",
+    "title": "Feature Toggles (aka Feature Flags)",
+    "priority": "external_literature",
+    "layer": "feature_flag_release_control",
+    "chapter_targets": [
+      "capability-replacement-and-rollback"
+    ],
+    "url": "https://martinfowler.com/articles/feature-toggles.html",
+    "notes": "External feature-flag comparator for controlled exposure, canary releasing, release toggles, experiment toggles, ops toggles, permissioning toggles, and validation complexity.",
+    "source_type": "industry_article",
+    "published": "2017-10-09",
+    "updated": "2017-10-09",
+    "citation_label": "Hodgson (2017), Feature Toggles (aka Feature Flags)"
+  },
+  {
+    "id": "ext_google_cloud_mlops_cd",
+    "title": "MLOps: Continuous Delivery and Automation Pipelines in Machine Learning",
+    "priority": "external_literature",
+    "layer": "mlops_continuous_delivery",
+    "chapter_targets": [
+      "capability-replacement-and-rollback"
+    ],
+    "url": "https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning",
+    "notes": "External MLOps comparator for CI/CD/CT, data/model validation, model deployment, monitoring, rollback triggers, and model-regression concerns.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "2024-08-28",
+    "citation_label": "Google Cloud Architecture Center (2024), MLOps Continuous Delivery and Automation Pipelines in Machine Learning"
+  },
+  {
+    "id": "ext_kubernetes_deployments_docs",
+    "title": "Kubernetes Documentation: Deployments",
+    "priority": "external_literature",
+    "layer": "deployment_rollout_rollback",
+    "chapter_targets": [
+      "capability-replacement-and-rollback"
+    ],
+    "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
+    "notes": "External deployment-controller comparator for rollout status, rollout history, revision records, and rollback to a prior stable Deployment revision.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "",
+    "citation_label": "Kubernetes Documentation, Deployments"
+  },
+  {
     "id": "ext_mrkl_systems_2022",
     "title": "MRKL Systems: A Modular, Neuro-Symbolic Architecture That Combines Large Language Models, External Knowledge Sources and Discrete Reasoning",
     "priority": "external_literature",

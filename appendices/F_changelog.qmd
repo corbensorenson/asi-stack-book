@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Ground replacement in rollout and MLOps practice
+
+- Added external source records and source notes for Argo Rollouts progressive
+  delivery, Fowler/Hodgson feature toggles, Google Cloud MLOps continuous
+  delivery, and Kubernetes Deployments rollout history/rollback.
+- Updated Capability Replacement and Rollback plus the outline and v1.x
+  roadmap so canary, blue-green, feature-flag, model-delivery,
+  regression-gating, monitoring, revision-history, and rollback-trigger
+  vocabulary is externally grounded while preserving the chapter's `argument`
+  support state.
+- This is external comparator grounding only; it does not prove Argo Rollouts
+  execution, Kubernetes deployment behavior, a feature-flag platform, an ML
+  pipeline, production model rollout, monitor-trigger quality, rollback
+  execution, or support-state promotion.
+
 ## 2026-07-01 - Add routing authority-envelope negative fixture
 
 - Extended `scripts/validate_routing_decision_lease.py` so selected route
