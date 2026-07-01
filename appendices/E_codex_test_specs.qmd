@@ -273,6 +273,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Holdout and contamination negative case | implemented | passes via Lean negative case; no hidden-holdout or contamination-detection claim |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Reward-proxy target-evaluation negative case | implemented | passes via Lean negative case; no reward-quality or task-success claim |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Authority-expansion negative case | implemented | passes via Lean negative case; no approval-quality or rollback-execution claim |
+| `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Policy-promotion route negative case | implemented | passes via Lean route negative cases; no policy-improvement, reward-quality, or deployment claim |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Router policy toy RL test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Context-policy grounding reward test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Reasoning-budget penalty test | planned | not run |
@@ -366,16 +367,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 122 |
+| Proof targets covered by triage | 123 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 122 |
+| implemented | 123 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 122 |
+| implemented | formal-invariant | lean-candidate | 123 |

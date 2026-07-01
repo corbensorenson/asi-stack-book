@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-06-30 - Policy-promotion route proofs
+
+- Strengthened `AsiStackProofs.PolicyOptimization` with seven derived
+  route-level theorems over finite policy-promotion reviews: inadmissible
+  feedback rejects promotion; missing target evaluation routes to target
+  evaluation; missing holdout or contamination checks route to review; missing
+  reward-hacking probes route to probe review; governance or authority gaps
+  route to governance; missing rollback routes to rollback review; and
+  regression or residual gaps route to residual recording.
+- Added the implemented
+  `lean:policy_optimization.promotion_route.failure_routes` proof target,
+  triage record, chapter formalization hook, and Appendix E test row. Regenerated
+  `proofs/proof_manifest.json`, `docs/proof_artifact_audit.md`, and
+  `docs/proof_depth_classification.md`; the proof-depth classifier now reports
+  371 theorem declarations, 121 direct/projection-style declarations, and 250
+  derived/decomposed declarations across 123 manifest proof targets.
+- Updated the Policy Optimization chapter, Proof Envelope chapter, outline,
+  proof adequacy review, proof/code plan, publication readiness, repository map,
+  v1.0 candidate status, v1.0 focus audit, v1.0/v1.x roadmap surfaces, reader
+  continuity audit, and status snapshot validator. Appendix E now records 206
+  implemented rows, 1 partial row, and 110 planned rows. Refreshed the v1.0
+  status manuscript scale to 169,784 chapter words excluding YAML and 177,437
+  raw chapter-file words.
+- This does not run PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL,
+  or reasoning-budget RL; prove reward quality, optimizer convergence,
+  benchmark improvement, policy safety, reward-hacking resistance, rollback
+  execution, or runtime policy-update behavior; promote any chapter core claim;
+  or approve any reader/ebook/PDF/DOCX/audio/release artifact.
+
 ## 2026-06-30 - Proof-envelope artifact authority proofs
 
 - Strengthened `AsiStackProofs.ProofEnvelope` with four derived negative-case

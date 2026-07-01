@@ -24,7 +24,7 @@ Public status: raw packet is local-only and ignored by git. This report is the p
 | Stack interface | Framed policy optimization as the stack's learning actuator, with governance deciding which feedback is admissible and whether updates may be promoted. |
 | Evidence discipline | Separated reward, preference, verifier, benchmark, latency, and governance feedback from evidence and authority claims. |
 | Record schema | Added `policy_optimization_record.schema.json` and a valid fixture for target layer, feedback source, update constraint, evaluation refs, governance gates, rollback, residuals, and non-claims. |
-| Lean hooks | Added `AsiStackProofs.PolicyOptimization` finite predicates for admitted update records and unverified-reward or missing-governance promotion blocking. |
+| Lean hooks | Added `AsiStackProofs.PolicyOptimization` finite predicates for admitted update records, unverified-reward or missing-governance promotion blocking, and route-level promotion failures for feedback, target-evaluation, reward-probe, governance/authority, rollback, regression, and residual gaps. |
 | Research direction | Preserved REINFORCE/RLOO/ReMax, TRPO/PPO/RLHF, GRPO/DAPO/GSPO, DPO/IPO/ORPO/KTO/SimPO, RLVR, process rewards, reasoning-budget RL, router-policy RL, and context-policy RL as external-literature and experiment backlog rather than reported results. |
 | External source notes | Added stable source records and source notes for TRPO, PPO, ReMax, DPO, IPO/preference-learning theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF limitations using primary arXiv metadata. |
 

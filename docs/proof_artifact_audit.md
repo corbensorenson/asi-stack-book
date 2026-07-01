@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 122 |
-| Manifest status counts | {"implemented": 122} |
-| Triage class counts | {"formal-invariant": 122} |
+| Proof targets audited | 123 |
+| Manifest status counts | {"implemented": 123} |
+| Triage class counts | {"formal-invariant": 123} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -60,7 +60,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | 4 | 6 | 4 | 4 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 2 | 8 | 4 | 4 |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | 2 | 8 | 6 | 5 |
+| `lean/AsiStackProofs/PolicyOptimization.lean` | 3 | 15 | 7 | 6 |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | 2 | 4 | 2 | 2 |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | 2 | 7 | 5 | 3 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 2 | 6 | 6 | 4 |
@@ -117,7 +117,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 4 | 4 | 0 | 0 |
 | `planning-as-a-control-layer` | 4 | 4 | 0 | 0 |
-| `policy-optimization-and-learning-from-feedback` | 2 | 2 | 0 | 0 |
+| `policy-optimization-and-learning-from-feedback` | 3 | 3 | 0 | 0 |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 2 | 0 | 0 |
 | `project-theseus-as-report-first-implementation-reference` | 2 | 2 | 0 | 0 |
 | `prototype-roadmap` | 2 | 2 | 0 | 0 |
@@ -247,6 +247,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.work_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.release_gate.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |

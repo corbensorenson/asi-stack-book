@@ -9783,6 +9783,13 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean negative case; no approval-quality or rollback-execution claim"
             },
+            {
+              "name": "Policy-promotion route negative case",
+              "purpose": "Check that finite policy-promotion routes reject or route updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion.",
+              "status": "implemented in AsiStackProofs.PolicyOptimization; no optimizer, reward-quality, or deployment behavior claim",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route negative cases; no policy-improvement, reward-quality, or deployment claim"
+            },
             "Router policy toy RL test",
             "Context-policy grounding reward test",
             "Reasoning-budget penalty test",
@@ -9846,6 +9853,12 @@
               "tag": "lean:policy_optimization.reward_boundary.failure_blocks_promotion",
               "module": "AsiStackProofs.PolicyOptimization",
               "target": "A policy update with unverified reward or missing governance gate cannot be promoted.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:policy_optimization.promotion_route.failure_routes",
+              "module": "AsiStackProofs.PolicyOptimization",
+              "target": "A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion.",
               "status": "implemented"
             }
           ]

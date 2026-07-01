@@ -185,8 +185,150 @@ theorem authority_expanding_policy_update_without_approval_or_rollback_rejected
       | inl approvalMissing =>
           rw [approvalMissing] at approvalPresent
           contradiction
-      | inr rollbackMissing =>
-          rw [rollbackMissing] at rollbackPresent
-          contradiction
+          | inr rollbackMissing =>
+              rw [rollbackMissing] at rollbackPresent
+              contradiction
+
+inductive PolicyUpdatePromotionRoute where
+  | rejectFeedback
+  | requireTargetEvaluation
+  | requireHoldoutOrContaminationCheck
+  | requireRewardHackProbe
+  | requireGovernance
+  | requireRollback
+  | recordResidual
+  | promote
+deriving DecidableEq, Repr
+
+structure PolicyUpdatePromotionRouteReview where
+  feedbackAdmissible : Bool
+  targetEvaluationRefsPresent : Bool
+  holdoutRefsPresent : Bool
+  contaminationCheckPresent : Bool
+  rewardHackingProbePresent : Bool
+  governanceGateRefsPresent : Bool
+  authorityUnchangedOrApproved : Bool
+  rollbackPlanPresent : Bool
+  regressionsPreserved : Bool
+  residualsRecorded : Bool
+deriving DecidableEq, Repr
+
+def PolicyUpdatePromotionRouteFor
+    (review : PolicyUpdatePromotionRouteReview) : PolicyUpdatePromotionRoute :=
+  if review.feedbackAdmissible = false then
+    PolicyUpdatePromotionRoute.rejectFeedback
+  else if review.targetEvaluationRefsPresent = false then
+    PolicyUpdatePromotionRoute.requireTargetEvaluation
+  else if review.holdoutRefsPresent = false ∨
+      review.contaminationCheckPresent = false then
+    PolicyUpdatePromotionRoute.requireHoldoutOrContaminationCheck
+  else if review.rewardHackingProbePresent = false then
+    PolicyUpdatePromotionRoute.requireRewardHackProbe
+  else if review.governanceGateRefsPresent = false ∨
+      review.authorityUnchangedOrApproved = false then
+    PolicyUpdatePromotionRoute.requireGovernance
+  else if review.rollbackPlanPresent = false then
+    PolicyUpdatePromotionRoute.requireRollback
+  else if review.regressionsPreserved = false ∨
+      review.residualsRecorded = false then
+    PolicyUpdatePromotionRoute.recordResidual
+  else
+    PolicyUpdatePromotionRoute.promote
+
+theorem inadmissible_feedback_rejects_policy_promotion
+    {review : PolicyUpdatePromotionRouteReview} :
+    review.feedbackAdmissible = false ->
+    PolicyUpdatePromotionRouteFor review =
+      PolicyUpdatePromotionRoute.rejectFeedback := by
+  intro inadmissible
+  unfold PolicyUpdatePromotionRouteFor
+  simp [inadmissible]
+
+theorem policy_promotion_without_target_evaluation_routes_to_target_evaluation
+    {review : PolicyUpdatePromotionRouteReview} :
+    review.feedbackAdmissible = true ->
+    review.targetEvaluationRefsPresent = false ->
+    PolicyUpdatePromotionRouteFor review =
+      PolicyUpdatePromotionRoute.requireTargetEvaluation := by
+  intro admissible missingTargetEval
+  unfold PolicyUpdatePromotionRouteFor
+  simp [admissible, missingTargetEval]
+
+theorem policy_promotion_without_holdout_or_contamination_check_routes_to_review
+    {review : PolicyUpdatePromotionRouteReview} :
+    review.feedbackAdmissible = true ->
+    review.targetEvaluationRefsPresent = true ->
+    (review.holdoutRefsPresent = false ∨
+      review.contaminationCheckPresent = false) ->
+    PolicyUpdatePromotionRouteFor review =
+      PolicyUpdatePromotionRoute.requireHoldoutOrContaminationCheck := by
+  intro admissible targetEval boundaryMissing
+  unfold PolicyUpdatePromotionRouteFor
+  simp [admissible, targetEval, boundaryMissing]
+
+theorem policy_promotion_without_reward_hacking_probe_routes_to_probe_review
+    {review : PolicyUpdatePromotionRouteReview} :
+    review.feedbackAdmissible = true ->
+    review.targetEvaluationRefsPresent = true ->
+    review.holdoutRefsPresent = true ->
+    review.contaminationCheckPresent = true ->
+    review.rewardHackingProbePresent = false ->
+    PolicyUpdatePromotionRouteFor review =
+      PolicyUpdatePromotionRoute.requireRewardHackProbe := by
+  intro admissible targetEval holdout contamination missingProbe
+  unfold PolicyUpdatePromotionRouteFor
+  simp [admissible, targetEval, holdout, contamination, missingProbe]
+
+theorem policy_promotion_with_governance_or_authority_gap_routes_to_governance
+    {review : PolicyUpdatePromotionRouteReview} :
+    review.feedbackAdmissible = true ->
+    review.targetEvaluationRefsPresent = true ->
+    review.holdoutRefsPresent = true ->
+    review.contaminationCheckPresent = true ->
+    review.rewardHackingProbePresent = true ->
+    (review.governanceGateRefsPresent = false ∨
+      review.authorityUnchangedOrApproved = false) ->
+    PolicyUpdatePromotionRouteFor review =
+      PolicyUpdatePromotionRoute.requireGovernance := by
+  intro admissible targetEval holdout contamination probe governanceMissing
+  unfold PolicyUpdatePromotionRouteFor
+  simp [admissible, targetEval, holdout, contamination, probe, governanceMissing]
+
+theorem policy_promotion_without_rollback_routes_to_rollback_review
+    {review : PolicyUpdatePromotionRouteReview} :
+    review.feedbackAdmissible = true ->
+    review.targetEvaluationRefsPresent = true ->
+    review.holdoutRefsPresent = true ->
+    review.contaminationCheckPresent = true ->
+    review.rewardHackingProbePresent = true ->
+    review.governanceGateRefsPresent = true ->
+    review.authorityUnchangedOrApproved = true ->
+    review.rollbackPlanPresent = false ->
+    PolicyUpdatePromotionRouteFor review =
+      PolicyUpdatePromotionRoute.requireRollback := by
+  intro admissible targetEval holdout contamination probe governance authority missingRollback
+  unfold PolicyUpdatePromotionRouteFor
+  simp [admissible, targetEval, holdout, contamination, probe, governance, authority,
+    missingRollback]
+
+theorem policy_promotion_with_regression_or_residual_gap_records_residual
+    {review : PolicyUpdatePromotionRouteReview} :
+    review.feedbackAdmissible = true ->
+    review.targetEvaluationRefsPresent = true ->
+    review.holdoutRefsPresent = true ->
+    review.contaminationCheckPresent = true ->
+    review.rewardHackingProbePresent = true ->
+    review.governanceGateRefsPresent = true ->
+    review.authorityUnchangedOrApproved = true ->
+    review.rollbackPlanPresent = true ->
+    (review.regressionsPreserved = false ∨
+      review.residualsRecorded = false) ->
+    PolicyUpdatePromotionRouteFor review =
+      PolicyUpdatePromotionRoute.recordResidual := by
+  intro admissible targetEval holdout contamination probe governance authority rollback
+    residualMissing
+  unfold PolicyUpdatePromotionRouteFor
+  simp [admissible, targetEval, holdout, contamination, probe, governance, authority,
+    rollback, residualMissing]
 
 end AsiStackProofs.PolicyOptimization

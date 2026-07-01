@@ -2604,8 +2604,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 122 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 122 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 123 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 123 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -2763,6 +2763,7 @@ Draft deliverables:
 - Planned Codex test: Length and latency penalty study.
 - Implemented Codex test: Reward-source admissibility test, via `python3 scripts/validate_benchmark_antigoodhart.py` over admissible feedback, run measurement status, governance gates, evidence packet refs, and promotion-ready ratchets; no policy optimization run exists.
 - Implemented Codex test: Reward hacking probe test, via `python3 scripts/validate_benchmark_antigoodhart.py` over required reward-hacking probes and reward-as-truth rejection; no reward-hacking experiment exists.
+- Implemented Codex test: Policy-promotion route negative case, via `AsiStackProofs.PolicyOptimization.PolicyUpdatePromotionRouteFor` route theorems over inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, and regression/residual gaps; no optimizer, reward-quality, policy-improvement, or deployment behavior claim exists.
 - Planned Codex test: Router policy toy RL test.
 - Planned Codex test: Context-policy grounding reward test.
 - Planned Codex test: Reasoning-budget penalty test.
@@ -2774,6 +2775,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:policy_optimization.update.operational_invariant` | `AsiStackProofs.PolicyOptimization` | An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan. | implemented |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A policy update with unverified reward or missing governance gate cannot be promoted. | implemented |
+| `lean:policy_optimization.promotion_route.failure_routes` | `AsiStackProofs.PolicyOptimization` | A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion. | implemented |
 
 ### Artifact Steward Agents and Living Project Governance
 
