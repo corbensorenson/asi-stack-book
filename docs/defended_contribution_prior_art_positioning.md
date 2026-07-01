@@ -121,7 +121,7 @@ comparator gap.
 | Routing residual-governance comparator gap remains open | Existing routing papers ground cost/quality routing, but not the full ASI Stack residual and authority ledger. | Mine routing, safety, and governance literature for residual/accountability comparators; keep route claims at `argument`. |
 | Self-improvement evidence is still narrow | Current Theseus import is digest-verified static implementation-reference evidence, not a clean replay. | Produce clean Theseus replay or archived public fixture plus negative controls before support-state movement. |
 | Proof-carrying contract evidence is still narrow | Circle consumer gate is CI-verifiable by digest, but not a clean upstream replay or public contract pack. | Create a public Circle contract pack, clean replay, or archived upstream pack. |
-| Demotion/refutation path needs a live example | `docs/evidence_laundering_prevention_case_studies.md` now records three no-promotion examples, but no chapter core claim has yet been truly demoted or refuted. | Add a future demotion/refutation case when evidence, prior art, review, proof limits, or replay failure requires narrowing, retirement, demotion, or refutation. |
+| Demotion/refutation path needs a live example | `docs/evidence_laundering_prevention_case_studies.md` now records three no-promotion examples plus one live count-surface narrowing record, but no chapter core claim has yet been truly demoted or refuted. | Add a future chapter-core demotion/refutation case when evidence, prior art, review, proof limits, or replay failure requires narrowing, retirement, demotion, or refutation. |
 
 ## Non-Claims
 

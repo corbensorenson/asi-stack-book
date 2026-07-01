@@ -65,8 +65,8 @@ tracks, but this cycle should not widen into five simultaneous deep campaigns.
   comparator record only; it is not novelty proof, accepted external review, or
   support-state movement.
 - `docs/evidence_laundering_prevention_case_studies.md` records no-promotion
-  behavior only; it is not a demotion/refutation event, accepted review, or
-  support-state movement.
+  behavior and one count-surface narrowing only; it is not a chapter-core
+  demotion/refutation event, accepted review, or support-state movement.
 - Non-core transitions remain limited to their accepted evidence-transition
   records.
 - A selected track can be revised, demoted, split, retired, or blocked if

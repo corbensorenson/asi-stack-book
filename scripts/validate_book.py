@@ -49,6 +49,7 @@ REQUIRED = [
     "scripts/validate_source_evidence_audit.py",
     "scripts/validate_evidence_transitions.py",
     "scripts/validate_non_core_evidence_ledger.py",
+    "scripts/validate_claim_revision_records.py",
     "scripts/validate_external_review_status.py",
     "scripts/validate_external_review_intake.py",
     "scripts/validate_defended_contribution_tracks.py",
@@ -663,6 +664,8 @@ def main() -> None:
     run_validator("validate_protocol_crosswalk.py")
     run_validator("validate_source_evidence_audit.py")
     run_validator("validate_evidence_transitions.py")
+    run_validator("validate_non_core_evidence_ledger.py")
+    run_validator("validate_claim_revision_records.py")
     run_validator("validate_core_claim_decisions.py")
     run_validator("validate_external_review_intake.py")
     run_validator("validate_defended_contribution_tracks.py")

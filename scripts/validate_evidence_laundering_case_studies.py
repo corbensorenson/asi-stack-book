@@ -19,6 +19,7 @@ REQUIRED_CASES = (
     "Project Theseus Static Import Did Not Become Self-Improvement Evidence",
     "Circle Consumer Gate Did Not Become Proof-Contract Deployment Evidence",
     "Reader HTML Release Did Not Approve EPUB, DOCX, PDF, Audio, Or Claims",
+    "Manifest Count-Surface Narrowing Did Not Become Support-State Movement",
 )
 
 REQUIRED_REFS = (
@@ -26,17 +27,21 @@ REQUIRED_REFS = (
     "docs/circle_public_replay_consumer_gate.md",
     "docs/reader_html_artifact_browser_review.md",
     "release_records/2026-06-29-v1-reader-html-855dc277.json",
+    "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
 )
 
 BOUNDARY_FRAGMENTS = (
-    "No-promotion / anti-laundering examples",
+    "No-promotion / anti-laundering examples plus live claim-surface narrowing",
     "all 44 chapter core claims remain `argument`",
-    "Live demotion/refutation example | Still missing",
+    "Live no-promotion examples recorded | 3",
+    "Live claim-surface narrowing examples recorded | 1",
+    "Live demotion/refutation example | Still missing for chapter core claims",
     "not a new evidence-transition record",
-    "not a demotion/refutation event",
+    "not a chapter-core demotion/refutation event",
     "not accepted external review",
     "does not promote any chapter core claim above `argument`",
     "does not demote or refute any chapter core claim",
+    "does not treat the count-surface narrowing as technical evidence",
     "does not create accepted external review",
 )
 
@@ -91,7 +96,8 @@ def main() -> None:
 
     print(
         "Evidence-laundering case-study validation passed: "
-        f"{len(REQUIRED_CASES)} no-promotion examples recorded with live demotion/refutation gap preserved."
+        "3 no-promotion examples and 1 live claim-surface narrowing recorded "
+        "with chapter-core demotion/refutation gap preserved."
     )
 
 

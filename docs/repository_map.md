@@ -17,7 +17,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/a_plus_quality_scorecard.md` | Planning scorecard translating current project grade gaps into A+ conditions for cold-read legibility, evidence depth, proof rigor, external grounding, reader quality, and defended contribution tracks. | tracked |
 | `docs/defended_contribution_tracks.md` | v1.x defended-contribution selection record: five selected tracks, three deep-work tracks, active evidence-cycle anchors, and no-promotion boundaries. | tracked |
 | `docs/defended_contribution_prior_art_positioning.md` | Source-noted prior-art positioning record for the five defended contribution tracks, with comparator IDs, remaining gaps, and no-support-state-movement boundaries. | tracked |
-| `docs/evidence_laundering_prevention_case_studies.md` | No-promotion case-study record for evidence-laundering prevention, covering Theseus static import, Circle consumer gate, reader HTML artifact review, and the remaining demotion/refutation gap. | tracked |
+| `docs/evidence_laundering_prevention_case_studies.md` | No-promotion and claim-surface narrowing record for evidence-laundering prevention, covering Theseus static import, Circle consumer gate, reader HTML artifact review, the manifest count-surface correction, and the remaining chapter-core demotion/refutation gap. | tracked |
 | `docs/per_chapter_evidence_plan.md` | 44-chapter evidence-lane backlog for selecting a small high-payoff v1.x execution set without triggering another shallow breadth sweep. | tracked |
 | `docs/v1_x_active_evidence_cycle.md` | Active v1.x evidence-cycle ledger naming the eight selected high-payoff lanes, the thirty-six planned-only lanes, and the no-chapter-core-promotion boundary. | tracked |
 | `docs/chapter_consolidation_sequence.md` | Governed full consolidation sequence for the 54-to-44/47 chapter-shape critique, preserving cluster order, protected chapters, no-manifest-edit boundaries, and review prerequisites. | tracked |
@@ -104,7 +104,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_artifact_layout_review.md` | Representative local EPUB/DOCX/PDF/HTML spot-check notes for ignored reader-format snapshots, with residuals before any release artifact can be approved. | tracked |
 | `docs/evidence_transition_pilot.md` | Phase 3 evidence-transition summary, recording no-change support-state decisions plus the separate bounded registry-runner, costed-route/resource-budget, and Circle external receipt transitions. | tracked |
 | `docs/first_measured_replayed_slice.md` | Accepted measured/replayed slice ledger: a narrow `synthetic-test-backed` repository-infrastructure transition, a bounded non-infrastructure costed-route/resource-budget transition, and a bounded `prototype-backed` Circle external receipt transition, with non-claims. | tracked |
-| `docs/non_core_evidence_ledger.md` | Public trust-surface ledger for the three accepted non-core upward transitions and the explicit no-chapter-core-promotion boundary, validated against the transition records. | tracked |
+| `docs/non_core_evidence_ledger.md` | Public trust-surface ledger for the three accepted non-core upward transitions, one count-surface narrowing record, and the explicit no-chapter-core-promotion boundary, validated against the transition and claim-revision records. | tracked |
 | `docs/costed_route_resource_slice.md` | First bounded non-infrastructure measured/replayed slice for costed-route/resource-budget selector discipline. | tracked |
 | `docs/circle_external_receipt_slice.md` | First bounded imported external prototype receipt slice for a local Circle rope contract replay. | tracked |
 | `docs/circle_public_replay_consumer_gate.md` | Public ASI-side Circle consumer-gate fixture, digest check, and mutation-control record for guarded proof-contract receipt use. | tracked |
@@ -162,7 +162,8 @@ This repository is organized around the living book and its validation loop.
 | `release_records/2026-06-29-v1-reader-html-855dc277.json` | Edition release record for the reviewed local generated reader HTML artifact from source tag `v1.0.0-reader-html-source`; EPUB, DOCX, PDF, e-reader, and audio artifacts remain unapproved. | tracked |
 | `scripts/init_curated_reader_chapter.py` | Dry-run-first helper for initializing future curated reader chapter records and starter files from the generated reader baseline when overlays become too small. | tracked |
 | `scripts/validate_defended_contribution_prior_art.py` | Validator for defended-contribution prior-art positioning, source-note coverage, public references, and no-novelty/no-promotion boundaries. | tracked |
-| `scripts/validate_evidence_laundering_case_studies.py` | Validator for evidence-laundering no-promotion case studies, referenced evidence boundary files, public references, and the remaining demotion/refutation gap. | tracked |
+| `scripts/validate_evidence_laundering_case_studies.py` | Validator for evidence-laundering no-promotion case studies, the live claim-surface narrowing record, referenced evidence boundary files, public references, and the remaining chapter-core demotion/refutation gap. | tracked |
+| `scripts/validate_claim_revision_records.py` | Validator for live claim-revision records, including the manifest chapter-core count narrowing and support-state non-movement boundary. | tracked |
 | `scripts/validate_chapter_consolidation_sequence.py` | Validator for the full governed consolidation sequence, public-surface references, no-promotion boundary, and current 44-chapter manifest after executed merges and folds. | tracked |
 | `assets/reader-overlays.html` | Generated embedded reader-overlay payload for live Human view. | tracked; regenerate from overlays |
 | `sources/source_inventory.json` | Public-safe source metadata inventory. | tracked |
@@ -174,6 +175,7 @@ This repository is organized around the living book and its validation loop.
 | `lean/` | Lean 4 proof workspace. | tracked except `.lake/` |
 | `protocols/` | Structured protocol-record crosswalk manifests for schema/fixture/harness/Lean reconciliation. | tracked |
 | `claim_decisions/` | Structured release-gate decision ledgers for explicit no-promotion or non-transition decisions that are not evidence-transition records. | tracked |
+| `claim_revisions/` | Live claim-revision records for narrowed, corrected, retired, blocked, or future demoted/refuted claim surfaces that must preserve support-state boundaries. | tracked |
 | `evidence_transitions/v1_0_pilot/` | No-change evidence-transition records for reviewed chapter/book claims that remain at `argument`. | tracked |
 | `evidence_transitions/v1_0_measured/` | Accepted bounded measured/replayed evidence-transition records for the Phase 5 registry-runner infrastructure claim, the costed-route/resource-budget selector slice, and the Circle external rope receipt slice. The Project Theseus static report import is intentionally not an accepted support-state transition. | tracked |
 | `schemas/` | JSON Schemas for protocol records and the book-structure manifest contract. | tracked |

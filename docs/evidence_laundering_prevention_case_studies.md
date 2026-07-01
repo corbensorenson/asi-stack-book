@@ -1,24 +1,27 @@
 # Evidence-Laundering Prevention Case Studies
 
-Last updated: 2026-06-29
+Last updated: 2026-07-01
 
 This record documents live no-promotion case studies where the repository had a
 tempting artifact, passing validator, or reviewed artifact but deliberately
 refused to promote a broader claim. It exists to strengthen the selected
 `claim-support-states-and-evidence-laundering-prevention` contribution track.
 
-This is not a new evidence-transition record, not a demotion/refutation event,
-not an external review, and not support-state movement. It records how existing
-release-control surfaces prevented evidence laundering.
+This is not a new evidence-transition record, not a chapter-core demotion/refutation event,
+not an external review, and not support-state
+movement. It records how existing release-control surfaces prevented evidence
+laundering, plus one live claim-surface narrowing that corrected an obsolete
+public count boundary.
 
 ## Current Status
 
 | Field | Status |
 |---|---|
-| Case-study type | No-promotion / anti-laundering examples |
-| Live examples recorded | 3 |
+| Case-study type | No-promotion / anti-laundering examples plus live claim-surface narrowing |
+| Live no-promotion examples recorded | 3 |
+| Live claim-surface narrowing examples recorded | 1 |
 | Chapter core support effect | None; all 44 chapter core claims remain `argument`. |
-| Live demotion/refutation example | Still missing; the support-state harness now has synthetic demotion/refutation fixtures, but no chapter core claim is recorded as demoted or refuted by this note. |
+| Live demotion/refutation example | Still missing for chapter core claims; the support-state harness has synthetic demotion/refutation fixtures, and `claim_revisions/v1_x/manifest_core_claim_count_narrowing.json` records one non-core count-surface narrowing, but no chapter core claim is demoted or refuted by this note. |
 | Reviewer effect | None; this is not accepted external review. |
 
 ## Case Study 1 - Project Theseus Static Import Did Not Become Self-Improvement Evidence
@@ -63,13 +66,28 @@ Why it matters: this case prevents reader-release laundering. A polished human
 artifact can be useful without becoming evidence for the technical claims it
 explains.
 
+## Case Study 4 - Manifest Count-Surface Narrowing Did Not Become Support-State Movement
+
+| Field | Value |
+|---|---|
+| Tempting overclaim | A public trust surface can look stronger than it is when its counts are stale after consolidation. `docs/non_core_evidence_ledger.md` still said "All 54 remain at `argument`" after the active manifest and `docs/core_claim_transition_coverage.md` had narrowed the current chapter-core set to 44. |
+| Actual accepted correction | `claim_revisions/v1_x/manifest_core_claim_count_narrowing.json` records a live claim-surface narrowing: the non-core ledger now says "All 44 remain at `argument`" and the validator checks that boundary. |
+| Laundering blocked | Treating a count correction as evidence for the claim-support method; treating consolidation as support-state movement; treating a public-surface fix as chapter-core demotion, refutation, promotion, or accepted external review. |
+| Blocking evidence | `book_structure.json` and `docs/core_claim_transition_coverage.md` record 44 current manifest chapter core claims; `scripts/validate_non_core_evidence_ledger.py` and `scripts/validate_claim_revision_records.py` now check the corrected boundary. |
+| Required next evidence | A true demotion, refutation, retirement, or claim-narrowing event still needs failed evidence, prior-art undercutting, reviewer findings, proof-target replacement, or unreproducible replay evidence tied to the affected claim or lane. |
+
+Why it matters: this is the first live narrowing event in the evidence-process
+track. It corrects a public claim surface and records the downstream boundary
+without pretending that a stale count fix is technical evidence.
+
 ## Remaining Demotion/Refutation Gap
 
-These case studies show no-promotion behavior, not true demotion or refutation.
-The roadmap still needs a future live case where a chapter core claim,
-subclaim, source mapping, proof target, or evidence lane is narrowed, demoted,
-retired, or refuted because evidence failed, prior art undercut the claim, a
-reviewer found a serious error, or a replay could not be reproduced.
+These case studies now show no-promotion behavior plus one live count-surface
+narrowing. They still do not show true chapter-core demotion or refutation. The
+roadmap still needs a future live case where a chapter core claim, subclaim,
+source mapping, proof target, or evidence lane is narrowed, demoted, retired, or
+refuted because evidence failed, prior art undercut the claim, a reviewer found
+a serious error, or a replay could not be reproduced.
 
 That future record should name:
 
@@ -87,6 +105,7 @@ That future record should name:
 - This record does not create a new evidence transition.
 - This record does not promote any chapter core claim above `argument`.
 - This record does not demote or refute any chapter core claim.
+- This record does not treat the count-surface narrowing as technical evidence.
 - This record does not create accepted external review.
 - This record does not approve Project Theseus replay, Circle replay, EPUB,
   DOCX, PDF, e-reader, audio, DOI, archive, or deployment readiness.

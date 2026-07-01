@@ -1,0 +1,75 @@
+{
+  "scenario_id": "live_manifest_core_claim_count_narrowing_2026_07_01",
+  "claim_ledger_record": {
+    "claim_id": "non-core-evidence-ledger.chapter-core-count-surface",
+    "claim_text": "The public non-core evidence ledger reports the current manifest chapter-core count.",
+    "revision_action": "deprecate",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "docs/non_core_evidence_ledger.md#current-boundary",
+      "docs/core_claim_transition_coverage.md#summary",
+      "book_structure.json"
+    ],
+    "evidence_refs": [
+      "book_structure.json",
+      "docs/core_claim_transition_coverage.md",
+      "scripts/validate_core_claim_decisions.py",
+      "scripts/validate_non_core_evidence_ledger.py",
+      "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json"
+    ],
+    "contradiction_refs": [
+      "manifest-count-drift: docs/non_core_evidence_ledger.md said All 54 remain at argument while book_structure.json and docs/core_claim_transition_coverage.md record 44 manifest chapter core claims"
+    ],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-2026-07-01-manifest-count-narrowing",
+        "reason": "The canonical manifest has 44 active chapter core claims after governed consolidation, so the public non-core ledger count was narrowed to the current manifest count instead of preserving the obsolete 54-count wording.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "book_structure.json",
+          "docs/core_claim_transition_coverage.md",
+          "scripts/validate_core_claim_decisions.py"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "docs/non_core_evidence_ledger.md",
+      "scripts/validate_non_core_evidence_ledger.py",
+      "docs/evidence_laundering_prevention_case_studies.md",
+      "docs/v1_x_active_evidence_cycle.md"
+    ],
+    "affected_surfaces": [
+      "public non-core evidence ledger count",
+      "non-core ledger validator boundary string",
+      "evidence-laundering case-study status",
+      "active evidence-cycle residual text"
+    ],
+    "promotion_blockers": [
+      "count correction is not evidence for any technical claim",
+      "no accepted upward evidence transition",
+      "no independent external review",
+      "no chapter core support-state movement"
+    ],
+    "review_routes": [
+      "core-claim coverage validator",
+      "non-core evidence ledger validator",
+      "future external evidence-process review"
+    ],
+    "residuals": [
+      "The contradiction was a public count-surface drift and is resolved by narrowing the ledger to the current manifest count; true chapter-core demotion, deprecation, or refutation remains a future event that requires failed evidence, reviewer findings, prior-art undercutting, or unreproducible replay evidence."
+    ],
+    "non_claims": [
+      "This live claim-narrowing record does not promote any support state.",
+      "This live claim-narrowing record does not prove source interpretation, runtime behavior, verifier quality, external review, or evidence-process completeness.",
+      "This live claim-narrowing record does not demote, deprecate, or refute any chapter core claim."
+    ]
+  },
+  "non_claims": [
+    "This live revision record does not promote Appendix C support states.",
+    "This live revision record does not prove source interpretation, runtime behavior, verifier quality, external review, or AI safety.",
+    "This live revision record corrects a public count surface only."
+  ]
+}

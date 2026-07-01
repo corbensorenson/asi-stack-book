@@ -29,6 +29,7 @@ STATIC_REQUIRED_FRAGMENTS = (
     "No chapter core promotion",
     "does not promote any chapter core claim above `argument`",
     "docs/non_core_evidence_ledger.md",
+    "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "docs/costed_route_resource_slice.md",
     "docs/simulation_transfer_boundary_harness.md",
     "docs/circle_external_receipt_slice.md",
@@ -113,6 +114,7 @@ def main() -> None:
 
     referenced_paths = (
         "docs/non_core_evidence_ledger.md",
+        "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
         "docs/core_claim_transition_coverage.md",
         "claim_decisions/v1_0_core_claim_no_promotion.json",
         "docs/proof_depth_classification.md",

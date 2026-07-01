@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
 TRANSITION_DIR = ROOT / "evidence_transitions" / "v1_0_measured"
+CLAIM_REVISION = ROOT / "claim_revisions" / "v1_x" / "manifest_core_claim_count_narrowing.json"
 APPENDIX_C = ROOT / "appendices" / "C_claim_evidence_matrix.qmd"
 README = ROOT / "README.md"
 INDEX = ROOT / "index.qmd"
@@ -35,11 +36,14 @@ EXPECTED = {
 }
 
 REQUIRED_LEDGER_STRINGS = [
-    "All 54 remain at `argument`.",
+    "All 44 remain at `argument`.",
     "Accepted non-core upward transitions | 3 narrow transitions.",
+    "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
+    "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Chapter-core promotion effect | None.",
     "no independent external human review record yet.",
     "does not promote any chapter core claim above `argument`",
+    "does not demote, deprecate, or refute any chapter core claim",
 ]
 
 FORBIDDEN_LEDGER_STRINGS = [
@@ -82,6 +86,18 @@ def main() -> None:
     for forbidden in FORBIDDEN_LEDGER_STRINGS:
         if forbidden in ledger:
             errors.append(f"ledger contains forbidden overclaim: {forbidden}")
+
+    revision = load_transition(CLAIM_REVISION)
+    revision_record = revision.get("claim_ledger_record") if isinstance(revision, dict) else None
+    if not isinstance(revision_record, dict):
+        errors.append(f"{CLAIM_REVISION.relative_to(ROOT)} missing claim_ledger_record")
+    else:
+        if revision_record.get("claim_id") != "non-core-evidence-ledger.chapter-core-count-surface":
+            errors.append(f"{CLAIM_REVISION.relative_to(ROOT)} has unexpected claim_id")
+        if revision_record.get("support_state_before") != revision_record.get("support_state_after"):
+            errors.append(f"{CLAIM_REVISION.relative_to(ROOT)} must not move support state")
+        if revision_record.get("accepted_evidence_transition_refs"):
+            errors.append(f"{CLAIM_REVISION.relative_to(ROOT)} must not cite accepted transitions")
 
     for claim_id, expected in EXPECTED.items():
         record_path = TRANSITION_DIR / expected["transition"]
