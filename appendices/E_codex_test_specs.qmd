@@ -246,7 +246,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource live probe | implemented | passing via `python3 scripts/validate_resource_live_probe.py`; local repository command replay only; no deployed scheduler, physical-feasibility, model-quality, economic-outcome, or support-state-transition claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Budget allocation test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Risk-adjusted verification test | planned | not run |
-| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Capacity smoothing toy harness | implemented | passing via `python3 scripts/validate_capacity_smoothing.py` |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Capacity smoothing toy harness | implemented | passing via `python3 scripts/validate_capacity_smoothing.py`; 3 valid and 6 expected-invalid fixtures; no TokenMana, scheduler, load-stability, reviewer-optimization, or economic-result claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | KV-cache memory accounting scenario | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Simulation contract record fixture validation | implemented | passing via `python3 scripts/validate_protocol_examples.py` |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Simulation evidence-field negative case | implemented | passes via Lean negative case; no simulator-adequacy or transfer claim |
@@ -400,7 +400,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | Circle concrete evidence-surface validation | `python3 scripts/validate_circle_concrete_evidence_surface.py` | Checks that the concrete Circle external receipt facts are visible in the Circle and CoilRA chapters, outline, and manifest test rows while preserving chapter-core, model-quality, context-length, runtime, transfer, deployment, and ASI non-claims. | Passing this check proves only public-surface traceability for an already-recorded structural receipt lane; it does not rerun Circle, vendor contract packs, prove model quality, promote chapter support states, or create a downstream workload result. |
 | Chapter-review burn-down validation | `python3 scripts/validate_chapter_review_burndown.py` | Checks that the calibrated 44-chapter review input is represented as roadmap work for every current manifest chapter, without stale IDs, placeholder rows, lost calibration notes, or unverified Circle wording. | Passing this check proves only roadmap coverage for reviewer-input follow-up; it does not prove chapter quality, source interpretation, external review, proof adequacy, test execution, or support-state promotion. |
 | Resource budget ledger harness | `python3 scripts/validate_resource_budget_ledgers.py` | Checks deterministic Resource Budget Record scenarios for dispatch, high-risk escalation, protected overhead, displaced-cost residualization, review-capacity hoarding, evidence refs, and no-promotion boundaries. | Passing this check proves deterministic budget-ledger fixture behavior only; it does not prove scheduler behavior, load stability, verification-tax optimization, KV-cache or serving behavior, runtime budget enforcement, or economic outcomes. |
-| Capacity smoothing toy harness | `python3 scripts/validate_capacity_smoothing.py` | Checks deterministic toy capacity traces for bounded regeneration arithmetic, priority deferral under blocked high-risk work, scope reduction, overload rejection, and no-promotion boundaries. | Passing this check proves toy trace consistency only; it does not prove TokenMana behavior, scheduler behavior, load stability, review-queue optimization, runtime behavior, human outcomes, or economic outcomes. |
+| Capacity smoothing toy harness | `python3 scripts/validate_capacity_smoothing.py` | Checks deterministic toy capacity traces for bounded regeneration arithmetic, priority deferral under blocked high-risk work, scope reduction, reviewer-capacity accounting, protected-review overhead, displaced-review-cost residualization, overload rejection, Lean bridge coverage, and no-promotion boundaries. | Passing this check proves toy trace consistency only; it does not prove TokenMana behavior, scheduler behavior, load stability, review-queue optimization, reviewer-capacity optimization, protected-overhead adequacy, displaced-cost measurement, runtime behavior, human outcomes, or economic outcomes. |
 | Phase 5 harness registry validation | `python3 scripts/validate_phase5_harness_registry.py` | Checks that the Phase 5 harness set has commands, scripts, docs, fixture counts, result records, Appendix E rows, public status references, main-validation wiring, primary chapter mappings, and explicit non-claim boundaries. | Passing this check proves harness traceability only; it does not run the harnesses, prove runtime behavior, promote support states, or validate benchmark quality. |
 | Reader continuity audit | `python3 scripts/audit_reader_continuity.py --check` | Derives the reader edition in a temporary workspace and checks that the tracked Phase 2 continuity audit is current, including reader word counts, overlay counts, density signals, table/code/diagram counts, repeated-opening heuristics, and a priority queue for human review. | Passing this check proves the audit report is current only; it is not a manual reader review, reader release, ebook/document/PDF artifact, audio artifact, or support-state promotion. |
 | Proof-readiness validation | `python3 scripts/validate_proof_readiness.py` | Checks that proof triage tags, modules, root imports, formal targets, and target statuses stay aligned with the generated proof manifest. | Passing this check proves manifest/triage/import consistency only; theorem status still requires implemented Lean modules and a passing Lean build. |
@@ -418,16 +418,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 142 |
+| Proof targets covered by triage | 143 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 142 |
+| implemented | 143 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 142 |
+| implemented | formal-invariant | lean-candidate | 143 |

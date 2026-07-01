@@ -232,7 +232,7 @@ def main() -> None:
         "the Compact GVR synthetic slice checks 5 compact-generation receipt records",
         "the simulation transfer boundary harness checks 3 valid and 6 expected-invalid simulation-transfer fixtures",
         "the reference trace harness checks 2 valid and 6 expected-invalid reference-trace fixtures",
-        "the capacity smoothing toy harness checks 2 valid and 3 expected-invalid bounded-capacity trace fixtures",
+        "the capacity smoothing toy harness checks 3 valid and 6 expected-invalid bounded-capacity trace fixtures",
         "`docs/claim_ledger_revision_harness.md`",
         "`python3 scripts/validate_claim_ledger_revision.py`",
         "`experiments/claim_ledger_revision/`",

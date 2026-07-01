@@ -1,0 +1,35 @@
+{
+  "scenario_id": "invalid_displaced_review_cost_unresidualized",
+  "capacity_mode": "priority_defer",
+  "capacity_limit": 8,
+  "review_capacity_limit": 4,
+  "conclusion": "pass",
+  "trace": [
+    {
+      "tick": 0,
+      "starting_capacity": 3,
+      "refill": 2,
+      "admitted_cost": 2,
+      "admitted_low_risk_cost": 0,
+      "deferred_cost": 2,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 3,
+      "starting_review_capacity": 1,
+      "review_refill": 1,
+      "review_minutes_admitted": 1,
+      "ending_review_capacity": 1,
+      "protected_review_minutes": 1,
+      "admitted_low_risk_review_minutes": 0,
+      "blocked_protected_review_minutes": 1,
+      "displaced_review_cost_residualized": false,
+      "residual_refs": [],
+      "decision_refs": [
+        "defer protected review but record no displaced review-cost residual"
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove load stability, TokenMana behavior, scheduler behavior, reviewer-capacity optimization, protected-overhead adequacy, displaced-cost measurement, runtime behavior, or economic outcomes."
+  ]
+}

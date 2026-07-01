@@ -1,0 +1,87 @@
+{
+  "scenario_id": "valid_reviewer_capacity_trace",
+  "capacity_mode": "regenerative_priority",
+  "capacity_limit": 10,
+  "review_capacity_limit": 8,
+  "conclusion": "pass",
+  "trace": [
+    {
+      "tick": 0,
+      "starting_capacity": 4,
+      "refill": 2,
+      "admitted_cost": 3,
+      "admitted_low_risk_cost": 0,
+      "deferred_cost": 2,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 3,
+      "starting_review_capacity": 2,
+      "review_refill": 3,
+      "review_minutes_admitted": 3,
+      "ending_review_capacity": 2,
+      "protected_review_minutes": 2,
+      "admitted_low_risk_review_minutes": 0,
+      "blocked_protected_review_minutes": 0,
+      "displaced_review_cost_residualized": true,
+      "residual_refs": [
+        "residual://low-risk-review-deferred-for-protected-release-check"
+      ],
+      "decision_refs": [
+        "admit high-risk verification task with protected reviewer time",
+        "defer low-risk refresh until review capacity recovers"
+      ]
+    },
+    {
+      "tick": 1,
+      "starting_capacity": 3,
+      "refill": 2,
+      "admitted_cost": 4,
+      "admitted_low_risk_cost": 0,
+      "deferred_cost": 3,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 1,
+      "starting_review_capacity": 2,
+      "review_refill": 2,
+      "review_minutes_admitted": 4,
+      "ending_review_capacity": 0,
+      "protected_review_minutes": 3,
+      "admitted_low_risk_review_minutes": 0,
+      "blocked_protected_review_minutes": 0,
+      "displaced_review_cost_residualized": true,
+      "residual_refs": [
+        "residual://noncritical-review-held-while-critical-review-drains-capacity"
+      ],
+      "decision_refs": [
+        "admit critical review with protected overhead",
+        "hold low-risk batch and record displaced review cost"
+      ]
+    },
+    {
+      "tick": 2,
+      "starting_capacity": 1,
+      "refill": 5,
+      "admitted_cost": 3,
+      "admitted_low_risk_cost": 3,
+      "deferred_cost": 0,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 3,
+      "starting_review_capacity": 0,
+      "review_refill": 5,
+      "review_minutes_admitted": 2,
+      "ending_review_capacity": 3,
+      "protected_review_minutes": 0,
+      "admitted_low_risk_review_minutes": 2,
+      "blocked_protected_review_minutes": 0,
+      "displaced_review_cost_residualized": true,
+      "residual_refs": [
+        "residual://protected-review-queue-clear-before-low-risk-review-resumes"
+      ],
+      "decision_refs": [
+        "admit deferred low-risk work after protected review queue clears"
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove load stability, TokenMana behavior, scheduler behavior, reviewer-capacity optimization, protected-overhead adequacy, displaced-cost measurement, runtime behavior, or economic outcomes."
+  ]
+}

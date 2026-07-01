@@ -60,7 +60,7 @@ TRACKED_ARTIFACTS = [
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "experiments/resource_workflow_trace/results/2026-07-01-local.json",
     "experiments/resource_budget_ledgers/results/2026-07-01-local.md",
-    "experiments/capacity_smoothing/results/2026-06-28-local.md",
+    "experiments/capacity_smoothing/results/2026-07-01-local.md",
     "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md",
 ]
 

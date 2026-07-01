@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Add reviewer-capacity smoothing bridge
+
+- Extended `scripts/validate_capacity_smoothing.py` with reviewer-capacity
+  accounting, protected-review overhead checks, displaced-review-cost
+  residualization, and a narrow `AsiStackProofs.ResourceEconomics` Lean bridge.
+- Added one valid reviewer-capacity trace and three expected-invalid controls
+  for low-risk review hoarding, erased protected review overhead, and
+  unresidualized displaced review cost. The local run now passes with 3 valid
+  and 6 expected-invalid fixtures, recorded in
+  `experiments/capacity_smoothing/results/2026-07-01-local.md`.
+- Updated Resource Economics, the active evidence-cycle ledger, the Phase 5
+  registry, Appendix E generation, and v1 roadmap/status surfaces. This is toy
+  trace discipline only; it does not prove TokenMana behavior, scheduler
+  behavior, real load stability, review-queue optimization,
+  reviewer-capacity optimization, protected-overhead adequacy,
+  displaced-cost measurement, runtime behavior, human outcomes, economic
+  outcomes, or support-state promotion.
+
 ## 2026-07-01 - Add model-rollout replacement controls
 
 - Extended `scripts/validate_capability_replacement.py` with synthetic

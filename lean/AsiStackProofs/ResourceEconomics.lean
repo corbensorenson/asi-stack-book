@@ -427,4 +427,98 @@ theorem resource_workflow_trace_fixture_events_preserve_guard_flags :
     workflowTraceGuardsPreserved resourceWorkflowTraceFixtureEvents = true := by
   native_decide
 
+structure CapacitySmoothingReviewTrace where
+  stepCount : Nat
+  finalCapacity : Nat
+  finalReviewCapacity : Nat
+  protectedReviewPaid : Bool
+  displacedReviewCostResidualized : Bool
+  lowRiskBlockedProtectedReview : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def CapacitySmoothingReviewTraceValid (trace : CapacitySmoothingReviewTrace) : Prop :=
+  trace.stepCount = 3 ∧
+    trace.finalCapacity = 3 ∧
+    trace.finalReviewCapacity = 3 ∧
+    trace.protectedReviewPaid = true ∧
+    trace.displacedReviewCostResidualized = true ∧
+    trace.lowRiskBlockedProtectedReview = false ∧
+    trace.supportStateEffectNone = true ∧
+    trace.nonClaimBoundary = true
+
+def capacitySmoothingReviewerTraceFixture : CapacitySmoothingReviewTrace :=
+  { stepCount := 3,
+    finalCapacity := 3,
+    finalReviewCapacity := 3,
+    protectedReviewPaid := true,
+    displacedReviewCostResidualized := true,
+    lowRiskBlockedProtectedReview := false,
+    supportStateEffectNone := true,
+    nonClaimBoundary := true }
+
+theorem capacity_smoothing_reviewer_trace_fixture_valid :
+    CapacitySmoothingReviewTraceValid capacitySmoothingReviewerTraceFixture := by
+  simp [CapacitySmoothingReviewTraceValid, capacitySmoothingReviewerTraceFixture]
+
+theorem capacity_smoothing_reviewer_trace_preserves_review_capacity :
+    capacitySmoothingReviewerTraceFixture.finalReviewCapacity = 3 := by
+  rfl
+
+theorem capacity_smoothing_reviewer_trace_preserves_protected_review_overhead :
+    capacitySmoothingReviewerTraceFixture.protectedReviewPaid = true := by
+  rfl
+
+theorem capacity_smoothing_reviewer_trace_residualizes_displaced_review_costs :
+    capacitySmoothingReviewerTraceFixture.displacedReviewCostResidualized = true := by
+  rfl
+
+theorem capacity_smoothing_reviewer_trace_has_no_support_promotion :
+    capacitySmoothingReviewerTraceFixture.supportStateEffectNone = true := by
+  rfl
+
+structure ReviewerCapacityDecision where
+  blockedProtectedReview : Bool
+  admittedLowRiskReview : Bool
+  highRiskWorkAdmitted : Bool
+  protectedReviewPaid : Bool
+  displacedReviewCostResidualized : Bool
+deriving DecidableEq, Repr
+
+def ReviewerCapacityDecisionValid (decision : ReviewerCapacityDecision) : Prop :=
+  (decision.blockedProtectedReview = true -> decision.admittedLowRiskReview = false) ∧
+    (decision.highRiskWorkAdmitted = true -> decision.protectedReviewPaid = true) ∧
+    (decision.blockedProtectedReview = true -> decision.displacedReviewCostResidualized = true)
+
+theorem blocked_protected_review_rejects_low_risk_review_dispatch
+    {decision : ReviewerCapacityDecision} :
+    decision.blockedProtectedReview = true ->
+    decision.admittedLowRiskReview = true ->
+    ¬ ReviewerCapacityDecisionValid decision := by
+  intro blocked admitted valid
+  have noLowRisk := valid.1 blocked
+  rw [admitted] at noLowRisk
+  cases noLowRisk
+
+theorem high_risk_review_without_protected_overhead_rejected
+    {decision : ReviewerCapacityDecision} :
+    decision.highRiskWorkAdmitted = true ->
+    decision.protectedReviewPaid = false ->
+    ¬ ReviewerCapacityDecisionValid decision := by
+  intro highRisk noProtected valid
+  have paid := valid.2.1 highRisk
+  rw [noProtected] at paid
+  cases paid
+
+theorem blocked_protected_review_requires_displaced_cost_residual
+    {decision : ReviewerCapacityDecision} :
+    decision.blockedProtectedReview = true ->
+    decision.displacedReviewCostResidualized = false ->
+    ¬ ReviewerCapacityDecisionValid decision := by
+  intro blocked notResidualized valid
+  have residualized := valid.2.2 blocked
+  rw [notResidualized] at residualized
+  cases residualized
+
 end AsiStackProofs.ResourceEconomics

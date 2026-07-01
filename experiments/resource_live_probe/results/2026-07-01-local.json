@@ -13,7 +13,7 @@
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "experiments/resource_workflow_trace/results/2026-07-01-local.json",
     "experiments/resource_budget_ledgers/results/2026-07-01-local.md",
-    "experiments/capacity_smoothing/results/2026-06-28-local.md",
+    "experiments/capacity_smoothing/results/2026-07-01-local.md",
     "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md",
     "experiments/resource_live_probe/results/2026-07-01-local.json"
   ],
@@ -30,11 +30,11 @@
   "pass": true,
   "probe_id": "resource-live-probe-2026-07-01-local",
   "record_kind": "resource_live_probe",
-  "recorded_at_utc": "2026-07-01T19:52:54Z",
+  "recorded_at_utc": "2026-07-01T21:05:29Z",
   "replay_commands": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 27.71,
+      "elapsed_ms": 26.852,
       "evidence_surface": "non-core synthetic-test-backed costed-route/resource-budget slice",
       "exit_code": 0,
       "id": "costed_route_resource_slice",
@@ -45,7 +45,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 25.361,
+      "elapsed_ms": 25.95,
       "evidence_surface": "deterministic multi-step Resource Economics workflow trace",
       "exit_code": 0,
       "id": "resource_workflow_trace",
@@ -56,7 +56,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 26.306,
+      "elapsed_ms": 51.118,
       "evidence_surface": "Resource Budget Record fixture decisions",
       "exit_code": 0,
       "id": "resource_budget_ledgers",
@@ -67,18 +67,18 @@
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 48.537,
+      "elapsed_ms": 25.708,
       "evidence_surface": "bounded-capacity toy trace fixtures",
       "exit_code": 0,
       "id": "capacity_smoothing",
       "output_excerpt": [
-        "Capacity smoothing toy harness passed: 2 valid fixture(s), 3 expected-invalid fixture(s)."
+        "Capacity smoothing toy harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s)."
       ],
-      "output_sha256": "3dbcd9e6d7b31f7f16a8bb840e9217caf05639c6581467358a9ee801138d7eee"
+      "output_sha256": "8a4a020455b908be3c9e7417604e0b038435ca918816aa5f7705bebe72ab4b98"
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 27.496,
+      "elapsed_ms": 26.555,
       "evidence_surface": "simulation-transfer boundary fixtures folded into Resource Economics",
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
@@ -128,10 +128,10 @@
       "sha256": "288bde711d9317959e949d5eadb7b04e3a4a8789ce8b547fb8c92b6e64b5eed6"
     },
     {
-      "bytes": 7010,
-      "lines": 172,
+      "bytes": 12280,
+      "lines": 266,
       "path": "scripts/validate_capacity_smoothing.py",
-      "sha256": "8b63bc77e55a897fdb568ce0f524b5cd1cd6936c8bcc70dd066d5076e80bdfc2"
+      "sha256": "9f287e8ba81ccc8631f8b00391799eaf457647f533ee7dda8afea99a027a31ac"
     },
     {
       "bytes": 10272,
@@ -140,10 +140,10 @@
       "sha256": "b1cd3adf0e682edacb6a8ad8b09d93ccd9d81e0ddef7db0446279c57a7610538"
     },
     {
-      "bytes": 15177,
-      "lines": 430,
+      "bytes": 18808,
+      "lines": 524,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "db28bb247d5f2e35ee4d2bfa72481657fe54d12c7128f3ffbcf4788e0cc9a897"
+      "sha256": "c13738a1a17df18a51352caefe45942ff5c6abb449b244671917992284749c15"
     },
     {
       "bytes": 2439,
@@ -170,10 +170,10 @@
       "sha256": "bf7203c6f96485f37d3410150eb1bf2b354b46411d6d29f5e07440397175ace8"
     },
     {
-      "bytes": 791,
-      "lines": 28,
-      "path": "experiments/capacity_smoothing/results/2026-06-28-local.md",
-      "sha256": "222570bf578c03515f6b616ea38217e14db1bd8020240816c5581cac0bb682a2"
+      "bytes": 1030,
+      "lines": 32,
+      "path": "experiments/capacity_smoothing/results/2026-07-01-local.md",
+      "sha256": "ee5def93a561228677ae6a68d0533b13bc71d1ada5ae9356f0ed823f16702ba0"
     },
     {
       "bytes": 799,

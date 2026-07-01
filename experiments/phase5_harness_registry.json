@@ -486,17 +486,17 @@
     "doc": "docs/capacity_smoothing_harness.md",
     "experiment_dir": "experiments/capacity_smoothing",
     "fixture_dir": "experiments/capacity_smoothing/fixtures",
-    "result_record": "experiments/capacity_smoothing/results/2026-06-28-local.md",
-    "expected_valid_fixtures": 2,
-    "expected_invalid_fixtures": 3,
-    "result_summary": "Capacity smoothing toy harness passed: 2 valid fixture(s), 3 expected-invalid fixture(s).",
+    "result_record": "experiments/capacity_smoothing/results/2026-07-01-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 6,
+    "result_summary": "Capacity smoothing toy harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).",
     "primary_chapters": [
       "resource-economics-and-token-budgets",
       "the-efficient-asi-hypothesis",
       "planning-as-a-control-layer"
     ],
     "non_claims": [
-      "Does not prove TokenMana behavior, scheduler behavior, load stability, review-queue optimization, runtime behavior, human outcomes, or economic outcomes.",
+      "Does not prove TokenMana behavior, scheduler behavior, load stability, review-queue optimization, reviewer-capacity optimization, protected-overhead adequacy, displaced-cost measurement, runtime behavior, human outcomes, or economic outcomes.",
       "Does not promote Appendix C support states."
     ]
   }

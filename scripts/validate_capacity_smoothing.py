@@ -9,8 +9,30 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "experiments" / "capacity_smoothing" / "fixtures"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
 ALLOWED_MODES = {"regenerative_priority", "priority_defer", "scope_reduce"}
 RISK_WORDS = {"high-risk", "safety", "critical"}
+REVIEW_ACCOUNTING_FIELDS = {
+    "starting_review_capacity",
+    "review_refill",
+    "review_minutes_admitted",
+    "ending_review_capacity",
+    "protected_review_minutes",
+    "admitted_low_risk_review_minutes",
+    "blocked_protected_review_minutes",
+    "displaced_review_cost_residualized",
+    "residual_refs",
+}
+REQUIRED_LEAN_THEOREMS = (
+    "capacity_smoothing_reviewer_trace_fixture_valid",
+    "capacity_smoothing_reviewer_trace_preserves_review_capacity",
+    "capacity_smoothing_reviewer_trace_preserves_protected_review_overhead",
+    "capacity_smoothing_reviewer_trace_residualizes_displaced_review_costs",
+    "capacity_smoothing_reviewer_trace_has_no_support_promotion",
+    "blocked_protected_review_rejects_low_risk_review_dispatch",
+    "high_risk_review_without_protected_overhead_rejected",
+    "blocked_protected_review_requires_displaced_cost_residual",
+)
 
 
 def load_json(path: Path) -> Any:
@@ -37,6 +59,14 @@ def require_number(record: dict[str, Any], field: str, errors: list[str], relati
     return float(value)
 
 
+def require_bool(record: dict[str, Any], field: str, errors: list[str], relative: str) -> bool:
+    value = record.get(field)
+    if not isinstance(value, bool):
+        errors.append(f"{relative}: {field} must be a boolean.")
+        return False
+    return value
+
+
 def require_nonempty_list(record: dict[str, Any], field: str, errors: list[str], relative: str) -> list[Any]:
     value = record.get(field)
     if not isinstance(value, list) or not value:
@@ -51,6 +81,24 @@ def fixture_expectation(path: Path) -> bool | None:
     if path.name.startswith("invalid_"):
         return False
     return None
+
+
+def trace_uses_review_accounting(trace: list[Any]) -> bool:
+    return any(
+        isinstance(step, dict) and any(field in step for field in REVIEW_ACCOUNTING_FIELDS)
+        for step in trace
+    )
+
+
+def lean_bridge_errors() -> list[str]:
+    if not LEAN_FIXTURE.exists():
+        return [f"{LEAN_FIXTURE.relative_to(ROOT)} is missing."]
+    lean_text = LEAN_FIXTURE.read_text(encoding="utf-8", errors="ignore")
+    return [
+        f"{LEAN_FIXTURE.relative_to(ROOT)} is missing theorem {name}."
+        for name in REQUIRED_LEAN_THEOREMS
+        if name not in lean_text
+    ]
 
 
 def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
@@ -70,8 +118,15 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
     non_claims = require_nonempty_list(value, "non_claims", errors, relative)
     if errors:
         return errors
+    review_accounting = trace_uses_review_accounting(trace)
+    review_limit = 0.0
+    if review_accounting:
+        review_limit = require_number(value, "review_capacity_limit", errors, relative)
+        if review_limit <= 0:
+            errors.append(f"{relative}: review_capacity_limit must be positive when review accounting is present.")
 
     previous_ending: float | None = None
+    previous_review_ending: float | None = None
     overload_steps = 0
     for index, step in enumerate(trace):
         step_path = f"{relative}:trace[{index}]"
@@ -103,6 +158,41 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
             errors.append(f"{step_path}: deferred_cost cannot be negative.")
         if blocked_high_risk > 0 and admitted_low_risk > 0:
             errors.append(f"{step_path}: low-risk work cannot consume capacity while high-risk work is blocked.")
+
+        if review_accounting:
+            starting_review = require_number(step, "starting_review_capacity", errors, step_path)
+            review_refill = require_number(step, "review_refill", errors, step_path)
+            review_admitted = require_number(step, "review_minutes_admitted", errors, step_path)
+            ending_review = require_number(step, "ending_review_capacity", errors, step_path)
+            protected_review = require_number(step, "protected_review_minutes", errors, step_path)
+            low_risk_review = require_number(step, "admitted_low_risk_review_minutes", errors, step_path)
+            blocked_protected_review = require_number(step, "blocked_protected_review_minutes", errors, step_path)
+            displaced_residualized = require_bool(step, "displaced_review_cost_residualized", errors, step_path)
+            residual_refs = require_nonempty_list(step, "residual_refs", errors, step_path)
+            if errors:
+                continue
+            if previous_review_ending is not None and abs(starting_review - previous_review_ending) > 1e-9:
+                errors.append(f"{step_path}: starting_review_capacity must equal prior ending_review_capacity.")
+            available_review = min(review_limit, starting_review + review_refill)
+            expected_review_ending = available_review - review_admitted
+            if abs(ending_review - expected_review_ending) > 1e-9:
+                errors.append(
+                    f"{step_path}: ending_review_capacity must equal min(review limit, starting_review_capacity + review_refill) - review_minutes_admitted."
+                )
+            if ending_review < -1e-9:
+                errors.append(f"{step_path}: review_minutes_admitted exceeds available reviewer capacity.")
+            if protected_review > review_admitted:
+                errors.append(f"{step_path}: protected_review_minutes cannot exceed review_minutes_admitted.")
+            if blocked_protected_review > 0 and low_risk_review > 0:
+                errors.append(f"{step_path}: low-risk review cannot consume reviewer capacity while protected review is blocked.")
+            step_text = text_blob(step)
+            if any(term in step_text for term in RISK_WORDS) and admitted > 0 and protected_review <= 0:
+                errors.append(f"{step_path}: high-risk admitted work must pay protected review overhead.")
+            if (deferred > 0 or blocked_high_risk > 0 or blocked_protected_review > 0) and not residual_refs:
+                errors.append(f"{step_path}: deferred or blocked work must have residual_refs.")
+            if blocked_protected_review > 0 and not displaced_residualized:
+                errors.append(f"{step_path}: blocked protected review must residualize displaced review cost.")
+            previous_review_ending = ending_review
         previous_ending = ending
 
     conclusion_text = text_blob(value.get("conclusion", ""), non_claims)
@@ -114,6 +204,10 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
         errors.append(f"{relative}: non_claims must deny load, scheduler, TokenMana, economic, or runtime claims.")
     if "proves load stability" in conclusion_text or "proves tokenmana" in conclusion_text:
         errors.append(f"{relative}: fixture must not claim it proves load stability or TokenMana behavior.")
+    if review_accounting:
+        for term in ("review", "protected", "displaced"):
+            if term not in conclusion_text:
+                errors.append(f"{relative}: review-accounting non_claims must mention {term}.")
 
     scenario_text = text_blob(value)
     if any(term in scenario_text for term in RISK_WORDS) and "decision_refs" not in scenario_text:
@@ -129,7 +223,7 @@ def main() -> None:
     if not fixtures:
         raise SystemExit(f"No capacity-smoothing fixtures found in {FIXTURE_DIR.relative_to(ROOT)}.")
 
-    errors: list[str] = []
+    errors: list[str] = lean_bridge_errors()
     valid_count = 0
     invalid_count = 0
     for fixture in fixtures:

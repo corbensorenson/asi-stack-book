@@ -1,0 +1,37 @@
+{
+  "scenario_id": "invalid_protected_review_overhead_erased",
+  "capacity_mode": "regenerative_priority",
+  "capacity_limit": 8,
+  "review_capacity_limit": 5,
+  "conclusion": "pass",
+  "trace": [
+    {
+      "tick": 0,
+      "starting_capacity": 3,
+      "refill": 2,
+      "admitted_cost": 3,
+      "admitted_low_risk_cost": 0,
+      "deferred_cost": 1,
+      "blocked_high_risk_cost": 0,
+      "ending_capacity": 2,
+      "starting_review_capacity": 1,
+      "review_refill": 2,
+      "review_minutes_admitted": 1,
+      "ending_review_capacity": 2,
+      "protected_review_minutes": 0,
+      "admitted_low_risk_review_minutes": 0,
+      "blocked_protected_review_minutes": 0,
+      "displaced_review_cost_residualized": true,
+      "residual_refs": [
+        "residual://missing-protected-review-overhead"
+      ],
+      "decision_refs": [
+        "admit high-risk verification task but erase protected review overhead"
+      ]
+    }
+  ],
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove load stability, TokenMana behavior, scheduler behavior, reviewer-capacity optimization, protected-overhead adequacy, displaced-cost measurement, runtime behavior, or economic outcomes."
+  ]
+}

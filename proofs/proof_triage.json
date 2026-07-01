@@ -1091,6 +1091,16 @@
       "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite dispatch-event bridge over the public Resource workflow trace: it proves fixture event costs, review minutes, and verification minutes roll up to the tracked summary, preserves high-risk-first order, and preserves protected-overhead, residual-ownership, and non-claim guard flags. It does not prove deployed scheduler behavior, live workload quality, physical feasibility, economic outcomes, or chapter-core support-state promotion."
     },
     {
+      "tag": "lean:resources.capacity_smoothing.reviewer_trace_bridge",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.ResourceEconomics",
+      "formal_target": "The finite capacity-smoothing reviewer trace fixture preserves bounded capacity, reviewer capacity, protected review overhead, displaced-review-cost residualization, no low-risk review during blocked protected review, and no support-state promotion; negative cases reject low-risk review hoarding, high-risk review without protected overhead, and missing displaced-cost residuals.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite reviewer-capacity bridge over the public capacity-smoothing fixture: it preserves bounded capacity, reviewer capacity arithmetic, protected review overhead, displaced-review-cost residualization, no low-risk review while protected review is blocked, and no support-state promotion. It does not prove live scheduler behavior, real reviewer-load stability, production throughput, workload quality, or chapter-core support-state promotion."
+    },
+    {
       "tag": "lean:simulation.fidelity.operational_invariant",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.SimulationFidelity",

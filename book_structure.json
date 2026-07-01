@@ -7899,10 +7899,10 @@
             "Risk-adjusted verification test",
             {
               "name": "Capacity smoothing toy harness",
-              "purpose": "Check deterministic toy capacity traces for bounded regeneration arithmetic, priority deferral under blocked high-risk work, scope reduction, overload rejection, and no-promotion boundaries.",
+              "purpose": "Check deterministic toy capacity traces for bounded regeneration arithmetic, priority deferral under blocked high-risk work, scope reduction, reviewer-capacity arithmetic, protected-review overhead, displaced-review-cost residualization, overload rejection, Lean bridge coverage, and no-promotion boundaries.",
               "status": "implemented; passing via `python3 scripts/validate_capacity_smoothing.py`",
               "implementation_status": "implemented",
-              "result_status": "passing via `python3 scripts/validate_capacity_smoothing.py`"
+              "result_status": "passing via `python3 scripts/validate_capacity_smoothing.py`; 3 valid and 6 expected-invalid fixtures; no TokenMana, scheduler, load-stability, reviewer-optimization, or economic-result claim"
             },
             "KV-cache memory accounting scenario",
             {
@@ -7972,6 +7972,12 @@
               "tag": "lean:resources.workflow_trace.trace_property_bridge",
               "module": "AsiStackProofs.ResourceEconomics",
               "target": "The finite Resource workflow trace fixture carries dispatch events whose costs, review minutes, and verification minutes roll up to the public summary, whose schedule keeps high-risk release work before lower-risk work, and whose selected events preserve protected-overhead, residual-ownership, and non-claim guard flags.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:resources.capacity_smoothing.reviewer_trace_bridge",
+              "module": "AsiStackProofs.ResourceEconomics",
+              "target": "The finite capacity-smoothing reviewer trace fixture preserves bounded capacity, reviewer capacity, protected review overhead, displaced-review-cost residualization, no low-risk review during blocked protected review, and no support-state promotion; negative cases reject low-risk review hoarding, high-risk review without protected overhead, and missing displaced-cost residuals.",
               "status": "implemented"
             },
             {
