@@ -137,4 +137,274 @@ theorem ready_open_deletion_without_closure_routes_to_deletion_block
   rw [ready, openDeletion, missingClosure, noDeclassification]
   simp
 
+inductive ContextTransactionRoute where
+  | rejectMissingSnapshot
+  | rejectStaleSnapshot
+  | rejectBranchLeak
+  | rejectMountFault
+  | requestTaintReview
+  | blockDeletedMaterialization
+  | rejectInvisibleCommittedRead
+  | requestReplayBoundary
+  | requestEvidenceTransition
+  | requestNonClaimBoundary
+  | admitCommittedRead
+deriving DecidableEq, Repr
+
+structure ContextTransactionReview where
+  snapshotPresent : Bool
+  snapshotCurrent : Bool
+  sourceBranchMatches : Bool
+  targetBranchMatches : Bool
+  mountPolicySatisfied : Bool
+  mountRepairRecorded : Bool
+  sourceTainted : Bool
+  declassificationRecorded : Bool
+  materializesDeletedCell : Bool
+  deletionClosureRecorded : Bool
+  committedRead : Bool
+  readSetVisible : Bool
+  replayBoundaryRecorded : Bool
+  supportPromotionRequested : Bool
+  evidenceTransitionRecorded : Bool
+  nonClaimsRecorded : Bool
+deriving DecidableEq, Repr
+
+def ContextTransactionRouteFor
+    (review : ContextTransactionReview) : ContextTransactionRoute :=
+  if review.snapshotPresent = false then
+    ContextTransactionRoute.rejectMissingSnapshot
+  else if review.snapshotCurrent = false then
+    ContextTransactionRoute.rejectStaleSnapshot
+  else if review.sourceBranchMatches = false ∨
+      review.targetBranchMatches = false then
+    ContextTransactionRoute.rejectBranchLeak
+  else if review.mountPolicySatisfied = false ∧
+      review.mountRepairRecorded = false then
+    ContextTransactionRoute.rejectMountFault
+  else if review.sourceTainted = true ∧
+      review.declassificationRecorded = false then
+    ContextTransactionRoute.requestTaintReview
+  else if review.materializesDeletedCell = true ∧
+      review.deletionClosureRecorded = false then
+    ContextTransactionRoute.blockDeletedMaterialization
+  else if review.committedRead = true ∧
+      review.readSetVisible = false then
+    ContextTransactionRoute.rejectInvisibleCommittedRead
+  else if review.replayBoundaryRecorded = false then
+    ContextTransactionRoute.requestReplayBoundary
+  else if review.supportPromotionRequested = true ∧
+      review.evidenceTransitionRecorded = false then
+    ContextTransactionRoute.requestEvidenceTransition
+  else if review.nonClaimsRecorded = false then
+    ContextTransactionRoute.requestNonClaimBoundary
+  else
+    ContextTransactionRoute.admitCommittedRead
+
+theorem missing_snapshot_rejects_context_transaction
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = false ->
+      ContextTransactionRouteFor review =
+        ContextTransactionRoute.rejectMissingSnapshot := by
+  intro missingSnapshot
+  unfold ContextTransactionRouteFor
+  simp [missingSnapshot]
+
+theorem stale_snapshot_rejects_context_transaction
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = false ->
+        ContextTransactionRouteFor review =
+          ContextTransactionRoute.rejectStaleSnapshot := by
+  intro snapshotPresent staleSnapshot
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, staleSnapshot]
+
+theorem source_branch_mismatch_rejects_context_transaction
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = false ->
+          ContextTransactionRouteFor review =
+            ContextTransactionRoute.rejectBranchLeak := by
+  intro snapshotPresent snapshotCurrent sourceMismatch
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMismatch]
+
+theorem target_branch_mismatch_rejects_context_transaction
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = false ->
+            ContextTransactionRouteFor review =
+              ContextTransactionRoute.rejectBranchLeak := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMismatch
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMismatch]
+
+theorem mount_fault_without_repair_rejects_context_transaction
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = true ->
+            review.mountPolicySatisfied = false ->
+              review.mountRepairRecorded = false ->
+                ContextTransactionRouteFor review =
+                  ContextTransactionRoute.rejectMountFault := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMatches
+    mountFault missingRepair
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMatches,
+    mountFault, missingRepair]
+
+theorem tainted_transaction_without_declassification_routes_to_review
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = true ->
+            review.mountPolicySatisfied = true ->
+              review.sourceTainted = true ->
+                review.declassificationRecorded = false ->
+                  ContextTransactionRouteFor review =
+                    ContextTransactionRoute.requestTaintReview := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMatches
+    mountSatisfied tainted missingDeclassification
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMatches,
+    mountSatisfied, tainted, missingDeclassification]
+
+theorem deleted_cell_without_closure_blocks_materialization_route
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = true ->
+            review.mountPolicySatisfied = true ->
+              review.sourceTainted = false ->
+                review.materializesDeletedCell = true ->
+                  review.deletionClosureRecorded = false ->
+                    ContextTransactionRouteFor review =
+                      ContextTransactionRoute.blockDeletedMaterialization := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMatches
+    mountSatisfied untainted deletedCell missingClosure
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMatches,
+    mountSatisfied, untainted, deletedCell, missingClosure]
+
+theorem committed_read_without_visible_read_set_rejected
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = true ->
+            review.mountPolicySatisfied = true ->
+              review.sourceTainted = false ->
+                review.materializesDeletedCell = false ->
+                  review.committedRead = true ->
+                    review.readSetVisible = false ->
+                      ContextTransactionRouteFor review =
+                        ContextTransactionRoute.rejectInvisibleCommittedRead := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMatches
+    mountSatisfied untainted noDeletedCell committedRead invisibleReadSet
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMatches,
+    mountSatisfied, untainted, noDeletedCell, committedRead, invisibleReadSet]
+
+theorem missing_replay_boundary_requests_replay_boundary
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = true ->
+            review.mountPolicySatisfied = true ->
+              review.sourceTainted = false ->
+                review.materializesDeletedCell = false ->
+                  review.committedRead = true ->
+                    review.readSetVisible = true ->
+                      review.replayBoundaryRecorded = false ->
+                        ContextTransactionRouteFor review =
+                          ContextTransactionRoute.requestReplayBoundary := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMatches
+    mountSatisfied untainted noDeletedCell committedRead visibleReadSet
+    missingReplayBoundary
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMatches,
+    mountSatisfied, untainted, noDeletedCell, committedRead, visibleReadSet,
+    missingReplayBoundary]
+
+theorem support_promotion_without_transition_requests_evidence_transition
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = true ->
+            review.mountPolicySatisfied = true ->
+              review.sourceTainted = false ->
+                review.materializesDeletedCell = false ->
+                  review.committedRead = true ->
+                    review.readSetVisible = true ->
+                      review.replayBoundaryRecorded = true ->
+                        review.supportPromotionRequested = true ->
+                          review.evidenceTransitionRecorded = false ->
+                            ContextTransactionRouteFor review =
+                              ContextTransactionRoute.requestEvidenceTransition := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMatches
+    mountSatisfied untainted noDeletedCell committedRead visibleReadSet
+    replayBoundary supportPromotion missingTransition
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMatches,
+    mountSatisfied, untainted, noDeletedCell, committedRead, visibleReadSet,
+    replayBoundary, supportPromotion, missingTransition]
+
+theorem missing_non_claim_boundary_requests_non_claim_boundary
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = true ->
+            review.mountPolicySatisfied = true ->
+              review.sourceTainted = false ->
+                review.materializesDeletedCell = false ->
+                  review.committedRead = true ->
+                    review.readSetVisible = true ->
+                      review.replayBoundaryRecorded = true ->
+                        review.supportPromotionRequested = false ->
+                          review.nonClaimsRecorded = false ->
+                            ContextTransactionRouteFor review =
+                              ContextTransactionRoute.requestNonClaimBoundary := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMatches
+    mountSatisfied untainted noDeletedCell committedRead visibleReadSet
+    replayBoundary noPromotion missingNonClaims
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMatches,
+    mountSatisfied, untainted, noDeletedCell, committedRead, visibleReadSet,
+    replayBoundary, noPromotion, missingNonClaims]
+
+theorem complete_context_transaction_admits_committed_read
+    {review : ContextTransactionReview} :
+    review.snapshotPresent = true ->
+      review.snapshotCurrent = true ->
+        review.sourceBranchMatches = true ->
+          review.targetBranchMatches = true ->
+            review.mountPolicySatisfied = true ->
+              review.sourceTainted = false ->
+                review.materializesDeletedCell = false ->
+                  review.committedRead = true ->
+                    review.readSetVisible = true ->
+                      review.replayBoundaryRecorded = true ->
+                        review.supportPromotionRequested = false ->
+                          review.nonClaimsRecorded = true ->
+                            ContextTransactionRouteFor review =
+                              ContextTransactionRoute.admitCommittedRead := by
+  intro snapshotPresent snapshotCurrent sourceMatches targetMatches
+    mountSatisfied untainted noDeletedCell committedRead visibleReadSet
+    replayBoundary noPromotion nonClaims
+  unfold ContextTransactionRouteFor
+  simp [snapshotPresent, snapshotCurrent, sourceMatches, targetMatches,
+    mountSatisfied, untainted, noDeletedCell, committedRead, visibleReadSet,
+    replayBoundary, noPromotion, nonClaims]
+
 end AsiStackProofs.ContextTransactions

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-01 - Expand Context Transactions route proofs
+
+- Added a finite `ContextTransactionRoute` review model to
+  `AsiStackProofs.ContextTransactions` with derived route theorems for missing
+  or stale snapshots, branch leaks, unrepaired mount faults, taint without
+  declassification, deleted-cell materialization without closure, invisible
+  committed reads, missing replay boundaries, unsupported support-promotion
+  attempts, missing non-claim boundaries, and complete committed-read
+  admission.
+- Updated the Context Transactions chapter, book outline, proof-depth report,
+  proof-artifact audit, proof adequacy review, v1.x roadmap, v1.0 status
+  guard, proof/code plan, and generated scaffold surfaces to record the broader
+  finite-record proof envelope.
+- Context Transactions remains at `argument`; the new theorems do not implement
+  a deployed memory store, runtime mount visibility, branch isolation,
+  deletion-closure execution, declassification quality, replay service,
+  poisoning resistance, VCM conformance, benchmark behavior, or support-state
+  promotion.
+
 ## 2026-07-01 - Add chapter-review burn-down execution batches
 
 - Reviewed `docs/CHAPTER_REVIEWS.md` and the active v1.x roadmap, confirming

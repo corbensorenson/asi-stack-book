@@ -514,7 +514,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 685 theorem declarations, 542
+- The generated proof-depth report records 697 theorem declarations, 554
   derived/decomposed declarations, 0 unknown/mixed declarations, 102
   safety-critical declarations, and 10 remaining safety-critical
   direct/projection declarations.
@@ -536,7 +536,7 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 685 theorem declarations, 542
+- `docs/proof_depth_classification.md` records 697 theorem declarations, 554
   derived/decomposed theorem declarations, 143 direct/projection-style theorem
   declarations, and 0 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
@@ -621,6 +621,19 @@ Current proof status:
   quality, real load stability, verification-tax optimization, KV-cache
   behavior, cost-quality economics, simulator adequacy, physical feasibility,
   route-search completeness, and open-world transfer as blockers.
+- `AsiStackProofs.ContextTransactions` now has a finite transaction-route
+  review model for snapshot presence and freshness, source/target branch
+  matching, mount repair, taint review, deleted-cell materialization, committed
+  read visibility, replay boundaries, support-transition boundaries, and
+  non-claim boundaries; it rejects missing or stale snapshots, branch leaks,
+  unrepaired mount faults, taint without declassification, deleted-cell
+  materialization without closure, invisible committed reads, missing replay
+  boundaries, unsupported support-promotion attempts, and missing non-claim
+  boundaries while admitting one complete modeled committed read. This reduces
+  the projection-only surface for Context Transactions while leaving deployed
+  memory-store behavior, runtime branch isolation, mount visibility,
+  deletion-closure execution, declassification quality, replay services,
+  poisoning resistance, VCM conformance, and benchmark behavior as blockers.
 - `AsiStackProofs.ArtifactCompression` now has finite negative-case theorems
   for failed-probe/no-fallback use and missing residual/fallback metadata
   promotion plus a finite admission-lifecycle route for preserved-artifact,
@@ -891,7 +904,7 @@ Per-chapter burn-down:
 | `planning-as-a-control-layer` | Central merged chapter needs plan-graph proof coverage and planned tests executed. | Add plan-graph acyclicity, authority inheritance down the DAG, dispatch-gating, decomposition, dependency-ordering, and replanning tests with negative cases. |
 | `cognitive-compilation-and-semantic-ir` | Program-synthesis, IR, and translation-validation lineage needs clearer external grounding. | Source-note program-synthesis, compiler IR, and translation-validation comparators; keep compiler analogy tied to obligation preservation rather than metaphor alone. |
 | `virtual-context-abi` | Minor merge-scaffold residue around the "four lanes" framing. | Smooth lane wording into natural mechanism prose while preserving the ABI/certificate/refusal boundary and existing evidence limits. |
-| `context-transactions-snapshots-mounts-and-taint` | Rich formal mechanism has narrow proof coverage. | Deepen `ContextTransactions` with snapshot-coherence, taint-monotonicity, branch isolation, and deletion-closure completeness theorems plus matching fixture negatives. |
+| `context-transactions-snapshots-mounts-and-taint` | Rich formal mechanism had narrow proof coverage for snapshot, branch, mount, taint, and deletion boundaries. | Partially executed: added a finite transaction-route review model with derived theorems for missing/stale snapshots, branch leaks, unrepaired mount faults, taint without declassification, deleted-cell materialization without closure, invisible committed reads, missing replay boundaries, unsupported support promotion, missing non-claim boundaries, and complete committed-read admission. Remaining work: executable store fixtures beyond the bounded synthetic harness, runtime branch isolation, mount visibility, deployed deletion closure, declassification-quality review, replay service behavior, poisoning resistance, VCM conformance, and benchmark evidence. |
 | `verification-bandwidth-and-context-adequacy` | Strong idea could carry empirical adequacy tests and sharper framing. | Finish contradiction-rate/context-adequacy tests if measurable; sharpen "long-context theater" as a precise, evidence-bounded frame. |
 | `claim-ledgers-and-belief-revision` | Belief-revision lineage is lightly anchored. | Source-note AGM, truth-maintenance, and formal epistemology comparators; show claim-ledger revision as an architecture bridge, not only bookkeeping. |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-carrying, autoformalization, LLM-judge, debate, and "Spinoza" naming need outside-reader grounding. | Add source-noted proof-carrying-code, autoformalization, debate, and LLM-as-judge positioning; evaluate whether the chapter name earns its cognitive load in reader prose. |

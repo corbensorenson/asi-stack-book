@@ -326,7 +326,7 @@ not implement a resolver, prove certificate truthfulness, measure semantic
 fidelity, enforce deletion closure, test transaction isolation, or validate
 model-facing memory behavior.
 
-### Context Transaction Materialization Boundary
+### Context Transaction Route Boundary
 
 The Context Transactions follow-through increment strengthened
 `AsiStackProofs.ContextTransactions` beyond committed-event snapshot reads and
@@ -335,17 +335,28 @@ taint propagation. The module now includes a finite
 `ContextMaterializationAllowed`, `ContextMaterializationRoute`, and
 `ContextMaterializationRouteFor` surface for materialization decisions that
 carry deletion obligations, closure records, declassification authorization,
-residuals, and non-claims.
+residuals, and non-claims. The latest increment adds
+`ContextTransactionReview`, `ContextTransactionRoute`, and
+`ContextTransactionRouteFor` so the same chapter also has a finite route
+surface for snapshot presence and freshness, branch matching, mount repair,
+taint review, deleted-cell materialization, committed-read visibility, replay
+boundaries, evidence-transition boundaries, and non-claim boundaries.
 
 The new theorems check that a record with an open deletion obligation, no
 closure record, and no declassification authorization cannot be an allowed
-materialization, and that an otherwise ready record in that state routes to a
-deletion-closure block.
+materialization; that an otherwise ready record in that state routes to a
+deletion-closure block; and that modeled transaction reviews reject or request
+repair for missing or stale snapshots, source or target branch mismatches,
+unrepaired mount faults, taint without declassification, deleted-cell
+materialization without closure, invisible committed reads, missing replay
+boundaries, unsupported support-promotion attempts, and missing non-claim
+boundaries while admitting a complete finite committed-read record.
 
 This keeps `context-transactions-snapshots-mounts-and-taint` in the
 `useful but too narrow` class. The route envelope is a stronger finite-record
-guard for materialization and deletion obligations, but it still does not
-implement a transactional memory store, prove branch isolation, enforce mount
+guard for materialization, deletion obligations, branch/mount routing, replay
+boundaries, and support-boundary preservation, but it still does not implement
+a transactional memory store, prove runtime branch isolation, enforce mount
 visibility, execute deployed deletion closure, validate declassification
 quality, or replay real memory transactions.
 

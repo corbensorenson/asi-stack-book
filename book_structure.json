@@ -3774,9 +3774,9 @@
               "result_status": "passes via synthetic context admission/adequacy harness; no memory-store claim"
             },
             {
-              "name": "Deletion materialization route proof",
+              "name": "Context transaction route proof",
               "implementation_status": "implemented",
-              "result_status": "passes via Lean build; finite materialization/deletion-closure coverage only"
+              "result_status": "passes via Lean build; finite snapshot, branch, mount, taint, deletion-closure, replay-boundary, support-transition, and non-claim route coverage only"
             },
             {
               "name": "Bounded memory-store conformance harness",

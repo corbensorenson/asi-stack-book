@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 138 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 685 |
+| Theorem declarations classified | 697 |
 | Direct/projection-style theorem declarations | 143 |
-| Derived/decomposed theorem declarations | 542 |
+| Derived/decomposed theorem declarations | 554 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -65,7 +65,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 3 | 18 | 2 | 16 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 17 | 2 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 3 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -275,10 +275,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextCertificates.lean` | `tainted_certificate_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `undeclared_omissions_require_omission_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `unpermitted_consumer_use_requires_policy_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `committed_read_without_visible_read_set_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `complete_context_transaction_admits_committed_read` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `deleted_cell_without_closure_blocks_materialization_route` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `missing_non_claim_boundary_requests_non_claim_boundary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `missing_replay_boundary_requests_replay_boundary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `missing_snapshot_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `mount_fault_without_repair_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `open_deletion_without_closure_or_declassification_blocks_materialization` | derived_or_decomposed | no | uses cases, rcases, rw, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `ready_open_deletion_without_closure_routes_to_deletion_block` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `snapshot_read_sees_committed_event_in_declared_view` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `source_branch_mismatch_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `stale_snapshot_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `support_promotion_without_transition_requests_evidence_transition` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `tainted_source_taints_derivative_without_declassification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `tainted_transaction_without_declassification_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `target_branch_mismatch_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `untainted_derivative_from_tainted_source_requires_declassification` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/Corrigibility.lean` | `agency_action_without_affected_party_rejected` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_high_impact_without_pre_effect_review_blocks` | derived_or_decomposed | yes | uses simp |

@@ -44,7 +44,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CommandContracts.lean` | 2 | 4 | 2 | 2 |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | 2 | 4 | 2 | 1 |
 | `lean/AsiStackProofs/ContextCertificates.lean` | 3 | 18 | 6 | 4 |
-| `lean/AsiStackProofs/ContextTransactions.lean` | 2 | 5 | 6 | 5 |
+| `lean/AsiStackProofs/ContextTransactions.lean` | 2 | 17 | 7 | 6 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 5 | 5 |
 | `lean/AsiStackProofs/Efficiency.lean` | 3 | 23 | 5 | 3 |
