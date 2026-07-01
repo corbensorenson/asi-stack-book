@@ -107,6 +107,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Semantic page certificate fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Certificate completeness test | implemented | passes through finite Lean certificate predicates |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Authority preservation test | implemented | passes through finite Lean authority predicates |
+| `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Certificate lifecycle admission route proof | implemented | passes via Lean build; finite certificate-lifecycle route coverage only |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Summary fidelity boundary test | implemented | passes via synthetic context admission/adequacy harness for loss/omission gate behavior; no semantic fidelity claim |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Resolver conformance test | planned | not run |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Certificate truthfulness test | planned | not run |
@@ -386,16 +387,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 134 |
+| Proof targets covered by triage | 135 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 134 |
+| implemented | 135 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 134 |
+| implemented | formal-invariant | lean-candidate | 135 |

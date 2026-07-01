@@ -1178,6 +1178,7 @@ Draft deliverables:
 - Folded-history preservation for `semantic-pages-context-cells-and-certificates.core` as a subclaim about typed pages, context cells, representation certificates, source bindings, omissions, authority ceilings, loss contracts, and permitted uses.
 - Implemented synthetic Codex tests: admission versus adequacy, conflict adequacy classification, context fault behavior, stale certificate rejection, and admission-as-verification rejection via `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver, memory store, summary fidelity, certificate truthfulness, model-facing context, or VCM-Bench result is claimed.
 - Implemented proof-backed check: finite context-admission route coverage for malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews.
+- Implemented proof-backed check: finite certificate-lifecycle route coverage for malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews; no resolver truthfulness, deletion enforcement, or semantic-fidelity claim is promoted.
 - Planned Codex tests: resolver conformance, summary-fidelity evaluator, certificate truthfulness checker, and paired source/derived-cell omission audit.
 - Historical treatment: `semantic-pages-context-cells-and-certificates` is archived and redirected to `virtual-context-abi`; the old chapter can be restored only if paired source/derived cells, certificate truthfulness tests, summary-fidelity tests, or independent interoperability evidence make it chapter-owning again.
 
@@ -1190,6 +1191,7 @@ Lean proof targets:
 | `lean:vcm.abi.context_admission_route_envelope` | `AsiStackProofs.VirtualContextABI` | A structured context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews into explicit outcomes. | implemented |
 | `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
 | `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
+| `lean:vcm.certificates.lifecycle_admission_route` | `AsiStackProofs.ContextCertificates` | A structured certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews into explicit outcomes. | implemented |
 
 ### Context Transactions, Snapshots, Mounts, and Taint
 
@@ -2632,8 +2634,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 134 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 134 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 135 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 135 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

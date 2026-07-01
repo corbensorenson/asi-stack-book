@@ -389,6 +389,7 @@ adequacy handoff, and typed refusal path.
 | Context admission route proof | Check that a finite context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews to explicit outcomes. | implemented by Lean build; finite context-admission route coverage only |
 | Derived-cell certificate predicate | Check that valid derived cells carry source bindings, a loss contract, and permitted uses. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
 | Authority preservation predicate | Check that summaries respecting their sources cannot increase the authority ceiling of source cells. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
+| Certificate lifecycle admission route proof | Check that a finite certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews to explicit outcomes. | implemented by Lean build; finite certificate-lifecycle route coverage only |
 | Synthetic context admission/adequacy harness | Check that admission, adequacy, stale certificates, deletion closure, and mode-confusion cases cannot become evidence-ready context. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver or summary-fidelity claim |
 | Resolver conformance test | Check that a deployed resolver rejects invalid addresses, versions, mounts, and snapshots before materialization. | planned; not run |
 | Certificate truthfulness test | Check that certificate declarations match paired source and derived cells. | planned; not run |
@@ -402,13 +403,15 @@ adequacy handoff, and typed refusal path.
 | `lean:vcm.abi.context_admission_route_envelope` | `AsiStackProofs.VirtualContextABI` | A structured context-admission review routes malformed requests, missing addresses, authority escapes, absent mandatory context, absent optional context, missing certificates, stale certificates, taint, failed adequacy, residuals, and complete materialization reviews into explicit outcomes. | implemented |
 | `lean:vcm.certificates.operational_invariant` | `AsiStackProofs.ContextCertificates` | A derived context cell carries source bindings and a declared loss/use contract. | implemented |
 | `lean:vcm.certificates.failure_blocks_promotion` | `AsiStackProofs.ContextCertificates` | A summary cannot increase the authority ceiling of its source cells. | implemented |
+| `lean:vcm.certificates.lifecycle_admission_route` | `AsiStackProofs.ContextCertificates` | A structured certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews into explicit outcomes. | implemented |
 
 These proof hooks are implemented only over finite Lean records. They check
 resolved-reference matching, mandatory-miss faulting, derived-cell field
 presence, source-authority non-escalation, and context-admission route coverage
-for modeled invalid or complete review states. They do not prove open-domain
-source selection, semantic fidelity, deployed memory behavior, transaction
-isolation, deletion closure, or model use.
+plus certificate-lifecycle route coverage for modeled invalid or complete
+review states. They do not prove open-domain source selection, semantic
+fidelity, certificate truthfulness, deployed resolver behavior, transaction
+isolation, deletion enforcement, or model use.
 
 Adjacent proof hooks remain with protected standalone chapters:
 `lean:vcm.transactions.operational_invariant`,

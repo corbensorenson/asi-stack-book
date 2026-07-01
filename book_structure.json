@@ -3524,6 +3524,11 @@
               "result_status": "passes through finite Lean authority predicates"
             },
             {
+              "name": "Certificate lifecycle admission route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite certificate-lifecycle route coverage only"
+            },
+            {
               "name": "Summary fidelity boundary test",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic context admission/adequacy harness for loss/omission gate behavior; no semantic fidelity claim"
@@ -3569,6 +3574,12 @@
               "tag": "lean:vcm.certificates.failure_blocks_promotion",
               "module": "AsiStackProofs.ContextCertificates",
               "target": "A summary cannot increase the authority ceiling of its source cells.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:vcm.certificates.lifecycle_admission_route",
+              "module": "AsiStackProofs.ContextCertificates",
+              "target": "A structured certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews into explicit outcomes.",
               "status": "implemented"
             }
           ],

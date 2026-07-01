@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 134 |
+| Proof targets in manifest | 135 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 601 |
+| Theorem declarations classified | 616 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 480 |
+| Derived/decomposed theorem declarations | 495 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -64,7 +64,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 2 | 3 | 2 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 3 | 18 | 2 | 16 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -257,9 +257,24 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_unverified_representation_marked_exact_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_require_residual_records` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_without_residual_records_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `authority_escape_requires_certificate_authority_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `authority_preservation_rejects_escalating_summary` | derived_or_decomposed | no | uses have, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `complete_certificate_lifecycle_review_admits` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `deletion_closure_request_requires_declared_evidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `derived_context_cell_carries_bindings_and_loss_use_contracts` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `malformed_certificate_rejects` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `missing_loss_contract_requires_loss_contract` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `missing_permitted_uses_require_use_contract` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `missing_source_bindings_require_source_bindings` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `missing_verifier_references_require_verifier_refs` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `out_of_scope_certificate_requires_scope_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `revoked_certificate_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `stale_certificate_requires_freshness_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `summary_authority_cannot_exceed_source_ceiling` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `support_promotion_requires_evidence_transition` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `tainted_certificate_quarantines` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `undeclared_omissions_require_omission_record` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextCertificates.lean` | `unpermitted_consumer_use_requires_policy_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `open_deletion_without_closure_or_declassification_blocks_materialization` | derived_or_decomposed | no | uses cases, rcases, rw, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `ready_open_deletion_without_closure_routes_to_deletion_block` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `snapshot_read_sees_committed_event_in_declared_view` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

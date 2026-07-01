@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-07-01 - Context certificate lifecycle proof
+
+- Strengthened `AsiStackProofs.ContextCertificates` with a finite
+  `CertificateLifecycleRoute`, `CertificateLifecycleReview`, and
+  `CertificateLifecycleRouteFor` decision surface over well-formed
+  certificates, source bindings, loss contracts, permitted uses, authority
+  ceilings, omission records, scope, freshness, revocation, taint,
+  deletion-closure evidence, verifier references, consumer policy,
+  support-promotion requests, and evidence-transition records.
+- Added the third Virtual Context ABI certificate proof target,
+  `lean:vcm.certificates.lifecycle_admission_route`, plus route theorems showing
+  that malformed certificates, missing bindings, missing loss/use contracts,
+  authority escapes, missing omission records, scope violations, stale or
+  revoked certificates, taint, deletion-closure evidence gaps, missing verifier
+  refs, consumer-policy violations, and support-promotion attempts without
+  evidence transitions route to explicit outcomes.
+- Regenerated the proof manifest, Appendix E, proof artifact audit, and
+  proof-depth classifier. Appendix E now records 336 generated chapter-level
+  rows: 236 implemented, 1 partial, and 99 planned. The proof manifest now has
+  135 implemented targets, and the proof-depth classifier now reports 616
+  theorem declarations, 121 direct/projection-style declarations, and 495
+  derived/decomposed declarations.
+- Updated the Virtual Context ABI chapter, book outline, proof adequacy review,
+  v1.x/v1.0 roadmap/status surfaces, focus audit, publication readiness,
+  repository map, proof/code plan, manuscript status, proof-envelope chapter,
+  and status snapshot guard. This does not promote, demote, deprecate, or
+  refute any live claim; prove certificate truthfulness, semantic fidelity,
+  deletion enforcement, resolver behavior, transaction isolation, model-facing
+  memory behavior, support-state promotion, reader artifact approval, release
+  status, model capability, or audio artifact readiness.
+
 ## 2026-07-01 - Value conflict lifecycle admission proof
 
 - Strengthened `AsiStackProofs.ValueConflict` with a finite

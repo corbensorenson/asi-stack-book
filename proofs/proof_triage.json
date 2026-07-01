@@ -581,6 +581,16 @@
       "rationale": "Implemented in AsiStackProofs.ContextCertificates as a finite authority predicate: summaries respecting source cells cannot exceed source authority ceilings."
     },
     {
+      "tag": "lean:vcm.certificates.lifecycle_admission_route",
+      "chapter_id": "virtual-context-abi",
+      "module": "AsiStackProofs.ContextCertificates",
+      "formal_target": "A structured certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews into explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ContextCertificates as a finite certificate-lifecycle route function and derived route theorems for malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews."
+    },
+    {
       "tag": "lean:vcm.transactions.operational_invariant",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "module": "AsiStackProofs.ContextTransactions",
