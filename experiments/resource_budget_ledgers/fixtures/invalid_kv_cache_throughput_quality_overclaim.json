@@ -1,0 +1,41 @@
+{
+  "scenario_id": "invalid_kv_cache_throughput_quality_overclaim",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-invalid-007",
+    "task_id": "task://kv-cache-throughput-quality-overclaim",
+    "value_hypothesis": "A serving route is incorrectly accepted because aggregate throughput is treated as quality and lower risk.",
+    "risk_class": "medium",
+    "capacity_pool": "serving memory accounting fixture for KV-cache and batching records",
+    "budget_state": "dispatchable",
+    "cost_estimate": [
+      "KV-cache page reuse lowers aggregate serving memory pressure",
+      "batching improves aggregate throughput"
+    ],
+    "verification_tax": [
+      "schema validation"
+    ],
+    "protected_overhead": [
+      "support-state review"
+    ],
+    "displaced_costs": [
+      "single-request verified output omitted"
+    ],
+    "quality_predicate": "Aggregate throughput proves model quality and proves lower single-request risk.",
+    "safety_gates": [
+      "no support-state promotion label"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate only if throughput falls.",
+    "residuals": [
+      "No separate single-request verified output needed because throughput proves quality."
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md",
+      "sources/source_notes/ext_pagedattention_vllm_2023.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, KV-cache behavior, serving throughput, or economic outcomes."
+  ]
+}

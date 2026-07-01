@@ -225,7 +225,7 @@ def main() -> None:
         "the cyclic memory contract harness checks 3 valid and 6 expected-invalid cyclic-memory contract fixtures",
         "the context transaction memory-store harness checks 3 valid and 6 expected-invalid context-transaction memory-store fixtures",
         "the generation mode baseline harness checks 2 valid and 4 expected-invalid generation-mode/resource-budget fixtures",
-        "the resource budget ledger harness checks 5 valid and 6 expected-invalid Resource Budget Record fixtures",
+        "the resource budget ledger harness checks 6 valid and 7 expected-invalid Resource Budget Record fixtures",
         "the resource workflow trace harness checks 1 valid and 5 expected-invalid multi-step Resource Economics workflow fixtures",
         "the resource live probe harness checks 5 local Resource Economics validator replays",
         "the Theseus support replay probe checks 2 local Project Theseus validator replays",

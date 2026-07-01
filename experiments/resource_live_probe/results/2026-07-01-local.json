@@ -30,11 +30,11 @@
   "pass": true,
   "probe_id": "resource-live-probe-2026-07-01-local",
   "record_kind": "resource_live_probe",
-  "recorded_at_utc": "2026-07-01T21:35:07Z",
+  "recorded_at_utc": "2026-07-01T21:52:38Z",
   "replay_commands": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 92.041,
+      "elapsed_ms": 44.871,
       "evidence_surface": "non-core synthetic-test-backed costed-route/resource-budget slice",
       "exit_code": 0,
       "id": "costed_route_resource_slice",
@@ -45,7 +45,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 83.454,
+      "elapsed_ms": 78.56,
       "evidence_surface": "deterministic multi-step Resource Economics workflow trace",
       "exit_code": 0,
       "id": "resource_workflow_trace",
@@ -56,18 +56,18 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 31.794,
+      "elapsed_ms": 94.905,
       "evidence_surface": "Resource Budget Record fixture decisions",
       "exit_code": 0,
       "id": "resource_budget_ledgers",
       "output_excerpt": [
-        "Resource budget ledger harness passed: 5 valid fixture(s), 6 expected-invalid fixture(s)."
+        "Resource budget ledger harness passed: 6 valid fixture(s), 7 expected-invalid fixture(s)."
       ],
-      "output_sha256": "8e120cb4269839f09bb4a7f43e90f9a1473337dd58e622329a9d9305f5c8758c"
+      "output_sha256": "cd002db8139561698390f98a0fa9c187117e01aadef9bc427599c6aa6225f066"
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 34.616,
+      "elapsed_ms": 92.655,
       "evidence_surface": "bounded-capacity toy trace fixtures",
       "exit_code": 0,
       "id": "capacity_smoothing",
@@ -78,7 +78,7 @@
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 37.178,
+      "elapsed_ms": 52.726,
       "evidence_surface": "simulation-transfer boundary fixtures folded into Resource Economics",
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
@@ -122,10 +122,10 @@
       "sha256": "389d4d6e9593520f23b95d95810d19e01d5d225795984d12a8394d6007c0e14b"
     },
     {
-      "bytes": 10364,
-      "lines": 262,
+      "bytes": 12706,
+      "lines": 303,
       "path": "scripts/validate_resource_budget_ledgers.py",
-      "sha256": "288bde711d9317959e949d5eadb7b04e3a4a8789ce8b547fb8c92b6e64b5eed6"
+      "sha256": "bda3c14ef9e9dcee694baa5d3d571c7a64ae24dbac90b596a2cfda1ef2fbbcc8"
     },
     {
       "bytes": 12280,
@@ -140,10 +140,10 @@
       "sha256": "b1cd3adf0e682edacb6a8ad8b09d93ccd9d81e0ddef7db0446279c57a7610538"
     },
     {
-      "bytes": 19100,
-      "lines": 531,
+      "bytes": 20501,
+      "lines": 567,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "cda7259f748a1bf68dbb9c5ff05e8c4413e56350b3a53536215b1de7933f23ef"
+      "sha256": "eca9a3841d8ee497574ea3adee2508dc183176c9987d30951bd4254f796993a3"
     },
     {
       "bytes": 2439,
@@ -164,10 +164,10 @@
       "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
     },
     {
-      "bytes": 947,
-      "lines": 22,
+      "bytes": 1293,
+      "lines": 23,
       "path": "experiments/resource_budget_ledgers/results/2026-07-01-local.md",
-      "sha256": "bf7203c6f96485f37d3410150eb1bf2b354b46411d6d29f5e07440397175ace8"
+      "sha256": "e3433d4353fdd34f16ae814f445395925d0f1f7bd2b6a33f3ec1ab913dec1831"
     },
     {
       "bytes": 1030,

@@ -1,0 +1,47 @@
+{
+  "scenario_id": "valid_kv_cache_serving_memory_accounting",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-007",
+    "task_id": "task://kv-cache-serving-memory-accounting",
+    "value_hypothesis": "A serving-memory optimization is useful only when aggregate throughput, KV-cache memory, and single-request verification remain separate budget dimensions.",
+    "risk_class": "medium",
+    "capacity_pool": "serving memory accounting fixture for KV-cache and batching records",
+    "budget_state": "residualized",
+    "cost_estimate": [
+      "KV-cache memory budget recorded separately from token cost",
+      "PagedAttention-style serving memory page pressure recorded as capacity, not quality",
+      "batching and aggregate throughput are accounting dimensions only"
+    ],
+    "verification_tax": [
+      "single-request verified output check remains separate",
+      "schema validation"
+    ],
+    "protected_overhead": [
+      "single-request verifier budget preserved",
+      "support-state review"
+    ],
+    "displaced_costs": [
+      "batching and aggregate throughput can hide tail latency and single-request risk"
+    ],
+    "quality_predicate": "Aggregate throughput cannot substitute for single-request verified output.",
+    "safety_gates": [
+      "single-request verified output remains separate from aggregate throughput",
+      "no KV-cache support-state promotion"
+    ],
+    "budget_decision": "residual",
+    "escalation_rule": "Do not dispatch or promote serving-memory savings until single-request verified-output and residual accounting are recorded separately.",
+    "residuals": [
+      "KV-cache and batching figures are residual serving-memory accounting until measured in a real serving run.",
+      "Single-request verified output and model quality are not inferred from aggregate throughput."
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md",
+      "chapters/resource-economics-and-token-budgets.qmd",
+      "sources/source_notes/ext_pagedattention_vllm_2023.md"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, KV-cache behavior, serving throughput, single-request quality, or economic outcomes."
+  ]
+}

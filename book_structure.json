@@ -7855,7 +7855,7 @@
             },
             {
               "name": "Resource budget ledger harness",
-              "purpose": "Check deterministic Resource Budget Record decisions for dispatch, escalation, protected overhead, security-overhead erasure rejection, displaced-cost residualization, review-capacity hoarding, evidence refs, and no-promotion boundaries.",
+              "purpose": "Check deterministic Resource Budget Record decisions for dispatch, escalation, protected overhead, security-overhead erasure rejection, displaced-cost residualization, review-capacity hoarding, KV-cache/serving-memory accounting separation, throughput-to-quality overclaim rejection, evidence refs, and no-promotion boundaries.",
               "status": "implemented; passing via `python3 scripts/validate_resource_budget_ledgers.py`",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_resource_budget_ledgers.py`"
@@ -7904,7 +7904,13 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_capacity_smoothing.py`; 3 valid and 6 expected-invalid fixtures; no TokenMana, scheduler, load-stability, reviewer-optimization, or economic-result claim"
             },
-            "KV-cache memory accounting scenario",
+            {
+              "name": "KV-cache memory accounting scenario",
+              "purpose": "Check that serving-memory, batching, aggregate throughput, single-request verified-output boundaries, and model-quality non-claims remain separate in deterministic Resource Budget Records.",
+              "status": "implemented; passing via `python3 scripts/validate_resource_budget_ledgers.py`; 6 valid and 7 expected-invalid fixtures; no KV-cache behavior, serving-throughput, single-request quality, or model-quality claim",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_resource_budget_ledgers.py`; deterministic record discipline only"
+            },
             {
               "name": "Simulation contract record fixture validation",
               "purpose": "Validate that simulation claims record contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omissions, approximation liberties, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims.",
@@ -7978,6 +7984,12 @@
               "tag": "lean:resources.capacity_smoothing.reviewer_trace_bridge",
               "module": "AsiStackProofs.ResourceEconomics",
               "target": "The finite capacity-smoothing reviewer trace fixture preserves bounded capacity, reviewer capacity, protected review overhead, displaced-review-cost residualization, no low-risk review during blocked protected review, and no support-state promotion; negative cases reject low-risk review hoarding, high-risk review without protected overhead, and missing displaced-cost residuals.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:resources.serving_memory.separation_guard",
+              "module": "AsiStackProofs.ResourceEconomics",
+              "target": "Aggregate serving-throughput or KV-cache reuse claims remain valid only when KV-cache budget, batching scope, and single-request verified-output boundaries are recorded; throughput-to-quality overclaims reject validity.",
               "status": "implemented"
             },
             {

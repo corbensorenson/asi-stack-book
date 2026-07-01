@@ -31,6 +31,23 @@ DISPLACED_COST_TERMS = {
 }
 REVIEW_CAPACITY_TERMS = {"human review", "reviewer", "review capacity", "manual review", "verifier"}
 SCARCE_CAPACITY_TERMS = {"scarce", "exhausted", "saturated", "limited", "protected"}
+SERVING_MEMORY_TERMS = {"kv-cache", "kv cache", "serving memory", "pagedattention"}
+SERVING_THROUGHPUT_TERMS = {"batch", "batching", "throughput"}
+SINGLE_REQUEST_TERMS = {"single-request", "single request"}
+VERIFIED_OUTPUT_TERMS = {"verified output", "verified-output", "verifier output"}
+SERVING_MEMORY_OVERCLAIM_TERMS = {
+    "aggregate throughput proves",
+    "throughput proves",
+    "kv-cache proves",
+    "kv cache proves",
+    "serving throughput proves",
+    "serving memory proves",
+    "proves model quality",
+    "proves lower single-request risk",
+    "proves lower single request risk",
+    "no separate single-request verified output",
+    "no separate single request verified output",
+}
 SECURITY_OVERHEAD_ERASURE_TERMS = {
     "drop scif",
     "drop security",
@@ -180,6 +197,30 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
     )
     if decision == "dispatch" and contains_any(security_budget_text, SECURITY_OVERHEAD_ERASURE_TERMS):
         errors.append(f"{relative}: dispatch cannot claim savings by removing security, SCIF, approval, audit, logging, redaction, or sanitization overhead.")
+
+    record_text = text_blob(record, capacity_context)
+    if contains_any(record_text, SERVING_MEMORY_TERMS):
+        serving_cost_text = text_blob(record["capacity_pool"], record["cost_estimate"])
+        serving_boundary_text = text_blob(
+            record["quality_predicate"],
+            record["safety_gates"],
+            record["residuals"],
+            top_non_claims,
+        )
+        if not contains_any(serving_cost_text, SERVING_MEMORY_TERMS):
+            errors.append(f"{relative}: serving-memory records must keep KV-cache or serving-memory cost visible.")
+        if not contains_any(serving_cost_text, SERVING_THROUGHPUT_TERMS):
+            errors.append(f"{relative}: serving-memory records must separate batching or throughput from ordinary task cost.")
+        if not contains_any(serving_boundary_text, SINGLE_REQUEST_TERMS):
+            errors.append(f"{relative}: serving-memory records must name the single-request boundary.")
+        if not contains_any(serving_boundary_text, VERIFIED_OUTPUT_TERMS):
+            errors.append(f"{relative}: serving-memory records must keep verified output separate from aggregate throughput.")
+        if contains_any(record_text, SERVING_MEMORY_OVERCLAIM_TERMS):
+            errors.append(
+                f"{relative}: aggregate serving throughput, KV-cache reuse, or serving-memory savings cannot prove model quality or lower single-request risk."
+            )
+        if not contains_any(non_claim_text, {"serving", "throughput", "kv-cache"}):
+            errors.append(f"{relative}: serving-memory non_claims must deny serving, throughput, or KV-cache behavior claims.")
 
     if contains_any(capacity_text, SCARCE_CAPACITY_TERMS) and blocked_high_risk_refs:
         if risk in {"low", "medium"} and decision == "dispatch" and contains_any(review_text, REVIEW_CAPACITY_TERMS):

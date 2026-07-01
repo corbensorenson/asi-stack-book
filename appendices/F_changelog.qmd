@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Add serving-memory budget ledger guard
+
+- Extended the Resource Budget Ledger harness to 6 valid and 7 expected-invalid
+  fixtures by adding a deterministic KV-cache/serving-memory accounting record
+  and a throughput-to-quality overclaim control.
+- Added a finite `AsiStackProofs.ResourceEconomics` serving-memory guard: aggregate
+  throughput or KV-cache reuse claims require visible KV-cache budget, batching
+  scope, and single-request verified-output boundaries, and throughput-to-quality
+  overclaims reject validity.
+- Updated the Resource Economics chapter, outline, manifest, Appendix E
+  generator, harness docs/results, registry, and v1.x roadmap burn-down. This is
+  deterministic record discipline only; it does not prove KV-cache behavior,
+  serving throughput, single-request quality, model quality, load stability,
+  economic outcomes, or chapter-core support-state promotion.
+
 ## 2026-07-01 - Harden chapter-review roadmap accountability
 
 - Updated the v1.x chapter-review burn-down milestone so the Claude review's

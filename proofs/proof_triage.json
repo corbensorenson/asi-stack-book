@@ -1101,6 +1101,16 @@
       "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite reviewer-capacity bridge over the public capacity-smoothing fixture: it preserves bounded capacity, reviewer capacity arithmetic, protected review overhead, displaced-review-cost residualization, no low-risk review while protected review is blocked, and no support-state promotion. It does not prove live scheduler behavior, real reviewer-load stability, production throughput, workload quality, or chapter-core support-state promotion."
     },
     {
+      "tag": "lean:resources.serving_memory.separation_guard",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.ResourceEconomics",
+      "formal_target": "Aggregate serving-throughput or KV-cache reuse claims remain valid only when KV-cache budget, batching scope, and single-request verified-output boundaries are recorded; throughput-to-quality overclaims reject validity.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite serving-memory accounting predicate: aggregate throughput claims require recorded KV-cache budget, batching scope, and single-request verified-output separation, and throughput-to-quality overclaims reject validity. It does not prove KV-cache behavior, serving throughput, single-request quality, model quality, workload quality, or chapter-core support-state promotion."
+    },
+    {
       "tag": "lean:simulation.fidelity.operational_invariant",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.SimulationFidelity",

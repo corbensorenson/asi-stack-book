@@ -90,6 +90,42 @@ theorem high_risk_insufficient_budget_dispatch_rejected
   rw [dispatched] at blocked
   cases blocked
 
+structure ServingMemoryAccounting where
+  aggregateThroughputClaimed : Bool
+  kvCacheBudgetRecorded : Bool
+  batchingScopeRecorded : Bool
+  singleRequestVerifiedOutputSeparated : Bool
+  modelQualityClaimedFromThroughput : Bool
+  supportStateEffectNone : Bool
+deriving DecidableEq, Repr
+
+def ServingMemoryAccountingValid (record : ServingMemoryAccounting) : Prop :=
+  (record.aggregateThroughputClaimed = true ->
+    record.kvCacheBudgetRecorded = true ∧
+      record.batchingScopeRecorded = true ∧
+      record.singleRequestVerifiedOutputSeparated = true) ∧
+    record.modelQualityClaimedFromThroughput = false ∧
+    record.supportStateEffectNone = true
+
+theorem aggregate_serving_throughput_requires_single_request_boundary
+    {record : ServingMemoryAccounting} :
+    ServingMemoryAccountingValid record ->
+    record.aggregateThroughputClaimed = true ->
+      record.kvCacheBudgetRecorded = true ∧
+        record.batchingScopeRecorded = true ∧
+        record.singleRequestVerifiedOutputSeparated = true := by
+  intro valid claimed
+  exact valid.1 claimed
+
+theorem serving_memory_throughput_quality_overclaim_rejected
+    {record : ServingMemoryAccounting} :
+    record.modelQualityClaimedFromThroughput = true ->
+    ¬ ServingMemoryAccountingValid record := by
+  intro qualityClaim valid
+  have noQualityClaim := valid.2.1
+  rw [qualityClaim] at noQualityClaim
+  cases noQualityClaim
+
 inductive CostedRoute where
   | frontierManualReview
   | boundedTransformPlusVerifier
