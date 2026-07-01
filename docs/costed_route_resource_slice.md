@@ -45,6 +45,14 @@ public-safe replay to `lean/AsiStackProofs/ResourceEconomics.lean` without
 claiming scheduler completeness, deployed routing behavior, economic
 optimality, or chapter-core support-state promotion.
 
+The bridge now also checks a finite selector-state trace theorem:
+`costed_route_fixture_trace_selects_lowest_eligible_route`. The trace considers
+the cheaper failed-verification control, the cheaper hidden-residual control,
+the adequate overkill baseline, and the bounded selected route, then proves
+that the replay ends with the selected route, two eligible routes seen, and two
+cheaper rejected controls. This is still fixture-level trace evidence, not a
+deployed scheduler proof.
+
 ## Inputs
 
 - `experiments/costed_route_resource_slice/input/v1_0_costed_routes.json`

@@ -115,7 +115,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 677 theorem declarations, 143 direct/projection-style, 534 derived/decomposed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 678 theorem declarations, 143 direct/projection-style, 535 derived/decomposed, 0 unknown/mixed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and explicit Corben voice-pass slots. |
@@ -514,9 +514,10 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 677 theorem declarations, 534
-  derived/decomposed declarations, 102 safety-critical declarations, and 10
-  remaining safety-critical direct/projection declarations.
+- The generated proof-depth report records 678 theorem declarations, 535
+  derived/decomposed declarations, 0 unknown/mixed declarations, 102
+  safety-critical declarations, and 10 remaining safety-critical
+  direct/projection declarations.
 - The relevant chapter limitation sections now state what these finite-record
   proofs do and do not justify.
 - No chapter core claim support state moved above `argument`; the next formal
@@ -535,9 +536,9 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 677 theorem declarations, 534
-  derived/decomposed theorem declarations, and 143 direct/projection-style
-  theorem declarations.
+- `docs/proof_depth_classification.md` records 678 theorem declarations, 535
+  derived/decomposed theorem declarations, 143 direct/projection-style theorem
+  declarations, and 0 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
   external-handoff rejection theorem and a finite layer-contract admission
   lifecycle route for the opening stack chapter, which moves that module
@@ -1083,9 +1084,12 @@ Current status for the focused v1.x active evidence cycle:
   route is rejected, and a cheaper hidden-residual route is rejected despite
   surface verification passing. The same validator now checks the finite Lean
   fixture against the public JSON costs, selected route, negative controls, and
-  eligibility fields. This is the current flagship measured lane while
-  preserving the non-core `synthetic-test-backed` scope and no chapter-core
-  promotion.
+  eligibility fields, including the finite selector-state trace theorem
+  `costed_route_fixture_trace_selects_lowest_eligible_route`. The trace proves
+  the replay ends with the selected route after seeing two eligible routes and
+  rejecting two cheaper controls. This is the current flagship measured lane
+  while preserving the non-core `synthetic-test-backed` scope and no
+  chapter-core promotion.
 - `docs/resource_workflow_trace.md` adds the next deterministic public trace
   for the same flagship lane: `python3 scripts/validate_resource_workflow_trace.py`
   checks 1 valid and 4 expected-invalid multi-step workflow fixtures for

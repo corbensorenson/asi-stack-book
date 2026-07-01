@@ -47,6 +47,7 @@ REQUIRED_LEAN_THEOREMS = (
     "cheap_unverified_transform_rejected_by_fixture",
     "hidden_residual_auto_merge_rejected_by_fixture",
     "selected_route_is_lowest_cost_eligible_in_fixture",
+    "costed_route_fixture_trace_selects_lowest_eligible_route",
 )
 
 

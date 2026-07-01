@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-01 - Add Resource Economics selector-state trace bridge
+
+- Added `costed_route_fixture_trace_selects_lowest_eligible_route` to
+  `AsiStackProofs.ResourceEconomics`, proving that the finite four-route
+  selector replay ends with the bounded transform route after seeing two
+  eligible routes and two cheaper rejected controls.
+- Strengthened `scripts/validate_costed_route_resource_slice.py` and the
+  tracked result record so the costed-route evidence lane now requires the
+  selector-state trace theorem alongside the JSON cost, eligibility, selected
+  route, and negative-control alignment checks.
+- Updated the Resource Economics chapter, costed-route slice summary, active
+  evidence-cycle ledger, v1/v1.x status surfaces, README, proof-depth report,
+  and proof-artifact audit. Refreshed the Resource live-probe result so tracked
+  artifact hashes match the changed proof bridge files.
+- Resource Economics remains at `argument`; this is finite fixture/trace
+  evidence only and does not prove deployed routing, scheduler behavior,
+  model quality, load stability, economic outcomes, physical feasibility,
+  simulator adequacy, or a chapter-core support-state promotion.
+
 ## 2026-07-01 - Complete reader key-figure draft asset set
 
 - Added draft SVG assets for Compression and Generation Acceptance, Cyclic

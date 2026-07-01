@@ -120,6 +120,16 @@ def CostedRouteEligible (assessment : CostedRouteAssessment) : Prop :=
     assessment.fallbackVisible = true ∧
     assessment.nonClaimBoundary = true
 
+def CostedRouteEligibleFlag (assessment : CostedRouteAssessment) : Bool :=
+  assessment.verificationPassed &&
+    assessment.adequateOutcome &&
+    assessment.promotionCandidate &&
+    assessment.budgetDispatchable &&
+    assessment.residualOwned &&
+    (! assessment.hiddenCostDisplaced) &&
+    assessment.fallbackVisible &&
+    assessment.nonClaimBoundary
+
 def costedRouteFixtureAssessment : CostedRoute -> CostedRouteAssessment
   | .frontierManualReview =>
       { route := .frontierManualReview,
@@ -193,6 +203,60 @@ theorem selected_route_is_lowest_cost_eligible_in_fixture
     simp [CostedRouteFixtureSelected, costedRouteFixtureAssessment,
       CostedRouteEligible] at eligible ⊢ <;>
     decide
+
+structure RouteSelectorState where
+  bestRoute : Option CostedRoute
+  bestCostTenths : Nat
+  eligibleSeen : Nat
+  rejectedCheaperSeen : Nat
+deriving DecidableEq, Repr
+
+def emptyRouteSelectorState : RouteSelectorState :=
+  { bestRoute := none,
+    bestCostTenths := 0,
+    eligibleSeen := 0,
+    rejectedCheaperSeen := 0 }
+
+def considerCostedRoute (state : RouteSelectorState) (route : CostedRoute) :
+    RouteSelectorState :=
+  let assessment := costedRouteFixtureAssessment route
+  if CostedRouteEligibleFlag assessment then
+    match state.bestRoute with
+    | none =>
+        { bestRoute := some route,
+          bestCostTenths := assessment.costTenths,
+          eligibleSeen := state.eligibleSeen + 1,
+          rejectedCheaperSeen := state.rejectedCheaperSeen }
+    | some _ =>
+        if assessment.costTenths < state.bestCostTenths then
+          { bestRoute := some route,
+            bestCostTenths := assessment.costTenths,
+            eligibleSeen := state.eligibleSeen + 1,
+            rejectedCheaperSeen := state.rejectedCheaperSeen }
+        else
+          { state with eligibleSeen := state.eligibleSeen + 1 }
+  else
+    if assessment.costTenths <
+        (costedRouteFixtureAssessment CostedRouteFixtureSelected).costTenths then
+      { state with rejectedCheaperSeen := state.rejectedCheaperSeen + 1 }
+    else
+      state
+
+def costedRouteFixtureTraceFinalState : RouteSelectorState :=
+  let s0 := emptyRouteSelectorState
+  let s1 := considerCostedRoute s0 .cheapUnverifiedTransform
+  let s2 := considerCostedRoute s1 .hiddenResidualAutoMerge
+  let s3 := considerCostedRoute s2 .frontierManualReview
+  considerCostedRoute s3 .boundedTransformPlusVerifier
+
+theorem costed_route_fixture_trace_selects_lowest_eligible_route :
+    costedRouteFixtureTraceFinalState.bestRoute = some CostedRouteFixtureSelected ∧
+      costedRouteFixtureTraceFinalState.bestCostTenths = 142 ∧
+      costedRouteFixtureTraceFinalState.eligibleSeen = 2 ∧
+      costedRouteFixtureTraceFinalState.rejectedCheaperSeen = 2 := by
+  simp [costedRouteFixtureTraceFinalState, considerCostedRoute,
+    emptyRouteSelectorState, CostedRouteFixtureSelected,
+    costedRouteFixtureAssessment, CostedRouteEligibleFlag]
 
 structure WorkflowTraceSummary where
   stepCount : Nat
