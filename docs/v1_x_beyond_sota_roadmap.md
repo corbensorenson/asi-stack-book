@@ -913,6 +913,33 @@ the artifact that closes it: a proof commit, source-note/inventory commit,
 evidence-transition or no-promotion record, chapter/reader prose commit, or a
 recorded blocker with the validator or source condition that blocks execution.
 
+Closure classes:
+
+- `proof-coverage`: add or revise Lean/Python proof and fixture artifacts so
+  the chapter covers another real scenario, transition invariant, negative
+  case, bridge, or boundary; update chapter proof-limit prose and run the
+  proof gate.
+- `test-or-evidence`: run or import a public-safe test, measurement, replay, or
+  digest-verifiable project artifact with baseline or negative controls where
+  relevant; record residuals, non-claims, and any no-promotion decision.
+- `external-grounding`: add source-noted external records through
+  `sources/source_inventory.json` and `sources/source_notes/` before revising
+  prose; regenerate generated appendices instead of hand-editing citations.
+- `reader-craft`: revise live or curated reader prose only after claim,
+  source, proof, and test boundaries are current; smooth merge scaffolds,
+  sharpen Beyond-SOTA sections, and keep Corben voice-pass placeholders rather
+  than inventing first-person experience.
+- `recorded-blocker`: when the honest closure requires unavailable source
+  text, private project artifacts, external review, local hardware, or Corben
+  authorial input, record the blocker with the exact missing condition and do
+  not rewrite prose to hide the gap.
+
+Future autonomous runs should select rows by the cheapest honest closure class,
+not by chapter order. Prefer rows where an existing proof module, public-safe
+Circle/Theseus/RankFold artifact, source note, or reader manuscript file can be
+changed immediately. Leave rows open when only a new opinion, score, or
+review paragraph would change.
+
 Per-chapter burn-down:
 
 | Chapter | Weakness to overcome | Required roadmap work |
@@ -2675,7 +2702,7 @@ explicitly passed or explicitly scoped out in a release record.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode and move the project from internally rigorous to externally reviewable, evidence-producing, and human-review ready. Keep the executed 44-chapter consolidation spine stable and preserve retired chapter URLs through guarded stubs; do not create new planning/report surfaces unless they are required by a validator, release record, external reviewer response, or an executed proof/evidence/source/reader/artifact change. Work the `docs/CHAPTER_REVIEWS.md` burn-down through artifact commits: proof/evidence/source/reader changes or recorded blockers, not new grading passes. Prioritize one flagship measured evidence lane with a one-command run, baseline, negative control, residuals, non-claims, and an accepted evidence transition or explicit no-promotion decision. In parallel, solicit or record one external human review or dated outreach blocker, keep the sixty-second trust surface and non-core evidence visibility accurate, and finish the curated human-reader manuscript to handoff-ready status for Corben review. The reader manuscript must become an authored book draft, not a template strip: add a single thesis, part-level arcs, 8-12 recurring signature ideas, chapter-specific stakes and payoffs, designed key-figure targets, and explicit Corben voice-pass slots; never invent first-person experience, personal conviction, or authorial lessons. Deepen formal work only where it changes proof quality: build one transition-system invariant, trace property, or Lean/Python fixture-equivalence bridge tied to the selected evidence lane instead of chasing theorem count. Keep external grounding current through source-noted Appendix H records, make any Project Theseus or Circle evidence used by the lane CI-replayable or digest-verifiable where public-safe, and record demotions, rejections, blockers, and non-claims honestly. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
+> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode and move the project from internally rigorous to externally reviewable, evidence-producing, and human-review ready. Keep the executed 44-chapter consolidation spine stable and preserve retired chapter URLs through guarded stubs; do not create new planning/report surfaces unless they are required by a validator, release record, external reviewer response, or an executed proof/evidence/source/reader/artifact change. Work the `docs/CHAPTER_REVIEWS.md` burn-down through artifact commits: proof/evidence/source/reader changes or recorded blockers, not new grading passes. Use the Milestone 2.5 closure classes to choose the cheapest honest next row: proof coverage, test/evidence, external grounding, reader craft, or recorded blocker. Prioritize one flagship measured evidence lane with a one-command run, baseline, negative control, residuals, non-claims, and an accepted evidence transition or explicit no-promotion decision. In parallel, solicit or record one external human review or dated outreach blocker, keep the sixty-second trust surface and non-core evidence visibility accurate, and finish the curated human-reader manuscript to handoff-ready status for Corben review. The reader manuscript must become an authored book draft, not a template strip: add a single thesis, part-level arcs, 8-12 recurring signature ideas, chapter-specific stakes and payoffs, designed key-figure targets, and explicit Corben voice-pass slots; never invent first-person experience, personal conviction, or authorial lessons. Deepen formal work only where it changes proof quality: build one transition-system invariant, trace property, or Lean/Python fixture-equivalence bridge tied to the selected evidence lane instead of chasing theorem count. Keep external grounding current through source-noted Appendix H records, make any Project Theseus or Circle evidence used by the lane CI-replayable or digest-verifiable where public-safe, and record demotions, rejections, blockers, and non-claims honestly. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
 
 ## Non-Claims
 

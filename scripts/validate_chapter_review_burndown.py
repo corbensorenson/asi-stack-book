@@ -39,6 +39,12 @@ REQUIRED_ROADMAP_FRAGMENTS = (
     "qualitative signals until rechecked chapter by chapter",
     "This is not another scorecard.",
     "Do not mark a burn-down row complete in prose.",
+    "Closure classes:",
+    "proof-coverage",
+    "test-or-evidence",
+    "external-grounding",
+    "reader-craft",
+    "recorded-blocker",
 )
 
 REQUIRED_REVIEW_FRAGMENTS = (

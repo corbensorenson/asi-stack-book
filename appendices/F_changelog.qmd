@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-01 - Clarify chapter-review burn-down closure classes
+
+- Updated the v1.x roadmap's chapter-review burn-down milestone with explicit
+  closure classes for proof coverage, test/evidence work, external grounding,
+  reader craft, and recorded blockers.
+- Tightened the long-running goal wording so future runs select the cheapest
+  honest artifact-backed closure for each `docs/CHAPTER_REVIEWS.md` row rather
+  than producing another scoring pass.
+- Extended `scripts/validate_chapter_review_burndown.py` so the roadmap keeps
+  those closure classes visible. This is roadmap execution discipline only; it
+  does not create new source evidence, proof results, tests, chapter-quality
+  grades, or support-state movement.
+
 ## 2026-07-01 - Record external-review outreach blocker
 
 - Added `external_reviews/blockers/no_named_external_reviewer_2026-07-01.json`
