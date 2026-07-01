@@ -1,0 +1,60 @@
+{
+  "scenario_id": "invalid_support_state_promotion",
+  "cyclic_memory_contract": {
+    "contract_id": "cyclic-memory-invalid-support-001",
+    "memory_target": "synthetic support-state overclaim trace",
+    "memory_authority_scope": "diagnostic structural guardrail only; no authority widening",
+    "vcm_packet_refs": ["vcm://demo/context-packet/i"],
+    "slot_count": 8,
+    "residue_policy": "record slot index modulo slot_count",
+    "winding_policy": "record wrap count or provenance when slots are reused",
+    "state_carry_boundary": "finite slot bookkeeping only",
+    "freshness_window": "synthetic trace freshness window",
+    "stale_read_policy": "stale reads fail closed or enter residual escrow",
+    "coverage_claim": "structural coverage is not semantic coverage",
+    "recurrence_schedule": "bounded synthetic schedule",
+    "loop_exit_condition": "stop after declared work budget",
+    "fallback_attention": "ordinary local attention remains available",
+    "admission_state": "structural_guardrail",
+    "baseline_refs": ["ordinary-attention"],
+    "probe_requirements": ["support-state boundary probe"],
+    "authority_non_widening": "slots inherit original authority",
+    "residuals": ["synthetic trace only"],
+    "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"],
+    "evidence_refs": ["experiments/cyclic_memory_contracts/fixtures/invalid_support_state_promotion.json"]
+  },
+  "memory_trace": {
+    "slot_events": [
+      {
+        "event_id": "support-slot-1",
+        "reused_slot": false,
+        "residue_recorded": true,
+        "winding_recorded": false,
+        "provenance_recorded": true,
+        "alias_residual_visible": false
+      }
+    ],
+    "coverage": {
+      "uncovered_lags": [],
+      "fallback_attention_available": true,
+      "quality_promotion_requested": false,
+      "semantic_quality_evidence_present": false
+    },
+    "recurrence": {
+      "enabled": false,
+      "work_budget": 0,
+      "steps_taken": 0,
+      "exit_condition_recorded": false,
+      "fallback_recorded": false,
+      "exited": false
+    },
+    "freshness": {
+      "stale_read_detected": false,
+      "admitted_as_fresh": false,
+      "residual_escrow_recorded": false,
+      "failed_closed": false
+    }
+  },
+  "support_state_effect": "synthetic-test-backed",
+  "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"]
+}

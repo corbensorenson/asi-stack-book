@@ -1,0 +1,60 @@
+{
+  "scenario_id": "valid_alias_winding_preserved",
+  "cyclic_memory_contract": {
+    "contract_id": "cyclic-memory-valid-alias-001",
+    "memory_target": "synthetic reused-slot alias visibility trace",
+    "memory_authority_scope": "diagnostic structural guardrail only; no authority widening",
+    "vcm_packet_refs": ["vcm://demo/context-packet/a"],
+    "slot_count": 8,
+    "residue_policy": "record slot index modulo slot_count",
+    "winding_policy": "record wrap count and provenance when a slot is reused",
+    "state_carry_boundary": "finite slot bookkeeping only",
+    "freshness_window": "synthetic trace freshness window",
+    "stale_read_policy": "stale reads fail closed or enter residual escrow",
+    "coverage_claim": "structural coverage is not semantic coverage",
+    "recurrence_schedule": "bounded synthetic schedule",
+    "loop_exit_condition": "stop after declared work budget",
+    "fallback_attention": "ordinary local attention remains available",
+    "admission_state": "structural_guardrail",
+    "baseline_refs": ["ordinary-attention", "slot-only-control"],
+    "probe_requirements": ["alias probe", "stale-read probe", "recurrence-exit probe"],
+    "authority_non_widening": "slots inherit the original context authority and adequacy boundary",
+    "residuals": ["synthetic trace only; no learned-memory workload run"],
+    "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"],
+    "evidence_refs": ["experiments/cyclic_memory_contracts/fixtures/valid_alias_winding_preserved.json"]
+  },
+  "memory_trace": {
+    "slot_events": [
+      {
+        "event_id": "reuse-slot-3",
+        "reused_slot": true,
+        "residue_recorded": true,
+        "winding_recorded": true,
+        "provenance_recorded": true,
+        "alias_residual_visible": false
+      }
+    ],
+    "coverage": {
+      "uncovered_lags": [],
+      "fallback_attention_available": true,
+      "quality_promotion_requested": false,
+      "semantic_quality_evidence_present": false
+    },
+    "recurrence": {
+      "enabled": true,
+      "work_budget": 3,
+      "steps_taken": 2,
+      "exit_condition_recorded": true,
+      "fallback_recorded": true,
+      "exited": true
+    },
+    "freshness": {
+      "stale_read_detected": false,
+      "admitted_as_fresh": false,
+      "residual_escrow_recorded": false,
+      "failed_closed": false
+    }
+  },
+  "support_state_effect": "no_change",
+  "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"]
+}

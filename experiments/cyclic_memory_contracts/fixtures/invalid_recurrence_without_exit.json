@@ -1,0 +1,60 @@
+{
+  "scenario_id": "invalid_recurrence_without_exit",
+  "cyclic_memory_contract": {
+    "contract_id": "cyclic-memory-invalid-recurrence-001",
+    "memory_target": "synthetic missing-recurrence-exit trace",
+    "memory_authority_scope": "diagnostic structural guardrail only; no authority widening",
+    "vcm_packet_refs": ["vcm://demo/context-packet/f"],
+    "slot_count": 8,
+    "residue_policy": "record slot index modulo slot_count",
+    "winding_policy": "record wrap count or provenance when slots are reused",
+    "state_carry_boundary": "finite recurrence bookkeeping only",
+    "freshness_window": "synthetic trace freshness window",
+    "stale_read_policy": "stale reads fail closed or enter residual escrow",
+    "coverage_claim": "structural coverage is not semantic coverage",
+    "recurrence_schedule": "bounded synthetic schedule",
+    "loop_exit_condition": "missing in trace",
+    "fallback_attention": "ordinary local attention remains available",
+    "admission_state": "structural_guardrail",
+    "baseline_refs": ["ordinary-attention"],
+    "probe_requirements": ["recurrence-exit probe"],
+    "authority_non_widening": "recurrence does not widen authority",
+    "residuals": ["synthetic trace only"],
+    "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"],
+    "evidence_refs": ["experiments/cyclic_memory_contracts/fixtures/invalid_recurrence_without_exit.json"]
+  },
+  "memory_trace": {
+    "slot_events": [
+      {
+        "event_id": "recurrence-slot-4",
+        "reused_slot": false,
+        "residue_recorded": true,
+        "winding_recorded": false,
+        "provenance_recorded": true,
+        "alias_residual_visible": false
+      }
+    ],
+    "coverage": {
+      "uncovered_lags": [],
+      "fallback_attention_available": true,
+      "quality_promotion_requested": false,
+      "semantic_quality_evidence_present": false
+    },
+    "recurrence": {
+      "enabled": true,
+      "work_budget": 3,
+      "steps_taken": 4,
+      "exit_condition_recorded": false,
+      "fallback_recorded": true,
+      "exited": false
+    },
+    "freshness": {
+      "stale_read_detected": false,
+      "admitted_as_fresh": false,
+      "residual_escrow_recorded": false,
+      "failed_closed": false
+    }
+  },
+  "support_state_effect": "no_change",
+  "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"]
+}

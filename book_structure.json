@@ -8332,10 +8332,34 @@
               "result_status": "passes via Lean negative case; no KV-cache freshness behavior claim",
               "status": "implemented in AsiStackProofs.CoilAttentionMemory; no freshness behavior claim"
             },
-            "Cyclic alias visibility test",
-            "Sparse coverage gap test",
-            "Recurrence budget and exit test",
-            "Freshness stale-read rejection test"
+            {
+              "name": "Cyclic alias visibility test",
+              "purpose": "Check that reused cyclic slots record residue plus winding or provenance, or expose a visible alias residual.",
+              "status": "implemented by cyclic memory contract harness; validated locally; no retrieval-quality or learned-memory claim",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_cyclic_memory_contracts.py`; synthetic structural traces only"
+            },
+            {
+              "name": "Sparse coverage gap test",
+              "purpose": "Check that uncovered sparse-coverage lags are recorded and routed to fallback attention instead of quality promotion.",
+              "status": "implemented by cyclic memory contract harness; validated locally; no sparse-attention quality claim",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_cyclic_memory_contracts.py`; no sparse-attention behavior or quality claim"
+            },
+            {
+              "name": "Recurrence budget and exit test",
+              "purpose": "Check that enabled recurrence carries work budget, exit-condition, fallback, and exited records.",
+              "status": "implemented by cyclic memory contract harness; validated locally; no recurrence-quality or model-behavior claim",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_cyclic_memory_contracts.py`; no recurrence-quality or runtime claim"
+            },
+            {
+              "name": "Freshness stale-read rejection test",
+              "purpose": "Check that stale reads fail closed or enter residual escrow before being admitted as fresh.",
+              "status": "implemented by cyclic memory contract harness; validated locally; no KV-cache freshness or retrieval-quality claim",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_cyclic_memory_contracts.py`; no KV-cache freshness or retrieval-quality claim"
+            }
           ],
           "claim_label": "Design rationale",
           "open_evidence_gaps": [

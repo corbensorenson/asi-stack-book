@@ -1,0 +1,60 @@
+{
+  "scenario_id": "valid_recurrence_exit_fallback",
+  "cyclic_memory_contract": {
+    "contract_id": "cyclic-memory-valid-recurrence-001",
+    "memory_target": "synthetic recurrence budget and fallback trace",
+    "memory_authority_scope": "diagnostic structural guardrail only; no authority widening",
+    "vcm_packet_refs": ["vcm://demo/context-packet/c"],
+    "slot_count": 16,
+    "residue_policy": "record slot index modulo slot_count",
+    "winding_policy": "record wrap count or provenance when slots are reused",
+    "state_carry_boundary": "finite recurrence bookkeeping only",
+    "freshness_window": "synthetic trace freshness window",
+    "stale_read_policy": "stale reads fail closed or enter residual escrow",
+    "coverage_claim": "uncovered lags route to fallback attention",
+    "recurrence_schedule": "bounded three-step synthetic recurrence schedule",
+    "loop_exit_condition": "exit at work budget and preserve fallback",
+    "fallback_attention": "ordinary local attention remains available",
+    "admission_state": "fallback_required",
+    "baseline_refs": ["ordinary-attention", "no-recurrence-control"],
+    "probe_requirements": ["recurrence-exit probe", "coverage fallback probe"],
+    "authority_non_widening": "recurrence does not widen source authority or adequacy",
+    "residuals": ["uncovered lag remains visible and routes to fallback"],
+    "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"],
+    "evidence_refs": ["experiments/cyclic_memory_contracts/fixtures/valid_recurrence_exit_fallback.json"]
+  },
+  "memory_trace": {
+    "slot_events": [
+      {
+        "event_id": "fallback-slot-5",
+        "reused_slot": true,
+        "residue_recorded": true,
+        "winding_recorded": false,
+        "provenance_recorded": false,
+        "alias_residual_visible": true
+      }
+    ],
+    "coverage": {
+      "uncovered_lags": ["lag-9"],
+      "fallback_attention_available": true,
+      "quality_promotion_requested": false,
+      "semantic_quality_evidence_present": false
+    },
+    "recurrence": {
+      "enabled": true,
+      "work_budget": 3,
+      "steps_taken": 3,
+      "exit_condition_recorded": true,
+      "fallback_recorded": true,
+      "exited": true
+    },
+    "freshness": {
+      "stale_read_detected": false,
+      "admitted_as_fresh": false,
+      "residual_escrow_recorded": false,
+      "failed_closed": false
+    }
+  },
+  "support_state_effect": "no_change",
+  "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"]
+}

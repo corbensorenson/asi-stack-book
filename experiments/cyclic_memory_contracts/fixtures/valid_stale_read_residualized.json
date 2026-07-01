@@ -1,0 +1,60 @@
+{
+  "scenario_id": "valid_stale_read_residualized",
+  "cyclic_memory_contract": {
+    "contract_id": "cyclic-memory-valid-stale-001",
+    "memory_target": "synthetic stale-read residualization trace",
+    "memory_authority_scope": "diagnostic structural guardrail only; no authority widening",
+    "vcm_packet_refs": ["vcm://demo/context-packet/b"],
+    "slot_count": 8,
+    "residue_policy": "record slot index modulo slot_count",
+    "winding_policy": "record wrap count or provenance when slots are reused",
+    "state_carry_boundary": "finite stale-read bookkeeping only",
+    "freshness_window": "synthetic trace freshness window",
+    "stale_read_policy": "stale reads fail closed or enter residual escrow",
+    "coverage_claim": "freshness facts are structural only",
+    "recurrence_schedule": "bounded synthetic schedule",
+    "loop_exit_condition": "stop after declared work budget",
+    "fallback_attention": "ordinary local attention remains available",
+    "admission_state": "residualized",
+    "baseline_refs": ["ordinary-attention", "fresh-context-control"],
+    "probe_requirements": ["stale-read probe", "residual escrow check"],
+    "authority_non_widening": "stale reads do not widen context authority or adequacy",
+    "residuals": ["stale read was residualized; no KV-cache behavior claim"],
+    "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"],
+    "evidence_refs": ["experiments/cyclic_memory_contracts/fixtures/valid_stale_read_residualized.json"]
+  },
+  "memory_trace": {
+    "slot_events": [
+      {
+        "event_id": "freshness-slot-2",
+        "reused_slot": false,
+        "residue_recorded": true,
+        "winding_recorded": false,
+        "provenance_recorded": true,
+        "alias_residual_visible": false
+      }
+    ],
+    "coverage": {
+      "uncovered_lags": [],
+      "fallback_attention_available": true,
+      "quality_promotion_requested": false,
+      "semantic_quality_evidence_present": false
+    },
+    "recurrence": {
+      "enabled": false,
+      "work_budget": 0,
+      "steps_taken": 0,
+      "exit_condition_recorded": false,
+      "fallback_recorded": false,
+      "exited": false
+    },
+    "freshness": {
+      "stale_read_detected": true,
+      "admitted_as_fresh": true,
+      "residual_escrow_recorded": true,
+      "failed_closed": false
+    }
+  },
+  "support_state_effect": "no_change",
+  "non_claims": ["does not prove retrieval quality", "does not prove model behavior", "does not promote support state"]
+}

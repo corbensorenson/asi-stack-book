@@ -2461,12 +2461,13 @@ Failure modes to cover:
 Draft deliverables:
 
 - A contract-backed memory and attention evaluation plan with slot, winding, coverage, freshness, active-token, loop-exit, work-budget, and baseline fields.
-- Implemented repository-level fixture: `cyclic_memory_contract.valid.json` validates the cyclic-memory record shape, memory-authority scope, VCM packet refs, state-carry boundary, stale-read policy, admission state, baseline refs, probe requirements, authority non-widening, residuals, and non-claims only; no KV-cache freshness checker, sparse-coverage harness, recurrence benchmark, or learned-memory workload exists yet.
+- Implemented repository-level fixture: `cyclic_memory_contract.valid.json` validates the cyclic-memory record shape, memory-authority scope, VCM packet refs, state-carry boundary, stale-read policy, admission state, baseline refs, probe requirements, authority non-widening, residuals, and non-claims only.
+- Implemented book-gate harness: `python3 scripts/validate_cyclic_memory_contracts.py` validates 3 valid and 6 expected-invalid synthetic cyclic-memory contract traces for alias visibility, sparse-coverage fallback, recurrence budget/exit, stale-read residualization, structural-quality non-promotion, and support-state non-promotion; this is not a KV-cache certifier, recurrence benchmark, learned-memory workload, retrieval-quality test, or long-context result.
 - Source-noted external positioning through Transformer-XL, Compressive Transformers, and RetNet; no retrieval-quality, reasoning-quality, speed, memory-savings, or long-context result is reproduced or promoted.
-- Planned Codex test: Cyclic alias visibility test
-- Planned Codex test: Sparse coverage gap test
-- Planned Codex test: Recurrence budget and exit test
-- Planned Codex test: Freshness stale-read rejection test
+- Implemented Codex test: Cyclic alias visibility test, via `python3 scripts/validate_cyclic_memory_contracts.py`; no retrieval-quality or learned-memory claim.
+- Implemented Codex test: Sparse coverage gap test, via `python3 scripts/validate_cyclic_memory_contracts.py`; no sparse-attention quality or runtime behavior claim.
+- Implemented Codex test: Recurrence budget and exit test, via `python3 scripts/validate_cyclic_memory_contracts.py`; no recurrence-quality or model-behavior claim.
+- Implemented Codex test: Freshness stale-read rejection test, via `python3 scripts/validate_cyclic_memory_contracts.py`; no KV-cache freshness or retrieval-quality claim.
 
 Lean proof targets:
 

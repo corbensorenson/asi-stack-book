@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-30 - Cyclic memory contract harness
+
+- Added the book-gate-only cyclic-memory contract harness in
+  `scripts/validate_cyclic_memory_contracts.py`, with 3 valid fixtures and 6
+  expected-invalid fixtures under `experiments/cyclic_memory_contracts/`.
+  The harness checks synthetic structural-memory traces for alias visibility,
+  sparse-coverage fallback, recurrence budget and exit records, stale-read
+  residualization, structural-quality non-promotion, and support-state
+  non-promotion.
+- Updated the Coil Attention chapter, book outline, Appendix E, proof adequacy
+  review, v1.0 status surfaces, roadmap surfaces, repository map, README, and
+  validation wiring. Appendix E now records 210 implemented chapter rows, 1
+  partial row, and 106 planned rows; proof-target counts remain 123 manifest
+  targets and 371 Lean theorem declarations. Refreshed the v1.0 status
+  manuscript scale to 169,869 chapter words excluding YAML and 177,536 raw
+  chapter-file words.
+- This does not prove retrieval quality, reasoning quality, long-context
+  performance, memory savings, recurrence quality, KV-cache behavior,
+  sparse-attention behavior, model behavior, runtime behavior, Circle theorem
+  validity, Theseus transfer, or any support-state promotion.
+
 ## 2026-06-30 - Policy-promotion route proofs
 
 - Strengthened `AsiStackProofs.PolicyOptimization` with seven derived

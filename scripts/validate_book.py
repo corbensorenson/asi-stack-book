@@ -80,6 +80,7 @@ REQUIRED = [
     "scripts/validate_artifact_graph_replay.py",
     "scripts/validate_procedural_memory_loop.py",
     "scripts/validate_routing_decision_lease.py",
+    "scripts/validate_cyclic_memory_contracts.py",
     "scripts/validate_context_admission_adequacy.py",
     "scripts/validate_readiness_residual_gates.py",
     "scripts/validate_benchmark_antigoodhart.py",
@@ -126,6 +127,7 @@ REQUIRED = [
     "docs/artifact_graph_replay_harness.md",
     "docs/procedural_memory_loop_harness.md",
     "docs/routing_decision_lease_harness.md",
+    "docs/cyclic_memory_contract_harness.md",
     "docs/context_admission_adequacy_harness.md",
     "docs/readiness_residual_harness.md",
     "docs/benchmark_antigoodhart_harness.md",
@@ -175,6 +177,7 @@ REQUIRED = [
     "experiments/artifact_graph_replay/results/2026-06-30-local.md",
     "experiments/procedural_memory_loop/results/2026-06-30-local.md",
     "experiments/routing_decision_lease/results/2026-06-30-local.md",
+    "experiments/cyclic_memory_contracts/results/2026-06-30-local.md",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
     "experiments/circle_public_replay/results/2026-06-29-local.json",
@@ -688,6 +691,7 @@ def main() -> None:
     run_validator("validate_artifact_graph_replay.py")
     run_validator("validate_procedural_memory_loop.py")
     run_validator("validate_routing_decision_lease.py")
+    run_validator("validate_cyclic_memory_contracts.py")
     run_validator("validate_context_admission_adequacy.py")
     run_validator("validate_readiness_residual_gates.py")
     run_validator("validate_benchmark_antigoodhart.py")

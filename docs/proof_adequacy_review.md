@@ -9,9 +9,9 @@ This review classifies the 123 implemented Lean proof targets by adequacy for th
 | Adequacy class | Targets | Meaning |
 |---|---:|---|
 | adequate finite-record invariant | 8 | The current Lean predicate is adequate for a narrow repository/process or finite-record claim if the claim text remains narrow. |
-| useful but too narrow | 47 | The predicate is a useful guard, but the chapter needs state-machine, trace, integration, empirical, or benchmark tests before the proof can support the larger boundary. |
+| useful but too narrow | 48 | The predicate is a useful guard, but the chapter needs state-machine, trace, integration, empirical, or benchmark tests before the proof can support the larger boundary. |
 | needs richer state-machine or review semantics | 19 | The current finite record omits timing, lifecycle, review, social, adversarial, or governance semantics that are central to the chapter. |
-| needs executable tests first | 32 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
+| needs executable tests first | 31 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
 | needs empirical or baseline tests first | 11 | Performance, efficiency, policy, substrate, or quality claims need workloads, baselines, measurements, and negative controls before proof adequacy can rise; deterministic accounting harnesses may check record discipline but do not replace model or workload results. |
 | research-agenda until artifact import | 6 | The proof target remains a placeholder guard until external/local project artifacts are imported, built, replayed, or otherwise inspected. |
 
@@ -104,7 +104,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `resource-economics-and-token-budgets` | 4 | needs richer state-machine or review semantics | Budget lifecycle, simulation-transfer review, timing, and adversarial states before adequacy; includes folded Simulation Fidelity proof hooks. |
 | `mathematical-and-search-substrates` | 2 | needs empirical or baseline tests first | Search-substrate adoption-boundary negative-case Lean envelope added; still build workload, baseline, result record, representation-efficiency benchmark, sequence-substrate A/B, and falsification review before stronger proof. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2 | research-agenda until artifact import | Circle proof-contract negative-case Lean envelope added; still import/replay artifacts before adequacy can rise. |
-| `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | needs executable tests first | Add deterministic fixtures/harnesses before stronger formalization. |
+| `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | useful but too narrow | Synthetic cyclic-memory contract harness added; still add KV-cache certifiers, recurrence benchmarks, learned-memory workloads, retrieval-quality tests, long-context tests, Circle commands, and Theseus transfer consumers before stronger claims. |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | needs empirical or baseline tests first | Cyclic-mixer adoption-boundary negative-case Lean envelope added; still build RoPE certifier replay, cyclic mixer benchmark, MLX experiment, hardware-kernel benchmark, downstream quality evaluation, baseline matrix, and result record before stronger proof. |
 | `executable-specifications-and-lean-proof-envelope` | 2 | adequate finite-record invariant | Proof artifact authority negative-case envelope added; keep narrow and do not broaden beyond checked records. |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 2 | useful but too narrow | Ratchet-decision envelope and synthetic anti-Goodhart harness added; still add empirical benchmark runs, hidden-transfer tests, contamination audits, source-reported replay, regression suites, and benchmark-quality review before stronger claims. |
@@ -503,7 +503,7 @@ records, decoder checks, behavioral fallback execution, downstream-utility
 probes, and admission tests before it can support stronger artifact-compression
 claims.
 
-### Coil Attention Memory Negative Cases
+### Coil Attention Memory Harness And Negative Cases
 
 The Coil Attention follow-through increment strengthened
 `AsiStackProofs.CoilAttentionMemory` without changing proof targets or support
@@ -515,13 +515,19 @@ that enabled recurrence is invalid without work-budget, exit-condition, or
 fallback records, and that stale reads admitted as fresh are invalid without
 residual escrow.
 
-This moves `coil-attention-cyclic-memory-and-recurrence-contracts` from pure
-projection traceability into mixed finite-record depth. The new theorems
-improve memory-contract record discipline, but the chapter still needs actual
-memory traces, sparse-coverage cases, recurrence schedules, stale-read probes,
-Circle or Theseus consumer gates, retrieval-quality tests, long-context tests,
-and learned-model behavior before it can support stronger memory or recurrence
-claims.
+`python3 scripts/validate_cyclic_memory_contracts.py` now adds a
+book-gate-only deterministic harness over 3 valid and 6 expected-invalid
+synthetic cyclic-memory contract traces. It checks alias visibility,
+sparse-coverage fallback, recurrence budget/exit records, stale-read
+residualization, structural-quality non-promotion, and support-state
+non-promotion.
+
+This moves `coil-attention-cyclic-memory-and-recurrence-contracts` to the
+`useful but too narrow` class. The new theorems and harness improve
+memory-contract record discipline, but the chapter still needs KV-cache
+certifiers, recurrence benchmarks, learned-memory workloads, Circle or Theseus
+consumer gates, retrieval-quality tests, long-context tests, and model behavior
+before it can support stronger memory or recurrence claims.
 
 ### Personal Compute Hive Approval And Lease Boundaries
 
