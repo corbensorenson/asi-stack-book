@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 122 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 347 |
+| Theorem declarations classified | 352 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 226 |
+| Derived/decomposed theorem declarations | 231 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 45 |
 | Safety-critical direct/projection declarations | 10 |
@@ -100,7 +100,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 3 | 9 | 1 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 2 | 2 | 0 | 0 | traceability hook unless adequacy review narrows claim |
+| `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 6 | 2 | 4 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -406,8 +406,13 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StackBoundaries.lean` | `handoff_exceeding_caller_ceiling_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `layer_without_external_authority_requires_authorized_handoff` | derived_or_decomposed | no | uses cases, contradiction, rw |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/TheseusReference.lean` | `accepted_promotion_with_missing_or_failing_gate_reports_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/TheseusReference.lean` | `capability_or_self_evolution_promotion_blocked_without_passing_gate_reports` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TheseusReference.lean` | `implementation_reference_claim_names_report_config_or_tool_not_dashboard_only` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TheseusReference.lean` | `implementation_reference_claim_without_artifact_surface_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/TheseusReference.lean` | `imported_report_bundle_missing_required_artifact_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/TheseusReference.lean` | `public_theseus_artifact_with_private_payload_or_support_overclaim_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/TheseusReference.lean` | `replay_ready_without_replay_boundary_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `accepted_prior_review_reuse_without_unchanged_evidence_guard_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `action_verdict_without_actions_or_constraints_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `high_risk_accepted_verdict_without_probes_or_independence_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |

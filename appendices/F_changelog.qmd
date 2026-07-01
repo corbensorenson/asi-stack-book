@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-06-30 - Theseus report-boundary proofs
+
+- Strengthened `AsiStackProofs.TheseusReference` with five derived
+  negative-case theorems: one rejects dashboard-only implementation-reference
+  claims without report/config/tool artifacts, one rejects accepted promotions
+  with missing or failing gate reports, one rejects imported report bundles
+  missing required artifacts, one rejects replay-ready rows missing replay
+  boundary fields, and one rejects public artifacts that copy private payloads
+  or claim support promotion without an accepted evidence transition.
+- Regenerated `docs/proof_depth_classification.md`,
+  `docs/proof_artifact_audit.md`, `proofs/proof_manifest.json`, and Appendix
+  E; the proof-depth classifier now reports 352 theorem declarations, 121
+  direct/projection-style declarations, and 231 derived/decomposed
+  declarations.
+- Updated the Project Theseus chapter, outline, manifest test rows, proof
+  adequacy review, candidate status, v1.0/v1.x roadmap surfaces, focus audit,
+  manuscript status, and status snapshot validator. Appendix E now records 185
+  implemented rows, 1 partial row, and 110 planned rows. Refreshed the v1.0
+  status manuscript scale to 168,950 chapter words excluding YAML and 176,537
+  raw chapter-file words.
+- This does not promote any Appendix C or chapter core claim, import a live
+  Theseus report bundle, execute a replay, verify current dashboard state,
+  approve a public artifact, approve a reader/ebook/PDF/DOCX/audio artifact,
+  prove self-evolution safety, or approve any release artifact beyond recorded
+  validation scope.
+
 ## 2026-06-30 - Living book release-boundary proofs
 
 - Strengthened `AsiStackProofs.LivingBook` with four derived negative-case

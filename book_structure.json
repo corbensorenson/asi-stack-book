@@ -10789,9 +10789,61 @@
           "minimal_implementation": "An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.",
           "beyond_state_of_art": "Project Theseus becomes valuable here only as a public-safe implementation-reference lab. Project Theseus would remain useful to this book only if its reports, configs, gates, ledgers, work-board entries, residuals, and replay notes can be mined without turning private or local runs into general capability claims. A mature Theseus reference lane would provide importable report bundles rather than dashboard impressions. Each bundle would identify the ASI Stack layer it exercises, the command or report source, configuration, environment boundary, artifact checksum, gate result, residual, missing artifact, public claim boundary, and non-claims. A dashboard could visualize those bundles, but the report bundle would be the evidence object.",
           "codex_tests": [
+            {
+              "name": "Theseus report crosswalk fixture validation",
+              "purpose": "Validate that a report-first reference row names source reports, config/tool refs, gates, residuals, public claim boundary, verification status, missing artifacts, non-claims, and evidence refs.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_protocol_examples.py`; schema/fixture consistency only",
+              "status": "implemented; passing via `python3 scripts/validate_protocol_examples.py`"
+            },
+            {
+              "name": "Static architecture-gate import validation",
+              "purpose": "Validate one public-safe digest-verified static Theseus architecture-gate report fixture and expected-invalid digest/private-payload/support-overclaim controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report.py`; no live replay or support-state promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report.py`"
+            },
+            {
+              "name": "Dashboard-only implementation-reference negative case",
+              "purpose": "Reject implementation-reference claims that lack report/config/tool artifact surfaces or rely on dashboard prose alone.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no dashboard-state or report-truth claim",
+              "status": "implemented; passes via Lean negative case"
+            },
+            {
+              "name": "Missing/failing gate promotion negative case",
+              "purpose": "Reject accepted capability or self-evolution promotion when required gate reports are absent or failing.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no gate-quality or self-evolution-safety claim",
+              "status": "implemented; passes via Lean negative case"
+            },
+            {
+              "name": "Imported report-bundle completeness negative case",
+              "purpose": "Reject imported-report-bundle status when the goal contract, compiler artifact, work-board item, gate record, residual, non-claim, review note, or publication boundary is missing.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no report-bundle import or replay claim",
+              "status": "implemented; passes via Lean negative case"
+            },
+            {
+              "name": "Replay-readiness boundary negative case",
+              "purpose": "Reject replay-ready status when command, environment notes, input boundary, artifact checksum, expected output class, or failure behavior is missing.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no replay execution claim",
+              "status": "implemented; passes via Lean negative case"
+            },
+            {
+              "name": "Public-safe artifact boundary negative case",
+              "purpose": "Reject public artifacts that copy private payloads, claim support promotion without an accepted evidence transition, or omit non-claims.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean negative case; no publication approval or support-state promotion",
+              "status": "implemented; passes via Lean negative case"
+            },
+            "Report-bundle completeness test",
+            "Replay-readiness test",
             "Theseus report crosswalk completeness test",
             "Architecture gate mapping test",
             "Work-board improvement contract test",
+            "Artifact-gap audit",
             "Self-evolution intervention ladder audit"
           ],
           "claim_label": "Design rationale",

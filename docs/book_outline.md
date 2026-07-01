@@ -2956,6 +2956,13 @@ Draft deliverables:
 - An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
 - Source-noted external comparator rows for `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, and `ext_ml_reproducibility_program_2021`, without treating those records as Theseus reproduction, compliance, or support-state promotion.
 - Implemented repository-level fixtures: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, and `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest. No live Theseus report bundle, replay command, benchmark environment, current dashboard, work-board step, or model artifact has been rerun.
+- Implemented Codex test: Theseus report crosswalk fixture validation
+- Implemented Codex test: Static architecture-gate import validation
+- Implemented Codex test: Dashboard-only implementation-reference negative case
+- Implemented Codex test: Missing/failing gate promotion negative case
+- Implemented Codex test: Imported report-bundle completeness negative case
+- Implemented Codex test: Replay-readiness boundary negative case
+- Implemented Codex test: Public-safe artifact boundary negative case
 - Planned Codex test: Report-bundle completeness test
 - Planned Codex test: Replay-readiness test
 - Planned Codex test: Theseus report crosswalk completeness test
@@ -2970,6 +2977,8 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | implemented |
 | `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | implemented |
+
+Implemented negative-case theorems now cover dashboard-only implementation-reference rejection, accepted promotions with missing or failing gate reports, incomplete imported report bundles, replay-ready rows without replay boundary fields, and public artifacts that copy private payloads or claim support promotion without an accepted evidence transition. These remain record-level gates only; they do not prove live Theseus behavior, replay execution, artifact truth, support-state promotion, or self-evolution safety.
 
 ### Prototype Roadmap
 

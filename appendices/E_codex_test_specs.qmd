@@ -272,9 +272,19 @@ No result is recorded here unless a test has actually been implemented and run.
 | `integrated-reference-architecture` | Integrated Reference Architecture | End-to-end intent trace test | implemented | passing via `python3 scripts/validate_reference_trace.py` |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Artifact continuity audit | implemented | passing via `python3 scripts/validate_reference_trace.py` |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Authority stop-condition test | implemented | passing via `python3 scripts/validate_reference_trace.py` |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report crosswalk fixture validation | implemented | passes via `python3 scripts/validate_protocol_examples.py`; schema/fixture consistency only |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Static architecture-gate import validation | implemented | passes via `python3 scripts/validate_theseus_report.py`; no live replay or support-state promotion |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Dashboard-only implementation-reference negative case | implemented | passes via Lean negative case; no dashboard-state or report-truth claim |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Missing/failing gate promotion negative case | implemented | passes via Lean negative case; no gate-quality or self-evolution-safety claim |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Imported report-bundle completeness negative case | implemented | passes via Lean negative case; no report-bundle import or replay claim |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Replay-readiness boundary negative case | implemented | passes via Lean negative case; no replay execution claim |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Public-safe artifact boundary negative case | implemented | passes via Lean negative case; no publication approval or support-state promotion |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Report-bundle completeness test | planned | not run |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Replay-readiness test | planned | not run |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report crosswalk completeness test | planned | not run |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Architecture gate mapping test | planned | not run |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Work-board improvement contract test | planned | not run |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Artifact-gap audit | planned | not run |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Self-evolution intervention ladder audit | planned | not run |
 | `prototype-roadmap` | Prototype Roadmap | Phase acceptance checklist | planned | not run |
 | `prototype-roadmap` | Prototype Roadmap | Dependency gate review | planned | not run |
