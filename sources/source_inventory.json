@@ -1745,6 +1745,7 @@
     "layer": "program_synthesis_representation",
     "chapter_targets": [
       "cognitive-compilation-and-semantic-ir",
+      "procedural-memory-and-cognitive-loop-closure",
       "compact-generative-systems-and-residual-honesty",
       "rankfold-neuralfold-and-artifact-compression",
       "mathematical-and-search-substrates"
@@ -1757,6 +1758,44 @@
     "updated": "2020-06-15",
     "citation_label": "Ellis et al. (2020), DreamCoder",
     "doi": "10.48550/arXiv.2006.08381"
+  },
+  {
+    "id": "ext_toolformer_2023",
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "priority": "external_literature",
+    "layer": "learned_tool_use",
+    "chapter_targets": [
+      "procedural-memory-and-cognitive-loop-closure",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "policy-optimization-and-learning-from-feedback"
+    ],
+    "url": "https://arxiv.org/abs/2302.04761",
+    "notes": "External learned-tool-use source for self-supervised API-call insertion, tool selection, argument construction, and result incorporation without claiming ASI Stack tool-use reproduction.",
+    "source_type": "arxiv",
+    "arxiv_id": "2302.04761",
+    "published": "2023-02-09",
+    "updated": "2023-02-09",
+    "citation_label": "Schick et al. (2023), Toolformer",
+    "doi": "10.48550/arXiv.2302.04761"
+  },
+  {
+    "id": "ext_voyager_2023",
+    "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+    "priority": "external_literature",
+    "layer": "lifelong_skill_learning",
+    "chapter_targets": [
+      "procedural-memory-and-cognitive-loop-closure",
+      "routing-heads-and-specialist-cores",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/2305.16291",
+    "notes": "External lifelong-agent source for automatic curriculum, executable-code skill libraries, iterative environment-feedback prompting, self-verification, and skill-library transfer in Minecraft.",
+    "source_type": "arxiv",
+    "arxiv_id": "2305.16291",
+    "published": "2023-05-25",
+    "updated": "2023-10-19",
+    "citation_label": "Wang et al. (2023), Voyager",
+    "doi": "10.48550/arXiv.2305.16291"
   },
   {
     "id": "ext_information_bottleneck_2000",

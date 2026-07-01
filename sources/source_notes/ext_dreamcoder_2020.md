@@ -13,7 +13,7 @@
 
 ## Thesis
 
-DreamCoder belongs in the cognitive-compilation, compression, artifact-compression, and search-substrate chapters as an external reference for learning reusable symbolic abstractions from solved tasks. It helps the ASI Stack distinguish compression by abstraction from compression by weight reduction or prompt shortening.
+DreamCoder belongs in the cognitive-compilation, procedural-memory, compression, artifact-compression, and search-substrate chapters as an external reference for learning reusable symbolic abstractions from solved tasks. It helps the ASI Stack distinguish compression by abstraction and reusable procedure libraries from weight reduction or prompt shortening.
 
 ## Mechanisms
 
@@ -21,6 +21,7 @@ DreamCoder belongs in the cognitive-compilation, compression, artifact-compressi
 - Infer reusable library components from discovered solutions.
 - Use wake-sleep style learning to improve recognition models and guide later synthesis.
 - Treat learned abstractions as interpretable knowledge that can reduce future search burden.
+- Expose a comparator for ASI Stack tool-card promotion: solved-task lineage, reusable abstraction, and later search reduction still need provenance and regression boundaries before routable reuse.
 
 ## Evidence
 
@@ -37,13 +38,14 @@ DreamCoder belongs in the cognitive-compilation, compression, artifact-compressi
 ## Book Chapters Supported
 
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
+- `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
 
 ## Claims To Add Or Update
 
-- Use this note to compare ASI Stack abstraction and compression proposals with program-synthesis library learning.
+- Use this note to compare ASI Stack abstraction, procedural-memory, and compression proposals with program-synthesis library learning.
 - Do not claim local synthesis, search reduction, library learning, or task generalization.
 - Keep support state at `argument` until local synthesis traces, artifact records, or accepted evidence transitions exist.
 

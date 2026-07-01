@@ -1663,6 +1663,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `cognitive_loop_closure` | Read first for chapter claims and mechanisms. |
 | Supporting | `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_memgpt_2023`, `ext_toolformer_2023`, `ext_voyager_2023`, `ext_dreamcoder_2020` | Use after source notes to ground memory-management, learned-tool-use, skill-library, and library-learning comparators; do not treat reported results as local reproduction or support-state promotion. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1703,6 +1704,7 @@ Draft deliverables:
 - Implemented protocol validation: `procedural_tool_record` fixture validates public record shape only.
 - Implemented synthetic Codex test: `python3 scripts/validate_procedural_memory_loop.py` checks qualification packets for comparable repeated trace clusters, negative-example preservation, abstraction fields, regression quarantine, retirement triggers, source-trace mismatch, and explicit non-claim boundaries. It remains synthetic record-gate evidence only, not deployed loop-detection, tool-synthesis, generated-tool correctness, regression-quality, route-quality, monitoring, or retirement-automation evidence.
 - Implemented Lean lifecycle route envelope: modeled routable transitions require comparable traces, negative examples, closure artifacts, verification, clean regressions, benchmark floor, active SCF target, retirement handling, monitoring plan, residuals, non-claims, and a verified or routable source state; valid routable, quarantined, and retired synthetic fixture shapes have Lean bridge records.
+- Implemented external grounding: source notes exist for MemGPT, Toolformer, Voyager, and DreamCoder as external comparators for memory tiers, learned API/tool use, executable-code skill libraries, and program-synthesis library learning; no local reproduction, tool-synthesis result, skill-library transfer result, or support-state promotion is claimed.
 - Implemented Codex test: Loop detection test, for synthetic qualification packets only.
 - Planned Codex test: Procedure qualification state test.
 - Implemented Codex test: Negative-example preservation test, for synthetic qualification packets only.

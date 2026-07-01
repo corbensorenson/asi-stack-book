@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 17
-- `source_note_available_uncached`: 123
+- `source_note_available_uncached`: 125
 
 ## Records
 
@@ -130,6 +130,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_gptq_2022` | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_qlora_2023` | QLoRA: Efficient Finetuning of Quantized LLMs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_dreamcoder_2020` | DreamCoder: Growing generalizable, interpretable knowledge with wake-sleep Bayesian program learning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_toolformer_2023` | Toolformer: Language Models Can Teach Themselves to Use Tools | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_voyager_2023` | Voyager: An Open-Ended Embodied Agent with Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_information_bottleneck_2000` | The information bottleneck method | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_mdl_tutorial_2004` | A tutorial introduction to the minimum description length principle | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_codebleu_2020` | CodeBLEU: a Method for Automatic Evaluation of Code Synthesis | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
