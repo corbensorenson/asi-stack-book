@@ -344,7 +344,7 @@ def main() -> None:
         "`experiments/circle_external_receipt_slice/results/2026-06-29-local.json`",
         "`evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json`",
         "| Project Theseus static import lane | The public-safe Project Theseus import lane now records two sanitized static report fixtures",
-        "18 imported generation modes, 13 generation-mode comparisons, 0 hard gaps, 0 promotable comparisons, 0 useful-solution-per-second",
+        "18 imported generation modes, 13 generation-mode comparisons, 0 hard gaps, 0 modes with missing report refs, 0 promotable comparisons, 0 useful-solution-per-second",
         "The support replay probe reruns both Theseus validators, records command-output digests and tracked artifact hashes, and preserves support-state effect `none`.",
         "`docs/theseus_report_import_slice.md`",
         "`experiments/theseus_import/results/2026-06-29-local.json`",

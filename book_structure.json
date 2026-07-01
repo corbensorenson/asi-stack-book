@@ -7248,7 +7248,7 @@
             },
             {
               "name": "Project Theseus generation-mode import validation",
-              "purpose": "Validate one public-safe digest-verified static Theseus generation-mode gate summary with 18 modes, 13 comparisons, zero hard gaps, zero promotable comparisons, Lean fixture alignment, and expected-invalid private-payload, support-overclaim, raw-speed-promotion, and useful-speed-overclaim controls.",
+              "purpose": "Validate one public-safe digest-verified static Theseus generation-mode gate summary with 18 modes, 13 comparisons, zero hard gaps, zero modes with missing report refs, zero promotable comparisons, Lean fixture alignment, and expected-invalid hard boundary-gate failure, private-payload, missing-report-ref overclaim, support-overclaim, raw-speed-promotion, and useful-speed-overclaim controls.",
               "implementation_status": "implemented",
               "result_status": "passes via `python3 scripts/validate_theseus_generation_mode_import.py`; finite `AsiStackProofs.FastGeneration` fixture matches the public summary; no live Theseus replay, speed-quality win, useful-solution-per-second improvement, or support-state promotion",
               "status": "implemented; passing via `python3 scripts/validate_theseus_generation_mode_import.py`"
@@ -7287,7 +7287,7 @@
             {
               "tag": "lean:fast_generation.theseus_import_fixture_bridge",
               "module": "AsiStackProofs.FastGeneration",
-              "target": "The public Project Theseus generation-mode import fixture matches a finite Lean summary fixture and proves the imported accepted-span speed-lift warnings do not permit promotion without useful-solution evidence or promotable comparisons.",
+              "target": "The public Project Theseus generation-mode import fixture matches a finite Lean summary fixture and proves the imported accepted-span speed-lift warnings do not permit promotion without useful-solution evidence, promotable comparisons, all hard boundary gates passing, and zero missing report refs.",
               "status": "implemented"
             }
           ],
@@ -11479,7 +11479,7 @@
             },
             {
               "name": "Static generation-mode gate import validation",
-              "purpose": "Validate one public-safe digest-verified static Theseus generation-mode gate report fixture and expected-invalid private-payload, support-overclaim, raw-speed-promotion, and useful-speed-overclaim controls.",
+              "purpose": "Validate one public-safe digest-verified static Theseus generation-mode gate report fixture and expected-invalid hard boundary-gate failure, private-payload, missing-report-ref overclaim, support-overclaim, raw-speed-promotion, and useful-speed-overclaim controls.",
               "implementation_status": "implemented",
               "result_status": "passes via `python3 scripts/validate_theseus_generation_mode_import.py`; no live replay, generation-speed claim, model-quality claim, or support-state promotion",
               "status": "implemented; passing via `python3 scripts/validate_theseus_generation_mode_import.py`"

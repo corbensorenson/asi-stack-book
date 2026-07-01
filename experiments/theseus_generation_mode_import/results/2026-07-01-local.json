@@ -7,7 +7,7 @@
   "accepted_public_report_sha256": "0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709",
   "source_artifact_sha256": "a711d0dbca9779f26d4b0a63db18ce1fc574ade47a262f5140a9a7b6d325e90b",
   "valid_report_count": 1,
-  "expected_invalid_count": 4,
+  "expected_invalid_count": 6,
   "accepted_mode_count": 18,
   "accepted_comparison_count": 13,
   "accepted_hard_gap_count": 0,
@@ -26,6 +26,7 @@
       "comparisonCount",
       "hardGapCount",
       "modeCount",
+      "modesWithMissingReportRefs",
       "privatePayloadCopied",
       "promotableComparisonCount",
       "rawSpeedPromotionRequested",
@@ -36,7 +37,11 @@
     "checked_theorem_names": [
       "theseus_generation_mode_import_fixture_matches_public_summary",
       "theseus_generation_mode_import_has_no_promotable_comparisons",
-      "theseus_generation_mode_import_speed_lift_not_useful_solution_evidence"
+      "theseus_generation_mode_import_boundary_gates_all_pass",
+      "theseus_generation_mode_import_missing_report_refs_zero",
+      "theseus_generation_mode_import_speed_lift_not_useful_solution_evidence",
+      "theseus_generation_mode_import_boundary_gate_failure_blocks_public_summary",
+      "theseus_generation_mode_import_missing_report_refs_blocks_public_summary"
     ]
   },
   "non_claims": [

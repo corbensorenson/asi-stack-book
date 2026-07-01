@@ -596,8 +596,10 @@ Current proof status:
   slower-fallback records plus a finite admission-lifecycle route for missing
   mode, context, risk, quality, verifier, acceptance, baseline, output, cost,
   fallback, residual, override, budget, evidence-transition, and
-  non-claim-boundary records. This reduces the projection-only surface for
-  Fast Generation while leaving actual autoregressive baselines, speculative
+  non-claim-boundary records, plus a public Theseus import fixture bridge that
+  rejects boundary-gate failure and missing-report-ref overclaims. This reduces
+  the projection-only surface for Fast Generation while leaving actual
+  autoregressive baselines, speculative
   decoding runs, diffusion runs, early-exit runs, state-space runs, KV-cache
   serving traces, risk-classifier behavior, route-selector behavior,
   speed-quality measurements, and useful-solution-per-second evidence as
@@ -1083,14 +1085,17 @@ Current status after the first two ASI-side Project Theseus imports:
   the public ASI fixture is pinned by SHA-256
   `0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709`.
 - `scripts/validate_theseus_generation_mode_import.py` validates the summary,
-  requires 18 modes, 13 comparisons, zero hard gaps, five hard boundary gates
-  passing, zero promotable comparisons, zero useful-solution-per-second, and
-  rejects expected-invalid mutations for private-payload copying, support
-  promotion overclaim, raw-speed promotion, and useful-speed overclaim.
+  requires 18 modes, 13 comparisons, zero hard gaps, zero modes with missing
+  report refs, five hard boundary gates passing, zero promotable comparisons,
+  zero useful-solution-per-second, and rejects expected-invalid mutations for
+  hard boundary-gate failure, private-payload copying, missing-report-ref
+  overclaim, support promotion overclaim, raw-speed promotion, and useful-speed
+  overclaim.
 - The same validator now checks a finite `AsiStackProofs.FastGeneration` Lean
-  fixture bridge for the public summary fields and theorem names, so the
-  imported no-promotion counts cannot drift from the book-side proof layer
-  without failing validation.
+  fixture bridge for the public summary fields and theorem names, including
+  all-gates-passed and zero-missing-report-ref guards, so the imported
+  no-promotion counts cannot drift from the book-side proof layer without
+  failing validation.
 - `docs/theseus_generation_mode_import_slice.md` records the exact import
   boundary: useful as implementation-reference and negative promotion evidence,
   not a clean live Theseus rerun, not a generation-speed result, not a
@@ -1276,13 +1281,14 @@ Current status for the focused v1.x active evidence cycle:
   semantic utility, model quality, and downstream utility evidence remain open.
 - The Project Theseus generation-mode import is a direct support lane connected
   to Fast Generation and the Project Theseus implementation-reference chapter:
-  the imported gate records 18 modes, 13 comparisons, zero hard gaps, five
-  passing hard boundaries, five accepted span-speed lifts, zero
-  useful-solution-per-second, and zero promotable comparisons. The ASI-side
-  validator checks the public summary against a finite
-  `AsiStackProofs.FastGeneration` fixture. This closes the immediate "raw speed
-  is not evidence" gap without claiming a speed-quality result, live Theseus
-  replay, public benchmark run, or chapter-core support-state movement.
+  the imported gate records 18 modes, 13 comparisons, zero hard gaps, zero
+  modes with missing report refs, five passing hard boundaries, five accepted
+  span-speed lifts, zero useful-solution-per-second, and zero promotable
+  comparisons. The ASI-side validator checks the public summary against a
+  finite `AsiStackProofs.FastGeneration` fixture and rejects failed hard
+  boundary gates and missing-report-ref overclaims. This closes the immediate
+  "raw speed is not evidence" gap without claiming a speed-quality result, live
+  Theseus replay, public benchmark run, or chapter-core support-state movement.
 - `docs/theseus_support_replay_probe.md` adds a local replay-accounting probe
   for the same support surface: the runner executes the architecture-gate import
   validator and the generation-mode import validator, records output digests and

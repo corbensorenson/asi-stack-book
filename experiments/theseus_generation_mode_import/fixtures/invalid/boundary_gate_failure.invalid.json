@@ -1,0 +1,9 @@
+{
+  "case_id": "boundary_gate_failure",
+  "base_report": "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json",
+  "mutation": {
+    "path": "boundary_gates.3.passed",
+    "value": false
+  },
+  "expected_error_fragment": "all imported boundary gates must be passing hard gates"
+}

@@ -1,0 +1,9 @@
+{
+  "case_id": "missing_report_refs_overclaim",
+  "base_report": "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json",
+  "mutation": {
+    "path": "gate_summary.modes_with_missing_report_refs",
+    "value": 1
+  },
+  "expected_error_fragment": "gate_summary.modes_with_missing_report_refs must be 0"
+}

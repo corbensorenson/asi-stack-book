@@ -50,7 +50,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Efficiency.lean` | 3 | 23 | 5 | 3 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 3 | 24 | 12 | 3 |
 | `lean/AsiStackProofs/FailureModes.lean` | 3 | 22 | 5 | 3 |
-| `lean/AsiStackProofs/FastGeneration.lean` | 4 | 30 | 15 | 7 |
+| `lean/AsiStackProofs/FastGeneration.lean` | 4 | 34 | 16 | 7 |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 3 | 8 | 3 | 3 |

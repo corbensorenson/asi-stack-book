@@ -488,6 +488,7 @@ structure TheseusGenerationModeImportSummary where
   modeCount : Nat
   comparisonCount : Nat
   hardGapCount : Nat
+  modesWithMissingReportRefs : Nat
   boundaryGateCount : Nat
   boundaryGatesPassed : Nat
   acceptedSpeedLiftWarningCount : Nat
@@ -505,11 +506,17 @@ def TheseusGenerationModeImportPublicSafe
     summary.supportPromotionRequested = false ∧
       summary.rawSpeedPromotionRequested = false
 
+def TheseusGenerationModeImportGateComplete
+    (summary : TheseusGenerationModeImportSummary) : Prop :=
+  summary.hardGapCount = 0 ∧
+    summary.modesWithMissingReportRefs = 0 ∧
+      summary.boundaryGateCount = summary.boundaryGatesPassed
+
 def TheseusGenerationModeImportMatchesPublicSummary
     (summary : TheseusGenerationModeImportSummary) : Prop :=
   summary.modeCount = 18 ∧
     summary.comparisonCount = 13 ∧
-      summary.hardGapCount = 0 ∧
+      TheseusGenerationModeImportGateComplete summary ∧
         summary.boundaryGateCount = 5 ∧
           summary.boundaryGatesPassed = 5 ∧
             summary.acceptedSpeedLiftWarningCount = 5 ∧
@@ -528,6 +535,7 @@ def theseusGenerationModeImportFixture :
   modeCount := 18
   comparisonCount := 13
   hardGapCount := 0
+  modesWithMissingReportRefs := 0
   boundaryGateCount := 5
   boundaryGatesPassed := 5
   acceptedSpeedLiftWarningCount := 5
@@ -543,10 +551,21 @@ theorem theseus_generation_mode_import_fixture_matches_public_summary :
     TheseusGenerationModeImportMatchesPublicSummary
       theseusGenerationModeImportFixture := by
   simp [TheseusGenerationModeImportMatchesPublicSummary,
+    TheseusGenerationModeImportGateComplete,
     TheseusGenerationModeImportPublicSafe, theseusGenerationModeImportFixture]
 
 theorem theseus_generation_mode_import_has_no_promotable_comparisons :
     theseusGenerationModeImportFixture.promotableComparisonCount = 0 := by
+  rfl
+
+theorem theseus_generation_mode_import_boundary_gates_all_pass :
+    TheseusGenerationModeImportGateComplete
+      theseusGenerationModeImportFixture := by
+  simp [TheseusGenerationModeImportGateComplete,
+    theseusGenerationModeImportFixture]
+
+theorem theseus_generation_mode_import_missing_report_refs_zero :
+    theseusGenerationModeImportFixture.modesWithMissingReportRefs = 0 := by
   rfl
 
 theorem theseus_generation_mode_import_speed_lift_not_useful_solution_evidence :
@@ -558,5 +577,23 @@ theorem theseus_generation_mode_import_speed_lift_not_useful_solution_evidence :
   · intro permitted
     simp [TheseusGenerationModeImportPromotionPermitted,
       theseusGenerationModeImportFixture] at permitted
+
+theorem theseus_generation_mode_import_boundary_gate_failure_blocks_public_summary :
+    ¬ TheseusGenerationModeImportMatchesPublicSummary
+      { theseusGenerationModeImportFixture with
+        boundaryGatesPassed := 4 } := by
+  intro matched
+  simp [TheseusGenerationModeImportMatchesPublicSummary,
+    TheseusGenerationModeImportGateComplete,
+    TheseusGenerationModeImportPublicSafe, theseusGenerationModeImportFixture] at matched
+
+theorem theseus_generation_mode_import_missing_report_refs_blocks_public_summary :
+    ¬ TheseusGenerationModeImportMatchesPublicSummary
+      { theseusGenerationModeImportFixture with
+        modesWithMissingReportRefs := 1 } := by
+  intro matched
+  simp [TheseusGenerationModeImportMatchesPublicSummary,
+    TheseusGenerationModeImportGateComplete,
+    TheseusGenerationModeImportPublicSafe, theseusGenerationModeImportFixture] at matched
 
 end AsiStackProofs.FastGeneration

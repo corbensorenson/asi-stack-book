@@ -60,7 +60,11 @@ REQUIRED_NON_CLAIMS = (
 REQUIRED_LEAN_THEOREMS = (
     "theseus_generation_mode_import_fixture_matches_public_summary",
     "theseus_generation_mode_import_has_no_promotable_comparisons",
+    "theseus_generation_mode_import_boundary_gates_all_pass",
+    "theseus_generation_mode_import_missing_report_refs_zero",
     "theseus_generation_mode_import_speed_lift_not_useful_solution_evidence",
+    "theseus_generation_mode_import_boundary_gate_failure_blocks_public_summary",
+    "theseus_generation_mode_import_missing_report_refs_blocks_public_summary",
 )
 
 
@@ -330,6 +334,7 @@ def parse_lean_import_fixture(errors: list[str]) -> dict[str, str]:
         "modeCount",
         "comparisonCount",
         "hardGapCount",
+        "modesWithMissingReportRefs",
         "boundaryGateCount",
         "boundaryGatesPassed",
         "acceptedSpeedLiftWarningCount",
@@ -356,6 +361,7 @@ def validate_lean_fixture_alignment(report: dict[str, Any], result: dict[str, An
         "modeCount": str(summary.get("mode_count")),
         "comparisonCount": str(summary.get("comparison_count")),
         "hardGapCount": str(summary.get("hard_gap_count")),
+        "modesWithMissingReportRefs": str(summary.get("modes_with_missing_report_refs")),
         "boundaryGateCount": str(summary.get("boundary_gate_count")),
         "boundaryGatesPassed": str(summary.get("boundary_gates_passed")),
         "acceptedSpeedLiftWarningCount": str(summary.get("warnings_with_accepted_speed_lift")),
@@ -428,8 +434,8 @@ def main() -> None:
 
     if len(valid_paths) != 1:
         errors.append(f"{rel(VALID_DIR)} must contain exactly one valid report fixture.")
-    if len(invalid_paths) != 4:
-        errors.append(f"{rel(INVALID_DIR)} must contain exactly four expected-invalid mutation fixtures.")
+    if len(invalid_paths) != 6:
+        errors.append(f"{rel(INVALID_DIR)} must contain exactly six expected-invalid mutation fixtures.")
 
     report_digest = ""
     accepted_report: dict[str, Any] | None = None

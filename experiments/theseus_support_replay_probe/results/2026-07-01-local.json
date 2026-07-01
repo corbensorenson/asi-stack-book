@@ -25,11 +25,11 @@
   "pass": true,
   "probe_id": "theseus-support-replay-probe-2026-07-01-local",
   "record_kind": "theseus_support_replay_probe",
-  "recorded_at_utc": "2026-07-01T15:16:27Z",
+  "recorded_at_utc": "2026-07-01T21:17:43Z",
   "replay_commands": [
     {
       "command": "python3 scripts/validate_theseus_report.py",
-      "elapsed_ms": 30.511,
+      "elapsed_ms": 33.541,
       "evidence_surface": "public-safe static Project Theseus architecture-gate import",
       "exit_code": 0,
       "id": "theseus_architecture_gate_import",
@@ -40,14 +40,14 @@
     },
     {
       "command": "python3 scripts/validate_theseus_generation_mode_import.py",
-      "elapsed_ms": 55.85,
+      "elapsed_ms": 33.759,
       "evidence_surface": "public-safe static Project Theseus generation-mode import plus Fast Generation Lean bridge",
       "exit_code": 0,
       "id": "theseus_generation_mode_import",
       "output_excerpt": [
-        "Project Theseus generation-mode import validation passed: 1 valid report, 4 expected-invalid controls, digest 0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709."
+        "Project Theseus generation-mode import validation passed: 1 valid report, 6 expected-invalid controls, digest 0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709."
       ],
-      "output_sha256": "0a83956dd8289bd6a676ebaa540fbb67c428bafa7e33060d64d9a9698ddd082b"
+      "output_sha256": "50d1c01397082194f45b916165c582570653073b56a7de934cf9222e80d7486c"
     }
   ],
   "summary": "Theseus support replay probe replayed the public-safe architecture-gate import and generation-mode import validators, then recorded command-output digests and tracked artifact hashes without creating a support-state transition.",
@@ -60,10 +60,10 @@
       "sha256": "7a1360efbbcbe9bb28d441dc0a4210ab850aeb0ca1e78bbe137bc32b7b51f651"
     },
     {
-      "bytes": 5654,
-      "lines": 137,
+      "bytes": 6301,
+      "lines": 148,
       "path": "docs/theseus_generation_mode_import_slice.md",
-      "sha256": "96a7e1673f9477e69be3f5612fb3440ae350e047b4a77322adb884a62dfa5192"
+      "sha256": "2b668fec5047169aeefabb1ee9658c462b8d597edc42f84379668e4b0bb96381"
     },
     {
       "bytes": 3150,
@@ -78,16 +78,16 @@
       "sha256": "12d705c974de2589ed24c3cac723f0bf36e566e0df8732a079fd6d597dbd506d"
     },
     {
-      "bytes": 21265,
-      "lines": 486,
+      "bytes": 21679,
+      "lines": 492,
       "path": "scripts/validate_theseus_generation_mode_import.py",
-      "sha256": "f9d58e00c1f4e4b8a0ceed80d3df9ed710fa0df3c54605916aa98a0715decdee"
+      "sha256": "e28194c24ba80561f092f7a6913ebc556ad86951d781fb0c314fc9ec58f349f3"
     },
     {
-      "bytes": 21263,
-      "lines": 562,
+      "bytes": 22922,
+      "lines": 599,
       "path": "lean/AsiStackProofs/FastGeneration.lean",
-      "sha256": "41c2431360de5ef42010fcdeb0453498f5993fb86b888e06c305e6f96037c333"
+      "sha256": "cc0ddca4dcf5e9fe6b6053c944d447a51bc008526e37de22c7c25354b397a56f"
     },
     {
       "bytes": 7621,
@@ -108,10 +108,10 @@
       "sha256": "492041459a221bf207cf55c72495a8376f3cc40e934c47283489c15d5dfba1d8"
     },
     {
-      "bytes": 2248,
-      "lines": 48,
+      "bytes": 2579,
+      "lines": 53,
       "path": "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
-      "sha256": "3e4d210d8186ad406bab9ed71792ca44e2e550f4d71ae8b8092337d0a1151d4b"
+      "sha256": "4c522338e11948dc6ea2c1a07035495d65ba7e3254576d67272cf641f15ef171"
     }
   ]
 }

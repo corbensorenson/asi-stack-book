@@ -5,7 +5,7 @@ Date: 2026-07-01
 This record documents the second public-safe Project Theseus report import lane
 inside **The ASI Stack** repository. It imports a sanitized generation-mode gate
 summary as a static fixture, verifies pinned source-artifact digests, and checks
-four expected-invalid mutation controls. It also checks that the public JSON
+six expected-invalid mutation controls. It also checks that the public JSON
 summary stays aligned with a finite `AsiStackProofs.FastGeneration` Lean
 fixture. It does not rerun Project Theseus from this repository.
 
@@ -76,13 +76,20 @@ verified task success stays at zero.
 The validator checks `lean/AsiStackProofs/FastGeneration.lean` for
 `theseusGenerationModeImportFixture` and the theorem names
 `theseus_generation_mode_import_fixture_matches_public_summary`,
-`theseus_generation_mode_import_has_no_promotable_comparisons`, and
-`theseus_generation_mode_import_speed_lift_not_useful_solution_evidence`.
+`theseus_generation_mode_import_has_no_promotable_comparisons`,
+`theseus_generation_mode_import_boundary_gates_all_pass`,
+`theseus_generation_mode_import_missing_report_refs_zero`,
+`theseus_generation_mode_import_speed_lift_not_useful_solution_evidence`,
+`theseus_generation_mode_import_boundary_gate_failure_blocks_public_summary`,
+and `theseus_generation_mode_import_missing_report_refs_blocks_public_summary`.
 The finite Lean fixture must match the public JSON summary for the 18 mode
-count, 13 comparison count, zero hard gaps, five boundary gates, five
-accepted-span speed-lift warnings, thirteen zero-task-pass warnings, zero
-promotable comparisons, zero useful-solution-per-second evidence, and
-public-safety/support-state/raw-speed overclaim boundaries.
+count, 13 comparison count, zero hard gaps, zero modes with missing report
+refs, five boundary gates, five passed boundary gates, five accepted-span
+speed-lift warnings, thirteen zero-task-pass warnings, zero promotable
+comparisons, zero useful-solution-per-second evidence, and
+public-safety/support-state/raw-speed overclaim boundaries. It also proves
+finite negative cases for a failed hard boundary gate and nonzero missing-report
+refs.
 
 This bridge makes the imported no-promotion decision harder to drift inside the
 book's proof layer. It is still only a finite fixture bridge over a static
@@ -90,10 +97,14 @@ summary; it is not a clean Theseus replay and not a speed-quality experiment.
 
 ## Negative Controls
 
-The validator applies four expected-invalid mutation fixtures:
+The validator applies six expected-invalid mutation fixtures:
 
+- `boundary_gate_failure.invalid.json` marks a hard boundary gate as failed and
+  must be rejected.
 - `private_payload_copied.invalid.json` marks a private payload as copied and
   must be rejected.
+- `missing_report_refs_overclaim.invalid.json` invents a mode with missing
+  report refs and must be rejected.
 - `support_promotion_overclaim.invalid.json` changes the support-state effect
   away from `no_chapter_core_claim_promotion` and must be rejected.
 - `raw_speed_promotion.invalid.json` marks a raw-speed comparison promotable and

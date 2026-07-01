@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 143 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 774 |
-| Direct/projection-style theorem declarations | 152 |
-| Derived/decomposed theorem declarations | 618 |
+| Theorem declarations classified | 778 |
+| Direct/projection-style theorem declarations | 153 |
+| Derived/decomposed theorem declarations | 621 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -71,7 +71,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 3 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 3 | 24 | 6 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 3 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 4 | 30 | 6 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 4 | 34 | 7 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -450,8 +450,12 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGeneration.lean` | `promotion_candidate_missing_accepted_output_or_verifier_cost_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/FastGeneration.lean` | `promotion_request_without_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FastGeneration.lean` | `raw_tokens_per_second_cannot_promote_without_verified_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_boundary_gate_failure_blocks_public_summary` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_boundary_gates_all_pass` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_fixture_matches_public_summary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_has_no_promotable_comparisons` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_missing_report_refs_blocks_public_summary` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_missing_report_refs_zero` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/FastGeneration.lean` | `theseus_generation_mode_import_speed_lift_not_useful_solution_evidence` | derived_or_decomposed | no | uses constructor, simp |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `exact_reconstruction_claim_requires_generator_plus_repair` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `exact_reconstruction_claim_with_mismatched_repair_rejected` | derived_or_decomposed | no | uses have |

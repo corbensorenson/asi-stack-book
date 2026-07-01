@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-01 - Harden Theseus generation-mode import gates
+
+- Extended the public-safe Project Theseus generation-mode import validator to
+  six expected-invalid controls by adding hard boundary-gate failure and
+  missing-report-ref overclaim mutations alongside the existing private-payload,
+  support-overclaim, raw-speed-promotion, and useful-speed-overclaim controls.
+- Deepened `AsiStackProofs.FastGeneration` with a finite gate-completeness
+  bridge for the static import: the Lean fixture now records zero missing
+  report refs, proves the imported boundary gates all pass, and rejects public
+  summary matches when a hard gate fails or missing report refs appear.
+- Refreshed the Theseus support replay probe, proof manifest/audit, Appendix E,
+  active evidence-cycle ledger, and Fast Generation/Project Theseus chapter
+  surfaces. This remains a static public-safe import and ASI-side replay probe;
+  it does not rerun Theseus, prove generation speed, prove useful-solution
+  improvement, approve a public task bundle, or promote any chapter core claim.
+
 ## 2026-07-01 - Add reviewer-capacity smoothing bridge
 
 - Extended `scripts/validate_capacity_smoothing.py` with reviewer-capacity
