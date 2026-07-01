@@ -7,6 +7,7 @@ Current visual assets:
 - `assets/images/asi-stack-hero.png`: generated text-free hero image for the landing page.
 - `assets/diagrams/asi-stack-control-plane.svg`: draft key figure for the opening chapter's stack-control-plane thesis; not a release-reviewed artifact.
 - `assets/diagrams/authority-to-effect-path.svg`: draft key figure for the authority chapter's permission-to-effect path; not a release-reviewed artifact.
+- `assets/diagrams/context-transaction-lifecycle.svg`: draft key figure for the context-transaction chapter's snapshot, mount, taint, deletion-closure, and downstream handoff lifecycle; not a release-reviewed artifact.
 - `assets/diagrams/evidence-state-ladder.svg`: draft key figure for the evidence-discipline chapter's claim/support transition path; not a release-reviewed artifact.
 - `assets/diagrams/intent-to-artifact-trace.svg`: draft key figure for the command-contract chapter's intent-to-artifact continuity path; not a release-reviewed artifact.
 - `assets/diagrams/route-selection-budget-tradeoff.svg`: draft key figure for the Resource Economics chapter's costed-route selector and protected-budget tradeoff; not a release-reviewed artifact.
