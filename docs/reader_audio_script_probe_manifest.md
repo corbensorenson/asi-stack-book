@@ -38,7 +38,7 @@ Required review files are generated in the ignored workspace:
 | Tables | 8 |
 | Mermaid diagrams | 53 |
 | Code/schema blocks | 0 |
-| Images | 3 |
+| Images | 4 |
 
 These counts are script-preparation cues. They tell a future narration review
 where tables, diagrams, images, or dense material need spoken summaries or

@@ -225,7 +225,7 @@ The audio manifest carries the same human-consumption bundle policy, but only to
 
 The tracked audio-script probe manifest records the current local workspace
 facts: 49 generated script files, preserved implementation horizons, 8 table
-treatment notes, 53 Mermaid diagram notes, 3 image notes, and MP3/M4B/
+treatment notes, 53 Mermaid diagram notes, 4 image notes, and MP3/M4B/
 audio-embedded EPUB targets still marked `target_not_generated`. This keeps
 audio preparation visible without approving narration or claiming audio files
 exist.

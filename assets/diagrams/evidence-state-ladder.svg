@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence state ladder draft figure</title>
+  <desc id="desc">A draft systems diagram separating claim labels from support states, showing promotion, no-change, demotion, refutation, blockers, and non-claims as recorded evidence transitions.</desc>
+  <defs>
+    <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#256b7c"/>
+    </marker>
+    <marker id="arrow-rose" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#8a5264"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#18202a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #d8dee6; stroke-width: 2; }
+      .labelBox { fill: #f5f1fa; stroke: #765a8a; stroke-width: 2.5; }
+      .stateBox { fill: #f4f8fa; stroke: #256b7c; stroke-width: 2.5; }
+      .gate { fill: #fff8f2; stroke: #a86f45; stroke-width: 2.5; }
+      .bad { fill: #fbf3f5; stroke: #8a5264; stroke-width: 2.5; }
+      .ledger { fill: #f2f8f5; stroke: #497b5b; stroke-width: 2.5; }
+      .ink { fill: #18202a; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .muted { fill: #5a6675; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { font-size: 25px; font-weight: 750; }
+      .small { font-size: 18px; font-weight: 650; }
+      .tiny { font-size: 15px; font-weight: 550; }
+      .caption { font-size: 16px; font-weight: 600; }
+      .line { fill: none; stroke: #256b7c; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-teal); }
+      .rose { fill: none; stroke: #8a5264; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-rose); }
+      .dash { fill: none; stroke: #5a6675; stroke-width: 2.5; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink label" x="58" y="62">Evidence State Ladder</text>
+  <text class="muted caption" x="58" y="92">Draft key figure. Claim type and support state are separate axes; confidence moves only by recorded transition.</text>
+
+  <rect class="panel" x="54" y="126" width="214" height="132" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="82" y="162">Claim surface</text>
+  <text class="muted tiny" x="82" y="194">sentence, chapter,</text>
+  <text class="muted tiny" x="82" y="218">scope, claim id</text>
+
+  <rect class="labelBox" x="328" y="86" width="236" height="152" rx="12"/>
+  <text class="ink small" x="356" y="126">Claim label</text>
+  <text class="muted tiny" x="356" y="158">design rationale</text>
+  <text class="muted tiny" x="356" y="182">hypothesis, measured</text>
+  <text class="muted tiny" x="356" y="206">mechanized, speculative</text>
+
+  <rect class="stateBox" x="328" y="282" width="236" height="170" rx="12"/>
+  <text class="ink small" x="356" y="322">Support state</text>
+  <text class="muted tiny" x="356" y="354">argument</text>
+  <text class="muted tiny" x="356" y="378">source-derived</text>
+  <text class="muted tiny" x="356" y="402">test-backed, literature</text>
+  <text class="muted tiny" x="356" y="426">deprecated, refuted</text>
+
+  <rect class="gate" x="628" y="118" width="252" height="142" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="656" y="156">Transition review</text>
+  <text class="muted tiny" x="656" y="188">exact claim mapping</text>
+  <text class="muted tiny" x="656" y="212">artifact, command, scope</text>
+  <text class="muted tiny" x="656" y="236">reviewer and blockers</text>
+
+  <rect class="ledger" x="936" y="72" width="210" height="128" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="964" y="110">Promotion</text>
+  <text class="muted tiny" x="964" y="142">new state only when</text>
+  <text class="muted tiny" x="964" y="166">evidence burden passes</text>
+
+  <rect class="panel" x="936" y="246" width="210" height="128" rx="12"/>
+  <text class="ink small" x="964" y="284">No change</text>
+  <text class="muted tiny" x="964" y="316">better prose, nearby</text>
+  <text class="muted tiny" x="964" y="340">source, or weak fixture</text>
+
+  <rect class="bad" x="936" y="420" width="210" height="148" rx="12" filter="url(#soft-shadow)"/>
+  <text class="ink small" x="964" y="458">Demote or refute</text>
+  <text class="muted tiny" x="964" y="490">contradiction, failed test,</text>
+  <text class="muted tiny" x="964" y="514">scope break, terminal</text>
+  <text class="muted tiny" x="964" y="538">negative evidence</text>
+
+  <rect class="bad" x="628" y="466" width="252" height="122" rx="12"/>
+  <text class="ink small" x="656" y="504">Blocker / residual</text>
+  <text class="muted tiny" x="656" y="536">missing source, stale proof,</text>
+  <text class="muted tiny" x="656" y="560">unreviewed artifact, non-claim</text>
+
+  <rect class="panel" x="54" y="492" width="510" height="104" rx="12"/>
+  <text class="ink small" x="82" y="530">Boundary rule</text>
+  <text class="muted tiny" x="82" y="562">A label says what kind of assertion it is. A support state says what backs it.</text>
+  <text class="muted tiny" x="82" y="586">Neither axis may borrow confidence from the other.</text>
+
+  <rect class="ledger" x="262" y="642" width="686" height="76" rx="12"/>
+  <text class="ink small" x="292" y="676">Public ledger update</text>
+  <text class="muted tiny" x="292" y="700">Appendix C, changelog, evidence transition, non-claims, downgrade triggers, and residual custody stay visible.</text>
+
+  <path class="line" d="M268 178 C292 178,304 162,322 162"/>
+  <path class="line" d="M268 204 C292 244,304 360,322 366"/>
+  <path class="line" d="M564 366 C594 340,606 224,622 192"/>
+  <path class="line" d="M880 170 C904 154,916 138,930 136"/>
+  <path class="line" d="M880 198 C904 236,916 294,930 310"/>
+  <path class="rose" d="M880 226 C910 316,916 468,930 494"/>
+  <path class="rose" d="M754 260 C754 338,754 412,754 460"/>
+  <path class="line" d="M754 588 C720 638,648 646,610 642"/>
+  <path class="dash" d="M1041 568 C1020 642,948 676,948 676"/>
+  <path class="dash" d="M1041 374 C1020 610,944 676,948 676"/>
+
+  <text class="muted tiny" x="58" y="654">Status: draft visual asset; not release-reviewed.</text>
+  <text class="muted tiny" x="58" y="682">Support effect: none. The evidence-discipline core claim remains argument-level.</text>
+</svg>
