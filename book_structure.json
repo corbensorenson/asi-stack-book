@@ -6948,6 +6948,13 @@
               "result_status": "passes via Lean negative case; no risk-classifier or mode-selector behavior claim",
               "status": "implemented in AsiStackProofs.FastGeneration; no risk-routing behavior claim"
             },
+            {
+              "name": "Generation-mode admission lifecycle route",
+              "purpose": "Check that a finite fast-generation admission review routes missing mode records, context packets, risk tiers, quality targets, verifiers, acceptance predicates, baselines, accepted outputs, verifier costs, fallback and residual handling, high-risk overrides, budget records, evidence transitions, and non-claim boundaries to explicit outcomes.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no route-selector behavior, speedup, verifier-quality, fallback-runtime, or benchmark claim",
+              "status": "implemented in AsiStackProofs.FastGeneration; no fast-decoder or mode-selector benchmark claim"
+            },
             "Autoregressive baseline speed-quality test",
             "Speculative decoding acceptance test",
             "Multi-token draft-head acceptance test",
@@ -6971,6 +6978,12 @@
               "tag": "lean:fast_generation.verified_speed.failure_blocks_promotion",
               "module": "AsiStackProofs.FastGeneration",
               "target": "Raw tokens per second cannot promote a fast generation claim without accepted or verified token evidence, task-success evidence, and a baseline.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:fast_generation.mode_admission_lifecycle_route",
+              "module": "AsiStackProofs.FastGeneration",
+              "target": "A modeled fast-generation admission review routes missing mode records, context packets, risk tiers, quality targets, verifiers, acceptance predicates, baselines, accepted outputs, verifier costs, fallback and residual handling, high-risk override gaps, budget gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
               "status": "implemented"
             }
           ],

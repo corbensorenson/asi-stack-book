@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-07-01 - Fast generation admission lifecycle proof
+
+- Strengthened `AsiStackProofs.FastGeneration` with a finite
+  `GenerationModeAdmissionRoute`, `GenerationModeAdmissionReview`, and
+  `GenerationModeAdmissionRouteFor` decision surface over fast-mode requests,
+  generation-mode records, context packets, risk tiers, quality targets,
+  verifiers, acceptance predicates, baselines, accepted outputs, verifier
+  costs, failed-acceptance fallback and residual handling, high-risk override
+  paths, slow verified fallback paths, latency and compute/memory budgets,
+  evidence-transition records, and non-claim boundaries.
+- Added the third Fast Generation proof target,
+  `lean:fast_generation.mode_admission_lifecycle_route`, plus derived route
+  theorems showing that missing mode records, context packets, risk tiers,
+  quality targets, verifiers, acceptance predicates, baselines, accepted
+  outputs, verifier costs, fallback and residual handling, high-risk override
+  records, slow verified fallback routes, budget records, evidence-transition
+  records, and non-claim boundaries route to explicit modeled outcomes.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 329
+  generated chapter-level rows: 229 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 128 implemented targets, and the proof-depth
+  classifier now reports 495 theorem declarations, 121 direct/projection-style
+  declarations, and 374 derived/decomposed declarations.
+- Updated the Fast Generation chapter, book outline, proof adequacy review,
+  v1.x/v1.0 roadmap/status surfaces, focus audit, publication readiness,
+  repository map, proof/code plan, manuscript status, and status snapshot
+  guard. This does not promote, demote, deprecate, or refute any live claim;
+  prove decoder speed, accepted-output quality, verifier quality,
+  route-selector adequacy, fallback-runtime behavior, risk-classifier behavior,
+  serving or KV-cache performance, benchmark performance, support-state
+  promotion, reader artifact approval, release status, or audio artifact
+  readiness.
+
 ## 2026-07-01 - Artifact compression admission lifecycle proof
 
 - Strengthened `AsiStackProofs.ArtifactCompression` with a finite

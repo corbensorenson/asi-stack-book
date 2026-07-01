@@ -881,6 +881,16 @@
       "rationale": "Implemented in AsiStackProofs.FastGeneration as a finite speed-evidence predicate: raw token-speed claims cannot promote when accepted-output, task-success, or baseline evidence is missing."
     },
     {
+      "tag": "lean:fast_generation.mode_admission_lifecycle_route",
+      "chapter_id": "fast-generation-architectures",
+      "module": "AsiStackProofs.FastGeneration",
+      "formal_target": "A modeled fast-generation admission review routes missing mode records, context packets, risk tiers, quality targets, verifiers, acceptance predicates, baselines, accepted outputs, verifier costs, fallback and residual handling, high-risk override gaps, budget gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.FastGeneration as a finite admission-lifecycle route function and derived route theorems for missing mode records, context packets, risk tiers, quality targets, verifiers, acceptance predicates, baselines, accepted outputs, verifier costs, failed-acceptance fallback and residual handling, high-risk override gaps, slow verified fallback gaps, budget gaps, evidence-transition gaps, non-claim-boundary gaps, and complete fast-mode admission."
+    },
+    {
       "tag": "lean:compression.artifacts.operational_invariant",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "module": "AsiStackProofs.ArtifactCompression",
