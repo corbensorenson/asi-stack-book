@@ -109,7 +109,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 632 theorem declarations, 121 direct/projection-style, 511 derived/decomposed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 636 theorem declarations, 121 direct/projection-style, 515 derived/decomposed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and explicit Corben voice-pass slots. |
@@ -507,7 +507,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 632 theorem declarations, 495
+- The generated proof-depth report records 636 theorem declarations, 515
   derived/decomposed declarations, 102 safety-critical declarations, and 10
   remaining safety-critical direct/projection declarations.
 - The relevant chapter limitation sections now state what these finite-record
@@ -528,7 +528,7 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 632 theorem declarations, 495
+- `docs/proof_depth_classification.md` records 636 theorem declarations, 515
   derived/decomposed theorem declarations, and 121 direct/projection-style
   theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
@@ -604,11 +604,15 @@ Current proof status:
 - `AsiStackProofs.ResourceEconomics` and
   `AsiStackProofs.SimulationFidelity` now have finite negative-case theorems
   rejecting disabled required budget gates, high-risk insufficient-budget
-  dispatch, missing simulation scope, and fidelity overclaim; this reduces the
-  projection-only surface for Resource Economics while leaving scheduler
+  dispatch, missing simulation scope, and fidelity overclaim. Resource
+  Economics also has a finite bridge over the four-route costed selector
+  fixture, proving the bounded route eligible, rejecting the failed-verification
+  and hidden-residual controls, and showing the selected route is lowest-cost
+  among modeled eligible routes. This reduces the projection-only surface for
+  Resource Economics while leaving scheduler
   quality, real load stability, verification-tax optimization, KV-cache
   behavior, cost-quality economics, simulator adequacy, physical feasibility,
-  and open-world transfer as blockers.
+  route-search completeness, and open-world transfer as blockers.
 - `AsiStackProofs.ArtifactCompression` now has finite negative-case theorems
   for failed-probe/no-fallback use and missing residual/fallback metadata
   promotion plus a finite admission-lifecycle route for preserved-artifact,

@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-01 - Costed-route Lean selector bridge
+
+- Added `lean:resources.costed_route.fixture_bridge` to the Resource Economics
+  proof lane and implemented it in `AsiStackProofs.ResourceEconomics` as a
+  finite four-route fixture bridge over the public costed-route slice.
+- The new Lean model proves that the selected
+  `boundedTransformPlusVerifier` route is eligible, the cheaper
+  `cheapUnverifiedTransform` and `hiddenResidualAutoMerge` controls are
+  rejected, and the selected route is lowest-cost among eligible modeled routes.
+- Regenerated the proof manifest, proof triage, proof artifact audit, and
+  proof-depth classifier. The proof manifest now has 137 implemented targets,
+  and the proof-depth classifier reports 636 theorem declarations, 121
+  direct/projection-style declarations, and 515 derived/decomposed
+  declarations.
+- Updated the Resource Economics chapter, Appendix E, book outline, proof
+  adequacy review, v1.x roadmap/status surfaces, repository map, and status
+  snapshot guard. This does not promote, demote, deprecate, or refute any live
+  claim; create a deployed router, scheduler, workload result, economic result,
+  model-quality result, benchmark result, safety result, source-interpretation
+  result, external review, reader release, ebook, PDF, DOCX, or audio artifact.
+
 ## 2026-07-01 - Costed-route hidden-residual control
 
 - Deepened the bounded costed-route/resource-budget measured slice from a

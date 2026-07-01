@@ -90,4 +90,108 @@ theorem high_risk_insufficient_budget_dispatch_rejected
   rw [dispatched] at blocked
   cases blocked
 
+inductive CostedRoute where
+  | frontierManualReview
+  | boundedTransformPlusVerifier
+  | cheapUnverifiedTransform
+  | hiddenResidualAutoMerge
+deriving DecidableEq, Repr
+
+structure CostedRouteAssessment where
+  route : CostedRoute
+  costTenths : Nat
+  verificationPassed : Bool
+  adequateOutcome : Bool
+  promotionCandidate : Bool
+  budgetDispatchable : Bool
+  residualOwned : Bool
+  hiddenCostDisplaced : Bool
+  fallbackVisible : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def CostedRouteEligible (assessment : CostedRouteAssessment) : Prop :=
+  assessment.verificationPassed = true ∧
+    assessment.adequateOutcome = true ∧
+    assessment.promotionCandidate = true ∧
+    assessment.budgetDispatchable = true ∧
+    assessment.residualOwned = true ∧
+    assessment.hiddenCostDisplaced = false ∧
+    assessment.fallbackVisible = true ∧
+    assessment.nonClaimBoundary = true
+
+def costedRouteFixtureAssessment : CostedRoute -> CostedRouteAssessment
+  | .frontierManualReview =>
+      { route := .frontierManualReview,
+        costTenths := 430,
+        verificationPassed := true,
+        adequateOutcome := true,
+        promotionCandidate := true,
+        budgetDispatchable := true,
+        residualOwned := true,
+        hiddenCostDisplaced := false,
+        fallbackVisible := true,
+        nonClaimBoundary := true }
+  | .boundedTransformPlusVerifier =>
+      { route := .boundedTransformPlusVerifier,
+        costTenths := 142,
+        verificationPassed := true,
+        adequateOutcome := true,
+        promotionCandidate := true,
+        budgetDispatchable := true,
+        residualOwned := true,
+        hiddenCostDisplaced := false,
+        fallbackVisible := true,
+        nonClaimBoundary := true }
+  | .cheapUnverifiedTransform =>
+      { route := .cheapUnverifiedTransform,
+        costTenths := 23,
+        verificationPassed := false,
+        adequateOutcome := false,
+        promotionCandidate := false,
+        budgetDispatchable := false,
+        residualOwned := true,
+        hiddenCostDisplaced := false,
+        fallbackVisible := true,
+        nonClaimBoundary := true }
+  | .hiddenResidualAutoMerge =>
+      { route := .hiddenResidualAutoMerge,
+        costTenths := 82,
+        verificationPassed := true,
+        adequateOutcome := false,
+        promotionCandidate := true,
+        budgetDispatchable := false,
+        residualOwned := false,
+        hiddenCostDisplaced := true,
+        fallbackVisible := true,
+        nonClaimBoundary := true }
+
+def CostedRouteFixtureSelected : CostedRoute :=
+  .boundedTransformPlusVerifier
+
+theorem costed_route_fixture_selected_is_eligible :
+    CostedRouteEligible (costedRouteFixtureAssessment CostedRouteFixtureSelected) := by
+  simp [CostedRouteFixtureSelected, costedRouteFixtureAssessment, CostedRouteEligible]
+
+theorem cheap_unverified_transform_rejected_by_fixture :
+    ¬ CostedRouteEligible (costedRouteFixtureAssessment .cheapUnverifiedTransform) := by
+  intro eligible
+  simp [costedRouteFixtureAssessment, CostedRouteEligible] at eligible
+
+theorem hidden_residual_auto_merge_rejected_by_fixture :
+    ¬ CostedRouteEligible (costedRouteFixtureAssessment .hiddenResidualAutoMerge) := by
+  intro eligible
+  simp [costedRouteFixtureAssessment, CostedRouteEligible] at eligible
+
+theorem selected_route_is_lowest_cost_eligible_in_fixture
+    {route : CostedRoute} :
+    CostedRouteEligible (costedRouteFixtureAssessment route) ->
+      (costedRouteFixtureAssessment CostedRouteFixtureSelected).costTenths ≤
+        (costedRouteFixtureAssessment route).costTenths := by
+  intro eligible
+  cases route <;>
+    simp [CostedRouteFixtureSelected, costedRouteFixtureAssessment,
+      CostedRouteEligible] at eligible ⊢ <;>
+    decide
+
 end AsiStackProofs.ResourceEconomics

@@ -1031,6 +1031,16 @@
       "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite risk/budget predicate: high-risk work with insufficient verification budget must route away from ordinary dispatch."
     },
     {
+      "tag": "lean:resources.costed_route.fixture_bridge",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.ResourceEconomics",
+      "formal_target": "The four-route costed-route fixture rejects the failed-verification and hidden-residual controls, keeps the bounded transform route eligible, and proves it is lowest-cost among eligible modeled routes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite bridge over the public four-route costed-route fixture: it proves the bounded route is eligible, the failed-verification and hidden-residual controls are rejected, and the bounded route is lowest-cost among modeled eligible routes. It does not prove deployed routing, scheduler behavior, workload quality, economic optimality, or chapter-core support-state promotion."
+    },
+    {
       "tag": "lean:simulation.fidelity.operational_invariant",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.SimulationFidelity",
