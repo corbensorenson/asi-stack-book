@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Refresh Resource Economics core no-change transition
+
+- Refreshed
+  `evidence_transitions/v1_0_pilot/resource_economics_no_change.json` so the
+  accepted chapter-core no-change decision now includes the deterministic
+  workflow trace, local live replay probe, CI publication cost profile, and
+  folded simulation-transfer boundary alongside the earlier generation-mode,
+  budget-ledger, and capacity-smoothing evidence.
+- Updated `docs/evidence_transition_pilot.md` to keep the public transition
+  summary aligned with the current 44-chapter spine and 22 accepted
+  no-change/22 explicit no-promotion coverage split.
+- Resource Economics remains at `argument`; the refreshed transition records
+  that local command replay, CI publication metadata, deterministic workflow
+  traces, and simulation-transfer fixtures improve accounting and replay
+  discipline but do not establish production scheduler behavior, live workload
+  quality, physical feasibility, simulator adequacy, model quality, economic
+  outcomes, or support-state promotion.
+
 ## 2026-07-01 - Add Resource Economics CI cost profile
 
 - Added `scripts/build_resource_ci_cost_profile.py`,
