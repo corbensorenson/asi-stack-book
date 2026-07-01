@@ -75,6 +75,25 @@ h3 {
   background: #f8fafb;
 }
 
+.asi-key-figure {
+  margin: 1.15rem 0 1.6rem;
+}
+
+.asi-key-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--asi-border);
+  border-radius: 8px;
+  background: #f7f9fb;
+}
+
+.asi-key-figure figcaption {
+  color: var(--asi-muted);
+  font-size: 0.92rem;
+}
+
 .cell-output-display .mermaid {
   margin: 1rem 0 1.5rem;
 }

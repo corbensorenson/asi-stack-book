@@ -24,6 +24,7 @@ ALLOWED_RECONCILIATION_STATUS = {"not_started", "drafting", "blocked", "reconcil
 ALLOWED_CURATION_CONTRACT_STATUS = {"active_contract"}
 ALLOWED_READER_HANDOFF_STATUS = {"drafting_handoff_ready"}
 ALLOWED_FIGURE_TARGET_STATUS = {"target_defined_not_final_art"}
+ALLOWED_DRAFT_ARTIFACT_STATUS = {"draft_not_release_reviewed"}
 ALLOWED_ROUTING_STATUS = {
     "retain_in_reader_spine_with_companion_note",
     "future_curated_review_with_companion_note",
@@ -489,6 +490,27 @@ def validate_reader_handoff_contract(
             ).lower()
             if boundary and ("not a completed" not in boundary or "not reviewed" not in boundary):
                 errors.append(f"{owner}: release_boundary must state the target is not a completed and not reviewed artifact.")
+            draft_asset_path = figure.get("draft_asset_path")
+            if draft_asset_path is not None:
+                if not isinstance(draft_asset_path, str) or not draft_asset_path.startswith("assets/diagrams/"):
+                    errors.append(f"{owner}: draft_asset_path must stay under assets/diagrams/.")
+                elif not (ROOT / draft_asset_path).exists():
+                    errors.append(f"{owner}: draft_asset_path does not exist: {draft_asset_path}")
+                if figure.get("draft_artifact_state") not in ALLOWED_DRAFT_ARTIFACT_STATUS:
+                    errors.append(
+                        f"{owner}: draft_artifact_state must be one of {sorted(ALLOWED_DRAFT_ARTIFACT_STATUS)}."
+                    )
+                used_in = require_string_list(owner, "used_in_chapter_ids", figure.get("used_in_chapter_ids"), errors)
+                invalid_used_in = sorted(chapter_id for chapter_id in used_in if chapter_id not in chapters)
+                if invalid_used_in:
+                    errors.append(f"{owner}: used_in_chapter_ids reference unknown chapters: {invalid_used_in}")
+                text_ref = figure.get("text_equivalent_ref")
+                if not isinstance(text_ref, str) or "#" not in text_ref:
+                    errors.append(f"{owner}: text_equivalent_ref must include a path and anchor.")
+                else:
+                    text_path = text_ref.split("#", 1)[0]
+                    if not (ROOT / text_path).exists():
+                        errors.append(f"{owner}: text_equivalent_ref path does not exist: {text_path}")
 
     voice_slots = handoff.get("corben_voice_pass_slots")
     slot_ids: set[str] = set()

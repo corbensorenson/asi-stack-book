@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Draft ASI Stack control-plane figure
+
+- Added `assets/diagrams/asi-stack-control-plane.svg` as the first draft
+  key-figure asset from the reader handoff contract and embedded it in
+  `chapters/asi-is-a-stack-not-a-model.qmd` with a text-equivalent reading
+  note and explicit no-proof/no-release boundary.
+- Updated the curated reader-manuscript figure target to reference the draft
+  SVG, chapter usage, text-equivalent section, and `draft_not_release_reviewed`
+  state; extended `scripts/validate_reader_manuscript_manifest.py` so draft
+  key-figure assets cannot point to missing diagram files or unknown chapters.
+- Updated the visual asset README and refreshed the tracked audio-script probe
+  counts to include the new image treatment note while preserving all audio
+  release blockers.
+- This does not promote, demote, deprecate, or refute any live claim; create a
+  reviewed figure artifact, external review, reader release, EPUB, PDF, DOCX,
+  audio artifact, source evidence, proof result, benchmark result,
+  model-quality result, deployment claim, or support-state movement.
+
 ## 2026-07-01 - Reader manuscript handoff contract
 
 - Added a validated `reader_handoff_contract` to the curated reader-manuscript

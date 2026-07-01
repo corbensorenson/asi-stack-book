@@ -94,6 +94,14 @@ Appendix C now records exact source-note mappings for this core claim across all
 | `moecot` | Compact orchestrator, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, and handoff as implementation-reference context. | Code, logs, benchmark artifacts, and runtime claims have not been ingested or reproduced. |
 | `scf` | Stable capability fields as governed replacement boundaries with contracts, evidence registries, qualification, routing, authority, lifecycle, and recovery paths. | Does not prove production safety, global alignment, or whole-stack reversibility. |
 
+## Draft Key Figure: ASI Stack Control Plane
+
+::: {.asi-key-figure}
+![Draft ASI Stack control plane.](../assets/diagrams/asi-stack-control-plane.svg){#fig-asi-stack-control-plane fig-alt="Draft ASI Stack control plane figure showing inputs, governed stack layers, an authority rail, an evidence rail, and an improvement loop. The figure frames the architecture as accountable handoffs among intent, planning, memory, claims, execution, routing, evidence, release records, residuals, and rollback paths."}
+:::
+
+**How to read the ASI stack control-plane figure:** Treat the figure as the book's thesis in one systems view. Human intent, policy constraints, sources, and compute enter only through the stack contract. The middle layers transform work, context, claims, jobs, routes, and evidence, while the side rails keep authority ceilings, support states, residual ownership, and rollback visible. The figure is a draft reader aid, not proof that the architecture is implemented, benchmarked, externally reviewed, or release-approved.
+
 ## Stack Map
 
 ```{mermaid}

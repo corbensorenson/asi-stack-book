@@ -5,6 +5,7 @@ Create Mermaid diagrams first when the visual is part of the technical argument.
 Current visual assets:
 
 - `assets/images/asi-stack-hero.png`: generated text-free hero image for the landing page.
+- `assets/diagrams/asi-stack-control-plane.svg`: draft key figure for the opening chapter's stack-control-plane thesis; not a release-reviewed artifact.
 
 Diagram rules:
 
