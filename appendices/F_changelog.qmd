@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Focus active evidence cycle on one flagship lane
+
+- Narrowed `docs/v1_x_active_evidence_cycle.md` from an eight-lane breadth
+  selection to one flagship measured lane, `resource-economics-and-token-budgets`,
+  plus two direct support lanes,
+  `project-theseus-as-report-first-implementation-reference` and
+  `fast-generation-architectures`; the other forty-one manifest chapter lanes
+  are explicitly planned-only for this cycle.
+- Updated `scripts/validate_v1_x_active_evidence_cycle.py`,
+  `docs/defended_contribution_tracks.md`,
+  `scripts/validate_defended_contribution_tracks.py`, the v1.x roadmap,
+  per-chapter evidence plan, repository map, README, and publication-readiness
+  surfaces so the one-flagship/two-support boundary is enforced instead of
+  treated as advisory prose.
+- This does not promote, demote, deprecate, or refute any live claim; create
+  new measured results, rerun Theseus/Circle, complete planned-only lanes,
+  approve reader release artifacts, or move any chapter core support state.
+
 ## 2026-07-01 - Theseus generation-mode Lean fixture bridge
 
 - Added a finite `AsiStackProofs.FastGeneration` fixture for the public-safe

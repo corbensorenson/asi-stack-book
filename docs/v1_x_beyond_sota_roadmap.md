@@ -1065,46 +1065,45 @@ Acceptance bar:
 - unexecuted lanes do not create fixtures, pass/fail claims, or support-state
   pressure.
 
-Current status for the initial v1.x active evidence cycle:
+Current status for the focused v1.x active evidence cycle:
 
-- `docs/v1_x_active_evidence_cycle.md` currently selects eight chapter lanes:
-  `evidence-states-and-claim-discipline`,
-  `recursive-self-improvement-boundaries`,
-  `resource-economics-and-token-budgets`,
-  `circle-calculus-and-proof-carrying-ai-contracts`,
-  `executable-specifications-and-lean-proof-envelope`,
-  `project-theseus-as-report-first-implementation-reference`, and
-  `living-book-methodology`, plus
-  `coil-attention-cyclic-memory-and-recurrence-contracts`.
-- The remaining thirty-six manifest chapter lanes are explicitly planned-only
+- `docs/v1_x_active_evidence_cycle.md` now selects three chapter lanes:
+  flagship `resource-economics-and-token-budgets` plus direct support lanes
+  `project-theseus-as-report-first-implementation-reference` and
+  `fast-generation-architectures`.
+- The remaining forty-one manifest chapter lanes are explicitly planned-only
   for this cycle.
 - `scripts/validate_v1_x_active_evidence_cycle.py` enforces the selected-lane
-  count, checks that selected plus planned-only lanes cover all 44 manifest
-  chapters exactly once, and requires the current no-chapter-core-promotion
-  boundary.
-- The active-cycle record now includes the synthetic simulation-transfer
-  boundary harness for Resource Economics and the cyclic-memory contract
-  harness for Coil Attention. Both are useful gate hardening; neither creates a
-  chapter-core support-state transition.
+  set, checks that selected plus planned-only lanes cover all 44 manifest
+  chapters exactly once, requires the one-flagship/two-support boundary, and
+  preserves the no-chapter-core-promotion boundary.
 - The Resource Economics costed-route lane now has a four-route one-command
   replay: an adequate overkill baseline remains eligible, the selected bounded
   route remains the lowest-cost eligible route, a cheaper failed-verification
   route is rejected, and a cheaper hidden-residual route is rejected despite
   surface verification passing. The same validator now checks the finite Lean
   fixture against the public JSON costs, selected route, negative controls, and
-  eligibility fields. This deepens the flagship measured lane while preserving
-  the non-core `synthetic-test-backed` scope and no chapter-core promotion.
-- The Project Theseus generation-mode import adds a public-safe negative
-  promotion lane connected to Fast Generation, Resource Economics, Benchmark
-  Ratchets, and the Project Theseus chapter: the imported gate records 18 modes,
-  13 comparisons, zero hard gaps, five passing hard boundaries, five accepted
-  span-speed lifts, zero useful-solution-per-second, and zero promotable
-  comparisons, and the ASI-side validator now checks the public summary against
-  a finite `AsiStackProofs.FastGeneration` fixture. This helps close the "raw
-  speed is not evidence" gap without claiming a speed-quality result, live
-  Theseus replay, public benchmark run, or chapter-core support-state movement.
-- The next edit to the active-cycle record should narrow it around one flagship
-  measured result rather than extending the eight-lane breadth set.
+  eligibility fields. This is the current flagship measured lane while
+  preserving the non-core `synthetic-test-backed` scope and no chapter-core
+  promotion.
+- The simulation-transfer boundary harness remains folded into Resource
+  Economics as a support boundary: it rejects missing fidelity, unbounded world
+  transfer, missing resource bills, missing bottleneck residuals, ignored
+  instrumentation, and support-state promotion, but it does not create a new
+  evidence transition.
+- The Project Theseus generation-mode import is a direct support lane connected
+  to Fast Generation and the Project Theseus implementation-reference chapter:
+  the imported gate records 18 modes, 13 comparisons, zero hard gaps, five
+  passing hard boundaries, five accepted span-speed lifts, zero
+  useful-solution-per-second, and zero promotable comparisons. The ASI-side
+  validator checks the public summary against a finite
+  `AsiStackProofs.FastGeneration` fixture. This closes the immediate "raw speed
+  is not evidence" gap without claiming a speed-quality result, live Theseus
+  replay, public benchmark run, or chapter-core support-state movement.
+- The next evidence work should deepen the flagship Resource Economics lane
+  with a larger public trace, workload quality review, displaced-cost
+  accounting, scheduler traces, and physical/simulation-fidelity review before
+  opening a new active cycle.
 
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 

@@ -30,7 +30,7 @@ REQUIRED_FRAGMENTS = (
     "Selected contribution tracks | 5",
     "Deep-work tracks this cycle | 3",
     "Deep-work cap | At most 3 tracks per v1.x cycle",
-    "7 selected chapter lanes, 37 planned-only lanes",
+    "3 selected chapter lanes, 41 planned-only lanes",
     "all 44 chapter core claims remain `argument`",
     "does not promote any chapter core claim above `argument`",
     "does not claim selected tracks are complete at A+ depth",
@@ -39,6 +39,7 @@ REQUIRED_FRAGMENTS = (
     "docs/non_core_evidence_ledger.md",
     "docs/defended_contribution_prior_art_positioning.md",
     "docs/theseus_report_import_slice.md",
+    "docs/theseus_generation_mode_import_slice.md",
     "docs/circle_public_replay_consumer_gate.md",
     "docs/costed_route_resource_slice.md",
     "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
@@ -91,13 +92,9 @@ def main() -> None:
             errors.append(f"Selection record does not contain selected track title: {title}")
 
     for lane in [
-        "evidence-states-and-claim-discipline",
-        "recursive-self-improvement-boundaries",
         "resource-economics-and-token-budgets",
-        "circle-calculus-and-proof-carrying-ai-contracts",
-        "executable-specifications-and-lean-proof-envelope",
         "project-theseus-as-report-first-implementation-reference",
-        "living-book-methodology",
+        "fast-generation-architectures",
     ]:
         if f"`{lane}`" not in active_cycle_text:
             errors.append(f"Active evidence cycle missing lane `{lane}`.")
@@ -111,6 +108,8 @@ def main() -> None:
         "docs/defended_contribution_prior_art_positioning.md",
         "docs/v1_0_release_gate_audit.md",
         "docs/theseus_report_import_slice.md",
+        "docs/theseus_generation_mode_import_slice.md",
+        "lean/AsiStackProofs/FastGeneration.lean",
         "docs/circle_public_replay_consumer_gate.md",
         "docs/costed_route_resource_slice.md",
         "docs/readiness_residual_harness.md",

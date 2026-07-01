@@ -7,12 +7,12 @@ an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
 
-Execution rule: a v1.x cycle should execute at most 5-8 chapter lanes. The
-remaining lanes stay `planned, not executed`; they must not receive synthetic
-fixtures, pass/fail status, or support-state pressure merely for coverage.
-The active cycle selection is recorded in
-`docs/v1_x_active_evidence_cycle.md`: eight lanes are selected and the other
-thirty-six remain planned-only.
+Execution rule: a v1.x cycle should execute one flagship measured lane plus at
+most two direct support lanes. The remaining lanes stay `planned, not
+executed`; they must not receive synthetic fixtures, pass/fail status, or
+support-state pressure merely for coverage. The active cycle selection is
+recorded in `docs/v1_x_active_evidence_cycle.md`: three lanes are selected and
+the other forty-one remain planned-only.
 
 Selection criteria:
 

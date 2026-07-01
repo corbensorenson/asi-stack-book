@@ -10,8 +10,10 @@ support-state transition.
 
 The book remains broad, but this cycle does not try to make all 44 chapter
 claims equally defensible. It selects five contribution tracks for v1.x focus
-and marks three of them as deep-work tracks. The other two remain selected but
-supporting for this cycle.
+and marks three of them as deep-work tracks. The active evidence cycle is
+narrower than this track pool: it executes one flagship measured chapter lane
+and two direct support lanes while the other selected contribution tracks remain
+visible but not active evidence lanes in this cycle.
 
 ## Selection Boundary
 
@@ -20,7 +22,7 @@ supporting for this cycle.
 | Selected contribution tracks | 5 |
 | Deep-work tracks this cycle | 3 |
 | Deep-work cap | At most 3 tracks per v1.x cycle |
-| Active evidence-cycle lanes | 7 selected chapter lanes, 37 planned-only lanes |
+| Active evidence-cycle lanes | 3 selected chapter lanes, 41 planned-only lanes |
 | Chapter core support effect | None; all 44 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to accepted records only. |
 | Release effect | None; no reader, ebook, PDF, DOCX, audio, DOI, or archive artifact is approved. |
@@ -33,7 +35,7 @@ supporting for this cycle.
 | `claim-support-states-and-evidence-laundering-prevention` | Claim support states and evidence laundering prevention | selected-supporting | `evidence-states-and-claim-discipline`; `executable-specifications-and-lean-proof-envelope` | `appendices/C_claim_evidence_matrix.qmd`; `claim_decisions/v1_0_core_claim_no_promotion.json`; `docs/core_claim_transition_coverage.md`; `docs/non_core_evidence_ledger.md`; `docs/defended_contribution_prior_art_positioning.md`; `docs/evidence_laundering_prevention_case_studies.md` | Reviewer pressure test and a true demotion/refutation case remain before making a defended methodology claim. |
 | `governed-self-improvement-boundary` | Governed self-improvement boundary | deep-work | `recursive-self-improvement-boundaries`; `project-theseus-as-report-first-implementation-reference`; `executable-specifications-and-lean-proof-envelope` | `lean/AsiStackProofs/SelfImprovement.lean`; `docs/proof_depth_classification.md`; `docs/proof_adequacy_review.md`; `docs/theseus_report_import_slice.md`; `experiments/theseus_import/results/2026-06-29-local.json` | Clean Theseus replay or archived public fixture, plus external safety/formal review of the boundary. |
 | `proof-carrying-claims-and-ai-contracts` | Proof-carrying claims and proof-carrying AI contracts | deep-work | `circle-calculus-and-proof-carrying-ai-contracts`; `executable-specifications-and-lean-proof-envelope` | `docs/circle_external_receipt_slice.md`; `docs/circle_public_replay_consumer_gate.md`; `experiments/circle_public_replay/results/2026-06-29-local.json`; `docs/proof_carrying_claim_harness.md`; `docs/defended_contribution_prior_art_positioning.md` | Clean Circle replay, public contract pack, or archived upstream pack; stronger receipt negative controls before broader claims. |
-| `costed-routing-residual-accounting-resource-discipline` | Costed routing, residual accounting, and resource discipline | selected-supporting | `resource-economics-and-token-budgets`; `readiness-gates-residual-escrow-and-quarantine` | `docs/costed_route_resource_slice.md`; `experiments/costed_route_resource_slice/results/2026-06-29-local.json`; `evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json`; `docs/readiness_residual_harness.md`; `docs/defended_contribution_prior_art_positioning.md` | Larger public trace with quality, adequacy, displaced-cost, fallback, and residual accounting; no economic overclaim; residual-governance comparator gap remains open. |
+| `costed-routing-residual-accounting-resource-discipline` | Costed routing, residual accounting, and resource discipline | selected-supporting | `resource-economics-and-token-budgets`; `fast-generation-architectures`; `readiness-gates-residual-escrow-and-quarantine` | `docs/costed_route_resource_slice.md`; `experiments/costed_route_resource_slice/results/2026-06-29-local.json`; `evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json`; `docs/theseus_generation_mode_import_slice.md`; `lean/AsiStackProofs/FastGeneration.lean`; `docs/readiness_residual_harness.md`; `docs/defended_contribution_prior_art_positioning.md` | Larger public trace with quality, adequacy, displaced-cost, fallback, residual accounting, and useful-speed measurement; no economic or generation-speed overclaim; residual-governance comparator gap remains open. |
 
 ## Why These Three Deep-Work Tracks
 
@@ -51,6 +53,9 @@ public-safe, externally reviewable, and capable of failing:
 
 The selected-supporting tracks stay visible because they constrain the deep
 tracks, but this cycle should not widen into five simultaneous deep campaigns.
+For the current active evidence cycle, the measured flagship is the costed
+routing/resource lane, with Project Theseus report-first import and Fast
+Generation useful-speed boundary evidence as direct supports only.
 
 ## Evidence And No-Promotion Boundaries
 
