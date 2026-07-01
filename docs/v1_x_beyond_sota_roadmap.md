@@ -42,16 +42,17 @@ It should retire the important IOUs:
 - every chapter needs a real external-grounding pass so Corben-originated
   nomenclature is related to known papers, standards, benchmarks, and adjacent
   systems before readers are asked to accept the stack vocabulary;
-- the original 54-chapter expansion may still be over-split in several
-  thematic clusters,
-  so repetition should be reduced through governed consolidation rather than
-  prose polishing alone;
+- the executed 44-chapter spine should remain stable unless new source,
+  evidence, reviewer, or reader-edit findings expose a concrete duplicate
+  artifact boundary;
 - Project Theseus and Circle evidence need public-safe replay paths rather than
   local-only summaries;
 - the human-reader edition needs to become a true edited book, not only a strip
   of the AI/research source;
 - EPUB, DOCX, PDF, and audio should be treated as reviewed edition artifacts
   only after exact artifact records exist.
+- retired public chapter URLs from the consolidation must stay preserved by
+  guarded historical stubs rather than policy-only promises.
 - the project's discipline must become legible in the first minute of a cold
   read, because hidden rigor does not protect the work from a theory-of-everything
   silhouette.
@@ -97,13 +98,14 @@ not be quoted in the book as an external authority.
 
 | Priority | Finding | Verified state | Roadmap consequence |
 |---|---|---|---|
-| P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, cap each v1.x cycle at 5-8 executed lanes, and leave the rest explicitly planned. |
+| P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Safety-critical Lean depth is improving but still shallow. | `docs/proof_depth_classification.md` now records 632 theorem declarations, 121 direct/projection-style, 511 derived/decomposed, and 102 safety-critical theorem declarations. Each of `Alignment`, `Corrigibility`, `GovernanceRights`, `SelfImprovement`, and `ValueConflict` has at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose; `Alignment` now has twenty-one derived/decomposed transition, control, preservation, review, and lifecycle-route theorems, `ValueConflict` now has twenty derived/decomposed review and lifecycle-route theorems, `Corrigibility` and `GovernanceRights` each have sixteen, and `SelfImprovement` now has nineteen derived/decomposed boundary, lifecycle, and transition-route theorems, while 10 safety-critical theorem declarations remain direct/projection-style. `ClaimLedger` now has a finite revision-lifecycle route envelope for missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps. `EvidenceStates` now has a finite transition-lifecycle route envelope for no-change, missing record, scope, support-effect, review, evidence, negative-evidence, downgrade-trigger, terminal-effect, changelog, and non-claim-boundary gaps. `ReadinessGates` also has a separate lifecycle-boundary negative-case envelope for failed promotions, incomplete stronger transitions, quarantine-route misuse, and stale-gate reuse; `ProofEnvelope` has an artifact-authority negative-case envelope for proof-lane laundering and promotion-boundary misuse; `PolicyOptimization` has a promotion-route envelope for reward, evaluation, governance, rollback, and residual gaps; Planning has a finite dispatch-route theorem for valid modeled dispatchable records; Context Transactions has a finite materialization/deletion-closure route theorem pair; Authority has a finite lifecycle admission route for grant, expiry, revocation, approval, receipt, audit, evidence-transition, and non-claim-boundary gaps; Stack Boundaries has a finite layer-contract admission lifecycle route for layer identity, lifecycle, authority, evidence, source-mapping, support-state, and non-claim gaps; Alignment has a finite constitutional lifecycle-admission route for predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect-review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary gaps; Value Conflict has a finite value-conflict lifecycle-admission route for conflict-record, value-axis, stakeholder, stakes, reversibility, authority-boundary, evidence-requirement, review-route, high-stakes review, residual, dissent, authority-narrowing, expiry/revisit, evidence-transition, and non-claim-boundary gaps; Efficient ASI has a finite efficiency-claim admission lifecycle route for cost, quality, residual, fallback, hidden-cost, evidence-transition, and non-claim boundaries; Failure Modes has a finite recurrence-escalation route for missing failure class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary records; ContextCertificates has a finite certificate-lifecycle route for source-binding, loss-contract, permitted-use, authority, omission, scope, freshness, revocation, taint, deletion-closure, verifier-reference, consumer-policy, evidence-transition, and support-promotion boundaries; and Coil Attention has a synthetic cyclic-memory contract harness for alias, sparse-coverage, recurrence, stale-read, structural-quality, and support-state non-promotion fixtures. | Keep those five modules as the first formal-depth workstream while continuing whole-book proof-depth slices one module at a time. The first anti-projection sweep is complete; the next goal is richer state, transitions, integration with harnesses, and stronger negative cases rather than theorem-count growth. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 632 theorem declarations, 121 direct/projection-style, 511 derived/decomposed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
-| P0 | Some repetition is structural, not stylistic. | The 16-to-54 expansion created useful precision, and the Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, verification/adversarial-review, planning/DAG, and semantic-representation packages have now reduced the active manifest to 44 chapters. Several remaining clusters still repeat the same chapter skeleton around overlapping claims. The useful target is not "shorter book"; it is one skeleton per real chapter-owning artifact. | Continue the governed consolidation queue one package at a time: execute, revise, defer, or reject existing destination drafts and fold dispositions while preserving ideas as sections/subclaims/proof hooks/source mappings and requiring claim/source/proof/reader/URL reconciliation before changing the manifest. |
-| P0 | Planning churn is now a release risk. | The local tree has many planning and review surfaces, while the best recent progress came from executed packages that changed the manifest, archived retired chapters, and preserved URLs. The proof and evidence work has substance, but the consolidation track should keep moving by execution, not new packet layers. | Freeze new planning/report surfaces for existing packages. Execute or reject one merge or fold end to end before adding another consolidation document, then batch the rest using the executed packages as the template. |
+| P0 | The consolidation problem is mostly executed; the remaining risk is linkrot and reopening churn. | The manifest is 44 chapters, the executed fold packages preserve source/proof/reader lineage, ten retired public slugs have historical HTML stubs, and `validate_chapter_consolidation_sequence.py` now guards those stubs directly. | Keep the 44-chapter spine stable. Do not reopen consolidation unless a named external review, source, evidence lane, or reader edit shows a specific chapter boundary is weaker than a destination. |
+| P0 | Planning churn is now a release risk. | The local tree already has enough roadmap, review, scorecard, grounding, and release surfaces to execute. The best recent progress changed proof code, manifests, stubs, reader source, and evidence fixtures. | New reports are out of scope unless required by a validator, release record, external reviewer response, or an executed proof/evidence/reader/artifact change. Default to code, proof, source, evidence, reader, or artifact work. |
+| P0 | The project needs one real measured result more than another internal sweep. | The current three upward transitions are narrow non-core lanes. No 44 chapter core claims have moved above `argument`, and no empirical lane yet demonstrates an architecture claim with baseline and negative control. | Choose one efficiency, routing, compression, or context lane; implement a one-command reproducible run with baseline, negative control, residuals, and an accepted promotion or no-promotion decision. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
 | P1 | Appendix C hides the three earned non-core transitions too well. | Appendix C correctly says all 44 chapter core claims remain `argument`, but it does not make the three non-core transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
@@ -188,48 +190,43 @@ is:
 1. keep the executed 44-chapter consolidation spine stable unless new evidence,
    external review, or human-reader edit findings expose a concrete duplicate
    artifact boundary;
-2. deepen Lean proof coverage beyond the five safety-critical modules: for
-   every chapter, replace projection-only hooks with at least one theorem over
-   explicit records, transitions, negative cases, or state changes, or record a
-   no-proof-yet blocker tied to the chapter claim;
-3. finish the curated human-reader manuscript as an editable book against the
+2. execute one measured evidence lane with a baseline, negative control,
+   residual accounting, reproducible command, and evidence-transition decision;
+3. solicit or record one external human review or dated outreach blocker for a
+   defended contribution surface;
+4. finish the curated human-reader manuscript as an editable book against the
    current 44-chapter table of contents: reconcile curated source against the
    live book and prepare the manuscript for Corben's human edit rather than
    producing more per-chapter pass paperwork;
-4. make the honesty system legible in 60 seconds from README, landing page, and
+5. make the honesty system legible in 60 seconds from README, landing page, and
    Human view, and keep the three bounded non-core evidence transitions visible
    without chapter-core promotion;
-5. solicit or record at least one external human review of the safety-critical,
-   support-state, and first executed consolidation surfaces;
 6. keep the chapter-level external-grounding lane current by mining each
    chapter's linked Corben papers for outside citations, recording vetted
    third-party sources in Appendix H, and marking genuine comparator gaps;
-7. make one Project Theseus or Circle evidence lane public-safe and
-   CI-reproducible or CI-verifiable by archived digest, then execute only the
-   5-8 highest-payoff per-chapter evidence lanes from
-   `docs/per_chapter_evidence_plan.md`.
+7. deepen proof work by building one transition-system or fixture-equivalence
+   bridge, not by adding another broad theorem-count sweep;
+8. make one Project Theseus or Circle evidence lane public-safe and
+   CI-reproducible or CI-verifiable by archived digest when it directly supports
+   an executed evidence lane.
 
 Dependency order:
 
-- Milestone 6.5 is now the first execution milestone. It should execute or
-  explicitly reject/retain at least one package before any further
-  consolidation planning surface is added. This still means the project must
-  walk the governed consolidation decision queue before broad human-reader
-  curation, but the walk now means execute, reject, or retain packaged work
-  rather than writing more packet layers.
-- Required validator phrasing: walk the governed consolidation decision queue before broad human-reader curation.
-- Milestone 2 broadens after the safety-critical sweep: proof work should move
-  chapter by chapter through projection-heavy modules, using the executed merge
-  template to update proof tags when chapters merge.
-- Milestone 7 depends on Milestone 6.5 for chapters in pending merge/fold
-  clusters. Do not finalize human-reader prose for a chapter boundary that the
-  roadmap still expects to remove.
-- Milestones 0.5, 1, 1.5, 5.5, and the Theseus/Circle replay work remain
-  active, but they should not displace merge execution, nontrivial proofs, or
-  reader-manuscript readiness.
+- Retired URL preservation is now an operating guard, not a roadmap blocker:
+  `scripts/validate_chapter_consolidation_sequence.py` checks the ten historical
+  stubs and their canonical targets.
+- Milestone 5 measured evidence, Milestone 1.5 external review, and Milestone 7
+  curated reader readiness now outrank new consolidation, proof-count, or audit
+  sweeps.
+- Milestone 2 should target one executable-model bridge at a time: a state
+  transition invariant, Lean/Python fixture equivalence, or trace property that
+  strengthens a selected evidence lane.
+- Milestone 6.5 is dormant unless a concrete duplicate-boundary finding appears
+  from source ingestion, evidence work, external review, or Corben's human-reader
+  edits.
 - Milestones 8 and 9 stay downstream: EPUB/PDF/DOCX/audio and preprints should
-  wait for reconciled reader prose, executable proof/evidence improvements,
-  prior-art checks, and at least one external review.
+  wait for reconciled reader prose, at least one stronger evidence lane, prior-art
+  checks, and at least one external review or dated outreach blocker.
 
 ## Beyond-SOTA Distance Map
 
@@ -311,13 +308,19 @@ Tasks:
   full gate in the README.
 - Keep `docs/v1_0_roadmap.md` as release-history context and use this file as
   the v1.x execution target.
+- Keep retired chapter URL stubs guarded by
+  `python3 scripts/validate_chapter_consolidation_sequence.py`.
+- Reject new roadmap/report surfaces for existing work unless they are attached
+  to an executed proof, evidence, source, reader, artifact, release, or external
+  review change.
 
 Acceptance bar:
 
 - prior Pages run checked;
 - working tree clean before starting a large pass;
 - no stale generated scaffold after `python3 scripts/sync_scaffold.py`;
-- no validator is silently bypassed or newly orphaned.
+- no validator is silently bypassed or newly orphaned;
+- the ten retired consolidation URLs remain preserved by historical stubs.
 
 ### Milestone 0.5 - Sixty-Second Trust Surface
 
@@ -830,19 +833,21 @@ Current status after the first ASI-side Circle consumer gate:
   contract pack, or archived public Circle artifact before model-quality,
   runtime, context-length, transfer, or deployment claims can be entertained.
 
-### Milestone 5 - Per-Chapter Evidence Plan
+### Milestone 5 - Flagship Measured Evidence Lane
 
-Goal: maintain a named evidence lane for every chapter without turning the next
-v1.x cycle into another shallow breadth sweep.
+Goal: move from internally validated record discipline to one reproducible
+architecture-relevant result.
 
 The full 44-row backlog lives in `docs/per_chapter_evidence_plan.md`. Treat that
-file as a menu of possible lanes, not as a checklist to complete in one run. A
-v1.x cycle should execute at most 5-8 chapter lanes, chosen for evidential
-payoff and load-bearing importance; the rest stay `planned, not executed` with
-no fixture built and no implied support-state movement.
+file as a menu of possible lanes, not as a checklist to complete in one run.
+The next cycle should execute one flagship measured lane first, with at most
+two supporting lanes if they are direct dependencies. The rest stay `planned,
+not executed` with no fixture built and no implied support-state movement.
 
 Selection rule:
 
+- prefer an efficiency, routing, compression, context, or proof-contract lane
+  where a baseline and negative control can run locally;
 - choose lanes where public-safe, reproducible, non-self-sourced or externally
   reviewable evidence is achievable now;
 - prefer load-bearing chapters that constrain many later chapters;
@@ -858,16 +863,16 @@ Selection rule:
 Acceptance bar:
 
 - `docs/per_chapter_evidence_plan.md` remains current with all 44 chapter lanes;
-- the active v1.x cycle names the 5-8 selected lanes and explicitly leaves all
-  others planned;
-- any executed lane records command/replay path, negative controls where
-  applicable, non-claims, and support-state effect;
+- the active v1.x cycle names one flagship lane, any direct supporting lanes,
+  and explicitly leaves all others planned;
+- the flagship lane records command/replay path, baseline, negative control,
+  residuals, non-claims, and support-state effect;
 - unexecuted lanes do not create fixtures, pass/fail claims, or support-state
   pressure.
 
 Current status for the initial v1.x active evidence cycle:
 
-- `docs/v1_x_active_evidence_cycle.md` selects eight chapter lanes:
+- `docs/v1_x_active_evidence_cycle.md` currently selects eight chapter lanes:
   `evidence-states-and-claim-discipline`,
   `recursive-self-improvement-boundaries`,
   `resource-economics-and-token-budgets`,
@@ -886,6 +891,8 @@ Current status for the initial v1.x active evidence cycle:
   boundary harness for Resource Economics and the cyclic-memory contract
   harness for Coil Attention. Both are useful gate hardening; neither creates a
   chapter-core support-state transition.
+- The next edit to the active-cycle record should narrow it around one flagship
+  measured result rather than extending the eight-lane breadth set.
 
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 
@@ -2176,37 +2183,40 @@ explicitly passed or explicitly scoped out in a release record.
 | Gate | Required evidence | Release blocker if missing |
 |---|---|---|
 | Prior CI gate | Previous GitHub Pages run checked, local validation run, and no known failed prior run ignored. | Do not commit or tag until the prior failure is fixed or scoped. |
-| Execution-over-reports gate | At least one review-ready consolidation package has executed or been explicitly rejected/retained before any new consolidation planning packet is added for an existing package. | The roadmap is still producing planning surface instead of reducing duplicate chapter structure. |
+| Execution-over-reports gate | Any new roadmap, report, review packet, or scorecard is paired with an executed proof, evidence, source, reader, artifact, release, or external-review change, or is explicitly required by a validator. | The project is spending cycles on planning surfaces instead of changing artifacts. |
+| Retired URL preservation | The ten retired consolidation URLs have static historical stubs with refresh/canonical targets into active manifest chapters, guarded by `scripts/validate_chapter_consolidation_sequence.py`. | Public links from the pre-consolidation book can silently rot. |
 | Sixty-second trust surface | README, landing page, or Human view entry path makes current evidence, non-claims, proof limits, self-sourcing boundaries, and external-review status legible quickly. | Cold readers cannot distinguish disciplined research program from overbroad theory. |
 | Non-core evidence visibility | Appendix C or sibling surface names the three current non-core transitions and keeps all 44 core claims at `argument` unless separately promoted. | Readers cannot tell what evidence exists. |
 | Early external review | At least one external review record exists, or a dated blocker records outreach and scope. | The release remains self-reviewed. |
 | Defended contribution focus | The release names three to five contribution tracks and at most three deep-work tracks for the cycle. | The project remains broad without defended results. |
 | Safety-critical Lean depth | Five targeted modules include `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases, or a release record explicitly keeps them projection-only. | Formal layer remains v1.0-depth. |
-| Public replay/import | At least one Theseus or Circle lane is CI-replayed or CI-verifiable by pinned digest with negative controls. | Imported evidence remains local-summary only. |
-| Chapter-lane cap | The release names 5-8 executed chapter lanes and leaves the rest planned; no 44-lane synthetic sweep is claimed. | Breadth trap not controlled. |
+| Flagship measured result | At least one selected evidence lane has a one-command reproducible run with baseline, negative control, residuals, non-claims, and an accepted transition or explicit no-promotion decision. | The project remains internally disciplined but does not show an architecture-relevant result. |
+| Public replay/import | At least one Theseus or Circle lane is CI-replayed or CI-verifiable by pinned digest with negative controls, when relevant to the selected evidence lane. | Imported evidence remains local-summary only. |
+| Chapter-lane cap | The release names one flagship lane plus at most two supporting lanes and leaves the rest planned; no 44-lane synthetic sweep is claimed. | Breadth trap not controlled. |
 | Per-chapter external grounding | Every chapter has source-noted external comparators, candidate backlog, or an explicit exception; accepted third-party records appear in generated Appendix H. | The book still reads as self-sourced nomenclature. |
 | Proof/evidence coverage | Each executed lane names whether its strongest evidence path is Lean, Theseus, Circle, external literature, external review, or an explicit no-promotion blocker. | Arguments remain prose-only without a testable support route. |
 | External-SOTA distance | The release updates distance from SOTA, not only internal activity. | "Beyond-SOTA" remains unaudited. |
-| Governed consolidation review | The release either executes or explicitly defers the reviewed consolidation pilot, with preserved source/proof/claim/reader mappings and no hidden idea deletion. | Human-reader curation may polish avoidable duplicate chapter skeletons. |
+| Consolidation stability | The 44-chapter spine remains stable unless a source, evidence, reviewer, or reader-edit finding justifies a specific boundary change; any retired URL remains preserved. | The project reopens structural churn without evidence. |
 | Negative-outcome handling | Failed, demoted, refuted, merged, or retired lanes are recorded instead of hidden. | Evidence process is monotonic and biased. |
-| Human-reader quality | Curated reader pilot or explicit deferral exists; any released artifact has an exact release record. | Human edition remains a generated projection only. |
+| Human-reader quality | Curated reader manuscript reaches handoff-ready status for Corben review, and any released artifact has an exact release record. | Human edition remains a generated projection only. |
 | Artifact honesty | EPUB/DOCX/PDF/audio/DOI are claimed only if exact artifacts or archive identifiers exist. | Artifact or archive claim would be fabricated. |
 
 ## Version Targets
 
 | Target | Position vs SOTA | Minimum bar |
 |---|---|---|
-| `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Sixty-second trust surface exists; non-core evidence ledger visible; early external review requested or recorded; defended contribution tracks selected; per-chapter evidence plan split out with 5-8 lane cap; chapter-level external-grounding workflow defined; safety-critical proof specs include anti-projection and negative-case criteria. |
-| `v1.2` | Moves formal layer from projection-heavy traceability toward lightweight state-specification practice for safety-critical modules. | Five safety-critical modules gain `derived_or_decomposed` theorem coverage, anti-projection conclusions, and negative cases; first public-safe Theseus or Circle lane is CI-replayed or CI-verifiable by digest. |
-| `v1.3` | Moves structural cohesion and reader surface from generated projection toward a consolidated, curated human manuscript while preserving live-book evidence authority. | The 44-chapter consolidation spine remains stable unless a concrete duplicate-boundary finding reopens it; curated reader manuscript follows the current table of contents; reader HTML remains validated; EPUB/DOCX/PDF blockers have concrete review status; audio script uses curated prose only where reviewed. |
-| `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; 5-8 selected chapter lanes have executed evidence or explicit no-promotion decisions; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
-| `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger Lean envelopes, prior-art-reviewed preprints, and DOI/archive metadata exist. |
+| `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Retired URL stubs are guarded; sixty-second trust surface exists; non-core evidence ledger visible; one external review request, response, or dated blocker is recorded; one flagship measured lane is selected with baseline/negative-control design. |
+| `v1.2` | Moves from internal discipline to a reproducible architecture-relevant result. | The flagship measured lane has a one-command run, baseline, negative control, residuals, non-claims, and an accepted evidence transition or explicit no-promotion decision; any Theseus/Circle import used by the lane is CI-verifiable by digest or replay. |
+| `v1.3` | Moves formal layer from finite-record routing toward executable-model practice. | One selected proof/evidence lane has a transition-system invariant, trace property, or Lean/Python fixture-equivalence check; theorem-count growth alone does not satisfy the target. |
+| `v1.4` | Moves reader surface from generated projection toward a handoff-ready human manuscript. | Curated reader manuscript follows the stable 44-chapter table of contents, is ready for Corben human review, reader HTML remains validated, and EPUB/DOCX/PDF blockers have concrete review status. |
+| `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; one flagship measured lane has executed evidence or an explicit no-promotion decision; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
+| `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger executable-model proofs, prior-art-reviewed preprints, and DOI/archive metadata exist. |
 
 ## Suggested Long-Running Goal
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode and bring the project to true human-review readiness. Keep the executed 44-chapter consolidation spine stable unless new evidence, external review, or human-reader edit findings expose a concrete duplicate artifact boundary; do not create more planning/report surfaces for already packaged work. Deepen Lean proof coverage across all chapters, not only the five safety-critical modules: each chapter should gain at least one nontrivial theorem over explicit records, transitions, negative cases, residual paths, receipts, authority ceilings, readiness gates, or support-state boundaries, or a visible no-proof-yet blocker tied to the core claim. Finish the curated human-reader manuscript against the current table of contents, create a human-edit handoff packet for Corben, and keep the reader edition subordinate to the live AI/research evidence source. Continue only high-payoff evidence work that changes proof, replay, source, claim, or artifact state: maintain the 60-second trust surface, keep non-core evidence visible without chapter-core promotion, solicit or record external human review, keep per-chapter external grounding current through source-noted Appendix H records, make Project Theseus or Circle evidence CI-replayable or digest-verifiable where public-safe, execute only selected high-payoff evidence lanes, and record demotions, rejections, blockers, and non-claims honestly. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
+> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode and move the project from internally rigorous to externally reviewable and evidence-producing. Keep the executed 44-chapter consolidation spine stable and preserve retired chapter URLs through guarded stubs; do not create new planning/report surfaces unless they are required by a validator, release record, external reviewer response, or an executed proof/evidence/source/reader/artifact change. Prioritize one flagship measured evidence lane with a one-command run, baseline, negative control, residuals, non-claims, and an accepted evidence transition or explicit no-promotion decision. In parallel, solicit or record one external human review or dated outreach blocker, keep the sixty-second trust surface and non-core evidence visibility accurate, and finish the curated human-reader manuscript to handoff-ready status for Corben review. Deepen formal work only where it changes proof quality: build one transition-system invariant, trace property, or Lean/Python fixture-equivalence bridge tied to the selected evidence lane instead of chasing theorem count. Keep external grounding current through source-noted Appendix H records, make any Project Theseus or Circle evidence used by the lane CI-replayable or digest-verifiable where public-safe, and record demotions, rejections, blockers, and non-claims honestly. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
 
 ## Non-Claims
 

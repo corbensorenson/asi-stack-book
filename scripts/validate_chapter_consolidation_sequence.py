@@ -907,6 +907,19 @@ URL_HISTORY_POLICY_REQUIRED_FRAGMENTS = (
     "The 2026-06-30 Part I, conservative compression, intent/contracts, MoECOT, simulation-fidelity, static context ABI, verification/adversarial-review, planning/DAG, and semantic-representation execution",
 )
 
+RETIRED_CHAPTER_STUBS = {
+    "agency-dignity-and-corrigibility": "constitutional-alignment-substrate",
+    "governance-rights-fork-exit-and-audit": "moral-uncertainty-and-value-conflict",
+    "generate-verify-repair-compression": "compact-generative-systems-and-residual-honesty",
+    "command-contracts-and-semantic-interfaces": "intent-to-execution-contracts",
+    "semantic-pages-context-cells-and-certificates": "virtual-context-abi",
+    "unified-adaptive-tribunal-and-adversarial-review": "spinoza-verification-and-proof-carrying-claims",
+    "planforge-dags-and-intelligence-arbitrage": "planning-as-a-control-layer",
+    "moecot-runtime-and-multi-core-orchestration": "routing-heads-and-specialist-cores",
+    "simulation-fidelity-and-physical-constraints": "resource-economics-and-token-budgets",
+    "semantic-representation-and-tree-structured-models": "compact-generative-systems-and-residual-honesty",
+}
+
 
 def read_text(path: Path) -> str:
     if not path.exists():
@@ -963,6 +976,37 @@ def main() -> None:
     for fragment in URL_HISTORY_POLICY_REQUIRED_FRAGMENTS:
         if fragment not in url_history_policy:
             errors.append(f"URL/history policy missing required boundary: {fragment}")
+
+    for retired_id, target_id in sorted(RETIRED_CHAPTER_STUBS.items()):
+        if retired_id in ids:
+            errors.append(f"Retired chapter ID is still active in manifest: {retired_id}")
+        if target_id not in ids:
+            errors.append(f"Retired chapter stub target is missing from manifest: {retired_id} -> {target_id}")
+
+        stub_path = ROOT / "chapters" / f"{retired_id}.html"
+        if not stub_path.exists():
+            errors.append(f"Retired chapter URL stub is missing: chapters/{retired_id}.html")
+            continue
+        stub_text = stub_path.read_text(encoding="utf-8", errors="ignore")
+        target_html = f"{target_id}.html"
+        required_stub_fragments = (
+            f'<meta http-equiv="refresh" content="0; url={target_html}">',
+            f'<link rel="canonical" href="{target_html}">',
+            f"<code>{retired_id}</code>",
+            f'href="{target_html}"',
+            "folded",
+        )
+        for fragment in required_stub_fragments:
+            if fragment not in stub_text:
+                errors.append(
+                    f"Retired chapter URL stub chapters/{retired_id}.html "
+                    f"missing required fragment: {fragment}"
+                )
+        if "support-state" not in stub_text and "support state" not in stub_text:
+            errors.append(
+                f"Retired chapter URL stub chapters/{retired_id}.html "
+                "must preserve an explicit support-state non-promotion boundary."
+            )
 
     try:
         compression = read_text(COMPRESSION_DRY_RUN)

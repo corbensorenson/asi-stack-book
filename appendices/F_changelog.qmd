@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-01 - Roadmap execution-priority tightening
+
+- Updated `docs/v1_x_beyond_sota_roadmap.md` to make the 44-chapter spine the
+  stable default, move one flagship measured evidence lane ahead of broad
+  proof-count or planning sweeps, and require any new roadmap/report surface to
+  be tied to an executed proof, evidence, source, reader, artifact, release, or
+  external-review change.
+- Tightened the consolidation URL-history guard in
+  `scripts/validate_chapter_consolidation_sequence.py`: the validator now
+  checks the ten retired public chapter stubs directly, including active
+  manifest targets, refresh/canonical links, folded-source references, and
+  support-state non-promotion boundaries.
+- Updated the `generate-verify-repair-compression` historical stub with a
+  canonical link and explicit no-support-state-promotion language, and added a
+  current-state note to the historical consolidation decision review so readers
+  do not mistake the old pre-execution stub blocker for the current state.
+- This does not promote, demote, deprecate, or refute any live claim; create an
+  external review, measured result, reader release, ebook, PDF, DOCX, audio
+  artifact, deployment claim, model-quality result, or benchmark result.
+
 ## 2026-07-01 - Personal hive work admission proof
 
 - Strengthened `AsiStackProofs.PersonalComputeHives` with a finite

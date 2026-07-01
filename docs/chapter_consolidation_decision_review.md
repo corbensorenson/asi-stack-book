@@ -2,6 +2,12 @@
 
 Last updated: 2026-06-29
 
+Current-state note, 2026-07-01: this file is historical decision context from
+before the consolidation execution. The canonical manifest now has 44 chapters,
+the named retired public slugs have static historical HTML stubs, and
+`scripts/validate_chapter_consolidation_sequence.py` directly checks the ten
+retired stubs and their active canonical targets.
+
 Decision: defer manifest consolidation until review and public URL/history
 policy unblock it.
 
