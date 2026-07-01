@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 import sys
 from typing import Any
@@ -11,11 +12,20 @@ ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "experiments" / "resource_workflow_trace" / "fixtures"
 RESULT = ROOT / "experiments" / "resource_workflow_trace" / "results" / "2026-07-01-local.json"
 SUMMARY = ROOT / "docs" / "resource_workflow_trace.md"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
 
 HIGH_RISK = {"high", "critical"}
 SUPPORTED_TRANSFER_DECISIONS = {"scenario_only", "unit_fixture_only", "bounded_claim_transport"}
 SUPPORTED_FIDELITY = {"toy_model", "unit_fixture", "scenario_only"}
 NON_CLAIM_TERMS = ("does not promote", "does not prove", "scheduler")
+REQUIRED_LEAN_THEOREMS = (
+    "resource_workflow_trace_fixture_valid",
+    "resource_workflow_trace_fixture_preserves_high_risk_ordering",
+    "resource_workflow_trace_fixture_residualizes_displaced_costs",
+    "resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim",
+    "resource_workflow_trace_fixture_rejects_latency_only_selection",
+    "resource_workflow_trace_fixture_has_no_support_promotion",
+)
 
 
 def load_json(path: Path) -> Any:
@@ -347,10 +357,60 @@ def validate_summary(expected: dict[str, Any], valid_count: int, invalid_count: 
         "does not promote any chapter core claim",
         "does not prove deployed scheduler behavior",
         "does not prove physical feasibility",
+        "`AsiStackProofs.ResourceEconomics`",
     )
     for fragment in required:
         if fragment not in text:
             errors.append(f"{rel(SUMMARY)} missing required fragment: {fragment}")
+
+
+def parse_lean_fixture(errors: list[str]) -> dict[str, str]:
+    if not LEAN_FIXTURE.exists():
+        errors.append(f"Missing {rel(LEAN_FIXTURE)}.")
+        return {}
+    text = LEAN_FIXTURE.read_text(encoding="utf-8")
+    declared_theorems = set(re.findall(r"^theorem\s+(\w+)\b", text, re.MULTILINE))
+    for theorem in REQUIRED_LEAN_THEOREMS:
+        if theorem not in declared_theorems:
+            errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
+    fixture_match = re.search(
+        r"def\s+resourceWorkflowTraceFixture\s*:\s*WorkflowTraceSummary\s*:=\s*\{(?P<body>.*?)\}",
+        text,
+        re.DOTALL,
+    )
+    if not fixture_match:
+        errors.append(f"{rel(LEAN_FIXTURE)} missing resourceWorkflowTraceFixture.")
+        return {}
+    return {
+        field_match.group("field"): field_match.group("value").strip()
+        for field_match in re.finditer(
+            r"^\s*(?P<field>\w+)\s*:=\s*(?P<value>[^,\n}]+)",
+            fixture_match.group("body"),
+            re.MULTILINE,
+        )
+    }
+
+
+def validate_lean_fixture(expected: dict[str, Any], invalid_count: int, errors: list[str]) -> None:
+    fields = parse_lean_fixture(errors)
+    expected_fields = {
+        "stepCount": str(expected["step_count"]),
+        "selectedRouteCount": str(expected["selected_route_count"]),
+        "totalCostTenths": str(int(round(float(expected["total_cost_units"]) * 10))),
+        "expectedInvalidControlCount": str(invalid_count),
+        "highRiskFirst": "true",
+        "displacedCostsResidualized": "true",
+        "physicalFeasibilityOverclaimRejected": "true",
+        "latencyOnlySelectionRejected": "true",
+        "supportStateEffectNone": "true",
+        "nonClaimBoundary": "true",
+    }
+    for field, expected_value in expected_fields.items():
+        if fields.get(field) != expected_value:
+            errors.append(
+                f"{rel(LEAN_FIXTURE)} resourceWorkflowTraceFixture.{field} "
+                f"must be {expected_value!r}, got {fields.get(field)!r}."
+            )
 
 
 def main() -> None:
@@ -393,6 +453,7 @@ def main() -> None:
     else:
         validate_result(valid_summaries[0], valid_count, invalid_count, errors)
         validate_summary(valid_summaries[0], valid_count, invalid_count, errors)
+        validate_lean_fixture(valid_summaries[0], invalid_count, errors)
 
     if errors:
         fail(errors)

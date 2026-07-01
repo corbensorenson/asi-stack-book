@@ -10,6 +10,13 @@
 - The controls reject latency-only route selection, erased displaced-cost
   residuals, toy-accounting physical-feasibility overclaim, and low-risk work
   scheduled before protected high-risk review.
+- Extended `AsiStackProofs.ResourceEconomics` with a finite workflow-trace
+  summary fixture and theorem bridge, and extended
+  `scripts/validate_resource_workflow_trace.py` to compare the public trace
+  result with Lean fields for step count, selected-route count, total cost
+  tenths, expected-invalid controls, high-risk ordering, residualization,
+  physical-overclaim rejection, latency-only rejection, and no-promotion
+  boundaries.
 - Wired the trace into `scripts/validate_book.py`, the active evidence cycle,
   defended contribution tracks, the Resource Economics chapter, Appendix E, the
   v1.x roadmap, v1 status snapshot, README, repository map, and publication

@@ -194,4 +194,65 @@ theorem selected_route_is_lowest_cost_eligible_in_fixture
       CostedRouteEligible] at eligible ⊢ <;>
     decide
 
+structure WorkflowTraceSummary where
+  stepCount : Nat
+  selectedRouteCount : Nat
+  totalCostTenths : Nat
+  expectedInvalidControlCount : Nat
+  highRiskFirst : Bool
+  displacedCostsResidualized : Bool
+  physicalFeasibilityOverclaimRejected : Bool
+  latencyOnlySelectionRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def WorkflowTraceValid (summary : WorkflowTraceSummary) : Prop :=
+  summary.stepCount = 3 ∧
+    summary.selectedRouteCount = 3 ∧
+    summary.totalCostTenths = 1197 ∧
+    summary.expectedInvalidControlCount = 4 ∧
+    summary.highRiskFirst = true ∧
+    summary.displacedCostsResidualized = true ∧
+    summary.physicalFeasibilityOverclaimRejected = true ∧
+    summary.latencyOnlySelectionRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+def resourceWorkflowTraceFixture : WorkflowTraceSummary :=
+  { stepCount := 3,
+    selectedRouteCount := 3,
+    totalCostTenths := 1197,
+    expectedInvalidControlCount := 4,
+    highRiskFirst := true,
+    displacedCostsResidualized := true,
+    physicalFeasibilityOverclaimRejected := true,
+    latencyOnlySelectionRejected := true,
+    supportStateEffectNone := true,
+    nonClaimBoundary := true }
+
+theorem resource_workflow_trace_fixture_valid :
+    WorkflowTraceValid resourceWorkflowTraceFixture := by
+  simp [WorkflowTraceValid, resourceWorkflowTraceFixture]
+
+theorem resource_workflow_trace_fixture_preserves_high_risk_ordering :
+    resourceWorkflowTraceFixture.highRiskFirst = true := by
+  rfl
+
+theorem resource_workflow_trace_fixture_residualizes_displaced_costs :
+    resourceWorkflowTraceFixture.displacedCostsResidualized = true := by
+  rfl
+
+theorem resource_workflow_trace_fixture_rejects_physical_feasibility_overclaim :
+    resourceWorkflowTraceFixture.physicalFeasibilityOverclaimRejected = true := by
+  rfl
+
+theorem resource_workflow_trace_fixture_rejects_latency_only_selection :
+    resourceWorkflowTraceFixture.latencyOnlySelectionRejected = true := by
+  rfl
+
+theorem resource_workflow_trace_fixture_has_no_support_promotion :
+    resourceWorkflowTraceFixture.supportStateEffectNone = true := by
+  rfl
+
 end AsiStackProofs.ResourceEconomics

@@ -7713,6 +7713,13 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_costed_route_resource_slice.py`; no deployed scheduler, route-search completeness, or economic-optimality claim"
             },
+            {
+              "name": "Resource workflow trace harness",
+              "purpose": "Check a deterministic multi-step workflow for selected-route cost recomputation, high-risk-first scheduler ordering, protected review overhead, displaced-cost residual ownership, physical-feasibility overclaim rejection, Lean fixture alignment, and no-promotion boundaries.",
+              "status": "implemented; passing via `python3 scripts/validate_resource_workflow_trace.py`",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_resource_workflow_trace.py`; no deployed scheduler, physical-feasibility, model-quality, or economic-outcome claim"
+            },
             "Budget allocation test",
             "Risk-adjusted verification test",
             {

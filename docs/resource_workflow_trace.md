@@ -53,6 +53,20 @@ Observed deterministic fixture summary:
 | `step://source-crosswalk-refresh` | `route://bounded-crosswalk-refresh` | The latency-only route fails quality and leaves displaced reader repair unowned; the manual baseline is eligible but more costly. |
 | `step://low-risk-index-cleanup` | `route://local-index-cleanup` | The local route passes the fixture quality predicate without consuming scarce human review capacity. |
 
+## Lean Fixture Bridge
+
+The validator also checks that the finite workflow summary fixture in
+`AsiStackProofs.ResourceEconomics` matches the public result record for step
+count, selected-route count, total cost tenths, expected-invalid control count,
+high-risk-first ordering, displaced-cost residualization,
+physical-feasibility-overclaim rejection, latency-only selection rejection,
+support-state non-promotion, and non-claim boundaries.
+
+This bridge proves fixture alignment only. It does not prove deployed scheduler
+behavior, route-search completeness, physical feasibility, model quality,
+economic outcomes, simulator adequacy, or a chapter-core support-state
+transition.
+
 ## Negative Controls
 
 - `invalid_latency_only_selector.json` rejects a selected route whose low
