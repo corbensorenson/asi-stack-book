@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-01 - Prototype phase-route proof
+
+- Strengthened `AsiStackProofs.PrototypeRoadmap` with a finite
+  `PrototypePhaseRoute`, `PrototypePhaseGateReview`, and
+  `PrototypePhaseRouteFor` decision surface over phase proposal state, source
+  matrix readiness, artifact graph readiness, claim-ledger readiness, authority
+  controls, acceptance gates, evidence refs, evidence-transition records,
+  residual closure, evaluator independence, support-promotion requests,
+  irreversible authority requests, and self-improvement phase status.
+- Added derived theorems showing that missing source-matrix readiness rejects a
+  phase route, self-improvement without an independent evaluator is rejected,
+  failed acceptance gates keep a phase research-only, support-promotion requests
+  without an evidence-transition record are rejected, and accepted
+  non-promoting phases can route to integration.
+- Updated the Prototype Roadmap chapter, book outline, proof adequacy review,
+  proof-depth/audit reports, v1.0/v1.x roadmap surfaces, and status snapshot
+  guard. The proof-depth classifier now reports 379 theorem declarations, 121
+  direct/projection-style declarations, and 258 derived/decomposed declarations
+  across 123 manifest proof targets.
+- This does not prove phase completion, acceptance-gate adequacy, dependency
+  graph correctness, phase execution, benchmark results, evaluator quality,
+  support-state promotion, reader artifact approval, or release approval.
+
 ## 2026-07-01 - Context transaction memory-store harness
 
 - Added the book-gate-only context transaction memory-store harness in

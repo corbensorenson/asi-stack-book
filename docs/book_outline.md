@@ -3063,6 +3063,7 @@ Draft deliverables:
 - Planned Codex test: Phase acceptance checklist.
 - Planned Codex test: Dependency gate review.
 - Implemented Codex test: Prototype evidence-state audit, via `python3 scripts/validate_readiness_residual_gates.py` over expired-evidence rerun/reject behavior; full phase acceptance audit remains unrun.
+- Implemented Lean follow-through: finite prototype phase-route envelope rejects missing source-matrix readiness, self-improvement without independent evaluation, and promotion requests without an evidence-transition record; it routes failed acceptance gates to research-only and routes accepted non-promoting phases to integration without claiming phase completion.
 
 Lean proof targets:
 
