@@ -212,9 +212,10 @@ scenarios keep resource-budget records aligned on task identity, risk class,
 verification tax, protected overhead, safety gates, residuals, evidence
 references, and no-promotion boundaries. The resource-budget ledger harness
 adds deterministic records for low-risk dispatch, high-risk escalation,
-protected-overhead dispatch, displaced-cost residualization, and review-capacity
-hoarding. The capacity-smoothing toy harness checks bounded regeneration
-arithmetic and priority deferral in small traces.
+protected-overhead dispatch, security-overhead erasure rejection,
+displaced-cost residualization, and review-capacity hoarding. The
+capacity-smoothing toy harness checks bounded regeneration arithmetic and
+priority deferral in small traces.
 
 That is useful accounting coverage, not a scheduler or economics result.
 

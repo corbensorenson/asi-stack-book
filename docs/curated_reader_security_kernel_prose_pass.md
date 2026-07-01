@@ -47,10 +47,11 @@ permission to change proof or test status.
 - Preserved the live chapter's current evidence boundary: synthetic
   security-kernel receipt checks and finite Lean predicates support record
   discipline only; the receipt checks now include expired-approval and
-  overbroad-SCIF-context negative fixtures, but they do not prove deployed
-  containment, sandbox isolation, side-channel resistance, prompt-injection
-  containment, runtime policy behavior, budget preservation, or source
-  interpretation.
+  overbroad-SCIF-context negative fixtures, and the Resource Budget Ledger
+  harness now includes a security-overhead erasure negative fixture, but they
+  do not prove deployed containment, sandbox isolation, side-channel
+  resistance, prompt-injection containment, runtime policy behavior, runtime
+  budget enforcement, or source interpretation.
 - Preserved the core claim, minimum viable implementation, beyond-state-of-the-
   art endpoint, and handoff into Recursive Self-Improvement Boundaries.
 
@@ -80,8 +81,8 @@ permission to change proof or test status.
   Saltzer-Schroeder completeness, deployed security-kernel behavior, sandbox
   isolation, side-channel resistance, prompt-injection containment,
   deployed approval-expiry enforcement, least-privilege context behavior,
-  secret-handle safety, security-overhead budget preservation, or runtime
-  policy enforcement.
+  secret-handle safety, runtime budget enforcement, security economics, or
+  runtime policy enforcement.
 
 ## Remaining Blockers
 

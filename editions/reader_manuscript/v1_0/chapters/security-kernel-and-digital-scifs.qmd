@@ -108,13 +108,15 @@ Ladon/Manhattan, Context Engineer, Talos, Alignment Field, and Coherence
 Exchange. Appendix E records a synthetic security-kernel harness for
 authority-use receipts, including expected failures for expired approval,
 overbroad SCIF context, unsafe output, missing approval, missing residuals,
-missing zeroization, ambient authority, and prompt-injection leakage. The Lean
-module models finite authorization, clearance, handle substitution, and
-protected-SCIF admission predicates. Those artifacts help keep the boundary
-explicit. They do not prove runtime policy behavior, sandbox isolation,
-side-channel resistance, deployed approval-expiry enforcement, least-privilege
-context behavior, prompt-injection containment, security-overhead budget
-preservation, or source interpretation.
+missing zeroization, ambient authority, and prompt-injection leakage. The
+Resource Budget Ledger harness adds a synthetic expected failure for a critical
+route that looks cheaper only because it drops SCIF isolation, approval, audit
+logging, and sanitization. The Lean module models finite authorization,
+clearance, handle substitution, and protected-SCIF admission predicates. Those
+artifacts help keep the boundary explicit. They do not prove runtime policy
+behavior, sandbox isolation, side-channel resistance, deployed approval-expiry
+enforcement, least-privilege context behavior, prompt-injection containment,
+runtime budget enforcement, security economics, or source interpretation.
 
 ## Mechanism
 
@@ -290,7 +292,7 @@ kernel, redaction policy, or audit path is a protected transition.
 This remains a target architecture, not a validation claim. The present support
 state stays at `argument` until receipt validation is joined by stronger
 runtime traces, negative controls, threat models, security review,
-security-overhead budget tests, and evidence-transition records.
+runtime budget-enforcement evidence, and evidence-transition records.
 
 ## Summary
 

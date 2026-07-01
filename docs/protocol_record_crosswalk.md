@@ -28,7 +28,7 @@ It does **not** treat any protocol record as verified merely because one lane pa
 | `proof_carrying_claim` | `schemas/proof_carrying_claim.schema.json` | 25 | 3/5 | `scripts/validate_proof_carrying_claims.py` | lean/AsiStackProofs/ProofCarryingClaims.lean (ProofCarryingClaimRecord, FormalTierClaimReview, FailedVerifierPromotionReview) | 11 | 14 | 0 | registry ok | ok |
 | `tribunal_review_record` | `schemas/tribunal_review_record.schema.json` | 22 | 3/5 | `scripts/validate_tribunal_review.py` | lean/AsiStackProofs/Tribunal.lean (TribunalVerdictReview, HighRiskArtifactAcceptanceReview) | 7 | 15 | 0 | registry ok | ok |
 | `value_conflict_record` | `schemas/value_conflict_record.schema.json` | 13 | 3/5 | `scripts/validate_value_conflicts.py` | lean/AsiStackProofs/ValueConflict.lean (ConflictDecisionReview, HighStakesConflictReview) | 5 | 8 | 0 | registry ok | ok |
-| `resource_budget_record` | `schemas/resource_budget_record.schema.json` | 16 | 5/5 | `scripts/validate_resource_budget_ledgers.py` | lean/AsiStackProofs/ResourceEconomics.lean (BudgetGateReview, VerificationBudgetReview) | 5 | 11 | 0 | registry ok | ok |
+| `resource_budget_record` | `schemas/resource_budget_record.schema.json` | 16 | 5/6 | `scripts/validate_resource_budget_ledgers.py` | lean/AsiStackProofs/ResourceEconomics.lean (BudgetGateReview, VerificationBudgetReview) | 5 | 11 | 0 | registry ok | ok |
 
 ## Field Reconciliation
 

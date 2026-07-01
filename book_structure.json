@@ -2346,8 +2346,8 @@
             },
             {
               "name": "Security-overhead budget preservation test",
-              "implementation_status": "planned",
-              "result_status": "planned; no budget-preservation fixture or runtime budget/security-economics claim"
+              "implementation_status": "implemented",
+              "result_status": "passing via Resource Budget Ledger synthetic security-overhead erasure negative fixture; no runtime budget enforcement, deployed security-kernel behavior, or security-economics claim"
             },
             {
               "name": "Prompt-injection containment scenario",
@@ -7749,7 +7749,7 @@
             },
             {
               "name": "Resource budget ledger harness",
-              "purpose": "Check deterministic Resource Budget Record decisions for dispatch, escalation, protected overhead, displaced-cost residualization, review-capacity hoarding, evidence refs, and no-promotion boundaries.",
+              "purpose": "Check deterministic Resource Budget Record decisions for dispatch, escalation, protected overhead, security-overhead erasure rejection, displaced-cost residualization, review-capacity hoarding, evidence refs, and no-promotion boundaries.",
               "status": "implemented; passing via `python3 scripts/validate_resource_budget_ledgers.py`",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_resource_budget_ledgers.py`"

@@ -31,6 +31,38 @@ DISPLACED_COST_TERMS = {
 }
 REVIEW_CAPACITY_TERMS = {"human review", "reviewer", "review capacity", "manual review", "verifier"}
 SCARCE_CAPACITY_TERMS = {"scarce", "exhausted", "saturated", "limited", "protected"}
+SECURITY_OVERHEAD_ERASURE_TERMS = {
+    "drop scif",
+    "drop security",
+    "dropped scif",
+    "dropped security",
+    "remove approval",
+    "remove audit",
+    "remove isolation",
+    "remove logging",
+    "remove redaction",
+    "remove sanitization",
+    "removed approval",
+    "removed audit",
+    "removed isolation",
+    "removed logging",
+    "removed redaction",
+    "removed sanitization",
+    "security overhead removed",
+    "skip approval",
+    "skip audit",
+    "skip isolation",
+    "skip logging",
+    "skip redaction",
+    "skip sanitization",
+    "without approval",
+    "without audit",
+    "without isolation",
+    "without logging",
+    "without redaction",
+    "without sanitization",
+    "without scif",
+}
 
 
 def load_json(path: Path) -> Any:
@@ -137,6 +169,18 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
         record["protected_overhead"],
         record["safety_gates"],
     )
+    security_budget_text = text_blob(
+        record["value_hypothesis"],
+        record["cost_estimate"],
+        record["protected_overhead"],
+        record["quality_predicate"],
+        record["safety_gates"],
+        record["escalation_rule"],
+        record["residuals"],
+    )
+    if decision == "dispatch" and contains_any(security_budget_text, SECURITY_OVERHEAD_ERASURE_TERMS):
+        errors.append(f"{relative}: dispatch cannot claim savings by removing security, SCIF, approval, audit, logging, redaction, or sanitization overhead.")
+
     if contains_any(capacity_text, SCARCE_CAPACITY_TERMS) and blocked_high_risk_refs:
         if risk in {"low", "medium"} and decision == "dispatch" and contains_any(review_text, REVIEW_CAPACITY_TERMS):
             errors.append(

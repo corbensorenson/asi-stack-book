@@ -26,8 +26,8 @@ The reader throughline is:
 - Centered the chapter on the difference between local cheapness and
   full-system efficiency.
 - Preserved the Resource Budget Record, budget states, verification tax,
-  protected overhead, displaced costs, serving pressure, safety gates, and
-  residual accounting vocabulary.
+  protected overhead, security-overhead erasure rejection, displaced costs,
+  serving pressure, safety gates, and residual accounting vocabulary.
 - Kept the budget adequacy Mermaid diagram and its risk/capacity/protected-gate
   reading.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
@@ -81,7 +81,8 @@ The reader throughline is:
 - Human editorial review has not approved this chapter for reader release.
 - A stronger resource-economics evidence lane still needs workload-facing
   traces that name baseline, cost, quality predicate, verification tax,
-  protected overhead, displaced costs, negative controls, commands,
+  protected overhead, security-overhead erasure rejection, displaced costs,
+  negative controls, commands,
   limitations, counterevidence, and non-claims, plus production scheduler logs,
   measured displaced-cost accounting, physical-feasibility review, and measured
   simulation outputs where those claims are in scope.

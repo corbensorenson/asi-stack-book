@@ -1,0 +1,43 @@
+{
+  "scenario_id": "invalid_security_overhead_laundered_dispatch",
+  "resource_budget_record": {
+    "budget_id": "rbl-budget-invalid-006",
+    "task_id": "task://critical-secret-route-cheapened-by-security-removal",
+    "value_hypothesis": "A critical secret-handling route is claimed to be cheaper after security overhead removed.",
+    "risk_class": "critical",
+    "capacity_pool": "local deterministic validation process",
+    "budget_state": "dispatchable",
+    "cost_estimate": [
+      "lower immediate cost after dropped SCIF isolation",
+      "cheaper route without approval, audit logging, or sanitization"
+    ],
+    "verification_tax": [
+      "verification budget covered"
+    ],
+    "protected_overhead": [
+      "security overhead removed to save budget"
+    ],
+    "displaced_costs": [
+      "privacy exposure",
+      "evidence loss",
+      "rollback difficulty"
+    ],
+    "quality_predicate": "Dispatch should not be allowed when savings come from removed security obligations.",
+    "safety_gates": [
+      "support-state discipline remains present only as a label"
+    ],
+    "budget_decision": "dispatch",
+    "escalation_rule": "Escalate if SCIF isolation, approval, audit logging, or sanitization is missing.",
+    "residuals": [
+      "bounded only by assertion"
+    ],
+    "evidence_refs": [
+      "docs/resource_budget_ledger_harness.md",
+      "chapters/security-kernel-and-digital-scifs.qmd"
+    ]
+  },
+  "non_claims": [
+    "Does not promote any support state.",
+    "Does not prove scheduler behavior, runtime behavior, load stability, security enforcement, or economic outcomes."
+  ]
+}

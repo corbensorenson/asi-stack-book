@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-01 - Reject security-overhead budget laundering
+
+- Extended `scripts/validate_resource_budget_ledgers.py` with a
+  security-overhead erasure check so a dispatch record cannot claim savings by
+  removing SCIF, isolation, approval, audit/logging, redaction, or
+  sanitization overhead.
+- Added `invalid_security_overhead_laundered_dispatch.json`, an
+  expected-invalid Resource Budget Record fixture for a critical
+  secret-handling route that appears cheaper only because protected security
+  obligations are removed. The resource-budget ledger harness now passes with
+  5 valid and 6 expected-invalid fixtures.
+- Updated Security Kernel, Resource Economics, curated reader notes, the Phase
+  5 registry/crosswalk surfaces, and v1.x roadmap wording. This is synthetic
+  budget-record discipline only; it does not prove runtime budget enforcement,
+  deployed security-kernel behavior, SCIF isolation, logging quality,
+  sanitization quality, scheduler behavior, economic outcomes, model quality,
+  or support-state promotion.
+
 ## 2026-07-01 - Expand security-kernel negative fixtures
 
 - Extended `scripts/validate_security_kernel.py` with expired/stale/revoked

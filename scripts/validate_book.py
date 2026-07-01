@@ -194,7 +194,7 @@ REQUIRED = [
     "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/compact_gvr_slice/results/2026-07-01-local.json",
-    "experiments/resource_budget_ledgers/results/2026-06-28-local.md",
+    "experiments/resource_budget_ledgers/results/2026-07-01-local.md",
     "experiments/reference_trace/results/2026-06-30-local.md",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
     "experiments/artifact_graph_replay/results/2026-06-30-local.md",
