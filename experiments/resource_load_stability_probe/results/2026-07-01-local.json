@@ -1,0 +1,582 @@
+{
+  "artifact_refs": [
+    "scripts/run_resource_load_stability_probe.py",
+    "lean/AsiStackProofs/ResourceEconomics.lean",
+    "experiments/resource_load_stability_probe/results/2026-07-01-local.json"
+  ],
+  "baseline_route_id": "route://baseline-admit-arrivals",
+  "capacity_limit": 7,
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_resource_load_stability_probe.py --write-result",
+  "evidence_transition_created": false,
+  "horizon_ticks": 6,
+  "lean_fixture_alignment": {
+    "expected": {
+      "baseline_peak_capacity_overrun": 2,
+      "baseline_total_overrun": 5,
+      "negative_protected_review_violations": 3,
+      "route_count": 3,
+      "selected_deferred_task_ticks": 7,
+      "selected_peak_capacity_overrun": 0,
+      "selected_residualized_deferred_task_ticks": 7,
+      "selected_total_overrun": 0,
+      "task_count": 10
+    },
+    "module": "AsiStackProofs.ResourceEconomics",
+    "theorem_refs": [
+      "resource_load_smoothing_workload_fixture_valid",
+      "resource_load_smoothing_workload_reduces_overrun",
+      "resource_load_smoothing_workload_rejects_review_erasure",
+      "resource_load_smoothing_workload_residualizes_deferrals",
+      "resource_load_smoothing_workload_has_no_support_promotion"
+    ]
+  },
+  "local_only": true,
+  "negative_control_rejected": true,
+  "negative_control_route_id": "route://negative-latency-only-review-erasure",
+  "negative_control_uses_less_review_than_selected": true,
+  "non_claims": [
+    "This load-stability probe does not promote any chapter core claim above argument.",
+    "This load-stability probe does not create a support-state transition.",
+    "This load-stability probe does not prove TokenMana behavior, PlanForge behavior, deployed scheduler behavior, production queue behavior, real load stability, human productivity, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement outside this local synthetic repository workload.",
+    "The selected route is scoped to this finite burst-review workload only and does not replace production scheduler logs, live workload-quality review, human-repair measurement, external review, or the full book gate."
+  ],
+  "pass": true,
+  "probe_id": "resource-load-stability-probe-2026-07-01-local",
+  "record_kind": "resource_load_stability_probe",
+  "recorded_at_utc": "2026-07-01T22:59:40Z",
+  "residuals": [
+    "The workload is a deterministic local synthetic burst of repository-review tasks, not a production queue trace.",
+    "The selected route reduces overload in the finite workload by deferring lower-risk work, but those deferrals are residual costs rather than free savings.",
+    "The negative control shows that lower review minutes are invalid when protected high-risk review is erased or deferred work is hidden."
+  ],
+  "review_capacity_limit": 5,
+  "routes": [
+    {
+      "all_tasks_completed": true,
+      "completed_task_count": 10,
+      "completed_task_ids": [
+        "appendix-link-fix",
+        "ci-metadata-refresh",
+        "evidence-transition-review",
+        "external-source-note",
+        "index-cleanup",
+        "reader-overlay-polish",
+        "release-gate-audit",
+        "security-kernel-receipt",
+        "source-crosswalk-refresh",
+        "visual-alt-text-pass"
+      ],
+      "eligible": true,
+      "events": [
+        {
+          "admitted_task_ids": [
+            "release-gate-audit",
+            "source-crosswalk-refresh",
+            "appendix-link-fix"
+          ],
+          "capacity_overrun": 2,
+          "capacity_used": 9,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 5,
+          "review_overrun": 0,
+          "tick": 0
+        },
+        {
+          "admitted_task_ids": [
+            "security-kernel-receipt",
+            "ci-metadata-refresh",
+            "reader-overlay-polish"
+          ],
+          "capacity_overrun": 2,
+          "capacity_used": 9,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 5,
+          "review_overrun": 0,
+          "tick": 1
+        },
+        {
+          "admitted_task_ids": [
+            "evidence-transition-review",
+            "index-cleanup",
+            "visual-alt-text-pass"
+          ],
+          "capacity_overrun": 1,
+          "capacity_used": 8,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 4,
+          "review_overrun": 0,
+          "tick": 2
+        },
+        {
+          "admitted_task_ids": [
+            "external-source-note"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 3,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 2,
+          "review_overrun": 0,
+          "tick": 3
+        },
+        {
+          "admitted_task_ids": [],
+          "capacity_overrun": 0,
+          "capacity_used": 0,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 4
+        },
+        {
+          "admitted_task_ids": [],
+          "capacity_overrun": 0,
+          "capacity_used": 0,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 5
+        }
+      ],
+      "hidden_deferred_task_ids": [],
+      "load_instability_units": 5,
+      "peak_capacity_overrun": 2,
+      "peak_review_overrun": 0,
+      "protected_review_erased_task_ids": [],
+      "protected_review_violation_count": 0,
+      "quality_pass": true,
+      "quality_scope": "Admit every arriving task immediately with protected review intact, exposing burst overload.",
+      "residualized_deferred_task_ticks": 0,
+      "role": "baseline",
+      "route_id": "route://baseline-admit-arrivals",
+      "strategy": "admit_arrivals",
+      "total_capacity_overrun": 5,
+      "total_capacity_used": 29,
+      "total_deferred_task_ticks": 0,
+      "total_hidden_deferred_task_ticks": 0,
+      "total_review_minutes_used": 16,
+      "total_review_overrun": 0,
+      "total_value_points_completed": 440
+    },
+    {
+      "all_tasks_completed": true,
+      "completed_task_count": 10,
+      "completed_task_ids": [
+        "appendix-link-fix",
+        "ci-metadata-refresh",
+        "evidence-transition-review",
+        "external-source-note",
+        "index-cleanup",
+        "reader-overlay-polish",
+        "release-gate-audit",
+        "security-kernel-receipt",
+        "source-crosswalk-refresh",
+        "visual-alt-text-pass"
+      ],
+      "eligible": true,
+      "events": [
+        {
+          "admitted_task_ids": [
+            "release-gate-audit",
+            "source-crosswalk-refresh"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 7,
+          "deferred_task_ids": [
+            "appendix-link-fix"
+          ],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [
+            "residual://resource-burst-review-workload-v1/deferred/0/appendix-link-fix"
+          ],
+          "review_minutes_used": 5,
+          "review_overrun": 0,
+          "tick": 0
+        },
+        {
+          "admitted_task_ids": [
+            "security-kernel-receipt",
+            "ci-metadata-refresh"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 7,
+          "deferred_task_ids": [
+            "appendix-link-fix",
+            "reader-overlay-polish"
+          ],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [
+            "residual://resource-burst-review-workload-v1/deferred/1/appendix-link-fix",
+            "residual://resource-burst-review-workload-v1/deferred/1/reader-overlay-polish"
+          ],
+          "review_minutes_used": 4,
+          "review_overrun": 0,
+          "tick": 1
+        },
+        {
+          "admitted_task_ids": [
+            "evidence-transition-review",
+            "appendix-link-fix"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 6,
+          "deferred_task_ids": [
+            "reader-overlay-polish",
+            "index-cleanup",
+            "visual-alt-text-pass"
+          ],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [
+            "residual://resource-burst-review-workload-v1/deferred/2/reader-overlay-polish",
+            "residual://resource-burst-review-workload-v1/deferred/2/index-cleanup",
+            "residual://resource-burst-review-workload-v1/deferred/2/visual-alt-text-pass"
+          ],
+          "review_minutes_used": 3,
+          "review_overrun": 0,
+          "tick": 2
+        },
+        {
+          "admitted_task_ids": [
+            "external-source-note",
+            "reader-overlay-polish",
+            "index-cleanup"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 7,
+          "deferred_task_ids": [
+            "visual-alt-text-pass"
+          ],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [
+            "residual://resource-burst-review-workload-v1/deferred/3/visual-alt-text-pass"
+          ],
+          "review_minutes_used": 3,
+          "review_overrun": 0,
+          "tick": 3
+        },
+        {
+          "admitted_task_ids": [
+            "visual-alt-text-pass"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 2,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 1,
+          "review_overrun": 0,
+          "tick": 4
+        },
+        {
+          "admitted_task_ids": [],
+          "capacity_overrun": 0,
+          "capacity_used": 0,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 5
+        }
+      ],
+      "hidden_deferred_task_ids": [],
+      "load_instability_units": 0,
+      "peak_capacity_overrun": 0,
+      "peak_review_overrun": 0,
+      "protected_review_erased_task_ids": [],
+      "protected_review_violation_count": 0,
+      "quality_pass": true,
+      "quality_scope": "Admit high-risk work first within capacity, defer low-risk work with residual ownership, and preserve protected review.",
+      "residualized_deferred_task_ticks": 7,
+      "role": "selected",
+      "route_id": "route://selected-protected-capacity-smoothing",
+      "strategy": "protected_capacity_smoothing",
+      "total_capacity_overrun": 0,
+      "total_capacity_used": 29,
+      "total_deferred_task_ticks": 7,
+      "total_hidden_deferred_task_ticks": 0,
+      "total_review_minutes_used": 16,
+      "total_review_overrun": 0,
+      "total_value_points_completed": 440
+    },
+    {
+      "all_tasks_completed": true,
+      "completed_task_count": 10,
+      "completed_task_ids": [
+        "appendix-link-fix",
+        "ci-metadata-refresh",
+        "evidence-transition-review",
+        "external-source-note",
+        "index-cleanup",
+        "reader-overlay-polish",
+        "release-gate-audit",
+        "security-kernel-receipt",
+        "source-crosswalk-refresh",
+        "visual-alt-text-pass"
+      ],
+      "eligible": false,
+      "events": [
+        {
+          "admitted_task_ids": [
+            "release-gate-audit",
+            "source-crosswalk-refresh"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 7,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [
+            "appendix-link-fix"
+          ],
+          "protected_review_erased_task_ids": [
+            "release-gate-audit"
+          ],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 0
+        },
+        {
+          "admitted_task_ids": [
+            "security-kernel-receipt",
+            "ci-metadata-refresh"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 7,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [
+            "appendix-link-fix",
+            "reader-overlay-polish"
+          ],
+          "protected_review_erased_task_ids": [
+            "security-kernel-receipt"
+          ],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 1
+        },
+        {
+          "admitted_task_ids": [
+            "evidence-transition-review",
+            "appendix-link-fix"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 6,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [
+            "reader-overlay-polish",
+            "index-cleanup",
+            "visual-alt-text-pass"
+          ],
+          "protected_review_erased_task_ids": [
+            "evidence-transition-review"
+          ],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 2
+        },
+        {
+          "admitted_task_ids": [
+            "external-source-note",
+            "reader-overlay-polish",
+            "index-cleanup"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 7,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [
+            "visual-alt-text-pass"
+          ],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 3
+        },
+        {
+          "admitted_task_ids": [
+            "visual-alt-text-pass"
+          ],
+          "capacity_overrun": 0,
+          "capacity_used": 2,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 4
+        },
+        {
+          "admitted_task_ids": [],
+          "capacity_overrun": 0,
+          "capacity_used": 0,
+          "deferred_task_ids": [],
+          "hidden_deferred_task_ids": [],
+          "protected_review_erased_task_ids": [],
+          "residual_refs": [],
+          "review_minutes_used": 0,
+          "review_overrun": 0,
+          "tick": 5
+        }
+      ],
+      "hidden_deferred_task_ids": [
+        "appendix-link-fix",
+        "index-cleanup",
+        "reader-overlay-polish",
+        "visual-alt-text-pass"
+      ],
+      "load_instability_units": 0,
+      "peak_capacity_overrun": 0,
+      "peak_review_overrun": 0,
+      "protected_review_erased_task_ids": [
+        "evidence-transition-review",
+        "release-gate-audit",
+        "security-kernel-receipt"
+      ],
+      "protected_review_violation_count": 3,
+      "quality_pass": false,
+      "quality_scope": "Invalid shortcut that keeps capacity low by erasing protected review and hidden deferrals.",
+      "residualized_deferred_task_ticks": 0,
+      "role": "negative_control",
+      "route_id": "route://negative-latency-only-review-erasure",
+      "strategy": "latency_only_review_erasure",
+      "total_capacity_overrun": 0,
+      "total_capacity_used": 29,
+      "total_deferred_task_ticks": 0,
+      "total_hidden_deferred_task_ticks": 7,
+      "total_review_minutes_used": 0,
+      "total_review_overrun": 0,
+      "total_value_points_completed": 440
+    }
+  ],
+  "selected_has_no_capacity_or_review_overrun": true,
+  "selected_residualized_all_deferrals": true,
+  "selected_route_id": "route://selected-protected-capacity-smoothing",
+  "selected_vs_baseline_instability_reduction_percent": 100.0,
+  "summary": "Local synthetic Resource Economics load-stability probe selected protected capacity smoothing over admit-arrivals baseline by reducing finite workload overload while rejecting a cheaper review-erasure route.",
+  "support_state_effect": "none",
+  "synthetic_only": true,
+  "tracked_artifacts": [
+    {
+      "bytes": 18615,
+      "lines": 466,
+      "path": "scripts/run_resource_load_stability_probe.py",
+      "sha256": "4ac73bfc0a61342b51a02ba53b88b5eecf178b5d8910ed3d26a8558ec61c1f90"
+    },
+    {
+      "bytes": 22958,
+      "lines": 629,
+      "path": "lean/AsiStackProofs/ResourceEconomics.lean",
+      "sha256": "a763d86fa25390693cf13e2973338d9a00d2a33001436b490d1174f08324c742"
+    }
+  ],
+  "workload": [
+    {
+      "arrival_tick": 0,
+      "capacity_cost": 4,
+      "review_minutes": 3,
+      "risk": "critical",
+      "task_id": "release-gate-audit",
+      "value_points": 90
+    },
+    {
+      "arrival_tick": 0,
+      "capacity_cost": 3,
+      "review_minutes": 2,
+      "risk": "medium",
+      "task_id": "source-crosswalk-refresh",
+      "value_points": 45
+    },
+    {
+      "arrival_tick": 0,
+      "capacity_cost": 2,
+      "review_minutes": 0,
+      "risk": "low",
+      "task_id": "appendix-link-fix",
+      "value_points": 15
+    },
+    {
+      "arrival_tick": 1,
+      "capacity_cost": 4,
+      "review_minutes": 3,
+      "risk": "high",
+      "task_id": "security-kernel-receipt",
+      "value_points": 80
+    },
+    {
+      "arrival_tick": 1,
+      "capacity_cost": 3,
+      "review_minutes": 1,
+      "risk": "medium",
+      "task_id": "ci-metadata-refresh",
+      "value_points": 40
+    },
+    {
+      "arrival_tick": 1,
+      "capacity_cost": 2,
+      "review_minutes": 1,
+      "risk": "low",
+      "task_id": "reader-overlay-polish",
+      "value_points": 20
+    },
+    {
+      "arrival_tick": 2,
+      "capacity_cost": 4,
+      "review_minutes": 3,
+      "risk": "high",
+      "task_id": "evidence-transition-review",
+      "value_points": 85
+    },
+    {
+      "arrival_tick": 2,
+      "capacity_cost": 2,
+      "review_minutes": 0,
+      "risk": "low",
+      "task_id": "index-cleanup",
+      "value_points": 10
+    },
+    {
+      "arrival_tick": 2,
+      "capacity_cost": 2,
+      "review_minutes": 1,
+      "risk": "low",
+      "task_id": "visual-alt-text-pass",
+      "value_points": 20
+    },
+    {
+      "arrival_tick": 3,
+      "capacity_cost": 3,
+      "review_minutes": 2,
+      "risk": "medium",
+      "task_id": "external-source-note",
+      "value_points": 35
+    }
+  ],
+  "workload_id": "resource-burst-review-workload-v1"
+}

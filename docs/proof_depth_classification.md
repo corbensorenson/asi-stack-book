@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 144 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 781 |
-| Direct/projection-style theorem declarations | 155 |
-| Derived/decomposed theorem declarations | 622 |
+| Theorem declarations classified | 786 |
+| Direct/projection-style theorem declarations | 157 |
+| Derived/decomposed theorem declarations | 625 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -90,7 +90,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 19 | 8 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 6 | 29 | 13 | 13 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 6 | 34 | 15 | 16 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 17 | 4 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 2 | 8 | 3 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -671,6 +671,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_review_without_protected_overhead_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_task_with_insufficient_verification_budget_is_not_dispatched` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `required_safety_gate_disabled_rejects_budget_gate_preservation` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_fixture_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_has_no_support_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_reduces_overrun` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_rejects_review_erasure` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_residualizes_deferrals` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_events_keep_high_risk_first` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_events_preserve_guard_flags` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_events_roll_up_to_summary` | unknown_or_mixed | no | no recognized depth pattern |

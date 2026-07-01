@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-01 - Add Resource load-stability probe
+
+- Added `scripts/run_resource_load_stability_probe.py` and
+  `scripts/validate_resource_load_stability_probe.py` for a bounded Resource
+  Economics burst-workload slice.
+- Added `docs/resource_load_stability_probe.md` and
+  `experiments/resource_load_stability_probe/results/2026-07-01-local.json`.
+  The result records a 10-task local synthetic review workload, an
+  admit-arrivals baseline with 5 finite overload units, a selected protected
+  capacity-smoothing route with 0 overload units and 7 residualized deferrals,
+  and a cheaper review-erasure negative control with 3 protected-review
+  violations plus hidden deferrals.
+- Added a finite `AsiStackProofs.ResourceEconomics` load-smoothing fixture
+  bridge and wired the probe into the Resource Economics chapter, outline,
+  manifest, Appendix E generation, v1.x evidence-cycle status, v1.0 status
+  guards, the Resource no-change transition, publication readiness, and book
+  validation. This is local synthetic workload evidence only; it does not prove
+  TokenMana behavior, PlanForge behavior, deployed scheduler behavior,
+  production queue behavior, real load stability, human productivity, model
+  quality, economic outcomes, external review, or support-state promotion.
+
 ## 2026-07-01 - Repeat Resource workload-quality probe samples
 
 - Hardened `scripts/run_resource_workload_quality_probe.py` and

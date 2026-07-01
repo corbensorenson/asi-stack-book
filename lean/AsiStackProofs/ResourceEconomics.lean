@@ -564,4 +564,66 @@ theorem blocked_protected_review_requires_displaced_cost_residual
   rw [notResidualized] at residualized
   cases residualized
 
+structure LoadSmoothingWorkloadSummary where
+  taskCount : Nat
+  routeCount : Nat
+  baselinePeakCapacityOverrun : Nat
+  baselineTotalOverrun : Nat
+  selectedPeakCapacityOverrun : Nat
+  selectedTotalOverrun : Nat
+  selectedDeferredTaskTicks : Nat
+  selectedResidualizedDeferredTaskTicks : Nat
+  negativeProtectedReviewViolations : Nat
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def LoadSmoothingWorkloadValid (summary : LoadSmoothingWorkloadSummary) : Prop :=
+  summary.taskCount = 10 ∧
+    summary.routeCount = 3 ∧
+    summary.baselinePeakCapacityOverrun = 2 ∧
+    summary.baselineTotalOverrun = 5 ∧
+    summary.selectedPeakCapacityOverrun = 0 ∧
+    summary.selectedTotalOverrun = 0 ∧
+    summary.selectedDeferredTaskTicks = 7 ∧
+    summary.selectedResidualizedDeferredTaskTicks = 7 ∧
+    summary.negativeProtectedReviewViolations = 3 ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+def resourceLoadSmoothingWorkloadFixture : LoadSmoothingWorkloadSummary :=
+  { taskCount := 10,
+    routeCount := 3,
+    baselinePeakCapacityOverrun := 2,
+    baselineTotalOverrun := 5,
+    selectedPeakCapacityOverrun := 0,
+    selectedTotalOverrun := 0,
+    selectedDeferredTaskTicks := 7,
+    selectedResidualizedDeferredTaskTicks := 7,
+    negativeProtectedReviewViolations := 3,
+    supportStateEffectNone := true,
+    nonClaimBoundary := true }
+
+theorem resource_load_smoothing_workload_fixture_valid :
+    LoadSmoothingWorkloadValid resourceLoadSmoothingWorkloadFixture := by
+  simp [LoadSmoothingWorkloadValid, resourceLoadSmoothingWorkloadFixture]
+
+theorem resource_load_smoothing_workload_reduces_overrun :
+    resourceLoadSmoothingWorkloadFixture.selectedTotalOverrun <
+      resourceLoadSmoothingWorkloadFixture.baselineTotalOverrun := by
+  simp [resourceLoadSmoothingWorkloadFixture]
+
+theorem resource_load_smoothing_workload_rejects_review_erasure :
+    0 < resourceLoadSmoothingWorkloadFixture.negativeProtectedReviewViolations := by
+  simp [resourceLoadSmoothingWorkloadFixture]
+
+theorem resource_load_smoothing_workload_residualizes_deferrals :
+    resourceLoadSmoothingWorkloadFixture.selectedDeferredTaskTicks =
+      resourceLoadSmoothingWorkloadFixture.selectedResidualizedDeferredTaskTicks := by
+  rfl
+
+theorem resource_load_smoothing_workload_has_no_support_promotion :
+    resourceLoadSmoothingWorkloadFixture.supportStateEffectNone = true := by
+  rfl
+
 end AsiStackProofs.ResourceEconomics
