@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 135 |
+| Proof targets in manifest | 136 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 616 |
+| Theorem declarations classified | 632 |
 | Direct/projection-style theorem declarations | 121 |
-| Derived/decomposed theorem declarations | 495 |
+| Derived/decomposed theorem declarations | 511 |
 | Unknown or mixed theorem declarations | 0 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -78,7 +78,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 4 | 6 | 4 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 5 | 22 | 4 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 2 | 9 | 6 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | policy-optimization-and-learning-from-feedback | 3 | 15 | 5 | 10 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -453,11 +453,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_requires_readiness_regression_and_replay_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `unavailable_text_only_with_promotion_above_argument_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `admitted_hive_job_has_identity_data_tool_federation_and_approval_checks` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `complete_hive_work_admission_review_admits` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_missing_lease_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_requires_lease_scope_sandbox_evidence_expiration_and_revocation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_without_lease_requires_federation_lease` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `external_hive_access_without_sandbox_requires_sandbox_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `faster_forbidden_node_cannot_be_selected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `high_risk_hive_job_missing_bound_approval_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `high_risk_hive_job_without_bound_approval_cannot_execute` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `high_risk_hive_job_without_portal_approval_requires_approval` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `hive_support_promotion_requires_evidence_transition` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `malformed_hive_job_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_audit_receipt_requires_receipt_plan` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_cost_budget_requires_cost_budget` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_data_policy_requires_data_policy` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_device_registry_requires_registry` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_dropout_plan_requires_dropout_plan` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_energy_budget_requires_energy_budget` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_identity_policy_requires_identity_policy` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_residual_owner_requires_residual_owner` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_scheduler_policy_requires_scheduler_policy` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | `missing_hive_tool_policy_requires_tool_policy` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PlanForge.lean` | `dependency_precedence_blocks_self_dependency` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/PlanForge.lean` | `dispatchable_plan_graph_is_index_acyclic_and_ordered` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PlanForge.lean` | `dispatchable_plan_graph_orders_member_edges` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

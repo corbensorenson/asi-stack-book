@@ -1938,9 +1938,11 @@ Draft deliverables:
 - Implemented Lean predicate: a faster node forbidden by policy cannot be selected.
 - Implemented Lean predicate: high-risk hive jobs that require approval require a bound approval receipt before execution.
 - Implemented Lean predicate: external hive access requires active lease, scope, sandbox, evidence, expiration, and revocation records.
+- Implemented Lean route predicate: finite hive-work admission reviews route malformed jobs, missing identity/data/tool policy, registry gaps, scheduler-policy gaps, high-risk jobs without approval, external access without leases or sandbox records, missing cost or energy budgets, missing dropout plans, missing audit receipt plans, missing residual owners, and support-promotion attempts without evidence transitions into explicit outcomes; no scheduler, registry, portal, device, rented-node, or federation behavior is claimed.
 - Implemented Codex test: Device registry fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Portal, approval, bid, and federation fixture validation through `validate_protocol_examples.py`.
 - Implemented Codex test: Policy-first scheduling denial as a finite Lean predicate only.
+- Implemented Codex test: Hive work admission lifecycle route as a finite Lean route predicate only.
 - Planned Codex test: Data locality and rented-node denial test.
 - Planned Codex test: Phone approval gate test.
 - Planned Codex test: Child topic routing test.
@@ -1960,6 +1962,7 @@ Lean proof targets:
 | `lean:personal_hives.policy_first.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A faster node cannot be selected when its policy membrane forbids the job's data, authority, or network scope. | implemented |
 | `lean:personal_hives.approval_gate.failure_blocks_promotion` | `AsiStackProofs.PersonalComputeHives` | A high-risk hive job that requires approval cannot execute unless a bound approval receipt is present. | implemented |
 | `lean:personal_hives.federation_lease.operational_invariant` | `AsiStackProofs.PersonalComputeHives` | External hive access requires an active lease with scope, sandbox, evidence, expiration, and revocation records. | implemented |
+| `lean:personal_hives.work_admission.lifecycle_route` | `AsiStackProofs.PersonalComputeHives` | A structured hive-work admission review routes malformed jobs, missing identity/data/tool policy, registry gaps, scheduler-policy gaps, high-risk jobs without portal approval, external access without leases or sandbox records, missing cost or energy budgets, missing dropout plans, missing audit receipt plans, missing residual owners, and support-promotion attempts without evidence transitions into explicit outcomes. | implemented |
 
 ### Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty
 
@@ -2634,8 +2637,8 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 135 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 135 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: Appendix E summarizes all 136 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 136 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

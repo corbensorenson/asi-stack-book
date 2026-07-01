@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-07-01 - Personal hive work admission proof
+
+- Strengthened `AsiStackProofs.PersonalComputeHives` with a finite
+  `HiveWorkAdmissionRoute`, `HiveWorkAdmissionReview`, and
+  `HiveWorkAdmissionRouteFor` decision surface over malformed jobs,
+  identity/data/tool policy, device registry state, scheduler policy, portal
+  approvals, federation leases, sandbox records, cost budgets, energy budgets,
+  dropout plans, audit receipt plans, residual ownership, support-promotion
+  requests, and evidence-transition records.
+- Added the fifth Personal Compute Hives proof target,
+  `lean:personal_hives.work_admission.lifecycle_route`, plus route theorems
+  showing that malformed jobs, missing identity/data/tool policy, registry
+  gaps, scheduler-policy gaps, high-risk jobs without portal approval, external
+  access without leases or sandbox records, missing cost or energy budgets,
+  missing dropout plans, missing audit receipt plans, missing residual owners,
+  and support-promotion attempts without evidence transitions route to explicit
+  outcomes.
+- Regenerated the proof manifest, proof triage, Appendix E, proof artifact
+  audit, and proof-depth classifier. Appendix E now records 337 generated
+  chapter-level rows: 237 implemented, 1 partial, and 99 planned. The proof
+  manifest now has 136 implemented targets, and the proof-depth classifier now
+  reports 632 theorem declarations, 121 direct/projection-style declarations,
+  and 511 derived/decomposed declarations.
+- Updated the Personal Compute Hives chapter, book outline, proof adequacy
+  review, v1.x/v1.0 roadmap/status surfaces, focus audit, proof/code plan,
+  manuscript status, proof-envelope chapter, and status snapshot guard. This
+  does not promote, demote, deprecate, or refute any live claim or prove
+  scheduler behavior, registry behavior, portal approval quality, device behavior,
+  rented-node sandbox isolation, federation behavior, energy-aware scheduling,
+  dropout recovery, audit replay, residual-ledger behavior, support-state
+  promotion, reader artifact approval, release status, model capability, or
+  audio artifact readiness.
+
 ## 2026-07-01 - Context certificate lifecycle proof
 
 - Strengthened `AsiStackProofs.ContextCertificates` with a finite

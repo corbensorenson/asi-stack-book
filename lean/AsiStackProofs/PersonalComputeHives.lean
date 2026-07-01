@@ -171,4 +171,377 @@ theorem external_hive_access_missing_lease_boundary_rejected
                                           rw [missingRevocation] at revocation
                                           contradiction
 
+inductive HiveWorkAdmissionRoute where
+  | rejectMalformedJob
+  | requireIdentityPolicy
+  | requireDataPolicy
+  | requireToolPolicy
+  | requireDeviceRegistry
+  | requireSchedulerPolicy
+  | requirePortalApproval
+  | requireFederationLease
+  | requireSandboxRecord
+  | requireCostBudget
+  | requireEnergyBudget
+  | requireDropoutPlan
+  | requireAuditReceipt
+  | requireResidualOwner
+  | requireEvidenceTransition
+  | admitHiveWork
+deriving DecidableEq, Repr
+
+structure HiveWorkAdmissionReview where
+  jobWellFormed : Bool
+  identityPolicyPassed : Bool
+  dataPolicyPassed : Bool
+  toolPolicyPassed : Bool
+  deviceRegistryReady : Bool
+  schedulerPolicyPassed : Bool
+  highRiskJob : Bool
+  portalApprovalPresent : Bool
+  externalHiveAccessRequested : Bool
+  federationLeasePresent : Bool
+  sandboxRecordPresent : Bool
+  costBudgetRecorded : Bool
+  energyBudgetRecorded : Bool
+  dropoutPlanRecorded : Bool
+  auditReceiptPlanned : Bool
+  residualOwnerRecorded : Bool
+  supportPromotionRequested : Bool
+  evidenceTransitionRecorded : Bool
+deriving DecidableEq, Repr
+
+def HiveWorkAdmissionRouteFor
+    (review : HiveWorkAdmissionReview) : HiveWorkAdmissionRoute :=
+  if review.jobWellFormed = false then
+    HiveWorkAdmissionRoute.rejectMalformedJob
+  else if review.identityPolicyPassed = false then
+    HiveWorkAdmissionRoute.requireIdentityPolicy
+  else if review.dataPolicyPassed = false then
+    HiveWorkAdmissionRoute.requireDataPolicy
+  else if review.toolPolicyPassed = false then
+    HiveWorkAdmissionRoute.requireToolPolicy
+  else if review.deviceRegistryReady = false then
+    HiveWorkAdmissionRoute.requireDeviceRegistry
+  else if review.schedulerPolicyPassed = false then
+    HiveWorkAdmissionRoute.requireSchedulerPolicy
+  else if review.highRiskJob = true ∧
+      review.portalApprovalPresent = false then
+    HiveWorkAdmissionRoute.requirePortalApproval
+  else if review.externalHiveAccessRequested = true ∧
+      review.federationLeasePresent = false then
+    HiveWorkAdmissionRoute.requireFederationLease
+  else if review.externalHiveAccessRequested = true ∧
+      review.sandboxRecordPresent = false then
+    HiveWorkAdmissionRoute.requireSandboxRecord
+  else if review.costBudgetRecorded = false then
+    HiveWorkAdmissionRoute.requireCostBudget
+  else if review.energyBudgetRecorded = false then
+    HiveWorkAdmissionRoute.requireEnergyBudget
+  else if review.dropoutPlanRecorded = false then
+    HiveWorkAdmissionRoute.requireDropoutPlan
+  else if review.auditReceiptPlanned = false then
+    HiveWorkAdmissionRoute.requireAuditReceipt
+  else if review.residualOwnerRecorded = false then
+    HiveWorkAdmissionRoute.requireResidualOwner
+  else if review.supportPromotionRequested = true ∧
+      review.evidenceTransitionRecorded = false then
+    HiveWorkAdmissionRoute.requireEvidenceTransition
+  else
+    HiveWorkAdmissionRoute.admitHiveWork
+
+theorem malformed_hive_job_rejected
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.rejectMalformedJob := by
+  intro malformed
+  unfold HiveWorkAdmissionRouteFor
+  simp [malformed]
+
+theorem missing_hive_identity_policy_requires_identity_policy
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireIdentityPolicy := by
+  intro wellFormed missingIdentity
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, missingIdentity]
+
+theorem missing_hive_data_policy_requires_data_policy
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireDataPolicy := by
+  intro wellFormed identityPassed missingData
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, missingData]
+
+theorem missing_hive_tool_policy_requires_tool_policy
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireToolPolicy := by
+  intro wellFormed identityPassed dataPassed missingTool
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, missingTool]
+
+theorem missing_hive_device_registry_requires_registry
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireDeviceRegistry := by
+  intro wellFormed identityPassed dataPassed toolPassed missingRegistry
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, missingRegistry]
+
+theorem missing_hive_scheduler_policy_requires_scheduler_policy
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireSchedulerPolicy := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    missingSchedulerPolicy
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    missingSchedulerPolicy]
+
+theorem high_risk_hive_job_without_portal_approval_requires_approval
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = true ->
+    review.portalApprovalPresent = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requirePortalApproval := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed highRisk missingApproval
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, highRisk, missingApproval]
+
+theorem external_hive_access_without_lease_requires_federation_lease
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = true ->
+    review.federationLeasePresent = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireFederationLease := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk externalAccess missingLease
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, externalAccess, missingLease]
+
+theorem external_hive_access_without_sandbox_requires_sandbox_record
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = true ->
+    review.federationLeasePresent = true ->
+    review.sandboxRecordPresent = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireSandboxRecord := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk externalAccess leasePresent missingSandbox
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, externalAccess, leasePresent, missingSandbox]
+
+theorem missing_hive_cost_budget_requires_cost_budget
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = false ->
+    review.costBudgetRecorded = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireCostBudget := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk noExternal missingCost
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, noExternal, missingCost]
+
+theorem missing_hive_energy_budget_requires_energy_budget
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = false ->
+    review.costBudgetRecorded = true ->
+    review.energyBudgetRecorded = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireEnergyBudget := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk noExternal costRecorded missingEnergy
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, noExternal, costRecorded, missingEnergy]
+
+theorem missing_hive_dropout_plan_requires_dropout_plan
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = false ->
+    review.costBudgetRecorded = true ->
+    review.energyBudgetRecorded = true ->
+    review.dropoutPlanRecorded = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireDropoutPlan := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk noExternal costRecorded energyRecorded
+    missingDropout
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, noExternal, costRecorded, energyRecorded,
+    missingDropout]
+
+theorem missing_hive_audit_receipt_requires_receipt_plan
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = false ->
+    review.costBudgetRecorded = true ->
+    review.energyBudgetRecorded = true ->
+    review.dropoutPlanRecorded = true ->
+    review.auditReceiptPlanned = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireAuditReceipt := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk noExternal costRecorded energyRecorded
+    dropoutRecorded missingReceipt
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, noExternal, costRecorded, energyRecorded,
+    dropoutRecorded, missingReceipt]
+
+theorem missing_hive_residual_owner_requires_residual_owner
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = false ->
+    review.costBudgetRecorded = true ->
+    review.energyBudgetRecorded = true ->
+    review.dropoutPlanRecorded = true ->
+    review.auditReceiptPlanned = true ->
+    review.residualOwnerRecorded = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireResidualOwner := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk noExternal costRecorded energyRecorded
+    dropoutRecorded receiptPlanned missingResidualOwner
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, noExternal, costRecorded, energyRecorded,
+    dropoutRecorded, receiptPlanned, missingResidualOwner]
+
+theorem hive_support_promotion_requires_evidence_transition
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = false ->
+    review.costBudgetRecorded = true ->
+    review.energyBudgetRecorded = true ->
+    review.dropoutPlanRecorded = true ->
+    review.auditReceiptPlanned = true ->
+    review.residualOwnerRecorded = true ->
+    review.supportPromotionRequested = true ->
+    review.evidenceTransitionRecorded = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.requireEvidenceTransition := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk noExternal costRecorded energyRecorded
+    dropoutRecorded receiptPlanned residualOwner promotionRequested
+    missingTransition
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, noExternal, costRecorded, energyRecorded,
+    dropoutRecorded, receiptPlanned, residualOwner, promotionRequested,
+    missingTransition]
+
+theorem complete_hive_work_admission_review_admits
+    {review : HiveWorkAdmissionReview} :
+    review.jobWellFormed = true ->
+    review.identityPolicyPassed = true ->
+    review.dataPolicyPassed = true ->
+    review.toolPolicyPassed = true ->
+    review.deviceRegistryReady = true ->
+    review.schedulerPolicyPassed = true ->
+    review.highRiskJob = false ->
+    review.externalHiveAccessRequested = false ->
+    review.costBudgetRecorded = true ->
+    review.energyBudgetRecorded = true ->
+    review.dropoutPlanRecorded = true ->
+    review.auditReceiptPlanned = true ->
+    review.residualOwnerRecorded = true ->
+    review.supportPromotionRequested = false ->
+    HiveWorkAdmissionRouteFor review =
+      HiveWorkAdmissionRoute.admitHiveWork := by
+  intro wellFormed identityPassed dataPassed toolPassed registryReady
+    schedulerPassed notHighRisk noExternal costRecorded energyRecorded
+    dropoutRecorded receiptPlanned residualOwner noPromotion
+  unfold HiveWorkAdmissionRouteFor
+  simp [wellFormed, identityPassed, dataPassed, toolPassed, registryReady,
+    schedulerPassed, notHighRisk, noExternal, costRecorded, energyRecorded,
+    dropoutRecorded, receiptPlanned, residualOwner, noPromotion]
+
 end AsiStackProofs.PersonalComputeHives
