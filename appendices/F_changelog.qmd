@@ -1,5 +1,39 @@
 # Changelog
 
+## 2026-07-01 - Efficient ASI claim admission lifecycle proof
+
+- Strengthened `AsiStackProofs.Efficiency` with a finite
+  `EfficiencyClaimAdmissionRoute`, `EfficiencyClaimAdmissionReview`, and
+  `EfficiencyClaimAdmissionRouteFor` decision surface over efficiency-claim
+  requests, task contracts, quality predicates, selected routes, candidate
+  sets, lower-cost comparisons, cost-class ledgers, complete visible-cost
+  records, verification results, quality failures, authority bypasses,
+  residual records, fallback routes, hidden-cost audits, benchmark or trace
+  records, negative controls, evidence-transition records, and non-claim
+  boundaries.
+- Added the third Efficient ASI proof target,
+  `lean:efficiency.claim_admission_lifecycle_route`, plus derived route
+  theorems showing that missing task contracts, quality predicates, selected
+  routes, candidate sets, lower-cost comparisons, cost ledgers, complete
+  visible costs, verification results, residual records, fallback routes,
+  hidden-cost audits, benchmark or trace records, negative controls,
+  evidence-transition records, and non-claim boundaries route to explicit
+  modeled outcomes before the finite record is admitted.
+- Regenerated the proof manifest, proof triage/readiness surfaces, Appendix E,
+  proof artifact audit, and proof-depth classifier. Appendix E now records 330
+  generated chapter-level rows: 230 implemented, 1 partial, and 99 planned. The
+  proof manifest now has 129 implemented targets, and the proof-depth
+  classifier now reports 514 theorem declarations, 121 direct/projection-style
+  declarations, and 393 derived/decomposed declarations.
+- Updated the Efficient ASI chapter, book outline, proof adequacy review,
+  v1.x/v1.0 roadmap/status surfaces, focus audit, publication readiness,
+  repository map, proof/code plan, manuscript status, and status snapshot
+  guard. This does not promote, demote, deprecate, or refute any live claim;
+  prove measured efficiency, route-search completeness, cost-estimate
+  accuracy, route quality, residual-burden measurement, hidden-cost detection
+  quality, benchmark performance, compression utility, support-state promotion,
+  reader artifact approval, release status, or audio artifact readiness.
+
 ## 2026-07-01 - Fast generation admission lifecycle proof
 
 - Strengthened `AsiStackProofs.FastGeneration` with a finite

@@ -51,6 +51,16 @@
       "rationale": "Implemented in AsiStackProofs.Efficiency as a finite residual-promotion predicate: promoted work with open obligations must include a residual record."
     },
     {
+      "tag": "lean:efficiency.claim_admission_lifecycle_route",
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "module": "AsiStackProofs.Efficiency",
+      "formal_target": "Modeled efficiency-claim admission routes missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Efficiency as a finite efficiency-claim admission route over explicit accounting, verification, hidden-cost, evidence-transition, and non-claim-boundary records; it does not prove measured efficiency, route-search completeness, cost-estimate accuracy, route quality, benchmark performance, or support-state promotion."
+    },
+    {
       "tag": "lean:authority.ceiling.operational_invariant",
       "chapter_id": "system-boundaries-and-authority",
       "module": "AsiStackProofs.Authority",

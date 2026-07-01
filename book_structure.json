@@ -433,6 +433,13 @@
               "result_status": "passes via Lean negative case; no residual-burden measurement or utility-preservation claim",
               "status": "implemented in AsiStackProofs.Efficiency; no residual-burden measurement or utility-preservation claim"
             },
+            {
+              "name": "Efficiency-claim admission lifecycle route",
+              "purpose": "Check that finite efficiency-claim admission requests missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, residual records, fallback routes, hidden-cost audits, benchmark or trace records, negative controls, evidence transitions, and non-claim boundaries before admitting the record.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean route theorems; no measured efficiency, route-search completeness, cost-estimate accuracy, route-quality, residual-burden, benchmark-performance, or support-promotion claim",
+              "status": "implemented in AsiStackProofs.Efficiency; no measured efficiency or route-search completeness claim"
+            },
             "Minimum viable route test",
             "Residual burden accounting test",
             "Utility-preserving compression test"
@@ -449,6 +456,12 @@
               "tag": "lean:efficiency.minimum_viable.failure_blocks_promotion",
               "module": "AsiStackProofs.Efficiency",
               "target": "A routed or compressed result with open obligations cannot be promoted without a residual record.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:efficiency.claim_admission_lifecycle_route",
+              "module": "AsiStackProofs.Efficiency",
+              "target": "Modeled efficiency-claim admission routes missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
               "status": "implemented"
             }
           ]

@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 128 |
-| Manifest status counts | {"implemented": 128} |
-| Triage class counts | {"formal-invariant": 128} |
+| Proof targets audited | 129 |
+| Manifest status counts | {"implemented": 129} |
+| Triage class counts | {"formal-invariant": 129} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -47,7 +47,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ContextTransactions.lean` | 2 | 5 | 6 | 5 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 5 | 5 |
-| `lean/AsiStackProofs/Efficiency.lean` | 2 | 4 | 3 | 2 |
+| `lean/AsiStackProofs/Efficiency.lean` | 3 | 23 | 5 | 3 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 3 | 24 | 12 | 3 |
 | `lean/AsiStackProofs/FailureModes.lean` | 2 | 6 | 3 | 2 |
 | `lean/AsiStackProofs/FastGeneration.lean` | 3 | 27 | 11 | 6 |
@@ -131,7 +131,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `spinoza-verification-and-proof-carrying-claims` | 4 | 4 | 0 | 0 |
 | `stable-capability-fields` | 3 | 3 | 0 | 0 |
 | `system-boundaries-and-authority` | 2 | 2 | 0 | 0 |
-| `the-efficient-asi-hypothesis` | 2 | 2 | 0 | 0 |
+| `the-efficient-asi-hypothesis` | 3 | 3 | 0 | 0 |
 | `verification-bandwidth-and-context-adequacy` | 3 | 3 | 0 | 0 |
 | `virtual-context-abi` | 5 | 5 | 0 | 0 |
 
@@ -143,6 +143,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:stack.layer_boundaries.failure_blocks_promotion` | `asi-is-a-stack-not-a-model` | `AsiStackProofs.StackBoundaries` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.minimum_viable.operational_invariant` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.minimum_viable.failure_blocks_promotion` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:efficiency.claim_admission_lifecycle_route` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.ceiling.operational_invariant` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.ceiling.failure_blocks_promotion` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.invariant_violation.operational_invariant` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
