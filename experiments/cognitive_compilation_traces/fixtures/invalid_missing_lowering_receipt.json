@@ -1,0 +1,134 @@
+{
+  "scenario_id": "cc-invalid-missing-receipt",
+  "source_plan": {
+    "plan_id": "source-plan://cc-invalid-missing-receipt-001",
+    "requirements": [
+      "obligation://preserve-source-boundary"
+    ],
+    "constraints": [
+      "constraint://no-support-state-promotion"
+    ],
+    "expected_artifacts": [
+      "artifact://chapter-mechanism-section"
+    ],
+    "authority_ceiling": "public-draft-only"
+  },
+  "semantic_atoms": [
+    {
+      "atom_id": "atom://mechanism-section",
+      "atom_state": "validated",
+      "source_plan_ref": "source-plan://cc-invalid-missing-receipt-001",
+      "intent": "Lower one requirement into a chapter mechanism section.",
+      "obligation_refs": [
+        "obligation://preserve-source-boundary"
+      ],
+      "obligation_status": [
+        {
+          "obligation_ref": "obligation://preserve-source-boundary",
+          "status": "preserved",
+          "notes": "The source boundary is visible."
+        }
+      ],
+      "inputs": [
+        "source-plan://cc-invalid-missing-receipt-001"
+      ],
+      "outputs": [
+        "artifact://chapter-mechanism-section"
+      ],
+      "constraints": [
+        "constraint://no-support-state-promotion"
+      ],
+      "dependencies": [],
+      "assumptions": [
+        "Hand-authored trace only."
+      ],
+      "authority_required": [
+        "public-draft-only"
+      ],
+      "ir_validity_state": "well_formed",
+      "validator": "scripts/validate_cognitive_compilation_traces.py",
+      "validator_status": "passed",
+      "target": "chapter-section",
+      "lowering_state": "lowered",
+      "target_artifact_ref": "artifact://chapter-mechanism-section",
+      "lowering_receipt": "receipt://missing-lowering-receipt",
+      "repair_scope": "same_atom",
+      "repair_ledger_refs": [
+        "repair://cc-invalid-missing-receipt-001"
+      ],
+      "source_refs": [
+        "cognitive_compilation"
+      ],
+      "support_state_effect": "record_shape_only",
+      "residuals": [
+        "No real compiler ran."
+      ],
+      "non_claims": [
+        "This atom does not prove compiler behavior or promote support state."
+      ]
+    }
+  ],
+  "lowering_receipts": [
+    {
+      "receipt_id": "receipt://different-receipt",
+      "source_plan_ref": "source-plan://cc-invalid-missing-receipt-001",
+      "atom_refs": [
+        "atom://mechanism-section"
+      ],
+      "target_artifact_ref": "artifact://chapter-mechanism-section",
+      "preserved_obligations": [
+        "obligation://preserve-source-boundary"
+      ],
+      "introduced_assumptions": [
+        "Hand-authored trace only."
+      ],
+      "validator_refs": [
+        "scripts/validate_cognitive_compilation_traces.py"
+      ],
+      "residuals": [
+        "No target backend was run."
+      ],
+      "non_claims": [
+        "This receipt does not prove target behavior or promote support state."
+      ]
+    }
+  ],
+  "target_audit": {
+    "target_artifact_ref": "artifact://chapter-mechanism-section",
+    "source_plan_ref": "source-plan://cc-invalid-missing-receipt-001",
+    "lowering_receipt_refs": [
+      "receipt://different-receipt"
+    ],
+    "validator_status": "passed",
+    "obligation_preservation": "all_required_obligations_preserved",
+    "assumption_review": "Assumption recorded.",
+    "support_state_effect": "record_shape_only",
+    "non_claims": [
+      "This audit does not prove compiler behavior or promote support state."
+    ]
+  },
+  "repair_trace": {
+    "repair_scope": "same_atom",
+    "failed_atom_ref": "atom://mechanism-section",
+    "repair_actions": [
+      "Kept repair scoped to one atom."
+    ],
+    "before_obligations": [
+      "obligation://preserve-source-boundary"
+    ],
+    "after_obligations": [
+      "obligation://preserve-source-boundary"
+    ],
+    "ledger_update_ref": "repair://cc-invalid-missing-receipt-001",
+    "changed_atoms": [
+      "atom://mechanism-section"
+    ],
+    "non_claims": [
+      "This repair trace does not prove repair quality or promote support state."
+    ]
+  },
+  "expected_result": "eligible_for_trace_review",
+  "non_claims": [
+    "This fixture does not prove compiler behavior or support state promotion."
+  ]
+}

@@ -243,11 +243,13 @@ target artifact could be a chapter section, a protocol schema, a small code
 file, or a proof-target stub.
 
 The repository already has a semantic atom schema shape, finite Lean predicates
-over obligation preservation and repair-ledger gates, and synthetic
-plan-execution checks that touch requirement preservation. That is record and
-fixture coverage. It does not yet include a source-plan parser, target-lowering
-engine, artifact validator suite, localized-repair benchmark, or quality/cost
-comparison against direct generation.
+over obligation preservation and repair-ledger gates, synthetic plan-execution
+checks that touch requirement preservation, and a small hand-authored trace
+harness for source-plan obligations, lowering receipts, target audits, and
+repair scope. That is record and fixture coverage. It does not yet include a
+source-plan parser, target-lowering engine, concrete artifact validator suite,
+localized-repair benchmark, or quality/cost comparison against direct
+generation.
 
 ## Beyond the State of the Art
 
@@ -287,11 +289,13 @@ wrongness entered: source plan, semantic atom, dependency, assumption,
 validator, lowering receipt, or repair ledger.
 
 The present evidence remains deliberately narrow. The chapter has source
-grounding, a public semantic-atom record shape, finite Lean gates, and synthetic
-requirement-preservation checks. It does not yet have a working cognitive
-compiler. The path forward is a small, public-safe trace that proves the
-control surface can preserve obligations, reject a broken lowering, and repair
-locally before any broader compiler claim moves.
+grounding, a public semantic-atom record shape, finite Lean gates, synthetic
+requirement-preservation checks, and a hand-authored trace harness that rejects
+missing receipts, dropped obligations, global repair, and syntactic passes that
+do not preserve obligations. It does not yet have a working cognitive compiler.
+The next path is to connect the same control surface to concrete target
+artifacts, real validators, and measured localized repair before any broader
+compiler claim moves.
 
 ## Handoff
 

@@ -78,6 +78,7 @@ REQUIRED = [
     "scripts/validate_capability_replacement.py",
     "scripts/validate_self_improvement_boundaries.py",
     "scripts/validate_plan_execution_contracts.py",
+    "scripts/validate_cognitive_compilation_traces.py",
     "scripts/validate_hive_admission.py",
     "scripts/validate_runtime_adapter_permissions.py",
     "scripts/validate_artifact_graph_replay.py",
@@ -146,6 +147,7 @@ REQUIRED = [
     "docs/support_state_transition_harness.md",
     "docs/authority_transition_harness.md",
     "docs/plan_execution_contract_harness.md",
+    "docs/cognitive_compilation_trace_harness.md",
     "docs/hive_admission_harness.md",
     "docs/runtime_adapter_permission_harness.md",
     "docs/artifact_graph_replay_harness.md",
@@ -204,6 +206,7 @@ REQUIRED = [
     "experiments/stable_capability_fields/results/2026-06-28-local.md",
     "experiments/capability_replacement/results/2026-06-28-local.md",
     "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
+    "experiments/cognitive_compilation_traces/results/2026-07-02-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/compact_gvr_slice/results/2026-07-01-local.json",
     "experiments/resource_budget_ledgers/results/2026-07-01-local.md",
@@ -736,6 +739,7 @@ def main() -> None:
     run_validator("validate_capability_replacement.py")
     run_validator("validate_self_improvement_boundaries.py")
     run_validator("validate_plan_execution_contracts.py")
+    run_validator("validate_cognitive_compilation_traces.py")
     run_validator("validate_hive_admission.py")
     run_validator("validate_runtime_adapter_permissions.py")
     run_validator("validate_artifact_graph_replay.py")

@@ -1,0 +1,211 @@
+{
+  "scenario_id": "cc-valid-target-audit",
+  "source_plan": {
+    "plan_id": "source-plan://cc-target-audit-001",
+    "requirements": [
+      "obligation://schema-fields-visible",
+      "obligation://target-assumptions-recorded",
+      "obligation://validator-boundary-visible"
+    ],
+    "constraints": [
+      "constraint://no-syntactic-pass-as-semantic-acceptance",
+      "constraint://no-support-state-promotion"
+    ],
+    "expected_artifacts": [
+      "artifact://semantic-atom-schema-section"
+    ],
+    "authority_ceiling": "public-draft-only",
+    "quality_criteria": [
+      "target audit names every atom and receipt used",
+      "assumptions and residuals remain visible"
+    ]
+  },
+  "semantic_atoms": [
+    {
+      "atom_id": "atom://schema-record-shape",
+      "atom_state": "validated",
+      "source_plan_ref": "source-plan://cc-target-audit-001",
+      "intent": "Represent semantic atom record-shape obligations before target prose is accepted.",
+      "obligation_refs": [
+        "obligation://schema-fields-visible",
+        "obligation://validator-boundary-visible"
+      ],
+      "obligation_status": [
+        {
+          "obligation_ref": "obligation://schema-fields-visible",
+          "status": "preserved",
+          "notes": "The target audit keeps schema-field coverage visible."
+        },
+        {
+          "obligation_ref": "obligation://validator-boundary-visible",
+          "status": "preserved",
+          "notes": "The target audit separates schema validation from semantic acceptance."
+        }
+      ],
+      "inputs": [
+        "source-plan://cc-target-audit-001"
+      ],
+      "outputs": [
+        "artifact://semantic-atom-schema-section"
+      ],
+      "constraints": [
+        "constraint://no-syntactic-pass-as-semantic-acceptance",
+        "constraint://no-support-state-promotion"
+      ],
+      "dependencies": [],
+      "assumptions": [
+        "Record-shape validation is not semantic compiler correctness."
+      ],
+      "authority_required": [
+        "public-draft-only"
+      ],
+      "ir_validity_state": "well_formed",
+      "validator": "scripts/validate_cognitive_compilation_traces.py",
+      "validator_status": "passed",
+      "target": "schema-section",
+      "lowering_state": "lowered",
+      "target_artifact_ref": "artifact://semantic-atom-schema-section",
+      "lowering_receipt": "receipt://cc-target-audit-001",
+      "repair_scope": "same_atom",
+      "repair_ledger_refs": [
+        "repair://cc-target-audit-001"
+      ],
+      "source_refs": [
+        "cognitive_compilation",
+        "ext_llvm_langref_docs",
+        "ext_mlir_2020"
+      ],
+      "support_state_effect": "record_shape_only",
+      "residuals": [
+        "No LLVM, MLIR, or translation-validation tool was run."
+      ],
+      "non_claims": [
+        "This atom does not prove compiler-toolchain integration or promote support state."
+      ]
+    },
+    {
+      "atom_id": "atom://assumption-residual-audit",
+      "atom_state": "validated",
+      "source_plan_ref": "source-plan://cc-target-audit-001",
+      "intent": "Keep target assumptions and residuals attached to the lowered artifact.",
+      "obligation_refs": [
+        "obligation://target-assumptions-recorded"
+      ],
+      "obligation_status": [
+        {
+          "obligation_ref": "obligation://target-assumptions-recorded",
+          "status": "preserved",
+          "notes": "The target audit records introduced assumptions and residuals."
+        }
+      ],
+      "inputs": [
+        "atom://schema-record-shape"
+      ],
+      "outputs": [
+        "artifact://semantic-atom-schema-section"
+      ],
+      "constraints": [
+        "constraint://no-syntactic-pass-as-semantic-acceptance",
+        "constraint://no-support-state-promotion"
+      ],
+      "dependencies": [
+        "atom://schema-record-shape"
+      ],
+      "assumptions": [
+        "The target artifact is a trace identifier for a chapter section."
+      ],
+      "authority_required": [
+        "public-draft-only"
+      ],
+      "ir_validity_state": "well_formed",
+      "validator": "scripts/validate_cognitive_compilation_traces.py",
+      "validator_status": "passed",
+      "target": "schema-section",
+      "lowering_state": "lowered",
+      "target_artifact_ref": "artifact://semantic-atom-schema-section",
+      "lowering_receipt": "receipt://cc-target-audit-001",
+      "repair_scope": "same_atom",
+      "repair_ledger_refs": [
+        "repair://cc-target-audit-001"
+      ],
+      "source_refs": [
+        "cognitive_compilation",
+        "genesiscode",
+        "ext_translation_validation_1998"
+      ],
+      "support_state_effect": "record_shape_only",
+      "residuals": [
+        "No generated artifact was parsed for semantic adequacy."
+      ],
+      "non_claims": [
+        "This atom does not prove target artifact adequacy or promote support state."
+      ]
+    }
+  ],
+  "lowering_receipts": [
+    {
+      "receipt_id": "receipt://cc-target-audit-001",
+      "source_plan_ref": "source-plan://cc-target-audit-001",
+      "atom_refs": [
+        "atom://schema-record-shape",
+        "atom://assumption-residual-audit"
+      ],
+      "target_artifact_ref": "artifact://semantic-atom-schema-section",
+      "preserved_obligations": [
+        "obligation://schema-fields-visible",
+        "obligation://target-assumptions-recorded",
+        "obligation://validator-boundary-visible"
+      ],
+      "introduced_assumptions": [
+        "The fixture audits trace structure, not the content quality of a generated chapter section."
+      ],
+      "validator_refs": [
+        "scripts/validate_cognitive_compilation_traces.py"
+      ],
+      "residuals": [
+        "No source-plan parser, target backend, or semantic validator suite ran."
+      ],
+      "non_claims": [
+        "The lowering receipt does not prove translation validation or promote support state."
+      ]
+    }
+  ],
+  "target_audit": {
+    "target_artifact_ref": "artifact://semantic-atom-schema-section",
+    "source_plan_ref": "source-plan://cc-target-audit-001",
+    "lowering_receipt_refs": [
+      "receipt://cc-target-audit-001"
+    ],
+    "validator_status": "passed",
+    "obligation_preservation": "all_required_obligations_preserved",
+    "assumption_review": "Target assumptions and residuals are visible in the receipt.",
+    "support_state_effect": "record_shape_only",
+    "non_claims": [
+      "The target audit does not prove semantic correctness or promote support state."
+    ]
+  },
+  "repair_trace": {
+    "repair_scope": "same_atom",
+    "failed_atom_ref": "atom://assumption-residual-audit",
+    "repair_actions": [
+      "Kept assumption and residual fields attached to the target audit atom."
+    ],
+    "before_obligations": [
+      "obligation://target-assumptions-recorded"
+    ],
+    "after_obligations": [
+      "obligation://target-assumptions-recorded"
+    ],
+    "ledger_update_ref": "repair://cc-target-audit-001",
+    "changed_atoms": [
+      "atom://assumption-residual-audit"
+    ],
+    "non_claims": [
+      "The repair trace does not prove localized repair performance or promote support state."
+    ]
+  },
+  "expected_result": "eligible_for_trace_review",
+  "non_claims": [
+    "This fixture does not prove compiler correctness, target quality, benchmark improvement, or support state promotion."
+  ]
+}

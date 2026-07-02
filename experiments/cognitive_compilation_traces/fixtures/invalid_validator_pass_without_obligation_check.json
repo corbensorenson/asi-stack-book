@@ -1,0 +1,146 @@
+{
+  "scenario_id": "cc-invalid-validator-pass-without-obligation-check",
+  "source_plan": {
+    "plan_id": "source-plan://cc-invalid-validator-pass-001",
+    "requirements": [
+      "obligation://schema-fields-visible",
+      "obligation://target-assumptions-recorded"
+    ],
+    "constraints": [
+      "constraint://no-syntactic-pass-as-semantic-acceptance",
+      "constraint://no-support-state-promotion"
+    ],
+    "expected_artifacts": [
+      "artifact://semantic-atom-schema-section"
+    ],
+    "authority_ceiling": "public-draft-only"
+  },
+  "semantic_atoms": [
+    {
+      "atom_id": "atom://schema-record-shape",
+      "atom_state": "validated",
+      "source_plan_ref": "source-plan://cc-invalid-validator-pass-001",
+      "intent": "Represent schema fields before target prose acceptance.",
+      "obligation_refs": [
+        "obligation://schema-fields-visible",
+        "obligation://target-assumptions-recorded"
+      ],
+      "obligation_status": [
+        {
+          "obligation_ref": "obligation://schema-fields-visible",
+          "status": "preserved",
+          "notes": "Field coverage is visible."
+        },
+        {
+          "obligation_ref": "obligation://target-assumptions-recorded",
+          "status": "preserved",
+          "notes": "Assumptions are visible in the atom."
+        }
+      ],
+      "inputs": [
+        "source-plan://cc-invalid-validator-pass-001"
+      ],
+      "outputs": [
+        "artifact://semantic-atom-schema-section"
+      ],
+      "constraints": [
+        "constraint://no-syntactic-pass-as-semantic-acceptance",
+        "constraint://no-support-state-promotion"
+      ],
+      "dependencies": [],
+      "assumptions": [
+        "The validator status was copied from a schema pass."
+      ],
+      "authority_required": [
+        "public-draft-only"
+      ],
+      "ir_validity_state": "well_formed",
+      "validator": "scripts/validate_cognitive_compilation_traces.py",
+      "validator_status": "passed",
+      "target": "schema-section",
+      "lowering_state": "lowered",
+      "target_artifact_ref": "artifact://semantic-atom-schema-section",
+      "lowering_receipt": "receipt://cc-invalid-validator-pass-001",
+      "repair_scope": "same_atom",
+      "repair_ledger_refs": [
+        "repair://cc-invalid-validator-pass-001"
+      ],
+      "source_refs": [
+        "cognitive_compilation"
+      ],
+      "support_state_effect": "record_shape_only",
+      "residuals": [
+        "The target audit did not preserve all required obligations."
+      ],
+      "non_claims": [
+        "This atom does not prove semantic acceptance or promote support state."
+      ]
+    }
+  ],
+  "lowering_receipts": [
+    {
+      "receipt_id": "receipt://cc-invalid-validator-pass-001",
+      "source_plan_ref": "source-plan://cc-invalid-validator-pass-001",
+      "atom_refs": [
+        "atom://schema-record-shape"
+      ],
+      "target_artifact_ref": "artifact://semantic-atom-schema-section",
+      "preserved_obligations": [
+        "obligation://schema-fields-visible",
+        "obligation://target-assumptions-recorded"
+      ],
+      "introduced_assumptions": [
+        "Schema pass was treated as target semantic acceptance."
+      ],
+      "validator_refs": [
+        "scripts/validate_cognitive_compilation_traces.py"
+      ],
+      "residuals": [
+        "The audit still marks obligation preservation as missing."
+      ],
+      "non_claims": [
+        "This receipt does not prove semantic acceptance or promote support state."
+      ]
+    }
+  ],
+  "target_audit": {
+    "target_artifact_ref": "artifact://semantic-atom-schema-section",
+    "source_plan_ref": "source-plan://cc-invalid-validator-pass-001",
+    "lowering_receipt_refs": [
+      "receipt://cc-invalid-validator-pass-001"
+    ],
+    "validator_status": "passed",
+    "obligation_preservation": "missing_required_obligation",
+    "assumption_review": "The syntactic pass was not tied to semantic preservation.",
+    "support_state_effect": "record_shape_only",
+    "non_claims": [
+      "This target audit does not prove semantic validation or promote support state."
+    ]
+  },
+  "repair_trace": {
+    "repair_scope": "same_atom",
+    "failed_atom_ref": "atom://schema-record-shape",
+    "repair_actions": [
+      "Kept the repair scoped but did not update target-audit preservation state."
+    ],
+    "before_obligations": [
+      "obligation://schema-fields-visible",
+      "obligation://target-assumptions-recorded"
+    ],
+    "after_obligations": [
+      "obligation://schema-fields-visible",
+      "obligation://target-assumptions-recorded"
+    ],
+    "ledger_update_ref": "repair://cc-invalid-validator-pass-001",
+    "changed_atoms": [
+      "atom://schema-record-shape"
+    ],
+    "non_claims": [
+      "This repair trace does not prove semantic target acceptance or promote support state."
+    ]
+  },
+  "expected_result": "eligible_for_trace_review",
+  "non_claims": [
+    "This fixture does not prove target audit adequacy or support state promotion."
+  ]
+}

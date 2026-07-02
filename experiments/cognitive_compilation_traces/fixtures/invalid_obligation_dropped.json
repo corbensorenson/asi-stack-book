@@ -1,0 +1,138 @@
+{
+  "scenario_id": "cc-invalid-obligation-dropped",
+  "source_plan": {
+    "plan_id": "source-plan://cc-invalid-obligation-dropped-001",
+    "requirements": [
+      "obligation://preserve-source-boundary",
+      "obligation://record-repair-ledger"
+    ],
+    "constraints": [
+      "constraint://no-global-regeneration",
+      "constraint://no-support-state-promotion"
+    ],
+    "expected_artifacts": [
+      "artifact://chapter-mechanism-section"
+    ],
+    "authority_ceiling": "public-draft-only"
+  },
+  "semantic_atoms": [
+    {
+      "atom_id": "atom://mechanism-section",
+      "atom_state": "validated",
+      "source_plan_ref": "source-plan://cc-invalid-obligation-dropped-001",
+      "intent": "Lower one source-boundary obligation into a chapter mechanism section.",
+      "obligation_refs": [
+        "obligation://preserve-source-boundary"
+      ],
+      "obligation_status": [
+        {
+          "obligation_ref": "obligation://preserve-source-boundary",
+          "status": "preserved",
+          "notes": "The source boundary remains visible."
+        }
+      ],
+      "inputs": [
+        "source-plan://cc-invalid-obligation-dropped-001"
+      ],
+      "outputs": [
+        "artifact://chapter-mechanism-section"
+      ],
+      "constraints": [
+        "constraint://no-global-regeneration",
+        "constraint://no-support-state-promotion"
+      ],
+      "dependencies": [],
+      "assumptions": [
+        "The repair-ledger obligation was accidentally omitted."
+      ],
+      "authority_required": [
+        "public-draft-only"
+      ],
+      "ir_validity_state": "well_formed",
+      "validator": "scripts/validate_cognitive_compilation_traces.py",
+      "validator_status": "passed",
+      "target": "chapter-section",
+      "lowering_state": "lowered",
+      "target_artifact_ref": "artifact://chapter-mechanism-section",
+      "lowering_receipt": "receipt://cc-invalid-obligation-dropped-001",
+      "repair_scope": "same_atom",
+      "repair_ledger_refs": [
+        "repair://cc-invalid-obligation-dropped-001"
+      ],
+      "source_refs": [
+        "cognitive_compilation"
+      ],
+      "support_state_effect": "record_shape_only",
+      "residuals": [
+        "The repair-ledger obligation was not represented."
+      ],
+      "non_claims": [
+        "This atom does not prove obligation preservation or promote support state."
+      ]
+    }
+  ],
+  "lowering_receipts": [
+    {
+      "receipt_id": "receipt://cc-invalid-obligation-dropped-001",
+      "source_plan_ref": "source-plan://cc-invalid-obligation-dropped-001",
+      "atom_refs": [
+        "atom://mechanism-section"
+      ],
+      "target_artifact_ref": "artifact://chapter-mechanism-section",
+      "preserved_obligations": [
+        "obligation://preserve-source-boundary"
+      ],
+      "introduced_assumptions": [
+        "The missing obligation was not caught by the target receipt."
+      ],
+      "validator_refs": [
+        "scripts/validate_cognitive_compilation_traces.py"
+      ],
+      "residuals": [
+        "The receipt is missing a required obligation."
+      ],
+      "non_claims": [
+        "This receipt does not prove obligation preservation or promote support state."
+      ]
+    }
+  ],
+  "target_audit": {
+    "target_artifact_ref": "artifact://chapter-mechanism-section",
+    "source_plan_ref": "source-plan://cc-invalid-obligation-dropped-001",
+    "lowering_receipt_refs": [
+      "receipt://cc-invalid-obligation-dropped-001"
+    ],
+    "validator_status": "passed",
+    "obligation_preservation": "all_required_obligations_preserved",
+    "assumption_review": "The missing obligation is not acknowledged.",
+    "support_state_effect": "record_shape_only",
+    "non_claims": [
+      "This audit does not prove preservation of all obligations or promote support state."
+    ]
+  },
+  "repair_trace": {
+    "repair_scope": "same_atom",
+    "failed_atom_ref": "atom://mechanism-section",
+    "repair_actions": [
+      "Updated prose but did not restore the omitted obligation."
+    ],
+    "before_obligations": [
+      "obligation://preserve-source-boundary",
+      "obligation://record-repair-ledger"
+    ],
+    "after_obligations": [
+      "obligation://preserve-source-boundary"
+    ],
+    "ledger_update_ref": "repair://cc-invalid-obligation-dropped-001",
+    "changed_atoms": [
+      "atom://mechanism-section"
+    ],
+    "non_claims": [
+      "This repair trace does not prove localized repair or promote support state."
+    ]
+  },
+  "expected_result": "eligible_for_trace_review",
+  "non_claims": [
+    "This fixture does not prove compiler behavior or support state promotion."
+  ]
+}

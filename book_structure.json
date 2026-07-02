@@ -3443,8 +3443,16 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite semantic-lowering route coverage only"
             },
-            "Incremental repair regression test",
-            "Target compilation audit"
+            {
+              "name": "Incremental repair regression test",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only"
+            },
+            {
+              "name": "Target compilation audit",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only"
+            }
           ],
           "lean_module": "AsiStackProofs.CognitiveCompilation",
           "proof_targets": [

@@ -1,0 +1,198 @@
+{
+  "scenario_id": "cc-invalid-global-regeneration-repair",
+  "source_plan": {
+    "plan_id": "source-plan://cc-invalid-global-repair-001",
+    "requirements": [
+      "obligation://preserve-source-boundary",
+      "obligation://record-repair-ledger"
+    ],
+    "constraints": [
+      "constraint://no-global-regeneration",
+      "constraint://no-support-state-promotion"
+    ],
+    "expected_artifacts": [
+      "artifact://chapter-mechanism-section"
+    ],
+    "authority_ceiling": "public-draft-only"
+  },
+  "semantic_atoms": [
+    {
+      "atom_id": "atom://mechanism-section",
+      "atom_state": "repaired",
+      "source_plan_ref": "source-plan://cc-invalid-global-repair-001",
+      "intent": "Lower source-boundary obligations into the mechanism section.",
+      "obligation_refs": [
+        "obligation://preserve-source-boundary"
+      ],
+      "obligation_status": [
+        {
+          "obligation_ref": "obligation://preserve-source-boundary",
+          "status": "preserved",
+          "notes": "The source boundary remains visible."
+        }
+      ],
+      "inputs": [
+        "source-plan://cc-invalid-global-repair-001"
+      ],
+      "outputs": [
+        "artifact://chapter-mechanism-section"
+      ],
+      "constraints": [
+        "constraint://no-global-regeneration",
+        "constraint://no-support-state-promotion"
+      ],
+      "dependencies": [],
+      "assumptions": [
+        "Trace is hand-authored."
+      ],
+      "authority_required": [
+        "public-draft-only"
+      ],
+      "ir_validity_state": "well_formed",
+      "validator": "scripts/validate_cognitive_compilation_traces.py",
+      "validator_status": "passed",
+      "target": "chapter-section",
+      "lowering_state": "lowered",
+      "target_artifact_ref": "artifact://chapter-mechanism-section",
+      "lowering_receipt": "receipt://cc-invalid-global-repair-001",
+      "repair_scope": "whole_graph",
+      "repair_ledger_refs": [
+        "repair://cc-invalid-global-repair-001"
+      ],
+      "source_refs": [
+        "cognitive_compilation"
+      ],
+      "support_state_effect": "record_shape_only",
+      "residuals": [
+        "The declared repair scope is global."
+      ],
+      "non_claims": [
+        "This atom does not prove localized repair or promote support state."
+      ]
+    },
+    {
+      "atom_id": "atom://unrelated-summary",
+      "atom_state": "validated",
+      "source_plan_ref": "source-plan://cc-invalid-global-repair-001",
+      "intent": "Keep an unrelated summary atom stable.",
+      "obligation_refs": [
+        "obligation://record-repair-ledger"
+      ],
+      "obligation_status": [
+        {
+          "obligation_ref": "obligation://record-repair-ledger",
+          "status": "preserved",
+          "notes": "The repair ledger is still named."
+        }
+      ],
+      "inputs": [
+        "atom://mechanism-section"
+      ],
+      "outputs": [
+        "artifact://chapter-mechanism-section"
+      ],
+      "constraints": [
+        "constraint://no-global-regeneration",
+        "constraint://no-support-state-promotion"
+      ],
+      "dependencies": [
+        "atom://mechanism-section"
+      ],
+      "assumptions": [
+        "The unrelated atom should not be rewritten by a same-atom repair."
+      ],
+      "authority_required": [
+        "public-draft-only"
+      ],
+      "ir_validity_state": "well_formed",
+      "validator": "scripts/validate_cognitive_compilation_traces.py",
+      "validator_status": "passed",
+      "target": "chapter-section",
+      "lowering_state": "lowered",
+      "target_artifact_ref": "artifact://chapter-mechanism-section",
+      "lowering_receipt": "receipt://cc-invalid-global-repair-001",
+      "repair_scope": "whole_graph",
+      "repair_ledger_refs": [
+        "repair://cc-invalid-global-repair-001"
+      ],
+      "source_refs": [
+        "cognitive_compilation"
+      ],
+      "support_state_effect": "record_shape_only",
+      "residuals": [
+        "The repair changed unrelated graph area."
+      ],
+      "non_claims": [
+        "This atom does not prove localized repair or promote support state."
+      ]
+    }
+  ],
+  "lowering_receipts": [
+    {
+      "receipt_id": "receipt://cc-invalid-global-repair-001",
+      "source_plan_ref": "source-plan://cc-invalid-global-repair-001",
+      "atom_refs": [
+        "atom://mechanism-section",
+        "atom://unrelated-summary"
+      ],
+      "target_artifact_ref": "artifact://chapter-mechanism-section",
+      "preserved_obligations": [
+        "obligation://preserve-source-boundary",
+        "obligation://record-repair-ledger"
+      ],
+      "introduced_assumptions": [
+        "Global regeneration was allowed despite a localized-repair constraint."
+      ],
+      "validator_refs": [
+        "scripts/validate_cognitive_compilation_traces.py"
+      ],
+      "residuals": [
+        "The repair surface widened to the whole graph."
+      ],
+      "non_claims": [
+        "This receipt does not prove localized repair or promote support state."
+      ]
+    }
+  ],
+  "target_audit": {
+    "target_artifact_ref": "artifact://chapter-mechanism-section",
+    "source_plan_ref": "source-plan://cc-invalid-global-repair-001",
+    "lowering_receipt_refs": [
+      "receipt://cc-invalid-global-repair-001"
+    ],
+    "validator_status": "passed",
+    "obligation_preservation": "all_required_obligations_preserved",
+    "assumption_review": "Global regeneration was accepted.",
+    "support_state_effect": "record_shape_only",
+    "non_claims": [
+      "This audit does not prove localized repair or promote support state."
+    ]
+  },
+  "repair_trace": {
+    "repair_scope": "whole_graph",
+    "failed_atom_ref": "atom://mechanism-section",
+    "repair_actions": [
+      "Regenerated the full graph instead of repairing the failed atom."
+    ],
+    "before_obligations": [
+      "obligation://preserve-source-boundary",
+      "obligation://record-repair-ledger"
+    ],
+    "after_obligations": [
+      "obligation://preserve-source-boundary",
+      "obligation://record-repair-ledger"
+    ],
+    "ledger_update_ref": "repair://cc-invalid-global-repair-001",
+    "changed_atoms": [
+      "atom://mechanism-section",
+      "atom://unrelated-summary"
+    ],
+    "non_claims": [
+      "This repair trace does not prove localized repair or promote support state."
+    ]
+  },
+  "expected_result": "eligible_for_trace_review",
+  "non_claims": [
+    "This fixture does not prove localized repair behavior or support state promotion."
+  ]
+}

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-02 - Add Cognitive Compilation trace harness
+
+- Added `python3 scripts/validate_cognitive_compilation_traces.py` with 2
+  valid and 4 expected-invalid hand-authored source-plan, semantic-atom,
+  lowering-receipt, target-audit, and repair-trace fixtures.
+- Wired the harness into `scripts/validate_book.py`, the manifest Codex test
+  rows, the live chapter, curated reader chapter, outline, roadmap, and public
+  harness note.
+- The harness checks record discipline for obligation preservation, represented
+  receipts, localized repair scope, target-audit state, syntactic-pass
+  laundering rejection, and non-promotion boundaries only; it does not run a
+  source-plan parser, compiler backend, concrete target validator, localized
+  repair benchmark, quality/cost comparison, support-state promotion, or
+  chapter-core evidence transition.
+
 ## 2026-07-02 - Ground Cognitive Compilation in compiler IR lineage
 
 - Added source-noted external comparator records for LLVM IR, MLIR, and

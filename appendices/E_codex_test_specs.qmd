@@ -106,8 +106,8 @@ No result is recorded here unless a test has actually been implemented and run.
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Plan-graph admission lifecycle route proof | implemented | passes via Lean build; finite plan-graph admission route coverage only, with no planner-quality, scheduler, route-quality, or runtime-replanning claim |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Requirement preservation test | implemented | passes via synthetic plan-execution contract harness |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Semantic lowering route proof | implemented | passes via Lean build; finite semantic-lowering route coverage only |
-| `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Incremental repair regression test | planned | not run |
-| `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Target compilation audit | planned | not run |
+| `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Incremental repair regression test | implemented | passes via `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
+| `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Target compilation audit | implemented | passes via `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Context ABI fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Address/version stability test | implemented | passes through finite Lean context-reference predicates |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Admission vs adequacy test | implemented | passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim |
