@@ -7917,7 +7917,7 @@
             "Probe not representative.",
             "Latency gains erased by fallback."
           ],
-          "minimal_implementation": "A compressed artifact record with ratio, residual, probe, fallback, and utility fields, plus a public-safe local RankFold artifact-import record for existing archive metadata and verifier summaries.",
+          "minimal_implementation": "A compressed artifact record with ratio, residual, probe, fallback, and utility fields, plus a public-safe local RankFold replay probe and artifact-import record for synthetic roundtrip behavior and existing archive metadata/verifier summaries.",
           "beyond_state_of_art": "Artifact compression needs an admission system before compressed forms can enter the stack. It treats compressed forms as routed candidates that must earn each use case instead of inheriting the authority of the full artifact. In the mature artifact-admission lane, compressed artifacts are candidates for specific uses, not replacements for the original, until probes, decode behavior, residual coding, fallback, and consumer policy accept them.",
           "codex_tests": [
             "Compression ratio test",
@@ -7928,6 +7928,12 @@
               "purpose": "Validate the recorded public-safe local RankFold archive observations for 100,000,000-byte decoded artifact digest consensus, archive byte ratios up to 2.76634019 decoded/archive, rfa verify summaries of 1 OK and 0 failed, NEURAL0 inspect metadata, and non-claim boundaries.",
               "implementation_status": "implemented",
               "result_status": "passes via python3 scripts/validate_rankfold_artifact_import.py; no codec-correctness, benchmark-performance, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claim"
+            },
+            {
+              "name": "RankFold public-safe replay probe",
+              "purpose": "Validate a fresh local RankFold pack/verify/list/unpack replay over a generated public-safe synthetic text fixture, including RAW0 codec observation, roundtrip-exact digest preservation, no compression advantage, license-disabled NeuralFold boundary, and a single-byte archive mutation negative control.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_rankfold_public_safe_probe.py; no NeuralFold-compression, compression-advantage, codec-correctness, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claim"
             },
             {
               "name": "Artifact compression admission lifecycle route",
@@ -8062,7 +8068,8 @@
           "draft_maturity": "v0.2 manuscript draft",
           "open_evidence_gaps": [
             "Appendix C now records exact passage-reviewed mappings for all five assigned artifact-compression sources; support remains at argument until a compressor, deterministic decoder, corpus benchmark, utility probe, or accepted evidence transition exists.",
-            "The compressed_artifact_record fixture validates schema/example consistency only; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run.",
+            "The compressed_artifact_record fixture validates schema/example consistency only; the RankFold public-safe replay probe records RAW0 roundtrip-exact behavior and corrupt-archive rejection for one synthetic file, not NeuralFold compression, compression advantage, codec correctness, corpus benchmark, fallback execution, or utility preservation.",
+            "The RankFold artifact import records existing NEURAL0 archive metadata and verifier summaries for three local archives; it is separate from the fresh RAW0 replay probe and is not a fresh compression benchmark.",
             "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not reproduced here and are treated only as source-reported architecture/lineage context.",
             "No support-state promotion, raw source publication, codec correctness result, or downstream utility result is implied by this drafting pass."
           ]

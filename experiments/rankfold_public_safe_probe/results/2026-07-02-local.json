@@ -1,0 +1,129 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_rankfold_public_safe_probe.py --write-result",
+  "commands": [
+    {
+      "argv_summary": "rfa pack --output <TMP>/probe.rfa <TMP>/rankfold_public_probe.txt",
+      "elapsed_ms": 93.785,
+      "exit_code": 0,
+      "id": "pack",
+      "output_excerpt": [
+        "\u2696\ufe0f  NeuralFold is disabled by license (neuralfold=false). Packing will store bytes as RAW0.",
+        "\u2696\ufe0f  Throughput clamped by license: requested=0 MB/s, effective=10 MB/s",
+        "\u2705 Packed 1 entries (3.84 KiB) \u2192 4.33 KiB in 0 seconds (0.1 MB/s)",
+        "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510",
+        "\u2502  Compression Summary                                     \u2502",
+        "\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524",
+        "\u2502 Engine       \u2502 Count \u2502 Original    \u2502 Compressed  \u2502 Ratio \u2502",
+        "\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524"
+      ],
+      "output_sha256": "cb9d24c71f9ba0072166c9e27f41b1c7cceb894ae6631a7e0dacb62903a62634"
+    },
+    {
+      "argv_summary": "rfa verify <TMP>/probe.rfa",
+      "elapsed_ms": 10.318,
+      "exit_code": 0,
+      "id": "verify",
+      "output_excerpt": [
+        "\ud83d\udd0d Verifying archive: <TMP>/probe.rfa",
+        "STATUS BLAKE3       CRC32        NAME",
+        "------ ------------ ------------ ------------------------------",
+        "OK     \u2713 match      \u2713 match      __pack0__",
+        "\u2705 Verification complete: 1 OK, 0 FAILED, 0 skipped (of 1 total)"
+      ],
+      "output_sha256": "2ce7356b9f5bef2ad0ba635b20b22d37f509f0842100138545631d11b032c7ba"
+    },
+    {
+      "argv_summary": "rfa list <TMP>/probe.rfa",
+      "elapsed_ms": 6.598,
+      "exit_code": 0,
+      "id": "list",
+      "output_excerpt": [
+        "ORIG         CODEC   SEGS   SEG_SIZE   NAME",
+        "------------ ------- ------ ---------- --------------------",
+        "3.84 KB      RAW0    1      256.00 KB  rankfold_public_probe.txt"
+      ],
+      "output_sha256": "709d17589e9af0890d97674abeb304e1a23ac787a8c220bdd883d07bfc2f2811"
+    },
+    {
+      "argv_summary": "rfa unpack --output <TMP>/unpacked <TMP>/probe.rfa",
+      "elapsed_ms": 6.874,
+      "exit_code": 0,
+      "id": "unpack",
+      "output_excerpt": [
+        "\ud83d\udd12 Integrity: 1 verified OK, 0 failed, 0 skipped",
+        "\u2705 Unpacked 1 files (3.84 KiB) in 0 seconds (3.1 MB/s)"
+      ],
+      "output_sha256": "f7eb64255c79505c03408a4f071384efa5c4a57555a78e891e129d39a92620a2"
+    },
+    {
+      "argv_summary": "rfa verify <TMP>/probe_corrupt.rfa",
+      "elapsed_ms": 6.74,
+      "exit_code": 1,
+      "id": "verify_corrupt",
+      "output_excerpt": [
+        "\ud83d\udd0d Verifying archive: <TMP>/probe_corrupt.rfa",
+        "STATUS BLAKE3       CRC32        NAME",
+        "------ ------------ ------------ ------------------------------",
+        "Error: Serialization error: Syntax(94)"
+      ],
+      "output_sha256": "cca4a0213920a99ae2eeaa7b7b0f224b287e0faddf7e434182c9bde009cd5e15"
+    }
+  ],
+  "evidence_transition_created": false,
+  "input": {
+    "bytes": 3936,
+    "generator": "scripts/run_rankfold_public_safe_probe.py::build_corpus",
+    "logical_name": "rankfold_public_probe.txt",
+    "public_safe": true,
+    "sha256": "0905e48dec0a93d748907b26206c5f908b47dcefb3630a13571c3013effc2523"
+  },
+  "local_only": true,
+  "negative_control": {
+    "kind": "single_byte_archive_mutation",
+    "mutated_offset": 128,
+    "output_excerpt": [
+      "\ud83d\udd0d Verifying archive: <TMP>/probe_corrupt.rfa",
+      "STATUS BLAKE3       CRC32        NAME",
+      "------ ------------ ------------ ------------------------------",
+      "Error: Serialization error: Syntax(94)"
+    ],
+    "rejected": true,
+    "verify_exit_code": 1
+  },
+  "non_claims": [
+    "This RankFold public-safe replay probe does not promote any chapter core claim above argument.",
+    "This RankFold public-safe replay probe does not create a support-state transition.",
+    "This RankFold public-safe replay probe does not prove RankFold codec correctness, NeuralFold compression, compression advantage, benchmark performance, downstream utility, fallback execution, deployed compression behavior, model quality, or ASI.",
+    "This RankFold public-safe replay probe uses a synthetic public-safe text fixture and records hashes, ratios, command outcomes, and non-claims only; it does not copy dataset bytes, archive bytes, private source text, private keys, or local absolute paths into the repository."
+  ],
+  "pass": true,
+  "probe_id": "rankfold-public-safe-probe-2026-07-02-local",
+  "public_safety_boundary": "No dataset bytes, archive bytes, local absolute paths, private source text, private keys, or unpublished implementation payloads are copied into the ASI Stack book repository.",
+  "record_kind": "rankfold_public_safe_replay_probe",
+  "recorded_at_utc": "2026-07-02T10:55:18Z",
+  "rfa_binary_sha256": "f03e3175742411b4310187cf48c5e735813c4a411a93dc53b68a3364ed75f438",
+  "roundtrip": {
+    "archive_file_bytes": 4434,
+    "archive_file_sha256": "020217a2fb5b36ba26739fb461507e6306e90c3293bbd255073090278036f51b",
+    "archive_to_input_ratio": 1.12652439,
+    "codec_observed": "RAW0",
+    "compression_advantage_observed": false,
+    "input_to_archive_ratio": 0.88768606,
+    "neuralfold_disabled_by_license": true,
+    "pack_engine_observed": "Raw (stored)",
+    "roundtrip_exact": true,
+    "unpacked_file_bytes": 3936,
+    "unpacked_sha256": "0905e48dec0a93d748907b26206c5f908b47dcefb3630a13571c3013effc2523",
+    "verify": {
+      "failed": 0,
+      "ok": 1,
+      "skipped": 0
+    }
+  },
+  "schema_version": "0.1",
+  "source_project_dirty_at_probe": true,
+  "source_project_ref": "local RankFold checkout",
+  "source_project_status_entry_count": 10,
+  "support_state_effect": "none"
+}

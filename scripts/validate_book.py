@@ -157,6 +157,8 @@ REQUIRED = [
     "scripts/validate_circle_public_replay.py",
     "scripts/validate_circle_concrete_evidence_surface.py",
     "scripts/validate_circle_cyclic_memory_receipt_slice.py",
+    "scripts/run_rankfold_public_safe_probe.py",
+    "scripts/validate_rankfold_public_safe_probe.py",
     "scripts/validate_rankfold_artifact_import.py",
     "scripts/validate_theseus_report.py",
     "scripts/validate_theseus_generation_mode_import.py",
@@ -225,6 +227,7 @@ REQUIRED = [
     "docs/circle_external_receipt_slice.md",
     "docs/circle_public_replay_consumer_gate.md",
     "docs/circle_cyclic_memory_receipt_slice.md",
+    "docs/rankfold_public_safe_probe.md",
     "docs/rankfold_artifact_import.md",
     "docs/theseus_report_import_slice.md",
     "docs/theseus_generation_mode_import_slice.md",
@@ -254,6 +257,7 @@ REQUIRED = [
     "experiments/phase5_harness_registry.json",
     "experiments/stack_layer_traceability/results/2026-07-02-local.md",
     "experiments/efficiency_route_search/results/2026-07-02-local.json",
+    "experiments/rankfold_public_safe_probe/results/2026-07-02-local.json",
     "experiments/claim_ledger_revision/results/2026-06-28-local.md",
     "experiments/claim_ledger_revision/results/2026-07-02-local.md",
     "experiments/proof_carrying_claims/results/2026-06-28-local.md",
@@ -859,6 +863,7 @@ def main() -> None:
     run_validator("validate_circle_public_replay.py")
     run_validator("validate_circle_concrete_evidence_surface.py")
     run_validator("validate_circle_cyclic_memory_receipt_slice.py")
+    run_validator("validate_rankfold_public_safe_probe.py")
     run_validator("validate_rankfold_artifact_import.py")
     run_validator("validate_theseus_report.py")
     run_validator("validate_theseus_generation_mode_import.py")

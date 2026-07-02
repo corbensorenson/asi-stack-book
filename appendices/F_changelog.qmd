@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-02 - Add RankFold public-safe replay probe
+
+- Added `python3 scripts/run_rankfold_public_safe_probe.py`,
+  `python3 scripts/validate_rankfold_public_safe_probe.py`,
+  `docs/rankfold_public_safe_probe.md`, and
+  `experiments/rankfold_public_safe_probe/results/2026-07-02-local.json` for a
+  fresh local RankFold pack/verify/list/unpack replay over a generated
+  synthetic public-safe text fixture.
+- The probe records `RAW0` / `Raw (stored)`, roundtrip-exact digest
+  preservation, no compression advantage, a local license-disabled NeuralFold
+  boundary, and a rejected single-byte archive mutation negative control.
+- Updated the RankFold live chapter, curated reader chapter, outline, roadmap,
+  manifest, Appendix E generator, README, repository map, v1 status snapshot,
+  and publication-readiness trust surface. This does not prove NeuralFold
+  compression, compression advantage, RankFold codec correctness, downstream
+  utility, fallback execution, deployed compression behavior, benchmark
+  performance, or chapter-core support-state promotion.
+
 ## 2026-07-02 - Add metaphysics lineage boundary audit
 
 - Added `python3 scripts/validate_alignment_metaphysics_boundary.py`,

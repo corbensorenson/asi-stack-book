@@ -565,7 +565,7 @@ def main() -> None:
         start = expected_fragments.index(old_harness_start)
         end = expected_fragments.index(non_infra_start)
         current_harness_fragments = [
-            "| Test harnesses | Forty-one synthetic, deterministic, measured, local replay, local external-project receipt, local artifact-import, or publication-governance checks are wired into book validation; twenty-two are wired into the Phase 5 registry and nineteen chapter-specific/support checks are book-gate-only:",
+            "| Test harnesses | Forty-two synthetic, deterministic, measured, local replay, local external-project receipt, local artifact-import, or publication-governance checks are wired into book validation; twenty-two are wired into the Phase 5 registry and twenty chapter-specific/support checks are book-gate-only:",
             "the living-book change-packet harness",
             "Living-book change-packet harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).",
             "the Benchmark anti-Goodhart fixture bridge",
@@ -597,6 +597,10 @@ def main() -> None:
             "`experiments/circle_cyclic_memory_receipt_slice/results/2026-07-02-local.json`",
             "`python3 scripts/validate_cyclic_memory_contracts.py`",
             "`python3 scripts/validate_circle_cyclic_memory_receipt_slice.py`",
+            "`docs/rankfold_public_safe_probe.md`",
+            "`experiments/rankfold_public_safe_probe/results/2026-07-02-local.json`",
+            "`python3 scripts/validate_rankfold_public_safe_probe.py`",
+            "The RankFold public-safe replay probe records a RAW0 roundtrip-exact pack/verify/list/unpack run over a synthetic public-safe file plus a rejected single-byte archive mutation, without NeuralFold-compression, compression-advantage, codec-correctness, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claims",
             "`docs/rankfold_artifact_import.md`",
             "`experiments/rankfold_artifact_import/results/2026-07-02-local.json`",
             "`python3 scripts/validate_rankfold_artifact_import.py`",

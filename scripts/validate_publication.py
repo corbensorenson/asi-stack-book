@@ -187,6 +187,7 @@ FORBIDDEN_PUBLIC_STALE_STRINGS = [
     "three accepted non-core upward transitions",
     "147 proof targets",
     "Thirty-five synthetic",
+    "Forty-one synthetic",
 ]
 
 
@@ -276,7 +277,7 @@ def main() -> None:
             "0 explicit exceptions",
             "four accepted non-core upward transitions",
             "167 proof targets",
-            "Forty-one synthetic",
+            "Forty-two synthetic",
         ],
     }
     for path, needles in public_requirements.items():
