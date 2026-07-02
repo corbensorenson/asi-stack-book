@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Refine Executable Specifications reader proof-lane prose
+
+- Added one active reader-only semantic overlay operation for `Executable
+  Specifications and Lean Proof Envelope`, replacing generated reader and live
+  Human-view `Why existing approaches are insufficient` prose with clearer
+  reader explanation of proof-lane separation, formal-methods comparators,
+  semantic drift, semantic adequacy, and no broad-proof boundaries while
+  preserving the canonical AI/research chapter.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, and the reader chapter review matrix. The
+  reader-continuity audit now records 44 reader chapters, 115,712 reader words,
+  49 active/applied overlay operations, 0 generated-reader chapter table rows,
+  53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160
+  words, and 0 high-priority plus 10 medium-priority heuristic review rows.
+- This is a reader projection and Human-view craft increment only; it is not a
+  semantic proof adequacy review, new Lean theorem, proof result, support-state
+  promotion, evidence transition, benchmark result, source-derived evidence
+  update, external theorem ownership claim, reader release, ebook/document/PDF
+  or audio artifact, deployed proof-consumer, or ASI safety claim.
+
 ## 2026-07-02 - Guard the first-minute public trust surface
 
 - Added `scripts/validate_trust_surface.py` to check the README and landing-page

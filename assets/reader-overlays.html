@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 48,
+  "operation_count": 49,
   "operations": [
     {
       "id": "v1_0.artifact_graphs.minimum_viable_implementation_reader_replace",
@@ -209,6 +209,18 @@
       },
       "content": "The endpoint for this layer is not a single theorem that claims to prove safety, alignment, or intelligence. It is a claims control plane: every formal-looking promise has to travel with the artifact that actually supports it, the command that checked it, the boundary it covers, and the claims it refuses to support.\n\nIn a mature stack, chapters, protocols, releases, and runtime modules would consume proofs only through typed records. A Lean predicate, schema validation, process check, behavior test, benchmark, external theorem reference, and research backlog item would remain different kinds of authority. They could inform one another, but none of them could quietly stand in for the others.\n\nThe important future work is semantic adequacy. A finite predicate can build cleanly and still be the wrong predicate for the boundary the prose wants to defend. The mature proof envelope would therefore ask whether each proof is not only valid in its lane, but adequate for the consumer trying to rely on it. Stale proofs, orphaned targets, borrowed theorem ids, and claim-from-prose errors would become downgrade or residual events rather than confidence theater.\n\nWith that envelope in place, the stack could use mechanized record-level claims without pretending they prove deployed enforcement, empirical model quality, benchmark success, source truth, or broad ASI safety. The endpoint remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show exactly where each formal predicate can carry prose.",
       "rationale": "Replace the dense proof-envelope target-architecture checklist with reader prose while preserving the canonical AI/research proof-consumption requirements."
+    },
+    {
+      "id": "v1_0.proof_envelope.insufficiency_reader_replace",
+      "target_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Why existing approaches are insufficient",
+        "aliases": []
+      },
+      "content": "Formal methods fail the book in two opposite ways. They can be aimed at claims that are too broad to formalize, such as saying that a whole system is safe. They can also be dismissed as too narrow to matter, even when a small proof would prevent a real authority or evidence mistake.\n\nThe useful middle path is lane separation. Planning languages, proof-carrying code, TLA+, Lean, Dafny, model checkers, runtime monitors, and neural-network verification tools all show different ways to make a claim checkable. None of them gives the ASI Stack permission to treat every passed artifact as the same kind of proof.\n\nFor this book, the lesson is practical. A Lean theorem, JSON Schema, Python validator, benchmark run, and external theorem reference each carry different authority. A schema can validate the shape of a record without proving the event happened. A benchmark can measure a route without proving safety. A theorem can prove a finite predicate while still missing the boundary the prose wanted to defend.\n\nThe proof envelope exists to prevent that drift. It asks which lane the artifact belongs to, what it checked, who may rely on it, and which claims remain outside its reach. If that answer is unclear, the claim should stay at argument support until a narrower predicate, better test, or explicit semantic adequacy review exists.",
+      "rationale": "Replace the dense comparator inventory with reader prose that preserves lane separation, external-formal-methods context, and semantic-drift boundaries."
     },
     {
       "id": "v1_0.proof_envelope.interfaces_reader_replace",

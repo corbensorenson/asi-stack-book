@@ -22,6 +22,25 @@
       ]
     },
     {
+      "id": "v1_0.proof_envelope.insufficiency_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Why existing approaches are insufficient"
+      },
+      "rationale": "Replace the dense comparator inventory with reader prose that preserves lane separation, external-formal-methods context, and semantic-drift boundaries.",
+      "content_lines": [
+        "Formal methods fail the book in two opposite ways. They can be aimed at claims that are too broad to formalize, such as saying that a whole system is safe. They can also be dismissed as too narrow to matter, even when a small proof would prevent a real authority or evidence mistake.",
+        "",
+        "The useful middle path is lane separation. Planning languages, proof-carrying code, TLA+, Lean, Dafny, model checkers, runtime monitors, and neural-network verification tools all show different ways to make a claim checkable. None of them gives the ASI Stack permission to treat every passed artifact as the same kind of proof.",
+        "",
+        "For this book, the lesson is practical. A Lean theorem, JSON Schema, Python validator, benchmark run, and external theorem reference each carry different authority. A schema can validate the shape of a record without proving the event happened. A benchmark can measure a route without proving safety. A theorem can prove a finite predicate while still missing the boundary the prose wanted to defend.",
+        "",
+        "The proof envelope exists to prevent that drift. It asks which lane the artifact belongs to, what it checked, who may rely on it, and which claims remain outside its reach. If that answer is unclear, the claim should stay at argument support until a narrower predicate, better test, or explicit semantic adequacy review exists."
+      ]
+    },
+    {
       "id": "v1_0.proof_envelope.interfaces_reader_replace",
       "status": "active",
       "action": "replace_section",
