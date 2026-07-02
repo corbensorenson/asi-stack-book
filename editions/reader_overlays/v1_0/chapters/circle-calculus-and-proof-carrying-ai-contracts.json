@@ -41,6 +41,40 @@
       ]
     },
     {
+      "id": "v1_0.circle_contracts.interfaces_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces"
+      },
+      "rationale": "Replace the field-heavy proof-contract interface inventory with reader prose while preserving the canonical AI/research receipt fields.",
+      "content_lines": [
+        "The interface is deliberately plain. A formal project names the mathematical statement. A tool run emits the portable package. A downstream layer decides whether that package is enough for its own use. The evidence matrix then keeps the claim boundary visible.",
+        "",
+        "That separation prevents authority from leaking across layers. Coil memory can use a freshness package as a structural guardrail. A cyclic mixer can use a phase-bank or collision package as a diagnostic. Neither use becomes a quality, speed, memory, or deployment result until an ordinary workload has been run against a baseline.",
+        "",
+        "For the reader, the important fields are the ones that make refusal possible: source version, theorem references, deterministic values, content fingerprint, check command, replay state, consumer permissions, failure behavior, and non-claims. If those fields are missing, the idea may still be useful design context, but it should not travel as an accepted downstream fact."
+      ]
+    },
+    {
+      "id": "v1_0.circle_contracts.minimum_viable_implementation_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the implementation inventory with reader prose that names the current narrow artifact boundary without repeating every fixture field.",
+      "content_lines": [
+        "The smallest honest version is not a full Circle transport layer. It is one narrow package that says what was checked, how to identify it, who may consume it, and what it does not establish.",
+        "",
+        "The current repo has that narrow shape. It has generic proof-target and proof-contract examples, a local finite-record model for the receipt boundary, and a public consumer-gate check for one pinned Circle RoPE package. That check expects the required theorem IDs and fingerprints, and it rejects missing theorem references, digest mismatches, stale contract status, and unsupported transfer claims.",
+        "",
+        "The next build slice should make the path harder to fake. It should include one accepted package, one stale theorem reference, one fingerprint mismatch, one structural-only consumer gate, and one attempted promotion blocked because no workload evidence exists. That would test the transfer rule directly without pretending that this repo has replayed the whole external Circle project or shown downstream model improvement."
+      ]
+    },
+    {
       "id": "v1_0.circle_contracts.beyond_state_reader_replace",
       "status": "active",
       "action": "replace_section",

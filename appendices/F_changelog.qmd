@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-02 - Refine Circle reader proof-contract prose
+
+- Added two active reader-only semantic overlay operations for `Circle Calculus
+  and Proof-Carrying AI Contracts`, replacing generated reader and live
+  Human-view `Interfaces` and `Minimum Viable Implementation` proof-contract
+  inventory prose with tighter reader prose while leaving the canonical
+  AI/research receipt field inventory, implementation detail, source evidence,
+  and mechanism diagram unchanged.
+- Preserved the public-safe Circle receipt boundary, theorem IDs,
+  fingerprints, consumer-gate checks, narrow package boundary, future stale
+  theorem/fingerprint/promotion-blocker negative cases, and non-claims. The
+  generated reader chapter moved from heuristic score 8 to 6 and from 175 to
+  136 dense-term hits while retaining one Mermaid diagram and no generated
+  reader tables or non-Mermaid code blocks.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, the reader chapter review matrix, the
+  v1.0 status snapshot, and the roadmap burn-down. The reader-continuity audit
+  now records 44 reader chapters, 116,414 reader words, 41 active/applied
+  overlay operations, 0 generated-reader chapter table rows, 53 Mermaid
+  diagrams, 0 non-Mermaid code blocks, 6 paragraphs at or above 160 words, and
+  0 high-priority plus 15 medium-priority heuristic review rows.
+- This is a reader projection and Human-view craft increment only; it is not a
+  Circle theorem replay, theorem-id resolution, receipt replay, fingerprint
+  validation, generated contract-pack result, downstream model-quality result,
+  proof result, benchmark result, reader release, ebook/document/PDF/audio
+  artifact, support-state promotion, or source-derived evidence update.
+
 ## 2026-07-02 - Refine Executable Specifications reader proof envelope
 
 - Added two active reader-only semantic overlay operations for
