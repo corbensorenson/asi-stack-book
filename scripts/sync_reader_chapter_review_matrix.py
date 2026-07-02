@@ -56,6 +56,35 @@ ALLOWED_RELEASE_BLOCKERS = {
 }
 
 SPECIAL_REVIEW_DEFAULTS = {
+    "personal-compute-hives-and-federated-edge-intelligence": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "reader_overlay_active",
+            "companion_note_candidate",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iii_opening_full_review_pass.md#decisions",
+            "docs/curated_reader_personal_compute_hives_prose_pass.md",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "Full generated-reader chapter-text review recorded for the Personal "
+            "Compute Hives chapter. Existing overlays are accepted for the reader "
+            "path; consent, privacy, rented-node, family/project mediation, "
+            "scheduler, and implementation non-claim boundaries remain visible. "
+            "First curated reader prose pass and drafting companion note are "
+            "recorded; the companion note is for e-reader/audio density support "
+            "only, while policy-first scheduling, device and portal authority "
+            "boundaries, consent, privacy, family/project mediation, rented-node "
+            "limits, revocation, evidence return, and implementation non-claims "
+            "remain in the reader spine. Release blockers remain active and no "
+            "hive scheduler, federation, rented-node, family-governance, or "
+            "reader-artifact claim is approved."
+        ),
+    },
     "compact-generative-systems-and-residual-honesty": {
         "review_status": "reviewed",
         "review_depth": "full_chapter_review",
@@ -76,6 +105,35 @@ SPECIAL_REVIEW_DEFAULTS = {
             "fallback, semantic representation leases, cost ownership, and "
             "non-claim boundaries remain in the reader spine. Release blockers "
             "remain active and this row is not a release approval."
+        ),
+    },
+    "fast-generation-architectures": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "reader_overlay_active",
+            "companion_note_candidate",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iii_compression_full_review_pass.md#decisions",
+            "docs/curated_reader_fast_generation_prose_pass.md",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "Full generated-reader chapter review recorded; existing overlays "
+            "convert dense metric and taxonomy material into prose while "
+            "preserving proposed/accepted output separation, verifier cost, "
+            "fallback, memory pressure, task success, and promotion evidence. "
+            "First curated reader prose pass and drafting companion note are "
+            "recorded; the companion note is for e-reader/audio density support "
+            "only, while proposed-versus-accepted output, verifier cost, "
+            "fallback, repair, memory pressure, task success, route promotion, "
+            "benchmark, serving, and no-speed-claim boundaries remain in the "
+            "reader spine. Release blockers remain active and no speed, quality, "
+            "serving, benchmark, route-promotion, or reader-artifact claim is "
+            "approved."
         ),
     },
     "resource-economics-and-token-budgets": {

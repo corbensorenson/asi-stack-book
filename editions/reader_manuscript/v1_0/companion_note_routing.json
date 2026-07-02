@@ -8,13 +8,52 @@
     "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
     "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
     "docs/curated_reader_graduation_review.md#candidate-chapters",
+    "docs/reader_part_iii_opening_full_review_pass.md#decisions",
+    "docs/curated_reader_personal_compute_hives_prose_pass.md",
     "docs/reader_part_iii_compression_full_review_pass.md#decisions",
     "docs/curated_reader_compact_generative_systems_prose_pass.md",
+    "docs/curated_reader_fast_generation_prose_pass.md",
     "docs/reader_part_iii_representation_full_review_pass.md#decisions",
     "docs/curated_reader_resource_economics_prose_pass.md",
     "docs/reader_companion_note_routing_review.md"
   ],
   "records": [
+    {
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "title": "Personal Compute Hives and Federated Edge Intelligence",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep policy-first scheduling, device and portal authority boundaries, consent, privacy, family and project mediation, rented-node limits, revocation, evidence return, and implementation non-claims in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for Device Resource Cards, Portal Cards, Hive Job Contracts, Hive Job Bids, Hive Scheduling Decisions, approval receipts, federation leases, and rented-node boundaries.",
+      "audio_treatment": "Narrate hive scheduling as policy-first placement and route object-field detail, federation vocabulary, and consent/privacy edge cases to companion notes rather than reading every schema field verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/personal-compute-hives-and-federated-edge-intelligence.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "device, portal, job, bid, scheduling, approval, and federation record fields",
+        "policy-first scheduling and data-placement vocabulary",
+        "family, project, rented-node, physical-risk, revocation, and evidence-return boundaries"
+      ],
+      "must_remain_in_reader": [
+        "reachable devices are not automatically schedulable resources or authority-bearing agents",
+        "policy filtering, consent, privacy, family roles, physical risk, and revocation precede optimization",
+        "no live hive scheduler, secure network overlay, federation system, rented private-data route, family-governance implementation, or edge-execution safety claim is promoted"
+      ],
+      "companion_note_material": [
+        "plain-language hive object glossary",
+        "one-page scheduler decision and rejection map",
+        "audio note explaining how to summarize device/federation records without hiding consent, privacy, authority, and implementation boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim a live hive scheduler, secure network overlay, safe rented-node private-data execution, public federation, autonomous spend, family-governance correctness, device reliability, energy optimization, or edge-execution safety.",
+        "This route does not promote any claim support state."
+      ]
+    },
     {
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
@@ -48,6 +87,42 @@
       "non_claims": [
         "This route does not approve the drafting curated reader chapter.",
         "This route does not claim compression utility, real rate, decode behavior, semantic grounding quality, downstream artifact quality, memory savings, context improvement, model quality, deployment readiness, or ASI capability.",
+        "This route does not promote any claim support state."
+      ]
+    },
+    {
+      "chapter_id": "fast-generation-architectures",
+      "title": "Fast Generation Architectures",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep proposed-versus-accepted output, verifier cost, fallback, repair, memory pressure, task success, route promotion, benchmark, serving, and no-speed-claim boundaries in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for accelerated generation families, speed-quality ledgers, proposed/accepted output separation, verifier bottlenecks, serving-memory boundaries, and fallback.",
+      "audio_treatment": "Narrate fast generation through the proposed-versus-accepted distinction and route method taxonomy, ledger fields, and benchmark caveats to companion notes rather than reading every route family verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/fast-generation-architectures.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "generation-mode taxonomy",
+        "speed-quality ledger fields",
+        "proposed output, accepted output, verifier cost, memory pressure, fallback, and promotion vocabulary"
+      ],
+      "must_remain_in_reader": [
+        "proposed tokens, spans, or artifacts are separate from accepted verified output",
+        "raw latency, aggregate throughput, and serving-memory wins do not equal task success, quality, reasoning, or safety",
+        "no local fast-decoding benchmark, speculative-acceptance result, serving deployment, KV-cache audit, useful-solution-per-second result, or reproduced external speedup is claimed"
+      ],
+      "companion_note_material": [
+        "plain-language generation-mode glossary",
+        "short proposed-versus-accepted output example",
+        "audio note explaining how to summarize speed taxonomy while preserving verifier, fallback, memory, benchmark, and support-state boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim local fast-decoding performance, multi-token prediction performance, speculative-acceptance performance, diffusion-language performance, serving throughput, KV-cache behavior, useful-solution-per-second improvement, quality improvement, task-success improvement, or reproduced external speedup.",
         "This route does not promote any claim support state."
       ]
     },

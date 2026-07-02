@@ -12,7 +12,9 @@ boundary, release blocker, or non-claim appears.
 
 Current drafting notes:
 
+- `personal-compute-hives-and-federated-edge-intelligence.md`
 - `compact-generative-systems-and-residual-honesty.md`
+- `fast-generation-architectures.md`
 - `resource-economics-and-token-budgets.md`
 - `circle-calculus-and-proof-carrying-ai-contracts.md`
 - `executable-specifications-and-lean-proof-envelope.md`
