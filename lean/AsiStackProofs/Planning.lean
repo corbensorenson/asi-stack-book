@@ -684,4 +684,34 @@ theorem complete_replanned_graph_routes_to_admissible
   ]
   simp
 
+structure SchedulerStateProbeSummary where
+  validSchedulerTracePresent : Bool
+  localRepairTracePresent : Bool
+  negativeControlsRejected : Bool
+  costQualityLedgerPresent : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def SchedulerStateProbeSummaryValid
+    (summary : SchedulerStateProbeSummary) : Prop :=
+  summary.validSchedulerTracePresent = true ∧
+    summary.localRepairTracePresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.costQualityLedgerPresent = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem planning_scheduler_state_probe_fixture_bridge
+    {summary : SchedulerStateProbeSummary} :
+    SchedulerStateProbeSummaryValid summary ->
+      summary.validSchedulerTracePresent = true ∧
+        summary.localRepairTracePresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.costQualityLedgerPresent = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.Planning

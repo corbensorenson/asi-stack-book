@@ -1,0 +1,58 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_planning_scheduler_state_probe.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "cost_quality_ledger_present": true,
+      "local_repair_trace_present": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "support_state_effect_none": true,
+      "valid_scheduler_trace_present": true
+    },
+    "module": "AsiStackProofs.Planning",
+    "proof_tag": "lean:planning.scheduler_state.probe_fixture_bridge",
+    "theorem_refs": [
+      "planning_scheduler_state_probe_fixture_bridge"
+    ]
+  },
+  "negative_controls": {
+    "blocked_node_dispatch_rejected": true,
+    "conflicting_merge_rejected": true,
+    "cost_ledger_repair_erasure_rejected": true,
+    "dependency_cycle_rejected": true,
+    "failed_adequacy_route_rejected": true,
+    "ready_without_context_rejected": true,
+    "replan_authority_erasure_rejected": true
+  },
+  "non_claims": [
+    "does not prove decomposition quality",
+    "does not prove context-demand prediction",
+    "does not prove selected-tier adequacy",
+    "does not prove route quality or scheduler optimality",
+    "does not execute a deployed scheduler or runtime replanning loop",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic scheduler-state fixture only; no deployed planner, scheduler, route-quality evaluator, or runtime replanning loop was exercised.",
+    "The chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-planning-scheduler-state-probe",
+  "result_kind": "deterministic_synthetic_planning_scheduler_state_probe",
+  "schema_version": "asi_stack.planning_scheduler_state_probe.v0",
+  "support_state_effect": "none",
+  "trace_count": 9,
+  "transition_coverage": {
+    "blocked_context_residual": true,
+    "cost_quality_ledger_hidden_costs": true,
+    "failed_cheap_route_rejection": true,
+    "local_repair_replan_delta": true,
+    "merge_conflict_block": true,
+    "ready_node_dispatch_receipt": true
+  },
+  "valid_trace_count": 2,
+  "verification_result": "pass"
+}

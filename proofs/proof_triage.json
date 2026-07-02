@@ -551,6 +551,16 @@
       "rationale": "Implemented in AsiStackProofs.Planning as a finite plan-graph admission route function and derived route theorems for missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, non-claim boundaries, and complete new or replanned graph records."
     },
     {
+      "tag": "lean:planning.scheduler_state.probe_fixture_bridge",
+      "chapter_id": "planning-as-a-control-layer",
+      "module": "AsiStackProofs.Planning",
+      "formal_target": "The deterministic synthetic scheduler-state probe result includes a valid scheduler trace, a local-repair trace, rejected negative controls, a cost-quality ledger boundary, no support-state effect, and an explicit non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Planning as a finite scheduler-state probe summary bridge: valid scheduler and local-repair traces, rejected negative controls, hidden-cost ledger coverage, no support-state effect, and non-claim boundaries are bundled as fixture requirements."
+    },
+    {
       "tag": "lean:planforge.dag.operational_invariant",
       "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.PlanForge",

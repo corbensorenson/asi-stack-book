@@ -348,12 +348,26 @@ That is useful, but small. It validates cross-record discipline, not planner
 intelligence. It does not measure decomposition quality, context-demand
 prediction, scheduler performance, runtime replanning, or tool execution.
 
-The minimum next improvement would be a tiny scheduler-state fixture with one
-ready node, one node blocked by missing context, one cheap route rejected
-because its adequacy predicate fails, one branch merge blocked by conflicting
-assumptions, and one local repair that touches only the affected subgraph.
-That would demonstrate the semantics of planning as control and DAG scheduling
-without implying that the system can plan well in the open world.
+The minimum next improvement is a tiny scheduler-state fixture with one ready
+node, one node blocked by missing context, one cheap route rejected because its
+adequacy predicate fails, one branch merge blocked by conflicting assumptions,
+and one local repair that touches only the affected subgraph. That fixture
+demonstrates the semantics of planning as control and DAG scheduling without
+implying that the system can plan well in the open world.
+
+The planning scheduler-state probe now implements that next slice. It uses
+two synthetic scheduler traces: one with a ready dispatchable node, a
+context-blocked node, a failed cheap route, and a blocked merge; and one local
+repair trace that touches only the affected subgraph. It also rejects seven bad
+paths, including dispatching blocked work, treating missing context as ready,
+accepting a failed cheap route, merging conflicting assumptions, erasing
+authority during replanning, accepting a dependency cycle, and hiding repair
+or residual costs.
+
+That makes the control surface easier to inspect. It is a trace-shape check,
+not a deployed scheduler result. It does not prove planner quality,
+context-demand prediction, route quality, selected-tier adequacy, or runtime
+replanning.
 
 ## Beyond the State of the Art
 

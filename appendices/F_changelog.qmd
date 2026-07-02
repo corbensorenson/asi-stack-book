@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-02 - Add Planning scheduler-state probe
+
+- Added `python3 scripts/validate_planning_scheduler_state_probe.py`,
+  `docs/planning_scheduler_state_probe.md`, and
+  `experiments/planning_scheduler_state/results/2026-07-02-local.json` for
+  a deterministic synthetic scheduler-state fixture with two valid synthetic
+  scheduler traces and seven expected-invalid controls covering blocked-node
+  dispatch, ready-without-context dispatch, failed-adequacy route selection,
+  conflicting merge acceptance, replanning authority erasure, accepted
+  dependency cycles, and cost-quality ledgers that erase repair, human-review,
+  failed-attempt, or residual costs.
+- Added `lean:planning.scheduler_state.probe_fixture_bridge` in
+  `AsiStackProofs.Planning`, with a finite Lean summary bridge for scheduler
+  and local-repair traces, rejected controls, cost-quality ledger coverage,
+  no-support-effect status, and non-claim boundaries.
+- Updated the Planning live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does
+  not prove decomposition quality, context-demand prediction, selected-tier
+  adequacy, route quality, scheduler optimality, deployed scheduler behavior,
+  runtime replanning behavior, or chapter support-state promotion.
+
 ## 2026-07-02 - Add Intent-to-execution handoff probe
 
 - Added `python3 scripts/validate_intent_execution_handoff_probe.py`,
@@ -107,8 +128,8 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 156 proof targets, 54 Lean modules, 848
-  theorem declarations, 682 derived/decomposed, 162 direct/projection, 4
+- Current proof-depth snapshot: 157 proof targets, 54 Lean modules, 849
+  theorem declarations, 682 derived/decomposed, 163 direct/projection, 4
   unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate

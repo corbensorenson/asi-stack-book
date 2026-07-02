@@ -1069,6 +1069,7 @@ Draft deliverables:
 - Planned Codex test: Runtime replanning test.
 - Planned Codex test: Dispatch-state enforcement test.
 - Planned Codex test: Replanning-delta audit.
+- Implemented synthetic Codex test: Planning scheduler-state probe via `python3 scripts/validate_planning_scheduler_state_probe.py`, producing `experiments/planning_scheduler_state/results/2026-07-02-local.json`; covers two valid synthetic scheduler traces and seven expected-invalid controls for blocked-node dispatch, ready-without-context dispatch, failed-adequacy route selection, conflicting merge acceptance, replanning authority erasure, accepted dependency cycles, and cost-quality ledgers that erase repair, human-review, failed-attempt, or residual costs. This is a deterministic synthetic scheduler-state fixture only; decomposition-quality, context-demand-prediction, selected-tier-adequacy, route-quality, scheduler-optimality, deployed scheduler, runtime-replanning, support-state-promotion, and evidence-transition claims remain open.
 - Implemented synthetic Codex test: DAG acyclicity test via `python3 scripts/validate_plan_execution_contracts.py`; deployed scheduler cycle rejection remains open.
 - Planned Codex test: Capability tier assignment test.
 - Implemented Lean proof target: a failed quality predicate routes to escalation or residual under the valid node-outcome predicate.
@@ -1082,6 +1083,7 @@ Lean proof targets:
 | `lean:planning.control_layer.operational_invariant` | `AsiStackProofs.Planning` | A plan node inherits the authority ceiling of its parent contract unless governance lowers it. | implemented |
 | `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | implemented |
 | `lean:planning.control_layer.plan_graph_admission_route` | `AsiStackProofs.Planning` | Modeled plan-graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries to explicit outcomes. | implemented |
+| `lean:planning.scheduler_state.probe_fixture_bridge` | `AsiStackProofs.Planning` | The deterministic synthetic scheduler-state probe result includes a valid scheduler trace, a local-repair trace, rejected negative controls, a cost-quality ledger boundary, no support-state effect, and an explicit non-claim boundary. | implemented |
 | `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
@@ -2714,7 +2716,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 155 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 155 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 156 proof targets, 54 Lean modules, 848 theorem declarations, 682 derived/decomposed, 162 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 157 proof targets, 54 Lean modules, 849 theorem declarations, 682 derived/decomposed, 163 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -70,6 +70,9 @@ REQUIRED = [
     "scripts/validate_intent_execution_handoff_probe.py",
     "docs/intent_execution_handoff_probe.md",
     "experiments/intent_execution_handoff/results/2026-07-02-local.json",
+    "scripts/validate_planning_scheduler_state_probe.py",
+    "docs/planning_scheduler_state_probe.md",
+    "experiments/planning_scheduler_state/results/2026-07-02-local.json",
     "scripts/validate_claim_ledger_revision.py",
     "scripts/validate_proof_carrying_claims.py",
     "scripts/validate_tribunal_review.py",
@@ -782,6 +785,7 @@ def main() -> None:
     run_validator("validate_intent_intake_probe.py")
     run_validator("validate_plan_execution_contracts.py")
     run_validator("validate_intent_execution_handoff_probe.py")
+    run_validator("validate_planning_scheduler_state_probe.py")
     run_validator("validate_cognitive_compilation_traces.py")
     run_validator("validate_hive_admission.py")
     run_validator("validate_runtime_adapter_permissions.py")
