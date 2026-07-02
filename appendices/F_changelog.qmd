@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Add artifact steward lifecycle probe
+
+- Added `python3 scripts/run_artifact_steward_lifecycle_probe.py`,
+  `python3 scripts/validate_artifact_steward_lifecycle_probe.py`,
+  `docs/artifact_steward_lifecycle_probe.md`, and
+  `experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json`
+  for a deterministic public-safe steward lifecycle route probe.
+- The probe records `valid_clean_release_review_proposal`,
+  `valid_sunset_review_route`, and six expected-invalid controls:
+  `invalid_tainted_event_without_review`,
+  `invalid_over_policy_treasury_spend`,
+  `invalid_contribution_governance_laundering`,
+  `invalid_unscoped_federation_contract`,
+  `invalid_release_without_gate_evidence`, and
+  `invalid_sunset_criteria_ordinary_work`.
+- Updated the Artifact Steward Agents live chapter, curated reader chapter,
+  outline, roadmap, manifest, README/status surfaces, repository map, and
+  validation wiring. This is a no steward-bot, treasury-executor,
+  event-taint-workflow, contributor-ledger, governance-runner,
+  project-federation, release-runner, sunset-protocol, or
+  support-state-promotion claim.
+
 ## 2026-07-02 - Add runtime adapter effect replay probe
 
 - Added `python3 scripts/run_runtime_adapter_effect_probe.py`,

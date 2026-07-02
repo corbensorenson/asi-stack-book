@@ -122,6 +122,8 @@ REQUIRED = [
     "scripts/validate_runtime_adapter_permissions.py",
     "scripts/run_runtime_adapter_effect_probe.py",
     "scripts/validate_runtime_adapter_effect_probe.py",
+    "scripts/run_artifact_steward_lifecycle_probe.py",
+    "scripts/validate_artifact_steward_lifecycle_probe.py",
     "scripts/validate_artifact_graph_replay.py",
     "scripts/validate_procedural_memory_loop.py",
     "scripts/validate_routing_decision_lease.py",
@@ -294,6 +296,9 @@ REQUIRED = [
     "docs/runtime_adapter_effect_probe.md",
     "experiments/runtime_adapter_effect_probe/README.md",
     "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+    "docs/artifact_steward_lifecycle_probe.md",
+    "experiments/artifact_steward_lifecycle_probe/README.md",
+    "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "experiments/resource_workflow_trace/results/2026-07-01-local.json",
     "experiments/resource_live_probe/results/2026-07-01-local.json",
@@ -840,6 +845,7 @@ def main() -> None:
     run_validator("validate_hive_admission.py")
     run_validator("validate_runtime_adapter_permissions.py")
     run_validator("validate_runtime_adapter_effect_probe.py")
+    run_validator("validate_artifact_steward_lifecycle_probe.py")
     run_validator("validate_artifact_graph_replay.py")
     run_validator("validate_procedural_memory_loop.py")
     run_validator("validate_routing_decision_lease.py")

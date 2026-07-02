@@ -387,6 +387,20 @@ policy, and event taint. Those fixtures validate public record shape only.
 They do not execute a steward, connect to a wallet, scan live workflows, prove
 event-intake safety, or run a governance system.
 
+It also contains the Artifact steward lifecycle probe. That deterministic
+local check composes the public fixture records into two valid route examples,
+`valid_clean_release_review_proposal` and `valid_sunset_review_route`, plus
+six expected-invalid controls: `invalid_tainted_event_without_review`,
+`invalid_over_policy_treasury_spend`,
+`invalid_contribution_governance_laundering`,
+`invalid_unscoped_federation_contract`,
+`invalid_release_without_gate_evidence`, and
+`invalid_sunset_criteria_ordinary_work`. The point is not to claim a working
+project manager. It is a no steward-bot, treasury-executor,
+event-taint-workflow, contributor-ledger, governance-runner,
+project-federation, release-runner, sunset-protocol, or
+support-state-promotion claim.
+
 ## Beyond the State of the Art
 
 A mature stewardship layer would be a project-lifecycle operating system, but
@@ -413,6 +427,14 @@ That endpoint remains unimplemented here. The support state remains
 `argument` until workflow runners, treasury boundaries, event-taint pipelines,
 governance gates, release checks, sunset protocols, and behavioral tests show
 that stewardship can coordinate a project without seizing it.
+
+The current proof and test surface is therefore deliberately modest. The live
+book has schema fixtures, finite Lean record predicates, a synthetic release
+evidence handoff through the benchmark anti-Goodhart harness, and the
+deterministic Artifact steward lifecycle probe. Together they check that
+several records can be shaped and routed consistently. They do not prove
+project governance, funding safety, event-intake safety, contributor fairness,
+release safety, federation safety, or capture resistance.
 
 ## External literature and tooling queue
 

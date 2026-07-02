@@ -1,0 +1,468 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_artifact_steward_lifecycle_probe.py --write-result",
+  "evidence_transition_created": false,
+  "expected_invalid_controls": [
+    {
+      "actual_route": "quarantine_event",
+      "decision_reason": "tainted_event_without_review",
+      "expected_route": "quarantine_event",
+      "expected_valid": false,
+      "input_summary": {
+        "collapsed_score_used_for_governance": false,
+        "contribution_fields_separated": true,
+        "event_review_completed": false,
+        "event_taint_state": "untrusted",
+        "external_worker_requested": false,
+        "ordinary_work_requested": false,
+        "release_candidate_requested": true,
+        "release_gate_complete": true,
+        "sunset_criteria_met": false,
+        "sunset_review_opened": false,
+        "treasury_policy_limit_usd": 0,
+        "treasury_requested_usd": 0,
+        "worker_inherits_project_authority_requested": false
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "external_worker_dispatched": false,
+        "governance_effect_allowed": true,
+        "ordinary_work_allowed": false,
+        "protected_action_allowed": false,
+        "release_published": false,
+        "spend_executed": false,
+        "support_state_effect": "none",
+        "worker_authority_inherited": false
+      },
+      "scenario_id": "invalid_tainted_event_without_review",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "request_treasury_approval",
+      "decision_reason": "spend_exceeds_policy_without_approval",
+      "expected_route": "request_treasury_approval",
+      "expected_valid": false,
+      "input_summary": {
+        "collapsed_score_used_for_governance": false,
+        "contribution_fields_separated": true,
+        "event_review_completed": true,
+        "event_taint_state": "reviewed",
+        "external_worker_requested": false,
+        "ordinary_work_requested": false,
+        "release_candidate_requested": false,
+        "release_gate_complete": true,
+        "sunset_criteria_met": false,
+        "sunset_review_opened": false,
+        "treasury_policy_limit_usd": 0,
+        "treasury_requested_usd": 50,
+        "worker_inherits_project_authority_requested": false
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "external_worker_dispatched": false,
+        "governance_effect_allowed": true,
+        "ordinary_work_allowed": false,
+        "protected_action_allowed": false,
+        "release_published": false,
+        "spend_executed": false,
+        "support_state_effect": "none",
+        "worker_authority_inherited": false
+      },
+      "scenario_id": "invalid_over_policy_treasury_spend",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "reject_collapsed_governance",
+      "decision_reason": "collapsed_contribution_score_used_for_governance",
+      "expected_route": "reject_collapsed_governance",
+      "expected_valid": false,
+      "input_summary": {
+        "collapsed_score_used_for_governance": true,
+        "contribution_fields_separated": true,
+        "event_review_completed": true,
+        "event_taint_state": "reviewed",
+        "external_worker_requested": false,
+        "ordinary_work_requested": false,
+        "release_candidate_requested": false,
+        "release_gate_complete": true,
+        "sunset_criteria_met": false,
+        "sunset_review_opened": false,
+        "treasury_policy_limit_usd": 0,
+        "treasury_requested_usd": 0,
+        "worker_inherits_project_authority_requested": false
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "external_worker_dispatched": false,
+        "governance_effect_allowed": false,
+        "ordinary_work_allowed": false,
+        "protected_action_allowed": false,
+        "release_published": false,
+        "spend_executed": false,
+        "support_state_effect": "none",
+        "worker_authority_inherited": false
+      },
+      "scenario_id": "invalid_contribution_governance_laundering",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "reject_federation_authority_inheritance",
+      "decision_reason": "federated_worker_cannot_inherit_project_authority",
+      "expected_route": "reject_federation_authority_inheritance",
+      "expected_valid": false,
+      "input_summary": {
+        "collapsed_score_used_for_governance": false,
+        "contribution_fields_separated": true,
+        "event_review_completed": true,
+        "event_taint_state": "reviewed",
+        "external_worker_requested": true,
+        "ordinary_work_requested": false,
+        "release_candidate_requested": false,
+        "release_gate_complete": true,
+        "sunset_criteria_met": false,
+        "sunset_review_opened": false,
+        "treasury_policy_limit_usd": 0,
+        "treasury_requested_usd": 0,
+        "worker_inherits_project_authority_requested": true
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "external_worker_dispatched": false,
+        "governance_effect_allowed": true,
+        "ordinary_work_allowed": false,
+        "protected_action_allowed": false,
+        "release_published": false,
+        "spend_executed": false,
+        "support_state_effect": "none",
+        "worker_authority_inherited": false
+      },
+      "scenario_id": "invalid_unscoped_federation_contract",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "block_release_evidence_gate",
+      "decision_reason": "release_candidate_missing_required_evidence_records",
+      "expected_route": "block_release_evidence_gate",
+      "expected_valid": false,
+      "input_summary": {
+        "collapsed_score_used_for_governance": false,
+        "contribution_fields_separated": true,
+        "event_review_completed": true,
+        "event_taint_state": "reviewed",
+        "external_worker_requested": false,
+        "ordinary_work_requested": false,
+        "release_candidate_requested": true,
+        "release_gate_complete": false,
+        "sunset_criteria_met": false,
+        "sunset_review_opened": false,
+        "treasury_policy_limit_usd": 0,
+        "treasury_requested_usd": 0,
+        "worker_inherits_project_authority_requested": false
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "external_worker_dispatched": false,
+        "governance_effect_allowed": true,
+        "ordinary_work_allowed": false,
+        "protected_action_allowed": false,
+        "release_published": false,
+        "spend_executed": false,
+        "support_state_effect": "none",
+        "worker_authority_inherited": false
+      },
+      "scenario_id": "invalid_release_without_gate_evidence",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "open_sunset_review",
+      "decision_reason": "sunset_criteria_met_without_open_review",
+      "expected_route": "open_sunset_review",
+      "expected_valid": false,
+      "input_summary": {
+        "collapsed_score_used_for_governance": false,
+        "contribution_fields_separated": true,
+        "event_review_completed": true,
+        "event_taint_state": "reviewed",
+        "external_worker_requested": false,
+        "ordinary_work_requested": true,
+        "release_candidate_requested": false,
+        "release_gate_complete": true,
+        "sunset_criteria_met": true,
+        "sunset_review_opened": false,
+        "treasury_policy_limit_usd": 0,
+        "treasury_requested_usd": 0,
+        "worker_inherits_project_authority_requested": false
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "external_worker_dispatched": false,
+        "governance_effect_allowed": true,
+        "ordinary_work_allowed": false,
+        "protected_action_allowed": false,
+        "release_published": false,
+        "spend_executed": false,
+        "support_state_effect": "none",
+        "worker_authority_inherited": false
+      },
+      "scenario_id": "invalid_sunset_criteria_ordinary_work",
+      "scenario_pass": true
+    }
+  ],
+  "fixture_summary": {
+    "charter": {
+      "ref": "tests/fixtures/protocol_records/artifact_steward_charter.valid.json",
+      "sha256": "226d670f6b40ca95f07c876ae159f74adfbaad4e6699212f0917d70b35c97a59",
+      "top_level_keys": [
+        "artifact_id",
+        "authority_ceiling",
+        "budget_policy",
+        "contribution_policy",
+        "evidence_policy",
+        "federation_policy",
+        "governance_model",
+        "maintainers",
+        "mission",
+        "non_claims",
+        "non_goals",
+        "protected_assets",
+        "release_policy",
+        "steward_id",
+        "sunset_criteria"
+      ]
+    },
+    "contribution_ledger": {
+      "ref": "tests/fixtures/protocol_records/contribution_ledger_entry.valid.json",
+      "sha256": "0c00d441527ea651b25d0ad693ee995bc0828aa7abb04dad184b7a697191d5fa",
+      "top_level_keys": [
+        "artifact_refs",
+        "authorship_credit",
+        "compensation_ref",
+        "conflict_notes",
+        "contributor_id",
+        "entry_id",
+        "evidence_credit",
+        "governance_effect",
+        "non_claims",
+        "recorded_by",
+        "reputation_signal",
+        "review_credit",
+        "work_contract_id"
+      ]
+    },
+    "event_taint": {
+      "ref": "tests/fixtures/protocol_records/event_taint_record.valid.json",
+      "sha256": "9fac2bc51114933e944c4dcc4a66a22be5f6558144394e6ebad25ee834a25196",
+      "top_level_keys": [
+        "artifact_id",
+        "decision_refs",
+        "event_actor",
+        "event_id",
+        "event_source",
+        "event_surface",
+        "forbidden_control_uses",
+        "non_claims",
+        "residuals",
+        "review_requirements",
+        "sanitized_artifact_refs",
+        "taint_state",
+        "trusted_fields",
+        "untrusted_fields"
+      ]
+    },
+    "federation_lease": {
+      "ref": "tests/fixtures/protocol_records/hive_federation_lease.valid.json",
+      "sha256": "2ee1677a129e643c24ddb059f1cbdd3dc0aadc0028ef59af73eefae0877c7d5b",
+      "top_level_keys": [
+        "allowed_data_classes",
+        "allowed_job_classes",
+        "allowed_tool_classes",
+        "budget_limit",
+        "evidence_obligations",
+        "expires_at",
+        "issued_at",
+        "job_contract_ref",
+        "lease_id",
+        "network_scope",
+        "non_claims",
+        "payment_or_credit_ref",
+        "provider_hive",
+        "requester_hive",
+        "revocation_path",
+        "sandbox_manifest_ref"
+      ]
+    },
+    "steward_decision": {
+      "ref": "tests/fixtures/protocol_records/steward_action_decision.valid.json",
+      "sha256": "ba9e2ad7d0a49b3cec28259eda3440b5dcf0ef2faff4fa1dd89498e41f65ce93",
+      "top_level_keys": [
+        "action_type",
+        "affected_artifacts",
+        "approval_refs",
+        "artifact_id",
+        "authority_basis",
+        "decision_id",
+        "evidence_refs",
+        "execution_status",
+        "inputs",
+        "non_claims",
+        "rejected_options",
+        "required_approvals",
+        "residuals",
+        "steward_id"
+      ]
+    },
+    "sunset_review": {
+      "ref": "tests/fixtures/protocol_records/sunset_review_record.valid.json",
+      "sha256": "704bb5dc14f81fc25813242f07f05ecd80faf4aa6289c72b4ca152184bfa1747",
+      "top_level_keys": [
+        "active_maintainers_status",
+        "active_users_status",
+        "appeal_path",
+        "archival_plan",
+        "artifact_id",
+        "decision_status",
+        "dependencies",
+        "evidence_refs",
+        "fork_or_transfer_path",
+        "funds_status",
+        "non_claims",
+        "open_risks",
+        "review_id",
+        "sunset_recommendation",
+        "value_signal"
+      ]
+    },
+    "treasury_policy": {
+      "ref": "tests/fixtures/protocol_records/treasury_policy_record.valid.json",
+      "sha256": "39b3ea13518cf0574816f61e909d77b89b036453d0d33fe31da96d1619e418d5",
+      "top_level_keys": [
+        "approval_required_above",
+        "artifact_id",
+        "audit_requirements",
+        "autonomous_spend_limit",
+        "bounty_limit",
+        "compute_rental_limit",
+        "emergency_freeze_authorities",
+        "non_claims",
+        "policy_id",
+        "protected_spend_classes",
+        "recurring_ops_limit",
+        "single_action_limit",
+        "treasury_mode"
+      ]
+    },
+    "work_contract": {
+      "ref": "tests/fixtures/protocol_records/project_work_contract.valid.json",
+      "sha256": "658108a6efa00662a827c4104f0daa283c4589383a3711fbf51df9ed2cae79c3",
+      "top_level_keys": [
+        "acceptance_tests",
+        "allowed_files_or_systems",
+        "allowed_tools",
+        "artifact_id",
+        "budget_limit",
+        "compute_limits",
+        "context_refs",
+        "contract_id",
+        "deadline",
+        "dispatch_status",
+        "evidence_requirements",
+        "forbidden_tools",
+        "non_claims",
+        "objective",
+        "required_outputs",
+        "review_requirements",
+        "rollback_path"
+      ]
+    }
+  },
+  "local_only": true,
+  "non_claims": [
+    "This artifact steward lifecycle probe does not promote any chapter core claim above argument.",
+    "This artifact steward lifecycle probe does not create a support-state transition.",
+    "This artifact steward lifecycle probe does not deploy or execute a steward bot, treasury executor, event-taint workflow, governance runner, contributor-ledger service, project federation harness, release runner, or sunset protocol.",
+    "This artifact steward lifecycle probe does not prove treasury safety, legal authority, governance correctness, contributor fairness, workflow-injection resistance, capture resistance, release safety, federation safety, steward autonomy, project quality, or AI safety.",
+    "This artifact steward lifecycle probe uses generated public-safe fixture compositions only; it does not move funds, merge branches, publish releases, dispatch external workers, scan live repository events, or call a network service. It does not copy private source text, local paths, secrets, keys, or raw project payloads into the repository."
+  ],
+  "pass": true,
+  "probe_id": "artifact-steward-lifecycle-probe-2026-07-02-local",
+  "public_safety_boundary": "Generated public-safe steward lifecycle records only; no funds, branch, release, worker, live event, network target, private source, or external service is mutated.",
+  "record_kind": "artifact_steward_lifecycle_probe",
+  "recorded_at_utc": "2026-07-02T11:36:04Z",
+  "schema_version": "0.1",
+  "summary": {
+    "decision_digest": "5329cf4d659a7d25396ab28dbd65d85e195f3d532ab1970452bcffc4b637c84d",
+    "expected_invalid_controls": 6,
+    "valid_scenarios": 2
+  },
+  "support_state_effect": "none",
+  "valid_scenarios": [
+    {
+      "actual_route": "prepare_release_review",
+      "decision_reason": "release_candidate_has_required_records_but_is_not_published",
+      "expected_route": "prepare_release_review",
+      "expected_valid": true,
+      "input_summary": {
+        "collapsed_score_used_for_governance": false,
+        "contribution_fields_separated": true,
+        "event_review_completed": true,
+        "event_taint_state": "reviewed",
+        "external_worker_requested": false,
+        "ordinary_work_requested": false,
+        "release_candidate_requested": true,
+        "release_gate_complete": true,
+        "sunset_criteria_met": false,
+        "sunset_review_opened": false,
+        "treasury_policy_limit_usd": 0,
+        "treasury_requested_usd": 0,
+        "worker_inherits_project_authority_requested": false
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "external_worker_dispatched": false,
+        "governance_effect_allowed": true,
+        "ordinary_work_allowed": true,
+        "protected_action_allowed": true,
+        "release_published": false,
+        "spend_executed": false,
+        "support_state_effect": "none",
+        "worker_authority_inherited": false
+      },
+      "scenario_id": "valid_clean_release_review_proposal",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "open_sunset_review",
+      "decision_reason": "sunset_criteria_met_without_open_review",
+      "expected_route": "open_sunset_review",
+      "expected_valid": true,
+      "input_summary": {
+        "collapsed_score_used_for_governance": false,
+        "contribution_fields_separated": true,
+        "event_review_completed": true,
+        "event_taint_state": "reviewed",
+        "external_worker_requested": false,
+        "ordinary_work_requested": false,
+        "release_candidate_requested": false,
+        "release_gate_complete": true,
+        "sunset_criteria_met": true,
+        "sunset_review_opened": false,
+        "treasury_policy_limit_usd": 0,
+        "treasury_requested_usd": 0,
+        "worker_inherits_project_authority_requested": false
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "external_worker_dispatched": false,
+        "governance_effect_allowed": true,
+        "ordinary_work_allowed": false,
+        "protected_action_allowed": false,
+        "release_published": false,
+        "spend_executed": false,
+        "support_state_effect": "none",
+        "worker_authority_inherited": false
+      },
+      "scenario_id": "valid_sunset_review_route",
+      "scenario_pass": true
+    }
+  ]
+}

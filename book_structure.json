@@ -5945,14 +5945,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },
@@ -11256,6 +11256,13 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean build",
               "status": "implemented as a finite Lean predicate; no steward loop exists"
+            },
+            {
+              "name": "Artifact steward lifecycle probe",
+              "purpose": "Check fixture-composed steward lifecycle routes for `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and six expected-invalid controls covering tainted events, over-policy treasury spend, contribution-governance laundering, unscoped federation authority inheritance, missing release evidence, and sunset ordinary-work blocking.",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic public-safe lifecycle probe; no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim",
+              "status": "implemented by `python3 scripts/validate_artifact_steward_lifecycle_probe.py`; no steward bot, treasury executor, event-taint workflow, contributor-ledger service, governance runner, project federation harness, release runner, sunset protocol, or support-state transition exists"
             }
           ],
           "proof_targets": [
@@ -11305,7 +11312,7 @@
           "draft_maturity": "chapter draft",
           "open_evidence_gaps": [
             "Appendix C now records exact passage-reviewed mappings for all assigned Artifact Steward Agents sources; support remains at argument until a steward bot, treasury executor, event-taint workflow, contributor-ledger service, governance runner, release gate, sunset protocol, or behavioral tests exist.",
-            "Only record-shape schemas, valid fixtures, and narrow finite Lean predicates have been implemented; no steward bot, treasury policy engine, event-taint workflow, governance system, project federation harness, or sunset protocol has been executed from this repository.",
+            "Record-shape schemas, valid fixtures, narrow finite Lean predicates, the benchmark anti-Goodhart synthetic release evidence/approval handoff, and the deterministic public-safe Artifact steward lifecycle probe are implemented. The lifecycle probe checks `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and six expected-invalid controls over fixture-composed route records, but no steward bot, treasury policy engine, event-taint workflow, governance system, contributor-ledger service, project federation harness, release runner, or sunset protocol has been executed from this repository.",
             "External tooling and governance sources are reviewed as adjacent substrate/risk references only; they do not prove the ASI Stack steward design or any safety, legal, funding, governance, or capture-resistance property."
           ],
           "lean_module": "AsiStackProofs.ArtifactStewardAgents"
