@@ -1449,6 +1449,36 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Added with the steward lifecycle expansion: the target is a finite record implication blocking ordinary work when sunset criteria are met and no review is open."
+    },
+    {
+      "tag": "lean:artifact_stewards.lifecycle_route.failure_blocks_promotion",
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A steward lifecycle route sends tainted unreviewed events to quarantine, sunset criteria without review to sunset review, autonomy escalation without charter approval to approval, and over-policy treasury spend to approval.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactStewardAgents as a finite lifecycle-route decision function: tainted unreviewed events route to quarantine, sunset gaps route to sunset review, autonomy escalation without charter approval routes to approval, and over-policy treasury spend routes to approval."
+    },
+    {
+      "tag": "lean:artifact_stewards.contribution_ledger.operational_invariant",
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A steward contribution ledger keeps authorship, review, evidence, compensation, reputation, governance effect, and conflicts separated; collapsed governance scoring is rejected and support-state changes require evidence-transition records.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactStewardAgents as finite contribution-ledger route theorems: missing separated credits route to repair, collapsed governance scoring is rejected, support-state changes without transition evidence route to evidence review, and complete non-promoting ledgers can be accepted."
+    },
+    {
+      "tag": "lean:artifact_stewards.federation_contract.operational_invariant",
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A steward federation contract requires scoped work contracts, bounded worker authority, tool/data/budget gates, external-spend approval, and evidence-bundle requirements before dispatch.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactStewardAgents as finite federation-contract route theorems: missing contracts request repair, inherited project authority is rejected, external spend without approval routes to approval, and complete scoped federation dispatch requires evidence-bundle boundaries."
     }
   ]
 }

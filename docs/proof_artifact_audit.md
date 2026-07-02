@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 144 |
-| Manifest status counts | {"implemented": 144} |
-| Triage class counts | {"formal-invariant": 144} |
+| Proof targets audited | 147 |
+| Manifest status counts | {"implemented": 147} |
+| Triage class counts | {"formal-invariant": 147} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -34,7 +34,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Alignment.lean` | 3 | 23 | 10 | 5 |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | 3 | 19 | 6 | 3 |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | 2 | 24 | 6 | 3 |
-| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 4 | 16 | 7 | 7 |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 16 | 7 | 7 |
 | `lean/AsiStackProofs/Authority.lean` | 3 | 28 | 8 | 5 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 2 | 5 | 3 | 3 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 4 | 2 | 2 |
@@ -91,7 +91,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Chapter ID | Tags present | Limitation references | Missing tags | Missing limitation references |
 |---|---:|---:|---:|---:|
 | `artifact-graphs-audit-logs-and-replay` | 2 | 2 | 0 | 0 |
-| `artifact-steward-agents-and-living-project-governance` | 4 | 4 | 0 | 0 |
+| `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 2 | 2 | 0 | 0 |
 | `capability-replacement-and-rollback` | 3 | 3 | 0 | 0 |
@@ -273,6 +273,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.release_gate.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.sunset_review.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifact_stewards.lifecycle_route.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifact_stewards.contribution_ledger.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifact_stewards.federation_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:reference_architecture.trace.operational_invariant` | `integrated-reference-architecture` | `AsiStackProofs.ReferenceArchitecture` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:reference_architecture.trace.failure_blocks_promotion` | `integrated-reference-architecture` | `AsiStackProofs.ReferenceArchitecture` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.report_contract.operational_invariant` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |

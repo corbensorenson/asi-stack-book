@@ -10976,6 +10976,24 @@
               "module": "AsiStackProofs.ArtifactStewardAgents",
               "target": "When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:artifact_stewards.lifecycle_route.failure_blocks_promotion",
+              "module": "AsiStackProofs.ArtifactStewardAgents",
+              "target": "A steward lifecycle route sends tainted unreviewed events to quarantine, sunset criteria without review to sunset review, autonomy escalation without charter approval to approval, and over-policy treasury spend to approval.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifact_stewards.contribution_ledger.operational_invariant",
+              "module": "AsiStackProofs.ArtifactStewardAgents",
+              "target": "A steward contribution ledger keeps authorship, review, evidence, compensation, reputation, governance effect, and conflicts separated; collapsed governance scoring is rejected and support-state changes require evidence-transition records.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifact_stewards.federation_contract.operational_invariant",
+              "module": "AsiStackProofs.ArtifactStewardAgents",
+              "target": "A steward federation contract requires scoped work contracts, bounded worker authority, tool/data/budget gates, external-spend approval, and evidence-bundle requirements before dispatch.",
+              "status": "implemented"
             }
           ],
           "draft_maturity": "chapter draft",

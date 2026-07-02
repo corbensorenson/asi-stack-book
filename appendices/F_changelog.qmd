@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-01 - Surface Artifact Steward proof lane
+
+- Promoted the existing Artifact Steward lifecycle, contribution-ledger, and
+  federation-contract Lean theorem families into first-class proof targets in
+  `book_structure.json`, `docs/book_outline.md`, the chapter formalization
+  hook table, `proofs/proof_manifest.json`, and `proofs/proof_triage.json`.
+- Regenerated proof-depth and proof-artifact audit surfaces so the current
+  manifest records 147 implemented finite-record proof targets, with the
+  Artifact Steward chapter now carrying seven target rows.
+- Updated the v1.x chapter-review burn-down row and current proof-status docs.
+  This is proof-surfacing and traceability work only; it does not implement a
+  steward bot, treasury engine, event-taint workflow, governance runner,
+  contribution-ledger service, federation harness, release runner, sunset
+  protocol, behavioral steward loop, support-state promotion, or governance
+  safety claim.
+
 ## 2026-07-01 - Sharpen Living Book methodology framing
 
 - Reframed `living-book-methodology` as the paired methodological contribution

@@ -1,13 +1,13 @@
 {
   "generated_from": "docs/book_outline.md",
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
-  "proof_target_count": 144,
+  "proof_target_count": 147,
   "status_counts": {
-    "implemented": 144
+    "implemented": 147
   },
   "chapter_counts": {
     "artifact-graphs-audit-logs-and-replay": 2,
-    "artifact-steward-agents-and-living-project-governance": 4,
+    "artifact-steward-agents-and-living-project-governance": 7,
     "asi-is-a-stack-not-a-model": 3,
     "benchmark-ratchets-and-anti-goodhart-evidence": 2,
     "capability-replacement-and-rollback": 3,
@@ -1393,13 +1393,43 @@
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "chapter_title": "Artifact Steward Agents and Living Project Governance",
+      "tag": "lean:artifact_stewards.lifecycle_route.failure_blocks_promotion",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A steward lifecycle route sends tainted unreviewed events to quarantine, sunset criteria without review to sunset review, autonomy escalation without charter approval to approval, and over-policy treasury spend to approval.",
+      "status": "implemented",
+      "outline_line": 2951,
+      "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
+    },
+    {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "chapter_title": "Artifact Steward Agents and Living Project Governance",
+      "tag": "lean:artifact_stewards.contribution_ledger.operational_invariant",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A steward contribution ledger keeps authorship, review, evidence, compensation, reputation, governance effect, and conflicts separated; collapsed governance scoring is rejected and support-state changes require evidence-transition records.",
+      "status": "implemented",
+      "outline_line": 2952,
+      "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
+    },
+    {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "chapter_title": "Artifact Steward Agents and Living Project Governance",
+      "tag": "lean:artifact_stewards.federation_contract.operational_invariant",
+      "module": "AsiStackProofs.ArtifactStewardAgents",
+      "formal_target": "A steward federation contract requires scoped work contracts, bounded worker authority, tool/data/budget gates, external-spend approval, and evidence-bundle requirements before dispatch.",
+      "status": "implemented",
+      "outline_line": 2953,
+      "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
+    },
+    {
       "chapter_id": "integrated-reference-architecture",
       "chapter_title": "Integrated Reference Architecture",
       "tag": "lean:reference_architecture.trace.operational_invariant",
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "An end-to-end trace contains required artifacts for each layer handoff.",
       "status": "implemented",
-      "outline_line": 3008,
+      "outline_line": 3011,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
     {
@@ -1409,7 +1439,7 @@
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "A trace with a missing governance gate cannot be marked valid.",
       "status": "implemented",
-      "outline_line": 3009,
+      "outline_line": 3012,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
     {
@@ -1419,7 +1449,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
       "status": "implemented",
-      "outline_line": 3092,
+      "outline_line": 3095,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1429,7 +1459,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
       "status": "implemented",
-      "outline_line": 3093,
+      "outline_line": 3096,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1439,7 +1469,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
       "status": "implemented",
-      "outline_line": 3152,
+      "outline_line": 3155,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -1449,7 +1479,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A phase milestone cannot promote a claim without evidence artifacts.",
       "status": "implemented",
-      "outline_line": 3153,
+      "outline_line": 3156,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -1459,7 +1489,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
       "status": "implemented",
-      "outline_line": 3220,
+      "outline_line": 3223,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1469,7 +1499,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
       "status": "implemented",
-      "outline_line": 3221,
+      "outline_line": 3224,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1479,7 +1509,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
       "status": "implemented",
-      "outline_line": 3281,
+      "outline_line": 3284,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -1489,7 +1519,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
       "status": "implemented",
-      "outline_line": 3282,
+      "outline_line": 3285,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

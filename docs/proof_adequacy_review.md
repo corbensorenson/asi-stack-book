@@ -152,7 +152,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `executable-specifications-and-lean-proof-envelope` | 2 | adequate finite-record invariant | Proof artifact authority negative-case envelope added; keep narrow and do not broaden beyond checked records. |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 2 | useful but too narrow | Ratchet-decision envelope and synthetic anti-Goodhart harness added; still add empirical benchmark runs, hidden-transfer tests, contamination audits, source-reported replay, regression suites, and benchmark-quality review before stronger claims. |
 | `policy-optimization-and-learning-from-feedback` | 3 | needs empirical or baseline tests first | Policy-promotion route envelope added; still build workload, baseline, reward-quality, rollback, and result records before stronger proof. |
-| `artifact-steward-agents-and-living-project-governance` | 4 | useful but too narrow | Lifecycle-route, contribution-ledger, and federation-contract route envelopes added; still add event-taint workflow intake, treasury/governance runners, executable contribution-ledger services, executable federation contract tests, sunset execution, and behavioral steward-loop traces before stronger claims. |
+| `artifact-steward-agents-and-living-project-governance` | 7 | useful but too narrow | Lifecycle-route, contribution-ledger, and federation-contract route envelopes are now first-class proof targets alongside work-contract, protected-action, release-gate, and sunset predicates; still add event-taint workflow intake, treasury/governance runners, executable contribution-ledger services, executable federation contract tests, sunset execution, and behavioral steward-loop traces before stronger claims. |
 | `integrated-reference-architecture` | 2 | useful but too narrow | Reference-trace harness and trace-route envelope added; still add runtime trace replay, live artifact-continuity audit, deployed authority stop-condition checker, integration stress tests, and independent trace review before stronger claims. |
 | `project-theseus-as-report-first-implementation-reference` | 2 | research-agenda until artifact import | Theseus report-boundary negative-case Lean envelope added; still import/replay artifacts before adequacy can rise. |
 | `prototype-roadmap` | 2 | useful but too narrow | Phase-route envelope added; still add executable phase acceptance, dependency-gate audit, phase execution, benchmark, and full evidence-state tests. |
@@ -928,8 +928,9 @@ benchmark-quality, or empirical capability claims.
 ### Artifact Steward Lifecycle, Contribution, And Federation Envelopes
 
 The Artifact Steward follow-through increments strengthened
-`AsiStackProofs.ArtifactStewardAgents` without changing proof targets or support
-states. The module now includes a finite `StewardLifecycleRoute`,
+`AsiStackProofs.ArtifactStewardAgents` and the lifecycle, contribution-ledger,
+and federation-contract envelopes are now surfaced as implemented proof targets
+without changing support states. The module includes a finite `StewardLifecycleRoute`,
 `StewardLifecycleDecision`, and `StewardLifecycleRouteFor` decision function
 over tainted events, sunset criteria, autonomy escalation, charter approval,
 treasury spending, and treasury-policy boundaries. The new theorems check that
