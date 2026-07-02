@@ -3,6 +3,19 @@
   "target_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
   "operations": [
     {
+      "id": "v1_0.rankfold.source_support_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Source support boundaries"
+      },
+      "rationale": "Replace the generated-reader source-support table with prose while preserving source-lineage boundaries and non-claims without disturbing the live Core Claim marker pipeline.",
+      "content_lines": [
+        "The source lineage remains useful but bounded. `rankfold_neuralfold` supplies the tensor-centric archive framing, per-artifact optimization, low-rank residual transforms, manifests, codec parameters, deterministic decode obligations, and reconstruction-check vocabulary. `rankfold_compressor` preserves vector-pair, factorized, adaptive-rank, entropy-aware, recursive-cascade, metrics, and CLI lineage. `bbvca_v9` contributes reconstruction contracts, exact repairs, bounded verification, fallback, and proxy-versus-final-rate discipline. `cgs` contributes compact seeds, generated structure, residual channels, verification contracts, and hidden-complexity accounting. `bugbrain` keeps edge-efficiency and local-resource pressure visible. None of these sources should be read as a local compression ratio, codec-correctness result, downstream-utility result, or support-state promotion."
+      ]
+    },
+    {
       "id": "v1_0.rankfold.artifact_compression_states_reader_replace",
       "status": "active",
       "action": "replace_section",

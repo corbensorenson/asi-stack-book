@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-07-02 - Reduce RankFold reader table density
+
+- Added one active reader-only semantic overlay operation for `RankFold,
+  NeuralFold, and Artifact Compression`, replacing the generated reader and
+  live Human-view `Core Claim` source-support table with narrative prose while
+  leaving the canonical AI/research source-support table unchanged.
+- Preserved the exact public-safe RankFold artifact-import and RAW0 replay
+  boundaries in reader prose: the 100,000,000-byte decoded artifact digest,
+  observed 2.76634019 decoded/archive ratio inside the recorded import set,
+  `rfa verify` 1 OK / 0 failed summaries, `NEURAL0` inspect metadata, the
+  3,936-byte synthetic replay fixture, `RAW0` / `Raw (stored)` boundary, no
+  compression advantage, corrupt-archive rejection, and both no-promotion
+  records.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, and the reader chapter review matrix.
+  The reader-continuity audit now records 44 reader chapters, 116,280 reader
+  words, 36 active/applied overlay operations, 4 table rows, 53 Mermaid
+  diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and
+  1 high-priority plus 14 medium-priority heuristic review rows. The RankFold
+  chapter moved from high to low priority by table-density heuristics.
+- Updated the v1.0 status snapshot, roadmap burn-down, and tracked audio-script
+  probe table count from 7 to 6 to match the generated reader-derived
+  narration workspace. This is a reader projection and Human-view craft
+  increment only; it is not a reader release, ebook/document/PDF/audio
+  artifact, NeuralFold compression result, compression-advantage claim,
+  codec-correctness result, downstream-utility result, fallback-execution
+  result, deployed-compression result, support-state promotion, or
+  source-derived evidence update.
+
 ## 2026-07-02 - Reduce Virtual Context ABI reader table density
 
 - Added two active reader-only semantic overlay operations for

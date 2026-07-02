@@ -145,6 +145,8 @@ keeps this replay at `argument` and records `blocks_promotion` until an enabled
 NeuralFold path, public-safe corpus, decoder review, downstream utility,
 fallback execution, and independent review exist.
 
+### Source support boundaries
+
 | Source | What it supports | Limit |
 |---|---|---|
 | `rankfold_neuralfold` | Tensor-centric archival structure, per-artifact optimization, low-rank residual transforms, residual-coder cost alignment, WORM assumptions, manifests, codec parameters, deterministic decode, fuzz/integration tests, and reconstruction checks. | No local compression implementation, corpus benchmark, deterministic decoder, reproduced ratio, or utility probe exists here. |
