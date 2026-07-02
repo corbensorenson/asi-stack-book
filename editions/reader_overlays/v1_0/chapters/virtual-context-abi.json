@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/virtual-context-abi.qmd",
+  "operations": [
+    {
+      "id": "v1_0.virtual_context_abi.representation_examples_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Representation examples"
+      },
+      "rationale": "Replace the generated-reader representation table with prose while preserving the same exact-excerpt, summary, redaction, claim-cell, and reader-paraphrase boundaries.",
+      "content_lines": [
+        "The same source can honestly appear in several forms, and each form carries a different permission boundary. An exact excerpt can support citation review, quote checking, or contradiction work, but it cannot be shown where clearance or authority forbids the underlying source. A lossy planning summary can orient a planner and expose dependencies, but it cannot become proof, citation, or support-state promotion.",
+        "",
+        "A redacted execution packet can tell a worker what to do under a narrower disclosure rule, but it is not the full source and does not broaden the worker's authority. A claim or contradiction cell can enter the claim ledger for review and belief revision, but the support state still belongs to the claim ledger rather than to the certificate by itself. A reader-facing paraphrase can help a human understand the argument, but it cannot become source evidence or proof support.",
+        "",
+        "Those examples are design semantics only. They show why the ABI needs typed representations and certificates; they do not show that a summary-fidelity checker, deployed VCM service, or model-facing memory system exists."
+      ]
+    },
+    {
+      "id": "v1_0.virtual_context_abi.interfaces_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces"
+      },
+      "rationale": "Replace the generated-reader interface field table with prose while preserving the planning, VCM, claim-ledger, execution, artifact, transaction, and adequacy handoffs.",
+      "content_lines": [
+        "Planning asks for context by task, address, authority, representation need, and adequacy target. It should receive enough structure to know whether the returned object is a constraint, claim, decision, source excerpt, summary, or residual. VCM owns the materialization boundary: address, version, certificate, source reference, authority, loss, permitted use, lease, residual, and fault state.",
+        "",
+        "Claim ledgers and Spinoza-style review can consume claim and evidence cells, but a certificate does not settle the claim. Support state, contradiction, revision, and promotion remain claim-ledger decisions. Execution consumes only permitted representations; a redacted execution packet may guide work without exposing the broader source or expanding authority.",
+        "",
+        "Artifact graphs store certificate references when context-derived representations become durable work products, so a later audit can recover which context object influenced an artifact. Context transactions handle the dynamic memory semantics that this static ABI does not own: snapshot consistency, branch isolation, mount permissions, taint propagation, deletion closure, and declassification. Verification bandwidth handles the adequacy question: a packet can be validly admitted and still be too weak for a high-risk claim.",
+        "",
+        "The minimum ABI record therefore needs identifiers and boundaries such as `request_id`, `task_id`, `semantic_address`, `version`, `mount`, `snapshot_id`, `representation_contract`, `authority_ceiling`, `admission_state`, `adequacy_state`, `fault_state`, `materialization_ref`, `lease_expiry`, `source_refs`, `residuals`, `audit_refs`, and `non_claims`. The matching semantic page certificate needs the cell identity and derivation fields: `page_id`, `cell_type`, `source_bindings`, `derived_from`, `transaction_refs`, `artifact_refs`, `representation_kind`, `loss_contract`, `omissions`, `authority_ceiling`, `permitted_uses`, `validity_window`, `verification_state`, `revocation_state`, `residual_risks`, and `non_claims`.",
+        "",
+        "Those fields make the handoffs inspectable, but they still do not prove resolver correctness, certificate truthfulness, transaction isolation, deletion enforcement, model-facing context quality, leak prevention, or VCM-Bench behavior."
+      ]
+    }
+  ]
+}

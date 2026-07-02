@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 33,
+  "operation_count": 35,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -403,6 +403,30 @@
       },
       "content": "Adequacy states give the system a public way to refuse overconfident prose. If required source units are absent, the system has no basis for a source-derived claim. If the packet is drafting-only, it may help write, orient, or assemble a source queue, but it cannot verify the target claim. A local check is narrower still: a citation, schema, fact, or consistency relation may have been checked without proving the broader claim.\n\nJoint check is the first state that can plausibly support a stronger move, because the required semantic units were compared in the declared mode. Even then, support promotion still depends on the other evidence gates. Summary-derived context carries an explicit ceiling: a compressed packet or summary may be useful, but the claim cannot outrun the known loss and residuals. Escalated context is an honest stop sign, routing the claim to retrieval, split review, tribunal, proof, or human review until stronger evidence returns.\n\nContradicted is not a minor confidence adjustment. It means the adequacy pass found a conflict that matters to the target claim, so the claim needs revision, downgrade, refutation, or residual preservation. These states do not measure a model's hidden attention. They give the stack a visible vocabulary for saying which use the loaded context can honestly support.",
       "rationale": "Replace the context-adequacy state table with reader prose while preserving the canonical AI/research adequacy-state matrix."
+    },
+    {
+      "id": "v1_0.virtual_context_abi.representation_examples_reader_replace",
+      "target_file": "chapters/virtual-context-abi.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Representation examples",
+        "aliases": []
+      },
+      "content": "The same source can honestly appear in several forms, and each form carries a different permission boundary. An exact excerpt can support citation review, quote checking, or contradiction work, but it cannot be shown where clearance or authority forbids the underlying source. A lossy planning summary can orient a planner and expose dependencies, but it cannot become proof, citation, or support-state promotion.\n\nA redacted execution packet can tell a worker what to do under a narrower disclosure rule, but it is not the full source and does not broaden the worker's authority. A claim or contradiction cell can enter the claim ledger for review and belief revision, but the support state still belongs to the claim ledger rather than to the certificate by itself. A reader-facing paraphrase can help a human understand the argument, but it cannot become source evidence or proof support.\n\nThose examples are design semantics only. They show why the ABI needs typed representations and certificates; they do not show that a summary-fidelity checker, deployed VCM service, or model-facing memory system exists.",
+      "rationale": "Replace the generated-reader representation table with prose while preserving the same exact-excerpt, summary, redaction, claim-cell, and reader-paraphrase boundaries."
+    },
+    {
+      "id": "v1_0.virtual_context_abi.interfaces_reader_replace",
+      "target_file": "chapters/virtual-context-abi.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "Planning asks for context by task, address, authority, representation need, and adequacy target. It should receive enough structure to know whether the returned object is a constraint, claim, decision, source excerpt, summary, or residual. VCM owns the materialization boundary: address, version, certificate, source reference, authority, loss, permitted use, lease, residual, and fault state.\n\nClaim ledgers and Spinoza-style review can consume claim and evidence cells, but a certificate does not settle the claim. Support state, contradiction, revision, and promotion remain claim-ledger decisions. Execution consumes only permitted representations; a redacted execution packet may guide work without exposing the broader source or expanding authority.\n\nArtifact graphs store certificate references when context-derived representations become durable work products, so a later audit can recover which context object influenced an artifact. Context transactions handle the dynamic memory semantics that this static ABI does not own: snapshot consistency, branch isolation, mount permissions, taint propagation, deletion closure, and declassification. Verification bandwidth handles the adequacy question: a packet can be validly admitted and still be too weak for a high-risk claim.\n\nThe minimum ABI record therefore needs identifiers and boundaries such as `request_id`, `task_id`, `semantic_address`, `version`, `mount`, `snapshot_id`, `representation_contract`, `authority_ceiling`, `admission_state`, `adequacy_state`, `fault_state`, `materialization_ref`, `lease_expiry`, `source_refs`, `residuals`, `audit_refs`, and `non_claims`. The matching semantic page certificate needs the cell identity and derivation fields: `page_id`, `cell_type`, `source_bindings`, `derived_from`, `transaction_refs`, `artifact_refs`, `representation_kind`, `loss_contract`, `omissions`, `authority_ceiling`, `permitted_uses`, `validity_window`, `verification_state`, `revocation_state`, `residual_risks`, and `non_claims`.\n\nThose fields make the handoffs inspectable, but they still do not prove resolver correctness, certificate truthfulness, transaction isolation, deletion enforcement, model-facing context quality, leak prevention, or VCM-Bench behavior.",
+      "rationale": "Replace the generated-reader interface field table with prose while preserving the planning, VCM, claim-ledger, execution, artifact, transaction, and adequacy handoffs."
     }
   ],
   "non_claims": [
