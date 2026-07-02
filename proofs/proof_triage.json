@@ -441,6 +441,16 @@
       "rationale": "Implemented in AsiStackProofs.Replacement as a finite synthetic trace-summary mirror: it records trace counts, canary non-default status, monitor-triggered rollback, rollback dry-run presence, rejected negative controls, residuals, no-support-effect status, and non-claim boundary only, without proving deployed replacement behavior, monitor quality, regression-suite quality, production rollback, or chapter-core support movement."
     },
     {
+      "tag": "lean:replacement.intent_governed.bridge",
+      "chapter_id": "capability-replacement-and-rollback",
+      "module": "AsiStackProofs.Replacement",
+      "formal_target": "The deterministic intent-governed replacement bridge records two valid bridge traces, six rejected expected-invalid controls, intent and command refs, authority-widening rejection, stop-condition-erasure rejection, default-without-approval blocking, rollback-owner requirement, no support-state effect, and non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Replacement as a finite intent-governed bridge-summary mirror for python3 scripts/validate_intent_governed_replacement_bridge.py; it records synthetic bridge counts, intent and command reference requirements, authority-widening rejection, stop-condition-erasure rejection, default-without-approval blocking, rollback-owner requirement, no-support-effect status, and non-claim boundary only, without proving parser quality, deployed dispatcher behavior, approval-service enforcement, deployed replacement behavior, monitor quality, regression-suite quality, production rollback, evidence-transition acceptance, or chapter-core support movement."
+    },
+    {
       "tag": "lean:security.scif.operational_invariant",
       "chapter_id": "security-kernel-and-digital-scifs",
       "module": "AsiStackProofs.SecurityKernel",
@@ -1731,5 +1741,5 @@
       "rationale": "Implemented in AsiStackProofs.ArtifactStewardAgents as finite federation-contract route theorems: missing contracts request repair, inherited project authority is rejected, external spend without approval routes to approval, and complete scoped federation dispatch requires evidence-bundle boundaries."
     }
   ],
-  "record_count": 172
+  "record_count": 173
 }

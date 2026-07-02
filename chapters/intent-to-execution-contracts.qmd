@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Executed consolidation of `intent-to-execution-contracts` and `command-contracts-and-semantic-interfaces`; the old command-contract slug is preserved by a static redirect and the source chapter is archived for lineage."
-  - "Source notes, schemas, fixtures, a synthetic plan-execution harness, the Intent-to-execution handoff probe, and finite Lean predicates including a dispatch-route envelope, a handoff-probe bridge, and command-contract negative cases support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, artifact satisfaction, or deployed execution safety."
+  - "Source notes, schemas, fixtures, a synthetic plan-execution harness, the Intent-to-execution handoff probe, the Intent-governed replacement bridge, and finite Lean predicates including a dispatch-route envelope, a handoff-probe bridge, and command-contract negative cases support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, replacement execution, artifact satisfaction, or deployed execution safety."
   - "External grounding now includes source-noted comparators for reasoning/action loops, planning languages, HTN planning, durable workflows, DAG orchestration, process notation, high-level system modeling, and program verification; these are comparator records only, not command-contract implementation evidence."
   - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `software_magic_grimoire`; supporting: `talos`, `genesiscode`, `cognitive_compilation`; connector/recovery: `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`; connector/source-note only: `moecot` |
-| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes 3 valid and 10 expected-invalid synthetic plan-execution contract checks, including unresolved-ambiguity dispatch blocking, unrejected-hidden-override blocking, intent-authority-ceiling preservation, inferred-field dispatch blocking, a valid blocked inferred-authority residual path, and inferred-authority dispatch blocking; `python3 scripts/validate_intent_execution_handoff_probe.py` passes two valid synthetic handoff traces and seven expected-invalid controls, producing `experiments/intent_execution_handoff/results/2026-07-02-local.json`; `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` implement finite record predicates including a dispatch-route envelope, a handoff-probe bridge, missing-field negative case, hidden-override precedence negative case, and field-confidence route. Behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, authority-extraction, artifact-satisfaction, and runtime execution tests remain planned. |
+| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes 3 valid and 10 expected-invalid synthetic plan-execution contract checks, including unresolved-ambiguity dispatch blocking, unrejected-hidden-override blocking, intent-authority-ceiling preservation, inferred-field dispatch blocking, a valid blocked inferred-authority residual path, and inferred-authority dispatch blocking; `python3 scripts/validate_intent_execution_handoff_probe.py` passes two valid synthetic handoff traces and seven expected-invalid controls, producing `experiments/intent_execution_handoff/results/2026-07-02-local.json`; `python3 scripts/validate_intent_governed_replacement_bridge.py` passes two valid synthetic bridge traces and six expected-invalid controls, producing `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`; `AsiStackProofs.IntentToExecution`, `AsiStackProofs.CommandContracts`, and the downstream `AsiStackProofs.Replacement` bridge implement finite record predicates including a dispatch-route envelope, a handoff-probe bridge, replacement-admission bridge, missing-field negative case, hidden-override precedence negative case, and field-confidence route. Behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, authority-extraction, replacement-execution, artifact-satisfaction, and runtime execution tests remain planned. |
 
 The executed merge combines two current record families:
 
@@ -402,6 +402,7 @@ letting prose style alter the permitted action surface.
 | Field-confidence audit | Check that confirmed, policy-imposed, source-derived, defaulted, inferred, and missing fields preserve dispatch consequences. | implemented by synthetic plan-execution contract harness plus `AsiStackProofs.CommandContracts`; no parser-quality or deployed-dispatch claim |
 | Authority-inference block test | Check that inferred means, tools, disclosure, publication, or side effects route to draft-only or re-contract states. | implemented by synthetic plan-execution contract harness; no deployed authority-extraction, approval-service, or runtime side-effect claim |
 | Intent-to-execution handoff probe | Check that a synthetic vertical trace preserves accepted intent, command contract, plan, typed job, dispatch receipt, adapter receipt, artifact link, verification reference, feedback, residuals, and a missing-approval blocked path while rejecting approval bypass, authority widening, hidden override application, missing dispatch receipt, side effect without adapter receipt, residual erasure, and missing artifact-to-parent links. | implemented by `python3 scripts/validate_intent_execution_handoff_probe.py` with two valid synthetic handoff traces and seven expected-invalid controls; no parser, deployed dispatcher, approval-service, runtime-adapter, artifact-satisfaction, support-state-promotion, or evidence-transition claim |
+| Intent-governed replacement bridge | Check that command-contract authority can feed a replacement transaction only when intent refs, command refs, authority ceiling, stop conditions, forbidden means, evidence requirements, canary scope, monitor window, rollback owner, residuals, and non-claims survive; also check that default replacement without approval is blocked. | implemented by `python3 scripts/validate_intent_governed_replacement_bridge.py` with two valid synthetic bridge traces and six expected-invalid controls; does not parse natural-language intent, execute a deployed dispatcher, prove approval-service behavior, execute replacement, execute rollback, promote support state, or create an evidence transition |
 
 The current repository state supports synthetic plan-execution contract
 validation, a deterministic synthetic vertical handoff fixture, and finite
@@ -419,6 +420,20 @@ widening, hidden override application, missing dispatch receipt, side effect
 without adapter receipt, residual erasure, and missing artifact-to-parent
 links. The probe creates no support-state transition and no evidence
 transition.
+
+The Intent-governed replacement bridge is the current downstream authority
+consumer check. It runs with
+`python3 scripts/validate_intent_governed_replacement_bridge.py` and records
+`experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`.
+It checks two synthetic bridge traces: one command-authorized replacement
+request that can enter canary-only review, and one default-replacement request
+that is blocked because the required approval receipt is absent. Its six
+expected-invalid controls reject a missing intent reference, replacement
+authority widening, stop-condition erasure, default promotion without approval,
+missing rollback owner, and support-promotion overclaim. The bridge does not
+parse natural-language intent, execute a deployed dispatcher, prove
+approval-service behavior, execute replacement or rollback, move a support
+state, or create an evidence transition.
 
 ## Formalization hooks
 

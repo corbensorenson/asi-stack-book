@@ -86,6 +86,9 @@ REQUIRED = [
     "scripts/validate_intent_execution_handoff_probe.py",
     "docs/intent_execution_handoff_probe.md",
     "experiments/intent_execution_handoff/results/2026-07-02-local.json",
+    "scripts/validate_intent_governed_replacement_bridge.py",
+    "docs/intent_governed_replacement_bridge.md",
+    "experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json",
     "scripts/validate_planning_scheduler_state_probe.py",
     "scripts/validate_typed_job_delivery_probe.py",
     "docs/planning_scheduler_state_probe.md",
@@ -299,6 +302,8 @@ REQUIRED = [
     "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
     "experiments/capability_replacement/results/2026-06-28-local.md",
     "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+    "experiments/intent_governed_replacement_bridge/README.md",
+    "experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json",
     "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
     "experiments/self_improvement_boundaries/results/2026-07-02-local.md",
     "experiments/intent_intake_probe/results/2026-07-02-local.json",
@@ -872,6 +877,7 @@ def main() -> None:
     run_validator("validate_intent_recontract_probe.py")
     run_validator("validate_plan_execution_contracts.py")
     run_validator("validate_intent_execution_handoff_probe.py")
+    run_validator("validate_intent_governed_replacement_bridge.py")
     run_validator("validate_planning_scheduler_state_probe.py")
     run_validator("validate_typed_job_delivery_probe.py")
     run_validator("validate_cognitive_compilation_traces.py")

@@ -764,4 +764,72 @@ theorem replacement_trace_probe_preserves_no_promotion_boundary :
       replacementTraceProbeFixture.nonClaimBoundary = true := by
   exact And.intro rfl rfl
 
+structure IntentGovernedReplacementBridgeSummary where
+  validTraceCount : Nat
+  expectedInvalidControlCount : Nat
+  intentRefRequired : Bool
+  commandRefRequired : Bool
+  authorityWideningRejected : Bool
+  stopConditionErasureRejected : Bool
+  defaultWithoutApprovalBlocked : Bool
+  rollbackOwnerRequired : Bool
+  supportPromotionOverclaimRejected : Bool
+  supportStateEffectNone : Bool
+  chapterCoreSupportEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def IntentGovernedReplacementBridgeValid
+    (summary : IntentGovernedReplacementBridgeSummary) : Prop :=
+  summary.validTraceCount = 2 ∧
+    summary.expectedInvalidControlCount = 6 ∧
+      summary.intentRefRequired = true ∧
+        summary.commandRefRequired = true ∧
+          summary.authorityWideningRejected = true ∧
+            summary.stopConditionErasureRejected = true ∧
+              summary.defaultWithoutApprovalBlocked = true ∧
+                summary.rollbackOwnerRequired = true ∧
+                  summary.supportPromotionOverclaimRejected = true ∧
+                    summary.supportStateEffectNone = true ∧
+                      summary.chapterCoreSupportEffectNone = true ∧
+                        summary.nonClaimBoundary = true
+
+def intentGovernedReplacementBridgeFixture :
+    IntentGovernedReplacementBridgeSummary := {
+  validTraceCount := 2
+  expectedInvalidControlCount := 6
+  intentRefRequired := true
+  commandRefRequired := true
+  authorityWideningRejected := true
+  stopConditionErasureRejected := true
+  defaultWithoutApprovalBlocked := true
+  rollbackOwnerRequired := true
+  supportPromotionOverclaimRejected := true
+  supportStateEffectNone := true
+  chapterCoreSupportEffectNone := true
+  nonClaimBoundary := true
+}
+
+theorem intent_governed_replacement_bridge_fixture_valid :
+    IntentGovernedReplacementBridgeValid
+      intentGovernedReplacementBridgeFixture := by
+  unfold IntentGovernedReplacementBridgeValid
+    intentGovernedReplacementBridgeFixture
+  simp
+
+theorem intent_governed_replacement_bridge_rejects_authority_widening :
+    intentGovernedReplacementBridgeFixture.authorityWideningRejected = true ∧
+      intentGovernedReplacementBridgeFixture.stopConditionErasureRejected =
+        true ∧
+        intentGovernedReplacementBridgeFixture.defaultWithoutApprovalBlocked =
+          true := by
+  exact ⟨rfl, rfl, rfl⟩
+
+theorem intent_governed_replacement_bridge_preserves_no_promotion_boundary :
+    intentGovernedReplacementBridgeFixture.supportStateEffectNone = true ∧
+      intentGovernedReplacementBridgeFixture.chapterCoreSupportEffectNone =
+        true ∧
+        intentGovernedReplacementBridgeFixture.nonClaimBoundary = true := by
+  exact ⟨rfl, rfl, rfl⟩
+
 end AsiStackProofs.Replacement

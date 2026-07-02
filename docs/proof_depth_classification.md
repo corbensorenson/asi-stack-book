@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 172 |
+| Proof targets in manifest | 173 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 888 |
-| Direct/projection-style theorem declarations | 172 |
-| Derived/decomposed theorem declarations | 712 |
+| Theorem declarations classified | 891 |
+| Direct/projection-style theorem declarations | 174 |
+| Derived/decomposed theorem declarations | 713 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -89,7 +89,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 19 | 8 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 4 | 30 | 3 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 5 | 33 | 5 | 28 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 6 | 34 | 15 | 16 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 3 | 24 | 4 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -709,6 +709,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Replacement.lean` | `failed_regression_blocks_replacement_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_regression_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_rollback_dry_run_routes_to_canary_only` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `intent_governed_replacement_bridge_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `intent_governed_replacement_bridge_preserves_no_promotion_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Replacement.lean` | `intent_governed_replacement_bridge_rejects_authority_widening` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Replacement.lean` | `lifecycle_authority_widening_without_governance_requests_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `lifecycle_deprecation_without_notice_requires_notice` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `lifecycle_failed_canary_stays_canary_only` | derived_or_decomposed | no | uses simp, unfold |

@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Add intent-governed replacement bridge
+
+- Added `python3 scripts/validate_intent_governed_replacement_bridge.py`,
+  `docs/intent_governed_replacement_bridge.md`, and
+  `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`
+  for a synthetic bridge from command-contract authority into replacement
+  admission.
+- The bridge validates 2 public-safe synthetic bridge traces and 6
+  expected-invalid controls for missing intent refs, authority widening,
+  stop-condition erasure, default promotion without approval, missing rollback
+  ownership, and support-promotion overclaim.
+- Added `lean:replacement.intent_governed.bridge` in
+  `AsiStackProofs.Replacement` for finite bridge-summary acceptance,
+  authority-widening rejection, stop-condition-erasure rejection,
+  default-without-approval blocking, and no-promotion-boundary preservation.
+- Updated the live and curated reader Command Contracts and Capability
+  Replacement chapters, the manifest, outline, roadmap, README, and book-gate
+  validation. This is no parser, deployed dispatcher, approval-service,
+  replacement execution, production rollback, monitor-quality,
+  regression-suite-quality, evidence-transition, or chapter-core promotion
+  claim.
+
 ## 2026-07-02 - Add Theseus report-bundle audit
 
 - Added `python3 scripts/validate_theseus_report_bundle_audit.py`,
@@ -21,8 +43,8 @@
   surfaces. This is no clean live Theseus replay, public task-bundle run,
   current work-board import, benchmark result, model-quality result, safety
   result, alignment result, external review, or support-state-promotion claim.
-- Current proof-depth snapshot: 172 proof targets, 54 Lean modules, 888 theorem
-  declarations, 712 derived/decomposed, 172 direct/projection, 4 unknown/mixed,
+- Current proof-depth snapshot: 173 proof targets, 54 Lean modules, 891 theorem
+  declarations, 713 derived/decomposed, 174 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add prototype phase gate harness
@@ -47,7 +69,7 @@
   release-readiness, evaluator-quality, model-quality, or support-state-promotion
   claim.
 - Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem
-  declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed,
+  declarations, 708 derived/decomposed, 174 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add runtime adapter effect-replay proof bridge
@@ -66,7 +88,7 @@
   approval-service, secret-handle, rollback-service, policy-enforcement,
   benchmark, or support-state-promotion claim.
 - Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem
-  declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed,
+  declarations, 708 derived/decomposed, 174 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add reader key-figure artifact validation
@@ -106,7 +128,7 @@
   a no model-speed or deployment claim, no useful-solution-per-second model
   claim, no reproduced speculative decoding/MTP/diffusion/KV-cache/serving
   result, and no support-state promotion.
-- Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem declarations, 708 derived/decomposed, 174 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add SCIF commit Lean bridge
 
@@ -122,7 +144,7 @@
   is structured-record route coverage only; it does not prove a deployed
   security kernel, sandbox isolation, side-channel safety, prompt-injection
   containment, privacy, security, or support-state promotion.
-- Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem declarations, 708 derived/decomposed, 174 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add SCIF sanitized commit replay probe
 
@@ -333,7 +355,7 @@
   prove moral correctness, legal rights, reviewer independence, export
   usability, fork safety, deployed governance, support-state promotion, or
   external review quality.
-- Current proof-depth snapshot: 167 proof targets, 54 Lean modules, 862 theorem declarations, 686 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 167 proof targets, 54 Lean modules, 862 theorem declarations, 686 derived/decomposed, 174 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add Accepted live transition review audit
 

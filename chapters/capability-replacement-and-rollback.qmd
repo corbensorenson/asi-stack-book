@@ -246,6 +246,7 @@ The book should treat that product surface as a design destination rather than a
 | Rollback execution dry run | Check that rollback metadata exists before default promotion. | implemented by readiness/residual gate harness for rollback dry-run status requirements; production rollback not executed |
 | Replacement transaction and lifecycle route proof | Check that finite transaction and lifecycle records route missing artifacts, identity mismatches, stale evidence, failed regression floors, authority widening, evaluator capture, canary failures, monitor incidents, rollback-handle gaps, rollback dry-run failures, unowned irreversible effects, missing residual owners, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion. | implemented in Lean; finite records only |
 | Capability replacement trace probe | Check a deterministic replacement trace with baseline implementation, non-default canary, monitor-triggered rollback, rollback dry run, residuals, expected-invalid controls, and no support-state promotion. | implemented by `python3 scripts/validate_capability_replacement_trace_probe.py` over `experiments/capability_replacement_trace/results/2026-07-02-local.json`; no deployed replacement behavior, production rollback, monitor-quality, regression-suite-quality, or support-state claim |
+| Intent-governed replacement bridge | Check that a replacement transaction sourced from command-contract authority preserves intent refs, command refs, authority ceiling, stop conditions, forbidden means, evidence requirements, canary scope, monitor window, rollback owner, residuals, approval boundary, and non-claims. | implemented by `python3 scripts/validate_intent_governed_replacement_bridge.py` over `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`; no deployed replacement execution, production rollback, approval-service enforcement, parser behavior, monitor-quality, regression-suite-quality, or support-state claim |
 
 ### Formalization hooks
 
@@ -255,8 +256,21 @@ The book should treat that product surface as a design destination rather than a
 | `lean:replacement.transaction.failure_blocks_promotion` | `AsiStackProofs.Replacement` | A failed regression blocks promotion of the replacement. | implemented |
 | `lean:replacement.transaction.route_envelope` | `AsiStackProofs.Replacement` | Structured replacement transaction and lifecycle reviews route missing artifacts, identity mismatches, stale evidence, regression-floor failures, authority widening, evaluator capture, canary failures, monitor incidents, rollback gaps, irreversible-effect ownership gaps, residual-owner gaps, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion. | implemented |
 | `lean:replacement.transaction.trace_probe_bridge` | `AsiStackProofs.Replacement` | The deterministic replacement trace probe records six trace steps, two valid synthetic transactions, three rejected negative controls, a canary kept non-default, a monitor-triggered rollback, rollback dry run, residuals, no support-state effect, and non-claim boundary. | implemented |
+| `lean:replacement.intent_governed.bridge` | `AsiStackProofs.Replacement` | The deterministic intent-governed replacement bridge records two valid bridge traces, six rejected expected-invalid controls, intent and command refs, authority-widening rejection, stop-condition-erasure rejection, default-without-approval blocking, rollback-owner requirement, no support-state effect, and non-claim boundary. | implemented |
 
-These proof targets are implemented only over finite Lean replacement-commit, transaction-review, lifecycle-review, and trace-summary records in `AsiStackProofs.Replacement`. They prove that a modeled promotion carries qualification evidence and rollback metadata, that a failed regression blocks promotion in the model, that selected transaction and lifecycle failures route away from default promotion, and that the synthetic trace summary carries the expected counts and non-claim boundary. They do not prove deployed replacement execution, regression-suite coverage or quality, monitor-window behavior, or rollback execution.
+These proof targets are implemented only over finite Lean replacement-commit, transaction-review, lifecycle-review, trace-summary, and intent-governed bridge-summary records in `AsiStackProofs.Replacement`. They prove that a modeled promotion carries qualification evidence and rollback metadata, that a failed regression blocks promotion in the model, that selected transaction and lifecycle failures route away from default promotion, and that the synthetic trace and bridge summaries carry the expected counts and non-claim boundary. They do not prove deployed replacement execution, regression-suite coverage or quality, monitor-window behavior, approval-service enforcement, parser behavior, or rollback execution.
+
+The Intent-governed replacement bridge closes one cross-layer boundary without
+claiming runtime evidence. It checks that replacement admission cannot quietly
+inherit authority from a command contract unless the intent reference, command
+reference, authority ceiling, stop conditions, forbidden means, evidence
+requirements, canary scope, monitor window, rollback owner, residuals, and
+non-claims remain present. It also checks that a default-replacement request
+without the required approval receipt remains blocked. The local result is
+`experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`;
+it is no deployed replacement execution, no approval-service proof, no
+production rollback, no support-state transition, and no chapter-core
+promotion.
 
 ## Source crosswalk
 

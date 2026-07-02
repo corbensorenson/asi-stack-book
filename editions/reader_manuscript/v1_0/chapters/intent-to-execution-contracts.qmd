@@ -316,6 +316,14 @@ That is useful because it shows the shape of the handoff. It is a trace-shape
 check, not a deployed runtime result. It does not prove parser quality,
 approval-service behavior, runtime adapter safety, or artifact satisfaction.
 
+The intent-governed replacement bridge extends that handoff one layer farther.
+It asks whether a command-authorized replacement request can enter canary
+review without losing the original intent reference, command reference,
+authority ceiling, stop conditions, evidence requirements, rollback owner, or
+non-claim boundary. It also shows that a default replacement request without
+the required approval receipt stays blocked. That bridge is not a parser
+result, not a deployed replacement, and not a support-state transition.
+
 ## Beyond the State of the Art
 
 The mature endpoint is a contract operating spine for the whole stack.

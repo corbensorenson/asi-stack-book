@@ -2374,6 +2374,13 @@
               "status": "implemented by `python3 scripts/validate_capability_replacement_trace_probe.py`; deterministic fixture only; no deployed replacement behavior, production rollback, regression-suite quality, monitor-quality, or support-state promotion",
               "implementation_status": "implemented",
               "result_status": "validated locally by `experiments/capability_replacement_trace/results/2026-07-02-local.json`; no runtime replacement, production rollback, or support-state claim"
+            },
+            {
+              "name": "Intent-governed replacement bridge",
+              "purpose": "Check that a replacement transaction sourced from a command contract preserves intent authority, stop conditions, evidence requirements, canary scope, monitor window, rollback owner, approval boundary, residuals, and no-promotion boundary.",
+              "status": "implemented by `python3 scripts/validate_intent_governed_replacement_bridge.py`; deterministic synthetic bridge only; no natural-language parser, deployed dispatcher, approval service, replacement execution, production rollback, monitor quality, regression-suite quality, or support-state promotion",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`; no runtime replacement, production rollback, or support-state claim"
             }
           ],
           "lean_module": "AsiStackProofs.Replacement",
@@ -2400,6 +2407,12 @@
               "tag": "lean:replacement.transaction.trace_probe_bridge",
               "module": "AsiStackProofs.Replacement",
               "target": "The deterministic replacement trace probe records six trace steps, two valid synthetic transactions, three rejected negative controls, a canary kept non-default, a monitor-triggered rollback, rollback dry run, residuals, no support-state effect, and non-claim boundary.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:replacement.intent_governed.bridge",
+              "module": "AsiStackProofs.Replacement",
+              "target": "The deterministic intent-governed replacement bridge records two valid bridge traces, six rejected expected-invalid controls, intent and command refs, authority-widening rejection, stop-condition-erasure rejection, default-without-approval blocking, rollback-owner requirement, no support-state effect, and non-claim boundary.",
               "status": "implemented"
             }
           ],
@@ -3146,6 +3159,11 @@
               "name": "Intent-to-execution handoff probe",
               "implementation_status": "implemented",
               "result_status": "passes via deterministic synthetic vertical handoff fixture at experiments/intent_execution_handoff/results/2026-07-02-local.json: two valid synthetic handoff traces and seven expected-invalid controls; no parser, deployed dispatcher, approval service, runtime adapter, artifact satisfaction, support-state promotion, or evidence transition claim"
+            },
+            {
+              "name": "Intent-governed replacement bridge",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic bridge at experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json: two valid bridge traces and six expected-invalid controls for command-authorized replacement canary admission, blocked default without approval, missing intent ref, authority widening, stop-condition erasure, missing rollback owner, and support-promotion overclaim; no parser, deployed dispatcher, approval service, replacement execution, rollback execution, support-state promotion, or evidence transition claim"
             }
           ],
           "lean_module": "AsiStackProofs.IntentToExecution",

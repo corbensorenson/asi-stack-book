@@ -293,6 +293,15 @@ preservation tests, rollback dry runs, monitor-window records, governance
 receipts, and failed-candidate examples exercise the transaction under
 ordinary success and failure pressure.
 
+The intent-governed replacement bridge adds a narrow but important check: a
+replacement request must still point back to the command contract that gave it
+authority. The synthetic bridge preserves the intent reference, command
+reference, authority ceiling, stop conditions, evidence requirements, canary
+scope, monitor window, rollback owner, and residuals. It also blocks a default
+replacement request when the required approval receipt is missing. This is not
+a deployed replacement, not production rollback, and not a support-state
+transition.
+
 ## Summary
 
 Capability Replacement and Rollback turns improvement into an accountable
