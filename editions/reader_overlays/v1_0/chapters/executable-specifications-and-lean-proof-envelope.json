@@ -20,6 +20,44 @@
         "",
         "With that envelope in place, the stack could use mechanized record-level claims without pretending they prove deployed enforcement, empirical model quality, benchmark success, source truth, or broad ASI safety. The endpoint remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show exactly where each formal predicate can carry prose."
       ]
+    },
+    {
+      "id": "v1_0.proof_envelope.interfaces_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces"
+      },
+      "rationale": "Replace the generated-reader field list with prose that preserves the Proof Target Record contract and downstream consumer boundary.",
+      "content_lines": [
+        "The main interface is the Proof Target Record. It is the docket that connects a prose claim to the outline, the Lean workspace, schemas, validators, Appendix E, and future release profiles. Its job is to make a claim's formal status inspectable without letting the artifact speak beyond its lane.",
+        "",
+        "A useful record names the claim location, stable tag, target kind, artifact lane, formal target, artifact references, verifier command, verifier result, support-state effect, consumer requirements, semantic adequacy state, limitations, and non-claims. The live research source keeps the field list explicit because future agents and validators need that exact contract. The reader version keeps the meaning: proof evidence is usable only when its lane, command, version, adequacy state, and limits match the consumer trying to rely on it.",
+        "",
+        "That distinction matters. A passed `lake build` can justify saying that a local finite predicate builds. It cannot justify saying that source interpretation is correct, a deployment enforces the rule, a model behaves well, or a benchmark improved. A passed schema check can justify saying that a fixture has the required shape. It cannot prove that the represented event happened.",
+        "",
+        "The semantic adequacy review is the bridge between formal success and prose use. It asks whether the finite predicate is the right predicate for the boundary being defended. Until that review exists, the proof remains true but narrow, and the prose should stay narrow with it."
+      ]
+    },
+    {
+      "id": "v1_0.proof_envelope.minimum_viable_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the generated-reader implementation inventory with prose while preserving the current local proof-manifest, fixture, Lean-build, audit, proof-depth, and semantic-adequacy boundaries.",
+      "content_lines": [
+        "The minimum viable proof envelope is a governance surface, not a grand proof. It already has a generated proof manifest, a target-record fixture, a local Lean build gate, a finite `ProofEnvelope` model, Appendix E coverage, a proof-artifact traceability audit, and a proof-depth classifier.",
+        "",
+        "Those pieces answer a practical maintenance question: when the book says a target is implemented, is there a visible route from the outline and claim surface to the proof manifest, the Lean module or validating artifact, the command that checks it, the limitation prose, and the generated appendix surface? That traceability is useful. It still does not decide whether the finite predicate is the best formalization of the intended boundary.",
+        "",
+        "The current build also keeps projection-style proofs visible. Some theorems decompose a record or case split; others mostly expose a field that was already assumed. Both can be legitimate maintenance hooks, but they should not be described with the same persuasive force. The proof-depth classifier makes that distinction visible without claiming semantic adequacy.",
+        "",
+        "The next useful slice is a receipt set for the proof/spec lanes: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one behavior-test receipt, one benchmark receipt, one rejected external-theorem-as-local-proof case, and one semantic-adequacy residual that prevents prose promotion. Until those receipts and reviews exist, the implementation remains a narrow anti-laundering surface."
+      ]
     }
   ]
 }
