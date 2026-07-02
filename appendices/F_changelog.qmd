@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-02 - Add prototype phase gate harness
+
+- Added `python3 scripts/validate_prototype_phase_gates.py`,
+  `docs/prototype_phase_gate_harness.md`, and
+  `experiments/prototype_phase_gates/results/2026-07-02-local.json` for the
+  Prototype Roadmap phase acceptance and dependency-gate tests.
+- The harness validates 2 public-safe valid fixtures and 6 expected-invalid
+  controls for phase acceptance, research-only phase debt, missing required
+  artifacts, dependency inversion, self-improvement without an independent
+  evaluator, support promotion without an evidence-transition record, phase debt
+  without retirement, and missing non-claim boundaries.
+- Added `lean:roadmap.phases.fixture_gate_bridge` in
+  `AsiStackProofs.PrototypeRoadmap` for finite fixture-summary acceptance,
+  missing-non-claim rejection, no support-state promotion, and no
+  phase-completion claim. Updated the live chapter, curated reader chapter,
+  outline, roadmap, proof manifest, proof triage, proof-depth classification,
+  proof artifact audit, proof adequacy review, Appendix E, and public
+  status/readiness surfaces.
+- This is no phase-completion, deployed build-controller, benchmark,
+  release-readiness, evaluator-quality, model-quality, or support-state-promotion
+  claim.
+- Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem
+  declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add runtime adapter effect-replay proof bridge
 
 - Added `lean:runtime.adapters.effect_replay_fixture_bridge` in
@@ -15,8 +40,8 @@
   public readiness surfaces. This is no deployed adapter, sandbox,
   approval-service, secret-handle, rollback-service, policy-enforcement,
   benchmark, or support-state-promotion claim.
-- Current proof-depth snapshot: 170 proof targets, 54 Lean modules, 881 theorem
-  declarations, 705 derived/decomposed, 172 direct/projection, 4 unknown/mixed,
+- Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem
+  declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add reader key-figure artifact validation
@@ -56,7 +81,7 @@
   a no model-speed or deployment claim, no useful-solution-per-second model
   claim, no reproduced speculative decoding/MTP/diffusion/KV-cache/serving
   result, and no support-state promotion.
-- Current proof-depth snapshot: 170 proof targets, 54 Lean modules, 881 theorem declarations, 705 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add SCIF commit Lean bridge
 
@@ -72,7 +97,7 @@
   is structured-record route coverage only; it does not prove a deployed
   security kernel, sandbox isolation, side-channel safety, prompt-injection
   containment, privacy, security, or support-state promotion.
-- Current proof-depth snapshot: 170 proof targets, 54 Lean modules, 881 theorem declarations, 705 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add SCIF sanitized commit replay probe
 

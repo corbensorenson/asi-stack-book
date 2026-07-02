@@ -12426,8 +12426,20 @@
           "minimal_implementation": "A phase table with deliverables, gates, blockers, and acceptance criteria.",
           "beyond_state_of_art": "The roadmap endpoint is a phase-gated build controller for the ASI Stack. The roadmap would not be a list of aspirations. It would be a dependency graph that decides which prototypes can be built, which are blocked, which are allowed only as research demos, and which may affect claim support after evidence review. A mature roadmap controller gives every phase explicit prerequisites, acceptance gates, commands, required artifacts, evidence refs, residuals, unlocks, phase debt, retirement criteria, and non-claims. A later phase could not borrow credibility from an earlier milestone unless the acceptance record exists and the downstream dependency matches the evidence boundary.",
           "codex_tests": [
-            "Phase acceptance checklist",
-            "Dependency gate review",
+            {
+              "name": "Phase acceptance checklist",
+              "purpose": "Check that dependent phases have required artifacts, acceptance gates, evidence refs, residual handling, and non-claim boundaries before integration.",
+              "status": "implemented by prototype phase gate harness; validated locally by synthetic fixtures; no phase completion or support-state promotion",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; no phase completion or support-state promotion"
+            },
+            {
+              "name": "Dependency gate review",
+              "purpose": "Check that dependency order, self-improvement evaluator gates, phase debt retirement conditions, and support-promotion evidence-transition gates block invalid roadmap advancement.",
+              "status": "implemented by prototype phase gate harness; validated locally by synthetic fixtures; no deployed build controller or support-state promotion",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; no deployed build controller or support-state promotion"
+            },
             {
               "name": "Prototype evidence-state audit",
               "purpose": "Check that expired or stale evidence routes to rerun/reject state with residual escrow instead of canary/default promotion.",
@@ -12448,6 +12460,12 @@
               "tag": "lean:roadmap.phases.failure_blocks_promotion",
               "module": "AsiStackProofs.PrototypeRoadmap",
               "target": "A phase milestone cannot promote a claim without evidence artifacts.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:roadmap.phases.fixture_gate_bridge",
+              "module": "AsiStackProofs.PrototypeRoadmap",
+              "target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
               "status": "implemented"
             }
           ]

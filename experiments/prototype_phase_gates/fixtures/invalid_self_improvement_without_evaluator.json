@@ -1,0 +1,37 @@
+{
+  "scenario_id": "invalid_self_improvement_without_evaluator",
+  "expected_valid": false,
+  "expected_route": "reject",
+  "phase_record": {
+    "phase_id": "phase://self-improvement-without-evaluator",
+    "phase_name": "Self-improvement phase without independent evaluator",
+    "unlocks": ["phase://capability-replacement-default"],
+    "required_artifacts": ["docs/v1_x_beyond_sota_roadmap.md"],
+    "acceptance_gates": ["self-improvement gate passes"],
+    "blocked_by": ["independent evaluator absent"],
+    "validation_commands": ["python3 scripts/validate_self_improvement_boundaries.py"],
+    "evidence_refs": ["docs/proof_adequacy_review.md"],
+    "non_claims": ["self-improvement design is not self-improvement readiness"],
+    "status": "active"
+  },
+  "readiness": {
+    "source_matrix_ready": true,
+    "artifact_graph_ready": true,
+    "claim_ledger_ready": true,
+    "authority_controls_ready": true,
+    "dependency_order_valid": true,
+    "required_artifacts_present": true,
+    "acceptance_gates_passed": true,
+    "evidence_refs_present": true,
+    "evidence_transition_record_present": false,
+    "residuals_closed": true,
+    "phase_debt_recorded": false,
+    "retirement_condition_recorded": false,
+    "independent_evaluator_present": false,
+    "rollback_plan_present": true,
+    "support_promotion_requested": false,
+    "irreversible_authority_requested": false,
+    "self_improvement_phase": true,
+    "non_claim_boundary": true
+  }
+}

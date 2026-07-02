@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 170 |
+| Proof targets in manifest | 171 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 881 |
+| Theorem declarations classified | 884 |
 | Direct/projection-style theorem declarations | 172 |
-| Derived/decomposed theorem declarations | 705 |
+| Derived/decomposed theorem declarations | 708 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -86,7 +86,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 8 | 6 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 2 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 19 | 8 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 4 | 30 | 3 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -667,7 +667,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `support_promotion_without_transition_or_boundaries_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_non_promoting_phase_integrates` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_phase_claim_promotion_requires_evidence_artifacts` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_prototype_phase_gate_fixture_bridge_preserves_non_claims` | derived_or_decomposed | no | uses cases, simp, unfold |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `complete_prototype_phase_gate_fixture_bridge_accepts` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `failed_acceptance_gates_keep_phase_research_only` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `missing_non_claim_boundary_rejects_prototype_fixture_bridge` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `missing_source_matrix_rejects_phase_route` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `phase_milestone_cannot_promote_claim_without_evidence_artifacts` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `roadmap_phase_unlock_requires_passing_acceptance_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

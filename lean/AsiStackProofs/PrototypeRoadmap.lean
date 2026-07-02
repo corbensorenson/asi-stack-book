@@ -219,4 +219,113 @@ theorem accepted_non_promoting_phase_integrates
     noPromotion,
   ]
 
+inductive PrototypePhaseGateFixtureBridgeRoute where
+  | rejectBridge
+  | acceptBridge
+deriving DecidableEq, Repr
+
+structure PrototypePhaseGateFixtureBridgeSummary where
+  validPhaseAcceptanceFixture : Bool
+  validResearchOnlyFixture : Bool
+  missingArtifactRejected : Bool
+  dependencyInversionRejected : Bool
+  selfImprovementWithoutEvaluatorRejected : Bool
+  promotionWithoutTransitionRejected : Bool
+  debtWithoutRetirementRejected : Bool
+  missingNonClaimBoundaryRejected : Bool
+  supportStateEffectNone : Bool
+  noPhaseCompletionClaim : Bool
+deriving DecidableEq, Repr
+
+def PrototypePhaseGateFixtureBridgeComplete
+    (summary : PrototypePhaseGateFixtureBridgeSummary) : Bool :=
+  summary.validPhaseAcceptanceFixture &&
+  summary.validResearchOnlyFixture &&
+  summary.missingArtifactRejected &&
+  summary.dependencyInversionRejected &&
+  summary.selfImprovementWithoutEvaluatorRejected &&
+  summary.promotionWithoutTransitionRejected &&
+  summary.debtWithoutRetirementRejected &&
+  summary.missingNonClaimBoundaryRejected &&
+  summary.supportStateEffectNone &&
+  summary.noPhaseCompletionClaim
+
+def PrototypePhaseGateFixtureBridgeRouteFor
+    (summary : PrototypePhaseGateFixtureBridgeSummary) :
+    PrototypePhaseGateFixtureBridgeRoute :=
+  if PrototypePhaseGateFixtureBridgeComplete summary then
+    PrototypePhaseGateFixtureBridgeRoute.acceptBridge
+  else
+    PrototypePhaseGateFixtureBridgeRoute.rejectBridge
+
+theorem missing_non_claim_boundary_rejects_prototype_fixture_bridge
+    {summary : PrototypePhaseGateFixtureBridgeSummary} :
+    summary.missingNonClaimBoundaryRejected = false ->
+      PrototypePhaseGateFixtureBridgeRouteFor summary =
+        PrototypePhaseGateFixtureBridgeRoute.rejectBridge := by
+  intro missingBoundary
+  simp [
+    PrototypePhaseGateFixtureBridgeRouteFor,
+    PrototypePhaseGateFixtureBridgeComplete,
+    missingBoundary,
+  ]
+
+theorem complete_prototype_phase_gate_fixture_bridge_accepts
+    {summary : PrototypePhaseGateFixtureBridgeSummary} :
+    summary.validPhaseAcceptanceFixture = true ->
+    summary.validResearchOnlyFixture = true ->
+    summary.missingArtifactRejected = true ->
+    summary.dependencyInversionRejected = true ->
+    summary.selfImprovementWithoutEvaluatorRejected = true ->
+    summary.promotionWithoutTransitionRejected = true ->
+    summary.debtWithoutRetirementRejected = true ->
+    summary.missingNonClaimBoundaryRejected = true ->
+    summary.supportStateEffectNone = true ->
+    summary.noPhaseCompletionClaim = true ->
+      PrototypePhaseGateFixtureBridgeRouteFor summary =
+        PrototypePhaseGateFixtureBridgeRoute.acceptBridge := by
+  intro validAcceptance validResearch missingArtifact dependencyInversion
+    selfImprovement promotion debt nonClaim supportNone noCompletion
+  simp [
+    PrototypePhaseGateFixtureBridgeRouteFor,
+    PrototypePhaseGateFixtureBridgeComplete,
+    validAcceptance,
+    validResearch,
+    missingArtifact,
+    dependencyInversion,
+    selfImprovement,
+    promotion,
+    debt,
+    nonClaim,
+    supportNone,
+    noCompletion,
+  ]
+
+theorem accepted_prototype_phase_gate_fixture_bridge_preserves_non_claims
+    {summary : PrototypePhaseGateFixtureBridgeSummary} :
+    PrototypePhaseGateFixtureBridgeRouteFor summary =
+      PrototypePhaseGateFixtureBridgeRoute.acceptBridge ->
+      summary.supportStateEffectNone = true ∧
+        summary.noPhaseCompletionClaim = true := by
+  intro accepted
+  unfold PrototypePhaseGateFixtureBridgeRouteFor at accepted
+  cases complete : PrototypePhaseGateFixtureBridgeComplete summary with
+  | false =>
+      simp [complete] at accepted
+  | true =>
+      unfold PrototypePhaseGateFixtureBridgeComplete at complete
+      repeat
+        first
+        | cases h : summary.validPhaseAcceptanceFixture <;> simp [h] at complete
+        | cases h : summary.validResearchOnlyFixture <;> simp [h] at complete
+        | cases h : summary.missingArtifactRejected <;> simp [h] at complete
+        | cases h : summary.dependencyInversionRejected <;> simp [h] at complete
+        | cases h : summary.selfImprovementWithoutEvaluatorRejected <;> simp [h] at complete
+        | cases h : summary.promotionWithoutTransitionRejected <;> simp [h] at complete
+        | cases h : summary.debtWithoutRetirementRejected <;> simp [h] at complete
+        | cases h : summary.missingNonClaimBoundaryRejected <;> simp [h] at complete
+        | cases h : summary.supportStateEffectNone <;> simp [h] at complete
+        | cases h : summary.noPhaseCompletionClaim <;> simp [h] at complete
+      exact ⟨rfl, rfl⟩
+
 end AsiStackProofs.PrototypeRoadmap

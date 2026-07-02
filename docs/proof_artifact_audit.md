@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 170 |
-| Manifest status counts | {"implemented": 170} |
-| Triage class counts | {"formal-invariant": 170} |
+| Proof targets audited | 171 |
+| Manifest status counts | {"implemented": 171} |
+| Triage class counts | {"formal-invariant": 171} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -65,7 +65,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | 3 | 8 | 6 | 4 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 2 | 6 | 6 | 4 |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 7 | 5 | 2 |
-| `lean/AsiStackProofs/PrototypeRoadmap.lean` | 2 | 8 | 3 | 3 |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 11 | 5 | 4 |
 | `lean/AsiStackProofs/ReadinessGates.lean` | 2 | 19 | 15 | 6 |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | 2 | 7 | 3 | 3 |
 | `lean/AsiStackProofs/Replacement.lean` | 4 | 30 | 6 | 4 |
@@ -120,7 +120,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `policy-optimization-and-learning-from-feedback` | 4 | 4 | 0 | 0 |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 2 | 0 | 0 |
 | `project-theseus-as-report-first-implementation-reference` | 2 | 2 | 0 | 0 |
-| `prototype-roadmap` | 2 | 2 | 0 | 0 |
+| `prototype-roadmap` | 3 | 3 | 0 | 0 |
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 2 | 2 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
@@ -304,6 +304,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:roadmap.phases.operational_invariant` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:roadmap.phases.failure_blocks_promotion` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:roadmap.phases.fixture_gate_bridge` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:living_book.methodology.operational_invariant` | `living-book-methodology` | `AsiStackProofs.LivingBook` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:living_book.methodology.failure_blocks_promotion` | `living-book-methodology` | `AsiStackProofs.LivingBook` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:living_book.methodology.change_packet_boundary` | `living-book-methodology` | `AsiStackProofs.LivingBook` | triage ok; module ok; chapter tag ok; limitation ok |

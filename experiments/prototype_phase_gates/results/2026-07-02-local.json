@@ -1,0 +1,36 @@
+{
+  "result_id": "prototype_phase_gates_2026_07_02_local",
+  "fixture_dir": "experiments/prototype_phase_gates/fixtures",
+  "validator": "python3 scripts/validate_prototype_phase_gates.py",
+  "valid_fixture_count": 2,
+  "expected_invalid_fixture_count": 6,
+  "accepted_routes": {
+    "integrate": ["valid_phase_acceptance_infrastructure"],
+    "research_only": ["valid_research_only_phase_debt"],
+    "reject": [
+      "invalid_dependency_inversion",
+      "invalid_missing_non_claim_boundary",
+      "invalid_missing_required_artifact",
+      "invalid_phase_debt_without_retirement",
+      "invalid_promotion_without_transition",
+      "invalid_self_improvement_without_evaluator"
+    ]
+  },
+  "coverage": [
+    "phase acceptance checklist",
+    "dependency gate review",
+    "required artifact presence",
+    "dependency-order rejection",
+    "self-improvement evaluator gate",
+    "support-promotion evidence-transition gate",
+    "phase-debt retirement condition",
+    "non-claim boundary preservation"
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "Does not prove any prototype phase is complete.",
+    "Does not unlock deployed execution, self-improvement, or public capability claims.",
+    "Does not promote any chapter core claim or Appendix C support state.",
+    "Does not validate benchmark performance, model quality, evaluator independence, rollback execution, or release readiness."
+  ]
+}

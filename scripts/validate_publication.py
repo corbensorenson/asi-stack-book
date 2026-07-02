@@ -190,6 +190,7 @@ FORBIDDEN_PUBLIC_STALE_STRINGS = [
     "Thirty-five synthetic",
     "Forty-one synthetic",
     "Forty-seven synthetic",
+    "Forty-eight synthetic",
 ]
 
 
@@ -278,8 +279,8 @@ def main() -> None:
             f"{chapter_count} source-noted chapters",
             "0 explicit exceptions",
             "four accepted non-core upward transitions",
-            "170 proof targets",
-            "Forty-eight synthetic",
+            "171 proof targets",
+            "Forty-nine synthetic",
         ],
     }
     for path, needles in public_requirements.items():

@@ -97,10 +97,10 @@ graph to governed capability replacement.
 In the live book, that remains a design rationale at `argument` support.
 
 The source notes support the sequence. They do not prove that any roadmap phase
-has been completed, accepted, validated, benchmarked, or used to promote a
-capability claim. The existing fixture and Lean hooks validate narrow
-record-shape and gate predicates. They do not turn the roadmap into evidence
-that the prototype is ready.
+has been completed, accepted, benchmarked, or used to promote a capability
+claim. The existing fixture, prototype phase gate harness, and Lean hooks
+validate narrow record-shape, dependency-gate, and phase-route predicates. They
+do not turn the roadmap into evidence that the prototype is ready.
 
 The claim is therefore deliberately modest. It says that a governed prototype
 should earn stronger agency by first proving that it can preserve sources,
@@ -244,17 +244,21 @@ The roadmap should turn those temptations into blocked rows.
 The minimum viable implementation is a phase table with deliverables, gates,
 blockers, commands, evidence references, residuals, non-claims, and status.
 
-The first executable fixture should not be a triumphant phase. It should test
-refusal:
+The first executable fixture is not a triumphant phase. It tests refusal:
 
-- one phase blocked by missing source notes;
+- one accepted non-promoting infrastructure phase;
 - one phase allowed for research but not promotion;
 - one phase carrying phase debt with a retirement condition;
-- one self-improvement phase blocked by absent evaluator independence.
+- one self-improvement phase blocked by absent evaluator independence;
+- additional controls for missing artifacts, dependency inversion, promotion
+  without an evidence-transition record, phase debt without retirement, and
+  missing non-claim boundaries.
 
-That kind of fixture proves the roadmap is more than a checklist. It proves
-the roadmap can distinguish "interesting," "research-only," "integratable,"
-"promotable," and "blocked."
+`python3 scripts/validate_prototype_phase_gates.py` now checks that surface
+with `Phase acceptance checklist` and `Dependency gate review` coverage under
+result `prototype_phase_gates_2026_07_02_local`. It proves only fixture
+discipline. It does not prove phase completion, deployed build-controller
+behavior, benchmark performance, evaluator independence in practice, or no support-state promotion.
 
 ## Beyond The State Of The Art
 

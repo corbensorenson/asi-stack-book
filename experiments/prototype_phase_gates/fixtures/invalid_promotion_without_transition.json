@@ -1,0 +1,37 @@
+{
+  "scenario_id": "invalid_promotion_without_transition",
+  "expected_valid": false,
+  "expected_route": "reject",
+  "phase_record": {
+    "phase_id": "phase://roadmap-milestone-as-evidence",
+    "phase_name": "Roadmap milestone trying to promote support",
+    "unlocks": ["phase://public-capability-claim"],
+    "required_artifacts": ["docs/v1_0_candidate_status.md"],
+    "acceptance_gates": ["milestone checklist exists"],
+    "blocked_by": [],
+    "validation_commands": ["python3 scripts/validate_v1_status_snapshot.py"],
+    "evidence_refs": ["docs/v1_0_candidate_status.md"],
+    "non_claims": ["roadmap milestone is not evidence-transition acceptance"],
+    "status": "active"
+  },
+  "readiness": {
+    "source_matrix_ready": true,
+    "artifact_graph_ready": true,
+    "claim_ledger_ready": true,
+    "authority_controls_ready": true,
+    "dependency_order_valid": true,
+    "required_artifacts_present": true,
+    "acceptance_gates_passed": true,
+    "evidence_refs_present": true,
+    "evidence_transition_record_present": false,
+    "residuals_closed": true,
+    "phase_debt_recorded": false,
+    "retirement_condition_recorded": false,
+    "independent_evaluator_present": false,
+    "rollback_plan_present": false,
+    "support_promotion_requested": true,
+    "irreversible_authority_requested": false,
+    "self_improvement_phase": false,
+    "non_claim_boundary": true
+  }
+}

@@ -2741,9 +2741,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 170 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 170 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 170 proof targets, 54 Lean modules, 881 theorem declarations, 705 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 171 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 171 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3213,10 +3213,10 @@ Draft deliverables:
 
 - A prototype phase record schema with deliverables, gates, blockers, validation commands, evidence refs, and acceptance criteria.
 - Implemented repository-level fixture: `prototype_phase_record.valid.json` validates prototype-phase record shape only; no phase completion or capability unlock is implied.
-- Planned Codex test: Phase acceptance checklist.
-- Planned Codex test: Dependency gate review.
+- Implemented Codex test: Prototype phase gate harness, via `python3 scripts/validate_prototype_phase_gates.py`, turns `Phase acceptance checklist` and `Dependency gate review` into a deterministic public-safe fixture set with 2 valid scenarios and 6 expected-invalid controls. Result: `prototype_phase_gates_2026_07_02_local` at `experiments/prototype_phase_gates/results/2026-07-02-local.json`.
 - Implemented Codex test: Prototype evidence-state audit, via `python3 scripts/validate_readiness_residual_gates.py` over expired-evidence rerun/reject behavior; full phase acceptance audit remains unrun.
 - Implemented Lean follow-through: finite prototype phase-route envelope rejects missing source-matrix readiness, self-improvement without independent evaluation, and promotion requests without an evidence-transition record; it routes failed acceptance gates to research-only and routes accepted non-promoting phases to integration without claiming phase completion.
+- Implemented Lean fixture bridge: finite prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.
 
 Lean proof targets:
 
@@ -3224,6 +3224,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A roadmap phase can unlock a dependent phase only after acceptance gates pass. | implemented |
 | `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A phase milestone cannot promote a claim without evidence artifacts. | implemented |
+| `lean:roadmap.phases.fixture_gate_bridge` | `AsiStackProofs.PrototypeRoadmap` | A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim. | implemented |
 
 ### Living Book Methodology
 

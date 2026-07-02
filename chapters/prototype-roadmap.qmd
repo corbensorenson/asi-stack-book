@@ -4,7 +4,7 @@ chapter_id: "prototype-roadmap"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-28"
+last_updated: "2026-07-02"
 primary_sources:
   - "viea"
   - "benchmaxxing"
@@ -29,7 +29,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all nineteen assigned sources, including source-note-only connector/recovery sources and pinned local Project Theseus/Circle references; support remains argument until phase completion artifacts, accepted gates, reproduced checks, or accepted evidence transitions justify promotion."
-  - "The prototype_phase_record fixture and AsiStackProofs.PrototypeRoadmap finite-record predicates validate record shape, gate predicates, and a finite phase-route envelope only; the readiness/residual gate harness now validates synthetic expired-evidence rerun/reject behavior, but no phase completion, phase acceptance, dependency-gate audit, phase execution, benchmark result, or roadmap milestone is promoted."
+  - "The prototype_phase_record fixture, prototype phase gate harness, and AsiStackProofs.PrototypeRoadmap finite-record predicates validate record shape, gate predicates, dependency-gate fixtures, and finite phase-route/fixture-bridge envelopes only; no phase completion, deployed build controller, phase execution, benchmark result, support-state promotion, or roadmap milestone is promoted."
   - "BeastBrain and BugBrain are lineage and cautionary sources only here; source-reported hardware, performance, context, AGI, consciousness, security, autonomy, and cost claims are not promoted."
   - "No support-state promotion, benchmark result, model-quality result, deployment/readiness claim, phase-acceptance result, or raw source publication is implied by this drafting pass."
 ---
@@ -42,13 +42,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-28 |
+| Last updated | 2026-07-02 |
 | Primary source records | `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`; supporting: `beastbrain_timeless`, `bugbrain`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange` |
 | Source loading state | source notes: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite`; raw cache: `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot_md`; source-note-only or connector/recovery: `moecot`, `road_to_agi`, `coherence_exchange`; pinned local references: Project Theseus at `1ad88a22`, Circle Math at `63b0f511` |
-| Test state | `prototype_phase_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PrototypeRoadmap` builds finite-record predicates over phase unlock, claim-promotion, and phase-route reviews; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic expired-evidence rerun/reject behavior. Phase acceptance, dependency-gate, execution, benchmark, and full evidence-state audits remain planned. |
+| Test state | `prototype_phase_record.valid.json` passes repository-level protocol fixture validation; `python3 scripts/validate_prototype_phase_gates.py` validates 2 public-safe phase-gate fixtures and 6 expected-invalid controls for phase acceptance, dependency ordering, self-improvement evaluator gates, phase debt, evidence-transition promotion gates, and non-claim boundaries; `AsiStackProofs.PrototypeRoadmap` builds finite-record predicates over phase unlock, claim-promotion, phase-route, and fixture-bridge reviews; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic expired-evidence rerun/reject behavior. Phase execution, benchmark, deployed build-controller, and full evidence-state audits remain planned. |
 
 ## Drafting guardrail
 
@@ -213,7 +213,7 @@ Milestone compression can make that theater durable. Several hard gates are coll
 
 The roadmap becomes executable through a prototype phase record. The repository fixture records deliverables, gates, blockers, commands, evidence references, non-claims, and status. It does not mean the named phase is complete or that dependent prototypes are unlocked.
 
-A dependency-gate fixture set should be the roadmap's first executable check: one phase blocked by missing source notes, one phase allowed for research but not promotion, one phase with recorded phase debt and retirement condition, and one self-improvement phase blocked because evaluator independence is absent. The set would test roadmap semantics while leaving phase completion unclaimed.
+A dependency-gate fixture set is now the roadmap's first executable check. `python3 scripts/validate_prototype_phase_gates.py` validates one accepted non-promoting infrastructure phase, one research-only phase with recorded phase debt and a retirement condition, and expected-invalid controls for missing artifacts, dependency inversion, self-improvement without an independent evaluator, support promotion without an evidence-transition record, phase debt without retirement, and missing non-claim boundaries. The set tests roadmap semantics while leaving phase completion unclaimed.
 
 A first roadmap fixture lets a blocked phase stay useful by naming the exact artifact that would unblock it.
 
@@ -241,8 +241,8 @@ At build-controller maturity, a builder could ask the roadmap what to implement 
 | Test | Purpose | Status |
 |---|---|---|
 | Prototype phase record fixture validation | Validate that a phase record names unlocks, required artifacts, acceptance gates, blockers, validation commands, evidence refs, non-claims, and status. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
-| Phase acceptance checklist | Check that dependent phases have gates and artifacts. | planned; not run |
-| Dependency gate review | Check that self-improvement depends on evidence, rollback, and evaluator integrity. | planned; not run |
+| Phase acceptance checklist | Check that dependent phases have gates, artifacts, evidence refs, residual handling, and non-claim boundaries before integration. | implemented; passing via `python3 scripts/validate_prototype_phase_gates.py` with result `prototype_phase_gates_2026_07_02_local`; no phase completion or no support-state promotion claim |
+| Dependency gate review | Check that dependency order, self-improvement evaluator gates, phase debt retirement conditions, and evidence-transition gates block invalid roadmap advancement. | implemented; passing via `python3 scripts/validate_prototype_phase_gates.py`; no deployed build controller or support-state promotion |
 | Prototype evidence-state audit | Check that roadmap milestones do not promote claims by themselves. | implemented by readiness/residual gate harness for synthetic expired-evidence rerun/reject behavior; full phase evidence-state audit not run |
 
 ### Formalization hooks
@@ -251,8 +251,9 @@ At build-controller maturity, a builder could ask the roadmap what to implement 
 |---|---|---|---|
 | `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A roadmap phase can unlock a dependent phase only after acceptance gates pass. | implemented |
 | `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A phase milestone cannot promote a claim without evidence artifacts. | implemented |
+| `lean:roadmap.phases.fixture_gate_bridge` | `AsiStackProofs.PrototypeRoadmap` | A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over phase unlock, claim-promotion, and phase-route reviews. The v1.x follow-through route envelope proves only record-level gates: missing source-matrix readiness rejects a phase route; self-improvement without an independent evaluator is rejected; failed acceptance gates keep a phase research-only; requested support promotion without an accepted evidence-transition record is rejected; and a fully accepted non-promoting phase can route to integration. It does not prove that any prototype phase is complete, that dependent prototypes are safe to run, that evaluator independence exists in practice, that any acceptance gate is adequate, or that any capability claim has earned stronger support.
+These Lean hooks are implemented as finite-record predicates over phase unlock, claim-promotion, phase-route, and phase-gate fixture-bridge reviews. The v1.x follow-through route envelope proves only record-level gates: missing source-matrix readiness rejects a phase route; self-improvement without an independent evaluator is rejected; failed acceptance gates keep a phase research-only; requested support promotion without an accepted evidence-transition record is rejected; a fully accepted non-promoting phase can route to integration; and the complete synthetic phase-gate fixture summary can be accepted while missing non-claim boundaries reject the bridge. It does not prove that any prototype phase is complete, that dependent prototypes are safe to run, that evaluator independence exists in practice, that any acceptance gate is adequate, or that any capability claim has earned stronger support.
 
 ## Source crosswalk
 

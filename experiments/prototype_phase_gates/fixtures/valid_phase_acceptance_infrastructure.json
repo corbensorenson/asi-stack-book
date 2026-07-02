@@ -1,0 +1,58 @@
+{
+  "scenario_id": "valid_phase_acceptance_infrastructure",
+  "expected_valid": true,
+  "expected_route": "integrate",
+  "phase_record": {
+    "phase_id": "phase://source-artifact-ledger-baseline",
+    "phase_name": "Source, artifact, and claim-ledger baseline",
+    "unlocks": ["phase://typed-planning-research"],
+    "required_artifacts": [
+      "sources/source_inventory.json",
+      "appendices/A_source_matrix.qmd",
+      "appendices/C_claim_evidence_matrix.qmd",
+      "docs/proof_artifact_audit.md"
+    ],
+    "acceptance_gates": [
+      "source evidence audit passes",
+      "proof artifact audit passes",
+      "book validation passes"
+    ],
+    "blocked_by": [],
+    "validation_commands": [
+      "python3 scripts/validate_source_evidence_audit.py",
+      "python3 scripts/validate_proof_artifact_audit.py",
+      "python3 scripts/validate_book.py"
+    ],
+    "evidence_refs": [
+      "docs/source_evidence_audit.md",
+      "docs/proof_artifact_audit.md",
+      "appendices/F_changelog.qmd"
+    ],
+    "non_claims": [
+      "phase gate acceptance is not phase completion",
+      "integration route is not a support-state promotion",
+      "no deployed ASI system or benchmark result is claimed"
+    ],
+    "status": "active"
+  },
+  "readiness": {
+    "source_matrix_ready": true,
+    "artifact_graph_ready": true,
+    "claim_ledger_ready": true,
+    "authority_controls_ready": true,
+    "dependency_order_valid": true,
+    "required_artifacts_present": true,
+    "acceptance_gates_passed": true,
+    "evidence_refs_present": true,
+    "evidence_transition_record_present": false,
+    "residuals_closed": true,
+    "phase_debt_recorded": false,
+    "retirement_condition_recorded": false,
+    "independent_evaluator_present": false,
+    "rollback_plan_present": false,
+    "support_promotion_requested": false,
+    "irreversible_authority_requested": false,
+    "self_improvement_phase": false,
+    "non_claim_boundary": true
+  }
+}

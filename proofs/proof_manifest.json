@@ -1,9 +1,9 @@
 {
   "generated_from": "docs/book_outline.md",
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
-  "proof_target_count": 170,
+  "proof_target_count": 171,
   "status_counts": {
-    "implemented": 170
+    "implemented": 171
   },
   "chapter_counts": {
     "artifact-graphs-audit-logs-and-replay": 3,
@@ -36,7 +36,7 @@
     "policy-optimization-and-learning-from-feedback": 4,
     "procedural-memory-and-cognitive-loop-closure": 2,
     "project-theseus-as-report-first-implementation-reference": 2,
-    "prototype-roadmap": 2,
+    "prototype-roadmap": 3,
     "rankfold-neuralfold-and-artifact-compression": 3,
     "readiness-gates-residual-escrow-and-quarantine": 2,
     "recursive-self-improvement-boundaries": 3,
@@ -1703,13 +1703,23 @@
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
+      "chapter_id": "prototype-roadmap",
+      "chapter_title": "Prototype Roadmap",
+      "tag": "lean:roadmap.phases.fixture_gate_bridge",
+      "module": "AsiStackProofs.PrototypeRoadmap",
+      "formal_target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
+      "status": "implemented",
+      "outline_line": 3227,
+      "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
+    },
+    {
       "chapter_id": "living-book-methodology",
       "chapter_title": "Living Book Methodology",
       "tag": "lean:living_book.methodology.operational_invariant",
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
       "status": "implemented",
-      "outline_line": 3295,
+      "outline_line": 3296,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1719,7 +1729,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
       "status": "implemented",
-      "outline_line": 3296,
+      "outline_line": 3297,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1729,7 +1739,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
       "status": "implemented",
-      "outline_line": 3297,
+      "outline_line": 3298,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1739,7 +1749,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
       "status": "implemented",
-      "outline_line": 3357,
+      "outline_line": 3358,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -1749,7 +1759,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
       "status": "implemented",
-      "outline_line": 3358,
+      "outline_line": 3359,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

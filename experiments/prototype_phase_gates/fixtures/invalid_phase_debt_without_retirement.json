@@ -1,0 +1,37 @@
+{
+  "scenario_id": "invalid_phase_debt_without_retirement",
+  "expected_valid": false,
+  "expected_route": "reject",
+  "phase_record": {
+    "phase_id": "phase://private-artifact-debt-without-retirement",
+    "phase_name": "Private artifact phase debt without retirement condition",
+    "unlocks": [],
+    "required_artifacts": ["docs/theseus_support_replay_probe.md"],
+    "acceptance_gates": ["public-safe replay packet exists"],
+    "blocked_by": ["clean live Theseus replay unavailable"],
+    "validation_commands": ["python3 scripts/validate_theseus_support_replay_probe.py"],
+    "evidence_refs": ["docs/theseus_support_replay_probe.md"],
+    "non_claims": ["private artifact debt cannot become durable roadmap acceptance"],
+    "status": "active"
+  },
+  "readiness": {
+    "source_matrix_ready": true,
+    "artifact_graph_ready": true,
+    "claim_ledger_ready": true,
+    "authority_controls_ready": true,
+    "dependency_order_valid": true,
+    "required_artifacts_present": true,
+    "acceptance_gates_passed": false,
+    "evidence_refs_present": true,
+    "evidence_transition_record_present": false,
+    "residuals_closed": false,
+    "phase_debt_recorded": true,
+    "retirement_condition_recorded": false,
+    "independent_evaluator_present": false,
+    "rollback_plan_present": false,
+    "support_promotion_requested": false,
+    "irreversible_authority_requested": false,
+    "self_improvement_phase": false,
+    "non_claim_boundary": true
+  }
+}

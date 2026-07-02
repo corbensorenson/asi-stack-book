@@ -388,8 +388,8 @@ No result is recorded here unless a test has actually been implemented and run.
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Work-board improvement contract test | planned | not run |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Artifact-gap audit | planned | not run |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Self-evolution intervention ladder audit | planned | not run |
-| `prototype-roadmap` | Prototype Roadmap | Phase acceptance checklist | planned | not run |
-| `prototype-roadmap` | Prototype Roadmap | Dependency gate review | planned | not run |
+| `prototype-roadmap` | Prototype Roadmap | Phase acceptance checklist | implemented | validated locally by synthetic fixtures; no phase completion or support-state promotion |
+| `prototype-roadmap` | Prototype Roadmap | Dependency gate review | implemented | validated locally by synthetic fixtures; no deployed build controller or support-state promotion |
 | `prototype-roadmap` | Prototype Roadmap | Prototype evidence-state audit | implemented | validated locally by synthetic fixtures; full phase acceptance audit not run |
 | `living-book-methodology` | Living Book Methodology | Living book release record validation | implemented | passes via `python3 scripts/validate_protocol_examples.py`; release hygiene only |
 | `living-book-methodology` | Living Book Methodology | Living-book change-packet validation | implemented | passes via `python3 scripts/validate_living_book_change_packets.py` with 3 valid and 6 expected-invalid synthetic fixtures; publication-governance record discipline only |
@@ -459,16 +459,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 170 |
+| Proof targets covered by triage | 171 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 170 |
+| implemented | 171 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 170 |
+| implemented | formal-invariant | lean-candidate | 171 |

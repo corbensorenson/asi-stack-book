@@ -1,0 +1,37 @@
+{
+  "scenario_id": "invalid_missing_non_claim_boundary",
+  "expected_valid": false,
+  "expected_route": "reject",
+  "phase_record": {
+    "phase_id": "phase://acceptance-without-non-claims",
+    "phase_name": "Phase acceptance packet with missing non-claim boundary",
+    "unlocks": ["phase://public-reader-claim"],
+    "required_artifacts": ["docs/prototype_phase_gate_harness.md"],
+    "acceptance_gates": ["validator passes"],
+    "blocked_by": [],
+    "validation_commands": ["python3 scripts/validate_prototype_phase_gates.py"],
+    "evidence_refs": ["docs/prototype_phase_gate_harness.md"],
+    "non_claims": ["placeholder"],
+    "status": "active"
+  },
+  "readiness": {
+    "source_matrix_ready": true,
+    "artifact_graph_ready": true,
+    "claim_ledger_ready": true,
+    "authority_controls_ready": true,
+    "dependency_order_valid": true,
+    "required_artifacts_present": true,
+    "acceptance_gates_passed": true,
+    "evidence_refs_present": true,
+    "evidence_transition_record_present": false,
+    "residuals_closed": true,
+    "phase_debt_recorded": false,
+    "retirement_condition_recorded": false,
+    "independent_evaluator_present": false,
+    "rollback_plan_present": false,
+    "support_promotion_requested": false,
+    "irreversible_authority_requested": false,
+    "self_improvement_phase": false,
+    "non_claim_boundary": false
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "scenario_id": "valid_research_only_phase_debt",
+  "expected_valid": true,
+  "expected_route": "research_only",
+  "phase_record": {
+    "phase_id": "phase://runtime-adapter-research-slice",
+    "phase_name": "Runtime adapter research slice with explicit phase debt",
+    "unlocks": [],
+    "required_artifacts": [
+      "docs/runtime_adapter_effect_probe.md",
+      "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json"
+    ],
+    "acceptance_gates": [
+      "effect replay probe passes",
+      "deployed sandbox evidence remains blocked",
+      "rollback-service evidence remains blocked"
+    ],
+    "blocked_by": [
+      "no deployed sandbox replay",
+      "no approval-service run",
+      "no target-service rollback execution"
+    ],
+    "validation_commands": ["python3 scripts/validate_runtime_adapter_effect_probe.py"],
+    "evidence_refs": [
+      "docs/runtime_adapter_effect_probe.md",
+      "docs/v1_x_beyond_sota_roadmap.md#runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "non_claims": [
+      "research-only route is not phase acceptance",
+      "local temp-file replay is not deployed adapter safety",
+      "no support-state promotion is requested"
+    ],
+    "status": "active"
+  },
+  "readiness": {
+    "source_matrix_ready": true,
+    "artifact_graph_ready": true,
+    "claim_ledger_ready": true,
+    "authority_controls_ready": true,
+    "dependency_order_valid": true,
+    "required_artifacts_present": true,
+    "acceptance_gates_passed": false,
+    "evidence_refs_present": true,
+    "evidence_transition_record_present": false,
+    "residuals_closed": false,
+    "phase_debt_recorded": true,
+    "retirement_condition_recorded": true,
+    "independent_evaluator_present": false,
+    "rollback_plan_present": false,
+    "support_promotion_requested": false,
+    "irreversible_authority_requested": false,
+    "self_improvement_phase": false,
+    "non_claim_boundary": true
+  }
+}
