@@ -144,6 +144,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/self_improvement_boundary_harness.md` | Phase 5 self-improvement transition-boundary harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/plan_execution_contract_harness.md` | Phase 5 plan-execution contract harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/runtime_adapter_permission_harness.md` | Phase 5 runtime adapter permission harness summary, command, local result, and non-claim boundary. | tracked |
+| `docs/runtime_adapter_effect_probe.md` | Book-gate Runtime adapter effect replay probe with one public-safe temp-file write, rollback-exact restoration, missing-permission denial, expired-approval denial, and no-promotion boundary. | tracked |
 | `docs/artifact_graph_replay_harness.md` | Book-gate artifact graph replay harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/procedural_memory_loop_harness.md` | Book-gate procedural-memory loop harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/routing_decision_lease_harness.md` | Book-gate routing decision lease harness summary, command, local result, and non-claim boundary. | tracked |

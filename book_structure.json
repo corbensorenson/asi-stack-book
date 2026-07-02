@@ -5436,6 +5436,11 @@
               "name": "Revoked authority receipt probe",
               "implementation_status": "implemented",
               "result_status": "passes via expected-invalid synthetic runtime adapter fixture; no deployed revocation propagation claim"
+            },
+            {
+              "name": "Runtime adapter effect replay probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via valid_low_impact_local_write_effect_replay with rollback-exact temp-file restoration and missing-permission and expired-approval no-mutation controls; no deployed-adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, benchmark, or support-state-promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.RuntimeAdapters",

@@ -565,7 +565,7 @@ def main() -> None:
         start = expected_fragments.index(old_harness_start)
         end = expected_fragments.index(non_infra_start)
         current_harness_fragments = [
-            "| Test harnesses | Forty-two synthetic, deterministic, measured, local replay, local external-project receipt, local artifact-import, or publication-governance checks are wired into book validation; twenty-two are wired into the Phase 5 registry and twenty chapter-specific/support checks are book-gate-only:",
+            "| Test harnesses | Forty-three synthetic, deterministic, measured, local replay, local external-project receipt, local artifact-import, or publication-governance checks are wired into book validation; twenty-two are wired into the Phase 5 registry and twenty-one chapter-specific/support checks are book-gate-only:",
             "the living-book change-packet harness",
             "Living-book change-packet harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).",
             "the Benchmark anti-Goodhart fixture bridge",
@@ -586,6 +586,12 @@ def main() -> None:
             "max_alias_load=4",
             "a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a",
             "3 passed in 2.51s",
+            "the Runtime adapter effect replay probe",
+            "valid_low_impact_local_write_effect_replay",
+            "rollback-exact temp-file restoration",
+            "invalid_missing_permission_no_mutation",
+            "invalid_expired_approval_no_mutation",
+            "without deployed-adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, benchmark, or support-state-promotion claims",
             "Appendix E remains the detailed per-harness source of truth",
             "None of these harnesses promotes chapter core claims",
             "`appendices/E_codex_test_specs.qmd`",
@@ -597,6 +603,9 @@ def main() -> None:
             "`experiments/circle_cyclic_memory_receipt_slice/results/2026-07-02-local.json`",
             "`python3 scripts/validate_cyclic_memory_contracts.py`",
             "`python3 scripts/validate_circle_cyclic_memory_receipt_slice.py`",
+            "`docs/runtime_adapter_effect_probe.md`",
+            "`experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json`",
+            "`python3 scripts/validate_runtime_adapter_effect_probe.py`",
             "`docs/rankfold_public_safe_probe.md`",
             "`experiments/rankfold_public_safe_probe/results/2026-07-02-local.json`",
             "`python3 scripts/validate_rankfold_public_safe_probe.py`",

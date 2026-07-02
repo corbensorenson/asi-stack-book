@@ -92,12 +92,17 @@ records are imported and inspected.
 
 The current repository validates a `runtime_adapter_invocation` fixture,
 implements finite Lean predicates for adapter permission and high-impact
-approval rejection, and runs a synthetic runtime-adapter permission harness
-over typed jobs, adapter invocations, and authority-use receipts. That is
-record-gate evidence. It is not deployed adapter execution, sandbox isolation,
-live approval-service behavior, live rollback execution, secret-handle safety,
-runtime security, Talos runtime behavior, MoECOT runtime reproduction, or a
-benchmark result.
+approval rejection, runs a synthetic runtime-adapter permission harness over
+typed jobs, adapter invocations, and authority-use receipts, and now records a
+Runtime adapter effect replay probe. That probe executes
+`valid_low_impact_local_write_effect_replay` as one public-safe temp-file
+write, restores the pre-state digest as a rollback-exact check, and blocks
+`invalid_missing_permission_no_mutation` plus
+`invalid_expired_approval_no_mutation` before mutation. That is a useful toy
+effect trace. It is not deployed adapter execution, sandbox isolation, live
+approval-service behavior, secret-handle safety, revocation propagation,
+rollback-service behavior, runtime security, Talos runtime behavior, MoECOT
+runtime reproduction, or a benchmark result.
 
 ## Mechanism
 
@@ -261,8 +266,8 @@ record, or leave a residual that future ledgers cannot ignore.
 ## Minimum Viable Implementation
 
 The minimum viable implementation is a runtime-adapter invocation schema,
-public fixtures, finite permission and approval predicates, and a synthetic
-cross-record harness.
+public fixtures, finite permission and approval predicates, a synthetic
+cross-record harness, and one public-safe local effect replay.
 
 The repository currently has that record surface. The fixture validates
 invocation state, impact class, risk tier, approval scope and expiry, effect
@@ -277,16 +282,26 @@ permissions, approval gates, expiry markers, receipts, rollback handles,
 irreversible residuals, authority receipt alignment, ambient-authority
 confused-deputy rejection, and revoked-receipt blocking.
 
-That implementation is useful, but it remains a record-gate harness. It does
-not execute a tool, run a sandbox, mediate a real secret, conduct a live human
-approval workflow, validate a live effect receipt, execute rollback, or prove
-tool safety.
+The Runtime adapter effect replay probe adds the smallest executable slice:
+`python3 scripts/run_runtime_adapter_effect_probe.py --write-result` creates a
+generated temporary file outside the repository, dispatches a low-impact write
+under the toy gate, records 178-byte pre-state and rollback digests, records a
+289-byte post-state digest, and validates rollback-exact restoration through
+`python3 scripts/validate_runtime_adapter_effect_probe.py`. The same probe
+blocks a missing-permission request and an expired-approval request before
+mutation. It records `repo_write=false`, `network_used=false`,
+`support_state_effect=none`, and `chapter_core_support_effect=none`.
 
-The next honest slice would run one deliberately small adapter fixture end to
-end in a safe local environment: a low-impact local write with approval not
-required, a high-impact dry-run deployment requiring approval, a stale-approval
-negative case, a missing-permission negative case, and an irreversible-effect
-record that is rejected unless residuals are explicit.
+That slice is deliberately humble. It does not run a production sandbox,
+mediate a real secret, conduct a live human approval workflow, validate a live
+effect receipt, propagate revocation, execute rollback in a target service, or
+prove tool safety.
+
+The next honest slice would run a deployed adapter fixture end to end in a
+safe local environment: a low-impact local write with approval not required, a
+high-impact dry-run deployment requiring approval, a stale-approval negative
+case, a missing-permission negative case, and an irreversible-effect record
+that is rejected unless residuals are explicit.
 
 ## Beyond the State of the Art
 
@@ -321,14 +336,15 @@ This chapter argues for capability-mediated external effects. It does not
 claim that the ASI Stack can safely use arbitrary tools.
 
 Current evidence consists of source synthesis, passage-reviewed source
-mappings, public schemas and fixtures, finite Lean predicates, and a synthetic
-runtime-adapter permission harness. Those artifacts support the shape of the
-control surface. They do not prove deployed adapter behavior, sandbox
-isolation, approval-service correctness, secret-handle safety, live effect
-receipt validity, rollback execution, incident response, benchmark
-performance, security behavior, Talos runtime behavior, MoECOT runtime
-reproduction, ReAct reproduction, Simplex-level assurance, Copilot-style
-runtime monitoring, or proof-carrying-code enforcement.
+mappings, public schemas and fixtures, finite Lean predicates, a synthetic
+runtime-adapter permission harness, and one public-safe Runtime adapter effect
+replay probe. Those artifacts support the shape of the control surface and one
+toy temp-file effect path. They do not prove deployed adapter behavior,
+sandbox isolation, approval-service correctness, secret-handle safety, live
+effect receipt validity, rollback-service behavior, incident response,
+benchmark performance, security behavior, Talos runtime behavior, MoECOT
+runtime reproduction, ReAct reproduction, Simplex-level assurance,
+Copilot-style runtime monitoring, or proof-carrying-code enforcement.
 
 The adapter exists to keep authority from leaking through convenience. The
 chapter preserves the same discipline about its own evidence.

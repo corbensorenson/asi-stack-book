@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-02 - Add runtime adapter effect replay probe
+
+- Added `python3 scripts/run_runtime_adapter_effect_probe.py`,
+  `python3 scripts/validate_runtime_adapter_effect_probe.py`,
+  `docs/runtime_adapter_effect_probe.md`, and
+  `experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json` for
+  a public-safe local temp-file runtime-adapter effect replay.
+- The probe records `valid_low_impact_local_write_effect_replay`, pre/post and
+  rollback digests, rollback-exact restoration, and two no-mutation controls:
+  `invalid_missing_permission_no_mutation` and
+  `invalid_expired_approval_no_mutation`.
+- Updated the Runtime Adapters live chapter, curated reader chapter, outline,
+  roadmap, manifest, Appendix E generator, README/status surfaces, and
+  validation wiring. This does not prove deployed adapter behavior, sandbox
+  isolation, approval-service behavior, secret-handle safety, revocation
+  propagation, policy-enforcement correctness, rollback-service behavior,
+  benchmark performance, or chapter-core support-state promotion.
+
 ## 2026-07-02 - Add RankFold public-safe replay probe
 
 - Added `python3 scripts/run_rankfold_public_safe_probe.py`,

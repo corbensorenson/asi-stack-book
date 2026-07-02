@@ -1,0 +1,178 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_runtime_adapter_effect_probe.py --write-result",
+  "evidence_transition_created": false,
+  "expected_invalid_controls": [
+    {
+      "checks": {
+        "blocked_before_mutation": true,
+        "network_used": false,
+        "repo_write": false,
+        "state_unchanged": true
+      },
+      "decision": "deny",
+      "decision_reason": "missing_parent_permission",
+      "effect_executed": false,
+      "gate": {
+        "adapter_id": "adapter://local-filesystem",
+        "approval_expiry": "not_required",
+        "approval_record": "not_required",
+        "approval_required": false,
+        "approval_scope": "not_required",
+        "authority_handle": "handle://runtime-effect-probe/missing-permission-001",
+        "effect_lease": "lease://runtime-effect-probe/missing-permission-001",
+        "impact_class": "low_impact",
+        "parent_job": "job://runtime-effect-probe/missing-permission-001",
+        "parent_permissions": [
+          "repo_read"
+        ],
+        "requested_capability": "filesystem.write",
+        "risk_tier": "low",
+        "sandbox_mode": "python_tempdir_workspace",
+        "target_type": "local_temp_file"
+      },
+      "scenario_id": "invalid_missing_permission_no_mutation",
+      "states": {
+        "post": {
+          "bytes": 178,
+          "kind": "post",
+          "logical_ref": "state://runtime-effect-probe/post",
+          "sha256": "d9ae945ec8c2465b9a4e059084d4a3c6a7743cb02ff79a2ab55dccffc6116333"
+        },
+        "pre": {
+          "bytes": 178,
+          "kind": "pre",
+          "logical_ref": "state://runtime-effect-probe/pre",
+          "sha256": "d9ae945ec8c2465b9a4e059084d4a3c6a7743cb02ff79a2ab55dccffc6116333"
+        }
+      }
+    },
+    {
+      "checks": {
+        "blocked_before_mutation": true,
+        "network_used": false,
+        "repo_write": false,
+        "state_unchanged": true
+      },
+      "decision": "deny",
+      "decision_reason": "expired_approval",
+      "effect_executed": false,
+      "gate": {
+        "adapter_id": "adapter://local-filesystem",
+        "approval_expiry": "expired:2026-07-01T00:00:00Z",
+        "approval_record": "approval://runtime-effect-probe/expired-preview",
+        "approval_required": true,
+        "approval_scope": "deployment_preview:synthetic-only",
+        "authority_handle": "handle://runtime-effect-probe/expired-approval-001",
+        "effect_lease": "lease://runtime-effect-probe/expired-approval-001",
+        "impact_class": "high_impact",
+        "parent_job": "job://runtime-effect-probe/expired-approval-001",
+        "parent_permissions": [
+          "filesystem.write"
+        ],
+        "requested_capability": "filesystem.write",
+        "risk_tier": "high",
+        "sandbox_mode": "python_tempdir_workspace",
+        "target_type": "deployment_preview"
+      },
+      "scenario_id": "invalid_expired_approval_no_mutation",
+      "states": {
+        "post": {
+          "bytes": 178,
+          "kind": "post",
+          "logical_ref": "state://runtime-effect-probe/post",
+          "sha256": "d9ae945ec8c2465b9a4e059084d4a3c6a7743cb02ff79a2ab55dccffc6116333"
+        },
+        "pre": {
+          "bytes": 178,
+          "kind": "pre",
+          "logical_ref": "state://runtime-effect-probe/pre",
+          "sha256": "d9ae945ec8c2465b9a4e059084d4a3c6a7743cb02ff79a2ab55dccffc6116333"
+        }
+      }
+    }
+  ],
+  "fixture_template_ref": "experiments/runtime_adapter_permissions/fixtures/valid_low_impact_local_write.json",
+  "input_generator": "scripts/run_runtime_adapter_effect_probe.py::initial_bytes/appended_bytes",
+  "local_only": true,
+  "non_claims": [
+    "This runtime adapter effect replay probe does not promote any chapter core claim above argument.",
+    "This runtime adapter effect replay probe does not create a support-state transition.",
+    "This runtime adapter effect replay probe does not prove deployed adapter behavior, sandbox isolation, approval-service behavior, secret-handle safety, revocation propagation, policy-enforcement correctness, rollback-service behavior, benchmark performance, or any AI safety property.",
+    "This runtime adapter effect replay probe writes only a generated public-safe temporary file outside the repository, records hashes and gate decisions, and does not copy file contents, private source text, private keys, local absolute paths, or secret payloads into the repository."
+  ],
+  "pass": true,
+  "probe_id": "runtime-adapter-effect-replay-2026-07-02-local",
+  "public_safety_boundary": "Generated public-safe temp-file bytes only; no repository file, network target, secret, private source, or external service is mutated.",
+  "record_kind": "runtime_adapter_effect_replay_probe",
+  "recorded_at_utc": "2026-07-02T11:13:07Z",
+  "schema_version": "0.1",
+  "support_state_effect": "none",
+  "valid_scenario": {
+    "checks": {
+      "network_used": false,
+      "post_changed": true,
+      "repo_write": false,
+      "rollback_exact": true
+    },
+    "decision": "dispatch",
+    "decision_reason": "all_local_probe_gates_satisfied",
+    "effect_executed": true,
+    "elapsed_ms": 0.51,
+    "fixture_template_ref": "experiments/runtime_adapter_permissions/fixtures/valid_low_impact_local_write.json",
+    "gate": {
+      "adapter_id": "adapter://local-filesystem",
+      "approval_expiry": "not_required",
+      "approval_record": "not_required",
+      "approval_required": false,
+      "approval_scope": "not_required",
+      "authority_handle": "handle://runtime-effect-probe/local-write-001",
+      "effect_lease": "lease://runtime-effect-probe/local-write-001",
+      "impact_class": "low_impact",
+      "parent_job": "job://runtime-effect-probe/local-write-001",
+      "parent_permissions": [
+        "filesystem.write",
+        "repo_write"
+      ],
+      "requested_capability": "filesystem.write",
+      "risk_tier": "low",
+      "sandbox_mode": "python_tempdir_workspace",
+      "target_type": "local_temp_file"
+    },
+    "receipt": {
+      "audit_refs": [
+        "audit://runtime-effect-probe/local-write-001"
+      ],
+      "chapter_core_support_effect": "none",
+      "effect_receipt": "receipt://runtime-effect-probe/local-write-001",
+      "rollback_handle": "rollback://runtime-effect-probe/restore-pre-state",
+      "support_state_effect": "none",
+      "verification_refs": [
+        "check://runtime-effect-probe/pre-post-digest-change",
+        "check://runtime-effect-probe/rollback-digest-restored"
+      ]
+    },
+    "rollback_executed": true,
+    "scenario_id": "valid_low_impact_local_write_effect_replay",
+    "states": {
+      "post": {
+        "bytes": 289,
+        "kind": "post",
+        "logical_ref": "state://runtime-effect-probe/post",
+        "sha256": "b08793d6670cc755ec4f22178f2b22b7c4246bc7177315f0d008133492e8df4c"
+      },
+      "pre": {
+        "bytes": 178,
+        "kind": "pre",
+        "logical_ref": "state://runtime-effect-probe/pre",
+        "sha256": "d9ae945ec8c2465b9a4e059084d4a3c6a7743cb02ff79a2ab55dccffc6116333"
+      },
+      "rollback": {
+        "bytes": 178,
+        "kind": "rollback",
+        "logical_ref": "state://runtime-effect-probe/rollback",
+        "sha256": "d9ae945ec8c2465b9a4e059084d4a3c6a7743cb02ff79a2ab55dccffc6116333"
+      }
+    }
+  }
+}
