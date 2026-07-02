@@ -257,13 +257,19 @@ predicates, evidence references, readiness references, authority ceilings,
 route permission effects, evaluator independence, rollback obligations,
 default-route blockers, and non-claim boundaries. The readiness/residual gate
 harness also checks synthetic route-validity and rollback-readiness records.
+The live project now adds a narrow lifecycle trace probe: one forward path from
+shadow to canary to qualified to default to deprecated to retired, one
+incident quarantine branch, and expected-invalid controls for identity drift,
+default promotion without a regression floor, authority expansion, retired
+restart, missing deprecation notice, and missing retirement receipt.
 
 That is useful, but narrow. Schema validation proves record shape. Synthetic
 fixtures prove that local validators reject or accept the declared toy records.
 They do not prove that a deployed route validator works, that evaluator
 integrity is enforced in a live system, that authority is actually contained,
-that rollback would execute under pressure, or that source-reported MoECOT
-runtime behavior has been reproduced.
+that regression history is preserved in production, that rollback would execute
+under pressure, or that source-reported MoECOT runtime behavior has been
+reproduced.
 
 ## Beyond the State of the Art
 

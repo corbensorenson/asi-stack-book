@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Add SCF lifecycle trace probe
+
+- Added `python3 scripts/validate_scf_lifecycle_trace.py`,
+  `docs/scf_lifecycle_trace_probe.md`, and
+  `experiments/scf_lifecycle_trace/results/2026-07-02-local.json` for a
+  deterministic Stable Capability Fields lifecycle trace with 2 valid traces
+  and 6 expected-invalid controls covering forward lifecycle, incident
+  quarantine, identity drift, default-without-regression, default authority
+  expansion, retired restart, deprecation without notice, and retirement
+  without receipt.
+- Added `lean:scf.lifecycle.trace_fixture_bridge` in
+  `AsiStackProofs.StableCapabilityFields`, with a finite Lean summary bridge
+  for trace counts, forward/quarantine coverage, unsafe-transition rejection,
+  and no-promotion boundaries.
+- Updated the SCF live chapter, curated reader chapter, outline, manifest,
+  roadmap, proof/test surfaces, and validation wiring. This does not execute
+  deployed route validation, prove evaluator-integrity measurement, preserve
+  real regressions, execute rollback, enforce lifecycle transitions in
+  production, or promote the chapter core claim.
+
 ## 2026-07-02 - Add intent intake probe
 
 - Added `python3 scripts/validate_intent_intake_probe.py`,
@@ -47,8 +67,8 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 153 proof targets, 54 Lean modules, 841
-  theorem declarations, 676 derived/decomposed, 161 direct/projection, 4
+- Current proof-depth snapshot: 154 proof targets, 54 Lean modules, 844
+  theorem declarations, 679 derived/decomposed, 161 direct/projection, 4
   unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate

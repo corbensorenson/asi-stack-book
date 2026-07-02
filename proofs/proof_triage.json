@@ -331,6 +331,16 @@
       "rationale": "Implemented in AsiStackProofs.StableCapabilityFields as finite lifecycle-review routing plus a lifecycle-state transition predicate over shadow, canary, qualified, default, deprecated, retired, and quarantined records with derived negative cases for missing evidence, regression floor, authority ceiling, rollback readiness, incident closure, deprecation notice, and retirement receipt."
     },
     {
+      "tag": "lean:scf.lifecycle.trace_fixture_bridge",
+      "chapter_id": "stable-capability-fields",
+      "module": "AsiStackProofs.StableCapabilityFields",
+      "formal_target": "The synthetic SCF lifecycle trace summary records two valid traces, six expected-invalid controls, forward lifecycle coverage, incident quarantine coverage, unsafe-transition rejection, and no deployed-route-validation, rollback-execution, or support-state-promotion claim.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.StableCapabilityFields as a finite summary bridge for python3 scripts/validate_scf_lifecycle_trace.py; the bridge records trace counts, forward and quarantine coverage, negative controls, and explicit no-promotion boundaries."
+    },
+    {
       "tag": "lean:replacement.transaction.operational_invariant",
       "chapter_id": "capability-replacement-and-rollback",
       "module": "AsiStackProofs.Replacement",

@@ -2088,6 +2088,12 @@
               "purpose": "Check that finite SCF lifecycle transitions preserve field identity, stay on the shadow/canary/qualified/default/deprecated/retired path or quarantine path, and reject default promotion without evidence, regression floor, authority ceiling, rollback readiness, or incident closure.",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite transition-record predicate only"
+            },
+            {
+              "name": "SCF lifecycle trace probe",
+              "purpose": "Check that a deterministic SCF lifecycle trace covers shadow-to-canary, canary-to-qualified, qualified-to-default, default-to-deprecated, deprecated-to-retired, incident quarantine, and expected-invalid controls for identity drift, default-without-regression, default authority expansion, retired restart, deprecation without notice, and retirement without receipt.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_scf_lifecycle_trace.py; 2 valid traces and 6 expected-invalid controls; no deployed route validation, evaluator-integrity measurement, real regression preservation, rollback execution, lifecycle enforcement, or support-state claim"
             }
           ],
           "lean_module": "AsiStackProofs.StableCapabilityFields",
@@ -2108,6 +2114,12 @@
               "tag": "lean:scf.lifecycle.route_envelope",
               "module": "AsiStackProofs.StableCapabilityFields",
               "target": "A structured SCF lifecycle review and finite lifecycle-state transition relation route identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, missing regression preservation, missing deprecation notice, and missing retirement receipt away from default or terminal promotion.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:scf.lifecycle.trace_fixture_bridge",
+              "module": "AsiStackProofs.StableCapabilityFields",
+              "target": "The synthetic SCF lifecycle trace summary records two valid traces, six expected-invalid controls, forward lifecycle coverage, incident quarantine coverage, unsafe-transition rejection, and no deployed-route-validation, rollback-execution, or support-state-promotion claim.",
               "status": "implemented"
             }
           ],

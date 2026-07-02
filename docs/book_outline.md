@@ -671,6 +671,7 @@ Draft deliverables:
 - Implemented Codex test: Route validity test, via `python3 scripts/validate_readiness_residual_gates.py` over synthetic costed-route/readiness-gate/replacement fixtures; deployed route enforcement remains unrun.
 - Planned Codex test: Authority non-escalation test.
 - Implemented Codex test: Rollback readiness test, via `python3 scripts/validate_readiness_residual_gates.py` over rollback receipt, monitor-state, and residual-escrow scenarios; deployed rollback remains unrun.
+- Implemented synthetic Codex test: SCF lifecycle trace probe via `python3 scripts/validate_scf_lifecycle_trace.py`, covering forward lifecycle from shadow through retired, incident quarantine, and expected-invalid controls for identity drift, default-without-regression, default authority expansion, retired restart, deprecation without notice, and retirement without receipt; no deployed route validation, evaluator-integrity measurement, real regression preservation, rollback execution, lifecycle enforcement, or support-state claim.
 - Implemented proof-backed check: finite SCF lifecycle route proof for identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, and missing regression preservation; this is structured-record coverage only, not deployed lifecycle enforcement.
 - Implemented proof-backed check: finite SCF lifecycle state-machine proof over shadow, canary, qualified, default, deprecated, retired, and quarantined transition records. It requires preserved field identity, rejects transitions from retired state, constrains default promotion by evidence, regression floor, authority ceiling, rollback readiness, and incident closure, and requires deprecation notices and retirement receipts for terminal transitions.
 
@@ -681,6 +682,7 @@ Lean proof targets:
 | `lean:scf.field_identity.operational_invariant` | `AsiStackProofs.StableCapabilityFields` | An implementation can replace another only if it satisfies the field qualification predicate. | implemented |
 | `lean:scf.field_identity.failure_blocks_promotion` | `AsiStackProofs.StableCapabilityFields` | A replacement that expands authority without a governance grant is rejected. | implemented |
 | `lean:scf.lifecycle.route_envelope` | `AsiStackProofs.StableCapabilityFields` | A structured SCF lifecycle review and finite lifecycle-state transition relation route identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, missing regression preservation, missing deprecation notice, and missing retirement receipt away from default or terminal promotion. | implemented |
+| `lean:scf.lifecycle.trace_fixture_bridge` | `AsiStackProofs.StableCapabilityFields` | The synthetic SCF lifecycle trace summary records two valid traces, six expected-invalid controls, forward lifecycle coverage, incident quarantine coverage, unsafe-transition rejection, and no deployed-route-validation, rollback-execution, or support-state-promotion claim. | implemented |
 
 ### Capability Replacement and Rollback
 
@@ -2706,9 +2708,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 153 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 153 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 153 proof targets, 54 Lean modules, 841 theorem declarations, 676 derived/decomposed, 161 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 154 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 154 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 154 proof targets, 54 Lean modules, 844 theorem declarations, 679 derived/decomposed, 161 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

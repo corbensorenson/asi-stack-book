@@ -407,4 +407,85 @@ theorem retirement_transition_requires_receipt
   intro allowed toRetired
   exact allowed.right.right.right.right.right.right.right toRetired
 
+structure ScfLifecycleTraceProbeSummary where
+  validTraces : Nat
+  invalidControls : Nat
+  forwardLifecycleCovered : Bool
+  incidentQuarantineCovered : Bool
+  identityDriftRejected : Bool
+  defaultWithoutRegressionRejected : Bool
+  defaultAuthorityExpansionRejected : Bool
+  retiredRestartRejected : Bool
+  terminalNoticeAndReceiptRequired : Bool
+  noDeployedRouteValidationClaim : Bool
+  noRollbackExecutionClaim : Bool
+  noSupportStatePromotion : Bool
+deriving DecidableEq, Repr
+
+def ScfLifecycleTraceProbeValid
+    (summary : ScfLifecycleTraceProbeSummary) : Prop :=
+  summary.validTraces = 2 ∧
+    summary.invalidControls = 6 ∧
+    summary.forwardLifecycleCovered = true ∧
+    summary.incidentQuarantineCovered = true ∧
+    summary.identityDriftRejected = true ∧
+    summary.defaultWithoutRegressionRejected = true ∧
+    summary.defaultAuthorityExpansionRejected = true ∧
+    summary.retiredRestartRejected = true ∧
+    summary.terminalNoticeAndReceiptRequired = true ∧
+    summary.noDeployedRouteValidationClaim = true ∧
+    summary.noRollbackExecutionClaim = true ∧
+    summary.noSupportStatePromotion = true
+
+def scfLifecycleTraceProbeFixture : ScfLifecycleTraceProbeSummary :=
+  {
+    validTraces := 2
+    invalidControls := 6
+    forwardLifecycleCovered := true
+    incidentQuarantineCovered := true
+    identityDriftRejected := true
+    defaultWithoutRegressionRejected := true
+    defaultAuthorityExpansionRejected := true
+    retiredRestartRejected := true
+    terminalNoticeAndReceiptRequired := true
+    noDeployedRouteValidationClaim := true
+    noRollbackExecutionClaim := true
+    noSupportStatePromotion := true
+  }
+
+theorem scf_lifecycle_trace_probe_fixture_valid :
+    ScfLifecycleTraceProbeValid scfLifecycleTraceProbeFixture := by
+  unfold ScfLifecycleTraceProbeValid scfLifecycleTraceProbeFixture
+  simp
+
+def ScfLifecycleTraceProbeRejectsUnsafeTransitions
+    (summary : ScfLifecycleTraceProbeSummary) : Prop :=
+  summary.invalidControls = 6 ->
+    summary.identityDriftRejected = true ∧
+      summary.defaultWithoutRegressionRejected = true ∧
+      summary.defaultAuthorityExpansionRejected = true ∧
+      summary.retiredRestartRejected = true ∧
+      summary.terminalNoticeAndReceiptRequired = true
+
+theorem scf_lifecycle_trace_probe_rejects_unsafe_transitions :
+    ScfLifecycleTraceProbeRejectsUnsafeTransitions
+      scfLifecycleTraceProbeFixture := by
+  unfold ScfLifecycleTraceProbeRejectsUnsafeTransitions
+    scfLifecycleTraceProbeFixture
+  intro _
+  simp
+
+def ScfLifecycleTraceProbePreservesNoPromotionBoundary
+    (summary : ScfLifecycleTraceProbeSummary) : Prop :=
+  summary.noDeployedRouteValidationClaim = true ∧
+    summary.noRollbackExecutionClaim = true ∧
+    summary.noSupportStatePromotion = true
+
+theorem scf_lifecycle_trace_probe_preserves_no_promotion_boundary :
+    ScfLifecycleTraceProbePreservesNoPromotionBoundary
+      scfLifecycleTraceProbeFixture := by
+  unfold ScfLifecycleTraceProbePreservesNoPromotionBoundary
+    scfLifecycleTraceProbeFixture
+  simp
+
 end AsiStackProofs.StableCapabilityFields

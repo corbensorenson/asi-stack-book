@@ -1,0 +1,35 @@
+{
+  "artifact": "scf_lifecycle_trace_probe",
+  "chapter_core_support_effect": "none",
+  "date": "2026-07-02",
+  "evidence_transition_created": false,
+  "expected_invalid_controls": 6,
+  "fixture_fingerprint_sha256": "8f4268049d7f5bbd028caf16164030daf642a8a42feea4a2ec5f925f582bd0d1",
+  "negative_control_coverage": {
+    "default_authority_expansion": true,
+    "default_without_regression_floor": true,
+    "deprecation_without_notice": true,
+    "identity_drift": true,
+    "retired_restart": true,
+    "retirement_without_receipt": true
+  },
+  "non_claims": [
+    "does not execute deployed route validation",
+    "does not prove evaluator-integrity measurement",
+    "does not execute rollback",
+    "does not prove real regression preservation",
+    "does not enforce lifecycle transitions in production",
+    "does not promote the chapter support state"
+  ],
+  "support_state_effect": "none",
+  "transition_coverage": {
+    "canary_to_qualified": true,
+    "default_to_deprecated": true,
+    "deprecated_to_retired": true,
+    "incident_to_quarantine": true,
+    "qualified_to_default": true,
+    "shadow_to_canary": true
+  },
+  "valid_traces": 2,
+  "validator": "python3 scripts/validate_scf_lifecycle_trace.py"
+}

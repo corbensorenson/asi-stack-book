@@ -77,6 +77,7 @@ REQUIRED = [
     "scripts/validate_authority_transitions.py",
     "scripts/validate_security_kernel.py",
     "scripts/validate_stable_capability_fields.py",
+    "scripts/validate_scf_lifecycle_trace.py",
     "scripts/validate_capability_replacement.py",
     "scripts/validate_capability_replacement_trace_probe.py",
     "scripts/validate_self_improvement_boundaries.py",
@@ -200,6 +201,7 @@ REQUIRED = [
     "docs/agency_rights_harness.md",
     "docs/security_kernel_harness.md",
     "docs/stable_capability_field_harness.md",
+    "docs/scf_lifecycle_trace_probe.md",
     "docs/capability_replacement_harness.md",
     "docs/capability_replacement_trace_probe.md",
     "docs/self_improvement_boundary_harness.md",
@@ -222,6 +224,7 @@ REQUIRED = [
     "experiments/agency_rights/results/2026-06-28-local.md",
     "experiments/security_kernel/results/2026-06-28-local.md",
     "experiments/stable_capability_fields/results/2026-06-28-local.md",
+    "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
     "experiments/capability_replacement/results/2026-06-28-local.md",
     "experiments/capability_replacement_trace/results/2026-07-02-local.json",
     "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
@@ -765,6 +768,7 @@ def main() -> None:
     run_validator("validate_authority_transitions.py")
     run_validator("validate_security_kernel.py")
     run_validator("validate_stable_capability_fields.py")
+    run_validator("validate_scf_lifecycle_trace.py")
     run_validator("validate_capability_replacement.py")
     run_validator("validate_capability_replacement_trace_probe.py")
     run_validator("validate_self_improvement_boundaries.py")

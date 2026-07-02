@@ -67,6 +67,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `stable-capability-fields` | Stable Capability Fields | Rollback readiness test | implemented | validated locally by synthetic fixtures; deployed rollback not run |
 | `stable-capability-fields` | Stable Capability Fields | SCF lifecycle route proof | implemented | passes via Lean build; no deployed lifecycle enforcement claim |
 | `stable-capability-fields` | Stable Capability Fields | SCF lifecycle state-machine proof | implemented | passes via Lean build; finite transition-record predicate only |
+| `stable-capability-fields` | Stable Capability Fields | SCF lifecycle trace probe | implemented | passes via python3 scripts/validate_scf_lifecycle_trace.py; 2 valid traces and 6 expected-invalid controls; no deployed route validation, evaluator-integrity measurement, real regression preservation, rollback execution, lifecycle enforcement, or support-state claim |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Replacement transaction test | implemented | validated locally by 5 valid and 9 expected-invalid synthetic fixtures; deployed replacement behavior, production model rollout, model-monitor behavior, and real rollback execution not run |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Regression preservation test | implemented | validated locally by synthetic fixtures; real regression suite not run |
 | `capability-replacement-and-rollback` | Capability Replacement and Rollback | Rollback execution dry run | implemented | validated locally by synthetic fixtures; production rollback not executed |
@@ -435,16 +436,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 153 |
+| Proof targets covered by triage | 154 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 153 |
+| implemented | 154 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 153 |
+| implemented | formal-invariant | lean-candidate | 154 |
