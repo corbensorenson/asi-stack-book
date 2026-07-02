@@ -39,6 +39,31 @@
         "",
         "Generation governance must keep decoding tricks, training objectives, serving memory systems, and sequence-model substrates separate. Each solves a different bottleneck. A faster route becomes useful only when the record shows which bottleneck improved and which quality, memory, verification, or fallback cost moved elsewhere."
       ]
+    },
+    {
+      "id": "v1_0.fast_generation.minimum_viable_implementation_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Split the dense Theseus import and task-bundle accounting paragraph into reader prose while preserving no-speedup and no-promotion boundaries.",
+      "content_lines": [
+        "A minimal implementation is a generation-mode registry plus a benchmark record. The record names the task risk, latency budget, context packet, mode, draft source, verifier, acceptance predicate, accepted output, wall-clock time, quality or pass result, compute and memory notes, fallback behavior, and promotion decision.",
+        "",
+        "The first executable slice should be deliberately small: one plain autoregressive baseline, one verifier-preserving acceleration path, and one negative control that looks cheap but fails the governance record. A negative result is still useful if it shows that a faster mode produced less useful output after verification, repair, fallback, and residual handling are counted.",
+        "",
+        "The current `generation_mode_record` fixture validates that shape without claiming a model result. It records `not_run`, `not measured`, and `not_evaluated` for the demo route. The Lean envelope adds bounded rejection cases for missing accepted-output evidence, missing verifier-cost evidence, failed accelerated drafts without fallback or residual handling, and high-risk fast-mode selections that omit verifier, risk-override, or slower-fallback records.",
+        "",
+        "The Project Theseus generation-mode import is a public-safe implementation-reference slice, not a speed result. Its sanitized summary records 18 modes, 13 comparisons, zero hard gaps, zero missing report refs, five hard boundary gates passing, and zero promotable comparisons. Five comparisons show accepted-span speed lift, but every candidate task-pass count and useful-solution-per-second value remains zero, so the import warns against raw-throughput promotion.",
+        "",
+        "The Theseus support replay probe reruns only the ASI-side static validators and records command-output and artifact digests. It does not copy private task rows, candidate outputs, prompts, training rows, checkpoints, traces, or benchmark payloads, and it does not rerun Theseus.",
+        "",
+        "The Fast generation task bundle adds a local public-safe accounting replay. Result `fast_generation_task_bundle_2026_07_02_local` compares an autoregressive reference, a verified fast-template route, and a cheaper latency-only proxy across four deterministic receipt tasks. The verified fast-template route passes 4/4 tasks at 264 deterministic cost units versus 632 for the baseline. The latency-only proxy is rejected at 176 cost units because it fails verifier, fallback, residual, and support-state boundaries.",
+        "",
+        "That result is accounting evidence for this repository's fixture, not a claim that an AI model is faster. It does not reproduce speculative decoding, multi-token prediction, diffusion generation, KV-cache serving, serving throughput, deployment behavior, or support-state promotion. Experimental entries such as `multi_seed_diffusion` or `hybrid_ar_diffusion_repair` should remain unroutable until source notes, tests, and accepted evidence records exist."
+      ]
     }
   ]
 }
