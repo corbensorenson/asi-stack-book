@@ -5,10 +5,13 @@
   "purpose": "Record chapter-level companion-note decisions for reader, e-reader, and audio review without moving meaning-critical caveats out of the reader spine.",
   "source_review_refs": [
     "docs/reader_continuity_review.md#medium-priority-queue-decisions",
+    "docs/reader_part_ii_contracts_full_review_pass.md#decisions",
+    "docs/curated_reader_planning_control_prose_pass.md",
     "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
     "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
     "docs/curated_reader_graduation_review.md#candidate-chapters",
     "docs/reader_part_iii_opening_full_review_pass.md#decisions",
+    "docs/curated_reader_routing_heads_prose_pass.md",
     "docs/curated_reader_personal_compute_hives_prose_pass.md",
     "docs/reader_part_iii_compression_full_review_pass.md#decisions",
     "docs/curated_reader_compact_generative_systems_prose_pass.md",
@@ -18,6 +21,78 @@
     "docs/reader_companion_note_routing_review.md"
   ],
   "records": [
+    {
+      "chapter_id": "planning-as-a-control-layer",
+      "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep command-contract inheritance, plan-node lifecycle states, DAG/dependency boundaries, adequacy contracts, dispatch receipts, replanning deltas, residual registers, and planner-quality non-claims in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for plan graphs, DAG scheduling, adequacy contracts, dispatch receipts, replanning history, residual registers, and finite proof/test boundaries.",
+      "audio_treatment": "Narrate planning as controlled dispatch and route plan-field detail, DAG vocabulary, and finite-proof caveats to companion notes rather than reading every record field verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/planning-as-a-control-layer.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "plan graph and DAG scheduling fields",
+        "plan-node lifecycle states, adequacy contracts, dispatch receipts, replanning history, and residual registers",
+        "finite Planning Lean predicates and plan-execution contract harness boundaries"
+      ],
+      "must_remain_in_reader": [
+        "a plan is not execution and a useful node is not automatically dispatchable",
+        "replanning cannot silently widen authority, erase stop conditions, or hide residuals",
+        "no planner-quality, decomposition-quality, scheduler-performance, selected-tier adequacy, runtime-dispatch, tool-execution, cost-savings, or deployed-control claim is promoted"
+      ],
+      "companion_note_material": [
+        "plain-language plan graph and dispatch glossary",
+        "short proposed/blocked/dispatchable/replanned/residual state map",
+        "audio note explaining how to summarize plan fields without hiding authority inheritance, adequacy, dispatch, residual, and planner-quality boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim planner quality, decomposition quality, dependency discovery, selected-tier adequacy, scheduler performance, runtime replanning, live dispatch safety, tool execution, cost savings, or deployed planning control.",
+        "This route does not promote any claim support state."
+      ]
+    },
+    {
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "title": "Routing Heads and Specialist Cores",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep route-as-lease framing, specialist registry boundaries, routing decision records, selected authority subsets, rejected alternatives, readiness/fallback boundaries, residual ownership, MoECOT source-boundary caveats, and route-quality non-claims in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for Specialist Registry Records, Routing Decision Records, route receipts, rejected alternatives, readiness/fallback, residuals, and MoECOT runtime crosswalk limits.",
+      "audio_treatment": "Narrate routing as a task-local authority lease and route registry fields, route-shape vocabulary, rejected-candidate detail, and MoECOT crosswalk caveats to companion notes rather than reading every field verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/routing-heads-and-specialist-cores.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "Specialist Registry Record fields",
+        "Routing Decision Record fields and route receipts",
+        "rejected alternatives, readiness/fallback, residual ownership, selected authority subsets, and MoECOT runtime crosswalk vocabulary"
+      ],
+      "must_remain_in_reader": [
+        "a route is a task-local authority lease, not a preference score or permanent appointment",
+        "the selected specialist receives only the task-local authority subset allowed by registry and route records",
+        "no specialist-routing benchmark, learned-router quality result, runtime route, MoECOT replay, orchestration benchmark, route-quality measurement, or deployed authority-enforcement test is claimed"
+      ],
+      "companion_note_material": [
+        "plain-language route lease and specialist registry glossary",
+        "short selected-versus-rejected candidate map",
+        "audio note explaining how to summarize routing fields while preserving authority, readiness, fallback, residual, MoECOT, and route-quality boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim specialist-routing accuracy, learned-router quality, route-quality measurement, runtime-route execution, MoECOT replay, orchestration benchmark performance, deployed authority-enforcement, or runtime reproduction.",
+        "This route does not promote any claim support state."
+      ]
+    },
     {
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
       "title": "Personal Compute Hives and Federated Edge Intelligence",

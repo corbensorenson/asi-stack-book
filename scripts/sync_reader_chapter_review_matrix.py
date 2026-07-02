@@ -56,6 +56,61 @@ ALLOWED_RELEASE_BLOCKERS = {
 }
 
 SPECIAL_REVIEW_DEFAULTS = {
+    "planning-as-a-control-layer": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "reader_overlay_active",
+            "companion_note_candidate",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_ii_contracts_full_review_pass.md#decisions",
+            "docs/curated_reader_planning_control_prose_pass.md",
+            "docs/chapter_consolidation_release_stability_review.md",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "Full generated-reader chapter-text review recorded for the planning "
+            "chapter. Existing overlay is accepted for the reader path; proposed, "
+            "blocked, dispatchable, replanned, stopped, and residual work remain "
+            "distinct without claiming planner quality or dispatch safety. First "
+            "curated reader prose pass and drafting companion note are recorded "
+            "under the planning/DAG release-stability consolidation caveat; the "
+            "companion note is for e-reader/audio density support only, while "
+            "command-contract inheritance, plan-node lifecycle states, "
+            "DAG/dependency boundaries, adequacy contracts, dispatch receipts, "
+            "replanning deltas, residual registers, and planner-quality "
+            "non-claims remain in the reader spine. Release blockers remain "
+            "active and no support-state movement or merge decision is implied."
+        ),
+    },
+    "routing-heads-and-specialist-cores": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "companion_note_candidate",
+            "no_immediate_action",
+            "curated_manuscript_candidate",
+        ],
+        "review_refs": [
+            "docs/reader_part_iii_opening_full_review_pass.md#decisions",
+            "docs/curated_reader_routing_heads_prose_pass.md",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "Full generated-reader chapter-text review recorded for the routing "
+            "chapter. First drafting-only curated reader prose pass and drafting "
+            "companion note recorded; the companion note is for e-reader/audio "
+            "density support only, while route-as-lease framing, specialist "
+            "registry, routing decision record, route receipt, rejected "
+            "alternatives, selected authority subsets, authority/readiness "
+            "boundaries, residual ownership, proof/test limits, route-quality "
+            "non-claims, and deferred MoECOT fold caveat remain intact. Not "
+            "release-approved."
+        ),
+    },
     "personal-compute-hives-and-federated-edge-intelligence": {
         "review_status": "reviewed",
         "review_depth": "full_chapter_review",

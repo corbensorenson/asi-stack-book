@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-02
 
-This review records the v1.0 routing decision for the seven chapters flagged as
+This review records the v1.0 routing decision for the nine chapters flagged as
 companion-note candidates in the reader chapter review matrix. It is not a
 reader release record, not an ebook/document/PDF/audio artifact review, not a
 curated reader-manuscript graduation, and not a support-state promotion.
@@ -23,7 +23,7 @@ Create a tracked companion-note routing manifest at
 `editions/reader_manuscript/v1_0/companion_note_routing.json` and keep generated
 reader source plus semantic overlays as the v1.0 reader path.
 
-The seven candidate chapters remain in the reader spine because their dense
+The nine candidate chapters remain in the reader spine because their dense
 terms carry meaning-critical boundaries. For v1.0, companion notes should help
 e-reader and audio users with glossary, quick-reference, and spoken-treatment
 support. They should not remove caveats that change claim meaning from ordinary
@@ -33,6 +33,8 @@ reader prose.
 
 | Chapter | Reader treatment | Companion route | Release decision |
 |---|---|---|---|
+| `planning-as-a-control-layer` | Retain command-contract inheritance, plan-node lifecycle states, DAG/dependency boundaries, adequacy contracts, dispatch receipts, replanning deltas, residual registers, and planner-quality non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/planning-as-a-control-layer.md` for plan graphs, DAG scheduling, adequacy contracts, dispatch receipts, replanning history, residual registers, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_planning_control_prose_pass.md`; no release blocker cleared. |
+| `routing-heads-and-specialist-cores` | Retain route-as-lease framing, specialist registry boundaries, routing decision records, selected authority subsets, rejected alternatives, readiness/fallback boundaries, residual ownership, MoECOT source-boundary caveats, and route-quality non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/routing-heads-and-specialist-cores.md` for route leases, specialist registry records, routing decisions, route receipts, rejected alternatives, readiness/fallback, residuals, MoECOT crosswalk limits, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_routing_heads_prose_pass.md`; no release blocker cleared. |
 | `personal-compute-hives-and-federated-edge-intelligence` | Retain policy-first scheduling, device and portal authority boundaries, consent, privacy, family/project mediation, rented-node limits, revocation, evidence return, and implementation non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/personal-compute-hives-and-federated-edge-intelligence.md` for hive object vocabulary, scheduler decisions, approval receipts, federation leases, rented-node boundaries, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_personal_compute_hives_prose_pass.md`; no release blocker cleared. |
 | `compact-generative-systems-and-residual-honesty` | Retain compactness-as-claim, verifier separation, generate/verify/repair receipts, repair residuals, fallback, semantic representation leases, consumer policy, residual-cost ownership, and non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/compact-generative-systems-and-residual-honesty.md` for Compact Generative Record vocabulary, GVR receipt flow, residual burden, literal fallback, Semantic Node Records, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_compact_generative_systems_prose_pass.md`; no release blocker cleared. |
 | `fast-generation-architectures` | Retain proposed-versus-accepted output, verifier cost, fallback, repair, memory pressure, task success, route promotion, benchmark, serving, and no-speed-claim boundaries in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/fast-generation-architectures.md` for generation-mode taxonomy, speed-quality ledgers, verifier bottlenecks, serving-memory boundaries, fallback, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_fast_generation_prose_pass.md`; no release blocker cleared. |
@@ -61,12 +63,13 @@ must preserve the claim boundary.
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
 - This review records that forty-four drafting-only curated reader chapters now
   exist; it does not approve any chapter for release.
-- This review records seven drafting companion notes for dense hive,
-  compression, speed, resource, proof, and governance chapters; it does not approve them as
+- This review records nine drafting companion notes for dense planning,
+  routing, hive, compression, speed, resource, proof, and governance chapters;
+  it does not approve them as
   e-reader, audio, or release artifacts.
 - This review does not promote any claim support state.
-- This review does not claim hive scheduler execution, federation safety,
-  speedup, compression utility, semantic adequacy, deployed scheduler behavior,
-  production workload quality, proof adequacy, Circle theorem replay, steward
-  workflow execution, treasury execution, governance correctness, audiobook
-  quality, or release readiness.
+- This review does not claim planner quality, route quality, hive scheduler
+  execution, federation safety, speedup, compression utility, semantic
+  adequacy, deployed scheduler behavior, production workload quality, proof
+  adequacy, Circle theorem replay, steward workflow execution, treasury
+  execution, governance correctness, audiobook quality, or release readiness.

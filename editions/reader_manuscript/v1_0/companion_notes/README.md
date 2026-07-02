@@ -12,6 +12,8 @@ boundary, release blocker, or non-claim appears.
 
 Current drafting notes:
 
+- `planning-as-a-control-layer.md`
+- `routing-heads-and-specialist-cores.md`
 - `personal-compute-hives-and-federated-edge-intelligence.md`
 - `compact-generative-systems-and-residual-honesty.md`
 - `fast-generation-architectures.md`
