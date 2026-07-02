@@ -37,11 +37,13 @@ Datasheets for Datasets are an external comparator for structured documentation 
 
 ## Book Chapters Supported
 
+- `evidence-states-and-claim-discipline` (Evidence States and Claim Discipline)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus as Report-First Implementation Reference)
 
 ## Claims To Add Or Update
 
 - Use datasheets to ground the Theseus requirement that public-safe report packets name artifact provenance, input boundaries, maintenance, and allowed uses.
+- Use datasheets to position evidence states against documentation systems that keep provenance, composition, use, maintenance, and accountability visible without making documentation itself a result.
 - Keep dataset-level documentation distinct from plan compiler reports, gate reports, work-board records, and replay evidence.
 - Do not claim dataset adequacy, benchmark validity, or Theseus replay from this source.
 

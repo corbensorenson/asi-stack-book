@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Evidence States and Claim Discipline
 
-Last updated: 2026-06-29
+Last updated: 2026-07-01
 
 Chapter ID: `evidence-states-and-claim-discipline`
 
@@ -45,6 +45,11 @@ Allowed curation scopes used in this pass:
 - Preserved the Mermaid diagram, core claim, source boundaries, minimum viable
   implementation, beyond-state-of-the-art endpoint, summary, and handoff to
   Human Intent as a Formal Input.
+- 2026-07-01 follow-up: sharpened the chapter's methodological framing so
+  evidence states read as the book's anti-inflation contribution, not as
+  bookkeeping; added reader-facing comparison to model cards, datasheets,
+  reproducibility programs, and proof-carrying-code lineage from existing
+  source-noted records.
 
 ## Meaning Preservation Checks
 
@@ -62,8 +67,10 @@ Allowed curation scopes used in this pass:
 
 - This pass does not change the live AI/research chapter.
 - This pass does not change `book_structure.json`.
-- This pass does not alter Appendix C, source assignments, proof targets, test
-  status, implementation horizons, or release records.
+- This pass does not alter Appendix C, proof targets, test status,
+  implementation horizons, or release records.
+- This pass adds no new external source facts beyond existing source-note and
+  inventory records for the named comparators.
 - This pass does not approve the curated chapter for reader release.
 - This pass does not create EPUB, DOCX, PDF, HTML, audio, or audio-embedded EPUB
   artifacts.

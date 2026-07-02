@@ -37,11 +37,13 @@ Model cards are an external comparator for structured model reporting. They help
 
 ## Book Chapters Supported
 
+- `evidence-states-and-claim-discipline` (Evidence States and Claim Discipline)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus as Report-First Implementation Reference)
 
 ## Claims To Add Or Update
 
 - Use model cards to position Theseus report packets as part of a broader reporting family.
+- Use model cards to position support-state discipline against structured reporting practice without treating a report as claim support by itself.
 - Keep Theseus report packets broader than model cards by including gates, residuals, work-board items, replay state, publication boundaries, and non-claims.
 - Do not claim that Theseus has produced or validated model cards until a public-safe artifact exists.
 

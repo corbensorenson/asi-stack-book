@@ -36,11 +36,13 @@ The NeurIPS reproducibility program is an external comparator for research repor
 
 ## Book Chapters Supported
 
+- `evidence-states-and-claim-discipline` (Evidence States and Claim Discipline)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus as Report-First Implementation Reference)
 
 ## Claims To Add Or Update
 
 - Use the reproducibility program to ground Theseus replay-readiness fields: command, environment, artifact checksum, expected output class, negative controls, and review decision.
+- Use the reproducibility program to position support-state transitions against artifact review and checklist discipline while preserving that this repository has not undergone external reproducibility review.
 - Keep Theseus report imports below support-state promotion until the relevant artifact path is public-safe and replayed or digest-verified under an accepted evidence-transition record.
 - Do not claim external reproducibility review, code review, or experiment reproduction.
 

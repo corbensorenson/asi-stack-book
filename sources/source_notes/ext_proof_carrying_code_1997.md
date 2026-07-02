@@ -36,6 +36,7 @@ Proof-Carrying Code belongs in the proof-envelope and runtime-adapter chapters a
 
 ## Book Chapters Supported
 
+- `evidence-states-and-claim-discipline` (Evidence States and Claim Discipline)
 - `executable-specifications-and-lean-proof-envelope` (Executable Specifications and Lean Proof Envelope)
 - `spinoza-verification-and-proof-carrying-claims` (Proof-Carrying Claims and Adversarial Review)
 - `runtime-adapters-tool-permissions-and-human-approval` (Runtime Adapters, Tool Permissions, and Human Approval)
@@ -44,6 +45,7 @@ Proof-Carrying Code belongs in the proof-envelope and runtime-adapter chapters a
 ## Claims To Add Or Update
 
 - Use this note to ground proof-carrying artifact vocabulary.
+- Use this note to position support-state transitions against proof-carrying-code lineage: the evidence object travels with the artifact or claim, but its policy scope stays explicit.
 - Do not claim the ASI Stack implements PCC or proof-carrying runtime adapters.
 - Keep support state at `argument` until an implemented artifact and consumer check exist.
 

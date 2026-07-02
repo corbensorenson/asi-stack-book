@@ -29,6 +29,11 @@ be able to tell the difference between clearer exposition and stronger support.
 That distinction is the trust surface for the whole project. The live book can
 change every day, but confidence should change only through records.
 
+That makes this chapter more than a set of house rules. It is one of the
+book's central methodological claims: a living technical text needs a public
+way to keep claims, evidence, revisions, failures, and confidence from drifting
+apart.
+
 ## Problem
 
 The book needs a shared language for what kind of claim is being made and what
@@ -80,6 +85,16 @@ attaching scope, provenance, and failure conditions to results. The book's
 support-state machine is a ledger discipline around that control problem. It is
 not a reproduced evaluation result.
 
+Structured reporting and formal-methods practice give a second comparison.
+Model cards make model limitations, uses, and evaluation context visible.
+Datasheets do the same kind of work for datasets and provenance.
+Reproducibility programs make commands, code, checklists, and artifact review
+part of scientific reporting. Proof-carrying code pairs an artifact with a
+machine-checkable policy proof. The ASI Stack's evidence states do not claim to
+replace those traditions. They apply the same discipline at the level of a
+claim: what exact object is allowed to move this exact support state, and what
+is still outside the movement?
+
 The missing object is an evidence transition. If a claim moves from `argument`
 to `source-derived`, the transition should name the source note and the mapped
 claim. If it moves to `synthetic-test-backed`, it should name the fixture,
@@ -100,8 +115,9 @@ Bandwidth. Five mappings have reviewed local raw-cache passage references in
 the manifest. Coherence Exchange remains connector-only and source-review
 mapped. That map makes the bridge inspectable, but it does not promote the
 chapter core claim. The claim remains at `argument` support until the remaining
-review boundary is closed and a specific accepted evidence transition or
-executed proof/test artifact justifies movement within a declared scope.
+connector-only mapping has stronger recoverable passage support, or until a
+specific accepted evidence transition or executed proof/test artifact justifies
+movement within a declared scope.
 
 ### Source contribution boundaries
 
@@ -135,6 +151,11 @@ vocabulary. They do not create a stronger support state for the chapter.
 Evidence discipline is traffic control for claims. It says which claims may
 move, which must wait, which must be downgraded, and which need a visible
 residual.
+
+That is the methodological novelty. The chapter treats revision itself as a
+governed system. A claim can be clarified, sourced, tested, mechanized,
+challenged, narrowed, deprecated, or refuted, but those are different events
+with different receipts.
 
 ```{mermaid}
 flowchart LR
@@ -294,6 +315,13 @@ source-derived, prototype-backed, test-backed, mechanized, deprecated, or
 refuted status without letting polish, enthusiasm, or release hygiene stand in
 for truth.
 
+The endpoint is not just a tidier appendix. It is a living research method. It
+would make the manuscript inspectable in the way model cards make model reports
+inspectable, datasheets make datasets inspectable, reproducibility checklists
+make experiments inspectable, and proof-carrying systems make policy evidence
+inspectable, while asking a stricter question at every claim boundary: did this
+specific artifact justify this specific movement in confidence?
+
 In that mature system, drafting, experiments, proof checks, review records,
 release records, and changelog entries are all part of one evidence loop.
 Drafting can introduce or refine claims. Experiments can update evidence.
@@ -316,7 +344,8 @@ their artifacts justify movement.
 
 ## Summary
 
-Evidence States and Claim Discipline is the book's anti-inflation layer. It
+Evidence States and Claim Discipline is the book's anti-inflation layer and
+one half of its methodological contribution with Living Book Methodology. It
 lets the manuscript be ambitious without pretending that design rationales,
 source notes, schemas, Lean proofs, benchmarks, and empirical results are the
 same kind of evidence.

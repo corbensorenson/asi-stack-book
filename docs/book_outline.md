@@ -384,6 +384,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `benchmaxxing`, `spinoza`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `uat`, `coherence_exchange`, `verification_bandwidth` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_ml_reproducibility_program_2021`, `ext_proof_carrying_code_1997` | Use source-noted records to position evidence states against structured reporting, dataset documentation, reproducibility-review practice, and proof-carrying-code lineage; do not treat them as local implementation, external review, or support-state promotion. |
 
 Draft arc:
 
@@ -394,6 +395,7 @@ Draft arc:
 - Mechanism: Require source notes before promoting claims to source-derived.
 - Mechanism: Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
 - Mechanism: emit evidence receipts that lock artifact role, claim scope, claim-record linkage, source-mapping status, evidence-readiness state, transition effect, transition validity state, evidence role, verification command or review, reviewer refs, downgrade triggers, promotion burden, acceptance blockers, reviewer independence, changelog ref, limitations, non-claims, and negative or inconclusive results.
+- Mechanism: frame support-state discipline as the book's methodological contribution, paired with Living Book Methodology, while keeping the current claim at `argument` support until accepted transitions or stronger evidence exist.
 - Mechanism: treat upward support movement as a burden and downward movement as mandatory when contradiction, missing evidence, failed verification, or scope mismatch appears.
 - Interface: Drafting updates claims.
 - Interface: Experiments update evidence.
@@ -420,6 +422,7 @@ Draft deliverables:
 - Implemented repository-level fixture: `claim_record.valid.json` validates source mapping status, source mapping refs, evidence readiness state, required next evidence, promotion blockers, support-state effect, and non-claims only; `evidence_transition_record.valid.json` validates claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain planned.
 - Implemented synthetic Codex test: `python3 scripts/validate_support_state_transitions.py` checks valid and expected-invalid evidence-transition fixtures for no-change conservatism, upward-transition review gates, downward demotion records, terminal refutation records, required evidence refs, and failed-verification blockers. This validates transition-gate semantics only; it does not promote, demote, deprecate, or refute live claims, prove source interpretation, or validate runtime behavior.
 - Implemented Lean proof target: finite evidence-transition lifecycle routing sends no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, and missing non-claim boundaries to explicit modeled outcomes.
+- Source-noted external comparator rows now position evidence states against model cards, datasheets, ML reproducibility-review practice, and proof-carrying-code lineage as adjacent documentation/proof-carrying disciplines; no model-card, datasheet, external reproducibility-review, or proof-carrying-code implementation is claimed.
 - Planned Codex test: Claim ledger completeness test.
 - Planned Codex test: Evidence bundle completeness test.
 - Planned Codex test: Changelog consistency audit.
