@@ -138,6 +138,15 @@ def main() -> None:
         if ref not in text:
             errors.append(f"{name} does not reference {ref}")
 
+    surface_counts = [
+        ("README.md", readme, "four narrow non-core transitions are accepted"),
+        ("index.qmd", index, "Four narrow non-core evidence transitions accepted"),
+        ("index.qmd", index, "Four narrow non-core transitions are accepted"),
+    ]
+    for name, text, required in surface_counts:
+        if required not in text:
+            errors.append(f"{name} does not expose the current four-transition count: {required}")
+
     if errors:
         fail(errors)
 

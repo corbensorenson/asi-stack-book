@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-02 - Refresh public trust surface counts
+
+- Updated the public landing page and publication-readiness record so the
+  first-minute trust surface consistently reports four accepted narrow
+  non-core upward transitions, 167 proof targets, and forty-one validation
+  checks while preserving that all 44 chapter core claims remain at
+  `argument`.
+- Strengthened `python3 scripts/validate_publication.py` and
+  `python3 scripts/validate_non_core_evidence_ledger.py` so stale public
+  wording such as three non-core transitions, 147 proof targets, or thirty-five
+  harnesses is rejected. This does not create evidence, approve a release
+  artifact, accept external review, or promote chapter core claims.
+
 ## 2026-07-02 - Add living-book change-packet harness
 
 - Added `schemas/living_book_change_packet.schema.json`,
