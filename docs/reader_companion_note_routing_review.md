@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-02
 
-This review records the v1.0 routing decision for the nine chapters flagged as
+This review records the v1.0 routing decision for the twelve chapters flagged as
 companion-note candidates in the reader chapter review matrix. It is not a
 reader release record, not an ebook/document/PDF/audio artifact review, not a
 curated reader-manuscript graduation, and not a support-state promotion.
@@ -23,7 +23,7 @@ Create a tracked companion-note routing manifest at
 `editions/reader_manuscript/v1_0/companion_note_routing.json` and keep generated
 reader source plus semantic overlays as the v1.0 reader path.
 
-The nine candidate chapters remain in the reader spine because their dense
+The twelve candidate chapters remain in the reader spine because their dense
 terms carry meaning-critical boundaries. For v1.0, companion notes should help
 e-reader and audio users with glossary, quick-reference, and spoken-treatment
 support. They should not remove caveats that change claim meaning from ordinary
@@ -40,8 +40,11 @@ reader prose.
 | `fast-generation-architectures` | Retain proposed-versus-accepted output, verifier cost, fallback, repair, memory pressure, task success, route promotion, benchmark, serving, and no-speed-claim boundaries in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/fast-generation-architectures.md` for generation-mode taxonomy, speed-quality ledgers, verifier bottlenecks, serving-memory boundaries, fallback, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_fast_generation_prose_pass.md`; no release blocker cleared. |
 | `resource-economics-and-token-budgets` | Retain verification tax, protected overhead, route eligibility, residual ownership, local evidence-lane boundaries, sublane no-change/no-promotion decisions, serving-memory separation, scheduler non-claims, and economic non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/resource-economics-and-token-budgets.md` for Resource Budget Records, costed-route slices, workflow traces, local probes, load-stability probes, CI cost metadata, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_resource_economics_prose_pass.md`; no release blocker cleared. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Retain proof receipt states, theorem references, resolver/replay boundaries, consumer gates, workload blockers, and non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/circle-calculus-and-proof-carrying-ai-contracts.md` for receipt-state glossary, theorem laundering, fingerprints, replay, workload-blocked promotion, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; no release blocker cleared. |
+| `coilra-multicoil-rope-and-cyclic-mixers` | Retain cyclic-substrate adoption discipline, structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, canary-route state, fallback, and quality/performance non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/coilra-multicoil-rope-and-cyclic-mixers.md` for cyclic-substrate evaluation records, structural receipts, alias/load diagnostics, baseline symmetry, tradeoff packets, canary routes, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_coilra_cyclic_mixers_prose_pass.md`; no release blocker cleared. |
 | `executable-specifications-and-lean-proof-envelope` | Retain the distinction between Lean predicates, schemas, validators, behavior tests, benchmarks, external theorem references, and semantic adequacy review. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/executable-specifications-and-lean-proof-envelope.md` for proof-lane glossary, finite-predicate examples, semantic adequacy, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_executable_specs_prose_pass.md`; no release blocker cleared. |
+| `policy-optimization-and-learning-from-feedback` | Retain policy-update-as-lease framing, target-policy identity, feedback admissibility, reward boundary, drift limits, holdouts, regressions, reward-hacking probes, authority conservation, rollback, promotion gates, method-family non-claims, proof/test limits, and no-training-result boundaries in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/policy-optimization-and-learning-from-feedback.md` for Policy Optimization Records, reward/preference boundaries, reward-hacking probes, holdouts, regressions, authority effects, rollback, monitor windows, method-family limits, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_policy_optimization_prose_pass.md`; no release blocker cleared. |
 | `artifact-steward-agents-and-living-project-governance` | Retain charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, federation, and non-ownership boundaries. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/artifact-steward-agents-and-living-project-governance.md` for project-object quick reference, implementation ladder, and audio treatment; the first curated prose pass still remains drafting-only. | Drafting-only curated reader prose pass recorded; no release blocker cleared. |
+| `project-theseus-as-report-first-implementation-reference` | Retain Theseus as report-first implementation-reference context, with source-note, imported-report, replay-readiness, missing-artifact, public/non-public, currentness, dashboard, benchmark, runtime, model-quality, deployment, and support-state boundaries in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/project-theseus-as-report-first-implementation-reference.md` for report-first evidence, architecture-gate imports, generation-mode imports, support replay probes, missing-artifact rows, Theseus Report Crosswalk Records, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_project_theseus_prose_pass.md`; no release blocker cleared. |
 
 ## Routing Rule
 
@@ -63,13 +66,14 @@ must preserve the claim boundary.
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
 - This review records that forty-four drafting-only curated reader chapters now
   exist; it does not approve any chapter for release.
-- This review records nine drafting companion notes for dense planning,
-  routing, hive, compression, speed, resource, proof, and governance chapters;
-  it does not approve them as
+- This review records twelve drafting companion notes for dense planning,
+  routing, hive, compression, speed, resource, proof, cyclic-substrate, policy,
+  governance, and implementation-reference chapters; it does not approve them as
   e-reader, audio, or release artifacts.
 - This review does not promote any claim support state.
 - This review does not claim planner quality, route quality, hive scheduler
   execution, federation safety, speedup, compression utility, semantic
   adequacy, deployed scheduler behavior, production workload quality, proof
-  adequacy, Circle theorem replay, steward workflow execution, treasury
+  adequacy, cyclic-substrate quality, policy-training quality, Project Theseus
+  live replay, Circle theorem replay, steward workflow execution, treasury
   execution, governance correctness, audiobook quality, or release readiness.

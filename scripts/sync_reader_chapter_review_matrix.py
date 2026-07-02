@@ -218,6 +218,32 @@ SPECIAL_REVIEW_DEFAULTS = {
             "or reader-artifact claim is approved."
         ),
     },
+    "coilra-multicoil-rope-and-cyclic-mixers": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "companion_note_candidate",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
+            "docs/curated_reader_coilra_cyclic_mixers_prose_pass.md",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "Full generated-reader chapter review recorded. First curated reader "
+            "prose pass and drafting companion note now reframe the chapter "
+            "around cyclic-substrate adoption discipline, structural receipts, "
+            "alias/load diagnostics, parameter and hardware ledgers, baseline "
+            "symmetry, negative controls, tradeoff packets, and canary-route "
+            "non-claims while preserving the argument-level support boundary. "
+            "The companion note is for e-reader/audio density support only, "
+            "while quality, performance, context-length, memory, training, "
+            "hardware, deployment, and support-state boundaries remain in the "
+            "reader spine."
+        ),
+    },
     "executable-specifications-and-lean-proof-envelope": {
         "review_status": "spot_checked",
         "review_depth": "medium_priority_manual_review",
@@ -240,6 +266,34 @@ SPECIAL_REVIEW_DEFAULTS = {
             "companion-note or glossary treatment later."
         ),
     },
+    "policy-optimization-and-learning-from-feedback": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "reader_overlay_active",
+            "companion_note_candidate",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
+            "docs/curated_reader_policy_optimization_prose_pass.md",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "Full generated-reader chapter review recorded. Existing overlays "
+            "keep method-family material readable, and a first drafting-only "
+            "curated prose pass plus drafting companion note now foreground "
+            "policy updates as governed behavior-change leases: target policy, "
+            "feedback admissibility, reward boundary, drift bounds, holdouts, "
+            "regressions, reward-hacking probes, authority conservation, "
+            "rollback, promotion gates, method-family nonclaims, proof/test "
+            "limits, and no local training-result boundaries without approving "
+            "release. The companion note is for e-reader/audio density support "
+            "only, while reward, authority, rollback, training-result, "
+            "deployment, and support-state boundaries remain in the reader spine."
+        ),
+    },
     "artifact-steward-agents-and-living-project-governance": {
         "review_status": "spot_checked",
         "review_depth": "medium_priority_manual_review",
@@ -256,6 +310,31 @@ SPECIAL_REVIEW_DEFAULTS = {
             "event-taint, and sunset concepts are central. Future curated reader "
             "work may compress examples or move the implementation ladder to "
             "companion material."
+        ),
+    },
+    "project-theseus-as-report-first-implementation-reference": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "companion_note_candidate",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iv_completion_full_review_pass.md#decisions",
+            "docs/curated_reader_project_theseus_prose_pass.md",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "First curated reader prose pass and drafting companion note recorded. "
+            "The pass keeps Theseus as report-first implementation-reference "
+            "context, preserves source-note, imported-report, replay-readiness, "
+            "missing-artifact, public/non-public, currentness, dashboard, "
+            "benchmark, runtime, model-quality, deployment, and support-state "
+            "boundaries, and does not claim reproduced benchmark, clean live "
+            "replay, current dashboard state, runtime evidence, model quality, "
+            "deployment readiness, or support-state movement. The companion note "
+            "is for e-reader/audio density support only."
         ),
     },
 }

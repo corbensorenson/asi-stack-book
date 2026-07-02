@@ -13,7 +13,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Kind | Count |
 |---|---:|
 | review_status:reviewed | 44 |
-| disposition:companion_note_candidate | 9 |
+| disposition:companion_note_candidate | 12 |
 | disposition:curated_manuscript_candidate | 44 |
 | disposition:no_immediate_action | 44 |
 | disposition:reader_overlay_active | 19 |
@@ -58,13 +58,13 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part III - Routing, Compression, Representation, and Substrates | `mathematical-and-search-substrates` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `circle-calculus-and-proof-carrying-ai-contracts` | reviewed | full_chapter_review | 2 | reader_overlay_active, curated_manuscript_candidate, companion_note_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `coil-attention-cyclic-memory-and-recurrence-contracts` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `coilra-multicoil-rope-and-cyclic-mixers` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `coilra-multicoil-rope-and-cyclic-mixers` | reviewed | full_chapter_review | 0 | companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `executable-specifications-and-lean-proof-envelope` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, companion_note_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `benchmark-ratchets-and-anti-goodhart-evidence` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part IV - Evidence, Implementation, and the Living Book | `policy-optimization-and-learning-from-feedback` | reviewed | full_chapter_review | 2 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `policy-optimization-and-learning-from-feedback` | reviewed | full_chapter_review | 2 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `artifact-steward-agents-and-living-project-governance` | reviewed | full_chapter_review | 3 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `integrated-reference-architecture` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part IV - Evidence, Implementation, and the Living Book | `project-theseus-as-report-first-implementation-reference` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part IV - Evidence, Implementation, and the Living Book | `project-theseus-as-report-first-implementation-reference` | reviewed | full_chapter_review | 0 | companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `prototype-roadmap` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `living-book-methodology` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part IV - Evidence, Implementation, and the Living Book | `open-research-agenda-and-bibliography-plan` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |

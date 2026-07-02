@@ -19,5 +19,8 @@ Current drafting notes:
 - `fast-generation-architectures.md`
 - `resource-economics-and-token-budgets.md`
 - `circle-calculus-and-proof-carrying-ai-contracts.md`
+- `coilra-multicoil-rope-and-cyclic-mixers.md`
 - `executable-specifications-and-lean-proof-envelope.md`
+- `policy-optimization-and-learning-from-feedback.md`
 - `artifact-steward-agents-and-living-project-governance.md`
+- `project-theseus-as-report-first-implementation-reference.md`

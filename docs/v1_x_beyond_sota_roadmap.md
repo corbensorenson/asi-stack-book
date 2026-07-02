@@ -196,12 +196,13 @@ roadmap. The findings with teeth are:
   Agents (5,805), with median chapter body length around 3,943 words. Evidence
   detail is valid, but the human-reader pass should move bulky tables,
   validator minutiae, or repeated caveats to appendices/companion surfaces when
-  doing so preserves evidence boundaries. Six density targets now have new
-  drafting companion-note routing from this pass sequence: Planning, Routing
-  Heads, Personal Compute Hives, Compact Generative Systems, Fast Generation,
-  and Resource Economics. Remaining watchlist chapters still need the same
-  explicit reader/audio treatment decision or a reason to stay entirely in the
-  spine.
+  doing so preserves evidence boundaries. The active watchlist now has explicit
+  drafting companion-note routing: Planning, Routing Heads, Personal Compute
+  Hives, Compact Generative Systems, Fast Generation, Resource Economics,
+  Circle, CoilRA, Executable Specifications, Policy Optimization, Artifact
+  Steward Agents, and Project Theseus. The remaining blocker is release-level
+  review of those notes and format/audio treatment, not missing routing
+  decisions for these chapters.
 - Projection-style theorem declarations increased with fixture bridges. That
   is acceptable only while the classifier and chapter limitation prose keep
   projection bridges visibly distinct from substantive invariants.
@@ -2654,15 +2655,18 @@ Current status:
   second, accepted-token, external-method reproduction, serving-throughput,
   KV-cache audit, quality-improvement, memory-savings, route-promotion, or
   support-state movement boundary for that pass.
-- The nine dense companion-note candidates now have drafting companion notes
+- The twelve dense companion-note candidates now have drafting companion notes
   under `editions/reader_manuscript/v1_0/companion_notes/`: Planning controlled
   dispatch, Routing Heads route leases, Personal Compute Hives policy-first
   placement, Compact Generative Systems residual honesty, Fast Generation
   accepted-output accounting, Resource Economics protected-cost lanes, Circle
-  proof receipts, executable-specification proof lanes, and artifact-steward
-  project objects. These notes support e-reader and audio treatment without
-  moving meaning-critical planning, routing, hive, compression, speed, resource,
-  proof, governance, release, or non-claim limits out of the reader spine.
+  proof receipts, CoilRA cyclic-substrate adoption, executable-specification
+  proof lanes, Policy Optimization behavior-change leases, artifact-steward
+  project objects, and Project Theseus report-first evidence. These notes
+  support e-reader and audio treatment without moving meaning-critical
+  planning, routing, hive, compression, speed, resource, proof, cyclic-substrate,
+  policy, governance, implementation-reference, release, or non-claim limits
+  out of the reader spine.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` records the
   drafting row and keeps `reader_release_record_not_created`,
   `format_artifact_not_reviewed`, and
@@ -2754,11 +2758,12 @@ Current status:
   move bulky tables, validator minutiae, or repeated caveats into appendices,
   companion notes, or live-book-only sections where that improves ordinary
   reading. Planning, Routing Heads, Personal Compute Hives, Compact Generative
-  Systems, Fast Generation, and Resource Economics now have drafting
-  companion-note routes for e-reader/audio density support. The remaining
-  watchlist is Artifact Steward Agents, Project Theseus, Policy Optimization,
-  Circle, CoilRA, and any newly enlarged chapter that crosses the same density
-  threshold.
+  Systems, Fast Generation, Resource Economics, Circle, CoilRA, Executable
+  Specifications, Policy Optimization, Artifact Steward Agents, and Project
+  Theseus now have drafting companion-note routes for e-reader/audio density
+  support. Future watchlist work should inspect any newly enlarged chapter that
+  crosses the same density threshold, but the named current watchlist no longer
+  has a missing companion-routing decision.
 
 ### Milestone 8 - Visual, Ebook, PDF, DOCX, And Audio Quality
 

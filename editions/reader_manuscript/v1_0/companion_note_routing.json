@@ -18,6 +18,11 @@
     "docs/curated_reader_fast_generation_prose_pass.md",
     "docs/reader_part_iii_representation_full_review_pass.md#decisions",
     "docs/curated_reader_resource_economics_prose_pass.md",
+    "docs/curated_reader_coilra_cyclic_mixers_prose_pass.md",
+    "docs/curated_reader_policy_optimization_prose_pass.md",
+    "docs/curated_reader_project_theseus_prose_pass.md",
+    "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
+    "docs/reader_part_iv_completion_full_review_pass.md#decisions",
     "docs/reader_companion_note_routing_review.md"
   ],
   "records": [
@@ -274,6 +279,42 @@
       ]
     },
     {
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep cyclic-substrate adoption discipline, structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, canary-route state, fallback, and quality/performance non-claims in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for cyclic-substrate evaluation records, structural receipts, alias/load diagnostics, baseline symmetry, tradeoff packets, and canary-route adoption limits.",
+      "audio_treatment": "Narrate cyclic methods as optional substrates that must earn adoption and route phase/winding/receipt/baseline vocabulary to companion notes rather than reading every technical distinction verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/coilra-multicoil-rope-and-cyclic-mixers.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "cyclic-substrate evaluation record fields",
+        "CoilRA, MultiCoil RoPE, cyclic mixer, structural receipt, phase/winding, alias/load, and baseline-symmetry vocabulary",
+        "tradeoff packet, canary route, fallback, and adoption-state boundaries"
+      ],
+      "must_remain_in_reader": [
+        "structural receipts are not model-quality, speed, context-length, memory-savings, or deployment evidence",
+        "baseline symmetry and negative controls are required before cyclic-substrate adoption",
+        "no CoilRA quality result, MultiCoil RoPE quality result, cyclic mixer benchmark, RoPE context-length result, hardware-kernel benchmark, training-stability result, or support-state promotion is claimed"
+      ],
+      "companion_note_material": [
+        "plain-language cyclic-substrate adoption glossary",
+        "short structural-receipt-versus-quality-result example",
+        "audio note explaining how to summarize phase, winding, baseline, tradeoff, and canary vocabulary without hiding non-claim boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim CoilRA quality, MultiCoil RoPE quality, cyclic mixer speed, RoPE context-length improvement, memory savings, training stability, hardware-kernel performance, downstream quality, deployment readiness, or cyclic-substrate adoption.",
+        "This route does not promote any claim support state."
+      ]
+    },
+    {
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "title": "Executable Specifications and Lean Proof Envelope",
       "routing_decision": "retain_in_reader_spine_with_companion_note",
@@ -311,6 +352,42 @@
       ]
     },
     {
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "title": "Policy Optimization and Learning from Feedback",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep policy-update-as-lease framing, target-policy identity, feedback admissibility, reward boundary, drift limits, holdouts, regressions, reward-hacking probes, authority conservation, rollback, promotion gates, method-family non-claims, proof/test limits, and no-training-result boundaries in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for Policy Optimization Records, reward/preference boundaries, reward-hacking probes, holdouts, regressions, authority effects, rollback, monitor windows, and method-family limits.",
+      "audio_treatment": "Narrate policy optimization as a governed behavior-change lease and route method-family taxonomy, record fields, and synthetic fixture detail to companion notes rather than reading every update family verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/policy-optimization-and-learning-from-feedback.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "Policy Optimization Record fields",
+        "reward/preference boundary, holdout, regression, reward-hacking probe, authority-effect, rollback, and monitor-window vocabulary",
+        "PPO-like, DPO-like, GRPO-like, RLVR-like, context-policy, router-policy, verifier-policy, and control-policy method-family orientation"
+      ],
+      "must_remain_in_reader": [
+        "reward or preference signals are scoped proxies, not truth or authority",
+        "policy updates cannot silently widen authority or erase rollback and holdout obligations",
+        "no local policy training, model improvement, RLHF reproduction, reward-model validation, benchmark improvement, reward-hacking solution, rollback success, policy safety, deployment result, or support-state promotion is claimed"
+      ],
+      "companion_note_material": [
+        "plain-language policy-update lease glossary",
+        "short reward-boundary-versus-truth example",
+        "audio note explaining how to summarize method families while preserving reward, authority, rollback, and no-training-result boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim local policy training, model improvement, RLHF reproduction, reward-model validation, reward quality, benchmark improvement, reward-hacking resistance, policy safety, route-quality improvement, context-selection quality, rollback success, deployment result, or governed self-improvement.",
+        "This route does not promote any claim support state."
+      ]
+    },
+    {
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "title": "Artifact Steward Agents and Living Project Governance",
       "routing_decision": "future_curated_review_with_companion_note",
@@ -345,6 +422,42 @@
       "non_claims": [
         "This route does not create a curated reader chapter.",
         "This route does not claim steward workflow execution, treasury execution, governance correctness, or release readiness."
+      ]
+    },
+    {
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "title": "Project Theseus as Report-First Implementation Reference",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep Theseus as report-first implementation-reference context, with source-note, imported-report, replay-readiness, missing-artifact, public/non-public, currentness, dashboard, benchmark, runtime, model-quality, deployment, and support-state boundaries in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for report-first evidence, architecture-gate imports, generation-mode imports, support replay probes, missing-artifact rows, and Theseus Report Crosswalk Records.",
+      "audio_treatment": "Narrate Theseus as report discipline and route report IDs, digest fields, replay-boundary details, and import-validator vocabulary to companion notes rather than reading every report field verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/project-theseus-as-report-first-implementation-reference.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "Theseus report crosswalk fields",
+        "static architecture-gate and generation-mode import vocabulary",
+        "support replay probe, missing-artifact, dashboard/currentness, public/non-public, and replay-readiness boundaries"
+      ],
+      "must_remain_in_reader": [
+        "Project Theseus is implementation-reference context, not proof that the ASI Stack already works",
+        "imported reports, historical source notes, support probes, current dashboards, and clean reruns are different evidence states",
+        "no clean live Theseus replay, reproduced benchmark run, current dashboard verification, deployed runtime behavior, generation-speed result, model-quality result, training-readiness result, deployment-readiness result, or support-state promotion is claimed"
+      ],
+      "companion_note_material": [
+        "plain-language report-first evidence glossary",
+        "short imported-report-versus-clean-rerun example",
+        "audio note explaining how to summarize Theseus report fields while preserving replay, missing-artifact, public-evidence, dashboard, runtime, benchmark, and support-state boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim a clean live Project Theseus replay, reproduced benchmark, current dashboard state, runtime evidence, generation speed, useful-solution-per-second improvement, model quality, training readiness, deployment readiness, or support-state movement.",
+        "This route does not promote any claim support state."
       ]
     }
   ],
