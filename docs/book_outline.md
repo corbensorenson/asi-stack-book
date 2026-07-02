@@ -3080,9 +3080,12 @@ Draft deliverables:
 
 - An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
 - Source-noted external comparator rows for `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, and `ext_ml_reproducibility_program_2021`, without treating those records as Theseus reproduction, compliance, or support-state promotion.
-- Implemented repository-level fixtures: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, and `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest. No live Theseus report bundle, replay command, benchmark environment, current dashboard, work-board step, or model artifact has been rerun.
+- Implemented repository-level fixtures and guards: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest, `experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json` imports one public-safe static generation-mode report summary by digest, `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side Theseus validators with support-state effect `none`, and `python3 scripts/validate_theseus_concrete_evidence_surface.py` keeps the public-safe 14/14 architecture-gate, 18 modes, 13 comparisons, zero-promotable-comparison, digest, replay-probe, and non-claim facts visible. No live Theseus report bundle, public task bundle, benchmark environment, current dashboard, work-board step, or model artifact has been rerun, and this does not promote chapter-core support.
 - Implemented Codex test: Theseus report crosswalk fixture validation
 - Implemented Codex test: Static architecture-gate import validation
+- Implemented Codex test: Static generation-mode gate import validation
+- Implemented Codex test: Theseus support replay probe
+- Implemented Codex test: Theseus concrete evidence-surface validation
 - Implemented Codex test: Dashboard-only implementation-reference negative case
 - Implemented Codex test: Missing/failing gate promotion negative case
 - Implemented Codex test: Imported report-bundle completeness negative case

@@ -1,6 +1,6 @@
 # v1.x Beyond-SOTA Roadmap
 
-Last updated: 2026-07-01
+Last updated: 2026-07-02
 
 This roadmap is the post-`v1.0.0` long-term plan for turning **The ASI
 Stack** from a tagged living-book release into a stronger evidence-and-reader
@@ -115,7 +115,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 781 theorem declarations, 155 direct/projection-style, 622 derived/decomposed, 4 unknown/mixed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 786 theorem declarations, 157 direct/projection-style, 625 derived/decomposed, 4 unknown/mixed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and explicit Corben voice-pass slots. |
@@ -129,9 +129,80 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first imports are intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes; `docs/theseus_report_import_slice.md` records one static digest-verified architecture-gate report import; `docs/theseus_generation_mode_import_slice.md` records one static digest-verified generation-mode import; and `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static imports and support probe as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft assets plus text-equivalent chapter anchors. There is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, and audio flow. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft live-chapter assets plus text-equivalent chapter anchors. The curated reader manuscript does not yet embed those figures, and there is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, visual aids, and audio flow. |
 | P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated; ten reader-handoff key figures now have draft SVG assets and accessibility-oriented prose equivalents, but they remain draft reader aids rather than release-reviewed art. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, stable across web, EPUB, PDF, DOCX, and audio companion treatment, and reviewed as artifacts before reader release. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 44 core claims still remain `argument`; four narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
+
+## 2026-07-02 Review Reconciliation
+
+Corben supplied a follow-up Claude review after the 79-commit execution round.
+Codex also rechecked the local tree at `8092c9cb9` before editing this
+roadmap. The findings with teeth are:
+
+- The cognitive-compilation trace harness and stack-layer traceability audit
+  are no longer in-flight blockers; both are committed, pushed, locally
+  validated, and the latest completed GitHub Pages run is green.
+- `python3 scripts/validate_chapter_review_burndown.py` passes and proves that
+  the burn-down covers 44 manifest chapters, but the roadmap still needs
+  accounting discipline: rows marked `partially executed` should not stay
+  vague after an artifact closes a closure class. Future row edits must either
+  name the closing artifact, name the remaining closure class, or record a
+  dated blocker.
+- `python3 scripts/validate_proof_depth.py` now classifies 786 theorem
+  declarations, including 625 derived/decomposed declarations and 157 direct
+  or projection-style declarations. The counts are stronger than the older
+  roadmap snapshot, but the direction remains the same: do not chase theorem
+  count; chase executable-model bridges, transition properties, and negative
+  cases that matter.
+- Two proof-coverage stragglers remain high-leverage because of their central
+  Part I roles: `AsiStackProofs.IntentContracts` for Human Intent and
+  `AsiStackProofs.Replacement` for Capability Replacement/Rollback. Both need
+  lifecycle/admission route depth with negative cases before they should be
+  treated as leveled with Runtime Adapters, SCF, Readiness Gates, Planning,
+  Context Transactions, Artifact Graphs, Procedural Memory, and Compact
+  Generative Systems.
+- Two external-grounding stragglers remain: `the-efficient-asi-hypothesis` and
+  `intent-to-execution-contracts`. Both have some source-noted comparators, but
+  the tracked chapter anchoring is still thin relative to their importance.
+  Efficient ASI should import more of the efficient-inference, inference
+  economics, routing, compression, and verification-cost literature already
+  present elsewhere in the book; Intent-to-Execution should connect its command
+  contract spine to typed workflow, API contract, DSL, and structured-output
+  comparators.
+- The ten draft SVG key figures are embedded in live chapters, but the curated
+  reader manuscript currently carries none of them. The reader-edition path
+  should embed or adapt those figures with captions, alt text, text-equivalent
+  notes, and non-claim boundaries before any human-review-ready claim.
+- The Integrated Reference Architecture row has validated fixtures and reader
+  prose that name approved and blocked traces, but it still lacks the narrative
+  showpiece: one concrete request followed hop by hop through intent,
+  constitution, planning, context, routing, verification, execution, evidence,
+  and improvement. This is now the highest-leverage craft task that does not
+  require Corben's first-person voice.
+- The Resource Economics flagship lane has one accepted narrow non-core
+  transition and several measured local probes with explicit no-transition
+  boundaries. The next evidence decision should not be another probe by
+  default; it should accept a narrow transition, record an explicit no-change
+  or no-promotion decision, or state the exact external/live workload blocker
+  for each measured sublane.
+- Chapter growth is now a craft risk. Local word counts show the largest live
+  chapters are Compact Generative Systems (6,849 body words), Resource
+  Economics (6,585), Personal Compute Hives (6,146), and Artifact Steward
+  Agents (5,805), with median chapter body length around 3,943 words. Evidence
+  detail is valid, but the human-reader pass should move bulky tables,
+  validator minutiae, or repeated caveats to appendices/companion surfaces when
+  doing so preserves evidence boundaries.
+- Projection-style theorem declarations increased with fixture bridges. That
+  is acceptable only while the classifier and chapter limitation prose keep
+  projection bridges visibly distinct from substantive invariants.
+- Project Theseus had the same hidden-foundation-evidence problem Circle had:
+  the static architecture-gate import, generation-mode import, support replay
+  probe, digests, counts, and negative/no-promotion result existed, but the
+  chapter still read too abstractly. This update adds
+  `python3 scripts/validate_theseus_concrete_evidence_surface.py` and surfaces
+  those public-safe facts while preserving `argument` support, support-state
+  effect `none` for the replay probe, and no live-Theseus/model-quality/speed
+  claims.
 
 ## Operating Principles
 
@@ -528,7 +599,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 781 theorem declarations, 622
+- The generated proof-depth report records 786 theorem declarations, 625
   derived/decomposed declarations, 4 unknown/mixed declarations, 102
   safety-critical declarations, and 10 remaining safety-critical
   direct/projection declarations.
@@ -550,8 +621,8 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 781 theorem declarations, 622
-  derived/decomposed theorem declarations, 155 direct/projection-style theorem
+- `docs/proof_depth_classification.md` records 786 theorem declarations, 625
+  derived/decomposed theorem declarations, 157 direct/projection-style theorem
   declarations, and 4 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
   external-handoff rejection theorem and a finite layer-contract admission
@@ -801,6 +872,15 @@ Current proof status:
   Artifact Graphs while leaving deployed artifact graph service behavior, real
   replay, audit reconstruction, provenance completeness checking, and imported
   produced-artifact traces as blockers.
+- The next proof-coverage targets are no longer the already-leveled modules.
+  They are `AsiStackProofs.IntentContracts` and `AsiStackProofs.Replacement`.
+  Intent Contracts needs an intent-resolution lifecycle/admission route with
+  ambiguity, clarification, constraint precedence, stop-condition, authority,
+  hidden-override, and preservation negative cases. Replacement needs a
+  replacement-transaction lifecycle/admission route with canary, evidence
+  freshness, regression floor, authority non-widening, monitor window,
+  rollback handle, irreversible-effect ownership, quarantine, deprecation,
+  retirement, and non-claim boundaries.
 - The safety-critical modules have real derived/decomposed depth now, but many
   non-safety-critical chapters still have only traceability-style projection
   hooks.
@@ -987,18 +1067,18 @@ Per-chapter burn-down:
 | Chapter | Weakness to overcome | Required roadmap work |
 |---|---|---|
 | `asi-is-a-stack-not-a-model` | Beyond-SOTA previously restated the core thesis more than it argued against alternative framings, and opener traceability audits were still planned. | Added live and curated reader mature-endpoint prose that contrasts the ASI Stack against scale-only systems, generic agent loops, and compound/modular AI systems, while preserving the source-noted comparator boundary for MRKL, LLM-agent surveys, cognitive architectures, and layered control. This pass added `python3 scripts/validate_stack_layer_traceability.py`, which checks the layer-boundary fixture, six assigned source mappings, Appendix A source-to-layer visibility, Appendix C claim/support labels, and no-promotion markers. Remaining work: implement contract-change triage and concrete integration-pressure traces before claiming that stack separation survives runtime, prototype, or multi-agent pressure. |
-| `the-efficient-asi-hypothesis` | Previously had light anchoring to efficient-inference/routing literature and a generic "operating system" mature-endpoint opener. | Added live and curated reader Beyond-SOTA prose that frames the mature endpoint as a governed route economy rather than an operating-system metaphor, and the outline/chapter text explicitly links source-noted sparse MoE, FrugalGPT-style cascades, and BIG-bench to route-ledger authority, predicate, fallback, residual, and support-state accounting. Remaining work: run planned route-search, residual-burden, hidden-cost, and utility-preserving compression tests before stronger evidence claims. |
+| `the-efficient-asi-hypothesis` | Previously had light anchoring to efficient-inference/routing literature and a generic "operating system" mature-endpoint opener; it remains one of the two external-grounding stragglers relative to chapter importance. | Added live and curated reader Beyond-SOTA prose that frames the mature endpoint as a governed route economy rather than an operating-system metaphor, and the outline/chapter text explicitly links source-noted sparse MoE, FrugalGPT-style cascades, and BIG-bench to route-ledger authority, predicate, fallback, residual, and support-state accounting. Remaining work: deepen tracked external grounding from the efficient-inference, inference-economics, routing, compression, speculative-decoding, and verification-cost literature already used elsewhere in the book; then run planned route-search, residual-burden, hidden-cost, and utility-preserving compression tests before stronger evidence claims. |
 | `system-boundaries-and-authority` | Object-capability/confused-deputy lineage was not explicit enough despite strong authority proof coverage. | Added source-noted external grounding through Saltzer-Schroeder protection principles, Levy capability-system boundaries, and Hardy's confused-deputy problem; live and curated reader prose now connect caller ceilings, delegation chains, expiry, and effect receipts to that lineage, and the runtime-adapter permission harness now adds expected-invalid ambient-authority confused-deputy and revoked-receipt probes. Remaining work: run deployed/live adapter denial traces, revocation-propagation behavior, and tool-wrapper security checks before stronger claims. |
 | `failure-modes-of-ungoverned-intelligence` | Stack failure vocabulary is not mapped tightly enough to established AI-safety failure taxonomies. | Added source-noted external grounding through `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, and `ext_goodhart_variants_2018`; the chapter now maps named stack failure modes to accident-risk, goal-misgeneralization, learned-optimization, power-seeking, and Goodhart/proxy-failure families without promoting support state. Remaining work: implement executable detector, negative-control, and mitigation-boundary fixtures for these families before claiming detection or prevention. |
 | `evidence-states-and-claim-discipline` | The chapter undersells the novelty of support-state discipline. | Partially executed: live and curated reader prose now frame support-state discipline as the book's methodological claim-control contribution paired with Living Book Methodology, and the chapter/outline/source notes position it against source-noted model-card, datasheet, ML reproducibility-review, and proof-carrying-code comparators without support-state promotion. Remaining work: finish the planned claim-ledger completeness, evidence-bundle completeness, and changelog-consistency tests before stronger evidence claims. |
-| `human-intent-as-a-formal-input` | Foundational chapter still needs broader proof coverage and planned behavioral tests. | Added intent-origin preservation checks to the synthetic plan-execution contract harness, now 2 valid and 8 expected-invalid fixtures, including unresolved-ambiguity dispatch, unrejected-hidden-override, and authority-widening-from-intent probes. Remaining work: implement natural-language ambiguity parsing, authority-extraction quality tests, end-to-end stop-condition preservation, deployed prompt-injection containment, and deepen source-noted links to instruction-following, preference elicitation, and RLHF-intent literature. |
+| `human-intent-as-a-formal-input` | Foundational chapter still needs broader proof coverage and planned behavioral tests; `AsiStackProofs.IntentContracts` remains a proof-coverage straggler compared with other leveled Part I control primitives. | Added intent-origin preservation checks to the synthetic plan-execution contract harness, now 2 valid and 8 expected-invalid fixtures, including unresolved-ambiguity dispatch, unrejected-hidden-override, and authority-widening-from-intent probes. Remaining work: deepen `IntentContracts` with a lifecycle/admission route for ambiguity, clarification, constraint precedence, stop conditions, authority extraction, hidden override rejection, and preservation from intent to contract; implement natural-language ambiguity parsing, authority-extraction quality tests, end-to-end stop-condition preservation, deployed prompt-injection containment, and deepen source-noted links to instruction-following, preference elicitation, and RLHF-intent literature. |
 | `constitutional-alignment-substrate` | Source lineage can read metaphysical if not labeled tightly. | Audit live and reader prose for unlabeled metaphysics; keep speculative source lineage marked as author-intent context; add machine-ethics/value-alignment anchoring only from source notes; preserve corrigibility and agency-rights proof boundaries without implying value correctness. |
 | `moral-uncertainty-and-value-conflict` | Value conflict needs more explicit connection to moral uncertainty, social choice, and rights-as-interface examples. | Add a worked fork/exit/audit example and deepen source-noted moral-uncertainty, social-choice, preference-aggregation, and mechanism-design positioning; keep the example scoped as interface behavior, not proof that conflicts are solved. |
 | `stable-capability-fields` | Central primitive had narrower lifecycle proof coverage than its importance warrants. | Partially executed: added a finite SCF lifecycle state-machine proof lane for shadow/canary/qualified/default/deprecated/retired plus quarantine, including field-identity preservation, qualification evidence, regression-floor, authority-ceiling, rollback-readiness, deprecation-notice, and retirement-receipt negative cases. Remaining work: executable lifecycle fixtures, deployed route validation, evaluator-integrity measurement, real regression preservation, terminal-state governance, lifecycle enforcement, and rollback execution. |
-| `capability-replacement-and-rollback` | Deployment/MLOps prior art was lightly anchored despite strong canary/rollback prose. | Partially executed: added source-noted external grounding through Argo Rollouts progressive delivery, Fowler/Hodgson feature toggles, Google Cloud MLOps continuous delivery, and Kubernetes Deployments rollout history/rollback; added synthetic capability-replacement fixtures for model-rollout data/schema/model/serving/monitor gates, baseline regression floors, monitor-trigger rollback conditions, and irreversible-effect ownership; chapter and outline now name canary, blue-green, feature-flag, model-delivery, monitoring, regression-gating, revision-history, and rollback-trigger comparators while preserving `argument` support and no-live-deployment/model-rollout non-claims. Remaining work: build any future deployed Argo/Kubernetes/ML pipeline prototype, live model-monitor trace, real regression suite, production rollback dry run, and externally reviewable replacement trace before claiming implementation. |
+| `capability-replacement-and-rollback` | Deployment/MLOps prior art was lightly anchored despite strong canary/rollback prose; `AsiStackProofs.Replacement` remains a proof-coverage straggler for a transaction primitive at the heart of governed self-improvement. | Partially executed: added source-noted external grounding through Argo Rollouts progressive delivery, Fowler/Hodgson feature toggles, Google Cloud MLOps continuous delivery, and Kubernetes Deployments rollout history/rollback; added synthetic capability-replacement fixtures for model-rollout data/schema/model/serving/monitor gates, baseline regression floors, monitor-trigger rollback conditions, and irreversible-effect ownership; chapter and outline now name canary, blue-green, feature-flag, model-delivery, monitoring, regression-gating, revision-history, and rollback-trigger comparators while preserving `argument` support and no-live-deployment/model-rollout non-claims. Remaining work: deepen `Replacement` with a lifecycle/admission route for canary, evidence freshness, regression floors, authority non-widening, monitor windows, rollback handles, irreversible-effect ownership, quarantine, deprecation, retirement, and non-claim boundaries; build any future deployed Argo/Kubernetes/ML pipeline prototype, live model-monitor trace, real regression suite, production rollback dry run, and externally reviewable replacement trace before claiming implementation. |
 | `security-kernel-and-digital-scifs` | Planned prompt-injection containment and least-privilege tests remain high-value blockers. | Partially executed: expanded the synthetic security-kernel harness to 3 valid and 8 expected-invalid fixtures, adding expired-approval refusal and overbroad-SCIF-context rejection on top of existing prompt-injection, secret-visible-output, ambient-authority, missing-approval, missing-residual, and missing-zeroize negatives; added a Resource Budget Ledger expected-invalid fixture that rejects a critical dispatch whose apparent savings come from dropping SCIF isolation, approval, audit logging, and sanitization. Remaining work: add deployed/live kernel, sandbox, side-channel, approval-service, least-privilege context, real secret-handle, runtime prompt-injection containment, and runtime budget-enforcement evidence before stronger claims; keep SCIF wording grounded as compartment discipline rather than a deployed isolation guarantee. |
 | `recursive-self-improvement-boundaries` | Some behavioral tests remain planned and external RSI/evaluator-capture anchoring can deepen. | Implement planned boundary tests; source-note RSI, self-improvement, mesa-optimization, evaluator-capture, and STOP-adjacent literature; keep Theseus self-sourcing bounded and pair every Theseus-derived example with an explicit no-deployed-RSI non-claim. |
-| `intent-to-execution-contracts` | Typed-workflow/API-contract anchoring is light and the "three lanes" merge scaffold is visible. | Partially executed: live mechanism prose and curated reader opening now describe one continuous command-contract flow from accepted intent receipt through field provenance, authority, handoff, dispatch, jobs, artifacts, verification, feedback, residuals, and non-claims; `docs/curated_reader_intent_execution_prose_pass.md` records the meaning-preservation boundary. Remaining work: add source-noted structured-command, API-contract, DSL, and typed-workflow comparators before claiming the external-grounding part closed. |
+| `intent-to-execution-contracts` | Typed-workflow/API-contract anchoring is light and the "three lanes" merge scaffold is visible; it remains one of the two external-grounding stragglers relative to chapter importance. | Partially executed: live mechanism prose and curated reader opening now describe one continuous command-contract flow from accepted intent receipt through field provenance, authority, handoff, dispatch, jobs, artifacts, verification, feedback, residuals, and non-claims; `docs/curated_reader_intent_execution_prose_pass.md` records the meaning-preservation boundary. Remaining work: add source-noted structured-command, API-contract, DSL, typed-workflow, schema-driven tool-call, and structured-output comparators before claiming the external-grounding part closed; keep the prose as one command-contract flow rather than reintroducing lane scaffolding. |
 | `planning-as-a-control-layer` | Central merged chapter has stronger plan-graph finite proof coverage, but planned behavioral tests and runtime traces remain missing. | Partially executed: added a finite plan-graph admission route in `AsiStackProofs.Planning` for command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contract, verification plan, dispatch gate, dispatch receipt, replanning controls, residual register, and non-claim boundary gaps. Remaining work: implement decomposition-quality, context-demand, selected-tier adequacy, route-quality, cost-quality, scheduler-state, and runtime-replanning tests with negative cases before stronger claims. |
 | `cognitive-compilation-and-semantic-ir` | Program-synthesis, IR, and translation-validation lineage needed clearer external grounding, and planned repair/audit tests needed an executable gate. | Partially executed: DreamCoder already grounds program-synthesis/library-learning vocabulary, and the previous pass added source-noted LLVM IR, MLIR, and translation-validation comparators; live/reader chapters and outline now tie the compiler analogy to typed IR, verifier boundaries, dialects, progressive lowering, lowering receipts, and per-translation source-target validation rather than metaphor alone. This pass added `python3 scripts/validate_cognitive_compilation_traces.py`, with 2 valid and 4 expected-invalid hand-authored source-plan/semantic-atom/lowering-receipt/target-audit/repair-trace fixtures for receipt representation, obligation preservation, localized repair scope, syntactic-pass laundering rejection, and no-promotion boundaries. Remaining work: implement a source-plan parser, concrete target artifact validators, real target-lowering behavior, localized-repair benchmark, direct-generation quality/cost comparison, LLVM/MLIR or translation-validation integration if warranted, and any accepted evidence transition before stronger compiler claims. |
 | `virtual-context-abi` | Minor merge-scaffold residue around the "four lanes" framing. | Closed by artifact: live mechanism prose and curated reader opening now describe one continuous ABI flow from context request to materialization receipt, typed object, representation certificate, and fault/adequacy handoff; `docs/curated_reader_virtual_context_abi_prose_pass.md` records the meaning-preservation boundary. Remaining work is preservation only: future reader edits must keep ABI/certificate/refusal boundaries, source mappings, and evidence limits intact. |
@@ -1025,8 +1105,8 @@ Per-chapter burn-down:
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Proof coverage is narrow and Theseus benchmark practice is under-surfaced. | Deepen benchmark-lifecycle proofs; ground public-calibration locks, honest weak scores, residual escrow, and benchmark-state transitions in verified Theseus artifacts. |
 | `policy-optimization-and-learning-from-feedback` | Planned tests remain; topic is necessarily derivative unless a rollback demo exists. | Implement planned policy-update tests and, if feasible, build a tiny policy-update-with-rollback demo with reward-hacking probes, holdout checks, and non-claims. |
 | `artifact-steward-agents-and-living-project-governance` | Former chapter-level Lean module mapping bug hid a distinctive steward proof lane from the chapter metadata. | Partially executed: metadata mapping is fixed, and the steward proof lane is now surfaced as seven manifest/outline/chapter proof targets: work contract, protected action, release gate, sunset block, lifecycle route, contribution-ledger separation, and federation-contract boundary. Remaining work: polish the chapter around bounded continuity, federation, treasury, release gate, sunset, and stewardship evidence; add executable event-taint, treasury/governance, contribution-ledger, federation-contract, release-runner, sunset, and behavioral steward-loop tests before stronger claims. |
-| `integrated-reference-architecture` | Reads more like recap than showpiece. | Partially executed: live and curated reader prose now include the fixture-backed approved and blocked reference traces, naming the actual intent, command, plan, context, route, claim, work, audit, evidence, SCF, authority-denial, residual, stop-condition, and promotion-blocker records validated by `python3 scripts/validate_reference_trace.py`. Remaining work: produce a replayed or live trace from an actual command, artifact bundle, validator run, and blocked-path stop condition before claiming runtime integration or deployed authority-stop behavior. |
-| `project-theseus-as-report-first-implementation-reference` | Describes Theseus abstractly instead of showing its real public-safe substance. | Surface verified Theseus artifacts, RMI design law, gate states, benchmark numbers, and blockers; implement planned Theseus tests only from public-safe replay or digest-verifiable imports. |
+| `integrated-reference-architecture` | Reads more like recap than showpiece. | Partially executed: live and curated reader prose now include the fixture-backed approved and blocked reference traces, naming the actual intent, command, plan, context, route, claim, work, audit, evidence, SCF, authority-denial, residual, stop-condition, and promotion-blocker records validated by `python3 scripts/validate_reference_trace.py`. Remaining work: write the narrative showpiece trace that follows one concrete request hop by hop through intent, constitution, planning, context, routing, verification, execution, evidence, and improvement, pointing at actual record types and the control-plane figure; then produce a replayed or live trace from an actual command, artifact bundle, validator run, and blocked-path stop condition before claiming runtime integration or deployed authority-stop behavior. |
+| `project-theseus-as-report-first-implementation-reference` | Described Theseus abstractly instead of showing its real public-safe substance. | Partially executed: the live and curated reader chapters now surface the public-safe architecture-gate import, generation-mode import, support replay probe, `14/14` gate summary, `18` modes, `13` comparisons, zero hard gaps, zero promotable comparisons, useful-solution-per-second `0.0`, digests, output digests, support-state effect `none`, and non-claims, guarded by `python3 scripts/validate_theseus_concrete_evidence_surface.py`. Remaining work: clean live Theseus replay or archived public fixture, public task bundle, work-board report bundle, artifact-gap audit, self-evolution ladder audit, and external review before any stronger support or deployed Theseus claim. |
 | `prototype-roadmap` | Solid roadmap chapter with a small planned-test tail. | Implement the remaining tests and keep phase language from becoming evidence language; reader prose should make the build order feel like a governed dependency graph rather than a wish list. |
 | `living-book-methodology` | The demonstrated living-book method is undersold. | Partially executed: live and curated reader prose now pair Living Book Methodology with Evidence States as the book's methodological contribution, emphasizing manifest-driven source of truth, source queues, claim/evidence ledgers, proof manifests, release records, reader-edition derivation, and non-claims; source notes and generated source ledgers now position the chapter against literate programming, Jupyter Book-style executable books, Quarto Books, governance lifecycle reporting, transparent evaluation, living benchmarks, and contamination warnings. Remaining work: implement the planned explicit living-book change-packet record and seek external methodology review before claiming external validation. |
 | `open-research-agenda-and-bibliography-plan` | Backmatter role is appropriate, but source ownership must stay crisp. | Keep Appendix G/H separation and future-source triage discipline crisp; when new source work changes the book, update the closer so it routes open questions to proof, Theseus/Circle evidence, external literature, external review, or explicit blockers rather than becoming a generic bibliography list. |
@@ -1368,6 +1448,14 @@ Current status for the focused v1.x active evidence cycle:
   quality review, production scheduler logs, measured displaced-cost
   accounting, live or externally reviewed load-stability evidence, physical-feasibility review, and measured simulation outputs
   before opening a new active cycle.
+- The measured Resource sublanes also need explicit support-state decisions.
+  The costed-route slice already has an accepted narrow non-core transition;
+  the workload-quality probe, load-stability probe, live-probe replay, CI-cost
+  profile, workflow trace, and aggregate flagship replay should each be routed
+  to either an accepted narrow transition, an explicit no-change/no-promotion
+  decision, or a dated blocker explaining which external/live workload evidence
+  is missing. Do not keep producing additional local probes while measured
+  results remain decision-pending.
 
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 
@@ -1408,6 +1496,15 @@ Tasks:
 - Connect each load-bearing argument to at least one intended evidence path:
   Lean proof, Project Theseus report/replay, Circle receipt, source-noted
   literature, external review, or no-promotion blocker.
+- Treat the current top grounding backlog as finite, not broad:
+  `the-efficient-asi-hypothesis` should mine the efficient-inference,
+  inference-economics, routing, compression, speculative-decoding,
+  sparse-expert, cascade, and verification-cost literature already used by
+  Fast Generation, Resource Economics, Routing, and Policy Optimization; and
+  `intent-to-execution-contracts` should add source-noted structured-command,
+  API-contract, DSL, typed-workflow, schema-driven tool-call, and
+  structured-output comparators. These are comparator links, not validation of
+  the ASI Stack.
 
 Acceptance bar:
 
@@ -2633,6 +2730,20 @@ Current status:
   passes can support the craft pass, but Corben still needs to supply or
   approve voice-pass language before the book can be treated as an authored
   human-review manuscript.
+- Embed or adapt the ten draft key figures into the curated reader manuscript
+  where they serve the reader arc, not only the live AI/research chapters.
+  Each curated figure placement needs a caption, alt text or text-equivalent
+  note, and a non-claim boundary. The current live-chapter figure coverage is
+  not enough for human-review-ready reader status because the reader edition is
+  the intended primary home for those aids.
+- Add a chapter-length and evidence-placement pass before Corben's human
+  review. The biggest live chapters should keep evidence boundaries intact but
+  move bulky tables, validator minutiae, or repeated caveats into appendices,
+  companion notes, or live-book-only sections where that improves ordinary
+  reading. The first watchlist is Compact Generative Systems, Resource
+  Economics, Personal Compute Hives, Artifact Steward Agents, Fast Generation,
+  Routing Heads, Planning, Project Theseus, Policy Optimization, Circle, and
+  CoilRA.
 
 ### Milestone 8 - Visual, Ebook, PDF, DOCX, And Audio Quality
 
@@ -2684,24 +2795,20 @@ Current status:
 - `scripts/build_audio_script.py --check` generates 49 review-script files and
   verifies that every chapter script preserves both implementation-horizon
   sections.
-- The first seven draft key-figure assets tied to the reader handoff contract
-  now exist: `assets/diagrams/asi-stack-control-plane.svg` in
-  `chapters/asi-is-a-stack-not-a-model.qmd` and
-  `assets/diagrams/authority-to-effect-path.svg` in
-  `chapters/system-boundaries-and-authority.qmd`, plus
-  `assets/diagrams/context-transaction-lifecycle.svg` in
-  `chapters/context-transactions-snapshots-mounts-and-taint.qmd`,
-  `assets/diagrams/evidence-state-ladder.svg` in
-  `chapters/evidence-states-and-claim-discipline.qmd` and
-  `assets/diagrams/intent-to-artifact-trace.svg` in
-  `chapters/intent-to-execution-contracts.qmd`, plus
-  `assets/diagrams/readiness-residual-quarantine-map.svg` in
-  `chapters/readiness-gates-residual-escrow-and-quarantine.qmd` and
-  `assets/diagrams/route-selection-budget-tradeoff.svg` in
-  `chapters/resource-economics-and-token-budgets.qmd`. All seven have
-  text-equivalent reading notes, and the manifest keeps them at
-  `draft_not_release_reviewed` with no new support-state, enforcement,
-  security, proof, test, external-review, or artifact-release effect.
+- Ten draft key-figure assets tied to the reader handoff contract now exist and
+  are embedded in live chapters: `asi-stack-control-plane.svg`,
+  `authority-to-effect-path.svg`, `evidence-state-ladder.svg`,
+  `intent-to-artifact-trace.svg`, `context-transaction-lifecycle.svg`,
+  `readiness-residual-quarantine-map.svg`,
+  `route-selection-budget-tradeoff.svg`,
+  `compression-and-generation-acceptance.svg`,
+  `cyclic-substrate-adoption-gate.svg`, and
+  `living-book-release-pipeline.svg`. They have text-equivalent live-chapter
+  reading notes and remain `draft_not_release_reviewed` with no new
+  support-state, enforcement, security, proof, test, external-review, or
+  artifact-release effect. Current blocker: those figures are not yet embedded
+  in the curated reader manuscript, so the human edition does not yet carry the
+  visual aids it is supposed to benefit from.
 - The generated audio workspace now includes `pronunciation_glossary.md` and
   `proof_equation_reading_rules.md`. The latter is a required review artifact
   for theorem IDs, equations, support states, proof statuses, schema fields,

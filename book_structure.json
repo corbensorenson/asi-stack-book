@@ -11611,6 +11611,20 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_generation_mode_import.py`"
             },
             {
+              "name": "Theseus support replay probe",
+              "purpose": "Replay the two public-safe ASI-side Theseus validators and check command-output digests, tracked artifact hashes, and no-transition boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/run_theseus_support_replay_probe.py --write-result` and `python3 scripts/validate_theseus_support_replay_probe.py`; no clean live Theseus replay, public task bundle, model-quality result, generation-speed result, or support-state promotion",
+              "status": "implemented; passing via `python3 scripts/run_theseus_support_replay_probe.py --write-result` and `python3 scripts/validate_theseus_support_replay_probe.py`"
+            },
+            {
+              "name": "Theseus concrete evidence-surface validation",
+              "purpose": "Check that the live source, curated reader source, outline, roadmap, and manifest surface the public-safe architecture-gate import, generation-mode import, support replay probe, digest, count, and non-claim facts without promotion drift.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_concrete_evidence_surface.py`; no live Theseus replay, model-quality result, generation-speed result, or support-state promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_concrete_evidence_surface.py`"
+            },
+            {
               "name": "Dashboard-only implementation-reference negative case",
               "purpose": "Reject implementation-reference claims that lack report/config/tool artifact surfaces or rely on dashboard prose alone.",
               "implementation_status": "implemented",

@@ -115,6 +115,7 @@ REQUIRED = [
     "scripts/validate_theseus_generation_mode_import.py",
     "scripts/run_theseus_support_replay_probe.py",
     "scripts/validate_theseus_support_replay_probe.py",
+    "scripts/validate_theseus_concrete_evidence_surface.py",
     "scripts/validate_phase5_harness_registry.py",
     "scripts/build_reader_edition.py",
     "scripts/build_curated_reader_edition.py",
@@ -773,6 +774,7 @@ def main() -> None:
     run_validator("validate_theseus_report.py")
     run_validator("validate_theseus_generation_mode_import.py")
     run_validator("validate_theseus_support_replay_probe.py")
+    run_validator("validate_theseus_concrete_evidence_surface.py")
     run_validator("validate_phase5_harness_registry.py")
     run_validator("run_phase5_harnesses.py")
     print("Book validation passed.")

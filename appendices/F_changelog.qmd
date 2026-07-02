@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-02 - Reconcile roadmap review and surface Theseus evidence facts
+
+- Reviewed the latest external project review against the local tree and
+  updated the v1.x roadmap with the remaining finite blockers: burn-down row
+  accounting, `IntentContracts` and `Replacement` proof stragglers, Efficient
+  ASI and Intent-to-Execution external-grounding stragglers, curated-reader
+  figure embedding, the Integrated Reference Architecture narrative showpiece
+  trace, Resource flagship-lane support-state decisions, chapter-length craft
+  risk, and projection-count discipline.
+- Refreshed roadmap proof-depth counts to 786 theorem declarations, 625
+  derived/decomposed, 157 direct/projection-style, and 4 unknown/mixed.
+- Added `scripts/validate_theseus_concrete_evidence_surface.py` and revised the
+  Project Theseus live and curated reader chapters so the public-safe
+  architecture-gate import, generation-mode import, support replay probe,
+  counts, digests, support-state effect `none`, and no-promotion boundaries
+  remain visible without claiming a clean live Theseus replay,
+  generation-speed result, model-quality result, or support-state promotion.
+
 ## 2026-07-02 - Add stack layer traceability audit
 
 - Added `python3 scripts/validate_stack_layer_traceability.py` to check the

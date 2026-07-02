@@ -30,7 +30,7 @@ record. It gives the book a concrete way to think about plans, gates, ledgers,
 work boards, checkpoints, and self-evolution controls without letting private
 or source-reported implementation status become public empirical proof.
 
-The whole chapter can be reduced to one discipline: if a claim depends on a
+The whole reference can be reduced to one discipline: if a claim depends on a
 run, the report has to carry it.
 
 ## Problem
@@ -98,15 +98,15 @@ without promoting local results as general capability claims.
 In the live book, that claim remains a design rationale at `argument` support.
 
 The source notes are strong enough to guide design discussion. They are not
-enough to promote the chapter's core claim. The separate Project Theseus import
-adds one static, digest-verified architecture-gate report fixture; it does not
-give this repository a clean live Theseus replay, reproduced benchmark run,
-current dashboard verification, private workload publication, or model-quality
-result.
+enough to promote the Project Theseus core claim. The separate Project Theseus
+imports add two static, digest-verified report fixtures and one local support
+replay probe over the ASI-side validators; they do not give this repository a
+clean live Theseus replay, reproduced benchmark run, current dashboard
+verification, private workload publication, or model-quality result.
 
-The distinction is the chapter's main contribution. Theseus can teach the book
-what evidence should look like while the book refuses to claim that the
-evidence already proves more than it does.
+The distinction is the main contribution here. Theseus can teach the book what
+evidence should look like while the book refuses to claim that the evidence
+already proves more than it does.
 
 ## The Report Loop
 
@@ -146,22 +146,37 @@ path. A missing command, dirty checkout, absent checksum, private payload, or
 unreplayed report should not be smoothed over. It should become a row that
 prevents stronger claims.
 
-## What The Static Import Means
+## What The Static Imports Mean
 
-The ASI Stack repository currently contains one public-safe Project Theseus
-report import lane. It imports a sanitized architecture-gate summary as a
-static fixture, verifies the pinned source-artifact digest, records a 14-of-14
-gate summary with zero external inference calls, and rejects invalid mutations
-for digest mismatch, private-payload copying, and support-promotion overclaim.
+The ASI Stack repository currently contains two public-safe Project Theseus
+report import lanes plus one support replay probe.
+
+The first import is a sanitized architecture-gate summary. It records a
+checkpointed 14 of 14 gate summary with zero external inference calls, verifies
+the pinned source-artifact digest, and rejects invalid mutations for digest
+mismatch, private-payload copying, and support-promotion overclaim.
 
 That is useful. It proves that this repository can hold a public-safe Theseus
 report contract, verify a digest boundary, and reject a few obvious forms of
 evidence laundering.
 
-It is also narrow. The import does not rerun Project Theseus. It does not prove
-that the current checkout is clean. It does not reproduce a benchmark. It does
-not inspect a live dashboard. It does not authorize training. It does not move
-the Project Theseus chapter core claim above `argument`.
+The second import is a sanitized generation-mode summary. It records 18 modes,
+13 comparisons, zero hard gaps, zero promotable comparisons, and useful
+solution per second at `0.0`. That result is not embarrassing; it is the point.
+The gate can observe accepted-span speed lift and still refuse promotion when
+verified task success remains zero.
+
+The support replay probe then reruns the two ASI-side validators, records
+command-output digests, checks ten tracked artifacts, and preserves support-
+state effect `none`. It does not create a support-state transition.
+
+The whole surface is narrow. It does not rerun Project Theseus. It does not
+prove that the current checkout is clean. It does not reproduce a benchmark. It
+does not inspect a live dashboard. It does not authorize training. It does not
+prove deployed Theseus runtime behavior, generation speed,
+useful-solution-per-second improvement, model quality, routing quality,
+benchmark quality, safety, alignment, transfer, or ASI. It does not move the
+Project Theseus core claim above `argument`.
 
 The right lesson is procedural: the report lane is promising because it can say
 no. It can reject private payload leakage, digest drift, and support-state
@@ -251,12 +266,12 @@ surface, then record the evidence state, missing artifacts, public claim
 boundary, and non-claims. It should include at least one blocked or missing row
 so the system demonstrates refusal, not just acceptance.
 
-The repository already has the first narrow pieces: a crosswalk-style fixture
-and a static architecture-gate import validator. The next honest step is not a
-larger claim. It is a miniature public-safe report bundle containing one goal
-contract, one plan/compiler artifact, one work-board item, one gate record, one
-residual, one non-claim, one missing artifact, one replay boundary, and one
-review note.
+The repository already has the first narrow pieces: a crosswalk-style fixture,
+static architecture-gate and generation-mode import validators, and a support
+replay probe over those validators. The next honest step is not a larger claim.
+It is a miniature public-safe report bundle containing one goal contract, one
+plan/compiler artifact, one work-board item, one gate record, one residual,
+one non-claim, one missing artifact, one replay boundary, and one review note.
 
 That would let the book show report-first discipline without exposing private
 workloads or implying broad capability evidence.
@@ -289,14 +304,16 @@ Project Theseus gives the book a practical implementation reference for
 report-first AI systems: pressure, residuals, plan contracts, gates, ledgers,
 operator work boards, checkpoints, and self-evolution governance.
 
-The public boundary stays strict. The static architecture-gate import shows how
-one Theseus report can be mirrored safely, but it does not become a clean
-replay, benchmark result, current dashboard inspection, deployment claim,
-training authorization, or support-state promotion.
+The public boundary stays strict. The static architecture-gate and
+generation-mode imports show how Theseus reports can be mirrored safely, and
+the support replay probe shows that the ASI-side validators can be rerun
+against tracked artifacts. None of that becomes a clean live replay, benchmark
+result, current dashboard inspection, deployment claim, training authorization,
+or support-state promotion.
 
-That caution is the value of the chapter. Theseus shows what kind of evidence
-the stack should want, while the living book records exactly what evidence it
-does and does not have.
+That caution is the value of the Project Theseus reference. Theseus shows what
+kind of evidence the stack should want, while the living book records exactly
+what evidence it does and does not have.
 
 ## Handoff
 
