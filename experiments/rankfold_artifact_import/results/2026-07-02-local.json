@@ -1,0 +1,151 @@
+{
+  "record_id": "rankfold-artifact-import-2026-07-02-enwik8-local",
+  "date": "2026-07-02",
+  "source_project": "RankFold",
+  "source_project_ref": "local RankFold checkout",
+  "source_project_dirty_at_import": true,
+  "dirty_worktree_boundary": "The source checkout had unrelated modified and untracked files at import time; this record used existing output artifacts and read-only inspection commands only.",
+  "public_safety_boundary": "No dataset bytes, archive bytes, local absolute paths, private source text, or unpublished implementation payloads are copied into the ASI Stack book repository.",
+  "rfa_binary_sha256": "f03e3175742411b4310187cf48c5e735813c4a411a93dc53b68a3364ed75f438",
+  "reference_decoded_artifact": {
+    "logical_name": "enwik8",
+    "decoded_file_bytes": 100000000,
+    "decoded_sha256": "2b49720ec4d78c3c9fabaee6e4179a5e997302b3a70029f30f2d582218c024a8"
+  },
+  "observations": [
+    {
+      "artifact_label": "enwik8_out2_1771038259",
+      "archive_path_hint": "RankFold/output/enwik8_out2_1771038259/enwik8.rfa",
+      "decoded_path_hint": "RankFold/output/enwik8_out2_1771038259/out/enwik8",
+      "archive_file_bytes": 36169618,
+      "archive_file_sha256": "9b0b5b1f91d8d7a05d5d51fcd83b7a46f18eac6e7bd5d55f367366bc71f80816",
+      "decoded_file_bytes": 100000000,
+      "decoded_sha256": "2b49720ec4d78c3c9fabaee6e4179a5e997302b3a70029f30f2d582218c024a8",
+      "archive_to_decoded_ratio": 0.36169618,
+      "decoded_to_archive_ratio": 2.76475134,
+      "rfa_verify": {
+        "ok": 1,
+        "failed": 0,
+        "skipped": 0
+      },
+      "rfa_inspect": {
+        "created_utc": "2026-02-14T03:04:25.473642+00:00",
+        "streams": 1,
+        "pack0_stream_name": "__pack0__",
+        "pack0_stream_bytes": 36169333,
+        "pack0_stream_blake3": "2d2b78f65cf604628243540675c230a6867844c871b1ae4ae856bdd7b52d0cba",
+        "pack0_stream_crc32": "0x093d1981",
+        "encrypted": false,
+        "pages": 1,
+        "entries": 1,
+        "total_original_display": "95.37 MB",
+        "codec_mix": {
+          "NEURAL0": 1
+        }
+      }
+    },
+    {
+      "artifact_label": "enwik8_out3_1771047103",
+      "archive_path_hint": "RankFold/output/enwik8_out3_1771047103/enwik8.rfa",
+      "decoded_path_hint": "RankFold/output/enwik8_out3_1771047103/out/enwik8",
+      "archive_file_bytes": 36155111,
+      "archive_file_sha256": "0b78b195c80714d2f1ef1e044e0ee9f28ec92444e09b6ef9372656c573462352",
+      "decoded_file_bytes": 100000000,
+      "decoded_sha256": "2b49720ec4d78c3c9fabaee6e4179a5e997302b3a70029f30f2d582218c024a8",
+      "archive_to_decoded_ratio": 0.36155111,
+      "decoded_to_archive_ratio": 2.76586068,
+      "rfa_verify": {
+        "ok": 1,
+        "failed": 0,
+        "skipped": 0
+      },
+      "rfa_inspect": {
+        "created_utc": "2026-02-14T05:31:50.154868+00:00",
+        "streams": 1,
+        "pack0_stream_name": "__pack0__",
+        "pack0_stream_bytes": 36154826,
+        "pack0_stream_blake3": "64cf51d37f7649df05dd835d52dbda430b95ee6240e851ebea02849b60e1d482",
+        "pack0_stream_crc32": "0x0a6ed013",
+        "encrypted": false,
+        "pages": 1,
+        "entries": 1,
+        "total_original_display": "95.37 MB",
+        "codec_mix": {
+          "NEURAL0": 1
+        }
+      }
+    },
+    {
+      "artifact_label": "enwik8_out4_1771047630",
+      "archive_path_hint": "RankFold/output/enwik8_out4_1771047630/enwik8.rfa",
+      "decoded_path_hint": "RankFold/output/enwik8_out4_1771047630/out/enwik8",
+      "archive_file_bytes": 36148844,
+      "archive_file_sha256": "12fc0fc45d56408ea734d2408658fff57e9786376d5b31d87f24acb112666651",
+      "decoded_file_bytes": 100000000,
+      "decoded_sha256": "2b49720ec4d78c3c9fabaee6e4179a5e997302b3a70029f30f2d582218c024a8",
+      "archive_to_decoded_ratio": 0.36148844,
+      "decoded_to_archive_ratio": 2.76634019,
+      "rfa_verify": {
+        "ok": 1,
+        "failed": 0,
+        "skipped": 0
+      },
+      "rfa_inspect": {
+        "created_utc": "2026-02-14T05:40:35.876535+00:00",
+        "streams": 1,
+        "pack0_stream_name": "__pack0__",
+        "pack0_stream_bytes": 36148559,
+        "pack0_stream_blake3": "0b830cd6b1d99554e8519df8427e7b50abccf3e399bcb6f6501a1c4796d7cfe4",
+        "pack0_stream_crc32": "0xee4f18f5",
+        "encrypted": false,
+        "pages": 1,
+        "entries": 1,
+        "total_original_display": "95.37 MB",
+        "codec_mix": {
+          "NEURAL0": 1
+        }
+      }
+    }
+  ],
+  "summary": {
+    "observed_archives": 3,
+    "decoded_digest_consensus": true,
+    "best_observed_decoded_to_archive_ratio": 2.76634019,
+    "best_observed_archive_to_decoded_ratio": 0.36148844,
+    "all_archives_verified_by_rfa": true,
+    "codec_mix_observed": ["NEURAL0"],
+    "support_state_effect": "none",
+    "chapter_core_support_effect": "none",
+    "evidence_transition_created": false
+  },
+  "command_transcripts": [
+    {
+      "command": "stat existing RankFold output artifacts",
+      "result": "decoded artifacts were 100000000 bytes; archive files were 36169618, 36155111, and 36148844 bytes"
+    },
+    {
+      "command": "LC_ALL=C LANG=C shasum -a 256 existing RankFold output artifacts",
+      "result": "decoded artifacts shared sha256 2b49720ec4d78c3c9fabaee6e4179a5e997302b3a70029f30f2d582218c024a8; archive sha256 values are recorded per observation"
+    },
+    {
+      "command": "rfa verify each recorded archive",
+      "result": "each archive reported 1 OK, 0 FAILED, 0 skipped"
+    },
+    {
+      "command": "rfa inspect each recorded archive",
+      "result": "each archive reported one unencrypted PACK0 stream, one page, one entry, total original 95.37 MB, and codec mix NEURAL0: 1"
+    }
+  ],
+  "non_claims": [
+    "does not copy dataset bytes or archive bytes into this repository",
+    "does not prove RankFold codec correctness",
+    "does not prove deterministic decoder correctness beyond the recorded local decoded digest observations",
+    "does not rerun compression from source input",
+    "does not prove benchmark performance",
+    "does not prove downstream utility",
+    "does not prove fallback execution",
+    "does not promote the RankFold chapter core claim",
+    "does not create a support-state transition",
+    "does not prove deployed compression behavior"
+  ]
+}

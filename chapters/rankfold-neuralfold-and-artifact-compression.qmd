@@ -16,7 +16,8 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all five assigned artifact-compression sources; support remains at argument until a compressor, deterministic decoder, corpus benchmark, utility probe, or accepted evidence transition exists."
   - "The compressed_artifact_record fixture validates schema/example consistency for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims only; `AsiStackProofs.ArtifactCompression` now includes a finite admission lifecycle route envelope over compressed-artifact use boundaries; no RankFold/NeuralFold codec, deterministic decoder, corpus benchmark, or utility probe has been run."
-  - "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not reproduced here and are treated only as source-reported architecture/lineage context."
+  - "The RankFold artifact import records three existing local `.rfa` archive observations for the same 100,000,000-byte decoded artifact digest, with `rfa verify` reporting 1 OK, 0 failed for each archive and `rfa inspect` reporting `NEURAL0`; this is metadata/hash/import evidence only, not a fresh benchmark or codec-correctness proof."
+  - "RankFold/NeuralFold and RankFold Compressor source-reported ratio, losslessness, latency, benchmark, code, and reproducibility claims are not promoted here; the local import is treated as a narrow public-safe artifact observation and the broader claims remain source-reported architecture/lineage context."
   - "No support-state promotion, raw source publication, codec correctness result, or downstream utility result is implied by this drafting pass."
 ---
 
@@ -34,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
 | Source loading state | source notes and passage-reviewed local raw-cache mappings exist for `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, and `bugbrain`; no raw private source text is published. |
-| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback, residual/fallback metadata, and admission-lifecycle route predicates plus negative-case theorems blocking failed-probe/no-fallback use, promotion with missing residual or fallback metadata, and modeled admission gaps; compression-ratio, behavioral probe-route fallback, and downstream-utility tests remain planned. |
+| Test state | `compressed_artifact_record.valid.json` passes repository-level protocol fixture validation for task family, access pattern, admission state, declared use envelope, metadata costs, fallback trigger, exact-replay status, consumer policy, support-state effect, evidence refs, and non-claims; `AsiStackProofs.ArtifactCompression` implements finite probe/fallback, residual/fallback metadata, and admission-lifecycle route predicates plus negative-case theorems blocking failed-probe/no-fallback use, promotion with missing residual or fallback metadata, and modeled admission gaps; `python3 scripts/validate_rankfold_artifact_import.py` validates the public-safe RankFold artifact import for a 100,000,000-byte decoded artifact digest, archive ratios up to 2.76634019 decoded/archive, `rfa verify` summaries of 1 OK, 0 failed, and `NEURAL0` inspect metadata; fresh compression-ratio reproduction, behavioral probe-route fallback, and downstream-utility tests remain planned. |
 
 ## Drafting guardrail
 
@@ -89,6 +90,27 @@ The claim remains at `argument` support. The source notes support architecture d
 ### Claim-source mapping status
 
 Appendix C now carries passage-reviewed mappings for all five assigned sources. The mappings support low-rank/tensor artifact-compression architecture, manifests, deterministic decode obligations, residual and fallback accounting, reconstruction-contract discipline, and resource-constrained implementation pressure. They do not support measured RankFold/NeuralFold performance, codec correctness, lossless reconstruction, or downstream utility in this repository.
+
+### Concrete RankFold Artifact Import
+
+The RankFold artifact import (`docs/rankfold_artifact_import.md`) records three
+existing local `.rfa` archive observations without copying dataset bytes or
+archive bytes into this repository. Each archive is associated with the same
+100,000,000-byte decoded artifact SHA-256 digest,
+`2b49720ec4d78c3c9fabaee6e4179a5e997302b3a70029f30f2d582218c024a8`. The
+smallest recorded archive is 36,148,844 bytes, yielding an observed
+decoded/archive ratio of 2.76634019 and archive/decoded ratio of 0.36148844
+inside the recorded artifact set. `rfa verify` reported 1 OK, 0 failed for
+each archive, and `rfa inspect` reported one unencrypted `__pack0__` stream,
+one page, one entry, total original `95.37 MB`, and codec mix `NEURAL0: 1`.
+
+This is not a fresh compression benchmark and does not prove RankFold codec
+correctness, deterministic decoder correctness beyond the recorded local
+decoded digest observations, compression from source input, downstream utility,
+fallback execution, deployed compression behavior, or chapter-core support-state
+promotion. It does not promote the RankFold chapter core claim. It is useful
+because the book now has a concrete local artifact surface to discuss while
+still keeping the broader compression claim at `argument`.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -203,7 +225,7 @@ Compression decisions should be allowed to differ across these patterns. A slow 
 - Admission state is task-relative and access-pattern-relative.
 - A compressed artifact cannot replace the full artifact as evidence unless the exact replay or declared-use gate passed.
 
-Decode accountability is the compression chapter's hardest invariant: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.
+Decode accountability is the hardest compression invariant: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.
 
 Admission is always relative to use. A compressed artifact may be adequate for preview, search, routing, or approximate planning while remaining inadequate for proof, legal review, source interpretation, or final release. The admission record preserves which use was admitted, which verifier accepted it, which residual remained, and which fallback was available. Compression without a use-specific boundary becomes a quiet replacement of evidence with convenience.
 
@@ -246,13 +268,14 @@ This artifact-compression admission layer is still an architectural target. The 
 | Test | Purpose | Status |
 |---|---|---|
 | Compressed artifact record fixture validation | Validate that an artifact-compression record names task family, access pattern, admission state, method, contract, use envelope, ratio state, codec parameters, metadata costs, residuals, probes, fallback trigger, decode determinism, exact-replay status, consumer policy, utility tests, support-state effect, evidence refs, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| RankFold artifact import validation | Validate the recorded public-safe local RankFold archive observations for 100,000,000-byte decoded artifact digest consensus, archive byte ratios up to 2.76634019 decoded/archive, `rfa verify` summaries of 1 OK, 0 failed, `NEURAL0` inspect metadata, and non-claim boundaries. | implemented via `python3 scripts/validate_rankfold_artifact_import.py`; no codec-correctness, benchmark-performance, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claim |
 | Compression ratio test | Check that reported ratios include metadata, parameters, seeds, manifests, and residuals. | planned; not run |
 | Probe-route fallback test | Check that a failed task probe routes to the full artifact. | planned; not run |
 | Downstream utility preservation test | Compare compressed and full artifacts on a bounded task suite. | planned; not run |
 | Access-pattern admission test | Check that cold archive, hot retrieval, exact replay, preview, benchmark, and audit consumers receive only compressed artifacts admitted for their use envelope. | planned; not run |
 | Artifact compression admission lifecycle route | Check that a modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit finite outcomes. | implemented in `AsiStackProofs.ArtifactCompression`; no compression ratio, decoder correctness, downstream utility, behavioral fallback, benchmark, support-state-promotion, or codec-performance claim |
 
-The implemented fixture row validates schema consistency only, and the implemented lifecycle row checks only a finite modeled route. The remaining rows require an actual compressor/decoder or a bounded toy surrogate, plus baseline artifacts and task probes; they are not reported results. When a behavioral test is implemented, the chapter should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
+The implemented fixture row validates schema consistency only, and the implemented lifecycle row checks only a finite modeled route. The remaining rows require an actual compressor/decoder or a bounded toy surrogate, plus baseline artifacts and task probes; they are not reported results. When a behavioral test is implemented, future work should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.
 
 ### Formalization hooks
 
@@ -284,7 +307,7 @@ RankFold/NeuralFold belongs in the stack as a bounded implementation hypothesis:
 
 The bridge is that artifact compression is never only a storage question. It changes which resource budget pays for retrieval, reconstruction, verification, proof review, audit, and human interpretation.
 
-The governance stance is the same in both chapters: never let an elegant representation outrun its fallback path. Compression earns authority one task, one probe, and one residual ledger at a time.
+The governance stance is the same across artifact compression and resource accounting: never let an elegant representation outrun its fallback path. Compression earns authority one task, one probe, and one residual ledger at a time.
 
 ## Handoff
 

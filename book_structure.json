@@ -660,17 +660,17 @@
               "implementation_status": "implemented",
               "result_status": "passes via synthetic authority transition harness"
             },
-          {
-            "name": "Confused-deputy scenario",
-            "implementation_status": "implemented",
-            "result_status": "passes expected-invalid synthetic denial fixture; no runtime enforcement claim"
-          },
-          {
-            "name": "Runtime adapter authority probe",
-            "implementation_status": "implemented",
-            "result_status": "passes via runtime adapter expected-invalid ambient-authority and revoked-receipt probes; synthetic record-gate evidence only, no deployed enforcement claim"
-          }
-        ],
+            {
+              "name": "Confused-deputy scenario",
+              "implementation_status": "implemented",
+              "result_status": "passes expected-invalid synthetic denial fixture; no runtime enforcement claim"
+            },
+            {
+              "name": "Runtime adapter authority probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via runtime adapter expected-invalid ambient-authority and revoked-receipt probes; synthetic record-gate evidence only, no deployed enforcement claim"
+            }
+          ],
           "lean_module": "AsiStackProofs.Authority",
           "proof_targets": [
             {
@@ -5211,22 +5211,22 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite lease-scope predicate only"
             },
-          {
-            "name": "Rollback obligation rejection proof",
-            "implementation_status": "implemented",
-            "result_status": "passes via Lean build; finite rollback-obligation predicate only"
-          },
-          {
-            "name": "Confused-deputy ambient-authority probe",
-            "implementation_status": "implemented",
-            "result_status": "passes via expected-invalid synthetic runtime adapter fixture; no deployed confused-deputy resistance claim"
-          },
-          {
-            "name": "Revoked authority receipt probe",
-            "implementation_status": "implemented",
-            "result_status": "passes via expected-invalid synthetic runtime adapter fixture; no deployed revocation propagation claim"
-          }
-        ],
+            {
+              "name": "Rollback obligation rejection proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite rollback-obligation predicate only"
+            },
+            {
+              "name": "Confused-deputy ambient-authority probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via expected-invalid synthetic runtime adapter fixture; no deployed confused-deputy resistance claim"
+            },
+            {
+              "name": "Revoked authority receipt probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via expected-invalid synthetic runtime adapter fixture; no deployed revocation propagation claim"
+            }
+          ],
           "lean_module": "AsiStackProofs.RuntimeAdapters",
           "proof_targets": [
             {
@@ -7706,12 +7706,18 @@
             "Probe not representative.",
             "Latency gains erased by fallback."
           ],
-          "minimal_implementation": "A compressed artifact record with ratio, residual, probe, fallback, and utility fields.",
+          "minimal_implementation": "A compressed artifact record with ratio, residual, probe, fallback, and utility fields, plus a public-safe local RankFold artifact-import record for existing archive metadata and verifier summaries.",
           "beyond_state_of_art": "Artifact compression needs an admission system before compressed forms can enter the stack. It treats compressed forms as routed candidates that must earn each use case instead of inheriting the authority of the full artifact. In the mature artifact-admission lane, compressed artifacts are candidates for specific uses, not replacements for the original, until probes, decode behavior, residual coding, fallback, and consumer policy accept them.",
           "codex_tests": [
             "Compression ratio test",
             "Probe-route fallback test",
             "Downstream utility preservation test",
+            {
+              "name": "RankFold artifact import validation",
+              "purpose": "Validate the recorded public-safe local RankFold archive observations for 100,000,000-byte decoded artifact digest consensus, archive byte ratios up to 2.76634019 decoded/archive, rfa verify summaries of 1 OK and 0 failed, NEURAL0 inspect metadata, and non-claim boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_rankfold_artifact_import.py; no codec-correctness, benchmark-performance, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claim"
+            },
             {
               "name": "Artifact compression admission lifecycle route",
               "purpose": "Check that a modeled compressed-artifact admission review routes missing preserved full artifacts, missing manifests, use-envelope and access-pattern gaps, unadmitted states, decoder-determinism gaps, exact-replay readiness failures, failed probes, missing fallback artifacts, residual metadata gaps, utility-evidence gaps, support-promotion gaps, and missing non-claim boundaries to explicit finite outcomes.",

@@ -47,6 +47,22 @@ The artifact layer therefore needs admission states, not just ratios. A compress
 RankFold/NeuralFold-style artifact compression belongs as a bounded implementation hypothesis with probe-route fallback and residual coding (evidence boundary: architectural argument).
 The source notes support architecture discussion of low-rank residual transforms, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, reconstruction checks, and deterministic decode obligations. They do not support measured compression-performance claims in this repo.
 
+The live book now also records a narrow RankFold artifact import. Three
+existing local `.rfa` archives point to the same 100,000,000-byte decoded
+artifact digest,
+`2b49720ec4d78c3c9fabaee6e4179a5e997302b3a70029f30f2d582218c024a8`. The
+smallest recorded archive is 36,148,844 bytes, an observed decoded/archive
+ratio of 2.76634019 for that artifact set. RankFold's read-only verifier
+reported 1 OK, 0 failed for each archive, and inspection recorded the `NEURAL0`
+codec path.
+
+This matters as concrete artifact evidence, but only inside a tight boundary.
+It does not prove RankFold codec correctness, deterministic decoder correctness
+beyond the recorded local decoded digest observations, benchmark performance,
+downstream utility, fallback execution, deployed compression behavior, or
+support-state promotion. It does not promote the RankFold chapter core claim.
+The chapter core claim remains an architectural argument.
+
 ## Mechanism
 
 Artifact compression is where representation cost meets task routing. RankFold/NeuralFold supplies the archive framing: per-artifact transforms, residual coding aligned to actual bit cost, manifests, deterministic decode, WORM assumptions, and tests. BBVCA v9 supplies reconstruction-contract and repair-stream discipline. CGS supplies residual honesty, while BugBrain keeps the edge/local resource pressure visible. The routing question is not whether a compressed artifact is impressive; it is whether this task can use it without losing the constraints that matter.

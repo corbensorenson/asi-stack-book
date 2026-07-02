@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-02 - Import RankFold artifact evidence surface
+
+- Added a public-safe RankFold artifact-import record for three existing local
+  `.rfa` archive observations over a 100,000,000-byte decoded artifact digest,
+  archive byte ratios up to 2.76634019 decoded/archive, `rfa verify` summaries
+  of 1 OK and 0 failed, one unencrypted PACK0 stream, and `NEURAL0` inspect
+  metadata.
+- Added `scripts/validate_rankfold_artifact_import.py`,
+  `docs/rankfold_artifact_import.md`, and
+  `experiments/rankfold_artifact_import/` with metadata, hashes, verifier
+  summaries, public-safety boundaries, and non-claims. Wired the check into
+  `scripts/validate_book.py`, Appendix E generation, the RankFold live chapter,
+  the curated reader chapter, the outline, v1.0 status snapshot, v1.x roadmap,
+  README, and repository map.
+- No dataset bytes, archive bytes, fresh compression run, RankFold codec
+  correctness, deterministic decoder correctness beyond the recorded local
+  decoded digest observations, benchmark performance, downstream utility,
+  fallback execution, deployed compression behavior, support-state transition,
+  chapter-core support-state promotion, reader release, or external review is
+  claimed.
+
 ## 2026-07-02 - Add command field-confidence gates
 
 - Expanded the plan-execution contract harness with a valid blocked
