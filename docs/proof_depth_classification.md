@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 147 |
+| Proof targets in manifest | 148 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 817 |
+| Theorem declarations classified | 826 |
 | Direct/projection-style theorem declarations | 157 |
-| Derived/decomposed theorem declarations | 656 |
+| Derived/decomposed theorem declarations | 665 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -54,7 +54,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 3 | 23 | 2 | 21 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 2 | 24 | 2 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 3 | 33 | 2 | 31 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 3 | 28 | 1 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -153,8 +153,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promotion_candidate_missing_residual_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promotion_request_without_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `unadmitted_state_blocks_compressed_use` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `byte_exact_replay_missing_observed_artifact_requires_observation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `complete_artifact_graph_route_admits_artifact` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `complete_byte_exact_replay_packet_admits_bounded_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `complete_promoted_artifact_route_admits_artifact` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `complete_support_review_packet_admits_bounded_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `incomplete_or_blocked_provenance_blocks_promoted_claim_support` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `insufficient_replay_grade_requires_upgrade` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `missing_artifact_rejects_artifact_graph_route` | derived_or_decomposed | no | uses simp, unfold |
@@ -169,6 +172,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `missing_semantic_certificate_refs_requires_certificate_refs` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `missing_test_links_requires_test_links` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `missing_tool_refs_require_tool_refs` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `partial_replay_promotion_request_blocks_packet_promotion` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `partial_replay_record_only_blocks_promotion_without_rejecting_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_missing_trace_refs_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_records_parent_job_and_context_refs` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_without_context_refs_requires_context_refs` | derived_or_decomposed | no | uses simp, unfold |
@@ -176,7 +181,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_without_source_refs_requires_source_refs` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `promotion_without_permission_blocks_artifact_promotion` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_grade_below_requirement_blocks_sufficiency` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_packet_missing_audit_chain_requires_audit_chain` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_packet_parent_job_mismatch_requires_parent_match` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `stale_certificate_blocks_artifact_reuse` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `stale_certificate_in_replay_packet_requires_active_certificate` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `support_review_without_replay_validated_transaction_requires_validation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `autonomy_escalation_without_charter_approval_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `collapsed_contribution_score_cannot_drive_governance_effect` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `complete_scoped_federation_dispatches` | derived_or_decomposed | no | uses simp |

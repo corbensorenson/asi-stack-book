@@ -620,4 +620,366 @@ theorem complete_promoted_artifact_route_admits_artifact
     replayLimits, evidenceGate, noStaleCertificate, promotionRequested,
     promotionAllowed, nonClaims]
 
+def ReplayGrade.requiresReplayEvidenceChecks : ReplayGrade -> Bool
+  | .semanticReplay => true
+  | .byteExact => true
+  | .blocked => false
+  | .unattempted => false
+  | .partialReplay => false
+
+inductive ArtifactReplayPacketRoute where
+  | requireParentJobMatch
+  | requireJobOutputReference
+  | requireContextTransactionReference
+  | requireSemanticCertificateReference
+  | requireCertificateTransactionLink
+  | requireCertificateArtifactLink
+  | requireSourceCoverage
+  | requireAuditChain
+  | requireReplayGradeMatch
+  | requireEnvironmentConfirmation
+  | requireObservedArtifact
+  | requireCompleteProvenance
+  | requireReplayCheckedAudit
+  | blockIncompleteReplayPromotion
+  | requireCommittedTransaction
+  | requireReplayValidatedTransaction
+  | requireVerifiedCertificate
+  | requireActiveCertificate
+  | requireReusableJobLifecycle
+  | requireNonClaimBoundary
+  | recordOnlyBlocksPromotion
+  | admitBoundedReview
+deriving DecidableEq, Repr
+
+structure ArtifactReplayPacketReview where
+  parentJobMatches : Bool
+  jobOutputsArtifact : Bool
+  transactionReferencedByArtifact : Bool
+  certificateReferencedByArtifact : Bool
+  certificateReferencesTransaction : Bool
+  certificateReferencesArtifact : Bool
+  sourceRefsCovered : Bool
+  auditChainComplete : Bool
+  replayGradeMatchesArtifact : Bool
+  replayGrade : ReplayGrade
+  environmentConfirmed : Bool
+  observedArtifactPresent : Bool
+  provenanceComplete : Bool
+  replayCheckedInAudit : Bool
+  promotionRequested : Bool
+  supportReviewRequested : Bool
+  transactionCommitted : Bool
+  transactionReplayValidated : Bool
+  certificateVerified : Bool
+  certificateActive : Bool
+  jobReusableLifecycle : Bool
+  nonClaimsPresent : Bool
+deriving DecidableEq, Repr
+
+def ArtifactReplayPacketRouteFor
+    (review : ArtifactReplayPacketReview) : ArtifactReplayPacketRoute :=
+  if review.parentJobMatches = false then
+    ArtifactReplayPacketRoute.requireParentJobMatch
+  else if review.jobOutputsArtifact = false then
+    ArtifactReplayPacketRoute.requireJobOutputReference
+  else if review.transactionReferencedByArtifact = false then
+    ArtifactReplayPacketRoute.requireContextTransactionReference
+  else if review.certificateReferencedByArtifact = false then
+    ArtifactReplayPacketRoute.requireSemanticCertificateReference
+  else if review.certificateReferencesTransaction = false then
+    ArtifactReplayPacketRoute.requireCertificateTransactionLink
+  else if review.certificateReferencesArtifact = false then
+    ArtifactReplayPacketRoute.requireCertificateArtifactLink
+  else if review.sourceRefsCovered = false then
+    ArtifactReplayPacketRoute.requireSourceCoverage
+  else if review.auditChainComplete = false then
+    ArtifactReplayPacketRoute.requireAuditChain
+  else if review.replayGradeMatchesArtifact = false then
+    ArtifactReplayPacketRoute.requireReplayGradeMatch
+  else if review.replayGrade.requiresReplayEvidenceChecks = true then
+    if review.environmentConfirmed = false then
+      ArtifactReplayPacketRoute.requireEnvironmentConfirmation
+    else if review.observedArtifactPresent = false then
+      ArtifactReplayPacketRoute.requireObservedArtifact
+    else if review.provenanceComplete = false then
+      ArtifactReplayPacketRoute.requireCompleteProvenance
+    else if review.replayCheckedInAudit = false then
+      ArtifactReplayPacketRoute.requireReplayCheckedAudit
+    else if review.supportReviewRequested = true ∨
+        review.promotionRequested = true then
+      if review.transactionCommitted = false then
+        ArtifactReplayPacketRoute.requireCommittedTransaction
+      else if review.transactionReplayValidated = false then
+        ArtifactReplayPacketRoute.requireReplayValidatedTransaction
+      else if review.certificateVerified = false then
+        ArtifactReplayPacketRoute.requireVerifiedCertificate
+      else if review.certificateActive = false then
+        ArtifactReplayPacketRoute.requireActiveCertificate
+      else if review.jobReusableLifecycle = false then
+        ArtifactReplayPacketRoute.requireReusableJobLifecycle
+      else if review.nonClaimsPresent = false then
+        ArtifactReplayPacketRoute.requireNonClaimBoundary
+      else
+        ArtifactReplayPacketRoute.admitBoundedReview
+    else if review.certificateActive = false then
+      ArtifactReplayPacketRoute.requireActiveCertificate
+    else if review.jobReusableLifecycle = false then
+      ArtifactReplayPacketRoute.requireReusableJobLifecycle
+    else if review.nonClaimsPresent = false then
+      ArtifactReplayPacketRoute.requireNonClaimBoundary
+    else
+      ArtifactReplayPacketRoute.admitBoundedReview
+  else if review.supportReviewRequested = true ∨
+      review.promotionRequested = true then
+    ArtifactReplayPacketRoute.blockIncompleteReplayPromotion
+  else if review.certificateActive = false then
+    ArtifactReplayPacketRoute.requireActiveCertificate
+  else if review.jobReusableLifecycle = false then
+    ArtifactReplayPacketRoute.requireReusableJobLifecycle
+  else if review.nonClaimsPresent = false then
+    ArtifactReplayPacketRoute.requireNonClaimBoundary
+  else
+    ArtifactReplayPacketRoute.recordOnlyBlocksPromotion
+
+theorem replay_packet_parent_job_mismatch_requires_parent_match
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = false ->
+      ArtifactReplayPacketRouteFor review =
+        ArtifactReplayPacketRoute.requireParentJobMatch := by
+  intro mismatch
+  unfold ArtifactReplayPacketRouteFor
+  simp [mismatch]
+
+theorem replay_packet_missing_audit_chain_requires_audit_chain
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = true ->
+      review.jobOutputsArtifact = true ->
+        review.transactionReferencedByArtifact = true ->
+          review.certificateReferencedByArtifact = true ->
+            review.certificateReferencesTransaction = true ->
+              review.certificateReferencesArtifact = true ->
+                review.sourceRefsCovered = true ->
+                  review.auditChainComplete = false ->
+                    ArtifactReplayPacketRouteFor review =
+                      ArtifactReplayPacketRoute.requireAuditChain := by
+  intro parentMatch jobOutput transactionRef certificateRef certTransaction
+    certArtifact sourceCovered missingAudit
+  unfold ArtifactReplayPacketRouteFor
+  simp [parentMatch, jobOutput, transactionRef, certificateRef,
+    certTransaction, certArtifact, sourceCovered, missingAudit]
+
+theorem byte_exact_replay_missing_observed_artifact_requires_observation
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = true ->
+      review.jobOutputsArtifact = true ->
+        review.transactionReferencedByArtifact = true ->
+          review.certificateReferencedByArtifact = true ->
+            review.certificateReferencesTransaction = true ->
+              review.certificateReferencesArtifact = true ->
+                review.sourceRefsCovered = true ->
+                  review.auditChainComplete = true ->
+                    review.replayGradeMatchesArtifact = true ->
+                      review.replayGrade = ReplayGrade.byteExact ->
+                        review.environmentConfirmed = true ->
+                          review.observedArtifactPresent = false ->
+                            ArtifactReplayPacketRouteFor review =
+                              ArtifactReplayPacketRoute.requireObservedArtifact := by
+  intro parentMatch jobOutput transactionRef certificateRef certTransaction
+    certArtifact sourceCovered auditComplete gradeMatches byteExact
+    environmentConfirmed missingObservation
+  unfold ArtifactReplayPacketRouteFor
+  simp [parentMatch, jobOutput, transactionRef, certificateRef,
+    certTransaction, certArtifact, sourceCovered, auditComplete, gradeMatches,
+    byteExact, environmentConfirmed, missingObservation,
+    ReplayGrade.requiresReplayEvidenceChecks]
+
+theorem stale_certificate_in_replay_packet_requires_active_certificate
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = true ->
+      review.jobOutputsArtifact = true ->
+        review.transactionReferencedByArtifact = true ->
+          review.certificateReferencedByArtifact = true ->
+            review.certificateReferencesTransaction = true ->
+              review.certificateReferencesArtifact = true ->
+                review.sourceRefsCovered = true ->
+                  review.auditChainComplete = true ->
+                    review.replayGradeMatchesArtifact = true ->
+                      review.replayGrade = ReplayGrade.byteExact ->
+                        review.environmentConfirmed = true ->
+                          review.observedArtifactPresent = true ->
+                            review.provenanceComplete = true ->
+                              review.replayCheckedInAudit = true ->
+                                review.supportReviewRequested = false ->
+                                  review.promotionRequested = false ->
+                                    review.certificateActive = false ->
+                                      ArtifactReplayPacketRouteFor review =
+                                        ArtifactReplayPacketRoute.requireActiveCertificate := by
+  intro parentMatch jobOutput transactionRef certificateRef certTransaction
+    certArtifact sourceCovered auditComplete gradeMatches byteExact
+    environmentConfirmed observed provenanceComplete replayChecked noSupportReview
+    noPromotion staleCertificate
+  unfold ArtifactReplayPacketRouteFor
+  simp [parentMatch, jobOutput, transactionRef, certificateRef,
+    certTransaction, certArtifact, sourceCovered, auditComplete, gradeMatches,
+    byteExact, environmentConfirmed, observed, provenanceComplete,
+    replayChecked, noSupportReview, noPromotion, staleCertificate,
+    ReplayGrade.requiresReplayEvidenceChecks]
+
+theorem support_review_without_replay_validated_transaction_requires_validation
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = true ->
+      review.jobOutputsArtifact = true ->
+        review.transactionReferencedByArtifact = true ->
+          review.certificateReferencedByArtifact = true ->
+            review.certificateReferencesTransaction = true ->
+              review.certificateReferencesArtifact = true ->
+                review.sourceRefsCovered = true ->
+                  review.auditChainComplete = true ->
+                    review.replayGradeMatchesArtifact = true ->
+                      review.replayGrade = ReplayGrade.byteExact ->
+                        review.environmentConfirmed = true ->
+                          review.observedArtifactPresent = true ->
+                            review.provenanceComplete = true ->
+                              review.replayCheckedInAudit = true ->
+                                review.supportReviewRequested = true ->
+                                  review.transactionCommitted = true ->
+                                    review.transactionReplayValidated = false ->
+                                      ArtifactReplayPacketRouteFor review =
+                                        ArtifactReplayPacketRoute.requireReplayValidatedTransaction := by
+  intro parentMatch jobOutput transactionRef certificateRef certTransaction
+    certArtifact sourceCovered auditComplete gradeMatches byteExact
+    environmentConfirmed observed provenanceComplete replayChecked
+    supportReview transactionCommitted unvalidatedTransaction
+  unfold ArtifactReplayPacketRouteFor
+  simp [parentMatch, jobOutput, transactionRef, certificateRef,
+    certTransaction, certArtifact, sourceCovered, auditComplete, gradeMatches,
+    byteExact, environmentConfirmed, observed, provenanceComplete,
+    replayChecked, supportReview, transactionCommitted, unvalidatedTransaction,
+    ReplayGrade.requiresReplayEvidenceChecks]
+
+theorem partial_replay_promotion_request_blocks_packet_promotion
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = true ->
+      review.jobOutputsArtifact = true ->
+        review.transactionReferencedByArtifact = true ->
+          review.certificateReferencedByArtifact = true ->
+            review.certificateReferencesTransaction = true ->
+              review.certificateReferencesArtifact = true ->
+                review.sourceRefsCovered = true ->
+                  review.auditChainComplete = true ->
+                    review.replayGradeMatchesArtifact = true ->
+                      review.replayGrade = ReplayGrade.partialReplay ->
+                        review.promotionRequested = true ->
+                          ArtifactReplayPacketRouteFor review =
+                            ArtifactReplayPacketRoute.blockIncompleteReplayPromotion := by
+  intro parentMatch jobOutput transactionRef certificateRef certTransaction
+    certArtifact sourceCovered auditComplete gradeMatches partialReplay
+    promotionRequested
+  unfold ArtifactReplayPacketRouteFor
+  simp [parentMatch, jobOutput, transactionRef, certificateRef,
+    certTransaction, certArtifact, sourceCovered, auditComplete, gradeMatches,
+    partialReplay, promotionRequested,
+    ReplayGrade.requiresReplayEvidenceChecks]
+
+theorem partial_replay_record_only_blocks_promotion_without_rejecting_record
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = true ->
+      review.jobOutputsArtifact = true ->
+        review.transactionReferencedByArtifact = true ->
+          review.certificateReferencedByArtifact = true ->
+            review.certificateReferencesTransaction = true ->
+              review.certificateReferencesArtifact = true ->
+                review.sourceRefsCovered = true ->
+                  review.auditChainComplete = true ->
+                    review.replayGradeMatchesArtifact = true ->
+                      review.replayGrade = ReplayGrade.partialReplay ->
+                        review.supportReviewRequested = false ->
+                          review.promotionRequested = false ->
+                            review.certificateActive = true ->
+                              review.jobReusableLifecycle = true ->
+                                review.nonClaimsPresent = true ->
+                                  ArtifactReplayPacketRouteFor review =
+                                    ArtifactReplayPacketRoute.recordOnlyBlocksPromotion := by
+  intro parentMatch jobOutput transactionRef certificateRef certTransaction
+    certArtifact sourceCovered auditComplete gradeMatches partialReplay
+    noSupportReview noPromotion activeCertificate reusableLifecycle nonClaims
+  unfold ArtifactReplayPacketRouteFor
+  simp [parentMatch, jobOutput, transactionRef, certificateRef,
+    certTransaction, certArtifact, sourceCovered, auditComplete, gradeMatches,
+    partialReplay, noSupportReview, noPromotion, activeCertificate,
+    reusableLifecycle, nonClaims, ReplayGrade.requiresReplayEvidenceChecks]
+
+theorem complete_byte_exact_replay_packet_admits_bounded_review
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = true ->
+      review.jobOutputsArtifact = true ->
+        review.transactionReferencedByArtifact = true ->
+          review.certificateReferencedByArtifact = true ->
+            review.certificateReferencesTransaction = true ->
+              review.certificateReferencesArtifact = true ->
+                review.sourceRefsCovered = true ->
+                  review.auditChainComplete = true ->
+                    review.replayGradeMatchesArtifact = true ->
+                      review.replayGrade = ReplayGrade.byteExact ->
+                        review.environmentConfirmed = true ->
+                          review.observedArtifactPresent = true ->
+                            review.provenanceComplete = true ->
+                              review.replayCheckedInAudit = true ->
+                                review.supportReviewRequested = false ->
+                                  review.promotionRequested = false ->
+                                    review.certificateActive = true ->
+                                      review.jobReusableLifecycle = true ->
+                                        review.nonClaimsPresent = true ->
+                                          ArtifactReplayPacketRouteFor review =
+                                            ArtifactReplayPacketRoute.admitBoundedReview := by
+  intro parentMatch jobOutput transactionRef certificateRef certTransaction
+    certArtifact sourceCovered auditComplete gradeMatches byteExact
+    environmentConfirmed observed provenanceComplete replayChecked noSupportReview
+    noPromotion activeCertificate reusableLifecycle nonClaims
+  unfold ArtifactReplayPacketRouteFor
+  simp [parentMatch, jobOutput, transactionRef, certificateRef,
+    certTransaction, certArtifact, sourceCovered, auditComplete, gradeMatches,
+    byteExact, environmentConfirmed, observed, provenanceComplete,
+    replayChecked, noSupportReview, noPromotion, activeCertificate,
+    reusableLifecycle, nonClaims, ReplayGrade.requiresReplayEvidenceChecks]
+
+theorem complete_support_review_packet_admits_bounded_review
+    {review : ArtifactReplayPacketReview} :
+    review.parentJobMatches = true ->
+      review.jobOutputsArtifact = true ->
+        review.transactionReferencedByArtifact = true ->
+          review.certificateReferencedByArtifact = true ->
+            review.certificateReferencesTransaction = true ->
+              review.certificateReferencesArtifact = true ->
+                review.sourceRefsCovered = true ->
+                  review.auditChainComplete = true ->
+                    review.replayGradeMatchesArtifact = true ->
+                      review.replayGrade = ReplayGrade.byteExact ->
+                        review.environmentConfirmed = true ->
+                          review.observedArtifactPresent = true ->
+                            review.provenanceComplete = true ->
+                              review.replayCheckedInAudit = true ->
+                                review.supportReviewRequested = true ->
+                                  review.transactionCommitted = true ->
+                                    review.transactionReplayValidated = true ->
+                                      review.certificateVerified = true ->
+                                        review.certificateActive = true ->
+                                          review.jobReusableLifecycle = true ->
+                                            review.nonClaimsPresent = true ->
+                                              ArtifactReplayPacketRouteFor review =
+                                                ArtifactReplayPacketRoute.admitBoundedReview := by
+  intro parentMatch jobOutput transactionRef certificateRef certTransaction
+    certArtifact sourceCovered auditComplete gradeMatches byteExact
+    environmentConfirmed observed provenanceComplete replayChecked supportReview
+    transactionCommitted transactionValidated certificateVerified
+    activeCertificate reusableLifecycle nonClaims
+  unfold ArtifactReplayPacketRouteFor
+  simp [parentMatch, jobOutput, transactionRef, certificateRef,
+    certTransaction, certArtifact, sourceCovered, auditComplete, gradeMatches,
+    byteExact, environmentConfirmed, observed, provenanceComplete,
+    replayChecked, supportReview, transactionCommitted, transactionValidated,
+    certificateVerified, activeCertificate, reusableLifecycle, nonClaims,
+    ReplayGrade.requiresReplayEvidenceChecks]
+
 end AsiStackProofs.ArtifactGraph

@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-02 - Add ArtifactGraph replay-packet proof bridge
+
+- Added a third Artifact Graph proof target,
+  `lean:artifacts.graph.replay_packet_bridge`, and expanded
+  `AsiStackProofs.ArtifactGraph` with finite replay-packet route theorems for
+  parent-job mismatch, missing audit chain, byte-exact missing observation,
+  stale certificates, support-review transaction validation, partial-replay
+  promotion blocking, record-only partial replay, and complete bounded-review
+  admission.
+- Updated the Artifact Graph chapter, outline, proof manifest, proof triage,
+  Appendix E, proof-depth classification, proof artifact audit, proof adequacy
+  review, and v1.x roadmap burn-down so the synthetic Python replay harness
+  and finite Lean replay-packet bridge are tracked together.
+- `cd lean && lake build`, `python3 scripts/validate_proof_depth.py --write`,
+  `python3 scripts/validate_proof_readiness.py`,
+  `python3 scripts/validate_proof_artifact_audit.py --write`, and
+  `python3 scripts/sync_proof_manifest.py --check` pass locally for the new
+  proof surface.
+- No deployed artifact graph service, real replay engine, audit reconstruction
+  service, provenance-completeness service, produced-artifact trace,
+  source-interpretation result, chapter-core support-state promotion, runtime
+  result, benchmark result, reader release, or external review is claimed.
+
 ## 2026-07-02 - Add companion-note routing for dense Part III chapters
 
 - Added drafting companion notes for Planning, Routing Heads, Personal Compute

@@ -115,7 +115,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 817 theorem declarations, 157 direct/projection-style, 656 derived/decomposed, 4 unknown/mixed, and 102 safety-critical theorem declarations after the IntentContracts and Replacement lifecycle/admission proof pass. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 826 theorem declarations, 157 direct/projection-style, 665 derived/decomposed, 4 unknown/mixed, and 102 safety-critical theorem declarations after the ArtifactGraph replay-packet bridge pass. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and explicit Corben voice-pass slots. |
@@ -148,8 +148,8 @@ roadmap. The findings with teeth are:
   vague after an artifact closes a closure class. Future row edits must either
   name the closing artifact, name the remaining closure class, or record a
   dated blocker.
-- `python3 scripts/validate_proof_depth.py` now classifies 817 theorem
-  declarations, including 656 derived/decomposed declarations and 157 direct
+- `python3 scripts/validate_proof_depth.py` now classifies 826 theorem
+  declarations, including 665 derived/decomposed declarations and 157 direct
   or projection-style declarations. The counts are stronger than the older
   roadmap snapshot, but the direction remains the same: do not chase theorem
   count; chase executable-model bridges, transition properties, and negative
@@ -610,7 +610,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 817 theorem declarations, 656
+- The generated proof-depth report records 826 theorem declarations, 665
   derived/decomposed declarations, 4 unknown/mixed declarations, 102
   safety-critical declarations, and 10 remaining safety-critical
   direct/projection declarations.
@@ -632,7 +632,7 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 817 theorem declarations, 656
+- `docs/proof_depth_classification.md` records 826 theorem declarations, 665
   derived/decomposed theorem declarations, 157 direct/projection-style theorem
   declarations, and 4 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
@@ -874,15 +874,20 @@ Current proof status:
   quarantine routing, rollback execution, MoECOT replay, current-readiness
   checks, and benchmark quality as blockers.
 - `AsiStackProofs.ArtifactGraph` now has finite provenance, replay-grade,
-  claim/test-link, stale-certificate, promotion, non-claim, and
-  artifact-admission route coverage. Its derived theorems reject modeled
-  artifacts missing parent/source/context/transaction/certificate/tool/claim/
-  test/audit/replay/evidence/non-claim fields, insufficient replay grade, stale
-  certificates, and blocked promotion, while admitting complete non-promoted or
-  approved-promoted records. This reduces the projection-only surface for
-  Artifact Graphs while leaving deployed artifact graph service behavior, real
-  replay, audit reconstruction, provenance completeness checking, and imported
-  produced-artifact traces as blockers.
+  claim/test-link, stale-certificate, promotion, non-claim,
+  artifact-admission route, and replay-packet bridge coverage. Its derived
+  theorems reject modeled artifacts missing parent/source/context/transaction/
+  certificate/tool/claim/test/audit/replay/evidence/non-claim fields,
+  insufficient replay grade, stale certificates, and blocked promotion, while
+  admitting complete non-promoted or approved-promoted records. The new
+  replay-packet bridge mirrors the synthetic harness shape for parent-job
+  mismatches, missing audit chains, byte-exact missing-observation blockers,
+  support-review transaction validation, partial-replay promotion blocking,
+  record-only partial replay, and complete bounded-review admission. This
+  reduces the projection-only surface for Artifact Graphs while leaving
+  deployed artifact graph service behavior, real replay, audit reconstruction,
+  provenance completeness checking, and imported produced-artifact traces as
+  blockers.
 - The latest proof-coverage increment closed the named finite-record proof
   gap for `AsiStackProofs.IntentContracts` and `AsiStackProofs.Replacement`.
   Intent now has admission-route coverage for hidden overrides, unresolved
@@ -1101,7 +1106,7 @@ Per-chapter burn-down:
 | `claim-ledgers-and-belief-revision` | Belief-revision lineage was lightly anchored. | Partially executed: added source-noted AGM belief revision, Doyle-style truth maintenance, and de Kleer-style assumption-based truth-maintenance comparators, alongside the existing ALCE, Self-RAG, and CheckList sources; live and curated reader prose now position claim-ledger revision as a bridge from formal belief change and maintained reasons to publication support states, surface synchronization, contradiction links, revision history, and release gates. Remaining work: implement open-domain claim extraction, contradiction-quality tests, semantic-equivalence checks, assumption-context fixtures, and a deployed or replayed belief-revision engine before stronger evidence claims. |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-carrying, autoformalization, LLM-judge, debate, and historical "Spinoza" naming needed outside-reader grounding. | Partially executed: added source-noted autoformalization, AI safety debate, and LLM-as-judge comparators alongside existing proof-carrying-code, Lean, and contestable-AI sources; live and curated reader prose now separate proof artifacts, informal-to-formal interpretation risk, adversarial review, model-graded review, judge bias/calibration, contestability, and no-promotion boundaries, and the visible chapter title already uses `Proof-Carrying Claims and Adversarial Review` rather than foregrounding `Spinoza`. Remaining work: implement real verifier-output tier assignment, semantic-equivalence checks, LLM-judge bias controls, debate/reviewer-independence fixtures, adversarial-probe-quality tests, and reproducible dossier/verdict-quality evidence before stronger claims. |
 | `labor-os-and-typed-jobs` | Durable-execution/workflow-orchestration anchoring and planned tests need completion. | Partially executed: added source-noted external comparators for Temporal durable execution, Airflow DAG orchestration, BPMN process notation, and Kubernetes Jobs batch lifecycle; live/reader chapters and outline now distinguish durable workflow completion, DAG task runs, process notation, and batch-job terminal states from ASI Stack evidence-ready typed jobs. Remaining work: implement the planned tool-permission enforcement, delivery-versus-evidence-ready, job-parentage trace, lifecycle-checker, approval-service, adapter-runner, completion-receipt, replay, deployed scheduler, and workflow-trace tests before claiming a working Labor OS runtime or stronger support state. |
-| `artifact-graphs-audit-logs-and-replay` | Provenance/replay proof coverage was narrow; finite route coverage is now broader than the deployed evidence. | Partially executed: added provenance closure, replay-grade sufficiency, claim/test-link integrity, stale-certificate, non-claim, blocked-promotion, and complete-admission route theorems. Remaining work: pursue real produced-artifact traces, deployed artifact graph service behavior, real replay, audit reconstruction, and provenance-completeness checking before stronger claims. |
+| `artifact-graphs-audit-logs-and-replay` | Provenance/replay proof coverage was narrow; finite route and replay-packet coverage is now broader than the deployed evidence. | Partially executed: added provenance closure, replay-grade sufficiency, claim/test-link integrity, stale-certificate, non-claim, blocked-promotion, complete-admission route theorems, and a replay-packet bridge for parent-job mismatch, missing audit chain, byte-exact missing observation, stale certificate, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and complete bounded-review cases. Remaining work: pursue real produced-artifact traces, deployed artifact graph service behavior, real replay, audit reconstruction, and provenance-completeness checking before stronger claims. |
 | `runtime-adapters-tool-permissions-and-human-approval` | Safety-critical action boundary had too few adversarial proof scenarios relative to its role as the external-effect boundary. | Partially executed: added a finite runtime-adapter route model for scoped approval, effect-lease scope/expiry/sandbox, parent and lease authority ceilings, confused-deputy rejection, sandbox-escape rejection, rollback-handle requests, effect-receipt/audit/non-claim blockers, and complete low-impact dispatch; expanded the runtime-adapter permission harness to 2 valid and 7 expected-invalid fixtures with harness-only authority probes for ambient-authority confused-deputy attempts and revoked authority receipts. Remaining work: executable/live adapter harness, real sandbox isolation, approval-service behavior, secret-handle safety, rollback execution, deployed revocation propagation, live effect-receipt validation, and broader harness parity. |
 | `procedural-memory-and-cognitive-loop-closure` | Narrow proof coverage and external tool-synthesis/skill-library anchoring are partially addressed; deployed loop evidence remains missing. | Partially executed: added promotion-gating, regression-preservation, lifecycle-route, and synthetic-fixture bridge theorems for routable, quarantined, and retired procedure states; added source-noted MemGPT, Toolformer, Voyager, and DreamCoder comparators for memory tiers, learned API/tool use, executable-code skill libraries, and program-synthesis library learning. Remaining work: build deployed or replayed loop-detection, tool-synthesis, generated-tool correctness, routing-monitor, regression-quality, and retirement-automation evidence before stronger claims. |
 | `routing-heads-and-specialist-cores` | Strong chapter with remaining planned tests. | Partially executed: the synthetic routing decision lease harness now checks 3 valid and 7 expected-invalid route packets, including an authority-widening grant rejected because `granted_authority_subset` exceeds the selected specialist registry envelope. Remaining work: real routing tasks, learned-router or policy-router code, route-quality measurement, imported MoECOT replay packets, orchestration benchmarks, and deployed authority enforcement; avoid turning route-quality fixtures into learned-router claims. |

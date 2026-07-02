@@ -1604,6 +1604,7 @@ Draft deliverables:
 - Implemented Lean predicate: a produced artifact record must expose parent-job and source/context references.
 - Implemented Lean predicate: missing required provenance blocks promoted-claim support.
 - Implemented Lean route envelope: artifact-admission review now covers missing artifact, parent/source/context/transaction/certificate/tool/claim/test/audit/replay/evidence/non-claim blockers, replay-grade sufficiency, stale-certificate blocking, blocked promotion, complete non-promoted admission, and approved-promoted admission over modeled records only.
+- Implemented Lean replay-packet bridge: cross-record artifact replay packets now model parent-job alignment, job-output coverage, context-transaction and certificate links, source coverage, audit-chain completeness, replay-grade alignment, byte-exact observation requirements, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission. This mirrors the synthetic fixture harness shape; it is not a deployed replay engine.
 - Implemented synthetic Codex test: `python3 scripts/validate_artifact_graph_replay.py` checks artifact parentage, typed job outputs, context transaction refs, semantic certificate refs, source-ref coverage, replay grade, observed artifacts, audit reconstruction, stale-certificate blocking, and promotion-blocking boundaries. It remains synthetic record-gate evidence only, not a deployed artifact graph, replay engine, audit-reconstruction service, or source-interpretation claim.
 - Implemented synthetic Codex test: Audit reconstruction test via `python3 scripts/validate_artifact_graph_replay.py`; deployed audit reconstruction remains open.
 - Implemented synthetic Codex test: Replay metadata completeness test via `python3 scripts/validate_artifact_graph_replay.py`; deployed replay engine remains open.
@@ -1614,6 +1615,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | implemented |
 | `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | implemented |
+| `lean:artifacts.graph.replay_packet_bridge` | `AsiStackProofs.ArtifactGraph` | A modeled artifact replay packet routes cross-record mismatches, missing observation, stale certificates, support-review transaction gaps, and partial-replay promotion attempts to explicit outcomes while admitting complete bounded-review packets. | implemented |
 
 ### Runtime Adapters, Tool Permissions, and Human Approval
 

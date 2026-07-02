@@ -153,6 +153,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Audit reconstruction test | implemented | passing via synthetic artifact graph replay harness and bounded provenance/route negative cases; no deployed audit-reconstruction claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Replay metadata completeness test | implemented | passing via synthetic artifact graph replay harness and bounded provenance/route negative cases; no deployed replay-engine claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact graph route proof | implemented | passing via Lean route proof for missing artifact, parent/source/context transaction/semantic certificate/tool/claim/test/audit/replay/evidence/non-claim fields, stale certificate blocking, blocked promotion, and complete modeled admission; no deployed artifact graph claim |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact replay packet bridge proof | implemented | passing via Lean replay-packet bridge for parent-job alignment, job-output coverage, transaction and certificate links, source coverage, audit-chain completeness, byte-exact observation, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission; no deployed replay-engine claim |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Adapter permission test | implemented | passes via synthetic runtime adapter permission harness |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Approval gate enforcement test | implemented | passes via synthetic runtime adapter permission harness |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Rollback handle capture test | implemented | passes via synthetic runtime adapter permission harness; no real rollback execution claim |
@@ -425,16 +426,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 147 |
+| Proof targets covered by triage | 148 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 147 |
+| implemented | 148 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 147 |
+| implemented | formal-invariant | lean-candidate | 148 |

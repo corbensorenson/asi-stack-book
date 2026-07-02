@@ -4982,6 +4982,11 @@
               "name": "Artifact graph route proof",
               "implementation_status": "implemented",
               "result_status": "passing via Lean route proof for missing artifact, parent/source/context transaction/semantic certificate/tool/claim/test/audit/replay/evidence/non-claim fields, stale certificate blocking, blocked promotion, and complete modeled admission; no deployed artifact graph claim"
+            },
+            {
+              "name": "Artifact replay packet bridge proof",
+              "implementation_status": "implemented",
+              "result_status": "passing via Lean replay-packet bridge for parent-job alignment, job-output coverage, transaction and certificate links, source coverage, audit-chain completeness, byte-exact observation, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission; no deployed replay-engine claim"
             }
           ],
           "lean_module": "AsiStackProofs.ArtifactGraph",
@@ -4996,6 +5001,12 @@
               "tag": "lean:artifacts.graph.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactGraph",
               "target": "An artifact with missing required provenance cannot support a promoted claim.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifacts.graph.replay_packet_bridge",
+              "module": "AsiStackProofs.ArtifactGraph",
+              "target": "A modeled artifact replay packet routes cross-record mismatches, missing observation, stale certificates, support-review transaction gaps, and partial-replay promotion attempts to explicit outcomes while admitting complete bounded-review packets.",
               "status": "implemented"
             }
           ]

@@ -73,9 +73,10 @@ fixture bridge.
 `AsiStackProofs.Planning` now has a third target and seventeen
 derived/decomposed theorem declarations after the plan-graph admission route
 increment.
-`AsiStackProofs.ArtifactGraph` now has twenty-two derived/decomposed theorem
+`AsiStackProofs.ArtifactGraph` now has thirty-one derived/decomposed theorem
 declarations after the provenance, replay-grade, claim/test-link, stale
-certificate, promotion, and artifact-admission route increment.
+certificate, promotion, artifact-admission route, and replay-packet bridge
+increment.
 `AsiStackProofs.ProceduralMemory` now has seventeen derived/decomposed theorem
 declarations after the lifecycle-route and synthetic-fixture bridge increment.
 `AsiStackProofs.CompactGenerativeSystems` now has a fourth target and a finite
@@ -133,7 +134,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `spinoza-verification-and-proof-carrying-claims` | 2 | useful but too narrow | Proof-carrying claim record, negative-case, and folded tribunal lifecycle-route Lean envelopes added; still add verifier-output, interpretation-mapping, citation/procedure, mismatch, failed-attempt, reviewer-quality, and deployed-review tests. |
 | `unified-adaptive-tribunal-and-adversarial-review` | 2 | needs richer state-machine or review semantics | Folded tribunal lifecycle-route envelope added; still add timing, multi-reviewer behavior, reviewer-quality, adversarial-probe quality, verdict-correctness, appeal/review traces, action execution, and deployed tribunal states before adequacy. |
 | `labor-os-and-typed-jobs` | 3 | useful but too narrow | Job-execution route envelope added; still add lifecycle checker, permission harness, approval-service integration, adapter runner, scheduler behavior, replay, and deployed job-runner tests before stronger claims. |
-| `artifact-graphs-audit-logs-and-replay` | 2 | useful but too narrow | Synthetic artifact-graph replay harness plus finite provenance, replay-grade, claim/test-link, stale-certificate, promotion, non-claim, and artifact-admission route envelopes added; still add deployed artifact graph service, real replay engine, audit reconstruction service, provenance completeness checker, and imported produced-artifact traces before stronger claims. |
+| `artifact-graphs-audit-logs-and-replay` | 3 | useful but too narrow | Synthetic artifact-graph replay harness plus finite provenance, replay-grade, claim/test-link, stale-certificate, promotion, non-claim, artifact-admission route, and replay-packet bridge envelopes added; still add deployed artifact graph service, real replay engine, audit reconstruction service, provenance completeness checker, and imported produced-artifact traces before stronger claims. |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | useful but too narrow | Synthetic runtime-adapter permission harness and finite permission/approval negative-case Lean envelope added; still add deployed sandbox, approval-service, secret-handle, rollback-execution, and effect-receipt tests. |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | useful but too narrow | Synthetic procedural-memory loop harness plus finite generated-tool, regression-promotion, lifecycle-route, and fixture-bridge Lean envelopes added; still add deployed loop detector, tool synthesizer, generated-tool correctness checks, regression-quality benchmarks, route monitor, and retirement automation before stronger claims. |
 | `routing-heads-and-specialist-cores` | 3 | useful but too narrow | Synthetic routing decision lease harness plus finite route/MoECOT source-boundary and routing-decision lifecycle Lean envelopes added; still add learned-router, route-quality, deployed authority-enforcement, runtime route execution, MoECOT replay, orchestration benchmark, and specialist-quality tests before stronger claims. |
@@ -575,14 +576,18 @@ byte-exact/semantic replay requirements, partial-replay promotion blocking,
 stale-certificate blocking, and support-state-review gates over
 replay-validated transactions.
 
-`AsiStackProofs.ArtifactGraph` now also includes finite provenance, replay-grade,
-claim/test-link, stale-certificate, promotion, non-claim, and artifact-admission
-route coverage. The new theorem set shows that a modeled produced artifact
-missing parent, source, context, context-transaction, semantic-certificate, tool,
-claim, test, audit, replay, evidence-gate, replay-limit, or non-claim fields is
-routed to the matching blocker; insufficient replay grade, stale certificates,
-and blocked promotion are also rejected; complete non-promoted and
-approved-promoted modeled records are admitted.
+`AsiStackProofs.ArtifactGraph` now also includes finite provenance,
+replay-grade, claim/test-link, stale-certificate, promotion, non-claim,
+artifact-admission route, and replay-packet bridge coverage. The new theorem
+set shows that a modeled produced artifact missing parent, source, context,
+context-transaction, semantic-certificate, tool, claim, test, audit, replay,
+evidence-gate, replay-limit, or non-claim fields is routed to the matching
+blocker; insufficient replay grade, stale certificates, and blocked promotion
+are also rejected. The replay-packet bridge now mirrors the synthetic harness
+shape for parent-job mismatches, missing audit chains, byte-exact missing
+observed artifacts, stale certificates, support-review transaction validation,
+partial-replay promotion blocking, record-only partial replay, and complete
+bounded-review admission.
 
 This keeps `artifact-graphs-audit-logs-and-replay` in the `useful but too
 narrow` class. The Lean envelope and harness are materially better than pure

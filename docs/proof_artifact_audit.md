@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 147 |
-| Manifest status counts | {"implemented": 147} |
-| Triage class counts | {"formal-invariant": 147} |
+| Proof targets audited | 148 |
+| Manifest status counts | {"implemented": 148} |
+| Triage class counts | {"formal-invariant": 148} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -33,7 +33,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 |---|---:|---:|---:|---:|
 | `lean/AsiStackProofs/Alignment.lean` | 3 | 23 | 10 | 5 |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | 3 | 19 | 6 | 3 |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | 2 | 24 | 6 | 3 |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | 3 | 33 | 8 | 4 |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 16 | 7 | 7 |
 | `lean/AsiStackProofs/Authority.lean` | 3 | 28 | 8 | 5 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 2 | 5 | 3 | 3 |
@@ -90,7 +90,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Chapter ID | Tags present | Limitation references | Missing tags | Missing limitation references |
 |---|---:|---:|---:|---:|
-| `artifact-graphs-audit-logs-and-replay` | 2 | 2 | 0 | 0 |
+| `artifact-graphs-audit-logs-and-replay` | 3 | 3 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 2 | 2 | 0 | 0 |
@@ -215,6 +215,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:jobs.lifecycle.execution_route_envelope` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifacts.graph.operational_invariant` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifacts.graph.failure_blocks_promotion` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:artifacts.graph.replay_packet_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.operational_invariant` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.failure_blocks_promotion` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.operational_invariant` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
