@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 175 |
+| Proof targets in manifest | 176 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 899 |
-| Direct/projection-style theorem declarations | 175 |
-| Derived/decomposed theorem declarations | 720 |
+| Theorem declarations classified | 911 |
+| Direct/projection-style theorem declarations | 176 |
+| Derived/decomposed theorem declarations | 731 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -102,7 +102,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 21 | 1 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 4 | 15 | 2 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 5 | 27 | 3 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 4 | 13 | 3 | 10 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | virtual-context-abi | 3 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -951,6 +951,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobs.lean` | `delivered_verified_output_is_evidence_ready` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `dispatch_with_scheduler_slot_runs_job` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `dispatch_without_scheduler_slot_routes_to_scheduler` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_blocked_without_residual_owner_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_evidence_ready_missing_completion_receipt_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_evidence_ready_missing_replay_ref_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_expired_lease_blocked_trace_accepted` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_expired_lease_dispatch_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_missing_non_claim_boundary_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_retry_authority_widening_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_retry_complete_trace_accepted` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_retry_permission_overreach_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_retry_without_idempotency_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TypedJobs.lean` | `durable_support_promotion_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `invalid_lifecycle_blocks_job_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `job_requiring_approval_cannot_run_without_approval` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `known_job_residual_records_residual` | derived_or_decomposed | no | uses simp, unfold |
@@ -960,6 +971,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobs.lean` | `observed_failure_records_job_failure` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `recorded_valid_job_transition_uses_declared_lifecycle_relation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobs.lean` | `typed_job_delivery_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobs.lean` | `typed_job_durable_lifecycle_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobs.lean` | `unlocked_contract_requests_job_contract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_routes_to_preservation` | derived_or_decomposed | yes | uses simp, unfold |

@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Add Typed job durable lifecycle probe
+
+- Added `python3 scripts/validate_typed_job_durable_lifecycle_probe.py`,
+  `docs/typed_job_durable_lifecycle_probe.md`, and
+  `experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json` for
+  a deterministic synthetic durable lifecycle fixture with two valid synthetic
+  durable lifecycle traces and nine expected-invalid controls covering retry
+  without idempotency, authority widening on retry, permission overreach after
+  resume, expired-lease dispatch, missing completion receipt, missing replay
+  ref, missing residual owner, missing non-claim boundary, and fixture-driven
+  support-state promotion.
+- Added `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` in
+  `AsiStackProofs.TypedJobs`, with finite Lean route theorems for retry,
+  lease, receipt, replay, residual-owner, non-claim, and no-support-effect
+  boundaries.
+- Updated the Labor OS live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does not
+  execute a deployed scheduler, prove durable workflow recovery, prove
+  permission enforcement, prove approval-service behavior, prove replay
+  correctness, promote the chapter support state, or create a support-state
+  transition.
+
 ## 2026-07-02 - Add Planning runtime-replan delta audit
 
 - Added `python3 scripts/validate_planning_runtime_replan_delta.py`,
@@ -21,8 +43,8 @@
   planner, runtime scheduler, decomposition-quality result, route-quality
   result, selected-tier-adequacy result, live-feedback result,
   evidence-transition, or chapter-core promotion claim.
-- Current proof-depth snapshot: 175 proof targets, 54 Lean modules, 899 theorem
-  declarations, 720 derived/decomposed, 175 direct/projection, 4 unknown/mixed,
+- Current proof-depth snapshot: 176 proof targets, 54 Lean modules, 911 theorem
+  declarations, 731 derived/decomposed, 176 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add substrate adoption trace

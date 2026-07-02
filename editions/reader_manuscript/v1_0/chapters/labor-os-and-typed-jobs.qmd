@@ -294,6 +294,18 @@ approval bypass, permission overreach, delivered output laundered as
 evidence-ready, missing artifacts, missing audit events, and support-state
 promotion from the fixture. This is not a deployed Labor OS result.
 
+The typed job durable lifecycle probe adds a second bounded slice. It checks
+two synthetic durable lifecycle traces: one retry that resumes under the same
+parent contract, idempotency key, authority envelope, permission basis, active
+lease, completion receipt, artifact references, audit references, replay
+reference, and non-claim boundary, and one expired-lease path that blocks
+dispatch and assigns a residual owner instead of pretending the job ran. It
+rejects nine bad paths, including retry without idempotency, authority
+widening on retry, permission overreach after resume, expired-lease dispatch,
+missing completion receipt, missing replay reference, missing residual owner,
+missing non-claim boundary, and support-state promotion from the fixture.
+This is not a deployed Labor OS result either.
+
 ## Beyond the State of the Art
 
 The mature endpoint is an operating system for bounded cognitive work.
@@ -328,11 +340,12 @@ Labor OS has been deployed.
 
 Current evidence consists of source synthesis, source-note mappings, a public
 typed-job schema and fixture, finite Lean predicates, a synthetic
-plan-execution contract harness, and the typed-job delivery fixture described
-above. Those artifacts support the shape of the execution boundary. They do
+plan-execution contract harness, the typed-job delivery fixture, and the typed
+job durable lifecycle probe described above. Those artifacts support the shape
+of the execution boundary. They do
 not establish scheduler correctness, permission enforcement, approval-service
-behavior, adapter safety, runtime isolation, replay correctness, benchmark
-performance, security behavior, Temporal workflow behavior, Airflow DAG
+behavior, adapter safety, durable workflow recovery, runtime isolation, replay
+correctness, benchmark performance, security behavior, Temporal workflow behavior, Airflow DAG
 behavior, BPMN engine behavior, Kubernetes Job behavior, Talos runtime
 behavior, or MoECOT runtime reproduction.
 

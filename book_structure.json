@@ -5043,6 +5043,11 @@
               "name": "Typed job delivery and evidence-readiness probe",
               "implementation_status": "implemented",
               "result_status": "passes via deterministic synthetic typed-job delivery fixture at experiments/typed_job_delivery/results/2026-07-02-local.json: two valid synthetic typed-job traces and seven expected-invalid controls; no deployed scheduler, permission-enforcement, approval-service, runtime-adapter, replay-correctness, support-state-promotion, or evidence-transition claim"
+            },
+            {
+              "name": "Typed job durable lifecycle probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic durable lifecycle fixture at experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json: two valid synthetic durable lifecycle traces and nine expected-invalid controls; no deployed scheduler, durable workflow recovery, permission-enforcement, approval-service, replay-correctness, support-state-promotion, or evidence-transition claim"
             }
           ],
           "lean_module": "AsiStackProofs.TypedJobs",
@@ -5069,6 +5074,12 @@
               "tag": "lean:jobs.lifecycle.delivery_probe_fixture_bridge",
               "module": "AsiStackProofs.TypedJobs",
               "target": "The deterministic synthetic typed-job delivery probe includes an evidence-ready delivery trace, a delivered-but-not-evidence-ready trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:jobs.lifecycle.durable_lifecycle_probe_bridge",
+              "module": "AsiStackProofs.TypedJobs",
+              "target": "The deterministic synthetic typed-job durable lifecycle probe includes a retry-resume trace, an expired-lease blocked trace, rejected negative controls, completion and replay boundaries, no support-state effect, and an explicit non-claim boundary.",
               "status": "implemented"
             }
           ]

@@ -355,4 +355,277 @@ theorem typed_job_delivery_probe_fixture_bridge
   intro valid
   exact valid
 
+inductive DurableLifecycleOutcome where
+  | acceptEvidenceReadyRetry
+  | acceptBlockedLeaseExpiry
+  | rejectMissingIdempotency
+  | rejectAuthorityWidening
+  | rejectPermissionOverreach
+  | rejectExpiredLeaseDispatch
+  | rejectMissingCompletionReceipt
+  | rejectMissingReplayRef
+  | rejectMissingResidualOwner
+  | rejectMissingNonClaimBoundary
+  | rejectSupportPromotion
+deriving DecidableEq, Repr
+
+structure DurableLifecycleReview where
+  retryAttempted : Bool
+  idempotencyKeyPresent : Bool
+  authorityUnchanged : Bool
+  permissionsSatisfied : Bool
+  leaseActive : Bool
+  dispatchRequested : Bool
+  outputDelivered : Bool
+  evidenceReadyRequested : Bool
+  completionReceiptPresent : Bool
+  replayRefPresent : Bool
+  blockedTrace : Bool
+  residualOwnerPresent : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def DurableLifecycleRouteFor
+    (review : DurableLifecycleReview) : DurableLifecycleOutcome :=
+  if review.supportStateEffectNone = false then
+    DurableLifecycleOutcome.rejectSupportPromotion
+  else if review.nonClaimBoundary = false then
+    DurableLifecycleOutcome.rejectMissingNonClaimBoundary
+  else if review.retryAttempted = true ∧
+      review.idempotencyKeyPresent = false then
+    DurableLifecycleOutcome.rejectMissingIdempotency
+  else if review.retryAttempted = true ∧
+      review.authorityUnchanged = false then
+    DurableLifecycleOutcome.rejectAuthorityWidening
+  else if review.permissionsSatisfied = false then
+    DurableLifecycleOutcome.rejectPermissionOverreach
+  else if review.dispatchRequested = true ∧ review.leaseActive = false then
+    DurableLifecycleOutcome.rejectExpiredLeaseDispatch
+  else if review.evidenceReadyRequested = true ∧
+      review.completionReceiptPresent = false then
+    DurableLifecycleOutcome.rejectMissingCompletionReceipt
+  else if review.evidenceReadyRequested = true ∧
+      review.replayRefPresent = false then
+    DurableLifecycleOutcome.rejectMissingReplayRef
+  else if review.blockedTrace = true ∧ review.residualOwnerPresent = false then
+    DurableLifecycleOutcome.rejectMissingResidualOwner
+  else if review.retryAttempted = true ∧
+      review.evidenceReadyRequested = true ∧
+      review.outputDelivered = true then
+    DurableLifecycleOutcome.acceptEvidenceReadyRetry
+  else if review.blockedTrace = true ∧
+      review.leaseActive = false ∧
+      review.residualOwnerPresent = true then
+    DurableLifecycleOutcome.acceptBlockedLeaseExpiry
+  else
+    DurableLifecycleOutcome.rejectMissingCompletionReceipt
+
+theorem durable_retry_without_idempotency_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = true ->
+    review.idempotencyKeyPresent = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectMissingIdempotency := by
+  intro supportStateNone nonClaim retry missingKey
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, retry, missingKey]
+
+theorem durable_retry_authority_widening_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = true ->
+    review.idempotencyKeyPresent = true ->
+    review.authorityUnchanged = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectAuthorityWidening := by
+  intro supportStateNone nonClaim retry keyPresent authorityWidened
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, retry, keyPresent, authorityWidened]
+
+theorem durable_retry_permission_overreach_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = true ->
+    review.idempotencyKeyPresent = true ->
+    review.authorityUnchanged = true ->
+    review.permissionsSatisfied = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectPermissionOverreach := by
+  intro supportStateNone nonClaim retry keyPresent authorityUnchanged
+    permissionsMissing
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, retry, keyPresent, authorityUnchanged,
+    permissionsMissing]
+
+theorem durable_expired_lease_dispatch_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = false ->
+    review.permissionsSatisfied = true ->
+    review.dispatchRequested = true ->
+    review.leaseActive = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectExpiredLeaseDispatch := by
+  intro supportStateNone nonClaim noRetry permissionsSatisfied
+    dispatchRequested leaseExpired
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, noRetry, permissionsSatisfied,
+    dispatchRequested, leaseExpired]
+
+theorem durable_evidence_ready_missing_completion_receipt_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = false ->
+    review.permissionsSatisfied = true ->
+    review.dispatchRequested = true ->
+    review.leaseActive = true ->
+    review.evidenceReadyRequested = true ->
+    review.completionReceiptPresent = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectMissingCompletionReceipt := by
+  intro supportStateNone nonClaim noRetry permissionsSatisfied
+    dispatchRequested leaseActive evidenceReady missingReceipt
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, noRetry, permissionsSatisfied,
+    dispatchRequested, leaseActive, evidenceReady, missingReceipt]
+
+theorem durable_evidence_ready_missing_replay_ref_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = false ->
+    review.permissionsSatisfied = true ->
+    review.dispatchRequested = true ->
+    review.leaseActive = true ->
+    review.evidenceReadyRequested = true ->
+    review.completionReceiptPresent = true ->
+    review.replayRefPresent = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectMissingReplayRef := by
+  intro supportStateNone nonClaim noRetry permissionsSatisfied
+    dispatchRequested leaseActive evidenceReady receiptPresent missingReplay
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, noRetry, permissionsSatisfied,
+    dispatchRequested, leaseActive, evidenceReady, receiptPresent,
+    missingReplay]
+
+theorem durable_blocked_without_residual_owner_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = false ->
+    review.permissionsSatisfied = true ->
+    review.dispatchRequested = false ->
+    review.evidenceReadyRequested = false ->
+    review.blockedTrace = true ->
+    review.residualOwnerPresent = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectMissingResidualOwner := by
+  intro supportStateNone nonClaim noRetry permissionsSatisfied
+    dispatchNotRequested notEvidenceReady blocked missingResidualOwner
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, noRetry, permissionsSatisfied,
+    dispatchNotRequested, notEvidenceReady, blocked, missingResidualOwner]
+
+theorem durable_missing_non_claim_boundary_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectMissingNonClaimBoundary := by
+  intro supportStateNone missingBoundary
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, missingBoundary]
+
+theorem durable_support_promotion_rejected
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = false ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.rejectSupportPromotion := by
+  intro supportPromotion
+  unfold DurableLifecycleRouteFor
+  simp [supportPromotion]
+
+theorem durable_retry_complete_trace_accepted
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = true ->
+    review.idempotencyKeyPresent = true ->
+    review.authorityUnchanged = true ->
+    review.permissionsSatisfied = true ->
+    review.dispatchRequested = true ->
+    review.leaseActive = true ->
+    review.evidenceReadyRequested = true ->
+    review.completionReceiptPresent = true ->
+    review.replayRefPresent = true ->
+    review.blockedTrace = false ->
+    review.outputDelivered = true ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.acceptEvidenceReadyRetry := by
+  intro supportStateNone nonClaim retry keyPresent authorityUnchanged
+    permissionsSatisfied dispatchRequested leaseActive evidenceReady
+    receiptPresent replayPresent notBlocked outputDelivered
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, retry, keyPresent, authorityUnchanged,
+    permissionsSatisfied, dispatchRequested, leaseActive, evidenceReady,
+    receiptPresent, replayPresent, notBlocked, outputDelivered]
+
+theorem durable_expired_lease_blocked_trace_accepted
+    {review : DurableLifecycleReview} :
+    review.supportStateEffectNone = true ->
+    review.nonClaimBoundary = true ->
+    review.retryAttempted = false ->
+    review.permissionsSatisfied = true ->
+    review.dispatchRequested = false ->
+    review.evidenceReadyRequested = false ->
+    review.blockedTrace = true ->
+    review.leaseActive = false ->
+    review.residualOwnerPresent = true ->
+    DurableLifecycleRouteFor review =
+      DurableLifecycleOutcome.acceptBlockedLeaseExpiry := by
+  intro supportStateNone nonClaim noRetry permissionsSatisfied
+    dispatchNotRequested notEvidenceReady blocked leaseExpired residualOwner
+  unfold DurableLifecycleRouteFor
+  simp [supportStateNone, nonClaim, noRetry, permissionsSatisfied,
+    dispatchNotRequested, notEvidenceReady, blocked, leaseExpired,
+    residualOwner]
+
+structure TypedJobDurableLifecycleProbeSummary where
+  retryResumeTracePresent : Bool
+  expiredLeaseBlockTracePresent : Bool
+  negativeControlsRejected : Bool
+  completionAndReplayBoundaries : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def TypedJobDurableLifecycleProbeSummaryValid
+    (summary : TypedJobDurableLifecycleProbeSummary) : Prop :=
+  summary.retryResumeTracePresent = true ∧
+    summary.expiredLeaseBlockTracePresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.completionAndReplayBoundaries = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem typed_job_durable_lifecycle_probe_fixture_bridge
+    {summary : TypedJobDurableLifecycleProbeSummary} :
+    TypedJobDurableLifecycleProbeSummaryValid summary ->
+      summary.retryResumeTracePresent = true ∧
+        summary.expiredLeaseBlockTracePresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.completionAndReplayBoundaries = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.TypedJobs
