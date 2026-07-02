@@ -1416,7 +1416,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `spinoza` | Read first for proof-carrying claims, tier discipline, verifier separation, and no-theorem-laundering boundaries. |
 | Supporting | `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos` | Mine after primary sources for obligation envelopes, verification-workspace limits, semantic traces, tribunal review, typed review artifacts, and execution consequences. |
-| External comparator | `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_contestable_ai_design_2022` | Use after source notes for proof-carrying-code, theorem-proving, and contestable-review positioning; do not treat comparators as local verifier, theorem-validity, tribunal-quality, or institutional-adequacy evidence. |
+| External comparator | `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` | Use after source notes for proof-carrying-code, theorem-proving, autoformalization, debate, LLM-as-judge, and contestable-review positioning; do not treat comparators as local verifier, theorem-validity, semantic-equivalence, debate-quality, judge-calibration, tribunal-quality, or institutional-adequacy evidence. |
 
 Draft arc:
 
@@ -1456,6 +1456,7 @@ Draft deliverables:
 - A proof-carrying-claim schema and tribunal-review schema with synthetic valid and expected-invalid fixtures for narrow formal passes, citation no-change, mismatch escalation, missing artifacts, failed verification, high-risk review, dissent, and prior-review laundering.
 - Exact Appendix C claim-source mappings for `spinoza-verification-and-proof-carrying-claims.core` across Spinoza, GenesisCode, Coherence Exchange, Verification Bandwidth, TreeLLM, UAT, and Talos; six local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
 - Folded-history preservation for `unified-adaptive-tribunal-and-adversarial-review.core` as a subclaim about bounded dossiers, reviewer roles, adversarial probes, dissent, verdict constraints, cycle caps, unchanged-evidence guards, and required actions.
+- Source-noted external comparator rows for proof-carrying code, Lean theorem proving, LLM autoformalization, AI safety debate, LLM-as-judge evaluation, and contestable-AI design, with the chapter framed as verification-route and review-record discipline rather than a local autoformalizer, debate system, LLM judge, or tribunal-quality result.
 - Implemented protocol validation: `proof_carrying_claim` and `tribunal_review_record` fixtures validate public record shape only.
 - Implemented Codex tests: proof-carrying claim synthetic harness and tribunal-review synthetic harness.
 - Implemented Lean follow-through: `AsiStackProofs.Tribunal` now includes a finite lifecycle route envelope for missing review, high-risk probe/independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review, without claiming reviewer quality, probe quality, verdict correctness, action enforcement, deployed tribunal behavior, or support-state promotion.

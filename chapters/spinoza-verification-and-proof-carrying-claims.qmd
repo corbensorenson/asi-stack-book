@@ -17,6 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Executed consolidation of `spinoza-verification-and-proof-carrying-claims` and `unified-adaptive-tribunal-and-adversarial-review`; the old tribunal slug is preserved by a static history page and the source chapter is archived for lineage."
+  - "Source-noted external comparators now position proof-carrying claims and adversarial review against proof-carrying code, Lean proof-assistant practice, LLM autoformalization, debate, LLM-as-judge evaluation, and contestable-AI design; this is lineage and positioning only, not local theorem-validity, semantic-equivalence, judge-quality, debate, or tribunal evidence."
   - "Source notes, schemas, synthetic proof-carrying-claim and tribunal-review harnesses, and finite Lean predicates plus bounded tribunal negative cases and route theorems for missing review, missing probes/independence, prior-review reuse without unchanged-evidence guard, unrecorded dissent, action verdicts without required-action/constraint records, missing evidence-transition records, and complete bounded review support record discipline only; they do not prove theorem validity, citation accuracy, semantic equivalence, reviewer independence, adversarial-probe quality, verdict correctness, deployed review behavior, runtime behavior, or whole-system epistemic correctness."
   - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
@@ -33,8 +34,8 @@ open_evidence_gaps:
 | Primary source records | `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos` |
-| Source loading state | passage-reviewed local raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`, `uat`, `talos`; connector/source-note mapped: `coherence_exchange` |
+| Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos`; external comparators: `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` |
+| Source loading state | passage-reviewed local raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`, `uat`, `talos`; connector/source-note mapped: `coherence_exchange`; source notes: `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` |
 | Test state | `proof_carrying_claim` and `tribunal_review_record` fixture validation are implemented; `python3 scripts/validate_proof_carrying_claims.py` and `python3 scripts/validate_tribunal_review.py` pass bounded synthetic record checks; `AsiStackProofs.ProofCarryingClaims` now includes finite record predicates plus negative-case theorems rejecting passed verifier records without artifact refs and negative verifier results that try to produce scoped updates; `AsiStackProofs.Tribunal` implements finite record predicates, bounded negative-case theorems, and a finite lifecycle route function for missing review, high-risk probe/independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review; theorem-validity, citation-accuracy, semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, runtime, and deployed-review tests remain unimplemented. |
 
 The executed merge combines two verification-event families:
@@ -126,10 +127,17 @@ tribunal can be rerun until it accepts unchanged evidence. If the record does
 not preserve those failures, review becomes a confidence-laundering machine.
 
 External comparators help position the boundary but do not prove it.
-Proof-carrying-code literature, Lean theorem-proving materials, and
-contestable-AI design work all illuminate adjacent parts of the problem. The
-ASI Stack uses them as comparators while asking a systems question: what record
-should exist before a claim receives stronger standing?
+Proof-carrying-code literature, Lean theorem-proving materials,
+autoformalization work, debate, LLM-as-judge evaluation, and contestable-AI
+design all illuminate adjacent parts of the problem. Proof-carrying code
+shows why evidence should travel with an artifact and remain scoped to a
+consumer policy. Lean grounds the proof-assistant vocabulary. Autoformalization
+sharpens the interpretation risk between prose and formal target. Debate and
+LLM-as-judge work show why scalable review needs judge limits, adversarial
+pressure, bias controls, and human-calibration records. Contestable-AI design
+grounds the challenge, appeal, audit, and dissent surface. The ASI Stack uses
+them as comparators while asking a systems question: what record should exist
+before a claim receives stronger standing?
 
 ## Core Claim
 
@@ -166,37 +174,36 @@ behavior.
 |---|---|---|---|
 | Proof-carrying claims | `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`, `coherence_exchange` | Proposer/verifier separation, tiered claims, proof/citation/procedure envelopes, obligation artifacts, downgrade behavior, verification-workspace limits, and possible semantic traces. | No open-domain autoformalizer, arbitrary theorem-validity result, citation validator, semantic-equivalence checker, or verifier-quality result exists here. |
 | Tribunal review | `uat`, `spinoza`, `talos`, `verification_bandwidth`, `coherence_exchange` | Retrieval-bounded dossiers, atomic proposition states, adversarial probes, reviewer roles, dissent, cycle caps, SME checkpoints, constraint effects, and action-linked review artifacts. | No multi-reviewer tribunal run, reviewer-independence audit, adversarial-probe-quality result, consensus-quality result, or verdict-correctness result exists here. |
-| External comparators | `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_contestable_ai_design_2022` | Position machine-checkable evidence, dependent-type proof practice, and contestable review surfaces. | Comparator status only; no local reproduction or support-state promotion. |
+| External comparators | `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` | Position machine-checkable evidence, dependent-type proof practice, informal-to-formal translation, adversarial debate, model-graded review, and contestable review surfaces. | Comparator status only; no local reproduction, autoformalizer, debate run, judge-calibration result, tribunal-quality result, or support-state promotion. |
 
 ## Mechanism
 
-The destination mechanism has four lanes.
-
-The first lane is verification selection. A claim or artifact enters from the
-claim ledger, planning layer, execution layer, or release gate. The system
-chooses a treatment: formal proof, citation dossier, executable procedure,
-replay log, benchmark artifact, tribunal review, downgrade, block, or
-escalation. The choice records risk, claim type, support-state effect, and
+The verification event begins with route selection. A claim or artifact enters
+from the claim ledger, planning layer, execution layer, or release gate. The
+system chooses a treatment: formal proof, citation dossier, executable
+procedure, replay log, benchmark artifact, tribunal review, downgrade, block,
+or escalation. The choice records risk, claim type, support-state effect, and
 consumer requirements.
 
-The second lane is proof-carrying or justification-carrying structure. A record
-names the target claim, required tier, interpretation mapping, justification
-artifact, verifier result, failed attempts, limitations, formal scope, source
-refs, semantic adequacy notes, residual route, and non-claims. A successful
-proof can support a narrow formal object without promoting a broader
-natural-language claim.
+The selected route then becomes proof-carrying or justification-carrying
+structure. A record names the target claim, required tier, interpretation
+mapping, justification artifact, verifier result, failed attempts,
+limitations, formal scope, source refs, semantic adequacy notes, residual
+route, and non-claims. A successful proof can support a narrow formal object
+without promoting a broader natural-language claim.
 
-The third lane is adversarial review. A tribunal-style record constructs a
-dossier, assigns role-separated reviewers, runs adversarial probes, preserves
-evidence-linked findings, records dissent, applies cycle caps, guards against
-unchanged-evidence laundering, and issues scoped verdicts with required actions
-or constraint effects.
+Contested, high-risk, or mismatched cases move into adversarial review. A
+tribunal-style record constructs a dossier, assigns role-separated reviewers,
+runs adversarial probes, preserves evidence-linked findings, records dissent,
+applies cycle caps, guards against unchanged-evidence laundering, and issues
+scoped verdicts with required actions or constraint effects.
 
-The fourth lane is ledger writeback. Results become explicit ledger effects:
-no change, bounded support review, downgrade, block, revise, accept within
-scope, dispatch blocker, authority narrowing, human sign-off, or residual
-work. Failed and mismatched attempts remain useful because they prevent the
-same overclaim from returning without new evidence or corrected mapping.
+Every result returns through ledger writeback. Results become explicit ledger
+effects: no change, bounded support review, downgrade, block, revise, accept
+within scope, dispatch blocker, authority narrowing, human sign-off, or
+residual work. Failed and mismatched attempts remain useful because they
+prevent the same overclaim from returning without new evidence or corrected
+mapping.
 
 Route refusal is part of the mechanism, not an exceptional afterthought. A
 claim can ask for a formal tier and receive only a citation dossier; a tribunal
@@ -446,10 +453,14 @@ deployed review behavior.
 | `talos` | Talos Protocol | labor_execution_os | Typed review artifacts, claim graphs, evidence sets, logs, replay, residual risk, and human adjudication pressure. | passage-reviewed local raw cache |
 | `ext_proof_carrying_code_1997` | Proof-Carrying Code | external_literature | Comparator for machine-checkable artifact evidence and host-side policy verification. | source note available |
 | `ext_lean4_theorem_proving` | Theorem Proving in Lean 4 | external_literature | Comparator for proof-term and dependent-type practice around formal artifacts. | source note available |
+| `ext_autoformalization_llms_2022` | Autoformalization with Large Language Models | autoformalization | Comparator for informal-to-formal translation and semantic-adequacy risks around proof targets. | source note available |
+| `ext_ai_safety_debate_2018` | AI safety via debate | adversarial_review | Comparator for adversarial agents plus human judge review when direct human judgment is difficult. | source note available |
+| `ext_llm_as_judge_mt_bench_2023` | Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena | model_evaluation | Comparator for model-graded evaluation, human-preference agreement, and judge bias limits. | source note available |
 | `ext_contestable_ai_design_2022` | Contestable AI design literature | external_literature | Comparator for challenge, review, appeal, dissent, and contestable decision surfaces. | source note available |
 
 No listed external source is local reproduction evidence. The records orient
-readers around proof-carrying code, theorem-proving practice, and contestable
+readers around proof-carrying code, theorem-proving practice,
+autoformalization, adversarial debate, model-graded review, and contestable
 review surfaces while preserving the claim-support boundary.
 
 ## Summary

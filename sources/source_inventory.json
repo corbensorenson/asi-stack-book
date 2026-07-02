@@ -1478,6 +1478,63 @@
     "citation_label": "Avigad et al., Theorem Proving in Lean 4"
   },
   {
+    "id": "ext_autoformalization_llms_2022",
+    "title": "Autoformalization with Large Language Models",
+    "priority": "external_literature",
+    "layer": "autoformalization",
+    "chapter_targets": [
+      "spinoza-verification-and-proof-carrying-claims",
+      "executable-specifications-and-lean-proof-envelope",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "https://arxiv.org/abs/2205.12615",
+    "notes": "External autoformalization comparator for translating natural-language mathematics into formal specifications and proofs, useful for positioning interpretation-mapping and semantic-adequacy risks in proof-carrying claims.",
+    "source_type": "arxiv",
+    "arxiv_id": "2205.12615",
+    "published": "2022-05-25",
+    "updated": "2022-05-25",
+    "citation_label": "Wu et al. (2022), Autoformalization with Large Language Models",
+    "doi": "10.48550/arXiv.2205.12615"
+  },
+  {
+    "id": "ext_ai_safety_debate_2018",
+    "title": "AI safety via debate",
+    "priority": "external_literature",
+    "layer": "adversarial_review",
+    "chapter_targets": [
+      "spinoza-verification-and-proof-carrying-claims",
+      "policy-optimization-and-learning-from-feedback",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "https://arxiv.org/abs/1805.00899",
+    "notes": "External debate comparator for using adversarial agents and a human judge to surface true/useful information when direct human judgment is difficult; useful for positioning tribunal review without treating debate as locally implemented or validated.",
+    "source_type": "arxiv",
+    "arxiv_id": "1805.00899",
+    "published": "2018-05-02",
+    "updated": "2018-10-22",
+    "citation_label": "Irving, Christiano, and Amodei (2018), AI safety via debate",
+    "doi": "10.48550/arXiv.1805.00899"
+  },
+  {
+    "id": "ext_llm_as_judge_mt_bench_2023",
+    "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+    "priority": "external_literature",
+    "layer": "model_evaluation",
+    "chapter_targets": [
+      "spinoza-verification-and-proof-carrying-claims",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "policy-optimization-and-learning-from-feedback"
+    ],
+    "url": "https://arxiv.org/abs/2306.05685",
+    "notes": "External LLM-as-judge comparator for model-graded evaluation, human-preference agreement, and judge bias limits such as position, verbosity, self-enhancement, and reasoning constraints.",
+    "source_type": "arxiv",
+    "arxiv_id": "2306.05685",
+    "published": "2023-06-09",
+    "updated": "2023-12-24",
+    "citation_label": "Zheng et al. (2023), Judging LLM-as-a-Judge",
+    "doi": "10.48550/arXiv.2306.05685"
+  },
+  {
     "id": "ext_dafny_2010",
     "title": "Dafny: An Automatic Program Verifier For Functional Correctness",
     "priority": "external_literature",

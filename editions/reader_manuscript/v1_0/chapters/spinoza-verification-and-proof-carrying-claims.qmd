@@ -70,9 +70,15 @@ points. Proof-Carrying Code pairs executable artifacts with machine-checkable
 evidence against a host policy. Lean gives the proof-assistant vocabulary for
 propositions, records, inductive types, tactics, and proof terms. Contestable
 AI design literature points to the need for challenge, appeal, audit, and
-review surfaces. Those references ground the vocabulary, but they do not make
-this repository a Proof-Carrying Code implementation, a complete theorem
-prover, or a validated institution.
+review surfaces. Autoformalization work shows why translating prose into a
+formal target is itself a risky step. Debate frames adversarial review as a
+way for competing systems to surface what a judge might miss. LLM-as-judge
+work shows that model graders can be useful while still carrying position,
+verbosity, self-enhancement, reasoning, and calibration limits. Those
+references ground the vocabulary, but they do not make this repository a
+Proof-Carrying Code implementation, a complete theorem prover, an
+autoformalizer, a debate system, an LLM-judge benchmark, or a validated
+institution.
 
 The hard boundary is interpretation. A proof can be valid and still not mean
 what the prose claim meant. A source can be real and still not support the
@@ -106,8 +112,8 @@ The live chapter core claim stays at `argument` support. The repository has
 schemas, synthetic fixtures, local harnesses, and finite Lean predicates over
 record fields. It does not have an open-domain verifier, proof generator,
 citation validator, semantic-equivalence checker, reviewer-independence audit,
-validated verdict-correctness result, runtime trace, or whole-system epistemic
-correctness result.
+LLM-judge calibration result, debate run, validated verdict-correctness result,
+runtime trace, or whole-system epistemic correctness result.
 
 ## Mechanism
 
