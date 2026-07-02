@@ -72,6 +72,20 @@ context, patches, execution environments, and tests. Those sources help orient
 the Labor OS claim, but this repository has not run AutoGen, reproduced
 SWE-bench, or shown that Talos-style typed jobs solve either system's tasks.
 
+The same boundary is visible in ordinary workflow infrastructure. Temporal
+already gives the industry a durable-execution vocabulary: workflows, worker
+processes, event histories, and recovery after failure. Airflow gives a DAG
+vocabulary: schedules, tasks, dependencies, callbacks, retries, and timeouts.
+BPMN gives a process-notation lineage for stakeholder-readable workflows that
+can be precise enough to become software process components. Kubernetes Jobs
+give a batch-work vocabulary: completions, failures, backoff limits, deadlines,
+terminal states, and cleanup.
+
+The Labor OS does not need to pretend those ideas are new. Its added question
+is narrower and harder: when the worker is AI, what record must wrap the work
+so authority, tool permission, approval, artifact provenance, verification,
+residuals, and evidence state are not lost?
+
 The ASI Stack asks a different systems question: what would have to wrap
 agentic work before it could count as governed execution?
 
@@ -313,8 +327,9 @@ typed-job schema and fixture, finite Lean predicates, and a synthetic
 plan-execution contract harness. Those artifacts support the shape of the
 execution boundary. They do not establish scheduler correctness, permission
 enforcement, approval-service behavior, adapter safety, runtime isolation,
-replay correctness, benchmark performance, security behavior, Talos runtime
-behavior, or MoECOT runtime reproduction.
+replay correctness, benchmark performance, security behavior, Temporal
+workflow behavior, Airflow DAG behavior, BPMN engine behavior, Kubernetes Job
+behavior, Talos runtime behavior, or MoECOT runtime reproduction.
 
 The distinction is central to the chapter. A Labor OS exists to prevent useful
 work from being mistaken for governed evidence. The reader draft preserves the

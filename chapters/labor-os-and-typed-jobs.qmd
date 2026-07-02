@@ -4,7 +4,7 @@ chapter_id: "labor-os-and-typed-jobs"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-27"
+last_updated: "2026-07-02"
 primary_sources:
   - "talos"
   - "viea"
@@ -16,6 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact source-note mappings for the core claim, and four local raw-cache mappings are passage-reviewed; `talos_md` and `moecot` remain connector/source-note mapped."
+  - "Source-noted external comparators now ground durable execution, DAG workflow orchestration, BPMN process notation, and Kubernetes batch-job lifecycle vocabulary; no Temporal workflow, Airflow DAG, BPMN engine, Kubernetes Job, deployed scheduler, or workflow trace was run from this repository."
   - "Protocol schema/fixture validation and narrow Lean lifecycle/approval predicates are implemented; no job scheduler, permission-enforcement harness, adapter runner, or replay harness has been run for this chapter."
   - "No support-state promotion is implied by this drafting pass."
 ---
@@ -28,12 +29,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-27 |
+| Last updated | 2026-07-02 |
 | Primary source records | `talos`, `viea`, `genesiscode`, `software_magic_grimoire`, `talos_md`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `talos`; supporting: `viea`, `genesiscode`, `software_magic_grimoire`; variant: `talos_md`; connector/recovery: `moecot` |
-| Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`; connector/source-note mapped: `talos_md`, `moecot` |
+| Source queue | primary: `talos`; supporting: `viea`, `genesiscode`, `software_magic_grimoire`; external comparators: `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_kubernetes_jobs_docs`; variant: `talos_md`; connector/recovery: `moecot` |
+| Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`; source notes: `talos_md`, `moecot`, `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_kubernetes_jobs_docs`; connector/source-note mapped: `talos_md`, `moecot` |
 | Test state | Typed job fixture validation implemented; finite lifecycle, approval, and job-execution route predicates implemented in `AsiStackProofs.TypedJobs`; `python3 scripts/validate_plan_execution_contracts.py` checks synthetic active-job receipt and approval-bypass cases; scheduler, permission, adapter, replay, and deployed approval-service tests remain planned. |
 
 ## Drafting guardrail
@@ -78,6 +79,8 @@ Chat is not a factory. It does not lock a contract, isolate tools, enforce permi
 
 AutoGen (`ext_autogen_2023`) gives an external multi-agent workflow baseline, and SWE-bench (`ext_swe_bench_2023`) gives an external software-task benchmark baseline with repository-scale context and patch evaluation. Labor OS uses those comparison points to ask for typed job lifecycles, artifact receipts, replay, and approval boundaries around agentic work. The baseline references do not claim that Talos jobs reproduce AutoGen workflows or solve SWE-bench tasks.
 
+Workflow and job systems already solve important adjacent problems. Temporal (`ext_temporal_docs`) supplies durable workflow execution, event history, worker, and failure-recovery vocabulary. Airflow (`ext_airflow_dag_docs`) supplies DAG, schedule, task, dependency, callback, retry, and timeout vocabulary. BPMN 2.0.2 (`ext_bpmn_2_0_2_spec`) supplies stakeholder-readable process-notation and process-component translation lineage. Kubernetes Jobs (`ext_kubernetes_jobs_docs`) supplies batch-job completion, failure, backoff, deadline, terminal-condition, and cleanup vocabulary. The Labor OS does not claim to replace those systems; it asks what must be added when the work is AI labor that carries authority, tool permissions, approvals, artifact/evidence receipts, residuals, and support-state effects.
+
 GenesisCode reinforces the distinction: proposals and effects are different things. Effects require capability boundaries and replay logs. Software Magic adds that workflows need entry rules, exit rules, guards, loops, and recovery paths.
 
 Agent swarms often fail at this boundary. They start many plausible subtasks but lose the lifecycle state, permission scope, parent contract, or artifact trail that would let a reviewer know which work was authorized and which work merely happened. A Labor OS should make unauthorized work hard to start and unlogged work hard to hide.
@@ -102,6 +105,8 @@ Appendix C now maps this labor-OS claim to all assigned source notes, and four l
 | `software_magic_grimoire` | Passage-reviewed: bounded instruction artifacts, artifact/objective/constraint/output/truth-condition framing, eight-limb role/objective/context/constraints/procedure/output-contract/verification/failure-behavior anatomy, risk-scaled cast levels, exploration/execution separation, artifact/invariant/search/output/verification/failure workflow, prompt pathologies, spell-stack coordination, FEATURE-RAIL, loop rules, and verification-bundle shape. | Workflow vocabulary only; not empirical evidence that a labor OS performs better or safely executes work. |
 | `talos_md` | Connector/source-note mapped: public-release Talos terminology around typed AI labor, deterministic manufacturing, five-phase lifecycle, control-plane ledgers, evidence, isolation, auditability, blind handles, and Digital SCIFs. | Variant/canonicalization aid only; local cache is an auth-gate placeholder, and reported benchmark or security claims remain unverified. |
 | `moecot` | Connector/source-note mapped: runtime-reference context for governed orchestration, specialist lanes, fail-closed ledgers, readiness gates, replay, handoff, promotion blockers, and residual tracking. | Runtime code, logs, benchmark artifacts, and replay records have not been inspected or reproduced here. |
+
+The external comparator notes sit outside Appendix C claim-source mapping. `ext_temporal_docs` grounds durable workflow execution and event-history vocabulary. `ext_airflow_dag_docs` grounds DAG/task/dependency orchestration vocabulary. `ext_bpmn_2_0_2_spec` grounds process-notation and process-component lineage. `ext_kubernetes_jobs_docs` grounds batch-job lifecycle, retries, deadlines, terminal conditions, and cleanup vocabulary. None of those notes proves a Labor OS scheduler, Temporal integration, Airflow DAG, BPMN compiler, Kubernetes Job controller, workflow benchmark, runtime isolation result, or support-state promotion.
 
 ## Mechanism
 
@@ -284,8 +289,12 @@ These proof hooks are implemented as finite-record predicates. They prove the bo
 | `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | passage-reviewed local raw cache |
 | `talos_md` | Talos_Protocol_v1.0.md | labor_execution_os | Markdown/public release version. | source note available; connector or recovery required |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| `ext_temporal_docs` | Temporal Documentation: What is Temporal? | durable_execution | External comparator for durable workflow executions, event histories, worker processes, and failure recovery. | source note available; comparator only |
+| `ext_airflow_dag_docs` | Apache Airflow Documentation: Dags | workflow_orchestration | External comparator for DAG schedules, tasks, dependencies, callbacks, retries, and timeouts. | source note available; comparator only |
+| `ext_bpmn_2_0_2_spec` | Business Process Model and Notation Specification Version 2.0.2 | business_process_modeling | External comparator for stakeholder-readable process notation and translation into software process components. | source note available; comparator only |
+| `ext_kubernetes_jobs_docs` | Kubernetes Documentation: Jobs | batch_job_lifecycle | External comparator for finite batch-job completion, failure, retry, deadline, terminal condition, and cleanup vocabulary. | source note available; comparator only |
 
-The labor-OS sources support typed execution discipline across lifecycle, permissions, approvals, artifacts, and replay. Four local raw-cache sources now have passage-reviewed mappings, while `talos_md` and `moecot` remain connector/source-note mapped. This does not claim a Talos, MoECOT, GenesisCode, or VIEA labor runtime has been executed in this repo.
+The labor-OS sources support typed execution discipline across lifecycle, permissions, approvals, artifacts, and replay. Four local raw-cache sources now have passage-reviewed mappings, while `talos_md` and `moecot` remain connector/source-note mapped. External comparators ground durable workflow, DAG orchestration, process-notation, and batch-job lifecycle vocabulary. This does not claim a Talos, MoECOT, GenesisCode, VIEA, Temporal, Airflow, BPMN, or Kubernetes labor runtime has been executed in this repo.
 
 ## Summary
 

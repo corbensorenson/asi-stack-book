@@ -2797,6 +2797,66 @@
     "citation_label": "HashiCorp Developer, Nomad Documentation"
   },
   {
+    "id": "ext_temporal_docs",
+    "title": "Temporal Documentation: What is Temporal?",
+    "priority": "external_literature",
+    "layer": "durable_execution",
+    "chapter_targets": [
+      "labor-os-and-typed-jobs"
+    ],
+    "url": "https://docs.temporal.io/temporal",
+    "notes": "Official Temporal documentation comparator for durable workflow execution, workflow event histories, worker processes, failure recovery, and long-running application-code orchestration.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "2026",
+    "citation_label": "Temporal Documentation (2026), What is Temporal?"
+  },
+  {
+    "id": "ext_airflow_dag_docs",
+    "title": "Apache Airflow Documentation: Dags",
+    "priority": "external_literature",
+    "layer": "workflow_orchestration",
+    "chapter_targets": [
+      "labor-os-and-typed-jobs"
+    ],
+    "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html",
+    "notes": "Official Apache Airflow documentation comparator for DAG-based workflow scheduling, tasks, dependencies, callbacks, retries, and operational workflow metadata.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "2026",
+    "citation_label": "Apache Airflow Documentation (2026), Dags"
+  },
+  {
+    "id": "ext_bpmn_2_0_2_spec",
+    "title": "Business Process Model and Notation Specification Version 2.0.2",
+    "priority": "external_literature",
+    "layer": "business_process_modeling",
+    "chapter_targets": [
+      "labor-os-and-typed-jobs"
+    ],
+    "url": "https://www.omg.org/spec/BPMN/2.0.2/",
+    "notes": "OMG BPMN 2.0.2 formal specification comparator for stakeholder-readable business-process diagrams, implementation-independent flow notation, and translation into software process components.",
+    "source_type": "standard",
+    "published": "2014-01",
+    "updated": "2014-01",
+    "citation_label": "OMG (2014), BPMN 2.0.2"
+  },
+  {
+    "id": "ext_kubernetes_jobs_docs",
+    "title": "Kubernetes Documentation: Jobs",
+    "priority": "external_literature",
+    "layer": "batch_job_lifecycle",
+    "chapter_targets": [
+      "labor-os-and-typed-jobs"
+    ],
+    "url": "https://kubernetes.io/docs/concepts/workloads/controllers/job/",
+    "notes": "Official Kubernetes Jobs documentation comparator for batch job lifecycle, completions, backoff limits, active deadlines, terminal Complete/Failed conditions, and cleanup of finished jobs.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "2026",
+    "citation_label": "Kubernetes Documentation (2026), Jobs"
+  },
+  {
     "id": "ext_ray_core_docs_2026",
     "title": "What's Ray Core?",
     "priority": "external_literature",

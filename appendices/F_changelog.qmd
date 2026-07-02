@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-02 - Ground Labor OS in durable workflow systems
+
+- Added source-noted external comparator records for Temporal durable
+  execution, Airflow DAG orchestration, BPMN 2.0.2 process notation, and
+  Kubernetes Jobs batch lifecycle semantics.
+- Updated `labor-os-and-typed-jobs`, its curated reader chapter, the outline,
+  generated source queues, and the v1.x chapter-review burn-down row so typed
+  jobs are positioned against existing workflow and batch-job systems without
+  treating those systems as Labor OS evidence.
+- This is external-grounding and reader/live prose work only; it does not
+  implement a Temporal workflow, Airflow DAG, BPMN engine, Kubernetes Job,
+  deployed scheduler, permission service, approval service, adapter runner,
+  replay harness, support-state promotion, or chapter-core evidence transition.
+
 ## 2026-07-01 - Ground proof-carrying claims in verifier and judge literature
 
 - Added source-noted external comparator records for LLM autoformalization,

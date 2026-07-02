@@ -1488,6 +1488,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `talos` | Read first for chapter claims and mechanisms. |
 | Supporting | `viea`, `genesiscode`, `software_magic_grimoire` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_kubernetes_jobs_docs` | Use for durable-execution, DAG orchestration, process-notation, and batch-job lifecycle positioning only; do not treat as Labor OS runtime evidence. |
 | Variants / alternate releases | `talos_md` | Use only to compare versions or recover missing detail. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
@@ -1501,6 +1502,7 @@ Draft arc:
 - Mechanism: Separate delivery from evidence-ready completion: a job can produce output while still missing approval, verification, artifact capture, audit events, or replay metadata.
 - Mechanism: Track lifecycle states: drafted, locked, awaiting-approval, approved, dispatchable, running, adjudicating, delivered, evidence-ready, failed/blocked, quarantined, replayed, and retired.
 - Mechanism: Emit completion receipts with approval, permission, adapter, artifact, verification, audit, residual, replay/non-replay, delivery, and evidence-state fields.
+- External positioning: Compare Labor OS typed jobs to Temporal durable execution, Airflow DAG orchestration, BPMN process notation, and Kubernetes batch-job lifecycle semantics; preserve the distinction between operational workflow completion and ASI Stack evidence readiness.
 - Handoff: Delivered, failed, or blocked jobs flow into artifact graphs as durable work products and audit traces.
 - Interface: Planning dispatches jobs.
 - Interface: Security mediates permissions.
@@ -1535,6 +1537,7 @@ Draft deliverables:
 - Implemented synthetic Codex test: Human approval gate test via `python3 scripts/validate_plan_execution_contracts.py`; deployed approval service remains open.
 - Planned Codex test: Delivery versus evidence-ready test.
 - Planned Codex test: Job parentage trace test.
+- Source-noted external comparator queue: `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, and `ext_kubernetes_jobs_docs` now ground durable workflow, DAG, process-notation, and batch-job lifecycle vocabulary; no Temporal workflow, Airflow DAG, BPMN engine, Kubernetes Job, deployed scheduler, or workflow trace is claimed.
 
 Lean proof targets:
 
