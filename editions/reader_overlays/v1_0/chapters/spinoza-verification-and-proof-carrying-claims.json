@@ -22,6 +22,25 @@
         "",
         "Planning and execution consume those outcomes as blockers, constraints, required actions, authority narrowing, human sign-off, or residual work. They do not receive an invisible support-state promotion. That boundary is the point of the interface: stronger claims can ask for stronger records, but every pass, failure, timeout, mismatch, dissent, and verdict returns with an explicit limit."
       ]
+    },
+    {
+      "id": "v1_0.spinoza.minimum_viable_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the generated-reader fixture-path inventory with prose that preserves the schema, validator, adversarial-review dossier, negative-control, and no-promotion boundaries.",
+      "content_lines": [
+        "The minimum viable implementation is a record discipline, not an open-domain verifier or a working tribunal. It needs enough structure to represent a verification event, reject obvious laundering, preserve failed attempts, and write only bounded effects back to the claim ledger.",
+        "",
+        "The current slice uses proof-carrying-claim, tribunal-review, claim-record, and belief-revision schemas. Its proof-carrying fixtures include a valid narrow formal pass, a citation dossier that makes no support change, and a mismatch that escalates. The invalid controls reject passed verifier records without artifact references, mismatches that try to promote, formal tiers backed by the wrong justification type, timeouts that overpromote support, and negative evidence without a failed-attempt record.",
+        "",
+        "The tribunal fixtures cover scoped acceptance with constraints, unchanged evidence that remains blocked, and high-risk revision with dissent preserved. Their invalid controls reject acceptance without evidence, high-risk review without adversarial probes, prior-review laundering, dissent that does not preserve an unresolved issue, and weak non-claim boundaries.",
+        "",
+        "The adversarial review dossier probe adds a bounded synthetic slice: two valid review dossiers and seven expected-invalid controls. It is useful because it exercises the record shape and laundering defenses. It does not prove semantic equivalence, reviewer independence, adversarial-probe quality, verdict correctness, LLM-judge quality, debate-system quality, deployed review behavior, or support-state movement."
+      ]
     }
   ]
 }
