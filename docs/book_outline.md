@@ -361,6 +361,7 @@ Draft deliverables:
 - Implemented Codex test: Context pollution scenario as a finite Lean incident-route predicate only; no context-admission detector run.
 - Implemented Codex test: Evaluator drift scenario as a finite Lean incident-route predicate only; no evaluator-independence probe run.
 - Implemented Codex test: Unverified-claim scenario as a finite Lean incident-route predicate only; no claim-verification harness run.
+- Implemented synthetic Codex test: Failure taxonomy detector and mitigation-boundary probe, via `python3 scripts/validate_failure_taxonomy_detector_probe.py` and result `experiments/failure_taxonomy_detector/results/2026-07-02-local.json`, checks two valid synthetic failure incidents and seven expected-invalid controls for authority creep, Goodhart/evaluator drift, missing classes, missing boundary owners, missing receipts, unblocked authority creep, missing Goodhart residuals, recurrence without escalation, and fixture-driven support promotion; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, support-state-promotion, or evidence-transition claim follows.
 - Implemented Lean proof target: finite failure recurrence and receipt escalation route for missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records; deployed detection and prevention remain open.
 
 Lean proof targets:
@@ -370,6 +371,7 @@ Lean proof targets:
 | `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | implemented |
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | An unbounded authority field is detected as a governance failure. | implemented |
 | `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
+| `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | The deterministic synthetic failure-taxonomy detector probe includes authority-creep and Goodhart/evaluator-drift incidents, rejected negative controls, residual boundaries, no support-state effect, and explicit non-claim boundaries. | implemented |
 
 ### Evidence States and Claim Discipline
 
@@ -2722,9 +2724,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 161 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 161 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 161 proof targets, 54 Lean modules, 853 theorem declarations, 682 derived/decomposed, 167 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 162 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 162 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 162 proof targets, 54 Lean modules, 854 theorem declarations, 682 derived/decomposed, 168 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -27,6 +27,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Context pollution scenario | implemented | passes via Lean build |
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Evaluator drift scenario | implemented | passes via Lean build |
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Unverified-claim scenario | implemented | passes via Lean build |
+| `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Failure taxonomy detector and mitigation-boundary probe | implemented | passes via deterministic synthetic failure-taxonomy detector fixture at experiments/failure_taxonomy_detector/results/2026-07-02-local.json: two valid synthetic failure incidents and seven expected-invalid controls; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, support-state-promotion, or evidence-transition claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Support-state transition test | implemented | validated locally |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence transition lifecycle route | implemented | passes via Lean route theorems; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, runtime-behavior, or support-state-promotion claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness test | planned | not run |
@@ -443,16 +444,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 161 |
+| Proof targets covered by triage | 162 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 161 |
+| implemented | 162 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 161 |
+| implemented | formal-invariant | lean-candidate | 162 |

@@ -141,6 +141,16 @@
       "rationale": "Implemented in AsiStackProofs.FailureModes as a finite recurrence and failure-receipt route over explicit failure class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary records; it does not prove runtime scenario coverage, evaluator independence, context containment, claim-verifier quality, recurrence detection, deployed failure detection, or support-state promotion."
     },
     {
+      "tag": "lean:failure.taxonomy.detector_probe_bridge",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "module": "AsiStackProofs.FailureModes",
+      "formal_target": "The deterministic synthetic failure-taxonomy detector probe includes authority-creep and Goodhart/evaluator-drift incidents, rejected negative controls, residual boundaries, no support-state effect, and explicit non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.FailureModes as a finite fixture summary bridge for authority-creep and Goodhart/evaluator-drift incidents, rejected missing-class/boundary/receipt/containment/residual/recurrence/promotion controls, residual boundaries, no support-state effect, and non-claim boundaries."
+    },
+    {
       "tag": "lean:evidence.support_state.operational_invariant",
       "chapter_id": "evidence-states-and-claim-discipline",
       "module": "AsiStackProofs.EvidenceStates",

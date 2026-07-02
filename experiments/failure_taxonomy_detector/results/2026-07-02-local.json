@@ -1,0 +1,59 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_failure_taxonomy_detector_probe.py",
+  "coverage": {
+    "affected_contract_refs_required": true,
+    "authority_creep_blocked": true,
+    "detector_refs_required": true,
+    "evidence_receipts_required": true,
+    "goodhart_evaluator_drift_residualized": true,
+    "residuals_required": true,
+    "support_state_no_promotion": true
+  },
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 7,
+  "incident_count": 9,
+  "lean_fixture_alignment": {
+    "expected": {
+      "authority_creep_incident_present": true,
+      "goodhart_drift_incident_present": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "residual_boundary_present": true,
+      "support_state_effect_none": true
+    },
+    "module": "AsiStackProofs.FailureModes",
+    "proof_tag": "lean:failure.taxonomy.detector_probe_bridge",
+    "theorem_refs": [
+      "failure_taxonomy_detector_probe_bridge"
+    ]
+  },
+  "negative_controls": {
+    "authority_creep_not_blocked_rejected": true,
+    "goodhart_without_residual_rejected": true,
+    "missing_boundary_owner_rejected": true,
+    "missing_failure_class_rejected": true,
+    "mitigation_without_receipt_rejected": true,
+    "recurrence_without_escalation_rejected": true,
+    "support_state_promotion_rejected": true
+  },
+  "non_claims": [
+    "does not prove failure detection",
+    "does not prove prevention",
+    "does not prove mitigation effectiveness",
+    "does not run a deployed detector",
+    "does not prove evaluator independence",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic failure-taxonomy detector fixture only; no deployed detector, runtime authority gate, evaluator-independence measurement, mitigation-effectiveness result, or prevention evidence was produced.",
+    "The Failure Modes chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-failure-taxonomy-detector-probe",
+  "result_kind": "deterministic_synthetic_failure_taxonomy_detector_probe",
+  "schema_version": "asi_stack.failure_taxonomy_detector_probe.v0",
+  "support_state_effect": "none",
+  "valid_incident_count": 2,
+  "verification_result": "pass"
+}

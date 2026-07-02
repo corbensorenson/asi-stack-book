@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-02 - Add Failure taxonomy detector and mitigation-boundary probe
+
+- Added `python3 scripts/validate_failure_taxonomy_detector_probe.py`,
+  `docs/failure_taxonomy_detector_probe.md`, and
+  `experiments/failure_taxonomy_detector/results/2026-07-02-local.json` for a
+  deterministic synthetic failure-taxonomy detector fixture with two valid
+  synthetic failure incidents and seven expected-invalid controls covering
+  authority creep blocked at an authority ceiling, Goodhart/evaluator drift
+  residualized through evaluator freeze and review escalation, missing failure
+  classes, missing boundary owners, mitigation without receipts, unblocked
+  authority creep, Goodhart/proxy failure with no residual, recurrence without
+  escalation, and fixture-driven support-state promotion.
+- Added `lean:failure.taxonomy.detector_probe_bridge` in
+  `AsiStackProofs.FailureModes`, with a finite Lean summary bridge for
+  authority-creep and Goodhart/evaluator-drift incidents, rejected controls,
+  residual boundaries, no-support-effect status, and non-claim boundaries.
+- Updated the Failure Modes live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does not
+  prove failure detection, prove prevention, prove mitigation effectiveness,
+  run a deployed detector, prove evaluator independence, promote the chapter
+  support state, or create a support-state transition.
+- Current proof-depth snapshot: 162 proof targets, 54 Lean modules, 854 theorem declarations, 682 derived/decomposed, 168 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add Adversarial review dossier and verdict-quality probe
 
 - Added `python3 scripts/validate_adversarial_review_dossier_probe.py`,
@@ -22,7 +45,7 @@
   adversarial-probe quality, prove verdict correctness, run an LLM judge, run
   a debate system, promote the chapter support state, or create a
   support-state transition.
-- Current proof-depth snapshot: 161 proof targets, 54 Lean modules, 853 theorem declarations, 682 derived/decomposed, 167 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 162 proof targets, 54 Lean modules, 854 theorem declarations, 682 derived/decomposed, 168 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add Typed job delivery and evidence-readiness probe
 
@@ -44,7 +67,7 @@
   approval-service behavior, execute a runtime adapter, prove replay
   correctness, promote the chapter support state, or create a support-state
   transition.
-- Current proof-depth snapshot: 161 proof targets, 54 Lean modules, 853 theorem declarations, 682 derived/decomposed, 167 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 162 proof targets, 54 Lean modules, 854 theorem declarations, 682 derived/decomposed, 168 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Expand claim-ledger semantic and assumption fixtures
 
@@ -218,7 +241,7 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 161 proof targets, 54 Lean modules, 853 theorem declarations, 682 derived/decomposed, 167 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 162 proof targets, 54 Lean modules, 854 theorem declarations, 682 derived/decomposed, 168 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate
   from semantic adequacy, source interpretation, deployed enforcement, model

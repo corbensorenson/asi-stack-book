@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 161 |
-| Manifest status counts | {"implemented": 161} |
-| Triage class counts | {"formal-invariant": 161} |
+| Proof targets audited | 162 |
+| Manifest status counts | {"implemented": 162} |
+| Triage class counts | {"formal-invariant": 162} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -49,7 +49,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 5 | 5 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 9 | 4 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 3 | 24 | 12 | 3 |
-| `lean/AsiStackProofs/FailureModes.lean` | 3 | 22 | 5 | 3 |
+| `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 6 | 4 |
 | `lean/AsiStackProofs/FastGeneration.lean` | 4 | 34 | 16 | 7 |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 18 | 9 | 5 |
@@ -105,7 +105,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `context-transactions-snapshots-mounts-and-taint` | 2 | 2 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 3 | 3 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
-| `failure-modes-of-ungoverned-intelligence` | 3 | 3 | 0 | 0 |
+| `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
 | `fast-generation-architectures` | 4 | 4 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
 | `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
@@ -152,6 +152,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:failure.invariant_violation.operational_invariant` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.recurrence.escalation_route` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:failure.taxonomy.detector_probe_bridge` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.operational_invariant` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.failure_blocks_promotion` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.transition_lifecycle_route` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |

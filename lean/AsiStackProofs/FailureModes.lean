@@ -469,4 +469,34 @@ theorem complete_failure_record_closes_record :
   unfold FailureRecurrenceRouteFor completeFailureRecurrenceReview
   simp
 
+structure FailureTaxonomyDetectorProbeSummary where
+  authorityCreepIncidentPresent : Bool
+  goodhartDriftIncidentPresent : Bool
+  negativeControlsRejected : Bool
+  residualBoundaryPresent : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def FailureTaxonomyDetectorProbeSummaryValid
+    (summary : FailureTaxonomyDetectorProbeSummary) : Prop :=
+  summary.authorityCreepIncidentPresent = true ∧
+    summary.goodhartDriftIncidentPresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.residualBoundaryPresent = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem failure_taxonomy_detector_probe_bridge
+    {summary : FailureTaxonomyDetectorProbeSummary} :
+    FailureTaxonomyDetectorProbeSummaryValid summary ->
+      summary.authorityCreepIncidentPresent = true ∧
+        summary.goodhartDriftIncidentPresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.residualBoundaryPresent = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.FailureModes

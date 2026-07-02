@@ -1017,6 +1017,11 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean build",
               "status": "implemented as a finite Lean incident-route predicate; no claim-verification harness run"
+            },
+            {
+              "name": "Failure taxonomy detector and mitigation-boundary probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic failure-taxonomy detector fixture at experiments/failure_taxonomy_detector/results/2026-07-02-local.json: two valid synthetic failure incidents and seven expected-invalid controls; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, support-state-promotion, or evidence-transition claim"
             }
           ],
           "lean_module": "AsiStackProofs.FailureModes",
@@ -1037,6 +1042,12 @@
               "tag": "lean:failure.recurrence.escalation_route",
               "module": "AsiStackProofs.FailureModes",
               "target": "Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:failure.taxonomy.detector_probe_bridge",
+              "module": "AsiStackProofs.FailureModes",
+              "target": "The deterministic synthetic failure-taxonomy detector probe includes authority-creep and Goodhart/evaluator-drift incidents, rejected negative controls, residual boundaries, no support-state effect, and explicit non-claim boundaries.",
               "status": "implemented"
             }
           ]

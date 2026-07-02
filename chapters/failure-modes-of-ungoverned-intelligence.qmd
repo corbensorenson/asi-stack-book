@@ -248,7 +248,19 @@ The first failure artifact should be a `failure_boundary_map` schema plus a smal
 
 A failure-receipt suite should be the first diagnostic harness: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.
 
-That suite is still diagnostic, not preventive. Its value is to make recurring failure leave a routeable record.
+The Failure taxonomy detector and mitigation-boundary probe adds a bounded
+version of that diagnostic suite. `python3
+scripts/validate_failure_taxonomy_detector_probe.py` writes
+`experiments/failure_taxonomy_detector/results/2026-07-02-local.json` and
+checks two valid synthetic failure incidents plus seven expected-invalid
+controls. The valid incidents cover authority creep blocked at an authority
+ceiling and Goodhart/evaluator drift residualized through evaluator freeze and
+review escalation. The controls reject missing failure classes, missing
+boundary owners, mitigation without receipts, unblocked authority creep,
+Goodhart/proxy failure with no residual, recurrence without escalation, and
+fixture-driven support promotion. The slice is diagnostic, not preventive:
+runtime detection, prevention, mitigation effectiveness, evaluator
+independence, and support-state movement remain outside this evidence envelope.
 
 ## Beyond the State of the Art
 
@@ -271,6 +283,7 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 | Evaluator drift scenario | Check that a subject-modified evaluator routes to frozen review. | implemented as a finite Lean incident-route predicate; no evaluator-independence probe run |
 | Unverified-claim scenario | Check that a requested claim promotion with failed verification routes to blocked promotion. | implemented as a finite Lean incident-route predicate; no claim-verification harness run |
 | Failure recurrence escalation route | Check finite failure recurrence routing for missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records. | implemented in `AsiStackProofs.FailureModes`; no deployed failure detector, runtime recurrence detector, evaluator-independence probe, context containment, or claim-verification quality claim |
+| Failure taxonomy detector and mitigation-boundary probe | Check that a deterministic synthetic failure-taxonomy detector fixture records authority-creep and Goodhart/evaluator-drift incidents, detector refs, receipts, residuals, mitigation routes, rejected negative controls, no support-state effect, and explicit non-claim boundaries. | implemented by `python3 scripts/validate_failure_taxonomy_detector_probe.py`; two valid synthetic failure incidents and seven expected-invalid controls; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, or support-state-promotion claim |
 
 ### Formalization hooks
 
@@ -279,8 +292,9 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 | `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | implemented |
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | An unbounded authority field is detected as a governance failure. | implemented |
 | `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
+| `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | The deterministic synthetic failure-taxonomy detector probe includes authority-creep and Goodhart/evaluator-drift incidents, rejected negative controls, residual boundaries, no support-state effect, and explicit non-claim boundaries. | implemented |
 
-These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, that an unbounded authority field is represented as a governance failure, that four modeled incident states route to review, quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes. They do not prove runtime scenario coverage, evaluator independence, context-pollution containment, claim-verifier quality, recurrence detection, or deployed failure detection; those remain executable-test obligations.
+These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, that an unbounded authority field is represented as a governance failure, that four modeled incident states route to review, quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes. The detector-probe bridge records only that the synthetic fixture contains authority-creep and Goodhart/evaluator-drift incidents, rejected controls, residual boundaries, no support-state effect, and non-claim boundaries. Runtime scenario coverage, evaluator independence, context-pollution containment, claim-verifier quality, recurrence detection, deployed failure detection, and prevention remain executable-test obligations. These hooks do not prove runtime scenario coverage, evaluator independence, context-pollution containment, claim-verifier quality, recurrence detection, deployed failure detection, prevention, mitigation effectiveness, or chapter support-state promotion.
 
 ## Source crosswalk
 

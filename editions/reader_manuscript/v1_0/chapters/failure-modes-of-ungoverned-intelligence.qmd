@@ -233,16 +233,20 @@ state, severity, reversibility, recurrence, protected invariant, receipt,
 promotion blocker, containment path, normalization guard, learning path,
 source refs, support-state effect, and boundary owner.
 
-The first diagnostic harness should include one blocked authority-creep
-attempt, one rejected context-pollution packet, one evaluator-drift residual,
-one tool-overreach denial, and one repeated near miss that escalates review.
-That suite would still be diagnostic, not preventive. Its value would be to
-make recurring failure leave a routeable record.
+The failure taxonomy detector and mitigation-boundary probe adds a bounded
+synthetic version of that harness. It checks two synthetic failure incidents:
+one authority-creep attempt blocked at an authority ceiling, and one
+Goodhart/evaluator-drift incident residualized through evaluator freeze and
+review escalation. It also rejects seven bad paths: missing failure classes,
+missing boundary owners, mitigation without receipts, authority creep treated
+as ordinary operation, Goodhart/proxy failure with no residual, recurrence
+without escalation, and support-state promotion from the fixture. This is not a deployed failure detector.
 
-The current repository has only a narrower start: a schema/example fixture and
-finite Lean predicates over modeled failure records. Authority-creep,
-context-pollution, evaluator-drift, and unverified-claim scenarios remain
-planned rather than run.
+The current repository now has that synthetic diagnostic start: a
+schema/example fixture, finite Lean predicates over modeled failure records,
+and the bounded detector probe. Runtime detection, prevention, mitigation
+effectiveness, evaluator independence, context containment, and claim-verifier
+quality remain open.
 
 ## Beyond the State of the Art
 
