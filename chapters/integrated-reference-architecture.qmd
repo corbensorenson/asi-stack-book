@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-02"
 primary_sources:
   - "viea"
   - "scf"
@@ -43,7 +43,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-02 |
 | Primary source records | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -53,7 +53,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter synthesizes the stack as an end-to-end design target. It does not claim that an integrated runtime exists, that every handoff has been exercised, or that Project Theseus/MoECOT/VCM reports have been reproduced in this repository. The Project Theseus static architecture-gate import is a bounded implementation-reference fixture, not an end-to-end trace.
+This synthesis treats the stack as an end-to-end design target. It does not claim that an integrated runtime exists, that every handoff has been exercised, or that Project Theseus/MoECOT/VCM reports have been reproduced in this repository. The Project Theseus static architecture-gate import is a bounded implementation-reference fixture, not an end-to-end trace.
 
 Artifact stewardship gives projects bounded continuity. Integration zooms back out and asks what a steward, planner, memory system, router, verifier, executor, benchmark ratchet, and SCF gate are all supposed to preserve together: an inspectable trace from authorized intent to artifact and evidence-backed change. Integration is useful only if it makes the handoffs more visible, not if it hides them behind a single system label.
 
@@ -101,7 +101,7 @@ The claim remains at `argument` support. The source notes support architecture s
 
 ### Claim-source mapping status
 
-Appendix C now records twenty passage-reviewed mappings for this chapter. The review makes the source map traceable enough for drafting and later support review, but it does not move the chapter above `argument` support. It also does not convert Project Theseus reports, MoECOT connector context, VCM Editable terminology, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
+Appendix C now records twenty passage-reviewed mappings for this synthesis. The review makes the source map traceable enough for drafting and later support review, but it does not move the core claim above `argument` support. It also does not convert Project Theseus reports, MoECOT connector context, VCM Editable terminology, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
 
 | Mapping group | Reviewed support | Boundary |
 |---|---|---|
@@ -153,11 +153,46 @@ The important feature is that every participant emits something durable enough f
 
 ### Current fixture trace
 
-The current public-safe worked trace is a deterministic fixture pair checked by `python3 scripts/validate_reference_trace.py`. The approved fixture, `reference-trace-fixture-approved-001`, starts from `intent://human-book-maintenance-request`, narrows authority to chapter and fixture edits, and carries artifacts through `command://chapter-update-contract`, `plan://reference-trace-dry-run`, `context://source-bound-packet`, `route://bounded-reference-route`, `claim://argument-only-reference-claim`, `work://fixture-only-work-order`, `audit://fixture-validation-log`, `evidence://record-shape-only-update`, and `scf://no-promotion-review`. Its evidence delta is record-shape only and explicitly preserves `argument` support.
+The current public-safe worked trace is a deterministic fixture pair checked by `python3 scripts/validate_reference_trace.py`. The approved fixture, `reference-trace-fixture-approved-001`, starts from `intent://human-book-maintenance-request`, narrows authority to manuscript and fixture edits, and carries artifacts through `command://chapter-update-contract`, `plan://reference-trace-dry-run`, `context://source-bound-packet`, `route://bounded-reference-route`, `claim://argument-only-reference-claim`, `work://fixture-only-work-order`, `audit://fixture-validation-log`, `evidence://record-shape-only-update`, and `scf://no-promotion-review`. Its evidence delta is record-shape only and explicitly preserves `argument` support.
 
 The blocked fixture, `reference-trace-blocked-authority-001`, starts from `intent://restricted-execution-request` and records the same layer handoff spine, but governance denies runtime execution authority. The trace narrows into `plan://blocked-reference-trace`, routes through `route://denied-runtime-route`, emits `work://blocked-work-order` and `audit://authority-denial-log`, records `evidence://blocked-path-record`, and leaves `scf://promotion-blocker`. Its stop conditions are missing execution authority, unaccepted residual, and required governance review.
 
 This is the concrete trace the architecture currently has: two valid record-level fixtures and six expected-invalid fixtures for missing parent artifacts, silent authority deltas, blocked traces without stop conditions, missing residual deltas, promotion without validation commands, and erased residuals. It is useful because it makes the end-to-end record shape testable. It does not prove a deployed runtime, live artifact-continuity audit, authority-stop enforcement, model quality, benchmark quality, or support-state promotion.
+
+### Worked showpiece trace: one request through the stack
+
+Use the approved fixture as a small, concrete runbook for the whole architecture. The initiating request is not "build ASI." It is deliberately narrower: maintain one living-book section while preserving source boundaries, evidence discipline, and support-state non-promotion. The fixture names that request `intent://human-book-maintenance-request`, which is important because the trace begins with a bounded human purpose rather than a system-owned optimization target.
+
+The first handoff turns that request into `command://chapter-update-contract`. This is the intent and governance boundary. The command grants book-maintenance authority, not runtime execution authority, deployment authority, benchmark authority, model-quality authority, or support-state promotion authority. In the fixture's authority deltas, the grant narrows to manuscript and fixture edits, the plan does not receive runtime execution authority, and the SCF gate remains review-only. That means the rest of the trace can do useful maintenance work without quietly becoming a claim that the system improved itself.
+
+Planning then emits `plan://reference-trace-dry-run`. The plan is not a hidden chain of thought and not an ambient permission bundle. It is a parent artifact that later records can cite. Its job is to name the required context, the route, the validation command, the evidence boundary, and the residuals that must survive. If this plan tried to add a runtime action or a support-state transition, the authority delta would have to show that change or the trace would fail the fixture's silent-authority-delta control.
+
+VCM then supplies `context://source-bound-packet`. This packet represents the memory boundary: the trace is allowed to use source-note and manifest context, but it is not allowed to smuggle in unpublished private text, connector-only claims, or free-floating recollection as evidence. In the fixture, the source refs point to public source notes such as `sources/source_notes/viea.md`, `sources/source_notes/scf.md`, `sources/source_notes/vcm_public.md`, and `sources/source_notes/talos.md`. That source-bound packet is what keeps the worked trace from becoming an attractive but ungrounded story.
+
+Routing then chooses `route://bounded-reference-route`. The route says this is a fixture-only reference-architecture maintenance path. It does not dispatch a deployed agent, call an external runtime, or run a model-quality benchmark. A stronger route would need readiness, authority, cost, verification, and rollback records that are not present here. The route therefore preserves the execution boundary instead of widening it.
+
+Verification receives `claim://argument-only-reference-claim`. This is the claim-ledger boundary. The record can say that the fixture shape was validated and that the architecture argument is better illustrated. It cannot say the integrated runtime exists. It cannot say the authority stop works in production. It cannot say Project Theseus, MoECOT, or VCM executed the run. The claim remains `argument` because the evidence delta is record-shape evidence only.
+
+Execution then produces `work://fixture-only-work-order` and `audit://fixture-validation-log`. Those names are intentionally modest. The "work" is repository maintenance and fixture validation, not autonomous execution. The audit log records what validator is expected to prove: `python3 scripts/validate_reference_trace.py` checks parentage, layer coverage, authority deltas, residual deltas, validation commands, source-note refs, stop conditions, promotion blockers, and non-claims across the fixture set.
+
+The evidence ledger records `evidence://record-shape-only-update`. Its deltas are explicit: record-shape evidence was added and support state remains `argument`. The residual deltas are also explicit: a runtime trace harness remains absent, and a live artifact-continuity audit remains future work. This is the point where many systems would overclaim. The ASI Stack trace is supposed to make that overclaim mechanically visible.
+
+Finally, the SCF gate receives `scf://no-promotion-review`. This is the improvement boundary. The fixture does not let a cleaner specification, passing schema, or valid record shape become capability promotion. It records the promotion blockers: fixture-only trace and no integrated runtime replay. That still gives the stack a better specification surface, but it does not promote the architecture claim, mark a capability as default, or erase the residual work.
+
+The blocked fixture shows the same architecture under stress. `intent://restricted-execution-request` lowers into `command://restricted-command-contract` and `plan://blocked-reference-trace`, but governance denies runtime execution authority. The route becomes `route://denied-runtime-route`, execution emits `work://blocked-work-order` rather than a runtime action, the audit records `audit://authority-denial-log`, the evidence ledger preserves `evidence://blocked-path-record`, and the SCF gate carries `scf://promotion-blocker`. The stop conditions are concrete: missing execution authority, unaccepted residual, and required governance review. That is the reference architecture's most important habit: a blocked path still produces an inspectable trace.
+
+| Hop | Fixture artifact | What it proves at fixture level | What it does not prove |
+|---|---|---|---|
+| Intent and governance | `intent://human-book-maintenance-request` -> `command://chapter-update-contract` | Authority narrows to manuscript and fixture maintenance. | Human-intent parsing quality, deployed authorization, or runtime approval behavior. |
+| Planning | `plan://reference-trace-dry-run` | The plan remains a citable parent artifact with validation and residual obligations. | A deployed planner, scheduler, or plan-quality benchmark. |
+| Context | `context://source-bound-packet` | Source-note refs and context boundaries remain visible. | VCM runtime behavior, retrieval quality, or private connector-source claims. |
+| Routing | `route://bounded-reference-route` | The path stays inside a fixture-only maintenance route. | Specialist routing quality, MoECOT dispatch, or model execution. |
+| Verification | `claim://argument-only-reference-claim` | The claim boundary stays at `argument`. | Claim truth, verifier quality, or support-state promotion. |
+| Execution and audit | `work://fixture-only-work-order`; `audit://fixture-validation-log` | Repository fixture validation has an audit target. | Autonomous execution, deployed tool behavior, or artifact-continuity service behavior. |
+| Evidence and residuals | `evidence://record-shape-only-update` | Evidence and residual deltas are preserved. | Runtime replay, benchmark result, model-quality result, or safety result. |
+| Improvement gate | `scf://no-promotion-review` | Promotion blockers survive the trace. | Capability replacement, default promotion, rollback execution, or deployed self-improvement. |
+
+This table is the architecture's showpiece because it gives the system a falsifiable shape. A future implementation should be able to replace each fixture-only artifact with a live artifact of the same kind while preserving the same authority, evidence, residual, and non-claim discipline. Until that happens, the showpiece is a specification trace, not a runtime demonstration.
 
 ## Interfaces
 

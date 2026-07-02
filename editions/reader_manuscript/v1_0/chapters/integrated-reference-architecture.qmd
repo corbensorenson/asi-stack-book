@@ -196,6 +196,57 @@ support-state promotion. Its value is that readers can now see the shape of
 the desired end-to-end record instead of only hearing that the layers should
 compose.
 
+## One Request Through The Stack
+
+The approved fixture is intentionally modest. It does not begin with an
+apocalyptic instruction or a grand research program. It begins with a narrow
+book-maintenance request: improve a chapter while preserving source
+boundaries, evidence discipline, and support-state non-promotion.
+
+That modesty is the point. A governed architecture should prove its discipline
+on ordinary work before it asks to be trusted with dangerous work.
+
+The request enters as `intent://human-book-maintenance-request`. The first
+question is not "what would be useful?" The first question is "what was
+authorized?" Governance turns the request into
+`command://chapter-update-contract`, and the contract narrows authority to
+manuscript and fixture edits. It does not grant runtime execution. It does not
+grant deployment. It does not grant support-state promotion.
+
+Planning then emits `plan://reference-trace-dry-run`. The plan is a parent
+artifact, not a private mood. It says which context is needed, which route is
+allowed, which validation command matters, and which residuals must remain
+visible. If the plan silently widened authority, the trace should fail.
+
+Memory supplies `context://source-bound-packet`. That packet is the context
+boundary. The system may use source notes and manifest records. It may not
+treat unpublished connector text, private recollection, or attractive
+interpretation as evidence.
+
+Routing selects `route://bounded-reference-route`. The route stays inside a
+fixture-only maintenance path. It does not dispatch a deployed agent or claim a
+model result. Verification receives `claim://argument-only-reference-claim`,
+which keeps the chapter's support state at `argument`. The work order remains
+`work://fixture-only-work-order`, and the audit log is
+`audit://fixture-validation-log`.
+
+Then the evidence ledger records `evidence://record-shape-only-update`. That
+record is narrow: the trace shape was validated. The residuals remain visible:
+there is still no runtime trace harness and no live artifact-continuity audit.
+The final SCF gate records `scf://no-promotion-review`, so the chapter can
+become clearer without pretending that a capability was promoted.
+
+The blocked fixture follows the same spine under pressure. It starts with
+`intent://restricted-execution-request`, lowers into a restricted command and
+blocked plan, and then stops because governance denies runtime execution
+authority. The route becomes `route://denied-runtime-route`. The work order is
+blocked. The audit log records the authority denial. The evidence ledger
+preserves the blocked path. The SCF gate carries a promotion blocker.
+
+That is the reference architecture in miniature: not a clever success story,
+but a trace that can show why success was bounded and why a forbidden path
+stopped.
+
 ## Happy Paths And Blocked Paths
 
 A happy path is not enough.

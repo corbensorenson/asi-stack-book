@@ -1,6 +1,6 @@
 # Reader Audio-Script Probe Manifest
 
-Last updated: 2026-07-01
+Last updated: 2026-07-02
 
 This summary is synced from
 `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`. It records
@@ -35,7 +35,7 @@ Required review files are generated in the ignored workspace:
 
 | Material | Count |
 |---|---:|
-| Tables | 9 |
+| Tables | 10 |
 | Mermaid diagrams | 53 |
 | Code/schema blocks | 0 |
 | Images | 11 |

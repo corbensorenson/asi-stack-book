@@ -277,7 +277,7 @@ deepen*, on a floor that already passes the book's own gates.
 
 - **The two most original chapters undersell themselves.** `evidence-states` (ch. 5) and `living-book-methodology` (ch. 43) describe the book's genuinely novel, arguably-publishable contribution (support-state discipline; the living-book method), both are fully tested — and both read as housekeeping. Sharpen their framing to claim the novelty they've earned.
 - **The two foundation chapters abstract away from their real projects** — the single biggest missed opportunity in the book. `circle-calculus` (ch. 33) and `project-theseus` (ch. 41) *describe* Circle/Theseus instead of *showing* their real proven artifacts (Circle's exact RoPE bounds; Theseus's RMI design law, real gate states, honest benchmark numbers). Reach down into the foundation.
-- **The integration chapter (40) is a recap, not a showpiece** — it should carry one concrete end-to-end worked trace of a single request through all layers.
+- **The integration chapter (40) now has the requested showpiece trace** — the remaining gap is a replayed/live trace rather than the narrative worked example.
 - **Manifest bug recurs:** `artifact-steward-agents` (ch. 39) shows 0 mapped theorems despite `ArtifactStewardAgents.lean` + an "Add artifact steward federation proofs" commit.
 - Part IV's test implementation is otherwise strong (executable-specs 13/1, artifact-steward 16/0, living-book 11/0).
 
@@ -301,9 +301,9 @@ deepen*, on a floor that already passes the book's own gates.
 - **Actions:** wire `lean_module`; then polish — this is a distinctive chapter worth foregrounding.
 
 ## 40. Integrated Reference Architecture
-**Tier: B+ idea, needs a showpiece.** "Trace kernel for the whole ASI Stack… an inspectable machine that can explain what authority entered, which artifacts were produced, what evidence changed" is exactly what a reference architecture should deliver. ReferenceArchitecture (7), tests 6/0.
-- **Weakness:** it currently reads as a *recap* of the preceding chapters rather than a synthesis with its own payload.
-- **Actions:** **make it the book's showpiece** — trace one concrete request end-to-end through every layer (intent → constitution → planning → context → routing → verification → execution → evidence → improvement), showing the actual artifacts and authority checks at each hop. That single worked trace would be worth more than the whole abstract recap.
+**Tier: B+ idea, narrative showpiece now present.** "Trace kernel for the whole ASI Stack… an inspectable machine that can explain what authority entered, which artifacts were produced, what evidence changed" is exactly what a reference architecture should deliver. ReferenceArchitecture (7), tests 6/0.
+- **Weakness:** it now follows one bounded request through the fixture-backed stack, but it still has no replayed/live trace from an actual command, artifact bundle, validator run, and blocked-path stop condition.
+- **Actions:** preserve the showpiece trace and move the next work to runtime/replay evidence: produce a public-safe trace bundle with parent artifacts, authority deltas, evidence deltas, residuals, validation commands, non-claims, and an explicit blocked path before claiming integration beyond fixture discipline.
 
 ## 41. Project Theseus as Report-First Implementation Reference
 **Tier: B+ (honest boundary, but hides the real system).** The boundary discipline is exemplary ("useful only if reports can be mined without turning private runs into general capability claims"). This is where Theseus grounds the book. TheseusReference (7), tests 9/7, ext 12.
@@ -342,7 +342,7 @@ The human reader edition is genuinely good and distinct — calmer, narrative, w
 4. **Convert planned tests into real imported measurements** where Circle/Theseus already ran them (fast-generation speed-quality, compact-generative, rankfold compression ratio, circle RoPE). This is the fastest path to a real experiment per chapter — the experiments largely exist; they need surfacing, not inventing.
 5. **Deepen external anchoring in the lightly-anchored foundational chapters** — *not* "add citations" (all 44 already pass the book's positioning gate; these chapters discuss the external concepts in prose). The lightly-anchored ones track only 1–2 `ext_` records: capability-replacement (1), procedural-memory (1), failure-modes (2), labor-os (2), intent-execution (2), efficient-asi (3), system-boundaries (3). For each, connect the external concepts already discussed to tracked `ext_` records and name the specific prior art (e.g., capability-replacement ↔ canary/progressive-delivery; system-boundaries ↔ object-capability security). This is a *depth* upgrade on a passing floor, not a missing-citations fix.
 6. **Foreground the two methodological crown jewels** (ch. 5 evidence-states, ch. 43 living-book-methodology) — the project's most original and most-demonstrated contribution, currently written as housekeeping.
-7. **Make the integration chapter (40) a showpiece** with one concrete end-to-end worked trace of a single request through all layers.
+7. **Push the integration chapter beyond its new showpiece** with a replayed/live trace bundle from an actual command and blocked path.
 8. **Level the test-implementation floor** — too many chapters are half-planned (human-intent 5/5, security-kernel 5/6, planning 12/6, personal-hives 11/10, fast-generation 8/10, policy-optimization 11/8). "Planned; not run" should be the exception, not a third of the book.
 9. **Smooth the remaining seams** — the "destination mechanism has N lanes" merge scaffold, the surviving "is best understood as an operating system" in ch. 2, and Beyond-SOTA sections that restate the core instead of positioning against alternatives.
 
