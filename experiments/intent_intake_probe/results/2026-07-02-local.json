@@ -1,0 +1,27 @@
+{
+  "artifact": "intent_intake_probe",
+  "chapter_core_support_effect": "none",
+  "date": "2026-07-02",
+  "evidence_transition_created": false,
+  "expected_invalid_controls": 6,
+  "fixture_fingerprint_sha256": "2e7dc1bf9e807f0cc70a0dda8849e44e6ed0f61a407b6a48a141562fd1d70aba",
+  "non_claims": [
+    "does not prove natural-language intent understanding",
+    "does not authorize runtime dispatch",
+    "does not promote the chapter support state",
+    "does not prove deployed authority extraction",
+    "does not prove prompt-injection containment",
+    "does not execute tool side effects"
+  ],
+  "signal_coverage": {
+    "bounded_defaults_are_not_authority": true,
+    "declared_stop_conditions_preserved": true,
+    "private_source_publication_blocked": true,
+    "trust_not_authority": true,
+    "urgency_not_authority": true,
+    "vague_broad_means_blocks_dispatch": true
+  },
+  "support_state_effect": "none",
+  "valid_scenarios": 4,
+  "validator": "python3 scripts/validate_intent_intake_probe.py"
+}

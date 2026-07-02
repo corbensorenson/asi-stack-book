@@ -35,11 +35,12 @@ No result is recorded here unless a test has actually been implemented and run.
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent-origin preservation fixture | implemented | passes via synthetic plan-execution contract harness; no natural-language parser or authority-extraction claim |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Ambiguity dispatch block fixture | implemented | passes via synthetic plan-execution contract harness; no parser-quality claim |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Hidden override rejection fixture | implemented | passes via synthetic plan-execution contract harness; no deployed prompt-injection containment claim |
-| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent parsing ambiguity test | planned | not run |
-| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Authority extraction test | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent intake probe | implemented | passes via python3 scripts/validate_intent_intake_probe.py; 4 valid bounded-request scenarios and 6 expected-invalid controls; no deployed parser, authority-extraction, runtime-dispatch, or support-state claim |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent parsing ambiguity test | partially implemented | synthetic intent intake probe covers vague broad-means ambiguity and clarification blocking; deployed natural-language parser quality not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Authority extraction test | partially implemented | synthetic intent intake probe rejects urgency/trust/private-source authority laundering; deployed authority extraction quality not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Stop-condition preservation test | partially implemented | plan-level preservation passes via synthetic plan-execution contract harness; runtime preservation not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Re-contract trigger test | partially implemented | command-contract trigger preservation passes via synthetic plan-execution contract harness; runtime re-contract behavior not run |
-| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Bounded-default audit | planned | not run |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Bounded-default audit | partially implemented | synthetic intent intake probe checks bounded defaults cannot become authority grants; deployed intake UI not run |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional consistency test | implemented | passing via synthetic constitutional alignment harness; no deployed constitutional-alignment or moral-correctness claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Predicate-conflict routing test | implemented | passing via synthetic constitutional alignment harness; no runtime conflict-resolution or review-quality claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional migration test | implemented | passing via synthetic constitutional alignment harness; no deployed migration or rollback behavior claim |
@@ -434,16 +435,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 152 |
+| Proof targets covered by triage | 153 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 152 |
+| implemented | 153 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 152 |
+| implemented | formal-invariant | lean-candidate | 153 |

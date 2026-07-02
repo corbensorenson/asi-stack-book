@@ -1343,14 +1343,19 @@
               "result_status": "passes via synthetic plan-execution contract harness; no deployed prompt-injection containment claim"
             },
             {
+              "name": "Intent intake probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_intent_intake_probe.py; 4 valid bounded-request scenarios and 6 expected-invalid controls; no deployed parser, authority-extraction, runtime-dispatch, or support-state claim"
+            },
+            {
               "name": "Intent parsing ambiguity test",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "implementation_status": "partially implemented",
+              "result_status": "synthetic intent intake probe covers vague broad-means ambiguity and clarification blocking; deployed natural-language parser quality not run"
             },
             {
               "name": "Authority extraction test",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "implementation_status": "partially implemented",
+              "result_status": "synthetic intent intake probe rejects urgency/trust/private-source authority laundering; deployed authority extraction quality not run"
             },
             {
               "name": "Stop-condition preservation test",
@@ -1364,8 +1369,8 @@
             },
             {
               "name": "Bounded-default audit",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "implementation_status": "partially implemented",
+              "result_status": "synthetic intent intake probe checks bounded defaults cannot become authority grants; deployed intake UI not run"
             }
           ],
           "lean_module": "AsiStackProofs.IntentContracts",
@@ -1386,6 +1391,12 @@
               "tag": "lean:intent.resolution.route_envelope",
               "module": "AsiStackProofs.IntentContracts",
               "target": "Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:intent.intake.probe_fixture_bridge",
+              "module": "AsiStackProofs.IntentContracts",
+              "target": "The synthetic intent-intake probe summary records four valid bounded-request scenarios, six expected-invalid request-pressure controls, stop-condition preservation, bounded-default non-authority, and no runtime-dispatch, support-state-promotion, or deployed-authority-extraction claim.",
               "status": "implemented"
             }
           ]

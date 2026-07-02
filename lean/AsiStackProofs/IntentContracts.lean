@@ -498,4 +498,76 @@ theorem complete_intent_admission_admits_contract
     stopPreserved, authorityDeclared, authorityWithin, noMeansChange,
     noAuthorityChange, noEvidenceDrop, noStopDrop, boundaryPresent]
 
+structure IntentIntakeProbeSummary where
+  validScenarios : Nat
+  invalidControls : Nat
+  urgencyNotAuthority : Bool
+  trustNotAuthority : Bool
+  vagueBroadMeansBlocksDispatch : Bool
+  privateSourcePublicationBlocked : Bool
+  declaredStopConditionsPreserved : Bool
+  boundedDefaultsAreNotAuthority : Bool
+  noRuntimeDispatchClaim : Bool
+  noSupportStatePromotion : Bool
+  noDeployedAuthorityExtractionClaim : Bool
+deriving DecidableEq, Repr
+
+def IntentIntakeProbeValid (summary : IntentIntakeProbeSummary) : Prop :=
+  summary.validScenarios = 4 ∧
+    summary.invalidControls = 6 ∧
+    summary.urgencyNotAuthority = true ∧
+    summary.trustNotAuthority = true ∧
+    summary.vagueBroadMeansBlocksDispatch = true ∧
+    summary.privateSourcePublicationBlocked = true ∧
+    summary.declaredStopConditionsPreserved = true ∧
+    summary.boundedDefaultsAreNotAuthority = true ∧
+    summary.noRuntimeDispatchClaim = true ∧
+    summary.noSupportStatePromotion = true ∧
+    summary.noDeployedAuthorityExtractionClaim = true
+
+def intentIntakeProbeFixture : IntentIntakeProbeSummary :=
+  {
+    validScenarios := 4
+    invalidControls := 6
+    urgencyNotAuthority := true
+    trustNotAuthority := true
+    vagueBroadMeansBlocksDispatch := true
+    privateSourcePublicationBlocked := true
+    declaredStopConditionsPreserved := true
+    boundedDefaultsAreNotAuthority := true
+    noRuntimeDispatchClaim := true
+    noSupportStatePromotion := true
+    noDeployedAuthorityExtractionClaim := true
+  }
+
+theorem intent_intake_probe_fixture_valid :
+    IntentIntakeProbeValid intentIntakeProbeFixture := by
+  unfold IntentIntakeProbeValid intentIntakeProbeFixture
+  simp
+
+def IntentIntakeProbeRejectsRequestPressure
+    (summary : IntentIntakeProbeSummary) : Prop :=
+  summary.invalidControls = 6 ->
+    summary.urgencyNotAuthority = true ∧
+      summary.trustNotAuthority = true ∧
+      summary.vagueBroadMeansBlocksDispatch = true ∧
+      summary.privateSourcePublicationBlocked = true
+
+theorem intent_intake_probe_rejects_request_pressure :
+    IntentIntakeProbeRejectsRequestPressure intentIntakeProbeFixture := by
+  unfold IntentIntakeProbeRejectsRequestPressure intentIntakeProbeFixture
+  intro _
+  simp
+
+def IntentIntakeProbePreservesNoPromotionBoundary
+    (summary : IntentIntakeProbeSummary) : Prop :=
+  summary.noRuntimeDispatchClaim = true ∧
+    summary.noSupportStatePromotion = true ∧
+    summary.noDeployedAuthorityExtractionClaim = true
+
+theorem intent_intake_probe_preserves_no_promotion_boundary :
+    IntentIntakeProbePreservesNoPromotionBoundary intentIntakeProbeFixture := by
+  unfold IntentIntakeProbePreservesNoPromotionBoundary intentIntakeProbeFixture
+  simp
+
 end AsiStackProofs.IntentContracts

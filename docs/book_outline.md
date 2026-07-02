@@ -486,11 +486,12 @@ Draft deliverables:
 - An intent-contract schema and example transformations from request to governed task.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `software_magic_grimoire`, `planforge`, `cognitive_compilation`, and `talos`; all five local mappings now have reviewed raw-cache passage references. Support remains `argument` pending parser, authority-extraction, stop-condition, or lowering tests.
 - Source-noted external positioning through goal-oriented requirements engineering, cooperative inverse reinforcement learning, and deep reinforcement learning from human preferences; no requirements-engineering tool, CIRL algorithm, preference-learning run, parser, authority extractor, stop-condition checker, or execution handoff is reproduced or promoted.
-- Planned Codex test: Intent parsing ambiguity test.
-- Planned Codex test: Authority extraction test.
-- Planned Codex test: Stop-condition preservation test.
+- Implemented synthetic Codex test: Intent intake probe via `python3 scripts/validate_intent_intake_probe.py`, covering urgency language, trust language, vague broad-means requests, private-source publication pressure, declared stop conditions, and bounded-default non-authority with 4 valid scenarios and 6 expected-invalid controls; no deployed parser, authority-extraction, prompt-injection containment, runtime-dispatch, or support-state claim.
+- Partially implemented Codex test: Intent parsing ambiguity test through the synthetic intent intake probe for vague broad-means clarification blocking; deployed natural-language parser quality remains open.
+- Partially implemented Codex test: Authority extraction test through synthetic rejection of urgency/trust/private-source authority laundering; deployed authority-extraction quality remains open.
+- Partially implemented Codex test: Stop-condition preservation test through the synthetic intent intake probe and plan-execution contract harness; runtime preservation remains open.
 - Planned Codex test: Re-contract trigger test.
-- Planned Codex test: Bounded-default audit.
+- Partially implemented Codex test: Bounded-default audit through the synthetic intent intake probe; deployed intake UI remains open.
 - Implemented proof-backed check: finite intent-resolution and intent-admission route proof for missing text, prohibited actions, hidden overrides, unresolved ambiguity, conflicts, constraint-precedence and preservation gaps, stop-condition gaps, missing or widened authority, downstream re-contract triggers, high-impact authority gaps, irreversible high-impact review, and missing non-claim boundaries; this is structured-record coverage only, not natural-language parsing or deployed intake behavior.
 
 Lean proof targets:
@@ -500,6 +501,7 @@ Lean proof targets:
 | `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | implemented |
 | `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | implemented |
 | `lean:intent.resolution.route_envelope` | `AsiStackProofs.IntentContracts` | Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission. | implemented |
+| `lean:intent.intake.probe_fixture_bridge` | `AsiStackProofs.IntentContracts` | The synthetic intent-intake probe summary records four valid bounded-request scenarios, six expected-invalid request-pressure controls, stop-condition preservation, bounded-default non-authority, and no runtime-dispatch, support-state-promotion, or deployed-authority-extraction claim. | implemented |
 
 ### Constitutional Alignment: Agency, Dignity, and Corrigibility
 
@@ -2704,9 +2706,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 152 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 152 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 152 proof targets, 54 Lean modules, 838 theorem declarations, 673 derived/decomposed, 161 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 153 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 153 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 153 proof targets, 54 Lean modules, 841 theorem declarations, 676 derived/decomposed, 161 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

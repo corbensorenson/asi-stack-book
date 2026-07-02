@@ -191,6 +191,16 @@
       "rationale": "Implemented in AsiStackProofs.IntentContracts as finite resolution and admission route functions with derived route theorems for missing text, prohibited action, ambiguity, non-goal conflict, missing high-impact authority, irreversible high-impact review, hidden override rejection, unresolved ambiguity, constraint-precedence and preservation gaps, missing stop conditions, missing or widened authority, downstream re-contract triggers, missing non-claim boundaries, and complete admission."
     },
     {
+      "tag": "lean:intent.intake.probe_fixture_bridge",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "module": "AsiStackProofs.IntentContracts",
+      "formal_target": "The synthetic intent-intake probe summary records four valid bounded-request scenarios, six expected-invalid request-pressure controls, stop-condition preservation, bounded-default non-authority, and no runtime-dispatch, support-state-promotion, or deployed-authority-extraction claim.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.IntentContracts as a finite summary bridge for python3 scripts/validate_intent_intake_probe.py; the bridge records the corpus counts, request-pressure negative controls, stop-condition and bounded-default checks, and explicit no-promotion boundaries."
+    },
+    {
       "tag": "lean:alignment.constitution.operational_invariant",
       "chapter_id": "constitutional-alignment-substrate",
       "module": "AsiStackProofs.Alignment",

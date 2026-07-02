@@ -126,6 +126,8 @@ A small corpus of underspecified requests is the first serious test bed. Each ex
 
 Passing that fixture would show contract discipline only. It would not prove that the system understands intent, extracts hidden authority correctly, or can safely lower every request into execution.
 
+The live project now has a first synthetic version of that corpus. The intent intake probe checks four safe transformations and six unsafe controls: urgency cannot skip validation, trust cannot authorize publication, vague "do whatever it takes" language blocks dispatch, private-source publication pressure stays forbidden, explicit stop conditions must survive, and bounded defaults cannot become authority grants. That is useful evidence for the shape of the gate. It is not a deployed parser, an authority extractor, prompt-injection containment, or proof that a runtime system will preserve the contract.
+
 ## Beyond The State Of The Art
 
 The mature endpoint is an intent compiler that turns goals into bounded command contracts before planning sees executable work. Goals, constraints, authority, artifacts, evidence requirements, ambiguities, and stop conditions travel together. Refusal, clarification, bounded drafting, approval request, and acceptance are contract states rather than conversational moods.

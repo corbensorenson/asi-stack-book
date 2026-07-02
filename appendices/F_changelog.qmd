@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Add intent intake probe
+
+- Added `python3 scripts/validate_intent_intake_probe.py`,
+  `docs/intent_intake_probe.md`, and
+  `experiments/intent_intake_probe/results/2026-07-02-local.json` for a
+  synthetic raw-request corpus with 4 valid bounded-request scenarios and 6
+  expected-invalid controls covering urgency, trust language, vague
+  broad-means requests, private-source publication pressure, declared stop
+  conditions, and bounded-default non-authority.
+- Added `lean:intent.intake.probe_fixture_bridge` in
+  `AsiStackProofs.IntentContracts`, with a finite Lean summary bridge for
+  corpus counts, request-pressure rejection, stop-condition preservation,
+  bounded-default non-authority, and no-promotion boundaries.
+- Updated the Human Intent live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does
+  not prove natural-language intent understanding, deployed authority
+  extraction, prompt-injection containment, runtime dispatch, user
+  satisfaction, approval-service behavior, or chapter-core support-state
+  promotion.
+
 ## 2026-07-02 - Add capability replacement trace probe
 
 - Added `python3 scripts/validate_capability_replacement_trace_probe.py`,
@@ -27,8 +47,8 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 152 proof targets, 54 Lean modules, 838
-  theorem declarations, 673 derived/decomposed, 161 direct/projection, 4
+- Current proof-depth snapshot: 153 proof targets, 54 Lean modules, 841
+  theorem declarations, 676 derived/decomposed, 161 direct/projection, 4
   unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate

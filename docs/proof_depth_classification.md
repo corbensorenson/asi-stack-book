@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 152 |
+| Proof targets in manifest | 153 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 838 |
+| Theorem declarations classified | 841 |
 | Direct/projection-style theorem declarations | 161 |
-| Derived/decomposed theorem declarations | 673 |
+| Derived/decomposed theorem declarations | 676 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -74,7 +74,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 4 | 34 | 7 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 3 | 22 | 2 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 4 | 25 | 2 | 23 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -507,6 +507,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentContracts.lean` | `high_impact_without_authority_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `intent_admission_hidden_override_rejects` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `intent_admission_missing_raw_intent_rejects` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `intent_intake_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `intent_intake_probe_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `intent_intake_probe_rejects_request_pressure` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `irreversible_high_impact_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `missing_authority_declaration_requests_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `missing_declared_constraints_requests_clarification` | derived_or_decomposed | no | uses simp, unfold |
