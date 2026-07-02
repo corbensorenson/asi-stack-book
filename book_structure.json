@@ -1603,6 +1603,13 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean route theorems; no deployed rights-usability, approval-service quality, consent-quality, rollback/shutdown execution, manipulation-resistance, dignity-preservation, or support-state-promotion claim",
               "status": "implemented in AsiStackProofs.Corrigibility; no deployed corrigibility behavior claim"
+            },
+            {
+              "name": "Metaphysics lineage boundary audit",
+              "purpose": "Check that metaphysical and consciousness lineage in the Constitutional Alignment chapter stays labeled as lineage, interpretation, speculation, or design rationale rather than becoming proof, enforcement authority, or support-state evidence.",
+              "implementation_status": "implemented",
+              "result_status": "passing via python3 scripts/validate_alignment_metaphysics_boundary.py; no moral-correctness, consciousness, deployed-alignment, or support-state claim",
+              "status": "implemented; deterministic surface audit only"
             }
           ],
           "lean_module": "AsiStackProofs.Alignment; AsiStackProofs.Corrigibility",

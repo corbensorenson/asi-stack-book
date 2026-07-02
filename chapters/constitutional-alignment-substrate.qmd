@@ -4,7 +4,7 @@ chapter_id: "constitutional-alignment-substrate"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v1.x consolidated manuscript"
-last_updated: "2026-07-01"
+last_updated: "2026-07-02"
 primary_sources:
   - "alignment_field"
   - "field_of_god"
@@ -19,6 +19,7 @@ open_evidence_gaps:
   - "The consolidated alignment/governance layer preserves constitutional-predicate and agency-rights mappings at argument support only; no deployed alignment, dignity preservation, corrigibility, consent-quality, reviewer-independence, or moral-correctness claim is promoted."
   - "Synthetic constitutional-alignment and agency-rights harnesses plus finite-record Lean theorems, constitutional lifecycle route checks, and agency-correction route checks remain bounded record checks; runtime policy behavior, material rights usability under pressure, manipulation resistance, approval-service quality, reviewer-independence quality, rollback/shutdown execution, and red-team evidence remain open."
   - "External comparators for Constitutional AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment or deployed control result is reproduced here."
+  - "The metaphysics boundary audit is a text/surface guard only; it keeps lineage and consciousness language labeled, but it does not prove metaphysical claims, moral correctness, source interpretation adequacy, or deployed alignment behavior."
 ---
 
 ## Chapter status
@@ -43,6 +44,15 @@ Both record families remain visible in the test plan and
 formalization hooks.
 
 Source loading state: the assigned alignment, agency, corrigibility, and constitutional comparator sources have source notes, exact claim-source mappings, passage-review references, folded source-history records, and external-comparator notes. The destination claim still remains at `argument` until a separate accepted evidence transition justifies movement.
+
+Metaphysics boundary state: `python3 scripts/validate_alignment_metaphysics_boundary.py`
+now checks the live chapter, curated reader chapter, selected source notes,
+outline, roadmap, changelog, and manifest for the lineage/evidence boundary.
+The local result is
+`experiments/constitutional_alignment_metaphysics_boundary/results/2026-07-02-local.json`.
+This is a surface audit only, not a moral-correctness, consciousness,
+deployed-alignment, runtime-corrigibility, source-truth, or support-state
+claim.
 
 ## Drafting guardrail
 
@@ -377,6 +387,7 @@ the merged core claim at `argument`.
 | Corrigibility pathway test | Check that update, rollback, shutdown, or correction paths remain available after transition. | modeled by finite Lean and synthetic fixtures; deployed shutdown, rollback, and correction behavior not run |
 | Constitutional lifecycle admission route envelope | Check that finite constitutional lifecycle records route missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented in `AsiStackProofs.Alignment`; no moral-correctness, deployed alignment, rights-usability, reviewer-independence quality, rollback execution, consent-quality, support-state-promotion, or runtime-policy claim |
 | Agency correction lifecycle route envelope | Check that finite agency-correction lifecycle records route missing affected-party records, material notice, pre-effect review, bounded delegation, approval, correction paths, rollback/shutdown paths, dependency residuals, degradation reasons, accountability, evidence-transition records, and complete bounded action to explicit outcomes. | implemented in `AsiStackProofs.Corrigibility`; no deployed rights-usability, approval-service quality, consent-quality, rollback/shutdown execution, manipulation-resistance, dignity-preservation, or support-state-promotion claim |
+| Metaphysics lineage boundary audit | Check that metaphysical and consciousness lineage stays labeled as speculative, interpretive, or design-rationale context rather than becoming proof, enforcement authority, or support-state evidence. | implemented by `python3 scripts/validate_alignment_metaphysics_boundary.py`; no moral-correctness, consciousness, deployed-alignment, runtime-corrigibility, or support-state claim |
 
 ## Formalization hooks
 

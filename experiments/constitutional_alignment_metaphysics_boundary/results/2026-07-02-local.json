@@ -1,0 +1,43 @@
+{
+  "boundary_checks": {
+    "chapter_core_support_effect": "none",
+    "evidence_transition_created": false,
+    "external_comparators_remain_comparator_only": true,
+    "live_chapter_marks_metaphysics_as_lineage": true,
+    "reader_chapter_marks_metaphysics_as_lineage": true,
+    "source_notes_preserve_author_intent_vs_evidence": true
+  },
+  "chapter_id": "constitutional-alignment-substrate",
+  "command": "python3 scripts/validate_alignment_metaphysics_boundary.py",
+  "non_claims": [
+    "does not prove metaphysical claims",
+    "does not prove consciousness claims",
+    "does not prove moral correctness",
+    "does not prove deployed constitutional alignment",
+    "does not prove runtime corrigibility",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "This is a text/surface audit only; it does not inspect deployed behavior, reviewer quality, moral correctness, source truth, or runtime policy enforcement.",
+    "The chapter remains at argument support."
+  ],
+  "result_id": "2026-07-02-alignment-metaphysics-boundary-audit",
+  "schema_version": "asi_stack.alignment_metaphysics_boundary.v0",
+  "source_notes_checked": [
+    "sources/source_notes/alignment_field.md",
+    "sources/source_notes/field_of_god.md",
+    "sources/source_notes/eternal_code.md",
+    "sources/source_notes/coherence_exchange.md"
+  ],
+  "support_state_effect": "none",
+  "surfaces_checked": [
+    "chapters/constitutional-alignment-substrate.qmd",
+    "editions/reader_manuscript/v1_0/chapters/constitutional-alignment-substrate.qmd",
+    "docs/book_outline.md",
+    "docs/v1_x_beyond_sota_roadmap.md",
+    "docs/alignment_metaphysics_boundary_audit.md",
+    "book_structure.json"
+  ],
+  "verification_result": "pass"
+}
