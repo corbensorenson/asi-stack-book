@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 43,
+  "operation_count": 44,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -451,6 +451,18 @@
       },
       "content": "An effect receipt exists to keep a successful tool response from turning into a broad success claim. It names the state before the effect when that state is available, then names the state after the effect so review can see what changed. External side effects are recorded separately because messages, deployments, payments, API calls, hardware actions, and institutional changes may need different rollback and incident paths.\n\nRollback handles name the actual mechanism for undoing or repairing an effect when such a mechanism exists. Irreversible residuals name what cannot be undone. Verification references point to checks that the effect matched the contract, while incident references point to denials, exceptions, partial failures, or later reviews.\n\nThe receipt therefore separates evidence of invocation from evidence of correctness. A tool may respond successfully while verification, rollback, approval scope, or residual accounting remains incomplete.",
       "rationale": "Replace the effect-receipt field table with reader prose while preserving the canonical AI/research receipt-field matrix."
+    },
+    {
+      "id": "v1_0.runtime_adapters.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest honest version is a permission envelope around one narrow action. The adapter record says which job requested the action, which capability was needed, which approval or lease applied, what changed, what could be rolled back, and which residuals remain.\n\nThe current repo has three public pieces. The synthetic permission harness checks two valid adapter scenarios and seven invalid ones, including missing permission, approval bypass, expired approval, missing receipts, irreversible effects without rollback or residuals, ambient-authority substitution, and revoked authority receipts. The Lean module models the same finite boundary: permission, scoped leases, sandbox status, authority ceilings, confused-deputy rejection, sandbox-escape rejection, rollback obligations, effect receipts, replay, adversarial review, and revocation routing.\n\nThere is also one tiny executable trace. The effect replay probe writes a generated public-safe temporary file outside the repo, records pre-state and post-state digests, restores the exact pre-state digest, and rejects missing-permission and expired-approval controls before mutation. The adversarial boundary probe adds two valid synthetic reviews and twelve invalid controls for parentage, authority, approval, sandbox, secret, rollback, receipt, audit, support-state, and non-claim failures.\n\nThat is useful boundary evidence, not deployed adapter safety. It does not prove a production sandbox, approval service, secret-handle broker, revocation service, policy-enforcement layer, rollback service, benchmark, or support-state transition.",
+      "rationale": "Replace the dense runtime-adapter harness inventory with reader prose while preserving the canonical AI/research proof and probe details."
     },
     {
       "id": "v1_0.spinoza.interfaces_reader_replace",

@@ -18,6 +18,25 @@
         "",
         "The receipt therefore separates evidence of invocation from evidence of correctness. A tool may respond successfully while verification, rollback, approval scope, or residual accounting remains incomplete."
       ]
+    },
+    {
+      "id": "v1_0.runtime_adapters.minimum_viable_implementation_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the dense runtime-adapter harness inventory with reader prose while preserving the canonical AI/research proof and probe details.",
+      "content_lines": [
+        "The smallest honest version is a permission envelope around one narrow action. The adapter record says which job requested the action, which capability was needed, which approval or lease applied, what changed, what could be rolled back, and which residuals remain.",
+        "",
+        "The current repo has three public pieces. The synthetic permission harness checks two valid adapter scenarios and seven invalid ones, including missing permission, approval bypass, expired approval, missing receipts, irreversible effects without rollback or residuals, ambient-authority substitution, and revoked authority receipts. The Lean module models the same finite boundary: permission, scoped leases, sandbox status, authority ceilings, confused-deputy rejection, sandbox-escape rejection, rollback obligations, effect receipts, replay, adversarial review, and revocation routing.",
+        "",
+        "There is also one tiny executable trace. The effect replay probe writes a generated public-safe temporary file outside the repo, records pre-state and post-state digests, restores the exact pre-state digest, and rejects missing-permission and expired-approval controls before mutation. The adversarial boundary probe adds two valid synthetic reviews and twelve invalid controls for parentage, authority, approval, sandbox, secret, rollback, receipt, audit, support-state, and non-claim failures.",
+        "",
+        "That is useful boundary evidence, not deployed adapter safety. It does not prove a production sandbox, approval service, secret-handle broker, revocation service, policy-enforcement layer, rollback service, benchmark, or support-state transition."
+      ]
     }
   ]
 }

@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-07-02 - Refine Runtime Adapters reader implementation prose
+
+- Added one active reader-only semantic overlay operation for `Runtime
+  Adapters, Tool Permissions, and Human Approval`, replacing generated reader
+  and live Human-view `Minimum Viable Implementation` harness inventory prose
+  with a tighter reader explanation of the permission envelope, synthetic
+  permission harness, finite Lean boundary, temp-file effect replay, adversarial
+  boundary probe, and no-deployed-adapter boundary while leaving the canonical
+  AI/research proof and probe details unchanged.
+- Preserved the two-valid/seven-invalid permission harness boundary, the
+  rollback-exact public-safe temp-file replay, the missing-permission and
+  expired-approval denial controls, the two-valid/twelve-invalid adversarial
+  boundary probe, revocation routing, support-state effect `none`, and
+  non-claims. The generated reader chapter moved from medium to low heuristic
+  priority, from 71 to 49 dense-term hits, and from one long paragraph to zero.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, the reader chapter review matrix, the
+  v1.0 status snapshot, and the roadmap burn-down. The reader-continuity audit
+  now records 44 reader chapters, 115,939 reader words, 44 active/applied
+  overlay operations, 0 generated-reader chapter table rows, 53 Mermaid
+  diagrams, 0 non-Mermaid code blocks, 4 paragraphs at or above 160 words, and
+  0 high-priority plus 13 medium-priority heuristic review rows.
+- This is a reader projection and Human-view craft increment only; it is not a
+  deployed-adapter result, sandbox-isolation result, approval-service result,
+  secret-handle safety result, rollback-service result, revocation-propagation
+  result, policy-enforcement result, security review, support-state promotion,
+  proof result, benchmark result, reader release, ebook/document/PDF/audio
+  artifact, or source-derived evidence update.
+
 ## 2026-07-02 - Refine Evidence States reader evidence-control prose
 
 - Added two active reader-only semantic overlay operations for `Evidence States
