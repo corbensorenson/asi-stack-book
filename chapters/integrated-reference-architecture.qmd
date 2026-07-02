@@ -159,6 +159,25 @@ The blocked fixture, `reference-trace-blocked-authority-001`, starts from `inten
 
 This is the concrete trace the architecture currently has: two valid record-level fixtures and six expected-invalid fixtures for missing parent artifacts, silent authority deltas, blocked traces without stop conditions, missing residual deltas, promotion without validation commands, and erased residuals. It is useful because it makes the end-to-end record shape testable. It does not prove a deployed runtime, live artifact-continuity audit, authority-stop enforcement, model quality, benchmark quality, or support-state promotion.
 
+### Replayed command trace
+
+A first actual Resource flagship lane validator replay now extends that fixture
+surface. The replay record at
+`experiments/reference_trace/replay_results/2026-07-02-resource-flagship.json`
+runs `python3 scripts/validate_resource_flagship_lane.py`, records the command
+output digest, attaches a tracked artifact bundle, and carries the same
+Reference Trace Record fields: intent, authority chain, authority deltas,
+layer handoffs, artifacts, evidence deltas, residual deltas, validation
+commands, stop conditions, source refs, and non-claims.
+
+The replay also attaches the blocked-authority fixture as its blocked-path
+stop-condition reference. That gives the reference architecture one actual
+command replay plus one explicit denied-authority path in the same record
+family. It is still local replay evidence only. It does not prove a deployed
+runtime, live artifact-continuity service, authority-stop enforcement outside
+the fixture, model quality, benchmark quality, scheduler behavior, economic
+outcomes, or support-state promotion.
+
 ### Worked showpiece trace: one request through the stack
 
 Use the approved fixture as a small, concrete runbook for the whole architecture. The initiating request is not "build ASI." It is deliberately narrower: maintain one living-book section while preserving source boundaries, evidence discipline, and support-state non-promotion. The fixture names that request `intent://human-book-maintenance-request`, which is important because the trace begins with a bounded human purpose rather than a system-owned optimization target.
@@ -232,7 +251,7 @@ Trace fragmentation is the companion failure, where each layer records locally v
 
 A minimum integrated architecture first exists as the reference flow diagram plus the `reference_trace_record` schema and deterministic fixture set. The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 
-That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. The next minimum slice is no longer another diagram. It is a replayed or live trace that produces comparable records from an actual command, artifact bundle, validator run, and blocked-path stop condition while preserving the same non-claim boundaries.
+That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. A first actual command replay now exists as a local Resource flagship validator trace with an artifact bundle, output digest, and attached blocked-path stop conditions. The next minimum slice is stronger: a live or external runtime trace that produces comparable records from real layer handoffs while preserving the same non-claim boundaries.
 
 ## Beyond the State of the Art
 
@@ -257,11 +276,12 @@ When the trace kernel works, a future implementation could be evaluated by trace
 | Test | Purpose | Status |
 |---|---|---|
 | Reference trace record fixture validation | Validate that an end-to-end trace record names trace state, execution boundary, intent, parent artifacts, authority chain/deltas, layer handoffs, artifacts, evidence updates/deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
-| End-to-end intent trace test | Check deterministic reference-trace fixtures for required layer terms from intent through SCF, stable artifact refs, source-note refs, validation commands, evidence deltas, and residual deltas. | implemented by `python3 scripts/validate_reference_trace.py`; no integrated runtime trace or replayed demo exists |
+| End-to-end intent trace test | Check deterministic reference-trace fixtures for required layer terms from intent through SCF, stable artifact refs, source-note refs, validation commands, evidence deltas, and residual deltas. | implemented by `python3 scripts/validate_reference_trace.py`; no integrated runtime trace exists, and the actual command replay is covered separately |
 | Artifact continuity audit | Check deterministic reference-trace fixtures for parent artifact refs, authority-chain/delta visibility, artifact count, and residual preservation. | implemented by `python3 scripts/validate_reference_trace.py`; no live artifact-continuity audit exists |
 | Authority stop-condition test | Check deterministic blocked reference-trace fixtures for stop conditions and promotion blockers when execution authority is missing. | implemented by `python3 scripts/validate_reference_trace.py`; no deployed authority stop-condition checker exists |
+| Actual command replay trace | Record one actual repository validator command as a Reference Trace Record with output digest, artifact bundle, and blocked-path stop conditions. | implemented by `python3 scripts/run_reference_trace_replay.py --write-result` and `python3 scripts/validate_reference_trace_replay.py`; local replay only, no deployed runtime trace |
 
-The implemented rows validate deterministic fixture behavior only. They do not execute the architecture or replay a deployed demo with typed artifacts across layers. A future runtime integration test still needs the command, environment notes, trace artifacts, and result summary for an actual run.
+The implemented rows validate deterministic fixture behavior and one local command replay only. They do not execute the architecture or replay a deployed demo with typed artifacts across layers. A future runtime integration test still needs real layer handoff records, environment notes, runtime trace artifacts, and result summary for an actual deployed or externally replayed run.
 
 ### Formalization hooks
 

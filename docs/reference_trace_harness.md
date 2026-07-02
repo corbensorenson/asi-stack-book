@@ -26,3 +26,24 @@ Expected command output:
 
 `Reference trace harness passed: 2 valid fixture(s), 6 expected-invalid fixture(s).`
 
+## Reference Trace Replay
+
+Command: `python3 scripts/run_reference_trace_replay.py --write-result`
+
+Validation command: `python3 scripts/validate_reference_trace_replay.py`
+
+Replay result:
+`experiments/reference_trace/replay_results/2026-07-02-resource-flagship.json`
+
+The replay runs `python3 scripts/validate_resource_flagship_lane.py`, records
+the command output digest, checks a tracked artifact bundle, and emits a
+Reference Trace Record with intent, authority, handoffs, evidence deltas,
+residual deltas, validation commands, source refs, and non-claims. It also
+attaches the blocked-authority fixture as the blocked-path stop-condition
+reference.
+
+This is local replay evidence only. It does not prove an integrated ASI Stack
+runtime, deployed layer behavior, live artifact-continuity service,
+authority-stop enforcement outside the blocked-authority fixture, scheduler
+behavior, model quality, benchmark quality, safety, economic outcomes, or
+support-state promotion.

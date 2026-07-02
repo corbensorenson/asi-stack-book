@@ -95,6 +95,8 @@ REQUIRED = [
     "scripts/validate_resource_budget_ledgers.py",
     "scripts/validate_simulation_transfer_boundaries.py",
     "scripts/validate_reference_trace.py",
+    "scripts/run_reference_trace_replay.py",
+    "scripts/validate_reference_trace_replay.py",
     "scripts/validate_capacity_smoothing.py",
     "scripts/validate_costed_route_resource_slice.py",
     "scripts/validate_resource_workflow_trace.py",
@@ -215,6 +217,7 @@ REQUIRED = [
     "experiments/compact_gvr_slice/results/2026-07-01-local.json",
     "experiments/resource_budget_ledgers/results/2026-07-01-local.md",
     "experiments/reference_trace/results/2026-06-30-local.md",
+    "experiments/reference_trace/replay_results/2026-07-02-resource-flagship.json",
     "experiments/capacity_smoothing/results/2026-06-28-local.md",
     "experiments/artifact_graph_replay/results/2026-06-30-local.md",
     "experiments/procedural_memory_loop/results/2026-06-30-local.md",
@@ -760,6 +763,7 @@ def main() -> None:
     run_validator("validate_resource_budget_ledgers.py")
     run_validator("validate_simulation_transfer_boundaries.py")
     run_validator("validate_reference_trace.py")
+    run_validator("validate_reference_trace_replay.py")
     run_validator("validate_capacity_smoothing.py")
     run_validator("validate_costed_route_resource_slice.py")
     run_validator("validate_resource_workflow_trace.py")

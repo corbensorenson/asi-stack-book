@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-02 - Add reference trace command replay
+
+- Added `scripts/run_reference_trace_replay.py` and
+  `scripts/validate_reference_trace_replay.py` to record one actual local
+  Integrated Reference Architecture replay from
+  `python3 scripts/validate_resource_flagship_lane.py`.
+- Wrote
+  `experiments/reference_trace/replay_results/2026-07-02-resource-flagship.json`
+  with command output digest, tracked artifact bundle, Reference Trace Record,
+  and blocked-authority fixture stop conditions.
+- Updated the Integrated Reference Architecture chapter, Reference Trace
+  harness note, Appendix E, roadmap, reader-continuity audit, book validator,
+  and v1.0 status word counts.
+- No deployed runtime trace, live artifact-continuity service,
+  authority-stop enforcement outside the fixture, model-quality result,
+  benchmark result, scheduler/economic result, support-state promotion,
+  external review, or artifact approval is claimed.
+
 ## 2026-07-02 - Record Resource sublane no-promotion decisions
 
 - Added accepted no-change/no-promotion evidence-transition records for the
