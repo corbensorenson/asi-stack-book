@@ -1,0 +1,35 @@
+{
+  "packet_id": "change-packet://living-book-methodology-change-packet-schema-001",
+  "packet_type": "chapter_revision",
+  "source_commit": "working-tree-fixture",
+  "changed_chapters": ["living-book-methodology"],
+  "changed_sources": [],
+  "changed_claims": ["living-book-methodology.core"],
+  "proof_tags": ["lean:living_book.methodology.change_packet_boundary"],
+  "schema_or_fixture_paths": [
+    "schemas/living_book_change_packet.schema.json",
+    "experiments/living_book_change_packets/fixtures/valid_chapter_revision.json"
+  ],
+  "validation_commands": [
+    "python3 scripts/validate_living_book_change_packets.py",
+    "python3 scripts/validate_book.py",
+    "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html"
+  ],
+  "validation_status": "pass",
+  "render_result": "pass",
+  "release_target": "live_site",
+  "audience_profiles": ["ai_agents", "human_researchers", "interested_humans"],
+  "derived_artifact_boundary": "Live-site publication is the canonical research surface; reader projections remain derived and not equal authority.",
+  "support_state_effect": "none",
+  "evidence_transition_refs": [],
+  "changelog_refs": ["appendices/F_changelog.qmd"],
+  "public_url": "https://corbensorenson.github.io/asi-stack-book/",
+  "residuals": [
+    "change-packet harness validates synthetic record discipline only",
+    "external methodology review remains open"
+  ],
+  "non_claims": [
+    "No support-state promotion follows from this change packet.",
+    "Does not prove manuscript quality, source interpretation quality, reader artifact approval, or live-site availability."
+  ]
+}

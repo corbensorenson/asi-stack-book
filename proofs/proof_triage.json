@@ -1571,6 +1571,16 @@
       "rationale": "Implemented in AsiStackProofs.LivingBook as a finite structural-update predicate: valid structural updates require regenerated scaffold and proof manifest."
     },
     {
+      "tag": "lean:living_book.methodology.change_packet_boundary",
+      "chapter_id": "living-book-methodology",
+      "module": "AsiStackProofs.LivingBook",
+      "formal_target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.LivingBook as a finite change-packet predicate: public-surface changes require validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline."
+    },
+    {
       "tag": "lean:bibliography.plan.operational_invariant",
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "module": "AsiStackProofs.BibliographyPlan",

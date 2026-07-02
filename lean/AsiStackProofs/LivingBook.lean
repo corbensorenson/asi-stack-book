@@ -183,4 +183,132 @@ theorem derived_artifact_without_source_review_or_support_boundary_rejected
                           rw [supportMissing] at supportEffect
                           contradiction
 
+structure ChangePacketReview where
+  publicSurfaceChange : Bool
+  validationCommandsRecorded : Bool
+  changelogRefsPresent : Bool
+  supportStateEffectRecorded : Bool
+  nonClaimsRecorded : Bool
+  derivedArtifactTarget : Bool
+  derivedArtifactBoundaryRecorded : Bool
+  readerArtifactEqualAuthority : Bool
+  supportPromotionClaimed : Bool
+  evidenceTransitionRefsPresent : Bool
+deriving DecidableEq, Repr
+
+def ChangePacketValid (review : ChangePacketReview) : Prop :=
+  review.publicSurfaceChange = true ->
+    review.validationCommandsRecorded = true ∧
+      review.changelogRefsPresent = true ∧
+        review.supportStateEffectRecorded = true ∧
+          review.nonClaimsRecorded = true ∧
+            (review.derivedArtifactTarget = true ->
+              review.derivedArtifactBoundaryRecorded = true ∧
+                review.readerArtifactEqualAuthority = false) ∧
+              (review.supportPromotionClaimed = true ->
+                review.evidenceTransitionRefsPresent = true)
+
+theorem change_packet_public_surface_records_required_boundaries
+    {review : ChangePacketReview} :
+    ChangePacketValid review ->
+    review.publicSurfaceChange = true ->
+    review.validationCommandsRecorded = true ∧
+      review.changelogRefsPresent = true ∧
+        review.supportStateEffectRecorded = true ∧
+          review.nonClaimsRecorded = true := by
+  intro valid surfaceChange
+  have complete := valid surfaceChange
+  cases complete with
+  | intro commands changelogAndRest =>
+      cases changelogAndRest with
+      | intro changelog supportAndRest =>
+          cases supportAndRest with
+          | intro support nonClaimsAndRest =>
+              cases nonClaimsAndRest with
+              | intro nonClaims _ =>
+                  exact ⟨commands, changelog, support, nonClaims⟩
+
+theorem change_packet_without_validation_changelog_support_or_nonclaims_rejected
+    {review : ChangePacketReview} :
+    review.publicSurfaceChange = true ->
+    (review.validationCommandsRecorded = false ∨
+      review.changelogRefsPresent = false ∨
+        review.supportStateEffectRecorded = false ∨
+          review.nonClaimsRecorded = false) ->
+    ¬ ChangePacketValid review := by
+  intro surfaceChange missing valid
+  have required :=
+    change_packet_public_surface_records_required_boundaries valid surfaceChange
+  cases required with
+  | intro commands changelogAndRest =>
+      cases changelogAndRest with
+      | intro changelog supportAndRest =>
+          cases supportAndRest with
+          | intro support nonClaims =>
+              cases missing with
+              | inl commandsMissing =>
+                  rw [commandsMissing] at commands
+                  contradiction
+              | inr changelogOrRest =>
+                  cases changelogOrRest with
+                  | inl changelogMissing =>
+                      rw [changelogMissing] at changelog
+                      contradiction
+                  | inr supportOrNonClaims =>
+                      cases supportOrNonClaims with
+                      | inl supportMissing =>
+                          rw [supportMissing] at support
+                          contradiction
+                      | inr nonClaimsMissing =>
+                          rw [nonClaimsMissing] at nonClaims
+                          contradiction
+
+theorem derived_artifact_equal_authority_change_packet_rejected
+    {review : ChangePacketReview} :
+    review.publicSurfaceChange = true ->
+    review.derivedArtifactTarget = true ->
+    review.readerArtifactEqualAuthority = true ->
+    ¬ ChangePacketValid review := by
+  intro surfaceChange derivedTarget equalAuthority valid
+  unfold ChangePacketValid at valid
+  have complete := valid surfaceChange
+  cases complete with
+  | intro _ changelogAndRest =>
+      cases changelogAndRest with
+      | intro _ supportAndRest =>
+          cases supportAndRest with
+          | intro _ nonClaimsAndRest =>
+              cases nonClaimsAndRest with
+              | intro _ derivedAndPromotion =>
+                  cases derivedAndPromotion with
+                  | intro derivedBoundary _ =>
+                      have boundary := derivedBoundary derivedTarget
+                      cases boundary with
+                      | intro _ notEqual =>
+                          rw [equalAuthority] at notEqual
+                          contradiction
+
+theorem support_promotion_without_evidence_transition_rejected
+    {review : ChangePacketReview} :
+    review.publicSurfaceChange = true ->
+    review.supportPromotionClaimed = true ->
+    review.evidenceTransitionRefsPresent = false ->
+    ¬ ChangePacketValid review := by
+  intro surfaceChange promotion noEvidence valid
+  unfold ChangePacketValid at valid
+  have complete := valid surfaceChange
+  cases complete with
+  | intro _ changelogAndRest =>
+      cases changelogAndRest with
+      | intro _ supportAndRest =>
+          cases supportAndRest with
+          | intro _ nonClaimsAndRest =>
+              cases nonClaimsAndRest with
+              | intro _ derivedAndPromotion =>
+                  cases derivedAndPromotion with
+                  | intro _ promotionBoundary =>
+                      have evidence := promotionBoundary promotion
+                      rw [noEvidence] at evidence
+                      contradiction
+
 end AsiStackProofs.LivingBook

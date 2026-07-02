@@ -185,6 +185,14 @@ validation output. The point is not to create paperwork for its own sake. The
 point is to make revision auditable after the author, editor, or AI assistant
 has moved on.
 
+The live repository now has the first executable version of that idea: a
+change-packet schema, three valid synthetic packets, six mutation controls, a
+validator, a result record, and finite Lean checks for missing receipts,
+equal-authority reader derivatives, and support promotion without an
+evidence-transition reference. That proves only record discipline. It does not
+prove manuscript quality, source accuracy, release approval, reader-format
+quality, or future-agent judgment.
+
 Benchmaxxing gives the book a ratchet metaphor: progress should leave a harder
 frontier, a preserved regression floor, and visible residuals. VIEA gives it
 artifact discipline: important outputs become durable records, not just useful
@@ -293,11 +301,12 @@ publication hygiene. It leaves manuscript quality, source accuracy, claim
 truth, external review, reader-release approval, and audio production open
 unless separate records say otherwise.
 
-The next practical object is a more explicit change-packet record. It should
-make one chapter edit, one outline update, one proof-manifest shift, one
-reader-generation event, or one blocked release easy to inspect as a single
-auditable unit. That would reduce dependence on conversational memory and make
-future autonomous writing runs less ambiguous.
+The first change-packet record surface now exists. It makes chapter edits,
+outline updates, proof-manifest shifts, reader-generation events, and blocked
+release states inspectable as one auditable unit. The remaining work is not to
+pretend that this makes the book finished; it is to use the packet on future
+substantive changes, keep external methodology review open, and prevent packet
+validation from becoming another form of publication laundering.
 
 ## Beyond The State Of The Art
 

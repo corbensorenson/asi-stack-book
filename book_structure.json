@@ -12568,6 +12568,13 @@
               "status": "implemented; no manuscript-quality or claim-truth proof"
             },
             {
+              "name": "Living-book change-packet validation",
+              "purpose": "Check that living-book change packets record affected surfaces, validation commands, render status, derivative boundaries, support-state effects, residuals, and non-claims.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_living_book_change_packets.py` with 3 valid and 6 expected-invalid synthetic fixtures; publication-governance record discipline only",
+              "status": "implemented; no release approval, manuscript-quality, source-interpretation, or support-state-promotion claim"
+            },
+            {
               "name": "Quarto render check",
               "purpose": "Check that the public book renders locally to HTML.",
               "implementation_status": "implemented",
@@ -12629,6 +12636,12 @@
               "tag": "lean:living_book.methodology.failure_blocks_promotion",
               "module": "AsiStackProofs.LivingBook",
               "target": "A structural update without regenerated scaffold/proof manifest is invalid.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:living_book.methodology.change_packet_boundary",
+              "module": "AsiStackProofs.LivingBook",
+              "target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
               "status": "implemented"
             }
           ]

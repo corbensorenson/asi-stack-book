@@ -1,9 +1,9 @@
 {
   "generated_from": "docs/book_outline.md",
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
-  "proof_target_count": 166,
+  "proof_target_count": 167,
   "status_counts": {
-    "implemented": 166
+    "implemented": 167
   },
   "chapter_counts": {
     "artifact-graphs-audit-logs-and-replay": 3,
@@ -27,7 +27,7 @@
     "integrated-reference-architecture": 2,
     "intent-to-execution-contracts": 7,
     "labor-os-and-typed-jobs": 4,
-    "living-book-methodology": 2,
+    "living-book-methodology": 3,
     "mathematical-and-search-substrates": 2,
     "moral-uncertainty-and-value-conflict": 6,
     "open-research-agenda-and-bibliography-plan": 2,
@@ -1679,7 +1679,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
       "status": "implemented",
-      "outline_line": 3280,
+      "outline_line": 3282,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1689,7 +1689,17 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
       "status": "implemented",
-      "outline_line": 3281,
+      "outline_line": 3283,
+      "module_path": "lean/AsiStackProofs/LivingBook.lean"
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "chapter_title": "Living Book Methodology",
+      "tag": "lean:living_book.methodology.change_packet_boundary",
+      "module": "AsiStackProofs.LivingBook",
+      "formal_target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
+      "status": "implemented",
+      "outline_line": 3284,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -1699,7 +1709,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
       "status": "implemented",
-      "outline_line": 3341,
+      "outline_line": 3344,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -1709,7 +1719,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
       "status": "implemented",
-      "outline_line": 3342,
+      "outline_line": 3345,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

@@ -1,0 +1,28 @@
+{
+  "packet_id": "change-packet://reader-format-release-blocked-001",
+  "packet_type": "release_blocker",
+  "source_commit": "working-tree-fixture",
+  "changed_chapters": [],
+  "changed_sources": [],
+  "changed_claims": [],
+  "proof_tags": [],
+  "schema_or_fixture_paths": ["editions/release_profiles.json"],
+  "validation_commands": [
+    "python3 scripts/validate_release_profiles.py"
+  ],
+  "validation_status": "blocked",
+  "render_result": "not_run",
+  "release_target": "reader_format",
+  "audience_profiles": ["interested_humans"],
+  "derived_artifact_boundary": "Reader formats are derived artifacts, not equal authority to the live book, and not approved until exact outputs and review records exist.",
+  "support_state_effect": "blocks_promotion",
+  "evidence_transition_refs": [],
+  "changelog_refs": [],
+  "public_url": "",
+  "residuals": [
+    "blocked because no exact EPUB, PDF, DOCX, audio, review, or release artifact record exists"
+  ],
+  "non_claims": [
+    "Does not promote any claim or approve any reader, ebook, PDF, DOCX, or audio artifact."
+  ]
+}

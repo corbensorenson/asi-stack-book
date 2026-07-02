@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/living_book_change_packet.schema.json",
+  "title": "Living Book Change Packet",
+  "type": "object",
+  "required": [
+    "packet_id",
+    "packet_type",
+    "source_commit",
+    "changed_chapters",
+    "changed_sources",
+    "changed_claims",
+    "proof_tags",
+    "schema_or_fixture_paths",
+    "validation_commands",
+    "validation_status",
+    "render_result",
+    "release_target",
+    "audience_profiles",
+    "derived_artifact_boundary",
+    "support_state_effect",
+    "evidence_transition_refs",
+    "changelog_refs",
+    "public_url",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "packet_id": { "type": "string", "minLength": 1 },
+    "packet_type": {
+      "type": "string",
+      "enum": [
+        "chapter_revision",
+        "outline_only",
+        "proof_manifest_shift",
+        "reader_edition_generation",
+        "release_blocker",
+        "source_ingestion",
+        "schema_fixture_update",
+        "evidence_transition_review"
+      ]
+    },
+    "source_commit": { "type": "string", "minLength": 1 },
+    "changed_chapters": { "type": "array", "items": { "type": "string" } },
+    "changed_sources": { "type": "array", "items": { "type": "string" } },
+    "changed_claims": { "type": "array", "items": { "type": "string" } },
+    "proof_tags": { "type": "array", "items": { "type": "string" } },
+    "schema_or_fixture_paths": { "type": "array", "items": { "type": "string" } },
+    "validation_commands": { "type": "array", "items": { "type": "string" } },
+    "validation_status": {
+      "type": "string",
+      "enum": ["pass", "fail", "partial", "pending", "blocked"]
+    },
+    "render_result": {
+      "type": "string",
+      "enum": ["pass", "fail", "not_run", "not_required"]
+    },
+    "release_target": {
+      "type": "string",
+      "enum": ["live_site", "research_snapshot", "reader_source", "reader_format", "audio_script", "none"]
+    },
+    "audience_profiles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["ai_agents", "human_researchers", "interested_humans"]
+      }
+    },
+    "derived_artifact_boundary": { "type": "string", "minLength": 1 },
+    "support_state_effect": {
+      "type": "string",
+      "enum": ["none", "no_change", "blocks_promotion", "eligible_for_review", "upward_transition"]
+    },
+    "evidence_transition_refs": { "type": "array", "items": { "type": "string" } },
+    "changelog_refs": { "type": "array", "items": { "type": "string" } },
+    "public_url": { "type": "string" },
+    "residuals": { "type": "array", "items": { "type": "string" } },
+    "non_claims": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+{
+  "packet_id": "change-packet://pass-without-validation-001",
+  "packet_type": "schema_fixture_update",
+  "source_commit": "working-tree-fixture",
+  "changed_chapters": ["living-book-methodology"],
+  "changed_sources": [],
+  "changed_claims": [],
+  "proof_tags": [],
+  "schema_or_fixture_paths": ["schemas/living_book_change_packet.schema.json"],
+  "validation_commands": [],
+  "validation_status": "pass",
+  "render_result": "not_required",
+  "release_target": "none",
+  "audience_profiles": ["ai_agents"],
+  "derived_artifact_boundary": "No derived artifact; not release approval.",
+  "support_state_effect": "none",
+  "evidence_transition_refs": [],
+  "changelog_refs": ["appendices/F_changelog.qmd"],
+  "public_url": "",
+  "residuals": [],
+  "non_claims": ["No support-state promotion follows from this change packet."]
+}

@@ -2729,9 +2729,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 166 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 166 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 166 proof targets, 54 Lean modules, 858 theorem declarations, 682 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 167 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 167 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 167 proof targets, 54 Lean modules, 862 theorem declarations, 686 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3268,10 +3268,12 @@ Draft deliverables:
 - A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
 - Implemented repository-level validation: `living_book_release_record.valid.json` and tracked records in `release_records/` validate release-record shape, release state, audience scope, canonical scope, derived-artifact boundaries, support-state effect, and non-claims only; render and validation checks prove publication hygiene, not manuscript quality, claim truth, reader artifact production, or audio artifact production.
 - A three-audience edition profile with live, research, reader, and audio paths; a reader-edition source generator; an audio-script generator; and an edition-release record schema for future EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB accountability.
+- Implemented change-packet record lane: `schemas/living_book_change_packet.schema.json`, `python3 scripts/validate_living_book_change_packets.py`, three valid synthetic packets, six expected-invalid mutation controls, result record `experiments/living_book_change_packets/results/2026-07-02-local.md`, and finite Lean negative cases for missing validation/changelog/support/non-claim receipts, equal-authority reader derivatives, and support promotion without evidence-transition refs. This validates publication-governance record discipline only, not manuscript quality, source interpretation, future-agent correctness, reader-artifact approval, or support-state promotion.
 - Source-noted external comparator rows now position the method against literate programming, executable/computational books, Quarto book publishing, AI risk-management reporting, transparent evaluation, living benchmarks, and contamination warnings without claiming external review or artifact approval.
 - Planned Codex test: Quarto render check.
 - Planned Codex test: Manifest/outline consistency check.
 - Planned Codex test: Changelog update check.
+- Implemented Codex test: Living-book change-packet validation, via `python3 scripts/validate_living_book_change_packets.py`, with 3 valid and 6 expected-invalid synthetic fixtures.
 
 Lean proof targets:
 
@@ -3279,6 +3281,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | Every chapter in the manifest has outline proof targets and generated claim placeholders. | implemented |
 | `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A structural update without regenerated scaffold/proof manifest is invalid. | implemented |
+| `lean:living_book.methodology.change_packet_boundary` | `AsiStackProofs.LivingBook` | A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline. | implemented |
 
 ### Open Research Agenda and Bibliography Plan
 

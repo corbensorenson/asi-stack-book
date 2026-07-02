@@ -1,0 +1,22 @@
+{
+  "packet_id": "change-packet://no-non-claims-001",
+  "packet_type": "proof_manifest_shift",
+  "source_commit": "working-tree-fixture",
+  "changed_chapters": ["living-book-methodology"],
+  "changed_sources": [],
+  "changed_claims": [],
+  "proof_tags": ["lean:living_book.methodology.change_packet_boundary"],
+  "schema_or_fixture_paths": ["lean/AsiStackProofs/LivingBook.lean"],
+  "validation_commands": ["cd lean && lake build"],
+  "validation_status": "pass",
+  "render_result": "not_required",
+  "release_target": "none",
+  "audience_profiles": ["ai_agents", "human_researchers"],
+  "derived_artifact_boundary": "No derived artifact; not release approval.",
+  "support_state_effect": "none",
+  "evidence_transition_refs": [],
+  "changelog_refs": ["appendices/F_changelog.qmd"],
+  "public_url": "",
+  "residuals": [],
+  "non_claims": []
+}

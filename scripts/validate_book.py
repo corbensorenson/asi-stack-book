@@ -24,6 +24,7 @@ REQUIRED = [
     "scripts/validate_release_reproducibility.py",
     "scripts/validate_public_site_accessibility.py",
     "scripts/validate_v1_release_gate_audit.py",
+    "scripts/validate_living_book_change_packets.py",
     "scripts/validate_release_profiles.py",
     "scripts/validate_reader_spine.py",
     "scripts/validate_reading_mode_toggle.py",
@@ -69,6 +70,8 @@ REQUIRED = [
     "scripts/validate_accepted_transition_review_audit.py",
     "docs/accepted_transition_review_audit.md",
     "experiments/accepted_transition_review/results/2026-07-02-local.json",
+    "docs/living_book_change_packet_harness.md",
+    "experiments/living_book_change_packets/results/2026-07-02-local.md",
     "scripts/validate_claim_ledger_completeness_audit.py",
     "docs/claim_ledger_completeness_audit.md",
     "experiments/claim_ledger_completeness/results/2026-07-02-local.json",
@@ -747,6 +750,7 @@ def main() -> None:
     run_validator("validate_release_reproducibility.py")
     run_validator("validate_public_site_accessibility.py")
     run_validator("validate_v1_release_gate_audit.py")
+    run_validator("validate_living_book_change_packets.py")
     run_validator("validate_release_profiles.py")
     validate_publication_surface()
     run_validator("validate_reading_mode_toggle.py")

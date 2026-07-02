@@ -1,0 +1,31 @@
+{
+  "packet_id": "change-packet://living-book-methodology-proof-shift-001",
+  "packet_type": "proof_manifest_shift",
+  "source_commit": "working-tree-fixture",
+  "changed_chapters": ["living-book-methodology"],
+  "changed_sources": [],
+  "changed_claims": [],
+  "proof_tags": ["lean:living_book.methodology.change_packet_boundary"],
+  "schema_or_fixture_paths": ["lean/AsiStackProofs/LivingBook.lean"],
+  "validation_commands": [
+    "python3 scripts/sync_proof_manifest.py --check",
+    "cd lean && lake build"
+  ],
+  "validation_status": "pass",
+  "render_result": "not_required",
+  "release_target": "none",
+  "audience_profiles": ["ai_agents", "human_researchers"],
+  "derived_artifact_boundary": "No reader artifact is produced; proof metadata is a live-book research projection and not release approval.",
+  "support_state_effect": "none",
+  "evidence_transition_refs": [],
+  "changelog_refs": ["appendices/F_changelog.qmd"],
+  "public_url": "",
+  "residuals": [
+    "finite-record theorem only",
+    "semantic adequacy review remains open"
+  ],
+  "non_claims": [
+    "No support-state promotion follows from this proof-manifest shift.",
+    "Does not prove source interpretation, editorial quality, or deployed process behavior."
+  ]
+}

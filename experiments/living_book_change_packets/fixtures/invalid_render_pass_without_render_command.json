@@ -1,0 +1,22 @@
+{
+  "packet_id": "change-packet://render-pass-without-render-command-001",
+  "packet_type": "chapter_revision",
+  "source_commit": "working-tree-fixture",
+  "changed_chapters": ["living-book-methodology"],
+  "changed_sources": [],
+  "changed_claims": ["living-book-methodology.core"],
+  "proof_tags": [],
+  "schema_or_fixture_paths": [],
+  "validation_commands": ["python3 scripts/validate_book.py"],
+  "validation_status": "pass",
+  "render_result": "pass",
+  "release_target": "live_site",
+  "audience_profiles": ["ai_agents", "human_researchers"],
+  "derived_artifact_boundary": "Live-site change only; reader projections remain derived and not equal authority.",
+  "support_state_effect": "none",
+  "evidence_transition_refs": [],
+  "changelog_refs": ["appendices/F_changelog.qmd"],
+  "public_url": "https://corbensorenson.github.io/asi-stack-book/",
+  "residuals": [],
+  "non_claims": ["No support-state promotion follows from this change packet."]
+}

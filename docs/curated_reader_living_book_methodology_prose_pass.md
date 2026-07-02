@@ -64,7 +64,10 @@ The reader throughline is:
 
 - This pass edits the live AI/research chapter in a matching framing pass but
   does not change `book_structure.json`.
-- This pass does not create a new living-book change-packet schema or fixture.
+- A later implementation pass now adds a first living-book change-packet schema,
+  validator, synthetic fixtures, result record, and finite Lean boundary. This
+  prose-pass record remains a drafting-only reader-prose record, not the
+  machine-readable change-packet result.
 - This pass does not approve the curated reader manuscript for release.
 - This pass does not approve EPUB, DOCX, PDF, HTML, audio, or audio-embedded
   EPUB artifacts.
@@ -72,7 +75,8 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- A more explicit living-book change-packet record remains planned.
+- Future substantive reader/methodology edits should use the implemented
+  change-packet record shape instead of relying only on prose-pass summaries.
 - Human editorial review has not approved this chapter for reader release.
 - External review of the methodology and support-state surfaces remains
   requested or pending unless a separate external-review record says otherwise.

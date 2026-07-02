@@ -1,0 +1,22 @@
+{
+  "packet_id": "change-packet://reader-equal-authority-001",
+  "packet_type": "reader_edition_generation",
+  "source_commit": "working-tree-fixture",
+  "changed_chapters": ["living-book-methodology"],
+  "changed_sources": [],
+  "changed_claims": [],
+  "proof_tags": [],
+  "schema_or_fixture_paths": ["editions/reader_manuscript/v1_0/chapters/living-book-methodology.qmd"],
+  "validation_commands": ["python3 scripts/validate_reader_spine.py --check"],
+  "validation_status": "pass",
+  "render_result": "not_required",
+  "release_target": "reader_source",
+  "audience_profiles": ["interested_humans"],
+  "derived_artifact_boundary": "Reader manuscript is equal authority to the live book and may revise claim state for readability.",
+  "support_state_effect": "none",
+  "evidence_transition_refs": [],
+  "changelog_refs": ["appendices/F_changelog.qmd"],
+  "public_url": "",
+  "residuals": [],
+  "non_claims": ["No support-state promotion follows from this change packet."]
+}
