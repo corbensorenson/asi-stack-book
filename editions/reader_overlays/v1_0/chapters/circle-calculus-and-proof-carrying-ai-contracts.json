@@ -22,6 +22,25 @@
       ]
     },
     {
+      "id": "v1_0.circle_contracts.concrete_receipt_boundary_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Concrete Circle Receipt Boundary"
+      },
+      "rationale": "Replace the dense Circle receipt-boundary table with reader prose while preserving exact public-safe receipt facts, fingerprints, theorem IDs, validator boundaries, and non-claims.",
+      "content_lines": [
+        "The public-safe Circle lane is concrete enough to show as a receipt boundary, but not as a capability result. The imported record points to an external Circle checkout at commit `63b0f511`, contract `CC-AI-CONTRACT-ROPE-001`, family `rope_position_distinguishability`, and requested margin `1/328459`. The certifier record says `status proved`, `request_passed true`, `decision passed`, `assurance mixed_theorem_and_computation`, and `theorem_count 55`; the ready digest reports `ready=True fields=31 missing=0 theorems=75`.",
+        "",
+        "The deterministic fields remain narrow: `evidence.d19_proved_request_status=\"proved\"`, `evidence.d19_proved_first_channel_bank_transfer=true`, `evidence.real_phase_dirichlet_witness_guardrail=true`, `evidence.exact_discrete_pass=true`, and `evidence.total_bank_collision_pair_count=0`. The ASI consumer gate checks seven theorem IDs for this receipt boundary: `AIRA-T0058`, `AIRA-T0059`, `AIRA-T0171`, `AIRA-T0172`, `AIRA-T0239`, `AIRA-T0240`, and `AIRA-T0241`.",
+        "",
+        "The receipt also carries replay-facing fingerprints: receipt `91b72a6dcf821a9733f21800cd1093a3d0665588022031ba72c94893800330c3`, normalized request `20e68c5f787e267c6611bc57b8d8e98e1cb0f5a74f272379716a5d83e761407d`, contract pack `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`, and contract `a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468`. The recorded external test batch says `145 passed in 718.24s (0:11:58)`, and the ASI consumer gate rejects digest mismatch, missing required theorem ID, stale contract fingerprint status, and unsupported transfer-claim use.",
+        "",
+        "Those specifics matter because they keep the receipt inspectable. They also keep it bounded. This lane does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, or ASI. It does not prove deployed proof-contract transport inside The ASI Stack, and it does not promote any chapter core claim above `argument`."
+      ]
+    },
+    {
       "id": "v1_0.circle_contracts.beyond_state_reader_replace",
       "status": "active",
       "action": "replace_section",

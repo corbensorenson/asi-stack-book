@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-02 - Reduce Circle reader table density
+
+- Added one active reader-only semantic overlay operation for
+  `Circle Calculus and Proof-Carrying AI Contracts`, replacing the generated
+  reader and live Human-view `Concrete Circle Receipt Boundary` table with
+  prose while leaving the canonical AI/research evidence table unchanged.
+- Regenerated `assets/reader-overlays.html` and
+  `docs/reader_continuity_audit.md`; the reader-continuity audit now records
+  44 reader chapters, 116,435 reader words, 32 active/applied overlay
+  operations, 32 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks,
+  0 paragraphs at or above 160 words, and 4 high-priority plus 13
+  medium-priority heuristic review rows. The Circle chapter moved from high
+  to medium priority by table-density heuristics.
+- Updated the v1.0 status snapshot and roadmap burn-down. This is a reader
+  projection and Human-view craft increment only; refreshed the tracked
+  audio-script probe table count from 11 to 10 to match the generated
+  reader-derived narration workspace. It is not a reader release,
+  ebook/document/PDF/audio artifact, Circle replay, theorem replay, support
+  state promotion, source-derived evidence update, benchmark result,
+  model-quality claim, deployment claim, or public contract-pack result.
+
 ## 2026-07-02 - Add Runtime adapter revocation route proof
 
 - Added `lean:runtime.adapters.revocation_route_bridge` in

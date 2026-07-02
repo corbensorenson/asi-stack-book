@@ -35,7 +35,7 @@ Required review files are generated in the ignored workspace:
 
 | Material | Count |
 |---|---:|
-| Tables | 11 |
+| Tables | 10 |
 | Mermaid diagrams | 53 |
 | Code/schema blocks | 0 |
 | Images | 11 |

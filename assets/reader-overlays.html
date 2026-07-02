@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 31,
+  "operation_count": 32,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -77,6 +77,18 @@
       },
       "content": "A proof receipt moves through transport states, not capability states. A theorem-linked receipt names a theorem reference and proof-status scope, but it supports only structural discussion until resolver status is known. A dictionary-bound receipt ties the finite model to a recognized contract family, which makes it useful for receipt design and local surrogate tests.\n\nA fingerprinted receipt has recorded content or normalized parameters, so it may become a replay candidate, but it is still not quality evidence. A resolver-checked receipt has passed or failed a stated theorem-resolution command. A consumer-gated receipt records allowed and blocked downstream uses, and those uses remain scoped to the named consumer.\n\nWorkload-blocked is the most important reader-facing state: it means the structural receipt may exist, but workload, baseline, metric, or evidence artifacts are missing, so no quality, runtime, memory, or transfer promotion is allowed. Retired or superseded receipts become historical evidence only unless a later review requalifies them.\n\nThese states keep proof authority and consumer authority separate. A receipt can carry a narrow structural fact without carrying a model-quality claim.",
       "rationale": "Replace the proof-receipt lifecycle table with reader prose while preserving the canonical AI/research receipt-state matrix."
+    },
+    {
+      "id": "v1_0.circle_contracts.concrete_receipt_boundary_reader_replace",
+      "target_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Concrete Circle Receipt Boundary",
+        "aliases": []
+      },
+      "content": "The public-safe Circle lane is concrete enough to show as a receipt boundary, but not as a capability result. The imported record points to an external Circle checkout at commit `63b0f511`, contract `CC-AI-CONTRACT-ROPE-001`, family `rope_position_distinguishability`, and requested margin `1/328459`. The certifier record says `status proved`, `request_passed true`, `decision passed`, `assurance mixed_theorem_and_computation`, and `theorem_count 55`; the ready digest reports `ready=True fields=31 missing=0 theorems=75`.\n\nThe deterministic fields remain narrow: `evidence.d19_proved_request_status=\"proved\"`, `evidence.d19_proved_first_channel_bank_transfer=true`, `evidence.real_phase_dirichlet_witness_guardrail=true`, `evidence.exact_discrete_pass=true`, and `evidence.total_bank_collision_pair_count=0`. The ASI consumer gate checks seven theorem IDs for this receipt boundary: `AIRA-T0058`, `AIRA-T0059`, `AIRA-T0171`, `AIRA-T0172`, `AIRA-T0239`, `AIRA-T0240`, and `AIRA-T0241`.\n\nThe receipt also carries replay-facing fingerprints: receipt `91b72a6dcf821a9733f21800cd1093a3d0665588022031ba72c94893800330c3`, normalized request `20e68c5f787e267c6611bc57b8d8e98e1cb0f5a74f272379716a5d83e761407d`, contract pack `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`, and contract `a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468`. The recorded external test batch says `145 passed in 718.24s (0:11:58)`, and the ASI consumer gate rejects digest mismatch, missing required theorem ID, stale contract fingerprint status, and unsupported transfer-claim use.\n\nThose specifics matter because they keep the receipt inspectable. They also keep it bounded. This lane does not prove model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, or ASI. It does not prove deployed proof-contract transport inside The ASI Stack, and it does not promote any chapter core claim above `argument`.",
+      "rationale": "Replace the dense Circle receipt-boundary table with reader prose while preserving exact public-safe receipt facts, fingerprints, theorem IDs, validator boundaries, and non-claims."
     },
     {
       "id": "v1_0.circle_contracts.beyond_state_reader_replace",
