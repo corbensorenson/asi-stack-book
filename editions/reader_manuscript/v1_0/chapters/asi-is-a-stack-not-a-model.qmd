@@ -37,6 +37,12 @@ one undifferentiated model. The claim is architectural. It remains at
 working ASI stack; the point is that every later chapter needs this unit of
 analysis before it can make a disciplined claim.
 
+![Draft ASI Stack control plane.](../../../../assets/diagrams/asi-stack-control-plane.svg){#reader-fig-asi-stack-control-plane fig-alt="Draft ASI Stack control plane figure showing inputs, governed stack layers, authority and evidence rails, improvement loops, release records, residuals, and rollback paths."}
+
+Figure boundary: this draft reader aid shows the book's intended control-plane
+shape. It is not release-reviewed art, not a deployment diagram, and not
+evidence that an integrated runtime exists.
+
 ## Problem
 
 Advanced AI systems that plan, remember, verify, act, route work, compress

@@ -20,6 +20,13 @@ Honest compactness is therefore a governance problem. The smaller object has to 
 
 That is the standard the stack applies here: compress only with reconstruction duties, verification duties, and visible residuals still attached for every use.
 
+![Draft compression and generation acceptance.](../../../../assets/diagrams/compression-and-generation-acceptance.svg){#reader-fig-compression-and-generation-acceptance fig-alt="Draft compression and generation acceptance figure showing target burden flowing through compact generation, fast generation, and artifact compression paths before verifier, residual, fallback, and consumer-policy gates decide accepted use or blocked routes."}
+
+Figure boundary: this draft reader aid compares compact generation, fast
+generation, and artifact compression as acceptance-gated paths. It is not
+release-reviewed art and does not prove compression ratios, task quality,
+reconstruction utility, or model performance.
+
 ## Problem
 
 The efficient-ASI thesis depends on compact structures, but compactness becomes dangerous when it hides the cost of generation, verification, correction, repair, fallback, semantic grounding, or human review. A small seed that requires unbounded search is not efficient. A generated reconstruction that skips exact repair is not exact. A fluent generator that loses edge cases is not honest. A tidy semantic graph that loses provenance or task limits is not grounded. A tiny controller that shifts work into invisible residuals is not governed.

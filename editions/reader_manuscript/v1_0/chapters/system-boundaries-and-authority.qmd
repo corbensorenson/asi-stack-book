@@ -30,6 +30,12 @@ like a concrete transition record: who is asking, what boundary they want to
 cross, which grant they have, which ceiling binds them, what happens if the
 grant is missing, and what receipt remains after the decision.
 
+![Draft authority-to-effect path.](../../../../assets/diagrams/authority-to-effect-path.svg){#reader-fig-authority-to-effect-path fig-alt="Draft authority-to-effect path figure showing requester, permission class, authority ceiling, scoped approval, adapter handoff, external effect, receipt, denial, escalation, rollback, and incident handling."}
+
+Figure boundary: this draft reader aid shows how permission is supposed to
+constrain external effects. It is not release-reviewed art and does not prove
+deployed authorization, revocation, rollback, or incident handling.
+
 ## Problem
 
 The stack needs a formal vocabulary for boundaries before it can make serious

@@ -31,6 +31,13 @@ The throughline is simple: ordinary language can begin the work, but explicit
 fields have to govern the work, and every later artifact needs to show which
 contract authorized it.
 
+![Draft intent-to-artifact trace.](../../../../assets/diagrams/intent-to-artifact-trace.svg){#reader-fig-intent-to-artifact-trace fig-alt="Draft intent-to-artifact trace figure showing accepted intent, command contract, plan graph, typed job, authority gate, adapter effect, artifact node, evidence ledger, replay, feedback, refusal, residual, re-contract, and non-claim boundaries."}
+
+Figure boundary: this draft reader aid shows the intended continuity path from
+request to artifact. It is not release-reviewed art and does not prove parser
+quality, dispatcher enforcement, adapter safety, replay behavior, or artifact
+satisfaction.
+
 ## Problem
 
 Accepted human intent needs a typed command contract whose meaning, authority,

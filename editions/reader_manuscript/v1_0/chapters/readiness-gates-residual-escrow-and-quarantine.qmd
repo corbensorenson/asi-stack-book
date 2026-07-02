@@ -29,6 +29,13 @@ evidence catches up. That makes progress slower on paper and safer in
 practice, because the stack can remember promise without spending it as
 permission.
 
+![Draft readiness residual quarantine map.](../../../../assets/diagrams/readiness-residual-quarantine-map.svg){#reader-fig-readiness-residual-quarantine-map fig-alt="Draft readiness residual quarantine map showing a candidate route or replacement proposal entering a readiness gate record, splitting into limited allowed use, residual escrow, quarantine, blocker handling, review rerun, gate-laundering boundary, and support-state non-claim boundary."}
+
+Figure boundary: this draft reader aid shows readiness, residual, and
+quarantine routes. It is not release-reviewed art and does not prove lifecycle
+execution, live quarantine behavior, rollback behavior, or support-state
+promotion.
+
 ## Problem
 
 Routing creates candidates. It finds a specialist, tool, memory packet,

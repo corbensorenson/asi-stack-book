@@ -28,6 +28,12 @@ baselines.
 The architecture can be friendly to cyclic methods without becoming credulous.
 It only has to keep every ledger separate.
 
+![Draft cyclic substrate adoption gate.](../../../../assets/diagrams/cyclic-substrate-adoption-gate.svg){#reader-fig-cyclic-substrate-adoption-gate fig-alt="Draft cyclic substrate adoption gate figure showing a cyclic candidate such as RoPE, CoilRA, a circulant mixer, or cyclic memory moving through structural receipts, baseline symmetry, measured tradeoffs, canary routing, and retirement paths."}
+
+Figure boundary: this draft reader aid shows how cyclic substrates would earn
+adoption. It is not release-reviewed art and does not prove model quality,
+context-length improvement, hardware performance, transfer, or deployment.
+
 ## Problem
 
 Model mechanisms can contain genuine cyclic or block-cyclic structure. Position

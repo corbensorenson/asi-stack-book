@@ -35,6 +35,13 @@ that erases verification is not efficiency; it is debt moved into the future.
 Budgets govern because efficiency is credible only after protected costs are
 paid.
 
+![Draft route-selection budget tradeoff.](../../../../assets/diagrams/route-selection-budget-tradeoff.svg){#reader-fig-route-selection-budget-tradeoff fig-alt="Draft route-selection budget tradeoff figure showing a task request, eligibility gates, selected bounded transform plus verifier route, adequate overkill baseline, rejected failed-verification route, rejected hidden-residual route, and no deployed-router or core-claim-promotion boundary."}
+
+Figure boundary: this draft reader aid shows one bounded costed-route
+selection pattern. It is not release-reviewed art and does not prove deployed
+routing, production scheduler behavior, model quality, or core-claim
+promotion.
+
 ## Problem
 
 ASI architecture consumes scarce resources: tokens, context, verifier time,

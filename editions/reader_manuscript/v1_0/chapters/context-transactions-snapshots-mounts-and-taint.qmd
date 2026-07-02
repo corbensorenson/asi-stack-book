@@ -31,6 +31,12 @@ and whether a later build used it. Governed AI memory needs the same kind of
 history. Without it, every summary and cached context packet can become a
 quiet authority leak.
 
+![Draft context transaction lifecycle.](../../../../assets/diagrams/context-transaction-lifecycle.svg){#reader-fig-context-transaction-lifecycle fig-alt="Draft context transaction lifecycle figure showing context ABI records, certificates, transaction records, snapshots, mount policies, branch or commit decisions, taint and deletion closure, materialized views, faults, quarantine, downstream artifact, adequacy, claim-ledger, and job handoff boundaries."}
+
+Figure boundary: this draft reader aid shows the intended memory lifecycle.
+It is not release-reviewed art and does not prove retrieval quality, runtime
+store behavior, deletion closure, taint enforcement, or context adequacy.
+
 ## Problem
 
 Typed context cells still need runtime semantics.

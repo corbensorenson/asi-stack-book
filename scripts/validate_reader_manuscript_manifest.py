@@ -64,6 +64,7 @@ REQUIRED_FIGURE_TARGET_FIELDS = {
     "candidate_chapter_ids",
     "status",
     "release_boundary",
+    "reader_manuscript_ref",
 }
 REQUIRED_VOICE_SLOT_FIELDS = {
     "slot_id",
@@ -540,6 +541,34 @@ def validate_reader_handoff_contract(
                         errors.append(
                             f"{owner}: text_equivalent_ref anchor does not match a markdown heading: {text_ref}"
                         )
+                reader_ref = figure.get("reader_manuscript_ref")
+                if not isinstance(reader_ref, str) or "#" not in reader_ref:
+                    errors.append(f"{owner}: reader_manuscript_ref must include a path and anchor.")
+                else:
+                    reader_path, reader_anchor = reader_ref.split("#", 1)
+                    if not reader_path.startswith("editions/reader_manuscript/v1_0/chapters/"):
+                        errors.append(
+                            f"{owner}: reader_manuscript_ref must stay under editions/reader_manuscript/v1_0/chapters/."
+                        )
+                    reader_file = ROOT / reader_path
+                    if not reader_file.exists():
+                        errors.append(f"{owner}: reader_manuscript_ref path does not exist: {reader_path}")
+                    else:
+                        reader_text = reader_file.read_text(encoding="utf-8")
+                        if f"#{reader_anchor}" not in reader_text:
+                            errors.append(
+                                f"{owner}: reader_manuscript_ref anchor is not present in {reader_path}."
+                            )
+                        if isinstance(draft_asset_path, str):
+                            draft_name = Path(draft_asset_path).name
+                            if draft_name not in reader_text:
+                                errors.append(
+                                    f"{owner}: reader_manuscript_ref file does not embed {draft_asset_path}."
+                                )
+                        if "fig-alt=" not in reader_text:
+                            errors.append(f"{owner}: reader_manuscript_ref file must include fig-alt text.")
+                        if "Figure boundary:" not in reader_text:
+                            errors.append(f"{owner}: reader_manuscript_ref file must include a Figure boundary note.")
 
     voice_slots = handoff.get("corben_voice_pass_slots")
     slot_ids: set[str] = set()

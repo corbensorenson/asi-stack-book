@@ -16,6 +16,7 @@ from collections import Counter
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+import re
 import shutil
 import tempfile
 from typing import Any
@@ -29,6 +30,9 @@ MANIFEST_PATH = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.jso
 DEFAULT_OUTPUT = ROOT / "build" / "curated_reader_edition"
 REPORT_NAME = "curated_reader_build_report.json"
 CHECKLIST_NAME = "CURATED_READER_REVIEW_CHECKLIST.md"
+SOURCE_READER_ASSET_PREFIX = "../../../../assets/"
+GENERATED_READER_ASSET_PREFIX = "../assets/"
+GENERATED_ASSET_REF_RE = re.compile(r"\]\((\.\./assets/[^)]+)\)")
 LIVE_ONLY_HEADINGS = {
     "## Chapter status",
     "## Drafting guardrail",
@@ -156,7 +160,11 @@ def copy_curated_chapters(
         src = ROOT / str(record["file"])
         dst = output_dir / chapter["file"]
         dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src, dst)
+        text = src.read_text(encoding="utf-8").replace(
+            SOURCE_READER_ASSET_PREFIX, GENERATED_READER_ASSET_PREFIX
+        )
+        dst.write_text(text, encoding="utf-8")
+        shutil.copystat(src, dst)
         copied.append(
             {
                 "chapter_id": chapter_id,
@@ -290,6 +298,16 @@ def validate_generated_workspace(output_dir: Path, chapters: list[dict[str, str]
         for heading in LIVE_ONLY_HEADINGS:
             if heading in text:
                 errors.append(f"{chapter['chapter_id']}: generated curated chapter contains live-only heading {heading!r}")
+        if SOURCE_READER_ASSET_PREFIX in text:
+            errors.append(
+                f"{chapter['chapter_id']}: generated curated chapter still contains source-relative asset paths"
+            )
+        for ref in GENERATED_ASSET_REF_RE.findall(text):
+            asset_path = (path.parent / ref).resolve()
+            if not asset_path.exists():
+                errors.append(
+                    f"{chapter['chapter_id']}: generated curated asset reference does not exist: {ref}"
+                )
     return errors
 
 
