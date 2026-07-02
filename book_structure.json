@@ -1432,8 +1432,8 @@
             },
             {
               "name": "Re-contract trigger test",
-              "implementation_status": "partially implemented",
-              "result_status": "command-contract trigger preservation passes via synthetic plan-execution contract harness; runtime re-contract behavior not run"
+              "implementation_status": "implemented",
+              "result_status": "Intent re-contract trigger probe passes via python3 scripts/validate_intent_recontract_probe.py; valid_no_material_delta_continue, valid_publication_surface_delta_recontracts, and seven expected-invalid controls block material deltas; no natural-language-intent-understanding, deployed-parser-quality, deployed-authority-extraction, prompt-injection-containment, runtime-dispatch, approval-service, user-satisfaction, or support-state-promotion claim"
             },
             {
               "name": "Bounded-default audit",

@@ -1,0 +1,328 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_intent_recontract_probe.py --write-result",
+  "evidence_transition_created": false,
+  "expected_invalid_controls": [
+    {
+      "actual_route": "block_delta_until_recontract",
+      "decision_reason": "material_delta_without_recontract_record",
+      "expected_route": "block_delta_until_recontract",
+      "expected_valid": false,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [
+          "authority_ceiling"
+        ],
+        "downstream_delta": {
+          "authority_ceiling": "repo_push_and_publish"
+        },
+        "recontract_record_present": false,
+        "risky_delta_reasons": [
+          "authority_widening"
+        ]
+      },
+      "outcome": {
+        "blocked_before_dispatch": true,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": false,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": true,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "invalid_authority_delta_without_recontract",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "block_delta_until_recontract",
+      "decision_reason": "material_delta_without_recontract_record",
+      "expected_route": "block_delta_until_recontract",
+      "expected_valid": false,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [
+          "source_boundary"
+        ],
+        "downstream_delta": {
+          "source_boundary": "include_private_google_doc_raw_text"
+        },
+        "recontract_record_present": false,
+        "risky_delta_reasons": [
+          "private_source_boundary_change"
+        ]
+      },
+      "outcome": {
+        "blocked_before_dispatch": true,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": false,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": true,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "invalid_private_source_delta_without_recontract",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "block_delta_until_recontract",
+      "decision_reason": "material_delta_without_recontract_record",
+      "expected_route": "block_delta_until_recontract",
+      "expected_valid": false,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [
+          "stop_conditions"
+        ],
+        "downstream_delta": {
+          "stop_conditions": [
+            "continue_even_if_validation_fails"
+          ]
+        },
+        "recontract_record_present": false,
+        "risky_delta_reasons": [
+          "stop_condition_erasure"
+        ]
+      },
+      "outcome": {
+        "blocked_before_dispatch": true,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": false,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": true,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "invalid_stop_condition_erasure_without_recontract",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "block_delta_until_recontract",
+      "decision_reason": "material_delta_without_recontract_record",
+      "expected_route": "block_delta_until_recontract",
+      "expected_valid": false,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [
+          "evidence_bar"
+        ],
+        "downstream_delta": {
+          "evidence_bar": "model_says_it_looks_good"
+        },
+        "recontract_record_present": false,
+        "risky_delta_reasons": [
+          "evidence_bar_weakening"
+        ]
+      },
+      "outcome": {
+        "blocked_before_dispatch": true,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": false,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": true,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "invalid_evidence_bar_weakening_without_recontract",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "block_delta_until_recontract",
+      "decision_reason": "material_delta_without_recontract_record",
+      "expected_route": "block_delta_until_recontract",
+      "expected_valid": false,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [
+          "affected_parties"
+        ],
+        "downstream_delta": {
+          "affected_parties": [
+            "book_maintainer",
+            "external_reviewers",
+            "public_readers"
+          ]
+        },
+        "recontract_record_present": false,
+        "risky_delta_reasons": [
+          "affected_party_widening"
+        ]
+      },
+      "outcome": {
+        "blocked_before_dispatch": true,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": false,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": true,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "invalid_affected_party_widening_without_recontract",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "block_delta_until_recontract",
+      "decision_reason": "material_delta_without_recontract_record",
+      "expected_route": "block_delta_until_recontract",
+      "expected_valid": false,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [
+          "allowed_means"
+        ],
+        "downstream_delta": {
+          "allowed_means": [
+            "edit_tracked_public_book_files",
+            "run_local_validators",
+            "install_external_service"
+          ]
+        },
+        "recontract_record_present": false,
+        "risky_delta_reasons": [
+          "means_expansion"
+        ]
+      },
+      "outcome": {
+        "blocked_before_dispatch": true,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": false,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": true,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "invalid_means_expansion_without_recontract",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "block_delta_until_recontract",
+      "decision_reason": "material_delta_without_recontract_record",
+      "expected_route": "block_delta_until_recontract",
+      "expected_valid": false,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [
+          "support_state_effect"
+        ],
+        "downstream_delta": {
+          "support_state_effect": "promote_chapter_core_claim"
+        },
+        "recontract_record_present": false,
+        "risky_delta_reasons": [
+          "support_state_promotion_attempt"
+        ]
+      },
+      "outcome": {
+        "blocked_before_dispatch": true,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": false,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": true,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "invalid_support_state_promotion_without_recontract",
+      "scenario_pass": true
+    }
+  ],
+  "local_only": true,
+  "non_claims": [
+    "This intent re-contract trigger probe does not promote any chapter core claim above argument.",
+    "This intent re-contract trigger probe does not create a support-state transition.",
+    "This intent re-contract trigger probe does not prove natural-language intent understanding, deployed parser quality, deployed authority extraction, prompt-injection containment, runtime dispatch, approval-service behavior, user satisfaction, or AI safety.",
+    "This intent re-contract trigger probe uses generated public-safe contract and downstream-delta records only; it does not read private source text, call a network service, dispatch jobs, publish artifacts, or infer user intent from private conversation history."
+  ],
+  "pass": true,
+  "probe_id": "intent-recontract-probe-2026-07-02-local",
+  "public_safety_boundary": "Generated public-safe intent contracts and downstream-delta records only; no private source text, network target, job dispatch, publication, or external service is used.",
+  "record_kind": "intent_recontract_probe",
+  "recorded_at_utc": "2026-07-02T11:58:47Z",
+  "schema_version": "0.1",
+  "summary": {
+    "decision_digest": "d3c26e6f6262b2403a148c05fa0439c239a8a5bbb73c42cc1a30a0b119419d73",
+    "expected_invalid_controls": 7,
+    "valid_scenarios": 2
+  },
+  "support_state_effect": "none",
+  "trigger_fields": [
+    "allowed_means",
+    "authority_ceiling",
+    "affected_parties",
+    "evidence_bar",
+    "publication_surface",
+    "source_boundary",
+    "stop_conditions",
+    "support_state_effect"
+  ],
+  "valid_scenarios": [
+    {
+      "actual_route": "continue_under_existing_contract",
+      "decision_reason": "no_material_recontract_trigger",
+      "expected_route": "continue_under_existing_contract",
+      "expected_valid": true,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [],
+        "downstream_delta": {},
+        "recontract_record_present": false,
+        "risky_delta_reasons": []
+      },
+      "outcome": {
+        "blocked_before_dispatch": false,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": true,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": false,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "valid_no_material_delta_continue",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "require_recontract",
+      "decision_reason": "material_delta_has_recontract_record",
+      "expected_route": "require_recontract",
+      "expected_valid": true,
+      "input_summary": {
+        "accepted_contract_sha256": "1ef50edfd102f85d87dd9f31128442cfdcbf3dda7f0cb8593af3ab3e522b78d3",
+        "changed_trigger_fields": [
+          "publication_surface"
+        ],
+        "downstream_delta": {
+          "publication_surface": "push_to_main_and_public_site"
+        },
+        "recontract_record_present": true,
+        "risky_delta_reasons": []
+      },
+      "outcome": {
+        "blocked_before_dispatch": false,
+        "chapter_core_support_effect": "none",
+        "dispatch_allowed": false,
+        "job_dispatched": false,
+        "network_used": false,
+        "private_source_read": false,
+        "publication_performed": false,
+        "recontract_required": true,
+        "support_state_effect": "none"
+      },
+      "scenario_id": "valid_publication_surface_delta_recontracts",
+      "scenario_pass": true
+    }
+  ]
+}

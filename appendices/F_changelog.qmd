@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-02 - Add Intent re-contract trigger probe
+
+- Added `python3 scripts/run_intent_recontract_probe.py`,
+  `python3 scripts/validate_intent_recontract_probe.py`,
+  `docs/intent_recontract_probe.md`, and
+  `experiments/intent_recontract_probe/results/2026-07-02-local.json` for a
+  deterministic public-safe Human Intent downstream-delta route probe.
+- The probe records `valid_no_material_delta_continue`,
+  `valid_publication_surface_delta_recontracts`, and seven expected-invalid
+  controls: `invalid_authority_delta_without_recontract`,
+  `invalid_private_source_delta_without_recontract`,
+  `invalid_stop_condition_erasure_without_recontract`,
+  `invalid_evidence_bar_weakening_without_recontract`,
+  `invalid_affected_party_widening_without_recontract`,
+  `invalid_means_expansion_without_recontract`, and
+  `invalid_support_state_promotion_without_recontract`.
+- Updated the Human Intent live chapter, curated reader chapter, outline,
+  roadmap, manifest, README/status surfaces, repository map, and validation
+  wiring. This is a no natural-language-intent-understanding,
+  deployed-parser-quality, deployed-authority-extraction,
+  prompt-injection-containment, runtime-dispatch, approval-service,
+  user-satisfaction, or support-state-promotion claim.
+
 ## 2026-07-02 - Add VCM resolver/certificate probe
 
 - Added `python3 scripts/run_vcm_resolver_certificate_probe.py`,

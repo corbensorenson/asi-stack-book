@@ -277,7 +277,7 @@ def main() -> None:
             "0 explicit exceptions",
             "four accepted non-core upward transitions",
             "167 proof targets",
-            "Forty-five synthetic",
+            "Forty-six synthetic",
         ],
     }
     for path, needles in public_requirements.items():

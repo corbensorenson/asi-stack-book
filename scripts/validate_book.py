@@ -116,6 +116,8 @@ REQUIRED = [
     "scripts/validate_capability_replacement_trace_probe.py",
     "scripts/validate_self_improvement_boundaries.py",
     "scripts/validate_intent_intake_probe.py",
+    "scripts/run_intent_recontract_probe.py",
+    "scripts/validate_intent_recontract_probe.py",
     "scripts/validate_plan_execution_contracts.py",
     "scripts/validate_cognitive_compilation_traces.py",
     "scripts/validate_hive_admission.py",
@@ -256,6 +258,7 @@ REQUIRED = [
     "docs/capability_replacement_trace_probe.md",
     "docs/self_improvement_boundary_harness.md",
     "docs/intent_intake_probe.md",
+    "docs/intent_recontract_probe.md",
     "docs/reader_continuity_audit.md",
     "docs/reader_chapter_review_matrix.md",
     "docs/reader_format_review_matrix.md",
@@ -283,6 +286,8 @@ REQUIRED = [
     "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
     "experiments/self_improvement_boundaries/results/2026-07-02-local.md",
     "experiments/intent_intake_probe/results/2026-07-02-local.json",
+    "experiments/intent_recontract_probe/README.md",
+    "experiments/intent_recontract_probe/results/2026-07-02-local.json",
     "experiments/cognitive_compilation_traces/results/2026-07-02-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
@@ -842,6 +847,7 @@ def main() -> None:
     run_validator("validate_capability_replacement_trace_probe.py")
     run_validator("validate_self_improvement_boundaries.py")
     run_validator("validate_intent_intake_probe.py")
+    run_validator("validate_intent_recontract_probe.py")
     run_validator("validate_plan_execution_contracts.py")
     run_validator("validate_intent_execution_handoff_probe.py")
     run_validator("validate_planning_scheduler_state_probe.py")
