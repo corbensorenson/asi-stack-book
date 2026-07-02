@@ -529,4 +529,523 @@ theorem complete_runtime_effect_replay_accepts
     postRecorded, rollbackRequired, rollbackExecuted, rollbackExact,
     receiptRecorded, auditRefs, supportNone, noRepoWrite, noNetwork]
 
+inductive RuntimeAdapterAdversarialRoute where
+  | denyConfusedDeputy
+  | denyMissingPermission
+  | requestScopedApproval
+  | denyExpiredApproval
+  | denyMismatchedLease
+  | denyExpiredLease
+  | denyAuthorityEscalation
+  | denySandboxEscape
+  | denySecretExposure
+  | requestRollbackHandle
+  | requestEffectReceipt
+  | preserveNoPromotionBoundary
+  | requestNonClaimBoundary
+  | dispatch
+deriving DecidableEq, Repr
+
+structure RuntimeAdapterAdversarialReview where
+  parentMatchesApproval : Bool
+  parentMatchesLease : Bool
+  parentMatchesReceipt : Bool
+  parentPermissionPresent : Bool
+  highImpact : Bool
+  approvalRequired : Bool
+  approvalRecorded : Bool
+  approvalScopeMatches : Bool
+  approvalActive : Bool
+  leaseCapabilityMatches : Bool
+  leaseActive : Bool
+  leaseSandboxed : Bool
+  sandboxPathWithinBoundary : Bool
+  requestedAuthorityRank : Nat
+  parentAuthorityCeiling : Nat
+  leaseAuthorityCeiling : Nat
+  secretMaterializedToModelContext : Bool
+  rollbackRequired : Bool
+  rollbackHandleRecorded : Bool
+  effectReceiptRecorded : Bool
+  auditRefsRecorded : Bool
+  supportStateEffectNone : Bool
+  nonClaimsRecorded : Bool
+deriving DecidableEq, Repr
+
+def RuntimeAdapterAdversarialRouteFor
+    (review : RuntimeAdapterAdversarialReview) :
+    RuntimeAdapterAdversarialRoute :=
+  if review.parentMatchesApproval = false ∨
+      review.parentMatchesLease = false ∨
+        review.parentMatchesReceipt = false then
+    RuntimeAdapterAdversarialRoute.denyConfusedDeputy
+  else if review.parentPermissionPresent = false then
+    RuntimeAdapterAdversarialRoute.denyMissingPermission
+  else if (review.approvalRequired = true ∨ review.highImpact = true) ∧
+      (review.approvalRecorded = false ∨
+        review.approvalScopeMatches = false) then
+    RuntimeAdapterAdversarialRoute.requestScopedApproval
+  else if review.approvalRequired = true ∧
+      review.approvalActive = false then
+    RuntimeAdapterAdversarialRoute.denyExpiredApproval
+  else if review.leaseCapabilityMatches = false then
+    RuntimeAdapterAdversarialRoute.denyMismatchedLease
+  else if review.leaseActive = false then
+    RuntimeAdapterAdversarialRoute.denyExpiredLease
+  else if review.parentAuthorityCeiling < review.requestedAuthorityRank then
+    RuntimeAdapterAdversarialRoute.denyAuthorityEscalation
+  else if review.leaseAuthorityCeiling < review.requestedAuthorityRank then
+    RuntimeAdapterAdversarialRoute.denyAuthorityEscalation
+  else if review.leaseSandboxed = false ∨
+      review.sandboxPathWithinBoundary = false then
+    RuntimeAdapterAdversarialRoute.denySandboxEscape
+  else if review.secretMaterializedToModelContext = true then
+    RuntimeAdapterAdversarialRoute.denySecretExposure
+  else if review.rollbackRequired = true ∧
+      review.rollbackHandleRecorded = false then
+    RuntimeAdapterAdversarialRoute.requestRollbackHandle
+  else if review.effectReceiptRecorded = false ∨
+      review.auditRefsRecorded = false then
+    RuntimeAdapterAdversarialRoute.requestEffectReceipt
+  else if review.supportStateEffectNone = false then
+    RuntimeAdapterAdversarialRoute.preserveNoPromotionBoundary
+  else if review.nonClaimsRecorded = false then
+    RuntimeAdapterAdversarialRoute.requestNonClaimBoundary
+  else
+    RuntimeAdapterAdversarialRoute.dispatch
+
+theorem adapter_adversarial_confused_deputy_parent_mismatch_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = false ->
+      RuntimeAdapterAdversarialRouteFor review =
+        RuntimeAdapterAdversarialRoute.denyConfusedDeputy := by
+  intro parentMismatch
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [parentMismatch]
+
+theorem adapter_adversarial_missing_permission_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = false ->
+            RuntimeAdapterAdversarialRouteFor review =
+              RuntimeAdapterAdversarialRoute.denyMissingPermission := by
+  intro approvalParent leaseParent receiptParent missingPermission
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, missingPermission]
+
+theorem adapter_adversarial_parent_authority_ceiling_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.parentAuthorityCeiling <
+                      review.requestedAuthorityRank ->
+                      RuntimeAdapterAdversarialRouteFor review =
+                        RuntimeAdapterAdversarialRoute.denyAuthorityEscalation := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive overParentCeiling
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive, overParentCeiling]
+
+theorem adapter_adversarial_lease_authority_ceiling_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.requestedAuthorityRank <=
+                      review.parentAuthorityCeiling ->
+                      review.leaseAuthorityCeiling <
+                        review.requestedAuthorityRank ->
+                        RuntimeAdapterAdversarialRouteFor review =
+                          RuntimeAdapterAdversarialRoute.denyAuthorityEscalation := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive withinParentCeiling
+    overLeaseCeiling
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling, overLeaseCeiling]
+
+theorem adapter_adversarial_scoped_approval_mismatch_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = true ->
+              review.approvalRecorded = true ->
+                review.approvalScopeMatches = false ->
+                  RuntimeAdapterAdversarialRouteFor review =
+                    RuntimeAdapterAdversarialRoute.requestScopedApproval := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    approvalRequired approvalRecorded scopeMismatch
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    approvalRequired, approvalRecorded, scopeMismatch]
+
+theorem adapter_adversarial_expired_approval_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = true ->
+              review.approvalRecorded = true ->
+                review.approvalScopeMatches = true ->
+                  review.approvalActive = false ->
+                    RuntimeAdapterAdversarialRouteFor review =
+                      RuntimeAdapterAdversarialRoute.denyExpiredApproval := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    approvalRequired approvalRecorded scopeMatches expiredApproval
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    approvalRequired, approvalRecorded, scopeMatches, expiredApproval]
+
+theorem adapter_adversarial_sandbox_escape_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.requestedAuthorityRank <=
+                      review.parentAuthorityCeiling ->
+                      review.requestedAuthorityRank <=
+                        review.leaseAuthorityCeiling ->
+                        review.leaseSandboxed = true ->
+                          review.sandboxPathWithinBoundary = false ->
+                            RuntimeAdapterAdversarialRouteFor review =
+                              RuntimeAdapterAdversarialRoute.denySandboxEscape := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive withinParentCeiling
+    withinLeaseCeiling sandboxed sandboxEscape
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxEscape]
+
+theorem adapter_adversarial_secret_materialization_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.requestedAuthorityRank <=
+                      review.parentAuthorityCeiling ->
+                      review.requestedAuthorityRank <=
+                        review.leaseAuthorityCeiling ->
+                        review.leaseSandboxed = true ->
+                          review.sandboxPathWithinBoundary = true ->
+                            review.secretMaterializedToModelContext = true ->
+                              RuntimeAdapterAdversarialRouteFor review =
+                                RuntimeAdapterAdversarialRoute.denySecretExposure := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive withinParentCeiling
+    withinLeaseCeiling sandboxed sandboxPath secretMaterialized
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath,
+    secretMaterialized]
+
+theorem adapter_adversarial_missing_rollback_handle_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = true ->
+              review.approvalRecorded = true ->
+                review.approvalScopeMatches = true ->
+                  review.approvalActive = true ->
+                    review.leaseCapabilityMatches = true ->
+                      review.leaseActive = true ->
+                        review.requestedAuthorityRank <=
+                          review.parentAuthorityCeiling ->
+                          review.requestedAuthorityRank <=
+                            review.leaseAuthorityCeiling ->
+                            review.leaseSandboxed = true ->
+                              review.sandboxPathWithinBoundary = true ->
+                                review.secretMaterializedToModelContext = false ->
+                                  review.rollbackRequired = true ->
+                                    review.rollbackHandleRecorded = false ->
+                                      RuntimeAdapterAdversarialRouteFor review =
+                                        RuntimeAdapterAdversarialRoute.requestRollbackHandle := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    approvalRequired approvalRecorded scopeMatches approvalActive leaseMatches
+    leaseActive withinParentCeiling withinLeaseCeiling sandboxed sandboxPath
+    noSecret rollbackRequired missingRollback
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    approvalRequired, approvalRecorded, scopeMatches, approvalActive,
+    leaseMatches, leaseActive, Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath, noSecret,
+    rollbackRequired, missingRollback]
+
+theorem adapter_adversarial_missing_effect_receipt_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.requestedAuthorityRank <=
+                      review.parentAuthorityCeiling ->
+                      review.requestedAuthorityRank <=
+                        review.leaseAuthorityCeiling ->
+                        review.leaseSandboxed = true ->
+                          review.sandboxPathWithinBoundary = true ->
+                            review.secretMaterializedToModelContext = false ->
+                              review.rollbackRequired = false ->
+                                review.effectReceiptRecorded = false ->
+                                  RuntimeAdapterAdversarialRouteFor review =
+                                    RuntimeAdapterAdversarialRoute.requestEffectReceipt := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive withinParentCeiling
+    withinLeaseCeiling sandboxed sandboxPath noSecret noRollback
+    missingReceipt
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath, noSecret,
+    noRollback, missingReceipt]
+
+theorem adapter_adversarial_missing_audit_refs_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.requestedAuthorityRank <=
+                      review.parentAuthorityCeiling ->
+                      review.requestedAuthorityRank <=
+                        review.leaseAuthorityCeiling ->
+                        review.leaseSandboxed = true ->
+                          review.sandboxPathWithinBoundary = true ->
+                            review.secretMaterializedToModelContext = false ->
+                              review.rollbackRequired = false ->
+                                review.effectReceiptRecorded = true ->
+                                  review.auditRefsRecorded = false ->
+                                    RuntimeAdapterAdversarialRouteFor review =
+                                      RuntimeAdapterAdversarialRoute.requestEffectReceipt := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive withinParentCeiling
+    withinLeaseCeiling sandboxed sandboxPath noSecret noRollback receipt
+    missingAudit
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath, noSecret,
+    noRollback, receipt, missingAudit]
+
+theorem adapter_adversarial_support_promotion_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.requestedAuthorityRank <=
+                      review.parentAuthorityCeiling ->
+                      review.requestedAuthorityRank <=
+                        review.leaseAuthorityCeiling ->
+                        review.leaseSandboxed = true ->
+                          review.sandboxPathWithinBoundary = true ->
+                            review.secretMaterializedToModelContext = false ->
+                              review.rollbackRequired = false ->
+                                review.effectReceiptRecorded = true ->
+                                  review.auditRefsRecorded = true ->
+                                    review.supportStateEffectNone = false ->
+                                      RuntimeAdapterAdversarialRouteFor review =
+                                        RuntimeAdapterAdversarialRoute.preserveNoPromotionBoundary := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive withinParentCeiling
+    withinLeaseCeiling sandboxed sandboxPath noSecret noRollback receipt audit
+    supportPromoting
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath, noSecret,
+    noRollback, receipt, audit, supportPromoting]
+
+theorem adapter_adversarial_missing_non_claim_boundary_rejected
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.requestedAuthorityRank <=
+                      review.parentAuthorityCeiling ->
+                      review.requestedAuthorityRank <=
+                        review.leaseAuthorityCeiling ->
+                        review.leaseSandboxed = true ->
+                          review.sandboxPathWithinBoundary = true ->
+                            review.secretMaterializedToModelContext = false ->
+                              review.rollbackRequired = false ->
+                                review.effectReceiptRecorded = true ->
+                                  review.auditRefsRecorded = true ->
+                                    review.supportStateEffectNone = true ->
+                                      review.nonClaimsRecorded = false ->
+                                        RuntimeAdapterAdversarialRouteFor review =
+                                          RuntimeAdapterAdversarialRoute.requestNonClaimBoundary := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive withinParentCeiling
+    withinLeaseCeiling sandboxed sandboxPath noSecret noRollback receipt audit
+    supportNone missingNonClaims
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath, noSecret,
+    noRollback, receipt, audit, supportNone, missingNonClaims]
+
+theorem adapter_adversarial_low_impact_dispatch_accepted
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = false ->
+              review.highImpact = false ->
+                review.leaseCapabilityMatches = true ->
+                  review.leaseActive = true ->
+                    review.requestedAuthorityRank <=
+                      review.parentAuthorityCeiling ->
+                      review.requestedAuthorityRank <=
+                        review.leaseAuthorityCeiling ->
+                        review.leaseSandboxed = true ->
+                          review.sandboxPathWithinBoundary = true ->
+                            review.secretMaterializedToModelContext = false ->
+                              review.rollbackRequired = true ->
+                                review.rollbackHandleRecorded = true ->
+                                  review.effectReceiptRecorded = true ->
+                                    review.auditRefsRecorded = true ->
+                                      review.supportStateEffectNone = true ->
+                                        review.nonClaimsRecorded = true ->
+                                          RuntimeAdapterAdversarialRouteFor review =
+                                            RuntimeAdapterAdversarialRoute.dispatch := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    noApprovalRequired lowImpact leaseMatches leaseActive withinParentCeiling
+    withinLeaseCeiling sandboxed sandboxPath noSecret rollbackRequired
+    rollbackHandle receipt audit supportNone nonClaims
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    noApprovalRequired, lowImpact, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath, noSecret,
+    rollbackRequired, rollbackHandle, receipt, audit, supportNone, nonClaims]
+
+theorem adapter_adversarial_high_impact_dispatch_accepted
+    {review : RuntimeAdapterAdversarialReview} :
+    review.parentMatchesApproval = true ->
+      review.parentMatchesLease = true ->
+        review.parentMatchesReceipt = true ->
+          review.parentPermissionPresent = true ->
+            review.approvalRequired = true ->
+              review.highImpact = true ->
+                review.approvalRecorded = true ->
+                  review.approvalScopeMatches = true ->
+                    review.approvalActive = true ->
+                      review.leaseCapabilityMatches = true ->
+                        review.leaseActive = true ->
+                          review.requestedAuthorityRank <=
+                            review.parentAuthorityCeiling ->
+                            review.requestedAuthorityRank <=
+                              review.leaseAuthorityCeiling ->
+                              review.leaseSandboxed = true ->
+                                review.sandboxPathWithinBoundary = true ->
+                                  review.secretMaterializedToModelContext = false ->
+                                    review.rollbackRequired = true ->
+                                      review.rollbackHandleRecorded = true ->
+                                        review.effectReceiptRecorded = true ->
+                                          review.auditRefsRecorded = true ->
+                                            review.supportStateEffectNone = true ->
+                                              review.nonClaimsRecorded = true ->
+                                                RuntimeAdapterAdversarialRouteFor review =
+                                                  RuntimeAdapterAdversarialRoute.dispatch := by
+  intro approvalParent leaseParent receiptParent permissionPresent
+    approvalRequired highImpact approvalRecorded scopeMatches approvalActive
+    leaseMatches leaseActive withinParentCeiling withinLeaseCeiling sandboxed
+    sandboxPath noSecret rollbackRequired rollbackHandle receipt audit
+    supportNone nonClaims
+  unfold RuntimeAdapterAdversarialRouteFor
+  simp [approvalParent, leaseParent, receiptParent, permissionPresent,
+    approvalRequired, highImpact, approvalRecorded, scopeMatches,
+    approvalActive, leaseMatches, leaseActive,
+    Nat.not_lt_of_ge withinParentCeiling,
+    Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath, noSecret,
+    rollbackRequired, rollbackHandle, receipt, audit, supportNone, nonClaims]
+
+structure RuntimeAdapterAdversarialProbeFixture where
+  lowImpactDispatchAccepted : Bool
+  highImpactDispatchAccepted : Bool
+  negativeControlsRejected : Bool
+  authorityAndApprovalBoundaries : Bool
+  secretAndSandboxBoundaries : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def RuntimeAdapterAdversarialProbeFixtureValid
+    (fixture : RuntimeAdapterAdversarialProbeFixture) : Prop :=
+  fixture.lowImpactDispatchAccepted = true ∧
+    fixture.highImpactDispatchAccepted = true ∧
+      fixture.negativeControlsRejected = true ∧
+        fixture.authorityAndApprovalBoundaries = true ∧
+          fixture.secretAndSandboxBoundaries = true ∧
+            fixture.supportStateEffectNone = true ∧
+              fixture.nonClaimBoundary = true
+
+theorem runtime_adapter_adversarial_boundary_probe_bridge
+    {fixture : RuntimeAdapterAdversarialProbeFixture} :
+    RuntimeAdapterAdversarialProbeFixtureValid fixture ->
+      fixture.lowImpactDispatchAccepted = true ∧
+        fixture.highImpactDispatchAccepted = true ∧
+          fixture.negativeControlsRejected = true ∧
+            fixture.authorityAndApprovalBoundaries = true ∧
+              fixture.secretAndSandboxBoundaries = true ∧
+                fixture.supportStateEffectNone = true ∧
+                  fixture.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.RuntimeAdapters

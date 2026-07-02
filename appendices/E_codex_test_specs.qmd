@@ -184,6 +184,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Confused-deputy ambient-authority probe | implemented | passes via expected-invalid synthetic runtime adapter fixture; no deployed confused-deputy resistance claim |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Revoked authority receipt probe | implemented | passes via expected-invalid synthetic runtime adapter fixture; no deployed revocation propagation claim |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Runtime adapter effect replay probe | implemented | passes via valid_low_impact_local_write_effect_replay with rollback-exact temp-file restoration and missing-permission and expired-approval no-mutation controls; no deployed-adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, benchmark, or support-state-promotion claim |
+| `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Runtime adapter adversarial boundary probe | implemented | passes via deterministic synthetic runtime-adapter adversarial boundary fixture at experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json: two valid synthetic adapter boundary reviews and twelve expected-invalid controls for confused-deputy parent mismatch, authority ceiling overrun, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundaries; no deployed-adapter, sandbox, approval-service, secret-handle, policy-enforcement, rollback-service, revocation-propagation, security-review, or support-state-promotion claim |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Loop detection test | implemented | passes via synthetic procedural memory loop harness; no deployed loop detector or tool-synthesis claim |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Tool abstraction test | implemented | passes via synthetic procedural memory loop harness; no generated-tool correctness claim |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Verified tool regression test | implemented | passes via synthetic procedural memory loop harness; no deployed regression-quality or routing claim |
@@ -465,16 +466,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 176 |
+| Proof targets covered by triage | 177 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 176 |
+| implemented | 177 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 176 |
+| implemented | formal-invariant | lean-candidate | 177 |

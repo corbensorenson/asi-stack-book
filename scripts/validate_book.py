@@ -141,6 +141,7 @@ REQUIRED = [
     "scripts/validate_runtime_adapter_permissions.py",
     "scripts/run_runtime_adapter_effect_probe.py",
     "scripts/validate_runtime_adapter_effect_probe.py",
+    "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
     "scripts/run_artifact_steward_lifecycle_probe.py",
     "scripts/validate_artifact_steward_lifecycle_probe.py",
     "scripts/validate_artifact_graph_replay.py",
@@ -338,8 +339,11 @@ REQUIRED = [
     "experiments/context_transaction_memory_store/results/2026-07-01-local.md",
     "experiments/hive_admission/results/2026-07-01-local.md",
     "docs/runtime_adapter_effect_probe.md",
+    "docs/runtime_adapter_adversarial_boundary_probe.md",
     "experiments/runtime_adapter_effect_probe/README.md",
     "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+    "experiments/runtime_adapter_adversarial_boundary/README.md",
+    "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
     "docs/artifact_steward_lifecycle_probe.md",
     "experiments/artifact_steward_lifecycle_probe/README.md",
     "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
@@ -900,6 +904,7 @@ def main() -> None:
     run_validator("validate_hive_admission.py")
     run_validator("validate_runtime_adapter_permissions.py")
     run_validator("validate_runtime_adapter_effect_probe.py")
+    run_validator("validate_runtime_adapter_adversarial_boundary_probe.py")
     run_validator("validate_artifact_steward_lifecycle_probe.py")
     run_validator("validate_artifact_graph_replay.py")
     run_validator("validate_procedural_memory_loop.py")

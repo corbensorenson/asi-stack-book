@@ -5459,7 +5459,7 @@
             "Approval bypass.",
             "Irreversible deployment without rollback."
           ],
-          "minimal_implementation": "A runtime-adapter contract with permissions, approval requirements, and result evidence.",
+          "minimal_implementation": "A runtime-adapter contract with permissions, approval requirements, result evidence, finite route predicates, a synthetic permission harness, a public-safe local effect replay, and an adversarial boundary probe for parentage, authority, approval, sandbox, secret, rollback, receipt, audit, support-state, and non-claim controls.",
           "beyond_state_of_art": "The mature version is a capability firewall for external effects. It does not expose tools as ambient functions. It grants scoped, expiring effect leases to typed jobs after checking target, capability, sandbox, authority handle, approval requirement, risk tier, pre-state, post-state expectations, rollback path, and evidence obligations. With capability adapters, a successful tool response is not the end of the story. The adapter returns an effect receipt that separates request, approval, execution, verification, rollback, irreversible residuals, incident refs, audit refs, and support-state effect. Approval is also scoped: approving one deployment, file edit, message, payment, hardware action, or credential use does not authorize every similar future action.",
           "codex_tests": [
             {
@@ -5501,6 +5501,11 @@
               "name": "Runtime adapter effect replay probe",
               "implementation_status": "implemented",
               "result_status": "passes via valid_low_impact_local_write_effect_replay with rollback-exact temp-file restoration and missing-permission and expired-approval no-mutation controls; no deployed-adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, benchmark, or support-state-promotion claim"
+            },
+            {
+              "name": "Runtime adapter adversarial boundary probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic runtime-adapter adversarial boundary fixture at experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json: two valid synthetic adapter boundary reviews and twelve expected-invalid controls for confused-deputy parent mismatch, authority ceiling overrun, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundaries; no deployed-adapter, sandbox, approval-service, secret-handle, policy-enforcement, rollback-service, revocation-propagation, security-review, or support-state-promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.RuntimeAdapters",
@@ -5522,8 +5527,15 @@
               "module": "AsiStackProofs.RuntimeAdapters",
               "target": "A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
+              "module": "AsiStackProofs.RuntimeAdapters",
+              "target": "A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records.",
+              "status": "implemented"
             }
-          ]
+          ],
+          "open_evidence_gaps": []
         },
         {
           "id": "procedural-memory-and-cognitive-loop-closure",
@@ -6011,14 +6023,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },

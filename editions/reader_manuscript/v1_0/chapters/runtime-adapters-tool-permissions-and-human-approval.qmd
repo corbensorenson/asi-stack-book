@@ -93,16 +93,19 @@ records are imported and inspected.
 The current repository validates a `runtime_adapter_invocation` fixture,
 implements finite Lean predicates for adapter permission and high-impact
 approval rejection, runs a synthetic runtime-adapter permission harness over
-typed jobs, adapter invocations, and authority-use receipts, and now records a
-Runtime adapter effect replay probe. That probe executes
-`valid_low_impact_local_write_effect_replay` as one public-safe temp-file
-write, restores the pre-state digest as a rollback-exact check, and blocks
-`invalid_missing_permission_no_mutation` plus
-`invalid_expired_approval_no_mutation` before mutation. That is a useful toy
-effect trace. It is not deployed adapter execution, sandbox isolation, live
-approval-service behavior, secret-handle safety, revocation propagation,
-rollback-service behavior, runtime security, Talos runtime behavior, MoECOT
-runtime reproduction, or a benchmark result.
+typed jobs, adapter invocations, and authority-use receipts, records a Runtime
+adapter effect replay probe, and adds a Runtime adapter adversarial boundary
+probe. The effect probe executes `valid_low_impact_local_write_effect_replay`
+as one public-safe temp-file write, restores the pre-state digest as a
+rollback-exact check, and blocks `invalid_missing_permission_no_mutation` plus
+`invalid_expired_approval_no_mutation` before mutation. The adversarial
+boundary probe checks two synthetic adapter boundary reviews and twelve
+expected-invalid controls for parentage, authority, approval, sandbox, secret,
+rollback, receipt, audit, support-state, and non-claim boundaries. These are
+useful record-gate and toy-effect traces. They are not deployed adapter
+execution, sandbox isolation, live approval-service behavior, secret-handle
+safety, revocation propagation, rollback-service behavior, runtime security,
+Talos runtime behavior, MoECOT runtime reproduction, or benchmark results.
 
 ## Mechanism
 
@@ -266,9 +269,10 @@ record, or leave a residual that future ledgers cannot ignore.
 ## Minimum Viable Implementation
 
 The minimum viable implementation is a runtime-adapter invocation schema,
-public fixtures, finite permission, approval, lease, rollback, dispatch, and
-effect-replay predicates, a synthetic cross-record harness, and one public-safe
-local effect replay.
+public fixtures, finite permission, approval, lease, rollback, dispatch,
+effect-replay, and adversarial-boundary predicates, a synthetic cross-record
+harness, one public-safe local effect replay, and one deterministic
+adversarial boundary probe.
 
 The repository currently has that record surface. The fixture validates
 invocation state, impact class, risk tier, approval scope and expiry, effect
@@ -299,6 +303,16 @@ That slice is deliberately humble. It does not run a production sandbox,
 mediate a real secret, conduct a live human approval workflow, validate a live
 effect receipt, propagate revocation, execute rollback in a target service, or
 prove tool safety.
+
+The Runtime adapter adversarial boundary probe adds breadth to that humble
+slice. `python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`
+records two valid synthetic adapter boundary reviews and twelve
+expected-invalid controls. It rejects confused-deputy parent mismatch,
+authority ceiling overrun, approval scope mismatch, expired approval, sandbox
+escape path, secret materialized into model-visible context, missing rollback
+handle, missing effect receipt, missing audit refs, support-state promotion,
+and missing non-claim boundaries. It is still not deployed adapter execution;
+it is a record-level adversarial gate.
 
 The next honest slice would run a deployed adapter fixture end to end in a
 safe local environment: a low-impact local write with approval not required, a
@@ -340,14 +354,16 @@ claim that the ASI Stack can safely use arbitrary tools.
 
 Current evidence consists of source synthesis, passage-reviewed source
 mappings, public schemas and fixtures, finite Lean predicates, a synthetic
-runtime-adapter permission harness, and one public-safe Runtime adapter effect
-replay probe. Those artifacts support the shape of the control surface and one
-toy temp-file effect path. They do not prove deployed adapter behavior,
-sandbox isolation, approval-service correctness, secret-handle safety, live
-effect receipt validity, rollback-service behavior, incident response,
-benchmark performance, security behavior, Talos runtime behavior, MoECOT
-runtime reproduction, ReAct reproduction, Simplex-level assurance,
-Copilot-style runtime monitoring, or proof-carrying-code enforcement.
+runtime-adapter permission harness, one public-safe Runtime adapter effect
+replay probe, and one Runtime adapter adversarial boundary probe. Those
+artifacts support the shape of the control surface, one toy temp-file effect
+path, and a broader synthetic denial matrix. They do not prove deployed
+adapter behavior, sandbox isolation, approval-service correctness,
+secret-handle safety, live effect receipt validity, rollback-service behavior,
+incident response, benchmark performance, security behavior, Talos runtime
+behavior, MoECOT runtime reproduction, ReAct reproduction, Simplex-level
+assurance, Copilot-style runtime monitoring, or proof-carrying-code
+enforcement.
 
 The adapter exists to keep authority from leaking through convenience. The
 chapter preserves the same discipline about its own evidence.

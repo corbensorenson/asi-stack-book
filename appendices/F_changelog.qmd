@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-07-02 - Add Runtime adapter adversarial boundary probe
+
+- Added
+  `python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`,
+  `docs/runtime_adapter_adversarial_boundary_probe.md`, and
+  `experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json`
+  for a deterministic synthetic runtime-adapter adversarial boundary fixture
+  with two valid synthetic adapter boundary reviews and twelve
+  expected-invalid controls covering confused-deputy parent mismatch, parent
+  authority ceiling overrun, lease authority ceiling overrun, approval scope
+  mismatch, expired approval, sandbox escape path, secret materialization,
+  missing rollback handle, missing effect receipt, missing audit refs,
+  support-state promotion, and missing non-claim boundary.
+- Added `lean:runtime.adapters.adversarial_boundary_probe_bridge` in
+  `AsiStackProofs.RuntimeAdapters`, with finite route theorems for parentage,
+  authority, approval, sandbox, secret, rollback, receipt, audit,
+  support-state, non-claim, low-impact dispatch, and scoped high-impact
+  dispatch boundaries.
+- Updated the Runtime Adapters live chapter, curated reader chapter, outline,
+  manifest, roadmap, README, and book-gate validation. This does not execute a
+  deployed adapter, prove sandbox isolation, prove approval-service behavior,
+  prove secret-handle safety, prove policy-enforcement correctness, prove
+  rollback-service behavior, prove revocation propagation, perform security
+  review, promote the chapter support state, or create a support-state
+  transition.
+- Current proof-depth snapshot: 177 proof targets, 54 Lean modules, 927 theorem
+  declarations, 746 derived/decomposed, 177 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add Typed job durable lifecycle probe
 
 - Added `python3 scripts/validate_typed_job_durable_lifecycle_probe.py`,

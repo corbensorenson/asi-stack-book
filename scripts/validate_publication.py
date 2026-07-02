@@ -279,8 +279,8 @@ def main() -> None:
             f"{chapter_count} source-noted chapters",
             "0 explicit exceptions",
             "four accepted non-core upward transitions",
-            "176 proof targets",
-            "Fifty-one synthetic",
+            "177 proof targets",
+            "Fifty-two synthetic",
         ],
     }
     for path, needles in public_requirements.items():

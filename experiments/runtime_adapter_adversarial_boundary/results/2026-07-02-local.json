@@ -1,0 +1,84 @@
+{
+  "boundary_coverage": {
+    "approval_scope_and_expiry_checked": true,
+    "caller_parentage_required": true,
+    "high_impact_scoped_approval_admitted": true,
+    "low_impact_dispatch_admitted": true,
+    "non_claim_boundary_checked": true,
+    "parent_and_lease_authority_ceilings_checked": true,
+    "rollback_receipt_audit_records_required": true,
+    "sandbox_path_boundary_checked": true,
+    "secret_handle_non_materialization_checked": true,
+    "support_state_no_promotion_checked": true
+  },
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 12,
+  "lean_fixture_alignment": {
+    "expected": {
+      "authorityAndApprovalBoundaries": true,
+      "highImpactDispatchAccepted": true,
+      "lowImpactDispatchAccepted": true,
+      "negativeControlsRejected": true,
+      "nonClaimBoundary": true,
+      "secretAndSandboxBoundaries": true,
+      "supportStateEffectNone": true
+    },
+    "module": "AsiStackProofs.RuntimeAdapters",
+    "proof_tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
+    "theorem_refs": [
+      "adapter_adversarial_confused_deputy_parent_mismatch_rejected",
+      "adapter_adversarial_missing_permission_rejected",
+      "adapter_adversarial_parent_authority_ceiling_rejected",
+      "adapter_adversarial_lease_authority_ceiling_rejected",
+      "adapter_adversarial_scoped_approval_mismatch_rejected",
+      "adapter_adversarial_expired_approval_rejected",
+      "adapter_adversarial_sandbox_escape_rejected",
+      "adapter_adversarial_secret_materialization_rejected",
+      "adapter_adversarial_missing_rollback_handle_rejected",
+      "adapter_adversarial_missing_effect_receipt_rejected",
+      "adapter_adversarial_missing_audit_refs_rejected",
+      "adapter_adversarial_support_promotion_rejected",
+      "adapter_adversarial_missing_non_claim_boundary_rejected",
+      "adapter_adversarial_low_impact_dispatch_accepted",
+      "adapter_adversarial_high_impact_dispatch_accepted",
+      "runtime_adapter_adversarial_boundary_probe_bridge"
+    ]
+  },
+  "negative_controls": {
+    "approval_scope_mismatch_rejected": true,
+    "confused_deputy_parent_mismatch_rejected": true,
+    "expired_approval_rejected": true,
+    "lease_authority_ceiling_overrun_rejected": true,
+    "missing_audit_refs_rejected": true,
+    "missing_effect_receipt_rejected": true,
+    "missing_non_claim_boundary_rejected": true,
+    "missing_rollback_handle_rejected": true,
+    "parent_authority_ceiling_overrun_rejected": true,
+    "sandbox_escape_path_rejected": true,
+    "secret_materialization_rejected": true,
+    "support_state_promotion_rejected": true
+  },
+  "non_claims": [
+    "does not execute a deployed adapter",
+    "does not prove sandbox isolation",
+    "does not prove approval-service behavior",
+    "does not prove secret-handle safety",
+    "does not prove policy-enforcement correctness",
+    "does not prove rollback-service behavior",
+    "does not create a support-state transition"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic runtime-adapter adversarial boundary fixture only; no deployed adapter, production sandbox, approval service, secret broker, policy engine, rollback service, revocation service, or security audit was executed.",
+    "The Runtime Adapters chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-runtime-adapter-adversarial-boundary-probe",
+  "result_kind": "deterministic_synthetic_runtime_adapter_adversarial_boundary_probe",
+  "schema_version": "asi_stack.runtime_adapter_adversarial_boundary_probe.v0",
+  "support_state_effect": "none",
+  "trace_count": 14,
+  "valid_trace_count": 2,
+  "verification_result": "pass"
+}
