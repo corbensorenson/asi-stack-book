@@ -405,4 +405,43 @@ theorem retirement_without_receipt_rejected
   rw [receiptMissing] at retirementReady
   cases retirementReady.left
 
+structure ReadinessLifecycleProbeSummary where
+  candidateToShadowAccepted : Bool
+  shadowToCanaryAccepted : Bool
+  defaultReadyAccepted : Bool
+  quarantineWithFallbackAccepted : Bool
+  supersessionWithResidualAccepted : Bool
+  retirementWithReceiptAccepted : Bool
+  negativeControlsRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def ReadinessLifecycleProbeSummaryValid
+    (summary : ReadinessLifecycleProbeSummary) : Prop :=
+  summary.candidateToShadowAccepted = true ∧
+    summary.shadowToCanaryAccepted = true ∧
+      summary.defaultReadyAccepted = true ∧
+        summary.quarantineWithFallbackAccepted = true ∧
+          summary.supersessionWithResidualAccepted = true ∧
+            summary.retirementWithReceiptAccepted = true ∧
+              summary.negativeControlsRejected = true ∧
+                summary.supportStateEffectNone = true ∧
+                  summary.nonClaimBoundary = true
+
+theorem readiness_lifecycle_probe_fixture_bridge
+    {summary : ReadinessLifecycleProbeSummary} :
+    ReadinessLifecycleProbeSummaryValid summary ->
+      summary.candidateToShadowAccepted = true ∧
+        summary.shadowToCanaryAccepted = true ∧
+          summary.defaultReadyAccepted = true ∧
+            summary.quarantineWithFallbackAccepted = true ∧
+              summary.supersessionWithResidualAccepted = true ∧
+                summary.retirementWithReceiptAccepted = true ∧
+                  summary.negativeControlsRejected = true ∧
+                    summary.supportStateEffectNone = true ∧
+                      summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.ReadinessGates

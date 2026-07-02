@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-02 - Add Readiness lifecycle probe
+
+- Added `python3 scripts/validate_readiness_lifecycle_probe.py`,
+  `docs/readiness_lifecycle_probe.md`, and
+  `experiments/readiness_lifecycle_probe/results/2026-07-02-local.json` for a
+  deterministic synthetic readiness lifecycle fixture with six valid synthetic
+  transitions and twelve expected-invalid controls.
+- Extended `AsiStackProofs.ReadinessGates` with
+  `lean:readiness.gates.lifecycle_probe_bridge`, tying the fixture-summary
+  fields to the existing finite lifecycle-transition family without changing
+  the chapter support state.
+- Current proof-depth snapshot: 179 proof targets, 54 Lean modules, 936 theorem
+  declarations, 754 derived/decomposed, 178 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+- Updated `book_structure.json`, `docs/book_outline.md`, Appendix E, the
+  Readiness Gates live chapter, the curated reader chapter, the v1.0 status
+  snapshot, the v1.x roadmap, and `scripts/validate_book.py` so the new probe
+  is visible and guarded by the normal book validation path.
+- This is a finite-record and deterministic-fixture increment only; it does not
+  execute a deployed readiness engine, prove residual-ledger storage, prove live
+  quarantine routing, prove benchmark quality, rerun MoECOT, create an evidence
+  transition, promote the Readiness Gates chapter core claim, or change Appendix
+  C support states.
+
 ## 2026-07-02 - Refine Runtime Adapters reader implementation prose
 
 - Added one active reader-only semantic overlay operation for `Runtime

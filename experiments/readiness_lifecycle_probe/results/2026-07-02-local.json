@@ -1,0 +1,78 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_readiness_lifecycle_probe.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 12,
+  "lean_fixture_alignment": {
+    "expected": {
+      "candidateToShadowAccepted": true,
+      "defaultReadyAccepted": true,
+      "negativeControlsRejected": true,
+      "nonClaimBoundary": true,
+      "quarantineWithFallbackAccepted": true,
+      "retirementWithReceiptAccepted": true,
+      "shadowToCanaryAccepted": true,
+      "supersessionWithResidualAccepted": true,
+      "supportStateEffectNone": true
+    },
+    "module": "AsiStackProofs.ReadinessGates",
+    "proof_tag": "lean:readiness.gates.lifecycle_probe_bridge",
+    "theorem_refs": [
+      "readiness_lifecycle_transition_must_be_forward_or_terminal",
+      "allowed_readiness_transition_requires_core_records",
+      "default_readiness_requires_regression_authority_and_route",
+      "default_readiness_without_regression_floor_rejected",
+      "default_readiness_without_authority_scope_rejected",
+      "quarantine_transition_blocks_ordinary_and_requires_fallback",
+      "quarantined_lifecycle_transition_with_ordinary_route_rejected",
+      "supersession_without_record_rejected",
+      "retirement_without_receipt_rejected",
+      "retired_readiness_state_cannot_transition",
+      "readiness_lifecycle_probe_fixture_bridge"
+    ]
+  },
+  "negative_controls": {
+    "default_missing_authority_rejected": true,
+    "default_missing_regression_rejected": true,
+    "missing_fresh_gate_evidence_rejected": true,
+    "missing_non_claim_boundary_rejected": true,
+    "missing_residual_escrow_rejected": true,
+    "non_forward_jump_rejected": true,
+    "quarantine_missing_fallback_rejected": true,
+    "quarantine_ordinary_route_rejected": true,
+    "retirement_missing_receipt_rejected": true,
+    "supersession_missing_record_rejected": true,
+    "support_state_promotion_rejected": true,
+    "transition_from_retired_rejected": true
+  },
+  "non_claims": [
+    "does not execute a deployed readiness engine",
+    "does not prove residual-ledger storage",
+    "does not prove live quarantine routing",
+    "does not prove benchmark quality",
+    "does not prove MoECOT replay",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic readiness lifecycle fixture only; no readiness engine, router, residual ledger, benchmark harness, rollback executor, runtime monitor, MoECOT replay path, or deployed module was executed.",
+    "The Readiness Gates chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-readiness-lifecycle-probe",
+  "result_kind": "deterministic_synthetic_readiness_lifecycle_probe",
+  "schema_version": "asi_stack.readiness_lifecycle_probe.v0",
+  "support_state_effect": "none",
+  "transition_count": 18,
+  "transition_coverage": {
+    "candidate_to_shadow": true,
+    "ordinary_route_blocked_in_quarantine": true,
+    "qualified_to_default_ready": true,
+    "quarantine_with_fallback": true,
+    "retirement_with_receipt": true,
+    "shadow_to_canary": true,
+    "supersession_with_residual": true,
+    "support_state_no_promotion": true
+  },
+  "valid_transition_count": 6,
+  "verification_result": "pass"
+}

@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 178 |
-| Manifest status counts | {"implemented": 178} |
-| Triage class counts | {"formal-invariant": 178} |
+| Proof targets audited | 179 |
+| Manifest status counts | {"implemented": 179} |
+| Triage class counts | {"formal-invariant": 179} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -66,7 +66,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 2 | 6 | 6 | 4 |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 7 | 5 | 2 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 11 | 5 | 4 |
-| `lean/AsiStackProofs/ReadinessGates.lean` | 2 | 19 | 15 | 6 |
+| `lean/AsiStackProofs/ReadinessGates.lean` | 3 | 20 | 16 | 7 |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | 2 | 7 | 3 | 3 |
 | `lean/AsiStackProofs/Replacement.lean` | 5 | 33 | 8 | 5 |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | 6 | 34 | 25 | 10 |
@@ -122,7 +122,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `project-theseus-as-report-first-implementation-reference` | 3 | 3 | 0 | 0 |
 | `prototype-roadmap` | 3 | 3 | 0 | 0 |
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
-| `readiness-gates-residual-escrow-and-quarantine` | 2 | 2 | 0 | 0 |
+| `readiness-gates-residual-escrow-and-quarantine` | 3 | 3 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 8 | 8 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
@@ -250,6 +250,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:moecot.runtime.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.MoECOTRuntime` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.failure_blocks_promotion` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:readiness.gates.lifecycle_probe_bridge` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessGates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:personal_hives.scheduling.operational_invariant` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:personal_hives.policy_first.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:personal_hives.approval_gate.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |

@@ -6483,6 +6483,13 @@
               "purpose": "Check that finite readiness lifecycle transitions stay on candidate/shadow/canary/qualified/default/quarantine/superseded/retired paths and reject default, quarantine, supersession, or retirement transitions without the required evidence, residual escrow, fallback, expiry, regression, authority, route, receipt, or supersession records.",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite transition-record predicate only"
+            },
+            {
+              "name": "Readiness lifecycle probe",
+              "purpose": "Check six synthetic readiness lifecycle transitions and twelve expected-invalid controls for forward/terminal lifecycle routes, fresh evidence, residual escrow, default-route regression and authority, quarantine fallback, supersession records, retirement receipts, retired-state closure, non-claim boundaries, and support-state non-promotion.",
+              "implementation_status": "implemented",
+              "result_status": "validated locally at `experiments/readiness_lifecycle_probe/results/2026-07-02-local.json`; deterministic synthetic readiness lifecycle fixture only; no deployed readiness engine or support-state promotion",
+              "status": "implemented by `python3 scripts/validate_readiness_lifecycle_probe.py`; no readiness-engine, residual-ledger, live-routing, benchmark-quality, MoECOT-replay, or support-state-promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.ReadinessGates",
@@ -6497,6 +6504,12 @@
               "tag": "lean:readiness.gates.failure_blocks_promotion",
               "module": "AsiStackProofs.ReadinessGates",
               "target": "A quarantined, superseded, retired, stale, or incomplete readiness transition cannot be used for ordinary promotion without the required fallback, residual, rerun, supersession, or retirement records.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:readiness.gates.lifecycle_probe_bridge",
+              "module": "AsiStackProofs.ReadinessGates",
+              "target": "The deterministic synthetic readiness lifecycle probe summary records candidate-to-shadow, shadow-to-canary, default-ready, quarantine-with-fallback, supersession-with-residual, and retirement-with-receipt paths plus rejected negative controls, support-state non-promotion, and non-claim boundaries.",
               "status": "implemented"
             }
           ]

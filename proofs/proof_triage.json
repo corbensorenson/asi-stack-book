@@ -1091,6 +1091,16 @@
       "rationale": "Implemented in AsiStackProofs.ReadinessGates as finite quarantine, stale-gate, supersession, retirement, and lifecycle-transition negative cases: quarantined targets cannot be ordinary routed, stale gates require rerun/residual records, supersession and retirement require explicit records, and retired states cannot emit allowed transitions."
     },
     {
+      "tag": "lean:readiness.gates.lifecycle_probe_bridge",
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "module": "AsiStackProofs.ReadinessGates",
+      "formal_target": "The deterministic synthetic readiness lifecycle probe summary records candidate-to-shadow, shadow-to-canary, default-ready, quarantine-with-fallback, supersession-with-residual, and retirement-with-receipt paths plus rejected negative controls, support-state non-promotion, and non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ReadinessGates as a finite fixture-summary bridge for the readiness lifecycle probe: the public-safe synthetic summary preserves accepted lifecycle paths, rejected controls, support-state effect none, and non-claim boundaries without claiming deployed readiness behavior."
+    },
+    {
       "tag": "lean:moecot.runtime.operational_invariant",
       "chapter_id": "routing-heads-and-specialist-cores",
       "module": "AsiStackProofs.MoECOTRuntime",
@@ -1791,5 +1801,5 @@
       "rationale": "Implemented in AsiStackProofs.Planning as a finite runtime-replan delta route and fixture bridge: it rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context or verification deltas, missing residuals, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta."
     }
   ],
-  "record_count": 178
+  "record_count": 179
 }

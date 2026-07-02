@@ -89,12 +89,15 @@ quarantined, split, merged, retired, or retrained. In the live book, this
 claim remains a design rationale supported at `argument`.
 
 The current repository supports the claim only as architecture. It has a
-`readiness_gate_record` schema, public-safe fixtures, two finite Lean
-predicates, and a synthetic readiness/residual harness. It also has one
-static, digest-verified Project Theseus architecture-gate report import. These
-artifacts are useful discipline, but they do not prove a deployed readiness
-engine, residual-ledger storage, benchmark quality, live quarantine routing,
-current Theseus runtime behavior, or MoECOT replay.
+`readiness_gate_record` schema, public-safe fixtures, finite Lean predicates, a
+synthetic readiness/residual harness, and a readiness lifecycle probe. The
+lifecycle probe checks six synthetic state moves and twelve rejected controls:
+forward moves toward shadow, canary, default-ready, quarantine, supersession,
+and retirement, plus failures for missing evidence, missing residual custody,
+unsafe default routing, quarantine leakage, absent terminal records, retired
+state reuse, missing non-claim boundaries, and support-promotion overclaim. It
+also has one static, digest-verified Project Theseus architecture-gate report
+import. These artifacts are useful discipline, but the probe is not a deployed readiness engine, residual-ledger store, benchmark result, live quarantine router, current Theseus runtime run, or MoECOT replay.
 
 ## Mechanism
 
@@ -215,8 +218,11 @@ The current repo has that first layer in partial form. Protocol validation
 checks the schema and fixtures. `scripts/validate_readiness_residual_gates.py`
 checks synthetic scenarios for transition decisions, residual custody,
 quarantine, expired reruns, fallback paths, and rollback-readiness links.
-`AsiStackProofs.ReadinessGates` gives finite Lean predicates for promotion and
-ordinary-route quarantine.
+`scripts/validate_readiness_lifecycle_probe.py` adds a focused readiness
+lifecycle probe with six synthetic lifecycle transitions and twelve
+expected-invalid controls. `AsiStackProofs.ReadinessGates` gives finite Lean
+predicates for promotion, ordinary-route quarantine, terminal state records,
+and the lifecycle probe bridge.
 
 That is enough to make the contract inspectable. It is not enough to claim a
 working readiness engine, live route enforcement, residual-ledger storage,

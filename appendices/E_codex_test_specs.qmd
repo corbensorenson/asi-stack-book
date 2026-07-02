@@ -209,6 +209,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Residual escrow integrity test | implemented | validated locally by synthetic fixtures; residual-ledger storage not run |
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Quarantine routing harness test | implemented | validated locally by synthetic fixtures; live quarantine routing not run |
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Readiness lifecycle transition proof | implemented | passes via Lean build; finite transition-record predicate only |
+| `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Readiness lifecycle probe | implemented | validated locally at `experiments/readiness_lifecycle_probe/results/2026-07-02-local.json`; deterministic synthetic readiness lifecycle fixture only; no deployed readiness engine or support-state promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Device registry fixture validation | implemented | passes via protocol fixture validation |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Portal, approval, bid, and federation fixture validation | implemented | passes via protocol fixture validation |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Policy-first scheduling denial test | implemented | passes via Lean build |
@@ -467,16 +468,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 178 |
+| Proof targets covered by triage | 179 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 178 |
+| implemented | 179 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 178 |
+| implemented | formal-invariant | lean-candidate | 179 |

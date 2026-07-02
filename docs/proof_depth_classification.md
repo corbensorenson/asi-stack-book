@@ -12,10 +12,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 178 |
+| Proof targets in manifest | 179 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 935 |
-| Direct/projection-style theorem declarations | 177 |
+| Theorem declarations classified | 936 |
+| Direct/projection-style theorem declarations | 178 |
 | Derived/decomposed theorem declarations | 754 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
@@ -87,7 +87,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 19 | 8 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 20 | 9 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 5 | 33 | 5 | 28 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 6 | 34 | 15 | 16 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -693,6 +693,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_lifecycle_transition_with_ordinary_route_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_module_cannot_be_selected_for_ordinary_route` | derived_or_decomposed | no | uses unfold |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `quarantined_target_ordinary_or_unbacked_diagnostic_route_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ReadinessGates.lean` | `readiness_lifecycle_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `readiness_lifecycle_transition_must_be_forward_or_terminal` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `retired_readiness_state_cannot_transition` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `retirement_requires_receipt_and_residual_escrow` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

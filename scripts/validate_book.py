@@ -156,6 +156,9 @@ REQUIRED = [
     "docs/verification_bandwidth_probe.md",
     "experiments/verification_bandwidth/results/2026-07-02-local.json",
     "scripts/validate_readiness_residual_gates.py",
+    "scripts/validate_readiness_lifecycle_probe.py",
+    "docs/readiness_lifecycle_probe.md",
+    "experiments/readiness_lifecycle_probe/results/2026-07-02-local.json",
     "scripts/validate_benchmark_antigoodhart.py",
     "scripts/validate_benchmark_fixture_bridge.py",
     "scripts/validate_policy_update_lease_probe.py",
@@ -915,6 +918,7 @@ def main() -> None:
     run_validator("validate_vcm_resolver_certificate_probe.py")
     run_validator("validate_verification_bandwidth_probe.py")
     run_validator("validate_readiness_residual_gates.py")
+    run_validator("validate_readiness_lifecycle_probe.py")
     run_validator("validate_benchmark_antigoodhart.py")
     run_validator("validate_benchmark_fixture_bridge.py")
     run_validator("validate_policy_update_lease_probe.py")

@@ -141,7 +141,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 | `runtime-adapters-tool-permissions-and-human-approval` | 3 | useful but too narrow | Synthetic runtime-adapter permission harness plus finite permission/approval and effect-replay route Lean envelopes added; still add deployed sandbox, approval-service, secret-handle, rollback-execution, and effect-receipt tests. |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | useful but too narrow | Synthetic procedural-memory loop harness plus finite generated-tool, regression-promotion, lifecycle-route, and fixture-bridge Lean envelopes added; still add deployed loop detector, tool synthesizer, generated-tool correctness checks, regression-quality benchmarks, route monitor, and retirement automation before stronger claims. |
 | `routing-heads-and-specialist-cores` | 3 | useful but too narrow | Synthetic routing decision lease harness plus finite route/MoECOT source-boundary and routing-decision lifecycle Lean envelopes added; still add learned-router, route-quality, deployed authority-enforcement, runtime route execution, MoECOT replay, orchestration benchmark, and specialist-quality tests before stronger claims. |
-| `readiness-gates-residual-escrow-and-quarantine` | 2 | useful but too narrow | Readiness lifecycle negative-case and transition-record envelopes added; still add deployed lifecycle-transition, residual-ledger, quarantine-routing, gate-quality, terminal-state governance, MoECOT replay, and current-readiness tests. |
+| `readiness-gates-residual-escrow-and-quarantine` | 3 | useful but too narrow | Readiness lifecycle negative-case, transition-record, and lifecycle-probe bridge envelopes added; still add deployed lifecycle-transition, residual-ledger, quarantine-routing, gate-quality, terminal-state governance, MoECOT replay, and current-readiness tests. |
 | `moecot-runtime-and-multi-core-orchestration` | 2 | research-agenda until artifact import | Import/replay artifacts before adequacy can rise. |
 | `personal-compute-hives-and-federated-edge-intelligence` | 5 | needs executable tests first | Hive approval, federation-lease, and work-admission lifecycle-route Lean envelopes added; still add scheduler, registry, portal, federation, rented-node, connectivity, dropout, work-receipt, residual, and energy-aware behavioral tests before adequacy can rise. |
 | `compact-generative-systems-and-residual-honesty` | 8 | needs executable tests first | Compact-generation, generate/verify/repair, and folded semantic-representation hooks now include a compact-admission route plus a finite Compact GVR fixture bridge over a literal baseline, selected compact receipt, and three rejected controls; add real residual-behavior, reconstruction, fallback, verifier-cost, semantic grounding, hierarchy-revision, consumer-policy, representation-utility, corpus, and downstream-utility harnesses before stronger formalization. |
@@ -1270,7 +1270,11 @@ without rerun or residual records, default readiness cannot skip regression or
 authority-scope records, quarantined lifecycle transitions cannot keep ordinary
 routing, supersession requires a supersession record and residual escrow,
 retirement requires a receipt and residual escrow, and retired states cannot
-emit new allowed lifecycle transitions.
+emit new allowed lifecycle transitions. The readiness lifecycle probe bridge
+adds fixture-summary fields for candidate-to-shadow, shadow-to-canary,
+default-ready, quarantine-with-fallback, supersession-with-residual, and
+retirement-with-receipt paths plus rejected negative controls, support-state
+non-promotion, and non-claim boundaries.
 
 This keeps `readiness-gates-residual-escrow-and-quarantine` in the `useful but
 too narrow` class. The predicates are closer to the chapter's lifecycle
