@@ -157,12 +157,10 @@ Draft deliverables:
 - A stack map, layer boundary record schema and fixture, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
 - Source-noted external comparator rows for `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, and `ext_subsumption_architecture_1986`, without treating those records as reproduced systems, benchmark results, or support-state promotion.
 - Beyond-SOTA endpoint should explicitly contrast the stack frame with scale-only systems, generic agent loops, and compound/modular AI systems: each contributes useful architecture vocabulary, but none by itself supplies authority ceilings, evidence states, rollback ownership, replacement transactions, or recursive-improvement boundaries.
-- Implemented repository-level fixture: `layer_boundary_record.valid.json` validates lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims only; source-to-layer traceability and claim-support audits remain planned.
+- Implemented repository-level fixture: `layer_boundary_record.valid.json` validates lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims only.
 - Implemented Lean proof target: finite layer-contract admission lifecycle route for missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence-transition gaps, and non-claim-boundary gaps.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, and `scf`; support remains `argument` pending implementation or test evidence.
-- Planned Codex test: Layer-boundary audit.
-- Planned Codex test: Source-to-layer traceability review.
-- Planned Codex test: Claim-support label audit.
+- Implemented repository audit: `python3 scripts/validate_stack_layer_traceability.py` checks the layer-boundary fixture, six assigned source mappings, Appendix A source-to-layer visibility, Appendix C claim/support labels, and no-promotion markers; this is repository traceability evidence only, not deployed stack evidence or support-state promotion.
 - Planned Codex test: Contract-change triage.
 
 Lean proof targets:

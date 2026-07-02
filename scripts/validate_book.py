@@ -64,6 +64,7 @@ REQUIRED = [
     "scripts/build_chapter_external_grounding_status.py",
     "scripts/validate_chapter_external_grounding_status.py",
     "scripts/validate_external_sota_positioning.py",
+    "scripts/validate_stack_layer_traceability.py",
     "scripts/validate_claim_ledger_revision.py",
     "scripts/validate_proof_carrying_claims.py",
     "scripts/validate_tribunal_review.py",
@@ -144,6 +145,7 @@ REQUIRED = [
     "docs/evidence_laundering_prevention_case_studies.md",
     "docs/chapter_external_grounding_status.md",
     "docs/external_sota_positioning_audit.md",
+    "docs/stack_layer_traceability_audit.md",
     "docs/support_state_transition_harness.md",
     "docs/authority_transition_harness.md",
     "docs/plan_execution_contract_harness.md",
@@ -195,6 +197,7 @@ REQUIRED = [
     "docs/reader_part_iii_review_pass.md",
     "docs/reader_part_iv_review_pass.md",
     "experiments/phase5_harness_registry.json",
+    "experiments/stack_layer_traceability/results/2026-07-02-local.md",
     "experiments/claim_ledger_revision/results/2026-06-28-local.md",
     "experiments/proof_carrying_claims/results/2026-06-28-local.md",
     "experiments/tribunal_review/results/2026-06-28-local.md",
@@ -725,6 +728,7 @@ def main() -> None:
     run_validator("validate_chapter_consolidation_pilot_plan.py")
     run_validator("validate_chapter_external_grounding_status.py")
     run_validator("validate_external_sota_positioning.py")
+    run_validator("validate_stack_layer_traceability.py")
     run_validator("validate_claim_ledger_revision.py")
     run_validator("validate_proof_carrying_claims.py")
     run_validator("validate_tribunal_review.py")

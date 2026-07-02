@@ -7,9 +7,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | Chapter ID | Chapter | Test spec | Implementation status | Result status |
 |---|---|---|---|---|
 | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Layer-contract admission lifecycle route | implemented | passes via Lean route theorems; no deployed layer enforcement, source-to-layer traceability completeness, runtime authority behavior, whole-system safety, support-state promotion, or model capability claim |
-| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Layer-boundary audit | planned | not run |
-| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Source-to-layer traceability review | planned | not run |
-| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Claim-support label audit | planned | not run |
+| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Layer-boundary audit | implemented | passes via `python3 scripts/validate_stack_layer_traceability.py`; repository metadata/fixture audit only |
+| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Source-to-layer traceability review | implemented | passes via `python3 scripts/validate_stack_layer_traceability.py`; source-note mapping audit only |
+| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Claim-support label audit | implemented | passes via `python3 scripts/validate_stack_layer_traceability.py`; claim-label/support-state audit only |
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Lower-cost candidate negative case | implemented | passes via Lean negative case; no route-search completeness or cost-estimate accuracy claim |
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Open-obligation residual negative case | implemented | passes via Lean negative case; no residual-burden measurement or utility-preservation claim |
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Efficiency-claim admission lifecycle route | implemented | passes via Lean route theorems; no measured efficiency, route-search completeness, cost-estimate accuracy, route-quality, residual-burden, benchmark-performance, or support-promotion claim |

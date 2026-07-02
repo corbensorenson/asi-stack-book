@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-02 - Add stack layer traceability audit
+
+- Added `python3 scripts/validate_stack_layer_traceability.py` to check the
+  opener's layer-boundary fixture, six assigned source mappings, Appendix A
+  source-to-layer visibility, Appendix C claim/support labels, and
+  no-promotion markers.
+- Wired the audit into `scripts/validate_book.py`, the manifest Codex test
+  rows, the live opener, curated reader opener, outline, roadmap, and public
+  result note.
+- The audit validates repository traceability only; it does not execute an ASI
+  Stack runtime, prove layer enforcement, measure whole-system efficiency,
+  validate source interpretation beyond recorded mappings, promote support
+  state, or create a chapter-core evidence transition.
+
 ## 2026-07-02 - Add Cognitive Compilation trace harness
 
 - Added `python3 scripts/validate_cognitive_compilation_traces.py` with 2

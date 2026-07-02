@@ -291,6 +291,11 @@ traceability state, responsibility, artifact, handoff protocol, contract
 references, authority ceiling, invariant, integration decision, promotion
 blockers, source references, support-state effect, and non-claim.
 
+The repository now also has a stack-layer traceability audit that checks the
+public layer-boundary fixture, the opener's six source mappings, source-to-layer
+visibility, claim labels, support states, and no-promotion markers. That is
+evidence of repository discipline, not evidence that a deployed stack exists.
+
 A passing boundary record should include at least one blocked integration
 path: a reasoning layer trying to execute, an evidence layer trying to promote
 without artifacts, or a routing layer trying to widen authority. That makes
@@ -326,9 +331,9 @@ has to name its responsibility, artifact, invariant, failure mode, promotion
 rule, non-claims, and rollback path before the reader is asked to trust it.
 
 This stack doctrine is still an architectural claim. It stays at `argument`
-support until layer-boundary records, source-to-layer reviews,
-handoff-denial fixtures, traceability audits, and governed replacement
-examples show that stack separation survives real integration pressure.
+support until layer-boundary records, handoff-denial fixtures, traceability
+audits over concrete integrations, and governed replacement examples show that
+stack separation survives real integration pressure.
 
 ## Summary
 

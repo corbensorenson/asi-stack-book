@@ -194,9 +194,21 @@
               "result_status": "passes via Lean route theorems; no deployed layer enforcement, source-to-layer traceability completeness, runtime authority behavior, whole-system safety, support-state promotion, or model capability claim",
               "status": "implemented in AsiStackProofs.StackBoundaries; no deployed stack enforcement or whole-system safety claim"
             },
-            "Layer-boundary audit",
-            "Source-to-layer traceability review",
-            "Claim-support label audit"
+            {
+              "name": "Layer-boundary audit",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_stack_layer_traceability.py`; repository metadata/fixture audit only"
+            },
+            {
+              "name": "Source-to-layer traceability review",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_stack_layer_traceability.py`; source-note mapping audit only"
+            },
+            {
+              "name": "Claim-support label audit",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_stack_layer_traceability.py`; claim-label/support-state audit only"
+            }
           ],
           "lean_module": "AsiStackProofs.StackBoundaries",
           "proof_targets": [
