@@ -149,7 +149,7 @@ prevents stronger claims.
 ## What The Static Imports Mean
 
 The ASI Stack repository currently contains two public-safe Project Theseus
-report import lanes plus one support replay probe.
+report import lanes, one support replay probe, and one report-bundle audit.
 
 The first import is a sanitized architecture-gate summary. It records a
 checkpointed 14 of 14 gate summary with zero external inference calls, verifies
@@ -169,6 +169,15 @@ verified task success remains zero.
 The support replay probe then reruns the two ASI-side validators, records
 command-output digests, checks ten tracked artifacts, and preserves support-
 state effect `none`. It does not create a support-state transition.
+
+The report-bundle audit checks the bookkeeping shape that a stronger Theseus
+packet would need. It validates one public-safe repository fixture with seven
+expected-invalid controls, two replay-ready rows, one blocked replay row, eight
+stack-layer crosswalk rows, five gate mappings, six visible artifact gaps, and
+six self-evolution intervention-ladder levels. It is a useful audit because it
+keeps the missing pieces visible: the clean live replay, public task bundle,
+current work-board state, benchmark environment notes, publication permissions,
+and external review are still absent.
 
 The whole surface is narrow. It does not rerun Project Theseus. It does not
 prove that the current checkout is clean. It does not reproduce a benchmark. It
@@ -232,8 +241,12 @@ The live Lean hooks capture a small formal version of this discipline. They
 model record-level predicates saying that an implementation-reference claim
 needs a report, config, or tool surface rather than dashboard prose alone, and
 that capability or self-evolution promotion is blocked when required gate
-reports are absent or failing. Those hooks do not prove that a Theseus run
-succeeded; they prove only the shape of the gate the book wants to enforce.
+reports are absent or failing. The report-bundle bridge adds a finite check that
+a public-safe audit is accepted only when its bundle components, replay rows,
+crosswalk rows, gate mappings, work-board contract fields, artifact gaps,
+intervention ladder, and no-promotion boundaries are complete. Those hooks do
+not prove that a Theseus run succeeded; they prove only the shape of the gate
+the book wants to enforce.
 
 ## Failure Modes
 

@@ -1,0 +1,254 @@
+{
+  "schema_version": "0.1",
+  "audit_id": "theseus-report-bundle-audit-2026-07-02-local",
+  "record_kind": "theseus_report_bundle_audit",
+  "audit_scope": "public_safe_repository_fixture_only",
+  "local_only": true,
+  "live_theseus_replay": false,
+  "imported_live_report_bundle": false,
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "bundle_components": [
+    {
+      "component": "goal_contract",
+      "present": true,
+      "ref": "source-note-only:theseus_plan_compiler.goal_contract",
+      "public_safe": true
+    },
+    {
+      "component": "compiler_artifact",
+      "present": true,
+      "ref": "source-note-only:theseus_plan_compiler.semantic_ir_dag",
+      "public_safe": true
+    },
+    {
+      "component": "work_board_item",
+      "present": true,
+      "ref": "source-note-only:theseus_operator_os.work_board_item",
+      "public_safe": true
+    },
+    {
+      "component": "gate_record",
+      "present": true,
+      "ref": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
+      "public_safe": true
+    },
+    {
+      "component": "residual_record",
+      "present": true,
+      "ref": "source-note-only:project_theseus_whitepaper.residual_escrow",
+      "public_safe": true
+    },
+    {
+      "component": "non_claim",
+      "present": true,
+      "ref": "docs/theseus_support_replay_probe.md#non-claims",
+      "public_safe": true
+    },
+    {
+      "component": "review_note",
+      "present": true,
+      "ref": "docs/theseus_report_bundle_audit.md",
+      "public_safe": true
+    },
+    {
+      "component": "publication_boundary",
+      "present": true,
+      "ref": "public-safe summary only; private task rows and payloads are excluded",
+      "public_safe": true
+    }
+  ],
+  "replay_readiness_rows": [
+    {
+      "row_id": "architecture_gate_static_import",
+      "replay_ready": true,
+      "command": "python3 scripts/validate_theseus_report.py",
+      "environment_notes": "local repository validator over public-safe static fixture",
+      "input_boundary": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json",
+      "artifact_checksum": "c33ea5d8d466e394ac556eebd623fb0eb43f601d79ea5f66021ec57762751923",
+      "expected_output_class": "validator pass with digest and expected-invalid controls",
+      "failure_behavior": "block support movement and retain artifact-gap row"
+    },
+    {
+      "row_id": "generation_mode_static_import",
+      "replay_ready": true,
+      "command": "python3 scripts/validate_theseus_generation_mode_import.py",
+      "environment_notes": "local repository validator over public-safe static fixture",
+      "input_boundary": "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json",
+      "artifact_checksum": "0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709",
+      "expected_output_class": "validator pass with digest, 18 modes, 13 comparisons, and zero promotable comparisons",
+      "failure_behavior": "block support movement and retain artifact-gap row"
+    },
+    {
+      "row_id": "live_theseus_task_bundle",
+      "replay_ready": false,
+      "blocked_reason": "no public task bundle, environment notes, current clean checkout, or publication permission is present in this repository"
+    }
+  ],
+  "crosswalk_rows": [
+    {
+      "stack_layer": "intent_and_goal_contract",
+      "artifact_refs": ["source-note-only:theseus_plan_compiler.goal_contract"],
+      "source_ids": ["theseus_plan_compiler"],
+      "evidence_state": "source_note_only",
+      "public_claim_boundary": "design lineage only"
+    },
+    {
+      "stack_layer": "planning_and_semantic_ir",
+      "artifact_refs": ["source-note-only:theseus_plan_compiler.semantic_ir_dag"],
+      "source_ids": ["theseus_plan_compiler"],
+      "evidence_state": "source_note_only",
+      "public_claim_boundary": "no compiler replay"
+    },
+    {
+      "stack_layer": "operator_work_board",
+      "artifact_refs": ["source-note-only:theseus_operator_os.work_board_item"],
+      "source_ids": ["theseus_operator_os"],
+      "evidence_state": "source_note_only",
+      "public_claim_boundary": "no board state replay"
+    },
+    {
+      "stack_layer": "architecture_gate",
+      "artifact_refs": ["experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json"],
+      "source_ids": ["theseus_architecture_gate"],
+      "evidence_state": "static_import_digest_verified",
+      "public_claim_boundary": "no current training authorization"
+    },
+    {
+      "stack_layer": "generation_mode_gate",
+      "artifact_refs": ["experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json"],
+      "source_ids": ["theseus_architecture_gate"],
+      "evidence_state": "static_import_digest_verified",
+      "public_claim_boundary": "no generation-speed or model-quality claim"
+    },
+    {
+      "stack_layer": "residual_ledger",
+      "artifact_refs": ["source-note-only:project_theseus_whitepaper.residual_escrow"],
+      "source_ids": ["project_theseus_whitepaper"],
+      "evidence_state": "source_note_only",
+      "public_claim_boundary": "no residual ledger replay"
+    },
+    {
+      "stack_layer": "self_evolution_ladder",
+      "artifact_refs": ["source-note-only:theseus_self_evolution_system.intervention_ladder"],
+      "source_ids": ["theseus_self_evolution_system"],
+      "evidence_state": "source_note_only",
+      "public_claim_boundary": "no self-evolution safety claim"
+    },
+    {
+      "stack_layer": "publication_boundary",
+      "artifact_refs": ["docs/theseus_support_replay_probe.md", "docs/theseus_report_bundle_audit.md"],
+      "source_ids": ["project_theseus_whitepaper", "theseus_circle_transfer"],
+      "evidence_state": "repository_audit",
+      "public_claim_boundary": "non-claims and missing artifacts remain attached"
+    }
+  ],
+  "architecture_gate_mappings": [
+    {
+      "gate": "rgs_complete",
+      "maps_to_decision": "residual_retention",
+      "artifact_ref": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json"
+    },
+    {
+      "gate": "safety_ledger_passed",
+      "maps_to_decision": "promotion_blocker_if_absent",
+      "artifact_ref": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json"
+    },
+    {
+      "gate": "external_inference_zero",
+      "maps_to_decision": "promotion_boundary",
+      "artifact_ref": "experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json"
+    },
+    {
+      "gate": "zero_promotable_generation_comparisons",
+      "maps_to_decision": "block_promotion",
+      "artifact_ref": "experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json"
+    },
+    {
+      "gate": "live_task_bundle_missing",
+      "maps_to_decision": "artifact_gap_blocks_support_movement",
+      "artifact_ref": "docs/theseus_report_bundle_audit.md"
+    }
+  ],
+  "work_board_improvement_contract": {
+    "objective": "import one public-safe Theseus report bundle before treating implementation-reference status as stronger evidence",
+    "gate": "public artifact boundary and replay-readiness check",
+    "evidence_artifact": "docs/theseus_report_bundle_audit.md",
+    "residual": "clean live replay, public task bundle, work-board state, and external review remain missing",
+    "owner": "book evidence lane",
+    "completion_criterion": "validator passes while support_state_effect remains none"
+  },
+  "artifact_gaps": [
+    {
+      "gap": "current clean Project Theseus checkout",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "public task bundle",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "current work-board state",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "benchmark environment notes",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "publication permission for private payloads",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "external review",
+      "visible": true,
+      "blocks_support_movement": true
+    }
+  ],
+  "intervention_ladder": [
+    {
+      "level": 0,
+      "name": "source_note_only",
+      "requires_review": false
+    },
+    {
+      "level": 1,
+      "name": "static_public_import",
+      "requires_review": true
+    },
+    {
+      "level": 2,
+      "name": "local_validator_replay",
+      "requires_review": true
+    },
+    {
+      "level": 3,
+      "name": "bounded_public_task_bundle",
+      "requires_review": true
+    },
+    {
+      "level": 4,
+      "name": "accepted_evidence_transition",
+      "requires_review": true
+    },
+    {
+      "level": 5,
+      "name": "self_evolution_candidate",
+      "requires_review": true
+    }
+  ],
+  "non_claims": [
+    "This Theseus report-bundle audit does not rerun Project Theseus.",
+    "This Theseus report-bundle audit does not import a clean live Theseus report bundle.",
+    "This Theseus report-bundle audit does not prove benchmark performance.",
+    "This Theseus report-bundle audit does not prove deployed Theseus runtime behavior, benchmark performance, model quality, generation speed, useful-solution-per-second improvement, routing quality, safety, alignment, transfer, deployment readiness, or ASI.",
+    "This Theseus report-bundle audit does not promote any chapter core claim above argument.",
+    "This Theseus report-bundle audit does not create a support-state transition."
+  ]
+}

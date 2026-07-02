@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-02 - Add Theseus report-bundle audit
+
+- Added `python3 scripts/validate_theseus_report_bundle_audit.py`,
+  `docs/theseus_report_bundle_audit.md`, and
+  `experiments/theseus_report_bundle_audit/results/2026-07-02-local.json` for
+  a public-safe Project Theseus report-bundle audit.
+- The audit validates 1 public-safe bundle-shaped fixture and 7
+  expected-invalid controls for bundle completeness, replay-readiness rows,
+  crosswalk rows, gate mappings, work-board contract fields, visible
+  artifact gaps, intervention-ladder ordering, support-promotion overclaim, and
+  no-promotion boundaries.
+- Added `lean:theseus.reference.report_bundle_audit.fixture_bridge` in
+  `AsiStackProofs.TheseusReference` for finite audit acceptance, hidden
+  artifact-gap rejection, no-live-replay/no-support-promotion preservation, and
+  alignment with the public report-bundle review predicate.
+- Updated the Project Theseus live chapter, curated reader chapter, outline,
+  roadmap, proof manifest, proof triage, proof-depth classification, proof
+  artifact audit, Appendix E, README, repository map, and public readiness
+  surfaces. This is no clean live Theseus replay, public task-bundle run,
+  current work-board import, benchmark result, model-quality result, safety
+  result, alignment result, external review, or support-state-promotion claim.
+- Current proof-depth snapshot: 172 proof targets, 54 Lean modules, 888 theorem
+  declarations, 712 derived/decomposed, 172 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add prototype phase gate harness
 
 - Added `python3 scripts/validate_prototype_phase_gates.py`,

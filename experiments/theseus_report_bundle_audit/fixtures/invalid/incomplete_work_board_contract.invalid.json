@@ -1,0 +1,9 @@
+{
+  "case_id": "incomplete_work_board_contract",
+  "base_report": "experiments/theseus_report_bundle_audit/fixtures/valid/report_bundle_public_audit.valid.json",
+  "mutation": {
+    "path": "work_board_improvement_contract.owner",
+    "value": ""
+  },
+  "expected_error_fragment": "missing work_board_improvement_contract owner"
+}

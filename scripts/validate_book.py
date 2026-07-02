@@ -177,6 +177,7 @@ REQUIRED = [
     "scripts/validate_theseus_generation_mode_import.py",
     "scripts/run_theseus_support_replay_probe.py",
     "scripts/validate_theseus_support_replay_probe.py",
+    "scripts/validate_theseus_report_bundle_audit.py",
     "scripts/validate_theseus_concrete_evidence_surface.py",
     "scripts/validate_phase5_harness_registry.py",
     "scripts/build_reader_edition.py",
@@ -340,6 +341,9 @@ REQUIRED = [
     "experiments/theseus_import/results/2026-06-29-local.json",
     "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
     "experiments/theseus_support_replay_probe/results/2026-07-01-local.json",
+    "docs/theseus_report_bundle_audit.md",
+    "experiments/theseus_report_bundle_audit/README.md",
+    "experiments/theseus_report_bundle_audit/results/2026-07-02-local.json",
     "evidence_transitions/README.md",
     "claim_decisions/v1_0_core_claim_no_promotion.json",
     "editions/release_profiles.json",
@@ -911,6 +915,7 @@ def main() -> None:
     run_validator("validate_theseus_report.py")
     run_validator("validate_theseus_generation_mode_import.py")
     run_validator("validate_theseus_support_replay_probe.py")
+    run_validator("validate_theseus_report_bundle_audit.py")
     run_validator("validate_theseus_concrete_evidence_surface.py")
     run_validator("validate_phase5_harness_registry.py")
     run_validator("run_phase5_harnesses.py")

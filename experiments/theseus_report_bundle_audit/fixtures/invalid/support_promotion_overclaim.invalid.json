@@ -1,0 +1,9 @@
+{
+  "case_id": "support_promotion_overclaim",
+  "base_report": "experiments/theseus_report_bundle_audit/fixtures/valid/report_bundle_public_audit.valid.json",
+  "mutation": {
+    "path": "support_state_effect",
+    "value": "promote_to_prototype_backed"
+  },
+  "expected_error_fragment": "support_state_effect must remain none"
+}

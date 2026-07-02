@@ -1,0 +1,9 @@
+{
+  "case_id": "unmapped_gate_decision",
+  "base_report": "experiments/theseus_report_bundle_audit/fixtures/valid/report_bundle_public_audit.valid.json",
+  "mutation": {
+    "path": "architecture_gate_mappings.1.maps_to_decision",
+    "value": "dashboard_status"
+  },
+  "expected_error_fragment": "gate mapping safety_ledger_passed has invalid decision dashboard_status"
+}

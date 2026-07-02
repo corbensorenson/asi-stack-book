@@ -1,0 +1,9 @@
+{
+  "case_id": "missing_replay_boundary",
+  "base_report": "experiments/theseus_report_bundle_audit/fixtures/valid/report_bundle_public_audit.valid.json",
+  "mutation": {
+    "path": "replay_readiness_rows.0.command",
+    "value": ""
+  },
+  "expected_error_fragment": "replay-ready row architecture_gate_static_import missing command"
+}

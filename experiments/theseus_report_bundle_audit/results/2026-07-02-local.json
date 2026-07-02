@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-07-02-theseus-report-bundle-audit",
+  "audit_id": "theseus-report-bundle-audit-2026-07-02-local",
+  "validation_result": "pass",
+  "valid_fixture_count": 1,
+  "expected_invalid_count": 7,
+  "valid_fixture_sha256": "94c6d17cdeaa1760681d533d690e1f3ba199ccd8d866c28cdc15926a63815eed",
+  "bundle_component_count": 8,
+  "replay_ready_row_count": 2,
+  "blocked_replay_row_count": 1,
+  "crosswalk_layer_count": 8,
+  "mapped_gate_decision_count": 5,
+  "visible_artifact_gap_count": 6,
+  "intervention_ladder_level_count": 6,
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "ci_verification_command": "python3 scripts/validate_theseus_report_bundle_audit.py",
+  "artifact_refs": [
+    "experiments/theseus_report_bundle_audit/fixtures/valid/report_bundle_public_audit.valid.json",
+    "docs/theseus_report_bundle_audit.md",
+    "experiments/theseus_report_bundle_audit/results/2026-07-02-local.json",
+    "docs/theseus_report_import_slice.md",
+    "docs/theseus_generation_mode_import_slice.md",
+    "docs/theseus_support_replay_probe.md",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "lean_bridge": {
+    "lean_module": "lean/AsiStackProofs/TheseusReference.lean",
+    "checked_theorem_names": [
+      "complete_theseus_report_bundle_audit_accepts",
+      "accepted_theseus_report_bundle_audit_preserves_public_boundaries",
+      "complete_theseus_report_bundle_audit_satisfies_public_bundle_review"
+    ]
+  },
+  "non_claims": [
+    "This Theseus report-bundle audit does not rerun Project Theseus.",
+    "This Theseus report-bundle audit does not import a clean live Theseus report bundle.",
+    "This Theseus report-bundle audit does not prove benchmark performance.",
+    "This Theseus report-bundle audit does not prove deployed Theseus runtime behavior, benchmark performance, model quality, generation speed, useful-solution-per-second improvement, routing quality, safety, alignment, transfer, deployment readiness, or ASI.",
+    "This Theseus report-bundle audit does not promote any chapter core claim above argument.",
+    "This Theseus report-bundle audit does not create a support-state transition."
+  ]
+}

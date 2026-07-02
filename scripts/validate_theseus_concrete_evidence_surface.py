@@ -19,9 +19,11 @@ ROOT = Path(__file__).resolve().parents[1]
 ARCH_SUMMARY = ROOT / "docs" / "theseus_report_import_slice.md"
 GEN_SUMMARY = ROOT / "docs" / "theseus_generation_mode_import_slice.md"
 SUPPORT_SUMMARY = ROOT / "docs" / "theseus_support_replay_probe.md"
+BUNDLE_SUMMARY = ROOT / "docs" / "theseus_report_bundle_audit.md"
 ARCH_RESULT = ROOT / "experiments" / "theseus_import" / "results" / "2026-06-29-local.json"
 GEN_RESULT = ROOT / "experiments" / "theseus_generation_mode_import" / "results" / "2026-07-01-local.json"
 SUPPORT_RESULT = ROOT / "experiments" / "theseus_support_replay_probe" / "results" / "2026-07-01-local.json"
+BUNDLE_RESULT = ROOT / "experiments" / "theseus_report_bundle_audit" / "results" / "2026-07-02-local.json"
 STRUCTURE = ROOT / "book_structure.json"
 OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
@@ -85,6 +87,19 @@ RESULT_DIGESTS = (
     "50d1c01397082194f45b916165c582570653073b56a7de934cf9222e80d7486c",
 )
 
+BUNDLE_FACTS = (
+    "theseus-report-bundle-audit-2026-07-02-local",
+    "Expected-invalid controls | 7",
+    "Replay-ready rows | 2",
+    "Blocked replay rows | 1",
+    "Crosswalk rows | 8",
+    "Architecture/gate mapping rows | 5",
+    "Visible artifact gaps | 6",
+    "Intervention ladder levels | 6",
+    "Support-state effect | `none`",
+    "Evidence transition created | `false`",
+)
+
 NON_CLAIMS = (
     "does not promote any chapter core claim",
     "does not rerun Project Theseus",
@@ -137,6 +152,10 @@ CHAPTER_FACTS = (
     "support replay probe",
     "2 replay commands",
     "10 tracked artifacts",
+    "report-bundle audit",
+    "7 expected-invalid controls",
+    "8 crosswalk rows",
+    "6 visible artifact gaps",
     "support-state effect `none`",
     "do not promote the Theseus core claim",
 )
@@ -152,6 +171,10 @@ READER_FACTS = (
     "useful solution per second at `0.0`",
     "two ASI-side validators",
     "ten tracked artifacts",
+    "report-bundle audit",
+    "seven expected-invalid controls",
+    "eight stack-layer crosswalk rows",
+    "six visible artifact gaps",
     "does not move the Project Theseus core claim above `argument`",
 )
 
@@ -200,9 +223,11 @@ def main() -> None:
         ARCH_SUMMARY,
         GEN_SUMMARY,
         SUPPORT_SUMMARY,
+        BUNDLE_SUMMARY,
         ARCH_RESULT,
         GEN_RESULT,
         SUPPORT_RESULT,
+        BUNDLE_RESULT,
         STRUCTURE,
         OUTLINE,
         ROADMAP,
@@ -218,9 +243,11 @@ def main() -> None:
     arch_summary_text = ARCH_SUMMARY.read_text(encoding="utf-8")
     gen_summary_text = GEN_SUMMARY.read_text(encoding="utf-8")
     support_summary_text = SUPPORT_SUMMARY.read_text(encoding="utf-8")
+    bundle_summary_text = BUNDLE_SUMMARY.read_text(encoding="utf-8")
     arch_result = load_json(ARCH_RESULT)
     gen_result = load_json(GEN_RESULT)
     support_result = load_json(SUPPORT_RESULT)
+    bundle_result = load_json(BUNDLE_RESULT)
     structure = load_json(STRUCTURE)
     outline_text = OUTLINE.read_text(encoding="utf-8")
     roadmap_text = ROADMAP.read_text(encoding="utf-8")
@@ -230,9 +257,26 @@ def main() -> None:
     require_fragments(rel(ARCH_SUMMARY), arch_summary_text, ARCH_FACTS + ARCH_NON_CLAIMS, errors)
     require_fragments(rel(GEN_SUMMARY), gen_summary_text, GEN_DOC_FACTS + GEN_NON_CLAIMS, errors)
     require_fragments(rel(SUPPORT_SUMMARY), support_summary_text, PROBE_FACTS + PROBE_NON_CLAIMS, errors)
+    require_fragments(rel(BUNDLE_SUMMARY), bundle_summary_text, BUNDLE_FACTS + PROBE_NON_CLAIMS, errors)
     require_fragments(rel(ARCH_RESULT), text_blob(arch_result), (ARCH_FACTS[0], ARCH_FACTS[6], ARCH_FACTS[7]) + ARCH_NON_CLAIMS[1:], errors)
     require_fragments(rel(GEN_RESULT), text_blob(gen_result), (GEN_FACTS[0], GEN_FACTS[7], GEN_FACTS[10]) + GEN_NON_CLAIMS[1:], errors)
     require_fragments(rel(SUPPORT_RESULT), text_blob(support_result), RESULT_DIGESTS + PROBE_NON_CLAIMS, errors)
+    require_fragments(
+        rel(BUNDLE_RESULT),
+        text_blob(bundle_result),
+        (
+            "theseus-report-bundle-audit-2026-07-02-local",
+            "expected_invalid_count",
+            "replay_ready_row_count",
+            "crosswalk_layer_count",
+            "visible_artifact_gap_count",
+            "intervention_ladder_level_count",
+            "support_state_effect",
+            "none",
+        )
+        + PROBE_NON_CLAIMS,
+        errors,
+    )
 
     if arch_result.get("accepted_gate_count") != 14 or arch_result.get("accepted_passed_count") != 14:
         errors.append(f"{rel(ARCH_RESULT)} must preserve the 14/14 imported architecture-gate summary.")
@@ -255,6 +299,24 @@ def main() -> None:
         errors.append(f"{rel(SUPPORT_RESULT)} must keep chapter_core_support_effect none.")
     if support_result.get("evidence_transition_created") is not False:
         errors.append(f"{rel(SUPPORT_RESULT)} must not create an evidence transition.")
+    if bundle_result.get("support_state_effect") != "none":
+        errors.append(f"{rel(BUNDLE_RESULT)} must keep support_state_effect none.")
+    if bundle_result.get("chapter_core_support_effect") != "none":
+        errors.append(f"{rel(BUNDLE_RESULT)} must keep chapter_core_support_effect none.")
+    if bundle_result.get("evidence_transition_created") is not False:
+        errors.append(f"{rel(BUNDLE_RESULT)} must not create an evidence transition.")
+    expected_bundle_counts = {
+        "expected_invalid_count": 7,
+        "replay_ready_row_count": 2,
+        "blocked_replay_row_count": 1,
+        "crosswalk_layer_count": 8,
+        "mapped_gate_decision_count": 5,
+        "visible_artifact_gap_count": 6,
+        "intervention_ladder_level_count": 6,
+    }
+    for key, expected in expected_bundle_counts.items():
+        if bundle_result.get(key) != expected:
+            errors.append(f"{rel(BUNDLE_RESULT)} must keep {key} {expected}.")
 
     if not isinstance(structure, dict):
         errors.append(f"{rel(STRUCTURE)} must contain an object.")
@@ -269,7 +331,9 @@ def main() -> None:
             (
                 "Theseus support replay probe",
                 "Theseus concrete evidence-surface validation",
+                "Theseus report-bundle audit validation",
                 "python3 scripts/validate_theseus_concrete_evidence_surface.py",
+                "python3 scripts/validate_theseus_report_bundle_audit.py",
                 "no live Theseus replay",
                 "support-state promotion",
             ),
@@ -289,10 +353,14 @@ def main() -> None:
         outline_text,
         (
             "Theseus concrete evidence-surface validation",
+            "Theseus report-bundle audit validation",
             "14/14",
             "18 modes",
             "13 comparisons",
             "zero promotable comparisons",
+            "7 expected-invalid controls",
+            "8 crosswalk rows",
+            "6 visible artifact gaps",
             "support-state effect `none`",
             "does not promote chapter-core support",
         ),
@@ -304,10 +372,13 @@ def main() -> None:
         (
             "project-theseus-as-report-first-implementation-reference",
             "validate_theseus_concrete_evidence_surface.py",
+            "validate_theseus_report_bundle_audit.py",
             "14/14",
             "18",
             "13 comparisons",
             "zero promotable comparisons",
+            "report-bundle audit",
+            "support-state effect `none`",
             "two ASI-side",
             "support-state effect `none`",
         ),

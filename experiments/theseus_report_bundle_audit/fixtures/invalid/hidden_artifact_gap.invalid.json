@@ -1,0 +1,9 @@
+{
+  "case_id": "hidden_artifact_gap",
+  "base_report": "experiments/theseus_report_bundle_audit/fixtures/valid/report_bundle_public_audit.valid.json",
+  "mutation": {
+    "path": "artifact_gaps.2.visible",
+    "value": false
+  },
+  "expected_error_fragment": "artifact gap current work-board state must stay visible and block support movement"
+}

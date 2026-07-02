@@ -295,4 +295,199 @@ theorem public_theseus_artifact_with_private_payload_or_support_overclaim_reject
                   rw [nonClaimsMissing] at nonClaimsPresent
                   contradiction
 
+inductive TheseusReportBundleAuditRoute where
+  | rejectAudit
+  | acceptFixtureAudit
+deriving DecidableEq, Repr
+
+structure TheseusReportBundleAuditSummary where
+  publicSafeFixtureBundleCited : Bool
+  goalContractPresent : Bool
+  compilerArtifactPresent : Bool
+  workBoardItemPresent : Bool
+  gateRecordPresent : Bool
+  residualRecordPresent : Bool
+  nonClaimRecorded : Bool
+  reviewNotePresent : Bool
+  publicationBoundaryRecorded : Bool
+  replayReadinessRowsComplete : Bool
+  crosswalkRowsComplete : Bool
+  gateMappingsComplete : Bool
+  workBoardContractComplete : Bool
+  artifactGapsVisible : Bool
+  interventionLadderOrdered : Bool
+  supportStateEffectNone : Bool
+  noLiveReplayClaim : Bool
+  noSupportPromotionClaim : Bool
+deriving DecidableEq, Repr
+
+def TheseusReportBundleAuditComplete
+    (summary : TheseusReportBundleAuditSummary) : Bool :=
+  summary.publicSafeFixtureBundleCited &&
+  summary.goalContractPresent &&
+  summary.compilerArtifactPresent &&
+  summary.workBoardItemPresent &&
+  summary.gateRecordPresent &&
+  summary.residualRecordPresent &&
+  summary.nonClaimRecorded &&
+  summary.reviewNotePresent &&
+  summary.publicationBoundaryRecorded &&
+  summary.replayReadinessRowsComplete &&
+  summary.crosswalkRowsComplete &&
+  summary.gateMappingsComplete &&
+  summary.workBoardContractComplete &&
+  summary.artifactGapsVisible &&
+  summary.interventionLadderOrdered &&
+  summary.supportStateEffectNone &&
+  summary.noLiveReplayClaim &&
+  summary.noSupportPromotionClaim
+
+def TheseusReportBundleAuditRouteFor
+    (summary : TheseusReportBundleAuditSummary) :
+    TheseusReportBundleAuditRoute :=
+  if TheseusReportBundleAuditComplete summary then
+    TheseusReportBundleAuditRoute.acceptFixtureAudit
+  else
+    TheseusReportBundleAuditRoute.rejectAudit
+
+def PublicReportBundleReviewOfAuditSummary
+    (summary : TheseusReportBundleAuditSummary) :
+    PublicReportBundleReview :=
+  {
+    bundleCitedAsImported := summary.publicSafeFixtureBundleCited,
+    goalContractPresent := summary.goalContractPresent,
+    compilerArtifactPresent := summary.compilerArtifactPresent,
+    workBoardItemPresent := summary.workBoardItemPresent,
+    gateRecordPresent := summary.gateRecordPresent,
+    residualRecordPresent := summary.residualRecordPresent,
+    nonClaimRecorded := summary.nonClaimRecorded,
+    reviewNotePresent := summary.reviewNotePresent,
+    publicationBoundaryRecorded := summary.publicationBoundaryRecorded
+  }
+
+theorem hidden_artifact_gap_rejects_theseus_report_bundle_audit
+    {summary : TheseusReportBundleAuditSummary} :
+    summary.artifactGapsVisible = false ->
+      TheseusReportBundleAuditRouteFor summary =
+        TheseusReportBundleAuditRoute.rejectAudit := by
+  intro hiddenGap
+  simp [
+    TheseusReportBundleAuditRouteFor,
+    TheseusReportBundleAuditComplete,
+    hiddenGap,
+  ]
+
+theorem complete_theseus_report_bundle_audit_accepts
+    {summary : TheseusReportBundleAuditSummary} :
+    summary.publicSafeFixtureBundleCited = true ->
+    summary.goalContractPresent = true ->
+    summary.compilerArtifactPresent = true ->
+    summary.workBoardItemPresent = true ->
+    summary.gateRecordPresent = true ->
+    summary.residualRecordPresent = true ->
+    summary.nonClaimRecorded = true ->
+    summary.reviewNotePresent = true ->
+    summary.publicationBoundaryRecorded = true ->
+    summary.replayReadinessRowsComplete = true ->
+    summary.crosswalkRowsComplete = true ->
+    summary.gateMappingsComplete = true ->
+    summary.workBoardContractComplete = true ->
+    summary.artifactGapsVisible = true ->
+    summary.interventionLadderOrdered = true ->
+    summary.supportStateEffectNone = true ->
+    summary.noLiveReplayClaim = true ->
+    summary.noSupportPromotionClaim = true ->
+      TheseusReportBundleAuditRouteFor summary =
+        TheseusReportBundleAuditRoute.acceptFixtureAudit := by
+  intro cited goal compiler workBoard gate residual nonClaim review
+    publication replayReady crosswalk gateMappings workBoardContract
+    artifactGaps ladder supportNone noLiveReplay noSupportPromotion
+  simp [
+    TheseusReportBundleAuditRouteFor,
+    TheseusReportBundleAuditComplete,
+    cited,
+    goal,
+    compiler,
+    workBoard,
+    gate,
+    residual,
+    nonClaim,
+    review,
+    publication,
+    replayReady,
+    crosswalk,
+    gateMappings,
+    workBoardContract,
+    artifactGaps,
+    ladder,
+    supportNone,
+    noLiveReplay,
+    noSupportPromotion,
+  ]
+
+theorem accepted_theseus_report_bundle_audit_preserves_public_boundaries
+    {summary : TheseusReportBundleAuditSummary} :
+    TheseusReportBundleAuditRouteFor summary =
+      TheseusReportBundleAuditRoute.acceptFixtureAudit ->
+      summary.supportStateEffectNone = true ∧
+        summary.noLiveReplayClaim = true ∧
+          summary.noSupportPromotionClaim = true := by
+  intro accepted
+  unfold TheseusReportBundleAuditRouteFor at accepted
+  cases complete : TheseusReportBundleAuditComplete summary with
+  | false =>
+      simp [complete] at accepted
+  | true =>
+      unfold TheseusReportBundleAuditComplete at complete
+      repeat
+        first
+        | cases h : summary.publicSafeFixtureBundleCited <;> simp [h] at complete
+        | cases h : summary.goalContractPresent <;> simp [h] at complete
+        | cases h : summary.compilerArtifactPresent <;> simp [h] at complete
+        | cases h : summary.workBoardItemPresent <;> simp [h] at complete
+        | cases h : summary.gateRecordPresent <;> simp [h] at complete
+        | cases h : summary.residualRecordPresent <;> simp [h] at complete
+        | cases h : summary.nonClaimRecorded <;> simp [h] at complete
+        | cases h : summary.reviewNotePresent <;> simp [h] at complete
+        | cases h : summary.publicationBoundaryRecorded <;> simp [h] at complete
+        | cases h : summary.replayReadinessRowsComplete <;> simp [h] at complete
+        | cases h : summary.crosswalkRowsComplete <;> simp [h] at complete
+        | cases h : summary.gateMappingsComplete <;> simp [h] at complete
+        | cases h : summary.workBoardContractComplete <;> simp [h] at complete
+        | cases h : summary.artifactGapsVisible <;> simp [h] at complete
+        | cases h : summary.interventionLadderOrdered <;> simp [h] at complete
+        | cases h : summary.supportStateEffectNone <;> simp [h] at complete
+        | cases h : summary.noLiveReplayClaim <;> simp [h] at complete
+        | cases h : summary.noSupportPromotionClaim <;> simp [h] at complete
+      exact ⟨rfl, rfl, rfl⟩
+
+theorem complete_theseus_report_bundle_audit_satisfies_public_bundle_review
+    {summary : TheseusReportBundleAuditSummary} :
+    summary.publicSafeFixtureBundleCited = true ->
+    summary.goalContractPresent = true ->
+    summary.compilerArtifactPresent = true ->
+    summary.workBoardItemPresent = true ->
+    summary.gateRecordPresent = true ->
+    summary.residualRecordPresent = true ->
+    summary.nonClaimRecorded = true ->
+    summary.reviewNotePresent = true ->
+    summary.publicationBoundaryRecorded = true ->
+      PublicReportBundleImportValid
+        (PublicReportBundleReviewOfAuditSummary summary) := by
+  intro cited goal compiler workBoard gate residual nonClaim review
+    publication
+  unfold PublicReportBundleImportValid
+  unfold PublicReportBundleReviewOfAuditSummary
+  intro citedAsImported
+  simp [
+    goal,
+    compiler,
+    workBoard,
+    gate,
+    residual,
+    nonClaim,
+    review,
+    publication,
+  ]
+
 end AsiStackProofs.TheseusReference

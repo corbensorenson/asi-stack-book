@@ -1561,6 +1561,16 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite gate predicate: capability or self-evolution promotion is blocked without present passing gate reports."
     },
     {
+      "tag": "lean:theseus.reference.report_bundle_audit.fixture_bridge",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture-summary bridge for the public-safe Theseus report-bundle audit: accepted audits require complete bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, support-state effect none, no live replay claim, and no support-promotion claim. It proves only report-bundle audit discipline and no-promotion boundaries, not a clean live Theseus replay, report truth, benchmark performance, model quality, safety, alignment, transfer, or self-evolution safety."
+    },
+    {
       "tag": "lean:roadmap.phases.operational_invariant",
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
@@ -1720,5 +1730,6 @@
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.ArtifactStewardAgents as finite federation-contract route theorems: missing contracts request repair, inherited project authority is rejected, external spend without approval routes to approval, and complete scoped federation dispatch requires evidence-bundle boundaries."
     }
-  ]
+  ],
+  "record_count": 172
 }

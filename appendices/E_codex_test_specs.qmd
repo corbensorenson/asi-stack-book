@@ -376,18 +376,19 @@ No result is recorded here unless a test has actually been implemented and run.
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Static generation-mode gate import validation | implemented | passes via `python3 scripts/validate_theseus_generation_mode_import.py`; no live replay, generation-speed claim, model-quality claim, or support-state promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus support replay probe | implemented | passes via `python3 scripts/run_theseus_support_replay_probe.py --write-result` and `python3 scripts/validate_theseus_support_replay_probe.py`; no clean live Theseus replay, public task bundle, model-quality result, generation-speed result, or support-state promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus concrete evidence-surface validation | implemented | passes via `python3 scripts/validate_theseus_concrete_evidence_surface.py`; no live Theseus replay, model-quality result, generation-speed result, or support-state promotion |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report-bundle audit validation | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; 1 valid fixture, 7 expected-invalid controls, 8 crosswalk rows, 6 visible artifact gaps, no live Theseus replay or support-state promotion |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Report-bundle completeness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; repository fixture only; no live report-bundle import |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Replay-readiness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; no replay execution beyond existing ASI-side validators |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report crosswalk completeness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; public-safe repository fixture only; no clean live Theseus bundle |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Architecture gate mapping test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; finite gate-decision mapping only |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Work-board improvement contract test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; no current work-board import |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Artifact-gap audit | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; 6 visible gaps block support movement |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Self-evolution intervention ladder audit | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; finite ladder-ordering check only |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Dashboard-only implementation-reference negative case | implemented | passes via Lean negative case; no dashboard-state or report-truth claim |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Missing/failing gate promotion negative case | implemented | passes via Lean negative case; no gate-quality or self-evolution-safety claim |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Imported report-bundle completeness negative case | implemented | passes via Lean negative case; no report-bundle import or replay claim |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Replay-readiness boundary negative case | implemented | passes via Lean negative case; no replay execution claim |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Public-safe artifact boundary negative case | implemented | passes via Lean negative case; no publication approval or support-state promotion |
-| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Report-bundle completeness test | planned | not run |
-| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Replay-readiness test | planned | not run |
-| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report crosswalk completeness test | planned | not run |
-| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Architecture gate mapping test | planned | not run |
-| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Work-board improvement contract test | planned | not run |
-| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Artifact-gap audit | planned | not run |
-| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Self-evolution intervention ladder audit | planned | not run |
 | `prototype-roadmap` | Prototype Roadmap | Phase acceptance checklist | implemented | validated locally by synthetic fixtures; no phase completion or support-state promotion |
 | `prototype-roadmap` | Prototype Roadmap | Dependency gate review | implemented | validated locally by synthetic fixtures; no deployed build controller or support-state promotion |
 | `prototype-roadmap` | Prototype Roadmap | Prototype evidence-state audit | implemented | validated locally by synthetic fixtures; full phase acceptance audit not run |
@@ -459,16 +460,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 171 |
+| Proof targets covered by triage | 172 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 171 |
+| implemented | 172 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 171 |
+| implemented | formal-invariant | lean-candidate | 172 |

@@ -2741,9 +2741,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 171 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 171 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 171 proof targets, 54 Lean modules, 884 theorem declarations, 708 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 172 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 172 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 172 proof targets, 54 Lean modules, 888 theorem declarations, 712 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3139,24 +3139,25 @@ Draft deliverables:
 
 - An implementation-reference crosswalk table from ASI stack layer to Theseus report, config, or tool surface, with evidence state and public claim boundary for each row.
 - Source-noted external comparator rows for `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, and `ext_ml_reproducibility_program_2021`, without treating those records as Theseus reproduction, compliance, or support-state promotion.
-- Implemented repository-level fixtures and guards: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest, `experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json` imports one public-safe static generation-mode report summary by digest, `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side Theseus validators with support-state effect `none`, and `python3 scripts/validate_theseus_concrete_evidence_surface.py` keeps the public-safe 14/14 architecture-gate, 18 modes, 13 comparisons, zero-promotable-comparison, digest, replay-probe, and non-claim facts visible. No live Theseus report bundle, public task bundle, benchmark environment, current dashboard, work-board step, or model artifact has been rerun, and this does not promote chapter-core support.
+- Implemented repository-level fixtures and guards: `theseus_report_crosswalk_record.valid.json` validates report-crosswalk record shape only, `experiments/theseus_import/fixtures/valid/architecture_gate_public_report.valid.json` imports one public-safe static architecture-gate report summary by digest, `experiments/theseus_generation_mode_import/fixtures/valid/generation_mode_gate_public_summary.valid.json` imports one public-safe static generation-mode report summary by digest, `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side Theseus validators with support-state effect `none`, `docs/theseus_report_bundle_audit.md` validates a public-safe report-bundle audit fixture with 7 expected-invalid controls, 8 crosswalk rows, 5 gate mappings, 6 visible artifact gaps, and 6 intervention-ladder levels, and `python3 scripts/validate_theseus_concrete_evidence_surface.py` keeps the public-safe 14/14 architecture-gate, 18 modes, 13 comparisons, zero-promotable-comparison, digest, replay-probe, audit, and non-claim facts visible. No live Theseus report bundle, public task bundle, benchmark environment, current dashboard, current work-board state, or model artifact has been rerun, and this does not promote chapter-core support.
 - Implemented Codex test: Theseus report crosswalk fixture validation
 - Implemented Codex test: Static architecture-gate import validation
 - Implemented Codex test: Static generation-mode gate import validation
 - Implemented Codex test: Theseus support replay probe
 - Implemented Codex test: Theseus concrete evidence-surface validation
+- Implemented Codex test: Theseus report-bundle audit validation
 - Implemented Codex test: Dashboard-only implementation-reference negative case
 - Implemented Codex test: Missing/failing gate promotion negative case
 - Implemented Codex test: Imported report-bundle completeness negative case
 - Implemented Codex test: Replay-readiness boundary negative case
 - Implemented Codex test: Public-safe artifact boundary negative case
-- Planned Codex test: Report-bundle completeness test
-- Planned Codex test: Replay-readiness test
-- Planned Codex test: Theseus report crosswalk completeness test
-- Planned Codex test: Architecture gate mapping test
-- Planned Codex test: Work-board improvement contract test
-- Planned Codex test: Artifact-gap audit
-- Planned Codex test: Self-evolution intervention ladder audit
+- Implemented Codex test: Report-bundle completeness test
+- Implemented Codex test: Replay-readiness test
+- Implemented Codex test: Theseus report crosswalk completeness test
+- Implemented Codex test: Architecture gate mapping test
+- Implemented Codex test: Work-board improvement contract test
+- Implemented Codex test: Artifact-gap audit
+- Implemented Codex test: Self-evolution intervention ladder audit
 
 Lean proof targets:
 
@@ -3164,6 +3165,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:theseus.reference.report_contract.operational_invariant` | `AsiStackProofs.TheseusReference` | An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone. | implemented |
 | `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `AsiStackProofs.TheseusReference` | A capability or self-evolution promotion is blocked when required gate reports are absent or failing. | implemented |
+| `lean:theseus.reference.report_bundle_audit.fixture_bridge` | `AsiStackProofs.TheseusReference` | A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete. | implemented |
 
 Implemented negative-case theorems now cover dashboard-only implementation-reference rejection, accepted promotions with missing or failing gate reports, incomplete imported report bundles, replay-ready rows without replay boundary fields, and public artifacts that copy private payloads or claim support promotion without an accepted evidence transition. These remain record-level gates only; they do not prove live Theseus behavior, replay execution, artifact truth, support-state promotion, or self-evolution safety.
 

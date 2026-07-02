@@ -1,0 +1,9 @@
+{
+  "case_id": "intervention_ladder_skip",
+  "base_report": "experiments/theseus_report_bundle_audit/fixtures/valid/report_bundle_public_audit.valid.json",
+  "mutation": {
+    "path": "intervention_ladder.4.level",
+    "value": 7
+  },
+  "expected_error_fragment": "intervention ladder levels must be contiguous from 0"
+}

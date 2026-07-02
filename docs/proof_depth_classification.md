@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 171 |
+| Proof targets in manifest | 172 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 884 |
+| Theorem declarations classified | 888 |
 | Direct/projection-style theorem declarations | 172 |
-| Derived/decomposed theorem declarations | 708 |
+| Derived/decomposed theorem declarations | 712 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -100,7 +100,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 25 | 8 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 21 | 1 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 4 | 15 | 2 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -912,7 +912,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StackBoundaries.lean` | `promotion_request_without_stack_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `accepted_promotion_with_missing_or_failing_gate_reports_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
+| `lean/AsiStackProofs/TheseusReference.lean` | `accepted_theseus_report_bundle_audit_preserves_public_boundaries` | derived_or_decomposed | no | uses cases, simp, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `capability_or_self_evolution_promotion_blocked_without_passing_gate_reports` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TheseusReference.lean` | `complete_theseus_report_bundle_audit_accepts` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TheseusReference.lean` | `complete_theseus_report_bundle_audit_satisfies_public_bundle_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/TheseusReference.lean` | `hidden_artifact_gap_rejects_theseus_report_bundle_audit` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TheseusReference.lean` | `implementation_reference_claim_names_report_config_or_tool_not_dashboard_only` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TheseusReference.lean` | `implementation_reference_claim_without_artifact_surface_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `imported_report_bundle_missing_required_artifact_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |

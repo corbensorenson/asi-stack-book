@@ -11964,6 +11964,62 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_concrete_evidence_surface.py`"
             },
             {
+              "name": "Theseus report-bundle audit validation",
+              "purpose": "Validate a public-safe Project Theseus report-bundle audit fixture with bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, non-claims, and no-promotion boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; 1 valid fixture, 7 expected-invalid controls, 8 crosswalk rows, 6 visible artifact gaps, no live Theseus replay or support-state promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
+            },
+            {
+              "name": "Report-bundle completeness test",
+              "purpose": "Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; repository fixture only; no live report-bundle import",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
+            },
+            {
+              "name": "Replay-readiness test",
+              "purpose": "Check that replay-ready rows name command, environment, input boundary, artifact checksum, expected output class, and failure behavior.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; no replay execution beyond existing ASI-side validators",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
+            },
+            {
+              "name": "Theseus report crosswalk completeness test",
+              "purpose": "Import a public-safe Theseus report bundle and verify that every cited report, config, gate, residual, and missing artifact maps to a stack layer.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; public-safe repository fixture only; no clean live Theseus bundle",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
+            },
+            {
+              "name": "Architecture gate mapping test",
+              "purpose": "Check that each Theseus gate maps to an ASI Stack promotion, rollback, quarantine, or residual-retention decision.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; finite gate-decision mapping only",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
+            },
+            {
+              "name": "Work-board improvement contract test",
+              "purpose": "Check that a work-board item declares objective, gate, evidence artifact, residual, owner, and completion criterion before being treated as progress.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; no current work-board import",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
+            },
+            {
+              "name": "Artifact-gap audit",
+              "purpose": "Check that missing commands, environment notes, checksums, publication permissions, or private artifacts stay visible and block support movement.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; 6 visible gaps block support movement",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
+            },
+            {
+              "name": "Self-evolution intervention ladder audit",
+              "purpose": "Check that proposed self-evolution interventions are ordered by risk and authority and cannot skip the required review level.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; finite ladder-ordering check only",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
+            },
+            {
               "name": "Dashboard-only implementation-reference negative case",
               "purpose": "Reject implementation-reference claims that lack report/config/tool artifact surfaces or rely on dashboard prose alone.",
               "implementation_status": "implemented",
@@ -11997,14 +12053,7 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean negative case; no publication approval or support-state promotion",
               "status": "implemented; passes via Lean negative case"
-            },
-            "Report-bundle completeness test",
-            "Replay-readiness test",
-            "Theseus report crosswalk completeness test",
-            "Architecture gate mapping test",
-            "Work-board improvement contract test",
-            "Artifact-gap audit",
-            "Self-evolution intervention ladder audit"
+            }
           ],
           "claim_label": "Design rationale",
           "source_queue": {
@@ -12041,6 +12090,12 @@
               "tag": "lean:theseus.reference.gate_before_promotion.failure_blocks_promotion",
               "module": "AsiStackProofs.TheseusReference",
               "target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:theseus.reference.report_bundle_audit.fixture_bridge",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.",
               "status": "implemented"
             }
           ]

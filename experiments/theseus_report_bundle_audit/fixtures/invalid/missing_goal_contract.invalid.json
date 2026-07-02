@@ -1,0 +1,9 @@
+{
+  "case_id": "missing_goal_contract",
+  "base_report": "experiments/theseus_report_bundle_audit/fixtures/valid/report_bundle_public_audit.valid.json",
+  "mutation": {
+    "path": "bundle_components.0.present",
+    "value": false
+  },
+  "expected_error_fragment": "bundle component goal_contract must be present and public-safe"
+}
