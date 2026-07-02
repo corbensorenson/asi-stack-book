@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-02 - Refresh README public status surfaces
+
+- Updated the public README reader-overlay summary from stale hand-maintained
+  overlay details to the current generated count: 45 active operations across
+  23 chapters for Human view and generated reader editions only.
+- Replaced the README's brittle hand-maintained harness inventory paragraph
+  with a stable pointer to `docs/v1_0_candidate_status.md`, Appendix E, and
+  the Phase 5 registry, while naming representative chapter-specific/support
+  checks and preserving the no chapter-claim promotion boundary.
+- This is a public-surface documentation correction only; it does not create a
+  new harness, evidence transition, support-state promotion, release artifact,
+  proof result, benchmark result, or deployed-runtime claim.
+
 ## 2026-07-02 - Refine Readiness reader lifecycle prose
 
 - Added one active reader-only semantic overlay operation for `Readiness Gates,
