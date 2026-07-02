@@ -1346,6 +1346,7 @@ Draft deliverables:
 - Implemented synthetic Codex test: Adequacy labeling test via `python3 scripts/validate_context_admission_adequacy.py`; model verification-bandwidth measurement remains open.
 - Implemented synthetic Codex test: Verification escalation test via `python3 scripts/validate_context_admission_adequacy.py`; deployed escalation remains open.
 - Implemented proof-backed check: finite verification-adequacy route coverage for missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews.
+- Implemented synthetic Codex test: Verification bandwidth contradiction probe via `python3 scripts/validate_verification_bandwidth_probe.py`, producing `experiments/verification_bandwidth/results/2026-07-02-local.json`; covers two valid synthetic adequacy traces and seven expected-invalid controls for summary-derived promotion, dominant-distractor contradiction misses, high-risk inadequate context without escalation, schema-mode support for empirical runtime claims, ignored negative evidence, verified support with unidentified semantic units, and support-state promotion from the fixture. This is a deterministic synthetic contradiction and adequacy fixture only; model-verification-bandwidth, contradiction-rate-performance, distractor-resistance, adequacy-classifier, deployed-claim-ledger, escalation-service, support-state-promotion, and evidence-transition claims remain open.
 - Planned Codex test: Mode-confusion audit.
 
 Lean proof targets:
@@ -1355,6 +1356,7 @@ Lean proof targets:
 | `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidth` | A context packet admitted for use may still be marked inadequate for a target claim. | implemented |
 | `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `AsiStackProofs.VerificationBandwidth` | A high-risk claim with inadequate context cannot receive a verified support label. | implemented |
 | `lean:verification_bandwidth.adequacy.route_envelope` | `AsiStackProofs.VerificationBandwidth` | A structured verification-adequacy review routes missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews into explicit outcomes. | implemented |
+| `lean:verification_bandwidth.contradiction_probe_fixture_bridge` | `AsiStackProofs.VerificationBandwidth` | The deterministic synthetic contradiction probe result includes a contradiction-blocking pairwise trace, a drafting-only inadequate-context trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary. | implemented |
 
 ### Claim Ledgers and Belief Revision
 
@@ -2714,9 +2716,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 155 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 155 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 157 proof targets, 54 Lean modules, 849 theorem declarations, 682 derived/decomposed, 163 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 158 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 158 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 158 proof targets, 54 Lean modules, 850 theorem declarations, 682 derived/decomposed, 164 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

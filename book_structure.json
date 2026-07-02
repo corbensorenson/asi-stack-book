@@ -4180,6 +4180,11 @@
               "name": "Verification adequacy route proof",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite verification-adequacy route coverage only"
+            },
+            {
+              "name": "Verification bandwidth contradiction probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic contradiction and adequacy fixture at experiments/verification_bandwidth/results/2026-07-02-local.json: two valid synthetic adequacy traces and seven expected-invalid controls; no model-verification-bandwidth, contradiction-rate-performance, distractor-resistance, adequacy-classifier, deployed-claim-ledger, escalation-service, support-state-promotion, or evidence-transition claim"
             }
           ],
           "lean_module": "AsiStackProofs.VerificationBandwidth",
@@ -4200,6 +4205,12 @@
               "tag": "lean:verification_bandwidth.adequacy.route_envelope",
               "module": "AsiStackProofs.VerificationBandwidth",
               "target": "A structured verification-adequacy review routes missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews into explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:verification_bandwidth.contradiction_probe_fixture_bridge",
+              "module": "AsiStackProofs.VerificationBandwidth",
+              "target": "The deterministic synthetic contradiction probe result includes a contradiction-blocking pairwise trace, a drafting-only inadequate-context trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary.",
               "status": "implemented"
             }
           ],

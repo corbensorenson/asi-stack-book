@@ -243,6 +243,16 @@ contains finite predicates showing that an admitted packet may still be
 inadequate and that a high-risk claim with inadequate context cannot receive a
 verified support label.
 
+The verification bandwidth contradiction probe adds a second narrow fixture. It
+checks two synthetic adequacy traces: one where pairwise comparison finds a
+planted cross-document contradiction and blocks verified support, and one where
+the context is useful for drafting but not verification. It also rejects seven
+bad paths, including summary-derived promotion, missed contradictions under a
+dominant distractor, high-risk inadequate context without escalation, schema
+checks treated as empirical runtime evidence, ignored negative evidence,
+unidentified semantic units, and support-state promotion from the fixture. This
+is not a model benchmark result.
+
 That is useful evidence for record discipline. It is not evidence of model
 verification capacity, contradiction-rate performance, distractor resistance,
 summary fidelity, deployed VCM behavior, adequacy-classifier correctness, or

@@ -99,6 +99,9 @@ REQUIRED = [
     "scripts/validate_cyclic_memory_contracts.py",
     "scripts/validate_context_transaction_memory_store.py",
     "scripts/validate_context_admission_adequacy.py",
+    "scripts/validate_verification_bandwidth_probe.py",
+    "docs/verification_bandwidth_probe.md",
+    "experiments/verification_bandwidth/results/2026-07-02-local.json",
     "scripts/validate_readiness_residual_gates.py",
     "scripts/validate_benchmark_antigoodhart.py",
     "scripts/validate_benchmark_fixture_bridge.py",
@@ -795,6 +798,7 @@ def main() -> None:
     run_validator("validate_cyclic_memory_contracts.py")
     run_validator("validate_context_transaction_memory_store.py")
     run_validator("validate_context_admission_adequacy.py")
+    run_validator("validate_verification_bandwidth_probe.py")
     run_validator("validate_readiness_residual_gates.py")
     run_validator("validate_benchmark_antigoodhart.py")
     run_validator("validate_benchmark_fixture_bridge.py")

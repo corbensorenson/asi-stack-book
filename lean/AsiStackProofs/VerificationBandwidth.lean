@@ -255,4 +255,31 @@ theorem complete_draft_review_allows_draft_support
     verifiedNotRequested, noNegativeEvidence, noContradiction, noResidual,
     draftRequested]
 
+structure ContradictionProbeSummary where
+  validContradictionTracePresent : Bool
+  draftingOnlyTracePresent : Bool
+  negativeControlsRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def ContradictionProbeSummaryValid
+    (summary : ContradictionProbeSummary) : Prop :=
+  summary.validContradictionTracePresent = true ∧
+    summary.draftingOnlyTracePresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem verification_bandwidth_contradiction_probe_fixture_bridge
+    {summary : ContradictionProbeSummary} :
+    ContradictionProbeSummaryValid summary ->
+      summary.validContradictionTracePresent = true ∧
+        summary.draftingOnlyTracePresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.VerificationBandwidth

@@ -12,10 +12,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 157 |
+| Proof targets in manifest | 158 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 849 |
-| Direct/projection-style theorem declarations | 163 |
+| Theorem declarations classified | 850 |
+| Direct/projection-style theorem declarations | 164 |
 | Derived/decomposed theorem declarations | 682 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
@@ -104,7 +104,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 3 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 3 | 12 | 2 | 10 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 4 | 13 | 3 | 10 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | virtual-context-abi | 3 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 
 ## Theorem Classification
@@ -947,6 +947,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `missing_verification_artifacts_require_artifacts` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `open_negative_evidence_escalates_risk` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `unadmitted_context_requests_context` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VerificationBandwidth.lean` | `verification_bandwidth_contradiction_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `authority_escape_requires_context_authority_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `complete_context_review_materializes` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `failed_adequacy_requires_adequacy_review` | derived_or_decomposed | no | uses simp, unfold |

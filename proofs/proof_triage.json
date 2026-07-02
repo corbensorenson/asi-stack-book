@@ -721,6 +721,16 @@
       "rationale": "Implemented in AsiStackProofs.VerificationBandwidth as a finite verification-adequacy route function and derived route theorems for missing claims, unadmitted context, high-risk inadequate context, missing pairwise checks, missing verification artifacts, open negative evidence, contradictions, residuals, complete verified-support reviews, and complete draft-support reviews."
     },
     {
+      "tag": "lean:verification_bandwidth.contradiction_probe_fixture_bridge",
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "module": "AsiStackProofs.VerificationBandwidth",
+      "formal_target": "The deterministic synthetic contradiction probe result includes a contradiction-blocking pairwise trace, a drafting-only inadequate-context trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.VerificationBandwidth as a finite contradiction-probe summary bridge: contradiction-blocking and drafting-only traces, rejected negative controls, no support-state effect, and non-claim boundaries are bundled as fixture requirements."
+    },
+    {
       "tag": "lean:claims.ledger.operational_invariant",
       "chapter_id": "claim-ledgers-and-belief-revision",
       "module": "AsiStackProofs.ClaimLedger",

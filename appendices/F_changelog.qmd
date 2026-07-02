@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-02 - Add Verification bandwidth contradiction probe
+
+- Added `python3 scripts/validate_verification_bandwidth_probe.py`,
+  `docs/verification_bandwidth_probe.md`, and
+  `experiments/verification_bandwidth/results/2026-07-02-local.json` for a
+  deterministic synthetic contradiction and adequacy fixture with two valid
+  synthetic adequacy traces and seven expected-invalid controls covering
+  pairwise contradiction blocking, drafting-only inadequacy,
+  summary-derived promotion rejection, dominant-distractor miss rejection,
+  high-risk inadequate context without escalation, schema-mode empirical
+  overclaim rejection, ignored negative evidence, unidentified semantic units,
+  and support-state promotion from the fixture.
+- Added `lean:verification_bandwidth.contradiction_probe_fixture_bridge` in
+  `AsiStackProofs.VerificationBandwidth`, with a finite Lean summary bridge
+  for the contradiction-blocking trace, drafting-only trace, rejected controls,
+  no-support-effect status, and non-claim boundaries.
+- Updated the Verification Bandwidth live chapter, curated reader chapter,
+  outline, manifest, roadmap, proof/test surfaces, and validation wiring. This
+  does not measure model verification bandwidth, prove contradiction-rate
+  performance, prove distractor resistance, validate an adequacy classifier,
+  execute a deployed claim ledger or escalation service, promote chapter
+  support state, or create a support-state transition.
+
 ## 2026-07-02 - Add Planning scheduler-state probe
 
 - Added `python3 scripts/validate_planning_scheduler_state_probe.py`,
@@ -128,9 +151,7 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 157 proof targets, 54 Lean modules, 849
-  theorem declarations, 682 derived/decomposed, 163 direct/projection, 4
-  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 158 proof targets, 54 Lean modules, 850 theorem declarations, 682 derived/decomposed, 164 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate
   from semantic adequacy, source interpretation, deployed enforcement, model

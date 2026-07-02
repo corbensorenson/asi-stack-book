@@ -1,0 +1,57 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_verification_bandwidth_probe.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "drafting_only_trace_present": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "support_state_effect_none": true,
+      "valid_contradiction_trace_present": true
+    },
+    "module": "AsiStackProofs.VerificationBandwidth",
+    "proof_tag": "lean:verification_bandwidth.contradiction_probe_fixture_bridge",
+    "theorem_refs": [
+      "verification_bandwidth_contradiction_probe_fixture_bridge"
+    ]
+  },
+  "negative_controls": {
+    "distractor_missed_contradiction_rejected": true,
+    "high_risk_no_escalation_rejected": true,
+    "negative_evidence_ignored_rejected": true,
+    "schema_mode_empirical_support_rejected": true,
+    "summary_promotion_rejected": true,
+    "support_state_promotion_rejected": true,
+    "unidentified_units_verified_rejected": true
+  },
+  "non_claims": [
+    "does not measure model verification bandwidth",
+    "does not prove contradiction-rate performance",
+    "does not prove distractor resistance",
+    "does not validate an adequacy classifier",
+    "does not execute a deployed claim ledger or escalation service",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic contradiction/adequacy fixture only; no model, context window, deployed claim ledger, or escalation service was measured.",
+    "The chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-verification-bandwidth-probe",
+  "result_kind": "deterministic_synthetic_verification_bandwidth_probe",
+  "schema_version": "asi_stack.verification_bandwidth_probe.v0",
+  "support_state_effect": "none",
+  "trace_count": 9,
+  "transition_coverage": {
+    "distractor_pairwise_requirement": true,
+    "drafting_only_inadequacy": true,
+    "mode_confusion_rejection": true,
+    "pairwise_contradiction_block": true,
+    "summary_ceiling_preserved": true,
+    "support_state_no_promotion": true
+  },
+  "valid_trace_count": 2,
+  "verification_result": "pass"
+}
