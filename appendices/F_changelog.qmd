@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-02 - Add proof-depth surface synchronization
+
+- Added `python3 scripts/validate_proof_depth_surface.py` and wired it into
+  `python3 scripts/validate_book.py` so the proof-envelope live chapter,
+  curated reader chapter, outline, and roadmap expose the current
+  proof-depth classification counts and the direct/projection versus
+  derived/decomposed distinction.
+- Current proof-depth snapshot: 151 proof targets, 54 Lean modules, 835
+  theorem declarations, 672 derived/decomposed, 159 direct/projection, 4
+  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Updated the proof-envelope chapter and reader chapter to describe
+  projection-only traceability and to keep proof-depth classification separate
+  from semantic adequacy, source interpretation, deployed enforcement, model
+  quality, benchmark evidence, and support-state promotion.
+
 ## 2026-07-02 - Add Policy update lease probe
 
 - Added `python3 scripts/validate_policy_update_lease_probe.py`,

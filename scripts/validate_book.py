@@ -46,6 +46,7 @@ REQUIRED = [
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
     "scripts/validate_proof_artifact_audit.py",
+    "scripts/validate_proof_depth_surface.py",
     "scripts/validate_source_evidence_audit.py",
     "scripts/validate_evidence_transitions.py",
     "scripts/validate_non_core_evidence_ledger.py",
@@ -728,6 +729,7 @@ def main() -> None:
     run_validator("validate_source_notes.py")
     run_validator("validate_proof_readiness.py")
     run_validator("validate_proof_artifact_audit.py")
+    run_validator("validate_proof_depth_surface.py")
     run_validator("validate_protocol_crosswalk.py")
     run_validator("validate_source_evidence_audit.py")
     run_validator("validate_evidence_transitions.py")

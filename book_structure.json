@@ -9637,6 +9637,13 @@
               "status": "implemented; traceability and non-claim audit only"
             },
             {
+              "name": "Proof-depth surface synchronization",
+              "purpose": "Check that proof-depth classification counts and direct/projection versus derived/decomposed labels are surfaced in the live chapter, reader chapter, outline, and roadmap.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_proof_depth_surface.py`; surface synchronization only, not semantic adequacy",
+              "status": "implemented; proof-depth surface drift check only"
+            },
+            {
               "name": "Semantic proof adequacy audit",
               "purpose": "Review whether each finite-record predicate is the right formalization of its intended chapter boundary.",
               "implementation_status": "planned",

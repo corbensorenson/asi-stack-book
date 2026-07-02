@@ -311,6 +311,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `executable-specifications-and-lean-proof-envelope` | Executable Specifications and Lean Proof Envelope | External theorem reference boundary negative case | implemented | passes via Lean negative case; no external theorem ownership or transfer claim |
 | `executable-specifications-and-lean-proof-envelope` | Executable Specifications and Lean Proof Envelope | Proof target coverage summary | implemented | passes via proof readiness validation |
 | `executable-specifications-and-lean-proof-envelope` | Executable Specifications and Lean Proof Envelope | Proof artifact traceability audit | implemented | passes via proof artifact audit |
+| `executable-specifications-and-lean-proof-envelope` | Executable Specifications and Lean Proof Envelope | Proof-depth surface synchronization | implemented | passes via `python3 scripts/validate_proof_depth_surface.py`; surface synchronization only, not semantic adequacy |
 | `executable-specifications-and-lean-proof-envelope` | Executable Specifications and Lean Proof Envelope | Semantic proof adequacy audit | planned | not run |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Saturation detection test | implemented | validated locally by synthetic fixtures |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Hidden benchmark transfer test | implemented | validated locally by synthetic fixtures; no hidden benchmark run |
