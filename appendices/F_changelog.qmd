@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-02 - Add reader key-figure artifact validation
+
+- Added `scripts/validate_reader_key_figures.py` and
+  `docs/reader_key_figure_artifact_review.md` to make the ten draft
+  reader-handoff key figures a checked artifact surface rather than informal
+  manuscript metadata.
+- The validator checks the reader-manuscript handoff contract, draft SVG
+  accessibility metadata, `assets/diagrams/README.md` registration, live chapter
+  text-equivalent anchors, curated reader-manuscript placements, alt text,
+  captions, and non-claim boundaries. It is wired into
+  `scripts/validate_book.py` and the public repository/readiness docs.
+- This is a draft-artifact accountability gate only: it does not approve final
+  figure art, EPUB/DOCX/PDF/audio layout, reader release artifacts, support-state
+  promotion, proof results, benchmark results, or deployment claims.
+
 ## 2026-07-02 - Add fast generation task-bundle replay
 
 - Added `python3 scripts/run_fast_generation_task_bundle.py`,

@@ -32,6 +32,7 @@ REQUIRED = [
     "scripts/validate_reader_evidence_boundaries.py",
     "scripts/validate_reader_overlays.py",
     "scripts/validate_reader_manuscript_manifest.py",
+    "scripts/validate_reader_key_figures.py",
     "scripts/validate_reader_artifact_inspection_manifest.py",
     "scripts/validate_reader_epub_probe_manifest.py",
     "scripts/validate_reader_docx_probe_manifest.py",
@@ -354,6 +355,7 @@ REQUIRED = [
     "editions/reader_manuscript/v1_0/reconciliation_report.md",
     "docs/curated_reader_source_contract.md",
     "docs/reader_artifact_inspection_manifest.md",
+    "docs/reader_key_figure_artifact_review.md",
     "docs/reader_epub_probe_manifest.md",
     "docs/reader_docx_probe_manifest.md",
     "docs/reader_pdf_probe_manifest.md",
@@ -796,6 +798,7 @@ def main() -> None:
     run_validator("audit_reader_continuity.py", "--check")
     run_validator("validate_reader_manuscript_manifest.py")
     run_validator("build_curated_reader_edition.py", "--check")
+    run_validator("validate_reader_key_figures.py")
     run_validator("validate_reader_artifact_inspection_manifest.py")
     run_validator("validate_reader_epub_probe_manifest.py")
     run_validator("validate_reader_docx_probe_manifest.py")

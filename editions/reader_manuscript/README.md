@@ -7,7 +7,8 @@ The current v1.0 state is `drafting`. `v1_0/manifest.json` records forty-four
 drafting-only curated chapter records, with no active manifest chapter missing a
 curated reader file. It also records a machine-checked reader handoff contract:
 one book-level thesis, four part arcs, ten recurring signature ideas, ten
-key-figure targets, twelve Corben voice-pass slots, and per-chapter
+key-figure targets with validator-checked draft assets and placements, twelve
+Corben voice-pass slots, and per-chapter
 stakes/payoff fields. None are release-approved, and none are equal authority
 beside the live book. The live Quarto book, generated reader
 edition, and reader overlays remain the active release path until reconciliation,
@@ -25,6 +26,7 @@ Validate the manifest with:
 
 ```bash
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/validate_reader_key_figures.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
 
