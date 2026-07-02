@@ -305,4 +305,85 @@ theorem complete_efficiency_claim_admission_allows_claim_record :
       .admitEfficiencyClaim := by
   simp [EfficiencyClaimAdmissionRouteFor, completeEfficiencyClaimAdmissionReview]
 
+structure EfficiencyRouteSearchProbeSummary where
+  validTraces : Nat
+  invalidControls : Nat
+  candidateRoutesChecked : Nat
+  minimumVerifiedRouteSelection : Bool
+  cheapFailedQualityRejected : Bool
+  hiddenResidualRejected : Bool
+  authorityBypassRejected : Bool
+  compressionUtilityRejected : Bool
+  hiddenCostClassAudit : Bool
+  noRouteSearchCompletenessClaim : Bool
+  noMeasuredEfficiencyClaim : Bool
+  noSupportStatePromotion : Bool
+deriving DecidableEq, Repr
+
+def EfficiencyRouteSearchProbeValid
+    (summary : EfficiencyRouteSearchProbeSummary) : Prop :=
+  summary.validTraces = 2 ∧
+    summary.invalidControls = 6 ∧
+    summary.candidateRoutesChecked = 14 ∧
+    summary.minimumVerifiedRouteSelection = true ∧
+    summary.cheapFailedQualityRejected = true ∧
+    summary.hiddenResidualRejected = true ∧
+    summary.authorityBypassRejected = true ∧
+    summary.compressionUtilityRejected = true ∧
+    summary.hiddenCostClassAudit = true ∧
+    summary.noRouteSearchCompletenessClaim = true ∧
+    summary.noMeasuredEfficiencyClaim = true ∧
+    summary.noSupportStatePromotion = true
+
+def efficiencyRouteSearchProbeFixture :
+    EfficiencyRouteSearchProbeSummary :=
+  {
+    validTraces := 2
+    invalidControls := 6
+    candidateRoutesChecked := 14
+    minimumVerifiedRouteSelection := true
+    cheapFailedQualityRejected := true
+    hiddenResidualRejected := true
+    authorityBypassRejected := true
+    compressionUtilityRejected := true
+    hiddenCostClassAudit := true
+    noRouteSearchCompletenessClaim := true
+    noMeasuredEfficiencyClaim := true
+    noSupportStatePromotion := true
+  }
+
+theorem efficiency_route_search_probe_fixture_valid :
+    EfficiencyRouteSearchProbeValid efficiencyRouteSearchProbeFixture := by
+  unfold EfficiencyRouteSearchProbeValid efficiencyRouteSearchProbeFixture
+  simp
+
+def EfficiencyRouteSearchProbeRejectsInvalidSavings
+    (summary : EfficiencyRouteSearchProbeSummary) : Prop :=
+  summary.invalidControls = 6 ->
+    summary.cheapFailedQualityRejected = true ∧
+      summary.hiddenResidualRejected = true ∧
+      summary.authorityBypassRejected = true ∧
+      summary.compressionUtilityRejected = true
+
+theorem efficiency_route_search_probe_rejects_invalid_savings :
+    EfficiencyRouteSearchProbeRejectsInvalidSavings
+      efficiencyRouteSearchProbeFixture := by
+  unfold EfficiencyRouteSearchProbeRejectsInvalidSavings
+    efficiencyRouteSearchProbeFixture
+  intro _
+  simp
+
+def EfficiencyRouteSearchProbePreservesNoPromotionBoundary
+    (summary : EfficiencyRouteSearchProbeSummary) : Prop :=
+  summary.noRouteSearchCompletenessClaim = true ∧
+    summary.noMeasuredEfficiencyClaim = true ∧
+    summary.noSupportStatePromotion = true
+
+theorem efficiency_route_search_probe_preserves_no_promotion_boundary :
+    EfficiencyRouteSearchProbePreservesNoPromotionBoundary
+      efficiencyRouteSearchProbeFixture := by
+  unfold EfficiencyRouteSearchProbePreservesNoPromotionBoundary
+    efficiencyRouteSearchProbeFixture
+  simp
+
 end AsiStackProofs.Efficiency

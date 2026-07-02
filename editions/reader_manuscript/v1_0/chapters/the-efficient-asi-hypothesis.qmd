@@ -136,6 +136,8 @@ The first serious fixture should compare three routes: a cheap route rejected be
 
 The live repository already has a protocol fixture and Lean predicates that cover narrow record-level gates. Those surfaces do not prove route-search completeness, cost-estimate accuracy, quality evaluation, measured efficiency, or compression utility. They show that the book has a place to put honest evidence when stronger evidence exists.
 
+The live project now adds a synthetic route-search probe with two bounded traces. One selects a verified middle route after rejecting a cheaper failed-quality route, a hidden-residual route, an authority-bypass route, and an overkill fallback. The other blocks a compressed route when repair burden and utility failure erase the apparent saving. The probe is useful because it makes hidden costs, residuals, fallback, and negative controls part of the same record. It is not a benchmark result, route-search completeness proof, cost-estimate validation, model-quality claim, or compression-utility result.
+
 The adjacent Resource Economics lane now gives the reader a concrete version
 of that pattern. Its accepted costed-route slice compares a bounded verified
 route against an adequate overkill baseline, a cheaper failed-verification

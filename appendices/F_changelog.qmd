@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Add efficiency route-search probe
+
+- Added `python3 scripts/validate_efficiency_route_search_probe.py`,
+  `docs/efficiency_route_search_probe.md`, and
+  `experiments/efficiency_route_search/results/2026-07-02-local.json` for a
+  synthetic Efficient ASI route-search/accounting probe with 2 valid bounded
+  traces and 6 expected-invalid controls covering lower-cost eligible route
+  omission, hidden-cost class omission, erased residuals,
+  compression-utility overclaim, authority bypass, and missing negative
+  controls.
+- Added `lean:efficiency.route_search.probe_fixture_bridge` in
+  `AsiStackProofs.Efficiency`, with a finite Lean summary bridge for trace
+  counts, candidate-route counts, invalid-savings controls, hidden-cost audit
+  coverage, and no-promotion boundaries.
+- Updated the Efficient ASI live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does
+  not prove route-search completeness, cost-estimate accuracy, measured
+  efficiency, model quality, compression utility, benchmark performance, or
+  chapter-core support-state promotion.
+
 ## 2026-07-02 - Add SCF lifecycle trace probe
 
 - Added `python3 scripts/validate_scf_lifecycle_trace.py`,
@@ -67,8 +87,8 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 154 proof targets, 54 Lean modules, 844
-  theorem declarations, 679 derived/decomposed, 161 direct/projection, 4
+- Current proof-depth snapshot: 155 proof targets, 54 Lean modules, 847
+  theorem declarations, 682 derived/decomposed, 161 direct/projection, 4
   unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate

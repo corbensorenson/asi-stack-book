@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 154 |
+| Proof targets in manifest | 155 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 844 |
+| Theorem declarations classified | 847 |
 | Direct/projection-style theorem declarations | 161 |
-| Derived/decomposed theorem declarations | 679 |
+| Derived/decomposed theorem declarations | 682 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -68,7 +68,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 17 | 2 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 3 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 3 | 24 | 6 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 3 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 4 | 34 | 7 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -372,6 +372,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Efficiency.lean` | `authority_bypass_blocks_efficiency_claim` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `complete_efficiency_claim_admission_allows_claim_record` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `efficiency_claim_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/Efficiency.lean` | `efficiency_route_search_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Efficiency.lean` | `efficiency_route_search_probe_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Efficiency.lean` | `efficiency_route_search_probe_rejects_invalid_savings` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Efficiency.lean` | `failed_quality_blocks_efficiency_claim` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `incomplete_visible_costs_request_complete_costs` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `lower_cost_authorized_quality_candidate_rejects_minimum_viable_route` | derived_or_decomposed | no | uses have |

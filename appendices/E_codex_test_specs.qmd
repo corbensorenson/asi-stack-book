@@ -13,9 +13,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Lower-cost candidate negative case | implemented | passes via Lean negative case; no route-search completeness or cost-estimate accuracy claim |
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Open-obligation residual negative case | implemented | passes via Lean negative case; no residual-burden measurement or utility-preservation claim |
 | `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Efficiency-claim admission lifecycle route | implemented | passes via Lean route theorems; no measured efficiency, route-search completeness, cost-estimate accuracy, route-quality, residual-burden, benchmark-performance, or support-promotion claim |
-| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Minimum viable route test | planned | not run |
-| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Residual burden accounting test | planned | not run |
-| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Utility-preserving compression test | planned | not run |
+| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Efficiency route-search probe | implemented | passes via python3 scripts/validate_efficiency_route_search_probe.py; 2 valid traces and 6 expected-invalid controls; no route-search completeness, cost-estimate accuracy, measured efficiency, model-quality, compression-utility, benchmark, or support-state claim |
+| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Minimum viable route test | partially implemented | synthetic route-search probe checks minimum verified route selection over finite candidate sets; route-search completeness and cost-estimate accuracy not proved |
+| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Residual burden accounting test | partially implemented | synthetic route-search probe rejects erased residuals and hidden residual success labels; behavioral residual-burden measurement not proved |
+| `the-efficient-asi-hypothesis` | The Efficient ASI Hypothesis | Utility-preserving compression test | partially implemented | synthetic route-search probe rejects compression-utility overclaim and repair-burden erasure; downstream compression utility not proved |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Authority lifecycle route proof | implemented | passes via Lean route theorems; no deployed authorization enforcement, runtime adapter behavior, revocation propagation, tool-wrapper security, approval-service quality, support-state promotion, or model capability claim |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Authority ceiling preservation test | implemented | passes via synthetic authority transition harness and strengthened finite Authority Lean decision envelope; no runtime enforcement claim |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Permission separation test | implemented | passes via synthetic authority transition harness |
@@ -436,16 +437,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 154 |
+| Proof targets covered by triage | 155 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 154 |
+| implemented | 155 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 154 |
+| implemented | formal-invariant | lean-candidate | 155 |

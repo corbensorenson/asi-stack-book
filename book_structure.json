@@ -465,9 +465,27 @@
               "result_status": "passes via Lean route theorems; no measured efficiency, route-search completeness, cost-estimate accuracy, route-quality, residual-burden, benchmark-performance, or support-promotion claim",
               "status": "implemented in AsiStackProofs.Efficiency; no measured efficiency or route-search completeness claim"
             },
-            "Minimum viable route test",
-            "Residual burden accounting test",
-            "Utility-preserving compression test"
+            {
+              "name": "Efficiency route-search probe",
+              "purpose": "Check two bounded synthetic route traces plus expected-invalid controls for lower-cost eligible omission, hidden-cost class omission, erased residuals, compression-utility overclaim, authority bypass, and missing negative controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_efficiency_route_search_probe.py; 2 valid traces and 6 expected-invalid controls; no route-search completeness, cost-estimate accuracy, measured efficiency, model-quality, compression-utility, benchmark, or support-state claim"
+            },
+            {
+              "name": "Minimum viable route test",
+              "implementation_status": "partially implemented",
+              "result_status": "synthetic route-search probe checks minimum verified route selection over finite candidate sets; route-search completeness and cost-estimate accuracy not proved"
+            },
+            {
+              "name": "Residual burden accounting test",
+              "implementation_status": "partially implemented",
+              "result_status": "synthetic route-search probe rejects erased residuals and hidden residual success labels; behavioral residual-burden measurement not proved"
+            },
+            {
+              "name": "Utility-preserving compression test",
+              "implementation_status": "partially implemented",
+              "result_status": "synthetic route-search probe rejects compression-utility overclaim and repair-burden erasure; downstream compression utility not proved"
+            }
           ],
           "lean_module": "AsiStackProofs.Efficiency",
           "proof_targets": [
@@ -487,6 +505,12 @@
               "tag": "lean:efficiency.claim_admission_lifecycle_route",
               "module": "AsiStackProofs.Efficiency",
               "target": "Modeled efficiency-claim admission routes missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:efficiency.route_search.probe_fixture_bridge",
+              "module": "AsiStackProofs.Efficiency",
+              "target": "The synthetic efficiency route-search probe summary records two valid traces, six expected-invalid controls, fourteen checked candidate routes, minimum verified route selection, rejection of cheap failed quality, hidden residual, authority bypass, and compression-utility overclaim controls, hidden-cost class audit coverage, and no route-search-completeness, measured-efficiency, or support-state-promotion claim.",
               "status": "implemented"
             }
           ]

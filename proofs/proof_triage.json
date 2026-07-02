@@ -71,6 +71,16 @@
       "rationale": "Implemented in AsiStackProofs.Efficiency as a finite efficiency-claim admission route over explicit accounting, verification, hidden-cost, evidence-transition, and non-claim-boundary records; it does not prove measured efficiency, route-search completeness, cost-estimate accuracy, route quality, benchmark performance, or support-state promotion."
     },
     {
+      "tag": "lean:efficiency.route_search.probe_fixture_bridge",
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "module": "AsiStackProofs.Efficiency",
+      "formal_target": "The synthetic efficiency route-search probe summary records two valid traces, six expected-invalid controls, fourteen checked candidate routes, minimum verified route selection, rejection of cheap failed quality, hidden residual, authority bypass, and compression-utility overclaim controls, hidden-cost class audit coverage, and no route-search-completeness, measured-efficiency, or support-state-promotion claim.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Efficiency as a finite summary bridge for python3 scripts/validate_efficiency_route_search_probe.py; the bridge records route-search fixture counts, invalid-savings controls, hidden-cost audit coverage, and explicit no-promotion boundaries."
+    },
+    {
       "tag": "lean:authority.ceiling.operational_invariant",
       "chapter_id": "system-boundaries-and-authority",
       "module": "AsiStackProofs.Authority",

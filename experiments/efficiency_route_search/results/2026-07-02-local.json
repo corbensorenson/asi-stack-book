@@ -1,0 +1,28 @@
+{
+  "artifact": "efficiency_route_search_probe",
+  "candidate_routes_checked": 14,
+  "chapter_core_support_effect": "none",
+  "date": "2026-07-02",
+  "evidence_transition_created": false,
+  "expected_invalid_controls": 6,
+  "fixture_fingerprint_sha256": "4a85b9d4f48b4648877d9c6a5bdb9050d577903c315cc4aaff45c9bf6b6a0517",
+  "non_claims": [
+    "does not prove route-search completeness",
+    "does not prove cost-estimate accuracy",
+    "does not prove measured efficiency",
+    "does not prove model quality",
+    "does not prove compression utility",
+    "does not promote the chapter support state"
+  ],
+  "support_state_effect": "none",
+  "transition_coverage": {
+    "authority_bypass_rejection": true,
+    "cheap_failed_quality_rejection": true,
+    "compression_utility_rejection": true,
+    "hidden_cost_class_audit": true,
+    "hidden_residual_rejection": true,
+    "minimum_verified_route_selection": true
+  },
+  "valid_traces": 2,
+  "validator": "python3 scripts/validate_efficiency_route_search_probe.py"
+}
