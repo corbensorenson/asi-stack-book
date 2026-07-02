@@ -82,6 +82,20 @@ shows how reusable abstractions can change the search space. Those sources
 make semantic IR easier to position, but this repository has not reproduced
 planner results, program-synthesis results, or reasoning-search benchmarks.
 
+Compiler infrastructure adds the stronger comparison. LLVM IR shows how an
+intermediate representation can have typed structure, equivalent in-memory,
+serialized, and human-readable forms, and verifier boundaries for analysis and
+transformation. MLIR shows why modern compiler systems often need multiple
+levels of representation, dialects, modular passes, verifiers, and progressive
+lowering across targets. Translation validation supplies the safety lesson:
+each lowering should be checked against its source relation after the
+translation, not merely trusted because the compiler ran.
+
+That is the discipline this chapter wants for cognitive artifacts. A generated
+chapter section, schema, proof target, experiment, or job packet should not
+just be produced. It should carry a source obligation, a target artifact, a
+lowering receipt, and a validation boundary.
+
 Prompting can remain the human input surface. It should not be the only
 internal build artifact. A conversation transcript is too unstable to carry all
 requirements, assumptions, dependencies, validators, authority limits, and
@@ -95,10 +109,12 @@ representations that can be optimized, verified, repaired, and targeted.
 The evidence boundary is architectural argument. The assigned source notes and
 passage-reviewed mappings support discussion of semantic IR, compiler-style
 boundaries, provenance, explicit semantic substrates, and artifact-ledger
-integration. They do not establish compiler correctness, arbitrary source-plan
-parsing, target-lowering preservation, localized-repair performance, artifact
-validator adequacy, quality improvement, or cost improvement in this
-repository.
+integration. External notes ground program synthesis, compiler IR, multi-level
+IR, and translation validation. They do not establish compiler correctness,
+arbitrary source-plan parsing, target-lowering preservation,
+localized-repair performance, artifact validator adequacy, LLVM or MLIR
+integration, translation-validation proof, quality improvement, or cost
+improvement in this repository.
 
 ## Mechanism
 

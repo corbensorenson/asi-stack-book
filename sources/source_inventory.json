@@ -1922,6 +1922,57 @@
     "doi": "10.48550/arXiv.2006.08381"
   },
   {
+    "id": "ext_llvm_langref_docs",
+    "title": "LLVM Language Reference Manual",
+    "priority": "external_literature",
+    "layer": "compiler_ir",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir",
+      "executable-specifications-and-lean-proof-envelope"
+    ],
+    "url": "https://llvm.org/docs/LangRef.html",
+    "notes": "Official LLVM Language Reference comparator for SSA-based intermediate representation, equivalent in-memory/bitcode/human-readable forms, well-formedness, verifier passes, and optimization/analysis vocabulary.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "2026",
+    "citation_label": "LLVM Documentation (2026), Language Reference Manual"
+  },
+  {
+    "id": "ext_mlir_2020",
+    "title": "MLIR: A Compiler Infrastructure for the End of Moore's Law",
+    "priority": "external_literature",
+    "layer": "multi_level_compiler_ir",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir",
+      "resource-economics-and-token-budgets",
+      "mathematical-and-search-substrates"
+    ],
+    "url": "https://arxiv.org/abs/2002.11054",
+    "notes": "External multi-level compiler-IR comparator for reusable and extensible compiler infrastructure, dialects, progressive lowering, verifiers, modular passes, and heterogeneous target support.",
+    "source_type": "arxiv",
+    "arxiv_id": "2002.11054",
+    "published": "2020-02-25",
+    "updated": "2020-03-01",
+    "citation_label": "Lattner et al. (2020), MLIR",
+    "doi": "10.48550/arXiv.2002.11054"
+  },
+  {
+    "id": "ext_translation_validation_1998",
+    "title": "Translation Validation",
+    "priority": "external_literature",
+    "layer": "translation_validation",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir",
+      "executable-specifications-and-lean-proof-envelope"
+    ],
+    "url": "https://weizmann.esploro.exlibrisgroup.com/esploro/outputs/conferenceProceeding/Translation-validation/993262143603596",
+    "notes": "External translation-validation comparator for checking each compiler/code-generator run after translation, using a common semantic framework, refinement relation, and simulation-based proof method.",
+    "source_type": "conference_paper",
+    "published": "1998",
+    "updated": "1998",
+    "citation_label": "Pnueli, Siegel, and Singerman (1998), Translation Validation"
+  },
+  {
     "id": "ext_toolformer_2023",
     "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
     "priority": "external_literature",

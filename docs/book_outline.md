@@ -1087,6 +1087,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `cognitive_compilation` | Read first for chapter claims and mechanisms. |
 | Supporting | `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` | Use for planning-language, decomposition, reasoning-search, program-synthesis, compiler-IR, multi-level IR, and translation-validation positioning only; do not treat as cognitive-compiler runtime evidence. |
 
 Draft arc:
 
@@ -1097,6 +1098,7 @@ Draft arc:
 - Mechanism: Compile IR into jobs, code, schemas, or documents.
 - Mechanism: emit lowering receipts that bind source-plan obligations, semantic atoms, target artifacts, validators, assumptions, and residuals.
 - Mechanism: Preserve atom state, source-plan refs, obligation refs/status, assumptions, IR validity state, validator status, lowering state, target artifact refs, lowering receipts, repair-ledger refs, source refs, support-state effect, residuals, and non-claims so syntactic artifact acceptance cannot stand in for obligation-preserving lowering.
+- External positioning: Compare semantic IR to PDDL/SHOP2 planning interfaces, Tree-of-Thoughts reasoning paths, DreamCoder program-synthesis abstractions, LLVM IR, MLIR, and translation validation; preserve the distinction between compiler lineage and a working cognitive compiler.
 - Interface: Planning produces or consumes IR.
 - Interface: Execution receives target-specific artifacts.
 - Interface: Verification checks IR-to-output preservation.
@@ -1125,6 +1127,7 @@ Draft deliverables:
 - Implemented proof-backed check: finite semantic-lowering route coverage for missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews.
 - Planned Codex test: Incremental repair regression test.
 - Planned Codex test: Target compilation audit.
+- Source-noted external comparator queue: `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, and `ext_translation_validation_1998` now ground planning-language, decomposition, reasoning-search, program-synthesis, compiler-IR, multi-level lowering, and translation-validation vocabulary; no LLVM/MLIR toolchain, compiler pass, semantic lowering trace, translation validator, source-target proof, program-synthesis run, or support-state promotion is claimed.
 
 Lean proof targets:
 

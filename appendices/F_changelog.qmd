@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-02 - Ground Cognitive Compilation in compiler IR lineage
+
+- Added source-noted external comparator records for LLVM IR, MLIR, and
+  translation validation, reusing the existing DreamCoder source note for the
+  program-synthesis side of the roadmap row.
+- Updated `cognitive-compilation-and-semantic-ir`, its curated reader chapter,
+  the outline, generated source queues, and the v1.x chapter-review burn-down
+  row so semantic IR is positioned against typed compiler IR, multi-level IR,
+  dialects, verifiers, passes, progressive lowering, lowering receipts, and
+  per-translation source-target validation.
+- This is external-grounding and reader/live prose work only; it does not
+  implement LLVM or MLIR integration, a compiler pass, semantic lowering trace,
+  translation validator, source-target proof, program-synthesis run,
+  localized-repair benchmark, support-state promotion, or chapter-core evidence
+  transition.
+
 ## 2026-07-02 - Ground Labor OS in durable workflow systems
 
 - Added source-noted external comparator records for Temporal durable
