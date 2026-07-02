@@ -811,6 +811,16 @@
       "rationale": "Implemented in AsiStackProofs.Tribunal as a finite high-risk acceptance predicate: high-risk artifacts missing required tribunal review cannot be accepted."
     },
     {
+      "tag": "lean:spinoza.adversarial_review.dossier_probe_bridge",
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "module": "AsiStackProofs.ProofCarryingClaims",
+      "formal_target": "The deterministic synthetic adversarial-review dossier probe includes a scoped-acceptance dossier, a semantic-mismatch rejection dossier, rejected negative controls, rejected LLM-judge-only acceptance, no support-state effect, and explicit non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ProofCarryingClaims as a finite fixture summary bridge for scoped acceptance with dissent preserved, semantic-mismatch rejection, rejected dossier/probe/guard/action/support-promotion controls, LLM-judge-only rejection, no support-state effect, and non-claim boundaries."
+    },
+    {
       "tag": "lean:jobs.lifecycle.operational_invariant",
       "chapter_id": "labor-os-and-typed-jobs",
       "module": "AsiStackProofs.TypedJobs",

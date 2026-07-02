@@ -156,4 +156,34 @@ theorem negative_verifier_result_with_scoped_update_rejected
   rw [scopedUpdate] at effect
   contradiction
 
+structure AdversarialReviewDossierProbeSummary where
+  scopedAcceptDossierPresent : Bool
+  mismatchRejectionDossierPresent : Bool
+  negativeControlsRejected : Bool
+  llmJudgeOnlyRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def AdversarialReviewDossierProbeSummaryValid
+    (summary : AdversarialReviewDossierProbeSummary) : Prop :=
+  summary.scopedAcceptDossierPresent = true ∧
+    summary.mismatchRejectionDossierPresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.llmJudgeOnlyRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem adversarial_review_dossier_probe_bridge
+    {summary : AdversarialReviewDossierProbeSummary} :
+    AdversarialReviewDossierProbeSummaryValid summary ->
+      summary.scopedAcceptDossierPresent = true ∧
+        summary.mismatchRejectionDossierPresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.llmJudgeOnlyRejected = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.ProofCarryingClaims

@@ -347,18 +347,28 @@ The implementation preserves:
 - `experiments/tribunal_review/fixtures/invalid_dissent_without_unresolved_issue.json`;
 - `experiments/tribunal_review/fixtures/invalid_weak_non_claims.json`;
 - `python3 scripts/validate_proof_carrying_claims.py`;
-- `python3 scripts/validate_tribunal_review.py`.
+- `python3 scripts/validate_tribunal_review.py`;
+- `python3 scripts/validate_adversarial_review_dossier_probe.py`;
+- `docs/adversarial_review_dossier_probe.md`;
+- `experiments/adversarial_review_dossier/results/2026-07-02-local.json`.
 
 That MVI is useful because it tests the record boundary. The fixture set leaves
 the intended prose claim, citation accuracy, reviewer independence, verdict
 correctness, and deployed constraint-following outside its evidence envelope.
 
-The next practical slice is a combined verification-event fixture set: one
-formal narrow pass that leaves the broader claim unpromoted, one citation
-dossier that records no support-state change, one mismatch that escalates to
-tribunal, one high-risk artifact blocked without tribunal review, one tribunal
-acceptance with explicit scope constraints, and one unchanged-evidence review
-blocked from reversing an earlier rejection.
+The Adversarial review dossier and verdict-quality probe adds the next bounded
+slice. `python3 scripts/validate_adversarial_review_dossier_probe.py` writes
+`experiments/adversarial_review_dossier/results/2026-07-02-local.json` and
+checks two valid synthetic review dossiers plus seven expected-invalid
+controls. The valid dossiers cover scoped acceptance with dissent preserved and
+semantic-mismatch rejection. The controls reject missing dossier refs,
+LLM-judge-only acceptance, missing adversarial probes, erased dissent
+constraints, action verdicts without actions, prior-review reuse without a
+guard, and fixture-driven support promotion. This is still synthetic
+record-discipline evidence; semantic equivalence, reviewer independence,
+adversarial-probe quality, verdict correctness, LLM-judge quality,
+debate-system quality, and support-state movement remain outside this evidence
+envelope.
 
 ## Beyond the State of the Art
 
@@ -404,8 +414,9 @@ behavior rather than only schema-shaped discipline.
 | Prior-review reuse negative case | Check that finite accepted reuse of prior review over unchanged evidence rejects the guard predicate when the unchanged-evidence guard is absent. | implemented in `AsiStackProofs.Tribunal.accepted_prior_review_reuse_without_unchanged_evidence_guard_rejected`; no prior-review adequacy or semantic-equivalence claim |
 | Action verdict negative case | Check that a finite action-requiring verdict rejects the action/constraint predicate when required actions or constraint effects are missing. | implemented in `AsiStackProofs.Tribunal.action_verdict_without_actions_or_constraints_rejected`; no deployed enforcement or verdict-correctness claim |
 | Tribunal lifecycle route envelope | Check that finite tribunal review lifecycle records route missing review, high-risk probe and independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review to distinct modeled outcomes. | implemented in `AsiStackProofs.Tribunal`; no tribunal runtime, reviewer-quality, probe-quality, verdict-correctness, action-enforcement, or support-state-promotion claim |
+| Adversarial review dossier and verdict-quality probe | Check that a deterministic synthetic review-dossier fixture includes scoped acceptance with dissent preserved, semantic-mismatch rejection, rejected negative controls, rejected LLM-judge-only acceptance, no support-state effect, and explicit non-claim boundaries. | implemented by `python3 scripts/validate_adversarial_review_dossier_probe.py`; two valid synthetic review dossiers and seven expected-invalid controls; no semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, LLM-judge, debate-system, or support-state-promotion claim |
 | Tier assignment over real verifier outputs | Check that support tiers match verifier result and limitations over actual verifier outputs and interpretation examples. | planned; not run |
-| Adversarial review quality test | Check reviewer routing, probe coverage, consensus quality, and action-linked verdict traces over reproducible dossiers. | planned; not run |
+| Real adversarial review quality test | Check reviewer routing, probe coverage, consensus quality, and action-linked verdict traces over reproducible dossiers. | planned; not run |
 
 The implemented checks are bounded record-discipline gates. They are not
 open-domain verifier tests, theorem-validity results, citation-accuracy audits,
@@ -420,6 +431,7 @@ deployed review systems.
 | `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | implemented |
 | `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | implemented |
 | `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | implemented |
+| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `AsiStackProofs.ProofCarryingClaims` | The deterministic synthetic adversarial-review dossier probe includes a scoped-acceptance dossier, a semantic-mismatch rejection dossier, rejected negative controls, rejected LLM-judge-only acceptance, no support-state effect, and explicit non-claim boundaries. | implemented |
 
 These Lean hooks are implemented as finite-record predicates over
 proof-carrying claim records and tribunal review records. They prove only the
@@ -435,7 +447,10 @@ action-requiring verdicts reject missing required-action or constraint-effect
 records, and finite lifecycle records route missing review, high-risk
 probe/independence gaps, changed-evidence reuse, unrecorded dissent, action
 constraints, missing evidence-transition records, or complete bounded review to
-explicit modeled outcomes. They do not prove verifier quality, theorem
+explicit modeled outcomes. The dossier-probe bridge records only that the
+synthetic fixture contains scoped-acceptance and mismatch-rejection dossiers,
+negative controls, an LLM-judge-only rejection, no support-state effect, and
+non-claim boundaries. They do not prove verifier quality, theorem
 adequacy, semantic equivalence, reviewer independence, adversarial-probe
 quality, citation accuracy, verdict correctness, action enforcement, or
 deployed review behavior.

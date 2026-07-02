@@ -252,11 +252,15 @@ They do not validate the referenced procedure, discharge a proof, check
 citation truth, prove semantic equivalence, measure reviewer independence, or
 run a deployed tribunal.
 
-The next minimum useful step would be a small real example: one formal target
-that passes but supports only a narrower claim, one failed verifier result that
-blocks promotion, one missing citation artifact that downgrades a source claim,
-one contested interpretation routed to tribunal, and one tribunal verdict that
-changes a downstream planning or execution constraint.
+The adversarial review dossier and verdict-quality probe adds a bounded
+synthetic version of that next slice. It checks two synthetic review dossiers:
+one scoped acceptance that keeps dissent and unresolved deployment limits
+attached, and one semantic-mismatch rejection that blocks promotion until the
+claim boundary is rewritten. It also rejects seven bad paths: missing dossier
+refs, LLM-judge-only acceptance, missing adversarial probes, dissent whose
+scope constraint is erased, action verdicts without required actions,
+prior-review reuse without a guard, and support-state promotion from the
+fixture. This is not a deployed tribunal result.
 
 ## Beyond the State of the Art
 

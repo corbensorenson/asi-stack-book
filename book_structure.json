@@ -4705,6 +4705,11 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean route theorems; no tribunal runtime, reviewer-quality, probe-quality, verdict-correctness, action-enforcement, or support-state-promotion claim",
               "status": "implemented in AsiStackProofs.Tribunal; no deployed tribunal behavior claim"
+            },
+            {
+              "name": "Adversarial review dossier and verdict-quality probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic review-dossier fixture at experiments/adversarial_review_dossier/results/2026-07-02-local.json: two valid synthetic review dossiers and seven expected-invalid controls; no semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, LLM-judge, debate-system, support-state-promotion, or evidence-transition claim"
             }
           ],
           "lean_module": "AsiStackProofs.ProofCarryingClaims; AsiStackProofs.Tribunal",
@@ -4731,6 +4736,12 @@
               "tag": "lean:tribunal.review.failure_blocks_promotion",
               "module": "AsiStackProofs.Tribunal",
               "target": "A high-risk artifact cannot be accepted when required tribunal review is absent.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:spinoza.adversarial_review.dossier_probe_bridge",
+              "module": "AsiStackProofs.ProofCarryingClaims",
+              "target": "The deterministic synthetic adversarial-review dossier probe includes a scoped-acceptance dossier, a semantic-mismatch rejection dossier, rejected negative controls, rejected LLM-judge-only acceptance, no support-state effect, and explicit non-claim boundaries.",
               "status": "implemented"
             }
           ]

@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-02 - Add Adversarial review dossier and verdict-quality probe
+
+- Added `python3 scripts/validate_adversarial_review_dossier_probe.py`,
+  `docs/adversarial_review_dossier_probe.md`, and
+  `experiments/adversarial_review_dossier/results/2026-07-02-local.json` for
+  a deterministic synthetic review-dossier fixture with two valid synthetic
+  review dossiers and seven expected-invalid controls covering scoped
+  acceptance with dissent preserved, semantic-mismatch rejection, missing
+  dossier refs, LLM-judge-only acceptance, missing adversarial probes, erased
+  dissent constraints, action verdicts without required actions, prior-review
+  reuse without a guard, and fixture-driven support-state promotion.
+- Added `lean:spinoza.adversarial_review.dossier_probe_bridge` in
+  `AsiStackProofs.ProofCarryingClaims`, with a finite Lean summary bridge for
+  scoped-acceptance and mismatch-rejection dossiers, rejected controls,
+  LLM-judge-only rejection, no-support-effect status, and non-claim
+  boundaries.
+- Updated the Proof-Carrying Claims live chapter, curated reader chapter,
+  outline, manifest, roadmap, proof/test surfaces, and validation wiring. This
+  does not prove semantic equivalence, prove reviewer independence, prove
+  adversarial-probe quality, prove verdict correctness, run an LLM judge, run
+  a debate system, promote the chapter support state, or create a
+  support-state transition.
+- Current proof-depth snapshot: 161 proof targets, 54 Lean modules, 853 theorem declarations, 682 derived/decomposed, 167 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add Typed job delivery and evidence-readiness probe
 
 - Added `python3 scripts/validate_typed_job_delivery_probe.py`,
@@ -20,7 +44,7 @@
   approval-service behavior, execute a runtime adapter, prove replay
   correctness, promote the chapter support state, or create a support-state
   transition.
-- Current proof-depth snapshot: 160 proof targets, 54 Lean modules, 852 theorem declarations, 682 derived/decomposed, 166 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 161 proof targets, 54 Lean modules, 853 theorem declarations, 682 derived/decomposed, 167 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Expand claim-ledger semantic and assumption fixtures
 
@@ -194,7 +218,7 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 160 proof targets, 54 Lean modules, 852 theorem declarations, 682 derived/decomposed, 166 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 161 proof targets, 54 Lean modules, 853 theorem declarations, 682 derived/decomposed, 167 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate
   from semantic adequacy, source interpretation, deployed enforcement, model

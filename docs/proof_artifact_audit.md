@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 160 |
-| Manifest status counts | {"implemented": 160} |
-| Triage class counts | {"formal-invariant": 160} |
+| Proof targets audited | 161 |
+| Manifest status counts | {"implemented": 161} |
+| Triage class counts | {"formal-invariant": 161} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -62,7 +62,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Planning.lean` | 4 | 24 | 9 | 6 |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | 4 | 18 | 9 | 7 |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | 2 | 19 | 7 | 3 |
-| `lean/AsiStackProofs/ProofCarryingClaims.lean` | 2 | 7 | 5 | 3 |
+| `lean/AsiStackProofs/ProofCarryingClaims.lean` | 3 | 8 | 6 | 4 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 2 | 6 | 6 | 4 |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 7 | 5 | 2 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 2 | 8 | 3 | 3 |
@@ -128,7 +128,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 3 | 3 | 0 | 0 |
-| `spinoza-verification-and-proof-carrying-claims` | 4 | 4 | 0 | 0 |
+| `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 0 | 0 |
 | `stable-capability-fields` | 4 | 4 | 0 | 0 |
 | `system-boundaries-and-authority` | 3 | 3 | 0 | 0 |
 | `the-efficient-asi-hypothesis` | 4 | 4 | 0 | 0 |
@@ -219,6 +219,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:spinoza.proof_carrying.failure_blocks_promotion` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaims` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:tribunal.review.operational_invariant` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.Tribunal` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:tribunal.review.failure_blocks_promotion` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.Tribunal` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `spinoza-verification-and-proof-carrying-claims` | `AsiStackProofs.ProofCarryingClaims` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.operational_invariant` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.failure_blocks_promotion` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.execution_route_envelope` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobs` | triage ok; module ok; chapter tag ok; limitation ok |

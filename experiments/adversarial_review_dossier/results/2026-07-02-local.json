@@ -1,0 +1,60 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_adversarial_review_dossier_probe.py",
+  "coverage": {
+    "adversarial_probes_required": true,
+    "dossier_refs_required": true,
+    "mismatch_rejection_present": true,
+    "prior_review_guard_required": true,
+    "reviewer_role_requirement": true,
+    "scoped_accept_with_dissent_preserved": true,
+    "support_state_no_promotion": true
+  },
+  "dossier_count": 9,
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "llm_judge_only_rejected": true,
+      "mismatch_rejection_dossier_present": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "scoped_accept_dossier_present": true,
+      "support_state_effect_none": true
+    },
+    "module": "AsiStackProofs.ProofCarryingClaims",
+    "proof_tag": "lean:spinoza.adversarial_review.dossier_probe_bridge",
+    "theorem_refs": [
+      "adversarial_review_dossier_probe_bridge"
+    ]
+  },
+  "negative_controls": {
+    "action_verdict_without_actions_rejected": true,
+    "dissent_scope_erasure_rejected": true,
+    "llm_judge_only_acceptance_rejected": true,
+    "missing_adversarial_probes_rejected": true,
+    "missing_dossier_refs_rejected": true,
+    "prior_review_without_guard_rejected": true,
+    "support_state_promotion_rejected": true
+  },
+  "non_claims": [
+    "does not prove semantic equivalence",
+    "does not prove reviewer independence",
+    "does not prove adversarial-probe quality",
+    "does not prove verdict correctness",
+    "does not run an LLM judge",
+    "does not run a debate system",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic review-dossier fixture only; no real tribunal, LLM judge, debate system, semantic-equivalence checker, reviewer-independence measurement, or verdict-quality benchmark was run.",
+    "The Proof-Carrying Claims and Adversarial Review chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-adversarial-review-dossier-probe",
+  "result_kind": "deterministic_synthetic_review_dossier_probe",
+  "schema_version": "asi_stack.adversarial_review_dossier_probe.v0",
+  "support_state_effect": "none",
+  "valid_dossier_count": 2,
+  "verification_result": "pass"
+}

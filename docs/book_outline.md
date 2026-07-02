@@ -1480,9 +1480,10 @@ Draft deliverables:
 - Source-noted external comparator rows for proof-carrying code, Lean theorem proving, LLM autoformalization, AI safety debate, LLM-as-judge evaluation, and contestable-AI design, with the chapter framed as verification-route and review-record discipline rather than a local autoformalizer, debate system, LLM judge, or tribunal-quality result.
 - Implemented protocol validation: `proof_carrying_claim` and `tribunal_review_record` fixtures validate public record shape only.
 - Implemented Codex tests: proof-carrying claim synthetic harness and tribunal-review synthetic harness.
+- Implemented synthetic Codex test: Adversarial review dossier and verdict-quality probe, via `python3 scripts/validate_adversarial_review_dossier_probe.py` and result `experiments/adversarial_review_dossier/results/2026-07-02-local.json`, checks two valid synthetic review dossiers and seven expected-invalid controls for scoped acceptance with dissent preserved, semantic-mismatch rejection, missing dossier refs, LLM-judge-only acceptance, missing adversarial probes, erased dissent constraints, action verdicts without actions, prior-review reuse without a guard, and fixture-driven support promotion; no semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, LLM-judge, debate-system, support-state-promotion, or evidence-transition claim follows.
 - Implemented Lean follow-through: `AsiStackProofs.Tribunal` now includes a finite lifecycle route envelope for missing review, high-risk probe/independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review, without claiming reviewer quality, probe quality, verdict correctness, action enforcement, deployed tribunal behavior, or support-state promotion.
 - Planned Codex test: Tier assignment over real verifier outputs.
-- Planned Codex test: Adversarial review quality over reproducible dossiers.
+- Planned Codex test: Real adversarial review quality over reproducible dossiers.
 
 Lean proof targets:
 
@@ -1492,6 +1493,7 @@ Lean proof targets:
 | `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaims` | A failed verifier result downgrades or blocks the claim rather than promoting it. | implemented |
 | `lean:tribunal.review.operational_invariant` | `AsiStackProofs.Tribunal` | A tribunal verdict includes reviewer roles, evidence references, and unresolved dissent. | implemented |
 | `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.Tribunal` | A high-risk artifact cannot be accepted when required tribunal review is absent. | implemented |
+| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `AsiStackProofs.ProofCarryingClaims` | The deterministic synthetic adversarial-review dossier probe includes a scoped-acceptance dossier, a semantic-mismatch rejection dossier, rejected negative controls, rejected LLM-judge-only acceptance, no support-state effect, and explicit non-claim boundaries. | implemented |
 
 Historical treatment: `unified-adaptive-tribunal-and-adversarial-review` is archived and redirected to `spinoza-verification-and-proof-carrying-claims`; the old chapter can be restored only if independent tribunal pipeline evidence, reviewer-independence measurements, adversarial-probe-quality tests, verdict-correctness audits, or institutional contestability evidence make it chapter-owning again.
 
@@ -2720,9 +2722,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 160 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 160 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 160 proof targets, 54 Lean modules, 852 theorem declarations, 682 derived/decomposed, 166 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 161 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 161 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 161 proof targets, 54 Lean modules, 853 theorem declarations, 682 derived/decomposed, 167 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

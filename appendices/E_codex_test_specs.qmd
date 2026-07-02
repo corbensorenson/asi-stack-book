@@ -153,6 +153,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Prior-review reuse negative case | implemented | passes via Lean negative case; no prior-review adequacy or semantic-equivalence claim |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Action verdict negative case | implemented | passes via Lean negative case; no deployed enforcement or verdict-correctness claim |
 | `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Tribunal lifecycle route envelope | implemented | passes via Lean route theorems; no tribunal runtime, reviewer-quality, probe-quality, verdict-correctness, action-enforcement, or support-state-promotion claim |
+| `spinoza-verification-and-proof-carrying-claims` | Proof-Carrying Claims and Adversarial Review | Adversarial review dossier and verdict-quality probe | implemented | passes via deterministic synthetic review-dossier fixture at experiments/adversarial_review_dossier/results/2026-07-02-local.json: two valid synthetic review dossiers and seven expected-invalid controls; no semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, LLM-judge, debate-system, support-state-promotion, or evidence-transition claim |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job lifecycle test | implemented | passes via Lean build and synthetic plan-execution contract harness |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Job execution route proof | implemented | passes via Lean build; finite job-execution route coverage only |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Tool permission enforcement test | planned | not run |
@@ -442,16 +443,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 160 |
+| Proof targets covered by triage | 161 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 160 |
+| implemented | 161 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 160 |
+| implemented | formal-invariant | lean-candidate | 161 |

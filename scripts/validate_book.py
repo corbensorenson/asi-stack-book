@@ -77,6 +77,9 @@ REQUIRED = [
     "experiments/planning_scheduler_state/results/2026-07-02-local.json",
     "experiments/typed_job_delivery/results/2026-07-02-local.json",
     "scripts/validate_claim_ledger_revision.py",
+    "scripts/validate_adversarial_review_dossier_probe.py",
+    "docs/adversarial_review_dossier_probe.md",
+    "experiments/adversarial_review_dossier/results/2026-07-02-local.json",
     "scripts/validate_proof_carrying_claims.py",
     "scripts/validate_tribunal_review.py",
     "scripts/validate_value_conflicts.py",
@@ -775,6 +778,7 @@ def main() -> None:
     run_validator("validate_stack_layer_traceability.py")
     run_validator("validate_efficiency_route_search_probe.py")
     run_validator("validate_claim_ledger_revision.py")
+    run_validator("validate_adversarial_review_dossier_probe.py")
     run_validator("validate_proof_carrying_claims.py")
     run_validator("validate_tribunal_review.py")
     run_validator("validate_value_conflicts.py")
