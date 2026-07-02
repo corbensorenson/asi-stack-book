@@ -328,4 +328,31 @@ theorem complete_retirement_review_retires_job
     permissionsSatisfied, noFailure, noResidual, noOutput, dispatchNotRequested,
     retireRequested]
 
+structure TypedJobDeliveryProbeSummary where
+  verifiedDeliveryTracePresent : Bool
+  deliveredNotEvidenceReadyTracePresent : Bool
+  negativeControlsRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def TypedJobDeliveryProbeSummaryValid
+    (summary : TypedJobDeliveryProbeSummary) : Prop :=
+  summary.verifiedDeliveryTracePresent = true ∧
+    summary.deliveredNotEvidenceReadyTracePresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem typed_job_delivery_probe_fixture_bridge
+    {summary : TypedJobDeliveryProbeSummary} :
+    TypedJobDeliveryProbeSummaryValid summary ->
+      summary.verifiedDeliveryTracePresent = true ∧
+        summary.deliveredNotEvidenceReadyTracePresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.TypedJobs

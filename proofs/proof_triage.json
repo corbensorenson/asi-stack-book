@@ -841,6 +841,16 @@
       "rationale": "Implemented in AsiStackProofs.TypedJobs as a finite job-execution route function and derived route theorems for missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests."
     },
     {
+      "tag": "lean:jobs.lifecycle.delivery_probe_fixture_bridge",
+      "chapter_id": "labor-os-and-typed-jobs",
+      "module": "AsiStackProofs.TypedJobs",
+      "formal_target": "The deterministic synthetic typed-job delivery probe includes an evidence-ready delivery trace, a delivered-but-not-evidence-ready trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TypedJobs as a finite typed-job delivery probe summary bridge: evidence-ready delivery, delivered-but-not-evidence-ready state, rejected negative controls, no support-state effect, and non-claim boundaries are bundled as fixture requirements."
+    },
+    {
       "tag": "lean:artifacts.graph.operational_invariant",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactGraph",

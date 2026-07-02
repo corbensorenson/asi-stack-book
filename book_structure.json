@@ -4893,6 +4893,11 @@
               "name": "Human approval gate test",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build and synthetic approval-bypass fixture; no approval-service claim"
+            },
+            {
+              "name": "Typed job delivery and evidence-readiness probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic typed-job delivery fixture at experiments/typed_job_delivery/results/2026-07-02-local.json: two valid synthetic typed-job traces and seven expected-invalid controls; no deployed scheduler, permission-enforcement, approval-service, runtime-adapter, replay-correctness, support-state-promotion, or evidence-transition claim"
             }
           ],
           "lean_module": "AsiStackProofs.TypedJobs",
@@ -4913,6 +4918,12 @@
               "tag": "lean:jobs.lifecycle.execution_route_envelope",
               "module": "AsiStackProofs.TypedJobs",
               "target": "A structured job-execution review routes missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests into explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:jobs.lifecycle.delivery_probe_fixture_bridge",
+              "module": "AsiStackProofs.TypedJobs",
+              "target": "The deterministic synthetic typed-job delivery probe includes an evidence-ready delivery trace, a delivered-but-not-evidence-ready trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary.",
               "status": "implemented"
             }
           ]

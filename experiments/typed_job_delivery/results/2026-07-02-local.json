@@ -1,0 +1,58 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_typed_job_delivery_probe.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "delivered_not_evidence_ready_trace_present": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "support_state_effect_none": true,
+      "verified_delivery_trace_present": true
+    },
+    "module": "AsiStackProofs.TypedJobs",
+    "proof_tag": "lean:jobs.lifecycle.delivery_probe_fixture_bridge",
+    "theorem_refs": [
+      "typed_job_delivery_probe_fixture_bridge"
+    ]
+  },
+  "negative_controls": {
+    "approval_bypass_rejected": true,
+    "delivery_laundering_rejected": true,
+    "missing_artifact_refs_rejected": true,
+    "missing_audit_events_rejected": true,
+    "missing_parent_contract_rejected": true,
+    "permission_overreach_rejected": true,
+    "support_state_promotion_rejected": true
+  },
+  "non_claims": [
+    "does not execute a deployed scheduler",
+    "does not prove permission enforcement",
+    "does not prove approval-service behavior",
+    "does not execute a runtime adapter",
+    "does not prove replay correctness",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic typed-job delivery fixture only; no scheduler, approval service, permission service, runtime adapter, replay engine, or deployed Labor OS was executed.",
+    "The Labor OS chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-typed-job-delivery-probe",
+  "result_kind": "deterministic_synthetic_typed_job_delivery_probe",
+  "schema_version": "asi_stack.typed_job_delivery_probe.v0",
+  "support_state_effect": "none",
+  "trace_count": 9,
+  "transition_coverage": {
+    "approval_required": true,
+    "artifact_and_audit_required": true,
+    "delivered_not_evidence_ready": true,
+    "parentage_required": true,
+    "permissions_required": true,
+    "support_state_no_promotion": true,
+    "verified_delivery_evidence_ready": true
+  },
+  "valid_trace_count": 2,
+  "verification_result": "pass"
+}

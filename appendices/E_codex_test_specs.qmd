@@ -157,6 +157,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Job execution route proof | implemented | passes via Lean build; finite job-execution route coverage only |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Tool permission enforcement test | planned | not run |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Human approval gate test | implemented | passes via Lean build and synthetic approval-bypass fixture; no approval-service claim |
+| `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job delivery and evidence-readiness probe | implemented | passes via deterministic synthetic typed-job delivery fixture at experiments/typed_job_delivery/results/2026-07-02-local.json: two valid synthetic typed-job traces and seven expected-invalid controls; no deployed scheduler, permission-enforcement, approval-service, runtime-adapter, replay-correctness, support-state-promotion, or evidence-transition claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact traceability test | implemented | passing via Lean traceability predicate, missing-ref negative case, artifact-admission route proof, and synthetic artifact graph replay harness; no deployed artifact-service claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Audit reconstruction test | implemented | passing via synthetic artifact graph replay harness and bounded provenance/route negative cases; no deployed audit-reconstruction claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Replay metadata completeness test | implemented | passing via synthetic artifact graph replay harness and bounded provenance/route negative cases; no deployed replay-engine claim |
@@ -441,16 +442,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 159 |
+| Proof targets covered by triage | 160 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 159 |
+| implemented | 160 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 159 |
+| implemented | formal-invariant | lean-candidate | 160 |

@@ -284,11 +284,15 @@ That is an honest start. It proves that the repository can represent and check
 some of the Labor OS boundary. It does not prove that real work is scheduled,
 permissioned, approved, adapted, replayed, or secured.
 
-The next honest slice would be a lifecycle harness over fixture jobs: one
-valid transition path, one invalid transition, one missing approval, one
-missing permission, one delivered-but-not-evidence-ready job, and one
-quarantined job. That would strengthen the boundary without pretending a full
-labor runtime exists.
+The typed job delivery and evidence-readiness probe adds that kind of bounded
+slice. It checks two synthetic typed-job traces: one verified delivery that is
+evidence-ready because parentage, approval, permissions, artifact references,
+audit references, residuals, verification, and replay state are present, and
+one delivered job that remains not evidence-ready because verification is
+pending. It rejects seven bad paths, including missing parent contract,
+approval bypass, permission overreach, delivered output laundered as
+evidence-ready, missing artifacts, missing audit events, and support-state
+promotion from the fixture. This is not a deployed Labor OS result.
 
 ## Beyond the State of the Art
 
@@ -323,13 +327,14 @@ This chapter argues for typed execution discipline. It does not claim that a
 Labor OS has been deployed.
 
 Current evidence consists of source synthesis, source-note mappings, a public
-typed-job schema and fixture, finite Lean predicates, and a synthetic
-plan-execution contract harness. Those artifacts support the shape of the
-execution boundary. They do not establish scheduler correctness, permission
-enforcement, approval-service behavior, adapter safety, runtime isolation,
-replay correctness, benchmark performance, security behavior, Temporal
-workflow behavior, Airflow DAG behavior, BPMN engine behavior, Kubernetes Job
-behavior, Talos runtime behavior, or MoECOT runtime reproduction.
+typed-job schema and fixture, finite Lean predicates, a synthetic
+plan-execution contract harness, and the typed-job delivery fixture described
+above. Those artifacts support the shape of the execution boundary. They do
+not establish scheduler correctness, permission enforcement, approval-service
+behavior, adapter safety, runtime isolation, replay correctness, benchmark
+performance, security behavior, Temporal workflow behavior, Airflow DAG
+behavior, BPMN engine behavior, Kubernetes Job behavior, Talos runtime
+behavior, or MoECOT runtime reproduction.
 
 The distinction is central to the chapter. A Labor OS exists to prevent useful
 work from being mistaken for governed evidence. The reader draft preserves the

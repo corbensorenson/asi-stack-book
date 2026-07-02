@@ -1556,8 +1556,9 @@ Draft deliverables:
 - Planned Codex test: Tool permission enforcement test.
 - Implemented Lean predicate: an approval-required job cannot be allowed to run before approval is recorded.
 - Implemented synthetic Codex test: Human approval gate test via `python3 scripts/validate_plan_execution_contracts.py`; deployed approval service remains open.
-- Planned Codex test: Delivery versus evidence-ready test.
-- Planned Codex test: Job parentage trace test.
+- Implemented synthetic Codex test: Typed job delivery and evidence-readiness probe via `python3 scripts/validate_typed_job_delivery_probe.py`, producing `experiments/typed_job_delivery/results/2026-07-02-local.json`; covers two valid synthetic typed-job traces and seven expected-invalid controls for missing parent contract, approval bypass, permission overreach, delivery laundered as evidence-ready, missing artifact refs, missing audit events, and support-state promotion from the fixture. This is a deterministic synthetic typed-job delivery fixture only; deployed-scheduler, permission-enforcement, approval-service, runtime-adapter, replay-correctness, support-state-promotion, and evidence-transition claims remain open.
+- Implemented synthetic Codex test: Delivery versus evidence-ready test via `python3 scripts/validate_typed_job_delivery_probe.py`; deployed delivery/evidence runtime remains open.
+- Implemented synthetic Codex test: Job parentage trace test via `python3 scripts/validate_typed_job_delivery_probe.py`; deployed job parentage service remains open.
 - Source-noted external comparator queue: `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, and `ext_kubernetes_jobs_docs` now ground durable workflow, DAG, process-notation, and batch-job lifecycle vocabulary; no Temporal workflow, Airflow DAG, BPMN engine, Kubernetes Job, deployed scheduler, or workflow trace is claimed.
 
 Lean proof targets:
@@ -1567,6 +1568,7 @@ Lean proof targets:
 | `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobs` | A job transitions only through valid lifecycle states. | implemented |
 | `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobs` | A job requiring approval cannot execute before approval is recorded. | implemented |
 | `lean:jobs.lifecycle.execution_route_envelope` | `AsiStackProofs.TypedJobs` | A structured job-execution review routes missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests into explicit outcomes. | implemented |
+| `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `AsiStackProofs.TypedJobs` | The deterministic synthetic typed-job delivery probe includes an evidence-ready delivery trace, a delivered-but-not-evidence-ready trace, rejected negative controls, no support-state effect, and an explicit non-claim boundary. | implemented |
 
 ### Artifact Graphs, Audit Logs, and Replay
 
@@ -2718,9 +2720,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 159 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 159 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 159 proof targets, 54 Lean modules, 851 theorem declarations, 682 derived/decomposed, 165 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 160 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 160 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 160 proof targets, 54 Lean modules, 852 theorem declarations, 682 derived/decomposed, 166 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
