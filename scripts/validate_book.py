@@ -48,6 +48,7 @@ REQUIRED = [
     "scripts/validate_live_human_view_browser.js",
     "scripts/validate_chapter_handoffs.py",
     "scripts/validate_source_appendices.py",
+    "scripts/validate_trust_surface.py",
     "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
@@ -829,6 +830,7 @@ def main() -> None:
     run_validator("validate_living_book_change_packets.py")
     run_validator("validate_release_profiles.py")
     validate_publication_surface()
+    run_validator("validate_trust_surface.py")
     run_validator("validate_reading_mode_toggle.py")
     run_validator("validate_human_reading_paths.py")
     run_validator("validate_reader_evidence_boundaries.py", "--check")

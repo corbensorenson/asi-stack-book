@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-02 - Guard the first-minute public trust surface
+
+- Added `scripts/validate_trust_surface.py` to check the README and landing-page
+  60-second trust surface against current chapter/source counts, accepted
+  non-core transition IDs, source-ownership appendix boundaries, reader-audit
+  counts, external-review status, and no chapter-core promotion.
+- Updated the landing page, README, publication-readiness checklist, repository
+  map, and v1.x roadmap gate so cold readers can see the current evidence
+  boundary without reading the whole status packet first.
+- This is a public-surface and validation increment only; it is not a new
+  source, evidence transition, support-state promotion, external review, proof
+  result, benchmark result, reader release, ebook/document/PDF/audio artifact,
+  deployed safety system, or ASI implementation claim.
+
 ## 2026-07-02 - Clear generated-reader long paragraph queue
 
 - Added one active reader-only semantic overlay operation for `Context

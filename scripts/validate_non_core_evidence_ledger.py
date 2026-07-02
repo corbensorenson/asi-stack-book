@@ -144,7 +144,7 @@ def main() -> None:
         ("index.qmd", index, "Four narrow non-core transitions are accepted"),
     ]
     for name, text, required in surface_counts:
-        if required not in text:
+        if required.lower() not in text.lower():
             errors.append(f"{name} does not expose the current four-transition count: {required}")
 
     if errors:

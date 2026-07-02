@@ -73,6 +73,7 @@ REQUIRED_FILES = [
     "scripts/validate_live_human_view.py",
     "scripts/validate_live_human_view_browser.js",
     "scripts/validate_source_appendices.py",
+    "scripts/validate_trust_surface.py",
     "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
@@ -132,6 +133,7 @@ REQUIRED_README_STRINGS = [
     "scripts/validate_live_human_view.py",
     "scripts/validate_live_human_view_browser.js",
     "scripts/validate_source_appendices.py",
+    "scripts/validate_trust_surface.py",
     "scripts/validate_v1_status_snapshot.py",
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
@@ -216,6 +218,19 @@ def read_json(path: str) -> object:
         return json.load(f)
 
 
+def run_validator(script_name: str) -> None:
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / script_name)],
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    if result.returncode != 0:
+        print(result.stdout.strip())
+        sys.exit(result.returncode)
+
+
 def manifest_chapter_count() -> int:
     structure = read_json("book_structure.json")
     if not isinstance(structure, dict):
@@ -269,7 +284,7 @@ def main() -> None:
         "README.md": [
             f"all {chapter_count} chapters have source-noted external positioning records",
             "0 explicit external-baseline exceptions",
-            "four narrow non-core transitions are accepted",
+            "Four narrow non-core transitions are accepted",
             f"{chapter_count} of {chapter_count} chapters currently have in-prose `ext_*` positioning",
             "0 carry explicit exceptions",
         ],
@@ -298,6 +313,7 @@ def main() -> None:
     if errors:
         fail(errors)
 
+    run_validator("validate_trust_surface.py")
     print("Publication surface validation passed.")
 
 

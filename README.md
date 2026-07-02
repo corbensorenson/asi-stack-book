@@ -12,9 +12,13 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 
 **What this is:** a public living-book research program and evidence system for an ASI systems architecture. The strongest current contribution is the manifest-driven, CI-validated method for keeping claims, sources, proofs, tests, reader editions, and non-claims explicit.
 
-**What this is not:** a validated ASI implementation, deployed safety system, benchmark-proven architecture, or claim that all chapter theses are externally proven.
+**What this is not:** not a validated ASI implementation, not a deployed safety system, not a benchmark-proven architecture, and not a claim that all chapter theses are externally proven.
 
-**What is currently evidenced:** all 44 chapter core claims remain at `argument`; four narrow non-core transitions are accepted and listed in [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md); each v1.x safety-critical Lean module now has at least one derived/decomposed finite-record theorem, but the modules remain shallow formal envelopes rather than deployed safety proofs; all 44 chapters have source-noted external positioning records with 0 explicit external-baseline exceptions, but that is positioning only, not exhaustive literature synthesis or support-state promotion; Circle has one bounded local prototype-backed receipt slice plus a public ASI consumer-gate fixture checked by digest and negative controls, Project Theseus now has public-safe static architecture-gate and generation-mode imports plus a local support replay probe checked by digest, and Compact Generative Systems has one synthetic compact GVR receipt-discipline slice with baseline, negative controls, and Lean fixture alignment, but none promotes a chapter core claim; independent external human review is requested in [GitHub issue #1](https://github.com/corbensorenson/asi-stack-book/issues/1), tracked in [docs/external_review_status.md](docs/external_review_status.md), and not yet accepted as review evidence.
+**Auditable current state:** the source inventory has 210 public-safe records, and 44/44 chapters externally positioned with 0 explicit external-baseline exceptions. All 44 chapter core claims remain at `argument`. Four narrow non-core transitions are accepted and listed in [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md): `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `compact-generative-systems.compact_gvr_receipt_slice` are `synthetic-test-backed`, and `circle-calculus.external_rope_receipt_replay` is `prototype-backed`. These bounded side lanes preserve no chapter-core promotion.
+
+**Reader and source boundaries:** [Appendix C](appendices/C_claim_evidence_matrix.qmd) is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored, Corben-supplied, and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which holds external literature and third-party records; source ownership and external positioning are not exhaustive literature synthesis or support-state promotion. The reader projection currently has 48 active/applied reader-overlay operations, 0 high-priority and 10 medium-priority heuristic review rows, and 0 paragraphs at or above 160 words in [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md), but the live Human view is a convenience projection, not a reviewed reader-release manuscript. Independent external human review is requested in [GitHub issue #1](https://github.com/corbensorenson/asi-stack-book/issues/1), tracked in [docs/external_review_status.md](docs/external_review_status.md), and not yet accepted as review evidence.
+
+Fast audit path: [docs/v1_0_candidate_status.md](docs/v1_0_candidate_status.md), [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md), Appendix C, Appendix G, Appendix H, [docs/reader_continuity_audit.md](docs/reader_continuity_audit.md), and [docs/v1_x_beyond_sota_roadmap.md](docs/v1_x_beyond_sota_roadmap.md). The landing-page and README trust contract is guarded by `scripts/validate_trust_surface.py`.
 
 ## Current Status
 
@@ -288,6 +292,7 @@ python3 scripts/validate_chapter_consolidation_sequence.py
 python3 scripts/validate_core_claim_promotion_paths.py
 python3 scripts/validate_chapter_external_grounding_status.py
 python3 scripts/validate_external_sota_positioning.py
+python3 scripts/validate_trust_surface.py
 python3 scripts/validate_publication.py
 python3 scripts/validate_release_profiles.py
 python3 scripts/validate_human_reading_paths.py
