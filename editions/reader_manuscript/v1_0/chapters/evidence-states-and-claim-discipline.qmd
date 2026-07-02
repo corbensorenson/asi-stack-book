@@ -302,6 +302,13 @@ triggers, promotion burden, reviewer references, acceptance blockers, reviewer
 independence, changelog linkage, support-state effect, and non-claims. The Lean
 module proves a narrow support-state invariant in this repository.
 
+The evidence bundle completeness and changelog-consistency probe adds two synthetic evidence bundles:
+one no-change bundle and one blocked-promotion bundle. It also rejects seven bad controls: missing claim IDs, missing artifact
+or result references, missing commands, promotion without a transition record,
+missing changelog references, missing limitations or non-claims, stale
+changelog linkage, and fixture overclaiming. That is useful accountability
+machinery, but it is not a deployed release-governance result.
+
 That is useful. It is also limited. The schemas and Lean hooks do not promote
 this chapter's core claim without claim-specific evidence and accepted review.
 They prove that the book has a record shape and a small transition discipline,
@@ -344,9 +351,10 @@ keep it narrow.
 
 That endpoint is still a target architecture. The current chapter stays at
 `argument` support until claim-transition records, passage-reviewed source
-notes, evidence-bundle fixtures, citation-laundering checks, proof-scope
-audits, and changelog-linked reviews demonstrate that labels move only when
-their artifacts justify movement.
+notes, claim-ledger completeness checks, accepted-transition reviews,
+citation-laundering checks, proof-scope audits, and stronger evidence-bundle
+audits demonstrate that labels move only when their artifacts justify
+movement.
 
 ## Summary
 

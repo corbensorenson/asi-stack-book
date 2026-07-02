@@ -66,6 +66,9 @@ REQUIRED = [
     "scripts/validate_chapter_external_grounding_status.py",
     "scripts/validate_external_sota_positioning.py",
     "scripts/validate_stack_layer_traceability.py",
+    "scripts/validate_evidence_bundle_completeness_probe.py",
+    "docs/evidence_bundle_completeness_probe.md",
+    "experiments/evidence_bundle_completeness/results/2026-07-02-local.json",
     "scripts/validate_failure_taxonomy_detector_probe.py",
     "docs/failure_taxonomy_detector_probe.md",
     "experiments/failure_taxonomy_detector/results/2026-07-02-local.json",
@@ -779,6 +782,7 @@ def main() -> None:
     run_validator("validate_chapter_external_grounding_status.py")
     run_validator("validate_external_sota_positioning.py")
     run_validator("validate_stack_layer_traceability.py")
+    run_validator("validate_evidence_bundle_completeness_probe.py")
     run_validator("validate_failure_taxonomy_detector_probe.py")
     run_validator("validate_efficiency_route_search_probe.py")
     run_validator("validate_claim_ledger_revision.py")

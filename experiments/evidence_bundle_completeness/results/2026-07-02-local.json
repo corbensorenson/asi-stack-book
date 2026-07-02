@@ -1,0 +1,59 @@
+{
+  "bundle_count": 9,
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_evidence_bundle_completeness_probe.py",
+  "coverage": {
+    "artifact_digest_required": true,
+    "blocked_promotion_bundle_present": true,
+    "changelog_consistency_required": true,
+    "command_and_result_required": true,
+    "evidence_refs_required": true,
+    "no_change_bundle_present": true,
+    "support_state_no_promotion": true
+  },
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "blocked_promotion_bundle_present": true,
+      "changelog_consistency_present": true,
+      "negative_controls_rejected": true,
+      "no_change_bundle_present": true,
+      "non_claim_boundary": true,
+      "support_state_effect_none": true
+    },
+    "module": "AsiStackProofs.EvidenceStates",
+    "proof_tag": "lean:evidence.bundle.completeness_probe_bridge",
+    "theorem_refs": [
+      "evidence_bundle_completeness_probe_bridge"
+    ]
+  },
+  "negative_controls": {
+    "missing_artifact_or_result_rejected": true,
+    "missing_changelog_rejected": true,
+    "missing_claim_id_rejected": true,
+    "missing_command_rejected": true,
+    "missing_limits_or_nonclaims_rejected": true,
+    "promotion_without_transition_record_rejected": true,
+    "stale_changelog_or_truth_overclaim_rejected": true
+  },
+  "non_claims": [
+    "does not prove evidence truth",
+    "does not prove source interpretation",
+    "does not prove artifact correctness",
+    "does not create a support-state transition",
+    "does not promote the chapter support state",
+    "does not prove deployed release governance"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic evidence-bundle completeness fixture only; no evidence truth, source interpretation, artifact correctness, release governance, or support-state transition is established.",
+    "The Evidence States chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-evidence-bundle-completeness-probe",
+  "result_kind": "deterministic_synthetic_evidence_bundle_completeness_probe",
+  "schema_version": "asi_stack.evidence_bundle_completeness_probe.v0",
+  "support_state_effect": "none",
+  "valid_bundle_count": 2,
+  "verification_result": "pass"
+}

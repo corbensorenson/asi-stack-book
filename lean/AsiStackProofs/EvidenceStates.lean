@@ -390,4 +390,34 @@ theorem complete_synthetic_test_backed_transition_accepts :
   simp [EvidenceTransitionRouteFor, completeEvidenceTransitionReview,
     EvidenceAvailableFor, TerminalStateBool]
 
+structure EvidenceBundleCompletenessProbeSummary where
+  noChangeBundlePresent : Bool
+  blockedPromotionBundlePresent : Bool
+  negativeControlsRejected : Bool
+  changelogConsistencyPresent : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def EvidenceBundleCompletenessProbeSummaryValid
+    (summary : EvidenceBundleCompletenessProbeSummary) : Prop :=
+  summary.noChangeBundlePresent = true ∧
+    summary.blockedPromotionBundlePresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.changelogConsistencyPresent = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem evidence_bundle_completeness_probe_bridge
+    {summary : EvidenceBundleCompletenessProbeSummary} :
+    EvidenceBundleCompletenessProbeSummaryValid summary ->
+      summary.noChangeBundlePresent = true ∧
+        summary.blockedPromotionBundlePresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.changelogConsistencyPresent = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs

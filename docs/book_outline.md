@@ -422,13 +422,13 @@ Failure modes to cover:
 Draft deliverables:
 
 - A claim record schema, evidence transition record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check with source mapping status, source mapping refs, evidence readiness state, claim surface refs, claim record refs, transition validity state, evidence packet refs, source mapping refs, negative evidence refs, reviewer refs, acceptance blockers, support-state effect, and non-claims.
-- Implemented repository-level fixture: `claim_record.valid.json` validates source mapping status, source mapping refs, evidence readiness state, required next evidence, promotion blockers, support-state effect, and non-claims only; `evidence_transition_record.valid.json` validates claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims only; claim-ledger completeness, evidence bundle completeness, and changelog audits remain planned.
+- Implemented repository-level fixture: `claim_record.valid.json` validates source mapping status, source mapping refs, evidence readiness state, required next evidence, promotion blockers, support-state effect, and non-claims only; `evidence_transition_record.valid.json` validates claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims only; claim-ledger completeness and accepted live transition review remain planned.
 - Implemented synthetic Codex test: `python3 scripts/validate_support_state_transitions.py` checks valid and expected-invalid evidence-transition fixtures for no-change conservatism, upward-transition review gates, downward demotion records, terminal refutation records, required evidence refs, and failed-verification blockers. This validates transition-gate semantics only; it does not promote, demote, deprecate, or refute live claims, prove source interpretation, or validate runtime behavior.
 - Implemented Lean proof target: finite evidence-transition lifecycle routing sends no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, and missing non-claim boundaries to explicit modeled outcomes.
+- Implemented Codex test: Evidence bundle completeness and changelog-consistency probe, via `python3 scripts/validate_evidence_bundle_completeness_probe.py`, checks two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition. Result: `experiments/evidence_bundle_completeness/results/2026-07-02-local.json`.
 - Source-noted external comparator rows now position evidence states against model cards, datasheets, ML reproducibility-review practice, and proof-carrying-code lineage as adjacent documentation/proof-carrying disciplines; no model-card, datasheet, external reproducibility-review, or proof-carrying-code implementation is claimed.
 - Planned Codex test: Claim ledger completeness test.
-- Planned Codex test: Evidence bundle completeness test.
-- Planned Codex test: Changelog consistency audit.
+- Planned Codex test: Accepted live transition review.
 
 Lean proof targets:
 
@@ -437,6 +437,7 @@ Lean proof targets:
 | `lean:evidence.support_state.operational_invariant` | `AsiStackProofs.EvidenceStates` | Support-state transitions require the corresponding evidence artifact. | implemented |
 | `lean:evidence.support_state.failure_blocks_promotion` | `AsiStackProofs.EvidenceStates` | A claim cannot be promoted when required evidence is absent. | implemented |
 | `lean:evidence.support_state.transition_lifecycle_route` | `AsiStackProofs.EvidenceStates` | A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
+| `lean:evidence.bundle.completeness_probe_bridge` | `AsiStackProofs.EvidenceStates` | A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries. | implemented |
 
 ### Human Intent as a Formal Input
 
@@ -2724,9 +2725,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 162 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 162 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 162 proof targets, 54 Lean modules, 854 theorem declarations, 682 derived/decomposed, 168 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 163 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 163 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 163 proof targets, 54 Lean modules, 855 theorem declarations, 682 derived/decomposed, 169 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Add Evidence bundle completeness and changelog-consistency probe
+
+- Added `python3 scripts/validate_evidence_bundle_completeness_probe.py`,
+  `docs/evidence_bundle_completeness_probe.md`, and
+  `experiments/evidence_bundle_completeness/results/2026-07-02-local.json` for
+  a deterministic synthetic evidence-bundle fixture with two valid synthetic
+  evidence bundles and seven expected-invalid controls covering no-change
+  records, blocked promotion, missing claim IDs, missing artifact or result
+  refs, missing commands, promotion without accepted transition records,
+  missing changelog refs, missing limitations or non-claims, stale changelog
+  linkage, and fixture-driven evidence-truth overclaiming.
+- Added `lean:evidence.bundle.completeness_probe_bridge` in
+  `AsiStackProofs.EvidenceStates`, with a finite Lean summary bridge for a
+  no-change bundle, a blocked-promotion bundle, rejected controls, changelog
+  consistency, no-support-effect status, and non-claim boundaries.
+- Updated the Evidence States live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does not
+  prove evidence truth, prove source interpretation, prove artifact
+  correctness, create a support-state transition, promote the chapter support
+  state, or prove deployed release governance.
+- Current proof-depth snapshot: 163 proof targets, 54 Lean modules, 855 theorem declarations, 682 derived/decomposed, 169 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add Failure taxonomy detector and mitigation-boundary probe
 
 - Added `python3 scripts/validate_failure_taxonomy_detector_probe.py`,

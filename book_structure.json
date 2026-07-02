@@ -1198,9 +1198,14 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean route theorems; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, runtime-behavior, or support-state-promotion claim"
             },
+            {
+              "name": "Evidence bundle completeness and changelog-consistency probe",
+              "purpose": "Check two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition.",
+              "implementation_status": "implemented",
+              "result_status": "validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; synthetic-record and finite-Lean bridge only; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim"
+            },
             "Claim ledger completeness test",
-            "Evidence bundle completeness test",
-            "Changelog consistency audit"
+            "Accepted live transition review"
           ],
           "lean_module": "AsiStackProofs.EvidenceStates",
           "proof_targets": [
@@ -1220,6 +1225,12 @@
               "tag": "lean:evidence.support_state.transition_lifecycle_route",
               "module": "AsiStackProofs.EvidenceStates",
               "target": "A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:evidence.bundle.completeness_probe_bridge",
+              "module": "AsiStackProofs.EvidenceStates",
+              "target": "A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries.",
               "status": "implemented"
             }
           ]

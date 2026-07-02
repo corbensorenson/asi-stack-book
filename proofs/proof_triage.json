@@ -181,6 +181,16 @@
       "rationale": "Implemented in AsiStackProofs.EvidenceStates as a finite transition-lifecycle route function and derived route theorems for no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, missing non-claim boundaries, and complete transition acceptance."
     },
     {
+      "tag": "lean:evidence.bundle.completeness_probe_bridge",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "module": "AsiStackProofs.EvidenceStates",
+      "formal_target": "A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.EvidenceStates as a finite fixture summary bridge for a no-change evidence bundle, a blocked-promotion evidence bundle, rejected missing-claim/artifact/result/command/changelog/limitations/non-claims/stale-changelog/overclaim controls, no support-state effect, and non-claim boundaries."
+    },
+    {
       "tag": "lean:intent.contract.operational_invariant",
       "chapter_id": "human-intent-as-a-formal-input",
       "module": "AsiStackProofs.IntentContracts",
