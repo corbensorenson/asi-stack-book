@@ -37,6 +37,7 @@ Temporal is the closest durable-execution comparator for the Labor OS chapter be
 
 ## Book Chapters Supported
 
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work)
 - `labor-os-and-typed-jobs` (Labor OS and Typed Jobs)
 
 ## Claims To Add Or Update

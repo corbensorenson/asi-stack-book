@@ -4,7 +4,7 @@ chapter_id: "intent-to-execution-contracts"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-02"
 primary_sources:
   - "viea"
   - "talos"
@@ -17,6 +17,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Executed consolidation of `intent-to-execution-contracts` and `command-contracts-and-semantic-interfaces`; the old command-contract slug is preserved by a static redirect and the source chapter is archived for lineage."
   - "Source notes, schemas, fixtures, a synthetic plan-execution harness, and finite Lean predicates including a dispatch-route envelope and command-contract negative cases support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, or deployed execution safety."
+  - "External grounding now includes source-noted comparators for reasoning/action loops, planning languages, HTN planning, durable workflows, DAG orchestration, process notation, high-level system modeling, and program verification; these are comparator records only, not command-contract implementation evidence."
   - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
 
@@ -28,7 +29,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
+| Last updated | 2026-07-02 |
 | Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`, `cognitive_compilation` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -117,13 +118,20 @@ effect because a downstream node was dispatched, even though the original
 request never granted that authority.
 
 External comparators help position the argument but do not prove it. ReAct
-shows the importance of interleaving reasoning and action, while Dafny
-positions the value of explicit specifications and verification conditions.
-The ASI Stack destination chapter is not claiming either system has been
-reproduced here or that command contracts provide equivalent formal guarantees.
-It uses them as comparators while asking a systems question: what semantic
-record prevents a request, prompt, plan, job, artifact, and evidence update
-from losing their shared meaning?
+shows the importance of interleaving reasoning and action. PDDL and SHOP2
+position the value of explicit planning domains, problems, actions, task
+decomposition, and method selection. Temporal and Airflow position durable
+workflow execution, event histories, DAG scheduling, tasks, dependencies, and
+retry metadata. BPMN positions stakeholder-readable process notation and
+implementation-independent workflow diagrams. TLA+-style high-level system
+modeling and Dafny-style program verification position the value of explicit
+specifications, state-transition reasoning, and verification conditions.
+
+The ASI Stack destination chapter is not claiming any of those systems has
+been reproduced here or that command contracts provide equivalent formal
+guarantees. It uses them as comparators while asking a systems question: what
+semantic record prevents a request, prompt, plan, job, artifact, workflow
+step, runtime effect, and evidence update from losing their shared meaning?
 
 ## Core Claim
 
@@ -423,11 +431,16 @@ approval-service correctness, runtime execution correctness, model behavior, or
 source interpretation.
 
 External positioning: the destination treats `ext_react_2022` as an adjacent
-reasoning/action-trace baseline and `ext_dafny_2010` as an adjacent
-specification-and-verification-condition baseline. The comparison is about
-interfaces and evidence boundaries, not a claim that the ASI Stack has
-implemented ReAct behavior, Dafny-style verification, parser completeness,
-dispatcher correctness, or functional correctness.
+reasoning/action-trace baseline, `ext_pddl_1998` and `ext_shop2_2003` as
+planning-language and HTN-decomposition baselines, `ext_temporal_docs`,
+`ext_airflow_dag_docs`, and `ext_bpmn_2_0_2_spec` as workflow/process
+comparators, `ext_tla_plus_home_docs` as high-level system-modeling context,
+and `ext_dafny_2010` as a specification-and-verification-condition baseline.
+The comparison is about interfaces and evidence boundaries, not a claim that
+the ASI Stack has implemented ReAct behavior, PDDL/SHOP2 translation, Temporal
+workflow replay, Airflow DAG execution, BPMN conformance, TLA+ model checking,
+Dafny-style verification, parser completeness, dispatcher correctness, or
+functional correctness.
 
 ## Source crosswalk
 
@@ -441,6 +454,13 @@ The Corben/local source crosswalk is organized by lane:
 The external-source crosswalk stays comparator-only:
 
 - `ext_react_2022` for reasoning/action interleaving and action traces;
+- `ext_pddl_1998` and `ext_shop2_2003` for planning-language, domain/problem,
+  action-schema, task-decomposition, and method-selection boundaries;
+- `ext_temporal_docs`, `ext_airflow_dag_docs`, and
+  `ext_bpmn_2_0_2_spec` for durable workflow execution, event histories, DAG
+  scheduling, process notation, and workflow metadata;
+- `ext_tla_plus_home_docs` for high-level system-modeling and state-transition
+  discipline;
 - `ext_dafny_2010` for specification and verification-condition discipline.
 
 The adjacent human-intent chapter keeps its own comparator family:

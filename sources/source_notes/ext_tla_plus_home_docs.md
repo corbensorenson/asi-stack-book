@@ -38,6 +38,7 @@ This source belongs in the proof-envelope and planning chapters as an external r
 
 - `executable-specifications-and-lean-proof-envelope` (Executable Specifications and Lean Proof Envelope)
 - `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 

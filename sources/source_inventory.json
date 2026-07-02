@@ -1113,6 +1113,7 @@
     "layer": "planning_modeling",
     "chapter_targets": [
       "planning-as-a-control-layer",
+      "intent-to-execution-contracts",
       "cognitive-compilation-and-semantic-ir",
       "executable-specifications-and-lean-proof-envelope"
     ],
@@ -1130,6 +1131,7 @@
     "layer": "planning_htn",
     "chapter_targets": [
       "planning-as-a-control-layer",
+      "intent-to-execution-contracts",
       "cognitive-compilation-and-semantic-ir",
       "prototype-roadmap"
     ],
@@ -1410,6 +1412,7 @@
       "virtual-context-abi",
       "context-transactions-snapshots-mounts-and-taint",
       "verification-bandwidth-and-context-adequacy",
+      "the-efficient-asi-hypothesis",
       "resource-economics-and-token-budgets"
     ],
     "url": "https://arxiv.org/abs/2310.06839",
@@ -1449,6 +1452,7 @@
     "chapter_targets": [
       "executable-specifications-and-lean-proof-envelope",
       "planning-as-a-control-layer",
+      "intent-to-execution-contracts",
       "readiness-gates-residual-escrow-and-quarantine",
       "integrated-reference-architecture"
     ],
@@ -1656,6 +1660,7 @@
     "chapter_targets": [
       "routing-heads-and-specialist-cores",
       "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis",
       "integrated-reference-architecture"
     ],
     "url": "https://arxiv.org/abs/2006.16668",
@@ -1675,6 +1680,7 @@
     "chapter_targets": [
       "routing-heads-and-specialist-cores",
       "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis",
       "benchmark-ratchets-and-anti-goodhart-evidence"
     ],
     "url": "https://arxiv.org/abs/2101.03961",
@@ -1694,6 +1700,7 @@
     "chapter_targets": [
       "routing-heads-and-specialist-cores",
       "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis",
       "readiness-gates-residual-escrow-and-quarantine"
     ],
     "url": "https://arxiv.org/abs/2202.09368",
@@ -1732,6 +1739,7 @@
     "chapter_targets": [
       "routing-heads-and-specialist-cores",
       "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis",
       "open-research-agenda-and-bibliography-plan"
     ],
     "url": "https://arxiv.org/abs/2407.06204",
@@ -1770,6 +1778,7 @@
     "chapter_targets": [
       "routing-heads-and-specialist-cores",
       "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis",
       "readiness-gates-residual-escrow-and-quarantine",
       "benchmark-ratchets-and-anti-goodhart-evidence"
     ],
@@ -1790,6 +1799,7 @@
     "chapter_targets": [
       "routing-heads-and-specialist-cores",
       "resource-economics-and-token-budgets",
+      "the-efficient-asi-hypothesis",
       "policy-optimization-and-learning-from-feedback"
     ],
     "url": "https://arxiv.org/abs/2406.18665",
@@ -2274,7 +2284,8 @@
     "priority": "external_literature",
     "layer": "fast_generation",
     "chapter_targets": [
-      "fast-generation"
+      "fast-generation",
+      "the-efficient-asi-hypothesis"
     ],
     "url": "https://arxiv.org/abs/2211.17192",
     "notes": "Primary external paper for speculative decoding: a draft model proposes multiple tokens and a target model verifies them, giving an exact-distribution acceleration path under its assumptions.",
@@ -2291,7 +2302,8 @@
     "priority": "external_literature",
     "layer": "fast_generation",
     "chapter_targets": [
-      "fast-generation"
+      "fast-generation",
+      "the-efficient-asi-hypothesis"
     ],
     "url": "https://arxiv.org/abs/2404.19737",
     "notes": "Primary external paper for multi-token prediction as an auxiliary training objective and inference-time multi-token proposal mechanism.",
@@ -2308,7 +2320,8 @@
     "priority": "external_literature",
     "layer": "fast_generation",
     "chapter_targets": [
-      "fast-generation"
+      "fast-generation",
+      "the-efficient-asi-hypothesis"
     ],
     "url": "https://arxiv.org/abs/2401.10774",
     "notes": "Primary external paper for adding multiple decoding heads to an LLM and verifying tree-structured candidate continuations in parallel.",
@@ -2325,7 +2338,8 @@
     "priority": "external_literature",
     "layer": "fast_generation",
     "chapter_targets": [
-      "fast-generation"
+      "fast-generation",
+      "the-efficient-asi-hypothesis"
     ],
     "url": "https://arxiv.org/abs/2401.15077",
     "notes": "Primary external paper for feature-level speculative drafting and target-model verification as an acceleration mechanism.",
@@ -2853,6 +2867,7 @@
     "priority": "external_literature",
     "layer": "durable_execution",
     "chapter_targets": [
+      "intent-to-execution-contracts",
       "labor-os-and-typed-jobs"
     ],
     "url": "https://docs.temporal.io/temporal",
@@ -2868,6 +2883,7 @@
     "priority": "external_literature",
     "layer": "workflow_orchestration",
     "chapter_targets": [
+      "intent-to-execution-contracts",
       "labor-os-and-typed-jobs"
     ],
     "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html",
@@ -2883,6 +2899,7 @@
     "priority": "external_literature",
     "layer": "business_process_modeling",
     "chapter_targets": [
+      "intent-to-execution-contracts",
       "labor-os-and-typed-jobs"
     ],
     "url": "https://www.omg.org/spec/BPMN/2.0.2/",

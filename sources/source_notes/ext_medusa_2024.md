@@ -36,6 +36,7 @@ Medusa accelerates LLM generation by attaching multiple decoding heads that prop
 ## Book Chapters Supported
 
 - `fast-generation-architectures` (Fast Generation Architectures)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 
 ## Claims To Add Or Update
 

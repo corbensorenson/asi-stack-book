@@ -38,6 +38,7 @@ GShard belongs in the routing, MoECOT, and resource chapters as an external syst
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 
 ## Claims To Add Or Update

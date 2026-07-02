@@ -38,6 +38,7 @@ Hybrid LLM belongs in the routing, resource-economics, readiness-gate, and bench
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 

@@ -37,6 +37,7 @@ BPMN is the process-modeling comparator for the Labor OS chapter. It establishes
 
 ## Book Chapters Supported
 
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work)
 - `labor-os-and-typed-jobs` (Labor OS and Typed Jobs)
 
 ## Claims To Add Or Update

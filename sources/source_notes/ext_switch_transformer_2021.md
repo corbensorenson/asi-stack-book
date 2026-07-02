@@ -38,6 +38,7 @@ Switch Transformers belongs in the routing and resource chapters as an external 
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 
 ## Claims To Add Or Update

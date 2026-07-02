@@ -38,6 +38,7 @@ Expert Choice Routing belongs in the routing, MoECOT, resource-economics, and re
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 
 ## Claims To Add Or Update

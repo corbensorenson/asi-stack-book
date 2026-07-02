@@ -37,6 +37,7 @@ Airflow is a useful workflow-orchestration comparator because it exposes a matur
 
 ## Book Chapters Supported
 
+- `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work)
 - `labor-os-and-typed-jobs` (Labor OS and Typed Jobs)
 
 ## Claims To Add Or Update

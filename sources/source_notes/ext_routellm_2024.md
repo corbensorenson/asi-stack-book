@@ -38,6 +38,7 @@ RouteLLM belongs in the routing, MoECOT, resource-economics, and policy-optimiza
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 
 ## Claims To Add Or Update

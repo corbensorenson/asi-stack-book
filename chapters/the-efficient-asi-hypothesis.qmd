@@ -4,7 +4,7 @@ chapter_id: "the-efficient-asi-hypothesis"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-02"
 primary_sources:
   - "viea"
   - "rmi"
@@ -21,7 +21,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and nine of ten mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
   - "The costed_route_record fixture validates schema/example consistency only; the fixture now records route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims. `AsiStackProofs.Efficiency` adds finite negative cases for a lower-cost authorized quality-preserving candidate and open-obligation promotion without residual records, plus a finite efficiency-claim admission lifecycle route for missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, residual records, fallback routes, hidden-cost audits, benchmark or trace records, negative controls, evidence transitions, and non-claim boundaries. Route-search completeness, cost-estimate accuracy, residual-burden measurement, benchmark performance, and utility-preserving compression tests remain unimplemented."
-  - "No support-state promotion is implied by this drafting pass."
+  - "External grounding now includes source-noted comparators for sparse MoE systems, learned/query routing, prompt compression, speculative generation, and broad benchmarks; these are comparator records only, not reproduced efficiency evidence."
 ---
 
 ## Chapter status
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
+| Last updated | 2026-07-02 |
 | Primary source records | `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -72,9 +72,9 @@ Parameter count alone does not explain routing, context selectivity, procedural 
 
 A scale-only account has no native place to record why a cheap route was adequate, why a costly route was necessary, what quality predicate was satisfied, what verification was skipped, or what residual burden remains. It also makes benchmarks too easy to misuse. A benchmark gain can represent genuine capability, prompt overfitting, hidden context cost, more human correction, a larger model invoked in the background, or a compression decision that moved complexity into an uncounted repair stream.
 
-External comparison sharpens the accounting target. Sparse MoE work such as `ext_sparse_moe_2017` shows conditional computation as a scale-efficiency mechanism, FrugalGPT-style routing in `ext_frugalgpt_2023` frames query-dependent cost-quality tradeoffs, and BIG-bench in `ext_bigbench_2022` shows why broad task suites can pressure capability claims without resolving hidden route cost or residual burden. The route-ledger design uses those records as baseline vocabulary for routed cognition and benchmark pressure, not as reproduced efficiency evidence for the ASI Stack.
+External comparison sharpens the accounting target. Sparse MoE work such as `ext_sparse_moe_2017`, `ext_gshard_2020`, `ext_switch_transformer_2021`, `ext_expert_choice_routing_2022`, and the `ext_moe_llm_survey_2024` source note shows conditional computation, expert routing, sharding, communication overhead, stability, load balancing, and system constraints as efficiency surfaces. FrugalGPT-style routing in `ext_frugalgpt_2023`, Hybrid LLM in `ext_hybrid_llm_2024`, and RouteLLM in `ext_routellm_2024` frame query-dependent cost-quality tradeoffs and learned route selection. LongLLMLingua in `ext_longllmlingua_2023` frames prompt compression as a context-cost surface. Speculative decoding, multi-token prediction, Medusa, and EAGLE (`ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`) frame fast generation as a propose/verify/accept surface. BIG-bench in `ext_bigbench_2022` shows why broad task suites can pressure capability claims without resolving hidden route cost or residual burden. The route-ledger design uses those records as baseline vocabulary for routed cognition and benchmark pressure, not as reproduced efficiency evidence for the ASI Stack.
 
-Those external records also show the boundary of the claim. Conditional computation can reduce the amount of active model computation, but it does not by itself say whether the selected expert had authority, whether the route preserved a task predicate, or whether overload and fallback were recorded. Cost-aware cascades can reduce visible spend, but they can also omit verification, repair, provenance, or human-review costs if the record is too narrow. Broad benchmarks can reveal scale-sensitive behavior, but they cannot by themselves tell whether a cheaper route preserved the same predicate under the same authority ceiling. Efficient ASI treats those families as partial cost surfaces that need a shared accounting interface.
+Those external records also show the boundary of the claim. Conditional computation can reduce the amount of active model computation, but it does not by itself say whether the selected expert had authority, whether the route preserved a task predicate, or whether overload and fallback were recorded. Cost-aware cascades and learned routers can reduce visible spend, but they can also omit verification, repair, provenance, or human-review costs if the record is too narrow. Prompt compression and fast decoding can reduce context or latency cost, but they do not prove that downstream utility, citation faithfulness, tool authority, or residual obligations survived. Broad benchmarks can reveal scale-sensitive behavior, but they cannot by themselves tell whether a cheaper route preserved the same predicate under the same authority ceiling. Efficient ASI treats those families as partial cost surfaces that need a shared accounting interface.
 
 The route ledger plays the same role for efficiency that the claim ledger plays for belief: without a record, success is ambiguous. A useful efficiency claim names the task contract, quality predicate, chosen route, rejected lower-cost routes, verification result, fallback route, residual obligations, and final cost. Without those fields, "efficient" becomes an aesthetic judgment rather than an architecture property. For the human reader, the route ledger is the receipt that distinguishes a genuine saving from a cost that has merely been moved elsewhere.
 
@@ -268,6 +268,18 @@ These Lean hooks are implemented as finite-record predicates plus negative-case 
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 
 The crosswalk bounds efficiency claims: sources supply design language, while measured support requires route runs, baselines, costs, residuals, and negative results.
+
+### External comparator crosswalk
+
+The external comparator set is now wider than the original three-record anchor. It remains comparator-only: these sources define nearby mechanisms and failure pressures, while the ASI Stack still needs local route ledgers, baselines, negative controls, residual accounting, and accepted evidence transitions before any efficiency support-state promotion.
+
+| Comparator family | Source IDs | What Efficient ASI imports | Boundary |
+|---|---|---|---|
+| Sparse and distributed MoE | `ext_sparse_moe_2017`, `ext_gshard_2020`, `ext_switch_transformer_2021`, `ext_expert_choice_routing_2022`, `ext_moe_llm_survey_2024` | Conditional computation, expert routing, sharding, communication/stability cost, capacity/load pressure, and MoE taxonomy. | No local MoE training, router-quality measurement, sparse-model benchmark, or distributed-system result. |
+| Query and learned routing | `ext_frugalgpt_2023`, `ext_hybrid_llm_2024`, `ext_routellm_2024` | Cost-quality cascades, query-difficulty routing, stronger/weaker model routing, and preference-data route learning. | No reproduced costs, query datasets, route policies, preference training, or route optimality claim. |
+| Context and representation compression | `ext_longllmlingua_2023` plus local `cgs`, `rankfold_neuralfold`, and `bbvca_v9` | Context-cost pressure, prompt compression, residual burden, fallback, and repair accounting. | No local prompt-compression benchmark, compression ratio, semantic-utility result, or repair-cost measurement. |
+| Fast generation | `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024` | Draft/verify/accept accounting, future-token proposal heads, multi-head candidate generation, feature-level drafting, acceptance rate, and verifier cost. | No local speedup, quality preservation, distribution-preservation audit, MTP model, or workload transfer claim. |
+| Benchmark pressure | `ext_bigbench_2022` | Broad capability-suite pressure and the need to separate score, cost, residuals, and hidden route work. | No BIG-bench reproduction, benchmark score, or general capability claim. |
 
 ## Summary
 

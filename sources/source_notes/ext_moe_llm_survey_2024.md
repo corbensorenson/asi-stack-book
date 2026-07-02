@@ -38,6 +38,7 @@ This survey belongs in the routing, MoECOT, resource-economics, and open-researc
 
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 
 ## Claims To Add Or Update

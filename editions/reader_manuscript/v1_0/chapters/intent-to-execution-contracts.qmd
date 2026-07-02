@@ -83,6 +83,18 @@ use: lifecycle state, artifact identity, authority, evidence, refusal
 conditions, and residuals must be visible before a response is treated as
 work.
 
+Planning languages and workflow systems sharpen the same point from another
+angle. PDDL and SHOP2 show why domains, problems, actions, tasks, and methods
+benefit from explicit structure before planners search. Temporal and Airflow
+show why durable workflows, event histories, DAGs, task states, retries, and
+workers matter when work spans time. BPMN shows that humans also need readable
+process notation. TLA+ and Dafny show why system state and program contracts
+can be modeled before implementation is trusted. The command-contract layer
+does not claim to replace or reproduce any of them. It asks what extra record
+an AI stack needs so those kinds of plans, workflows, and specifications do
+not lose human authority, artifact identity, approval state, verification
+duties, and residual ownership.
+
 Prompt discipline helps, but prompts alone are not enough. A strong prompt can
 shape a response. It cannot by itself prove that constraints survived
 planning, that side effects were authorized, that an artifact was accepted, or

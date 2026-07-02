@@ -36,6 +36,7 @@ Multi-token prediction trains a model to predict several future tokens from each
 ## Book Chapters Supported
 
 - `fast-generation-architectures` (Fast Generation Architectures)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 
 ## Claims To Add Or Update
 

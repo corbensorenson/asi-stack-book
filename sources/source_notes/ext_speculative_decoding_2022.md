@@ -36,6 +36,7 @@ Speculative decoding treats slow autoregressive decoding as a serial bottleneck 
 ## Book Chapters Supported
 
 - `fast-generation-architectures` (Fast Generation Architectures)
+- `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 
 ## Claims To Add Or Update
 
