@@ -218,6 +218,14 @@ metadata, and a failed regression blocks promotion in the model. Those hooks are
 useful, but they do not prove deployed replacement execution, real regression
 suite coverage, monitor-window behavior, or rollback execution.
 
+There is also now a capability replacement trace probe. It uses a baseline
+implementation, a candidate kept in canary, a synthetic monitor trigger, a
+rollback dry run, and residual records. Three bad controls are rejected:
+authority widening, failed regression, and missing rollback. That makes the
+transaction shape easier to inspect, but it is not a deployed replacement, not
+a production rollback, not a monitor-quality result, and not a support-state
+transition.
+
 ## Failure Modes
 
 Regression deletion is the classic false improvement. The candidate moves the

@@ -705,4 +705,63 @@ theorem complete_replacement_lifecycle_commits_default
     noIrreversible, ownerPresent, noDeprecation, noRetirement, boundaryPresent,
     defaultRequested]
 
+structure ReplacementTraceProbeSummary where
+  traceStepCount : Nat
+  traceTransactionCount : Nat
+  negativeControlCount : Nat
+  canaryKeptNonDefault : Bool
+  monitorTriggerRollbackPresent : Bool
+  rollbackDryRunPresent : Bool
+  authorityWideningRejected : Bool
+  failedRegressionRejected : Bool
+  missingRollbackRejected : Bool
+  residualsRecorded : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def ReplacementTraceProbeValid
+    (summary : ReplacementTraceProbeSummary) : Prop :=
+  summary.traceStepCount = 6 ∧
+    summary.traceTransactionCount = 2 ∧
+      summary.negativeControlCount = 3 ∧
+        summary.canaryKeptNonDefault = true ∧
+          summary.monitorTriggerRollbackPresent = true ∧
+            summary.rollbackDryRunPresent = true ∧
+              summary.authorityWideningRejected = true ∧
+                summary.failedRegressionRejected = true ∧
+                  summary.missingRollbackRejected = true ∧
+                    summary.residualsRecorded = true ∧
+                      summary.supportStateEffectNone = true ∧
+                        summary.nonClaimBoundary = true
+
+def replacementTraceProbeFixture : ReplacementTraceProbeSummary := {
+  traceStepCount := 6
+  traceTransactionCount := 2
+  negativeControlCount := 3
+  canaryKeptNonDefault := true
+  monitorTriggerRollbackPresent := true
+  rollbackDryRunPresent := true
+  authorityWideningRejected := true
+  failedRegressionRejected := true
+  missingRollbackRejected := true
+  residualsRecorded := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+}
+
+theorem replacement_trace_probe_fixture_valid :
+    ReplacementTraceProbeValid replacementTraceProbeFixture := by
+  unfold ReplacementTraceProbeValid replacementTraceProbeFixture
+  simp
+
+theorem replacement_trace_probe_rejects_authority_widening :
+    replacementTraceProbeFixture.authorityWideningRejected = true := by
+  rfl
+
+theorem replacement_trace_probe_preserves_no_promotion_boundary :
+    replacementTraceProbeFixture.supportStateEffectNone = true ∧
+      replacementTraceProbeFixture.nonClaimBoundary = true := by
+  exact And.intro rfl rfl
+
 end AsiStackProofs.Replacement

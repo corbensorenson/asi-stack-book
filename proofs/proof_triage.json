@@ -351,6 +351,16 @@
       "rationale": "Implemented in AsiStackProofs.Replacement as finite transaction and lifecycle route functions with derived route theorems for missing artifacts, identity mismatch, authority expansion without approval, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canary, missing monitor windows, monitor incident, missing rollback handles, missing rollback receipts, failed rollback dry run, unowned irreversible effects, missing residual owners, deprecation notice gaps, retirement receipt gaps, missing non-claim boundaries, and complete default-review cases."
     },
     {
+      "tag": "lean:replacement.transaction.trace_probe_bridge",
+      "chapter_id": "capability-replacement-and-rollback",
+      "module": "AsiStackProofs.Replacement",
+      "formal_target": "The deterministic replacement trace probe records six trace steps, two valid synthetic transactions, three rejected negative controls, a canary kept non-default, a monitor-triggered rollback, rollback dry run, residuals, no support-state effect, and non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Replacement as a finite synthetic trace-summary mirror: it records trace counts, canary non-default status, monitor-triggered rollback, rollback dry-run presence, rejected negative controls, residuals, no-support-effect status, and non-claim boundary only, without proving deployed replacement behavior, monitor quality, regression-suite quality, production rollback, or chapter-core support movement."
+    },
+    {
       "tag": "lean:security.scif.operational_invariant",
       "chapter_id": "security-kernel-and-digital-scifs",
       "module": "AsiStackProofs.SecurityKernel",

@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Add capability replacement trace probe
+
+- Added `python3 scripts/validate_capability_replacement_trace_probe.py`,
+  `docs/capability_replacement_trace_probe.md`, and
+  `experiments/capability_replacement_trace/results/2026-07-02-local.json`
+  for a deterministic replacement trace with a baseline implementation,
+  non-default canary, two valid synthetic replacement transactions, three
+  expected-invalid controls for authority widening, failed regression, and
+  missing rollback, monitor-triggered rollback, rollback dry run, residuals,
+  and no support-state promotion.
+- Added `lean:replacement.transaction.trace_probe_bridge` in
+  `AsiStackProofs.Replacement`, with a finite Lean mirror for trace counts,
+  canary non-default status, monitor-triggered rollback, rejected controls,
+  residuals, no-support-effect status, and non-claim boundary.
+- Updated the Capability Replacement live chapter, curated reader chapter,
+  outline, manifest, roadmap, proof/test surfaces, and validation wiring. This
+  does not execute deployed or runtime replacement behavior, prove regression-suite or
+  monitor quality, execute production rollback, promote the chapter core claim,
+  or create a support-state transition.
+
 ## 2026-07-02 - Add proof-depth surface synchronization
 
 - Added `python3 scripts/validate_proof_depth_surface.py` and wired it into
@@ -7,8 +27,8 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 151 proof targets, 54 Lean modules, 835
-  theorem declarations, 672 derived/decomposed, 159 direct/projection, 4
+- Current proof-depth snapshot: 152 proof targets, 54 Lean modules, 838
+  theorem declarations, 673 derived/decomposed, 161 direct/projection, 4
   unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate

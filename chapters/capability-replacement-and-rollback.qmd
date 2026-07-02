@@ -4,7 +4,7 @@ chapter_id: "capability-replacement-and-rollback"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-02"
 primary_sources:
   - "scf"
   - "rmi"
@@ -17,8 +17,8 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Five local raw-cache claim-source mappings now carry reviewed passage references, but moecot remains connector/recovery-only and support remains at argument until tests, runtime artifacts, or accepted evidence transitions justify promotion."
   - "Source-noted external comparators now ground progressive delivery, Kubernetes rollout history, feature-flag canary exposure, and MLOps model-delivery/regression-gating vocabulary; no Argo Rollouts, Kubernetes Deployment, feature-flag platform, ML pipeline, model rollout, or production rollback was run from this repository."
-  - "The capability replacement harness now validates 5 valid and 9 expected-invalid synthetic replacement-transaction fixtures, including model-rollout data/schema/model/serving/monitor gates, baseline regression floors, monitor-trigger rollback conditions, irreversible-effect ownership, and non-claim boundaries; the readiness/residual gate harness validates synthetic regression-preservation and rollback-dry-run blockers, and Lean checks finite replacement-transaction and lifecycle route envelopes, but deployed replacement execution, production model rollout, monitor-window evidence, model-monitor behavior, and real rollback execution remain unimplemented."
-  - "The implemented Replacement Lean predicates cover finite commit, transaction-review, and lifecycle-review records only; they do not prove deployed replacement execution, monitor-window behavior, regression-suite quality, or rollback execution."
+  - "The capability replacement harness now validates 5 valid and 9 expected-invalid synthetic replacement-transaction fixtures, including model-rollout data/schema/model/serving/monitor gates, baseline regression floors, monitor-trigger rollback conditions, irreversible-effect ownership, and non-claim boundaries; the readiness/residual gate harness validates synthetic regression-preservation and rollback-dry-run blockers; the Capability replacement trace probe records two valid synthetic trace transactions plus three rejected negative controls; and Lean checks finite replacement-transaction, lifecycle route, and trace-probe summary envelopes. Deployed replacement execution, production model rollout, monitor-window evidence, model-monitor behavior, regression-suite quality, and real rollback execution remain unimplemented."
+  - "The implemented Replacement Lean predicates cover finite commit, transaction-review, lifecycle-review, and trace-summary records only; they do not prove deployed replacement execution, monitor-window behavior, regression-suite quality, or rollback execution."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -30,14 +30,14 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
+| Last updated | 2026-07-02 |
 | Primary source records | `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; external comparators: `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot`, `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs`; raw cache: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`; connector/recovery: `moecot` |
 | Source mapping review | Five local raw-cache mappings are passage-reviewed; `moecot` remains connector-only/source-note mapped. |
-| Test state | `replacement_transaction.valid.json` passes protocol fixture validation; `python3 scripts/validate_capability_replacement.py` validates 5 valid and 9 expected-invalid synthetic replacement-transaction fixtures, including model-rollout gates and irreversible-effect ownership controls; `AsiStackProofs.Replacement` builds locally with commit, transaction-route, and lifecycle-route predicates; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic regression-preservation and rollback-dry-run blockers. Real regression-suite coverage, deployed replacement execution, production model rollout, monitor-window evidence, model-monitor behavior, and production rollback remain planned. |
+| Test state | `replacement_transaction.valid.json` passes protocol fixture validation; `python3 scripts/validate_capability_replacement.py` validates 5 valid and 9 expected-invalid synthetic replacement-transaction fixtures, including model-rollout gates and irreversible-effect ownership controls; `python3 scripts/validate_capability_replacement_trace_probe.py` validates `experiments/capability_replacement_trace/results/2026-07-02-local.json`, a deterministic replacement trace with two valid synthetic transactions, three expected-invalid controls, a canary kept non-default, monitor-triggered rollback, residuals, and no support-state promotion; `AsiStackProofs.Replacement` builds locally with commit, transaction-route, lifecycle-route, and trace-probe predicates; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic regression-preservation and rollback-dry-run blockers. Real regression-suite coverage, deployed replacement execution, production model rollout, monitor-window evidence, model-monitor behavior, and production rollback remain planned. |
 
 ## Drafting guardrail
 
@@ -219,6 +219,8 @@ The current synthetic harness extends that slice to model-rollout records: canar
 
 A replacement trace should be the first moving piece: proposal, shadow run, canary with regression floor, failed rollback dry run that blocks default promotion, and a successful rollback receipt for a separate reversible candidate.
 
+The Capability replacement trace probe at `experiments/capability_replacement_trace/results/2026-07-02-local.json` supplies that first bounded moving piece. It records a baseline implementation, a candidate kept in non-default canary state, a synthetic monitor trigger, rollback to the prior implementation, residual escrow, and three expected-invalid controls for authority widening, failed regression, and missing rollback. `python3 scripts/validate_capability_replacement_trace_probe.py` replays the trace summary, and `lean:replacement.transaction.trace_probe_bridge` mirrors its finite counts and boundaries. It is no deployed replacement execution, no production rollback, no monitor-quality result, no regression-suite-quality result, no model-rollout result, and no support-state transition.
+
 That trace should keep boring regressions visible: cost, permissions, logging, context use, human review, and export/fork rights. A candidate that improves frontier task score while weakening any of those fields should remain canary-only or rejected until the regression is repaired.
 
 The current formal slice models only finite records after replacement-review fields exist, but it now covers both transaction routing and lifecycle admission. It checks that missing artifacts reject the proposal; identity mismatches, failed regression floors, and failed regressions quarantine candidates; authority widening without governance and evaluator capture route to review; stale evidence, missing canary scope, missing monitor windows, missing rollback handles, and missing rollback receipts block promotion; failed canaries and failed rollback dry runs stay canary-only; monitor incidents require rollback; unowned irreversible effects and missing residual owners block admission; deprecation and retirement require notices or receipts; missing non-claim boundaries block promotion; and complete records can commit default. It does not run a real replacement, measure regression quality, observe a monitor window, or execute rollback.
@@ -243,6 +245,7 @@ The book should treat that product surface as a design destination rather than a
 | Regression preservation test | Check that known regressions remain attached to the candidate decision. | implemented by readiness/residual gate harness for synthetic failed-regression and missing-regression blockers; real regression suite not run |
 | Rollback execution dry run | Check that rollback metadata exists before default promotion. | implemented by readiness/residual gate harness for rollback dry-run status requirements; production rollback not executed |
 | Replacement transaction and lifecycle route proof | Check that finite transaction and lifecycle records route missing artifacts, identity mismatches, stale evidence, failed regression floors, authority widening, evaluator capture, canary failures, monitor incidents, rollback-handle gaps, rollback dry-run failures, unowned irreversible effects, missing residual owners, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion. | implemented in Lean; finite records only |
+| Capability replacement trace probe | Check a deterministic replacement trace with baseline implementation, non-default canary, monitor-triggered rollback, rollback dry run, residuals, expected-invalid controls, and no support-state promotion. | implemented by `python3 scripts/validate_capability_replacement_trace_probe.py` over `experiments/capability_replacement_trace/results/2026-07-02-local.json`; no deployed replacement behavior, production rollback, monitor-quality, regression-suite-quality, or support-state claim |
 
 ### Formalization hooks
 
@@ -251,8 +254,9 @@ The book should treat that product surface as a design destination rather than a
 | `lean:replacement.transaction.operational_invariant` | `AsiStackProofs.Replacement` | A replacement commit requires qualification evidence and rollback metadata. | implemented |
 | `lean:replacement.transaction.failure_blocks_promotion` | `AsiStackProofs.Replacement` | A failed regression blocks promotion of the replacement. | implemented |
 | `lean:replacement.transaction.route_envelope` | `AsiStackProofs.Replacement` | Structured replacement transaction and lifecycle reviews route missing artifacts, identity mismatches, stale evidence, regression-floor failures, authority widening, evaluator capture, canary failures, monitor incidents, rollback gaps, irreversible-effect ownership gaps, residual-owner gaps, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion. | implemented |
+| `lean:replacement.transaction.trace_probe_bridge` | `AsiStackProofs.Replacement` | The deterministic replacement trace probe records six trace steps, two valid synthetic transactions, three rejected negative controls, a canary kept non-default, a monitor-triggered rollback, rollback dry run, residuals, no support-state effect, and non-claim boundary. | implemented |
 
-These proof targets are implemented only over finite Lean replacement-commit, transaction-review, and lifecycle-review records in `AsiStackProofs.Replacement`. They prove that a modeled promotion carries qualification evidence and rollback metadata, that a failed regression blocks promotion in the model, and that selected transaction and lifecycle failures route away from default promotion. They do not prove deployed replacement execution, regression-suite coverage or quality, monitor-window behavior, or rollback execution.
+These proof targets are implemented only over finite Lean replacement-commit, transaction-review, lifecycle-review, and trace-summary records in `AsiStackProofs.Replacement`. They prove that a modeled promotion carries qualification evidence and rollback metadata, that a failed regression blocks promotion in the model, that selected transaction and lifecycle failures route away from default promotion, and that the synthetic trace summary carries the expected counts and non-claim boundary. They do not prove deployed replacement execution, regression-suite coverage or quality, monitor-window behavior, or rollback execution.
 
 ## Source crosswalk
 

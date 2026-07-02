@@ -2256,6 +2256,13 @@
               "status": "implemented in Lean; finite structured-record route only",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; no deployed replacement execution claim"
+            },
+            {
+              "name": "Capability replacement trace probe",
+              "purpose": "Check a deterministic replacement trace with a baseline implementation, non-default canary, monitor-triggered rollback, residuals, expected-invalid controls, and no support-state promotion.",
+              "status": "implemented by `python3 scripts/validate_capability_replacement_trace_probe.py`; deterministic fixture only; no deployed replacement behavior, production rollback, regression-suite quality, monitor-quality, or support-state promotion",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `experiments/capability_replacement_trace/results/2026-07-02-local.json`; no runtime replacement, production rollback, or support-state claim"
             }
           ],
           "lean_module": "AsiStackProofs.Replacement",
@@ -2276,6 +2283,12 @@
               "tag": "lean:replacement.transaction.route_envelope",
               "module": "AsiStackProofs.Replacement",
               "target": "Structured replacement transaction and lifecycle reviews route missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, irreversible-effect ownership gaps, residual-owner gaps, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:replacement.transaction.trace_probe_bridge",
+              "module": "AsiStackProofs.Replacement",
+              "target": "The deterministic replacement trace probe records six trace steps, two valid synthetic transactions, three rejected negative controls, a canary kept non-default, a monitor-triggered rollback, rollback dry run, residuals, no support-state effect, and non-claim boundary.",
               "status": "implemented"
             }
           ],

@@ -1,0 +1,224 @@
+{
+  "schema_version": "asi_stack.capability_replacement_trace_probe.v0",
+  "result_id": "2026-07-02-capability-replacement-trace-probe",
+  "recorded_date": "2026-07-02",
+  "command": "python3 scripts/validate_capability_replacement_trace_probe.py",
+  "result_kind": "deterministic_synthetic_replacement_trace",
+  "trace_step_count": 6,
+  "trace_steps": [
+    "proposal",
+    "shadow_run",
+    "canary_with_regression_floor",
+    "monitor_trigger",
+    "rollback_dry_run",
+    "residual_and_no_promotion_record"
+  ],
+  "baseline_implementation": "impl://bounded-router-v0-stable",
+  "candidate_implementation": "impl://bounded-router-v1-canary",
+  "valid_trace_transaction_count": 2,
+  "replacement_transactions": [
+    {
+      "transaction_id": "replacement://trace-probe-router-canary-2026-07-02",
+      "transaction_state": "canary",
+      "field_id": "field://bounded-router-capability",
+      "prior_implementation": "impl://bounded-router-v0-stable",
+      "candidate_implementation": "impl://bounded-router-v1-canary",
+      "identity_preservation": "same field identity and unchanged external authority envelope",
+      "precheck_results": [
+        "data validation passed for synthetic trace inputs",
+        "schema validation passed for replacement transaction record",
+        "model identity check not applicable; route policy artifact hash recorded",
+        "serving integration not run; canary scope is fixture-only"
+      ],
+      "qualification_evidence": [
+        "evidence://trace-probe-shadow-run",
+        "evidence://baseline regression floor preserved in synthetic trace"
+      ],
+      "regression_results": [
+        "baseline regression floor preserved for permission, logging, context, human review, and export/fork obligations"
+      ],
+      "authority_check": "candidate remains within same authority boundary and does not expand route permissions",
+      "evaluator_independence": "separate fixture validator reviews candidate evidence; candidate does not self-attest",
+      "residual_escrow": [
+        "residual: no real regression suite, deployed route, or production monitor exists",
+        "residual: default promotion blocked until live monitor and rollback evidence exist"
+      ],
+      "rollback_plan": "restore impl://bounded-router-v0-stable through fixture rollback handle",
+      "rollback_receipt": {
+        "prior_artifact": "impl://bounded-router-v0-stable",
+        "state_migration_status": "reversible fixture state only",
+        "reversible_fields": [
+          "route_table",
+          "permission_envelope",
+          "audit_policy"
+        ],
+        "irreversible_effects": [],
+        "dry_run_status": "pass",
+        "trigger_conditions": [
+          "monitor regression",
+          "authority widening",
+          "schema drift"
+        ],
+        "owner": "reviewer://replacement-trace-fixture"
+      },
+      "approval_record": "human-review-required-before-default",
+      "canary_scope": "synthetic canary over replacement trace fixture only",
+      "monitor_window": "synthetic six-step trace monitor",
+      "monitor_status": "active",
+      "decision": "canary",
+      "promotion_blockers": [
+        "default promotion blocked until monitor pass and independent review",
+        "chapter support-state remains unchanged"
+      ],
+      "source_refs": [
+        "docs/capability_replacement_trace_probe.md",
+        "experiments/capability_replacement_trace/results/2026-07-02-local.json"
+      ],
+      "support_state_effect": "eligible_for_canary_review",
+      "non_claims": [
+        "does not execute deployed or runtime replacement behavior",
+        "does not prove regression-suite quality or monitor quality",
+        "does not execute production rollback",
+        "does not promote the Capability Replacement chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "transaction_id": "replacement://trace-probe-router-rollback-2026-07-02",
+      "transaction_state": "rolled_back",
+      "field_id": "field://bounded-router-capability",
+      "prior_implementation": "impl://bounded-router-v0-stable",
+      "candidate_implementation": "impl://bounded-router-v1-canary",
+      "identity_preservation": "same field identity restored after monitor trigger",
+      "precheck_results": [
+        "data validation passed for synthetic trace inputs",
+        "schema validation passed for rollback transaction record",
+        "serving integration not run; rollback is fixture-only",
+        "monitor trigger coverage recorded for regression event"
+      ],
+      "qualification_evidence": [
+        "evidence://trace-probe-monitor-trigger",
+        "evidence://rollback-handle-dry-run-pass"
+      ],
+      "regression_results": [
+        "baseline regression floor failure detected in synthetic monitor; candidate blocked from default"
+      ],
+      "authority_check": "rollback restores same authority boundary and does not expand route permissions",
+      "evaluator_independence": "separate fixture validator reviews rollback trigger and receipt",
+      "residual_escrow": [
+        "residual: monitor quality and deployed rollback behavior remain untested",
+        "residual: support-state effect remains none for chapter core claim"
+      ],
+      "rollback_plan": "rollback restores impl://bounded-router-v0-stable after monitor trigger",
+      "rollback_receipt": {
+        "prior_artifact": "impl://bounded-router-v0-stable",
+        "state_migration_status": "reversible fixture state restored",
+        "reversible_fields": [
+          "route_table",
+          "permission_envelope",
+          "audit_policy"
+        ],
+        "irreversible_effects": [],
+        "dry_run_status": "pass",
+        "trigger_conditions": [
+          "monitor regression",
+          "baseline floor failure"
+        ],
+        "owner": "reviewer://replacement-trace-fixture"
+      },
+      "approval_record": "rollback://fixture-monitor-trigger",
+      "canary_scope": "synthetic canary over replacement trace fixture only",
+      "monitor_window": "synthetic six-step trace monitor",
+      "monitor_status": "fail",
+      "decision": "rollback",
+      "promotion_blockers": [
+        "monitor trigger requires rollback",
+        "candidate cannot become default in this trace"
+      ],
+      "source_refs": [
+        "docs/capability_replacement_trace_probe.md",
+        "experiments/capability_replacement_trace/results/2026-07-02-local.json"
+      ],
+      "support_state_effect": "blocks_promotion",
+      "non_claims": [
+        "does not execute deployed or runtime replacement behavior",
+        "does not prove regression-suite quality or monitor quality",
+        "does not execute production rollback",
+        "does not promote the Capability Replacement chapter core claim",
+        "does not create a support-state transition"
+      ]
+    }
+  ],
+  "negative_control_count": 3,
+  "negative_controls": [
+    {
+      "control_id": "replacement-control://authority-widening",
+      "authority_within_field": false,
+      "regression_floor_preserved": true,
+      "rollback_dry_run_passed": true,
+      "residual_owner_present": true,
+      "rejected": true
+    },
+    {
+      "control_id": "replacement-control://failed-regression",
+      "authority_within_field": true,
+      "regression_floor_preserved": false,
+      "rollback_dry_run_passed": true,
+      "residual_owner_present": true,
+      "rejected": true
+    },
+    {
+      "control_id": "replacement-control://missing-rollback",
+      "authority_within_field": true,
+      "regression_floor_preserved": true,
+      "rollback_dry_run_passed": false,
+      "residual_owner_present": true,
+      "rejected": true
+    }
+  ],
+  "trace_assertions": {
+    "canary_kept_non_default": true,
+    "monitor_trigger_routes_to_rollback": true,
+    "rollback_dry_run_present": true,
+    "residuals_recorded": true,
+    "authority_widening_rejected": true,
+    "failed_regression_rejected": true,
+    "missing_rollback_rejected": true,
+    "support_state_effect_none": true,
+    "non_claim_boundary": true
+  },
+  "lean_fixture_alignment": {
+    "module": "AsiStackProofs.Replacement",
+    "proof_tag": "lean:replacement.transaction.trace_probe_bridge",
+    "theorem_refs": [
+      "replacement_trace_probe_fixture_valid",
+      "replacement_trace_probe_rejects_authority_widening",
+      "replacement_trace_probe_preserves_no_promotion_boundary"
+    ],
+    "expected": {
+      "step_count": 6,
+      "trace_transaction_count": 2,
+      "negative_control_count": 3,
+      "canary_kept_non_default": true,
+      "monitor_trigger_rollback_present": true,
+      "rollback_dry_run_present": true,
+      "authority_widening_rejected": true,
+      "failed_regression_rejected": true,
+      "missing_rollback_rejected": true,
+      "residuals_recorded": true,
+      "support_state_effect_none": true,
+      "non_claim_boundary": true
+    }
+  },
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "verification_result": "pass",
+  "non_claims": [
+    "does not execute deployed or runtime replacement behavior",
+    "does not prove regression-suite quality or monitor quality",
+    "does not execute production rollback",
+    "does not promote the Capability Replacement chapter core claim",
+    "does not create a support-state transition"
+  ]
+}
