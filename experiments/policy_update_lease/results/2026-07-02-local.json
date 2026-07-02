@@ -1,0 +1,166 @@
+{
+  "schema_version": "asi_stack.policy_update_lease_probe.v0",
+  "result_id": "2026-07-02-policy-update-lease-probe",
+  "recorded_date": "2026-07-02",
+  "command": "python3 scripts/validate_policy_update_lease_probe.py",
+  "result_kind": "deterministic_synthetic_policy_update_lease_probe",
+  "workload_sample_count": 6,
+  "holdout_sample_count": 2,
+  "candidate_count": 5,
+  "selected_policy_ref": "policy://router-v1-source-grounded-canary",
+  "baseline_policy_ref": "policy://router-v0-baseline",
+  "selected_canary_eligible": true,
+  "selected_canary_promotion_decision": "keep_experimental",
+  "baseline_eligible": true,
+  "negative_controls": {
+    "reward_only_proxy_rejected": true,
+    "authority_expansion_rejected": true,
+    "missing_rollback_rejected": true
+  },
+  "candidate_summaries": [
+    {
+      "policy_ref": "policy://router-v0-baseline",
+      "role": "baseline",
+      "eligible_for_canary_lease": true,
+      "synthetic_score": 8,
+      "authority_effect": "unchanged",
+      "rollback_plan_present": true
+    },
+    {
+      "policy_ref": "policy://router-v1-source-grounded-canary",
+      "role": "selected_canary",
+      "eligible_for_canary_lease": true,
+      "synthetic_score": 11,
+      "authority_effect": "unchanged",
+      "rollback_plan_present": true
+    },
+    {
+      "policy_ref": "policy://router-v1-reward-only-fast-route",
+      "role": "expected_invalid_reward_only_proxy",
+      "eligible_for_canary_lease": false,
+      "synthetic_score": 14,
+      "authority_effect": "unchanged",
+      "rollback_plan_present": true
+    },
+    {
+      "policy_ref": "policy://router-v1-authority-expanding-route",
+      "role": "expected_invalid_authority_expansion",
+      "eligible_for_canary_lease": false,
+      "synthetic_score": 12,
+      "authority_effect": "requires_review",
+      "rollback_plan_present": true
+    },
+    {
+      "policy_ref": "policy://router-v1-missing-rollback-route",
+      "role": "expected_invalid_missing_rollback",
+      "eligible_for_canary_lease": false,
+      "synthetic_score": 13,
+      "authority_effect": "unchanged",
+      "rollback_plan_present": false
+    }
+  ],
+  "rollback_dry_run": {
+    "injected_event_id": "monitor://policy-lease-rollback-injection-001",
+    "selected_policy_ref": "policy://router-v1-source-grounded-canary",
+    "restored_policy_ref": "policy://router-v0-baseline",
+    "rollback_trigger": "synthetic monitor event; no live deployment or router was changed",
+    "rollback_result": "baseline_restored_in_fixture"
+  },
+  "policy_update_record": {
+    "update_id": "policy-update-lease-probe-2026-07-02",
+    "update_state": "canary",
+    "target_layer": "router",
+    "policy_ref": "policy://router-v1-source-grounded-canary",
+    "policy_delta_summary": "Synthetic router-policy lease keeps source-grounded tasks on the grounded route and preserves approval-first handling for high-risk tasks.",
+    "training_mode": "not_run",
+    "feedback_source": "synthetic router-policy lease fixture",
+    "feedback_admissibility": "admissible_for_canary",
+    "reward_or_preference_signal": "toy score over six synthetic routing samples",
+    "reward_boundary": "The score cannot stand in for route quality, policy improvement, authority, verifier quality, or deployment readiness.",
+    "verifier_refs": [
+      "validator://validate_policy_update_lease_probe.route-boundary",
+      "validator://validate_policy_update_lease_probe.rollback-dry-run"
+    ],
+    "reward_hacking_probes": [
+      "probe://reward-only-fast-route-rejected",
+      "probe://authority-expanding-route-rejected",
+      "probe://missing-rollback-route-rejected"
+    ],
+    "update_constraint": "synthetic canary lease only; no optimizer, weights, or live router changed",
+    "drift_bound": "candidate must preserve source-grounding, approval, governance, and rollback fields",
+    "holdout_refs": [
+      "sample://ambiguous-high-risk-approval",
+      "sample://medical-advice-boundary"
+    ],
+    "regression_refs": [
+      "sample://routine-source-grounded-summary",
+      "sample://citation-sensitive-claim"
+    ],
+    "evaluation_refs": [
+      "experiments/policy_update_lease/results/2026-07-02-local.json"
+    ],
+    "governance_gate_refs": [
+      "scf://policy-update-lease-no-promotion"
+    ],
+    "authority_effect": "unchanged",
+    "rollback_plan": "Dry-run rollback restores policy://router-v0-baseline when the synthetic monitor injection trips the rollback condition.",
+    "monitor_window": "synthetic six-sample canary window plus one injected rollback event",
+    "evidence_packet_refs": [
+      "docs/policy_update_lease_probe.md",
+      "experiments/policy_update_lease/results/2026-07-02-local.json"
+    ],
+    "deployment_scope": "none; local deterministic fixture only",
+    "promotion_decision": "keep_experimental",
+    "measurement_status": "run",
+    "support_state_effect": "none",
+    "residuals": [
+      "No real router, preference dataset, reward model, RL run, or deployment monitor exists.",
+      "The fixture exercises governance fields and negative controls only."
+    ],
+    "non_claims": [
+      "does not run PPO, DPO, GRPO, RLVR, or any optimizer",
+      "does not prove policy improvement, reward quality, or route quality",
+      "does not execute a deployed canary or live rollback",
+      "does not promote the Policy Optimization chapter core claim",
+      "does not create a support-state transition"
+    ]
+  },
+  "lean_fixture_alignment": {
+    "module": "AsiStackProofs.PolicyOptimization",
+    "proof_tag": "lean:policy_optimization.lease_probe_fixture_bridge",
+    "theorem_refs": [
+      "policy_update_lease_probe_fixture_valid",
+      "policy_update_lease_probe_rejects_reward_only_proxy",
+      "policy_update_lease_probe_preserves_rollback_boundary"
+    ],
+    "expected": {
+      "sample_count": 6,
+      "candidate_count": 5,
+      "selected_canary_kept_experimental": true,
+      "negative_reward_only_rejected": true,
+      "negative_authority_expansion_rejected": true,
+      "negative_missing_rollback_rejected": true,
+      "holdout_checks_present": true,
+      "contamination_check_present": true,
+      "reward_hacking_probe_present": true,
+      "rollback_dry_run_present": true,
+      "support_state_effect_none": true,
+      "non_claim_boundary": true
+    }
+  },
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "verification_result": "pass",
+  "residuals": [
+    "No real router, preference dataset, reward model, RL run, or deployment monitor exists.",
+    "The fixture exercises governance fields and negative controls only."
+  ],
+  "non_claims": [
+    "does not run PPO, DPO, GRPO, RLVR, or any optimizer",
+    "does not prove policy improvement, reward quality, or route quality",
+    "does not execute a deployed canary or live rollback",
+    "does not promote the Policy Optimization chapter core claim",
+    "does not create a support-state transition"
+  ]
+}

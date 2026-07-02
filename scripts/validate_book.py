@@ -91,6 +91,7 @@ REQUIRED = [
     "scripts/validate_readiness_residual_gates.py",
     "scripts/validate_benchmark_antigoodhart.py",
     "scripts/validate_benchmark_fixture_bridge.py",
+    "scripts/validate_policy_update_lease_probe.py",
     "scripts/validate_generation_mode_baselines.py",
     "scripts/validate_compact_gvr_slice.py",
     "scripts/validate_resource_budget_ledgers.py",
@@ -166,6 +167,7 @@ REQUIRED = [
     "docs/context_admission_adequacy_harness.md",
     "docs/readiness_residual_harness.md",
     "docs/benchmark_antigoodhart_harness.md",
+    "docs/policy_update_lease_probe.md",
     "docs/generation_mode_baseline_harness.md",
     "docs/compact_gvr_slice.md",
     "docs/resource_budget_ledger_harness.md",
@@ -220,6 +222,7 @@ REQUIRED = [
     "experiments/cognitive_compilation_traces/results/2026-07-02-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",
     "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
+    "experiments/policy_update_lease/results/2026-07-02-local.json",
     "experiments/compact_gvr_slice/results/2026-07-01-local.json",
     "experiments/resource_budget_ledgers/results/2026-07-01-local.md",
     "experiments/reference_trace/results/2026-06-30-local.md",
@@ -769,6 +772,7 @@ def main() -> None:
     run_validator("validate_readiness_residual_gates.py")
     run_validator("validate_benchmark_antigoodhart.py")
     run_validator("validate_benchmark_fixture_bridge.py")
+    run_validator("validate_policy_update_lease_probe.py")
     run_validator("validate_generation_mode_baselines.py")
     run_validator("validate_compact_gvr_slice.py")
     run_validator("validate_resource_budget_ledgers.py")

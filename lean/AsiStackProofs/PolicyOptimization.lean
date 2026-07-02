@@ -331,4 +331,64 @@ theorem policy_promotion_with_regression_or_residual_gap_records_residual
   simp [admissible, targetEval, holdout, contamination, probe, governance, authority,
     rollback, residualMissing]
 
+structure PolicyUpdateLeaseProbeSummary where
+  sampleCount : Nat
+  candidateCount : Nat
+  selectedCanaryKeptExperimental : Bool
+  negativeRewardOnlyRejected : Bool
+  negativeAuthorityExpansionRejected : Bool
+  negativeMissingRollbackRejected : Bool
+  holdoutChecksPresent : Bool
+  contaminationCheckPresent : Bool
+  rewardHackingProbePresent : Bool
+  rollbackDryRunPresent : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def PolicyUpdateLeaseProbeValid
+    (summary : PolicyUpdateLeaseProbeSummary) : Prop :=
+  summary.sampleCount = 6 ∧
+    summary.candidateCount = 5 ∧
+      summary.selectedCanaryKeptExperimental = true ∧
+        summary.negativeRewardOnlyRejected = true ∧
+          summary.negativeAuthorityExpansionRejected = true ∧
+            summary.negativeMissingRollbackRejected = true ∧
+              summary.holdoutChecksPresent = true ∧
+                summary.contaminationCheckPresent = true ∧
+                  summary.rewardHackingProbePresent = true ∧
+                    summary.rollbackDryRunPresent = true ∧
+                      summary.supportStateEffectNone = true ∧
+                        summary.nonClaimBoundary = true
+
+def policyUpdateLeaseProbeFixture : PolicyUpdateLeaseProbeSummary := {
+  sampleCount := 6
+  candidateCount := 5
+  selectedCanaryKeptExperimental := true
+  negativeRewardOnlyRejected := true
+  negativeAuthorityExpansionRejected := true
+  negativeMissingRollbackRejected := true
+  holdoutChecksPresent := true
+  contaminationCheckPresent := true
+  rewardHackingProbePresent := true
+  rollbackDryRunPresent := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+}
+
+theorem policy_update_lease_probe_fixture_valid :
+    PolicyUpdateLeaseProbeValid policyUpdateLeaseProbeFixture := by
+  unfold PolicyUpdateLeaseProbeValid policyUpdateLeaseProbeFixture
+  simp
+
+theorem policy_update_lease_probe_rejects_reward_only_proxy :
+    policyUpdateLeaseProbeFixture.negativeRewardOnlyRejected = true := by
+  rfl
+
+theorem policy_update_lease_probe_preserves_rollback_boundary :
+    policyUpdateLeaseProbeFixture.rollbackDryRunPresent = true ∧
+      policyUpdateLeaseProbeFixture.supportStateEffectNone = true ∧
+        policyUpdateLeaseProbeFixture.nonClaimBoundary = true := by
+  exact And.intro rfl (And.intro rfl rfl)
+
 end AsiStackProofs.PolicyOptimization

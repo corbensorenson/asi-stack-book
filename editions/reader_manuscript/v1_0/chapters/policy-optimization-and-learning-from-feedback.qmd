@@ -308,6 +308,15 @@ blocking. The benchmark anti-Goodhart harness checks synthetic feedback
 admissibility, reward-boundary, reward-hacking-probe, evidence-packet,
 governance-gate, blocked-ratchet, and promotion-gate behavior.
 
+There is also now a small policy update lease probe. It uses six synthetic
+router-policy samples, a baseline, a source-grounded canary, and three bad
+candidates: one that chases a reward proxy, one that expands authority, and
+one that lacks rollback. The canary stays experimental. A dry-run rollback
+injects a synthetic monitor event and restores the baseline policy inside the
+fixture. That makes the lease idea more concrete, but it is
+not a deployed learning result, not a live router canary, and not proof that a policy
+improved.
+
 Those artifacts prove protocol discipline only. They do not prove reward
 quality, optimizer convergence, benchmark improvement, policy safety, route
 quality, context-selection quality, rollback success, or resistance to all

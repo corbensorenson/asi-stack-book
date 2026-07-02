@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Add Policy update lease probe
+
+- Added `python3 scripts/validate_policy_update_lease_probe.py`,
+  `docs/policy_update_lease_probe.md`, and
+  `experiments/policy_update_lease/results/2026-07-02-local.json` for a
+  deterministic policy-update lease fixture over six synthetic router-policy
+  samples, five candidate policies, one source-grounded canary kept
+  experimental, and three expected-invalid controls for reward-only proxy,
+  authority expansion, and missing rollback.
+- Added `lean:policy_optimization.lease_probe_fixture_bridge` in
+  `AsiStackProofs.PolicyOptimization`, with a finite Lean mirror for sample
+  count, candidate count, selected-canary experimental status, expected-invalid
+  rejection flags, rollback dry-run presence, no-support-effect status, and
+  non-claim boundary.
+- Updated the Policy Optimization live chapter, curated reader chapter,
+  outline, manifest, roadmap, proof/test surfaces, and validation wiring. This
+  does not run PPO, DPO, GRPO, RLVR, or any optimizer; does not prove policy
+  improvement, reward quality, or route quality; does not execute a deployed
+  canary or live rollback; and does not create a support-state transition.
+
 ## 2026-07-02 - Add benchmark anti-Goodhart fixture bridge
 
 - Added `python3 scripts/validate_benchmark_fixture_bridge.py` and

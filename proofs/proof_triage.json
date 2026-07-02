@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-01",
+  "updated": "2026-07-02",
   "generated_from": "proofs/proof_manifest.json",
   "note": "Initial conservative triage. It prevents ceremonial Lean by distinguishing formal invariants from schema, process, and research targets.",
   "triage_classes": {
@@ -1309,6 +1309,16 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite promotion-route predicate: inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, and regression/residual gaps route away from promotion."
+    },
+    {
+      "tag": "lean:policy_optimization.lease_probe_fixture_bridge",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "module": "AsiStackProofs.PolicyOptimization",
+      "formal_target": "The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite synthetic lease-probe summary: it mirrors sample/candidate counts, expected-invalid control rejection, rollback dry-run presence, no-support-effect status, and non-claim boundary only, without proving optimizer behavior, reward quality, route quality, live canary behavior, live rollback behavior, or chapter-core support movement."
     },
     {
       "tag": "lean:artifact_stewards.work_contract.operational_invariant",

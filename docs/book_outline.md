@@ -2854,6 +2854,7 @@ Draft deliverables:
 
 - A policy optimization record schema with update state, target layer, policy delta, feedback source/admissibility, reward signal/boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gates, authority effect, rollback plan, monitor window, evidence packet refs, deployment scope, support-state effect, residuals, and non-claims.
 - Implemented repository-level fixture: `policy_optimization_record.valid.json` validates update state, policy delta summary, feedback admissibility, reward boundary, reward-hacking probes, holdouts, regressions, authority effect, monitor window, evidence packet refs, deployment scope, support-state effect, and non-claims only; no PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget experiment has been run.
+- Implemented deterministic Policy update lease probe: `python3 scripts/validate_policy_update_lease_probe.py` validates `experiments/policy_update_lease/results/2026-07-02-local.json`, a six-sample synthetic router-policy canary lease with holdouts, contamination check, reward-hacking probes, unchanged authority, rollback dry run, expected-invalid controls, residuals, and non-claims only; no optimizer, live canary, deployed rollback, route-quality result, or support-state promotion exists.
 - Public-safe ingestion report: `docs/policy_optimization_context_ingestion_report.md`.
 - External literature queue: initial source records and conservative source notes now exist for TRPO, PPO, ReMax, DPO, IPO/preference-learning theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF limitation work; process-reward work beyond LongRLVR remains queued.
 - Planned Codex test: DPO/offline preference baseline test.
@@ -2868,6 +2869,7 @@ Draft deliverables:
 - Planned Codex test: Context-policy grounding reward test.
 - Planned Codex test: Reasoning-budget penalty test.
 - Implemented Codex test: Rollback and promotion gate test, via `python3 scripts/validate_benchmark_antigoodhart.py` over blocked, quarantined, rerun, and regression-only ratchet evidence blocking policy promotion; no live rollback or policy canary exists.
+- Implemented Codex test: Policy update lease probe, via `python3 scripts/validate_policy_update_lease_probe.py` over `experiments/policy_update_lease/results/2026-07-02-local.json`; the probe keeps a synthetic router-policy canary experimental, rejects reward-only, authority-expanding, and missing-rollback controls, records a dry-run rollback, and preserves no optimizer, live canary, route-quality, reward-quality, policy-improvement, or support-state-promotion claim.
 
 Lean proof targets:
 
@@ -2876,6 +2878,7 @@ Lean proof targets:
 | `lean:policy_optimization.update.operational_invariant` | `AsiStackProofs.PolicyOptimization` | An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan. | implemented |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A policy update with unverified reward or missing governance gate cannot be promoted. | implemented |
 | `lean:policy_optimization.promotion_route.failure_routes` | `AsiStackProofs.PolicyOptimization` | A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion. | implemented |
+| `lean:policy_optimization.lease_probe_fixture_bridge` | `AsiStackProofs.PolicyOptimization` | The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary. | implemented |
 
 ### Artifact Steward Agents and Living Project Governance
 

@@ -10458,6 +10458,13 @@
               "status": "implemented by benchmark anti-Goodhart harness; validated locally; no live rollback or policy canary run",
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures; no live rollback or policy canary run"
+            },
+            {
+              "name": "Policy update lease probe",
+              "purpose": "Check a deterministic synthetic router-policy canary lease with holdouts, contamination check, reward-hacking probes, unchanged authority, rollback dry run, expected-invalid controls, residuals, and non-claims.",
+              "status": "implemented by `python3 scripts/validate_policy_update_lease_probe.py`; deterministic fixture only; no optimizer, deployed canary, live rollback, route-quality claim, or support-state promotion",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `experiments/policy_update_lease/results/2026-07-02-local.json`; no policy-improvement, reward-quality, route-quality, deployed rollback, or support-state claim"
             }
           ],
           "source_queue": {
@@ -10518,6 +10525,12 @@
               "tag": "lean:policy_optimization.promotion_route.failure_routes",
               "module": "AsiStackProofs.PolicyOptimization",
               "target": "A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:policy_optimization.lease_probe_fixture_bridge",
+              "module": "AsiStackProofs.PolicyOptimization",
+              "target": "The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary.",
               "status": "implemented"
             }
           ]
