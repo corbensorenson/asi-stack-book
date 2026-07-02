@@ -1,6 +1,6 @@
 # Claim Ledger Revision Harness
 
-Last updated: 2026-06-28
+Last updated: 2026-07-02
 
 The eleventh Phase 5 harness checks synthetic claim-ledger and belief-revision
 fixtures under `experiments/claim_ledger_revision/`.
@@ -18,8 +18,14 @@ fixtures under `experiments/claim_ledger_revision/`.
 - State-changing revisions must name affected book or release surfaces so
   dependent prose, appendices, reader artifacts, or release records can be
   reconciled.
+- Semantic variants can merge only when their surface refs are synchronized,
+  their scope remains unchanged, and their support-state effect is `none`.
+- Contested or unsupported assumption contexts must split, downgrade,
+  residualize, escalate, or quarantine instead of being treated as ordinary
+  no-change revisions.
 - Fixtures must preserve explicit support-state non-promotion and deny source
-  interpretation, runtime, and verifier-quality claims.
+  interpretation, runtime, verifier-quality, semantic-equivalence, and
+  assumption-context completeness claims.
 
 ## Command
 
@@ -29,24 +35,25 @@ python3 scripts/validate_claim_ledger_revision.py
 
 ## Current Local Result
 
-The 2026-06-28 local run passed:
+The 2026-07-02 local run passed:
 
 ```text
-Claim ledger revision harness passed: 3 valid fixture(s), 4 expected-invalid fixture(s).
+Claim ledger revision harness passed: 5 valid fixture(s), 7 expected-invalid fixture(s).
 ```
 
 The result record is
-`experiments/claim_ledger_revision/results/2026-06-28-local.md`.
+`experiments/claim_ledger_revision/results/2026-07-02-local.md`.
 
 ## Boundary
 
 This is a synthetic claim-ledger record-discipline slice. It turns part of the
 Claim Ledgers and Belief Revision chapter into executable checks for
-contradiction routing, revision-history preservation, support-state promotion
+contradiction routing, semantic-variant merge boundaries, assumption-context
+dependency preservation, revision-history preservation, support-state promotion
 blocking, surface propagation, residuals, and non-claim language.
 
 It is not a claim extractor, verifier, belief engine, source-interpretation
-review, runtime trace, reader-release review, or proof of whole-system
-epistemic correctness. It does not promote Appendix C, prove source
-interpretation, prove proof adequacy, validate deployed AI behavior, or approve
-reader artifacts.
+review, semantic-equivalence checker, assumption-context completeness checker,
+runtime trace, reader-release review, or proof of whole-system epistemic
+correctness. It does not promote Appendix C, prove source interpretation, prove
+proof adequacy, validate deployed AI behavior, or approve reader artifacts.

@@ -1,0 +1,77 @@
+{
+  "scenario_id": "invalid_variant_surface_unsynced",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.variant-surface-sync",
+    "claim_text": "A claim ledger can merge equivalent variants even when one variant's surface is not in the synchronized surface set.",
+    "revision_action": "merge",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "evidence_refs": [
+      "experiments/claim_ledger_revision/fixtures/invalid_variant_surface_unsynced.json"
+    ],
+    "contradiction_refs": [],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-invalid-variant-surface-sync",
+        "reason": "A variant is accepted without synchronizing its surface reference.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "experiments/claim_ledger_revision/fixtures/invalid_variant_surface_unsynced.json"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "affected_surfaces": [
+      "live chapter"
+    ],
+    "promotion_blockers": [
+      "semantic-equivalence review preserves argument support only"
+    ],
+    "review_routes": [
+      "semantic variant surface synchronization"
+    ],
+    "residuals": [
+      "The unsynchronized reader surface must be added before merge."
+    ],
+    "claim_text_variants": [
+      {
+        "variant_id": "live-core",
+        "surface_ref": "chapters/claim-ledgers-and-belief-revision.qmd",
+        "text": "Claim ledgers preserve claim identity across surfaces.",
+        "semantic_relation": "equivalent",
+        "scope_effect": "same",
+        "support_state_effect": "none"
+      },
+      {
+        "variant_id": "reader-core",
+        "surface_ref": "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
+        "text": "Claim ledgers keep belief identity through reader prose.",
+        "semantic_relation": "equivalent",
+        "scope_effect": "same",
+        "support_state_effect": "none"
+      }
+    ],
+    "semantic_equivalence_review": {
+      "review_state": "accepted_equivalent",
+      "reviewer": "invalid fixture",
+      "review_refs": [
+        "experiments/claim_ledger_revision/fixtures/invalid_variant_surface_unsynced.json"
+      ]
+    },
+    "non_claims": [
+      "This invalid fixture does not promote any support state.",
+      "This invalid fixture does not prove semantic equivalence, source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove semantic equivalence, source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}

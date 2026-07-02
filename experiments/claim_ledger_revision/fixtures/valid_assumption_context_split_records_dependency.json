@@ -1,0 +1,120 @@
+{
+  "scenario_id": "valid_assumption_context_split_records_dependency",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.assumption-context",
+    "claim_text": "A reader-edition paraphrase can remain ledger-equivalent only when its assumption context is preserved.",
+    "revision_action": "split",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "docs/claim_ledger_revision_harness.md",
+      "chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "evidence_refs": [
+      "experiments/claim_ledger_revision/fixtures/valid_assumption_context_split_records_dependency.json"
+    ],
+    "contradiction_refs": [
+      "assumption-context:reader wording removed the source-boundary assumption"
+    ],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-2026-07-02-assumption-split",
+        "reason": "The contested assumption context makes the reader variant a narrower child claim rather than a silent merge.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "experiments/claim_ledger_revision/fixtures/valid_assumption_context_split_records_dependency.json"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd",
+      "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "affected_surfaces": [
+      "live chapter evidence boundary",
+      "curated reader prose boundary"
+    ],
+    "promotion_blockers": [
+      "assumption context contested",
+      "semantic scope changed",
+      "no accepted evidence transition"
+    ],
+    "review_routes": [
+      "assumption-context review",
+      "semantic variant split review",
+      "reader evidence-boundary reconciliation"
+    ],
+    "residuals": [
+      "The assumption-context contradiction remains a residual until the reader variant is narrowed or the missing boundary is restored."
+    ],
+    "claim_text_variants": [
+      {
+        "variant_id": "live-source-boundary",
+        "surface_ref": "chapters/claim-ledgers-and-belief-revision.qmd",
+        "text": "The mappings support durable claim records as an architectural discipline, not a working claim extractor or belief-revision engine.",
+        "semantic_relation": "narrower",
+        "scope_effect": "narrower",
+        "support_state_effect": "none"
+      },
+      {
+        "variant_id": "reader-simplified-boundary",
+        "surface_ref": "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
+        "text": "The current repository supports only record discipline.",
+        "semantic_relation": "narrower",
+        "scope_effect": "narrower",
+        "support_state_effect": "none"
+      }
+    ],
+    "semantic_equivalence_review": {
+      "review_state": "split_required",
+      "reviewer": "bounded local fixture review",
+      "review_refs": [
+        "experiments/claim_ledger_revision/fixtures/valid_assumption_context_split_records_dependency.json"
+      ]
+    },
+    "assumption_context_refs": [
+      "assumption://source-boundary-preserved",
+      "assumption://reader-paraphrase-does-not-promote-support"
+    ],
+    "assumption_contexts": [
+      {
+        "assumption_id": "assumption://source-boundary-preserved",
+        "text": "The reader paraphrase must preserve that source mappings are architectural support only.",
+        "evidence_ref": "chapters/claim-ledgers-and-belief-revision.qmd",
+        "status": "contested",
+        "dependent_claim_ids": [
+          "claim-ledgers-and-belief-revision.assumption-context"
+        ],
+        "surface_refs": [
+          "chapters/claim-ledgers-and-belief-revision.qmd",
+          "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd"
+        ]
+      },
+      {
+        "assumption_id": "assumption://reader-paraphrase-does-not-promote-support",
+        "text": "Reader wording must not sound stronger than the ledgered argument support state.",
+        "evidence_ref": "appendices/C_claim_evidence_matrix.qmd",
+        "status": "active",
+        "dependent_claim_ids": [
+          "claim-ledgers-and-belief-revision.core"
+        ],
+        "surface_refs": [
+          "appendices/C_claim_evidence_matrix.qmd",
+          "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd"
+        ]
+      }
+    ],
+    "non_claims": [
+      "This assumption-context fixture does not promote any support state.",
+      "This assumption-context fixture does not prove semantic equivalence.",
+      "This assumption-context fixture does not prove assumption-context completeness, source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove semantic equivalence.",
+    "This synthetic fixture does not prove assumption-context completeness, source interpretation, runtime behavior, verifier quality, open-domain claim extraction, or AI safety."
+  ]
+}

@@ -343,4 +343,37 @@ theorem complete_claim_ledger_revision_accepts :
       ClaimLedgerRevisionRoute.acceptLedgerRevision := by
   simp [ClaimLedgerRevisionRouteFor, completeClaimLedgerRevisionReview]
 
+structure SemanticAssumptionFixtureSummary where
+  semanticVariantMergePresent : Bool
+  assumptionContextSplitPresent : Bool
+  invalidScopeMergeRejected : Bool
+  invalidAssumptionErasureRejected : Bool
+  invalidUnsyncedVariantRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def SemanticAssumptionFixtureSummaryValid
+    (summary : SemanticAssumptionFixtureSummary) : Prop :=
+  summary.semanticVariantMergePresent = true ∧
+    summary.assumptionContextSplitPresent = true ∧
+      summary.invalidScopeMergeRejected = true ∧
+        summary.invalidAssumptionErasureRejected = true ∧
+          summary.invalidUnsyncedVariantRejected = true ∧
+            summary.supportStateEffectNone = true ∧
+              summary.nonClaimBoundary = true
+
+theorem semantic_assumption_fixture_bridge
+    {summary : SemanticAssumptionFixtureSummary} :
+    SemanticAssumptionFixtureSummaryValid summary ->
+      summary.semanticVariantMergePresent = true ∧
+        summary.assumptionContextSplitPresent = true ∧
+          summary.invalidScopeMergeRejected = true ∧
+            summary.invalidAssumptionErasureRejected = true ∧
+              summary.invalidUnsyncedVariantRejected = true ∧
+                summary.supportStateEffectNone = true ∧
+                  summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.ClaimLedger

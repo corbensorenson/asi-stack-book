@@ -485,7 +485,7 @@ Initial completion:
 - The result record is `experiments/support_state_transitions/results/2026-06-30-local.md`.
 - The harness is a gate-semantics test only. It does not promote Appendix C, validate source interpretation, prove proof adequacy, or exercise AI runtime behavior.
 - `python3 scripts/validate_claim_ledger_revision.py` passed locally on 2026-06-28 with 3 valid fixtures and 4 expected-invalid fixtures.
-- The result record is `experiments/claim_ledger_revision/results/2026-06-28-local.md`.
+- The result record is `experiments/claim_ledger_revision/results/2026-07-02-local.md`.
 - The claim ledger revision harness checks synthetic claim-revision, contradiction quarantine, split, surface propagation, history preservation, and non-claim boundary behavior only. It does not prove source interpretation, verifier quality, open-domain claim extraction, deployed belief revision, runtime behavior, or support-state promotion.
 - `python3 scripts/validate_proof_carrying_claims.py` passed locally on 2026-06-28 with 3 valid fixtures and 5 expected-invalid fixtures.
 - The result record is `experiments/proof_carrying_claims/results/2026-06-28-local.md`.

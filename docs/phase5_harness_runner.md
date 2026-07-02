@@ -18,7 +18,7 @@ This is a synthetic-harness execution record. It does **not** promote Appendix C
 
 | Harness | Command | Return code | Summary matched | Result record | Output |
 |---|---|---|---|---|---|
-| `claim_ledger_revision` | `python3 scripts/validate_claim_ledger_revision.py` | pass | yes | `experiments/claim_ledger_revision/results/2026-06-28-local.md` | Claim ledger revision harness passed: 3 valid fixture(s), 4 expected-invalid fixture(s). |
+| `claim_ledger_revision` | `python3 scripts/validate_claim_ledger_revision.py` | pass | yes | `experiments/claim_ledger_revision/results/2026-07-02-local.md` | Claim ledger revision harness passed: 5 valid fixture(s), 7 expected-invalid fixture(s). |
 | `proof_carrying_claims` | `python3 scripts/validate_proof_carrying_claims.py` | pass | yes | `experiments/proof_carrying_claims/results/2026-06-28-local.md` | Proof-carrying claim harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s). |
 | `tribunal_review` | `python3 scripts/validate_tribunal_review.py` | pass | yes | `experiments/tribunal_review/results/2026-06-28-local.md` | Tribunal review harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s). |
 | `value_conflicts` | `python3 scripts/validate_value_conflicts.py` | pass | yes | `experiments/value_conflicts/results/2026-06-28-local.md` | Value conflict harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s). |

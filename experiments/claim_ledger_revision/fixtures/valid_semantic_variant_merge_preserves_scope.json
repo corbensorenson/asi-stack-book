@@ -1,0 +1,85 @@
+{
+  "scenario_id": "valid_semantic_variant_merge_preserves_scope",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.variant-identity",
+    "claim_text": "Claim ledgers preserve claim identity across reader-facing paraphrases when scope and support state are unchanged.",
+    "revision_action": "merge",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd",
+      "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "evidence_refs": [
+      "experiments/claim_ledger_revision/fixtures/valid_semantic_variant_merge_preserves_scope.json"
+    ],
+    "contradiction_refs": [],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-2026-07-02-semantic-merge",
+        "reason": "The reader-facing wording is treated as a ledger variant because scope and support-state effect remain unchanged.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "experiments/claim_ledger_revision/fixtures/valid_semantic_variant_merge_preserves_scope.json"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd",
+      "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
+      "appendices/C_claim_evidence_matrix.qmd"
+    ],
+    "affected_surfaces": [
+      "live chapter core claim",
+      "curated reader prose claim",
+      "Appendix C support row"
+    ],
+    "promotion_blockers": [
+      "semantic-equivalence review preserves argument support only",
+      "no accepted evidence transition",
+      "no semantic-equivalence benchmark"
+    ],
+    "review_routes": [
+      "human semantic-equivalence review before any support-state movement",
+      "future claim-variant matcher evaluation"
+    ],
+    "residuals": [
+      "Equivalent variants are merged only for ledger identity; semantic equivalence remains review-scoped and does not promote support."
+    ],
+    "claim_text_variants": [
+      {
+        "variant_id": "live-core-claim",
+        "surface_ref": "chapters/claim-ledgers-and-belief-revision.qmd",
+        "text": "Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history.",
+        "semantic_relation": "equivalent",
+        "scope_effect": "same",
+        "support_state_effect": "none"
+      },
+      {
+        "variant_id": "reader-core-claim",
+        "surface_ref": "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
+        "text": "Claim ledgers should maintain support states, provenance, contradiction links, uncertainty, and revision history for material claims.",
+        "semantic_relation": "equivalent",
+        "scope_effect": "same",
+        "support_state_effect": "none"
+      }
+    ],
+    "semantic_equivalence_review": {
+      "review_state": "accepted_equivalent",
+      "reviewer": "bounded local fixture review",
+      "review_refs": [
+        "experiments/claim_ledger_revision/fixtures/valid_semantic_variant_merge_preserves_scope.json"
+      ]
+    },
+    "non_claims": [
+      "This semantic-variant fixture does not promote any support state.",
+      "This semantic-variant fixture does not prove semantic equivalence, source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove semantic equivalence, source interpretation, runtime behavior, verifier quality, open-domain claim extraction, or AI safety."
+  ]
+}

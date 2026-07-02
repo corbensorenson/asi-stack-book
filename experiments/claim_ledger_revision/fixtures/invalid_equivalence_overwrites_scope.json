@@ -1,0 +1,79 @@
+{
+  "scenario_id": "invalid_equivalence_overwrites_scope",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.semantic-overwrite",
+    "claim_text": "A claim ledger implementation can automatically keep every generated surface semantically synchronized.",
+    "revision_action": "merge",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "evidence_refs": [
+      "experiments/claim_ledger_revision/fixtures/invalid_equivalence_overwrites_scope.json"
+    ],
+    "contradiction_refs": [],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-invalid-semantic-overwrite",
+        "reason": "Broader reader wording is incorrectly merged as equivalent.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "experiments/claim_ledger_revision/fixtures/invalid_equivalence_overwrites_scope.json"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd",
+      "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "affected_surfaces": [
+      "live chapter",
+      "curated reader chapter"
+    ],
+    "promotion_blockers": [
+      "none recorded"
+    ],
+    "review_routes": [
+      "none recorded"
+    ],
+    "residuals": [
+      "none recorded"
+    ],
+    "claim_text_variants": [
+      {
+        "variant_id": "live-record-discipline",
+        "surface_ref": "chapters/claim-ledgers-and-belief-revision.qmd",
+        "text": "The repo supports record discipline over declared finite objects and fixtures.",
+        "semantic_relation": "equivalent",
+        "scope_effect": "same",
+        "support_state_effect": "none"
+      },
+      {
+        "variant_id": "reader-overbroad-system",
+        "surface_ref": "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
+        "text": "The stack can automatically keep every generated surface semantically synchronized.",
+        "semantic_relation": "broader",
+        "scope_effect": "broader",
+        "support_state_effect": "none"
+      }
+    ],
+    "semantic_equivalence_review": {
+      "review_state": "accepted_equivalent",
+      "reviewer": "invalid fixture",
+      "review_refs": [
+        "experiments/claim_ledger_revision/fixtures/invalid_equivalence_overwrites_scope.json"
+      ]
+    },
+    "non_claims": [
+      "This invalid fixture does not promote any support state.",
+      "This invalid fixture does not prove semantic equivalence, source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove semantic equivalence, source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}

@@ -4436,6 +4436,11 @@
               "name": "Claim ledger revision lifecycle route",
               "implementation_status": "implemented",
               "result_status": "passes via Lean route theorems; no open-domain extraction, semantic-equivalence, contradiction-quality, deployed belief-engine, or support-state-promotion claim"
+            },
+            {
+              "name": "Claim ledger semantic and assumption fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via expanded synthetic claim ledger revision harness at experiments/claim_ledger_revision/results/2026-07-02-local.md: 5 valid fixture(s), 7 expected-invalid fixture(s), semantic-variant merge boundaries, assumption-context dependency preservation, unsynced-variant rejection, no semantic-equivalence proof, no assumption-context completeness proof, and no support-state promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ClaimLedger",
@@ -4456,6 +4461,12 @@
               "tag": "lean:claims.ledger.revision_lifecycle_route",
               "module": "AsiStackProofs.ClaimLedger",
               "target": "A modeled revision request routes missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:claims.ledger.semantic_assumption_fixture_bridge",
+              "module": "AsiStackProofs.ClaimLedger",
+              "target": "The expanded claim-ledger revision fixture set includes accepted semantic-variant merge, accepted assumption-context split, rejected scope-overwriting merge, rejected assumption-context erasure, rejected unsynchronized variant surface, no support-state effect, and explicit non-claim boundaries.",
               "status": "implemented"
             }
           ]

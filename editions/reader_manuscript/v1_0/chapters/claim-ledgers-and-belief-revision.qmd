@@ -282,6 +282,16 @@ contradiction blocks promotion, and valid modeled belief-revision records keep
 identity, support-state fields, revision reasons, history, and non-claim
 boundaries.
 
+The 2026-07-02 claim-ledger harness expansion adds semantic variant and
+assumption-context checks. The harness now passes 5 valid fixture(s) and 7
+expected-invalid fixture(s). It accepts a reader-facing variant only when scope
+and support-state effect stay unchanged, splits a claim when a reader wording
+drops a necessary source-boundary assumption, rejects broader wording laundered
+as equivalent, rejects contested assumptions that are recorded but not routed,
+and rejects variant merges whose surfaces are not synchronized. That gives the
+reader-edition path a sharper ledger boundary without claiming a real semantic
+equivalence engine.
+
 That is useful, but narrow. The missing work is the hard part: extracting the
 right claims from prose, detecting real contradictions, preserving semantic
 equivalence across wording variants, checking citations, integrating proof or

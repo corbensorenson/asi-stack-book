@@ -12,10 +12,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 158 |
+| Proof targets in manifest | 159 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 850 |
-| Direct/projection-style theorem declarations | 164 |
+| Theorem declarations classified | 851 |
+| Direct/projection-style theorem declarations | 165 |
 | Derived/decomposed theorem declarations | 682 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
@@ -59,7 +59,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 3 | 28 | 1 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 3 | 19 | 4 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 4 | 20 | 5 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 3 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -259,6 +259,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_history_refs_preserves_history` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_non_claim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `revision_without_non_overwrite_attestation_preserves_attestation` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ClaimLedger.lean` | `semantic_assumption_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `split_without_child_history_preserves_split_history` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `valid_belief_revision_record_preserves_identity_history_and_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `authority_escape_blocks_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |

@@ -1407,10 +1407,11 @@ Draft deliverables:
 - Source-noted external comparator rows for AGM belief revision, Doyle-style truth maintenance, de Kleer-style assumption-based truth maintenance, ALCE, Self-RAG, and CheckList, with the chapter framed as a publication/support-state ledger bridge rather than an implemented formal belief-revision or truth-maintenance engine.
 - Implemented protocol validation: `claim_record` and `belief_revision_record` fixtures validate public record shape only.
 - Planned Codex test: Claim extraction test.
-- Planned Codex test: Contradiction detection test.
+- Implemented synthetic Codex test: claim-ledger revision harness via `python3 scripts/validate_claim_ledger_revision.py`, now passing with 5 valid fixture(s) and 7 expected-invalid fixture(s) at `experiments/claim_ledger_revision/results/2026-07-02-local.md`; covers no-change boundaries, contradiction quarantine, claim splitting, semantic-variant merge boundaries, assumption-context dependency preservation, support-state promotion blockers, revision-history preservation, surface propagation, review routing, residuals, and non-claim language without proving open-domain claim extraction, contradiction-detection quality, semantic equivalence, assumption-context completeness, deployed belief-engine behavior, or support-state promotion.
 - Implemented Lean proof target: finite claim updates preserve prior evidence and revision-history references.
 - Implemented Lean proof target: open contradictions block promotion until handled.
 - Implemented Lean proof target: finite revision-lifecycle routing sends missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit modeled outcomes.
+- Implemented Lean proof target: semantic/assumption fixture bridge for accepted semantic-variant merge, accepted assumption-context split, rejected scope-overwriting merge, rejected assumption-context erasure, rejected unsynchronized variant surface, no support-state effect, and non-claim boundaries.
 - Planned Codex test: belief revision engine test.
 
 Lean proof targets:
@@ -1420,6 +1421,7 @@ Lean proof targets:
 | `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | implemented |
 | `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | implemented |
 | `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedger` | A modeled revision request routes missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
+| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `AsiStackProofs.ClaimLedger` | The expanded claim-ledger revision fixture set includes accepted semantic-variant merge, accepted assumption-context split, rejected scope-overwriting merge, rejected assumption-context erasure, rejected unsynchronized variant surface, no support-state effect, and explicit non-claim boundaries. | implemented |
 
 ### Proof-Carrying Claims and Adversarial Review
 
@@ -2716,9 +2718,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 158 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 158 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 158 proof targets, 54 Lean modules, 850 theorem declarations, 682 derived/decomposed, 164 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 159 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 159 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 159 proof targets, 54 Lean modules, 851 theorem declarations, 682 derived/decomposed, 165 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

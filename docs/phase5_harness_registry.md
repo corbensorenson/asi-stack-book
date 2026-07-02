@@ -10,7 +10,7 @@ The registry exists to keep the public evidence surface aligned. A Phase 5 harne
 
 | Harness | Command | Fixture expectation | Result record |
 |---|---|---:|---|
-| Claim ledger revision harness | `python3 scripts/validate_claim_ledger_revision.py` | 3 valid, 4 expected-invalid | `experiments/claim_ledger_revision/results/2026-06-28-local.md` |
+| Claim ledger revision harness | `python3 scripts/validate_claim_ledger_revision.py` | 5 valid, 7 expected-invalid | `experiments/claim_ledger_revision/results/2026-07-02-local.md` |
 | Proof-carrying claim harness | `python3 scripts/validate_proof_carrying_claims.py` | 3 valid, 5 expected-invalid | `experiments/proof_carrying_claims/results/2026-06-28-local.md` |
 | Tribunal review harness | `python3 scripts/validate_tribunal_review.py` | 3 valid, 5 expected-invalid | `experiments/tribunal_review/results/2026-06-28-local.md` |
 | Value conflict harness | `python3 scripts/validate_value_conflicts.py` | 3 valid, 5 expected-invalid | `experiments/value_conflicts/results/2026-06-28-local.md` |

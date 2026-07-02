@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-02 - Expand claim-ledger semantic and assumption fixtures
+
+- Expanded `python3 scripts/validate_claim_ledger_revision.py` with
+  semantic-variant and assumption-context gates, adding two valid fixtures and
+  three expected-invalid controls under `experiments/claim_ledger_revision/`.
+  The local run now passes with 5 valid fixture(s) and 7 expected-invalid
+  fixture(s), recorded at
+  `experiments/claim_ledger_revision/results/2026-07-02-local.md`.
+- Added `lean:claims.ledger.semantic_assumption_fixture_bridge` in
+  `AsiStackProofs.ClaimLedger`, with a finite Lean summary bridge for accepted
+  semantic-variant merge, accepted assumption-context split, rejected
+  scope-overwriting merge, rejected assumption-context erasure, rejected
+  unsynchronized variant surface, no-support-effect status, and non-claim
+  boundaries.
+- Updated the Claim Ledgers live chapter, curated reader chapter, harness
+  documentation, outline, manifest, roadmap, proof/test surfaces, and validation
+  wiring. This does not prove semantic equivalence, assumption-context
+  completeness, source interpretation, runtime behavior, verifier quality,
+  open-domain claim extraction, contradiction-detection quality, deployed
+  belief-engine behavior, or support-state promotion.
+
 ## 2026-07-02 - Add Verification bandwidth contradiction probe
 
 - Added `python3 scripts/validate_verification_bandwidth_probe.py`,
@@ -151,7 +172,7 @@
   curated reader chapter, outline, and roadmap expose the current
   proof-depth classification counts and the direct/projection versus
   derived/decomposed distinction.
-- Current proof-depth snapshot: 158 proof targets, 54 Lean modules, 850 theorem declarations, 682 derived/decomposed, 164 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 159 proof targets, 54 Lean modules, 851 theorem declarations, 682 derived/decomposed, 165 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the proof-envelope chapter and reader chapter to describe
   projection-only traceability and to keep proof-depth classification separate
   from semantic adequacy, source interpretation, deployed enforcement, model

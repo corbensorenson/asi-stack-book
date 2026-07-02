@@ -4,7 +4,7 @@ chapter_id: "claim-ledgers-and-belief-revision"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-02"
 primary_sources:
   - "spinoza"
   - "viea"
@@ -16,8 +16,8 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact source-note mappings for the core claim, and four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector/source-note mapped."
   - "Source-noted external comparators now position claim ledgers against AGM belief revision, Doyle-style truth maintenance, de Kleer-style assumption-based truth maintenance, ALCE citation support, Self-RAG retrieval/critique, and CheckList behavioral testing; this is lineage and positioning only, not an implemented belief-revision engine."
-  - "Protocol schema/fixture validation and a synthetic claim-ledger revision harness are implemented; no open-domain claim-extraction, contradiction-quality, semantic-equivalence, or deployed belief-engine test has been run for this chapter."
-  - "Lean coverage now includes finite claim-update, promotion-review, belief-revision-record, and revision-lifecycle route envelopes; claim extraction, contradiction detection quality, and substantive belief revision remain unimplemented."
+  - "Protocol schema/fixture validation and a synthetic claim-ledger revision harness are implemented; the harness now covers semantic-variant merge boundaries and assumption-context dependency preservation, but no open-domain claim-extraction, contradiction-quality, semantic-equivalence-quality, assumption-context-completeness, or deployed belief-engine test has been run for this chapter."
+  - "Lean coverage now includes finite claim-update, promotion-review, belief-revision-record, revision-lifecycle route, and semantic/assumption fixture-bridge envelopes; claim extraction, contradiction detection quality, and substantive belief revision remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -29,17 +29,17 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
+| Last updated | 2026-07-02 |
 | Primary source records | `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat`; external comparators: `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` |
 | Source loading state | passage-reviewed local raw cache: `spinoza`, `viea`, `aletheia`, `uat`; connector/source-note mapped: `coherence_exchange`; source notes: `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` |
-| Test state | Claim/belief-revision fixture validation, a synthetic claim-ledger revision harness, and `AsiStackProofs.ClaimLedger` finite-record proofs are implemented, including belief-revision record and lifecycle-route envelopes; open-domain extraction, contradiction-quality, semantic-equivalence, and deployed belief-engine tests remain unimplemented. |
+| Test state | Claim/belief-revision fixture validation, a synthetic claim-ledger revision harness, and `AsiStackProofs.ClaimLedger` finite-record proofs are implemented, including belief-revision record, lifecycle-route, and semantic/assumption fixture-bridge envelopes; `python3 scripts/validate_claim_ledger_revision.py` now passes 5 valid fixture(s) and 7 expected-invalid fixture(s), including semantic-variant merge boundaries and assumption-context dependency preservation at `experiments/claim_ledger_revision/results/2026-07-02-local.md`; open-domain extraction, contradiction-quality, semantic-equivalence-quality, assumption-context-completeness, and deployed belief-engine tests remain unimplemented. |
 
 ## Drafting guardrail
 
-This chapter treats claims as ledger records, not as truth because they appear in prose. The repo validates claim and belief-revision fixtures, runs a synthetic claim-ledger revision harness, and implements narrow finite-record Lean predicates for prior-evidence/history preservation, promotion review, belief-revision records, and revision-lifecycle routing. It does not yet run an open-domain claim extractor, measure contradiction-detection quality, check semantic equivalence across rewritten claims, or operate an automated belief-revision engine.
+This chapter treats claims as ledger records, not as truth because they appear in prose. The repo validates claim and belief-revision fixtures, runs a synthetic claim-ledger revision harness, and implements narrow finite-record Lean predicates for prior-evidence/history preservation, promotion review, belief-revision records, revision-lifecycle routing, and the semantic/assumption fixture bridge. It now checks bounded semantic-variant and assumption-context fixture discipline, but it does not yet run an open-domain claim extractor, measure contradiction-detection quality, validate semantic-equivalence quality, validate assumption-context completeness, or operate an automated belief-revision engine.
 
 Placed after Verification Bandwidth, this chapter is where adequacy records become belief-management inputs. The stack does not ask prose to remember what it implied. It writes each material claim into a record that can be supported, challenged, downgraded, split, merged, or handed to Spinoza and UAT.
 
@@ -202,6 +202,8 @@ Belief revision starts with the existing `claim_record` schema plus a `belief_re
 
 Those fixtures demonstrate record shape and conservative support-state handling. They leave three substantive questions for later machinery: whether prose extraction found the right claims, whether contradiction detection found the right conflict, and whether a substantive belief should actually change.
 
+A 2026-07-02 harness expansion makes the surface-drift boundary more concrete. `python3 scripts/validate_claim_ledger_revision.py` now passes 5 valid fixture(s) and 7 expected-invalid fixture(s), with the current result recorded at `experiments/claim_ledger_revision/results/2026-07-02-local.md`. The new fixtures accept a semantic-variant merge only when scope and support-state effect remain unchanged, accept an assumption-context split when reader wording drops or narrows a source-boundary assumption, reject a broader variant laundered as equivalent, reject a contested assumption context that is recorded but not routed, and reject a variant merge whose surface reference is absent from synchronized surface refs. This remains synthetic record discipline only: no open-domain claim extraction, contradiction-detection quality, semantic-equivalence proof, assumption-context completeness proof, deployed belief-engine behavior, or support-state promotion is claimed.
+
 A tiny extraction-and-revision fixture set would make the ledger boundary tangible: one prose paragraph with two extracted claims, one unsupported assumption recorded as a residual, one contradiction linked to both claims, one downgrade event, and one tribunal escalation. The result would test ledger mechanics while keeping automated belief revision outside the claim.
 
 ## Beyond the State of the Art
@@ -230,9 +232,10 @@ This belief-revision ledger is still proposed architecture. Do not move beyond `
 | Claim update and belief-revision record predicates | Check that finite claim updates preserve prior evidence and revision-history references, and that modeled belief-revision records preserve claim identity, support-state fields, revision reasons, history, and non-claim boundaries. | implemented in `AsiStackProofs.ClaimLedger`; builds locally |
 | Open-contradiction promotion block predicate | Check that an open contradiction blocks claim promotion until handled, including modeled belief-revision records that must record a blocked ledger effect. | implemented in `AsiStackProofs.ClaimLedger`; builds locally |
 | Claim ledger revision lifecycle route | Check that modeled revision requests route missing claim identity, missing support-state records, unsupported promotion, open contradictions, history loss, missing non-overwrite attestations, surface-sync gaps, split-history gaps, downgrade-reason gaps, residual gaps, non-claim-boundary gaps, and complete revisions to explicit finite outcomes. | implemented in `AsiStackProofs.ClaimLedger`; no open-domain extraction, semantic-equivalence, contradiction-quality, or deployed belief-engine claim |
+| Semantic variant and assumption-context fixture | Check that semantic variants merge only when scope and support-state effect stay unchanged, contested assumption contexts split or route instead of being erased, and unsynchronized variant surfaces block merge. | implemented in `python3 scripts/validate_claim_ledger_revision.py` with 5 valid fixture(s), 7 expected-invalid fixture(s), and result record `experiments/claim_ledger_revision/results/2026-07-02-local.md`; no semantic-equivalence proof, assumption-context completeness proof, contradiction-quality claim, deployed belief-engine claim, or support-state promotion |
 | Belief revision engine test | Check that support-state updates over extracted claims preserve prior evidence and revision history. | synthetic fixture discipline implemented; deployed belief-revision engine not implemented |
 
-Fixture-shape validation, synthetic revision fixtures, and finite-record proof predicates are implemented. The remaining tests require a claim extractor, contradiction-quality evaluation, semantic-equivalence review across rewritten claims, and a transition checker that can reject unsupported promotion over real claim records.
+Fixture-shape validation, synthetic revision fixtures, semantic-variant/assumption-context controls, and finite-record proof predicates are implemented. The remaining tests require a claim extractor, contradiction-quality evaluation, semantic-equivalence quality review across rewritten claims, assumption-context completeness review, and a transition checker that can reject unsupported promotion over real claim records.
 
 ### Formalization hooks
 
@@ -241,8 +244,9 @@ Fixture-shape validation, synthetic revision fixtures, and finite-record proof p
 | `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedger` | A claim update preserves prior evidence and revision history. | implemented |
 | `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedger` | A contradiction prevents promotion until resolved, bounded, or recorded as residual. | implemented |
 | `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedger` | A modeled revision request routes missing claim identity, support-state gaps, unsupported promotion, open contradictions, history loss, surface-sync gaps, split/downgrade/residual gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
+| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `AsiStackProofs.ClaimLedger` | The expanded claim-ledger revision fixture set includes accepted semantic-variant merge, accepted assumption-context split, rejected scope-overwriting merge, rejected assumption-context erasure, rejected unsynchronized variant surface, no support-state effect, and explicit non-claim boundaries. | implemented |
 
-These proof hooks are implemented only over finite Lean claim-update, promotion-review, belief-revision, and revision-lifecycle records. `AsiStackProofs.ClaimLedger` checks that valid updates carry prior evidence and history references forward, that valid modeled revision records preserve claim identity, support-state fields, revision reasons, history, and non-claim boundaries, that accepted modeled promotions require evidence, handled contradiction state, and support-state increase, that an open contradiction blocks promotion with a blocked ledger effect, and that the finite lifecycle route sends common missing-record and laundering cases to explicit outcomes. The proof does not implement claim extraction, contradiction-detection quality, semantic-equivalence checking, or a substantive belief-revision engine.
+These proof hooks are implemented only over finite Lean claim-update, promotion-review, belief-revision, revision-lifecycle, and fixture-summary records. `AsiStackProofs.ClaimLedger` checks that valid updates carry prior evidence and history references forward, that valid modeled revision records preserve claim identity, support-state fields, revision reasons, history, and non-claim boundaries, that accepted modeled promotions require evidence, handled contradiction state, and support-state increase, that an open contradiction blocks promotion with a blocked ledger effect, that the finite lifecycle route sends common missing-record and laundering cases to explicit outcomes, and that the semantic/assumption fixture summary carries the expected valid and rejected cases. The proof does not implement claim extraction, contradiction-detection quality, semantic-equivalence checking, assumption-context completeness checking, or a substantive belief-revision engine.
 
 ## Source crosswalk
 

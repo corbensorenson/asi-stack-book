@@ -1,0 +1,71 @@
+{
+  "scenario_id": "invalid_assumption_context_erased",
+  "claim_ledger_record": {
+    "claim_id": "claim-ledgers-and-belief-revision.assumption-erasure",
+    "claim_text": "A simplified reader claim can drop source-boundary assumptions without changing ledger state.",
+    "revision_action": "no_change",
+    "support_state_before": "argument",
+    "support_state_after": "argument",
+    "prior_evidence_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "evidence_refs": [
+      "experiments/claim_ledger_revision/fixtures/invalid_assumption_context_erased.json"
+    ],
+    "contradiction_refs": [],
+    "accepted_evidence_transition_refs": [],
+    "revision_history": [
+      {
+        "revision_id": "rev-invalid-assumption-erasure",
+        "reason": "Contested assumption context is recorded but not routed.",
+        "previous_support_state": "argument",
+        "new_support_state": "argument",
+        "evidence_refs": [
+          "experiments/claim_ledger_revision/fixtures/invalid_assumption_context_erased.json"
+        ]
+      }
+    ],
+    "surface_refs": [
+      "chapters/claim-ledgers-and-belief-revision.qmd",
+      "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd"
+    ],
+    "affected_surfaces": [
+      "curated reader chapter"
+    ],
+    "promotion_blockers": [
+      "none recorded"
+    ],
+    "review_routes": [
+      "none recorded"
+    ],
+    "residuals": [
+      "none recorded"
+    ],
+    "assumption_context_refs": [
+      "assumption://source-boundary-preserved"
+    ],
+    "assumption_contexts": [
+      {
+        "assumption_id": "assumption://source-boundary-preserved",
+        "text": "The reader paraphrase must preserve that source mappings are architectural support only.",
+        "evidence_ref": "chapters/claim-ledgers-and-belief-revision.qmd",
+        "status": "contested",
+        "dependent_claim_ids": [
+          "claim-ledgers-and-belief-revision.assumption-erasure"
+        ],
+        "surface_refs": [
+          "chapters/claim-ledgers-and-belief-revision.qmd",
+          "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd"
+        ]
+      }
+    ],
+    "non_claims": [
+      "This invalid fixture does not promote any support state.",
+      "This invalid fixture does not prove assumption-context completeness, source interpretation, runtime behavior, verifier quality, or belief-engine correctness."
+    ]
+  },
+  "non_claims": [
+    "This synthetic fixture does not promote Appendix C support states.",
+    "This synthetic fixture does not prove assumption-context completeness, source interpretation, runtime behavior, verifier quality, or AI safety."
+  ]
+}

@@ -228,6 +228,7 @@ REQUIRED = [
     "experiments/stack_layer_traceability/results/2026-07-02-local.md",
     "experiments/efficiency_route_search/results/2026-07-02-local.json",
     "experiments/claim_ledger_revision/results/2026-06-28-local.md",
+    "experiments/claim_ledger_revision/results/2026-07-02-local.md",
     "experiments/proof_carrying_claims/results/2026-06-28-local.md",
     "experiments/tribunal_review/results/2026-06-28-local.md",
     "experiments/value_conflicts/results/2026-06-28-local.md",

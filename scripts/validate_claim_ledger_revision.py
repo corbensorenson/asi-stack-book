@@ -23,6 +23,9 @@ SUPPORT_ORDER = {
 }
 CONTRADICTION_ACTIONS = {"downgrade", "quarantine", "split", "residualize", "escalate", "deprecate"}
 STATE_CHANGE_ACTIONS = CONTRADICTION_ACTIONS | {"downgrade", "split"}
+SEMANTIC_RELATIONS = {"equivalent", "narrower", "broader", "conflicting", "unknown"}
+SEMANTIC_REVIEW_STATES = {"accepted_equivalent", "split_required", "escalated", "unknown"}
+ASSUMPTION_STATUSES = {"active", "contested", "unsupported", "retired"}
 
 
 def load_json(path: Path) -> Any:
@@ -55,6 +58,139 @@ def as_text(value: Any) -> str:
     if isinstance(value, dict):
         return " ".join(f"{key} {as_text(child)}" for key, child in value.items())
     return str(value)
+
+
+def contains_any(value: Any, terms: tuple[str, ...]) -> bool:
+    lowered = as_text(value).lower()
+    return any(term in lowered for term in terms)
+
+
+def validate_semantic_variants(
+    record: dict[str, Any],
+    top_non_claims: list[Any],
+    errors: list[str],
+    owner: str,
+) -> None:
+    variants = record.get("claim_text_variants")
+    review = record.get("semantic_equivalence_review")
+    if variants is None and review is None:
+        return
+
+    if not isinstance(variants, list) or not variants:
+        errors.append(f"{owner}: claim_text_variants must be a non-empty list when semantic_equivalence_review is present.")
+        return
+    if not isinstance(review, dict):
+        errors.append(f"{owner}: semantic_equivalence_review must be an object when claim_text_variants are present.")
+        return
+
+    review_owner = f"{owner}:semantic_equivalence_review"
+    review_state = require_nonempty_string(review, "review_state", errors, review_owner)
+    require_nonempty_string(review, "reviewer", errors, review_owner)
+    require_nonempty_list(review, "review_refs", errors, review_owner)
+    if review_state and review_state not in SEMANTIC_REVIEW_STATES:
+        errors.append(f"{review_owner}: review_state {review_state!r} is not supported.")
+
+    action = str(record.get("revision_action", ""))
+    surface_refs = set(str(item) for item in record.get("surface_refs", []))
+    scope_risk = False
+
+    for index, variant in enumerate(variants, start=1):
+        variant_owner = f"{owner}:claim_text_variants[{index}]"
+        if not isinstance(variant, dict):
+            errors.append(f"{variant_owner}: variant must be an object.")
+            continue
+        for key in ("variant_id", "surface_ref", "text", "semantic_relation", "scope_effect", "support_state_effect"):
+            require_nonempty_string(variant, key, errors, variant_owner)
+        relation = str(variant.get("semantic_relation", ""))
+        scope_effect = str(variant.get("scope_effect", ""))
+        support_effect = str(variant.get("support_state_effect", ""))
+        surface_ref = str(variant.get("surface_ref", ""))
+        if relation and relation not in SEMANTIC_RELATIONS:
+            errors.append(f"{variant_owner}: unsupported semantic_relation {relation!r}.")
+        if surface_ref and surface_ref not in surface_refs:
+            errors.append(f"{variant_owner}: surface_ref must also appear in surface_refs.")
+        if relation == "equivalent" and scope_effect != "same":
+            errors.append(f"{variant_owner}: equivalent variants must preserve same scope_effect.")
+        if relation in {"broader", "conflicting", "unknown"} or scope_effect != "same" or support_effect != "none":
+            scope_risk = True
+
+    if action == "merge" and scope_risk:
+        errors.append(f"{owner}: merge revisions cannot absorb broader, conflicting, unknown, scope-changing, or support-changing variants.")
+    if review_state == "accepted_equivalent" and scope_risk:
+        errors.append(f"{review_owner}: accepted_equivalent cannot approve scope-changing or support-changing variants.")
+    if review_state == "split_required" and action not in {"split", "residualize", "escalate"}:
+        errors.append(f"{review_owner}: split_required review must split, residualize, or escalate.")
+    if scope_risk and not contains_any(
+        [
+            record.get("promotion_blockers", []),
+            record.get("review_routes", []),
+            record.get("residuals", []),
+        ],
+        ("semantic", "scope", "variant"),
+    ):
+        errors.append(f"{owner}: semantic scope risks must appear in blockers, review routes, or residuals.")
+
+    non_claim_text = as_text(top_non_claims + record.get("non_claims", [])).lower()
+    if "does not prove semantic equivalence" not in non_claim_text:
+        errors.append(f"{owner}: semantic fixtures must deny semantic-equivalence proof.")
+
+
+def validate_assumption_contexts(
+    record: dict[str, Any],
+    top_non_claims: list[Any],
+    errors: list[str],
+    owner: str,
+) -> None:
+    contexts = record.get("assumption_contexts")
+    refs = record.get("assumption_context_refs")
+    if contexts is None and refs is None:
+        return
+
+    if not isinstance(contexts, list) or not contexts:
+        errors.append(f"{owner}: assumption_contexts must be a non-empty list when assumption_context_refs are present.")
+        return
+    if not isinstance(refs, list) or not refs:
+        errors.append(f"{owner}: assumption_context_refs must be a non-empty list when assumption_contexts are present.")
+        return
+
+    referenced_ids = {str(item) for item in refs}
+    risky_context = False
+    for index, context in enumerate(contexts, start=1):
+        context_owner = f"{owner}:assumption_contexts[{index}]"
+        if not isinstance(context, dict):
+            errors.append(f"{context_owner}: context must be an object.")
+            continue
+        assumption_id = require_nonempty_string(context, "assumption_id", errors, context_owner)
+        require_nonempty_string(context, "text", errors, context_owner)
+        require_nonempty_string(context, "evidence_ref", errors, context_owner)
+        status = require_nonempty_string(context, "status", errors, context_owner)
+        require_nonempty_list(context, "dependent_claim_ids", errors, context_owner)
+        require_nonempty_list(context, "surface_refs", errors, context_owner)
+        if assumption_id and assumption_id not in referenced_ids:
+            errors.append(f"{context_owner}: assumption_id must appear in assumption_context_refs.")
+        if status and status not in ASSUMPTION_STATUSES:
+            errors.append(f"{context_owner}: unsupported status {status!r}.")
+        if status in {"contested", "unsupported"}:
+            risky_context = True
+
+    action = str(record.get("revision_action", ""))
+    if risky_context:
+        if action not in {"split", "downgrade", "residualize", "escalate", "quarantine"}:
+            errors.append(f"{owner}: contested or unsupported assumption contexts must split, downgrade, residualize, escalate, or quarantine.")
+        if not contains_any(
+            [
+                record.get("contradiction_refs", []),
+                record.get("promotion_blockers", []),
+                record.get("review_routes", []),
+                record.get("residuals", []),
+            ],
+            ("assumption", "context"),
+        ):
+            errors.append(f"{owner}: assumption-context risks must remain visible in contradiction refs, blockers, review routes, or residuals.")
+
+    non_claim_text = as_text(top_non_claims + record.get("non_claims", [])).lower()
+    if "does not prove assumption-context completeness" not in non_claim_text:
+        errors.append(f"{owner}: assumption-context fixtures must deny assumption-context completeness.")
 
 
 def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
@@ -140,6 +276,9 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
     for term in ("source interpretation", "runtime", "verifier"):
         if term not in non_claim_text:
             errors.append(f"{relative}: non_claims must deny {term} claims.")
+
+    validate_semantic_variants(record, top_non_claims, errors, owner)
+    validate_assumption_contexts(record, top_non_claims, errors, owner)
 
     return errors
 
