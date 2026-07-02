@@ -971,6 +971,16 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as finite approval, lease, rollback-obligation, confused-deputy, sandbox-escape, and dispatch-route predicates: high-impact calls without approval or required rollback handles are rejected, mismatched, expired, or unsandboxed leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch."
     },
     {
+      "tag": "lean:runtime.adapters.effect_replay_fixture_bridge",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "module": "AsiStackProofs.RuntimeAdapters",
+      "formal_target": "A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite effect-replay route bridge matching the local runtime-adapter effect probe shape: missing permission and expired approval deny before mutation when no-mutation evidence exists, missing no-mutation evidence requests proof, inexact rollback requests rollback evidence, missing receipts request effect receipts, repository/network side effects or support-state effects preserve the no-promotion boundary, and a complete rollback-exact public-safe replay can be accepted."
+    },
+    {
       "tag": "lean:procedural.loop_closure.operational_invariant",
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "module": "AsiStackProofs.ProceduralMemory",

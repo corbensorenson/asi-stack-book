@@ -1704,6 +1704,7 @@ Draft deliverables:
 - Implemented Lean predicate: a valid invocation requires the parent job permissions to include the adapter capability and its effect lease to be active, scoped to that capability, and sandboxed.
 - Implemented Lean predicate: a high-impact adapter invocation without approval is rejected.
 - Implemented Lean negative cases: mismatched, expired, or unsandboxed effect leases cannot validate invocation, and a high-impact rollback-required invocation without a rollback handle cannot remain unrejected.
+- Implemented Lean effect-replay bridge: modeled runtime-adapter effect replays route missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay. This mirrors the local effect probe shape; it is still finite-record coverage, not deployed adapter safety.
 - Implemented synthetic Codex test: `python3 scripts/validate_runtime_adapter_permissions.py` checks typed-job, runtime-adapter-invocation, authority-use-receipt, and authority-probe consistency for permission coverage, high-impact approval gates, approval expiry markers, effect receipts, rollback handles, irreversible residuals, authority receipt alignment, ambient-authority confused-deputy rejection, and revoked-receipt blocking. It remains synthetic record-gate evidence only, not deployed adapter, sandbox, approval-service, rollback-execution, deployed revocation propagation, or secret-handle evidence.
 - Implemented local effect-replay Codex test: the Runtime adapter effect replay probe via `python3 scripts/validate_runtime_adapter_effect_probe.py` checks `valid_low_impact_local_write_effect_replay`, pre/post/rollback hashes, rollback-exact restoration, `invalid_missing_permission_no_mutation`, and `invalid_expired_approval_no_mutation`, with `repo_write=false`, `network_used=false`, `support_state_effect=none`, and `chapter_core_support_effect=none`. It remains a public-safe temp-file replay, not deployed-adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, benchmark, or support-state-promotion evidence.
 
@@ -1713,6 +1714,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability and its effect lease is active, scoped to that capability, and sandboxed. | implemented |
 | `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without approval or a required rollback handle is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch. | implemented |
+| `lean:runtime.adapters.effect_replay_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay. | implemented |
 
 ### Procedural Memory and Cognitive Loop Closure
 
@@ -2739,9 +2741,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 169 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 169 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 169 proof targets, 54 Lean modules, 874 theorem declarations, 698 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 170 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 170 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 170 proof targets, 54 Lean modules, 881 theorem declarations, 705 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 169 |
-| Manifest status counts | {"implemented": 169} |
-| Triage class counts | {"formal-invariant": 169} |
+| Proof targets audited | 170 |
+| Manifest status counts | {"implemented": 170} |
+| Triage class counts | {"formal-invariant": 170} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -71,7 +71,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Replacement.lean` | 4 | 30 | 6 | 4 |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | 6 | 34 | 25 | 10 |
 | `lean/AsiStackProofs/Routing.lean` | 3 | 16 | 4 | 2 |
-| `lean/AsiStackProofs/RuntimeAdapters.lean` | 2 | 17 | 7 | 4 |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | 3 | 24 | 8 | 5 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 2 | 8 | 6 | 4 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 5 | 6 |
 | `lean/AsiStackProofs/SelfImprovement.lean` | 3 | 21 | 7 | 5 |
@@ -126,7 +126,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 8 | 8 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
-| `runtime-adapters-tool-permissions-and-human-approval` | 2 | 2 | 0 | 0 |
+| `runtime-adapters-tool-permissions-and-human-approval` | 3 | 3 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 4 | 4 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 0 | 0 |
 | `stable-capability-fields` | 4 | 4 | 0 | 0 |
@@ -235,6 +235,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:artifacts.graph.replay_packet_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactGraph` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.operational_invariant` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.failure_blocks_promotion` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:runtime.adapters.effect_replay_fixture_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.operational_invariant` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:routing.specialists.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |

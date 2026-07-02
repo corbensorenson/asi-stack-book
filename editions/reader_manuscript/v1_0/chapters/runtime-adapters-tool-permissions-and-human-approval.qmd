@@ -266,8 +266,9 @@ record, or leave a residual that future ledgers cannot ignore.
 ## Minimum Viable Implementation
 
 The minimum viable implementation is a runtime-adapter invocation schema,
-public fixtures, finite permission and approval predicates, a synthetic
-cross-record harness, and one public-safe local effect replay.
+public fixtures, finite permission, approval, lease, rollback, dispatch, and
+effect-replay predicates, a synthetic cross-record harness, and one public-safe
+local effect replay.
 
 The repository currently has that record surface. The fixture validates
 invocation state, impact class, risk tier, approval scope and expiry, effect
@@ -275,7 +276,9 @@ lease, pre/post state refs, external side effects, verification refs,
 irreversible residuals, incident and audit refs, support-state effect, and
 non-claims. `AsiStackProofs.RuntimeAdapters` proves finite predicates that a
 valid invocation requires the parent job permission list to include the
-adapter capability and that a high-impact unapproved invocation is rejected.
+adapter capability, that a high-impact unapproved invocation is rejected, and
+that incomplete effect replays route to no-mutation, rollback, receipt, or
+no-promotion-boundary evidence instead of accepted replay.
 `scripts/validate_runtime_adapter_permissions.py` checks synthetic typed-job,
 adapter-invocation, authority-use-receipt, and authority-probe consistency for
 permissions, approval gates, expiry markers, receipts, rollback handles,

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-02 - Add runtime adapter effect-replay proof bridge
+
+- Added `lean:runtime.adapters.effect_replay_fixture_bridge` in
+  `AsiStackProofs.RuntimeAdapters` as a finite route bridge for the Runtime
+  adapter effect replay probe.
+- The bridge routes missing permission, expired approval, missing no-mutation
+  evidence, inexact rollback, missing receipts, repository/network side
+  effects, and support-state effects away from accepted replay while admitting
+  only a complete rollback-exact public-safe replay in the finite record model.
+- Updated the Runtime Adapters live chapter, curated reader chapter, outline,
+  roadmap, proof manifest, proof triage, proof-depth classification, proof
+  artifact audit, proof adequacy review, proof-envelope status surfaces, and
+  public readiness surfaces. This is no deployed adapter, sandbox,
+  approval-service, secret-handle, rollback-service, policy-enforcement,
+  benchmark, or support-state-promotion claim.
+- Current proof-depth snapshot: 170 proof targets, 54 Lean modules, 881 theorem
+  declarations, 705 derived/decomposed, 172 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add reader key-figure artifact validation
 
 - Added `scripts/validate_reader_key_figures.py` and
@@ -37,7 +56,7 @@
   a no model-speed or deployment claim, no useful-solution-per-second model
   claim, no reproduced speculative decoding/MTP/diffusion/KV-cache/serving
   result, and no support-state promotion.
-- Current proof-depth snapshot: 169 proof targets, 54 Lean modules, 874 theorem declarations, 698 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 170 proof targets, 54 Lean modules, 881 theorem declarations, 705 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add SCIF commit Lean bridge
 
@@ -53,7 +72,7 @@
   is structured-record route coverage only; it does not prove a deployed
   security kernel, sandbox isolation, side-channel safety, prompt-injection
   containment, privacy, security, or support-state promotion.
-- Current proof-depth snapshot: 168 proof targets, 54 Lean modules, 870 theorem declarations, 694 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 170 proof targets, 54 Lean modules, 881 theorem declarations, 705 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add SCIF sanitized commit replay probe
 

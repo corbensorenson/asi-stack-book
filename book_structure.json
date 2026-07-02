@@ -5476,6 +5476,12 @@
               "module": "AsiStackProofs.RuntimeAdapters",
               "target": "A high-impact adapter call without approval or a required rollback handle is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:runtime.adapters.effect_replay_fixture_bridge",
+              "module": "AsiStackProofs.RuntimeAdapters",
+              "target": "A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay.",
+              "status": "implemented"
             }
           ]
         },

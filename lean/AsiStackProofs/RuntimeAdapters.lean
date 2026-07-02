@@ -359,4 +359,174 @@ theorem complete_runtime_adapter_review_dispatches
     Nat.not_lt_of_ge withinLeaseCeiling, noConfusedDeputy, noSandboxEscape,
     noRollbackRequired, effectReceipt, auditRefs, nonClaims]
 
+inductive RuntimeEffectReplayRoute where
+  | denyMissingPermission
+  | denyExpiredApproval
+  | requestNoMutationEvidence
+  | requestRollbackEvidence
+  | requestEffectReceipt
+  | preserveNoPromotionBoundary
+  | acceptReplay
+deriving DecidableEq, Repr
+
+structure RuntimeEffectReplayReview where
+  parentPermissionPresent : Bool
+  approvalActive : Bool
+  effectExecuted : Bool
+  deniedBeforeMutation : Bool
+  stateUnchangedAfterDenial : Bool
+  preStateRecorded : Bool
+  postStateRecorded : Bool
+  rollbackRequired : Bool
+  rollbackExecuted : Bool
+  rollbackExact : Bool
+  effectReceiptRecorded : Bool
+  auditRefsRecorded : Bool
+  supportStateEffectNone : Bool
+  repoWrite : Bool
+  networkUsed : Bool
+deriving DecidableEq, Repr
+
+def RuntimeEffectReplayRouteFor
+    (review : RuntimeEffectReplayReview) : RuntimeEffectReplayRoute :=
+  if review.parentPermissionPresent = false then
+    if review.deniedBeforeMutation = true ∧
+        review.stateUnchangedAfterDenial = true then
+      RuntimeEffectReplayRoute.denyMissingPermission
+    else
+      RuntimeEffectReplayRoute.requestNoMutationEvidence
+  else if review.approvalActive = false then
+    if review.deniedBeforeMutation = true ∧
+        review.stateUnchangedAfterDenial = true then
+      RuntimeEffectReplayRoute.denyExpiredApproval
+    else
+      RuntimeEffectReplayRoute.requestNoMutationEvidence
+  else if review.effectExecuted = true ∧
+      (review.preStateRecorded = false ∨ review.postStateRecorded = false) then
+    RuntimeEffectReplayRoute.requestEffectReceipt
+  else if review.rollbackRequired = true ∧
+      (review.rollbackExecuted = false ∨ review.rollbackExact = false) then
+    RuntimeEffectReplayRoute.requestRollbackEvidence
+  else if review.effectReceiptRecorded = false ∨
+      review.auditRefsRecorded = false then
+    RuntimeEffectReplayRoute.requestEffectReceipt
+  else if review.supportStateEffectNone = false ∨
+      review.repoWrite = true ∨
+        review.networkUsed = true then
+    RuntimeEffectReplayRoute.preserveNoPromotionBoundary
+  else
+    RuntimeEffectReplayRoute.acceptReplay
+
+theorem missing_permission_no_mutation_denies_before_effect
+    {review : RuntimeEffectReplayReview} :
+    review.parentPermissionPresent = false ->
+      review.deniedBeforeMutation = true ->
+        review.stateUnchangedAfterDenial = true ->
+          RuntimeEffectReplayRouteFor review =
+            RuntimeEffectReplayRoute.denyMissingPermission := by
+  intro missingPermission deniedBeforeMutation unchanged
+  unfold RuntimeEffectReplayRouteFor
+  simp [missingPermission, deniedBeforeMutation, unchanged]
+
+theorem missing_permission_without_no_mutation_evidence_requests_evidence
+    {review : RuntimeEffectReplayReview} :
+    review.parentPermissionPresent = false ->
+      review.deniedBeforeMutation = false ->
+        RuntimeEffectReplayRouteFor review =
+          RuntimeEffectReplayRoute.requestNoMutationEvidence := by
+  intro missingPermission noDenialEvidence
+  unfold RuntimeEffectReplayRouteFor
+  simp [missingPermission, noDenialEvidence]
+
+theorem expired_approval_no_mutation_denies_before_effect
+    {review : RuntimeEffectReplayReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalActive = false ->
+        review.deniedBeforeMutation = true ->
+          review.stateUnchangedAfterDenial = true ->
+            RuntimeEffectReplayRouteFor review =
+              RuntimeEffectReplayRoute.denyExpiredApproval := by
+  intro permissionPresent expiredApproval deniedBeforeMutation unchanged
+  unfold RuntimeEffectReplayRouteFor
+  simp [permissionPresent, expiredApproval, deniedBeforeMutation, unchanged]
+
+theorem rollback_required_without_exact_rollback_requests_rollback_evidence
+    {review : RuntimeEffectReplayReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalActive = true ->
+        review.effectExecuted = true ->
+          review.preStateRecorded = true ->
+            review.postStateRecorded = true ->
+              review.rollbackRequired = true ->
+                review.rollbackExecuted = true ->
+                  review.rollbackExact = false ->
+                    RuntimeEffectReplayRouteFor review =
+                      RuntimeEffectReplayRoute.requestRollbackEvidence := by
+  intro permissionPresent approvalActive effectExecuted preRecorded postRecorded
+    rollbackRequired rollbackExecuted rollbackInexact
+  unfold RuntimeEffectReplayRouteFor
+  simp [permissionPresent, approvalActive, effectExecuted, preRecorded,
+    postRecorded, rollbackRequired, rollbackExecuted, rollbackInexact]
+
+theorem missing_effect_receipt_requests_effect_receipt
+    {review : RuntimeEffectReplayReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalActive = true ->
+        review.effectExecuted = true ->
+          review.preStateRecorded = true ->
+            review.postStateRecorded = true ->
+              review.rollbackRequired = false ->
+                review.effectReceiptRecorded = false ->
+                  RuntimeEffectReplayRouteFor review =
+                    RuntimeEffectReplayRoute.requestEffectReceipt := by
+  intro permissionPresent approvalActive effectExecuted preRecorded postRecorded
+    noRollbackRequired missingReceipt
+  unfold RuntimeEffectReplayRouteFor
+  simp [permissionPresent, approvalActive, effectExecuted, preRecorded,
+    postRecorded, noRollbackRequired, missingReceipt]
+
+theorem support_effect_or_repo_write_preserves_no_promotion_boundary
+    {review : RuntimeEffectReplayReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalActive = true ->
+        review.effectExecuted = true ->
+          review.preStateRecorded = true ->
+            review.postStateRecorded = true ->
+              review.rollbackRequired = false ->
+                review.effectReceiptRecorded = true ->
+                  review.auditRefsRecorded = true ->
+                    review.supportStateEffectNone = false ->
+                      RuntimeEffectReplayRouteFor review =
+                        RuntimeEffectReplayRoute.preserveNoPromotionBoundary := by
+  intro permissionPresent approvalActive effectExecuted preRecorded postRecorded
+    noRollbackRequired receiptRecorded auditRefs supportPromoting
+  unfold RuntimeEffectReplayRouteFor
+  simp [permissionPresent, approvalActive, effectExecuted, preRecorded,
+    postRecorded, noRollbackRequired, receiptRecorded, auditRefs, supportPromoting]
+
+theorem complete_runtime_effect_replay_accepts
+    {review : RuntimeEffectReplayReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalActive = true ->
+        review.effectExecuted = true ->
+          review.preStateRecorded = true ->
+            review.postStateRecorded = true ->
+              review.rollbackRequired = true ->
+                review.rollbackExecuted = true ->
+                  review.rollbackExact = true ->
+                    review.effectReceiptRecorded = true ->
+                      review.auditRefsRecorded = true ->
+                        review.supportStateEffectNone = true ->
+                          review.repoWrite = false ->
+                            review.networkUsed = false ->
+                              RuntimeEffectReplayRouteFor review =
+                                RuntimeEffectReplayRoute.acceptReplay := by
+  intro permissionPresent approvalActive effectExecuted preRecorded postRecorded
+    rollbackRequired rollbackExecuted rollbackExact receiptRecorded auditRefs
+    supportNone noRepoWrite noNetwork
+  unfold RuntimeEffectReplayRouteFor
+  simp [permissionPresent, approvalActive, effectExecuted, preRecorded,
+    postRecorded, rollbackRequired, rollbackExecuted, rollbackExact,
+    receiptRecorded, auditRefs, supportNone, noRepoWrite, noNetwork]
+
 end AsiStackProofs.RuntimeAdapters
