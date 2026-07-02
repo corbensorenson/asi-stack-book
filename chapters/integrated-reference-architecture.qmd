@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-01"
 primary_sources:
   - "viea"
   - "scf"
@@ -121,7 +121,7 @@ The control question at every step is simple: what artifact was received, what a
 
 The trace should include positive and negative checkpoints. A positive checkpoint says what the layer completed and which downstream dependency may now consume it. A negative checkpoint says why the flow stopped, narrowed, escalated, or entered quarantine. This makes the blocked path a first-class artifact instead of an exception that disappears into prose.
 
-The reference trace below is conceptual. It is a design target for later schemas, tests, and proofs, not a report of a completed implementation.
+The reference trace below is conceptual. It is a design target for later schemas, tests, and proofs, not a report of a completed implementation. The deterministic fixtures under `experiments/reference_trace/fixtures/` now provide a record-level worked trace for that design target, but they remain `fixture_only` records rather than runtime execution.
 
 ```{mermaid}
 sequenceDiagram
@@ -150,6 +150,14 @@ sequenceDiagram
 **What the reference trace shows:** The reference trace is an end-to-end handoff chain, not a single agent loop. Each participant receives and emits a typed artifact, and the final SCF gate can still promote, roll back, quarantine, or require review based on evidence and authority.
 
 The important feature is that every participant emits something durable enough for another participant to inspect. If the planner fails, the plan DAG should show where. If memory fails, the context packet should expose stale, missing, or unauthorized material. If routing fails, the residual record should survive. If execution fails, the audit log should make the failure replayable. If improvement is proposed, the SCF gate should decide whether the evidence supports promotion, rollback, quarantine, or human review.
+
+### Current fixture trace
+
+The current public-safe worked trace is a deterministic fixture pair checked by `python3 scripts/validate_reference_trace.py`. The approved fixture, `reference-trace-fixture-approved-001`, starts from `intent://human-book-maintenance-request`, narrows authority to chapter and fixture edits, and carries artifacts through `command://chapter-update-contract`, `plan://reference-trace-dry-run`, `context://source-bound-packet`, `route://bounded-reference-route`, `claim://argument-only-reference-claim`, `work://fixture-only-work-order`, `audit://fixture-validation-log`, `evidence://record-shape-only-update`, and `scf://no-promotion-review`. Its evidence delta is record-shape only and explicitly preserves `argument` support.
+
+The blocked fixture, `reference-trace-blocked-authority-001`, starts from `intent://restricted-execution-request` and records the same layer handoff spine, but governance denies runtime execution authority. The trace narrows into `plan://blocked-reference-trace`, routes through `route://denied-runtime-route`, emits `work://blocked-work-order` and `audit://authority-denial-log`, records `evidence://blocked-path-record`, and leaves `scf://promotion-blocker`. Its stop conditions are missing execution authority, unaccepted residual, and required governance review.
+
+This is the concrete trace the architecture currently has: two valid record-level fixtures and six expected-invalid fixtures for missing parent artifacts, silent authority deltas, blocked traces without stop conditions, missing residual deltas, promotion without validation commands, and erased residuals. It is useful because it makes the end-to-end record shape testable. It does not prove a deployed runtime, live artifact-continuity audit, authority-stop enforcement, model quality, benchmark quality, or support-state promotion.
 
 ## Interfaces
 
@@ -187,9 +195,9 @@ Trace fragmentation is the companion failure, where each layer records locally v
 
 ## Minimum Viable Implementation
 
-The integrated architecture should first exist as the reference flow diagram plus `reference_trace_record.valid.json`. The reference-trace fixture checks record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: it does not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
+A minimum integrated architecture first exists as the reference flow diagram plus the `reference_trace_record` schema and deterministic fixture set. The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 
-A tiny dry-run trace set is the first integration artifact worth building. One approved flow should carry stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and release note. One blocked flow should fail because a required authority, context adequacy check, verification predicate, or rollback path is absent. The trace set would remain a fixture rather than a runtime result, but it would make the architecture's stop conditions executable.
+That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. The next minimum slice is no longer another diagram. It is a replayed or live trace that produces comparable records from an actual command, artifact bundle, validator run, and blocked-path stop condition while preserving the same non-claim boundaries.
 
 ## Beyond the State of the Art
 

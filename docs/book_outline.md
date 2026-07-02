@@ -2996,10 +2996,11 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A reference flow diagram, interface table, and end-to-end trace example marked conceptual until implemented.
+- A reference flow diagram, interface table, and fixture-backed end-to-end trace example with `reference-trace-fixture-approved-001` and `reference-trace-blocked-authority-001` marked as deterministic record-level examples only.
 - Implemented repository-level fixture: `reference_trace_record.valid.json` validates reference-trace record shape, trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims only.
 - Implemented Lean trace-route envelope: missing parent artifacts route to parentage repair, missing authority deltas route to authority-delta repair, missing residual deltas route to residual preservation, missing required governance gates block the trace, and missing validation commands require validation.
 - Implemented deterministic reference trace harness: `python3 scripts/validate_reference_trace.py` checks 2 valid and 6 expected-invalid reference-trace fixtures for parent artifact continuity, authority-chain and authority-delta visibility, layer coverage from intent through SCF, artifact count, evidence and residual deltas, validation command refs, source-note refs, blocked-path stop conditions, promotion blockers, non-promoting support effects, and explicit non-claims.
+- Implemented worked trace: approved fixture carries intent, command, plan, context, route, claim, work, audit, evidence, and SCF no-promotion artifacts; blocked fixture carries the same spine while recording denied execution authority, unaccepted residual, governance review, and promotion blockers.
 - Implemented Codex test: End-to-end intent trace test as deterministic fixture coverage only; no integrated runtime trace or replayed demo exists.
 - Implemented Codex test: Artifact continuity audit as deterministic fixture coverage only; no live artifact-continuity audit exists.
 - Implemented Codex test: Authority stop-condition test as deterministic blocked-trace fixture coverage only; no deployed authority stop-condition checker exists.

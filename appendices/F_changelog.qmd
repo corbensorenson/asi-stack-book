@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Add Integrated Reference fixture trace
+
+- Added a fixture-backed worked trace to `integrated-reference-architecture`,
+  naming the approved `reference-trace-fixture-approved-001` and blocked
+  `reference-trace-blocked-authority-001` records checked by
+  `python3 scripts/validate_reference_trace.py`.
+- Updated the curated reader chapter so the human manuscript explains the same
+  approved/blocked trace pair in prose instead of leaving integration at the
+  diagram level.
+- Updated the outline and v1.x roadmap row. This is fixture-backed reader and
+  live chapter work only; it does not create a deployed runtime trace, live
+  artifact-continuity audit, authority-stop enforcement result, model-quality
+  result, benchmark result, support-state promotion, or release-readiness
+  claim.
+
 ## 2026-07-01 - Surface Artifact Steward proof lane
 
 - Promoted the existing Artifact Steward lifecycle, contribution-ledger, and

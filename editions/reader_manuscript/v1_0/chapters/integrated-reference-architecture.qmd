@@ -167,6 +167,35 @@ improve the system, the trace should show what it received, what it emitted,
 what authority it carried, what evidence it changed, and what later layer was
 allowed to depend on it.
 
+## The Current Fixture Trace
+
+The repository already has a small public-safe version of that trace contract.
+It is not a runtime demo. It is a deterministic fixture pair that says what a
+future runtime trace must preserve.
+
+The approved fixture begins with a human book-maintenance request. Authority
+narrows to chapter and fixture edits. The trace then carries stable artifacts:
+a command contract, a plan, a source-bound context packet, a bounded route, an
+argument-only claim, a fixture-only work order, an audit log, a record-shape
+evidence update, and an SCF no-promotion review. The evidence delta is narrow:
+the record shape was validated, and the chapter support state stayed at
+`argument`.
+
+The blocked fixture begins with a restricted execution request. Governance
+allows planning but denies runtime execution. The same layer spine remains
+visible, but the route becomes a denied runtime route, the work order is
+blocked, the audit log records the authority denial, the evidence record
+preserves the blocked path, and the SCF gate carries a promotion blocker. The
+stop conditions are explicit: execution authority is missing, a residual is
+unaccepted, and governance review is required before execution.
+
+That pair is the book's current concrete integration example. It proves only
+fixture discipline. It does not prove a deployed runtime, live artifact
+continuity, real authority enforcement, model quality, benchmark quality, or
+support-state promotion. Its value is that readers can now see the shape of
+the desired end-to-end record instead of only hearing that the layers should
+compose.
+
 ## Happy Paths And Blocked Paths
 
 A happy path is not enough.
@@ -270,7 +299,7 @@ residuals, or stop conditions that were acknowledged but ignored.
 ## Minimum Viable Implementation
 
 The minimum viable implementation is a reference flow diagram, a
-`reference_trace_record` schema fixture, and finite Lean predicates over
+`reference_trace_record` schema fixture set, and finite Lean predicates over
 record-level handoff and governance gates.
 
 The repository already has that first layer. The fixture validates record
@@ -285,12 +314,10 @@ architecture, replay a runtime trace, prove artifact continuity across a
 deployed system, enforce authority stops, verify a benchmark, prove model
 quality, or demonstrate deployment readiness.
 
-The next honest implementation slice would be a tiny dry-run trace set: one
-approved flow that carries stable artifact IDs from intent through plan,
-context, route, work order, audit log, evidence update, and release note; and
-one blocked flow that stops because authority, context adequacy,
-verification, residual acceptance, or rollback is missing. That would still be
-a fixture or dry run, not a deployed integrated runtime.
+The next honest implementation slice is now beyond a dry-run fixture. It is a
+replayed or live trace that produces comparable records from an actual command,
+artifact bundle, validator run, and blocked-path stop condition while keeping
+the same non-claim boundaries.
 
 ## Beyond the State of the Art
 
