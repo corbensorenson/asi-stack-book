@@ -826,6 +826,7 @@ Draft deliverables:
 - Planned Codex test: Security-overhead budget preservation test; no budget-preservation fixture, runtime budget enforcement, or security-economics claim exists yet.
 - Implemented synthetic Codex test: Prompt-injection containment scenario via `python3 scripts/validate_security_kernel.py`; runtime prompt-injection containment remains open.
 - Implemented proof-backed check: finite authority-use route proof for missing handles, revocation requests, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing required SCIFs, unsanitized output, residual leak risk, and clean authorized use; this is structured-record route coverage only, not deployed kernel security, sandbox isolation, side-channel defense, or prompt-injection containment.
+- Implemented proof-backed check: finite SCIF commit route bridge for the sanitized-commit replay probe, routing secret output, handle output, missing zeroization, overbroad context, inactive approval, and missing residual boundaries to blocked commit while routing prompt-injection cases to sanitized refusal; this is structured-record route coverage only, not a deployed kernel, sandbox, side-channel, privacy, or security proof.
 
 Lean proof targets:
 
@@ -834,6 +835,7 @@ Lean proof targets:
 | `lean:security.scif.operational_invariant` | `AsiStackProofs.SecurityKernel` | A secret handle can be substituted only inside an authorized execution boundary. | implemented |
 | `lean:security.scif.failure_blocks_promotion` | `AsiStackProofs.SecurityKernel` | A context packet with insufficient clearance cannot enter a protected SCIF. | implemented |
 | `lean:security.scif.route_envelope` | `AsiStackProofs.SecurityKernel` | A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes. | implemented |
+| `lean:security.scif.commit_probe_bridge` | `AsiStackProofs.SecurityKernel` | A structured SCIF commit review routes secret output, handle output, missing lifecycle zeroization, overbroad context, inactive approval, missing residual boundaries, prompt-injection sanitized refusal, and clean sanitized commits into explicit outcomes matching the SCIF sanitized commit replay probe. | implemented |
 
 ### Recursive Self-Improvement Boundaries
 
@@ -2735,9 +2737,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 167 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 167 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 167 proof targets, 54 Lean modules, 862 theorem declarations, 686 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 168 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 168 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 168 proof targets, 54 Lean modules, 870 theorem declarations, 694 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-02 - Add SCIF commit Lean bridge
+
+- Added `lean:security.scif.commit_probe_bridge` in
+  `AsiStackProofs.SecurityKernel` as a finite route bridge for the SCIF
+  sanitized commit replay probe.
+- The bridge routes secret output, handle output, missing lifecycle
+  zeroization, overbroad context, inactive approval, and missing residual
+  boundaries away from commit, routes prompt-injection cases to sanitized
+  refusal, and admits only clean sanitized commits in the finite record model.
+- Updated proof-manifest, proof-triage, proof-depth, outline, live chapter,
+  reader manuscript, proof-envelope, roadmap, and public status surfaces. This
+  is structured-record route coverage only; it does not prove a deployed
+  security kernel, sandbox isolation, side-channel safety, prompt-injection
+  containment, privacy, security, or support-state promotion.
+- Current proof-depth snapshot: 168 proof targets, 54 Lean modules, 870 theorem declarations, 694 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add SCIF sanitized commit replay probe
 
 - Added `python3 scripts/run_security_scif_commit_probe.py`,

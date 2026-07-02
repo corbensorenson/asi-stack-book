@@ -2606,6 +2606,12 @@
               "module": "AsiStackProofs.SecurityKernel",
               "target": "A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:security.scif.commit_probe_bridge",
+              "module": "AsiStackProofs.SecurityKernel",
+              "target": "A structured SCIF commit review routes secret output, handle output, missing lifecycle zeroization, overbroad context, inactive approval, missing residual boundaries, prompt-injection sanitized refusal, and clean sanitized commits into explicit outcomes matching the SCIF sanitized commit replay probe.",
+              "status": "implemented"
             }
           ],
           "claim_source_mappings": [

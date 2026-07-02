@@ -312,4 +312,144 @@ theorem clean_authorized_use_is_allowed
     boundaryAuthorized, permitsSubstitution, clearanceSufficient,
     noPromptInjection, noScifRequired, sanitizedOutput, noResidualRisk]
 
+inductive ScifCommitRoute where
+  | blockCommit
+  | commitSanitizedSummary
+  | commitSanitizedRefusal
+deriving DecidableEq, Repr
+
+structure ScifCommitReview where
+  secretInCandidateOutput : Bool
+  handleInCandidateOutput : Bool
+  lifecycleComplete : Bool
+  contextScoped : Bool
+  approvalActive : Bool
+  residualBoundaryPresent : Bool
+  promptInjectionObserved : Bool
+deriving DecidableEq, Repr
+
+def ScifCommitRouteFor
+    (review : ScifCommitReview) : ScifCommitRoute :=
+  if review.secretInCandidateOutput = true then
+    ScifCommitRoute.blockCommit
+  else if review.handleInCandidateOutput = true then
+    ScifCommitRoute.blockCommit
+  else if review.lifecycleComplete = false then
+    ScifCommitRoute.blockCommit
+  else if review.contextScoped = false then
+    ScifCommitRoute.blockCommit
+  else if review.approvalActive = false then
+    ScifCommitRoute.blockCommit
+  else if review.residualBoundaryPresent = false then
+    ScifCommitRoute.blockCommit
+  else if review.promptInjectionObserved = true then
+    ScifCommitRoute.commitSanitizedRefusal
+  else
+    ScifCommitRoute.commitSanitizedSummary
+
+theorem scif_commit_secret_output_blocks_commit
+    {review : ScifCommitReview} :
+    review.secretInCandidateOutput = true ->
+    ScifCommitRouteFor review =
+      ScifCommitRoute.blockCommit := by
+  intro secretInOutput
+  unfold ScifCommitRouteFor
+  simp [secretInOutput]
+
+theorem scif_commit_handle_output_blocks_commit
+    {review : ScifCommitReview} :
+    review.secretInCandidateOutput = false ->
+    review.handleInCandidateOutput = true ->
+    ScifCommitRouteFor review =
+      ScifCommitRoute.blockCommit := by
+  intro noSecret handleInOutput
+  unfold ScifCommitRouteFor
+  simp [noSecret, handleInOutput]
+
+theorem scif_commit_missing_zeroize_blocks_commit
+    {review : ScifCommitReview} :
+    review.secretInCandidateOutput = false ->
+    review.handleInCandidateOutput = false ->
+    review.lifecycleComplete = false ->
+    ScifCommitRouteFor review =
+      ScifCommitRoute.blockCommit := by
+  intro noSecret noHandle missingLifecycle
+  unfold ScifCommitRouteFor
+  simp [noSecret, noHandle, missingLifecycle]
+
+theorem scif_commit_overbroad_context_blocks_commit
+    {review : ScifCommitReview} :
+    review.secretInCandidateOutput = false ->
+    review.handleInCandidateOutput = false ->
+    review.lifecycleComplete = true ->
+    review.contextScoped = false ->
+    ScifCommitRouteFor review =
+      ScifCommitRoute.blockCommit := by
+  intro noSecret noHandle lifecycleComplete overbroadContext
+  unfold ScifCommitRouteFor
+  simp [noSecret, noHandle, lifecycleComplete, overbroadContext]
+
+theorem scif_commit_inactive_approval_blocks_commit
+    {review : ScifCommitReview} :
+    review.secretInCandidateOutput = false ->
+    review.handleInCandidateOutput = false ->
+    review.lifecycleComplete = true ->
+    review.contextScoped = true ->
+    review.approvalActive = false ->
+    ScifCommitRouteFor review =
+      ScifCommitRoute.blockCommit := by
+  intro noSecret noHandle lifecycleComplete contextScoped inactiveApproval
+  unfold ScifCommitRouteFor
+  simp [noSecret, noHandle, lifecycleComplete, contextScoped, inactiveApproval]
+
+theorem scif_commit_missing_residual_blocks_commit
+    {review : ScifCommitReview} :
+    review.secretInCandidateOutput = false ->
+    review.handleInCandidateOutput = false ->
+    review.lifecycleComplete = true ->
+    review.contextScoped = true ->
+    review.approvalActive = true ->
+    review.residualBoundaryPresent = false ->
+    ScifCommitRouteFor review =
+      ScifCommitRoute.blockCommit := by
+  intro noSecret noHandle lifecycleComplete contextScoped approvalActive
+    missingResidual
+  unfold ScifCommitRouteFor
+  simp [noSecret, noHandle, lifecycleComplete, contextScoped, approvalActive,
+    missingResidual]
+
+theorem scif_commit_prompt_injection_routes_to_sanitized_refusal
+    {review : ScifCommitReview} :
+    review.secretInCandidateOutput = false ->
+    review.handleInCandidateOutput = false ->
+    review.lifecycleComplete = true ->
+    review.contextScoped = true ->
+    review.approvalActive = true ->
+    review.residualBoundaryPresent = true ->
+    review.promptInjectionObserved = true ->
+    ScifCommitRouteFor review =
+      ScifCommitRoute.commitSanitizedRefusal := by
+  intro noSecret noHandle lifecycleComplete contextScoped approvalActive
+    residualBoundary promptInjection
+  unfold ScifCommitRouteFor
+  simp [noSecret, noHandle, lifecycleComplete, contextScoped, approvalActive,
+    residualBoundary, promptInjection]
+
+theorem scif_commit_clean_sanitized_output_commits_summary
+    {review : ScifCommitReview} :
+    review.secretInCandidateOutput = false ->
+    review.handleInCandidateOutput = false ->
+    review.lifecycleComplete = true ->
+    review.contextScoped = true ->
+    review.approvalActive = true ->
+    review.residualBoundaryPresent = true ->
+    review.promptInjectionObserved = false ->
+    ScifCommitRouteFor review =
+      ScifCommitRoute.commitSanitizedSummary := by
+  intro noSecret noHandle lifecycleComplete contextScoped approvalActive
+    residualBoundary noPromptInjection
+  unfold ScifCommitRouteFor
+  simp [noSecret, noHandle, lifecycleComplete, contextScoped, approvalActive,
+    residualBoundary, noPromptInjection]
+
 end AsiStackProofs.SecurityKernel

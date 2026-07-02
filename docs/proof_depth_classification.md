@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 167 |
+| Proof targets in manifest | 168 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 862 |
+| Theorem declarations classified | 870 |
 | Direct/projection-style theorem declarations | 172 |
-| Derived/decomposed theorem declarations | 686 |
+| Derived/decomposed theorem declarations | 694 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -94,7 +94,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 17 | 4 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 2 | 8 | 3 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 3 | 14 | 1 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -811,6 +811,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SecurityKernel.lean` | `prompt_injection_records_leak_residual` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `residual_risk_records_leak_residual` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `revocation_request_revokes_handle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_clean_sanitized_output_commits_summary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_handle_output_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_inactive_approval_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_missing_residual_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_missing_zeroize_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_overbroad_context_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_prompt_injection_routes_to_sanitized_refusal` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_secret_output_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `secret_substitution_requires_authorized_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `unauthorized_boundary_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `unsanitized_output_routes_to_sanitization` | derived_or_decomposed | no | uses simp, unfold |
