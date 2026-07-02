@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Refine Artifact Graphs reader replay prose
+
+- Added one active reader-only semantic overlay operation for `Artifact Graphs,
+  Audit Logs, and Replay`, replacing generated reader and live Human-view
+  `Minimum Viable Implementation` harness inventory prose with a clearer normal
+  reader explanation of the artifact record, schema boundary, finite Lean
+  predicates, synthetic replay-packet harness, next replay-packet slice, and
+  non-claim boundary while leaving the canonical AI/research chapter unchanged.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, and the reader chapter review matrix. The
+  reader-continuity audit now records 44 reader chapters, 115,927 reader words,
+  46 active/applied overlay operations, 0 generated-reader chapter table rows,
+  53 Mermaid diagrams, 0 non-Mermaid code blocks, 3 paragraphs at or above 160
+  words, and 0 high-priority plus 12 medium-priority heuristic review rows.
+- This is a reader projection and Human-view craft increment only; it is not a
+  deployed artifact graph service, replay engine, audit reconstruction service,
+  provenance-completeness checker, benchmark result, evidence transition,
+  support-state promotion, proof result, reader release, ebook/document/PDF/audio
+  artifact, or source-derived evidence update.
+
 ## 2026-07-02 - Add rendered reader key-figure HTML probe
 
 - Added `scripts/validate_reader_key_figure_html_probe.py`,

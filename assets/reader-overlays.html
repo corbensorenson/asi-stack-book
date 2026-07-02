@@ -4,8 +4,20 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 45,
+  "operation_count": 46,
   "operations": [
+    {
+      "id": "v1_0.artifact_graphs.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful artifact graph is not a full provenance platform. It is one structured record for one produced artifact. That record names the parent job, source references, context references, context transaction, semantic certificate, tool path, claim and test links, audit events, replay declaration, replay grade, environment assumptions, residuals, evidence gate, and non-claims.\n\nThe current `artifact_graph_record` schema and fixture validate that this record has the fields a reviewer needs. They do not prove the artifact is true. They make the artifact inspectable enough for later evidence review, routing, replay, and memory reuse.\n\n`AsiStackProofs.ArtifactGraph` models the same boundary with finite predicates. It checks that modeled artifact admission rejects missing parent, source, context transaction, semantic certificate, tool, claim, test, audit, replay, evidence, stale-certificate, promotion, and non-claim fields. It also models replay-packet cases where parent jobs mismatch, byte-exact replay lacks an observed artifact, a stale certificate blocks admission, support review lacks a replay-validated transaction, or partial replay tries to promote too far.\n\n`python3 scripts/validate_artifact_graph_replay.py` adds a synthetic cross-record replay packet check across artifact records, typed jobs, context transactions, semantic certificates, source refs, replay grade, audit reconstruction, stale-certificate status, and promotion boundaries. This is record discipline over fixtures. It is not a deployed replay engine, audit reconstruction service, provenance completeness checker, benchmark result, or support-state promotion.\n\nThe next useful artifact is a tiny replay packet that demonstrates the difference between an artifact being stored and an artifact being evidence-ready: one produced artifact, one parent job, one source/context set, one context transaction, one semantic certificate, one tool path, one replay declaration, one residual declaration, one evidence gate, and one claim/test link.",
+      "rationale": "Replace the dense proof-and-harness inventory with reader prose while preserving the canonical AI/research evidence boundaries."
+    },
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
       "target_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
