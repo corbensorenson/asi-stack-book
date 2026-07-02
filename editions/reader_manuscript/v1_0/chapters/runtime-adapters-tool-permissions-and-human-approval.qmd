@@ -270,9 +270,9 @@ record, or leave a residual that future ledgers cannot ignore.
 
 The minimum viable implementation is a runtime-adapter invocation schema,
 public fixtures, finite permission, approval, lease, rollback, dispatch,
-effect-replay, and adversarial-boundary predicates, a synthetic cross-record
-harness, one public-safe local effect replay, and one deterministic
-adversarial boundary probe.
+effect-replay, adversarial-boundary, and revocation-route predicates, a
+synthetic cross-record harness, one public-safe local effect replay, and one
+deterministic adversarial boundary probe.
 
 The repository currently has that record surface. The fixture validates
 invocation state, impact class, risk tier, approval scope and expiry, effect
@@ -280,9 +280,11 @@ lease, pre/post state refs, external side effects, verification refs,
 irreversible residuals, incident and audit refs, support-state effect, and
 non-claims. `AsiStackProofs.RuntimeAdapters` proves finite predicates that a
 valid invocation requires the parent job permission list to include the
-adapter capability, that a high-impact unapproved invocation is rejected, and
-that incomplete effect replays route to no-mutation, rollback, receipt, or
-no-promotion-boundary evidence instead of accepted replay.
+adapter capability, that a high-impact unapproved invocation is rejected, that
+revoked approvals, leases, and authority receipts do not dispatch without
+no-mutation denial evidence, and that incomplete effect replays route to
+no-mutation, rollback, receipt, or no-promotion-boundary evidence instead of
+accepted replay.
 `scripts/validate_runtime_adapter_permissions.py` checks synthetic typed-job,
 adapter-invocation, authority-use-receipt, and authority-probe consistency for
 permissions, approval gates, expiry markers, receipts, rollback handles,
@@ -301,8 +303,8 @@ mutation. It records `repo_write=false`, `network_used=false`,
 
 That slice is deliberately humble. It does not run a production sandbox,
 mediate a real secret, conduct a live human approval workflow, validate a live
-effect receipt, propagate revocation, execute rollback in a target service, or
-prove tool safety.
+effect receipt, propagate revocation in a deployed service, execute rollback
+in a target service, or prove tool safety.
 
 The Runtime adapter adversarial boundary probe adds breadth to that humble
 slice. `python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`
@@ -312,7 +314,10 @@ authority ceiling overrun, approval scope mismatch, expired approval, sandbox
 escape path, secret materialized into model-visible context, missing rollback
 handle, missing effect receipt, missing audit refs, support-state promotion,
 and missing non-claim boundaries. It is still not deployed adapter execution;
-it is a record-level adversarial gate.
+it is a record-level adversarial gate. The new revocation-route proof closes
+one more finite-record gap by showing where revoked approval, lease, and
+authority-receipt records route, but it is still not deployed revocation
+propagation.
 
 The next honest slice would run a deployed adapter fixture end to end in a
 safe local environment: a low-impact local write with approval not required, a

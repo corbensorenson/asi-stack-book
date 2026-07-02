@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-02 - Add Runtime adapter revocation route proof
+
+- Added `lean:runtime.adapters.revocation_route_bridge` in
+  `AsiStackProofs.RuntimeAdapters`, with finite route theorems for revoked
+  approval, revoked lease, revoked authority receipt, missing no-mutation
+  evidence, missing effect receipt, complete non-revoked dispatch, and
+  no-promotion/non-claim boundaries.
+- Updated the Runtime Adapters live chapter, curated reader chapter, outline,
+  manifest, proof triage, roadmap burn-down, generated proof manifest, and
+  generated Appendix E surfaces. This closes a finite-record revocation-route
+  coverage gap only; it does not prove deployed adapter execution, deployed
+  revocation propagation, approval-service behavior, sandbox isolation,
+  secret-handle safety, rollback-service behavior, policy enforcement,
+  security review, support-state promotion, or any evidence transition.
+- Current proof-depth snapshot: 178 proof targets, 54 Lean modules, 935 theorem
+  declarations, 754 derived/decomposed, 177 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Record RankFold no-promotion decisions
 
 - Added explicit `no_change` evidence-transition records for the RankFold

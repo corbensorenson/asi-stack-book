@@ -5502,13 +5502,18 @@
               "implementation_status": "implemented",
               "result_status": "passes via valid_low_impact_local_write_effect_replay with rollback-exact temp-file restoration and missing-permission and expired-approval no-mutation controls; no deployed-adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, benchmark, or support-state-promotion claim"
             },
-            {
-              "name": "Runtime adapter adversarial boundary probe",
-              "implementation_status": "implemented",
-              "result_status": "passes via deterministic synthetic runtime-adapter adversarial boundary fixture at experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json: two valid synthetic adapter boundary reviews and twelve expected-invalid controls for confused-deputy parent mismatch, authority ceiling overrun, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundaries; no deployed-adapter, sandbox, approval-service, secret-handle, policy-enforcement, rollback-service, revocation-propagation, security-review, or support-state-promotion claim"
-            }
-          ],
-          "lean_module": "AsiStackProofs.RuntimeAdapters",
+                {
+                  "name": "Runtime adapter adversarial boundary probe",
+                  "implementation_status": "implemented",
+                  "result_status": "passes via deterministic synthetic runtime-adapter adversarial boundary fixture at experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json: two valid synthetic adapter boundary reviews and twelve expected-invalid controls for confused-deputy parent mismatch, authority ceiling overrun, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundaries; no deployed-adapter, sandbox, approval-service, secret-handle, policy-enforcement, rollback-service, revocation-propagation, security-review, or support-state-promotion claim"
+                },
+                {
+                  "name": "Runtime adapter revocation route proof",
+                  "implementation_status": "implemented",
+                  "result_status": "passes via Lean build; finite revocation-route predicates for revoked approvals, revoked leases, revoked authority receipts, no-mutation denial evidence, receipt/audit boundaries, and non-promotion boundaries only; no deployed revocation propagation claim"
+                }
+              ],
+              "lean_module": "AsiStackProofs.RuntimeAdapters",
           "proof_targets": [
             {
               "tag": "lean:runtime.adapters.operational_invariant",
@@ -5528,13 +5533,19 @@
               "target": "A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay.",
               "status": "implemented"
             },
-            {
-              "tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
-              "module": "AsiStackProofs.RuntimeAdapters",
-              "target": "A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records.",
-              "status": "implemented"
-            }
-          ],
+                {
+                  "tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
+                  "module": "AsiStackProofs.RuntimeAdapters",
+                  "target": "A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records.",
+                  "status": "implemented"
+                },
+                {
+                  "tag": "lean:runtime.adapters.revocation_route_bridge",
+                  "module": "AsiStackProofs.RuntimeAdapters",
+                  "target": "A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries.",
+                  "status": "implemented"
+                }
+              ],
           "open_evidence_gaps": []
         },
         {

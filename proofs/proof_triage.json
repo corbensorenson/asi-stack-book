@@ -1011,6 +1011,16 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite adversarial-boundary route bridge matching the runtime-adapter adversarial boundary probe shape: parentage mismatches deny confused-deputy routes, parent and lease authority ceiling overruns deny escalation, scoped-approval and expiry failures route away from dispatch, sandbox escape and secret materialization are rejected, rollback/receipt/audit/non-claim gaps block dispatch, support-state effects preserve the no-promotion boundary, and complete low-impact plus scoped high-impact records dispatch."
     },
     {
+      "tag": "lean:runtime.adapters.revocation_route_bridge",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "module": "AsiStackProofs.RuntimeAdapters",
+      "formal_target": "A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite revocation-route bridge: revoked approvals, revoked leases, and revoked authority receipts deny before effect only when no-mutation evidence is present and request that evidence otherwise; complete non-revoked records with effect receipts, audit refs, no support-state effect, and non-claim boundaries can dispatch."
+    },
+    {
       "tag": "lean:procedural.loop_closure.operational_invariant",
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "module": "AsiStackProofs.ProceduralMemory",
@@ -1781,5 +1791,5 @@
       "rationale": "Implemented in AsiStackProofs.Planning as a finite runtime-replan delta route and fixture bridge: it rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context or verification deltas, missing residuals, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta."
     }
   ],
-  "record_count": 177
+  "record_count": 178
 }

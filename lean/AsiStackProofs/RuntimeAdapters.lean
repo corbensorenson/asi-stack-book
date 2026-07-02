@@ -1015,6 +1015,195 @@ theorem adapter_adversarial_high_impact_dispatch_accepted
     Nat.not_lt_of_ge withinLeaseCeiling, sandboxed, sandboxPath, noSecret,
     rollbackRequired, rollbackHandle, receipt, audit, supportNone, nonClaims]
 
+inductive RuntimeAdapterRevocationRoute where
+  | denyMissingPermission
+  | denyRevokedApproval
+  | denyRevokedLease
+  | denyRevokedAuthorityReceipt
+  | requestNoMutationEvidence
+  | requestEffectReceipt
+  | preserveNoPromotionBoundary
+  | dispatch
+deriving DecidableEq, Repr
+
+structure RuntimeAdapterRevocationReview where
+  parentPermissionPresent : Bool
+  approvalRecorded : Bool
+  approvalActive : Bool
+  approvalRevoked : Bool
+  leaseActive : Bool
+  leaseRevoked : Bool
+  authorityReceiptActive : Bool
+  authorityReceiptRevoked : Bool
+  effectAttempted : Bool
+  deniedBeforeMutation : Bool
+  stateUnchangedAfterDenial : Bool
+  effectReceiptRecorded : Bool
+  auditRefsRecorded : Bool
+  supportStateEffectNone : Bool
+  nonClaimsRecorded : Bool
+deriving DecidableEq, Repr
+
+def RuntimeAdapterRevocationRouteFor
+    (review : RuntimeAdapterRevocationReview) :
+    RuntimeAdapterRevocationRoute :=
+  if review.parentPermissionPresent = false then
+    RuntimeAdapterRevocationRoute.denyMissingPermission
+  else if review.approvalRecorded = true ∧
+      (review.approvalActive = false ∨ review.approvalRevoked = true) then
+    if review.deniedBeforeMutation = true ∧
+        review.stateUnchangedAfterDenial = true then
+      RuntimeAdapterRevocationRoute.denyRevokedApproval
+    else
+      RuntimeAdapterRevocationRoute.requestNoMutationEvidence
+  else if review.leaseActive = false ∨ review.leaseRevoked = true then
+    if review.deniedBeforeMutation = true ∧
+        review.stateUnchangedAfterDenial = true then
+      RuntimeAdapterRevocationRoute.denyRevokedLease
+    else
+      RuntimeAdapterRevocationRoute.requestNoMutationEvidence
+  else if review.authorityReceiptActive = false ∨
+      review.authorityReceiptRevoked = true then
+    if review.deniedBeforeMutation = true ∧
+        review.stateUnchangedAfterDenial = true then
+      RuntimeAdapterRevocationRoute.denyRevokedAuthorityReceipt
+    else
+      RuntimeAdapterRevocationRoute.requestNoMutationEvidence
+  else if review.effectAttempted = true ∧
+      (review.effectReceiptRecorded = false ∨
+        review.auditRefsRecorded = false) then
+    RuntimeAdapterRevocationRoute.requestEffectReceipt
+  else if review.supportStateEffectNone = false ∨
+      review.nonClaimsRecorded = false then
+    RuntimeAdapterRevocationRoute.preserveNoPromotionBoundary
+  else
+    RuntimeAdapterRevocationRoute.dispatch
+
+theorem revoked_approval_with_no_mutation_evidence_denies_before_effect
+    {review : RuntimeAdapterRevocationReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalRecorded = true ->
+        review.approvalRevoked = true ->
+          review.deniedBeforeMutation = true ->
+            review.stateUnchangedAfterDenial = true ->
+              RuntimeAdapterRevocationRouteFor review =
+                RuntimeAdapterRevocationRoute.denyRevokedApproval := by
+  intro permissionPresent approvalRecorded approvalRevoked denied unchanged
+  unfold RuntimeAdapterRevocationRouteFor
+  simp [permissionPresent, approvalRecorded, approvalRevoked, denied,
+    unchanged]
+
+theorem revoked_approval_without_no_mutation_evidence_requests_evidence
+    {review : RuntimeAdapterRevocationReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalRecorded = true ->
+        review.approvalRevoked = true ->
+          review.deniedBeforeMutation = false ->
+            RuntimeAdapterRevocationRouteFor review =
+              RuntimeAdapterRevocationRoute.requestNoMutationEvidence := by
+  intro permissionPresent approvalRecorded approvalRevoked noDenialEvidence
+  unfold RuntimeAdapterRevocationRouteFor
+  simp [permissionPresent, approvalRecorded, approvalRevoked, noDenialEvidence]
+
+theorem revoked_lease_with_no_mutation_evidence_denies_before_effect
+    {review : RuntimeAdapterRevocationReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalRecorded = false ->
+        review.leaseRevoked = true ->
+          review.deniedBeforeMutation = true ->
+            review.stateUnchangedAfterDenial = true ->
+              RuntimeAdapterRevocationRouteFor review =
+                RuntimeAdapterRevocationRoute.denyRevokedLease := by
+  intro permissionPresent noApprovalRecord leaseRevoked denied unchanged
+  unfold RuntimeAdapterRevocationRouteFor
+  simp [permissionPresent, noApprovalRecord, leaseRevoked, denied, unchanged]
+
+theorem revoked_lease_without_no_mutation_evidence_requests_evidence
+    {review : RuntimeAdapterRevocationReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalRecorded = false ->
+        review.leaseRevoked = true ->
+          review.deniedBeforeMutation = false ->
+            RuntimeAdapterRevocationRouteFor review =
+              RuntimeAdapterRevocationRoute.requestNoMutationEvidence := by
+  intro permissionPresent noApprovalRecord leaseRevoked noDenialEvidence
+  unfold RuntimeAdapterRevocationRouteFor
+  simp [permissionPresent, noApprovalRecord, leaseRevoked, noDenialEvidence]
+
+theorem revoked_authority_receipt_with_no_mutation_denies_before_effect
+    {review : RuntimeAdapterRevocationReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalRecorded = false ->
+        review.leaseActive = true ->
+          review.leaseRevoked = false ->
+            review.authorityReceiptRevoked = true ->
+              review.deniedBeforeMutation = true ->
+                review.stateUnchangedAfterDenial = true ->
+                  RuntimeAdapterRevocationRouteFor review =
+                    RuntimeAdapterRevocationRoute.denyRevokedAuthorityReceipt := by
+  intro permissionPresent noApprovalRecord leaseActive leaseNotRevoked
+    receiptRevoked denied unchanged
+  unfold RuntimeAdapterRevocationRouteFor
+  simp [permissionPresent, noApprovalRecord, leaseActive, leaseNotRevoked,
+    receiptRevoked, denied, unchanged]
+
+theorem revoked_authority_receipt_without_no_mutation_requests_evidence
+    {review : RuntimeAdapterRevocationReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalRecorded = false ->
+        review.leaseActive = true ->
+          review.leaseRevoked = false ->
+            review.authorityReceiptRevoked = true ->
+              review.deniedBeforeMutation = false ->
+                RuntimeAdapterRevocationRouteFor review =
+                  RuntimeAdapterRevocationRoute.requestNoMutationEvidence := by
+  intro permissionPresent noApprovalRecord leaseActive leaseNotRevoked
+    receiptRevoked noDenialEvidence
+  unfold RuntimeAdapterRevocationRouteFor
+  simp [permissionPresent, noApprovalRecord, leaseActive, leaseNotRevoked,
+    receiptRevoked, noDenialEvidence]
+
+theorem revocation_route_missing_receipt_requests_effect_receipt
+    {review : RuntimeAdapterRevocationReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalRecorded = false ->
+        review.leaseActive = true ->
+          review.leaseRevoked = false ->
+            review.authorityReceiptActive = true ->
+              review.authorityReceiptRevoked = false ->
+                review.effectAttempted = true ->
+                  review.effectReceiptRecorded = false ->
+                    RuntimeAdapterRevocationRouteFor review =
+                      RuntimeAdapterRevocationRoute.requestEffectReceipt := by
+  intro permissionPresent noApprovalRecord leaseActive leaseNotRevoked
+    receiptActive receiptNotRevoked effectAttempted missingReceipt
+  unfold RuntimeAdapterRevocationRouteFor
+  simp [permissionPresent, noApprovalRecord, leaseActive, leaseNotRevoked,
+    receiptActive, receiptNotRevoked, effectAttempted, missingReceipt]
+
+theorem complete_revocation_route_dispatches
+    {review : RuntimeAdapterRevocationReview} :
+    review.parentPermissionPresent = true ->
+      review.approvalRecorded = false ->
+        review.leaseActive = true ->
+          review.leaseRevoked = false ->
+            review.authorityReceiptActive = true ->
+              review.authorityReceiptRevoked = false ->
+                review.effectAttempted = true ->
+                  review.effectReceiptRecorded = true ->
+                    review.auditRefsRecorded = true ->
+                      review.supportStateEffectNone = true ->
+                        review.nonClaimsRecorded = true ->
+                          RuntimeAdapterRevocationRouteFor review =
+                            RuntimeAdapterRevocationRoute.dispatch := by
+  intro permissionPresent noApprovalRecord leaseActive leaseNotRevoked
+    receiptActive receiptNotRevoked effectAttempted receiptRecorded auditRefs
+    supportNone nonClaims
+  unfold RuntimeAdapterRevocationRouteFor
+  simp [permissionPresent, noApprovalRecord, leaseActive, leaseNotRevoked,
+    receiptActive, receiptNotRevoked, effectAttempted, receiptRecorded,
+    auditRefs, supportNone, nonClaims]
+
 structure RuntimeAdapterAdversarialProbeFixture where
   lowImpactDispatchAccepted : Bool
   highImpactDispatchAccepted : Bool
