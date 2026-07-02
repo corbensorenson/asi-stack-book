@@ -16,7 +16,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | disposition:companion_note_candidate | 12 |
 | disposition:curated_manuscript_candidate | 44 |
 | disposition:no_immediate_action | 44 |
-| disposition:reader_overlay_active | 22 |
+| disposition:reader_overlay_active | 23 |
 | release_blocker:format_artifact_not_reviewed | 44 |
 | release_blocker:reader_release_record_not_created | 44 |
 
@@ -49,7 +49,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part II - Planning, Memory, Reasoning, and Execution | `runtime-adapters-tool-permissions-and-human-approval` | reviewed | full_chapter_review | 2 | curated_manuscript_candidate, reader_overlay_active, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `procedural-memory-and-cognitive-loop-closure` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `routing-heads-and-specialist-cores` | reviewed | full_chapter_review | 0 | companion_note_candidate, no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part III - Routing, Compression, Representation, and Substrates | `readiness-gates-residual-escrow-and-quarantine` | reviewed | full_chapter_review | 0 | no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part III - Routing, Compression, Representation, and Substrates | `readiness-gates-residual-escrow-and-quarantine` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `personal-compute-hives-and-federated-edge-intelligence` | reviewed | full_chapter_review | 6 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `compact-generative-systems-and-residual-honesty` | reviewed | full_chapter_review | 1 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part III - Routing, Compression, Representation, and Substrates | `fast-generation-architectures` | reviewed | full_chapter_review | 2 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |

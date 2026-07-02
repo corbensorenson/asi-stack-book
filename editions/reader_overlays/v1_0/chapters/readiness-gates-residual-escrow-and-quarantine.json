@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+  "operations": [
+    {
+      "id": "v1_0.readiness.minimum_viable_implementation_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the dense readiness harness inventory with reader prose while preserving the canonical AI/research proof, probe, and no-promotion boundaries.",
+      "content_lines": [
+        "The smallest useful readiness layer is a record plus a replayable fixture suite. The record names the target, the workload family, the authority envelope, the current lifecycle state, the evidence used, the residuals that survived, the routes that are allowed or blocked, the fallback path, and the expiry condition.",
+        "",
+        "The existing `readiness_gate_record` schema checks that those fields are present. Passing schema validation does not mean a module is ready. It means the readiness decision has enough shape for reviewers, routers, benchmark ratchets, and replacement transactions to inspect what was claimed and what remained unresolved.",
+        "",
+        "The older readiness/residual gate harness checks cross-record consistency across costed routes, readiness gates, and replacement transactions. It exercises canary and default scenarios, residual custody, quarantine, expired evidence, fallback paths, and rollback-readiness links. The newer readiness lifecycle probe focuses on the state machine itself: six valid synthetic lifecycle moves and twelve invalid controls for non-forward jumps, missing evidence, missing residual escrow, unsafe default readiness, quarantine leakage, missing terminal records, retired-state reuse, missing non-claims, and support-promotion overclaim.",
+        "",
+        "`AsiStackProofs.ReadinessGates` models the same boundary with finite predicates and a fixture-summary bridge. It checks promoted decisions, quarantine routing, stale-gate reuse, default readiness, supersession, retirement, retired-state closure, and the lifecycle-probe summary. That is useful record discipline, not deployed readiness behavior. It does not prove benchmark quality, residual-ledger storage, lifecycle execution, live routing enforcement, terminal-state governance, MoECOT replay, or support-state promotion."
+      ]
+    }
+  ]
+}

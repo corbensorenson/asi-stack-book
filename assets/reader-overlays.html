@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 44,
+  "operation_count": 45,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -439,6 +439,18 @@
       },
       "content": "A compressed artifact should enter the system through an admission state, not through enthusiasm about a smaller representation. The first state is non-admission: if the compressed form lacks a manifest, probe, residual account, fallback path, or decode metadata, no downstream consumer should route to it. A cold-archive candidate is narrower; it may be useful for rarely read, write-once material after decode checks, but that does not make it fit for active reasoning.\n\nPreview-only compression is useful when the system needs browsing, routing, or rough inspection, but it must carry loss labels and non-claim boundaries. A task-probe-passed artifact has cleared a bounded task under a declared use envelope, so routing can use it for that task family while preserving fallback. Exact-replay-ready is stronger: decode determinism and reconstruction contracts have passed for the target, although cost can still make the full artifact the better route.\n\nNegative states matter just as much. Fallback-dominant means probe failures or decode costs make the preserved full artifact the normal path, and the failed compression attempt becomes evidence rather than shame. Decoder-quarantined means platform drift, dependency drift, floating-point differences, or manifest mismatch has broken exact decode. In both cases the architecture blocks quiet promotion and routes back to the full artifact.\n\nThese states keep WORM archive assumptions from leaking into planning, citation, audit, or benchmark contexts. A representation can be excellent for deep storage and still wrong for the next task.",
       "rationale": "Replace the artifact-compression admission-state table with reader prose while preserving the canonical AI/research state taxonomy."
+    },
+    {
+      "id": "v1_0.readiness.minimum_viable_implementation_reader_replace",
+      "target_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful readiness layer is a record plus a replayable fixture suite. The record names the target, the workload family, the authority envelope, the current lifecycle state, the evidence used, the residuals that survived, the routes that are allowed or blocked, the fallback path, and the expiry condition.\n\nThe existing `readiness_gate_record` schema checks that those fields are present. Passing schema validation does not mean a module is ready. It means the readiness decision has enough shape for reviewers, routers, benchmark ratchets, and replacement transactions to inspect what was claimed and what remained unresolved.\n\nThe older readiness/residual gate harness checks cross-record consistency across costed routes, readiness gates, and replacement transactions. It exercises canary and default scenarios, residual custody, quarantine, expired evidence, fallback paths, and rollback-readiness links. The newer readiness lifecycle probe focuses on the state machine itself: six valid synthetic lifecycle moves and twelve invalid controls for non-forward jumps, missing evidence, missing residual escrow, unsafe default readiness, quarantine leakage, missing terminal records, retired-state reuse, missing non-claims, and support-promotion overclaim.\n\n`AsiStackProofs.ReadinessGates` models the same boundary with finite predicates and a fixture-summary bridge. It checks promoted decisions, quarantine routing, stale-gate reuse, default readiness, supersession, retirement, retired-state closure, and the lifecycle-probe summary. That is useful record discipline, not deployed readiness behavior. It does not prove benchmark quality, residual-ledger storage, lifecycle execution, live routing enforcement, terminal-state governance, MoECOT replay, or support-state promotion.",
+      "rationale": "Replace the dense readiness harness inventory with reader prose while preserving the canonical AI/research proof, probe, and no-promotion boundaries."
     },
     {
       "id": "v1_0.runtime_adapters.effect_receipt_reader_replace",

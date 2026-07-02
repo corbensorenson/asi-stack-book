@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Refine Readiness reader lifecycle prose
+
+- Added one active reader-only semantic overlay operation for `Readiness Gates,
+  Residual Escrow, and Quarantine`, replacing generated reader and live
+  Human-view `Minimum Viable Implementation` harness inventory prose with a
+  tighter reader explanation of the readiness record, schema boundary,
+  readiness/residual gate harness, lifecycle probe, Lean finite predicates, and
+  no-promotion boundary while leaving the canonical AI/research proof and probe
+  details unchanged.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, the reader chapter review matrix, and the
+  v1.0 status snapshot. The reader-continuity audit now records 44 reader
+  chapters, 115,946 reader words, 45 active/applied overlay operations, 0
+  generated-reader chapter table rows, 53 Mermaid diagrams, 0 non-Mermaid code
+  blocks, 4 paragraphs at or above 160 words, and 0 high-priority plus 13
+  medium-priority heuristic review rows.
+- This is a reader projection and Human-view craft increment only; it is not a
+  deployed readiness engine, residual-ledger storage result, live quarantine
+  routing result, terminal-state governance result, MoECOT replay, benchmark
+  result, evidence transition, support-state promotion, proof result, reader
+  release, ebook/document/PDF/audio artifact, or source-derived evidence update.
+
 ## 2026-07-02 - Add Readiness lifecycle probe
 
 - Added `python3 scripts/validate_readiness_lifecycle_probe.py`,
