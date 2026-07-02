@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-02"
 primary_sources:
   - "planforge"
   - "viea"
@@ -18,8 +18,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Six merged source mappings are passage-reviewed; `coherence_exchange` and `moecot` remain connector/source-note mapped, and support remains argument until planner harnesses, dependency checks, tier-adequacy tests, cost-quality traces, or runtime replanning traces exist."
-  - "The plan_graph and PlanForge DAG fixtures validate schema/example consistency; the plan-execution harness checks synthetic dependency ordering, blocked-vs-dispatchable state, dispatch receipts, contract/job consistency, and approval-bypass rejection; and the Planning scheduler-state probe covers ready and blocked nodes, failed cheap-route adequacy, merge conflict, local repair, and hidden-cost ledger controls. Decomposition quality, context-demand prediction, selected-tier adequacy, route quality, and runtime replanning traces remain unimplemented."
-  - "The implemented Planning and PlanForge Lean predicates cover finite plan-node, plan-control, plan-graph admission-route, scheduler-state probe, dependency-order, and failed-quality records only; they do not establish planner quality, graph completeness, scheduler optimality, route adequacy, cost-quality dominance, or deployed replanning behavior."
+  - "The plan_graph and PlanForge DAG fixtures validate schema/example consistency; the plan-execution harness checks synthetic dependency ordering, blocked-vs-dispatchable state, dispatch receipts, contract/job consistency, and approval-bypass rejection; the Planning scheduler-state probe covers ready and blocked nodes, failed cheap-route adequacy, merge conflict, local repair, and hidden-cost ledger controls; and the Planning runtime-replan delta audit covers authority-preserving, stop-preserving, affected-subgraph-scoped synthetic replan deltas. Decomposition quality, context-demand prediction, selected-tier adequacy, route quality, live feedback handling, and deployed runtime replanning traces remain unimplemented."
+  - "The implemented Planning and PlanForge Lean predicates cover finite plan-node, plan-control, plan-graph admission-route, scheduler-state probe, runtime-replan delta audit, dependency-order, and failed-quality records only; they do not establish planner quality, graph completeness, scheduler optimality, route adequacy, cost-quality dominance, live feedback handling, or deployed replanning behavior."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -31,17 +31,17 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-02 |
 | Primary source records | `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `viea`, `planforge_compiler_arch`; supporting: `cognitive_compilation`, `software_magic_grimoire`, `tokenmana`; connector/recovery: `moecot`, `coherence_exchange` |
 | Source loading state | source notes: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`; passage-reviewed local raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `planforge_compiler_arch`, `tokenmana`; connector/source-note only: `moecot`, `coherence_exchange` |
-| Test state | `plan_graph.valid.json` and `planforge_dag.valid.json` pass protocol fixture validation, `AsiStackProofs.Planning` and `AsiStackProofs.PlanForge` build locally, the theorems over `AsiStackProofs.Planning.PlanControlRouteFor` and `AsiStackProofs.Planning.PlanGraphAdmissionRouteFor` prove finite dispatchable-record and plan-graph-admission routing, `python3 scripts/validate_plan_execution_contracts.py` checks synthetic dependency ordering, blocked-vs-dispatchable state, dispatch receipts, DAG acyclicity, contract/job consistency, and approval-bypass rejection, and `python3 scripts/validate_planning_scheduler_state_probe.py` passes two valid synthetic scheduler traces and seven expected-invalid controls, producing `experiments/planning_scheduler_state/results/2026-07-02-local.json`; decomposition quality, context-demand prediction, selected-tier adequacy, route quality, and runtime replanning traces remain planned. |
+| Test state | `plan_graph.valid.json` and `planforge_dag.valid.json` pass protocol fixture validation, `AsiStackProofs.Planning` and `AsiStackProofs.PlanForge` build locally, the theorems over `AsiStackProofs.Planning.PlanControlRouteFor` and `AsiStackProofs.Planning.PlanGraphAdmissionRouteFor` prove finite dispatchable-record and plan-graph-admission routing, `python3 scripts/validate_plan_execution_contracts.py` checks synthetic dependency ordering, blocked-vs-dispatchable state, dispatch receipts, DAG acyclicity, contract/job consistency, and approval-bypass rejection, `python3 scripts/validate_planning_scheduler_state_probe.py` passes two valid synthetic scheduler traces and seven expected-invalid controls, producing `experiments/planning_scheduler_state/results/2026-07-02-local.json`, and `python3 scripts/validate_planning_runtime_replan_delta.py` passes two valid synthetic runtime-replan traces and nine expected-invalid controls, producing `experiments/planning_runtime_replan_delta/results/2026-07-02-local.json`; decomposition quality, context-demand prediction, selected-tier adequacy, route quality, live feedback handling, and deployed runtime replanning traces remain planned. |
 
 ## Drafting guardrail
 
-Planning is a bounded control artifact. The repo validates draft plan-graph and PlanForge DAG fixtures, but it does not yet validate plan quality, selected-tier adequacy, dependency soundness beyond synthetic records, authority preservation under deployed replanning, route quality, cost-quality dominance, or successful execution.
+Planning is a bounded control artifact. The repo validates draft plan-graph and PlanForge DAG fixtures plus synthetic scheduler-state and runtime-replan-delta records, but it does not yet validate plan quality, selected-tier adequacy, dependency soundness beyond synthetic records, authority preservation under deployed replanning, route quality, cost-quality dominance, live feedback handling, or successful execution.
 
 It follows command contracts because explicit commands are still inert until the stack decides what work should exist, what order it belongs in, and which boundaries must be consulted before dispatch.
 
@@ -269,7 +269,7 @@ The smallest honest implementation is a public plan graph plus PlanForge DAG rec
 
 Planning starts with `plan_graph`, `planforge_dag`, `command_contract`, `hive_job_contract`, and `semantic_atom` schemas plus fixtures. The current plan-execution harness checks synthetic valid and invalid records for dependency order, blocked authority, contract mismatch, DAG cycles, requirement loss, unreceipted dispatch, and approval bypass. Plan quality remains unmeasured.
 
-The schema and fixtures make the planning surface explicit. Decomposition quality, route adequacy, selected-tier correctness, scheduler optimality, runtime replanning, and deployed dispatch safety still need separate checks.
+The schema and fixtures make the planning surface explicit. Decomposition quality, route adequacy, selected-tier correctness, scheduler optimality, live feedback handling, runtime replanning, and deployed dispatch safety still need separate checks.
 
 The Planning scheduler-state probe adds that scheduler-state stress case. It
 runs with `python3 scripts/validate_planning_scheduler_state_probe.py` and
@@ -284,6 +284,21 @@ replanning authority erasure, accepted dependency cycles, and cost-quality
 ledgers that erase repair, human-review, failed-attempt, or residual costs.
 The probe sharpens scheduling semantics while leaving performance, planner
 quality, route quality, and deployment unclaimed.
+
+The Planning runtime-replan delta audit adds the next finite replan-shape
+slice. It runs with `python3 scripts/validate_planning_runtime_replan_delta.py`
+and records
+`experiments/planning_runtime_replan_delta/results/2026-07-02-local.json`. It
+has two valid synthetic runtime-replan traces: one local source-repair delta
+that reruns only the affected subgraph and one authority-blocked replan that
+records a residual without issuing a dispatch receipt. Its nine
+expected-invalid controls reject authority widening, stop-condition erasure,
+unaffected-node reruns without dependency impact, missing residual ownership,
+missing context deltas, missing verification deltas, blocked-authority
+dispatch receipts, support-promotion overclaims, and missing non-claim
+boundaries. The audit sharpens the runtime-replan record shape while leaving
+planner quality, live feedback handling, runtime scheduler behavior, route
+quality, selected-tier adequacy, and deployment unclaimed.
 
 ## Beyond the State of the Art
 
@@ -321,11 +336,12 @@ This traffic-control layer is still an architectural target. Keep planning suppo
 | Dispatch-state enforcement test | Check that only `dispatchable` nodes can lower into typed jobs and blocked/proposed nodes remain residuals or review items. | planned; not run |
 | Replanning-delta audit | Check that replanning records changed assumptions, authority basis, context, verification, stop conditions, and residuals. | planned; not run |
 | Planning scheduler-state probe | Check that a synthetic scheduler fixture separates ready, blocked, dispatchable, merged, and replanned states; rejects failed cheap-route adequacy, conflicting merges, authority-erasing replans, dependency cycles, and erased repair or residual costs; and preserves no-promotion boundaries. | implemented by `python3 scripts/validate_planning_scheduler_state_probe.py` with two valid synthetic scheduler traces and seven expected-invalid controls; no decomposition-quality, context-demand-prediction, selected-tier-adequacy, route-quality, scheduler-optimality, deployed scheduler, runtime-replanning, support-state-promotion, or evidence-transition claim |
+| Planning runtime-replan delta audit | Check that synthetic runtime replans preserve authority and stop conditions, stay inside the affected subgraph, record context and verification deltas, keep residual ownership, block authority-denied dispatch, and preserve no-promotion boundaries. | implemented by `python3 scripts/validate_planning_runtime_replan_delta.py` with two valid synthetic runtime-replan traces and nine expected-invalid controls; no deployed-planner, runtime-scheduler, decomposition-quality, route-quality, selected-tier-adequacy, live-feedback-handling, support-state-promotion, or evidence-transition claim |
 | DAG acyclicity test | Check that plan-graph dependencies and PlanForge DAG edges are acyclic and agree before dispatch. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; no deployed scheduler claim |
 | Capability tier assignment test | Check that each node has a minimum adequate tier, route assignment, and verification burden. | planned; not run |
 | Escalation trigger test | Check that failed quality predicates route to escalation or residuals. | implemented in `AsiStackProofs.PlanForge`; builds locally |
 
-The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow dependency ordering, modeled dispatch gates, dispatchable-record route selection, plan-graph admission routing, blocked-plan receipt separation, DAG acyclicity, failed-quality escalation/residual routing, and replanning-residual bookkeeping. Decomposition quality, context-demand prediction, selected-tier adequacy, route quality, runtime replanning, and support-state movement still require a planner harness, context-demand oracle, scheduler trace, or replay trace.
+The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow dependency ordering, modeled dispatch gates, dispatchable-record route selection, plan-graph admission routing, blocked-plan receipt separation, DAG acyclicity, failed-quality escalation/residual routing, scheduler-state boundaries, runtime-replan delta shape, and replanning-residual bookkeeping. Decomposition quality, context-demand prediction, selected-tier adequacy, route quality, live feedback handling, deployed runtime replanning, and support-state movement still require a planner harness, context-demand oracle, scheduler trace, or replay trace.
 
 ### Formalization hooks
 
@@ -335,10 +351,11 @@ The fixture-shape check, finite Lean predicates, and synthetic plan-execution ha
 | `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | implemented |
 | `lean:planning.control_layer.plan_graph_admission_route` | `AsiStackProofs.Planning` | Modeled plan-graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:planning.scheduler_state.probe_fixture_bridge` | `AsiStackProofs.Planning` | The deterministic synthetic scheduler-state probe result includes a valid scheduler trace, a local-repair trace, rejected negative controls, a cost-quality ledger boundary, no support-state effect, and an explicit non-claim boundary. | implemented |
+| `lean:planning.runtime_replan.delta_audit_bridge` | `AsiStackProofs.Planning` | The deterministic synthetic runtime-replan delta audit includes a local source-repair trace, a blocked-authority replan trace, rejected negative controls, preserved authority and stop conditions, affected-subgraph scope, context and verification deltas, residual ownership, blocked-authority no-dispatch, no support-state effect, and an explicit non-claim boundary. | implemented |
 | `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
-These proof hooks are implemented only over finite-record Lean surfaces in `AsiStackProofs.Planning` and `AsiStackProofs.PlanForge`. The Planning predicates check authority inheritance, unsatisfied-constraint blocking, dispatchable/blocked/replanned record envelopes, dispatch receipts, residual preservation, the finite `PlanControlRouteFor` dispatch decision, and the theorem that a valid modeled dispatchable record routes to `allowDispatch` after its required gates and receipt/no-blocked-node conditions hold. The new plan-graph admission route checks explicit blockers for missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contract, verification plan, dispatch gate, dispatch receipt, replanning controls, residual register, and non-claim boundary before a modeled graph becomes admissible. The scheduler-state bridge adds a finite fixture-summary mirror for the synthetic scheduler probe: valid scheduler and local-repair traces, rejected negative controls, hidden-cost ledger coverage, no support-state effect, and non-claim boundaries. The PlanForge predicates check that a dispatchable finite plan graph carries an acyclicity certificate and ordered dependency edges, and that a failed quality predicate cannot satisfy the valid outcome predicate unless it escalates or emits a residual. The formalization remains a local record guard, not a planner-quality result, selected-tier adequacy result, context-demand predictor, route-quality result, cost-quality result, scheduler-optimality result, or deployed replanning trace.
+These proof hooks are implemented only over finite-record Lean surfaces in `AsiStackProofs.Planning` and `AsiStackProofs.PlanForge`. The Planning predicates check authority inheritance, unsatisfied-constraint blocking, dispatchable/blocked/replanned record envelopes, dispatch receipts, residual preservation, the finite `PlanControlRouteFor` dispatch decision, and the theorem that a valid modeled dispatchable record routes to `allowDispatch` after its required gates and receipt/no-blocked-node conditions hold. The plan-graph admission route checks explicit blockers for missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contract, verification plan, dispatch gate, dispatch receipt, replanning controls, residual register, and non-claim boundary before a modeled graph becomes admissible. The scheduler-state bridge adds a finite fixture-summary mirror for the synthetic scheduler probe: valid scheduler and local-repair traces, rejected negative controls, hidden-cost ledger coverage, no support-state effect, and non-claim boundaries. The runtime-replan delta route rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context/verification/residual deltas, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta. The PlanForge predicates check that a dispatchable finite plan graph carries an acyclicity certificate and ordered dependency edges, and that a failed quality predicate cannot satisfy the valid outcome predicate unless it escalates or emits a residual. The formalization remains a local record guard, not a planner-quality result, selected-tier adequacy result, context-demand predictor, route-quality result, cost-quality result, scheduler-optimality result, live-feedback result, or deployed replanning trace.
 
 ## Source crosswalk
 
@@ -353,7 +370,7 @@ These proof hooks are implemented only over finite-record Lean surfaces in `AsiS
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Speculative intelligence-arbitrage and coherence/liquidity framing; use only as architecture vocabulary. | source note available; connector or recovery required |
 | `tokenmana` | TokenMana | resource_economics | Regenerative capacity and broader budget vocabulary for load, latency, review capacity, burst control, and human cognitive friction. | source note available; local raw cache passage-reviewed |
 
-The planning/control boundary is supported by six passage-reviewed mappings, while `coherence_exchange` and `moecot` remain connector/source-note mapped. The core claim stays at `argument` because no planner harness, dependency checker, selected-tier adequacy test, context-demand test, runtime replanning trace, scheduler trace, route-quality run, cost-quality result, or reproduced benchmark is recorded.
+The planning/control boundary is supported by six passage-reviewed mappings, while `coherence_exchange` and `moecot` remain connector/source-note mapped. The core claim stays at `argument` because no planner harness, dependency checker, selected-tier adequacy test, context-demand test, deployed runtime replanning trace, live scheduler trace, route-quality run, cost-quality result, or reproduced benchmark is recorded.
 
 ## Summary
 

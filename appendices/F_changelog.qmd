@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-02 - Add Planning runtime-replan delta audit
+
+- Added `python3 scripts/validate_planning_runtime_replan_delta.py`,
+  `docs/planning_runtime_replan_delta_audit.md`, and
+  `experiments/planning_runtime_replan_delta/results/2026-07-02-local.json`
+  for a deterministic Planning runtime-replan delta fixture.
+- The audit validates 2 synthetic runtime-replan traces and 9 expected-invalid
+  controls for authority widening, stop-condition erasure, unaffected-node
+  rerun without dependency impact, missing residual ownership, missing context
+  delta, missing verification delta, blocked-authority dispatch,
+  support-promotion overclaim, and missing non-claim boundary.
+- Added `lean:planning.runtime_replan.delta_audit_bridge` in
+  `AsiStackProofs.Planning` for finite runtime-delta routing, including
+  authority-widening rejection, stop-condition-erasure rejection,
+  blocked-authority dispatch rejection, complete modeled delta acceptance, and
+  fixture-summary alignment.
+- Updated the live chapter, curated reader chapter, outline, roadmap, manifest,
+  proof scaffolds, README, and book-gate validation. This is no deployed
+  planner, runtime scheduler, decomposition-quality result, route-quality
+  result, selected-tier-adequacy result, live-feedback result,
+  evidence-transition, or chapter-core promotion claim.
+- Current proof-depth snapshot: 175 proof targets, 54 Lean modules, 899 theorem
+  declarations, 720 derived/decomposed, 175 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add substrate adoption trace
 
 - Added `python3 scripts/validate_substrate_adoption_trace.py`,

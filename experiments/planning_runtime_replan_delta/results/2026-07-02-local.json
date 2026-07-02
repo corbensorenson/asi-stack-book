@@ -1,0 +1,74 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_planning_runtime_replan_delta.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 9,
+  "lean_fixture_alignment": {
+    "expected": {
+      "affected_subgraph_scoped": true,
+      "authority_preserved": true,
+      "blocked_authority_no_dispatch": true,
+      "context_delta_recorded": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "residuals_recorded": true,
+      "stop_conditions_preserved": true,
+      "support_state_effect_none": true,
+      "valid_blocked_authority_trace_present": true,
+      "valid_local_repair_trace_present": true,
+      "verification_delta_recorded": true
+    },
+    "module": "AsiStackProofs.Planning",
+    "proof_tag": "lean:planning.runtime_replan.delta_audit_bridge",
+    "theorem_refs": [
+      "runtime_replan_delta_authority_widening_rejected",
+      "runtime_replan_delta_stop_erasure_rejected",
+      "runtime_replan_delta_blocked_authority_dispatch_rejected",
+      "runtime_replan_delta_complete_audit_accepted",
+      "planning_runtime_replan_delta_audit_bridge"
+    ]
+  },
+  "negative_controls": {
+    "authority_widening_rejected": true,
+    "blocked_authority_dispatch_rejected": true,
+    "missing_context_delta_rejected": true,
+    "missing_non_claim_boundary_rejected": true,
+    "missing_residual_owner_rejected": true,
+    "missing_verification_delta_rejected": true,
+    "stop_condition_erasure_rejected": true,
+    "support_promotion_overclaim_rejected": true,
+    "unaffected_rerun_without_dependency_rejected": true
+  },
+  "non_claims": [
+    "does not execute a deployed planner",
+    "does not prove runtime scheduler behavior",
+    "does not prove decomposition quality",
+    "does not prove route quality or selected-tier adequacy",
+    "does not prove live feedback handling",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic runtime-replan delta audit only; no deployed planner, scheduler, or live feedback loop was exercised.",
+    "The chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-planning-runtime-replan-delta-audit",
+  "result_kind": "deterministic_synthetic_runtime_replan_delta_audit",
+  "schema_version": "asi_stack.planning_runtime_replan_delta.v0",
+  "support_state_effect": "none",
+  "trace_count": 11,
+  "transition_coverage": {
+    "affected_subgraph_scoped": true,
+    "authority_preserved": true,
+    "blocked_authority_replan_delta": true,
+    "context_delta_recorded": true,
+    "cost_quality_repair_delta_recorded": true,
+    "local_source_repair_delta": true,
+    "no_support_state_effect": true,
+    "residual_owner_recorded": true,
+    "stop_conditions_preserved": true,
+    "verification_delta_recorded": true
+  },
+  "valid_trace_count": 2,
+  "verification_result": "pass"
+}

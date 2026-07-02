@@ -94,10 +94,14 @@ REQUIRED = [
     "experiments/substrate_adoption_trace/README.md",
     "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
     "scripts/validate_planning_scheduler_state_probe.py",
+    "scripts/validate_planning_runtime_replan_delta.py",
     "scripts/validate_typed_job_delivery_probe.py",
     "docs/planning_scheduler_state_probe.md",
+    "docs/planning_runtime_replan_delta_audit.md",
     "docs/typed_job_delivery_probe.md",
     "experiments/planning_scheduler_state/results/2026-07-02-local.json",
+    "experiments/planning_runtime_replan_delta/README.md",
+    "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json",
     "experiments/typed_job_delivery/results/2026-07-02-local.json",
     "scripts/validate_claim_ledger_revision.py",
     "scripts/validate_adversarial_review_dossier_probe.py",
@@ -886,6 +890,7 @@ def main() -> None:
     run_validator("validate_intent_governed_replacement_bridge.py")
     run_validator("validate_substrate_adoption_trace.py")
     run_validator("validate_planning_scheduler_state_probe.py")
+    run_validator("validate_planning_runtime_replan_delta.py")
     run_validator("validate_typed_job_delivery_probe.py")
     run_validator("validate_cognitive_compilation_traces.py")
     run_validator("validate_hive_admission.py")

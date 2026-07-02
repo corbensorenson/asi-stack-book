@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 174 |
+| Proof targets in manifest | 175 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 894 |
-| Direct/projection-style theorem declarations | 174 |
-| Derived/decomposed theorem declarations | 716 |
+| Theorem declarations classified | 899 |
+| Direct/projection-style theorem declarations | 175 |
+| Derived/decomposed theorem declarations | 720 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -80,7 +80,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 5 | 22 | 4 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 4 | 24 | 7 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 29 | 8 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | policy-optimization-and-learning-from-feedback | 4 | 18 | 7 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 8 | 6 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -596,8 +596,13 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | `missing_residual_register_blocks_new_plan_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `missing_verification_plan_blocks_plan_graph_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `plan_node_inherits_authority_without_governance_lowering` | derived_or_decomposed | no | uses cases, rw |
+| `lean/AsiStackProofs/Planning.lean` | `planning_runtime_replan_delta_audit_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Planning.lean` | `planning_scheduler_state_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Planning.lean` | `replanning_without_authority_preservation_blocks_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_authority_widening_rejected` | derived_or_decomposed | no | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_blocked_authority_dispatch_rejected` | derived_or_decomposed | no | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_complete_audit_accepted` | derived_or_decomposed | no | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_stop_erasure_rejected` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `unordered_dependencies_block_plan_graph_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `unsatisfied_required_constraints_block_dispatch` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `valid_blocked_plan_has_no_dispatch_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

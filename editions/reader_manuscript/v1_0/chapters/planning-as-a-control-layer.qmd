@@ -369,6 +369,20 @@ not a deployed scheduler result. It does not prove planner quality,
 context-demand prediction, route quality, selected-tier adequacy, or runtime
 replanning.
 
+The runtime-replan delta audit adds one more small guard. It asks what must be
+true when feedback changes a plan after work has started. The audit uses two synthetic runtime-replan traces. In the synthetic fixture, a source repair can
+rerun only the affected subgraph, while an
+authority-blocked replan must stop as a residual instead of producing a
+dispatch receipt. The bad cases are the ones a real system would be tempted to
+hide: widened authority, erased stop conditions, unnecessary reruns, missing
+context or verification deltas, missing residual ownership, and a quiet claim
+that the chapter is now proven.
+
+That audit makes the record shape sharper. It is not a deployed planner result,
+not a live feedback loop, and not evidence that the scheduler chooses
+good routes. It says only that a runtime replan record must preserve the same
+control boundaries the chapter argues for in prose.
+
 ## Beyond the State of the Art
 
 The mature endpoint is a live control plane for work.
@@ -414,12 +428,18 @@ finite plan graph carries an acyclicity certificate and ordered dependency
 edges, and that a failed quality predicate cannot count as a valid node
 outcome unless it escalates or emits a residual.
 
+The newer runtime-replan proof bridge stays in the same narrow lane. It models
+recorded deltas, not deployed behavior. It rejects authority widening,
+stop-condition erasure, unscoped repair, missing context or verification
+deltas, blocked-authority dispatch, support promotion, and missing non-claim
+boundaries before a modeled runtime delta can be accepted.
+
 Those theorems are useful because they make the intended boundary executable
 as a formal envelope. They are not broad correctness proofs. They do not prove
 that a real planner decomposes tasks well, finds the right dependencies,
 predicts missing context, chooses the best route, preserves authority in a
-live runtime, measures cost savings, proves selected-tier adequacy, or
-succeeds at execution.
+live runtime, handles real feedback, measures cost savings, proves
+selected-tier adequacy, or succeeds at execution.
 
 The honest status is therefore: planning support remains `argument`. The
 formal and synthetic artifacts make the shape of the claim more disciplined,

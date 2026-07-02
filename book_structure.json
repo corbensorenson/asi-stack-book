@@ -3394,7 +3394,7 @@
             "Merge laundering, where parallel branches pass locally while relying on conflicting assumptions or source versions.",
             "Arbitrage laundering, where verification, repair, or human cleanup is moved outside the cost-quality ledger."
           ],
-          "minimal_implementation": "A public plan graph plus PlanForge DAG record surface with fixtures and validation for lifecycle states, dependency order, dispatch receipts, authority, capability tiers, adequacy contracts, cost-quality ledgers, residuals, invalid cycles, contract mismatch, requirement loss, unreceipted dispatch, and approval bypass, while leaving decomposition quality, selected-tier adequacy, route quality, runtime replanning, and deployed scheduler behavior unclaimed.",
+          "minimal_implementation": "A public plan graph plus PlanForge DAG record surface with fixtures and validation for lifecycle states, dependency order, dispatch receipts, authority, capability tiers, adequacy contracts, cost-quality ledgers, residuals, invalid cycles, contract mismatch, requirement loss, unreceipted dispatch, approval bypass, scheduler-state boundaries, and runtime-replan delta shape, while leaving decomposition quality, selected-tier adequacy, route quality, live feedback handling, runtime replanning, and deployed scheduler behavior unclaimed.",
           "beyond_state_of_art": "The mature version is a governed scheduler and capacity allocator for cognitive work. It receives accepted command contracts, builds and maintains plan graphs, and decides which nodes are proposed, blocked, reviewable, dispatchable, dispatched, replanned, residualized, or stopped. It never owns memory, authority, verification, or side effects; it coordinates the handoffs that let those layers do their own jobs. Each node carries dependency order, context demand, authority state, capability tier, adequacy contract, verifier, cost envelope, route assignment, merge condition, escalation path, and residual behavior. Intelligence arbitrage is measured only after verification, repair, merge, human review, and residual cost are counted, so cheaper work is accepted only when it satisfies the node adequacy contract and remains useful to downstream dependents.",
           "codex_tests": [
             "Decomposition accuracy test",
@@ -3430,6 +3430,11 @@
               "name": "Planning scheduler-state probe",
               "implementation_status": "implemented",
               "result_status": "passes via deterministic synthetic scheduler-state fixture at experiments/planning_scheduler_state/results/2026-07-02-local.json: two valid synthetic scheduler traces and seven expected-invalid controls; no decomposition-quality, context-demand-prediction, selected-tier-adequacy, route-quality, scheduler-optimality, deployed scheduler, runtime-replanning, support-state-promotion, or evidence-transition claim"
+            },
+            {
+              "name": "Planning runtime-replan delta audit",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic runtime-replan delta audit at experiments/planning_runtime_replan_delta/results/2026-07-02-local.json: two valid synthetic runtime-replan traces and nine expected-invalid controls; no deployed-planner, runtime-scheduler, decomposition-quality, route-quality, selected-tier-adequacy, live-feedback-handling, support-state-promotion, or evidence-transition claim"
             }
           ],
           "lean_module": "AsiStackProofs.Planning",
@@ -3456,6 +3461,12 @@
               "tag": "lean:planning.scheduler_state.probe_fixture_bridge",
               "module": "AsiStackProofs.Planning",
               "target": "The deterministic synthetic scheduler-state probe result includes a valid scheduler trace, a local-repair trace, rejected negative controls, a cost-quality ledger boundary, no support-state effect, and an explicit non-claim boundary.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:planning.runtime_replan.delta_audit_bridge",
+              "module": "AsiStackProofs.Planning",
+              "target": "The deterministic synthetic runtime-replan delta audit includes a local source-repair trace, a blocked-authority replan trace, rejected negative controls, preserved authority and stop conditions, affected-subgraph scope, context and verification deltas, residual ownership, blocked-authority no-dispatch, no support-state effect, and an explicit non-claim boundary.",
               "status": "implemented"
             },
             {

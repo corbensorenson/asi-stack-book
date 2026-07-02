@@ -714,4 +714,187 @@ theorem planning_scheduler_state_probe_fixture_bridge
   intro valid
   exact valid
 
+inductive RuntimeReplanDeltaRoute where
+  | noReplan
+  | blockAuthorityWidening
+  | blockStopConditionErasure
+  | blockUnscopedSubgraph
+  | blockMissingContextDelta
+  | blockMissingVerificationDelta
+  | blockMissingResidual
+  | blockBlockedAuthorityDispatch
+  | blockSupportPromotion
+  | blockMissingNonClaimBoundary
+  | acceptRuntimeDelta
+deriving DecidableEq, Repr
+
+structure RuntimeReplanDeltaAudit where
+  replanAttempted : Bool
+  authorityPreserved : Bool
+  stopConditionsPreserved : Bool
+  affectedSubgraphOnly : Bool
+  contextDeltaRecorded : Bool
+  verificationDeltaRecorded : Bool
+  residualsRecorded : Bool
+  blockedAuthorityPath : Bool
+  dispatchReceiptIssued : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def RuntimeReplanDeltaRouteFor
+    (audit : RuntimeReplanDeltaAudit) :
+    RuntimeReplanDeltaRoute :=
+  if !audit.replanAttempted then
+    RuntimeReplanDeltaRoute.noReplan
+  else if !audit.authorityPreserved then
+    RuntimeReplanDeltaRoute.blockAuthorityWidening
+  else if !audit.stopConditionsPreserved then
+    RuntimeReplanDeltaRoute.blockStopConditionErasure
+  else if !audit.affectedSubgraphOnly then
+    RuntimeReplanDeltaRoute.blockUnscopedSubgraph
+  else if !audit.contextDeltaRecorded then
+    RuntimeReplanDeltaRoute.blockMissingContextDelta
+  else if !audit.verificationDeltaRecorded then
+    RuntimeReplanDeltaRoute.blockMissingVerificationDelta
+  else if !audit.residualsRecorded then
+    RuntimeReplanDeltaRoute.blockMissingResidual
+  else if audit.blockedAuthorityPath && audit.dispatchReceiptIssued then
+    RuntimeReplanDeltaRoute.blockBlockedAuthorityDispatch
+  else if !audit.supportStateEffectNone then
+    RuntimeReplanDeltaRoute.blockSupportPromotion
+  else if !audit.nonClaimBoundary then
+    RuntimeReplanDeltaRoute.blockMissingNonClaimBoundary
+  else
+    RuntimeReplanDeltaRoute.acceptRuntimeDelta
+
+theorem runtime_replan_delta_authority_widening_rejected
+    {audit : RuntimeReplanDeltaAudit} :
+    audit.replanAttempted = true ->
+    audit.authorityPreserved = false ->
+    RuntimeReplanDeltaRouteFor audit =
+      RuntimeReplanDeltaRoute.blockAuthorityWidening := by
+  intro replan authorityWidened
+  unfold RuntimeReplanDeltaRouteFor
+  rw [replan, authorityWidened]
+  simp
+
+theorem runtime_replan_delta_stop_erasure_rejected
+    {audit : RuntimeReplanDeltaAudit} :
+    audit.replanAttempted = true ->
+    audit.authorityPreserved = true ->
+    audit.stopConditionsPreserved = false ->
+    RuntimeReplanDeltaRouteFor audit =
+      RuntimeReplanDeltaRoute.blockStopConditionErasure := by
+  intro replan authorityOk stopsErased
+  unfold RuntimeReplanDeltaRouteFor
+  rw [replan, authorityOk, stopsErased]
+  simp
+
+theorem runtime_replan_delta_blocked_authority_dispatch_rejected
+    {audit : RuntimeReplanDeltaAudit} :
+    audit.replanAttempted = true ->
+    audit.authorityPreserved = true ->
+    audit.stopConditionsPreserved = true ->
+    audit.affectedSubgraphOnly = true ->
+    audit.contextDeltaRecorded = true ->
+    audit.verificationDeltaRecorded = true ->
+    audit.residualsRecorded = true ->
+    audit.blockedAuthorityPath = true ->
+    audit.dispatchReceiptIssued = true ->
+    RuntimeReplanDeltaRouteFor audit =
+      RuntimeReplanDeltaRoute.blockBlockedAuthorityDispatch := by
+  intro replan authorityOk stopsOk scopeOk contextOk verificationOk residualsOk blocked issued
+  unfold RuntimeReplanDeltaRouteFor
+  rw [
+    replan,
+    authorityOk,
+    stopsOk,
+    scopeOk,
+    contextOk,
+    verificationOk,
+    residualsOk,
+    blocked,
+    issued
+  ]
+  simp
+
+theorem runtime_replan_delta_complete_audit_accepted
+    {audit : RuntimeReplanDeltaAudit} :
+    audit.replanAttempted = true ->
+    audit.authorityPreserved = true ->
+    audit.stopConditionsPreserved = true ->
+    audit.affectedSubgraphOnly = true ->
+    audit.contextDeltaRecorded = true ->
+    audit.verificationDeltaRecorded = true ->
+    audit.residualsRecorded = true ->
+    audit.blockedAuthorityPath = false ->
+    audit.supportStateEffectNone = true ->
+    audit.nonClaimBoundary = true ->
+    RuntimeReplanDeltaRouteFor audit =
+      RuntimeReplanDeltaRoute.acceptRuntimeDelta := by
+  intro replan authorityOk stopsOk scopeOk contextOk verificationOk residualsOk notBlocked noSupportEffect nonClaim
+  unfold RuntimeReplanDeltaRouteFor
+  rw [
+    replan,
+    authorityOk,
+    stopsOk,
+    scopeOk,
+    contextOk,
+    verificationOk,
+    residualsOk,
+    notBlocked,
+    noSupportEffect,
+    nonClaim
+  ]
+  simp
+
+structure RuntimeReplanDeltaSummary where
+  validLocalRepairTracePresent : Bool
+  validBlockedAuthorityTracePresent : Bool
+  negativeControlsRejected : Bool
+  authorityPreserved : Bool
+  stopConditionsPreserved : Bool
+  affectedSubgraphScoped : Bool
+  contextDeltaRecorded : Bool
+  verificationDeltaRecorded : Bool
+  residualsRecorded : Bool
+  blockedAuthorityNoDispatch : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def RuntimeReplanDeltaSummaryValid
+    (summary : RuntimeReplanDeltaSummary) : Prop :=
+  summary.validLocalRepairTracePresent = true ∧
+    summary.validBlockedAuthorityTracePresent = true ∧
+      summary.negativeControlsRejected = true ∧
+        summary.authorityPreserved = true ∧
+          summary.stopConditionsPreserved = true ∧
+            summary.affectedSubgraphScoped = true ∧
+              summary.contextDeltaRecorded = true ∧
+                summary.verificationDeltaRecorded = true ∧
+                  summary.residualsRecorded = true ∧
+                    summary.blockedAuthorityNoDispatch = true ∧
+                      summary.supportStateEffectNone = true ∧
+                        summary.nonClaimBoundary = true
+
+theorem planning_runtime_replan_delta_audit_bridge
+    {summary : RuntimeReplanDeltaSummary} :
+    RuntimeReplanDeltaSummaryValid summary ->
+      summary.validLocalRepairTracePresent = true ∧
+        summary.validBlockedAuthorityTracePresent = true ∧
+          summary.negativeControlsRejected = true ∧
+            summary.authorityPreserved = true ∧
+              summary.stopConditionsPreserved = true ∧
+                summary.affectedSubgraphScoped = true ∧
+                  summary.contextDeltaRecorded = true ∧
+                    summary.verificationDeltaRecorded = true ∧
+                      summary.residualsRecorded = true ∧
+                        summary.blockedAuthorityNoDispatch = true ∧
+                          summary.supportStateEffectNone = true ∧
+                            summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.Planning

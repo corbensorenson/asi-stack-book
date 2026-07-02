@@ -1749,7 +1749,17 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite trace-summary fixture bridge over the substrate-adoption trace: it accepts the modeled exploratory, structural-only, blocked, and retired/refuted states while preserving axis-laundering rejection, fallback requirements, non-claim boundaries, and no support-state promotion."
+    },
+    {
+      "tag": "lean:planning.runtime_replan.delta_audit_bridge",
+      "chapter_id": "planning-as-a-control-layer",
+      "module": "AsiStackProofs.Planning",
+      "formal_target": "The deterministic synthetic runtime-replan delta audit includes a local source-repair trace, a blocked-authority replan trace, rejected negative controls, preserved authority and stop conditions, affected-subgraph scope, context and verification deltas, residual ownership, blocked-authority no-dispatch, no support-state effect, and an explicit non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Planning as a finite runtime-replan delta route and fixture bridge: it rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context or verification deltas, missing residuals, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta."
     }
   ],
-  "record_count": 174
+  "record_count": 175
 }
