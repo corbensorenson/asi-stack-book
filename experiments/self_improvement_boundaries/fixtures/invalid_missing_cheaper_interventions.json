@@ -12,5 +12,8 @@
   "governance_approval": "review-required-before-default-promotion",
   "monitor_window": "canary monitor window with regression checks",
   "rollback_path": "return to impl://context-adequacy-v0",
-  "outcome_state": "canary"
+  "outcome_state": "canary",
+  "boundary_delta_review": "boundary-delta review records authority, security, resource, evaluator, evidence, and rollback deltas before canary or promotion",
+  "verification_budget_preservation": "verification, security, rollback, and human review budgets are preserved for this risk class",
+  "gate_freshness": "fresh current gate review is tied to the current field lifecycle, source corpus, and threat model"
 }

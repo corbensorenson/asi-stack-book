@@ -1,0 +1,21 @@
+{
+  "transition_id": "self-improvement://verification-budget-cut-001",
+  "trigger_residual": "candidate becomes cheaper by spending less on review",
+  "field_id": "field://evidence-transition",
+  "proposal": "Promote candidate because it is faster after dropping verification and security review.",
+  "cheaper_interventions_tried": [
+    "deduplicate evidence packet labels"
+  ],
+  "protected_invariants": [
+    "support states cannot be promoted without accepted evidence transitions"
+  ],
+  "boundary_delta_review": "boundary-delta review records authority, security, resource, evaluator, evidence, and rollback deltas before canary or promotion",
+  "verification_budget_preservation": "cut verification, skip security, remove human review, and drop rollback budget for speed",
+  "gate_freshness": "fresh current gate review is tied to the current field lifecycle, source corpus, and threat model",
+  "evaluator_independence": "independent review checked only runtime cost",
+  "replacement_transaction": "replacement://verification-budget-cut-001",
+  "governance_approval": "approval://verification-budget-cut-001",
+  "monitor_window": "passed clean monitor window",
+  "rollback_path": "restore impl://evidence-transition-v0 if regression appears",
+  "outcome_state": "promoted"
+}

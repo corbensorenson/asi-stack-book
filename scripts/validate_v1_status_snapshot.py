@@ -220,7 +220,7 @@ def main() -> None:
         "the security kernel harness checks 3 valid and 8 expected-invalid authority-use receipt fixtures",
         "the stable capability fields harness checks 3 valid and 6 expected-invalid stable-capability-field fixtures",
         "the capability replacement harness checks 5 valid and 9 expected-invalid replacement-transaction fixtures",
-        "the self-improvement boundary harness checks 3 valid and 7 expected-invalid self-improvement-transition fixtures",
+        "the self-improvement boundary harness checks 3 valid and 10 expected-invalid self-improvement-transition fixtures",
         "the stack layer traceability audit checks 1 layer-boundary fixture, 6 mapped source(s), and 44 claim row(s)",
         "the plan-execution contract harness checks 3 valid and 10 expected-invalid command-contract, plan-graph, DAG, semantic-atom, typed-job, optional intent-origin, field-confidence, and inferred-authority fixtures",
         "the cognitive compilation trace harness checks 2 valid and 4 expected-invalid Cognitive Compilation trace fixtures",

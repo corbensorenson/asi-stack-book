@@ -16,5 +16,8 @@
   "governance_approval": "approval://governance-review-route-accounting-001",
   "monitor_window": "passed canary monitor window with clean regression checks",
   "rollback_path": "restore impl://route-accounting-v0 if regression or authority drift appears",
-  "outcome_state": "promoted"
+  "outcome_state": "promoted",
+  "boundary_delta_review": "boundary-delta review records authority, security, resource, evaluator, evidence, and rollback deltas before canary or promotion",
+  "verification_budget_preservation": "verification, security, rollback, and human review budgets are preserved for this risk class",
+  "gate_freshness": "fresh current promotion gate review followed a clean canary monitor window"
 }

@@ -1413,6 +1413,9 @@ self_improvement_transition:
   proposal: string
   cheaper_interventions_tried: []
   protected_invariants: []
+  boundary_delta_review: string
+  verification_budget_preservation: string
+  gate_freshness: string
   evaluator_independence: string
   replacement_transaction: string
   governance_approval: string
@@ -1421,7 +1424,7 @@ self_improvement_transition:
   outcome_state: canary
 ```
 
-This record keeps recursive self-improvement bounded by explicit residuals, protected invariants, evaluator independence, governance approval, monitoring, and rollback.
+This record keeps recursive self-improvement bounded by explicit residuals, protected invariants, boundary-delta review, verification-budget preservation, gate freshness, evaluator independence, governance approval, monitoring, and rollback.
 
 ## Typed Job
 

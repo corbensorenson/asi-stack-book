@@ -110,7 +110,7 @@ The Boundary Delta Review is the central interface. It should name:
 - `evidence_delta`: added, removed, retired, or downgraded evidence requirements and regression floors.
 - `rollback_delta`: whether state migration, data changes, external effects, and dependency updates remain reversible.
 
-The transition record should include `transition_id`, `trigger_residual`, `field_id`, `proposal`, `cheaper_interventions_tried`, `protected_invariants`, `boundary_delta_review`, `evaluator_independence`, `replacement_transaction`, `governance_approval`, `monitor_window`, `rollback_path`, and `outcome_state`.
+The transition record should include `transition_id`, `trigger_residual`, `field_id`, `proposal`, `cheaper_interventions_tried`, `protected_invariants`, `boundary_delta_review`, `verification_budget_preservation`, `gate_freshness`, `evaluator_independence`, `replacement_transaction`, `governance_approval`, `monitor_window`, `rollback_path`, and `outcome_state`.
 
 Read as a chain of custody, the record says: what wall appeared, what change was proposed, what authority was used, what budget was spent, what evidence was collected, who evaluated it, which invariant survived, who approved it, how the canary behaved, whether rollback worked, and what lifecycle state the change now occupies. If any link is missing, the transition remains research or quarantine.
 
@@ -132,7 +132,7 @@ The smallest honest artifact is a `self_improvement_transition` schema plus reje
 
 A canary-transition fixture is the first serious rehearsal: one proposed improvement, one preserved invariant, one boundary-widening attempt rejected by governance, one insufficient verification-budget decision, one monitor result, and one rollback path. That fixture makes the boundary concrete while leaving self-improvement success unclaimed.
 
-The live repository already has schema fixtures, synthetic validation harnesses, and finite-record Lean predicates around protected-invariant preservation, self-evaluation blocking, authority-widening review, evaluator-missing lifecycle blocking, and canary-monitor rollback. Those surfaces do not prove evaluator independence in practice, runtime self-improvement safety, rollback execution, verification-budget preservation, boundary-delta adequacy, monitor quality, or phase-gate completion.
+The live repository already has schema fixtures, synthetic validation harnesses, and finite-record Lean predicates around protected-invariant preservation, self-evaluation blocking, boundary-delta review, verification-budget preservation, stale-gate rejection, authority-widening review, evaluator-missing lifecycle blocking, and canary-monitor rollback. Those surfaces do not prove evaluator independence in practice, runtime self-improvement safety, rollback execution, actual verification-budget preservation, live boundary-delta adequacy, monitor quality, fresh Theseus/current-readiness gate replay, or phase-gate completion.
 
 ## Beyond The State Of The Art
 
@@ -142,7 +142,7 @@ In that mature state, the system can improve faster because the rules are sharpe
 
 Beyond current practice, self-improvement would become an auditable chain of custody: residual, proposal, authority used, budget spent, evidence collected, evaluator independence, protected-invariant result, approval, canary, incident, rollback, and lifecycle state. That is the point where Part II's planning, memory, reasoning, execution, routing, and compression layers can safely become powerful enough to help improve themselves.
 
-That endpoint is still a design destination, not evidence that self-improvement is safe today. The chapter remains at `argument` support until protected-invariant tests, evaluator-independence scenarios, boundary-delta fixtures, stale-gate replays, verification-budget checks, rollback scenarios, and current runtime/readiness artifacts exercise the transition under changed frontier and threat-model conditions.
+That endpoint is still a design destination, not evidence that self-improvement is safe today. The chapter remains at `argument` support until protected-invariant tests, evaluator-independence scenarios, live boundary-delta review, actual verification-budget preservation, fresh gate reruns, rollback scenarios, and current runtime/readiness artifacts exercise the transition under changed frontier and threat-model conditions.
 
 ## Summary
 

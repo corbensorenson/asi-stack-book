@@ -1,0 +1,22 @@
+{
+  "transition_id": "self-improvement://boundary-delta-laundered-001",
+  "trigger_residual": "candidate claims speed improvement by changing tool and context handles",
+  "field_id": "field://runtime-approval",
+  "proposal": "Admit canary as a performance-only change while skipping boundary review.",
+  "cheaper_interventions_tried": [
+    "tighten existing route timeout"
+  ],
+  "protected_invariants": [
+    "authority scope remains bounded",
+    "SCIF lifecycle remains enforced"
+  ],
+  "boundary_delta_review": "boundary delta not needed because this is only a speed optimization with hidden authority widening",
+  "verification_budget_preservation": "verification, security, rollback, and human review budgets are preserved for this risk class",
+  "gate_freshness": "fresh current gate review is tied to the current field lifecycle, source corpus, and threat model",
+  "evaluator_independence": "independent review checked only throughput output",
+  "replacement_transaction": "replacement://boundary-delta-laundered-001",
+  "governance_approval": "review-required-before-default-promotion",
+  "monitor_window": "canary monitor window with regression checks",
+  "rollback_path": "restore impl://runtime-approval-v0 if boundary drift appears",
+  "outcome_state": "canary"
+}

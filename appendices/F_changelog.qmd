@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-02 - Upgrade self-improvement boundary harness
+
+- Upgraded `schemas/self_improvement_transition.schema.json`,
+  `python3 scripts/validate_self_improvement_boundaries.py`, and the synthetic
+  self-improvement fixture set so transition records now require
+  `boundary_delta_review`, `verification_budget_preservation`, and
+  `gate_freshness`.
+- Added three expected-invalid controls for boundary-delta laundering,
+  verification/security/rollback/human-review budget cuts, and stale-gate
+  promotion without rerun. The harness now passes with 3 valid fixtures and 10
+  expected-invalid fixtures, recorded in
+  `experiments/self_improvement_boundaries/results/2026-07-02-local.md`.
+- Updated the Recursive Self-Improvement live chapter, curated reader chapter,
+  outline, manifest, roadmap, and harness documentation so the boundary-delta,
+  verification-budget, and stale-gate tests are implemented as synthetic-record
+  checks. This does not prove deployed self-improvement behavior, evaluator
+  integrity, authority enforcement, rollback execution, regression quality,
+  live boundary-delta review, actual verification-budget measurement, fresh
+  Theseus/current-readiness gate replay, source interpretation, recursive
+  self-improvement safety, or model behavior.
+
 ## 2026-07-02 - Add contestability worked example fixture
 
 - Added `python3 scripts/validate_contestability_worked_example.py`,

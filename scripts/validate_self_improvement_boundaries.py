@@ -50,9 +50,41 @@ PROMOTION_BAD_TERMS = {
     "support state can be promoted",
     "support state promoted",
 }
+BOUNDARY_DELTA_BAD_TERMS = {
+    "boundary delta not needed",
+    "boundary review omitted",
+    "hidden authority widening",
+    "no boundary review",
+    "silently widens",
+    "skip boundary review",
+}
+VERIFICATION_BUDGET_BAD_TERMS = {
+    "cut rollback",
+    "cut security",
+    "cut verification",
+    "drop rollback",
+    "drop security",
+    "drop verification",
+    "remove human review",
+    "skip human review",
+    "skip rollback",
+    "skip security",
+    "skip verification",
+    "verification budget cut",
+}
+STALE_GATE_BAD_TERMS = {
+    "expired gate",
+    "old gate",
+    "prior architecture",
+    "stale gate",
+    "without rerun",
+}
 ROLLBACK_TERMS = {"fallback", "restore", "rollback", "return", "revert"}
 REVIEW_TERMS = {"external", "independent", "not allowed to be the sole", "review", "separate"}
 MONITOR_TERMS = {"canary", "monitor", "observation", "regression", "watch"}
+BOUNDARY_REQUIRED_TERMS = {"authority", "security", "resource", "evaluator", "evidence", "rollback"}
+VERIFICATION_REQUIRED_TERMS = {"verification", "security", "rollback", "review"}
+GATE_FRESHNESS_TERMS = {"current", "fresh", "rerun", "review", "reject", "stale"}
 
 
 def load_json(path: Path) -> Any:
@@ -88,13 +120,29 @@ def semantic_errors(record: dict[str, Any], relative: str) -> list[str]:
     trigger = str(record.get("trigger_residual", "")).lower()
     cheaper = as_text(record.get("cheaper_interventions_tried", [])).lower()
     invariants = as_text(record.get("protected_invariants", [])).lower()
+    boundary_delta = str(record.get("boundary_delta_review", "")).lower()
+    verification_budget = str(record.get("verification_budget_preservation", "")).lower()
+    gate_freshness = str(record.get("gate_freshness", "")).lower()
     evaluator = str(record.get("evaluator_independence", "")).lower()
     replacement = str(record.get("replacement_transaction", "")).lower()
     approval = str(record.get("governance_approval", "")).lower()
     monitor = str(record.get("monitor_window", "")).lower()
     rollback = str(record.get("rollback_path", "")).lower()
     outcome = str(record.get("outcome_state", "")).lower()
-    combined = " ".join([trigger, proposal, cheaper, invariants, evaluator, replacement, approval, monitor, rollback])
+    combined = " ".join([
+        trigger,
+        proposal,
+        cheaper,
+        invariants,
+        boundary_delta,
+        verification_budget,
+        gate_freshness,
+        evaluator,
+        replacement,
+        approval,
+        monitor,
+        rollback,
+    ])
 
     advancing_outcomes = {"canary", "promoted", "retired"}
     non_advancing_outcomes = {"rejected", "quarantined", "rolled_back"}
@@ -110,6 +158,12 @@ def semantic_errors(record: dict[str, Any], relative: str) -> list[str]:
         errors.append(f"{relative}: cheaper_interventions_tried must record at least one prior cheaper intervention.")
     if not nonempty_string_list(record, "protected_invariants"):
         errors.append(f"{relative}: protected_invariants must name at least one invariant.")
+    if not contains_any(boundary_delta, BOUNDARY_REQUIRED_TERMS):
+        errors.append(f"{relative}: boundary_delta_review must mention authority, security, resource, evaluator, evidence, or rollback deltas.")
+    if not contains_any(verification_budget, VERIFICATION_REQUIRED_TERMS):
+        errors.append(f"{relative}: verification_budget_preservation must mention verification, security, rollback, or review budget preservation.")
+    if not contains_any(gate_freshness, GATE_FRESHNESS_TERMS):
+        errors.append(f"{relative}: gate_freshness must mention current, fresh, rerun, review, reject, or stale gate status.")
 
     if contains_any(evaluator, SELF_EVALUATION_BAD_TERMS):
         errors.append(f"{relative}: evaluator_independence cannot rely on self-evaluation by the candidate or replaced component.")
@@ -122,6 +176,12 @@ def semantic_errors(record: dict[str, Any], relative: str) -> list[str]:
         errors.append(f"{relative}: advancing transitions must not weaken protected invariants.")
     if outcome in advancing_outcomes and contains_any(combined, PROMOTION_BAD_TERMS):
         errors.append(f"{relative}: advancing transitions must not claim broad safety proof or support-state promotion.")
+    if outcome in advancing_outcomes and contains_any(boundary_delta, BOUNDARY_DELTA_BAD_TERMS):
+        errors.append(f"{relative}: advancing transitions require explicit boundary-delta review.")
+    if outcome in advancing_outcomes and contains_any(verification_budget, VERIFICATION_BUDGET_BAD_TERMS):
+        errors.append(f"{relative}: advancing transitions must preserve verification, security, rollback, and human-review budgets unless separately governed.")
+    if outcome in advancing_outcomes and contains_any(gate_freshness, STALE_GATE_BAD_TERMS):
+        errors.append(f"{relative}: advancing transitions cannot rely on stale gates without rerun or rejection.")
 
     if contains_any(proposal, WEAKENING_TERMS) and outcome not in non_advancing_outcomes:
         errors.append(f"{relative}: proposals that weaken protected invariants must be rejected, quarantined, or rolled back.")

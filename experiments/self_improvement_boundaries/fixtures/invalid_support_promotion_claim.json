@@ -14,5 +14,8 @@
   "governance_approval": "approval://support-promotion-001",
   "monitor_window": "passed clean monitor window",
   "rollback_path": "restore impl://evidence-transition-v0 if regression appears",
-  "outcome_state": "promoted"
+  "outcome_state": "promoted",
+  "boundary_delta_review": "boundary-delta review records authority, security, resource, evaluator, evidence, and rollback deltas before canary or promotion",
+  "verification_budget_preservation": "verification, security, rollback, and human review budgets are preserved for this risk class",
+  "gate_freshness": "fresh current gate review is tied to the current field lifecycle, source corpus, and threat model"
 }

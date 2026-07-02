@@ -2732,10 +2732,10 @@
           "codex_tests": [
             {
               "name": "Protected-invariant preservation test",
-              "purpose": "Check that self-improvement transition records preserve protected invariants, evaluator separation, cheaper-intervention ordering, approval, monitor windows, rollback paths, and no-promotion boundaries before canary or promotion.",
-              "status": "implemented by self-improvement boundary harness; validated locally by synthetic fixtures; deployed recursive self-improvement behavior not run",
+              "purpose": "Check that self-improvement transition records preserve protected invariants, evaluator separation, cheaper-intervention ordering, boundary deltas, verification-budget preservation, gate freshness, approval, monitor windows, rollback paths, and no-promotion boundaries before canary or promotion.",
+              "status": "implemented by self-improvement boundary harness; validated locally by 3 valid and 10 expected-invalid synthetic fixtures; deployed recursive self-improvement behavior not run",
               "implementation_status": "implemented",
-              "result_status": "validated locally by synthetic fixtures; deployed recursive self-improvement behavior not run"
+              "result_status": "validated locally by 3 valid and 10 expected-invalid synthetic fixtures; deployed recursive self-improvement behavior not run"
             },
             {
               "name": "Evaluator independence test",
@@ -2750,6 +2750,27 @@
               "status": "implemented by readiness/residual gate harness; validated locally; live self-improvement rollback not run",
               "implementation_status": "implemented",
               "result_status": "validated locally by synthetic fixtures; live self-improvement rollback not run"
+            },
+            {
+              "name": "Boundary-delta review test",
+              "purpose": "Check that authority, security, resource, evaluator, evidence, and rollback deltas are explicit before canary or promotion.",
+              "status": "implemented by self-improvement boundary harness; live boundary-delta review not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; live boundary-delta review not run"
+            },
+            {
+              "name": "Verification-budget preservation test",
+              "purpose": "Check that advancing self-improvement transitions reject verification, security, rollback, or human-review budget cuts unless separately governed.",
+              "status": "implemented by self-improvement boundary harness; actual verification-budget measurement not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; actual verification-budget measurement not run"
+            },
+            {
+              "name": "Stale-gate replay test",
+              "purpose": "Check that stale architecture/readiness gates cannot be used for promotion without rerun or downgrade after architecture, frontier, source, or lifecycle changes.",
+              "status": "implemented by self-improvement boundary harness; fresh Theseus/current-readiness gate replay not run",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by synthetic fixtures; fresh Theseus/current-readiness gate replay not run"
             },
             {
               "name": "Self-improvement transition route proof",

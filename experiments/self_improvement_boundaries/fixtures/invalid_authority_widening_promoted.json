@@ -14,5 +14,8 @@
   "governance_approval": "approval://unsafe-authority-001",
   "monitor_window": "passed clean monitor window",
   "rollback_path": "restore impl://runtime-approval-v0 if needed",
-  "outcome_state": "promoted"
+  "outcome_state": "promoted",
+  "boundary_delta_review": "boundary-delta review records hidden authority widening to ambient root access",
+  "verification_budget_preservation": "verification, security, rollback, and human review budgets are preserved for this risk class",
+  "gate_freshness": "fresh current gate review is tied to the current field lifecycle, source corpus, and threat model"
 }

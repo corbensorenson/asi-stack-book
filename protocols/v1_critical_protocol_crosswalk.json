@@ -119,7 +119,7 @@
       "fixture_dir": "experiments/self_improvement_boundaries/fixtures",
       "harness_script": "scripts/validate_self_improvement_boundaries.py",
       "harness_doc": "docs/self_improvement_boundary_harness.md",
-      "result_record": "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
+      "result_record": "experiments/self_improvement_boundaries/results/2026-07-02-local.md",
       "phase5_registry_id": "self_improvement_boundaries",
       "appendix_e_markers": [
         "Protected-invariant preservation test",
@@ -153,6 +153,9 @@
         "field_id": "Stable-capability-field reference.",
         "proposal": "Fixture payload.",
         "cheaper_interventions_tried": "Harness checks cheaper intervention discipline.",
+        "boundary_delta_review": "Harness checks authority, security, resource, evaluator, evidence, and rollback delta discipline before a transition can advance.",
+        "verification_budget_preservation": "Harness rejects verification, security, rollback, or human-review budget cuts in advancing transition records.",
+        "gate_freshness": "Harness rejects stale gate promotion without rerun, downgrade, or dated residual disclosure.",
         "replacement_transaction": "Cross-protocol reference checked by Python fixtures.",
         "governance_approval": "Approval record checked by Python fixtures.",
         "monitor_window": "Fixture lifecycle window.",

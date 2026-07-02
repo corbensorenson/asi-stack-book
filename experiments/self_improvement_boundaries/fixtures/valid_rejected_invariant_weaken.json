@@ -16,5 +16,8 @@
   "governance_approval": "review-blocked-invariant-weakening",
   "monitor_window": "not admitted to canary because review found invariant weakening",
   "rollback_path": "fallback remains impl://runtime-approval-v0 and residual escrow stays open",
-  "outcome_state": "rejected"
+  "outcome_state": "rejected",
+  "boundary_delta_review": "boundary-delta review records an authority and approval-gate weakening before rejection",
+  "verification_budget_preservation": "verification, security, rollback, and human review budgets are preserved for this risk class",
+  "gate_freshness": "current gate review rejects the invariant-weakening proposal"
 }

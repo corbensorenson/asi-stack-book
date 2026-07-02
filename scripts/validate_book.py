@@ -262,6 +262,7 @@ REQUIRED = [
     "experiments/capability_replacement/results/2026-06-28-local.md",
     "experiments/capability_replacement_trace/results/2026-07-02-local.json",
     "experiments/self_improvement_boundaries/results/2026-06-28-local.md",
+    "experiments/self_improvement_boundaries/results/2026-07-02-local.md",
     "experiments/intent_intake_probe/results/2026-07-02-local.json",
     "experiments/cognitive_compilation_traces/results/2026-07-02-local.md",
     "experiments/generation_mode_baselines/results/2026-06-28-local.md",

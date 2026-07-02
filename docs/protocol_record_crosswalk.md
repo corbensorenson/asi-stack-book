@@ -12,7 +12,7 @@ It does **not** treat any protocol record as verified merely because one lane pa
 |---|---:|
 | V1-critical protocol records | 10 |
 | Phase 5 registry entries referenced | 10 |
-| Schema fields reconciled | 204 |
+| Schema fields reconciled | 207 |
 | Validation errors | 0 |
 
 ## Record Crosswalk
@@ -21,7 +21,7 @@ It does **not** treat any protocol record as verified merely because one lane pa
 |---|---|---:|---:|---|---|---:|---:|---:|---|---|
 | `authority_transition_record` | `schemas/authority_transition_record.schema.json` | 19 | 3/3 | `scripts/validate_authority_transitions.py` | lean/AsiStackProofs/Authority.lean (AuthorityTransition, AuthorityDecisionRecord, ExecutionRequest, GovernanceGrant) | 10 | 5 | 4 | registry ok | ok |
 | `runtime_adapter_invocation` | `schemas/runtime_adapter_invocation.schema.json` | 29 | 2/7 | `scripts/validate_runtime_adapter_permissions.py` | lean/AsiStackProofs/RuntimeAdapters.lean (ParentJob, AdapterInvocation) | 6 | 20 | 3 | registry ok | ok |
-| `self_improvement_transition` | `schemas/self_improvement_transition.schema.json` | 12 | 3/7 | `scripts/validate_self_improvement_boundaries.py` | lean/AsiStackProofs/SelfImprovement.lean (ImprovementTransitionReview, SelfEvaluationReview) | 3 | 9 | 0 | registry ok | ok |
+| `self_improvement_transition` | `schemas/self_improvement_transition.schema.json` | 15 | 3/10 | `scripts/validate_self_improvement_boundaries.py` | lean/AsiStackProofs/SelfImprovement.lean (ImprovementTransitionReview, SelfEvaluationReview) | 3 | 12 | 0 | registry ok | ok |
 | `replacement_transaction` | `schemas/replacement_transaction.schema.json` | 23 | 5/9 | `scripts/validate_capability_replacement.py` | lean/AsiStackProofs/Replacement.lean (ReplacementCommit) | 4 | 19 | 0 | registry ok | ok |
 | `readiness_gate_record` | `schemas/readiness_gate_record.schema.json` | 28 | 4/5 | `scripts/validate_readiness_residual_gates.py` | lean/AsiStackProofs/ReadinessGates.lean (GateReview, RouteSelection, ReadinessTransitionReview, QuarantineRoutingReview, StaleGateReuseReview) | 9 | 19 | 0 | registry ok | ok |
 | `belief_revision_record` | `schemas/belief_revision_record.schema.json` | 17 | 5/7 | `scripts/validate_claim_ledger_revision.py` | lean/AsiStackProofs/ClaimLedger.lean (BeliefRevisionRecord, ClaimUpdate, PromotionReview) | 9 | 8 | 0 | registry ok | ok |
@@ -82,9 +82,11 @@ It does **not** treat any protocol record as verified merely because one lane pa
 | `runtime_adapter_invocation` | `support_state_effect` | Lean | AdapterInvocation.rejected |
 | `runtime_adapter_invocation` | `target_type` | Harness | Harness-level target category. |
 | `runtime_adapter_invocation` | `verification_refs` | Harness | Trace references for fixture review. |
+| `self_improvement_transition` | `boundary_delta_review` | Harness | Harness checks authority, security, resource, evaluator, evidence, and rollback delta discipline before a transition can advance. |
 | `self_improvement_transition` | `cheaper_interventions_tried` | Harness | Harness checks cheaper intervention discipline. |
 | `self_improvement_transition` | `evaluator_independence` | Lean | SelfEvaluationReview.evaluatedOnlyByReplacedComponent |
 | `self_improvement_transition` | `field_id` | Harness | Stable-capability-field reference. |
+| `self_improvement_transition` | `gate_freshness` | Harness | Harness rejects stale gate promotion without rerun, downgrade, or dated residual disclosure. |
 | `self_improvement_transition` | `governance_approval` | Harness | Approval record checked by Python fixtures. |
 | `self_improvement_transition` | `monitor_window` | Harness | Fixture lifecycle window. |
 | `self_improvement_transition` | `outcome_state` | Lean | ImprovementTransitionReview.transitionAccepted; ImprovementTransitionReview.protectedInvariantsPreserved; SelfEvaluationReview.proposalPromoted |
@@ -94,6 +96,7 @@ It does **not** treat any protocol record as verified merely because one lane pa
 | `self_improvement_transition` | `rollback_path` | Harness | Rollback path checked by Python fixtures. |
 | `self_improvement_transition` | `transition_id` | Harness | Trace identity. |
 | `self_improvement_transition` | `trigger_residual` | Harness | Harness-level trigger record. |
+| `self_improvement_transition` | `verification_budget_preservation` | Harness | Harness rejects verification, security, rollback, or human-review budget cuts in advancing transition records. |
 | `replacement_transaction` | `approval_record` | Harness | Harness-level approval record. |
 | `replacement_transaction` | `authority_check` | Harness | Harness-level authority check. |
 | `replacement_transaction` | `canary_scope` | Harness | Canary boundary checked by fixtures. |
