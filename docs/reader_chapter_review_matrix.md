@@ -16,7 +16,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | disposition:companion_note_candidate | 12 |
 | disposition:curated_manuscript_candidate | 44 |
 | disposition:no_immediate_action | 44 |
-| disposition:reader_overlay_active | 24 |
+| disposition:reader_overlay_active | 25 |
 | release_blocker:format_artifact_not_reviewed | 44 |
 | release_blocker:reader_release_record_not_created | 44 |
 
@@ -40,7 +40,7 @@ Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0
 | Part II - Planning, Memory, Reasoning, and Execution | `planning-as-a-control-layer` | reviewed | full_chapter_review | 1 | reader_overlay_active, companion_note_candidate, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `cognitive-compilation-and-semantic-ir` | reviewed | full_chapter_review | 0 | no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `virtual-context-abi` | reviewed | full_chapter_review | 2 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
-| Part II - Planning, Memory, Reasoning, and Execution | `context-transactions-snapshots-mounts-and-taint` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
+| Part II - Planning, Memory, Reasoning, and Execution | `context-transactions-snapshots-mounts-and-taint` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `verification-bandwidth-and-context-adequacy` | reviewed | full_chapter_review | 1 | reader_overlay_active, curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `claim-ledgers-and-belief-revision` | reviewed | full_chapter_review | 0 | curated_manuscript_candidate, no_immediate_action | reader_release_record_not_created, format_artifact_not_reviewed |
 | Part II - Planning, Memory, Reasoning, and Execution | `spinoza-verification-and-proof-carrying-claims` | reviewed | full_chapter_review | 1 | reader_overlay_active, no_immediate_action, curated_manuscript_candidate | reader_release_record_not_created, format_artifact_not_reviewed |

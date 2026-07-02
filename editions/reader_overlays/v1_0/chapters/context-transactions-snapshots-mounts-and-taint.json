@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+  "operations": [
+    {
+      "id": "v1_0.context_transactions.minimum_viable_implementation_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the dense transaction-field and proof-route inventory with reader prose while preserving the canonical AI/research fixture, Lean, harness, and non-claim boundaries.",
+      "content_lines": [
+        "The smallest useful context-transaction implementation is not a production memory store. It is one transaction record for one materialized context view. That record says what operation occurred, which snapshot and mount policy were used, what was read or written, which branch policy applied, what taint and deletion obligations followed the view, whether declassification or closure exists, and what replay boundary future reviewers can inspect.",
+        "",
+        "The current `context_transaction_record` schema and fixture validate that this record has the fields needed for review: transaction state, snapshot boundary, mount policy, read/write sets, isolation state, taint propagation, deletion closure, materialization state, faults, context ABI refs, source refs, audit refs, consumer policy, verification refs, promotion blockers, support-state effect, and non-claims. Passing the fixture means the record is inspectable. It does not mean a deployed memory service exists.",
+        "",
+        "`AsiStackProofs.ContextTransactions` models the same boundary with finite records. It checks committed-event snapshot reads, taint propagation, materialization blocking when open deletion obligations lack closure or declassification, and transaction-route outcomes for missing or stale snapshots, branch mismatches, mount faults, taint without declassification, deleted-cell materialization, invisible committed reads, missing replay boundaries, unsupported support promotion, missing non-claims, and complete committed-read admission.",
+        "",
+        "The bounded memory-store fixture set is a behavioral rehearsal over synthetic events: one coherent snapshot read, one tainted branch that cannot merge, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact replay reference. That is useful transaction discipline, but it is not read-your-writes consistency across a real store, runtime branch isolation, deployed mount repair, deployed deletion closure, poisoning resistance, VCM conformance, benchmark evidence, or support-state promotion.",
+        "",
+        "The next useful implementation slice is a tiny public-safe transaction packet that can be replayed from record to dependent artifact: one source context object, one transaction, one materialized view or typed fault, one taint/deletion decision, one downstream artifact reference, one replay boundary, and explicit non-claims."
+      ]
+    }
+  ]
+}
