@@ -18,6 +18,40 @@
         "",
         "Verification Bandwidth contributes the most important reader-facing warning: loading source material into context is not equivalent to verifying the claim. Contradiction-rate tests and the proposed theory are still unrun here. Taken together, these sources justify a disciplined claim/evidence vocabulary, not a stronger support state. The claim stays at architectural argument until a specific evidence transition closes the remaining boundary."
       ]
+    },
+    {
+      "id": "v1_0.evidence_states.interfaces_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces"
+      },
+      "rationale": "Replace the claim/evidence field inventory with reader prose while preserving the canonical AI/research record fields.",
+      "content_lines": [
+        "Evidence movement uses three public surfaces. The claim entry says what assertion is being made and how strong it is allowed to sound. The transition entry says what happened that could change that strength. The changelog tells later readers that the movement was deliberate rather than a side effect of cleaner prose.",
+        "",
+        "Those surfaces keep roles separate. Drafting can clarify a claim. Source work can add a map from source to claim. Formal work or experiments can add a checked artifact. Negative results can block or lower confidence. None of those events gets to borrow authority from the others unless the transition names the exact scope.",
+        "",
+        "For a normal reader, the key question is simple: what object moved this claim, and what did it leave untouched? The research view keeps the complete field lists for that question. Human view keeps the rule: no claim should rise because the surrounding sentence got smoother."
+      ]
+    },
+    {
+      "id": "v1_0.evidence_states.minimum_viable_implementation_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the dense harness inventory with reader prose that preserves the current narrow evidence-control boundary.",
+      "content_lines": [
+        "The smallest honest version is a working claim ledger, a working transition ledger, and a rule that neither can silently change the other. Appendix C supplies the public claim surface. The schema examples and Lean module supply a narrow local model of the rule. The support-state harness checks synthetic no-change, upward, downward, and terminal cases.",
+        "",
+        "Three current audits make the rule harder to blur. The evidence-bundle probe checks two valid synthetic bundles and seven invalid controls. The claim-ledger audit checks all 44 manifest core claims against Appendix C and rejects seven mutation controls. The accepted-transition audit checks 35 accepted transition records, four bounded non-core upward transitions, the no-promotion ledger, and seven invalid controls.",
+        "",
+        "Those artifacts are useful because they make bookkeeping failures visible. They do not prove any chapter core claim, and they do not prove that the mapped sources are interpreted correctly. A stronger exercise would include one lineage-only source, one direct-support source, one failed verification, one shape-only check, one finite formal predicate, and one benchmark result whose scope is deliberately narrower than the tempting prose claim."
+      ]
     }
   ]
 }
