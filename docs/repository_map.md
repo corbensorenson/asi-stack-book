@@ -139,6 +139,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/support_state_transition_harness.md` | Phase 5 support-state transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/authority_transition_harness.md` | Phase 5 authority transition harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/security_kernel_harness.md` | Phase 5 security kernel harness summary, command, local result, and non-claim boundary. | tracked |
+| `docs/security_scif_commit_probe.md` | Book-gate SCIF sanitized commit replay probe with two valid fixture routes, six expected-invalid controls, and no deployed-kernel, sandbox-isolation, side-channel-safety, prompt-injection-containment, secret-handle-safety, approval-service, least-privilege-context, privacy, security, or support-state-promotion claim. | tracked |
 | `docs/stable_capability_field_harness.md` | Phase 5 stable capability fields harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/capability_replacement_harness.md` | Phase 5 capability replacement harness summary, command, local result, and non-claim boundary. | tracked |
 | `docs/self_improvement_boundary_harness.md` | Phase 5 self-improvement transition-boundary harness summary, command, local result, and non-claim boundary. | tracked |

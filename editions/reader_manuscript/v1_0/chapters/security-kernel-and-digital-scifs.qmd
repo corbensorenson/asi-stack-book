@@ -258,6 +258,18 @@ notes, revocation paths, and prompt-injection non-disclosure boundaries. The
 Lean module adds finite-record predicates for authorization, clearance, handle
 substitution, and protected-SCIF admission.
 
+The live project now also has a SCIF sanitized commit replay probe. It uses
+generated public-safe synthetic secret material, records hashes rather than
+secret or handle bytes, and checks `valid_sanitized_commit_replay`,
+`valid_prompt_injection_blocked_commit`, `invalid_unsanitized_secret_commit_blocked`,
+`invalid_handle_leak_commit_blocked`, `invalid_missing_zeroize_commit_blocked`,
+`invalid_overbroad_context_commit_blocked`,
+`invalid_unapproved_destination_commit_blocked`, and
+`invalid_missing_residual_commit_blocked`. This is a no deployed-kernel,
+sandbox-isolation, side-channel-safety, prompt-injection-containment,
+secret-handle-safety, approval-service, least-privilege-context, privacy,
+security, or support-state-promotion claim.
+
 That is still receipt discipline, not deployed containment. The next useful
 step is a public-safe toy runtime trace where a model-facing transcript, a
 substitution boundary, a denied handle reuse, and a sanitized commit can be

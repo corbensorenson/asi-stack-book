@@ -2567,6 +2567,11 @@
               "result_status": "passing via synthetic security kernel harness; no leak-prevention or summary-safety claim"
             },
             {
+              "name": "SCIF sanitized commit replay probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_security_scif_commit_probe.py; valid_sanitized_commit_replay, valid_prompt_injection_blocked_commit, and six expected-invalid controls block secret, handle, missing-zeroize, overbroad-context, unapproved-destination, and missing-residual commit paths; no deployed-kernel, sandbox-isolation, side-channel-safety, prompt-injection-containment, secret-handle-safety, approval-service, least-privilege-context, privacy, security, or support-state-promotion claim"
+            },
+            {
               "name": "Security-overhead budget preservation test",
               "implementation_status": "implemented",
               "result_status": "passing via Resource Budget Ledger synthetic security-overhead erasure negative fixture; no runtime budget enforcement, deployed security-kernel behavior, or security-economics claim"
