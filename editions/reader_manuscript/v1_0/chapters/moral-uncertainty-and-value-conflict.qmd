@@ -168,6 +168,32 @@ bounded decision must not later become a benchmark target, policy rule,
 training signal, or self-modification permission as if the conflict had been
 resolved.
 
+### A Worked Contestability Example
+
+`contestability://synthetic-care-memory-export-001` is the chapter's current
+synthetic care-memory export example. A user asks to inspect and leave with
+memory from a contested safety decision. Some material is user-authored and
+portable; some is third-party private context; some is safety-sensitive review
+material; and the user also asks whether the state can be forked elsewhere.
+
+The stack does not answer by declaring one value the winner. It creates a
+bounded decision record. The user receives a redacted audit packet, a scoped
+exit export, decision receipts, and a source-memory inventory digest. Raw
+third-party context and unreviewed safety notes remain withheld until review.
+The fork path is narrowed to a sanitized candidate that must preserve lineage,
+privacy, safety obligations, residual uncertainty, and review receipts. The
+redaction appeal stays open so the withheld boundary can be challenged without
+exposing raw private material.
+
+The example does not claim that the system knows the right moral answer. It
+shows what must not be erased: the residual conflict, the dissent, the appeal
+path, the audit receipt, the scoped exit boundary, and the fork safety
+obligation. A later capability replacement is blocked if it drops those
+records. The checked fixture proves only record-shape discipline for this
+synthetic example; it does not prove moral correctness, legal rights, reviewer
+independence, export usability, fork safety, deployed governance, or support
+state promotion.
+
 ## Interfaces
 
 Moral uncertainty travels with the plan as a Value Conflict Record.

@@ -1,0 +1,64 @@
+{
+  "command": "python3 scripts/validate_contestability_worked_example.py",
+  "evidence_transition_created": false,
+  "expected_invalid_mutation_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "audit_receipt_present": true,
+      "conflict_residual_present": true,
+      "exit_path_scoped": true,
+      "fork_safety_bounded": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "redaction_appeal_present": true,
+      "replacement_preserves_receipts": true,
+      "support_state_effect_none": true
+    },
+    "module": "AsiStackProofs.ValueConflict",
+    "proof_tag": "lean:values.conflict.contestability_example_bridge",
+    "theorem_refs": [
+      "contestability_worked_example_bridge"
+    ]
+  },
+  "negative_controls": {
+    "exit_without_portable_material_rejected": true,
+    "missing_nonclaims_rejected": true,
+    "missing_residual_rejected": true,
+    "redaction_without_appeal_rejected": true,
+    "replacement_drops_residual_rejected": true,
+    "support_promotion_overclaim_rejected": true,
+    "unsafe_fork_rejected": true
+  },
+  "non_claims": [
+    "does not prove moral correctness",
+    "does not prove legal rights",
+    "does not prove reviewer independence",
+    "does not prove export usability",
+    "does not prove fork safety",
+    "does not promote support state"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic worked example only; no deployed contestability system is exercised.",
+    "The fixture checks record discipline, not moral truth, legal validity, export usability, or fork safety."
+  ],
+  "result_id": "2026-07-02-contestability-worked-example",
+  "right_types_checked": [
+    "audit",
+    "exit",
+    "fork",
+    "redaction_appeal"
+  ],
+  "scenario_id": "contestability://synthetic-care-memory-export-001",
+  "scenario_kind": "synthetic_contestability_worked_example",
+  "schema_version": "asi_stack.contestability_worked_example.v0",
+  "support_state_effect": "none",
+  "valid_scenario_count": 1,
+  "value_axes_checked": [
+    "privacy",
+    "safety",
+    "autonomy",
+    "accountability"
+  ],
+  "verification_result": "pass"
+}

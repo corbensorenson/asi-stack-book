@@ -95,6 +95,9 @@ REQUIRED = [
     "scripts/validate_proof_carrying_claims.py",
     "scripts/validate_tribunal_review.py",
     "scripts/validate_value_conflicts.py",
+    "scripts/validate_contestability_worked_example.py",
+    "docs/contestability_worked_example.md",
+    "experiments/contestability_worked_example/results/2026-07-02-local.json",
     "scripts/validate_constitutional_alignment.py",
     "scripts/validate_governance_rights.py",
     "scripts/validate_agency_rights.py",
@@ -798,6 +801,7 @@ def main() -> None:
     run_validator("validate_proof_carrying_claims.py")
     run_validator("validate_tribunal_review.py")
     run_validator("validate_value_conflicts.py")
+    run_validator("validate_contestability_worked_example.py")
     run_validator("validate_constitutional_alignment.py")
     run_validator("validate_governance_rights.py")
     run_validator("validate_agency_rights.py")

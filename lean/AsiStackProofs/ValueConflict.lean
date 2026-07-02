@@ -577,4 +577,43 @@ theorem complete_value_conflict_lifecycle_admits_bounded_decision :
   unfold ValueConflictLifecycleRouteFor completeValueConflictLifecycleReview
   simp
 
+structure ContestabilityWorkedExampleSummary where
+  conflictResidualPresent : Bool
+  auditReceiptPresent : Bool
+  exitPathScoped : Bool
+  forkSafetyBounded : Bool
+  redactionAppealPresent : Bool
+  replacementPreservesReceipts : Bool
+  negativeControlsRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def ContestabilityWorkedExampleSummaryValid
+    (summary : ContestabilityWorkedExampleSummary) : Prop :=
+  summary.conflictResidualPresent = true ∧
+    summary.auditReceiptPresent = true ∧
+    summary.exitPathScoped = true ∧
+    summary.forkSafetyBounded = true ∧
+    summary.redactionAppealPresent = true ∧
+    summary.replacementPreservesReceipts = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem contestability_worked_example_bridge
+    {summary : ContestabilityWorkedExampleSummary} :
+    ContestabilityWorkedExampleSummaryValid summary ->
+      summary.conflictResidualPresent = true ∧
+        summary.auditReceiptPresent = true ∧
+        summary.exitPathScoped = true ∧
+        summary.forkSafetyBounded = true ∧
+        summary.redactionAppealPresent = true ∧
+        summary.replacementPreservesReceipts = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.ValueConflict

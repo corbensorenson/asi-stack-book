@@ -12,14 +12,14 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 165 |
+| Proof targets in manifest | 166 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 857 |
-| Direct/projection-style theorem declarations | 171 |
+| Theorem declarations classified | 858 |
+| Direct/projection-style theorem declarations | 172 |
 | Derived/decomposed theorem declarations | 682 |
 | Unknown or mixed theorem declarations | 4 |
-| Safety-critical theorem declarations | 102 |
-| Safety-critical direct/projection declarations | 10 |
+| Safety-critical theorem declarations | 103 |
+| Safety-critical direct/projection declarations | 11 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
 | Warnings | 5 |
@@ -34,7 +34,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 3 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
 
@@ -46,7 +46,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Corrigibility.lean` | `chapters/constitutional-alignment-substrate.qmd` | 2 | yes | yes |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 2 | yes | yes |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `chapters/recursive-self-improvement-boundaries.qmd` | 2 | yes | yes |
-| `lean/AsiStackProofs/ValueConflict.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 2 | yes | yes |
+| `lean/AsiStackProofs/ValueConflict.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 3 | yes | yes |
 
 ## Module Classification
 
@@ -103,7 +103,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 4 | 15 | 2 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 3 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | verification-bandwidth-and-context-adequacy | 4 | 13 | 3 | 10 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | virtual-context-abi | 3 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 
@@ -923,6 +923,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_routes_to_preservation` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `complete_value_conflict_lifecycle_admits_bounded_decision` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `contestability_worked_example_bridge` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `decision_with_unresolved_protected_conflict_carries_residual_record` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_conflict_cannot_bypass_required_review` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_unresolved_conflict_without_residual_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
@@ -979,4 +980,4 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 - lean/AsiStackProofs/Corrigibility.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.
 - lean/AsiStackProofs/GovernanceRights.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.
 - lean/AsiStackProofs/SelfImprovement.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.
-- lean/AsiStackProofs/ValueConflict.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.
+- lean/AsiStackProofs/ValueConflict.lean has 3 direct/projection-style theorem(s) and must remain explicitly scoped.

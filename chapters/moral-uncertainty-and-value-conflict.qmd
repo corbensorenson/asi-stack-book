@@ -219,6 +219,39 @@ appeal route, preservation obligation, and receipt. If the right is late,
 unsafe, degraded, or controlled only by the authority being challenged, the
 system must record a residual instead of pretending contestability survived.
 
+### Worked contestability example
+
+`contestability://synthetic-care-memory-export-001` is the current synthetic
+care-memory export example for the contestability layer. A user asks for audit
+and exit material after a contested safety decision, but the relevant memory
+contains user-authored notes, third-party private context, safety-sensitive
+review notes, and a request to fork the governance state into a new operating
+surface. The conflict is not "privacy wins" or "safety wins." The record keeps
+privacy, safety, autonomy, and accountability as separate axes, names the
+requesting user, care team, and affected third party, and treats the decision as
+a bounded lease with residual uncertainty.
+
+The allowed path is a redacted audit packet plus a scoped exit export: the user
+receives decision receipts, a source-memory inventory digest, user-authored
+notes, and a portable preference summary. Raw third-party context and
+unreviewed safety notes remain withheld until the review route can inspect the
+boundary. The fork path is narrowed rather than treated as a standing right:
+the sanitized fork candidate must preserve lineage, privacy boundaries, safety
+obligations, residual uncertainty, and review receipts before it can move
+forward. The redaction appeal stays open so the withheld boundary can be
+challenged without disclosing raw private material to the requester.
+
+The example also binds the conflict to replacement pressure. A future memory
+governance SCF cannot replace the current component if it drops the conflict
+residual, the audit receipt, the scoped exit boundary, the fork safety
+obligation, the redaction appeal, or the revisit condition. `Contestability
+worked example fixture` checks that cross-record shape and rejects seven
+mutation controls for missing residual uncertainty, unusable exit, unsafe
+fork, missing redaction appeal, replacement that drops residuals,
+support-promotion overclaim, and missing non-claims. It does not prove moral
+correctness, legal rights, reviewer independence, export usability, fork
+safety, deployed governance, or support-state promotion.
+
 ## Interfaces
 
 The consolidated interface keeps two interface families.
@@ -388,6 +421,7 @@ the merged core claim at `argument`.
 | High-stakes review gate | Check that unresolved high-stakes conflicts require review and residual uncertainty. | modeled by finite Lean and synthetic fixtures; moral correctness and reviewer quality not run |
 | Bounded-decision lease test | Check that bounded decisions preserve authority limits, dissent payloads, expiry, and revisit triggers. | modeled by finite Lean and synthetic fixtures; deployed policy behavior not run |
 | Value conflict lifecycle admission route envelope | Check that finite value-conflict lifecycle records route missing conflict records, value axes, stakeholder records, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, high-stakes residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries to explicit outcomes. | implemented in `AsiStackProofs.ValueConflict`; no moral-correctness, classification-quality, reviewer-quality, deployed contestability, legal-rights, support-state-promotion, or runtime-governance claim |
+| Contestability worked example fixture | Check one synthetic care-memory export scenario across value-conflict residual, redacted audit packet, scoped exit path, safety-limited fork boundary, redaction appeal, replacement-preserved receipts, seven expected-invalid mutation controls, and non-claim boundaries. | implemented by `python3 scripts/validate_contestability_worked_example.py`; no moral-correctness, legal-rights, reviewer-independence, export-usability, fork-safety, deployed-governance, or support-state-promotion claim |
 | Governance-rights fixture validation | Check that rights records preserve audit material, appeal paths, exit/fork access, fork safety, preservation obligations, durable receipts, and non-claims. | implemented by protocol validation and current harnesses |
 | Rights preservation check | Check that audit, exit, fork, dissent, redaction, and appeal paths survive a governed transition. | modeled by finite Lean and synthetic fixtures; real interface usability not run |
 | Governance rights lifecycle route envelope | Check that finite governance-right lifecycle records route missing governance records, audit material gaps, redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations, protected-right removal, unrecorded dissent, replacement receipt loss, missing durable receipts, evidence-transition gaps, and complete contestable transitions to explicit outcomes. | implemented in `AsiStackProofs.GovernanceRights`; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim |
@@ -400,6 +434,7 @@ the merged core claim at `argument`.
 | `lean:values.conflict.operational_invariant` | `AsiStackProofs.ValueConflict` | A decision with unresolved protected conflicts carries a residual conflict record. | implemented |
 | `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.ValueConflict` | A high-stakes conflict cannot bypass the required review predicate. | implemented |
 | `lean:values.conflict.lifecycle_admission_route` | `AsiStackProofs.ValueConflict` | Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes. | implemented |
+| `lean:values.conflict.contestability_example_bridge` | `AsiStackProofs.ValueConflict` | A synthetic contestability worked-example summary preserves conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries. | implemented |
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
 

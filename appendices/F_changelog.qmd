@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-02 - Add contestability worked example fixture
+
+- Added `python3 scripts/validate_contestability_worked_example.py`,
+  `docs/contestability_worked_example.md`, and
+  `experiments/contestability_worked_example/results/2026-07-02-local.json` for
+  a synthetic care-memory export example that joins value-conflict residuals,
+  redacted audit packets, scoped exit paths, safety-limited fork boundaries,
+  redaction appeal, replacement-preserved receipts, seven expected-invalid
+  mutation controls, and non-claim boundaries.
+- Added `lean:values.conflict.contestability_example_bridge` in
+  `AsiStackProofs.ValueConflict` as a finite summary bridge for the worked
+  example fixture. This checks only fixture alignment for residuals, rights
+  receipts, rejected controls, no support-state effect, and non-claim
+  boundaries.
+- Updated the Moral Uncertainty live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does not
+  prove moral correctness, legal rights, reviewer independence, export
+  usability, fork safety, deployed governance, support-state promotion, or
+  external review quality.
+- Current proof-depth snapshot: 166 proof targets, 54 Lean modules, 858 theorem declarations, 682 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add Accepted live transition review audit
 
 - Added `python3 scripts/validate_accepted_transition_review_audit.py`,

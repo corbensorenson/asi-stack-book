@@ -331,6 +331,16 @@
       "rationale": "Implemented in AsiStackProofs.ValueConflict as a finite value-conflict lifecycle route over conflict records, value axes, stakeholder records, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries; it does not prove moral correctness, classification quality, reviewer quality, deployed contestability, legal rights, support-state promotion, or runtime governance behavior."
     },
     {
+      "tag": "lean:values.conflict.contestability_example_bridge",
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "module": "AsiStackProofs.ValueConflict",
+      "formal_target": "A synthetic contestability worked-example summary preserves conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ValueConflict as a finite summary bridge over the synthetic contestability worked-example result; it records only fixture alignment for conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries."
+    },
+    {
       "tag": "lean:governance.rights.operational_invariant",
       "chapter_id": "moral-uncertainty-and-value-conflict",
       "module": "AsiStackProofs.GovernanceRights",

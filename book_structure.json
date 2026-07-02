@@ -1878,6 +1878,13 @@
               "status": "implemented in AsiStackProofs.ValueConflict; no deployed value-conflict behavior claim"
             },
             {
+              "name": "Contestability worked example fixture",
+              "purpose": "Check one synthetic care-memory export scenario across value-conflict residual, redacted audit packet, scoped exit path, safety-limited fork boundary, redaction appeal, replacement-preserved receipts, seven expected-invalid mutation controls, and non-claim boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passing via python3 scripts/validate_contestability_worked_example.py; no moral-correctness, legal-rights, reviewer-independence, export-usability, fork-safety, deployed-governance, or support-state-promotion claim",
+              "status": "implemented by contestability worked-example fixture; no deployed contestability behavior claim"
+            },
+            {
               "name": "Audit-record availability test",
               "implementation_status": "implemented",
               "result_status": "passing via synthetic governance rights harness; no institutional auditability or legal-rights claim"
@@ -1918,6 +1925,12 @@
               "tag": "lean:values.conflict.lifecycle_admission_route",
               "module": "AsiStackProofs.ValueConflict",
               "target": "Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:values.conflict.contestability_example_bridge",
+              "module": "AsiStackProofs.ValueConflict",
+              "target": "A synthetic contestability worked-example summary preserves conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries.",
               "status": "implemented"
             },
             {
