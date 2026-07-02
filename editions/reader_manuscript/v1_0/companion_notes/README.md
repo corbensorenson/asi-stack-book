@@ -12,6 +12,8 @@ boundary, release blocker, or non-claim appears.
 
 Current drafting notes:
 
+- `compact-generative-systems-and-residual-honesty.md`
+- `resource-economics-and-token-budgets.md`
 - `circle-calculus-and-proof-carrying-ai-contracts.md`
 - `executable-specifications-and-lean-proof-envelope.md`
 - `artifact-steward-agents-and-living-project-governance.md`

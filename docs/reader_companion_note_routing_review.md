@@ -1,8 +1,8 @@
 # Reader Companion-Note Routing Review
 
-Last updated: 2026-06-30
+Last updated: 2026-07-02
 
-This review records the v1.0 routing decision for the three chapters flagged as
+This review records the v1.0 routing decision for the five chapters flagged as
 companion-note candidates in the reader chapter review matrix. It is not a
 reader release record, not an ebook/document/PDF/audio artifact review, not a
 curated reader-manuscript graduation, and not a support-state promotion.
@@ -23,7 +23,7 @@ Create a tracked companion-note routing manifest at
 `editions/reader_manuscript/v1_0/companion_note_routing.json` and keep generated
 reader source plus semantic overlays as the v1.0 reader path.
 
-The three candidate chapters remain in the reader spine because their dense
+The five candidate chapters remain in the reader spine because their dense
 terms carry meaning-critical boundaries. For v1.0, companion notes should help
 e-reader and audio users with glossary, quick-reference, and spoken-treatment
 support. They should not remove caveats that change claim meaning from ordinary
@@ -33,6 +33,8 @@ reader prose.
 
 | Chapter | Reader treatment | Companion route | Release decision |
 |---|---|---|---|
+| `compact-generative-systems-and-residual-honesty` | Retain compactness-as-claim, verifier separation, generate/verify/repair receipts, repair residuals, fallback, semantic representation leases, consumer policy, residual-cost ownership, and non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/compact-generative-systems-and-residual-honesty.md` for Compact Generative Record vocabulary, GVR receipt flow, residual burden, literal fallback, Semantic Node Records, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_compact_generative_systems_prose_pass.md`; no release blocker cleared. |
+| `resource-economics-and-token-budgets` | Retain verification tax, protected overhead, route eligibility, residual ownership, local evidence-lane boundaries, sublane no-change/no-promotion decisions, serving-memory separation, scheduler non-claims, and economic non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/resource-economics-and-token-budgets.md` for Resource Budget Records, costed-route slices, workflow traces, local probes, load-stability probes, CI cost metadata, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_resource_economics_prose_pass.md`; no release blocker cleared. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Retain proof receipt states, theorem references, resolver/replay boundaries, consumer gates, workload blockers, and non-claims in the reader chapter. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/circle-calculus-and-proof-carrying-ai-contracts.md` for receipt-state glossary, theorem laundering, fingerprints, replay, workload-blocked promotion, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_circle_contracts_prose_pass.md`; no release blocker cleared. |
 | `executable-specifications-and-lean-proof-envelope` | Retain the distinction between Lean predicates, schemas, validators, behavior tests, benchmarks, external theorem references, and semantic adequacy review. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/executable-specifications-and-lean-proof-envelope.md` for proof-lane glossary, finite-predicate examples, semantic adequacy, and audio treatment. | Drafting-only curated reader prose pass recorded in `docs/curated_reader_executable_specs_prose_pass.md`; no release blocker cleared. |
 | `artifact-steward-agents-and-living-project-governance` | Retain charter, work contract, contribution ledger, treasury policy, event taint, steward action, sunset, federation, and non-ownership boundaries. | Drafting companion note added at `editions/reader_manuscript/v1_0/companion_notes/artifact-steward-agents-and-living-project-governance.md` for project-object quick reference, implementation ladder, and audio treatment; the first curated prose pass still remains drafting-only. | Drafting-only curated reader prose pass recorded; no release blocker cleared. |
@@ -57,9 +59,11 @@ must preserve the claim boundary.
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
 - This review records that forty-four drafting-only curated reader chapters now
   exist; it does not approve any chapter for release.
-- This review records three drafting companion notes for dense proof/governance
-  chapters; it does not approve them as e-reader, audio, or release artifacts.
+- This review records five drafting companion notes for dense compression,
+  resource, proof, and governance chapters; it does not approve them as
+  e-reader, audio, or release artifacts.
 - This review does not promote any claim support state.
-- This review does not claim proof adequacy, Circle theorem replay, steward
-  workflow execution, treasury execution, governance correctness, audiobook
-  quality, or release readiness.
+- This review does not claim compression utility, semantic adequacy, deployed
+  scheduler behavior, production workload quality, proof adequacy, Circle
+  theorem replay, steward workflow execution, treasury execution, governance
+  correctness, audiobook quality, or release readiness.

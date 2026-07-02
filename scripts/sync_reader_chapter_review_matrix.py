@@ -56,6 +56,55 @@ ALLOWED_RELEASE_BLOCKERS = {
 }
 
 SPECIAL_REVIEW_DEFAULTS = {
+    "compact-generative-systems-and-residual-honesty": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "reader_overlay_active",
+            "companion_note_candidate",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iii_compression_full_review_pass.md#decisions",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "Drafting-only curated reader manuscript file and companion note now "
+            "exist; the companion note is for e-reader/audio density support only, "
+            "while compactness-as-claim, verifier separation, repair residuals, "
+            "fallback, semantic representation leases, cost ownership, and "
+            "non-claim boundaries remain in the reader spine. Release blockers "
+            "remain active and this row is not a release approval."
+        ),
+    },
+    "resource-economics-and-token-budgets": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "companion_note_candidate",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iii_representation_full_review_pass.md#decisions",
+            "docs/curated_reader_resource_economics_prose_pass.md",
+            "docs/reader_companion_note_routing_review.md#chapter-decisions",
+        ],
+        "review_notes": (
+            "Full generated-reader chapter review recorded. Budgets remain framed "
+            "as policy objects that preserve verification tax, protected overhead, "
+            "displaced costs, serving pressure, rejected savings, and "
+            "no-cost-cutting-of-governance boundaries. First curated reader prose "
+            "pass and drafting companion note are recorded; the companion note is "
+            "for e-reader/audio density support only, while verification tax, "
+            "route eligibility, residual ownership, no-change sublane decisions, "
+            "serving-memory separation, scheduler non-claims, and economic "
+            "non-claims remain in the reader spine. Release blockers remain "
+            "active and no scheduler, economics, serving, welfare, cost-quality, "
+            "or reader-artifact claim is approved."
+        ),
+    },
     "executable-specifications-and-lean-proof-envelope": {
         "review_status": "spot_checked",
         "review_depth": "medium_priority_manual_review",

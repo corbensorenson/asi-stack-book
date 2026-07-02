@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-02 - Add companion-note routing for dense Part III chapters
+
+- Added drafting companion notes for Compact Generative Systems and Resource
+  Economics so e-reader and audio review can route dense record vocabulary,
+  local-evidence details, and validator lists without moving meaning-critical
+  claim boundaries out of the reader spine.
+- Updated the companion-note routing manifest, reader chapter review matrix,
+  generated reader review matrix document, companion-note routing review,
+  roadmap, and companion-note README to track five drafting companion-note
+  candidates instead of three.
+- Added the Reference Trace replay test to the generated scaffold source of
+  truth in `book_structure.json` and refreshed the proof manifest line anchors
+  after updating the outline, so the Pages scaffold check no longer deletes the
+  Appendix E replay row.
+- No reader release, e-reader artifact, audio artifact, format approval,
+  support-state promotion, compression-utility claim, scheduler/economic claim,
+  workload-quality claim, model-quality claim, or external review is claimed.
+
 ## 2026-07-02 - Add reference trace command replay
 
 - Added `scripts/run_reference_trace_replay.py` and

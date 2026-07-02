@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "active_review_queue",
-  "last_updated": "2026-06-29",
+  "last_updated": "2026-07-02",
   "source_of_truth": "book_structure.json",
   "generated_reader_baseline": {
     "command": "python3 scripts/build_reader_edition.py",
@@ -19,7 +19,7 @@
     "reviewed": 44
   },
   "disposition_counts": {
-    "companion_note_candidate": 3,
+    "companion_note_candidate": 5,
     "curated_manuscript_candidate": 44,
     "no_immediate_action": 44,
     "reader_overlay_active": 19
@@ -705,13 +705,15 @@
       "review_depth": "full_chapter_review",
       "dispositions": [
         "reader_overlay_active",
+        "companion_note_candidate",
         "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
-        "docs/reader_part_iii_compression_full_review_pass.md#decisions"
+        "docs/reader_part_iii_compression_full_review_pass.md#decisions",
+        "docs/reader_companion_note_routing_review.md#chapter-decisions"
       ],
-      "review_notes": "Drafting-only curated reader manuscript file now exists; release blockers remain active and this row is not a release approval.",
+      "review_notes": "Drafting-only curated reader manuscript file and companion note now exist; the companion note is for e-reader/audio density support only, while compactness-as-claim, verifier separation, repair residuals, fallback, semantic representation leases, cost ownership, and non-claim boundaries remain in the reader spine. Release blockers remain active and this row is not a release approval.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"
@@ -777,14 +779,16 @@
       "review_status": "reviewed",
       "review_depth": "full_chapter_review",
       "dispositions": [
+        "companion_note_candidate",
         "curated_manuscript_candidate",
         "no_immediate_action"
       ],
       "review_refs": [
         "docs/reader_part_iii_representation_full_review_pass.md#decisions",
-        "docs/curated_reader_resource_economics_prose_pass.md"
+        "docs/curated_reader_resource_economics_prose_pass.md",
+        "docs/reader_companion_note_routing_review.md#chapter-decisions"
       ],
-      "review_notes": "Full generated-reader chapter review recorded. Budgets remain framed as policy objects that preserve verification tax, protected overhead, displaced costs, serving pressure, rejected savings, and no-cost-cutting-of-governance boundaries. First curated reader prose pass is recorded; the row is now marked as a curated-manuscript candidate while release blockers remain active and no scheduler, economics, serving, welfare, cost-quality, or reader-artifact claim is approved.",
+      "review_notes": "Full generated-reader chapter review recorded. Budgets remain framed as policy objects that preserve verification tax, protected overhead, displaced costs, serving pressure, rejected savings, and no-cost-cutting-of-governance boundaries. First curated reader prose pass and drafting companion note are recorded; the companion note is for e-reader/audio density support only, while verification tax, route eligibility, residual ownership, no-change sublane decisions, serving-memory separation, scheduler non-claims, and economic non-claims remain in the reader spine. Release blockers remain active and no scheduler, economics, serving, welfare, cost-quality, or reader-artifact claim is approved.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

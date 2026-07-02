@@ -11422,6 +11422,13 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_reference_trace.py`",
               "status": "implemented as a deterministic fixture harness; no deployed authority stop-condition checker exists"
+            },
+            {
+              "name": "Actual command replay trace",
+              "purpose": "Record one actual repository validator command as a Reference Trace Record with command output digest, tracked artifact bundle, and blocked-path stop-condition attachment.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_reference_trace_replay.py`; local validator replay only, no deployed runtime trace or support-state promotion",
+              "status": "implemented as a local validator replay harness; no live runtime integration, external replay, deployed authority-stop behavior, model-quality result, benchmark result, or support-state promotion exists"
             }
           ],
           "lean_module": "AsiStackProofs.ReferenceArchitecture",

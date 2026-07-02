@@ -8,9 +8,85 @@
     "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
     "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
     "docs/curated_reader_graduation_review.md#candidate-chapters",
+    "docs/reader_part_iii_compression_full_review_pass.md#decisions",
+    "docs/curated_reader_compact_generative_systems_prose_pass.md",
+    "docs/reader_part_iii_representation_full_review_pass.md#decisions",
+    "docs/curated_reader_resource_economics_prose_pass.md",
     "docs/reader_companion_note_routing_review.md"
   ],
   "records": [
+    {
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep compactness-as-claim, verifier separation, repair residuals, fallback, semantic representation leases, consumer policy, cost ownership, and non-claim boundaries in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for Compact Generative Records, generate/verify/repair receipts, residual burden, literal fallback, and Semantic Node Records.",
+      "audio_treatment": "Narrate compactness as a governed bargain and route record-field detail, residual taxonomy, and semantic-node vocabulary to companion notes rather than reading long field lists verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/compact-generative-systems-and-residual-honesty.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "Compact Generative Record fields",
+        "generate/verify/repair receipt lane",
+        "residual burden, fallback, verifier separation, and semantic representation lease vocabulary"
+      ],
+      "must_remain_in_reader": [
+        "compactness is a claim with costs, not an aesthetic preference",
+        "exactness belongs to the full receipt, not to the generator alone",
+        "no compression utility, semantic adequacy, model-quality, memory, context, speed, deployment, or ASI claim is promoted without separate evidence"
+      ],
+      "companion_note_material": [
+        "plain-language compactness and residual-honesty glossary",
+        "one-page generate/verify/repair receipt explanation",
+        "audio note explaining how to summarize record fields without hiding verifier, repair, fallback, residual, and non-claim boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim compression utility, real rate, decode behavior, semantic grounding quality, downstream artifact quality, memory savings, context improvement, model quality, deployment readiness, or ASI capability.",
+        "This route does not promote any claim support state."
+      ]
+    },
+    {
+      "chapter_id": "resource-economics-and-token-budgets",
+      "title": "Resource Economics and Token Budgets",
+      "routing_decision": "retain_in_reader_spine_with_companion_note",
+      "reader_treatment": "Keep verification tax, protected overhead, route eligibility, residual ownership, no-change sublane decisions, serving-memory separation, scheduler non-claims, and economic non-claims in the reader chapter.",
+      "companion_treatment": "Use the drafting companion note for e-reader and audio review; it gives a short reference for Resource Budget Records, costed-route slices, workflow traces, local probes, load-stability probes, CI cost metadata, and no-promotion decisions.",
+      "audio_treatment": "Narrate resource economics as disciplined cost-quality governance and route validator lists, fixture fields, and sublane details to companion notes rather than reading every local result verbatim.",
+      "companion_note_file": "editions/reader_manuscript/v1_0/companion_notes/resource-economics-and-token-budgets.md",
+      "companion_note_status": "drafting_not_release_reviewed",
+      "dense_material": [
+        "Resource Budget Record fields",
+        "costed-route, workflow-trace, workload-quality, load-stability, and CI-cost local evidence lanes",
+        "accepted non-core transition and explicit sublane no-change/no-promotion decisions"
+      ],
+      "must_remain_in_reader": [
+        "verification tax is protected cost, not waste",
+        "budget pressure cannot bypass safety, source, proof, privacy, or human-review gates",
+        "no deployed scheduler, production workload, stable speedup, economic outcome, welfare result, serving-throughput result, KV-cache behavior result, model-quality result, or chapter-core promotion is claimed"
+      ],
+      "companion_note_material": [
+        "plain-language Resource Budget Record and protected-cost glossary",
+        "short map of the local Resource evidence lanes and why most are no-change/no-promotion",
+        "audio note explaining how to summarize validator detail while preserving scheduler, workload, economic, and support-state boundaries"
+      ],
+      "release_blockers": [
+        "reader_release_record_not_created",
+        "format_artifact_not_reviewed",
+        "companion_note_not_release_reviewed",
+        "audio_script_not_reviewed"
+      ],
+      "non_claims": [
+        "This route does not approve the drafting curated reader chapter.",
+        "This route does not claim a deployed scheduler, production workload, stable speedup, economic optimality, welfare result, serving-throughput result, KV-cache behavior result, model-quality result, external workload-quality review, or Resource Economics chapter-core promotion.",
+        "This route does not promote any claim support state."
+      ]
+    },
     {
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "title": "Circle Calculus and Proof-Carrying AI Contracts",
