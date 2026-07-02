@@ -129,7 +129,7 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first imports are intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes; `docs/theseus_report_import_slice.md` records one static digest-verified architecture-gate report import; `docs/theseus_generation_mode_import_slice.md` records one static digest-verified generation-mode import; and `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static imports and support probe as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft live-chapter assets, text-equivalent chapter anchors, and curated reader-manuscript placements with captions, alt text, and non-claim boundaries checked by `scripts/validate_reader_key_figures.py`. The figures remain draft reader aids, and there is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, visual aids, and audio flow. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft live-chapter assets, text-equivalent chapter anchors, curated reader-manuscript placements, and rendered curated-reader HTML DOM checks with captions, alt text, responsive classes, copied SVGs, and non-claim boundaries checked by `scripts/validate_reader_key_figures.py` and `scripts/validate_reader_key_figure_html_probe.py`. The figures remain draft reader aids, and there is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, visual aids, and audio flow. |
 | P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated; ten reader-handoff key figures now have draft SVG assets, accessibility-oriented prose equivalents, and validator-checked placements, but they remain draft reader aids rather than release-reviewed art. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, stable across web, EPUB, PDF, DOCX, and audio companion treatment, and reviewed as artifacts before reader release. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 44 core claims still remain `argument`; four narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
@@ -176,9 +176,13 @@ roadmap. The findings with teeth are:
 - The ten draft SVG key figures are now embedded in live chapters and
   embedded/adapted in the curated reader manuscript with captions, alt text,
   and non-claim boundaries. `scripts/validate_reader_key_figures.py` makes that
-  placement and metadata state part of the validation gate. The remaining
-  blocker is not placement; it is visual polish, format-specific inspection,
-  and release review before any human-review-ready figure-artifact claim.
+  placement and metadata state part of the validation gate, and
+  `scripts/validate_reader_key_figure_html_probe.py` renders the tracked
+  curated reader manuscript and checks the resulting HTML DOM for image refs,
+  copied SVG assets, alt text, captions, responsive classes, and non-claim
+  boundary paragraphs. The remaining blocker is not placement or rendered DOM
+  presence; it is visual polish, format-specific inspection, and release review
+  before any human-review-ready figure-artifact claim.
 - The Integrated Reference Architecture row now has validated fixtures, a
   narrative showpiece, and an actual local command replay: the Resource
   flagship lane validator replay emits a Reference Trace Record with output
@@ -2351,9 +2355,12 @@ Current status:
   curated reader-manuscript placements, twelve Corben voice-pass slots, and
   per-chapter stakes/payoffs. `scripts/validate_reader_key_figures.py` now
   checks the draft SVG metadata, live chapter text equivalents, reader
-  placements, captions, alt text, and non-claim boundaries. This closes the
-  machine-checkable handoff metadata and draft key-figure placement gap, but it
-  does not approve the prose, fabricate authorial experience, review the figures
+  placements, captions, alt text, and non-claim boundaries, while
+  `scripts/validate_reader_key_figure_html_probe.py` checks rendered curated
+  reader HTML DOM presence for the same ten figures. This closes the
+  machine-checkable handoff metadata, draft key-figure placement, and rendered
+  HTML DOM gap, but it does not approve the prose, fabricate authorial
+  experience, visually review the figures
   as final art, or create an edition release artifact.
 - `scripts/build_curated_reader_edition.py --check` now validates that the
   tracked curated reader manuscript maps to the 44 active manifest chapters,
@@ -2787,9 +2794,11 @@ Current status:
 - The ten draft key figures are now embedded/adapted into the curated reader
   manuscript where they serve the reader arc, not only the live AI/research
   chapters. Each placement carries a caption, alt text, and a non-claim
-  boundary, and `scripts/validate_reader_key_figures.py` checks that state.
-  Remaining work is figure polish, format-specific inspection, and release
-  review before any human-review-ready figure-artifact claim.
+  boundary; `scripts/validate_reader_key_figures.py` checks the source state,
+  and `scripts/validate_reader_key_figure_html_probe.py` checks rendered
+  curated-reader HTML DOM presence for all ten. Remaining work is visual figure
+  polish, EPUB/DOCX/PDF/e-reader/audio-specific inspection, and release review
+  before any human-review-ready figure-artifact claim.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,

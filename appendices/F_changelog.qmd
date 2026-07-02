@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-02 - Add rendered reader key-figure HTML probe
+
+- Added `scripts/validate_reader_key_figure_html_probe.py`,
+  `docs/reader_key_figure_html_probe.md`, and
+  `experiments/reader_key_figure_html_probe/results/2026-07-02-local.json` for
+  a local rendered curated-reader HTML probe of the ten draft key figures.
+- The probe builds the tracked curated reader manuscript in a temporary
+  workspace, renders HTML, and checks the rendered figure blocks for image refs,
+  copied SVG assets, alt text, captions, responsive image classes, and visible
+  non-claim boundary paragraphs.
+- Updated the reader key-figure review, roadmap, README, repository map, and
+  publication readiness docs so the HTML DOM check is discoverable while EPUB,
+  DOCX, PDF, e-reader, visual-design, contrast, page-break, audio companion, and
+  release-review blockers remain open.
+- This is a rendered-HTML DOM probe only; it is not visual figure review,
+  final figure-artifact approval, reader release approval, format approval,
+  support-state promotion, evidence transition, proof result, benchmark result,
+  or deployed-runtime claim.
+
 ## 2026-07-02 - Refresh README public status surfaces
 
 - Updated the public README reader-overlay summary from stale hand-maintained

@@ -8,12 +8,24 @@ Command:
 python3 scripts/validate_reader_key_figures.py
 ```
 
+Rendered HTML probe:
+
+```bash
+python3 scripts/validate_reader_key_figure_html_probe.py --write-result
+```
+
 This review records the current draft key-figure artifact inspection for the
 curated reader manuscript. It is not a release approval and not final figure-artifact review. It checks only that the ten draft SVG assets named in
 `editions/reader_manuscript/v1_0/manifest.json` are present, parseable,
 accessible as draft reader aids, embedded in their live chapters, embedded in
 their curated reader-manuscript chapters, and surrounded by alt text,
 captions/text-equivalent anchors, and non-claim boundaries.
+
+The rendered-HTML DOM probe in `docs/reader_key_figure_html_probe.md` builds the
+tracked curated reader manuscript in a temporary workspace, renders HTML, and
+checks all ten draft figures for rendered image references, copied SVG assets,
+alt text, captions, responsive image classes, and visible non-claim boundary
+paragraphs. That probe is still not visual review and not release approval.
 
 ## Current Draft Assets
 
@@ -41,8 +53,9 @@ equivalents.
 
 Open residuals:
 
-- HTML: inspect figures in the current rendered reader HTML, not only source
-  paths.
+- HTML visual/layout: inspect scale, line weight, text legibility, caption
+  placement, and color contrast in the rendered reader HTML beyond the DOM
+  probe.
 - EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
 - DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
 - PDF: inspect page-level layout, figure scaling, and caption placement.

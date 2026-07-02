@@ -184,6 +184,7 @@ The project has moved beyond the initial v0.2 manuscript baseline into a tagged 
 | [docs/reader_format_review_matrix.md](docs/reader_format_review_matrix.md) | Synced pre-release reader-format review ledger for HTML, EPUB, DOCX, and PDF blockers. |
 | [docs/reader_artifact_inspection_manifest.md](docs/reader_artifact_inspection_manifest.md) | Tracked local HTML/EPUB/DOCX structural-inspection summary for ignored reader-format snapshots. |
 | [docs/reader_key_figure_artifact_review.md](docs/reader_key_figure_artifact_review.md) | Tracked draft key-figure placement and metadata review for the live book and curated reader manuscript; not final figure-artifact approval. |
+| [docs/reader_key_figure_html_probe.md](docs/reader_key_figure_html_probe.md) | Rendered curated-reader HTML DOM probe for the ten draft key figures; not visual review or release approval. |
 | [docs/reader_epub_probe_manifest.md](docs/reader_epub_probe_manifest.md) | Tracked local EPUB metadata/source-spine probe summary and e-reader-specific release blockers. |
 | [docs/reader_docx_probe_manifest.md](docs/reader_docx_probe_manifest.md) | Tracked local DOCX LibreOffice conversion probe summary, spot-check residuals, and DOCX-specific release blockers. |
 | [docs/reader_pdf_probe_manifest.md](docs/reader_pdf_probe_manifest.md) | Tracked local UTF-8 PDF probe summary, spot-check residuals, and PDF-specific release blockers. |
@@ -300,6 +301,7 @@ python3 scripts/validate_reader_overlays.py --check
 python3 scripts/audit_reader_continuity.py --check
 python3 scripts/validate_reader_manuscript_manifest.py
 python3 scripts/validate_reader_key_figures.py
+python3 scripts/validate_reader_key_figure_html_probe.py
 python3 scripts/validate_reader_artifact_inspection_manifest.py
 python3 scripts/validate_reader_epub_probe_manifest.py
 python3 scripts/validate_reader_docx_probe_manifest.py
@@ -396,6 +398,7 @@ Generate or check the tracked curated-reader manuscript as a local Quarto review
 ```bash
 python3 scripts/build_curated_reader_edition.py --check
 python3 scripts/validate_reader_key_figures.py
+python3 scripts/validate_reader_key_figure_html_probe.py
 python3 scripts/build_curated_reader_edition.py --output build/curated_reader_edition
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render build/curated_reader_edition --to html
 node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json
@@ -411,6 +414,7 @@ python3 scripts/validate_reader_epub_probe_manifest.py
 python3 scripts/validate_reader_docx_probe_manifest.py
 python3 scripts/validate_reader_pdf_probe_manifest.py
 python3 scripts/validate_reader_key_figures.py
+python3 scripts/validate_reader_key_figure_html_probe.py
 python3 scripts/validate_reader_audio_script_probe_manifest.py
 python3 scripts/sync_reader_format_review_matrix.py --check
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --formats html epub docx pdf
