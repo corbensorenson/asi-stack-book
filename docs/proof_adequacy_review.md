@@ -242,22 +242,27 @@ quality result, deployed failure radar, or support-state promotion.
 
 ### Human Intent Resolution Route Envelope
 
-The Human Intent follow-through increment strengthened
-`AsiStackProofs.IntentContracts` by adding a third formal target for finite
-intent-resolution routing. The module now includes an `IntentResolutionRoute`,
-`IntentResolutionRecord`, and `IntentResolutionRouteFor` decision function over
-missing intent text, prohibited requested action, ambiguity, non-goal conflict,
-high-impact work, authority grants, and reversibility. The new theorems check
-that missing text and prohibited actions route to non-executable rejection,
+The Human Intent follow-through increments strengthened
+`AsiStackProofs.IntentContracts` with finite intent-resolution routing and an
+expanded intent-admission lifecycle route. The module now includes
+`IntentResolutionRoute`, `IntentResolutionRecord`, and
+`IntentResolutionRouteFor` for the first branch, plus
+`IntentAdmissionRoute`, `IntentAdmissionReview`, and
+`IntentAdmissionRouteFor` for admission. The derived theorems check that
+missing text and prohibited actions route to non-executable rejection,
 ambiguous intent and non-goal conflicts route to clarification, high-impact work
-without authority routes to review, and irreversible high-impact work routes to
-review.
+without authority routes to review, irreversible high-impact work routes to
+review, hidden overrides reject admission, unresolved ambiguity and missing
+constraints request clarification, constraint-precedence and preservation gaps
+block admission, missing or widened authority routes to review, downstream
+means or stop-condition changes require re-contracting, missing non-claim
+boundaries block admission, and complete records admit.
 
 This keeps `human-intent-as-a-formal-input` in the `useful but too narrow`
-class. The route envelope is a better record-level model for the chapter's
-intake gate, but it still does not parse natural language, judge semantic
-ambiguity, extract authority from user text, verify stop-condition lowering,
-run a consent UI, test reviewer quality, or prove that deployed execution cannot
+class. The route and admission envelopes are better record-level models for the
+chapter's intake gate, but they still do not parse natural language, judge
+semantic ambiguity, extract authority from user text, verify stop-condition
+lowering, run a consent UI, test reviewer quality, or prove that deployed execution cannot
 turn a loose request into hidden authority.
 
 ### Intent-to-Execution Dispatch Route Envelope
@@ -469,19 +474,22 @@ replacement safety.
 
 ### Capability Replacement Transaction Route Envelope
 
-The Capability Replacement follow-through increment strengthened
-`AsiStackProofs.Replacement` by adding a third formal target for finite
-transaction routing. The module now includes a `ReplacementTransactionRoute`,
-`ReplacementTransactionReview`, and `ReplacementTransactionRouteFor` decision
-function over prior and candidate artifacts, identity preservation, authority
-scope, governance approval, qualification evidence, evaluator independence,
-regression results, rollback receipts, rollback dry runs, residual escrow,
-monitor incidents, and default-route requests. The new theorems check that a
-missing prior artifact rejects the proposal; authority expansion without
-approval and evaluator capture route to governance review; failed regression
-quarantines the candidate; missing rollback receipt requires precheck; failed
-rollback dry run routes to canary-only; monitor incidents require rollback; and
-a complete default review can commit default.
+The Capability Replacement follow-through increments strengthened
+`AsiStackProofs.Replacement` with finite transaction routing and an expanded
+replacement-lifecycle route. The module now includes
+`ReplacementTransactionRoute`, `ReplacementTransactionReview`, and
+`ReplacementTransactionRouteFor` for transaction review, plus
+`ReplacementLifecycleRoute`, `ReplacementLifecycleReview`, and
+`ReplacementLifecycleRouteFor` for lifecycle admission. The derived theorems
+check that missing artifacts reject the proposal; identity mismatches, failed
+regression floors, and failed regressions quarantine candidates; authority
+expansion without approval and evaluator capture route to governance review;
+stale evidence, missing canary scope, missing monitor windows, missing rollback
+handles, and missing rollback receipts block promotion; failed canaries and
+failed rollback dry runs stay canary-only; monitor incidents require rollback;
+unowned irreversible effects and missing residual owners block admission;
+deprecation and retirement require notices or receipts; missing non-claim
+boundaries block promotion; and complete default reviews can commit default.
 
 This keeps `capability-replacement-and-rollback` in the `useful but too narrow`
 class. The route envelope is closer to the chapter's transaction semantics, but
@@ -1276,5 +1284,7 @@ milestone, or promote any chapter support state.
 ## Result
 
 The proof envelope is traceable and useful, but most targets should not be treated as adequate formalizations of their full chapter boundaries yet. The proof-depth classifier now makes that limitation measurable: many theorem declarations remain direct/projection-style, but all five safety-critical modules now have at least one derived/decomposed finite-record theorem plus explicit projection-only limitation prose. The highest-leverage next steps are deterministic behavior harnesses for execution/context/routing/compression chapters, empirical baselines for efficiency/generation/substrate chapters, and richer lifecycle or review models for governance and agency chapters. Stack Boundaries, Efficient ASI, Compact Generative Systems, Human Intent, Command Contracts, Cognitive Compilation, Virtual Context ABI, Verification Bandwidth, Labor OS, Stable Capability Fields, Capability Replacement, Security Kernel, Authority, Planning, Evidence States, Benchmark Ratchets, Claim Ledger, Proof-Carrying Claims, Alignment, Corrigibility, Governance Rights, Self-Improvement, Value Conflict, Readiness Gates, Proof Envelope, Artifact Steward Agents, and Prototype Roadmap now have stronger finite-record envelopes; Stack Boundaries now has a finite trace-level unauthorized external-handoff rejection theorem; Efficient ASI now has finite negative-case theorems for lower-cost authorized quality-preserving candidates and open-obligation promotion without residual records; Compact Generative Systems now has finite negative-case theorems for missing residual records, lossy exactness overclaim, mismatched reconstruction, failed-verification promotion, ungrounded semantic nodes, unaccounted hierarchy updates, and a compact-admission route for missing source artifacts, compression boundaries, residuals, reconstruction evidence, fallback paths, verifier costs, semantic provenance, hierarchy migration, evidence transitions, and non-claim boundaries; Command Contracts now has finite negative-case theorems for missing required command fields and accepted hidden overrides; Open Research Agenda now has finite negative-case theorems for source-derived claims without source records and accepted new-source assignments to nonexistent chapters; Proof-Carrying Claims now has finite negative-case theorems for missing verifier artifact refs and negative verifier results that try to produce scoped updates; Tribunal now has finite negative-case theorems for missing probes or reviewer-independence records, prior-review reuse without unchanged-evidence guard, and action verdicts without required-action or constraint records plus a finite lifecycle-route envelope for missing review, high-risk probe/independence gaps, changed evidence reuse, unrecorded dissent, action constraints, evidence-transition requirements, and complete bounded review; Alignment has a constitutional lifecycle-route depth increment, Value Conflict has a value-conflict lifecycle-route depth increment, Corrigibility has an agency-correction lifecycle-route depth increment, Governance Rights has a governance-right lifecycle-route depth increment, while Self-Improvement has an additional transition-route depth increment, Cognitive Compilation has a semantic-lowering route envelope, Virtual Context ABI has context-admission and certificate-lifecycle route envelopes, Context Transactions has a materialization/deletion-closure route envelope, Verification Bandwidth has a verification-adequacy route envelope, Labor OS has a job-execution route envelope, Planning has a finite dispatch-route theorem for valid modeled dispatchable records, Artifact Steward Agents has contribution-ledger and federation-contract route envelopes, and Prototype Roadmap has a finite phase-route envelope; Stable Capability Fields now has a finite lifecycle-state transition relation over shadow, canary, qualified, default, deprecated, retired, and quarantined records, with negative cases for missing default evidence, regression floor, authority ceiling, rollback readiness, incident closure, deprecation notice, and retirement receipt; Runtime Adapters now has a synthetic permission harness plus finite negative-case theorems for missing parent-job permission, unrejected high-impact calls without approval, mismatched effect leases, expired effect leases, unsandboxed effect leases, and rollback-required calls without rollback handles; Artifact Graphs now has a synthetic replay/audit consistency harness plus finite negative-case theorems for produced artifacts missing trace refs and incomplete or blocked provenance; Procedural Memory now has a synthetic loop-qualification harness plus finite negative-case theorems for missing closure artifacts and failed-regression promotion attempts; Routing Heads now has a synthetic route-lease harness plus finite negative-case theorems for selected routes missing authority/readiness, runtime-core promotions missing evidence, unavailable-text-only runtime claims attempting promotion, and a finite routing-decision lifecycle route for missing capability requests, registry gaps, authority/readiness failures, stale leases, missing cost-quality records, overprivileged selections, rejected-candidate evidence gaps, residual-owner gaps, and non-claim-boundary gaps; Artifact Compression now has finite negative-case theorems for failed-probe/no-fallback use and missing metadata promotion plus a finite admission lifecycle route for preserved-artifact, manifest, use-envelope, access-pattern, admission-state, decoder-readiness, exact-replay, failed-probe, fallback-artifact, residual-metadata, utility-evidence, evidence-transition, and non-claim-boundary gaps; Circle Contracts now has finite negative-case theorems for missing receipt-boundary fields, promoted downstream claims without contract readiness, stale or unsupported consumer gates, and replay passing without replay artifacts; Search Substrates now has finite negative-case theorems for missing adoption fields, unproven qualified states, qualified states without passing evidence, unmeasured or blocked consumer-axis reliance, and incomplete canary evidence packets; Coil Attention Memory now has finite negative-case theorems for hidden aliasing, structure-only retrieval-quality promotion, recurrence admission without budget/exit/fallback records, and stale reads without residual escrow; Cyclic Mixers now has finite negative-case theorems for missing claim partitions, missing baselines or tradeoff metrics, residue/winding alias gaps, incomplete tradeoff packets, and hardware mismatches without refusal paths; Living Book now has finite negative-case theorems for missing drafting artifacts, unsynced structural updates, release readiness without validation/changelog/residual records, and derived artifacts without source/review/support-state boundaries; Project Theseus now has finite negative-case theorems for dashboard-only implementation claims, accepted promotions with missing or failing gates, incomplete imported bundles, replay-readiness gaps, and private-payload/support-overclaim publication boundaries; Readiness Gates now has a finite lifecycle-transition relation for candidate, shadow, canary, qualified, default-ready, quarantined, retired, and superseded records, plus finite negative cases for failed promoted gates, incomplete stronger transitions, quarantined route misuse, stale-gate reuse without rerun/residual records, default-readiness regression/authority gaps, ordinary-route quarantine misuse, supersession without a record, retirement without a receipt, and transition attempts from retired state; Proof Envelope now has finite negative-case theorems for missing module/build records, non-Lean proof laundering, support promotion without transition/adequacy/boundary records, and unresolved external-theorem references; Personal Compute Hives now has finite negative-case theorems for missing bound approval and missing federation-lease boundaries; Fast Generation now has deterministic baseline-accounting fixtures plus finite negative-case theorems for missing accepted-output/verifier-cost evidence, failed acceptance without fallback or residual handling, high-risk fast-mode review omissions, a finite admission-lifecycle route for mode, context, risk, quality, verifier, acceptance, baseline, output, cost, fallback, residual, override, budget, evidence-transition, and non-claim-boundary gaps, and a finite Project Theseus generation-mode import fixture bridge for the public no-promotion summary; Policy Optimization now has finite negative-case theorems for missing holdout/contamination checks, reward-proxy promotion without target evaluation, and authority-expanding updates without approval or rollback; and Resource Economics now has deterministic paired budget-accounting, budget-ledger, capacity-smoothing toy-trace coverage, a finite four-route costed selector bridge, a finite workflow-trace summary bridge, and finite negative cases for budget-gate deletion, insufficient-budget dispatch, missing simulation scope, and fidelity overclaim that remain too narrow for deployed scheduler, real load, serving, simulator-adequacy, transfer, or economic claims. No increment moves a chapter support state.
+
+The 2026-07-02 proof-depth increment adds finite intent-admission route coverage for hidden overrides, unresolved ambiguity, preservation gaps, authority gaps, re-contract triggers, and non-claim boundaries, plus finite replacement-lifecycle route coverage for identity mismatch, stale evidence, regression floors, canaries, monitor windows, rollback handles, irreversible-effect ownership, residual ownership, deprecation, retirement, and non-claim boundaries. These close the named finite-record proof-depth gaps for Human Intent and Capability Replacement, but they do not close deployed parser, authority-extraction, replacement-execution, monitor-window, regression-quality, or rollback-execution blockers.
 
 No Appendix C support state changes were made.

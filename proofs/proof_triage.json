@@ -184,11 +184,11 @@
       "tag": "lean:intent.resolution.route_envelope",
       "chapter_id": "human-intent-as-a-formal-input",
       "module": "AsiStackProofs.IntentContracts",
-      "formal_target": "A structured intent-resolution record routes missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps to rejection, clarification, or review before compilation.",
+      "formal_target": "Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.IntentContracts as a finite route function and derived route theorems for missing text, prohibited action, ambiguity, non-goal conflict, missing high-impact authority, and irreversible high-impact review cases."
+      "rationale": "Implemented in AsiStackProofs.IntentContracts as finite resolution and admission route functions with derived route theorems for missing text, prohibited action, ambiguity, non-goal conflict, missing high-impact authority, irreversible high-impact review, hidden override rejection, unresolved ambiguity, constraint-precedence and preservation gaps, missing stop conditions, missing or widened authority, downstream re-contract triggers, missing non-claim boundaries, and complete admission."
     },
     {
       "tag": "lean:alignment.constitution.operational_invariant",
@@ -344,11 +344,11 @@
       "tag": "lean:replacement.transaction.route_envelope",
       "chapter_id": "capability-replacement-and-rollback",
       "module": "AsiStackProofs.Replacement",
-      "formal_target": "A structured replacement-transaction review routes missing artifacts, authority expansion, evaluator capture, failed regression, missing rollback receipts, failed rollback dry runs, and monitor incidents away from default promotion.",
+      "formal_target": "Structured replacement transaction and lifecycle reviews route missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, irreversible-effect ownership gaps, residual-owner gaps, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.Replacement as a finite transaction-route function and derived route theorems for missing prior artifact, authority expansion without approval, evaluator capture, failed regression, missing rollback receipt, failed rollback dry run, monitor incident, and complete default-review cases."
+      "rationale": "Implemented in AsiStackProofs.Replacement as finite transaction and lifecycle route functions with derived route theorems for missing artifacts, identity mismatch, authority expansion without approval, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canary, missing monitor windows, monitor incident, missing rollback handles, missing rollback receipts, failed rollback dry run, unowned irreversible effects, missing residual owners, deprecation notice gaps, retirement receipt gaps, missing non-claim boundaries, and complete default-review cases."
     },
     {
       "tag": "lean:security.scif.operational_invariant",

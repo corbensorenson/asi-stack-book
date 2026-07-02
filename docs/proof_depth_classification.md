@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 147 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 786 |
+| Theorem declarations classified | 817 |
 | Direct/projection-style theorem declarations | 157 |
-| Derived/decomposed theorem declarations | 625 |
+| Derived/decomposed theorem declarations | 656 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -74,7 +74,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 4 | 34 | 7 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 3 | 22 | 2 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -89,7 +89,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 2 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 2 | 19 | 8 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 3 | 27 | 1 | 26 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 6 | 34 | 15 | 16 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 2 | 17 | 4 | 13 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -480,13 +480,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernanceRights.lean` | `support_change_without_evidence_transition_requests_governance_evidence` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `transition_removing_protected_right_is_rejected_or_invalid` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentContracts.lean` | `ambiguous_intent_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `authority_widening_requests_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `compiled_constraint_gap_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `compiled_intent_contract_preserves_declared_constraints_and_stop_conditions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/IntentContracts.lean` | `compiled_stop_condition_gap_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `complete_intent_admission_admits_contract` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `constraint_precedence_gap_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `contract_missing_required_authority_cannot_compile_to_executable_job` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/IntentContracts.lean` | `downstream_means_change_requires_recontract` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `downstream_stop_condition_change_requires_recontract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `high_impact_without_authority_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `intent_admission_hidden_override_rejects` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `intent_admission_missing_raw_intent_rejects` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `irreversible_high_impact_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `missing_authority_declaration_requests_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `missing_declared_constraints_requests_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `missing_intent_text_rejects_as_non_executable` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `missing_nonclaim_boundary_blocks_intent_admission` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `missing_stop_conditions_requests_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `non_goal_conflict_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `prohibited_action_rejects_as_non_executable` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentContracts.lean` | `unresolved_ambiguity_requests_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `authority_widening_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `compiled_execution_job_preserves_parent_contract_constraints` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `complete_dispatch_review_is_ready` | derived_or_decomposed | no | uses simp, unfold |
@@ -647,10 +661,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_with_missing_governance_gate_cannot_be_marked_valid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Replacement.lean` | `authority_expansion_without_approval_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `captured_evaluator_routes_replacement_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `complete_replacement_lifecycle_commits_default` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `complete_replacement_review_commits_default` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_regression_blocks_replacement_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_regression_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_rollback_dry_run_routes_to_canary_only` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_authority_widening_without_governance_requests_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_deprecation_without_notice_requires_notice` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_failed_canary_stays_canary_only` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_failed_regression_floor_quarantines_candidate` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_failed_rollback_dry_run_stays_canary_only` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_identity_mismatch_quarantines_candidate` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_missing_canary_scope_requires_precheck` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_missing_candidate_rejects_replacement` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_missing_monitor_window_requires_precheck` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_missing_nonclaim_boundary_blocks_promotion` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_missing_residual_owner_requires_owner` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_missing_rollback_handle_requires_precheck` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_monitor_incident_requires_rollback` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_retirement_without_receipt_requires_receipt` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_stale_evidence_requires_fresh_evidence` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `lifecycle_unowned_irreversible_effect_requires_residual_owner` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `missing_prior_artifact_rejects_replacement` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `missing_rollback_receipt_requires_precheck` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `monitor_incident_requires_rollback` | derived_or_decomposed | no | uses simp, unfold |

@@ -115,7 +115,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 786 theorem declarations, 157 direct/projection-style, 625 derived/decomposed, 4 unknown/mixed, and 102 safety-critical theorem declarations. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 817 theorem declarations, 157 direct/projection-style, 656 derived/decomposed, 4 unknown/mixed, and 102 safety-critical theorem declarations after the IntentContracts and Replacement lifecycle/admission proof pass. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and explicit Corben voice-pass slots. |
@@ -148,19 +148,21 @@ roadmap. The findings with teeth are:
   vague after an artifact closes a closure class. Future row edits must either
   name the closing artifact, name the remaining closure class, or record a
   dated blocker.
-- `python3 scripts/validate_proof_depth.py` now classifies 786 theorem
-  declarations, including 625 derived/decomposed declarations and 157 direct
+- `python3 scripts/validate_proof_depth.py` now classifies 817 theorem
+  declarations, including 656 derived/decomposed declarations and 157 direct
   or projection-style declarations. The counts are stronger than the older
   roadmap snapshot, but the direction remains the same: do not chase theorem
   count; chase executable-model bridges, transition properties, and negative
   cases that matter.
-- Two proof-coverage stragglers remain high-leverage because of their central
-  Part I roles: `AsiStackProofs.IntentContracts` for Human Intent and
-  `AsiStackProofs.Replacement` for Capability Replacement/Rollback. Both need
-  lifecycle/admission route depth with negative cases before they should be
-  treated as leveled with Runtime Adapters, SCF, Readiness Gates, Planning,
-  Context Transactions, Artifact Graphs, Procedural Memory, and Compact
-  Generative Systems.
+- The former Part I proof-coverage stragglers are no longer count/depth
+  stragglers at the finite-record level: `AsiStackProofs.IntentContracts`
+  now records 22 theorem declarations with expanded intent-admission route
+  coverage, and `AsiStackProofs.Replacement` now records 27 theorem
+  declarations with replacement-lifecycle route coverage. Their remaining
+  blockers are executable and behavioral: natural-language intent parsing,
+  authority-extraction quality, end-to-end stop-condition preservation,
+  deployed replacement execution, live monitor-window evidence, real regression
+  quality, and rollback execution.
 - Two external-grounding stragglers remain: `the-efficient-asi-hypothesis` and
   `intent-to-execution-contracts`. Both have some source-noted comparators, but
   the tracked chapter anchoring is still thin relative to their importance.
@@ -599,7 +601,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 786 theorem declarations, 625
+- The generated proof-depth report records 817 theorem declarations, 656
   derived/decomposed declarations, 4 unknown/mixed declarations, 102
   safety-critical declarations, and 10 remaining safety-critical
   direct/projection declarations.
@@ -621,7 +623,7 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 786 theorem declarations, 625
+- `docs/proof_depth_classification.md` records 817 theorem declarations, 656
   derived/decomposed theorem declarations, 157 direct/projection-style theorem
   declarations, and 4 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
@@ -872,15 +874,18 @@ Current proof status:
   Artifact Graphs while leaving deployed artifact graph service behavior, real
   replay, audit reconstruction, provenance completeness checking, and imported
   produced-artifact traces as blockers.
-- The next proof-coverage targets are no longer the already-leveled modules.
-  They are `AsiStackProofs.IntentContracts` and `AsiStackProofs.Replacement`.
-  Intent Contracts needs an intent-resolution lifecycle/admission route with
-  ambiguity, clarification, constraint precedence, stop-condition, authority,
-  hidden-override, and preservation negative cases. Replacement needs a
-  replacement-transaction lifecycle/admission route with canary, evidence
-  freshness, regression floor, authority non-widening, monitor window,
-  rollback handle, irreversible-effect ownership, quarantine, deprecation,
-  retirement, and non-claim boundaries.
+- The latest proof-coverage increment closed the named finite-record proof
+  gap for `AsiStackProofs.IntentContracts` and `AsiStackProofs.Replacement`.
+  Intent now has admission-route coverage for hidden overrides, unresolved
+  ambiguity, constraint precedence, stop conditions, authority ceilings,
+  preservation gaps, re-contract triggers, and non-claim boundaries.
+  Replacement now has lifecycle-route coverage for identity mismatch, stale
+  evidence, regression floors, canaries, monitor windows, rollback handles,
+  irreversible-effect ownership, residual ownership, deprecation, retirement,
+  and non-claim boundaries. Do not reopen these as theorem-count tasks unless
+  a reviewer finds a specific missing invariant; the next work is executable
+  parser/authority/re-contract tests and replacement trace/monitor/rollback
+  evidence.
 - The safety-critical modules have real derived/decomposed depth now, but many
   non-safety-critical chapters still have only traceability-style projection
   hooks.
@@ -1071,11 +1076,11 @@ Per-chapter burn-down:
 | `system-boundaries-and-authority` | Object-capability/confused-deputy lineage was not explicit enough despite strong authority proof coverage. | Added source-noted external grounding through Saltzer-Schroeder protection principles, Levy capability-system boundaries, and Hardy's confused-deputy problem; live and curated reader prose now connect caller ceilings, delegation chains, expiry, and effect receipts to that lineage, and the runtime-adapter permission harness now adds expected-invalid ambient-authority confused-deputy and revoked-receipt probes. Remaining work: run deployed/live adapter denial traces, revocation-propagation behavior, and tool-wrapper security checks before stronger claims. |
 | `failure-modes-of-ungoverned-intelligence` | Stack failure vocabulary is not mapped tightly enough to established AI-safety failure taxonomies. | Added source-noted external grounding through `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, and `ext_goodhart_variants_2018`; the chapter now maps named stack failure modes to accident-risk, goal-misgeneralization, learned-optimization, power-seeking, and Goodhart/proxy-failure families without promoting support state. Remaining work: implement executable detector, negative-control, and mitigation-boundary fixtures for these families before claiming detection or prevention. |
 | `evidence-states-and-claim-discipline` | The chapter undersells the novelty of support-state discipline. | Partially executed: live and curated reader prose now frame support-state discipline as the book's methodological claim-control contribution paired with Living Book Methodology, and the chapter/outline/source notes position it against source-noted model-card, datasheet, ML reproducibility-review, and proof-carrying-code comparators without support-state promotion. Remaining work: finish the planned claim-ledger completeness, evidence-bundle completeness, and changelog-consistency tests before stronger evidence claims. |
-| `human-intent-as-a-formal-input` | Foundational chapter still needs broader proof coverage and planned behavioral tests; `AsiStackProofs.IntentContracts` remains a proof-coverage straggler compared with other leveled Part I control primitives. | Added intent-origin preservation checks to the synthetic plan-execution contract harness, now 2 valid and 8 expected-invalid fixtures, including unresolved-ambiguity dispatch, unrejected-hidden-override, and authority-widening-from-intent probes. Remaining work: deepen `IntentContracts` with a lifecycle/admission route for ambiguity, clarification, constraint precedence, stop conditions, authority extraction, hidden override rejection, and preservation from intent to contract; implement natural-language ambiguity parsing, authority-extraction quality tests, end-to-end stop-condition preservation, deployed prompt-injection containment, and deepen source-noted links to instruction-following, preference elicitation, and RLHF-intent literature. |
+| `human-intent-as-a-formal-input` | Foundational chapter still needs planned behavioral tests and deeper external grounding; the prior `IntentContracts` proof-depth gap is closed at the finite-record level but not at deployed-intake level. | Partially executed: added intent-origin preservation checks to the synthetic plan-execution contract harness, now 2 valid and 8 expected-invalid fixtures, including unresolved-ambiguity dispatch, unrejected-hidden-override, and authority-widening-from-intent probes; added expanded `AsiStackProofs.IntentContracts` admission-route coverage for hidden override rejection, unresolved ambiguity, constraint-precedence and preservation gaps, missing stop conditions, missing or widened authority, downstream re-contract triggers, missing non-claim boundaries, and complete admission. Remaining work: implement natural-language ambiguity parsing, authority-extraction quality tests, end-to-end runtime stop-condition preservation, deployed prompt-injection containment, and deepen source-noted links to instruction-following, preference elicitation, and RLHF-intent literature before stronger evidence claims. |
 | `constitutional-alignment-substrate` | Source lineage can read metaphysical if not labeled tightly. | Audit live and reader prose for unlabeled metaphysics; keep speculative source lineage marked as author-intent context; add machine-ethics/value-alignment anchoring only from source notes; preserve corrigibility and agency-rights proof boundaries without implying value correctness. |
 | `moral-uncertainty-and-value-conflict` | Value conflict needs more explicit connection to moral uncertainty, social choice, and rights-as-interface examples. | Add a worked fork/exit/audit example and deepen source-noted moral-uncertainty, social-choice, preference-aggregation, and mechanism-design positioning; keep the example scoped as interface behavior, not proof that conflicts are solved. |
 | `stable-capability-fields` | Central primitive had narrower lifecycle proof coverage than its importance warrants. | Partially executed: added a finite SCF lifecycle state-machine proof lane for shadow/canary/qualified/default/deprecated/retired plus quarantine, including field-identity preservation, qualification evidence, regression-floor, authority-ceiling, rollback-readiness, deprecation-notice, and retirement-receipt negative cases. Remaining work: executable lifecycle fixtures, deployed route validation, evaluator-integrity measurement, real regression preservation, terminal-state governance, lifecycle enforcement, and rollback execution. |
-| `capability-replacement-and-rollback` | Deployment/MLOps prior art was lightly anchored despite strong canary/rollback prose; `AsiStackProofs.Replacement` remains a proof-coverage straggler for a transaction primitive at the heart of governed self-improvement. | Partially executed: added source-noted external grounding through Argo Rollouts progressive delivery, Fowler/Hodgson feature toggles, Google Cloud MLOps continuous delivery, and Kubernetes Deployments rollout history/rollback; added synthetic capability-replacement fixtures for model-rollout data/schema/model/serving/monitor gates, baseline regression floors, monitor-trigger rollback conditions, and irreversible-effect ownership; chapter and outline now name canary, blue-green, feature-flag, model-delivery, monitoring, regression-gating, revision-history, and rollback-trigger comparators while preserving `argument` support and no-live-deployment/model-rollout non-claims. Remaining work: deepen `Replacement` with a lifecycle/admission route for canary, evidence freshness, regression floors, authority non-widening, monitor windows, rollback handles, irreversible-effect ownership, quarantine, deprecation, retirement, and non-claim boundaries; build any future deployed Argo/Kubernetes/ML pipeline prototype, live model-monitor trace, real regression suite, production rollback dry run, and externally reviewable replacement trace before claiming implementation. |
+| `capability-replacement-and-rollback` | Deployment/MLOps prior art was lightly anchored and runtime replacement evidence remains missing; the prior `Replacement` proof-depth gap is closed at the finite-record level but not at deployed replacement level. | Partially executed: added source-noted external grounding through Argo Rollouts progressive delivery, Fowler/Hodgson feature toggles, Google Cloud MLOps continuous delivery, and Kubernetes Deployments rollout history/rollback; added synthetic capability-replacement fixtures for model-rollout data/schema/model/serving/monitor gates, baseline regression floors, monitor-trigger rollback conditions, and irreversible-effect ownership; added expanded `AsiStackProofs.Replacement` lifecycle-route coverage for identity mismatch, stale evidence, regression-floor failure, canary scope, failed canary, missing monitor window, monitor incident, rollback handle, rollback dry run, irreversible-effect ownership, residual owner, deprecation, retirement, non-claim boundaries, and complete default commit. Remaining work: build any future deployed Argo/Kubernetes/ML pipeline prototype, live model-monitor trace, real regression suite, production rollback dry run, and externally reviewable replacement trace before claiming implementation. |
 | `security-kernel-and-digital-scifs` | Planned prompt-injection containment and least-privilege tests remain high-value blockers. | Partially executed: expanded the synthetic security-kernel harness to 3 valid and 8 expected-invalid fixtures, adding expired-approval refusal and overbroad-SCIF-context rejection on top of existing prompt-injection, secret-visible-output, ambient-authority, missing-approval, missing-residual, and missing-zeroize negatives; added a Resource Budget Ledger expected-invalid fixture that rejects a critical dispatch whose apparent savings come from dropping SCIF isolation, approval, audit logging, and sanitization. Remaining work: add deployed/live kernel, sandbox, side-channel, approval-service, least-privilege context, real secret-handle, runtime prompt-injection containment, and runtime budget-enforcement evidence before stronger claims; keep SCIF wording grounded as compartment discipline rather than a deployed isolation guarantee. |
 | `recursive-self-improvement-boundaries` | Some behavioral tests remain planned and external RSI/evaluator-capture anchoring can deepen. | Implement planned boundary tests; source-note RSI, self-improvement, mesa-optimization, evaluator-capture, and STOP-adjacent literature; keep Theseus self-sourcing bounded and pair every Theseus-derived example with an explicit no-deployed-RSI non-claim. |
 | `intent-to-execution-contracts` | Typed-workflow/API-contract anchoring is light and the "three lanes" merge scaffold is visible; it remains one of the two external-grounding stragglers relative to chapter importance. | Partially executed: live mechanism prose and curated reader opening now describe one continuous command-contract flow from accepted intent receipt through field provenance, authority, handoff, dispatch, jobs, artifacts, verification, feedback, residuals, and non-claims; `docs/curated_reader_intent_execution_prose_pass.md` records the meaning-preservation boundary. Remaining work: add source-noted structured-command, API-contract, DSL, typed-workflow, schema-driven tool-call, and structured-output comparators before claiming the external-grounding part closed; keep the prose as one command-contract flow rather than reintroducing lane scaffolding. |

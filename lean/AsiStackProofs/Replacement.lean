@@ -228,4 +228,481 @@ theorem complete_replacement_review_commits_default
     qualified, evaluatorIndependent, regressionPassed, rollbackReceipt, dryRun,
     residualEscrow, noIncident, defaultRequested]
 
+inductive ReplacementLifecycleRoute where
+  | rejectProposal
+  | requirePrecheck
+  | requireFreshEvidence
+  | requestGovernanceReview
+  | quarantineCandidate
+  | canaryOnly
+  | rollbackRequired
+  | requireResidualOwner
+  | requireDeprecationNotice
+  | requireRetirementReceipt
+  | blockForNonClaimBoundary
+  | commitDefault
+deriving DecidableEq, Repr
+
+structure ReplacementLifecycleReview where
+  priorArtifactPresent : Bool
+  candidateArtifactPresent : Bool
+  fieldIdentityPreserved : Bool
+  authorityNonWidening : Bool
+  governanceApproval : Bool
+  qualificationEvidence : Bool
+  evidenceFresh : Bool
+  regressionFloorPreserved : Bool
+  canaryScopeDeclared : Bool
+  canaryPassed : Bool
+  monitorWindowDeclared : Bool
+  monitorWindowClean : Bool
+  rollbackHandlePresent : Bool
+  rollbackDryRunPassed : Bool
+  irreversibleEffectsPresent : Bool
+  irreversibleEffectsOwned : Bool
+  residualOwnerPresent : Bool
+  deprecationRequested : Bool
+  deprecationNoticePresent : Bool
+  retirementRequested : Bool
+  retirementReceiptPresent : Bool
+  nonClaimBoundaryPresent : Bool
+  defaultPromotionRequested : Bool
+deriving DecidableEq, Repr
+
+def ReplacementLifecycleRouteFor
+    (review : ReplacementLifecycleReview) : ReplacementLifecycleRoute :=
+  if review.priorArtifactPresent = false then
+    ReplacementLifecycleRoute.rejectProposal
+  else if review.candidateArtifactPresent = false then
+    ReplacementLifecycleRoute.rejectProposal
+  else if review.fieldIdentityPreserved = false then
+    ReplacementLifecycleRoute.quarantineCandidate
+  else if review.authorityNonWidening = false ∧
+      review.governanceApproval = false then
+    ReplacementLifecycleRoute.requestGovernanceReview
+  else if review.qualificationEvidence = false then
+    ReplacementLifecycleRoute.requirePrecheck
+  else if review.evidenceFresh = false then
+    ReplacementLifecycleRoute.requireFreshEvidence
+  else if review.regressionFloorPreserved = false then
+    ReplacementLifecycleRoute.quarantineCandidate
+  else if review.canaryScopeDeclared = false then
+    ReplacementLifecycleRoute.requirePrecheck
+  else if review.canaryPassed = false then
+    ReplacementLifecycleRoute.canaryOnly
+  else if review.monitorWindowDeclared = false then
+    ReplacementLifecycleRoute.requirePrecheck
+  else if review.monitorWindowClean = false then
+    ReplacementLifecycleRoute.rollbackRequired
+  else if review.rollbackHandlePresent = false then
+    ReplacementLifecycleRoute.requirePrecheck
+  else if review.rollbackDryRunPassed = false then
+    ReplacementLifecycleRoute.canaryOnly
+  else if review.irreversibleEffectsPresent = true ∧
+      review.irreversibleEffectsOwned = false then
+    ReplacementLifecycleRoute.requireResidualOwner
+  else if review.residualOwnerPresent = false then
+    ReplacementLifecycleRoute.requireResidualOwner
+  else if review.deprecationRequested = true ∧
+      review.deprecationNoticePresent = false then
+    ReplacementLifecycleRoute.requireDeprecationNotice
+  else if review.retirementRequested = true ∧
+      review.retirementReceiptPresent = false then
+    ReplacementLifecycleRoute.requireRetirementReceipt
+  else if review.nonClaimBoundaryPresent = false then
+    ReplacementLifecycleRoute.blockForNonClaimBoundary
+  else if review.defaultPromotionRequested = true then
+    ReplacementLifecycleRoute.commitDefault
+  else
+    ReplacementLifecycleRoute.canaryOnly
+
+theorem lifecycle_missing_candidate_rejects_replacement
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.rejectProposal := by
+  intro priorPresent missingCandidate
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, missingCandidate]
+
+theorem lifecycle_identity_mismatch_quarantines_candidate
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.quarantineCandidate := by
+  intro priorPresent candidatePresent identityMismatch
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityMismatch]
+
+theorem lifecycle_authority_widening_without_governance_requests_review
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = false ->
+    review.governanceApproval = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requestGovernanceReview := by
+  intro priorPresent candidatePresent identityPreserved authorityWidening
+    noApproval
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWidening,
+    noApproval]
+
+theorem lifecycle_stale_evidence_requires_fresh_evidence
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requireFreshEvidence := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified staleEvidence
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, staleEvidence]
+
+theorem lifecycle_failed_regression_floor_quarantines_candidate
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.quarantineCandidate := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorFailed
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorFailed]
+
+theorem lifecycle_missing_canary_scope_requires_precheck
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requirePrecheck := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved missingCanaryScope
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, missingCanaryScope]
+
+theorem lifecycle_failed_canary_stays_canary_only
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.canaryOnly := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared failedCanary
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, failedCanary]
+
+theorem lifecycle_missing_monitor_window_requires_precheck
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requirePrecheck := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    missingMonitor
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    missingMonitor]
+
+theorem lifecycle_monitor_incident_requires_rollback
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.rollbackRequired := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorIncident
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorIncident]
+
+theorem lifecycle_missing_rollback_handle_requires_precheck
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = true ->
+    review.rollbackHandlePresent = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requirePrecheck := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorClean missingRollback
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorClean, missingRollback]
+
+theorem lifecycle_failed_rollback_dry_run_stays_canary_only
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = true ->
+    review.rollbackHandlePresent = true ->
+    review.rollbackDryRunPassed = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.canaryOnly := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorClean rollbackHandle rollbackDryRunFailed
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorClean, rollbackHandle, rollbackDryRunFailed]
+
+theorem lifecycle_unowned_irreversible_effect_requires_residual_owner
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = true ->
+    review.rollbackHandlePresent = true ->
+    review.rollbackDryRunPassed = true ->
+    review.irreversibleEffectsPresent = true ->
+    review.irreversibleEffectsOwned = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requireResidualOwner := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorClean rollbackHandle rollbackDryRun irreversible
+    unowned
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorClean, rollbackHandle, rollbackDryRun, irreversible,
+    unowned]
+
+theorem lifecycle_missing_residual_owner_requires_owner
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = true ->
+    review.rollbackHandlePresent = true ->
+    review.rollbackDryRunPassed = true ->
+    review.irreversibleEffectsPresent = false ->
+    review.residualOwnerPresent = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requireResidualOwner := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorClean rollbackHandle rollbackDryRun noIrreversible
+    missingOwner
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorClean, rollbackHandle, rollbackDryRun,
+    noIrreversible, missingOwner]
+
+theorem lifecycle_deprecation_without_notice_requires_notice
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = true ->
+    review.rollbackHandlePresent = true ->
+    review.rollbackDryRunPassed = true ->
+    review.irreversibleEffectsPresent = false ->
+    review.residualOwnerPresent = true ->
+    review.deprecationRequested = true ->
+    review.deprecationNoticePresent = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requireDeprecationNotice := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorClean rollbackHandle rollbackDryRun noIrreversible
+    ownerPresent deprecationRequested noNotice
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorClean, rollbackHandle, rollbackDryRun,
+    noIrreversible, ownerPresent, deprecationRequested, noNotice]
+
+theorem lifecycle_retirement_without_receipt_requires_receipt
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = true ->
+    review.rollbackHandlePresent = true ->
+    review.rollbackDryRunPassed = true ->
+    review.irreversibleEffectsPresent = false ->
+    review.residualOwnerPresent = true ->
+    review.deprecationRequested = false ->
+    review.retirementRequested = true ->
+    review.retirementReceiptPresent = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.requireRetirementReceipt := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorClean rollbackHandle rollbackDryRun noIrreversible
+    ownerPresent noDeprecation retirementRequested missingReceipt
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorClean, rollbackHandle, rollbackDryRun,
+    noIrreversible, ownerPresent, noDeprecation, retirementRequested,
+    missingReceipt]
+
+theorem lifecycle_missing_nonclaim_boundary_blocks_promotion
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = true ->
+    review.rollbackHandlePresent = true ->
+    review.rollbackDryRunPassed = true ->
+    review.irreversibleEffectsPresent = false ->
+    review.residualOwnerPresent = true ->
+    review.deprecationRequested = false ->
+    review.retirementRequested = false ->
+    review.nonClaimBoundaryPresent = false ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.blockForNonClaimBoundary := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorClean rollbackHandle rollbackDryRun noIrreversible
+    ownerPresent noDeprecation noRetirement missingBoundary
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorClean, rollbackHandle, rollbackDryRun,
+    noIrreversible, ownerPresent, noDeprecation, noRetirement,
+    missingBoundary]
+
+theorem complete_replacement_lifecycle_commits_default
+    {review : ReplacementLifecycleReview} :
+    review.priorArtifactPresent = true ->
+    review.candidateArtifactPresent = true ->
+    review.fieldIdentityPreserved = true ->
+    review.authorityNonWidening = true ->
+    review.qualificationEvidence = true ->
+    review.evidenceFresh = true ->
+    review.regressionFloorPreserved = true ->
+    review.canaryScopeDeclared = true ->
+    review.canaryPassed = true ->
+    review.monitorWindowDeclared = true ->
+    review.monitorWindowClean = true ->
+    review.rollbackHandlePresent = true ->
+    review.rollbackDryRunPassed = true ->
+    review.irreversibleEffectsPresent = false ->
+    review.residualOwnerPresent = true ->
+    review.deprecationRequested = false ->
+    review.retirementRequested = false ->
+    review.nonClaimBoundaryPresent = true ->
+    review.defaultPromotionRequested = true ->
+    ReplacementLifecycleRouteFor review =
+      ReplacementLifecycleRoute.commitDefault := by
+  intro priorPresent candidatePresent identityPreserved authorityWithin
+    qualified freshEvidence floorPreserved canaryDeclared canaryPassed
+    monitorDeclared monitorClean rollbackHandle rollbackDryRun noIrreversible
+    ownerPresent noDeprecation noRetirement boundaryPresent defaultRequested
+  unfold ReplacementLifecycleRouteFor
+  simp [priorPresent, candidatePresent, identityPreserved, authorityWithin,
+    qualified, freshEvidence, floorPreserved, canaryDeclared, canaryPassed,
+    monitorDeclared, monitorClean, rollbackHandle, rollbackDryRun,
+    noIrreversible, ownerPresent, noDeprecation, noRetirement, boundaryPresent,
+    defaultRequested]
+
 end AsiStackProofs.Replacement

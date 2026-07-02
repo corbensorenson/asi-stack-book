@@ -490,7 +490,7 @@ Draft deliverables:
 - Planned Codex test: Stop-condition preservation test.
 - Planned Codex test: Re-contract trigger test.
 - Planned Codex test: Bounded-default audit.
-- Implemented proof-backed check: finite intent-resolution route proof for missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps; this is structured-record coverage only, not natural-language parsing or deployed intake behavior.
+- Implemented proof-backed check: finite intent-resolution and intent-admission route proof for missing text, prohibited actions, hidden overrides, unresolved ambiguity, conflicts, constraint-precedence and preservation gaps, stop-condition gaps, missing or widened authority, downstream re-contract triggers, high-impact authority gaps, irreversible high-impact review, and missing non-claim boundaries; this is structured-record coverage only, not natural-language parsing or deployed intake behavior.
 
 Lean proof targets:
 
@@ -498,7 +498,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentContracts` | A compiled intent contract preserves declared constraints and stop conditions. | implemented |
 | `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentContracts` | A contract missing required authority cannot compile to an executable job. | implemented |
-| `lean:intent.resolution.route_envelope` | `AsiStackProofs.IntentContracts` | A structured intent-resolution record routes missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps to rejection, clarification, or review before compilation. | implemented |
+| `lean:intent.resolution.route_envelope` | `AsiStackProofs.IntentContracts` | Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission. | implemented |
 
 ### Constitutional Alignment: Agency, Dignity, and Corrigibility
 
@@ -738,7 +738,7 @@ Draft deliverables:
 - Implemented Codex test: Capability replacement harness, via `python3 scripts/validate_capability_replacement.py`, validates 5 valid and 9 expected-invalid synthetic replacement-transaction fixtures for field identity, qualification evidence, regression results, authority non-widening, evaluator separation, residual escrow, rollback receipts, approvals, monitor state, promotion blockers, model-rollout data/schema/model/serving/monitor gates, baseline regression floors, monitor-trigger rollback conditions, irreversible-effect ownership, and non-claim boundaries; production model rollout, model-monitor behavior, real regression-suite coverage, and deployed rollback remain unrun.
 - Implemented Codex test: Regression preservation test, via `python3 scripts/validate_readiness_residual_gates.py` over failed-regression and missing-regression promotion blockers; real regression-suite coverage remains unrun.
 - Implemented Codex test: Rollback execution dry run, via `python3 scripts/validate_readiness_residual_gates.py` over canary/default rollback dry-run requirements; production rollback execution remains unrun.
-- Implemented proof-backed check: finite replacement transaction route proof for missing artifacts, authority expansion, evaluator capture, failed regression, missing rollback receipts, failed rollback dry runs, and monitor incidents; this is structured-record coverage only, not deployed replacement execution.
+- Implemented proof-backed check: finite replacement transaction and lifecycle route proof for missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, unowned irreversible effects, missing residual owners, deprecation/retirement gaps, and missing non-claim boundaries; this is structured-record coverage only, not deployed replacement execution.
 
 Lean proof targets:
 
@@ -746,7 +746,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:replacement.transaction.operational_invariant` | `AsiStackProofs.Replacement` | A replacement commit requires qualification evidence and rollback metadata. | implemented |
 | `lean:replacement.transaction.failure_blocks_promotion` | `AsiStackProofs.Replacement` | A failed regression blocks promotion of the replacement. | implemented |
-| `lean:replacement.transaction.route_envelope` | `AsiStackProofs.Replacement` | A structured replacement-transaction review routes missing artifacts, authority expansion, evaluator capture, failed regression, missing rollback receipts, failed rollback dry runs, and monitor incidents away from default promotion. | implemented |
+| `lean:replacement.transaction.route_envelope` | `AsiStackProofs.Replacement` | Structured replacement transaction and lifecycle reviews route missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, irreversible-effect ownership gaps, residual-owner gaps, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion. | implemented |
 
 ### Security Kernel and Digital SCIFs
 

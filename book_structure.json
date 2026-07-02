@@ -1385,7 +1385,7 @@
             {
               "tag": "lean:intent.resolution.route_envelope",
               "module": "AsiStackProofs.IntentContracts",
-              "target": "A structured intent-resolution record routes missing text, prohibited actions, ambiguity, conflicts, and high-impact authority gaps to rejection, clarification, or review before compilation.",
+              "target": "Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission.",
               "status": "implemented"
             }
           ]
@@ -2275,7 +2275,7 @@
             {
               "tag": "lean:replacement.transaction.route_envelope",
               "module": "AsiStackProofs.Replacement",
-              "target": "A structured replacement-transaction review routes missing artifacts, authority expansion, evaluator capture, failed regression, missing rollback receipts, failed rollback dry runs, and monitor incidents away from default promotion.",
+              "target": "Structured replacement transaction and lifecycle reviews route missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, irreversible-effect ownership gaps, residual-owner gaps, deprecation/retirement gaps, and missing non-claim boundaries away from default promotion.",
               "status": "implemented"
             }
           ],
