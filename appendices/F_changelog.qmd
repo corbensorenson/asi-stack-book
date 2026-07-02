@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-02 - Add Accepted live transition review audit
+
+- Added `python3 scripts/validate_accepted_transition_review_audit.py`,
+  `docs/accepted_transition_review_audit.md`, and
+  `experiments/accepted_transition_review/results/2026-07-02-local.json` for a
+  real accepted-transition review audit covering 35 accepted transition
+  records, four bounded non-core upward transitions, no accepted upward
+  chapter-core transition, the accepted no-promotion ledger, review status,
+  changelog refs, evidence packet refs, verification commands, limitations,
+  reviewer-independence disclosures, support-state effect boundaries,
+  non-claims, and seven expected-invalid mutation controls for core upward
+  promotion, missing changelog, missing non-claims, missing evidence packets,
+  unresolved acceptance blockers, no-change support movement, and
+  no-promotion support-effect drift.
+- Added `lean:evidence.accepted_transition.review_audit_bridge` in
+  `AsiStackProofs.EvidenceStates`, with a finite Lean summary bridge for
+  accepted transition presence, bounded non-core upward transitions, no
+  chapter-core promotion, no-promotion decisions, changelog refs, rejected
+  mutation controls, bounded support-state effects, and non-claim boundaries.
+- Updated the Evidence States live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does not
+  prove evidence truth, prove reviewer independence, prove source
+  interpretation, promote chapter core claims, approve new support-state
+  transitions, or prove external review quality.
+- Current proof-depth snapshot: 165 proof targets, 54 Lean modules, 857 theorem declarations, 682 derived/decomposed, 171 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add Claim ledger completeness audit
 
 - Added `python3 scripts/validate_claim_ledger_completeness_audit.py`,

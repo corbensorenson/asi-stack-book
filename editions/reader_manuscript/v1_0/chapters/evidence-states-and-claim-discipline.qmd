@@ -318,6 +318,14 @@ open-gap-missing, and promotion-path-missing rows are rejected. That is not a
 truth audit. It says the ledger is complete enough to hold the argument
 honestly; it does not say the argument has been proven.
 
+The accepted live transition review audit checks 35 accepted transition
+records, including four bounded non-core upward transitions and no accepted
+upward transition for a chapter core claim. It checks changelog references,
+evidence packets, verification commands, limitations, reviewer-independence
+disclosure, non-claims, and the accepted no-promotion ledger. That is not an
+external review. It is a local record audit that keeps the book from quietly
+treating review paperwork as stronger evidence than it is.
+
 That is useful. It is also limited. The schemas and Lean hooks do not promote
 this chapter's core claim without claim-specific evidence and accepted review.
 They prove that the book has a record shape and a small transition discipline,

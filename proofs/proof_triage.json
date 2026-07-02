@@ -201,6 +201,16 @@
       "rationale": "Implemented in AsiStackProofs.EvidenceStates as a finite fixture summary bridge for manifest core-claim coverage, unique Appendix C rows, label/support matching, open gaps, promotion paths, rejected missing/duplicate/unknown/mislabeled/support-mismatched/open-gap-missing/promotion-path-missing controls, no support-state effect, and non-claim boundaries."
     },
     {
+      "tag": "lean:evidence.accepted_transition.review_audit_bridge",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "module": "AsiStackProofs.EvidenceStates",
+      "formal_target": "An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.EvidenceStates as a finite fixture summary bridge for accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected core-promotion/missing-changelog/missing-nonclaims/missing-evidence/unresolved-blocker/no-change-movement/no-promotion-drift controls, bounded support-state effects, and non-claim boundaries."
+    },
+    {
       "tag": "lean:intent.contract.operational_invariant",
       "chapter_id": "human-intent-as-a-formal-input",
       "module": "AsiStackProofs.IntentContracts",

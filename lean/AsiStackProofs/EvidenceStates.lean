@@ -456,4 +456,40 @@ theorem claim_ledger_completeness_audit_bridge
   intro valid
   exact valid
 
+structure AcceptedTransitionReviewAuditSummary where
+  acceptedRecordsPresent : Bool
+  boundedUpwardNonCoreOnly : Bool
+  coreClaimsNotPromoted : Bool
+  noPromotionDecisionsPresent : Bool
+  changelogRefsPresent : Bool
+  negativeControlsRejected : Bool
+  supportStateEffectBounded : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def AcceptedTransitionReviewAuditSummaryValid
+    (summary : AcceptedTransitionReviewAuditSummary) : Prop :=
+  summary.acceptedRecordsPresent = true ∧
+    summary.boundedUpwardNonCoreOnly = true ∧
+    summary.coreClaimsNotPromoted = true ∧
+    summary.noPromotionDecisionsPresent = true ∧
+    summary.changelogRefsPresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.supportStateEffectBounded = true ∧
+    summary.nonClaimBoundary = true
+
+theorem accepted_transition_review_audit_bridge
+    {summary : AcceptedTransitionReviewAuditSummary} :
+    AcceptedTransitionReviewAuditSummaryValid summary ->
+      summary.acceptedRecordsPresent = true ∧
+        summary.boundedUpwardNonCoreOnly = true ∧
+        summary.coreClaimsNotPromoted = true ∧
+        summary.noPromotionDecisionsPresent = true ∧
+        summary.changelogRefsPresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.supportStateEffectBounded = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs

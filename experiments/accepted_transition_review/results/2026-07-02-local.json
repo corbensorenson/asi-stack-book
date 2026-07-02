@@ -1,0 +1,65 @@
+{
+  "accepted_bounded_upward_non_core_transition_count": 4,
+  "accepted_core_upward_transition_count": 0,
+  "accepted_no_change_record_count": 31,
+  "accepted_no_promotion_decision_count": 22,
+  "accepted_transition_record_count": 35,
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_accepted_transition_review_audit.py",
+  "coverage": {
+    "accepted_records_present": true,
+    "bounded_upward_transitions_are_non_core": true,
+    "changelog_refs_present": true,
+    "manifest_core_claims_not_promoted": true,
+    "no_promotion_decisions_present": true,
+    "non_claim_boundaries_present": true,
+    "support_state_effect_bounded": true
+  },
+  "evidence_transition_created": false,
+  "expected_invalid_mutation_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "accepted_records_present": true,
+      "bounded_upward_non_core_only": true,
+      "changelog_refs_present": true,
+      "core_claims_not_promoted": true,
+      "negative_controls_rejected": true,
+      "no_promotion_decisions_present": true,
+      "non_claim_boundary": true,
+      "support_state_effect_bounded": true
+    },
+    "module": "AsiStackProofs.EvidenceStates",
+    "proof_tag": "lean:evidence.accepted_transition.review_audit_bridge",
+    "theorem_refs": [
+      "accepted_transition_review_audit_bridge"
+    ]
+  },
+  "manifest_core_claim_count": 44,
+  "negative_controls": {
+    "core_upward_transition_rejected": true,
+    "missing_changelog_rejected": true,
+    "missing_nonclaims_rejected": true,
+    "no_change_support_movement_rejected": true,
+    "no_promotion_support_effect_rejected": true,
+    "upward_missing_evidence_packet_rejected": true,
+    "upward_with_acceptance_blocker_rejected": true
+  },
+  "non_claims": [
+    "does not prove evidence truth",
+    "does not prove reviewer independence",
+    "does not prove source interpretation",
+    "does not promote chapter core claims",
+    "does not approve new support-state transitions",
+    "does not prove external review quality"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Audit of already accepted transition/no-promotion records only; no new transition is approved.",
+    "Reviewer independence remains local maintainer-agent review unless a separate external review record is added."
+  ],
+  "result_id": "2026-07-02-accepted-transition-review-audit",
+  "result_kind": "real_accepted_transition_and_no_promotion_review_audit",
+  "schema_version": "asi_stack.accepted_transition_review_audit.v0",
+  "support_state_effect": "none",
+  "verification_result": "pass"
+}

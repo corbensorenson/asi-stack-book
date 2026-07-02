@@ -32,7 +32,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence transition lifecycle route | implemented | passes via Lean route theorems; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, runtime-behavior, or support-state-promotion claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness and changelog-consistency probe | implemented | validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; synthetic-record and finite-Lean bridge only; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness audit | implemented | validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; Appendix C completeness only; no claim-truth, source-interpretation, promotion-readiness, external-review-quality, or support-state-promotion claim |
-| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Accepted live transition review | planned | not run |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Accepted live transition review audit | implemented | validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; audit of existing records only; no evidence-truth, reviewer-independence, source-interpretation, external-review-quality, new-transition-approval, or chapter-core-promotion claim |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent resolution route proof | implemented | passes via Lean build; finite structured-record route only |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent-origin preservation fixture | implemented | passes via synthetic plan-execution contract harness; no natural-language parser or authority-extraction claim |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Ambiguity dispatch block fixture | implemented | passes via synthetic plan-execution contract harness; no parser-quality claim |
@@ -444,16 +444,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 164 |
+| Proof targets covered by triage | 165 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 164 |
+| implemented | 165 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 164 |
+| implemented | formal-invariant | lean-candidate | 165 |
