@@ -3167,6 +3167,7 @@ Source loading queue:
 | Primary | `benchmaxxing`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `bugbrain`, `cognitive_loop_closure` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Connector or recovery required | `moecot`, `moecot_md`, `road_to_agi` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+| External comparators | `ext_literate_programming_1984`, `ext_jupyter_book_docs`, `ext_quarto_books_docs`, `ext_nist_ai_rmf_1_0_2023`, `ext_frontier_ai_regulation_2023`, `ext_helm_2022`, `ext_livebench_2024`, `ext_benchmark_contamination_2023` | Use source-noted records to position living-book methodology against literate programming, executable/computational books, Quarto book publishing, governance lifecycle reporting, transparent evaluation reporting, and living benchmark practice; do not treat them as external review, manuscript-quality evidence, or support-state promotion. |
 
 Draft arc:
 
@@ -3179,6 +3180,7 @@ Draft arc:
 - Mechanism: Require meaningful structural, evidence, proof, schema, source, or publication changes to sync scaffold, sync proof manifest, validate, render, update changelog, commit, push, and verify the public site.
 - Mechanism: emit living-book change packets with affected chapters, sources, claims, proof tags, schema/fixture paths, validation commands, render result, release target, audience profile, derived-artifact boundary, support-state effect, public URL if published, and explicit non-claims.
 - Mechanism: preserve three-audience derivation discipline: AI/research scaffold, human-research live site, and stripped reader/audio editions all derive from one governed source state.
+- Mechanism: pair with Evidence States as the book's methodological contribution: manifest-driven source of truth, source queues, claim ledger, proof manifest, evidence transitions, no-axiom discipline, release records, and reader-edition derivation.
 - Interface: Source ingestion feeds source notes.
 - Interface: Drafting feeds claim matrices.
 - Interface: Tests feed support states.
@@ -3206,6 +3208,7 @@ Draft deliverables:
 - A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
 - Implemented repository-level validation: `living_book_release_record.valid.json` and tracked records in `release_records/` validate release-record shape, release state, audience scope, canonical scope, derived-artifact boundaries, support-state effect, and non-claims only; render and validation checks prove publication hygiene, not manuscript quality, claim truth, reader artifact production, or audio artifact production.
 - A three-audience edition profile with live, research, reader, and audio paths; a reader-edition source generator; an audio-script generator; and an edition-release record schema for future EPUB, PDF, DOCX, MP3, M4B, and audio-embedded EPUB accountability.
+- Source-noted external comparator rows now position the method against literate programming, executable/computational books, Quarto book publishing, AI risk-management reporting, transparent evaluation, living benchmarks, and contamination warnings without claiming external review or artifact approval.
 - Planned Codex test: Quarto render check.
 - Planned Codex test: Manifest/outline consistency check.
 - Planned Codex test: Changelog update check.

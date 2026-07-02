@@ -18,6 +18,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all seven assigned sources, including source-note-only MoECOT/Road To AGI context; support remains argument because release checks prove repository hygiene, not manuscript quality or the truth of chapter claims."
   - "The living_book_release_record fixture and AsiStackProofs.LivingBook finite-record predicates validate release-record shape, audience scope, derived-artifact boundaries, support-state effect, manifest linkage, structural-update sync predicates, and bounded negative cases for missing drafting artifacts, unsynced structural updates, release readiness without validation/changelog/residuals, and derived artifacts missing source/review/support-state boundaries only; they do not prove manuscript quality, source interpretation quality, editorial completeness, reader artifact production, audio artifact production, or GitHub Pages availability."
+  - "Source-noted external comparators now position the method against literate programming, Jupyter Book-style executable books, Quarto book publishing, AI risk-management reporting, transparent evaluation, living benchmarks, and benchmark-contamination warnings; this is lineage and positioning only, not external review, manuscript-quality evidence, or artifact approval."
   - "BugBrain is used only as cautionary implementation-lineage context; no build, emulation, flash, bridge, hardware, AGI, or consciousness claim is promoted."
   - "No support-state promotion, manuscript-quality result, rendered-site quality result, reader/audio artifact, MoECOT runtime artifact, benchmark result, autonomous loop-closure implementation, or raw source publication is implied by this drafting pass."
 ---
@@ -34,8 +35,8 @@ open_evidence_gaps:
 | Primary source records | `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `benchmaxxing`, `viea`; supporting: `bugbrain`, `cognitive_loop_closure`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
-| Source loading state | source notes: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`; raw cache: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`; source-note-only or connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
+| Source queue | primary: `benchmaxxing`, `viea`; supporting: `bugbrain`, `cognitive_loop_closure`; connector/recovery: `moecot`, `moecot_md`, `road_to_agi`; external comparators: `ext_literate_programming_1984`, `ext_jupyter_book_docs`, `ext_quarto_books_docs`, `ext_nist_ai_rmf_1_0_2023`, `ext_frontier_ai_regulation_2023`, `ext_helm_2022`, `ext_livebench_2024`, `ext_benchmark_contamination_2023` |
+| Source loading state | source notes: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`, `ext_literate_programming_1984`, `ext_jupyter_book_docs`, `ext_quarto_books_docs`, `ext_nist_ai_rmf_1_0_2023`, `ext_frontier_ai_regulation_2023`, `ext_helm_2022`, `ext_livebench_2024`, `ext_benchmark_contamination_2023`; raw cache: `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`; source-note-only or connector/recovery: `moecot`, `moecot_md`, `road_to_agi` |
 | Test state | Quarto render, manifest/proof sync, changelog updates, protocol fixture validation, public release-record validation, and `AsiStackProofs.LivingBook` finite manifest/drafting-artifact and structural-update sync predicates run in the current publication gate; `AsiStackProofs.LivingBook` also implements negative cases for missing drafting artifacts, unsynced structural updates, release readiness without validation/changelog/residuals, and derived artifacts missing source/review/support-state boundaries; claim-quality review remains human/editorial and no reader/audio artifact is implied. |
 
 ## Drafting guardrail
@@ -45,6 +46,8 @@ This chapter describes the repository's operating method. It can claim that loca
 The prototype roadmap sequences future builds. The same sequencing discipline applies to the manuscript itself. The book should not ask future AI systems to preserve provenance, gates, residuals, and rollback while its own chapters drift away from manifest order, source notes, proof targets, validation, changelog, or release records.
 
 The living-book method is the book's own governance test. Every substantive change should leave a packet that says what changed, why it changed, which source or author-intent context justified it, which evidence state moved, which validations ran, and which residuals remain.
+
+Together with Evidence States, this is the book's methodological contribution. Evidence States governs claim strength; Living Book Methodology governs the source graph, release graph, reader projections, validation receipts, and revision process that keep those claim states from drifting.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -71,6 +74,8 @@ Static manuscripts cannot show source additions, claim-state movement, deprecati
 The usual alternatives fail in opposite directions. A static PDF can be polished, but it freezes the source and evidence state at one moment. A loose wiki can change quickly, but it often loses architectural discipline. A code repo can validate structure, but it does not by itself explain the thesis to readers. A chat history can preserve intent, but it is not a public evidence artifact.
 
 External governance and evaluation practice sets the public-record bar for a living book. NIST AI RMF (`ext_nist_ai_rmf_1_0_2023`) and frontier-governance work (`ext_frontier_ai_regulation_2023`) require lifecycle and oversight vocabulary, HELM (`ext_helm_2022`) models transparent multi-metric reporting, LiveBench (`ext_livebench_2024`) demonstrates living benchmark pressure, and contamination analysis (`ext_benchmark_contamination_2023`) warns that evaluation surfaces can go stale or leak. The living-book method uses those as publication discipline, not as evidence that the ASI Stack satisfies any governance framework.
+
+Executable publication practice supplies the technical lineage. Literate programming (`ext_literate_programming_1984`) treats explanation and executable structure as one authored artifact. Jupyter Book (`ext_jupyter_book_docs`) shows a modern executable-book pattern around notebooks, Markdown, code execution, cross references, and web publication. Quarto Books (`ext_quarto_books_docs`) supplies the concrete multi-chapter publishing substrate used here. The ASI Stack method borrows from that lineage but adds claim/evidence ledgers, source queues, proof manifests, release records, reader/audio derivative boundaries, and explicit non-claims.
 
 The living book needs all four properties at once: readable prose, versioned source, executable validation, and visible evidence state. That combination is what lets the project improve aggressively without becoming a moving target that no reader can audit.
 
@@ -104,6 +109,8 @@ Appendix C now records seven passage-reviewed mappings for this claim. The revie
 ## Mechanism
 
 The living-book method is a ratcheted publication loop. Each improvement should leave the repository more informative than it found it, preserve the reason for the change, and keep the AI/research scaffold separate from downstream reader and audio editions.
+
+The method is deliberately more than "write in Quarto." Quarto renders the book, but the living-book method controls how claims, sources, proofs, tests, releases, and reader projections are allowed to change. That distinction keeps a publishing tool from being confused with a research governance system.
 
 - Use `book_structure.json` for order and dynamic chapters.
 - Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
@@ -197,6 +204,8 @@ A change-packet record should be the methodology's next executable object: one c
 
 The endpoint is a research operating system that happens to render as a book. The live site would remain the canonical, AI-readable, researcher-auditable surface, while Human view, reader editions, ebook formats, and future audio scripts would be derived projections with explicit strip policies and release records.
 
+Compared with literate programming and executable-book systems, the beyond-SOTA endpoint is claim-state aware. It would not only weave explanation with executable artifacts; it would also preserve source-readiness state, claim support state, proof target scope, failed validation, review state, release approval, reader-derivative deltas, and non-claims as first-class publication objects.
+
 A mature living-book workflow would let a future agent ingest a new AI paper, mine its public-safe content, decide whether to update a chapter or add a precise new one, update the outline and manifest, generate proof/test backlog, draft or revise prose, validate source/evidence boundaries, render the live site, and prepare reader editions without hand-renumbering or hidden support-state changes.
 
 A living-book release surface needs:
@@ -246,12 +255,20 @@ These Lean hooks are implemented as finite-record predicates over chapter-manife
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Runtime-reference context for ledgers, replay, readiness gates, residuals, handoff, and promotion blockers. | source note available; connector/recovery required |
 | `moecot_md` | moecot_agent_whitepaper.md | implementation_reference_variant | Markdown export/source version for terminology normalization and variant comparison only. | source note available; source-note-only variant |
 | `road_to_agi` | Road To AGI | strategic_roadmap | Remaining-work, source-reported status, unreproduced benchmark, and promotion-blocker context. | source note available; auth-gate/source-note-only placeholder |
+| `ext_literate_programming_1984` | Literate Programming | literate_programming | External lineage comparator for coupling human-readable exposition with executable artifact structure. | source note available; comparator only |
+| `ext_jupyter_book_docs` | Jupyter Book Documentation | executable_books | External comparator for computational/executable books built from notebooks or Markdown with code execution, cross references, and web publication. | source note available; comparator only |
+| `ext_quarto_books_docs` | Quarto Books Documentation | technical_publishing | External comparator for multi-chapter Quarto manuscripts, book-style HTML, cross references, and publication-format targets. | source note available; comparator only |
+| `ext_nist_ai_rmf_1_0_2023` | Artificial Intelligence Risk Management Framework (AI RMF 1.0) | governance_evals | External comparator for lifecycle, risk, trustworthiness, and Govern/Map/Measure/Manage vocabulary. | source note available; comparator only |
+| `ext_frontier_ai_regulation_2023` | Frontier AI Regulation | governance_evals | External comparator for reporting, standards, scrutiny, compliance, pre-deployment assessment, and post-deployment monitoring vocabulary. | source note available; comparator only |
+| `ext_helm_2022` | Holistic Evaluation of Language Models | benchmark_science | External comparator for transparent multi-scenario, multi-metric reporting and missing-coverage disclosure. | source note available; comparator only |
+| `ext_livebench_2024` | LiveBench | benchmark_science | External comparator for living benchmark pressure and contamination-limited update practice. | source note available; comparator only |
+| `ext_benchmark_contamination_2023` | Investigating Data Contamination in Modern Benchmarks for Large Language Models | benchmark_contamination | External comparator for stale/leaky evaluation surfaces and score-interpretation limits. | source note available; comparator only |
 
-The crosswalk connects the book's method to the stack's method: Benchmaxxing supplies ratchet discipline, VIEA supplies artifact durability, BugBrain supplies resource-aware implementation lineage, Cognitive Loop Closure supplies toolification pressure, and MoECOT/Road To AGI supply roadmap context. These sources guide the method; local validation artifacts show repository hygiene.
+The crosswalk connects the book's method to the stack's method and to publication lineage. Benchmaxxing supplies ratchet discipline, VIEA supplies artifact durability, BugBrain supplies resource-aware implementation lineage, Cognitive Loop Closure supplies toolification pressure, and MoECOT/Road To AGI supply roadmap context. External comparators supply literate/executable-book and public-record vocabulary only. These sources guide the method; local validation artifacts show repository hygiene.
 
 ## Summary
 
-Living Book Methodology defines how this project improves without losing its memory. The method is not "keep editing until it feels better." It is: ingest sources honestly, revise chapters through stable IDs, track support states, mechanize what can be mechanized, validate the public render, and preserve the residuals.
+Living Book Methodology defines how this project improves without losing its memory. Paired with Evidence States, it is the book's methodological contribution: a claim-aware, source-aware, proof-aware, release-aware way for a technical book to change. The method is not "keep editing until it feels better." It is: ingest sources honestly, revise chapters through stable IDs, track support states, mechanize what can be mechanized, validate the public render, and preserve the residuals.
 
 The book is part of the argument. If The ASI Stack cannot manage its own source queues, claim states, proofs, tests, reader editions, audio derivatives, and releases, then it has not earned the right to describe governed recursive improvement. This humility becomes an open research agenda and bibliography plan: what still needs to be read, built, tested, proved, or rejected.
 

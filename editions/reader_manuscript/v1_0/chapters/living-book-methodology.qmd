@@ -35,6 +35,12 @@ record, or a polished reader chapter can show publication discipline. It cannot
 prove the ASI Stack works. The living book earns trust by making that boundary
 hard to miss.
 
+Together with Evidence States and Claim Discipline, this chapter is the book's
+methodological center. Evidence States controls how confident a claim is
+allowed to sound. Living Book Methodology controls the source graph, proof
+graph, release graph, reader projections, and revision receipts that keep that
+confidence from drifting.
+
 ## Problem
 
 The book itself must remain a living technical system rather than a static
@@ -79,6 +85,14 @@ transparent benchmark reporting, living benchmark practice, and contamination
 analysis all point toward lifecycle accountability. They do not validate this
 book's claims. They do show why a serious technical argument should expose its
 evidence state instead of treating publication as proof.
+
+There is also a technical-publishing lineage. Literate programming joined
+human explanation to executable structure. Jupyter Book and related
+executable-book tools joined notebooks, Markdown, code execution, cross
+references, and web publication. Quarto Books supplies this project's concrete
+multi-chapter publishing substrate. The ASI Stack method builds on that
+lineage, then adds claim states, source queues, proof manifests, release
+records, reader/audio derivative boundaries, and explicit non-claims.
 
 The audience split makes the requirement stricter. AI systems need the
 structured scaffold. Researchers need sources, claim states, proof targets, and
@@ -125,6 +139,11 @@ The separation is what makes later automation possible. A future agent should
 not need private memory to know what to load, what changed, which source is
 allowed to support which claim, or which validation command must run before
 publication. The repository should tell it.
+
+That is why the method is more than "write the book in Quarto." Quarto renders
+the artifact. The living-book method governs how the artifact may change and
+which evidence, review, release, or reader state each change is allowed to
+claim.
 
 The source discipline is equally important. Corben-authored papers, local
 projects, external literature, conversation-mined packets, Google Drive
@@ -292,6 +311,12 @@ release records and review gates. A target format is not an artifact. A
 generated artifact is not an approved artifact. An approved reader artifact is
 not evidence that the ASI Stack works.
 
+Compared with literate programming and executable-book practice, the mature
+endpoint is claim-state aware. It would not only weave explanation with
+artifacts; it would preserve source readiness, support state, proof scope,
+failed validation, review state, release approval, reader-edition deltas, and
+non-claims as first-class publication objects.
+
 At full maturity, the living-book system would also be able to lose cleanly. A
 source could contradict a chapter. A proof attempt could fail. A benchmark lane
 could demote a claim. A consolidation review could merge chapters or reject a
@@ -320,6 +345,10 @@ Living Book Methodology is the book's self-governance layer. It says that the
 manuscript should improve the way the architecture says intelligence should
 improve: through stable identity, source discipline, claim states, proof and
 test hooks, release records, residuals, and visible non-claims.
+
+Paired with Evidence States, it is the book's methodological contribution: a
+way for a technical manuscript to keep moving without letting confidence,
+citations, proofs, tests, and reader polish drift apart.
 
 The point is not bureaucracy. The point is memory. A future reader, reviewer,
 or AI assistant should be able to resume from the repository state rather than

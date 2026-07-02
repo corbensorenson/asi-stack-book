@@ -2963,6 +2963,52 @@
     "citation_label": "Pineau et al. (2021), Improving Reproducibility in Machine Learning Research"
   },
   {
+    "id": "ext_literate_programming_1984",
+    "title": "Literate Programming",
+    "priority": "external_literature",
+    "layer": "literate_programming",
+    "chapter_targets": [
+      "living-book-methodology"
+    ],
+    "url": "https://academic.oup.com/comjnl/article/27/2/97/343244",
+    "notes": "External literate-programming source for arranging programs and explanation around human comprehension, woven documentation, and tangled executable artifacts.",
+    "source_type": "journal_article",
+    "published": "1984-01-01",
+    "updated": "1984-01-01",
+    "citation_label": "Knuth (1984), Literate Programming",
+    "doi": "10.1093/comjnl/27.2.97"
+  },
+  {
+    "id": "ext_jupyter_book_docs",
+    "title": "Jupyter Book Documentation",
+    "priority": "external_literature",
+    "layer": "executable_books",
+    "chapter_targets": [
+      "living-book-methodology"
+    ],
+    "url": "https://jupyterbook.org/",
+    "notes": "Official Jupyter Book documentation comparator for authoring books from notebooks or Markdown, executing code, cross-referencing content, and publishing computational books to the web.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "",
+    "citation_label": "Jupyter Book Documentation"
+  },
+  {
+    "id": "ext_quarto_books_docs",
+    "title": "Quarto Books Documentation",
+    "priority": "external_literature",
+    "layer": "technical_publishing",
+    "chapter_targets": [
+      "living-book-methodology"
+    ],
+    "url": "https://quarto.org/docs/books/",
+    "notes": "Official Quarto Books documentation comparator for multi-chapter manuscripts, HTML/PDF/Word/EPUB outputs, search, cross references, and book-style website publishing.",
+    "source_type": "official_docs",
+    "published": "",
+    "updated": "",
+    "citation_label": "Quarto Documentation, Creating a Book"
+  },
+  {
     "id": "ext_argo_rollouts_docs",
     "title": "Argo Rollouts Documentation: Kubernetes Progressive Delivery Controller",
     "priority": "external_literature",

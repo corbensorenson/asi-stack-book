@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Living Book Methodology
 
-Date: 2026-06-30
+Date: 2026-07-01
 
 Chapter: `living-book-methodology`
 
@@ -34,6 +34,10 @@ The reader throughline is:
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint as reader-facing sections.
 - Kept one Mermaid diagram to show the living-book ratchet and refusal edges.
+- 2026-07-01 follow-up: sharpened the pair with Evidence States and Claim
+  Discipline as the book's methodological center, and added reader-facing
+  lineage against source-noted literate-programming, Jupyter Book, and Quarto
+  Books comparator records.
 
 ## Meaning-Preservation Checks
 
@@ -52,11 +56,14 @@ The reader throughline is:
 - The prose does not claim autonomous source ingestion, autonomous book
   rewriting, public-safe project replay, external human review completion,
   reader artifact approval, or support-state movement.
+- The new external comparator language is lineage and positioning only; it does
+  not claim WEB/CWEB implementation, Jupyter Book compatibility, Quarto format
+  approval, manuscript quality, external review, or artifact release.
 
 ## Non-Claims
 
-- This pass does not edit the live AI/research chapter.
-- This pass does not change `book_structure.json`.
+- This pass edits the live AI/research chapter in a matching framing pass but
+  does not change `book_structure.json`.
 - This pass does not create a new living-book change-packet schema or fixture.
 - This pass does not approve the curated reader manuscript for release.
 - This pass does not approve EPUB, DOCX, PDF, HTML, audio, or audio-embedded
