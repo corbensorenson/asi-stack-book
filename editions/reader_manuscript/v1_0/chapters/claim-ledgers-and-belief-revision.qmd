@@ -97,6 +97,15 @@ matrices. Those are useful comparators, not proof that this stack implements a
 complete belief engine. The ASI Stack uses the same underlying lesson: claims
 need records, tests, and refusal paths, not just fluent wording.
 
+There is also an older lineage underneath the word "belief." AGM belief
+revision treats contraction and revision as formal operations on theories.
+Truth-maintenance systems preserve the reasons behind program beliefs.
+Assumption-based truth maintenance tracks which conclusions depend on which
+assumptions, including across inconsistent contexts. The claim ledger is not a
+new name for those systems. It borrows their discipline and aims it at the
+surfaces a living AI project actually publishes: chapters, diagrams, release
+notes, evidence records, reader editions, and future artifacts.
+
 ## Core Claim
 
 Claim ledgers should maintain support states, provenance, contradiction links,
@@ -319,6 +328,10 @@ synthetic harnesses support only record discipline over declared finite
 objects and fixtures. They do not show that the stack can read arbitrary prose,
 find all material claims, detect contradictions correctly, adjudicate truth,
 or keep every downstream surface synchronized in a deployed system.
+
+The external belief-revision and truth-maintenance sources are lineage and
+comparison points. They do not mean this repository has implemented AGM,
+TMS, ATMS, open-domain truth maintenance, or automatic claim correction.
 
 That boundary is part of the chapter's claim. A ledger that cannot say what it
 has not proved is not a ledger; it is another prose surface with better field

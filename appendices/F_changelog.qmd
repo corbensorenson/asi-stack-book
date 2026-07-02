@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-01 - Ground Claim Ledgers in belief-revision lineage
+
+- Added source-noted external comparator records for AGM belief revision,
+  Doyle-style truth maintenance, and de Kleer-style assumption-based truth
+  maintenance.
+- Updated the live chapter, curated reader chapter, outline, generated source
+  queues, and v1.x chapter-review burn-down row so claim-ledger revision is
+  positioned as a bridge from formal belief change and maintained reasons to
+  publication support states, surface synchronization, contradiction links,
+  revision history, and release gates.
+- This is external-grounding and reader/live prose work only; it does not
+  implement AGM, TMS, ATMS, open-domain claim extraction, contradiction-quality
+  measurement, semantic-equivalence checking, a deployed belief-revision
+  engine, support-state promotion, or a chapter-core evidence transition.
+
 ## 2026-07-01 - Add Integrated Reference fixture trace
 
 - Added a fixture-backed worked trace to `integrated-reference-architecture`,

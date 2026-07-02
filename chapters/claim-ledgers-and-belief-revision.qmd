@@ -15,6 +15,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact source-note mappings for the core claim, and four local raw-cache mappings are passage-reviewed; `coherence_exchange` remains connector/source-note mapped."
+  - "Source-noted external comparators now position claim ledgers against AGM belief revision, Doyle-style truth maintenance, de Kleer-style assumption-based truth maintenance, ALCE citation support, Self-RAG retrieval/critique, and CheckList behavioral testing; this is lineage and positioning only, not an implemented belief-revision engine."
   - "Protocol schema/fixture validation and a synthetic claim-ledger revision harness are implemented; no open-domain claim-extraction, contradiction-quality, semantic-equivalence, or deployed belief-engine test has been run for this chapter."
   - "Lean coverage now includes finite claim-update, promotion-review, belief-revision-record, and revision-lifecycle route envelopes; claim extraction, contradiction detection quality, and substantive belief revision remain unimplemented."
   - "No support-state promotion is implied by this drafting pass."
@@ -32,8 +33,8 @@ open_evidence_gaps:
 | Primary source records | `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat` |
-| Source loading state | passage-reviewed local raw cache: `spinoza`, `viea`, `aletheia`, `uat`; connector/source-note mapped: `coherence_exchange` |
+| Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat`; external comparators: `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` |
+| Source loading state | passage-reviewed local raw cache: `spinoza`, `viea`, `aletheia`, `uat`; connector/source-note mapped: `coherence_exchange`; source notes: `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` |
 | Test state | Claim/belief-revision fixture validation, a synthetic claim-ledger revision harness, and `AsiStackProofs.ClaimLedger` finite-record proofs are implemented, including belief-revision record and lifecycle-route envelopes; open-domain extraction, contradiction-quality, semantic-equivalence, and deployed belief-engine tests remain unimplemented. |
 
 ## Drafting guardrail
@@ -73,6 +74,8 @@ A model can generate plausible prose without maintaining why it believes a claim
 A fluent answer can contain assumptions that were never extracted, contradictions that were never linked, and claims that keep their confident tone after evidence weakens. Belief inertia is the epistemic version of technical debt: a claim remains in circulation because no artifact forces it to be revised.
 
 External evidence-generation baselines underline the same problem. ALCE (`ext_alce_2023`) evaluates whether generated answers are actually supported by citations, Self-RAG (`ext_self_rag_2023`) attaches retrieval and critique signals to generation, and CheckList (`ext_checklist_2020`) turns behavioral expectations into testable matrices. Claim ledgers generalize that pressure into belief-revision records: claims need source roles, contradiction handling, downgrade paths, and negative evidence, not just fluent citation-adjacent prose.
+
+Older belief-change and truth-maintenance lineages make the prior-art boundary sharper. AGM belief revision (`ext_agm_belief_revision_1985`) formalizes contraction and revision as operations over theories. Doyle's truth-maintenance system (`ext_truth_maintenance_system_1979`) treats reasons and justifications for program beliefs as maintained objects. de Kleer's assumption-based TMS (`ext_assumption_based_tms_1986`) shifts attention to assumption sets, inconsistent information, and context switching. The ASI claim ledger is not a replacement for those systems. It is an architecture bridge from explicit belief-change and reason-maintenance discipline into AI-generated artifacts: support states, publication surfaces, contradiction links, revision history, and release gates.
 
 Aletheia and UAT both push against this failure by decomposing outputs into propositions, preserving unsupported or inferred states, and routing uncertainty to review. The claim ledger gives those states a durable home.
 
@@ -250,8 +253,14 @@ These proof hooks are implemented only over finite Lean claim-update, promotion-
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Found in AI generated paper dump. Use carefully; speculative synthesis of PlanForge, Spinoza, Talos, UAT, Alignment Field. | source note available; connector or recovery required |
 | `aletheia` | Aletheia Foundry | safe_general_intelligence_lineage | Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains. | passage-reviewed local raw cache |
 | `uat` | Unified Adaptive Tribunal | evaluation_refinement | Multi-AI collaborative refinement/evaluation protocol. | passage-reviewed local raw cache |
+| `ext_agm_belief_revision_1985` | On the Logic of Theory Change: Partial Meet Contraction and Revision Functions | belief_revision | External formal-epistemology comparator for contraction, revision, and AGM-style rational belief change. | source note available |
+| `ext_truth_maintenance_system_1979` | A Truth Maintenance System | truth_maintenance | External truth-maintenance comparator for maintaining reasons and justifications for program beliefs. | source note available |
+| `ext_assumption_based_tms_1986` | An Assumption-Based TMS | truth_maintenance | External assumption-based truth-maintenance comparator for assumption sets, inconsistent information, and context-switching boundaries. | source note available |
+| `ext_alce_2023` | Enabling Large Language Models to Generate Text with Citations | retrieval_citation_evaluation | External citation-evaluation comparator for citation support and factuality pressure. | source note available |
+| `ext_self_rag_2023` | Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection | retrieval_reflection | External retrieval/reflection comparator for adaptive retrieval and critique signals. | source note available |
+| `ext_checklist_2020` | Beyond Accuracy: Behavioral Testing of NLP models with CheckList | behavioral_evaluation | External behavioral-testing comparator for capability matrices and failure-preserving test design. | source note available |
 
-The claim-ledger sources support the chapter's belief-revision discipline and conservative support-state boundary. Four local raw-cache sources now have passage-reviewed mappings, while `coherence_exchange` remains connector/source-note mapped. This does not promote any chapter claim merely because the repo has claim-record schemas.
+The claim-ledger sources support the chapter's belief-revision discipline and conservative support-state boundary. Four local raw-cache sources now have passage-reviewed mappings, while `coherence_exchange` remains connector/source-note mapped. The external comparators position the chapter against formal belief revision, truth maintenance, citation support, retrieval critique, and behavioral testing. They do not promote any chapter claim merely because the repo has claim-record schemas or source notes.
 
 ## Summary
 

@@ -1353,6 +1353,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `spinoza`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `coherence_exchange`, `aletheia`, `uat` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` | Load after internal claim-ledger sources to position the chapter against formal belief revision, truth maintenance, assumption-based truth maintenance, citation support, retrieval critique, and behavioral testing. Treat these as lineage/comparators, not evidence that the ASI Stack implements belief revision. |
 
 Draft arc:
 
@@ -1384,6 +1385,7 @@ Draft deliverables:
 
 - A claim-record schema and belief-revision transition example with lifecycle state, surface identity, contradiction state, residual refs, non-overwrite attestation, ledger effect, promotion blockers, and non-claims.
 - Exact Appendix C claim-source mappings for `claim-ledgers-and-belief-revision.core` across Spinoza, VIEA, Coherence Exchange, Aletheia, and UAT; four local raw-cache mappings are passage-reviewed, while `coherence_exchange` remains connector/source-note mapped.
+- Source-noted external comparator rows for AGM belief revision, Doyle-style truth maintenance, de Kleer-style assumption-based truth maintenance, ALCE, Self-RAG, and CheckList, with the chapter framed as a publication/support-state ledger bridge rather than an implemented formal belief-revision or truth-maintenance engine.
 - Implemented protocol validation: `claim_record` and `belief_revision_record` fixtures validate public record shape only.
 - Planned Codex test: Claim extraction test.
 - Planned Codex test: Contradiction detection test.
