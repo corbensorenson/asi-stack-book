@@ -8681,7 +8681,7 @@
             "Adoption without regression tests.",
             "Sequence-model throughput treated as evidence for unrelated substrate quality."
           ],
-          "minimal_implementation": "A technical-substrate appendix plan with experiment matrix and adoption gates.",
+          "minimal_implementation": "A technical-substrate appendix plan with experiment matrix, adoption gates, and a deterministic substrate-adoption trace that preserves baselines, negative controls, consumer-axis limits, fallback, retirement/refutation paths, residuals, and non-claim boundaries without claiming substrate usefulness.",
           "beyond_state_of_art": "Mathematical and search substrates need an adoption exchange before they can affect ordinary routes. It keeps unusual mathematics available for narrow specialist routes while making every adoption decision baseline-bound, falsifiable, consumer-gated, and reversible. In the mature substrate adoption exchange, mathematical substrates remain optional specialists until baseline-symmetric workloads show where they improve search, routing, compression, representation, and verifier workload without hiding tradeoffs.",
           "codex_tests": [
             {
@@ -8719,6 +8719,13 @@
               "result_status": "passes via Lean negative case; no canary benchmark claim",
               "status": "implemented in AsiStackProofs.SearchSubstrates; no canary benchmark result"
             },
+            {
+              "name": "Substrate adoption trace",
+              "purpose": "Check that a synthetic substrate-adoption trace can preserve exploratory registration, structural-only receipt boundaries, consumer-axis blocking, negative-control retirement, fallback preservation, and no-promotion boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_substrate_adoption_trace.py`; 4 valid traces and 8 expected-invalid controls; no substrate A/B test, model-quality claim, runtime claim, or support-state promotion",
+              "status": "implemented as a deterministic synthetic trace and Lean fixture bridge; no substrate adoption claim"
+            },
             "Baseline comparison test",
             "Representation efficiency test",
             "Falsification review",
@@ -8736,6 +8743,12 @@
               "tag": "lean:substrates.search.failure_blocks_promotion",
               "module": "AsiStackProofs.SearchSubstrates",
               "target": "A substrate without passing evidence remains non-core.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:substrates.search.adoption_trace_bridge",
+              "module": "AsiStackProofs.SearchSubstrates",
+              "target": "A synthetic substrate-adoption trace admits exploratory, structural-only, consumer-blocked, and retired/refuted states while rejecting missing baselines, theorem spillover, failed-control promotion, unmeasured-axis routing, missing fallback, and support-promotion overclaim.",
               "status": "implemented"
             }
           ],

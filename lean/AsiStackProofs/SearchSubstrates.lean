@@ -187,4 +187,106 @@ theorem canary_substrate_without_complete_evidence_packet_rejected
                           rw [reportMissing] at reportPresent
                           contradiction
 
+structure SubstrateAdoptionTraceSummary where
+  validTraceCount : Nat
+  expectedInvalidControlCount : Nat
+  exploratoryRegistrationPresent : Bool
+  structuralOnlyReceiptPresent : Bool
+  consumerAxisBlockedPresent : Bool
+  negativeControlRetirementPresent : Bool
+  missingBaselineRejected : Bool
+  theoremSpilloverRejected : Bool
+  failedNegativeControlPromotionRejected : Bool
+  unmeasuredAxisAllowedRejected : Bool
+  fallbackRequired : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def SubstrateAdoptionTraceValid
+    (summary : SubstrateAdoptionTraceSummary) : Prop :=
+  summary.validTraceCount = 4 ∧
+    summary.expectedInvalidControlCount = 8 ∧
+      summary.exploratoryRegistrationPresent = true ∧
+        summary.structuralOnlyReceiptPresent = true ∧
+          summary.consumerAxisBlockedPresent = true ∧
+            summary.negativeControlRetirementPresent = true ∧
+              summary.missingBaselineRejected = true ∧
+                summary.theoremSpilloverRejected = true ∧
+                  summary.failedNegativeControlPromotionRejected = true ∧
+                    summary.unmeasuredAxisAllowedRejected = true ∧
+                      summary.fallbackRequired = true ∧
+                        summary.supportStateEffectNone = true ∧
+                          summary.nonClaimBoundary = true
+
+def substrateAdoptionTraceFixture : SubstrateAdoptionTraceSummary := {
+  validTraceCount := 4
+  expectedInvalidControlCount := 8
+  exploratoryRegistrationPresent := true
+  structuralOnlyReceiptPresent := true
+  consumerAxisBlockedPresent := true
+  negativeControlRetirementPresent := true
+  missingBaselineRejected := true
+  theoremSpilloverRejected := true
+  failedNegativeControlPromotionRejected := true
+  unmeasuredAxisAllowedRejected := true
+  fallbackRequired := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+}
+
+theorem substrate_adoption_trace_fixture_valid :
+    SubstrateAdoptionTraceValid substrateAdoptionTraceFixture := by
+  unfold SubstrateAdoptionTraceValid substrateAdoptionTraceFixture
+  simp
+
+theorem substrate_adoption_trace_rejects_axis_laundering
+    {summary : SubstrateAdoptionTraceSummary} :
+    SubstrateAdoptionTraceValid summary ->
+      summary.theoremSpilloverRejected = true ∧
+        summary.unmeasuredAxisAllowedRejected = true := by
+  intro valid
+  unfold SubstrateAdoptionTraceValid at valid
+  rcases valid with ⟨_,
+    _,
+    _,
+    _,
+    _,
+    _,
+    _,
+    theoremSpilloverRejected,
+    _,
+    unmeasuredAxisAllowedRejected,
+    _,
+    _,
+    _⟩
+  exact ⟨theoremSpilloverRejected, unmeasuredAxisAllowedRejected⟩
+
+theorem substrate_adoption_trace_preserves_no_promotion_boundary
+    {summary : SubstrateAdoptionTraceSummary} :
+    SubstrateAdoptionTraceValid summary ->
+      summary.failedNegativeControlPromotionRejected = true ∧
+        summary.fallbackRequired = true ∧
+          summary.supportStateEffectNone = true ∧
+            summary.nonClaimBoundary = true := by
+  intro valid
+  unfold SubstrateAdoptionTraceValid at valid
+  rcases valid with ⟨_,
+    _,
+    _,
+    _,
+    _,
+    _,
+    _,
+    _,
+    failedNegativeControlPromotionRejected,
+    _,
+    fallbackRequired,
+    supportStateEffectNone,
+    nonClaimBoundary⟩
+  exact ⟨failedNegativeControlPromotionRejected,
+    fallbackRequired,
+    supportStateEffectNone,
+    nonClaimBoundary⟩
+
 end AsiStackProofs.SearchSubstrates

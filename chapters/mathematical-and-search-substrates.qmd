@@ -4,7 +4,7 @@ chapter_id: "mathematical-and-search-substrates"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-02"
 primary_sources:
   - "genesiscode"
   - "temporal_coil_research"
@@ -21,7 +21,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for all eleven assigned mathematical/search-substrate sources; support remains at argument until substrate A/B runs, representation-efficiency benchmarks, CoilMoECOT benchmarks, Circle substrate-sidecar evidence, Mamba comparisons, or accepted chapter-core evidence transitions exist."
-  - "The substrate_adoption_record fixture validates schema/example consistency for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; AsiStackProofs.SearchSubstrates implements finite-record adoption-field and promotion gates plus bounded negative cases for missing required fields, unproven qualified states, qualified states without passing evidence, unmeasured or blocked consumer-axis reliance, and incomplete canary evidence packets; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, Circle substrate sidecar run, or Theseus transfer consumer run has been executed from this repo. The separate Circle external rope receipt slice does not validate substrate adoption."
+  - "The substrate_adoption_record fixture validates schema/example consistency for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; the Substrate adoption trace validates four synthetic adoption states and eight expected-invalid controls for missing baseline, missing falsification condition, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support-promotion overclaim, and missing non-claim boundary; AsiStackProofs.SearchSubstrates implements finite-record adoption-field and promotion gates plus bounded negative cases and a trace-summary bridge; no substrate A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, Mamba comparison, Circle substrate sidecar run, or Theseus transfer consumer run has been executed from this repo. The separate Circle external rope receipt slice does not validate substrate adoption."
   - "Temporal Coil, Circle, and Theseus references include source-reported or local-project process/fixture context, but this repo did not rerun or import their artifacts as validated book evidence."
   - "TreeLLM and CoilLattice claims are treated as speculative representation-substrate proposals until a verified token format, implementation, compression result, reasoning benchmark, or grounding benchmark exists."
   - "Mamba is used only as external sequence-substrate context from the public arXiv abstract/metadata; no local Mamba training, serving, benchmark, routing, or downstream-quality result is implied."
@@ -36,13 +36,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-02 |
 | Primary source records | `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`, `ext_mamba_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`, `temporal_coil_research`; supporting: `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; variants/external literature: `ext_mamba_2023`; connector/recovery: `coilmoecot` |
 | Source loading state | source notes and passage-reviewed mappings exist for all assigned sources; local raw-cache mappings exist for `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, and `simulation_scaling`; `coilmoecot` is connector/source-note reviewed because its raw cache is an auth-gate placeholder; Circle and Theseus mappings use pinned local-project references; `ext_mamba_2023` uses public arXiv abstract/metadata and a local source note; raw private source text is not published. |
-| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims; `AsiStackProofs.SearchSubstrates` implements finite adoption-field and promotion gates plus negative cases for missing required fields, unproven qualified states, qualified states without passing evidence, unmeasured or blocked consumer-axis reliance, and incomplete canary evidence packets; baseline comparison, representation-efficiency, sequence-substrate A/B, and falsification tests remain planned. |
+| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims; `python3 scripts/validate_substrate_adoption_trace.py` validates four synthetic adoption states and eight expected-invalid controls while preserving no-promotion boundaries; `AsiStackProofs.SearchSubstrates` implements finite adoption-field, promotion-gate, consumer-axis, canary-evidence, and trace-summary bridge checks; baseline comparison, representation-efficiency, sequence-substrate A/B, and real falsification tests remain planned. |
 
 ## Drafting guardrail
 
@@ -229,7 +229,9 @@ Optional substrates need a substrate adoption record before they can become part
 
 The substrate-adoption fixture does not show substrate usefulness. Its value is narrower: it prevents the book from describing adoption without the fields that adoption requires.
 
-A substrate-adoption trace should be the next minimum: exploratory registration, structural-only proof receipt, consumer rejection, canary benchmark plan, failed negative control, narrowed adoption state, and residual reason. The trace would make optionality executable before any substrate becomes load-bearing.
+The Substrate adoption trace is now the next minimum executable form. It records `valid_exploratory_registration`, `valid_structural_only_receipt`, `valid_consumer_axis_blocked`, and `valid_negative_control_retirement`: exploratory registration, a structural-only proof receipt, a blocked consumer-axis request, and a negative-control retirement/refutation path. Its expected-invalid controls reject missing baselines, missing falsification conditions, theorem spillover into route permission, unmeasured-axis routing, failed-control promotion, missing fallback, support-promotion overclaim, and missing non-claim boundaries.
+
+The trace makes optionality executable before any substrate becomes load-bearing. It still does not run a substrate A/B test, representation-efficiency test, search-quality test, routing-quality test, compression-quality test, Circle sidecar, CoilMoECOT run, Mamba comparison, TreeLLM implementation, or Theseus transfer consumer.
 
 The first substrate evaluation includes a candidate that remains interesting but unadopted after the negative control fails.
 
@@ -255,6 +257,7 @@ This substrate-adoption gate is still an architectural proposal. The substrate c
 | Qualified-without-evidence negative case | Prove that a qualified substrate with false passing-evidence rejects the finite core-adoption predicate. | implemented in `AsiStackProofs.SearchSubstrates.qualified_substrate_without_passing_evidence_rejected`; no empirical substrate result |
 | Consumer-axis negative case | Prove that consumer reliance on an unmeasured or blocked substrate axis rejects the finite consumer-axis predicate. | implemented in `AsiStackProofs.SearchSubstrates.consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`; no routing, compression, or reasoning-quality claim |
 | Canary evidence-packet negative case | Prove that canary substrate promotion missing workload, baseline, negative-control, or result-report fields rejects the finite canary-evidence predicate. | implemented in `AsiStackProofs.SearchSubstrates.canary_substrate_without_complete_evidence_packet_rejected`; no canary benchmark claim |
+| Substrate adoption trace | Validate exploratory registration, structural-only receipt boundaries, consumer-axis blocking, negative-control retirement/refutation, fallback preservation, and no-promotion boundaries with expected-invalid controls for missing baseline, missing falsification, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support overclaim, and missing non-claims. | implemented via `python3 scripts/validate_substrate_adoption_trace.py`, `lean:substrates.search.adoption_trace_bridge`, and `AsiStackProofs.SearchSubstrates.substrate_adoption_trace_fixture_valid`; no substrate A/B test, substrate adoption, model-quality result, runtime result, support-state transition, or chapter-core promotion |
 | Baseline comparison test | Check that adoption records name ordinary baselines before quality claims. | planned; not run |
 | Representation efficiency test | Check whether a substrate improves a bounded representation task against a baseline. | planned; not run |
 | Falsification review | Check that the record names what would count against adoption. | planned; not run |

@@ -1739,7 +1739,17 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.ArtifactStewardAgents as finite federation-contract route theorems: missing contracts request repair, inherited project authority is rejected, external spend without approval routes to approval, and complete scoped federation dispatch requires evidence-bundle boundaries."
+    },
+    {
+      "tag": "lean:substrates.search.adoption_trace_bridge",
+      "chapter_id": "mathematical-and-search-substrates",
+      "module": "AsiStackProofs.SearchSubstrates",
+      "formal_target": "A synthetic substrate-adoption trace admits exploratory, structural-only, consumer-blocked, and retired/refuted states while rejecting missing baselines, theorem spillover, failed-control promotion, unmeasured-axis routing, missing fallback, and support-promotion overclaim.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite trace-summary fixture bridge over the substrate-adoption trace: it accepts the modeled exploratory, structural-only, blocked, and retired/refuted states while preserving axis-laundering rejection, fallback requirements, non-claim boundaries, and no support-state promotion."
     }
   ],
-  "record_count": 173
+  "record_count": 174
 }

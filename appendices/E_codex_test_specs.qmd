@@ -288,6 +288,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Qualified-without-evidence negative case | implemented | passes via Lean negative case; no empirical substrate result |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Consumer-axis negative case | implemented | passes via Lean negative case; no routing, compression, or reasoning-quality claim |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Canary evidence-packet negative case | implemented | passes via Lean negative case; no canary benchmark claim |
+| `mathematical-and-search-substrates` | Mathematical and Search Substrates | Substrate adoption trace | implemented | passes via `python3 scripts/validate_substrate_adoption_trace.py`; 4 valid traces and 8 expected-invalid controls; no substrate A/B test, model-quality claim, runtime claim, or support-state promotion |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Baseline comparison test | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Representation efficiency test | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Falsification review | planned | not run |
@@ -462,16 +463,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 173 |
+| Proof targets covered by triage | 174 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 173 |
+| implemented | 174 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 173 |
+| implemented | formal-invariant | lean-candidate | 174 |

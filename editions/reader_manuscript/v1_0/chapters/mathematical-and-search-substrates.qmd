@@ -127,6 +127,14 @@ Those states matter only if they change behavior. A label that does not affect
 consumer access, testing, routing, fallback, or evidence obligations is not
 governance.
 
+The current repository now includes a substrate adoption trace for that idea.
+It is synthetic and deliberately modest: one trace registers an exploratory
+substrate, one keeps a structural receipt diagnostic-only, one blocks a
+consumer request for an unmeasured axis, and one records negative-control
+retirement after the candidate fails. The useful part is not that the
+candidate worked. It did not. The useful part is that the failure path remains
+visible and cannot be converted into support-state promotion.
+
 ```{mermaid}
 flowchart LR
   A["Candidate substrate"] --> B["Intended use"]
@@ -219,6 +227,13 @@ sequence-substrate context, Circle-like proof receipts, TreeLLM-like graph
 representations, and coil-like cyclic mechanisms without pretending they all
 support the same claims.
 
+The Substrate adoption trace checks the unpleasant cases too: missing
+baselines, missing falsification conditions, theorem spillover into a route,
+unmeasured-axis routing, failed-control promotion, missing fallback,
+support-promotion overclaim, and missing non-claim boundaries. That is the
+reader-facing lesson: this layer is valuable only if it can say no to
+beautiful ideas.
+
 ## Failure Modes
 
 Theorem spillover is the central failure mode. A proof about an address,
@@ -260,11 +275,11 @@ CoilMoECOT route benchmark, Mamba comparison, Circle substrate sidecar, or
 Theseus transfer consumer. The separate Circle external rope receipt slice
 does not validate substrate adoption.
 
-The next honest minimum would be a small trace: register one substrate, attach
-a structural-only receipt or planned workload, reject an unsupported consumer
-request, attempt a negative control, narrow the adoption state, preserve the
-fallback, and record the residual. That would make optionality executable
-before any substrate becomes load-bearing.
+The implemented trace registers one substrate, attaches structural-only or
+planned boundaries, rejects unsupported consumer requests, records a failed
+negative control, narrows the adoption state, preserves the fallback, and
+records residuals. It makes optionality executable before any substrate
+becomes load-bearing, but it remains only a record-shape and boundary check.
 
 ## Beyond the State of the Art
 
@@ -294,7 +309,11 @@ gates show when a mathematical or search substrate deserves broader use.
 The Lean hooks for this chapter are finite-record checks in
 `AsiStackProofs.SearchSubstrates`. They support two narrow ideas: a substrate
 adoption record exposes baseline, measured-target, and falsification fields;
-and a substrate without passing evidence remains non-core.
+and a substrate without passing evidence remains non-core. The newer trace
+bridge also checks a finite summary for exploratory registration,
+structural-only receipt, blocked consumer-axis reliance, negative-control
+retirement, axis-laundering rejection, fallback preservation, and no-promotion
+boundaries.
 
 Those hooks do not prove substrate usefulness. They do not prove a deployed
 search algorithm, compression method, route, sequence model, cyclic backend,

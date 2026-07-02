@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 173 |
-| Manifest status counts | {"implemented": 173} |
-| Triage class counts | {"formal-invariant": 173} |
+| Proof targets audited | 174 |
+| Manifest status counts | {"implemented": 174} |
+| Triage class counts | {"formal-invariant": 174} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -72,7 +72,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ResourceEconomics.lean` | 6 | 34 | 25 | 10 |
 | `lean/AsiStackProofs/Routing.lean` | 3 | 16 | 4 | 2 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 3 | 24 | 8 | 5 |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | 2 | 8 | 6 | 4 |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 11 | 8 | 5 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 5 | 6 |
 | `lean/AsiStackProofs/SelfImprovement.lean` | 3 | 21 | 7 | 5 |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 4 | 3 | 2 |
@@ -112,7 +112,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 4 | 4 | 0 | 0 |
 | `living-book-methodology` | 3 | 3 | 0 | 0 |
-| `mathematical-and-search-substrates` | 2 | 2 | 0 | 0 |
+| `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 6 | 6 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 5 | 5 | 0 | 0 |
@@ -277,6 +277,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:simulation.fidelity.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.operational_invariant` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.failure_blocks_promotion` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:substrates.search.adoption_trace_bridge` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:circle_contracts.receipt_requires_boundary.operational_invariant` | `circle-calculus-and-proof-carrying-ai-contracts` | `AsiStackProofs.ProofCarryingContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:circle_contracts.consumer_gate.failure_blocks_promotion` | `circle-calculus-and-proof-carrying-ai-contracts` | `AsiStackProofs.ProofCarryingContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:coil_memory.alias_boundary.operational_invariant` | `coil-attention-cyclic-memory-and-recurrence-contracts` | `AsiStackProofs.CoilAttentionMemory` | triage ok; module ok; chapter tag ok; limitation ok |

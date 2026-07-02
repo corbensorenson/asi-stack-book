@@ -279,7 +279,7 @@ def main() -> None:
             f"{chapter_count} source-noted chapters",
             "0 explicit exceptions",
             "four accepted non-core upward transitions",
-            "173 proof targets",
+            "174 proof targets",
             "Fifty synthetic",
         ],
     }

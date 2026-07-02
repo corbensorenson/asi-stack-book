@@ -1,0 +1,803 @@
+{
+  "schema_version": "asi_stack.substrate_adoption_trace.v0",
+  "result_id": "2026-07-02-substrate-adoption-trace",
+  "recorded_date": "2026-07-02",
+  "command": "python3 scripts/validate_substrate_adoption_trace.py",
+  "result_kind": "deterministic_synthetic_substrate_adoption_trace",
+  "valid_trace_count": 4,
+  "expected_invalid_control_count": 8,
+  "trace_count": 12,
+  "traces": [
+    {
+      "trace_id": "valid_exploratory_registration",
+      "expect_valid": true,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "search_quality",
+          "status": "planned",
+          "evidence_refs": [],
+          "non_claims": [
+            "search_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "search_quality",
+      "requested_axis_status": "planned",
+      "adoption_state": "exploratory",
+      "routing_permission_effect": "planning_only",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "valid_structural_only_receipt",
+      "expect_valid": true,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "structure",
+      "requested_axis_status": "structural_only",
+      "adoption_state": "structural_only",
+      "routing_permission_effect": "diagnostic_only",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "valid_consumer_axis_blocked",
+      "expect_valid": true,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "routing_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "routing_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "routing_quality",
+      "requested_axis_status": "unmeasured",
+      "adoption_state": "blocked",
+      "routing_permission_effect": "blocked",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "valid_negative_control_retirement",
+      "expect_valid": true,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "workload://bounded-periodic-search-probe",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "report://synthetic-negative-control-failed",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "search_quality",
+          "status": "measured_negative",
+          "evidence_refs": [],
+          "non_claims": [
+            "search_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "search_quality",
+      "requested_axis_status": "measured_negative",
+      "adoption_state": "refuted",
+      "routing_permission_effect": "retired",
+      "failed_negative_control_recorded": true,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "invalid_missing_baseline",
+      "expect_valid": false,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "search_quality",
+          "status": "planned",
+          "evidence_refs": [],
+          "non_claims": [
+            "search_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "search_quality",
+      "requested_axis_status": "planned",
+      "adoption_state": "exploratory",
+      "routing_permission_effect": "planning_only",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "invalid_missing_falsification_condition",
+      "expect_valid": false,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "search_quality",
+          "status": "planned",
+          "evidence_refs": [],
+          "non_claims": [
+            "search_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "search_quality",
+      "requested_axis_status": "planned",
+      "adoption_state": "exploratory",
+      "routing_permission_effect": "planning_only",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "invalid_theorem_spillover_route",
+      "expect_valid": false,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "search_quality",
+          "status": "structural_only",
+          "evidence_refs": [],
+          "non_claims": [
+            "search_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "search_quality",
+      "requested_axis_status": "structural_only",
+      "adoption_state": "qualified_for_scope",
+      "routing_permission_effect": "qualified_route_allowed",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "invalid_unmeasured_axis_allowed",
+      "expect_valid": false,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "compression_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "compression_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "compression_quality",
+      "requested_axis_status": "unmeasured",
+      "adoption_state": "canary",
+      "routing_permission_effect": "canary_route_allowed",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "invalid_failed_negative_control_promoted",
+      "expect_valid": false,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "workload://bounded-periodic-search-probe",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "report://synthetic-negative-control-failed",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "search_quality",
+          "status": "measured_negative",
+          "evidence_refs": [],
+          "non_claims": [
+            "search_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "search_quality",
+      "requested_axis_status": "measured_negative",
+      "adoption_state": "qualified_for_scope",
+      "routing_permission_effect": "qualified_route_allowed",
+      "failed_negative_control_recorded": true,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "invalid_missing_fallback",
+      "expect_valid": false,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "workload://bounded-periodic-search-probe",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "report://synthetic-negative-control-failed",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "search_quality",
+          "status": "measured_positive",
+          "evidence_refs": [],
+          "non_claims": [
+            "search_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "search_quality",
+      "requested_axis_status": "measured_positive",
+      "adoption_state": "canary",
+      "routing_permission_effect": "canary_route_allowed",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "",
+      "fallback_preserved": false,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "invalid_support_promotion_overclaim",
+      "expect_valid": false,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "structure",
+      "requested_axis_status": "structural_only",
+      "adoption_state": "structural_only",
+      "routing_permission_effect": "diagnostic_only",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "synthetic-test-backed",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test",
+        "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+        "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+        "does not promote the Mathematical and Search Substrates chapter core claim",
+        "does not create a support-state transition"
+      ]
+    },
+    {
+      "trace_id": "invalid_missing_non_claim_boundary",
+      "expect_valid": false,
+      "substrate_ref": "substrate://temporal-coil-demo",
+      "ordinary_baseline_ref": "baseline://ordinary-dense-or-learned",
+      "workload_ref": "",
+      "negative_control_ref": "control://wrong-period-nonperiodic",
+      "proof_boundary_ref": "proof-boundary://structural-only",
+      "falsification_condition": "retire or narrow if wrong-period or nonperiodic controls erase the advantage",
+      "result_report_ref": "",
+      "axis_ledger": [
+        {
+          "axis": "structure",
+          "status": "structural_only",
+          "evidence_refs": [
+            "proof-boundary://structural-only"
+          ],
+          "non_claims": [
+            "structure axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "routing_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "routing_quality axis is not promoted by this trace"
+          ]
+        },
+        {
+          "axis": "downstream_task_quality",
+          "status": "unmeasured",
+          "evidence_refs": [],
+          "non_claims": [
+            "downstream_task_quality axis is not promoted by this trace"
+          ]
+        }
+      ],
+      "consumer_requested_axis": "routing_quality",
+      "requested_axis_status": "unmeasured",
+      "adoption_state": "blocked",
+      "routing_permission_effect": "blocked",
+      "failed_negative_control_recorded": false,
+      "fallback_substrate": "baseline://ordinary-dense-or-learned",
+      "fallback_preserved": true,
+      "retirement_or_supersession_path_present": true,
+      "residuals": [
+        "synthetic adoption trace only; no substrate benchmark, sidecar run, or transfer consumer executed",
+        "chapter core support state remains argument"
+      ],
+      "residuals_preserved": true,
+      "support_state_effect": "none",
+      "chapter_core_support_effect": "none",
+      "evidence_transition_created": false,
+      "non_claims": [
+        "does not run a substrate A/B test"
+      ]
+    }
+  ],
+  "trace_assertions": {
+    "exploratory_registration_present": true,
+    "structural_only_receipt_present": true,
+    "consumer_axis_blocked_present": true,
+    "negative_control_retirement_present": true,
+    "missing_baseline_rejected": true,
+    "missing_falsification_rejected": true,
+    "theorem_spillover_route_rejected": true,
+    "unmeasured_axis_allowed_rejected": true,
+    "failed_negative_control_promotion_rejected": true,
+    "fallback_required": true,
+    "support_state_effect_none": true,
+    "chapter_core_support_effect_none": true,
+    "evidence_transition_created": false,
+    "non_claim_boundary": true
+  },
+  "lean_fixture_alignment": {
+    "module": "AsiStackProofs.SearchSubstrates",
+    "proof_tag": "lean:substrates.search.adoption_trace_bridge",
+    "theorem_refs": [
+      "substrate_adoption_trace_fixture_valid",
+      "substrate_adoption_trace_rejects_axis_laundering",
+      "substrate_adoption_trace_preserves_no_promotion_boundary"
+    ],
+    "expected": {
+      "valid_trace_count": 4,
+      "expected_invalid_control_count": 8,
+      "exploratory_registration_present": true,
+      "structural_only_receipt_present": true,
+      "consumer_axis_blocked_present": true,
+      "negative_control_retirement_present": true,
+      "missing_baseline_rejected": true,
+      "theorem_spillover_rejected": true,
+      "failed_negative_control_promotion_rejected": true,
+      "unmeasured_axis_allowed_rejected": true,
+      "fallback_required": true,
+      "support_state_effect_none": true,
+      "non_claim_boundary": true
+    }
+  },
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "verification_result": "pass",
+  "non_claims": [
+    "does not run a substrate A/B test",
+    "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
+    "does not validate Circle, CoilMoECOT, Mamba, TreeLLM, or Theseus substrate adoption",
+    "does not promote the Mathematical and Search Substrates chapter core claim",
+    "does not create a support-state transition"
+  ]
+}

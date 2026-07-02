@@ -2456,6 +2456,7 @@ Draft deliverables:
 
 - A technical-substrate appendix plan with experiment matrix and adoption gates.
 - Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates substrate-adoption record shape, baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or Circle substrate-adoption build exists yet. The separate external rope receipt slice does not validate substrate adoption.
+- Implemented Codex test: Substrate adoption trace. `python3 scripts/validate_substrate_adoption_trace.py` validates four synthetic substrate-adoption trace states (`valid_exploratory_registration`, `valid_structural_only_receipt`, `valid_consumer_axis_blocked`, and `valid_negative_control_retirement`) plus eight expected-invalid controls for missing baseline, missing falsification condition, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support-promotion overclaim, and missing non-claim boundary. This is no substrate A/B test, representation-efficiency result, search-quality result, routing-quality result, compression-quality result, model-quality result, runtime result, Circle/CoilMoECOT/Mamba/TreeLLM/Theseus adoption validation, support-state transition, or chapter-core promotion claim.
 - Planned Codex test: Baseline comparison test.
 - Planned Codex test: Representation efficiency test.
 - Planned Codex test: Falsification review.
@@ -2467,6 +2468,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record includes baseline, measured target, and falsification criterion. | implemented |
 | `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate without passing evidence remains non-core. | implemented |
+| `lean:substrates.search.adoption_trace_bridge` | `AsiStackProofs.SearchSubstrates` | A synthetic substrate-adoption trace admits exploratory, structural-only, consumer-blocked, and retired/refuted states while rejecting missing baselines, theorem spillover, failed-control promotion, unmeasured-axis routing, missing fallback, and support-promotion overclaim. | implemented |
 
 ### Circle Calculus and Proof-Carrying AI Contracts
 
@@ -2744,9 +2746,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 173 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 173 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 173 proof targets, 54 Lean modules, 891 theorem declarations, 713 derived/decomposed, 174 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 174 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 174 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 174 proof targets, 54 Lean modules, 894 theorem declarations, 716 derived/decomposed, 174 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

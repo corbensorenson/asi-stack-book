@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-02 - Add substrate adoption trace
+
+- Added `python3 scripts/validate_substrate_adoption_trace.py`,
+  `docs/substrate_adoption_trace.md`, and
+  `experiments/substrate_adoption_trace/results/2026-07-02-local.json` for a
+  deterministic Mathematical and Search Substrates adoption-trace fixture.
+- The trace validates 4 synthetic states (`valid_exploratory_registration`,
+  `valid_structural_only_receipt`, `valid_consumer_axis_blocked`, and
+  `valid_negative_control_retirement`) and 8 expected-invalid controls for
+  missing baseline, missing falsification condition, theorem spillover,
+  unmeasured-axis routing, failed-control promotion, missing fallback,
+  support-promotion overclaim, and missing non-claim boundary.
+- Added `lean:substrates.search.adoption_trace_bridge` in
+  `AsiStackProofs.SearchSubstrates` for finite trace-summary acceptance,
+  axis-laundering rejection, failed-control/fallback/no-promotion boundary
+  preservation, and non-claim alignment.
+- Updated the live chapter, curated reader chapter, outline, roadmap, manifest,
+  proof scaffolds, and book-gate validation. This is no substrate A/B test,
+  representation-efficiency result, search-quality result, routing-quality
+  result, compression-quality result, model-quality result, runtime result,
+  Circle/CoilMoECOT/Mamba/TreeLLM/Theseus adoption validation, support-state
+  transition, or chapter-core promotion claim.
+- Current proof-depth snapshot: 174 proof targets, 54 Lean modules, 894 theorem
+  declarations, 716 derived/decomposed, 174 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add intent-governed replacement bridge
 
 - Added `python3 scripts/validate_intent_governed_replacement_bridge.py`,
@@ -44,7 +70,7 @@
   current work-board import, benchmark result, model-quality result, safety
   result, alignment result, external review, or support-state-promotion claim.
 - Current proof-depth snapshot: 173 proof targets, 54 Lean modules, 891 theorem
-  declarations, 713 derived/decomposed, 174 direct/projection, 4 unknown/mixed,
+  declarations, 716 derived/decomposed, 174 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add prototype phase gate harness
