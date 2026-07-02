@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-02 - Reduce Spinoza reader table density
+
+- Added one active reader-only semantic overlay operation for
+  `Proof-Carrying Claims and Adversarial Review`, replacing the generated
+  reader and live Human-view `Interfaces` field table with narrative prose
+  while leaving the canonical AI/research field table unchanged.
+- Preserved the claim-ledger, VCM, Verification Bandwidth, proof-artifact,
+  tribunal, planning, and execution handoffs in prose, along with the boundary
+  that proofs, citations, dossiers, verifier outputs, tribunal verdicts,
+  failed attempts, and dissent return only bounded ledger effects.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, the reader chapter review matrix, the
+  v1.0 status snapshot, and the tracked audio-script probe count. The
+  reader-continuity audit now records 44 reader chapters, 116,551 reader words,
+  37 active/applied overlay operations, 0 generated-reader chapter table rows,
+  53 Mermaid diagrams, 0 non-Mermaid code blocks, 6 paragraphs at or above 160
+  words, and 0 high-priority plus 15 medium-priority heuristic review rows.
+- This is a reader projection and Human-view craft increment only; it is not a
+  reader release, ebook/document/PDF/audio artifact, verifier-quality result,
+  theorem-validity result, citation-accuracy audit, semantic-equivalence
+  result, reviewer-independence result, adversarial-probe-quality result,
+  verdict-correctness result, support-state promotion, or source-derived
+  evidence update.
+
 ## 2026-07-02 - Reduce RankFold reader table density
 
 - Added one active reader-only semantic overlay operation for `RankFold,

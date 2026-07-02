@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 36,
+  "operation_count": 37,
   "operations": [
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
@@ -379,6 +379,18 @@
       },
       "content": "An effect receipt exists to keep a successful tool response from turning into a broad success claim. It names the state before the effect when that state is available, then names the state after the effect so review can see what changed. External side effects are recorded separately because messages, deployments, payments, API calls, hardware actions, and institutional changes may need different rollback and incident paths.\n\nRollback handles name the actual mechanism for undoing or repairing an effect when such a mechanism exists. Irreversible residuals name what cannot be undone. Verification references point to checks that the effect matched the contract, while incident references point to denials, exceptions, partial failures, or later reviews.\n\nThe receipt therefore separates evidence of invocation from evidence of correctness. A tool may respond successfully while verification, rollback, approval scope, or residual accounting remains incomplete.",
       "rationale": "Replace the effect-receipt field table with reader prose while preserving the canonical AI/research receipt-field matrix."
+    },
+    {
+      "id": "v1_0.spinoza.interfaces_reader_replace",
+      "target_file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "This layer sits between durable claims and downstream action. Claim ledgers supply the stable claim identity, support state, provenance, contradictions, revision history, and promotion blockers. Spinoza-style verification does not replace that ledger; it writes bounded verification outcomes back to it.\n\nVCM and semantic context cells supply the source and evidence objects that proof, citation, and tribunal records point to. That pointer is useful only when it preserves the boundary: a source reference or context cell is not the same thing as verification success. Verification Bandwidth handles a different question: whether the available context and reviewer capacity are adequate for the risk carried by the claim.\n\nFormal and executable artifacts can enter when the claim type permits them. Lean proofs, GenesisCode-style obligations, Circle-style contracts, procedure logs, replay logs, and benchmark artifacts can support narrow checks, but each artifact needs its own scope, limitations, failed attempts, and non-claims. UAT-style tribunal review handles contested, high-risk, or mismatched cases by recording dossiers, reviewer roles, adversarial probes, dissent, verdicts, required actions, and residuals.\n\nThe field lists in the live research chapter name those records precisely. At reader level, the important idea is simpler: a proof-carrying claim record must say which claim was checked, what tier was requested, what artifact or dossier was used, how the human-language claim was mapped to that artifact, what the verifier or tribunal returned, what failed, what remains out of scope, and what ledger effect is allowed. A tribunal record must say what was reviewed, what evidence boundary was used, who or what played which review role, what challenges were run, what dissent survived, which verdict was issued, and what action or constraint follows.\n\nPlanning and execution consume those outcomes as blockers, constraints, required actions, authority narrowing, human sign-off, or residual work. They do not receive an invisible support-state promotion. That boundary is the point of the interface: stronger claims can ask for stronger records, but every pass, failure, timeout, mismatch, dissent, and verdict returns with an explicit limit.",
+      "rationale": "Replace the generated-reader proof-carrying and tribunal field table with prose while preserving claim-ledger, VCM, verification-bandwidth, proof-artifact, tribunal, planning, and execution handoffs."
     },
     {
       "id": "v1_0.system_boundaries.permission_classes_reader_replace",

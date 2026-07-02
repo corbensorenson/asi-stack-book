@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+  "operations": [
+    {
+      "id": "v1_0.spinoza.interfaces_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces"
+      },
+      "rationale": "Replace the generated-reader proof-carrying and tribunal field table with prose while preserving claim-ledger, VCM, verification-bandwidth, proof-artifact, tribunal, planning, and execution handoffs.",
+      "content_lines": [
+        "This layer sits between durable claims and downstream action. Claim ledgers supply the stable claim identity, support state, provenance, contradictions, revision history, and promotion blockers. Spinoza-style verification does not replace that ledger; it writes bounded verification outcomes back to it.",
+        "",
+        "VCM and semantic context cells supply the source and evidence objects that proof, citation, and tribunal records point to. That pointer is useful only when it preserves the boundary: a source reference or context cell is not the same thing as verification success. Verification Bandwidth handles a different question: whether the available context and reviewer capacity are adequate for the risk carried by the claim.",
+        "",
+        "Formal and executable artifacts can enter when the claim type permits them. Lean proofs, GenesisCode-style obligations, Circle-style contracts, procedure logs, replay logs, and benchmark artifacts can support narrow checks, but each artifact needs its own scope, limitations, failed attempts, and non-claims. UAT-style tribunal review handles contested, high-risk, or mismatched cases by recording dossiers, reviewer roles, adversarial probes, dissent, verdicts, required actions, and residuals.",
+        "",
+        "The field lists in the live research chapter name those records precisely. At reader level, the important idea is simpler: a proof-carrying claim record must say which claim was checked, what tier was requested, what artifact or dossier was used, how the human-language claim was mapped to that artifact, what the verifier or tribunal returned, what failed, what remains out of scope, and what ledger effect is allowed. A tribunal record must say what was reviewed, what evidence boundary was used, who or what played which review role, what challenges were run, what dissent survived, which verdict was issued, and what action or constraint follows.",
+        "",
+        "Planning and execution consume those outcomes as blockers, constraints, required actions, authority narrowing, human sign-off, or residual work. They do not receive an invisible support-state promotion. That boundary is the point of the interface: stronger claims can ask for stronger records, but every pass, failure, timeout, mismatch, dissent, and verdict returns with an explicit limit."
+      ]
+    }
+  ]
+}
