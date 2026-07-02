@@ -113,6 +113,12 @@ promotion. It does not promote the RankFold chapter core claim. It is useful
 because the book now has a concrete local artifact surface to discuss while
 still keeping the broader compression claim at `argument`.
 
+The matching no-promotion decision,
+`evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json`,
+keeps this import at `argument` and records `blocks_promotion` until a fresh
+public-safe compression run, clean or archived source state, decoder review,
+downstream utility, fallback execution, and independent review exist.
+
 ### Concrete RankFold Public-Safe Replay Probe
 
 The RankFold public-safe replay probe (`docs/rankfold_public_safe_probe.md`)
@@ -132,6 +138,12 @@ RankFold codec correctness, NeuralFold compression, compression advantage,
 benchmark performance, downstream utility, fallback execution, deployed
 compression behavior, or support-state promotion. It does not promote the
 RankFold chapter core claim.
+
+The matching no-promotion decision,
+`evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json`,
+keeps this replay at `argument` and records `blocks_promotion` until an enabled
+NeuralFold path, public-safe corpus, decoder review, downstream utility,
+fallback execution, and independent review exist.
 
 | Source | What it supports | Limit |
 |---|---|---|

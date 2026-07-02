@@ -8023,13 +8023,13 @@
               "name": "RankFold artifact import validation",
               "purpose": "Validate the recorded public-safe local RankFold archive observations for 100,000,000-byte decoded artifact digest consensus, archive byte ratios up to 2.76634019 decoded/archive, rfa verify summaries of 1 OK and 0 failed, NEURAL0 inspect metadata, and non-claim boundaries.",
               "implementation_status": "implemented",
-              "result_status": "passes via python3 scripts/validate_rankfold_artifact_import.py; no codec-correctness, benchmark-performance, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claim"
+              "result_status": "passes via python3 scripts/validate_rankfold_artifact_import.py and no-promotion record evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json; no codec-correctness, benchmark-performance, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claim"
             },
             {
               "name": "RankFold public-safe replay probe",
               "purpose": "Validate a fresh local RankFold pack/verify/list/unpack replay over a generated public-safe synthetic text fixture, including RAW0 codec observation, roundtrip-exact digest preservation, no compression advantage, license-disabled NeuralFold boundary, and a single-byte archive mutation negative control.",
               "implementation_status": "implemented",
-              "result_status": "passes via python3 scripts/validate_rankfold_public_safe_probe.py; no NeuralFold-compression, compression-advantage, codec-correctness, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claim"
+              "result_status": "passes via python3 scripts/validate_rankfold_public_safe_probe.py and no-promotion record evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json; no NeuralFold-compression, compression-advantage, codec-correctness, downstream-utility, fallback-execution, deployed-compression, or support-state-promotion claim"
             },
             {
               "name": "Artifact compression admission lifecycle route",

@@ -62,6 +62,11 @@ beyond the recorded local decoded digest observations, benchmark performance,
 downstream utility, fallback execution, deployed compression behavior, or
 support-state promotion. It does not promote the RankFold chapter core claim.
 The core claim remains an architectural argument.
+The corresponding no-promotion record,
+`evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json`,
+keeps the import at `argument` and blocks stronger claims until fresh
+compression, clean or archived source state, decoder review, downstream
+utility, fallback execution, and independent review exist.
 
 The live book also records a separate RankFold public-safe replay probe. This
 one is a fresh local run over a generated 3,936-byte synthetic text file: pack
@@ -74,6 +79,11 @@ So the probe proves only replay discipline and a negative control. It does not
 prove NeuralFold compression, compression advantage, RankFold codec correctness,
 downstream utility, fallback execution, deployed compression behavior, or
 support-state promotion.
+The corresponding no-promotion record,
+`evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json`,
+keeps the replay at `argument` and blocks stronger claims until an enabled
+NeuralFold path, public-safe corpus, decoder review, downstream utility,
+fallback execution, and independent review exist.
 
 ## Mechanism
 

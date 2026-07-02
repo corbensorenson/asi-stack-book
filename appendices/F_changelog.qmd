@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Record RankFold no-promotion decisions
+
+- Added explicit `no_change` evidence-transition records for the RankFold
+  public-safe replay probe and RankFold artifact import:
+  `evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json`
+  and
+  `evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json`.
+  Both records keep their narrowed claim surfaces at `argument` and mark
+  support-state effect as `blocks_promotion`.
+- Extended `scripts/validate_rankfold_public_safe_probe.py` and
+  `scripts/validate_rankfold_artifact_import.py` so each RankFold evidence
+  artifact checks its matching no-promotion record. The public-safe replay
+  remains a one-file RAW0 roundtrip plus corrupt-archive rejection under a
+  license-disabled NeuralFold boundary; the artifact import remains read-only
+  metadata over three existing local `.rfa` archive observations.
+- Updated the RankFold docs, outline, and manifest test rows to make the
+  promotion burden explicit. This creates no upward support-state transition,
+  does not promote the RankFold chapter core claim, and does not prove
+  NeuralFold compression, RankFold codec correctness, compression advantage,
+  fresh benchmark performance, downstream utility, fallback execution, deployed
+  compression behavior, or model quality.
+
 ## 2026-07-02 - Add Runtime adapter adversarial boundary probe
 
 - Added

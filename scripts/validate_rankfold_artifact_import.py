@@ -20,6 +20,7 @@ DOC = ROOT / "docs" / "rankfold_artifact_import.md"
 STRUCTURE = ROOT / "book_structure.json"
 OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
+DECISION = ROOT / "evidence_transitions" / "v1_x_measured" / "rankfold_artifact_import_no_change.json"
 LIVE_CHAPTER = ROOT / "chapters" / "rankfold-neuralfold-and-artifact-compression.qmd"
 READER_CHAPTER = (
     ROOT
@@ -65,6 +66,7 @@ NON_CLAIM_FRAGMENTS = (
 
 SURFACE_FRAGMENTS = (
     "RankFold artifact import",
+    "evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json",
     "100,000,000-byte decoded artifact",
     EXPECTED_DECODED_SHA,
     "2.76634019",
@@ -112,9 +114,51 @@ def chapter_record(structure: dict[str, Any], chapter_id: str) -> dict[str, Any]
     return {}
 
 
+def validate_no_promotion_decision(errors: list[str]) -> None:
+    if not DECISION.exists():
+        errors.append(f"Missing {rel(DECISION)}.")
+        return
+    decision = load_json(DECISION)
+    expected = {
+        "transition_id": "v1_x_measured.rankfold_artifact_import.no_change",
+        "claim_id": "rankfold-neuralfold.local_artifact_import_metadata",
+        "old_support_state": "argument",
+        "new_support_state": "argument",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "verification_result": "pass",
+        "review_status": "accepted",
+        "support_state_effect": "blocks_promotion",
+    }
+    for key, expected_value in expected.items():
+        if decision.get(key) != expected_value:
+            errors.append(f"{rel(DECISION)}: {key} must be {expected_value!r}.")
+    for ref in (rel(DOC), rel(RESULT), "scripts/validate_rankfold_artifact_import.py"):
+        refs = (
+            decision.get("claim_surface_refs", [])
+            + decision.get("claim_record_refs", [])
+            + decision.get("artifact_refs", [])
+            + decision.get("evidence_packet_refs", [])
+        )
+        if ref not in refs:
+            errors.append(f"{rel(DECISION)} must reference {ref}.")
+    require_fragments(
+        rel(DECISION),
+        text_blob(decision),
+        (
+            "source-project dirty-at-import boundary",
+            "dataset and archive bytes are not copied",
+            "compression was not rerun from source input",
+            "no fresh public-safe compression run from source input",
+            "does not promote the RankFold chapter core claim",
+        ),
+        errors,
+    )
+
+
 def main() -> None:
     errors: list[str] = []
-    for path in (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER):
+    for path in (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, DECISION, LIVE_CHAPTER, READER_CHAPTER):
         if not path.exists():
             errors.append(f"Missing {rel(path)}.")
     if errors:
@@ -232,6 +276,7 @@ def main() -> None:
         ),
         errors,
     )
+    validate_no_promotion_decision(errors)
 
     if errors:
         fail(errors)

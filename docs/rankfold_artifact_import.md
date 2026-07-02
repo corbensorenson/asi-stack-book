@@ -10,6 +10,9 @@ did not surface concrete local archive observations.
 The import record is
 `experiments/rankfold_artifact_import/results/2026-07-02-local.json`.
 
+No-promotion decision record:
+`evidence_transitions/v1_x_measured/rankfold_artifact_import_no_change.json`.
+
 It records three existing `.rfa` archive observations for the same
 100,000,000-byte decoded artifact digest:
 
@@ -36,6 +39,13 @@ correctness beyond the recorded local decoded digest observations, compression
 from source input, benchmark performance, downstream utility, fallback
 execution, deployed compression behavior, or any support-state promotion. It
 does not promote the RankFold chapter core claim.
+
+The no-promotion decision record keeps this import at `argument` support for
+its own narrowed claim surface and marks the current support-state effect as
+`blocks_promotion`: a stronger claim still needs a fresh public-safe
+compression run from source input, clean or archived source state, corpus
+provenance, deterministic decoder review, downstream utility and
+fallback-execution tests, and independent review.
 
 ## Validation
 

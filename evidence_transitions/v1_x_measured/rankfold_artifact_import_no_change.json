@@ -1,0 +1,97 @@
+{
+  "transition_id": "v1_x_measured.rankfold_artifact_import.no_change",
+  "claim_id": "rankfold-neuralfold.local_artifact_import_metadata",
+  "claim_surface_refs": [
+    "docs/rankfold_artifact_import.md",
+    "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+    "editions/reader_manuscript/v1_0/chapters/rankfold-neuralfold-and-artifact-compression.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/rankfold_artifact_import/results/2026-07-02-local.json",
+    "scripts/validate_rankfold_artifact_import.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe metadata import over three existing local .rfa archive observations only: digest consensus for one 100,000,000-byte decoded artifact, archive-byte ratios, rfa verify summaries, and NEURAL0 inspect metadata. The source checkout was dirty and the import did not copy dataset bytes, archive bytes, or rerun compression from source input.",
+  "evidence_roles": [
+    "local_artifact_import",
+    "digest_consensus",
+    "read_only_verifier_summary",
+    "codec_metadata_observation",
+    "dirty_checkout_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The artifact import is useful because it surfaces concrete local RankFold archive observations, decoded digest consensus, verifier summaries, and NEURAL0 metadata that were previously hidden in local project output. It remains a read-only metadata import from existing artifacts, not a fresh benchmark or codec-correctness result, so it blocks promotion for compression performance, deterministic decoder correctness, downstream utility, fallback execution, deployed compression, benchmark, or chapter-core claims.",
+  "required_artifacts": [
+    "fresh public-safe compression run from source input",
+    "clean or archived source-project state",
+    "corpus/benchmark provenance and permissions",
+    "deterministic decoder correctness review",
+    "downstream utility and fallback-execution tests",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/rankfold_artifact_import.md",
+    "experiments/rankfold_artifact_import/results/2026-07-02-local.json",
+    "scripts/validate_rankfold_artifact_import.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/rankfold_artifact_import.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#rankfold-neuralfold-and-artifact-compression.core"
+  ],
+  "verification_command": "python3 scripts/validate_rankfold_artifact_import.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "source-project dirty-at-import boundary remains explicit",
+    "dataset and archive bytes are not copied into the repository",
+    "record states that compression was not rerun from source input",
+    "non-claims block codec-correctness, benchmark, downstream-utility, fallback-execution, and deployed-compression claims",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/rankfold_artifact_import.md",
+    "experiments/rankfold_artifact_import/results/2026-07-02-local.json"
+  ],
+  "downgrade_triggers": [
+    "artifact import validator failure",
+    "decoded digest consensus breaks",
+    "rfa verify summary no longer reports 1 OK and 0 failed for each observation",
+    "metadata import described as a fresh compression benchmark",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed RankFold compression claim after a fresh public-safe compression run from source input, clean or archived source state, corpus provenance, decoder correctness review, downstream utility/fallback tests, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "read-only metadata import from existing local artifacts",
+    "dirty source-project boundary",
+    "no dataset bytes or archive bytes copied into this repository",
+    "no compression rerun from source input",
+    "no deterministic decoder proof beyond recorded decoded digest observations",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent compression, codec-correctness, benchmark, or downstream-utility audit",
+  "acceptance_blockers": [
+    "no fresh public-safe compression run from source input",
+    "no clean or archived source-project state",
+    "no corpus benchmark provenance record",
+    "no decoder correctness review",
+    "no downstream utility or fallback-execution test",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-02---record-rankfold-no-promotion-decisions",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote RankFold/NeuralFold above argument",
+    "does not prove RankFold codec correctness, deterministic decoder correctness beyond recorded local decoded digest observations, compression from source input, benchmark performance, downstream utility, fallback execution, or deployed compression behavior",
+    "does not create an upward support-state transition",
+    "does not promote the RankFold chapter core claim"
+  ]
+}

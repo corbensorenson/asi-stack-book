@@ -26,6 +26,7 @@ READER_CHAPTER = (
 )
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
+DECISION = ROOT / "evidence_transitions" / "v1_x_measured" / "rankfold_public_safe_replay_probe_no_change.json"
 
 REQUIRED_NON_CLAIM_TERMS = (
     "does not promote any chapter core claim",
@@ -40,6 +41,7 @@ REQUIRED_NON_CLAIM_TERMS = (
 
 SURFACE_FRAGMENTS = (
     "RankFold public-safe replay probe",
+    "evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json",
     "RAW0",
     "roundtrip-exact",
     "single-byte archive mutation",
@@ -86,6 +88,53 @@ def chapter_record(structure: dict[str, Any], chapter_id: str) -> dict[str, Any]
     return {}
 
 
+def validate_no_promotion_decision(errors: list[str]) -> None:
+    if not DECISION.exists():
+        errors.append(f"Missing {rel(DECISION)}.")
+        return
+    decision = load_json(DECISION)
+    expected = {
+        "transition_id": "v1_x_measured.rankfold_public_safe_replay_probe.no_change",
+        "claim_id": "rankfold-neuralfold.public_safe_replay_probe",
+        "old_support_state": "argument",
+        "new_support_state": "argument",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "verification_result": "pass",
+        "review_status": "accepted",
+        "support_state_effect": "blocks_promotion",
+    }
+    for key, expected_value in expected.items():
+        if decision.get(key) != expected_value:
+            errors.append(f"{rel(DECISION)}: {key} must be {expected_value!r}.")
+    for ref in (
+        rel(DOC),
+        rel(RESULT),
+        "scripts/run_rankfold_public_safe_probe.py",
+        "scripts/validate_rankfold_public_safe_probe.py",
+    ):
+        refs = (
+            decision.get("claim_surface_refs", [])
+            + decision.get("claim_record_refs", [])
+            + decision.get("artifact_refs", [])
+            + decision.get("evidence_packet_refs", [])
+        )
+        if ref not in refs:
+            errors.append(f"{rel(DECISION)} must reference {ref}.")
+    require_fragments(
+        rel(DECISION),
+        text_blob(decision),
+        (
+            "single-byte archive mutation is rejected",
+            "NeuralFold disabled-by-license boundary",
+            "compression_advantage_observed remains false",
+            "no enabled NeuralFold compression path",
+            "does not promote the RankFold chapter core claim",
+        ),
+        errors,
+    )
+
+
 def fail(errors: list[str]) -> None:
     print("RankFold public-safe replay probe validation failed:", file=sys.stderr)
     for error in errors:
@@ -95,7 +144,7 @@ def fail(errors: list[str]) -> None:
 
 def main() -> None:
     errors: list[str] = []
-    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, README, PUBLICATION)
+    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, README, PUBLICATION, DECISION)
     for path in paths:
         if not path.exists():
             errors.append(f"Missing {rel(path)}.")
@@ -211,6 +260,7 @@ def main() -> None:
         ),
         errors,
     )
+    validate_no_promotion_decision(errors)
 
     if errors:
         fail(errors)

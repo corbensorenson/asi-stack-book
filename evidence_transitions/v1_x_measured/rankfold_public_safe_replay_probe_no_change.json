@@ -1,0 +1,97 @@
+{
+  "transition_id": "v1_x_measured.rankfold_public_safe_replay_probe.no_change",
+  "claim_id": "rankfold-neuralfold.public_safe_replay_probe",
+  "claim_surface_refs": [
+    "docs/rankfold_public_safe_probe.md",
+    "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+    "editions/reader_manuscript/v1_0/chapters/rankfold-neuralfold-and-artifact-compression.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/rankfold_public_safe_probe/results/2026-07-02-local.json",
+    "scripts/run_rankfold_public_safe_probe.py",
+    "scripts/validate_rankfold_public_safe_probe.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Fresh local RankFold CLI replay over one generated public-safe synthetic text fixture only: RAW0 pack/verify/list/unpack roundtrip-exact behavior plus a rejected single-byte archive mutation. NeuralFold was disabled by local license and no compression advantage was observed.",
+  "evidence_roles": [
+    "local_replay_probe",
+    "synthetic_public_safe_fixture",
+    "roundtrip_digest_check",
+    "corrupt_archive_negative_control",
+    "license_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The public-safe replay probe is useful because it records command outcomes, exact roundtrip digest preservation, RAW0 codec observation, license-disabled NeuralFold boundary, and corrupt-archive rejection. It remains a tiny synthetic replay with no compression advantage and no enabled NeuralFold path, so it blocks promotion for compression-ratio, codec-correctness, downstream-utility, fallback-execution, deployed-compression, benchmark, or chapter-core claims.",
+  "required_artifacts": [
+    "licensed or otherwise enabled NeuralFold compression path",
+    "public-safe corpus or benchmark suite",
+    "deterministic decoder correctness review",
+    "downstream utility and fallback-execution tests",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/rankfold_public_safe_probe.md",
+    "experiments/rankfold_public_safe_probe/results/2026-07-02-local.json",
+    "scripts/run_rankfold_public_safe_probe.py",
+    "scripts/validate_rankfold_public_safe_probe.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/rankfold_public_safe_probe.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#rankfold-neuralfold-and-artifact-compression.core"
+  ],
+  "verification_command": "python3 scripts/validate_rankfold_public_safe_probe.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "single-byte archive mutation is rejected by rfa verify",
+    "NeuralFold disabled-by-license boundary remains explicit",
+    "RAW0 archive is larger than the tiny synthetic input",
+    "compression_advantage_observed remains false",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/rankfold_public_safe_probe.md",
+    "experiments/rankfold_public_safe_probe/results/2026-07-02-local.json"
+  ],
+  "downgrade_triggers": [
+    "public-safe replay validator failure",
+    "corrupt archive accepted",
+    "RAW0 replay described as NeuralFold compression",
+    "no-compression-advantage run described as a compression-ratio result",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed RankFold replay or compression claim after an enabled compression path, public-safe corpus, deterministic decoder review, downstream utility/fallback tests, benchmark context, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "one tiny synthetic public-safe text fixture",
+    "local dirty source-project boundary",
+    "RAW0 storage rather than NeuralFold compression",
+    "no compression advantage",
+    "no corpus benchmark",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent compression, codec-correctness, benchmark, or downstream-utility audit",
+  "acceptance_blockers": [
+    "no enabled NeuralFold compression path",
+    "no public-safe corpus benchmark",
+    "no decoder correctness review",
+    "no downstream utility or fallback-execution test",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-02---record-rankfold-no-promotion-decisions",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote RankFold/NeuralFold above argument",
+    "does not prove RankFold codec correctness, NeuralFold compression, compression advantage, benchmark performance, downstream utility, fallback execution, deployed compression behavior, model quality, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote the RankFold chapter core claim"
+  ]
+}
