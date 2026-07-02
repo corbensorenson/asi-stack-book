@@ -95,6 +95,24 @@ quality, reasoning quality, long-context usefulness, speed, memory reduction,
 KV-cache behavior, sparse-attention adequacy, learned-memory behavior, or
 transfer success.
 
+The book now has one concrete Circle receipt for this boundary. In the local
+Circle checkout at commit `63b0f511`, the `cyclic_memory_residue_winding`
+receipt `CC-AI-CONTRACT-MEMORY-001` records a finite residue/winding fixture:
+`residue_slot=7`, `winding=2`, `same_residue_events=[7, 15, 23, 31]`,
+`same_residue_windings=[0, 1, 2, 3]`, and `max_alias_load=4`. The strict
+receipt accepted theorem IDs `AIM-T0001`, `AIM-T0002`, `AIM-T0004`, and
+`AIM-T0005`, required `MEMORY-ATTACH-WINDING-ALIAS-PROVENANCE` and
+`MEMORY-AUDIT-FINITE-ALIAS-LOAD`, recorded fingerprint
+`a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a`, and its
+Circle CLI test reported `3 passed in 2.51s`.
+
+That receipt makes the example less abstract, but it does not change the
+chapter claim. It shows structural alias bookkeeping. It does not promote any
+chapter core claim, does not create a support-state transition, and does not
+prove retrieval quality, reasoning quality, model quality, context length,
+speed, memory scaling, throughput, paging correctness, deployment safety,
+transfer, or ASI.
+
 The useful move is custody, not promotion. A memory contract should say what
 happened to the context object as it moved through slots, winding, freshness,
 coverage, recurrence, and fallback. It should also say which later claims are

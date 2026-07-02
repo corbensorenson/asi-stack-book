@@ -1,0 +1,120 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-07-02-local-circle-cyclic-memory-receipt-slice",
+  "slice_id": "circle_cyclic_memory_receipt_slice",
+  "external_project": {
+    "name": "Circle Calculus",
+    "public_remote": "https://github.com/corbensorenson/circle-calculus",
+    "git_commit": "63b0f511",
+    "worktree_state": "clean_before_commands"
+  },
+  "environment": "local external Circle Calculus checkout; outputs recorded here as public-safe summaries without vendoring the external project",
+  "commands": [
+    {
+      "command": "PYTHONPATH=. python3 scripts/cyclic_memory_certify.py --format json",
+      "verification_result": "pass",
+      "observed_summary": "contract_passed true; ready_for_downstream_fixture_use true; required_fields_present true; all_theorem_ids_proved true; theorem_count 4; bank_size 8; event_index 23; event_count 32; residue_slot 7; winding 2; same_residue_events [7, 15, 23, 31]; same_residue_windings [0, 1, 2, 3]; max_alias_load 4",
+      "output_sha256": "67d4a8f79a3e12e673e35f979360d168a62522e99e1b76c190d0ecd3020d1bf9",
+      "output_bytes": 5630
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind cyclic_memory_residue_winding --digest --field same_residue_events --field same_residue_windings --field max_alias_load --include-recommendations",
+      "verification_result": "pass",
+      "observed_summary": "circle AI contract digest ok: cyclic_memory_residue_winding; id=CC-AI-CONTRACT-MEMORY-001 ready=True fields=3 missing=0 theorems=4; recommendations MEMORY-ATTACH-WINDING-ALIAS-PROVENANCE and MEMORY-AUDIT-FINITE-ALIAS-LOAD",
+      "output_sha256": "e87f0835f24fca86c62b028582e40ed2792be9581da0f8fe3d972168d9e0fafc",
+      "output_bytes": 895
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind cyclic_memory_residue_winding --receipt --format json --field same_residue_events --field same_residue_windings --field max_alias_load --require-theorem AIM-T0001 --require-theorem AIM-T0002 --require-theorem AIM-T0004 --require-theorem AIM-T0005 --require-recommendation MEMORY-ATTACH-WINDING-ALIAS-PROVENANCE --require-recommendation MEMORY-AUDIT-FINITE-ALIAS-LOAD",
+      "verification_result": "pass",
+      "observed_summary": "accepted true; receipt_schema circle_calculus.ai_contract_acceptance_receipt.v0; contract_id CC-AI-CONTRACT-MEMORY-001; kind cyclic_memory_residue_winding; pack_content_fingerprint df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae; contract_content_fingerprint a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a",
+      "output_sha256": "4efa49e37b258c58a67fd6915ff26772bd53cff4937329f9382c98530c39426e",
+      "output_bytes": 3924
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m pytest tests/test_cyclic_memory_certifier_cli.py -q",
+      "verification_result": "pass",
+      "observed_summary": "3 passed in 2.51s",
+      "output_sha256": "657b1e3ad1e0cd9c3ab032ed29b580e716a78fc082f3d3517dffc07f7ce070a6",
+      "output_bytes": 98
+    }
+  ],
+  "accepted_receipt": {
+    "accepted": true,
+    "contract_id": "CC-AI-CONTRACT-MEMORY-001",
+    "kind": "cyclic_memory_residue_winding",
+    "receipt_schema": "circle_calculus.ai_contract_acceptance_receipt.v0",
+    "schema_id": "circle_calculus.ai_contract_pack.v0",
+    "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+    "contract_content_fingerprint": "a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a",
+    "source_paper": "papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md",
+    "required_theorem_ids": [
+      "AIM-T0001",
+      "AIM-T0002",
+      "AIM-T0004",
+      "AIM-T0005"
+    ],
+    "required_recommendation_ids": [
+      "MEMORY-ATTACH-WINDING-ALIAS-PROVENANCE",
+      "MEMORY-AUDIT-FINITE-ALIAS-LOAD"
+    ],
+    "evidence_fields": {
+      "bank_size": 8,
+      "event_index": 23,
+      "event_count": 32,
+      "residue_slot": 7,
+      "winding": 2,
+      "same_residue_events": [
+        7,
+        15,
+        23,
+        31
+      ],
+      "same_residue_windings": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "max_alias_load": 4,
+      "slot_loads": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  },
+  "discarded_attempts": [
+    {
+      "command": "python3 scripts/cyclic_memory_certify.py --format json",
+      "outcome": "discarded_environment_error",
+      "reason": "ModuleNotFoundError: No module named 'circle_math'; rerun succeeded with PYTHONPATH=."
+    },
+    {
+      "command": "shasum -a 256 /tmp/asi_circle_cyclic_memory_*.json /tmp/asi_circle_cyclic_memory_*.txt",
+      "outcome": "discarded_local_hashing_error",
+      "reason": "The local shell inherited unsupported C.UTF-8 locale settings for shasum; rerun used en_US.UTF-8 plus Python hashlib."
+    }
+  ],
+  "support_state_effect": "none",
+  "verification_result": "pass",
+  "residuals": [
+    "The external Circle checkout is not vendored into this public repository.",
+    "The result records local external-project commands and output digests, not a clean ASI-side CI replay of Circle.",
+    "The receipt concerns one cyclic memory residue/winding fixture and does not generalize to all Circle memory, recurrence, sparse attention, or learned-memory claims.",
+    "A future evidence transition would require a separate accepted review record."
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not create a support-state transition",
+    "does not prove retrieval quality, reasoning quality, model quality, context length, speed, memory scaling, throughput, paging correctness, deployment safety, transfer, or ASI",
+    "does not prove deployed proof-contract transport inside The ASI Stack",
+    "does not reproduce Theseus, MoECOT, VCM, PlanForge, retrieval benchmarks, long-context benchmarks, policy-training, or simulation results",
+    "does not make the external Circle checkout a vendored public dependency"
+  ]
+}

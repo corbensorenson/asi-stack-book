@@ -547,6 +547,46 @@ def main() -> None:
         f"bridge prose is guarded against meta-reader and meta-book scaffolding and must be at least 170 words excluding the source-only heading, must open with at least 11 words, must close with at least 11 words, must avoid known repeated bridge formulas, with the current bridge minimum at {human_min_words} words, opening-sentence minimum at {human_min_opening_words} words, closing-sentence minimum at {human_min_closing_words} words, and targeted template-phrase count at {human_template_phrase_hits}",
     ]
 
+    old_harness_start = (
+        "| Test harnesses | Thirty-eight synthetic, deterministic, measured, local replay, or local artifact-import checks are wired into book validation; "
+        "twenty-two are wired into the Phase 5 registry and sixteen chapter-specific/support checks are book-gate-only: the stack layer traceability audit, "
+        "the artifact graph replay harness, the procedural memory loop harness, the routing decision lease harness, the cyclic memory contract harness, "
+        "the context transaction memory-store harness, the simulation transfer boundary harness, the resource workflow trace harness, the resource live probe harness, "
+        "the resource workload-quality probe, the resource load-stability probe, the Theseus support replay probe, the Compact GVR synthetic slice, "
+        "the hive admission harness, the cognitive compilation trace harness, and the RankFold artifact import;"
+    )
+    non_infra_start = (
+        "| Non-infrastructure measured slice | The first bounded non-infrastructure measured/replayed slice checks four Costed Route Records and four Resource Budget Records, "
+        "rejects the cheaper failed-verification negative control `route://cheap-unverified-transform`, rejects the cheaper hidden-residual negative control `route://hidden-residual-auto-merge`, "
+        "keeps the adequate overkill baseline `route://frontier-manual-review` eligible, and selects `route://bounded-transform-plus-verifier` with a 66.98 percent synthetic cost reduction while preserving fallback, residual, and non-claim boundaries. "
+        "The same validator checks that the finite `AsiStackProofs.ResourceEconomics` Lean fixture matches the public JSON costs, selected route, negative controls, eligibility fields, and selector-state trace theorem `costed_route_fixture_trace_selects_lowest_eligible_route`."
+    )
+    if old_harness_start in expected_fragments and non_infra_start in expected_fragments:
+        start = expected_fragments.index(old_harness_start)
+        end = expected_fragments.index(non_infra_start)
+        current_harness_fragments = [
+            "| Test harnesses | Thirty-nine synthetic, deterministic, measured, local replay, local external-project receipt, or local artifact-import checks are wired into book validation; twenty-two are wired into the Phase 5 registry and seventeen chapter-specific/support checks are book-gate-only:",
+            "the Circle cyclic-memory receipt slice",
+            "CC-AI-CONTRACT-MEMORY-001",
+            "same_residue_events=[7, 15, 23, 31]",
+            "same_residue_windings=[0, 1, 2, 3]",
+            "max_alias_load=4",
+            "a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a",
+            "3 passed in 2.51s",
+            "Appendix E remains the detailed per-harness source of truth",
+            "None of these harnesses promotes chapter core claims",
+            "`appendices/E_codex_test_specs.qmd`",
+            "`docs/cyclic_memory_contract_harness.md`",
+            "`docs/circle_cyclic_memory_receipt_slice.md`",
+            "`experiments/circle_cyclic_memory_receipt_slice/results/2026-07-02-local.json`",
+            "`python3 scripts/validate_cyclic_memory_contracts.py`",
+            "`python3 scripts/validate_circle_cyclic_memory_receipt_slice.py`",
+            "`docs/rankfold_artifact_import.md`",
+            "`experiments/rankfold_artifact_import/results/2026-07-02-local.json`",
+            "`python3 scripts/validate_rankfold_artifact_import.py`",
+        ]
+        expected_fragments = expected_fragments[:start] + current_harness_fragments + expected_fragments[end:]
+
     if len(chapters) != chapter_file_count:
         errors.append(f"Manifest has {len(chapters)} chapters but chapters/ has {chapter_file_count} .qmd files.")
     if missing_notes:

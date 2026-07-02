@@ -8967,13 +8967,20 @@
               "status": "implemented by cyclic memory contract harness; validated locally; no KV-cache freshness or retrieval-quality claim",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_cyclic_memory_contracts.py`; no KV-cache freshness or retrieval-quality claim"
+            },
+            {
+              "name": "Circle cyclic memory receipt-slice validation",
+              "purpose": "Check that the local external Circle cyclic-memory receipt slice surfaces `CC-AI-CONTRACT-MEMORY-001`, theorem IDs `AIM-T0001`, `AIM-T0002`, `AIM-T0004`, `AIM-T0005`, same-residue events `[7, 15, 23, 31]`, same-residue windings `[0, 1, 2, 3]`, `max_alias_load=4`, strict receipt fingerprint `a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a`, and Circle CLI output `3 passed in 2.51s` without promotion drift.",
+              "status": "implemented; passing via `python3 scripts/validate_circle_cyclic_memory_receipt_slice.py`",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_circle_cyclic_memory_receipt_slice.py`; structural external-project receipt only; no retrieval-quality, long-context, model-quality, speed, memory-scaling, deployment, transfer, ASI, or support-state-transition claim"
             }
           ],
           "claim_label": "Design rationale",
           "open_evidence_gaps": [
-            "Appendix C now records exact passage-reviewed mappings for all four assigned coil-attention and cyclic-memory sources; support remains at argument until local KV-cache freshness checkers, sparse-coverage harnesses, recurrence benchmarks, learned-model memory tests, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist.",
-            "The cyclic_memory_contract fixture validates schema/example consistency and AsiStackProofs.CoilAttentionMemory implements local finite-record alias/promotion gates plus bounded negative cases for hidden aliasing, structure-only retrieval-quality promotion, recurrence admission without budget/exit/fallback records, and stale reads admitted as fresh without residual escrow; no Circle sidecar, contract generator, KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, or Theseus transfer command has been run from this repo.",
-            "Pinned Circle project references support structural-contract and non-claim discussion, but this ASI Stack repo did not rerun Circle commands, import generated contract packs, or validate external Circle Lean proofs as local evidence.",
+            "Appendix C now records exact passage-reviewed mappings for all four assigned coil-attention and cyclic-memory sources; support remains at argument until local KV-cache freshness checkers, sparse-coverage harnesses, recurrence benchmarks, learned-model memory tests, Theseus transfer consumers, or accepted evidence transitions exist.",
+            "The cyclic_memory_contract fixture validates schema/example consistency and AsiStackProofs.CoilAttentionMemory implements local finite-record alias/promotion gates plus bounded negative cases for hidden aliasing, structure-only retrieval-quality promotion, recurrence admission without budget/exit/fallback records, and stale reads admitted as fresh without residual escrow; the Circle cyclic-memory receipt slice now imports one local external-project residue/winding fixture for `CC-AI-CONTRACT-MEMORY-001`, while KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, long-context test, and Theseus transfer command evidence remain open.",
+            "The Circle cyclic-memory receipt slice records Circle commit `63b0f511`, theorem IDs `AIM-T0001`, `AIM-T0002`, `AIM-T0004`, and `AIM-T0005`, same-residue events `[7, 15, 23, 31]`, same-residue windings `[0, 1, 2, 3]`, `max_alias_load=4`, strict receipt fingerprint `a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a`, and `3 passed in 2.51s`, but no support-state transition.",
             "VCM material is used only for governed context/addressability, authority, adequacy/admission, taint, revocation, invalidation, audit, and residency boundaries; it does not support recurrence quality, retrieval quality, long-context performance, or learned memory behavior.",
             "No support-state promotion, raw source publication, downstream model-quality result, retrieval-quality result, long-context result, performance result, memory-savings result, or transfer-result claim is implied by this drafting pass."
           ],
@@ -9010,7 +9017,7 @@
             {
               "source_id": "coil_attention_memory",
               "mapped_support": "Supports structural guardrails for cyclic memory, KV-cache freshness, sparse-attention coverage, recurrence schedules, loop exits, work budgets, residue/winding/provenance, and alias diagnostics.",
-              "limits": "Proof-linked structural source only; no Circle sidecars, contract generators, certifier commands, learned-model experiments, retrieval-quality tests, performance tests, or long-context results were run here.",
+              "limits": "Proof-linked structural source only; the Circle cyclic-memory receipt slice imports one residue/winding fixture, but no KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, performance test, or long-context result was run here.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "local-project:circle-math@63b0f511:papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md:1-18",
@@ -9036,12 +9043,12 @@
                 "local-project:circle-math@63b0f511:docs/RECURRENCE_SCHEDULE_CERTIFIER_QUICKSTART.md:101-122",
                 "local-project:circle-math@63b0f511:docs/RECURRENCE_SCHEDULE_CERTIFIER_QUICKSTART.md:172-195"
               ],
-              "passage_review_note": "Reviewed pinned local Circle AI 02 paper and memory/KV/sparse/recurrence quickstarts for cyclic slot indexing, residue-plus-winding alias visibility, KV freshness and stale-read boundaries, sparse coverage/gap certificates, recurrence schedules, loop-exit/work-budget fields, ordinary-baseline requirements, and explicit non-claims; no Circle sidecar, contract generator, certifier command, learned-model experiment, retrieval-quality test, performance test, or long-context result was run from this repo."
+              "passage_review_note": "Reviewed pinned local Circle AI 02 paper and memory/KV/sparse/recurrence quickstarts for cyclic slot indexing, residue-plus-winding alias visibility, KV freshness and stale-read boundaries, sparse coverage/gap certificates, recurrence schedules, loop-exit/work-budget fields, ordinary-baseline requirements, and explicit non-claims; the separate Circle cyclic-memory receipt slice imports one residue/winding command output, but no KV-cache certifier, sparse-attention certifier, recurrence certifier, learned-model experiment, retrieval-quality test, performance test, or long-context result was run from this repo."
             },
             {
               "source_id": "circle_ai_contract_suite",
               "mapped_support": "Supports theorem-linked contract families and consumer fields for KV-cache freshness, sparse attention, recurrence schedules, cyclic memory residue/winding, multicoil phase, and explicit non-claims.",
-              "limits": "A separate external Circle rope receipt slice is recorded in docs/circle_external_receipt_slice.md, but no generated contract pack, cyclic-memory contract command, receipt check, fingerprint check, or ASI Stack consumer gate was run from this repo.",
+              "limits": "Separate external Circle receipt slices are recorded for RoPE in docs/circle_external_receipt_slice.md and cyclic memory in docs/circle_cyclic_memory_receipt_slice.md; the cyclic-memory slice is a local external-project residue/winding receipt only, not a learned-memory, long-context, runtime, or support-state result.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "local-project:circle-math@63b0f511:docs/AI_CONTRACT_SUITE.md:7-15",
@@ -9051,7 +9058,7 @@
                 "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:56-88",
                 "local-project:circle-math@63b0f511:docs/CIRCLE_AI_CONTRACTS_INTEGRATION.md:114-203"
               ],
-              "passage_review_note": "Reviewed pinned local Circle contract-suite and integration-guide docs for KV-cache, sparse-attention, recurrence, cyclic-memory, receipt/readiness, fingerprint, theorem-id, consumer-check, minimum-field, planner-recommendation, and non-claim surfaces; no generated contract pack, Circle command, receipt check, receipt replay, fingerprint check, downstream consumer, or Lean build was run from this repo."
+              "passage_review_note": "Reviewed pinned local Circle contract-suite and integration-guide docs for KV-cache, sparse-attention, recurrence, cyclic-memory, receipt/readiness, fingerprint, theorem-id, consumer-check, minimum-field, planner-recommendation, and non-claim surfaces; the separate cyclic-memory slice records one Circle receipt command and fingerprint, but no generated contract pack, downstream consumer, or Lean build was run from this repo."
             },
             {
               "source_id": "theseus_circle_transfer",
