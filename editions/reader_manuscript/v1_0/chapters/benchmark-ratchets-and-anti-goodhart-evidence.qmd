@@ -246,6 +246,13 @@ anti-Goodhart harness. The harness checks saturation, holdout/contamination
 and mutation-or-transfer gates, regression references, negative-result
 retention, and promotion-blocking semantics.
 
+The current fixture bridge goes one step further without pretending to be an
+empirical benchmark. It ties the synthetic harness to a small Lean mirror: two valid
+synthetic paths, one promotion-ready and one saturated-into-regression, and
+five expected-invalid controls for missing anti-Goodhart checks, blocked
+ratchet evidence, reward-as-truth confusion, saturated promotion, and release
+without approval.
+
 That is useful protocol discipline. It is not an empirical benchmark run. It
 does not prove hidden holdout quality, transfer validity, contamination
 resistance, regression-suite quality, anti-Goodhart effectiveness, source
@@ -297,11 +304,13 @@ ASI Stack has run an empirical benchmark suite or improved model capability.
 
 Current evidence consists of source synthesis, source-note mappings, external
 benchmark-science orientation, a benchmark-ratchet fixture, finite Lean
-record predicates, and a synthetic anti-Goodhart validation harness. Those
-artifacts support the shape of the evidence packet. They do not prove
-benchmark success, hidden-holdout validity, transfer, contamination
-resistance, regression-suite quality, source-reported benchmark replay,
-Theseus readiness, deployment readiness, model quality, or ASI progress.
+record predicates, a synthetic anti-Goodhart validation harness, and a fixture
+bridge that checks two valid synthetic paths plus five expected-invalid
+controls against a Lean summary. Those artifacts support the shape of the
+evidence packet. They do not prove benchmark success, hidden-holdout validity,
+transfer, contamination resistance, regression-suite quality, source-reported
+benchmark replay, Theseus readiness, deployment readiness, model quality, or
+ASI progress.
 
 The chapter therefore keeps its own score honest: it can describe the ratchet
 that would be needed before benchmark evidence moves a claim, but it cannot

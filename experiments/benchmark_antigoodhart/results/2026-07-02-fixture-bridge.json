@@ -1,0 +1,71 @@
+{
+  "schema_version": "asi_stack.benchmark_antigoodhart_fixture_bridge.v0",
+  "result_id": "2026-07-02-benchmark-antigoodhart-fixture-bridge",
+  "recorded_date": "2026-07-02",
+  "command": "python3 scripts/validate_benchmark_fixture_bridge.py",
+  "input_fixture_dir": "experiments/benchmark_antigoodhart/fixtures",
+  "result_kind": "synthetic_cross_record_fixture_bridge",
+  "proof_bridge_type": "Python/Lean finite fixture-summary equivalence",
+  "valid_fixture_count": 2,
+  "expected_invalid_fixture_count": 5,
+  "valid_scenarios": [
+    "benchmark-goodhart-valid-promote-001",
+    "benchmark-goodhart-valid-regression-floor-001"
+  ],
+  "expected_invalid_scenarios": [
+    "benchmark-goodhart-invalid-missing-checks",
+    "benchmark-goodhart-invalid-policy-promotes-blocked",
+    "benchmark-goodhart-invalid-reward-truth",
+    "benchmark-goodhart-invalid-saturated-promoted",
+    "benchmark-goodhart-invalid-steward-no-approval"
+  ],
+  "promotion_ready_valid_count": 1,
+  "regression_floor_valid_count": 1,
+  "invalid_control_fixture_files": [
+    "invalid_missing_antigoodhart_checks.json",
+    "invalid_policy_promotes_blocked_ratchet.json",
+    "invalid_reward_proxy_as_truth.json",
+    "invalid_saturated_benchmark_promoted.json",
+    "invalid_steward_release_without_approval.json"
+  ],
+  "control_coverage": {
+    "missing_goodhart_checks_rejected": true,
+    "policy_from_blocked_ratchet_rejected": true,
+    "reward_as_truth_rejected": true,
+    "saturated_promotion_rejected": true,
+    "release_without_approval_rejected": true
+  },
+  "lean_fixture_alignment": {
+    "module": "AsiStackProofs.BenchmarkRatchets",
+    "proof_tag": "lean:benchmarks.ratchet.fixture_bridge",
+    "theorem_refs": [
+      "benchmark_antigoodhart_fixture_bridge_valid",
+      "benchmark_antigoodhart_fixture_bridge_has_expected_controls",
+      "benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion"
+    ],
+    "expected": {
+      "valid_fixture_count": 2,
+      "expected_invalid_fixture_count": 5,
+      "promotion_ready_valid_count": 1,
+      "regression_floor_valid_count": 1,
+      "missing_goodhart_checks_rejected": true,
+      "policy_from_blocked_ratchet_rejected": true,
+      "reward_as_truth_rejected": true,
+      "saturated_promotion_rejected": true,
+      "release_without_approval_rejected": true,
+      "support_state_effect_none": true,
+      "non_claim_boundary": true
+    }
+  },
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "verification_result": "pass",
+  "non_claims": [
+    "does not run an empirical benchmark",
+    "does not prove hidden-holdout integrity",
+    "does not prove policy-training quality",
+    "does not execute a steward release",
+    "does not promote chapter core support"
+  ]
+}

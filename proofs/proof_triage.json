@@ -1271,6 +1271,16 @@
       "rationale": "Implemented in AsiStackProofs.BenchmarkRatchets as a finite saturation predicate: a saturated benchmark alone cannot promote higher readiness."
     },
     {
+      "tag": "lean:benchmarks.ratchet.fixture_bridge",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "module": "AsiStackProofs.BenchmarkRatchets",
+      "formal_target": "The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.BenchmarkRatchets as a finite fixture-summary mirror for the benchmark anti-Goodhart harness: it records positive/negative synthetic controls and no-support-promotion boundaries only, without proving empirical benchmark quality, hidden-holdout integrity, policy-training quality, steward execution, release safety, Theseus benchmark practice, or chapter-core support movement."
+    },
+    {
       "tag": "lean:policy_optimization.update.operational_invariant",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "module": "AsiStackProofs.PolicyOptimization",

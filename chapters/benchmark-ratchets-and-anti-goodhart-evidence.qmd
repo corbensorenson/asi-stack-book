@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-02"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -22,7 +22,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records passage-reviewed mappings for all twelve assigned sources, including source-note-only review for connector/recovery sources; support remains argument until run records, benchmark artifacts, contamination audits, regression-preservation tests, hidden-transfer tests, local Theseus report verification, or accepted evidence transitions justify promotion."
-  - "The benchmark_ratchet_record fixture validates schema/example consistency, AsiStackProofs.BenchmarkRatchets implements finite record and ratchet-decision predicates, and the benchmark anti-Goodhart harness validates synthetic saturation, holdout/contamination/mutation-or-transfer, regression-ref, negative-result, and promotion-blocking semantics; no empirical benchmark run, hidden holdout, mutation test, transfer check, contamination audit, source-reported benchmark replay, or current Theseus report verification has been run."
+  - "The benchmark_ratchet_record fixture validates schema/example consistency, AsiStackProofs.BenchmarkRatchets implements finite record and ratchet-decision predicates, the benchmark anti-Goodhart harness validates synthetic saturation, holdout/contamination/mutation-or-transfer, regression-ref, negative-result, and promotion-blocking semantics, and the benchmark fixture bridge validates 2 valid fixtures and 5 expected-invalid controls against a Lean finite fixture mirror; no empirical benchmark run, hidden holdout, mutation test, transfer check, contamination audit, policy-training run, steward release, source-reported benchmark replay, or current Theseus report verification has been run."
   - "Connector/recovery mappings for Coherence Exchange, MoECOT, and Road To AGI were reviewed against source notes only because raw connector text is not published here; they remain planning/status context rather than benchmark evidence."
   - "No support-state promotion, benchmark success, runtime readiness, model quality, deployment readiness, or raw source publication is implied."
 ---
@@ -35,13 +35,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
+| Last updated | 2026-07-02 |
 | Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; connector/recovery: `moecot`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; connector/recovery: `coherence_exchange`, `moecot` |
-| Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.BenchmarkRatchets` implements finite capability-promotion evidence, saturated-benchmark higher-readiness gates, and a ratchet-decision envelope for readiness promotion, regression-floor movement, and contamination blocking; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic saturation, holdout/contamination/mutation-or-transfer, regression-ref, negative-result, and promotion-blocking semantics. Empirical benchmark runs, hidden holdout execution, contamination audits, source-reported replay, and current Theseus report verification remain planned. |
+| Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.BenchmarkRatchets` implements finite capability-promotion evidence, saturated-benchmark higher-readiness gates, a ratchet-decision envelope, and `lean:benchmarks.ratchet.fixture_bridge`; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic saturation, holdout/contamination/mutation-or-transfer, regression-ref, negative-result, and promotion-blocking semantics; `python3 scripts/validate_benchmark_fixture_bridge.py` validates `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json` against 2 valid fixtures, 5 expected-invalid controls, and the Lean fixture bridge. Empirical benchmark runs, hidden holdout execution, contamination audits, policy-training runs, steward release execution, source-reported replay, and current Theseus report verification remain planned. |
 
 ## Drafting guardrail
 
@@ -137,7 +137,7 @@ flowchart LR
 
 A benchmark ratchet record tracks benchmark state, baseline, command, environment, mastery threshold, saturation, residuals, regressions, holdouts, mutation/transfer checks, contamination audit, claim support effect, and negative results.
 
-In practice, this means benchmark work should leave behind enough material for a future reader or agent to reconstruct the decision. If a model clears a threshold but fails a neighboring task family, the residual belongs beside the result. If a benchmark is useful only as a smoke test, the record should say so. If a source reports a command that this repository has not rerun, the record should preserve that boundary instead of laundering it into local evidence. The book's evidence discipline depends on this mundane bookkeeping.
+In practice, this means benchmark work should leave behind enough material for a future reader or agent to reconstruct the decision. If a model clears a threshold but fails a neighboring task family, the residual belongs beside the result. If a benchmark is useful only as a smoke test, the record should say so. If a source reports a command that this repository has not rerun, the record should preserve that boundary instead of laundering it into local evidence. Benchmark evidence discipline depends on this mundane bookkeeping.
 
 The ratchet should also name the capability field it pressures. Without an SCF boundary, benchmark success can attach to a vague product, model, or agent identity and then survive migrations it was never meant to cover. With an SCF boundary, the benchmark can preserve a regression floor for the specific capability that earned it.
 
@@ -206,6 +206,14 @@ A toy ratchet ledger is the smallest concrete extension: one passing run record,
 
 The toy ledger should include one intentionally contaminated case and one source-reported-only case. Those cases are useful because they force the harness to preserve evidence boundaries: contamination creates a blocked or quarantine decision, and source-reported status remains source-reported until the exact command, environment, data boundary, and artifacts are imported or rerun.
 
+### Concrete Fixture Bridge Boundary
+
+The current repository bridge is deliberately narrower than a toy benchmark ledger. `python3 scripts/validate_benchmark_fixture_bridge.py` recomputes the existing benchmark anti-Goodhart fixture set and checks `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json` against the same facts mirrored in `AsiStackProofs.BenchmarkRatchets`.
+
+The bridge records 2 valid fixtures and 5 expected-invalid controls. The valid side contains one promotion-ready synthetic path and one saturated-benchmark regression-floor path. The invalid controls reject missing anti-Goodhart checks, policy promotion from blocked ratchet evidence, reward-as-truth confusion, saturated benchmark promotion, and steward release without approval. The Lean fixture mirror covers the finite count/control/no-promotion boundary for that synthetic record set.
+
+The bridge makes the anti-Goodhart record discipline operational at the record boundary: a synthetic success path and five nearby failure paths are checked together instead of narrated separately. It is not a benchmark run, hidden-holdout validation, contamination detector, policy-training result, steward-agent execution, release-safety review, Theseus replay, model-quality result, or support-state transition.
+
 ## Beyond the State of the Art
 
 The benchmark endpoint is an operating system for evaluation, not a leaderboard appendix. Every evaluation would become a governed evidence packet with enough history to tell whether the system learned a capability, learned a test, leaked a public calibration surface, or merely improved a proxy.
@@ -230,6 +238,7 @@ The completed evaluation surface would not call a capability "better" because a 
 | Benchmark ratchet record fixture validation | Validate that a ratchet record names benchmark state, run refs, baselines, saturation, residual escrow, anti-Goodhart checks, promotion decision, support effect, and negative results. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Saturation detection test | Check that saturated benchmarks move to regression rather than broad promotion. | implemented by benchmark anti-Goodhart harness for synthetic saturated/regression-only records; no benchmark run |
 | Hidden benchmark transfer test | Check that transfer and contamination fields exist before support promotion. | implemented by benchmark anti-Goodhart harness for synthetic holdout, contamination, and mutation-or-transfer gates; no hidden benchmark run |
+| Benchmark anti-Goodhart fixture bridge | Check that the synthetic harness result record, 2 valid fixtures, 5 expected-invalid controls, and Lean fixture mirror agree without creating benchmark or policy evidence. | implemented by `python3 scripts/validate_benchmark_fixture_bridge.py`; no empirical benchmark, policy-training run, steward release, support-state transition, or chapter-core promotion |
 | Contamination audit test | Check that suspected leakage, public-calibration spending, or benchmark-answer exposure blocks or quarantines promotion. | planned; not run |
 | Floor/frontier split test | Check that a saturated benchmark can become a regression floor while a different frontier remains required for stronger claims. | planned; not run |
 | Source-reported boundary test | Check that source-reported commands or benchmark summaries cannot be marked locally reproduced without imported artifacts and replay metadata. | planned; not run |
@@ -241,8 +250,9 @@ The completed evaluation surface would not call a capability "better" because a 
 |---|---|---|---|
 | `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | implemented |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | implemented |
+| `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, and no-support-promotion boundaries. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over capability-promotion reviews, saturated-benchmark promotion reviews, and ratchet-decision reviews. They prove only record-level gates: capability promotion requires benchmark evidence plus preserved regression records, a saturated benchmark alone cannot promote higher readiness, accepted readiness promotion records require transfer or mutation checks plus preserved negative and regression records, saturated benchmarks moved to regression-floor status require preserved regression records, and contaminated reviews cannot promote readiness. They do not prove benchmark success, transfer, contamination resistance, regression-suite quality, anti-Goodhart effectiveness, or empirical capability gains.
+These Lean hooks are implemented as finite-record predicates over capability-promotion reviews, saturated-benchmark promotion reviews, ratchet-decision reviews, and the synthetic fixture-bridge summary. They prove only record-level gates: capability promotion requires benchmark evidence plus preserved regression records, a saturated benchmark alone cannot promote higher readiness, accepted readiness promotion records require transfer or mutation checks plus preserved negative and regression records, saturated benchmarks moved to regression-floor status require preserved regression records, contaminated reviews cannot promote readiness, and the tracked fixture bridge preserves its expected positive/negative synthetic controls without support promotion. They do not prove benchmark success, transfer, contamination resistance, regression-suite quality, anti-Goodhart effectiveness, policy quality, steward release safety, or empirical capability gains.
 
 ## Source crosswalk
 

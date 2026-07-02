@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Add benchmark anti-Goodhart fixture bridge
+
+- Added `python3 scripts/validate_benchmark_fixture_bridge.py` and
+  `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json`
+  to recompute the benchmark anti-Goodhart fixture set, record 2 valid
+  fixtures, 5 expected-invalid controls, one promotion-ready synthetic path,
+  one saturated-regression-floor path, and expected-invalid controls for
+  missing anti-Goodhart checks, blocked-ratchet policy promotion,
+  reward-as-truth confusion, saturated promotion, and release without
+  approval.
+- Added `lean:benchmarks.ratchet.fixture_bridge` in
+  `AsiStackProofs.BenchmarkRatchets` so the fixture summary has a finite Lean
+  mirror with no-support-promotion and non-claim boundaries.
+- Updated the benchmark live chapter, curated reader chapter, outline, roadmap,
+  harness note, manifest, generated proof/test surfaces, and validation wiring.
+  This does not run an empirical benchmark, prove hidden-holdout integrity,
+  prove policy-training quality, execute a steward release, create an evidence
+  transition, promote chapter-core support, or validate Theseus benchmark
+  practice.
+
 ## 2026-07-02 - Import Circle cyclic-memory receipt slice
 
 - Added a bounded Circle cyclic-memory structural receipt slice for local

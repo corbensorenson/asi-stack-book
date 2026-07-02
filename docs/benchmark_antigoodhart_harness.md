@@ -1,6 +1,6 @@
 # Benchmark Anti-Goodhart Harness
 
-Last updated: 2026-06-28
+Last updated: 2026-07-02
 
 The sixth Phase 5 harness checks synthetic cross-record consistency for
 benchmark ratchets, policy updates, and steward release decisions under
@@ -32,6 +32,13 @@ benchmark ratchets, policy updates, and steward release decisions under
 python3 scripts/validate_benchmark_antigoodhart.py
 ```
 
+The fixture-bridge check recomputes the same fixture set, compares a tracked
+JSON result record, and checks the finite Lean mirror:
+
+```bash
+python3 scripts/validate_benchmark_fixture_bridge.py
+```
+
 ## Current Local Result
 
 The 2026-06-28 local run passed:
@@ -42,6 +49,13 @@ Benchmark anti-Goodhart harness passed: 2 valid fixture(s), 5 expected-invalid f
 
 The result record is
 `experiments/benchmark_antigoodhart/results/2026-06-28-local.md`.
+
+The 2026-07-02 fixture bridge passes as a Python/Lean finite fixture-summary equivalence check. It records 2 valid fixture(s), 5 expected-invalid
+fixture(s), one promotion-ready synthetic path, one saturated-regression-floor
+path, and expected-invalid controls for missing anti-Goodhart checks, blocked
+ratchet policy promotion, reward-as-truth confusion, saturated promotion, and
+release without approval. The result record is
+`experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json`.
 
 ## Boundary
 

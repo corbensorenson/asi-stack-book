@@ -117,4 +117,63 @@ theorem contaminated_review_cannot_promote_readiness
   rw [promoted] at accepted
   simp [contaminated] at accepted
 
+structure AntiGoodhartFixtureBridgeSummary where
+  validFixtureCount : Nat
+  expectedInvalidFixtureCount : Nat
+  promotionReadyValidCount : Nat
+  regressionFloorValidCount : Nat
+  missingGoodhartChecksRejected : Bool
+  policyFromBlockedRatchetRejected : Bool
+  rewardAsTruthRejected : Bool
+  saturatedPromotionRejected : Bool
+  releaseWithoutApprovalRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def AntiGoodhartFixtureBridgeValid
+    (summary : AntiGoodhartFixtureBridgeSummary) : Prop :=
+  summary.validFixtureCount = 2 ∧
+    summary.expectedInvalidFixtureCount = 5 ∧
+    summary.promotionReadyValidCount = 1 ∧
+    summary.regressionFloorValidCount = 1 ∧
+    summary.missingGoodhartChecksRejected = true ∧
+    summary.policyFromBlockedRatchetRejected = true ∧
+    summary.rewardAsTruthRejected = true ∧
+    summary.saturatedPromotionRejected = true ∧
+    summary.releaseWithoutApprovalRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+def benchmarkAntiGoodhartFixtureBridge :
+    AntiGoodhartFixtureBridgeSummary :=
+  { validFixtureCount := 2,
+    expectedInvalidFixtureCount := 5,
+    promotionReadyValidCount := 1,
+    regressionFloorValidCount := 1,
+    missingGoodhartChecksRejected := true,
+    policyFromBlockedRatchetRejected := true,
+    rewardAsTruthRejected := true,
+    saturatedPromotionRejected := true,
+    releaseWithoutApprovalRejected := true,
+    supportStateEffectNone := true,
+    nonClaimBoundary := true }
+
+theorem benchmark_antigoodhart_fixture_bridge_valid :
+    AntiGoodhartFixtureBridgeValid benchmarkAntiGoodhartFixtureBridge := by
+  simp [AntiGoodhartFixtureBridgeValid, benchmarkAntiGoodhartFixtureBridge]
+
+theorem benchmark_antigoodhart_fixture_bridge_has_expected_controls :
+    benchmarkAntiGoodhartFixtureBridge.missingGoodhartChecksRejected = true ∧
+      benchmarkAntiGoodhartFixtureBridge.policyFromBlockedRatchetRejected = true ∧
+      benchmarkAntiGoodhartFixtureBridge.rewardAsTruthRejected = true ∧
+      benchmarkAntiGoodhartFixtureBridge.saturatedPromotionRejected = true ∧
+      benchmarkAntiGoodhartFixtureBridge.releaseWithoutApprovalRejected = true := by
+  simp [benchmarkAntiGoodhartFixtureBridge]
+
+theorem benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion :
+    benchmarkAntiGoodhartFixtureBridge.supportStateEffectNone = true ∧
+      benchmarkAntiGoodhartFixtureBridge.nonClaimBoundary = true := by
+  simp [benchmarkAntiGoodhartFixtureBridge]
+
 end AsiStackProofs.BenchmarkRatchets

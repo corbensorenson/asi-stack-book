@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 149 |
+| Proof targets in manifest | 150 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 829 |
+| Theorem declarations classified | 832 |
 | Direct/projection-style theorem declarations | 157 |
-| Derived/decomposed theorem declarations | 668 |
+| Derived/decomposed theorem declarations | 671 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -57,7 +57,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 3 | 33 | 2 | 31 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 3 | 28 | 1 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 2 | 5 | 2 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 3 | 19 | 4 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -232,6 +232,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Authority.lean` | `valid_transition_without_grant_preserves_ceiling` | derived_or_decomposed | no | uses cases, contradiction, rcases, rw |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_readiness_promotion_requires_transfer_negative_and_regression_records` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_saturated_floor_requires_regression_records` | derived_or_decomposed | no | uses rw, unfold |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_has_expected_controls` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_valid` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `capability_promotion_requires_benchmark_evidence_and_preserved_regressions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_review_cannot_promote_readiness` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `saturated_benchmark_alone_cannot_promote_higher_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

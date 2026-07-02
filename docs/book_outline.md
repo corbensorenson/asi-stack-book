@@ -2783,6 +2783,7 @@ Draft deliverables:
 - Implemented repository-level fixture: `benchmark_ratchet_record.valid.json` validates benchmark-ratchet record shape only; no benchmark run, contamination audit, hidden-transfer test, or regression-preservation test exists yet.
 - Implemented Codex test: Saturation detection test, via `python3 scripts/validate_benchmark_antigoodhart.py` over saturated-benchmark regression-floor and invalid saturated-promotion scenarios; no empirical benchmark run exists.
 - Implemented Codex test: Hidden benchmark transfer test, via `python3 scripts/validate_benchmark_antigoodhart.py` over holdout, contamination, and mutation/transfer gates; no hidden benchmark or transfer run exists.
+- Implemented Codex test: Benchmark anti-Goodhart fixture bridge, via `python3 scripts/validate_benchmark_fixture_bridge.py`, checking `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json`, 2 valid fixtures, 5 expected-invalid controls, one promotion-ready path, one saturated-regression-floor path, and the Lean fixture mirror; no empirical benchmark, policy-training run, steward release, support-state transition, or chapter-core promotion exists.
 - Planned Codex test: Contamination audit test.
 - Planned Codex test: Floor/frontier split test.
 - Planned Codex test: Source-reported boundary test.
@@ -2794,6 +2795,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | implemented |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | implemented |
+| `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts. | implemented |
 
 ### Policy Optimization and Learning from Feedback
 
