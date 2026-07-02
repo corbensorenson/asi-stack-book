@@ -420,4 +420,40 @@ theorem evidence_bundle_completeness_probe_bridge
   intro valid
   exact valid
 
+structure ClaimLedgerCompletenessAuditSummary where
+  manifestClaimsCovered : Bool
+  appendixRowsUnique : Bool
+  labelSupportMatched : Bool
+  openGapPresent : Bool
+  promotionPathPresent : Bool
+  negativeControlsRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def ClaimLedgerCompletenessAuditSummaryValid
+    (summary : ClaimLedgerCompletenessAuditSummary) : Prop :=
+  summary.manifestClaimsCovered = true ∧
+    summary.appendixRowsUnique = true ∧
+    summary.labelSupportMatched = true ∧
+    summary.openGapPresent = true ∧
+    summary.promotionPathPresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem claim_ledger_completeness_audit_bridge
+    {summary : ClaimLedgerCompletenessAuditSummary} :
+    ClaimLedgerCompletenessAuditSummaryValid summary ->
+      summary.manifestClaimsCovered = true ∧
+        summary.appendixRowsUnique = true ∧
+        summary.labelSupportMatched = true ∧
+        summary.openGapPresent = true ∧
+        summary.promotionPathPresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs

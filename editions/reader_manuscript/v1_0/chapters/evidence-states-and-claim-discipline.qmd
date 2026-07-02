@@ -309,6 +309,15 @@ missing changelog references, missing limitations or non-claims, stale
 changelog linkage, and fixture overclaiming. That is useful accountability
 machinery, but it is not a deployed release-governance result.
 
+The claim ledger completeness audit checks Appendix C against the manifest and
+finds 44 core claim rows for the 44 chapters. It checks that the row IDs,
+claim text, labels, support states, assigned sources, open gaps, and promotion
+paths line up with the book structure, then mutates the ledger seven ways to
+make sure missing, duplicate, unknown, mislabeled, support-mismatched,
+open-gap-missing, and promotion-path-missing rows are rejected. That is not a
+truth audit. It says the ledger is complete enough to hold the argument
+honestly; it does not say the argument has been proven.
+
 That is useful. It is also limited. The schemas and Lean hooks do not promote
 this chapter's core claim without claim-specific evidence and accepted review.
 They prove that the book has a record shape and a small transition discipline,

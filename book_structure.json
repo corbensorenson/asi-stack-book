@@ -1204,7 +1204,12 @@
               "implementation_status": "implemented",
               "result_status": "validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; synthetic-record and finite-Lean bridge only; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim"
             },
-            "Claim ledger completeness test",
+            {
+              "name": "Claim ledger completeness audit",
+              "purpose": "Check the real Appendix C ledger against 44 manifest chapter core claims, expected labels, support states, assigned sources, open gaps, promotion paths, duplicate/stale rows, and seven expected-invalid mutation controls.",
+              "implementation_status": "implemented",
+              "result_status": "validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; Appendix C completeness only; no claim-truth, source-interpretation, promotion-readiness, external-review-quality, or support-state-promotion claim"
+            },
             "Accepted live transition review"
           ],
           "lean_module": "AsiStackProofs.EvidenceStates",
@@ -1231,6 +1236,12 @@
               "tag": "lean:evidence.bundle.completeness_probe_bridge",
               "module": "AsiStackProofs.EvidenceStates",
               "target": "A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:evidence.claim_ledger.completeness_audit_bridge",
+              "module": "AsiStackProofs.EvidenceStates",
+              "target": "A claim-ledger completeness audit records manifest claim coverage, unique Appendix C rows, label/support matching, open gaps, promotion paths, rejected mutation controls, no support-state effect, and non-claim boundaries.",
               "status": "implemented"
             }
           ]

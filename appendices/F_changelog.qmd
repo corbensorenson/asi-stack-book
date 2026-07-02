@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-02 - Add Claim ledger completeness audit
+
+- Added `python3 scripts/validate_claim_ledger_completeness_audit.py`,
+  `docs/claim_ledger_completeness_audit.md`, and
+  `experiments/claim_ledger_completeness/results/2026-07-02-local.json` for a
+  real Appendix C completeness audit covering 44 manifest chapter core claims,
+  44 Appendix C rows, expected claim IDs, chapter IDs, claim text, labels,
+  support states, assigned sources, current evidence, claim-source mappings,
+  open gaps, promotion paths, and seven expected-invalid mutation controls for
+  missing, duplicate, unknown, mislabeled, support-mismatched,
+  open-gap-missing, and promotion-path-missing rows.
+- Added `lean:evidence.claim_ledger.completeness_audit_bridge` in
+  `AsiStackProofs.EvidenceStates`, with a finite Lean summary bridge for
+  manifest claim coverage, unique Appendix C rows, label/support matching,
+  open gaps, promotion paths, rejected mutation controls, no-support-effect
+  status, and non-claim boundaries.
+- Updated the Evidence States live chapter, curated reader chapter, outline,
+  manifest, roadmap, proof/test surfaces, and validation wiring. This does not
+  prove claim truth, prove source interpretation, prove promotion readiness,
+  create a support-state transition, promote chapter core claims, or prove
+  external review quality.
+- Current proof-depth snapshot: 164 proof targets, 54 Lean modules, 856 theorem declarations, 682 derived/decomposed, 170 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add Evidence bundle completeness and changelog-consistency probe
 
 - Added `python3 scripts/validate_evidence_bundle_completeness_probe.py`,

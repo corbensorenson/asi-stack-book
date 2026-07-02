@@ -1,0 +1,62 @@
+{
+  "appendix_c_core_claim_row_count": 44,
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_claim_ledger_completeness_audit.py",
+  "coverage": {
+    "appendix_rows_unique": true,
+    "assigned_sources_present": true,
+    "claim_labels_match_manifest": true,
+    "manifest_claims_covered": true,
+    "open_gaps_present": true,
+    "promotion_paths_present": true,
+    "support_state_no_promotion": true,
+    "support_states_match_manifest": true
+  },
+  "evidence_transition_created": false,
+  "expected_invalid_mutation_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "appendix_rows_unique": true,
+      "label_support_matched": true,
+      "manifest_claims_covered": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "open_gap_present": true,
+      "promotion_path_present": true,
+      "support_state_effect_none": true
+    },
+    "module": "AsiStackProofs.EvidenceStates",
+    "proof_tag": "lean:evidence.claim_ledger.completeness_audit_bridge",
+    "theorem_refs": [
+      "claim_ledger_completeness_audit_bridge"
+    ]
+  },
+  "manifest_chapter_core_claim_count": 44,
+  "negative_controls": {
+    "claim_label_mismatch_rejected": true,
+    "duplicate_row_rejected": true,
+    "missing_open_gap_rejected": true,
+    "missing_promotion_path_rejected": true,
+    "missing_row_rejected": true,
+    "support_state_mismatch_rejected": true,
+    "unknown_row_rejected": true
+  },
+  "non_claims": [
+    "does not prove claim truth",
+    "does not prove source interpretation",
+    "does not prove promotion readiness",
+    "does not create a support-state transition",
+    "does not promote chapter core claims",
+    "does not prove external review quality"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Appendix C completeness audit only; claim truth, source interpretation, promotion readiness, and external review quality remain outside this result.",
+    "Every chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-claim-ledger-completeness-audit",
+  "result_kind": "real_appendix_c_claim_ledger_completeness_audit",
+  "schema_version": "asi_stack.claim_ledger_completeness_audit.v0",
+  "support_state_effect": "none",
+  "verification_result": "pass"
+}
