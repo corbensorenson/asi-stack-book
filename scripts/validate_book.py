@@ -67,6 +67,9 @@ REQUIRED = [
     "scripts/validate_external_sota_positioning.py",
     "scripts/validate_stack_layer_traceability.py",
     "scripts/validate_efficiency_route_search_probe.py",
+    "scripts/validate_intent_execution_handoff_probe.py",
+    "docs/intent_execution_handoff_probe.md",
+    "experiments/intent_execution_handoff/results/2026-07-02-local.json",
     "scripts/validate_claim_ledger_revision.py",
     "scripts/validate_proof_carrying_claims.py",
     "scripts/validate_tribunal_review.py",
@@ -778,6 +781,7 @@ def main() -> None:
     run_validator("validate_self_improvement_boundaries.py")
     run_validator("validate_intent_intake_probe.py")
     run_validator("validate_plan_execution_contracts.py")
+    run_validator("validate_intent_execution_handoff_probe.py")
     run_validator("validate_cognitive_compilation_traces.py")
     run_validator("validate_hive_admission.py")
     run_validator("validate_runtime_adapter_permissions.py")

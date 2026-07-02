@@ -302,6 +302,20 @@ Those checks are useful controls. They validate public record shape and
 synthetic cross-record consistency. They do not show that a real request was
 parsed, planned, authorized, executed, verified, accepted, or replayed.
 
+The intent-to-execution handoff probe adds one more concrete reader-facing
+check. It uses two synthetic traces: one accepted path that follows intent,
+command, plan, typed job, dispatch receipt, synthetic adapter receipt,
+artifact reference, verifier reference, feedback, and residuals, and one
+approval-required path that stops before dispatch. It also rejects seven bad
+paths, including approval bypass, authority widening, hidden override
+application, missing dispatch receipt, side effects without adapter receipts,
+erased residuals, and artifacts that no longer point back to the parent
+intent.
+
+That is useful because it shows the shape of the handoff. It is a trace-shape
+check, not a deployed runtime result. It does not prove parser quality,
+approval-service behavior, runtime adapter safety, or artifact satisfaction.
+
 ## Beyond the State of the Art
 
 The mature endpoint is a contract operating spine for the whole stack.

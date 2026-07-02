@@ -1,0 +1,61 @@
+{
+  "accepted_handoff_path_count": 1,
+  "blocked_handoff_path_count": 1,
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_intent_execution_handoff_probe.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 7,
+  "lean_fixture_alignment": {
+    "expected": {
+      "blocked_approval_path_present": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "support_state_effect_none": true,
+      "valid_handoff_path_present": true
+    },
+    "module": "AsiStackProofs.IntentToExecution",
+    "proof_tag": "lean:intent_execution.handoff_trace.probe_fixture_bridge",
+    "theorem_refs": [
+      "intent_execution_handoff_probe_fixture_bridge"
+    ]
+  },
+  "negative_controls": {
+    "artifact_parent_link_missing_rejected": true,
+    "authority_widening_rejected": true,
+    "dispatch_without_approval_rejected": true,
+    "hidden_override_application_rejected": true,
+    "missing_dispatch_receipt_rejected": true,
+    "residual_erasure_rejected": true,
+    "side_effect_without_adapter_receipt_rejected": true
+  },
+  "non_claims": [
+    "does not parse natural-language intent",
+    "does not execute a deployed dispatcher or runtime adapter",
+    "does not prove approval-service enforcement",
+    "does not prove artifact satisfaction",
+    "does not promote the chapter support state",
+    "does not create a support-state transition"
+  ],
+  "recorded_date": "2026-07-02",
+  "residuals": [
+    "Synthetic record replay only; no natural-language parser, deployed dispatcher, approval service, runtime adapter, or artifact acceptance path was exercised.",
+    "The chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-02-intent-execution-handoff-probe",
+  "result_kind": "deterministic_synthetic_intent_execution_handoff_probe",
+  "schema_version": "asi_stack.intent_execution_handoff_probe.v0",
+  "support_state_effect": "none",
+  "trace_count": 9,
+  "transition_coverage": {
+    "adapter_receipt_required_for_side_effects": true,
+    "approval_block_receipt_required": true,
+    "artifact_parent_link_required": true,
+    "command_to_plan_handoff": true,
+    "dispatch_receipt_required": true,
+    "intent_to_command_handoff": true,
+    "plan_to_job_handoff": true,
+    "residual_preservation_required": true
+  },
+  "valid_trace_count": 2,
+  "verification_result": "pass"
+}

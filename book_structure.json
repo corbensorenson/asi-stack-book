@@ -3045,6 +3045,11 @@
               "name": "Authority-inference block test",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic plan-execution contract harness with blocked inferred-authority and expected-invalid inferred-authority dispatch fixtures; no deployed authority-extraction, approval-service, or side-effect-enforcement claim"
+            },
+            {
+              "name": "Intent-to-execution handoff probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic vertical handoff fixture at experiments/intent_execution_handoff/results/2026-07-02-local.json: two valid synthetic handoff traces and seven expected-invalid controls; no parser, deployed dispatcher, approval service, runtime adapter, artifact satisfaction, support-state promotion, or evidence transition claim"
             }
           ],
           "lean_module": "AsiStackProofs.IntentToExecution",
@@ -3065,6 +3070,12 @@
               "tag": "lean:intent_execution.contracts.dispatch_route_envelope",
               "module": "AsiStackProofs.IntentToExecution",
               "target": "A structured execution dispatch review routes missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews into explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:intent_execution.handoff_trace.probe_fixture_bridge",
+              "module": "AsiStackProofs.IntentToExecution",
+              "target": "The deterministic synthetic handoff probe result includes an accepted vertical handoff path, a missing-approval blocked path, rejected negative controls, no support-state effect, and an explicit non-claim boundary.",
               "status": "implemented"
             },
             {

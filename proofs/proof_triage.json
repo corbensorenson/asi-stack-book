@@ -481,6 +481,16 @@
       "rationale": "Implemented in AsiStackProofs.IntentToExecution as a finite dispatch-route function and derived route theorems for missing contracts, missing objectives, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews."
     },
     {
+      "tag": "lean:intent_execution.handoff_trace.probe_fixture_bridge",
+      "chapter_id": "intent-to-execution-contracts",
+      "module": "AsiStackProofs.IntentToExecution",
+      "formal_target": "The deterministic synthetic handoff probe result includes an accepted vertical handoff path, a missing-approval blocked path, rejected negative controls, no support-state effect, and an explicit non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.IntentToExecution as a finite handoff-probe summary bridge: accepted and blocked synthetic handoff paths, rejected negative controls, no support-state effect, and non-claim boundaries are bundled as fixture requirements."
+    },
+    {
       "tag": "lean:command.semantic_interface.operational_invariant",
       "chapter_id": "intent-to-execution-contracts",
       "module": "AsiStackProofs.CommandContracts",

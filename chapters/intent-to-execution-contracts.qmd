@@ -16,7 +16,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Executed consolidation of `intent-to-execution-contracts` and `command-contracts-and-semantic-interfaces`; the old command-contract slug is preserved by a static redirect and the source chapter is archived for lineage."
-  - "Source notes, schemas, fixtures, a synthetic plan-execution harness, and finite Lean predicates including a dispatch-route envelope and command-contract negative cases support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, or deployed execution safety."
+  - "Source notes, schemas, fixtures, a synthetic plan-execution harness, the Intent-to-execution handoff probe, and finite Lean predicates including a dispatch-route envelope, a handoff-probe bridge, and command-contract negative cases support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, artifact satisfaction, or deployed execution safety."
   - "External grounding now includes source-noted comparators for reasoning/action loops, planning languages, HTN planning, durable workflows, DAG orchestration, process notation, high-level system modeling, and program verification; these are comparator records only, not command-contract implementation evidence."
   - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `software_magic_grimoire`; supporting: `talos`, `genesiscode`, `cognitive_compilation`; connector/recovery: `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`; connector/source-note only: `moecot` |
-| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes 3 valid and 10 expected-invalid synthetic plan-execution contract checks, including unresolved-ambiguity dispatch blocking, unrejected-hidden-override blocking, intent-authority-ceiling preservation, inferred-field dispatch blocking, a valid blocked inferred-authority residual path, and inferred-authority dispatch blocking; `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` implement finite record predicates including a dispatch-route envelope, missing-field negative case, hidden-override precedence negative case, and field-confidence route. Behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, authority-extraction, and runtime execution tests remain planned. |
+| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes 3 valid and 10 expected-invalid synthetic plan-execution contract checks, including unresolved-ambiguity dispatch blocking, unrejected-hidden-override blocking, intent-authority-ceiling preservation, inferred-field dispatch blocking, a valid blocked inferred-authority residual path, and inferred-authority dispatch blocking; `python3 scripts/validate_intent_execution_handoff_probe.py` passes two valid synthetic handoff traces and seven expected-invalid controls, producing `experiments/intent_execution_handoff/results/2026-07-02-local.json`; `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` implement finite record predicates including a dispatch-route envelope, a handoff-probe bridge, missing-field negative case, hidden-override precedence negative case, and field-confidence route. Behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, authority-extraction, artifact-satisfaction, and runtime execution tests remain planned. |
 
 The executed merge combines two current record families:
 
@@ -401,9 +401,24 @@ letting prose style alter the permitted action surface.
 | Intent-authority ceiling fixture | Check that a command contract cannot widen the explicit intent authority ceiling. | implemented by synthetic plan-execution contract harness; no deployed authority-extraction or approval-service claim |
 | Field-confidence audit | Check that confirmed, policy-imposed, source-derived, defaulted, inferred, and missing fields preserve dispatch consequences. | implemented by synthetic plan-execution contract harness plus `AsiStackProofs.CommandContracts`; no parser-quality or deployed-dispatch claim |
 | Authority-inference block test | Check that inferred means, tools, disclosure, publication, or side effects route to draft-only or re-contract states. | implemented by synthetic plan-execution contract harness; no deployed authority-extraction, approval-service, or runtime side-effect claim |
+| Intent-to-execution handoff probe | Check that a synthetic vertical trace preserves accepted intent, command contract, plan, typed job, dispatch receipt, adapter receipt, artifact link, verification reference, feedback, residuals, and a missing-approval blocked path while rejecting approval bypass, authority widening, hidden override application, missing dispatch receipt, side effect without adapter receipt, residual erasure, and missing artifact-to-parent links. | implemented by `python3 scripts/validate_intent_execution_handoff_probe.py` with two valid synthetic handoff traces and seven expected-invalid controls; no parser, deployed dispatcher, approval-service, runtime-adapter, artifact-satisfaction, support-state-promotion, or evidence-transition claim |
 
 The current repository state supports synthetic plan-execution contract
-validation and finite Lean predicates only. The limitation is stated plainly.
+validation, a deterministic synthetic vertical handoff fixture, and finite
+Lean predicates only. The limitation is stated plainly.
+
+The Intent-to-execution handoff probe is the current vertical fixture. It runs
+with `python3 scripts/validate_intent_execution_handoff_probe.py` and records
+`experiments/intent_execution_handoff/results/2026-07-02-local.json`. It has
+two valid synthetic handoff traces: one accepted command path from intent
+receipt through command, plan, typed job, dispatch receipt, synthetic adapter
+receipt, artifact reference, verifier reference, feedback, and residuals, and
+one missing-approval path that stops with a block receipt before dispatch. Its
+seven expected-invalid controls reject dispatch without approval, authority
+widening, hidden override application, missing dispatch receipt, side effect
+without adapter receipt, residual erasure, and missing artifact-to-parent
+links. The probe creates no support-state transition and no evidence
+transition.
 
 ## Formalization hooks
 
@@ -414,7 +429,9 @@ The destination chapter keeps both formal lanes:
   route outcomes:
   `lean:intent_execution.contracts.operational_invariant` and
   `lean:intent_execution.contracts.failure_blocks_promotion`, plus
-  `lean:intent_execution.contracts.dispatch_route_envelope`;
+  `lean:intent_execution.contracts.dispatch_route_envelope`, and the
+  deterministic handoff-probe bridge
+  `lean:intent_execution.handoff_trace.probe_fixture_bridge`;
 - `AsiStackProofs.CommandContracts` for required command fields, missing-field
   rejection, explicit constraint precedence over hidden or conflicting
   instructions, hidden-override rejection, and field-confidence dispatch
@@ -430,8 +447,7 @@ Formal limitation and non-claim boundary: these Lean hooks are finite-record
 traceability predicates and route envelopes. They do not prove parser
 completeness, prompt-injection resistance, deployed command dispatch,
 approval-service correctness, authority-extraction quality, runtime execution
-correctness, model behavior, or
-source interpretation.
+correctness, artifact satisfaction, model behavior, or source interpretation.
 
 External positioning: the destination treats `ext_react_2022` as an adjacent
 reasoning/action-trace baseline, `ext_pddl_1998` and `ext_shop2_2003` as

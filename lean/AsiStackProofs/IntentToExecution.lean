@@ -256,4 +256,30 @@ theorem complete_dispatch_review_is_ready
     approvalNotRequired, artifactsDeclared, verificationPlan, noResidual,
     dispatchRequested]
 
+structure HandoffProbeSummary where
+  validHandoffPathPresent : Bool
+  blockedApprovalPathPresent : Bool
+  negativeControlsRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def HandoffProbeSummaryValid (summary : HandoffProbeSummary) : Prop :=
+  summary.validHandoffPathPresent = true ∧
+    summary.blockedApprovalPathPresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem intent_execution_handoff_probe_fixture_bridge
+    {summary : HandoffProbeSummary} :
+    HandoffProbeSummaryValid summary ->
+      summary.validHandoffPathPresent = true ∧
+        summary.blockedApprovalPathPresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  exact valid
+
 end AsiStackProofs.IntentToExecution

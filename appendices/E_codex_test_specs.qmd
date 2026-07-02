@@ -99,6 +99,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent-authority ceiling fixture | implemented | passes via synthetic plan-execution contract harness; no deployed authority-extraction or approval-service claim |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Field-confidence audit | implemented | passes via synthetic plan-execution contract harness and finite Lean field-confidence route; no parser-quality, semantic-extraction-quality, or deployed dispatcher claim |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Authority-inference block test | implemented | passes via synthetic plan-execution contract harness with blocked inferred-authority and expected-invalid inferred-authority dispatch fixtures; no deployed authority-extraction, approval-service, or side-effect-enforcement claim |
+| `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent-to-execution handoff probe | implemented | passes via deterministic synthetic vertical handoff fixture at experiments/intent_execution_handoff/results/2026-07-02-local.json: two valid synthetic handoff traces and seven expected-invalid controls; no parser, deployed dispatcher, approval service, runtime adapter, artifact satisfaction, support-state promotion, or evidence transition claim |
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Decomposition accuracy test | planned | not run |
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Dependency ordering test | implemented | passes via synthetic plan-execution contract harness |
 | `planning-as-a-control-layer` | Planning as a Control Layer: DAGs and Intelligence Arbitrage | Context-demand prediction test | planned | not run |
@@ -437,16 +438,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 155 |
+| Proof targets covered by triage | 156 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 155 |
+| implemented | 156 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 155 |
+| implemented | formal-invariant | lean-candidate | 156 |
