@@ -90,4 +90,104 @@ theorem accepted_hidden_override_violates_explicit_constraint_precedence
   rw [overrideAccepted] at rejected
   cases rejected
 
+inductive FieldConfidence where
+  | confirmed
+  | policyImposed
+  | sourceDerived
+  | defaulted
+  | inferred
+  | missing
+deriving DecidableEq, Repr
+
+def FieldConfidence.dispatchEligible : FieldConfidence -> Bool
+  | .confirmed => true
+  | .policyImposed => true
+  | .sourceDerived => true
+  | .defaulted => true
+  | .inferred => false
+  | .missing => false
+
+inductive FieldConfidenceRoute where
+  | requireObjectiveConfidence
+  | requireConstraintConfidence
+  | requireAuthorityConfidence
+  | requireOutputConfidence
+  | requireVerificationConfidence
+  | requireFailureConfidence
+  | dispatchAllowed
+  | noDispatchRequested
+deriving DecidableEq, Repr
+
+structure FieldConfidenceReview where
+  objective : FieldConfidence
+  constraints : FieldConfidence
+  authority : FieldConfidence
+  output : FieldConfidence
+  verification : FieldConfidence
+  failureBehavior : FieldConfidence
+  dispatchRequested : Bool
+deriving DecidableEq, Repr
+
+def FieldConfidenceRouteFor
+    (review : FieldConfidenceReview) : FieldConfidenceRoute :=
+  if review.objective.dispatchEligible = false then
+    FieldConfidenceRoute.requireObjectiveConfidence
+  else if review.constraints.dispatchEligible = false then
+    FieldConfidenceRoute.requireConstraintConfidence
+  else if review.authority.dispatchEligible = false then
+    FieldConfidenceRoute.requireAuthorityConfidence
+  else if review.output.dispatchEligible = false then
+    FieldConfidenceRoute.requireOutputConfidence
+  else if review.verification.dispatchEligible = false then
+    FieldConfidenceRoute.requireVerificationConfidence
+  else if review.failureBehavior.dispatchEligible = false then
+    FieldConfidenceRoute.requireFailureConfidence
+  else if review.dispatchRequested = true then
+    FieldConfidenceRoute.dispatchAllowed
+  else
+    FieldConfidenceRoute.noDispatchRequested
+
+theorem inferred_authority_confidence_requires_authority_confidence
+    {review : FieldConfidenceReview} :
+    review.objective = FieldConfidence.confirmed ->
+      review.constraints = FieldConfidence.confirmed ->
+        review.authority = FieldConfidence.inferred ->
+          FieldConfidenceRouteFor review =
+            FieldConfidenceRoute.requireAuthorityConfidence := by
+  intro objectiveConfirmed constraintsConfirmed inferredAuthority
+  unfold FieldConfidenceRouteFor
+  simp [objectiveConfirmed, constraintsConfirmed, inferredAuthority,
+    FieldConfidence.dispatchEligible]
+
+theorem missing_output_confidence_requires_output_confidence
+    {review : FieldConfidenceReview} :
+    review.objective = FieldConfidence.confirmed ->
+      review.constraints = FieldConfidence.confirmed ->
+        review.authority = FieldConfidence.confirmed ->
+          review.output = FieldConfidence.missing ->
+            FieldConfidenceRouteFor review =
+              FieldConfidenceRoute.requireOutputConfidence := by
+  intro objectiveConfirmed constraintsConfirmed authorityConfirmed missingOutput
+  unfold FieldConfidenceRouteFor
+  simp [objectiveConfirmed, constraintsConfirmed, authorityConfirmed,
+    missingOutput, FieldConfidence.dispatchEligible]
+
+theorem complete_field_confidence_allows_dispatch
+    {review : FieldConfidenceReview} :
+    review.objective = FieldConfidence.confirmed ->
+      review.constraints = FieldConfidence.policyImposed ->
+        review.authority = FieldConfidence.confirmed ->
+          review.output = FieldConfidence.confirmed ->
+            review.verification = FieldConfidence.confirmed ->
+              review.failureBehavior = FieldConfidence.confirmed ->
+                review.dispatchRequested = true ->
+                  FieldConfidenceRouteFor review =
+                    FieldConfidenceRoute.dispatchAllowed := by
+  intro objectiveConfirmed constraintsPolicy authorityConfirmed outputConfirmed
+    verificationConfirmed failureConfirmed dispatchRequested
+  unfold FieldConfidenceRouteFor
+  simp [objectiveConfirmed, constraintsPolicy, authorityConfirmed,
+    outputConfirmed, verificationConfirmed, failureConfirmed, dispatchRequested,
+    FieldConfidence.dispatchEligible]
+
 end AsiStackProofs.CommandContracts

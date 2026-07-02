@@ -278,21 +278,26 @@ artifact declarations, verification plans, failure behavior, residuals, and
 dispatch requests. `AsiStackProofs.CommandContracts` now also includes derived
 negative-case theorems showing that a missing required command field blocks
 complete command-contract status and that accepting a hidden or conflicting
-override violates explicit-constraint precedence.
+override violates explicit-constraint precedence. The newest increment adds a
+third `AsiStackProofs.CommandContracts` target for field-confidence routing:
+inferred authority confidence and missing output confidence route to review
+instead of dispatch, while confirmed/policy-imposed field confidence is
+dispatch-eligible inside the finite record model.
 
 The new theorems check that missing command fields block completeness; hidden
 override acceptance contradicts explicit-constraint precedence; missing
 contracts reject dispatch; missing objectives request clarification; authority
 widening and hidden overrides block dispatch; missing required approvals route
 to approval; missing artifacts request clarification; missing verification plans
-route to verification; known residuals record residuals; and complete dispatch
-reviews become dispatch-ready.
+route to verification; known residuals record residuals; inferred and missing
+field confidence route to review; and complete dispatch reviews become
+dispatch-ready.
 
 This keeps `intent-to-execution-contracts` in the `useful but too narrow` class.
 The command-contract and route envelopes are closer to the chapter's dispatcher
 boundary, but they still do not parse commands, run a dispatcher, enforce
-approval in a live service, execute tools, measure prompt-injection resistance,
-or replay an end-to-end runtime trace.
+approval in a live service, judge authority-extraction quality, execute tools,
+measure prompt-injection resistance, or replay an end-to-end runtime trace.
 
 ### Cognitive Compilation Semantic Lowering Route Envelope
 

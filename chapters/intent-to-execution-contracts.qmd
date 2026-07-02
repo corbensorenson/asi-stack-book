@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `software_magic_grimoire`; supporting: `talos`, `genesiscode`, `cognitive_compilation`; connector/recovery: `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`; connector/source-note only: `moecot` |
-| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes 2 valid and 8 expected-invalid synthetic plan-execution contract checks, including unresolved-ambiguity dispatch blocking, unrejected-hidden-override blocking, and intent-authority-ceiling preservation; `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` implement finite record predicates including a dispatch-route envelope, missing-field negative case, and hidden-override precedence negative case; behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, authority-extraction, and runtime execution tests remain planned. |
+| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes 3 valid and 10 expected-invalid synthetic plan-execution contract checks, including unresolved-ambiguity dispatch blocking, unrejected-hidden-override blocking, intent-authority-ceiling preservation, inferred-field dispatch blocking, a valid blocked inferred-authority residual path, and inferred-authority dispatch blocking; `AsiStackProofs.IntentToExecution` and `AsiStackProofs.CommandContracts` implement finite record predicates including a dispatch-route envelope, missing-field negative case, hidden-override precedence negative case, and field-confidence route. Behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, authority-extraction, and runtime execution tests remain planned. |
 
 The executed merge combines two current record families:
 
@@ -399,8 +399,8 @@ letting prose style alter the permitted action surface.
 | Ambiguity dispatch block fixture | Check that unresolved ambiguity cannot validate a command for planning or dispatch a plan. | implemented by synthetic plan-execution contract harness; no natural-language ambiguity parser claim |
 | Hidden override rejection fixture | Check that hidden override requests must be rejected, quarantined, or ignored before planning. | implemented by synthetic plan-execution contract harness; no deployed prompt-injection containment claim |
 | Intent-authority ceiling fixture | Check that a command contract cannot widen the explicit intent authority ceiling. | implemented by synthetic plan-execution contract harness; no deployed authority-extraction or approval-service claim |
-| Field-confidence audit | Check that confirmed, policy-imposed, source-derived, defaulted, inferred, and missing fields preserve dispatch consequences. | planned; not run beyond record-shape checks |
-| Authority-inference block test | Check that inferred means, tools, disclosure, publication, or side effects route to draft-only or re-contract states. | planned; not run beyond finite record and fixture checks |
+| Field-confidence audit | Check that confirmed, policy-imposed, source-derived, defaulted, inferred, and missing fields preserve dispatch consequences. | implemented by synthetic plan-execution contract harness plus `AsiStackProofs.CommandContracts`; no parser-quality or deployed-dispatch claim |
+| Authority-inference block test | Check that inferred means, tools, disclosure, publication, or side effects route to draft-only or re-contract states. | implemented by synthetic plan-execution contract harness; no deployed authority-extraction, approval-service, or runtime side-effect claim |
 
 The current repository state supports synthetic plan-execution contract
 validation and finite Lean predicates only. The limitation is stated plainly.
@@ -417,9 +417,11 @@ The destination chapter keeps both formal lanes:
   `lean:intent_execution.contracts.dispatch_route_envelope`;
 - `AsiStackProofs.CommandContracts` for required command fields, missing-field
   rejection, explicit constraint precedence over hidden or conflicting
-  instructions, and hidden-override rejection:
+  instructions, hidden-override rejection, and field-confidence dispatch
+  routing:
   `lean:command.semantic_interface.operational_invariant` and
-  `lean:command.semantic_interface.failure_blocks_promotion`.
+  `lean:command.semantic_interface.failure_blocks_promotion`, plus
+  `lean:command.semantic_interface.field_confidence_route`.
 
 The merged chapter does not take over `AsiStackProofs.IntentContracts`,
 because raw intent intake remains a separate Part I chapter.
@@ -427,7 +429,8 @@ because raw intent intake remains a separate Part I chapter.
 Formal limitation and non-claim boundary: these Lean hooks are finite-record
 traceability predicates and route envelopes. They do not prove parser
 completeness, prompt-injection resistance, deployed command dispatch,
-approval-service correctness, runtime execution correctness, model behavior, or
+approval-service correctness, authority-extraction quality, runtime execution
+correctness, model behavior, or
 source interpretation.
 
 External positioning: the destination treats `ext_react_2022` as an adjacent

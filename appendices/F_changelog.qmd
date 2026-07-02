@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Add command field-confidence gates
+
+- Expanded the plan-execution contract harness with a valid blocked
+  inferred-authority route plus expected-invalid inferred-field dispatch and
+  inferred-authority dispatch fixtures. The local harness now passes with 3
+  valid and 10 expected-invalid fixtures.
+- Added finite `AsiStackProofs.CommandContracts` field-confidence routing for
+  inferred authority confidence, missing output confidence, and complete
+  confirmed/policy-imposed dispatch eligibility, and registered the new
+  `lean:command.semantic_interface.field_confidence_route` proof target.
+- Updated the Intent-to-Execution chapter, outline, manifest, Appendix E,
+  Phase 5 registry, plan-execution harness note, proof manifest, proof triage,
+  proof-depth classification, proof artifact audit, proof adequacy review,
+  v1.0 status snapshot, and v1.x roadmap burn-down so field-confidence audit
+  and inferred-authority dispatch blocking are tracked as synthetic-record and
+  finite-Lean evidence rather than still-planned blockers.
+- No parser-quality result, semantic-extraction-quality result,
+  authority-extraction-quality result, approval-service result,
+  side-effect-enforcement result, deployed dispatcher result, runtime execution
+  trace, prompt-injection containment result, benchmark result, support-state
+  promotion, reader release, or external review is claimed.
+
 ## 2026-07-02 - Add ArtifactGraph replay-packet proof bridge
 
 - Added a third Artifact Graph proof target,

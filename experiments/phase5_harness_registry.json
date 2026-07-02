@@ -302,17 +302,17 @@
     "doc": "docs/plan_execution_contract_harness.md",
     "experiment_dir": "experiments/plan_execution_contracts",
     "fixture_dir": "experiments/plan_execution_contracts/fixtures",
-    "result_record": "experiments/plan_execution_contracts/results/2026-07-01-local.md",
-    "expected_valid_fixtures": 2,
-    "expected_invalid_fixtures": 8,
-    "result_summary": "Plan-execution contract harness passed: 2 valid fixture(s), 8 expected-invalid fixture(s).",
+    "result_record": "experiments/plan_execution_contracts/results/2026-07-02-local.md",
+    "expected_valid_fixtures": 3,
+    "expected_invalid_fixtures": 10,
+    "result_summary": "Plan-execution contract harness passed: 3 valid fixture(s), 10 expected-invalid fixture(s).",
     "primary_chapters": [
       "intent-to-execution-contracts",
       "planning-as-a-control-layer",
       "cognitive-compilation-and-semantic-ir"
     ],
     "non_claims": [
-      "Does not prove planner quality, scheduler behavior, deployed execution, runtime adapter safety, parser quality, or benchmark performance.",
+      "Does not prove planner quality, scheduler behavior, deployed execution, runtime adapter safety, parser quality, semantic extraction quality, authority extraction quality, approval-service behavior, side-effect enforcement, or benchmark performance.",
       "Does not promote Appendix C support states."
     ]
   },

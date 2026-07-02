@@ -115,6 +115,48 @@ def as_string_set(value: Any) -> set[str]:
     return {str(item) for item in value}
 
 
+def command_field_confidence_errors(
+    command: dict[str, Any],
+    plan: dict[str, Any],
+    relative: str,
+) -> list[str]:
+    errors: list[str] = []
+    confidence = {str(item).strip().lower() for item in command.get("field_confidence", [])}
+    provenance_text = " ".join(str(item).strip().lower() for item in command.get("field_provenance", []))
+    authority_basis = str(command.get("authority_basis", "")).strip().lower()
+    validation_state = str(command.get("validation_state", "")).strip()
+    dispatch_state = str(plan.get("dispatch_state", "")).strip()
+    active_dispatch = dispatch_state in ACTIVE_PLAN_STATES
+
+    weak_fields = sorted(confidence & {"inferred", "missing"})
+    if active_dispatch and weak_fields:
+        errors.append(
+            f"{relative}: dispatchable/running/complete plan cannot depend on "
+            f"inferred or missing command fields {weak_fields}."
+        )
+    if validation_state == "validated_for_planning" and "missing" in confidence:
+        errors.append(
+            f"{relative}: command_contract with missing field confidence cannot be validated for planning."
+        )
+
+    inferred_authority = "authority:inferred" in provenance_text or "authority inferred" in authority_basis
+    if inferred_authority and validation_state == "validated_for_planning":
+        errors.append(
+            f"{relative}: inferred authority cannot validate a command for planning."
+        )
+    if inferred_authority and active_dispatch:
+        errors.append(
+            f"{relative}: inferred authority must block dispatch or trigger re-contracting."
+        )
+    if validation_state == "authority_inferred":
+        if active_dispatch:
+            errors.append(f"{relative}: authority_inferred command cannot dispatch a plan.")
+        if not plan.get("blocked_nodes"):
+            errors.append(f"{relative}: authority_inferred command must identify blocked plan nodes.")
+
+    return errors
+
+
 def intent_origin_errors(
     origin: dict[str, Any],
     command: dict[str, Any],
@@ -246,6 +288,7 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
             errors.append(f"{relative}: intent_origin must be an object when present.")
         else:
             errors.extend(intent_origin_errors(intent_origin, command, plan, relative))
+    errors.extend(command_field_confidence_errors(command, plan, relative))
 
     contract_id = str(command["contract_id"])
     plan_id = str(plan["plan_id"])

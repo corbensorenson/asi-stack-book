@@ -1,6 +1,6 @@
 # Plan-Execution Contract Harness
 
-Last updated: 2026-07-01
+Last updated: 2026-07-02
 
 The third Phase 5 harness checks synthetic cross-record consistency for command
 contracts, plan graphs, PlanForge DAGs, semantic atoms, and typed jobs under
@@ -28,6 +28,10 @@ contracts, plan graphs, PlanForge DAGs, semantic atoms, and typed jobs under
 - Unresolved ambiguity must block validation and dispatch until clarification.
 - Hidden override requests must be rejected, quarantined, or ignored before
   planning.
+- Inferred or missing field confidence must block dispatch for required command
+  fields.
+- Inferred authority can preserve a blocked residual route, but it cannot be
+  validated for planning or active dispatch without confirmation.
 
 ## Command
 
@@ -37,22 +41,22 @@ python3 scripts/validate_plan_execution_contracts.py
 
 ## Current Local Result
 
-The 2026-07-01 local run passed:
+The 2026-07-02 local run passed:
 
 ```text
-Plan-execution contract harness passed: 2 valid fixture(s), 8 expected-invalid fixture(s).
+Plan-execution contract harness passed: 3 valid fixture(s), 10 expected-invalid fixture(s).
 ```
 
 The result record is
-`experiments/plan_execution_contracts/results/2026-07-01-local.md`.
+`experiments/plan_execution_contracts/results/2026-07-02-local.md`.
 
 ## Boundary
 
 This is synthetic cross-record gate validation. It improves executable evidence
 discipline because it catches cyclic plans, contract mismatches, unreceipted
 dispatch, lost requirements, approval bypasses, unresolved ambiguity dispatch,
-unrejected hidden overrides, and authority widening across existing record
-schemas.
+unrejected hidden overrides, authority widening, inferred-field dispatch, and
+inferred-authority dispatch across existing record schemas.
 
 It is not a planner benchmark, deployed scheduler test, parser-quality result,
 prompt-injection containment result, authority-extraction result, runtime

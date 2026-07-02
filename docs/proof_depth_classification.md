@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 148 |
+| Proof targets in manifest | 149 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 826 |
+| Theorem declarations classified | 829 |
 | Direct/projection-style theorem declarations | 157 |
-| Derived/decomposed theorem declarations | 665 |
+| Derived/decomposed theorem declarations | 668 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 102 |
 | Safety-critical direct/projection declarations | 10 |
@@ -62,7 +62,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 3 | 19 | 4 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 3 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 4 | 21 | 6 | 14 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 3 | 18 | 2 | 16 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 2 | 17 | 2 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -279,7 +279,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `stale_read_admitted_as_fresh_without_residual_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `structure_only_retrieval_quality_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `accepted_hidden_override_violates_explicit_constraint_precedence` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/CommandContracts.lean` | `complete_field_confidence_allows_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `hidden_or_conflicting_instruction_cannot_override_explicit_constraint` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CommandContracts.lean` | `inferred_authority_confidence_requires_authority_confidence` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CommandContracts.lean` | `missing_output_confidence_requires_output_confidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `missing_required_field_blocks_complete_command_contract` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `valid_command_contract_contains_required_interface_fields` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `bounded_search_overrun_fixture_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

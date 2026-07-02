@@ -20,6 +20,9 @@ python3 scripts/validate_plan_execution_contracts.py
   agree.
 - `fixtures/valid_blocked_authority_plan.json` checks that a blocked plan can
   preserve residuals without dispatch receipts.
+- `fixtures/valid_authority_inferred_blocked.json` checks that inferred
+  authority can preserve a blocked residual and re-contract route without
+  dispatch receipts.
 - `fixtures/invalid_cycle_in_dag.json` checks that cyclic dependencies are
   rejected.
 - `fixtures/invalid_contract_mismatch.json` checks that plan and job records
@@ -36,6 +39,10 @@ python3 scripts/validate_plan_execution_contracts.py
   requests must be rejected, quarantined, or ignored before planning.
 - `fixtures/invalid_authority_widened_from_intent.json` checks that a command
   contract cannot widen the explicit intent authority ceiling.
+- `fixtures/invalid_inferred_field_confidence_dispatched.json` checks that
+  inferred required field confidence cannot dispatch a plan.
+- `fixtures/invalid_inferred_authority_dispatched.json` checks that inferred
+  authority cannot validate and dispatch a plan.
 
 ## Environment
 

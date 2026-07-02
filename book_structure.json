@@ -2913,7 +2913,7 @@
             "Field laundering, where vague prose is moved into a formal field without becoming testable.",
             "Authority inference, where a likely means is treated as if the human granted it."
           ],
-          "minimal_implementation": "Intent-contract, command-contract, intent-execution-trace, and intent-origin fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, cycle, ambiguity, hidden-override, and authority-widening cases.",
+          "minimal_implementation": "Intent-contract, command-contract, intent-execution-trace, and intent-origin fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, cycle, ambiguity, hidden-override, authority-widening, field-confidence, and inferred-authority cases.",
           "beyond_state_of_art": "A mature command-contract spine gives humans, planners, verifiers, job runners, policy layers, runtime adapters, and later AI agents one semantic control language for executable work. Every serious request would enter as a durable intake object, receive an explicit authority envelope, lower through command, plan, job, artifact, verification, delivery, feedback, and residual records, and remain inspectable after the work is done. Every field would carry provenance and confidence; every side-effect route would have an authority basis; every plan node would trace back to the contract it serves; every job would have a dispatch receipt; every artifact would have an identity, verifier, delivery record, feedback state, and residual ledger. This endpoint remains speculative architecture until parser tests, dispatch enforcement, approval-path checks, tool-effect controls, replayed vertical traces, negative controls, and accepted evidence-transition records exist.",
           "codex_tests": [
             {
@@ -2978,13 +2978,13 @@
             },
             {
               "name": "Field-confidence audit",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness and finite Lean field-confidence route; no parser-quality, semantic-extraction-quality, or deployed dispatcher claim"
             },
             {
               "name": "Authority-inference block test",
-              "implementation_status": "planned",
-              "result_status": "not run"
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic plan-execution contract harness with blocked inferred-authority and expected-invalid inferred-authority dispatch fixtures; no deployed authority-extraction, approval-service, or side-effect-enforcement claim"
             }
           ],
           "lean_module": "AsiStackProofs.IntentToExecution",
@@ -3017,6 +3017,12 @@
               "tag": "lean:command.semantic_interface.failure_blocks_promotion",
               "module": "AsiStackProofs.CommandContracts",
               "target": "A hidden or conflicting instruction cannot override an explicit contract constraint.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:command.semantic_interface.field_confidence_route",
+              "module": "AsiStackProofs.CommandContracts",
+              "target": "A structured command-field confidence review routes inferred or missing required field confidence away from dispatch while allowing complete confirmed/policy-imposed fields to dispatch.",
               "status": "implemented"
             }
           ],

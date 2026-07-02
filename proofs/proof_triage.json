@@ -461,6 +461,16 @@
       "rationale": "Implemented in AsiStackProofs.CommandContracts as a finite precedence predicate: hidden or conflicting instructions cannot be accepted as overriding explicit constraints."
     },
     {
+      "tag": "lean:command.semantic_interface.field_confidence_route",
+      "chapter_id": "intent-to-execution-contracts",
+      "module": "AsiStackProofs.CommandContracts",
+      "formal_target": "A structured command-field confidence review routes inferred or missing required field confidence away from dispatch while allowing complete confirmed/policy-imposed fields to dispatch.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CommandContracts as a finite field-confidence route: inferred authority confidence and missing output confidence require review while complete confirmed/policy-imposed confidence is dispatch-eligible."
+    },
+    {
       "tag": "lean:planning.control_layer.operational_invariant",
       "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.Planning",

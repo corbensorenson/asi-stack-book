@@ -953,7 +953,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- Intent-contract, command-contract, intent-execution-trace, and intent-origin fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, cycle, ambiguity, hidden-override, and authority-widening cases.
+- Intent-contract, command-contract, intent-execution-trace, and intent-origin fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, cycle, ambiguity, hidden-override, authority-widening, field-confidence, and inferred-authority cases.
 - Implemented protocol validation: `intent_contract`, `command_contract`, and `intent_execution_trace` fixtures validate public record shape only, including intake state, field provenance, bounded defaults, handoff receipts, dispatch receipts, re-contract events, stop/fault state, residuals, dispatch blockers, and non-claims.
 - Exact Appendix C claim-source mappings for the merged command-contract claim across VIEA intent/artifact/runtime feedback discipline, Talos typed-job/audit/replay discipline, Software Magic Grimoire command-envelope vocabulary, GenesisCode proposal/effect/provenance boundaries, MoECOT runtime-reference context, and Cognitive Compilation source-plan/S-IR lowering. Five local mappings (`viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`) have reviewed passage references, while `moecot` remains connector/source-note mapped until usable raw text, code, logs, release artifacts, or benchmark records are imported or inspected. Support remains `argument` pending command parser tests, dispatch-blocking tests, prompt-override scenarios, semantic-extraction quality checks, approval/runtime enforcement evidence, replayed vertical-slice artifacts, or accepted evidence transitions.
 - Implemented external grounding: `ext_react_2022`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_tla_plus_home_docs`, and `ext_dafny_2010` now anchor the chapter against adjacent reasoning/action, planning-language, decomposition, workflow, process-notation, state-modeling, and verification-condition practices while preserving comparator-only boundaries.
@@ -968,8 +968,8 @@ Draft deliverables:
 - Implemented synthetic Codex test: Ambiguity dispatch block fixture via `python3 scripts/validate_plan_execution_contracts.py`; natural-language ambiguity parsing remains open.
 - Implemented synthetic Codex test: Hidden override rejection fixture via `python3 scripts/validate_plan_execution_contracts.py`; deployed prompt-injection containment remains open.
 - Implemented synthetic Codex test: Intent-authority ceiling fixture via `python3 scripts/validate_plan_execution_contracts.py`; deployed authority extraction and approval service behavior remain open.
-- Planned Codex test: Field-confidence audit.
-- Planned Codex test: Authority-inference block test.
+- Implemented synthetic Codex test: Field-confidence audit via `python3 scripts/validate_plan_execution_contracts.py`; parser quality, semantic extraction quality, and deployed dispatcher behavior remain open.
+- Implemented synthetic Codex test: Authority-inference block test via `python3 scripts/validate_plan_execution_contracts.py`; deployed authority extraction, approval-service behavior, and runtime side-effect enforcement remain open.
 - Consolidation note: `command-contracts-and-semantic-interfaces` folded into this chapter on 2026-06-30 as semantic-interface fields, validation states, proof hooks, fixture/test rows, source mappings, and lineage; the old public slug is preserved by a static redirect and the retired source chapter is archived.
 
 Lean proof targets:
@@ -981,6 +981,7 @@ Lean proof targets:
 | `lean:intent_execution.contracts.dispatch_route_envelope` | `AsiStackProofs.IntentToExecution` | A structured execution dispatch review routes missing contracts, missing objective fields, authority widening, hidden overrides, missing approvals, missing artifacts, missing verification plans, known residuals, and complete dispatch reviews into explicit outcomes. | implemented |
 | `lean:command.semantic_interface.operational_invariant` | `AsiStackProofs.CommandContracts` | A valid command contract contains objective, constraints, output contract, verification, and failure behavior. | implemented |
 | `lean:command.semantic_interface.failure_blocks_promotion` | `AsiStackProofs.CommandContracts` | A hidden or conflicting instruction cannot override an explicit contract constraint. | implemented |
+| `lean:command.semantic_interface.field_confidence_route` | `AsiStackProofs.CommandContracts` | A structured command-field confidence review routes inferred or missing required field confidence away from dispatch while allowing complete confirmed/policy-imposed fields to dispatch. | implemented |
 
 ### Planning as a Control Layer: DAGs and Intelligence Arbitrage
 
