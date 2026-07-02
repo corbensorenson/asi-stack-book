@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Reduce Integrated Reference reader table density
+
+- Added one active reader-only semantic overlay operation for
+  `Integrated Reference Architecture`, replacing the generated reader and live
+  Human-view `Worked showpiece trace: one request through the stack` table
+  section with narrative prose while leaving the canonical AI/research
+  showpiece trace and hop table unchanged.
+- Regenerated `assets/reader-overlays.html` and
+  `docs/reader_continuity_audit.md`; the reader-continuity audit now records
+  44 reader chapters, 116,072 reader words, 33 active/applied overlay
+  operations, 22 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks,
+  0 paragraphs at or above 160 words, and 3 high-priority plus 14
+  medium-priority heuristic review rows. The Integrated Reference chapter
+  moved from high to medium priority by table-density heuristics.
+- Updated the v1.0 status snapshot, roadmap burn-down, and tracked audio-script
+  probe table count from 10 to 9 to match the generated reader-derived
+  narration workspace. This is a reader projection and Human-view craft
+  increment only; it is not a reader release, ebook/document/PDF/audio
+  artifact, integrated runtime trace, external replay, support-state promotion,
+  source-derived evidence update, benchmark result, model-quality claim,
+  deployment claim, scheduler-behavior claim, or authority-enforcement claim.
+
 ## 2026-07-02 - Reduce Circle reader table density
 
 - Added one active reader-only semantic overlay operation for

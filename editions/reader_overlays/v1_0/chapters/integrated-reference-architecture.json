@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/integrated-reference-architecture.qmd",
+  "operations": [
+    {
+      "id": "v1_0.integrated_reference.showpiece_trace_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Worked showpiece trace: one request through the stack"
+      },
+      "rationale": "Replace the dense worked-trace table with reader prose while preserving the same artifact spine, blocked path, validation boundary, and non-claims.",
+      "content_lines": [
+        "The showpiece trace is deliberately small. It follows one bounded living-book maintenance request, `intent://human-book-maintenance-request`, instead of pretending to run an ASI system. That keeps the beginning honest: the trace starts from a human purpose with limited authority, not from a system-owned drive to optimize itself.",
+        "",
+        "Governance turns that request into `command://chapter-update-contract`. The command permits manuscript and fixture maintenance only. It does not grant runtime execution, deployment, benchmark, model-quality, or support-state-promotion authority. Planning then emits `plan://reference-trace-dry-run`, a citable parent artifact with context obligations, route expectations, validation commands, evidence boundaries, and residuals that must survive later handoffs.",
+        "",
+        "Memory enters through `context://source-bound-packet`. That packet is the guard against attractive but ungrounded synthesis: the trace may use recorded source and manifest context, but it may not launder unpublished private text, connector-only claims, or recollection into evidence. Routing then selects `route://bounded-reference-route`, which keeps the path inside fixture-backed book maintenance rather than dispatching a deployed runtime.",
+        "",
+        "Verification receives `claim://argument-only-reference-claim`. The claim can say that the reference-trace record shape was exercised and that the architecture is easier to inspect. It cannot say an integrated runtime exists, that a deployed authority stop worked, or that Project Theseus, MoECOT, or VCM executed the run. Execution stays just as modest: `work://fixture-only-work-order` and `audit://fixture-validation-log` point to repository fixture validation, not autonomous operation.",
+        "",
+        "The evidence ledger records `evidence://record-shape-only-update`, with residuals still attached: no runtime trace harness and no live artifact-continuity audit. The SCF boundary receives `scf://no-promotion-review`, preserving the promotion blockers instead of converting a cleaner specification into a capability upgrade. That is the whole point of the reference architecture: even a successful maintenance trace should leave the support state at `argument` when the evidence only supports record shape.",
+        "",
+        "The blocked path uses the same spine under stress. `intent://restricted-execution-request` becomes `command://restricted-command-contract` and `plan://blocked-reference-trace`, but governance denies runtime execution authority. The route becomes `route://denied-runtime-route`; execution emits `work://blocked-work-order`; the audit records `audit://authority-denial-log`; the evidence ledger keeps `evidence://blocked-path-record`; and the SCF gate carries `scf://promotion-blocker`. The named stop conditions are missing execution authority, unaccepted residual, and required governance review.",
+        "",
+        "This is the architecture's reader-facing falsification target. A future live implementation should be able to replace the fixture-only artifacts with real artifacts of the same kind while preserving parentage, authority deltas, evidence deltas, residual deltas, validation commands, stop conditions, and non-claims. Until that happens, the showpiece is a specification trace and local replay boundary, not runtime integration evidence."
+      ]
+    }
+  ]
+}
