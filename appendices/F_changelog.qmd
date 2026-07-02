@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 - Add VCM resolver/certificate probe
+
+- Added `python3 scripts/run_vcm_resolver_certificate_probe.py`,
+  `python3 scripts/validate_vcm_resolver_certificate_probe.py`,
+  `docs/vcm_resolver_certificate_probe.md`, and
+  `experiments/vcm_resolver_certificate_probe/results/2026-07-02-local.json`
+  for a deterministic public-safe Virtual Context ABI resolver/certificate
+  fixture probe.
+- The probe records `valid_resolver_materialization_receipt`,
+  `valid_mandatory_miss_typed_fault`, and nine expected-invalid controls for
+  address, version, snapshot, mount policy, lease expiry, certificate source
+  binding, authority escalation, truthfulness overclaim, and undeclared summary
+  omission boundaries.
+- Updated the Virtual Context ABI live chapter, curated reader chapter,
+  outline, roadmap, manifest, README/status surfaces, repository map, and
+  validation wiring. This is a no deployed-resolver, memory-store,
+  context-compiler, open-domain-summary-fidelity, certificate-truthfulness,
+  transaction-isolation, deletion-enforcement, model-facing-context-quality,
+  VCM-Bench, leak-prevention, or support-state-promotion claim.
+
 ## 2026-07-02 - Add artifact steward lifecycle probe
 
 - Added `python3 scripts/run_artifact_steward_lifecycle_probe.py`,

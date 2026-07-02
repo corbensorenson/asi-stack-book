@@ -1,0 +1,413 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_vcm_resolver_certificate_probe.py --write-result",
+  "evidence_transition_created": false,
+  "expected_invalid_controls": [
+    {
+      "actual_route": "issue_typed_fault",
+      "decision_reason": "mandatory_context_reference_not_found",
+      "expected_route": "issue_typed_fault",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/other",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": true
+      },
+      "scenario_id": "invalid_address_mismatch_materialization_denied",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "issue_typed_fault",
+      "decision_reason": "mandatory_context_reference_not_found",
+      "expected_route": "issue_typed_fault",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "stale-version"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": true
+      },
+      "scenario_id": "invalid_version_mismatch_materialization_denied",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "issue_typed_fault",
+      "decision_reason": "mandatory_context_reference_not_found",
+      "expected_route": "issue_typed_fault",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/stale",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": true
+      },
+      "scenario_id": "invalid_snapshot_mismatch_materialization_denied",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "deny_mount_policy",
+      "decision_reason": "mount_not_permitted_for_request",
+      "expected_route": "deny_mount_policy",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "restricted-private-cache",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": false
+      },
+      "scenario_id": "invalid_mount_policy_denied",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "deny_expired_lease",
+      "decision_reason": "context_lease_not_active",
+      "expected_route": "deny_expired_lease",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "expired",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": false
+      },
+      "scenario_id": "invalid_lease_expired_reuse_blocked",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "reject_source_binding_mismatch",
+      "decision_reason": "certificate_bindings_do_not_match_derived_cell",
+      "expected_route": "reject_source_binding_mismatch",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": false
+      },
+      "scenario_id": "invalid_certificate_source_binding_mismatch_denied",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "reject_authority_escalation",
+      "decision_reason": "derived_or_certificate_authority_exceeds_source",
+      "expected_route": "reject_authority_escalation",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "tracked_file_write",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "tracked_file_write",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": false
+      },
+      "scenario_id": "invalid_certificate_authority_escalation_denied",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "reject_truthfulness_overclaim",
+      "decision_reason": "certificate_claims_exact_complete_representation_for_lossy_cell",
+      "expected_route": "reject_truthfulness_overclaim",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "exact_quote_complete",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": false
+      },
+      "scenario_id": "invalid_certificate_truthfulness_overclaim_denied",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "reject_undeclared_omission",
+      "decision_reason": "derived_cell_omissions_not_declared",
+      "expected_route": "reject_undeclared_omission",
+      "expected_valid": false,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": false
+      },
+      "scenario_id": "invalid_summary_fidelity_omission_denied",
+      "scenario_pass": true
+    }
+  ],
+  "local_only": true,
+  "non_claims": [
+    "This VCM resolver/certificate probe does not promote any chapter core claim above argument.",
+    "This VCM resolver/certificate probe does not create a support-state transition.",
+    "This VCM resolver/certificate probe does not prove deployed resolver correctness, memory-store behavior, planner-guided context compilation, open-domain summary fidelity, certificate truthfulness, transaction isolation, deletion enforcement, model-facing context quality, contradiction-rate improvement, distractor resistance, VCM-Bench performance, leak prevention, or AI safety.",
+    "This VCM resolver/certificate probe uses generated public-safe source-cell facts only; it does not read private source text, copy raw source payloads, call a network service, run a model, access a live memory store, or materialize real user data."
+  ],
+  "pass": true,
+  "probe_id": "vcm-resolver-certificate-probe-2026-07-02-local",
+  "public_safety_boundary": "Generated public-safe source-cell facts and derived-cell metadata only; no private source text, live memory store, model call, network target, or real user data is read or materialized.",
+  "record_kind": "vcm_resolver_certificate_probe",
+  "recorded_at_utc": "2026-07-02T11:45:04Z",
+  "schema_version": "0.1",
+  "summary": {
+    "decision_digest": "ba9d6ba3db05b7385dbe311195b9aded420acfbf2c7181354219173e52ec6773",
+    "expected_invalid_controls": 9,
+    "valid_scenarios": 2
+  },
+  "support_state_effect": "none",
+  "synthetic_source_cell": {
+    "cell_id": "cell://vcm-probe/source/vcm-public-static-abi",
+    "fact_keys": [
+      "authority_boundary",
+      "fault_contract",
+      "stable_address"
+    ],
+    "facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+    "non_claims": [
+      "synthetic source-cell facts only",
+      "not a quotation from private source text"
+    ]
+  },
+  "valid_scenarios": [
+    {
+      "actual_route": "materialize_context",
+      "decision_reason": "resolver_and_certificate_accepted",
+      "expected_route": "materialize_context",
+      "expected_valid": true,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/vcm_public/static-abi",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": true,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": false
+      },
+      "scenario_id": "valid_resolver_materialization_receipt",
+      "scenario_pass": true
+    },
+    {
+      "actual_route": "issue_typed_fault",
+      "decision_reason": "mandatory_context_reference_not_found",
+      "expected_route": "issue_typed_fault",
+      "expected_valid": true,
+      "input_summary": {
+        "certificate_authority_ceiling": "public_read",
+        "certificate_claim": "lossy_summary_with_declared_omissions",
+        "certificate_omissions": [
+          "fault_contract"
+        ],
+        "derived_authority_ceiling": "public_read",
+        "derived_facts_sha256": "54471e7b754d0c77595a5ee3153b8f4506b07e4a0fcfdbd726818aa33d075711",
+        "lease_state": "active",
+        "mandatory": true,
+        "mount": "public-safe-source-note",
+        "semantic_address": "vcm://book/source-notes/missing",
+        "snapshot_id": "snapshot://vcm-probe/public-safe-001",
+        "source_authority_ceiling": "public_read",
+        "source_facts_sha256": "4b61659e8b7db3e9fc050e2d5266af02b4bea71aade2f9438727439431005157",
+        "version": "source-note-2026-06-24"
+      },
+      "outcome": {
+        "chapter_core_support_effect": "none",
+        "materialization_emitted": false,
+        "model_called": false,
+        "network_used": false,
+        "private_source_read": false,
+        "support_state_effect": "none",
+        "typed_fault_emitted": true
+      },
+      "scenario_id": "valid_mandatory_miss_typed_fault",
+      "scenario_pass": true
+    }
+  ]
+}

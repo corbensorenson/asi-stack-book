@@ -130,6 +130,8 @@ REQUIRED = [
     "scripts/validate_cyclic_memory_contracts.py",
     "scripts/validate_context_transaction_memory_store.py",
     "scripts/validate_context_admission_adequacy.py",
+    "scripts/run_vcm_resolver_certificate_probe.py",
+    "scripts/validate_vcm_resolver_certificate_probe.py",
     "scripts/validate_verification_bandwidth_probe.py",
     "docs/verification_bandwidth_probe.md",
     "experiments/verification_bandwidth/results/2026-07-02-local.json",
@@ -213,6 +215,9 @@ REQUIRED = [
     "docs/cyclic_memory_contract_harness.md",
     "docs/context_transaction_memory_store_harness.md",
     "docs/context_admission_adequacy_harness.md",
+    "docs/vcm_resolver_certificate_probe.md",
+    "experiments/vcm_resolver_certificate_probe/README.md",
+    "experiments/vcm_resolver_certificate_probe/results/2026-07-02-local.json",
     "docs/readiness_residual_harness.md",
     "docs/benchmark_antigoodhart_harness.md",
     "docs/policy_update_lease_probe.md",
@@ -852,6 +857,7 @@ def main() -> None:
     run_validator("validate_cyclic_memory_contracts.py")
     run_validator("validate_context_transaction_memory_store.py")
     run_validator("validate_context_admission_adequacy.py")
+    run_validator("validate_vcm_resolver_certificate_probe.py")
     run_validator("validate_verification_bandwidth_probe.py")
     run_validator("validate_readiness_residual_gates.py")
     run_validator("validate_benchmark_antigoodhart.py")

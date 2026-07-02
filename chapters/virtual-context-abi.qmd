@@ -17,7 +17,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Executed consolidation of `virtual-context-abi` and `semantic-pages-context-cells-and-certificates`; the old semantic-pages slug is preserved by a static redirect and the source chapter is archived for lineage."
-  - "Source notes, schemas, fixtures, a synthetic context admission/adequacy harness, and finite Lean predicates support static context record discipline only; they do not prove resolver correctness, context compiler quality, semantic summary fidelity, certificate truthfulness, deletion closure, transaction isolation, verification bandwidth, model-facing context performance, or deployed memory-store behavior."
+  - "Source notes, schemas, fixtures, a synthetic context admission/adequacy harness, the VCM resolver/certificate probe, and finite Lean predicates support static context record discipline only; they do not prove resolver correctness, context compiler quality, semantic summary fidelity, certificate truthfulness, deletion closure, transaction isolation, verification bandwidth, model-facing context performance, or deployed memory-store behavior."
   - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
 
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/source-note only: `vcm_editable`, `moecot` |
-| Test state | `context_abi_record.valid.json`, `semantic_page_certificate.valid.json`, and related context packet/adequacy/transaction fixtures pass protocol validation; `python3 scripts/validate_context_admission_adequacy.py` passes synthetic admission/adequacy, certificate-use, stale-certificate, deletion-closure, and mode-confusion checks; `AsiStackProofs.VirtualContextABI` and `AsiStackProofs.ContextCertificates` implement finite record predicates including a context-admission route envelope; resolver, context compiler, summary-fidelity, certificate-truthfulness, deletion-closure, transaction-isolation, and model-facing memory tests remain planned. |
+| Test state | `context_abi_record.valid.json`, `semantic_page_certificate.valid.json`, and related context packet/adequacy/transaction fixtures pass protocol validation; `python3 scripts/validate_context_admission_adequacy.py` passes synthetic admission/adequacy, certificate-use, stale-certificate, deletion-closure, and mode-confusion checks; `python3 scripts/validate_vcm_resolver_certificate_probe.py` validates the VCM resolver/certificate probe over `valid_resolver_materialization_receipt`, `valid_mandatory_miss_typed_fault`, and nine expected-invalid controls; `AsiStackProofs.VirtualContextABI` and `AsiStackProofs.ContextCertificates` implement finite record predicates including a context-admission route envelope. Deployed resolver, context compiler, open-domain summary-fidelity, certificate-truthfulness, deletion-closure, transaction-isolation, model-facing memory, VCM-Bench, and leak-prevention tests remain unproven. |
 
 The executed merge combines two current record families:
 
@@ -339,11 +339,23 @@ prove that a real resolver can find the right context, that summaries are
 semantically faithful, that a model will use the packet correctly, or that a
 memory store enforces transactions.
 
-The next practical slice is a resolver fixture set: one valid request that
-resolves to a leased materialization, one mandatory miss that emits a typed
-fault, one resolved packet rejected as inadequate for verification, one packet
-denied by mount policy, and one lease-expired reuse attempt blocked. It would
-sharpen the ABI semantics without pretending to be a full memory product.
+The next practical slice now exists as the VCM resolver/certificate probe in
+`docs/vcm_resolver_certificate_probe.md` and
+`experiments/vcm_resolver_certificate_probe/results/2026-07-02-local.json`.
+It checks `valid_resolver_materialization_receipt`,
+`valid_mandatory_miss_typed_fault`, and expected-invalid controls for
+`invalid_address_mismatch_materialization_denied`,
+`invalid_version_mismatch_materialization_denied`,
+`invalid_snapshot_mismatch_materialization_denied`,
+`invalid_mount_policy_denied`, `invalid_lease_expired_reuse_blocked`,
+`invalid_certificate_source_binding_mismatch_denied`,
+`invalid_certificate_authority_escalation_denied`,
+`invalid_certificate_truthfulness_overclaim_denied`, and
+`invalid_summary_fidelity_omission_denied`. This is a no deployed-resolver,
+memory-store, context-compiler, open-domain-summary-fidelity,
+certificate-truthfulness, transaction-isolation, deletion-enforcement,
+model-facing-context-quality, VCM-Bench, leak-prevention, or
+support-state-promotion claim.
 
 ## Beyond the State of the Art
 
@@ -393,8 +405,9 @@ adequacy handoff, and typed refusal path.
 | Authority preservation predicate | Check that summaries respecting their sources cannot increase the authority ceiling of source cells. | implemented in `AsiStackProofs.ContextCertificates`; builds locally |
 | Certificate lifecycle admission route proof | Check that a finite certificate-lifecycle review routes malformed certificates, missing source bindings, missing loss or use contracts, authority escapes, omitted-material gaps, scope violations, stale certificates, revocation, taint, deletion-closure gaps, missing verifier refs, consumer-policy violations, support-promotion attempts without evidence transitions, and complete reviews to explicit outcomes. | implemented by Lean build; finite certificate-lifecycle route coverage only |
 | Synthetic context admission/adequacy harness | Check that admission, adequacy, stale certificates, deletion closure, and mode-confusion cases cannot become evidence-ready context. | implemented in `python3 scripts/validate_context_admission_adequacy.py`; no deployed resolver or summary-fidelity claim |
-| Resolver conformance test | Check that a deployed resolver rejects invalid addresses, versions, mounts, and snapshots before materialization. | planned; not run |
-| Certificate truthfulness test | Check that certificate declarations match paired source and derived cells. | planned; not run |
+| Resolver conformance test | Check that resolver-style fixture records reject invalid addresses, versions, mounts, snapshots, and expired leases before materialization. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; synthetic fixture-pair check only, no deployed resolver |
+| Certificate truthfulness test | Check that certificate declarations match paired source and derived cells for source binding, omissions, authority ceiling, and representation claim. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; synthetic fixture-pair check only, no open-domain certificate truthfulness |
+| VCM resolver/certificate probe | Check `valid_resolver_materialization_receipt`, `valid_mandatory_miss_typed_fault`, and nine expected-invalid controls across address, version, snapshot, mount policy, lease expiry, certificate source binding, authority escalation, truthfulness overclaim, and summary omission boundaries. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; no deployed-resolver, memory-store, context-compiler, open-domain-summary-fidelity, certificate-truthfulness, transaction-isolation, deletion-enforcement, model-facing-context-quality, VCM-Bench, leak-prevention, or support-state-promotion claim |
 
 ### Formalization hooks
 
@@ -411,9 +424,12 @@ These proof hooks are implemented only over finite Lean records. They check
 resolved-reference matching, mandatory-miss faulting, derived-cell field
 presence, source-authority non-escalation, and context-admission route coverage
 plus certificate-lifecycle route coverage for modeled invalid or complete
-review states. They do not prove open-domain source selection, semantic
-fidelity, certificate truthfulness, deployed resolver behavior, transaction
-isolation, deletion enforcement, or model use.
+review states. The VCM resolver/certificate probe adds a deterministic
+synthetic route check over generated source and derived cells. These artifacts
+do not prove open-domain source selection, semantic fidelity, certificate
+truthfulness, deployed resolver behavior, transaction isolation, deletion
+enforcement, model-facing context behavior, VCM-Bench performance, or leak
+prevention.
 
 Adjacent proof hooks remain with protected standalone chapters:
 `lean:vcm.transactions.operational_invariant`,

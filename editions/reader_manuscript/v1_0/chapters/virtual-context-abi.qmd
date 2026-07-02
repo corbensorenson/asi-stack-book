@@ -80,12 +80,13 @@ authority ceilings, loss/use contracts, adequacy states, residuals, and typed
 faults. This remains an architectural argument.
 
 The live chapter stays at `argument` support. The repository has source notes,
-schema validation, finite Lean hooks, and a synthetic context
-admission/adequacy harness. It does not have a deployed VCM resolver,
-planner-guided context compiler, summary-fidelity evaluator, certificate
-truthfulness checker, deletion-closure implementation, transaction-isolation
-test, model-facing context run, VCM-Bench reproduction, leak-prevention
-benchmark, or MoECOT runtime trace.
+schema validation, finite Lean hooks, a synthetic context admission/adequacy
+harness, and a deterministic VCM resolver/certificate probe over generated
+public-safe source and derived cells. It does not have a deployed VCM
+resolver, planner-guided context compiler, open-domain summary-fidelity
+evaluator, certificate truthfulness checker, deletion-closure implementation,
+transaction-isolation test, model-facing context run, VCM-Bench reproduction,
+leak-prevention benchmark, or MoECOT runtime trace.
 
 ## Mechanism
 
@@ -176,8 +177,10 @@ properties: a resolved context reference must have a matching address,
 version, and snapshot binding; a mandatory miss must produce a typed fault; a
 valid derived cell must carry source bindings plus loss/use declarations; and
 a summary respecting source authority cannot raise its authority ceiling above
-the source cells. They do not prove a real resolver, context compiler, summary
-fidelity, or certificate truthfulness.
+the source cells. The VCM resolver/certificate probe adds deterministic
+fixture-pair checks for resolver-style materialization and certificate
+boundaries. These artifacts do not prove a real resolver, context compiler,
+open-domain summary fidelity, or certificate truthfulness.
 
 ## Failure Modes
 
@@ -219,12 +222,21 @@ deployed VCM service. It does not prove semantic-address resolver correctness,
 summary fidelity, contradiction-rate improvement, distractor resistance,
 runtime memory-store behavior, or model-facing context quality.
 
-The next practical slice should be a resolver and certificate fixture set: one
-valid request that resolves to a leased materialization, one mandatory miss
-that emits a typed fault, one resolved packet rejected as inadequate for
-verification, one packet denied by mount policy, one lease-expired reuse
-attempt blocked, and one attempted use outside a representation certificate
-rejected.
+The next practical slice is now present as the VCM resolver/certificate probe.
+It checks `valid_resolver_materialization_receipt`,
+`valid_mandatory_miss_typed_fault`, and nine expected-invalid controls:
+`invalid_address_mismatch_materialization_denied`,
+`invalid_version_mismatch_materialization_denied`,
+`invalid_snapshot_mismatch_materialization_denied`,
+`invalid_mount_policy_denied`, `invalid_lease_expired_reuse_blocked`,
+`invalid_certificate_source_binding_mismatch_denied`,
+`invalid_certificate_authority_escalation_denied`,
+`invalid_certificate_truthfulness_overclaim_denied`, and
+`invalid_summary_fidelity_omission_denied`. This is a no deployed-resolver,
+memory-store, context-compiler, open-domain-summary-fidelity,
+certificate-truthfulness, transaction-isolation, deletion-enforcement,
+model-facing-context-quality, VCM-Bench, leak-prevention, or
+support-state-promotion claim.
 
 ## Beyond the State of the Art
 
