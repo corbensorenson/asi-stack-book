@@ -2,6 +2,8 @@
 
 Date: 2026-06-30
 
+Follow-up: 2026-07-01
+
 Chapter: `intent-to-execution-contracts`
 
 Reader manuscript file:
@@ -15,6 +17,14 @@ Consolidation caveat:
 chapter on 2026-06-30. This pass is now historical input to the merged reader
 chapter; it does not approve a reader release artifact and does not promote any
 support state.
+
+2026-07-01 follow-up:
+The live mechanism prose was smoothed to remove visible merge-scaffold language
+around "three lanes." The edited flow now starts from an accepted intent
+receipt, builds a command contract, carries field provenance and confidence,
+and follows execution through handoff, dispatch, job, artifact, verifier,
+feedback, residual, stop/fault, and non-claim records. The curated reader
+opening now makes the contract-to-artifact authorization throughline explicit.
 
 ## Reader Promise
 
@@ -41,6 +51,10 @@ The reader throughline is:
 - Reworked the Mermaid diagram around the route from human intent to intent
   contract, command contract, plan graph, typed jobs, authority gate, runtime
   action, artifact, verification record, and feedback/evidence ledger.
+- Smoothed the 2026-07-01 live and curated mechanism language so the merged
+  destination no longer reads as a list of three lanes while preserving
+  intent, contract, authority, artifact, receipt, residual, and evidence
+  boundaries.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint without implying a deployed intent runtime, parser, approval
   service, artifact verifier, replay system, or vertical execution slice
@@ -74,7 +88,10 @@ The reader throughline is:
 
 ## Non-Claims
 
-- This pass does not edit the live AI/research chapter.
+- The original 2026-06-30 pass did not edit the live AI/research chapter; the
+  2026-07-01 follow-up edits live and curated prose only and does not change
+  claim meaning, support state, source mapping, proof/test status, or release
+  status.
 - This pass does not change `book_structure.json`.
 - This pass does not itself execute, reject, or authorize a chapter merge or fold.
 - This pass does not alter Appendix C or Appendix K.

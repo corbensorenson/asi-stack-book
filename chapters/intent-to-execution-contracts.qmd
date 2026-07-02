@@ -155,29 +155,28 @@ points, and dispatch blockers.
 
 ## Mechanism
 
-The destination mechanism has three lanes.
+The mechanism starts when `human-intent-as-a-formal-input` hands over an
+accepted intent receipt. The command contract records the objective,
+constraints, authority envelope, allowed means, disallowed means, acceptance
+criteria, stop conditions, evidence requirements, artifacts, and clarification
+or re-contract triggers. That record preserves the difference between what a
+person expressed and what the system is authorized to do.
 
-The first lane is intake-to-contract continuity. It receives an accepted intent
-receipt from `human-intent-as-a-formal-input`, then records the command's
-objective, constraints, authority envelope, allowed means, disallowed means,
-acceptance criteria, stop conditions, evidence requirements, artifacts, and
-clarification or re-contract triggers. It preserves the difference between
-what a person expressed and what the system is authorized to do.
+Each command field then carries provenance and confidence: confirmed,
+policy-imposed, source-derived, defaulted, inferred, or missing. Context,
+examples, retrieved text, previous conversation, and style notes can inform
+work, but they cannot override explicit objective, constraints, authority,
+output contract, verification, or failure behavior. Missing or inferred
+authority can support clarification or a draft-only route. It cannot authorize
+side effects.
 
-The second lane is semantic interface discipline. It gives each command field
-provenance and confidence: confirmed, policy-imposed, source-derived,
-defaulted, inferred, or missing. Context, examples, retrieved text, previous
-conversation, and style notes can inform work, but they cannot override
-explicit objective, constraints, authority, output contract, verification, or
-failure behavior. Missing or inferred authority can support clarification or a
-draft-only route. It cannot authorize side effects.
-
-The third lane is execution traceability. It records handoff receipts,
-dispatch receipts, job references, artifact references, verifier decisions,
-feedback, residuals, stop/fault states, and non-claims. The point is not to
-make execution automatic. The point is to ensure that when execution does
-occur, the repository can tell which contract authorized it, which artifacts
-resulted, which validators accepted them, and which residuals remain.
+Once a contract can lower into work, traceability follows the contract through
+handoff receipts, dispatch receipts, job references, artifact references,
+verifier decisions, feedback, residuals, stop/fault states, and non-claims.
+The point is not to make execution automatic. The point is to ensure that when
+execution does occur, the repository can tell which contract authorized it,
+which artifacts resulted, which validators accepted them, and which residuals
+remain.
 
 ```{mermaid}
 flowchart LR

@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-01 - Smooth Intent-to-Execution merge scaffold
+
+- Rewrote the `intent-to-execution-contracts` mechanism section so the live
+  chapter no longer presents the merged destination as three "lanes"; the prose
+  now follows one command-contract flow from accepted intent receipt through
+  field provenance, authority, handoff, dispatch, jobs, artifacts,
+  verification, feedback, residuals, and non-claims.
+- Smoothed the curated reader opening and updated
+  `docs/curated_reader_intent_execution_prose_pass.md` with the
+  meaning-preservation boundary.
+- Updated the v1.x chapter-review burn-down row for Intent-to-Execution
+  Contracts. This is reader-craft work only; it does not change claim meaning,
+  support state, source mappings, proof/test status, implementation horizons,
+  release status, parser correctness, prompt-injection resistance, approval
+  enforcement, runtime dispatcher behavior, tool-effect control, or deployed
+  execution safety.
+
 ## 2026-07-01 - Smooth Virtual Context ABI merge scaffold
 
 - Rewrote the `virtual-context-abi` mechanism section so the live chapter no
