@@ -102,9 +102,14 @@ budget, compute, memory, and verification burden.
 The evidence boundary is architectural argument. The current repository
 contains a generation-mode record fixture and finite Lean predicates for
 promotion discipline. It also contains source-noted external literature for
-the method taxonomy. It does not contain a local decoding benchmark, diffusion
-benchmark, MTP run, speculative-acceptance experiment, serving deployment,
-KV-cache audit, useful-solution-per-second result, or reproduced speedup.
+the method taxonomy and a local public-safe task-bundle accounting replay,
+`fast_generation_task_bundle_2026_07_02_local`. That replay selects
+`route://fast-template-verified` over an autoregressive reference under
+deterministic cost units and rejects `route://latency-only-proxy`, but it is a
+no model-speed or deployment claim. It does not contain a local decoding
+benchmark, diffusion benchmark, MTP run, speculative-acceptance experiment,
+serving deployment, KV-cache audit, model useful-solution-per-second result,
+or reproduced speedup.
 
 The claim is not that one acceleration family wins. The claim is that the
 stack needs a policy surface where those families can be compared by accepted
@@ -309,15 +314,19 @@ The minimum viable implementation is not a universal fast decoder. It is a
 generation-mode registry and benchmark record.
 
 The first useful slice should compare a plain baseline with one
-verifier-preserving accelerated path on a small task suite. The record should
-include the task, risk tier, latency budget, context packet, generation mode,
-draft source, verifier, acceptance predicate, proposed output, accepted output,
-wall-clock time, quality or pass result, compute and memory notes, fallback,
-promotion decision, evidence references, and non-claims.
+verifier-preserving accelerated path on a small task suite. The repository now
+has that slice in bounded form. The task-bundle replay compares an
+autoregressive reference, `route://fast-template-verified`, and
+`route://latency-only-proxy` over four public-safe receipt tasks. The verified
+route passes 4/4 tasks at 264 deterministic cost units versus 632 for the
+baseline. The latency-only route is cheaper at 176 cost units, but it is
+rejected because it fails verifier, fallback, residual, and support-state
+boundaries.
 
-The current repository fixture validates the shape of such a record only. It
-does not run a decoding benchmark. It intentionally keeps demo measurements at
-`not_run`, `not measured`, or `not_evaluated` where appropriate.
+That result is deliberately small. It is an accounting replay, not a decoding
+benchmark. It shows how the book will record baseline, verifier, fallback,
+residual, negative-control, and non-claim boundaries before any future fast
+generation result is allowed to matter.
 
 That is still useful. A record-shape fixture gives the stack a place to put
 future evidence without letting future evidence blur the boundaries. It can

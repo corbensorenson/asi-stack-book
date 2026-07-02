@@ -144,6 +144,8 @@ REQUIRED = [
     "scripts/validate_benchmark_fixture_bridge.py",
     "scripts/validate_policy_update_lease_probe.py",
     "scripts/validate_generation_mode_baselines.py",
+    "scripts/run_fast_generation_task_bundle.py",
+    "scripts/validate_fast_generation_task_bundle.py",
     "scripts/validate_compact_gvr_slice.py",
     "scripts/validate_resource_budget_ledgers.py",
     "scripts/validate_simulation_transfer_boundaries.py",
@@ -188,6 +190,9 @@ REQUIRED = [
     "docs/v1_0_release_gate_audit.md",
     "docs/proof_artifact_audit.md",
     "docs/source_evidence_audit.md",
+    "docs/fast_generation_task_bundle.md",
+    "experiments/fast_generation_task_bundle/README.md",
+    "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
     "docs/core_claim_transition_coverage.md",
     "docs/v1_x_active_evidence_cycle.md",
     "docs/CHAPTER_REVIEWS.md",
@@ -876,6 +881,7 @@ def main() -> None:
     run_validator("validate_benchmark_fixture_bridge.py")
     run_validator("validate_policy_update_lease_probe.py")
     run_validator("validate_generation_mode_baselines.py")
+    run_validator("validate_fast_generation_task_bundle.py")
     run_validator("validate_compact_gvr_slice.py")
     run_validator("validate_resource_budget_ledgers.py")
     run_validator("validate_simulation_transfer_boundaries.py")

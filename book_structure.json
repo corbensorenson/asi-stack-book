@@ -7581,6 +7581,13 @@
               "result_status": "passes via `python3 scripts/validate_theseus_generation_mode_import.py`; finite `AsiStackProofs.FastGeneration` fixture matches the public summary; no live Theseus replay, speed-quality win, useful-solution-per-second improvement, or support-state promotion",
               "status": "implemented; passing via `python3 scripts/validate_theseus_generation_mode_import.py`"
             },
+            {
+              "name": "Fast generation public-safe task bundle",
+              "purpose": "Replay a public-safe local fast-generation task bundle with an autoregressive reference baseline, a verified fast-template candidate, a latency-only negative control, cost units, quality checks, verifier/fallback/residual boundaries, and useful-solution-per-cost accounting.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_fast_generation_task_bundle.py`; result `fast_generation_task_bundle_2026_07_02_local` selects `route://fast-template-verified` at 264 deterministic cost units vs baseline 632 while rejecting cheaper `route://latency-only-proxy`; no model-speed or deployment claim, no useful-solution-per-second model claim, and no support-state promotion",
+              "status": "implemented; passing via `python3 scripts/validate_fast_generation_task_bundle.py`"
+            },
             "Autoregressive baseline speed-quality test",
             "Speculative decoding acceptance test",
             "Multi-token draft-head acceptance test",
@@ -7616,6 +7623,12 @@
               "tag": "lean:fast_generation.theseus_import_fixture_bridge",
               "module": "AsiStackProofs.FastGeneration",
               "target": "The public Project Theseus generation-mode import fixture matches a finite Lean summary fixture and proves the imported accepted-span speed-lift warnings do not permit promotion without useful-solution evidence, promotable comparisons, all hard boundary gates passing, and zero missing report refs.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:fast_generation.task_bundle_fixture_bridge",
+              "module": "AsiStackProofs.FastGeneration",
+              "target": "The public-safe fast-generation task-bundle fixture preserves baseline and candidate task quality, shows candidate deterministic cost-accounting improvement over baseline, rejects the latency-only negative control, and blocks support promotion within the finite result summary.",
               "status": "implemented"
             }
           ],

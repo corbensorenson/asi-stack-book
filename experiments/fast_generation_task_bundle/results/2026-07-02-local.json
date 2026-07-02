@@ -1,0 +1,129 @@
+{
+  "baseline_route_id": "route://autoregressive-reference",
+  "evidence_refs": [
+    "run:python3 scripts/run_fast_generation_task_bundle.py --write-result",
+    "validator:python3 scripts/validate_fast_generation_task_bundle.py",
+    "baseline:route://autoregressive-reference",
+    "negative_control:route://latency-only-proxy"
+  ],
+  "generated_at": "2026-07-02",
+  "measurement_policy": "Deterministic cost-unit selection with local elapsed milliseconds recorded as run metadata; no model-speed or deployment claim.",
+  "negative_control_rejected": true,
+  "negative_control_route_id": "route://latency-only-proxy",
+  "non_claims": [
+    "Does not prove model generation speed.",
+    "Does not prove useful-solution-per-second improvement for an AI model.",
+    "Does not reproduce speculative decoding, MTP, diffusion, KV-cache, or serving benchmarks.",
+    "Does not promote any chapter core claim or Appendix C support state."
+  ],
+  "result_id": "fast_generation_task_bundle_2026_07_02_local",
+  "route_summary": [
+    {
+      "fallback_cost_units": 0,
+      "fallback_recorded": true,
+      "generation_cost_units": 560,
+      "mode_family": "autoregressive_reference",
+      "observed_elapsed_ms": 0.006917,
+      "outputs_digest": "9bf0ef4905f6384aaa7b1ed80071233ce7d32493218a8f017bedfa4816a1b71a",
+      "promotion_decision": "baseline_only",
+      "quality_result": "pass",
+      "residuals_recorded": true,
+      "route_id": "route://autoregressive-reference",
+      "task_count": 4,
+      "tasks_failed": 0,
+      "tasks_passed": 4,
+      "total_cost_units": 632,
+      "useful_solution_per_1000_cost_units": 6.329114,
+      "useful_solution_per_second_observed": 578285.383837,
+      "verifier_cost_units": 72,
+      "verifier_errors": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "fallback_cost_units": 0,
+      "fallback_recorded": true,
+      "generation_cost_units": 192,
+      "mode_family": "fast_template_verified",
+      "observed_elapsed_ms": 0.006125,
+      "outputs_digest": "536552476a1a1ec485e691adadc4d53d03ecedc7496b28b8af2717f41cb76f39",
+      "promotion_decision": "keep_experimental",
+      "quality_result": "pass",
+      "residuals_recorded": true,
+      "route_id": "route://fast-template-verified",
+      "task_count": 4,
+      "tasks_failed": 0,
+      "tasks_passed": 4,
+      "total_cost_units": 264,
+      "useful_solution_per_1000_cost_units": 15.151515,
+      "useful_solution_per_second_observed": 653061.22449,
+      "verifier_cost_units": 72,
+      "verifier_errors": [
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "fallback_cost_units": 140,
+      "fallback_recorded": false,
+      "generation_cost_units": 20,
+      "mode_family": "latency_only_proxy",
+      "observed_elapsed_ms": 0.008083,
+      "outputs_digest": "8b3b5528587fa3e9368df20fc1191154a530df78e4c6a98f90ea22ee73633f79",
+      "promotion_decision": "reject",
+      "quality_result": "fail",
+      "residuals_recorded": false,
+      "route_id": "route://latency-only-proxy",
+      "task_count": 4,
+      "tasks_failed": 4,
+      "tasks_passed": 0,
+      "total_cost_units": 176,
+      "useful_solution_per_1000_cost_units": 0.0,
+      "useful_solution_per_second_observed": 0.0,
+      "verifier_cost_units": 16,
+      "verifier_errors": [
+        [
+          "support_state_effect must remain none",
+          "missing required term public-safe",
+          "missing required term validator",
+          "missing required term negative-control",
+          "missing boundary public-safe",
+          "missing boundary no-promotion"
+        ],
+        [
+          "support_state_effect must remain none",
+          "missing required term no-promotion",
+          "missing boundary public-safe",
+          "missing boundary no-promotion"
+        ],
+        [
+          "support_state_effect must remain none",
+          "missing required term proposed",
+          "missing required term accepted",
+          "missing required term cost",
+          "missing boundary public-safe",
+          "missing boundary no-promotion"
+        ],
+        [
+          "support_state_effect must remain none",
+          "missing required term high-risk",
+          "missing required term latency-only",
+          "missing required term slow-fallback",
+          "missing required term review",
+          "missing boundary public-safe",
+          "missing boundary no-promotion"
+        ]
+      ]
+    }
+  ],
+  "selected_route_id": "route://fast-template-verified",
+  "selection_rationale": "The selected route passed the same four public-safe tasks as the baseline at lower deterministic cost units; the cheaper latency-only proxy failed verifier, fallback, residual, and support-state boundaries.",
+  "support_state_effect": "none",
+  "task_bundle_id": "fg-public-safe-task-bundle-001",
+  "task_count": 4
+}

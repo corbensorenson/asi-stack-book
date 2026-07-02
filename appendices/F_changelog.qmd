@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-02 - Add fast generation task-bundle replay
+
+- Added `python3 scripts/run_fast_generation_task_bundle.py`,
+  `python3 scripts/validate_fast_generation_task_bundle.py`,
+  `docs/fast_generation_task_bundle.md`, and
+  `experiments/fast_generation_task_bundle/results/2026-07-02-local.json` for
+  a public-safe Fast Generation task-bundle replay.
+- The replay compares `route://autoregressive-reference`,
+  `route://fast-template-verified`, and `route://latency-only-proxy` over four
+  deterministic receipt tasks. It selects the verified fast-template route at
+  264 deterministic cost units versus 632 for the baseline and rejects the
+  latency-only proxy at 176 cost units for verifier, fallback, residual, and
+  support-state failures.
+- Added `lean:fast_generation.task_bundle_fixture_bridge` in
+  `AsiStackProofs.FastGeneration` for finite candidate-quality preservation,
+  deterministic cost-accounting improvement, latency-only negative-control
+  rejection, and support-promotion blocking. Updated the live chapter, reader
+  manuscript, outline, roadmap, proof manifest, proof triage, Appendix E,
+  proof-depth, public readiness/status, README, and validation wiring. This is
+  a no model-speed or deployment claim, no useful-solution-per-second model
+  claim, no reproduced speculative decoding/MTP/diffusion/KV-cache/serving
+  result, and no support-state promotion.
+- Current proof-depth snapshot: 169 proof targets, 54 Lean modules, 874 theorem declarations, 698 derived/decomposed, 172 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+
 ## 2026-07-02 - Add SCIF commit Lean bridge
 
 - Added `lean:security.scif.commit_probe_bridge` in

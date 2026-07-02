@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 168 |
-| Manifest status counts | {"implemented": 168} |
-| Triage class counts | {"formal-invariant": 168} |
+| Proof targets audited | 169 |
+| Manifest status counts | {"implemented": 169} |
+| Triage class counts | {"formal-invariant": 169} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -50,7 +50,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 9 | 4 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 6 | 27 | 15 | 6 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 6 | 4 |
-| `lean/AsiStackProofs/FastGeneration.lean` | 4 | 34 | 16 | 7 |
+| `lean/AsiStackProofs/FastGeneration.lean` | 5 | 38 | 21 | 8 |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 4 | 25 | 8 | 5 |
@@ -106,7 +106,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `evidence-states-and-claim-discipline` | 6 | 6 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
-| `fast-generation-architectures` | 4 | 4 | 0 | 0 |
+| `fast-generation-architectures` | 5 | 5 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
 | `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
@@ -261,6 +261,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:fast_generation.verified_speed.failure_blocks_promotion` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:fast_generation.mode_admission_lifecycle_route` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:fast_generation.theseus_import_fixture_bridge` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:fast_generation.task_bundle_fixture_bridge` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.operational_invariant` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.failure_blocks_promotion` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.admission_lifecycle_route` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |

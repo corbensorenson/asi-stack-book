@@ -596,4 +596,86 @@ theorem theseus_generation_mode_import_missing_report_refs_blocks_public_summary
     TheseusGenerationModeImportGateComplete,
     TheseusGenerationModeImportPublicSafe, theseusGenerationModeImportFixture] at matched
 
+structure FastGenerationTaskBundleSummary where
+  taskCount : Nat
+  baselineTasksPassed : Nat
+  candidateTasksPassed : Nat
+  latencyOnlyTasksPassed : Nat
+  baselineCostUnits : Nat
+  candidateCostUnits : Nat
+  latencyOnlyCostUnits : Nat
+  verifierRecorded : Bool
+  fallbackRecorded : Bool
+  residualsRecorded : Bool
+  negativeControlRejected : Bool
+  supportPromotionRequested : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def FastGenerationTaskBundleCandidatePreservesQuality
+    (summary : FastGenerationTaskBundleSummary) : Prop :=
+  summary.taskCount > 0 ∧
+    summary.baselineTasksPassed = summary.taskCount ∧
+      summary.candidateTasksPassed = summary.taskCount ∧
+        summary.verifierRecorded = true
+
+def FastGenerationTaskBundleCandidateImprovesCostAccounting
+    (summary : FastGenerationTaskBundleSummary) : Prop :=
+  summary.candidateCostUnits < summary.baselineCostUnits ∧
+    summary.candidateTasksPassed = summary.baselineTasksPassed
+
+def FastGenerationTaskBundleLatencyOnlyRejected
+    (summary : FastGenerationTaskBundleSummary) : Prop :=
+  summary.latencyOnlyCostUnits < summary.candidateCostUnits ∧
+    summary.latencyOnlyTasksPassed = 0 ∧
+      summary.negativeControlRejected = true
+
+def FastGenerationTaskBundleBlocksSupportPromotion
+    (summary : FastGenerationTaskBundleSummary) : Prop :=
+  summary.supportPromotionRequested = false ∧
+    summary.nonClaimBoundaryRecorded = true ∧
+      summary.fallbackRecorded = true ∧
+        summary.residualsRecorded = true
+
+def fastGenerationTaskBundleFixture :
+    FastGenerationTaskBundleSummary := {
+  taskCount := 4
+  baselineTasksPassed := 4
+  candidateTasksPassed := 4
+  latencyOnlyTasksPassed := 0
+  baselineCostUnits := 632
+  candidateCostUnits := 264
+  latencyOnlyCostUnits := 176
+  verifierRecorded := true
+  fallbackRecorded := true
+  residualsRecorded := true
+  negativeControlRejected := true
+  supportPromotionRequested := false
+  nonClaimBoundaryRecorded := true
+}
+
+theorem fast_generation_task_bundle_candidate_preserves_quality :
+    FastGenerationTaskBundleCandidatePreservesQuality
+      fastGenerationTaskBundleFixture := by
+  simp [FastGenerationTaskBundleCandidatePreservesQuality,
+    fastGenerationTaskBundleFixture]
+
+theorem fast_generation_task_bundle_candidate_improves_cost_accounting :
+    FastGenerationTaskBundleCandidateImprovesCostAccounting
+      fastGenerationTaskBundleFixture := by
+  simp [FastGenerationTaskBundleCandidateImprovesCostAccounting,
+    fastGenerationTaskBundleFixture]
+
+theorem fast_generation_task_bundle_latency_only_proxy_rejected :
+    FastGenerationTaskBundleLatencyOnlyRejected
+      fastGenerationTaskBundleFixture := by
+  simp [FastGenerationTaskBundleLatencyOnlyRejected,
+    fastGenerationTaskBundleFixture]
+
+theorem fast_generation_task_bundle_blocks_support_promotion :
+    FastGenerationTaskBundleBlocksSupportPromotion
+      fastGenerationTaskBundleFixture := by
+  simp [FastGenerationTaskBundleBlocksSupportPromotion,
+    fastGenerationTaskBundleFixture]
+
 end AsiStackProofs.FastGeneration

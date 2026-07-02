@@ -1181,6 +1181,16 @@
       "rationale": "Implemented in AsiStackProofs.FastGeneration and checked by scripts/validate_theseus_generation_mode_import.py as a finite fixture bridge over the public static import summary. It aligns the JSON mode/comparison/no-promotion counts, all-gates-passed boundary, and zero missing-report-ref boundary with Lean constants and proves only the no-promotion/gate-completeness boundary; it does not prove generation speed, useful-solution-per-second improvement, model quality, benchmark quality, or a live Project Theseus replay."
     },
     {
+      "tag": "lean:fast_generation.task_bundle_fixture_bridge",
+      "chapter_id": "fast-generation-architectures",
+      "module": "AsiStackProofs.FastGeneration",
+      "formal_target": "The public-safe fast-generation task-bundle fixture preserves baseline and candidate task quality, shows candidate deterministic cost-accounting improvement over baseline, rejects the latency-only negative control, and blocks support promotion within the finite result summary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.FastGeneration as a finite task-bundle summary fixture with derived theorems for candidate quality preservation, deterministic cost-accounting improvement over baseline, latency-only negative-control rejection, and support-promotion blocking. It aligns with scripts/validate_fast_generation_task_bundle.py and remains no model-speed, deployment, useful-solution-per-second model, or support-state-promotion claim."
+    },
+    {
       "tag": "lean:compression.artifacts.operational_invariant",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "module": "AsiStackProofs.ArtifactCompression",

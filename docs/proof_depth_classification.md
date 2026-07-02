@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 168 |
+| Proof targets in manifest | 169 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 870 |
+| Theorem declarations classified | 874 |
 | Direct/projection-style theorem declarations | 172 |
-| Derived/decomposed theorem declarations | 694 |
+| Derived/decomposed theorem declarations | 698 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -71,7 +71,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 6 | 27 | 9 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 4 | 34 | 7 | 27 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 5 | 38 | 7 | 31 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 4 | 25 | 2 | 23 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -452,6 +452,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_fallback_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_fallback_requests_fallback` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_residual_requests_residual` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_task_bundle_blocks_support_promotion` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_task_bundle_candidate_improves_cost_accounting` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_task_bundle_candidate_preserves_quality` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_task_bundle_latency_only_proxy_rejected` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FastGeneration.lean` | `fast_generation_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FastGeneration.lean` | `high_risk_fast_mode_records_verifier_override_and_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/FastGeneration.lean` | `high_risk_fast_mode_without_verifier_or_override_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
