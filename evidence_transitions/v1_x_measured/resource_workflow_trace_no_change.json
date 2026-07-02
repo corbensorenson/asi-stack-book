@@ -1,0 +1,93 @@
+{
+  "transition_id": "v1_x_measured.resource_workflow_trace.no_change",
+  "claim_id": "resource-economics.workflow_trace_dispatch_accounting",
+  "claim_surface_refs": [
+    "docs/resource_workflow_trace.md",
+    "docs/resource_flagship_lane_run.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json",
+    "scripts/validate_resource_workflow_trace.py",
+    "lean/AsiStackProofs/ResourceEconomics.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Deterministic public-safe workflow-trace accounting only: three selected routes, fixture totals, expected-invalid controls, and a Lean/Python trace-property bridge. No deployed scheduler, route-search completeness, physical feasibility, model quality, economic outcome, or chapter-core support movement is established.",
+  "evidence_roles": [
+    "deterministic_workflow_trace",
+    "expected_invalid_controls",
+    "lean_python_fixture_bridge",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The workflow trace is valuable because it checks selected-route cost recomputation, high-risk-first ordering, protected review, verification minutes, displaced-cost residual ownership, over-budget rejection, latency-only rejection, and support-state non-promotion. It remains a deterministic fixture bridge, so it blocks promotion for any claim that would require live scheduler behavior or external workload review.",
+  "required_artifacts": [
+    "live or externally reviewed scheduler trace",
+    "real route-search or dispatch log",
+    "workload-quality review beyond deterministic fixture fields",
+    "measured displaced-cost accounting",
+    "independent review before broader support movement"
+  ],
+  "artifact_refs": [
+    "docs/resource_workflow_trace.md",
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json",
+    "scripts/validate_resource_workflow_trace.py",
+    "lean/AsiStackProofs/ResourceEconomics.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/resource_flagship_lane_run.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core"
+  ],
+  "verification_command": "python3 scripts/validate_resource_workflow_trace.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "latency-only selection is rejected",
+    "erased displaced costs are rejected",
+    "over-budget aggregate resource bills are rejected",
+    "physical-feasibility overclaim is rejected",
+    "low-risk work scheduled before protected high-risk review is rejected",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/resource_workflow_trace.md",
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json"
+  ],
+  "downgrade_triggers": [
+    "workflow trace validator failure",
+    "Lean bridge drift from the result record",
+    "chapter prose treats the trace as deployed scheduler evidence",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed workflow-trace claim after live or externally reviewed scheduler traces, route-quality review, measured residual/displaced-cost accounting, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "deterministic fixture only",
+    "single public-safe workflow",
+    "no deployed scheduler",
+    "no route-search completeness",
+    "no economic or physical-feasibility result"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent scheduler, economics, workload-quality, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no live scheduler trace",
+    "no external workload-quality review",
+    "no measured displaced-cost accounting",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-02---record-resource-sublane-no-promotion-decisions",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Resource Economics above argument",
+    "does not prove deployed scheduler behavior",
+    "does not prove model quality, economic outcomes, physical feasibility, or route-search completeness",
+    "does not create an upward support-state transition"
+  ]
+}

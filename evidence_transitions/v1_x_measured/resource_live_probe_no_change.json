@@ -1,0 +1,92 @@
+{
+  "transition_id": "v1_x_measured.resource_live_probe.no_change",
+  "claim_id": "resource-economics.local_replay_probe",
+  "claim_surface_refs": [
+    "docs/resource_live_probe.md",
+    "docs/resource_flagship_lane_run.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/resource_live_probe/results/2026-07-01-local.json",
+    "scripts/run_resource_live_probe.py",
+    "scripts/validate_resource_live_probe.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Local repository command-replay and artifact-digest drift detection only. The probe replays Resource Economics validators and records hashes; it is not a live workload, production scheduler log, external review, or runtime budget-enforcement result.",
+  "evidence_roles": [
+    "local_command_replay",
+    "artifact_digest_check",
+    "validator_replay",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The live probe makes the Resource evidence lane replayable and drift-checkable, but its command surface is the local repository validator set. That is useful reproducibility evidence and insufficient support for live workload quality, scheduler behavior, model quality, runtime budget enforcement, or economic outcomes.",
+  "required_artifacts": [
+    "live workload-quality review",
+    "production or externally reviewable scheduler logs",
+    "runtime budget-enforcement evidence",
+    "human-repair or displaced-cost measurement",
+    "independent external review"
+  ],
+  "artifact_refs": [
+    "docs/resource_live_probe.md",
+    "experiments/resource_live_probe/results/2026-07-01-local.json",
+    "scripts/run_resource_live_probe.py",
+    "scripts/validate_resource_live_probe.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/resource_flagship_lane_run.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core"
+  ],
+  "verification_command": "python3 scripts/validate_resource_live_probe.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "result remains local_only",
+    "support_state_effect remains none",
+    "evidence_transition_created remains false",
+    "tracked artifact digests must match current files",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/resource_live_probe.md",
+    "experiments/resource_live_probe/results/2026-07-01-local.json"
+  ],
+  "downgrade_triggers": [
+    "resource live-probe validator failure",
+    "tracked artifact digest drift without regenerated result",
+    "local replay described as live workload review",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed replay claim after public-safe live or external workload traces, scheduler logs, runtime budget records, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "local repository commands only",
+    "no production workload",
+    "no scheduler log",
+    "no runtime budget enforcement",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent workload, scheduler, economics, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no live workload trace",
+    "no production scheduler log",
+    "no runtime budget-enforcement record",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-02---record-resource-sublane-no-promotion-decisions",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Resource Economics above argument",
+    "does not prove live workload quality",
+    "does not prove deployed scheduler or runtime budget-enforcement behavior",
+    "does not create an upward support-state transition"
+  ]
+}

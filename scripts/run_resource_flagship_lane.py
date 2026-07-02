@@ -91,6 +91,11 @@ TRACKED_ARTIFACTS = [
     "docs/v1_x_active_evidence_cycle.md",
     "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
     "evidence_transitions/v1_0_pilot/resource_economics_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "experiments/resource_workflow_trace/results/2026-07-01-local.json",
     "experiments/resource_live_probe/results/2026-07-01-local.json",
@@ -100,6 +105,19 @@ TRACKED_ARTIFACTS = [
     "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md",
     "lean/AsiStackProofs/ResourceEconomics.lean",
     "lean/AsiStackProofs/SimulationFidelity.lean",
+]
+
+SUBLANE_NO_PROMOTION_DECISION_REFS = [
+    "evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
+]
+
+NO_PROMOTION_DECISION_REFS = [
+    "evidence_transitions/v1_0_pilot/resource_economics_no_change.json",
+    *SUBLANE_NO_PROMOTION_DECISION_REFS,
 ]
 
 NON_CLAIMS = [
@@ -188,6 +206,9 @@ def build_component_summary() -> dict[str, Any]:
     workload = load_json("experiments/resource_workload_quality_probe/results/2026-07-01-local.json")
     load_stability = load_json("experiments/resource_load_stability_probe/results/2026-07-01-local.json")
     ci_profile = load_json("experiments/resource_ci_cost_profile/results/2026-07-01-main.json")
+    sublane_decisions = {
+        Path(ref).stem: load_json(ref) for ref in SUBLANE_NO_PROMOTION_DECISION_REFS
+    }
 
     workload_baseline = route_by_role(workload.get("routes", []), "baseline")
     workload_selected = route_by_role(workload.get("routes", []), "selected")
@@ -268,6 +289,16 @@ def build_component_summary() -> dict[str, Any]:
             "metrics": ci_profile.get("metrics"),
             "support_state_effect": ci_profile.get("support_state_effect"),
         },
+        "sublane_no_promotion_decisions": {
+            decision_id: {
+                "claim_id": decision.get("claim_id"),
+                "transition_effect": decision.get("transition_effect"),
+                "support_state_effect": decision.get("support_state_effect"),
+                "verification_result": decision.get("verification_result"),
+                "transition_validity_state": decision.get("transition_validity_state"),
+            }
+            for decision_id, decision in sorted(sublane_decisions.items())
+        },
     }
 
 
@@ -289,9 +320,7 @@ def build_record() -> dict[str, Any]:
         "accepted_transition_refs": [
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
         ],
-        "no_promotion_decision_refs": [
-            "evidence_transitions/v1_0_pilot/resource_economics_no_change.json",
-        ],
+        "no_promotion_decision_refs": NO_PROMOTION_DECISION_REFS,
         "summary": (
             "One-command Resource Economics flagship lane replay over tracked public-safe evidence artifacts: "
             "bounded costed-route transition, workflow trace, budget ledgers, capacity smoothing, live replay, "

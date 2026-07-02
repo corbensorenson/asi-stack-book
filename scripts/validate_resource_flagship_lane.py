@@ -10,6 +10,7 @@ from typing import Any
 from run_resource_flagship_lane import (
     COMMANDS,
     NON_CLAIMS,
+    NO_PROMOTION_DECISION_REFS,
     RESIDUALS,
     RESULT,
     RESULT_COMMAND,
@@ -89,10 +90,10 @@ def validate_record_shape(value: dict[str, Any], errors: list[str]) -> None:
         "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json"
     ]:
         errors.append(f"{rel(RESULT)}: accepted_transition_refs must name the bounded costed-route transition.")
-    if value.get("no_promotion_decision_refs") != [
-        "evidence_transitions/v1_0_pilot/resource_economics_no_change.json"
-    ]:
-        errors.append(f"{rel(RESULT)}: no_promotion_decision_refs must name the Resource Economics no-change decision.")
+    if value.get("no_promotion_decision_refs") != NO_PROMOTION_DECISION_REFS:
+        errors.append(
+            f"{rel(RESULT)}: no_promotion_decision_refs must name the Resource Economics core and sublane decisions."
+        )
 
 
 def validate_commands(value: dict[str, Any], errors: list[str]) -> None:
@@ -167,6 +168,26 @@ def validate_component_summary(value: dict[str, Any], errors: list[str]) -> None
     if load.get("negative_protected_review_violation_count", 0) <= 0:
         errors.append(f"{rel(RESULT)}: load-stability negative control must expose protected-review violations.")
 
+    decisions = recorded.get("sublane_no_promotion_decisions", {})
+    expected_decision_ids = {
+        "resource_workflow_trace_no_change",
+        "resource_live_probe_no_change",
+        "resource_workload_quality_probe_no_change",
+        "resource_load_stability_probe_no_change",
+        "resource_ci_cost_profile_no_change",
+    }
+    if set(decisions) != expected_decision_ids:
+        errors.append(f"{rel(RESULT)}: sublane_no_promotion_decisions mismatch: {sorted(decisions)}.")
+    for decision_id, decision in decisions.items():
+        if decision.get("transition_effect") != "no_change":
+            errors.append(f"{rel(RESULT)}:{decision_id}: transition_effect must remain no_change.")
+        if decision.get("support_state_effect") != "blocks_promotion":
+            errors.append(f"{rel(RESULT)}:{decision_id}: support_state_effect must remain blocks_promotion.")
+        if decision.get("verification_result") != "pass":
+            errors.append(f"{rel(RESULT)}:{decision_id}: verification_result must remain pass.")
+        if decision.get("transition_validity_state") != "review_accepted":
+            errors.append(f"{rel(RESULT)}:{decision_id}: transition_validity_state must remain review_accepted.")
+
 
 def validate_artifacts(value: dict[str, Any], errors: list[str]) -> None:
     expected_refs = [*TRACKED_ARTIFACTS, rel(RESULT)]
@@ -209,6 +230,9 @@ def validate_doc(errors: list[str]) -> None:
         "route://bounded-transform-plus-verifier",
         "route://selected-scoped-workflow-trace-validator",
         "route://selected-protected-capacity-smoothing",
+        "Sublane No-Promotion Decisions",
+        "resource-economics.local_workload_quality_route_selection",
+        "resource-economics.synthetic_load_stability_route_selection",
         "Support-state effect: `none`",
         "This run does not promote the Resource Economics chapter core claim",
     ]

@@ -1,0 +1,95 @@
+{
+  "transition_id": "v1_x_measured.resource_workload_quality_probe.no_change",
+  "claim_id": "resource-economics.local_workload_quality_route_selection",
+  "claim_surface_refs": [
+    "docs/resource_workload_quality_probe.md",
+    "docs/resource_flagship_lane_run.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
+    "scripts/run_resource_workload_quality_probe.py",
+    "scripts/validate_resource_workload_quality_probe.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Local five-sample repository-task timing and required-output validation only. The probe selects a scoped workflow-trace validator over a broader local baseline and rejects a no-op shortcut; it does not establish stable speedup, production workload quality, model quality, or economic outcomes.",
+  "evidence_roles": [
+    "local_measured_probe",
+    "eligible_baseline",
+    "cheap_negative_control",
+    "required_output_quality_gate",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The workload-quality probe is a useful measured route-selection artifact because it requires a passing quality predicate and rejects a cheaper no-op route. The measurement is still local, narrow, and machine-load sensitive, so it blocks promotion for any broader workload-quality, stable-speedup, deployed-scheduler, or economic claim.",
+  "required_artifacts": [
+    "external or live workload-facing quality review",
+    "production task bundle",
+    "stable repeated timing under controlled conditions",
+    "human-repair and residual-cost accounting",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/resource_workload_quality_probe.md",
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
+    "scripts/run_resource_workload_quality_probe.py",
+    "scripts/validate_resource_workload_quality_probe.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/resource_flagship_lane_run.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core"
+  ],
+  "verification_command": "python3 scripts/validate_resource_workload_quality_probe.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "cheaper no-op success-text route is rejected",
+    "selected route remains scoped to the workflow-trace validator",
+    "baseline remains broader than the scoped task",
+    "support_state_effect remains none",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/resource_workload_quality_probe.md",
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json"
+  ],
+  "downgrade_triggers": [
+    "workload-quality validator failure",
+    "negative no-op route accepted",
+    "selected route no longer satisfies the required output",
+    "local timing described as stable speedup or external workload quality",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed workload-quality claim after a public-safe workload suite, controlled repeated measurement, residual and human-repair accounting, external or live review, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "five local samples only",
+    "single repository task",
+    "machine-load sensitive timings",
+    "no production workload",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent workload-quality, scheduler, economics, or benchmarking audit",
+  "acceptance_blockers": [
+    "no external workload-quality review",
+    "no production task bundle",
+    "no stable controlled timing study",
+    "no human-repair accounting",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-02---record-resource-sublane-no-promotion-decisions",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Resource Economics above argument",
+    "does not prove stable speedup",
+    "does not prove production workload quality, model quality, scheduler behavior, or economic outcomes",
+    "does not create an upward support-state transition"
+  ]
+}

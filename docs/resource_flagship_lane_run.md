@@ -27,7 +27,7 @@ python3 scripts/validate_resource_flagship_lane.py
 - Chapter-core support effect: `none`
 - Evidence transition created by this run: `false`
 - Commands replayed: 10
-- Tracked artifact digests: 19
+- Tracked artifact digests: 24
 
 The run ties together the bounded costed-route slice, workflow trace,
 budget-ledger fixtures, capacity-smoothing trace, local live replay probe,
@@ -56,6 +56,20 @@ The Resource Economics chapter core remains governed by
 | Claim | Transition effect | Support-state effect |
 |---|---|---|
 | `resource-economics-and-token-budgets.core` | `no_change` | `argument_only` |
+
+## Sublane No-Promotion Decisions
+
+Each measured or replayed Resource sublane now has an explicit accepted
+no-change decision. These records make the no-promotion boundary reviewable
+without creating new upward transitions.
+
+| Sublane | Claim ID | Decision record | Support-state effect |
+|---|---|---|---|
+| Workflow trace | `resource-economics.workflow_trace_dispatch_accounting` | `evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json` | `blocks_promotion` |
+| Local replay probe | `resource-economics.local_replay_probe` | `evidence_transitions/v1_x_measured/resource_live_probe_no_change.json` | `blocks_promotion` |
+| Workload-quality probe | `resource-economics.local_workload_quality_route_selection` | `evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json` | `blocks_promotion` |
+| Load-stability probe | `resource-economics.synthetic_load_stability_route_selection` | `evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json` | `blocks_promotion` |
+| CI cost profile | `resource-economics.publication_pipeline_cost_profile` | `evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json` | `blocks_promotion` |
 
 ## Measured Workload-Quality Slice
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-02 - Record Resource sublane no-promotion decisions
+
+- Added accepted no-change/no-promotion evidence-transition records for the
+  Resource Economics workflow-trace, local-replay, workload-quality,
+  load-stability, and CI-cost sublanes.
+- Wired those records into the Resource flagship runner, flagship validator,
+  active evidence-cycle validator, roadmap, and flagship lane run note so the
+  aggregate replay must carry the sublane boundaries.
+- No new upward support transition, chapter-core promotion, scheduler result,
+  production workload result, economic result, external review, or artifact
+  approval is claimed.
+
 ## 2026-07-02 - Embed reader-manuscript key figures
 
 - Embedded/adapted the ten current draft key figures into the curated reader

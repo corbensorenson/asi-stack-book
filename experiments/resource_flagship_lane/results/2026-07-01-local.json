@@ -13,6 +13,11 @@
     "docs/v1_x_active_evidence_cycle.md",
     "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
     "evidence_transitions/v1_0_pilot/resource_economics_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
     "experiments/costed_route_resource_slice/results/2026-06-29-local.json",
     "experiments/resource_workflow_trace/results/2026-07-01-local.json",
     "experiments/resource_live_probe/results/2026-07-01-local.json",
@@ -29,7 +34,7 @@
   "command_records": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 28.47,
+      "elapsed_ms": 29.175,
       "exit_code": 0,
       "id": "costed_route_resource_slice",
       "output_excerpt": [
@@ -40,7 +45,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 59.933,
+      "elapsed_ms": 28.469,
       "exit_code": 0,
       "id": "resource_workflow_trace",
       "output_excerpt": [
@@ -51,7 +56,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 32.007,
+      "elapsed_ms": 35.186,
       "exit_code": 0,
       "id": "resource_budget_ledgers",
       "output_excerpt": [
@@ -62,7 +67,7 @@
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 31.31,
+      "elapsed_ms": 38.839,
       "exit_code": 0,
       "id": "capacity_smoothing",
       "output_excerpt": [
@@ -73,7 +78,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 175.023,
+      "elapsed_ms": 160.55,
       "exit_code": 0,
       "id": "resource_live_probe",
       "output_excerpt": [
@@ -84,7 +89,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workload_quality_probe.py",
-      "elapsed_ms": 1071.009,
+      "elapsed_ms": 1062.023,
       "exit_code": 0,
       "id": "resource_workload_quality_probe",
       "output_excerpt": [
@@ -95,7 +100,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_load_stability_probe.py",
-      "elapsed_ms": 32.271,
+      "elapsed_ms": 31.616,
       "exit_code": 0,
       "id": "resource_load_stability_probe",
       "output_excerpt": [
@@ -106,7 +111,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_ci_cost_profile.py",
-      "elapsed_ms": 36.387,
+      "elapsed_ms": 37.228,
       "exit_code": 0,
       "id": "resource_ci_cost_profile",
       "output_excerpt": [
@@ -117,7 +122,7 @@
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 23.369,
+      "elapsed_ms": 23.449,
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
       "output_excerpt": [
@@ -128,13 +133,13 @@
     },
     {
       "command": "python3 scripts/validate_evidence_transitions.py",
-      "elapsed_ms": 32.664,
+      "elapsed_ms": 38.983,
       "exit_code": 0,
       "id": "evidence_transitions",
       "output_excerpt": [
-        "Evidence transition validation passed: 30 record(s)."
+        "Evidence transition validation passed: 35 record(s)."
       ],
-      "output_sha256": "3021fa1764e2d7a7467a41ff74a721d2bbc002ef4ef36b7a1ff181cf198071b9",
+      "output_sha256": "d6e35da9b55f3b1077fa2571a4f088aa15a534aa813d5ed300f802283846ae20",
       "role": "support_state_transition_boundary"
     }
   ],
@@ -193,6 +198,43 @@
       "replay_command_count": 5,
       "support_state_effect": "none"
     },
+    "sublane_no_promotion_decisions": {
+      "resource_ci_cost_profile_no_change": {
+        "claim_id": "resource-economics.publication_pipeline_cost_profile",
+        "support_state_effect": "blocks_promotion",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "verification_result": "pass"
+      },
+      "resource_live_probe_no_change": {
+        "claim_id": "resource-economics.local_replay_probe",
+        "support_state_effect": "blocks_promotion",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "verification_result": "pass"
+      },
+      "resource_load_stability_probe_no_change": {
+        "claim_id": "resource-economics.synthetic_load_stability_route_selection",
+        "support_state_effect": "blocks_promotion",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "verification_result": "pass"
+      },
+      "resource_workflow_trace_no_change": {
+        "claim_id": "resource-economics.workflow_trace_dispatch_accounting",
+        "support_state_effect": "blocks_promotion",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "verification_result": "pass"
+      },
+      "resource_workload_quality_probe_no_change": {
+        "claim_id": "resource-economics.local_workload_quality_route_selection",
+        "support_state_effect": "blocks_promotion",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "verification_result": "pass"
+      }
+    },
     "workflow_trace": {
       "expected_invalid_fixture_count": 5,
       "lean_bridge": "trace-property Python/Lean fixture equivalence",
@@ -217,7 +259,12 @@
   "evidence_transition_created": false,
   "local_only": true,
   "no_promotion_decision_refs": [
-    "evidence_transitions/v1_0_pilot/resource_economics_no_change.json"
+    "evidence_transitions/v1_0_pilot/resource_economics_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json",
+    "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json"
   ],
   "non_claims": [
     "This flagship lane runner does not promote the Resource Economics chapter core claim above argument.",
@@ -228,7 +275,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "resource_flagship_lane_replay",
-  "recorded_at_utc": "2026-07-01T23:48:03Z",
+  "recorded_at_utc": "2026-07-02T03:31:46Z",
   "residuals": [
     "The accepted upward transition remains scoped to resource-economics.costed_route_budget_slice, not the chapter core claim.",
     "Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.",
@@ -284,10 +331,10 @@
       "sha256": "37af7b112e9f8db7af53ff977af32b6e0a04cee9d2890fd5937c2c2f06ca46f6"
     },
     {
-      "bytes": 12780,
+      "bytes": 13367,
       "lines": 99,
       "path": "docs/v1_x_active_evidence_cycle.md",
-      "sha256": "3d95279b4b9abe911cf1f1cd8b0688351051b4c5af14dd9457bab298a7a6f35c"
+      "sha256": "f9d415674839986a712d173e03ff233de98b3b52db58fef0eb07635c37d54cf5"
     },
     {
       "bytes": 7354,
@@ -300,6 +347,36 @@
       "lines": 219,
       "path": "evidence_transitions/v1_0_pilot/resource_economics_no_change.json",
       "sha256": "a33cf15bd4cd43433ef93d4ff0a9341f2c87c08a99e448fa8da5b3ffb1425751"
+    },
+    {
+      "bytes": 4624,
+      "lines": 93,
+      "path": "evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json",
+      "sha256": "5849a38e6268dedec9a50c6fe0863ba3ec3cd021b481c135483a08c84cc8674f"
+    },
+    {
+      "bytes": 4132,
+      "lines": 92,
+      "path": "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
+      "sha256": "2a056f31eaa9844348a625f29a0e78850397f27ee022be429746200d11ff9bf8"
+    },
+    {
+      "bytes": 4591,
+      "lines": 95,
+      "path": "evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json",
+      "sha256": "3b30c28f9b3ac34fee6fd1291a88578f84aa61ba925144d31ca9512434cb55f2"
+    },
+    {
+      "bytes": 4713,
+      "lines": 97,
+      "path": "evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json",
+      "sha256": "b477f1e0544119a39c76f4aca54c20f096f9e6fbdb5f755b3e0e9d4552de2806"
+    },
+    {
+      "bytes": 4416,
+      "lines": 93,
+      "path": "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
+      "sha256": "4ca5ff0d2b9c490b55497f53d2762ff50f33987f60b177f5962d1142b81faac7"
     },
     {
       "bytes": 5763,
