@@ -303,10 +303,12 @@ unless separate records say otherwise.
 
 The first change-packet record surface now exists. It makes chapter edits,
 outline updates, proof-manifest shifts, reader-generation events, and blocked
-release states inspectable as one auditable unit. The remaining work is not to
-pretend that this makes the book finished; it is to use the packet on future
-substantive changes, keep external methodology review open, and prevent packet
-validation from becoming another form of publication laundering.
+release states inspectable as one auditable unit. The current synthetic
+harness passes with three valid fixture packets and six expected-invalid
+controls. The remaining work is not to pretend that this makes the book
+finished; it is to use the packet on future substantive changes, keep external
+methodology review open, and prevent packet validation from becoming another
+form of publication laundering.
 
 ## Beyond The State Of The Art
 

@@ -68,6 +68,10 @@ The reader throughline is:
   validator, synthetic fixtures, result record, and finite Lean boundary. This
   prose-pass record remains a drafting-only reader-prose record, not the
   machine-readable change-packet result.
+- The reader chapter now states the exact bounded harness result: three valid
+  fixture packets, six expected-invalid controls, and no release, reader
+  artifact, manuscript-quality, source-interpretation, live-site availability,
+  support-state promotion, or future-agent-correctness claim.
 - This pass does not approve the curated reader manuscript for release.
 - This pass does not approve EPUB, DOCX, PDF, HTML, audio, or audio-embedded
   EPUB artifacts.
