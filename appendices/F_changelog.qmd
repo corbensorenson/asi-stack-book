@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-03 - Reconcile Part III proof and cyclic-substrate reader arc
+
+- Updated the curated reader manuscript chapters `Circle Calculus and
+  Proof-Carrying AI Contracts`, `Coil Attention, Cyclic Memory, and Recurrence
+  Contracts`, and `CoilRA, MultiCoil RoPE, and Cyclic Mixers` with second prose
+  passes that close Part III: substrate adoption hands into proof-carrying
+  transport, proof-carrying transport applies to cyclic memory facts, and
+  cyclic memory receipts hand into cyclic model mechanisms only under ordinary
+  baselines, tradeoff packets, hardware notes, failure cases, and rollback.
+- Advanced those three curated reader records from `drafting` to `reconciled`
+  in `editions/reader_manuscript/v1_0/manifest.json`, while preserving
+  `reader_release_record_not_created`, `format_artifact_not_reviewed`, and
+  `curated_reconciliation_not_approved` release blockers on every row.
+- Updated the reader reconciliation report, prose-pass sidecars, reader
+  status/readme surfaces, graduation review, companion-note routing review,
+  roadmap language, review matrix notes, and v1 status snapshot so the curated
+  reader manuscript now records 9 drafting chapters and 35 reconciled prose
+  chapters, with Parts I, II, and III reconciled for prose meaning, without
+  implying release approval, format approval, support promotion,
+  source-authority changes, clean Circle replay, useful-memory evidence,
+  cyclic-substrate adoption, model-quality improvement, or
+  ebook/document/PDF/audio artifact approval.
+
 ## 2026-07-03 - Reconcile Part III generation and substrate reader arc
 
 - Updated the curated reader manuscript chapters `Fast Generation

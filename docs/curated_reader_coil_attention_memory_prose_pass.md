@@ -2,6 +2,10 @@
 
 Date: 2026-07-03
 
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter: `coil-attention-cyclic-memory-and-recurrence-contracts`
 
 Reader manuscript file:
@@ -22,6 +26,10 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added a second 2026-07-03 reconciliation pass that applies Circle's
+  proof-transport discipline to memory: residue, winding, freshness, coverage,
+  and recurrence-exit facts can travel only while retrieval and reasoning
+  quality claims remain blocked without workload evidence.
 - Reworked the generated reader baseline into a more continuous chapter about
   memory custody, recurrence control, and structural non-claims.
 - Centered the chapter on the difference between structural memory and useful
@@ -71,6 +79,9 @@ The reader throughline is:
   recurrence-exit, learned-memory, retrieval-quality, reasoning-quality,
   long-context, speed, memory-savings, transfer, deployment, or support-state
   blockers.
+- The 2026-07-03 reconciliation connects proof transport to cyclic memory and
+  cyclic memory to cyclic mixers without changing any live-book claim, source
+  boundary, proof/test status, implementation horizon, or release boundary.
 
 ## Non-Claims
 
@@ -93,7 +104,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- Human editorial review has not approved this chapter for reader release.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.
 - A broader cyclic-memory trace set remains planned beyond the one structural
   Circle residue/winding receipt: stale-read rejection or residualization,
   sparse-coverage fallback, recurrence exit, baseline comparison, workload

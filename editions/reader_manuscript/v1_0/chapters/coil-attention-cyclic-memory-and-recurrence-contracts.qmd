@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # Coil Attention, Cyclic Memory, and Recurrence Contracts
 
+Circle contracts showed how a finite structural fact can travel with theorem
+IDs, fingerprints, deterministic fields, consumer gates, and non-claims. This
+chapter applies that transport discipline to memory. It asks which memory and
+recurrence facts are structural enough to carry, and which retrieval or
+reasoning claims must remain blocked until workload evidence exists.
+
 Memory is where structural language most easily starts pretending to be
 understanding.
 
@@ -381,4 +387,7 @@ substrate problem is what happens when cyclic structure moves into adapters,
 position encodings, route heads, and mixers. CoilRA, MultiCoil RoPE, and Cyclic
 Mixers carries the same discipline into those mechanisms: exact structure,
 ordinary baselines, hardware costs, workload fit, and failure cases before
-adoption.
+adoption. The handoff is deliberately narrow: a memory receipt can make
+aliasing, winding, freshness, and recurrence exit inspectable, but it does not
+make cyclic substrates ready for model adoption without their own tradeoff
+packets.

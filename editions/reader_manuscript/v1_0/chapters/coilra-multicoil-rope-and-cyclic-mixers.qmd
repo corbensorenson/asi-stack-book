@@ -10,6 +10,13 @@ implementation horizons, and release blockers.
 
 # CoilRA, MultiCoil RoPE, and Cyclic Mixers
 
+Cyclic memory made residue, winding, freshness, coverage, and recurrence exits
+inspectable without promoting retrieval or reasoning quality. CoilRA and
+cyclic mixers take that same discipline into model mechanisms. A cyclic
+adapter, RoPE receipt, circulant mixer, or phase feature may carry a useful
+structural fact, but adoption still needs ordinary baselines, tradeoff
+metrics, hardware notes, failure cases, and rollback.
+
 Cyclic structure is seductive because it looks like order.
 
 A phase bank can be exact. A RoPE receipt can distinguish positions inside its
@@ -347,4 +354,8 @@ Part III closes by making routing, compression, representation, resource, and
 cyclic-substrate claims conditional on evidence. The next part turns that
 discipline into executable specifications, Lean envelopes, benchmark ratchets,
 implementation references, and release controls: the machinery that decides
-which claims can harden and which must remain research-only.
+which claims can harden and which must remain research-only. The handoff is
+from candidate substrates to claim hardening: Part IV asks how the book turns
+specification, proof, tests, benchmark pressure, and implementation references
+into support-state decisions without losing the non-claims that kept Part III
+honest.

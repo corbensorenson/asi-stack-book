@@ -778,7 +778,7 @@
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "title": "Circle Calculus and Proof-Carrying AI Contracts",
       "file": "editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
       "live_source_ref": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd@b51f5dca1",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#circle-calculus-and-proof-carrying-ai-contracts.core",
@@ -800,13 +800,14 @@
         "substrate-curiosity",
         "proof-practice"
       ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-versus-performance throughline, receipt lifecycle explanation, Circle consumer-gate boundary repair, receipt-consumer reader scenario, concrete Circle evidence-surface alignment, and minimum viable implementation alignment were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "divergence_summary": "Second curated reader reconciliation positions Circle contracts after substrate adoption: finite structural facts can travel only with theorem references, deterministic fields, fingerprints, consumer gates, replay expectations, and explicit non-claims still attached; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
         "proof/test status preserved without adding unrun results; the concrete Circle evidence-surface validator remains public-surface traceability for a bounded structural receipt lane only",
         "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part III proof/cyclic-substrate reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -815,7 +816,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass plus 2026-07-03 receipt-consumer scenario and concrete Circle evidence-surface alignment recorded in docs/curated_reader_circle_contracts_prose_pass.md; not release-reviewed and no chapter core claim is promoted."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects substrate adoption to proof transport, making theorem-linked receipts portable only with consumer gates, replay expectations, and non-claims intact before cyclic memory consumes them. Prose-pass details recorded in docs/curated_reader_circle_contracts_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "claim-ledgers-and-belief-revision",
@@ -905,7 +906,7 @@
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
       "file": "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
       "live_source_ref": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd@957755b9c",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#coil-attention-cyclic-memory-and-recurrence-contracts.core",
@@ -925,14 +926,15 @@
       "voice_pass_slot_ids": [
         "substrate-curiosity"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around memory custody and recurrence control: cyclic memory contracts expose residue, winding, freshness, sparse coverage, recurrence exits, fallback, authority, baseline obligations, and a slot-and-winding reader scenario while keeping structural memory separate from retrieval or reasoning quality. The 2026-07-03 alignment surfaces the existing Circle cyclic-memory receipt slice as structural residue/winding traceability only without treating it as useful-memory evidence.",
+      "divergence_summary": "Second curated reader reconciliation applies Circle proof-transport discipline to memory: residue, winding, freshness, coverage, stale-read, fallback, and recurrence-exit facts can travel while retrieval and reasoning quality remain blocked without workload evidence; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support for the chapter core claim",
         "source boundary preserved: Coil Attention and Memory, Circle AI Contract Suite, Theseus Circle Transfer, VCM, and external recurrence comparators remain structural-contract, context, transfer-boundary, or comparator sources inside recorded limits",
         "proof/test status preserved without adding KV-cache freshness checks, sparse-coverage harnesses, recurrence benchmarks, learned-memory workloads, Circle-generated contract packs, Theseus transfer consumers, external benchmark reproduction, retrieval-quality results, reasoning-quality results, speed results, memory-savings results, long-context results, support-state transitions, or support-state results",
         "implementation horizon preserved without implying a deployed memory-admission or recurrence-control plane",
-        "release blocker status preserved until reconciliation, format review, and an edition release record clear it"
+        "release blocker status preserved until reconciliation, format review, and an edition release record clear it",
+        "2026-07-03 Part III proof/cyclic-substrate reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -941,13 +943,13 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass plus 2026-07-03 slot-and-winding scenario and Circle cyclic-memory receipt-slice alignment recorded in docs/curated_reader_coil_attention_memory_prose_pass.md; not release-reviewed, not equal authority to the live AI/research chapter, and no chapter core claim is promoted."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass applies proof-transport discipline to cyclic memory facts, preserving residue, winding, freshness, coverage, fallback, and recurrence boundaries before cyclic mixers request adoption. Prose-pass details recorded in docs/curated_reader_coil_attention_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
       "file": "editions/reader_manuscript/v1_0/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
       "live_source_ref": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd@fbd273622",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#coilra-multicoil-rope-and-cyclic-mixers.core",
@@ -966,14 +968,15 @@
       "voice_pass_slot_ids": [
         "substrate-curiosity"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around cyclic-substrate adoption discipline: structural receipts, alias/load diagnostics, parameter and hardware ledgers, baseline symmetry, negative controls, tradeoff packets, consumer policy, and canary routing stay separate from model-quality, runtime, memory, context-length, training-stability, deployment, and transfer claims. The 2026-07-03 alignment surfaces the concrete Circle RoPE evidence surface as imported diagnostic structural evidence only without treating it as useful-context, model-quality, runtime, memory, hardware, or deployment evidence.",
+      "divergence_summary": "Second curated reader reconciliation closes Part III by carrying cyclic-memory receipt discipline into model mechanisms: cyclic adapters, RoPE receipts, circulant mixers, and phase features may expose structural facts, but adoption still needs ordinary baselines, tradeoff metrics, hardware notes, failure cases, and rollback; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support for the chapter core claim",
         "source boundary preserved: CoilRA/MultiCoil RoPE, RoPE position certifier, Circle AI Contract Suite, Theseus Circle Transfer, Circle AI Architectures, and external comparator families remain structural-contract, receipt-boundary, transfer-boundary, or comparator sources inside recorded limits",
         "proof/test status preserved without adding new ASI-repo RoPE certifier runs, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmarks, MLX model experiments, hardware-kernel benchmarks, downstream quality evaluations, external Circle Lean builds, Theseus transfer consumers, model-quality results, context-length results, runtime results, memory-savings results, training-stability results, hardware-efficiency results, deployment-readiness results, transfer results, support-state transitions, or support-state results",
         "implementation horizon preserved without implying a deployed cyclic-substrate evaluation lane or canary-route controller",
-        "release blocker status preserved until reconciliation, format review, and an edition release record clear it"
+        "release blocker status preserved until reconciliation, format review, and an edition release record clear it",
+        "2026-07-03 Part III proof/cyclic-substrate reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -982,7 +985,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass plus 2026-07-03 concrete Circle RoPE evidence-surface alignment recorded in docs/curated_reader_coilra_cyclic_mixers_prose_pass.md; not release-reviewed, not equal authority to the live AI/research chapter, and no chapter core claim is promoted."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass closes Part III by handing from cyclic memory receipts to cyclic substrate adoption and then into Part IV claim hardening, preserving release blockers and no support-state movement. Prose-pass details recorded in docs/curated_reader_coilra_cyclic_mixers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "constitutional-alignment-substrate",

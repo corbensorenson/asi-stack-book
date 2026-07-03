@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # Circle Calculus and Proof-Carrying AI Contracts
 
+The previous chapter ended with substrate adoption: interesting mathematics can
+enter the stack only through scoped records, baselines, proof boundaries,
+consumer gates, and stopping conditions. Circle contracts answer the next
+question. Once a substrate has a finite structural fact worth carrying, how
+does that fact move through the stack without turning into a stronger claim?
+
 Proof is useful only when it travels with its limits intact. Circle Calculus narrows that problem to proof-carrying structural facts: finite claims that can move through the stack with receipt references, deterministic fields, fingerprints, consumer gates, and replay expectations. The target is not grand certainty. It is portable restraint.
 
 This is not a claim that every AI behavior can be proved. It is a way to keep small structural guarantees from dissolving into prose. A proof-carrying contract should say exactly what was checked, where the receipt lives, who may consume it, and what the result does not imply. That makes formal work useful without letting theorem language overrun the evidence boundary.

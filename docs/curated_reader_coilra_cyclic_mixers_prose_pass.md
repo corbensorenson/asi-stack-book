@@ -2,6 +2,10 @@
 
 Date: 2026-06-30
 
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter: `coilra-multicoil-rope-and-cyclic-mixers`
 
 Reader manuscript file:
@@ -22,6 +26,10 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added a second 2026-07-03 reconciliation pass that positions CoilRA and
+  cyclic mixers after cyclic-memory receipts: structural facts can make model
+  mechanisms inspectable, but adoption still requires ordinary baselines,
+  tradeoff metrics, hardware notes, failure cases, and rollback.
 - Reworked the generated reader baseline into a more continuous chapter about
   cyclic-substrate adoption, ledger separation, baseline symmetry, and
   tradeoff packets.
@@ -71,6 +79,10 @@ The reader throughline is:
   validation only, not a RoPE certifier run, cyclic mixer benchmark, MLX
   experiment, hardware-kernel benchmark, downstream quality evaluation,
   Circle contract pack, or Theseus transfer consumer.
+- The 2026-07-03 reconciliation closes Part III by handing from candidate
+  substrates to Part IV claim hardening without changing any live-book claim,
+  source boundary, proof/test status, implementation horizon, or release
+  boundary.
 
 ## Non-Claims
 
@@ -91,7 +103,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- Human editorial review has not approved this chapter for reader release.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.
 - A broader cyclic-substrate packet remains planned beyond the imported
   diagnostic RoPE receipt surface: a quality-promotion request rejected for
   missing baselines, a hardware mismatch narrowing deployment scope, a

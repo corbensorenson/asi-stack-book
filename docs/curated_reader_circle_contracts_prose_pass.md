@@ -2,11 +2,13 @@
 
 Last updated: 2026-07-03
 
+Follow-up: 2026-07-03
+
 Chapter ID: `circle-calculus-and-proof-carrying-ai-contracts`
 
 Curated reader file: `editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd`
 
-Status: drafting only; not release-reviewed.
+Status: reconciled for prose meaning on 2026-07-03; not release-reviewed.
 
 ## Reader Promise
 
@@ -27,6 +29,10 @@ Allowed curation scopes used in this pass:
 
 ## What Changed
 
+- Added a second 2026-07-03 reconciliation pass that positions Circle
+  contracts after substrate adoption: finite structural facts can travel only
+  with theorem references, deterministic fields, fingerprints, consumer gates,
+  replay expectations, and explicit non-claims still attached.
 - Reworked the opening around proof traveling with its limits intact and proof-carrying contracts as portable restraint.
 - Strengthened the proof-authority versus consumer-authority throughline so theorem-linked receipts do not read as downstream performance evidence.
 - Restored the current ASI-side Circle consumer-gate boundary from the live chapter: one pinned `CC-AI-CONTRACT-ROPE-001` receipt, seven theorem IDs and fingerprints, mutation rejection, and no clean Circle replay or vendored contract pack.
@@ -54,6 +60,7 @@ Allowed curation scopes used in this pass:
 | Concrete receipt boundary preserved | Pass. The concrete evidence-surface validator is described as public-surface traceability for a bounded structural receipt lane, not as a rerun, vendored contract pack, resolver-completeness result, workload result, or chapter-core promotion. |
 | Implementation horizon preserved | Pass. The minimum viable implementation includes existing fixtures, Lean predicates, and the Circle consumer gate; the mature endpoint remains a design destination. |
 | Companion-note routing preserved | Pass. The companion note remains drafting support, not release-reviewed evidence. |
+| Part arc preserved | Pass. The 2026-07-03 reconciliation connects substrate adoption to proof transport and proof transport to cyclic memory without changing claim, source, proof/test, implementation, or release meaning. |
 | Release blockers preserved | Pass. Reader release, format review, and curated reconciliation blockers remain active. |
 
 ## Non-Claims
