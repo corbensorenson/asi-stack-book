@@ -307,4 +307,44 @@ theorem compact_gvr_fixture_selected_beats_literal_baseline :
         CompactGVRFixtureReceipt.literalBaseline).serializedBytes := by
   decide
 
+structure ResidualConservationFixtureSummary where
+  acceptedResidualRecorded : Bool
+  deferredResidualOwned : Bool
+  dischargedResidualHasReceipt : Bool
+  hiddenResidualRejected : Bool
+  erasedResidualRejected : Bool
+  unownedMovedResidualRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def residualConservationFixtureSummary :
+    ResidualConservationFixtureSummary where
+  acceptedResidualRecorded := true
+  deferredResidualOwned := true
+  dischargedResidualHasReceipt := true
+  hiddenResidualRejected := true
+  erasedResidualRejected := true
+  unownedMovedResidualRejected := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+
+def ResidualConservationFixtureValid
+    (summary : ResidualConservationFixtureSummary) : Prop :=
+  summary.acceptedResidualRecorded = true ∧
+    summary.deferredResidualOwned = true ∧
+    summary.dischargedResidualHasReceipt = true ∧
+    summary.hiddenResidualRejected = true ∧
+    summary.erasedResidualRejected = true ∧
+    summary.unownedMovedResidualRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem residual_honesty_conservation_fixture_bridge :
+    ResidualConservationFixtureValid
+      residualConservationFixtureSummary := by
+  unfold ResidualConservationFixtureValid
+  unfold residualConservationFixtureSummary
+  simp
+
 end AsiStackProofs.CompactGenerativeSystems

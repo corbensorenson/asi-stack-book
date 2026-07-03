@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 180 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 940 |
+| Theorem declarations classified | 941 |
 | Direct/projection-style theorem declarations | 178 |
-| Derived/decomposed theorem declarations | 758 |
+| Derived/decomposed theorem declarations | 759 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -63,7 +63,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 3 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 4 | 21 | 6 | 14 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 4 | 22 | 6 | 15 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 3 | 18 | 2 | 16 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 3 | 20 | 2 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -307,6 +307,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_source_artifact_requests_source` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `missing_verifier_cost_requests_cost_record` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `negative_rate_without_fallback_fixture_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `residual_honesty_conservation_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `support_promotion_without_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_require_residual_records` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_without_residual_records_rejected` | derived_or_decomposed | no | uses cases, have, rw |

@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-03 - Add residual honesty conservation fixture
+
+- Added `scripts/validate_residual_honesty_conservation.py`,
+  `docs/residual_honesty_conservation.md`,
+  `experiments/residual_honesty_conservation/input/residual_conservation_cases.json`,
+  and result artifact
+  `experiments/residual_honesty_conservation/results/2026-07-03-local.json`
+  for a deterministic synthetic residual-conservation fixture: three valid
+  residual records are accepted and five expected-invalid controls are
+  rejected for hidden, erased, unowned, support-promoting, and
+  zero-residual-overclaim residual laundering.
+- Added the Lean fixture bridge
+  `residual_honesty_conservation_fixture_bridge` in
+  `AsiStackProofs.CompactGenerativeSystems` and wired the validator into
+  `scripts/validate_book.py`.
+- Current proof-depth snapshot: 180 proof targets, 54 Lean modules, 941
+  theorem declarations, 759 derived/decomposed, 178 direct/projection, 4
+  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Updated the live chapter, curated reader chapter, outline, roadmap
+  burn-down, and contribution novelty ledger while preserving the boundary:
+  no proof that all residuals are observable, no safety proof, no deployed
+  residual-ledger behavior, no evidence transition, and no chapter-core
+  support-state promotion is created.
+
 ## 2026-07-03 - Tighten idea-depth roadmap gate
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` to reconcile the idea-focused

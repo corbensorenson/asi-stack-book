@@ -7183,6 +7183,13 @@
               "status": "implemented as bounded non-core synthetic-test-backed transition `compact-generative-systems.compact_gvr_receipt_slice`; no deployed codec, compression utility, model-quality, benchmark, semantic utility, or chapter-core claim"
             },
             {
+              "name": "Residual honesty conservation fixture",
+              "purpose": "Recompute public-safe residual-conservation cases for accepted, deferred, discharged, hidden, erased, moved-unowned, support-promoting, and zero-residual-overclaim residual records with non-claims and a Lean fixture bridge.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_residual_honesty_conservation.py`; accepts 3 valid residual records, rejects 5 expected-invalid controls, no support-state effect",
+              "status": "implemented as deterministic synthetic record-level fixture; no proof all residuals are observable, no safety proof, no deployed residual ledger, no model-quality claim, and no chapter-core promotion"
+            },
+            {
               "name": "Exact reconstruction mismatch negative case",
               "purpose": "Check that an exact claim whose generator output plus repair residual does not equal the target rejects the finite exact-reconstruction predicate.",
               "implementation_status": "implemented",

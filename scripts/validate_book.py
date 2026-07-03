@@ -179,6 +179,7 @@ REQUIRED = [
     "scripts/run_fast_generation_task_bundle.py",
     "scripts/validate_fast_generation_task_bundle.py",
     "scripts/validate_compact_gvr_slice.py",
+    "scripts/validate_residual_honesty_conservation.py",
     "scripts/validate_resource_budget_ledgers.py",
     "scripts/validate_simulation_transfer_boundaries.py",
     "scripts/validate_reference_trace.py",
@@ -271,6 +272,7 @@ REQUIRED = [
     "docs/policy_update_lease_probe.md",
     "docs/generation_mode_baseline_harness.md",
     "docs/compact_gvr_slice.md",
+    "docs/residual_honesty_conservation.md",
     "docs/resource_budget_ledger_harness.md",
     "docs/reference_trace_harness.md",
     "docs/capacity_smoothing_harness.md",
@@ -346,6 +348,8 @@ REQUIRED = [
     "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
     "experiments/policy_update_lease/results/2026-07-02-local.json",
     "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+    "experiments/residual_honesty_conservation/input/residual_conservation_cases.json",
+    "experiments/residual_honesty_conservation/results/2026-07-03-local.json",
     "experiments/resource_budget_ledgers/results/2026-07-01-local.md",
     "experiments/reference_trace/results/2026-06-30-local.md",
     "experiments/reference_trace/replay_results/2026-07-02-resource-flagship.json",
@@ -947,6 +951,7 @@ def main() -> None:
     run_validator("validate_generation_mode_baselines.py")
     run_validator("validate_fast_generation_task_bundle.py")
     run_validator("validate_compact_gvr_slice.py")
+    run_validator("validate_residual_honesty_conservation.py")
     run_validator("validate_resource_budget_ledgers.py")
     run_validator("validate_simulation_transfer_boundaries.py")
     run_validator("validate_reference_trace.py")

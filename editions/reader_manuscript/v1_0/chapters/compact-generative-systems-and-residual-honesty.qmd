@@ -28,6 +28,19 @@ Honest compactness is therefore a governance problem. The smaller object has to 
 
 That is the standard the stack applies here: compress only with reconstruction duties, verification duties, and visible residuals still attached for every use.
 
+The new residual-conservation fixture makes that rule concrete without
+pretending to solve the whole problem. It accepts three honest residual
+records: one visible residual that is accepted with an owner, one deferred
+residual with a due condition, and one discharged residual with a receipt. It
+rejects five dishonest controls: hidden burden after an apparent metric gain,
+erased burden with no discharge, burden moved to no owner, a support-state
+promotion attempt, and a zero-residual claim while work remains.
+
+That is not a proof that all residuals can be found. It is a smaller and more
+useful thing: a record-level boundary saying residual burden can be carried,
+priced, deferred, or discharged, but it cannot simply disappear because the
+compact route looks elegant.
+
 ![Draft compression and generation acceptance.](../../../../assets/diagrams/compression-and-generation-acceptance.svg){#reader-fig-compression-and-generation-acceptance fig-alt="Draft compression and generation acceptance figure showing target burden flowing through compact generation, fast generation, and artifact compression paths before verifier, residual, fallback, and consumer-policy gates decide accepted use or blocked routes."}
 
 Figure boundary: this draft reader aid compares compact generation, fast
@@ -263,6 +276,13 @@ Verifier separation keeps compactness from becoming self-certification. The comp
 
 Residual honesty also requires retaining the expensive reference path when the compact path becomes the default.
 
+The residual-conservation fixture gives the chapter its sharpest version of
+that invariant. A visible metric may improve while total burden gets worse, so
+the record must say where the remainder went. If it was accepted, someone owns
+it. If it was deferred, a due condition travels with it. If it was discharged,
+a receipt closes it. If it is hidden, erased, moved without an owner, or used
+to promote a stronger claim, the fixture rejects it.
+
 ## Failure modes
 
 - False lossless claims.
@@ -293,6 +313,14 @@ The repository fixtures validate that this public contract can be represented co
 `AsiStackProofs.CompactGenerativeSystems` adds bounded residual-honesty and exactness predicates, compact-admission route checks, and a finite bridge to the Compact GVR synthetic slice. The Lean bridge proves only the modeled fixture relation: the selected compact receipt is eligible, the three controls are ineligible, and the selected modeled byte count is below the literal baseline. The remaining engineering burden is still explicit: a real codec, generator, independent verifier, downstream utility test, corpus, and fallback harness must exist before compact-core behavior can carry stronger evidence.
 
 The implemented Compact GVR slice gives the reader one concrete, bounded example without turning it into a codec claim. `python3 scripts/validate_compact_gvr_slice.py` recomputes five public-safe synthetic receipt records: a 368-byte literal baseline, a 78-byte exact repeat-generator-plus-repair receipt, and three rejected controls for lossy exactness, negative-rate/no-fallback accounting, and bounded-search overrun. The slice moves only the subordinate claim `compact-generative-systems.compact_gvr_receipt_slice` to `synthetic-test-backed`; the chapter core claim remains at `argument`.
+
+The implemented residual-conservation fixture gives a second concrete example
+without turning it into a deployed residual ledger. `python3
+scripts/validate_residual_honesty_conservation.py` recomputes three honest
+synthetic residual records and five dishonest controls, then checks the finite
+Lean bridge in `AsiStackProofs.CompactGenerativeSystems`. The fixture records
+residual movement; it does not prove all residuals are discoverable, does not
+prove safety, and does not promote the chapter core claim.
 
 The folded generate/verify/repair lane adds the compression receipt. The bounded slice now shows the shape of that receipt discipline: exactness belongs to generator plus repair plus verification, not to the generator alone; negative-rate and missing-fallback cases stay as negative evidence; bounded-search failures do not become success stories; and consumer scope remains attached to the receipt. That slice is still not a codec benchmark. Its evidential scope is the public record's distinction among exactness, declared loss, repair, fallback, quarantine, and consumer scope.
 

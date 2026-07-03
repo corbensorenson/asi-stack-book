@@ -1,0 +1,147 @@
+{
+  "schema_version": "asi_stack.residual_honesty_conservation.input.v0",
+  "fixture_id": "residual-honesty-conservation-v1",
+  "cases": [
+    {
+      "case_id": "valid_accepted_visible_residual",
+      "expect_valid": true,
+      "residual_state": "accepted",
+      "residual_visible": true,
+      "residual_burden_units": 7,
+      "remaining_burden_recorded": true,
+      "residual_owner": "owner://verification-review",
+      "evidence_ref": "evidence://visible-residual-ledger",
+      "metric_improvement_claimed": true,
+      "declared_zero_residual": false,
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim above argument"
+      ]
+    },
+    {
+      "case_id": "valid_deferred_owned_residual",
+      "expect_valid": true,
+      "residual_state": "deferred",
+      "residual_visible": true,
+      "residual_burden_units": 5,
+      "remaining_burden_recorded": true,
+      "residual_owner": "owner://fallback-implementation",
+      "due_condition": "before_exact_replay_use",
+      "metric_improvement_claimed": false,
+      "declared_zero_residual": false,
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim above argument"
+      ]
+    },
+    {
+      "case_id": "valid_discharged_residual_with_receipt",
+      "expect_valid": true,
+      "residual_state": "discharged",
+      "residual_visible": true,
+      "residual_burden_units": 0,
+      "remaining_burden_recorded": true,
+      "residual_owner": "owner://closed-review",
+      "discharge_artifact_ref": "artifact://residual-discharge-review",
+      "discharge_reviewed": true,
+      "metric_improvement_claimed": true,
+      "declared_zero_residual": true,
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim above argument"
+      ]
+    },
+    {
+      "case_id": "invalid_hidden_residual_after_metric_gain",
+      "expect_valid": false,
+      "residual_state": "hidden",
+      "residual_visible": false,
+      "residual_burden_units": 4,
+      "remaining_burden_recorded": false,
+      "residual_owner": "",
+      "metric_improvement_claimed": true,
+      "declared_zero_residual": false,
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim above argument"
+      ]
+    },
+    {
+      "case_id": "invalid_erased_residual_without_discharge",
+      "expect_valid": false,
+      "residual_state": "erased",
+      "residual_visible": false,
+      "residual_burden_units": 0,
+      "remaining_burden_recorded": false,
+      "residual_owner": "",
+      "metric_improvement_claimed": true,
+      "declared_zero_residual": true,
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim above argument"
+      ]
+    },
+    {
+      "case_id": "invalid_moved_residual_without_owner",
+      "expect_valid": false,
+      "residual_state": "moved",
+      "residual_visible": true,
+      "residual_burden_units": 3,
+      "remaining_burden_recorded": true,
+      "residual_owner": "",
+      "metric_improvement_claimed": false,
+      "declared_zero_residual": false,
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim above argument"
+      ]
+    },
+    {
+      "case_id": "invalid_residual_fixture_support_promotion",
+      "expect_valid": false,
+      "residual_state": "accepted",
+      "residual_visible": true,
+      "residual_burden_units": 2,
+      "remaining_burden_recorded": true,
+      "residual_owner": "owner://verification-review",
+      "evidence_ref": "evidence://visible-residual-ledger",
+      "metric_improvement_claimed": false,
+      "declared_zero_residual": false,
+      "support_state_effect": "promote_chapter_core",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim above argument"
+      ]
+    },
+    {
+      "case_id": "invalid_zero_residual_claim_with_remaining_burden",
+      "expect_valid": false,
+      "residual_state": "none",
+      "residual_visible": false,
+      "residual_burden_units": 6,
+      "remaining_burden_recorded": false,
+      "residual_owner": "",
+      "metric_improvement_claimed": true,
+      "declared_zero_residual": true,
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim above argument"
+      ]
+    }
+  ]
+}

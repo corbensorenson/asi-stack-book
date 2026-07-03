@@ -1,0 +1,186 @@
+{
+  "case_count": 8,
+  "case_results": [
+    {
+      "actual_valid": false,
+      "case_id": "invalid_erased_residual_without_discharge",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "erased_residual_without_discharge_artifact"
+      ],
+      "residual_burden_units": 0,
+      "residual_state": "erased"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_hidden_residual_after_metric_gain",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "hidden_residual_rejected",
+        "metric_gain_hides_residual",
+        "positive_residual_not_visible",
+        "positive_residual_without_owner",
+        "remaining_burden_not_recorded"
+      ],
+      "residual_burden_units": 4,
+      "residual_state": "hidden"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_moved_residual_without_owner",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "moved_residual_without_owner",
+        "positive_residual_without_owner"
+      ],
+      "residual_burden_units": 3,
+      "residual_state": "moved"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_residual_fixture_support_promotion",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "support_state_promotion_attempt"
+      ],
+      "residual_burden_units": 2,
+      "residual_state": "accepted"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_zero_residual_claim_with_remaining_burden",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "metric_gain_hides_residual",
+        "positive_residual_not_visible",
+        "positive_residual_without_owner",
+        "remaining_burden_not_recorded",
+        "undeclared_remaining_residual",
+        "zero_residual_claim_with_remaining_burden"
+      ],
+      "residual_burden_units": 6,
+      "residual_state": "none"
+    },
+    {
+      "actual_valid": true,
+      "case_id": "valid_accepted_visible_residual",
+      "expected_valid": true,
+      "rejection_reasons": [],
+      "residual_burden_units": 7,
+      "residual_state": "accepted"
+    },
+    {
+      "actual_valid": true,
+      "case_id": "valid_deferred_owned_residual",
+      "expected_valid": true,
+      "rejection_reasons": [],
+      "residual_burden_units": 5,
+      "residual_state": "deferred"
+    },
+    {
+      "actual_valid": true,
+      "case_id": "valid_discharged_residual_with_receipt",
+      "expected_valid": true,
+      "rejection_reasons": [],
+      "residual_burden_units": 0,
+      "residual_state": "discharged"
+    }
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_residual_honesty_conservation.py",
+  "conservation_summary": {
+    "accepted_residual_recorded": true,
+    "deferred_residual_owned": true,
+    "discharged_residual_has_receipt": true,
+    "erased_residual_rejected": true,
+    "hidden_residual_rejected": true,
+    "support_promotion_rejected": true,
+    "unowned_moved_residual_rejected": true,
+    "zero_residual_overclaim_rejected": true
+  },
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 5,
+  "input_ref": "experiments/residual_honesty_conservation/input/residual_conservation_cases.json",
+  "lean_fixture_alignment": {
+    "expected": {
+      "acceptedResidualRecorded": true,
+      "deferredResidualOwned": true,
+      "dischargedResidualHasReceipt": true,
+      "erasedResidualRejected": true,
+      "hiddenResidualRejected": true,
+      "nonClaimBoundary": true,
+      "supportStateEffectNone": true,
+      "unownedMovedResidualRejected": true
+    },
+    "module": "AsiStackProofs.CompactGenerativeSystems",
+    "theorem_refs": [
+      "residual_honesty_conservation_fixture_bridge"
+    ]
+  },
+  "non_claims": [
+    "does not prove all residuals are observable",
+    "does not prove safety",
+    "does not promote any chapter core claim",
+    "does not prove residual conservation for all real systems",
+    "does not prove deployed residual detection, model quality, benchmark performance, or compression utility"
+  ],
+  "recorded_date": "2026-07-03",
+  "rejected_controls": [
+    {
+      "case_id": "invalid_erased_residual_without_discharge",
+      "rejection_reasons": [
+        "erased_residual_without_discharge_artifact"
+      ]
+    },
+    {
+      "case_id": "invalid_hidden_residual_after_metric_gain",
+      "rejection_reasons": [
+        "hidden_residual_rejected",
+        "metric_gain_hides_residual",
+        "positive_residual_not_visible",
+        "positive_residual_without_owner",
+        "remaining_burden_not_recorded"
+      ]
+    },
+    {
+      "case_id": "invalid_moved_residual_without_owner",
+      "rejection_reasons": [
+        "moved_residual_without_owner",
+        "positive_residual_without_owner"
+      ]
+    },
+    {
+      "case_id": "invalid_residual_fixture_support_promotion",
+      "rejection_reasons": [
+        "support_state_promotion_attempt"
+      ]
+    },
+    {
+      "case_id": "invalid_zero_residual_claim_with_remaining_burden",
+      "rejection_reasons": [
+        "metric_gain_hides_residual",
+        "positive_residual_not_visible",
+        "positive_residual_without_owner",
+        "remaining_burden_not_recorded",
+        "undeclared_remaining_residual",
+        "zero_residual_claim_with_remaining_burden"
+      ]
+    }
+  ],
+  "residuals": [
+    "Synthetic record-level fixture only; no deployed residual ledger, codec, generator, verifier, fallback service, or semantic graph was measured.",
+    "The fixture treats visible residual cases as record obligations and rejects hidden, erased, unowned, and support-promoting controls.",
+    "The chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-03-residual-honesty-conservation",
+  "result_kind": "deterministic_synthetic_residual_conservation_fixture",
+  "schema_version": "asi_stack.residual_honesty_conservation.result.v0",
+  "support_state_effect": "none",
+  "valid_case_count": 3,
+  "valid_cases": [
+    "valid_accepted_visible_residual",
+    "valid_deferred_owned_residual",
+    "valid_discharged_residual_with_receipt"
+  ],
+  "verification_result": "pass"
+}
