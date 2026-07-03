@@ -3301,10 +3301,12 @@ Current status:
   `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json` now
   record that the tracked curated reader manuscript rendered locally to HTML,
   EPUB, and DOCX and passed structural inspection: 49 HTML files, 44 chapter
-  HTML files, 52 EPUB XHTML entries, and 61 DOCX media entries. The probe also
-  records the real remaining blocker: DOCX emitted ten SVG-conversion warnings
-  because `rsvg-convert` was unavailable, so EPUB/DOCX/PDF/e-reader/audio
-  artifacts remain unapproved and no edition release record is created.
+  HTML files, 52 EPUB XHTML entries, and 61 DOCX PNG media entries. The curated
+  DOCX renderer now generates ten temporary PNG fallbacks from the tracked SVG
+  key figures inside the ignored build workspace and restores the source
+  workspace after rendering, eliminating the previous SVG-conversion warnings.
+  EPUB/DOCX/PDF/e-reader/audio artifacts still remain unapproved until
+  application-level review and an edition release record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,

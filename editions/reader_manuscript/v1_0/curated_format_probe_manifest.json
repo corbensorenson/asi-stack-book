@@ -37,8 +37,10 @@
       "status": "rendered",
       "artifacts_observed": 1,
       "preserved_artifacts": 1,
-      "warning_count": 10,
-      "svg_conversion_warning_count": 10
+      "warning_count": 0,
+      "svg_conversion_warning_count": 0,
+      "png_fallback_count": 10,
+      "png_fallback_converter": "sips"
     }
   },
   "inspection_summary": {
@@ -53,8 +55,8 @@
     },
     "epub": {
       "status": "passed",
-      "bytes": 8690281,
-      "sha256": "461bafec5ec6219d4ebb65c25a27ff0ec558a0b1b3a2fe54675d32c44de9be82",
+      "bytes": 8695384,
+      "sha256": "fa573523ceb932db858d73686e29bfe08833341158ee8ba9a878d655c076cbda",
       "entries": 120,
       "xhtml_entries": 52,
       "image_entries": 62,
@@ -74,11 +76,13 @@
     },
     "docx": {
       "status": "passed",
-      "bytes": 6784002,
-      "sha256": "b846e2b30ffdecebee82d48e3e6efe4c8d788b11e14e53402a9d4562e4373649",
+      "bytes": 8351731,
+      "sha256": "b8fed41a4987e2df0d74f15fbb7af7b47d28b08c21ea57f3bb7ed81e81a90e13",
       "entries": 77,
       "media_entries": 61,
-      "paragraph_markers": 16976,
+      "png_media_entries": 61,
+      "svg_media_entries": 0,
+      "paragraph_markers": 17126,
       "required_entries_present": [
         "[Content_Types].xml",
         "_rels/.rels",
@@ -93,10 +97,9 @@
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
-    "app_or_ereader_review_not_completed",
-    "docx_svg_conversion_warnings_unresolved"
+    "app_or_ereader_review_not_completed"
   ],
-  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, and DOCX and passes structural artifact inspection. EPUB and DOCX remain unapproved because application-level e-reader/DOCX review has not happened; DOCX also has ten SVG conversion warnings caused by missing rsvg-convert.",
+  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, and DOCX and passes structural artifact inspection. The DOCX render now uses ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, so the previous SVG conversion warnings are no longer present. EPUB and DOCX remain unapproved because application-level e-reader/DOCX review has not happened and no edition release record exists.",
   "non_claims": [
     "This manifest records local structural inspection of ignored curated-reader snapshots only.",
     "This manifest is not a reader release, ebook release, document release, PDF release, edition release record, or artifact approval.",

@@ -202,9 +202,14 @@ def inspect_docx(root: Path) -> dict[str, object]:
             missing = sorted(required_entries.difference(names))
             if missing:
                 fail(f"DOCX missing required entries: {', '.join(missing)}")
-            image_count = sum(1 for name in names if name.lower().startswith("word/media/"))
+            media_names = [name for name in names if name.lower().startswith("word/media/")]
+            image_count = len(media_names)
+            png_count = sum(1 for name in media_names if name.lower().endswith(".png"))
+            svg_count = sum(1 for name in media_names if name.lower().endswith(".svg"))
             if image_count < 44:
                 fail(f"DOCX has too few embedded media files for the curated reader: {image_count}")
+            if svg_count:
+                fail(f"DOCX still contains SVG media entries after PNG fallback pass: {svg_count}")
             document_xml = archive.read("word/document.xml").decode("utf-8", errors="ignore")
             paragraph_count = document_xml.count("<w:p")
             if paragraph_count < 1000:
@@ -223,6 +228,8 @@ def inspect_docx(root: Path) -> dict[str, object]:
         "sha256": sha256_file(path),
         "entries": len(names),
         "media_entries": image_count,
+        "png_media_entries": png_count,
+        "svg_media_entries": svg_count,
         "paragraph_markers": paragraph_count,
         "required_entries": sorted(required_entries),
     }
@@ -284,7 +291,8 @@ def main() -> None:
         "Curated reader artifact inspection passed: "
         f"{report['formats']['html']['html_files']} HTML files, "
         f"{report['formats']['epub']['xhtml_entries']} EPUB XHTML entries, "
-        f"{report['formats']['docx']['media_entries']} DOCX media entries."
+        f"{report['formats']['docx']['png_media_entries']} DOCX PNG media entries, "
+        f"{report['formats']['docx']['svg_media_entries']} DOCX SVG media entries."
     )
 
 

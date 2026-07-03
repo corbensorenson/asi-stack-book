@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-03 - Add curated DOCX PNG fallbacks
+
+- Updated `scripts/render_curated_reader_formats.py` so curated-reader DOCX
+  rendering creates temporary PNG fallbacks for the ten tracked SVG key figures
+  inside the ignored build workspace, rewrites the DOCX render input to those
+  fallbacks, and restores the curated source workspace after rendering.
+- Regenerated the local curated reader HTML/EPUB/DOCX structural probe and
+  updated `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`
+  plus `docs/curated_reader_format_artifact_probe.md`: DOCX now renders with
+  0 warnings, 0 SVG conversion warnings, 61 PNG media entries, EPUB SHA-256
+  `fa573523ceb932db858d73686e29bfe08833341158ee8ba9a878d655c076cbda`, and
+  DOCX SHA-256
+  `b8fed41a4987e2df0d74f15fbb7af7b47d28b08c21ea57f3bb7ed81e81a90e13`.
+- Updated `scripts/validate_curated_reader_format_probe_manifest.py` so the
+  improved zero-warning DOCX path and ten-PNG fallback record are now enforced.
+- Boundary: this removes one format-preparation blocker only. It does not
+  approve curated HTML, EPUB, DOCX, PDF, e-reader, audio, or audio-embedded
+  EPUB artifacts, does not create an edition release record, and does not
+  promote any claim support state.
+
 ## 2026-07-03 - Harden idea-depth closure packet
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after reviewing the latest

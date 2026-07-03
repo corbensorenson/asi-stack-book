@@ -24,7 +24,6 @@ REQUIRED_BLOCKERS = {
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
     "app_or_ereader_review_not_completed",
-    "docx_svg_conversion_warnings_unresolved",
 }
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 
@@ -117,7 +116,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     expected_render = {
         "html": {"artifacts_observed": 49, "preserved_artifacts": 81, "warning_count": 0, "svg_conversion_warning_count": 0},
         "epub": {"artifacts_observed": 1, "preserved_artifacts": 1, "warning_count": 0, "svg_conversion_warning_count": 0},
-        "docx": {"artifacts_observed": 1, "preserved_artifacts": 1, "warning_count": 10, "svg_conversion_warning_count": 10},
+        "docx": {"artifacts_observed": 1, "preserved_artifacts": 1, "warning_count": 0, "svg_conversion_warning_count": 0},
     }
     for fmt, expected in expected_render.items():
         render = render_summary.get(fmt, {})
@@ -129,6 +128,11 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         for key, expected_value in expected.items():
             if render.get(key) != expected_value:
                 errors.append(f"render_summary.{fmt}.{key} must be {expected_value}.")
+        if fmt == "docx":
+            if render.get("png_fallback_count") != 10:
+                errors.append("render_summary.docx.png_fallback_count must be 10.")
+            if render.get("png_fallback_converter") not in {"sips", "rsvg-convert"}:
+                errors.append("render_summary.docx.png_fallback_converter must be sips or rsvg-convert.")
 
     html = inspection_summary.get("html", {}) if isinstance(inspection_summary, dict) else {}
     if isinstance(html, dict):
@@ -171,6 +175,9 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("inspection_summary.docx.status must be passed.")
         require_int("inspection_summary.docx", "bytes", docx.get("bytes"), errors, minimum=1_000_000)
         require_int("inspection_summary.docx", "media_entries", docx.get("media_entries"), errors, minimum=44)
+        require_int("inspection_summary.docx", "png_media_entries", docx.get("png_media_entries"), errors, minimum=44)
+        if docx.get("svg_media_entries") != 0:
+            errors.append("inspection_summary.docx.svg_media_entries must be 0.")
         require_int("inspection_summary.docx", "paragraph_markers", docx.get("paragraph_markers"), errors, minimum=1000)
         if not SHA_RE.match(str(docx.get("sha256", ""))):
             errors.append("inspection_summary.docx.sha256 must be a SHA-256 digest.")
@@ -203,12 +210,13 @@ def validate_summary(errors: list[str]) -> None:
         "python3 scripts/inspect_curated_reader_format_artifacts.py",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
-        "| docx | rendered | 1 | 1 | 10 | 10 |",
-        "DOCX render produced ten Pandoc warnings",
+        "| docx | rendered | 1 | 1 | 0 | 0 |",
+        "ten temporary PNG fallbacks",
+        "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `461bafec5ec6219d4ebb65c25a27ff0ec558a0b1b3a2fe54675d32c44de9be82`",
-        "SHA-256 `b846e2b30ffdecebee82d48e3e6efe4c8d788b11e14e53402a9d4562e4373649`",
+        "SHA-256 `fa573523ceb932db858d73686e29bfe08833341158ee8ba9a878d655c076cbda`",
+        "SHA-256 `b8fed41a4987e2df0d74f15fbb7af7b47d28b08c21ea57f3bb7ed81e81a90e13`",
         "does not clear release blockers",
         "does not promote any claim support state",
     ]
@@ -225,7 +233,7 @@ def main() -> None:
     validate_summary(errors)
     if errors:
         fail(errors)
-    print("Curated reader format probe validation passed: html, epub, docx structural evidence recorded with DOCX SVG blocker.")
+    print("Curated reader format probe validation passed: html, epub, docx structural evidence recorded with DOCX PNG fallbacks.")
 
 
 if __name__ == "__main__":

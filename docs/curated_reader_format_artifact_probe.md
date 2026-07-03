@@ -30,20 +30,22 @@ Tracked manifest:
 |---|---|---:|---:|---:|---:|
 | html | rendered | 49 | 81 | 0 | 0 |
 | epub | rendered | 1 | 1 | 0 | 0 |
-| docx | rendered | 1 | 1 | 10 | 10 |
+| docx | rendered | 1 | 1 | 0 | 0 |
 
-The DOCX render produced ten Pandoc warnings for SVG image conversion because
-`rsvg-convert` was not available on PATH. The DOCX container still rendered and
-passed structural inspection, but that warning is a release blocker, not a
-cosmetic footnote.
+The DOCX render now generates ten temporary PNG fallbacks from the tracked SVG
+key figures inside the ignored build workspace before running Pandoc. The
+renderer restored the curated source workspace after the DOCX pass. The
+resulting DOCX render produced zero SVG conversion warnings and the DOCX package
+contains PNG media entries rather than embedded SVG media entries. This removes
+the previous conversion-warning blocker; it does not approve the DOCX artifact.
 
 ## Structural Inspection Summary
 
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,690,281 bytes, SHA-256 `461bafec5ec6219d4ebb65c25a27ff0ec558a0b1b3a2fe54675d32c44de9be82`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 6,784,002 bytes, SHA-256 `b846e2b30ffdecebee82d48e3e6efe4c8d788b11e14e53402a9d4562e4373649`, 77 zip entries, 61 media entries, 16,976 paragraph markers, required Word package entries present. |
+| epub | passed | 8,695,384 bytes, SHA-256 `fa573523ceb932db858d73686e29bfe08833341158ee8ba9a878d655c076cbda`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,351,731 bytes, SHA-256 `b8fed41a4987e2df0d74f15fbb7af7b47d28b08c21ea57f3bb7ed81e81a90e13`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,126 paragraph markers, required Word package entries present. |
 
 ## Review Decision
 
@@ -54,8 +56,8 @@ for release preparation, e-reader testing, DOCX application review, and figure
 conversion work.
 
 This does not clear release blockers. EPUB still needs real e-reader or app
-inspection. DOCX still needs application-level review and resolution of the
-ten SVG conversion warnings. PDF and audio artifacts remain outside this probe.
+inspection. DOCX still needs application-level review in Word, LibreOffice GUI,
+or Google Docs. PDF and audio artifacts remain outside this probe.
 
 ## Residuals
 
