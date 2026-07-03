@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Coil Attention, Cyclic Memory, and Recurrence Contracts
 
-Date: 2026-06-30
+Date: 2026-07-03
 
 Chapter: `coil-attention-cyclic-memory-and-recurrence-contracts`
 
@@ -36,6 +36,9 @@ The reader throughline is:
   endpoint without implying a deployed memory-control plane.
 - Preserved the proof/test boundary for `AsiStackProofs.CoilAttentionMemory`
   and the cyclic-memory protocol fixture boundary.
+- Added a 2026-07-03 slot-and-winding scenario that separates residue coverage,
+  winding/provenance, alias risk, fallback, stale freshness claims, recurrence
+  exit conditions, residuals, and support-state non-claims.
 
 ## Meaning-Preservation Checks
 
@@ -68,7 +71,7 @@ The reader throughline is:
   coverage results, recurrence-exit behavior, learned-memory behavior,
   retrieval quality, reasoning quality, speed, memory reduction, long-context
   utility, Circle-generated contract packs, Theseus transfer consumers, or
-  external benchmark reproduction.
+  external benchmark reproduction, support-state promotion, or reader release.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.

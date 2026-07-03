@@ -166,6 +166,31 @@ baseline blocks promotion.
 Those are modest controls, but they are the controls that make the idea
 testable.
 
+## A Slot And Winding Scenario
+
+Suppose a memory module maps events into eight slots. Events 7, 15, 23, and 31
+all land in slot 7. A residue-only record can make those events look identical:
+"slot 7 was used." A cyclic memory contract keeps the winding and provenance
+attached, so the system can see that the slot has carried multiple histories.
+
+The contract does not say the model remembered the right thing. It says the
+alias risk is visible. A consumer can use that structural fact to require a
+fallback, preserve provenance, block a freshness claim, or request a workload
+test. If a later route says the memory is good because the slot was covered,
+the contract should reject that as coverage laundering. Slot coverage is not
+semantic adequacy.
+
+The same pattern applies to recurrence. A recurrence schedule can be admitted
+only when it names an exit condition and fallback. If the loop keeps running
+because it can, the record becomes residual work, not evidence of deeper
+reasoning.
+
+This example does not claim retrieval quality, reasoning quality, KV-cache
+freshness, long-context utility, speed, memory reduction, learned-memory
+behavior, or a Theseus transfer result. It shows why the structural contract is
+still useful: it gives reviewers the exact place where cyclic memory must stop
+pretending to be useful memory until workload evidence exists.
+
 ## Interfaces
 
 The Cyclic Memory Contract is the interface between governed context and memory

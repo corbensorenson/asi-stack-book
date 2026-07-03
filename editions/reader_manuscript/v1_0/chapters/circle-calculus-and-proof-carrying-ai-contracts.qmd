@@ -72,6 +72,28 @@ The repository now mechanizes the smallest boundary that can be stated without i
 
 The contract should therefore be read in two layers. The proof layer says whether a finite structural fact has a theorem-linked receipt. The consumer layer says whether that receipt is adequate for a particular downstream use. Passing the first layer can be necessary for the second, but it is never sufficient by itself.
 
+## A Receipt Consumer Scenario
+
+Imagine a routing experiment wants to use a Circle receipt that says a finite
+position-bookkeeping object has accepted theorem references and deterministic
+fields. The receipt is valuable. It can tell the consumer which theorem IDs are
+claimed, which parameters were recorded, which fingerprint belongs to the
+artifact, and which non-claims must travel with it.
+
+The consumer gate asks a narrower question than the experiment wants to ask.
+For structural discussion, the receipt may be enough: the route can say it has
+a theorem-linked finite-position receipt. For adoption, it is not enough. The
+consumer still needs a workload, ordinary baselines, negative controls,
+metrics, result artifacts, and a review decision. If those are missing, the
+route becomes `workload_blocked` rather than "promising because proof exists."
+
+That is the whole contract discipline in miniature. The receipt makes a small
+fact easier to carry, and the consumer gate makes the larger claim harder to
+smuggle. This scenario does not claim clean Circle replay from this repository,
+local theorem ownership, model-quality improvement, context-length extension,
+runtime speed, memory savings, deployment readiness, safety, or support-state
+promotion.
+
 ### Proof receipt lifecycle
 
 A proof receipt moves through transport states, not capability states. A theorem-linked receipt names a theorem reference and proof-status scope, but it supports only structural discussion until resolver status is known. A dictionary-bound receipt ties the finite model to a recognized contract family, which makes it useful for receipt design and local surrogate tests.

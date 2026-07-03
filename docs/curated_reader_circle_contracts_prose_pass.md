@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Circle Calculus and Proof-Carrying AI Contracts
 
-Last updated: 2026-06-29
+Last updated: 2026-07-03
 
 Chapter ID: `circle-calculus-and-proof-carrying-ai-contracts`
 
@@ -32,6 +32,10 @@ Allowed curation scopes used in this pass:
 - Restored the current ASI-side Circle consumer-gate boundary from the live chapter: one pinned `CC-AI-CONTRACT-ROPE-001` receipt, seven theorem IDs and fingerprints, mutation rejection, and no clean Circle replay or vendored contract pack.
 - Preserved companion-note routing and proof-receipt lifecycle vocabulary while making the reader spine clearer.
 - Preserved the Mermaid diagram, core claim, evidence boundary, minimum viable implementation, beyond-state-of-the-art endpoint, and handoff to the Coil chapter.
+- Added a 2026-07-03 receipt-consumer scenario that separates theorem-linked
+  structural discussion from downstream adoption, requiring workloads,
+  baselines, negative controls, metrics, result artifacts, review decisions,
+  and non-claim preservation before any quality or deployment claim can move.
 
 ## Meaning Preservation Checks
 
@@ -51,6 +55,7 @@ Allowed curation scopes used in this pass:
 - This pass does not approve the curated chapter, reader release, EPUB, DOCX, PDF, HTML artifact, audio artifact, or audio-embedded EPUB.
 - This pass does not promote any claim support state.
 - This pass does not claim local Circle proof ownership, clean Circle replay, theorem-ID resolver completion, a vendored Circle contract pack, downstream model quality, runtime improvement, memory improvement, context-length improvement, safety, or ASI capability.
+- This pass does not claim support-state promotion.
 
 ## Remaining Blockers
 
