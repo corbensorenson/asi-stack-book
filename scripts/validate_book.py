@@ -69,6 +69,7 @@ REQUIRED = [
     "scripts/validate_contribution_novelty_ledger.py",
     "scripts/validate_evidence_laundering_case_studies.py",
     "scripts/validate_core_claim_decisions.py",
+    "scripts/validate_v1_x_core_claim_dispositions.py",
     "scripts/validate_core_claim_promotion_paths.py",
     "scripts/validate_v1_x_active_evidence_cycle.py",
     "scripts/validate_chapter_review_burndown.py",
@@ -246,6 +247,7 @@ REQUIRED = [
     "experiments/prototype_phase_gates/README.md",
     "experiments/prototype_phase_gates/results/2026-07-02-local.json",
     "docs/core_claim_transition_coverage.md",
+    "docs/core_claim_disposition_ledger.md",
     "docs/v1_x_active_evidence_cycle.md",
     "docs/CHAPTER_REVIEWS.md",
     "docs/chapter_consolidation_sequence.md",
@@ -409,6 +411,7 @@ REQUIRED = [
     "experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json",
     "evidence_transitions/README.md",
     "claim_decisions/v1_0_core_claim_no_promotion.json",
+    "claim_decisions/v1_x_core_claim_dispositions.json",
     "editions/release_profiles.json",
     "editions/reader_overlays/README.md",
     "editions/reader_overlays/v1_0/manifest.json",
@@ -900,6 +903,7 @@ def main() -> None:
     run_validator("validate_non_core_evidence_ledger.py")
     run_validator("validate_claim_revision_records.py")
     run_validator("validate_core_claim_decisions.py")
+    run_validator("validate_v1_x_core_claim_dispositions.py")
     run_validator("validate_external_review_intake.py")
     run_validator("validate_defended_contribution_tracks.py")
     run_validator("validate_defended_contribution_prior_art.py")

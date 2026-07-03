@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-03 - Add v1.x core claim disposition ledger
+
+- Added `claim_decisions/v1_x_core_claim_dispositions.json` and generated
+  reviewer surface `docs/core_claim_disposition_ledger.md` so all 44 active
+  chapter core claims have one auditable disposition record.
+- Added `scripts/validate_v1_x_core_claim_dispositions.py` and wired it into
+  `scripts/validate_book.py`. The validator cross-checks `book_structure.json`,
+  Appendix C, `docs/per_chapter_evidence_plan.md`, accepted evidence-transition
+  records, and `claim_decisions/v1_0_core_claim_no_promotion.json`.
+- Updated `docs/v1_x_beyond_sota_roadmap.md` so Logical Conclusion Test 3 and
+  the suggested long-running goal treat load-stability/workload-quality as
+  already accepted narrow transitions and keep future work focused on the next
+  measured/replay/import lane.
+- Boundary: this does not promote any chapter core claim above `argument`, does
+  not convert non-core transitions into chapter-core evidence, and does not
+  prove ASI capability, deployed safety, model quality, benchmark performance,
+  source interpretation, novelty, or external review.
+
 ## 2026-07-03 - Accept workload-quality selector transition
 
 - Added
