@@ -1,6 +1,10 @@
 # Curated Reader Prose Pass: Runtime Adapters, Tool Permissions, and Human Approval
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
+
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
 
 Chapter ID: `runtime-adapters-tool-permissions-and-human-approval`
 
@@ -69,6 +73,11 @@ permission to change proof or test status.
   creation from an external send effect, scoped recipient/attachment approval,
   approval reuse denial, effect receipts, delivery incidents, correction paths,
   irreversible residuals, and support-state non-claims.
+- Added a 2026-07-03 reconciliation pass that places runtime adapters between
+  artifact continuity and procedural memory: a bounded job may request an
+  external effect only through scoped permission, approval, lease, receipt,
+  rollback or residual, and audit records before repeated traces can become
+  reuse candidates.
 
 ## Meaning Preservation Checks
 
@@ -106,7 +115,7 @@ permission to change proof or test status.
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, and exact rendered reader
-artifacts.
+Before this curated source can be release input, the full reader manuscript
+still needs format review, exact artifact review, and an edition release
+record. This chapter-level prose meaning is reconciled; release approval is
+not.

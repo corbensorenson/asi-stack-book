@@ -1,8 +1,10 @@
 # Curated Reader Prose Pass: Procedural Memory and Cognitive Loop Closure
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
-Follow-up: 2026-07-02
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
 
 Chapter ID: `procedural-memory-and-cognitive-loop-closure`
 
@@ -71,6 +73,11 @@ permission to change proof or test status.
   explanation only and does not claim loop detection, tool synthesis,
   validator-repair automation, regression success, routing quality, or
   deployed self-improvement.
+- Added a 2026-07-03 reconciliation pass that closes the Part II execution arc
+  and hands into Part III: procedural memory turns job, artifact, adapter,
+  failure, replay, and residual traces into qualified reuse candidates only
+  when negative examples, regressions, monitoring, retirement, and non-claims
+  remain attached.
 
 ## Meaning Preservation Checks
 
@@ -105,7 +112,7 @@ permission to change proof or test status.
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, and exact rendered reader
-artifacts.
+Before this curated source can be release input, the full reader manuscript
+still needs format review, exact artifact review, and an edition release
+record. This chapter-level prose meaning is reconciled; release approval is
+not.

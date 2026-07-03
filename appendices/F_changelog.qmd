@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-03 - Reconcile Part II execution reader arc
+
+- Updated the curated reader manuscript chapters `Labor OS and Typed Jobs`,
+  `Artifact Graphs, Audit Logs, and Replay`, `Runtime Adapters, Tool
+  Permissions, and Human Approval`, and `Procedural Memory and Cognitive Loop
+  Closure` with second prose passes that make the Part II execution chain
+  explicit: typed jobs define bounded work, artifact graphs preserve what work
+  leaves behind, runtime adapters constrain external effects, and procedural
+  memory admits only qualified reusable traces.
+- Advanced those four curated reader records from `drafting` to `reconciled` in
+  `editions/reader_manuscript/v1_0/manifest.json`, while preserving
+  `reader_release_record_not_created`, `format_artifact_not_reviewed`, and
+  `curated_reconciliation_not_approved` release blockers on every row.
+- Updated the reader reconciliation report, prose-pass sidecars, reader
+  status/readme surfaces, graduation review, companion-note routing review,
+  roadmap language, review matrix notes, and v1 status snapshot so the curated
+  reader manuscript now records 20 drafting chapters and 24 reconciled prose
+  chapters without implying release approval, format approval, support
+  promotion, source-authority changes, Labor OS execution, artifact-graph
+  service behavior, adapter sandboxing, human-approval operation, procedural
+  memory synthesis, or ebook/document/PDF/audio artifact approval.
+
 ## 2026-07-03 - Reconcile evidence-states burn-down row
 
 - Reconciled the Milestone 2.5 burn-down row for `Evidence States and Claim

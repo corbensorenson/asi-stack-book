@@ -572,7 +572,7 @@
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "title": "Artifact Graphs, Audit Logs, and Replay",
       "file": "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/artifact-graphs-audit-logs-and-replay.qmd",
       "live_source_ref": "chapters/artifact-graphs-audit-logs-and-replay.qmd@4090d18b4",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
@@ -592,14 +592,15 @@
       "voice_pass_slot_ids": [
         "execution-craft"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around work that remains inspectable after production, artifact identity, parent jobs, source/context refs, context transactions, tool refs, audit events, replay grades, claim/test links, evidence gates, residuals, allowed reuse, minimum viable replay packets, a chapter-edit replay-packet scenario, and beyond-SOTA evidence graphs; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "Second curated reader reconciliation makes artifact graphs the memory layer of the Part II execution arc: typed jobs decide what may be attempted, artifact graphs preserve what the attempt left behind, and runtime adapters later attach effect receipts, rollback paths, residuals, and evidence gates; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; external records remain comparators rather than claim support",
         "proof/test status preserved without adding unrun artifact-graph service, audit-reconstruction, replay-engine, produced-artifact-completeness, provenance-completeness, benchmark, security, proof-carrying-code, SWE-bench, AutoGen, or MoECOT runtime results",
         "implementation horizon preserved without implying current evidence-graph deployment",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part II execution-arc reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -608,7 +609,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass, 2026-07-02 book-scale artifact-continuity follow-up, and 2026-07-03 replay-packet scenario follow-up recorded in docs/curated_reader_artifact_graphs_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass makes artifact graphs the memory of bounded work, preserving parent jobs, source/context refs, replay grades, residuals, and allowed reuse before runtime adapters create external effects; release blockers and no support-state movement remain. Prose-pass details recorded in docs/curated_reader_artifact_graphs_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
@@ -1313,7 +1314,7 @@
       "chapter_id": "labor-os-and-typed-jobs",
       "title": "Labor OS and Typed Jobs",
       "file": "editions/reader_manuscript/v1_0/chapters/labor-os-and-typed-jobs.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/labor-os-and-typed-jobs.qmd",
       "live_source_ref": "chapters/labor-os-and-typed-jobs.qmd@5b2400ea5",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#labor-os-and-typed-jobs.core",
@@ -1333,14 +1334,15 @@
       "voice_pass_slot_ids": [
         "execution-craft"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around typed jobs as the governed unit of execution, plan-node parentage, contract locks, permission checks, approval gates, runtime adapters, bounded workspaces, completion receipts, artifact handoff, residuals, quarantine, delivery-versus-evidence readiness, a typed chapter-edit job scenario, minimum viable lifecycle harnesses, and the beyond-SOTA Labor OS endpoint; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "Second curated reader reconciliation makes the Part II execution arc explicit: typed jobs inherit intent, planning, context, and verification boundaries, then separate delivery from evidence readiness before handing bounded work to artifact graphs; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; AutoGen and SWE-bench remain comparators rather than local reproduction evidence",
         "proof/test status preserved without adding unrun job scheduler, permission-service, approval-service, runtime-adapter, replay-system, Talos-runtime, MoECOT-runtime, benchmark, security, AutoGen, or SWE-bench results",
         "implementation horizon preserved without implying current Labor OS deployment",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part II execution-arc reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1349,7 +1351,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass and 2026-07-03 typed chapter-edit job scenario follow-up recorded in docs/curated_reader_labor_os_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass makes Labor OS the first Part II execution object: typed jobs inherit contract/context/verification boundaries, separate delivery from evidence readiness, and hand bounded work to artifact graphs while preserving release blockers and no support-state movement. Prose-pass details recorded in docs/curated_reader_labor_os_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "living-book-methodology",
@@ -1561,7 +1563,7 @@
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "title": "Procedural Memory and Cognitive Loop Closure",
       "file": "editions/reader_manuscript/v1_0/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
       "live_source_ref": "chapters/procedural-memory-and-cognitive-loop-closure.qmd@41267f5a8",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#procedural-memory-and-cognitive-loop-closure.core",
@@ -1580,14 +1582,15 @@
       "voice_pass_slot_ids": [
         "execution-craft"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around earned automation: comparable traces, negative examples, invariant abstraction, parameter discovery, procedure qualification, a schema-fixture loop-closure story, regression checks, quarantine, residuals, retirement triggers, and the implemented synthetic procedural-memory loop harness; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "Second curated reader reconciliation closes the Part II execution arc and hands into Part III: procedural memory turns job, artifact, adapter, failure, replay, and residual traces into qualified reuse candidates only when negative examples, regressions, monitoring, retirement, and non-claims remain attached; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; MemGPT remains external orientation and MoECOT remains connector/source-note context",
         "proof/test status preserved without adding unrun loop-detector, tool-synthesis, parameter-discovery, regression, routing-monitor, retirement-automation, Talos-loop-closure, MoECOT-runtime, Project-Theseus-replay, or autonomous-self-improvement results",
         "implementation horizon preserved without implying current procedure-foundry deployment",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part II execution-arc reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1596,7 +1599,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass, 2026-07-02 schema-fixture loop-closure follow-up, and 2026-07-03 evidence-boundary alignment recorded in docs/curated_reader_procedural_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass closes Part II by turning execution traces into qualified procedure candidates only when failures, regressions, monitoring, retirement, residuals, and non-claims remain attached, then hands into Part III routing; release blockers remain. Prose-pass details recorded in docs/curated_reader_procedural_memory_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
@@ -1809,7 +1812,7 @@
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "title": "Runtime Adapters, Tool Permissions, and Human Approval",
       "file": "editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
       "live_source_ref": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd@c28d894f1",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
@@ -1830,14 +1833,15 @@
         "execution-craft",
         "boundary-scar"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around runtime adapters as capability leases for external effects, typed jobs, adapter contracts, capability checks, authority handles, scoped approval records, effect leases, sandboxed invocations, effect receipts, rollback handles, irreversible residuals, incident paths, artifact graphs, evidence ledgers, and the beyond-SOTA capability-firewall endpoint. The 2026-07-01 reconciliation pass adds the ambient-authority confused-deputy and revoked-receipt synthetic harness expansion without treating it as deployed behavior, support-state movement, or release approval. The 2026-07-02 follow-up adds a message-adapter reader scenario while preserving the same boundaries.",
+      "divergence_summary": "Second curated reader reconciliation places runtime adapters between artifact continuity and procedural memory: bounded jobs may request external effects only through scoped permission, approval, leases, receipts, rollback or residual records, audit paths, and non-claim boundaries before repeated traces can become reuse candidates; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; external runtime-action and assurance records remain comparators rather than local reproduction evidence",
         "proof/test status preserved without adding unrun adapter-service, sandbox, approval-service, revocation-propagation, secret-handle, live effect-receipt, rollback, incident-response, runtime-security, benchmark, Talos-runtime, MoECOT-runtime, ReAct, Simplex, Copilot, or proof-carrying-code results",
         "implementation horizon preserved without implying current capability-firewall deployment",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part II execution-arc reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1846,7 +1850,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "Curated reader prose pass updated in docs/curated_reader_runtime_adapters_prose_pass.md after the 2026-07-01 runtime-adapter authority-probe expansion and 2026-07-02 message-adapter follow-up; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass places runtime adapters at the external-effect edge between artifact continuity and procedural memory, keeping permissions, approvals, leases, receipts, rollback/residual records, and adapter non-claims visible without approving release. Prose-pass details recorded in docs/curated_reader_runtime_adapters_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "security-kernel-and-digital-scifs",

@@ -30,6 +30,12 @@ someone remembers that the work seemed good at the time. They should happen
 through an artifact record with provenance, audit events, replay limits, and
 claim/test links attached.
 
+In the Part II execution arc, artifact graphs are the memory of bounded work.
+Typed jobs decide what may be attempted. Artifact graphs decide what the
+attempt left behind and what future systems are allowed to do with it. That
+distinction keeps execution from becoming a pile of outputs that later readers
+mistake for proof.
+
 ## Problem
 
 The stack needs durable work products and replayable traces.
@@ -356,3 +362,9 @@ Runtime Adapters, Tool Permissions, and Human Approval governs that edge. It
 separates request, approval, invocation, effect receipt, verification,
 rollback handle, and irreversible residual so external action remains
 traceable after it leaves the artifact graph.
+
+The artifact graph therefore sits on both sides of the effect boundary. Before
+an adapter runs, the graph names the job, source, context, and planned
+obligations. After an adapter runs, it receives the effect receipt, rollback
+or residual record, and evidence gate. Without that bridge, the system would
+remember internal reasoning and external action as separate stories.

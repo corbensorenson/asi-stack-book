@@ -4,6 +4,8 @@ Last updated: 2026-07-03
 
 Follow-up: 2026-07-03
 
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter ID: `labor-os-and-typed-jobs`
 
 Curated reader file:
@@ -61,6 +63,10 @@ permission to change proof or test status.
   reader-manuscript edits, live-chapter read-only scope, source availability,
   support-state non-promotion, output artifacts, validator results, residuals,
   canonical-change requests, and completion receipts.
+- Added a 2026-07-03 reconciliation pass that makes the Part II execution arc
+  explicit: typed jobs inherit the preceding intent, planning, context, and
+  verification layers, then hand bounded work to artifact graphs without
+  treating delivery as evidence readiness.
 
 ## Meaning Preservation Checks
 
@@ -96,7 +102,7 @@ permission to change proof or test status.
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, and exact rendered reader
-artifacts.
+Before this curated source can be release input, the full reader manuscript
+still needs format review, exact artifact review, and an edition release
+record. This chapter-level prose meaning is reconciled; release approval is
+not.

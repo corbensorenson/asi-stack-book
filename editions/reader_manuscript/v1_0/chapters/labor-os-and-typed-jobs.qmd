@@ -31,6 +31,12 @@ approval would probably be granted.
 
 The point is not to make AI labor slower. The point is to make it governable.
 
+This chapter begins the execution arc of Part II. The previous chapters asked
+how intent becomes a contract, how plans preserve that contract, how reasoning
+lowers into semantic structure, how context is admitted, and how claims are
+checked before belief changes. Typed jobs answer the next question: what
+object is allowed to cross from controlled reasoning into work?
+
 ## Problem
 
 Advanced AI systems need execution without ambient authority.
@@ -407,3 +413,9 @@ returns, the stack still needs durable artifact identity, provenance, context
 refs, tool refs, audit events, replay grade, claim/test links, residuals, and
 evidence gates. The Labor OS hands bounded work to the artifact graph so work
 can become inspectable memory instead of disappearing side effect.
+
+The handoff is intentionally conservative. A typed job can say that work was
+authorized, scoped, run, blocked, delivered, or quarantined. It cannot by
+itself say that the resulting file, proof, source note, message, or receipt is
+safe to reuse. The next layer gives produced work its durable identity and
+prevents completed activity from laundering itself into evidence.

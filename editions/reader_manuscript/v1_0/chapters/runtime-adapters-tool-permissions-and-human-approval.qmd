@@ -27,6 +27,12 @@ handle, producing which receipt, rollback path, residual, and evidence record.
 The design goal is simple: no external effect should be treated as just
 another thought.
 
+The previous two chapters bounded work and preserved its artifact trail. This
+chapter handles the moment when a bounded job asks to touch external state.
+That moment is where a record becomes authority, and where a missing approval,
+stale lease, leaked handle, or vague rollback path can turn a good plan into a
+bad effect.
+
 ## Problem
 
 Plans become real-world effects only through tools, runtimes, deployment
@@ -408,3 +414,8 @@ which patterns can be safely abstracted, parameterized, verified, registered,
 monitored, and retired. The handoff is deliberately strict: a pattern becomes
 memory only when its authority scope, failures, regressions, residuals, and
 retirement triggers are visible.
+
+This closes the action side of Part II. A job can be authorized, an artifact
+can preserve what happened, and an adapter can constrain the effect. The
+remaining question is whether repeated traces can become future capability
+without bypassing the same boundaries that made the original work governable.
