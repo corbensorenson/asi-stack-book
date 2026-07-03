@@ -190,17 +190,17 @@ Suggested review order:
 
 Output should be either canonical prose edits or tracked reader overlay operations, plus a reviewed residual list. Do not claim a reader release until a release record names actual rendered artifacts and review status.
 
-The current automated audit identifies 2 high-priority and 5 medium-priority heuristic rows after the routing-harness chapter update. `docs/reader_continuity_review.md` records a first manual review of earlier medium rows: the two proof-heavy chapters are no-action for now with companion-note/glossary candidates, and the long Artifact Steward chapter is retained with future curated-reader compression as a possible release-editing task. The full-review trail through `docs/reader_part_iv_completion_full_review_pass.md` now maps into a 44-chapter reviewed generated-reader queue after consolidation. `docs/reader_companion_note_routing_review.md` and `editions/reader_manuscript/v1_0/companion_note_routing.json` route the three companion-note candidates for reader, e-reader, and audio treatment while preserving meaning-critical boundaries in the reader spine. The matrix itself is not a release review and should not be treated as release approval.
+The current automated audit identifies 0 high-priority and 0 medium-priority heuristic rows after the 44-chapter reader reconciliation and overlay passes. `docs/reader_continuity_review.md` records a first manual review of earlier medium rows: the two proof-heavy chapters are no-action for now with companion-note/glossary candidates, and the long Artifact Steward chapter is retained with future curated-reader compression as a possible release-editing task. The full-review trail through `docs/reader_part_iv_completion_full_review_pass.md` now maps into a 44-chapter reviewed generated-reader queue after consolidation. `docs/reader_companion_note_routing_review.md` and `editions/reader_manuscript/v1_0/companion_note_routing.json` route companion-note candidates for reader, e-reader, and audio treatment while preserving meaning-critical boundaries in the reader spine. The matrix itself is not a release review and should not be treated as release approval.
 
 ### 2. Next Evidence Transition
 
 Do not attempt to promote all 44 core claims at once. The initial v1.0
 claim-state pass is complete: every chapter core claim now has either an
 accepted no-change transition or an explicit no-promotion decision, and the
-three upward transitions are bounded to repository infrastructure, a synthetic
-costed-route/resource-budget selector slice, and one imported Circle rope
-receipt replay. The next evidence move should be a deeper prototype, empirical,
-replayed, or imported-trace slice with a
+non-core upward transitions are bounded to four synthetic-test-backed lanes
+plus one prototype-backed imported Circle rope receipt replay. The next
+evidence move should be a deeper prototype, empirical, replayed, or
+imported-trace slice with a
 public-safe command, input, output, baseline or negative control, residuals,
 and non-claims.
 

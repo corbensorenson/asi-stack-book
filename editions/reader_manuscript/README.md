@@ -14,6 +14,10 @@ equal authority beside the live book. The live Quarto book, generated reader
 edition, and reader overlays remain the active release path until format artifact
 review and an edition release record actually exist; curated-reader prose
 reconciliation is complete at the chapter level but not release-approved.
+The curated manuscript now has a tracked local format probe manifest at
+`v1_0/curated_format_probe_manifest.json`: HTML, EPUB, and DOCX render and pass
+structural inspection, while EPUB/DOCX release approval remains blocked and the
+DOCX render records ten unresolved SVG-conversion warnings.
 
 The v1.0 companion-note routing manifest at
 `v1_0/companion_note_routing.json` records chapter-level reader, e-reader, and
@@ -27,6 +31,7 @@ Validate the manifest with:
 
 ```bash
 python3 scripts/validate_reader_manuscript_manifest.py
+python3 scripts/validate_curated_reader_format_probe_manifest.py
 python3 scripts/validate_reader_key_figures.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```

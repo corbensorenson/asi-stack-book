@@ -1,0 +1,107 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "curated_local_structural_inspection_record",
+  "last_updated": "2026-07-03",
+  "purpose": "Record the latest local curated-reader HTML, EPUB, and DOCX structural render evidence without treating ignored build artifacts as release artifacts.",
+  "source_mode": "tracked_curated_reader_manuscript",
+  "source_commands": [
+    "python3 scripts/render_curated_reader_formats.py --formats html epub docx",
+    "python3 scripts/inspect_curated_reader_format_artifacts.py"
+  ],
+  "local_report_refs": [
+    "build/curated_reader_edition/curated_reader_render_report.json",
+    "build/curated_reader_edition/curated_reader_artifact_inspection_report.json"
+  ],
+  "tracked_evidence_refs": [
+    "docs/curated_reader_html_artifact_browser_review.md",
+    "docs/curated_reader_format_artifact_probe.md",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "render_summary": {
+    "html": {
+      "status": "rendered",
+      "artifacts_observed": 49,
+      "preserved_artifacts": 81,
+      "warning_count": 0,
+      "svg_conversion_warning_count": 0
+    },
+    "epub": {
+      "status": "rendered",
+      "artifacts_observed": 1,
+      "preserved_artifacts": 1,
+      "warning_count": 0,
+      "svg_conversion_warning_count": 0
+    },
+    "docx": {
+      "status": "rendered",
+      "artifacts_observed": 1,
+      "preserved_artifacts": 1,
+      "warning_count": 10,
+      "svg_conversion_warning_count": 10
+    }
+  },
+  "inspection_summary": {
+    "html": {
+      "status": "passed",
+      "html_files": 49,
+      "site_html_files": 49,
+      "chapter_files": 44,
+      "checked_files_for_live_marker_leaks": 49,
+      "live_marker_leaks": 0,
+      "raw_core_claim_marker_leaks": 0
+    },
+    "epub": {
+      "status": "passed",
+      "bytes": 8690281,
+      "sha256": "461bafec5ec6219d4ebb65c25a27ff0ec558a0b1b3a2fe54675d32c44de9be82",
+      "entries": 120,
+      "xhtml_entries": 52,
+      "image_entries": 62,
+      "opf_title": "The ASI Stack",
+      "opf_creator": "Corben Sorenson",
+      "opf_language": "en-US",
+      "opf_item_count": 116,
+      "opf_itemref_count": 52,
+      "nav_href_count": 832,
+      "required_entries_present": [
+        "EPUB/content.opf",
+        "EPUB/nav.xhtml",
+        "EPUB/toc.ncx",
+        "META-INF/container.xml",
+        "mimetype"
+      ]
+    },
+    "docx": {
+      "status": "passed",
+      "bytes": 6784002,
+      "sha256": "b846e2b30ffdecebee82d48e3e6efe4c8d788b11e14e53402a9d4562e4373649",
+      "entries": 77,
+      "media_entries": 61,
+      "paragraph_markers": 16976,
+      "required_entries_present": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "word/_rels/document.xml.rels",
+        "word/document.xml",
+        "word/styles.xml"
+      ]
+    }
+  },
+  "release_blockers_preserved": [
+    "curated_reconciliation_not_approved",
+    "format_artifact_not_reviewed",
+    "reader_release_record_not_created",
+    "full_format_artifact_review_not_completed",
+    "app_or_ereader_review_not_completed",
+    "docx_svg_conversion_warnings_unresolved"
+  ],
+  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, and DOCX and passes structural artifact inspection. EPUB and DOCX remain unapproved because application-level e-reader/DOCX review has not happened; DOCX also has ten SVG conversion warnings caused by missing rsvg-convert.",
+  "non_claims": [
+    "This manifest records local structural inspection of ignored curated-reader snapshots only.",
+    "This manifest is not a reader release, ebook release, document release, PDF release, edition release record, or artifact approval.",
+    "This manifest does not approve EPUB, DOCX, HTML, PDF, e-reader, or audio artifacts for publication.",
+    "This manifest does not check full editorial quality, full layout quality, e-reader behavior, DOCX application behavior, source interpretation, proof adequacy, benchmark behavior, runtime behavior, PDF output, or audio output.",
+    "This manifest does not promote any claim support state."
+  ]
+}

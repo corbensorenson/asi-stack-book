@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-03 - Add curated reader format probe
+
+- Added `scripts/render_curated_reader_formats.py` and
+  `scripts/inspect_curated_reader_format_artifacts.py` so the tracked curated
+  reader manuscript can be rendered and structurally inspected as HTML, EPUB,
+  and DOCX without treating ignored build outputs as release artifacts.
+- Added `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`,
+  `docs/curated_reader_format_artifact_probe.md`, and
+  `scripts/validate_curated_reader_format_probe_manifest.py` to record the
+  actual local probe: 49 HTML files, 44 chapter HTML files, 52 EPUB XHTML
+  entries, 61 DOCX media entries, EPUB SHA-256
+  `461bafec5ec6219d4ebb65c25a27ff0ec558a0b1b3a2fe54675d32c44de9be82`, and
+  DOCX SHA-256
+  `b846e2b30ffdecebee82d48e3e6efe4c8d788b11e14e53402a9d4562e4373649`.
+- Preserved release blockers and recorded the real DOCX blocker: ten SVG
+  conversion warnings because `rsvg-convert` was unavailable. EPUB, DOCX, PDF,
+  e-reader, audio, and audio-embedded EPUB artifacts remain unapproved, and no
+  edition release record or support-state promotion is created.
+
 ## 2026-07-03 - Accept load-stability selector transition
 
 - Added

@@ -130,9 +130,9 @@ not be quoted in the book as an external authority.
 | P0 | The consolidation problem is mostly executed; the remaining risk is linkrot and reopening churn. | The manifest is 44 chapters, the executed fold packages preserve source/proof/reader lineage, ten retired public slugs have historical HTML stubs, and `validate_chapter_consolidation_sequence.py` now guards those stubs directly. | Keep the 44-chapter spine stable. Do not reopen consolidation unless a named external review, source, evidence lane, or reader edit shows a specific chapter boundary is weaker than a destination. |
 | P0 | Planning churn is now a release risk. | The local tree already has enough roadmap, review, scorecard, grounding, and release surfaces to execute. The best recent progress changed proof code, manifests, stubs, reader source, and evidence fixtures. | New reports are out of scope unless required by a validator, release record, external reviewer response, or an executed proof/evidence/reader/artifact change. Default to code, proof, source, evidence, reader, or artifact work. |
 | P0 | The chapter-by-chapter review should become a burn-down queue, not another grade sheet. | `docs/CHAPTER_REVIEWS.md` identifies concrete per-chapter weaknesses after self-auditing its proxies. Codex verified the two manifest proof-mapping bugs: `personal-compute-hives-and-federated-edge-intelligence` and `artifact-steward-agents-and-living-project-governance` had missing chapter-level `lean_module` values despite on-disk Lean modules with 22 and 16 theorem/lemma declarations. | Keep the review as planning input only, track every chapter weakness in the roadmap burn-down below, and execute fixes as proof, source-note, evidence-import, reader-prose, or manifest changes. The two `lean_module` mappings are fixed in `book_structure.json` in the current workset; no support state moves. |
-| P0 | The project needs one real measured result more than another internal sweep. | The current three upward transitions are narrow non-core lanes. No 44 chapter core claims have moved above `argument`, and no empirical lane yet demonstrates an architecture claim with baseline and negative control. | Choose one efficiency, routing, compression, or context lane; implement a one-command reproducible run with baseline, negative control, residuals, and an accepted promotion or no-promotion decision. |
+| P0 | The project needs one real measured result more than another internal sweep. | The current five upward transitions are narrow non-core lanes. No 44 chapter core claims have moved above `argument`, and no empirical lane yet demonstrates an architecture claim with baseline and negative control. | Choose one efficiency, routing, compression, or context lane; implement a one-command reproducible run with baseline, negative control, residuals, and an accepted promotion or no-promotion decision. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
-| P1 | Appendix C hides the four earned non-core transitions too well. | Appendix C correctly says all 44 chapter core claims remain `argument`, but it does not make the four non-core transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
+| P1 | Appendix C hides the five earned non-core transitions too well. | Appendix C correctly says all 44 chapter core claims remain `argument`, but it does not make the five non-core transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first imports are intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes; `docs/theseus_report_import_slice.md` records one static digest-verified architecture-gate report import; `docs/theseus_generation_mode_import_slice.md` records one static digest-verified generation-mode import; and `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static imports and support probe as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
@@ -570,6 +570,8 @@ Tasks:
     `synthetic-test-backed`;
   - `resource-economics.costed_route_budget_slice` as
     `synthetic-test-backed`;
+  - `resource-economics.finite_burst_load_smoothing_selector` as
+    `synthetic-test-backed`;
   - `circle-calculus.external_rope_receipt_replay` as `prototype-backed`.
   - `compact-generative-systems.compact_gvr_receipt_slice` as
     `synthetic-test-backed`.
@@ -582,7 +584,7 @@ Tasks:
 
 Acceptance bar:
 
-- Appendix C or a sibling appendix surfaces the four earned transitions;
+- Appendix C or a sibling appendix surfaces the five earned transitions;
 - the chapter-core matrix still reports 44 `argument` support states;
 - validation rejects accidental chapter-core promotion language.
 
@@ -2904,6 +2906,14 @@ Current status:
   curated-reader HTML DOM presence for all ten. Remaining work is visual figure
   polish, EPUB/DOCX/PDF/e-reader/audio-specific inspection, and release review
   before any human-review-ready figure-artifact claim.
+- `docs/curated_reader_format_artifact_probe.md` and
+  `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json` now
+  record that the tracked curated reader manuscript rendered locally to HTML,
+  EPUB, and DOCX and passed structural inspection: 49 HTML files, 44 chapter
+  HTML files, 52 EPUB XHTML entries, and 61 DOCX media entries. The probe also
+  records the real remaining blocker: DOCX emitted ten SVG-conversion warnings
+  because `rsvg-convert` was unavailable, so EPUB/DOCX/PDF/e-reader/audio
+  artifacts remain unapproved and no edition release record is created.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,
