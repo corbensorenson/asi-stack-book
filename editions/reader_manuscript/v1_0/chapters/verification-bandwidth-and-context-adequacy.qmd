@@ -148,6 +148,31 @@ A claim can still be useful when its context is inadequate. It can be drafted,
 queued, split, residualized, or escalated. What it cannot do is silently become
 verified because the context window was large.
 
+## A Contradiction That Was Present But Not Checked
+
+Picture a long context packet with two documents. The first is long, recent,
+and strongly worded. The second is short, older, and easy to miss, but it
+contains a constraint that contradicts the first document's proposed
+conclusion. A model may quote both documents in the same answer and still fail
+to compare the two semantic units that matter.
+
+The adequacy record should make that failure visible. It would name the target
+claim, the relevant units in both documents, the compression path that carried
+them into the packet, and the verification mode that was actually used. If the
+system only summarized the long document and skimmed the short one, the record
+should not say `joint_check`. It should say `drafting_only`,
+`summary_derived`, or `escalated`, depending on what happened next.
+
+The important point is not that the contradiction is hard to state. It is that
+the contradiction can be present in context and still absent from verification.
+Presence is exposure. Checking is work.
+
+For low-risk prose, the honest output may be a cautious draft with a residual.
+For a high-risk claim, the same packet should trigger retrieval, a pairwise
+comparison, a proof or schema check when applicable, a split into narrower
+claims, or human review. The adequacy layer keeps that choice attached to the
+claim instead of letting a fluent synthesis hide the missing comparison.
+
 ## Interfaces
 
 The central interface is the Context Adequacy Record. A useful record names:

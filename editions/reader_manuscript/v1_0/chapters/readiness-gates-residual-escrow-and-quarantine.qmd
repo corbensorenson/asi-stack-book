@@ -97,7 +97,9 @@ and retirement, plus failures for missing evidence, missing residual custody,
 unsafe default routing, quarantine leakage, absent terminal records, retired
 state reuse, missing non-claim boundaries, and support-promotion overclaim. It
 also has one static, digest-verified Project Theseus architecture-gate report
-import. These artifacts are useful discipline, but the probe is not a deployed readiness engine, residual-ledger store, benchmark result, live quarantine router, current Theseus runtime run, or MoECOT replay.
+import. These artifacts are useful discipline, but the probe is not a deployed readiness engine,
+residual-ledger store, benchmark result, live quarantine router, current Theseus
+runtime run, or MoECOT replay.
 
 ## Mechanism
 
@@ -136,6 +138,34 @@ Third, it makes quarantine productive. Quarantine is not deletion. A
 quarantined target can remain available for diagnosis, replay, repair, or
 restricted review while ordinary routes are blocked. That lets the system
 learn from failures without leaving the failed path live.
+
+## A Gate Decision In Practice
+
+Imagine a specialist core that performs well on a new class of planning tasks.
+It is faster than the default route, cheaper under load, and strong on the
+frontier examples that prompted the upgrade. A naive router would promote it.
+A readiness gate asks what kind of permission the evidence actually supports.
+
+The gate record might say that the specialist is allowed in shadow mode for a
+workload family, or canary mode for low-risk tasks, but not default routing.
+Why? The frontier examples are promising, but one old regression floor has not
+been rerun, the evidence packet expires after the architecture change, and two
+residuals remain uncustodied. One residual may be acceptable for diagnostic
+use; another may block ordinary use because it concerns authority scope. The
+gate therefore stores the successful frontier result and the unresolved tail
+in the same record.
+
+That is the difference between progress and promotion. Progress says the
+candidate deserves more structured testing. Promotion says the candidate may
+carry ordinary work. A readiness gate can choose the first without pretending
+it has earned the second.
+
+Quarantine works the same way in reverse. If the specialist later fails a
+regression floor, the system should not forget that it was useful. It should
+stop selecting it for ordinary work, preserve diagnostic replay, record the
+blocked routes, keep the residuals attached, and name the requalification
+trigger. The failed route becomes a studied object instead of a hidden mistake
+or a permanently discarded capability.
 
 ## Interfaces
 

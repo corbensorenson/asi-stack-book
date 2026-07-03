@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Verification Bandwidth and Context Adequacy
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
+
+Follow-up: 2026-07-02
 
 Chapter ID: `verification-bandwidth-and-context-adequacy`
 
@@ -39,6 +41,9 @@ permission to change proof or test status.
   verification capacity.
 - Organized the mechanism around target claims, semantic units, compression
   paths, verification modes, adequacy states, and support-state boundaries.
+- Added a contradiction example that shows how two relevant documents can both
+  be present in a long context packet while the decisive semantic-unit
+  comparison remains unchecked.
 - Preserved external long-context and evaluation sources as comparators and
   orientation, not proof that this repository has run their benchmarks.
 - Preserved the VCM, Spinoza, TreeLLM, editable VCM, and Verification
@@ -52,6 +57,11 @@ permission to change proof or test status.
   behavior is claimed.
 - Preserved the minimum viable implementation, beyond-state-of-the-art
   endpoint, and handoff into Claim Ledgers and Belief Revision.
+- Preserved the release and measurement boundary: the new example is
+  reader-facing explanation only and does not claim contradiction-rate
+  measurement, distractor-resistance performance, adequacy-classifier
+  correctness, deployed escalation, model-facing context quality, or support
+  promotion.
 
 ## Meaning Preservation Checks
 

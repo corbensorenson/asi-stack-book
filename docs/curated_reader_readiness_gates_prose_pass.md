@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Readiness Gates, Residual Escrow, and Quarantine
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
+
+Follow-up: 2026-07-02
 
 Chapter ID: `readiness-gates-residual-escrow-and-quarantine`
 
@@ -40,6 +42,10 @@ permission to change proof or test status.
   human throughline is clear before the record fields appear.
 - Reorganized the mechanism around scoped permission, frontier evidence versus
   floor evidence, residual custody, and productive quarantine.
+- Added a gate-decision example that distinguishes promising frontier
+  performance, shadow/canary permission, default promotion, residual custody,
+  regression floors, diagnostic quarantine, blocked routes, and
+  requalification triggers.
 - Simplified the interface explanation while preserving the Readiness Gate
   Record fields and cross-layer consumers.
 - Preserved the external comparator boundary: governance, benchmark,
@@ -52,6 +58,10 @@ permission to change proof or test status.
   behavior, or MoECOT replay.
 - Preserved the minimum viable implementation, beyond-state-of-the-art endpoint,
   and handoff into MoECOT Runtime and Multi-Core Orchestration.
+- Preserved the release and runtime boundary: the new example is reader-facing
+  explanation only and does not claim deployed readiness, live route
+  enforcement, residual-ledger storage, benchmark quality, or current Theseus
+  or MoECOT runtime behavior.
 
 ## Meaning Preservation Checks
 
