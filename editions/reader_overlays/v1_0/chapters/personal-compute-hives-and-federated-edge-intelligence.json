@@ -3,6 +3,35 @@
   "target_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
   "operations": [
     {
+      "id": "v1_0.personal_compute_hives.mechanism_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism"
+      },
+      "rationale": "Condense the AI/research mechanism inventory for the human reader while preserving the scheduler, approval, evidence, and partitioned-authority boundaries.",
+      "content_lines": [
+        "A personal compute hive begins with a plain question: which owned or rented machine is allowed to do this particular work? The answer should come from records, not vibes. A device card says what a phone, laptop, GPU desktop, NAS, workshop computer, old machine, project runner, or rented node can do and what it may touch. A job contract says what work is being requested, which data and tools are in scope, what risk tier applies, what budget and deadline matter, and what evidence must return.",
+        "",
+        "The scheduler first rejects unlawful placements. It should remove nodes that cannot see the data, cannot hold the tool authority, lack the required sandbox, exceed the budget, need unavailable human approval, or would move private context into an unacceptable place. Only after that policy filter does optimization begin. Speed, locality, cost, energy, and capacity matter, but they do not outrank consent, data class, tool risk, or revocation.",
+        "",
+        "```{mermaid}",
+        "flowchart LR",
+        "  contract[\"Job contract\"] --> policy[\"Policy filter\"]",
+        "  policy -- \"denied\" --> rejected[\"Rejected nodes with reasons\"]",
+        "  policy -- \"eligible\" --> bids[\"Node bids\"]",
+        "  bids --> decision[\"Scheduling decision\"]",
+        "  decision --> approval[\"Scoped approval when needed\"]",
+        "  approval --> evidence[\"Artifact, audit, residual, revocation\"]",
+        "```",
+        "",
+        "Approval remains scoped. A phone can approve a job for a desktop GPU, but that approval names one job boundary and one time window. A federation lease can let a project or rented node borrow capacity, but it should not inherit the private network, secrets, or memory of the person who owns the hive. The result of a job is not just an output; it is an artifact, audit trail, residual record, and revocation update.",
+        "",
+        "The partitioned authority case makes the rule sharper. If a revocation, lease update, or narrowed grant has not reached a worker, the system should not treat the worker's stale local state as current permission. Protected effects should wait for a fresh authority receipt, quarantine, or preserve no-mutation evidence. The current repository validates that boundary only as finite record discipline, not as a live network or scheduler result. That boundary keeps local autonomy from becoming silent distributed permission."
+      ]
+    },
+    {
       "id": "v1_0.personal_compute_hives.owned_substrate_reader_replace",
       "status": "active",
       "action": "replace_section",
