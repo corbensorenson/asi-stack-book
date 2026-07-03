@@ -713,13 +713,13 @@
       "voice_pass_slot_ids": [
         "evidence-discipline"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around benchmark scores as pressure signals that require evidence packets: evidence-state classification, run records, baselines, residuals, regression floors, anti-Goodhart checks, contamination and transfer boundaries, a toy ratchet-decision example, and claim-specific promotion decisions; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated reader prose pass reframes the chapter around benchmark scores as pressure signals that require evidence packets: evidence-state classification, run records, baselines, residuals, regression floors, anti-Goodhart checks, contamination and transfer boundaries, a toy ratchet-decision example, and claim-specific promotion decisions; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed. The 2026-07-03 alignment surfaces the 2026-07-02 benchmark anti-Goodhart fixture bridge as bounded synthetic cross-record evidence only: 2 valid fixtures, 5 expected-invalid controls, one promotion-ready path, one saturated-regression-floor path, result record, finite Lean summary, no evidence transition, and no support-state effect.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; external benchmark-science sources remain orientation and vocabulary, not local reproduction",
-        "proof/test status preserved without adding empirical benchmark, hidden-holdout, transfer, contamination, source-reported replay, Theseus-readiness, deployment-readiness, model-quality, or ASI-progress results",
-        "implementation horizon preserved without implying current benchmark-OS deployment",
+        "proof/test status preserved without adding empirical benchmark, hidden-holdout, transfer, contamination, source-reported replay, Theseus-readiness, deployment-readiness, model-quality, support-state-movement, or ASI-progress results",
+        "implementation horizon preserved without implying current benchmark-OS deployment, hidden-holdout integrity, contamination detection, or support-state promotion",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -729,7 +729,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass and 2026-07-02 toy ratchet-decision follow-up recorded in docs/curated_reader_benchmark_ratchets_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass, 2026-07-02 toy ratchet-decision follow-up, and 2026-07-03 fixture-bridge evidence-boundary alignment recorded in docs/curated_reader_benchmark_ratchets_prose_pass.md; not release-reviewed, not equal authority to the live AI/research chapter, and no chapter core claim is promoted."
     },
     {
       "chapter_id": "capability-replacement-and-rollback",

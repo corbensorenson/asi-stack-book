@@ -55,6 +55,14 @@ permission to change proof or test status.
 - Preserved the evidence boundary that the benchmark-ratchet fixture, finite
   Lean predicates, and synthetic anti-Goodhart harness support protocol
   discipline only.
+- Added a 2026-07-03 evidence-boundary alignment that surfaces the
+  `2026-07-02` fixture bridge: `validate_benchmark_antigoodhart.py`,
+  `validate_benchmark_fixture_bridge.py`, result record
+  `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json`,
+  2 valid synthetic fixtures, 5 expected-invalid controls, one promotion-ready
+  path, one saturated-regression-floor path, `support_state_effect: none`,
+  `chapter_core_support_effect: none`, `evidence_transition_created: false`,
+  and the three finite Lean theorem refs.
 - Preserved the missing-work boundary: no empirical benchmark run, hidden
   holdout, transfer check, contamination audit, regression-suite quality,
   source-reported replay, Theseus readiness, deployment readiness, model
@@ -74,8 +82,8 @@ permission to change proof or test status.
 | Core claim meaning preserved | Pass. The curated draft keeps the claim that benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; benchmark-science sources remain orientation and vocabulary, not local reproduction. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that fixture validation, finite Lean predicates, and the synthetic anti-Goodhart harness do not prove benchmark success, hidden-holdout validity, transfer, contamination resistance, regression-suite quality, source-reported replay, Theseus readiness, deployment readiness, model quality, or ASI progress. |
-| Implementation horizon preserved | Pass. The minimum viable implementation remains a benchmark-evidence decision record plus a small validation harness; the mature endpoint remains an unimplemented benchmark operating system. |
+| Proof/test status preserved | Pass. The curated draft keeps the boundary that fixture validation, finite Lean predicates, and the synthetic anti-Goodhart harness do not prove benchmark success, hidden-holdout validity, transfer, contamination resistance, regression-suite quality, source-reported replay, Theseus readiness, deployment readiness, model quality, support-state movement, or ASI progress. |
+| Implementation horizon preserved | Pass. The minimum viable implementation remains a benchmark-evidence decision record plus a small validation harness and finite fixture bridge; the mature endpoint remains an unimplemented benchmark operating system. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
@@ -91,8 +99,8 @@ permission to change proof or test status.
 - This pass does not claim empirical benchmark success, hidden-holdout
   validity, benchmark transfer, contamination resistance, regression-suite
   quality, anti-Goodhart effectiveness, source-reported benchmark replay,
-  current Theseus readiness, deployment readiness, model quality, or ASI
-  progress.
+  current Theseus readiness, deployment readiness, model quality, support-state
+  movement, or ASI progress.
 
 ## Remaining Blockers
 

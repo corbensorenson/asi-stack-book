@@ -282,6 +282,32 @@ SPECIAL_REVIEW_DEFAULTS = {
             "treatment, and release blockers remain active."
         ),
     },
+    "benchmark-ratchets-and-anti-goodhart-evidence": {
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "reader_overlay_active",
+            "curated_manuscript_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
+            "docs/curated_reader_benchmark_ratchets_prose_pass.md",
+        ],
+        "review_notes": (
+            "Full generated-reader chapter review recorded. A first "
+            "drafting-only curated prose pass foregrounds benchmark scores as "
+            "pressure signals, evidence packets, evidence-class separation, "
+            "residuals, regression floors, contamination/transfer boundaries, "
+            "anti-Goodhart checks, proof/test limits, and no empirical "
+            "benchmark/result non-claims. The 2026-07-03 alignment surfaces "
+            "the 2026-07-02 benchmark anti-Goodhart fixture bridge as bounded "
+            "synthetic cross-record evidence only; no empirical benchmark, "
+            "hidden-holdout, transfer, contamination, source-reported replay, "
+            "Theseus-readiness, deployment-readiness, model-quality, "
+            "support-promotion, or reader-artifact claim is approved."
+        ),
+    },
     "circle-calculus-and-proof-carrying-ai-contracts": {
         "review_status": "reviewed",
         "review_depth": "full_chapter_review",
