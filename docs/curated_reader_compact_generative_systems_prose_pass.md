@@ -6,7 +6,10 @@ Evidence-boundary alignment: 2026-07-03
 
 Follow-up: 2026-07-03
 
-Status: reconciled for prose meaning on 2026-07-03.
+Reader-craft follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03; reader-craft polish
+follow-up recorded on 2026-07-03.
 
 Chapter: `compact-generative-systems-and-residual-honesty`
 
@@ -41,6 +44,11 @@ The reader throughline is:
   pattern; this is reader prose and novelty-positioning only, not compression
   ratio, reconstruction utility, residual-ledger deployment, downstream
   utility, model-quality, or support-state evidence.
+- Added a 2026-07-03 reader-craft polish pass that tightens the opening
+  substrate-to-compactness bridge, clarifies residual custody as incomplete
+  accounting rather than efficiency, fixes the six-question receipt count, and
+  sharpens the minimum viable implementation and beyond-SOTA prose without
+  changing evidence boundaries.
 
 ## Meaning-Preservation Checks
 
@@ -53,6 +61,9 @@ The reader throughline is:
   readiness, substrate, and burden accounting without changing any claim,
   support state, source boundary, proof/test status, implementation horizon,
   or release boundary.
+- The reader-craft follow-up changes pacing, sentence-level voice, and
+  explanatory continuity only; it does not add a source, proof, fixture,
+  validation result, evidence-transition decision, or release approval.
 
 ## Non-Claims
 

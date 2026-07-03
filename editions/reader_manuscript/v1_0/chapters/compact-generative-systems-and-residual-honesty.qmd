@@ -11,42 +11,53 @@ implementation horizons, and release blockers.
 # Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty
 
 The hive chapter widened the stack's execution substrate: more devices, more
-locality, more owned capacity, and more places where work can live. That makes
-compactness attractive. A smaller representation may cost less to move, store,
-verify, rerun, or route across a personal fabric. But the same pressure also
-creates a new way to hide work. A compact object can make a system look
-efficient while pushing reconstruction, verification, repair, fallback, or
-human interpretation onto another layer.
+locality, more owned capacity, and more places where work can live. Once that
+substrate exists, compactness becomes tempting. A seed might stand in for a
+file, a rule for a repeated procedure, a graph for scattered context, or a
+generator for a family of artifacts. If the smaller object is honest, it can
+lower storage, routing, verification, replay, and movement cost across the
+fabric.
 
-Compactness is one of the most attractive ideas in the stack because it promises leverage: a small seed, rule, program, model, summary, graph, or generator that can stand in for something larger. It is also one of the easiest places to lie to ourselves. A representation can look small because it genuinely captures structure, or because it moved missing work into a verifier, a repair stream, a human reader, a fallback path, or a future debugging session.
+But compactness is also a perfect hiding place. A representation can look small
+because it captured real structure, or because it pushed missing work into a
+verifier, a repair stream, a human reader, a fallback path, or a later debugging
+session. The book therefore uses a blunt standard: small only counts after the
+remainder is named.
 
-The chapter's standard is therefore simple: small only counts after the remainder is named. A compact representation should say what must be reconstructed, verified, repaired, expanded, or refused, and it should carry the fallback and authority limits that decide who may rely on it.
+A compact representation should say what must be reconstructed, verified,
+repaired, expanded, or refused. It should also carry the fallback and authority
+limits that decide who may rely on it. That rule covers ordinary compression,
+semantic compression, generated reconstruction, and compact local controllers.
+A tree, graph, semantic token, prompt, summary, seed, or generator can help the
+stack think only when its grounding, permitted use, residual uncertainty,
+consumer policy, and path back to fuller context remain visible.
 
-That rule applies to ordinary compression and to semantic compression. A clean tree, graph, or semantic token can help the stack think, plan, retrieve, and explain only when its grounding, permitted use, residual uncertainty, consumer policy, and path back to fuller context remain visible.
+Honest compactness is therefore a governance problem before it is a size
+problem. The smaller object has to carry enough receipts to show when it is
+safe to use, when it needs repair, and when the full artifact must return.
+Compactness earns trust only when reconstruction duties, verification duties,
+and residual duties travel with every use.
 
-Honest compactness is therefore a governance problem. The smaller object has to carry enough receipts to show when it is safe to use, when it needs a repair residual, and when the full artifact must return. A summary, seed, generator, semantic node, or repaired reconstruction should lower total cost without hiding the work it did not pay for.
+The local contribution is residual custody. Many chapters in the book use
+records and receipts; this one asks where the burden went. If a compact seed,
+generator, summary, graph, or repaired artifact is smaller, the reader should
+still be able to see the reconstruction cost, verification cost, repair
+channel, fallback path, consumer policy, and owner of whatever burden remains.
+A small representation that hides those costs is not efficient in the stack's
+sense. It is just incomplete accounting.
 
-That is the standard the stack applies here: compress only with reconstruction duties, verification duties, and visible residuals still attached for every use.
-
-The local contribution is residual custody. Many chapters use records and
-receipts; this one asks where the burden went. If a compact seed, generator,
-summary, graph, or repaired artifact is smaller, the reader should still be
-able to see the reconstruction cost, verification cost, repair channel,
-fallback path, consumer policy, and owner of whatever burden remains. A small
-representation that hides those costs is not efficient in the stack's sense.
-
-The new residual-conservation fixture makes that rule concrete without
-pretending to solve the whole problem. It accepts three honest residual
-records: one visible residual that is accepted with an owner, one deferred
-residual with a due condition, and one discharged residual with a receipt. It
-rejects five dishonest controls: hidden burden after an apparent metric gain,
-erased burden with no discharge, burden moved to no owner, a support-state
-promotion attempt, and a zero-residual claim while work remains.
+The residual-conservation fixture makes that rule concrete without pretending
+to solve the whole problem. It accepts three honest residual records: one
+visible residual that is accepted with an owner, one deferred residual with a
+due condition, and one discharged residual with a receipt. It rejects five
+dishonest controls: hidden burden after an apparent metric gain, erased burden
+with no discharge, burden moved to no owner, a support-state promotion attempt,
+and a zero-residual claim while work remains.
 
 That is not a proof that all residuals can be found. It is a smaller and more
-useful thing: a record-level boundary saying residual burden can be carried,
-priced, deferred, or discharged, but it cannot simply disappear because the
-compact route looks elegant.
+useful boundary: residual burden can be carried, priced, deferred, or
+discharged, but it cannot simply disappear because the compact route looks
+elegant.
 
 The residual-ledger trace takes one step closer to the real book machinery. It
 does not invent a new toy record. It reads the existing Resource flagship,
@@ -57,9 +68,10 @@ costs remain residualized, the compact receipt still carries its repair
 residual, readiness escrow remains visible, and no-promotion decisions stay
 attached.
 
-That is still not proof that a deployed ledger exists. It is proof of a more
-modest discipline: the current repository artifacts can be made to carry their
-unpaid burdens forward instead of letting them vanish inside a success metric.
+That is still not proof that a deployed ledger exists. It is proof of a modest
+but important discipline: current repository artifacts can carry their unpaid
+burdens forward instead of letting those burdens vanish inside a success
+metric.
 
 ![Draft compression and generation acceptance.](../../../../assets/diagrams/compression-and-generation-acceptance.svg){#reader-fig-compression-and-generation-acceptance fig-alt="Draft compression and generation acceptance figure showing target burden flowing through compact generation, fast generation, and artifact compression paths before verifier, residual, fallback, and consumer-policy gates decide accepted use or blocked routes."}
 
@@ -120,7 +132,7 @@ J --> K["Residual burden audit"]
 
 **Reading the residual burden loop:** Compactness is useful only when the generator, verifier, residual channel, fallback path, and cost ledger remain visible together. The residual burden audit is the guard against treating a small seed or elegant rule system as if it had carried every hidden cost.
 
-A compact generative system should answer five questions:
+A compact generative system should answer six questions:
 
 - What target is the compact core supposed to generate, control, predict, or govern?
 - What seed, rule system, and memory/state are doing the work?
@@ -129,7 +141,7 @@ A compact generative system should answer five questions:
 - What governance interface and authority boundary decide permitted use, fallback, promotion, and retirement?
 - What burden ledger and cost-accounting entries make reconstruction, decision, governance, review, fallback, and residual costs visible?
 
-The raw LLM fits this frame as a compressed generative engine, not as the whole intelligence. It can generate across many targets, but the stack still needs routing, verification, residuals, authority, and evidence around its outputs.
+The raw LLM fits this frame as a compressed generative engine, not as the whole intelligence. It can generate across many targets, but the stack still needs routing, verification, residuals, authority, and evidence around its outputs. In the ASI Stack, generation is a capability; admissible use is a governed decision.
 
 A compact-system receipt separates three burdens: reconstruction burden, decision burden, and governance burden. Reconstruction burden is the cost of producing a usable artifact from the compact seed. Decision burden is the cost of knowing whether the artifact is adequate. Governance burden is the cost of approvals, non-claims, fallback, retirement, and residual review.
 
@@ -290,11 +302,11 @@ Consumer policies are explicit. VCM needs adequacy state, source coverage, and l
 - Shared semantic graphs remain indexes and working representations, not independent source authorities.
 - Consumer use is scoped by grounding, adequacy, interoperability, permitted uses, and residual uncertainty.
 
-Compactness is not the invariant; accountability is. A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
+Compactness is not the invariant; accountability is. A compact representation may be useful, but only after generation, verification, correction, fallback, and governance costs are visible enough to compare with alternatives.
 
 Verifier separation keeps compactness from becoming self-certification. The compact system can propose, regenerate, compress, or repair, but it cannot be the sole authority for promoting its own adequacy when the result affects evidence state, runtime authority, or replacement.
 
-Residual honesty also requires retaining the expensive reference path when the compact path becomes the default.
+Residual honesty also requires retaining the expensive reference path when the compact path becomes the default. Otherwise the first successful shortcut quietly becomes the only route anyone remembers how to audit.
 
 The residual-conservation fixture gives the chapter its sharpest version of
 that invariant. A visible metric may improve while total burden gets worse, so
@@ -326,9 +338,9 @@ Residual displacement is the compact-system failure that most resembles success.
 
 ## Minimum Viable Implementation
 
-Compactness should first appear as a compact generative record and fixture. That artifact is not evidence that a compact core works. It makes the burden visible: target, seed, rules, memory, generation status, residuals, correction mechanism, verification contract/status, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, leverage, hidden complexity, fallback path/status, residual-burden status, promotion blockers/state, retirement condition, source refs, support-state effect, evidence references, and non-claims.
+Compactness should first appear as a compact generative record and fixture. That artifact is not evidence that a compact core works. It is a ledger that says what would have to be true before a smaller structure could be trusted: target, seed, rules, memory, generation status, residuals, correction mechanism, verification contract/status, verifier independence, governance, authority boundary, use envelope, burden ledger, cost accounting, leverage, hidden complexity, fallback path/status, residual-burden status, promotion blockers/state, retirement condition, source refs, support-state effect, evidence references, and non-claims.
 
-The repository fixtures validate that this public contract can be represented consistently. They also give later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency.
+The repository fixtures validate that this public contract can be represented consistently. They also give later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency. The point is to make future evidence land in the right field instead of letting a compactness story outrun its tests.
 
 `AsiStackProofs.CompactGenerativeSystems` adds bounded residual-honesty and exactness predicates, compact-admission route checks, and a finite bridge to the Compact GVR synthetic slice. The Lean bridge proves only the modeled fixture relation: the selected compact receipt is eligible, the three controls are ineligible, and the selected modeled byte count is below the literal baseline. The remaining engineering burden is still explicit: a real codec, generator, independent verifier, downstream utility test, corpus, and fallback harness must exist before compact-core behavior can carry stronger evidence.
 
@@ -359,9 +371,9 @@ The folded semantic-representation slice adds the semantic node record. The repo
 
 ## Beyond the State of the Art
 
-Compact generative systems earn their place as a burden-accounting layer for compression and generation. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
+Compact generative systems earn their place as a burden-accounting layer for compression and generation. They let the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
 
-Compactness becomes useful only when the generator, verifier, fallback, governance burden, reconstruction burden, decision burden, and residual burden are all counted. A mature compact record would bind the target, seed, rule system, memory state, generator, correction mechanism, verifier, residual channel, fallback path, authority boundary, use envelope, burden ledger, cost accounting, promotion state, and retirement condition before the stack trusts a compact core. It would make compact generation a governed accounting surface rather than a slogan for smaller artifacts.
+At maturity, compactness would not be treated as a property of the artifact alone. It would be a governed account of the total route. A mature compact record would bind the target, seed, rule system, memory state, generator, correction mechanism, verifier, residual channel, fallback path, authority boundary, use envelope, burden ledger, cost accounting, promotion state, and retirement condition before the stack trusts a compact core. That would make compact generation a governed accounting surface rather than a slogan for smaller artifacts.
 
 The mature layer would report reconstruction burden, decision burden, governance burden, verification status, verifier independence, fallback status, residual-burden status, downstream utility, latency, cost, residual volume, and hidden-complexity risk as separate evidence fields. Routing would use compact-core readiness and use envelopes; VCM and semantic pages would label loss, taint, and omissions; procedural memory would turn repeated generated behavior into verified tools; generate-verify-repair would record exact remainders; readiness gates would decide promotion or quarantine. Repeated successes could become tool candidates, but failed generations would become residual pressure, lossy seeds would stay scoped to safe uses, non-independent verifiers would block promotion, and utility-damaging cores would retire or route to fallback.
 
@@ -373,7 +385,7 @@ At the semantic layer, the mature endpoint is representation leasing. Graph node
 
 ## Summary
 
-Compact systems are useful when they generate, reconstruct, or represent more value than their hidden burdens cost. Residual-honest accounting therefore keeps seed, rule system, memory, generation, verification, repair, semantic grounding, residuals, governance, fallback, consumer policy, and evidence in the same record.
+Compact systems are useful when they generate, reconstruct, or represent more value than their remaining burdens cost. Residual-honest accounting therefore keeps seed, rule system, memory, generation, verification, repair, semantic grounding, residuals, governance, fallback, consumer policy, and evidence in the same record.
 
 Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task. The same rule applies to compression that claims reconstruction: generation is allowed to be clever only when verification, repair, final-rate accounting, and consumer policy pay the exact or scoped remainder.
 
