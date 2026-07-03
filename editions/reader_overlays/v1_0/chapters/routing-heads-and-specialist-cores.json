@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/routing-heads-and-specialist-cores.qmd",
+  "operations": [
+    {
+      "id": "v1_0.routing_heads.interfaces_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces"
+      },
+      "rationale": "Replace the specialist-registry, routing-decision, and MoECOT field catalogs with reader prose while preserving the canonical AI/research schemas in the live chapter.",
+      "content_lines": [
+        "The reader-facing routing interface has three linked records. The first is the specialist registry entry: it says what a specialist can do, who owns it, which memory and tools it may lease, what authority ceiling it has, what it costs, how ready it is, where it should fall back, and which limitations and non-claims travel with it. A specialist is therefore not just a name in a tool list. It is a bounded capability card.",
+        "",
+        "The second record is the route decision. It names the task, the candidate specialists, the selected specialist, the rejected candidates, the reason for non-selection, the route shape, the granted authority subset, denied authority, context lease, tool lease, verifier requirement, budget, expiry, fallback route, residual owner, ledgers, and non-claims. The important point is that the route explains both the yes and the no. A route that cannot reconstruct why stronger, cheaper, broader, or stale specialists were rejected is not yet governable.",
+        "",
+        "The third record is the MoECOT-style orchestration packet. Its role is not to make a runtime brand authoritative. It keeps command intake, route-head choice, specialist lanes, control-plane gates, authority ledgers, readiness gates, replay references, denied routes, failed gates, missing replay references, handoffs, promotion blockers, residuals, and source-claim state visible in one packet.",
+        "",
+        "Planning should request capabilities, governance should grant only the task-local authority subset, execution should receive the selected route and its limits, and artifact graphs should preserve the route receipt for later claims. These records do not prove route quality or runtime behavior. They preserve the evidence future route-quality, replay, and runtime tests would need."
+      ]
+    }
+  ]
+}

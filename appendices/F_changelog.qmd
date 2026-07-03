@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-02 - Clear reader continuity medium queue
+
+- Added two active reader-only semantic overlay operations: one for `Routing
+  Heads and Specialist Cores`, replacing the generated reader and live
+  Human-view `Interfaces` field catalogs with lower-density routing-interface
+  prose, and one for `System Boundaries and Authority`, replacing the generated
+  reader and live Human-view `Minimum Viable Implementation` fixture inventory
+  with clearer authority-transition prose. The canonical AI/research chapters,
+  schemas, fixtures, Lean boundaries, and support states remain unchanged.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, and the reader chapter review matrix. The
+  reader-continuity audit now records 44 reader chapters, 113,572 reader words,
+  68 active/applied overlay operations, 0 generated-reader chapter table rows,
+  53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160
+  words, and 0 high-priority plus 0 medium-priority heuristic review rows.
+  `Routing Heads and Specialist Cores` and `System Boundaries and Authority`
+  both moved from medium-priority to low-priority in the generated heuristic
+  queue.
+- This is a reader projection and Human-view craft increment only; it is not a
+  routing-quality result, runtime replay, MoECOT implementation result,
+  authority-enforcement result, deployed denial-path result, source-derived
+  evidence update, model-quality result, benchmark result, evidence transition,
+  support-state promotion, reader release, ebook/document/PDF/audio artifact,
+  or artifact approval.
+
 ## 2026-07-02 - Refine Artifact Steward reader implementation
 
 - Added one active reader-only semantic overlay operation for `Artifact Steward

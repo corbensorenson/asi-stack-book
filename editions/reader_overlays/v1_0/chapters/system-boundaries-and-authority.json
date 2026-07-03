@@ -18,6 +18,23 @@
         "",
         "These classes are deliberately ordinary. Most failures at this layer are ordinary too: a model reads something and treats the text as approval, a planner turns a draft into an action, a tool wrapper lets a low-authority request borrow a broader credential, or a replacement implementation inherits a handle that was qualified for an earlier context. The point of the taxonomy is to make those mistakes visible before they become side effects."
       ]
+    },
+    {
+      "id": "v1_0.system_boundaries.mvi_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the compact fixture inventory with reader prose while preserving the canonical authority-transition schema, negative fixtures, and no-enforcement boundary.",
+      "content_lines": [
+        "The smallest useful artifact is an authority-transition record with a few deliberately sharp cases. One valid handoff should show a principal asking for an operation, matching the permission class, staying within the caller ceiling, presenting an active grant, producing the required receipt, and leaving audit references and non-claims behind. The denied cases matter just as much: missing authority, over-ceiling delegation, permission collapse, missing receipts, stale grants, and confused-deputy attempts should stop before any downstream layer treats the request as executable.",
+        "",
+        "The first local harness keeps that boundary narrow. It rejects records that allow authority above the caller ceiling, omit the receipt for an effect, or treat disclosure as mere read access. It also preserves denial reasons so later planning cannot reinterpret missing authority as missing context.",
+        "",
+        "That slice is intentionally not enforcement evidence. It shows that the record shape can represent allowed handoff, denial, escalation, missing receipt, permission collapse, and confused-deputy cases. Stronger support would require live adapter traces, deployed denial paths, revocation propagation, tool-call enforcement, and adversarial probes."
+      ]
     }
   ]
 }

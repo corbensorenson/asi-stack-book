@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 66,
+  "operation_count": 68,
   "operations": [
     {
       "id": "v1_0.artifact_graphs.minimum_viable_implementation_reader_replace",
@@ -693,6 +693,18 @@
       "rationale": "Replace the dense readiness harness inventory with reader prose while preserving the canonical AI/research proof, probe, and no-promotion boundaries."
     },
     {
+      "id": "v1_0.routing_heads.interfaces_reader_replace",
+      "target_file": "chapters/routing-heads-and-specialist-cores.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "The reader-facing routing interface has three linked records. The first is the specialist registry entry: it says what a specialist can do, who owns it, which memory and tools it may lease, what authority ceiling it has, what it costs, how ready it is, where it should fall back, and which limitations and non-claims travel with it. A specialist is therefore not just a name in a tool list. It is a bounded capability card.\n\nThe second record is the route decision. It names the task, the candidate specialists, the selected specialist, the rejected candidates, the reason for non-selection, the route shape, the granted authority subset, denied authority, context lease, tool lease, verifier requirement, budget, expiry, fallback route, residual owner, ledgers, and non-claims. The important point is that the route explains both the yes and the no. A route that cannot reconstruct why stronger, cheaper, broader, or stale specialists were rejected is not yet governable.\n\nThe third record is the MoECOT-style orchestration packet. Its role is not to make a runtime brand authoritative. It keeps command intake, route-head choice, specialist lanes, control-plane gates, authority ledgers, readiness gates, replay references, denied routes, failed gates, missing replay references, handoffs, promotion blockers, residuals, and source-claim state visible in one packet.\n\nPlanning should request capabilities, governance should grant only the task-local authority subset, execution should receive the selected route and its limits, and artifact graphs should preserve the route receipt for later claims. These records do not prove route quality or runtime behavior. They preserve the evidence future route-quality, replay, and runtime tests would need.",
+      "rationale": "Replace the specialist-registry, routing-decision, and MoECOT field catalogs with reader prose while preserving the canonical AI/research schemas in the live chapter."
+    },
+    {
       "id": "v1_0.runtime_adapters.effect_receipt_reader_replace",
       "target_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
       "action": "replace_section",
@@ -751,6 +763,18 @@
       },
       "content": "The authority record has to name the kind of permission being requested, because the same information can be safe in one permission class and unsafe in another. Reading a source, transforming it into a summary, disclosing it to an audience, writing it into a durable artifact, executing a tool, and approving a high-impact action are different powers. A system that collapses them into a generic access flag has already lost the boundary it needs to enforce.\n\nRead permission lets a layer inspect material without publishing it, mutating it, or acting on it. Transform permission lets a layer derive a new artifact, but it carries provenance and taint obligations. Disclosure permission asks whether the output may be shown, exported, or transmitted to the intended audience. Write permission changes a file, ledger, memory cell, branch, or other durable target and therefore needs target-scoped authority plus audit. Execute permission crosses into a tool, runtime, service, or adapter and should leave an effect receipt. Approval permission is still more constrained: it authorizes a promotion or high-impact action and cannot be self-issued by the actor that benefits from it.\n\nThese classes are deliberately ordinary. Most failures at this layer are ordinary too: a model reads something and treats the text as approval, a planner turns a draft into an action, a tool wrapper lets a low-authority request borrow a broader credential, or a replacement implementation inherits a handle that was qualified for an earlier context. The point of the taxonomy is to make those mistakes visible before they become side effects.",
       "rationale": "Replace the permission-class table with reader prose while preserving the canonical AI/research taxonomy."
+    },
+    {
+      "id": "v1_0.system_boundaries.mvi_reader_replace",
+      "target_file": "chapters/system-boundaries-and-authority.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest useful artifact is an authority-transition record with a few deliberately sharp cases. One valid handoff should show a principal asking for an operation, matching the permission class, staying within the caller ceiling, presenting an active grant, producing the required receipt, and leaving audit references and non-claims behind. The denied cases matter just as much: missing authority, over-ceiling delegation, permission collapse, missing receipts, stale grants, and confused-deputy attempts should stop before any downstream layer treats the request as executable.\n\nThe first local harness keeps that boundary narrow. It rejects records that allow authority above the caller ceiling, omit the receipt for an effect, or treat disclosure as mere read access. It also preserves denial reasons so later planning cannot reinterpret missing authority as missing context.\n\nThat slice is intentionally not enforcement evidence. It shows that the record shape can represent allowed handoff, denial, escalation, missing receipt, permission collapse, and confused-deputy cases. Stronger support would require live adapter traces, deployed denial paths, revocation propagation, tool-call enforcement, and adversarial probes.",
+      "rationale": "Replace the compact fixture inventory with reader prose while preserving the canonical authority-transition schema, negative fixtures, and no-enforcement boundary."
     },
     {
       "id": "v1_0.efficient_asi.route_outcome_states_reader_replace",
