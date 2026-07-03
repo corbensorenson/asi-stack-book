@@ -615,7 +615,7 @@
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "title": "Artifact Steward Agents and Living Project Governance",
       "file": "editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/artifact-steward-agents-and-living-project-governance.qmd",
       "live_source_ref": "chapters/artifact-steward-agents-and-living-project-governance.qmd@0f6382f1",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#artifact-steward-agents-and-living-project-governance.core",
@@ -634,13 +634,14 @@
       "voice_pass_slot_ids": [
         "implementation-history"
       ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, pacing, paragraph order, section flow, transitions, and compression were edited for human reading while preserving claim meaning and evidence boundaries. The 2026-07-03 alignment surfaces the 2026-07-02 Artifact steward lifecycle probe as bounded synthetic fixture-route evidence only: two valid routes, six expected-invalid controls, finite record predicates, no support-state effect, and no steward-bot, treasury-executor, governance-runner, release-runner, sunset-protocol, project-federation, or support-promotion claim.",
+      "divergence_summary": "Second curated reader reconciliation positions artifact stewardship after policy optimization: durable project continuity must preserve why behavior changed, who approved it, what evidence supported it, who contributed, what release carried it, and what funding or compute pressure touched it without concentrating ownership inside an agent; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
         "proof/test status preserved without adding unrun results",
         "implementation horizon preserved without implying current implementation",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV evidence/governance reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -649,7 +650,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass updated in docs/curated_reader_artifact_steward_prose_pass.md with the lifecycle-probe evidence boundary; not release-reviewed."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects policy-update custody to project continuity and project continuity to the integrated reference architecture while preserving steward authority, treasury, release, contribution, sunset, and no-ownership boundaries. Prose-pass details recorded in docs/curated_reader_artifact_steward_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "asi-is-a-stack-not-a-model",
@@ -695,7 +696,7 @@
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "file": "editions/reader_manuscript/v1_0/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
       "live_source_ref": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd@b99a95481",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#benchmark-ratchets-and-anti-goodhart-evidence.core",
@@ -714,14 +715,15 @@
       "voice_pass_slot_ids": [
         "evidence-discipline"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around benchmark scores as pressure signals that require evidence packets: evidence-state classification, run records, baselines, residuals, regression floors, anti-Goodhart checks, contamination and transfer boundaries, a toy ratchet-decision example, and claim-specific promotion decisions; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed. The 2026-07-03 alignment surfaces the 2026-07-02 benchmark anti-Goodhart fixture bridge as bounded synthetic cross-record evidence only: 2 valid fixtures, 5 expected-invalid controls, one promotion-ready path, one saturated-regression-floor path, result record, finite Lean summary, no evidence transition, and no support-state effect.",
+      "divergence_summary": "Second curated reader reconciliation distinguishes formal proof lanes from measurement lanes: benchmark pressure can expose workload behavior, regression, saturation, contamination, and transfer limits, but it cannot write a broader claim by itself; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; external benchmark-science sources remain orientation and vocabulary, not local reproduction",
         "proof/test status preserved without adding empirical benchmark, hidden-holdout, transfer, contamination, source-reported replay, Theseus-readiness, deployment-readiness, model-quality, support-state-movement, or ASI-progress results",
         "implementation horizon preserved without implying current benchmark-OS deployment, hidden-holdout integrity, contamination detection, or support-state promotion",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV evidence/governance reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -730,7 +732,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass, 2026-07-02 toy ratchet-decision follow-up, and 2026-07-03 fixture-bridge evidence-boundary alignment recorded in docs/curated_reader_benchmark_ratchets_prose_pass.md; not release-reviewed, not equal authority to the live AI/research chapter, and no chapter core claim is promoted."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects executable-spec lanes to benchmark pressure and benchmark pressure to policy-update custody while preserving anti-Goodhart, contamination, regression, and no-promotion boundaries. Prose-pass details recorded in docs/curated_reader_benchmark_ratchets_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "capability-replacement-and-rollback",
@@ -1114,7 +1116,7 @@
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "title": "Executable Specifications and Lean Proof Envelope",
       "file": "editions/reader_manuscript/v1_0/chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/executable-specifications-and-lean-proof-envelope.qmd",
       "live_source_ref": "chapters/executable-specifications-and-lean-proof-envelope.qmd@8f1a27c5a",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#executable-specifications-and-lean-proof-envelope.core",
@@ -1135,13 +1137,14 @@
       "voice_pass_slot_ids": [
         "proof-practice"
       ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, proof-target receipt example, and minimum viable implementation boundary were edited for human reading while preserving claim meaning and evidence boundaries. The 2026-07-03 alignment surfaces the concrete proof-envelope executable surface: protocol fixture validation, proof readiness, proof artifact audit, proof-depth surface synchronization, local Lean build, 179 implemented proof targets, 54 Lean modules, all 44 chapters in the audit, zero audit errors or warnings, and finite ProofEnvelope negative cases.",
+      "divergence_summary": "Second curated reader reconciliation opens Part IV from Part III evidence-conditional substrate discipline: formal artifacts become durable claim control only when proofs, schemas, validators, tests, benchmarks, external references, and prose each stay in their own authority lane; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
         "proof/test status preserved without adding unrun results, semantic adequacy claims, source-interpretation claims, deployed-enforcement claims, theorem-importance claims, external-theorem-validity claims, benchmark claims, or support-state promotions",
         "implementation horizon preserved without implying proof authority beyond finite-record traceability and executable receipt discipline",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV evidence/governance reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1150,7 +1153,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass, 2026-07-02 proof-target receipt follow-up, and 2026-07-03 executable proof-envelope evidence-boundary alignment recorded in docs/curated_reader_executable_specs_prose_pass.md; not release-reviewed and no chapter core claim is promoted."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass opens Part IV from evidence-conditional substrate discipline into formal claim-control lanes, preserving proof, schema, validator, test, benchmark, external-reference, and prose boundaries before benchmark pressure appears. Prose-pass details recorded in docs/curated_reader_executable_specs_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
@@ -1527,7 +1530,7 @@
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "title": "Policy Optimization and Learning from Feedback",
       "file": "editions/reader_manuscript/v1_0/chapters/policy-optimization-and-learning-from-feedback.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/policy-optimization-and-learning-from-feedback.qmd",
       "live_source_ref": "chapters/policy-optimization-and-learning-from-feedback.qmd@912e1c9c7",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#policy-optimization-and-learning-from-feedback.core",
@@ -1547,14 +1550,15 @@
         "improvement-governance",
         "evidence-discipline"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around policy updates as governed behavior-change leases: target policy, admissible feedback, reward boundary, drift bound, holdouts, regressions, reward-hacking probes, authority conservation, rollback, governance promotion, residuals, and exact support-state effects; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed. The 2026-07-03 alignment surfaces the 2026-07-02 policy update lease probe as bounded synthetic fixture evidence only: six synthetic routing samples, two holdout samples, five candidate policies, one selected canary kept experimental, three rejected controls, rollback dry run, finite Lean bridge, no evidence transition, and no support-state effect.",
+      "divergence_summary": "Second curated reader reconciliation frames policy optimization as the point where benchmark pressure becomes a bounded behavior-change proposal rather than a hidden authority grant: update records must preserve target policy, feedback boundary, drift bound, holdouts, regressions, reward-hacking probes, rollback, governance gate, residuals, and support-state effect; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; external policy/RL sources remain method-family context and failure cautions, not local reproduction",
         "proof/test status preserved without adding PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, reasoning-budget RL, reward-quality, optimizer-convergence, benchmark-improvement, route-quality, policy-safety, deployed-rollback, deployment-readiness, support-state-movement, or reward-hacking-resistance results",
         "implementation horizon preserved without implying current governed-learning operating-system deployment, live router canary, optimizer run, reward-model validation, or support-state promotion",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV evidence/governance reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1563,7 +1567,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass and 2026-07-03 policy update lease probe evidence-boundary alignment recorded in docs/curated_reader_policy_optimization_prose_pass.md; not release-reviewed, not equal authority to the live AI/research chapter, and no chapter core claim is promoted."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects benchmark pressure to governed behavior-change custody and then to artifact stewardship while preserving reward-boundary, rollback, authority, and no-support-promotion limits. Prose-pass details recorded in docs/curated_reader_policy_optimization_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",

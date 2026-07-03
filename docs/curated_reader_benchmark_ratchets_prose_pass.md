@@ -4,6 +4,10 @@ Last updated: 2026-07-02
 
 Follow-up: 2026-07-02
 
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter ID: `benchmark-ratchets-and-anti-goodhart-evidence`
 
 Curated reader file:
@@ -38,6 +42,10 @@ permission to change proof or test status.
 
 ## What Changed
 
+- Added a second 2026-07-03 reconciliation pass that distinguishes formal
+  proof lanes from measurement lanes: benchmark pressure can expose workload
+  behavior, regression, saturation, contamination, and transfer limits, but it
+  cannot write a broader claim by itself.
 - Reframed the chapter around the distinction between a benchmark score and an
   evidence packet.
 - Organized the mechanism around evidence-state classification, run records,
@@ -84,6 +92,7 @@ permission to change proof or test status.
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; benchmark-science sources remain orientation and vocabulary, not local reproduction. |
 | Proof/test status preserved | Pass. The curated draft keeps the boundary that fixture validation, finite Lean predicates, and the synthetic anti-Goodhart harness do not prove benchmark success, hidden-holdout validity, transfer, contamination resistance, regression-suite quality, source-reported replay, Theseus readiness, deployment readiness, model quality, support-state movement, or ASI progress. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a benchmark-evidence decision record plus a small validation harness and finite fixture bridge; the mature endpoint remains an unimplemented benchmark operating system. |
+| Part arc preserved | Pass. The 2026-07-03 reconciliation connects executable-spec lanes to benchmark pressure and benchmark pressure to policy-update custody without changing claim, source, proof/test, implementation, or release meaning. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
@@ -108,7 +117,6 @@ permission to change proof or test status.
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, and exact rendered reader
-artifacts.
+Chapter-level prose meaning is reconciled for this pass, but reader release,
+format artifact review, and final curated-reconciliation approval remain
+blocked.

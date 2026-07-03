@@ -2,11 +2,13 @@
 
 Last updated: 2026-07-02
 
+Follow-up: 2026-07-03
+
 Chapter ID: `executable-specifications-and-lean-proof-envelope`
 
 Curated reader file: `editions/reader_manuscript/v1_0/chapters/executable-specifications-and-lean-proof-envelope.qmd`
 
-Status: drafting only; not release-reviewed.
+Status: reconciled for prose meaning on 2026-07-03; not release-reviewed.
 
 ## Reader Promise
 
@@ -30,6 +32,11 @@ Allowed curation scopes used in this pass:
 
 ## What Changed
 
+- Added a second 2026-07-03 reconciliation pass that opens Part IV from Part
+  III's evidence-conditional substrate discipline: formal artifacts become
+  durable claim control only when proofs, schemas, validators, tests,
+  benchmarks, external references, and prose each stay in their own authority
+  lane.
 - Reworked the opening around formal language making claims smaller rather than
   grander.
 - Strengthened the distinction between Lean predicates, schemas, process
@@ -65,6 +72,7 @@ Allowed curation scopes used in this pass:
 | Proof/test status preserved | Pass. The pass names existing local finite-record proof, schema, readiness, traceability, depth-surface, and build gates while preserving that semantic proof adequacy remains planned and not run. |
 | Implementation horizon preserved | Pass. The MVI remains the proof manifest, proof target fixture, proof-readiness gate, local Lean build, Appendix E coverage, proof artifact traceability, and proof-depth surface synchronization; the mature claims control plane remains a target architecture. |
 | Companion note routing preserved | Pass. The companion note remains drafting support, not release-reviewed evidence. |
+| Part arc preserved | Pass. The 2026-07-03 reconciliation connects Part III evidence conditions to Part IV formal claim-control lanes and then to benchmark pressure without changing claim, source, proof/test, implementation, or release meaning. |
 | Release blockers preserved | Pass. Reader release, format review, and curated reconciliation blockers remain active. |
 
 ## Non-Claims

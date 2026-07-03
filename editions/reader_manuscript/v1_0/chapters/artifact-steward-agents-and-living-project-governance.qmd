@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # Artifact Steward Agents and Living Project Governance
 
+Policy updates change behavior inside the stack. Durable projects have a
+larger problem: they have to preserve why the behavior changed, who approved
+it, what evidence supported it, what contributors did, what release carried
+it, what funding or compute pressure touched it, and when the project should
+stop. That continuity cannot live only inside an agent's memory.
+
 Some projects become too important to live only in a chat history, an issue
 queue, a few private notes, or the memory of whoever last touched them. A
 paper becomes a repository. A repository becomes a release process. A release
@@ -477,4 +483,6 @@ trace that composes every layer without losing authority, context, artifacts,
 evidence, residuals, and improvement gates. Integrated Reference Architecture
 supplies that trace. It turns the stack from a sequence of mechanisms into one
 inspectable path from human intent to bounded change, including the records
-that must exist before any claim hardens.
+that must exist before any claim hardens. The steward keeps the project memory
+alive; the reference architecture shows how that memory fits back into the
+whole ASI Stack.

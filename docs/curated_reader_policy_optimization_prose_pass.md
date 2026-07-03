@@ -2,6 +2,10 @@
 
 Last updated: 2026-06-30
 
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter ID: `policy-optimization-and-learning-from-feedback`
 
 Curated reader file:
@@ -38,6 +42,9 @@ permission to change proof or test status.
 
 ## What Changed
 
+- Added a second 2026-07-03 reconciliation pass that frames policy
+  optimization as the point where benchmark pressure becomes a bounded
+  behavior-change proposal rather than a hidden authority grant.
 - Reframed the chapter around the behavior-change lease: a policy update names
   what may change, what evidence permits the change, what authority remains
   unchanged, how regressions are preserved, and how rollback works.
@@ -78,6 +85,7 @@ permission to change proof or test status.
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; external policy/RL sources remain method-family context and failure cautions, not local reproduction. |
 | Proof/test status preserved | Pass. The curated draft keeps the boundary that fixture validation, finite Lean predicates, synthetic anti-Goodhart checks, and the policy update lease probe do not prove reward quality, optimizer convergence, benchmark improvement, policy safety, route quality, context-selection quality, deployed rollback success, or reward-hacking resistance. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a policy optimization record schema, valid fixture, finite Lean predicates, validation path, and policy-update lease probe; the mature endpoint remains an unimplemented governed learning operating system. |
+| Part arc preserved | Pass. The 2026-07-03 reconciliation connects benchmark pressure to governed behavior-change custody and then to artifact stewardship without changing claim, source, proof/test, implementation, or release meaning. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
@@ -102,7 +110,6 @@ permission to change proof or test status.
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, and exact rendered reader
-artifacts.
+Chapter-level prose meaning is reconciled for this pass, but reader release,
+format artifact review, and final curated-reconciliation approval remain
+blocked.

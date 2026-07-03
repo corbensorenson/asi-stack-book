@@ -2,6 +2,10 @@
 
 Last updated: 2026-07-03
 
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter ID: `artifact-steward-agents-and-living-project-governance`
 
 Curated reader file:
@@ -24,6 +28,11 @@ Allowed curation scopes used:
 
 ## What Changed
 
+- Added a second 2026-07-03 reconciliation pass that positions artifact
+  stewardship after policy optimization: project continuity must preserve why
+  behavior changed, who approved it, what evidence supported it, who
+  contributed, what release carried it, and what funding or compute pressure
+  touched it without concentrating ownership inside an agent.
 - Replaced the generated Human Reading Path lead-in with a continuous opening
   that introduces artifact stewardship through project continuity.
 - Compressed repeated project-object, autonomy, treasury, federation, and
@@ -47,6 +56,7 @@ Allowed curation scopes used:
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass. |
 | Proof/test status preserved | Pass. The curated draft now names the lifecycle probe, fixture-route scope, finite proof surface, and no-claim boundary while still saying the repository does not execute a steward, connect to funds, scan live events, prove governance, or promote support. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a repository-local steward with no spending or protected-branch authority; the mature endpoint remains unimplemented. |
+| Part arc preserved | Pass. The 2026-07-03 reconciliation connects policy-update custody to project continuity and project continuity to the integrated reference architecture without changing claim, source, proof/test, implementation, or release meaning. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
@@ -68,7 +78,6 @@ Allowed curation scopes used:
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, and exact rendered reader
-artifacts.
+Chapter-level prose meaning is reconciled for this pass, but reader release,
+format artifact review, and final curated-reconciliation approval remain
+blocked.

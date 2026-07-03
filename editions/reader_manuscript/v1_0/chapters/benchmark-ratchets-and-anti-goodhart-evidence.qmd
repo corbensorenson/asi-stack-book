@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # Benchmark Ratchets and Anti-Goodhart Evidence
 
+Executable specifications make narrow checks legible. Benchmark ratchets make
+measured pressure legible. They are different authority lanes: a proof can
+guard a record invariant, while a benchmark can expose workload behavior,
+regression, saturation, contamination, and transfer limits. Neither lane is
+allowed to write a broader claim by itself.
+
 A benchmark score is not evidence by itself.
 
 It becomes evidence only after the system can say what was measured, under
@@ -369,4 +375,6 @@ Policy Optimization and Learning from Feedback defines that learning actuator.
 It records target layer, reward boundary, feedback admissibility, verifier
 references, holdouts, drift limits, rollback, monitor windows, governance
 gates, and residuals so rewards, preferences, benchmark results, or verifier
-signals cannot become authority by training side effect.
+signals cannot become authority by training side effect. Benchmarks may create
+pressure; policy updates are the mechanism that can turn pressure into future
+behavior, and therefore need stricter custody.

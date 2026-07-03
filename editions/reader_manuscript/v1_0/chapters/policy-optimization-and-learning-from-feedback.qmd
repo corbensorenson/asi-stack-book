@@ -10,6 +10,11 @@ implementation horizons, and release blockers.
 
 # Policy Optimization and Learning from Feedback
 
+Benchmarks can create pressure, but pressure is not yet learning. A score, a
+preference, a verifier result, or a user correction becomes dangerous when it
+starts changing future behavior without an update boundary. Policy
+optimization is where evidence pressure becomes a behavior-change proposal.
+
 Benchmark ratchets create pressure. They say: this capability improved here,
 regressed there, saturated this test, failed that case, and still owes these
 residuals.
@@ -399,4 +404,7 @@ sunset.
 Artifact Steward Agents and Living Project Governance carries the same
 discipline into project life. It asks how an artifact can preserve mission,
 memory, roadmap, treasury limits, contributor ledgers, work contracts, and
-tainted event intake without granting an AI ownership.
+tainted event intake without granting an AI ownership. A policy update changes
+behavior inside a bounded field; a steward preserves the larger project memory
+that decides whether those changes should survive releases, contributors, and
+future work.

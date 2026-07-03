@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # Executable Specifications and Lean Proof Envelope
 
+Part III ended by making every candidate route, representation, substrate, and
+cyclic mechanism conditional on evidence. Part IV asks how those conditions
+become durable claim control. The first answer is the proof envelope: a way to
+separate what was proved, what was validated, what was tested, what was
+benchmarked, what was borrowed as external context, and what remains prose.
+
 Formal language is powerful because it can make a claim smaller. A theorem, a
 schema, a validator, and a benchmark each narrow a different kind of promise.
 The proof envelope exists so those promises do not blur together.
@@ -338,4 +344,6 @@ checked, but evidence pressure also needs a path for measured capability without
 Goodhart collapse. Benchmark Ratchets and Anti-Goodhart Evidence takes that
 role. It turns benchmark runs into records with baselines, residuals,
 regressions, saturation states, contamination boundaries, and promotion
-decisions so measured pressure cannot outrun preserved failures.
+decisions so measured pressure cannot outrun preserved failures. The proof
+envelope says which formal lane may speak; the benchmark chapter says when a
+measured result may start a support-state review.
