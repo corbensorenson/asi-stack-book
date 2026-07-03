@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 189 |
+| Proof targets in manifest | 190 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 966 |
+| Theorem declarations classified | 967 |
 | Direct/projection-style theorem declarations | 181 |
-| Derived/decomposed theorem declarations | 781 |
+| Derived/decomposed theorem declarations | 782 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -54,7 +54,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 3 | 23 | 2 | 21 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 5 | 35 | 2 | 33 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | artifact-graphs-audit-logs-and-replay | 6 | 36 | 2 | 34 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 4 | 29 | 1 | 28 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -182,6 +182,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `produced_artifact_without_source_refs_requires_source_refs` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `promotion_without_permission_blocks_artifact_promotion` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `receipt_faithfulness_adversarial_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactGraph.lean` | `receipt_repository_audit_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_grade_below_requirement_blocks_sufficiency` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_packet_missing_audit_chain_requires_audit_chain` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `replay_packet_parent_job_mismatch_requires_parent_match` | derived_or_decomposed | no | uses simp, unfold |

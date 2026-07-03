@@ -181,6 +181,16 @@ support promotion based only on receipt shape. That is not a deployed
 attestation system. It is a record-level guardrail against treating valid
 paperwork as truth.
 
+The receipt repository audit takes one step closer to the real project. It
+does not invent a deployed attestation service; it reads selected records that
+already exist in the repository. It checks whether their artifact references
+exist, whether tracked digests still match the files they name, whether command
+records passed, whether the Circle external receipt fingerprints are present,
+and whether the records keep their non-claim and no-promotion boundaries. This
+is still bounded evidence, but it is the right kind of bounded evidence: it
+tests whether the book's own receipts remain attached to actual artifacts
+rather than only to plausible record shapes.
+
 ## A Book-Scale Example
 
 The living book is a small example of the same problem.
@@ -262,6 +272,14 @@ shape. `python3 scripts/validate_receipt_faithfulness.py` writes
 three bounded honest records and six dishonest controls. Its scope is narrow:
 it does not prove open-world receipt truth, verifier independence, deployed
 attestation, audit-service correctness, or chapter-core support.
+
+The companion receipt repository audit checks four existing repository receipt
+surfaces instead of synthetic records alone. It accepts the selected records
+only while their artifact refs, tracked digests, command status, external
+receipt fingerprints, and explicit non-claims remain intact. That still does
+not make the receipts true in the open world, but it prevents a quieter failure:
+the book cannot keep citing a receipt after its referenced files, digests,
+command records, or no-promotion boundaries stop lining up.
 
 ## Interfaces
 

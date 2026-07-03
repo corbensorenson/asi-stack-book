@@ -1028,6 +1028,64 @@ theorem receipt_faithfulness_adversarial_fixture_bridge :
   unfold receiptFaithfulnessFixtureSummary
   simp
 
+structure ReceiptRepositoryAuditSummary where
+  auditedReceiptCount : Nat
+  acceptedReceiptCount : Nat
+  digestCheckedReceiptCount : Nat
+  externalFingerprintReceiptCount : Nat
+  commandReplayReceiptCount : Nat
+  trackedArtifactDigestCount : Nat
+  mutationControlCount : Nat
+  supportStateEffectNoneOrRecordOnly : Bool
+  nonClaimBoundary : Bool
+  missingArtifactControlRejected : Bool
+  digestMismatchControlRejected : Bool
+  failedCommandControlRejected : Bool
+  missingNonClaimsControlRejected : Bool
+  supportPromotionControlRejected : Bool
+deriving DecidableEq, Repr
+
+def receiptRepositoryAuditSummary :
+    ReceiptRepositoryAuditSummary where
+  auditedReceiptCount := 4
+  acceptedReceiptCount := 4
+  digestCheckedReceiptCount := 3
+  externalFingerprintReceiptCount := 1
+  commandReplayReceiptCount := 4
+  trackedArtifactDigestCount := 55
+  mutationControlCount := 5
+  supportStateEffectNoneOrRecordOnly := true
+  nonClaimBoundary := true
+  missingArtifactControlRejected := true
+  digestMismatchControlRejected := true
+  failedCommandControlRejected := true
+  missingNonClaimsControlRejected := true
+  supportPromotionControlRejected := true
+
+def ReceiptRepositoryAuditValid
+    (summary : ReceiptRepositoryAuditSummary) : Prop :=
+  summary.auditedReceiptCount = 4 ∧
+    summary.acceptedReceiptCount = 4 ∧
+    summary.digestCheckedReceiptCount = 3 ∧
+    summary.externalFingerprintReceiptCount = 1 ∧
+    summary.commandReplayReceiptCount = 4 ∧
+    summary.trackedArtifactDigestCount = 55 ∧
+    summary.mutationControlCount = 5 ∧
+    summary.supportStateEffectNoneOrRecordOnly = true ∧
+    summary.nonClaimBoundary = true ∧
+    summary.missingArtifactControlRejected = true ∧
+    summary.digestMismatchControlRejected = true ∧
+    summary.failedCommandControlRejected = true ∧
+    summary.missingNonClaimsControlRejected = true ∧
+    summary.supportPromotionControlRejected = true
+
+theorem receipt_repository_audit_fixture_bridge :
+    ReceiptRepositoryAuditValid
+      receiptRepositoryAuditSummary := by
+  unfold ReceiptRepositoryAuditValid
+  unfold receiptRepositoryAuditSummary
+  simp
+
 structure EpistemicTcbFixtureSummary where
   minimalTrustBaseAccepted : Bool
   delegatedVerifierRecordOnlyAccepted : Bool

@@ -1,0 +1,164 @@
+{
+  "audited_receipts": [
+    {
+      "accepted": true,
+      "artifact_ref_count": 27,
+      "chapter_core_support_effect": "none",
+      "command_count": 10,
+      "command_pass_count": 10,
+      "external_fingerprint_count": 0,
+      "non_claim_count": 4,
+      "receipt_id": "resource_flagship_lane",
+      "receipt_ref": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+      "receipt_shape": "local_aggregate_digest_bundle",
+      "rejection_reasons": [],
+      "support_state_effect": "none",
+      "tracked_artifact_digest_count": 26
+    },
+    {
+      "accepted": true,
+      "artifact_ref_count": 17,
+      "chapter_core_support_effect": "none",
+      "command_count": 4,
+      "command_pass_count": 4,
+      "external_fingerprint_count": 0,
+      "non_claim_count": 4,
+      "receipt_id": "theseus_fast_support_lane",
+      "receipt_ref": "experiments/theseus_fast_support_lane/results/2026-07-03-local.json",
+      "receipt_shape": "public_safe_project_support_bundle",
+      "rejection_reasons": [],
+      "support_state_effect": "none",
+      "tracked_artifact_digest_count": 16
+    },
+    {
+      "accepted": true,
+      "artifact_ref_count": 14,
+      "chapter_core_support_effect": "none",
+      "command_count": 1,
+      "command_pass_count": 1,
+      "external_fingerprint_count": 0,
+      "non_claim_count": 4,
+      "receipt_id": "reference_trace_replay",
+      "receipt_ref": "experiments/reference_trace/replay_results/2026-07-02-resource-flagship.json",
+      "receipt_shape": "local_reference_trace_replay",
+      "rejection_reasons": [],
+      "support_state_effect": "record_shape_only",
+      "tracked_artifact_digest_count": 13
+    },
+    {
+      "accepted": true,
+      "artifact_ref_count": 0,
+      "chapter_core_support_effect": "none",
+      "command_count": 5,
+      "command_pass_count": 5,
+      "external_fingerprint_count": 5,
+      "non_claim_count": 5,
+      "receipt_id": "circle_external_rope_receipt_slice",
+      "receipt_ref": "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
+      "receipt_shape": "external_receipt_fingerprint_summary",
+      "rejection_reasons": [],
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "tracked_artifact_digest_count": 0
+    }
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_receipt_repository_audit.py",
+  "evidence_transition_created": false,
+  "lean_fixture_alignment": {
+    "expected": {
+      "accepted_receipt_count": 4,
+      "audited_receipt_count": 4,
+      "command_replay_receipt_count": 4,
+      "digest_checked_receipt_count": 3,
+      "digest_mismatch_control_rejected": true,
+      "external_fingerprint_receipt_count": 1,
+      "failed_command_control_rejected": true,
+      "missing_artifact_control_rejected": true,
+      "missing_non_claims_control_rejected": true,
+      "mutation_control_count": 5,
+      "non_claim_boundary": true,
+      "support_promotion_control_rejected": true,
+      "support_state_effect_none_or_record_only": true,
+      "tracked_artifact_digest_count": 55
+    },
+    "module": "AsiStackProofs.ArtifactGraph",
+    "theorem_refs": [
+      "receipt_repository_audit_fixture_bridge"
+    ]
+  },
+  "mutation_controls": [
+    {
+      "control_id": "invalid_missing_artifact_ref",
+      "rejected": true,
+      "rejection_reasons": [
+        "artifact_ref_missing=docs/does-not-exist-for-receipt-audit.md"
+      ]
+    },
+    {
+      "control_id": "invalid_tracked_digest_mismatch",
+      "rejected": true,
+      "rejection_reasons": [
+        "tracked_artifact_sha_mismatch=docs/costed_route_resource_slice.md"
+      ]
+    },
+    {
+      "control_id": "invalid_failed_command_replay",
+      "rejected": true,
+      "rejection_reasons": [
+        "command_replay_failed=costed_route_resource_slice"
+      ]
+    },
+    {
+      "control_id": "invalid_missing_non_claims",
+      "rejected": true,
+      "rejection_reasons": [
+        "non_claim_phrase_missing=does not promote",
+        "non_claim_phrase_missing=does not prove",
+        "non_claims_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_support_promotion_overclaim",
+      "rejected": true,
+      "rejection_reasons": [
+        "chapter_core_support_effect_not_none",
+        "new_evidence_transition_created",
+        "support_state_effect_mismatch=promote_chapter_core"
+      ]
+    }
+  ],
+  "non_claims": [
+    "does not prove open-world receipt faithfulness",
+    "does not prove deployed attestation or audit behavior",
+    "does not prove verifier correctness or external project truth",
+    "does not promote any chapter core claim",
+    "does not create an evidence transition"
+  ],
+  "recorded_date": "2026-07-03",
+  "residuals": [
+    "This audit checks selected existing repository receipts and summaries; it does not replay all upstream systems.",
+    "Tracked digest checks cover files in this repository only; the Circle slice remains an external summary with fingerprints.",
+    "The audit preserves no-promotion boundaries and does not prove open-world receipt faithfulness."
+  ],
+  "result_id": "receipt-repository-audit-2026-07-03-local",
+  "result_kind": "repository_receipt_reality_audit",
+  "schema_version": "asi_stack.receipt_repository_audit.result.v0",
+  "support_state_effect": "none",
+  "trace_summary": {
+    "accepted_receipt_count": 4,
+    "audited_receipt_count": 4,
+    "command_replay_receipt_count": 4,
+    "digest_checked_receipt_count": 3,
+    "digest_mismatch_control_rejected": true,
+    "external_fingerprint_receipt_count": 1,
+    "failed_command_control_rejected": true,
+    "missing_artifact_control_rejected": true,
+    "missing_non_claims_control_rejected": true,
+    "mutation_control_count": 5,
+    "non_claim_boundary": true,
+    "support_promotion_control_rejected": true,
+    "support_state_effect_none_or_record_only": true,
+    "tracked_artifact_digest_count": 55
+  },
+  "verification_result": "pass"
+}

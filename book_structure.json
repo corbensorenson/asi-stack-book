@@ -5311,6 +5311,11 @@
               "result_status": "passing via `python3 scripts/validate_receipt_faithfulness.py`; accepts 3 bounded receipt records, rejects 6 expected-invalid controls for shape-valid but reality-false receipts, trap-receipt failure, missing independent cross-check, unbounded attestation, and support promotion from receipt shape; no support-state promotion"
             },
             {
+              "name": "Receipt repository audit",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_receipt_repository_audit.py`; accepts 4 selected repository receipt records, checks tracked digest integrity, command pass status, external receipt fingerprints, non-claim boundaries, and no support-state promotion; no open-world receipt-faithfulness claim"
+            },
+            {
               "name": "Epistemic trusted computing base fixture",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_epistemic_trusted_computing_base.py`; accepts 3 bounded trust-base records and rejects 6 expected-invalid controls for missing root of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residuals, and support promotion from trust-base shape; no support-state promotion"
@@ -5340,6 +5345,12 @@
               "tag": "lean:artifacts.graph.receipt_faithfulness_fixture_bridge",
               "module": "AsiStackProofs.ArtifactGraph",
               "target": "An adversarial receipt-faithfulness fixture accepts bounded cross-checked, attestation-limited, and trap-detected records while rejecting shape-valid but reality-false receipts, ignored trap failures, missing independent cross-checks, unbounded attestation, and support promotion from receipt shape.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifacts.graph.receipt_repository_audit_fixture_bridge",
+              "module": "AsiStackProofs.ArtifactGraph",
+              "target": "A repository receipt audit fixture accepts four selected receipt surfaces with tracked digest, command replay, external fingerprint, and no-promotion boundaries while rejecting missing artifact, stale digest, failed command, missing non-claims, and support-promotion overclaim controls.",
               "status": "implemented"
             },
             {

@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-03 - Add receipt repository audit
+
+- Added `python3 scripts/validate_receipt_repository_audit.py`,
+  `docs/receipt_repository_audit.md`, and
+  `experiments/receipt_repository_audit/results/2026-07-03-local.json` for a
+  bounded repository-level audit of selected receipt records.
+- The audit checks four current receipt surfaces: Resource flagship,
+  Theseus/Fast support, reference trace replay, and Circle external rope. It
+  verifies artifact refs where applicable, 55 tracked artifact digest checks,
+  command pass records, external receipt fingerprints, non-claim boundaries,
+  and no support-state promotion.
+- Added Lean bridge `lean:artifacts.graph.receipt_repository_audit_fixture_bridge`
+  in `AsiStackProofs.ArtifactGraph`, plus manifest, outline, live-chapter,
+  curated-reader, contribution-ledger, roadmap, and global validator wiring.
+- Current proof-depth snapshot: 190 proof targets, 54 Lean modules, 967
+  theorem declarations, 782 derived/decomposed, 181 direct/projection, 4
+  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Boundary: this audit does not prove open-world receipt faithfulness, deployed
+  attestation behavior, deployed audit behavior, verifier correctness, external
+  project truth, chapter-core support, or deployment readiness, and it does not
+  create a support-state transition.
+
 ## 2026-07-03 - Reconcile open research source ownership
 
 - Reconciled Milestone 2.5 burn-down accounting so all 44 rows now carry an
