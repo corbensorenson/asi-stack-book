@@ -602,6 +602,16 @@ weakens if residual ledgers cannot preserve owner handoff and discharge review
 under replay. A future run should prefer one consequence with an executable or
 source-noted test over three new terms.
 
+Consequence artifact shapes:
+
+| Consequence shape | Honest artifact | Weakening condition to record |
+|---|---|---|
+| Capacity bound | Deterministic model plus logged replay or benchmark with baseline, negative control, and residual accounting. | The replay does not expose the predicted bottleneck, or the result depends only on an arbitrary fixture constant. |
+| Trade-off model | Route decision or workload model that prices risk, hidden verification cost, fallback behavior, reviewer burden, and residual discharge. | Total cost, risk, or residual burden does not change the selected route, or the model omits the displaced work. |
+| Impossibility or limit claim | Finite counterexample set, adversarial fixture, or proof obligation that names the assumptions under which the limit holds. | A weaker assumption set admits the desired behavior, or the counterexample only rejects malformed records. |
+| Falsifiable prediction | Public-safe trace or external import with logged prompts/inputs, outcome criteria, comparator, and no-promotion boundary. | The comparator matches or beats the predicted behavior, or the trace cannot be replayed. |
+| Faithfulness or identity thesis | Transition trace, attestation/audit replay, verifier-independence check, or replacement sequence with rollback and regression-floor evidence. | The system can satisfy the record shape while breaking reality correspondence, identity continuity, or rollback guarantees. |
+
 Execution order from here:
 
 1. **Pattern-language integration**: preserve the completed owner spine and
@@ -638,6 +648,12 @@ Execution order from here:
    the verification tax, SCF identity-under-replacement, and
    corrigibility-capability trade-off after the keystone receipt/TCB/oversight
    gaps are owned.
+
+No future idea-depth cycle should spend its main work budget only selecting
+between chapter and section placement. If the default owner below is adequate,
+ship the section/prose/outline/ledger/proof-routing change there; create a new
+chapter only when the ownership test shows that doing so shortens or
+disambiguates the surrounding chapters.
 
 ### Idea-depth chapter roles
 
@@ -842,6 +858,18 @@ the normal `book_structure.json` and scaffold process; or record a dated
 no-new-chapter decision naming the owner chapter and remaining blocker. A
 passing validator, ledger row, or prose mention alone is not enough to settle
 ownership.
+
+Default ownership table for the next implementation pass:
+
+| Concept | Default owner if no new chapter is justified | Minimum next book change | Minimum next artifact route |
+|---|---|---|---|
+| Receipt faithfulness / record-reality gap | `artifact-graphs-audit-logs-and-replay`, with back-references from Proof-Carrying Claims, Integrated Reference Architecture, and Bounded Self-Improvement. | Add or sharpen the major section that states the record-reality objection, the best current answer, the limits of attestation/traps/cross-checks, and the no-deployed-faithfulness boundary in both editions. | Live or externally reviewable attestation/audit replay, randomized audit fixture, independent verifier-quality record, or dated blocker. |
+| Epistemic trusted computing base | `security-kernel-and-digital-scifs` and `artifact-graphs-audit-logs-and-replay`, with constitutional amendment legitimacy routed through Constitutional Alignment when authority change is involved. | State the minimal trusted core, recursion stop, trust propagation, outside-TCB residuals, and verifier-correctness non-claim without implying that a finite fixture proves open-world trust. | Trust-base storage/replay evidence, verifier-independence check, audit-log durability probe, or dated blocker. |
+| Human oversight degradation | `runtime-adapters-tool-permissions-and-human-approval`, with support-state implications routed through Evidence States and intent implications routed through Human Intent. | Treat reviewer fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer privacy, and reviewer-rotation limits as component failure modes in live and reader prose. | Approval-workflow trace with reviewer-load fields, independent-evidence checks, alert-quality evidence, privacy boundary, no-promotion decision, or dated blocker. |
+| Inter-stack governance | `scf-control-plane-routing-and-coherence`, Personal Compute Hives, and Security Kernel unless a distinct cross-stack contract interface emerges. | Define trust establishment, collusion risk, contract handoff, and revocation between independent governed stacks without implying a deployed ecosystem. | Public-safe contract fixture, cross-stack attestation trace, collusion negative control, or dated blocker. |
+| Interpretability as an evidence class | Evidence States, with downstream mentions in Proof-Carrying Claims and Benchmark Ratchets. | Add interpretability as a possible evidence class while preserving the behavioral/support-state ladder and avoiding white-box overclaiming. | Source-noted comparator pack, mechanistic-evidence admissibility rule, or dated blocker. |
+| Governance under partition | Personal Compute Hives and Runtime Adapters. | State grant/effect races, revocation propagation, and CAP-style authority consistency limits in the hives/runtime boundary. | Partitioned-authority fixture, revocation-delay trace, negative controls, or dated blocker. |
+| Constitutional amendment legitimacy | Constitutional Alignment and Recursive Self-Improvement. | Define who may amend the constitution, what makes amendment legitimate rather than merely gated, and how amendment residuals are recorded. | Amendment workflow fixture, authority-ceiling proof route, external governance comparator notes, or dated blocker. |
 
 ### Contribution ledger
 
