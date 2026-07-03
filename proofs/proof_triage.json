@@ -1001,6 +1001,16 @@
       "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite receipt-faithfulness fixture bridge matching the adversarial receipt harness: bounded cross-checked, attestation-limited, and trap-detected records stay inside their limits while shape-valid false receipts, trap failures, missing independent cross-checks, unbounded attestations, and receipt-shape support promotion are rejected."
     },
     {
+      "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "module": "AsiStackProofs.ArtifactGraph",
+      "formal_target": "An epistemic trusted-computing-base fixture accepts bounded minimal, delegated, and blocked trust-base records while rejecting missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite epistemic trusted computing base fixture bridge matching the deterministic validator: minimal, delegated-verifier, and outside-TCB-blocked records stay bounded while missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and trust-base-shape support promotion are rejected."
+    },
+    {
       "tag": "lean:runtime.adapters.operational_invariant",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
@@ -1841,5 +1851,5 @@
       "rationale": "Implemented in AsiStackProofs.Planning as a finite runtime-replan delta route and fixture bridge: it rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context or verification deltas, missing residuals, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta."
     }
   ],
-  "record_count": 183
+  "record_count": 184
 }

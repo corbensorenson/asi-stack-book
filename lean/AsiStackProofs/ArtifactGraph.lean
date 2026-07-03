@@ -1028,4 +1028,53 @@ theorem receipt_faithfulness_adversarial_fixture_bridge :
   unfold receiptFaithfulnessFixtureSummary
   simp
 
+structure EpistemicTcbFixtureSummary where
+  minimalTrustBaseAccepted : Bool
+  delegatedVerifierRecordOnlyAccepted : Bool
+  outsideTcbBlockedRecordAccepted : Bool
+  missingRootOfTrustRejected : Bool
+  selfVerifierLaunderingRejected : Bool
+  unboundedTrustPropagationRejected : Bool
+  recursionStopRequired : Bool
+  outsideTcbResidualsRequired : Bool
+  supportPromotionFromTcbShapeRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def epistemicTcbFixtureSummary :
+    EpistemicTcbFixtureSummary where
+  minimalTrustBaseAccepted := true
+  delegatedVerifierRecordOnlyAccepted := true
+  outsideTcbBlockedRecordAccepted := true
+  missingRootOfTrustRejected := true
+  selfVerifierLaunderingRejected := true
+  unboundedTrustPropagationRejected := true
+  recursionStopRequired := true
+  outsideTcbResidualsRequired := true
+  supportPromotionFromTcbShapeRejected := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+
+def EpistemicTcbFixtureValid
+    (summary : EpistemicTcbFixtureSummary) : Prop :=
+  summary.minimalTrustBaseAccepted = true ∧
+    summary.delegatedVerifierRecordOnlyAccepted = true ∧
+    summary.outsideTcbBlockedRecordAccepted = true ∧
+    summary.missingRootOfTrustRejected = true ∧
+    summary.selfVerifierLaunderingRejected = true ∧
+    summary.unboundedTrustPropagationRejected = true ∧
+    summary.recursionStopRequired = true ∧
+    summary.outsideTcbResidualsRequired = true ∧
+    summary.supportPromotionFromTcbShapeRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem epistemic_tcb_fixture_bridge :
+    EpistemicTcbFixtureValid
+      epistemicTcbFixtureSummary := by
+  unfold EpistemicTcbFixtureValid
+  unfold epistemicTcbFixtureSummary
+  simp
+
 end AsiStackProofs.ArtifactGraph

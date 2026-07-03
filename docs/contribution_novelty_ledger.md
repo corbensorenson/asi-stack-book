@@ -29,16 +29,18 @@ review, not external review, and not support-state movement.
 | Support-state discipline | `methodologically_strong_needs_external_review` | `ext_model_cards_2019`; `ext_datasheets_datasets_2021`; `ext_ml_reproducibility_program_2021`; `ext_proof_carrying_code_1997`; `ext_agm_belief_revision_1985`; `ext_truth_maintenance_system_1979`; `ext_assumption_based_tms_1986` | Joins reporting, reproducibility, proof receipts, and belief revision into public claim-state transition discipline. | True demotion/refutation/narrowing case plus independent review. |
 | Stable capability fields | `promising_not_defended` | `ext_semver_2_0_0`; `ext_slsa_v1_0`; `ext_feature_toggles_fowler`; `ext_argo_rollouts_docs`; `ext_capability_based_computer_systems_1984` | Applies identity-under-replacement discipline to AI capability fields with evidence-state and authority-preservation gates. | Executable field-transition model over replacement sequences. |
 | Bounded self-improvement | `safety_critical_not_defended` | `ext_corrigibility_2015`; `ext_off_switch_game_2016`; `ext_optimal_policies_power_2019`; `ext_model_evaluation_extreme_risks_2023`; `ext_frontier_ai_regulation_2023`; `ext_slsa_v1_0` | Packages improvement as a gated artifact lifecycle rather than unconstrained optimization. | Clean Theseus replay or archived public fixture plus transition-system invariant. |
-| Record-reality gap | `missing_argument` | `ext_proof_carrying_code_1997`; `ext_ai_safety_debate_2018`; `ext_llm_as_judge_mt_bench_2023`; `ext_model_evaluation_extreme_risks_2023`; `ext_nist_zero_trust_architecture_2020` | Treats receipt faithfulness as a first-class architecture problem: records must correspond to reality, not only to each other. The first bounded adversarial fixture exists at `experiments/receipt_faithfulness/results/2026-07-03-local.json` and rejects shape-valid false receipts, trap-receipt failures, missing independent cross-checks, unbounded attestation, and support promotion from receipt shape. | Dedicated receipt-faithfulness chapter or major section if the ownership test later warrants it; live or externally reviewable attestation/audit evidence; explicit boundary that the current fixture does not prove open-world receipt faithfulness. |
+| Record-reality gap | `missing_argument` | `ext_proof_carrying_code_1997`; `ext_ai_safety_debate_2018`; `ext_llm_as_judge_mt_bench_2023`; `ext_model_evaluation_extreme_risks_2023`; `ext_nist_zero_trust_architecture_2020` | Treats receipt faithfulness and the epistemic trusted computing base as first-class architecture problems: records must correspond to reality, and verifier trust must bottom out in named roots rather than ambient confidence. The first bounded receipt fixture exists at `experiments/receipt_faithfulness/results/2026-07-03-local.json`, and the first bounded epistemic trusted computing base fixture exists at `experiments/epistemic_tcb/results/2026-07-03-local.json`. | Dedicated receipt-faithfulness/trust-base chapter or major section if the ownership test later warrants it; live or externally reviewable attestation/audit and verifier-quality evidence; explicit boundary that current fixtures do not prove open-world receipt faithfulness, verifier correctness, or deployed trust-base behavior. |
 
 ## Current Decision
 
 The book may use these ideas as signature framing, but it should not call them
 defended contributions unless the row's next artifact exists and the relevant
-review, proof, source, or evidence gate passes. The weakest and most important
-row is `receipt_faithfulness_gap`: it names a genuine keystone gap that needs
-a chapter or major section before the book can claim a complete answer to
-record laundering.
+review, proof, source, or evidence gate passes. The most important still-open
+row is `receipt_faithfulness_gap`: it now has bounded receipt-faithfulness and
+epistemic trusted computing base fixtures, but still needs a chapter or major
+section ownership decision plus live or externally reviewable attestation,
+audit, and verifier-quality evidence before the book can claim a complete
+answer to record or verifier-trust laundering.
 
 ## Non-Claims
 

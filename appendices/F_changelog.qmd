@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-03 - Add epistemic trusted computing base fixture
+
+- Added `scripts/validate_epistemic_trusted_computing_base.py`,
+  `docs/epistemic_trusted_computing_base_fixture.md`,
+  `experiments/epistemic_tcb/input/epistemic_tcb_cases.json`, and result
+  artifact `experiments/epistemic_tcb/results/2026-07-03-local.json` for a
+  bounded epistemic trusted computing base fixture.
+- Command: `python3 scripts/validate_epistemic_trusted_computing_base.py`.
+- The validator accepts three bounded records and rejects six expected-invalid
+  controls covering missing root of trust, verifier-trust laundering,
+  unbounded trust propagation, missing recursion stop, erased outside-TCB
+  residuals, and support promotion from trust-base shape.
+- Added finite Lean bridge target
+  `lean:artifacts.graph.epistemic_tcb_fixture_bridge` in
+  `AsiStackProofs.ArtifactGraph` and wired the validator into
+  `scripts/validate_book.py`.
+- Updated Artifact Graphs, Evidence States, Proof-Carrying Claims, Integrated
+  Reference Architecture, the outline, roadmap, and contribution novelty
+  ledger while preserving the boundary: this does not prove verifier
+  correctness, deployed trust-base behavior, open-world receipt faithfulness,
+  audit-log durability, policy correctness, source interpretation, or
+  support-state movement, and it does not promote any chapter core claim or
+  create a support-state transition.
+
 ## 2026-07-03 - Add Project Theseus reader overlay
 
 - Added
@@ -127,7 +151,7 @@
 - Added the Lean surface bridge `residual_ledger_trace_surface_bridge` in
   `AsiStackProofs.CompactGenerativeSystems` and wired the validator into
   `scripts/validate_book.py`.
-- Current proof-depth snapshot: 183 proof targets, 54 Lean modules, 949 theorem declarations, 767 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 184 proof targets, 54 Lean modules, 950 theorem declarations, 768 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the live chapter, curated reader chapter, outline, roadmap burn-down,
   and contribution novelty ledger while preserving the boundary: this does not
   prove deployed residual-ledger behavior, does not prove safety, does not

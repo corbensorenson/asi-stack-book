@@ -1,0 +1,260 @@
+{
+  "schema_version": "asi_stack.epistemic_tcb.input.v0",
+  "cases": [
+    {
+      "case_id": "valid_minimal_epistemic_tcb_record",
+      "expect_valid": true,
+      "tcb_declared": true,
+      "tcb_scope": "bounded",
+      "trusted_core_components": [
+        "root_policy",
+        "artifact_graph",
+        "independent_verifier",
+        "append_only_audit_log"
+      ],
+      "root_of_trust_refs": [
+        "policy://artifact-support-review-v1",
+        "artifact://append-only-audit-log-v1"
+      ],
+      "trust_propagation_rule": "root_to_delegated_verifier",
+      "recursion_stop_condition": "root policy and audit log are trusted assumptions; all delegated verifier outputs remain scoped by receipts and residuals",
+      "verifier_independence_state": "independent",
+      "same_component_self_check": false,
+      "outside_tcb_residuals": [
+        "verifier implementation correctness is assumed, not proven",
+        "audit-log storage durability is assumed, not proven"
+      ],
+      "evidence_request": "support_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "case_id": "valid_delegated_verifier_record_only",
+      "expect_valid": true,
+      "tcb_declared": true,
+      "tcb_scope": "bounded",
+      "trusted_core_components": [
+        "root_policy",
+        "delegation_receipt",
+        "independent_verifier",
+        "audit_log"
+      ],
+      "root_of_trust_refs": [
+        "policy://delegated-verifier-v1",
+        "receipt://verifier-delegation-001"
+      ],
+      "trust_propagation_rule": "consumer_checked_policy",
+      "recursion_stop_condition": "consumer policy validates the delegation receipt and stops at the named root policy",
+      "verifier_independence_state": "independent",
+      "same_component_self_check": false,
+      "outside_tcb_residuals": [
+        "delegated verifier coverage is narrower than the chapter claim",
+        "consumer policy does not prove source interpretation"
+      ],
+      "evidence_request": "record_only",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "case_id": "valid_outside_tcb_blocked_record",
+      "expect_valid": true,
+      "tcb_declared": true,
+      "tcb_scope": "bounded",
+      "trusted_core_components": [
+        "root_policy",
+        "artifact_graph",
+        "audit_log"
+      ],
+      "root_of_trust_refs": [
+        "policy://artifact-support-review-v1"
+      ],
+      "trust_propagation_rule": "root_to_delegated_verifier",
+      "recursion_stop_condition": "verification stops at the named root policy because the proposed verifier is outside the trusted core",
+      "verifier_independence_state": "not_independent",
+      "same_component_self_check": true,
+      "outside_tcb_residuals": [
+        "proposed verifier is the same component that produced the claim",
+        "support review is blocked until an independent verifier route exists"
+      ],
+      "evidence_request": "blocked_from_promotion",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "case_id": "invalid_missing_root_of_trust",
+      "expect_valid": false,
+      "tcb_declared": true,
+      "tcb_scope": "bounded",
+      "trusted_core_components": [
+        "artifact_graph",
+        "independent_verifier"
+      ],
+      "root_of_trust_refs": [],
+      "trust_propagation_rule": "root_to_delegated_verifier",
+      "recursion_stop_condition": "root policy should stop recursion",
+      "verifier_independence_state": "independent",
+      "same_component_self_check": false,
+      "outside_tcb_residuals": [
+        "root policy missing"
+      ],
+      "evidence_request": "support_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "case_id": "invalid_self_verifier_laundering",
+      "expect_valid": false,
+      "tcb_declared": true,
+      "tcb_scope": "bounded",
+      "trusted_core_components": [
+        "root_policy",
+        "artifact_graph",
+        "claim_producer_as_verifier"
+      ],
+      "root_of_trust_refs": [
+        "policy://artifact-support-review-v1"
+      ],
+      "trust_propagation_rule": "root_to_delegated_verifier",
+      "recursion_stop_condition": "producer self-check is accepted",
+      "verifier_independence_state": "not_independent",
+      "same_component_self_check": true,
+      "outside_tcb_residuals": [
+        "same component produced and verified the claim"
+      ],
+      "evidence_request": "support_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "case_id": "invalid_unbounded_trust_propagation",
+      "expect_valid": false,
+      "tcb_declared": true,
+      "tcb_scope": "unbounded",
+      "trusted_core_components": [
+        "root_policy",
+        "artifact_graph",
+        "independent_verifier"
+      ],
+      "root_of_trust_refs": [
+        "policy://artifact-support-review-v1"
+      ],
+      "trust_propagation_rule": "ambient_trust",
+      "recursion_stop_condition": "trust all downstream verifier summaries",
+      "verifier_independence_state": "independent",
+      "same_component_self_check": false,
+      "outside_tcb_residuals": [
+        "downstream trust not scoped"
+      ],
+      "evidence_request": "support_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "case_id": "invalid_no_recursion_stop_condition",
+      "expect_valid": false,
+      "tcb_declared": true,
+      "tcb_scope": "bounded",
+      "trusted_core_components": [
+        "root_policy",
+        "artifact_graph",
+        "independent_verifier"
+      ],
+      "root_of_trust_refs": [
+        "policy://artifact-support-review-v1"
+      ],
+      "trust_propagation_rule": "root_to_delegated_verifier",
+      "recursion_stop_condition": "",
+      "verifier_independence_state": "independent",
+      "same_component_self_check": false,
+      "outside_tcb_residuals": [
+        "recursion stop not specified"
+      ],
+      "evidence_request": "support_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "case_id": "invalid_outside_tcb_residual_erased",
+      "expect_valid": false,
+      "tcb_declared": true,
+      "tcb_scope": "bounded",
+      "trusted_core_components": [
+        "root_policy",
+        "artifact_graph",
+        "independent_verifier"
+      ],
+      "root_of_trust_refs": [
+        "policy://artifact-support-review-v1"
+      ],
+      "trust_propagation_rule": "consumer_checked_policy",
+      "recursion_stop_condition": "consumer policy stops at named root policy",
+      "verifier_independence_state": "independent",
+      "same_component_self_check": false,
+      "outside_tcb_residuals": [],
+      "evidence_request": "support_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "case_id": "invalid_support_promotion_from_tcb_shape",
+      "expect_valid": false,
+      "tcb_declared": true,
+      "tcb_scope": "bounded",
+      "trusted_core_components": [
+        "root_policy",
+        "artifact_graph",
+        "independent_verifier",
+        "audit_log"
+      ],
+      "root_of_trust_refs": [
+        "policy://artifact-support-review-v1",
+        "artifact://append-only-audit-log-v1"
+      ],
+      "trust_propagation_rule": "root_to_delegated_verifier",
+      "recursion_stop_condition": "root policy and audit log are trusted assumptions",
+      "verifier_independence_state": "independent",
+      "same_component_self_check": false,
+      "outside_tcb_residuals": [
+        "verifier implementation correctness is assumed"
+      ],
+      "evidence_request": "support_review",
+      "support_state_effect": "promote_chapter_core",
+      "non_claims": [
+        "does not prove verifier correctness",
+        "does not prove deployed trust base behavior"
+      ]
+    }
+  ]
+}

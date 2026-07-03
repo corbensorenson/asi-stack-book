@@ -275,8 +275,16 @@ The receipt-faithfulness fixture now gives the reference architecture a bounded
 negative control: a support-seeking receipt must survive independent
 cross-check, trap-receipt, attestation-limit, and no-promotion checks before it
 can be treated as reviewable evidence. A future integrated runtime still needs
-live attestation and audit behavior; the current fixture only prevents
-record-shape laundering inside the static architecture.
+live attestation and audit behavior; the receipt-faithfulness fixture only
+prevents record-shape laundering inside the static architecture.
+
+The epistemic trusted computing base fixture adds the related trust-chain
+negative control. A reference trace must not merely say "the verifier passed."
+It must identify the trusted core, root-of-trust refs, delegation rule,
+recursion stop, verifier independence state, outside-TCB residuals, and
+non-claims that make the verifier route consumable. The epistemic-TCB fixture
+rejects verifier-trust laundering and ambient trust propagation in finite
+records; it does not prove a deployed trust base or verifier correctness.
 
 When the trace kernel works, a future implementation could be evaluated by trace quality before anyone argues about intelligence. If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture. The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.
 

@@ -22,6 +22,14 @@ claim is the output allowed to support?
 An artifact graph is the answer to those questions. It turns work products
 into reviewable objects instead of loose files and remembered confidence.
 
+There is a second question hiding inside the first one: who is allowed to say
+that an artifact has been checked? That is the epistemic trusted computing base.
+In plain terms, the system must name the small core it is asking readers
+and downstream tools to trust: the root policy, the artifact graph, the audit
+log, and the verifier route. If the same component writes a claim and then
+certifies that claim, the record can still be useful, but it is outside the
+trusted core and cannot promote support.
+
 This matters because the ASI Stack depends on reuse. A proof becomes evidence
 for a claim. A source note becomes context. A failed run becomes a regression
 case. A reader-edition chapter becomes a release artifact. A repeated trace
@@ -78,6 +86,12 @@ service.
 The artifact graph adds the missing continuity layer. It says: this output is
 an artifact only to the extent that it carries its history, replay grade,
 residuals, and allowed evidence effect.
+
+The trusted-base rule adds another limit: a verifier output is evidence only
+inside its declared trust path. A trusted path names the root of trust, the
+delegation rule, the point where verifier recursion stops, and the residuals
+left outside that core. A fluent verdict, a same-component self-check, or an
+ambient "the system verified it" statement is not enough.
 
 ## Core Claim
 

@@ -201,6 +201,19 @@ proof-carrying-claim lesson, not an open-world truth guarantee: the verifier
 must preserve the interpretation boundary before any stronger standing can be
 reviewed.
 
+The epistemic trusted computing base is the next verifier boundary. Spinoza's
+proposer/verifier separation only helps if the verifier route itself is not
+laundered. The fixture at `experiments/epistemic_tcb/results/2026-07-03-local.json`
+checks a finite version of that rule: support review needs a root of trust,
+bounded delegation, a recursion stop, independent verifier status, visible
+outside-TCB residuals, and non-claims. It rejects same-component self-verifier
+laundering and ambient trust propagation, but it does not prove verifier
+correctness or deployed trust-base behavior.
+
+In this sense, verifier-trust laundering is a proof-carrying-claim failure:
+the record asks readers to trust the verifier without showing why that verifier
+is inside the trusted core.
+
 Contested, high-risk, or mismatched cases move into adversarial review. A
 tribunal-style record constructs a dossier, assigns role-separated reviewers,
 runs adversarial probes, preserves evidence-linked findings, records dissent,

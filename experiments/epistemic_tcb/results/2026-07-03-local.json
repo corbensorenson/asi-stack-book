@@ -1,0 +1,199 @@
+{
+  "accepted_records": [
+    "valid_delegated_verifier_record_only",
+    "valid_minimal_epistemic_tcb_record",
+    "valid_outside_tcb_blocked_record"
+  ],
+  "case_count": 9,
+  "case_results": [
+    {
+      "actual_valid": false,
+      "case_id": "invalid_missing_root_of_trust",
+      "evidence_request": "support_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "root_of_trust_refs_missing",
+        "trusted_core_too_small_or_missing"
+      ],
+      "verifier_independence_state": "independent"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_no_recursion_stop_condition",
+      "evidence_request": "support_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "recursion_stop_condition_missing"
+      ],
+      "verifier_independence_state": "independent"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_outside_tcb_residual_erased",
+      "evidence_request": "support_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "outside_tcb_residuals_missing"
+      ],
+      "verifier_independence_state": "independent"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_self_verifier_laundering",
+      "evidence_request": "support_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "support_review_rejects_same_component_self_check",
+        "support_review_requires_independent_verifier"
+      ],
+      "verifier_independence_state": "not_independent"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_support_promotion_from_tcb_shape",
+      "evidence_request": "support_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "missing_non_claim=does not promote any chapter core claim",
+        "support_state_promotion_attempt"
+      ],
+      "verifier_independence_state": "independent"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_unbounded_trust_propagation",
+      "evidence_request": "support_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "recursion_stop_condition_ambient",
+        "tcb_scope_unbounded",
+        "trust_propagation_rule_not_bounded"
+      ],
+      "verifier_independence_state": "independent"
+    },
+    {
+      "actual_valid": true,
+      "case_id": "valid_delegated_verifier_record_only",
+      "evidence_request": "record_only",
+      "expected_valid": true,
+      "rejection_reasons": [],
+      "verifier_independence_state": "independent"
+    },
+    {
+      "actual_valid": true,
+      "case_id": "valid_minimal_epistemic_tcb_record",
+      "evidence_request": "support_review",
+      "expected_valid": true,
+      "rejection_reasons": [],
+      "verifier_independence_state": "independent"
+    },
+    {
+      "actual_valid": true,
+      "case_id": "valid_outside_tcb_blocked_record",
+      "evidence_request": "blocked_from_promotion",
+      "expected_valid": true,
+      "rejection_reasons": [],
+      "verifier_independence_state": "not_independent"
+    }
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_epistemic_trusted_computing_base.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 6,
+  "input_ref": "experiments/epistemic_tcb/input/epistemic_tcb_cases.json",
+  "lean_fixture_alignment": {
+    "expected": {
+      "delegatedVerifierRecordOnlyAccepted": true,
+      "minimalTrustBaseAccepted": true,
+      "missingRootOfTrustRejected": true,
+      "nonClaimBoundary": true,
+      "outsideTcbBlockedRecordAccepted": true,
+      "outsideTcbResidualsRequired": true,
+      "recursionStopRequired": true,
+      "selfVerifierLaunderingRejected": true,
+      "supportPromotionFromTcbShapeRejected": true,
+      "supportStateEffectNone": true,
+      "unboundedTrustPropagationRejected": true
+    },
+    "module": "AsiStackProofs.ArtifactGraph",
+    "theorem_refs": [
+      "epistemic_tcb_fixture_bridge"
+    ]
+  },
+  "non_claims": [
+    "does not prove verifier correctness",
+    "does not prove deployed trust base behavior",
+    "does not promote any chapter core claim",
+    "does not prove an open-world epistemic trusted computing base",
+    "does not prove audit-log durability, policy correctness, or verifier independence outside the finite records",
+    "does not create an evidence transition"
+  ],
+  "recorded_date": "2026-07-03",
+  "rejected_controls": [
+    {
+      "case_id": "invalid_missing_root_of_trust",
+      "rejection_reasons": [
+        "root_of_trust_refs_missing",
+        "trusted_core_too_small_or_missing"
+      ]
+    },
+    {
+      "case_id": "invalid_no_recursion_stop_condition",
+      "rejection_reasons": [
+        "recursion_stop_condition_missing"
+      ]
+    },
+    {
+      "case_id": "invalid_outside_tcb_residual_erased",
+      "rejection_reasons": [
+        "outside_tcb_residuals_missing"
+      ]
+    },
+    {
+      "case_id": "invalid_self_verifier_laundering",
+      "rejection_reasons": [
+        "support_review_rejects_same_component_self_check",
+        "support_review_requires_independent_verifier"
+      ]
+    },
+    {
+      "case_id": "invalid_support_promotion_from_tcb_shape",
+      "rejection_reasons": [
+        "missing_non_claim=does not promote any chapter core claim",
+        "support_state_promotion_attempt"
+      ]
+    },
+    {
+      "case_id": "invalid_unbounded_trust_propagation",
+      "rejection_reasons": [
+        "recursion_stop_condition_ambient",
+        "tcb_scope_unbounded",
+        "trust_propagation_rule_not_bounded"
+      ]
+    }
+  ],
+  "residuals": [
+    "The fixture checks trust-base routing only in finite synthetic records.",
+    "The fixture names where verification trust bottoms out but does not prove the root policy, verifier, or audit log are correct.",
+    "The fixture rejects verifier-trust laundering, ambient trust, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape."
+  ],
+  "result_id": "2026-07-03-epistemic-trusted-computing-base-fixture",
+  "result_kind": "deterministic_epistemic_trusted_computing_base_fixture",
+  "schema_version": "asi_stack.epistemic_tcb.result.v0",
+  "support_state_effect": "none",
+  "trace_summary": {
+    "delegatedVerifierRecordOnlyAccepted": true,
+    "minimalTrustBaseAccepted": true,
+    "missingRootOfTrustRejected": true,
+    "nonClaimBoundary": true,
+    "outsideTcbBlockedRecordAccepted": true,
+    "outsideTcbResidualsRequired": true,
+    "recursionStopRequired": true,
+    "selfVerifierLaunderingRejected": true,
+    "supportPromotionFromTcbShapeRejected": true,
+    "supportStateEffectNone": true,
+    "unboundedTrustPropagationRejected": true
+  },
+  "valid_case_count": 3,
+  "verification_result": "pass"
+}

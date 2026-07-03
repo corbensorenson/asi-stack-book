@@ -221,7 +221,7 @@
         "integrated-reference-architecture",
         "spinoza-verification-and-proof-carrying-claims"
       ],
-      "claimed_contribution": "Make receipt faithfulness a first-class architectural problem: records are useful only when the system can audit whether they correspond to reality rather than merely to each other.",
+      "claimed_contribution": "Make receipt faithfulness and epistemic trusted computing base boundaries first-class architectural problems: records and verifier outputs are useful only when the system can audit whether they correspond to reality and where verifier trust bottoms out.",
       "closest_prior_art_refs": [
         "ext_proof_carrying_code_1997",
         "ext_ai_safety_debate_2018",
@@ -229,17 +229,18 @@
         "ext_model_evaluation_extreme_risks_2023",
         "ext_nist_zero_trust_architecture_2020"
       ],
-      "audited_delta": "Proof, debate, judge, evaluation, and zero-trust sources each address parts of checking; the ASI Stack needs to connect attestation, trap fixtures, cross-examination, randomized audits, and incentives to the artifact graph itself.",
-      "non_obvious_consequence": "A system can pass record-shape validators while still failing truth; the architecture needs adversarial faithfulness checks before treating receipts as strong evidence.",
-      "strongest_objection": "No finite receipt regime can force a sufficiently strategic system to bind its internal causal process to the recorded explanation.",
-      "answer_status": "first_adversarial_fixture_seeded_but_argument_missing",
+      "audited_delta": "Proof, debate, judge, evaluation, and zero-trust sources each address parts of checking; the ASI Stack connects attestation, trap fixtures, cross-examination, trust-base roots, bounded verifier delegation, recursion stops, and residuals to the artifact graph itself.",
+      "non_obvious_consequence": "A system can pass record-shape validators or verifier-summary checks while still failing truth; the architecture needs adversarial faithfulness and trust-base checks before treating receipts or verifier outputs as strong evidence.",
+      "strongest_objection": "No finite receipt or trust-base regime can force a sufficiently strategic system to bind its internal causal process to the recorded explanation or verifier route.",
+      "answer_status": "first_receipt_and_epistemic_tcb_fixtures_seeded_but_open_world_argument_missing",
       "confidence_state": "missing_argument",
-      "needed_next_artifact": "The first bounded adversarial fixture exists at experiments/receipt_faithfulness/results/2026-07-03-local.json. Next: decide whether a dedicated receipt-faithfulness chapter or major section passes the ownership test; add live or externally reviewable attestation/audit evidence; keep the explicit boundary that this does not prove open-world receipt faithfulness.",
+      "needed_next_artifact": "The first bounded adversarial receipt fixture exists at experiments/receipt_faithfulness/results/2026-07-03-local.json, and the first bounded epistemic trusted computing base fixture exists at experiments/epistemic_tcb/results/2026-07-03-local.json. Next: decide whether a dedicated receipt-faithfulness/trust-base chapter or major section passes the ownership test; add live or externally reviewable attestation/audit and verifier-quality evidence; keep the explicit boundary that these fixtures do not prove open-world receipt faithfulness or verifier correctness.",
       "support_state_effect": "none",
       "non_claims": [
         "does not prove receipt truthfulness",
         "does not prove open-world receipt faithfulness",
         "does not prove audit completeness",
+        "does not prove verifier correctness",
         "does not promote any chapter core claim"
       ]
     }

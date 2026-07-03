@@ -1623,6 +1623,7 @@ Draft arc:
 - Mechanism: link artifact nodes to context transaction refs and semantic certificate refs so artifact reuse preserves the memory and representation boundaries it inherited.
 - Mechanism: require replay grade, evidence gate, residuals, and non-claims before an artifact can influence claim support, compression, procedural memory, or release records.
 - Mechanism: require receipt faithfulness checks before a shape-valid record can affect support state; a receipt must be cross-checked against independent observation, trap receipts, and explicit attestation limits instead of being trusted because it matches schema.
+- Mechanism: name the epistemic trusted computing base for artifact evidence: the minimal trusted core, root-of-trust refs, delegation rule, recursion stop condition, verifier independence state, outside-TCB residuals, and non-claims must be explicit before verifier outputs can be consumed.
 - Handoff: Runtime adapters produce effect receipts and residuals that must return to the artifact graph before they become evidence.
 - Interface: VCM references artifacts.
 - Interface: Evidence consumes logs.
@@ -1642,6 +1643,7 @@ Failure modes to cover:
 - Non-replayable workflow.
 - Provenance gaps.
 - Receipt-shape laundering, where a schema-valid receipt is treated as reality even when independent observation, trap checks, or attestation limits contradict it.
+- Verifier-trust laundering, where a verifier or judge output is consumed as trusted evidence without a named root of trust, bounded delegation rule, recursion stop condition, or outside-TCB residual.
 
 Draft deliverables:
 
@@ -1654,6 +1656,8 @@ Draft deliverables:
 - Implemented Lean replay-packet bridge: cross-record artifact replay packets now model parent-job alignment, job-output coverage, context-transaction and certificate links, source coverage, audit-chain completeness, replay-grade alignment, byte-exact observation requirements, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission. This mirrors the synthetic fixture harness shape; it is not a deployed replay engine.
 - Implemented receipt-faithfulness adversarial fixture: `python3 scripts/validate_receipt_faithfulness.py` checks bounded receipt/reality cases, records result `experiments/receipt_faithfulness/results/2026-07-03-local.json`, and rejects shape-valid but reality-false receipts, ignored trap-receipt failures, missing independent cross-check routes, same-component self-check laundering, unbounded attestation, and support promotion from receipt shape. It is a bounded adversarial fixture only: it does not prove open-world receipt faithfulness, verifier independence, attestation-service correctness, deployed audit behavior, or chapter-core support.
 - Implemented Lean bridge: `receipt_faithfulness_adversarial_fixture_bridge` records that bounded cross-checked, attestation-limited, and trap-detected receipt records are accepted only inside their limits while shape-valid false receipts, trap failures, missing independent cross-checks, unbounded attestation, and receipt-shape support promotion are rejected.
+- Implemented epistemic-TCB fixture: `python3 scripts/validate_epistemic_trusted_computing_base.py` checks bounded trust-base cases, records result `experiments/epistemic_tcb/results/2026-07-03-local.json`, and rejects missing root-of-trust refs, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape. It is a bounded finite-record fixture only: it does not prove verifier correctness, deployed trust-base behavior, open-world receipt faithfulness, policy correctness, audit-log durability, or chapter-core support.
+- Implemented Lean bridge: `epistemic_tcb_fixture_bridge` records that bounded minimal, delegated, and blocked trust-base records are accepted only inside their limits while missing roots of trust, self-verifier laundering, unbounded trust, missing recursion stops, erased outside-TCB residuals, and trust-base-shape support promotion are rejected.
 - Implemented synthetic Codex test: `python3 scripts/validate_artifact_graph_replay.py` checks artifact parentage, typed job outputs, context transaction refs, semantic certificate refs, source-ref coverage, replay grade, observed artifacts, audit reconstruction, stale-certificate blocking, and promotion-blocking boundaries. It remains synthetic record-gate evidence only, not a deployed artifact graph, replay engine, audit-reconstruction service, or source-interpretation claim.
 - Implemented synthetic Codex test: Audit reconstruction test via `python3 scripts/validate_artifact_graph_replay.py`; deployed audit reconstruction remains open.
 - Implemented synthetic Codex test: Replay metadata completeness test via `python3 scripts/validate_artifact_graph_replay.py`; deployed replay engine remains open.
@@ -1666,6 +1670,7 @@ Lean proof targets:
 | `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | implemented |
 | `lean:artifacts.graph.replay_packet_bridge` | `AsiStackProofs.ArtifactGraph` | A modeled artifact replay packet routes cross-record mismatches, missing observation, stale certificates, support-review transaction gaps, and partial-replay promotion attempts to explicit outcomes while admitting complete bounded-review packets. | implemented |
 | `lean:artifacts.graph.receipt_faithfulness_fixture_bridge` | `AsiStackProofs.ArtifactGraph` | An adversarial receipt-faithfulness fixture accepts bounded cross-checked, attestation-limited, and trap-detected records while rejecting shape-valid but reality-false receipts, ignored trap failures, missing independent cross-checks, unbounded attestation, and support promotion from receipt shape. | implemented |
+| `lean:artifacts.graph.epistemic_tcb_fixture_bridge` | `AsiStackProofs.ArtifactGraph` | An epistemic trusted-computing-base fixture accepts bounded minimal, delegated, and blocked trust-base records while rejecting missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape. | implemented |
 
 ### Runtime Adapters, Tool Permissions, and Human Approval
 
@@ -2775,7 +2780,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 182 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 182 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 183 proof targets, 54 Lean modules, 949 theorem declarations, 767 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 184 proof targets, 54 Lean modules, 950 theorem declarations, 768 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -2784,7 +2789,7 @@ Draft deliverables:
 - Implemented Codex test: External theorem reference boundary negative case.
 - Implemented Codex test: Proof artifact traceability audit.
 - Implemented Codex test: Proof-depth surface synchronization, via `python3 scripts/validate_proof_depth_surface.py`, so the live chapter, reader chapter, outline, and roadmap expose the current proof-depth classification counts and direct/projection versus derived/decomposed distinction without promoting proof-envelope support.
-- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 183 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
+- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 184 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
 
 Lean proof targets:
 
