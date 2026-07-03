@@ -65,7 +65,7 @@ must preserve the claim boundary.
 - This review does not approve EPUB, PDF, DOCX, HTML, AZW3, MOBI, Markdown,
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
 - This review records that forty-four curated reader chapters now exist, with
-  five drafting records and thirty-nine reconciled prose records; it does not
+  zero drafting records and forty-four reconciled prose records; it does not
   approve any chapter for release.
 - This review records twelve drafting companion notes for dense planning,
   routing, hive, compression, speed, resource, proof, cyclic-substrate, policy,

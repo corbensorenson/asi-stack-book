@@ -4,15 +4,16 @@ This directory is the tracked home for manually edited human-reader manuscript
 work when generated reader source plus semantic overlays are no longer enough.
 
 The current v1.0 state is `drafting`. `v1_0/manifest.json` records forty-four
-curated chapter records: five drafting and thirty-nine reconciled for prose
+curated chapter records: zero drafting and forty-four reconciled for prose
 meaning, with no active manifest chapter missing a curated reader file. It also
 records a machine-checked reader handoff contract: one book-level thesis, four
 part arcs, ten recurring signature ideas, ten key-figure targets with
 validator-checked draft assets and placements, twelve Corben voice-pass slots,
 and per-chapter stakes/payoff fields. None are release-approved, and none are
 equal authority beside the live book. The live Quarto book, generated reader
-edition, and reader overlays remain the active release path until reconciliation,
-format artifact review, and an edition release record actually exist.
+edition, and reader overlays remain the active release path until format artifact
+review and an edition release record actually exist; curated-reader prose
+reconciliation is complete at the chapter level but not release-approved.
 
 The v1.0 companion-note routing manifest at
 `v1_0/companion_note_routing.json` records chapter-level reader, e-reader, and

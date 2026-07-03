@@ -2,6 +2,8 @@
 
 Date: 2026-06-30
 
+Follow-up: 2026-07-03
+
 Chapter: `open-research-agenda-and-bibliography-plan`
 
 Reader manuscript file:
@@ -21,6 +23,9 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added final-book closure continuity from the living-book methodology into
+  routed research debt, and sharpened the closing distinction between argued,
+  mechanized, locally tested, externally grounded, and still-open work.
 - Reworked the generated reader baseline into a closing chapter with a clearer
   human-readable ending.
 - Centered the chapter on the research graph: source states, source notes,
@@ -59,6 +64,9 @@ The reader throughline is:
   finite Lean gates with negative-case theorems. This is not a live paper
   intake, citation check, literature-normalization pass, chapter-insertion
   approval, source-interpretation review, or support-state promotion.
+- The follow-up preserves the final chapter's open-ended role: the book closes
+  by routing future work, not by implying citation completeness, external
+  review completion, or proof/test closure.
 
 ## Non-Claims
 
@@ -77,10 +85,13 @@ The reader throughline is:
   planned.
 - Direct citation checks and external-literature normalization remain
   incomplete unless separate source notes and inventory records say otherwise.
-- Human editorial review has not approved this chapter for reader release.
 - External review of the research-agenda and bibliography-control method
   remains requested or pending unless a separate external-review record says
   otherwise.
 - Any future support-state movement requires accepted evidence-transition
   records with exact artifacts, commands, limitations, counterevidence, and
   non-claims.
+- Status: reconciled for prose meaning on 2026-07-03.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.

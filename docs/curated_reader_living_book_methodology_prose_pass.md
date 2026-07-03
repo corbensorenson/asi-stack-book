@@ -2,6 +2,8 @@
 
 Date: 2026-07-01
 
+Follow-up: 2026-07-03
+
 Chapter: `living-book-methodology`
 
 Reader manuscript file:
@@ -22,6 +24,9 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added final Part IV continuity from the prototype roadmap into the
+  living-book method, and from the method into the open research agenda as the
+  control surface for future additions.
 - Reworked the generated reader baseline into chapter-level prose with a
   stronger opening and clearer reader throughline.
 - Centered the chapter on publication governance, change packets, stable IDs,
@@ -59,6 +64,9 @@ The reader throughline is:
 - The new external comparator language is lineage and positioning only; it does
   not claim WEB/CWEB implementation, Jupyter Book compatibility, Quarto format
   approval, manuscript quality, external review, or artifact release.
+- The follow-up preserves the Part IV close: the book applies phase discipline
+  to itself, then routes future work through an agenda instead of treating
+  polished prose as closure.
 
 ## Non-Claims
 
@@ -81,9 +89,12 @@ The reader throughline is:
 
 - Future substantive reader/methodology edits should use the implemented
   change-packet record shape instead of relying only on prose-pass summaries.
-- Human editorial review has not approved this chapter for reader release.
 - External review of the methodology and support-state surfaces remains
   requested or pending unless a separate external-review record says otherwise.
 - Any future support-state movement requires accepted evidence-transition
   records with exact artifacts, commands, limitations, counterevidence, and
   non-claims.
+- Status: reconciled for prose meaning on 2026-07-03.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.

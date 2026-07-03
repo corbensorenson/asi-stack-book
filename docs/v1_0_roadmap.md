@@ -304,7 +304,7 @@ Chapter review matrix:
 - The matrix keeps the future curated reader manuscript path dynamic: chapter IDs, part order, live files, generated-reader file paths, and overlay counts sync from `book_structure.json` and overlay files, while review status and disposition remain explicit reader-review decisions.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` now provides the dormant reconciliation template for future curated reader chapters, including generated-reader baselines, live-source refs, divergence summaries, blocked evidence divergence, and release blockers.
 - `editions/reader_manuscript/v1_0/curation_contract.json` now provides the dormant curated-source contract for future reader chapters, including required record fields, allowed prose divergence, blocked evidence divergence, meaning-preservation checks, pre-release blockers, and validation commands.
-- `docs/curated_reader_graduation_review.md` records the current graduation decision: drafting-only curated reader source may exist for v1.x prose work, but generated reader source plus overlays remain the release baseline until reconciliation, format review, and an edition release record exist.
+- `docs/curated_reader_graduation_review.md` records the current graduation decision: drafting-only curated reader source may exist for v1.x prose work, but generated reader source plus overlays remain the release baseline until format review and an edition release record exist; curated-reader chapter-level reconciliation is now complete but not release-approved.
 
 Companion-note routing:
 

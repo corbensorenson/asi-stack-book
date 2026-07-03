@@ -13,8 +13,10 @@ implementation horizons, and release blockers.
 An architecture becomes more serious when it has to explain itself through
 records.
 
-That is the role Project Theseus plays in this book. Theseus is not used here
-as proof that the ASI Stack already works. It is used as an implementation
+The integrated reference architecture defined the trace a complete stack would
+have to preserve. Project Theseus brings that trace down to earth without
+pretending it has already completed the journey. Theseus is not used here as
+proof that the ASI Stack already works. It is used as an implementation
 reference: a nearby system that makes the book ask what a governed,
 self-improving AI project would have to leave behind if it wanted to be
 inspectable after the fact.
@@ -338,7 +340,10 @@ what evidence it does and does not have.
 ## Handoff
 
 Project Theseus shows what report-first implementation evidence should look
-like. Prototype Roadmap turns that evidence appetite into dependency order:
-source inventory, claim ledgers, schemas, validation, and release discipline
-first; contracts, context, jobs, adapters, routing, readiness, benchmarks, and
-self-improvement later.
+like. It also shows why implementation references need sequence discipline:
+the existence of nearby machinery does not license stronger claims until the
+right records, commands, permissions, and replay boundaries exist. Prototype
+Roadmap turns that evidence appetite into dependency order: source inventory,
+claim ledgers, schemas, validation, and release discipline first; contracts,
+context, jobs, adapters, routing, readiness, benchmarks, and self-improvement
+later.

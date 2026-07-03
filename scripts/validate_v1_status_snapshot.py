@@ -163,11 +163,16 @@ def main() -> None:
         for record in curated_records
         if isinstance(record, dict)
     )
-    curated_status_summary = ", ".join(
+    curated_status_parts = [
+        f"{curated_status_counts.get('drafting', 0)} drafting",
+        f"{curated_status_counts.get('reconciled', 0)} reconciled",
+    ]
+    curated_status_parts.extend(
         f"{curated_status_counts[status]} {status}"
-        for status in ("drafting", "reconciled", "blocked", "not_started", "missing")
+        for status in ("blocked", "not_started", "missing")
         if curated_status_counts.get(status)
     )
+    curated_status_summary = ", ".join(curated_status_parts)
     reader_reviewed = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "review_status:reviewed")
     reader_overlay_active = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:reader_overlay_active")
     reader_no_action = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:no_immediate_action")
@@ -430,7 +435,7 @@ def main() -> None:
         f"| Chapter handoffs | All {len(chapters)} manifest chapters now end with reader-facing `Handoff` sections: non-final chapters name the next manifest chapter title and avoid numbered chapter references, while the final chapter closes the book-level arc; generated reader chapters must preserve the same single Handoff continuity after live-only stripping |",
         f"the reader release has a tracked semantic overlay manifest as the editable delta source, generated reader delta report path as review output with a zero-active-operation note or operation digests and before/after excerpts, embedded live Human-view overlay payload for major-version human-edition deltas, and a generated reader-continuity audit with {reader_high_priority} high-priority and {reader_medium_priority} medium-priority heuristic review rows",
         "The generated-reader chapter-text review queue is complete across all parts, with review records from `docs/reader_opening_full_review_pass.md` through `docs/reader_part_iv_completion_full_review_pass.md` plus first-pass matrix decisions in `docs/reader_part_i_review_pass.md`, `docs/reader_part_ii_review_pass.md`, `docs/reader_part_iii_review_pass.md`, and `docs/reader_part_iv_review_pass.md`, without treating those notes as release approval.",
-        f"The synced chapter review matrix records {len(chapters)} reader-review rows with {reader_reviewed} `reviewed`, 0 `spot_checked`, 0 `not_started`, {reader_overlay_active} active-overlay chapters, {reader_no_action} no-immediate-action decisions, {reader_companion} companion-note candidates, {reader_curated} curated-manuscript candidates, and release blockers on every row until future final reader-manuscript packaging explicitly clears chapter-level release blockers.",
+        f"The synced chapter review matrix records {len(chapters)} reader-review rows with {reader_reviewed} `reviewed`, 0 `spot_checked`, 0 `not_started`, {reader_overlay_active} active-overlay chapters, {reader_no_action} no-immediate-action decisions, {reader_companion} companion-note candidates, {reader_curated} curated-manuscript candidates, and release blockers on every row until future final reader-manuscript packaging, format review, and an edition release record explicitly clear chapter-level release blockers.",
         "`docs/reader_artifact_inspection_manifest.md` records a tracked local HTML/EPUB/DOCX structural-inspection summary for ignored snapshots",
         "`docs/reader_html_artifact_browser_review.md` records a full local browser review of generated reader HTML with 118 of 118 page-view pairs passing and an exact ignored-snapshot directory digest",
         "`docs/reader_epub_probe_manifest.md` records the current 9,078,787-byte EPUB metadata/source-spine probe, `en-US` language metadata, sampled source-card entries, and remaining e-reader application blocker",
@@ -439,7 +444,7 @@ def main() -> None:
         "`docs/reader_format_review_matrix.md` records the HTML row as release-approved against `release_records/2026-06-29-v1-reader-html-855dc277.json` while EPUB, DOCX, and PDF retain format-specific review blockers.",
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`",
         f"The current v1.0 reader-overlay set carries {reader_overlay_operation_count} active operations across {len(reader_overlay_operation_chapters)} chapters for Human view and generated reader editions only.",
-        f"The curated reader-manuscript manifest exists with `{reader_manifest.get('status')}` status and {len(curated_records)} curated chapter records ({curated_status_summary}); its reader handoff contract records the book thesis, part arcs, signature ideas, ten draft key-figure assets with text-equivalent chapter anchors and curated reader-manuscript placements, Corben voice-pass slots, and chapter stakes/payoffs without release approval; retired standalone reader drafts are archived as history, and the active manifest remains a subordinate narrative derivative whose reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
+        f"The curated reader-manuscript manifest exists with `{reader_manifest.get('status')}` status and {len(curated_records)} curated chapter records ({curated_status_summary}); its reader handoff contract records the book thesis, part arcs, signature ideas, ten draft key-figure assets with text-equivalent chapter anchors and curated reader-manuscript placements, Corben voice-pass slots, and chapter stakes/payoffs without release approval; retired standalone reader drafts are archived as history, and the active manifest remains a subordinate narrative derivative whose reconciliation report keeps release blockers active until format review and an edition release record exist.",
         "`editions/reader_overlays/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`",

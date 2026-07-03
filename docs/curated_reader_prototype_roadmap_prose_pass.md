@@ -4,6 +4,7 @@ Date: 2026-06-30
 
 Follow-up: 2026-07-02
 Evidence-boundary alignment: 2026-07-03
+Reconciliation follow-up: 2026-07-03
 
 Chapter: `prototype-roadmap`
 
@@ -25,6 +26,9 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added final Part IV continuity from Project Theseus into phase-gated build
+  sequencing, and from the prototype roadmap into the living-book methodology
+  as the manuscript's own dependency discipline.
 - Reworked the generated reader baseline into chapter-level prose with a
   stronger opening and clearer sequence.
 - Centered the chapter on the difference between roadmap ambition and roadmap
@@ -61,6 +65,9 @@ The reader throughline is:
 - BeastBrain, BugBrain, MoECOT, Project Theseus, Circle, and connector/recovery
   sources remain lineage, implementation-reference, or source-note context
   inside their stated boundaries.
+- The follow-up preserves the final Part IV arc: implementation-reference
+  pressure becomes dependency order, and dependency order becomes publication
+  method without changing any claim, proof, test, source, or release boundary.
 
 ## Non-Claims
 
@@ -79,5 +86,7 @@ The reader throughline is:
 - A full phase acceptance audit over real phase packets remains unrun.
 - Any future support-state movement requires actual phase packets, commands,
   artifacts, acceptance reviews, and evidence-transition records.
-- Human editorial review of the curated reader manuscript has not approved this
-  chapter for release.
+- Status: reconciled for prose meaning on 2026-07-03.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.

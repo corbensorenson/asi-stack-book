@@ -1280,7 +1280,7 @@
       "chapter_id": "integrated-reference-architecture",
       "title": "Integrated Reference Architecture",
       "file": "editions/reader_manuscript/v1_0/chapters/integrated-reference-architecture.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/integrated-reference-architecture.qmd",
       "live_source_ref": "chapters/integrated-reference-architecture.qmd@e323268f5",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#integrated-reference-architecture.core",
@@ -1299,14 +1299,15 @@
       "voice_pass_slot_ids": [
         "implementation-history"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around the integrated stack as a trace kernel: parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, downstream rejection, and blocked paths that remain as visible as happy paths. The 2026-07-03 alignment surfaces the existing local Resource flagship reference-trace replay as bounded record-shape/local-replay evidence: one validator command, output digest, tracked artifact bundle, eight layer handoffs, blocked-path stop conditions, record_shape_only support effect, no evidence transition, and no deployed integrated-runtime claim.",
+      "divergence_summary": "Second curated reader reconciliation carries the Part IV governance arc from artifact stewardship into the integrated trace contract: durable project memory becomes a stack-wide obligation to preserve parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, and explicit non-claims through one inspectable run; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; external comparators and local project references remain orientation and implementation-reference context, not integrated-runtime evidence",
         "proof/test status preserved while surfacing the local command replay without adding deployed end-to-end runtime trace, live artifact-continuity, deployed authority-stop, benchmark, current-Theseus, compiler-proof, operator-board, deployment-readiness, model-quality, or stack-safety results",
         "implementation horizon preserved without implying current trace-kernel deployment beyond bounded local replay",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV synthesis/implementation reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, release blockers, and final-book continuity."
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1315,7 +1316,10 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass updated in docs/curated_reader_integrated_reference_prose_pass.md with the local reference-trace replay boundary; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects artifact stewardship to integrated trace accountability and integrated trace requirements to the Project Theseus implementation-reference boundary while preserving the argument support state, local Resource replay limits, Theseus non-currentness limits, implementation horizons, and release blockers. Prose-pass details recorded in docs/curated_reader_integrated_reference_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter.",
+      "review_refs": [
+        "docs/curated_reader_integrated_reference_prose_pass.md"
+      ]
     },
     {
       "chapter_id": "labor-os-and-typed-jobs",
@@ -1364,7 +1368,7 @@
       "chapter_id": "living-book-methodology",
       "title": "Living Book Methodology",
       "file": "editions/reader_manuscript/v1_0/chapters/living-book-methodology.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/living-book-methodology.qmd",
       "live_source_ref": "chapters/living-book-methodology.qmd@af85e47e6",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#living-book-methodology.core",
@@ -1383,7 +1387,7 @@
       "voice_pass_slot_ids": [
         "reader-close"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the methodology around the book as a governed research instrument: stable IDs, source notes, claim states, proof/test hooks, release records, reader projections, change packets, and publication-laundering controls are made readable while preserving the argument-level chapter core claim. The 2026-07-03 alignment surfaces the living-book change-packet harness as bounded publication-governance fixture evidence only: three valid fixture packets, six expected-invalid controls, no release approval, and no support-state promotion.",
+      "divergence_summary": "Second curated reader reconciliation applies the prototype roadmap rule to the book itself: the manuscript can change only through manifest order, source queues, claim states, proof/test hooks, validation commands, reader projections, changelog entries, release records, and visible non-claims; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support for the chapter core claim",
@@ -1391,7 +1395,8 @@
         "source boundary preserved; Benchmaxxing, VIEA, Cognitive Loop Closure, BugBrain, MoECOT, MoECOT Markdown, and Road To AGI remain methodology, lineage, implementation-reference, variant, or source-reported context inside their stated limits",
         "proof/test status preserved while surfacing the change-packet harness without adding manuscript-quality, source-interpretation-quality, rendered-site-availability, external-review, reader-release, audio-production, ASI-capability, or support-state results",
         "implementation horizon preserved without implying an autonomous living-book research OS has been implemented",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV synthesis/implementation reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, release blockers, and final-book continuity."
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1400,7 +1405,10 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass updated in docs/curated_reader_living_book_methodology_prose_pass.md with the change-packet harness boundary; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects prototype dependency order to living-book change discipline and then to the open research agenda as the control surface for future additions while preserving publication-governance fixture limits, reader-release blockers, source/claim/proof/test boundaries, and the argument-level core claim. Prose-pass details recorded in docs/curated_reader_living_book_methodology_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter.",
+      "review_refs": [
+        "docs/curated_reader_living_book_methodology_prose_pass.md"
+      ]
     },
     {
       "chapter_id": "mathematical-and-search-substrates",
@@ -1448,7 +1456,7 @@
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "title": "Open Research Agenda and Bibliography Plan",
       "file": "editions/reader_manuscript/v1_0/chapters/open-research-agenda-and-bibliography-plan.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd",
       "live_source_ref": "chapters/open-research-agenda-and-bibliography-plan.qmd@04b32c959",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#open-research-agenda-and-bibliography-plan.core",
@@ -1467,14 +1475,15 @@
       "voice_pass_slot_ids": [
         "reader-close"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the final chapter as the book's research-intake contract: source states, Appendix G/H ownership boundaries, backlog records, new-paper triage, proof/test lanes, no-promotion blockers, and release traces are made readable while preserving the argument-level chapter core claim. The 2026-07-03 alignment surfaces the bounded implemented intake slice: one research-backlog fixture, one new-paper triage fixture with four synthetic cases, two finite Lean gates with negative-case theorems, and no live-paper, citation-normalization, chapter-insertion, source-interpretation, or support-state promotion claim.",
+      "divergence_summary": "Second curated reader reconciliation closes the book by treating incompleteness as routed research work: future sources, citation checks, proof targets, test lanes, artifact imports, external grounding, chapter-boundary decisions, and no-promotion blockers stay visible instead of becoming a vague final gesture; no citation completeness, support-state movement, source boundary change, proof/test status change, implementation horizon change, or release approval is implied.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support for the chapter core claim",
         "source boundary preserved; all assigned sources remain research-agenda, backlog, implementation-reference, proof-contract, connector/recovery, or external-literature context inside their stated limits",
         "proof/test status preserved while surfacing the backlog/triage fixture and Lean-gate boundary without adding citation-accuracy, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, source-interpretation-quality, public-release-permission, external-review, chapter-insertion, or support-state results",
         "implementation horizon preserved without implying the mature active research graph has been implemented",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV synthesis/implementation reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, release blockers, and final-book continuity."
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1483,7 +1492,10 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass updated in docs/curated_reader_open_research_agenda_prose_pass.md with the backlog/triage fixture and Lean-gate boundary; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects living-book methodology to routed research debt and sharpens the final distinction between argued, mechanized, locally tested, externally grounded, and still-open work while preserving source-state, Appendix G/H, citation-normalization, live-intake, benchmark-reproduction, external-review, and release-artifact boundaries. Prose-pass details recorded in docs/curated_reader_open_research_agenda_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter.",
+      "review_refs": [
+        "docs/curated_reader_open_research_agenda_prose_pass.md"
+      ]
     },
     {
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
@@ -1615,7 +1627,7 @@
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "title": "Project Theseus as Report-First Implementation Reference",
       "file": "editions/reader_manuscript/v1_0/chapters/project-theseus-as-report-first-implementation-reference.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/project-theseus-as-report-first-implementation-reference.qmd",
       "live_source_ref": "chapters/project-theseus-as-report-first-implementation-reference.qmd@9ea087fd0",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#project-theseus-as-report-first-implementation-reference.core",
@@ -1634,7 +1646,7 @@
       "voice_pass_slot_ids": [
         "implementation-history"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around Project Theseus as a report-first implementation-reference lab: reports are evidence objects, dashboards are surfaces, static architecture-gate import remains narrow, missing artifacts block stronger claims, and no clean replay or support-state promotion is implied. The 2026-07-03 alignment surfaces the existing Theseus report-bundle audit as bounded public-safe audit evidence: one valid fixture, seven expected-invalid controls, eight crosswalk rows, six visible artifact gaps, support-state effect none, and no clean live Theseus replay.",
+      "divergence_summary": "Second curated reader reconciliation positions Project Theseus after the integrated trace: Theseus is a report-first implementation reference that pressures the book toward records, commands, permissions, replay boundaries, missing artifacts, and non-claims without becoming proof of a complete ASI Stack or a clean live Theseus replay; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
@@ -1642,7 +1654,8 @@
         "static architecture-gate import preserved as public-safe digest-verified implementation-reference evidence only, without clean live replay, benchmark reproduction, dashboard verification, private workload publication, or support-state movement",
         "proof/test status preserved while surfacing the report-bundle audit without adding clean live report-bundle import, public task-bundle run, current work-board state, benchmark-environment, model-quality, deployment-readiness, training-authorization, or ASI-capability results",
         "implementation horizon preserved without implying current public-safe report lab deployment",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV synthesis/implementation reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, release blockers, and final-book continuity."
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1651,13 +1664,16 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass updated in docs/curated_reader_project_theseus_prose_pass.md with the report-bundle audit boundary; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects the integrated reference trace to Theseus as a report-first implementation reference, then hands off to the prototype roadmap as dependency order. It preserves source-note, imported-report, replay-readiness, missing-artifact, public/non-public, currentness, dashboard, benchmark, runtime, model-quality, deployment, and support-state boundaries; not release-reviewed and not equal authority to the live AI/research chapter.",
+      "review_refs": [
+        "docs/curated_reader_project_theseus_prose_pass.md"
+      ]
     },
     {
       "chapter_id": "prototype-roadmap",
       "title": "Prototype Roadmap",
       "file": "editions/reader_manuscript/v1_0/chapters/prototype-roadmap.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/prototype-roadmap.qmd",
       "live_source_ref": "chapters/prototype-roadmap.qmd@947b3eb7d",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#prototype-roadmap.core",
@@ -1676,14 +1692,15 @@
       "voice_pass_slot_ids": [
         "implementation-history"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the roadmap around phase-gated build order: source and claim hygiene before artifact graphs, contracts, execution, routing, benchmarks, replacement, bounded self-improvement, and a phase-gate example that separates useful demos from accepted phases. The 2026-07-03 alignment surfaces `prototype_phase_gates_2026_07_02_local` as bounded fixture evidence only: two valid fixtures, six expected-invalid controls, integrate/research-only/reject routes, support-state effect none, and no phase-completion or support-promotion claim.",
+      "divergence_summary": "Second curated reader reconciliation makes the prototype roadmap the sequence discipline after Project Theseus: implementation pressure can unlock later work only after source, claim, artifact, schema, validation, authority, replay, residual, rollback, and non-claim records exist; no phase completion, support promotion, claim meaning change, source boundary change, proof/test status change, implementation horizon change, or release approval is implied.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; BeastBrain, BugBrain, MoECOT, Project Theseus, Circle, and connector/recovery sources remain lineage, implementation-reference, or source-note context inside their stated limits",
         "proof/test status preserved while surfacing the phase-gate harness without adding real phase acceptance, full dependency-gate audit, phase execution, benchmark, model-quality, deployment-readiness, roadmap-controller, self-improvement-readiness, or support-state results",
         "implementation horizon preserved without implying a deployed phase-gated build controller",
-        "release blocker status preserved until an edition release record clears it"
+        "release blocker status preserved until an edition release record clears it",
+        "2026-07-03 Part IV synthesis/implementation reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, release blockers, and final-book continuity."
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -1692,7 +1709,10 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass and phase-gate evidence-boundary follow-up recorded in docs/curated_reader_prototype_roadmap_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects Project Theseus to phase-gated build sequencing and the roadmap to living-book methodology while keeping the roadmap as dependency discipline, not a schedule, completed phase, deployment claim, self-improvement readiness claim, benchmark result, or support-state movement. Prose-pass details recorded in docs/curated_reader_prototype_roadmap_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter.",
+      "review_refs": [
+        "docs/curated_reader_prototype_roadmap_prose_pass.md"
+      ]
     },
     {
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",

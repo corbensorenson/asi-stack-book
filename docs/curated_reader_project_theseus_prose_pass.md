@@ -2,6 +2,8 @@
 
 Date: 2026-07-03
 
+Follow-up: 2026-07-03
+
 Chapter:
 `project-theseus-as-report-first-implementation-reference`
 
@@ -22,6 +24,9 @@ is:
 
 ## Curation Scope
 
+- Added final Part IV continuity from the integrated reference trace into the
+  Theseus report-first boundary, and from the Theseus evidence appetite into
+  the prototype roadmap's dependency order.
 - Reworked the generated reader baseline into chapter-level prose with a clear
   opening, fewer ledger-like repetitions, and stronger transitions.
 - Centered the chapter on the report-first implementation-reference boundary.
@@ -52,6 +57,9 @@ is:
   the prose does not claim that Project Theseus has produced or reproduced
   model cards, datasheets, FactSheets, or external reproducibility artifacts in
   this repository.
+- The follow-up preserves the Part IV arc: integrated architecture defines the
+  trace, Theseus shows report-first implementation-reference pressure, and the
+  prototype roadmap sequences later work without changing any evidence state.
 
 ## Non-Claims
 
@@ -70,5 +78,7 @@ is:
   needed before any stronger evidence transition can be considered.
 - A current public task bundle, clean live report-bundle import, benchmark
   environment notes, publication permissions, and external review remain absent.
-- Human editorial review of the curated reader manuscript has not approved this
-  chapter for release.
+- Status: reconciled for prose meaning on 2026-07-03.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.

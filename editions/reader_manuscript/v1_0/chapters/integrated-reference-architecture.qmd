@@ -12,6 +12,12 @@ implementation horizons, and release blockers.
 
 After the layers have all been named, the machine has to come back together.
 
+The previous chapter made stewardship responsible for durable project memory:
+who changed what, why the change was allowed, what evidence supported it, and
+which residuals remained owned. The integrated reference architecture asks the
+next question. If all of those records exist, can the whole stack carry them
+through one run without losing the thread?
+
 Intent, governance, planning, memory, routing, verification, execution,
 evidence, benchmarks, policy updates, stewardship, and self-improvement cannot
 remain a set of impressive diagrams. They have to compose into one inspectable
@@ -445,8 +451,11 @@ instantiated this reference architecture.
 
 ## Handoff
 
-The integrated trace defines what a complete stack must preserve. The next
-chapter narrows that target into a bounded implementation reference.
+The integrated trace defines what a complete stack must preserve. It turns the
+book's architecture into a testable question: when pressure enters the system,
+what records would let a reviewer reconstruct the authority, route, artifact,
+evidence, residual, and stop condition afterward? The next chapter narrows
+that target into a bounded implementation reference.
 
 Project Theseus as Report-First Implementation Reference shows where parts of
 the trace can become concrete: pressure loops, residuals, plan contracts,

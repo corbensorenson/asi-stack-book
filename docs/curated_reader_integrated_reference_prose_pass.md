@@ -37,6 +37,10 @@ permission to change proof or test status.
 
 ## What Changed
 
+- 2026-07-03 follow-up: added final Part IV synthesis continuity from
+  artifact stewardship into the integrated trace contract, and sharpened the
+  handoff from architecture-wide trace requirements into the Project Theseus
+  implementation-reference boundary.
 - Reframed the chapter around the trace kernel and the requirement that
   blocked paths be as visible as happy paths.
 - Reorganized the mechanism around Reference Trace Records, parentage,
@@ -71,6 +75,7 @@ permission to change proof or test status.
 | Proof/test status preserved | Pass. The curated draft now names the local command replay while keeping the boundary that fixture validation, finite Lean predicates, and local replay do not prove an integrated runtime, artifact continuity, deployed authority enforcement, benchmark success, model quality, deployment readiness, or stack safety. |
 | Implementation horizon preserved | Pass. The minimum viable implementation now includes the reference flow diagram, schema fixture, finite Lean predicates, and one local command replay; the mature endpoint remains an unimplemented trace kernel for the whole ASI Stack. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
+| Part arc preserved | Pass. The follow-up connects Part IV stewardship to integrated trace accountability and then to Project Theseus without changing claim meaning or implementation status. |
 
 ## Non-Claims
 
@@ -96,7 +101,8 @@ permission to change proof or test status.
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, and exact rendered reader
-artifacts.
+Status: reconciled for prose meaning on 2026-07-03.
+
+Chapter-level prose meaning is reconciled for this pass, but reader release,
+format artifact review, and final curated-reconciliation approval remain
+blocked.
