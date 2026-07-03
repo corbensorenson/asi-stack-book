@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-02 - Refine Proof Envelope reader flow
+
+- Added five active reader-only semantic overlay operations for `Executable
+  Specifications and Lean Proof Envelope`, replacing generated reader and live
+  Human-view `Problem`, `Mechanism`, `Invariants`, `Failure modes`, and
+  `Summary` sections with lower-density prose that explains formal claim
+  narrowing, artifact-lane separation, stale-artifact risk, proof laundering,
+  and no-promotion boundaries while leaving the canonical AI/research chapter
+  unchanged.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, and the reader chapter review matrix. The
+  reader-continuity audit now records 44 reader chapters, 115,083 reader words,
+  61 active/applied overlay operations, 0 generated-reader chapter table rows,
+  53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160
+  words, and 0 high-priority plus 6 medium-priority heuristic review rows. The
+  proof-envelope chapter moved from medium-priority to low-priority in the
+  generated heuristic queue.
+- This is a reader projection and Human-view craft increment only; it is not a
+  semantic proof adequacy result, proof result, theorem-quality result,
+  source-interpretation result, external-theorem validation, deployment result,
+  model-quality result, benchmark result, evidence transition, support-state
+  promotion, reader release, ebook/document/PDF/audio artifact, or artifact
+  approval.
+
 ## 2026-07-02 - Refine Living Book Methodology reader prose
 
 - Added three active reader-only semantic overlay operations for `Living Book

@@ -248,7 +248,16 @@ html[data-asi-reading-mode="human"] .asi-reader-overlay-only {
 }
 
 html[data-asi-reading-mode="human"] .asi-reader-overlay-original {
-  display: none !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
 }
 
 html[data-asi-reading-mode="human"] .asi-support-boundary-human--claim {

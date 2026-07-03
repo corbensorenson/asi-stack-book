@@ -262,6 +262,20 @@
       .filter(Boolean);
     blocks.forEach((block) => {
       const lines = block.split(/\n/).map((line) => line.trim());
+      if (
+        lines.length >= 3 &&
+        /^```\s*\{?mermaid\}?\s*$/i.test(lines[0]) &&
+        /^```\s*$/.test(lines[lines.length - 1])
+      ) {
+        const display = document.createElement("div");
+        display.className = "cell-output-display";
+        const diagram = document.createElement("pre");
+        diagram.className = "mermaid mermaid-js";
+        diagram.textContent = lines.slice(1, -1).join("\n");
+        display.append(diagram);
+        wrapper.append(display);
+        return;
+      }
       if (lines.length && lines.every((line) => line.startsWith("- "))) {
         const list = document.createElement("ul");
         lines.forEach((line) => {

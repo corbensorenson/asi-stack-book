@@ -41,6 +41,60 @@
       ]
     },
     {
+      "id": "v1_0.proof_envelope.problem_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Problem"
+      },
+      "rationale": "Replace the reader Problem section with lower-density prose that preserves proof-lane discipline and the no-grand-proof boundary.",
+      "content_lines": [
+        "Many sentences in the ASI Stack sound as if they should be checkable: a request must not cross an authority boundary, a support state must not rise without evidence, a capability replacement must keep its rollback path, and a context mount must not silently carry taint into a clean zone.",
+        "",
+        "Those are not all the same kind of sentence. Some can become small machine-checked predicates. Some are better handled as data-shape contracts or process checks. Some are still research questions. The problem is deciding which is which before persuasive language outruns the artifact.",
+        "",
+        "The goal is not to prove the whole architecture in one sweep. The goal is to make formal confidence narrow, inspectable, and honest. A small check is valuable when the book knows exactly what it checked and refuses to borrow certainty for everything around it."
+      ]
+    },
+    {
+      "id": "v1_0.proof_envelope.mechanism_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism"
+      },
+      "rationale": "Replace the generated-reader mechanism section with prose that explains the lowering path and consumer boundary without dense proof-target inventory language.",
+      "content_lines": [
+        "The mechanism is a narrowing pass. A broad architectural sentence is rewritten as a small question: what exactly would have to be true for this sentence to earn more authority than ordinary argument?",
+        "",
+        "If the answer is operational, the claim is routed to the lane that fits it. A finite invariant may go to Lean. A shape requirement may become a data contract. A workflow requirement may become a process check. A measured claim may need an experiment with a baseline and residuals. If no narrow question can be stated yet, the claim stays prose.",
+        "",
+        "```{mermaid}",
+        "flowchart LR",
+        "A[\"Broad architectural sentence\"] --> B[\"Narrow question\"]",
+        "B --> C{\"Can it be checked honestly?\"}",
+        "C -- \"finite invariant\" --> D[\"Formal lane\"]",
+        "C -- \"shape or process\" --> E[\"Executable lane\"]",
+        "C -- \"measurement\" --> F[\"Experiment lane\"]",
+        "C -- \"not yet\" --> G[\"Research residual\"]",
+        "D --> H[\"Bounded authority\"]",
+        "E --> H",
+        "F --> H",
+        "G --> I[\"No promotion\"]",
+        "```",
+        "",
+        "**What this mechanism protects:** a successful check may strengthen only the sentence it actually covers. It does not automatically validate source interpretation, deployed behavior, model quality, or the surrounding theory.",
+        "",
+        "This narrowing pass also gives future agents a practical routine. Before adding stronger language, identify the claim, state the small question, name the artifact lane, run the relevant command, and write down the claims that still remain outside the result.",
+        "",
+        "The same routine applies when the result is negative. If the small question cannot be stated, that failure is useful information. It says the idea is still too broad, too ambiguous, or too dependent on future implementation detail. The honest action is to keep the surrounding prose at argument strength, name the missing bridge, and avoid pretending that formal style has created formal authority.",
+        "",
+        "The narrowing pass also protects good work from being ignored. A small check can matter even when it does not settle the whole theory. It can block a false promotion, keep an authority ceiling intact, catch a stale mapping, or force a future implementation to carry the right limitation. Small boundaries are not decorative; they are the way a large system stays governable while its evidence base grows. That discipline compounds."
+      ]
+    },
+    {
       "id": "v1_0.proof_envelope.interfaces_reader_replace",
       "status": "active",
       "action": "replace_section",
@@ -60,6 +114,40 @@
       ]
     },
     {
+      "id": "v1_0.proof_envelope.invariants_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Invariants"
+      },
+      "rationale": "Replace the list-heavy reader invariants section with smoother prose while preserving artifact-lane separation and no-theater boundaries.",
+      "content_lines": [
+        "The governing invariant is simple: stronger language needs a matching artifact, and the artifact's authority must not exceed the thing it actually checked.",
+        "",
+        "A theorem build, a data-shape pass, a workflow check, an experiment, a site render, and a review note are different kinds of evidence. They can sit beside one another, but they cannot trade identities in secret. The book may say a narrow predicate passed only when the named command passed. It may not turn that result into model quality, deployment safety, or source-truth language.",
+        "",
+        "The second invariant is continuity. Tags, limitation prose, generated surfaces, and consuming chapters need to keep pointing at the same bounded claim. If the prose moves and the check no longer governs it, the formal artifact becomes stale until the boundary is repaired."
+      ]
+    },
+    {
+      "id": "v1_0.proof_envelope.failure_modes_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Failure modes"
+      },
+      "rationale": "Replace the terse reader failure-mode inventory with book-facing prose that preserves proof laundering, orphaned formality, and semantic mismatch warnings.",
+      "content_lines": [
+        "The most tempting failure is proof laundering: using a valid narrow result to sell a broader claim whose meaning was never checked. A finite predicate can be correct and still miss the architecture boundary the prose is leaning on.",
+        "",
+        "The opposite failure is orphaned formality. A target can keep building after its surrounding prose has changed, leaving a polished artifact that no longer governs the sentence readers are asked to trust.",
+        "",
+        "The envelope treats both cases as downgrade events. If the claim is too broad, narrow it. If the artifact no longer matches the prose, repair the mapping. If the source is external, keep ownership and transfer limits explicit. The point is not to avoid formal work; it is to stop formal work from becoming decorative certainty."
+      ]
+    },
+    {
       "id": "v1_0.proof_envelope.minimum_viable_reader_replace",
       "status": "active",
       "action": "replace_section",
@@ -76,6 +164,23 @@
         "The current build also keeps projection-style proofs visible. Some theorems decompose a record or case split; others mostly expose a field that was already assumed. Both can be legitimate maintenance hooks, but they should not be described with the same persuasive force. The proof-depth classifier makes that distinction visible without claiming semantic adequacy.",
         "",
         "The next useful slice is a receipt set for the proof/spec lanes: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one behavior-test receipt, one benchmark receipt, one rejected external-theorem-as-local-proof case, and one semantic-adequacy residual that prevents prose promotion. Until those receipts and reviews exist, the implementation remains a narrow anti-laundering surface."
+      ]
+    },
+    {
+      "id": "v1_0.proof_envelope.summary_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Summary"
+      },
+      "rationale": "Replace the generated-reader summary with a lower-density close that preserves lane separation and no-overclaim boundaries.",
+      "content_lines": [
+        "The proof envelope gives the book a disciplined way to use formality without theatrical certainty. It asks every formal-sounding claim to shrink until it becomes a question that can be checked honestly.",
+        "",
+        "When the check exists, the book may say so. When the check is narrow, the language must stay narrow. When the intended meaning is still larger than the artifact, the claim remains an argument or a research residual.",
+        "",
+        "That restraint is the value. It lets the ASI Stack accumulate small verified boundaries while refusing to pretend that a green build, a clean data file, or a successful measurement proves the whole architecture. The result is slower language, but stronger trust."
       ]
     }
   ]
