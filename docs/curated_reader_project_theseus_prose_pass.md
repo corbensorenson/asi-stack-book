@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Project Theseus
 
-Date: 2026-06-30
+Date: 2026-07-03
 
 Chapter:
 `project-theseus-as-report-first-implementation-reference`
@@ -38,6 +38,10 @@ is:
   mappings, evidence levels, or implementation horizons.
 - The static Project Theseus architecture-gate import is described only as a
   public-safe, digest-verified, no-promotion implementation-reference fixture.
+- The public-safe report-bundle audit is described as an audit fixture with one
+  valid bundle shape, seven expected-invalid controls, eight crosswalk rows,
+  six visible artifact gaps, and no support-state effect, not as a clean live
+  Theseus replay or imported private report bundle.
 - The prose does not claim a clean live Theseus replay, current dashboard
   inspection, reproduced benchmark, model-quality result, deployment readiness,
   training authorization, self-evolution safety, public-compute readiness, or
@@ -64,8 +68,7 @@ is:
 
 - A clean Project Theseus replay or archived public release fixture is still
   needed before any stronger evidence transition can be considered.
-- A public-safe miniature report bundle with a goal contract, plan/compiler
-  artifact, work-board item, gate record, residual, non-claim, missing artifact,
-  replay boundary, and review note remains planned.
+- A current public task bundle, clean live report-bundle import, benchmark
+  environment notes, publication permissions, and external review remain absent.
 - Human editorial review of the curated reader manuscript has not approved this
   chapter for release.

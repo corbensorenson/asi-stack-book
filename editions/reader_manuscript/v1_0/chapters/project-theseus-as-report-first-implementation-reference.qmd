@@ -280,14 +280,20 @@ boundary, and non-claims. It should include at least one blocked or missing row
 so the system demonstrates refusal, not just acceptance.
 
 The repository already has the first narrow pieces: a crosswalk-style fixture,
-static architecture-gate and generation-mode import validators, and a support
-replay probe over those validators. The next honest step is not a larger claim.
-It is a miniature public-safe report bundle containing one goal contract, one
-plan/compiler artifact, one work-board item, one gate record, one residual,
-one non-claim, one missing artifact, one replay boundary, and one review note.
+static architecture-gate and generation-mode import validators, a support
+replay probe over those validators, and a public-safe report-bundle audit. The
+audit fixture contains the minimum bundle shape: one goal contract, one
+compiler artifact, one work-board item, one gate record, one residual record,
+one non-claim, one review note, and one publication boundary. It also keeps
+two replay-ready repository rows, one blocked live task-bundle row, eight
+crosswalk rows, five gate mappings, six visible artifact gaps, and six
+self-evolution intervention-ladder levels in view.
 
-That would let the book show report-first discipline without exposing private
-workloads or implying broad capability evidence.
+That lets the book show report-first discipline without exposing private
+workloads or implying broad capability evidence. The next honest step is a
+clean current Theseus replay, archived public release fixture, or public task
+bundle with environment notes, publication permissions, artifact digests, and
+review boundaries.
 
 ## Beyond The State Of The Art
 
@@ -318,11 +324,12 @@ report-first AI systems: pressure, residuals, plan contracts, gates, ledgers,
 operator work boards, checkpoints, and self-evolution governance.
 
 The public boundary stays strict. The static architecture-gate and
-generation-mode imports show how Theseus reports can be mirrored safely, and
-the support replay probe shows that the ASI-side validators can be rerun
-against tracked artifacts. None of that becomes a clean live replay, benchmark
-result, current dashboard inspection, deployment claim, training authorization,
-or support-state promotion.
+generation-mode imports show how Theseus reports can be mirrored safely, the
+support replay probe shows that the ASI-side validators can be rerun against
+tracked artifacts, and the report-bundle audit shows the minimum public-safe
+bundle shape plus the visible artifact gaps. None of that becomes a clean live
+replay, benchmark result, current dashboard inspection, deployment claim,
+training authorization, or support-state promotion.
 
 That caution is the value of the Project Theseus reference. Theseus shows what
 kind of evidence the stack should want, while the living book records exactly

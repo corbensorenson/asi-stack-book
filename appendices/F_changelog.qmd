@@ -1576,6 +1576,23 @@
   promotion, reader release, ebook/document/PDF/audio artifact, or artifact
   approval.
 
+## 2026-07-03 - Align Project Theseus reader audit boundary
+
+- Updated the Project Theseus curated reader chapter, prose-pass record,
+  reader-manuscript manifest, reconciliation report, and reader-review matrix
+  so the human-reader path now explicitly names the existing Theseus
+  report-bundle audit as bounded public-safe audit evidence: one valid fixture,
+  seven expected-invalid controls, eight crosswalk rows, six visible artifact
+  gaps, support-state effect `none`, chapter-core support effect `none`, and
+  no evidence transition.
+- This is a reader evidence-boundary alignment only. It is not a clean live
+  Theseus replay, imported private report bundle, public task-bundle run,
+  current work-board import, benchmark-environment record, publication
+  permission, external review, deployed Theseus runtime result, benchmark
+  result, model-quality result, generation-speed result, support-state
+  promotion, reader release, ebook/document/PDF/audio artifact, or artifact
+  approval.
+
 ## 2026-07-02 - Add RankFold public-safe replay probe
 
 - Added `python3 scripts/run_rankfold_public_safe_probe.py`,
