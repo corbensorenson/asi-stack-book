@@ -280,7 +280,7 @@ execution compass, not a claim surface; nothing here promotes a support state.
 | External grounding | A− | 44/44 positioned with genuine depth everywhere: each load-bearing chapter names its comparators in prose and its `ext_` records carry source notes; no chapter reads as self-coined nomenclature. | Continue the per-chapter grounding lane through the burn-down; when a chapter's comparator set is thin, mine its linked Corben papers' bibliographies first, then add vetted third-party records through the inventory and Appendix H. |
 | Writing / craft (live edition) | A− | Every part carries at least one showpiece-caliber section; the largest chapters carry their evidence without sprawl; zero template residue or merge seams anywhere. | Execute the chapter-length watchlist (move bulky tables, validator minutiae, and repeated caveats to companion/live-only surfaces where evidence boundaries allow). Extend the showpiece-trace standard to one anchor section per part. |
 | Human reader edition | B+ | Every one of the 44 reader chapters reads at the level of the current best ones; thesis, part arcs, and signature ideas are realized in the prose itself (not only in the handoff manifest); figures are polished per format; the edition is built, format-validated, and release-recorded. **This is the largest single gap and the first priority.** | Convert chapter-level reconciliation progress into release-quality reader artifacts: all 44 curated reader records are now reconciled for prose meaning, but release approval, format review, edition release records, figure artifact review, and book-level final polish remain open. Keep the reader-continuity queue at 0 high-priority and 0 medium-priority rows through reviewed decisions or artifact-backed edits, and keep the 68 active overlay operations synchronized across live Human view and generated reader editions. Realize the thesis and part arcs in actual openings, endings, and transitions. Then build HTML/EPUB/DOCX (PDF where local dependencies allow), run the format validators and application-level checks the format-review matrix already defines, and produce an edition release record. "Drafting" must become reviewed release artifacts or stay visibly blocked. |
-| Ideas / synthesis | B+ | The 8-12 signature ideas are honed to quotable, load-bearing form and recur across both editions; the defended contribution tracks each have one deep, well-grounded, evidence-linked treatment. | Hone the signature-idea wording in reader prose, chapter endings, and figures. Deepen the defended contribution tracks one at a time alongside their evidence lanes. |
+| Ideas / synthesis | B+ | Every signature idea meets the four-part criterion (crisp statement, audited prior-art delta, one non-obvious consequence, strongest objection answered in place); the missing keystone concepts exist in the corpus; the governance pattern is named once as the core contribution; a contribution ledger audits novelty claims like evidence claims. | Execute the **Idea Depth Program** section: work the signature-idea upgrade queue (verification-bandwidth capacity model first), add the keystone concepts through the normal manifest process (receipt faithfulness, epistemic trusted computing base, human oversight degradation as chapters; interpretability rung, partition governance, amendment legitimacy as sections), and maintain `docs/contribution_novelty_ledger.md` / `.json` as the novelty-positioning gate. |
 
 Priority order when a run cannot do everything:
 
@@ -494,6 +494,105 @@ Current status for defended contribution focus:
 - `scripts/validate_defended_contribution_tracks.py` enforces the three-to-five
   selected-track gate, the at-most-three deep-work-track cap, the active-cycle
   lane anchors, and the no-chapter-core-promotion boundary.
+
+## Idea Depth Program - Ideas To A-Plus
+
+Added 2026-07-03 from Corben's direct question: why is Ideas graded B+, and
+what raises it. This program complements the Defended Contribution Tracks
+above: the tracks pick *which* contributions get deep evidence; this program
+defines what intellectual depth means for the ideas themselves. It changes
+prose, structure, and argument only — it promotes no support state.
+
+### Why Ideas is B+ (the standing diagnosis)
+
+1. One meta-idea in many costumes: the governance pattern (typed record +
+   lifecycle + authority ceiling + evidence gate + receipt + rollback) is
+   applied across most chapters; the book has roughly eight independent
+   load-bearing insights and ~thirty pattern applications.
+2. Prescriptive, not analytic: chapters produce requirements, rarely
+   consequences (bounds, trade-offs, impossibilities, falsifiable
+   predictions).
+3. The best ideas stay qualitative (verification bandwidth, verification tax,
+   residual honesty have no models or derived limits).
+4. The central objection is unconfronted at idea level: a capable system
+   could satisfy every gate while its receipts fail to correspond to reality.
+   Non-claims acknowledge this; no chapter answers it.
+5. Novelty is asserted by naming, never audited by contrast with closest
+   prior art.
+
+### Signature-idea upgrade queue (ranked)
+
+1. **Verification bandwidth** → an explicit capacity model: verification
+   workload as a function of claim count, interaction density, and context
+   size; derive the "long-context theater" gap (context grows linearly,
+   pairwise verification pressure grows quadratically) as a stated bound with
+   a record-level Lean or fixture backing where honest.
+2. **The governance pattern itself** → name it once, explicitly, as the
+   book's core contribution — a pattern language for governed cognition —
+   then have each chapter state its distinct delta beyond the pattern
+   instance (opener or integrated-reference chapter owns the naming).
+3. **Verification tax / governance economics** → model when governed beats
+   ungoverned: capability differential, task risk, and tax level at which
+   governance pays for itself; argument-level modeling is acceptable and must
+   carry non-claims.
+4. **Residual honesty** → state as a conservation law ("residual burden can
+   be moved, priced, or discharged — never deleted") and prove the
+   record-level version.
+5. **Evidence-state ladder** → formalize soundness of a support-state system
+   and its relation to AGM-style belief revision.
+6. **Stable capability fields** → develop identity-under-replacement as an
+   explicit thesis (the Ship of Theseus, formalized — deliberately, given the
+   project lineage).
+7. **Bounded self-improvement** → state the corrigibility-capability
+   trade-off as a crisp, arguable claim rather than an implicit property of
+   the gates.
+
+The A+ criterion for every signature idea: a crisp statement, an audited
+delta versus closest prior art, at least one non-obvious consequence (bound,
+trade-off, impossibility, or falsifiable prediction), and its strongest
+objection stated and answered in place.
+
+### Missing keystone concepts (ranked, with routing)
+
+1. **Receipt faithfulness / the record-reality gap** — chapter-worthy; the
+   architecture's answer to "can records bind a capable optimizer":
+   attestation, trap fixtures, randomized deep audits, cross-examination
+   between independent components, incentive design — each with limits. This
+   is the book's most important missing argument.
+2. **The epistemic trusted computing base** — chapter-worthy; who verifies
+   the verifier and where recursion bottoms out; unifies security-kernel,
+   tribunal, and evidence-discipline material into a minimal-trusted-core
+   thesis.
+3. **Human oversight degradation** — chapter-worthy; approval fatigue,
+   rubber-stamping, automation bias; treat the human approver as a component
+   with failure modes, grounded in human-factors literature.
+4. **Inter-stack governance** — chapter-worthy if scope allows; contracts,
+   trust establishment, and collusion between independent governed stacks.
+5. **Interpretability as an evidence class** — major section in
+   evidence-states (a white-box rung in the support ladder).
+6. **Governance under partition** — major section in personal-compute-hives
+   (revocation propagation, grant/effect races, authority consistency —
+   CAP-for-authority).
+7. **Constitutional amendment legitimacy** — major section in
+   constitutional-alignment (who may amend, by what process, what makes it
+   legitimate rather than merely gated).
+
+New chapters enter through the normal manifest, outline, source-queue, proof-
+target, and evidence-lane process like every existing chapter; both editions
+receive finished prose per the 2026-07-02 direction. The spine-stability rule
+permits these as named-finding additions; it forbids churn, not growth.
+
+### Contribution ledger
+
+Implemented artifact: `docs/contribution_novelty_ledger.md` and
+`docs/contribution_novelty_ledger.json`, guarded by
+`python3 scripts/validate_contribution_novelty_ledger.py`, now audit novelty
+claims the way the evidence ledger audits empirical claims: for each signature
+idea and coined term — claimed contribution, closest prior art
+(source-noted), the delta, non-obvious consequence, strongest objection,
+confidence, and next artifact. The ledger is linked from the sixty-second
+trust surface. Novelty claims without a ledger row do not belong in reader
+prose.
 
 ## Milestone Plan
 
@@ -3257,7 +3356,7 @@ defect with the same severity as one that overstates it.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode with the Grade-To-A-Plus Map as the priority compass, the Logical Conclusion section as the completion compass, and the A+ Completion Execution Lattice as the anti-diffusion rule: the target is A+ on every graded dimension for both editions of every chapter, the end state is the five Logical Conclusion tests, and per the 2026-07-02 direction nothing waits on Corben — his editing pass comes last, over a finished book. Standing first action of every run, before any new work: reconcile the Milestone 2.5 burn-down against artifacts that already exist, in both directions — any batch whose closure classes all have named artifacts must be marked closed by artifact in that same run, or carry a dated blocker naming the one remaining closure class. First priority: finish the human-reader edition. Treat chapter-level prose reconciliation and legacy voice-pass conversion as artifact-backed, then move to release-quality continuity polish, table-density/long-paragraph cleanup, figure polish, audio/e-reader flow, and exact format review so all 44 reader chapters read at the level of the current best ones; realize the thesis, part arcs, and 8-12 signature ideas in the prose itself (openings, endings, transitions), writing conviction and stakes to finished quality in third person; never invent first-person experience, personal conviction, or authorial lessons. Then build the edition — HTML, EPUB, DOCX, and PDF where local dependencies allow — run the format validators and application-level checks the format-review matrix defines, and produce an edition release record so "drafting" becomes a release state. Second priority: evidence cadence. Strengthen one measured lane per cycle to an accepted narrow non-core transition (load-stability and workload-quality are closest), import the next public-safe Circle or Theseus result CI-verifiable by digest or replay, record demotions, rejections, and no-promotion decisions honestly, and begin recording per-chapter core-claim dispositions (what evidence would move each core claim, per Logical Conclusion Test 3). Third: build one executable-model proof bridge tied to a live evidence lane — a transition-system invariant, trace property, or Lean/Python fixture-equivalence check — instead of chasing theorem count. Fourth: execute the live-edition craft watchlist — move bulky tables, validator minutiae, and repeated caveats to companion or live-only surfaces where evidence boundaries allow, and bring one anchor section per part to showpiece-trace caliber. Close lattice lanes through existing artifacts whenever possible: contribution-track records, source notes, Appendix H, proof adequacy, evidence transitions, reader manifests, format-review matrices, release records, figure reviews, and trust surfaces. Keep the executed 44-chapter spine stable and retired URLs stub-guarded; keep the sixty-second trust surface and non-core evidence ledger accurate; keep the external-review lane parked as user-owned (the dated blocker is the standing record — schedule no outreach and gate nothing on it); do not create new planning/report surfaces unless a validator, release record, or executed change requires them. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
+> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode with the Grade-To-A-Plus Map as the priority compass, the Logical Conclusion section as the completion compass, and the A+ Completion Execution Lattice as the anti-diffusion rule: the target is A+ on every graded dimension for both editions of every chapter, the end state is the five Logical Conclusion tests, and per the 2026-07-02 direction nothing waits on Corben — his editing pass comes last, over a finished book. Standing first action of every run, before any new work: reconcile the Milestone 2.5 burn-down against artifacts that already exist, in both directions — any batch whose closure classes all have named artifacts must be marked closed by artifact in that same run, or carry a dated blocker naming the one remaining closure class. First priority: finish the human-reader edition. Treat chapter-level prose reconciliation and legacy voice-pass conversion as artifact-backed, then move to release-quality continuity polish, table-density/long-paragraph cleanup, figure polish, audio/e-reader flow, and exact format review so all 44 reader chapters read at the level of the current best ones; realize the thesis, part arcs, and 8-12 signature ideas in the prose itself (openings, endings, transitions), writing conviction and stakes to finished quality in third person; never invent first-person experience, personal conviction, or authorial lessons. Then build the edition — HTML, EPUB, DOCX, and PDF where local dependencies allow — run the format validators and application-level checks the format-review matrix defines, and produce an edition release record so "drafting" becomes a release state. Second priority: evidence cadence. Strengthen one measured lane per cycle to an accepted narrow non-core transition (load-stability and workload-quality are closest), import the next public-safe Circle or Theseus result CI-verifiable by digest or replay, record demotions, rejections, and no-promotion decisions honestly, and begin recording per-chapter core-claim dispositions (what evidence would move each core claim, per Logical Conclusion Test 3). Third: build one executable-model proof bridge tied to a live evidence lane — a transition-system invariant, trace property, or Lean/Python fixture-equivalence check — instead of chasing theorem count. Fourth: execute the live-edition craft watchlist — move bulky tables, validator minutiae, and repeated caveats to companion or live-only surfaces where evidence boundaries allow, and bring one anchor section per part to showpiece-trace caliber. Fifth: advance the Idea Depth Program — work the signature-idea upgrade queue starting with the verification-bandwidth capacity model, route the missing keystone concepts (receipt faithfulness, epistemic trusted computing base, human oversight degradation; plus the section-level additions) through the normal manifest/outline/evidence-lane process with finished prose in both editions, and keep the contribution novelty ledger current so novelty claims are audited like evidence claims. Close lattice lanes through existing artifacts whenever possible: contribution-track records, contribution novelty ledger rows, source notes, Appendix H, proof adequacy, evidence transitions, reader manifests, format-review matrices, release records, figure reviews, and trust surfaces. Keep the executed 44-chapter spine stable and retired URLs stub-guarded; keep the sixty-second trust surface and non-core evidence ledger accurate; keep the external-review lane parked as user-owned (the dated blocker is the standing record — schedule no outreach and gate nothing on it); do not create new planning/report surfaces unless a validator, release record, or executed change requires them. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
 
 ## Non-Claims
 

@@ -32,6 +32,7 @@ EXPECTED_NON_CORE = {
 REQUIRED_LINKS = [
     "docs/v1_0_candidate_status.md",
     "docs/non_core_evidence_ledger.md",
+    "docs/contribution_novelty_ledger.md",
     "appendices/C_claim_evidence_matrix.qmd",
     "appendices/G_corben_source_corpus.qmd",
     "appendices/H_external_sources.qmd",
@@ -45,6 +46,7 @@ REQUIRED_NON_CLAIMS = [
     "not a deployed safety system",
     "not a benchmark-proven architecture",
     "not a reviewed reader-release manuscript",
+    "not proof of novelty",
     "no chapter-core promotion",
     "not exhaustive literature synthesis",
 ]

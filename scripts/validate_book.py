@@ -66,6 +66,7 @@ REQUIRED = [
     "scripts/validate_external_review_intake.py",
     "scripts/validate_defended_contribution_tracks.py",
     "scripts/validate_defended_contribution_prior_art.py",
+    "scripts/validate_contribution_novelty_ledger.py",
     "scripts/validate_evidence_laundering_case_studies.py",
     "scripts/validate_core_claim_decisions.py",
     "scripts/validate_core_claim_promotion_paths.py",
@@ -240,6 +241,8 @@ REQUIRED = [
     "docs/chapter_consolidation_full_review_packet.md",
     "docs/defended_contribution_tracks.md",
     "docs/defended_contribution_prior_art_positioning.md",
+    "docs/contribution_novelty_ledger.md",
+    "docs/contribution_novelty_ledger.json",
     "docs/evidence_laundering_prevention_case_studies.md",
     "docs/chapter_external_grounding_status.md",
     "docs/external_sota_positioning_audit.md",
@@ -874,6 +877,7 @@ def main() -> None:
     run_validator("validate_external_review_intake.py")
     run_validator("validate_defended_contribution_tracks.py")
     run_validator("validate_defended_contribution_prior_art.py")
+    run_validator("validate_contribution_novelty_ledger.py")
     run_validator("validate_evidence_laundering_case_studies.py")
     run_validator("validate_core_claim_promotion_paths.py")
     run_validator("validate_v1_x_active_evidence_cycle.py")

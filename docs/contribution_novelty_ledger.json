@@ -1,0 +1,251 @@
+{
+  "schema_version": "0.1",
+  "last_updated": "2026-07-03",
+  "status": "source_noted_positioning",
+  "purpose": "Audit signature-idea and coined-term novelty claims without treating prior-art positioning as proof of novelty or support-state evidence.",
+  "records": [
+    {
+      "idea_id": "verification_bandwidth",
+      "signature_phrase": "Verification bandwidth",
+      "chapter_refs": [
+        "verification-bandwidth-and-context-adequacy",
+        "evidence-states-and-claim-discipline",
+        "executable-specifications-and-lean-proof-envelope"
+      ],
+      "claimed_contribution": "Treat verification capacity as a scarce systems resource that constrains context growth, claim volume, and evidence promotion.",
+      "closest_prior_art_refs": [
+        "ext_lost_in_middle_2023",
+        "ext_longbench_2023",
+        "ext_ruler_2024",
+        "ext_helm_2022",
+        "ext_livebench_2024"
+      ],
+      "audited_delta": "Long-context and benchmark literature measures context use and evaluation pressure; the ASI Stack frames verification capacity as an architectural budget that must be routed, escalated, and recorded before claims can move.",
+      "non_obvious_consequence": "A longer context can increase the burden of checking interactions among claims faster than it increases reliable verification capacity; the book needs an explicit capacity model before stronger language is justified.",
+      "strongest_objection": "A capable verifier may use retrieval, tools, or decomposition well enough that human-visible verification bandwidth is no longer the limiting resource.",
+      "answer_status": "partially_answered_by_argument_and_fixtures",
+      "confidence_state": "promising_not_defended",
+      "needed_next_artifact": "A record-level verification-capacity model with a bounded synthetic fixture, negative controls for unverifiable long-context claims, and a Lean/Python agreement check.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove a verification bandwidth bound",
+        "does not prove long-context model quality",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "idea_id": "governed_cognition_pattern_language",
+      "signature_phrase": "Pattern language for governed cognition",
+      "chapter_refs": [
+        "asi-is-a-stack-not-a-model",
+        "integrated-reference-architecture",
+        "living-book-methodology"
+      ],
+      "claimed_contribution": "Name the repeated record-lifecycle-authority-evidence-receipt-rollback pattern as the book's core architecture language rather than leaving it implicit in many chapters.",
+      "closest_prior_art_refs": [
+        "ext_model_cards_2019",
+        "ext_datasheets_datasets_2021",
+        "ext_factsheets_ai_services_2019",
+        "ext_nist_ai_rmf_1_0_2023",
+        "ext_frontier_ai_regulation_2023"
+      ],
+      "audited_delta": "Reporting and governance frameworks describe documentation and risk-management surfaces; the ASI Stack contribution target is a reusable systems pattern that binds claim movement, authority, artifacts, and rollback inside the architecture itself.",
+      "non_obvious_consequence": "Each chapter should state what it adds beyond the common pattern; otherwise the book becomes many applications of one template rather than a set of independent mechanisms.",
+      "strongest_objection": "The pattern may be a repackaging of ordinary safety engineering, audit logging, and lifecycle governance rather than a new AI architecture idea.",
+      "answer_status": "positioned_but_not_novelty_proven",
+      "confidence_state": "needs_delta_audit",
+      "needed_next_artifact": "A chapter-by-chapter pattern-delta audit that names which chapters own distinct mechanisms and which are only pattern applications.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove novelty",
+        "does not prove governance effectiveness",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "idea_id": "governance_economics",
+      "signature_phrase": "Verification tax and governance economics",
+      "chapter_refs": [
+        "resource-economics-and-token-budgets",
+        "fast-generation-architectures",
+        "readiness-gates-residual-escrow-and-quarantine"
+      ],
+      "claimed_contribution": "Model governance overhead as a cost that can be worth paying when risk, residual burden, and capability differential make ungoverned speed expensive.",
+      "closest_prior_art_refs": [
+        "ext_frugalgpt_2023",
+        "ext_hybrid_llm_2024",
+        "ext_routellm_2024",
+        "ext_sparse_moe_2017",
+        "ext_switch_transformer_2021",
+        "ext_helm_2022"
+      ],
+      "audited_delta": "Cost-aware routing literature usually optimizes model choice or quality/cost tradeoffs; the ASI Stack adds authority cost, verification burden, fallback cost, and residual custody as first-class accounting fields.",
+      "non_obvious_consequence": "A cheaper route is not cheaper when it moves review, repair, or residual work off-ledger; accepted cost claims need hidden-cost and negative-control checks.",
+      "strongest_objection": "Governance cost could dominate so strongly that the architecture becomes impractical outside high-risk tasks.",
+      "answer_status": "partially_answered_by_costed_route_and_load_selector_slices",
+      "confidence_state": "bounded_evidence_exists_non_core",
+      "needed_next_artifact": "A larger public-safe workload with task risk, route quality, hidden-cost accounting, fallback behavior, and reviewer burden measurements.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove economic superiority",
+        "does not prove deployed scheduler behavior",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "idea_id": "residual_honesty",
+      "signature_phrase": "Residual honesty",
+      "chapter_refs": [
+        "compact-generative-systems-and-residual-honesty",
+        "resource-economics-and-token-budgets",
+        "readiness-gates-residual-escrow-and-quarantine"
+      ],
+      "claimed_contribution": "State residual burden as a conservation rule: unresolved risk, repair, review, context, and fallback burden can be moved, priced, discharged, or escrowed, but not deleted by prose or a passing local metric.",
+      "closest_prior_art_refs": [
+        "ext_helm_2022",
+        "ext_goodhart_variants_2018",
+        "ext_benchmark_contamination_2023",
+        "ext_model_evaluation_extreme_risks_2023",
+        "ext_nist_ai_rmf_1_0_2023"
+      ],
+      "audited_delta": "Evaluation and risk-management sources warn about proxy failures and hidden risks; the ASI Stack turns residual burden into a ledgered artifact that can block promotion even when a visible metric improves.",
+      "non_obvious_consequence": "Any evidence transition that improves one metric must name displaced burden or prove it was discharged; missing residual accounting should block promotion.",
+      "strongest_objection": "Some residuals are not observable or quantifiable enough to be conserved in a ledger.",
+      "answer_status": "partially_answered_by_negative_controls",
+      "confidence_state": "promising_not_defended",
+      "needed_next_artifact": "A residual-conservation fixture with accepted, deferred, hidden, and erased residual cases plus a Lean record invariant.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove all residuals are observable",
+        "does not prove safety",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "idea_id": "support_state_ladder",
+      "signature_phrase": "Support-state discipline",
+      "chapter_refs": [
+        "evidence-states-and-claim-discipline",
+        "claim-ledgers-and-belief-revision",
+        "living-book-methodology"
+      ],
+      "claimed_contribution": "Separate rhetorical claim labels from evidence support states so drafting, citations, tests, proofs, releases, and reader polish cannot launder stronger claims.",
+      "closest_prior_art_refs": [
+        "ext_model_cards_2019",
+        "ext_datasheets_datasets_2021",
+        "ext_ml_reproducibility_program_2021",
+        "ext_proof_carrying_code_1997",
+        "ext_agm_belief_revision_1985",
+        "ext_truth_maintenance_system_1979",
+        "ext_assumption_based_tms_1986"
+      ],
+      "audited_delta": "Model reporting, reproducibility, proof-carrying code, and belief-revision literature each cover part of the problem; the ASI Stack joins them into a public claim-state transition discipline with explicit non-claims and downgrade paths.",
+      "non_obvious_consequence": "A beautiful chapter, green test, or successful proof build should still leave a claim at argument support when scope boundaries or source interpretation are missing.",
+      "strongest_objection": "The support-state ladder may improve documentation honesty without improving truth or safety.",
+      "answer_status": "partially_answered_by_ledgers_and_no_promotion_records",
+      "confidence_state": "methodologically_strong_needs_external_review",
+      "needed_next_artifact": "A true demotion, refutation, or claim-narrowing case caused by failed evidence, prior art, or review, plus independent review of the ladder.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove claim truth",
+        "does not prove source interpretation adequacy",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "idea_id": "stable_capability_identity",
+      "signature_phrase": "Stable capability fields",
+      "chapter_refs": [
+        "stable-capability-fields",
+        "capability-replacement-and-rollback",
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "claimed_contribution": "Treat a capability as an identity-bearing field whose implementation can be replaced only through predicates, regression floors, authority preservation, and rollback handles.",
+      "closest_prior_art_refs": [
+        "ext_semver_2_0_0",
+        "ext_slsa_v1_0",
+        "ext_feature_toggles_fowler",
+        "ext_argo_rollouts_docs",
+        "ext_capability_based_computer_systems_1984"
+      ],
+      "audited_delta": "Versioning, supply-chain, rollout, and capability-system practices provide adjacent controls; the ASI Stack focuses on identity under AI capability replacement with evidence-state and authority-preservation gates.",
+      "non_obvious_consequence": "An improvement that passes local performance checks should still be rejected when it widens authority, weakens rollback, or changes the capability identity without a field transition.",
+      "strongest_objection": "Capability identity may be too semantic and context-dependent to preserve with finite records.",
+      "answer_status": "partially_answered_by_replacement_fixtures",
+      "confidence_state": "promising_not_defended",
+      "needed_next_artifact": "A stronger executable field-transition model that proves allowed replacement preserves identity predicates across a sequence of candidate transitions.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove semantic identity preservation in deployed systems",
+        "does not prove rollback execution",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "idea_id": "bounded_self_improvement",
+      "signature_phrase": "Bounded self-improvement",
+      "chapter_refs": [
+        "recursive-self-improvement-boundaries",
+        "prototype-roadmap",
+        "artifact-steward-agents-and-living-project-governance"
+      ],
+      "claimed_contribution": "Frame self-improvement as candidate-change governance: protected invariants, evaluator independence, authority ceilings, rollback handles, residual custody, and release gates must survive improvement.",
+      "closest_prior_art_refs": [
+        "ext_corrigibility_2015",
+        "ext_off_switch_game_2016",
+        "ext_optimal_policies_power_2019",
+        "ext_model_evaluation_extreme_risks_2023",
+        "ext_frontier_ai_regulation_2023",
+        "ext_slsa_v1_0"
+      ],
+      "audited_delta": "Corrigibility, shutdown, power-seeking, extreme-risk evaluation, frontier-governance, and supply-chain sources ground the risk vocabulary; the ASI Stack packages improvement as a gated artifact lifecycle rather than an unconstrained optimization loop.",
+      "non_obvious_consequence": "An improvement can be locally useful and still be rejected because it changes who can improve, who can evaluate, or which rollback path remains valid.",
+      "strongest_objection": "A sufficiently capable optimizer may learn to satisfy the visible gates while manipulating the evidence-generating process.",
+      "answer_status": "partially_answered_by_argument_and_theseus_static_import",
+      "confidence_state": "safety_critical_not_defended",
+      "needed_next_artifact": "A clean Theseus replay or archived public fixture plus a transition-system invariant for protected predicates across self-improvement sequences.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove corrigibility",
+        "does not prove deployed self-improvement safety",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "idea_id": "receipt_faithfulness_gap",
+      "signature_phrase": "Record-reality gap",
+      "chapter_refs": [
+        "artifact-graphs-audit-logs-and-replay",
+        "integrated-reference-architecture",
+        "spinoza-verification-and-proof-carrying-claims"
+      ],
+      "claimed_contribution": "Make receipt faithfulness a first-class architectural problem: records are useful only when the system can audit whether they correspond to reality rather than merely to each other.",
+      "closest_prior_art_refs": [
+        "ext_proof_carrying_code_1997",
+        "ext_ai_safety_debate_2018",
+        "ext_llm_as_judge_mt_bench_2023",
+        "ext_model_evaluation_extreme_risks_2023",
+        "ext_nist_zero_trust_architecture_2020"
+      ],
+      "audited_delta": "Proof, debate, judge, evaluation, and zero-trust sources each address parts of checking; the ASI Stack needs to connect attestation, trap fixtures, cross-examination, randomized audits, and incentives to the artifact graph itself.",
+      "non_obvious_consequence": "A system can pass record-shape validators while still failing truth; the architecture needs adversarial faithfulness checks before treating receipts as strong evidence.",
+      "strongest_objection": "No finite receipt regime can force a sufficiently strategic system to bind its internal causal process to the recorded explanation.",
+      "answer_status": "open_keystone_gap",
+      "confidence_state": "missing_argument",
+      "needed_next_artifact": "A dedicated receipt-faithfulness chapter or major section with adversarial fixtures, trap-receipt negative controls, and explicit limits.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove receipt truthfulness",
+        "does not prove audit completeness",
+        "does not promote any chapter core claim"
+      ]
+    }
+  ],
+  "non_claims": [
+    "This ledger is not proof of novelty.",
+    "This ledger is not an exhaustive prior-art review.",
+    "This ledger does not create source-derived support for any chapter core claim.",
+    "This ledger does not promote any support state.",
+    "This ledger does not approve reader, release, ebook, PDF, DOCX, audio, DOI, archive, implementation, model-quality, benchmark, safety, or deployment claims."
+  ]
+}

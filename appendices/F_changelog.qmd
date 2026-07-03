@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-03 - Add contribution novelty ledger
+
+- Added `docs/contribution_novelty_ledger.md` and
+  `docs/contribution_novelty_ledger.json` to audit eight signature ASI Stack
+  ideas against source-noted prior art, claimed deltas, non-obvious
+  consequences, strongest objections, confidence states, and next artifacts.
+- Added `scripts/validate_contribution_novelty_ledger.py` and wired it into
+  `scripts/validate_book.py` so novelty-positioning claims are checked as a
+  first-class public trust surface.
+- Updated README, the landing page, and the v1.x roadmap to link the ledger
+  and preserve the boundary: the ledger is not proof of novelty, not
+  exhaustive prior-art review, not source-derived support, and not a
+  support-state promotion.
+
 ## 2026-07-03 - Add curated reader format probe
 
 - Added `scripts/render_curated_reader_formats.py` and
