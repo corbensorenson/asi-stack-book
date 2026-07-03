@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-03 - Add authority revocation propagation trace
+
+- Added `scripts/validate_authority_revocation_trace.py`,
+  `docs/authority_revocation_trace.md`,
+  `experiments/authority_revocation_trace/input/artifact_manifest.json`, and
+  result artifact
+  `experiments/authority_revocation_trace/results/2026-07-03-local.json` for a
+  cross-artifact repository trace over already committed authority-transition,
+  runtime-adapter, security-kernel, SCIF commit, and reference-trace artifacts.
+  Command: `python3 scripts/validate_authority_revocation_trace.py`.
+- The validator records five trace entries covering over-ceiling denial,
+  revoked authority receipt blocking, expired approval no-mutation evidence,
+  SCIF inactive approval blocking, and blocked reference-trace authority while
+  preserving no support-state effect.
+- Added the Lean surface bridge
+  `authority_revocation_trace_surface_bridge` in `AsiStackProofs.Authority` and
+  wired the validator into `scripts/validate_book.py`.
+- Updated System Boundaries, the curated reader chapter, outline, roadmap
+  burn-down, proof surfaces, and public status surfaces while preserving the
+  boundary: this does not prove deployed revocation propagation, does not prove
+  deployed authorization enforcement, does not create a support-state
+  transition, does not create an evidence transition, and does not promote any
+  chapter core claim.
+
 ## 2026-07-03 - Add receipt faithfulness adversarial fixture
 
 - Added `scripts/validate_receipt_faithfulness.py`,
@@ -41,7 +65,7 @@
 - Added the Lean surface bridge `residual_ledger_trace_surface_bridge` in
   `AsiStackProofs.CompactGenerativeSystems` and wired the validator into
   `scripts/validate_book.py`.
-- Current proof-depth snapshot: 181 proof targets, 54 Lean modules, 943 theorem declarations, 761 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 182 proof targets, 54 Lean modules, 944 theorem declarations, 762 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the live chapter, curated reader chapter, outline, roadmap burn-down,
   and contribution novelty ledger while preserving the boundary: this does not
   prove deployed residual-ledger behavior, does not prove safety, does not

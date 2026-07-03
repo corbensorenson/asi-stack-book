@@ -693,6 +693,11 @@
               "name": "Runtime adapter authority probe",
               "implementation_status": "implemented",
               "result_status": "passes via runtime adapter expected-invalid ambient-authority and revoked-receipt probes; synthetic record-gate evidence only, no deployed enforcement claim"
+            },
+            {
+              "name": "Authority revocation propagation trace",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_authority_revocation_trace.py`; cross-artifact repository trace covers over-ceiling denial, revoked authority receipt blocking, expired approval no-mutation, SCIF inactive approval blocking, and reference-trace authority blockers; no deployed revocation propagation or support-state promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.Authority",
@@ -713,6 +718,12 @@
               "tag": "lean:authority.lifecycle.admission_route",
               "module": "AsiStackProofs.Authority",
               "target": "Modeled authority lifecycle admission routes missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grants, active grant state, expiry and revocation boundaries, scope matches, grant-ceiling coverage, approval records, effect or denial receipts, audit refs, evidence-transition records, and non-claim boundaries to explicit outcomes.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:authority.revocation.trace_surface_bridge",
+              "module": "AsiStackProofs.Authority",
+              "target": "A cross-artifact authority revocation trace preserves denial, revoked-receipt blocking, expired-approval no-mutation, SCIF inactive-approval blocking, blocked reference-trace authority, support-state non-promotion, and deployed-revocation non-claim boundaries.",
               "status": "implemented"
             }
           ]

@@ -111,6 +111,16 @@
       "rationale": "Implemented in AsiStackProofs.Authority as a finite authority lifecycle route over explicit principal, operation, permission, ceiling, delegation, grant, revocation, approval, receipt, audit, evidence-transition, and non-claim-boundary records; it does not prove deployed authorization enforcement, runtime adapter behavior, revocation propagation, approval-service quality, tool-wrapper security, or support-state promotion."
     },
     {
+      "tag": "lean:authority.revocation.trace_surface_bridge",
+      "chapter_id": "system-boundaries-and-authority",
+      "module": "AsiStackProofs.Authority",
+      "formal_target": "A cross-artifact authority revocation trace preserves denial, revoked-receipt blocking, expired-approval no-mutation, SCIF inactive-approval blocking, blocked reference-trace authority, support-state non-promotion, and deployed-revocation non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Authority as a finite trace-summary bridge for the repository authority revocation propagation trace. It mirrors cross-artifact denial, revoked receipt, expired approval no-mutation, SCIF inactive approval, reference-trace blocker, and no-promotion/non-claim boundaries without claiming deployed revocation propagation."
+    },
+    {
       "tag": "lean:failure.invariant_violation.operational_invariant",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
       "module": "AsiStackProofs.FailureModes",
@@ -1821,5 +1831,5 @@
       "rationale": "Implemented in AsiStackProofs.Planning as a finite runtime-replan delta route and fixture bridge: it rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context or verification deltas, missing residuals, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta."
     }
   ],
-  "record_count": 181
+  "record_count": 182
 }

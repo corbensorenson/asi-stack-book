@@ -22,6 +22,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `system-boundaries-and-authority` | System Boundaries and Authority | Permission separation test | implemented | passes via synthetic authority transition harness |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Confused-deputy scenario | implemented | passes expected-invalid synthetic denial fixture; no runtime enforcement claim |
 | `system-boundaries-and-authority` | System Boundaries and Authority | Runtime adapter authority probe | implemented | passes via runtime adapter expected-invalid ambient-authority and revoked-receipt probes; synthetic record-gate evidence only, no deployed enforcement claim |
+| `system-boundaries-and-authority` | System Boundaries and Authority | Authority revocation propagation trace | implemented | passing via `python3 scripts/validate_authority_revocation_trace.py`; cross-artifact repository trace covers over-ceiling denial, revoked authority receipt blocking, expired approval no-mutation, SCIF inactive approval blocking, and reference-trace authority blockers; no deployed revocation propagation or support-state promotion claim |
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Failure recurrence escalation route | implemented | passes via Lean route theorems; no runtime failure detector, evaluator-independence probe, context containment, claim-verification quality, recurrence detector, or support-state promotion claim |
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Authority creep scenario | implemented | passes via Lean build |
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Context pollution scenario | implemented | passes via Lean build |
@@ -473,16 +474,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 181 |
+| Proof targets covered by triage | 182 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 181 |
+| implemented | 182 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 181 |
+| implemented | formal-invariant | lean-candidate | 182 |

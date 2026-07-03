@@ -294,8 +294,10 @@ Draft deliverables:
 - Implemented synthetic Codex test: Permission separation test via `python3 scripts/validate_authority_transitions.py`; deployed enforcement remains open.
 - Implemented synthetic Codex test: Confused-deputy scenario via expected-invalid authority-transition fixture and runtime-adapter ambient-authority fixture; deployed adapter resistance remains open.
 - Implemented synthetic Codex test: Revoked authority receipt scenario via expected-invalid runtime-adapter fixture; deployed revocation propagation remains open.
+- Implemented authority revocation propagation trace: `python3 scripts/validate_authority_revocation_trace.py` writes `experiments/authority_revocation_trace/results/2026-07-03-local.json` and checks existing authority, runtime-adapter, SCIF, and reference-trace artifacts for over-ceiling denial, revoked authority receipt blocking, expired approval no-mutation evidence, SCIF inactive approval blocking, blocked reference-trace authority, no support-state promotion, and no deployed revocation propagation.
 - Implemented Lean proof target: finite authority lifecycle admission route for missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grant records, inactive/expired/revoked grants, scope mismatches, grant-ceiling gaps, approval gaps, effect or denial receipt gaps, audit refs, evidence-transition records, and non-claim boundaries.
-- Planned Codex test: Revocation propagation test.
+- Implemented Lean theorem bridge: `authority_revocation_trace_surface_bridge` in `AsiStackProofs.Authority` mirrors the bounded authority revocation trace summary without claiming deployed revocation propagation.
+- Implemented repository trace for stale authority surfaces; deployed revocation propagation behavior remains open.
 
 Lean proof targets:
 
@@ -304,6 +306,7 @@ Lean proof targets:
 | `lean:authority.ceiling.operational_invariant` | `AsiStackProofs.Authority` | Every transition preserves or lowers the active authority ceiling unless a governance grant is present. | implemented |
 | `lean:authority.ceiling.failure_blocks_promotion` | `AsiStackProofs.Authority` | A missing grant blocks execution rather than becoming default authorization. | implemented |
 | `lean:authority.lifecycle.admission_route` | `AsiStackProofs.Authority` | Modeled authority lifecycle admission routes missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grants, active grant state, expiry and revocation boundaries, scope matches, grant-ceiling coverage, approval records, effect or denial receipts, audit refs, evidence-transition records, and non-claim boundaries to explicit outcomes. | implemented |
+| `lean:authority.revocation.trace_surface_bridge` | `AsiStackProofs.Authority` | A cross-artifact authority revocation trace preserves denial, revoked-receipt blocking, expired-approval no-mutation, SCIF inactive-approval blocking, blocked reference-trace authority, support-state non-promotion, and deployed-revocation non-claim boundaries. | implemented |
 
 ### Failure Modes of Ungoverned Intelligence
 
@@ -2770,9 +2773,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 181 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 181 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 181 proof targets, 54 Lean modules, 943 theorem declarations, 761 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 182 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 182 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 182 proof targets, 54 Lean modules, 944 theorem declarations, 762 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

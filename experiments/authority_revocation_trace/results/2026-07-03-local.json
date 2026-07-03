@@ -1,0 +1,101 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_authority_revocation_trace.py",
+  "evidence_transition_created": false,
+  "lean_fixture_alignment": {
+    "expected": {
+      "authorityDenialVisible": true,
+      "deployedRevocationPropagationNotClaimed": true,
+      "expiredApprovalNoMutation": true,
+      "nonClaimBoundary": true,
+      "referenceTraceAuthorityBlockerPreserved": true,
+      "revokedReceiptBlocked": true,
+      "scifInactiveApprovalBlocksCommit": true,
+      "supportStateEffectNone": true
+    },
+    "module": "AsiStackProofs.Authority",
+    "theorem_refs": [
+      "authority_revocation_trace_surface_bridge"
+    ]
+  },
+  "manifest_ref": "experiments/authority_revocation_trace/input/artifact_manifest.json",
+  "non_claims": [
+    "does not prove deployed authorization enforcement",
+    "does not prove deployed revocation propagation",
+    "does not prove tool-wrapper security",
+    "does not promote any chapter core claim",
+    "does not prove approval-service quality, sandbox isolation, or secret-handle safety",
+    "does not prove model quality, benchmark performance, safety, or ASI",
+    "does not create an evidence transition"
+  ],
+  "recorded_date": "2026-07-03",
+  "residuals": [
+    "This trace reads already committed authority and runtime artifacts; it does not execute a deployed authorization service.",
+    "The trace checks that revoked, expired, missing, or inactive authority remains visible as denial, no-mutation, blocked-commit, or blocked-path evidence across repository artifacts.",
+    "Live revocation propagation, approval-service quality, adapter enforcement, sandbox isolation, and tool-wrapper security remain unproved."
+  ],
+  "result_id": "2026-07-03-authority-revocation-trace",
+  "result_kind": "cross_artifact_authority_revocation_trace",
+  "schema_version": "asi_stack.authority_revocation_trace.result.v0",
+  "source_artifact_hashes": {
+    "experiments/authority_transitions/fixtures/valid_deny_over_ceiling.json": "1bc1d0198b8a528f3840a0c56b7cb8580b842d16ba8f67865223aaff0fa2a060",
+    "experiments/authority_transitions/results/2026-06-28-local.md": "bea51cdc27edf8de1673a2eb12f2d03cf49bcf3df582a0254c792f01ea9eb7cf",
+    "experiments/reference_trace/fixtures/valid_blocked_authority_trace.json": "569dbecf91a0d2dd33a0a3fe89d59802e6058f9403f312d22783c2e33010271e",
+    "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json": "8691dfdba88eb967a47fb65c76ac175307480057e2f89527e540f06d51047679",
+    "experiments/runtime_adapter_permissions/fixtures/invalid_expired_approval.json": "df0c6164e5e89c7052bd09aec757c01c84680634e7dbf6d9629429dfef99f278",
+    "experiments/runtime_adapter_permissions/fixtures/invalid_revoked_authority_receipt.json": "e0fa9214aa896a532944c687cbb5e48b9e9f10615f64d7663f774392b4f4cddc",
+    "experiments/runtime_adapter_permissions/results/2026-07-01-local.md": "39bdf66a21f8bf96cad3954d71b40ac7eca814cee0e3507cb3a15fe35235cbda",
+    "experiments/security_kernel/results/2026-07-01-local.md": "003cb9c05447fd0f4ef255fd7fb6df1f2ec1d7be5eba7f871146ac32568d257a",
+    "experiments/security_scif_commit_probe/results/2026-07-02-local.json": "fbce1c140b14a95b29ab4d22c688888860d39b9075b57e79b12eca16e6058bd0"
+  },
+  "support_state_effect": "none",
+  "trace_entries": [
+    {
+      "artifact_ref": "experiments/authority_transitions/fixtures/valid_deny_over_ceiling.json",
+      "blocked_state": "deny",
+      "entry_id": "authority-transition-denial",
+      "propagation_surface": "over-ceiling request preserves denial reason, audit refs, and no effect receipt",
+      "support_state_effect": "none"
+    },
+    {
+      "artifact_ref": "experiments/runtime_adapter_permissions/fixtures/invalid_revoked_authority_receipt.json",
+      "blocked_state": "expected_invalid_revoked_receipt",
+      "entry_id": "runtime-adapter-revoked-receipt",
+      "propagation_surface": "revoked authority receipt is expected to deny and block promotion",
+      "support_state_effect": "blocks_promotion"
+    },
+    {
+      "artifact_ref": "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+      "blocked_state": "deny_before_mutation",
+      "entry_id": "runtime-adapter-expired-no-mutation",
+      "propagation_surface": "expired approval is denied with unchanged pre/post state hashes",
+      "support_state_effect": "none"
+    },
+    {
+      "artifact_ref": "experiments/security_scif_commit_probe/results/2026-07-02-local.json",
+      "blocked_state": "block_commit",
+      "entry_id": "security-scif-inactive-approval-block",
+      "propagation_surface": "inactive approval or unapproved destination blocks commit and dispatch",
+      "support_state_effect": "none"
+    },
+    {
+      "artifact_ref": "experiments/reference_trace/fixtures/valid_blocked_authority_trace.json",
+      "blocked_state": "blocked_path",
+      "entry_id": "reference-trace-blocked-authority",
+      "propagation_surface": "reference trace preserves missing execution authority stop condition and promotion blocker",
+      "support_state_effect": "blocks_promotion"
+    }
+  ],
+  "trace_entry_count": 5,
+  "trace_summary": {
+    "authorityDenialVisible": true,
+    "deployedRevocationPropagationNotClaimed": true,
+    "expiredApprovalNoMutation": true,
+    "nonClaimBoundary": true,
+    "referenceTraceAuthorityBlockerPreserved": true,
+    "revokedReceiptBlocked": true,
+    "scifInactiveApprovalBlocksCommit": true,
+    "supportStateEffectNone": true
+  },
+  "verification_result": "pass"
+}

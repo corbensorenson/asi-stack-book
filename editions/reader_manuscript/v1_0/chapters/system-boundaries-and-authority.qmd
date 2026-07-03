@@ -314,6 +314,13 @@ adapter harness now adds two adjacent negative records: one where adapter
 ambient authority is substituted for the caller ceiling, and one where a
 revoked authority receipt is still used by an active invocation.
 
+The newest authority revocation trace follows that same discipline across
+several existing artifacts. It checks that revoked or expired authority remains
+visible as denial, no-mutation evidence, a blocked commit, or a blocked path
+instead of being smoothed into a successful action. That is useful connective
+tissue for the book's authority story, but it is not proof of a deployed
+revocation service.
+
 Those are useful foundations, not deployed enforcement. They do not show a
 live tool wrapper resisting a confused-deputy attempt, a runtime adapter
 propagating revocation in a real service, or a production system denying stale

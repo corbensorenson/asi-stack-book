@@ -134,6 +134,7 @@ REQUIRED = [
     "scripts/validate_agency_rights.py",
     "scripts/validate_support_state_transitions.py",
     "scripts/validate_authority_transitions.py",
+    "scripts/validate_authority_revocation_trace.py",
     "scripts/validate_security_kernel.py",
     "scripts/run_security_scif_commit_probe.py",
     "scripts/validate_security_scif_commit_probe.py",
@@ -260,6 +261,7 @@ REQUIRED = [
     "docs/efficiency_route_search_probe.md",
     "docs/support_state_transition_harness.md",
     "docs/authority_transition_harness.md",
+    "docs/authority_revocation_trace.md",
     "docs/plan_execution_contract_harness.md",
     "docs/cognitive_compilation_trace_harness.md",
     "docs/hive_admission_harness.md",
@@ -336,6 +338,7 @@ REQUIRED = [
     "experiments/security_kernel/results/2026-06-28-local.md",
     "experiments/security_scif_commit_probe/README.md",
     "experiments/security_scif_commit_probe/results/2026-07-02-local.json",
+    "experiments/authority_revocation_trace/results/2026-07-03-local.json",
     "experiments/stable_capability_fields/results/2026-06-28-local.md",
     "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
     "experiments/capability_replacement/results/2026-06-28-local.md",
@@ -917,6 +920,7 @@ def main() -> None:
     run_validator("validate_agency_rights.py")
     run_validator("validate_support_state_transitions.py")
     run_validator("validate_authority_transitions.py")
+    run_validator("validate_authority_revocation_trace.py")
     run_validator("validate_security_kernel.py")
     run_validator("validate_security_scif_commit_probe.py")
     run_validator("validate_stable_capability_fields.py")

@@ -1,0 +1,21 @@
+{
+  "schema_version": "asi_stack.authority_revocation_trace.manifest.v0",
+  "source_artifact_refs": [
+    "experiments/authority_transitions/results/2026-06-28-local.md",
+    "experiments/authority_transitions/fixtures/valid_deny_over_ceiling.json",
+    "experiments/runtime_adapter_permissions/results/2026-07-01-local.md",
+    "experiments/runtime_adapter_permissions/fixtures/invalid_revoked_authority_receipt.json",
+    "experiments/runtime_adapter_permissions/fixtures/invalid_expired_approval.json",
+    "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+    "experiments/security_kernel/results/2026-07-01-local.md",
+    "experiments/security_scif_commit_probe/results/2026-07-02-local.json",
+    "experiments/reference_trace/fixtures/valid_blocked_authority_trace.json"
+  ],
+  "required_boundaries": [
+    "no deployed authorization enforcement claim",
+    "no deployed revocation propagation claim",
+    "no tool-wrapper security claim",
+    "no support-state promotion",
+    "no model-quality, benchmark, or safety claim"
+  ]
+}
