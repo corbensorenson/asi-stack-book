@@ -10,21 +10,47 @@ implementation horizons, and release blockers.
 
 # The Efficient ASI Hypothesis
 
-Once ASI is described as a stack instead of a single model, the next question is economic. Not economic in the narrow sense of dollars, but in the broader engineering sense: where should scarce cognition be spent, where should previous work be reused, and where should unfinished work remain visible instead of being hidden inside a fluent answer?
+Once ASI is described as a stack instead of a single model, the next question
+is economic. Not economic in the narrow sense of dollars, but in the broader
+engineering sense: where should scarce cognition be spent, where should
+previous work be reused, and where should unfinished work remain visible
+instead of being hidden inside a fluent answer?
 
 The efficient ASI hypothesis is easy to misunderstand. It is not the claim that small models are enough, that scale is wasteful, or that advanced intelligence can be obtained by being cheap. A cheap system can be brittle. A powerful system can be wasteful. A benchmark win can be real capability, or it can be a bill that moved from inference into context construction, human repair, verification, or hidden retries.
 
-The hypothesis is about allocation. A governed stack should spend the smallest adequate cognition for the current contract, but only when adequacy is recorded, residual obligations remain visible, and stronger fallback routes stay available. Efficiency is not thrift by itself. Efficiency is disciplined accounting over quality, cost, authority, verification, and residual burden.
+The hypothesis is about allocation. A governed stack should spend the smallest
+adequate cognition for the current contract, but only when adequacy is
+recorded, residual obligations remain visible, and stronger fallback routes
+stay available. Efficiency is not thrift by itself. It is disciplined
+accounting over quality, cost, authority, verification, and residual burden.
+The cheap path is useful only after the record shows what it preserved and
+what it left behind.
 
 ## Problem
 
 The stack needs a theory of capability growth that does not reduce every design decision to "use a bigger model" or "use a cheaper model." Both instincts fail when they become automatic.
 
-If every task is sent to the largest available model with the widest possible context, the system may look competent while consuming verification budget, repeating work that should have become durable, and making every future decision depend on an expensive route. The output might be good, but the system has not learned how to preserve the work. It has spent cognition without turning the expenditure into an artifact, a regression, a tool, a memory, or a proof obligation.
+If every task is sent to the largest available model with the widest possible
+context, the system may look competent while consuming verification budget,
+repeating work that should have become durable, and making every future
+decision depend on an expensive route. The output might be good, but the
+system has not learned how to preserve the work. It has spent cognition
+without turning the expenditure into an artifact, a regression, a tool, a
+memory, or a proof obligation.
 
-If every task is sent to the cheapest available route, the system may look efficient while silently dropping constraints that only a stronger verifier, richer context packet, specialist route, or human review could preserve. Low cost can be a virtue only after the system proves that the cheaper route satisfied the task's quality predicate under the relevant authority ceiling. Without that record, cheapness is just a measurement of what was visible.
+If every task is sent to the cheapest available route, the system may look
+efficient while silently dropping constraints that only a stronger verifier,
+richer context packet, specialist route, or human review could preserve. Low
+cost can be a virtue only after the system proves that the cheaper route
+satisfied the task's quality predicate under the relevant authority ceiling.
+Without that record, cheapness is just a measurement of what was visible.
 
-So the problem is not scale versus smallness. The problem is the absence of a route record that explains why a given amount of cognition was enough. The route has to say what contract it served, what quality predicate it preserved, what authority ceiling constrained it, which cheaper routes were rejected or unavailable, what verification was performed, what residual burden remains, and what fallback exists if the result later fails.
+So the problem is not scale versus smallness. The problem is the absence of a
+route record that explains why a given amount of cognition was enough. The
+route has to say what contract it served, what quality predicate it preserved,
+what authority ceiling constrained it, which cheaper routes were rejected or
+unavailable, what verification was performed, what residual burden remains,
+and what fallback exists if the result later fails.
 
 ## Why Scale Alone Is Not Enough
 

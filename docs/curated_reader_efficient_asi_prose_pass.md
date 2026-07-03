@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: The Efficient ASI Hypothesis
 
-Last updated: 2026-07-01
+Last updated: 2026-07-03
 
 Chapter ID: `the-efficient-asi-hypothesis`
 
@@ -16,8 +16,9 @@ burden together before any efficiency claim can be trusted.
 
 ## Scope
 
-This pass turns the generated reader baseline for Efficient ASI into a first
-booklike curated reader draft. It is a reader-prose derivative only.
+This pass turns the generated reader baseline for Efficient ASI into a
+booklike curated reader chapter and records its chapter-level reconciliation
+state for the tracked reader manuscript. It is a reader-prose derivative only.
 
 Allowed curation scopes used:
 
@@ -54,6 +55,19 @@ Allowed curation scopes used:
   overkill baseline, cheaper failed-verification control, cheaper
   hidden-residual control, replay command, finite proof bridge, and non-claims
   as the pattern future efficiency evidence must follow.
+- Ran a second reader-prose pass over the opening and problem statement so the
+  chapter makes "smallest adequate cognition" depend on explicit quality,
+  authority, verification, fallback, and residual records rather than cheapness.
+- Marked the chapter's curated-reader manifest record `reconciled` for the
+  current source boundary while preserving all release blockers.
+
+## Reconciliation Status
+
+The curated reader chapter is reconciled against the current live chapter,
+generated reader baseline, Appendix C claim/support boundary, and Appendix K
+implementation horizon for prose meaning. This is not release approval.
+`curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, and
+`reader_release_record_not_created` remain active blockers.
 
 ## Meaning Preservation Checks
 
@@ -65,13 +79,15 @@ Allowed curation scopes used:
 | Proof/test status preserved | Pass. The curated draft says the protocol fixture and Lean predicates cover narrow record-level gates only and do not prove route-search completeness, cost-estimate accuracy, quality evaluation, measured efficiency, or compression utility. |
 | Adjacent evidence boundary preserved | Pass. The Resource Economics selector slice is described as a neighboring accounting receipt only, not proof or promotion of the Efficient ASI core claim. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a `costed_route_record` schema plus fixtures; the mature endpoint remains unimplemented and unvalidated. |
-| Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
+| Release blockers preserved | Pass. The chapter can be marked reconciled for prose meaning while no reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
 
 - This pass includes a live/reader reconciliation update to the Beyond-SOTA
   endpoint and the manifest mature-endpoint field; it does not change claim
   meaning, support-state boundaries, or source assignments.
+- This pass marks only this curated-reader record `reconciled`; it does not
+  make the full curated manuscript release-candidate or released.
 - This pass does not alter Appendix C, source assignments, proof targets, test
   status, implementation horizons, or release records.
 - This pass does not approve the curated chapter for reader release.

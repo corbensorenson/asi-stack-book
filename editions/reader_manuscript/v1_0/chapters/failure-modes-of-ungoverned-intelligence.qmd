@@ -24,7 +24,8 @@ looks good. A benchmark becomes the target rather than the pressure surface.
 Those events matter because they are legible. A governed stack should fail in
 a way that leaves a receipt, owner, containment path, residual question, and
 learning obligation. Hidden success is more dangerous than visible failure
-when nobody can audit what the success cost.
+when nobody can audit what the success cost. A system that cannot preserve its
+near misses cannot honestly improve from them.
 
 The reader promise of this chapter is diagnostic clarity. A human reader
 should leave knowing how the ASI Stack turns risk language into an obligation
@@ -34,7 +35,8 @@ preserve evidence about it, or block promotion until the residual is handled.
 ## Problem
 
 Governance, reliability, and self-improvement claims need a failure model
-before they need confidence.
+before they need confidence. Confidence without a failure map is only a story
+about the cases that happened to pass.
 
 Authority boundaries are useful only when their failures can be named. The
 system does not have to fail first as a catastrophe. It can fail quietly
@@ -50,7 +52,8 @@ results, and governance rights for appeal, fork, exit, and audit.
 
 If a later chapter cannot say which failure it prevents, detects,
 residualizes, or makes recoverable, then the mechanism may be interesting, but
-it has not yet justified its place in the stack.
+it has not yet justified its place in the stack. The book's failure model is
+therefore a routing table for responsibility, not a mood of caution.
 
 ## Why existing approaches are insufficient
 
@@ -82,7 +85,8 @@ Near misses become useful under that rule. A denied authority escalation, a
 rejected context packet, a failed verifier, a quarantined route, or a preserved
 residual is not a shameful blemish on the system. It is evidence that a
 boundary fired. The architecture should record those events before polished
-success stories dominate the ledger.
+success stories dominate the ledger, because the ledger is where future
+improvement learns what not to normalize.
 
 ## Core Claim
 

@@ -11,8 +11,8 @@ implementation horizons, and release blockers.
 # System Boundaries and Authority
 
 The stack frame and the efficiency claim now need the guardrail that makes
-both ideas usable: the system must know the difference
-between what a component can do and what it may do.
+both ideas usable: the system must know the difference between what a
+component can do and what it may do.
 
 That distinction is not cosmetic. A planner can describe a correct action. A
 model can produce a useful answer. A memory system can surface relevant
@@ -28,7 +28,8 @@ the action is still not authorized.
 By the end, "authority" should feel less like an abstract safety word and more
 like a concrete transition record: who is asking, what boundary they want to
 cross, which grant they have, which ceiling binds them, what happens if the
-grant is missing, and what receipt remains after the decision.
+grant is missing, and what receipt remains after the decision. A stack that
+cannot answer those questions may still be capable, but it is not yet governed.
 
 ![Draft authority-to-effect path.](../../../../assets/diagrams/authority-to-effect-path.svg){#reader-fig-authority-to-effect-path fig-alt="Draft authority-to-effect path figure showing requester, permission class, authority ceiling, scoped approval, adapter handoff, external effect, receipt, denial, escalation, rollback, and incident handling."}
 
@@ -39,7 +40,9 @@ deployed authorization, revocation, rollback, or incident handling.
 ## Problem
 
 The stack needs a formal vocabulary for boundaries before it can make serious
-claims about planning, memory, tools, deployment, or self-improvement.
+claims about planning, memory, tools, deployment, or self-improvement. Every
+later layer depends on this one because every later layer will eventually ask
+to cross a boundary.
 
 Efficiency routes cognition by cost and quality. That only works if route
 selection remains separate from permission to act. A planner may know how to
@@ -72,7 +75,8 @@ accepted code. A capable specialist receives the task because it can perform
 the work, not because the caller may authorize the work.
 
 When that collapse happens, the architecture has lost the boundary that lets
-it be governed.
+it be governed. The damage may not be visible as a crash. It may look like a
+smooth success whose authority record can no longer be reconstructed.
 
 ## Why existing approaches are insufficient
 
@@ -114,7 +118,9 @@ source it can see as a source it can reveal.
 
 Authority records are the counterweight. They make the system ask "may this
 principal cross this boundary under this grant?" before it asks "can some
-component perform the operation?"
+component perform the operation?" That ordering is the bridge from efficiency
+to governance: the cheapest adequate route is still invalid if it crosses a
+boundary without the right grant.
 
 ## Core Claim
 

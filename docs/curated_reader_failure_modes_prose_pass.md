@@ -1,8 +1,8 @@
 # Curated Reader Prose Pass: Failure Modes of Ungoverned Intelligence
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
-Follow-up: 2026-07-02
+Follow-up: 2026-07-03
 
 Chapter ID: `failure-modes-of-ungoverned-intelligence`
 
@@ -19,8 +19,9 @@ evidence about it, or block promotion until the residual is handled.
 ## Scope
 
 This pass turns the generated reader baseline for Failure Modes of Ungoverned
-Intelligence into a first booklike curated reader draft. It is a reader-prose
-derivative only.
+Intelligence into a booklike curated reader chapter and records its
+chapter-level reconciliation state for the tracked reader manuscript. It is a
+reader-prose derivative only.
 
 Allowed curation scopes used:
 
@@ -51,8 +52,21 @@ Allowed curation scopes used:
 - Added a near-miss receipt example that connects denied authority expansion
   and Goodhart/evaluator drift to boundary records, residual preservation,
   promotion blockers, and synthetic detector limits.
+- Ran a second reader-prose pass over the opening and problem statement so the
+  chapter frames failure analysis as a routing table for repair obligations
+  and makes near-miss preservation part of honest improvement.
+- Marked the chapter's curated-reader manifest record `reconciled` for the
+  current source boundary while preserving all release blockers.
 - Preserved the core claim, minimum viable implementation, beyond-state-of-the-
   art endpoint, and handoff into Evidence States and Claim Discipline.
+
+## Reconciliation Status
+
+The curated reader chapter is reconciled against the current live chapter,
+generated reader baseline, Appendix C claim/support boundary, and Appendix K
+implementation horizon for prose meaning. This is not release approval.
+`curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, and
+`reader_release_record_not_created` remain active blockers.
 
 ## Meaning Preservation Checks
 
@@ -63,12 +77,14 @@ Allowed curation scopes used:
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; the draft keeps the comparator-only boundary for external safety literature and the connector-only boundary for `vcm_editable` and `moecot`. |
 | Proof/test status preserved | Pass. The curated draft keeps the boundary that the current fixture and finite Lean predicates do not prove scenario coverage, evaluator independence, context-pollution containment, deployed failure detection, or prevention of the named failures. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a failure-boundary schema plus diagnostic examples and planned receipt harnesses; the mature endpoint remains an unvalidated failure-radar layer. |
-| Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
+| Release blockers preserved | Pass. The chapter can be marked reconciled for prose meaning while no reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
 
 - This pass does not change the live AI/research chapter.
 - This pass does not change `book_structure.json`.
+- This pass marks only this curated-reader record `reconciled`; it does not
+  make the full curated manuscript release-candidate or released.
 - This pass does not alter Appendix C, source assignments, proof targets, test
   status, implementation horizons, or release records.
 - This pass does not approve the curated chapter for reader release.

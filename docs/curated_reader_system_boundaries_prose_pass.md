@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: System Boundaries and Authority
 
-Last updated: 2026-06-29
+Last updated: 2026-07-03
 
 Chapter ID: `system-boundaries-and-authority`
 
@@ -18,8 +18,9 @@ must still be able to stop.
 ## Scope
 
 This pass turns the generated reader baseline for System Boundaries and
-Authority into a first booklike curated reader draft. It is a reader-prose
-derivative only.
+Authority into a booklike curated reader chapter and records its
+chapter-level reconciliation state for the tracked reader manuscript. It is a
+reader-prose derivative only.
 
 Allowed curation scopes used:
 
@@ -52,8 +53,22 @@ Allowed curation scopes used:
 - Reconciled the reader chapter with the 2026-07-01 runtime-adapter harness
   expansion: ambient-authority confused-deputy and revoked-receipt probes are
   synthetic record gates only, not deployed authorization evidence.
+- Ran a second reader-prose pass over the opening and problem statement so the
+  chapter makes the efficiency-to-permission dependency explicit: the cheapest
+  adequate route is still invalid if it crosses a boundary without the right
+  grant.
+- Marked the chapter's curated-reader manifest record `reconciled` for the
+  current source boundary while preserving all release blockers.
 - Preserved the core claim, minimum viable implementation, beyond-state-of-the-
   art endpoint, and handoff into Failure Modes of Ungoverned Intelligence.
+
+## Reconciliation Status
+
+The curated reader chapter is reconciled against the current live chapter,
+generated reader baseline, Appendix C claim/support boundary, and Appendix K
+implementation horizon for prose meaning. This is not release approval.
+`curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, and
+`reader_release_record_not_created` remain active blockers.
 
 ## Meaning Preservation Checks
 
@@ -64,13 +79,15 @@ Allowed curation scopes used:
 | Source boundary preserved | Pass. New source-noted comparator lineage is carried only as external positioning; no external source is treated as reproduced enforcement, deployed security, or support-state evidence. |
 | Proof/test status preserved | Pass. The curated draft keeps the boundary that schemas, synthetic fixtures, the authority harness, the runtime-adapter authority probes, and finite Lean predicates do not prove deployed authorization enforcement, runtime adapter safety, revocation propagation, live confused-deputy resistance, or tool-wrapper security. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains an authority-transition schema plus fixtures and checks; the mature endpoint remains an unvalidated authority type system for stack effects. |
-| Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
+| Release blockers preserved | Pass. The chapter can be marked reconciled for prose meaning while no reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
 
 - This pass includes a live/reader reconciliation update to external
   comparator positioning and source inventory surfaces; it does not change
   claim meaning, support-state boundaries, proof targets, or release records.
+- This pass marks only this curated-reader record `reconciled`; it does not
+  make the full curated manuscript release-candidate or released.
 - This pass does not alter Appendix C, source assignments, proof targets, test
   status, implementation horizons, or release records.
 - This pass does not approve the curated chapter for reader release.
