@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-03 - Surface curated reader format probe in release status
+
+- Updated the v1.0 status snapshot, release-editions plan, and Appendix J so
+  the tracked curated-reader HTML/EPUB/DOCX/PDF structural probe is visible
+  alongside the older generated-reader format probes.
+- Added `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`,
+  `docs/curated_reader_format_artifact_probe.md`, and
+  `python3 scripts/validate_curated_reader_format_probe_manifest.py` to the
+  release/status evidence surface.
+- Boundary: this is release-readiness accounting for an existing local
+  structural probe only. It does not approve EPUB, DOCX, PDF, e-reader, audio,
+  or curated-reader HTML artifacts; it does not create an edition release
+  record, support-state transition, source interpretation, proof result,
+  benchmark result, or artifact publication claim.
+
 ## 2026-07-03 - Clarify idea-depth execution states
 
 - Reviewed the latest idea-focused Claude output against the current roadmap,
