@@ -2,6 +2,8 @@
 
 Date: 2026-06-30
 
+Evidence-boundary alignment: 2026-07-03
+
 Chapter: `mathematical-and-search-substrates`
 
 Reader manuscript file:
@@ -34,6 +36,10 @@ The reader throughline is:
   endpoint without implying that a useful substrate has already been validated.
 - Preserved the proof/test boundary for `AsiStackProofs.SearchSubstrates` and
   the protocol fixture boundary.
+- Added a 2026-07-03 reader-only evidence-boundary alignment for the implemented
+  substrate-adoption trace: four valid synthetic trace states, eight
+  expected-invalid controls, the Lean finite-summary bridge, and the no
+  evidence-transition/no-promotion boundary.
 
 ## Meaning-Preservation Checks
 
@@ -49,6 +55,11 @@ The reader throughline is:
 - The implemented substrate-adoption fixture remains a schema/protocol-shape
   validation only, not evidence that a substrate improves search, routing,
   compression, representation, runtime, model quality, or ASI progress.
+- The implemented substrate-adoption trace is preserved as a deterministic
+  synthetic record-shape and transition-boundary harness only. It does not run a
+  temporal-coil A/B test, representation-efficiency benchmark, CoilMoECOT route
+  benchmark, Mamba comparison, Circle substrate sidecar, Theseus transfer
+  consumer, useful-substrate evaluation, or model-quality evaluation.
 
 ## Non-Claims
 
@@ -59,6 +70,11 @@ The reader throughline is:
 - This pass does not claim a temporal-coil A/B run, representation-efficiency
   benchmark, CoilMoECOT route benchmark, Mamba comparison, Circle substrate
   sidecar, or Theseus transfer consumer.
+- This pass does not claim that the substrate-adoption trace validates Circle,
+  CoilMoECOT, Mamba, TreeLLM, Theseus, or any other substrate for adoption.
+- This pass does not claim that the substrate-adoption trace creates an evidence
+  transition or promotes the `mathematical-and-search-substrates` chapter core
+  claim.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.
@@ -66,9 +82,11 @@ The reader throughline is:
 ## Remaining Blockers
 
 - Human editorial review has not approved this chapter for reader release.
-- A real substrate-adoption trace remains planned: candidate registration,
-  structural-only receipt or workload plan, consumer rejection, negative
-  control, fallback, narrowed adoption state, and residual.
+- Baseline-symmetric substrate workloads remain missing beyond the deterministic
+  synthetic adoption trace: real substrate A/B runs, representation-efficiency
+  benchmarks, cyclic/coil sidecar tests, sequence-substrate comparisons,
+  transfer consumers, adoption-review records, and accepted evidence-transition
+  review remain open.
 - Any stronger substrate claim needs accepted evidence-transition records with
   exact workloads, baselines, negative controls, commands, limitations,
   counterevidence, and non-claims.
