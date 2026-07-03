@@ -347,4 +347,53 @@ theorem residual_honesty_conservation_fixture_bridge :
   unfold residualConservationFixtureSummary
   simp
 
+structure ResidualLedgerTraceSummary where
+  resourceFlagshipArtifactRead : Bool
+  resourceSublaneDecisionsRecorded : Bool
+  resourceResidualizedDeferralsVisible : Bool
+  resourceDisplacedCostsResidualized : Bool
+  compactGvrResidualsVisible : Bool
+  compactGvrControlsVisible : Bool
+  readinessResidualEscrowVisible : Bool
+  readinessLostResidualControlRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+  deployedLedgerNotClaimed : Bool
+deriving DecidableEq, Repr
+
+def residualLedgerTraceSummary :
+    ResidualLedgerTraceSummary where
+  resourceFlagshipArtifactRead := true
+  resourceSublaneDecisionsRecorded := true
+  resourceResidualizedDeferralsVisible := true
+  resourceDisplacedCostsResidualized := true
+  compactGvrResidualsVisible := true
+  compactGvrControlsVisible := true
+  readinessResidualEscrowVisible := true
+  readinessLostResidualControlRejected := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+  deployedLedgerNotClaimed := true
+
+def ResidualLedgerTraceValid
+    (summary : ResidualLedgerTraceSummary) : Prop :=
+  summary.resourceFlagshipArtifactRead = true ∧
+    summary.resourceSublaneDecisionsRecorded = true ∧
+    summary.resourceResidualizedDeferralsVisible = true ∧
+    summary.resourceDisplacedCostsResidualized = true ∧
+    summary.compactGvrResidualsVisible = true ∧
+    summary.compactGvrControlsVisible = true ∧
+    summary.readinessResidualEscrowVisible = true ∧
+    summary.readinessLostResidualControlRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true ∧
+    summary.deployedLedgerNotClaimed = true
+
+theorem residual_ledger_trace_surface_bridge :
+    ResidualLedgerTraceValid
+      residualLedgerTraceSummary := by
+  unfold ResidualLedgerTraceValid
+  unfold residualLedgerTraceSummary
+  simp
+
 end AsiStackProofs.CompactGenerativeSystems

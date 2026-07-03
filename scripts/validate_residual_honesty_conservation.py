@@ -366,8 +366,8 @@ def validate_surfaces(errors: list[str]) -> None:
         LEDGER_MD,
         [
             "Residual honesty",
-            "residual_conservation_fixture_backed_not_empirical",
-            "real residual-ledger trace",
+            "residual_ledger_trace_backed_not_deployed",
+            rel(RESULT),
         ],
         errors,
     )
@@ -377,7 +377,7 @@ def validate_surfaces(errors: list[str]) -> None:
         errors.append(f"{rel(LEDGER_JSON)} must contain one residual_honesty row.")
     else:
         row = residual_rows[0]
-        if row.get("confidence_state") != "residual_conservation_fixture_backed_not_empirical":
+        if row.get("confidence_state") != "residual_ledger_trace_backed_not_deployed":
             errors.append(f"{rel(LEDGER_JSON)} residual_honesty confidence_state is stale.")
         if rel(RESULT) not in text_blob(row):
             errors.append(f"{rel(LEDGER_JSON)} residual_honesty row must reference {rel(RESULT)}.")

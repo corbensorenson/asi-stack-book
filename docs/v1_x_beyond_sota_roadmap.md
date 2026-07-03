@@ -127,7 +127,7 @@ not be quoted in the book as an external authority.
 |---|---|---|---|
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
-| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 941 theorem declarations, 178 direct/projection-style, 759 derived/decomposed, 4 unknown/mixed, and 103 safety-critical theorem declarations after the residual honesty conservation fixture bridge pass. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
+| P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 942 theorem declarations, 178 direct/projection-style, 760 derived/decomposed, 4 unknown/mixed, and 103 safety-critical theorem declarations after the residual ledger trace bridge pass. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
 | P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | 2026-07-02 direction: this lane is parked as user-owned for Codex execution. The public request issue and dated outreach blocker remain the sequencing record; they prevent other milestones from waiting, but they are not accepted external-review evidence. Codex must not schedule outreach work, must not gate any other milestone on review, and spends cycles here only if Corben supplies a review to ingest. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
 | P0 | The Ideas grade will not improve through more nomenclature. | The contribution novelty ledger exists, and the first verification-bandwidth capacity model is implemented, but several signature ideas still lack artifact-backed consequences or an answered strongest objection in chapter prose. | Treat "idea depth" as an artifact gate: one signature idea per cycle gets live prose, reader prose, ledger/source deltas, a proof/evidence artifact or dated blocker, and explicit non-claims. Do not close an idea with a roadmap note or standalone audit. |
@@ -162,7 +162,7 @@ roadmap. The findings with teeth are:
   name the closing artifact, name the remaining closure class, or record a
   dated blocker.
 - `python3 scripts/validate_proof_depth.py` now classifies 941 theorem
-  declarations, including 759 derived/decomposed declarations and 178 direct
+  declarations, including 760 derived/decomposed declarations and 178 direct
   or projection-style declarations. The counts are stronger than the older
   roadmap snapshot, but the direction remains the same: do not chase theorem
   count; chase executable-model bridges, transition properties, and negative
@@ -548,12 +548,16 @@ prose, structure, and argument only — it promotes no support state.
    ungoverned: capability differential, task risk, and tax level at which
    governance pays for itself; argument-level modeling is acceptable and must
    carry non-claims.
-4. **Residual honesty** → first closure exists: the record-level conservation
-   fixture accepts accepted, deferred, and discharged residual records while
-   rejecting hidden, erased, unowned, support-promoting, and zero-residual
-   overclaim controls. The next honest artifact is a real residual-ledger trace
-   from compact-generation, resource, or readiness work, not another synthetic
-   record fixture.
+4. **Residual honesty** → first two closures exist: the record-level
+   conservation fixture accepts accepted, deferred, and discharged residual
+   records while rejecting hidden, erased, unowned, support-promoting, and
+   zero-residual overclaim controls, and the real repository residual-ledger
+   trace in `experiments/residual_ledger_trace/results/2026-07-03-local.json`
+   reads current Resource flagship, Resource workflow, Compact GVR, and
+   Readiness artifacts to keep residualized deferrals, displaced costs, repair
+   residuals, readiness escrow, rejected hidden burdens, and no-promotion
+   decisions visible. The next honest artifact is live or externally
+   reviewable residual-ledger storage/replay evidence, not another local trace.
 5. **Evidence-state ladder** → formalize soundness of a support-state system
    and its relation to AGM-style belief revision.
 6. **Stable capability fields** → develop identity-under-replacement as an
@@ -593,9 +597,11 @@ clearly linked artifacts:
 
 Work at most one signature idea to this gate per autonomous cycle unless the
 same artifact truly closes two rows. Verification bandwidth and residual
-honesty now have first record-level closures; the next idea-depth closure
-should either deepen residual honesty with a real residual-ledger trace or
-attack the receipt-faithfulness/record-reality gap.
+honesty now have first record-level closures, and residual honesty also has a
+first real repository residual-ledger trace. The next idea-depth closure should
+either move residual honesty beyond local repository traces into live/external
+storage-and-replay evidence or attack the receipt-faithfulness/record-reality
+gap.
 
 ### Missing keystone concepts (ranked, with routing)
 
@@ -867,7 +873,7 @@ Current status after the first v1.x safety-critical proof-depth sweep:
   expiry/revisit records, evidence-transition records, and non-claim
   boundaries on top of the earlier review-decision theorems for residual
   blocking, dissent residualization, and authority narrowing.
-- The generated proof-depth report records 941 theorem declarations, 759
+- The generated proof-depth report records 942 theorem declarations, 759
   derived/decomposed declarations, 4 unknown/mixed declarations, 103
   safety-critical declarations, and 11 remaining safety-critical
   direct/projection declarations.
@@ -889,7 +895,7 @@ Current proof status:
   manifest chapters after the executed fold packages preserved MoECOT,
   simulation-fidelity, command-contract, PlanForge, and semantic-representation
   proof tags in their destinations.
-- `docs/proof_depth_classification.md` records 941 theorem declarations, 759
+- `docs/proof_depth_classification.md` records 942 theorem declarations, 759
   derived/decomposed theorem declarations, 178 direct/projection-style theorem
   declarations, and 4 unknown/mixed theorem declarations.
 - `AsiStackProofs.StackBoundaries` now has a finite trace-level unauthorized
@@ -1387,7 +1393,7 @@ Per-chapter burn-down:
 | `circle-calculus-and-proof-carrying-ai-contracts` | The chapter abstracts away from Circle's most concrete proved results. | Partially executed: the chapter now surfaces source-verified, public-safe Circle evidence for commit `63b0f511`, `CC-AI-CONTRACT-ROPE-001`, requested margin `1/328459`, `theorem_count 55`, ready digest `fields=31 missing=0 theorems=75`, the seven checked theorem IDs, fingerprints, the ASI consumer gate, and non-claims, guarded by `python3 scripts/validate_circle_concrete_evidence_surface.py`. Reader-only overlays now replace the dense `Concrete Circle Receipt Boundary`, proof-receipt lifecycle, `Interfaces`, and `Minimum Viable Implementation` reader/Human-view sections, dropping the generated-reader heuristic row from high to medium and the dense-hit count from 175 to 136 while preserving the canonical live evidence table, proof-contract field inventory, implementation details, and mechanism diagram in AI view. Remaining work: clean Circle replay from this repo, vendored or archived public contract pack, theorem-id resolution from local artifacts, and do not use trichotomy/undecided-interval language unless Circle artifacts explicitly verify that phrasing. |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | Specialist chapter is sound but needed concrete Circle backing. | Partially executed: added the Circle cyclic-memory receipt slice for commit `63b0f511`, contract `CC-AI-CONTRACT-MEMORY-001`, kind `cyclic_memory_residue_winding`, theorem IDs `AIM-T0001`, `AIM-T0002`, `AIM-T0004`, `AIM-T0005`, recommendations `MEMORY-ATTACH-WINDING-ALIAS-PROVENANCE` and `MEMORY-AUDIT-FINITE-ALIAS-LOAD`, `same_residue_events=[7, 15, 23, 31]`, `same_residue_windings=[0, 1, 2, 3]`, `max_alias_load=4`, strict receipt fingerprint `a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a`, Circle CLI output `3 passed in 2.51s`, and validator `python3 scripts/validate_circle_cyclic_memory_receipt_slice.py`. It does not promote any chapter core claim, does not create a support-state transition, and does not prove retrieval quality, task quality, model quality, context length, speed, memory scaling, deployment safety, transfer, or ASI. Remaining work: clean ASI-side Circle replay or archived public contract pack, KV-cache/sparse/recurrence receipt imports if needed, learned-memory workloads, retrieval-quality baselines, long-context benchmarks, transfer consumers, and any accepted evidence-transition review before stronger claims. |
 | `coilra-multicoil-rope-and-cyclic-mixers` | Planned tests and exact-collision proof results need better surfacing. | Partially executed: the chapter now surfaces the recorded Circle RoPE receipt boundary as diagnostic structural evidence only, including `evidence.exact_discrete_pass=true` and `evidence.total_bank_collision_pair_count=0`, guarded by `python3 scripts/validate_circle_concrete_evidence_surface.py`. Remaining work: implement planned RoPE/cyclic-mixer tests and add baseline-symmetric workload evidence before any model-quality, context-length, runtime, memory, hardware, transfer, deployment, or support-state claim. |
-| `executable-specifications-and-lean-proof-envelope` | Proof-governance chapter needed to show the book's real proof layer more concretely. | Partially executed: added Proof-depth surface synchronization guarded by `python3 scripts/validate_proof_depth_surface.py`; the live chapter, reader chapter, outline, and roadmap now expose the current validator-reported proof-depth snapshot. Current proof-depth snapshot: 180 proof targets, 54 Lean modules, 941 theorem declarations, 759 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present. The chapter explains derived/decomposed versus direct/projection labels and projection-only traceability, using the book's Lean layer as a worked proof-etiquette example. A reader-only overlay now replaces dense Interfaces and Minimum Viable Implementation proof-envelope inventory prose in Human view and generated reader output, dropping the generated-reader heuristic score from 9 to 7 while preserving the canonical AI/research details, rendered mechanism diagram, and support boundaries. The semantic proof adequacy review is now validator-checked by `python3 scripts/validate_proof_adequacy_review.py` against the 180-target manifest and no-promotion boundary language. This does not prove broad semantic adequacy, does not validate source interpretation, does not prove deployed enforcement, and does not promote proof-envelope support. Remaining work: upgrade high-value projection hooks where the proof model is too shallow and add consumer-gate receipts before stronger formal-methods claims. |
+| `executable-specifications-and-lean-proof-envelope` | Proof-governance chapter needed to show the book's real proof layer more concretely. | Partially executed: added Proof-depth surface synchronization guarded by `python3 scripts/validate_proof_depth_surface.py`; the live chapter, reader chapter, outline, and roadmap now expose the current validator-reported proof-depth snapshot. Current proof-depth snapshot: 180 proof targets, 54 Lean modules, 942 theorem declarations, 760 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present. The chapter explains derived/decomposed versus direct/projection labels and projection-only traceability, using the book's Lean layer as a worked proof-etiquette example. A reader-only overlay now replaces dense Interfaces and Minimum Viable Implementation proof-envelope inventory prose in Human view and generated reader output, dropping the generated-reader heuristic score from 9 to 7 while preserving the canonical AI/research details, rendered mechanism diagram, and support boundaries. The semantic proof adequacy review is now validator-checked by `python3 scripts/validate_proof_adequacy_review.py` against the 180-target manifest and no-promotion boundary language. This does not prove broad semantic adequacy, does not validate source interpretation, does not prove deployed enforcement, and does not promote proof-envelope support. Remaining work: upgrade high-value projection hooks where the proof model is too shallow and add consumer-gate receipts before stronger formal-methods claims. |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Proof coverage was narrow and Theseus benchmark practice is under-surfaced. | Partially executed: added the Benchmark anti-Goodhart fixture bridge, guarded by `python3 scripts/validate_benchmark_fixture_bridge.py`, with 2 valid fixtures, 5 expected-invalid controls, one promotion-ready synthetic path, one saturated-regression-floor path, result record `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json`, and `lean:benchmarks.ratchet.fixture_bridge` in `AsiStackProofs.BenchmarkRatchets`. This proves only finite synthetic fixture-summary alignment and no-support-promotion boundaries. Remaining work: ground public-calibration locks, honest weak scores, residual escrow, benchmark-state transitions, and source-reported or current Theseus benchmark practice in verified Theseus artifacts or an explicit replay/import blocker before stronger claims. |
 | `policy-optimization-and-learning-from-feedback` | Planned optimizer/training tests remain, but the rollback-demo gap is now partially closed. | Partially executed: added the Policy update lease probe, a deterministic policy-update lease fixture guarded by `python3 scripts/validate_policy_update_lease_probe.py`, with six synthetic router-policy samples, five candidate policies, one source-grounded canary kept experimental, three expected-invalid controls for reward-only proxy, authority expansion, and missing rollback, holdout checks, contamination check, reward-hacking probes, unchanged authority, rollback dry run, residuals, result record `experiments/policy_update_lease/results/2026-07-02-local.json`, and Lean bridge `lean:policy_optimization.lease_probe_fixture_bridge`. This records no optimizer, no deployed canary, no live rollback, no route-quality or reward-quality result, and no support-state promotion. Remaining work: DPO/offline preference baseline, PPO or online RL baseline, GRPO/RLOO toy verifier reward, verifier reward-loop evidence, latency/reasoning-budget preservation study, router-policy or context-policy training/simulation beyond deterministic fixture, reward-quality studies, real holdout/contamination operations, deployed monitoring, and accepted evidence-transition review before stronger claims. |
 | `artifact-steward-agents-and-living-project-governance` | Former chapter-level Lean module mapping bug hid a distinctive steward proof lane from the chapter metadata. | Partially executed: metadata mapping is fixed, the steward proof lane is surfaced as seven manifest/outline/chapter proof targets, and the Artifact steward lifecycle probe now checks `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and six expected-invalid controls for `invalid_tainted_event_without_review`, `invalid_over_policy_treasury_spend`, `invalid_contribution_governance_laundering`, `invalid_unscoped_federation_contract`, `invalid_release_without_gate_evidence`, and `invalid_sunset_criteria_ordinary_work`. Remaining work: polish the chapter around bounded continuity, federation, treasury, release gate, sunset, and stewardship evidence; add real executable event-taint workflow, treasury/governance engine, contribution-ledger service, federation harness, release runner, sunset protocol, and behavioral steward-loop tests before stronger claims. Current probe is a no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim. |
@@ -1730,6 +1736,18 @@ Current status for the focused v1.x active evidence cycle:
   first record-level conservation fixture while preserving no proof that all
   residuals are observable, no safety proof, no deployed residual-ledger
   behavior, and no chapter-core promotion.
+- The real residual-ledger trace is the next Compact Generative Systems
+  idea-depth and burn-down item, and it is now executed without creating a
+  support-state transition: `python3 scripts/validate_residual_ledger_trace.py`
+  reads existing Resource flagship, Resource workflow, Compact GVR, and
+  Readiness artifacts, writes
+  `experiments/residual_ledger_trace/results/2026-07-03-local.json`, and
+  checks the finite Lean bridge `residual_ledger_trace_surface_bridge`. The
+  trace keeps residualized deferrals, displaced costs, repair residuals,
+  readiness escrow, rejected hidden burdens, and no-promotion decisions visible
+  across Resource flagship, Compact GVR, and Readiness artifacts. It does not
+  prove deployed residual-ledger behavior, safety, model quality, benchmark
+  performance, or chapter-core support. Boundary phrase: does not prove deployed residual-ledger behavior.
 - The Project Theseus generation-mode import is a direct support lane connected
   to Fast Generation and the Project Theseus implementation-reference chapter:
   the imported gate records 18 modes, 13 comparisons, zero hard gaps, zero
@@ -1749,19 +1767,20 @@ Current status for the focused v1.x active evidence cycle:
   model-quality result, generation-speed result, external review, or
   support-state transition.
 - The next evidence work should deepen the flagship Resource Economics lane by
-  replacing repeated local workload-quality evidence, local synthetic load-stability evidence, local command replay,
-  and CI publication metadata with live or externally reviewable workload
-  quality review, production scheduler logs, measured displaced-cost
-  accounting, live or externally reviewed load-stability evidence, physical-feasibility review, and measured simulation outputs
-  before opening a new active cycle.
-- The measured Resource sublanes also need explicit support-state decisions.
-  The costed-route slice already has an accepted narrow non-core transition;
-  the workload-quality probe, load-stability probe, live-probe replay, CI-cost
-  profile, workflow trace, and aggregate flagship replay should each be routed
-  to either an accepted narrow transition, an explicit no-change/no-promotion
-  decision, or a dated blocker explaining which external/live workload evidence
-  is missing. Do not keep producing additional local probes while measured
-  results remain decision-pending.
+  replacing repeated local workload-quality evidence, local synthetic
+  load-stability evidence, local command replay, and CI publication metadata
+  with live or externally reviewable workload-quality review, production
+  scheduler logs, measured displaced-cost accounting, live or externally
+  reviewed load-stability evidence, physical-feasibility review, and measured
+  simulation outputs before opening a new active cycle.
+- The measured Resource sublanes now have explicit support-state decisions
+  recorded in the aggregate flagship result and evidence-transition files:
+  the costed-route and finite burst load-smoothing selector slices have
+  accepted narrow non-core transitions, while the workload-quality probe,
+  load-stability probe, live-probe replay, CI-cost profile, and workflow trace
+  have accepted no-change/no-promotion records. Do not keep producing
+  additional local probes unless they replace a local surface with live,
+  externally reviewable, or materially stronger measured evidence.
 
 ### Milestone 5.5 - Chapter External Grounding And Citation Backfill
 

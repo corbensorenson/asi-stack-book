@@ -41,6 +41,19 @@ useful thing: a record-level boundary saying residual burden can be carried,
 priced, deferred, or discharged, but it cannot simply disappear because the
 compact route looks elegant.
 
+The residual-ledger trace takes one step closer to the real book machinery. It
+does not invent a new toy record. It reads the existing Resource flagship,
+Resource workflow, Compact GVR, and Readiness/residual gate artifacts and asks
+whether the residuals are still visible after those artifacts have already been
+written. They are: seven deferred task-ticks remain named, displaced workflow
+costs remain residualized, the compact receipt still carries its repair
+residual, readiness escrow remains visible, and no-promotion decisions stay
+attached.
+
+That is still not proof that a deployed ledger exists. It is proof of a more
+modest discipline: the current repository artifacts can be made to carry their
+unpaid burdens forward instead of letting them vanish inside a success metric.
+
 ![Draft compression and generation acceptance.](../../../../assets/diagrams/compression-and-generation-acceptance.svg){#reader-fig-compression-and-generation-acceptance fig-alt="Draft compression and generation acceptance figure showing target burden flowing through compact generation, fast generation, and artifact compression paths before verifier, residual, fallback, and consumer-policy gates decide accepted use or blocked routes."}
 
 Figure boundary: this draft reader aid compares compact generation, fast
@@ -321,6 +334,15 @@ synthetic residual records and five dishonest controls, then checks the finite
 Lean bridge in `AsiStackProofs.CompactGenerativeSystems`. The fixture records
 residual movement; it does not prove all residuals are discoverable, does not
 prove safety, and does not promote the chapter core claim.
+
+The implemented residual-ledger trace adds a repository-level example without
+changing that boundary. `python3 scripts/validate_residual_ledger_trace.py`
+reads already committed Resource, Compact GVR, and Readiness artifacts and
+writes `experiments/residual_ledger_trace/results/2026-07-03-local.json`.
+It records four trace entries showing that residualized deferrals, displaced
+costs, repair residuals, readiness escrow, rejected hidden burdens, and
+no-promotion decisions remain attached across artifact boundaries. It is not
+proof that a deployed ledger exists.
 
 The folded generate/verify/repair lane adds the compression receipt. The bounded slice now shows the shape of that receipt discipline: exactness belongs to generator plus repair plus verification, not to the generator alone; negative-rate and missing-fallback cases stay as negative evidence; bounded-search failures do not become success stories; and consumer scope remains attached to the receipt. That slice is still not a codec benchmark. Its evidential scope is the public record's distinction among exactness, declared loss, repair, fallback, quarantine, and consumer scope.
 

@@ -1,0 +1,125 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_residual_ledger_trace.py",
+  "evidence_transition_created": false,
+  "lean_fixture_alignment": {
+    "expected": {
+      "compactGvrControlsVisible": true,
+      "compactGvrResidualsVisible": true,
+      "deployedLedgerNotClaimed": true,
+      "nonClaimBoundary": true,
+      "readinessLostResidualControlRejected": true,
+      "readinessResidualEscrowVisible": true,
+      "resourceDisplacedCostsResidualized": true,
+      "resourceFlagshipArtifactRead": true,
+      "resourceResidualizedDeferralsVisible": true,
+      "resourceSublaneDecisionsRecorded": true,
+      "supportStateEffectNone": true
+    },
+    "module": "AsiStackProofs.CompactGenerativeSystems",
+    "theorem_refs": [
+      "residual_ledger_trace_surface_bridge"
+    ]
+  },
+  "manifest_ref": "experiments/residual_ledger_trace/input/artifact_manifest.json",
+  "non_claims": [
+    "does not prove deployed residual-ledger behavior",
+    "does not prove safety",
+    "does not promote any chapter core claim",
+    "does not prove model quality or benchmark performance"
+  ],
+  "recorded_date": "2026-07-03",
+  "residuals": [
+    "This trace reads already committed Resource, Compact GVR, and Readiness artifacts instead of inventing a fresh synthetic residual record set.",
+    "The trace verifies that residualized deferrals, displaced costs, repair residuals, readiness escrow, rejected hidden burdens, and no-promotion decisions stay visible across artifact boundaries.",
+    "The trace is still local repository evidence and does not establish deployed residual-ledger storage or runtime residual detection."
+  ],
+  "result_id": "2026-07-03-residual-ledger-trace",
+  "result_kind": "cross_artifact_residual_ledger_trace",
+  "schema_version": "asi_stack.residual_ledger_trace.result.v0",
+  "source_artifact_hashes": {
+    "experiments/compact_gvr_slice/results/2026-07-01-local.json": "bdd23b1ffabd3c83a474cc5b2f3d216ad6f3d5485c3821426fbcce8b543a8bc2",
+    "experiments/readiness_residual_gates/results/2026-06-28-local.md": "8459e11baa5cf62bd1d9c67563d83f2393bc45fa5d2d657e82759ec4f7915cbf",
+    "experiments/residual_honesty_conservation/results/2026-07-03-local.json": "49459d10c7a3988bab47b278c9512db8d60d1094c9266da5cc2d1c131d132745",
+    "experiments/resource_flagship_lane/results/2026-07-01-local.json": "b7a9163046c4aa9ee7674a836fe0d4eb830cc9d51f5df6c57d696951e5f22d32",
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
+  },
+  "support_state_effect": "none",
+  "trace_entries": [
+    {
+      "artifact_ref": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+      "decision_refs": [
+        "resource_ci_cost_profile_no_change",
+        "resource_live_probe_no_change",
+        "resource_load_stability_probe_no_change",
+        "resource_workflow_trace_no_change",
+        "resource_workload_quality_probe_no_change"
+      ],
+      "entry_id": "resource-flagship-residualized-deferrals",
+      "negative_control": {
+        "hidden_deferred_task_ticks": 7,
+        "name": "route://negative-latency-only-review-erasure"
+      },
+      "residual_surface": "selected route residualizes seven deferred task-ticks and rejects a hidden-deferral review-erasure control",
+      "support_state_effect": "none",
+      "visible_burden": {
+        "selected_residualized_deferred_task_ticks": 7
+      }
+    },
+    {
+      "artifact_ref": "experiments/resource_workflow_trace/results/2026-07-01-local.json",
+      "entry_id": "resource-workflow-displaced-costs",
+      "negative_control": {
+        "name": "invalid_displaced_cost_erased.json"
+      },
+      "residual_surface": "workflow trace preserves displaced-cost residualization and rejects erased displaced costs",
+      "support_state_effect": "none",
+      "visible_burden": {
+        "displaced_costs_residualized": true
+      }
+    },
+    {
+      "artifact_ref": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+      "entry_id": "compact-gvr-repair-residual",
+      "negative_control": {
+        "names": [
+          "receipt://bounded-search-overrun",
+          "receipt://lossy-summary-marked-exact",
+          "receipt://negative-rate-no-fallback"
+        ]
+      },
+      "residual_surface": "selected compact receipt keeps explicit repair residual and fallback path visible",
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "visible_burden": {
+        "selected_receipt": "receipt://repeat-generator-plus-repair"
+      }
+    },
+    {
+      "artifact_ref": "experiments/readiness_residual_gates/results/2026-06-28-local.md",
+      "entry_id": "readiness-residual-escrow",
+      "negative_control": {
+        "name": "invalid_residual_lost_on_promotion.json"
+      },
+      "residual_surface": "readiness harness admits residual escrow/quarantine cases and rejects lost residual escrow",
+      "support_state_effect": "none",
+      "visible_burden": {
+        "canary_with_residual_escrow": true
+      }
+    }
+  ],
+  "trace_entry_count": 4,
+  "trace_summary": {
+    "compactGvrControlsVisible": true,
+    "compactGvrResidualsVisible": true,
+    "deployedLedgerNotClaimed": true,
+    "nonClaimBoundary": true,
+    "readinessLostResidualControlRejected": true,
+    "readinessResidualEscrowVisible": true,
+    "resourceDisplacedCostsResidualized": true,
+    "resourceFlagshipArtifactRead": true,
+    "resourceResidualizedDeferralsVisible": true,
+    "resourceSublaneDecisionsRecorded": true,
+    "supportStateEffectNone": true
+  },
+  "verification_result": "pass"
+}

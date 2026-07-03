@@ -111,16 +111,17 @@
       "audited_delta": "Evaluation and risk-management sources warn about proxy failures and hidden risks; the ASI Stack turns residual burden into a ledgered artifact that can block promotion even when a visible metric improves.",
       "non_obvious_consequence": "Any evidence transition that improves one metric must name displaced burden or prove it was discharged; missing residual accounting should block promotion.",
       "strongest_objection": "Some residuals are not observable or quantifiable enough to be conserved in a ledger.",
-      "answer_status": "partially_answered_by_residual_conservation_fixture",
-      "confidence_state": "residual_conservation_fixture_backed_not_empirical",
-      "needed_next_artifact": "A real residual-ledger trace from a compact-generation, resource, or readiness workflow with owner handoff, discharge review, external/live workload context, and no-promotion decision. Current fixture result: experiments/residual_honesty_conservation/results/2026-07-03-local.json.",
+            "answer_status": "partially_answered_by_residual_conservation_fixture_and_cross_artifact_trace",
+            "confidence_state": "residual_ledger_trace_backed_not_deployed",
+            "needed_next_artifact": "A live or externally reviewable residual-ledger trace with owner handoff, discharge review, workload context, storage/replay behavior, and independent no-promotion or transition review. Current local results: experiments/residual_honesty_conservation/results/2026-07-03-local.json and experiments/residual_ledger_trace/results/2026-07-03-local.json.",
       "support_state_effect": "none",
       "non_claims": [
-        "does not prove all residuals are observable",
-        "does not prove safety",
-        "does not prove deployed residual-ledger behavior",
-        "does not promote any chapter core claim"
-      ]
+                "does not prove all residuals are observable",
+                "does not prove safety",
+                "does not prove deployed residual-ledger behavior",
+                "does not prove live residual-ledger storage or replay behavior",
+                "does not promote any chapter core claim"
+            ]
     },
     {
       "idea_id": "support_state_ladder",

@@ -180,6 +180,9 @@ REQUIRED = [
     "scripts/validate_fast_generation_task_bundle.py",
     "scripts/validate_compact_gvr_slice.py",
     "scripts/validate_residual_honesty_conservation.py",
+    "scripts/validate_residual_ledger_trace.py",
+    "docs/residual_ledger_trace.md",
+    "experiments/residual_ledger_trace/results/2026-07-03-local.json",
     "scripts/validate_resource_budget_ledgers.py",
     "scripts/validate_simulation_transfer_boundaries.py",
     "scripts/validate_reference_trace.py",
@@ -952,6 +955,7 @@ def main() -> None:
     run_validator("validate_fast_generation_task_bundle.py")
     run_validator("validate_compact_gvr_slice.py")
     run_validator("validate_residual_honesty_conservation.py")
+    run_validator("validate_residual_ledger_trace.py")
     run_validator("validate_resource_budget_ledgers.py")
     run_validator("validate_simulation_transfer_boundaries.py")
     run_validator("validate_reference_trace.py")

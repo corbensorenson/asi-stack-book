@@ -1,0 +1,18 @@
+{
+  "schema_version": "asi_stack.residual_ledger_trace.manifest.v0",
+  "trace_id": "residual-ledger-trace-2026-07-03-local",
+  "purpose": "Validate that already committed Resource, Compact GVR, and Readiness artifacts keep residual burdens, negative controls, and no-promotion decisions visible across artifact boundaries.",
+  "source_artifact_refs": [
+    "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+    "experiments/resource_workflow_trace/results/2026-07-01-local.json",
+    "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+    "experiments/readiness_residual_gates/results/2026-06-28-local.md",
+    "experiments/residual_honesty_conservation/results/2026-07-03-local.json"
+  ],
+  "required_boundaries": [
+    "no deployed residual-ledger behavior claim",
+    "no safety proof claim",
+    "no chapter-core support-state promotion",
+    "no model-quality or benchmark claim"
+  ]
+}
