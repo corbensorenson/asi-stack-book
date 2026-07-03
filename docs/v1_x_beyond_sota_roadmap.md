@@ -613,6 +613,53 @@ Execution order from here:
    corrigibility-capability trade-off after the keystone receipt/TCB/oversight
    gaps are owned.
 
+### Idea-depth chapter roles
+
+The book does not need every chapter to pretend it is an independent novelty
+claim. A+ idea quality means each chapter is honest about its role:
+
+- **Signature-idea owner**: a chapter that must carry a crisp idea statement,
+  prior-art delta, non-obvious consequence, strongest objection, artifact path,
+  reader version, and non-claims.
+- **Pattern application**: a chapter that applies the governed-cognition
+  record/lifecycle/ceiling/gate/receipt/rollback pattern to a concrete layer
+  and should state only the local mechanism delta, not inflate itself into a
+  new contribution.
+- **Bridge chapter**: a chapter whose value is the interface between two
+  layers; it closes by executable handoff traces, proof bridges, or evidence
+  imports, not by adding more terminology.
+- **Evidence carrier**: a chapter that is currently important because it owns a
+  validator, fixture, replay, import, no-promotion decision, or release gate;
+  its prose should make the artifact understandable without turning artifact
+  shape into support-state strength.
+- **Reader synthesis chapter**: a chapter that earns its place by making the
+  architecture legible to humans; it may compress evidence detail into
+  companion surfaces, but it may not alter claim meaning.
+
+Future chapter edits should state the role implicitly through prose and
+explicitly in the outline only when the role affects proof, evidence, or reader
+work. A chapter can change roles when a new artifact lands, but role drift is
+not a reason to create a new report.
+
+### Idea-depth dispatch table
+
+Use this table as the execution surface for the Ideas/Synthesis grade. Closing
+a row means changing the owner chapters, reader manuscript, contribution
+ledger, and proof/evidence surfaces together. A roadmap sentence, score change,
+or standalone audit does not close a row.
+
+| Signature idea | Owner surfaces | Current honest state | Next A+ closure | Does not count |
+|---|---|---|---|---|
+| Verification bandwidth | `verification-bandwidth-and-context-adequacy`, Evidence States, Proof Envelope | Capacity-model and contradiction-probe fixtures exist; empirical contradiction-rate, distractor-resistance, and adequacy-classifier evidence remain open. | Run or import a benchmark/replay with logged prompts, baselines, negative controls, residual accounting, and non-claims; fold the consequence into live and reader prose without support-state promotion. | Another capacity sketch, a larger context-window discussion, or a theorem that only restates fixture fields. |
+| Pattern language for governed cognition | Opening stack chapter, Integrated Reference Architecture, Living Book Methodology | The contribution novelty ledger names the pattern, but many chapters still need concise local-delta prose. | Add a chapter/outline/reader pass that distinguishes signature mechanisms from pattern applications and makes the repeated pattern a named architecture language once. | A standalone pattern report, blanket novelty language, or adding new terminology to every chapter. |
+| Verification tax and governance economics | Resource Economics, Fast Generation, Readiness/Residual Escrow | Bounded Resource evidence exists, including workload-quality and load-stability transitions, but the when-governance-pays model is still incomplete. | Build a larger public-safe workload or formal trade-off model with risk, route quality, hidden cost, fallback behavior, and reviewer burden. | Cost-only speedups, no-op validator timing, or ignoring displaced verification work. |
+| Residual honesty | Compact Generative Systems, Resource Economics, Readiness/Residual Escrow | Residual-conservation fixture and real repository residual-ledger trace exist; live/deployed storage and replay remain unproven. | Produce live or externally reviewable residual-ledger storage/replay with owner handoff, discharge review, workload context, and explicit no-promotion or transition decision. | Another local trace over the same artifacts, rhetorical "nothing disappears" prose, or residual fields without replay behavior. |
+| Support-state discipline | Evidence States, Appendix C, Living Book Methodology | Ledger completeness and accepted-transition audits exist; true demotion/refutation and independent review remain open. | Record a real demotion/refutation/narrowing case or independent review routed through the claim-state machinery. | More examples of no-promotion alone, or moving wording without changing a claim decision artifact. |
+| Stable capability identity | Stable Capability Fields, Capability Replacement, Project Theseus | SCF lifecycle and replacement fixtures exist; identity-under-replacement is not yet a defended transition theory. | Add an executable field-transition model over replacement sequences, with rollback, regression floor, authority preservation, and no-promotion boundaries. | More versioning metaphors or single-state qualification checks. |
+| Bounded self-improvement | Recursive Self-Improvement, Capability Replacement, Project Theseus | Safety-critical finite-record proof coverage exists; clean Theseus replay and live improvement trace remain open. | Pair a transition-system invariant with a clean Theseus replay or archived public fixture that shows evaluator independence, authority ceiling, rollback, monitor window, and non-claims. | More theorem count, self-improvement prose, or private/dirty project summaries. |
+| Human oversight degradation | Runtime Adapters, Human Intent, Evidence States | Finite fixture and human-factors grounding exist; deployed or externally reviewable approval-workflow evidence remains open. | Produce approval-workflow traces with reviewer-load fields, independent-evidence checks, reviewer rotation, alert-quality evidence, privacy boundary, and no-promotion decision. | Treating human approval as inherently safe, adding more approval fields, or citing automation literature without adapter evidence. |
+| Record-reality gap | Artifact Graphs, Proof-Carrying Claims, Integrated Reference Architecture, Bounded Self-Improvement | Receipt-faithfulness and epistemic-TCB fixtures exist; open-world receipt faithfulness and verifier correctness remain unproven. | Decide section-versus-chapter ownership, then add live/external attestation, randomized audit, independent verifier-quality, trust-base storage/replay, and incentive-limit evidence. | Schema-valid receipts, self-checking by the same component, unbounded attestation language, or trust-base naming without roots and residuals. |
+
 ### Idea-depth acceptance gate
 
 An idea-depth row is not closed by better naming. It is closed only when one
