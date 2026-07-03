@@ -382,7 +382,9 @@ Do not reopen these unless a validator fails or a new change touches them:
   manifest;
 - six narrow non-core evidence transitions are recorded;
 - all chapter core claims remain at `argument`;
-- reader HTML is the only release-approved human artifact;
+- the v1.0 generated-reader local HTML snapshot is the only release-approved
+  human-consumption artifact; the newer curated-reader HTML browser review is a
+  viability review only and is not a release record;
 - EPUB, DOCX, PDF, e-reader app review, audio, DOI/Zenodo, screen-reader pass,
   and manual keyboard pass remain unresolved.
 
@@ -660,6 +662,39 @@ Future chapter edits should state the role implicitly through prose and
 explicitly in the outline only when the role affects proof, evidence, or reader
 work. A chapter can change roles when a new artifact lands, but role drift is
 not a reason to create a new report.
+
+### Idea-depth closure packet
+
+An idea-depth pass is a book change, not a thought exercise. Each pass should
+produce one coherent closure packet over one signature idea unless the same
+artifact genuinely closes two rows. The packet should touch existing source-of-
+truth surfaces before adding any new document:
+
+- the owner live chapter states the idea, closest-prior-art delta,
+  consequence, weakening condition, strongest objection, and limitation in
+  ordinary chapter prose;
+- the curated reader chapter makes the same idea memorable without changing
+  claim meaning, support state, proof/test status, implementation horizon, or
+  source boundary;
+- `docs/book_outline.md` records the chapter role, source queue, proof target,
+  evidence lane, and any ownership decision;
+- `docs/contribution_novelty_ledger.json` and the generated ledger prose name
+  the comparator IDs, delta, confidence state, strongest objection, non-claims,
+  and next artifact;
+- any new comparator enters through `sources/source_inventory.json` and
+  `sources/source_notes/` before it appears in chapter prose;
+- the proof/evidence artifact is a Lean theorem, Python validator, public-safe
+  Theseus/Circle import, measured replay, accepted transition, no-promotion
+  decision, or dated blocker with exact missing conditions;
+- Appendix C, proof-adequacy surfaces, release/status surfaces, and limitation
+  prose are updated only if their source-of-record meaning actually changes;
+- `appendices/F_changelog.qmd` and the relevant validators record the executed
+  change.
+
+The packet fails if it only renames the idea, adds a ledger row without prose,
+adds a chapter paragraph without source/proof/evidence routing, or creates a
+new audit surface when the existing chapter, outline, ledger, source note,
+fixture, transition, or blocker can carry the decision.
 
 ### Idea-depth dispatch table
 
@@ -3555,7 +3590,7 @@ should close these lanes as artifacts, not as new reviews.
 | Burn-down truth | Milestone 2.5 rows are reconciled against existing artifacts first, with each row closed by artifact or dated to one remaining blocker. | A refreshed review paragraph, grade, or status note. |
 | Reader manuscript | All 44 curated reader chapters are reconciled, legacy voice-pass slots are converted into optional non-blocking sidecar enrichment prompts, the Part III/IV arcs are edited, and the edition has a release record naming exact built artifacts and blockers. | Generated reader projection, local render success, or `drafting` files. |
 | Contribution focus | Three to five defended contribution tracks stay selected, at most three are active deep-work tracks, and each active track has a concrete next evidence/proof/source artifact. | Treating all 44 chapters as simultaneous flagship campaigns. |
-| Idea depth | One signature idea per cycle moves through live chapter prose, curated reader prose, contribution novelty ledger, source-noted comparators, analytic consequence with weakening condition, proof/evidence artifact or dated blocker, and limitation/non-claim updates. | A novelty-ledger row, stronger terminology, or standalone idea audit that does not change chapters, reader prose, evidence, proof, or limitations. |
+| Idea depth | One signature idea per cycle closes as an idea-depth closure packet: live chapter prose, curated reader prose, outline role/evidence routing, contribution novelty ledger, source-noted comparators, analytic consequence with weakening condition, proof/evidence artifact or dated blocker, and limitation/non-claim updates. | A novelty-ledger row, stronger terminology, or standalone idea audit that does not change chapters, reader prose, evidence, proof, or limitations. |
 | Evidence disposition | Every chapter core claim has a standing disposition record: accepted transition, explicit no-promotion decision, demotion/refutation, or exactly what evidence would move it. | Implied status from prose, validator count, or source assignment. |
 | Formal depth | Safety-critical and v1-critical lanes either reach executable-model grade through transition invariants, trace properties, or Lean/Python fixture-equivalence checks, or carry projection-only limitation prose that matches the proof-adequacy review. | More theorem declarations that restate field presence or expand coverage without richer semantics. |
 | External grounding | Each chapter has source-noted comparators in prose, a candidate backlog, or a deliberate exception, with accepted third-party records entering through `sources/source_inventory.json`, source notes, and generated Appendix H. | Placeholder citations, bibliography-only mentions, or private conversation context. |
