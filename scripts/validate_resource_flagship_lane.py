@@ -16,6 +16,7 @@ from run_resource_flagship_lane import (
     RESULT_COMMAND,
     ROOT,
     RUN_ID,
+    SUBLANE_NO_PROMOTION_DECISION_REFS,
     TRACKED_ARTIFACTS,
     artifact_stat,
     build_component_summary,
@@ -24,12 +25,18 @@ from run_resource_flagship_lane import (
 
 
 DOC = ROOT / "docs" / "resource_flagship_lane_run.md"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 REQUIRED_NON_CLAIM_TERMS = (
     "does not promote the Resource Economics chapter core claim",
     "does not create a new support-state transition",
     "does not prove deployed scheduler behavior",
     "not external review",
+)
+REQUIRED_AGGREGATE_THEOREMS = (
+    "resource_flagship_lane_aggregate_fixture_valid",
+    "resource_flagship_lane_aggregate_preserves_no_core_promotion",
+    "resource_flagship_lane_aggregate_carries_transition_accounting",
 )
 
 
@@ -211,6 +218,87 @@ def validate_component_summary(value: dict[str, Any], errors: list[str]) -> None
             errors.append(f"{rel(RESULT)}:{decision_id}: transition_validity_state must remain review_accepted.")
 
 
+def negative_controls_preserved(summary: dict[str, Any]) -> bool:
+    accepted = summary.get("accepted_non_core_transition", {})
+    workload = summary.get("workload_quality_probe", {})
+    load = summary.get("load_stability_probe", {})
+    workflow = summary.get("workflow_trace", {})
+    return (
+        accepted.get("negative_control_routes")
+        == ["route://cheap-unverified-transform", "route://hidden-residual-auto-merge"]
+        and workload.get("negative_control_rejected") is True
+        and load.get("negative_protected_review_violation_count", 0) > 0
+        and workflow.get("expected_invalid_fixture_count") == 5
+    )
+
+
+def validate_aggregate_lean_alignment(value: dict[str, Any], errors: list[str]) -> None:
+    alignment = value.get("aggregate_lean_alignment")
+    if not isinstance(alignment, dict):
+        errors.append(f"{rel(RESULT)}: aggregate_lean_alignment must be an object.")
+        return
+
+    summary = value.get("component_summary")
+    if not isinstance(summary, dict):
+        errors.append(f"{rel(RESULT)}: component_summary is required before aggregate alignment can be checked.")
+        return
+    core = summary.get("chapter_core_decision", {})
+    expected = {
+        "proof_bridge_type": "aggregate Python/Lean flagship invariant",
+        "lean_module": "AsiStackProofs.ResourceEconomics",
+        "lean_fixture": "resourceFlagshipLaneAggregateFixture",
+        "lean_theorem_names": list(REQUIRED_AGGREGATE_THEOREMS),
+        "command_replay_count": len(COMMANDS),
+        "tracked_artifact_count": len(TRACKED_ARTIFACTS),
+        "accepted_transition_count": len(value.get("accepted_transition_refs", [])),
+        "sublane_no_promotion_decision_count": len(SUBLANE_NO_PROMOTION_DECISION_REFS),
+        "chapter_core_no_change": core.get("transition_effect") == "no_change",
+        "evidence_transition_created": value.get("evidence_transition_created"),
+        "support_state_effect_none": value.get("support_state_effect") == "none",
+        "chapter_core_support_effect_none": value.get("chapter_core_support_effect") == "none",
+        "negative_controls_preserved": negative_controls_preserved(summary),
+        "residuals_recorded": len(value.get("residuals", [])) == len(RESIDUALS),
+        "non_claim_boundary": all(
+            term.lower() in text_blob(value.get("non_claims"))
+            for term in REQUIRED_NON_CLAIM_TERMS
+        ),
+    }
+    for key, expected_value in expected.items():
+        if alignment.get(key) != expected_value:
+            errors.append(f"{rel(RESULT)}: aggregate_lean_alignment.{key} must be {expected_value!r}.")
+
+    non_claims = alignment.get("non_claims")
+    non_claim_text = text_blob(non_claims)
+    for term in ("finite-record accounting", "does not prove deployed scheduler behavior", "chapter-core support-state promotion"):
+        if term not in non_claim_text:
+            errors.append(f"{rel(RESULT)}: aggregate_lean_alignment non_claims missing {term!r}.")
+
+    if not LEAN_FIXTURE.exists():
+        errors.append(f"Missing {rel(LEAN_FIXTURE)}.")
+        return
+    lean_text = LEAN_FIXTURE.read_text(encoding="utf-8")
+    for theorem in REQUIRED_AGGREGATE_THEOREMS:
+        if not re.search(rf"^theorem\s+{re.escape(theorem)}\b", lean_text, flags=re.MULTILINE):
+            errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
+    for fragment in (
+        "structure FlagshipLaneAggregateSummary",
+        "def resourceFlagshipLaneAggregateFixture",
+        "commandReplayCount := 10",
+        "trackedArtifactCount := 26",
+        "acceptedTransitionCount := 3",
+        "sublaneNoPromotionDecisionCount := 5",
+        "chapterCoreNoChange := true",
+        "evidenceTransitionCreated := false",
+        "supportStateEffectNone := true",
+        "chapterCoreSupportEffectNone := true",
+        "negativeControlsPreserved := true",
+        "residualsRecorded := true",
+        "nonClaimBoundary := true",
+    ):
+        if fragment not in lean_text:
+            errors.append(f"{rel(LEAN_FIXTURE)} missing aggregate fixture fragment {fragment!r}.")
+
+
 def validate_artifacts(value: dict[str, Any], errors: list[str]) -> None:
     expected_refs = [*TRACKED_ARTIFACTS, rel(RESULT)]
     if value.get("artifact_refs") != expected_refs:
@@ -257,6 +345,8 @@ def validate_doc(errors: list[str]) -> None:
         "Sublane No-Promotion Decisions",
         "resource-economics.local_workload_quality_route_selection",
         "resource-economics.synthetic_load_stability_route_selection",
+        "aggregate Python/Lean flagship invariant",
+        "resourceFlagshipLaneAggregateFixture",
         "Support-state effect: `none`",
         "This run does not promote the Resource Economics chapter core claim",
     ]
@@ -276,6 +366,7 @@ def main() -> None:
     validate_record_shape(value, errors)
     validate_commands(value, errors)
     validate_component_summary(value, errors)
+    validate_aggregate_lean_alignment(value, errors)
     validate_artifacts(value, errors)
     validate_doc(errors)
 

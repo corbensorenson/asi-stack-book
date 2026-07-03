@@ -285,7 +285,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource live probe | implemented | passing via `python3 scripts/validate_resource_live_probe.py`; local repository command replay only; no deployed scheduler, physical-feasibility, model-quality, economic-outcome, or support-state-transition claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource workload-quality probe | implemented | passing via `python3 scripts/validate_resource_workload_quality_probe.py`; local five-sample median repository task only; no stable-speedup, deployed-scheduler, model-quality, economic-outcome, external-review, or support-state-transition claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource load-stability probe | implemented | passing via `python3 scripts/validate_resource_load_stability_probe.py`; accepted only for bounded non-core claim `resource-economics.finite_burst_load_smoothing_selector`; no TokenMana, deployed-scheduler, production-queue, real-load-stability, human-productivity, model-quality, economic-outcome, external-review, or chapter-core support-state-transition claim |
-| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource flagship lane replay | implemented | passing via `python3 scripts/validate_resource_flagship_lane.py`; aggregate local repository replay only; no Resource Economics chapter-core promotion, deployed scheduler, production workload, model-quality, economic-outcome, external-review, artifact-approval, or new support-state-transition claim |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource flagship lane replay | implemented | passing via `python3 scripts/validate_resource_flagship_lane.py`; aggregate local repository replay only; Lean fixture `resourceFlagshipLaneAggregateFixture` checks finite replay counts, tracked artifacts, accepted narrow transitions, no-promotion decisions, preserved controls, residuals, non-claims, and no-core-promotion/no-new-transition accounting; no Resource Economics chapter-core promotion, deployed scheduler, production workload, model-quality, economic-outcome, external-review, artifact-approval, or new support-state-transition claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Budget allocation test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Risk-adjusted verification test | planned | not run |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Capacity smoothing toy harness | implemented | passing via `python3 scripts/validate_capacity_smoothing.py`; 3 valid and 6 expected-invalid fixtures; no TokenMana, scheduler, load-stability, reviewer-optimization, or economic-result claim |
@@ -477,16 +477,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 185 |
+| Proof targets covered by triage | 186 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 185 |
+| implemented | 186 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 185 |
+| implemented | formal-invariant | lean-candidate | 186 |

@@ -334,9 +334,53 @@ def build_component_summary() -> dict[str, Any]:
     }
 
 
+def negative_controls_preserved(component_summary: dict[str, Any]) -> bool:
+    accepted = component_summary.get("accepted_non_core_transition", {})
+    workload = component_summary.get("workload_quality_probe", {})
+    load = component_summary.get("load_stability_probe", {})
+    workflow = component_summary.get("workflow_trace", {})
+    return (
+        accepted.get("negative_control_routes")
+        == ["route://cheap-unverified-transform", "route://hidden-residual-auto-merge"]
+        and workload.get("negative_control_rejected") is True
+        and load.get("negative_protected_review_violation_count", 0) > 0
+        and workflow.get("expected_invalid_fixture_count") == 5
+    )
+
+
+def build_aggregate_lean_alignment(component_summary: dict[str, Any]) -> dict[str, Any]:
+    core = component_summary.get("chapter_core_decision", {})
+    return {
+        "proof_bridge_type": "aggregate Python/Lean flagship invariant",
+        "lean_module": "AsiStackProofs.ResourceEconomics",
+        "lean_fixture": "resourceFlagshipLaneAggregateFixture",
+        "lean_theorem_names": [
+            "resource_flagship_lane_aggregate_fixture_valid",
+            "resource_flagship_lane_aggregate_preserves_no_core_promotion",
+            "resource_flagship_lane_aggregate_carries_transition_accounting",
+        ],
+        "command_replay_count": len(COMMANDS),
+        "tracked_artifact_count": len(TRACKED_ARTIFACTS),
+        "accepted_transition_count": 3,
+        "sublane_no_promotion_decision_count": len(SUBLANE_NO_PROMOTION_DECISION_REFS),
+        "chapter_core_no_change": core.get("transition_effect") == "no_change",
+        "evidence_transition_created": False,
+        "support_state_effect_none": True,
+        "chapter_core_support_effect_none": True,
+        "negative_controls_preserved": negative_controls_preserved(component_summary),
+        "residuals_recorded": len(RESIDUALS) == 5,
+        "non_claim_boundary": True,
+        "non_claims": [
+            "This aggregate invariant is finite-record accounting over the local Resource flagship replay only.",
+            "It does not prove deployed scheduler behavior, production workload behavior, economic optimality, model quality, external review, or chapter-core support-state promotion.",
+        ],
+    }
+
+
 def build_record() -> dict[str, Any]:
     command_records = [run_command(command) for command in COMMANDS]
     passed = all(record["exit_code"] == 0 for record in command_records)
+    component_summary = build_component_summary()
     return {
         "schema_version": "0.1",
         "run_id": RUN_ID,
@@ -361,7 +405,8 @@ def build_record() -> dict[str, Any]:
             "workload-quality, load-stability, CI cost, simulation-transfer, and transition-boundary checks."
         ),
         "command_records": command_records,
-        "component_summary": build_component_summary(),
+        "component_summary": component_summary,
+        "aggregate_lean_alignment": build_aggregate_lean_alignment(component_summary),
         "residuals": RESIDUALS,
         "non_claims": NON_CLAIMS,
         "artifact_refs": [*TRACKED_ARTIFACTS, str(RESULT.relative_to(ROOT))],

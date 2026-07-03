@@ -34,7 +34,7 @@ Result record:
 | Baseline route | `route://baseline-full-resource-lane-replay` |
 | Negative control | `route://negative-no-op-success-text` |
 | Sample count per route | 5 |
-| Observed selected-vs-baseline median elapsed reduction | 83.471 percent |
+| Observed selected-vs-baseline median elapsed reduction | 84.322 percent |
 | Negative control rejected | `true` |
 | Support-state effect | `none` |
 | Chapter-core support effect | `none` |
@@ -67,9 +67,9 @@ source-interpretation claim moved.
 
 | Route | Command | Median elapsed | Range | Quality result | Selection result |
 |---|---|---:|---:|---|---|
-| `route://baseline-full-resource-lane-replay` | `python3 scripts/validate_resource_live_probe.py` | 160.387 ms | 155.069-274.867 ms | pass | Eligible baseline, not selected because it checks a broader surface than the scoped task requires. |
-| `route://selected-scoped-workflow-trace-validator` | `python3 scripts/validate_resource_workflow_trace.py` | 26.511 ms | 25.886-27.656 ms | pass | Selected for the scoped Resource workflow trace review. |
-| `route://negative-no-op-success-text` | `python3 -c "print('skipped resource workflow trace validator')"` | 20.558 ms | 19.687-20.862 ms | fail | Rejected even though it is cheaper and exits 0, because it does not run the required validator or produce the required validation surface. |
+| `route://baseline-full-resource-lane-replay` | `python3 scripts/validate_resource_live_probe.py` | 156.802 ms | 150.554-194.074 ms | pass | Eligible baseline, not selected because it checks a broader surface than the scoped task requires. |
+| `route://selected-scoped-workflow-trace-validator` | `python3 scripts/validate_resource_workflow_trace.py` | 24.584 ms | 24.509-24.82 ms | pass | Selected for the scoped Resource workflow trace review. |
+| `route://negative-no-op-success-text` | `/bin/echo skipped resource workflow trace validator` | 1.523 ms | 1.508-3.525 ms | fail | Rejected even though it is cheaper and exits 0, because it does not run the required validator or produce the required validation surface. |
 
 ## What It Adds
 

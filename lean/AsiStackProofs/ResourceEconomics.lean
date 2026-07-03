@@ -626,4 +626,62 @@ theorem resource_load_smoothing_workload_has_no_support_promotion :
     resourceLoadSmoothingWorkloadFixture.supportStateEffectNone = true := by
   rfl
 
+structure FlagshipLaneAggregateSummary where
+  commandReplayCount : Nat
+  trackedArtifactCount : Nat
+  acceptedTransitionCount : Nat
+  sublaneNoPromotionDecisionCount : Nat
+  chapterCoreNoChange : Bool
+  evidenceTransitionCreated : Bool
+  supportStateEffectNone : Bool
+  chapterCoreSupportEffectNone : Bool
+  negativeControlsPreserved : Bool
+  residualsRecorded : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def FlagshipLaneAggregateValid (summary : FlagshipLaneAggregateSummary) : Prop :=
+  summary.commandReplayCount = 10 ∧
+    summary.trackedArtifactCount = 26 ∧
+    summary.acceptedTransitionCount = 3 ∧
+    summary.sublaneNoPromotionDecisionCount = 5 ∧
+    summary.chapterCoreNoChange = true ∧
+    summary.evidenceTransitionCreated = false ∧
+    summary.supportStateEffectNone = true ∧
+    summary.chapterCoreSupportEffectNone = true ∧
+    summary.negativeControlsPreserved = true ∧
+    summary.residualsRecorded = true ∧
+    summary.nonClaimBoundary = true
+
+def resourceFlagshipLaneAggregateFixture : FlagshipLaneAggregateSummary :=
+  { commandReplayCount := 10,
+    trackedArtifactCount := 26,
+    acceptedTransitionCount := 3,
+    sublaneNoPromotionDecisionCount := 5,
+    chapterCoreNoChange := true,
+    evidenceTransitionCreated := false,
+    supportStateEffectNone := true,
+    chapterCoreSupportEffectNone := true,
+    negativeControlsPreserved := true,
+    residualsRecorded := true,
+    nonClaimBoundary := true }
+
+theorem resource_flagship_lane_aggregate_fixture_valid :
+    FlagshipLaneAggregateValid resourceFlagshipLaneAggregateFixture := by
+  simp [FlagshipLaneAggregateValid, resourceFlagshipLaneAggregateFixture]
+
+theorem resource_flagship_lane_aggregate_preserves_no_core_promotion :
+    resourceFlagshipLaneAggregateFixture.chapterCoreNoChange = true ∧
+      resourceFlagshipLaneAggregateFixture.evidenceTransitionCreated = false ∧
+      resourceFlagshipLaneAggregateFixture.supportStateEffectNone = true ∧
+      resourceFlagshipLaneAggregateFixture.chapterCoreSupportEffectNone = true := by
+  simp [resourceFlagshipLaneAggregateFixture]
+
+theorem resource_flagship_lane_aggregate_carries_transition_accounting :
+    resourceFlagshipLaneAggregateFixture.commandReplayCount = 10 ∧
+      resourceFlagshipLaneAggregateFixture.trackedArtifactCount = 26 ∧
+      resourceFlagshipLaneAggregateFixture.acceptedTransitionCount = 3 ∧
+      resourceFlagshipLaneAggregateFixture.sublaneNoPromotionDecisionCount = 5 := by
+  simp [resourceFlagshipLaneAggregateFixture]
+
 end AsiStackProofs.ResourceEconomics

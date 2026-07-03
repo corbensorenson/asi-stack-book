@@ -23,11 +23,11 @@
     "This workload-quality probe does not prove stable speedup, deployed scheduler behavior, TokenMana behavior, PlanForge behavior, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement outside this local repository task.",
     "The selected route is scoped to Resource workflow trace review only and does not replace the full book gate, release gate, production scheduler logs, human-repair measurement, or external review."
   ],
-  "observed_selected_vs_baseline_elapsed_reduction_percent": 83.334,
+  "observed_selected_vs_baseline_elapsed_reduction_percent": 84.322,
   "pass": true,
   "probe_id": "resource-workload-quality-probe-2026-07-01-local",
   "record_kind": "resource_workload_quality_probe",
-  "recorded_at_utc": "2026-07-01T23:07:45Z",
+  "recorded_at_utc": "2026-07-03T19:07:47Z",
   "residuals": [
     "The selected scoped validator does not check unrelated Resource Economics artifacts that the baseline live probe checks.",
     "The elapsed-time comparison is a local five-sample median measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
@@ -36,9 +36,9 @@
   "routes": [
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 159.146,
-      "elapsed_ms_max": 172.047,
-      "elapsed_ms_min": 155.062,
+      "elapsed_ms": 156.802,
+      "elapsed_ms_max": 194.074,
+      "elapsed_ms_min": 150.554,
       "eligible": true,
       "exit_code": 0,
       "exit_codes": [
@@ -66,11 +66,11 @@
       "route_id": "route://baseline-full-resource-lane-replay",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        172.047,
-        166.916,
-        155.062,
-        156.077,
-        159.146
+        194.074,
+        164.366,
+        156.802,
+        153.813,
+        150.554
       ],
       "sample_quality_passes": [
         true,
@@ -82,9 +82,9 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 26.523,
-      "elapsed_ms_max": 27.939,
-      "elapsed_ms_min": 25.914,
+      "elapsed_ms": 24.584,
+      "elapsed_ms_max": 24.82,
+      "elapsed_ms_min": 24.509,
       "eligible": true,
       "exit_code": 0,
       "exit_codes": [
@@ -112,11 +112,11 @@
       "route_id": "route://selected-scoped-workflow-trace-validator",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        27.939,
-        26.534,
-        26.523,
-        25.914,
-        26.104
+        24.651,
+        24.82,
+        24.584,
+        24.517,
+        24.509
       ],
       "sample_quality_passes": [
         true,
@@ -127,10 +127,10 @@
       ]
     },
     {
-      "command": "python3 -c \"print('skipped resource workflow trace validator')\"",
-      "elapsed_ms": 20.311,
-      "elapsed_ms_max": 30.186,
-      "elapsed_ms_min": 20.112,
+      "command": "/bin/echo skipped resource workflow trace validator",
+      "elapsed_ms": 1.523,
+      "elapsed_ms_max": 3.525,
+      "elapsed_ms_min": 1.508,
       "eligible": false,
       "exit_code": 0,
       "exit_codes": [
@@ -158,11 +158,11 @@
       "route_id": "route://negative-no-op-success-text",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        20.402,
-        20.112,
-        20.311,
-        20.244,
-        30.186
+        3.525,
+        1.63,
+        1.522,
+        1.523,
+        1.508
       ],
       "sample_quality_passes": [
         false,
@@ -210,16 +210,16 @@
       "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
     },
     {
-      "bytes": 7896,
+      "bytes": 7898,
       "lines": 185,
       "path": "experiments/resource_live_probe/results/2026-07-01-local.json",
-      "sha256": "21d3c2f32f30f33b4fd7ffd699f239d89e5b176c0783f1b266b7c5c887507cee"
+      "sha256": "da938d2035a4e76e4cdd05635939fd75fbd4ef4a5c54b718b6986bfbd094cbeb"
     },
     {
-      "bytes": 22958,
-      "lines": 629,
+      "bytes": 25484,
+      "lines": 687,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "a763d86fa25390693cf13e2973338d9a00d2a33001436b490d1174f08324c742"
+      "sha256": "fe66a9911063cfca65119f130658396fdc3b34004e48112585c118d6604f8a23"
     }
   ]
 }

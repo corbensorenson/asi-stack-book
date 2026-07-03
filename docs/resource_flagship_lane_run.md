@@ -35,6 +35,33 @@ budget-ledger fixtures, capacity-smoothing trace, local live replay probe,
 workload-quality probe, load-stability probe, CI cost profile,
 simulation-transfer boundary fixtures, and evidence-transition validation.
 
+## Aggregate Lean Alignment
+
+The result record now carries an aggregate Python/Lean flagship invariant. The
+Python validator recomputes the aggregate from the current replay record,
+transition refs, no-promotion decisions, residual list, negative controls, and
+tracked artifact list. The Lean fixture
+`resourceFlagshipLaneAggregateFixture` mirrors the same finite counts and
+guards:
+
+| Field | Value |
+|---|---:|
+| Command replays | 10 |
+| Tracked artifact digests | 26 |
+| Accepted narrow transitions | 3 |
+| Sublane no-promotion decisions | 5 |
+
+The checked Lean theorems are
+`resource_flagship_lane_aggregate_fixture_valid`,
+`resource_flagship_lane_aggregate_preserves_no_core_promotion`, and
+`resource_flagship_lane_aggregate_carries_transition_accounting`.
+
+This aggregate bridge proves only finite-record agreement between the local
+Resource flagship replay and the modeled aggregate invariant. It does not
+prove deployed scheduler behavior, production workload behavior, economic
+optimality, model quality, external review, artifact approval, or Resource
+Economics chapter-core support-state promotion.
+
 ## Accepted Narrow Transitions
 
 The accepted upward transitions remain scoped to non-core Resource claims, not
@@ -56,7 +83,7 @@ the Resource Economics chapter core claim.
 | Selected route | `route://selected-scoped-workflow-trace-validator` |
 | Baseline route | `route://baseline-full-resource-lane-replay` |
 | Negative control | `route://negative-no-op-success-text` |
-| Observed selected-vs-baseline median elapsed reduction | 83.334 percent |
+| Observed selected-vs-baseline median elapsed reduction | 84.322 percent |
 | New support state | `empirical-test-backed` |
 | Transition state | `review_accepted` |
 
@@ -103,11 +130,11 @@ the exact local selector claim
 
 | Role | Route | Median elapsed | Decision |
 |---|---|---:|---|
-| Baseline | `route://baseline-full-resource-lane-replay` | 159.146 ms | quality pass |
-| Selected | `route://selected-scoped-workflow-trace-validator` | 26.523 ms | quality pass |
-| Negative control | `route://negative-no-op-success-text` | 20.311 ms | rejected |
+| Baseline | `route://baseline-full-resource-lane-replay` | 156.802 ms | quality pass |
+| Selected | `route://selected-scoped-workflow-trace-validator` | 24.584 ms | quality pass |
+| Negative control | `route://negative-no-op-success-text` | 1.523 ms | rejected |
 
-Observed selected-vs-baseline elapsed reduction: 83.334 percent.
+Observed selected-vs-baseline elapsed reduction: 84.322 percent.
 
 ## Load-Stability Slice
 

@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 185 |
+| Proof targets in manifest | 186 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 951 |
+| Theorem declarations classified | 954 |
 | Direct/projection-style theorem declarations | 178 |
-| Derived/decomposed theorem declarations | 769 |
+| Derived/decomposed theorem declarations | 772 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -90,7 +90,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 20 | 9 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | integrated-reference-architecture | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 5 | 33 | 5 | 28 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 6 | 34 | 15 | 16 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 7 | 37 | 15 | 19 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 49 | 5 | 44 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -765,6 +765,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_review_without_protected_overhead_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `high_risk_task_with_insufficient_verification_budget_is_not_dispatched` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `required_safety_gate_disabled_rejects_budget_gate_preservation` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_flagship_lane_aggregate_carries_transition_accounting` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_flagship_lane_aggregate_fixture_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_flagship_lane_aggregate_preserves_no_core_promotion` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_fixture_valid` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_has_no_support_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_load_smoothing_workload_reduces_overrun` | derived_or_decomposed | no | uses simp |

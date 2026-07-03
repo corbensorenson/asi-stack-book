@@ -8469,10 +8469,10 @@
             },
             {
               "name": "Resource flagship lane replay",
-              "purpose": "Run the Resource Economics flagship evidence lane as one command across costed-route, workflow-trace, budget-ledger, capacity-smoothing, live-probe, workload-quality, load-stability, CI-cost, simulation-transfer, and evidence-transition validators while preserving non-core and chapter-core boundaries.",
+              "purpose": "Run the Resource Economics flagship evidence lane as one command across costed-route, workflow-trace, budget-ledger, capacity-smoothing, live-probe, workload-quality, load-stability, CI-cost, simulation-transfer, evidence-transition validators, and an aggregate Python/Lean flagship invariant while preserving non-core and chapter-core boundaries.",
               "status": "implemented; passing via `python3 scripts/validate_resource_flagship_lane.py`",
               "implementation_status": "implemented",
-              "result_status": "passing via `python3 scripts/validate_resource_flagship_lane.py`; aggregate local repository replay only; no Resource Economics chapter-core promotion, deployed scheduler, production workload, model-quality, economic-outcome, external-review, artifact-approval, or new support-state-transition claim"
+              "result_status": "passing via `python3 scripts/validate_resource_flagship_lane.py`; aggregate local repository replay only; Lean fixture `resourceFlagshipLaneAggregateFixture` checks finite replay counts, tracked artifacts, accepted narrow transitions, no-promotion decisions, preserved controls, residuals, non-claims, and no-core-promotion/no-new-transition accounting; no Resource Economics chapter-core promotion, deployed scheduler, production workload, model-quality, economic-outcome, external-review, artifact-approval, or new support-state-transition claim"
             },
             "Budget allocation test",
             "Risk-adjusted verification test",

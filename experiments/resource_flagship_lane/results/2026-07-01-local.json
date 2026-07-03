@@ -4,6 +4,31 @@
     "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json",
     "evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json"
   ],
+  "aggregate_lean_alignment": {
+    "accepted_transition_count": 3,
+    "chapter_core_no_change": true,
+    "chapter_core_support_effect_none": true,
+    "command_replay_count": 10,
+    "evidence_transition_created": false,
+    "lean_fixture": "resourceFlagshipLaneAggregateFixture",
+    "lean_module": "AsiStackProofs.ResourceEconomics",
+    "lean_theorem_names": [
+      "resource_flagship_lane_aggregate_fixture_valid",
+      "resource_flagship_lane_aggregate_preserves_no_core_promotion",
+      "resource_flagship_lane_aggregate_carries_transition_accounting"
+    ],
+    "negative_controls_preserved": true,
+    "non_claim_boundary": true,
+    "non_claims": [
+      "This aggregate invariant is finite-record accounting over the local Resource flagship replay only.",
+      "It does not prove deployed scheduler behavior, production workload behavior, economic optimality, model quality, external review, or chapter-core support-state promotion."
+    ],
+    "proof_bridge_type": "aggregate Python/Lean flagship invariant",
+    "residuals_recorded": true,
+    "sublane_no_promotion_decision_count": 5,
+    "support_state_effect_none": true,
+    "tracked_artifact_count": 26
+  },
   "artifact_refs": [
     "docs/costed_route_resource_slice.md",
     "docs/resource_workflow_trace.md",
@@ -38,7 +63,7 @@
   "command_records": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 27.094,
+      "elapsed_ms": 39.582,
       "exit_code": 0,
       "id": "costed_route_resource_slice",
       "output_excerpt": [
@@ -49,7 +74,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 24.994,
+      "elapsed_ms": 41.184,
       "exit_code": 0,
       "id": "resource_workflow_trace",
       "output_excerpt": [
@@ -60,7 +85,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 23.756,
+      "elapsed_ms": 82.932,
       "exit_code": 0,
       "id": "resource_budget_ledgers",
       "output_excerpt": [
@@ -71,7 +96,7 @@
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 52.041,
+      "elapsed_ms": 92.237,
       "exit_code": 0,
       "id": "capacity_smoothing",
       "output_excerpt": [
@@ -82,7 +107,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 166.908,
+      "elapsed_ms": 257.792,
       "exit_code": 0,
       "id": "resource_live_probe",
       "output_excerpt": [
@@ -93,7 +118,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workload_quality_probe.py",
-      "elapsed_ms": 1051.614,
+      "elapsed_ms": 1257.971,
       "exit_code": 0,
       "id": "resource_workload_quality_probe",
       "output_excerpt": [
@@ -104,7 +129,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_load_stability_probe.py",
-      "elapsed_ms": 29.799,
+      "elapsed_ms": 31.457,
       "exit_code": 0,
       "id": "resource_load_stability_probe",
       "output_excerpt": [
@@ -115,7 +140,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_ci_cost_profile.py",
-      "elapsed_ms": 33.951,
+      "elapsed_ms": 36.358,
       "exit_code": 0,
       "id": "resource_ci_cost_profile",
       "output_excerpt": [
@@ -126,7 +151,7 @@
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 23.003,
+      "elapsed_ms": 33.501,
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
       "output_excerpt": [
@@ -137,7 +162,7 @@
     },
     {
       "command": "python3 scripts/validate_evidence_transitions.py",
-      "elapsed_ms": 26.704,
+      "elapsed_ms": 41.984,
       "exit_code": 0,
       "id": "evidence_transitions",
       "output_excerpt": [
@@ -262,20 +287,20 @@
       "claim_id": "resource-economics.scoped_workflow_trace_route_selector",
       "negative_control_route_id": "route://negative-no-op-success-text",
       "new_support_state": "empirical-test-backed",
-      "observed_selected_vs_baseline_elapsed_reduction_percent": 83.334,
+      "observed_selected_vs_baseline_elapsed_reduction_percent": 84.322,
       "selected_route_id": "route://selected-scoped-workflow-trace-validator",
       "support_state_effect": "eligible_for_bounded_evidence_review",
       "transition_validity_state": "review_accepted"
     },
     "workload_quality_probe": {
-      "baseline_elapsed_ms": 159.146,
+      "baseline_elapsed_ms": 156.802,
       "baseline_route_id": "route://baseline-full-resource-lane-replay",
-      "negative_control_elapsed_ms": 20.311,
+      "negative_control_elapsed_ms": 1.523,
       "negative_control_rejected": true,
       "negative_control_route_id": "route://negative-no-op-success-text",
-      "observed_selected_vs_baseline_elapsed_reduction_percent": 83.334,
+      "observed_selected_vs_baseline_elapsed_reduction_percent": 84.322,
       "probe_id": "resource-workload-quality-probe-2026-07-01-local",
-      "selected_elapsed_ms": 26.523,
+      "selected_elapsed_ms": 24.584,
       "selected_route_id": "route://selected-scoped-workflow-trace-validator",
       "support_state_effect": "none"
     }
@@ -299,7 +324,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "resource_flagship_lane_replay",
-  "recorded_at_utc": "2026-07-03T17:29:57Z",
+  "recorded_at_utc": "2026-07-03T19:22:57Z",
   "residuals": [
     "Accepted upward transitions remain scoped to non-core Resource claims: costed-route selection, finite synthetic load-smoothing selection, and local scoped workflow-trace route selection, not the chapter core claim.",
     "Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.",
@@ -331,10 +356,10 @@
       "sha256": "4c55a8ab45b2d6a42bb88ee074c0e2948cc7afdf915faebb0ae6932683229c08"
     },
     {
-      "bytes": 6218,
+      "bytes": 6202,
       "lines": 123,
       "path": "docs/resource_workload_quality_probe.md",
-      "sha256": "78696139ce100796a9ab0ca17bfc2a30864cdddb0187e6b5b696e06e694aef4d"
+      "sha256": "357975e2a0e0fde539ba5f9975d5d3fbb24326f94337ef6bf7101698408a4a13"
     },
     {
       "bytes": 6506,
@@ -355,10 +380,10 @@
       "sha256": "37af7b112e9f8db7af53ff977af32b6e0a04cee9d2890fd5937c2c2f06ca46f6"
     },
     {
-      "bytes": 16818,
+      "bytes": 17015,
       "lines": 99,
       "path": "docs/v1_x_active_evidence_cycle.md",
-      "sha256": "2fcfb7d85415676c749ae905ec262b152510669d917e34968e880b6ac7e5db43"
+      "sha256": "58b1deb23a7a7909291d7f54b60cc61af47bd094e5f2e277e4d80c4c740bab5e"
     },
     {
       "bytes": 7354,
@@ -427,22 +452,22 @@
       "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
     },
     {
-      "bytes": 7896,
+      "bytes": 7898,
       "lines": 185,
       "path": "experiments/resource_live_probe/results/2026-07-01-local.json",
-      "sha256": "21d3c2f32f30f33b4fd7ffd699f239d89e5b176c0783f1b266b7c5c887507cee"
+      "sha256": "da938d2035a4e76e4cdd05635939fd75fbd4ef4a5c54b718b6986bfbd094cbeb"
     },
     {
-      "bytes": 8687,
+      "bytes": 8662,
       "lines": 225,
       "path": "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
-      "sha256": "2d45fa44d4562f02373e391309d696c14e02caeef1495e35236eeaf52012b721"
+      "sha256": "34a1f9181c56101eaa6842d9cc1c55eb11a61eae487c5f599936238813407304"
     },
     {
       "bytes": 19062,
       "lines": 582,
       "path": "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
-      "sha256": "abddb995a3cd2fa9f8a783a0b649f79cf4cff21174e9e66ddc6a1c4a35be48e4"
+      "sha256": "13781ad27d76947b78ac58fde3d02a9a5ddef9a324d5100c137edea8468f11ba"
     },
     {
       "bytes": 7317,
@@ -457,10 +482,10 @@
       "sha256": "1d7f6057484ad5591eb0489e1e61534f092c739418a6af57ece66c69fe5f0a17"
     },
     {
-      "bytes": 22958,
-      "lines": 629,
+      "bytes": 25484,
+      "lines": 687,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "a763d86fa25390693cf13e2973338d9a00d2a33001436b490d1174f08324c742"
+      "sha256": "fe66a9911063cfca65119f130658396fdc3b34004e48112585c118d6604f8a23"
     },
     {
       "bytes": 2439,

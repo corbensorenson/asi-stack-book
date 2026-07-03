@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-03 - Add Resource flagship aggregate proof bridge
+
+- Added an aggregate Python/Lean flagship invariant to the Resource Economics
+  replay lane. `python3 scripts/validate_resource_flagship_lane.py` now checks
+  `resourceFlagshipLaneAggregateFixture` against 10 command replays, 26 tracked
+  artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved
+  negative controls, residuals, non-claims, and no-core-promotion/no-new-
+  transition guards.
+- Refreshed the Resource live, workload-quality, load-stability, and flagship
+  result records after the Lean digest changed. The workload-quality negative
+  control now uses `/bin/echo skipped resource workflow trace validator`, so
+  the negative control stays a deterministic cheap invalid route rather than
+  being distorted by Python startup overhead.
+- Updated the Resource live chapter, curated reader chapter, outline, Appendix
+  E, active evidence cycle, roadmap, proof triage, proof manifest, proof
+  artifact audit, proof adequacy review, and public status surfaces to expose
+  the aggregate bridge without promoting the Resource Economics chapter core.
+- Current proof-depth snapshot: 186 proof targets, 54 Lean modules, 954 theorem
+  declarations, 772 derived/decomposed, 178 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization remains validator-checked by
+  `python3 scripts/validate_proof_depth_surface.py`; this synchronization does
+  not prove semantic adequacy, deployed scheduler behavior, production workload
+  behavior, economic optimality, model quality, external review, artifact
+  approval, or any chapter-core support-state promotion.
+
 ## 2026-07-03 - Harden idea-depth ownership routing
 
 - Reviewed the latest idea-focused Claude output against the current Idea Depth
@@ -3416,8 +3442,8 @@
   median elapsed time.
 - Regenerated
   `experiments/resource_workload_quality_probe/results/2026-07-01-local.json`
-  with a baseline median of 160.387 ms, selected scoped-validator median of
-  26.511 ms, rejected no-op median of 20.558 ms, and 83.471 percent observed
+  with a baseline median of 156.802 ms, selected scoped-validator median of
+  24.584 ms, rejected no-op median of 1.523 ms, and 84.322 percent observed
   selected-vs-baseline median elapsed reduction.
 - Updated the Resource Economics chapter, outline, manifest, roadmap,
   evidence-cycle record, no-change evidence transition, v1 status surfaces, and

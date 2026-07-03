@@ -1401,6 +1401,16 @@
       "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite serving-memory accounting predicate: aggregate throughput claims require recorded KV-cache budget, batching scope, and single-request verified-output separation, and throughput-to-quality overclaims reject validity. It does not prove KV-cache behavior, serving throughput, single-request quality, model quality, workload quality, or chapter-core support-state promotion."
     },
     {
+      "tag": "lean:resources.flagship.aggregate_invariant",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.ResourceEconomics",
+      "formal_target": "The aggregate Resource flagship replay fixture carries 10 command replays, 26 tracked artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved negative controls, residuals, non-claims, and explicit no-core-promotion/no-new-transition guards.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite aggregate bridge over the Resource flagship replay result: it aligns the Python-computed replay counts, tracked artifact count, accepted-transition count, no-promotion decision count, preserved negative-control boundary, residual presence, non-claims, no-core-promotion, and no-new-transition fields with the Lean fixture. It does not prove deployed scheduler behavior, production workload behavior, economic optimality, model quality, external review, or chapter-core support-state promotion."
+    },
+    {
       "tag": "lean:simulation.fidelity.operational_invariant",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.SimulationFidelity",
@@ -1861,5 +1871,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 185
+  "record_count": 186
 }

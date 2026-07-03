@@ -44,7 +44,7 @@
   "pass": true,
   "probe_id": "resource-load-stability-probe-2026-07-01-local",
   "record_kind": "resource_load_stability_probe",
-  "recorded_at_utc": "2026-07-01T22:59:40Z",
+  "recorded_at_utc": "2026-07-03T19:07:17Z",
   "residuals": [
     "The workload is a deterministic local synthetic burst of repository-review tasks, not a production queue trace.",
     "The selected route reduces overload in the finite workload by deferring lower-risk work, but those deferrals are residual costs rather than free savings.",
@@ -490,10 +490,10 @@
       "sha256": "4ac73bfc0a61342b51a02ba53b88b5eecf178b5d8910ed3d26a8558ec61c1f90"
     },
     {
-      "bytes": 22958,
-      "lines": 629,
+      "bytes": 25484,
+      "lines": 687,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "a763d86fa25390693cf13e2973338d9a00d2a33001436b490d1174f08324c742"
+      "sha256": "fe66a9911063cfca65119f130658396fdc3b34004e48112585c118d6604f8a23"
     }
   ],
   "workload": [

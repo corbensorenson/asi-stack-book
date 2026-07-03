@@ -39,7 +39,7 @@ ROUTES = [
     {
         "route_id": "route://negative-no-op-success-text",
         "role": "negative_control",
-        "command": "python3 -c \"print('skipped resource workflow trace validator')\"",
+        "command": "/bin/echo skipped resource workflow trace validator",
         "required_output": "Resource workflow trace validation passed",
         "quality_scope": "Invalid shortcut that returns quickly without running the required validator.",
     },
