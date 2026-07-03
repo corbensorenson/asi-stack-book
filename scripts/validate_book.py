@@ -214,6 +214,7 @@ REQUIRED = [
     "scripts/validate_resource_ci_cost_profile.py",
     "scripts/run_resource_flagship_lane.py",
     "scripts/validate_resource_flagship_lane.py",
+    "scripts/validate_resource_governance_tax_tradeoff.py",
     "scripts/validate_circle_external_receipt_slice.py",
     "scripts/validate_circle_public_replay.py",
     "scripts/validate_circle_concrete_evidence_surface.py",
@@ -305,6 +306,7 @@ REQUIRED = [
     "docs/resource_load_stability_probe.md",
     "docs/resource_ci_cost_profile.md",
     "docs/resource_flagship_lane_run.md",
+    "docs/resource_governance_tax_tradeoff.md",
     "docs/circle_external_receipt_slice.md",
     "docs/circle_public_replay_consumer_gate.md",
     "docs/circle_cyclic_memory_receipt_slice.md",
@@ -399,6 +401,7 @@ REQUIRED = [
     "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
     "experiments/resource_ci_cost_profile/results/2026-07-01-main.json",
     "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+    "experiments/resource_governance_tax_tradeoff/results/2026-07-03-local.json",
     "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
     "experiments/circle_public_replay/results/2026-06-29-local.json",
     "experiments/circle_cyclic_memory_receipt_slice/README.md",
@@ -998,6 +1001,7 @@ def main() -> None:
     run_validator("validate_resource_load_stability_probe.py")
     run_validator("validate_resource_ci_cost_profile.py")
     run_validator("validate_resource_flagship_lane.py")
+    run_validator("validate_resource_governance_tax_tradeoff.py")
     run_validator("validate_circle_external_receipt_slice.py")
     run_validator("validate_circle_public_replay.py")
     run_validator("validate_circle_concrete_evidence_surface.py")

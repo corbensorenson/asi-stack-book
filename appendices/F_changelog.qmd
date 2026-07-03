@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-03 - Add Resource governance-tax trade-off model
+
+- Added `python3 scripts/validate_resource_governance_tax_tradeoff.py`,
+  `docs/resource_governance_tax_tradeoff.md`, and
+  `experiments/resource_governance_tax_tradeoff/results/2026-07-03-local.json`
+  for the first bounded Resource Economics answer to when governance pays for
+  itself versus when a low-risk shortcut remains honestly cheaper.
+- Added Lean bridge `lean:resource.governance_tax.tradeoff_bridge` in
+  `AsiStackProofs.ResourceEconomics`, with finite theorem refs for fixture
+  validity, governed selections, low-risk shortcut allowance, and no-promotion
+  boundaries.
+- Current proof-depth snapshot: 189 proof targets, 54 Lean modules, 966
+  theorem declarations, 781 derived/decomposed, 181 direct/projection, 4
+  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Updated `book_structure.json`, `docs/book_outline.md`, the live Resource
+  Economics chapter, the curated reader Resource Economics chapter,
+  `docs/v1_x_beyond_sota_roadmap.md`, `proofs/proof_triage.json`, and the
+  global book validator so the Idea Depth Program now treats verification tax
+  and governance economics as having a first bounded closure.
+- Boundary: this is a deterministic synthetic trade-off fixture. It does not
+  prove deployed scheduler behavior, measure real verification tax, prove
+  economic optimality, promote the Resource Economics chapter core claim, or
+  create a support-state transition.
+
 ## 2026-07-03 - Add Capability replacement identity sequence bridge
 
 - Strengthened the existing Capability replacement trace probe into a bounded

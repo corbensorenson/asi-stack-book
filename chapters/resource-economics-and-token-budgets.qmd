@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-03"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
+| Last updated | 2026-07-03 |
 | Primary source records | `tokenmana`, `planforge`, `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `cgs`, `rankfold_neuralfold`, `alignment_field`, `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -292,6 +292,18 @@ A toy budget ledger is now the first executable economics slice: one low-risk di
 
 A first budget ledger shows the rejected route alongside the chosen route, because hidden savings are not governed savings. The first simulation-transfer fixture suite now covers one unit-invariant transfer, one benchmark result downgraded to reduced scope, one scenario-only blocker, and expected-invalid cases for missing fidelity, unbounded world transfer, missing resource bills, missing bottleneck residuals, ignored instrumentation, and support-state promotion. A future simulator lane still has to replace those synthetic wrappers with actual simulator outputs, workload assumptions, physical-feasibility reviews, and negative controls.
 
+The first bounded governance-tax model adds the missing analytic question:
+when the governance tax pays for itself, and when a low-risk shortcut is
+honestly cheaper? `python3 scripts/validate_resource_governance_tax_tradeoff.py`
+checks three deterministic scenarios and five negative controls over risk,
+route quality, hidden verification and fallback cost, reviewer burden,
+residual discharge, protected-gate deletion, low-risk shortcut allowance, and
+no-promotion boundaries. The fixture shows two modeled cases where full-cost
+accounting selects governance and one low-risk case where the shortcut remains
+allowed. It does not measure real verification tax, prove deployed scheduler
+behavior, prove economic optimality, promote the Resource Economics chapter
+core claim, or create a support-state transition.
+
 ## Beyond the State of the Art
 
 Resource economics matures into a risk-aware budget operating system for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, or residualize work without letting local cost pressure delete verification, security, approval, replay, rollback, or human review.
@@ -321,6 +333,7 @@ This cognition-budget and claim-transport system is still proposed architecture.
 | Resource workload-quality probe | Measure a scoped Resource workflow trace review route across five local samples against a broader Resource Economics replay baseline, reject a cheaper no-op success-text route, record residuals and non-claims, and preserve the no-transition boundary. | implemented; passing via `python3 scripts/validate_resource_workload_quality_probe.py`; local five-sample median repository task only; no stable-speedup, deployed-scheduler, model-quality, economic-outcome, external-review, or support-state-transition claim |
 | Resource load-stability probe | Run a finite local synthetic burst-review workload across admit-arrivals, protected capacity-smoothing, and review-erasure routes; check overload reduction, residualized deferrals, protected-review preservation, Lean fixture alignment, and no-promotion boundaries. | implemented; passing via `python3 scripts/validate_resource_load_stability_probe.py`; local synthetic workload only; no TokenMana, deployed-scheduler, production-queue, real-load-stability, human-productivity, model-quality, economic-outcome, external-review, or support-state-transition claim |
 | Resource flagship lane replay | Run the Resource Economics flagship evidence lane as one command across costed-route, workflow-trace, budget-ledger, capacity-smoothing, live-probe, workload-quality, load-stability, CI-cost, simulation-transfer, evidence-transition validators, and an aggregate Python/Lean flagship invariant while preserving non-core and chapter-core boundaries. | implemented; passing via `python3 scripts/validate_resource_flagship_lane.py`; aggregate local repository replay only; the Lean fixture checks finite counts and no-core-promotion/no-new-transition accounting; no Resource Economics chapter-core promotion, deployed scheduler, production workload, model-quality, economic-outcome, external-review, artifact-approval, or new support-state-transition claim |
+| Resource governance-tax trade-off model | Check deterministic modeled cases where governance pays for itself after hidden verification, fallback, reviewer-burden, and residual costs are priced, plus one low-risk shortcut that remains allowed when full cost is lower and no protected gate is required. | implemented; passing via `python3 scripts/validate_resource_governance_tax_tradeoff.py`; bounded synthetic trade-off only; no deployed scheduler behavior, real verification-tax measurement, economic optimality, chapter-core promotion, or support-state transition |
 | Budget allocation test | Check that task value, risk, capacity, and cost are present before dispatch. | partially covered by deterministic workflow fixtures; live scheduler and real workload quality review not run |
 | Risk-adjusted verification test | Check that high-risk tasks cannot remove required verification to save cost. | partially covered by deterministic workflow fixtures; deployed verification-budget enforcement not run |
 | Protected-overhead accounting test | Check that security handles, SCIFs, approvals, replay, rollback, audit, and human review remain budgeted when the risk class requires them. | partially covered by deterministic workflow fixtures; runtime overhead accounting not run |
@@ -348,6 +361,7 @@ The implemented rows validate fixture/schema consistency, deterministic record-a
 | `lean:resources.capacity_smoothing.reviewer_trace_bridge` | `AsiStackProofs.ResourceEconomics` | The finite capacity-smoothing reviewer trace fixture preserves bounded capacity, reviewer capacity, protected review overhead, displaced-review-cost residualization, no low-risk review during blocked protected review, and no support-state promotion; negative cases reject low-risk review hoarding, high-risk review without protected overhead, and missing displaced-cost residuals. | implemented |
 | `lean:resources.serving_memory.separation_guard` | `AsiStackProofs.ResourceEconomics` | Aggregate serving-throughput or KV-cache reuse claims remain valid only when KV-cache budget, batching scope, and single-request verified-output boundaries are recorded; throughput-to-quality overclaims reject validity. | implemented |
 | `lean:resources.flagship.aggregate_invariant` | `AsiStackProofs.ResourceEconomics` | The aggregate Resource flagship replay fixture carries 10 command replays, 26 tracked artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved negative controls, residuals, non-claims, and explicit no-core-promotion/no-new-transition guards. | implemented |
+| `lean:resource.governance_tax.tradeoff_bridge` | `AsiStackProofs.ResourceEconomics` | The finite governance-tax trade-off fixture carries 3 valid modeled scenarios, 5 expected-invalid controls, 2 governed selections, 1 allowed low-risk shortcut, protected-gate deletion rejection, residual-pricing requirement, reviewer-burden pricing, and no support-state or chapter-core promotion. | implemented |
 | `lean:simulation.fidelity.operational_invariant` | `AsiStackProofs.SimulationFidelity` | A simulation claim includes declared scope, fidelity, and resource bounds. | implemented |
 | `lean:simulation.fidelity.failure_blocks_promotion` | `AsiStackProofs.SimulationFidelity` | An experiment result cannot exceed the declared fidelity support of its simulation. | implemented |
 

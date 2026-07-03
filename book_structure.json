@@ -8494,6 +8494,13 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_resource_flagship_lane.py`; aggregate local repository replay only; Lean fixture `resourceFlagshipLaneAggregateFixture` checks finite replay counts, tracked artifacts, accepted narrow transitions, no-promotion decisions, preserved controls, residuals, non-claims, and no-core-promotion/no-new-transition accounting; no Resource Economics chapter-core promotion, deployed scheduler, production workload, model-quality, economic-outcome, external-review, artifact-approval, or new support-state-transition claim"
             },
+            {
+              "name": "Resource governance-tax trade-off model",
+              "purpose": "Check deterministic modeled cases where governance pays for itself after hidden verification, fallback, reviewer-burden, and residual costs are priced, plus one low-risk shortcut that remains allowed when full cost is lower and no protected gate is required.",
+              "status": "implemented; passing via `python3 scripts/validate_resource_governance_tax_tradeoff.py`",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_resource_governance_tax_tradeoff.py`; bounded synthetic trade-off only; no deployed scheduler behavior, real verification-tax measurement, economic optimality, chapter-core promotion, or support-state transition"
+            },
             "Budget allocation test",
             "Risk-adjusted verification test",
             {
@@ -8589,6 +8596,12 @@
               "tag": "lean:resources.serving_memory.separation_guard",
               "module": "AsiStackProofs.ResourceEconomics",
               "target": "Aggregate serving-throughput or KV-cache reuse claims remain valid only when KV-cache budget, batching scope, and single-request verified-output boundaries are recorded; throughput-to-quality overclaims reject validity.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:resource.governance_tax.tradeoff_bridge",
+              "module": "AsiStackProofs.ResourceEconomics",
+              "target": "The finite governance-tax trade-off fixture carries 3 valid modeled scenarios, 5 expected-invalid controls, 2 governed selections, 1 allowed low-risk shortcut, protected-gate deletion rejection, residual-pricing requirement, reviewer-burden pricing, and no support-state or chapter-core promotion.",
               "status": "implemented"
             },
             {

@@ -1,0 +1,226 @@
+{
+  "command": "python3 scripts/validate_resource_governance_tax_tradeoff.py",
+  "expected_invalid_control_count": 5,
+  "lean_fixture_alignment": {
+    "expected_invalid_control_count": 5,
+    "governed_selected_count": 2,
+    "proof_tag": "lean:resource.governance_tax.tradeoff_bridge",
+    "theorem_refs": [
+      "resource_governance_tax_tradeoff_fixture_valid",
+      "resource_governance_tax_tradeoff_shows_governance_can_pay",
+      "resource_governance_tax_tradeoff_allows_low_risk_shortcut",
+      "resource_governance_tax_tradeoff_preserves_no_promotion_boundary"
+    ],
+    "ungoverned_allowed_count": 1,
+    "valid_scenario_count": 3
+  },
+  "non_claims": [
+    "does not prove deployed scheduler behavior",
+    "does not measure real verification tax",
+    "does not prove economic optimality",
+    "does not promote the Resource Economics chapter core claim",
+    "does not create a support-state transition"
+  ],
+  "recorded_date": "2026-07-03",
+  "rejected_controls": [
+    {
+      "rejection_reasons": [
+        "selected_shortcut_while_governed_full_cost_lower"
+      ],
+      "scenario_id": "invalid_tax_erasure_selected_shortcut"
+    },
+    {
+      "rejection_reasons": [
+        "required_protected_gate_deleted"
+      ],
+      "scenario_id": "invalid_protected_gate_deleted"
+    },
+    {
+      "rejection_reasons": [
+        "ungoverned_residual_discharge_cost_missing_or_invalid"
+      ],
+      "scenario_id": "invalid_residual_unpriced"
+    },
+    {
+      "rejection_reasons": [
+        "chapter_core_promotion_attempt",
+        "support_state_promotion_attempt"
+      ],
+      "scenario_id": "invalid_support_state_promotion"
+    },
+    {
+      "rejection_reasons": [
+        "ungoverned_comparator_missing",
+        "ungoverned_expected_error_cost_missing_or_invalid",
+        "ungoverned_fallback_cost_missing_or_invalid",
+        "ungoverned_protected_review_cost_missing_or_invalid",
+        "ungoverned_residual_discharge_cost_missing_or_invalid",
+        "ungoverned_reviewer_burden_cost_missing_or_invalid",
+        "ungoverned_verification_cost_missing_or_invalid",
+        "ungoverned_visible_cost_missing_or_invalid"
+      ],
+      "scenario_id": "invalid_missing_comparator"
+    }
+  ],
+  "result_id": "2026-07-03-resource-governance-tax-tradeoff",
+  "result_kind": "deterministic_synthetic_governance_tax_tradeoff",
+  "scenario_results": [
+    {
+      "actual_valid": true,
+      "expected_valid": true,
+      "governance_pays": false,
+      "governed_full_cost": 64,
+      "governed_visible_cost": 34,
+      "rejection_reasons": [],
+      "required_protected_gate": false,
+      "risk_class": "low",
+      "scenario_id": "valid_low_risk_shortcut_allowed",
+      "selected_route": "ungoverned_shortcut",
+      "shortcut_visible_cost_lower": true,
+      "ungoverned_full_cost": 21,
+      "ungoverned_visible_cost": 10
+    },
+    {
+      "actual_valid": true,
+      "expected_valid": true,
+      "governance_pays": true,
+      "governed_full_cost": 84,
+      "governed_visible_cost": 38,
+      "rejection_reasons": [],
+      "required_protected_gate": true,
+      "risk_class": "high",
+      "scenario_id": "valid_high_risk_governance_pays",
+      "selected_route": "governed",
+      "shortcut_visible_cost_lower": true,
+      "ungoverned_full_cost": 141,
+      "ungoverned_visible_cost": 14
+    },
+    {
+      "actual_valid": true,
+      "expected_valid": true,
+      "governance_pays": true,
+      "governed_full_cost": 66,
+      "governed_visible_cost": 28,
+      "rejection_reasons": [],
+      "required_protected_gate": false,
+      "risk_class": "medium",
+      "scenario_id": "valid_hidden_residual_flips_selection",
+      "selected_route": "governed",
+      "shortcut_visible_cost_lower": true,
+      "ungoverned_full_cost": 93,
+      "ungoverned_visible_cost": 9
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "governance_pays": true,
+      "governed_full_cost": 64,
+      "governed_visible_cost": 30,
+      "rejection_reasons": [
+        "selected_shortcut_while_governed_full_cost_lower"
+      ],
+      "required_protected_gate": false,
+      "risk_class": "high",
+      "scenario_id": "invalid_tax_erasure_selected_shortcut",
+      "selected_route": "ungoverned_shortcut",
+      "shortcut_visible_cost_lower": true,
+      "ungoverned_full_cost": 108,
+      "ungoverned_visible_cost": 12
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "governance_pays": true,
+      "governed_full_cost": 48,
+      "governed_visible_cost": 20,
+      "rejection_reasons": [
+        "required_protected_gate_deleted"
+      ],
+      "required_protected_gate": true,
+      "risk_class": "critical",
+      "scenario_id": "invalid_protected_gate_deleted",
+      "selected_route": "governed",
+      "shortcut_visible_cost_lower": true,
+      "ungoverned_full_cost": 208,
+      "ungoverned_visible_cost": 11
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "governance_pays": false,
+      "governed_full_cost": 62,
+      "governed_visible_cost": 28,
+      "rejection_reasons": [
+        "ungoverned_residual_discharge_cost_missing_or_invalid"
+      ],
+      "required_protected_gate": false,
+      "risk_class": "medium",
+      "scenario_id": "invalid_residual_unpriced",
+      "selected_route": "ungoverned_shortcut",
+      "shortcut_visible_cost_lower": true,
+      "ungoverned_full_cost": 51,
+      "ungoverned_visible_cost": 8
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "governance_pays": false,
+      "governed_full_cost": 64,
+      "governed_visible_cost": 34,
+      "rejection_reasons": [
+        "chapter_core_promotion_attempt",
+        "support_state_promotion_attempt"
+      ],
+      "required_protected_gate": false,
+      "risk_class": "low",
+      "scenario_id": "invalid_support_state_promotion",
+      "selected_route": "ungoverned_shortcut",
+      "shortcut_visible_cost_lower": true,
+      "ungoverned_full_cost": 21,
+      "ungoverned_visible_cost": 10
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "governance_pays": false,
+      "governed_full_cost": 84,
+      "governed_visible_cost": 38,
+      "rejection_reasons": [
+        "ungoverned_comparator_missing",
+        "ungoverned_expected_error_cost_missing_or_invalid",
+        "ungoverned_fallback_cost_missing_or_invalid",
+        "ungoverned_protected_review_cost_missing_or_invalid",
+        "ungoverned_residual_discharge_cost_missing_or_invalid",
+        "ungoverned_reviewer_burden_cost_missing_or_invalid",
+        "ungoverned_verification_cost_missing_or_invalid",
+        "ungoverned_visible_cost_missing_or_invalid"
+      ],
+      "required_protected_gate": true,
+      "risk_class": "high",
+      "scenario_id": "invalid_missing_comparator",
+      "selected_route": "governed",
+      "shortcut_visible_cost_lower": false,
+      "ungoverned_full_cost": 0,
+      "ungoverned_visible_cost": null
+    }
+  ],
+  "schema_version": "asi_stack.resource_governance_tax_tradeoff.v0",
+  "tradeoff_assertions": {
+    "chapter_core_support_effect_none": true,
+    "governed_selected_when_full_ungoverned_cost_exceeds_governed_cost": true,
+    "hidden_residual_flips_selection": true,
+    "low_risk_shortcut_allowed_when_full_cost_lower_and_no_required_gate": true,
+    "non_claim_boundary": true,
+    "protected_gate_deletion_rejected": true,
+    "residual_pricing_required": true,
+    "reviewer_burden_priced": true,
+    "support_state_effect_none": true
+  },
+  "valid_scenario_count": 3,
+  "valid_scenarios": [
+    "valid_hidden_residual_flips_selection",
+    "valid_high_risk_governance_pays",
+    "valid_low_risk_shortcut_allowed"
+  ],
+  "weakening_condition": "The governance-tax argument weakens if hidden review, fallback, residual, or reviewer-burden costs do not change route choice, or if protected gates can be deleted without a recorded residual and rejection."
+}

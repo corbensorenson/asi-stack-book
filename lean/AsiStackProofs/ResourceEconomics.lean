@@ -684,4 +684,71 @@ theorem resource_flagship_lane_aggregate_carries_transition_accounting :
       resourceFlagshipLaneAggregateFixture.sublaneNoPromotionDecisionCount = 5 := by
   simp [resourceFlagshipLaneAggregateFixture]
 
+structure GovernanceTaxTradeoffSummary where
+  validScenarioCount : Nat
+  expectedInvalidControlCount : Nat
+  governedSelectedCount : Nat
+  ungovernedAllowedCount : Nat
+  highRiskGovernancePays : Bool
+  lowRiskShortcutAllowed : Bool
+  hiddenResidualFlipsSelection : Bool
+  protectedGateDeletionRejected : Bool
+  residualPricingRequired : Bool
+  reviewerBurdenPriced : Bool
+  supportStateEffectNone : Bool
+  chapterCoreSupportEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def GovernanceTaxTradeoffValid (summary : GovernanceTaxTradeoffSummary) : Prop :=
+  summary.validScenarioCount = 3 ∧
+    summary.expectedInvalidControlCount = 5 ∧
+    summary.governedSelectedCount = 2 ∧
+    summary.ungovernedAllowedCount = 1 ∧
+    summary.highRiskGovernancePays = true ∧
+    summary.lowRiskShortcutAllowed = true ∧
+    summary.hiddenResidualFlipsSelection = true ∧
+    summary.protectedGateDeletionRejected = true ∧
+    summary.residualPricingRequired = true ∧
+    summary.reviewerBurdenPriced = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.chapterCoreSupportEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+def resourceGovernanceTaxTradeoffFixture : GovernanceTaxTradeoffSummary :=
+  { validScenarioCount := 3,
+    expectedInvalidControlCount := 5,
+    governedSelectedCount := 2,
+    ungovernedAllowedCount := 1,
+    highRiskGovernancePays := true,
+    lowRiskShortcutAllowed := true,
+    hiddenResidualFlipsSelection := true,
+    protectedGateDeletionRejected := true,
+    residualPricingRequired := true,
+    reviewerBurdenPriced := true,
+    supportStateEffectNone := true,
+    chapterCoreSupportEffectNone := true,
+    nonClaimBoundary := true }
+
+theorem resource_governance_tax_tradeoff_fixture_valid :
+    GovernanceTaxTradeoffValid resourceGovernanceTaxTradeoffFixture := by
+  simp [GovernanceTaxTradeoffValid, resourceGovernanceTaxTradeoffFixture]
+
+theorem resource_governance_tax_tradeoff_shows_governance_can_pay :
+    resourceGovernanceTaxTradeoffFixture.governedSelectedCount = 2 ∧
+      resourceGovernanceTaxTradeoffFixture.highRiskGovernancePays = true ∧
+      resourceGovernanceTaxTradeoffFixture.hiddenResidualFlipsSelection = true := by
+  simp [resourceGovernanceTaxTradeoffFixture]
+
+theorem resource_governance_tax_tradeoff_allows_low_risk_shortcut :
+    resourceGovernanceTaxTradeoffFixture.ungovernedAllowedCount = 1 ∧
+      resourceGovernanceTaxTradeoffFixture.lowRiskShortcutAllowed = true := by
+  simp [resourceGovernanceTaxTradeoffFixture]
+
+theorem resource_governance_tax_tradeoff_preserves_no_promotion_boundary :
+    resourceGovernanceTaxTradeoffFixture.supportStateEffectNone = true ∧
+      resourceGovernanceTaxTradeoffFixture.chapterCoreSupportEffectNone = true ∧
+      resourceGovernanceTaxTradeoffFixture.nonClaimBoundary = true := by
+  simp [resourceGovernanceTaxTradeoffFixture]
+
 end AsiStackProofs.ResourceEconomics

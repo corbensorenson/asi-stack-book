@@ -23,11 +23,11 @@
     "This workload-quality probe does not prove stable speedup, deployed scheduler behavior, TokenMana behavior, PlanForge behavior, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement outside this local repository task.",
     "The selected route is scoped to Resource workflow trace review only and does not replace the full book gate, release gate, production scheduler logs, human-repair measurement, or external review."
   ],
-  "observed_selected_vs_baseline_elapsed_reduction_percent": 84.322,
+  "observed_selected_vs_baseline_elapsed_reduction_percent": 86.493,
   "pass": true,
   "probe_id": "resource-workload-quality-probe-2026-07-01-local",
   "record_kind": "resource_workload_quality_probe",
-  "recorded_at_utc": "2026-07-03T19:07:47Z",
+  "recorded_at_utc": "2026-07-03T21:26:10Z",
   "residuals": [
     "The selected scoped validator does not check unrelated Resource Economics artifacts that the baseline live probe checks.",
     "The elapsed-time comparison is a local five-sample median measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
@@ -36,9 +36,9 @@
   "routes": [
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 156.802,
-      "elapsed_ms_max": 194.074,
-      "elapsed_ms_min": 150.554,
+      "elapsed_ms": 235.764,
+      "elapsed_ms_max": 310.422,
+      "elapsed_ms_min": 153.841,
       "eligible": true,
       "exit_code": 0,
       "exit_codes": [
@@ -66,11 +66,11 @@
       "route_id": "route://baseline-full-resource-lane-replay",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        194.074,
-        164.366,
-        156.802,
-        153.813,
-        150.554
+        235.764,
+        310.422,
+        192.311,
+        153.841,
+        236.803
       ],
       "sample_quality_passes": [
         true,
@@ -82,9 +82,9 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 24.584,
-      "elapsed_ms_max": 24.82,
-      "elapsed_ms_min": 24.509,
+      "elapsed_ms": 31.844,
+      "elapsed_ms_max": 48.81,
+      "elapsed_ms_min": 24.433,
       "eligible": true,
       "exit_code": 0,
       "exit_codes": [
@@ -112,11 +112,11 @@
       "route_id": "route://selected-scoped-workflow-trace-validator",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        24.651,
-        24.82,
-        24.584,
-        24.517,
-        24.509
+        37.69,
+        48.81,
+        26.64,
+        31.844,
+        24.433
       ],
       "sample_quality_passes": [
         true,
@@ -128,9 +128,9 @@
     },
     {
       "command": "/bin/echo skipped resource workflow trace validator",
-      "elapsed_ms": 1.523,
-      "elapsed_ms_max": 3.525,
-      "elapsed_ms_min": 1.508,
+      "elapsed_ms": 1.558,
+      "elapsed_ms_max": 2.127,
+      "elapsed_ms_min": 1.524,
       "eligible": false,
       "exit_code": 0,
       "exit_codes": [
@@ -158,11 +158,11 @@
       "route_id": "route://negative-no-op-success-text",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        3.525,
-        1.63,
-        1.522,
-        1.523,
-        1.508
+        2.127,
+        1.628,
+        1.558,
+        1.532,
+        1.524
       ],
       "sample_quality_passes": [
         false,
@@ -210,16 +210,16 @@
       "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
     },
     {
-      "bytes": 7898,
+      "bytes": 7897,
       "lines": 185,
       "path": "experiments/resource_live_probe/results/2026-07-01-local.json",
-      "sha256": "da938d2035a4e76e4cdd05635939fd75fbd4ef4a5c54b718b6986bfbd094cbeb"
+      "sha256": "9eb6c14ab3ba882585fbb9f7d8bc60be4e6d2087dfb5d12cd461362e7462eda3"
     },
     {
-      "bytes": 25484,
-      "lines": 687,
+      "bytes": 28374,
+      "lines": 754,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "fe66a9911063cfca65119f130658396fdc3b34004e48112585c118d6604f8a23"
+      "sha256": "5848336b024e6850afda7b4d73048ca5de5befdd465686fe0a8bdec991c173b0"
     }
   ]
 }
