@@ -33,6 +33,11 @@ inadequate for the claim being made. When it is inadequate, the honest output
 is not a stronger sentence. It is a downgrade, split, residual, retrieval
 request, proof request, tribunal route, or human review route.
 
+That makes this chapter the verification counterpart to context transactions.
+The previous chapter asks whether the memory view is valid. This one asks
+whether the system has enough checking capacity to use that view for the
+claim now being made.
+
 ## Problem
 
 The ASI Stack needs to distinguish access from understanding.
@@ -78,6 +83,10 @@ The failure mode is long-context theater: because a system has many relevant
 tokens in reach, it behaves as if the comparison has been performed. A reader
 sees breadth and mistakes it for verification. The adequacy layer exists to
 keep that mistake from becoming a support state.
+
+The cure is not smaller context. It is scoped honesty. The system should say
+when context is enough to orient, enough to draft, enough to check one local
+relation, and not enough to carry a stronger claim.
 
 ## Core Claim
 
@@ -318,6 +327,18 @@ distractors, or verify long-context claims in the wild.
 That boundary is essential. Verification bandwidth exists because systems are
 tempted to treat access as understanding. The chapter should not commit the
 same error about its own evidence.
+
+## Summary
+
+Verification bandwidth is the scarce capacity to compare the semantic units
+that matter for a target claim. Context adequacy records whether the available
+packet, compression path, verification mode, risk tier, and negative evidence
+are enough for that claim.
+
+The chapter's practical rule is that exposure is not support. Long context can
+help a system draft, search, and orient, but stronger claims require explicit
+checking. When the check is missing, the architecture should downgrade, split,
+escalate, or residualize rather than sounding certain.
 
 ## Handoff
 

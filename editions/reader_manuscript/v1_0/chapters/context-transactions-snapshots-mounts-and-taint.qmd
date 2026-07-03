@@ -31,6 +31,10 @@ and whether a later build used it. Governed AI memory needs the same kind of
 history. Without it, every summary and cached context packet can become a
 quiet authority leak.
 
+The previous chapter gave context an interface. This chapter gives context a
+history. An address tells the stack what object it requested; a transaction
+tells the stack which state of that object actually shaped the work.
+
 ![Draft context transaction lifecycle.](../../../../assets/diagrams/context-transaction-lifecycle.svg){#reader-fig-context-transaction-lifecycle fig-alt="Draft context transaction lifecycle figure showing context ABI records, certificates, transaction records, snapshots, mount policies, branch or commit decisions, taint and deletion closure, materialized views, faults, quarantine, downstream artifact, adequacy, claim-ledger, and job handoff boundaries."}
 
 Figure boundary: this draft reader aid shows the intended memory lifecycle.
@@ -80,6 +84,10 @@ Context memory therefore needs database-like discipline without pretending
 that semantic memory is a database table. Context objects are lossy, task
 relative, authority bearing, and often derived. That makes transaction
 semantics more important, not less.
+
+The transaction is what lets the system say no to a fluent but invalid memory
+blend. Relevance gets a candidate into view; transaction semantics decide
+whether that view is coherent enough to use.
 
 ## Core Claim
 
@@ -327,6 +335,18 @@ or production taint/deletion behavior.
 This boundary matters because the chapter is about preventing context
 laundering. The text should not launder its own architectural argument into an
 implementation result.
+
+## Summary
+
+Context transactions make memory state accountable. They record snapshots,
+mounts, branches, taint, deletion closure, faults, materializations, and
+downstream inheritance so later work can see which memory view actually shaped
+an artifact or claim.
+
+The lesson is that relevant memory is not enough. A system also needs to know
+whether the view was coherent, authorized, current, replayable, and safe to
+carry forward. If it cannot say that, the right output is a typed fault or
+quarantine, not a confident answer.
 
 ## Handoff
 

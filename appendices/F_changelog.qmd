@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-03 - Reconcile Part II context and verification reader arc
+
+- Updated the curated reader manuscript chapters `Context Transactions,
+  Snapshots, Mounts, and Taint`, `Verification Bandwidth and Context Adequacy`,
+  `Claim Ledgers and Belief Revision`, and `Proof-Carrying Claims and
+  Adversarial Review` with second prose passes that make the Part II
+  epistemic chain explicit: valid memory state, adequate checking capacity,
+  durable claim identity, and scoped proof/adversarial-review effects.
+- Advanced those four curated reader records from `drafting` to `reconciled` in
+  `editions/reader_manuscript/v1_0/manifest.json`, while preserving
+  `reader_release_record_not_created`, `format_artifact_not_reviewed`, and
+  `curated_reconciliation_not_approved` release blockers on every row.
+- Updated the reader reconciliation report, prose-pass sidecars, reader
+  status/readme surfaces, graduation review, companion-note routing review,
+  roadmap language, review matrix notes, and v1 status snapshot so the curated
+  reader manuscript now records 24 drafting chapters and 20 reconciled prose
+  chapters without implying release approval, format approval, support
+  promotion, source-authority changes, memory-store behavior, verification
+  bandwidth measurement, claim-extraction correctness, verifier quality,
+  tribunal quality, or ebook/document/PDF/audio artifact approval.
+
 ## 2026-07-03 - Reconcile Part II reader entry arc
 
 - Updated the curated reader manuscript chapters `Command Contracts: From

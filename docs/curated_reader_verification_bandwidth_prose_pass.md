@@ -1,13 +1,18 @@
 # Curated Reader Prose Pass: Verification Bandwidth and Context Adequacy
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 Follow-up: 2026-07-02
+
+Follow-up: 2026-07-03
 
 Chapter ID: `verification-bandwidth-and-context-adequacy`
 
 Curated reader file:
 `editions/reader_manuscript/v1_0/chapters/verification-bandwidth-and-context-adequacy.qmd`
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -62,6 +67,10 @@ permission to change proof or test status.
   measurement, distractor-resistance performance, adequacy-classifier
   correctness, deployed escalation, model-facing context quality, or support
   promotion.
+- Added a 2026-07-03 reconciliation pass that makes verification bandwidth the
+  counterpart to context transactions, sharpens scoped honesty around drafting,
+  local checks, and support claims, and adds a summary section before the
+  handoff into Claim Ledgers and Belief Revision.
 
 ## Meaning Preservation Checks
 

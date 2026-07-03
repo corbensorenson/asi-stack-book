@@ -1,11 +1,14 @@
 # Curated Reader Prose Pass: Claim Ledgers and Belief Revision
 
-Last updated: 2026-06-29
+Last updated: 2026-07-03
 
 Chapter ID: `claim-ledgers-and-belief-revision`
 
 Curated reader file:
 `editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd`
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -56,6 +59,10 @@ permission to change proof or test status.
   epistemic-control system is claimed.
 - Preserved the minimum viable implementation, beyond-state-of-the-art
   endpoint, and handoff into Spinoza Verification and Proof-Carrying Claims.
+- Added a 2026-07-03 reconciliation pass that frames the ledger as the durable
+  destination for context-adequacy outcomes, sharpens confidence-laundering and
+  downgrade-through-revision throughlines, and adds a summary section before
+  the handoff into proof-carrying claims and adversarial review.
 
 ## Meaning Preservation Checks
 

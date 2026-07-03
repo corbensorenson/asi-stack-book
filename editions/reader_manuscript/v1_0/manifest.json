@@ -820,7 +820,7 @@
       "chapter_id": "claim-ledgers-and-belief-revision",
       "title": "Claim Ledgers and Belief Revision",
       "file": "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/claim-ledgers-and-belief-revision.qmd",
       "live_source_ref": "chapters/claim-ledgers-and-belief-revision.qmd@c1024905a",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#claim-ledgers-and-belief-revision.core",
@@ -840,12 +840,12 @@
         "memory-experience",
         "evidence-discipline"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around truth-claim version control, ledger identity, support states, contradiction links, revision history, publication-boundary discipline, minimum viable record fixtures, and beyond-SOTA epistemic version control; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "Curated reader reconciliation completed for the current claim-ledger source: opening, pacing, paragraph order, section flow, transition prose, adequacy-to-ledger bridge, truth-claim version-control framing, ledger identity, support states, contradiction links, revision history, publication-boundary discipline, downgrade and confidence-laundering throughlines, summary section, minimum viable record fixtures, and beyond-SOTA epistemic version control were edited for human reading while preserving claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, and release approval boundaries.",
       "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
+        "core claim meaning preserved in reader prose after second-pass reconciliation",
         "support-state boundary preserved at argument support",
-        "source boundary preserved; external records remain comparators rather than claim support",
-        "proof/test status preserved without adding unrun extraction, contradiction, semantic-equivalence, citation, or belief-engine results",
+        "source boundary preserved: Spinoza, VIEA, Aletheia, UAT, Coherence Exchange, and external belief-revision/truth-maintenance/citation-evaluation comparators remain source-grounding, governance vocabulary, or comparators rather than deployed belief-engine evidence",
+        "proof/test status preserved without adding open-domain claim extraction, contradiction detection, source accuracy, semantic equivalence, citation correctness, theorem validity, verifier quality, substantive belief revision, surface-sync enforcement, deployed epistemic correctness, or support-state movement results",
         "implementation horizon preserved without implying current open-domain claim-ledger deployment",
         "release blocker status preserved until an edition release record clears it"
       ],
@@ -856,7 +856,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_claim_ledgers_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Curated reader reconciliation recorded in docs/curated_reader_claim_ledgers_prose_pass.md after the 2026-07-03 adequacy-to-ledger and belief-revision summary pass; release blockers remain active and this is not release-reviewed or equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "cognitive-compilation-and-semantic-ir",
@@ -1029,7 +1029,7 @@
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "title": "Context Transactions, Snapshots, Mounts, and Taint",
       "file": "editions/reader_manuscript/v1_0/chapters/context-transactions-snapshots-mounts-and-taint.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/context-transactions-snapshots-mounts-and-taint.qmd",
       "live_source_ref": "chapters/context-transactions-snapshots-mounts-and-taint.qmd@0840248da",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#context-transactions-snapshots-mounts-and-taint.core",
@@ -1048,12 +1048,12 @@
       "voice_pass_slot_ids": [
         "memory-experience"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around memory as accountable state, transactional context views, immutable events, versioned pages, mounts, snapshots, branches, taint/deletion closure, typed faults, downstream artifact inheritance, a simple memory-incident example, minimum viable transaction fixtures, and beyond-SOTA transactional memory; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "Curated reader reconciliation completed for the current context-transactions source: opening, pacing, paragraph order, section flow, transition prose, Virtual Context ABI to runtime-history bridge, memory-as-accountable-state framing, transactional context views, immutable events, versioned pages, mounts, snapshots, branches, taint/deletion closure, typed faults, downstream artifact inheritance, memory-incident example, summary section, minimum viable transaction fixtures, and beyond-SOTA transactional memory were edited for human reading while preserving claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, and release approval boundaries.",
       "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
+        "core claim meaning preserved in reader prose after second-pass reconciliation",
         "support-state boundary preserved at argument support",
-        "source boundary preserved; external records remain comparators rather than claim support",
-        "proof/test status preserved without adding unrun memory-store, read-your-writes, branch-isolation, mount-visibility, replay, poisoning-resistance, side-channel, or VCM conformance results",
+        "source boundary preserved: VCM, Ladon/Manhattan, Context Engineer, Black Hole Context Manager, editable VCM, and external memory/context sources remain architecture vocabulary or comparators rather than deployed memory-store evidence",
+        "proof/test status preserved without adding memory-store behavior, read-your-writes, branch-isolation, mount-visibility, replay, poisoning-resistance, side-channel, Digital SCIF, context-manager benchmark, VCM conformance, or support-state movement results",
         "implementation horizon preserved without implying current transactional memory substrate deployment",
         "release blocker status preserved until an edition release record clears it"
       ],
@@ -1064,7 +1064,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass and 2026-07-02 memory-incident follow-up recorded in docs/curated_reader_context_transactions_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Curated reader reconciliation recorded in docs/curated_reader_context_transactions_prose_pass.md after the 2026-07-03 ABI-to-runtime-history and memory-state summary pass; release blockers remain active and this is not release-reviewed or equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "evidence-states-and-claim-discipline",
@@ -2017,7 +2017,7 @@
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "title": "Verification Bandwidth and Context Adequacy",
       "file": "editions/reader_manuscript/v1_0/chapters/verification-bandwidth-and-context-adequacy.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/verification-bandwidth-and-context-adequacy.qmd",
       "live_source_ref": "chapters/verification-bandwidth-and-context-adequacy.qmd@6013d4743",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#verification-bandwidth-and-context-adequacy.core",
@@ -2036,12 +2036,12 @@
       "voice_pass_slot_ids": [
         "memory-experience"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around context exposure versus verification capacity, target-claim scoped adequacy, semantic-unit comparison, a present-but-unchecked contradiction example, compression/loss records, verification modes, support-state boundaries, minimum viable adequacy fixtures, and beyond-SOTA verification-capacity control; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "Curated reader reconciliation completed for the current verification-bandwidth source: opening, pacing, paragraph order, section flow, transition prose, context-transactions-to-adequacy bridge, context exposure versus verification capacity framing, target-claim scoped adequacy, semantic-unit comparison, present-but-unchecked contradiction example, compression/loss records, verification modes, support-state boundaries, summary section, minimum viable adequacy fixtures, and beyond-SOTA verification-capacity control were edited for human reading while preserving claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, and release approval boundaries.",
       "meaning_preservation_checks": [
-        "core claim meaning preserved in reader prose",
+        "core claim meaning preserved in reader prose after second-pass reconciliation",
         "support-state boundary preserved at argument support",
-        "source boundary preserved; external records remain comparators rather than claim support",
-        "proof/test status preserved without adding unrun contradiction-rate, distractor-resistance, summary-fidelity, adequacy-classifier, or deployment results",
+        "source boundary preserved: Verification Bandwidth, VCM, Spinoza, TreeLLM, editable VCM, and external long-context/evaluation/formal-verification sources remain architecture vocabulary or comparators rather than local benchmark evidence",
+        "proof/test status preserved without adding contradiction-rate, distractor-resistance, model-facing context, summary-fidelity, adequacy-classifier, deployed escalation, attention-behavior, runtime safety, strategic-deception-resistance, or support-state movement results",
         "implementation horizon preserved without implying current verification-capacity control-plane deployment",
         "release blocker status preserved until an edition release record clears it"
       ],
@@ -2052,7 +2052,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass and 2026-07-02 contradiction-example follow-up recorded in docs/curated_reader_verification_bandwidth_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Curated reader reconciliation recorded in docs/curated_reader_verification_bandwidth_prose_pass.md after the 2026-07-03 context-validity-to-claim-adequacy and summary pass; release blockers remain active and this is not release-reviewed or equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "moral-uncertainty-and-value-conflict",
@@ -2223,7 +2223,7 @@
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "title": "Proof-Carrying Claims and Adversarial Review",
       "file": "editions/reader_manuscript/v1_0/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
       "live_source_ref": "chapters/spinoza-verification-and-proof-carrying-claims.qmd@verification-review-merge",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#spinoza-verification-and-proof-carrying-claims.core",
@@ -2243,15 +2243,14 @@
       "voice_pass_slot_ids": [
         "proof-practice"
       ],
-      "divergence_summary": "Merged curated reader prose pass after verification/adversarial-review consolidation: the active reader chapter now combines proof-carrying claim tiers, justification envelopes, verifier results, failed-attempt memory, tribunal dossiers, adversarial probes, dissent, required actions, ledger writeback, a claim-review reader scenario, and non-claims while preserving support state, source boundaries, proof/test status, implementation horizons, and release blockers.",
+      "divergence_summary": "Curated reader reconciliation completed for the current merged proof-carrying-claims/adversarial-review source: opening, pacing, paragraph order, section flow, transition prose, context-adequacy and claim-ledger bridge, proof-carrying claim tiers, justification envelopes, verifier results, failed-attempt memory, tribunal dossiers, adversarial probes, dissent, required actions, scoped ledger effects, claim-review reader scenario, Labor OS handoff, and non-claims were edited for human reading while preserving support state, source boundaries, proof/test status, implementation horizons, artifact approval, and release approval boundaries.",
       "meaning_preservation_checks": [
-        "support-state boundary preserved: chapter core claim remains a Design rationale at argument support",
-        "source boundary preserved for spinoza, genesiscode, coherence_exchange, verification_bandwidth, treellm, uat, talos, ext_proof_carrying_code_1997, ext_lean4_theorem_proving, and ext_contestable_ai_design_2022",
-        "proof/test boundary preserved: synthetic proof-carrying-claim and tribunal-review harnesses plus finite Lean predicates only",
-        "no theorem-validity, verifier-quality, citation-accuracy, semantic-equivalence, open-domain-autoformalization, proof-generation, reviewer-independence, adversarial-probe-quality, consensus-quality, verdict-correctness, human-adjudication-quality, tribunal-quality, deployed-contestability, institutional-adequacy, source-interpretation, Talos-runtime, Spinoza-verifier, verification-bandwidth-benchmark, Coherence-Exchange-implementation, multi-reviewer-UAT-pipeline, runtime, whole-system-epistemic-correctness, or support-state movement claim added",
+        "core claim meaning preserved in reader prose after the executed verification/adversarial-review consolidation",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved for Spinoza, GenesisCode, Coherence Exchange, Verification Bandwidth, TreeLLM, UAT, Talos, Proof-Carrying Code, Lean, contestable AI, autoformalization, debate, and LLM-as-judge sources as bounded vocabulary, lineage, or comparators rather than local proof/review quality evidence",
+        "proof/test status preserved without adding theorem validity, verifier quality, citation accuracy, semantic equivalence, open-domain autoformalization, proof generation, reviewer independence, adversarial-probe quality, consensus quality, verdict correctness, human-adjudication quality, tribunal quality, deployed contestability, institutional adequacy, source interpretation, Talos runtime, Spinoza verifier, verification-bandwidth benchmark, Coherence Exchange implementation, multi-reviewer UAT pipeline, runtime, whole-system epistemic correctness, or support-state movement claims",
         "implementation horizon preserved: proof-carrying-claim and tribunal-review schemas now, verification operating system as mature endpoint only",
-        "executed consolidation caveat preserved: unified-adaptive-tribunal-and-adversarial-review is archived as historical reader/source lineage, not a live reader chapter",
-        "release blocker status preserved until reader reconciliation, format review, and edition release record exist"
+        "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -2260,7 +2259,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "Merged drafting-only curated reader prose now targets the executed verification/adversarial-review destination, with a 2026-07-02 claim-review scenario follow-up recorded in docs/curated_reader_spinoza_prose_pass.md. This is not a release-reviewed chapter, not equal authority with the live book, and not a support-state, proof/test, reviewer-independence, verdict-correctness, runtime, deployed-review, or tribunal-quality claim."
+      "review_notes": "Curated reader reconciliation recorded in docs/curated_reader_spinoza_prose_pass.md after the 2026-07-03 context-adequacy/claim-ledger bridge and scoped-ledger-effect pass; the executed adversarial-review consolidation remains preserved as lineage, release blockers remain active, and this is not release-reviewed or equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "routing-heads-and-specialist-cores",

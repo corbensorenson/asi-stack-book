@@ -1,13 +1,18 @@
 # Curated Reader Prose Pass: Context Transactions, Snapshots, Mounts, and Taint
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 Follow-up: 2026-07-02
+
+Follow-up: 2026-07-03
 
 Chapter ID: `context-transactions-snapshots-mounts-and-taint`
 
 Curated reader file:
 `editions/reader_manuscript/v1_0/chapters/context-transactions-snapshots-mounts-and-taint.qmd`
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -64,6 +69,10 @@ permission to change proof or test status.
   contract and does not claim a deployed transaction store, mount policy
   engine, taint engine, deletion-closure engine, replay system, or context
   compiler.
+- Added a 2026-07-03 reconciliation pass that connects Virtual Context ABI to
+  runtime context history, frames transactions as the guard against fluent but
+  invalid memory blends, and adds a summary section before the handoff into
+  Verification Bandwidth and Context Adequacy.
 
 ## Meaning Preservation Checks
 

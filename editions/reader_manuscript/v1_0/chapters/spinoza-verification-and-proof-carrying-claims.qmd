@@ -30,6 +30,12 @@ weak claim look finished. The ASI Stack uses the opposite rule. Every strong
 label should narrow the claim, record what was checked, preserve what failed,
 and state what the result is allowed to change.
 
+This is the last epistemic gate before the book returns to execution. Context
+adequacy says whether a claim had enough checking capacity. Claim ledgers say
+what the system believes and how that belief changed. Proof-carrying claims
+and adversarial review decide which selected claims have earned stronger
+standing and which must remain blocked.
+
 ## Problem
 
 Generated prose can sound justified before it is justified.
@@ -53,6 +59,10 @@ ledger without verification can become bookkeeping around unsupported belief.
 Verification without a ledger can produce isolated artifacts that no later
 reader knows how to use. Review without a state change can become commentary.
 The merged layer connects all three.
+
+The useful result is not a badge that says "verified." It is a scoped ledger
+effect: no change, downgrade, revision, block, residual, required action, or
+narrow acceptance.
 
 ## Why Existing Approaches Are Insufficient
 
@@ -328,6 +338,10 @@ laundering channel.
 
 Durable claim identity and belief revision remain the job of the claim ledger.
 Runtime action remains downstream in Labor OS and typed jobs.
+
+The boundary is intentionally conservative. A proof, citation dossier, replay
+log, benchmark packet, tribunal verdict, or human sign-off changes only the
+claim it actually checked.
 
 ## Handoff
 

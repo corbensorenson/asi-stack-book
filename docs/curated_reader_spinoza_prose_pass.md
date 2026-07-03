@@ -2,6 +2,8 @@
 
 Date: 2026-07-02
 
+Follow-up: 2026-07-03
+
 Chapter: `spinoza-verification-and-proof-carrying-claims`
 
 Reader manuscript file:
@@ -10,13 +12,16 @@ Reader manuscript file:
 Live source file:
 `chapters/spinoza-verification-and-proof-carrying-claims.qmd`
 
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
+
 Consolidation caveat:
-`docs/chapter_consolidation_release_stability_review.md` records this chapter
-inside a `deferred_for_release` package with
-`unified-adaptive-tribunal-and-adversarial-review`. This pass curates the
-current source chapter for the reader-manuscript cycle only. It does not
-execute, reject, or authorize the future verification/adversarial-review merge,
-and it preserved the then-current 54-chapter manifest boundary.
+`docs/chapter_history_ledger.md` records that
+`unified-adaptive-tribunal-and-adversarial-review` folded into this destination
+chapter during the 2026-06-30 verification/adversarial-review consolidation.
+This note now records the reconciled curated reader state for the merged
+destination chapter; it does not approve a reader release artifact and does not
+promote any support state.
 
 ## Reader Promise
 
@@ -52,6 +57,9 @@ The reader throughline is:
   readiness sentence into formal-record, procedural-replay, and interpretive
   adequacy claims, then preserves blockers, mismatches, dissent, narrowed
   wording, and support-state non-claims.
+- Added a 2026-07-03 reconciliation pass that connects context adequacy and
+  claim-ledger state to selected proof/adversarial-review routes, clarifies
+  scoped ledger effects, and tightens the handoff into Labor OS and typed jobs.
 
 ## Meaning-Preservation Checks
 
@@ -70,8 +78,9 @@ The reader throughline is:
   preservation, mismatch escalation, and non-claim boundaries only.
 - The Lean module proves finite-record predicates over artifact references,
   verifier results, scoped effects, and failed-verifier promotion gates only.
-- The consolidation caveat is preserved: this reader pass does not decide the
-  future merge with `unified-adaptive-tribunal-and-adversarial-review`.
+- The consolidation caveat is updated: the verification/adversarial-review
+  merge has executed, and this reader pass now applies to the merged
+  destination rather than to an undecided future package.
 
 ## Non-Claims
 
@@ -94,9 +103,10 @@ The reader throughline is:
 ## Remaining Blockers
 
 - Human editorial review has not approved this chapter for reader release.
-- The future verification/adversarial-review consolidation package still needs
-  a reviewer decision before any merge with
-  `unified-adaptive-tribunal-and-adversarial-review`.
+- The archived standalone adversarial-review reader draft remains historical
+  only; future work should edit the active
+  `spinoza-verification-and-proof-carrying-claims` curated reader chapter
+  unless new evidence restores a separate tribunal chapter.
 - Stronger evidence still needs real interpretation examples, verifier outputs,
   failed-attempt records, mismatch fixtures tied to actual claims,
   citation-dossier checks, procedure or replay artifacts, theorem-validity
