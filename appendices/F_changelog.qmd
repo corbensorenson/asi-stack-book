@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-03 - Align policy optimization reader evidence boundary
+
+- Updated the curated reader manuscript draft for `Policy Optimization and
+  Learning from Feedback` so its minimum viable implementation names the
+  2026-07-02 policy update lease probe: six synthetic routing samples, two
+  holdout samples, five candidate policies, one selected canary kept
+  experimental, three rejected controls, rollback dry run, finite Lean bridge,
+  no evidence transition, no support-state effect, and the three Lean theorem
+  refs.
+- Updated the policy-optimization prose-pass note, reader manuscript manifest,
+  chapter review matrix, review-matrix generator, and reconciliation report to
+  record the 2026-07-03 evidence-boundary alignment. This is curated
+  reader-manuscript alignment only; it is not PPO, DPO, GRPO, RLVR, or optimizer
+  execution; reward-quality evidence; policy-improvement evidence; route-quality
+  evidence; deployed-canary evidence; live-rollback evidence; support-state
+  promotion; chapter core support-state promotion; reader release;
+  ebook/document/PDF/audio artifact; or artifact approval.
+
 ## 2026-07-03 - Align benchmark ratchets reader evidence boundary
 
 - Updated the curated reader manuscript draft for `Benchmark Ratchets and

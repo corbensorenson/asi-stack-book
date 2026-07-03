@@ -1537,13 +1537,13 @@
         "improvement-governance",
         "evidence-discipline"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around policy updates as governed behavior-change leases: target policy, admissible feedback, reward boundary, drift bound, holdouts, regressions, reward-hacking probes, authority conservation, rollback, governance promotion, residuals, and exact support-state effects; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated reader prose pass reframes the chapter around policy updates as governed behavior-change leases: target policy, admissible feedback, reward boundary, drift bound, holdouts, regressions, reward-hacking probes, authority conservation, rollback, governance promotion, residuals, and exact support-state effects; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed. The 2026-07-03 alignment surfaces the 2026-07-02 policy update lease probe as bounded synthetic fixture evidence only: six synthetic routing samples, two holdout samples, five candidate policies, one selected canary kept experimental, three rejected controls, rollback dry run, finite Lean bridge, no evidence transition, and no support-state effect.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
         "source boundary preserved; external policy/RL sources remain method-family context and failure cautions, not local reproduction",
-        "proof/test status preserved without adding PPO, DPO, GRPO, RLVR, router-policy, context-policy, reasoning-budget, reward-quality, optimizer-convergence, benchmark-improvement, rollback-success, deployment-readiness, or reward-hacking-resistance results",
-        "implementation horizon preserved without implying current governed-learning operating-system deployment",
+        "proof/test status preserved without adding PPO, DPO, GRPO, RLVR, router-policy RL, context-policy RL, reasoning-budget RL, reward-quality, optimizer-convergence, benchmark-improvement, route-quality, policy-safety, deployed-rollback, deployment-readiness, support-state-movement, or reward-hacking-resistance results",
+        "implementation horizon preserved without implying current governed-learning operating-system deployment, live router canary, optimizer run, reward-model validation, or support-state promotion",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -1553,7 +1553,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_policy_optimization_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass and 2026-07-03 policy update lease probe evidence-boundary alignment recorded in docs/curated_reader_policy_optimization_prose_pass.md; not release-reviewed, not equal authority to the live AI/research chapter, and no chapter core claim is promoted."
     },
     {
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",

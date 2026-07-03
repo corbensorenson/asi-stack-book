@@ -359,9 +359,12 @@ SPECIAL_REVIEW_DEFAULTS = {
             "regressions, reward-hacking probes, authority conservation, "
             "rollback, promotion gates, method-family nonclaims, proof/test "
             "limits, and no local training-result boundaries without approving "
-            "release. The companion note is for e-reader/audio density support "
-            "only, while reward, authority, rollback, training-result, "
-            "deployment, and support-state boundaries remain in the reader spine."
+            "release. The 2026-07-03 alignment surfaces the 2026-07-02 policy "
+            "update lease probe as bounded synthetic fixture evidence only. "
+            "The companion note is for e-reader/audio density support only, "
+            "while reward, authority, rollback, training-result, deployment, "
+            "support-promotion, and reader-artifact boundaries remain in the "
+            "reader spine."
         ),
     },
     "artifact-steward-agents-and-living-project-governance": {

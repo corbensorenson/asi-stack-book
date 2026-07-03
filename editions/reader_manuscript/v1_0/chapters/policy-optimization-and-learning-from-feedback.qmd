@@ -313,9 +313,22 @@ router-policy samples, a baseline, a source-grounded canary, and three bad
 candidates: one that chases a reward proxy, one that expands authority, and
 one that lacks rollback. The canary stays experimental. A dry-run rollback
 injects a synthetic monitor event and restores the baseline policy inside the
-fixture. That makes the lease idea more concrete, but it is
-not a deployed learning result, not a live router canary, and not proof that a policy
-improved.
+fixture. That makes the lease idea more concrete, but it is not a live router
+canary and not proof that a policy improved. It is not a deployed learning result.
+
+The exact bounded surface is replayable through the policy update lease probe.
+Its 2026-07-02 result record,
+`experiments/policy_update_lease/results/2026-07-02-local.json`, records six
+synthetic routing samples, two holdout samples, five candidate policies, the
+selected canary `policy://router-v1-source-grounded-canary`, the baseline
+`policy://router-v0-baseline`, three rejected controls for reward-only proxy,
+authority expansion, and missing rollback, a synthetic rollback event that
+restores the baseline inside the fixture, `support_state_effect: none`,
+`chapter_core_support_effect: none`, and `evidence_transition_created: false`.
+The Lean bridge is `lean:policy_optimization.lease_probe_fixture_bridge`, with
+the theorem refs `policy_update_lease_probe_fixture_valid`,
+`policy_update_lease_probe_rejects_reward_only_proxy`, and
+`policy_update_lease_probe_preserves_rollback_boundary`.
 
 Those artifacts prove protocol discipline only. They do not prove reward
 quality, optimizer convergence, benchmark improvement, policy safety, route

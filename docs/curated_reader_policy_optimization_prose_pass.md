@@ -52,6 +52,14 @@ permission to change proof or test status.
 - Preserved the evidence boundary that the schema fixture, finite Lean
   predicates, and synthetic benchmark anti-Goodhart harness support protocol
   discipline only.
+- Added a 2026-07-03 evidence-boundary alignment that surfaces the 2026-07-02
+  policy update lease probe: result record
+  `experiments/policy_update_lease/results/2026-07-02-local.json`, six
+  synthetic routing samples, two holdout samples, five candidate policies, one
+  selected canary kept experimental, three rejected controls for reward-only
+  proxy, authority expansion, and missing rollback, a dry-run rollback that
+  restores the baseline inside the fixture, no support-state effect, no
+  evidence transition, and the three finite Lean theorem refs.
 - Preserved the missing-work boundary: no PPO, DPO, GRPO, RLVR, router-policy
   RL, context-policy RL, reasoning-budget RL, reward-quality result, optimizer
   convergence result, benchmark-improvement result, policy-safety result,
@@ -68,8 +76,8 @@ permission to change proof or test status.
 | Core claim meaning preserved | Pass. The curated draft keeps the claim that policy optimization is the stack's learning actuator and that governance decides admissible feedback and promotion. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; external policy/RL sources remain method-family context and failure cautions, not local reproduction. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that fixture validation, finite Lean predicates, and synthetic anti-Goodhart checks do not prove reward quality, optimizer convergence, benchmark improvement, policy safety, route quality, context-selection quality, rollback success, or reward-hacking resistance. |
-| Implementation horizon preserved | Pass. The minimum viable implementation remains a policy optimization record schema, valid fixture, finite Lean predicates, and validation path; the mature endpoint remains an unimplemented governed learning operating system. |
+| Proof/test status preserved | Pass. The curated draft keeps the boundary that fixture validation, finite Lean predicates, synthetic anti-Goodhart checks, and the policy update lease probe do not prove reward quality, optimizer convergence, benchmark improvement, policy safety, route quality, context-selection quality, deployed rollback success, or reward-hacking resistance. |
+| Implementation horizon preserved | Pass. The minimum viable implementation remains a policy optimization record schema, valid fixture, finite Lean predicates, validation path, and policy-update lease probe; the mature endpoint remains an unimplemented governed learning operating system. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
@@ -85,8 +93,8 @@ permission to change proof or test status.
 - This pass does not claim local PPO, DPO, GRPO, RLVR, router-policy RL,
   context-policy RL, reasoning-budget RL, reward-model validation, preference
   data quality, optimizer convergence, benchmark improvement, policy safety,
-  route quality, context-selection quality, rollback success, governed
-  deployment, or reward-hacking resistance.
+  route quality, context-selection quality, deployed rollback success,
+  governed deployment, support-state movement, or reward-hacking resistance.
 
 ## Remaining Blockers
 
