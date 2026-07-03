@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Failure Modes of Ungoverned Intelligence
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
+
+Follow-up: 2026-07-02
 
 Chapter ID: `failure-modes-of-ungoverned-intelligence`
 
@@ -46,6 +48,9 @@ Allowed curation scopes used:
   Lean predicates are narrow record surfaces, while scenario coverage,
   evaluator-independence checks, context-pollution containment, and deployed
   failure detection remain planned.
+- Added a near-miss receipt example that connects denied authority expansion
+  and Goodhart/evaluator drift to boundary records, residual preservation,
+  promotion blockers, and synthetic detector limits.
 - Preserved the core claim, minimum viable implementation, beyond-state-of-the-
   art endpoint, and handoff into Evidence States and Claim Discipline.
 
@@ -72,7 +77,8 @@ Allowed curation scopes used:
 - This pass does not promote any chapter core claim or non-core claim.
 - This pass does not claim scenario coverage, evaluator-capture resistance,
   context-pollution containment, deployed failure detection, or prevention of
-  the named failure modes.
+  the named failure modes; the near-miss example is reader-facing explanation
+  only and does not claim mitigation effectiveness.
 
 ## Remaining Blockers
 

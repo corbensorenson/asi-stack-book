@@ -157,6 +157,31 @@ minor reversible failure can become serious if it recurs without learning, and
 a high-severity failure can remain contained if the escape path is blocked and
 the residual is preserved.
 
+## A Near Miss As A Receipt
+
+Imagine a route that almost performs an external action with a broader
+authority handle than the accepted contract allowed. Nothing catastrophic
+happens. The tool call is denied. The user sees no damage. In an ungoverned
+system, that near miss may disappear because the final answer still looks
+fine.
+
+The ASI Stack should treat the denial as a failure receipt. The record should
+say which contract was at risk, which authority ceiling stopped the action,
+which detector saw the mismatch, which artifact preserves the denied path,
+which residual remains, and which future promotion is blocked until the cause
+is understood. The event is not a success story. It is a boundary exercise.
+
+The same pattern applies to evaluator drift. If a benchmark begins rewarding a
+shortcut, the system should not merely report the improved score. It should
+record the proxy failure, freeze or narrow the evaluator, preserve the
+negative case, and route the residual to benchmark or claim review. The
+important artifact is the boundary record, not the comforting fact that the
+system kept running.
+
+This is why the synthetic failure detector includes both authority-creep and
+Goodhart/evaluator-drift incidents. The probe does not prove prevention. It
+shows the shape of a record that refuses to erase a near miss.
+
 ## Interfaces
 
 Failure analysis enters the stack through a Failure Boundary Map.

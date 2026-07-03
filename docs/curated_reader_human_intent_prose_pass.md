@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Human Intent as a Formal Input
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
+
+Follow-up: 2026-07-02
 
 Chapter ID: `human-intent-as-a-formal-input`
 
@@ -41,6 +43,9 @@ Allowed curation scopes used:
   learning, and deep reinforcement learning from human preferences.
 - Compressed intent-state and interface material into prose while preserving
   the `Intent Contract`, `Intent Receipt`, and state meanings.
+- Added an urgent/trusting request example that separates desired outcome,
+  time pressure, publication authority, bounded drafting, private-source
+  boundaries, and re-contracting when publication surface changes.
 - Preserved the Mermaid intent-narrowing diagram, core claim, evidence
   boundary, minimum viable implementation, beyond-state-of-the-art endpoint,
   and handoff to Constitutional Alignment.
@@ -72,7 +77,8 @@ Allowed curation scopes used:
 - This pass does not promote any chapter core claim or non-core claim.
 - This pass does not claim a solved intent parser, authority extractor,
   stop-condition checker, requirements-engineering method, CIRL algorithm,
-  preference-learning run, or end-to-end execution handoff.
+  preference-learning run, approval-service behavior, runtime dispatch,
+  prompt-injection containment, or end-to-end execution handoff.
 
 ## Remaining Blockers
 

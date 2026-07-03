@@ -83,6 +83,34 @@ An `accepted_contract` is the first state that can lower into command contracts 
 
 These states let the system help quickly where the lease is clear and stop where helpful interpretation would become unauthorized action.
 
+## A Request That Sounds Simple
+
+Consider a user who says: "This is urgent. I trust you. Fix the report and
+publish it wherever it needs to go."
+
+A helpful assistant can hear the goal immediately. The report should improve,
+and time matters. But a governed stack cannot treat urgency and trust as a
+publication grant. The request contains at least three different objects: a
+desired outcome, a time pressure, and a possible authority expansion. Those
+objects have to be separated before work can proceed.
+
+The bounded contract might allow a draft repair, local validation, and a
+summary of publication options. It might forbid public posting, private-source
+disclosure, credential use, or external tool calls until a separate approval
+exists. It might preserve a stop condition: do not publish without review. If
+the user later approves a specific publication surface, that is a
+re-contracting event, not a hidden continuation of the first sentence.
+
+This is why the synthetic intent probes use cases that sound ordinary:
+urgency, trust, vague broad means, private-source pressure, and declared stop
+conditions. The point is not that those probes understand human intent. They
+show a narrower discipline: some language may help interpretation while still
+failing to authorize dispatch.
+
+For a human reader, this is the chapter's practical promise. The system should
+be able to move quickly on low-risk drafting while refusing to let friendly,
+urgent, or confident language widen the authority lease.
+
 ## Interfaces
 
 The Intent Contract is the first cross-layer interface. Alignment reads it as an admissibility record. Planning reads it as a bounded compilation input. Execution reads it as an authority envelope. Evidence reads it as the acceptance target for the delivered artifact.
