@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Routing Heads and Specialist Cores
 
-Last updated: 2026-06-30
+Last updated: 2026-07-03
+
+Follow-up: 2026-07-03
 
 Chapter ID: `routing-heads-and-specialist-cores`
 
@@ -52,6 +54,11 @@ claims or evidence status.
   pass does not execute, reject, or authorize a manifest change.
 - Preserved the minimum viable implementation, beyond-state-of-the-art
   endpoint, and handoff into Readiness Gates, Residual Escrow, and Quarantine.
+- Added a 2026-07-03 evidence-boundary alignment that updates the reader
+  minimum viable implementation to match the live chapter's implemented
+  synthetic routing decision lease harness, readiness/residual gate harness,
+  finite Routing lifecycle predicates, folded MoECOT source-boundary
+  predicates, and no route-quality or runtime-claim promotion.
 
 ## Meaning Preservation Checks
 
@@ -60,7 +67,7 @@ claims or evidence status.
 | Core claim meaning preserved | Pass. The curated draft keeps the claim that ASI scales through a lightweight routing head selecting bounded specialist cores with local tools, memory, and authority. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; external routing records remain comparators. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that schemas, fixtures, finite Lean predicates, and synthetic readiness/residual checks do not prove routing accuracy, learned-router quality, specialist adequacy, runtime authority enforcement, route-quality dominance, MoECOT runtime behavior, current Theseus runtime behavior, or safety. |
+| Proof/test status preserved | Pass. The curated draft now names the implemented routing decision lease harness, readiness/residual gate harness, finite Routing lifecycle predicates, and folded MoECOT source-boundary predicates while preserving the boundary that they do not prove routing accuracy, learned-router quality, specialist adequacy, runtime authority enforcement, route-quality dominance, MoECOT runtime behavior, current Theseus runtime behavior, orchestration benchmark quality, or safety. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a registry schema, routing decision schema, and route-receipt fixture suite; the mature endpoint remains an unvalidated governed capability market inside the stack. |
 | Consolidation caveat preserved | Pass. The curated draft cites the deferred MoECOT runtime fold boundary from `docs/chapter_consolidation_release_stability_review.md` and `docs/chapter_consolidation_fold_moecot_runtime.md` without executing or rejecting the fold. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, audio, or audio-embedded EPUB artifact is approved by this pass. |
@@ -81,7 +88,8 @@ claims or evidence status.
   dominance, cost savings, economic result, MoECOT runtime behavior, MoECOT
   replay, MoECOT benchmark reproduction, current Theseus runtime behavior,
   Theseus dashboard currentness, source-interpretation adequacy, production
-  safety, or global alignment.
+  safety, global alignment, orchestration benchmark quality, or support-state
+  promotion from the synthetic route-lease harness.
 
 ## Remaining Blockers
 

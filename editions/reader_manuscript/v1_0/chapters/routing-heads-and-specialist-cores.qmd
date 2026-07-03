@@ -255,15 +255,27 @@ one rejected overprivileged specialist, one missing-readiness fallback, one
 expired context lease, and one failed composition with a named residual owner.
 That is enough to test whether the record can carry the obligation.
 
-The current repository has part of this minimum. The specialist registry and
-routing decision schemas validate record shape. `AsiStackProofs.Routing`
-contains two finite predicates over route records. The readiness/residual gate
-harness checks synthetic authority-bounded and fallback-route behavior across
-route/gate/replacement records.
+The current repository now has this record-level minimum. The specialist
+registry and routing decision schemas validate record shape. The synthetic
+routing decision lease harness checks three valid and seven expected-invalid
+route packets for least-capable adequate selection, overprivileged rejection,
+authority-envelope containment, missing-readiness fallback, expired-lease
+residualization, rejected-candidate evidence, residual ownership, selected
+specialist registration, and MoECOT source-boundary non-claims.
+
+The readiness/residual gate harness adds a second synthetic surface for
+authority-bounded routing and fallback behavior across route, gate, and
+replacement records. `AsiStackProofs.Routing` models finite route decisions
+that preserve request, registry, authority, readiness, lease, cost-quality,
+rejected-candidate, residual-owner, and non-claim boundaries. The folded
+MoECOT slice adds orchestration fixture validation plus finite
+source-boundary predicates so runtime-branding claims cannot promote above
+`argument` without readiness, regression, replay, and source-state evidence.
 
 This is a contract surface, not a deployed router. It does not measure routing
-accuracy, train a router, enforce runtime authority, prove specialist
-adequacy, run MoECOT, or rerun Theseus.
+accuracy, train a learned router, enforce runtime authority, prove specialist
+adequacy, run MoECOT, replay Theseus, benchmark orchestration, prove route
+quality, or promote the chapter claim.
 
 ## Beyond the State of the Art
 
@@ -300,10 +312,11 @@ envelope. Evidence updates readiness. Rejections shape future policy.
 Residuals become visible work.
 
 The present repository stops before route-quality evidence. It has source
-mappings, external comparators, schemas, finite Lean predicates, and synthetic
-gate checks. It does not have a measured specialist router, learned router,
-runtime enforcement result, MoECOT replay, current Theseus runtime rerun, or
-support-state promotion.
+mappings, external comparators, schemas, finite Lean predicates, synthetic
+readiness/residual checks, and the synthetic routing decision lease harness.
+It does not have a measured specialist router, learned router, runtime
+enforcement result, MoECOT replay, orchestration benchmark, current Theseus
+runtime rerun, or support-state promotion.
 
 A route should answer a simple question: why this specialist, under this
 authority, now? If that answer cannot be reconstructed, the router is not yet
