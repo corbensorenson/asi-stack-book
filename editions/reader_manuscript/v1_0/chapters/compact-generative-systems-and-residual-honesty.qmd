@@ -10,6 +10,14 @@ implementation horizons, and release blockers.
 
 # Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty
 
+The hive chapter widened the stack's execution substrate: more devices, more
+locality, more owned capacity, and more places where work can live. That makes
+compactness attractive. A smaller representation may cost less to move, store,
+verify, rerun, or route across a personal fabric. But the same pressure also
+creates a new way to hide work. A compact object can make a system look
+efficient while pushing reconstruction, verification, repair, fallback, or
+human interpretation onto another layer.
+
 Compactness is one of the most attractive ideas in the stack because it promises leverage: a small seed, rule, program, model, summary, graph, or generator that can stand in for something larger. It is also one of the easiest places to lie to ourselves. A representation can look small because it genuinely captures structure, or because it moved missing work into a verifier, a repair stream, a human reader, a fallback path, or a future debugging session.
 
 The chapter's standard is therefore simple: small only counts after the remainder is named. A compact representation should say what must be reconstructed, verified, repaired, expanded, or refused, and it should carry the fallback and authority limits that decide who may rely on it.
@@ -322,4 +330,16 @@ Compact generation and generate/verify/repair receipts expose the cost of recons
 
 RankFold, NeuralFold, and Artifact Compression remains standalone after the conservative merge because it owns the technique-facing artifact and tensor-compression lane. It inherits the compact-system residual-honesty, semantic-leasing, and consumer-policy requirements while asking a different question: when may a compressed artifact stand in for a full artifact for a specific task?
 
-The former Semantic Representation and Tree-Structured Models material is now a named representation-leasing section inside Compact Generative Systems rather than a second rendered skeleton. Its restoration condition is unchanged: it should become standalone again only if a public-safe semantic graph, TreeLLM, hierarchy-revision, representation-utility, or external-review evidence lane makes semantic representation chapter-owning again.
+The former Semantic Representation and Tree-Structured Models material is now
+a named representation-leasing section inside Compact Generative Systems
+rather than a second rendered skeleton. Its restoration condition is
+unchanged: it should become standalone again only if a public-safe semantic
+graph, TreeLLM, hierarchy-revision, representation-utility, or external-review
+evidence lane makes semantic representation chapter-owning again.
+
+Part III has now moved from selection to qualification, from qualification to
+substrate, and from substrate to burden accounting. The next two chapters push
+that burden accounting into speed and artifact compression, where the stack
+has to decide whether faster generation and smaller artifacts still help after
+all rejected outputs, repairs, exact remainders, and consumer-policy limits are
+counted.

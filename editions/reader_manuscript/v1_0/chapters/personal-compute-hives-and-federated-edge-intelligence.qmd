@@ -13,6 +13,11 @@ implementation horizons, and release blockers.
 Runtime orchestration decides what work should be attempted. The next question
 is where that work is allowed to live.
 
+Readiness gates say whether a route, module, or replacement is qualified
+enough to enter some operating mode. They do not say whose machine should bear
+the job, whose data may cross the boundary, which human must approve the
+placement, or how permission ends. Substrate is another authority problem.
+
 A personal compute hive is the answer when the stack moves from one machine or
 one cloud account into the devices people already own and rent: phones,
 laptops, desktops, local storage, old machines, workshop computers, project
@@ -336,4 +341,10 @@ fallback remain visible.
 
 ## Handoff
 
-Federated compute creates pressure to make work smaller, cheaper, and more local, but smaller work is not automatically better work. Compact Generative Systems and Residual Honesty gives that pressure an evidence boundary. It asks whether a compact core has merely moved complexity into verification, repair, review, fallback, or governance, and it requires those burdens to remain visible before compactness can count as efficiency.
+Federated compute creates pressure to make work smaller, cheaper, and more
+local, but smaller work is not automatically better work. Compact Generative
+Systems and Residual Honesty gives that pressure an evidence boundary. It asks
+whether a compact core has actually lowered total burden or merely moved
+complexity into verification, repair, review, fallback, governance, or the
+devices that now have to carry it. The next chapter requires those burdens to
+remain visible before compactness can count as efficiency.

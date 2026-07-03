@@ -4,6 +4,8 @@ Date: 2026-07-03
 
 Follow-up: 2026-07-03
 
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter: `personal-compute-hives-and-federated-edge-intelligence`
 
 Reader manuscript file:
@@ -24,6 +26,10 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added a second 2026-07-03 reconciliation pass that positions personal
+  compute hives after readiness: a qualified route still needs a lawful
+  device, human approval boundary, data-placement boundary, revocation path,
+  and stewardship record before it may run.
 - Reworked the generated reader baseline into a more continuous human-readable
   chapter about owned compute, family/project mediation, and policy-first
   placement.
@@ -60,6 +66,10 @@ The reader throughline is:
   evidence only, not evidence of a deployed hive, network overlay, scheduler,
   approval portal, sandbox, federation protocol, device behavior, privacy
   behavior, energy measurement, dropout recovery, or support-state promotion.
+- The 2026-07-03 reconciliation connects readiness qualification to substrate
+  stewardship and substrate stewardship to compactness pressure without
+  changing any live-book claim, source boundary, proof/test status,
+  implementation horizon, or release boundary.
 
 ## Non-Claims
 
@@ -79,7 +89,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- Human editorial review has not approved this chapter for reader release.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.
 - A real personal-hive trace remains planned: enrolled device cards,
   policy-first rejections, selected eligible bid, approval receipt, artifact
   bundle, residuals, revocation, and negative controls for forbidden data,

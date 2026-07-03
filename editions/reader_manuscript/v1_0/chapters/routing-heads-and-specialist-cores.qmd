@@ -10,6 +10,13 @@ implementation horizons, and release blockers.
 
 # Routing Heads and Specialist Cores
 
+Part II ended with procedural memory: the system can now turn bounded work,
+artifact traces, adapter receipts, failures, and residuals into candidates for
+reuse. Part III begins when those candidates have to compete for the next job.
+The question is no longer only whether a procedure exists. It is whether this
+procedure, specialist, substrate, or representation is the right one to lease
+for this task, under this authority, with this evidence.
+
 A system with many abilities does not become governed by having all of them
 available at once. It becomes governed when it can decide which ability is
 allowed to act, what it is allowed to see, what tools it may use, how ready it
@@ -327,5 +334,8 @@ a governed control surface.
 Selection is not qualification. Routing can nominate a specialist, but
 Readiness Gates, Residual Escrow, and Quarantine decides whether that
 specialist is ordinary, canary, diagnostic, quarantined, retired, or blocked.
-The next chapter gives route candidates a lifecycle so promising capability
-does not become permission before the evidence is ready.
+The route receipt is therefore a candidate record, not a license. It preserves
+why the stack preferred one bounded capability, refused others, and left
+residual obligations behind. The next chapter gives those route candidates a
+lifecycle so promising capability does not become permission before the
+evidence is ready.

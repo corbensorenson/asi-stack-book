@@ -22,6 +22,12 @@ permission expires, what failures remain in escrow, and where the system must
 route if the gate fails. In ordinary software terms, it is release engineering.
 In the ASI Stack, it is release engineering for intelligence.
 
+The previous chapter made a route into a lease. This chapter asks whether the
+leased capability is mature enough for ordinary use, narrow enough for canary
+use, useful only for diagnosis, or too stale to touch the task at all. It is
+the difference between selecting a promising candidate and admitting a
+qualified one into the operating path.
+
 The chapter's central idea is simple: uncertainty should have an operating
 mode. A promising capability does not need to be trusted or discarded. It can
 be kept in shadow, canary, diagnostic use, quarantine, or review until the
@@ -305,3 +311,6 @@ Personal Compute Hives and Federated Edge Intelligence moves from lifecycle
 permission to substrate permission. It asks how local devices, trusted nodes,
 federated compute, ledgers, replay hooks, approvals, and residuals can become
 available execution substrate without confusing reachability with authority.
+A ready route still needs a lawful place to run; readiness names the evidence
+owed by a capability, and the hive chapter names the stewardship owed by the
+machines that carry it.

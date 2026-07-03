@@ -6,6 +6,8 @@ Follow-up: 2026-07-02
 
 Follow-up: 2026-07-03
 
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter ID: `readiness-gates-residual-escrow-and-quarantine`
 
 Curated reader file:
@@ -40,6 +42,9 @@ permission to change proof or test status.
 
 ## What Changed
 
+- Added a second 2026-07-03 reconciliation pass that makes readiness the
+  distinction between a selected route candidate and a qualified operating
+  path, then carries the handoff into substrate permission.
 - Reframed readiness as release engineering for intelligence so the chapter's
   human throughline is clear before the record fields appear.
 - Reorganized the mechanism around scoped permission, frontier evidence versus
@@ -80,6 +85,7 @@ permission to change proof or test status.
 | Proof/test status preserved | Pass. The curated draft keeps the boundary that schema validation, finite Lean predicates, lifecycle-transition predicates, synthetic harness checks, the readiness lifecycle probe, and a static Theseus import do not prove deployed readiness, lifecycle-engine behavior, residual-ledger storage, benchmark quality, live quarantine routing, current Theseus runtime behavior, MoECOT replay, or routing behavior. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a readiness record schema and fixture suite; the mature endpoint remains an unvalidated lifecycle control plane. |
 | Handoff preserved | Pass. The reader handoff now matches the active 44-chapter spine: MoECOT runtime-crosswalk material lives in Routing Heads, and this chapter hands off to Personal Compute Hives and Federated Edge Intelligence. |
+| Part arc preserved | Pass. The 2026-07-03 reconciliation connects route leasing to readiness qualification and readiness qualification to lawful substrate placement without changing claim, source, proof, or implementation meaning. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
@@ -105,7 +111,6 @@ permission to change proof or test status.
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, and exact rendered reader
-artifacts.
+Chapter-level prose meaning is reconciled for this pass, but release remains
+blocked until a reader release record, format artifact review, and final
+curated-reconciliation approval exist for the v1.0 reader manuscript.

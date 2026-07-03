@@ -4,6 +4,8 @@ Last updated: 2026-07-03
 
 Follow-up: 2026-07-03
 
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter ID: `routing-heads-and-specialist-cores`
 
 Curated reader file:
@@ -39,6 +41,10 @@ claims or evidence status.
 
 ## What Changed
 
+- Added a second 2026-07-03 reconciliation pass that opens Part III from
+  Part II's procedural-memory closure: reusable traces become candidates, but
+  routing must decide which candidate receives a bounded lease for the next
+  job.
 - Reframed the chapter around the route-as-lease throughline before the record
   fields appear.
 - Reorganized the mechanism around three human-readable artifacts: specialist
@@ -70,6 +76,7 @@ claims or evidence status.
 | Proof/test status preserved | Pass. The curated draft now names the implemented routing decision lease harness, readiness/residual gate harness, finite Routing lifecycle predicates, and folded MoECOT source-boundary predicates while preserving the boundary that they do not prove routing accuracy, learned-router quality, specialist adequacy, runtime authority enforcement, route-quality dominance, MoECOT runtime behavior, current Theseus runtime behavior, orchestration benchmark quality, or safety. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a registry schema, routing decision schema, and route-receipt fixture suite; the mature endpoint remains an unvalidated governed capability market inside the stack. |
 | Consolidation caveat preserved | Pass. The curated draft cites the deferred MoECOT runtime fold boundary from `docs/chapter_consolidation_release_stability_review.md` and `docs/chapter_consolidation_fold_moecot_runtime.md` without executing or rejecting the fold. |
+| Part arc preserved | Pass. The 2026-07-03 reconciliation connects procedural memory to route selection and route selection to readiness without changing any claim, source, proof, or implementation boundary. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, audio, or audio-embedded EPUB artifact is approved by this pass. |
 
 ## Non-Claims
@@ -97,7 +104,6 @@ claims or evidence status.
 - `format_artifact_not_reviewed`
 - `curated_reconciliation_not_approved`
 
-Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, consolidation decision
-state, and exact rendered reader artifacts.
+Chapter-level prose meaning is reconciled for this pass, but release remains
+blocked until a reader release record, format artifact review, and final
+curated-reconciliation approval exist for the v1.0 reader manuscript.
