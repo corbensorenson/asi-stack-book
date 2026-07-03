@@ -4,7 +4,7 @@ This directory is the tracked home for manually edited human-reader manuscript
 work when generated reader source plus semantic overlays are no longer enough.
 
 The current v1.0 state is `drafting`. `v1_0/manifest.json` records forty-four
-curated chapter records: sixteen drafting and twenty-eight reconciled for prose
+curated chapter records: twelve drafting and thirty-two reconciled for prose
 meaning, with no active manifest chapter missing a curated reader file. It also
 records a machine-checked reader handoff contract: one book-level thesis, four
 part arcs, ten recurring signature ideas, ten key-figure targets with

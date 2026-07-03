@@ -4,6 +4,10 @@ Date: 2026-06-30
 
 Evidence-boundary alignment: 2026-07-03
 
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter: `mathematical-and-search-substrates`
 
 Reader manuscript file:
@@ -23,6 +27,10 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added a second 2026-07-03 reconciliation pass that places mathematical and
+  search substrates after resource economics: novelty enters through an
+  adoption record with resource bill, baseline, proof boundary, consumer gate,
+  and stopping condition, not through elegance or excitement.
 - Reworked the generated reader baseline into a more continuous human-readable
   chapter about disciplined optionality.
 - Centered the chapter on the difference between admission, adoption, and
@@ -60,6 +68,10 @@ The reader throughline is:
   temporal-coil A/B test, representation-efficiency benchmark, CoilMoECOT route
   benchmark, Mamba comparison, Circle substrate sidecar, Theseus transfer
   consumer, useful-substrate evaluation, or model-quality evaluation.
+- The 2026-07-03 reconciliation connects resource budgeting to substrate
+  adoption and substrate adoption to proof-carrying contracts without changing
+  any live-book claim, source boundary, proof/test status, implementation
+  horizon, or release boundary.
 
 ## Non-Claims
 
@@ -81,7 +93,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- Human editorial review has not approved this chapter for reader release.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.
 - Baseline-symmetric substrate workloads remain missing beyond the deterministic
   synthetic adoption trace: real substrate A/B runs, representation-efficiency
   benchmarks, cyclic/coil sidecar tests, sequence-substrate comparisons,

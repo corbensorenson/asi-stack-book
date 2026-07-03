@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-03 - Reconcile Part III generation and substrate reader arc
+
+- Updated the curated reader manuscript chapters `Fast Generation
+  Architectures`, `RankFold, NeuralFold, and Artifact Compression`, `Resource
+  Economics and Token Budgets`, and `Mathematical and Search Substrates` with
+  second prose passes that continue the Part III arc: compactness hands into
+  speed only after accepted-output costs are counted, artifact compression
+  applies the same shortcut discipline to stored objects, resource economics
+  totals the hidden costs, and substrate adoption admits novelty only through
+  baselines, proof boundaries, consumer gates, and stopping conditions.
+- Advanced those four curated reader records from `drafting` to `reconciled`
+  in `editions/reader_manuscript/v1_0/manifest.json`, while preserving
+  `reader_release_record_not_created`, `format_artifact_not_reviewed`, and
+  `curated_reconciliation_not_approved` release blockers on every row.
+- Updated the reader reconciliation report, prose-pass sidecars, reader
+  status/readme surfaces, graduation review, companion-note routing review,
+  roadmap language, review matrix notes, and v1 status snapshot so the curated
+  reader manuscript now records 12 drafting chapters and 32 reconciled prose
+  chapters without implying release approval, format approval, support
+  promotion, source-authority changes, fast-decoding performance, RankFold
+  codec correctness, resource-economics deployment, useful-substrate evidence,
+  model-quality improvement, or ebook/document/PDF/audio artifact approval.
+
 ## 2026-07-03 - Reconcile Part III opening reader arc
 
 - Updated the curated reader manuscript chapters `Routing Heads and Specialist

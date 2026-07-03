@@ -4,6 +4,10 @@ Date: 2026-07-01
 
 Evidence-boundary alignment: 2026-07-03
 
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter: `resource-economics-and-token-budgets`
 
 Reader manuscript file:
@@ -23,6 +27,10 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added a second 2026-07-03 reconciliation pass that turns resource economics
+  into the shared ledger for fast-generation and artifact-compression
+  shortcuts: apparent savings count only after verifier time, human attention,
+  memory pressure, fallback, residuals, and future repair are included.
 - Reworked the generated reader baseline into a more continuous human-readable
   chapter about budgets as governance surfaces.
 - Centered the chapter on the difference between local cheapness and
@@ -82,6 +90,9 @@ The reader throughline is:
 - TokenMana, PlanForge, Coherence Exchange, Project Theseus, Simulation
   Scaling, VIEA, and CoilRA/MultiCoil RoPE remain source-grounding and design
   context unless separate evidence-transition records promote a narrower claim.
+- The 2026-07-03 reconciliation connects shortcut accounting to substrate
+  adoption discipline without changing any live-book claim, source boundary,
+  proof/test status, implementation horizon, or release boundary.
 
 ## Non-Claims
 
@@ -105,7 +116,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- Human editorial review has not approved this chapter for reader release.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.
 - A stronger resource-economics evidence lane still needs workload-facing
   traces that name baseline, cost, quality predicate, verification tax,
   protected overhead, security-overhead erasure rejection, displaced costs,

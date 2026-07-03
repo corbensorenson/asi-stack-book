@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # RankFold, NeuralFold, and Artifact Compression
 
+Fast generation handles the cost of producing output over time. Artifact
+compression handles the cost of keeping, moving, and reusing the things the
+stack has already produced or collected. The same rule applies in both places:
+a shortcut earns authority only after acceptance, fallback, residuals, and
+consumer policy remain visible.
+
 The archive is where shortcut discipline gets tested. The stack will contain papers, logs, source traces, proof artifacts, benchmarks, simulations, models, generated outputs, and release records. It is tempting to make those artifacts cheaper by folding them into smaller representations. RankFold and NeuralFold enter the book as compression-architecture ideas: ways to represent large artifacts more cheaply while preserving routes back to the full object when needed.
 
 A compressed artifact is not automatically a source of truth. Compression needs fallback, probes, residual coding, decoder discipline, and utility boundaries so a smaller representation does not quietly replace the thing it only approximates.

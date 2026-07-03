@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # Mathematical and Search Substrates
 
+After resource economics, the stack has a harder standard for novelty. A
+candidate substrate cannot enter because it is elegant, cheap in one metric,
+or exciting in a source paper. It has to say what resource bill it changes,
+what baseline it faces, what proof boundary it carries, what consumer may rely
+on it, and what result would make the stack stop using it.
+
 Some ideas are too interesting to ignore and too weakly evidenced to trust.
 
 This chapter is about that middle state. The ASI Stack contains a family of
@@ -375,4 +381,7 @@ Once a substrate has a finite structural fact worth carrying, the next problem
 is transport. Circle Calculus and Proof-Carrying AI Contracts gives that path:
 theorem references, receipts, fingerprints, deterministic fields, validator
 state, consumer gates, and non-claims that let downstream systems inspect
-structure without treating it as model quality or deployment evidence.
+structure without treating it as model quality or deployment evidence. Part
+III therefore moves from route choice, readiness, substrate placement,
+compactness, speed, compression, and budgets into the proof-carrying boundary:
+how to move a structural fact without laundering it into a stronger claim.

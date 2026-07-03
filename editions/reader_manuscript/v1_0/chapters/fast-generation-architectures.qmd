@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # Fast Generation Architectures
 
+Compact generation asked whether a smaller representation had really lowered
+total burden. Fast generation asks the same question about time. A faster path
+may be useful, but only if accepted output, verifier work, repair, fallback,
+memory pressure, and task success still fit inside the route's authority and
+evidence boundary.
+
 Fast generation is not the art of making a model talk faster. In this stack,
 it is the discipline of deciding when a faster path is still allowed to count
 as useful work.
@@ -397,5 +403,6 @@ Fast generation reduces time pressure at the output boundary, but stored and
 routed artifacts still need compression contracts of their own. RankFold,
 NeuralFold, and Artifact Compression narrows the focus to reusable artifacts:
 how archive forms, deterministic decode checks, probes, fallback, utility, and
-cost accounting decide whether a compressed artifact can safely replace or
-accompany its fuller source.
+cost accounting decide whether a compressed artifact can safely accompany or
+stand in for its fuller source. Speed is a route decision over time; artifact
+compression is the same discipline applied to things the stack wants to keep.

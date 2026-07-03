@@ -10,6 +10,12 @@ implementation horizons, and release blockers.
 
 # Resource Economics and Token Budgets
 
+The last two chapters tested shortcuts at two different boundaries: faster
+generation over time and smaller artifacts at rest. Resource economics is the
+place where both shortcuts face the same ledger. If a route saves model time
+but spends verifier time, human attention, memory, fallback, or future repair,
+the stack has to count the whole trade.
+
 Every efficiency claim in the stack eventually faces a harder question: saved
 what, for whom, and after which hidden costs are counted?
 

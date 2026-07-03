@@ -4,6 +4,10 @@ Date: 2026-06-30
 
 Evidence-boundary alignment: 2026-07-03
 
+Follow-up: 2026-07-03
+
+Status: reconciled for prose meaning on 2026-07-03.
+
 Chapter: `fast-generation-architectures`
 
 Reader manuscript file:
@@ -24,6 +28,10 @@ The reader throughline is:
 
 ## Curation Scope
 
+- Added a second 2026-07-03 reconciliation pass that positions fast generation
+  after compact burden accounting: speed is useful only when accepted output,
+  verifier work, repair, fallback, memory pressure, and task success remain
+  counted.
 - Reworked the generated reader baseline into a more continuous chapter about
   generation speed as a governed route choice.
 - Centered the chapter on the distinction between proposed work, accepted work,
@@ -60,6 +68,9 @@ The reader throughline is:
   no autoregressive, speculative, MTP, diffusion, early-exit, state-space,
   KV-cache, hybrid, model useful-solution-per-second, or serving benchmark is
   implied.
+- The 2026-07-03 reconciliation connects compactness to speed and speed to
+  artifact compression without changing any live-book claim, source boundary,
+  proof/test status, implementation horizon, or release boundary.
 
 ## Non-Claims
 
@@ -83,7 +94,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- Human editorial review has not approved this chapter for reader release.
+- Chapter-level prose meaning is reconciled for this pass, but reader release,
+  format artifact review, and final curated-reconciliation approval remain
+  blocked.
 - A stronger fast-generation evidence lane still needs public-safe route
   records or benchmarks that name baseline, task class, risk tier, mode,
   verifier, acceptance predicate, proposed output, accepted output, task
