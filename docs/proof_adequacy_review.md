@@ -31,7 +31,7 @@ The reviewed targets still build as narrow finite-record predicates. The review 
 `python3 scripts/validate_proof_depth.py --write` and checked by
 `python3 scripts/validate_proof_depth.py`. It classifies Lean theorem bodies by
 proof shape, not semantic adequacy. Current proof-depth snapshot: 180 proof
-targets, 54 Lean modules, 939 theorem declarations, 757 derived/decomposed, 178
+targets, 54 Lean modules, 940 theorem declarations, 758 derived/decomposed, 178
 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter
 classifications present.
 

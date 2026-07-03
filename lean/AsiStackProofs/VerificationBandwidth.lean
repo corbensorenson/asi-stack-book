@@ -282,4 +282,32 @@ theorem verification_bandwidth_contradiction_probe_fixture_bridge
   intro valid
   exact valid
 
+structure CapacityModelSummary where
+  longContextCapacityGapRecorded : Bool
+  decompositionTracePresent : Bool
+  negativeControlsRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def CapacityModelSummaryValid
+    (summary : CapacityModelSummary) : Prop :=
+  summary.longContextCapacityGapRecorded = true ∧
+    summary.decompositionTracePresent = true ∧
+    summary.negativeControlsRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem verification_bandwidth_capacity_model_fixture_bridge
+    {summary : CapacityModelSummary} :
+    CapacityModelSummaryValid summary ->
+      summary.longContextCapacityGapRecorded = true ∧
+        summary.decompositionTracePresent = true ∧
+        summary.negativeControlsRejected = true ∧
+        summary.supportStateEffectNone = true ∧
+        summary.nonClaimBoundary = true := by
+  intro valid
+  unfold CapacityModelSummaryValid at valid
+  exact valid
+
 end AsiStackProofs.VerificationBandwidth

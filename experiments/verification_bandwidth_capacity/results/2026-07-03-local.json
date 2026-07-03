@@ -1,0 +1,58 @@
+{
+  "capacity_model_summary": {
+    "all_pairwise_obligations": 66,
+    "checked_obligations": 18,
+    "decomposed_modeled_obligations": 24,
+    "decomposition_boundary_obligations": 6,
+    "decomposition_obligation_reduction_vs_all_pairwise": 42,
+    "linear_context_slots": 12,
+    "long_context_semantic_units": 12,
+    "pairwise_minus_linear_context_gap": 54,
+    "residual_obligations": 48,
+    "verification_budget_checks": 18
+  },
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_verification_bandwidth_capacity_model.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 5,
+  "lean_fixture_alignment": {
+    "expected": {
+      "decomposition_trace_present": true,
+      "long_context_capacity_gap_recorded": true,
+      "negative_controls_rejected": true,
+      "non_claim_boundary": true,
+      "support_state_effect_none": true
+    },
+    "module": "AsiStackProofs.VerificationBandwidth",
+    "theorem_refs": [
+      "verification_bandwidth_capacity_model_fixture_bridge"
+    ]
+  },
+  "negative_controls": {
+    "decomposition_without_boundary_checks_rejected": true,
+    "hidden_residual_gap_rejected": true,
+    "linear_context_slots_not_pairwise_capacity_rejected": true,
+    "support_state_promotion_rejected": true,
+    "unidentified_units_adequacy_rejected": true
+  },
+  "non_claims": [
+    "does not prove a model verification bandwidth law",
+    "does not measure contradiction-rate performance",
+    "does not validate an adequacy classifier",
+    "does not prove long-context failure in deployed systems",
+    "does not promote the chapter support state"
+  ],
+  "recorded_date": "2026-07-03",
+  "residuals": [
+    "Synthetic record-level capacity model only; no model, context window, deployed claim ledger, or escalation service was measured.",
+    "The all-pairwise trace is a conservative worst-case obligation model, not a universal theorem about every verifier or decomposition strategy.",
+    "The chapter core claim remains at argument support."
+  ],
+  "result_id": "2026-07-03-verification-bandwidth-capacity-model",
+  "result_kind": "deterministic_synthetic_verification_capacity_model",
+  "schema_version": "asi_stack.verification_bandwidth_capacity_model.v0",
+  "support_state_effect": "none",
+  "trace_count": 8,
+  "valid_trace_count": 3,
+  "verification_result": "pass"
+}

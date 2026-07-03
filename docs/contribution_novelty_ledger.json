@@ -23,9 +23,9 @@
       "audited_delta": "Long-context and benchmark literature measures context use and evaluation pressure; the ASI Stack frames verification capacity as an architectural budget that must be routed, escalated, and recorded before claims can move.",
       "non_obvious_consequence": "A longer context can increase the burden of checking interactions among claims faster than it increases reliable verification capacity; the book needs an explicit capacity model before stronger language is justified.",
       "strongest_objection": "A capable verifier may use retrieval, tools, or decomposition well enough that human-visible verification bandwidth is no longer the limiting resource.",
-      "answer_status": "partially_answered_by_argument_and_fixtures",
-      "confidence_state": "promising_not_defended",
-      "needed_next_artifact": "A record-level verification-capacity model with a bounded synthetic fixture, negative controls for unverifiable long-context claims, and a Lean/Python agreement check.",
+      "answer_status": "partially_answered_by_argument_contradiction_probe_and_capacity_model",
+      "confidence_state": "capacity_model_backed_not_empirical",
+      "needed_next_artifact": "A contradiction-rate and distractor-resistance benchmark or replayed adequacy-classifier trace with logged prompts, baselines, negative controls, and independent review.",
       "support_state_effect": "none",
       "non_claims": [
         "does not prove a verification bandwidth bound",

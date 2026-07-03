@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-03 - Add verification bandwidth capacity model
+
+- Added `scripts/validate_verification_bandwidth_capacity_model.py`,
+  `docs/verification_bandwidth_capacity_model.md`, and result artifact
+  `experiments/verification_bandwidth_capacity/results/2026-07-03-local.json`
+  for a deterministic synthetic verification-workload model: 12 semantic units
+  create 66 all-pairwise obligations, 18 checked obligations leave 48 residual
+  obligations, and a named-decomposition trace reduces the modeled workload to
+  24 checks only when boundary checks are explicit.
+- Added the Lean fixture bridge
+  `verification_bandwidth_capacity_model_fixture_bridge` in
+  `AsiStackProofs.VerificationBandwidth` and wired the validator into
+  `scripts/validate_book.py`.
+- Updated the live chapter, curated reader chapter, outline, roadmap burn-down,
+  and contribution novelty ledger while preserving the boundary: no
+  model-verification-bandwidth law, contradiction-rate result,
+  adequacy-classifier validation, deployed-long-context-failure claim,
+  evidence transition, or support-state promotion is created.
+
 ## 2026-07-03 - Add contribution novelty ledger
 
 - Added `docs/contribution_novelty_ledger.md` and
@@ -2005,8 +2024,8 @@
   result, runtime mount-enforcement result, deletion-closure service,
   declassification-quality result, VCM-Bench reproduction, support-state
   promotion, reader release, or ebook/document/PDF/audio artifact approval.
-- Current proof-depth snapshot: 180 proof targets, 54 Lean modules, 939 theorem
-  declarations, 757 derived/decomposed, 178 direct/projection, 4 unknown/mixed,
+- Current proof-depth snapshot: 180 proof targets, 54 Lean modules, 940 theorem
+  declarations, 758 derived/decomposed, 178 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add RankFold public-safe replay probe

@@ -163,8 +163,11 @@ REQUIRED = [
     "scripts/run_vcm_resolver_certificate_probe.py",
     "scripts/validate_vcm_resolver_certificate_probe.py",
     "scripts/validate_verification_bandwidth_probe.py",
+    "scripts/validate_verification_bandwidth_capacity_model.py",
     "docs/verification_bandwidth_probe.md",
+    "docs/verification_bandwidth_capacity_model.md",
     "experiments/verification_bandwidth/results/2026-07-02-local.json",
+    "experiments/verification_bandwidth_capacity/results/2026-07-03-local.json",
     "scripts/validate_readiness_residual_gates.py",
     "scripts/validate_readiness_lifecycle_probe.py",
     "docs/readiness_lifecycle_probe.md",
@@ -935,6 +938,7 @@ def main() -> None:
     run_validator("validate_context_admission_adequacy.py")
     run_validator("validate_vcm_resolver_certificate_probe.py")
     run_validator("validate_verification_bandwidth_probe.py")
+    run_validator("validate_verification_bandwidth_capacity_model.py")
     run_validator("validate_readiness_residual_gates.py")
     run_validator("validate_readiness_lifecycle_probe.py")
     run_validator("validate_benchmark_antigoodhart.py")

@@ -26,6 +26,14 @@ checks available, the review time available, and the risk level of the
 decision. Context adequacy is the record that says whether the available
 context is enough for that work.
 
+The first capacity model is deliberately small, but it gives the idea a harder
+edge. If twelve semantic units all have to be compared against one another,
+the record has 66 comparison obligations, not twelve. A fixture that checks
+18 of them leaves 48 residual obligations and must split, escalate, or stay
+below verified support. A decomposition can reduce the work only when it names
+the clusters and the boundary checks it still owes. Otherwise decomposition is
+just a prettier way to hide the missing comparisons.
+
 The practical lesson is simple: having the text is not the same as being able
 to verify with it. A governed system should know when context is adequate for
 drafting, adequate for a local check, adequate for joint verification, or
@@ -286,6 +294,15 @@ dominant distractor, high-risk inadequate context without escalation, schema
 checks treated as empirical runtime evidence, ignored negative evidence,
 unidentified semantic units, and support-state promotion from the fixture. This
 is not a model benchmark result.
+
+The verification bandwidth capacity model adds a third narrow fixture. It
+records a 12-unit all-pairwise case with 66 comparison obligations, 18 checked
+obligations, and 48 residual obligations, plus a named decomposition case where
+three clusters and six boundary checks reduce the modeled workload to 24
+checks. Its negative controls reject treating linear context as pairwise
+capacity, hiding boundary checks, hiding residuals, declaring adequacy without
+identified units, and promoting a support state from the fixture. This is also
+not a model benchmark.
 
 That is useful evidence for record discipline. It is not evidence of model
 verification capacity, contradiction-rate performance, distractor resistance,
