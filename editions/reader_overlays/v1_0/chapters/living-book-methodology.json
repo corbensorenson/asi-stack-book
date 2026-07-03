@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/living-book-methodology.qmd",
+  "operations": [
+    {
+      "id": "v1_0.living_book_methodology.interfaces_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces"
+      },
+      "rationale": "Replace the generated-reader publication-interface inventory with prose that preserves release-record, reader-derivative, and no-publication-as-proof boundaries.",
+      "content_lines": [
+        "The methodology speaks through release records. A release record tells a future reader which source commit was rendered, which audience profile it served, which validations ran, which changelog entry describes the change, which public URL or local output exists, which derivatives were produced, and which residuals remain.",
+        "",
+        "Reader editions use the same discipline. A profile may say that EPUB, DOCX, PDF, or audio is a target, but a target is not an artifact. A generated file is not approved merely because it exists. A released reader artifact needs its own source commit, strip policy, review state, accessibility notes, residuals, and non-claims.",
+        "",
+        "That separation keeps publication from masquerading as evidence. A successful Pages build can prove that the site rendered. It cannot prove that a chapter claim is true. A reader manuscript can improve pacing and continuity. It cannot change support states, source boundaries, proof status, or implementation horizons. The interface exists so every audience can see what kind of authority it is holding."
+      ]
+    },
+    {
+      "id": "v1_0.living_book_methodology.minimum_viable_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the generated-reader implementation inventory with prose that names the current living-book repo and change-packet boundary without overclaiming manuscript quality or artifact approval.",
+      "content_lines": [
+        "The minimum viable version is the public repository itself operating under rules. The manifest gives chapters stable addresses. The outline records drafting intent and proof targets. Source notes show what has been read. Appendix C records claim state. The changelog records meaningful movement. Local validation and Quarto render checks keep the public site from drifting away from the source.",
+        "",
+        "The current implementation also has a first executable change-packet boundary. Synthetic packets can show whether a public-surface change carried validation, changelog, audience, derivative, support-state, residual, and non-claim receipts. Expected-invalid packets reject missing receipts, equal-authority reader derivatives, and support promotion without evidence-transition references.",
+        "",
+        "That is useful release hygiene, not a quality certificate. It does not prove source interpretation, editorial completeness, future-agent judgment, reader release approval, audio production, or the truth of any architecture claim. It only shows that the book can make some maintenance and publication mistakes harder to hide."
+      ]
+    },
+    {
+      "id": "v1_0.living_book_methodology.beyond_state_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art"
+      },
+      "rationale": "Replace the dense target research-OS checklist with reader prose while preserving tri-audience, ingestion, release, and non-claim boundaries.",
+      "content_lines": [
+        "The endpoint is a research operating system that happens to render as a book. The live site remains the AI-readable and researcher-auditable source. Human view, reader manuscripts, ebook formats, and future audio scripts are derived projections with their own review state instead of rival sources of truth.",
+        "",
+        "At that maturity, adding a new AI paper would be a governed build event. The system would ingest the public-safe source, decide whether it updates an existing chapter or creates a precise new one, revise the manifest and outline, update source notes and claim mappings, generate proof or test backlog, render the live site, and prepare reader editions without hand-renumbering or hidden support-state movement.",
+        "",
+        "The mature workflow would also know how to refuse. A missing source note would block source-derived support. A failed validator would block release. A reader edition could improve prose while leaving claim authority unchanged. A polished artifact could be enjoyable without becoming evidence for the architecture.",
+        "",
+        "The book has not demonstrated that full operating system yet. It has a strong scaffold, tracked deltas, release records, and synthetic change-packet checks. Stronger claims require repeated real source ingestions, reader-edition releases, artifact reviews, evidence transitions, and failed-change records showing that continuous improvement preserved the audit trail under pressure."
+      ]
+    }
+  ]
+}

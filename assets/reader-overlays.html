@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 53,
+  "operation_count": 56,
   "operations": [
     {
       "id": "v1_0.artifact_graphs.minimum_viable_implementation_reader_replace",
@@ -377,6 +377,42 @@
       },
       "content": "Typed jobs use lifecycle states so work cannot slide from idea to side effect without review. A drafted job is only a packet proposal; it cannot dispatch. A locked job has fixed contract, parentage, expected artifact, and failure behavior, so it can enter permission review. If approval is missing or stale, the job waits. If approval is present and scoped, it may become dispatchable once permissions, inputs, and adapter requirements also pass.\n\nRunning is not completion. A running job must emit audit events. When output exists, the job enters adjudication until verification, review, or acceptance is complete. A delivered job has returned or exposed a useful artifact, but that still does not make it evidence-ready.\n\nEvidence readiness requires the required artifact capture, verification, audit, residual, and replay or non-replay fields to exist. Failed or blocked jobs need residuals and recovery paths. Quarantined jobs had unauthorized effects, missing provenance, or unsafe behavior and cannot support promotion. Replayed or retired jobs become historical trace unless they are requalified.\n\nThe distinction between delivered and evidence-ready is central. Delivery satisfies a user-facing workflow; evidence readiness satisfies the living stack.",
       "rationale": "Replace the typed-job lifecycle-state table with reader prose while preserving the canonical AI/research state matrix."
+    },
+    {
+      "id": "v1_0.living_book_methodology.interfaces_reader_replace",
+      "target_file": "chapters/living-book-methodology.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces",
+        "aliases": []
+      },
+      "content": "The methodology speaks through release records. A release record tells a future reader which source commit was rendered, which audience profile it served, which validations ran, which changelog entry describes the change, which public URL or local output exists, which derivatives were produced, and which residuals remain.\n\nReader editions use the same discipline. A profile may say that EPUB, DOCX, PDF, or audio is a target, but a target is not an artifact. A generated file is not approved merely because it exists. A released reader artifact needs its own source commit, strip policy, review state, accessibility notes, residuals, and non-claims.\n\nThat separation keeps publication from masquerading as evidence. A successful Pages build can prove that the site rendered. It cannot prove that a chapter claim is true. A reader manuscript can improve pacing and continuity. It cannot change support states, source boundaries, proof status, or implementation horizons. The interface exists so every audience can see what kind of authority it is holding.",
+      "rationale": "Replace the generated-reader publication-interface inventory with prose that preserves release-record, reader-derivative, and no-publication-as-proof boundaries."
+    },
+    {
+      "id": "v1_0.living_book_methodology.minimum_viable_reader_replace",
+      "target_file": "chapters/living-book-methodology.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The minimum viable version is the public repository itself operating under rules. The manifest gives chapters stable addresses. The outline records drafting intent and proof targets. Source notes show what has been read. Appendix C records claim state. The changelog records meaningful movement. Local validation and Quarto render checks keep the public site from drifting away from the source.\n\nThe current implementation also has a first executable change-packet boundary. Synthetic packets can show whether a public-surface change carried validation, changelog, audience, derivative, support-state, residual, and non-claim receipts. Expected-invalid packets reject missing receipts, equal-authority reader derivatives, and support promotion without evidence-transition references.\n\nThat is useful release hygiene, not a quality certificate. It does not prove source interpretation, editorial completeness, future-agent judgment, reader release approval, audio production, or the truth of any architecture claim. It only shows that the book can make some maintenance and publication mistakes harder to hide.",
+      "rationale": "Replace the generated-reader implementation inventory with prose that names the current living-book repo and change-packet boundary without overclaiming manuscript quality or artifact approval."
+    },
+    {
+      "id": "v1_0.living_book_methodology.beyond_state_reader_replace",
+      "target_file": "chapters/living-book-methodology.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art",
+        "aliases": []
+      },
+      "content": "The endpoint is a research operating system that happens to render as a book. The live site remains the AI-readable and researcher-auditable source. Human view, reader manuscripts, ebook formats, and future audio scripts are derived projections with their own review state instead of rival sources of truth.\n\nAt that maturity, adding a new AI paper would be a governed build event. The system would ingest the public-safe source, decide whether it updates an existing chapter or creates a precise new one, revise the manifest and outline, update source notes and claim mappings, generate proof or test backlog, render the live site, and prepare reader editions without hand-renumbering or hidden support-state movement.\n\nThe mature workflow would also know how to refuse. A missing source note would block source-derived support. A failed validator would block release. A reader edition could improve prose while leaving claim authority unchanged. A polished artifact could be enjoyable without becoming evidence for the architecture.\n\nThe book has not demonstrated that full operating system yet. It has a strong scaffold, tracked deltas, release records, and synthetic change-packet checks. Stronger claims require repeated real source ingestions, reader-edition releases, artifact reviews, evidence transitions, and failed-change records showing that continuous improvement preserved the audit trail under pressure.",
+      "rationale": "Replace the dense target research-OS checklist with reader prose while preserving tri-audience, ingestion, release, and non-claim boundaries."
     },
     {
       "id": "v1_0.mathematical_substrates.adoption_lanes_reader_replace",
