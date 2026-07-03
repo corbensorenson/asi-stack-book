@@ -368,21 +368,30 @@ SPECIAL_REVIEW_DEFAULTS = {
         ),
     },
     "artifact-steward-agents-and-living-project-governance": {
-        "review_status": "spot_checked",
-        "review_depth": "medium_priority_manual_review",
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
         "dispositions": [
             "reader_overlay_active",
             "companion_note_candidate",
             "curated_manuscript_candidate",
             "no_immediate_action",
         ],
-        "review_refs": ["docs/reader_continuity_review.md#medium-priority-queue-decisions"],
+        "review_refs": [
+            "docs/reader_part_iv_evidence_governance_full_review_pass.md#decisions",
+            "docs/curated_reader_artifact_steward_prose_pass.md",
+        ],
         "review_notes": (
-            "Medium-priority length row read; retained for now because the "
-            "governance, treasury, worker-federation, contribution-ledger, "
-            "event-taint, and sunset concepts are central. Future curated reader "
-            "work may compress examples or move the implementation ladder to "
-            "companion material."
+            "Full generated-reader chapter review recorded. Existing overlays "
+            "and the curated prose pass keep the long steward chapter navigable "
+            "while preserving charter, work-contract, contribution-ledger, "
+            "treasury-policy, event-taint, steward-action, sunset, worker-"
+            "federation, project-economy, and non-ownership boundaries. The "
+            "2026-07-03 alignment surfaces the 2026-07-02 Artifact steward "
+            "lifecycle probe as bounded synthetic fixture-route evidence only: "
+            "two valid routes, six expected-invalid controls, finite record "
+            "predicates, no support-state effect, and no steward-bot, treasury-"
+            "executor, governance-runner, release-runner, sunset-protocol, "
+            "project-federation, or support-promotion claim."
         ),
     },
     "project-theseus-as-report-first-implementation-reference": {

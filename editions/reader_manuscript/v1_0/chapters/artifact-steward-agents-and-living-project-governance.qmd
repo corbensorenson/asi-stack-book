@@ -396,9 +396,9 @@ six expected-invalid controls: `invalid_tainted_event_without_review`,
 `invalid_unscoped_federation_contract`,
 `invalid_release_without_gate_evidence`, and
 `invalid_sunset_criteria_ordinary_work`. The point is not to claim a working
-project manager. It is a no steward-bot, treasury-executor,
-event-taint-workflow, contributor-ledger, governance-runner,
-project-federation, release-runner, sunset-protocol, or
+project manager. It is a bounded fixture-route check with an explicit no
+steward-bot, treasury-executor, event-taint-workflow, contributor-ledger,
+governance-runner, project-federation, release-runner, sunset-protocol, or
 support-state-promotion claim.
 
 ## Beyond the State of the Art

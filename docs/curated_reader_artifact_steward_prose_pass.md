@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Artifact Steward Agents
 
-Last updated: 2026-06-29
+Last updated: 2026-07-03
 
 Chapter ID: `artifact-steward-agents-and-living-project-governance`
 
@@ -34,6 +34,9 @@ Allowed curation scopes used:
   boundary: architectural argument.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   boundaries without implying an implemented steward.
+- Aligned the reader implementation-horizon prose with the 2026-07-02 Artifact
+  steward lifecycle probe: two valid fixture routes, six expected-invalid
+  controls, finite record predicates, and no support-state effect.
 
 ## Meaning Preservation Checks
 
@@ -42,7 +45,7 @@ Allowed curation scopes used:
 | Core claim meaning preserved | Pass. The curated draft keeps the same durable-artifact steward claim and explicit work-contract, verification-gate, treasury-limit, contribution-ledger, and governance-rule boundaries. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass. |
-| Proof/test status preserved | Pass. The curated draft says repository schemas and fixtures validate record shape only and do not execute a steward, connect to funds, scan workflows, prove event-intake safety, or run governance. |
+| Proof/test status preserved | Pass. The curated draft now names the lifecycle probe, fixture-route scope, finite proof surface, and no-claim boundary while still saying the repository does not execute a steward, connect to funds, scan live events, prove governance, or promote support. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a repository-local steward with no spending or protected-branch authority; the mature endpoint remains unimplemented. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
@@ -52,6 +55,8 @@ Allowed curation scopes used:
 - This pass does not change `book_structure.json`.
 - This pass does not alter Appendix C, source assignments, proof targets, test
   status, implementation horizons, or release records.
+- This pass does not promote the Artifact steward lifecycle probe beyond
+  bounded synthetic fixture-route evidence.
 - This pass does not approve the curated chapter for reader release.
 - This pass does not create EPUB, DOCX, PDF, HTML, audio, or audio-embedded EPUB
   artifacts.
