@@ -136,7 +136,7 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first imports are intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes; `docs/theseus_report_import_slice.md` records one static digest-verified architecture-gate report import; `docs/theseus_generation_mode_import_slice.md` records one static digest-verified generation-mode import; and `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static imports and support probe as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the current reader projection has 68 active/applied overlay operations across 28 chapters, 0 high-priority and 0 medium-priority heuristic review rows, and 0 generated-reader paragraphs at or above 160 words. The curated manuscript path is still overall `drafting`, but now has 44 active curated chapter records with 0 drafting and 44 reconciled for prose meaning, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft live-chapter assets, text-equivalent chapter anchors, curated reader-manuscript placements, and rendered curated-reader HTML DOM checks with captions, alt text, responsive classes, copied SVGs, and non-claim boundaries checked by `scripts/validate_reader_key_figures.py` and `scripts/validate_reader_key_figure_html_probe.py`. The figures remain draft reader aids, and there is still no release approval. | Treat chapter-level prose reconciliation as complete, then focus on release-quality artifact work: book-level continuity, format-specific review, figure-artifact polish, audio/e-reader flow, and an edition release record. Keep the human-reader book as a parallel derivative manuscript for pacing, examples, visual aids, and audio flow. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the current reader projection has 68 active/applied overlay operations across 28 chapters, 0 high-priority and 0 medium-priority heuristic review rows, and 0 generated-reader paragraphs at or above 160 words. The curated manuscript path is still overall `drafting`, but now has 44 active curated chapter records with 0 drafting and 44 reconciled for prose meaning, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft live-chapter assets, text-equivalent chapter anchors, curated reader-manuscript placements, and rendered curated-reader HTML DOM checks with captions, alt text, responsive classes, copied SVGs, and non-claim boundaries checked by `scripts/validate_reader_key_figures.py` and `scripts/validate_reader_key_figure_html_probe.py`. `docs/curated_reader_html_artifact_browser_review.md` now records a full local browser viability review of the tracked curated-reader HTML workspace with 98 of 98 page-view pairs passing and all curated release blockers preserved. The figures remain draft reader aids, the curated HTML review is not a release record, and there is still no release approval. | Treat chapter-level prose reconciliation as complete, then focus on release-quality artifact work: book-level continuity, format-specific review, figure-artifact polish, audio/e-reader flow, and an edition release record. Keep the human-reader book as a parallel derivative manuscript for pacing, examples, visual aids, and audio flow. |
 | P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated; ten reader-handoff key figures now have draft SVG assets, accessibility-oriented prose equivalents, and validator-checked placements, but they remain draft reader aids rather than release-reviewed art. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, stable across web, EPUB, PDF, DOCX, and audio companion treatment, and reviewed as artifacts before reader release. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 44 core claims still remain `argument`; four narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
@@ -2886,6 +2886,16 @@ Current status:
   graduation out of `drafting` now waits on release-quality continuity,
   format-specific review, exact artifacts, and an edition release record, not
   author-supplied voice language.
+- `docs/curated_reader_html_artifact_browser_review.md` now records a full
+  local browser viability review of the tracked curated reader manuscript
+  rendered through `build/curated_reader_edition/_reader_site`: 49 pages, two
+  viewports, 98 of 98 page-view pairs passing, exact ignored-snapshot digest
+  `ddf74e1f55113578e904331cddcc1b32e512b1f1b88138da9d1764adadc27dfd`, and
+  all 44 `curated_reconciliation_not_approved`,
+  `format_artifact_not_reviewed`, and `reader_release_record_not_created`
+  blockers preserved. This closes a render/browser-viability uncertainty for
+  the curated manuscript, not the release-quality continuity, format-review,
+  figure-artifact, e-reader/audio, or edition-release gates.
 - The ten draft key figures are now embedded/adapted into the curated reader
   manuscript where they serve the reader arc, not only the live AI/research
   chapters. Each placement carries a caption, alt text, and a non-claim
@@ -2956,6 +2966,16 @@ Current status:
 - `scripts/build_audio_script.py --check` generates 49 review-script files and
   verifies that every chapter script preserves both implementation-horizon
   sections.
+- The tracked curated reader manuscript now has a full local HTML browser
+  viability review recorded in
+  `docs/curated_reader_html_artifact_browser_review.md`: the rendered ignored
+  snapshot under `build/curated_reader_edition/_reader_site` opened 49 pages
+  across desktop and mobile widths, passed 98 of 98 page-view checks, and has
+  deterministic directory digest
+  `ddf74e1f55113578e904331cddcc1b32e512b1f1b88138da9d1764adadc27dfd`. This
+  is review input for release-quality artifact work; it does not mark the
+  curated reader edition, refreshed HTML, EPUB, DOCX, PDF, e-reader, or audio
+  release-approved.
 - Ten draft key-figure assets tied to the reader handoff contract now exist and
   are embedded in live chapters and the curated reader manuscript:
   `asi-stack-control-plane.svg`,

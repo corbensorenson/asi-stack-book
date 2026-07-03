@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-03 - Record curated reader HTML browser viability review
+
+- Built the tracked curated reader manuscript into
+  `build/curated_reader_edition`, rendered its local HTML site, and ran
+  `node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json`.
+- Added `docs/curated_reader_html_artifact_browser_review.md` to record the
+  exact ignored-snapshot digest
+  `ddf74e1f55113578e904331cddcc1b32e512b1f1b88138da9d1764adadc27dfd`,
+  49 rendered pages, 98 of 98 page-view pairs passing, zero failures, and all
+  curated-reader release blockers preserved.
+- Updated README, v1 status, and roadmap surfaces so the curated reader
+  manuscript has a concrete HTML viability record without implying release
+  approval, format-row approval, figure review, EPUB/DOCX/PDF/e-reader/audio
+  approval, support-state promotion, or public artifact publication.
+
 ## 2026-07-03 - Convert reader voice slots into optional enrichment queue
 
 - Added `editions/reader_manuscript/v1_0/author_enrichment_queue.json` as the
