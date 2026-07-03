@@ -222,6 +222,49 @@ delivery, residuals, replay or non-replay reason, and evidence state.
 That receipt is what prevents completion laundering. A job can be useful
 without being evidence-ready. The receipt makes that visible.
 
+## A Typed Job in Practice
+
+Imagine the system is asked to revise a chapter after a new source is added.
+The tempting version is simple: give the source to an agent, ask for the edit,
+and accept the patch if the prose sounds better. That may produce a useful
+draft, but it does not produce governed execution.
+
+A Labor OS would start with a smaller question: what job is actually being
+authorized?
+
+The job packet would not say "improve the chapter." It would say that a
+specific reader-manuscript chapter may be edited, that the live AI/research
+chapter may be read but not changed, that only the named source note and
+chapter records are in scope, that no claim support state may be promoted,
+that no new citation may be introduced unless the source inventory and
+appendix records already support it, and that the output must include a patch,
+a prose-pass note, a manifest update, a changelog entry, validator results,
+and residuals.
+
+The packet would also say what stops the work. If the source text is not
+available, the job becomes a source-readiness residual instead of a prose
+claim. If the edit needs a live-chapter change, the reader job cannot quietly
+perform it; it must create a canonical-change request. If the validator fails,
+the job is delivered only as a failed trace until repaired. If the patch
+changes evidence wording, the claim ledger must be reviewed before the output
+can be reused as support.
+
+That scenario shows the difference between labor and activity. The work may
+still be performed by a language model, a script, a human editor, or a hybrid
+process. The important part is that the work enters as a bounded packet and
+returns as a receipt.
+
+The receipt would name the parent plan node, the permission basis, the
+approval state, the edited files, the validation commands that actually ran,
+the artifact graph records to create or update, the remaining blockers, and
+the non-claims. It would not say that the chapter is release-approved merely
+because a patch exists. It would not say that a source has been mined if the
+source was not read. It would not say that a proof result exists because a
+proof target was mentioned.
+
+This is the practical reason for typed jobs. They make the system honest at
+the point where useful intention becomes side effect.
+
 ## Invariants
 
 Every job has a type and lifecycle state.

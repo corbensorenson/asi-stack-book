@@ -172,6 +172,48 @@ the same separation between "created," "checked," "replayable," "approved,"
 "allowed to support a claim," and "allowed to guide future automation." The
 artifact graph gives those verbs different records.
 
+## An Artifact Replay Packet in Practice
+
+Return to the chapter-edit job from the previous chapter. When the job
+finishes, the patch is not the only artifact. The system should also preserve
+the job packet, source-note refs, context refs, manifest diff, prose-pass note,
+changelog entry, validator logs, render logs, review residuals, and any
+explicit decision not to promote a claim.
+
+Those objects should be linked, not left as scattered files. A future reviewer
+should be able to open the chapter draft and ask: which job produced this
+paragraph, which source was in scope, which files were allowed to change,
+which checks ran, which checks did not run, what failed first, what was
+repaired, and what authority does this artifact have?
+
+A bounded replay packet might say that the edit is semantically replayable but
+not byte-exact. The same source refs, chapter refs, and validator set can be
+loaded again, and a future agent can check whether the same evidence boundary
+is preserved. The exact prose may differ. That is still useful, but it is not
+the same as a deterministic build.
+
+The replay packet should therefore carry a grade. `byte_exact` means the
+artifact can be reproduced as the same bytes under the declared environment.
+`semantic` means the obligations can be checked again even if the wording is
+not identical. `partial` means some inputs, services, human decisions, or
+environment details are missing. `blocked` means replay cannot be attempted
+without a named missing condition. `not_attempted` means no replay evidence
+exists yet.
+
+This prevents a common failure in AI work: treating a plausible output as if
+it had a reusable history. A chapter edit can be helpful reading material. It
+can be a release candidate. It can be a regression example. It can be a future
+training trace. Those uses are different. The artifact graph records which
+uses are allowed now, which uses require review, and which uses remain
+blocked.
+
+The same rule applies to proof attempts and benchmarks. A failed proof can be
+valuable if the artifact graph preserves the statement, environment, error,
+near-miss, and repair path. A benchmark run can be valuable only within the
+dataset, configuration, contamination, metric, and execution record it
+actually carries. The graph lets the system reuse failure without laundering
+failure into success.
+
 ## Interfaces
 
 The main interface is the Artifact Graph Record.

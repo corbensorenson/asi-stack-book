@@ -31,7 +31,8 @@ Allowed curation scopes used:
 - section flow;
 - transition prose;
 - sentence-level voice;
-- chapter compression.
+- chapter compression;
+- reader examples.
 
 Proof/test boundary clarification is recorded as meaning preservation, not as
 permission to change proof or test status.
@@ -62,6 +63,10 @@ permission to change proof or test status.
 - Preserved the release boundary: the new book-scale example names artifact
   roles and authority separation but does not approve any reader edition or
   claim that a release record exists.
+- Added a 2026-07-03 artifact replay-packet scenario that links a chapter-edit
+  patch to its parent job, source/context refs, manifest diff, prose-pass note,
+  changelog entry, validator logs, render logs, residuals, replay grade,
+  allowed reuse, and non-promotion decision.
 
 ## Meaning Preservation Checks
 
@@ -69,8 +74,8 @@ permission to change proof or test status.
 |---|---|
 | Core claim meaning preserved | Pass. The curated draft keeps the claim that execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
-| Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; external records remain comparators. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that finite Lean predicates and protocol validation do not prove replay correctness, audit reconstruction, artifact completeness, provenance completeness, runtime quality, benchmark performance, security behavior, or MoECOT runtime reproduction. |
+| Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; external records remain comparators, and the new replay-packet scenario is illustrative architecture prose. |
+| Proof/test status preserved | Pass. The curated draft keeps the boundary that finite Lean predicates and protocol validation do not prove replay correctness, audit reconstruction, artifact completeness, provenance completeness, runtime quality, benchmark performance, security behavior, chapter-edit replay automation, or MoECOT runtime reproduction. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains an artifact graph schema plus fixtures and finite provenance predicates; the mature endpoint remains an unimplemented evidence graph for work products. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
@@ -88,7 +93,9 @@ permission to change proof or test status.
   completeness checker, replay engine, audit reconstruction harness,
   provenance-completeness service, runtime execution quality, benchmark
   performance, security behavior, proof-carrying-code implementation,
-  SWE-bench reproduction, AutoGen reproduction, or MoECOT runtime reproduction.
+  SWE-bench reproduction, AutoGen reproduction, MoECOT runtime reproduction,
+  automated replay of chapter edits, release approval, or claim-ledger
+  promotion.
 
 ## Remaining Blockers
 
