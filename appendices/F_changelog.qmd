@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Refine boundary control reader examples
+
+- Expanded the curated reader manuscript draft for `Security Kernel and Digital
+  SCIFs` with a handle-and-SCIF scenario around summarizing a private source
+  folder, separating handle visibility, scoped read requests, compartment
+  admission, prompt-injection handling, sanitized commits, zeroization/expiry
+  receipts, residual leak risk, and non-claim boundaries.
+- Expanded the curated reader manuscript draft for `Runtime Adapters, Tool
+  Permissions, and Human Approval` with a message-adapter scenario that
+  separates low-impact draft creation from an external send effect, scoped
+  recipient/attachment approval, approval reuse denial, effect receipts,
+  delivery incidents, correction paths, irreversible residuals, and non-claim
+  boundaries.
+- Updated both prose-pass notes and the reader manuscript manifest to record
+  the 2026-07-02 follow-ups. This is curated reader-manuscript work only; it is
+  not a live AI/research chapter change, deployed prompt-injection containment,
+  sandbox-isolation result, side-channel-safety result, privacy result,
+  approval-service behavior result, deployed mail-adapter result,
+  delivery-correctness result, source-derived evidence update, proof/test
+  result, support-state promotion, reader release, ebook/document/PDF/audio
+  artifact, or artifact approval.
+
 ## 2026-07-02 - Refine human-stakes reader examples
 
 - Expanded the curated reader manuscript draft for `Moral Uncertainty and Value

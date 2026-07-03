@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Security Kernel and Digital SCIFs
 
-Last updated: 2026-07-01
+Last updated: 2026-07-02
 
 Chapter ID: `security-kernel-and-digital-scifs`
 
@@ -54,6 +54,10 @@ permission to change proof or test status.
   budget enforcement, or source interpretation.
 - Preserved the core claim, minimum viable implementation, beyond-state-of-the-
   art endpoint, and handoff into Recursive Self-Improvement Boundaries.
+- Added a 2026-07-02 handle-and-SCIF scenario around summarizing a private
+  source folder, separating handle visibility, scoped read requests,
+  compartment admission, prompt-injection handling, sanitized commits,
+  zeroization/expiry receipts, residual leak risk, and support-state non-claims.
 
 ## Meaning Preservation Checks
 
@@ -82,7 +86,8 @@ permission to change proof or test status.
   isolation, side-channel resistance, prompt-injection containment,
   deployed approval-expiry enforcement, least-privilege context behavior,
   secret-handle safety, runtime budget enforcement, security economics, or
-  runtime policy enforcement.
+  runtime policy enforcement, privacy protection, approval-service behavior, or
+  support-state promotion.
 
 ## Remaining Blockers
 

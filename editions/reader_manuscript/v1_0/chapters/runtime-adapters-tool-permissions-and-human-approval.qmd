@@ -177,6 +177,31 @@ verification remains incomplete. A deployment can succeed while rollback is
 missing. A message can be sent while residual obligations remain. The receipt
 keeps those distinctions visible.
 
+## A Message-Adapter Scenario
+
+Imagine a typed job that asks the system to email a collaborator about a draft
+chapter. Drafting the message is a low-impact artifact. Sending it is an
+external effect. The adapter boundary keeps those states separate.
+
+The job may allow the model to prepare a draft, attach cited public files, and
+list questions for the user. It may not send the message until the adapter has
+a current approval record naming the recipient, subject, allowed attachments,
+expiry, and whether reuse is allowed. If the user approves only this message,
+that approval cannot authorize a later follow-up, a different attachment, or a
+message to a different recipient.
+
+When the adapter sends the message, the effect receipt records the parent job,
+approval, sandbox mode, authority handle, pre-send draft hash, post-send
+delivery status, audit refs, rollback or correction path, and any irreversible
+residual. If the mail service accepts the API call but the attachment was
+wrong, the receipt is not a success story. It is an incident or residual with a
+correction path.
+
+This scenario does not claim a deployed mail adapter, live approval service,
+sandbox isolation, secret-handle safety, rollback execution, or delivery
+correctness. It shows the adapter's job: convert a thought into a scoped effect
+only when permission, approval, receipt, and residual handling are explicit.
+
 ## Interfaces
 
 Runtime work reaches the world through the Runtime Adapter Invocation.

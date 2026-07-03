@@ -65,6 +65,10 @@ permission to change proof or test status.
   runtime reproduction, or external-system reproduction is claimed.
 - Preserved the minimum viable implementation, beyond-state-of-the-art
   endpoint, and handoff into Procedural Memory and Cognitive Loop Closure.
+- Added a 2026-07-02 message-adapter scenario that separates low-impact draft
+  creation from an external send effect, scoped recipient/attachment approval,
+  approval reuse denial, effect receipts, delivery incidents, correction paths,
+  irreversible residuals, and support-state non-claims.
 
 ## Meaning Preservation Checks
 
@@ -93,8 +97,8 @@ permission to change proof or test status.
   validation, rollback execution, incident response, runtime security,
   benchmark performance, Talos runtime behavior, MoECOT runtime reproduction,
   ReAct reproduction, Simplex-level runtime assurance, Copilot-style runtime
-  monitoring, proof-carrying-code enforcement, or deployed approval
-  enforcement.
+  monitoring, proof-carrying-code enforcement, delivery correctness, or
+  deployed approval enforcement.
 
 ## Remaining Blockers
 
