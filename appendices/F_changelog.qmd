@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-03 - Record Fast Generation task-bundle no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json`
+  for the local public-safe Fast Generation task-bundle accounting slice.
+- Updated `scripts/validate_fast_generation_task_bundle.py` so the task-bundle
+  gate now requires the no-promotion decision alongside result
+  `fast_generation_task_bundle_2026_07_02_local`.
+- Updated the Fast Generation live chapter, curated reader chapter, outline,
+  active evidence cycle, roadmap burn-down, and task-bundle documentation so
+  the no-promotion boundary is visible at the claim surface.
+- Regenerated the accepted-transition audit result; it now records 40 accepted
+  transition records, 34 accepted no-change records, six bounded non-core
+  upward transitions, and zero accepted upward chapter-core transitions.
+- Boundary: this does not promote Fast Generation above `argument`, does not
+  prove model generation speed, useful-solution-per-second model performance,
+  serving throughput, route-selector adequacy, benchmark performance, model
+  quality, deployed routing, or any chapter core claim, and does not create an
+  upward support-state transition.
+
 ## 2026-07-03 - Add idea-depth execution dispatch to roadmap
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after the latest idea-focused

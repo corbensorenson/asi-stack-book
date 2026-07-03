@@ -1,0 +1,105 @@
+{
+  "transition_id": "v1_x_measured.fast_generation_task_bundle.no_change",
+  "claim_id": "fast-generation-architectures.public_safe_task_bundle_accounting",
+  "claim_surface_refs": [
+    "docs/fast_generation_task_bundle.md",
+    "chapters/fast-generation-architectures.qmd",
+    "editions/reader_manuscript/v1_0/chapters/fast-generation-architectures.qmd",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
+    "scripts/run_fast_generation_task_bundle.py",
+    "scripts/validate_fast_generation_task_bundle.py",
+    "lean/AsiStackProofs/FastGeneration.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Local deterministic public-safe task-bundle accounting only. The bundle compares an autoregressive reference, a verified fast-template route, and a cheaper latency-only proxy over four receipt tasks using deterministic cost units; it does not run an AI model, reproduce a fast-generation paper result, measure wall-clock speedup, or validate deployed routing.",
+  "evidence_roles": [
+    "local_deterministic_task_bundle",
+    "baseline_route",
+    "latency_only_negative_control",
+    "verifier_fallback_residual_boundary",
+    "lean_python_fixture_alignment",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The task bundle is a useful Fast Generation accounting artifact because the verified fast-template route passes the same four deterministic receipt tasks as the autoregressive reference at lower deterministic cost units, while the cheaper latency-only proxy is rejected for missing verifier, fallback, residual, and support-state boundaries. It remains local, synthetic, and record-level, so it blocks promotion for model-speed, useful-solution-per-second model performance, serving throughput, route-selector adequacy, model quality, benchmark, deployed-routing, or chapter-core claims.",
+  "required_artifacts": [
+    "matched public-safe model or decoder run with accepted-output and task-success measurements",
+    "autoregressive baseline with environment and workload notes",
+    "speculative, MTP, diffusion, KV-cache, or serving benchmark reproduction where relevant",
+    "fallback execution evidence and repair/residual accounting",
+    "verifier-quality review",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/fast_generation_task_bundle.md",
+    "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
+    "scripts/run_fast_generation_task_bundle.py",
+    "scripts/validate_fast_generation_task_bundle.py",
+    "lean/AsiStackProofs/FastGeneration.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/v1_x_active_evidence_cycle.md",
+    "docs/theseus_generation_mode_import_slice.md",
+    "docs/theseus_support_replay_probe.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#fast-generation-architectures.core",
+    "appendices/H_external_sources.qmd#fast-generation-decoding-substrates-and-serving-acceleration"
+  ],
+  "verification_command": "python3 scripts/validate_fast_generation_task_bundle.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "latency-only proxy is cheaper but rejected",
+    "result keeps support_state_effect at none",
+    "non-claims reject model-speed and useful-solution-per-second model claims",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/fast_generation_task_bundle.md",
+    "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
+    "scripts/validate_fast_generation_task_bundle.py"
+  ],
+  "downgrade_triggers": [
+    "task-bundle validator failure",
+    "latency-only negative control accepted",
+    "selected route no longer passes every deterministic task",
+    "deterministic cost-unit accounting described as model-speed or serving-throughput evidence",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Fast Generation claim after a public-safe model or decoder run, matched autoregressive baseline, accepted-output and task-success measurements, verifier/fallback/residual accounting, relevant benchmark or serving-memory evidence, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "four deterministic receipt tasks only",
+    "no AI model inference",
+    "no wall-clock speedup claim",
+    "no speculative decoding, MTP, diffusion, KV-cache, or serving benchmark reproduction",
+    "no deployed route selector",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent model-evaluation, decoding, serving, benchmark, or source-interpretation audit",
+  "acceptance_blockers": [
+    "no public-safe model or decoder run",
+    "no matched autoregressive baseline measurement",
+    "no reproduced fast-generation benchmark",
+    "no verifier-quality review",
+    "no deployed route-selector evidence",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-03---record-fast-generation-task-bundle-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Fast Generation above argument",
+    "does not prove model generation speed, useful-solution-per-second model performance, serving throughput, route-selector adequacy, benchmark performance, model quality, or deployed routing",
+    "does not create an upward support-state transition",
+    "does not promote the Fast Generation chapter core claim"
+  ]
+}

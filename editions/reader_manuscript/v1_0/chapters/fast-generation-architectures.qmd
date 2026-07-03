@@ -112,10 +112,13 @@ the method taxonomy and a local public-safe task-bundle accounting replay,
 `fast_generation_task_bundle_2026_07_02_local`. That replay selects
 `route://fast-template-verified` over an autoregressive reference under
 deterministic cost units and rejects `route://latency-only-proxy`, but it is a
-no model-speed or deployment claim. It does not contain a local decoding
-benchmark, diffusion benchmark, MTP run, speculative-acceptance experiment,
-serving deployment, KV-cache audit, model useful-solution-per-second result,
-or reproduced speedup.
+no model-speed or deployment claim. The accepted no-promotion decision at
+`evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json`
+keeps that slice from becoming a speed, model-quality, serving-throughput,
+route-selector, benchmark, deployed-routing, or chapter-core support claim. It
+does not contain a local decoding benchmark, diffusion benchmark, MTP run,
+speculative-acceptance experiment, serving deployment, KV-cache audit, model
+useful-solution-per-second result, or reproduced speedup.
 
 The claim is not that one acceleration family wins. The claim is that the
 stack needs a policy surface where those families can be compared by accepted

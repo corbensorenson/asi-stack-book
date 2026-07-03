@@ -10,6 +10,7 @@ from run_fast_generation_task_bundle import build_result
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULT = ROOT / "experiments" / "fast_generation_task_bundle" / "results" / "2026-07-02-local.json"
+DECISION = ROOT / "evidence_transitions" / "v1_x_measured" / "fast_generation_task_bundle_no_change.json"
 DOC = ROOT / "docs" / "fast_generation_task_bundle.md"
 CHAPTER = ROOT / "chapters" / "fast-generation-architectures.qmd"
 READER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapters" / "fast-generation-architectures.qmd"
@@ -26,6 +27,7 @@ EXPECTED_NON_CLAIMS = [
 
 EXPECTED_SURFACE_PHRASES = [
     "fast_generation_task_bundle_2026_07_02_local",
+    "evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json",
     "route://fast-template-verified",
     "route://latency-only-proxy",
     "no model-speed or deployment claim",
@@ -144,6 +146,42 @@ def validate_result(result: dict[str, Any]) -> list[str]:
     return errors
 
 
+def validate_decision() -> list[str]:
+    errors: list[str] = []
+    if not DECISION.exists():
+        return [f"{DECISION.relative_to(ROOT)} is missing."]
+    try:
+        decision = load_json(DECISION)
+    except Exception as exc:
+        return [f"{DECISION.relative_to(ROOT)} is not valid JSON: {exc}"]
+    expected = {
+        "transition_id": "v1_x_measured.fast_generation_task_bundle.no_change",
+        "claim_id": "fast-generation-architectures.public_safe_task_bundle_accounting",
+        "old_support_state": "argument",
+        "new_support_state": "argument",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "review_status": "accepted",
+        "support_state_effect": "blocks_promotion",
+        "verification_result": "pass",
+    }
+    for field, expected_value in expected.items():
+        if decision.get(field) != expected_value:
+            errors.append(f"{DECISION.relative_to(ROOT)}: {field} is {decision.get(field)!r}, expected {expected_value!r}.")
+    for field, phrase in (
+        ("artifact_refs", "experiments/fast_generation_task_bundle/results/2026-07-02-local.json"),
+        ("artifact_refs", "scripts/validate_fast_generation_task_bundle.py"),
+        ("negative_results", "latency-only proxy is cheaper but rejected"),
+        ("downgrade_triggers", "latency-only negative control accepted"),
+        ("non_claims", "does not promote the Fast Generation chapter core claim"),
+    ):
+        if phrase.lower() not in text_blob(decision.get(field, [])).lower():
+            errors.append(f"{DECISION.relative_to(ROOT)}: {field} missing {phrase!r}.")
+    if "model-speed" not in str(decision.get("transition_reason", "")).lower():
+        errors.append(f"{DECISION.relative_to(ROOT)}: transition_reason must preserve the model-speed non-claim.")
+    return errors
+
+
 def validate_surfaces() -> list[str]:
     errors: list[str] = []
     surfaces = {
@@ -179,6 +217,7 @@ def main() -> None:
                 errors.append(f"{RESULT.relative_to(ROOT)} must contain a JSON object.")
             else:
                 errors.extend(validate_result(result))
+    errors.extend(validate_decision())
     errors.extend(validate_surfaces())
     if errors:
         print("Fast generation task-bundle validation failed:")
