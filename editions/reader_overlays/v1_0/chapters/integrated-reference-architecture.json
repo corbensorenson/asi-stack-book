@@ -26,6 +26,41 @@
         "",
         "This is the architecture's reader-facing falsification target. A future live implementation should be able to replace the fixture-only artifacts with real artifacts of the same kind while preserving parentage, authority deltas, evidence deltas, residual deltas, validation commands, stop conditions, and non-claims. Until that happens, the showpiece is a specification trace and local replay boundary, not runtime integration evidence."
       ]
+    },
+    {
+      "id": "v1_0.integrated_reference.mechanism_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism"
+      },
+      "rationale": "Replace the dense generated-reader mechanism and fixture-trace inventory with a clearer reader trace-kernel explanation while preserving fixture-only, local-replay, blocked-path, and no-promotion boundaries.",
+      "content_lines": [
+        "The mechanism is a trace kernel for the stack. A request enters with a human purpose and a limited authority grant. Each layer then emits something durable enough for the next layer to inspect: a command contract, plan, context packet, route decision, claim envelope, work order, audit log, evidence update, or improvement decision.",
+        "",
+        "The point is not to make every layer run inside one agent loop. The point is to prevent the layers from dissolving into hidden prompt state. Planning should not silently become verification. Memory should not silently become authority. Execution should not silently forgive a failed residual. Evidence should not silently promote a result whose support boundary is still only architectural argument.",
+        "",
+        "```{mermaid}",
+        "flowchart LR",
+        "A[\"Human intent\"] --> B[\"Governed command\"]",
+        "B --> C[\"Plan and context\"]",
+        "C --> D[\"Route and verification\"]",
+        "D --> E[\"Work order and audit\"]",
+        "E --> F[\"Evidence update\"]",
+        "F --> G[\"SCF decision\"]",
+        "G -- \"insufficient authority or evidence\" --> H[\"Blocked, narrowed, or reviewed\"]",
+        "G -- \"accepted narrow result\" --> I[\"Bounded continuation\"]",
+        "```",
+        "",
+        "The current repository has a modest version of that shape. It has deterministic reference-trace fixtures: one approved maintenance flow and one blocked authority flow. The approved flow carries stable parent artifacts from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review. The blocked flow follows the same spine but stops because runtime execution authority is missing and governance review is required.",
+        "",
+        "A first local command replay now sits beside those fixtures through the Resource flagship lane. That replay records a command, output digest, artifact bundle, validation path, and blocked-path reference. It is useful because it shows that the record family can carry a real local command result, not only a hand-written example.",
+        "",
+        "The boundary remains strict. These records do not prove a deployed runtime, live artifact-continuity service, authority-stop enforcement outside the fixture, model quality, benchmark quality, scheduler behavior, economic outcome, or support-state promotion. They show the shape of accountable integration: parentage, authority deltas, evidence deltas, residual deltas, validation commands, stop conditions, source references, and non-claims survive the handoff.",
+        "",
+        "That is the integration test the rest of the stack has to meet. A future implementation can be impressive only after it produces comparable traces under both success and refusal. If parentage disappears, authority becomes ambient, evidence changes without a named claim, or residuals are erased, the architecture has not composed yet."
+      ]
     }
   ]
 }

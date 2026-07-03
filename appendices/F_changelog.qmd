@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-02 - Refine Integrated Reference reader mechanism
+
+- Added one active reader-only semantic overlay operation for `Integrated
+  Reference Architecture`, replacing generated reader and live Human-view
+  `Mechanism` prose with a clearer trace-kernel explanation of governed
+  commands, typed handoffs, blocked paths, local command replay, residual
+  preservation, and no-promotion boundaries while leaving the canonical
+  AI/research chapter unchanged.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, and the reader chapter review matrix. The
+  reader-continuity audit now records 44 reader chapters, 113,749 reader words,
+  63 active/applied overlay operations, 0 generated-reader chapter table rows,
+  53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160
+  words, and 0 high-priority plus 4 medium-priority heuristic review rows. The
+  Integrated Reference chapter moved from medium-priority to low-priority in
+  the generated heuristic queue.
+- This is a reader projection and Human-view craft increment only; it is not a
+  deployed runtime trace, live artifact-continuity service, authority-stop
+  enforcement result, model-quality result, benchmark result, scheduler result,
+  economic result, evidence transition, support-state promotion, reader release,
+  ebook/document/PDF/audio artifact, or artifact approval.
+
 ## 2026-07-02 - Refine Circle contract reader mechanism
 
 - Added one active reader-only semantic overlay operation for `Circle Calculus
