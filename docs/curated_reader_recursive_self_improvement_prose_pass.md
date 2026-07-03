@@ -56,6 +56,11 @@ Allowed curation scopes used:
   resolution of Part I's tension between progress and governability, clarifies
   self-change as narrow permission rather than general license, and strengthens
   the final handoff into Part II operations.
+- Added a 2026-07-03 idea-depth local-delta pass that names Recursive
+  Self-Improvement as the promotion-legitimacy owner under self-reference in
+  the governed-cognition pattern; this is reader prose and novelty-positioning
+  only, not evaluator-independence, rollback-execution, monitor-quality,
+  live-improvement-safety, or support-state evidence.
 
 ## Meaning Preservation Checks
 

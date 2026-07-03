@@ -30,6 +30,13 @@ Planning is a controlled delay before action. It turns an accepted command into
 a visible plan graph so the system can inspect the work before the work touches
 memory, tools, users, money, files, networks, or external systems.
 
+Planning adds one distinct idea to the book's repeated record-and-gate pattern:
+ordered obligation. The plan says which obligations exist, which are blocked,
+which are dispatchable, which need stronger evidence, and what changed when
+the graph was replanned. That is why planning is not just another place to
+write a checklist; it is the layer that prevents accepted intent from becoming
+authorized work too early.
+
 The planner earns its place when it makes non-action legible. A good plan does
 not only say what should happen next. It says which nodes are blocked, which
 dependencies are missing, which verifier is unavailable, which source is not
@@ -478,7 +485,7 @@ must be preserved while the artifact is being made.
 
 ## Handoff
 
-This chapter described the plan as a controlled, schedulable object. The next
+Planning has treated the plan as a controlled, schedulable object. The next
 chapter, Cognitive Compilation and Semantic IR, asks what form scheduled work
 must take before it can become artifacts. It turns plan obligations into
 semantic atoms, validators, target constraints, lowering receipts, and repair

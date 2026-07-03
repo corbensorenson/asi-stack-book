@@ -33,6 +33,13 @@ needed for one piece of work. The lease expires. The record remains. A
 governed router must remember not only why one specialist was selected, but
 also why other plausible specialists were refused.
 
+That is the chapter's local delta beyond the common record pattern: capability
+leasing. A registry can say what a specialist might do in general; the route
+decides what it may do here, for this task, under this readiness state, with
+this fallback. Preserving the rejected candidates matters as much as preserving
+the winner, because that is what stops a successful route from becoming a
+standing authority grant.
+
 This is where modular intelligence stops being a pile of tools and becomes a
 control surface.
 

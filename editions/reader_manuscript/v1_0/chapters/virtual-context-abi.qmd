@@ -30,6 +30,13 @@ same evidential weight.
 In reader terms, context becomes governed memory only when it has an identity,
 a certificate, a lease, an authority boundary, and a fault path.
 
+The local contribution is addressability with consequences. The live book uses
+records, gates, receipts, and residuals everywhere; the ABI applies that
+pattern to the moment memory becomes working context. A retrieved passage is
+not enough. The system needs to know which version was mounted, what was lost,
+who may use it, what certificate travels with it, and what fault should appear
+when the packet is stale, unsafe, missing, or inadequate.
+
 This follows directly from semantic IR. If the compiler gives obligations
 addresses, the context system has to give evidence and memory addresses. A
 semantic atom cannot honestly preserve a source, constraint, or policy if the

@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+last_updated: "2026-07-03"
 primary_sources:
   - "planforge"
   - "viea"
@@ -113,6 +113,8 @@ Appendix C maps this merged planning-control claim to all assigned source notes.
 Once the command fields exist, planning turns them into controllable work. PlanForge supplies decomposition, dependency, scheduling, tier, fallback, and replanning vocabulary. Cognitive Compilation supplies compiler-pass pressure, VIEA supplies the accepted-command-to-artifact spine, Software Magic Grimoire supplies guarded workflow language, TokenMana keeps budgets broader than tokens, and MoECOT remains a runtime-reference route for ledgers, readiness gates, replay, and residuals.
 
 A Plan Graph is the bounded control artifact that captures this work without granting the planner memory ownership, tool authority, or permission to rewrite the governing contract.
+
+Planning's local delta in the governed-cognition pattern is obligation ordering. The shared pattern gives records, lifecycle states, authority ceilings, evidence gates, receipts, residuals, and non-claims; planning adds the graph-level rule that an accepted command does not become work until obligations are ordered, blocked states remain distinct from dispatchable states, route adequacy and verification cost are explicit, and replanning leaves an auditable delta. The planning layer therefore owns the gap between accepted intent and authorized jobs.
 
 The reviewed passages support the shape of that artifact: PlanForge gives the planner/executor split and DAG scheduling vocabulary; VIEA gives the artifact, router, verification, runtime, and feedback spine; Cognitive Compilation gives source-plan, semantic-DAG, scheduler, validator, and localized-repair vocabulary; Software Magic Grimoire gives handoffs, guards, exit rules, loop discipline, recursion limits, and recovery paths; TokenMana keeps load, latency, review capacity, and human friction inside the budget surface. None of the reviewed passages show this repository executing a planner, proving dependency soundness, predicting context demand, measuring tier adequacy, or replaying a runtime replanning trace.
 

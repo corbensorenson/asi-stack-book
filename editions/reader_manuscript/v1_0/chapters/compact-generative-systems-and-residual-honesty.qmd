@@ -28,6 +28,13 @@ Honest compactness is therefore a governance problem. The smaller object has to 
 
 That is the standard the stack applies here: compress only with reconstruction duties, verification duties, and visible residuals still attached for every use.
 
+The local contribution is residual custody. Many chapters use records and
+receipts; this one asks where the burden went. If a compact seed, generator,
+summary, graph, or repaired artifact is smaller, the reader should still be
+able to see the reconstruction cost, verification cost, repair channel,
+fallback path, consumer policy, and owner of whatever burden remains. A small
+representation that hides those costs is not efficient in the stack's sense.
+
 The new residual-conservation fixture makes that rule concrete without
 pretending to solve the whole problem. It accepts three honest residual
 records: one visible residual that is accepted with an owner, one deferred

@@ -36,6 +36,11 @@ The reader throughline is:
 - Preserved the minimum viable implementation and beyond-SOTA sections without implying that a codec, utility benchmark, TreeLLM implementation, or semantic graph benchmark already exists.
 - Aligned the reader MVI with the implemented Compact GVR synthetic slice: `python3 scripts/validate_compact_gvr_slice.py` recomputes five public-safe receipt records, selects a 78-byte exact repeat-generator-plus-repair receipt against a 368-byte literal baseline, rejects three controls, and checks a finite Lean bridge.
 - Preserved proof/test boundaries for `AsiStackProofs.CompactGenerativeSystems`, generate/verify/repair receipts, semantic representation fixtures, the Compact GVR synthetic slice, and current record-shape validation.
+- Added a 2026-07-03 idea-depth local-delta pass that names Compact
+  Generative Systems as the residual-custody owner in the governed-cognition
+  pattern; this is reader prose and novelty-positioning only, not compression
+  ratio, reconstruction utility, residual-ledger deployment, downstream
+  utility, model-quality, or support-state evidence.
 
 ## Meaning-Preservation Checks
 

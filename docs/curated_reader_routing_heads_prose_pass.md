@@ -65,6 +65,10 @@ claims or evidence status.
   synthetic routing decision lease harness, readiness/residual gate harness,
   finite Routing lifecycle predicates, folded MoECOT source-boundary
   predicates, and no route-quality or runtime-claim promotion.
+- Added a 2026-07-03 idea-depth local-delta pass that names Routing as the
+  capability-leasing owner in the governed-cognition pattern; this is reader
+  prose and novelty-positioning only, not learned-router, route-quality,
+  MoECOT-runtime, specialist-quality, or support-state evidence.
 
 ## Meaning Preservation Checks
 

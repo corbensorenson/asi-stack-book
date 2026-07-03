@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-03"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -108,6 +108,8 @@ The Virtual Context ABI owns the static shape of that interface. It says what
 a context request can ask for, what a materialized packet must report, and how
 typed pages, cells, and certificates travel into planning, execution, evidence,
 and reader-facing artifacts.
+
+The local delta is governed addressability. The common pattern requires records, lifecycle state, authority, evidence, receipts, residuals, and non-claims; the context ABI adds the rule that memory is not usable context until address, version, mount, representation certificate, permitted use, authority ceiling, adequacy state, lease, and typed fault behavior survive materialization. The ABI boundary owns the difference between "relevant text was retrieved" and "a context object may be consumed."
 
 ## Why existing approaches are insufficient
 

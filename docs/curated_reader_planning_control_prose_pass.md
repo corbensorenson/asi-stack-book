@@ -57,6 +57,10 @@ The reader throughline is:
   distinction between possible action and dispatchable work, strengthens the
   adequacy-contract explanation, and repairs the handoff into Cognitive
   Compilation and Semantic IR.
+- Added a 2026-07-03 idea-depth local-delta pass that names Planning as the
+  obligation-ordering owner in the governed-cognition pattern; this is reader
+  prose and novelty-positioning only, not planner-quality, scheduler,
+  route-quality, runtime-replanning, or support-state evidence.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint without implying a deployed planning control plane, scheduler,
   parser, replanner, or execution runtime exists.

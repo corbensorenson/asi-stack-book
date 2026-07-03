@@ -22,6 +22,14 @@ Bounded self-improvement is therefore not anti-improvement. It is the
 discipline that makes stronger systems more inspectable rather than less. A
 mature stack should grow with tighter receipts, not looser ones.
 
+The local delta is promotion legitimacy under self-reference. The book uses
+lifecycle records and rollback throughout, but self-improvement adds
+the hardest question: who is allowed to decide that the system's own proposed
+change becomes the new default? The answer cannot be the candidate alone.
+Boundary deltas, evaluator independence, protected invariants, verification
+budget, monitor windows, rollback, and residual escrow must remain outside the
+candidate's private enthusiasm.
+
 This is where Part I resolves its own tension. The book wants systems that can
 learn, specialize, replace components, and discover better routes. It also
 wants systems that remain corrigible, evidence-bound, reversible, and
@@ -32,7 +40,7 @@ occupy the same architecture.
 
 Recursive self-improvement must state when improvement is allowed, what may be modified, and which invariants cannot be weakened.
 
-The previous chapters defined stable capability fields, replacement transactions, security boundaries, and evidence states. This chapter closes Part I by asking the hardest version of those ideas: when may the system initiate a change about itself?
+The previous chapters defined stable capability fields, replacement transactions, security boundaries, and evidence states. Recursive self-improvement closes Part I by asking the hardest version of those ideas: when may the system initiate a change about itself?
 
 The answer cannot be a general permission to rewrite cognition. It has to be a bounded protocol over fields, evidence gates, protected invariants, evaluator independence, governance approval, monitor windows, and rollback paths. A system may change implementations, tools, policies, prompts, data, routes, or architecture only while preserving the conditions that made the previous system governable.
 

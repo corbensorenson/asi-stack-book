@@ -4,7 +4,7 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-03"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -117,6 +117,8 @@ Routing begins where procedural memory leaves off. Once the stack has tools, spe
 The boundary therefore has two records. A Specialist Registry Record describes what a specialist is allowed to do, what it costs, what memory and tools it may access, what evidence qualifies it, and where it must fall back. A Routing Decision Record records why the router selected that specialist for this task instead of a cheaper, safer, more constrained, or more reviewed route.
 
 The decision record should be read as a task-local authority lease, not a standing appointment. The registry declares the specialist's maximum envelope; the route grants only the subset needed for this task, under this readiness state, with this fallback. That distinction keeps specialist selection from silently becoming authority transfer.
+
+Routing's local delta is capability leasing. The shared governed-cognition pattern already has records, gates, receipts, and rollback paths; routing adds the rule that capability is not assigned by semantic fit alone. A route must preserve the selected specialist, rejected candidates, authority subset, readiness state, cost-quality predicate, fallback, residual owner, expiry, and non-claim boundary so a successful route cannot launder permanent authority into the specialist.
 
 ```{mermaid}
 flowchart LR

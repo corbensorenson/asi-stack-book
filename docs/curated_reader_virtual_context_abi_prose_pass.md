@@ -44,7 +44,11 @@ summary-fidelity evaluation.
 2026-07-03 follow-up:
 The curated reader chapter now makes the Semantic IR to context handoff
 explicit, frames the ABI as role preservation for context objects, and adds a
-reader-facing summary before the handoff into context transactions.
+reader-facing summary before the handoff into context transactions. The same
+pass adds governed-addressability local-delta prose for the
+governed-cognition pattern; this is reader prose and novelty-positioning only,
+not resolver-correctness, certificate-truthfulness, summary-fidelity,
+memory-store, or support-state evidence.
 
 ## Reader Promise
 
