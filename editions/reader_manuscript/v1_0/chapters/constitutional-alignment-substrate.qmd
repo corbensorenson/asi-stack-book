@@ -179,6 +179,33 @@ than the source language, but more useful. A bounded predicate can actually
 constrain a plan. A sweeping ideal can only decorate one unless it has been
 translated.
 
+## A Least-Power Gate Scenario
+
+Imagine a user asks the system to resolve a billing dispute. A high-power route
+could read private documents, contact the company, authorize a payment reversal,
+and update memory about the user's finances. A lower-power route could inspect
+only the user-supplied bill, draft a message, list missing evidence, and ask for
+explicit approval before any external action. Both routes might be helpful. They
+are not constitutionally equivalent.
+
+The constitutional substrate turns "least sufficient power" into a gate. The
+predicate record asks which action is necessary, which authority is being
+requested, which private context would be exposed, whether a reversible draft
+route can satisfy the task, what consent is present, and what audit receipt the
+user receives. If the draft route is enough, the stronger route is inadmissible
+unless a review record explains why the extra power is required.
+
+If the user later approves external contact, the system still does not receive
+blanket authority. The approval is scoped to this dispute, this recipient, this
+message, this evidence packet, and this rollback or correction path. A
+self-improvement proposal that removes the approval step because it slows down
+billing tasks would be a constitutional migration, not an optimization.
+
+This scenario does not claim deployed least-power enforcement, approval-service
+behavior, runtime memory protection, legal correctness, or alignment. It shows
+how constitutional language becomes useful only when it can stop a stronger
+route before the system takes it.
+
 ## Interfaces
 
 The central interface is a Constitutional Predicate Record. Planning, runtime,

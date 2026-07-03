@@ -168,6 +168,28 @@ bounded decision must not later become a benchmark target, policy rule,
 training signal, or self-modification permission as if the conflict had been
 resolved.
 
+### A Decision Lease, Not A Settlement
+
+Suppose a research team wants to publish a failure trace because the trace would
+help outside reviewers understand a safety problem. The same trace contains
+private context from a user who did not consent to publication. Transparency,
+privacy, safety learning, and consent all matter. A scalar objective can hide
+the tradeoff by giving one answer. A value-conflict record keeps the tradeoff
+alive.
+
+The bounded decision might allow a redacted aggregate description, require
+human review before any excerpt leaves the private boundary, preserve the raw
+trace for an auditor under a narrower permission, and set a revisit condition
+if the user later grants or denies consent. The decision can help safety work
+continue without pretending the privacy conflict disappeared. The residual
+stays attached, the dissent remains visible, and later policy learning cannot
+turn this one lease into a general rule that private traces are publishable.
+
+This is not a legal-rights determination, privacy-system result, reviewer
+quality result, or deployed conflict-handling claim. It is the book's control
+pattern: act narrowly when action is justified, preserve the unresolved value
+conflict, and prevent the lease from becoming hidden authority.
+
 ### A Worked Contestability Example
 
 `contestability://synthetic-care-memory-export-001` is the chapter's current

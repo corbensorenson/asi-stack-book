@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Constitutional Alignment Substrate
 
-Date: 2026-06-30
+Date: 2026-07-02
 
 Chapter: `constitutional-alignment-substrate`
 
@@ -47,6 +47,10 @@ The reader throughline is:
 - Preserved the proof/test boundary for `AsiStackProofs.Alignment`, the
   `constitutional_predicate_record` fixture family, and synthetic harness
   coverage.
+- Added a 2026-07-02 least-power gate scenario around a billing-dispute request,
+  separating lower-power drafting, external-action approval, consent, private
+  context exposure, scoped receipts, constitutional migration, and support-state
+  non-claims.
 
 ## Meaning-Preservation Checks
 
@@ -78,7 +82,8 @@ The reader throughline is:
   reproduction, public-input governance legitimacy, harmlessness improvement,
   reviewer independence, predicate-translation adequacy, rollback execution,
   least-sufficient-power enforcement, self-modification safety, or alignment
-  behavior in a running system.
+  behavior in a running system, approval-service behavior, runtime memory
+  protection, legal correctness, or support-state movement.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.

@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Moral Uncertainty and Value Conflict
 
-Date: 2026-06-30
+Date: 2026-07-02
 
 Chapter: `moral-uncertainty-and-value-conflict`
 
@@ -47,6 +47,10 @@ The reader throughline is:
   engine, tribunal, review institution, or high-impact decision process exists.
 - Preserved the proof/test boundary for `AsiStackProofs.ValueConflict`, the
   `value_conflict_record` schema, and the synthetic value-conflict harness.
+- Added a 2026-07-02 decision-lease example around publishing a redacted
+  failure trace, separating transparency, privacy, safety learning, consent,
+  bounded publication, auditor-only access, revisit conditions, residuals, and
+  support-state non-claims.
 
 ## Meaning-Preservation Checks
 
@@ -80,7 +84,8 @@ The reader throughline is:
   tribunal quality, source-interpretation adequacy, runtime policy behavior,
   deployed conflict handling, stakeholder representation quality,
   institutional legitimacy, RL moral-uncertainty experiment reproduction, or
-  contestable-AI framework implementation.
+  contestable-AI framework implementation, legal-rights determination,
+  privacy-system behavior, or support-state movement.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.
