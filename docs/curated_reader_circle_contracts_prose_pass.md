@@ -36,6 +36,12 @@ Allowed curation scopes used in this pass:
   structural discussion from downstream adoption, requiring workloads,
   baselines, negative controls, metrics, result artifacts, review decisions,
   and non-claim preservation before any quality or deployment claim can move.
+- Added a 2026-07-03 evidence-boundary alignment for the concrete Circle
+  evidence-surface validator, preserving the exact imported receipt facts
+  (`63b0f511`, `CC-AI-CONTRACT-ROPE-001`, requested margin `1/328459`,
+  `theorem_count 55`, `fields=31 missing=0 theorems=75`, seven theorem IDs,
+  fingerprints, recommendation, and consumer-gate mutation controls) as
+  structural receipt traceability only.
 
 ## Meaning Preservation Checks
 
@@ -45,6 +51,7 @@ Allowed curation scopes used in this pass:
 | Support-state boundary preserved | Pass. The chapter core claim remains `argument`. |
 | Source boundary preserved | Pass. No new source IDs, facts, citations, or source-derived claims were added; the external receipt and consumer gate remain bounded structural evidence only. |
 | Proof/test status preserved | Pass. The prose says schema, fixture, Lean, and consumer-gate checks are narrow; it does not claim clean Circle replay, a vendored pack, or downstream workload evidence. |
+| Concrete receipt boundary preserved | Pass. The concrete evidence-surface validator is described as public-surface traceability for a bounded structural receipt lane, not as a rerun, vendored contract pack, resolver-completeness result, workload result, or chapter-core promotion. |
 | Implementation horizon preserved | Pass. The minimum viable implementation includes existing fixtures, Lean predicates, and the Circle consumer gate; the mature endpoint remains a design destination. |
 | Companion-note routing preserved | Pass. The companion note remains drafting support, not release-reviewed evidence. |
 | Release blockers preserved | Pass. Reader release, format review, and curated reconciliation blockers remain active. |
@@ -55,6 +62,10 @@ Allowed curation scopes used in this pass:
 - This pass does not approve the curated chapter, reader release, EPUB, DOCX, PDF, HTML artifact, audio artifact, or audio-embedded EPUB.
 - This pass does not promote any claim support state.
 - This pass does not claim local Circle proof ownership, clean Circle replay, theorem-ID resolver completion, a vendored Circle contract pack, downstream model quality, runtime improvement, memory improvement, context-length improvement, safety, or ASI capability.
+- This pass does not claim that the concrete Circle evidence-surface validator
+  reruns Circle from this repository, vendors the external contract pack,
+  proves resolver completeness, proves downstream workload value, creates a new
+  support transition, or promotes the chapter core claim.
 - This pass does not claim support-state promotion.
 
 ## Remaining Blockers

@@ -265,14 +265,31 @@ SPECIAL_REVIEW_DEFAULTS = {
         ),
     },
     "circle-calculus-and-proof-carrying-ai-contracts": {
-        "review_status": "spot_checked",
-        "review_depth": "medium_priority_manual_review",
-        "dispositions": ["reader_overlay_active", "companion_note_candidate", "no_immediate_action"],
-        "review_refs": ["docs/reader_continuity_review.md#medium-priority-queue-decisions"],
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "reader_overlay_active",
+            "curated_manuscript_candidate",
+            "companion_note_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
+            "docs/curated_reader_circle_contracts_prose_pass.md",
+        ],
         "review_notes": (
-            "Medium-priority density row read; no additional overlay now. The "
-            "theorem-linked receipt boundary should stay visible, with possible "
-            "companion-note or glossary treatment later."
+            "Full generated-reader chapter review recorded. Existing overlays "
+            "keep proof receipt states and mature endpoint prose readable while "
+            "preserving theorem references, deterministic fields, resolver/"
+            "replay status, consumer gates, workload blockers, non-claims, and "
+            "the boundary between structural facts and quality claims. First "
+            "curated reader prose pass is recorded; the 2026-07-03 alignment "
+            "surfaces the concrete Circle evidence-surface validator and exact "
+            "imported receipt facts as bounded structural receipt traceability "
+            "only. Companion-note treatment and release blockers remain active, "
+            "and no Circle replay, vendored contract pack, resolver-completeness, "
+            "workload-value, support-promotion, or reader-artifact claim is "
+            "approved."
         ),
     },
     "policy-optimization-and-learning-from-feedback": {
