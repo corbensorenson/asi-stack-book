@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Spinoza Verification and Proof-Carrying Claims
 
-Date: 2026-06-30
+Date: 2026-07-02
 
 Chapter: `spinoza-verification-and-proof-carrying-claims`
 
@@ -48,6 +48,10 @@ The reader throughline is:
 - Preserved the proof/test boundary for
   `AsiStackProofs.ProofCarryingClaims` and the synthetic
   proof-carrying-claim harness.
+- Added a 2026-07-02 claim-review scenario that splits a broad rollback
+  readiness sentence into formal-record, procedural-replay, and interpretive
+  adequacy claims, then preserves blockers, mismatches, dissent, narrowed
+  wording, and support-state non-claims.
 
 ## Meaning-Preservation Checks
 
@@ -81,7 +85,8 @@ The reader throughline is:
   autoformalization, proof generation, source-interpretation adequacy,
   Proof-Carrying Code implementation, GenesisCode implementation, TreeLLM
   implementation, runtime behavior, deployed contradiction detection,
-  whole-system epistemic correctness, or support-state movement.
+  verifier-output tier assignment, tribunal quality, whole-system epistemic
+  correctness, or support-state movement.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.

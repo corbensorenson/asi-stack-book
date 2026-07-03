@@ -153,6 +153,32 @@ The curated reader spine keeps the same distinction because it is
 meaning-critical. Moving the vocabulary entirely into a companion note would
 make the chapter easier to read but less honest.
 
+## A Proof-Target Receipt Scenario
+
+Consider a small authority claim: "a command cannot widen its tool authority
+unless an approval receipt is present." The proof envelope does not try to prove
+that every future system will obey that rule. It first turns the sentence into a
+finite record target.
+
+The Proof Target Record names the chapter, Lean tag, artifact lane, formal
+target, verifier command, consumer requirements, limitations, and non-claims.
+The Lean module may prove a predicate over a modeled command record: if the
+posterior authority is wider than the prior authority, the modeled record must
+contain an approval receipt. A schema may separately validate that a JSON
+fixture has the required receipt fields. A process validator may check that the
+proof target appears in the manifest, Appendix E, and chapter text. Each lane
+checks a different thing.
+
+The receipt is useful only if its consumer stays inside the boundary. A chapter
+can say the finite modeled invariant builds locally. It cannot say the runtime
+adapter enforces the rule, that a real approval service behaved correctly, that
+a model respected the boundary, or that deployment safety has been proved. If a
+release surface wants to rely on the theorem for deployed enforcement, the
+consumer gate should reject that use or create a semantic-adequacy residual.
+
+This is the practical value of small proofs. They do not settle the broad
+architecture. They stop one narrow overclaim from blending into another.
+
 ## Interfaces
 
 The Proof Target Record is the interface between prose, outline, Lean, schemas,

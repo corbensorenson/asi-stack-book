@@ -1112,6 +1112,7 @@
         "pacing",
         "chapter openings and closings",
         "section flow",
+        "reader examples",
         "transition prose",
         "sentence-level voice",
         "paragraph ordering",
@@ -1123,7 +1124,7 @@
       "voice_pass_slot_ids": [
         "proof-practice"
       ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, and minimum viable implementation boundary were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, proof-target receipt example, and minimum viable implementation boundary were edited for human reading while preserving claim meaning and evidence boundaries.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
@@ -1138,7 +1139,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_executable_specs_prose_pass.md; not release-reviewed."
+      "review_notes": "First prose curation pass and 2026-07-02 proof-target receipt follow-up recorded in docs/curated_reader_executable_specs_prose_pass.md; not release-reviewed."
     },
     {
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
@@ -2221,6 +2222,7 @@
         "chapter openings and closings",
         "paragraph ordering",
         "section flow",
+        "reader examples",
         "transition prose",
         "sentence-level voice",
         "chapter compression"
@@ -2230,7 +2232,7 @@
       "voice_pass_slot_ids": [
         "proof-practice"
       ],
-      "divergence_summary": "Merged curated reader prose pass after verification/adversarial-review consolidation: the active reader chapter now combines proof-carrying claim tiers, justification envelopes, verifier results, failed-attempt memory, tribunal dossiers, adversarial probes, dissent, required actions, ledger writeback, and non-claims while preserving support state, source boundaries, proof/test status, implementation horizons, and release blockers.",
+      "divergence_summary": "Merged curated reader prose pass after verification/adversarial-review consolidation: the active reader chapter now combines proof-carrying claim tiers, justification envelopes, verifier results, failed-attempt memory, tribunal dossiers, adversarial probes, dissent, required actions, ledger writeback, a claim-review reader scenario, and non-claims while preserving support state, source boundaries, proof/test status, implementation horizons, and release blockers.",
       "meaning_preservation_checks": [
         "support-state boundary preserved: chapter core claim remains a Design rationale at argument support",
         "source boundary preserved for spinoza, genesiscode, coherence_exchange, verification_bandwidth, treellm, uat, talos, ext_proof_carrying_code_1997, ext_lean4_theorem_proving, and ext_contestable_ai_design_2022",
@@ -2247,7 +2249,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "Merged drafting-only curated reader prose now targets the executed verification/adversarial-review destination. This is not a release-reviewed chapter, not equal authority with the live book, and not a support-state, proof/test, reviewer-independence, verdict-correctness, runtime, deployed-review, or tribunal-quality claim."
+      "review_notes": "Merged drafting-only curated reader prose now targets the executed verification/adversarial-review destination, with a 2026-07-02 claim-review scenario follow-up recorded in docs/curated_reader_spinoza_prose_pass.md. This is not a release-reviewed chapter, not equal authority with the live book, and not a support-state, proof/test, reviewer-independence, verdict-correctness, runtime, deployed-review, or tribunal-quality claim."
     },
     {
       "chapter_id": "routing-heads-and-specialist-cores",

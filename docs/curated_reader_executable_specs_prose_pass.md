@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Executable Specifications and Lean Proof Envelope
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
 
 Chapter ID: `executable-specifications-and-lean-proof-envelope`
 
@@ -44,6 +44,10 @@ Allowed curation scopes used in this pass:
 - Preserved the Mermaid diagram, core claim, evidence boundary, minimum viable
   implementation, beyond-state-of-the-art endpoint, and handoff to Benchmark
   Ratchets.
+- Added a 2026-07-02 proof-target receipt scenario that separates a finite
+  authority-widening Lean predicate, schema fixture shape, process-validator
+  traceability, consumer requirements, semantic-adequacy residuals, and
+  non-claims about runtime enforcement or approval-service behavior.
 
 ## Meaning Preservation Checks
 
@@ -66,8 +70,8 @@ Allowed curation scopes used in this pass:
   PDF, HTML artifact, audio artifact, or audio-embedded EPUB.
 - This pass does not promote any claim support state.
 - This pass does not claim semantic proof adequacy, broad proof adequacy,
-  deployed enforcement, source-truth validation, model quality, benchmark
-  improvement, safety, or ASI capability.
+  deployed enforcement, approval-service behavior, source-truth validation,
+  model quality, benchmark improvement, safety, or ASI capability.
 
 ## Remaining Blockers
 

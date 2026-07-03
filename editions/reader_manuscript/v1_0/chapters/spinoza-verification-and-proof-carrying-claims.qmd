@@ -153,6 +153,35 @@ become a durable failed-attempt record. A mismatch may route to tribunal
 review. A missing artifact may block the requested tier. The system records
 what happened so the same overclaim cannot return under cleaner prose.
 
+## A Claim-Review Scenario
+
+Suppose the stack produces this claim: "the new replacement controller
+preserves rollback readiness." That sentence is too broad to accept because it
+sounds like both a design statement and an execution result. A verification
+envelope starts by splitting it.
+
+One smaller claim may be formal: a finite transaction record contains a rollback
+owner, prior artifact reference, trigger condition, dry-run status, and monitor
+window. That target can go to a schema, validator, or Lean predicate. Another
+claim may be procedural: a dry run actually happened in a named environment.
+That needs a replay log or procedure record. A third claim may be interpretive:
+the dry run is adequate for the deployment being discussed. That may need
+adversarial review or human sign-off.
+
+If the finite predicate passes but the replay log is missing, the ledger records
+a narrow pass and a procedural blocker. If the replay log exists but the
+environment does not match the proposed deployment, the result becomes semantic
+mismatch or residual. If reviewers disagree about adequacy, the dissent stays
+attached and the claim can be narrowed rather than promoted. The sentence may
+be rewritten as "the synthetic transaction record includes rollback metadata,"
+while the broader rollback-readiness claim remains unpromoted.
+
+That is the chapter in miniature. The system is allowed to use proofs,
+citations, logs, judges, and tribunals, but each one changes only the claim it
+actually checked. This scenario is not a real verifier-output tier assignment,
+not a citation-truth result, not a semantic-equivalence result, not a tribunal
+quality result, and not a support-state promotion.
+
 ## Interfaces
 
 The claim ledger supplies stable identity, support state, provenance,
