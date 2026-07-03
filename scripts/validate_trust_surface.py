@@ -25,6 +25,7 @@ EXPECTED_NON_CORE = {
     "living-book-methodology.phase5_harness_registry_runner": "synthetic-test-backed",
     "resource-economics.costed_route_budget_slice": "synthetic-test-backed",
     "resource-economics.finite_burst_load_smoothing_selector": "synthetic-test-backed",
+    "resource-economics.scoped_workflow_trace_route_selector": "empirical-test-backed",
     "circle-calculus.external_rope_receipt_replay": "prototype-backed",
     "compact-generative-systems.compact_gvr_receipt_slice": "synthetic-test-backed",
 }
@@ -118,7 +119,7 @@ def assert_surface(
         f"{sources} public-safe records",
         f"{chapters}/{chapters} chapters externally positioned",
         "0 explicit external-baseline exceptions",
-        "Five narrow non-core transitions are accepted",
+        "Six narrow non-core transitions are accepted",
         f"{high} high-priority",
         f"{medium} medium-priority",
         f"{long_paragraphs} paragraphs at or above 160 words",
@@ -142,8 +143,8 @@ def assert_surface(
         if phrase not in text:
             errors.append(f"{name} missing non-claim boundary: {phrase}")
 
-    if "five narrow non-core transitions are accepted" not in text.lower():
-        errors.append(f"{name} missing current five-transition count")
+    if "six narrow non-core transitions are accepted" not in text.lower():
+        errors.append(f"{name} missing current six-transition count")
 
     lowered = text.lower()
     for phrase in FORBIDDEN_OVERCLAIMS:

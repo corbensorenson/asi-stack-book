@@ -91,6 +91,7 @@ TRACKED_ARTIFACTS = [
     "docs/v1_x_active_evidence_cycle.md",
     "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
     "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json",
+    "evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json",
     "evidence_transitions/v1_0_pilot/resource_economics_no_change.json",
     "evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json",
     "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -129,7 +130,7 @@ NON_CLAIMS = [
 ]
 
 RESIDUALS = [
-    "Accepted upward transitions remain scoped to non-core Resource claims: costed-route selection and finite synthetic load-smoothing selection, not the chapter core claim.",
+    "Accepted upward transitions remain scoped to non-core Resource claims: costed-route selection, finite synthetic load-smoothing selection, and local scoped workflow-trace route selection, not the chapter core claim.",
     "Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.",
     "Load-stability evidence is a finite synthetic burst-review workload with residualized deferrals, not a production queue trace.",
     "CI cost evidence is publication-pipeline metadata, not a scheduler or economic-result measurement.",
@@ -204,6 +205,9 @@ def build_component_summary() -> dict[str, Any]:
     load_transition = load_json(
         "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json"
     )
+    workload_transition = load_json(
+        "evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json"
+    )
     no_change = load_json("evidence_transitions/v1_0_pilot/resource_economics_no_change.json")
     workflow = load_json("experiments/resource_workflow_trace/results/2026-07-01-local.json")
     live = load_json("experiments/resource_live_probe/results/2026-07-01-local.json")
@@ -242,6 +246,18 @@ def build_component_summary() -> dict[str, Any]:
             "negative_control_route_id": load_stability.get("negative_control_route_id"),
             "selected_vs_baseline_instability_reduction_percent": load_stability.get(
                 "selected_vs_baseline_instability_reduction_percent"
+            ),
+        },
+        "workload_quality_accepted_transition": {
+            "claim_id": workload_transition.get("claim_id"),
+            "new_support_state": workload_transition.get("new_support_state"),
+            "transition_validity_state": workload_transition.get("transition_validity_state"),
+            "support_state_effect": workload_transition.get("support_state_effect"),
+            "selected_route_id": workload.get("selected_route_id"),
+            "baseline_route_id": workload.get("baseline_route_id"),
+            "negative_control_route_id": workload.get("negative_control_route_id"),
+            "observed_selected_vs_baseline_elapsed_reduction_percent": workload.get(
+                "observed_selected_vs_baseline_elapsed_reduction_percent"
             ),
         },
         "chapter_core_decision": {
@@ -336,6 +352,7 @@ def build_record() -> dict[str, Any]:
         "accepted_transition_refs": [
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json",
+            "evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json",
         ],
         "no_promotion_decision_refs": NO_PROMOTION_DECISION_REFS,
         "summary": (

@@ -111,7 +111,7 @@ the project is honest. The README, landing page, and Human view should make
 these facts visible quickly:
 
 - all 44 chapter core claims remain `argument`;
-- five bounded non-core transitions exist and are narrow;
+- six bounded non-core transitions exist and are narrow;
 - Lean coverage is broad but still shallow in safety-critical areas;
 - external literature is an active grounding workstream, not a completed claim
   that every chapter is already well-cited;

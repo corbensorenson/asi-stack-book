@@ -197,6 +197,9 @@ FORBIDDEN_PUBLIC_STALE_STRINGS = [
     "Four narrow non-core evidence transitions accepted",
     "Four narrow non-core transitions",
     "four accepted non-core upward transitions",
+    "Five narrow non-core evidence transitions accepted",
+    "Five narrow non-core transitions",
+    "five accepted non-core upward transitions",
 ]
 
 
@@ -282,13 +285,13 @@ def main() -> None:
             f"{source_count} public-safe records",
             f"{chapter_count}/{chapter_count} chapters externally positioned",
             "0 explicit external-baseline exceptions",
-            "Five narrow non-core evidence transitions accepted",
-            "Five narrow non-core transitions are accepted",
+            "Six narrow non-core evidence transitions accepted",
+            "Six narrow non-core transitions are accepted",
         ],
         "README.md": [
             f"all {chapter_count} chapters have source-noted external positioning records",
             "0 explicit external-baseline exceptions",
-            "Five narrow non-core transitions are accepted",
+            "Six narrow non-core transitions are accepted",
             f"{chapter_count} of {chapter_count} chapters currently have in-prose `ext_*` positioning",
             "0 carry explicit exceptions",
         ],
@@ -297,7 +300,7 @@ def main() -> None:
             "0 have explicit external-baseline exceptions",
             f"{chapter_count} source-noted chapters",
             "0 explicit exceptions",
-            "five accepted non-core upward transitions",
+            "six accepted non-core upward transitions",
             "183 proof targets",
             "Fifty-five synthetic",
         ],

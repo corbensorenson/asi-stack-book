@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-03 - Accept workload-quality selector transition
+
+- Added
+  `evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json`
+  for the bounded local selector claim
+  `resource-economics.scoped_workflow_trace_route_selector`.
+- The accepted transition is scoped to
+  `resource-workflow-trace-integrity-review`: five local samples per route
+  select the scoped workflow-trace validator over the broader Resource
+  live-probe baseline while rejecting a cheaper no-op success-text route that
+  exits 0 without producing the required validation surface.
+- Updated the non-core evidence ledger, trust surfaces, Resource flagship lane,
+  active evidence cycle, Evidence States audit surfaces, and v1.x roadmap to
+  report six accepted non-core upward transitions while keeping all 44 chapter
+  core claims at `argument`.
+- Boundary: this does not prove stable speedup, production workload quality,
+  deployed scheduler behavior, TokenMana behavior, PlanForge behavior, model
+  quality, benchmark performance, safety, economic outcomes, source
+  interpretation, or ASI capability, and it does not promote any chapter core
+  claim.
+
 ## 2026-07-03 - Add human oversight degradation fixture
 
 - Added `scripts/validate_human_oversight_degradation.py`,

@@ -40,6 +40,29 @@ Result record:
 | Chapter-core support effect | `none` |
 | Evidence transition created | `false` |
 
+## Accepted Narrow Claim
+
+The tracked result record above did not itself create a support-state
+transition. A later bounded evidence-transition review now scopes the exact
+local selector claim as
+`resource-economics.scoped_workflow_trace_route_selector` and accepts it as
+`empirical-test-backed` in
+`evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json`.
+
+That transition is narrower than the broader workload-quality probe. It says
+only that, for the repository task
+`resource-workflow-trace-integrity-review`, five measured local samples per
+route supported selecting the scoped workflow-trace validator over the broader
+Resource live-probe baseline while rejecting the cheaper no-op success-text
+route that exited 0 without producing the required validation surface. The
+broader claim
+`resource-economics.local_workload_quality_route_selection` remains blocked by
+`evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json`.
+No Resource Economics chapter core claim, stable-speedup claim, deployed
+scheduler claim, TokenMana claim, PlanForge claim, production workload claim,
+model-quality claim, benchmark claim, safety claim, economic claim, or
+source-interpretation claim moved.
+
 ## Route Records
 
 | Route | Command | Median elapsed | Range | Quality result | Selection result |
@@ -88,7 +111,9 @@ simulation benchmark, or external review.
 
 - This workload-quality probe does not promote any chapter core claim above
   `argument`.
-- This workload-quality probe does not create a support-state transition.
+- This workload-quality probe's original result record does not create a
+  support-state transition; the later accepted transition is scoped only to
+  `resource-economics.scoped_workflow_trace_route_selector`.
 - This workload-quality probe does not prove stable speedup, deployed scheduler
   behavior, TokenMana behavior, PlanForge behavior, model quality, economic
   outcomes, physical feasibility, simulator adequacy, or workload-quality

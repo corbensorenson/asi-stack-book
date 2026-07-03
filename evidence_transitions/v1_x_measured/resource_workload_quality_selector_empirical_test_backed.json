@@ -1,0 +1,104 @@
+{
+  "transition_id": "v1_x_measured.resource_workload_quality_selector.empirical_test_backed",
+  "claim_id": "resource-economics.scoped_workflow_trace_route_selector",
+  "claim_surface_refs": [
+    "docs/resource_workload_quality_probe.md",
+    "docs/resource_flagship_lane_run.md",
+    "docs/evidence_transition_pilot.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
+    "scripts/run_resource_workload_quality_probe.py",
+    "scripts/validate_resource_workload_quality_probe.py",
+    "schemas/evidence_transition_record.schema.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "empirical-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded local repository-task selector claim moves to empirical-test-backed: for `resource-workflow-trace-integrity-review`, the validator records five measured samples for each route, selects the scoped workflow-trace validator over the broader local Resource live-probe baseline by median elapsed time, and rejects a cheaper no-op success-text command because it does not produce the required validation surface. This does not move the Resource Economics chapter core claim, the broader local workload-quality claim, or any stable-speedup, deployed-scheduler, TokenMana, PlanForge, economic, model-quality, safety, benchmark, or production workload claim.",
+  "evidence_roles": [
+    "local_five_sample_route_measurement",
+    "eligible_overbroad_baseline",
+    "selected_scoped_validator_route",
+    "cheaper_no_op_negative_control",
+    "required_output_quality_gate",
+    "public_safe_result_record"
+  ],
+  "transition_reason": "The local validation command replays the recorded workload-quality probe and checks the route records, five-sample medians, command-output digests, tracked artifact hashes, selected/baseline/negative-control relationships, residuals, and non-claim boundary. The selected scoped validator route passed quality for all five samples and had a lower median elapsed time than the broader baseline. The no-op route also exited 0 and was cheaper than the selected route, but it was rejected because it did not run the required workflow-trace validator or emit the required output. That is enough to accept the narrow local scoped-route selector claim while preserving the existing no-change record for broader workload-quality, stable speedup, deployed scheduling, and chapter-core claims.",
+  "required_artifacts": [
+    "tracked local workload-quality result record",
+    "workload-quality validation command",
+    "eligible broader Resource live-probe baseline",
+    "selected scoped workflow-trace validator route",
+    "cheaper no-op success-text negative-control rejection",
+    "stable command-output digest checks",
+    "tracked artifact digest checks",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/resource_workload_quality_probe.md",
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
+    "scripts/run_resource_workload_quality_probe.py",
+    "scripts/validate_resource_workload_quality_probe.py",
+    "evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json",
+    "scripts/validate_evidence_transitions.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/resource_workload_quality_probe.md",
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
+    "docs/resource_flagship_lane_run.md",
+    "docs/evidence_transition_pilot.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "docs/resource_workload_quality_probe.md#result-record",
+    "docs/resource_workload_quality_probe.md#route-records",
+    "docs/resource_workload_quality_probe.md#boundary"
+  ],
+  "verification_command": "python3 scripts/validate_resource_workload_quality_probe.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "route://negative-no-op-success-text is rejected even though it exits 0 and is cheaper than the selected route",
+    "the selected route remains scoped to the workflow-trace validator and does not replace the broader Resource live-probe baseline",
+    "the existing no-change record for resource-economics.local_workload_quality_route_selection remains in force for broader workload-quality, stable-speedup, deployed-scheduler, and economic claims",
+    "no Resource Economics chapter core claim is promoted above argument",
+    "no deployed scheduler, production workload, TokenMana, PlanForge, model-quality, benchmark, safety, source-interpretation, or economic outcome is claimed"
+  ],
+  "negative_evidence_refs": [
+    "docs/resource_workload_quality_probe.md",
+    "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
+    "evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json"
+  ],
+  "downgrade_triggers": [
+    "workload-quality validator fails",
+    "selected route no longer satisfies the required workflow-trace output",
+    "selected route is no longer cheaper than the broader baseline in the recorded local result",
+    "negative no-op success-text route is accepted or loses its quality failure",
+    "tracked artifact digests drift without regenerating and reviewing the result",
+    "chapter or public prose describes this transition as stable speedup, real workload quality, deployed scheduling, TokenMana, PlanForge, model-quality, benchmark, safety, economic, or chapter-core evidence"
+  ],
+  "promotion_burden": "Broader Resource Economics workload-quality, scheduler, cost-quality, or speed claims require a separate accepted transition with public-safe workload suites, controlled repeated measurements, residual and human-repair accounting, live or externally reviewed traces, production or replayable scheduler logs where relevant, and independent review.",
+  "limitations": [
+    "five local samples per route only",
+    "single repository task",
+    "machine-load and cache-state sensitive timing",
+    "no production workload, public task suite, human-repair accounting, deployed scheduler, TokenMana, PlanForge, model-quality, safety, benchmark, or economic measurement",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent workload-quality, scheduler, economics, benchmarking, human-outcome, or external safety audit",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-03---accept-workload-quality-selector-transition",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not prove stable speedup, production workload quality, deployed scheduler behavior, TokenMana behavior, PlanForge behavior, model quality, benchmark performance, safety, economic outcomes, or ASI capability",
+    "does not prove source interpretation, external workload adequacy, human-repair savings, or simulator adequacy",
+    "does not replace future public workload suites, controlled measurement studies, live traces, production logs, hidden-cost audits, or independent review"
+  ]
+}

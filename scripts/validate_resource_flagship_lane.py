@@ -89,6 +89,7 @@ def validate_record_shape(value: dict[str, Any], errors: list[str]) -> None:
     if value.get("accepted_transition_refs") != [
         "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
         "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json",
+        "evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json",
     ]:
         errors.append(f"{rel(RESULT)}: accepted_transition_refs must name the bounded Resource transitions.")
     if value.get("no_promotion_decision_refs") != NO_PROMOTION_DECISION_REFS:
@@ -156,6 +157,16 @@ def validate_component_summary(value: dict[str, Any], errors: list[str]) -> None
         errors.append(f"{rel(RESULT)}: load-stability transition support effect must stay bounded.")
     if load_transition.get("selected_route_id") != "route://selected-protected-capacity-smoothing":
         errors.append(f"{rel(RESULT)}: load-stability transition selected route mismatch.")
+
+    workload_transition = recorded.get("workload_quality_accepted_transition", {})
+    if workload_transition.get("claim_id") != "resource-economics.scoped_workflow_trace_route_selector":
+        errors.append(f"{rel(RESULT)}: workload-quality transition must stay scoped to the local selector claim.")
+    if workload_transition.get("new_support_state") != "empirical-test-backed":
+        errors.append(f"{rel(RESULT)}: workload-quality transition must be empirical-test-backed.")
+    if workload_transition.get("support_state_effect") != "eligible_for_bounded_evidence_review":
+        errors.append(f"{rel(RESULT)}: workload-quality transition support effect must stay bounded.")
+    if workload_transition.get("selected_route_id") != "route://selected-scoped-workflow-trace-validator":
+        errors.append(f"{rel(RESULT)}: workload-quality transition selected route mismatch.")
 
     core = recorded.get("chapter_core_decision", {})
     if core.get("claim_id") != "resource-economics-and-token-budgets.core":
@@ -238,6 +249,7 @@ def validate_doc(errors: list[str]) -> None:
         rel(RESULT),
         "resource-economics.costed_route_budget_slice",
         "resource-economics.finite_burst_load_smoothing_selector",
+        "resource-economics.scoped_workflow_trace_route_selector",
         "resource-economics-and-token-budgets.core",
         "route://bounded-transform-plus-verifier",
         "route://selected-scoped-workflow-trace-validator",

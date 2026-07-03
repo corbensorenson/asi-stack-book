@@ -52,6 +52,16 @@ the Resource Economics chapter core claim.
 
 | Field | Value |
 |---|---|
+| Workload-quality selector claim | `resource-economics.scoped_workflow_trace_route_selector` |
+| Selected route | `route://selected-scoped-workflow-trace-validator` |
+| Baseline route | `route://baseline-full-resource-lane-replay` |
+| Negative control | `route://negative-no-op-success-text` |
+| Observed selected-vs-baseline median elapsed reduction | 83.334 percent |
+| New support state | `empirical-test-backed` |
+| Transition state | `review_accepted` |
+
+| Field | Value |
+|---|---|
 | Load-stability claim | `resource-economics.finite_burst_load_smoothing_selector` |
 | Selected route | `route://selected-protected-capacity-smoothing` |
 | Baseline route | `route://baseline-admit-arrivals` |
@@ -86,7 +96,10 @@ without creating new upward transitions.
 ## Measured Workload-Quality Slice
 
 The local workload-quality probe selected a scoped validator over a broader
-baseline while rejecting a cheaper no-op route.
+baseline while rejecting a cheaper no-op route. The original probe result
+records support-state effect `none`; the later accepted transition moves only
+the exact local selector claim
+`resource-economics.scoped_workflow_trace_route_selector`.
 
 | Role | Route | Median elapsed | Decision |
 |---|---|---:|---|
@@ -111,7 +124,7 @@ Observed selected-vs-baseline instability reduction: 100.0 percent.
 
 ## Residuals
 
-- The accepted upward transitions remain scoped to `resource-economics.costed_route_budget_slice` and `resource-economics.finite_burst_load_smoothing_selector`, not the chapter core claim.
+- The accepted upward transitions remain scoped to `resource-economics.costed_route_budget_slice`, `resource-economics.scoped_workflow_trace_route_selector`, and `resource-economics.finite_burst_load_smoothing_selector`, not the chapter core claim.
 - Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.
 - Load-stability evidence is a finite synthetic burst-review workload with residualized deferrals, not a production queue trace.
 - CI cost evidence is publication-pipeline metadata, not a scheduler or economic-result measurement.
@@ -120,6 +133,6 @@ Observed selected-vs-baseline instability reduction: 100.0 percent.
 ## Non-Claims
 
 - This run does not promote the Resource Economics chapter core claim above `argument`.
-- This run does not create a new support-state transition.
+- This run's result record does not create a new support-state transition.
 - This run does not prove deployed scheduler behavior, production queue behavior, TokenMana behavior, PlanForge behavior, KV-cache behavior, simulator adequacy, model quality, benchmark performance, safety outcomes, human productivity, or economic outcomes.
 - This run is a local repository replay over tracked public-safe artifacts, not external review, live workload review, production scheduler logs, or artifact approval.
