@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-03 - Convert reader voice slots into optional enrichment queue
+
+- Added `editions/reader_manuscript/v1_0/author_enrichment_queue.json` as the
+  sidecar queue for twelve optional Corben author-enrichment prompts converted
+  from the legacy reader voice-pass slots.
+- Updated `editions/reader_manuscript/v1_0/manifest.json` so each legacy
+  voice-pass ID now has a sidecar ref, `release_blocking: false`, and
+  `manuscript_gap_status: no_gap_finished_third_person`, preserving the
+  no-fabricated-first-person boundary without leaving manuscript gaps.
+- Extended `scripts/validate_reader_manuscript_manifest.py` to validate the
+  author-enrichment queue, sidecar refs, non-blocking status, source chapter
+  IDs, non-claims, and third-person completion boundary; updated reader status
+  docs, the roadmap, and the v1 status snapshot validator to treat voice
+  conversion as artifact-backed while keeping reader release, format review,
+  figure review, and edition release records blocked.
+
 ## 2026-07-03 - Reconcile final Part IV reader synthesis arc
 
 - Updated the curated reader manuscript chapters `Integrated Reference

@@ -11,8 +11,9 @@ files.
 The same validator also checks the reader handoff contract embedded in
 `editions/reader_manuscript/v1_0/manifest.json`. That handoff contract records
 the book-level human-reader thesis, part arcs, recurring signature ideas,
-key-figure targets, Corben voice-pass slots, and per-chapter stakes/payoffs.
-It is editorial scaffolding for review, not a reader release record.
+key-figure targets, converted optional author-enrichment prompts, and
+per-chapter stakes/payoffs. It is editorial scaffolding for review, not a reader
+release record.
 
 ## Relationship To The Live Book
 
@@ -63,7 +64,7 @@ Every future curated chapter record must name:
 - the claim-boundary and implementation-horizon references;
 - the allowed curation scope used by the edit;
 - chapter-specific reader stakes and reader payoff;
-- the Corben voice-pass slot IDs that should be reviewed before final prose;
+- the optional author-enrichment slot IDs that may later guide Corben-supplied first-person additions;
 - a divergence summary;
 - meaning-preservation checks;
 - active release blockers;
@@ -71,8 +72,9 @@ Every future curated chapter record must name:
 
 `python3 scripts/validate_reader_manuscript_manifest.py` enforces this contract.
 It also requires the top-level handoff contract to preserve its single thesis,
-part arcs, 8-12 signature ideas, 8-12 key-figure targets, and 8-12 author
-voice-pass slots without fabricating first-person experience.
+part arcs, 8-12 signature ideas, 8-12 key-figure targets, and 8-12 optional
+author-enrichment records with sidecar refs, non-blocking release status, and
+no permission to fabricate first-person experience.
 
 To initialize a future curated chapter without hand-building the record, first
 generate the reader baseline, then run the initializer in dry-run mode:

@@ -8,8 +8,8 @@ curated chapter records: zero drafting and forty-four reconciled for prose
 meaning, with no active manifest chapter missing a curated reader file. It also
 records a machine-checked reader handoff contract: one book-level thesis, four
 part arcs, ten recurring signature ideas, ten key-figure targets with
-validator-checked draft assets and placements, twelve Corben voice-pass slots,
-and per-chapter stakes/payoff fields. None are release-approved, and none are
+validator-checked draft assets and placements, twelve optional Corben author-enrichment prompts converted into
+`v1_0/author_enrichment_queue.json`, and per-chapter stakes/payoff fields. None are release-approved, and none are
 equal authority beside the live book. The live Quarto book, generated reader
 edition, and reader overlays remain the active release path until format artifact
 review and an edition release record actually exist; curated-reader prose
@@ -31,10 +31,11 @@ python3 scripts/validate_reader_key_figures.py
 python3 scripts/sync_reader_chapter_review_matrix.py --check
 ```
 
-The handoff metadata is not a substitute for Corben's review. Voice-pass slots
-mark where author-supplied first-person experience, project history, conviction,
-or final cadence is needed; agent-written prose must not fill those slots as if
-it were approved authorial voice.
+The handoff metadata is not a substitute for Corben's review. The author
+enrichment queue marks optional places where author-supplied first-person
+experience, project history, conviction, or final cadence could later enrich the
+book; it is not a manuscript gap, not a release blocker, and not permission for
+agent-written prose to impersonate approved authorial voice.
 
 Generated reader files under `build/reader_edition/` are still disposable. Do not copy or hand-edit them here as a release shortcut. The durable reader-review queue is `v1_0/chapter_review_matrix.json`, with a public summary at `docs/reader_chapter_review_matrix.md`; run `python3 scripts/sync_reader_chapter_review_matrix.py --write` after chapter, overlay, or review-decision changes. A curated chapter belongs here only after a review decision says overlays are too small for the intended human-reader edit and the chapter has a reconciliation record back to the live manifest chapter.
 

@@ -1,0 +1,203 @@
+{
+  "schema_version": "0.1",
+  "major_version": "v1.0",
+  "status": "sidecar_optional_enrichment_queue",
+  "relationship": "optional_author_supplied_enrichment_not_release_blocker",
+  "source": "reader_handoff_contract.corben_voice_pass_slots",
+  "policy": "The reader manuscript must remain complete in third-person prose without these prompts. These records only preserve places where Corben may later add author-supplied first-person experience, project history, conviction, or cadence. Codex must not fabricate that material and no release approval depends on these prompts being answered.",
+  "records": [
+    {
+      "slot_id": "opening-origin",
+      "location": "Opening thesis passages",
+      "source_chapter_ids": [
+        "asi-is-a-stack-not-a-model",
+        "the-efficient-asi-hypothesis"
+      ],
+      "optional_author_prompt": "Corben should supply the plain-language reason this architecture matters and the reader promise the opening must carry.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "boundary-scar",
+      "location": "Boundary and failure passages",
+      "source_chapter_ids": [
+        "system-boundaries-and-authority",
+        "failure-modes-of-ungoverned-intelligence",
+        "security-kernel-and-digital-scifs"
+      ],
+      "optional_author_prompt": "Corben should decide which real project pressures made authority boundaries and failure obligations feel non-negotiable.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "evidence-discipline",
+      "location": "Evidence honesty passages",
+      "source_chapter_ids": [
+        "evidence-states-and-claim-discipline",
+        "benchmark-ratchets-and-anti-goodhart-evidence"
+      ],
+      "optional_author_prompt": "Corben should provide the authorial language for why support states, demotions, and no-promotion decisions deserve reader trust.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "human-stakes",
+      "location": "Human and governance passages",
+      "source_chapter_ids": [
+        "human-intent-as-a-formal-input",
+        "constitutional-alignment-substrate",
+        "moral-uncertainty-and-value-conflict"
+      ],
+      "optional_author_prompt": "Corben should choose the human stakes vocabulary for intent, dignity, corrigibility, moral uncertainty, and contestable governance.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "improvement-governance",
+      "location": "Improvement and replacement passages",
+      "source_chapter_ids": [
+        "stable-capability-fields",
+        "capability-replacement-and-rollback",
+        "recursive-self-improvement-boundaries"
+      ],
+      "optional_author_prompt": "Corben should state the desired reader feeling around upgrades, rollback, stable capability identity, and recursive improvement limits.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "execution-craft",
+      "location": "Execution trace passages",
+      "source_chapter_ids": [
+        "intent-to-execution-contracts",
+        "labor-os-and-typed-jobs",
+        "artifact-graphs-audit-logs-and-replay",
+        "runtime-adapters-tool-permissions-and-human-approval",
+        "procedural-memory-and-cognitive-loop-closure"
+      ],
+      "optional_author_prompt": "Corben should mark where concrete implementation memory can make contracts, jobs, adapters, artifact graphs, and procedures feel lived-in.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "memory-experience",
+      "location": "Context and memory passages",
+      "source_chapter_ids": [
+        "cognitive-compilation-and-semantic-ir",
+        "virtual-context-abi",
+        "context-transactions-snapshots-mounts-and-taint",
+        "verification-bandwidth-and-context-adequacy",
+        "claim-ledgers-and-belief-revision"
+      ],
+      "optional_author_prompt": "Corben should identify the most intuitive way to make accountable context, taint, verification bandwidth, and belief revision memorable.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "resource-tradeoff",
+      "location": "Efficiency and resource passages",
+      "source_chapter_ids": [
+        "routing-heads-and-specialist-cores",
+        "personal-compute-hives-and-federated-edge-intelligence",
+        "compact-generative-systems-and-residual-honesty",
+        "fast-generation-architectures",
+        "rankfold-neuralfold-and-artifact-compression",
+        "resource-economics-and-token-budgets"
+      ],
+      "optional_author_prompt": "Corben should supply the practical resource tradeoffs that make routing, owned compute, fast generation, compression, and budgets feel concrete.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "substrate-curiosity",
+      "location": "Mathematical substrate passages",
+      "source_chapter_ids": [
+        "mathematical-and-search-substrates",
+        "circle-calculus-and-proof-carrying-ai-contracts",
+        "coil-attention-cyclic-memory-and-recurrence-contracts",
+        "coilra-multicoil-rope-and-cyclic-mixers"
+      ],
+      "optional_author_prompt": "Corben should decide how much wonder, restraint, and falsifiability belongs in the mathematical and cyclic substrate chapters.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "proof-practice",
+      "location": "Formal proof passages",
+      "source_chapter_ids": [
+        "executable-specifications-and-lean-proof-envelope",
+        "spinoza-verification-and-proof-carrying-claims",
+        "circle-calculus-and-proof-carrying-ai-contracts"
+      ],
+      "optional_author_prompt": "Corben should choose the practical language for formal proofs as useful receipts rather than claims of total correctness.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "implementation-history",
+      "location": "Implementation reference passages",
+      "source_chapter_ids": [
+        "integrated-reference-architecture",
+        "project-theseus-as-report-first-implementation-reference",
+        "prototype-roadmap",
+        "artifact-steward-agents-and-living-project-governance"
+      ],
+      "optional_author_prompt": "Corben should provide project-history context for Theseus, reference traces, artifact stewardship, and prototype order where public-safe.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    },
+    {
+      "slot_id": "reader-close",
+      "location": "Closing research passages",
+      "source_chapter_ids": [
+        "living-book-methodology",
+        "open-research-agenda-and-bibliography-plan"
+      ],
+      "optional_author_prompt": "Corben should decide the closing invitation, unresolved questions, and reader handoff for the living-book method and open agenda.",
+      "manuscript_gap_status": "no_gap_finished_third_person",
+      "release_blocking": false,
+      "must_not_fabricate": true,
+      "converted_from_legacy_voice_pass_slot": true,
+      "curation_boundary": "Optional author-supplied first-person or project-history material may enrich a later edition, but the current reader manuscript must stand in finished third-person prose without this input and may not claim Corben experience unless he supplies it."
+    }
+  ],
+  "non_claims": [
+    "This queue is not a reader release record.",
+    "This queue does not approve EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts.",
+    "This queue does not promote any claim support state.",
+    "This queue does not permit agent-written first-person authorial experience.",
+    "This queue does not make author input a blocker for finished third-person reader prose."
+  ]
+}

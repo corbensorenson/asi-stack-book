@@ -2440,19 +2440,17 @@ Current status:
 - The same manifest now carries a validated `reader_handoff_contract` with one
   book-level thesis, four part arcs, ten recurring signature ideas, ten
   key-figure targets with draft assets, text-equivalent chapter anchors, and
-  curated reader-manuscript placements, twelve recorded legacy voice-pass
-  slots, and per-chapter stakes/payoffs. Per the 2026-07-02 direction, those
-  twelve slots must be converted: write each location to finished third-person
-  quality and move the enrichment prompts into the sidecar queue so the
-  manuscript carries zero gaps. `scripts/validate_reader_key_figures.py` now
-  checks the draft SVG metadata, live chapter text equivalents, reader
-  placements, captions, alt text, and non-claim boundaries, while
-  `scripts/validate_reader_key_figure_html_probe.py` checks rendered curated
-  reader HTML DOM presence for the same ten figures. This closes the
-  machine-checkable handoff metadata, draft key-figure placement, and rendered
-  HTML DOM gap, but it does not approve the prose, fabricate authorial
-  experience, visually review the figures
-  as final art, or create an edition release artifact.
+  curated reader-manuscript placements, twelve legacy voice-pass IDs converted
+  into the optional sidecar queue
+  `editions/reader_manuscript/v1_0/author_enrichment_queue.json`, and
+  per-chapter stakes/payoffs. Each former voice-pass record now has a sidecar
+  ref, `release_blocking: false`, and `manuscript_gap_status:
+  no_gap_finished_third_person`; `scripts/validate_reader_manuscript_manifest.py`
+  checks those fields and the matching sidecar records. This closes the
+  machine-checkable handoff metadata, optional author-enrichment queue, draft
+  key-figure placement, and rendered HTML DOM gap, but it does not approve the
+  prose, fabricate authorial experience, visually review the figures as final
+  art, or create an edition release artifact.
 - `scripts/build_curated_reader_edition.py --check` now validates that the
   tracked curated reader manuscript maps to the 44 active manifest chapters,
   preserves the required release blockers, and can be assembled as Quarto
@@ -2875,18 +2873,19 @@ Current status:
 - Partially executed. The reader-manuscript manifest now records and validates
   the thesis, part arcs, recurring signature ideas, key-figure targets with
   draft assets, text-equivalent chapter anchors, validator-checked
-  reader-manuscript placements, chapter-level stakes/payoffs, and recorded
-  legacy voice-pass-slot records. This is handoff structure only; it is not
+  reader-manuscript placements, chapter-level stakes/payoffs, and twelve
+  optional author-enrichment sidecar entries converted from the legacy
+  voice-pass slots. This is handoff and enrichment structure only; it is not
   source evidence, external review, support-state evidence, final figure
-  review, authorial approval, or release approval. Per the 2026-07-02
-  direction the recorded slots are conversion work, not waiting work: each
-  becomes finished prose plus a sidecar enrichment entry.
-- The current curated reader manuscript remains pre-release and mostly
-  drafting. Per the 2026-07-02 direction, Codex finishes it: every reader
-  chapter is pushed to
-  finished authored quality in third person, the enrichment queue stays a
-  sidecar, and graduation out of drafting does not wait on author-supplied
-  voice language.
+  review, authorial approval, release approval, or permission to fabricate
+  first-person material.
+- The current curated reader manuscript remains pre-release and `drafting` as
+  an edition status, but chapter-level prose reconciliation is complete across
+  all 44 active records. Per the 2026-07-02 direction, the enrichment queue
+  stays a sidecar, the manuscript carries no empty author-voice slots, and
+  graduation out of `drafting` now waits on release-quality continuity,
+  format-specific review, exact artifacts, and an edition release record, not
+  author-supplied voice language.
 - The ten draft key figures are now embedded/adapted into the curated reader
   manuscript where they serve the reader arc, not only the live AI/research
   chapters. Each placement carries a caption, alt text, and a non-claim
@@ -3166,7 +3165,7 @@ should close these lanes as artifacts, not as new reviews.
 | Lane | A+ closure artifact | Do not count as closure |
 |---|---|---|
 | Burn-down truth | Milestone 2.5 rows are reconciled against existing artifacts first, with each row closed by artifact or dated to one remaining blocker. | A refreshed review paragraph, grade, or status note. |
-| Reader manuscript | All 44 curated reader chapters are reconciled, voice-pass slots are converted into finished prose plus sidecar enrichment prompts, the Part III/IV arcs are edited, and the edition has a release record naming exact built artifacts and blockers. | Generated reader projection, local render success, or `drafting` files. |
+| Reader manuscript | All 44 curated reader chapters are reconciled, legacy voice-pass slots are converted into optional non-blocking sidecar enrichment prompts, the Part III/IV arcs are edited, and the edition has a release record naming exact built artifacts and blockers. | Generated reader projection, local render success, or `drafting` files. |
 | Contribution focus | Three to five defended contribution tracks stay selected, at most three are active deep-work tracks, and each active track has a concrete next evidence/proof/source artifact. | Treating all 44 chapters as simultaneous flagship campaigns. |
 | Evidence disposition | Every chapter core claim has a standing disposition record: accepted transition, explicit no-promotion decision, demotion/refutation, or exactly what evidence would move it. | Implied status from prose, validator count, or source assignment. |
 | Formal depth | Safety-critical and v1-critical lanes either reach executable-model grade through transition invariants, trace properties, or Lean/Python fixture-equivalence checks, or carry projection-only limitation prose that matches the proof-adequacy review. | More theorem declarations that restate field presence or expand coverage without richer semantics. |
@@ -3193,10 +3192,11 @@ defect with the same severity as one that overstates it.
 
 ### Remaining distance as of 2026-07-03
 
-- Test 1: reader arc reconciliation is complete through Part II only; Parts
-  III and IV arcs remain. Twelve recorded voice-pass slots still need
-  conversion to finished prose plus sidecar enrichment entries. Live-edition
-  chapter-length watchlist remains open for the largest chapters.
+- Test 1: reader arc reconciliation is complete across all 44 active curated
+  reader chapters, and the twelve legacy voice-pass slots are converted into
+  optional non-blocking sidecar enrichment entries. Live-edition chapter-length
+  watchlist, release-quality continuity polish, exact format review, and an
+  edition release record remain open.
 - Test 2: no edition build or release record beyond the 2026-06-29 reader
   HTML; EPUB/DOCX/PDF remain probe-level; audio remains script-probe-level;
   visual identity review not started.
@@ -3226,7 +3226,7 @@ defect with the same severity as one that overstates it.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode with the Grade-To-A-Plus Map as the priority compass, the Logical Conclusion section as the completion compass, and the A+ Completion Execution Lattice as the anti-diffusion rule: the target is A+ on every graded dimension for both editions of every chapter, the end state is the five Logical Conclusion tests, and per the 2026-07-02 direction nothing waits on Corben — his editing pass comes last, over a finished book. Standing first action of every run, before any new work: reconcile the Milestone 2.5 burn-down against artifacts that already exist, in both directions — any batch whose closure classes all have named artifacts must be marked closed by artifact in that same run, or carry a dated blocker naming the one remaining closure class. First priority: finish the human-reader edition. Complete the part-arc reconciliation that currently stops at Part II by reconciling the Part III and Part IV reader arcs; convert the twelve recorded voice-pass slots into finished prose plus sidecar enrichment entries so the manuscript carries zero gaps; extend the refine/table-density/long-paragraph treatment until all 44 reader chapters read at the level of the current best ones; realize the thesis, part arcs, and 8-12 signature ideas in the prose itself (openings, endings, transitions), writing conviction and stakes to finished quality in third person; never invent first-person experience, personal conviction, or authorial lessons. Then build the edition — HTML, EPUB, DOCX, and PDF where local dependencies allow — run the format validators and application-level checks the format-review matrix defines, and produce an edition release record so "drafting" becomes a release state. Second priority: evidence cadence. Strengthen one measured lane per cycle to an accepted narrow non-core transition (load-stability and workload-quality are closest), import the next public-safe Circle or Theseus result CI-verifiable by digest or replay, record demotions, rejections, and no-promotion decisions honestly, and begin recording per-chapter core-claim dispositions (what evidence would move each core claim, per Logical Conclusion Test 3). Third: build one executable-model proof bridge tied to a live evidence lane — a transition-system invariant, trace property, or Lean/Python fixture-equivalence check — instead of chasing theorem count. Fourth: execute the live-edition craft watchlist — move bulky tables, validator minutiae, and repeated caveats to companion or live-only surfaces where evidence boundaries allow, and bring one anchor section per part to showpiece-trace caliber. Close lattice lanes through existing artifacts whenever possible: contribution-track records, source notes, Appendix H, proof adequacy, evidence transitions, reader manifests, format-review matrices, release records, figure reviews, and trust surfaces. Keep the executed 44-chapter spine stable and retired URLs stub-guarded; keep the sixty-second trust surface and non-core evidence ledger accurate; keep the external-review lane parked as user-owned (the dated blocker is the standing record — schedule no outreach and gate nothing on it); do not create new planning/report surfaces unless a validator, release record, or executed change requires them. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
+> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode with the Grade-To-A-Plus Map as the priority compass, the Logical Conclusion section as the completion compass, and the A+ Completion Execution Lattice as the anti-diffusion rule: the target is A+ on every graded dimension for both editions of every chapter, the end state is the five Logical Conclusion tests, and per the 2026-07-02 direction nothing waits on Corben — his editing pass comes last, over a finished book. Standing first action of every run, before any new work: reconcile the Milestone 2.5 burn-down against artifacts that already exist, in both directions — any batch whose closure classes all have named artifacts must be marked closed by artifact in that same run, or carry a dated blocker naming the one remaining closure class. First priority: finish the human-reader edition. Treat chapter-level prose reconciliation and legacy voice-pass conversion as artifact-backed, then move to release-quality continuity polish, table-density/long-paragraph cleanup, figure polish, audio/e-reader flow, and exact format review so all 44 reader chapters read at the level of the current best ones; realize the thesis, part arcs, and 8-12 signature ideas in the prose itself (openings, endings, transitions), writing conviction and stakes to finished quality in third person; never invent first-person experience, personal conviction, or authorial lessons. Then build the edition — HTML, EPUB, DOCX, and PDF where local dependencies allow — run the format validators and application-level checks the format-review matrix defines, and produce an edition release record so "drafting" becomes a release state. Second priority: evidence cadence. Strengthen one measured lane per cycle to an accepted narrow non-core transition (load-stability and workload-quality are closest), import the next public-safe Circle or Theseus result CI-verifiable by digest or replay, record demotions, rejections, and no-promotion decisions honestly, and begin recording per-chapter core-claim dispositions (what evidence would move each core claim, per Logical Conclusion Test 3). Third: build one executable-model proof bridge tied to a live evidence lane — a transition-system invariant, trace property, or Lean/Python fixture-equivalence check — instead of chasing theorem count. Fourth: execute the live-edition craft watchlist — move bulky tables, validator minutiae, and repeated caveats to companion or live-only surfaces where evidence boundaries allow, and bring one anchor section per part to showpiece-trace caliber. Close lattice lanes through existing artifacts whenever possible: contribution-track records, source notes, Appendix H, proof adequacy, evidence transitions, reader manifests, format-review matrices, release records, figure reviews, and trust surfaces. Keep the executed 44-chapter spine stable and retired URLs stub-guarded; keep the sixty-second trust surface and non-core evidence ledger accurate; keep the external-review lane parked as user-owned (the dated blocker is the standing record — schedule no outreach and gate nothing on it); do not create new planning/report surfaces unless a validator, release record, or executed change requires them. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
 
 ## Non-Claims
 

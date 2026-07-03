@@ -73,6 +73,31 @@ REQUIRED_VOICE_SLOT_FIELDS = {
     "source_chapter_ids",
     "requires_author_input",
     "must_not_fabricate",
+    "converted_to_sidecar",
+    "sidecar_ref",
+    "release_blocking",
+    "manuscript_gap_status",
+}
+REQUIRED_AUTHOR_ENRICHMENT_QUEUE_FIELDS = {
+    "schema_version",
+    "major_version",
+    "status",
+    "relationship",
+    "source",
+    "policy",
+    "records",
+    "non_claims",
+}
+REQUIRED_AUTHOR_ENRICHMENT_RECORD_FIELDS = {
+    "slot_id",
+    "location",
+    "source_chapter_ids",
+    "optional_author_prompt",
+    "manuscript_gap_status",
+    "release_blocking",
+    "must_not_fabricate",
+    "converted_from_legacy_voice_pass_slot",
+    "curation_boundary",
 }
 REQUIRED_CURATION_CONTRACT_FIELDS = {
     "schema_version",
@@ -139,6 +164,7 @@ REQUIRED_FIELDS = {
     "curation_contract",
     "chapter_records",
     "reader_handoff_contract",
+    "author_enrichment_queue",
     "reconciliation_report",
     "non_claims",
 }
@@ -597,6 +623,15 @@ def validate_reader_handoff_contract(
                 errors.append(f"{owner}: requires_author_input must be true.")
             if slot.get("must_not_fabricate") is not True:
                 errors.append(f"{owner}: must_not_fabricate must be true.")
+            if slot.get("converted_to_sidecar") is not True:
+                errors.append(f"{owner}: converted_to_sidecar must be true.")
+            if slot.get("release_blocking") is not False:
+                errors.append(f"{owner}: release_blocking must be false.")
+            if slot.get("manuscript_gap_status") != "no_gap_finished_third_person":
+                errors.append(f"{owner}: manuscript_gap_status must be no_gap_finished_third_person.")
+            sidecar_ref = slot.get("sidecar_ref")
+            if not isinstance(sidecar_ref, str) or f"#{slot.get('slot_id')}" not in sidecar_ref:
+                errors.append(f"{owner}: sidecar_ref must point to the matching author-enrichment queue anchor.")
             source_chapter_ids = require_string_list(
                 owner, "source_chapter_ids", slot.get("source_chapter_ids"), errors
             )
@@ -611,6 +646,121 @@ def validate_reader_handoff_contract(
             errors.append(f"reader_handoff_contract.non_claims must include boundary phrase: {phrase}")
 
     return slot_ids
+
+
+def validate_author_enrichment_queue(
+    data: dict[str, Any],
+    voice_slot_ids: set[str],
+    chapters: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> None:
+    queue_ref = data.get("author_enrichment_queue")
+    if not isinstance(queue_ref, dict):
+        errors.append("author_enrichment_queue must be an object.")
+        return
+    expected_path = "editions/reader_manuscript/v1_0/author_enrichment_queue.json"
+    if queue_ref.get("path") != expected_path:
+        errors.append(f"author_enrichment_queue.path must be {expected_path}.")
+    if queue_ref.get("status") != "sidecar_optional_enrichment_queue":
+        errors.append("author_enrichment_queue.status must be sidecar_optional_enrichment_queue.")
+    if queue_ref.get("source") != "reader_handoff_contract.corben_voice_pass_slots":
+        errors.append("author_enrichment_queue.source must be reader_handoff_contract.corben_voice_pass_slots.")
+    policy = queue_ref.get("policy")
+    if (
+        not isinstance(policy, str)
+        or "optional" not in policy
+        or "not release blockers" not in policy
+        or "not permission" not in policy
+    ):
+        errors.append("author_enrichment_queue.policy must state optional, non-blocking, non-fabrication status.")
+
+    queue_path = ROOT / expected_path
+    if not queue_path.exists():
+        errors.append(f"author_enrichment_queue path does not exist: {expected_path}.")
+        return
+    queue = load_json(queue_path)
+    if not isinstance(queue, dict):
+        errors.append(f"{expected_path} must contain an object.")
+        return
+    missing = sorted(REQUIRED_AUTHOR_ENRICHMENT_QUEUE_FIELDS - set(queue))
+    if missing:
+        errors.append(f"{expected_path} missing required fields: {missing}")
+        return
+    if queue.get("schema_version") != "0.1":
+        errors.append(f"{expected_path}: schema_version must be 0.1.")
+    if queue.get("major_version") != data.get("major_version"):
+        errors.append(f"{expected_path}: major_version must match the reader manuscript manifest.")
+    if queue.get("status") != "sidecar_optional_enrichment_queue":
+        errors.append(f"{expected_path}: status must be sidecar_optional_enrichment_queue.")
+    if queue.get("relationship") != "optional_author_supplied_enrichment_not_release_blocker":
+        errors.append(f"{expected_path}: relationship must be optional_author_supplied_enrichment_not_release_blocker.")
+    if queue.get("source") != "reader_handoff_contract.corben_voice_pass_slots":
+        errors.append(f"{expected_path}: source must be reader_handoff_contract.corben_voice_pass_slots.")
+    queue_policy = queue.get("policy")
+    if (
+        not isinstance(queue_policy, str)
+        or "complete in third-person prose" not in queue_policy
+        or "must not fabricate" not in queue_policy
+        or "no release approval depends" not in queue_policy
+    ):
+        errors.append(f"{expected_path}: policy must preserve third-person completion and non-fabrication boundaries.")
+    non_claims = require_string_list(expected_path, "non_claims", queue.get("non_claims"), errors)
+    non_claim_text = " ".join(non_claims).lower()
+    for phrase in ("not a reader release", "does not promote", "does not permit agent-written", "does not make author input a blocker"):
+        if phrase not in non_claim_text:
+            errors.append(f"{expected_path}: non_claims must include boundary phrase: {phrase}")
+
+    records = queue.get("records")
+    if not isinstance(records, list):
+        errors.append(f"{expected_path}: records must be a list.")
+        return
+    seen: set[str] = set()
+    for index, record in enumerate(records):
+        owner = f"{expected_path}.records[{index}]"
+        if not isinstance(record, dict):
+            errors.append(f"{owner} must be an object.")
+            continue
+        missing_record = sorted(REQUIRED_AUTHOR_ENRICHMENT_RECORD_FIELDS - set(record))
+        if missing_record:
+            errors.append(f"{owner} missing required fields: {missing_record}")
+            continue
+        slot_id = record.get("slot_id")
+        if not isinstance(slot_id, str) or slot_id not in voice_slot_ids:
+            errors.append(f"{owner}: slot_id must match a reader_handoff_contract voice slot.")
+        elif slot_id in seen:
+            errors.append(f"{owner}: duplicate slot_id {slot_id}.")
+        else:
+            seen.add(slot_id)
+        require_substantive_string(owner, "location", record.get("location"), errors, min_words=3)
+        require_substantive_string(owner, "optional_author_prompt", record.get("optional_author_prompt"), errors, min_words=10)
+        require_substantive_string(
+            owner,
+            "curation_boundary",
+            record.get("curation_boundary"),
+            errors,
+            min_words=18,
+            no_first_person=True,
+        )
+        if record.get("manuscript_gap_status") != "no_gap_finished_third_person":
+            errors.append(f"{owner}: manuscript_gap_status must be no_gap_finished_third_person.")
+        if record.get("release_blocking") is not False:
+            errors.append(f"{owner}: release_blocking must be false.")
+        if record.get("must_not_fabricate") is not True:
+            errors.append(f"{owner}: must_not_fabricate must be true.")
+        if record.get("converted_from_legacy_voice_pass_slot") is not True:
+            errors.append(f"{owner}: converted_from_legacy_voice_pass_slot must be true.")
+        source_chapter_ids = require_string_list(
+            owner, "source_chapter_ids", record.get("source_chapter_ids"), errors
+        )
+        invalid = sorted(chapter_id for chapter_id in source_chapter_ids if chapter_id not in chapters)
+        if invalid:
+            errors.append(f"{owner}: source_chapter_ids reference unknown chapters: {invalid}")
+    missing_slots = sorted(voice_slot_ids - seen)
+    extra_slots = sorted(seen - voice_slot_ids)
+    if missing_slots:
+        errors.append(f"{expected_path}: records missing voice slot ids: {missing_slots}")
+    if extra_slots:
+        errors.append(f"{expected_path}: records include unknown voice slot ids: {extra_slots}")
 
 
 def validate_curation_contract(data: dict[str, Any], errors: list[str]) -> dict[str, Any] | None:
@@ -1074,6 +1224,7 @@ def main() -> None:
     validate_manifest(data, errors)
     curation_contract = validate_curation_contract(data, errors)
     voice_slot_ids = validate_reader_handoff_contract(data, parts, chapters, errors)
+    validate_author_enrichment_queue(data, voice_slot_ids, chapters, errors)
     validate_chapter_records(data, chapters, curation_contract, voice_slot_ids, errors)
     validate_companion_note_routing(data, chapters, errors)
     validate_reconciliation_report(data, errors)

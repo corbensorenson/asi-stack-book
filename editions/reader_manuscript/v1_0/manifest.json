@@ -393,7 +393,11 @@
           "the-efficient-asi-hypothesis"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#opening-origin",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "boundary-scar",
@@ -405,7 +409,11 @@
           "security-kernel-and-digital-scifs"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#boundary-scar",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "evidence-discipline",
@@ -416,7 +424,11 @@
           "benchmark-ratchets-and-anti-goodhart-evidence"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#evidence-discipline",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "human-stakes",
@@ -428,7 +440,11 @@
           "moral-uncertainty-and-value-conflict"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#human-stakes",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "improvement-governance",
@@ -440,7 +456,11 @@
           "recursive-self-improvement-boundaries"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#improvement-governance",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "execution-craft",
@@ -454,7 +474,11 @@
           "procedural-memory-and-cognitive-loop-closure"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#execution-craft",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "memory-experience",
@@ -468,7 +492,11 @@
           "claim-ledgers-and-belief-revision"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#memory-experience",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "resource-tradeoff",
@@ -483,7 +511,11 @@
           "resource-economics-and-token-budgets"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#resource-tradeoff",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "substrate-curiosity",
@@ -496,7 +528,11 @@
           "coilra-multicoil-rope-and-cyclic-mixers"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#substrate-curiosity",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "proof-practice",
@@ -508,7 +544,11 @@
           "circle-calculus-and-proof-carrying-ai-contracts"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#proof-practice",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "implementation-history",
@@ -521,7 +561,11 @@
           "artifact-steward-agents-and-living-project-governance"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#implementation-history",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       },
       {
         "slot_id": "reader-close",
@@ -532,7 +576,11 @@
           "open-research-agenda-and-bibliography-plan"
         ],
         "requires_author_input": true,
-        "must_not_fabricate": true
+        "must_not_fabricate": true,
+        "converted_to_sidecar": true,
+        "sidecar_ref": "editions/reader_manuscript/v1_0/author_enrichment_queue.json#reader-close",
+        "release_blocking": false,
+        "manuscript_gap_status": "no_gap_finished_third_person"
       }
     ],
     "non_claims": [
@@ -541,6 +589,12 @@
       "This handoff contract does not fabricate Corben first-person experience, personal lessons, project history, conviction, or authorial approval.",
       "This handoff contract does not create, approve, or review EPUB, PDF, DOCX, HTML, audio, or audio-embedded EPUB artifacts."
     ]
+  },
+  "author_enrichment_queue": {
+    "path": "editions/reader_manuscript/v1_0/author_enrichment_queue.json",
+    "status": "sidecar_optional_enrichment_queue",
+    "source": "reader_handoff_contract.corben_voice_pass_slots",
+    "policy": "Author enrichment prompts are optional sidecar review questions, not manuscript gaps, not release blockers, and not permission for agent-written first-person material."
   },
   "companion_note_routing": {
     "path": "editions/reader_manuscript/v1_0/companion_note_routing.json",
