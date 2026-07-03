@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-03 - Align cyclic memory reader evidence boundary
+
+- Updated the curated reader manuscript draft for `Coil Attention, Cyclic
+  Memory, and Recurrence Contracts` so its minimum viable implementation names
+  `python3 scripts/validate_circle_cyclic_memory_receipt_slice.py`, Circle
+  commit `63b0f511`, `CC-AI-CONTRACT-MEMORY-001`, kind
+  `cyclic_memory_residue_winding`, the four theorem IDs, required
+  recommendation IDs, same-residue events, same-residue windings,
+  `max_alias_load=4`, the strict receipt fingerprint, and Circle CLI output
+  `3 passed in 2.51s`.
+- Updated the Coil memory prose-pass note, reader manuscript manifest, chapter
+  review matrix, and reconciliation report to record the 2026-07-03 evidence
+  boundary alignment. This is curated reader-manuscript alignment only; it is
+  not a KV-cache freshness result, sparse-coverage benchmark, recurrence
+  benchmark, learned-memory workload, retrieval-quality result,
+  reasoning-quality result, long-context result, speed result,
+  memory-savings result, transfer result, deployment result, support-state
+  transition, chapter core support-state promotion, reader release,
+  ebook/document/PDF/audio artifact, or artifact approval.
+
 ## 2026-07-03 - Align Circle contracts reader evidence boundary
 
 - Updated the curated reader manuscript draft for `Circle Calculus and

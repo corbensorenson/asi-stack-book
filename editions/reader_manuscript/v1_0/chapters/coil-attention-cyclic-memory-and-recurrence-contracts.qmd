@@ -278,9 +278,22 @@ Circle-generated contract pack, or Theseus transfer consumer. It does not show
 retrieval quality, reasoning quality, speed, memory savings, or long-context
 utility.
 
-The next honest minimum is a small trace set: one slot reuse with winding
-preserved, one stale read blocked or residualized, one sparse coverage gap
-that triggers fallback, and one recurrence schedule that exits. Only after
+The separate Circle cyclic-memory receipt slice makes one structural example
+concrete. `python3 scripts/validate_circle_cyclic_memory_receipt_slice.py`
+checks commit `63b0f511`, contract `CC-AI-CONTRACT-MEMORY-001`, kind
+`cyclic_memory_residue_winding`, theorem IDs `AIM-T0001`, `AIM-T0002`,
+`AIM-T0004`, and `AIM-T0005`, recommendations
+`MEMORY-ATTACH-WINDING-ALIAS-PROVENANCE` and
+`MEMORY-AUDIT-FINITE-ALIAS-LOAD`, same-residue events `[7, 15, 23, 31]`,
+same-residue windings `[0, 1, 2, 3]`, `max_alias_load=4`, the strict receipt
+fingerprint, and Circle CLI output `3 passed in 2.51s`. That is structural
+residue/winding traceability. It is not a KV-cache checker, learned-memory
+workload, sparse-coverage benchmark, recurrence benchmark, downstream transfer
+consumer, support-state transition, or chapter-core promotion.
+
+The next honest minimum is a broader small trace set: stale reads blocked or
+residualized, sparse coverage gaps that trigger fallback, recurrence schedules
+that exit, and baseline comparisons tied to explicit workloads. Only after
 those structural traces exist should a workload harness ask whether the
 contracts help task behavior.
 

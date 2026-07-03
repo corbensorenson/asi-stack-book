@@ -39,6 +39,12 @@ The reader throughline is:
 - Added a 2026-07-03 slot-and-winding scenario that separates residue coverage,
   winding/provenance, alias risk, fallback, stale freshness claims, recurrence
   exit conditions, residuals, and support-state non-claims.
+- Added a 2026-07-03 evidence-boundary alignment for the existing Circle
+  cyclic-memory receipt slice, preserving the exact structural receipt facts
+  (`63b0f511`, `CC-AI-CONTRACT-MEMORY-001`, theorem IDs, recommendations,
+  same-residue events, same-residue windings, `max_alias_load=4`, receipt
+  fingerprint, and `3 passed in 2.51s`) without treating the slice as useful
+  memory evidence.
 
 ## Meaning-Preservation Checks
 
@@ -60,6 +66,11 @@ The reader throughline is:
   validation only, not a KV-cache checker, sparse-coverage harness, recurrence
   benchmark, learned-memory workload, Circle contract pack, or Theseus transfer
   consumer.
+- The Circle cyclic-memory receipt slice remains structural residue/winding
+  traceability only. It does not close KV-cache freshness, sparse-coverage,
+  recurrence-exit, learned-memory, retrieval-quality, reasoning-quality,
+  long-context, speed, memory-savings, transfer, deployment, or support-state
+  blockers.
 
 ## Non-Claims
 
@@ -72,6 +83,10 @@ The reader throughline is:
   retrieval quality, reasoning quality, speed, memory reduction, long-context
   utility, Circle-generated contract packs, Theseus transfer consumers, or
   external benchmark reproduction, support-state promotion, or reader release.
+- This pass does not claim that the Circle cyclic-memory receipt slice creates
+  an accepted support transition, proves useful memory, validates a deployed
+  memory-control plane, or promotes the
+  `coil-attention-cyclic-memory-and-recurrence-contracts` chapter core claim.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.
@@ -79,9 +94,10 @@ The reader throughline is:
 ## Remaining Blockers
 
 - Human editorial review has not approved this chapter for reader release.
-- A real cyclic-memory trace set remains planned: slot reuse with winding,
-  stale-read rejection or residualization, sparse-coverage fallback, recurrence
-  exit, baseline comparison, and residual recording.
+- A broader cyclic-memory trace set remains planned beyond the one structural
+  Circle residue/winding receipt: stale-read rejection or residualization,
+  sparse-coverage fallback, recurrence exit, baseline comparison, workload
+  evidence, and residual recording.
 - Any stronger memory or recurrence claim needs accepted evidence-transition
   records with exact workloads, baselines, negative controls, commands,
   limitations, counterevidence, and non-claims.
