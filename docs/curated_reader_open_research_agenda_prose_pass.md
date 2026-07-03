@@ -4,6 +4,8 @@ Date: 2026-06-30
 
 Follow-up: 2026-07-03
 
+Source-ownership follow-up: 2026-07-03
+
 Chapter: `open-research-agenda-and-bibliography-plan`
 
 Reader manuscript file:
@@ -40,6 +42,12 @@ The reader throughline is:
   release routes without implying that publication creates evidence.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint as reader-facing sections.
+- Added a live-and-reader source-ownership closing rule: Corben-authored,
+  Corben-supplied, recovered, and local-project material routes through
+  Appendix G and source notes; outside literature routes through Appendix H
+  and source notes; project artifacts route through replay, digest, fixture, or
+  blocker records; and claim-strength changes route through Appendix C and
+  evidence-transition decisions before prose changes.
 
 ## Meaning-Preservation Checks
 
@@ -67,10 +75,15 @@ The reader throughline is:
 - The follow-up preserves the final chapter's open-ended role: the book closes
   by routing future work, not by implying citation completeness, external
   review completion, or proof/test closure.
+- The source-ownership follow-up preserves Appendix G/H separation and makes
+  the routing rule explicit in both live and curated reader prose without
+  changing source records, proof/test status, support state, or release status.
 
 ## Non-Claims
 
-- This pass does not edit the live AI/research chapter.
+- The original curated reader prose pass did not edit the live AI/research
+  chapter. The 2026-07-03 source-ownership follow-up edits live and curated
+  reader prose only to sharpen the same source-routing boundary.
 - This pass does not change `book_structure.json`.
 - This pass does not add, remove, or promote any source record.
 - This pass does not normalize new external literature.

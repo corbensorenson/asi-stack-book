@@ -2,7 +2,7 @@
 Curated reader manuscript draft.
 chapter_id: open-research-agenda-and-bibliography-plan
 generated_baseline_ref: build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd
-live_source_ref: chapters/open-research-agenda-and-bibliography-plan.qmd@04b32c959
+live_source_ref: chapters/open-research-agenda-and-bibliography-plan.qmd@5af6a9a89
 This file is a reader-prose derivative only. Preserve claim meaning,
 support-state boundaries, source boundaries, proof/test status,
 implementation horizons, and release blockers.
@@ -222,6 +222,22 @@ That sounds dense because the failure modes are dense. The record exists so a
 future assistant can tell the difference between "read this," "cite this,"
 "test this," "formalize this," "do not publish this," and "do not promote
 this."
+
+The ownership rule is what keeps the ending honest. Corben-authored,
+Corben-supplied, recovered, and local-project material belongs on the Corben
+side of the source graph. Outside literature belongs on the external-source
+side. Project evidence belongs behind replay, digest, fixture, or blocker
+records. Claim strength belongs in the claim/evidence machinery, not in the
+confidence of a paragraph.
+
+So a future update has to ask what kind of thing it is before it asks where to
+put the prose. A new paper that clarifies an existing mechanism should deepen
+the existing chapter. A source that introduces a genuinely new interface,
+invariant, artifact type, or failure mode can propose a new boundary. A result
+that cannot yet be reproduced or published should become a blocker. A citation
+named inside another source should be checked directly before it becomes this
+book's citation. The bibliography is where the book records those decisions
+before the manuscript absorbs them.
 
 ## Invariants
 

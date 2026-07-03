@@ -4,7 +4,7 @@ chapter_id: "open-research-agenda-and-bibliography-plan"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-06-30"
+last_updated: "2026-07-03"
 primary_sources:
   - "verification_bandwidth"
   - "benchmaxxing"
@@ -175,6 +175,8 @@ Minimum fields:
 Appendix G is the appendix for Corben's own papers, Corben-supplied materials, recovered project records, and local project records. Appendix H is a separate appendix for external sources by other authors and organizations. Both appendices surface that ownership split before the source tables so a reader does not have to infer what is Corben/local and what is outside literature. Source notes support drafting. `docs/book_outline.md` tells future agents what to mine. `book_structure.json` prevents chapter-order drift. Appendix C records support-state boundaries.
 
 Those interfaces are deliberately redundant. The outline tells a writing agent what context to load. The manifest tells Quarto and validation scripts where each file belongs. Source notes tell a reviewer what was actually mined. Appendix C tells readers which claim-state boundary is currently justified. Appendix G keeps Corben's corpus and local projects visible, and Appendix H keeps outside literature distinct. A living book needs this redundancy because any one surface can become stale; the validation loop and changelog make drift visible before it becomes authority.
+
+The closing rule is simple: no future source changes the book in free-form prose first. Corben-authored, Corben-supplied, recovered, and local-project material routes through Appendix G and its source notes; outside literature routes through Appendix H and its source notes; project artifacts route through replay, digest, or blocker records; and any claim-strength change routes through Appendix C and an evidence-transition decision. If a new paper only supplies vocabulary, it updates the existing owner chapter. If it supplies a new interface, invariant, artifact type, or failure mode, it can propose a new boundary. If it cannot be read, published, replayed, or cited safely, the correct output is a blocker rather than a smoother paragraph.
 
 When a future agent receives a new paper, the interface should produce a triage decision before prose changes: update existing chapter, propose new chapter, route to appendix, keep in backlog, or reject as out of scope. The decision should name the boundary it affects and the evidence it could change. That makes dynamic chapters possible without forcing manual renumbering or turning the outline into a catchall.
 

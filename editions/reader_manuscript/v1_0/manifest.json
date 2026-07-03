@@ -1512,7 +1512,7 @@
       "file": "editions/reader_manuscript/v1_0/chapters/open-research-agenda-and-bibliography-plan.qmd",
       "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/open-research-agenda-and-bibliography-plan.qmd",
-      "live_source_ref": "chapters/open-research-agenda-and-bibliography-plan.qmd@04b32c959",
+      "live_source_ref": "chapters/open-research-agenda-and-bibliography-plan.qmd@5af6a9a89",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#open-research-agenda-and-bibliography-plan.core",
       "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#open-research-agenda-and-bibliography-plan",
       "curation_scope": [
@@ -1529,13 +1529,14 @@
       "voice_pass_slot_ids": [
         "reader-close"
       ],
-      "divergence_summary": "Second curated reader reconciliation closes the book by treating incompleteness as routed research work: future sources, citation checks, proof targets, test lanes, artifact imports, external grounding, chapter-boundary decisions, and no-promotion blockers stay visible instead of becoming a vague final gesture; no citation completeness, support-state movement, source boundary change, proof/test status change, implementation horizon change, or release approval is implied.",
+      "divergence_summary": "Second curated reader reconciliation closes the book by treating incompleteness as routed research work: future sources, citation checks, proof targets, test lanes, artifact imports, external grounding, chapter-boundary decisions, and no-promotion blockers stay visible instead of becoming a vague final gesture. The 2026-07-03 source-ownership follow-up makes Appendix G/H ownership, project-artifact replay/digest/blocker routing, and Appendix C evidence-transition routing explicit in both live and reader prose; no citation completeness, support-state movement, proof/test status change, implementation horizon change, or release approval is implied.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support for the chapter core claim",
         "source boundary preserved; all assigned sources remain research-agenda, backlog, implementation-reference, proof-contract, connector/recovery, or external-literature context inside their stated limits",
         "proof/test status preserved while surfacing the backlog/triage fixture and Lean-gate boundary without adding citation-accuracy, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, source-interpretation-quality, public-release-permission, external-review, chapter-insertion, or support-state results",
         "implementation horizon preserved without implying the mature active research graph has been implemented",
+        "source ownership preserved and sharpened: Corben/local material routes through Appendix G, external literature through Appendix H, project artifacts through replay/digest/fixture/blocker records, and claim-strength changes through Appendix C plus evidence-transition decisions",
         "release blocker status preserved until an edition release record clears it",
         "2026-07-03 Part IV synthesis/implementation reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, release blockers, and final-book continuity."
       ],
@@ -1546,7 +1547,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects living-book methodology to routed research debt and sharpens the final distinction between argued, mechanized, locally tested, externally grounded, and still-open work while preserving source-state, Appendix G/H, citation-normalization, live-intake, benchmark-reproduction, external-review, and release-artifact boundaries. Prose-pass details recorded in docs/curated_reader_open_research_agenda_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter.",
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects living-book methodology to routed research debt and sharpens the final distinction between argued, mechanized, locally tested, externally grounded, and still-open work while preserving source-state, Appendix G/H, citation-normalization, live-intake, benchmark-reproduction, external-review, and release-artifact boundaries. The source-ownership follow-up explicitly routes Corben/local material, external literature, project artifacts, and support-state changes through their proper source-of-truth surfaces before prose changes. Prose-pass details recorded in docs/curated_reader_open_research_agenda_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter.",
       "review_refs": [
         "docs/curated_reader_open_research_agenda_prose_pass.md"
       ]
