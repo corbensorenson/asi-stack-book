@@ -504,10 +504,12 @@ Current status for defended contribution focus:
 ## Idea Depth Program - Ideas To A-Plus
 
 Added 2026-07-03 from Corben's direct question: why is Ideas graded B+, and
-what raises it. This program complements the Defended Contribution Tracks
-above: the tracks pick *which* contributions get deep evidence; this program
-defines what intellectual depth means for the ideas themselves. It changes
-prose, structure, and argument only — it promotes no support state.
+what raises it. Current purpose: keep the idea critique from becoming another
+essay. This program complements the Defended Contribution Tracks above: the
+tracks pick *which* contributions get deep evidence; this program defines what
+intellectual depth means for the ideas themselves and forces that depth into
+chapters, source notes, proof/evidence artifacts, and the contribution ledger.
+It changes prose, structure, and argument only - it promotes no support state.
 
 ### Why Ideas is B+ (the standing diagnosis)
 
@@ -522,11 +524,17 @@ prose, structure, and argument only — it promotes no support state.
    honesty now have first record-level closures, but verification tax,
    stable capability identity, and bounded self-improvement still need sharper
    models, consequences, or transition traces.
-4. The central objection is unconfronted at idea level: a capable system
-   could satisfy every gate while its receipts fail to correspond to reality.
-   Non-claims acknowledge this; no chapter answers it.
-5. Novelty is asserted by naming, never audited by contrast with closest
-   prior art.
+4. The central objection is no longer absent, but it is still underanswered
+   beyond bounded records: a capable system could satisfy every gate while its
+   receipts fail to correspond to reality. The receipt-faithfulness fixture
+   gives a first adversarial record-level answer; the remaining A+ work is
+   chapter ownership, live or externally reviewable attestation/audit evidence,
+   verifier-quality review, and limits written plainly in the chapters.
+5. Novelty is no longer completely unaudited: the contribution novelty ledger
+   exists. The remaining risk is ledger/chapter separation - a novelty row
+   that never changes the chapter can still leave readers seeing only renamed
+   prior art. The next work must move ledger deltas into prose, sources, and
+   proof/evidence lanes.
 
 ### Signature-idea upgrade queue (ranked)
 
@@ -571,6 +579,29 @@ The A+ criterion for every signature idea: a crisp statement, an audited
 delta versus closest prior art, at least one non-obvious consequence (bound,
 trade-off, impossibility, or falsifiable prediction), and its strongest
 objection stated and answered in place.
+
+Execution order from here:
+
+1. **Pattern-language integration**: name the governed-cognition pattern once
+   in the opening/integrated-reference spine, then add concise "delta beyond
+   the pattern" statements only where chapter prose needs them. This closes by
+   chapter edits, outline edits, and contribution-ledger alignment, not by a
+   standalone audit.
+2. **Receipt faithfulness beyond fixture shape**: decide whether the
+   record-reality gap remains a major section or earns a dedicated chapter
+   through the ownership test; then pursue live or externally reviewable
+   attestation/audit evidence before any stronger claim.
+3. **Epistemic trusted computing base**: specify the minimal trusted core,
+   trust-propagation rule, recursion stop condition, and outside-the-TCB
+   residuals, with a negative-control fixture that rejects verifier-trust
+   laundering.
+4. **Human oversight degradation**: add human-factors grounding and a
+   gate-degradation fixture that treats approval fatigue, rubber-stamping, and
+   automation bias as component failure modes rather than magic human safety.
+5. **Governance economics, stable identity, and bounded improvement**: model
+   the verification tax, SCF identity-under-replacement, and
+   corrigibility-capability trade-off after the keystone receipt/TCB/oversight
+   gaps are owned.
 
 ### Idea-depth acceptance gate
 
