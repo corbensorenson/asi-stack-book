@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 187 |
-| Manifest status counts | {"implemented": 187} |
-| Triage class counts | {"formal-invariant": 187} |
+| Proof targets audited | 188 |
+| Manifest status counts | {"implemented": 188} |
+| Triage class counts | {"formal-invariant": 188} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -68,7 +68,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 11 | 5 | 4 |
 | `lean/AsiStackProofs/ReadinessGates.lean` | 3 | 20 | 16 | 7 |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | 2 | 7 | 3 | 3 |
-| `lean/AsiStackProofs/Replacement.lean` | 5 | 33 | 8 | 5 |
+| `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 10 | 6 |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | 7 | 37 | 27 | 11 |
 | `lean/AsiStackProofs/Routing.lean` | 3 | 16 | 4 | 2 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 49 | 13 | 9 |
@@ -94,7 +94,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 3 | 3 | 0 | 0 |
-| `capability-replacement-and-rollback` | 5 | 5 | 0 | 0 |
+| `capability-replacement-and-rollback` | 6 | 6 | 0 | 0 |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2 | 2 | 0 | 0 |
 | `claim-ledgers-and-belief-revision` | 4 | 4 | 0 | 0 |
 | `cognitive-compilation-and-semantic-ir` | 3 | 3 | 0 | 0 |
@@ -183,6 +183,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:replacement.transaction.failure_blocks_promotion` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:replacement.transaction.route_envelope` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:replacement.transaction.trace_probe_bridge` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:replacement.identity_sequence.invariant_bridge` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:replacement.intent_governed.bridge` | `capability-replacement-and-rollback` | `AsiStackProofs.Replacement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.operational_invariant` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.failure_blocks_promotion` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |

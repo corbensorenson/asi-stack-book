@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-03 - Add Capability replacement identity sequence bridge
+
+- Strengthened the existing Capability replacement trace probe into a bounded
+  identity-under-replacement sequence check. The validator and result now
+  record preserved field identity across canary/rollback, monitor-failure
+  default blocking, prior implementation restoration, authority-envelope
+  preservation, residual-owner preservation, and four rejected sequence
+  controls for identity drift, failed-monitor defaulting, rollback-prior
+  mismatch, and missing residual ownership.
+- Current proof-depth snapshot: 188 proof targets, 54 Lean modules, 962
+  theorem declarations, 777 derived/decomposed, 181 direct/projection, 4
+  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Added `lean:replacement.identity_sequence.invariant_bridge` in
+  `AsiStackProofs.Replacement`, updated `book_structure.json`,
+  `docs/book_outline.md`, the live and curated Capability Replacement
+  chapters, `docs/capability_replacement_trace_probe.md`,
+  `docs/v1_x_beyond_sota_roadmap.md`, and the generated proof manifest.
+- Boundary: this is a deterministic synthetic fixture and finite Lean bridge.
+  It does not execute deployed replacement behavior, production rollback,
+  model rollout, monitor-window behavior, regression-suite quality, approval
+  enforcement, support-state transition, or chapter-core promotion.
+
 ## 2026-07-03 - Refresh curated reader format probe after prose deltas
 
 - Re-rendered the tracked curated reader manuscript locally to HTML, EPUB,

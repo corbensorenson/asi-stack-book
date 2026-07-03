@@ -764,6 +764,83 @@ theorem replacement_trace_probe_preserves_no_promotion_boundary :
       replacementTraceProbeFixture.nonClaimBoundary = true := by
   exact And.intro rfl rfl
 
+structure ReplacementIdentitySequenceBridgeSummary where
+  traceStepCount : Nat
+  traceTransactionCount : Nat
+  negativeControlCount : Nat
+  identitySequenceControlCount : Nat
+  sameFieldIdentityAcrossSequence : Bool
+  monitorFailureBlocksDefaultPromotion : Bool
+  rollbackRestoresPriorImplementation : Bool
+  authorityEnvelopePreserved : Bool
+  residualOwnerPreserved : Bool
+  chapterCoreSupportEffectNone : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def ReplacementIdentitySequenceBridgeValid
+    (summary : ReplacementIdentitySequenceBridgeSummary) : Prop :=
+  summary.traceStepCount = 6 ∧
+    summary.traceTransactionCount = 2 ∧
+      summary.negativeControlCount = 3 ∧
+        summary.identitySequenceControlCount = 4 ∧
+          summary.sameFieldIdentityAcrossSequence = true ∧
+            summary.monitorFailureBlocksDefaultPromotion = true ∧
+              summary.rollbackRestoresPriorImplementation = true ∧
+                summary.authorityEnvelopePreserved = true ∧
+                  summary.residualOwnerPreserved = true ∧
+                    summary.chapterCoreSupportEffectNone = true ∧
+                      summary.supportStateEffectNone = true ∧
+                        summary.nonClaimBoundary = true
+
+def replacementIdentitySequenceBridgeFixture :
+    ReplacementIdentitySequenceBridgeSummary := {
+  traceStepCount := 6
+  traceTransactionCount := 2
+  negativeControlCount := 3
+  identitySequenceControlCount := 4
+  sameFieldIdentityAcrossSequence := true
+  monitorFailureBlocksDefaultPromotion := true
+  rollbackRestoresPriorImplementation := true
+  authorityEnvelopePreserved := true
+  residualOwnerPreserved := true
+  chapterCoreSupportEffectNone := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+}
+
+theorem replacement_identity_sequence_bridge_fixture_valid :
+    ReplacementIdentitySequenceBridgeValid
+      replacementIdentitySequenceBridgeFixture := by
+  unfold ReplacementIdentitySequenceBridgeValid
+    replacementIdentitySequenceBridgeFixture
+  simp
+
+theorem replacement_identity_sequence_bridge_preserves_identity :
+    replacementIdentitySequenceBridgeFixture.sameFieldIdentityAcrossSequence =
+        true ∧
+      replacementIdentitySequenceBridgeFixture.rollbackRestoresPriorImplementation =
+        true ∧
+        replacementIdentitySequenceBridgeFixture.authorityEnvelopePreserved =
+          true := by
+  exact ⟨rfl, rfl, rfl⟩
+
+theorem replacement_identity_sequence_bridge_blocks_default_after_failed_monitor :
+    replacementIdentitySequenceBridgeFixture.monitorFailureBlocksDefaultPromotion =
+        true ∧
+      replacementIdentitySequenceBridgeFixture.residualOwnerPreserved =
+        true := by
+  exact ⟨rfl, rfl⟩
+
+theorem replacement_identity_sequence_bridge_preserves_no_promotion_boundary :
+    replacementIdentitySequenceBridgeFixture.chapterCoreSupportEffectNone =
+        true ∧
+      replacementIdentitySequenceBridgeFixture.supportStateEffectNone =
+        true ∧
+        replacementIdentitySequenceBridgeFixture.nonClaimBoundary = true := by
+  exact ⟨rfl, rfl, rfl⟩
+
 structure IntentGovernedReplacementBridgeSummary where
   validTraceCount : Nat
   expectedInvalidControlCount : Nat

@@ -267,6 +267,16 @@ transaction shape easier to inspect, but it is not a deployed replacement, not
 a production rollback, not a monitor-quality result, and not a support-state
 transition.
 
+The same fixture now checks the identity sequence across the canary and
+rollback. The field identity stays the same, monitor failure blocks default
+promotion, rollback restores the prior implementation, the authority envelope
+does not widen, and a residual owner remains attached. Four bad sequence
+controls are rejected: identity drift, failed-monitor defaulting, rollback to
+the wrong prior artifact, and missing residual ownership. This makes the
+"identity under replacement" thesis more concrete, but it is still a bounded
+synthetic trace rather than a deployed replacement or a support-state
+transition.
+
 ## Failure Modes
 
 Regression deletion is the classic false improvement. The candidate moves the

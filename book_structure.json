@@ -2381,8 +2381,15 @@
             },
             {
               "name": "Capability replacement trace probe",
-              "purpose": "Check a deterministic replacement trace with a baseline implementation, non-default canary, monitor-triggered rollback, residuals, expected-invalid controls, and no support-state promotion.",
+              "purpose": "Check a deterministic replacement trace with a baseline implementation, non-default canary, monitor-triggered rollback, residuals, expected-invalid controls, identity-sequence assertions, and no support-state promotion.",
               "status": "implemented by `python3 scripts/validate_capability_replacement_trace_probe.py`; deterministic fixture only; no deployed replacement behavior, production rollback, regression-suite quality, monitor-quality, or support-state promotion",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `experiments/capability_replacement_trace/results/2026-07-02-local.json`; includes four rejected identity-sequence controls; no runtime replacement, production rollback, or support-state claim"
+            },
+            {
+              "name": "Capability replacement identity sequence bridge",
+              "purpose": "Check that the deterministic replacement trace preserves one field identity across canary and rollback, blocks default promotion after monitor failure, restores the prior implementation, preserves the authority envelope, keeps a residual owner, and rejects sequence controls for identity drift, monitor-failed defaulting, prior mismatch, and missing residual owner.",
+              "status": "implemented by `python3 scripts/validate_capability_replacement_trace_probe.py`; deterministic fixture and Lean bridge only; no deployed replacement behavior, production rollback, regression-suite quality, monitor-quality, or support-state promotion",
               "implementation_status": "implemented",
               "result_status": "validated locally by `experiments/capability_replacement_trace/results/2026-07-02-local.json`; no runtime replacement, production rollback, or support-state claim"
             },
@@ -2418,6 +2425,12 @@
               "tag": "lean:replacement.transaction.trace_probe_bridge",
               "module": "AsiStackProofs.Replacement",
               "target": "The deterministic replacement trace probe records six trace steps, two valid synthetic transactions, three rejected negative controls, a canary kept non-default, a monitor-triggered rollback, rollback dry run, residuals, no support-state effect, and non-claim boundary.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:replacement.identity_sequence.invariant_bridge",
+              "module": "AsiStackProofs.Replacement",
+              "target": "The deterministic replacement identity-sequence bridge records preserved field identity across canary and rollback, monitor-failure blocking of default promotion, prior implementation restoration, authority-envelope preservation, residual-owner preservation, four rejected sequence controls, no support-state effect, and non-claim boundary.",
               "status": "implemented"
             },
             {

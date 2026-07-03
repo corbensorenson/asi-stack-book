@@ -451,6 +451,16 @@
       "rationale": "Implemented in AsiStackProofs.Replacement as a finite synthetic trace-summary mirror: it records trace counts, canary non-default status, monitor-triggered rollback, rollback dry-run presence, rejected negative controls, residuals, no-support-effect status, and non-claim boundary only, without proving deployed replacement behavior, monitor quality, regression-suite quality, production rollback, or chapter-core support movement."
     },
     {
+      "tag": "lean:replacement.identity_sequence.invariant_bridge",
+      "chapter_id": "capability-replacement-and-rollback",
+      "module": "AsiStackProofs.Replacement",
+      "formal_target": "The deterministic replacement identity-sequence bridge records preserved field identity across canary and rollback, monitor-failure blocking of default promotion, prior implementation restoration, authority-envelope preservation, residual-owner preservation, four rejected sequence controls, no support-state effect, and non-claim boundary.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Replacement as a finite identity-sequence summary mirror for python3 scripts/validate_capability_replacement_trace_probe.py; it records preserved field identity across canary and rollback, monitor-failure default blocking, rollback to the recorded prior artifact, authority-envelope preservation, residual-owner preservation, rejected sequence controls, no-support-effect status, and non-claim boundary only, without proving deployed replacement behavior, monitor quality, regression-suite quality, production rollback, evidence-transition acceptance, or chapter-core support movement."
+    },
+    {
       "tag": "lean:replacement.intent_governed.bridge",
       "chapter_id": "capability-replacement-and-rollback",
       "module": "AsiStackProofs.Replacement",
@@ -1881,5 +1891,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 187
+  "record_count": 188
 }

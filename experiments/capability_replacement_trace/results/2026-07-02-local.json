@@ -176,6 +176,61 @@
       "rejected": true
     }
   ],
+  "identity_sequence_bridge": {
+    "proof_tag": "lean:replacement.identity_sequence.invariant_bridge",
+    "theorem_refs": [
+      "replacement_identity_sequence_bridge_fixture_valid",
+      "replacement_identity_sequence_bridge_preserves_identity",
+      "replacement_identity_sequence_bridge_blocks_default_after_failed_monitor",
+      "replacement_identity_sequence_bridge_preserves_no_promotion_boundary"
+    ],
+    "assertions": {
+      "same_field_identity_across_sequence": true,
+      "monitor_failure_blocks_default_promotion": true,
+      "rollback_restores_prior_implementation": true,
+      "authority_envelope_preserved": true,
+      "residual_owner_preserved": true,
+      "chapter_core_support_effect_none": true,
+      "support_state_effect_none": true,
+      "non_claim_boundary": true
+    },
+    "weakening_condition": "The identity-under-replacement thesis weakens if a later replay can change field identity, accept default promotion after monitor failure, lose rollback ownership, widen authority, or restore a different prior artifact while still satisfying the replacement record shape."
+  },
+  "identity_sequence_control_count": 4,
+  "identity_sequence_controls": [
+    {
+      "control_id": "replacement-sequence-control://field-identity-drift",
+      "same_field_identity": false,
+      "monitor_failure_blocks_default": true,
+      "rollback_restores_prior": true,
+      "residual_owner_present": true,
+      "rejected": true
+    },
+    {
+      "control_id": "replacement-sequence-control://monitor-failed-default",
+      "same_field_identity": true,
+      "monitor_failure_blocks_default": false,
+      "rollback_restores_prior": true,
+      "residual_owner_present": true,
+      "rejected": true
+    },
+    {
+      "control_id": "replacement-sequence-control://rollback-prior-mismatch",
+      "same_field_identity": true,
+      "monitor_failure_blocks_default": true,
+      "rollback_restores_prior": false,
+      "residual_owner_present": true,
+      "rejected": true
+    },
+    {
+      "control_id": "replacement-sequence-control://missing-residual-owner",
+      "same_field_identity": true,
+      "monitor_failure_blocks_default": true,
+      "rollback_restores_prior": true,
+      "residual_owner_present": false,
+      "rejected": true
+    }
+  ],
   "trace_assertions": {
     "canary_kept_non_default": true,
     "monitor_trigger_routes_to_rollback": true,
@@ -193,7 +248,11 @@
     "theorem_refs": [
       "replacement_trace_probe_fixture_valid",
       "replacement_trace_probe_rejects_authority_widening",
-      "replacement_trace_probe_preserves_no_promotion_boundary"
+      "replacement_trace_probe_preserves_no_promotion_boundary",
+      "replacement_identity_sequence_bridge_fixture_valid",
+      "replacement_identity_sequence_bridge_preserves_identity",
+      "replacement_identity_sequence_bridge_blocks_default_after_failed_monitor",
+      "replacement_identity_sequence_bridge_preserves_no_promotion_boundary"
     ],
     "expected": {
       "step_count": 6,
@@ -206,6 +265,17 @@
       "failed_regression_rejected": true,
       "missing_rollback_rejected": true,
       "residuals_recorded": true,
+      "support_state_effect_none": true,
+      "non_claim_boundary": true
+    },
+    "identity_sequence_expected": {
+      "same_field_identity_across_sequence": true,
+      "monitor_failure_blocks_default_promotion": true,
+      "rollback_restores_prior_implementation": true,
+      "authority_envelope_preserved": true,
+      "residual_owner_preserved": true,
+      "identity_sequence_control_count": 4,
+      "chapter_core_support_effect_none": true,
       "support_state_effect_none": true,
       "non_claim_boundary": true
     }

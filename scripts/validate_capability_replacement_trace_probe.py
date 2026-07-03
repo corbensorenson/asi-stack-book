@@ -33,11 +33,17 @@ LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "Replacement.lean"
 
 COMMAND = "python3 scripts/validate_capability_replacement_trace_probe.py"
 PROOF_TAG = "lean:replacement.transaction.trace_probe_bridge"
+SEQUENCE_PROOF_TAG = "lean:replacement.identity_sequence.invariant_bridge"
 CODEX_TEST_NAME = "Capability replacement trace probe"
+SEQUENCE_TEST_NAME = "Capability replacement identity sequence bridge"
 REQUIRED_THEOREMS = [
     "replacement_trace_probe_fixture_valid",
     "replacement_trace_probe_rejects_authority_widening",
     "replacement_trace_probe_preserves_no_promotion_boundary",
+    "replacement_identity_sequence_bridge_fixture_valid",
+    "replacement_identity_sequence_bridge_preserves_identity",
+    "replacement_identity_sequence_bridge_blocks_default_after_failed_monitor",
+    "replacement_identity_sequence_bridge_preserves_no_promotion_boundary",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not execute deployed or runtime replacement behavior",
@@ -190,6 +196,73 @@ def control_is_rejected(control: dict[str, Any]) -> bool:
     )
 
 
+def sequence_control_is_rejected(control: dict[str, Any]) -> bool:
+    return not (
+        control["same_field_identity"]
+        and control["monitor_failure_blocks_default"]
+        and control["rollback_restores_prior"]
+        and control["residual_owner_present"]
+    )
+
+
+def identity_sequence_summary(transactions: list[dict[str, Any]]) -> dict[str, Any]:
+    canary = transactions[0]
+    rollback = transactions[1]
+    field_ids = {str(transaction.get("field_id", "")) for transaction in transactions}
+    receipt_owners = [
+        str(transaction.get("rollback_receipt", {}).get("owner", ""))
+        for transaction in transactions
+    ]
+    authority_checks = " ".join(
+        str(transaction.get("authority_check", "")).lower()
+        for transaction in transactions
+    )
+    canary_blockers = " ".join(canary.get("promotion_blockers", [])).lower()
+    rollback_receipt = rollback.get("rollback_receipt", {})
+    same_field_identity = len(field_ids) == 1 and "field://bounded-router-capability" in field_ids
+    monitor_failure_blocks_default = (
+        rollback.get("monitor_status") == "fail"
+        and rollback.get("decision") == "rollback"
+        and canary.get("decision") == "canary"
+        and "default promotion blocked" in canary_blockers
+    )
+    rollback_restores_prior = (
+        rollback.get("decision") == "rollback"
+        and rollback_receipt.get("prior_artifact") == canary.get("prior_implementation")
+        and rollback.get("prior_implementation") == canary.get("prior_implementation")
+    )
+    authority_envelope_preserved = (
+        "does not expand" in authority_checks
+        and "same authority" in authority_checks
+    )
+    residual_owner_preserved = all(receipt_owners)
+    return {
+        "proof_tag": SEQUENCE_PROOF_TAG,
+        "theorem_refs": [
+            "replacement_identity_sequence_bridge_fixture_valid",
+            "replacement_identity_sequence_bridge_preserves_identity",
+            "replacement_identity_sequence_bridge_blocks_default_after_failed_monitor",
+            "replacement_identity_sequence_bridge_preserves_no_promotion_boundary",
+        ],
+        "assertions": {
+            "same_field_identity_across_sequence": same_field_identity,
+            "monitor_failure_blocks_default_promotion": monitor_failure_blocks_default,
+            "rollback_restores_prior_implementation": rollback_restores_prior,
+            "authority_envelope_preserved": authority_envelope_preserved,
+            "residual_owner_preserved": residual_owner_preserved,
+            "chapter_core_support_effect_none": True,
+            "support_state_effect_none": True,
+            "non_claim_boundary": True,
+        },
+        "weakening_condition": (
+            "The identity-under-replacement thesis weakens if a later replay can "
+            "change field identity, accept default promotion after monitor failure, "
+            "lose rollback ownership, widen authority, or restore a different prior "
+            "artifact while still satisfying the replacement record shape."
+        ),
+    }
+
+
 def build_expected_result() -> dict[str, Any]:
     transactions = [canary_transaction(), rollback_transaction()]
     negative_controls = [
@@ -239,6 +312,44 @@ def build_expected_result() -> dict[str, Any]:
             {**control, "rejected": control_is_rejected(control)}
             for control in negative_controls
         ],
+        "identity_sequence_bridge": identity_sequence_summary(transactions),
+        "identity_sequence_control_count": 4,
+        "identity_sequence_controls": [
+            {
+                **control,
+                "rejected": sequence_control_is_rejected(control),
+            }
+            for control in [
+                {
+                    "control_id": "replacement-sequence-control://field-identity-drift",
+                    "same_field_identity": False,
+                    "monitor_failure_blocks_default": True,
+                    "rollback_restores_prior": True,
+                    "residual_owner_present": True,
+                },
+                {
+                    "control_id": "replacement-sequence-control://monitor-failed-default",
+                    "same_field_identity": True,
+                    "monitor_failure_blocks_default": False,
+                    "rollback_restores_prior": True,
+                    "residual_owner_present": True,
+                },
+                {
+                    "control_id": "replacement-sequence-control://rollback-prior-mismatch",
+                    "same_field_identity": True,
+                    "monitor_failure_blocks_default": True,
+                    "rollback_restores_prior": False,
+                    "residual_owner_present": True,
+                },
+                {
+                    "control_id": "replacement-sequence-control://missing-residual-owner",
+                    "same_field_identity": True,
+                    "monitor_failure_blocks_default": True,
+                    "rollback_restores_prior": True,
+                    "residual_owner_present": False,
+                },
+            ]
+        ],
         "trace_assertions": {
             "canary_kept_non_default": True,
             "monitor_trigger_routes_to_rollback": True,
@@ -265,6 +376,17 @@ def build_expected_result() -> dict[str, Any]:
                 "failed_regression_rejected": True,
                 "missing_rollback_rejected": True,
                 "residuals_recorded": True,
+                "support_state_effect_none": True,
+                "non_claim_boundary": True,
+            },
+            "identity_sequence_expected": {
+                "same_field_identity_across_sequence": True,
+                "monitor_failure_blocks_default_promotion": True,
+                "rollback_restores_prior_implementation": True,
+                "authority_envelope_preserved": True,
+                "residual_owner_preserved": True,
+                "identity_sequence_control_count": 4,
+                "chapter_core_support_effect_none": True,
                 "support_state_effect_none": True,
                 "non_claim_boundary": True,
             },
@@ -309,7 +431,36 @@ def validate_result(expected: dict[str, Any], write_result: bool, errors: list[s
         errors.append(f"{rel(RESULT)}: verification_result must be pass.")
     if value.get("support_state_effect") != "none":
         errors.append(f"{rel(RESULT)}: support_state_effect must remain none.")
+    if value.get("chapter_core_support_effect") != "none":
+        errors.append(f"{rel(RESULT)}: chapter_core_support_effect must remain none.")
     validate_transactions(value, errors)
+    sequence = value.get("identity_sequence_bridge", {})
+    if not isinstance(sequence, dict):
+        errors.append(f"{rel(RESULT)}: identity_sequence_bridge must be an object.")
+    else:
+        if sequence.get("proof_tag") != SEQUENCE_PROOF_TAG:
+            errors.append(f"{rel(RESULT)}: identity_sequence_bridge.proof_tag must be {SEQUENCE_PROOF_TAG}.")
+        assertions = sequence.get("assertions", {})
+        if not isinstance(assertions, dict):
+            errors.append(f"{rel(RESULT)}: identity_sequence_bridge.assertions must be an object.")
+        else:
+            for key in (
+                "same_field_identity_across_sequence",
+                "monitor_failure_blocks_default_promotion",
+                "rollback_restores_prior_implementation",
+                "authority_envelope_preserved",
+                "residual_owner_preserved",
+                "chapter_core_support_effect_none",
+                "support_state_effect_none",
+                "non_claim_boundary",
+            ):
+                if assertions.get(key) is not True:
+                    errors.append(f"{rel(RESULT)}: identity_sequence_bridge.assertions.{key} must be true.")
+    sequence_controls = value.get("identity_sequence_controls", [])
+    if len(sequence_controls) != 4:
+        errors.append(f"{rel(RESULT)}: identity_sequence_controls must contain four controls.")
+    elif not all(control.get("rejected") is True for control in sequence_controls):
+        errors.append(f"{rel(RESULT)}: all identity sequence controls must be rejected.")
     non_claim_text = text_blob(value.get("non_claims", []))
     for phrase in REQUIRED_NON_CLAIMS:
         if phrase.lower() not in non_claim_text:
@@ -329,9 +480,13 @@ def validate_manifest(errors: list[str]) -> None:
         return
     if CODEX_TEST_NAME.lower() not in text_blob(chapter.get("codex_tests", [])):
         errors.append(f"book_structure.json: codex_tests missing {CODEX_TEST_NAME!r}.")
+    if SEQUENCE_TEST_NAME.lower() not in text_blob(chapter.get("codex_tests", [])):
+        errors.append(f"book_structure.json: codex_tests missing {SEQUENCE_TEST_NAME!r}.")
     proof_tags = {target.get("tag") for target in chapter.get("proof_targets", []) if isinstance(target, dict)}
     if PROOF_TAG not in proof_tags:
         errors.append(f"book_structure.json: proof_targets missing {PROOF_TAG!r}.")
+    if SEQUENCE_PROOF_TAG not in proof_tags:
+        errors.append(f"book_structure.json: proof_targets missing {SEQUENCE_PROOF_TAG!r}.")
 
 
 def validate_lean(errors: list[str]) -> None:
@@ -348,6 +503,11 @@ def validate_lean(errors: list[str]) -> None:
         "rollbackDryRunPresent",
         "supportStateEffectNone",
         "nonClaimBoundary",
+        "sameFieldIdentityAcrossSequence",
+        "monitorFailureBlocksDefaultPromotion",
+        "rollbackRestoresPriorImplementation",
+        "authorityEnvelopePreserved",
+        "residualOwnerPreserved",
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")
@@ -360,25 +520,30 @@ def validate_surfaces(errors: list[str]) -> None:
             rel(RESULT),
             "two valid synthetic replacement transactions",
             "three expected-invalid controls",
+            "identity sequence",
+            "four sequence controls",
             "no support-state transition",
         ],
         CHAPTER: [
             "Capability replacement trace probe",
+            "identity sequence",
             rel(RESULT),
             "no deployed replacement execution",
         ],
         READER: [
             "capability replacement trace probe",
+            "identity sequence",
             "not a deployed replacement",
             "not a support-state transition",
         ],
-        OUTLINE: [CODEX_TEST_NAME, PROOF_TAG, rel(RESULT)],
+        OUTLINE: [CODEX_TEST_NAME, SEQUENCE_TEST_NAME, PROOF_TAG, SEQUENCE_PROOF_TAG, rel(RESULT)],
         ROADMAP: [
             "Capability replacement trace probe",
+            "Capability replacement identity sequence bridge",
             "deterministic replacement trace",
             "no support-state promotion",
         ],
-        CHANGELOG: ["Capability replacement trace probe", rel(RESULT)],
+        CHANGELOG: ["Capability replacement identity sequence bridge", rel(RESULT)],
         VALIDATE_BOOK: [
             "scripts/validate_capability_replacement_trace_probe.py",
             "docs/capability_replacement_trace_probe.md",
@@ -419,6 +584,9 @@ def main() -> None:
     ):
         if assertions.get(key) is not True:
             errors.append(f"trace_assertions.{key} must be true.")
+    sequence_controls = expected["identity_sequence_controls"]
+    if not all(control.get("rejected") is True for control in sequence_controls):
+        errors.append("All replacement identity sequence controls must be rejected.")
     validate_result(expected, args.write_result, errors)
     validate_manifest(errors)
     validate_lean(errors)
