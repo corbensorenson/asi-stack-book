@@ -10008,9 +10008,9 @@
             {
               "name": "Semantic proof adequacy audit",
               "purpose": "Review whether each finite-record predicate is the right formalization of its intended chapter boundary.",
-              "implementation_status": "planned",
-              "result_status": "not run",
-              "status": "planned; requires human/formal review"
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_proof_adequacy_review.py`; table/count consistency and no-promotion review only",
+              "status": "implemented; semantic adequacy classification audit only"
             }
           ],
           "lean_module": "AsiStackProofs.ProofEnvelope",

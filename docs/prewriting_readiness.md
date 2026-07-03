@@ -26,8 +26,8 @@ The recommended launch wording is tracked in `docs/full_book_writing_goal.md`.
 ## Still Missing Before Claims Can Rise Above Argument
 
 - Chapter claims now have exact source-note mappings and passage-reviewed mapping records for all 461 current claim-source mappings, but support-state promotion still requires claim-to-mechanism reconciliation and accepted evidence transitions.
-- Lean targets are implemented as finite-record predicates and traceability-audited, but semantic proof adequacy review remains planned.
-- Most chapter-level Codex tests are planned but not implemented or run; protocol schema fixture validation is implemented.
+- Lean targets are implemented as finite-record predicates, traceability-audited, and covered by a validator-checked semantic adequacy classification; most targets remain too narrow for broad chapter claims.
+- Chapter-level Codex tests are now largely implemented as bounded synthetic, deterministic, replay, import, or publication-governance checks, but many still do not rise to deployed runtime, benchmark, model-quality, or support-state evidence.
 - Source-reported benchmark results from MoECOT, Talos, Road To AGI, or other papers have not been reproduced in this repo.
 - External literature has a queue and stance, but not a citation-normalized bibliography.
 

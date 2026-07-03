@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-03 - Implement proof adequacy review validation
+
+- Added `python3 scripts/validate_proof_adequacy_review.py` and wired it into
+  `scripts/validate_book.py` so `docs/proof_adequacy_review.md` must match the
+  180-target proof manifest, 44 manifest chapters, generated proof-depth
+  snapshot, adequacy-class totals, and no-support-promotion boundary language.
+- Updated the proof adequacy review, proof-envelope chapter, outline,
+  `book_structure.json`, generated Appendix E, v1 status/publication
+  readiness surfaces, repository map, and proof/code plan so the semantic
+  adequacy audit is implemented as a classification-and-no-promotion gate
+  rather than the last planned Codex test.
+- Current adequacy distribution: 13 adequate finite-record invariant targets,
+  97 useful-but-too-narrow targets, 18 needing richer state-machine or review
+  semantics, 29 needing executable tests first, 18 needing empirical or
+  baseline tests first, and 5 remaining research-agenda until artifact import.
+  This does not prove broad system correctness, source interpretation,
+  deployed enforcement, model quality, benchmark validity, support-state
+  promotion, reader release, or ebook/document/PDF/audio artifact approval.
+
 ## 2026-07-03 - Align policy optimization reader evidence boundary
 
 - Updated the curated reader manuscript draft for `Policy Optimization and
