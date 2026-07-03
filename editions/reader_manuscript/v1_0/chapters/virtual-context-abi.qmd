@@ -127,6 +127,44 @@ redacted execution packet can be shown to a worker without leaking source
 material. A reader paraphrase can help a human understand the idea. Each may
 be useful, but each is useful under a different contract.
 
+## What The Model Actually Receives
+
+The easiest way to understand the ABI is to picture the packet handed to a
+worker model.
+
+In an ungoverned system, the packet may be a block of relevant text. It might
+contain a source excerpt, a summary, a user preference, an instruction, an old
+memory, and a policy note, all flattened into one prompt. The model can still
+produce a fluent answer. The stack cannot easily tell which part was allowed
+to support the answer.
+
+With the ABI, the packet is a small bundle of typed cells. One cell may be an
+exact excerpt with a source binding and quotation permission. Another may be a
+lossy planning summary with orientation-only permission. A third may be a
+redacted instruction with a narrow authority ceiling. A fourth may be a
+contradiction pair that warns the worker that two sources disagree. A fifth
+may be a reader paraphrase that is useful for explanation but not for proof,
+citation, or tool authorization.
+
+The worker receives text, but the text arrives with role and scope. The packet
+says what can be quoted, what can guide drafting, what can be used only for
+planning, what is stale, what is redacted, what expires, what is adequate for
+the current task, and what fault remains. If a mandatory source is missing,
+the ABI should return a miss. If the lease expired, it should return a stale
+context fault. If the only available representation is a lossy summary and
+the task requires citation, the packet is inadequate rather than merely less
+convenient.
+
+This is the memory equivalent of a type error. A type error is not a failure
+of intelligence. It is the system refusing to use an object in a role it was
+not allowed to fill. The Virtual Context ABI gives context the same kind of
+resistance. It prevents a useful paragraph from silently becoming a source,
+an instruction, a proof input, or a permission slip.
+
+This example is still a contract description. It does not claim that the
+repository has a deployed resolver, a truthful certificate generator, a
+model-facing context runtime, or an open-domain summary-fidelity evaluator.
+
 ## Interfaces
 
 Planning requests context by task, address, authority, representation need,
