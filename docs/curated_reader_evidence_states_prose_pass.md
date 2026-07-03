@@ -1,13 +1,14 @@
 # Curated Reader Prose Pass: Evidence States and Claim Discipline
 
-Last updated: 2026-07-01
+Last updated: 2026-07-03
 
 Chapter ID: `evidence-states-and-claim-discipline`
 
 Curated reader file:
 `editions/reader_manuscript/v1_0/chapters/evidence-states-and-claim-discipline.qmd`
 
-Status: drafting only; not release-reviewed.
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -50,6 +51,11 @@ Allowed curation scopes used in this pass:
   bookkeeping; added reader-facing comparison to model cards, datasheets,
   reproducibility programs, and proof-carrying-code lineage from existing
   source-noted records.
+- 2026-07-03 reconciliation pass: tightened the anti-inflation opening,
+  connected evidence transitions to the later stack layers, wrapped dense
+  implementation prose, and strengthened the handoff to Human Intent around
+  the shared question of what has actually been granted versus what merely
+  sounds available.
 
 ## Meaning Preservation Checks
 
@@ -79,6 +85,13 @@ Allowed curation scopes used in this pass:
 - This pass does not claim complete evidence-bundle review, accepted
   support-state transition review, exhaustive source review, broad proof
   adequacy, benchmark validity, deployed claim accounting, or ASI capability.
+
+## Reconciliation Status
+
+The curated reader chapter is reconciled for the current source: claim meaning,
+support-state boundary, proof/test status, implementation horizon, and release
+blockers are preserved while prose, continuity, pacing, and the chapter-level
+handoff have been edited for human reading.
 
 ## Remaining Blockers
 

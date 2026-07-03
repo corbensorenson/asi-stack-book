@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Moral Uncertainty and Value Conflict
 
-Date: 2026-07-02
+Last updated: 2026-07-03
 
 Chapter: `moral-uncertainty-and-value-conflict`
 
@@ -9,13 +9,14 @@ Reader manuscript file:
 
 Live source file: `chapters/moral-uncertainty-and-value-conflict.qmd`
 
-Consolidation caveat:
-`docs/chapter_consolidation_release_stability_review.md` records this chapter
-inside a `deferred_for_release` package with
-`governance-rights-fork-exit-and-audit`. This pass curates the current source
-chapter for the reader-manuscript cycle only. It does not execute, reject, or
-authorize the future contestable-governance merge, and it preserves the
-then-current 54-chapter manifest boundary.
+Consolidation note:
+The active 44-chapter spine now routes folded governance-rights, fork, exit,
+audit, redaction, and appeal material through this chapter. Archived standalone
+reader material remains historical drafting context only and is not a live
+reader chapter or release approval.
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -51,6 +52,10 @@ The reader throughline is:
   failure trace, separating transparency, privacy, safety learning, consent,
   bounded publication, auditor-only access, revisit conditions, residuals, and
   support-state non-claims.
+- Added a 2026-07-03 reconciliation pass that aligns the visible reader title
+  with the consolidated chapter title, makes contestability the mechanism that
+  keeps unresolved value conflict from being buried, and fixes the handoff to
+  Stable Capability Fields.
 
 ## Meaning-Preservation Checks
 
@@ -69,14 +74,15 @@ The reader throughline is:
   reviewer independence, tribunal quality, source interpretation, runtime
   policy behavior, deployed conflict handling, stakeholder representation, or
   institutional legitimacy.
-- The consolidation caveat is preserved: this reader pass does not decide the
-  future merge with `governance-rights-fork-exit-and-audit`.
+- The consolidation boundary is preserved: archived governance-rights material
+  is folded drafting history only, not a standalone live chapter or approval.
 
 ## Non-Claims
 
 - This pass does not edit the live AI/research chapter.
 - This pass does not change `book_structure.json`.
-- This pass does not execute, reject, or authorize a chapter merge or fold.
+- This pass does not execute, reject, or authorize any new chapter merge or
+  fold.
 - This pass does not alter Appendix C or Appendix K.
 - This pass does not add, remove, normalize, or promote source records.
 - This pass does not claim moral correctness, solved moral uncertainty,
@@ -92,10 +98,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- Human editorial review has not approved this chapter for reader release.
-- The future contestable-governance consolidation package still needs a
-  reviewer decision before any merge with
-  `governance-rights-fork-exit-and-audit`.
+- `reader_release_record_not_created`
+- `format_artifact_not_reviewed`
+- `curated_reconciliation_not_approved`
 - Stronger value-conflict evidence still needs public-safe traces or tests that
   preserve stakeholders, value axes, reversibility, dissent, unsupported
   premises, residual uncertainty, review route, authority effect, expiry or

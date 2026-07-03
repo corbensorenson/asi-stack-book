@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Constitutional Alignment Substrate
 
-Date: 2026-07-02
+Last updated: 2026-07-03
 
 Chapter: `constitutional-alignment-substrate`
 
@@ -9,13 +9,14 @@ Reader manuscript file:
 
 Live source file: `chapters/constitutional-alignment-substrate.qmd`
 
-Consolidation caveat:
-`docs/chapter_consolidation_release_stability_review.md` records this chapter
-inside a `deferred_for_release` package with
-`agency-dignity-and-corrigibility`. This pass curates the current source
-chapter for the reader-manuscript cycle only. It does not execute, reject, or
-authorize the future Constitutional Alignment merge, and it preserves the
-then-current 54-chapter manifest boundary.
+Consolidation note:
+The active 44-chapter spine now routes the folded agency/dignity/corrigibility
+material through this chapter. Archived standalone reader material remains
+historical drafting context only and is not a live reader chapter or release
+approval.
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -51,6 +52,10 @@ The reader throughline is:
   separating lower-power drafting, external-action approval, consent, private
   context exposure, scoped receipts, constitutional migration, and support-state
   non-claims.
+- Added a 2026-07-03 reconciliation pass that aligns the visible reader title
+  with the consolidated chapter title, sharpens agency/dignity/corrigibility as
+  engineering gates, and fixes the handoff to Moral Uncertainty, Value Conflict,
+  and Contestable Governance.
 
 ## Meaning-Preservation Checks
 
@@ -66,14 +71,15 @@ The reader throughline is:
   gates only; it does not prove moral correctness, deployed policy behavior,
   reviewer quality, runtime conflict resolution, self-modification safety, or
   whole-system alignment.
-- The consolidation caveat is preserved: this reader pass does not decide the
-  future merge with `agency-dignity-and-corrigibility`.
+- The consolidation boundary is preserved: archived agency/dignity material is
+  folded drafting history only, not a standalone live chapter or approval.
 
 ## Non-Claims
 
 - This pass does not edit the live AI/research chapter.
 - This pass does not change `book_structure.json`.
-- This pass does not execute, reject, or authorize a chapter merge or fold.
+- This pass does not execute, reject, or authorize any new chapter merge or
+  fold.
 - This pass does not alter Appendix C or Appendix K.
 - This pass does not add, remove, normalize, or promote source records.
 - This pass does not claim deployed constitutional alignment, moral
@@ -90,9 +96,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- Human editorial review has not approved this chapter for reader release.
-- The future Constitutional Alignment consolidation package still needs a
-  reviewer decision before any merge with `agency-dignity-and-corrigibility`.
+- `reader_release_record_not_created`
+- `format_artifact_not_reviewed`
+- `curated_reconciliation_not_approved`
 - Stronger constitutional-alignment evidence still needs public-safe traces or
   tests that name predicates, protected scopes, operational tests, conflict
   routes, reviewers, rollback behavior, stale-predicate handling, red-team

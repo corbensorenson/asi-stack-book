@@ -32,7 +32,8 @@ change every day, but confidence should change only through records.
 That makes this chapter more than a set of house rules. It is one of the
 book's central methodological claims: a living technical text needs a public
 way to keep claims, evidence, revisions, failures, and confidence from drifting
-apart.
+apart. Without that discipline, the book could become more persuasive while
+becoming less accountable. With it, ambition stays attached to receipts.
 
 ![Draft evidence-state ladder.](../../../../assets/diagrams/evidence-state-ladder.svg){#reader-fig-evidence-state-ladder fig-alt="Draft evidence-state ladder figure separating claim labels from support states and showing transition review, promotion, no change, demotion or refutation, blockers, residuals, non-claims, and public ledger updates."}
 
@@ -107,7 +108,9 @@ claim. If it moves to `synthetic-test-backed`, it should name the fixture,
 command, environment, result, and limitations. If a test fails or a source
 does not support the intended claim, that negative result should remain visible.
 The transition is the receipt that lets a living book change without losing why
-the change was allowed.
+the change was allowed. It is also the bridge to the rest of the stack: later
+layers may plan, verify, route, and improve, but they inherit this rule that
+confidence is a recorded transition rather than a tone of voice.
 
 ## Core Claim
 
@@ -302,12 +305,7 @@ triggers, promotion burden, reviewer references, acceptance blockers, reviewer
 independence, changelog linkage, support-state effect, and non-claims. The Lean
 module proves a narrow support-state invariant in this repository.
 
-The evidence bundle completeness and changelog-consistency probe adds two synthetic evidence bundles:
-one no-change bundle and one blocked-promotion bundle. It also rejects seven bad controls: missing claim IDs, missing artifact
-or result references, missing commands, promotion without a transition record,
-missing changelog references, missing limitations or non-claims, stale
-changelog linkage, and fixture overclaiming. That is useful accountability
-machinery, but it is not a deployed release-governance result.
+The evidence bundle completeness and changelog-consistency probe adds two synthetic evidence bundles: one no-change bundle and one blocked-promotion bundle. It also rejects seven bad controls: missing claim IDs, missing artifact or result references, missing commands, promotion without a transition record, missing changelog references, missing limitations or non-claims, stale changelog linkage, and fixture overclaiming. That is useful accountability machinery, but it is not a deployed release-governance result.
 
 The claim ledger completeness audit checks Appendix C against the manifest and
 finds 44 core claim rows for the 44 chapters. It checks that the row IDs,
@@ -397,4 +395,6 @@ Evidence discipline controls what the manuscript may claim. Human Intent as a
 Formal Input controls what the system may treat as a goal, authority grant,
 means, stop condition, or ambiguity. The sequence now moves from claim
 discipline to input discipline: from what the book may responsibly say to what
-the stack may responsibly do with a user's request.
+the stack may responsibly do with a user's request. The same question follows
+both chapters: what has actually been granted, and what merely sounds
+available?

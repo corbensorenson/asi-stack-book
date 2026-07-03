@@ -10,17 +10,34 @@ implementation horizons, and release blockers.
 
 # Human Intent as a Formal Input
 
-The stack has now described its boundaries, evidence discipline, authority ceilings, and self-improvement limits. Those controls matter only if they survive contact with a real request.
+The stack has now described its boundaries, evidence discipline, authority
+ceilings, and self-improvement limits. Those controls matter only if they
+survive contact with a real request.
 
-Human intent enters as language. Language is rich, useful, incomplete, and dangerous to execute directly. A person can ask for a goal, express urgency, imply trust, omit constraints, assume background knowledge, and forget a stop condition in the same sentence. A helpful system will want to fill the gaps. A governed system has to expose the gaps before power is handed off.
+Human intent enters as language. Language is rich, useful, incomplete, and
+dangerous to execute directly. A person can ask for a goal, express urgency,
+imply trust, omit constraints, assume background knowledge, and forget a stop
+condition in the same sentence. A helpful system will want to fill the gaps. A
+governed system has to expose the gaps before power is handed off.
 
-Human Intent as a Formal Input is the first adapter between human purpose and machine work. Its job is not to make people speak like schemas. Its job is to let people speak naturally while the stack translates that speech into a bounded contract that later layers can inspect, challenge, narrow, or reject.
+Human Intent as a Formal Input is the first adapter between human purpose and
+machine work. Its job is not to make people speak like schemas. Its job is to
+let people speak naturally while the stack translates that speech into a
+bounded contract that later layers can inspect, challenge, narrow, or reject.
+This is where the architecture stops treating a sentence as an instruction
+stream and starts treating it as evidence of a bounded grant.
 
 ## Problem
 
-A governed stack must start from human intent without letting natural-language ambiguity become unrestricted execution authority.
+A governed stack must start from human intent without letting natural-language
+ambiguity become unrestricted execution authority.
 
-The danger is not that natural language is useless. It is that natural language carries too much at once. A request can contain a desired outcome, a style preference, an unstated budget, implied tools, source constraints, authority assumptions, risk tolerance, privacy expectations, emotional context, and implicit stop conditions. If the system passes that whole sentence directly to planning or tools, ambiguity becomes action.
+The danger is not that natural language is useless. It is that natural language
+carries too much at once. A request can contain a desired outcome, a style
+preference, an unstated budget, implied tools, source constraints, authority
+assumptions, risk tolerance, privacy expectations, emotional context, and
+implicit stop conditions. If the system passes that whole sentence directly to
+planning or tools, ambiguity becomes action.
 
 The corrective move is to separate expression from authorization. The raw request remains valuable as human context, but execution cannot consume it as a grant of power. The system first creates an Intent Contract: a scoped authority lease that says what the person appears to want, which means are allowed, which means are forbidden, what evidence is required, what assumptions remain open, and when the system must stop or ask again.
 
@@ -174,4 +191,9 @@ The discipline is separation: wanted outcome is not allowed means, context is no
 
 ## Handoff
 
-Intent contracts preserve what a person asked for, but they do not by themselves decide which requests remain bounded by dignity, consent, least sufficient power, or self-modification limits. Constitutional Alignment Substrate follows because clear intent still needs active predicates that can narrow, deny, or reroute work before planning and execution treat the request as ordinary work. If the pending Part I consolidation later merges that destination, this reader handoff should be reconciled to the merged Constitutional Alignment chapter rather than treated as a release-approved route.
+Intent contracts preserve what a person asked for, but they do not by
+themselves decide which requests remain bounded by dignity, consent, least
+sufficient power, or self-modification limits. Constitutional Alignment:
+Agency, Dignity, and Corrigibility follows because clear intent still needs
+active predicates that can narrow, deny, or reroute work before planning and
+execution treat the request as ordinary work.

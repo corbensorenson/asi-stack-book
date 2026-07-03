@@ -1,8 +1,8 @@
 # Curated Reader Prose Pass: Human Intent as a Formal Input
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
-Follow-up: 2026-07-02
+Follow-up: 2026-07-03
 
 Chapter ID: `human-intent-as-a-formal-input`
 
@@ -49,9 +49,13 @@ Allowed curation scopes used:
 - Preserved the Mermaid intent-narrowing diagram, core claim, evidence
   boundary, minimum viable implementation, beyond-state-of-the-art endpoint,
   and handoff to Constitutional Alignment.
-- Added an explicit reader handoff caveat: if the pending Part I consolidation
-  later merges the Constitutional Alignment destination, this reader handoff
-  must be reconciled to that merged destination before release.
+- Reconciled the reader handoff to the executed Part I consolidation so it
+  points at the current Constitutional Alignment destination rather than a
+  pending merge caveat.
+- 2026-07-03 reconciliation pass: rewrote the opening into a smoother
+  book-chapter entry, sharpened the sentence-as-bounded-grant throughline, and
+  updated the handoff to the now-consolidated Constitutional Alignment:
+  Agency, Dignity, and Corrigibility destination.
 
 ## Meaning Preservation Checks
 
@@ -63,7 +67,7 @@ Allowed curation scopes used:
 | Proof/test status preserved | Pass. The curated draft says fixtures would show contract discipline only and would not prove full intent understanding, hidden-authority extraction, or safe lowering into execution. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains an `intent_contract` schema plus example transformations; the mature endpoint remains a design destination until parser, ambiguity, authority, stop-condition, handoff, and lowering evidence exists. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
-| Consolidation handoff caveat preserved | Pass. The curated draft records that the handoff to Constitutional Alignment must be reconciled if the pending Part I consolidation changes that destination. |
+| Consolidation handoff reconciled | Pass. The curated draft now points to the current consolidated Constitutional Alignment destination and no longer carries the obsolete pending-merge caveat. |
 
 ## Non-Claims
 
@@ -80,6 +84,13 @@ Allowed curation scopes used:
   preference-learning run, approval-service behavior, runtime dispatch,
   prompt-injection containment, or end-to-end execution handoff.
 
+## Reconciliation Status
+
+The curated reader chapter is reconciled for the current source: claim meaning,
+support-state boundary, proof/test status, implementation horizon, and release
+blockers are preserved while prose, continuity, pacing, and the chapter-level
+handoff have been edited for human reading.
+
 ## Remaining Blockers
 
 - `reader_release_record_not_created`
@@ -87,6 +98,6 @@ Allowed curation scopes used:
 - `curated_reconciliation_not_approved`
 
 Before this curated source can be release input, the reader manuscript needs a
-full reconciliation pass against the live chapter, generated baseline,
-support-state boundaries, implementation horizons, pending consolidation
-handoffs, and exact rendered reader artifacts.
+full release-readiness pass against the live chapter, generated baseline,
+support-state boundaries, implementation horizons, current handoffs, and exact
+rendered reader artifacts.

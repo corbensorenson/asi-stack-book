@@ -8,7 +8,7 @@ support-state boundaries, source boundaries, proof/test status,
 implementation horizons, and release blockers.
 -->
 
-# Moral Uncertainty and Value Conflict
+# Moral Uncertainty, Value Conflict, and Contestable Governance
 
 A system that cannot hold disagreement will eventually hide it.
 
@@ -31,7 +31,8 @@ questions. They plan, route work, allocate tools, write policies, remember
 decisions, train successor systems, and replace their own components. If a
 temporary decision under uncertainty is stored as if the values were settled,
 the system has converted uncertainty into authority. This chapter prevents
-that move.
+that move. Contestability is the mechanism that keeps the unresolved part from
+being buried under the decision.
 
 ## Problem
 
@@ -63,7 +64,8 @@ Exchange remains connector-only context for contestability and reviewable
 disagreement.
 
 The engineering move is narrower than the philosophy. The stack needs a value
-conflict record.
+conflict record, and that record has to support appeal, exit, audit, redaction,
+and safe replacement rather than merely naming a dilemma.
 
 ## Why existing approaches are insufficient
 
@@ -353,9 +355,9 @@ disagreement inspectable, revisable, and difficult to erase.
 
 ## Handoff
 
-When value conflict remains, the system needs durable rights around
-contestability. Governance Rights: Fork, Exit, and Audit follows because
-unresolved obligations must be auditable, appealable, exportable, and
-resistant to quiet deletion during upgrades. Recorded disagreement therefore
-becomes institutional design: people need technical paths to challenge, leave,
-fork, or review the system when reconciliation fails.
+When value conflict remains, the system needs capability boundaries that can
+survive replacement. Stable Capability Fields follows because recorded
+disagreement, appeal, exit, audit, and fork obligations are fragile if the next
+model or subsystem can silently discard them. The governance question therefore
+turns into a replacement question: what must remain stable when capability
+improves?
