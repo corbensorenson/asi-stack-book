@@ -193,6 +193,33 @@ The record also keeps research demos separate from accepted phases. A phase can
 be allowed for exploration without being allowed to integrate, promote, or
 release. Those are different permissions.
 
+## A Phase Gate In Practice
+
+Suppose a local prototype can generate a plan graph, dispatch one typed job,
+and produce a useful artifact. That is progress, but it is not automatically a
+completed phase. The phase record has to ask what the trace is allowed to
+unlock.
+
+If the run preserved source references, context references, a parent command,
+a typed job, an artifact record, a validation command, and a residual, it may
+count as a research slice for the planning and execution layers. If it lacks a
+permission record, replay boundary, negative control, rollback path, or
+evidence-transition review, it should not unlock default runtime authority,
+claim promotion, or self-improvement. The output can be useful while the phase
+remains incomplete.
+
+That is why the roadmap treats acceptance as a separate artifact. A demo says
+"this path happened." A phase acceptance record says "this path happened under
+the required constraints, produced these artifacts, failed these controls, left
+these residuals, and unlocks only these downstream permissions." Without the
+second record, the roadmap should leave the phase research-only.
+
+The current local phase-gate fixture tests that distinction in miniature. It
+checks accepted, research-only, phase-debt, and blocked self-improvement
+cases, plus expected-invalid controls. It does not prove a real phase is
+complete. It proves that the book has a narrow machine-checkable way to reject
+some ways a phase could overclaim.
+
 ## Invariants
 
 The roadmap has a few simple invariants.

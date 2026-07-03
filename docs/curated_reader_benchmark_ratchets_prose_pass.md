@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Benchmark Ratchets and Anti-Goodhart Evidence
 
-Last updated: 2026-06-30
+Last updated: 2026-07-02
+
+Follow-up: 2026-07-02
 
 Chapter ID: `benchmark-ratchets-and-anti-goodhart-evidence`
 
@@ -41,6 +43,9 @@ permission to change proof or test status.
 - Organized the mechanism around evidence-state classification, run records,
   baselines, residuals, regression floors, anti-Goodhart checks, contamination
   and transfer boundaries, and claim-specific promotion decisions.
+- Added a toy ratchet-decision example that distinguishes frontier progress,
+  old-floor regression, residual creation, contamination checks, promotion
+  review, and no-support-promotion boundaries.
 - Preserved external benchmark-science orientation for MMLU, BIG-bench, HELM,
   GPQA, SWE-bench, LiveBench, Dynabench, CheckList, contamination analysis, and
   Goodhart variants without claiming local reproduction.
@@ -56,6 +61,11 @@ permission to change proof or test status.
   quality, or ASI-progress result is claimed.
 - Preserved the minimum viable implementation, beyond-state-of-the-art
   endpoint, and handoff into Policy Optimization and Learning from Feedback.
+- Preserved the release and measurement boundary: the new example is
+  reader-facing explanation only and does not claim an empirical benchmark run,
+  hidden-holdout quality, transfer validity, contamination resistance,
+  source-reported replay, Theseus readiness, model quality, or support-state
+  movement.
 
 ## Meaning Preservation Checks
 

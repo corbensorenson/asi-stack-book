@@ -712,7 +712,7 @@
       "voice_pass_slot_ids": [
         "evidence-discipline"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the chapter around benchmark scores as pressure signals that require evidence packets: evidence-state classification, run records, baselines, residuals, regression floors, anti-Goodhart checks, contamination and transfer boundaries, and claim-specific promotion decisions; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "First curated reader prose pass reframes the chapter around benchmark scores as pressure signals that require evidence packets: evidence-state classification, run records, baselines, residuals, regression floors, anti-Goodhart checks, contamination and transfer boundaries, a toy ratchet-decision example, and claim-specific promotion decisions; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
@@ -728,7 +728,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_benchmark_ratchets_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass and 2026-07-02 toy ratchet-decision follow-up recorded in docs/curated_reader_benchmark_ratchets_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "capability-replacement-and-rollback",
@@ -1653,7 +1653,7 @@
       "voice_pass_slot_ids": [
         "implementation-history"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the roadmap around phase-gated build order: source and claim hygiene before artifact graphs, contracts, execution, routing, benchmarks, replacement, and bounded self-improvement; roadmap phases remain dependency controls, not phase-acceptance evidence or support-state movement.",
+      "divergence_summary": "First curated reader prose pass reframes the roadmap around phase-gated build order: source and claim hygiene before artifact graphs, contracts, execution, routing, benchmarks, replacement, bounded self-improvement, and a phase-gate example that separates useful demos from accepted phases; roadmap phases remain dependency controls, not phase-acceptance evidence or support-state movement.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support",
@@ -1669,7 +1669,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_prototype_roadmap_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass and 2026-07-02 phase-gate follow-up recorded in docs/curated_reader_prototype_roadmap_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",

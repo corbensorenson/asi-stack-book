@@ -165,6 +165,36 @@ not a deployment result. A source-reported command is not a local reproduction.
 A locally reproduced benchmark is not automatically proof of broad readiness.
 The packet keeps those distinctions visible.
 
+## A Toy Ratchet Decision
+
+Consider a small evaluation where a route improves on a frontier task but
+fails a neighboring case that the older route handled. A scoreboard wants to
+celebrate the improvement. A benchmark ratchet packet asks a different set of
+questions.
+
+What was the baseline? Which command or replay produced the result? Was the
+new task a frontier probe, a regression floor, a source-reported result, a
+synthetic fixture, or a local empirical run? Did the older floor still pass?
+Was the failed neighboring case preserved as a residual? Was there a
+contamination path from examples, prompts, public calibration, or previous
+training material? Did the result measure the claim that someone now wants to
+move?
+
+If the route passed the new frontier but failed the old floor, the ratchet
+does not say "better." It says something narrower: frontier progress with a
+regression. That can create a residual, a diagnostic task, a quarantine, or a
+new floor. It should not become broad support for readiness.
+
+If the route passed both the frontier and the old floor, the result still does
+not move a claim by itself. The packet must preserve negative results,
+anti-Goodhart checks, public-calibration boundaries, and the exact claim under
+review. Success opens a promotion decision. It does not replace one.
+
+This toy example is close to what the current synthetic fixture bridge checks:
+recorded success, saturation, regression-floor preservation, blocked
+promotion, and no-support-promotion boundaries. It is not an empirical
+benchmark result.
+
 ## Interfaces
 
 Benchmark ratchets sit between evaluation, readiness gates, stable capability

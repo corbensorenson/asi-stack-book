@@ -2,6 +2,8 @@
 
 Date: 2026-06-30
 
+Follow-up: 2026-07-02
+
 Chapter: `prototype-roadmap`
 
 Reader manuscript file:
@@ -32,6 +34,10 @@ The reader throughline is:
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint as reader-facing sections.
 - Kept one Mermaid diagram to show the phase order and refusal gates.
+- Added a phase-gate example that separates a useful local demo from an
+  accepted phase, using the existing phase-gate fixture boundary to explain
+  research-only, phase-debt, and blocked self-improvement cases without
+  claiming any phase is complete.
 
 ## Meaning-Preservation Checks
 
@@ -40,8 +46,8 @@ The reader throughline is:
   mappings, evidence levels, implementation horizons, or release records.
 - The roadmap remains sequencing logic, not evidence that any phase has been
   implemented, accepted, validated, or used to promote a capability claim.
-- The existing fixture and Lean hooks remain narrow record-shape and
-  gate-predicate checks only.
+- The existing fixture, phase-gate harness, and Lean hooks remain narrow
+  record-shape and gate-predicate checks only.
 - The prose does not claim a phase acceptance result, dependency-gate audit,
   phase execution, benchmark result, model-quality result, deployment
   readiness, self-improvement readiness, roadmap-controller deployment, or
@@ -62,9 +68,9 @@ The reader throughline is:
 
 ## Remaining Blockers
 
-- A dependency-gate fixture set with blocked, research-only, phase-debt, and
-  self-improvement-blocked examples remains planned.
-- A full phase acceptance audit remains unrun.
+- The phase-gate fixture set with blocked, research-only, phase-debt, and
+  self-improvement-blocked examples remains synthetic and non-promoting.
+- A full phase acceptance audit over real phase packets remains unrun.
 - Any future support-state movement requires actual phase packets, commands,
   artifacts, acceptance reviews, and evidence-transition records.
 - Human editorial review of the curated reader manuscript has not approved this
