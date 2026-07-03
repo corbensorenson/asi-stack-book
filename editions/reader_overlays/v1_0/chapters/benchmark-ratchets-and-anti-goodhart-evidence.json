@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+  "operations": [
+    {
+      "id": "v1_0.benchmark_ratchets.interfaces_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Interfaces"
+      },
+      "rationale": "Replace the generated-reader field list with prose that preserves the benchmark-ratchet packet boundary and support-state restraint.",
+      "content_lines": [
+        "The interface is not a leaderboard row. It is a decision packet around an evaluation event. A later system should be able to see what was tested, what counted as the old floor, what changed, what failed nearby, and which claim was allowed to move.",
+        "",
+        "A useful packet names the capability being pressured, the task or suite, the run command or source boundary, the baseline, the environment, the threshold, the saturation state, the residuals, the regressions that must be preserved, the hidden or transfer checks, the contamination review, the negative results, and the promotion decision. If those details are missing, the result may still be interesting, but it is not permission to move a support state.",
+        "",
+        "Routing and stable capability fields consume the packet as readiness context. Procedural memory consumes it as retirement pressure: a tool that fails an old floor should be revised, quarantined, or retired. Appendix C consumes it only when the packet supports an exact claim and preserves the non-claims around every stronger-sounding interpretation.",
+        "",
+        "That is why the ratchet interface is conservative. It lets a win become memory without letting a score become mythology."
+      ]
+    },
+    {
+      "id": "v1_0.benchmark_ratchets.minimum_viable_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the implementation inventory and fixture-bridge subsection with reader prose while preserving the current synthetic-only boundary and no-promotion result.",
+      "content_lines": [
+        "The smallest honest ratchet is not a benchmark suite. It is a tiny evidence rehearsal that keeps four outcomes separate: a passing path, a nearby failure, a saturated task that becomes a regression floor, and a blocked promotion. The rehearsal is valuable only if it refuses to turn any one of those outcomes into a broad capability story.",
+        "",
+        "The current repository already exercises a narrower version of that shape. It checks a small synthetic anti-Goodhart packet with two valid cases and five expected-invalid controls. The passing side covers one promotion-ready synthetic path and one saturated task preserved as a floor. The rejected side blocks missing anti-Goodhart checks, promotion from blocked evidence, reward-as-truth confusion, saturation-as-readiness, and a steward release without approval.",
+        "",
+        "That bridge is useful because the success and failure paths are checked together. It demonstrates record discipline at the boundary where claims might otherwise inflate. It is still not an empirical run, not a hidden-holdout test, not a contamination detector, not a policy-training result, not a steward-agent release review, not a Theseus replay, not model-quality evidence, and not a support-state transition.",
+        "",
+        "The next useful slice should be a public toy ratchet with one intentionally contaminated case and one source-reported-only case. Those cases would force the book to preserve two important refusals: contamination creates a quarantine or blocked decision, and source-reported status stays source-reported until the command, environment, data boundary, and artifacts are imported or rerun."
+      ]
+    },
+    {
+      "id": "v1_0.benchmark_ratchets.beyond_state_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Beyond the State of the Art"
+      },
+      "rationale": "Replace the dense target-architecture checklist with reader prose that preserves lifecycle, anti-Goodhart, and artifact-approval boundaries.",
+      "content_lines": [
+        "The mature endpoint is an evaluation operating system, not a bigger scoreboard. Every task would have a lifecycle: candidate pressure, frontier probe, regression floor, contamination review, retirement, or blocked state. The system would remember why a task mattered and why it stopped being enough.",
+        "",
+        "In that endpoint, a result could not travel alone. It would carry its old floor, neighboring failures, residuals, negative cases, hidden or transfer checks, public-calibration limits, and the exact claim under review. Success would open a promotion review; it would not become promotion by itself.",
+        "",
+        "This would also change how self-improving systems learn. Once a planner, policy, or tool can adapt to feedback, the evaluation surface becomes part of the environment. The ratchet has to preserve the difference between learning a capability, learning a test, exploiting a proxy, and improving the presentation of progress.",
+        "",
+        "The endpoint remains a target architecture. The book has not shown that such an evaluation OS works in deployment. It has a synthetic boundary check and a design discipline. Stronger claims require real ratchet packets, contamination reviews, transfer checks, regression-preservation runs, and accepted evidence transitions that show exactly which claim boundary changed."
+      ]
+    }
+  ]
+}

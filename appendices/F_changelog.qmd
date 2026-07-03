@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-02 - Refine Benchmark Ratchets reader prose
+
+- Added three active reader-only semantic overlay operations for `Benchmark
+  Ratchets and Anti-Goodhart Evidence`, replacing generated reader and live
+  Human-view `Interfaces`, `Minimum Viable Implementation`, and `Beyond the
+  State of the Art` machinery with prose that preserves benchmark-ratchet
+  packet boundaries, synthetic-only fixture-bridge scope, contamination and
+  source-reported refusals, no-promotion boundaries, and the target evaluation
+  OS endpoint while leaving the canonical AI/research chapter unchanged.
+- Regenerated `assets/reader-overlays.html`,
+  `docs/reader_continuity_audit.md`, and the reader chapter review matrix. The
+  reader-continuity audit now records 44 reader chapters, 115,466 reader words,
+  53 active/applied overlay operations, 0 generated-reader chapter table rows,
+  53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160
+  words, and 0 high-priority plus 8 medium-priority heuristic review rows.
+- This is a reader projection and Human-view craft increment only; it is not a
+  benchmark run, hidden-holdout result, contamination detector, policy-training
+  result, steward-agent release review, Theseus replay, model-quality result,
+  evidence transition, support-state promotion, source-derived evidence update,
+  reader release, ebook/document/PDF/audio artifact, or artifact approval.
+
 ## 2026-07-02 - Tighten v1.x roadmap execution policy
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after the latest Claude roadmap
