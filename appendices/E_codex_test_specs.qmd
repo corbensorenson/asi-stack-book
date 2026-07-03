@@ -143,7 +143,8 @@ No result is recorded here unless a test has actually been implemented and run.
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Taint propagation finite-record proof | implemented | builds in AsiStackProofs.ContextTransactions; no deployed taint engine claim |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Deletion closure test | implemented | passes via synthetic context admission/adequacy harness; no memory-store claim |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Context transaction route proof | implemented | passes via Lean build; finite snapshot, branch, mount, taint, deletion-closure, replay-boundary, support-transition, and non-claim route coverage only |
-| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Bounded memory-store conformance harness | implemented | passes via synthetic context transaction memory-store harness; no deployed memory-store claim |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Bounded memory-store conformance harness | implemented | passes via synthetic context transaction memory-store harness and Lean/Python summary bridge; no deployed memory-store claim |
+| `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Context transaction memory-store fixture bridge | implemented | passes via finite Lean summary for 3 valid fixtures, 6 expected-invalid controls, replay-boundary checks, invalid-control rejection flags, and no chapter-core support promotion |
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Distractor resistance test | planned | not run |
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Adequacy labeling test | implemented | passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim |
 | `verification-bandwidth-and-context-adequacy` | Verification Bandwidth and Context Adequacy | Verification escalation test | implemented | passes via synthetic context admission/adequacy harness; no deployed escalation claim |
@@ -468,16 +469,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 179 |
+| Proof targets covered by triage | 180 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 179 |
+| implemented | 180 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 179 |
+| implemented | formal-invariant | lean-candidate | 180 |

@@ -12,6 +12,8 @@ from validate_protocol_examples import validate_value
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "experiments" / "context_transaction_memory_store" / "fixtures"
 SCHEMA = ROOT / "schemas" / "context_transaction_record.schema.json"
+LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ContextTransactions.lean"
+RESULT_DOC = ROOT / "experiments" / "context_transaction_memory_store" / "results" / "2026-07-01-local.md"
 
 VALID_STATES = {"shape_validated", "store_validated", "replay_validated"}
 SUPPORT_PROMOTION_EFFECTS = {
@@ -20,6 +22,15 @@ SUPPORT_PROMOTION_EFFECTS = {
     "empirical-test-backed",
     "prototype-backed",
 }
+
+EXPECTED_LEAN_BRIDGE_TERMS = (
+    "structure MemoryStoreHarnessSummary",
+    "def MemoryStoreHarnessSummaryAccepted",
+    "def currentMemoryStoreHarnessSummary",
+    "theorem current_memory_store_harness_summary_accepted",
+    "theorem accepted_memory_store_harness_summary_requires_invalid_controls",
+    "theorem memory_store_harness_summary_with_support_promotion_rejected",
+)
 
 
 def load_json(path: Path) -> Any:
@@ -292,6 +303,36 @@ def main() -> None:
             invalid_count += 1
             if not current_errors:
                 errors.append(f"{relative}: expected invalid fixture passed validation.")
+
+    if not LEAN_FILE.exists():
+        errors.append(f"{LEAN_FILE.relative_to(ROOT)}: missing Lean bridge module.")
+    else:
+        lean_text = LEAN_FILE.read_text(encoding="utf-8")
+        for term in EXPECTED_LEAN_BRIDGE_TERMS:
+            if term not in lean_text:
+                errors.append(f"{LEAN_FILE.relative_to(ROOT)}: missing Lean bridge term {term!r}.")
+        for term in (
+            "validFixtureCount := 3",
+            "expectedInvalidFixtureCount := 6",
+            "chapterCoreSupportPromoted := false",
+        ):
+            if term not in lean_text:
+                errors.append(f"{LEAN_FILE.relative_to(ROOT)}: missing current harness summary field {term!r}.")
+
+    if RESULT_DOC.exists():
+        result_text = RESULT_DOC.read_text(encoding="utf-8")
+        for term in (
+            "3 valid fixture(s), 6 expected-invalid fixture(s)",
+            "support-state non-promotion",
+            "does not implement a deployed memory store",
+        ):
+            if term not in result_text:
+                errors.append(f"{RESULT_DOC.relative_to(ROOT)}: missing result boundary term {term!r}.")
+
+    if valid_count != 3:
+        errors.append(f"Expected 3 valid context memory-store fixtures, found {valid_count}.")
+    if invalid_count != 6:
+        errors.append(f"Expected 6 expected-invalid context memory-store fixtures, found {invalid_count}.")
 
     if errors:
         print("Context transaction memory-store harness failed:")

@@ -407,4 +407,78 @@ theorem complete_context_transaction_admits_committed_read
     mountSatisfied, untainted, noDeletedCell, committedRead, visibleReadSet,
     replayBoundary, noPromotion, nonClaims]
 
+structure MemoryStoreHarnessSummary where
+  validFixtureCount : Nat
+  expectedInvalidFixtureCount : Nat
+  readVisibilityChecked : Bool
+  branchIsolationChecked : Bool
+  mountVisibilityChecked : Bool
+  deletionClosureChecked : Bool
+  taintPropagationChecked : Bool
+  replayBoundaryRecorded : Bool
+  unauthorizedMountRejected : Bool
+  deletedMaterializationRejected : Bool
+  supportPromotionRejected : Bool
+  chapterCoreSupportPromoted : Bool
+deriving DecidableEq, Repr
+
+def MemoryStoreHarnessSummaryAccepted
+    (summary : MemoryStoreHarnessSummary) : Prop :=
+  summary.validFixtureCount = 3 ∧
+    summary.expectedInvalidFixtureCount = 6 ∧
+      summary.readVisibilityChecked = true ∧
+        summary.branchIsolationChecked = true ∧
+          summary.mountVisibilityChecked = true ∧
+            summary.deletionClosureChecked = true ∧
+              summary.taintPropagationChecked = true ∧
+                summary.replayBoundaryRecorded = true ∧
+                  summary.unauthorizedMountRejected = true ∧
+                    summary.deletedMaterializationRejected = true ∧
+                      summary.supportPromotionRejected = true ∧
+                        summary.chapterCoreSupportPromoted = false
+
+def currentMemoryStoreHarnessSummary : MemoryStoreHarnessSummary :=
+  {
+    validFixtureCount := 3
+    expectedInvalidFixtureCount := 6
+    readVisibilityChecked := true
+    branchIsolationChecked := true
+    mountVisibilityChecked := true
+    deletionClosureChecked := true
+    taintPropagationChecked := true
+    replayBoundaryRecorded := true
+    unauthorizedMountRejected := true
+    deletedMaterializationRejected := true
+    supportPromotionRejected := true
+    chapterCoreSupportPromoted := false
+  }
+
+theorem current_memory_store_harness_summary_accepted :
+    MemoryStoreHarnessSummaryAccepted currentMemoryStoreHarnessSummary := by
+  unfold MemoryStoreHarnessSummaryAccepted currentMemoryStoreHarnessSummary
+  simp
+
+theorem accepted_memory_store_harness_summary_requires_invalid_controls
+    {summary : MemoryStoreHarnessSummary} :
+    MemoryStoreHarnessSummaryAccepted summary ->
+      summary.expectedInvalidFixtureCount = 6 := by
+  intro accepted
+  rcases accepted with ⟨_validCount, invalidCount, _readVisibility,
+    _branchIsolation, _mountVisibility, _deletionClosure, _taintPropagation,
+    _replayBoundary, _unauthorizedMount, _deletedMaterialization,
+    _supportPromotion, _noCorePromotion⟩
+  exact invalidCount
+
+theorem memory_store_harness_summary_with_support_promotion_rejected
+    {summary : MemoryStoreHarnessSummary} :
+    summary.chapterCoreSupportPromoted = true ->
+      ¬ MemoryStoreHarnessSummaryAccepted summary := by
+  intro promoted accepted
+  rcases accepted with ⟨_validCount, _invalidCount, _readVisibility,
+    _branchIsolation, _mountVisibility, _deletionClosure, _taintPropagation,
+    _replayBoundary, _unauthorizedMount, _deletedMaterialization,
+    _supportPromotion, noCorePromotion⟩
+  rw [promoted] at noCorePromotion
+  cases noCorePromotion
+
 end AsiStackProofs.ContextTransactions

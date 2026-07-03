@@ -42,7 +42,7 @@
   Lean Proof Envelope` so its minimum viable implementation names the current
   proof-envelope executable surface: protocol example validation, proof
   readiness, proof artifact audit, proof-depth surface synchronization, local
-  `lake build`, 179 implemented proof targets, 54 Lean modules, all 44 chapters
+  `lake build`, 180 implemented proof targets, 54 Lean modules, all 44 chapters
   in the audit, zero audit errors or warnings, and the
   `AsiStackProofs.ProofEnvelope` finite negative cases.
 - Updated the executable-specs prose-pass note, reader manuscript manifest,
@@ -1634,6 +1634,25 @@
   approval, source-interpretation review, benchmark reproduction,
   public-release permission check, external-review completion, support-state
   promotion, reader release, or ebook/document/PDF/audio artifact approval.
+
+## 2026-07-03 - Add Context Transactions memory-store fixture bridge
+
+- Added a finite `AsiStackProofs.ContextTransactions` memory-store harness
+  summary bridge for the bounded context transaction memory-store harness:
+  three valid fixtures, six expected-invalid controls, read/mount/branch/
+  deletion/taint/replay checks, invalid-control rejection flags, and no
+  chapter-core support promotion.
+- Updated `python3 scripts/validate_context_transaction_memory_store.py` to
+  require the Lean bridge terms and the recorded result-boundary phrases, then
+  updated the live chapter, outline, book structure proof/test metadata, and
+  proof manifest source of truth. This is a Lean/Python fixture-alignment
+  improvement only; it is not a deployed memory-store result, branch-isolation
+  result, runtime mount-enforcement result, deletion-closure service,
+  declassification-quality result, VCM-Bench reproduction, support-state
+  promotion, reader release, or ebook/document/PDF/audio artifact approval.
+- Current proof-depth snapshot: 180 proof targets, 54 Lean modules, 939 theorem
+  declarations, 757 derived/decomposed, 178 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-02 - Add RankFold public-safe replay probe
 

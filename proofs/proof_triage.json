@@ -761,6 +761,16 @@
       "rationale": "Implemented in AsiStackProofs.ContextTransactions as a finite taint predicate: tainted sources taint derivatives unless declassification is authorized."
     },
     {
+      "tag": "lean:vcm.transactions.memory_store_fixture_bridge",
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "module": "AsiStackProofs.ContextTransactions",
+      "formal_target": "The bounded context memory-store harness summary preserves 3 valid fixtures, 6 expected-invalid controls, replay-boundary checks, and no chapter-core support promotion.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ContextTransactions as a finite harness-summary bridge aligned with python3 scripts/validate_context_transaction_memory_store.py; it preserves fixture counts, invalid-control rejection flags, replay-boundary checks, and no chapter-core support promotion without claiming deployed memory-store behavior."
+    },
+    {
       "tag": "lean:verification_bandwidth.adequacy.operational_invariant",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "module": "AsiStackProofs.VerificationBandwidth",
@@ -1801,5 +1811,5 @@
       "rationale": "Implemented in AsiStackProofs.Planning as a finite runtime-replan delta route and fixture bridge: it rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context or verification deltas, missing residuals, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta."
     }
   ],
-  "record_count": 179
+  "record_count": 180
 }
