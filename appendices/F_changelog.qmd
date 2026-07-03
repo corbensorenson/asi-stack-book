@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-03 - Align RankFold reader evidence boundary
+
+- Updated the curated reader manuscript draft for `RankFold, NeuralFold, and
+  Artifact Compression` so its minimum viable implementation names the two
+  implemented evidence surfaces: the public-safe RAW0 replay probe over a
+  3,936-byte synthetic file with corrupt-archive rejection and no compression
+  advantage, and the static artifact import for three existing `.rfa` archive
+  observations over one 100,000,000-byte decoded digest with `NEURAL0` inspect
+  metadata.
+- Updated the RankFold prose-pass note, reader manuscript manifest, chapter
+  review matrix, and reconciliation report to record the 2026-07-03
+  evidence-boundary alignment. This is curated reader-manuscript alignment
+  only; it is not a live AI/research chapter change, NeuralFold compression
+  result, codec-correctness result, corpus benchmark, downstream-utility
+  result, fallback-execution result, deployed compression result, chapter core
+  support-state promotion, reader release, ebook/document/PDF/audio artifact,
+  or artifact approval.
+
 ## 2026-07-03 - Align fast generation reader evidence boundary
 
 - Updated the curated reader manuscript draft for `Fast Generation

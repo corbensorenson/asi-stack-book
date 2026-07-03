@@ -2366,11 +2366,11 @@
       "voice_pass_slot_ids": [
         "resource-tradeoff"
       ],
-      "divergence_summary": "First curated reader pass strengthens the archive-facing opening around routed artifact compression: a compressed artifact earns one use at a time. It preserves RankFold/NeuralFold, BBVCA, CGS, source, proof/test, and support-state boundaries without adding compressor or benchmark claims.",
+      "divergence_summary": "First curated reader pass strengthens the archive-facing opening around routed artifact compression: a compressed artifact earns one use at a time. The 2026-07-03 alignment surfaces the implemented RankFold public-safe RAW0 replay and static artifact import while preserving RankFold/NeuralFold, BBVCA, CGS, source, proof/test, and support-state boundaries without adding compressor, codec-correctness, utility, deployment, or benchmark claims.",
       "meaning_preservation_checks": [
         "support-state boundary remains design rationale with argument support",
         "source boundary preserved: RankFold/NeuralFold, RankFold compressor, BBVCA, CGS, and external compression sources remain architectural/contextual unless locally reproduced",
-        "proof/test status preserved: current fixture work supports record-shape checks only",
+        "proof/test status preserved: current fixture, RankFold replay, and artifact-import work supports record-shape, bounded local replay, metadata-consistency, and no-promotion checks only",
         "implementation horizon preserved without implying compressor, deterministic decoder, corpus benchmark, utility probe, or admission-system implementation",
         "release blocker status preserved until human editorial review, artifact review, and edition release record clear it"
       ],
@@ -2381,7 +2381,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "See docs/curated_reader_rankfold_artifact_compression_prose_pass.md. Drafting-only first curated reader pass; not release-reviewed."
+      "review_notes": "See docs/curated_reader_rankfold_artifact_compression_prose_pass.md. Drafting-only first curated reader pass; 2026-07-03 alignment surfaces the existing RAW0 replay and artifact import without approving reader release or promoting the chapter core claim."
     }
   ],
   "reconciliation_report": {

@@ -210,7 +210,9 @@ A minimal artifact-compression lane is a compressed artifact record. The reposit
 
 The compressed-artifact fixture does not produce a compressor result. It gives the public book an executable contract for evaluating one later.
 
-A toy corpus with deliberately adversarial artifacts should follow: ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata. A future harness can then ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, artifact compression remains a design rationale with executable record-shape checks only.
+The repository now has two narrow concrete surfaces, neither of which promotes the chapter core claim. The RankFold public-safe replay probe performs one fresh RAW0 pack/verify/list/unpack roundtrip over a 3,936-byte synthetic file, records no compression advantage, and rejects a single-byte corrupt archive. The RankFold artifact import records three existing `.rfa` archive observations for one 100,000,000-byte decoded digest, with `rfa verify` reporting 1 OK and 0 failed and `NEURAL0` inspect metadata. Together, they make the evidence boundary more concrete while still leaving NeuralFold compression, codec correctness, downstream utility, fallback execution, corpus benchmarking, and deployed compression behavior unproved.
+
+A toy corpus with deliberately adversarial artifacts should follow: ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata. A future harness can then ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, artifact compression remains a design rationale with executable record-shape checks, one RAW0 replay, and one static archive-import surface only.
 
 ## Beyond the State of the Art
 

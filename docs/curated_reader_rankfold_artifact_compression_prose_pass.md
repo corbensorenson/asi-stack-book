@@ -2,6 +2,8 @@
 
 Date: 2026-07-01
 
+Evidence-boundary alignment: 2026-07-03
+
 Chapter: `rankfold-neuralfold-and-artifact-compression`
 
 Reader manuscript file: `editions/reader_manuscript/v1_0/chapters/rankfold-neuralfold-and-artifact-compression.qmd`
@@ -24,6 +26,7 @@ The reader throughline is:
 - Preserved the compressed-artifact gate Mermaid diagram and its meaning.
 - Preserved the minimum viable implementation and beyond-SOTA sections without implying that a compressor, deterministic decoder, corpus benchmark, utility probe, or artifact admission system already exists.
 - Preserved the distinction among representation, reconstruction, compression-ratio, utility, latency, exact-replay, fallback-frequency, and decoder-drift claims.
+- Aligned the reader MVI with the implemented RankFold public-safe replay probe and static artifact import: the replay records one RAW0 roundtrip and corrupt-archive rejection with no compression advantage, while the import records three existing `.rfa` archive observations over one 100,000,000-byte decoded digest and `NEURAL0` inspect metadata.
 
 ## Meaning-Preservation Checks
 
@@ -31,13 +34,14 @@ The reader throughline is:
 - No Appendix C, Appendix K, proof manifest, source note, or support-state promotion is changed by this reader pass.
 - External compression work remains comparison vocabulary and credibility grounding, not evidence for local RankFold/NeuralFold performance.
 - Source-reported RankFold/NeuralFold and BBVCA ideas remain architecture/design material unless the repository has a local run or proof.
-- Current fixtures validate record shape; they do not establish compression performance, deterministic decode, task utility, or artifact readiness.
+- Current fixtures, the RankFold public-safe replay probe, and the static artifact import validate record shape, bounded local replay, recorded archive metadata consistency, and no-promotion boundaries only; they do not establish NeuralFold compression, codec correctness, benchmark performance, downstream utility, fallback execution, deployed compression behavior, or artifact readiness.
 
 ## Non-Claims
 
 - This pass does not claim a working RankFold/NeuralFold compressor.
 - This pass does not claim measured compression ratios, utility improvements, deterministic replay, or corpus results.
 - This pass does not claim that a compressed artifact can replace the preserved full artifact outside a declared use envelope.
+- This pass does not promote the chapter core claim above `argument`; the existing RankFold replay and artifact-import records remain no-promotion evidence surfaces.
 
 ## Remaining Blockers
 
