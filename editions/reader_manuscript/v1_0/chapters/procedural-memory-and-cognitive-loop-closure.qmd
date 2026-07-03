@@ -137,6 +137,37 @@ procedure. It becomes quarantine, residual, revision, or retirement.
 That is the difference between memory and habit. Habit repeats. Procedural
 memory explains why reuse is allowed.
 
+## A Small Loop-Closure Story
+
+Imagine the system repeatedly fixes a schema fixture after a validator fails.
+The first successful repair is not a procedure. It is only a trace. The second
+and third successes are still not enough. They may share a hidden condition:
+the same file shape, the same missing field, the same forgiving validator, or
+the same local assumption about defaults.
+
+Loop closure begins when the stack collects the surrounding evidence. It keeps
+the successful repairs, but also the failed repair, the near miss where the
+patch passed one validator and broke another, and the case where the schema was
+right but the fixture was stale. From those traces, the system can ask what
+actually stayed invariant. Maybe the reusable pattern is not "add the missing
+field." Maybe it is narrower: "when a required schema field is absent from a
+fixture generated under this schema version, add the field only after checking
+the default policy, fixture provenance, and downstream examples."
+
+That narrower pattern can become a candidate procedure. It names parameters:
+schema version, fixture path, required field, default policy, provenance
+record, downstream example set, and validators to rerun. It also names
+preconditions and refusal cases. If the schema version is unknown, the
+procedure does not run. If the field's default would change claim meaning, the
+procedure escalates. If a downstream example fails, the candidate remains
+unroutable.
+
+The story matters because procedural memory is most dangerous when it feels
+obvious. A good agent will see a familiar validator failure and want to fix it
+immediately. The stack should instead ask whether the familiar move has earned
+automation. Until the answer is recorded in a qualification packet, the safe
+mode is still interpretation, not routable tool use.
+
 ## Procedure Qualification
 
 The key artifact is a Procedure Qualification Packet around the smaller

@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Procedural Memory and Cognitive Loop Closure
 
-Last updated: 2026-06-30
+Last updated: 2026-07-02
+
+Follow-up: 2026-07-02
 
 Chapter ID: `procedural-memory-and-cognitive-loop-closure`
 
@@ -39,6 +41,10 @@ permission to change proof or test status.
 
 - Reframed the chapter around the claim that automation should be earned by
   evidence rather than granted by repetition.
+- Added a small loop-closure story around repeated schema-fixture repair to
+  show why successful traces, failed repairs, near misses, stale fixtures,
+  parameters, preconditions, refusal cases, and rerun validators must be kept
+  before a familiar move becomes routable procedure.
 - Organized the mechanism around candidate traces, comparable loop clusters,
   failures and near misses, invariant abstraction, parameter discovery, tool
   candidates, verification, regression checks, quarantine, residuals, and
@@ -56,6 +62,10 @@ permission to change proof or test status.
   Project Theseus replay, or autonomous self-improvement result is claimed.
 - Preserved the minimum viable implementation, beyond-state-of-the-art
   endpoint, and handoff into Routing Heads and Specialist Cores.
+- Preserved the release and runtime boundary: the new story is reader-facing
+  explanation only and does not claim loop detection, tool synthesis,
+  validator-repair automation, regression success, routing quality, or
+  deployed self-improvement.
 
 ## Meaning Preservation Checks
 

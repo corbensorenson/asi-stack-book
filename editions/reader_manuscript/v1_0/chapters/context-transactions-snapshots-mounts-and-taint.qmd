@@ -147,6 +147,36 @@ and artifacts that inherited the context. That difference lets later reviewers
 ask not merely what sources existed, but what memory state actually shaped the
 work.
 
+## A Simple Memory Incident
+
+Consider a research agent asked to update a chapter after a source changes.
+The source has a committed version, a draft correction, an old summary in a
+cache, and a private reviewer note mounted for a separate task. A flat memory
+system may retrieve all four because they look relevant. The answer may even
+sound better because it blends them.
+
+The transaction layer asks different questions. Which snapshot is the chapter
+allowed to read? Is the draft correction committed or only branched? Is the
+cached summary stale after the source change? Is the reviewer note mounted for
+this task, or is it sealed to another authority context? If the answer cites
+the source, did it cite the committed text, the draft correction, or the old
+summary? If the private note influenced the rewrite, did that taint propagate
+into the downstream artifact?
+
+In the governed version, the update either receives a coherent view or a
+fault. A committed source update can materialize. A draft branch can remain
+copy-on-write until merge review. A stale summary can be invalidated. A
+private reviewer note can stay outside the mount. A derivative that still
+carries private or revoked material can be quarantined until deletion closure
+or declassification is recorded.
+
+That behavior is not just caution. It is how the system knows what happened
+after the chapter changes. A later reviewer should be able to say: this edit
+read snapshot `S`, mounted views `M`, inherited taint `T`, rejected stale
+summary `R`, and produced artifact `A` under replay boundary `B`. Without that
+transaction receipt, the edit is only a plausible answer with a lost memory
+state.
+
 ## Interfaces
 
 The main interface is the Context Transaction Record.

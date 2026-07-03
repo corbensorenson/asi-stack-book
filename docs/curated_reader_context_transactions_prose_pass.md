@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Context Transactions, Snapshots, Mounts, and Taint
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
+
+Follow-up: 2026-07-02
 
 Chapter ID: `context-transactions-snapshots-mounts-and-taint`
 
@@ -38,6 +40,10 @@ permission to change proof or test status.
 
 - Reframed the chapter around memory as accountable state rather than relevant
   retrieved snippets.
+- Added a simple memory-incident example that contrasts committed source
+  updates, draft corrections, stale summaries, private mounts, taint
+  propagation, quarantine, and replay boundaries as transaction-state
+  questions rather than retrieval-quality questions.
 - Organized the mechanism around immutable events, versioned pages, mounts,
   snapshots, branches, taint/deletion closure, materialization, faults, and
   downstream artifact inheritance.
@@ -54,6 +60,10 @@ permission to change proof or test status.
   manager benchmark result is claimed.
 - Preserved the minimum viable implementation, beyond-state-of-the-art endpoint,
   and handoff into Verification Bandwidth and Context Adequacy.
+- Preserved the release and runtime boundary: the new example explains the
+  contract and does not claim a deployed transaction store, mount policy
+  engine, taint engine, deletion-closure engine, replay system, or context
+  compiler.
 
 ## Meaning Preservation Checks
 
