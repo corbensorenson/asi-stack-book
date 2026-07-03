@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Personal Compute Hives and Federated Edge Intelligence
 
-Date: 2026-06-30
+Date: 2026-07-03
+
+Follow-up: 2026-07-03
 
 Chapter: `personal-compute-hives-and-federated-edge-intelligence`
 
@@ -37,6 +39,11 @@ The reader throughline is:
   endpoint without implying a live hive scheduler, device registry, approval
   service, rented-node sandbox, family-governance engine, federation run, or
   behavioral test exists.
+- Added a 2026-07-03 evidence-boundary alignment so the reader minimum viable
+  implementation names the implemented synthetic hive admission harness and
+  finite `AsiStackProofs.PersonalComputeHives` predicates without claiming live
+  scheduler, device, approval, federation, energy, privacy, or security
+  behavior.
 
 ## Meaning-Preservation Checks
 
@@ -51,7 +58,8 @@ The reader throughline is:
   suitability, or family-governance behavior.
 - The implemented record fixtures and Lean predicates remain schema/proof-shape
   evidence only, not evidence of a deployed hive, network overlay, scheduler,
-  approval portal, sandbox, federation protocol, or device behavior.
+  approval portal, sandbox, federation protocol, device behavior, privacy
+  behavior, energy measurement, dropout recovery, or support-state promotion.
 
 ## Non-Claims
 
@@ -62,7 +70,9 @@ The reader throughline is:
 - This pass does not claim a live device registry, policy-first scheduler,
   portal approval service, family-governance policy engine, rented-node
   sandbox, cross-router connectivity result, energy-aware scheduling result,
-  contribution ledger, or federation run.
+  contribution ledger, federation run, privacy result, security result,
+  dropout recovery result, or support-state promotion from the synthetic hive
+  admission harness.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.

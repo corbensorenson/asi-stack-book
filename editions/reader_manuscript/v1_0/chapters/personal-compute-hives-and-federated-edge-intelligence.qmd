@@ -280,6 +280,21 @@ Federation can exist in the record model before it is enabled. The minimum shoul
 
 This repository has the record-shape starting point for that experiment: schemas and valid fixtures for device resource cards, portal cards, hive job contracts, bids, scheduling decisions, approval receipts, and federation leases. Those fixtures prove only that the public records validate locally. They do not prove that a hive scheduler exists or that edge execution is safe.
 
+The repository also has a bounded synthetic hive-admission harness. It checks
+two valid admission packets and eight expected-invalid packets for
+policy-first scheduling, data-locality rejection, rented-node denial, bound
+approval receipts, guardian portal routing, federation lease boundaries, job
+bidding, energy and dropout residuals, audit evidence references, residual
+ownership, and support-state non-promotion. `AsiStackProofs.PersonalComputeHives`
+adds finite predicates for policy-first scheduling, bound approval receipts,
+federation leases, and hive-work admission routes.
+
+That is still record discipline, not a live hive. It does not prove a device
+registry, network overlay, approval service, family-governance engine,
+rented-node sandbox, cross-router connectivity, portal continuity, energy
+measurement, dropout recovery, privacy, security, federation behavior,
+scheduler quality, or support-state promotion.
+
 ## Beyond the State of the Art
 
 A mature personal compute hive would be an owned compute fabric for a person, family, project, or temporary federation. It would let work run near the right data and device without treating reachability as authority, convenience as consent, or cheap rented compute as a reason to move private context.
