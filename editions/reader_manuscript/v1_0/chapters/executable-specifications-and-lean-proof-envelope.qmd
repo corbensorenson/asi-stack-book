@@ -93,8 +93,8 @@ support states, SCF replacement, job lifecycle, context adequacy, and residual
 records (evidence boundary: architectural argument).
 
 The claim remains at `argument` support. This repository has a Lean workspace,
-and its current manifest records 186 proof targets implemented as narrow
-finite-record Lean predicates. Current proof-depth snapshot: 186 proof targets, 54 Lean modules, 954 theorem declarations, 772 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present. That coverage does not prove broad chapter claims,
+and its current manifest records 187 proof targets implemented as narrow
+finite-record Lean predicates. Current proof-depth snapshot: 187 proof targets, 54 Lean modules, 958 theorem declarations, 776 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present. That coverage does not prove broad chapter claims,
 source interpretation, deployed enforcement, model quality, benchmark
 performance, semantic adequacy, or ASI safety.
 
@@ -273,7 +273,7 @@ coverage.
 The current executable surface is concrete but bounded. The protocol example
 validator checks the `proof_target_record` fixture as schema-shape evidence.
 The proof-readiness validator checks manifest, triage, import, and
-implemented-target alignment. The proof artifact audit checks 180 implemented
+implemented-target alignment. The proof artifact audit checks 187 implemented
 proof targets across 54 Lean modules and all 44 chapters with zero audit errors
 or warnings in the current audit report. The proof-depth surface validator keeps
 the published proof-depth counts synchronized. `AsiStackProofs.ProofEnvelope`

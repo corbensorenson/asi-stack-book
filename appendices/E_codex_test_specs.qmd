@@ -260,6 +260,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `fast-generation-architectures` | Fast Generation Architectures | Generation-mode admission lifecycle route | implemented | passes via Lean route theorems; no route-selector behavior, speedup, verifier-quality, fallback-runtime, or benchmark claim |
 | `fast-generation-architectures` | Fast Generation Architectures | Project Theseus generation-mode import validation | implemented | passes via `python3 scripts/validate_theseus_generation_mode_import.py`; finite `AsiStackProofs.FastGeneration` fixture matches the public summary; no live Theseus replay, speed-quality win, useful-solution-per-second improvement, or support-state promotion |
 | `fast-generation-architectures` | Fast Generation Architectures | Fast generation public-safe task bundle | implemented | passes via `python3 scripts/validate_fast_generation_task_bundle.py`; result `fast_generation_task_bundle_2026_07_02_local` selects `route://fast-template-verified` at 264 deterministic cost units vs baseline 632 while rejecting cheaper `route://latency-only-proxy`; no model-speed or deployment claim, no useful-solution-per-second model claim, and no support-state promotion |
+| `fast-generation-architectures` | Fast Generation Architectures | Theseus/Fast selected support-lane aggregate | implemented | passes via `python3 scripts/validate_theseus_fast_support_lane.py`; result `theseus-fast-support-lane-2026-07-03-local` checks 4 command replays, 16 tracked artifact digests, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, and `theseusFastSupportAggregateFixture`; no clean live Project Theseus replay, model-quality, generation-speed, useful-solution-per-second, deployment, benchmark, or support-state-promotion claim |
 | `fast-generation-architectures` | Fast Generation Architectures | Autoregressive baseline speed-quality test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Speculative decoding acceptance test | planned | not run |
 | `fast-generation-architectures` | Fast Generation Architectures | Multi-token draft-head acceptance test | planned | not run |
@@ -394,6 +395,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus concrete evidence-surface validation | implemented | passes via `python3 scripts/validate_theseus_concrete_evidence_surface.py`; no live Theseus replay, model-quality result, generation-speed result, or support-state promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report-bundle audit validation | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; 1 valid fixture, 7 expected-invalid controls, 8 crosswalk rows, 6 visible artifact gaps, no live Theseus replay or support-state promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus public task-bundle import validation | implemented | passes via `python3 scripts/validate_theseus_public_task_bundle_import.py`; clean live Theseus replay remains unclaimed and this does not prove model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, or support-state promotion |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus/Fast selected support-lane aggregate | implemented | passes via `python3 scripts/validate_theseus_fast_support_lane.py`; result `theseus-fast-support-lane-2026-07-03-local` checks 4 command replays, 16 tracked artifact digests, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, and `theseusFastSupportAggregateFixture`; no clean live Project Theseus replay, model-quality, generation-speed, useful-solution-per-second, deployment, benchmark, or support-state-promotion claim |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Report-bundle completeness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; repository fixture only; no live report-bundle import |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Replay-readiness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; no replay execution beyond existing ASI-side validators |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report crosswalk completeness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; public-safe repository fixture only; no clean live Theseus bundle |
@@ -477,16 +479,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 186 |
+| Proof targets covered by triage | 187 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 186 |
+| implemented | 187 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 186 |
+| implemented | formal-invariant | lean-candidate | 187 |

@@ -196,6 +196,17 @@ model quality, benchmark superiority, generation speed,
 useful-solution-per-second improvement, or an upward support-state transition.
 Boundary sentence: the import does not prove model quality.
 
+The selected support-lane aggregate, `theseus-fast-support-lane-2026-07-03-local`,
+then composes the current Theseus/Fast support surfaces without strengthening
+their claims. `python3 scripts/validate_theseus_fast_support_lane.py` reruns the
+generation-mode import, support replay probe, public task-bundle import, and
+Fast Generation task-bundle validator. It records 16 tracked artifact digests,
+68 public task records, 14 expected-invalid or rejected controls, two accepted
+no-promotion decisions, and the Lean fixture
+`theseusFastSupportAggregateFixture`. It does not prove clean live Project
+Theseus replay, does not prove model quality, does not prove generation speed,
+and does not promote any chapter core claim.
+
 Boundary sentence: clean live Theseus replay remains unclaimed.
 
 The whole surface is narrow. It does not rerun Project Theseus. It does not
@@ -263,9 +274,10 @@ that capability or self-evolution promotion is blocked when required gate
 reports are absent or failing. The report-bundle bridge adds a finite check that
 a public-safe audit is accepted only when its bundle components, replay rows,
 crosswalk rows, gate mappings, work-board contract fields, artifact gaps,
-intervention ladder, and no-promotion boundaries are complete. Those hooks do
-not prove that a Theseus run succeeded; they prove only the shape of the gate
-the book wants to enforce.
+intervention ladder, and no-promotion boundaries are complete. The support-lane
+aggregate bridge adds the finite no-promotion package around the selected
+Theseus/Fast support evidence. Those hooks do not prove that a Theseus run
+succeeded; they prove only the shape of the gate the book wants to enforce.
 
 ## Failure Modes
 

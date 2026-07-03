@@ -7792,6 +7792,13 @@
               "result_status": "passes via `python3 scripts/validate_fast_generation_task_bundle.py`; result `fast_generation_task_bundle_2026_07_02_local` selects `route://fast-template-verified` at 264 deterministic cost units vs baseline 632 while rejecting cheaper `route://latency-only-proxy`; no model-speed or deployment claim, no useful-solution-per-second model claim, and no support-state promotion",
               "status": "implemented; passing via `python3 scripts/validate_fast_generation_task_bundle.py`"
             },
+            {
+              "name": "Theseus/Fast selected support-lane aggregate",
+              "purpose": "Replay the selected Theseus and Fast Generation support validators together and check command-output digests, tracked artifact hashes, public task counts, rejected-control counts, accepted no-promotion decisions, and the aggregate Lean fixture.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_fast_support_lane.py`; result `theseus-fast-support-lane-2026-07-03-local` checks 4 command replays, 16 tracked artifact digests, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, and `theseusFastSupportAggregateFixture`; no clean live Project Theseus replay, model-quality, generation-speed, useful-solution-per-second, deployment, benchmark, or support-state-promotion claim",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_fast_support_lane.py`"
+            },
             "Autoregressive baseline speed-quality test",
             "Speculative decoding acceptance test",
             "Multi-token draft-head acceptance test",
@@ -12189,6 +12196,13 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_public_task_bundle_import.py`"
             },
             {
+              "name": "Theseus/Fast selected support-lane aggregate",
+              "purpose": "Replay the selected Theseus and Fast Generation support validators together and check command-output digests, tracked artifact hashes, public task counts, rejected-control counts, accepted no-promotion decisions, and the aggregate Lean fixture.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_fast_support_lane.py`; result `theseus-fast-support-lane-2026-07-03-local` checks 4 command replays, 16 tracked artifact digests, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, and `theseusFastSupportAggregateFixture`; no clean live Project Theseus replay, model-quality, generation-speed, useful-solution-per-second, deployment, benchmark, or support-state-promotion claim",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_fast_support_lane.py`"
+            },
+            {
               "name": "Report-bundle completeness test",
               "purpose": "Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported.",
               "implementation_status": "implemented",
@@ -12320,6 +12334,12 @@
               "tag": "lean:theseus.reference.public_task_bundle_import.fixture_bridge",
               "module": "AsiStackProofs.TheseusReference",
               "target": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:theseus.reference.fast_support_aggregate.fixture_bridge",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
               "status": "implemented"
             }
           ]

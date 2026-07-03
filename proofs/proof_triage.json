@@ -1681,6 +1681,16 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture-summary bridge for the public-safe Theseus task-bundle import: accepted summaries require seven source reports, 64 metadata-only public tasks, zero public training rows, zero external inference calls, no exported public prompts/tests/solutions/traces/scores/candidate code, 12 operator gates, 18 benchmark gates, 19 residuals, zero task-level regressions, visible missing artifacts, a dirty-checkout boundary, no clean live replay claim, no support-state effect, and no evidence transition. It proves only record-level public-boundary and no-promotion discipline, not a clean live Theseus replay, report truth, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, safety, alignment, transfer, or self-evolution safety."
     },
     {
+      "tag": "lean:theseus.reference.fast_support_aggregate.fixture_bridge",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite aggregate bridge for the selected Theseus/Fast support lane: it carries four command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, two accepted no-promotion decisions, the four support surfaces, and no-clean-live-replay/no-model-quality/no-generation-speed/no-useful-solution-model/no-chapter-core-promotion/no-support-state-promotion boundaries. It proves only aggregate support-lane record discipline, not clean live Theseus replay, model quality, generation speed, benchmark superiority, useful-solution-per-second improvement, or support-state promotion."
+    },
+    {
       "tag": "lean:roadmap.phases.operational_invariant",
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
@@ -1871,5 +1881,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 186
+  "record_count": 187
 }

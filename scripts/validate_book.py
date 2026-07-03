@@ -189,6 +189,8 @@ REQUIRED = [
     "scripts/validate_generation_mode_baselines.py",
     "scripts/run_fast_generation_task_bundle.py",
     "scripts/validate_fast_generation_task_bundle.py",
+    "scripts/run_theseus_fast_support_lane.py",
+    "scripts/validate_theseus_fast_support_lane.py",
     "scripts/validate_compact_gvr_slice.py",
     "scripts/validate_residual_honesty_conservation.py",
     "scripts/validate_residual_ledger_trace.py",
@@ -242,6 +244,9 @@ REQUIRED = [
     "docs/fast_generation_task_bundle.md",
     "experiments/fast_generation_task_bundle/README.md",
     "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
+    "docs/theseus_fast_support_lane_run.md",
+    "experiments/theseus_fast_support_lane/README.md",
+    "experiments/theseus_fast_support_lane/results/2026-07-03-local.json",
     "scripts/validate_prototype_phase_gates.py",
     "docs/prototype_phase_gate_harness.md",
     "experiments/prototype_phase_gates/README.md",
@@ -977,6 +982,7 @@ def main() -> None:
     run_validator("validate_policy_update_lease_probe.py")
     run_validator("validate_generation_mode_baselines.py")
     run_validator("validate_fast_generation_task_bundle.py")
+    run_validator("validate_theseus_fast_support_lane.py")
     run_validator("validate_compact_gvr_slice.py")
     run_validator("validate_residual_honesty_conservation.py")
     run_validator("validate_residual_ledger_trace.py")

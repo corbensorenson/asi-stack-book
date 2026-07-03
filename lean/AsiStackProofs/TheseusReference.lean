@@ -616,4 +616,112 @@ theorem theseus_public_task_bundle_import_clean_replay_overclaim_rejected :
     TheseusPublicTaskBundleImportGatesComplete,
     theseusPublicTaskBundleImportFixture] at valid
 
+structure TheseusFastSupportAggregateSummary where
+  supportLaneCount : Nat
+  commandReplayCount : Nat
+  nestedSupportReplayCommandCount : Nat
+  trackedArtifactCount : Nat
+  publicTaskCount : Nat
+  expectedInvalidOrRejectedControlCount : Nat
+  noPromotionDecisionCount : Nat
+  generationModeImportIncluded : Bool
+  supportReplayProbeIncluded : Bool
+  theseusPublicTaskBundleIncluded : Bool
+  fastGenerationTaskBundleIncluded : Bool
+  cleanLiveReplayClaimed : Bool
+  modelQualityClaimed : Bool
+  generationSpeedClaimed : Bool
+  usefulSolutionModelClaimed : Bool
+  chapterCorePromotionClaimed : Bool
+  supportStatePromotionClaimed : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def TheseusFastSupportAggregateCarriesCounts
+    (summary : TheseusFastSupportAggregateSummary) : Prop :=
+  summary.supportLaneCount = 2 ∧
+    summary.commandReplayCount = 4 ∧
+      summary.nestedSupportReplayCommandCount = 2 ∧
+        summary.trackedArtifactCount = 16 ∧
+          summary.publicTaskCount = 68 ∧
+            summary.expectedInvalidOrRejectedControlCount = 14 ∧
+              summary.noPromotionDecisionCount = 2
+
+def TheseusFastSupportAggregateIncludesSurfaces
+    (summary : TheseusFastSupportAggregateSummary) : Prop :=
+  summary.generationModeImportIncluded = true ∧
+    summary.supportReplayProbeIncluded = true ∧
+      summary.theseusPublicTaskBundleIncluded = true ∧
+        summary.fastGenerationTaskBundleIncluded = true
+
+def TheseusFastSupportAggregatePreservesBoundaries
+    (summary : TheseusFastSupportAggregateSummary) : Prop :=
+  summary.cleanLiveReplayClaimed = false ∧
+    summary.modelQualityClaimed = false ∧
+      summary.generationSpeedClaimed = false ∧
+        summary.usefulSolutionModelClaimed = false ∧
+          summary.chapterCorePromotionClaimed = false ∧
+            summary.supportStatePromotionClaimed = false ∧
+              summary.nonClaimBoundaryRecorded = true
+
+def TheseusFastSupportAggregateValid
+    (summary : TheseusFastSupportAggregateSummary) : Prop :=
+  TheseusFastSupportAggregateCarriesCounts summary ∧
+    TheseusFastSupportAggregateIncludesSurfaces summary ∧
+      TheseusFastSupportAggregatePreservesBoundaries summary
+
+def theseusFastSupportAggregateFixture :
+    TheseusFastSupportAggregateSummary := {
+  supportLaneCount := 2
+  commandReplayCount := 4
+  nestedSupportReplayCommandCount := 2
+  trackedArtifactCount := 16
+  publicTaskCount := 68
+  expectedInvalidOrRejectedControlCount := 14
+  noPromotionDecisionCount := 2
+  generationModeImportIncluded := true
+  supportReplayProbeIncluded := true
+  theseusPublicTaskBundleIncluded := true
+  fastGenerationTaskBundleIncluded := true
+  cleanLiveReplayClaimed := false
+  modelQualityClaimed := false
+  generationSpeedClaimed := false
+  usefulSolutionModelClaimed := false
+  chapterCorePromotionClaimed := false
+  supportStatePromotionClaimed := false
+  nonClaimBoundaryRecorded := true
+}
+
+theorem theseus_fast_support_aggregate_fixture_valid :
+    TheseusFastSupportAggregateValid
+      theseusFastSupportAggregateFixture := by
+  simp [TheseusFastSupportAggregateValid,
+    TheseusFastSupportAggregateCarriesCounts,
+    TheseusFastSupportAggregateIncludesSurfaces,
+    TheseusFastSupportAggregatePreservesBoundaries,
+    theseusFastSupportAggregateFixture]
+
+theorem theseus_fast_support_aggregate_preserves_no_promotion :
+    TheseusFastSupportAggregatePreservesBoundaries
+      theseusFastSupportAggregateFixture := by
+  simp [TheseusFastSupportAggregatePreservesBoundaries,
+    theseusFastSupportAggregateFixture]
+
+theorem theseus_fast_support_aggregate_carries_task_and_control_counts :
+    theseusFastSupportAggregateFixture.publicTaskCount = 68 ∧
+      theseusFastSupportAggregateFixture.expectedInvalidOrRejectedControlCount = 14 ∧
+        theseusFastSupportAggregateFixture.noPromotionDecisionCount = 2 := by
+  simp [theseusFastSupportAggregateFixture]
+
+theorem theseus_fast_support_aggregate_clean_replay_overclaim_rejected :
+    ¬ TheseusFastSupportAggregateValid
+      { theseusFastSupportAggregateFixture with
+        cleanLiveReplayClaimed := true } := by
+  intro valid
+  simp [TheseusFastSupportAggregateValid,
+    TheseusFastSupportAggregateCarriesCounts,
+    TheseusFastSupportAggregateIncludesSurfaces,
+    TheseusFastSupportAggregatePreservesBoundaries,
+    theseusFastSupportAggregateFixture] at valid
+
 end AsiStackProofs.TheseusReference

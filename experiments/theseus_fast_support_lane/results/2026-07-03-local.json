@@ -1,0 +1,214 @@
+{
+  "aggregate_lean_alignment": {
+    "accepted_no_promotion_decision_count": 2,
+    "chapter_core_promotion_claimed": false,
+    "checked_theorem_names": [
+      "theseus_fast_support_aggregate_fixture_valid",
+      "theseus_fast_support_aggregate_preserves_no_promotion",
+      "theseus_fast_support_aggregate_carries_task_and_control_counts",
+      "theseus_fast_support_aggregate_clean_replay_overclaim_rejected"
+    ],
+    "clean_live_replay_claimed": false,
+    "command_replay_count": 4,
+    "expected_invalid_or_rejected_control_count": 14,
+    "fast_generation_task_bundle_included": true,
+    "fixture_def": "theseusFastSupportAggregateFixture",
+    "generation_mode_import_included": true,
+    "generation_speed_claimed": false,
+    "lean_module": "lean/AsiStackProofs/TheseusReference.lean",
+    "model_quality_claimed": false,
+    "nested_support_replay_command_count": 2,
+    "non_claim_boundary_recorded": true,
+    "proof_tag": "lean:theseus.reference.fast_support_aggregate.fixture_bridge",
+    "public_task_count": 68,
+    "support_lane_count": 2,
+    "support_replay_probe_included": true,
+    "support_state_promotion_claimed": false,
+    "theseus_public_task_bundle_included": true,
+    "tracked_artifact_count": 16,
+    "useful_solution_model_claimed": false
+  },
+  "artifact_refs": [
+    "docs/theseus_generation_mode_import_slice.md",
+    "docs/theseus_support_replay_probe.md",
+    "docs/theseus_public_task_bundle_import.md",
+    "docs/fast_generation_task_bundle.md",
+    "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
+    "experiments/theseus_support_replay_probe/results/2026-07-01-local.json",
+    "experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json",
+    "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
+    "evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json",
+    "evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json",
+    "lean/AsiStackProofs/FastGeneration.lean",
+    "lean/AsiStackProofs/TheseusReference.lean",
+    "scripts/validate_theseus_generation_mode_import.py",
+    "scripts/validate_theseus_support_replay_probe.py",
+    "scripts/validate_theseus_public_task_bundle_import.py",
+    "scripts/validate_fast_generation_task_bundle.py",
+    "experiments/theseus_fast_support_lane/results/2026-07-03-local.json"
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/run_theseus_fast_support_lane.py --write-result",
+  "evidence_transition_created": false,
+  "lane_id": "theseus-fast-support-lane-2026-07-03-local",
+  "local_only": true,
+  "non_claims": [
+    "This support-lane aggregate does not prove clean live Project Theseus replay.",
+    "This support-lane aggregate does not prove model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, routing quality, safety, alignment, transfer, or ASI.",
+    "This support-lane aggregate does not copy private Project Theseus payloads, public prompts, tests, solutions, traces, scores, candidate code, training rows, checkpoints, or benchmark payloads into this repository.",
+    "This support-lane aggregate does not promote any chapter core claim above argument and does not create an upward support-state transition."
+  ],
+  "pass": true,
+  "record_kind": "theseus_fast_support_lane",
+  "recorded_at_utc": "2026-07-03T19:44:25Z",
+  "replay_commands": [
+    {
+      "command": "python3 scripts/validate_theseus_generation_mode_import.py",
+      "elapsed_ms": 34.313,
+      "evidence_surface": "Project Theseus public-safe generation-mode import plus Fast Generation Lean bridge",
+      "exit_code": 0,
+      "id": "theseus_generation_mode_import",
+      "output_excerpt": [
+        "Project Theseus generation-mode import validation passed: 1 valid report, 6 expected-invalid controls, digest 0a101d427d51029ba7a0aaaaf4329cb47e96400cd21fc284123e366fb309d709."
+      ],
+      "output_sha256": "50d1c01397082194f45b916165c582570653073b56a7de934cf9222e80d7486c"
+    },
+    {
+      "command": "python3 scripts/validate_theseus_support_replay_probe.py",
+      "elapsed_ms": 124.257,
+      "evidence_surface": "ASI-side replay of the two Project Theseus static import validators",
+      "exit_code": 0,
+      "id": "theseus_support_replay_probe",
+      "output_excerpt": [
+        "Theseus support replay probe validation passed: 2 local command replay(s), 10 tracked artifact digest(s), support-state effect none."
+      ],
+      "output_sha256": "d120aecd91c1a20be1b6e30be0039060bbbf9db612427201b3e4e33666895007"
+    },
+    {
+      "command": "python3 scripts/validate_theseus_public_task_bundle_import.py",
+      "elapsed_ms": 42.227,
+      "evidence_surface": "bounded Project Theseus public task-bundle import and no-promotion decision",
+      "exit_code": 0,
+      "id": "theseus_public_task_bundle_import",
+      "output_excerpt": [
+        "Theseus public task-bundle import validation passed: 64 public metadata-only tasks, 18 benchmark gates, 19 residuals, support-state effect none."
+      ],
+      "output_sha256": "8f820669a1f046904d607e087dadba16b5804018a28c5e17558c90b3058cd820"
+    },
+    {
+      "command": "python3 scripts/validate_fast_generation_task_bundle.py",
+      "elapsed_ms": 32.04,
+      "evidence_surface": "local Fast Generation public-safe task bundle and no-promotion decision",
+      "exit_code": 0,
+      "id": "fast_generation_task_bundle",
+      "output_excerpt": [
+        "Fast generation task-bundle validation passed: candidate 4/4 tasks at 264 cost units vs baseline 632; latency-only negative rejected at 176 cost units."
+      ],
+      "output_sha256": "572373c0524708df279590de02deea8500cd777fe20be4fc6e96baa5b3ed3db3"
+    }
+  ],
+  "selected_support_lanes": [
+    "project-theseus-as-report-first-implementation-reference",
+    "fast-generation-architectures"
+  ],
+  "summary": "Aggregate support-lane replay for the selected Project Theseus and Fast Generation v1.x lanes.",
+  "support_state_effect": "none",
+  "tracked_artifacts": [
+    {
+      "bytes": 6301,
+      "lines": 148,
+      "path": "docs/theseus_generation_mode_import_slice.md",
+      "sha256": "2b668fec5047169aeefabb1ee9658c462b8d597edc42f84379668e4b0bb96381"
+    },
+    {
+      "bytes": 3150,
+      "lines": 73,
+      "path": "docs/theseus_support_replay_probe.md",
+      "sha256": "2d1ad82cbaaba56d87c7fdc5bade2fa7b349058c9689f814bf862e7abd405a58"
+    },
+    {
+      "bytes": 3288,
+      "lines": 69,
+      "path": "docs/theseus_public_task_bundle_import.md",
+      "sha256": "dcc425f22ec628c3db8b17dd440fbf9d55cefda9e7037960a6bbce013336b0c5"
+    },
+    {
+      "bytes": 2152,
+      "lines": 47,
+      "path": "docs/fast_generation_task_bundle.md",
+      "sha256": "8b965ffb6f4957cbbc9ba39a0c3f20fcb967632e244197f25fd708c074dbbdce"
+    },
+    {
+      "bytes": 2579,
+      "lines": 53,
+      "path": "experiments/theseus_generation_mode_import/results/2026-07-01-local.json",
+      "sha256": "4c522338e11948dc6ea2c1a07035495d65ba7e3254576d67272cf641f15ef171"
+    },
+    {
+      "bytes": 5461,
+      "lines": 117,
+      "path": "experiments/theseus_support_replay_probe/results/2026-07-01-local.json",
+      "sha256": "4e1c34001b804bf062bd98e6cb3735008e19c0dbf75983232d53732ae6abd927"
+    },
+    {
+      "bytes": 2150,
+      "lines": 44,
+      "path": "experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json",
+      "sha256": "783e2fbcf3e31f2f7dc884d11133be006a10c4f454076e0bbbeefe7c86c5dbaa"
+    },
+    {
+      "bytes": 4856,
+      "lines": 129,
+      "path": "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
+      "sha256": "1065c501df6d32922ab8955b0d98304f56d75c4e9bf8e7f5b63d4d497b846908"
+    },
+    {
+      "bytes": 7016,
+      "lines": 116,
+      "path": "evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json",
+      "sha256": "214260e4be1b499ff86c2c49b1be16488e0dea8507139269b906769d90d0fbd8"
+    },
+    {
+      "bytes": 5907,
+      "lines": 105,
+      "path": "evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json",
+      "sha256": "b9c91835576b59dd840bcfb131cc2be96444fbe4ef2cb93e0f5c65f547c4c864"
+    },
+    {
+      "bytes": 25953,
+      "lines": 681,
+      "path": "lean/AsiStackProofs/FastGeneration.lean",
+      "sha256": "09baff821e03972eefb0d73c6db00187564c9cd5b02d61e837da418b91a865cb"
+    },
+    {
+      "bytes": 30093,
+      "lines": 727,
+      "path": "lean/AsiStackProofs/TheseusReference.lean",
+      "sha256": "381982f07375b242b1327d6f70215a658f9ea9d370234184b6b685a05b65a0d5"
+    },
+    {
+      "bytes": 21679,
+      "lines": 492,
+      "path": "scripts/validate_theseus_generation_mode_import.py",
+      "sha256": "e28194c24ba80561f092f7a6913ebc556ad86951d781fb0c314fc9ec58f349f3"
+    },
+    {
+      "bytes": 7864,
+      "lines": 200,
+      "path": "scripts/validate_theseus_support_replay_probe.py",
+      "sha256": "9e68a75c43e97203da6e1776605029ea10279774af656f656e1cc60fa4ffc21c"
+    },
+    {
+      "bytes": 19866,
+      "lines": 462,
+      "path": "scripts/validate_theseus_public_task_bundle_import.py",
+      "sha256": "06708a8d42a1b2dff74951e67ad0d49ded50c986ed94c60c1570c85ef0ac61af"
+    },
+    {
+      "bytes": 11146,
+      "lines": 240,
+      "path": "scripts/validate_fast_generation_task_bundle.py",
+      "sha256": "a21fc58947f67c387835e46d94cf66829be61f59a8d20e49f2e0e43959dac9ef"
+    }
+  ]
+}

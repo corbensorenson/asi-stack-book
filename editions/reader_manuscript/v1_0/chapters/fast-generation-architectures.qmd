@@ -186,6 +186,15 @@ accepted work counts. Rejected spans are not hidden. Fallback is not treated as
 an implementation detail. Memory pressure and verifier cost are part of the
 route, not footnotes.
 
+The selected support-lane aggregate, `theseus-fast-support-lane-2026-07-03-local`,
+turns the Theseus and Fast Generation support evidence into one replayable
+package. `python3 scripts/validate_theseus_fast_support_lane.py` reruns four
+support validators, checks 16 tracked artifact digests, carries 68 public task
+records, keeps 14 expected-invalid or rejected controls visible, and points to
+the Lean fixture `theseusFastSupportAggregateFixture`. It does not prove clean
+live Project Theseus replay, does not prove model quality, does not prove
+generation speed, and does not promote any chapter core claim.
+
 ## Generation-Mode Families
 
 The taxonomy is plural because generation speed is not one bottleneck.

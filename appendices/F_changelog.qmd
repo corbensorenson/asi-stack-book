@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-03 - Add Theseus/Fast support-lane aggregate bridge
+
+- Added the selected Theseus/Fast support-lane aggregate. `python3
+  scripts/validate_theseus_fast_support_lane.py` validates
+  `theseus-fast-support-lane-2026-07-03-local` by rerunning four support
+  validators, checking 16 tracked artifact digests, 68 public task records, 14
+  expected-invalid or rejected controls, two accepted no-promotion decisions,
+  and `theseusFastSupportAggregateFixture`.
+- Updated the Fast Generation and Project Theseus live chapters, curated reader
+  chapters, outline, active evidence cycle, roadmap, proof manifest inputs, and
+  proof triage to expose the aggregate as drift detection and support-lane
+  accounting, not as a capability, model-quality, speed, benchmark, deployment,
+  or support-state claim.
+- Current proof-depth snapshot: 187 proof targets, 54 Lean modules, 958 theorem
+  declarations, 776 derived/decomposed, 178 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization remains validator-checked by
+  `python3 scripts/validate_proof_depth_surface.py` after the new Theseus-owned
+  proof target was added.
+- Boundary: this bridge does not prove clean live Project Theseus replay, does
+  not prove model quality, does not prove generation speed, does not prove
+  useful-solution-per-second model performance, does not promote any chapter
+  core claim, does not create support-state promotion, and does not create a
+  new upward evidence transition.
+
 ## 2026-07-03 - Add Resource flagship aggregate proof bridge
 
 - Added an aggregate Python/Lean flagship invariant to the Resource Economics
