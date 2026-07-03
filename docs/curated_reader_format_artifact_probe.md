@@ -47,9 +47,9 @@ or PDF artifact.
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,695,360 bytes, SHA-256 `7e6904651c2d0eda7df0305ded9e91c790ab02a88574b8bd2183cf5f562cf7d5`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,351,886 bytes, SHA-256 `e34b3bdcdc0fa61059258b517a8aa52743dc0f92be4d77e29bc316ae63d7de92`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,126 paragraph markers, required Word package entries present. |
-| pdf | passed | 9,332,951 bytes, SHA-256 `99ab0aa1fdf1d7b999bc85b5832889cc7265e052f8b8e5fecefbf4c0eb3e909d`, 519 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,697,682 bytes, SHA-256 `61648d1d4b2924c8c629c6ba225ace2326f7e53863730aeef5663d9dd614a94b`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,354,610 bytes, SHA-256 `ac5166ef15b4e957dc17537c1668a6d362dfe14893f355d346947adf087b3551`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,186 paragraph markers, required Word package entries present. |
+| pdf | passed | 9,342,811 bytes, SHA-256 `69ae4109cfd2979b44808e791924d2ce25d22b654b27cd112638fe91fa9ddfa4`, 523 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## Review Decision
 

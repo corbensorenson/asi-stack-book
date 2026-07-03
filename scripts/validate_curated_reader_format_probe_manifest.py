@@ -194,8 +194,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         require_int("inspection_summary.pdf", "bytes", pdf.get("bytes"), errors, minimum=1_000_000)
         if not SHA_RE.match(str(pdf.get("sha256", ""))):
             errors.append("inspection_summary.pdf.sha256 must be a SHA-256 digest.")
-        if pdf.get("pages") != 519:
-            errors.append("inspection_summary.pdf.pages must be 519.")
+        if pdf.get("pages") != 523:
+            errors.append("inspection_summary.pdf.pages must be 523.")
         if pdf.get("title") != "The ASI Stack":
             errors.append("inspection_summary.pdf.title must be The ASI Stack.")
         if pdf.get("author") != "Corben Sorenson":
@@ -245,10 +245,10 @@ def validate_summary(errors: list[str]) -> None:
         "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `7e6904651c2d0eda7df0305ded9e91c790ab02a88574b8bd2183cf5f562cf7d5`",
-        "SHA-256 `e34b3bdcdc0fa61059258b517a8aa52743dc0f92be4d77e29bc316ae63d7de92`",
-        "SHA-256 `99ab0aa1fdf1d7b999bc85b5832889cc7265e052f8b8e5fecefbf4c0eb3e909d`",
-        "519 pages",
+        "SHA-256 `61648d1d4b2924c8c629c6ba225ace2326f7e53863730aeef5663d9dd614a94b`",
+        "SHA-256 `ac5166ef15b4e957dc17537c1668a6d362dfe14893f355d346947adf087b3551`",
+        "SHA-256 `69ae4109cfd2979b44808e791924d2ce25d22b654b27cd112638fe91fa9ddfa4`",
+        "523 pages",
         "sample pages 1, 2, 25, 300, and 500",
         "does not clear release blockers",
         "does not promote any claim support state",

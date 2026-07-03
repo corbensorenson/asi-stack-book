@@ -11,24 +11,26 @@ format-row approval, a public deployment artifact, or a support-state promotion.
 Commands run:
 
 ```bash
-python3 scripts/build_curated_reader_edition.py --output build/curated_reader_edition
-LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render build/curated_reader_edition --to html
-node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json
+python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf
+python3 scripts/inspect_curated_reader_format_artifacts.py
+node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json
 ```
 
 Local ignored reports:
 
 - `build/curated_reader_edition/curated_reader_build_report.json`
+- `build/curated_reader_edition/curated_reader_render_report.json`
+- `build/curated_reader_edition/curated_reader_artifact_inspection_report.json`
 - `build/curated_reader_edition/reader_manifest.json`
 - `build/curated_reader_edition/curated_reader_html_browser_report.json`
 
 Reviewed HTML root:
 
-`build/curated_reader_edition/_reader_site`
+`build/curated_reader_edition/format_artifacts/html/_reader_site`
 
 Deterministic directory digest:
 
-`ddf74e1f55113578e904331cddcc1b32e512b1f1b88138da9d1764adadc27dfd`
+`c49be968be0527f6407aa245a63a51e749b7d35856bcf1db3ddee022b71163a1`
 
 The digest is computed over 81 files by hashing each relative path and file
 content in sorted order. The rendered site is ignored local build output, not a
@@ -54,7 +56,7 @@ review input rather than release approval.
 
 ## Browser Sweep
 
-`node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json`
+`node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json`
 opened every curated reader HTML page at desktop and mobile widths.
 
 | Metric | Result |

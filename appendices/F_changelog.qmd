@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-03 - Refresh curated reader format probe after prose deltas
+
+- Re-rendered the tracked curated reader manuscript locally to HTML, EPUB,
+  DOCX, and PDF after the governed-cognition local-delta prose changes, then
+  reran curated-reader structural artifact inspection and the full curated
+  HTML browser sweep.
+- Updated `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`,
+  `docs/curated_reader_format_artifact_probe.md`,
+  `docs/curated_reader_html_artifact_browser_review.md`,
+  `docs/v1_0_candidate_status.md`, and
+  `docs/v1_x_beyond_sota_roadmap.md` with the fresh local structural facts:
+  49 HTML files, 98/98 browser page-view pairs passing, digest
+  `c49be968be0527f6407aa245a63a51e749b7d35856bcf1db3ddee022b71163a1`,
+  updated EPUB/DOCX/PDF hashes, and a 523-page PDF sample-page probe.
+- Boundary: this is release-readiness evidence for ignored local review
+  snapshots only. It does not approve EPUB, DOCX, PDF, e-reader, audio, or
+  curated-reader HTML artifacts; it does not create an edition release record,
+  support-state transition, source interpretation, proof result, benchmark
+  result, deployment claim, or artifact publication claim.
+
 ## 2026-07-03 - Broaden governed-cognition pattern deltas
 
 - Added the next pattern-language local-delta slice to live and curated reader

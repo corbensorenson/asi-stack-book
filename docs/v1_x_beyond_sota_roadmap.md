@@ -3367,9 +3367,11 @@ Current status:
   author-supplied voice language.
 - `docs/curated_reader_html_artifact_browser_review.md` now records a full
   local browser viability review of the tracked curated reader manuscript
-  rendered through `build/curated_reader_edition/_reader_site`: 49 pages, two
-  viewports, 98 of 98 page-view pairs passing, exact ignored-snapshot digest
-  `ddf74e1f55113578e904331cddcc1b32e512b1f1b88138da9d1764adadc27dfd`, and
+  rendered through
+  `build/curated_reader_edition/format_artifacts/html/_reader_site`: 49 pages,
+  two viewports, 98 of 98 page-view pairs passing, exact ignored-snapshot
+  digest
+  `c49be968be0527f6407aa245a63a51e749b7d35856bcf1db3ddee022b71163a1`, and
   all 44 `curated_reconciliation_not_approved`,
   `format_artifact_not_reviewed`, and `reader_release_record_not_created`
   blockers preserved. This closes a render/browser-viability uncertainty for
@@ -3388,7 +3390,7 @@ Current status:
   record that the tracked curated reader manuscript rendered locally to HTML,
   EPUB, DOCX, and PDF and passed structural inspection: 49 HTML files, 44
   chapter HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, and a
-  519-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
+  523-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
   now generates ten temporary PNG fallbacks from the tracked SVG key figures
   inside the ignored build workspace and restores the source workspace after
   rendering, eliminating the previous SVG-conversion warnings. EPUB, DOCX, PDF,
@@ -3459,10 +3461,11 @@ Current status:
 - The tracked curated reader manuscript now has a full local HTML browser
   viability review recorded in
   `docs/curated_reader_html_artifact_browser_review.md`: the rendered ignored
-  snapshot under `build/curated_reader_edition/_reader_site` opened 49 pages
-  across desktop and mobile widths, passed 98 of 98 page-view checks, and has
-  deterministic directory digest
-  `ddf74e1f55113578e904331cddcc1b32e512b1f1b88138da9d1764adadc27dfd`. This
+  snapshot under
+  `build/curated_reader_edition/format_artifacts/html/_reader_site` opened 49
+  pages across desktop and mobile widths, passed 98 of 98 page-view checks,
+  and has deterministic directory digest
+  `c49be968be0527f6407aa245a63a51e749b7d35856bcf1db3ddee022b71163a1`. This
   is review input for release-quality artifact work; it does not mark the
   curated reader edition, refreshed HTML, EPUB, DOCX, PDF, e-reader, or audio
   release-approved.
