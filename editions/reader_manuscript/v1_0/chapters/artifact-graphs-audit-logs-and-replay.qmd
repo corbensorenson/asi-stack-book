@@ -140,6 +140,38 @@ artifact may be context, a review target, a release input, or a procedural
 memory candidate. It should not become evidence for a stronger claim unless
 the artifact record says that the relevant provenance and checks exist.
 
+## A Book-Scale Example
+
+The living book is a small example of the same problem.
+
+A reader chapter can begin as a generated baseline, receive semantic overlay
+operations, become a tracked curated manuscript draft, get a prose-pass note,
+move through a review matrix, render into a local Quarto workspace, and appear
+inside the live Human view. Each step creates something useful. None of those
+steps, by itself, makes the chapter release-approved.
+
+The artifact graph is what keeps those states from collapsing. The generated
+baseline is an artifact with one role. The curated chapter is another. The
+prose-pass note explains the allowed divergence from the AI/research chapter.
+The manifest records release blockers and meaning-preservation checks. The
+changelog tells a future maintainer what changed. Validators and renders are
+run records, not blanket quality guarantees. A release record, when it exists,
+would be a different artifact with a narrower claim: this exact edition was
+reviewed under this profile at this time with these residuals.
+
+That distinction is easy to dismiss as bookkeeping until the system starts
+learning from its own work. If a future agent mines a chapter rewrite as
+evidence, a release input, a regression case, or a procedural habit, it needs
+to know which object it is reading. Was it a live source chapter, a generated
+reader projection, an overlay, a curated draft, a human-approved release, or a
+stale intermediate? The words may look similar. Their authority is not.
+
+The same pattern applies outside the book. A code patch, proof attempt,
+benchmark run, source note, deployment receipt, or human approval packet needs
+the same separation between "created," "checked," "replayable," "approved,"
+"allowed to support a claim," and "allowed to guide future automation." The
+artifact graph gives those verbs different records.
+
 ## Interfaces
 
 The main interface is the Artifact Graph Record.

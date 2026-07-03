@@ -1,6 +1,8 @@
 # Curated Reader Prose Pass: Artifact Graphs, Audit Logs, and Replay
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
+
+Follow-up: 2026-07-02
 
 Chapter ID: `artifact-graphs-audit-logs-and-replay`
 
@@ -37,6 +39,10 @@ permission to change proof or test status.
 ## What Changed
 
 - Reframed the chapter around work that remains inspectable after production.
+- Added a book-scale example that distinguishes generated reader baselines,
+  semantic overlays, curated manuscript drafts, prose-pass notes, manifest
+  blockers, changelog entries, validators, local renders, and future release
+  records as separate artifacts with different authority.
 - Organized the mechanism around artifact identity, parent jobs, source/context
   refs, context transactions, tool refs, audit events, replay grades,
   claim/test links, evidence gates, residuals, and allowed reuse.
@@ -53,6 +59,9 @@ permission to change proof or test status.
 - Preserved the minimum viable implementation, beyond-state-of-the-art
   endpoint, and handoff into Runtime Adapters, Tool Permissions, and Human
   Approval.
+- Preserved the release boundary: the new book-scale example names artifact
+  roles and authority separation but does not approve any reader edition or
+  claim that a release record exists.
 
 ## Meaning Preservation Checks
 
