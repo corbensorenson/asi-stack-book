@@ -10,8 +10,8 @@ implementation horizons, and release blockers.
 
 # Living Book Methodology
 
-A book about governed self-improvement has to be careful about how it
-improves.
+A book about governed self-improvement has to be careful about its own
+improvement.
 
 The prototype roadmap says the system should earn later agency through earlier
 records. The living-book method applies that rule to the book itself. A
@@ -27,17 +27,23 @@ systems to preserve provenance, authority, residuals, and rollback while its
 own evidence trail dissolved into ordinary editorial drift.
 
 The living-book method is the discipline that prevents that. It treats the
-book as a governed artifact graph that happens to render as prose. The graph
-contains the manifest, outline, source inventory, source notes, claim matrix,
-proof manifest, schemas, tests, changelog, release records, reader projections,
-and public site. The prose is what readers see first. The graph is what lets
-readers, reviewers, and future agents see how the prose is allowed to change.
+book as a governed artifact graph that happens to render as prose. The prose
+is what readers see first. The graph is what lets readers, reviewers, and
+future agents see how the prose is allowed to change.
+
+That graph is not abstract. It is the manifest that fixes chapter identity, the
+outline that records source and proof obligations, the inventory and source
+notes that say what has been read, the claim matrix that limits confidence, the
+proof manifest and validators that record what has actually run, and the
+changelog and release records that keep public movement visible. The reader
+does not need that machinery on every page, but the book needs it underneath
+every page.
 
 In that sense, the book applies the same governed-cognition pattern to itself.
 A revision has a record, a lifecycle state, a source boundary, a claim effect,
-a validation receipt, a release route, residuals, and non-claims. The reader
-does not need to inspect all of that machinery on every page, but the machinery
-has to exist so the prose can improve without silently becoming more certain.
+a validation receipt, a release route, residuals, and non-claims. The purpose
+is not to bury the reader in process. The purpose is to let the prose improve
+without silently becoming more certain.
 
 This does not make the thesis true. It makes the state of the thesis
 inspectable.
@@ -68,12 +74,12 @@ The book itself must remain a living technical system rather than a static
 anthology.
 
 The architecture is too broad, too source-dependent, and too update-sensitive
-for a one-time manuscript. New AI papers will arrive. Existing papers will
-need better external grounding. Project Theseus and Circle evidence lanes may
-become cleaner, or may reveal that a claim should stay weaker. Lean modules may
-move from field projections to real transition predicates. Some chapters may
-split. Others may merge because the current shape repeats the same skeleton
-around adjacent ideas.
+for a one-time manuscript. New AI papers will arrive. Existing papers will need
+better external grounding. Project Theseus and Circle evidence lanes may become
+cleaner, or may reveal that a claim should stay weaker. Lean modules may move
+from field projections to real transition predicates. Some chapters may split.
+Others may merge because the current shape repeats the same skeleton around
+adjacent ideas.
 
 Without a living method, every improvement creates a new risk. A stronger
 paragraph might hide that the support state did not move. A new citation might
@@ -194,6 +200,15 @@ schemas, fixtures, or release records moved, which validation commands ran,
 which render target was checked, which audience profile was affected, and what
 the change does not imply.
 
+Imagine a new paper arrives that appears to strengthen the routing chapter. A
+static manuscript would invite the author to rewrite a paragraph and move on.
+The living book asks a longer, more useful set of questions: is the source
+public-safe, has it been inventoried, does a source note exist, which chapter
+owns the idea, does Appendix C change, does a proof target change, does the
+reader edition need a different explanation, which validators ran, and what is
+still not proven? That chain is the difference between updating a book and
+quietly moving its epistemic floor.
+
 Most of that packet is distributed across ordinary repository surfaces: the
 diff, changelog, source notes, Appendix C, proof manifest, release records, and
 validation output. The point is not to create paperwork for its own sake. The
@@ -263,7 +278,7 @@ major-version publication history. Reader and audio workspaces derive from the
 live source, then record what was stripped, rewritten, reviewed, or left
 blocked.
 
-The invariants are stricter than the interfaces:
+The invariants are the promises the book makes to its future readers:
 
 - no fabricated source content;
 - no fabricated test results;

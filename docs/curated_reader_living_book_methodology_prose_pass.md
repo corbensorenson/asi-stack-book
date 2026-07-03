@@ -4,6 +4,8 @@ Date: 2026-07-01
 
 Follow-up: 2026-07-03
 
+Reader-craft follow-up: 2026-07-03
+
 Chapter: `living-book-methodology`
 
 Reader manuscript file:
@@ -43,6 +45,10 @@ The reader throughline is:
   Discipline as the book's methodological center, and added reader-facing
   lineage against source-noted literate-programming, Jupyter Book, and Quarto
   Books comparator records.
+- 2026-07-03 reader-craft follow-up: clarified the "artifact graph that renders
+  as prose" premise, added a concrete new-paper/change-packet example, and
+  reframed the invariants as promises to future readers while preserving the
+  release and evidence boundaries.
 
 ## Meaning-Preservation Checks
 
@@ -67,6 +73,9 @@ The reader throughline is:
 - The follow-up preserves the Part IV close: the book applies phase discipline
   to itself, then routes future work through an agenda instead of treating
   polished prose as closure.
+- The reader-craft follow-up is a curated reader manuscript edit only. It does
+  not change the live AI/research chapter, Appendix C, source notes, proof
+  targets, support states, release records, or artifact approval status.
 
 ## Non-Claims
 
@@ -84,6 +93,9 @@ The reader throughline is:
 - This pass does not approve EPUB, DOCX, PDF, HTML, audio, or audio-embedded
   EPUB artifacts.
 - This pass does not promote any chapter core claim above `argument`.
+- This follow-up does not claim autonomous new-paper triage, source-note
+  adequacy, proof-target adequacy, validator adequacy, or future-agent
+  judgment; the new-paper example is explanatory reader prose only.
 
 ## Remaining Blockers
 
