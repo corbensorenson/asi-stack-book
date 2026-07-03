@@ -912,7 +912,9 @@ argument-level consequences that survive the strongest objection.
 New chapters enter through the normal manifest, outline, source-queue, proof-
 target, and evidence-lane process like every existing chapter; both editions
 receive finished prose per the 2026-07-02 direction. The spine-stability rule
-permits these as named-finding additions; it forbids churn, not growth.
+permits these as named-finding additions only after the ownership test shows a
+distinct interface, invariant, artifact type, evidence lane, proof family, and
+reader throughline; it forbids churn, not growth.
 
 Keystone insertion rule: prefer a major section inside the strongest existing
 chapter when the concept sharpens an existing artifact boundary; create a new
@@ -942,6 +944,13 @@ Default ownership table for the next implementation pass:
 | Interpretability as an evidence class | Evidence States, with downstream mentions in Proof-Carrying Claims and Benchmark Ratchets. | Add interpretability as a possible evidence class while preserving the behavioral/support-state ladder and avoiding white-box overclaiming. | Source-noted comparator pack, mechanistic-evidence admissibility rule, or dated blocker. |
 | Governance under partition | Personal Compute Hives and Runtime Adapters. | State grant/effect races, revocation propagation, and CAP-style authority consistency limits in the hives/runtime boundary. | Partitioned-authority fixture, revocation-delay trace, negative controls, or dated blocker. |
 | Constitutional amendment legitimacy | Constitutional Alignment and Recursive Self-Improvement. | Define who may amend the constitution, what makes amendment legitimate rather than merely gated, and how amendment residuals are recorded. | Amendment workflow fixture, authority-ceiling proof route, external governance comparator notes, or dated blocker. |
+
+The four section-level rows above are first-class book work, not optional
+footnotes, but they should close inside the named owner chapters unless a
+future artifact proves that a standalone chapter would reduce duplication or
+clarify a distinct boundary. A pass over any of them must update live prose,
+curated reader prose, outline routing, source/proof/evidence routing, and
+non-claims together; a new roadmap note alone is not movement.
 
 ### Contribution ledger
 
@@ -3417,7 +3426,7 @@ Current status:
   `build/curated_reader_edition/format_artifacts/html/_reader_site`: 49 pages,
   two viewports, 98 of 98 page-view pairs passing, exact ignored-snapshot
   digest
-  `c49be968be0527f6407aa245a63a51e749b7d35856bcf1db3ddee022b71163a1`, and
+  `7ae1bdd99c2469ebc70ca179961416a90ef16743117ad2933fe6e86bebdb2842`, and
   all 44 `curated_reconciliation_not_approved`,
   `format_artifact_not_reviewed`, and `reader_release_record_not_created`
   blockers preserved. This closes a render/browser-viability uncertainty for
@@ -3511,7 +3520,7 @@ Current status:
   `build/curated_reader_edition/format_artifacts/html/_reader_site` opened 49
   pages across desktop and mobile widths, passed 98 of 98 page-view checks,
   and has deterministic directory digest
-  `c49be968be0527f6407aa245a63a51e749b7d35856bcf1db3ddee022b71163a1`. This
+  `7ae1bdd99c2469ebc70ca179961416a90ef16743117ad2933fe6e86bebdb2842`. This
   is review input for release-quality artifact work; it does not mark the
   curated reader edition, refreshed HTML, EPUB, DOCX, PDF, e-reader, or audio
   release-approved.

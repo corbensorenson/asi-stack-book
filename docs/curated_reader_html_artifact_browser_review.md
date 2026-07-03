@@ -11,7 +11,7 @@ format-row approval, a public deployment artifact, or a support-state promotion.
 Commands run:
 
 ```bash
-python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf
+python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf
 python3 scripts/inspect_curated_reader_format_artifacts.py
 node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json
 ```
@@ -30,7 +30,7 @@ Reviewed HTML root:
 
 Deterministic directory digest:
 
-`c49be968be0527f6407aa245a63a51e749b7d35856bcf1db3ddee022b71163a1`
+`7ae1bdd99c2469ebc70ca179961416a90ef16743117ad2933fe6e86bebdb2842`
 
 The digest is computed over 81 files by hashing each relative path and file
 content in sorted order. The rendered site is ignored local build output, not a
