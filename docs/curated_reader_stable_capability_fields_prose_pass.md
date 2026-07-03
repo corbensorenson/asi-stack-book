@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Stable Capability Fields
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
 
 Chapter ID: `stable-capability-fields`
 
@@ -57,6 +57,10 @@ permission to change proof or test status.
 - Preserved the core claim, minimum viable implementation,
   beyond-state-of-the-art endpoint, and handoff into Capability Replacement and
   Rollback.
+- Added a 2026-07-02 field-qualification scenario around a `source_retriever`
+  field that separates field identity, source-access authority, citation
+  receipts, private-mount boundaries, scoped qualification, lease expiry,
+  quarantine, rollback, and support-state non-claims.
 
 ## Meaning Preservation Checks
 
@@ -84,7 +88,8 @@ permission to change proof or test status.
   execution, object-capability security implementation, API compatibility
   checking, SLSA workflow or conformance, provenance completeness, MoECOT
   runtime reproduction, MoECOT benchmark reproduction, production safety,
-  strategic-deception resistance, or global alignment.
+  strategic-deception resistance, retrieval-quality improvement, support-state
+  promotion, or global alignment.
 
 ## Remaining Blockers
 

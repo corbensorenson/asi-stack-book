@@ -184,6 +184,32 @@ compiler. A record shape can tell later work where evidence belongs; it cannot
 prove that arbitrary goals can be parsed into correct atoms or lowered into
 valid artifacts.
 
+## A Semantic-IR Build Trace
+
+Take a small writing task: add a reader-facing example to a chapter without
+changing its evidence state. Direct generation might produce a nice paragraph
+and hope it stayed inside the boundary. A semantic-IR trace makes the hidden
+obligations addressable before the paragraph is accepted.
+
+The source plan becomes a few atoms: name the reader confusion, preserve the
+chapter's core claim, do not introduce new sources, do not promote support
+state, include one concrete procedure, and update the prose-pass record. Each
+atom has a validator or review hook. The no-new-source atom checks for new
+source IDs or citation claims. The support-boundary atom checks that the prose
+does not say a deployed system exists. The prose-pass atom checks that the
+manifest and changelog record the reader-only nature of the edit.
+
+If the paragraph accidentally says "this proves rollback works," the failure is
+local. The repair should touch the overclaiming atom and its dependent sentence,
+not regenerate the whole chapter. The lowering receipt says which source-plan
+obligations survived, which validator failed, what repair changed, and which
+residual remains for future work.
+
+This is not a working cognitive compiler, source-plan parser, or measured
+localized-repair result. It is the shape of the trace the chapter is asking for:
+finished artifacts should carry enough semantic lineage that a reviewer can see
+which obligations were preserved and where repair is allowed.
+
 ## Invariants
 
 - IR preserves declared requirements.

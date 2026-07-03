@@ -188,6 +188,31 @@ of progress. Readiness gates can ask whether the qualification lease is fresh.
 Replacement transactions can compare authority deltas instead of assuming a
 new implementation inherits the old one's permission.
 
+## A Field-Qualification Scenario
+
+Imagine a field called `source_retriever`. Its job is not "search the web" in a
+vague sense. Its contract says which source classes it may access, which private
+mounts are forbidden, which citation receipts it must return, which freshness
+checks it must run, and which human approval is needed before retrieved text can
+enter a public artifact. The current implementation is slow but trusted. A new
+candidate retrieves more relevant passages and costs less.
+
+The field prevents the candidate from winning by name alone. The candidate must
+show that it still satisfies the `source_retriever` interface, stays below the
+same authority ceiling, preserves the old citation regressions, keeps private
+mounts out of public output, and provides a rollback path to the prior
+implementation. Its qualification can also be scoped: default for public
+external sources, canary for Google Drive summaries, blocked for private raw
+source exports, expired after a source-corpus change, and quarantined after an
+incident.
+
+This example is not a deployed route validator or retrieval-quality result. It
+does not prove evaluator integrity, authority enforcement, regression
+preservation, or rollback execution. It shows why the field exists: the
+capability may improve, but the route must still answer what identity,
+authority, evidence, lifecycle state, and recovery obligation survived the
+change.
+
 ## Invariants
 
 The first invariant is identity binding: replacing an implementation must not

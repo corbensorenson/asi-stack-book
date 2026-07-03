@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Cognitive Compilation and Semantic IR
 
-Date: 2026-06-30
+Date: 2026-07-02
 
 Chapter: `cognitive-compilation-and-semantic-ir`
 
@@ -36,6 +36,10 @@ The reader throughline is:
   repair-locality tests, quality results, or cost results exist.
 - Preserved the proof/test boundary for semantic-atom schema coverage,
   finite-record Lean gates, and synthetic plan-execution checks.
+- Added a 2026-07-02 semantic-IR build-trace example for a reader-facing
+  chapter edit, separating source-plan atoms, no-new-source checks,
+  support-boundary checks, prose-pass/manifest/changelog updates, localized
+  repair, lowering receipts, and support-state non-claims.
 
 ## Meaning-Preservation Checks
 
@@ -60,7 +64,7 @@ The reader throughline is:
 - This pass does not claim source-plan parser behavior, target-lowering
   correctness, compiler correctness, localized-repair performance, artifact
   validator adequacy, quality improvement, cost improvement, deployed compiler
-  behavior, or support-state movement.
+  behavior, reader-edit automation, or support-state movement.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.
