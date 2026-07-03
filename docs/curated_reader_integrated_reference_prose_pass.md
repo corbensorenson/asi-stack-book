@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Integrated Reference Architecture
 
-Last updated: 2026-06-30
+Last updated: 2026-07-03
 
 Chapter ID: `integrated-reference-architecture`
 
@@ -48,13 +48,15 @@ permission to change proof or test status.
 - Preserved VIEA, SCF, VCM, PlanForge, Talos, Spinoza, Octopus Router, RMI,
   Benchmaxxing, Alignment Field, CGS, Cognitive Loop Closure, MoECOT, VCM
   Editable, and Project Theseus source boundaries.
-- Preserved the evidence boundary that the reference-trace fixture and finite
-  Lean predicates support record-shape discipline only.
-- Preserved the missing-work boundary: no end-to-end runtime trace, artifact
-  continuity audit, authority stop-condition execution, deployed runtime,
-  current Theseus dashboard state, compiler proof, operator-board execution,
-  benchmark replay, model-quality result, deployment readiness, or
-  support-state promotion is claimed.
+- Preserved the evidence boundary that the reference-trace fixtures, finite
+  Lean predicates, and one local Resource flagship command replay support
+  record-shape and local replay discipline only.
+- Preserved the missing-work boundary: no deployed end-to-end runtime trace,
+  live artifact-continuity audit, authority stop-condition execution beyond
+  the referenced blocked fixture, deployed runtime, current Theseus dashboard
+  state, compiler proof, operator-board execution, benchmark replay,
+  model-quality result, deployment readiness, or support-state promotion is
+  claimed.
 - Preserved the minimum viable implementation, beyond-state-of-the-art
   endpoint, and handoff into Project Theseus as Report-First Implementation
   Reference.
@@ -66,8 +68,8 @@ permission to change proof or test status.
 | Core claim meaning preserved | Pass. The curated draft keeps the claim that the stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; external system-orientation records and local project references remain comparison and implementation-reference context, not local integrated-runtime evidence. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that fixture validation and finite Lean predicates do not prove an integrated runtime, artifact continuity, deployed authority enforcement, benchmark success, model quality, deployment readiness, or stack safety. |
-| Implementation horizon preserved | Pass. The minimum viable implementation remains a reference flow diagram, schema fixture, and finite Lean predicates; the mature endpoint remains an unimplemented trace kernel for the whole ASI Stack. |
+| Proof/test status preserved | Pass. The curated draft now names the local command replay while keeping the boundary that fixture validation, finite Lean predicates, and local replay do not prove an integrated runtime, artifact continuity, deployed authority enforcement, benchmark success, model quality, deployment readiness, or stack safety. |
+| Implementation horizon preserved | Pass. The minimum viable implementation now includes the reference flow diagram, schema fixture, finite Lean predicates, and one local command replay; the mature endpoint remains an unimplemented trace kernel for the whole ASI Stack. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
@@ -80,9 +82,10 @@ permission to change proof or test status.
 - This pass does not create EPUB, DOCX, PDF, HTML, audio, or audio-embedded EPUB
   artifacts.
 - This pass does not promote any chapter core claim or non-core claim.
-- This pass does not claim an implemented integrated ASI runtime, end-to-end
-  trace harness, artifact-continuity audit, authority stop-condition execution,
-  deployed authority enforcement, replayed runtime trace, current Theseus
+- This pass does not claim an implemented integrated ASI runtime, deployed
+  end-to-end trace harness, live artifact-continuity audit, authority
+  stop-condition execution beyond the referenced blocked fixture, deployed
+  authority enforcement, replayed deployed-runtime trace, current Theseus
   dashboard state, current Theseus command result, operator-board execution,
   compiler proof, benchmark ledger replay, model-quality result, deployment
   readiness, stack safety, or public empirical proof of the architecture.

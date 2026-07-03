@@ -196,6 +196,21 @@ support-state promotion. Its value is that readers can now see the shape of
 the desired end-to-end record instead of only hearing that the layers should
 compose.
 
+The repository also has one local command replay in that same record family.
+The replay record,
+`reference-trace-replay-2026-07-02-resource-flagship`, runs
+`python3 scripts/validate_resource_flagship_lane.py`, records a command-output
+digest, tracks thirteen artifact digests and fourteen artifact references,
+emits eight layer handoffs, and attaches the blocked-authority fixture with
+three stop conditions: missing execution authority, an unaccepted residual,
+and required governance review. Its support effect is `record_shape_only`,
+and it creates no evidence transition. That is stronger than a static fixture,
+but still local replay evidence only. It does not prove an integrated ASI
+runtime, deployed layer behavior, live artifact-continuity service,
+authority-stop enforcement beyond the referenced blocked fixture, scheduler
+behavior, model quality, benchmark quality, safety, economic outcomes, or
+support-state promotion.
+
 ## One Request Through The Stack
 
 The approved fixture is intentionally modest. It does not begin with an
@@ -360,15 +375,17 @@ support-state effect, and non-claims. The Lean module proves finite
 record-level predicates: a declared handoff has its required artifact, and a
 trace missing a required governance gate cannot be marked valid.
 
-Those artifacts are useful specification discipline. They do not execute the
-architecture, replay a runtime trace, prove artifact continuity across a
-deployed system, enforce authority stops, verify a benchmark, prove model
-quality, or demonstrate deployment readiness.
+Those artifacts are useful specification discipline. The repository now adds
+one actual local command replay over the Resource flagship validator, with a
+Reference Trace Record, output digest, tracked artifact bundle, and
+blocked-path stop-condition attachment. That replay does not execute the
+whole architecture, prove artifact continuity across a deployed system,
+enforce authority stops outside the referenced fixture, verify a benchmark,
+prove model quality, or demonstrate deployment readiness.
 
-The next honest implementation slice is now beyond a dry-run fixture. It is a
-replayed or live trace that produces comparable records from an actual command,
-artifact bundle, validator run, and blocked-path stop condition while keeping
-the same non-claim boundaries.
+The next honest implementation slice is now beyond local replay. It is a live
+or externally replayed trace that produces comparable records from real layer
+handoffs while keeping the same non-claim boundaries.
 
 ## Beyond the State of the Art
 
@@ -401,9 +418,11 @@ This chapter specifies how the stack should compose. It does not claim that a
 complete integrated runtime exists.
 
 Current evidence consists of source synthesis, source-note mappings, external
-system-orientation records, a reference-trace schema fixture, finite Lean
-record predicates, and bounded Project Theseus implementation-reference
-material. The chapter's core claim stays at `argument` support.
+system-orientation records, reference-trace schema fixtures, finite Lean
+record predicates, one local Resource flagship command replay with an output
+digest and tracked artifact bundle, and bounded Project Theseus
+implementation-reference material. The chapter's core claim stays at
+`argument` support.
 
 Project Theseus is useful precisely because it is report-first: it shows how
 parts of this trace could become inspectable machinery without letting local
@@ -412,6 +431,12 @@ architecture-gate import demonstrates a report-import boundary. It is not an
 end-to-end runtime trace, current dashboard state, benchmark ledger replay,
 compiler proof, operator-board execution, model-quality result, or deployment
 readiness claim.
+
+The local command replay is useful for trace accounting, not for runtime
+proof. It shows that a real repository validator command can be wrapped in the
+Reference Trace Record family with residuals and blocked-path stop conditions
+preserved. It does not show that the ASI Stack layers ran as a deployed
+machine.
 
 The clean boundary is simple: if a future demo cannot produce parent
 artifacts, authority deltas, evidence deltas, residual deltas, blocked-path
