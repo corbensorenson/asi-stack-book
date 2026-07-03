@@ -41,6 +41,41 @@
       ]
     },
     {
+      "id": "v1_0.circle_contracts.mechanism_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism"
+      },
+      "rationale": "Replace the dense generated-reader mechanism with a clearer reader path while preserving finite-structure, consumer-gate, workload-evidence, and no-promotion boundaries.",
+      "content_lines": [
+        "The mechanism has one job: let a small structural fact travel without changing what kind of fact it is. A circular-address statement, phase-bank statement, freshness statement, or schedule statement may be useful only if the surrounding system can see its source, its check boundary, its fingerprint, and its refusal language.",
+        "",
+        "The path begins with an engineering object that can be modeled finitely without cheating. If that model is faithful enough, the package attaches theorem references, deterministic values, source version, replay expectation, allowed consumers, blocked consumers, and explicit non-claims. That package may authorize a structural use. It does not authorize adoption, performance language, memory-scaling language, context-length language, deployment language, or ASI language.",
+        "",
+        "```{mermaid}",
+        "flowchart LR",
+        "A[\"Engineering object\"] --> B[\"Faithful finite model\"]",
+        "B --> C[\"Checked structural package\"]",
+        "C --> D[\"Consumer gate\"]",
+        "D -- \"allowed structural use\" --> E[\"Bounded downstream use\"]",
+        "D -- \"missing or stale fields\" --> F[\"Blocked use\"]",
+        "E --> G[\"Workload request\"]",
+        "G -- \"baseline and controls run\" --> H[\"Promotion review\"]",
+        "G -- \"no workload evidence\" --> I[\"No promotion\"]",
+        "```",
+        "",
+        "The consumer gate is the important hinge. It asks whether this exact downstream layer is allowed to rely on this exact package for this exact narrow purpose. A memory layer might use a freshness package to guard a stale-read case. A cyclic mixer might use a phase-bank package to avoid one bookkeeping error. Neither use becomes evidence that a model got better.",
+        "",
+        "Promotion requires a different lane. Once a structural package requests quality language, the system must ask for ordinary workload evidence: a task, a baseline, negative controls, metrics, result artifacts, and residuals. If those pieces are missing, the package can remain useful as structure while still being workload-blocked.",
+        "",
+        "That split is what keeps Circle-style machinery from becoming persuasive decoration. The formal lane protects exact small facts. The empirical lane decides whether those facts helped. The reader should be able to inspect where the package came from, what it allows, what it blocks, and why support remains at argument unless a separate evidence transition exists.",
+        "",
+        "A useful package therefore makes both acceptance and refusal easier. It should give future systems enough structure to act carefully and enough limits to stop when the requested claim has moved beyond what was actually checked."
+      ]
+    },
+    {
       "id": "v1_0.circle_contracts.interfaces_reader_replace",
       "status": "active",
       "action": "replace_section",
