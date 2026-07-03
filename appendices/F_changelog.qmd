@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-03 - Harden roadmap idea-track dispatch
+
+- Reviewed Claude's latest idea-focused critique against the current v1.x
+  roadmap and confirmed the core diagnosis was already represented in the
+  Idea Depth Program: analytic consequences, prior-art deltas, strongest
+  objections, record-reality gaps, human oversight degradation, and novelty
+  ledger discipline.
+- Tightened `docs/v1_x_beyond_sota_roadmap.md` so defended contribution
+  tracks and signature-idea rows now have an explicit dispatch relationship:
+  future cycles should advance both when possible, or record why a concrete
+  artifact only advances one side.
+- Added a default next idea-depth order and strengthened the A+ execution
+  lattice and reusable long-running goal so idea-depth closure requires
+  strongest objections in chapter prose, not only ledger rows or terminology.
+- Boundary: this is roadmap execution guidance only. It creates no source
+  evidence, support-state transition, novelty proof, external review, proof
+  result, benchmark result, reader artifact approval, edition release record,
+  or new chapter.
+
 ## 2026-07-03 - Add Resource governance-tax trade-off model
 
 - Added `python3 scripts/validate_resource_governance_tax_tradeoff.py`,
