@@ -15,7 +15,7 @@ MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_pr
 SUMMARY = ROOT / "docs" / "curated_reader_format_artifact_probe.md"
 EXPECTED_FORMATS = {"html", "epub", "docx", "pdf"}
 REQUIRED_COMMANDS = {
-    "python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf",
+    "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
 }
 REQUIRED_BLOCKERS = {
@@ -194,8 +194,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         require_int("inspection_summary.pdf", "bytes", pdf.get("bytes"), errors, minimum=1_000_000)
         if not SHA_RE.match(str(pdf.get("sha256", ""))):
             errors.append("inspection_summary.pdf.sha256 must be a SHA-256 digest.")
-        if pdf.get("pages") != 523:
-            errors.append("inspection_summary.pdf.pages must be 523.")
+        if pdf.get("pages") != 524:
+            errors.append("inspection_summary.pdf.pages must be 524.")
         if pdf.get("title") != "The ASI Stack":
             errors.append("inspection_summary.pdf.title must be The ASI Stack.")
         if pdf.get("author") != "Corben Sorenson":
@@ -235,7 +235,7 @@ def validate_summary(errors: list[str]) -> None:
     text = SUMMARY.read_text(encoding="utf-8")
     required_fragments = [
         "Curated Reader Format Artifact Probe",
-        "python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf",
+        "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
         "python3 scripts/inspect_curated_reader_format_artifacts.py",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
@@ -245,10 +245,10 @@ def validate_summary(errors: list[str]) -> None:
         "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `fc96a767e5746f8e98fdd27463244ab24662f01cc56307bd2aa52503b0094b2a`",
-        "SHA-256 `29783665f677c0952fd4eb731a6a4a8dbd617254adcdfe04f694492eaf4b957d`",
-        "SHA-256 `62a5a20511099a82807ee116283c5bcb067d3a59c2bd2fdc24159c2ca7456dbd`",
-        "523 pages",
+        "SHA-256 `476e78683e060447b0e36ba746db746bf901f70427ce7b9e022e039bface72aa`",
+        "SHA-256 `966f78babb53d1caa2e42f70eb1258dd690b6a387cf15c7b3ced8acaca7ec445`",
+        "SHA-256 `40bc507d909a1614ae4cbe0f54f35dfeb95cdd787ac4368fe9e8ca0450d166cb`",
+        "524 pages",
         "sample pages 1, 2, 25, 300, and 500",
         "does not clear release blockers",
         "does not promote any claim support state",

@@ -11,8 +11,7 @@ format approval, a public deployment artifact, or a support-state promotion.
 Commands and reproduction path:
 
 ```bash
-python3 scripts/render_curated_reader_formats.py --include-pdf
-python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf
+python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf
 python3 scripts/inspect_curated_reader_format_artifacts.py
 ```
 
@@ -48,9 +47,9 @@ or PDF artifact.
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,699,526 bytes, SHA-256 `fc96a767e5746f8e98fdd27463244ab24662f01cc56307bd2aa52503b0094b2a`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,356,410 bytes, SHA-256 `29783665f677c0952fd4eb731a6a4a8dbd617254adcdfe04f694492eaf4b957d`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,204 paragraph markers, required Word package entries present. |
-| pdf | passed | 9,347,225 bytes, SHA-256 `62a5a20511099a82807ee116283c5bcb067d3a59c2bd2fdc24159c2ca7456dbd`, 523 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,700,252 bytes, SHA-256 `476e78683e060447b0e36ba746db746bf901f70427ce7b9e022e039bface72aa`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,357,441 bytes, SHA-256 `966f78babb53d1caa2e42f70eb1258dd690b6a387cf15c7b3ced8acaca7ec445`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,255 paragraph markers, required Word package entries present. |
+| pdf | passed | 9,350,151 bytes, SHA-256 `40bc507d909a1614ae4cbe0f54f35dfeb95cdd787ac4368fe9e8ca0450d166cb`, 524 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## Review Decision
 

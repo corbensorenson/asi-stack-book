@@ -941,7 +941,7 @@ Default ownership table for the next implementation pass:
 | Epistemic trusted computing base | `security-kernel-and-digital-scifs` and `artifact-graphs-audit-logs-and-replay`, with constitutional amendment legitimacy routed through Constitutional Alignment when authority change is involved. | State the minimal trusted core, recursion stop, trust propagation, outside-TCB residuals, and verifier-correctness non-claim without implying that a finite fixture proves open-world trust. | Trust-base storage/replay evidence, verifier-independence check, audit-log durability probe, or dated blocker. |
 | Human oversight degradation | `runtime-adapters-tool-permissions-and-human-approval`, with support-state implications routed through Evidence States and intent implications routed through Human Intent. | Treat reviewer fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer privacy, and reviewer-rotation limits as component failure modes in live and reader prose. | Approval-workflow trace with reviewer-load fields, independent-evidence checks, alert-quality evidence, privacy boundary, no-promotion decision, or dated blocker. |
 | Inter-stack governance | `scf-control-plane-routing-and-coherence`, Personal Compute Hives, and Security Kernel unless a distinct cross-stack contract interface emerges. | Define trust establishment, collusion risk, contract handoff, and revocation between independent governed stacks without implying a deployed ecosystem. | Public-safe contract fixture, cross-stack attestation trace, collusion negative control, or dated blocker. |
-| Interpretability as an evidence class | Evidence States, with downstream mentions in Proof-Carrying Claims and Benchmark Ratchets. | Add interpretability as a possible evidence class while preserving the behavioral/support-state ladder and avoiding white-box overclaiming. | Source-noted comparator pack, mechanistic-evidence admissibility rule, or dated blocker. |
+| Interpretability as an evidence class | Evidence States, with downstream mentions in Proof-Carrying Claims and Benchmark Ratchets. | First source-noted pass now adds Transformer Circuits and monosemantic feature-decomposition comparators, plus live and curated reader prose that treats interpretability as a scoped evidence role rather than a magic support state; no circuit analysis, sparse-autoencoder run, model-transparency result, or support-state promotion is claimed. | Mechanistic-evidence admissibility fixture, interpretability evidence-packet schema/rule with negative controls, downstream Proof-Carrying/Benchmark mentions, or dated blocker. |
 | Governance under partition | Personal Compute Hives and Runtime Adapters. | State grant/effect races, revocation propagation, and CAP-style authority consistency limits in the hives/runtime boundary. | Partitioned-authority fixture, revocation-delay trace, negative controls, or dated blocker. |
 | Constitutional amendment legitimacy | Constitutional Alignment and Recursive Self-Improvement. | Define who may amend the constitution, what makes amendment legitimate rather than merely gated, and how amendment residuals are recorded. | Amendment workflow fixture, authority-ceiling proof route, external governance comparator notes, or dated blocker. |
 
@@ -3426,7 +3426,7 @@ Current status:
   `build/curated_reader_edition/format_artifacts/html/_reader_site`: 49 pages,
   two viewports, 98 of 98 page-view pairs passing, exact ignored-snapshot
   digest
-  `7ae1bdd99c2469ebc70ca179961416a90ef16743117ad2933fe6e86bebdb2842`, and
+  `80c74ca1b73b37e1356eb68b21cf6266ea4d6936a945e4039305695ee217271c`, and
   all 44 `curated_reconciliation_not_approved`,
   `format_artifact_not_reviewed`, and `reader_release_record_not_created`
   blockers preserved. This closes a render/browser-viability uncertainty for
@@ -3445,7 +3445,7 @@ Current status:
   record that the tracked curated reader manuscript rendered locally to HTML,
   EPUB, DOCX, and PDF and passed structural inspection: 49 HTML files, 44
   chapter HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, and a
-  523-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
+  524-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
   now generates ten temporary PNG fallbacks from the tracked SVG key figures
   inside the ignored build workspace and restores the source workspace after
   rendering, eliminating the previous SVG-conversion warnings. EPUB, DOCX, PDF,
@@ -3520,7 +3520,7 @@ Current status:
   `build/curated_reader_edition/format_artifacts/html/_reader_site` opened 49
   pages across desktop and mobile widths, passed 98 of 98 page-view checks,
   and has deterministic directory digest
-  `7ae1bdd99c2469ebc70ca179961416a90ef16743117ad2933fe6e86bebdb2842`. This
+  `80c74ca1b73b37e1356eb68b21cf6266ea4d6936a945e4039305695ee217271c`. This
   is review input for release-quality artifact work; it does not mark the
   curated reader edition, refreshed HTML, EPUB, DOCX, PDF, e-reader, or audio
   release-approved.

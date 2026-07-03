@@ -6,8 +6,7 @@
   "purpose": "Record the latest local curated-reader HTML, EPUB, DOCX, and PDF structural render evidence without treating ignored build artifacts as release artifacts.",
   "source_mode": "tracked_curated_reader_manuscript",
   "source_commands": [
-    "python3 scripts/render_curated_reader_formats.py --include-pdf",
-    "python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf",
+    "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py"
   ],
   "local_report_refs": [
@@ -65,8 +64,8 @@
     },
     "epub": {
       "status": "passed",
-      "bytes": 8699526,
-      "sha256": "fc96a767e5746f8e98fdd27463244ab24662f01cc56307bd2aa52503b0094b2a",
+      "bytes": 8700252,
+      "sha256": "476e78683e060447b0e36ba746db746bf901f70427ce7b9e022e039bface72aa",
       "entries": 120,
       "xhtml_entries": 52,
       "image_entries": 62,
@@ -75,7 +74,7 @@
       "opf_language": "en-US",
       "opf_item_count": 116,
       "opf_itemref_count": 52,
-      "nav_href_count": 836,
+      "nav_href_count": 838,
       "required_entries_present": [
         "EPUB/content.opf",
         "EPUB/nav.xhtml",
@@ -86,13 +85,13 @@
     },
     "docx": {
       "status": "passed",
-      "bytes": 8356410,
-      "sha256": "29783665f677c0952fd4eb731a6a4a8dbd617254adcdfe04f694492eaf4b957d",
+      "bytes": 8357441,
+      "sha256": "966f78babb53d1caa2e42f70eb1258dd690b6a387cf15c7b3ced8acaca7ec445",
       "entries": 77,
       "media_entries": 61,
       "png_media_entries": 61,
       "svg_media_entries": 0,
-      "paragraph_markers": 17204,
+      "paragraph_markers": 17255,
       "required_entries_present": [
         "[Content_Types].xml",
         "_rels/.rels",
@@ -103,9 +102,9 @@
     },
     "pdf": {
       "status": "passed",
-      "bytes": 9347225,
-      "sha256": "62a5a20511099a82807ee116283c5bcb067d3a59c2bd2fdc24159c2ca7456dbd",
-      "pages": 523,
+      "bytes": 9350151,
+      "sha256": "40bc507d909a1614ae4cbe0f54f35dfeb95cdd787ac4368fe9e8ca0450d166cb",
+      "pages": 524,
       "title": "The ASI Stack",
       "author": "Corben Sorenson",
       "producer": "LuaTeX-1.24.0",

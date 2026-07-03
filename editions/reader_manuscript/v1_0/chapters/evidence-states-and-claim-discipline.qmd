@@ -108,6 +108,15 @@ replace those traditions. They apply the same discipline at the level of a
 claim: what exact object is allowed to move this exact support state, and what
 is still outside the movement?
 
+Mechanistic interpretability adds a third kind of evidence pressure. Circuit
+analysis and feature decomposition can show something ordinary behavioral
+testing cannot: a partial view of internal mechanism. But that evidence is
+dangerous if it is treated as a magic word. A circuit trace, activation patch,
+or sparse-autoencoder feature only helps a claim when the record names the
+model, layer, behavior, method, artifact, negative cases, and limits. Looking
+inside the model is not the same as proving the system safe, reliable, or ready
+to deploy.
+
 The missing object is an evidence transition. If a claim moves from `argument`
 to `source-derived`, the transition should name the source note and the mapped
 claim. If it moves to `synthetic-test-backed`, it should name the fixture,
@@ -157,6 +166,12 @@ speculative and connector-bound. Verification Bandwidth contributes the most
 important reader-facing warning: loading source material into context is not
 equivalent to verifying a claim. Contradiction-rate tests and the proposed
 theory remain unrun here.
+
+Transformer Circuits and monosemantic feature-decomposition work add a
+white-box comparison line. They help the reader see interpretability as a real
+evidence role, but not as automatic confidence. The book has not reproduced a
+circuit analysis, trained sparse autoencoders, decomposed activations, or shown
+that any ASI Stack model has transparent internal mechanisms.
 
 Taken together, these sources justify the need for disciplined claim/evidence
 vocabulary. They do not create a stronger support state for the chapter.
@@ -208,6 +223,12 @@ do not prove that the transition should be accepted. A Lean theorem can prove a
 narrow record invariant; it does not prove the surrounding system behavior.
 Test-backed movement requires an evidence bundle with the command, environment,
 result, limitations, and negative or inconclusive results where they exist.
+
+Interpretability evidence follows the same rule. A discovered circuit or
+feature can be useful, but it is still an artifact with a scope. It should not
+outrank a failed behavioral result, hide missing proof scope, or become a broad
+safety claim. It belongs in the ledger as a mechanistic evidence role with
+model, layer, behavior, method, counterexample, and non-claim fields attached.
 
 The layer also preserves negative information. A failed proof attempt,
 benchmark wall, contradiction, missing source, invalid fixture, or scope

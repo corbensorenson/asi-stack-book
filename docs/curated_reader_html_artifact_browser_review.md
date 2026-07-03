@@ -30,7 +30,7 @@ Reviewed HTML root:
 
 Deterministic directory digest:
 
-`7ae1bdd99c2469ebc70ca179961416a90ef16743117ad2933fe6e86bebdb2842`
+`80c74ca1b73b37e1356eb68b21cf6266ea4d6936a945e4039305695ee217271c`
 
 The digest is computed over 81 files by hashing each relative path and file
 content in sorted order. The rendered site is ignored local build output, not a

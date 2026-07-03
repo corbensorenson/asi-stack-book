@@ -3196,6 +3196,36 @@
     "citation_label": "Pineau et al. (2021), Improving Reproducibility in Machine Learning Research"
   },
   {
+    "id": "ext_transformer_circuits_2021",
+    "title": "A Mathematical Framework for Transformer Circuits",
+    "priority": "external_literature",
+    "layer": "mechanistic_interpretability",
+    "chapter_targets": [
+      "evidence-states-and-claim-discipline"
+    ],
+    "url": "https://transformer-circuits.pub/2021/framework/index.html",
+    "notes": "External mechanistic-interpretability comparator for treating internal circuit analyses as scoped white-box evidence that still needs model, layer, behavior, causal, and limitation boundaries.",
+    "source_type": "research_article",
+    "published": "2021-12-22",
+    "updated": "2021-12-22",
+    "citation_label": "Elhage et al. (2021), Transformer Circuits"
+  },
+  {
+    "id": "ext_monosemanticity_2023",
+    "title": "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning",
+    "priority": "external_literature",
+    "layer": "mechanistic_interpretability",
+    "chapter_targets": [
+      "evidence-states-and-claim-discipline"
+    ],
+    "url": "https://transformer-circuits.pub/2023/monosemantic-features",
+    "notes": "External mechanistic-interpretability comparator for sparse-autoencoder feature decomposition and the boundary between discovered features, feature-level evidence, and broader model-behavior claims.",
+    "source_type": "research_article",
+    "published": "2023-10-05",
+    "updated": "2023-10-05",
+    "citation_label": "Bricken et al. (2023), Towards Monosemanticity"
+  },
+  {
     "id": "ext_literate_programming_1984",
     "title": "Literate Programming",
     "priority": "external_literature",

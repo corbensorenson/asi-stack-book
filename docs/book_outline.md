@@ -393,7 +393,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `benchmaxxing`, `spinoza`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `uat`, `coherence_exchange`, `verification_bandwidth` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External comparators | `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_ml_reproducibility_program_2021`, `ext_proof_carrying_code_1997` | Use source-noted records to position evidence states against structured reporting, dataset documentation, reproducibility-review practice, and proof-carrying-code lineage; do not treat them as local implementation, external review, or support-state promotion. |
+| External comparators | `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_ml_reproducibility_program_2021`, `ext_proof_carrying_code_1997`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023` | Use source-noted records to position evidence states against structured reporting, dataset documentation, reproducibility-review practice, proof-carrying-code lineage, and scoped mechanistic-interpretability evidence; do not treat them as local implementation, external review, model transparency, model safety, or support-state promotion. |
 
 Draft arc:
 
@@ -407,10 +407,12 @@ Draft arc:
 - Mechanism: frame support-state discipline as the book's methodological contribution, paired with Living Book Methodology, while keeping the current claim at `argument` support until accepted transitions or stronger evidence exist.
 - Mechanism: State the local governed-cognition pattern delta: this chapter owns claim movement, where records become evidence transitions with claim identity, support state, artifact role, review or command receipt, negative evidence, downgrade triggers, blockers, and non-claims.
 - Mechanism: treat upward support movement as a burden and downward movement as mandatory when contradiction, missing evidence, failed verification, or scope mismatch appears.
+- Mechanism: add interpretability as an evidence role rather than a magic support state: circuit or feature evidence can inform a claim only when the model, layer, behavior, method, intervention or analysis boundary, negative cases, artifact refs, and non-claims are recorded.
 - Interface: Drafting updates claims.
 - Interface: Experiments update evidence.
 - Interface: Changelog records evidence movement.
 - Interface: distinguish lineage, motivation, terminology, direct support, contradiction, failed support, reproduced result, source-reported result, local fixture, formal predicate, and empirical measurement.
+- Interface: distinguish mechanistic interpretability artifacts from behavioral benchmark evidence, proof artifacts, source-derived mappings, and deployment measurements.
 
 Primary invariants:
 
@@ -435,7 +437,7 @@ Draft deliverables:
 - Implemented Codex test: Evidence bundle completeness and changelog-consistency probe, via `python3 scripts/validate_evidence_bundle_completeness_probe.py`, checks two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition. Result: `experiments/evidence_bundle_completeness/results/2026-07-02-local.json`.
 - Implemented Codex test: Claim ledger completeness audit, via `python3 scripts/validate_claim_ledger_completeness_audit.py`, checks the real Appendix C ledger against 44 manifest chapter core claims, expected labels, support states, assigned sources, open gaps, promotion paths, duplicate/stale rows, and seven expected-invalid mutation controls. Result: `experiments/claim_ledger_completeness/results/2026-07-02-local.json`.
 - Implemented Codex test: Accepted live transition review audit, via `python3 scripts/validate_accepted_transition_review_audit.py`, checks 41 accepted transition records, six bounded non-core upward transitions, the accepted no-promotion ledger, no accepted upward chapter-core transition, review/changelog/evidence-packet/non-claim boundaries, and seven expected-invalid mutation controls. Result: `experiments/accepted_transition_review/results/2026-07-02-local.json`.
-- Source-noted external comparator rows now position evidence states against model cards, datasheets, ML reproducibility-review practice, and proof-carrying-code lineage as adjacent documentation/proof-carrying disciplines; no model-card, datasheet, external reproducibility-review, or proof-carrying-code implementation is claimed.
+- Source-noted external comparator rows now position evidence states against model cards, datasheets, ML reproducibility-review practice, proof-carrying-code lineage, Transformer Circuits, and monosemantic feature decomposition as adjacent reporting, proof-carrying, and mechanistic-interpretability disciplines; no model-card, datasheet, external reproducibility-review, proof-carrying-code implementation, circuit analysis, sparse-autoencoder run, model transparency result, or support-state promotion is claimed.
 
 Lean proof targets:
 
