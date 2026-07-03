@@ -274,26 +274,35 @@ The minimum viable implementation is a public trace-to-tool record discipline:
 a procedural tool schema, a valid fixture, finite promotion predicates, and a
 small synthetic trace set that exercises both promotion and rejection.
 
-The repository already has the first layer. The procedural tool record fixture
-checks source traces, invariant structure, parameters, preconditions,
-postconditions, verification result, risk/runtime tiers, monitoring plan,
-residuals, regressions, lifecycle state, and retirement criteria.
-`AsiStackProofs.ProceduralMemory` contains finite record predicates that a
-generated tool records its source traces, parameters, and verification result,
-and that a failed regression blocks routable promotion.
+The repository already has the first layer and a small synthetic qualification
+gate. The procedural tool record fixture checks source traces, invariant
+structure, parameters, preconditions, postconditions, verification result,
+risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state,
+and retirement criteria.
 
-The next honest slice would be deliberately small: three successes, one near
-miss, one failure, and one extracted tool candidate. The harness should prove
-that the candidate cites all source traces, narrows its scope around the
-failure, preserves the near miss, and remains unroutable until regression
-checks pass.
+The synthetic procedural-memory loop harness adds the deliberately small slice
+that this chapter asks for: three valid qualification packets and six
+expected-invalid packets. The valid cases include a routable procedure that
+preserves negative examples, a failed-regression procedure that routes to
+quarantine, and a stale-precondition path that retires the tool. The invalid
+cases reject single-trace toolification, hidden parameters, missing negative
+examples, source-trace mismatch, failed regression laundered as routable, and
+ignored retirement triggers.
 
-It should also exercise rejection: a missing near miss, stale precondition,
-failed benchmark floor, unapproved authority requirement, or retired SCF keeps
-the tool in quarantine or retired state.
+`AsiStackProofs.ProceduralMemory` mirrors that record discipline with finite
+generated-tool, regression-promotion, lifecycle-route, and fixture-bridge
+predicates. The Lean layer can show that modeled records route away from
+routable promotion when required traces, failures, closure artifacts,
+verification, benchmark floor, active SCF state, monitoring, residuals,
+non-claims, or retirement handling are missing.
 
-That would still not be a deployed loop-closure system. It would be a
-public-safe proof-of-discipline that reuse can be denied.
+That is still not a deployed loop-closure system. It does not prove loop
+detection, invariant-abstraction quality, parameter-discovery quality,
+synthesized-tool correctness, regression quality, routing-monitor behavior,
+retirement automation, Talos loop-closure behavior, MoECOT runtime behavior,
+Project Theseus replay, or autonomous self-improvement. It is a public-safe
+proof-of-discipline: reuse can be represented, admitted, denied, quarantined,
+or retired without pretending that a procedure foundry exists.
 
 ## Beyond the State of the Art
 
@@ -334,8 +343,9 @@ Stack currently generates verified tools from repeated work.
 
 Current evidence consists of source synthesis, passage-reviewed source
 mappings, source-noted external memory context, a public procedural-tool
-fixture, and finite Lean record predicates. Those artifacts support the shape
-of the promotion path. They do not prove loop detection, invariant
+fixture, the synthetic procedural-memory loop harness, and finite Lean record
+predicates. Those artifacts support the shape of the promotion path and its
+bounded rejection cases. They do not prove loop detection, invariant
 abstraction, active parameter discovery, synthesized tool correctness,
 regression quality, routing monitor behavior, retirement automation, Talos
 loop-closure behavior, MoECOT runtime behavior, Project Theseus replay, or

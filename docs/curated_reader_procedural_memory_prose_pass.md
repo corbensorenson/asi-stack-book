@@ -56,6 +56,11 @@ permission to change proof or test status.
   boundaries.
 - Preserved the evidence boundary that public procedural-tool fixtures and
   finite Lean predicates support record discipline only.
+- Added a 2026-07-03 evidence-boundary alignment that updates the reader
+  minimum viable implementation to match the live chapter's implemented
+  synthetic procedural-memory loop harness: three valid qualification packets,
+  six expected-invalid packets, finite Lean lifecycle-route/fixture bridges,
+  and no support-state promotion.
 - Preserved the missing-work boundary: no loop detector, tool synthesizer,
   active parameter discovery, regression run, routing monitor, retirement
   automation, Talos loop-closure pipeline, MoECOT runtime reproduction,
@@ -74,7 +79,7 @@ permission to change proof or test status.
 | Core claim meaning preserved | Pass. The curated draft keeps the claim that cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; MemGPT remains orientation context, and MoECOT remains connector/source-note context. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that finite Lean predicates and procedural-tool fixture validation do not prove loop detection, invariant abstraction, active parameter discovery, synthesized tool correctness, regression quality, routing monitor behavior, retirement automation, Talos loop-closure behavior, MoECOT runtime behavior, Project Theseus replay, or autonomous self-improvement. |
+| Proof/test status preserved | Pass. The curated draft now names the implemented synthetic procedural-memory loop harness and finite Lean route/bridge predicates while preserving the boundary that they do not prove loop detection, invariant abstraction, active parameter discovery, synthesized tool correctness, regression quality, routing monitor behavior, retirement automation, Talos loop-closure behavior, MoECOT runtime behavior, Project Theseus replay, or autonomous self-improvement. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a loop-closure pipeline from trace detection to verified tool record; the mature endpoint remains an unimplemented procedure foundry for verified reusable cognition. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
@@ -91,7 +96,8 @@ permission to change proof or test status.
 - This pass does not claim loop detection, tool synthesis, active parameter
   discovery, tool behavior, regression success, routing monitor behavior,
   retirement automation, Talos loop-closure behavior, MoECOT runtime
-  reproduction, Project Theseus replay, or autonomous self-improvement.
+  reproduction, Project Theseus replay, autonomous self-improvement, or
+  support-state promotion from the synthetic loop harness.
 
 ## Remaining Blockers
 
