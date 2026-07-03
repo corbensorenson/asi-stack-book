@@ -214,13 +214,17 @@ SPECIAL_REVIEW_DEFAULTS = {
             "as policy objects that preserve verification tax, protected overhead, "
             "displaced costs, serving pressure, rejected savings, and "
             "no-cost-cutting-of-governance boundaries. First curated reader prose "
-            "pass and drafting companion note are recorded; the companion note is "
-            "for e-reader/audio density support only, while verification tax, "
-            "route eligibility, residual ownership, no-change sublane decisions, "
+            "pass and drafting companion note are recorded; the 2026-07-03 "
+            "alignment surfaces the workload-quality probe, load-stability "
+            "probe, CI-cost profile, and aggregate flagship replay as bounded "
+            "local or synthetic no-promotion evidence. The companion note is for "
+            "e-reader/audio density support only, while verification tax, route "
+            "eligibility, residual ownership, no-change sublane decisions, "
             "serving-memory separation, scheduler non-claims, and economic "
             "non-claims remain in the reader spine. Release blockers remain "
             "active and no scheduler, economics, serving, welfare, cost-quality, "
-            "or reader-artifact claim is approved."
+            "workload-quality, load-stability, support-promotion, or "
+            "reader-artifact claim is approved."
         ),
     },
     "coilra-multicoil-rope-and-cyclic-mixers": {

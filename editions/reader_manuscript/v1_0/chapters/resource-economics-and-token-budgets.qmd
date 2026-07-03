@@ -270,6 +270,20 @@ fixture trace, not a scheduler. Its value is narrower and more important: it
 shows what accountable resource evidence has to preserve before a budget story
 is allowed to become a bigger claim.
 
+The current flagship lane gathers those narrow surfaces into one replayable
+package. `python3 scripts/validate_resource_flagship_lane.py` checks the
+costed-route transition, workflow trace, budget-ledger fixtures,
+capacity-smoothing traces, local live probe, workload-quality probe,
+load-stability probe, CI cost profile, simulation-transfer boundary, and
+evidence-transition records. The workload-quality probe selects a scoped
+workflow-trace validator over a broader baseline while rejecting a cheaper
+no-op route. The load-stability probe selects protected capacity smoothing over
+admitting every arrival in a finite 10-task burst while residualizing seven
+deferrals and rejecting review erasure. The CI profile records publication
+pipeline cost and repair metadata. None of that is a deployed scheduler,
+production workload, economic outcome, model-quality result, external review,
+artifact approval, or chapter-core support-state promotion.
+
 ## Beyond the State of the Art
 
 Resource economics matures into a risk-aware budget operating system for

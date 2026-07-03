@@ -2,6 +2,8 @@
 
 Date: 2026-07-01
 
+Evidence-boundary alignment: 2026-07-03
+
 Chapter: `resource-economics-and-token-budgets`
 
 Reader manuscript file:
@@ -46,6 +48,13 @@ The reader throughline is:
   event-to-summary cost/review/verification rollup, high-risk-first ordering,
   guard preservation, and the boundary between fixture trace evidence and
   deployed scheduler evidence.
+- Added a fourth reader-only update after the Resource flagship lane replay:
+  the curated chapter now names the one-command replay across costed-route,
+  workflow-trace, budget-ledger, capacity-smoothing, local live,
+  workload-quality, load-stability, CI-cost, simulation-transfer, and
+  evidence-transition validators while preserving no scheduler, production
+  workload, model-quality, economic-outcome, external-review, artifact-approval,
+  or chapter-core-promotion claims.
 
 ## Meaning-Preservation Checks
 
@@ -61,6 +70,12 @@ The reader throughline is:
   over finite dispatch events only; it does not treat event rollup,
   high-risk-first ordering, or guard preservation as deployed scheduling,
   live workload-quality, physical-feasibility, or economic evidence.
+- The prose preserves the workload-quality probe, load-stability probe,
+  CI-cost profile, and flagship replay as local repository or synthetic
+  evidence surfaces only; they do not replace production scheduler logs,
+  external review, real load-stability evidence, measured displaced-cost
+  accounting, KV-cache measurement, physical-feasibility review, or human
+  productivity/economic evidence.
 - PagedAttention/vLLM remains serving-layer resource context only; no local
   deployment, KV-cache audit, latency result, throughput result, or quality
   result is implied.
@@ -80,6 +95,9 @@ The reader throughline is:
   value-of-computation comparisons, or economic outcomes.
 - This pass does not claim that the accepted costed-route slice, selector-state
   theorem, workflow trace-property bridge, or local live probe promotes the
+  `resource-economics-and-token-budgets` chapter core claim.
+- This pass does not claim that the workload-quality probe, load-stability
+  probe, CI-cost profile, or aggregate flagship replay promotes the
   `resource-economics-and-token-budgets` chapter core claim.
 - This pass does not promote any chapter core claim above `argument`.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
