@@ -1,8 +1,10 @@
 # Curated Reader Prose Pass: Readiness Gates, Residual Escrow, and Quarantine
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 Follow-up: 2026-07-02
+
+Follow-up: 2026-07-03
 
 Chapter ID: `readiness-gates-residual-escrow-and-quarantine`
 
@@ -52,16 +54,21 @@ permission to change proof or test status.
   assurance, routing, and monitoring sources are comparators and vocabulary,
   not proof that the ASI Stack implements readiness.
 - Preserved the evidence boundary that current protocol validation, two finite
-  Lean predicates, a synthetic readiness/residual harness, and one static
+  Lean predicates, a synthetic readiness/residual harness, the readiness
+  lifecycle probe, finite lifecycle-transition predicates, and one static
   Theseus import do not prove a deployed readiness engine, residual-ledger
   storage, benchmark quality, live quarantine routing, current Theseus runtime
   behavior, or MoECOT replay.
 - Preserved the minimum viable implementation, beyond-state-of-the-art endpoint,
-  and handoff into MoECOT Runtime and Multi-Core Orchestration.
+  and handoff into Personal Compute Hives and Federated Edge Intelligence.
 - Preserved the release and runtime boundary: the new example is reader-facing
   explanation only and does not claim deployed readiness, live route
   enforcement, residual-ledger storage, benchmark quality, or current Theseus
   or MoECOT runtime behavior.
+- Added a 2026-07-03 handoff and evidence-boundary alignment so the reader
+  chapter now reflects the executed MoECOT runtime fold into Routing Heads and
+  names the implemented readiness lifecycle probe without claiming lifecycle
+  engine behavior.
 
 ## Meaning Preservation Checks
 
@@ -70,8 +77,9 @@ permission to change proof or test status.
 | Core claim meaning preserved | Pass. The curated draft keeps the claim that readiness gates and residual escrow should govern promotion, quarantine, split, merge, retirement, and retraining. |
 | Support-state boundary preserved | Pass. The curated draft states that the live book keeps the claim at `argument` support. |
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; external records remain comparators. |
-| Proof/test status preserved | Pass. The curated draft keeps the boundary that schema validation, finite Lean predicates, synthetic harness checks, and a static Theseus import do not prove deployed readiness or routing behavior. |
+| Proof/test status preserved | Pass. The curated draft keeps the boundary that schema validation, finite Lean predicates, lifecycle-transition predicates, synthetic harness checks, the readiness lifecycle probe, and a static Theseus import do not prove deployed readiness, lifecycle-engine behavior, residual-ledger storage, benchmark quality, live quarantine routing, current Theseus runtime behavior, MoECOT replay, or routing behavior. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a readiness record schema and fixture suite; the mature endpoint remains an unvalidated lifecycle control plane. |
+| Handoff preserved | Pass. The reader handoff now matches the active 44-chapter spine: MoECOT runtime-crosswalk material lives in Routing Heads, and this chapter hands off to Personal Compute Hives and Federated Edge Intelligence. |
 | Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
@@ -86,9 +94,10 @@ permission to change proof or test status.
 - This pass does not promote any chapter core claim or non-core claim.
 - This pass does not claim a deployed readiness engine, residual-ledger
   storage, benchmark quality, live quarantine routing, gate-expiry
-  enforcement, live rerouting, current Theseus runtime behavior, MoECOT replay,
-  MoECOT benchmark reproduction, production safety, strategic-deception
-  resistance, or global alignment.
+  enforcement, lifecycle-engine behavior, live rerouting, current Theseus
+  runtime behavior, MoECOT replay, MoECOT benchmark reproduction, production
+  safety, strategic-deception resistance, global alignment, or support-state
+  promotion from the synthetic readiness lifecycle probe.
 
 ## Remaining Blockers
 
