@@ -41,7 +41,7 @@
         "integrated-reference-architecture",
         "living-book-methodology"
       ],
-      "claimed_contribution": "Name the repeated record-lifecycle-authority-evidence-receipt-rollback pattern as the book's core architecture language rather than leaving it implicit in many chapters.",
+      "claimed_contribution": "Name the repeated record-lifecycle-authority-evidence-receipt-residual-rollback pattern as the book's core architecture language and require chapters to state their local delta instead of treating every pattern application as a separate novelty claim.",
       "closest_prior_art_refs": [
         "ext_model_cards_2019",
         "ext_datasheets_datasets_2021",
@@ -49,12 +49,12 @@
         "ext_nist_ai_rmf_1_0_2023",
         "ext_frontier_ai_regulation_2023"
       ],
-      "audited_delta": "Reporting and governance frameworks describe documentation and risk-management surfaces; the ASI Stack contribution target is a reusable systems pattern that binds claim movement, authority, artifacts, and rollback inside the architecture itself.",
-      "non_obvious_consequence": "Each chapter should state what it adds beyond the common pattern; otherwise the book becomes many applications of one template rather than a set of independent mechanisms.",
+      "audited_delta": "Reporting and governance frameworks describe documentation and risk-management surfaces; the ASI Stack contribution target is a reusable systems pattern that binds claim movement, authority, artifacts, evidence receipts, residual custody, and rollback inside the architecture itself.",
+      "non_obvious_consequence": "Each chapter should state what it adds beyond the common pattern; otherwise the book becomes many applications of one template rather than a set of independent mechanisms. The owner-spine pass now names the pattern in the opener, applies it at trace scale in Integrated Reference Architecture, and applies it reflexively to book changes in Living Book Methodology.",
       "strongest_objection": "The pattern may be a repackaging of ordinary safety engineering, audit logging, and lifecycle governance rather than a new AI architecture idea.",
-      "answer_status": "positioned_but_not_novelty_proven",
-      "confidence_state": "needs_delta_audit",
-      "needed_next_artifact": "An inline chapter pattern-delta pass through existing chapter prose, outline entries, and contribution-ledger rows that names which chapters own distinct mechanisms and which are only pattern applications; no standalone audit report by default.",
+      "answer_status": "owner_spine_pattern_delta_integrated_not_novelty_proven",
+      "confidence_state": "owner_spine_integrated_not_novelty_proven",
+      "needed_next_artifact": "A broader inline local-delta pass through non-owner chapter prose and outline entries that names which chapters own distinct mechanisms and which are pattern applications; no standalone audit report by default.",
       "support_state_effect": "none",
       "non_claims": [
         "does not prove novelty",

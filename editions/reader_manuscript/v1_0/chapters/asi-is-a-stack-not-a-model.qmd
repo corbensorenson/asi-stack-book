@@ -25,6 +25,13 @@ every mechanism the same questions: what responsibility do you own, what
 artifact do you pass, what authority ceiling binds you, what evidence state
 can you honestly create, and what failure mode should stop you?
 
+Those questions form the book's pattern language for governed cognition. A
+capability becomes part of the stack only when it has a record, a lifecycle
+state, an authority ceiling, an evidence gate, receipts, residual ownership,
+and a rollback or quarantine route. The opening move is to name that shared
+pattern so later chapters do not have to pretend that every reuse of it is a
+separate invention. Their job is to say what they add beyond the pattern.
+
 A component can be brilliant and still be institutionally mute. A model can
 generate, compress, criticize, route, and propose, but those abilities do not
 say who authorized the action, which source grounded the claim, what residual
@@ -114,6 +121,10 @@ The ASI Stack adds a particular emphasis: governance, authority ceilings,
 claim states, proof hooks, rollback paths, and recursive-improvement
 boundaries are not decorations around intelligence. They are part of the
 architecture.
+
+That is the difference between a useful decomposition and a governed one. A
+modular system has parts. A governed stack has parts whose powers, evidence,
+receipts, residuals, and reversal paths remain visible enough to be reviewed.
 
 ## Core Claim
 

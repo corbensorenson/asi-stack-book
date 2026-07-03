@@ -49,6 +49,8 @@ The living-book method is the book's own governance test. Every substantive chan
 
 Together with Evidence States, this is the book's methodological contribution. Evidence States governs claim strength; Living Book Methodology governs the source graph, release graph, reader projections, validation receipts, and revision process that keep those claim states from drifting.
 
+This chapter is also the reflexive application of the governed-cognition pattern. A manuscript change is not just a better paragraph; it is a typed change with lifecycle state, source boundary, claim effect, validation receipt, release route, residual, and non-claim. The local delta is that the book itself becomes an artifact governed by the same pattern it recommends for AI systems.
+
 ::: {.asi-human-only}
 ## Human Reading Path
 
@@ -111,6 +113,8 @@ Appendix C now records seven passage-reviewed mappings for this claim. The revie
 The living-book method is a ratcheted publication loop. Each improvement should leave the repository more informative than it found it, preserve the reason for the change, and keep the AI/research scaffold separate from downstream reader and audio editions.
 
 The method is deliberately more than "write in Quarto." Quarto renders the book, but the living-book method controls how claims, sources, proofs, tests, releases, and reader projections are allowed to change. That distinction keeps a publishing tool from being confused with a research governance system.
+
+In pattern-language terms, `book_structure.json`, `docs/book_outline.md`, source notes, Appendix C, proof manifests, validators, release records, reader manifests, and changelog entries are not administrative clutter. They are the records, receipts, lifecycle states, and rollback handles that keep revision from becoming ungoverned self-improvement by another name.
 
 - Use `book_structure.json` for order and dynamic chapters.
 - Use `docs/book_outline.md` for drafting, source queues, and Lean scope.

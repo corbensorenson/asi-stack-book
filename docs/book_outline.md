@@ -133,6 +133,7 @@ Draft arc:
 - Mechanism: Treat the whole book as a reference architecture rather than a collection of standalone papers.
 - Mechanism: Use source queues and evidence states to keep future writing runs context-loaded and honest.
 - Mechanism: Treat layer contracts as the stable object when adding, moving, merging, or revising chapters.
+- Mechanism: Name the shared governed-cognition pattern once: typed record, lifecycle state, authority ceiling, evidence gate, receipt trail, residual ownership, rollback or quarantine route, and explicit non-claims. Later chapters should state their local delta rather than claiming novelty for ordinary pattern reuse.
 - Mechanism: Position the stack claim against external architecture traditions without treating those sources as evidence that this ASI stack has been implemented or validated.
 - Interface: Alignment and governance constrain every downstream layer.
 - Interface: Planning, memory, reasoning, execution, routing, compression, and evidence exchange typed artifacts.
@@ -161,6 +162,7 @@ Draft deliverables:
 - Implemented Lean proof target: finite layer-contract admission lifecycle route for missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence-transition gaps, and non-claim-boundary gaps.
 - Exact Appendix C claim-source mappings for the core claim across `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, and `scf`; support remains `argument` pending implementation or test evidence.
 - Implemented repository audit: `python3 scripts/validate_stack_layer_traceability.py` checks the layer-boundary fixture, six assigned source mappings, Appendix A source-to-layer visibility, Appendix C claim/support labels, and no-promotion markers; this is repository traceability evidence only, not deployed stack evidence or support-state promotion.
+- Idea-depth owner-spine slice: this opener names the pattern language for governed cognition; Integrated Reference Architecture applies it at trace scale; Living Book Methodology applies it reflexively to manuscript and release changes. The contribution novelty ledger records this as positioning, not novelty proof or support-state movement.
 - Planned Codex test: Contract-change triage.
 
 Lean proof targets:
@@ -3084,6 +3086,7 @@ Draft arc:
 - Mechanism: Identify where authority can stop, narrow, reroute, quarantine, rollback, or require review before downstream work proceeds.
 - Mechanism: Record positive and negative checkpoints so approved paths and blocked paths are both inspectable.
 - Mechanism: Track parentage, authority deltas, evidence deltas, and residual deltas instead of treating the trace as a chronological log.
+- Mechanism: Apply the governed-cognition pattern at trace scale: local layer records are not integrated until their lifecycle states, authority deltas, evidence receipts, residuals, rollback or quarantine paths, and non-claims remain joinable across approved and blocked paths.
 - Interface: All stack layers participate.
 - Interface: Artifacts and evidence ledgers provide continuity.
 - Interface: SCF gates control improvement.
@@ -3302,6 +3305,7 @@ Draft arc:
 - Mechanism: emit living-book change packets with affected chapters, sources, claims, proof tags, schema/fixture paths, validation commands, render result, release target, audience profile, derived-artifact boundary, support-state effect, public URL if published, and explicit non-claims.
 - Mechanism: preserve three-audience derivation discipline: AI/research scaffold, human-research live site, and stripped reader/audio editions all derive from one governed source state.
 - Mechanism: pair with Evidence States as the book's methodological contribution: manifest-driven source of truth, source queues, claim ledger, proof manifest, evidence transitions, no-axiom discipline, release records, and reader-edition derivation.
+- Mechanism: Apply the governed-cognition pattern reflexively to book changes: manifest records, outline jobs, source notes, claim states, proof manifests, validation receipts, release records, reader projections, residuals, and changelog entries keep manuscript improvement from becoming ungoverned drift.
 - Interface: Source ingestion feeds source notes.
 - Interface: Drafting feeds claim matrices.
 - Interface: Tests feed support states.

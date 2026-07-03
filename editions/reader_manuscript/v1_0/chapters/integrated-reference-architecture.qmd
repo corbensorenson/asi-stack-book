@@ -33,6 +33,13 @@ That is the role of the integrated reference architecture. It is not a claim
 that a complete ASI runtime exists. It is the trace contract a future runtime
 would have to satisfy.
 
+The earlier chapters repeat a common governed-cognition pattern: records,
+lifecycle states, authority ceilings, evidence gates, receipts, residuals, and
+rollback paths. The integrated reference architecture asks whether those
+records can still be joined after they cross the whole stack. The contribution
+here is not another local record. It is the end-to-end trace that keeps local
+records from becoming isolated paperwork.
+
 The happy path matters, but the blocked path matters more. A governed system
 earns trust when a missing approval, inadequate context packet, failed
 verification, unaccepted residual, captured evaluator, or absent rollback path
@@ -94,6 +101,13 @@ runtime assurance work name formal and runtime control lanes. The ASI Stack's
 specific contribution is the cross-layer handoff ledger: one record family
 that keeps authority, evidence, artifacts, and residuals joined across those
 lanes.
+
+That makes the reference trace the pattern language under integration
+pressure. A command contract, plan DAG, context packet, route decision, claim
+envelope, work order, audit log, evidence delta, and SCF gate all have local
+meaning. The trace proves only record shape today, but it states the mature
+requirement: those meanings must remain joinable when a run is approved,
+blocked, narrowed, rolled back, or returned for review.
 
 ## Core Claim
 
@@ -420,15 +434,15 @@ That endpoint remains unimplemented here.
 
 ## Evidence Boundary
 
-This chapter specifies how the stack should compose. It does not claim that a
+This section specifies how the stack should compose. It does not claim that a
 complete integrated runtime exists.
 
 Current evidence consists of source synthesis, source-note mappings, external
 system-orientation records, reference-trace schema fixtures, finite Lean
 record predicates, one local Resource flagship command replay with an output
 digest and tracked artifact bundle, and bounded Project Theseus
-implementation-reference material. The chapter's core claim stays at
-`argument` support.
+implementation-reference material. The core claim stays at `argument`
+support.
 
 Project Theseus is useful precisely because it is report-first: it shows how
 parts of this trace could become inspectable machinery without letting local

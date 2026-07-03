@@ -89,6 +89,8 @@ The failure mode is architectural fragmentation. A planner can produce tasks, a 
 
 The integrated view has to compose external baselines that are normally studied separately. TAMP (`ext_integrated_tamp_2020`) and behavior trees (`ext_behavior_trees_robotics_ai_2017`) name planning/execution interfaces, GShard (`ext_gshard_2020`) names distributed conditional computation, TLA+ (`ext_tla_plus_home_docs`) and PRISM (`ext_prism_model_checker_2002`) name system/model-checking lanes, and Black-Box Simplex (`ext_black_box_simplex_2021`) names runtime assurance around controller switching. The reference architecture's contribution is the handoff ledger across those lanes, not a claim that one implementation has integrated them.
 
+The local delta of Integrated Reference Architecture is therefore not another instance of the governed-cognition pattern. It is joinability. The same record/lifecycle/authority/evidence/receipt/rollback pattern has to survive across many layers as one trace, including the blocked path. A planner record, context packet, route decision, claim envelope, work order, audit log, evidence delta, and SCF gate are only integrated when their parentage, authority deltas, residual deltas, and non-claims can be joined after the run.
+
 The integrated reference architecture therefore has to be explicit about handoffs. The output of one layer is not "more context" or "a better answer." It is a typed artifact: a command contract, plan DAG, context packet, claim record, work order, route decision, proof obligation, audit log, benchmark result, or capability-field transition.
 
 A single all-purpose agent loop can make this worse by turning every boundary into hidden prompt state. The ASI Stack should resist that collapse. The planner should not silently become the verifier; the memory compiler should not silently become the authority source; the execution OS should not silently decide that a failed residual is acceptable; and the benchmark ratchet should not silently promote a candidate whose regression floor moved.
@@ -114,6 +116,8 @@ Appendix C now records twenty passage-reviewed mappings for this synthesis. The 
 ## Mechanism
 
 The reference architecture is a trace contract. A request enters through human intent and constitutional authority, then passes through planning, context compilation, routing, verification, execution, evidence update, and capability governance. At each boundary the next layer receives a typed artifact rather than an informal summary: command contract, plan DAG, context packet, route decision, claim envelope, work order, audit log, benchmark ledger, or SCF transition.
+
+At trace scale, the governed-cognition pattern shifts from local boundary ownership to cross-layer composition. A layer-local record says what one boundary owns. A Reference Trace Record says whether those local records still compose after handoff, denial, residualization, or proposed improvement. That is why the trace carries parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, and non-claims together.
 
 This is where the earlier layers compose. VIEA supplies the intent-to-execution spine, VCM supplies source-bound working memory, PlanForge and Talos supply planning and work contracts, Spinoza supplies claim discipline, Octopus/RMI/Benchmaxxing supply routing and ratchet pressure, CGS and loop closure supply compression pressure, and SCF supplies the replacement gate. Project Theseus and MoECOT remain implementation-reference context until their artifacts are imported or rerun here.
 

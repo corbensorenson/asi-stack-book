@@ -33,6 +33,12 @@ proof manifest, schemas, tests, changelog, release records, reader projections,
 and public site. The prose is what readers see first. The graph is what lets
 readers, reviewers, and future agents see how the prose is allowed to change.
 
+In that sense, the book applies the same governed-cognition pattern to itself.
+A revision has a record, a lifecycle state, a source boundary, a claim effect,
+a validation receipt, a release route, residuals, and non-claims. The reader
+does not need to inspect all of that machinery on every page, but the machinery
+has to exist so the prose can improve without silently becoming more certain.
+
 This does not make the thesis true. It makes the state of the thesis
 inspectable.
 
@@ -46,6 +52,9 @@ methodological center. Evidence States controls how confident a claim is
 allowed to sound. Living Book Methodology controls the source graph, proof
 graph, release graph, reader projections, and revision receipts that keep that
 confidence from drifting.
+
+Its local delta is reflexive: the manuscript is not only describing a governed
+stack; it is maintained as one.
 
 ![Draft living book release pipeline.](../../../../assets/diagrams/living-book-release-pipeline.svg){#reader-fig-living-book-release-pipeline fig-alt="Draft living book release pipeline figure showing live book source, validation gates, reader derivatives, evidence records, format artifacts, and release records while keeping their authority boundaries separate."}
 
