@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-03 - Add Project Theseus reader overlay
+
+- Added
+  `editions/reader_overlays/v1_0/chapters/project-theseus-as-report-first-implementation-reference.json`
+  so Human view and generated reader editions replace the validator-dense
+  Project Theseus `Minimum Viable Implementation` section with prose that keeps
+  the public task-bundle boundaries visible.
+- Regenerated `assets/reader-overlays.html`, refreshed
+  `docs/reader_continuity_audit.md`, and synced
+  `docs/reader_chapter_review_matrix.md` /
+  `editions/reader_manuscript/v1_0/chapter_review_matrix.json`. The reader
+  projection now records 69 active/applied overlay operations across 29
+  chapters, 0 high-priority heuristic review rows, 0 medium-priority heuristic
+  review rows, and 0 paragraphs at or above 160 words.
+- Updated the Project Theseus companion note, README, landing page, candidate
+  status, and v1.x roadmap so public surfaces match the new overlay count and
+  review state.
+- Boundary: this is not reader-release approval, not an EPUB/PDF/DOCX/audio
+  artifact review, not support-state movement, not a model-quality or
+  benchmark result, and not a clean live Project Theseus replay.
+
 ## 2026-07-03 - Add Theseus public task-bundle import
 
 - Added `scripts/validate_theseus_public_task_bundle_import.py`,

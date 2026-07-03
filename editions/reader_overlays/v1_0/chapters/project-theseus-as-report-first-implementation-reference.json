@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+  "operations": [
+    {
+      "id": "v1_0.project_theseus.minimum_viable_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace validator-dense Project Theseus import prose in the reader projection while preserving clean-replay, model-quality, speed, and support-state boundaries.",
+      "content_lines": [
+        "The smallest useful Theseus lane is a public-safe crosswalk from one ASI Stack layer to one Theseus report surface. It has to say which run or summary is being discussed, which material is safe to publish, which pieces are absent, and which claims remain out of bounds.",
+        "",
+        "The repository now has that narrow shape. It includes a crosswalk example, two static report imports, a support replay over the ASI-side checks, a report-bundle audit, and a bounded public task-bundle summary. Together they show how a prototype can be treated as an implementation reference without turning private or historical status into public proof.",
+        "",
+        "The new task-bundle summary keeps the most important reader facts in the spine: 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, visible gaps, and clean live Theseus replay remains unclaimed. The detailed gate counts, candidate counts, digests, and invalid-control names belong in the AI/research view and companion note.",
+        "",
+        "This is the whole point of the minimum viable lane. A useful report-first system should preserve the negative rows as carefully as the successful ones. Missing artifacts, dirty checkout state, private payload boundaries, and unsupported promotions are not narrative inconveniences; they are the evidence boundary that keeps a prototype from becoming an overclaim.",
+        "",
+        "The next stronger step is not better wording. It is a fresh replay or archived public release package with environment notes, publication permission, artifact digests, and review boundaries. Until then, Theseus remains implementation-reference evidence, not model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, or chapter-core-promotion evidence."
+      ]
+    }
+  ]
+}

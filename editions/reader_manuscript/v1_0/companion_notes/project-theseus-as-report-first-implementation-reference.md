@@ -16,12 +16,14 @@ Evidence references: `docs/curated_reader_project_theseus_prose_pass.md`,
 `docs/theseus_report_import_slice.md`,
 `docs/theseus_generation_mode_import_slice.md`,
 `docs/theseus_support_replay_probe.md`,
+`docs/theseus_public_task_bundle_import.md`,
 `schemas/theseus_report_crosswalk_record.schema.json`,
 `schemas/theseus_report.schema.json`,
 `schemas/theseus_generation_mode_import.schema.json`,
 `scripts/validate_theseus_report.py`,
 `scripts/validate_theseus_generation_mode_import.py`,
-`scripts/validate_theseus_support_replay_probe.py`, and
+`scripts/validate_theseus_support_replay_probe.py`,
+`scripts/validate_theseus_public_task_bundle_import.py`, and
 `lean/AsiStackProofs/TheseusReference.lean`.
 
 This note helps e-reader and audio review for the Project Theseus chapter. It
@@ -46,6 +48,7 @@ artifact, and non-claim that make its status inspectable.
 | Static architecture-gate import | A public-safe imported report with digest and boundary checks. | It is not a clean current Theseus rerun. |
 | Static generation-mode import | A public-safe imported generation-mode gate summary with speed-boundary checks. | It does not prove useful-solution-per-second improvement or model quality. |
 | Support replay probe | A local ASI-side rerun of validators against tracked import artifacts. | It reruns this repository's validators, not Project Theseus itself. |
+| Public task-bundle import | A bounded summary with 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, visible gaps, and clean live Theseus replay remaining unclaimed. | It is not a model-quality result, benchmark-superiority result, generation-speed result, useful-solution-per-second result, or support-state transition. |
 | Missing-artifact row | A visible record that a needed report, command, environment, permission, or artifact is absent. | Missing status blocks promotion instead of becoming prose confidence. |
 | Theseus Report Crosswalk Record | The record that maps one ASI layer to one Theseus report/config/tool surface with source, replay, publication, residual, and non-claim fields. | It is a public-boundary map, not a runtime capability. |
 
@@ -61,8 +64,9 @@ material:
 - private or non-public artifacts cannot be treated as public evidence;
 - no clean live Theseus replay, reproduced benchmark run, current dashboard
   verification, deployed Theseus runtime behavior, generation-speed result,
-  model-quality result, training-readiness result, deployment-readiness result,
-  or support-state promotion is claimed.
+  useful-solution-per-second improvement, model-quality result,
+  training-readiness result, deployment-readiness result, or support-state
+  promotion is claimed.
 
 ## Audio Treatment
 
@@ -75,9 +79,10 @@ prototype story:
 - missing artifacts are first-class blockers;
 - the value is making implementation evidence falsifiable.
 
-Detailed report IDs, digest fields, and validator names can be routed to this
-companion note. The main audio should keep the ordinary reader focused on the
-question: what survives the run as public evidence?
+Detailed report IDs, digest fields, candidate counts, gate counts, and
+validator names can be routed to this companion note. The main audio should
+keep the ordinary reader focused on the question: what survives the run as
+public evidence?
 
 ## Non-Claims
 
