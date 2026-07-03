@@ -11,7 +11,7 @@ format approval, a public deployment artifact, or a support-state promotion.
 Commands run:
 
 ```bash
-python3 scripts/render_curated_reader_formats.py --formats html epub docx
+python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf
 python3 scripts/inspect_curated_reader_format_artifacts.py
 ```
 
@@ -31,33 +31,38 @@ Tracked manifest:
 | html | rendered | 49 | 81 | 0 | 0 |
 | epub | rendered | 1 | 1 | 0 | 0 |
 | docx | rendered | 1 | 1 | 0 | 0 |
+| pdf | rendered | 1 | 1 | 0 | 0 |
 
-The DOCX render now generates ten temporary PNG fallbacks from the tracked SVG
-key figures inside the ignored build workspace before running Pandoc. The
-renderer restored the curated source workspace after the DOCX pass. The
-resulting DOCX render produced zero SVG conversion warnings and the DOCX package
-contains PNG media entries rather than embedded SVG media entries. This removes
-the previous conversion-warning blocker; it does not approve the DOCX artifact.
+The DOCX and PDF renders now generate ten temporary PNG fallbacks from the
+tracked SVG key figures inside the ignored build workspace before running
+Pandoc. The renderer restored the curated source workspace after each raster
+fallback pass. The resulting DOCX render produced zero SVG conversion warnings
+and the DOCX package contains PNG media entries rather than embedded SVG media
+entries. The PDF render also produced zero SVG conversion warnings. This
+removes the previous conversion-warning blocker; it does not approve the DOCX
+or PDF artifact.
 
 ## Structural Inspection Summary
 
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,695,384 bytes, SHA-256 `fa573523ceb932db858d73686e29bfe08833341158ee8ba9a878d655c076cbda`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,351,731 bytes, SHA-256 `b8fed41a4987e2df0d74f15fbb7af7b47d28b08c21ea57f3bb7ed81e81a90e13`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,126 paragraph markers, required Word package entries present. |
+| epub | passed | 8,695,360 bytes, SHA-256 `7e6904651c2d0eda7df0305ded9e91c790ab02a88574b8bd2183cf5f562cf7d5`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,351,886 bytes, SHA-256 `e34b3bdcdc0fa61059258b517a8aa52743dc0f92be4d77e29bc316ae63d7de92`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,126 paragraph markers, required Word package entries present. |
+| pdf | passed | 9,332,951 bytes, SHA-256 `99ab0aa1fdf1d7b999bc85b5832889cc7265e052f8b8e5fecefbf4c0eb3e909d`, 519 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## Review Decision
 
 The tracked curated reader manuscript now has a local format-probe path beyond
-HTML browser viability: the same curated source rendered to HTML, EPUB, and
-DOCX, and the snapshots passed structural inspection. This is useful evidence
-for release preparation, e-reader testing, DOCX application review, and figure
-conversion work.
+HTML browser viability: the same curated source rendered to HTML, EPUB, DOCX,
+and PDF, and the snapshots passed structural inspection. This is useful
+evidence for release preparation, e-reader testing, DOCX application review,
+PDF layout review, and figure conversion work.
 
 This does not clear release blockers. EPUB still needs real e-reader or app
 inspection. DOCX still needs application-level review in Word, LibreOffice GUI,
-or Google Docs. PDF and audio artifacts remain outside this probe.
+or Google Docs. PDF still needs page-layout and reading-flow review in a PDF
+viewer. Audio artifacts remain outside this probe.
 
 ## Residuals
 

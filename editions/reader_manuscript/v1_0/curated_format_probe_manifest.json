@@ -3,10 +3,10 @@
   "major_version": "v1.0",
   "status": "curated_local_structural_inspection_record",
   "last_updated": "2026-07-03",
-  "purpose": "Record the latest local curated-reader HTML, EPUB, and DOCX structural render evidence without treating ignored build artifacts as release artifacts.",
+  "purpose": "Record the latest local curated-reader HTML, EPUB, DOCX, and PDF structural render evidence without treating ignored build artifacts as release artifacts.",
   "source_mode": "tracked_curated_reader_manuscript",
   "source_commands": [
-    "python3 scripts/render_curated_reader_formats.py --formats html epub docx",
+    "python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py"
   ],
   "local_report_refs": [
@@ -41,6 +41,15 @@
       "svg_conversion_warning_count": 0,
       "png_fallback_count": 10,
       "png_fallback_converter": "sips"
+    },
+    "pdf": {
+      "status": "rendered",
+      "artifacts_observed": 1,
+      "preserved_artifacts": 1,
+      "warning_count": 0,
+      "svg_conversion_warning_count": 0,
+      "png_fallback_count": 10,
+      "png_fallback_converter": "sips"
     }
   },
   "inspection_summary": {
@@ -55,8 +64,8 @@
     },
     "epub": {
       "status": "passed",
-      "bytes": 8695384,
-      "sha256": "fa573523ceb932db858d73686e29bfe08833341158ee8ba9a878d655c076cbda",
+      "bytes": 8695360,
+      "sha256": "7e6904651c2d0eda7df0305ded9e91c790ab02a88574b8bd2183cf5f562cf7d5",
       "entries": 120,
       "xhtml_entries": 52,
       "image_entries": 62,
@@ -76,8 +85,8 @@
     },
     "docx": {
       "status": "passed",
-      "bytes": 8351731,
-      "sha256": "b8fed41a4987e2df0d74f15fbb7af7b47d28b08c21ea57f3bb7ed81e81a90e13",
+      "bytes": 8351886,
+      "sha256": "e34b3bdcdc0fa61059258b517a8aa52743dc0f92be4d77e29bc316ae63d7de92",
       "entries": 77,
       "media_entries": 61,
       "png_media_entries": 61,
@@ -90,6 +99,38 @@
         "word/document.xml",
         "word/styles.xml"
       ]
+    },
+    "pdf": {
+      "status": "passed",
+      "bytes": 9332951,
+      "sha256": "99ab0aa1fdf1d7b999bc85b5832889cc7265e052f8b8e5fecefbf4c0eb3e909d",
+      "pages": 519,
+      "title": "The ASI Stack",
+      "author": "Corben Sorenson",
+      "producer": "LuaTeX-1.24.0",
+      "page_size": "612 x 792 pts (letter)",
+      "encrypted": "no",
+      "sample_pages": [
+        1,
+        2,
+        25,
+        300,
+        500
+      ],
+      "sample_page_pngs": [
+        "build/curated_reader_edition/pdf_probe_pages/page-1-001.png",
+        "build/curated_reader_edition/pdf_probe_pages/page-2-002.png",
+        "build/curated_reader_edition/pdf_probe_pages/page-25-025.png",
+        "build/curated_reader_edition/pdf_probe_pages/page-300-300.png",
+        "build/curated_reader_edition/pdf_probe_pages/page-500-500.png"
+      ],
+      "required_text_markers": [
+        "The ASI Stack",
+        "Reader Edition Draft",
+        "evidence boundary",
+        "Reader Source List",
+        "External Citation Policy"
+      ]
     }
   },
   "release_blockers_preserved": [
@@ -99,12 +140,12 @@
     "full_format_artifact_review_not_completed",
     "app_or_ereader_review_not_completed"
   ],
-  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, and DOCX and passes structural artifact inspection. The DOCX render now uses ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, so the previous SVG conversion warnings are no longer present. EPUB and DOCX remain unapproved because application-level e-reader/DOCX review has not happened and no edition release record exists.",
+  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, DOCX, and PDF and passes structural artifact inspection. The DOCX and PDF renders now use ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, so the previous SVG conversion warnings are no longer present. EPUB, DOCX, and PDF remain unapproved because application-level e-reader/DOCX/PDF review has not happened and no edition release record exists.",
   "non_claims": [
     "This manifest records local structural inspection of ignored curated-reader snapshots only.",
     "This manifest is not a reader release, ebook release, document release, PDF release, edition release record, or artifact approval.",
     "This manifest does not approve EPUB, DOCX, HTML, PDF, e-reader, or audio artifacts for publication.",
-    "This manifest does not check full editorial quality, full layout quality, e-reader behavior, DOCX application behavior, source interpretation, proof adequacy, benchmark behavior, runtime behavior, PDF output, or audio output.",
+    "This manifest does not check full editorial quality, full layout quality, e-reader behavior, DOCX application behavior, full PDF page-by-page layout quality, source interpretation, proof adequacy, benchmark behavior, runtime behavior, or audio output.",
     "This manifest does not promote any claim support state."
   ]
 }

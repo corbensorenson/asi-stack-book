@@ -1,20 +1,43 @@
 # Changelog
 
-## 2026-07-03 - Add curated DOCX PNG fallbacks
+## 2026-07-03 - Prioritize pattern-language idea depth
 
-- Updated `scripts/render_curated_reader_formats.py` so curated-reader DOCX
-  rendering creates temporary PNG fallbacks for the ten tracked SVG key figures
-  inside the ignored build workspace, rewrites the DOCX render input to those
-  fallbacks, and restores the curated source workspace after rendering.
-- Regenerated the local curated reader HTML/EPUB/DOCX structural probe and
+- Reviewed the latest idea-focused Claude output against the current roadmap
+  and verified that the substance was already routed into the Idea Depth
+  Program.
+- Tightened `docs/v1_x_beyond_sota_roadmap.md` so the next idea-depth closure
+  prioritizes pattern-language integration: name the governed-cognition
+  record/lifecycle/ceiling/gate/receipt/rollback pattern once, then add only
+  honest local-delta prose where chapters actually own a distinct mechanism.
+- Updated the suggested long-running goal so future runs do not bury that
+  synthesis work behind more fixture sketches or broad evidence chasing.
+- Boundary: this is roadmap execution guidance only. It creates no source
+  evidence, support-state transition, novelty proof, external review, proof
+  result, benchmark result, deployed behavior, reader artifact approval, or
+  edition release record.
+
+## 2026-07-03 - Add curated DOCX/PDF PNG fallbacks
+
+- Updated `scripts/render_curated_reader_formats.py` so curated-reader DOCX and
+  PDF rendering create temporary PNG fallbacks for the ten tracked SVG key
+  figures inside the ignored build workspace, rewrite the render input to those
+  fallbacks, restore the curated source workspace after rendering, and force a
+  stable UTF-8 locale for Pandoc/LaTeX.
+- Regenerated the local curated reader HTML/EPUB/DOCX/PDF structural probe and
   updated `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`
-  plus `docs/curated_reader_format_artifact_probe.md`: DOCX now renders with
-  0 warnings, 0 SVG conversion warnings, 61 PNG media entries, EPUB SHA-256
-  `fa573523ceb932db858d73686e29bfe08833341158ee8ba9a878d655c076cbda`, and
-  DOCX SHA-256
-  `b8fed41a4987e2df0d74f15fbb7af7b47d28b08c21ea57f3bb7ed81e81a90e13`.
+  plus `docs/curated_reader_format_artifact_probe.md`: DOCX and PDF now render
+  with 0 warnings and 0 SVG conversion warnings, the DOCX package contains 61
+  PNG media entries, and the PDF structural inspection records 519 pages plus
+  sample PNG renders for pages 1, 2, 25, 300, and 500. Current local artifact
+  digests are EPUB SHA-256
+  `7e6904651c2d0eda7df0305ded9e91c790ab02a88574b8bd2183cf5f562cf7d5`, DOCX
+  SHA-256
+  `e34b3bdcdc0fa61059258b517a8aa52743dc0f92be4d77e29bc316ae63d7de92`, and
+  PDF SHA-256
+  `99ab0aa1fdf1d7b999bc85b5832889cc7265e052f8b8e5fecefbf4c0eb3e909d`.
 - Updated `scripts/validate_curated_reader_format_probe_manifest.py` so the
-  improved zero-warning DOCX path and ten-PNG fallback record are now enforced.
+  improved zero-warning DOCX/PDF path and ten-PNG fallback records are now
+  enforced.
 - Boundary: this removes one format-preparation blocker only. It does not
   approve curated HTML, EPUB, DOCX, PDF, e-reader, audio, or audio-embedded
   EPUB artifacts, does not create an edition release record, and does not

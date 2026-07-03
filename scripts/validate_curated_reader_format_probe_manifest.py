@@ -13,9 +13,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
 SUMMARY = ROOT / "docs" / "curated_reader_format_artifact_probe.md"
-EXPECTED_FORMATS = {"html", "epub", "docx"}
+EXPECTED_FORMATS = {"html", "epub", "docx", "pdf"}
 REQUIRED_COMMANDS = {
-    "python3 scripts/render_curated_reader_formats.py --formats html epub docx",
+    "python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
 }
 REQUIRED_BLOCKERS = {
@@ -117,6 +117,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         "html": {"artifacts_observed": 49, "preserved_artifacts": 81, "warning_count": 0, "svg_conversion_warning_count": 0},
         "epub": {"artifacts_observed": 1, "preserved_artifacts": 1, "warning_count": 0, "svg_conversion_warning_count": 0},
         "docx": {"artifacts_observed": 1, "preserved_artifacts": 1, "warning_count": 0, "svg_conversion_warning_count": 0},
+        "pdf": {"artifacts_observed": 1, "preserved_artifacts": 1, "warning_count": 0, "svg_conversion_warning_count": 0},
     }
     for fmt, expected in expected_render.items():
         render = render_summary.get(fmt, {})
@@ -128,11 +129,11 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         for key, expected_value in expected.items():
             if render.get(key) != expected_value:
                 errors.append(f"render_summary.{fmt}.{key} must be {expected_value}.")
-        if fmt == "docx":
+        if fmt in {"docx", "pdf"}:
             if render.get("png_fallback_count") != 10:
-                errors.append("render_summary.docx.png_fallback_count must be 10.")
+                errors.append(f"render_summary.{fmt}.png_fallback_count must be 10.")
             if render.get("png_fallback_converter") not in {"sips", "rsvg-convert"}:
-                errors.append("render_summary.docx.png_fallback_converter must be sips or rsvg-convert.")
+                errors.append(f"render_summary.{fmt}.png_fallback_converter must be sips or rsvg-convert.")
 
     html = inspection_summary.get("html", {}) if isinstance(inspection_summary, dict) else {}
     if isinstance(html, dict):
@@ -186,6 +187,34 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             if entry not in required:
                 errors.append(f"inspection_summary.docx.required_entries_present missing {entry}.")
 
+    pdf = inspection_summary.get("pdf", {}) if isinstance(inspection_summary, dict) else {}
+    if isinstance(pdf, dict):
+        if pdf.get("status") != "passed":
+            errors.append("inspection_summary.pdf.status must be passed.")
+        require_int("inspection_summary.pdf", "bytes", pdf.get("bytes"), errors, minimum=1_000_000)
+        if not SHA_RE.match(str(pdf.get("sha256", ""))):
+            errors.append("inspection_summary.pdf.sha256 must be a SHA-256 digest.")
+        if pdf.get("pages") != 519:
+            errors.append("inspection_summary.pdf.pages must be 519.")
+        if pdf.get("title") != "The ASI Stack":
+            errors.append("inspection_summary.pdf.title must be The ASI Stack.")
+        if pdf.get("author") != "Corben Sorenson":
+            errors.append("inspection_summary.pdf.author must be Corben Sorenson.")
+        if pdf.get("encrypted") != "no":
+            errors.append("inspection_summary.pdf.encrypted must be no.")
+        if "612 x 792" not in str(pdf.get("page_size", "")):
+            errors.append("inspection_summary.pdf.page_size must describe letter pages.")
+        sample_pages = pdf.get("sample_pages")
+        if sample_pages != [1, 2, 25, 300, 500]:
+            errors.append("inspection_summary.pdf.sample_pages must be [1, 2, 25, 300, 500].")
+        sample_pngs = require_string_list("inspection_summary.pdf", "sample_page_pngs", pdf.get("sample_page_pngs"), errors)
+        if len(sample_pngs) != 5:
+            errors.append("inspection_summary.pdf.sample_page_pngs must contain five rendered sample pages.")
+        markers = set(require_string_list("inspection_summary.pdf", "required_text_markers", pdf.get("required_text_markers"), errors))
+        for marker in {"The ASI Stack", "Reader Edition Draft", "evidence boundary", "Reader Source List", "External Citation Policy"}:
+            if marker not in markers:
+                errors.append(f"inspection_summary.pdf.required_text_markers missing {marker}.")
+
     blockers = set(require_string_list("manifest", "release_blockers_preserved", manifest.get("release_blockers_preserved"), errors))
     missing_blockers = sorted(REQUIRED_BLOCKERS - blockers)
     if missing_blockers:
@@ -206,17 +235,21 @@ def validate_summary(errors: list[str]) -> None:
     text = SUMMARY.read_text(encoding="utf-8")
     required_fragments = [
         "Curated Reader Format Artifact Probe",
-        "python3 scripts/render_curated_reader_formats.py --formats html epub docx",
+        "python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf",
         "python3 scripts/inspect_curated_reader_format_artifacts.py",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
         "| docx | rendered | 1 | 1 | 0 | 0 |",
+        "| pdf | rendered | 1 | 1 | 0 | 0 |",
         "ten temporary PNG fallbacks",
         "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `fa573523ceb932db858d73686e29bfe08833341158ee8ba9a878d655c076cbda`",
-        "SHA-256 `b8fed41a4987e2df0d74f15fbb7af7b47d28b08c21ea57f3bb7ed81e81a90e13`",
+        "SHA-256 `7e6904651c2d0eda7df0305ded9e91c790ab02a88574b8bd2183cf5f562cf7d5`",
+        "SHA-256 `e34b3bdcdc0fa61059258b517a8aa52743dc0f92be4d77e29bc316ae63d7de92`",
+        "SHA-256 `99ab0aa1fdf1d7b999bc85b5832889cc7265e052f8b8e5fecefbf4c0eb3e909d`",
+        "519 pages",
+        "sample pages 1, 2, 25, 300, and 500",
         "does not clear release blockers",
         "does not promote any claim support state",
     ]
@@ -233,7 +266,7 @@ def main() -> None:
     validate_summary(errors)
     if errors:
         fail(errors)
-    print("Curated reader format probe validation passed: html, epub, docx structural evidence recorded with DOCX PNG fallbacks.")
+    print("Curated reader format probe validation passed: html, epub, docx, pdf structural evidence recorded with raster PNG fallbacks.")
 
 
 if __name__ == "__main__":

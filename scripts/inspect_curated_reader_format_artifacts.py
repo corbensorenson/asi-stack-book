@@ -9,12 +9,15 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import shutil
+import subprocess
 from zipfile import BadZipFile, ZipFile
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_ARTIFACT_ROOT = ROOT / "build" / "curated_reader_edition" / "format_artifacts"
 DEFAULT_REPORT = ROOT / "build" / "curated_reader_edition" / "curated_reader_artifact_inspection_report.json"
+DEFAULT_PDF_SAMPLE_DIR = ROOT / "build" / "curated_reader_edition" / "pdf_probe_pages"
 RAW_CORE_CLAIM_RE = re.compile(r"\[[A-Za-z0-9_-]+\.core,\s*label:\s*[^,\]]+,\s*support:\s*[^\]]+\]")
 DC_TITLE_RE = re.compile(r"<dc:title[^>]*>(.*?)</dc:title>", re.DOTALL)
 DC_CREATOR_RE = re.compile(r"<dc:creator[^>]*>(.*?)</dc:creator>", re.DOTALL)
@@ -27,6 +30,20 @@ LIVE_ONLY_MARKERS = [
     "Claim-source mapping status",
     "Formalization hooks",
 ]
+PDF_SAMPLE_PAGES = [1, 2, 25, 300, 500]
+
+
+def run_command(command: list[str]) -> str:
+    result = subprocess.run(
+        command,
+        check=False,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    if result.returncode != 0:
+        fail(f"command failed ({result.returncode}): {' '.join(command)}\n{result.stdout[-2000:]}")
+    return result.stdout
 
 
 def relative(path: Path) -> str:
@@ -235,10 +252,88 @@ def inspect_docx(root: Path) -> dict[str, object]:
     }
 
 
+def inspect_pdf(root: Path, sample_dir: Path) -> dict[str, object]:
+    path = root / "pdf" / "_reader_site" / "The-ASI-Stack.pdf"
+    if not path.exists():
+        fail(f"missing PDF snapshot: {relative(path)}")
+    if path.stat().st_size < 1_000_000:
+        fail(f"PDF snapshot is unexpectedly small: {path.stat().st_size} bytes")
+
+    for command_name in ("pdfinfo", "pdftotext", "pdftoppm"):
+        if shutil.which(command_name) is None:
+            fail(f"{command_name} is required for curated PDF inspection")
+
+    pdfinfo_output = run_command(["pdfinfo", str(path)])
+    info: dict[str, str] = {}
+    for line in pdfinfo_output.splitlines():
+        if ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        info[key.strip()] = value.strip()
+    try:
+        pages = int(info.get("Pages", "0"))
+    except ValueError:
+        pages = 0
+    if pages < 100:
+        fail(f"PDF has too few pages for the curated reader: {pages}")
+    if info.get("Title") != "The ASI Stack":
+        fail(f"PDF title metadata is unexpected: {info.get('Title')!r}")
+    if info.get("Author") != "Corben Sorenson":
+        fail(f"PDF author metadata is unexpected: {info.get('Author')!r}")
+    if info.get("Encrypted") != "no":
+        fail("PDF must not be encrypted")
+    if info.get("Page size") and "612 x 792" not in info["Page size"]:
+        fail(f"PDF page size should be letter, got {info['Page size']!r}")
+
+    text = run_command(["pdftotext", str(path), "-"])
+    required_text = [
+        "The ASI Stack",
+        "Reader Edition Draft",
+        "evidence boundary",
+        "Reader Source List",
+        "External Citation Policy",
+    ]
+    missing_text = [marker for marker in required_text if marker not in text]
+    if missing_text:
+        fail(f"PDF text extraction missing required marker(s): {', '.join(missing_text)}")
+
+    if sample_dir.exists():
+        for existing in sample_dir.glob("*.png"):
+            existing.unlink()
+    sample_dir.mkdir(parents=True, exist_ok=True)
+    sample_files: list[str] = []
+    for page in PDF_SAMPLE_PAGES:
+        if page > pages:
+            continue
+        prefix = sample_dir / f"page-{page}"
+        run_command(["pdftoppm", "-f", str(page), "-l", str(page), "-png", "-r", "120", str(path), str(prefix)])
+        produced = sorted(sample_dir.glob(f"page-{page}-*.png"))
+        if not produced:
+            fail(f"pdftoppm did not produce a PNG for page {page}")
+        sample_files.extend(relative(item) for item in produced)
+
+    return {
+        "status": "passed",
+        "path": relative(path),
+        "bytes": path.stat().st_size,
+        "sha256": sha256_file(path),
+        "pages": pages,
+        "title": info.get("Title", ""),
+        "author": info.get("Author", ""),
+        "producer": info.get("Producer", ""),
+        "page_size": info.get("Page size", ""),
+        "encrypted": info.get("Encrypted", ""),
+        "sample_pages": [page for page in PDF_SAMPLE_PAGES if page <= pages],
+        "sample_page_pngs": sample_files,
+        "required_text_markers": required_text,
+    }
+
+
 def inspect(root: Path) -> dict[str, object]:
     html = inspect_html(root)
     epub = inspect_epub(root)
     docx = inspect_docx(root)
+    pdf = inspect_pdf(root, DEFAULT_PDF_SAMPLE_DIR)
     return {
         "schema_version": "0.1",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -249,6 +344,7 @@ def inspect(root: Path) -> dict[str, object]:
             "html": html,
             "epub": epub,
             "docx": docx,
+            "pdf": pdf,
         },
         "release_blockers_preserved": [
             "curated_reconciliation_not_approved",
@@ -260,7 +356,7 @@ def inspect(root: Path) -> dict[str, object]:
         "non_claims": [
             "This is a local structural inspection of ignored curated-reader format snapshots only.",
             "Passing this inspection does not approve a reader release or edition release record.",
-            "This inspection does not check full editorial quality, full layout quality, e-reader behavior, app behavior, PDF output, audio output, source interpretation, proof adequacy, benchmark behavior, or runtime behavior.",
+            "This inspection does not check full editorial quality, full layout quality, e-reader behavior, app behavior, full PDF page-by-page layout quality, audio output, source interpretation, proof adequacy, benchmark behavior, or runtime behavior.",
             "This inspection does not promote any claim support state.",
         ],
     }
@@ -292,7 +388,8 @@ def main() -> None:
         f"{report['formats']['html']['html_files']} HTML files, "
         f"{report['formats']['epub']['xhtml_entries']} EPUB XHTML entries, "
         f"{report['formats']['docx']['png_media_entries']} DOCX PNG media entries, "
-        f"{report['formats']['docx']['svg_media_entries']} DOCX SVG media entries."
+        f"{report['formats']['docx']['svg_media_entries']} DOCX SVG media entries, "
+        f"{report['formats']['pdf']['pages']} PDF pages."
     )
 
 
