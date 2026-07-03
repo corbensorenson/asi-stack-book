@@ -158,7 +158,9 @@ SPECIAL_REVIEW_DEFAULTS = {
             "exist; the companion note is for e-reader/audio density support only, "
             "while compactness-as-claim, verifier separation, repair residuals, "
             "fallback, semantic representation leases, cost ownership, and "
-            "non-claim boundaries remain in the reader spine. Release blockers "
+            "non-claim boundaries remain in the reader spine. The 2026-07-03 "
+            "alignment surfaces the existing Compact GVR synthetic slice and "
+            "preserves no-core-claim-promotion boundaries. Release blockers "
             "remain active and this row is not a release approval."
         ),
     },
@@ -182,12 +184,15 @@ SPECIAL_REVIEW_DEFAULTS = {
             "preserving proposed/accepted output separation, verifier cost, "
             "fallback, memory pressure, task success, and promotion evidence. "
             "First curated reader prose pass and drafting companion note are "
-            "recorded; the companion note is for e-reader/audio density support "
-            "only, while proposed-versus-accepted output, verifier cost, "
-            "fallback, repair, memory pressure, task success, route promotion, "
-            "benchmark, serving, and no-speed-claim boundaries remain in the "
-            "reader spine. Release blockers remain active and no speed, quality, "
-            "serving, benchmark, route-promotion, or reader-artifact claim is "
+            "recorded; the 2026-07-03 alignment surfaces the existing "
+            "task-bundle replay and Project Theseus generation-mode import as "
+            "bounded accounting/no-promotion evidence. The companion note is "
+            "for e-reader/audio density support only, while proposed-versus-"
+            "accepted output, verifier cost, fallback, repair, memory pressure, "
+            "task success, route promotion, benchmark, serving, and "
+            "no-speed-claim boundaries remain in the reader spine. Release "
+            "blockers remain active and no speed, quality, serving, benchmark, "
+            "route-promotion, support-promotion, or reader-artifact claim is "
             "approved."
         ),
     },

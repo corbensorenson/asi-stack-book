@@ -328,6 +328,13 @@ benchmark. It shows how the book will record baseline, verifier, fallback,
 residual, negative-control, and non-claim boundaries before any future fast
 generation result is allowed to matter.
 
+There is also a narrower Project Theseus generation-mode import. The imported
+public-safe summary records 18 modes, 13 comparisons, zero hard gaps, zero
+promotable comparisons, and five accepted-span speed-lift warnings with zero
+useful-solution-per-second evidence. The book-side validators and finite Lean
+fixture preserve that as negative promotion evidence: raw speed warnings do not
+become a speedup claim when task passes and useful-solution evidence are absent.
+
 That is still useful. A record-shape fixture gives the stack a place to put
 future evidence without letting future evidence blur the boundaries. It can
 record a negative result honestly: a route was faster, but useful verified

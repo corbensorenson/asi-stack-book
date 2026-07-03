@@ -2,6 +2,8 @@
 
 Date: 2026-06-30
 
+Evidence-boundary alignment: 2026-07-03
+
 Chapter: `fast-generation-architectures`
 
 Reader manuscript file:
@@ -36,6 +38,10 @@ The reader throughline is:
   deployment, or speed-quality result exists.
 - Preserved the proof/test boundary for `AsiStackProofs.FastGeneration` and the
   `generation_mode_record` fixture.
+- Aligned the reader MVI with the implemented public-safe task-bundle replay,
+  Project Theseus generation-mode static import, and finite Lean bridges while
+  preserving the no model-speed, no deployment, no useful-solution-per-second
+  model-result, and no support-promotion boundaries.
 
 ## Meaning-Preservation Checks
 
@@ -48,9 +54,12 @@ The reader throughline is:
   vLLM/PagedAttention, Mamba, LLaDA, and diffusion language-model scaling remain
   unreproduced external literature context unless a future evidence-transition
   record promotes a narrower claim.
-- The current fixture validates record shape only; no autoregressive,
-  speculative, MTP, diffusion, early-exit, state-space, KV-cache, hybrid, or
-  serving benchmark is implied.
+- The current fixtures, task-bundle replay, Theseus static import, and Lean
+  bridges validate record shape, deterministic accounting, imported
+  no-promotion counts, negative controls, and bounded fixture relations only;
+  no autoregressive, speculative, MTP, diffusion, early-exit, state-space,
+  KV-cache, hybrid, model useful-solution-per-second, or serving benchmark is
+  implied.
 
 ## Non-Claims
 
@@ -66,6 +75,9 @@ The reader throughline is:
   KV-cache audit, serving throughput result, quality improvement, memory
   savings, or route promotion.
 - This pass does not promote any chapter core claim above `argument`.
+- This pass does not turn the existing task-bundle replay or Theseus import
+  into a model-speed, route-selector, deployment, quality, benchmark, or
+  useful-solution-per-second model claim.
 - This pass does not approve the curated reader manuscript or any EPUB, DOCX,
   PDF, HTML, audio, or audio-embedded EPUB artifact for release.
 

@@ -1209,11 +1209,11 @@
       "voice_pass_slot_ids": [
         "resource-tradeoff"
       ],
-      "divergence_summary": "First curated prose pass completed from generated reader baseline; opening, pacing, paragraph order, section flow, transitions, generation-speed-as-route-choice throughline, proposed-versus-accepted-output boundary, generation-mode record explanation, verifier/fallback/memory-pressure accounting, minimum viable implementation boundary, and proof/test boundary clarification revised for human-reader flow.",
+      "divergence_summary": "First curated prose pass completed from generated reader baseline; opening, pacing, paragraph order, section flow, transitions, generation-speed-as-route-choice throughline, proposed-versus-accepted-output boundary, generation-mode record explanation, verifier/fallback/memory-pressure accounting, minimum viable implementation boundary, and proof/test boundary clarification revised for human-reader flow. The 2026-07-03 alignment surfaces the implemented task-bundle replay and Project Theseus generation-mode import as bounded accounting/no-promotion evidence without adding model-speed, deployment, or benchmark claims.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
+        "proof/test status preserved without adding unrun results; implemented task-bundle, Theseus import, and Lean bridge records remain bounded accounting/no-promotion evidence only",
         "implementation horizon preserved without implying current implementation",
         "release blocker status preserved until an edition release record clears it"
       ],
@@ -1224,7 +1224,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass recorded in docs/curated_reader_fast_generation_prose_pass.md; not release-reviewed."
+      "review_notes": "First prose curation pass recorded in docs/curated_reader_fast_generation_prose_pass.md; 2026-07-03 alignment surfaces the existing task-bundle replay and Theseus import without approving reader release or promoting the chapter core claim."
     },
     {
       "chapter_id": "human-intent-as-a-formal-input",
